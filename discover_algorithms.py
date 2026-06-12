@@ -89,16 +89,58 @@ async def main():
         print(f"Problem proposed (MOCK): '{proposal.get('problem_name')}'")
         print(f"Description: {proposal.get('description')}")
     else:
+        # Load existing problems from history.json to avoid duplicates, and block classic textbook algorithms
+        existing_problems = [
+            "Bernstein-Vazirani",
+            "Bernstein-Vazirani Problem",
+            "Simon's Period-Finding Problem",
+            "Simon's Algorithm",
+            "Deutsch-Jozsa",
+            "Deutsch-Jozsa Algorithm",
+            "Grover's Search",
+            "Grover's Algorithm",
+            "Hidden Shift",
+            "Hidden Shift Problem"
+        ]
+        if os.path.exists('history.json'):
+            try:
+                with open('history.json') as f:
+                    history_data = json.load(f)
+                    existing_problems.extend([item.get('problem_name') for item in history_data if item.get('problem_name')])
+            except Exception as e:
+                print(f"[!] Could not load search history: {e}")
+                
+        avoid_list = ", ".join([f"'{name}'" for name in set(existing_problems)]) if existing_problems else "None"
+        
         prompt = (
-            "Propose a classic or novel oracle-based quantum problem (e.g., Simon's period-finding, "
-            "Grover's search, Hidden Shift, or Bernstein-Vazirani variants). Make sure to configure "
+            "Propose a STRICTLY NOVEL, custom, or non-textbook oracle-based quantum problem (e.g., "
+            "a custom boolean function relation, a customized group action, or a non-standard shift "
+            "that is NOT a textbook algorithm). Make sure to configure "
             "the required gate set (gates_to_use), max queries (max_queries), and linear solver flag "
             "(requires_linear_solver) correctly in your response schema to make the automated circuit "
-            "search successful and efficient. Keep functions simple and syntax-error free."
+            "search successful and efficient. Keep functions simple and syntax-error free.\n\n"
+            f"CRITICAL: Do NOT propose any of the following problems that we have already searched or standard textbook ones: {avoid_list}."
         )
         try:
             proposal = await safe_agent_call(theorist.propose_problem, prompt)
             proposal['max_qubits_to_simulate'] = min(proposal.get('max_qubits_to_simulate', 3), 3)
+            
+            # Helper to strip markdown code fences from LLM responses
+            def clean_code(code_str):
+                if not code_str:
+                    return ""
+                code_str = code_str.strip()
+                if code_str.startswith("```"):
+                    lines = code_str.splitlines()
+                    start_idx = 1 if lines[0].startswith("```") else 0
+                    end_idx = len(lines) - 1 if lines[-1].startswith("```") else len(lines)
+                    code_str = "\n".join(lines[start_idx:end_idx]).strip()
+                return code_str
+
+            proposal['base_function_code'] = clean_code(proposal.get('base_function_code', ''))
+            proposal['oracle_generator_code'] = clean_code(proposal.get('oracle_generator_code', ''))
+            proposal['secrets_generator_code'] = clean_code(proposal.get('secrets_generator_code', ''))
+
             print(f"Problem proposed successfully: '{proposal.get('problem_name')}'")
             print(f"Description: {proposal.get('description')}")
             print(f"Simulating up to N = {proposal.get('max_qubits_to_simulate')} qubits (capped at 3 for VM performance).")

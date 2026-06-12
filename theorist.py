@@ -15,11 +15,18 @@ class ProblemProposal(pydantic.BaseModel):
     requires_linear_solver: bool
 
 class Theorist:
-    def __init__(self, model="gemini-2.5-flash"):
+    def __init__(self, model="gemini-flash-lite-latest"):
         self.model = model
         self.system_instructions = (
             "You are an expert Quantum Complexity Theorist. Your task is to propose "
-            "novel or classic oracle-based problems where a quantum speedup might exist. "
+            "STRICTLY NOVEL, custom, or non-textbook oracle-based problems (NOT standard textbook "
+            "ones like Bernstein-Vazirani, Simon's, Deutsch-Jozsa, or Grover's). Propose creative "
+            "custom functions where a quantum speedup might be discovered by the search engine.\n\n"
+            "CRITICAL: The problem must NOT be a disguised version of classic algorithms. Do NOT "
+            "propose linear functions of the form f(x) = s . x (mod 2) or their negations/negated popcounts, "
+            "as they are mathematically isomorphic to Bernstein-Vazirani. Propose truly non-linear "
+            "functions (e.g., quadratic boolean functions of degree >= 2, customized modular arithmetic, "
+            "or non-abelian relations) where the quantum speedup is unknown or non-trivial.\n\n"
             "To allow automated complexity scaling analysis, you MUST define your functions "
             "parameterized by the number of qubits N. Specifically, you must provide:\n"
             "1. base_function_code: A string containing a function `g(x, N)` representing a "
