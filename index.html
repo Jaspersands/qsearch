@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q-Search Dashboard | Quantum Algorithm Discovery Engine</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="glow-bg"></div>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="logo-container">
+                <div class="quantum-orb">
+                    <div class="nucleus"></div>
+                    <div class="electron orbit1"></div>
+                    <div class="electron orbit2"></div>
+                </div>
+                <div>
+                    <h1>Q-SEARCH</h1>
+                    <p class="subtitle">Autonomous Quantum Algorithm Discovery Engine</p>
+                </div>
+            </div>
+            <div class="status-indicator-wrapper">
+                <div class="pulse-indicator" id="global-pulse"></div>
+                <span id="global-status-text">CONNECTING TO VM...</span>
+            </div>
+        </header>
+
+        <!-- Dashboard Grid -->
+        <div class="dashboard-grid">
+            
+            <!-- LEFT PANEL: Active Search & Queue -->
+            <div class="left-panel">
+                <!-- Active Search Run -->
+                <section class="card glass live-search-section">
+                    <div class="card-header">
+                        <h2><i class="fa-solid fa-microchip pulse-icon"></i> Active Search State</h2>
+                        <span class="badge" id="active-badge">STANDBY</span>
+                    </div>
+                    <div id="no-active-run" class="empty-state">
+                        <i class="fa-solid fa-moon"></i>
+                        <p>Search loop is currently resting or in sleep cycle.</p>
+                        <p class="sub-text" id="sleep-countdown"></p>
+                    </div>
+                    <div id="active-run-details" class="run-details hidden">
+                        <h3 id="active-problem-name">BV with Global Phase</h3>
+                        <p id="active-description" class="run-description">Searching for a hidden bitstring s with a global phase offset...</p>
+                        
+                        <!-- Progress Stepper -->
+                        <div class="stepper">
+                            <div class="step" id="step-theorist">
+                                <div class="step-icon"><i class="fa-solid fa-brain"></i></div>
+                                <span>Theorist</span>
+                            </div>
+                            <div class="step-connector"></div>
+                            <div class="step" id="step-simulating">
+                                <div class="step-icon"><i class="fa-solid fa-circle-nodes"></i></div>
+                                <span>Simulator</span>
+                            </div>
+                            <div class="step-connector"></div>
+                            <div class="step" id="step-synthesizing">
+                                <div class="step-icon"><i class="fa-solid fa-code"></i></div>
+                                <span>Synthesis</span>
+                            </div>
+                            <div class="step-connector"></div>
+                            <div class="step" id="step-analyzing">
+                                <div class="step-icon"><i class="fa-solid fa-chart-line"></i></div>
+                                <span>Analyzer</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Search Queue / Backlog -->
+                <section class="card glass queue-section">
+                    <div class="card-header">
+                        <h2><i class="fa-solid fa-list-ul"></i> Search Backlog</h2>
+                        <span class="item-count" id="queue-count">0 items</span>
+                    </div>
+                    <div id="queue-list" class="queue-list">
+                        <!-- Queue items injected here -->
+                    </div>
+                </section>
+            </div>
+
+            <!-- RIGHT PANEL: Search History -->
+            <div class="right-panel">
+                <section class="card glass history-section">
+                    <div class="card-header">
+                        <h2><i class="fa-solid fa-database"></i> Discovered Algorithms & Run Logs</h2>
+                        <span class="item-count" id="history-count">0 runs</span>
+                    </div>
+                    <div class="search-filters">
+                        <div class="search-box">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <input type="text" id="history-search" placeholder="Filter by name, complexity, speedup...">
+                        </div>
+                    </div>
+                    <div id="history-list" class="history-list">
+                        <!-- History cards injected here -->
+                    </div>
+                </section>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- Modal for Detailed Run Results -->
+    <div id="detail-modal" class="modal hidden">
+        <div class="modal-content glass">
+            <div class="modal-header">
+                <h2 id="modal-title">Bernstein-Vazirani</h2>
+                <button class="close-btn" id="close-modal"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-meta-grid">
+                    <div class="meta-item">
+                        <span class="label">Speedup Type</span>
+                        <span class="val highlight" id="modal-speedup">Exponential</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="label">Query Complexity</span>
+                        <span class="val" id="modal-query">O(1)</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="label">Gate Complexity</span>
+                        <span class="val" id="modal-gates">O(N)</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="label">Success Rate</span>
+                        <span class="val" id="modal-success">1.0</span>
+                    </div>
+                </div>
+
+                <div class="modal-description-box">
+                    <h3>Description</h3>
+                    <p id="modal-description"></p>
+                </div>
+
+                <div class="tabs-container">
+                    <div class="tab-headers">
+                        <button class="tab-btn active" data-tab="tab-code">Synthesized Qiskit Code</button>
+                        <button class="tab-btn" data-tab="tab-theory">Complexity Analysis</button>
+                        <button class="tab-btn" data-tab="tab-oracle">Oracle Code</button>
+                    </div>
+                    <div class="tab-contents">
+                        <div class="tab-pane active" id="tab-code">
+                            <pre><code id="modal-qiskit-code" class="language-python"># Code here</code></pre>
+                        </div>
+                        <div class="tab-pane" id="tab-theory">
+                            <p id="modal-analysis-text"></p>
+                        </div>
+                        <div class="tab-pane" id="tab-oracle">
+                            <h4>Base Function</h4>
+                            <pre><code id="modal-base-code" class="language-python"># Base function</code></pre>
+                            <h4>Oracle Generator</h4>
+                            <pre><code id="modal-oracle-code" class="language-python"># Oracle generator</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Javascript -->
+    <script src="index.js"></script>
+</body>
+</html>
