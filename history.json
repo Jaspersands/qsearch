@@ -1,5 +1,19 @@
 [
   {
+    "problem_name": "Cyclic Majority Threshold",
+    "description": "Given a secret integer 's' from 0 to 2^N - 1, the oracle computes f(x) = 1 if the number of set bits in (x AND s) is strictly greater than N/2, and 0 otherwise. This is a non-linear function based on a bitwise AND and a majority threshold.",
+    "completed_at": "2026-06-15T21:20:39.600994Z",
+    "success_rate": 0.0,
+    "quantum_query_complexity": "O(2^{N/2})",
+    "quantum_gate_complexity": "O(2^{N/2} poly(N))",
+    "speedup_type": "Quadratic speedup via Grover-based amplitude amplification",
+    "synthesis_code": "None",
+    "analysis_text": "The Cyclic Majority Threshold problem describes a hidden weight function where the decision boundary relies on the Hamming weight of a masked bitstring. Given the provided success rates of 0.0, the current implementation fails to capture the parity interference required for this oracle. Theoretically, the search for 's' given the oracle f(x) can be mapped to finding the hidden mask in a threshold function. Classical approaches require evaluating the function for various inputs, typically requiring an exhaustive search or a correlation attack complexity of O(2^N). Utilizing a quantum search algorithm (Grover's) to find the secret 's' yields a complexity of O(sqrt(2^N)) = O(2^{N/2}), providing a quadratic speedup over classical brute force.",
+    "potential_applications": "The mathematical structure of a majority threshold function on masked bits is highly analogous to the non-linear transformation layers (S-boxes) in block ciphers like AES or lightweight cryptographic primitives. Specifically, determining the secret mask 's' is equivalent to performing a correlation attack on a Boolean function used within a stream cipher or a pseudo-random function generator. This oracle essentially mimics a side-channel sensitivity model where a device's power consumption or timing might correlate with the Hamming weight of internal register states. Applications include assessing the resilience of cryptosystems against algebraic attacks, studying error-correcting code decoding limits (as threshold functions are central to majority-logic decoding), and optimizing search parameters in Boolean satisfiability (SAT) solvers where parity or majority constraints are present.",
+    "base_function_code": "def g(x, s, N):\n    return bin(x & s).count('1') > N / 2",
+    "oracle_generator_code": "def make_oracle(secret, N):\n    def f(x):\n        return 1 if bin(x & secret).count('1') > N / 2 else 0\n    return f"
+  },
+  {
     "problem_name": "Nonlinear Quadratic Shift",
     "description": "This problem aims to find a secret integer 's' such that f(x) = (x^2 + s*x) mod 2^N, where the oracle only provides the least significant bit of f(x). This is a non-linear function where a speedup may be possible.",
     "completed_at": "2026-06-15T21:12:12.471997Z",
