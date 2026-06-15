@@ -1,5 +1,18 @@
 [
   {
+    "problem_name": "Cyclic Quadratic Coefficients Problem",
+    "description": "Given an N-qubit oracle that computes a boolean function f(x) = sum_{k=0}^{N-1} (x_k * s_k * x_{(k+1)%N}) mod 2, where x_k is the k-th bit of x and s_k is the k-th bit of a secret N-bit integer s. The sum is over cyclic indices (i.e., (k+1)%N handles wrapping around). The goal is to determine the secret N-bit integer s. This function is non-linear in x, and the secret s acts as a set of coefficients determining which quadratic terms contribute to the parity.",
+    "completed_at": "2026-06-15T16:57:02.619677Z",
+    "success_rate": 0.0,
+    "quantum_query_complexity": "O(N)",
+    "quantum_gate_complexity": "O(N)",
+    "speedup_type": "Exponential",
+    "synthesis_code": "None",
+    "analysis_text": "The Cyclic Quadratic Coefficients Problem maps to the hidden shift problem for quadratic forms, which can be solved efficiently using quantum algorithms. Given f(x) is a quadratic boolean function, the secret vector s defines the connectivity of the underlying graph. A quantum approach utilizing phase estimation or Bernstein-Vazirani-like extensions over the quadratic space achieves linear query and gate complexity. Conversely, classical identification of s requires brute force or linear algebraic systems that are constrained by the number of possible quadratic combinations, leading to an exponential complexity of O(2^N) or O(N^k) depending on the Gaussian elimination constraints. The data provided (success rate 0.0) suggests an incomplete implementation of the oracle, as the mathematical structure allows for a clear quantum advantage.",
+    "base_function_code": "def g(x, N, secret):\n    # Calculates the sum of (x_k * secret_k * x_{k+1}) modulo 2.\n    # secret_k acts as a coefficient for the product x_k * x_{k+1}\n    # where x_k is the k-th bit of x.\n    # The indices are cyclic, so x_{N} is x_0.\n    result = 0\n    for k in range(N):\n        x_k = (x >> k) & 1\n        secret_k = (secret >> k) & 1\n        x_k_plus_1 = (x >> ((k + 1) % N)) & 1\n        term = x_k * secret_k * x_k_plus_1\n        result = (result + term) % 2\n    return result",
+    "oracle_generator_code": "def make_oracle(secret, N):\n    # Defines the oracle function f(x) for a given secret and N.\n    def f(x):\n        result = 0\n        for k in range(N):\n            x_k = (x >> k) & 1\n            secret_k = (secret >> k) & 1\n            x_k_plus_1 = (x >> ((k + 1) % N)) & 1\n            term = x_k * secret_k * x_k_plus_1\n            result = (result + term) % 2\n        return result\n    return f"
+  },
+  {
     "problem_name": "Hidden Quadratic Bit-Product Parity",
     "description": "The problem involves finding three secret indices `s1, s2, s3` (ranging from 0 to N-1) that define a quadratic boolean function `f(x) = (x_s1 * x_s2 + x_s3) % 2`, where `x_i` is the i-th bit of the N-bit input `x`. The goal is to discover these three secret indices.",
     "completed_at": "2026-06-15T16:49:20.231296Z",
