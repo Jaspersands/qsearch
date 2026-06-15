@@ -1,10 +1,10 @@
 {
   "status": "searching",
-  "last_updated": "2026-06-15T17:04:31.272010Z",
+  "last_updated": "2026-06-15T17:10:00.620752Z",
   "current_run": {
-    "problem_name": "Quantum Algorithm Proposal",
-    "description": "Querying Theorist for a new quantum problem...",
-    "stage": "theorist",
-    "started_at": "2026-06-15T17:04:31.272034Z"
+    "problem_name": "Secret Cyclic Quadratic Parity",
+    "description": "Given an N-qubit oracle f(x), find the N-bit secret s. The oracle computes f(x) = popcount( (x & (x ROR 1)) ^ (x & s) ) % 2, where x ROR 1 is a cyclic right shift of x by 1 bit, and popcount is the Hamming weight. The function combines a fixed quadratic term (cyclic adjacent bit product parity) with a secret-dependent linear term (Bernstein-Vazirani-like). The goal is to determine the secret s with minimal queries.",
+    "stage": "simulating",
+    "started_at": "2026-06-15T17:10:00.620781Z"
   }
 }
