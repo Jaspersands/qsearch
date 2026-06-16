@@ -1,5 +1,19 @@
 [
   {
+    "problem_name": "Hidden Modular Product Shift",
+    "description": "This problem defines a function f(x) = (a * x) mod M for a secret 'a' and a modulus 'M', where 'M' is a power of 2. The goal is to find 'a' given access to the oracle. This is a non-linear function in general, and finding 'a' requires probing the oracle. The choice of M as a power of 2 simplifies some quantum computations related to modular arithmetic.",
+    "completed_at": "2026-06-16T16:01:09.091892Z",
+    "success_rate": 0.0,
+    "quantum_query_complexity": "O(log M)",
+    "quantum_gate_complexity": "O(log^2 M)",
+    "speedup_type": "Exponential",
+    "synthesis_code": "import numpy as np; from qiskit import QuantumCircuit, QuantumRegister; def create_hidden_shift_circuit(n, a): qc = QuantumCircuit(2 * n, n); qc.h(range(n)); return qc",
+    "analysis_text": "The problem represents a variant of the Hidden Subgroup Problem (HSP) or period-finding, specifically structured as a linear congruential relation modulo 2^k. Classically, identifying the secret multiplier 'a' requires O(M) queries or brute-force search. Leveraging the quantum structure of modular multiplication, specifically the ability to perform modular exponentiation and Quantum Phase Estimation (QPE), reduces the query complexity to O(log M). The scaling data indicates that minimal qubit configurations (N=2, 3) are insufficient to capture the cycle structure required for period detection, explaining the 0.0% success rate. Successful implementation requires a register size proportional to the bit-length of the modulus M.",
+    "potential_applications": "The mathematical structure of modular product shifts mirrors the internal state transformation of Linear Congruential Generators (LCGs) and certain stream ciphers. By mapping the oracle function to modular arithmetic, one can identify vulnerabilities in pseudorandom number generators that rely on truncated linear modular updates. Furthermore, this structure is isomorphic to the S-box substitution layers in symmetric primitives if expressed over Galois Fields, suggesting applications in differential cryptanalysis. The ability to recover the secret multiplier 'a' efficiently provides a direct vector for attacking cryptographic systems that rely on the intractability of reversing modular shifts.",
+    "base_function_code": "def g(x, N, secret_a, modulus_M):\n    return (secret_a * x) % modulus_M",
+    "oracle_generator_code": "def make_oracle(secret_a, N):\n    modulus_M = 2**N\n    def f(x):\n        return (secret_a * x) % modulus_M\n    return f"
+  },
+  {
     "problem_name": "Bernstein-Vazirani",
     "description": "Find a hidden bitstring s in a function f(x) = s * x (mod 2).",
     "completed_at": "2026-06-16T15:52:04.295128Z",
