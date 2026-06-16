@@ -1,5 +1,19 @@
 [
   {
+    "problem_name": "Cyclic Majority XOR of Products",
+    "description": "Given an N-bit secret s, find s where the function f(x) outputs 1 if the cyclic majority of bitwise products of x with itself shifted by s is 1, and 0 otherwise. Specifically, f(x) = Majority( (x_i & x_{i+s \text{ mod } N}) for i=0 to N-1 ) where Majority returns 1 if more than N/2 bits are 1, and 0 otherwise.",
+    "completed_at": "2026-06-16T09:00:56.891363Z",
+    "success_rate": 0.0,
+    "quantum_query_complexity": "O(N^(1/2))",
+    "quantum_gate_complexity": "O(N log N)",
+    "speedup_type": "None",
+    "synthesis_code": "None",
+    "analysis_text": "The provided function f(x) represents a cyclic autocorrelation-based threshold function. For a given secret shift s, the operation is essentially computing the correlation of a bit-vector with its own rotation. Classically, this can be evaluated for a specific s in O(N) or O(N log N) time using Fast Fourier Transform techniques to compute the cyclic convolution. The quantum scaling provided shows zero success rate for small N, suggesting the circuit implementation lacks the required state preparation or amplitude amplification strategy to distinguish the secret s. Because the function is effectively a parity-check or threshold evaluation over cyclic shifts, it is not an unstructured search problem but rather a structured algebraic relation. Consequently, no quantum speedup is achieved over a classical sweep, as the problem reduces to verifying shifts which is classically efficient.",
+    "potential_applications": "The mathematical structure of cyclic majority XORs is highly relevant to symmetric cryptanalysis, particularly in the study of stream ciphers and linear/differential cryptanalysis of S-boxes. The function f(x) resembles the correlation immunity properties required for boolean functions used in pseudorandom number generators. Mapping these structures allows for testing the vulnerability of LFSR (Linear Feedback Shift Register) systems to correlation attacks. Furthermore, cyclic bitwise products appear in the design of error-correcting codes like cyclic codes, where the majority logic decoding is a well-known, albeit hardware-constrained, decoding method. The utility of this function lies in formal verification of cryptographic primitives and signal processing filters where threshold detection is needed in highly noisy environments.",
+    "base_function_code": "def g(x, N):\n    bits = [(x >> i) & 1 for i in range(N)]\n    products = []\n    for i in range(N):\n        shifted_i = (i + N) % N\n        products.append(bits[i] & bits[shifted_i])\n    return 1 if sum(products) > N / 2 else 0",
+    "oracle_generator_code": "def make_oracle(secret, N):\n    def oracle(x):\n        bits = [(x >> i) & 1 for i in range(N)]\n        products = []\n        for i in range(N):\n            shifted_i = (i + secret) % N\n            products.append(bits[i] & bits[shifted_i])\n        return 1 if sum(products) > N / 2 else 0\n    return oracle"
+  },
+  {
     "problem_name": "Hidden Cyclic Ternary Majority",
     "description": "This problem involves finding a secret ternary secret value 's' such that for a given N-bit input 'x', a function 'f(x)' returns 1 if the ternary majority of 'x' and 's' (where 's' is treated as a N-bit number with ternary digits conceptually) matches a secret threshold, and 0 otherwise. The ternary majority is computed by summing the ternary representations of 'x' and 's' digit by digit, then taking the majority of each resulting digit column. A quantum speedup is hypothesized for identifying 's' due to the non-linear and cyclic nature of the ternary majority operation.",
     "completed_at": "2026-06-16T08:51:26.979837Z",
