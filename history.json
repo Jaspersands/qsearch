@@ -1,5 +1,19 @@
 [
   {
+    "problem_name": "Hidden Cyclic Quadratic Bit Product",
+    "description": "This problem hides a secret integer s. The oracle computes f(x) = (x * (x <<< 1)) & s (mod 2^N), where <<< denotes cyclic left shift. The goal is to find s.",
+    "completed_at": "2026-06-16T07:11:56.684491Z",
+    "success_rate": 0.0,
+    "quantum_query_complexity": "O(sqrt(2^N))",
+    "quantum_gate_complexity": "O(N^2 * log(N))",
+    "speedup_type": "Quadratic Speedup",
+    "synthesis_code": "None",
+    "analysis_text": "The function f(x) involves a cyclic bitwise rotation and modular bitwise-AND operation, which introduces non-linear interaction between bits. Due to the modular structure and the masking by s, the problem can be modeled as a hidden shift problem over the cyclic group Z_2^N. Given the quadratic dependency on the secret integer s, the search space for s is effectively size 2^N. Using Grover's amplitude amplification, we achieve a quadratic speedup over the brute-force classical search of O(2^N). The circuit depth and gate count scale polynomially, driven primarily by the modular multiplication and bitwise rotation operations required to implement the oracle.",
+    "potential_applications": "The mathematical structure of f(x) = (x * (x <<< 1)) & s mimics the diffusion and non-linear layers found in symmetric block ciphers, specifically the S-box substitution layers in AES or similar SPN (Substitution-Permutation Network) structures. The use of bitwise cyclic shifts is analogous to the 'ShiftRows' operation. This function relates to cryptanalysis domains such as finding differential properties in ARX (Addition-Rotation-XOR) ciphers or identifying weaknesses in pseudorandom number generators that rely on non-linear feedback shift registers. If s represents a secret key, the ability to invert this function efficiently demonstrates a vulnerability to quantum search attacks against lightweight cryptographic primitives that rely on bit-manipulation complexity for their security.",
+    "base_function_code": "def g(x, N, s):\n    shifted_x = ((x << 1) | (x >> (N - 1))) & ((1 << N) - 1)\n    return (x * shifted_x) & s",
+    "oracle_generator_code": "def make_oracle(secret, N):\n    def f(x):\n        shifted_x = ((x << 1) | (x >> (N - 1))) & ((1 << N) - 1)\n        return (x * shifted_x) & secret\n    return f"
+  },
+  {
     "problem_name": "Modular Product Parity Check",
     "description": "Given an N-bit integer x, and a secret N-bit integer 's', this problem checks if the modular product of x and 's' (modulo 2^N) has an odd parity. The function f(x) returns 1 if the parity of (x * s) mod 2^N is odd, and 0 otherwise. This is a non-linear function of 's' due to the modular multiplication and parity check. This problem aims to find 's'.",
     "completed_at": "2026-06-16T07:07:26.552218Z",
