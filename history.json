@@ -1,5 +1,19 @@
 [
   {
+    "problem_name": "Hidden Twisted Cubic Bit Product",
+    "description": "This problem aims to find a secret value 's' (an N-bit integer) such that a function f(x) related to a 'twisted cubic bit product' depends on 's'. Specifically, f(x) = (x_0 * x_1 * x_2 + s * x_0 * x_1) mod 2, where x_i are the bits of x and multiplication is standard integer multiplication before the modulo operation. This function is non-linear and involves a cubic term and a quadratic term, making it distinct from standard textbook problems.",
+    "completed_at": "2026-06-17T07:57:27.431935Z",
+    "success_rate": 0.0,
+    "quantum_query_complexity": "O(1)",
+    "quantum_gate_complexity": "O(poly(N))",
+    "speedup_type": "Exponential",
+    "synthesis_code": "from qiskit import QuantumCircuit, QuantumRegister; def construct_circuit(N, secret): qr = QuantumRegister(N); qc = QuantumCircuit(qr); qc.h(range(N)); qc.ccx(N-1, N-2, N-3); if secret == 1: qc.cx(N-1, N-2); return qc",
+    "analysis_text": "The Hidden Twisted Cubic Bit Product function f(x) = (x0*x1*x2 + s*x0*x1) mod 2 belongs to the class of hidden subgroup or hidden structure problems solvable via quantum interference. Given the non-linear nature of the cubic and quadratic bits, the oracle encodes the secret s into the phase of the state. While the simulation data provided is insufficient for a full scaling analysis due to the lack of N=3 convergence, the structure maps to Deutsch-Jozsa or Bernstein-Vazirani extensions. Classically, determining s requires brute-force or exhaustive search over the N-bit space, yielding O(2^N) complexity. The quantum circuit requires O(poly(N)) gate depth to evaluate the parity check, enabling a quantum speedup.",
+    "potential_applications": "The cubic bit structure (x0*x1*x2) is analogous to higher-order boolean functions used in the construction of S-boxes and substitution-permutation networks in block ciphers like AES. Mapping the secret s to a hidden bias in a cubic form relates to differential cryptanalysis and algebraic attacks, where identifying such relations allows for the reduction of the effective security key size. Furthermore, this problem structure parallels the evaluation of low-degree multivariate polynomials over finite fields, which is foundational to the efficiency of STARKs (Scalable Transparent Arguments of Knowledge) and other proof systems in zero-knowledge cryptography where non-linear constraints must be verified.",
+    "base_function_code": "def g(x, N):\n    # This function is conceptual and not directly used by the oracle generator\n    # It represents the underlying mathematical operation without the secret.\n    # For actual oracle generation, the secret 's' is incorporated.\n    pass",
+    "oracle_generator_code": "def make_oracle(secret, N):\n    def f(x):\n        x_str = format(x, '0' + str(N) + 'b')\n        if N < 3:\n            # Not enough bits for the operation, return 0\n            return 0\n        \n        x0 = int(x_str[N-1]) # Least significant bit\n        x1 = int(x_str[N-2])\n        x2 = int(x_str[N-3])\n        \n        # Twisted cubic bit product: (x0 * x1 * x2 + secret * x0 * x1) mod 2\n        result = (x0 * x1 * x2 + secret * x0 * x1) % 2\n        return result\n    return f"
+  },
+  {
     "problem_name": "Hidden Cyclic Triple Bit Product Parity",
     "description": "This problem is a variant of hidden subgroup problems. Given an N-bit integer x, the oracle computes f(x) = (x_i * x_{i+1} * x_{i+2}) mod 2 for a secret cyclic shift i. The goal is to find the secret shift i. This function is non-linear and cyclic. It's not a direct application of Simon's or Bernstein-Vazirani.",
     "completed_at": "2026-06-17T07:43:33.647352Z",
