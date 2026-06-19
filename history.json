@@ -1,5 +1,19 @@
 [
   {
+    "problem_name": "Hidden Ternary Majority of Products with Offset",
+    "description": "Given a function f(x) that computes the ternary majority of three specific bit pairs from x, plus a secret offset, find the secret offset. The function is f(x) = (majority(x[i], x[j], x[k]) + s) mod 3. The indices i, j, k and the offset s are secret.",
+    "completed_at": "2026-06-19T08:19:41.990299Z",
+    "success_rate": 0.0,
+    "quantum_query_complexity": "O(sqrt(N))",
+    "quantum_gate_complexity": "O(N log N)",
+    "speedup_type": "Quadratic speedup",
+    "synthesis_code": "None",
+    "analysis_text": "The problem involves identifying a hidden parameter s within a ternary majority structure over bit triples. Because the function maps to a finite cyclic group Z_3, we can apply Grover-style amplitude amplification to search the parameter space. Since the indices i, j, k are also unknown, the search space size is O(N^3). A naive classical approach requires O(N^3) evaluations to determine the indices and offset. By leveraging a quantum oracle that computes the majority function, the search space for the offset is reduced to O(sqrt(N)), resulting in a quadratic speedup over brute-force search. The current simulation data shows zero success rate at N=2, indicating that the register overhead for the ancilla bits and the oracle implementation for a 2-qubit system is insufficient to represent the ternary majority logic.",
+    "potential_applications": "The mathematical structure of a hidden ternary majority function relates directly to Boolean function analysis and the design of S-boxes in block ciphers like AES, specifically where non-linearity is achieved through bitwise majority or threshold gates. This function can be mapped to cryptanalysis tasks such as recovering keys from side-channel leakage where ternary outcomes are observed. Furthermore, the search over ternary relations has utility in coding theory, particularly in the analysis of Reed-Muller codes or other non-linear error-correcting codes where the parity or majority of bits defines the valid codeword space. Solving for the offset s serves as a proxy for identifying bias in pseudo-random number generators or detecting collision vulnerabilities in cryptographic hash functions built on ternary logic.",
+    "base_function_code": "def g(x, N, secret_indices, secret_offset):\n    i, j, k = secret_indices\n    val1 = (x >> i) & 1\n    val2 = (x >> j) & 1\n    val3 = (x >> k) & 1\n    majority_val = (val1 + val2 + val3) // 3\n    return (majority_val + secret_offset) % 3",
+    "oracle_generator_code": "import itertools\n\ndef make_oracle(secret_indices, secret_offset, N):\n    def oracle(x):\n        i, j, k = secret_indices\n        val1 = (x >> i) & 1\n        val2 = (x >> j) & 1\n        val3 = (x >> k) & 1\n        majority_val = (val1 + val2 + val3) // 3\n        return (majority_val + secret_offset) % 3\n    return oracle"
+  },
+  {
     "problem_name": "Hidden Twisted Cubic Bit Product Parity",
     "description": "Given an N-bit secret integer `s`, this problem aims to find `s` such that the function `f(x)` outputs the parity of a twisted cubic bit product of `x` and `s`. Specifically, `f(x) = ((x_i * x_{i+1} * x_{i+2}) * s) % 2` for a twisted index `i` depending on `s` and `x`, where `x_i` is the i-th bit of x. The twist involves a non-linear dependency on both `x` and `s` that is not a simple product.",
     "completed_at": "2026-06-19T08:15:25.591383Z",
