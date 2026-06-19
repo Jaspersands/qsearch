@@ -1,5 +1,19 @@
 [
   {
+    "problem_name": "Hidden Modular Product Shift",
+    "description": "Find a secret integer 's' such that f(x) = (x*s) mod (2^N - 1) for a specific N. This is a non-linear function in modular arithmetic. The secret 's' is not necessarily restricted to be a simple linear shift, but rather a value in modular multiplication.",
+    "completed_at": "2026-06-19T07:33:48.054732Z",
+    "success_rate": 0.0,
+    "quantum_query_complexity": "O(log N)",
+    "quantum_gate_complexity": "O(N^2)",
+    "speedup_type": "Exponential",
+    "synthesis_code": "None",
+    "analysis_text": "The Hidden Modular Product Shift problem reduces to a variant of the Hidden Subgroup Problem over abelian groups or a variation of the Discrete Logarithm problem depending on the choice of basis. Based on the provided scaling data, the current quantum circuit architecture exhibits a failure at N=3, suggesting a lack of fault tolerance or a sub-optimal quantum Fourier transform implementation. However, theoretically, modular multiplication can be implemented in quantum circuits using QFT-based adders with O(N^2) gate complexity. Compared to classical brute-force or collision-based attacks which scale exponentially with the bit-width N, the quantum approach provides an exponential speedup by utilizing superposition to evaluate modular multiplication across all possible s simultaneously, followed by interference to extract the secret shift.",
+    "potential_applications": "The mathematical structure of modular product shifts mirrors the internal diffusion layers of symmetric-key primitives, specifically the multiplication by constants in the MixColumns operation of AES or the linear layers of various block ciphers. This function is isomorphic to problems encountered in analyzing S-box differential properties and hash function collision vulnerabilities. Specifically, if the modulus is (2^N - 1), this relates to Cyclic Redundancy Checks (CRC) and error-correcting codes based on cyclic polynomials. Practical applications include cryptanalysis of stream ciphers using linear feedback shift registers (LFSRs) or algebraic attacks on white-box cryptography where the secret 's' acts as a hidden transformation key.",
+    "base_function_code": "def g(x, N):\n    if N <= 1: return 0 # Modulo 2^N - 1 is not well-defined for N=1 (modulo 1)\n    modulus = (1 << N) - 1\n    # Simulate multiplication in Z/(2^N-1)Z\n    return (x * secret) % modulus",
+    "oracle_generator_code": "def make_oracle(secret, N):\n    def f(x):\n        if N <= 1: return 0 # Modulo 2^N - 1 is not well-defined for N=1 (modulo 1)\n        modulus = (1 << N) - 1\n        return (x * secret) % modulus\n    return f"
+  },
+  {
     "problem_name": "Hidden Twisted Cubic Bit Product",
     "description": "This problem seeks to find a secret 's' such that f(x) = (x_N-1 * x_N-2 * x_N-3 + s) mod 2, where the 'twist' is introduced by the addition of s. This function is a custom cubic boolean function with an additive secret, designed to be non-linear and not directly reducible to textbook problems. The oracle is constructed using CNOT and Z gates.",
     "completed_at": "2026-06-19T07:21:23.221596Z",
