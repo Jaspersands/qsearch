@@ -1,5 +1,19 @@
 [
   {
+    "problem_name": "Hidden Cyclic AND-OR Majority",
+    "description": "This problem defines a function f(x) where the output is determined by a cyclic majority vote of AND and OR operations on pairs of bits, combined with a cyclic AND of the original bits. The secret is a cyclic shift 's'. The function is f(x) = (AND_OR_Majority(x, s)) XOR (Cyclic_AND(x, s)). The task is to find 's'.",
+    "completed_at": "2026-06-20T07:35:14.925564Z",
+    "success_rate": 0.0,
+    "quantum_query_complexity": "O(sqrt(N))",
+    "quantum_gate_complexity": "O(N log N)",
+    "speedup_type": "None",
+    "synthesis_code": "None",
+    "analysis_text": "The provided data indicates a failure to achieve success at low qubit counts (N=2, 3), suggesting the circuit implementation lacks the necessary auxiliary qubit management or that the oracle definition is ill-posed for small register sizes. Given the nature of Hidden Cyclic Shift problems, the optimal quantum approach typically employs Grover-based amplitude amplification on the shift space. However, since the classical search space is linear O(N) relative to the cyclic shift, the Grover-based O(sqrt(N)) query complexity offers only a modest theoretical speedup that is often negated by the overhead of the quantum oracle construction, resulting in no practical quantum advantage for this specific function.",
+    "potential_applications": "The Hidden Cyclic AND-OR Majority function maps to Boolean function analysis, specifically related to the study of algebraic immunity in symmetric ciphers. The combination of majority gates and cyclic shifts mimics the round functions of light-weight stream ciphers. This problem structure is applicable to the field of Boolean circuit cryptanalysis, particularly in identifying differential properties of S-boxes where cyclic permutations are used to provide diffusion. It also relates to the study of parity-check equations in error-correcting codes, where the cyclic shift determines the generator matrix structure, making this relevant for evaluating the security of circulant-based cryptographic primitives.",
+    "base_function_code": "def g(x, N):\n    s = x & ((1 << N) - 1) # Treat x as the secret shift s\n    return s",
+    "oracle_generator_code": "import math\ndef make_oracle(secret, N):\n    def f(x):\n        s = secret\n        val_x = x\n        \n        # Part 1: Cyclic AND-OR Majority\n        and_or_sum = 0\n        for i in range(N):\n            bit1 = (val_x >> i) & 1\n            bit2 = (val_x >> ((i + 1) % N)) & 1\n            and_val = bit1 & bit2\n            or_val = bit1 | bit2\n            and_or_sum += (and_val + or_val) # Sum of AND and OR results for the pair\n        \n        # Majority threshold: if sum > N, it's 1, else 0. Equivalent to > N/2 * 2\n        and_or_majority = 1 if and_or_sum > N else 0\n\n        # Part 2: Cyclic AND of original bits (shifted by s)\n        cyclic_and_val = 1\n        for i in range(N):\n            bit_i = (val_x >> ((i + s) % N)) & 1\n            cyclic_and_val &= bit_i\n        \n        # Combine the two parts with XOR\n        return and_or_majority ^ cyclic_and_val\n    return f"
+  },
+  {
     "problem_name": "Hidden XOR Product of Adjacent Pairs",
     "description": "Given an N-bit secret integer s, find s such that the function f(x) = (x & (x >> 1)) ^ s outputs 1 if the XOR sum of the products of adjacent bits of x is equal to a secret value, and 0 otherwise. Specifically, we are looking for a secret 's' such that f(x) = ((x_0 * x_1) ^ (x_1 * x_2) ^ ... ^ (x_{N-2} * x_{N-1})) == s. Note: bitwise operations are performed on the binary representation of x.",
     "completed_at": "2026-06-20T07:14:57.760290Z",
