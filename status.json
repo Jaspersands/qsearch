@@ -1,10 +1,10 @@
 {
   "status": "searching",
-  "last_updated": "2026-06-22T07:49:25.551072Z",
+  "last_updated": "2026-06-22T07:50:31.608052Z",
   "current_run": {
-    "problem_name": "Quantum Algorithm Proposal",
-    "description": "Querying Theorist for a new quantum problem...",
-    "stage": "theorist",
-    "started_at": "2026-06-22T07:49:25.551094Z"
+    "problem_name": "Hidden Cyclic Majority of Pairwise Products",
+    "description": "This problem searches for a secret configuration of bits that determines the output of a function based on the cyclic majority of pairwise products of bits in a shifted input. Specifically, for an N-bit input x, we compute the pairwise products of adjacent bits (x_i * x_{i+1}) cyclically, then find the majority of these products. The secret determines if this majority matches a certain target value. This involves non-linear operations (products) and cyclic shifts, making it distinct from linear problems.",
+    "stage": "simulating",
+    "started_at": "2026-06-22T07:50:31.608078Z"
   }
 }
