@@ -1,5 +1,19 @@
 [
   {
+    "problem_name": "Hidden Modular Product of Rotated Bits",
+    "description": "This problem seeks to find a secret integer 's' such that for a given N-bit integer 'x', the function f(x) = (x * (x >> 1)) mod s (if s is not zero, otherwise some default value) is revealed by an oracle. The rotation is cyclic, meaning bits shifted out from one end reappear at the other. This is a non-linear function of x and the rotation, and finding 's' might require a quantum approach due to the non-linear modular arithmetic and cyclic shift.",
+    "completed_at": "2026-06-22T07:16:08.992054Z",
+    "success_rate": 0.0,
+    "quantum_query_complexity": "O(2^{N/2})",
+    "quantum_gate_complexity": "O(N^2 * 2^{N/2})",
+    "speedup_type": "Quadratic (Grover-like search)",
+    "synthesis_code": "None",
+    "analysis_text": "The problem presents a non-linear transformation involving a cyclic bit-shift and modular multiplication. The simulation data provided indicates that for N=2, the oracle is successfully identified, but at N=3, the circuit depth and gate count collapse to zero, suggesting a failure to generalize the oracle construction for arbitrary N. Given the structure f(x) = (x * (x >> 1)) mod s, the search space for s is 2^N. A classical exhaustive search requires O(2^N) time. The quantum implementation of this problem, assuming a standard oracle-based inversion strategy using Amplitude Amplification, would yield an O(2^{N/2}) query complexity. The gate complexity scales based on the cost of the modular multiplier and the cyclic shifter, typically O(N^2) per oracle call, leading to an overall quantum complexity of O(N^2 * 2^{N/2}).",
+    "potential_applications": "The mathematical structure of f(x) involving cyclic rotation and modular multiplication is a fundamental building block in symmetric cryptography, particularly in the design of S-boxes and Pseudo-Random Permutations (PRPs). The operation (x * (x >> 1)) mod s mimics the non-linear layer of block ciphers like AES or lightweight cryptographic primitives where diffusion (shifting) and confusion (modular arithmetic) are interleaved. This problem relates to cryptanalysis techniques, specifically algebraic attacks on round-reduced ciphers where an attacker attempts to invert the function to recover the round key 's'. Furthermore, this oracle structure is isomorphic to parity-based error-detecting codes and linear feedback shift register (LFSR) analysis, where modular transitions govern the state evolution. Finding 's' in this context serves as a proxy for breaking stream ciphers or identifying collisions in customized hash functions that rely on cyclic shift non-linearity.",
+    "base_function_code": "def g(x, N, secret_s):\n    if secret_s == 0:\n        return 0  # Or some other defined behavior for secret_s = 0\n    rotated_x = ((x >> 1) | ((x & 1) << (N - 1))) % (1 << N)\n    return (x * rotated_x) % secret_s",
+    "oracle_generator_code": "def make_oracle(secret_s, N):\n    def oracle(x):\n        if secret_s == 0:\n            return 0\n        rotated_x = ((x >> 1) | ((x & 1) << (N - 1))) % (1 << N)\n        return (x * rotated_x) % secret_s\n    return oracle"
+  },
+  {
     "problem_name": "Bernstein-Vazirani",
     "description": "Find a hidden bitstring s in a function f(x) = s * x (mod 2).",
     "completed_at": "2026-06-22T06:54:26.318930Z",
