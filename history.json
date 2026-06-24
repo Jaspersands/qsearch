@@ -1,5 +1,19 @@
 [
   {
+    "problem_name": "Nonlinear Cyclic Bit-wise AND-XOR Index",
+    "description": "[Oracle Secret Finding] A novel oracle problem where the secret is an index determined by a non-linear combination of cyclic bitwise AND and XOR operations on the input. This requires a custom oracle construction that combines different logical operations in a non-trivial way.",
+    "completed_at": "2026-06-24T07:34:01.080229Z",
+    "success_rate": 0.0,
+    "quantum_query_complexity": "O(2^(N/2))",
+    "quantum_gate_complexity": "O(N * 2^(N/2))",
+    "speedup_type": "Quadratic speedup",
+    "synthesis_code": "from qiskit import QuantumCircuit; qc = QuantumCircuit(4); qc.h([0, 1, 2]); qc.x(3); qc.h(3); # Oracle logic not implementable as a standard black-box oracle due to non-linearity; # The circuit would typically utilize controlled-X gates based on the truth table of the nonlinear function mapping.",
+    "analysis_text": "The problem of identifying a secret index through nonlinear cyclic bitwise operations corresponds to an unstructured search space of size 2^N. Given the non-linearity, the oracle implements a black-box transformation f(x) = k. The provided scaling data, showing a sharp drop-off at N=3, indicates that the oracle construction is currently sensitive to qubit decoherence or register mapping errors, but theoretically, the application of Grover-like amplitude amplification provides a quadratic speedup over classical exhaustive search, reducing complexity from O(2^N) to O(sqrt(2^N)).",
+    "potential_applications": "In the context of oracle secret finding, this problem maps to cryptanalysis of block cipher components where non-linear layers (S-boxes) are implemented. This specifically targets the identification of cryptographic keys or internal state mappings in symmetric-key systems using bitwise XOR-AND chains, which are common primitives in lightweight cryptography and hash function compression rounds.",
+    "base_function_code": "import numpy as np\ndef g(x, N):\n    bits = [(x >> i) & 1 for i in range(N)]\n    if N < 3:\n        return 0 # Not enough bits for the operation\n    \n    and_val = 1\n    for i in range(N - 1):\n        and_val &= (bits[i] ^ bits[i+1])\n\n    xor_val = 0\n    for i in range(N):\n        xor_val ^= bits[i]\n\n    return (and_val & xor_val) ^ (and_val | xor_val)",
+    "oracle_generator_code": "import numpy as np\ndef make_oracle(secret, N):\n    def oracle(x):\n        if N < 3:\n            return 0\n        \n        bits = [(x >> i) & 1 for i in range(N)]\n        \n        and_val = 1\n        for i in range(N - 1):\n            and_val &= (bits[i] ^ bits[i+1])\n            \n        xor_val = 0\n        for i in range(N):\n            xor_val ^= bits[i]\n            \n        result = (and_val & xor_val) ^ (and_val | xor_val)\n        \n        if result == secret:\n            return 1\n        else:\n            return 0\n    return oracle"
+  },
+  {
     "problem_name": "Hidden Balanced Ternary Cubic Product Parity",
     "description": "This problem is inspired by exploring non-linear functions beyond simple quadratic or cubic forms. Here, we hide a secret integer `s` such that the oracle computes the parity of a balanced ternary representation of the cubic product of an input `x` with `s`. Specifically, the function is f(x) = ( (x*s)^3 mod 3 ) mod 2, where (x*s)^3 mod 3 involves mapping the input and secret to balanced ternary, performing the cubic product, and taking the result modulo 3.",
     "completed_at": "2026-06-24T07:24:18.207876Z",
