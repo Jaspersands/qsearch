@@ -1,5 +1,19 @@
 [
   {
+    "problem_name": "Nonlinear_Cubic_Secret_Oracle",
+    "description": "[Oracle Secret Finding] Find a secret integer x_s in {0, ..., 2^N-1} by querying an oracle that computes f(x) = (x^3 mod 2^N) == x_s, where x_s is unknown. This is a non-linear oracle finding problem.",
+    "completed_at": "2026-06-25T05:13:59.669043Z",
+    "success_rate": 0.0,
+    "quantum_query_complexity": "O(2^{N/2})",
+    "quantum_gate_complexity": "O(2^{N/2} * poly(N))",
+    "speedup_type": "Quadratic speedup",
+    "synthesis_code": "from qiskit import QuantumCircuit; qc = QuantumCircuit(3); qc.h(range(3)); qc.barrier(); # Oracle for x^3 mod 8 == secret goes here; qc.barrier(); qc.h(range(3)); qc.measure_all()",
+    "analysis_text": "The provided oracle f(x) = x^3 mod 2^N is a non-linear function that behaves as a random permutation or function over the domain. Finding a specific preimage x such that f(x) = x_s requires brute-force search in the classical domain. Quantumly, the problem maps to Grover's search algorithm. Given the success rate of 0.0 at N=2, 3, it is evident that the implementation is currently missing the requisite quantum state construction or amplitude amplification routine. The complexity grows quadratically compared to classical exhaustive search, scaling with O(2^{N/2}) queries.",
+    "potential_applications": "This oracle represents an abstract structure analogous to symmetric cryptanalysis, specifically the inversion of non-linear substitution boxes (S-boxes) in block ciphers or finding collisions in weak hash functions. It is a benchmark for evaluating quantum resistance against functional inversion attacks.",
+    "base_function_code": "import numpy as np\ndef g(x, N):\n    return (x**3) % (2**N)",
+    "oracle_generator_code": "import numpy as np\ndef make_oracle(secret, N):\n    def f(x):\n        return 1 if (x**3) % (2**N) == secret else 0\n    return f"
+  },
+  {
     "problem_name": "Nonlinear_Modulo_Secret_Oracle",
     "description": "[Oracle Secret Finding] Find a secret integer k within a range [0, 2^N-1] by querying a non-linear oracle that computes (x + k)^2 mod 2^N. This is a novel variation of secret finding problems, introducing a quadratic non-linearity.",
     "completed_at": "2026-06-25T04:52:54.538317Z",
