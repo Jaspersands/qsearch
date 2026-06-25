@@ -1,5 +1,19 @@
 [
   {
+    "problem_name": "Cyclic_Shift_Secret_Oracle",
+    "description": "[Oracle Secret Finding] A problem to find a secret integer N-bit using a non-linear oracle based on cyclic shifts. The oracle function f(x) will be 1 if x is a cyclic shift of the secret s, and 0 otherwise. This tests the ability to synthesize oracles for non-linear relations beyond simple XOR or product.",
+    "completed_at": "2026-06-25T07:26:50.603353Z",
+    "success_rate": 0.0,
+    "quantum_query_complexity": "O(sqrt(2^N/N))",
+    "quantum_gate_complexity": "O(poly(N))",
+    "speedup_type": "Quadratic speedup (Grover-like)",
+    "synthesis_code": "from qiskit import QuantumCircuit; qc = QuantumCircuit(3); qc.h([0, 1, 2]); # Placeholder for oracle logic; qc.barrier(); qc.h([0, 1, 2]); qc.measure_all()",
+    "analysis_text": "The Cyclic Shift Secret Oracle defines a search space over the orbit of a secret bitstring s under cyclic shifts. Since there are N distinct shifts for a given string (in the general case), the effective search space is 2^N/N. The quantum approach utilizes amplitude amplification to search for the specific shift state, offering a quadratic speedup over the optimal classical brute-force search. The provided scaling data indicates the oracle implementation is currently undefined or non-functional for low qubit counts, implying the synthesis overhead must be carefully managed to maintain the theoretical O(poly(N)) gate complexity.",
+    "potential_applications": "This oracle corresponds to symmetric cryptanalysis where a key or secret is hidden within a rotational symmetry class, effectively reducing the effective key space. It also maps to searching for patterns in cyclic data structures, relevant to hash function collision resistance analysis and identifying cryptographic primitives that exhibit cyclic vulnerabilities.",
+    "base_function_code": "import numpy as np\ndef g(x, N):\n    return (x << 1 | x >> (N - 1)) & ((1 << N) - 1)",
+    "oracle_generator_code": "import numpy as np\ndef make_oracle(secret, N):\n    def f(x):\n        mask = (1 << N) - 1\n        shifted_x = (x << 1 | x >> (N - 1)) & mask\n        if shifted_x == secret:\n            return 1\n        else:\n            return 0\n    return f"
+  },
+  {
     "problem_name": "Bernstein-Vazirani",
     "description": "[Oracle Secret Finding] Find a hidden bitstring s in a function f(x) = s * x (mod 2).",
     "completed_at": "2026-06-25T07:00:26.856995Z",
