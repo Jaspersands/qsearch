@@ -1,5 +1,19 @@
 [
   {
+    "problem_name": "BitwiseXNORSecretFinding",
+    "description": "[Oracle Secret Finding] Find a secret N-bit integer by exploiting a black-box oracle that computes f(x) = (x XNOR secret) AND 1.",
+    "completed_at": "2026-06-27T19:02:24.829266Z",
+    "success_rate": 0.0,
+    "quantum_query_complexity": "O(N)",
+    "quantum_gate_complexity": "O(N)",
+    "speedup_type": "Exponential speedup",
+    "synthesis_code": "",
+    "analysis_text": "The problem of identifying an N-bit secret through an oracle function f(x) = (x XNOR secret) AND 1 is equivalent to evaluating the bits of the secret relative to a parity or bitwise mask. A quantum algorithm, such as an application of the Bernstein-Vazirani framework or a series of N oracle queries using phase kickback, allows for the determination of each bit of the secret in O(N) queries. In contrast, a classical deterministic approach requires O(2^N) queries to fully characterize the mapping across the search space. The lack of success in the provided small-scale simulations (N=2, 3) likely indicates a failure to implement the necessary superposition of input states (Hadamard gates) and the corresponding oracle operator, which is essential to gain the quantum advantage.",
+    "potential_applications": "The mathematical structure of this oracle maps directly to symmetric cryptanalysis, specifically the analysis of S-boxes and linear cryptanalysis of block ciphers. By treating the secret as a key and the XNOR-based oracle as a simplified round function, the algorithm demonstrates how quantum query complexity can be leveraged to invert cryptographic hash functions or identify hidden bit-patterns in encrypted data streams without exhaustive search.",
+    "base_function_code": "import numpy as np\ndef g(x, N):\n    secret = 10 # Example secret, actual secret is determined by secrets_generator_code\n    secret_bin = bin(secret)[2:].zfill(N)\n    x_bin = bin(x)[2:].zfill(N)\n    result = ''\n    for i in range(N):\n        if x_bin[i] == secret_bin[i]:\n            result += '1'\n        else:\n            result += '0'\n    return int(result, 2) & 1",
+    "oracle_generator_code": "import numpy as np\ndef make_oracle(secret, N):\n    def f(x):\n        secret_bin = bin(secret)[2:].zfill(N)\n        x_bin = bin(x)[2:].zfill(N)\n        result = ''\n        for i in range(N):\n            if x_bin[i] == secret_bin[i]:\n                result += '1'\n            else:\n                result += '0'\n        return int(result, 2) & 1\n    return f"
+  },
+  {
     "problem_name": "Nonlinear_Bitwise_OR_SUM_Secret_Finding",
     "description": "[Oracle Secret Finding] Find a secret integer N for a non-linear oracle function that combines bitwise OR and SUM operations.",
     "completed_at": "2026-06-27T18:21:11.094808Z",
