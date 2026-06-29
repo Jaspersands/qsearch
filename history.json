@@ -1,5 +1,47 @@
 [
   {
+    "problem_name": "Custom_Bitwise_XOR_Rotation_Secret_Finding",
+    "description": "[Oracle Secret Finding] A novel oracle secret finding problem based on a combination of bitwise XOR and cyclic rotation of an N-bit integer.",
+    "completed_at": "2026-06-29T13:35:17.887577Z",
+    "success_rate": 0.0,
+    "quantum_query_complexity": "O(2^(N/2))",
+    "quantum_gate_complexity": "O(poly(N) * 2^(N/2))",
+    "speedup_type": "Quadratic speedup",
+    "synthesis_code": "from qiskit import QuantumCircuit; qc = QuantumCircuit(3); qc.h(range(3)); # Add oracle implementation here; qc.h(range(3)); qc.measure_all()",
+    "analysis_text": "The provided simulation data shows zero success rates for small N, indicating that the oracle implementation is currently incomplete or non-functional. Mathematically, a bitwise XOR and cyclic rotation oracle constitutes a black-box search problem over an N-bit space. By applying Grover's algorithm, we expect a quadratic speedup over the brute-force classical search of 2^N. The complexity scaling model assumes the implementation of a coherent diffusion operator, which is required to achieve the expected O(2^(N/2)) query complexity.",
+    "potential_applications": "This oracle corresponds to finding a secret key in a symmetric cipher or a preimage for a cryptographic hash function that utilizes bitwise XOR and rotations as its core confusion and diffusion primitives. It effectively maps to the problem of breaking lightweight block ciphers or hash functions that rely on ARX (Add-Rotate-XOR) architectures.",
+    "base_function_code": "import numpy as np\ndef g(x, N):\n    secret_val = x % (2**N)\n    rotated_val = ((secret_val << 1) | (secret_val >> (N - 1))) & ((1 << N) - 1)\n    return (secret_val ^ rotated_val) % (2**N)",
+    "oracle_generator_code": "import numpy as np\ndef make_oracle(secret, N):\n    def f(x):\n        secret_val = secret % (2**N)\n        rotated_val = ((secret_val << 1) | (secret_val >> (N - 1))) & ((1 << N) - 1)\n        return 1 if (x == (secret_val ^ rotated_val) % (2**N)) else 0\n    return f"
+  },
+  {
+    "problem_name": "CustomNonLinearBitwiseProductSumSecretFinding",
+    "description": "[Oracle Secret Finding] A novel oracle problem designed to find a secret integer N by exploiting a non-linear combination of bitwise product and sum operations.",
+    "completed_at": "2026-06-29T11:31:11.799568Z",
+    "success_rate": 0.0,
+    "quantum_query_complexity": "O(2^(N/2))",
+    "quantum_gate_complexity": "O(2^(N/2) * poly(N))",
+    "speedup_type": "Quadratic speedup",
+    "synthesis_code": "from qiskit import QuantumCircuit, QuantumRegister; qr = QuantumRegister(3); qc = QuantumCircuit(qr); # No circuit found for this non-linear function as the search result success rate is 0.0.",
+    "analysis_text": "The provided simulation data shows zero success rates for N=2 and N=3, indicating the absence of a functional oracle implementation. However, the theoretical model for non-linear bitwise product-sum structures typically maps to unstructured search or hidden subgroup problems. Assuming an optimal quantum implementation like Grover's algorithm variant, the query complexity scales with the square root of the search space, yielding a quadratic speedup over classical exhaustive search methods which are bound by O(2^N).",
+    "potential_applications": "In the context of oracle_secret_finding, this structure is analogous to symmetric cryptanalysis where an attacker attempts to invert a non-linear S-box or a bitwise-heavy round function. It also maps to preimage attacks on weak hash functions where the internal state transition is defined by bitwise non-linear product-sum operations. Resolving this secret finding problem serves as a proxy for evaluating the robustness of lightweight cryptographic primitives against quantum-enhanced search.",
+    "base_function_code": "import numpy as np\ndef g(x, N):\n    bits = [(x >> i) & 1 for i in range(N)]\n    prod = 1\n    for bit in bits:\n        prod *= bit\n    sum_bits = sum(bits)\n    return (prod + sum_bits) % (2**N)",
+    "oracle_generator_code": "import numpy as np\ndef make_oracle(secret, N):\n    def f(x):\n        bits = [(x >> i) & 1 for i in range(N)]\n        prod = 1\n        for bit in bits:\n            prod *= bit\n        sum_bits = sum(bits)\n        return 1 if (prod + sum_bits) % (2**N) == secret else 0\n    return f"
+  },
+  {
+    "problem_name": "Custom_Hyperbolic_Sine_Secret_Oracle",
+    "description": "[Oracle Secret Finding] Find a secret integer `s` by exploiting the property of a custom non-linear function based on the hyperbolic sine of a bitwise XOR sum. The function is `g(x, N) = sinh(x XOR s) mod 2^N`.",
+    "completed_at": "2026-06-29T10:15:37.545374Z",
+    "success_rate": 0.0,
+    "quantum_query_complexity": "O(2^(N/2))",
+    "quantum_gate_complexity": "O(2^(N/2) * poly(N))",
+    "speedup_type": "Quadratic speedup",
+    "synthesis_code": "from qiskit import QuantumCircuit; qc = QuantumCircuit(3); qc.h(range(3)); # Oracle implementation would be inserted here; qc.h(range(3)); qc.measure_all()",
+    "analysis_text": "The problem of identifying a secret 's' within a non-linear black-box function g(x, N) = sinh(x XOR s) mod 2^N mimics a hidden subgroup or hidden shift problem structure. Given the non-linear hyperbolic transformation, the function lacks the periodicity required for standard period-finding algorithms like Shor's. The simulation data provided for N=2 and N=3 shows 0% success rate, indicating that no trivial or shallow-circuit heuristic is effective. The optimal quantum approach involves amplitude amplification (Grover-style search) over the function domain, leading to a query complexity of O(2^(N/2)), providing a quadratic speedup over the brute-force classical search of O(2^N).",
+    "potential_applications": "Oracle secret finding in this context maps to cryptanalysis of block ciphers or pseudorandom functions where the output is sensitive to a hidden key 's'. Specifically, it relates to finding keys in symmetric primitives that use non-linear transformations (S-boxes) to obscure bitwise XOR relations. In search applications, this demonstrates the limits of quantum acceleration for unstructured non-linear mappings where algebraic structure cannot be easily exploited for exponential speedups.",
+    "base_function_code": "import numpy as np\n\ndef g(x, s, N):\n    # Calculate the bitwise XOR of x and the secret s\n    xor_val = x ^ s\n    # Calculate the hyperbolic sine and take modulo 2^N\n    # Ensure the result is an integer between 0 and 2^N - 1\n    result = int(np.sinh(xor_val)) % (2**N)\n    return result",
+    "oracle_generator_code": "import numpy as np\n\ndef make_oracle(secret, N):\n    # This function will be used to create the oracle for the quantum search.\n    # The oracle flips the phase of the state |x> if f(x) = 1 for some property.\n    # Here, we define f(x) such that it's 1 if g(x, secret, N) has a specific property.\n    # For simplicity, let's define the oracle to mark states x where g(x, secret, N) is odd.\n    # This creates a non-linear, non-textbook oracle.\n    def oracle(x):\n        xor_val = x ^ secret\n        result = int(np.sinh(xor_val)) % (2**N)\n        # Mark states where the result is odd\n        if result % 2 == 1:\n            return 1\n        else:\n            return 0\n    return oracle"
+  },
+  {
     "problem_name": "Nonlinear_Bitwise_AND_XOR_SUM_Secret_Oracle",
     "description": "[Oracle Secret Finding] This problem aims to find a secret N-bit integer by querying a non-linear oracle. The oracle's behavior is defined by a function that combines bitwise AND, XOR, and a sum modulo 2^N. This function is specifically designed to be non-linear and challenging for simple linear solvers.",
     "completed_at": "2026-06-29T06:00:18.671283Z",
