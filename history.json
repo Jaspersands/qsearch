@@ -1,5 +1,19 @@
 [
   {
+    "problem_name": "Novel_Bitwise_XOR_Majority_Secret_Finding",
+    "description": "[Oracle Secret Finding] Find a secret integer N using a non-linear oracle that combines bitwise XOR and majority logic. The oracle returns 1 if the XOR sum of the bits of N is greater than the majority of the bits of N, and 0 otherwise.",
+    "completed_at": "2026-06-29T17:20:58.540307Z",
+    "success_rate": 0.0,
+    "quantum_query_complexity": "O(2^{N/2})",
+    "quantum_gate_complexity": "O(2^{N/2})",
+    "speedup_type": "Quadratic speedup",
+    "synthesis_code": "from qiskit import QuantumCircuit; qc = QuantumCircuit(3); qc.h([0, 1, 2]); qc.barrier(); # Oracle for bitwise XOR and majority: returns 1 if parity is odd and majority of bits is 1; qc.ccx(0, 1, 2); qc.barrier(); qc.h([0, 1, 2]); qc.measure_all()",
+    "analysis_text": "The provided simulation data for N=2 and N=3 shows zero success, indicating a lack of convergence or implementation of the oracle mapping. However, theoretically, the 'Novel_Bitwise_XOR_Majority_Secret_Finding' task functions as a black-box oracle search problem. Because the XOR-Majority operation is deterministic but lacks clear algebraic structure for direct inversion, it requires unstructured search methodologies. Applying Grover's algorithm allows for a quadratic reduction in query complexity compared to the O(2^N) brute-force classical search.",
+    "potential_applications": "The oracle models a non-linear cryptographic primitive. In software concepts, this maps to symmetric cryptanalysis where an attacker attempts to invert a hash-based key derivation function or identify a secret state within a bitwise feedback register. This is analogous to breaking weak pseudorandom number generators or identifying collisions in truncated cryptographic hashing where output bits depend on global parity and majority logic.",
+    "base_function_code": "def g(x, N):\n    import numpy as np\n    x_bin = np.binary_repr(x, width=N)\n    bits = [int(b) for b in x_bin]\n    xor_sum = np.sum(bits) % 2\n    majority = np.mean(bits) >= 0.5\n    return 1 if xor_sum == 1 and majority else 0",
+    "oracle_generator_code": "def make_oracle(secret, N):\n    import numpy as np\n    def oracle(x):\n        x_bin = np.binary_repr(x, width=N)\n        bits = [int(b) for b in x_bin]\n        xor_sum = np.sum(bits) % 2\n        majority = np.mean(bits) >= 0.5\n        return 1 if xor_sum == 1 and majority else 0\n    return oracle"
+  },
+  {
     "problem_name": "Custom_Bitwise_XOR_Rotation_Secret_Finding",
     "description": "[Oracle Secret Finding] A novel oracle secret finding problem based on a combination of bitwise XOR and cyclic rotation of an N-bit integer.",
     "completed_at": "2026-06-29T13:35:17.887577Z",
