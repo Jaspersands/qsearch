@@ -1,0 +1,544 @@
+{
+  "claim_gate": {
+    "exact_holevo_copy_budget_attached": true,
+    "known_invalid_architectures_rejected": true,
+    "proof_gate_eligible_mechanism_exists": false,
+    "reason": "The only surviving architectures explicitly require unproved internal recoupling, transition/filter, and decoder capabilities; known shortcuts are rejected.",
+    "speedup_claim_allowed": false,
+    "undefined_circuit_boxes_promoted": false,
+    "undercharged_mechanism_promoted": false
+  },
+  "created_at": "2026-07-15T11:12:39.689789+00:00",
+  "evaluations": [
+    {
+      "additional_proof_obligations": [],
+      "decision": "rejected",
+      "full_source_family_coverage": true,
+      "holevo_copy_budget_obligation_attached": true,
+      "id": "MECH-QFT-WEAK-LABELS",
+      "interface_issues": [],
+      "known_no_go_violations": [
+        "Strong/weak Fourier sampling is already obstructed on GI-relevant symmetric HSP instances."
+      ],
+      "minimum_copy_budget_rule": "k >= ceil([log2|C|-h2(epsilon)-epsilon*log2(|C|-1)]/chi_1), with chi_1 from the exact involution character formula",
+      "missing_capabilities": [
+        "CAP-HIDDEN-INVOLUTION-OUTCOME-DECODER"
+      ],
+      "priority_score": 0,
+      "proof_gate_eligible": false,
+      "rationale": "Known no-go or typed-interface failure invalidates the architecture.",
+      "stages": [
+        "PREPARE_COSET_K",
+        "SN_QFT_K",
+        "WEAK_LABEL_MEASUREMENT",
+        "LABEL_DECODER",
+        "CLASSICAL_VERIFY"
+      ],
+      "title": "Registerwise QFT and weak label decoding",
+      "typed_interfaces_valid": true
+    },
+    {
+      "additional_proof_obligations": [],
+      "decision": "rejected",
+      "full_source_family_coverage": true,
+      "holevo_copy_budget_obligation_attached": true,
+      "id": "MECH-PROJECTOR-COUNT-DECODER",
+      "interface_issues": [],
+      "known_no_go_violations": [
+        "Multiplicity counting or label projection does not construct state-dependent recoupling amplitudes."
+      ],
+      "minimum_copy_budget_rule": "k >= ceil([log2|C|-h2(epsilon)-epsilon*log2(|C|-1)]/chi_1), with chi_1 from the exact involution character formula",
+      "missing_capabilities": [
+        "CAP-HIDDEN-INVOLUTION-OUTCOME-DECODER"
+      ],
+      "priority_score": 0,
+      "proof_gate_eligible": false,
+      "rationale": "Known no-go or typed-interface failure invalidates the architecture.",
+      "stages": [
+        "PREPARE_COSET_K",
+        "SN_QFT_K",
+        "PROJECTOR_MULTIPLICITY_STATS",
+        "STATISTICS_DECODER",
+        "CLASSICAL_VERIFY"
+      ],
+      "title": "Kronecker projector statistics as a decoder",
+      "typed_interfaces_valid": true
+    },
+    {
+      "additional_proof_obligations": [],
+      "decision": "rejected",
+      "full_source_family_coverage": true,
+      "holevo_copy_budget_obligation_attached": true,
+      "id": "MECH-PAIR-TREE-RANK-PGM",
+      "interface_issues": [],
+      "known_no_go_violations": [
+        "The two-copy rank-only mixed-state PGM formula is false on S_3.",
+        "At k=3, overlapping pair class sums satisfy an all-n nonzero commutator and do not share one tree basis."
+      ],
+      "minimum_copy_budget_rule": "k >= ceil([log2|C|-h2(epsilon)-epsilon*log2(|C|-1)]/chi_1), with chi_1 from the exact involution character formula",
+      "missing_capabilities": [
+        "CAP-HIDDEN-INVOLUTION-OUTCOME-DECODER",
+        "CAP-INTERNAL-SN-KRONECKER-TRANSFORM"
+      ],
+      "priority_score": 0,
+      "proof_gate_eligible": false,
+      "rationale": "Known no-go or typed-interface failure invalidates the architecture.",
+      "stages": [
+        "PREPARE_COSET_K",
+        "SN_QFT_K",
+        "INTERNAL_KRONECKER_TRANSFORM",
+        "SINGLE_TREE_RECOUPLING",
+        "TREE_SPECTRUM_FILTER",
+        "OUTCOME_DECODER",
+        "CLASSICAL_VERIFY"
+      ],
+      "title": "Recursive pairwise Kronecker tree with spectrum-rank PGM",
+      "typed_interfaces_valid": true
+    },
+    {
+      "additional_proof_obligations": [
+        "Supply a model-preserving natural-problem reduction if any restricted family is retained."
+      ],
+      "decision": "rejected",
+      "full_source_family_coverage": false,
+      "holevo_copy_budget_obligation_attached": true,
+      "id": "MECH-RESTRICTED-COMMUTING-CLASS",
+      "interface_issues": [],
+      "known_no_go_violations": [
+        "Exceptional commuting classes do not cover the full natural reduction family.",
+        "Many restricted multiplicity instances have polynomial classical algorithms."
+      ],
+      "minimum_copy_budget_rule": "k >= ceil([log2|C|-h2(epsilon)-epsilon*log2(|C|-1)]/chi_1), with chi_1 from the exact involution character formula",
+      "missing_capabilities": [
+        "CAP-HIDDEN-INVOLUTION-OUTCOME-DECODER"
+      ],
+      "priority_score": 0,
+      "proof_gate_eligible": false,
+      "rationale": "Known no-go or typed-interface failure invalidates the architecture.",
+      "stages": [
+        "PREPARE_COSET_K",
+        "SN_QFT_K",
+        "RESTRICTED_MULTIPLICITY_FREE_TRANSFORM",
+        "SINGLE_TREE_RECOUPLING",
+        "TREE_SPECTRUM_FILTER",
+        "OUTCOME_DECODER",
+        "CLASSICAL_VERIFY"
+      ],
+      "title": "Multiplicity-free or commuting-class recoupling",
+      "typed_interfaces_valid": true
+    },
+    {
+      "additional_proof_obligations": [
+        "Prove an inverse-polynomial LCU-normalized gap for the commutant Hamiltonian on all source sectors.",
+        "Prove polynomial Racah/associator moves between overlapping subset coupling trees.",
+        "Block-encode the state-dependent transition filter with controlled conditioning.",
+        "Decode the hidden involution and beat legal graph/code baselines on the source family."
+      ],
+      "decision": "proposal-only-missing-proof-capabilities",
+      "full_source_family_coverage": true,
+      "holevo_copy_budget_obligation_attached": true,
+      "id": "MECH-JM-LABEL-MULTIPLICITY-RECOUPLING",
+      "interface_issues": [],
+      "known_no_go_violations": [],
+      "minimum_copy_budget_rule": "k >= ceil([log2|C|-h2(epsilon)-epsilon*log2(|C|-1)]/chi_1), with chi_1 from the exact involution character formula",
+      "missing_capabilities": [
+        "CAP-GAPPED-KRONECKER-MULTIPLICITY-TRANSFORM",
+        "CAP-HIDDEN-INVOLUTION-OUTCOME-DECODER",
+        "CAP-KCOPY-RACAH-ASSOCIATOR",
+        "CAP-STATE-TRANSITION-FILTER"
+      ],
+      "priority_score": 104,
+      "proof_gate_eligible": false,
+      "rationale": "The architecture targets the right interface but names unimplemented proof-critical primitives.",
+      "stages": [
+        "PREPARE_COSET_K",
+        "SN_QFT_K",
+        "DIAGONAL_JM_LABEL_TRANSFORM",
+        "KRONECKER_MULTIPLICITY_BASIS",
+        "RACAH_ASSOCIATOR_NETWORK",
+        "TRANSITION_FRAME_FILTER",
+        "OUTCOME_DECODER",
+        "CLASSICAL_VERIFY"
+      ],
+      "title": "YJM label front end with explicit residual multiplicity-space recoupling",
+      "typed_interfaces_valid": true
+    },
+    {
+      "additional_proof_obligations": [
+        "Prove a uniform internal S_n Kronecker transform with multiplicity basis and precision bounds.",
+        "Prove a polynomial Racah/associator network for all overlapping subset terms at growing k.",
+        "Block-encode state-dependent transition weights and control inverse-frame conditioning.",
+        "Decode the hidden involution and beat all legal graph/code baselines on a natural family."
+      ],
+      "decision": "proposal-only-missing-proof-capabilities",
+      "full_source_family_coverage": true,
+      "holevo_copy_budget_obligation_attached": true,
+      "id": "MECH-FULL-RECOUPLING-TRANSITION-DECODER",
+      "interface_issues": [],
+      "known_no_go_violations": [],
+      "minimum_copy_budget_rule": "k >= ceil([log2|C|-h2(epsilon)-epsilon*log2(|C|-1)]/chi_1), with chi_1 from the exact involution character formula",
+      "missing_capabilities": [
+        "CAP-HIDDEN-INVOLUTION-OUTCOME-DECODER",
+        "CAP-INTERNAL-SN-KRONECKER-TRANSFORM",
+        "CAP-KCOPY-RACAH-ASSOCIATOR",
+        "CAP-STATE-TRANSITION-FILTER"
+      ],
+      "priority_score": 100,
+      "proof_gate_eligible": false,
+      "rationale": "The architecture targets the right interface but names unimplemented proof-critical primitives.",
+      "stages": [
+        "PREPARE_COSET_K",
+        "SN_QFT_K",
+        "INTERNAL_KRONECKER_TRANSFORM",
+        "RACAH_ASSOCIATOR_NETWORK",
+        "TRANSITION_FRAME_FILTER",
+        "OUTCOME_DECODER",
+        "CLASSICAL_VERIFY"
+      ],
+      "title": "Full coherent recoupling, transition filter, and decoder",
+      "typed_interfaces_valid": true
+    },
+    {
+      "additional_proof_obligations": [
+        "Prove polynomial bond dimension and contraction/circuit cost at inverse-polynomial error.",
+        "Show the tensor network is not a classical invariant shadow or efficiently contractible dequantization.",
+        "Prove robust hidden-involution decoding from its compressed outcome."
+      ],
+      "decision": "proposal-only-missing-proof-capabilities",
+      "full_source_family_coverage": true,
+      "holevo_copy_budget_obligation_attached": true,
+      "id": "MECH-TENSOR-ASSOCIATOR-DECODER",
+      "interface_issues": [],
+      "known_no_go_violations": [],
+      "minimum_copy_budget_rule": "k >= ceil([log2|C|-h2(epsilon)-epsilon*log2(|C|-1)]/chi_1), with chi_1 from the exact involution character formula",
+      "missing_capabilities": [
+        "CAP-HIDDEN-INVOLUTION-OUTCOME-DECODER",
+        "CAP-TENSOR-ASSOCIATOR"
+      ],
+      "priority_score": 72,
+      "proof_gate_eligible": false,
+      "rationale": "The architecture targets the right interface but names unimplemented proof-critical primitives.",
+      "stages": [
+        "PREPARE_COSET_K",
+        "SN_QFT_K",
+        "TENSOR_NETWORK_ASSOCIATOR",
+        "OUTCOME_DECODER",
+        "CLASSICAL_VERIFY"
+      ],
+      "title": "Implicit tensor-network associator and compressed decoder",
+      "typed_interfaces_valid": true
+    }
+  ],
+  "falsifiers_triggered": [
+    "QFT-only weak-label decoding is a known no-go route.",
+    "Multiplicity statistics are not a coherent transform or decoder.",
+    "Spectrum-rank PGM and one-tree k-copy recursion fail exact finite/all-n tests.",
+    "Exceptional commuting or restricted multiplicity families do not inherit full source-family reductions.",
+    "No surviving architecture currently satisfies every proof-critical capability.",
+    "Every architecture must also satisfy the exact class-specific Holevo/Fano copy budget; that polynomial budget is not a substitute for a measurement circuit."
+  ],
+  "headline_metrics": {
+    "automatically_promoted_candidate_count": 0,
+    "highest_survivor_priority_score": 104,
+    "holevo_copy_budget_rule_count": 1,
+    "known_no_go_rejected_count": 4,
+    "mechanism_count": 7,
+    "minimum_missing_capability_count": 2,
+    "primitive_count": 17,
+    "proof_gate_eligible_count": 0,
+    "proposal_only_count": 3,
+    "typed_interface_valid_count": 7,
+    "undercharged_mechanism_promoted_count": 0
+  },
+  "mutation_proposals": [
+    {
+      "created_at": "2026-07-15T11:12:39.689761+00:00",
+      "formalization_status": "typed-architecture-proof-capabilities-missing",
+      "id": "MUTATE-CODE-COSET-COLLECTIVE-JM-LABEL-MULTIPLICITY-RECOUPLING",
+      "linked_blockers": [
+        "DEQ-COSET-SOLVED-QFT-COUNTING-NOT-RECOUPLING-DECODER",
+        "DEQ-COSET-K3-SINGLE-RECOUPLING-BASIS-OBSTRUCTED",
+        "DEQ-COSET-EXPLICIT-TWO-COPY-TRANSITIONS-FACTORIAL"
+      ],
+      "mutation_type": "typed-recoupling-mechanism",
+      "new_hypothesis": "YJM label front end with explicit residual multiplicity-space recoupling",
+      "priority_score": 104,
+      "proof_debts_targeted": [
+        "CAP-GAPPED-KRONECKER-MULTIPLICITY-TRANSFORM",
+        "CAP-HIDDEN-INVOLUTION-OUTCOME-DECODER",
+        "CAP-KCOPY-RACAH-ASSOCIATOR",
+        "CAP-STATE-TRANSITION-FILTER"
+      ],
+      "proof_gate_eligible": false,
+      "proof_obligations_to_resolve": [
+        "Prove an inverse-polynomial LCU-normalized gap for the commutant Hamiltonian on all source sectors.",
+        "Prove polynomial Racah/associator moves between overlapping subset coupling trees.",
+        "Block-encode the state-dependent transition filter with controlled conditioning.",
+        "Decode the hidden involution and beat legal graph/code baselines on the source family."
+      ],
+      "rationale": "The architecture targets the right interface but names unimplemented proof-critical primitives.",
+      "rejection_filters": [
+        "Reject if any missing capability is replaced by an undefined circuit box.",
+        "Reject if the mechanism covers only an exceptional commuting or classically tractable family.",
+        "Reject if the decoder is distinguishability or verification without hidden-involution recovery.",
+        "Reject if classical invariant or tensor-network contraction reproduces the outcome."
+      ],
+      "required_modules": [
+        "CAP-GAPPED-KRONECKER-MULTIPLICITY-TRANSFORM",
+        "CAP-HIDDEN-INVOLUTION-OUTCOME-DECODER",
+        "CAP-KCOPY-RACAH-ASSOCIATOR",
+        "CAP-STATE-TRANSITION-FILTER"
+      ],
+      "source_candidate_id": "CODE-COSET-COLLECTIVE",
+      "status": "proposal",
+      "typed_stages": [
+        "PREPARE_COSET_K",
+        "SN_QFT_K",
+        "DIAGONAL_JM_LABEL_TRANSFORM",
+        "KRONECKER_MULTIPLICITY_BASIS",
+        "RACAH_ASSOCIATOR_NETWORK",
+        "TRANSITION_FRAME_FILTER",
+        "OUTCOME_DECODER",
+        "CLASSICAL_VERIFY"
+      ]
+    },
+    {
+      "created_at": "2026-07-15T11:12:39.689773+00:00",
+      "formalization_status": "typed-architecture-proof-capabilities-missing",
+      "id": "MUTATE-CODE-COSET-COLLECTIVE-FULL-RECOUPLING-TRANSITION-DECODER",
+      "linked_blockers": [
+        "DEQ-COSET-SOLVED-QFT-COUNTING-NOT-RECOUPLING-DECODER",
+        "DEQ-COSET-K3-SINGLE-RECOUPLING-BASIS-OBSTRUCTED",
+        "DEQ-COSET-EXPLICIT-TWO-COPY-TRANSITIONS-FACTORIAL"
+      ],
+      "mutation_type": "typed-recoupling-mechanism",
+      "new_hypothesis": "Full coherent recoupling, transition filter, and decoder",
+      "priority_score": 100,
+      "proof_debts_targeted": [
+        "CAP-HIDDEN-INVOLUTION-OUTCOME-DECODER",
+        "CAP-INTERNAL-SN-KRONECKER-TRANSFORM",
+        "CAP-KCOPY-RACAH-ASSOCIATOR",
+        "CAP-STATE-TRANSITION-FILTER"
+      ],
+      "proof_gate_eligible": false,
+      "proof_obligations_to_resolve": [
+        "Prove a uniform internal S_n Kronecker transform with multiplicity basis and precision bounds.",
+        "Prove a polynomial Racah/associator network for all overlapping subset terms at growing k.",
+        "Block-encode state-dependent transition weights and control inverse-frame conditioning.",
+        "Decode the hidden involution and beat all legal graph/code baselines on a natural family."
+      ],
+      "rationale": "The architecture targets the right interface but names unimplemented proof-critical primitives.",
+      "rejection_filters": [
+        "Reject if any missing capability is replaced by an undefined circuit box.",
+        "Reject if the mechanism covers only an exceptional commuting or classically tractable family.",
+        "Reject if the decoder is distinguishability or verification without hidden-involution recovery.",
+        "Reject if classical invariant or tensor-network contraction reproduces the outcome."
+      ],
+      "required_modules": [
+        "CAP-HIDDEN-INVOLUTION-OUTCOME-DECODER",
+        "CAP-INTERNAL-SN-KRONECKER-TRANSFORM",
+        "CAP-KCOPY-RACAH-ASSOCIATOR",
+        "CAP-STATE-TRANSITION-FILTER"
+      ],
+      "source_candidate_id": "CODE-COSET-COLLECTIVE",
+      "status": "proposal",
+      "typed_stages": [
+        "PREPARE_COSET_K",
+        "SN_QFT_K",
+        "INTERNAL_KRONECKER_TRANSFORM",
+        "RACAH_ASSOCIATOR_NETWORK",
+        "TRANSITION_FRAME_FILTER",
+        "OUTCOME_DECODER",
+        "CLASSICAL_VERIFY"
+      ]
+    },
+    {
+      "created_at": "2026-07-15T11:12:39.689777+00:00",
+      "formalization_status": "typed-architecture-proof-capabilities-missing",
+      "id": "MUTATE-CODE-COSET-COLLECTIVE-TENSOR-ASSOCIATOR-DECODER",
+      "linked_blockers": [
+        "DEQ-COSET-SOLVED-QFT-COUNTING-NOT-RECOUPLING-DECODER",
+        "DEQ-COSET-K3-SINGLE-RECOUPLING-BASIS-OBSTRUCTED",
+        "DEQ-COSET-EXPLICIT-TWO-COPY-TRANSITIONS-FACTORIAL"
+      ],
+      "mutation_type": "typed-recoupling-mechanism",
+      "new_hypothesis": "Implicit tensor-network associator and compressed decoder",
+      "priority_score": 72,
+      "proof_debts_targeted": [
+        "CAP-HIDDEN-INVOLUTION-OUTCOME-DECODER",
+        "CAP-TENSOR-ASSOCIATOR"
+      ],
+      "proof_gate_eligible": false,
+      "proof_obligations_to_resolve": [
+        "Prove polynomial bond dimension and contraction/circuit cost at inverse-polynomial error.",
+        "Show the tensor network is not a classical invariant shadow or efficiently contractible dequantization.",
+        "Prove robust hidden-involution decoding from its compressed outcome."
+      ],
+      "rationale": "The architecture targets the right interface but names unimplemented proof-critical primitives.",
+      "rejection_filters": [
+        "Reject if any missing capability is replaced by an undefined circuit box.",
+        "Reject if the mechanism covers only an exceptional commuting or classically tractable family.",
+        "Reject if the decoder is distinguishability or verification without hidden-involution recovery.",
+        "Reject if classical invariant or tensor-network contraction reproduces the outcome."
+      ],
+      "required_modules": [
+        "CAP-HIDDEN-INVOLUTION-OUTCOME-DECODER",
+        "CAP-TENSOR-ASSOCIATOR"
+      ],
+      "source_candidate_id": "CODE-COSET-COLLECTIVE",
+      "status": "proposal",
+      "typed_stages": [
+        "PREPARE_COSET_K",
+        "SN_QFT_K",
+        "TENSOR_NETWORK_ASSOCIATOR",
+        "OUTCOME_DECODER",
+        "CLASSICAL_VERIFY"
+      ]
+    }
+  ],
+  "primitive_specs": [
+    {
+      "available_with_uniform_proof": true,
+      "capability_id": "CAP-COSET-PREPARATION",
+      "id": "PREPARE_COSET_K",
+      "input_type": "start",
+      "output_type": "coset_state_k",
+      "role": "Prepare k independent coset states."
+    },
+    {
+      "available_with_uniform_proof": true,
+      "capability_id": "CAP-SN-QFT",
+      "id": "SN_QFT_K",
+      "input_type": "coset_state_k",
+      "output_type": "fourier_registers_k",
+      "role": "Apply the solved S_n QFT registerwise."
+    },
+    {
+      "available_with_uniform_proof": true,
+      "capability_id": "CAP-WEAK-IRREP-PROJECTION",
+      "id": "WEAK_LABEL_MEASUREMENT",
+      "input_type": "fourier_registers_k",
+      "output_type": "irrep_labels",
+      "role": "Measure only irrep labels."
+    },
+    {
+      "available_with_uniform_proof": true,
+      "capability_id": "CAP-KRONECKER-SHARP-BQP",
+      "id": "PROJECTOR_MULTIPLICITY_STATS",
+      "input_type": "fourier_registers_k",
+      "output_type": "multiplicity_statistics",
+      "role": "Estimate invariant-space or multiplicity statistics."
+    },
+    {
+      "available_with_uniform_proof": true,
+      "capability_id": "CAP-DIAGONAL-JM-LABEL-TRANSFORM",
+      "id": "DIAGONAL_JM_LABEL_TRANSFORM",
+      "input_type": "fourier_registers_k",
+      "output_type": "jm_labelled_registers",
+      "role": "Measure or coherently expose target tableau/Gelfand--Tsetlin labels while retaining multiplicity degeneracy."
+    },
+    {
+      "available_with_uniform_proof": false,
+      "capability_id": "CAP-GAPPED-KRONECKER-MULTIPLICITY-TRANSFORM",
+      "id": "KRONECKER_MULTIPLICITY_BASIS",
+      "input_type": "jm_labelled_registers",
+      "output_type": "pair_coupled_registers",
+      "role": "Resolve a uniformly gapped bounded-support commutant Hamiltonian in each residual multiplicity register."
+    },
+    {
+      "available_with_uniform_proof": false,
+      "capability_id": "CAP-INTERNAL-SN-KRONECKER-TRANSFORM",
+      "id": "INTERNAL_KRONECKER_TRANSFORM",
+      "input_type": "fourier_registers_k",
+      "output_type": "pair_coupled_registers",
+      "role": "Resolve pair irreps and multiplicity bases coherently."
+    },
+    {
+      "available_with_uniform_proof": true,
+      "capability_id": "CAP-RESTRICTED-MULTIPLICITY-ESTIMATION",
+      "id": "RESTRICTED_MULTIPLICITY_FREE_TRANSFORM",
+      "input_type": "fourier_registers_k",
+      "output_type": "pair_coupled_registers",
+      "role": "Use an exceptional multiplicity-free or commuting promise."
+    },
+    {
+      "available_with_uniform_proof": true,
+      "capability_id": "CAP-SINGLE-TREE-RECOUPLING",
+      "id": "SINGLE_TREE_RECOUPLING",
+      "input_type": "pair_coupled_registers",
+      "output_type": "tree_coupled_registers",
+      "role": "Recouple in one fixed binary tree."
+    },
+    {
+      "available_with_uniform_proof": true,
+      "capability_id": "CAP-SPECTRUM-RANK-PGM",
+      "id": "TREE_SPECTRUM_FILTER",
+      "input_type": "tree_coupled_registers",
+      "output_type": "measurement_outcome",
+      "role": "Apply a spectrum/rank-derived measurement in that tree."
+    },
+    {
+      "available_with_uniform_proof": false,
+      "capability_id": "CAP-KCOPY-RACAH-ASSOCIATOR",
+      "id": "RACAH_ASSOCIATOR_NETWORK",
+      "input_type": "pair_coupled_registers",
+      "output_type": "globally_coupled_registers",
+      "role": "Move coherently among overlapping recoupling trees."
+    },
+    {
+      "available_with_uniform_proof": false,
+      "capability_id": "CAP-STATE-TRANSITION-FILTER",
+      "id": "TRANSITION_FRAME_FILTER",
+      "input_type": "globally_coupled_registers",
+      "output_type": "measurement_outcome",
+      "role": "Implement state-dependent frame inverse/transition weights."
+    },
+    {
+      "available_with_uniform_proof": false,
+      "capability_id": "CAP-TENSOR-ASSOCIATOR",
+      "id": "TENSOR_NETWORK_ASSOCIATOR",
+      "input_type": "fourier_registers_k",
+      "output_type": "measurement_outcome",
+      "role": "Approximate recoupling and frame action by a tensor network."
+    },
+    {
+      "available_with_uniform_proof": false,
+      "capability_id": "CAP-HIDDEN-INVOLUTION-OUTCOME-DECODER",
+      "id": "LABEL_DECODER",
+      "input_type": "irrep_labels",
+      "output_type": "hidden_candidate",
+      "role": "Decode from weak labels."
+    },
+    {
+      "available_with_uniform_proof": false,
+      "capability_id": "CAP-HIDDEN-INVOLUTION-OUTCOME-DECODER",
+      "id": "STATISTICS_DECODER",
+      "input_type": "multiplicity_statistics",
+      "output_type": "hidden_candidate",
+      "role": "Decode from multiplicity statistics."
+    },
+    {
+      "available_with_uniform_proof": false,
+      "capability_id": "CAP-HIDDEN-INVOLUTION-OUTCOME-DECODER",
+      "id": "OUTCOME_DECODER",
+      "input_type": "measurement_outcome",
+      "output_type": "hidden_candidate",
+      "role": "Decode a compressed collective outcome."
+    },
+    {
+      "available_with_uniform_proof": true,
+      "capability_id": "CAP-CLASSICAL-VERIFY",
+      "id": "CLASSICAL_VERIFY",
+      "input_type": "hidden_candidate",
+      "output_type": "verified_solution",
+      "role": "Verify a proposed hidden permutation on the natural instance."
+    }
+  ],
+  "ranked_survivors": [
+    "MECH-JM-LABEL-MULTIPLICITY-RECOUPLING",
+    "MECH-FULL-RECOUPLING-TRANSITION-DECODER",
+    "MECH-TENSOR-ASSOCIATOR-DECODER"
+  ],
+  "status": "typed-mutations-ranked-no-proof-gate-eligible-mechanism",
+  "summary": "Evaluated 7 typed collective-measurement architectures, rejected 4 known-invalid shortcuts, and retained 3 proof-capability research proposals without promoting candidates."
+}

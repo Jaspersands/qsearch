@@ -1,0 +1,2649 @@
+{
+  "claim_gate": {
+    "growing_order_closed": false,
+    "orders_at_least_six_asymptotically_closed": false,
+    "orders_two_and_three_closed": true,
+    "polynomial_witness_decoder_constructed": false,
+    "reason": "Smith spectra give exact finite source moments when fully enumerated and identify 2-adic dependency types elsewhere. Exact five-set classification closes source-average fixed fifth order. Sampled tuple probes cannot see exponentially rare configurations, and no uniform order>=6 theorem, growing-order bound, or decoder follows.",
+    "sampled_type_flatness_is_evidence_of_absence": false,
+    "source_average_fixed_fifth_order_closed": true,
+    "source_average_order_four_closed": true,
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-07-15T03:51:22.760363+00:00",
+  "falsifiers_triggered": [
+    "Generic source-average fixed fifth-order excess vanishes by exact five-set Smith classification.",
+    "Any sampled absence of dependent Smith types is rejected as a rare-event lower bound.",
+    "Any complete finite census is rejected as an asymptotic theorem without a uniform counting argument.",
+    "Moment excess without an implicit statistic and witness decoder is not algorithmic progress.",
+    "Orders above the source matrix rank at small n are marked as finite dimension-capped artifacts."
+  ],
+  "headline_metrics": {
+    "complete_exact_census_row_count": 11,
+    "fifth_moment_formula_crosscheck_count": 1,
+    "fifth_moment_formula_crosscheck_failure_count": 0,
+    "fourth_moment_formula_crosscheck_count": 2,
+    "fourth_moment_formula_crosscheck_failure_count": 0,
+    "maximum_observed_two_adic_valuation": 2,
+    "polynomial_witness_decoder_count": 0,
+    "proved_asymptotic_fixed_fifth_order_obstruction_count": 8,
+    "proved_asymptotic_order_at_least_five_obstruction_count": 0,
+    "proved_asymptotic_order_at_least_six_obstruction_count": 0,
+    "proved_growing_order_obstruction_count": 0,
+    "proved_source_fixed_offset_fifth_excess_vanishing_count": 8,
+    "row_count": 40,
+    "sampled_rare_event_blind_row_count": 29,
+    "source_fifth_moment_certificate_count": 8,
+    "unresolved_order_at_least_five_row_count": 16,
+    "unresolved_order_at_least_six_row_count": 8
+  },
+  "rows": [
+    {
+      "assignment_count": 8,
+      "census_mode": "complete-exact",
+      "complete_census": true,
+      "distinct_smith_type_count": 1,
+      "estimated_expected_factorial_moment": 0.875,
+      "evaluated_tuple_count": 28,
+      "exact_expected_factorial_moment_denominator": 8,
+      "exact_expected_factorial_moment_numerator": 7,
+      "factorial_moment_excess": 0.0,
+      "fifth_moment_formula_crosscheck": null,
+      "finite_row_is_asymptotic_theorem": false,
+      "fourth_moment_formula_crosscheck": null,
+      "independent_factorial_moment_baseline": 0.875,
+      "integer_rank_deficient_tuple_fraction": 0.0,
+      "maximum_observed_two_adic_valuation": 0,
+      "mod2_dependent_tuple_fraction": 0.0,
+      "modulus": 8,
+      "moment_order": 2,
+      "n_bits": 3,
+      "register_count": 3,
+      "register_offset": 0,
+      "relative_excess": 0.0,
+      "sampled_row_is_rare_event_blind": false,
+      "sampling_standard_error": 0.0,
+      "smith_types": [
+        {
+          "integer_rank": 2,
+          "observed_frequency": 1.0,
+          "observed_tuple_count": 28,
+          "signature": "rank=2;v2=0,0",
+          "two_adic_valuations": [
+            0,
+            0
+          ]
+        }
+      ],
+      "source_dimension_rank_capped": false,
+      "torsion_tuple_fraction": 0.0,
+      "unordered_tuple_population": 28
+    },
+    {
+      "assignment_count": 8,
+      "census_mode": "complete-exact",
+      "complete_census": true,
+      "distinct_smith_type_count": 1,
+      "estimated_expected_factorial_moment": 0.65625,
+      "evaluated_tuple_count": 56,
+      "exact_expected_factorial_moment_denominator": 32,
+      "exact_expected_factorial_moment_numerator": 21,
+      "factorial_moment_excess": 0.0,
+      "fifth_moment_formula_crosscheck": null,
+      "finite_row_is_asymptotic_theorem": false,
+      "fourth_moment_formula_crosscheck": null,
+      "independent_factorial_moment_baseline": 0.65625,
+      "integer_rank_deficient_tuple_fraction": 0.0,
+      "maximum_observed_two_adic_valuation": 0,
+      "mod2_dependent_tuple_fraction": 0.0,
+      "modulus": 8,
+      "moment_order": 3,
+      "n_bits": 3,
+      "register_count": 3,
+      "register_offset": 0,
+      "relative_excess": 0.0,
+      "sampled_row_is_rare_event_blind": false,
+      "sampling_standard_error": 0.0,
+      "smith_types": [
+        {
+          "integer_rank": 3,
+          "observed_frequency": 1.0,
+          "observed_tuple_count": 56,
+          "signature": "rank=3;v2=0,0,0",
+          "two_adic_valuations": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "source_dimension_rank_capped": false,
+      "torsion_tuple_fraction": 0.0,
+      "unordered_tuple_population": 56
+    },
+    {
+      "assignment_count": 8,
+      "census_mode": "complete-exact",
+      "complete_census": true,
+      "distinct_smith_type_count": 3,
+      "estimated_expected_factorial_moment": 0.9140625,
+      "evaluated_tuple_count": 70,
+      "exact_expected_factorial_moment_denominator": 128,
+      "exact_expected_factorial_moment_numerator": 117,
+      "factorial_moment_excess": 0.50390625,
+      "fifth_moment_formula_crosscheck": null,
+      "finite_row_is_asymptotic_theorem": false,
+      "fourth_moment_formula_crosscheck": true,
+      "independent_factorial_moment_baseline": 0.41015625,
+      "integer_rank_deficient_tuple_fraction": 0.17142857142857143,
+      "maximum_observed_two_adic_valuation": 1,
+      "mod2_dependent_tuple_fraction": 0.2,
+      "modulus": 8,
+      "moment_order": 4,
+      "n_bits": 3,
+      "register_count": 3,
+      "register_offset": 0,
+      "relative_excess": 1.2285714285714286,
+      "sampled_row_is_rare_event_blind": false,
+      "sampling_standard_error": 0.0,
+      "smith_types": [
+        {
+          "integer_rank": 4,
+          "observed_frequency": 0.8,
+          "observed_tuple_count": 56,
+          "signature": "rank=4;v2=0,0,0,0",
+          "two_adic_valuations": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "integer_rank": 3,
+          "observed_frequency": 0.17142857142857143,
+          "observed_tuple_count": 12,
+          "signature": "rank=3;v2=0,0,0",
+          "two_adic_valuations": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "integer_rank": 4,
+          "observed_frequency": 0.02857142857142857,
+          "observed_tuple_count": 2,
+          "signature": "rank=4;v2=0,0,0,1",
+          "two_adic_valuations": [
+            0,
+            0,
+            0,
+            1
+          ]
+        }
+      ],
+      "source_dimension_rank_capped": false,
+      "torsion_tuple_fraction": 0.02857142857142857,
+      "unordered_tuple_population": 70
+    },
+    {
+      "assignment_count": 8,
+      "census_mode": "sampled-type-probe",
+      "complete_census": false,
+      "distinct_smith_type_count": 1,
+      "estimated_expected_factorial_moment": 1.640625,
+      "evaluated_tuple_count": 2000,
+      "exact_expected_factorial_moment_denominator": null,
+      "exact_expected_factorial_moment_numerator": null,
+      "factorial_moment_excess": 1.435546875,
+      "fifth_moment_formula_crosscheck": null,
+      "finite_row_is_asymptotic_theorem": false,
+      "fourth_moment_formula_crosscheck": null,
+      "independent_factorial_moment_baseline": 0.205078125,
+      "integer_rank_deficient_tuple_fraction": 1.0,
+      "maximum_observed_two_adic_valuation": 0,
+      "mod2_dependent_tuple_fraction": 1.0,
+      "modulus": 8,
+      "moment_order": 5,
+      "n_bits": 3,
+      "register_count": 3,
+      "register_offset": 0,
+      "relative_excess": 7.0,
+      "sampled_row_is_rare_event_blind": true,
+      "sampling_standard_error": 0.0,
+      "smith_types": [
+        {
+          "integer_rank": 4,
+          "observed_frequency": 1.0,
+          "observed_tuple_count": 2000,
+          "signature": "rank=4;v2=0,0,0,0",
+          "two_adic_valuations": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "source_dimension_rank_capped": true,
+      "torsion_tuple_fraction": 0.0,
+      "unordered_tuple_population": 56
+    },
+    {
+      "assignment_count": 8,
+      "census_mode": "sampled-type-probe",
+      "complete_census": false,
+      "distinct_smith_type_count": 1,
+      "estimated_expected_factorial_moment": 4.921875,
+      "evaluated_tuple_count": 2000,
+      "exact_expected_factorial_moment_denominator": null,
+      "exact_expected_factorial_moment_numerator": null,
+      "factorial_moment_excess": 4.844970703125,
+      "fifth_moment_formula_crosscheck": null,
+      "finite_row_is_asymptotic_theorem": false,
+      "fourth_moment_formula_crosscheck": null,
+      "independent_factorial_moment_baseline": 0.076904296875,
+      "integer_rank_deficient_tuple_fraction": 1.0,
+      "maximum_observed_two_adic_valuation": 0,
+      "mod2_dependent_tuple_fraction": 1.0,
+      "modulus": 8,
+      "moment_order": 6,
+      "n_bits": 3,
+      "register_count": 3,
+      "register_offset": 0,
+      "relative_excess": 63.0,
+      "sampled_row_is_rare_event_blind": true,
+      "sampling_standard_error": 0.0,
+      "smith_types": [
+        {
+          "integer_rank": 4,
+          "observed_frequency": 1.0,
+          "observed_tuple_count": 2000,
+          "signature": "rank=4;v2=0,0,0,0",
+          "two_adic_valuations": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "source_dimension_rank_capped": true,
+      "torsion_tuple_fraction": 0.0,
+      "unordered_tuple_population": 28
+    },
+    {
+      "assignment_count": 32,
+      "census_mode": "complete-exact",
+      "complete_census": true,
+      "distinct_smith_type_count": 1,
+      "estimated_expected_factorial_moment": 15.5,
+      "evaluated_tuple_count": 496,
+      "exact_expected_factorial_moment_denominator": 2,
+      "exact_expected_factorial_moment_numerator": 31,
+      "factorial_moment_excess": 0.0,
+      "fifth_moment_formula_crosscheck": null,
+      "finite_row_is_asymptotic_theorem": false,
+      "fourth_moment_formula_crosscheck": null,
+      "independent_factorial_moment_baseline": 15.5,
+      "integer_rank_deficient_tuple_fraction": 0.0,
+      "maximum_observed_two_adic_valuation": 0,
+      "mod2_dependent_tuple_fraction": 0.0,
+      "modulus": 8,
+      "moment_order": 2,
+      "n_bits": 3,
+      "register_count": 5,
+      "register_offset": 2,
+      "relative_excess": 0.0,
+      "sampled_row_is_rare_event_blind": false,
+      "sampling_standard_error": 0.0,
+      "smith_types": [
+        {
+          "integer_rank": 2,
+          "observed_frequency": 1.0,
+          "observed_tuple_count": 496,
+          "signature": "rank=2;v2=0,0",
+          "two_adic_valuations": [
+            0,
+            0
+          ]
+        }
+      ],
+      "source_dimension_rank_capped": false,
+      "torsion_tuple_fraction": 0.0,
+      "unordered_tuple_population": 496
+    },
+    {
+      "assignment_count": 32,
+      "census_mode": "complete-exact",
+      "complete_census": true,
+      "distinct_smith_type_count": 1,
+      "estimated_expected_factorial_moment": 58.125,
+      "evaluated_tuple_count": 4960,
+      "exact_expected_factorial_moment_denominator": 8,
+      "exact_expected_factorial_moment_numerator": 465,
+      "factorial_moment_excess": 0.0,
+      "fifth_moment_formula_crosscheck": null,
+      "finite_row_is_asymptotic_theorem": false,
+      "fourth_moment_formula_crosscheck": null,
+      "independent_factorial_moment_baseline": 58.125,
+      "integer_rank_deficient_tuple_fraction": 0.0,
+      "maximum_observed_two_adic_valuation": 0,
+      "mod2_dependent_tuple_fraction": 0.0,
+      "modulus": 8,
+      "moment_order": 3,
+      "n_bits": 3,
+      "register_count": 5,
+      "register_offset": 2,
+      "relative_excess": 0.0,
+      "sampled_row_is_rare_event_blind": false,
+      "sampling_standard_error": 0.0,
+      "smith_types": [
+        {
+          "integer_rank": 3,
+          "observed_frequency": 1.0,
+          "observed_tuple_count": 4960,
+          "signature": "rank=3;v2=0,0,0",
+          "two_adic_valuations": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "source_dimension_rank_capped": false,
+      "torsion_tuple_fraction": 0.0,
+      "unordered_tuple_population": 4960
+    },
+    {
+      "assignment_count": 32,
+      "census_mode": "sampled-type-probe",
+      "complete_census": false,
+      "distinct_smith_type_count": 3,
+      "estimated_expected_factorial_moment": 242.2032421875,
+      "evaluated_tuple_count": 2000,
+      "exact_expected_factorial_moment_denominator": null,
+      "exact_expected_factorial_moment_numerator": null,
+      "factorial_moment_excess": 31.500117187499995,
+      "fifth_moment_formula_crosscheck": null,
+      "finite_row_is_asymptotic_theorem": false,
+      "fourth_moment_formula_crosscheck": null,
+      "independent_factorial_moment_baseline": 210.703125,
+      "integer_rank_deficient_tuple_fraction": 0.019,
+      "maximum_observed_two_adic_valuation": 1,
+      "mod2_dependent_tuple_fraction": 0.0355,
+      "modulus": 8,
+      "moment_order": 4,
+      "n_bits": 3,
+      "register_count": 5,
+      "register_offset": 2,
+      "relative_excess": 0.14949999999999997,
+      "sampled_row_is_rare_event_blind": true,
+      "sampling_standard_error": 4.5328421712342095,
+      "smith_types": [
+        {
+          "integer_rank": 4,
+          "observed_frequency": 0.9645,
+          "observed_tuple_count": 1929,
+          "signature": "rank=4;v2=0,0,0,0",
+          "two_adic_valuations": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "integer_rank": 3,
+          "observed_frequency": 0.019,
+          "observed_tuple_count": 38,
+          "signature": "rank=3;v2=0,0,0",
+          "two_adic_valuations": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "integer_rank": 4,
+          "observed_frequency": 0.0165,
+          "observed_tuple_count": 33,
+          "signature": "rank=4;v2=0,0,0,1",
+          "two_adic_valuations": [
+            0,
+            0,
+            0,
+            1
+          ]
+        }
+      ],
+      "source_dimension_rank_capped": false,
+      "torsion_tuple_fraction": 0.0165,
+      "unordered_tuple_population": 35960
+    },
+    {
+      "assignment_count": 32,
+      "census_mode": "sampled-type-probe",
+      "complete_census": false,
+      "distinct_smith_type_count": 3,
+      "estimated_expected_factorial_moment": 1380.15814453125,
+      "evaluated_tuple_count": 2000,
+      "exact_expected_factorial_moment_denominator": null,
+      "exact_expected_factorial_moment_numerator": null,
+      "factorial_moment_excess": 642.69720703125,
+      "fifth_moment_formula_crosscheck": null,
+      "finite_row_is_asymptotic_theorem": false,
+      "fourth_moment_formula_crosscheck": null,
+      "independent_factorial_moment_baseline": 737.4609375,
+      "integer_rank_deficient_tuple_fraction": 0.1145,
+      "maximum_observed_two_adic_valuation": 1,
+      "mod2_dependent_tuple_fraction": 0.1845,
+      "modulus": 8,
+      "moment_order": 5,
+      "n_bits": 3,
+      "register_count": 5,
+      "register_offset": 2,
+      "relative_excess": 0.8714999999999999,
+      "sampled_row_is_rare_event_blind": true,
+      "sampling_standard_error": 36.5896930369054,
+      "smith_types": [
+        {
+          "integer_rank": 5,
+          "observed_frequency": 0.8155,
+          "observed_tuple_count": 1631,
+          "signature": "rank=5;v2=0,0,0,0,0",
+          "two_adic_valuations": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "integer_rank": 4,
+          "observed_frequency": 0.1145,
+          "observed_tuple_count": 229,
+          "signature": "rank=4;v2=0,0,0,0",
+          "two_adic_valuations": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "integer_rank": 5,
+          "observed_frequency": 0.07,
+          "observed_tuple_count": 140,
+          "signature": "rank=5;v2=0,0,0,0,1",
+          "two_adic_valuations": [
+            0,
+            0,
+            0,
+            0,
+            1
+          ]
+        }
+      ],
+      "source_dimension_rank_capped": false,
+      "torsion_tuple_fraction": 0.07,
+      "unordered_tuple_population": 201376
+    },
+    {
+      "assignment_count": 32,
+      "census_mode": "sampled-type-probe",
+      "complete_census": false,
+      "distinct_smith_type_count": 7,
+      "estimated_expected_factorial_moment": 10833.07071533203,
+      "evaluated_tuple_count": 2000,
+      "exact_expected_factorial_moment_denominator": null,
+      "exact_expected_factorial_moment_numerator": null,
+      "factorial_moment_excess": 8344.14005126953,
+      "fifth_moment_formula_crosscheck": null,
+      "finite_row_is_asymptotic_theorem": false,
+      "fourth_moment_formula_crosscheck": null,
+      "independent_factorial_moment_baseline": 2488.9306640625,
+      "integer_rank_deficient_tuple_fraction": 0.3825,
+      "maximum_observed_two_adic_valuation": 2,
+      "mod2_dependent_tuple_fraction": 0.5035,
+      "modulus": 8,
+      "moment_order": 6,
+      "n_bits": 3,
+      "register_count": 5,
+      "register_offset": 2,
+      "relative_excess": 3.3525,
+      "sampled_row_is_rare_event_blind": true,
+      "sampling_standard_error": 362.82725347068737,
+      "smith_types": [
+        {
+          "integer_rank": 6,
+          "observed_frequency": 0.4965,
+          "observed_tuple_count": 993,
+          "signature": "rank=6;v2=0,0,0,0,0,0",
+          "two_adic_valuations": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "integer_rank": 5,
+          "observed_frequency": 0.3655,
+          "observed_tuple_count": 731,
+          "signature": "rank=5;v2=0,0,0,0,0",
+          "two_adic_valuations": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "integer_rank": 6,
+          "observed_frequency": 0.116,
+          "observed_tuple_count": 232,
+          "signature": "rank=6;v2=0,0,0,0,0,1",
+          "two_adic_valuations": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "integer_rank": 4,
+          "observed_frequency": 0.0085,
+          "observed_tuple_count": 17,
+          "signature": "rank=4;v2=0,0,0,0",
+          "two_adic_valuations": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "integer_rank": 5,
+          "observed_frequency": 0.0085,
+          "observed_tuple_count": 17,
+          "signature": "rank=5;v2=0,0,0,0,1",
+          "two_adic_valuations": [
+            0,
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "integer_rank": 6,
+          "observed_frequency": 0.0035,
+          "observed_tuple_count": 7,
+          "signature": "rank=6;v2=0,0,0,0,0,2",
+          "two_adic_valuations": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            2
+          ]
+        },
+        {
+          "integer_rank": 6,
+          "observed_frequency": 0.0015,
+          "observed_tuple_count": 3,
+          "signature": "rank=6;v2=0,0,0,0,1,1",
+          "two_adic_valuations": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1
+          ]
+        }
+      ],
+      "source_dimension_rank_capped": false,
+      "torsion_tuple_fraction": 0.1295,
+      "unordered_tuple_population": 906192
+    },
+    {
+      "assignment_count": 16,
+      "census_mode": "complete-exact",
+      "complete_census": true,
+      "distinct_smith_type_count": 1,
+      "estimated_expected_factorial_moment": 0.9375,
+      "evaluated_tuple_count": 120,
+      "exact_expected_factorial_moment_denominator": 16,
+      "exact_expected_factorial_moment_numerator": 15,
+      "factorial_moment_excess": 0.0,
+      "fifth_moment_formula_crosscheck": null,
+      "finite_row_is_asymptotic_theorem": false,
+      "fourth_moment_formula_crosscheck": null,
+      "independent_factorial_moment_baseline": 0.9375,
+      "integer_rank_deficient_tuple_fraction": 0.0,
+      "maximum_observed_two_adic_valuation": 0,
+      "mod2_dependent_tuple_fraction": 0.0,
+      "modulus": 16,
+      "moment_order": 2,
+      "n_bits": 4,
+      "register_count": 4,
+      "register_offset": 0,
+      "relative_excess": 0.0,
+      "sampled_row_is_rare_event_blind": false,
+      "sampling_standard_error": 0.0,
+      "smith_types": [
+        {
+          "integer_rank": 2,
+          "observed_frequency": 1.0,
+          "observed_tuple_count": 120,
+          "signature": "rank=2;v2=0,0",
+          "two_adic_valuations": [
+            0,
+            0
+          ]
+        }
+      ],
+      "source_dimension_rank_capped": false,
+      "torsion_tuple_fraction": 0.0,
+      "unordered_tuple_population": 120
+    },
+    {
+      "assignment_count": 16,
+      "census_mode": "complete-exact",
+      "complete_census": true,
+      "distinct_smith_type_count": 1,
+      "estimated_expected_factorial_moment": 0.8203125,
+      "evaluated_tuple_count": 560,
+      "exact_expected_factorial_moment_denominator": 128,
+      "exact_expected_factorial_moment_numerator": 105,
+      "factorial_moment_excess": 0.0,
+      "fifth_moment_formula_crosscheck": null,
+      "finite_row_is_asymptotic_theorem": false,
+      "fourth_moment_formula_crosscheck": null,
+      "independent_factorial_moment_baseline": 0.8203125,
+      "integer_rank_deficient_tuple_fraction": 0.0,
+      "maximum_observed_two_adic_valuation": 0,
+      "mod2_dependent_tuple_fraction": 0.0,
+      "modulus": 16,
+      "moment_order": 3,
+      "n_bits": 4,
+      "register_count": 4,
+      "register_offset": 0,
+      "relative_excess": 0.0,
+      "sampled_row_is_rare_event_blind": false,
+      "sampling_standard_error": 0.0,
+      "smith_types": [
+        {
+          "integer_rank": 3,
+          "observed_frequency": 1.0,
+          "observed_tuple_count": 560,
+          "signature": "rank=3;v2=0,0,0",
+          "two_adic_valuations": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "source_dimension_rank_capped": false,
+      "torsion_tuple_fraction": 0.0,
+      "unordered_tuple_population": 560
+    },
+    {
+      "assignment_count": 16,
+      "census_mode": "complete-exact",
+      "complete_census": true,
+      "distinct_smith_type_count": 3,
+      "estimated_expected_factorial_moment": 1.23046875,
+      "evaluated_tuple_count": 1820,
+      "exact_expected_factorial_moment_denominator": 256,
+      "exact_expected_factorial_moment_numerator": 315,
+      "factorial_moment_excess": 0.56396484375,
+      "fifth_moment_formula_crosscheck": null,
+      "finite_row_is_asymptotic_theorem": false,
+      "fourth_moment_formula_crosscheck": true,
+      "independent_factorial_moment_baseline": 0.66650390625,
+      "integer_rank_deficient_tuple_fraction": 0.054945054945054944,
+      "maximum_observed_two_adic_valuation": 1,
+      "mod2_dependent_tuple_fraction": 0.07692307692307693,
+      "modulus": 16,
+      "moment_order": 4,
+      "n_bits": 4,
+      "register_count": 4,
+      "register_offset": 0,
+      "relative_excess": 0.8461538461538461,
+      "sampled_row_is_rare_event_blind": false,
+      "sampling_standard_error": 0.0,
+      "smith_types": [
+        {
+          "integer_rank": 4,
+          "observed_frequency": 0.9230769230769231,
+          "observed_tuple_count": 1680,
+          "signature": "rank=4;v2=0,0,0,0",
+          "two_adic_valuations": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "integer_rank": 3,
+          "observed_frequency": 0.054945054945054944,
+          "observed_tuple_count": 100,
+          "signature": "rank=3;v2=0,0,0",
+          "two_adic_valuations": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "integer_rank": 4,
+          "observed_frequency": 0.02197802197802198,
+          "observed_tuple_count": 40,
+          "signature": "rank=4;v2=0,0,0,1",
+          "two_adic_valuations": [
+            0,
+            0,
+            0,
+            1
+          ]
+        }
+      ],
+      "source_dimension_rank_capped": false,
+      "torsion_tuple_fraction": 0.02197802197802198,
+      "unordered_tuple_population": 1820
+    },
+    {
+      "assignment_count": 16,
+      "census_mode": "complete-exact",
+      "complete_census": true,
+      "distinct_smith_type_count": 3,
+      "estimated_expected_factorial_moment": 2.87109375,
+      "evaluated_tuple_count": 4368,
+      "exact_expected_factorial_moment_denominator": 256,
+      "exact_expected_factorial_moment_numerator": 735,
+      "factorial_moment_excess": 2.3712158203125,
+      "fifth_moment_formula_crosscheck": true,
+      "finite_row_is_asymptotic_theorem": false,
+      "fourth_moment_formula_crosscheck": null,
+      "independent_factorial_moment_baseline": 0.4998779296875,
+      "integer_rank_deficient_tuple_fraction": 0.31135531135531136,
+      "maximum_observed_two_adic_valuation": 1,
+      "mod2_dependent_tuple_fraction": 0.38461538461538464,
+      "modulus": 16,
+      "moment_order": 5,
+      "n_bits": 4,
+      "register_count": 4,
+      "register_offset": 0,
+      "relative_excess": 4.743589743589744,
+      "sampled_row_is_rare_event_blind": false,
+      "sampling_standard_error": 0.0,
+      "smith_types": [
+        {
+          "integer_rank": 5,
+          "observed_frequency": 0.6153846153846154,
+          "observed_tuple_count": 2688,
+          "signature": "rank=5;v2=0,0,0,0,0",
+          "two_adic_valuations": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "integer_rank": 4,
+          "observed_frequency": 0.31135531135531136,
+          "observed_tuple_count": 1360,
+          "signature": "rank=4;v2=0,0,0,0",
+          "two_adic_valuations": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "integer_rank": 5,
+          "observed_frequency": 0.07326007326007326,
+          "observed_tuple_count": 320,
+          "signature": "rank=5;v2=0,0,0,0,1",
+          "two_adic_valuations": [
+            0,
+            0,
+            0,
+            0,
+            1
+          ]
+        }
+      ],
+      "source_dimension_rank_capped": false,
+      "torsion_tuple_fraction": 0.07326007326007326,
+      "unordered_tuple_population": 4368
+    },
+    {
+      "assignment_count": 16,
+      "census_mode": "sampled-type-probe",
+      "complete_census": false,
+      "distinct_smith_type_count": 3,
+      "estimated_expected_factorial_moment": 11.552678833007812,
+      "evaluated_tuple_count": 2000,
+      "exact_expected_factorial_moment_denominator": null,
+      "exact_expected_factorial_moment_numerator": null,
+      "factorial_moment_excess": 11.209012756347656,
+      "fifth_moment_formula_crosscheck": null,
+      "finite_row_is_asymptotic_theorem": false,
+      "fourth_moment_formula_crosscheck": null,
+      "independent_factorial_moment_baseline": 0.34366607666015625,
+      "integer_rank_deficient_tuple_fraction": 1.0,
+      "maximum_observed_two_adic_valuation": 1,
+      "mod2_dependent_tuple_fraction": 1.0,
+      "modulus": 16,
+      "moment_order": 6,
+      "n_bits": 4,
+      "register_count": 4,
+      "register_offset": 0,
+      "relative_excess": 32.616,
+      "sampled_row_is_rare_event_blind": true,
+      "sampling_standard_error": 0.47645646180347956,
+      "smith_types": [
+        {
+          "integer_rank": 5,
+          "observed_frequency": 0.907,
+          "observed_tuple_count": 1814,
+          "signature": "rank=5;v2=0,0,0,0,0",
+          "two_adic_valuations": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "integer_rank": 4,
+          "observed_frequency": 0.072,
+          "observed_tuple_count": 144,
+          "signature": "rank=4;v2=0,0,0,0",
+          "two_adic_valuations": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "integer_rank": 5,
+          "observed_frequency": 0.021,
+          "observed_tuple_count": 42,
+          "signature": "rank=5;v2=0,0,0,0,1",
+          "two_adic_valuations": [
+            0,
+            0,
+            0,
+            0,
+            1
+          ]
+        }
+      ],
+      "source_dimension_rank_capped": true,
+      "torsion_tuple_fraction": 0.021,
+      "unordered_tuple_population": 8008
+    },
+    {
+      "assignment_count": 64,
+      "census_mode": "complete-exact",
+      "complete_census": true,
+      "distinct_smith_type_count": 1,
+      "estimated_expected_factorial_moment": 15.75,
+      "evaluated_tuple_count": 2016,
+      "exact_expected_factorial_moment_denominator": 4,
+      "exact_expected_factorial_moment_numerator": 63,
+      "factorial_moment_excess": 0.0,
+      "fifth_moment_formula_crosscheck": null,
+      "finite_row_is_asymptotic_theorem": false,
+      "fourth_moment_formula_crosscheck": null,
+      "independent_factorial_moment_baseline": 15.75,
+      "integer_rank_deficient_tuple_fraction": 0.0,
+      "maximum_observed_two_adic_valuation": 0,
+      "mod2_dependent_tuple_fraction": 0.0,
+      "modulus": 16,
+      "moment_order": 2,
+      "n_bits": 4,
+      "register_count": 6,
+      "register_offset": 2,
+      "relative_excess": 0.0,
+      "sampled_row_is_rare_event_blind": false,
+      "sampling_standard_error": 0.0,
+      "smith_types": [
+        {
+          "integer_rank": 2,
+          "observed_frequency": 1.0,
+          "observed_tuple_count": 2016,
+          "signature": "rank=2;v2=0,0",
+          "two_adic_valuations": [
+            0,
+            0
+          ]
+        }
+      ],
+      "source_dimension_rank_capped": false,
+      "torsion_tuple_fraction": 0.0,
+      "unordered_tuple_population": 2016
+    },
+    {
+      "assignment_count": 64,
+      "census_mode": "sampled-type-probe",
+      "complete_census": false,
+      "distinct_smith_type_count": 1,
+      "estimated_expected_factorial_moment": 61.03125,
+      "evaluated_tuple_count": 2000,
+      "exact_expected_factorial_moment_denominator": null,
+      "exact_expected_factorial_moment_numerator": null,
+      "factorial_moment_excess": 0.0,
+      "fifth_moment_formula_crosscheck": null,
+      "finite_row_is_asymptotic_theorem": false,
+      "fourth_moment_formula_crosscheck": null,
+      "independent_factorial_moment_baseline": 61.03125,
+      "integer_rank_deficient_tuple_fraction": 0.0,
+      "maximum_observed_two_adic_valuation": 0,
+      "mod2_dependent_tuple_fraction": 0.0,
+      "modulus": 16,
+      "moment_order": 3,
+      "n_bits": 4,
+      "register_count": 6,
+      "register_offset": 2,
+      "relative_excess": 0.0,
+      "sampled_row_is_rare_event_blind": true,
+      "sampling_standard_error": 0.0,
+      "smith_types": [
+        {
+          "integer_rank": 3,
+          "observed_frequency": 1.0,
+          "observed_tuple_count": 2000,
+          "signature": "rank=3;v2=0,0,0",
+          "two_adic_valuations": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "source_dimension_rank_capped": false,
+      "torsion_tuple_fraction": 0.0,
+      "unordered_tuple_population": 41664
+    },
+    {
+      "assignment_count": 64,
+      "census_mode": "sampled-type-probe",
+      "complete_census": false,
+      "distinct_smith_type_count": 3,
+      "estimated_expected_factorial_moment": 262.697572265625,
+      "evaluated_tuple_count": 2000,
+      "exact_expected_factorial_moment_denominator": null,
+      "exact_expected_factorial_moment_numerator": null,
+      "factorial_moment_excess": 30.015931640625013,
+      "fifth_moment_formula_crosscheck": null,
+      "finite_row_is_asymptotic_theorem": false,
+      "fourth_moment_formula_crosscheck": null,
+      "independent_factorial_moment_baseline": 232.681640625,
+      "integer_rank_deficient_tuple_fraction": 0.008,
+      "maximum_observed_two_adic_valuation": 1,
+      "mod2_dependent_tuple_fraction": 0.017,
+      "modulus": 16,
+      "moment_order": 4,
+      "n_bits": 4,
+      "register_count": 6,
+      "register_offset": 2,
+      "relative_excess": 0.12900000000000006,
+      "sampled_row_is_rare_event_blind": true,
+      "sampling_standard_error": 6.967359516001058,
+      "smith_types": [
+        {
+          "integer_rank": 4,
+          "observed_frequency": 0.983,
+          "observed_tuple_count": 1966,
+          "signature": "rank=4;v2=0,0,0,0",
+          "two_adic_valuations": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "integer_rank": 4,
+          "observed_frequency": 0.009,
+          "observed_tuple_count": 18,
+          "signature": "rank=4;v2=0,0,0,1",
+          "two_adic_valuations": [
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "integer_rank": 3,
+          "observed_frequency": 0.008,
+          "observed_tuple_count": 16,
+          "signature": "rank=3;v2=0,0,0",
+          "two_adic_valuations": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "source_dimension_rank_capped": false,
+      "torsion_tuple_fraction": 0.009,
+      "unordered_tuple_population": 635376
+    },
+    {
+      "assignment_count": 64,
+      "census_mode": "sampled-type-probe",
+      "complete_census": false,
+      "distinct_smith_type_count": 3,
+      "estimated_expected_factorial_moment": 1507.77703125,
+      "evaluated_tuple_count": 2000,
+      "exact_expected_factorial_moment_denominator": null,
+      "exact_expected_factorial_moment_numerator": null,
+      "factorial_moment_excess": 635.2208789062499,
+      "fifth_moment_formula_crosscheck": null,
+      "finite_row_is_asymptotic_theorem": false,
+      "fourth_moment_formula_crosscheck": null,
+      "independent_factorial_moment_baseline": 872.55615234375,
+      "integer_rank_deficient_tuple_fraction": 0.0455,
+      "maximum_observed_two_adic_valuation": 1,
+      "mod2_dependent_tuple_fraction": 0.091,
+      "modulus": 16,
+      "moment_order": 5,
+      "n_bits": 4,
+      "register_count": 6,
+      "register_offset": 2,
+      "relative_excess": 0.728,
+      "sampled_row_is_rare_event_blind": true,
+      "sampling_standard_error": 60.947578630766046,
+      "smith_types": [
+        {
+          "integer_rank": 5,
+          "observed_frequency": 0.909,
+          "observed_tuple_count": 1818,
+          "signature": "rank=5;v2=0,0,0,0,0",
+          "two_adic_valuations": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "integer_rank": 4,
+          "observed_frequency": 0.0455,
+          "observed_tuple_count": 91,
+          "signature": "rank=4;v2=0,0,0,0",
+          "two_adic_valuations": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "integer_rank": 5,
+          "observed_frequency": 0.0455,
+          "observed_tuple_count": 91,
+          "signature": "rank=5;v2=0,0,0,0,1",
+          "two_adic_valuations": [
+            0,
+            0,
+            0,
+            0,
+            1
+          ]
+        }
+      ],
+      "source_dimension_rank_capped": false,
+      "torsion_tuple_fraction": 0.0455,
+      "unordered_tuple_population": 7624512
+    },
+    {
+      "assignment_count": 64,
+      "census_mode": "sampled-type-probe",
+      "complete_census": false,
+      "distinct_smith_type_count": 7,
+      "estimated_expected_factorial_moment": 13405.925457229614,
+      "evaluated_tuple_count": 2000,
+      "exact_expected_factorial_moment_denominator": null,
+      "exact_expected_factorial_moment_numerator": null,
+      "factorial_moment_excess": 10188.374645462036,
+      "fifth_moment_formula_crosscheck": null,
+      "finite_row_is_asymptotic_theorem": false,
+      "fourth_moment_formula_crosscheck": null,
+      "independent_factorial_moment_baseline": 3217.550811767578,
+      "integer_rank_deficient_tuple_fraction": 0.145,
+      "maximum_observed_two_adic_valuation": 2,
+      "mod2_dependent_tuple_fraction": 0.2555,
+      "modulus": 16,
+      "moment_order": 6,
+      "n_bits": 4,
+      "register_count": 6,
+      "register_offset": 2,
+      "relative_excess": 3.1665,
+      "sampled_row_is_rare_event_blind": true,
+      "sampling_standard_error": 1140.1720541234056,
+      "smith_types": [
+        {
+          "integer_rank": 6,
+          "observed_frequency": 0.7445,
+          "observed_tuple_count": 1489,
+          "signature": "rank=6;v2=0,0,0,0,0,0",
+          "two_adic_valuations": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "integer_rank": 5,
+          "observed_frequency": 0.1395,
+          "observed_tuple_count": 279,
+          "signature": "rank=5;v2=0,0,0,0,0",
+          "two_adic_valuations": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "integer_rank": 6,
+          "observed_frequency": 0.106,
+          "observed_tuple_count": 212,
+          "signature": "rank=6;v2=0,0,0,0,0,1",
+          "two_adic_valuations": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "integer_rank": 6,
+          "observed_frequency": 0.004,
+          "observed_tuple_count": 8,
+          "signature": "rank=6;v2=0,0,0,0,0,2",
+          "two_adic_valuations": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            2
+          ]
+        },
+        {
+          "integer_rank": 4,
+          "observed_frequency": 0.0035,
+          "observed_tuple_count": 7,
+          "signature": "rank=4;v2=0,0,0,0",
+          "two_adic_valuations": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "integer_rank": 5,
+          "observed_frequency": 0.002,
+          "observed_tuple_count": 4,
+          "signature": "rank=5;v2=0,0,0,0,1",
+          "two_adic_valuations": [
+            0,
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "integer_rank": 6,
+          "observed_frequency": 0.0005,
+          "observed_tuple_count": 1,
+          "signature": "rank=6;v2=0,0,0,0,1,1",
+          "two_adic_valuations": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1
+          ]
+        }
+      ],
+      "source_dimension_rank_capped": false,
+      "torsion_tuple_fraction": 0.1125,
+      "unordered_tuple_population": 74974368
+    },
+    {
+      "assignment_count": 64,
+      "census_mode": "complete-exact",
+      "complete_census": true,
+      "distinct_smith_type_count": 1,
+      "estimated_expected_factorial_moment": 0.984375,
+      "evaluated_tuple_count": 2016,
+      "exact_expected_factorial_moment_denominator": 64,
+      "exact_expected_factorial_moment_numerator": 63,
+      "factorial_moment_excess": 0.0,
+      "fifth_moment_formula_crosscheck": null,
+      "finite_row_is_asymptotic_theorem": false,
+      "fourth_moment_formula_crosscheck": null,
+      "independent_factorial_moment_baseline": 0.984375,
+      "integer_rank_deficient_tuple_fraction": 0.0,
+      "maximum_observed_two_adic_valuation": 0,
+      "mod2_dependent_tuple_fraction": 0.0,
+      "modulus": 64,
+      "moment_order": 2,
+      "n_bits": 6,
+      "register_count": 6,
+      "register_offset": 0,
+      "relative_excess": 0.0,
+      "sampled_row_is_rare_event_blind": false,
+      "sampling_standard_error": 0.0,
+      "smith_types": [
+        {
+          "integer_rank": 2,
+          "observed_frequency": 1.0,
+          "observed_tuple_count": 2016,
+          "signature": "rank=2;v2=0,0",
+          "two_adic_valuations": [
+            0,
+            0
+          ]
+        }
+      ],
+      "source_dimension_rank_capped": false,
+      "torsion_tuple_fraction": 0.0,
+      "unordered_tuple_population": 2016
+    },
+    {
+      "assignment_count": 64,
+      "census_mode": "sampled-type-probe",
+      "complete_census": false,
+      "distinct_smith_type_count": 1,
+      "estimated_expected_factorial_moment": 0.95361328125,
+      "evaluated_tuple_count": 2000,
+      "exact_expected_factorial_moment_denominator": null,
+      "exact_expected_factorial_moment_numerator": null,
+      "factorial_moment_excess": 0.0,
+      "fifth_moment_formula_crosscheck": null,
+      "finite_row_is_asymptotic_theorem": false,
+      "fourth_moment_formula_crosscheck": null,
+      "independent_factorial_moment_baseline": 0.95361328125,
+      "integer_rank_deficient_tuple_fraction": 0.0,
+      "maximum_observed_two_adic_valuation": 0,
+      "mod2_dependent_tuple_fraction": 0.0,
+      "modulus": 64,
+      "moment_order": 3,
+      "n_bits": 6,
+      "register_count": 6,
+      "register_offset": 0,
+      "relative_excess": 0.0,
+      "sampled_row_is_rare_event_blind": true,
+      "sampling_standard_error": 0.0,
+      "smith_types": [
+        {
+          "integer_rank": 3,
+          "observed_frequency": 1.0,
+          "observed_tuple_count": 2000,
+          "signature": "rank=3;v2=0,0,0",
+          "two_adic_valuations": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "source_dimension_rank_capped": false,
+      "torsion_tuple_fraction": 0.0,
+      "unordered_tuple_population": 41664
+    },
+    {
+      "assignment_count": 64,
+      "census_mode": "sampled-type-probe",
+      "complete_census": false,
+      "distinct_smith_type_count": 3,
+      "estimated_expected_factorial_moment": 1.4074512519836426,
+      "evaluated_tuple_count": 2000,
+      "exact_expected_factorial_moment_denominator": null,
+      "exact_expected_factorial_moment_numerator": null,
+      "factorial_moment_excess": 0.4985385932922364,
+      "fifth_moment_formula_crosscheck": null,
+      "finite_row_is_asymptotic_theorem": false,
+      "fourth_moment_formula_crosscheck": null,
+      "independent_factorial_moment_baseline": 0.9089126586914062,
+      "integer_rank_deficient_tuple_fraction": 0.0085,
+      "maximum_observed_two_adic_valuation": 1,
+      "mod2_dependent_tuple_fraction": 0.0215,
+      "modulus": 64,
+      "moment_order": 4,
+      "n_bits": 6,
+      "register_count": 6,
+      "register_offset": 0,
+      "relative_excess": 0.5485000000000001,
+      "sampled_row_is_rare_event_blind": true,
+      "sampling_standard_error": 0.11757230630598711,
+      "smith_types": [
+        {
+          "integer_rank": 4,
+          "observed_frequency": 0.9785,
+          "observed_tuple_count": 1957,
+          "signature": "rank=4;v2=0,0,0,0",
+          "two_adic_valuations": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "integer_rank": 4,
+          "observed_frequency": 0.013,
+          "observed_tuple_count": 26,
+          "signature": "rank=4;v2=0,0,0,1",
+          "two_adic_valuations": [
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "integer_rank": 3,
+          "observed_frequency": 0.0085,
+          "observed_tuple_count": 17,
+          "signature": "rank=3;v2=0,0,0",
+          "two_adic_valuations": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "source_dimension_rank_capped": false,
+      "torsion_tuple_fraction": 0.013,
+      "unordered_tuple_population": 635376
+    },
+    {
+      "assignment_count": 64,
+      "census_mode": "sampled-type-probe",
+      "complete_census": false,
+      "distinct_smith_type_count": 3,
+      "estimated_expected_factorial_moment": 2.869465667009354,
+      "evaluated_tuple_count": 2000,
+      "exact_expected_factorial_moment_denominator": null,
+      "exact_expected_factorial_moment_numerator": null,
+      "factorial_moment_excess": 2.0173600494861605,
+      "fifth_moment_formula_crosscheck": null,
+      "finite_row_is_asymptotic_theorem": false,
+      "fourth_moment_formula_crosscheck": null,
+      "independent_factorial_moment_baseline": 0.8521056175231934,
+      "integer_rank_deficient_tuple_fraction": 0.037,
+      "maximum_observed_two_adic_valuation": 1,
+      "mod2_dependent_tuple_fraction": 0.0735,
+      "modulus": 64,
+      "moment_order": 5,
+      "n_bits": 6,
+      "register_count": 6,
+      "register_offset": 0,
+      "relative_excess": 2.3675,
+      "sampled_row_is_rare_event_blind": true,
+      "sampling_standard_error": 0.22653442294416562,
+      "smith_types": [
+        {
+          "integer_rank": 5,
+          "observed_frequency": 0.9265,
+          "observed_tuple_count": 1853,
+          "signature": "rank=5;v2=0,0,0,0,0",
+          "two_adic_valuations": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "integer_rank": 4,
+          "observed_frequency": 0.037,
+          "observed_tuple_count": 74,
+          "signature": "rank=4;v2=0,0,0,0",
+          "two_adic_valuations": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "integer_rank": 5,
+          "observed_frequency": 0.0365,
+          "observed_tuple_count": 73,
+          "signature": "rank=5;v2=0,0,0,0,1",
+          "two_adic_valuations": [
+            0,
+            0,
+            0,
+            0,
+            1
+          ]
+        }
+      ],
+      "source_dimension_rank_capped": false,
+      "torsion_tuple_fraction": 0.0365,
+      "unordered_tuple_population": 7624512
+    },
+    {
+      "assignment_count": 64,
+      "census_mode": "sampled-type-probe",
+      "complete_census": false,
+      "distinct_smith_type_count": 6,
+      "estimated_expected_factorial_moment": 9.900488685574382,
+      "evaluated_tuple_count": 2000,
+      "exact_expected_factorial_moment_denominator": null,
+      "exact_expected_factorial_moment_numerator": null,
+      "factorial_moment_excess": 9.114953819420188,
+      "fifth_moment_formula_crosscheck": null,
+      "finite_row_is_asymptotic_theorem": false,
+      "fourth_moment_formula_crosscheck": null,
+      "independent_factorial_moment_baseline": 0.7855348661541939,
+      "integer_rank_deficient_tuple_fraction": 0.149,
+      "maximum_observed_two_adic_valuation": 2,
+      "mod2_dependent_tuple_fraction": 0.2515,
+      "modulus": 64,
+      "moment_order": 6,
+      "n_bits": 6,
+      "register_count": 6,
+      "register_offset": 0,
+      "relative_excess": 11.6035,
+      "sampled_row_is_rare_event_blind": true,
+      "sampling_standard_error": 1.6535508291062513,
+      "smith_types": [
+        {
+          "integer_rank": 6,
+          "observed_frequency": 0.7485,
+          "observed_tuple_count": 1497,
+          "signature": "rank=6;v2=0,0,0,0,0,0",
+          "two_adic_valuations": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "integer_rank": 5,
+          "observed_frequency": 0.147,
+          "observed_tuple_count": 294,
+          "signature": "rank=5;v2=0,0,0,0,0",
+          "two_adic_valuations": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "integer_rank": 6,
+          "observed_frequency": 0.1015,
+          "observed_tuple_count": 203,
+          "signature": "rank=6;v2=0,0,0,0,0,1",
+          "two_adic_valuations": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "integer_rank": 5,
+          "observed_frequency": 0.0015,
+          "observed_tuple_count": 3,
+          "signature": "rank=5;v2=0,0,0,0,1",
+          "two_adic_valuations": [
+            0,
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "integer_rank": 6,
+          "observed_frequency": 0.001,
+          "observed_tuple_count": 2,
+          "signature": "rank=6;v2=0,0,0,0,0,2",
+          "two_adic_valuations": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            2
+          ]
+        },
+        {
+          "integer_rank": 4,
+          "observed_frequency": 0.0005,
+          "observed_tuple_count": 1,
+          "signature": "rank=4;v2=0,0,0,0",
+          "two_adic_valuations": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "source_dimension_rank_capped": false,
+      "torsion_tuple_fraction": 0.104,
+      "unordered_tuple_population": 74974368
+    },
+    {
+      "assignment_count": 256,
+      "census_mode": "sampled-type-probe",
+      "complete_census": false,
+      "distinct_smith_type_count": 1,
+      "estimated_expected_factorial_moment": 15.9375,
+      "evaluated_tuple_count": 2000,
+      "exact_expected_factorial_moment_denominator": null,
+      "exact_expected_factorial_moment_numerator": null,
+      "factorial_moment_excess": 0.0,
+      "fifth_moment_formula_crosscheck": null,
+      "finite_row_is_asymptotic_theorem": false,
+      "fourth_moment_formula_crosscheck": null,
+      "independent_factorial_moment_baseline": 15.9375,
+      "integer_rank_deficient_tuple_fraction": 0.0,
+      "maximum_observed_two_adic_valuation": 0,
+      "mod2_dependent_tuple_fraction": 0.0,
+      "modulus": 64,
+      "moment_order": 2,
+      "n_bits": 6,
+      "register_count": 8,
+      "register_offset": 2,
+      "relative_excess": 0.0,
+      "sampled_row_is_rare_event_blind": true,
+      "sampling_standard_error": 0.0,
+      "smith_types": [
+        {
+          "integer_rank": 2,
+          "observed_frequency": 1.0,
+          "observed_tuple_count": 2000,
+          "signature": "rank=2;v2=0,0",
+          "two_adic_valuations": [
+            0,
+            0
+          ]
+        }
+      ],
+      "source_dimension_rank_capped": false,
+      "torsion_tuple_fraction": 0.0,
+      "unordered_tuple_population": 32640
+    },
+    {
+      "assignment_count": 256,
+      "census_mode": "sampled-type-probe",
+      "complete_census": false,
+      "distinct_smith_type_count": 1,
+      "estimated_expected_factorial_moment": 63.251953125,
+      "evaluated_tuple_count": 2000,
+      "exact_expected_factorial_moment_denominator": null,
+      "exact_expected_factorial_moment_numerator": null,
+      "factorial_moment_excess": 0.0,
+      "fifth_moment_formula_crosscheck": null,
+      "finite_row_is_asymptotic_theorem": false,
+      "fourth_moment_formula_crosscheck": null,
+      "independent_factorial_moment_baseline": 63.251953125,
+      "integer_rank_deficient_tuple_fraction": 0.0,
+      "maximum_observed_two_adic_valuation": 0,
+      "mod2_dependent_tuple_fraction": 0.0,
+      "modulus": 64,
+      "moment_order": 3,
+      "n_bits": 6,
+      "register_count": 8,
+      "register_offset": 2,
+      "relative_excess": 0.0,
+      "sampled_row_is_rare_event_blind": true,
+      "sampling_standard_error": 0.0,
+      "smith_types": [
+        {
+          "integer_rank": 3,
+          "observed_frequency": 1.0,
+          "observed_tuple_count": 2000,
+          "signature": "rank=3;v2=0,0,0",
+          "two_adic_valuations": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "source_dimension_rank_capped": false,
+      "torsion_tuple_fraction": 0.0,
+      "unordered_tuple_population": 2763520
+    },
+    {
+      "assignment_count": 256,
+      "census_mode": "sampled-type-probe",
+      "complete_census": false,
+      "distinct_smith_type_count": 3,
+      "estimated_expected_factorial_moment": 290.42480186462404,
+      "evaluated_tuple_count": 2000,
+      "exact_expected_factorial_moment_denominator": null,
+      "exact_expected_factorial_moment_numerator": null,
+      "factorial_moment_excess": 40.38192466735842,
+      "fifth_moment_formula_crosscheck": null,
+      "finite_row_is_asymptotic_theorem": false,
+      "fourth_moment_formula_crosscheck": null,
+      "independent_factorial_moment_baseline": 250.04287719726562,
+      "integer_rank_deficient_tuple_fraction": 0.0025,
+      "maximum_observed_two_adic_valuation": 1,
+      "mod2_dependent_tuple_fraction": 0.0065,
+      "modulus": 64,
+      "moment_order": 4,
+      "n_bits": 6,
+      "register_count": 8,
+      "register_offset": 2,
+      "relative_excess": 0.1615000000000001,
+      "sampled_row_is_rare_event_blind": true,
+      "sampling_standard_error": 17.5968467015079,
+      "smith_types": [
+        {
+          "integer_rank": 4,
+          "observed_frequency": 0.9935,
+          "observed_tuple_count": 1987,
+          "signature": "rank=4;v2=0,0,0,0",
+          "two_adic_valuations": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "integer_rank": 4,
+          "observed_frequency": 0.004,
+          "observed_tuple_count": 8,
+          "signature": "rank=4;v2=0,0,0,1",
+          "two_adic_valuations": [
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "integer_rank": 3,
+          "observed_frequency": 0.0025,
+          "observed_tuple_count": 5,
+          "signature": "rank=3;v2=0,0,0",
+          "two_adic_valuations": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "source_dimension_rank_capped": false,
+      "torsion_tuple_fraction": 0.004,
+      "unordered_tuple_population": 174792640
+    },
+    {
+      "assignment_count": 256,
+      "census_mode": "sampled-type-probe",
+      "complete_census": false,
+      "distinct_smith_type_count": 3,
+      "estimated_expected_factorial_moment": 1524.0738472366334,
+      "evaluated_tuple_count": 2000,
+      "exact_expected_factorial_moment_denominator": null,
+      "exact_expected_factorial_moment_numerator": null,
+      "factorial_moment_excess": 539.5300182724,
+      "fifth_moment_formula_crosscheck": null,
+      "finite_row_is_asymptotic_theorem": false,
+      "fourth_moment_formula_crosscheck": null,
+      "independent_factorial_moment_baseline": 984.5438289642334,
+      "integer_rank_deficient_tuple_fraction": 0.0085,
+      "maximum_observed_two_adic_valuation": 1,
+      "mod2_dependent_tuple_fraction": 0.021,
+      "modulus": 64,
+      "moment_order": 5,
+      "n_bits": 6,
+      "register_count": 8,
+      "register_offset": 2,
+      "relative_excess": 0.548,
+      "sampled_row_is_rare_event_blind": true,
+      "sampling_standard_error": 127.3556606486261,
+      "smith_types": [
+        {
+          "integer_rank": 5,
+          "observed_frequency": 0.979,
+          "observed_tuple_count": 1958,
+          "signature": "rank=5;v2=0,0,0,0,0",
+          "two_adic_valuations": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "integer_rank": 5,
+          "observed_frequency": 0.0125,
+          "observed_tuple_count": 25,
+          "signature": "rank=5;v2=0,0,0,0,1",
+          "two_adic_valuations": [
+            0,
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "integer_rank": 4,
+          "observed_frequency": 0.0085,
+          "observed_tuple_count": 17,
+          "signature": "rank=4;v2=0,0,0,0",
+          "two_adic_valuations": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "source_dimension_rank_capped": false,
+      "torsion_tuple_fraction": 0.0125,
+      "unordered_tuple_population": 8809549056
+    },
+    {
+      "assignment_count": 256,
+      "census_mode": "sampled-type-probe",
+      "complete_census": false,
+      "distinct_smith_type_count": 3,
+      "estimated_expected_factorial_moment": 9373.203380429373,
+      "evaluated_tuple_count": 2000,
+      "exact_expected_factorial_moment_denominator": null,
+      "exact_expected_factorial_moment_numerator": null,
+      "factorial_moment_excess": 5511.94555121027,
+      "fifth_moment_formula_crosscheck": null,
+      "finite_row_is_asymptotic_theorem": false,
+      "fourth_moment_formula_crosscheck": null,
+      "independent_factorial_moment_baseline": 3861.257829219103,
+      "integer_rank_deficient_tuple_fraction": 0.022,
+      "maximum_observed_two_adic_valuation": 1,
+      "mod2_dependent_tuple_fraction": 0.0635,
+      "modulus": 64,
+      "moment_order": 6,
+      "n_bits": 6,
+      "register_count": 8,
+      "register_offset": 2,
+      "relative_excess": 1.4275000000000002,
+      "sampled_row_is_rare_event_blind": true,
+      "sampling_standard_error": 797.7232798428992,
+      "smith_types": [
+        {
+          "integer_rank": 6,
+          "observed_frequency": 0.9365,
+          "observed_tuple_count": 1873,
+          "signature": "rank=6;v2=0,0,0,0,0,0",
+          "two_adic_valuations": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "integer_rank": 6,
+          "observed_frequency": 0.0415,
+          "observed_tuple_count": 83,
+          "signature": "rank=6;v2=0,0,0,0,0,1",
+          "two_adic_valuations": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "integer_rank": 5,
+          "observed_frequency": 0.022,
+          "observed_tuple_count": 44,
+          "signature": "rank=5;v2=0,0,0,0,0",
+          "two_adic_valuations": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "source_dimension_rank_capped": false,
+      "torsion_tuple_fraction": 0.0415,
+      "unordered_tuple_population": 368532802176
+    },
+    {
+      "assignment_count": 256,
+      "census_mode": "sampled-type-probe",
+      "complete_census": false,
+      "distinct_smith_type_count": 1,
+      "estimated_expected_factorial_moment": 0.99609375,
+      "evaluated_tuple_count": 2000,
+      "exact_expected_factorial_moment_denominator": null,
+      "exact_expected_factorial_moment_numerator": null,
+      "factorial_moment_excess": 0.0,
+      "fifth_moment_formula_crosscheck": null,
+      "finite_row_is_asymptotic_theorem": false,
+      "fourth_moment_formula_crosscheck": null,
+      "independent_factorial_moment_baseline": 0.99609375,
+      "integer_rank_deficient_tuple_fraction": 0.0,
+      "maximum_observed_two_adic_valuation": 0,
+      "mod2_dependent_tuple_fraction": 0.0,
+      "modulus": 256,
+      "moment_order": 2,
+      "n_bits": 8,
+      "register_count": 8,
+      "register_offset": 0,
+      "relative_excess": 0.0,
+      "sampled_row_is_rare_event_blind": true,
+      "sampling_standard_error": 0.0,
+      "smith_types": [
+        {
+          "integer_rank": 2,
+          "observed_frequency": 1.0,
+          "observed_tuple_count": 2000,
+          "signature": "rank=2;v2=0,0",
+          "two_adic_valuations": [
+            0,
+            0
+          ]
+        }
+      ],
+      "source_dimension_rank_capped": false,
+      "torsion_tuple_fraction": 0.0,
+      "unordered_tuple_population": 32640
+    },
+    {
+      "assignment_count": 256,
+      "census_mode": "sampled-type-probe",
+      "complete_census": false,
+      "distinct_smith_type_count": 1,
+      "estimated_expected_factorial_moment": 0.988311767578125,
+      "evaluated_tuple_count": 2000,
+      "exact_expected_factorial_moment_denominator": null,
+      "exact_expected_factorial_moment_numerator": null,
+      "factorial_moment_excess": 0.0,
+      "fifth_moment_formula_crosscheck": null,
+      "finite_row_is_asymptotic_theorem": false,
+      "fourth_moment_formula_crosscheck": null,
+      "independent_factorial_moment_baseline": 0.988311767578125,
+      "integer_rank_deficient_tuple_fraction": 0.0,
+      "maximum_observed_two_adic_valuation": 0,
+      "mod2_dependent_tuple_fraction": 0.0,
+      "modulus": 256,
+      "moment_order": 3,
+      "n_bits": 8,
+      "register_count": 8,
+      "register_offset": 0,
+      "relative_excess": 0.0,
+      "sampled_row_is_rare_event_blind": true,
+      "sampling_standard_error": 0.0,
+      "smith_types": [
+        {
+          "integer_rank": 3,
+          "observed_frequency": 1.0,
+          "observed_tuple_count": 2000,
+          "signature": "rank=3;v2=0,0,0",
+          "two_adic_valuations": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "source_dimension_rank_capped": false,
+      "torsion_tuple_fraction": 0.0,
+      "unordered_tuple_population": 2763520
+    },
+    {
+      "assignment_count": 256,
+      "census_mode": "sampled-type-probe",
+      "complete_census": false,
+      "distinct_smith_type_count": 3,
+      "estimated_expected_factorial_moment": 1.2277495962381362,
+      "evaluated_tuple_count": 2000,
+      "exact_expected_factorial_moment_denominator": null,
+      "exact_expected_factorial_moment_numerator": null,
+      "factorial_moment_excess": 0.25101960718631733,
+      "fifth_moment_formula_crosscheck": null,
+      "finite_row_is_asymptotic_theorem": false,
+      "fourth_moment_formula_crosscheck": null,
+      "independent_factorial_moment_baseline": 0.9767299890518188,
+      "integer_rank_deficient_tuple_fraction": 0.001,
+      "maximum_observed_two_adic_valuation": 1,
+      "mod2_dependent_tuple_fraction": 0.003,
+      "modulus": 256,
+      "moment_order": 4,
+      "n_bits": 8,
+      "register_count": 8,
+      "register_offset": 0,
+      "relative_excess": 0.2569999999999999,
+      "sampled_row_is_rare_event_blind": true,
+      "sampling_standard_error": 0.1760736277346473,
+      "smith_types": [
+        {
+          "integer_rank": 4,
+          "observed_frequency": 0.997,
+          "observed_tuple_count": 1994,
+          "signature": "rank=4;v2=0,0,0,0",
+          "two_adic_valuations": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "integer_rank": 4,
+          "observed_frequency": 0.002,
+          "observed_tuple_count": 4,
+          "signature": "rank=4;v2=0,0,0,1",
+          "two_adic_valuations": [
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "integer_rank": 3,
+          "observed_frequency": 0.001,
+          "observed_tuple_count": 2,
+          "signature": "rank=3;v2=0,0,0",
+          "two_adic_valuations": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "source_dimension_rank_capped": false,
+      "torsion_tuple_fraction": 0.002,
+      "unordered_tuple_population": 174792640
+    },
+    {
+      "assignment_count": 256,
+      "census_mode": "sampled-type-probe",
+      "complete_census": false,
+      "distinct_smith_type_count": 3,
+      "estimated_expected_factorial_moment": 2.8180644166935234,
+      "evaluated_tuple_count": 2000,
+      "exact_expected_factorial_moment_denominator": null,
+      "exact_expected_factorial_moment_numerator": null,
+      "factorial_moment_excess": 1.8565958337206392,
+      "fifth_moment_formula_crosscheck": null,
+      "finite_row_is_asymptotic_theorem": false,
+      "fourth_moment_formula_crosscheck": null,
+      "independent_factorial_moment_baseline": 0.9614685829728842,
+      "integer_rank_deficient_tuple_fraction": 0.0075,
+      "maximum_observed_two_adic_valuation": 1,
+      "mod2_dependent_tuple_fraction": 0.026,
+      "modulus": 256,
+      "moment_order": 5,
+      "n_bits": 8,
+      "register_count": 8,
+      "register_offset": 0,
+      "relative_excess": 1.9309999999999998,
+      "sampled_row_is_rare_event_blind": true,
+      "sampling_standard_error": 0.47308716921382743,
+      "smith_types": [
+        {
+          "integer_rank": 5,
+          "observed_frequency": 0.974,
+          "observed_tuple_count": 1948,
+          "signature": "rank=5;v2=0,0,0,0,0",
+          "two_adic_valuations": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "integer_rank": 5,
+          "observed_frequency": 0.0185,
+          "observed_tuple_count": 37,
+          "signature": "rank=5;v2=0,0,0,0,1",
+          "two_adic_valuations": [
+            0,
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "integer_rank": 4,
+          "observed_frequency": 0.0075,
+          "observed_tuple_count": 15,
+          "signature": "rank=4;v2=0,0,0,0",
+          "two_adic_valuations": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "source_dimension_rank_capped": false,
+      "torsion_tuple_fraction": 0.0185,
+      "unordered_tuple_population": 8809549056
+    },
+    {
+      "assignment_count": 256,
+      "census_mode": "sampled-type-probe",
+      "complete_census": false,
+      "distinct_smith_type_count": 3,
+      "estimated_expected_factorial_moment": 6.268887833082772,
+      "evaluated_tuple_count": 2000,
+      "exact_expected_factorial_moment_denominator": null,
+      "exact_expected_factorial_moment_numerator": null,
+      "factorial_moment_excess": 5.326197933371077,
+      "fifth_moment_formula_crosscheck": null,
+      "finite_row_is_asymptotic_theorem": false,
+      "fourth_moment_formula_crosscheck": null,
+      "independent_factorial_moment_baseline": 0.942689899711695,
+      "integer_rank_deficient_tuple_fraction": 0.022,
+      "maximum_observed_two_adic_valuation": 1,
+      "mod2_dependent_tuple_fraction": 0.062,
+      "modulus": 256,
+      "moment_order": 6,
+      "n_bits": 8,
+      "register_count": 8,
+      "register_offset": 0,
+      "relative_excess": 5.65,
+      "sampled_row_is_rare_event_blind": true,
+      "sampling_standard_error": 0.788532683060419,
+      "smith_types": [
+        {
+          "integer_rank": 6,
+          "observed_frequency": 0.938,
+          "observed_tuple_count": 1876,
+          "signature": "rank=6;v2=0,0,0,0,0,0",
+          "two_adic_valuations": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "integer_rank": 6,
+          "observed_frequency": 0.04,
+          "observed_tuple_count": 80,
+          "signature": "rank=6;v2=0,0,0,0,0,1",
+          "two_adic_valuations": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "integer_rank": 5,
+          "observed_frequency": 0.022,
+          "observed_tuple_count": 44,
+          "signature": "rank=5;v2=0,0,0,0,0",
+          "two_adic_valuations": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "source_dimension_rank_capped": false,
+      "torsion_tuple_fraction": 0.04,
+      "unordered_tuple_population": 368532802176
+    },
+    {
+      "assignment_count": 1024,
+      "census_mode": "sampled-type-probe",
+      "complete_census": false,
+      "distinct_smith_type_count": 1,
+      "estimated_expected_factorial_moment": 15.984375,
+      "evaluated_tuple_count": 2000,
+      "exact_expected_factorial_moment_denominator": null,
+      "exact_expected_factorial_moment_numerator": null,
+      "factorial_moment_excess": 0.0,
+      "fifth_moment_formula_crosscheck": null,
+      "finite_row_is_asymptotic_theorem": false,
+      "fourth_moment_formula_crosscheck": null,
+      "independent_factorial_moment_baseline": 15.984375,
+      "integer_rank_deficient_tuple_fraction": 0.0,
+      "maximum_observed_two_adic_valuation": 0,
+      "mod2_dependent_tuple_fraction": 0.0,
+      "modulus": 256,
+      "moment_order": 2,
+      "n_bits": 8,
+      "register_count": 10,
+      "register_offset": 2,
+      "relative_excess": 0.0,
+      "sampled_row_is_rare_event_blind": true,
+      "sampling_standard_error": 0.0,
+      "smith_types": [
+        {
+          "integer_rank": 2,
+          "observed_frequency": 1.0,
+          "observed_tuple_count": 2000,
+          "signature": "rank=2;v2=0,0",
+          "two_adic_valuations": [
+            0,
+            0
+          ]
+        }
+      ],
+      "source_dimension_rank_capped": false,
+      "torsion_tuple_fraction": 0.0,
+      "unordered_tuple_population": 523776
+    },
+    {
+      "assignment_count": 1024,
+      "census_mode": "sampled-type-probe",
+      "complete_census": false,
+      "distinct_smith_type_count": 1,
+      "estimated_expected_factorial_moment": 63.8126220703125,
+      "evaluated_tuple_count": 2000,
+      "exact_expected_factorial_moment_denominator": null,
+      "exact_expected_factorial_moment_numerator": null,
+      "factorial_moment_excess": 0.0,
+      "fifth_moment_formula_crosscheck": null,
+      "finite_row_is_asymptotic_theorem": false,
+      "fourth_moment_formula_crosscheck": null,
+      "independent_factorial_moment_baseline": 63.8126220703125,
+      "integer_rank_deficient_tuple_fraction": 0.0,
+      "maximum_observed_two_adic_valuation": 0,
+      "mod2_dependent_tuple_fraction": 0.0,
+      "modulus": 256,
+      "moment_order": 3,
+      "n_bits": 8,
+      "register_count": 10,
+      "register_offset": 2,
+      "relative_excess": 0.0,
+      "sampled_row_is_rare_event_blind": true,
+      "sampling_standard_error": 0.0,
+      "smith_types": [
+        {
+          "integer_rank": 3,
+          "observed_frequency": 1.0,
+          "observed_tuple_count": 2000,
+          "signature": "rank=3;v2=0,0,0",
+          "two_adic_valuations": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "source_dimension_rank_capped": false,
+      "torsion_tuple_fraction": 0.0,
+      "unordered_tuple_population": 178433024
+    },
+    {
+      "assignment_count": 1024,
+      "census_mode": "sampled-type-probe",
+      "complete_census": false,
+      "distinct_smith_type_count": 2,
+      "estimated_expected_factorial_moment": 254.6299354584217,
+      "evaluated_tuple_count": 2000,
+      "exact_expected_factorial_moment_denominator": null,
+      "exact_expected_factorial_moment_numerator": null,
+      "factorial_moment_excess": 0.12725134205817312,
+      "fifth_moment_formula_crosscheck": null,
+      "finite_row_is_asymptotic_theorem": false,
+      "fourth_moment_formula_crosscheck": null,
+      "independent_factorial_moment_baseline": 254.50268411636353,
+      "integer_rank_deficient_tuple_fraction": 0.0,
+      "maximum_observed_two_adic_valuation": 1,
+      "mod2_dependent_tuple_fraction": 0.0005,
+      "modulus": 256,
+      "moment_order": 4,
+      "n_bits": 8,
+      "register_count": 10,
+      "register_offset": 2,
+      "relative_excess": 0.0004999999999999661,
+      "sampled_row_is_rare_event_blind": true,
+      "sampling_standard_error": 0.12725134205818175,
+      "smith_types": [
+        {
+          "integer_rank": 4,
+          "observed_frequency": 0.9995,
+          "observed_tuple_count": 1999,
+          "signature": "rank=4;v2=0,0,0,0",
+          "two_adic_valuations": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "integer_rank": 4,
+          "observed_frequency": 0.0005,
+          "observed_tuple_count": 1,
+          "signature": "rank=4;v2=0,0,0,1",
+          "two_adic_valuations": [
+            0,
+            0,
+            0,
+            1
+          ]
+        }
+      ],
+      "source_dimension_rank_capped": false,
+      "torsion_tuple_fraction": 0.0005,
+      "unordered_tuple_population": 45545029376
+    },
+    {
+      "assignment_count": 1024,
+      "census_mode": "sampled-type-probe",
+      "complete_census": false,
+      "distinct_smith_type_count": 3,
+      "estimated_expected_factorial_moment": 1277.1759892869184,
+      "evaluated_tuple_count": 2000,
+      "exact_expected_factorial_moment_denominator": null,
+      "exact_expected_factorial_moment_numerator": null,
+      "factorial_moment_excess": 263.14185726078244,
+      "fifth_moment_formula_crosscheck": null,
+      "finite_row_is_asymptotic_theorem": false,
+      "fourth_moment_formula_crosscheck": null,
+      "independent_factorial_moment_baseline": 1014.0341320261359,
+      "integer_rank_deficient_tuple_fraction": 0.001,
+      "maximum_observed_two_adic_valuation": 1,
+      "mod2_dependent_tuple_fraction": 0.0055,
+      "modulus": 256,
+      "moment_order": 5,
+      "n_bits": 8,
+      "register_count": 10,
+      "register_offset": 2,
+      "relative_excess": 0.2595000000000002,
+      "sampled_row_is_rare_event_blind": true,
+      "sampling_standard_error": 182.80008946810415,
+      "smith_types": [
+        {
+          "integer_rank": 5,
+          "observed_frequency": 0.9945,
+          "observed_tuple_count": 1989,
+          "signature": "rank=5;v2=0,0,0,0,0",
+          "two_adic_valuations": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "integer_rank": 5,
+          "observed_frequency": 0.0045,
+          "observed_tuple_count": 9,
+          "signature": "rank=5;v2=0,0,0,0,1",
+          "two_adic_valuations": [
+            0,
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "integer_rank": 4,
+          "observed_frequency": 0.001,
+          "observed_tuple_count": 2,
+          "signature": "rank=4;v2=0,0,0,0",
+          "two_adic_valuations": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "source_dimension_rank_capped": false,
+      "torsion_tuple_fraction": 0.0045,
+      "unordered_tuple_population": 9291185992704
+    },
+    {
+      "assignment_count": 1024,
+      "census_mode": "sampled-type-probe",
+      "complete_census": false,
+      "distinct_smith_type_count": 3,
+      "estimated_expected_factorial_moment": 6663.982768213587,
+      "evaluated_tuple_count": 2000,
+      "exact_expected_factorial_moment_denominator": null,
+      "exact_expected_factorial_moment_numerator": null,
+      "factorial_moment_excess": 2627.651594250179,
+      "fifth_moment_formula_crosscheck": null,
+      "finite_row_is_asymptotic_theorem": false,
+      "fourth_moment_formula_crosscheck": null,
+      "independent_factorial_moment_baseline": 4036.331173963408,
+      "integer_rank_deficient_tuple_fraction": 0.0025,
+      "maximum_observed_two_adic_valuation": 1,
+      "mod2_dependent_tuple_fraction": 0.016,
+      "modulus": 256,
+      "moment_order": 6,
+      "n_bits": 8,
+      "register_count": 10,
+      "register_offset": 2,
+      "relative_excess": 0.6510000000000001,
+      "sampled_row_is_rare_event_blind": true,
+      "sampling_standard_error": 1149.5869270269427,
+      "smith_types": [
+        {
+          "integer_rank": 6,
+          "observed_frequency": 0.984,
+          "observed_tuple_count": 1968,
+          "signature": "rank=6;v2=0,0,0,0,0,0",
+          "two_adic_valuations": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "integer_rank": 6,
+          "observed_frequency": 0.0135,
+          "observed_tuple_count": 27,
+          "signature": "rank=6;v2=0,0,0,0,0,1",
+          "two_adic_valuations": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "integer_rank": 5,
+          "observed_frequency": 0.0025,
+          "observed_tuple_count": 5,
+          "signature": "rank=5;v2=0,0,0,0,0",
+          "two_adic_valuations": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "source_dimension_rank_capped": false,
+      "torsion_tuple_fraction": 0.0135,
+      "unordered_tuple_population": 1577953087760896
+    }
+  ],
+  "source_contract": {
+    "exactness_boundary": "Only complete-exact rows are finite identities; sampled rows are rare-event blind",
+    "joint_probability": "For rows (x,-1) with nonzero Smith factors d_i, Pr[all hits]=prod_i gcd(2^n,d_i)/(2^n)^rank",
+    "labels": "independent uniform a_i in Z_(2^n)",
+    "representation_count": "C=#{x in {0,1}^m : sum_i a_i x_i=t mod 2^n}",
+    "target": "independent uniform t in Z_(2^n)"
+  },
+  "source_fifth_moment_certificates": [
+    {
+      "affine_independent_five_set_count": 0,
+      "assignment_count": 8,
+      "exact_expected_fifth_factorial_moment_denominator": 64,
+      "exact_expected_fifth_factorial_moment_numerator": 105,
+      "exact_fifth_excess_denominator": 512,
+      "exact_fifth_excess_numerator": 735,
+      "exact_independent_baseline_denominator": 512,
+      "exact_independent_baseline_numerator": 105,
+      "fifth_excess": 1.435546875,
+      "fixed_offset_fifth_excess_vanishes": true,
+      "integer_rank_four_five_set_count": 56,
+      "limitations": [
+        "The theorem averages over uniformly random labels and independent target.",
+        "It controls fixed fifth order only.",
+        "It does not prove concentration for conditioned low fibers.",
+        "It supplies no implicit statistic, decoder, or computational lower bound."
+      ],
+      "n_bits": 3,
+      "proof": "A dependent five-set contains a unique xor-zero four-set. Rank-three quadruples admit every outside point as an integer-rank-four extension. Each Smith-two quadruple has exactly four additional Boolean vertices in its rational affine span; its other U-8 extensions have rank five and Smith valuations (0,0,0,0,1). Substitution gives excess O((3/4)^n)+O(2^-n) at fixed offset.",
+      "register_count": 3,
+      "register_offset": 0,
+      "smith_two_rank_five_set_count": 0,
+      "source_modulus": 8
+    },
+    {
+      "affine_independent_five_set_count": 166656,
+      "assignment_count": 32,
+      "exact_expected_fifth_factorial_moment_denominator": 32,
+      "exact_expected_fifth_factorial_moment_numerator": 43305,
+      "exact_fifth_excess_denominator": 128,
+      "exact_fifth_excess_numerator": 78825,
+      "exact_independent_baseline_denominator": 128,
+      "exact_independent_baseline_numerator": 94395,
+      "fifth_excess": 615.8203125,
+      "fixed_offset_fifth_excess_vanishes": true,
+      "integer_rank_four_five_set_count": 22240,
+      "limitations": [
+        "The theorem averages over uniformly random labels and independent target.",
+        "It controls fixed fifth order only.",
+        "It does not prove concentration for conditioned low fibers.",
+        "It supplies no implicit statistic, decoder, or computational lower bound."
+      ],
+      "n_bits": 3,
+      "proof": "A dependent five-set contains a unique xor-zero four-set. Rank-three quadruples admit every outside point as an integer-rank-four extension. Each Smith-two quadruple has exactly four additional Boolean vertices in its rational affine span; its other U-8 extensions have rank five and Smith valuations (0,0,0,0,1). Substitution gives excess O((3/4)^n)+O(2^-n) at fixed offset.",
+      "register_count": 5,
+      "register_offset": 2,
+      "smith_two_rank_five_set_count": 12480,
+      "source_modulus": 8
+    },
+    {
+      "affine_independent_five_set_count": 2688,
+      "assignment_count": 16,
+      "exact_expected_fifth_factorial_moment_denominator": 256,
+      "exact_expected_fifth_factorial_moment_numerator": 735,
+      "exact_fifth_excess_denominator": 8192,
+      "exact_fifth_excess_numerator": 19425,
+      "exact_independent_baseline_denominator": 8192,
+      "exact_independent_baseline_numerator": 4095,
+      "fifth_excess": 2.3712158203125,
+      "fixed_offset_fifth_excess_vanishes": true,
+      "integer_rank_four_five_set_count": 1360,
+      "limitations": [
+        "The theorem averages over uniformly random labels and independent target.",
+        "It controls fixed fifth order only.",
+        "It does not prove concentration for conditioned low fibers.",
+        "It supplies no implicit statistic, decoder, or computational lower bound."
+      ],
+      "n_bits": 4,
+      "proof": "A dependent five-set contains a unique xor-zero four-set. Rank-three quadruples admit every outside point as an integer-rank-four extension. Each Smith-two quadruple has exactly four additional Boolean vertices in its rational affine span; its other U-8 extensions have rank five and Smith valuations (0,0,0,0,1). Substitution gives excess O((3/4)^n)+O(2^-n) at fixed offset.",
+      "register_count": 4,
+      "register_offset": 0,
+      "smith_two_rank_five_set_count": 320,
+      "source_modulus": 16
+    },
+    {
+      "affine_independent_five_set_count": 6999552,
+      "assignment_count": 64,
+      "exact_expected_fifth_factorial_moment_denominator": 128,
+      "exact_expected_fifth_factorial_moment_numerator": 184695,
+      "exact_fifth_excess_denominator": 2048,
+      "exact_fifth_excess_numerator": 1168125,
+      "exact_independent_baseline_denominator": 2048,
+      "exact_independent_baseline_numerator": 1786995,
+      "fifth_excess": 570.37353515625,
+      "fixed_offset_fifth_excess_vanishes": true,
+      "integer_rank_four_five_set_count": 311360,
+      "limitations": [
+        "The theorem averages over uniformly random labels and independent target.",
+        "It controls fixed fifth order only.",
+        "It does not prove concentration for conditioned low fibers.",
+        "It supplies no implicit statistic, decoder, or computational lower bound."
+      ],
+      "n_bits": 4,
+      "proof": "A dependent five-set contains a unique xor-zero four-set. Rank-three quadruples admit every outside point as an integer-rank-four extension. Each Smith-two quadruple has exactly four additional Boolean vertices in its rational affine span; its other U-8 extensions have rank five and Smith valuations (0,0,0,0,1). Substitution gives excess O((3/4)^n)+O(2^-n) at fixed offset.",
+      "register_count": 6,
+      "register_offset": 2,
+      "smith_two_rank_five_set_count": 313600,
+      "source_modulus": 16
+    },
+    {
+      "affine_independent_five_set_count": 6999552,
+      "assignment_count": 64,
+      "exact_expected_fifth_factorial_moment_denominator": 32768,
+      "exact_expected_fifth_factorial_moment_numerator": 100905,
+      "exact_fifth_excess_denominator": 2097152,
+      "exact_fifth_excess_numerator": 4670925,
+      "exact_independent_baseline_denominator": 2097152,
+      "exact_independent_baseline_numerator": 1786995,
+      "fifth_excess": 2.2272706031799316,
+      "fixed_offset_fifth_excess_vanishes": true,
+      "integer_rank_four_five_set_count": 311360,
+      "limitations": [
+        "The theorem averages over uniformly random labels and independent target.",
+        "It controls fixed fifth order only.",
+        "It does not prove concentration for conditioned low fibers.",
+        "It supplies no implicit statistic, decoder, or computational lower bound."
+      ],
+      "n_bits": 6,
+      "proof": "A dependent five-set contains a unique xor-zero four-set. Rank-three quadruples admit every outside point as an integer-rank-four extension. Each Smith-two quadruple has exactly four additional Boolean vertices in its rational affine span; its other U-8 extensions have rank five and Smith valuations (0,0,0,0,1). Substitution gives excess O((3/4)^n)+O(2^-n) at fixed offset.",
+      "register_count": 6,
+      "register_offset": 0,
+      "smith_two_rank_five_set_count": 313600,
+      "source_modulus": 64
+    },
+    {
+      "affine_independent_five_set_count": 8635447296,
+      "assignment_count": 256,
+      "exact_expected_fifth_factorial_moment_denominator": 32768,
+      "exact_expected_fifth_factorial_moment_numerator": 44427915,
+      "exact_fifth_excess_denominator": 524288,
+      "exact_fifth_excess_numerator": 194662125,
+      "exact_independent_baseline_denominator": 524288,
+      "exact_independent_baseline_numerator": 516184515,
+      "fifth_excess": 371.288537979126,
+      "fixed_offset_fifth_excess_vanishes": true,
+      "integer_rank_four_five_set_count": 50776320,
+      "limitations": [
+        "The theorem averages over uniformly random labels and independent target.",
+        "It controls fixed fifth order only.",
+        "It does not prove concentration for conditioned low fibers.",
+        "It supplies no implicit statistic, decoder, or computational lower bound."
+      ],
+      "n_bits": 6,
+      "proof": "A dependent five-set contains a unique xor-zero four-set. Rank-three quadruples admit every outside point as an integer-rank-four extension. Each Smith-two quadruple has exactly four additional Boolean vertices in its rational affine span; its other U-8 extensions have rank five and Smith valuations (0,0,0,0,1). Substitution gives excess O((3/4)^n)+O(2^-n) at fixed offset.",
+      "register_count": 8,
+      "register_offset": 2,
+      "smith_two_rank_five_set_count": 123325440,
+      "source_modulus": 64
+    },
+    {
+      "affine_independent_five_set_count": 8635447296,
+      "assignment_count": 256,
+      "exact_expected_fifth_factorial_moment_denominator": 33554432,
+      "exact_expected_fifth_factorial_moment_numerator": 80130015,
+      "exact_fifth_excess_denominator": 536870912,
+      "exact_fifth_excess_numerator": 765895725,
+      "exact_independent_baseline_denominator": 536870912,
+      "exact_independent_baseline_numerator": 516184515,
+      "fifth_excess": 1.426591956987977,
+      "fixed_offset_fifth_excess_vanishes": true,
+      "integer_rank_four_five_set_count": 50776320,
+      "limitations": [
+        "The theorem averages over uniformly random labels and independent target.",
+        "It controls fixed fifth order only.",
+        "It does not prove concentration for conditioned low fibers.",
+        "It supplies no implicit statistic, decoder, or computational lower bound."
+      ],
+      "n_bits": 8,
+      "proof": "A dependent five-set contains a unique xor-zero four-set. Rank-three quadruples admit every outside point as an integer-rank-four extension. Each Smith-two quadruple has exactly four additional Boolean vertices in its rational affine span; its other U-8 extensions have rank five and Smith valuations (0,0,0,0,1). Substitution gives excess O((3/4)^n)+O(2^-n) at fixed offset.",
+      "register_count": 8,
+      "register_offset": 0,
+      "smith_two_rank_five_set_count": 123325440,
+      "source_modulus": 256
+    },
+    {
+      "affine_independent_five_set_count": 9245685571584,
+      "assignment_count": 1024,
+      "exact_expected_fifth_factorial_moment_denominator": 4194304,
+      "exact_expected_fifth_factorial_moment_numerator": 5156666295,
+      "exact_fifth_excess_denominator": 134217728,
+      "exact_fifth_excess_numerator": 28911964125,
+      "exact_independent_baseline_denominator": 134217728,
+      "exact_independent_baseline_numerator": 136101357315,
+      "fifth_excess": 215.4109189286828,
+      "fixed_offset_fifth_excess_vanishes": true,
+      "integer_rank_four_five_set_count": 7591429120,
+      "limitations": [
+        "The theorem averages over uniformly random labels and independent target.",
+        "It controls fixed fifth order only.",
+        "It does not prove concentration for conditioned low fibers.",
+        "It supplies no implicit statistic, decoder, or computational lower bound."
+      ],
+      "n_bits": 8,
+      "proof": "A dependent five-set contains a unique xor-zero four-set. Rank-three quadruples admit every outside point as an integer-rank-four extension. Each Smith-two quadruple has exactly four additional Boolean vertices in its rational affine span; its other U-8 extensions have rank five and Smith valuations (0,0,0,0,1). Substitution gives excess O((3/4)^n)+O(2^-n) at fixed offset.",
+      "register_count": 10,
+      "register_offset": 2,
+      "smith_two_rank_five_set_count": 37908992000,
+      "source_modulus": 256
+    }
+  ],
+  "status": "smith-moment-spectrum-maps-first-unresolved-orders",
+  "summary": "Computed 11 complete Smith moment censuses and 29 explicitly rare-event-blind type probes across 40 rows. Exact order-four cross-checks passed 2/2 and exact order-five cross-checks passed 1/1. Source-average fixed fifth order is asymptotically obstructed; order>=6 and growing-order asymptotics remain open."
+}

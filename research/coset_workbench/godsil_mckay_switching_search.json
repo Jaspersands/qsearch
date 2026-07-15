@@ -1,0 +1,263 @@
+{
+  "created_at": "2026-07-09T16:13:36.851241+00:00",
+  "falsifiers_triggered": [
+    "Godsil-McKay switched rows were distinguished by classical WL/graphlet/individualization/rooted-tensor baselines."
+  ],
+  "family_records": [
+    {
+      "interpretation": "Found 1 non-isomorphic Godsil-McKay switched row(s).",
+      "records": [
+        {
+          "baselines": [
+            {
+              "detail": "Degree, spectrum, walk-count, and WL2 signatures are cheap classical shadows.",
+              "distinguishes": false,
+              "evaluated": true,
+              "name": "degree-spectrum-walk-wl2",
+              "status": "no-signal"
+            },
+            {
+              "detail": "3-WL tuple count 4096; cap 120000.",
+              "distinguishes": false,
+              "evaluated": true,
+              "name": "3-wl",
+              "status": "no-signal"
+            },
+            {
+              "detail": "4-WL tuple count 65536; cap 120000.",
+              "distinguishes": true,
+              "evaluated": true,
+              "name": "4-wl",
+              "status": "dequantized-by-classical-baseline"
+            },
+            {
+              "detail": "Four-vertex graphlet tuple count 1820; cap 1000000.",
+              "distinguishes": true,
+              "evaluated": true,
+              "name": "graphlet-tensor",
+              "status": "dequantized-by-classical-baseline"
+            },
+            {
+              "detail": "1-individualization count 16; cap 40000.",
+              "distinguishes": false,
+              "evaluated": true,
+              "name": "individualized-wl-1",
+              "status": "no-signal"
+            },
+            {
+              "detail": "2-individualization count 120; cap 40000.",
+              "distinguishes": true,
+              "evaluated": true,
+              "name": "individualized-wl-2",
+              "status": "dequantized-by-classical-baseline"
+            },
+            {
+              "detail": "1-root extension tuple count 1920; cap 3000000.",
+              "distinguishes": false,
+              "evaluated": true,
+              "name": "rooted-tensor-1",
+              "status": "no-signal"
+            },
+            {
+              "detail": "2-root extension tuple count 12600; cap 3000000.",
+              "distinguishes": true,
+              "evaluated": true,
+              "name": "rooted-tensor-2",
+              "status": "dequantized-by-classical-baseline"
+            }
+          ],
+          "cospectral": true,
+          "exact_nonisomorphic": true,
+          "half_neighbor_vertices": 12,
+          "id": "gm-rook-4x4-4-325",
+          "interpretation": "The switched pair is cospectral and non-isomorphic, but classical baselines distinguish it: 4-wl, graphlet-tensor, individualized-wl-2, rooted-tensor-2",
+          "pair": {
+            "graph_a": "4x4 rook graph before Godsil-McKay switching",
+            "graph_b": "4x4 rook graph after Godsil-McKay switching",
+            "id": "gm-rook-4x4-4-325",
+            "known_nonisomorphic": true,
+            "reason": "Godsil-McKay switching preserves spectrum; exact isomorphism check determines whether this row is a non-isomorphic graph-pair stress test.",
+            "vertex_count": 16
+          },
+          "spec": {
+            "construction_note": "Search 4-vertex Godsil-McKay switching sets inside the lattice/rook graph family.",
+            "graph_family": "4x4 rook graph",
+            "id": "rook-4x4",
+            "max_records": 1,
+            "max_subsets_checked": 20000,
+            "switching_set_sizes": [
+              4
+            ],
+            "vertex_count": 16
+          },
+          "status": "dequantized-by-gm-classical-baseline",
+          "subsets_checked_before_hit": 325,
+          "switching_set": [
+            0,
+            5,
+            10,
+            15
+          ]
+        }
+      ],
+      "spec": {
+        "construction_note": "Search 4-vertex Godsil-McKay switching sets inside the lattice/rook graph family.",
+        "graph_family": "4x4 rook graph",
+        "id": "rook-4x4",
+        "max_records": 1,
+        "max_subsets_checked": 20000,
+        "switching_set_sizes": [
+          4
+        ],
+        "vertex_count": 16
+      },
+      "status": "gm-rows-dequantized",
+      "subsets_checked": 325,
+      "valid_switching_sets_seen": 10
+    },
+    {
+      "interpretation": "Found 1 non-isomorphic Godsil-McKay switched row(s).",
+      "records": [
+        {
+          "baselines": [
+            {
+              "detail": "Degree, spectrum, walk-count, and WL2 signatures are cheap classical shadows.",
+              "distinguishes": false,
+              "evaluated": true,
+              "name": "degree-spectrum-walk-wl2",
+              "status": "no-signal"
+            },
+            {
+              "detail": "3-WL tuple count 4096; cap 120000.",
+              "distinguishes": false,
+              "evaluated": true,
+              "name": "3-wl",
+              "status": "no-signal"
+            },
+            {
+              "detail": "4-WL tuple count 65536; cap 120000.",
+              "distinguishes": true,
+              "evaluated": true,
+              "name": "4-wl",
+              "status": "dequantized-by-classical-baseline"
+            },
+            {
+              "detail": "Four-vertex graphlet tuple count 1820; cap 1000000.",
+              "distinguishes": true,
+              "evaluated": true,
+              "name": "graphlet-tensor",
+              "status": "dequantized-by-classical-baseline"
+            },
+            {
+              "detail": "1-individualization count 16; cap 40000.",
+              "distinguishes": false,
+              "evaluated": true,
+              "name": "individualized-wl-1",
+              "status": "no-signal"
+            },
+            {
+              "detail": "2-individualization count 120; cap 40000.",
+              "distinguishes": true,
+              "evaluated": true,
+              "name": "individualized-wl-2",
+              "status": "dequantized-by-classical-baseline"
+            },
+            {
+              "detail": "1-root extension tuple count 1920; cap 3000000.",
+              "distinguishes": false,
+              "evaluated": true,
+              "name": "rooted-tensor-1",
+              "status": "no-signal"
+            },
+            {
+              "detail": "2-root extension tuple count 12600; cap 3000000.",
+              "distinguishes": true,
+              "evaluated": true,
+              "name": "rooted-tensor-2",
+              "status": "dequantized-by-classical-baseline"
+            }
+          ],
+          "cospectral": true,
+          "exact_nonisomorphic": true,
+          "half_neighbor_vertices": 12,
+          "id": "gm-shrikhande-z4x4-4-143",
+          "interpretation": "The switched pair is cospectral and non-isomorphic, but classical baselines distinguish it: 4-wl, graphlet-tensor, individualized-wl-2, rooted-tensor-2",
+          "pair": {
+            "graph_a": "Shrikhande Cayley graph on Z_4 x Z_4 before Godsil-McKay switching",
+            "graph_b": "Shrikhande Cayley graph on Z_4 x Z_4 after Godsil-McKay switching",
+            "id": "gm-shrikhande-z4x4-4-143",
+            "known_nonisomorphic": true,
+            "reason": "Godsil-McKay switching preserves spectrum; exact isomorphism check determines whether this row is a non-isomorphic graph-pair stress test.",
+            "vertex_count": 16
+          },
+          "spec": {
+            "construction_note": "Search 4-vertex Godsil-McKay switching sets in a strongly regular Cayley graph.",
+            "graph_family": "Shrikhande Cayley graph on Z_4 x Z_4",
+            "id": "shrikhande-z4x4",
+            "max_records": 1,
+            "max_subsets_checked": 20000,
+            "switching_set_sizes": [
+              4
+            ],
+            "vertex_count": 16
+          },
+          "status": "dequantized-by-gm-classical-baseline",
+          "subsets_checked_before_hit": 143,
+          "switching_set": [
+            0,
+            2,
+            8,
+            10
+          ]
+        }
+      ],
+      "spec": {
+        "construction_note": "Search 4-vertex Godsil-McKay switching sets in a strongly regular Cayley graph.",
+        "graph_family": "Shrikhande Cayley graph on Z_4 x Z_4",
+        "id": "shrikhande-z4x4",
+        "max_records": 1,
+        "max_subsets_checked": 20000,
+        "switching_set_sizes": [
+          4
+        ],
+        "vertex_count": 16
+      },
+      "status": "gm-rows-dequantized",
+      "subsets_checked": 143,
+      "valid_switching_sets_seen": 2
+    },
+    {
+      "interpretation": "Valid switching sets were found, but all checked switched graphs were isomorphic controls.",
+      "records": [],
+      "spec": {
+        "construction_note": "Control search where valid switching sets tend to produce isomorphic rows.",
+        "graph_family": "3x4 rectangular rook graph control",
+        "id": "rook-3x4-control",
+        "max_records": 1,
+        "max_subsets_checked": 20000,
+        "switching_set_sizes": [
+          4
+        ],
+        "vertex_count": 12
+      },
+      "status": "only-isomorphic-switch-controls",
+      "subsets_checked": 495,
+      "valid_switching_sets_seen": 18
+    }
+  ],
+  "headline_metrics": {
+    "control_family_count": 1,
+    "dequantized_row_count": 2,
+    "family_count": 3,
+    "no_valid_switching_family_count": 0,
+    "nonclassical_candidate_count": 0,
+    "nonisomorphic_cospectral_count": 2,
+    "proof_debt_row_count": 0,
+    "row_count": 2,
+    "subsets_checked": 963,
+    "survivor_row_count": 0,
+    "valid_switching_sets_seen": 30
+  },
+  "status": "gm-search-dequantized-current-rows",
+  "summary": "Godsil-McKay search checked 963 subsets across 3 graph families, found 2 non-isomorphic cospectral row(s), dequantized 2 row(s), and left 0 row(s) as proof debt."
+}

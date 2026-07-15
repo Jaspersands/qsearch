@@ -1,0 +1,27 @@
+[
+  {
+    "affected_mechanisms": [
+      "sparse fourier transform",
+      "hashtobins",
+      "correlated fashion"
+    ],
+    "barrier_type": "general-no-go-or-hardness",
+    "evidence": "Unfortunately, the identification step alone increases the sampling complexity by O( N) per hash function, so unlike~ IK14a , here we cannot repeat this process using O( N) hash functions to ensure that each large coefficient is isolated by one of those functions.",
+    "paper_id": "LOCAL-FT_HD",
+    "required_action": "Map any candidate using this mechanism to the barrier and state how it bypasses or respects it.",
+    "title": "Sparse Fourier Transform in Any Constant Dimension with Nearly-Optimal Sample Complexity in Sublinear Time"
+  },
+  {
+    "affected_mechanisms": [
+      "random-label-dcp",
+      "significant-fourier-learning",
+      "hidden-number",
+      "query-model"
+    ],
+    "barrier_type": "random-access-fourier-separation",
+    "evidence": "Since we have good evidence that LWE is a hard problem, this shows that we do not expect to be able to learn significant Fourier coefficients in the random access model.",
+    "paper_id": "LOCAL-FOURIER7C",
+    "required_action": "Map any candidate using this mechanism to the barrier and state how it bypasses or respects it.",
+    "title": "Finding Significant Fourier Coefficients: Clarifications, Simplifications, Applications and Limitations"
+  }
+]

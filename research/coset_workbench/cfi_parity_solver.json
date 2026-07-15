@@ -1,0 +1,271 @@
+{
+  "base_sizes": [
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "created_at": "2026-07-08T15:55:21.403752+00:00",
+  "falsifiers_triggered": [
+    "Complete-CFI parity rows are classically decoded under the explicit gadget-family promise.",
+    "Rows not decoded by this baseline remain proof debt, not positive evidence."
+  ],
+  "headline_metrics": {
+    "ambiguous_count": 1,
+    "base_size_count": 5,
+    "decoded_count": 4,
+    "dequantized_count": 4,
+    "failed_count": 0,
+    "max_vertex_count": 568
+  },
+  "records": [
+    {
+      "base_size": 4,
+      "interpretation": "Complete-CFI K4 has an ambiguous edge-copy pairing for this decoder; keep it as a control/proof-debt row.",
+      "legal_access_model": "unlabeled adjacency matrix with complete-CFI gadget-family promise",
+      "recovers_global_twist": false,
+      "shuffled": true,
+      "status": "decoder-ambiguous-control",
+      "twisted_decode": {
+        "ambiguity": "Edge-copy twin signatures are not size-two pairs. Observed group sizes: [4, 4, 4].",
+        "edge_copy_vertex_count": 12,
+        "edge_pair_count": 0,
+        "global_twist_parity": null,
+        "inferred_base_size": 4,
+        "interpretation": "The simple promised-gadget parity decoder cannot canonicalize this row; do not treat this as positive evidence.",
+        "local_parities": [],
+        "middle_vertex_count": 16,
+        "status": "ambiguous-edge-copy-pairing",
+        "success": false,
+        "vertex_count": 28,
+        "vertex_gadget_count": 0
+      },
+      "untwisted_decode": {
+        "ambiguity": "Edge-copy twin signatures are not size-two pairs. Observed group sizes: [4, 4, 4].",
+        "edge_copy_vertex_count": 12,
+        "edge_pair_count": 0,
+        "global_twist_parity": null,
+        "inferred_base_size": 4,
+        "interpretation": "The simple promised-gadget parity decoder cannot canonicalize this row; do not treat this as positive evidence.",
+        "local_parities": [],
+        "middle_vertex_count": 16,
+        "status": "ambiguous-edge-copy-pairing",
+        "success": false,
+        "vertex_count": 28,
+        "vertex_gadget_count": 0
+      },
+      "vertex_count": 28
+    },
+    {
+      "base_size": 5,
+      "interpretation": "Complete-CFI K5 twist parity is classically recovered from the adjacency matrix under the explicit CFI-gadget promise; this family is not evidence for a nonabelian speedup.",
+      "legal_access_model": "unlabeled adjacency matrix with complete-CFI gadget-family promise",
+      "recovers_global_twist": true,
+      "shuffled": true,
+      "status": "dequantized-by-promised-cfi-parity-decoder",
+      "twisted_decode": {
+        "ambiguity": "none",
+        "edge_copy_vertex_count": 20,
+        "edge_pair_count": 10,
+        "global_twist_parity": 1,
+        "inferred_base_size": 5,
+        "interpretation": "Recovered complete-CFI global twist parity from degree classes, edge-copy twins, and vertex-gadget parity profiles.",
+        "local_parities": [
+          1,
+          0,
+          1,
+          1,
+          0
+        ],
+        "middle_vertex_count": 40,
+        "status": "decoded-global-twist-parity",
+        "success": true,
+        "vertex_count": 60,
+        "vertex_gadget_count": 5
+      },
+      "untwisted_decode": {
+        "ambiguity": "none",
+        "edge_copy_vertex_count": 20,
+        "edge_pair_count": 10,
+        "global_twist_parity": 0,
+        "inferred_base_size": 5,
+        "interpretation": "Recovered complete-CFI global twist parity from degree classes, edge-copy twins, and vertex-gadget parity profiles.",
+        "local_parities": [
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "middle_vertex_count": 40,
+        "status": "decoded-global-twist-parity",
+        "success": true,
+        "vertex_count": 60,
+        "vertex_gadget_count": 5
+      },
+      "vertex_count": 60
+    },
+    {
+      "base_size": 6,
+      "interpretation": "Complete-CFI K6 twist parity is classically recovered from the adjacency matrix under the explicit CFI-gadget promise; this family is not evidence for a nonabelian speedup.",
+      "legal_access_model": "unlabeled adjacency matrix with complete-CFI gadget-family promise",
+      "recovers_global_twist": true,
+      "shuffled": true,
+      "status": "dequantized-by-promised-cfi-parity-decoder",
+      "twisted_decode": {
+        "ambiguity": "none",
+        "edge_copy_vertex_count": 30,
+        "edge_pair_count": 15,
+        "global_twist_parity": 1,
+        "inferred_base_size": 6,
+        "interpretation": "Recovered complete-CFI global twist parity from degree classes, edge-copy twins, and vertex-gadget parity profiles.",
+        "local_parities": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        "middle_vertex_count": 96,
+        "status": "decoded-global-twist-parity",
+        "success": true,
+        "vertex_count": 126,
+        "vertex_gadget_count": 6
+      },
+      "untwisted_decode": {
+        "ambiguity": "none",
+        "edge_copy_vertex_count": 30,
+        "edge_pair_count": 15,
+        "global_twist_parity": 0,
+        "inferred_base_size": 6,
+        "interpretation": "Recovered complete-CFI global twist parity from degree classes, edge-copy twins, and vertex-gadget parity profiles.",
+        "local_parities": [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "middle_vertex_count": 96,
+        "status": "decoded-global-twist-parity",
+        "success": true,
+        "vertex_count": 126,
+        "vertex_gadget_count": 6
+      },
+      "vertex_count": 126
+    },
+    {
+      "base_size": 7,
+      "interpretation": "Complete-CFI K7 twist parity is classically recovered from the adjacency matrix under the explicit CFI-gadget promise; this family is not evidence for a nonabelian speedup.",
+      "legal_access_model": "unlabeled adjacency matrix with complete-CFI gadget-family promise",
+      "recovers_global_twist": true,
+      "shuffled": true,
+      "status": "dequantized-by-promised-cfi-parity-decoder",
+      "twisted_decode": {
+        "ambiguity": "none",
+        "edge_copy_vertex_count": 42,
+        "edge_pair_count": 21,
+        "global_twist_parity": 1,
+        "inferred_base_size": 7,
+        "interpretation": "Recovered complete-CFI global twist parity from degree classes, edge-copy twins, and vertex-gadget parity profiles.",
+        "local_parities": [
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "middle_vertex_count": 224,
+        "status": "decoded-global-twist-parity",
+        "success": true,
+        "vertex_count": 266,
+        "vertex_gadget_count": 7
+      },
+      "untwisted_decode": {
+        "ambiguity": "none",
+        "edge_copy_vertex_count": 42,
+        "edge_pair_count": 21,
+        "global_twist_parity": 0,
+        "inferred_base_size": 7,
+        "interpretation": "Recovered complete-CFI global twist parity from degree classes, edge-copy twins, and vertex-gadget parity profiles.",
+        "local_parities": [
+          1,
+          1,
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "middle_vertex_count": 224,
+        "status": "decoded-global-twist-parity",
+        "success": true,
+        "vertex_count": 266,
+        "vertex_gadget_count": 7
+      },
+      "vertex_count": 266
+    },
+    {
+      "base_size": 8,
+      "interpretation": "Complete-CFI K8 twist parity is classically recovered from the adjacency matrix under the explicit CFI-gadget promise; this family is not evidence for a nonabelian speedup.",
+      "legal_access_model": "unlabeled adjacency matrix with complete-CFI gadget-family promise",
+      "recovers_global_twist": true,
+      "shuffled": true,
+      "status": "dequantized-by-promised-cfi-parity-decoder",
+      "twisted_decode": {
+        "ambiguity": "none",
+        "edge_copy_vertex_count": 56,
+        "edge_pair_count": 28,
+        "global_twist_parity": 1,
+        "inferred_base_size": 8,
+        "interpretation": "Recovered complete-CFI global twist parity from degree classes, edge-copy twins, and vertex-gadget parity profiles.",
+        "local_parities": [
+          0,
+          0,
+          1,
+          1,
+          1,
+          0,
+          1,
+          1
+        ],
+        "middle_vertex_count": 512,
+        "status": "decoded-global-twist-parity",
+        "success": true,
+        "vertex_count": 568,
+        "vertex_gadget_count": 8
+      },
+      "untwisted_decode": {
+        "ambiguity": "none",
+        "edge_copy_vertex_count": 56,
+        "edge_pair_count": 28,
+        "global_twist_parity": 0,
+        "inferred_base_size": 8,
+        "interpretation": "Recovered complete-CFI global twist parity from degree classes, edge-copy twins, and vertex-gadget parity profiles.",
+        "local_parities": [
+          1,
+          1,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "middle_vertex_count": 512,
+        "status": "decoded-global-twist-parity",
+        "success": true,
+        "vertex_count": 568,
+        "vertex_gadget_count": 8
+      },
+      "vertex_count": 568
+    }
+  ],
+  "status": "complete-cfi-family-dequantized-under-gadget-promise",
+  "summary": "Ran promised complete-CFI parity decoding on bases [4, 5, 6, 7, 8]. 4 row(s) were dequantized under the gadget promise; 1 row(s) were ambiguous controls."
+}

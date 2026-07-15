@@ -1,0 +1,1724 @@
+{
+  "accepted_edge_count": 11,
+  "blocked_candidate_count": 8,
+  "blocked_edge_count": 11,
+  "blocked_route_count": 11,
+  "candidate_count": 8,
+  "complete_route_count": 0,
+  "created_at": "2026-07-14T18:47:27.587895+00:00",
+  "edge_count": 22,
+  "edges": [
+    {
+      "accepted": true,
+      "certificate": {
+        "applies_to_full_target_family": true,
+        "candidate_id": "CODE-COSET-COLLECTIVE",
+        "counterexample_tests": [
+          "Many structured families are classically resolved by support splitting or stronger invariants.",
+          "Hardness of measuring a coset state is not evidence that the underlying code family is classically hard.",
+          "A solver for a restricted code family does not establish a route from general code equivalence."
+        ],
+        "decoder_description": "A permutation P, and then S by polynomial-time linear algebra.",
+        "hardness_assumption": "The stated search code-equivalence problem, not only a selected algebraic code family.",
+        "hardness_scope": "worst-case",
+        "id": "EDGE-CODE-COSET-COLLECTIVE-LINEAR-CODE-EQUIVALENCE-SEARCH-TO-CODE-EQUIVALENCE-NONABELIAN-HSP",
+        "literature_ids": [
+          "code-equivalence-fourier-2011"
+        ],
+        "mapping_description": "Uniformly construct: A coherently evaluable group-action hiding function derived from both generator matrices.",
+        "mapping_runtime_polynomial": true,
+        "oracle_model_preserved": true,
+        "oracle_translation": "The reduction supplies these target capabilities: coherent-hiding-function-evaluation, coset-state-preparation.",
+        "parameter_blowup_polynomial": true,
+        "parameter_map": "Group representation and oracle evaluation are polynomial in n, k, and log q.",
+        "preprocessing_and_advice": "Uniform construction from M and M'; no private code-family advice.",
+        "preprocessing_model_preserved": true,
+        "promise_mapping": "Source scope: The stated search code-equivalence problem, not only a selected algebraic code family. Target contract: Recover the hidden subgroup/action element sufficiently to output the coordinate permutation P.",
+        "promise_preserved": true,
+        "proof_artifact_ids": [],
+        "proof_status": "established-literature",
+        "query_overhead_polynomial": true,
+        "route_id": "ROUTE-CODE-COSET-COLLECTIVE-CODE-EQUIVALENCE-VIA-SYMMETRIC-HSP",
+        "solves_source_using_target_oracle": true,
+        "source_input_model": "Two full-rank generator matrices M and M' for equivalent q-ary linear codes, with M'=SMP.",
+        "source_problem": "linear-code-equivalence-search",
+        "success_preserved": true,
+        "success_statement": "Bounded-error recovery on every promised equivalent code pair in the claimed scope.",
+        "target_input_model": "Recover the hidden subgroup/action element sufficiently to output the coordinate permutation P.",
+        "target_problem": "code-equivalence-nonabelian-hsp",
+        "theorem_contract_id": "CONSTRUCTION-CODE-EQUIVALENCE-TO-NONABELIAN-HSP",
+        "uniform": true
+      },
+      "issues": [],
+      "status": "accepted-reduction-edge"
+    },
+    {
+      "accepted": false,
+      "certificate": {
+        "applies_to_full_target_family": false,
+        "candidate_id": "CODE-COSET-COLLECTIVE",
+        "counterexample_tests": [
+          "Construct an upstream hard instance outside the candidate family or show that the candidate promise makes it classically easy.",
+          "Attempt to preserve the source oracle and distribution through the proposed family specialization."
+        ],
+        "decoder_description": "Candidate measurement/decoder is not proved to solve the full upstream target family.",
+        "hardness_assumption": "Code equivalence embeds as a hidden permutation problem in the symmetric-group HSP frontier, but must explicitly bypass strong Fourier sampling no-go barriers.",
+        "hardness_scope": "worst-case",
+        "id": "EDGE-CODE-COSET-COLLECTIVE-ROUTE-CODE-COSET-COLLECTIVE-CODE-EQUIVALENCE-VIA-SYMMETRIC-HSP-SPECIALIZATION",
+        "literature_ids": [
+          "hsp-survey-2010",
+          "symmetric-defies-fourier-2005",
+          "program-synthesis-components-2023"
+        ],
+        "mapping_description": "No construction currently maps arbitrary upstream target instances into the candidate's restricted family.",
+        "mapping_runtime_polynomial": null,
+        "oracle_model_preserved": null,
+        "oracle_translation": "Unknown: coherent or coset-state access may not survive specialization to the candidate family.",
+        "parameter_blowup_polynomial": null,
+        "parameter_map": "Unknown: candidate-family parameters are not proved to cover the upstream target distribution.",
+        "preprocessing_and_advice": "Unknown whether family generation, advice, or preprocessing preserves the upstream model.",
+        "preprocessing_model_preserved": null,
+        "promise_mapping": "Unknown: the restricted algebraic/graph/code promise may discard hard upstream instances.",
+        "promise_preserved": null,
+        "proof_artifact_ids": [],
+        "proof_status": "claimed-needs-proof",
+        "query_overhead_polynomial": null,
+        "route_id": "ROUTE-CODE-COSET-COLLECTIVE-CODE-EQUIVALENCE-VIA-SYMMETRIC-HSP",
+        "solves_source_using_target_oracle": true,
+        "source_input_model": "All standard code-equivalence-nonabelian-hsp instances covered by the upstream natural-problem reduction.",
+        "source_problem": "code-equivalence-nonabelian-hsp",
+        "success_preserved": null,
+        "success_statement": "Conjecture: a restricted but hard code family admits a polynomial-bond collective observable whose distinguishing advantage remains inverse polynomial as length grows.",
+        "target_input_model": "Efficient coherent preparation of hidden-permutation coset states derived from generator matrices; classical descriptions of code families are part of the input.",
+        "target_problem": "candidate-collective-observable-family",
+        "theorem_contract_id": "",
+        "uniform": null
+      },
+      "issues": [
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "mapping_runtime_polynomial",
+          "message": "mapping_runtime_polynomial must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "query_overhead_polynomial",
+          "message": "query_overhead_polynomial must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "parameter_blowup_polynomial",
+          "message": "parameter_blowup_polynomial must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "oracle_model_preserved",
+          "message": "oracle_model_preserved must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "promise_preserved",
+          "message": "promise_preserved must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "success_preserved",
+          "message": "success_preserved must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "preprocessing_model_preserved",
+          "message": "preprocessing_model_preserved must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "uniform",
+          "message": "uniform must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "applies_to_full_target_family",
+          "message": "applies_to_full_target_family must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unsupported-proof-status",
+          "field": "proof_status",
+          "message": "Reduction proof must be established literature, an attached formal proof, or machine checked."
+        }
+      ],
+      "status": "blocked-reduction-edge"
+    },
+    {
+      "accepted": true,
+      "certificate": {
+        "applies_to_full_target_family": true,
+        "candidate_id": "DHS-GOWERS-SIEVE",
+        "counterexample_tests": [
+          "This is not a reduction from exact SVP or arbitrary approximation factors.",
+          "It supplies coset-state samples, not automatically a public reversible evaluator for a phase family.",
+          "The f=1 theorem permits arbitrary bad basis-state registers at probability up to 1/log N; a perfect-state sieve does not cover the theorem input.",
+          "Hardness does not transfer to a restricted easy dihedral or hidden-shift subfamily without another reduction."
+        ],
+        "decoder_description": "A vector satisfying the paper's unique-SVP approximation promise.",
+        "hardness_assumption": "Worst-case promised lattice instances in the stated approximation regime.",
+        "hardness_scope": "worst-case",
+        "id": "EDGE-DHS-GOWERS-SIEVE-THETA-N-2.5-UNIQUE-SVP-TO-DIHEDRAL-COSET-PROBLEM",
+        "literature_ids": [
+          "regev-lattice-dhsp-2003"
+        ],
+        "mapping_description": "Uniformly construct: poly(log N) tensor-product registers with a common hidden slope d. Each register is a valid dihedral coset state with probability at least 1-1/(log N)^f and otherwise may be an arbitrary basis state |b,x|.",
+        "mapping_runtime_polynomial": true,
+        "oracle_model_preserved": true,
+        "oracle_translation": "The reduction supplies these target capabilities: independent-coset-state-samples, quantum-state-input, adversarial-bad-registers-at-rate-1-over-logN-to-f.",
+        "parameter_blowup_polynomial": true,
+        "parameter_map": "In the improved proof choose prime p>n^(2+2f), M=2^(4n), and map the n-dimensional two-point instance to DCP modulus N=(2M)^n, hence log N=Theta(n^2). The f=1 approximation factor is Theta(n^2.5); the DCP input uses poly(log N) registers.",
+        "preprocessing_and_advice": "Uniform construction from the lattice instance; no family-specific nonuniform advice.",
+        "preprocessing_model_preserved": true,
+        "promise_mapping": "Source scope: Worst-case promised lattice instances in the stated approximation regime. Target contract: For f=1, output the common hidden slope d with probability poly(1/log N) in time poly(log N), despite per-register bad probability at most 1/log N. A perfect-state or restricted-family solver is insufficient.",
+        "promise_preserved": true,
+        "proof_artifact_ids": [],
+        "proof_status": "established-literature",
+        "query_overhead_polynomial": true,
+        "route_id": "ROUTE-DHS-GOWERS-SIEVE-USVP-VIA-DHSP",
+        "solves_source_using_target_oracle": true,
+        "source_input_model": "The f=1 specialization of the paper's theorem: an n-dimensional lattice with a Theta(n^(1/2+2f))=Theta(n^2.5) unique-shortest-vector gap.",
+        "source_problem": "theta-n-2.5-unique-svp",
+        "success_preserved": true,
+        "success_statement": "Output d with probability poly(1/log N) and time poly(log N) under the DCP failure-parameter promise; the lattice routine then succeeds with inverse-polynomial probability and polynomial repetition.",
+        "target_input_model": "For f=1, output the common hidden slope d with probability poly(1/log N) in time poly(log N), despite per-register bad probability at most 1/log N. A perfect-state or restricted-family solver is insufficient.",
+        "target_problem": "dihedral-coset-problem",
+        "theorem_contract_id": "THM-REGEV-USVP-TO-DCP-2003",
+        "uniform": true
+      },
+      "issues": [],
+      "status": "accepted-reduction-edge"
+    },
+    {
+      "accepted": false,
+      "certificate": {
+        "applies_to_full_target_family": false,
+        "candidate_id": "DHS-GOWERS-SIEVE",
+        "counterexample_tests": [
+          "Construct an upstream hard instance outside the candidate family or show that the candidate promise makes it classically easy.",
+          "Attempt to preserve the source oracle and distribution through the proposed family specialization."
+        ],
+        "decoder_description": "Candidate measurement/decoder is not proved to solve the full upstream target family.",
+        "hardness_assumption": "Use the exact THM-REGEV-USVP-TO-DCP-2003 contract. A speedup claim requires full-family coverage, a uniform lattice-dimension/modulus/sample/precision map, and bounded-error composition with the lattice decoder.",
+        "hardness_scope": "worst-case",
+        "id": "EDGE-DHS-GOWERS-SIEVE-ROUTE-DHS-GOWERS-SIEVE-USVP-VIA-DHSP-SPECIALIZATION",
+        "literature_ids": [
+          "kuperberg-dhsp-2003",
+          "regev-lattice-dhsp-2003",
+          "roetteler-hidden-shift-gowers-2009",
+          "gowers-norm-algorithms-2025"
+        ],
+        "mapping_description": "No construction currently maps arbitrary upstream target instances into the candidate's restricted family.",
+        "mapping_runtime_polynomial": null,
+        "oracle_model_preserved": null,
+        "oracle_translation": "Unknown: coherent or coset-state access may not survive specialization to the candidate family.",
+        "parameter_blowup_polynomial": null,
+        "parameter_map": "Unknown: candidate-family parameters are not proved to cover the upstream target distribution.",
+        "preprocessing_and_advice": "Unknown whether family generation, advice, or preprocessing preserves the upstream model.",
+        "preprocessing_model_preserved": null,
+        "promise_mapping": "Unknown: the restricted algebraic/graph/code promise may discard hard upstream instances.",
+        "promise_preserved": null,
+        "proof_artifact_ids": [],
+        "proof_status": "claimed-needs-proof",
+        "query_overhead_polynomial": null,
+        "route_id": "ROUTE-DHS-GOWERS-SIEVE-USVP-VIA-DHSP",
+        "solves_source_using_target_oracle": true,
+        "source_input_model": "All standard dihedral-coset-problem instances covered by the upstream natural-problem reduction.",
+        "source_problem": "dihedral-coset-problem",
+        "success_preserved": null,
+        "success_statement": "Target theorem: on every DCP state instance in the Regev contract, recover the complete hidden reflection with bounded error while proving an asymptotic sample, time, or memory improvement over a named Kuperberg/Regev baseline and preserving the end-to-end lattice approximation guarantee.",
+        "target_input_model": "Independent coset-state samples from D_N under the exact f=1 DCP promise: each register is good with probability at least 1-1/log N and otherwise may be an arbitrary basis-state register. Good registers transform into known uniformly random labels k and phase states. No evaluator or chosen labels are available.",
+        "target_problem": "candidate-specific-hidden-shift-family",
+        "theorem_contract_id": "",
+        "uniform": null
+      },
+      "issues": [
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "mapping_runtime_polynomial",
+          "message": "mapping_runtime_polynomial must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "query_overhead_polynomial",
+          "message": "query_overhead_polynomial must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "parameter_blowup_polynomial",
+          "message": "parameter_blowup_polynomial must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "oracle_model_preserved",
+          "message": "oracle_model_preserved must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "promise_preserved",
+          "message": "promise_preserved must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "success_preserved",
+          "message": "success_preserved must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "preprocessing_model_preserved",
+          "message": "preprocessing_model_preserved must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "uniform",
+          "message": "uniform must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "applies_to_full_target_family",
+          "message": "applies_to_full_target_family must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unsupported-proof-status",
+          "field": "proof_status",
+          "message": "Reduction proof must be established literature, an attached formal proof, or machine checked."
+        }
+      ],
+      "status": "blocked-reduction-edge"
+    },
+    {
+      "accepted": true,
+      "certificate": {
+        "applies_to_full_target_family": true,
+        "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
+        "counterexample_tests": [
+          "Many structured families are classically resolved by support splitting or stronger invariants.",
+          "Hardness of measuring a coset state is not evidence that the underlying code family is classically hard.",
+          "A solver for a restricted code family does not establish a route from general code equivalence."
+        ],
+        "decoder_description": "A permutation P, and then S by polynomial-time linear algebra.",
+        "hardness_assumption": "The stated search code-equivalence problem, not only a selected algebraic code family.",
+        "hardness_scope": "worst-case",
+        "id": "EDGE-HYP-LIT-COSET-OBSERVABLES-LINEAR-CODE-EQUIVALENCE-SEARCH-TO-CODE-EQUIVALENCE-NONABELIAN-HSP",
+        "literature_ids": [
+          "code-equivalence-fourier-2011"
+        ],
+        "mapping_description": "Uniformly construct: A coherently evaluable group-action hiding function derived from both generator matrices.",
+        "mapping_runtime_polynomial": true,
+        "oracle_model_preserved": true,
+        "oracle_translation": "The reduction supplies these target capabilities: coherent-hiding-function-evaluation, coset-state-preparation.",
+        "parameter_blowup_polynomial": true,
+        "parameter_map": "Group representation and oracle evaluation are polynomial in n, k, and log q.",
+        "preprocessing_and_advice": "Uniform construction from M and M'; no private code-family advice.",
+        "preprocessing_model_preserved": true,
+        "promise_mapping": "Source scope: The stated search code-equivalence problem, not only a selected algebraic code family. Target contract: Recover the hidden subgroup/action element sufficiently to output the coordinate permutation P.",
+        "promise_preserved": true,
+        "proof_artifact_ids": [],
+        "proof_status": "established-literature",
+        "query_overhead_polynomial": true,
+        "route_id": "ROUTE-HYP-LIT-COSET-OBSERVABLES-CODE-EQUIVALENCE-VIA-SYMMETRIC-HSP",
+        "solves_source_using_target_oracle": true,
+        "source_input_model": "Two full-rank generator matrices M and M' for equivalent q-ary linear codes, with M'=SMP.",
+        "source_problem": "linear-code-equivalence-search",
+        "success_preserved": true,
+        "success_statement": "Bounded-error recovery on every promised equivalent code pair in the claimed scope.",
+        "target_input_model": "Recover the hidden subgroup/action element sufficiently to output the coordinate permutation P.",
+        "target_problem": "code-equivalence-nonabelian-hsp",
+        "theorem_contract_id": "CONSTRUCTION-CODE-EQUIVALENCE-TO-NONABELIAN-HSP",
+        "uniform": true
+      },
+      "issues": [],
+      "status": "accepted-reduction-edge"
+    },
+    {
+      "accepted": false,
+      "certificate": {
+        "applies_to_full_target_family": false,
+        "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
+        "counterexample_tests": [
+          "Construct an upstream hard instance outside the candidate family or show that the candidate promise makes it classically easy.",
+          "Attempt to preserve the source oracle and distribution through the proposed family specialization."
+        ],
+        "decoder_description": "Candidate measurement/decoder is not proved to solve the full upstream target family.",
+        "hardness_assumption": "Use the symmetric-group HSP embedding as the reduction frame while requiring a route around the strong-Fourier-sampling no-go theorem.",
+        "hardness_scope": "worst-case",
+        "id": "EDGE-HYP-LIT-COSET-OBSERVABLES-ROUTE-HYP-LIT-COSET-OBSERVABLES-CODE-EQUIVALENCE-VIA-SYMMETRIC-HSP-SPECIALIZATION",
+        "literature_ids": [
+          "code-equivalence-fourier-2011",
+          "hsp-survey-2010",
+          "symmetric-defies-fourier-2005"
+        ],
+        "mapping_description": "No construction currently maps arbitrary upstream target instances into the candidate's restricted family.",
+        "mapping_runtime_polynomial": null,
+        "oracle_model_preserved": null,
+        "oracle_translation": "Unknown: coherent or coset-state access may not survive specialization to the candidate family.",
+        "parameter_blowup_polynomial": null,
+        "parameter_map": "Unknown: candidate-family parameters are not proved to cover the upstream target distribution.",
+        "preprocessing_and_advice": "Unknown whether family generation, advice, or preprocessing preserves the upstream model.",
+        "preprocessing_model_preserved": null,
+        "promise_mapping": "Unknown: the restricted algebraic/graph/code promise may discard hard upstream instances.",
+        "promise_preserved": null,
+        "proof_artifact_ids": [],
+        "proof_status": "claimed-needs-proof",
+        "query_overhead_polynomial": null,
+        "route_id": "ROUTE-HYP-LIT-COSET-OBSERVABLES-CODE-EQUIVALENCE-VIA-SYMMETRIC-HSP",
+        "solves_source_using_target_oracle": true,
+        "source_input_model": "All standard code-equivalence-nonabelian-hsp instances covered by the upstream natural-problem reduction.",
+        "source_problem": "code-equivalence-nonabelian-hsp",
+        "success_preserved": null,
+        "success_statement": "Target theorem: a restricted but classically hard hidden-permutation family admits a polynomial-bond collective observable with inverse-polynomial distinguishing advantage as instance size grows.",
+        "target_input_model": "Efficient coherent preparation of hidden-permutation coset states from explicit graph or generator-matrix inputs, with register count, state-preparation cost, and verification cost tracked separately.",
+        "target_problem": "candidate-collective-observable-family",
+        "theorem_contract_id": "",
+        "uniform": null
+      },
+      "issues": [
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "mapping_runtime_polynomial",
+          "message": "mapping_runtime_polynomial must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "query_overhead_polynomial",
+          "message": "query_overhead_polynomial must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "parameter_blowup_polynomial",
+          "message": "parameter_blowup_polynomial must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "oracle_model_preserved",
+          "message": "oracle_model_preserved must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "promise_preserved",
+          "message": "promise_preserved must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "success_preserved",
+          "message": "success_preserved must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "preprocessing_model_preserved",
+          "message": "preprocessing_model_preserved must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "uniform",
+          "message": "uniform must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "applies_to_full_target_family",
+          "message": "applies_to_full_target_family must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unsupported-proof-status",
+          "field": "proof_status",
+          "message": "Reduction proof must be established literature, an attached formal proof, or machine checked."
+        }
+      ],
+      "status": "blocked-reduction-edge"
+    },
+    {
+      "accepted": true,
+      "certificate": {
+        "applies_to_full_target_family": true,
+        "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
+        "counterexample_tests": [
+          "Strong Fourier sampling is insufficient on the relevant hidden subgroups.",
+          "Solving a restricted graph family does not solve general graph isomorphism.",
+          "A separating observable must be implementable and decoded, not merely information-theoretically existent."
+        ],
+        "decoder_description": "A vertex permutation mapping one input graph to the other.",
+        "hardness_assumption": "All explicitly represented graph pairs, not only CFI, regular, or cospectral subfamilies.",
+        "hardness_scope": "worst-case",
+        "id": "EDGE-HYP-LIT-COSET-OBSERVABLES-GRAPH-ISOMORPHISM-SEARCH-TO-GRAPH-ISOMORPHISM-HIDDEN-INVOLUTION-HSP",
+        "literature_ids": [
+          "symmetric-defies-fourier-2005"
+        ],
+        "mapping_description": "Uniformly construct: A coherently evaluable hiding function whose hidden subgroup encodes an isomorphism as an involution.",
+        "mapping_runtime_polynomial": true,
+        "oracle_model_preserved": true,
+        "oracle_translation": "The reduction supplies these target capabilities: coherent-hiding-function-evaluation, coset-state-preparation.",
+        "parameter_blowup_polynomial": true,
+        "parameter_map": "The target permutation degree and oracle evaluation cost are polynomial in graph size.",
+        "preprocessing_and_advice": "Uniformly constructed from the two input graphs with no graph-family advice.",
+        "preprocessing_model_preserved": true,
+        "promise_mapping": "Source scope: All explicitly represented graph pairs, not only CFI, regular, or cospectral subfamilies. Target contract: Recover enough of the hidden subgroup on every encoded graph pair to output and verify an isomorphism.",
+        "promise_preserved": true,
+        "proof_artifact_ids": [],
+        "proof_status": "established-literature",
+        "query_overhead_polynomial": true,
+        "route_id": "ROUTE-HYP-LIT-COSET-OBSERVABLES-GRAPH-ISOMORPHISM-VIA-SYMMETRIC-HSP",
+        "solves_source_using_target_oracle": true,
+        "source_input_model": "Two explicitly represented n-vertex graphs, with search output required on isomorphic inputs.",
+        "source_problem": "graph-isomorphism-search",
+        "success_preserved": true,
+        "success_statement": "Bounded-error recovery on the full encoded graph-isomorphism promise.",
+        "target_input_model": "Recover enough of the hidden subgroup on every encoded graph pair to output and verify an isomorphism.",
+        "target_problem": "graph-isomorphism-hidden-involution-hsp",
+        "theorem_contract_id": "CONSTRUCTION-GI-TO-HIDDEN-INVOLUTION-HSP",
+        "uniform": true
+      },
+      "issues": [],
+      "status": "accepted-reduction-edge"
+    },
+    {
+      "accepted": false,
+      "certificate": {
+        "applies_to_full_target_family": false,
+        "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
+        "counterexample_tests": [
+          "Construct an upstream hard instance outside the candidate family or show that the candidate promise makes it classically easy.",
+          "Attempt to preserve the source oracle and distribution through the proposed family specialization."
+        ],
+        "decoder_description": "Candidate measurement/decoder is not proved to solve the full upstream target family.",
+        "hardness_assumption": "Use the symmetric-group HSP embedding as the reduction frame while requiring a route around the strong-Fourier-sampling no-go theorem.",
+        "hardness_scope": "worst-case",
+        "id": "EDGE-HYP-LIT-COSET-OBSERVABLES-ROUTE-HYP-LIT-COSET-OBSERVABLES-GRAPH-ISOMORPHISM-VIA-SYMMETRIC-HSP-SPECIALIZATION",
+        "literature_ids": [
+          "code-equivalence-fourier-2011",
+          "hsp-survey-2010",
+          "symmetric-defies-fourier-2005"
+        ],
+        "mapping_description": "No construction currently maps arbitrary upstream target instances into the candidate's restricted family.",
+        "mapping_runtime_polynomial": null,
+        "oracle_model_preserved": null,
+        "oracle_translation": "Unknown: coherent or coset-state access may not survive specialization to the candidate family.",
+        "parameter_blowup_polynomial": null,
+        "parameter_map": "Unknown: candidate-family parameters are not proved to cover the upstream target distribution.",
+        "preprocessing_and_advice": "Unknown whether family generation, advice, or preprocessing preserves the upstream model.",
+        "preprocessing_model_preserved": null,
+        "promise_mapping": "Unknown: the restricted algebraic/graph/code promise may discard hard upstream instances.",
+        "promise_preserved": null,
+        "proof_artifact_ids": [],
+        "proof_status": "claimed-needs-proof",
+        "query_overhead_polynomial": null,
+        "route_id": "ROUTE-HYP-LIT-COSET-OBSERVABLES-GRAPH-ISOMORPHISM-VIA-SYMMETRIC-HSP",
+        "solves_source_using_target_oracle": true,
+        "source_input_model": "All standard graph-isomorphism-hidden-involution-hsp instances covered by the upstream natural-problem reduction.",
+        "source_problem": "graph-isomorphism-hidden-involution-hsp",
+        "success_preserved": null,
+        "success_statement": "Target theorem: a restricted but classically hard hidden-permutation family admits a polynomial-bond collective observable with inverse-polynomial distinguishing advantage as instance size grows.",
+        "target_input_model": "Efficient coherent preparation of hidden-permutation coset states from explicit graph or generator-matrix inputs, with register count, state-preparation cost, and verification cost tracked separately.",
+        "target_problem": "candidate-collective-observable-family",
+        "theorem_contract_id": "",
+        "uniform": null
+      },
+      "issues": [
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "mapping_runtime_polynomial",
+          "message": "mapping_runtime_polynomial must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "query_overhead_polynomial",
+          "message": "query_overhead_polynomial must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "parameter_blowup_polynomial",
+          "message": "parameter_blowup_polynomial must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "oracle_model_preserved",
+          "message": "oracle_model_preserved must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "promise_preserved",
+          "message": "promise_preserved must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "success_preserved",
+          "message": "success_preserved must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "preprocessing_model_preserved",
+          "message": "preprocessing_model_preserved must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "uniform",
+          "message": "uniform must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "applies_to_full_target_family",
+          "message": "applies_to_full_target_family must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unsupported-proof-status",
+          "field": "proof_status",
+          "message": "Reduction proof must be established literature, an attached formal proof, or machine checked."
+        }
+      ],
+      "status": "blocked-reduction-edge"
+    },
+    {
+      "accepted": true,
+      "certificate": {
+        "applies_to_full_target_family": true,
+        "candidate_id": "HYP-LIT-HIDDEN-SHIFT-SIEVE",
+        "counterexample_tests": [
+          "This is not a reduction from exact SVP or arbitrary approximation factors.",
+          "It supplies coset-state samples, not automatically a public reversible evaluator for a phase family.",
+          "The f=1 theorem permits arbitrary bad basis-state registers at probability up to 1/log N; a perfect-state sieve does not cover the theorem input.",
+          "Hardness does not transfer to a restricted easy dihedral or hidden-shift subfamily without another reduction."
+        ],
+        "decoder_description": "A vector satisfying the paper's unique-SVP approximation promise.",
+        "hardness_assumption": "Worst-case promised lattice instances in the stated approximation regime.",
+        "hardness_scope": "worst-case",
+        "id": "EDGE-HYP-LIT-HIDDEN-SHIFT-SIEVE-THETA-N-2.5-UNIQUE-SVP-TO-DIHEDRAL-COSET-PROBLEM",
+        "literature_ids": [
+          "regev-lattice-dhsp-2003"
+        ],
+        "mapping_description": "Uniformly construct: poly(log N) tensor-product registers with a common hidden slope d. Each register is a valid dihedral coset state with probability at least 1-1/(log N)^f and otherwise may be an arbitrary basis state |b,x|.",
+        "mapping_runtime_polynomial": true,
+        "oracle_model_preserved": true,
+        "oracle_translation": "The reduction supplies these target capabilities: independent-coset-state-samples, quantum-state-input, adversarial-bad-registers-at-rate-1-over-logN-to-f.",
+        "parameter_blowup_polynomial": true,
+        "parameter_map": "In the improved proof choose prime p>n^(2+2f), M=2^(4n), and map the n-dimensional two-point instance to DCP modulus N=(2M)^n, hence log N=Theta(n^2). The f=1 approximation factor is Theta(n^2.5); the DCP input uses poly(log N) registers.",
+        "preprocessing_and_advice": "Uniform construction from the lattice instance; no family-specific nonuniform advice.",
+        "preprocessing_model_preserved": true,
+        "promise_mapping": "Source scope: Worst-case promised lattice instances in the stated approximation regime. Target contract: For f=1, output the common hidden slope d with probability poly(1/log N) in time poly(log N), despite per-register bad probability at most 1/log N. A perfect-state or restricted-family solver is insufficient.",
+        "promise_preserved": true,
+        "proof_artifact_ids": [],
+        "proof_status": "established-literature",
+        "query_overhead_polynomial": true,
+        "route_id": "ROUTE-HYP-LIT-HIDDEN-SHIFT-SIEVE-USVP-VIA-DHSP",
+        "solves_source_using_target_oracle": true,
+        "source_input_model": "The f=1 specialization of the paper's theorem: an n-dimensional lattice with a Theta(n^(1/2+2f))=Theta(n^2.5) unique-shortest-vector gap.",
+        "source_problem": "theta-n-2.5-unique-svp",
+        "success_preserved": true,
+        "success_statement": "Output d with probability poly(1/log N) and time poly(log N) under the DCP failure-parameter promise; the lattice routine then succeeds with inverse-polynomial probability and polynomial repetition.",
+        "target_input_model": "For f=1, output the common hidden slope d with probability poly(1/log N) in time poly(log N), despite per-register bad probability at most 1/log N. A perfect-state or restricted-family solver is insufficient.",
+        "target_problem": "dihedral-coset-problem",
+        "theorem_contract_id": "THM-REGEV-USVP-TO-DCP-2003",
+        "uniform": true
+      },
+      "issues": [],
+      "status": "accepted-reduction-edge"
+    },
+    {
+      "accepted": false,
+      "certificate": {
+        "applies_to_full_target_family": false,
+        "candidate_id": "HYP-LIT-HIDDEN-SHIFT-SIEVE",
+        "counterexample_tests": [
+          "Construct an upstream hard instance outside the candidate family or show that the candidate promise makes it classically easy.",
+          "Attempt to preserve the source oracle and distribution through the proposed family specialization."
+        ],
+        "decoder_description": "Candidate measurement/decoder is not proved to solve the full upstream target family.",
+        "hardness_assumption": "Compose only through THM-REGEV-USVP-TO-DCP-2003 and require full-family coverage, uniform state construction, parameter preservation, bounded success, and a complete lattice decoder before claiming relevance.",
+        "hardness_scope": "worst-case",
+        "id": "EDGE-HYP-LIT-HIDDEN-SHIFT-SIEVE-ROUTE-HYP-LIT-HIDDEN-SHIFT-SIEVE-USVP-VIA-DHSP-SPECIALIZATION",
+        "literature_ids": [
+          "gowers-norm-algorithms-2025",
+          "ip-shift-deconvolution-2002",
+          "kuperberg-dhsp-2003",
+          "regev-lattice-dhsp-2003",
+          "roetteler-hidden-shift-gowers-2009",
+          "state-isomorphism-2026"
+        ],
+        "mapping_description": "No construction currently maps arbitrary upstream target instances into the candidate's restricted family.",
+        "mapping_runtime_polynomial": null,
+        "oracle_model_preserved": null,
+        "oracle_translation": "Unknown: coherent or coset-state access may not survive specialization to the candidate family.",
+        "parameter_blowup_polynomial": null,
+        "parameter_map": "Unknown: candidate-family parameters are not proved to cover the upstream target distribution.",
+        "preprocessing_and_advice": "Unknown whether family generation, advice, or preprocessing preserves the upstream model.",
+        "preprocessing_model_preserved": null,
+        "promise_mapping": "Unknown: the restricted algebraic/graph/code promise may discard hard upstream instances.",
+        "promise_preserved": null,
+        "proof_artifact_ids": [],
+        "proof_status": "claimed-needs-proof",
+        "query_overhead_polynomial": null,
+        "route_id": "ROUTE-HYP-LIT-HIDDEN-SHIFT-SIEVE-USVP-VIA-DHSP",
+        "solves_source_using_target_oracle": true,
+        "source_input_model": "All standard dihedral-coset-problem instances covered by the upstream natural-problem reduction.",
+        "source_problem": "dihedral-coset-problem",
+        "success_preserved": null,
+        "success_statement": "Target theorem: a literature-composed uniform algorithm recovers the complete reflection on every promised DCP state instance with bounded error and proves an asymptotic resource improvement over a named generic sieve baseline.",
+        "target_input_model": "Independent coset-state samples transformed into known random Fourier labels and one-qubit DCP phase states. No coherent evaluator, chosen-label access, phase truth table, or literature-specific nonuniform advice is supplied.",
+        "target_problem": "candidate-specific-hidden-shift-family",
+        "theorem_contract_id": "",
+        "uniform": null
+      },
+      "issues": [
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "mapping_runtime_polynomial",
+          "message": "mapping_runtime_polynomial must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "query_overhead_polynomial",
+          "message": "query_overhead_polynomial must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "parameter_blowup_polynomial",
+          "message": "parameter_blowup_polynomial must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "oracle_model_preserved",
+          "message": "oracle_model_preserved must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "promise_preserved",
+          "message": "promise_preserved must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "success_preserved",
+          "message": "success_preserved must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "preprocessing_model_preserved",
+          "message": "preprocessing_model_preserved must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "uniform",
+          "message": "uniform must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "applies_to_full_target_family",
+          "message": "applies_to_full_target_family must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unsupported-proof-status",
+          "field": "proof_status",
+          "message": "Reduction proof must be established literature, an attached formal proof, or machine checked."
+        }
+      ],
+      "status": "blocked-reduction-edge"
+    },
+    {
+      "accepted": true,
+      "certificate": {
+        "applies_to_full_target_family": true,
+        "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
+        "counterexample_tests": [
+          "Many structured families are classically resolved by support splitting or stronger invariants.",
+          "Hardness of measuring a coset state is not evidence that the underlying code family is classically hard.",
+          "A solver for a restricted code family does not establish a route from general code equivalence."
+        ],
+        "decoder_description": "A permutation P, and then S by polynomial-time linear algebra.",
+        "hardness_assumption": "The stated search code-equivalence problem, not only a selected algebraic code family.",
+        "hardness_scope": "worst-case",
+        "id": "EDGE-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-LINEAR-CODE-EQUIVALENCE-SEARCH-TO-CODE-EQUIVALENCE-NONABELIAN-HSP",
+        "literature_ids": [
+          "code-equivalence-fourier-2011"
+        ],
+        "mapping_description": "Uniformly construct: A coherently evaluable group-action hiding function derived from both generator matrices.",
+        "mapping_runtime_polynomial": true,
+        "oracle_model_preserved": true,
+        "oracle_translation": "The reduction supplies these target capabilities: coherent-hiding-function-evaluation, coset-state-preparation.",
+        "parameter_blowup_polynomial": true,
+        "parameter_map": "Group representation and oracle evaluation are polynomial in n, k, and log q.",
+        "preprocessing_and_advice": "Uniform construction from M and M'; no private code-family advice.",
+        "preprocessing_model_preserved": true,
+        "promise_mapping": "Source scope: The stated search code-equivalence problem, not only a selected algebraic code family. Target contract: Recover the hidden subgroup/action element sufficiently to output the coordinate permutation P.",
+        "promise_preserved": true,
+        "proof_artifact_ids": [],
+        "proof_status": "established-literature",
+        "query_overhead_polynomial": true,
+        "route_id": "ROUTE-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-CODE-EQUIVALENCE-VIA-SYMMETRIC-HSP",
+        "solves_source_using_target_oracle": true,
+        "source_input_model": "Two full-rank generator matrices M and M' for equivalent q-ary linear codes, with M'=SMP.",
+        "source_problem": "linear-code-equivalence-search",
+        "success_preserved": true,
+        "success_statement": "Bounded-error recovery on every promised equivalent code pair in the claimed scope.",
+        "target_input_model": "Recover the hidden subgroup/action element sufficiently to output the coordinate permutation P.",
+        "target_problem": "code-equivalence-nonabelian-hsp",
+        "theorem_contract_id": "CONSTRUCTION-CODE-EQUIVALENCE-TO-NONABELIAN-HSP",
+        "uniform": true
+      },
+      "issues": [],
+      "status": "accepted-reduction-edge"
+    },
+    {
+      "accepted": false,
+      "certificate": {
+        "applies_to_full_target_family": false,
+        "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
+        "counterexample_tests": [
+          "Construct an upstream hard instance outside the candidate family or show that the candidate promise makes it classically easy.",
+          "Attempt to preserve the source oracle and distribution through the proposed family specialization."
+        ],
+        "decoder_description": "Candidate measurement/decoder is not proved to solve the full upstream target family.",
+        "hardness_assumption": "Must remain a genuine hidden-permutation/code-equivalence problem and state why the surviving family avoids known canonicalization heuristics; lower-bound claims must be separated from mere assignment-cap exhaustion.",
+        "hardness_scope": "worst-case",
+        "id": "EDGE-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-ROUTE-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-CODE-EQUIVALENCE-VIA-SYMMETRIC-HSP-SPECIALIZATION",
+        "literature_ids": [
+          "hsp-survey-2010",
+          "symmetric-defies-fourier-2005",
+          "program-synthesis-components-2023"
+        ],
+        "mapping_description": "No construction currently maps arbitrary upstream target instances into the candidate's restricted family.",
+        "mapping_runtime_polynomial": null,
+        "oracle_model_preserved": null,
+        "oracle_translation": "Unknown: coherent or coset-state access may not survive specialization to the candidate family.",
+        "parameter_blowup_polynomial": null,
+        "parameter_map": "Unknown: candidate-family parameters are not proved to cover the upstream target distribution.",
+        "preprocessing_and_advice": "Unknown whether family generation, advice, or preprocessing preserves the upstream model.",
+        "preprocessing_model_preserved": null,
+        "promise_mapping": "Unknown: the restricted algebraic/graph/code promise may discard hard upstream instances.",
+        "promise_preserved": null,
+        "proof_artifact_ids": [],
+        "proof_status": "claimed-needs-proof",
+        "query_overhead_polynomial": null,
+        "route_id": "ROUTE-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-CODE-EQUIVALENCE-VIA-SYMMETRIC-HSP",
+        "solves_source_using_target_oracle": true,
+        "source_input_model": "All standard code-equivalence-nonabelian-hsp instances covered by the upstream natural-problem reduction.",
+        "source_problem": "code-equivalence-nonabelian-hsp",
+        "success_preserved": null,
+        "success_statement": "A row is viable only if it survives profile-pruned canonicalization and support-splitting baselines while a polynomial-description collective observable retains inverse-polynomial distinguishing advantage as length grows.",
+        "target_input_model": "Public generator matrices and coherent hidden-permutation coset-state preparation; classical algorithms receive the same code descriptions, profile data, and any algebraic family metadata used by the quantum measurement.",
+        "target_problem": "candidate-collective-observable-family",
+        "theorem_contract_id": "",
+        "uniform": null
+      },
+      "issues": [
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "mapping_runtime_polynomial",
+          "message": "mapping_runtime_polynomial must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "query_overhead_polynomial",
+          "message": "query_overhead_polynomial must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "parameter_blowup_polynomial",
+          "message": "parameter_blowup_polynomial must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "oracle_model_preserved",
+          "message": "oracle_model_preserved must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "promise_preserved",
+          "message": "promise_preserved must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "success_preserved",
+          "message": "success_preserved must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "preprocessing_model_preserved",
+          "message": "preprocessing_model_preserved must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "uniform",
+          "message": "uniform must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "applies_to_full_target_family",
+          "message": "applies_to_full_target_family must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unsupported-proof-status",
+          "field": "proof_status",
+          "message": "Reduction proof must be established literature, an attached formal proof, or machine checked."
+        }
+      ],
+      "status": "blocked-reduction-edge"
+    },
+    {
+      "accepted": true,
+      "certificate": {
+        "applies_to_full_target_family": true,
+        "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
+        "counterexample_tests": [
+          "Strong Fourier sampling is insufficient on the relevant hidden subgroups.",
+          "Solving a restricted graph family does not solve general graph isomorphism.",
+          "A separating observable must be implementable and decoded, not merely information-theoretically existent."
+        ],
+        "decoder_description": "A vertex permutation mapping one input graph to the other.",
+        "hardness_assumption": "All explicitly represented graph pairs, not only CFI, regular, or cospectral subfamilies.",
+        "hardness_scope": "worst-case",
+        "id": "EDGE-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-GRAPH-ISOMORPHISM-SEARCH-TO-GRAPH-ISOMORPHISM-HIDDEN-INVOLUTION-HSP",
+        "literature_ids": [
+          "symmetric-defies-fourier-2005"
+        ],
+        "mapping_description": "Uniformly construct: A coherently evaluable hiding function whose hidden subgroup encodes an isomorphism as an involution.",
+        "mapping_runtime_polynomial": true,
+        "oracle_model_preserved": true,
+        "oracle_translation": "The reduction supplies these target capabilities: coherent-hiding-function-evaluation, coset-state-preparation.",
+        "parameter_blowup_polynomial": true,
+        "parameter_map": "The target permutation degree and oracle evaluation cost are polynomial in graph size.",
+        "preprocessing_and_advice": "Uniformly constructed from the two input graphs with no graph-family advice.",
+        "preprocessing_model_preserved": true,
+        "promise_mapping": "Source scope: All explicitly represented graph pairs, not only CFI, regular, or cospectral subfamilies. Target contract: Recover enough of the hidden subgroup on every encoded graph pair to output and verify an isomorphism.",
+        "promise_preserved": true,
+        "proof_artifact_ids": [],
+        "proof_status": "established-literature",
+        "query_overhead_polynomial": true,
+        "route_id": "ROUTE-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-GRAPH-ISOMORPHISM-VIA-SYMMETRIC-HSP",
+        "solves_source_using_target_oracle": true,
+        "source_input_model": "Two explicitly represented n-vertex graphs, with search output required on isomorphic inputs.",
+        "source_problem": "graph-isomorphism-search",
+        "success_preserved": true,
+        "success_statement": "Bounded-error recovery on the full encoded graph-isomorphism promise.",
+        "target_input_model": "Recover enough of the hidden subgroup on every encoded graph pair to output and verify an isomorphism.",
+        "target_problem": "graph-isomorphism-hidden-involution-hsp",
+        "theorem_contract_id": "CONSTRUCTION-GI-TO-HIDDEN-INVOLUTION-HSP",
+        "uniform": true
+      },
+      "issues": [],
+      "status": "accepted-reduction-edge"
+    },
+    {
+      "accepted": false,
+      "certificate": {
+        "applies_to_full_target_family": false,
+        "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
+        "counterexample_tests": [
+          "Construct an upstream hard instance outside the candidate family or show that the candidate promise makes it classically easy.",
+          "Attempt to preserve the source oracle and distribution through the proposed family specialization."
+        ],
+        "decoder_description": "Candidate measurement/decoder is not proved to solve the full upstream target family.",
+        "hardness_assumption": "Must keep a legitimate graph-isomorphism/nonabelian-HSP reduction while explaining why structural CFI parity decoding does not apply or is not legal in the chosen input model.",
+        "hardness_scope": "worst-case",
+        "id": "EDGE-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-ROUTE-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-GRAPH-ISOMORPHISM-VIA-SYMMETRIC-HSP-SPECIALIZATION",
+        "literature_ids": [
+          "hsp-survey-2010",
+          "symmetric-defies-fourier-2005"
+        ],
+        "mapping_description": "No construction currently maps arbitrary upstream target instances into the candidate's restricted family.",
+        "mapping_runtime_polynomial": null,
+        "oracle_model_preserved": null,
+        "oracle_translation": "Unknown: coherent or coset-state access may not survive specialization to the candidate family.",
+        "parameter_blowup_polynomial": null,
+        "parameter_map": "Unknown: candidate-family parameters are not proved to cover the upstream target distribution.",
+        "preprocessing_and_advice": "Unknown whether family generation, advice, or preprocessing preserves the upstream model.",
+        "preprocessing_model_preserved": null,
+        "promise_mapping": "Unknown: the restricted algebraic/graph/code promise may discard hard upstream instances.",
+        "promise_preserved": null,
+        "proof_artifact_ids": [],
+        "proof_status": "claimed-needs-proof",
+        "query_overhead_polynomial": null,
+        "route_id": "ROUTE-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-GRAPH-ISOMORPHISM-VIA-SYMMETRIC-HSP",
+        "solves_source_using_target_oracle": true,
+        "source_input_model": "All standard graph-isomorphism-hidden-involution-hsp instances covered by the upstream natural-problem reduction.",
+        "source_problem": "graph-isomorphism-hidden-involution-hsp",
+        "success_preserved": null,
+        "success_statement": "A row remains viable only if the CFI parity decoder fails or is illegal, classical graph invariants fail at scaling budgets, and a polynomial-description collective measurement has stable distinguishing advantage.",
+        "target_input_model": "Public graph instances and coherent coset-state preparation, with the availability of any CFI gadget decomposition stated explicitly and granted to classical baselines whenever it is part of the construction.",
+        "target_problem": "candidate-collective-observable-family",
+        "theorem_contract_id": "",
+        "uniform": null
+      },
+      "issues": [
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "mapping_runtime_polynomial",
+          "message": "mapping_runtime_polynomial must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "query_overhead_polynomial",
+          "message": "query_overhead_polynomial must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "parameter_blowup_polynomial",
+          "message": "parameter_blowup_polynomial must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "oracle_model_preserved",
+          "message": "oracle_model_preserved must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "promise_preserved",
+          "message": "promise_preserved must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "success_preserved",
+          "message": "success_preserved must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "preprocessing_model_preserved",
+          "message": "preprocessing_model_preserved must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "uniform",
+          "message": "uniform must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "applies_to_full_target_family",
+          "message": "applies_to_full_target_family must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unsupported-proof-status",
+          "field": "proof_status",
+          "message": "Reduction proof must be established literature, an attached formal proof, or machine checked."
+        }
+      ],
+      "status": "blocked-reduction-edge"
+    },
+    {
+      "accepted": true,
+      "certificate": {
+        "applies_to_full_target_family": true,
+        "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
+        "counterexample_tests": [
+          "Many structured families are classically resolved by support splitting or stronger invariants.",
+          "Hardness of measuring a coset state is not evidence that the underlying code family is classically hard.",
+          "A solver for a restricted code family does not establish a route from general code equivalence."
+        ],
+        "decoder_description": "A permutation P, and then S by polynomial-time linear algebra.",
+        "hardness_assumption": "The stated search code-equivalence problem, not only a selected algebraic code family.",
+        "hardness_scope": "worst-case",
+        "id": "EDGE-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-LINEAR-CODE-EQUIVALENCE-SEARCH-TO-CODE-EQUIVALENCE-NONABELIAN-HSP",
+        "literature_ids": [
+          "code-equivalence-fourier-2011"
+        ],
+        "mapping_description": "Uniformly construct: A coherently evaluable group-action hiding function derived from both generator matrices.",
+        "mapping_runtime_polynomial": true,
+        "oracle_model_preserved": true,
+        "oracle_translation": "The reduction supplies these target capabilities: coherent-hiding-function-evaluation, coset-state-preparation.",
+        "parameter_blowup_polynomial": true,
+        "parameter_map": "Group representation and oracle evaluation are polynomial in n, k, and log q.",
+        "preprocessing_and_advice": "Uniform construction from M and M'; no private code-family advice.",
+        "preprocessing_model_preserved": true,
+        "promise_mapping": "Source scope: The stated search code-equivalence problem, not only a selected algebraic code family. Target contract: Recover the hidden subgroup/action element sufficiently to output the coordinate permutation P.",
+        "promise_preserved": true,
+        "proof_artifact_ids": [],
+        "proof_status": "established-literature",
+        "query_overhead_polynomial": true,
+        "route_id": "ROUTE-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-CODE-EQUIVALENCE-VIA-SYMMETRIC-HSP",
+        "solves_source_using_target_oracle": true,
+        "source_input_model": "Two full-rank generator matrices M and M' for equivalent q-ary linear codes, with M'=SMP.",
+        "source_problem": "linear-code-equivalence-search",
+        "success_preserved": true,
+        "success_statement": "Bounded-error recovery on every promised equivalent code pair in the claimed scope.",
+        "target_input_model": "Recover the hidden subgroup/action element sufficiently to output the coordinate permutation P.",
+        "target_problem": "code-equivalence-nonabelian-hsp",
+        "theorem_contract_id": "CONSTRUCTION-CODE-EQUIVALENCE-TO-NONABELIAN-HSP",
+        "uniform": true
+      },
+      "issues": [],
+      "status": "accepted-reduction-edge"
+    },
+    {
+      "accepted": false,
+      "certificate": {
+        "applies_to_full_target_family": false,
+        "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
+        "counterexample_tests": [
+          "Construct an upstream hard instance outside the candidate family or show that the candidate promise makes it classically easy.",
+          "Attempt to preserve the source oracle and distribution through the proposed family specialization."
+        ],
+        "decoder_description": "Candidate measurement/decoder is not proved to solve the full upstream target family.",
+        "hardness_assumption": "Reduction path must remain inside symmetric/nonabelian HSP or code-equivalence hardness while explicitly bypassing strong Fourier sampling no-go results.",
+        "hardness_scope": "worst-case",
+        "id": "EDGE-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-ROUTE-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-CODE-EQUIVALENCE-VIA-SYMMETRIC-HSP-SPECIALIZATION",
+        "literature_ids": [
+          "hsp-survey-2010",
+          "symmetric-defies-fourier-2005"
+        ],
+        "mapping_description": "No construction currently maps arbitrary upstream target instances into the candidate's restricted family.",
+        "mapping_runtime_polynomial": null,
+        "oracle_model_preserved": null,
+        "oracle_translation": "Unknown: coherent or coset-state access may not survive specialization to the candidate family.",
+        "parameter_blowup_polynomial": null,
+        "parameter_map": "Unknown: candidate-family parameters are not proved to cover the upstream target distribution.",
+        "preprocessing_and_advice": "Unknown whether family generation, advice, or preprocessing preserves the upstream model.",
+        "preprocessing_model_preserved": null,
+        "promise_mapping": "Unknown: the restricted algebraic/graph/code promise may discard hard upstream instances.",
+        "promise_preserved": null,
+        "proof_artifact_ids": [],
+        "proof_status": "claimed-needs-proof",
+        "query_overhead_polynomial": null,
+        "route_id": "ROUTE-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-CODE-EQUIVALENCE-VIA-SYMMETRIC-HSP",
+        "solves_source_using_target_oracle": true,
+        "source_input_model": "All standard code-equivalence-nonabelian-hsp instances covered by the upstream natural-problem reduction.",
+        "source_problem": "code-equivalence-nonabelian-hsp",
+        "success_preserved": null,
+        "success_statement": "A candidate survives only if a scalable family remains hard for classical invariants while a polynomial-register collective observable has inverse-polynomial distinguishing advantage.",
+        "target_input_model": "Coherent preparation of coset states for hidden permutations, with classical descriptions of graph/code families available to all classical baselines.",
+        "target_problem": "candidate-collective-observable-family",
+        "theorem_contract_id": "",
+        "uniform": null
+      },
+      "issues": [
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "mapping_runtime_polynomial",
+          "message": "mapping_runtime_polynomial must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "query_overhead_polynomial",
+          "message": "query_overhead_polynomial must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "parameter_blowup_polynomial",
+          "message": "parameter_blowup_polynomial must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "oracle_model_preserved",
+          "message": "oracle_model_preserved must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "promise_preserved",
+          "message": "promise_preserved must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "success_preserved",
+          "message": "success_preserved must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "preprocessing_model_preserved",
+          "message": "preprocessing_model_preserved must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "uniform",
+          "message": "uniform must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "applies_to_full_target_family",
+          "message": "applies_to_full_target_family must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unsupported-proof-status",
+          "field": "proof_status",
+          "message": "Reduction proof must be established literature, an attached formal proof, or machine checked."
+        }
+      ],
+      "status": "blocked-reduction-edge"
+    },
+    {
+      "accepted": true,
+      "certificate": {
+        "applies_to_full_target_family": true,
+        "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
+        "counterexample_tests": [
+          "Strong Fourier sampling is insufficient on the relevant hidden subgroups.",
+          "Solving a restricted graph family does not solve general graph isomorphism.",
+          "A separating observable must be implementable and decoded, not merely information-theoretically existent."
+        ],
+        "decoder_description": "A vertex permutation mapping one input graph to the other.",
+        "hardness_assumption": "All explicitly represented graph pairs, not only CFI, regular, or cospectral subfamilies.",
+        "hardness_scope": "worst-case",
+        "id": "EDGE-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-GRAPH-ISOMORPHISM-SEARCH-TO-GRAPH-ISOMORPHISM-HIDDEN-INVOLUTION-HSP",
+        "literature_ids": [
+          "symmetric-defies-fourier-2005"
+        ],
+        "mapping_description": "Uniformly construct: A coherently evaluable hiding function whose hidden subgroup encodes an isomorphism as an involution.",
+        "mapping_runtime_polynomial": true,
+        "oracle_model_preserved": true,
+        "oracle_translation": "The reduction supplies these target capabilities: coherent-hiding-function-evaluation, coset-state-preparation.",
+        "parameter_blowup_polynomial": true,
+        "parameter_map": "The target permutation degree and oracle evaluation cost are polynomial in graph size.",
+        "preprocessing_and_advice": "Uniformly constructed from the two input graphs with no graph-family advice.",
+        "preprocessing_model_preserved": true,
+        "promise_mapping": "Source scope: All explicitly represented graph pairs, not only CFI, regular, or cospectral subfamilies. Target contract: Recover enough of the hidden subgroup on every encoded graph pair to output and verify an isomorphism.",
+        "promise_preserved": true,
+        "proof_artifact_ids": [],
+        "proof_status": "established-literature",
+        "query_overhead_polynomial": true,
+        "route_id": "ROUTE-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-GRAPH-ISOMORPHISM-VIA-SYMMETRIC-HSP",
+        "solves_source_using_target_oracle": true,
+        "source_input_model": "Two explicitly represented n-vertex graphs, with search output required on isomorphic inputs.",
+        "source_problem": "graph-isomorphism-search",
+        "success_preserved": true,
+        "success_statement": "Bounded-error recovery on the full encoded graph-isomorphism promise.",
+        "target_input_model": "Recover enough of the hidden subgroup on every encoded graph pair to output and verify an isomorphism.",
+        "target_problem": "graph-isomorphism-hidden-involution-hsp",
+        "theorem_contract_id": "CONSTRUCTION-GI-TO-HIDDEN-INVOLUTION-HSP",
+        "uniform": true
+      },
+      "issues": [],
+      "status": "accepted-reduction-edge"
+    },
+    {
+      "accepted": false,
+      "certificate": {
+        "applies_to_full_target_family": false,
+        "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
+        "counterexample_tests": [
+          "Construct an upstream hard instance outside the candidate family or show that the candidate promise makes it classically easy.",
+          "Attempt to preserve the source oracle and distribution through the proposed family specialization."
+        ],
+        "decoder_description": "Candidate measurement/decoder is not proved to solve the full upstream target family.",
+        "hardness_assumption": "Reduction path must remain inside symmetric/nonabelian HSP or code-equivalence hardness while explicitly bypassing strong Fourier sampling no-go results.",
+        "hardness_scope": "worst-case",
+        "id": "EDGE-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-ROUTE-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-GRAPH-ISOMORPHISM-VIA-SYMMETRIC-HSP-SPECIALIZATION",
+        "literature_ids": [
+          "hsp-survey-2010",
+          "symmetric-defies-fourier-2005"
+        ],
+        "mapping_description": "No construction currently maps arbitrary upstream target instances into the candidate's restricted family.",
+        "mapping_runtime_polynomial": null,
+        "oracle_model_preserved": null,
+        "oracle_translation": "Unknown: coherent or coset-state access may not survive specialization to the candidate family.",
+        "parameter_blowup_polynomial": null,
+        "parameter_map": "Unknown: candidate-family parameters are not proved to cover the upstream target distribution.",
+        "preprocessing_and_advice": "Unknown whether family generation, advice, or preprocessing preserves the upstream model.",
+        "preprocessing_model_preserved": null,
+        "promise_mapping": "Unknown: the restricted algebraic/graph/code promise may discard hard upstream instances.",
+        "promise_preserved": null,
+        "proof_artifact_ids": [],
+        "proof_status": "claimed-needs-proof",
+        "query_overhead_polynomial": null,
+        "route_id": "ROUTE-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-GRAPH-ISOMORPHISM-VIA-SYMMETRIC-HSP",
+        "solves_source_using_target_oracle": true,
+        "source_input_model": "All standard graph-isomorphism-hidden-involution-hsp instances covered by the upstream natural-problem reduction.",
+        "source_problem": "graph-isomorphism-hidden-involution-hsp",
+        "success_preserved": null,
+        "success_statement": "A candidate survives only if a scalable family remains hard for classical invariants while a polynomial-register collective observable has inverse-polynomial distinguishing advantage.",
+        "target_input_model": "Coherent preparation of coset states for hidden permutations, with classical descriptions of graph/code families available to all classical baselines.",
+        "target_problem": "candidate-collective-observable-family",
+        "theorem_contract_id": "",
+        "uniform": null
+      },
+      "issues": [
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "mapping_runtime_polynomial",
+          "message": "mapping_runtime_polynomial must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "query_overhead_polynomial",
+          "message": "query_overhead_polynomial must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "parameter_blowup_polynomial",
+          "message": "parameter_blowup_polynomial must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "oracle_model_preserved",
+          "message": "oracle_model_preserved must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "promise_preserved",
+          "message": "promise_preserved must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "success_preserved",
+          "message": "success_preserved must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "preprocessing_model_preserved",
+          "message": "preprocessing_model_preserved must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "uniform",
+          "message": "uniform must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "applies_to_full_target_family",
+          "message": "applies_to_full_target_family must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unsupported-proof-status",
+          "field": "proof_status",
+          "message": "Reduction proof must be established literature, an attached formal proof, or machine checked."
+        }
+      ],
+      "status": "blocked-reduction-edge"
+    },
+    {
+      "accepted": true,
+      "certificate": {
+        "applies_to_full_target_family": true,
+        "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
+        "counterexample_tests": [
+          "Many structured families are classically resolved by support splitting or stronger invariants.",
+          "Hardness of measuring a coset state is not evidence that the underlying code family is classically hard.",
+          "A solver for a restricted code family does not establish a route from general code equivalence."
+        ],
+        "decoder_description": "A permutation P, and then S by polynomial-time linear algebra.",
+        "hardness_assumption": "The stated search code-equivalence problem, not only a selected algebraic code family.",
+        "hardness_scope": "worst-case",
+        "id": "EDGE-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-LINEAR-CODE-EQUIVALENCE-SEARCH-TO-CODE-EQUIVALENCE-NONABELIAN-HSP",
+        "literature_ids": [
+          "code-equivalence-fourier-2011"
+        ],
+        "mapping_description": "Uniformly construct: A coherently evaluable group-action hiding function derived from both generator matrices.",
+        "mapping_runtime_polynomial": true,
+        "oracle_model_preserved": true,
+        "oracle_translation": "The reduction supplies these target capabilities: coherent-hiding-function-evaluation, coset-state-preparation.",
+        "parameter_blowup_polynomial": true,
+        "parameter_map": "Group representation and oracle evaluation are polynomial in n, k, and log q.",
+        "preprocessing_and_advice": "Uniform construction from M and M'; no private code-family advice.",
+        "preprocessing_model_preserved": true,
+        "promise_mapping": "Source scope: The stated search code-equivalence problem, not only a selected algebraic code family. Target contract: Recover the hidden subgroup/action element sufficiently to output the coordinate permutation P.",
+        "promise_preserved": true,
+        "proof_artifact_ids": [],
+        "proof_status": "established-literature",
+        "query_overhead_polynomial": true,
+        "route_id": "ROUTE-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-CODE-EQUIVALENCE-VIA-SYMMETRIC-HSP",
+        "solves_source_using_target_oracle": true,
+        "source_input_model": "Two full-rank generator matrices M and M' for equivalent q-ary linear codes, with M'=SMP.",
+        "source_problem": "linear-code-equivalence-search",
+        "success_preserved": true,
+        "success_statement": "Bounded-error recovery on every promised equivalent code pair in the claimed scope.",
+        "target_input_model": "Recover the hidden subgroup/action element sufficiently to output the coordinate permutation P.",
+        "target_problem": "code-equivalence-nonabelian-hsp",
+        "theorem_contract_id": "CONSTRUCTION-CODE-EQUIVALENCE-TO-NONABELIAN-HSP",
+        "uniform": true
+      },
+      "issues": [],
+      "status": "accepted-reduction-edge"
+    },
+    {
+      "accepted": false,
+      "certificate": {
+        "applies_to_full_target_family": false,
+        "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
+        "counterexample_tests": [
+          "Construct an upstream hard instance outside the candidate family or show that the candidate promise makes it classically easy.",
+          "Attempt to preserve the source oracle and distribution through the proposed family specialization."
+        ],
+        "decoder_description": "Candidate measurement/decoder is not proved to solve the full upstream target family.",
+        "hardness_assumption": "Reduction path must remain inside symmetric/nonabelian HSP or code-equivalence hardness while explicitly bypassing strong Fourier sampling no-go results.",
+        "hardness_scope": "worst-case",
+        "id": "EDGE-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-ROUTE-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-CODE-EQUIVALENCE-VIA-SYMMETRIC-HSP-SPECIALIZATION",
+        "literature_ids": [
+          "hsp-survey-2010",
+          "symmetric-defies-fourier-2005"
+        ],
+        "mapping_description": "No construction currently maps arbitrary upstream target instances into the candidate's restricted family.",
+        "mapping_runtime_polynomial": null,
+        "oracle_model_preserved": null,
+        "oracle_translation": "Unknown: coherent or coset-state access may not survive specialization to the candidate family.",
+        "parameter_blowup_polynomial": null,
+        "parameter_map": "Unknown: candidate-family parameters are not proved to cover the upstream target distribution.",
+        "preprocessing_and_advice": "Unknown whether family generation, advice, or preprocessing preserves the upstream model.",
+        "preprocessing_model_preserved": null,
+        "promise_mapping": "Unknown: the restricted algebraic/graph/code promise may discard hard upstream instances.",
+        "promise_preserved": null,
+        "proof_artifact_ids": [],
+        "proof_status": "claimed-needs-proof",
+        "query_overhead_polynomial": null,
+        "route_id": "ROUTE-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-CODE-EQUIVALENCE-VIA-SYMMETRIC-HSP",
+        "solves_source_using_target_oracle": true,
+        "source_input_model": "All standard code-equivalence-nonabelian-hsp instances covered by the upstream natural-problem reduction.",
+        "source_problem": "code-equivalence-nonabelian-hsp",
+        "success_preserved": null,
+        "success_statement": "A candidate survives only if a scalable family remains hard for classical invariants while a polynomial-register collective observable has inverse-polynomial distinguishing advantage.",
+        "target_input_model": "Coherent preparation of coset states for hidden permutations, with classical descriptions of graph/code families available to all classical baselines.",
+        "target_problem": "candidate-collective-observable-family",
+        "theorem_contract_id": "",
+        "uniform": null
+      },
+      "issues": [
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "mapping_runtime_polynomial",
+          "message": "mapping_runtime_polynomial must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "query_overhead_polynomial",
+          "message": "query_overhead_polynomial must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "parameter_blowup_polynomial",
+          "message": "parameter_blowup_polynomial must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "oracle_model_preserved",
+          "message": "oracle_model_preserved must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "promise_preserved",
+          "message": "promise_preserved must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "success_preserved",
+          "message": "success_preserved must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "preprocessing_model_preserved",
+          "message": "preprocessing_model_preserved must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "uniform",
+          "message": "uniform must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "applies_to_full_target_family",
+          "message": "applies_to_full_target_family must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unsupported-proof-status",
+          "field": "proof_status",
+          "message": "Reduction proof must be established literature, an attached formal proof, or machine checked."
+        }
+      ],
+      "status": "blocked-reduction-edge"
+    },
+    {
+      "accepted": true,
+      "certificate": {
+        "applies_to_full_target_family": true,
+        "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
+        "counterexample_tests": [
+          "Strong Fourier sampling is insufficient on the relevant hidden subgroups.",
+          "Solving a restricted graph family does not solve general graph isomorphism.",
+          "A separating observable must be implementable and decoded, not merely information-theoretically existent."
+        ],
+        "decoder_description": "A vertex permutation mapping one input graph to the other.",
+        "hardness_assumption": "All explicitly represented graph pairs, not only CFI, regular, or cospectral subfamilies.",
+        "hardness_scope": "worst-case",
+        "id": "EDGE-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-GRAPH-ISOMORPHISM-SEARCH-TO-GRAPH-ISOMORPHISM-HIDDEN-INVOLUTION-HSP",
+        "literature_ids": [
+          "symmetric-defies-fourier-2005"
+        ],
+        "mapping_description": "Uniformly construct: A coherently evaluable hiding function whose hidden subgroup encodes an isomorphism as an involution.",
+        "mapping_runtime_polynomial": true,
+        "oracle_model_preserved": true,
+        "oracle_translation": "The reduction supplies these target capabilities: coherent-hiding-function-evaluation, coset-state-preparation.",
+        "parameter_blowup_polynomial": true,
+        "parameter_map": "The target permutation degree and oracle evaluation cost are polynomial in graph size.",
+        "preprocessing_and_advice": "Uniformly constructed from the two input graphs with no graph-family advice.",
+        "preprocessing_model_preserved": true,
+        "promise_mapping": "Source scope: All explicitly represented graph pairs, not only CFI, regular, or cospectral subfamilies. Target contract: Recover enough of the hidden subgroup on every encoded graph pair to output and verify an isomorphism.",
+        "promise_preserved": true,
+        "proof_artifact_ids": [],
+        "proof_status": "established-literature",
+        "query_overhead_polynomial": true,
+        "route_id": "ROUTE-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-GRAPH-ISOMORPHISM-VIA-SYMMETRIC-HSP",
+        "solves_source_using_target_oracle": true,
+        "source_input_model": "Two explicitly represented n-vertex graphs, with search output required on isomorphic inputs.",
+        "source_problem": "graph-isomorphism-search",
+        "success_preserved": true,
+        "success_statement": "Bounded-error recovery on the full encoded graph-isomorphism promise.",
+        "target_input_model": "Recover enough of the hidden subgroup on every encoded graph pair to output and verify an isomorphism.",
+        "target_problem": "graph-isomorphism-hidden-involution-hsp",
+        "theorem_contract_id": "CONSTRUCTION-GI-TO-HIDDEN-INVOLUTION-HSP",
+        "uniform": true
+      },
+      "issues": [],
+      "status": "accepted-reduction-edge"
+    },
+    {
+      "accepted": false,
+      "certificate": {
+        "applies_to_full_target_family": false,
+        "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
+        "counterexample_tests": [
+          "Construct an upstream hard instance outside the candidate family or show that the candidate promise makes it classically easy.",
+          "Attempt to preserve the source oracle and distribution through the proposed family specialization."
+        ],
+        "decoder_description": "Candidate measurement/decoder is not proved to solve the full upstream target family.",
+        "hardness_assumption": "Reduction path must remain inside symmetric/nonabelian HSP or code-equivalence hardness while explicitly bypassing strong Fourier sampling no-go results.",
+        "hardness_scope": "worst-case",
+        "id": "EDGE-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-ROUTE-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-GRAPH-ISOMORPHISM-VIA-SYMMETRIC-HSP-SPECIALIZATION",
+        "literature_ids": [
+          "hsp-survey-2010",
+          "symmetric-defies-fourier-2005"
+        ],
+        "mapping_description": "No construction currently maps arbitrary upstream target instances into the candidate's restricted family.",
+        "mapping_runtime_polynomial": null,
+        "oracle_model_preserved": null,
+        "oracle_translation": "Unknown: coherent or coset-state access may not survive specialization to the candidate family.",
+        "parameter_blowup_polynomial": null,
+        "parameter_map": "Unknown: candidate-family parameters are not proved to cover the upstream target distribution.",
+        "preprocessing_and_advice": "Unknown whether family generation, advice, or preprocessing preserves the upstream model.",
+        "preprocessing_model_preserved": null,
+        "promise_mapping": "Unknown: the restricted algebraic/graph/code promise may discard hard upstream instances.",
+        "promise_preserved": null,
+        "proof_artifact_ids": [],
+        "proof_status": "claimed-needs-proof",
+        "query_overhead_polynomial": null,
+        "route_id": "ROUTE-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-GRAPH-ISOMORPHISM-VIA-SYMMETRIC-HSP",
+        "solves_source_using_target_oracle": true,
+        "source_input_model": "All standard graph-isomorphism-hidden-involution-hsp instances covered by the upstream natural-problem reduction.",
+        "source_problem": "graph-isomorphism-hidden-involution-hsp",
+        "success_preserved": null,
+        "success_statement": "A candidate survives only if a scalable family remains hard for classical invariants while a polynomial-register collective observable has inverse-polynomial distinguishing advantage.",
+        "target_input_model": "Coherent preparation of coset states for hidden permutations, with classical descriptions of graph/code families available to all classical baselines.",
+        "target_problem": "candidate-collective-observable-family",
+        "theorem_contract_id": "",
+        "uniform": null
+      },
+      "issues": [
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "mapping_runtime_polynomial",
+          "message": "mapping_runtime_polynomial must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "query_overhead_polynomial",
+          "message": "query_overhead_polynomial must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "parameter_blowup_polynomial",
+          "message": "parameter_blowup_polynomial must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "oracle_model_preserved",
+          "message": "oracle_model_preserved must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "promise_preserved",
+          "message": "promise_preserved must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "success_preserved",
+          "message": "success_preserved must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "preprocessing_model_preserved",
+          "message": "preprocessing_model_preserved must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "uniform",
+          "message": "uniform must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unproved-preservation-obligation",
+          "field": "applies_to_full_target_family",
+          "message": "applies_to_full_target_family must be proved true; false or unknown blocks this edge."
+        },
+        {
+          "code": "unsupported-proof-status",
+          "field": "proof_status",
+          "message": "Reduction proof must be established literature, an attached formal proof, or machine checked."
+        }
+      ],
+      "status": "blocked-reduction-edge"
+    }
+  ],
+  "kind": "certificate-gated-reduction-route-ledger",
+  "route_count": 11,
+  "routes": [
+    {
+      "blocking_edge_ids": [
+        "EDGE-CODE-COSET-COLLECTIVE-ROUTE-CODE-COSET-COLLECTIVE-CODE-EQUIVALENCE-VIA-SYMMETRIC-HSP-SPECIALIZATION"
+      ],
+      "candidate_id": "CODE-COSET-COLLECTIVE",
+      "candidate_target": "candidate-collective-observable-family",
+      "edge_ids": [
+        "EDGE-CODE-COSET-COLLECTIVE-LINEAR-CODE-EQUIVALENCE-SEARCH-TO-CODE-EQUIVALENCE-NONABELIAN-HSP",
+        "EDGE-CODE-COSET-COLLECTIVE-ROUTE-CODE-COSET-COLLECTIVE-CODE-EQUIVALENCE-VIA-SYMMETRIC-HSP-SPECIALIZATION"
+      ],
+      "id": "ROUTE-CODE-COSET-COLLECTIVE-CODE-EQUIVALENCE-VIA-SYMMETRIC-HSP",
+      "interpretation": "At least one edge lacks model, promise, complexity, family-coverage, or proof certification.",
+      "natural_source_problem": "linear-code-equivalence-search",
+      "status": "blocked-incomplete-route"
+    },
+    {
+      "blocking_edge_ids": [
+        "EDGE-DHS-GOWERS-SIEVE-ROUTE-DHS-GOWERS-SIEVE-USVP-VIA-DHSP-SPECIALIZATION"
+      ],
+      "candidate_id": "DHS-GOWERS-SIEVE",
+      "candidate_target": "candidate-specific-hidden-shift-family",
+      "edge_ids": [
+        "EDGE-DHS-GOWERS-SIEVE-THETA-N-2.5-UNIQUE-SVP-TO-DIHEDRAL-COSET-PROBLEM",
+        "EDGE-DHS-GOWERS-SIEVE-ROUTE-DHS-GOWERS-SIEVE-USVP-VIA-DHSP-SPECIALIZATION"
+      ],
+      "id": "ROUTE-DHS-GOWERS-SIEVE-USVP-VIA-DHSP",
+      "interpretation": "At least one edge lacks model, promise, complexity, family-coverage, or proof certification.",
+      "natural_source_problem": "theta-n-2.5-unique-svp",
+      "status": "blocked-incomplete-route"
+    },
+    {
+      "blocking_edge_ids": [
+        "EDGE-HYP-LIT-COSET-OBSERVABLES-ROUTE-HYP-LIT-COSET-OBSERVABLES-CODE-EQUIVALENCE-VIA-SYMMETRIC-HSP-SPECIALIZATION"
+      ],
+      "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
+      "candidate_target": "candidate-collective-observable-family",
+      "edge_ids": [
+        "EDGE-HYP-LIT-COSET-OBSERVABLES-LINEAR-CODE-EQUIVALENCE-SEARCH-TO-CODE-EQUIVALENCE-NONABELIAN-HSP",
+        "EDGE-HYP-LIT-COSET-OBSERVABLES-ROUTE-HYP-LIT-COSET-OBSERVABLES-CODE-EQUIVALENCE-VIA-SYMMETRIC-HSP-SPECIALIZATION"
+      ],
+      "id": "ROUTE-HYP-LIT-COSET-OBSERVABLES-CODE-EQUIVALENCE-VIA-SYMMETRIC-HSP",
+      "interpretation": "At least one edge lacks model, promise, complexity, family-coverage, or proof certification.",
+      "natural_source_problem": "linear-code-equivalence-search",
+      "status": "blocked-incomplete-route"
+    },
+    {
+      "blocking_edge_ids": [
+        "EDGE-HYP-LIT-COSET-OBSERVABLES-ROUTE-HYP-LIT-COSET-OBSERVABLES-GRAPH-ISOMORPHISM-VIA-SYMMETRIC-HSP-SPECIALIZATION"
+      ],
+      "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
+      "candidate_target": "candidate-collective-observable-family",
+      "edge_ids": [
+        "EDGE-HYP-LIT-COSET-OBSERVABLES-GRAPH-ISOMORPHISM-SEARCH-TO-GRAPH-ISOMORPHISM-HIDDEN-INVOLUTION-HSP",
+        "EDGE-HYP-LIT-COSET-OBSERVABLES-ROUTE-HYP-LIT-COSET-OBSERVABLES-GRAPH-ISOMORPHISM-VIA-SYMMETRIC-HSP-SPECIALIZATION"
+      ],
+      "id": "ROUTE-HYP-LIT-COSET-OBSERVABLES-GRAPH-ISOMORPHISM-VIA-SYMMETRIC-HSP",
+      "interpretation": "At least one edge lacks model, promise, complexity, family-coverage, or proof certification.",
+      "natural_source_problem": "graph-isomorphism-search",
+      "status": "blocked-incomplete-route"
+    },
+    {
+      "blocking_edge_ids": [
+        "EDGE-HYP-LIT-HIDDEN-SHIFT-SIEVE-ROUTE-HYP-LIT-HIDDEN-SHIFT-SIEVE-USVP-VIA-DHSP-SPECIALIZATION"
+      ],
+      "candidate_id": "HYP-LIT-HIDDEN-SHIFT-SIEVE",
+      "candidate_target": "candidate-specific-hidden-shift-family",
+      "edge_ids": [
+        "EDGE-HYP-LIT-HIDDEN-SHIFT-SIEVE-THETA-N-2.5-UNIQUE-SVP-TO-DIHEDRAL-COSET-PROBLEM",
+        "EDGE-HYP-LIT-HIDDEN-SHIFT-SIEVE-ROUTE-HYP-LIT-HIDDEN-SHIFT-SIEVE-USVP-VIA-DHSP-SPECIALIZATION"
+      ],
+      "id": "ROUTE-HYP-LIT-HIDDEN-SHIFT-SIEVE-USVP-VIA-DHSP",
+      "interpretation": "At least one edge lacks model, promise, complexity, family-coverage, or proof certification.",
+      "natural_source_problem": "theta-n-2.5-unique-svp",
+      "status": "blocked-incomplete-route"
+    },
+    {
+      "blocking_edge_ids": [
+        "EDGE-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-ROUTE-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-CODE-EQUIVALENCE-VIA-SYMMETRIC-HSP-SPECIALIZATION"
+      ],
+      "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
+      "candidate_target": "candidate-collective-observable-family",
+      "edge_ids": [
+        "EDGE-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-LINEAR-CODE-EQUIVALENCE-SEARCH-TO-CODE-EQUIVALENCE-NONABELIAN-HSP",
+        "EDGE-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-ROUTE-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-CODE-EQUIVALENCE-VIA-SYMMETRIC-HSP-SPECIALIZATION"
+      ],
+      "id": "ROUTE-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-CODE-EQUIVALENCE-VIA-SYMMETRIC-HSP",
+      "interpretation": "At least one edge lacks model, promise, complexity, family-coverage, or proof certification.",
+      "natural_source_problem": "linear-code-equivalence-search",
+      "status": "blocked-incomplete-route"
+    },
+    {
+      "blocking_edge_ids": [
+        "EDGE-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-ROUTE-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-GRAPH-ISOMORPHISM-VIA-SYMMETRIC-HSP-SPECIALIZATION"
+      ],
+      "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
+      "candidate_target": "candidate-collective-observable-family",
+      "edge_ids": [
+        "EDGE-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-GRAPH-ISOMORPHISM-SEARCH-TO-GRAPH-ISOMORPHISM-HIDDEN-INVOLUTION-HSP",
+        "EDGE-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-ROUTE-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-GRAPH-ISOMORPHISM-VIA-SYMMETRIC-HSP-SPECIALIZATION"
+      ],
+      "id": "ROUTE-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-GRAPH-ISOMORPHISM-VIA-SYMMETRIC-HSP",
+      "interpretation": "At least one edge lacks model, promise, complexity, family-coverage, or proof certification.",
+      "natural_source_problem": "graph-isomorphism-search",
+      "status": "blocked-incomplete-route"
+    },
+    {
+      "blocking_edge_ids": [
+        "EDGE-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-ROUTE-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-CODE-EQUIVALENCE-VIA-SYMMETRIC-HSP-SPECIALIZATION"
+      ],
+      "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
+      "candidate_target": "candidate-collective-observable-family",
+      "edge_ids": [
+        "EDGE-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-LINEAR-CODE-EQUIVALENCE-SEARCH-TO-CODE-EQUIVALENCE-NONABELIAN-HSP",
+        "EDGE-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-ROUTE-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-CODE-EQUIVALENCE-VIA-SYMMETRIC-HSP-SPECIALIZATION"
+      ],
+      "id": "ROUTE-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-CODE-EQUIVALENCE-VIA-SYMMETRIC-HSP",
+      "interpretation": "At least one edge lacks model, promise, complexity, family-coverage, or proof certification.",
+      "natural_source_problem": "linear-code-equivalence-search",
+      "status": "blocked-incomplete-route"
+    },
+    {
+      "blocking_edge_ids": [
+        "EDGE-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-ROUTE-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-GRAPH-ISOMORPHISM-VIA-SYMMETRIC-HSP-SPECIALIZATION"
+      ],
+      "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
+      "candidate_target": "candidate-collective-observable-family",
+      "edge_ids": [
+        "EDGE-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-GRAPH-ISOMORPHISM-SEARCH-TO-GRAPH-ISOMORPHISM-HIDDEN-INVOLUTION-HSP",
+        "EDGE-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-ROUTE-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-GRAPH-ISOMORPHISM-VIA-SYMMETRIC-HSP-SPECIALIZATION"
+      ],
+      "id": "ROUTE-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-GRAPH-ISOMORPHISM-VIA-SYMMETRIC-HSP",
+      "interpretation": "At least one edge lacks model, promise, complexity, family-coverage, or proof certification.",
+      "natural_source_problem": "graph-isomorphism-search",
+      "status": "blocked-incomplete-route"
+    },
+    {
+      "blocking_edge_ids": [
+        "EDGE-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-ROUTE-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-CODE-EQUIVALENCE-VIA-SYMMETRIC-HSP-SPECIALIZATION"
+      ],
+      "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
+      "candidate_target": "candidate-collective-observable-family",
+      "edge_ids": [
+        "EDGE-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-LINEAR-CODE-EQUIVALENCE-SEARCH-TO-CODE-EQUIVALENCE-NONABELIAN-HSP",
+        "EDGE-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-ROUTE-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-CODE-EQUIVALENCE-VIA-SYMMETRIC-HSP-SPECIALIZATION"
+      ],
+      "id": "ROUTE-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-CODE-EQUIVALENCE-VIA-SYMMETRIC-HSP",
+      "interpretation": "At least one edge lacks model, promise, complexity, family-coverage, or proof certification.",
+      "natural_source_problem": "linear-code-equivalence-search",
+      "status": "blocked-incomplete-route"
+    },
+    {
+      "blocking_edge_ids": [
+        "EDGE-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-ROUTE-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-GRAPH-ISOMORPHISM-VIA-SYMMETRIC-HSP-SPECIALIZATION"
+      ],
+      "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
+      "candidate_target": "candidate-collective-observable-family",
+      "edge_ids": [
+        "EDGE-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-GRAPH-ISOMORPHISM-SEARCH-TO-GRAPH-ISOMORPHISM-HIDDEN-INVOLUTION-HSP",
+        "EDGE-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-ROUTE-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-GRAPH-ISOMORPHISM-VIA-SYMMETRIC-HSP-SPECIALIZATION"
+      ],
+      "id": "ROUTE-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-GRAPH-ISOMORPHISM-VIA-SYMMETRIC-HSP",
+      "interpretation": "At least one edge lacks model, promise, complexity, family-coverage, or proof certification.",
+      "natural_source_problem": "graph-isomorphism-search",
+      "status": "blocked-incomplete-route"
+    }
+  ],
+  "status": "all-candidate-routes-blocked",
+  "summary": "Evaluated 22 typed reduction edge(s) across 11 route(s): 0 complete route(s), 11 blocked route(s)."
+}

@@ -1,0 +1,2248 @@
+{
+  "created_at": "2026-07-08T15:43:05.434227+00:00",
+  "falsifiers_triggered": [
+    "Weak Fourier irrep labels do not supply enough hidden-involution information; collective measurements remain mandatory."
+  ],
+  "headline_metrics": {
+    "control_count": 7,
+    "fixed_point_free_count": 6,
+    "max_fixed_point_free_total_variation": 0.09444444444444443,
+    "min_fixed_point_free_low_dimension_fraction": 0.00024621293964294125,
+    "min_fixed_point_free_total_variation": 0.00019792518675413998,
+    "n_count": 6,
+    "near_plancherel_count": 4,
+    "record_count": 17,
+    "small_signal_count": 6
+  },
+  "records": [
+    {
+      "fixed_point_count": 4,
+      "interpretation": "Single transpositions are a control class; visible label bias here is not evidence for GI/code-equivalence speedups.",
+      "involution_type": "single_transposition_control",
+      "kl_to_plancherel_bits": 0.05055836322935753,
+      "low_dimension_signal_fraction": 1.0,
+      "max_character_ratio": 1.0,
+      "n": 6,
+      "status": "visible-control-not-frontier-evidence",
+      "top_signal_irreps": [
+        {
+          "absolute_signal": 0.03749999999999999,
+          "character": -3,
+          "character_ratio": -0.3333333333333333,
+          "dimension": 9,
+          "hidden_subgroup_probability": 0.07500000000000001,
+          "partition": [
+            2,
+            2,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.1125
+        },
+        {
+          "absolute_signal": 0.03749999999999999,
+          "character": 3,
+          "character_ratio": 0.3333333333333333,
+          "dimension": 9,
+          "hidden_subgroup_probability": 0.15,
+          "partition": [
+            4,
+            2
+          ],
+          "plancherel_mass": 0.1125
+        },
+        {
+          "absolute_signal": 0.027777777777777776,
+          "character": -2,
+          "character_ratio": -0.2,
+          "dimension": 10,
+          "hidden_subgroup_probability": 0.11111111111111112,
+          "partition": [
+            3,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.1388888888888889
+        },
+        {
+          "absolute_signal": 0.027777777777777762,
+          "character": 2,
+          "character_ratio": 0.2,
+          "dimension": 10,
+          "hidden_subgroup_probability": 0.16666666666666666,
+          "partition": [
+            4,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.1388888888888889
+        },
+        {
+          "absolute_signal": 0.020833333333333336,
+          "character": -3,
+          "character_ratio": -0.6,
+          "dimension": 5,
+          "hidden_subgroup_probability": 0.01388888888888889,
+          "partition": [
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.034722222222222224
+        },
+        {
+          "absolute_signal": 0.020833333333333336,
+          "character": 3,
+          "character_ratio": 0.6,
+          "dimension": 5,
+          "hidden_subgroup_probability": 0.05555555555555556,
+          "partition": [
+            5,
+            1
+          ],
+          "plancherel_mass": 0.034722222222222224
+        },
+        {
+          "absolute_signal": 0.006944444444444444,
+          "character": -1,
+          "character_ratio": -0.2,
+          "dimension": 5,
+          "hidden_subgroup_probability": 0.02777777777777778,
+          "partition": [
+            2,
+            2,
+            2
+          ],
+          "plancherel_mass": 0.034722222222222224
+        },
+        {
+          "absolute_signal": 0.006944444444444441,
+          "character": 1,
+          "character_ratio": 0.2,
+          "dimension": 5,
+          "hidden_subgroup_probability": 0.041666666666666664,
+          "partition": [
+            3,
+            3
+          ],
+          "plancherel_mass": 0.034722222222222224
+        }
+      ],
+      "total_variation_from_plancherel": 0.09444444444444443,
+      "transposition_count": 1
+    },
+    {
+      "fixed_point_count": 0,
+      "interpretation": "Finite n label bias remains visible; use as a control and rerun at larger n before interpreting it.",
+      "involution_type": "fixed_point_free_involution",
+      "kl_to_plancherel_bits": 0.050558363229357514,
+      "low_dimension_signal_fraction": 1.0,
+      "max_character_ratio": 1.0,
+      "n": 6,
+      "status": "finite-size-label-bias-control",
+      "top_signal_irreps": [
+        {
+          "absolute_signal": 0.03749999999999999,
+          "character": -3,
+          "character_ratio": -0.3333333333333333,
+          "dimension": 9,
+          "hidden_subgroup_probability": 0.07500000000000001,
+          "partition": [
+            2,
+            2,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.1125
+        },
+        {
+          "absolute_signal": 0.03749999999999999,
+          "character": 3,
+          "character_ratio": 0.3333333333333333,
+          "dimension": 9,
+          "hidden_subgroup_probability": 0.15,
+          "partition": [
+            4,
+            2
+          ],
+          "plancherel_mass": 0.1125
+        },
+        {
+          "absolute_signal": 0.027777777777777776,
+          "character": -2,
+          "character_ratio": -0.2,
+          "dimension": 10,
+          "hidden_subgroup_probability": 0.11111111111111112,
+          "partition": [
+            4,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.1388888888888889
+        },
+        {
+          "absolute_signal": 0.027777777777777762,
+          "character": 2,
+          "character_ratio": 0.2,
+          "dimension": 10,
+          "hidden_subgroup_probability": 0.16666666666666666,
+          "partition": [
+            3,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.1388888888888889
+        },
+        {
+          "absolute_signal": 0.020833333333333336,
+          "character": 3,
+          "character_ratio": 0.6,
+          "dimension": 5,
+          "hidden_subgroup_probability": 0.05555555555555556,
+          "partition": [
+            2,
+            2,
+            2
+          ],
+          "plancherel_mass": 0.034722222222222224
+        },
+        {
+          "absolute_signal": 0.020833333333333336,
+          "character": -3,
+          "character_ratio": -0.6,
+          "dimension": 5,
+          "hidden_subgroup_probability": 0.01388888888888889,
+          "partition": [
+            3,
+            3
+          ],
+          "plancherel_mass": 0.034722222222222224
+        },
+        {
+          "absolute_signal": 0.006944444444444444,
+          "character": -1,
+          "character_ratio": -0.2,
+          "dimension": 5,
+          "hidden_subgroup_probability": 0.02777777777777778,
+          "partition": [
+            5,
+            1
+          ],
+          "plancherel_mass": 0.034722222222222224
+        },
+        {
+          "absolute_signal": 0.006944444444444441,
+          "character": 1,
+          "character_ratio": 0.2,
+          "dimension": 5,
+          "hidden_subgroup_probability": 0.041666666666666664,
+          "partition": [
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.034722222222222224
+        }
+      ],
+      "total_variation_from_plancherel": 0.09444444444444443,
+      "transposition_count": 3
+    },
+    {
+      "fixed_point_count": 6,
+      "interpretation": "Single transpositions are a control class; visible label bias here is not evidence for GI/code-equivalence speedups.",
+      "involution_type": "single_transposition_control",
+      "kl_to_plancherel_bits": 0.02633850344858242,
+      "low_dimension_signal_fraction": 1.0,
+      "max_character_ratio": 1.0,
+      "n": 8,
+      "status": "visible-control-not-frontier-evidence",
+      "top_signal_irreps": [
+        {
+          "absolute_signal": 0.02539682539682539,
+          "character": -16,
+          "character_ratio": -0.25,
+          "dimension": 64,
+          "hidden_subgroup_probability": 0.0761904761904762,
+          "partition": [
+            3,
+            2,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.10158730158730159
+        },
+        {
+          "absolute_signal": 0.02539682539682539,
+          "character": 16,
+          "character_ratio": 0.25,
+          "dimension": 64,
+          "hidden_subgroup_probability": 0.12698412698412698,
+          "partition": [
+            5,
+            2,
+            1
+          ],
+          "plancherel_mass": 0.10158730158730159
+        },
+        {
+          "absolute_signal": 0.017361111111111105,
+          "character": -10,
+          "character_ratio": -0.14285714285714285,
+          "dimension": 70,
+          "hidden_subgroup_probability": 0.10416666666666667,
+          "partition": [
+            3,
+            2,
+            2,
+            1
+          ],
+          "plancherel_mass": 0.12152777777777778
+        },
+        {
+          "absolute_signal": 0.01736111111111109,
+          "character": 10,
+          "character_ratio": 0.14285714285714285,
+          "dimension": 70,
+          "hidden_subgroup_probability": 0.13888888888888887,
+          "partition": [
+            4,
+            3,
+            1
+          ],
+          "plancherel_mass": 0.12152777777777778
+        },
+        {
+          "absolute_signal": 0.006944444444444446,
+          "character": -10,
+          "character_ratio": -0.35714285714285715,
+          "dimension": 28,
+          "hidden_subgroup_probability": 0.012499999999999999,
+          "partition": [
+            2,
+            2,
+            2,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.019444444444444445
+        },
+        {
+          "absolute_signal": 0.006944444444444444,
+          "character": 10,
+          "character_ratio": 0.35714285714285715,
+          "dimension": 28,
+          "hidden_subgroup_probability": 0.02638888888888889,
+          "partition": [
+            5,
+            3
+          ],
+          "plancherel_mass": 0.019444444444444445
+        },
+        {
+          "absolute_signal": 0.00555555555555555,
+          "character": -4,
+          "character_ratio": -0.07142857142857142,
+          "dimension": 56,
+          "hidden_subgroup_probability": 0.07222222222222223,
+          "partition": [
+            3,
+            3,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.07777777777777778
+        },
+        {
+          "absolute_signal": 0.00555555555555555,
+          "character": 4,
+          "character_ratio": 0.07142857142857142,
+          "dimension": 56,
+          "hidden_subgroup_probability": 0.08333333333333333,
+          "partition": [
+            4,
+            2,
+            2
+          ],
+          "plancherel_mass": 0.07777777777777778
+        }
+      ],
+      "total_variation_from_plancherel": 0.07152777777777775,
+      "transposition_count": 1
+    },
+    {
+      "fixed_point_count": 4,
+      "interpretation": "Weak Fourier labels have only small bias; any speedup claim needs collective row/column measurements.",
+      "involution_type": "partial_matching",
+      "kl_to_plancherel_bits": 0.00337986672096308,
+      "low_dimension_signal_fraction": 1.0,
+      "max_character_ratio": 1.0,
+      "n": 8,
+      "status": "weak-fourier-label-signal-small",
+      "top_signal_irreps": [
+        {
+          "absolute_signal": 0.01339285714285715,
+          "character": -6,
+          "character_ratio": -0.06666666666666667,
+          "dimension": 90,
+          "hidden_subgroup_probability": 0.1875,
+          "partition": [
+            4,
+            2,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.20089285714285715
+        },
+        {
+          "absolute_signal": 0.004340277777777776,
+          "character": -5,
+          "character_ratio": -0.14285714285714285,
+          "dimension": 35,
+          "hidden_subgroup_probability": 0.026041666666666668,
+          "partition": [
+            4,
+            1,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.030381944444444444
+        },
+        {
+          "absolute_signal": 0.004340277777777776,
+          "character": -5,
+          "character_ratio": -0.14285714285714285,
+          "dimension": 35,
+          "hidden_subgroup_probability": 0.026041666666666668,
+          "partition": [
+            5,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.030381944444444444
+        },
+        {
+          "absolute_signal": 0.00347222222222221,
+          "character": 2,
+          "character_ratio": 0.02857142857142857,
+          "dimension": 70,
+          "hidden_subgroup_probability": 0.12499999999999999,
+          "partition": [
+            3,
+            2,
+            2,
+            1
+          ],
+          "plancherel_mass": 0.12152777777777778
+        },
+        {
+          "absolute_signal": 0.00347222222222221,
+          "character": 2,
+          "character_ratio": 0.02857142857142857,
+          "dimension": 70,
+          "hidden_subgroup_probability": 0.12499999999999999,
+          "partition": [
+            4,
+            3,
+            1
+          ],
+          "plancherel_mass": 0.12152777777777778
+        },
+        {
+          "absolute_signal": 0.0027777777777777783,
+          "character": 4,
+          "character_ratio": 0.14285714285714285,
+          "dimension": 28,
+          "hidden_subgroup_probability": 0.022222222222222223,
+          "partition": [
+            2,
+            2,
+            2,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.019444444444444445
+        },
+        {
+          "absolute_signal": 0.0027777777777777783,
+          "character": 4,
+          "character_ratio": 0.14285714285714285,
+          "dimension": 28,
+          "hidden_subgroup_probability": 0.022222222222222223,
+          "partition": [
+            5,
+            3
+          ],
+          "plancherel_mass": 0.019444444444444445
+        },
+        {
+          "absolute_signal": 0.002083333333333333,
+          "character": 2,
+          "character_ratio": 0.047619047619047616,
+          "dimension": 42,
+          "hidden_subgroup_probability": 0.04583333333333333,
+          "partition": [
+            3,
+            3,
+            2
+          ],
+          "plancherel_mass": 0.04375
+        }
+      ],
+      "total_variation_from_plancherel": 0.022073412698412686,
+      "transposition_count": 2
+    },
+    {
+      "fixed_point_count": 0,
+      "interpretation": "Weak Fourier labels have only small bias; any speedup claim needs collective row/column measurements.",
+      "involution_type": "fixed_point_free_involution",
+      "kl_to_plancherel_bits": 0.00666091596838423,
+      "low_dimension_signal_fraction": 1.0,
+      "max_character_ratio": 1.0,
+      "n": 8,
+      "status": "weak-fourier-label-signal-small",
+      "top_signal_irreps": [
+        {
+          "absolute_signal": 0.01339285714285715,
+          "character": -6,
+          "character_ratio": -0.06666666666666667,
+          "dimension": 90,
+          "hidden_subgroup_probability": 0.1875,
+          "partition": [
+            4,
+            2,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.20089285714285715
+        },
+        {
+          "absolute_signal": 0.011111111111111113,
+          "character": 8,
+          "character_ratio": 0.14285714285714285,
+          "dimension": 56,
+          "hidden_subgroup_probability": 0.08888888888888889,
+          "partition": [
+            3,
+            3,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.07777777777777778
+        },
+        {
+          "absolute_signal": 0.011111111111111113,
+          "character": 8,
+          "character_ratio": 0.14285714285714285,
+          "dimension": 56,
+          "hidden_subgroup_probability": 0.08888888888888889,
+          "partition": [
+            4,
+            2,
+            2
+          ],
+          "plancherel_mass": 0.07777777777777778
+        },
+        {
+          "absolute_signal": 0.006249999999999999,
+          "character": -6,
+          "character_ratio": -0.14285714285714285,
+          "dimension": 42,
+          "hidden_subgroup_probability": 0.0375,
+          "partition": [
+            3,
+            3,
+            2
+          ],
+          "plancherel_mass": 0.04375
+        },
+        {
+          "absolute_signal": 0.0034722222222222238,
+          "character": -2,
+          "character_ratio": -0.02857142857142857,
+          "dimension": 70,
+          "hidden_subgroup_probability": 0.11805555555555555,
+          "partition": [
+            3,
+            2,
+            2,
+            1
+          ],
+          "plancherel_mass": 0.12152777777777778
+        },
+        {
+          "absolute_signal": 0.0034722222222222238,
+          "character": -2,
+          "character_ratio": -0.02857142857142857,
+          "dimension": 70,
+          "hidden_subgroup_probability": 0.11805555555555555,
+          "partition": [
+            4,
+            3,
+            1
+          ],
+          "plancherel_mass": 0.12152777777777778
+        },
+        {
+          "absolute_signal": 0.0027777777777777783,
+          "character": -4,
+          "character_ratio": -0.14285714285714285,
+          "dimension": 28,
+          "hidden_subgroup_probability": 0.016666666666666666,
+          "partition": [
+            2,
+            2,
+            2,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.019444444444444445
+        },
+        {
+          "absolute_signal": 0.0027777777777777783,
+          "character": -4,
+          "character_ratio": -0.14285714285714285,
+          "dimension": 28,
+          "hidden_subgroup_probability": 0.016666666666666666,
+          "partition": [
+            5,
+            3
+          ],
+          "plancherel_mass": 0.019444444444444445
+        }
+      ],
+      "total_variation_from_plancherel": 0.03561507936507936,
+      "transposition_count": 4
+    },
+    {
+      "fixed_point_count": 8,
+      "interpretation": "Single transpositions are a control class; visible label bias here is not evidence for GI/code-equivalence speedups.",
+      "involution_type": "single_transposition_control",
+      "kl_to_plancherel_bits": 0.016238745379639243,
+      "low_dimension_signal_fraction": 1.0,
+      "max_character_ratio": 1.0,
+      "n": 10,
+      "status": "visible-control-not-frontier-evidence",
+      "top_signal_irreps": [
+        {
+          "absolute_signal": 0.009843749999999998,
+          "character": -63,
+          "character_ratio": -0.1111111111111111,
+          "dimension": 567,
+          "hidden_subgroup_probability": 0.07875,
+          "partition": [
+            4,
+            2,
+            2,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.08859375
+        },
+        {
+          "absolute_signal": 0.009843749999999998,
+          "character": 63,
+          "character_ratio": 0.1111111111111111,
+          "dimension": 567,
+          "hidden_subgroup_probability": 0.0984375,
+          "partition": [
+            5,
+            3,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.08859375
+        },
+        {
+          "absolute_signal": 0.00868055555555556,
+          "character": -70,
+          "character_ratio": -0.15555555555555556,
+          "dimension": 450,
+          "hidden_subgroup_probability": 0.04712301587301587,
+          "partition": [
+            3,
+            3,
+            2,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.05580357142857143
+        },
+        {
+          "absolute_signal": 0.008680555555555546,
+          "character": 70,
+          "character_ratio": 0.15555555555555556,
+          "dimension": 450,
+          "hidden_subgroup_probability": 0.06448412698412698,
+          "partition": [
+            5,
+            3,
+            2
+          ],
+          "plancherel_mass": 0.05580357142857143
+        },
+        {
+          "absolute_signal": 0.007899305555555555,
+          "character": -91,
+          "character_ratio": -0.28888888888888886,
+          "dimension": 315,
+          "hidden_subgroup_probability": 0.019444444444444445,
+          "partition": [
+            3,
+            2,
+            2,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.02734375
+        },
+        {
+          "absolute_signal": 0.007899305555555555,
+          "character": 91,
+          "character_ratio": 0.28888888888888886,
+          "dimension": 315,
+          "hidden_subgroup_probability": 0.035243055555555555,
+          "partition": [
+            6,
+            3,
+            1
+          ],
+          "plancherel_mass": 0.02734375
+        },
+        {
+          "absolute_signal": 0.006751543209876542,
+          "character": -70,
+          "character_ratio": -0.2,
+          "dimension": 350,
+          "hidden_subgroup_probability": 0.02700617283950617,
+          "partition": [
+            4,
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.03375771604938271
+        },
+        {
+          "absolute_signal": 0.0067515432098765385,
+          "character": 70,
+          "character_ratio": 0.2,
+          "dimension": 350,
+          "hidden_subgroup_probability": 0.04050925925925925,
+          "partition": [
+            6,
+            2,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.03375771604938271
+        }
+      ],
+      "total_variation_from_plancherel": 0.05723985890652558,
+      "transposition_count": 1
+    },
+    {
+      "fixed_point_count": 6,
+      "interpretation": "Weak Fourier labels have only small bias; any speedup claim needs collective row/column measurements.",
+      "involution_type": "partial_matching",
+      "kl_to_plancherel_bits": 0.0011284341045199354,
+      "low_dimension_signal_fraction": 1.0,
+      "max_character_ratio": 1.0,
+      "n": 10,
+      "status": "weak-fourier-label-signal-small",
+      "top_signal_irreps": [
+        {
+          "absolute_signal": 0.0039506172839506165,
+          "character": -32,
+          "character_ratio": -0.07142857142857142,
+          "dimension": 448,
+          "hidden_subgroup_probability": 0.05135802469135803,
+          "partition": [
+            5,
+            2,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.055308641975308645
+        },
+        {
+          "absolute_signal": 0.002170138888888895,
+          "character": -15,
+          "character_ratio": -0.02857142857142857,
+          "dimension": 525,
+          "hidden_subgroup_probability": 0.07378472222222221,
+          "partition": [
+            4,
+            3,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.0759548611111111
+        },
+        {
+          "absolute_signal": 0.002170138888888895,
+          "character": -15,
+          "character_ratio": -0.02857142857142857,
+          "dimension": 525,
+          "hidden_subgroup_probability": 0.07378472222222221,
+          "partition": [
+            5,
+            2,
+            2,
+            1
+          ],
+          "plancherel_mass": 0.0759548611111111
+        },
+        {
+          "absolute_signal": 0.0016493055555555566,
+          "character": 19,
+          "character_ratio": 0.06031746031746032,
+          "dimension": 315,
+          "hidden_subgroup_probability": 0.028993055555555557,
+          "partition": [
+            3,
+            2,
+            2,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.02734375
+        },
+        {
+          "absolute_signal": 0.0016493055555555566,
+          "character": 19,
+          "character_ratio": 0.06031746031746032,
+          "dimension": 315,
+          "hidden_subgroup_probability": 0.028993055555555557,
+          "partition": [
+            6,
+            3,
+            1
+          ],
+          "plancherel_mass": 0.02734375
+        },
+        {
+          "absolute_signal": 0.0014062499999999978,
+          "character": -9,
+          "character_ratio": -0.015873015873015872,
+          "dimension": 567,
+          "hidden_subgroup_probability": 0.0871875,
+          "partition": [
+            4,
+            2,
+            2,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.08859375
+        },
+        {
+          "absolute_signal": 0.0014062499999999978,
+          "character": -9,
+          "character_ratio": -0.015873015873015872,
+          "dimension": 567,
+          "hidden_subgroup_probability": 0.0871875,
+          "partition": [
+            5,
+            3,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.08859375
+        },
+        {
+          "absolute_signal": 0.0012698412698412716,
+          "character": 16,
+          "character_ratio": 0.05555555555555555,
+          "dimension": 288,
+          "hidden_subgroup_probability": 0.02412698412698413,
+          "partition": [
+            3,
+            2,
+            2,
+            2,
+            1
+          ],
+          "plancherel_mass": 0.022857142857142857
+        }
+      ],
+      "total_variation_from_plancherel": 0.014004629629629624,
+      "transposition_count": 2
+    },
+    {
+      "fixed_point_count": 0,
+      "interpretation": "Weak Fourier labels have only small bias; any speedup claim needs collective row/column measurements.",
+      "involution_type": "fixed_point_free_involution",
+      "kl_to_plancherel_bits": 0.0007644006569608085,
+      "low_dimension_signal_fraction": 1.0,
+      "max_character_ratio": 1.0,
+      "n": 10,
+      "status": "weak-fourier-label-signal-small",
+      "top_signal_irreps": [
+        {
+          "absolute_signal": 0.0023437500000000056,
+          "character": -15,
+          "character_ratio": -0.026455026455026454,
+          "dimension": 567,
+          "hidden_subgroup_probability": 0.08625,
+          "partition": [
+            4,
+            2,
+            2,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.08859375
+        },
+        {
+          "absolute_signal": 0.0023437500000000056,
+          "character": 15,
+          "character_ratio": 0.026455026455026454,
+          "dimension": 567,
+          "hidden_subgroup_probability": 0.0909375,
+          "partition": [
+            5,
+            3,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.08859375
+        },
+        {
+          "absolute_signal": 0.0016534391534391533,
+          "character": 20,
+          "character_ratio": 0.06666666666666667,
+          "dimension": 300,
+          "hidden_subgroup_probability": 0.026455026455026454,
+          "partition": [
+            4,
+            2,
+            2,
+            2
+          ],
+          "plancherel_mass": 0.0248015873015873
+        },
+        {
+          "absolute_signal": 0.0016534391534391533,
+          "character": -20,
+          "character_ratio": -0.06666666666666667,
+          "dimension": 300,
+          "hidden_subgroup_probability": 0.023148148148148147,
+          "partition": [
+            4,
+            4,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.0248015873015873
+        },
+        {
+          "absolute_signal": 0.0013888888888888874,
+          "character": -20,
+          "character_ratio": -0.07936507936507936,
+          "dimension": 252,
+          "hidden_subgroup_probability": 0.016111111111111114,
+          "partition": [
+            3,
+            3,
+            2,
+            2
+          ],
+          "plancherel_mass": 0.0175
+        },
+        {
+          "absolute_signal": 0.0013888888888888874,
+          "character": 20,
+          "character_ratio": 0.07936507936507936,
+          "dimension": 252,
+          "hidden_subgroup_probability": 0.01888888888888889,
+          "partition": [
+            4,
+            4,
+            2
+          ],
+          "plancherel_mass": 0.0175
+        },
+        {
+          "absolute_signal": 0.0012400793650793676,
+          "character": -10,
+          "character_ratio": -0.022222222222222223,
+          "dimension": 450,
+          "hidden_subgroup_probability": 0.054563492063492064,
+          "partition": [
+            5,
+            3,
+            2
+          ],
+          "plancherel_mass": 0.05580357142857143
+        },
+        {
+          "absolute_signal": 0.0012400793650793607,
+          "character": 10,
+          "character_ratio": 0.022222222222222223,
+          "dimension": 450,
+          "hidden_subgroup_probability": 0.05704365079365079,
+          "partition": [
+            3,
+            3,
+            2,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.05580357142857143
+        }
+      ],
+      "total_variation_from_plancherel": 0.01111552028218694,
+      "transposition_count": 5
+    },
+    {
+      "fixed_point_count": 10,
+      "interpretation": "Single transpositions are a control class; visible label bias here is not evidence for GI/code-equivalence speedups.",
+      "involution_type": "single_transposition_control",
+      "kl_to_plancherel_bits": 0.01102338622327962,
+      "low_dimension_signal_fraction": 0.1574038588954061,
+      "max_character_ratio": 1.0,
+      "n": 12,
+      "status": "visible-control-not-frontier-evidence",
+      "top_signal_irreps": [
+        {
+          "absolute_signal": 0.009029982363315696,
+          "character": -768,
+          "character_ratio": -0.13636363636363635,
+          "dimension": 5632,
+          "hidden_subgroup_probability": 0.05718988830099941,
+          "partition": [
+            4,
+            3,
+            2,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.0662198706643151
+        },
+        {
+          "absolute_signal": 0.009029982363315689,
+          "character": 768,
+          "character_ratio": 0.13636363636363635,
+          "dimension": 5632,
+          "hidden_subgroup_probability": 0.07524985302763079,
+          "partition": [
+            6,
+            3,
+            2,
+            1
+          ],
+          "plancherel_mass": 0.0662198706643151
+        },
+        {
+          "absolute_signal": 0.006329571759259259,
+          "character": -525,
+          "character_ratio": -0.09090909090909091,
+          "dimension": 5775,
+          "hidden_subgroup_probability": 0.06329571759259259,
+          "partition": [
+            4,
+            3,
+            2,
+            2,
+            1
+          ],
+          "plancherel_mass": 0.06962528935185185
+        },
+        {
+          "absolute_signal": 0.006329571759259259,
+          "character": 525,
+          "character_ratio": 0.09090909090909091,
+          "dimension": 5775,
+          "hidden_subgroup_probability": 0.0759548611111111,
+          "partition": [
+            5,
+            4,
+            2,
+            1
+          ],
+          "plancherel_mass": 0.06962528935185185
+        },
+        {
+          "absolute_signal": 0.0036008230452674907,
+          "character": -560,
+          "character_ratio": -0.18181818181818182,
+          "dimension": 3080,
+          "hidden_subgroup_probability": 0.016203703703703703,
+          "partition": [
+            4,
+            2,
+            2,
+            2,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.019804526748971193
+        },
+        {
+          "absolute_signal": 0.0036008230452674907,
+          "character": 560,
+          "character_ratio": 0.18181818181818182,
+          "dimension": 3080,
+          "hidden_subgroup_probability": 0.023405349794238684,
+          "partition": [
+            6,
+            4,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.019804526748971193
+        },
+        {
+          "absolute_signal": 0.003164062500000002,
+          "character": 567,
+          "character_ratio": 0.21212121212121213,
+          "dimension": 2673,
+          "hidden_subgroup_probability": 0.018080357142857145,
+          "partition": [
+            6,
+            4,
+            2
+          ],
+          "plancherel_mass": 0.014916294642857143
+        },
+        {
+          "absolute_signal": 0.0031640625,
+          "character": -567,
+          "character_ratio": -0.21212121212121213,
+          "dimension": 2673,
+          "hidden_subgroup_probability": 0.011752232142857142,
+          "partition": [
+            3,
+            3,
+            2,
+            2,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.014916294642857143
+        }
+      ],
+      "total_variation_from_plancherel": 0.04789395275506385,
+      "transposition_count": 1
+    },
+    {
+      "fixed_point_count": 6,
+      "interpretation": "Weak Fourier labels have only small bias; any speedup claim needs collective row/column measurements.",
+      "involution_type": "partial_matching",
+      "kl_to_plancherel_bits": 5.206434311470916e-05,
+      "low_dimension_signal_fraction": 0.23908067704764355,
+      "max_character_ratio": 1.0,
+      "n": 12,
+      "status": "weak-fourier-label-signal-small",
+      "top_signal_irreps": [
+        {
+          "absolute_signal": 0.0003703703703703716,
+          "character": -48,
+          "character_ratio": -0.012987012987012988,
+          "dimension": 3696,
+          "hidden_subgroup_probability": 0.028148148148148148,
+          "partition": [
+            6,
+            3,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.02851851851851852
+        },
+        {
+          "absolute_signal": 0.00037037037037036813,
+          "character": 48,
+          "character_ratio": 0.012987012987012988,
+          "dimension": 3696,
+          "hidden_subgroup_probability": 0.028888888888888888,
+          "partition": [
+            5,
+            2,
+            2,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.02851851851851852
+        },
+        {
+          "absolute_signal": 0.0003527336860670201,
+          "character": 48,
+          "character_ratio": 0.013636363636363636,
+          "dimension": 3520,
+          "hidden_subgroup_probability": 0.02621987066431511,
+          "partition": [
+            5,
+            2,
+            2,
+            2,
+            1
+          ],
+          "plancherel_mass": 0.02586713697824809
+        },
+        {
+          "absolute_signal": 0.0003527336860670201,
+          "character": -48,
+          "character_ratio": -0.013636363636363636,
+          "dimension": 3520,
+          "hidden_subgroup_probability": 0.02551440329218107,
+          "partition": [
+            5,
+            4,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.02586713697824809
+        },
+        {
+          "absolute_signal": 0.000251116071428574,
+          "character": -27,
+          "character_ratio": -0.006060606060606061,
+          "dimension": 4455,
+          "hidden_subgroup_probability": 0.041183035714285714,
+          "partition": [
+            4,
+            4,
+            2,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.04143415178571429
+        },
+        {
+          "absolute_signal": 0.000251116071428574,
+          "character": 27,
+          "character_ratio": 0.006060606060606061,
+          "dimension": 4455,
+          "hidden_subgroup_probability": 0.04168526785714286,
+          "partition": [
+            5,
+            3,
+            2,
+            2
+          ],
+          "plancherel_mass": 0.04143415178571429
+        },
+        {
+          "absolute_signal": 0.00018084490740741255,
+          "character": -15,
+          "character_ratio": -0.0025974025974025974,
+          "dimension": 5775,
+          "hidden_subgroup_probability": 0.06944444444444443,
+          "partition": [
+            5,
+            4,
+            2,
+            1
+          ],
+          "plancherel_mass": 0.06962528935185185
+        },
+        {
+          "absolute_signal": 0.00018084490740739867,
+          "character": 15,
+          "character_ratio": 0.0025974025974025974,
+          "dimension": 5775,
+          "hidden_subgroup_probability": 0.06980613425925924,
+          "partition": [
+            4,
+            3,
+            2,
+            2,
+            1
+          ],
+          "plancherel_mass": 0.06962528935185185
+        }
+      ],
+      "total_variation_from_plancherel": 0.0026505756974507,
+      "transposition_count": 3
+    },
+    {
+      "fixed_point_count": 0,
+      "interpretation": "Weak Fourier labels have only small bias; any speedup claim needs collective row/column measurements.",
+      "involution_type": "fixed_point_free_involution",
+      "kl_to_plancherel_bits": 6.913909906112858e-05,
+      "low_dimension_signal_fraction": 0.16306553013214756,
+      "max_character_ratio": 1.0,
+      "n": 12,
+      "status": "weak-fourier-label-signal-small",
+      "top_signal_irreps": [
+        {
+          "absolute_signal": 0.0004409171075837742,
+          "character": 80,
+          "character_ratio": 0.030303030303030304,
+          "dimension": 2640,
+          "hidden_subgroup_probability": 0.014991181657848324,
+          "partition": [
+            4,
+            4,
+            2,
+            2
+          ],
+          "plancherel_mass": 0.01455026455026455
+        },
+        {
+          "absolute_signal": 0.00041852678571428076,
+          "character": -45,
+          "character_ratio": -0.010101010101010102,
+          "dimension": 4455,
+          "hidden_subgroup_probability": 0.04101562500000001,
+          "partition": [
+            4,
+            4,
+            2,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.04143415178571429
+        },
+        {
+          "absolute_signal": 0.00041852678571428076,
+          "character": -45,
+          "character_ratio": -0.010101010101010102,
+          "dimension": 4455,
+          "hidden_subgroup_probability": 0.04101562500000001,
+          "partition": [
+            5,
+            3,
+            2,
+            2
+          ],
+          "plancherel_mass": 0.04143415178571429
+        },
+        {
+          "absolute_signal": 0.00032150205761315165,
+          "character": 20,
+          "character_ratio": 0.0025974025974025974,
+          "dimension": 7700,
+          "hidden_subgroup_probability": 0.12409979423868311,
+          "partition": [
+            5,
+            3,
+            2,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.12377829218106996
+        },
+        {
+          "absolute_signal": 0.0002678571428571426,
+          "character": -36,
+          "character_ratio": -0.010101010101010102,
+          "dimension": 3564,
+          "hidden_subgroup_probability": 0.02625,
+          "partition": [
+            5,
+            3,
+            1,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.02651785714285714
+        },
+        {
+          "absolute_signal": 0.0002678571428571426,
+          "character": -36,
+          "character_ratio": -0.010101010101010102,
+          "dimension": 3564,
+          "hidden_subgroup_probability": 0.02625,
+          "partition": [
+            6,
+            2,
+            2,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.02651785714285714
+        },
+        {
+          "absolute_signal": 0.00026041666666666574,
+          "character": 30,
+          "character_ratio": 0.007215007215007215,
+          "dimension": 4158,
+          "hidden_subgroup_probability": 0.03635416666666667,
+          "partition": [
+            4,
+            3,
+            3,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.03609375
+        },
+        {
+          "absolute_signal": 0.00026041666666666574,
+          "character": 30,
+          "character_ratio": 0.007215007215007215,
+          "dimension": 4158,
+          "hidden_subgroup_probability": 0.03635416666666667,
+          "partition": [
+            5,
+            3,
+            3,
+            1
+          ],
+          "plancherel_mass": 0.03609375
+        }
+      ],
+      "total_variation_from_plancherel": 0.0031653088423921655,
+      "transposition_count": 6
+    },
+    {
+      "fixed_point_count": 12,
+      "interpretation": "Single transpositions are a control class; visible label bias here is not evidence for GI/code-equivalence speedups.",
+      "involution_type": "single_transposition_control",
+      "kl_to_plancherel_bits": 0.007975243009034903,
+      "low_dimension_signal_fraction": 0.0018953126683183901,
+      "max_character_ratio": 1.0,
+      "n": 14,
+      "status": "visible-control-not-frontier-evidence",
+      "top_signal_irreps": [
+        {
+          "absolute_signal": 0.004261798469387755,
+          "character": -5346,
+          "character_ratio": -0.07692307692307693,
+          "dimension": 69498,
+          "hidden_subgroup_probability": 0.05114158163265306,
+          "partition": [
+            5,
+            3,
+            2,
+            2,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.055403380102040815
+        },
+        {
+          "absolute_signal": 0.004261798469387755,
+          "character": 5346,
+          "character_ratio": 0.07692307692307693,
+          "dimension": 69498,
+          "hidden_subgroup_probability": 0.05966517857142857,
+          "partition": [
+            6,
+            4,
+            2,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.055403380102040815
+        },
+        {
+          "absolute_signal": 0.0037876157407407407,
+          "character": -7854,
+          "character_ratio": -0.18681318681318682,
+          "dimension": 42042,
+          "hidden_subgroup_probability": 0.01648726851851852,
+          "partition": [
+            4,
+            3,
+            2,
+            2,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.02027488425925926
+        },
+        {
+          "absolute_signal": 0.0037876157407407407,
+          "character": 7854,
+          "character_ratio": 0.18681318681318682,
+          "dimension": 42042,
+          "hidden_subgroup_probability": 0.0240625,
+          "partition": [
+            7,
+            4,
+            2,
+            1
+          ],
+          "plancherel_mass": 0.02027488425925926
+        },
+        {
+          "absolute_signal": 0.0034733704438565556,
+          "character": -6050,
+          "character_ratio": -0.12087912087912088,
+          "dimension": 50050,
+          "hidden_subgroup_probability": 0.025260875955320398,
+          "partition": [
+            4,
+            3,
+            3,
+            2,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.028734246399176953
+        },
+        {
+          "absolute_signal": 0.003473370443856552,
+          "character": 6050,
+          "character_ratio": 0.12087912087912088,
+          "dimension": 50050,
+          "hidden_subgroup_probability": 0.032207616843033506,
+          "partition": [
+            6,
+            4,
+            3,
+            1
+          ],
+          "plancherel_mass": 0.028734246399176953
+        },
+        {
+          "absolute_signal": 0.0031647858796296294,
+          "character": -5775,
+          "character_ratio": -0.12087912087912088,
+          "dimension": 47775,
+          "hidden_subgroup_probability": 0.02301662457912458,
+          "partition": [
+            5,
+            3,
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.02618141045875421
+        },
+        {
+          "absolute_signal": 0.0031647858796296294,
+          "character": 5775,
+          "character_ratio": 0.12087912087912088,
+          "dimension": 47775,
+          "hidden_subgroup_probability": 0.02934619633838384,
+          "partition": [
+            7,
+            3,
+            2,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.02618141045875421
+        }
+      ],
+      "total_variation_from_plancherel": 0.04119846921248212,
+      "transposition_count": 1
+    },
+    {
+      "fixed_point_count": 8,
+      "interpretation": "Weak Fourier irrep labels are close to Plancherel and low-dimensional labels carry negligible signal.",
+      "involution_type": "partial_matching",
+      "kl_to_plancherel_bits": 1.6016016557459848e-05,
+      "low_dimension_signal_fraction": 0.006612725683132646,
+      "max_character_ratio": 1.0,
+      "n": 14,
+      "status": "weak-fourier-labels-nearly-plancherel",
+      "top_signal_irreps": [
+        {
+          "absolute_signal": 0.00021524234693877375,
+          "character": -270,
+          "character_ratio": -0.003885003885003885,
+          "dimension": 69498,
+          "hidden_subgroup_probability": 0.05518813775510204,
+          "partition": [
+            6,
+            4,
+            2,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.055403380102040815
+        },
+        {
+          "absolute_signal": 0.00021524234693876682,
+          "character": 270,
+          "character_ratio": 0.003885003885003885,
+          "dimension": 69498,
+          "hidden_subgroup_probability": 0.05561862244897958,
+          "partition": [
+            5,
+            3,
+            2,
+            2,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.055403380102040815
+        },
+        {
+          "absolute_signal": 0.00013426364337822475,
+          "character": 245,
+          "character_ratio": 0.005128205128205128,
+          "dimension": 47775,
+          "hidden_subgroup_probability": 0.026315674102132435,
+          "partition": [
+            5,
+            3,
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.02618141045875421
+        },
+        {
+          "absolute_signal": 0.00013426364337822475,
+          "character": -245,
+          "character_ratio": -0.005128205128205128,
+          "dimension": 47775,
+          "hidden_subgroup_probability": 0.026047146815375986,
+          "partition": [
+            7,
+            3,
+            2,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.02618141045875421
+        },
+        {
+          "absolute_signal": 0.0001063368055555583,
+          "character": -147,
+          "character_ratio": -0.002331002331002331,
+          "dimension": 63063,
+          "hidden_subgroup_probability": 0.04551215277777777,
+          "partition": [
+            5,
+            4,
+            2,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.04561848958333333
+        },
+        {
+          "absolute_signal": 0.0001063368055555583,
+          "character": 147,
+          "character_ratio": 0.002331002331002331,
+          "dimension": 63063,
+          "hidden_subgroup_probability": 0.04572482638888889,
+          "partition": [
+            6,
+            3,
+            2,
+            2,
+            1
+          ],
+          "plancherel_mass": 0.04561848958333333
+        },
+        {
+          "absolute_signal": 9.406231628453915e-05,
+          "character": -128,
+          "character_ratio": -0.001998001998001998,
+          "dimension": 64064,
+          "hidden_subgroup_probability": 0.04698412698412698,
+          "partition": [
+            5,
+            4,
+            3,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.04707818930041152
+        },
+        {
+          "absolute_signal": 9.406231628453221e-05,
+          "character": 128,
+          "character_ratio": 0.001998001998001998,
+          "dimension": 64064,
+          "hidden_subgroup_probability": 0.047172251616696054,
+          "partition": [
+            5,
+            3,
+            3,
+            2,
+            1
+          ],
+          "plancherel_mass": 0.04707818930041152
+        }
+      ],
+      "total_variation_from_plancherel": 0.0014602328888043148,
+      "transposition_count": 3
+    },
+    {
+      "fixed_point_count": 0,
+      "interpretation": "Weak Fourier irrep labels are close to Plancherel and low-dimensional labels carry negligible signal.",
+      "involution_type": "fixed_point_free_involution",
+      "kl_to_plancherel_bits": 5.338072787897306e-06,
+      "low_dimension_signal_fraction": 0.0038176272350300246,
+      "max_character_ratio": 1.0,
+      "n": 14,
+      "status": "weak-fourier-labels-nearly-plancherel",
+      "top_signal_irreps": [
+        {
+          "absolute_signal": 0.00010127314814814894,
+          "character": -210,
+          "character_ratio": -0.004995004995004995,
+          "dimension": 42042,
+          "hidden_subgroup_probability": 0.02017361111111111,
+          "partition": [
+            4,
+            4,
+            2,
+            2,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.02027488425925926
+        },
+        {
+          "absolute_signal": 0.00010127314814814548,
+          "character": 210,
+          "character_ratio": 0.004995004995004995,
+          "dimension": 42042,
+          "hidden_subgroup_probability": 0.020376157407407405,
+          "partition": [
+            6,
+            4,
+            2,
+            2
+          ],
+          "plancherel_mass": 0.02027488425925926
+        },
+        {
+          "absolute_signal": 0.00010044642857142544,
+          "character": 126,
+          "character_ratio": 0.001813001813001813,
+          "dimension": 69498,
+          "hidden_subgroup_probability": 0.05550382653061224,
+          "partition": [
+            5,
+            3,
+            2,
+            2,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.055403380102040815
+        },
+        {
+          "absolute_signal": 0.00010044642857142544,
+          "character": -126,
+          "character_ratio": -0.001813001813001813,
+          "dimension": 69498,
+          "hidden_subgroup_probability": 0.05530293367346939,
+          "partition": [
+            6,
+            4,
+            2,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.055403380102040815
+        },
+        {
+          "absolute_signal": 6.172839506173033e-05,
+          "character": -112,
+          "character_ratio": -0.002331002331002331,
+          "dimension": 48048,
+          "hidden_subgroup_probability": 0.02641975308641975,
+          "partition": [
+            5,
+            3,
+            3,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.02648148148148148
+        },
+        {
+          "absolute_signal": 6.172839506173033e-05,
+          "character": 112,
+          "character_ratio": 0.002331002331002331,
+          "dimension": 48048,
+          "hidden_subgroup_probability": 0.02654320987654321,
+          "partition": [
+            6,
+            3,
+            3,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.02648148148148148
+        },
+        {
+          "absolute_signal": 5.166997354497365e-05,
+          "character": 210,
+          "character_ratio": 0.009790209790209791,
+          "dimension": 21450,
+          "hidden_subgroup_probability": 0.0053293886999244144,
+          "partition": [
+            4,
+            4,
+            2,
+            2,
+            2
+          ],
+          "plancherel_mass": 0.005277718726379441
+        },
+        {
+          "absolute_signal": 5.166997354497365e-05,
+          "character": -210,
+          "character_ratio": -0.009790209790209791,
+          "dimension": 21450,
+          "hidden_subgroup_probability": 0.005226048752834467,
+          "partition": [
+            5,
+            5,
+            2,
+            2
+          ],
+          "plancherel_mass": 0.005277718726379441
+        }
+      ],
+      "total_variation_from_plancherel": 0.0008200010233740401,
+      "transposition_count": 7
+    },
+    {
+      "fixed_point_count": 14,
+      "interpretation": "Single transpositions are a control class; visible label bias here is not evidence for GI/code-equivalence speedups.",
+      "involution_type": "single_transposition_control",
+      "kl_to_plancherel_bits": 0.006038623170734782,
+      "low_dimension_signal_fraction": 5.34235530158708e-05,
+      "max_character_ratio": 1.0,
+      "n": 16,
+      "status": "visible-control-not-frontier-evidence",
+      "top_signal_irreps": [
+        {
+          "absolute_signal": 0.0026481481481481495,
+          "character": 48048,
+          "character_ratio": 0.041666666666666664,
+          "dimension": 1153152,
+          "hidden_subgroup_probability": 0.06620370370370371,
+          "partition": [
+            6,
+            4,
+            3,
+            2,
+            1
+          ],
+          "plancherel_mass": 0.06355555555555556
+        },
+        {
+          "absolute_signal": 0.0026481481481481425,
+          "character": -48048,
+          "character_ratio": -0.041666666666666664,
+          "dimension": 1153152,
+          "hidden_subgroup_probability": 0.06090740740740742,
+          "partition": [
+            5,
+            4,
+            3,
+            2,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.06355555555555556
+        },
+        {
+          "absolute_signal": 0.002351576994434137,
+          "character": -73008,
+          "character_ratio": -0.10833333333333334,
+          "dimension": 673920,
+          "hidden_subgroup_probability": 0.019355287569573283,
+          "partition": [
+            5,
+            3,
+            3,
+            2,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.02170686456400742
+        },
+        {
+          "absolute_signal": 0.002351576994434137,
+          "character": 73008,
+          "character_ratio": 0.10833333333333334,
+          "dimension": 673920,
+          "hidden_subgroup_probability": 0.024058441558441557,
+          "partition": [
+            7,
+            4,
+            3,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.02170686456400742
+        },
+        {
+          "absolute_signal": 0.00213991769547325,
+          "character": -64064,
+          "character_ratio": -0.09166666666666666,
+          "dimension": 698880,
+          "hidden_subgroup_probability": 0.02120463898241676,
+          "partition": [
+            5,
+            4,
+            2,
+            2,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.02334455667789001
+        },
+        {
+          "absolute_signal": 0.00213991769547325,
+          "character": 64064,
+          "character_ratio": 0.09166666666666666,
+          "dimension": 698880,
+          "hidden_subgroup_probability": 0.02548447437336326,
+          "partition": [
+            7,
+            4,
+            2,
+            2,
+            1
+          ],
+          "plancherel_mass": 0.02334455667789001
+        },
+        {
+          "absolute_signal": 0.0016965553977272719,
+          "character": -68796,
+          "character_ratio": -0.13333333333333333,
+          "dimension": 515970,
+          "hidden_subgroup_probability": 0.011027610085227273,
+          "partition": [
+            5,
+            3,
+            2,
+            2,
+            2,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.012724165482954545
+        },
+        {
+          "absolute_signal": 0.0016965553977272719,
+          "character": 68796,
+          "character_ratio": 0.13333333333333333,
+          "dimension": 515970,
+          "hidden_subgroup_probability": 0.014420720880681817,
+          "partition": [
+            7,
+            5,
+            2,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.012724165482954545
+        }
+      ],
+      "total_variation_from_plancherel": 0.03597030167184556,
+      "transposition_count": 1
+    },
+    {
+      "fixed_point_count": 8,
+      "interpretation": "Weak Fourier irrep labels are close to Plancherel and low-dimensional labels carry negligible signal.",
+      "involution_type": "partial_matching",
+      "kl_to_plancherel_bits": 5.335477897172398e-07,
+      "low_dimension_signal_fraction": 0.0004616314065430318,
+      "max_character_ratio": 1.0,
+      "n": 16,
+      "status": "weak-fourier-labels-nearly-plancherel",
+      "top_signal_irreps": [
+        {
+          "absolute_signal": 1.8552875695732746e-05,
+          "character": -576,
+          "character_ratio": -0.0008547008547008547,
+          "dimension": 673920,
+          "hidden_subgroup_probability": 0.021688311688311687,
+          "partition": [
+            5,
+            3,
+            3,
+            2,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.02170686456400742
+        },
+        {
+          "absolute_signal": 1.8552875695732746e-05,
+          "character": -576,
+          "character_ratio": -0.0008547008547008547,
+          "dimension": 673920,
+          "hidden_subgroup_probability": 0.021688311688311687,
+          "partition": [
+            7,
+            4,
+            3,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.02170686456400742
+        },
+        {
+          "absolute_signal": 1.7223324514994975e-05,
+          "character": -440,
+          "character_ratio": -0.0005372405372405372,
+          "dimension": 819000,
+          "hidden_subgroup_probability": 0.03204164662497996,
+          "partition": [
+            6,
+            3,
+            3,
+            2,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.03205886994949495
+        },
+        {
+          "absolute_signal": 1.7223324514994975e-05,
+          "character": -440,
+          "character_ratio": -0.0005372405372405372,
+          "dimension": 819000,
+          "hidden_subgroup_probability": 0.03204164662497996,
+          "partition": [
+            6,
+            4,
+            3,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.03205886994949495
+        },
+        {
+          "absolute_signal": 1.6779119318181823e-05,
+          "character": 378,
+          "character_ratio": 0.000407000407000407,
+          "dimension": 928746,
+          "hidden_subgroup_probability": 0.04124307528409091,
+          "partition": [
+            6,
+            4,
+            2,
+            2,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.041226296164772726
+        },
+        {
+          "absolute_signal": 1.553622159090884e-05,
+          "character": -630,
+          "character_ratio": -0.001221001221001221,
+          "dimension": 515970,
+          "hidden_subgroup_probability": 0.012708629261363636,
+          "partition": [
+            5,
+            3,
+            2,
+            2,
+            2,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.012724165482954545
+        },
+        {
+          "absolute_signal": 1.553622159090884e-05,
+          "character": -630,
+          "character_ratio": -0.001221001221001221,
+          "dimension": 515970,
+          "hidden_subgroup_probability": 0.012708629261363636,
+          "partition": [
+            7,
+            5,
+            2,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.012724165482954545
+        },
+        {
+          "absolute_signal": 1.3942691274040908e-05,
+          "character": -680,
+          "character_ratio": -0.001585081585081585,
+          "dimension": 429000,
+          "hidden_subgroup_probability": 0.008782255186025026,
+          "partition": [
+            5,
+            3,
+            2,
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.008796197877299067
+        }
+      ],
+      "total_variation_from_plancherel": 0.00027491285974720424,
+      "transposition_count": 4
+    },
+    {
+      "fixed_point_count": 0,
+      "interpretation": "Weak Fourier irrep labels are close to Plancherel and low-dimensional labels carry negligible signal.",
+      "involution_type": "fixed_point_free_involution",
+      "kl_to_plancherel_bits": 3.5576741493581826e-07,
+      "low_dimension_signal_fraction": 0.00024621293964294125,
+      "max_character_ratio": 1.0,
+      "n": 16,
+      "status": "weak-fourier-labels-nearly-plancherel",
+      "top_signal_irreps": [
+        {
+          "absolute_signal": 2.7965198863638685e-05,
+          "character": -630,
+          "character_ratio": -0.000678334011667345,
+          "dimension": 928746,
+          "hidden_subgroup_probability": 0.04119833096590909,
+          "partition": [
+            6,
+            4,
+            2,
+            2,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.041226296164772726
+        },
+        {
+          "absolute_signal": 1.5432098765432584e-05,
+          "character": 672,
+          "character_ratio": 0.0013986013986013986,
+          "dimension": 480480,
+          "hidden_subgroup_probability": 0.011049382716049383,
+          "partition": [
+            5,
+            5,
+            2,
+            2,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.01103395061728395
+        },
+        {
+          "absolute_signal": 1.5432098765432584e-05,
+          "character": 672,
+          "character_ratio": 0.0013986013986013986,
+          "dimension": 480480,
+          "hidden_subgroup_probability": 0.011049382716049383,
+          "partition": [
+            6,
+            4,
+            2,
+            2,
+            2
+          ],
+          "plancherel_mass": 0.01103395061728395
+        },
+        {
+          "absolute_signal": 1.096029741863569e-05,
+          "character": 280,
+          "character_ratio": 0.0003418803418803419,
+          "dimension": 819000,
+          "hidden_subgroup_probability": 0.03206983024691359,
+          "partition": [
+            6,
+            3,
+            3,
+            2,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.03205886994949495
+        },
+        {
+          "absolute_signal": 1.096029741863569e-05,
+          "character": 280,
+          "character_ratio": 0.0003418803418803419,
+          "dimension": 819000,
+          "hidden_subgroup_probability": 0.03206983024691359,
+          "partition": [
+            6,
+            4,
+            3,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.03205886994949495
+        },
+        {
+          "absolute_signal": 9.60219478737985e-06,
+          "character": -448,
+          "character_ratio": -0.000999000999000999,
+          "dimension": 448448,
+          "hidden_subgroup_probability": 0.009602194787379973,
+          "partition": [
+            5,
+            5,
+            3,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.009611796982167353
+        },
+        {
+          "absolute_signal": 9.60219478737985e-06,
+          "character": -448,
+          "character_ratio": -0.000999000999000999,
+          "dimension": 448448,
+          "hidden_subgroup_probability": 0.009602194787379973,
+          "partition": [
+            6,
+            3,
+            3,
+            2,
+            2
+          ],
+          "plancherel_mass": 0.009611796982167353
+        },
+        {
+          "absolute_signal": 9.002057613168718e-06,
+          "character": 560,
+          "character_ratio": 0.001665001665001665,
+          "dimension": 336336,
+          "hidden_subgroup_probability": 0.005415637860082305,
+          "partition": [
+            4,
+            4,
+            3,
+            3,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.005406635802469136
+        }
+      ],
+      "total_variation_from_plancherel": 0.00019792518675413998,
+      "transposition_count": 8
+    }
+  ],
+  "status": "weak-fourier-label-route-blocked",
+  "summary": "Audited 17 weak Fourier involution label distributions over S_n for n=[6, 8, 10, 12, 14, 16]. 4 row(s) are nearly Plancherel and 6 row(s) have only small label signal."
+}

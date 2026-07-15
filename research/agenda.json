@@ -1,0 +1,676 @@
+{
+  "diagnosis": {
+    "blunt_diagnosis": [
+      "The old loop is not a credible path to a Shor-level algorithm.",
+      "It searches tiny circuits and arbitrary oracle puzzles, then lets an LLM label complexity from N<=3 data.",
+      "Most successful runs rediscover Bernstein-Vazirani-like parity structure; most exotic names are unsolved or unsupported.",
+      "The dashboard's 'solved novel algorithms' criterion is just success_rate >= 1.0 on tiny instances, not a research result.",
+      "The project needs explicit scalable families, classical baselines, structural quantum handles, and kill criteria."
+    ],
+    "claimed_speedups": {},
+    "history_runs": 0,
+    "most_repeated_problem_names": [],
+    "scanned_files_excluding_vendor_and_git": 29,
+    "source_notes": [],
+    "success_rate_1_runs": 0,
+    "toy_term_counts": {
+      "bernstein-vazirani": 0,
+      "bitwise": 0,
+      "oracle": 0,
+      "secret finding": 0,
+      "state preparation": 0,
+      "unitary synthesis": 0
+    }
+  },
+  "domains": [
+    {
+      "id": "nonabelian-hsp",
+      "known_barriers": [
+        "Strong Fourier sampling is insufficient for several symmetric-group cases.",
+        "Useful measurements may require entangled or collective measurements across registers."
+      ],
+      "name": "Nonabelian hidden subgroup and coset-state measurements",
+      "upside": 10,
+      "useful_handles": [
+        "representation theory",
+        "coset-state distinguishability",
+        "pretty good measurements",
+        "tensor-network contraction for measurement design"
+      ],
+      "why_high_upside": "A general nonabelian HSP breakthrough could affect graph isomorphism, code equivalence, lattice automorphism variants, and group action problems."
+    },
+    {
+      "id": "hidden-shift",
+      "known_barriers": [
+        "Generic dihedral HSP has subexponential quantum algorithms but no known polynomial one.",
+        "Naive Fourier sampling reduces to hard subset-sum-like postprocessing."
+      ],
+      "name": "Hidden shift, dihedral HSP, and phase-state sieving",
+      "upside": 10,
+      "useful_handles": [
+        "phase states",
+        "sieve design",
+        "Fourier flatness",
+        "low-density subset-sum structure"
+      ],
+      "why_high_upside": "Hidden shift sits near the boundary between Shor-style Fourier methods and lattice-relevant subexponential algorithms."
+    },
+    {
+      "id": "lattice-periodicity",
+      "known_barriers": [
+        "Worst-case to average-case reductions can also imply resistance to simple algorithms.",
+        "Approximate periods can be too noisy for standard phase estimation."
+      ],
+      "name": "Lattice, number-field, and approximate periodicity problems",
+      "upside": 9,
+      "useful_handles": [
+        "approximate QFT",
+        "phase estimation",
+        "dual lattice sampling",
+        "period-finding reductions"
+      ],
+      "why_high_upside": "Factoring succeeds because periodicity survives noisy arithmetic structure. Finding analogous exploitable periodicity in lattices would be high impact."
+    },
+    {
+      "id": "code-equivalence",
+      "known_barriers": [
+        "Reduction to symmetric-group HSP inherits nonabelian Fourier-sampling barriers.",
+        "Random instances may hide too little exploitable representation structure."
+      ],
+      "name": "Code equivalence and algebraic isomorphism problems",
+      "upside": 9,
+      "useful_handles": [
+        "automorphism group stratification",
+        "coset-state comparisons",
+        "quantum walks over generator sets",
+        "collective measurements"
+      ],
+      "why_high_upside": "A serious quantum improvement here would hit a major family of hidden permutation and isomorphism problems rather than a hand-built oracle."
+    },
+    {
+      "id": "graph-isomorphism",
+      "known_barriers": [
+        "Known negative results rule out simple strong Fourier sampling approaches.",
+        "Classical quasi-polynomial algorithms raised the bar for a meaningful speedup."
+      ],
+      "name": "Graph isomorphism beyond strong Fourier sampling",
+      "upside": 8,
+      "useful_handles": [
+        "collective coset measurements",
+        "graph coherent states",
+        "quantum walks on refinement trees",
+        "tensor networks"
+      ],
+      "why_high_upside": "GI is not expected to be NP-complete and remains a central test case for nonabelian quantum algorithm design."
+    },
+    {
+      "id": "quantum-walks",
+      "known_barriers": [
+        "Many walks reproduce Grover-like quadratic gains only.",
+        "Spectral gaps and marked-state overlaps often vanish on hard instances."
+      ],
+      "name": "Quantum walks on algebraic and combinatorial state spaces",
+      "upside": 8,
+      "useful_handles": [
+        "spectral gap",
+        "hitting time",
+        "Johnson and Cayley graphs",
+        "span programs"
+      ],
+      "why_high_upside": "Quantum walks can turn geometry, expansion, and marked-subspace structure into query or time speedups without requiring full Fourier solvability."
+    },
+    {
+      "id": "query-separations",
+      "known_barriers": [
+        "Oracle separations often fail to transfer to explicit computational problems.",
+        "Artificial promise problems can look impressive while teaching little."
+      ],
+      "name": "Query complexity separations with recursive structure",
+      "upside": 8,
+      "useful_handles": [
+        "adversary bounds",
+        "polynomial method",
+        "span programs",
+        "forrelation"
+      ],
+      "why_high_upside": "New query separations can expose mechanisms later converted into algorithms, as happened historically with several oracle models."
+    },
+    {
+      "id": "hamiltonian-tensor",
+      "known_barriers": [
+        "Many candidates become incremental improvements to known simulation primitives.",
+        "Input models can hide the real cost in state preparation or data loading."
+      ],
+      "name": "Hamiltonian simulation, block-encoding, and tensor-network discovery",
+      "upside": 7,
+      "useful_handles": [
+        "block-encoding",
+        "quantum singular value transformation",
+        "tensor contraction",
+        "phase estimation"
+      ],
+      "why_high_upside": "Block-encodings and simulation primitives can convert spectral structure into algorithms for linear algebra, optimization, and dynamics."
+    }
+  ],
+  "generated_at": "2026-07-07T03:31:39.161116+00:00",
+  "mission": "Increase the chance of discovering or clarifying a genuinely major quantum algorithmic idea by searching for scalable structural advantage, not tiny demos.",
+  "ranked_candidates": [
+    {
+      "classical_barrier": "Code equivalence has hard average-case regimes and is a canonical hidden permutation problem.",
+      "domain_ids": [
+        "nonabelian-hsp",
+        "code-equivalence"
+      ],
+      "evaluation": {
+        "barrier_penalty": 12.0,
+        "candidate_id": "NAHSP-COLLECTIVE-CODE-EQUIV",
+        "classical_barrier": 54.0,
+        "falsifiability": 83.0,
+        "flags": [
+          "known no-go barriers must be confronted explicitly"
+        ],
+        "score": 72.66,
+        "structural_handle": 90.0,
+        "toy_penalty": 0.0,
+        "upside": 100.0
+      },
+      "experiments": [
+        {
+          "id": "E1-CODE-COSET-RANK",
+          "kill_criteria": "Max pairwise overlap stays above 0.9 or rank saturates at a constant.",
+          "positive_signal": "Rank and pairwise distinguishability grow with instance count using low-degree invariants.",
+          "protocol": "Generate code families with known permutation automorphisms. For each hidden permutation, compute equality-relation fingerprints and rank, then scale length and field size.",
+          "title": "Coset-state relation rank sweep",
+          "upside_rank": 1
+        },
+        {
+          "id": "E2-COLLECTIVE-MEASUREMENT-ANSATZ",
+          "kill_criteria": "Required bond dimension or sample count grows exponentially on the first three scales.",
+          "positive_signal": "Bond dimension grows polynomially while success probability beats individual-register tests.",
+          "protocol": "Represent k-register measurement candidates as tensor networks over irrep labels. Optimize distinguishability on generated code instances.",
+          "title": "Tensor ansatz for collective measurements",
+          "upside_rank": 2
+        }
+      ],
+      "first_failure_modes": [
+        "Coset fingerprints collapse to near-identical relation data.",
+        "Useful measurements require exponential tensor bond dimension.",
+        "The structured automorphism promise excludes hard instances."
+      ],
+      "hypothesis": "Code equivalence instances with structured automorphism groups may expose low-rank collective coset-state observables missed by strong Fourier sampling.",
+      "id": "NAHSP-COLLECTIVE-CODE-EQUIV",
+      "problem_family": "Families of linear codes with controlled automorphism strata, moving from small finite fields to asymptotic length n.",
+      "proposed_quantum_mechanism": "Prepare multiple coset states for hidden permutation subgroups, search over entangled measurements using representation labels and tensor-network ansatzes.",
+      "title": "Collective coset measurements for code equivalence",
+      "why_not_toy": "The family is explicit, scales with code length, and has a real classical algorithmic baseline rather than an arbitrary oracle."
+    },
+    {
+      "classical_barrier": "Generic hidden shift and dihedral HSP connect to lattice-relevant hard cases; classical correlation search is exponential without exploitable structure.",
+      "domain_ids": [
+        "hidden-shift",
+        "lattice-periodicity"
+      ],
+      "evaluation": {
+        "barrier_penalty": 12.0,
+        "candidate_id": "DHS-SIEVE-STRUCTURED-SHIFTS",
+        "classical_barrier": 72.0,
+        "falsifiability": 83.0,
+        "flags": [
+          "known no-go barriers must be confronted explicitly"
+        ],
+        "score": 67.62,
+        "structural_handle": 54.0,
+        "toy_penalty": 0.0,
+        "upside": 100.0
+      },
+      "experiments": [
+        {
+          "id": "E3-HSHIFT-SPECTRUM",
+          "kill_criteria": "Large autocorrelation aliases or a simple classical correlation recovers the shift.",
+          "positive_signal": "Flat spectra with low autocorrelation aliases and no obvious classical correlation handle.",
+          "protocol": "For each algebraic base function, measure Fourier flatness, autocorrelation aliases, and shift distinguishability over growing domains.",
+          "title": "Hidden-shift Fourier flatness and alias test",
+          "upside_rank": 1
+        },
+        {
+          "id": "E4-PHASE-SIEVE",
+          "kill_criteria": "Scaling matches generic subset-sum sieving with no family-specific gain.",
+          "positive_signal": "Sample count and merge depth fit a polynomial or clearly improved subexponential law.",
+          "protocol": "Simulate phase-state frequency samples and search for merge rules that increase useful phase precision faster than generic Kuperberg-style sieves.",
+          "title": "Phase-combination sieve simulation",
+          "upside_rank": 2
+        }
+      ],
+      "first_failure_modes": [
+        "Fourier support is either too sparse and classical, or too random and subset-sum hard.",
+        "The sieve only works because the family is classically easy.",
+        "Noise in approximate shifts destroys phase coherence."
+      ],
+      "hypothesis": "Some explicit hidden-shift families have phase-state distributions that avoid generic subset-sum hardness and admit polynomial-time sieving.",
+      "id": "DHS-SIEVE-STRUCTURED-SHIFTS",
+      "problem_family": "Cyclic and dihedral hidden shifts where the shifted object comes from bent, multiplicative-character, or low-degree algebraic functions.",
+      "proposed_quantum_mechanism": "Fourier sampling creates phase states whose frequency support has algebraic structure. A custom sieve combines phases without losing signal.",
+      "title": "Structured hidden-shift sieve beyond generic dihedral HSP",
+      "why_not_toy": "The work tests entire algebraic families and asks whether a known barrier has structured exceptions."
+    },
+    {
+      "classical_barrier": "Relevant regimes should map to lattice problems with worst-case or average-case evidence.",
+      "domain_ids": [
+        "lattice-periodicity"
+      ],
+      "evaluation": {
+        "barrier_penalty": 6.0,
+        "candidate_id": "APPROX-PERIOD-LATTICE",
+        "classical_barrier": 72.0,
+        "falsifiability": 83.0,
+        "flags": [
+          "weak structural quantum handle"
+        ],
+        "score": 65.9,
+        "structural_handle": 36.0,
+        "toy_penalty": 0.0,
+        "upside": 90.0
+      },
+      "experiments": [
+        {
+          "id": "E5-APPROX-PERIOD-COLLISIONS",
+          "kill_criteria": "False periods dominate or the ridge requires exponential precision.",
+          "positive_signal": "A stable period ridge remains visible under polynomial precision.",
+          "protocol": "Construct maps with known planted periods and noise. Measure whether period-preserving collisions dominate all other collisions as dimension grows.",
+          "title": "Approximate-period collision landscape",
+          "upside_rank": 1
+        },
+        {
+          "id": "E6-REVERSIBLE-MAP-COST",
+          "kill_criteria": "State preparation or arithmetic cost dominates the proposed speedup.",
+          "positive_signal": "Map evaluation cost is polynomial with realistic precision overhead.",
+          "protocol": "Estimate reversible circuit and precision costs for candidate maps before claiming any quantum advantage.",
+          "title": "Reversible arithmetic cost audit",
+          "upside_rank": 2
+        }
+      ],
+      "first_failure_modes": [
+        "Coherence requirements exceed the precision needed to define the map.",
+        "Classical lattice reduction exploits the same approximate periods.",
+        "The candidate map is not efficiently reversible."
+      ],
+      "hypothesis": "There may be number-field or lattice maps with approximate periods stable enough for phase estimation but hidden enough to resist classical sampling.",
+      "id": "APPROX-PERIOD-LATTICE",
+      "problem_family": "Explicit maps from lattice points or ideals to coarse invariants with tunable noise, period rank, and collision profile.",
+      "proposed_quantum_mechanism": "Use approximate QFT and phase estimation to recover dual-period information from coherent evaluations of noisy periodic maps.",
+      "title": "Approximate period finding for lattice and number-field maps",
+      "why_not_toy": "The objective is a reduction-quality scalable family, not a hand-marked solution state."
+    },
+    {
+      "classical_barrier": "Meaningful wins must beat modern quasi-polynomial classical GI baselines on well-defined families.",
+      "domain_ids": [
+        "nonabelian-hsp",
+        "graph-isomorphism"
+      ],
+      "evaluation": {
+        "barrier_penalty": 12.0,
+        "candidate_id": "GI-COLLECTIVE-OBSERVABLES",
+        "classical_barrier": 36.0,
+        "falsifiability": 67.0,
+        "flags": [
+          "classical baseline not hard enough yet",
+          "known no-go barriers must be confronted explicitly"
+        ],
+        "score": 61.22,
+        "structural_handle": 72.0,
+        "toy_penalty": 0.0,
+        "upside": 100.0
+      },
+      "experiments": [
+        {
+          "id": "E7-GI-NOGO-BOUNDARY",
+          "kill_criteria": "All gains reduce to known classical refinement invariants.",
+          "positive_signal": "A candidate observable separates instances that strong Fourier labels cannot.",
+          "protocol": "Reproduce failures of strong Fourier sampling on small GI-HSP instances, then mutate observables and record exactly which barrier is bypassed, if any.",
+          "title": "Map the no-go boundary",
+          "upside_rank": 1
+        }
+      ],
+      "first_failure_modes": [
+        "The observable is equivalent to classical color refinement.",
+        "The family is already easy for modern classical GI.",
+        "Collective measurement construction scales exponentially."
+      ],
+      "hypothesis": "Graph families with controlled refinement structure may admit collective observables that distinguish isomorphism cosets without solving full HSP.",
+      "id": "GI-COLLECTIVE-OBSERVABLES",
+      "problem_family": "Strongly regular graphs, CFI-like constructions, and refinement-hard families with known automorphism behavior.",
+      "proposed_quantum_mechanism": "Prepare graph-indexed coset or coherent refinement states and search for collective observables using tensor-network contractions.",
+      "title": "Graph-isomorphism observables beyond strong Fourier sampling",
+      "why_not_toy": "Graph isomorphism is a real structural problem with known quantum no-go zones."
+    },
+    {
+      "classical_barrier": "Choose distributions with known classical query lower bounds or reductions to hard property-testing tasks.",
+      "domain_ids": [
+        "query-separations",
+        "hidden-shift"
+      ],
+      "evaluation": {
+        "barrier_penalty": 12.0,
+        "candidate_id": "HIGHER-ORDER-FOURIER-HIDDEN-STRUCTURE",
+        "classical_barrier": 54.0,
+        "falsifiability": 67.0,
+        "flags": [
+          "weak structural quantum handle",
+          "known no-go barriers must be confronted explicitly"
+        ],
+        "score": 51.86,
+        "structural_handle": 18.0,
+        "toy_penalty": 0.0,
+        "upside": 100.0
+      },
+      "experiments": [
+        {
+          "id": "E9-DERIVATIVE-FOURIER-LIFT",
+          "kill_criteria": "Sparsity appears only after using exponentially many derivative settings.",
+          "positive_signal": "Higher-order spectra become sparse while the original family remains classically hard.",
+          "protocol": "For each nonlinear family, compute whether controlled finite differences produce sparse Fourier spectra over polynomially many derivative orders.",
+          "title": "Derivative Fourier lift test",
+          "upside_rank": 1
+        }
+      ],
+      "first_failure_modes": [
+        "Derivative queries collapse the problem to classical low-degree learning.",
+        "The promise is artificial and has no explicit computational analogue.",
+        "The quantum routine is just BV on a relabeled oracle."
+      ],
+      "hypothesis": "Nonlinear hidden structure may become tractable when expressed through higher-order Fourier or Gowers-uniformity observables rather than plain BV-style parity.",
+      "id": "HIGHER-ORDER-FOURIER-HIDDEN-STRUCTURE",
+      "problem_family": "Explicit low-degree phase polynomials, bent-function shifts, and locally testable hidden constraints over finite fields.",
+      "proposed_quantum_mechanism": "Use phase queries and controlled derivatives to turn high-order structure into linear Fourier information over an expanded domain.",
+      "title": "Higher-order Fourier search for nonlinear hidden structure",
+      "why_not_toy": "Candidates must supply a scalable distribution and lower-bound target before any circuit search starts."
+    },
+    {
+      "classical_barrier": "Candidate invariants must not be cheaply approximable by classical randomized linear algebra on the same sparse access model.",
+      "domain_ids": [
+        "hamiltonian-tensor",
+        "graph-isomorphism",
+        "code-equivalence"
+      ],
+      "evaluation": {
+        "barrier_penalty": 18.0,
+        "candidate_id": "BLOCK-ENCODED-INVARIANTS",
+        "classical_barrier": 0.0,
+        "falsifiability": 67.0,
+        "flags": [
+          "weak structural quantum handle",
+          "classical baseline not hard enough yet",
+          "known no-go barriers must be confronted explicitly"
+        ],
+        "score": 35.98,
+        "structural_handle": 36.0,
+        "toy_penalty": 0.0,
+        "upside": 90.0
+      },
+      "experiments": [
+        {
+          "id": "E10-INVARIANT-SEPARATION",
+          "kill_criteria": "Classical randomized estimators recover the invariant within the same asymptotic cost.",
+          "positive_signal": "A separating invariant is quantum-estimable in polylog or polynomially lower cost.",
+          "protocol": "Search for operator families whose spectra separate hard paired instances. For every hit, compare against classical trace/Lanczos estimators.",
+          "title": "Invariant separation and access-model audit",
+          "upside_rank": 2
+        }
+      ],
+      "first_failure_modes": [
+        "The invariant is classically estimable by Lanczos or trace estimation.",
+        "Block-encoding construction costs more than the classical baseline.",
+        "The invariant fails to separate hard instances."
+      ],
+      "hypothesis": "Quantum singular value transformation may expose algebraic invariants of graphs or codes that are expensive to estimate classically.",
+      "id": "BLOCK-ENCODED-INVARIANTS",
+      "problem_family": "Sparse matrices derived from graph lifts, code Tanner graphs, association schemes, and coherent constraint systems.",
+      "proposed_quantum_mechanism": "Block-encode structured operators and use polynomial transformations or phase estimation to estimate invariants that separate hard instances.",
+      "title": "Block-encoded spectral invariants for isomorphism-like problems",
+      "why_not_toy": "The input model and block-encoding cost are part of the score, preventing hidden data-loading wins."
+    },
+    {
+      "classical_barrier": "Classical local search and MCMC mixing can be slow on these spaces; the target is a provable hitting-time separation.",
+      "domain_ids": [
+        "quantum-walks",
+        "code-equivalence",
+        "lattice-periodicity"
+      ],
+      "evaluation": {
+        "barrier_penalty": 18.0,
+        "candidate_id": "WALK-ALGEBRAIC-STATE-SPACES",
+        "classical_barrier": 18.0,
+        "falsifiability": 67.0,
+        "flags": [
+          "weak structural quantum handle",
+          "classical baseline not hard enough yet",
+          "known no-go barriers must be confronted explicitly"
+        ],
+        "score": 35.26,
+        "structural_handle": 18.0,
+        "toy_penalty": 0.0,
+        "upside": 90.0
+      },
+      "experiments": [
+        {
+          "id": "E8-WALK-SPECTRAL-SWEEP",
+          "kill_criteria": "Gap-overlap product predicts only quadratic or worse behavior.",
+          "positive_signal": "Quantum hitting-time proxy improves asymptotically over classical and Grover baselines.",
+          "protocol": "Build local-move graphs for each algebraic family. Track normalized spectral gap, marked overlap, and classical conductance proxies.",
+          "title": "Spectral gap and marked-overlap sweep",
+          "upside_rank": 1
+        }
+      ],
+      "first_failure_modes": [
+        "The walk only recovers a quadratic Grover speedup.",
+        "The marked overlap vanishes faster than the gap helps.",
+        "Classical random walks mix just as well after better coordinates are chosen."
+      ],
+      "hypothesis": "Some hard algebraic search problems have state-space graphs where the quantum walk spectral gap and marked overlap beat Grover-like behavior.",
+      "id": "WALK-ALGEBRAIC-STATE-SPACES",
+      "problem_family": "Cayley and local-move graphs over code bases, lattice bases, isomorphism certificates, or partial algebraic assignments.",
+      "proposed_quantum_mechanism": "Use coined or Szegedy walks to amplify structured marked subspaces whose geometry is invisible to unstructured search.",
+      "title": "Quantum walks over algebraic solution complexes",
+      "why_not_toy": "The experiment studies graph families, spectral gaps, and marked geometry over scaling instances."
+    }
+  ],
+  "ranked_experiments": [
+    {
+      "candidate_id": "NAHSP-COLLECTIVE-CODE-EQUIV",
+      "candidate_rank": 1,
+      "candidate_score": 72.66,
+      "candidate_title": "Collective coset measurements for code equivalence",
+      "id": "E1-CODE-COSET-RANK",
+      "kill_criteria": "Max pairwise overlap stays above 0.9 or rank saturates at a constant.",
+      "positive_signal": "Rank and pairwise distinguishability grow with instance count using low-degree invariants.",
+      "protocol": "Generate code families with known permutation automorphisms. For each hidden permutation, compute equality-relation fingerprints and rank, then scale length and field size.",
+      "title": "Coset-state relation rank sweep",
+      "upside_rank": 1
+    },
+    {
+      "candidate_id": "DHS-SIEVE-STRUCTURED-SHIFTS",
+      "candidate_rank": 2,
+      "candidate_score": 67.62,
+      "candidate_title": "Structured hidden-shift sieve beyond generic dihedral HSP",
+      "id": "E3-HSHIFT-SPECTRUM",
+      "kill_criteria": "Large autocorrelation aliases or a simple classical correlation recovers the shift.",
+      "positive_signal": "Flat spectra with low autocorrelation aliases and no obvious classical correlation handle.",
+      "protocol": "For each algebraic base function, measure Fourier flatness, autocorrelation aliases, and shift distinguishability over growing domains.",
+      "title": "Hidden-shift Fourier flatness and alias test",
+      "upside_rank": 1
+    },
+    {
+      "candidate_id": "APPROX-PERIOD-LATTICE",
+      "candidate_rank": 3,
+      "candidate_score": 65.9,
+      "candidate_title": "Approximate period finding for lattice and number-field maps",
+      "id": "E5-APPROX-PERIOD-COLLISIONS",
+      "kill_criteria": "False periods dominate or the ridge requires exponential precision.",
+      "positive_signal": "A stable period ridge remains visible under polynomial precision.",
+      "protocol": "Construct maps with known planted periods and noise. Measure whether period-preserving collisions dominate all other collisions as dimension grows.",
+      "title": "Approximate-period collision landscape",
+      "upside_rank": 1
+    },
+    {
+      "candidate_id": "GI-COLLECTIVE-OBSERVABLES",
+      "candidate_rank": 4,
+      "candidate_score": 61.22,
+      "candidate_title": "Graph-isomorphism observables beyond strong Fourier sampling",
+      "id": "E7-GI-NOGO-BOUNDARY",
+      "kill_criteria": "All gains reduce to known classical refinement invariants.",
+      "positive_signal": "A candidate observable separates instances that strong Fourier labels cannot.",
+      "protocol": "Reproduce failures of strong Fourier sampling on small GI-HSP instances, then mutate observables and record exactly which barrier is bypassed, if any.",
+      "title": "Map the no-go boundary",
+      "upside_rank": 1
+    },
+    {
+      "candidate_id": "HIGHER-ORDER-FOURIER-HIDDEN-STRUCTURE",
+      "candidate_rank": 5,
+      "candidate_score": 51.86,
+      "candidate_title": "Higher-order Fourier search for nonlinear hidden structure",
+      "id": "E9-DERIVATIVE-FOURIER-LIFT",
+      "kill_criteria": "Sparsity appears only after using exponentially many derivative settings.",
+      "positive_signal": "Higher-order spectra become sparse while the original family remains classically hard.",
+      "protocol": "For each nonlinear family, compute whether controlled finite differences produce sparse Fourier spectra over polynomially many derivative orders.",
+      "title": "Derivative Fourier lift test",
+      "upside_rank": 1
+    },
+    {
+      "candidate_id": "WALK-ALGEBRAIC-STATE-SPACES",
+      "candidate_rank": 7,
+      "candidate_score": 35.26,
+      "candidate_title": "Quantum walks over algebraic solution complexes",
+      "id": "E8-WALK-SPECTRAL-SWEEP",
+      "kill_criteria": "Gap-overlap product predicts only quadratic or worse behavior.",
+      "positive_signal": "Quantum hitting-time proxy improves asymptotically over classical and Grover baselines.",
+      "protocol": "Build local-move graphs for each algebraic family. Track normalized spectral gap, marked overlap, and classical conductance proxies.",
+      "title": "Spectral gap and marked-overlap sweep",
+      "upside_rank": 1
+    },
+    {
+      "candidate_id": "NAHSP-COLLECTIVE-CODE-EQUIV",
+      "candidate_rank": 1,
+      "candidate_score": 72.66,
+      "candidate_title": "Collective coset measurements for code equivalence",
+      "id": "E2-COLLECTIVE-MEASUREMENT-ANSATZ",
+      "kill_criteria": "Required bond dimension or sample count grows exponentially on the first three scales.",
+      "positive_signal": "Bond dimension grows polynomially while success probability beats individual-register tests.",
+      "protocol": "Represent k-register measurement candidates as tensor networks over irrep labels. Optimize distinguishability on generated code instances.",
+      "title": "Tensor ansatz for collective measurements",
+      "upside_rank": 2
+    },
+    {
+      "candidate_id": "DHS-SIEVE-STRUCTURED-SHIFTS",
+      "candidate_rank": 2,
+      "candidate_score": 67.62,
+      "candidate_title": "Structured hidden-shift sieve beyond generic dihedral HSP",
+      "id": "E4-PHASE-SIEVE",
+      "kill_criteria": "Scaling matches generic subset-sum sieving with no family-specific gain.",
+      "positive_signal": "Sample count and merge depth fit a polynomial or clearly improved subexponential law.",
+      "protocol": "Simulate phase-state frequency samples and search for merge rules that increase useful phase precision faster than generic Kuperberg-style sieves.",
+      "title": "Phase-combination sieve simulation",
+      "upside_rank": 2
+    },
+    {
+      "candidate_id": "APPROX-PERIOD-LATTICE",
+      "candidate_rank": 3,
+      "candidate_score": 65.9,
+      "candidate_title": "Approximate period finding for lattice and number-field maps",
+      "id": "E6-REVERSIBLE-MAP-COST",
+      "kill_criteria": "State preparation or arithmetic cost dominates the proposed speedup.",
+      "positive_signal": "Map evaluation cost is polynomial with realistic precision overhead.",
+      "protocol": "Estimate reversible circuit and precision costs for candidate maps before claiming any quantum advantage.",
+      "title": "Reversible arithmetic cost audit",
+      "upside_rank": 2
+    },
+    {
+      "candidate_id": "BLOCK-ENCODED-INVARIANTS",
+      "candidate_rank": 6,
+      "candidate_score": 35.98,
+      "candidate_title": "Block-encoded spectral invariants for isomorphism-like problems",
+      "id": "E10-INVARIANT-SEPARATION",
+      "kill_criteria": "Classical randomized estimators recover the invariant within the same asymptotic cost.",
+      "positive_signal": "A separating invariant is quantum-estimable in polylog or polynomially lower cost.",
+      "protocol": "Search for operator families whose spectra separate hard paired instances. For every hit, compare against classical trace/Lanczos estimators.",
+      "title": "Invariant separation and access-model audit",
+      "upside_rank": 2
+    }
+  ],
+  "reference_structural_tests": {
+    "coset_fingerprint_smoke_test": {
+      "average_pairwise_overlap": 0.686886723926607,
+      "distinguishability": "weak signal; likely needs a new observable",
+      "domain_size": 8,
+      "instance_count": 4,
+      "max_pairwise_overlap": 0.9999999999999999,
+      "relation_rank": 3
+    },
+    "cycle_walk_smoke_test": {
+      "degree_max": 2.0,
+      "degree_min": 2.0,
+      "marked_overlap": 0.1,
+      "regular": true,
+      "spectral_gap": 0.19098300562505277,
+      "vertex_count": 10
+    },
+    "hidden_shift_random_baseline": {
+      "autocorrelation_peak_ratio": 0.25000000000000006,
+      "domain_size": 64,
+      "fourier_entropy_bits": 5.215478783581408,
+      "fourier_flatness_ratio": 0.005745101396616929,
+      "shift_signal_quality": "weak: likely classical correlation or noisy Fourier signal"
+    },
+    "parity_fourier_smoke_test": {
+      "effective_support": 1.0,
+      "entropy_bits": -0.0,
+      "flatness_ratio": 1.0,
+      "n_bits": 5,
+      "support_99_percent": 1,
+      "top_coefficient_mass": 1.0
+    },
+    "periodicity_smoke_test": {
+      "best_nonzero_collision_rate": 1.0,
+      "best_nonzero_shift": 4,
+      "collision_rates": {
+        "1": 0.0,
+        "2": 0.0,
+        "3": 0.0,
+        "4": 1.0,
+        "5": 0.0,
+        "6": 0.0,
+        "7": 0.0,
+        "8": 1.0,
+        "9": 0.0,
+        "10": 0.0,
+        "11": 0.0,
+        "12": 1.0,
+        "13": 0.0,
+        "14": 0.0,
+        "15": 0.0
+      },
+      "domain_size": 16,
+      "perfect_periods": [
+        4,
+        8,
+        12
+      ]
+    }
+  },
+  "revised_direction": {
+    "cut_or_deprioritize": [
+      "Arbitrary secret-bitstring oracle variants with no natural problem family.",
+      "N<=3 circuit searches used as evidence for asymptotic speedup.",
+      "State-preparation and unitary-synthesis tasks unless they directly support a larger algorithm.",
+      "LLM-only complexity claims without a lower bound, reduction, or scalable mechanism.",
+      "Dashboard labels that call tiny solved instances 'novel algorithms'."
+    ],
+    "one_sentence": "Make this a research-program generator and structural-test harness for high-upside quantum algorithm mechanisms.",
+    "positive_filter": [
+      "Explicit scalable family.",
+      "Known or conjectured classical barrier.",
+      "Quantum mechanism tied to Fourier sampling, coset states, phase estimation, walks, block-encodings, or tensor measurements.",
+      "A structural experiment with a positive signal and a kill criterion.",
+      "A path from toy finite instances to asymptotic proof obligations."
+    ]
+  }
+}

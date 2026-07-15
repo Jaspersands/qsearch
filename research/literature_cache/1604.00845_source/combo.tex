@@ -1,0 +1,490 @@
+%!TEX root = ./ft-hd.tex
+\section{Analysis of \textsc{ReduceL1Norm} and \textsc{SparseFFT}}\label{sec:reduce-l1}
+In this section we first give a correctness proof and runtime analysis for \textsc{ReduceL1Norm} (section~\ref{sec:rl1n}), then analyze the SNR reduction loop in \textsc{SparseFFT}(section~\ref{sec:snr-loop}) and finally prove correctness of \textsc{SparseFFT} and provide runtime bounds in section~\ref{sec:sfft}. 
+
+
+\subsection{Analysis of \textsc{ReduceL1Norm}}\label{sec:rl1n}
+
+
+The main result of this section is Lemma~\ref{lm:reduce-l1-norm} (restated below). Intuitively, the lemma shows that \textsc{ReduceL1Norm} reduces the $\ell_1$ norm of the head elements of the input signal $x-\chi$ by a polylogarthmic factor, and does not introduce too many new spurious elements (false positives) in the process. The  introduced spurious elements, if any, do not contribute much $\ell_1$ mass to the head of the signal. Formally, we show
+
+\noindent{\em {\bf Lemma~\ref{lm:reduce-l1-norm}}(Restated)
+For any $x\in \C^N$, any integer $k\geq 1$, $B\geq \GT\cdot k/\alpha^d$ for $\alpha\in (0, 1]$ smaller than an absolute constant and $F\geq 2d, F=\Theta(d)$ the following conditions hold for the set $S:=\{i\in \nsq: |x_i|>\mu\}$, where $\mu^2\geq ||x_{\nsq\setminus [k]}||_2^2/k$. Suppose that $||x||_\infty/\mu=N^{O(1)}$.
+
+For any sequence of hashings $H_r=(\pi_r, B, F)$, $r=1,\ldots, r_{max}$, if $S^*\subseteq S$ denotes the set of elements of $S$ that are not isolated with respect to at least a $\sqrt{\alpha}$ fraction of the hashings  $H_r, r=1,\ldots, r_{max}$, then for any $\chi\in \C^\nsq$, $x':=x-\chi$, if $\nu\geq (\log^4 N)\mu$ is a parameter such that
+\begin{description}
+\item[A] $||(x-\chi)_S||_1\leq  (\nu +20\mu)k$;
+\item[B] $||\chi_{\nsq\setminus S}||_0\leq \frac{1}{\log^{19} N}k$;
+\item[C] $||(x-\chi)_{S^*}||_1+||\chi_{\nsq\setminus S}||_1\leq \frac{\nu}{\log^4 N}k$,
+\end{description}
+the following conditions hold.
+
+If parameters $r_{max}, c_{max}$ are chosen to be at least $(C_1/\sqrt{\alpha})\log\log N$, where $C_1$ is the constant from Theorem~\ref{thm:l1-res-loc} and measurements are taken as in Algorithm~\ref{alg:main-sublinear}, then the output $\chi'$ of the call 
+$$
+\Call{ReduceL1Norm}{\chi, k, \{m(\wh{x}, H_r, a\star (\one, \h))\}_{r=1, a\in \A_r, \h\in \H}^{r_{max}}, 4\mu (\log^4 n)^{T-t}, \mu}
+$$ 
+satisfies
+\begin{enumerate}
+\item $||(x'-\chi')_S||_1\leq \frac1{\log^{4} N} \nu k+20\mu k$ ~~~~~~~~($\ell_1$ norm of head elements is reduced by $\approx \log^4 N$ factor)
+\item $||(\chi+\chi')_{\nsq\setminus S}||_0\leq ||\chi_{\nsq\setminus S}||_0+ \frac1{\log^{20} N}k$~~~~(few spurious coefficients are introduced)
+\item $||(x'-\chi')_{S^*}||_1+||(\chi+\chi')_{\nsq\setminus S}||_1\leq ||x'_{S^*}||_1+||\chi_{\nsq\setminus S}||_1+\frac1{\log^{20} N}\nu k$ ~~~~($\ell_1$ norm of spurious coefficients does not grow fast)
+\end{enumerate}
+with probability at least $1-1/\log^{2} N$ over the randomness used to take measurements $m$ and by calls to \textsc{EstimateValues}.
+The number of samples used is bounded by $2^{O(d^2)}k(\log\log N)^2$, and the runtime is bounded by $2^{O(d^2)} k\log^{d+2} N$.
+}
+
+
+Before giving the proof of Lemma~\ref{lm:reduce-l1-norm}, we prove two simple supporting lemmas.
+
+\begin{lemma}[Few spurious elements are introduced in \textsc{ReduceL1Norm}]\label{lm:small-l0-increment}
+For any $x\in \C^N$, any integer $k\geq 1$, $B\geq \GT\cdot k/\alpha^d$ for $\alpha\in (0, 1]$ smaller than an absolute constant and $F\geq 2d, F=\Theta(d)$ the following conditions hold for the set $S:=\{i\in \nsq: |x_i|>\mu\}$, where $\mu^2\geq ||x_{\nsq\setminus [k]}||_2^2/k$.
+
+For any sequence of hashings $H_r=(\pi_r, B, F)$, $r=1,\ldots, r_{max}$, if $S^*\subseteq S$ denotes the set of elements of $S$ that are not isolated with respect to at least a $\sqrt{\alpha}$ fraction of the hashings  $H_r, r=1,\ldots, r_{max}$, then for any $\chi\in \C^\nsq$, $x':=x-\chi$ the following conditions hold.
+
+Consider the call 
+$$
+\Call{ReduceL1Norm}{\chi, k, \{m(\wh{x}, H_r, a\star (\one, \h))\}_{r=1, a\in \A_r, \h\in \H}^{r_{max}}, 4\mu (\log^4 n)^{T-t}, \mu},
+$$ 
+where we assume that measurements of $x$ are taken as in Algorithm~\ref{alg:main-sublinear}. Denote, for each $t=0,\ldots, \log_2(\log^4 N)$, the signal recovered by step $t$ in this call by $\chi^{(t)}$ (see Algorithm~\ref{alg:l1-norm-reduction}). There exists an absolute constant $C>0$ such that if for a parameter $\nu\geq 2^t\mu$ at step $t$
+\begin{description}
+\item[A] $||(x'-\chi^{(t)})_S||_1\leq (2^{-t}\nu+20\mu) k$;
+\item[B] $||(\chi+\chi^{(t)})_{\nsq\setminus S}||_0\leq \frac2{\log^{19} N} k$,
+\item[C] $||(x'-\chi^{(t)})_{S^*}||_1+||(\chi+\chi^{(t)})_{\nsq\setminus S}||_1\leq \frac{2\nu}{\log^4 N} k$,
+\end{description}
+then  with probability at least $1-(\log N)^{-3}$ over the randomness used in \textsc{EstimateValues} at step $t$ one has
+$$
+||(\chi+\chi^{(t+1)})_{\nsq\setminus S}||_0-||(\chi+\chi^{(t)})_{\nsq\setminus S}||_0\leq \frac{1}{\log^{21} N}  k.
+$$
+\end{lemma}
+\begin{proof}
+Recall that $L'\subseteq L$ is the list output by \textsc{EstimateValues}. We let 
+$$
+L''=\left\{i\in L: |\chi'_i-x'_i|>\alpha^{1/2}\left(2^{-t}\nu+20\mu\right)\right\}
+$$ denote the set of elements in $L'$ that failed to be estimated to within an additive $\alpha^{1/2}\left(2^{-t}\nu+20\mu\right)$ error term. 
+For any element $i\in L$ we consider two cases, depending on whether $i\in L'\setminus L''$ or $i\in L''$.
+
+\paragraph{Case 1:} First suppose that $i\in L'\setminus L''$, i.e. $|x'_i-\chi'_i|<\alpha^{1/2}(2^{-t}\nu+20\mu)$. Then if $\alpha$ is smaller than an absolute constant, we have
+$$
+|x'_i|>\frac1{1000}\nu 2^{-t}+4\mu-(\alpha^{1/2}(2^{-t}\nu+20\mu))\geq 2\mu,
+$$
+because only elements $i$ with $|\chi'_i|>\frac1{1000}\nu 2^{-t}+4\mu$ are included in the set $L'$ in the call 
+$$
+\chi' \gets \Call{EstimateValues}{x,  \chi^{(t)}, L, k, \e, C(\log\log N+d^2+O(\log (B/k))), \frac1{1000}\nu 2^{-t}+4\mu}
+$$ 
+due to the pruning threshold of $\frac1{1000}\nu 2^{-t}+4\mu$ passed to \textsc{EstimateValues} in the last argument. 
+
+Since $||x_{\nsq\setminus S}||_\infty\leq \mu$ by definition of $S$, this means that either $i\in S$, or $i\in \supp \chi^{(t)}$. In both cases $i$ contributes at most $0$ to  
+$||(\chi+\chi^{(t+1)})_{\nsq\setminus S}||_0-||(\chi+\chi^{(t)})_{\nsq\setminus S}||_0$.
+
+\paragraph{Case 2:}Now suppose that  $i\in L''$, i.e. $|(x'-\chi')_i|\geq \alpha^{1/2}(2^{-t}\nu+20\mu)$. In this case $i$ may contribute $1$ to 
+$||(\chi+\chi^{(t+1)})_{\nsq\setminus S}||_0-||(\chi+\chi^{(t)})_{\nsq\setminus S}||_0$. However, 
+the number of elements in $L''$ is small. To show this, we invoke Lemma~\ref{lm:estimate-l1l2} to obtain precision guarantees for the call to \textsc{EstimateValues} on the pair $x, \chi$ and set of `head elements' $S\cup \supp \chi$. Note that $|S|\leq 2k$, as otherwise we would have $||x_{\nsq\setminus [k]}||_2^2> \mu\cdot k$, a contradiction. Further, by assumption {\bf B} of the lemma we have $||(\chi+\chi^{(t)})_{\nsq\setminus S}||_0\leq k$, so $|S\cup \supp (\chi+\chi^{(t)})|\leq 4k$. The $\ell_1$ norm of $x'-\chi^{(t)}$ on $S\cup \supp (\chi+\chi^{(t)})$ can be bounded as
+\begin{equation*}
+\begin{split}
+\frac{||(x'-\chi^{(t)})_S||_1+||(x'-\chi^{(t)})_{\text{supp}(\chi+\chi^{(t)})\setminus S}||_1}{4k}&\leq \frac{||(x'-\chi^{(t)})_S||_1+||\chi^{(t)}_{\nsq\setminus S}||_1+||x'_{\nsq\setminus S}||_\infty\cdot |\supp (\chi+\chi^{(t)})|}{4k}\\
+&\leq \frac{(2^{-t}\nu+20\mu )k+\frac{2\nu}{\log^4 N} k+\mu\cdot (4k)}{2k}\leq 2^{-t}\nu+20\mu,
+\end{split}
+\end{equation*}
+For the $\ell_2$ bound on the tail of the signal we have 
+$$
+\frac{||(x'-\chi^{(t)})_{\nsq\setminus (S\cup \supp (\chi+\chi^{(t)}))}||_2^2}{4k}\leq \frac{||x_{\nsq\setminus S}||_2^2}{4k}\leq \mu^2.
+$$
+
+We thus have by Lemma~\ref{lm:estimate-l1l2}, {\bf (1)} for every $i\in L'$ that the estimate $w_i$ returned by \textsc{EstimateValues} satisfies
+$$
+\prob[|w_i-x'_i|>\alpha^{1/2}(2^{-t}\nu+20\mu)]<2^{-\Omega(r_{max})}.
+$$
+
+Since $r_{max}$ is chosen as $r_{max}=C(\log\log N+d^2+\log (B/k))$ for a sufficiently large absolute constant $C>0$, we have 
+$$
+\prob[|w_i-x'_i|>\alpha^{1/2}(2^{-t}\nu+20\mu)]<2^{-\Omega(r_{max})}\leq (k/B)\cdot (\log N)^{-25}.
+$$
+This means that 
+$$
+\expect[|L''|]\leq |L|\cdot (k/B)\cdot (\log N)^{-25}\leq (B\cdot r_{max})(k/B)\cdot (\log N)^{-25}\leq (\log N)^{-23},
+$$
+where the expectation is over the randomness used in \textsc{EstimateValues}. We used the fact that $|L'|\leq |L|\leq B\cdot r_{max}$ and that $r_{max}$ to derive the upper bound above. An application of Markov's inequality completes the proof.
+\end{proof}
+
+\begin{lemma}[Spurious elements do not introduce significant $\ell_1$ error]\label{lm:small-l1-increment}
+For any $x\in \C^N$, any integer $k\geq 1$, $B\geq \GT\cdot k/\alpha^d$ for $\alpha\in (0, 1]$ smaller than an absolute constant and $F\geq 2d, F=\Theta(d)$ the following conditions hold for the set $S:=\{i\in \nsq: |x_i|>\mu\}$, where $\mu^2\geq ||x_{\nsq\setminus [k]}||_2^2/k$.
+
+For any sequence of hashings $H_r=(\pi_r, B, F)$, $r=1,\ldots, r_{max}$, if $S^*\subseteq S$ denotes the set of elements of $S$ that are not isolated with respect to at least a $\sqrt{\alpha}$ fraction of the hashings  $H_r, r=1,\ldots, r_{max}$, then for any $\chi\in \C^\nsq$, $x':=x-\chi$ the following conditions hold.
+
+Consider the call 
+$$
+\Call{ReduceL1Norm}{\chi, k, \{m(\wh{x}, H_r, a\star (\one, \h))\}_{r=1, a\in \A_r, \h\in \H}^{r_{max}}, 4\mu (\log^4 n)^{T-t}, \mu},
+$$ 
+where we assume that measurements of $x$ are taken as in Algorithm~\ref{alg:main-sublinear}. Denote, for each $t=0,\ldots, \log_2(\log^4 N)$, the signal recovered by step $t$ in this call by $\chi^{(t)}$ (see Algorithm~\ref{alg:l1-norm-reduction}). There exists an absolute constant $C>0$ such that if for a parameter $\nu\geq 2^t \mu$ at step $t$
+\begin{description}
+\item[A] $||(x'-\chi^{(t)})_S||_1\leq  (2^{-t}\nu+20\mu) k$;
+\item[B] $||(\chi+\chi^{(t)})_{\nsq\setminus S}||_0\leq \frac2{\log^{19} N} k$;
+\item[C] $||(x'-\chi^{(t)})_{S^*}||_1+||(\chi+\chi^{(t)})_{\nsq\setminus S}||_1\leq \frac{2\nu}{\log^4 N} k$,
+\end{description}
+then  with probability at least $1-(\log N)^{-3}$ over the randomness used in \textsc{EstimateValues} at step $t$ one has
+$$
+||(x'-\chi^{(t+1)})_{(\nsq\setminus S)\cup S^*}||_1-||(x'-\chi^{(t)})_{(\nsq\setminus S)\cup S^*}||_1\leq \frac{1}{\log^{21} N}k (\nu+\mu)
+$$
+\end{lemma}
+\begin{proof}
+
+We let $Q:=(\nsq\setminus S)\cup S^*$ to simplify notation, and recall that $L'\subseteq L$ is the list output by \textsc{EstimateValues}. We let 
+$$
+L''=\left\{i\in L: |\chi'_i-x'_i|>\alpha^{1/2}\left(2^{-t}\nu+20\mu\right)\right\}
+$$ 
+denote the set of elements in $L'$ that failed to be estimated to within an additive $\alpha^{1/2}\left(2^{-t}\nu+20\mu\right)$ error term.
+We write
+\begin{equation}\label{eq:dfskgj}
+\begin{split}
+||(x-\chi^{(t+1)})_Q||_1&=||(x-\chi^{(t+1)})_{Q\setminus L'}||_1+||(x-\chi^{(t+1)})_{(Q\cap L')\setminus L''}||_1+||(x-\chi^{(t+1)})_{Q\cap L''}||_1\\
+\end{split}
+\end{equation}
+We first note that $\chi^{(t+1)}_i=\chi^{(t)}_i$ for all $i\not \in L'$, and hence $||(x'-\chi^{(t+1)})_{Q\setminus L}||_1=||(x'-\chi^{(t)})_{Q\setminus L}||_1$.
+
+Second, for $i\in (Q\cap L')\setminus L''$ (second term) one has $|x'_i-\chi_i^{(t+1)}|\leq \sqrt{\alpha}(\nu 2^{-t}+4\mu)$.  Since only elements $i\in L$ with $|\chi'_i|>\frac1{1000}\nu 2^{-t}+4\mu$ are reported by the threshold setting in \textsc{EstimateValues}, so 
+$|x'_i-\chi'|\leq \sqrt{\alpha} (2^{-t}\nu+20\mu)\leq x'_i$ as long as $\alpha$ is smaller than a constant.  We thus get that $||(x-\chi^{(t+1)})_{(Q\cap L')\setminus L''}||_1\leq ||(x-\chi^{(t)})_{(Q\cap L')\setminus L''}||_1$.
+
+For the third term, we note that for each $i\in L$ the estimate $w_i$ computed in the call to \textsc{EstimateValues} satisfies
+\begin{equation}\label{eq:9FHFJdhdjd}
+\expect\left[\left||w_i-x'_i|-\sqrt{\alpha}(2^{-t}\nu+20\mu)\right|_+\right]\leq \sqrt{\alpha}(2^{-t}\nu+\mu)k2^{-\Omega(r_{max})} 
+\end{equation}
+by Lemma~\ref{lm:estimate-l1l2}, {\bf (2)}. Verification of the preconditions of the lemma is identical to Lemma~\ref{lm:small-l0-increment} (note that the assumptions of this lemma and Lemma~\ref{lm:small-l0-increment} are identical) and is hence omitted. Since $r_{max}=C(\log\log N+\log (B/k))$, the rhs of~\eqref{eq:9FHFJdhdjd} is bounded by $(\log N)^{-25} \sqrt{\alpha}(2^{-t}\nu+\mu)k$ as long as $C>0$ is larger than an absolute constant. 
+We thus have
+\begin{equation*}
+\begin{split}
+||(x'-\chi^{(t+1)})_{S\cap L''}||_1\leq \sum_{i\in S\cap L''} \left(\sqrt{\alpha}(2^{-t}\nu+20\mu)+\left||w_i-x'_i|-\sqrt{\alpha}(2^{-t}\nu+20\mu)\right|_+\right).
+\end{split}
+\end{equation*}
+Combining ~\eqref{eq:9FHFJdhdjd} with the fact that by by Lemma~\ref{lm:estimate-l1l2}, {\bf (1)}, we have for every $i\in L$ 
+$$
+\prob\left[|w_i-x'_i|>\sqrt{\alpha}(2^{-t}\nu+20\mu)\right]\leq 2^{-\Omega(r_{max})}\leq (k/B)\cdot (\log N)^{-25}
+$$
+by our choice of $r_{max}$, we get that
+$$
+||(x'-\chi^{(t+1)})_{S\cap L''}||_1\leq  2\sqrt{\alpha}(2^{-t}\nu+20\mu)\cdot|L|\cdot (k/B)\cdot (\log N)^{-25}.
+$$
+An application of Markov's inequality then implies, if $\alpha$ is smaller than an absolute constant, that 
+$$
+\prob[||(x'-\chi^{(t+1)})_{S\cap L''}||_1> \frac1{\log^{21} N}(\nu+\mu)k]<1/\log^3 N.
+$$
+
+Substituting the bounds we just derived into \eqref{eq:dfskgj}, we get
+$$
+||(x-\chi^{(t+1)})_Q||_1\leq ||(x-\chi^{(t)})_Q||_1+\frac1{\log^{21} N}(\nu+\mu)k
+$$
+as required.
+
+
+\end{proof}
+
+
+
+Equipped with the two lemmas above, we can now give a proof of Lemma~\ref{lm:reduce-l1-norm}:
+
+\begin{proofof}{Lemma~\ref{lm:reduce-l1-norm}}
+We prove the result by strong induction on $t=0,\ldots, \log_2 (\log^4 N)$. Specifically, we prove that there exist events $\E_t, t=0,\ldots, \log_2 (\log^4 N)$ such that {\bf (a)} $\E_t$ depends on the randomness used in the call to \textsc{EstimateValues} at step $t$, $\E_t$ satisfies $\prob[\E_t|\E_0\wedge \ldots \E_{t-1}]\geq 1-3/\log^2 N$ and {\bf (b)} for all $t$ conditional on $\E_0\wedge \E_1\wedge\ldots\wedge\E_t$ one has
+\begin{description}
+\item[(1)] $||(x'-\chi^{(t)})_{S\setminus S^*}||_1\leq (2^{-t}\nu+20\mu) k$;
+\item[(2)] $||(\chi+\chi^{(t)})_{\nsq\setminus S}||_0\leq ||\chi_{\nsq\setminus S}||_0+\frac{t}{\log^{21} N}k$;
+\item[(3)] $||(x'-\chi^{(t)})_{S^*}||_1+||(\chi+\chi^{(t)})_{\nsq\setminus S}||_1\leq ||x'_{S^*}||_1+||\chi_{\nsq\setminus S}||_1+\frac{t}{\log^{21} N}\nu k$
+\end{description}
+
+The {\bf base} is provided by $t=0$ and is trivial since $\chi^{(0)}=0$. We now give the {\bf inductive step}.
+
+We start by proving the inductive step for {\bf (2)} and {\bf (3)}.  We will use Lemma~\ref{lm:small-l0-increment} and Lemma~\ref{lm:small-l1-increment}, and hence we start by verifying that their preconditions (which are identical for the two lemmas) are satisfied. Precondition {\bf A} is satisfied directly by inductive hypothesis {\bf (1)}. Precondition {\bf B} is satisfied since 
+$$
+||(\chi+\chi^{(t)})_{\nsq\setminus S}||_0\leq ||\chi_{\nsq\setminus S}||_0+\frac{t}{\log^{21} N}k\leq \frac1{\log^{19} N} k+\frac{\log2(\log^4 N)}{\log^{21} N}\leq \frac2{\log^{19} N} k,
+$$
+where we used assumption {\bf B} of this lemma and inductive hypothesis {\bf (2)}. Precondition {\bf C} is satisfied since 
+$$
+||(x'-\chi^{(t)})_{S^*}||_1+||(\chi+\chi^{(t)})_{\nsq\setminus S}||_1\leq  ||x'_{S^*}||_1+||\chi_{\nsq\setminus S}||_1+\frac{t}{\log^{21} N}\nu k \leq \frac{\nu}{\log^4 N} k
++\frac{t}{\log^{21} N}\nu k\leq \frac{2\nu}{\log^4 N} k,
+$$
+where we used assumption {\bf 3} of this lemma, inductive assumption {\bf (3)} and the fact that $t\leq \log_2 (\log^4 N)\leq \log N$ for sufficiently large $N$.
+
+\paragraph{Proving {\bf (2)}.}
+
+To prove the inductive step for {\bf (2)}, we use Lemma~\ref{lm:small-l0-increment}. Lemma~\ref{lm:small-l0-increment} shows that with probability at least $1-(\log N)^{-2}$ over the randomness used in \textsc{EstimateValues} (denote the success event by $\E^1_t$) we have
+$$
+||(\chi+\chi^{(t+1)})_{\nsq\setminus S}||_0-||(\chi+\chi^{(t)})_{\nsq\setminus S}||_0\leq \frac{1}{\log^{21} N}k,
+$$
+so $||(\chi+\chi^{(t+1)})_{\nsq\setminus S}||_0\leq ||(\chi+\chi^{(t)})_{\nsq\setminus S}||_0+\frac{1}{\log^{21} N}k\leq ||\chi_{\nsq\setminus S}||_0+\frac{t+1}{\log^{21} N}k$ as required.
+
+
+\paragraph{Proving {\bf (3)}.}
+At the same time we have by Lemma~\ref{lm:small-l1-increment} that with probability at least $1-(\log N)^{-2}$ (denote the success event by $\E^2_t$)
+$$
+||(x'-\chi^{(t+1)})_{(\nsq\setminus S)\cup S^*}||_1-||(x'-\chi^{(t)})_{(\nsq\setminus S)\cup S^*}||_1\leq \frac{1}{\log^{21} N}k \nu,
+$$
+so by combing this with assumption {\bf (3)} of the lemma we get
+$$
+||(x'-\chi^{(t+1)})_{(\nsq\setminus S)\cup S^*}||_1\leq \frac{1}{\log^{20} N}\nu k+\frac{t+1}{\log^{21} N}\nu k
+$$
+as required. 
+
+
+\paragraph{Proving {\bf (1)}.}
+We let $L''\subseteq L$ denote the set of elements in $L$ that fail to be estimated to within a small additive error. Specifically, we let
+$$
+L''=\left\{i\in L: |\chi'_i-x'_i|>\alpha^{1/2}\left(2^{-t}\nu+20\mu\right)\right\},
+$$ 
+where $\chi'$ is the output of \textsc{EstimateValues} in iteration $t$. We bound $||(x'-\chi^{(t+1)})_{S\setminus S^*}||_1$ by splitting this $\ell_1$ norm into three terms, depending on whether the corresponding elements were updated in iteration $t$ and whether they were well estimated. We have
+\begin{equation}\label{eq:org-bound-pihwrve33v}
+\begin{split}
+&||(x'-\chi^{(t+1)})_{S\setminus S^*}||_1=||(x'-(\chi^{(t)}+\chi'))_{S\setminus S^*}||_1\\
+&\leq ||(x'-(\chi^{(t)}+\chi'))_{S\setminus (S^*\cup L)}||_1+||(x'-(\chi^{(t)}+\chi'))_{(S\cap L)\setminus L'\setminus L''}||_1+||(x'-(\chi^{(t)}+\chi'))_{(S\cap L')\setminus L''}||_1\\
+&+||(x'-(\chi^{(t)}+\chi'))_{L''}||_1\\
+&=||(x'-\chi^{(t)})_{S\setminus (S^*\cup L)}||_1+||(x'-(\chi^{(t)}+\chi'))_{(S\cap L)\setminus L'\setminus L''}||_1+||(x'-(\chi^{(t)}+\chi'))_{(S\cap L')\setminus L''}||_1\\
+&+||(x'-(\chi^{(t)}+\chi'))_{(L\cap S)\cap L''}||_1\\
+&=:S_1+S_2+S_3+S_4,
+\end{split}
+\end{equation}
+where we used the fact that $\chi'_{S\setminus L}\equiv 0$ to go from the second line to the third. We now bound the four terms. 
+
+
+The {\bf second term} (i.e. $S_2$) captures elements of $S$ that were estimated precisely (and hence they are not in $L''$), but were not included into $L'$ as they did not pass the threshold test (being estimated as larger than $\frac1{1000}2^{-t}\nu+4\mu$)  in \textsc{EstimateValues}. One thus has
+\begin{equation}\label{eq:l2p}
+\begin{split}
+||(x-(\chi^{(t)}+\chi'))_{(S\cap L)\setminus L'\setminus L''}||_1&\leq \alpha^{1/2}(2^{-t}\nu+20\mu)\cdot |(S\cap L')\setminus L''|+(\frac1{1000} 2^{-t}\nu+4\mu)\cdot |(S\cap L')\setminus L''|\\
+& \leq ((\frac{1}{1000}+\alpha^{1/2})2^{-t}\nu+(4+20\alpha^{1/2})\mu)2k
+\end{split}
+\end{equation}
+since $|S|\leq 2k$ by assumption of the lemma. 
+
+
+The {\bf third term} (i.e. $S_3$) captures elements of $S$ that were reported by \textsc{EstimateValues} (hence do not belong to $L'$) and were approximated well (hence belong to $L''$). One has, by definition of the set $L''$,
+\begin{equation}\label{eq:23grgerg}
+\begin{split}
+||(x-(\chi^{(t)}+\chi'))_{(S\cap L')\setminus L''}||_1&=\alpha^{1/2}(2^{-t}\nu+20\mu)\cdot |(S\cap L')\setminus L''|\\
+& \leq 2\alpha^{1/2}(2^{-t}\nu+20\mu)k
+\end{split}
+\end{equation}
+since $|S|\leq 2k$ by assumption of the lemma.
+
+For the {\bf forth term} (i.e. $S_4$) we have 
+$$
+||(x'-(\chi^{(t)}+\chi'))_{L''}||_1\leq \alpha^{1/2}\left(2^{-t}\nu+20\mu\right)\cdot |L''|+\sum_{i\in S} \left||\chi'_i-x'_i|-\alpha^{1/2}\left(2^{-t}\nu+20\mu\right)\right|_+.
+%\expect\left[||(x'-(\chi^{(t)}+\chi'))_{L''}||_1> \frac{1}{\log^{21} N}\sqrt{\alpha}(2^{-t}\nu+20\mu)k\right]<(\log N)^{-2}
+$$
+By  Lemma~\ref{lm:estimate-l1l2}, {\bf (1)} (invoked on the set $S\cup \supp(\chi+\chi^{(t)}+\chi')$) we have $\expect[|L''|]\leq B\cdot 2^{-\Omega(r_{max})}$ and by  Lemma~\ref{lm:estimate-l1l2}, {\bf (2)} 
+for any $i$ one has 
+$$
+\expect\left[\left||\chi'_i-x'_i|-\alpha^{1/2}\left(2^{-t}\nu+20\mu\right)\right|_+\right]\leq |L|\cdot \alpha^{1/2}\left(2^{-t}\nu+20\mu\right) 2^{-\Omega(r_{max})}.
+$$
+Since the parameter $r_{max}$ in \textsc{EstimateValues} is chosen to be at least $C(\log\log N+d^2+\log (B/k))$ for a sufficiently large constant $C$, and $|L|=O(\log N)B$, we have 
+\begin{equation*}
+\expect\left[||(x'-(\chi^{(t)}+\chi'))_{L''}||_1\right]\leq \alpha^{1/2}\left(2^{-t}\nu+20\mu\right) |L| 2^{-\Omega(r_{max})}\leq \frac1{\log^{25} N}\left(2^{-t}\nu+20\mu\right)k
+\end{equation*}
+By Markov's inequality we thus have 
+\begin{equation}\label{eq:l2p-11}
+||(x'-(\chi^{(t)}+\chi'))_{L''}||_1\leq \alpha^{1/2}\left(2^{-t}\nu+20\mu\right) |L| 2^{-\Omega(r_{max})}\leq \frac1{\log^{22} N}\left(2^{-t}\nu+20\mu\right)k
+\end{equation}
+ with probability at least $1-1/\log^3 N$. Denote the success event by $\E_t^0$.
+
+Finally, in order to bound the {\bf first term} (i.e. $S_1$), we invoke Theorem~\ref{thm:l1-res-loc} to analyze the call to \textsc{LocateSignal} in the $t$-th iteration. 
+We note that since $r_{max}, c_{max}\geq (C_1/\sqrt{\alpha})\log\log N$ (where $C_1$ is the constant from Theorem~\ref{thm:l1-res-loc}) by assumption of the lemma, the preconditions of Theorem~\ref{thm:l1-res-loc} are satisfied. By Theorem~\ref{thm:l1-res-loc} together with {\bf (1)} and {\bf (3)} of the inductive hypothesis we have 
+\begin{equation}\label{eq:l111}
+\begin{split}
+||(x'-\chi^{(t)})_{S\setminus (S^*\cup L)}||_1&\leq (4C_2\alpha)^{d/2} ||(x'-\chi^{(t)})_{S\setminus S^*}||_1+(4C)^{d^2}( ||(\chi+\chi^{(t)})_{\nsq\setminus S}||_1+||(x'-\chi^{(t)})_{S^*}||_1)+4\mu |S|\\
+&\leq O((4C_2\alpha)^{d/2}) (2^{-t}\nu+20\mu)k+(4C)^{d^2}(\frac{2}{\log^{20} N} \nu k)+8\mu k\\
+&\leq \frac1{1000} (2^{-t}\nu+20\mu)k+8\mu k\\
+\end{split}
+\end{equation}
+if $\alpha$ is smaller than an absolute constant and $N$ is sufficiently large.
+
+Now substituting bounds on $S_1, S_2, S_3, S_4$ provided by ~\eqref{eq:l111},~\eqref{eq:l2p},~\eqref{eq:23grgerg} and~\eqref{eq:l2p-11} into~\eqref{eq:org-bound-pihwrve33v} we get
+\begin{equation*}
+\begin{split}
+||(x'-\chi^{(t+1)})_{S\setminus S^*}||_1&\leq (\frac2{1000}+O(\alpha^{1/2})) 2^{-t}\nu+(16+O(\alpha^{1/2}))\mu k\\
+&\leq 2^{-t}\nu+20\mu k\\
+\end{split}
+\end{equation*}
+when $\alpha$ is a sufficiently small constant, as required. This proves the inductive step for {\bf (1)} and completes the proof of the induction.
+
+Let $\E_t=\E^0_t\wedge \E^1_t \wedge \E^2_t$ denote the success event for step $t$. We have by a union bound $\prob[\E_t]\geq 1-3t/\log^2 N$ as required.
+
+
+\paragraph{Sample complexity and runtime} It remains to bound the sampling complexity and runtime. First note that \textsc{ReduceL1Norm} only takes fresh samples in the calls to \textsc{EstimateValues} that it issues.
+By Lemma~\ref{lm:estimate-l1l2} each such call uses $2^{O(d^2)} k(\log\log N)$ samples, amounting to $2^{O(d^2)} k(\log\log N)^2$ samples over $O(\log\log N)$ iterations. 
+
+By Lemma~\ref{lm:loc} each call to \textsc{LocateSignal} takes $O(B(\log N)^{3/2})$ time.  Updating the measurements $m(\wh{x}, H_r, a\star (\one, \h)), \h\in \H$ takes 
+$$
+|\H|c_{max} r_{max}\cdot \fc^{O(d)}\cdot B \log^{d+1} N \log\log N=2^{O(d^2)}\cdot k\log^{d+2} N
+$$ time overall.
+The runtime complexity of the calls to \textsc{EstimateValues} is $2^{O(d^2)}\cdot k \log^{d+1} N(\log\log N)^2$ time overall.
+Thus, the runtime is bounded by $2^{O(d^2)}k \log^{d+2} N$.
+\end{proofof}
+
+
+\subsection{Analysis of SNR reduction loop in \textsc{SparseFFT}}\label{sec:snr-loop}
+In this section we prove
+
+\noindent{\em {\bf Theorem~\ref{thm:l1snr}}
+For any $x\in \C^N$, any integer $k\geq 1$, if $\mu^2\geq \err_k^2(x)/k$ and $R^*\geq ||x||_\infty/\mu=N^{O(1)}$, the following conditions hold for the set $S:=\{i\in \nsq: |x_i|>\mu\}\subseteq \nsq$.
+
+Then the SNR reduction loop of Algorithm~\ref{alg:main-sublinear} (lines~19-25) returns $\chi^{(T)}$ such that 
+\begin{equation*}
+\begin{split}
+&||(x-\chi^{(T)})_S||_1\lesssim \mu\text{~~~~~~~~~~~~~~~~~($\ell_1$-SNR on head elements is constant)}\\
+&||\chi^{(T)}_{\nsq\setminus S}||_1\lesssim \mu \text{~~~~~~~~~~~~~~~~~~~~~~~~~~(spurious elements contribute little in $\ell_1$ norm)}\\
+&||\chi^{(T)}_{\nsq\setminus S}||_0\lesssim \frac1{\log^{19} N} k\text{~~~~~~~~~~~~~(small number of spurious elements have been introduced)}
+\end{split}
+\end{equation*}
+
+with probability at least $1-1/\log N$ over the internal randomness used by Algorithm~\ref{alg:main-sublinear}. The sample complexity is $2^{O(d^2)}k\log N(\log\log N)$. The runtime is bounded by $2^{O(d^2)} k \log^{d+3} N$.
+}
+
+
+\begin{proof}
+We start with correctness. We prove by induction that after the $t$-th iteration one has 
+\begin{description}
+\item[(1)] $||(x-\chi^{(t)})_S||_1\leq 4(\log^4 N)^{T-t} \mu k+20\mu k$;
+\item[(2)] $||x-\chi^{(t)}||_\infty=O((\log^4 N)^{T-(t-1)} \mu)$;
+\item[(3)] $||\chi^{(t)}_{\nsq\setminus S}||_0\leq \frac{t}{\log^{20} N} k$.
+\end{description}
+The base is provided by $t=0$, where all claims are trivially true by definition of $R^*$.
+We now prove the inductive step. The main tool here is Lemma~\ref{lm:reduce-l1-norm}, so we start by verifying that its preconditions are satisfied. First note that 
+
+First, since $|S^*|\leq 2^{-\Omega(r_{max})}|S|\leq 2^{-\Omega(r_{max})}k\leq \frac1{\log^{19} N}k$ with probability at least $1-2^{-\Omega(r_{max})}\geq 1-1/\log N$ by Lemma~\ref{lm:good-prob} and choice of $r_{max}\geq (C/\sqrt{\alpha})\log\log N$ for a sufficiently large constant $C>0$. Also, by Claim~\ref{cl:balanced} we have that  with probability at least $1-1/\log^{2} N$ for every $s\in [1:d]$ the sets $\A_r\star (\zero, \mathbf{e}_s)$ are balanced (as per Definition~\ref{def:balance} with $\Delta=2^{\lfloor \frac1{2}\log_2 \log_2 n\rfloor}$, as needed for Algorithm~\ref{alg:location}). Also note that by {\bf (2)} of the inductive hypothesis one has $||x-\chi^{(t)}||_\infty/\mu=R^* \cdot O(\log N)=N^{O(1)}$.
+
+First, assuming the inductive hypothesis {\bf (1)-(3)}, we verify that the preconditions of Lemma~\ref{lm:reduce-l1-norm} are satisfied with $\nu=4(\log^4 N)^{T-t} \mu k$.  First, for {\bf (A)} one has  $||(x-\chi^{(t)})_S||_1\leq 4(\log^4 N)^{T-t} \mu k$. This satisfies precondition {\bf A} of Lemma~\ref{lm:reduce-l1-norm}.  We have
+\begin{equation}\label{eq:123rergregregvvv}
+\begin{split}
+||(x-\chi^{(t)})_{S^*}||_1+||\chi^{(t)}_{\nsq\setminus S}||_1&\leq ||x-\chi^{(t)}||_\infty\cdot (||(x-\chi^{(t)})_{S^*}||_0+||\chi^{(t)}_{\nsq\setminus S}||_0)\\
+&\leq O(\log^4 N)\cdot \nu \cdot \left(\frac1{\log^{19} N}k+\frac{t}{\log^{20} N}k \right)\leq \frac{16}{\log^{14} N}\nu k
+\end{split}
+\end{equation}
+for sufficiently large $N$. Since the rhs is less than $\frac1{\log^4 N}\nu k$, precondition {\bf (C)} of Lemma~\ref{lm:reduce-l1-norm} is also satisfied. Precondition {\bf (B)} of Lemma~\ref{lm:reduce-l1-norm} is satisfied by inductive hypothesis, {\bf (3)} together with the fact that $T=o(\log R^*)=o(\log N)$. 
+
+
+Thus, all preconditions of Lemma~\ref{lm:reduce-l1-norm} are satisfied. Then by Lemma~\ref{lm:reduce-l1-norm} with $\nu=4(\log^4 N)^{T-t} \mu$
+one has with probability at least $1-1/\log^2 N$
+
+\begin{enumerate}
+\item $||(x'-\chi^{(t)}-\chi')_S||_1\leq \frac1{\log^4 N}\nu k+20\mu k$;
+\item $||(\chi^{(t)}+\chi')_{\nsq\setminus S}||_0-||\chi^{(t)}_{\nsq\setminus S}||_0\leq \frac1{\log^{20} N}k$;
+\item $||(x'-(\chi^{(t)}+\chi'))_{S^*}||_1+||(\chi^{(t)}+\chi')_{\nsq\setminus S}||_1\leq ||(x'-\chi^{(t)})_{S^*}||_1+||\chi^{(t)}_{\nsq\setminus S}||_1+\frac1{\log^{20} N}\nu k$.
+\end{enumerate}
+Combining 1 above with~\eqref{eq:123rergregregvvv} proves {\bf (1)} of the inductive step:
+\begin{equation*}
+\begin{split}
+||(x-\chi^{(t+1)})_S||_1=||(x-\chi^{(t)}-\chi')_S||_1&\leq \frac1{\log^4 N}\nu k+20\mu k=\frac1{\log^4 N}4(\log^4 N)^{T-t} \mu k+20\mu k\\
+&=4(\log^4 N)^{T-(t+1)} \mu k+20\mu k.
+\end{split}
+\end{equation*}
+ Also, combining 2 above with the fact that $||\chi^{(t)}_{\nsq\setminus S}||_0\leq \frac{t}{\log^{20} N} k$ yields $||\chi^{(t+1)}_{\nsq\setminus S}||_0\leq \frac{t+1}{\log^{20} N} k$ as required.
+
+In order to prove the inductive step is remains to analyze the call to \textsc{ReduceInfNorm}, for which we use Lemma~\ref{lm:linf} with parameter $\tilde k=4k/\log^4 N$. We first verify that preconditions of the lemma are satisfied. Let $y:=x-(\chi+\chi^{(t)}+\chi')$ to simplify notation. For that we need to verify that 
+\begin{equation}\label{eq:head-c-ojg23g2g}
+||y_{[\tilde k]}||_1/\tilde k\leq 4(\log^4 N)^{T-(t+1)}\mu=(\log^4 N)\cdot (\frac1{\log^4 N}\nu+20 \mu)
+\end{equation}
+and 
+\begin{equation}\label{eq:pih2gg3rg}
+||y_{\nsq\setminus [\tilde k]}||_2/\sqrt{\tilde k}\leq (\log^4 N)\cdot (\frac1{\log^4 N}\nu +20\mu ),
+\end{equation}
+where we denote $\tilde k:=4k/\log^4 N$ for convenience. The first condition is easy to verify, as we now show. Indeed, we have
+\begin{equation*}
+\begin{split}
+&||y_{\tilde k}||_1\leq ||y_S||_1+||y_{\text{supp}(\chi^{(t)}+\chi')\setminus S}||_1+||x_{\nsq\setminus S}||_\infty \cdot \tilde k\\
+&\leq ||y_S||_1 + ||(\chi^{(t)}+\chi')_{\nsq\setminus S}||_1+||x_{\text{supp}(\chi^{(t)}+\chi')\setminus S}||_\infty\cdot \tilde k+||x_{\nsq\setminus S}||_\infty\cdot \tilde k\\
+&\leq \frac1{\log^4 N}\nu k+20\mu k + \frac1{\log^4 N}\nu k+2\mu \tilde k\leq \frac2{\log^4 N}\nu k+40 \mu k,
+\end{split}
+\end{equation*}
+where we used the triangle inequality to upper bound $||y_{\text{supp}(\chi^{(t)}+\chi')\setminus S}||_1$ by $||(\chi^{(t)}+\chi')_{\nsq\setminus S}||_1+||x_{\text{supp}(\chi^{(t)}+\chi')\setminus S}||_\infty\cdot \tilde k$ to go from the first line to the second. We thus have 
+$$
+||y_{[\tilde k]}||_1/\tilde k\leq (\frac2{\log^4 N}\nu k+40 \mu k)/(4k/\log^4 N)\leq (\log^4 N)\cdot (\frac1{\log^4 N}\nu+20 \mu)
+$$ 
+as required. This establishes~\eqref{eq:head-c-ojg23g2g}.
+
+To verify the second condition, we first let $\tilde S:=S\cup \supp(\chi+\chi^{(t)}+\chi')$ to simplify notation. We have
+\begin{equation}\label{eq:11111}
+\begin{split}
+||y_{\nsq\setminus [\tilde k]}||_2^2&=||y_{\tilde S\setminus [\tilde k]}||_2^2+||y_{(\nsq\setminus \tilde S)\setminus [\tilde k]}||_2^2\leq ||y_{\tilde S\setminus [\tilde k]}||_2^2+\mu^2 k,
+\end{split}
+\end{equation}
+where we used the fact that $y_{\nsq\setminus \tilde S}=x_{\nsq\setminus \tilde S}$ and hence $||y_{(\nsq\setminus \tilde S)\setminus [\tilde k]}||_2^2\leq \mu^2 k$.
+We now note that $||y_{\tilde S\setminus [\tilde k]}||_1\leq ||y_{\tilde S}||_1\leq 2(\frac1{\log^4 N}\nu k+20\mu k)$, and so it must be that $||y_{S\setminus [\tilde k]}||_\infty\leq 2(\frac1{\log^4 N}\nu k+20\mu k) (k/\tilde k)$, as otherwise the top $\tilde k$ elements of $y_{[\tilde k]}$ would contribute more than $2(\frac1{\log^4 N}\nu k+20\mu k)$ to $||y_{\tilde S}||_1$, a contradiction.  With these constraints $||y_{\tilde S\setminus [\tilde k]}||_2^2$ is maximized when there are $\tilde k$ elements in $y_{\tilde S\setminus [\tilde k]}$, all equal to the maximum possible value, i.e. $||y_{\tilde S\setminus [\tilde k]}||_2^2\leq 4(\frac1{\log^4 N}\nu k+20\mu k)^2 (k/\tilde k)^2 \tilde k$. Plugging this into~\eqref{eq:11111}, we get $||y_{\nsq\setminus [\tilde k]}||_2^2\leq ||y_{\tilde S\setminus [\tilde k]}||_2^2+\mu^2k\leq 4(\frac1{\log^4 N}\nu k+20\mu k)^2 (k/\tilde k)^2 \tilde k+\mu^2 k$. This implies that 
+\begin{equation*}
+\begin{split}
+||y_{\nsq\setminus [\tilde k]}||_2/\sqrt{\tilde k}&\leq \sqrt{4(\frac1{\log^4 N}\nu k+20\mu k)^2 (k/\tilde k)^2+\mu^2 (k/\tilde k)}\leq 2 (k/\tilde k)\sqrt{(\frac1{\log^4 N}\nu k+20\mu k)^2  +\mu^2}\\
+&\leq 2((\frac1{\log^4 N}\nu k+20\mu k)+\mu) (k/\tilde k)\leq (\log^4 N) (\frac1{\log^4 N}\nu k+20\mu k),
+\end{split}
+\end{equation*}
+establishing ~\eqref{eq:pih2gg3rg}. 
+
+Finally,  also recall that $||y_{S\setminus [\tilde k]}||_\infty\leq 2(\frac1{\log^4 N}\nu k+20\mu k) (k/\tilde k)\leq (\log^4 N)\cdot (\frac1{\log^4 N}\nu k+20\mu k)$ and $||y_{\nsq\setminus \tilde S}||_\infty =||x_{\nsq\setminus S}||_\infty\leq \mu$. 
+
+We thus have that all preconditions of Lemma~\ref{lm:linf} are satisfied for the set of top $\tilde k$ elements of $y$, and hence its output satisfies 
+$$
+||x-(\chi^{(t)}-\chi'-\chi'')||_\infty=O(\log^4 N)\cdot(\frac1{\log^4 N}\nu k+20\mu k).
+$$
+Putting these bounds together establishes {\bf (2)}, and completes the inductive step and the proof of correctness.
+
+Finally, taking a union bound over all failure events (each call to \textsc{EstimateValues} succeeds with probability at least $1-\frac1{\log^2 N}$, and  with probability at least $1-1/\log^{2} N$ for all $s\in [1:d]$ the set $\A_r\star (\zero, \mathbf{e}_s)$ is balanced in coordinate $s$) and using the fact that $\log T=o(\log N)$ and each call to \textsc{LocateSignal} is deterministic, we get that success probability of the SNR reduction look is lower bounded by $1-1/\log N$.
+ 
+\paragraph{Sample complexity and runtime} 
+The sample complexity is bounded by the the sample complexity of the calls to \textsc{ReduceL1Norm} and \textsc{ReduceInfNorm} inside the loop times $O(\log N/\log\log N)$ for the number of iterations. The former is 
+bounded by $2^{O(d^2)}k (\log\log N)^2$ by Lemma~\ref{lm:reduce-l1-norm}, and the latter is bounded by $2^{O(d^2)}k/\log N$ by Lemma~\ref{lm:linf}, amounting to 
+at most $2^{O(d^2)} k \log N (\log\log N)$ samples overall. The runtime complexity is at most $2^{O(d^2)} k\log^{d+3} N$ overall for the calls to \textsc{ReduceL1Norm} and no more than $2^{O(d^2)}k \log^{d+3} N$ overall for the calls to \textsc{ReduceInfNorm}.
+\end{proof}
+
+\subsection{Analysis of \textsc{SparseFFT}}\label{sec:sfft}
+
+
+\noindent {\em {\bf Theorem~\ref{thm:main}}
+For any $\e>0$, $x\in \C^\nsq$ and any integer $k\geq 1$, if $R^*\geq ||x||_\infty/\mu=\poly(N)$, $\mu^2\geq ||x_{\nsq\setminus [k]}||_2^2/k$, $\mu^2=O(||x_{\nsq\setminus [k]}||_2^2/k)$  and $\alpha>0$ is smaller than an absolute constant, \textsc{SparseFFT}$(\hat x, k, \e, R^*, \mu)$ solves the $\ell_2/\ell_2$ sparse recovery problem using $2^{O(d^2)} (k\log N \log\log N+\frac1{\e}k\log N)$ samples and 
+$2^{O(d^2)} \frac1{\e}k \log^{d+3} N$ time with at least $98/100$ success probability.
+}
+
+
+\begin{proof}
+By Theorem~\ref{thm:l1snr} the set $S:=\{i\in \nsq: |x_i|>\mu\}$ satisfies
+$$
+||(x-\chi^{(T)})_S||_1\lesssim \mu k
+$$
+and
+\begin{equation*}
+\begin{split}
+||\chi^{(T)}_{\nsq\setminus S}||_1\lesssim \mu k\\
+||\chi^{(T)}_{\nsq\setminus S}||_0\lesssim \frac1{\log^{19} N}k\\
+\end{split}
+\end{equation*}
+with probability at least $1-1/\log N$.
+
+We now show that the signal $x':=x-\chi^{(T)}$ satisfies preconditions of Lemma~\ref{lm:const-snr} with parameter $k$. Indeed, letting $Q\subseteq \nsq$ denote the top $2k$ coefficients of $x'$, we have 
+\begin{equation*}
+\begin{split}
+||x'_Q||_1&\leq ||x'_{Q\cap S}||_1+||\chi^{(T)}_{(Q\setminus S)\cap \supp \chi^{(T)}}||_1+|Q|\cdot ||x_{\nsq\setminus S}||_1\leq O(\mu k)\\
+\end{split}
+\end{equation*}
+Furthermore, since $Q$ is the set of top $2k$ elements of $x'$, we have 
+\begin{equation*}
+\begin{split}
+||x'_{\nsq\setminus Q}||_2^2&\leq ||x'_{\nsq\setminus (S\cup \supp \chi^{(T)})}||_2^2\leq ||x_{\nsq\setminus (S\cup \supp \chi^{(T)})}||_2^2\leq ||x_{\nsq\setminus S}||_2^2\\
+&\leq \mu^2 |S|+||x_{\nsq\setminus [k]}||_2^2=O(\mu^2 k)
+\end{split}
+\end{equation*}
+as required.
+
+
+
+Thus, with at least $99/100$ probability we have by Lemma~\ref{lm:const-snr} that
+$$
+||x-\chi^{(T)}-\chi'||_2\leq (1+O(\e))\err_{k}(x).
+$$
+By a union bound over the $1/\log N$ failure probability of the SNR reduction loop we have that \textsc{SparseFFT} is correct with probability at least $98/100$, as required.
+
+
+It remains to bound the sample and runtime complexity. The number of samples needed to compute 
+$$
+m(\wh{x}, H_r, a\star(\one, \h))\gets \Call{HashToBins}{\hat x, 0, (H_r, a\star (\one, \h))}
+$$
+ for all $a\in \A_r$, $\h\in \H$ is bounded by $2^{O(d^2)} k\log N (\log\log N)$ by our choice of $B=2^{O(d^2)}k$, $r_{max}=O(\log\log N)$, $|\H|=O(\log N/\log \log N)$ and $|\A_r|=O(\log\log N)$, together with Lemma~\ref{l:hashtobins}. This is asymptotically the same as the $2^{O(d^2)} k \log N (\log\log N)$ sample complexity of the $\ell_1$ norm reduction loop by Theorem~\ref{thm:l1snr}. The sampling complexity of the call to \textsc{RecoverAtConstantSNR} is at most $2^{O(d^2)} \frac1{\e}k \log N$ by Lemma~\ref{lm:const-snr}, yielding the claimed bound.
+
+The runtime of the SNR reduction loop is bounded by $2^{O(d^2)}k \log^{d+3} N$ by Theorem~\ref{thm:l1snr}, and the runtime of \textsc{RecoverAtConstantSNR} is at most $2^{O(d^2)} \frac1{\e}k \log^{d+2} N$ by Lemma~\ref{lm:const-snr}.
+\end{proof}
+
+
+
+
+

@@ -1,0 +1,309 @@
+{
+  "base_ids": [
+    "complete-bipartite-3-5",
+    "complete-bipartite-4-5",
+    "complete-tripartite-2-3-4"
+  ],
+  "created_at": "2026-07-09T16:48:35.274903+00:00",
+  "falsifiers_triggered": [
+    "Degree-separated irregular CFI gadget structure classically reveals global twist parity."
+  ],
+  "headline_metrics": {
+    "base_count": 3,
+    "decoded_count": 3,
+    "degree_separated_count": 3,
+    "dequantized_count": 3,
+    "max_vertex_count": 340,
+    "proof_debt_count": 0
+  },
+  "records": [
+    {
+      "base": {
+        "construction_note": "Single-edge twist in a degree-separated irregular CFI parity gadget.",
+        "degree_sequence": [
+          3,
+          3,
+          3,
+          3,
+          3,
+          5,
+          5,
+          5
+        ],
+        "description": "Degree-separated complete bipartite K3,5 base",
+        "edge_count": 15,
+        "id": "complete-bipartite-3-5",
+        "twist_edge": [
+          0,
+          3
+        ],
+        "vertex_count": 8
+      },
+      "cfi_vertex_count": 98,
+      "degree_separated": true,
+      "interpretation": "Irregular CFI base complete-bipartite-3-5 still has global twist parity classically recovered from the unlabeled adjacency matrix under the degree-separated CFI-gadget promise.",
+      "legal_access_model": "unlabeled adjacency matrix with degree-separated irregular CFI gadget-family promise",
+      "recovers_global_twist": true,
+      "shuffled": true,
+      "status": "dequantized-by-irregular-structural-cfi-decoder",
+      "twisted_decode": {
+        "ambiguity": "none",
+        "edge_copy_vertex_count": 30,
+        "edge_pair_count": 15,
+        "global_twist_parity": 1,
+        "inferred_base_vertex_count": 8,
+        "inferred_middle_degree_counts": {
+          "3": 20,
+          "5": 48
+        },
+        "inferred_middle_degrees": [
+          3,
+          5
+        ],
+        "interpretation": "Recovered irregular degree-separated CFI global twist parity from middle-degree divisibility, edge-copy twin signatures, and vertex-gadget parity profiles.",
+        "local_parities": [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1,
+          1
+        ],
+        "middle_vertex_count": 68,
+        "status": "decoded-degree-separated-global-twist-parity",
+        "success": true,
+        "vertex_count": 98,
+        "vertex_gadget_count": 8
+      },
+      "untwisted_decode": {
+        "ambiguity": "none",
+        "edge_copy_vertex_count": 30,
+        "edge_pair_count": 15,
+        "global_twist_parity": 0,
+        "inferred_base_vertex_count": 8,
+        "inferred_middle_degree_counts": {
+          "3": 20,
+          "5": 48
+        },
+        "inferred_middle_degrees": [
+          3,
+          5
+        ],
+        "interpretation": "Recovered irregular degree-separated CFI global twist parity from middle-degree divisibility, edge-copy twin signatures, and vertex-gadget parity profiles.",
+        "local_parities": [
+          0,
+          0,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1
+        ],
+        "middle_vertex_count": 68,
+        "status": "decoded-degree-separated-global-twist-parity",
+        "success": true,
+        "vertex_count": 98,
+        "vertex_gadget_count": 8
+      }
+    },
+    {
+      "base": {
+        "construction_note": "Single-edge twist in a degree-separated irregular CFI parity gadget.",
+        "degree_sequence": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          5,
+          5,
+          5,
+          5
+        ],
+        "description": "Degree-separated complete bipartite K4,5 base",
+        "edge_count": 20,
+        "id": "complete-bipartite-4-5",
+        "twist_edge": [
+          0,
+          4
+        ],
+        "vertex_count": 9
+      },
+      "cfi_vertex_count": 144,
+      "degree_separated": true,
+      "interpretation": "Irregular CFI base complete-bipartite-4-5 still has global twist parity classically recovered from the unlabeled adjacency matrix under the degree-separated CFI-gadget promise.",
+      "legal_access_model": "unlabeled adjacency matrix with degree-separated irregular CFI gadget-family promise",
+      "recovers_global_twist": true,
+      "shuffled": true,
+      "status": "dequantized-by-irregular-structural-cfi-decoder",
+      "twisted_decode": {
+        "ambiguity": "none",
+        "edge_copy_vertex_count": 40,
+        "edge_pair_count": 20,
+        "global_twist_parity": 1,
+        "inferred_base_vertex_count": 9,
+        "inferred_middle_degree_counts": {
+          "4": 40,
+          "5": 64
+        },
+        "inferred_middle_degrees": [
+          4,
+          5
+        ],
+        "interpretation": "Recovered irregular degree-separated CFI global twist parity from middle-degree divisibility, edge-copy twin signatures, and vertex-gadget parity profiles.",
+        "local_parities": [
+          1,
+          1,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1
+        ],
+        "middle_vertex_count": 104,
+        "status": "decoded-degree-separated-global-twist-parity",
+        "success": true,
+        "vertex_count": 144,
+        "vertex_gadget_count": 9
+      },
+      "untwisted_decode": {
+        "ambiguity": "none",
+        "edge_copy_vertex_count": 40,
+        "edge_pair_count": 20,
+        "global_twist_parity": 0,
+        "inferred_base_vertex_count": 9,
+        "inferred_middle_degree_counts": {
+          "4": 40,
+          "5": 64
+        },
+        "inferred_middle_degrees": [
+          4,
+          5
+        ],
+        "interpretation": "Recovered irregular degree-separated CFI global twist parity from middle-degree divisibility, edge-copy twin signatures, and vertex-gadget parity profiles.",
+        "local_parities": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        "middle_vertex_count": 104,
+        "status": "decoded-degree-separated-global-twist-parity",
+        "success": true,
+        "vertex_count": 144,
+        "vertex_gadget_count": 9
+      }
+    },
+    {
+      "base": {
+        "construction_note": "Single-edge twist in a degree-separated irregular CFI parity gadget.",
+        "degree_sequence": [
+          5,
+          5,
+          5,
+          5,
+          6,
+          6,
+          6,
+          7,
+          7
+        ],
+        "description": "Degree-separated complete tripartite K2,3,4 base",
+        "edge_count": 26,
+        "id": "complete-tripartite-2-3-4",
+        "twist_edge": [
+          0,
+          2
+        ],
+        "vertex_count": 9
+      },
+      "cfi_vertex_count": 340,
+      "degree_separated": true,
+      "interpretation": "Irregular CFI base complete-tripartite-2-3-4 still has global twist parity classically recovered from the unlabeled adjacency matrix under the degree-separated CFI-gadget promise.",
+      "legal_access_model": "unlabeled adjacency matrix with degree-separated irregular CFI gadget-family promise",
+      "recovers_global_twist": true,
+      "shuffled": true,
+      "status": "dequantized-by-irregular-structural-cfi-decoder",
+      "twisted_decode": {
+        "ambiguity": "none",
+        "edge_copy_vertex_count": 52,
+        "edge_pair_count": 26,
+        "global_twist_parity": 1,
+        "inferred_base_vertex_count": 9,
+        "inferred_middle_degree_counts": {
+          "5": 64,
+          "6": 96,
+          "7": 128
+        },
+        "inferred_middle_degrees": [
+          5,
+          6,
+          7
+        ],
+        "interpretation": "Recovered irregular degree-separated CFI global twist parity from middle-degree divisibility, edge-copy twin signatures, and vertex-gadget parity profiles.",
+        "local_parities": [
+          1,
+          1,
+          0,
+          0,
+          1,
+          1,
+          0,
+          1,
+          0
+        ],
+        "middle_vertex_count": 288,
+        "status": "decoded-degree-separated-global-twist-parity",
+        "success": true,
+        "vertex_count": 340,
+        "vertex_gadget_count": 9
+      },
+      "untwisted_decode": {
+        "ambiguity": "none",
+        "edge_copy_vertex_count": 52,
+        "edge_pair_count": 26,
+        "global_twist_parity": 0,
+        "inferred_base_vertex_count": 9,
+        "inferred_middle_degree_counts": {
+          "5": 64,
+          "6": 96,
+          "7": 128
+        },
+        "inferred_middle_degrees": [
+          5,
+          6,
+          7
+        ],
+        "interpretation": "Recovered irregular degree-separated CFI global twist parity from middle-degree divisibility, edge-copy twin signatures, and vertex-gadget parity profiles.",
+        "local_parities": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        "middle_vertex_count": 288,
+        "status": "decoded-degree-separated-global-twist-parity",
+        "success": true,
+        "vertex_count": 340,
+        "vertex_gadget_count": 9
+      }
+    }
+  ],
+  "status": "irregular-cfi-family-dequantized-under-degree-separated-gadget-promise",
+  "summary": "Ran degree-separated irregular CFI structural decoding on 3 row(s). 3 row(s) were dequantized under the gadget promise; 0 remain proof debt."
+}

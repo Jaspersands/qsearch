@@ -1,0 +1,280 @@
+{
+  "barriers": [
+    {
+      "applies_to": [
+        "graph-isomorphism",
+        "symmetric-hsp",
+        "nonabelian-hsp"
+      ],
+      "avoid_by": "Use multi-register entangled measurements with a concrete scalable construction, or leave the HSP formulation.",
+      "barrier": "Strong Fourier sampling over the symmetric group does not efficiently solve the GI-relevant HSP.",
+      "id": "NO-GI-STRONG-FOURIER",
+      "source_hint": "Moore-Russell-Schulman, The Symmetric Group Defies Strong Fourier Sampling"
+    },
+    {
+      "applies_to": [
+        "simon",
+        "forrelation"
+      ],
+      "avoid_by": "Attach every oracle family to either a natural problem, a reduction, or a lower-bound research target.",
+      "barrier": "Oracle separations often fail to transfer to explicit computational problems.",
+      "id": "NO-TOY-ORACLE",
+      "source_hint": "Query complexity literature and repeated failure of arbitrary secret-oracle variants in this repo"
+    },
+    {
+      "applies_to": [
+        "qsvt",
+        "block-encoding"
+      ],
+      "avoid_by": "Track access model, encoding cost, precision, and classical randomized baselines as first-class proof obligations.",
+      "barrier": "State preparation, QRAM, and block-encoding construction can erase claimed speedups.",
+      "id": "NO-QSVT-DATALOADING",
+      "source_hint": "QSVT and dequantization literature"
+    },
+    {
+      "applies_to": [
+        "quantum-walks",
+        "learning-graphs"
+      ],
+      "avoid_by": "Require spectral/hitting-time evidence that beats unstructured amplitude amplification.",
+      "barrier": "Many search-space walks give only quadratic speedups.",
+      "id": "NO-GROVER-ONLY",
+      "source_hint": "Quantum walk and query complexity baselines"
+    }
+  ],
+  "nodes": [
+    {
+      "category": "number theory",
+      "id": "factoring",
+      "name": "Integer factoring",
+      "research_value": "Shor-level template and regression test",
+      "status": "solved quantumly"
+    },
+    {
+      "category": "number theory",
+      "id": "discrete-log",
+      "name": "Discrete logarithm",
+      "research_value": "Shor-level template and regression test",
+      "status": "solved quantumly"
+    },
+    {
+      "category": "periodicity",
+      "id": "order-finding",
+      "name": "Order finding",
+      "research_value": "Core abelian Fourier mechanism",
+      "status": "solved quantumly"
+    },
+    {
+      "category": "hidden structure",
+      "id": "abelian-hsp",
+      "name": "Abelian hidden subgroup problem",
+      "research_value": "General framework behind Shor and Simon",
+      "status": "solved quantumly"
+    },
+    {
+      "category": "query complexity",
+      "id": "simon",
+      "name": "Simon's problem",
+      "research_value": "Prototype exponential oracle separation",
+      "status": "solved quantumly"
+    },
+    {
+      "category": "hidden structure",
+      "id": "hidden-shift",
+      "name": "Hidden shift over abelian groups",
+      "research_value": "Bridge from abelian Fourier methods to harder nonabelian-like behavior",
+      "status": "partially solved"
+    },
+    {
+      "category": "hidden structure",
+      "id": "dihedral-hsp",
+      "name": "Dihedral hidden subgroup problem",
+      "research_value": "Frontier linked to lattice problems",
+      "status": "subexponential quantum"
+    },
+    {
+      "category": "lattice",
+      "id": "unique-svp",
+      "name": "Unique shortest vector problem",
+      "research_value": "Cryptographically significant target connected to DHSP",
+      "status": "frontier"
+    },
+    {
+      "category": "algebraic number theory",
+      "id": "principal-ideal",
+      "name": "Principal ideal and infrastructure problems",
+      "research_value": "Evidence that hidden periodicity extends beyond factoring",
+      "status": "partially solved quantumly"
+    },
+    {
+      "category": "hidden structure",
+      "id": "nonabelian-hsp",
+      "name": "Nonabelian hidden subgroup problem",
+      "research_value": "Possible umbrella for GI/code equivalence breakthroughs",
+      "status": "frontier"
+    },
+    {
+      "category": "hidden structure",
+      "id": "symmetric-hsp",
+      "name": "Symmetric-group HSP",
+      "research_value": "Canonical barrier for GI and code equivalence",
+      "status": "blocked by Fourier no-go"
+    },
+    {
+      "category": "isomorphism",
+      "id": "graph-isomorphism",
+      "name": "Graph isomorphism",
+      "research_value": "Central test of nonabelian quantum algorithms",
+      "status": "frontier"
+    },
+    {
+      "category": "isomorphism",
+      "id": "code-equivalence",
+      "name": "Code equivalence",
+      "research_value": "Cryptographic and algebraic hidden-permutation target",
+      "status": "frontier"
+    },
+    {
+      "category": "query synthesis",
+      "id": "span-programs",
+      "name": "Span programs/adversary bound",
+      "research_value": "Algorithm synthesis route for query problems",
+      "status": "mature framework"
+    },
+    {
+      "category": "query synthesis",
+      "id": "learning-graphs",
+      "name": "Learning graphs",
+      "research_value": "Combinatorial route to query algorithms",
+      "status": "mature framework"
+    },
+    {
+      "category": "algorithmic framework",
+      "id": "quantum-walks",
+      "name": "Quantum walks",
+      "research_value": "Geometry-driven alternative to Fourier-only algorithms",
+      "status": "mature with frontier uses"
+    },
+    {
+      "category": "linear algebra framework",
+      "id": "qsvt",
+      "name": "Quantum singular value transformation",
+      "research_value": "Unifying abstraction for matrix-function algorithms",
+      "status": "mature and expanding"
+    },
+    {
+      "category": "input model",
+      "id": "block-encoding",
+      "name": "Block encoding",
+      "research_value": "Dominant cost center for QSVT-style algorithms",
+      "status": "mature and costly"
+    },
+    {
+      "category": "query complexity",
+      "id": "forrelation",
+      "name": "Forrelation and Fourier checking",
+      "research_value": "Useful for discovering new query phenomena",
+      "status": "oracle separation"
+    },
+    {
+      "category": "harmonic analysis",
+      "id": "gowers-structure",
+      "name": "Gowers-uniformity and higher-order Fourier structure",
+      "research_value": "Potential hidden-shift and property-testing handle",
+      "status": "emerging quantum interface"
+    }
+  ],
+  "relations": [
+    {
+      "evidence": "Shor",
+      "implication": "A new order-finding-like primitive can have factoring-scale impact.",
+      "relation": "reduces_to",
+      "source": "factoring",
+      "target": "order-finding"
+    },
+    {
+      "evidence": "standard HSP formulation",
+      "implication": "Abelian HSP coverage is not enough for new breakthroughs.",
+      "relation": "instance_of",
+      "source": "discrete-log",
+      "target": "abelian-hsp"
+    },
+    {
+      "evidence": "standard HSP formulation",
+      "implication": "Regression tests should recover this structure.",
+      "relation": "instance_of",
+      "source": "order-finding",
+      "target": "abelian-hsp"
+    },
+    {
+      "evidence": "Z_2^n hidden subgroup",
+      "implication": "Useful for oracle-separation tooling, not enough for natural problems.",
+      "relation": "instance_of",
+      "source": "simon",
+      "target": "abelian-hsp"
+    },
+    {
+      "evidence": "Kuperberg/Regev",
+      "implication": "Phase-state sieving improvements may affect DHSP.",
+      "relation": "equivalent_or_related",
+      "source": "hidden-shift",
+      "target": "dihedral-hsp"
+    },
+    {
+      "evidence": "Regev reduction",
+      "implication": "Efficient DHSP is high-value because of lattice implications.",
+      "relation": "would_imply_progress_on",
+      "source": "dihedral-hsp",
+      "target": "unique-svp"
+    },
+    {
+      "evidence": "Hallgren/infrastructure algorithms",
+      "implication": "Look for hidden periodicity in richer algebraic objects.",
+      "relation": "analogy",
+      "source": "principal-ideal",
+      "target": "abelian-hsp"
+    },
+    {
+      "evidence": "standard GI-HSP reduction",
+      "implication": "Need to bypass strong Fourier sampling no-go barriers.",
+      "relation": "reduces_to_or_embeds_in",
+      "source": "graph-isomorphism",
+      "target": "symmetric-hsp"
+    },
+    {
+      "evidence": "hidden permutation formulation",
+      "implication": "Same barrier family as GI but different instance structure.",
+      "relation": "reduces_to_or_embeds_in",
+      "source": "code-equivalence",
+      "target": "symmetric-hsp"
+    },
+    {
+      "evidence": "HSP taxonomy",
+      "implication": "General nonabelian machinery is the broadest target.",
+      "relation": "subproblem_of",
+      "source": "symmetric-hsp",
+      "target": "nonabelian-hsp"
+    },
+    {
+      "evidence": "adversary/span program equivalence",
+      "implication": "Query algorithms can be synthesized via linear-algebraic witnesses.",
+      "relation": "constructs",
+      "source": "span-programs",
+      "target": "quantum-walks"
+    },
+    {
+      "evidence": "QSVT framework",
+      "implication": "Any QSVT lead must audit block-encoding cost.",
+      "relation": "requires",
+      "source": "qsvt",
+      "target": "block-encoding"
+    },
+    {
+      "evidence": "Roetteler hidden shift algorithms",
+      "implication": "Higher-order Fourier metrics should feed hidden-shift experiments.",
+      "relation": "algorithmic_handle_for",
+      "source": "gowers-structure",
+      "target": "hidden-shift"
+    }
+  ]
+}

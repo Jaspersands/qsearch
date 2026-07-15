@@ -1,0 +1,95 @@
+{
+  "adversarial_model": {
+    "bad_basis_value": "minimized over |0> and |1> and hidden from the algorithm",
+    "bad_coordinate": "minimized over every coordinate and hidden from the algorithm",
+    "bad_register_count": 1,
+    "scope_limit": "diagnostic one-bad threshold only; not the complete f=1 promise"
+  },
+  "claim_gate": {
+    "all_single_bad_cases_enumerated": true,
+    "bad_basis_bit_exposed_to_algorithm": false,
+    "bad_coordinate_exposed_to_algorithm": false,
+    "full_decoder_proved": false,
+    "full_f1_threshold_proved": false,
+    "reason": "The exact audit covers one arbitrary bad basis qubit only. It supplies no uniform signal theorem, full f=1 contamination threshold, or hidden-reflection decoder.",
+    "speedup_claim_allowed": false,
+    "uniform_one_bad_signal_proved": false
+  },
+  "created_at": "2026-07-14T19:35:38.974051+00:00",
+  "falsifiers_triggered": [
+    "The audit hides neither the bad coordinate nor basis value from the adversarial minimization, but the algorithm is not given either one.",
+    "Survival under exactly one bad register is weaker than the full per-register f=1 theorem promise.",
+    "Finite inverse-polynomial Hamming bias is not a uniform lower bound and does not recover the hidden reflection.",
+    "Any schema with exponential sampling cost or no full decoder is rejected even if nonzero bias survives."
+  ],
+  "headline_metrics": {
+    "adversarial_one_bad_case_count": 2808,
+    "finite_log2_robust_tv_slope_per_n": -0.7235643472030779,
+    "instance_count": 12,
+    "inverse_polynomial_one_bad_signal_count": 2,
+    "maximum_robust_one_bad_hamming_tv": 0.03125,
+    "proved_full_decoder_count": 0,
+    "proved_full_f1_threshold_count": 0,
+    "proved_uniform_one_bad_signal_family_count": 0,
+    "scaling_row_count": 4,
+    "schema_instance_count": 156,
+    "zero_worst_case_signal_count": 0
+  },
+  "rows": [
+    {
+      "best_robust_schema_histogram": {
+        "hadamard-product": 3
+      },
+      "inverse_polynomial_one_bad_signal_count": 2,
+      "maximum_best_robust_one_bad_hamming_tv": 0.03125,
+      "mean_best_retained_signal_ratio": 0.35688405797101447,
+      "mean_best_robust_one_bad_hamming_tv": 0.025716145833333332,
+      "mean_corresponding_all_good_hamming_tv": 0.07291666666666667,
+      "n_bits": 6,
+      "register_count": 6,
+      "trial_count": 3
+    },
+    {
+      "best_robust_schema_histogram": {
+        "hadamard-product": 3
+      },
+      "inverse_polynomial_one_bad_signal_count": 0,
+      "maximum_best_robust_one_bad_hamming_tv": 0.0106201171875,
+      "mean_best_retained_signal_ratio": 0.21937652713064013,
+      "mean_best_robust_one_bad_hamming_tv": 0.008219401041666666,
+      "mean_corresponding_all_good_hamming_tv": 0.061452229817708336,
+      "n_bits": 8,
+      "register_count": 8,
+      "trial_count": 3
+    },
+    {
+      "best_robust_schema_histogram": {
+        "hadamard-product": 3
+      },
+      "inverse_polynomial_one_bad_signal_count": 0,
+      "maximum_best_robust_one_bad_hamming_tv": 0.0072784423828125,
+      "mean_best_retained_signal_ratio": 0.38495416783427255,
+      "mean_best_robust_one_bad_hamming_tv": 0.0038503011067708335,
+      "mean_corresponding_all_good_hamming_tv": 0.010880788167317709,
+      "n_bits": 10,
+      "register_count": 10,
+      "trial_count": 3
+    },
+    {
+      "best_robust_schema_histogram": {
+        "hadamard-product": 3
+      },
+      "inverse_polynomial_one_bad_signal_count": 0,
+      "maximum_best_robust_one_bad_hamming_tv": 0.001331329345703125,
+      "mean_best_retained_signal_ratio": 0.6211199076644679,
+      "mean_best_robust_one_bad_hamming_tv": 0.0011692047119140625,
+      "mean_corresponding_all_good_hamming_tv": 0.001987020174662272,
+      "n_bits": 12,
+      "register_count": 12,
+      "trial_count": 3
+    }
+  ],
+  "status": "one-bad-clifford-signal-proof-blocked",
+  "summary": "Evaluated 2808 fixed one-bad-coordinate/basis cases across 12 label batches. 2 finite instances retained at least 1/n^2 Hamming bias, but no uniform one-bad family, full f=1 threshold, or decoder was proved.",
+  "theorem_contract_id": "THM-REGEV-USVP-TO-DCP-2003"
+}

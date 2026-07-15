@@ -1,0 +1,171 @@
+%!TEX root = ./ft-hd.tex
+\section{Omitted proofs}\label{app:A}
+
+\begin{proofof}{Lemma~\ref{lm:isolated-pi}}
+We start with
+\begin{equation}\label{eq:lixchbsp}
+\begin{split}
+\expect_{\Sigma, q}[|\pi(S\setminus \{i\})\cap \B^\infty_{(n/b)\cdot h(i)}((n/b)\cdot 2^t)|]&=\sum_{j\in S\setminus \{i\}} \prob_{\Sigma, q}[\pi(j)\in  \B^\infty_{(n/b)\cdot h(i)}((n/b)\cdot 2^t)]\\
+\end{split}
+\end{equation}
+Recall that by definition of $h(i)$ one has $||(n/b)\cdot h(i)-\pi(i)||_\infty\leq (n/b)$, so by triangle inequality 
+$$
+||\pi(j)-\pi(i)||_\infty\leq ||\pi(j)-(n/b)h(i)||_\infty+||\pi(i)-(n/b)h(i)||_\infty,
+$$
+so
+\begin{equation}\label{eq:lixchbs}
+\begin{split}
+\expect_{\Sigma, q}[|\pi(S\setminus \{i\})\cap \B^\infty_{(n/b)\cdot h(i)}((n/b)\cdot 2^t)|]&\leq \sum_{j\in S\setminus \{i\}} \prob_{\Sigma, q}[\pi(j)\in  \B^\infty_{\pi(i)}((n/b)\cdot (2^t+1))]\\
+&\leq \sum_{j\in S\setminus \{i\}} \prob_{\Sigma, q}[\pi(j)\in  \B^\infty_{\pi(i)}((n/b)\cdot 2^{t+1})]\\
+\end{split}
+\end{equation}
+
+Since $\pi_{\Sigma, q}(i)=\Sigma(i-q)$ for all $i\in \nsq$, we have
+\begin{equation*}
+\begin{split}
+\prob_{\Sigma, q}[\pi(j)\in  \B^\infty_{\pi(i)}((n/b)\cdot 2^{t+1})]&=\prob_{\Sigma, q}[||\Sigma(j-i)||_\infty\leq (n/b)\cdot 2^{t+1}]\leq 2(2^{t+2}/b)^d,
+\end{split}
+\end{equation*}
+where we used the fact that by Lemma~\ref{lemma:limitedindependence}, for any fixed $i$, $j\neq i$ and any radius $r\geq 0$,
+\begin{equation}\label{eq:li}
+ \prob_{\Sigma}[\norm{\infty}{\Sigma(i-j)} \leq r] \leq 2(2r/n)^d
+\end{equation}
+with $r=(n/b)\cdot 2^{t+1}$.
+
+Putting this together with~\eqref{eq:lixchbs}, we get
+\begin{equation*}
+\begin{split}
+\expect_{\Sigma, q}[|\pi(S\setminus \{i\})\cap \B^\infty_{(n/b)\cdot h(i)}((n/b)\cdot 2^t)|]\leq |S|\cdot 2(2^{t+2}/b)^{d}&\leq (|S|/B)\cdot 2^{(t+2)d+1}\\
+&\leq  \frac1{4}\GI\cdot 64^{-(d+F)}\alpha^d 2^{(t+2)d+1}.
+\end{split}
+\end{equation*}
+Now by Markov's inequality we have that $i$ fails to be isolated at scale $t$ with probability at most
+$$
+\prob_{\Sigma, q}\left[|\pi(S\setminus \{i\})\cap \B^\infty_{\pi(i)}((n/b)\cdot 2^t)|>\GI\cdot 64^{-(d+F)}\alpha^{d/2} 2^{(t+2)d+t+1} \right]\leq \frac1{4}2^{-t} \alpha^{d/2}.
+$$
+Taking the union bound over all $t\geq 0$, we get
+$$
+\prob_{\Sigma, q}[i~\text{is not isolated}]\leq \sum_{t\geq 0}\frac1{4}2^{-t} \alpha^{d/2} \leq \frac1{2}\alpha^{d/2}\leq \frac1{2}\alpha^{1/2}
+$$
+as required.
+
+\end{proofof}
+
+
+
+Before giving a proof of Lemma~\ref{lm:hashing}, we state the following lemma, which is immediate from Lemma~\ref{l:hashtobins}:
+\begin{lemma}\label{lm:linearity}
+Let $x, x^1, x^2, \chi, \chi^1, \chi^2\in \C^N$,  $x=x^1+x^2$, $\chi=\chi^1+\chi^2$.
+Let $\Sigma\in \gl, q, a\in \nsq$, $B=b^d, b\geq 2$ an integer. Let
+\begin{equation*}
+\begin{split}
+u&=\Call{HashToBins}{\hat x, \chi, (H, a)} \\
+u^1&=\Call{HashToBins}{\widehat{x^1}, \chi^1, (H, a)} \\
+u^2&=\Call{HashToBins}{\widehat{x^2}, \chi^2, (H, a)}.
+\end{split}
+\end{equation*}
+
+ Then for each  $j\in [b]^d$ one has 
+\begin{equation*}
+\begin{split}
+|G^{-1}_{o_i(i)} u_j\omega^{-a^T\Sigma i}-(x-\chi)_i|^p&\lesssim |G^{-1}_{o_i(i)} u^1_j\omega^{-a^T\Sigma i}-(x^1-\chi^1)_i|^p+|G^{-1}_{o_i(i)} u^2_j\omega^{-a^T\Sigma i}-(x^2-\chi^2)_i|^p\\
+&+N^{-\Omega(c)}
+\end{split}
+\end{equation*}
+for $p\in \{1, 2\}$, where $O(c)$  is the word precision of our semi-equispaced Fourier transform computations.
+\end{lemma}
+
+
+\begin{proofof}{Lemma~\ref{lm:hashing}}
+%\xxx{Remind definition of $G_{o_i(j)}$. It depends on $\pi$!}
+  By Lemma~\ref{lemma:limitedindependence}, for any fixed $i$ and $j$ and any $t\geq 0$,
+  \[
+ \prob_{\Sigma}[\norm{\infty}{\Sigma(i-j)} \leq t] \leq 2(2t/n)^d.
+  \]
+
+ Per Lemma~\ref{l:hashtobins},
+  \textsc{HashToBins} computes the vector $u \in \C^B$ given by
+\begin{equation}\label{eq:u-delta}
+  u_{h(i)} - \Delta_{h(i)} = \sum_{j\in \nsq} G_{o_i(j)}x'_j \omega^{a^T \Sigma j}
+\end{equation}
+  for some $\Delta$ with $\norm{\infty}{\Delta}^2 \leq  N^{-\Omega(c)}$.
+  We define the vector $v \in \C^n$ by $v_{\Sigma j} = x'_j G_{o_i(j)}$, so that
+  \[
+  u_{h(i)} - \Delta_{h(i)} = \sum_{j\in \nsq} \omega^{a^Tj} v_j = \sqrt{N}\wh{v}_a
+  \]
+  so
+  \[
+  u_{h(i)} - \omega^{a^T\Sigma i}G_{o_i(i)}x'_i - \Delta_{h(i)} = \sqrt{N}(\wh{v_{\overline{\{\Sigma i\}}}})_a.
+  \]
+  We have by  \eqref{eq:u-delta} and the fact that $(X+Y)^2\leq 2X^2+2Y^2$ 
+  \begin{equation*}
+  \begin{split}
+   \abs{G_{o_i(i)}^{-1}\omega^{-a^T\Sigma i}u_{h(i)} - x'_i}^2 =G_{o_i(i)}^{-2} \abs{u_{h(i)} - \omega^{a^T\Sigma i}G_{o_i(i)}x'_i}^2\\
+    \leq 2G_{o_i(i)}^{-2} \abs{u_{h(i)} - \omega^{a^T\Sigma i}G_{o_i(i)}x'_i - \Delta_{h(i)}}^2 + 2G_{o_i(i)}^{-2}\Delta_{h(i)}^2\\    
+    =2G_{o_i(i)}^{-2} \abs{\sum_{j\in \nsq} G_{o_i(j)}x'_j \omega^{a^T \Sigma j}}^2 +2G_{o_i(i)}^{-2} \Delta_{h(i)}^2\\        
+  \end{split}
+  \end{equation*}
+  
+  By Parseval's theorem, therefore, we have
+  \begin{equation}\label{eq:a-est}
+  \begin{split}
+    \expect_a[\abs{G_{o_i(i)}^{-1}\omega^{-a^T\Sigma i}u_{h(i)} - x'_i}^2]
+    &\leq 2G_{o_i(i)}^{-2} \expect_a[\abs{\sum_{j\in \nsq} G_{o_i(j)}x'_j \omega^{a^T \Sigma j}}^2] + 2\expect_a[\Delta_{h(i)}^2]\\
+    &= 2G_{o_i(i)}^{-2} (\norm{2}{v_{\overline{\{\Sigma i\}}}}^2 + \Delta_{h(i)}^2)\\
+    &\lesssim N^{-\Omega(c)} + \sum_{j\in \nsq \setminus \{i\}} \abs{x'_j G_{o_i(j)}}^2\\
+    &\lesssim N^{-\Omega(c)} + \sum_{j \in \nsq \setminus \{i\}} \abs{x'_j G_{o_i(j)}}^2\\
+    &\lesssim N^{-\Omega(c)} + \mu_{\Sigma, q}^2(i).\\
+    \end{split}
+  \end{equation}
+
+
+We now prove {\bf (2)}.  Recall that the filter $G$ approximates an ideal filter, which would be $1$ inside $\B^\infty_{0}(n/b)$ and $0$ everywhere else. We use the bound on $G_{o_i(j)}=G_{\pi(i)-\pi(j)}$ in terms of $||\pi(i)-\pi(j)||_\infty$ from Lemma~\ref{lm:filter-prop}, (2). In order to leverage the bound, we partition $\nsq=\B^\infty_{(n/b)\cdot h(i)}(n/2)$ as 
+$$
+\B^\infty_{(n/b)\cdot h(i)}(n/2)=\B^\infty_{(n/b)\cdot h(i)}(n/b)\cup \bigcup_{t=1}^{\log_2 (b/2)}  \left(\B^\infty_{(n/b)\cdot h(i)}((n/b)2^{t})\setminus \B^\infty_{(n/b)\cdot h(i)}((n/b)2^{t-1})\right).
+$$
+For simplicity of notation, let $X_0=\B^\infty_{(n/b)\cdot h(i)}(n/b)$ and $X_t=\B^\infty_{(n/b)\cdot h(i)}((n/b)\cdot 2^{t})\setminus \B^\infty_{(n/b)\cdot h(i)}((n/b)\cdot 2^{t-1})$ for $t\geq 1$.
+For each $t\geq 1$ we have by Lemma~\ref{lm:filter-prop}, (2) 
+$$
+\max_{\pi(l)\in X_t} |G_{o_i(l)}|\leq \max_{\pi(l)\not \in  \B^\infty_{(n/b)\cdot h(i)}((n/b)2^{t-1})} |G_{o_i(l)}| \leq \left(\frac{2}{1+2^{t-1}}\right)^{\fc}.
+$$
+Since the rhs is greater than $1$ for $t\leq 0$, we can use this bound for all $t\leq \log_2 (b/2)$.
+Further, by Lemma~\ref{lemma:limitedindependence} we have for each $j\neq i$  and $t\geq 0$
+$$
+\prob_{\Sigma, q}[\pi(j)\in X_t]\leq \prob_{\Sigma, q}[\pi(j)\in \B^\infty_{(n/b)\cdot h(i)}((n/b)\cdot 2^{t})]\leq 2(2^{t+1}/b)^{d}.
+$$
+
+Putting these bounds together, we get
+\begin{equation*}
+\begin{split}
+\expect_{\Sigma, q}[\mu^2_{\Sigma, q}(i)]&=\expect_{\Sigma, q}[\sum_{j \in \nsq\setminus \{i\}} \abs{x'_j G_{o_i(j)}}^2] \\
+&\leq \sum_{j\in \nsq\setminus \{i\}}  \abs{x'_j}^2 \cdot \sum_{t=0}^{\log_2 (b/2)} \prob_{\Sigma, q}[\pi(j)\in X_t]\cdot \max_{\pi(l)\in X_t} |G_{o_i(l)}|\\
+&\leq \sum_{j\in \nsq\setminus \{i\}}  \abs{x'_j}^2 \cdot \sum_{t=0}^{\log_2 (b/2)} (2^{t+1}/b)^{d}\cdot \left(\frac{2}{1+2^{t-1}}\right)^{\fc}\\
+&\leq \frac{2^\fc}{B}\sum_{j\in \nsq\setminus \{i\}} \abs{x'_j}^2 \sum_{t=0}^{+\infty}  2^{(t+1)d-\fc (t-1)}\\
+& \leq 2^{O(d)} \frac{\norm{2}{x'}^2}{B}
+\end{split}
+\end{equation*}
+as long as $\fc\geq 2d$ and $\fc=\Theta(d)$. Recalling that $G_{o_i(i)}^{-1}\leq \GS$ completes the proof of {\bf (2)}.
+
+
+The proof of {\bf (1)} is similar. We  have
+\begin{equation}
+\begin{split}
+\expect_{\Sigma, q}[\max_{a\in \nsq}  |\sum_{j \in \nsq\setminus \{i\}} x'_j G_{o_i(j)} \omega^{a^T\Sigma j}|] &\leq \expect_{\Sigma, q}[\sum_{j \in \nsq\setminus \{i\}} |x'_j G_{o_i(j)}|]+|\Delta_{h(i)}|\\
+&\leq |\Delta_{h(i)}|+\sum_{j\in \nsq\setminus \{i\}}  \abs{x'_j} \cdot \sum_{t=0}^{\log_2 (b/2)} \prob_{\Sigma, q}[\pi(j)\in X_t]\cdot \max_{\pi(l)\in X_t} |G_{o_i(l)}|\\
+&\leq |\Delta_{h(i)}|+\sum_{j\in \nsq\setminus \{i\}}  \abs{x'_j} \cdot \sum_{t=0}^{\log_2 (b/2)} (2^{t+1}/b)^{d}\cdot \left(\frac{2}{1+2^{t-1}}\right)^{\fc}\\
+&\leq |\Delta_{h(i)}|+\frac{2^\fc}{B}\sum_{j\in \nsq\setminus \{i\}} \abs{x'_j} \sum_{t=0}^{+\infty}  2^{(t+1)d-\fc (t-1)}\\
+& \leq |\Delta_{h(i)}|+2^{O(d)} \frac{\norm{1}{x'}}{B},\\
+\end{split}
+\end{equation}
+where 
+\begin{equation*}
+\Delta_{h(i)} \lesssim N^{-\Omega(c)}.
+\end{equation*}
+Recalling that $G_{o_i(i)}^{-1}\leq \GS$ and  $R^*\leq ||x||_\infty/\mu$ 
+completes the proof of {\bf (1)}.
+
+
+
+
+\end{proofof}
+

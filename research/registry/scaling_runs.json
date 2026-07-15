@@ -1,0 +1,269 @@
+[
+  {
+    "artifacts": {
+      "character_decoder_search": "research/classical_baselines/character_decoder_search.json"
+    },
+    "created_at": "2026-07-13T17:32:56.297193+00:00",
+    "headline_metrics": {
+      "algebraic_degree_exponential_success_count": 26,
+      "domain_linear_attempt_count": 96,
+      "domain_scale_attempt_count": 96,
+      "exhaustive_decoder_success_count": 31,
+      "failed_polynomial_style_count": 32,
+      "non_exhaustive_success_count": 0,
+      "pair_ratio_filter_success_count": 23,
+      "polynomial_style_success_count": 0,
+      "shift_invariant_obstruction_count": 8
+    },
+    "id": "CHARACTER-DECODER-SEARCH-LATEST",
+    "kind": "multiplicative-character-decoder-search",
+    "row_count": 128,
+    "status": "decoder-lower-bound-debt",
+    "summary": "Ran 128 character-shift decoder attempts and 8 shift-invariance probes; 0 polynomial-style decoder(s) succeeded, 23 pair-ratio candidate filter(s) succeeded, 26 full-degree algebraic decoder(s) succeeded, and 31 candidate-enumeration baseline(s) succeeded."
+  },
+  {
+    "artifacts": {
+      "character_moment_obstruction": "research/classical_baselines/character_moment_obstruction.json"
+    },
+    "created_at": "2026-07-13T23:03:23.507078+00:00",
+    "headline_metrics": {
+      "finite_size_moment_signal_count": 1,
+      "low_degree_moment_obstruction_count": 7,
+      "max_first_nonzero_degree": 192,
+      "moment_signal_found_count": 1,
+      "positive_evidence_count": 0,
+      "scalable_moment_signal_count": 0
+    },
+    "id": "CHARACTER-MOMENT-OBSTRUCTION-LATEST",
+    "kind": "multiplicative-character-moment-obstruction",
+    "row_count": 8,
+    "status": "finite-size-moment-signal-not-scalable",
+    "summary": "Checked 8 multiplicative-character moment rows; 7 row(s) have all full-domain moments vanish through the low-degree window, 1 row(s) expose a low-degree moment signal, and 1 of those signal row(s) are classified as finite-size only."
+  },
+  {
+    "artifacts": {
+      "character_query_information": "research/classical_baselines/character_query_information.json"
+    },
+    "created_at": "2026-07-13T16:55:33.834721+00:00",
+    "headline_metrics": {
+      "max_query_ceiling_over_log2_prime": 2.495463360085282,
+      "max_union_bound_queries": 15,
+      "max_wrong_shift_agreement_fraction": 0.5135135135135135,
+      "positive_evidence_count": 0,
+      "query_lower_bound_killed_count": 8
+    },
+    "id": "CHARACTER-QUERY-INFORMATION-LATEST",
+    "kind": "multiplicative-character-query-information-ceiling",
+    "row_count": 8,
+    "status": "query-lower-bound-route-killed",
+    "summary": "Audited 8 multiplicative-character query-information rows; 8 row(s) have logarithmic random-sample query ceilings by pairwise agreement and union bound."
+  },
+  {
+    "artifacts": {
+      "character_shift_baselines": "research/classical_baselines/character_shift_baselines.json"
+    },
+    "created_at": "2026-07-07T15:42:44.460454+00:00",
+    "headline_metrics": {
+      "exhaustive_decoding_only_count": 26,
+      "full_table_correlation_success_count": 40,
+      "insufficient_sample_count": 14,
+      "poly_sample_unique_count": 20
+    },
+    "id": "CHARACTER-SHIFT-BASELINES-LATEST",
+    "kind": "multiplicative-character-hidden-shift-baselines",
+    "row_count": 40,
+    "status": "query-efficient-exhaustive-decoding-gap",
+    "summary": "Ran 40 multiplicative-character shift elimination rows over 2 families, 4 n-values, and 5 sample budgets; 20 rows isolate the shift with polynomially many samples but exhaustive decoding."
+  },
+  {
+    "artifacts": {
+      "character_shift_complexity": "research/classical_baselines/character_shift_complexity.json"
+    },
+    "created_at": "2026-07-14T05:50:18.413164+00:00",
+    "headline_metrics": {
+      "fixed_prefix_ambiguous_count": 0,
+      "fixed_prefix_decode_success_count": 12,
+      "known_classical_upper_bound_count": 48,
+      "logarithmic_query_domain_time_upper_bound_count": 12,
+      "max_online_operation_exponent_per_bit": 0.6,
+      "max_preprocessing_operation_exponent_per_bit": 1.6418906731257898,
+      "max_unique_prefix_over_n_bits": 2.0,
+      "natural_problem_reduction_count": 0,
+      "nonuniform_online_polylog_count": 12,
+      "positive_evidence_count": 0,
+      "preprocessing_row_count": 12,
+      "unconditional_superpolynomial_lower_bound_count": 0,
+      "uniform_polylog_classical_decoder_count": 0
+    },
+    "id": "CHARACTER-SHIFT-COMPLEXITY-LATEST",
+    "kind": "multiplicative-character-complexity-and-preprocessing-ledger",
+    "row_count": 12,
+    "status": "conditional-uniform-decoding-gap-only",
+    "summary": "Audited 12 shifted-character preprocessing row(s) and 48 literature upper-bound row(s). Fixed O(log p)-scale prefixes plus domain-size advice decoded 12 row(s); no unconditional superpolynomial decoding lower bound or natural-problem reduction is recorded."
+  },
+  {
+    "artifacts": {
+      "character_shift_lower_bound": "research/classical_baselines/character_shift_lower_bound.json"
+    },
+    "created_at": "2026-07-13T17:52:26.065469+00:00",
+    "headline_metrics": {
+      "chosen_query_fingerprint_count": 28,
+      "full_degree_gcd_success_count": 26,
+      "max_gcd_operation_exponent_per_bit": 2.6991710053774343,
+      "max_pair_ratio_operation_exponent_per_bit": 1.2643856189774725,
+      "pair_ratio_filter_success_count": 23,
+      "positive_evidence_count": 0,
+      "sample_fingerprint_count": 22
+    },
+    "id": "CHARACTER-SHIFT-LOWER-BOUND-LATEST",
+    "kind": "multiplicative-character-decoding-lower-bound-ledger",
+    "row_count": 32,
+    "status": "decoder-lower-bound-required",
+    "summary": "Audited 32 multiplicative-character lower-bound rows; 22 random-sample and 28 chosen-query rows fingerprint shifts, while 23 rows are recovered by pair-ratio candidate filtering and 26 rows are recovered by full-degree cyclotomic GCD rather than a polynomial-style decoder."
+  },
+  {
+    "artifacts": {
+      "hidden_shift_classical_baselines": "research/classical_baselines/hidden_shift_baselines.json"
+    },
+    "created_at": "2026-07-13T16:26:28.123378+00:00",
+    "headline_metrics": {
+      "collision_scale_survival_count": 29,
+      "high_or_critical_risk_count": 72,
+      "low_complexity_evaluator_recovery_count": 48,
+      "random_sample_recovery_count": 95,
+      "undersampled_survival_count": 33
+    },
+    "id": "CLASSICAL-HS-BASELINES-LATEST",
+    "kind": "hidden-shift-classical-baselines",
+    "row_count": 168,
+    "status": "dequantized-by-sample-baselines",
+    "summary": "Ran 168 hidden-shift classical baseline rows over 7 families, 4 n-values, and 6 sample budgets."
+  },
+  {
+    "artifacts": {
+      "fourier_compressibility_baselines": "research/classical_baselines/fourier_compressibility_baselines.json"
+    },
+    "created_at": "2026-07-13T16:25:14.629293+00:00",
+    "headline_metrics": {
+      "derivative_sparse_count": 114,
+      "explicit_evaluator_sparse_recovery_count": 114,
+      "full_table_compressible_count": 114,
+      "random_sample_sparse_recovery_count": 81,
+      "spectrally_unresolved_count": 102
+    },
+    "id": "FOURIER-COMPRESSIBILITY-BASELINES-LATEST",
+    "kind": "hidden-shift-fourier-compressibility-baselines",
+    "row_count": 216,
+    "status": "blocked-by-spectral-compressibility",
+    "summary": "Ran 216 sparse Fourier and derivative-spectrum audits over 9 families, 4 n-values, and 6 sample budgets; 114 rows are evaluator-sparse dequantized."
+  },
+  {
+    "artifacts": {
+      "hidden_shift_query_lower_bounds": "research/classical_baselines/hidden_shift_query_lower_bounds.json"
+    },
+    "created_at": "2026-07-13T22:44:04.803730+00:00",
+    "headline_metrics": {
+      "agreement_query_ceiling_count": 228,
+      "chosen_query_poly_fingerprint_unique_count": 36,
+      "max_median_candidate_entropy_bits": 6.169925001442312,
+      "max_query_ceiling_over_log2_domain": 10.142857142857142,
+      "max_union_bound_query_ceiling": 71,
+      "negative_results_written": 10,
+      "overlap_scale_collision_count": 4,
+      "poly_sample_fingerprint_unique_count": 132,
+      "positive_evidence_count": 0,
+      "undersampled_gap_count": 36
+    },
+    "id": "HIDDEN-SHIFT-QUERY-LOWER-BOUNDS-LATEST",
+    "kind": "hidden-shift-query-time-lower-bound-probes",
+    "row_count": 240,
+    "status": "query-lower-bound-blocked-by-fingerprints",
+    "summary": "Ran 240 hidden-shift query/time lower-bound probes over 10 families, 4 n-values, 6 sample budgets, and 5 trial(s). 132 random-sample row(s), 36 chosen-query row(s), and 228 pairwise-agreement row(s) rule out superlog query lower-bound evidence without a decoding lower bound."
+  },
+  {
+    "artifacts": {
+      "learnability_baselines": "research/classical_baselines/learnability_baselines.json"
+    },
+    "created_at": "2026-07-12T23:49:14.576824+00:00",
+    "headline_metrics": {
+      "low_degree_dequantized_count": 20,
+      "not_low_degree_count": 12,
+      "suspect_low_degree_count": 0
+    },
+    "id": "LEARNABILITY-BASELINES-LATEST",
+    "kind": "hidden-shift-learnability-baselines",
+    "row_count": 36,
+    "status": "blocked-by-low-degree-learnability",
+    "summary": "Ran 36 low-degree learnability audits over 9 families and 4 n-values; 20 records are low-degree dequantized."
+  },
+  {
+    "artifacts": {
+      "phase_family_naturalness": "research/phase_workbench/phase_family_naturalness.json"
+    },
+    "created_at": "2026-07-07T16:12:27.513748+00:00",
+    "headline_metrics": {
+      "artificial_record_count": 8,
+      "natural_algebraic_record_count": 32,
+      "positive_evidence_record_count": 0,
+      "unsupported_record_count": 0
+    },
+    "id": "PHASE-FAMILY-NATURALNESS-LATEST",
+    "kind": "hidden-shift-phase-family-naturalness",
+    "row_count": 40,
+    "status": "blocked-by-artificial-phase-families",
+    "summary": "Audited 40 phase-family descriptions for naturalness and description complexity; 8 record(s) are hash/mask/noise artificial and 0 are unsupported."
+  },
+  {
+    "artifacts": {
+      "phase_family_triage": "research/phase_workbench/phase_family_triage.json"
+    },
+    "created_at": "2026-07-13T22:44:02.661626+00:00",
+    "headline_metrics": {
+      "decoding_time_only_family_count": 1,
+      "positive_evidence_family_count": 0,
+      "query_time_gap_family_count": 0,
+      "rejected_family_count": 9,
+      "unresolved_family_count": 0
+    },
+    "id": "PHASE-FAMILY-TRIAGE-LATEST",
+    "kind": "hidden-shift-phase-family-triage",
+    "row_count": 10,
+    "status": "no-positive-phase-family-evidence",
+    "summary": "Triaged 10 hidden-shift phase families across baseline artifacts; 9 are rejected by classical reconstruction, 0 have query/time gaps, 1 have only decoding-time lower-bound debt after logarithmic query ceilings, and 0 remain unresolved but not positive evidence."
+  },
+  {
+    "artifacts": {
+      "hidden_shift_sweep": "research/scaling/hidden_shift_sweep.json"
+    },
+    "created_at": "2026-07-07T05:23:27.330643+00:00",
+    "headline_metrics": {
+      "max_best_two_adic_valuation": 7,
+      "max_high_dequantization_risk_count": 1,
+      "max_restricted_query_survivor_count": 4
+    },
+    "id": "SWEEP-HIDDEN-SHIFT-LATEST",
+    "kind": "hidden-shift",
+    "row_count": 16,
+    "status": "blocked-speedup-claims",
+    "summary": "Ran 16 hidden-shift sweep points over 4 families, 4 n-values, and 4 sample budgets."
+  },
+  {
+    "artifacts": {
+      "trace_function_search": "research/phase_workbench/trace_function_search.json"
+    },
+    "created_at": "2026-07-13T00:05:06.934086+00:00",
+    "headline_metrics": {
+      "algebraic_decoder_rejected_count": 80,
+      "low_degree_rejected_count": 0,
+      "positive_evidence_count": 0,
+      "sample_elimination_rejected_count": 0,
+      "sparse_spectrum_rejected_count": 0,
+      "unresolved_count": 0
+    },
+    "id": "TRACE-FUNCTION-SEARCH-LATEST",
+    "kind": "finite-field-trace-function-search",
+    "row_count": 80,
+    "status": "all-trace-families-rejected",
+    "summary": "Audited 80 rational finite-field trace-function hidden-shift rows across 5 families; 0 rows survive current implemented baselines but remain lower-bound debt."
+  }
+]

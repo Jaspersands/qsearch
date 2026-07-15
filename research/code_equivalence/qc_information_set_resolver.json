@@ -1,0 +1,55 @@
+{
+  "created_at": "2026-07-11T08:26:29.368434+00:00",
+  "falsifiers_triggered": [
+    "Information-set canonicalization resolves some QC proof-debt rows as equivalent controls."
+  ],
+  "headline_metrics": {
+    "equivalent_control_count": 3,
+    "evaluated_count": 2,
+    "information_set_rejection_count": 0,
+    "max_estimated_ordered_information_sets": 1860480,
+    "proof_debt_count": 0,
+    "record_count": 3
+  },
+  "max_ordered_information_sets": 2000000,
+  "records": [
+    {
+      "canonical_equal": true,
+      "dimension": 5,
+      "estimated_ordered_information_sets": 360360,
+      "evaluated": true,
+      "id": "qc-index5-two-circulants-trial-5-prior-0",
+      "information_set_status": "information-set-survivor-proof-debt",
+      "interpretation": "Exact ordered information-set canonicalization maps both QC rows to the same systematic canonical form; this is an equivalence control, not hard code-equivalence evidence.",
+      "length": 15,
+      "source_search_id": "qc-index5-two-circulants",
+      "status": "equivalent-control-under-information-set-canonicalization"
+    },
+    {
+      "canonical_equal": true,
+      "dimension": 5,
+      "estimated_ordered_information_sets": 1860480,
+      "evaluated": true,
+      "id": "qc-index5-three-circulants-trial-9-prior-0",
+      "information_set_status": "information-set-survivor-proof-debt",
+      "interpretation": "Exact ordered information-set canonicalization maps both QC rows to the same systematic canonical form; this is an equivalence control, not hard code-equivalence evidence.",
+      "length": 20,
+      "source_search_id": "qc-index5-three-circulants",
+      "status": "equivalent-control-under-information-set-canonicalization"
+    },
+    {
+      "canonical_equal": null,
+      "dimension": 5,
+      "estimated_ordered_information_sets": 0,
+      "evaluated": false,
+      "id": "qc-index5-three-circulants-trial-10-prior-0",
+      "information_set_status": "skipped-family-already-equivalent-control",
+      "interpretation": "A previous proof-debt row in this QC family was already resolved as an equivalent control.",
+      "length": 20,
+      "source_search_id": "qc-index5-three-circulants",
+      "status": "equivalent-control-family-already-resolved"
+    }
+  ],
+  "status": "qc-information-set-resolved",
+  "summary": "Audited 3 QC proof-debt row(s) with exact information-set canonicalization. 3 equivalent control(s), 0 rejection(s), and 0 unresolved row(s)."
+}

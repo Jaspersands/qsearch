@@ -1,0 +1,133 @@
+{
+  "claim_gate": {
+    "exact_affine_verifier_proved": true,
+    "nonlinear_or_partial_route_alive": true,
+    "nonmonomial_affine_transports_exist_at_small_moduli": false,
+    "polynomial_affine_search_constructed": false,
+    "polynomial_relation_solver_proved": false,
+    "reason": "The affine class has an exact verifier and any constructible transport yields a target witness. The general full-cube Fourier theorem further proves that every total affine transport requires the old exact-valuation pivot, so only explicitly partial target-fiber variants remain open.",
+    "speedup_claim_allowed": false,
+    "total_affine_route_alive_beyond_exact_valuation_pivot": false,
+    "transport_to_witness_reduction_proved": true
+  },
+  "created_at": "2026-07-15T07:37:52.290636+00:00",
+  "exhaustive_rows": [
+    {
+      "affine_transport_instance_count": 37,
+      "affine_witness_extraction_failure_count": 0,
+      "anf_vs_truth_table_mismatch_count": 0,
+      "depth": 1,
+      "first_nonmonomial_example": null,
+      "invertible_matrix_count": 168,
+      "label_tuple_count": 64,
+      "modulus": 4,
+      "nonmonomial_affine_only_instance_count": 0,
+      "register_count": 3,
+      "signed_transport_instance_count": 37
+    },
+    {
+      "affine_transport_instance_count": 169,
+      "affine_witness_extraction_failure_count": 0,
+      "anf_vs_truth_table_mismatch_count": 0,
+      "depth": 2,
+      "first_nonmonomial_example": null,
+      "invertible_matrix_count": 168,
+      "label_tuple_count": 512,
+      "modulus": 8,
+      "nonmonomial_affine_only_instance_count": 0,
+      "register_count": 3,
+      "signed_transport_instance_count": 169
+    }
+  ],
+  "falsifiers_triggered": [
+    "A transport proposal that does not satisfy every ANF congruence is not a constant child-bit transport.",
+    "Any total affine transport construction already exposes a target witness as T(0).",
+    "The full affine search space has quadratic exponent in the register count and cannot be enumerated asymptotically.",
+    "Small-modulus nonmonomial examples do not establish source-random linear-depth incidence or efficient search.",
+    "The exact reduction is not a hardness proof against a new polynomial affine synthesis algorithm."
+  ],
+  "headline_metrics": {
+    "affine_witness_extraction_failure_count": 0,
+    "anf_vs_truth_table_mismatch_count": 0,
+    "exact_anf_theorem_count": 1,
+    "exhaustive_label_tuple_count": 576,
+    "linear_depth_scaling_row_count": 4,
+    "nonmonomial_affine_only_instance_count": 0,
+    "polynomial_affine_search_count": 0,
+    "proved_polynomial_affine_transport_count": 0,
+    "proved_polynomial_relation_solver_count": 0,
+    "zero_image_witness_reduction_count": 1
+  },
+  "next_search_programs": [
+    {
+      "falsifier": "Coverage is planted-only or exponentially small at linear depth.",
+      "mechanism": "Relax equality to a source-uniform inverse-polynomial subset of one low-bit fiber.",
+      "program_id": "PARTIAL-FIBER-AFFINE-MAP",
+      "required_baselines": [
+        "classical partial-map learning",
+        "coverage under uniform legal targets",
+        "verified witness extraction"
+      ]
+    }
+  ],
+  "scaling_rows": [
+    {
+      "anf_coefficient_count": 68719476735,
+      "exhaustive_search_polynomial": false,
+      "log2_affine_search_space": 1330.208083175359,
+      "log2_invertible_matrix_count": 1294.208083175359,
+      "n_bits": 32,
+      "polynomial_affine_transport_constructed": false,
+      "register_count": 36,
+      "tested_depth": 16
+    },
+    {
+      "anf_coefficient_count": 295147905179352825855,
+      "exhaustive_search_polynomial": false,
+      "log2_affine_search_space": 4690.208083175338,
+      "log2_invertible_matrix_count": 4622.208083175338,
+      "n_bits": 64,
+      "polynomial_affine_transport_constructed": false,
+      "register_count": 68,
+      "tested_depth": 32
+    },
+    {
+      "anf_coefficient_count": 5444517870735015415413993718908291383295,
+      "exhaustive_search_polynomial": false,
+      "log2_affine_search_space": 17554.208083175337,
+      "log2_invertible_matrix_count": 17422.208083175337,
+      "n_bits": 128,
+      "polynomial_affine_transport_constructed": false,
+      "register_count": 132,
+      "tested_depth": 64
+    },
+    {
+      "anf_coefficient_count": 1852673427797059126777135760139006525652319754650249024631321344126610074238975,
+      "exhaustive_search_polynomial": false,
+      "log2_affine_search_space": 67858.20808317534,
+      "log2_invertible_matrix_count": 67598.20808317534,
+      "n_bits": 256,
+      "polynomial_affine_transport_constructed": false,
+      "register_count": 260,
+      "tested_depth": 128
+    }
+  ],
+  "status": "affine-transport-characterized-search-equivalent-to-witness-construction",
+  "summary": "Certified the exact affine ANF conditions with 0 truth-table mismatches and 0 witness-extraction failures over 576 label tuples. Nonmonomial affine-only instances=0; polynomial affine searches=0.",
+  "theorem": {
+    "constant_condition": "sum_{j:b_j=1} A_j = 2^k modulo M=2^(k+1)",
+    "higher_order_condition": "for every input set I with |I|>=2, (-2)^(|I|-1) times sum_{j:I subset support(P_j*)} (-1)^(b_j) A_j = 0 modulo M",
+    "necessary_and_sufficient": true,
+    "polynomial_transport_implies_polynomial_solver": true,
+    "singleton_condition": "for every input i, sum_{j:P_ji=1} (-1)^(b_j) A_j = A_i modulo M",
+    "theorem_id": "THEOREM-DCP-GF2-AFFINE-TRANSPORT-ANF",
+    "theorem_scope_exclusions": [
+      "nonlinear reversible maps",
+      "partial maps defined only on a target fiber",
+      "non-bijective relation samplers",
+      "quantum walks that never materialize a total affine map"
+    ],
+    "transform_class": "invertible GF(2)-affine maps T(x)=P x xor b",
+    "zero_image_witness_reduction": "T(0)=b and the constant condition gives S_A(b)=2^k; evaluating any efficiently constructible transport at zero returns a verified target witness."
+  }
+}

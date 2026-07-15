@@ -1,0 +1,396 @@
+{
+  "base_ids": [
+    "complete-k4",
+    "mobius-ladder-8",
+    "complete-bipartite-3-5",
+    "prism-degree4-hub"
+  ],
+  "created_at": "2026-07-09T16:48:38.946961+00:00",
+  "falsifiers_triggered": [
+    "Bipartition-visible CFI gadget structure classically reveals global twist parity.",
+    "Rows not decoded by this baseline remain proof debt, not positive evidence."
+  ],
+  "headline_metrics": {
+    "base_count": 4,
+    "decoded_count": 3,
+    "dequantized_count": 3,
+    "max_vertex_count": 98,
+    "non_degree_separated_count": 1,
+    "proof_debt_count": 1
+  },
+  "records": [
+    {
+      "base": {
+        "construction_note": "Single-edge twist in a CFI parity gadget audited through bipartition reconstruction.",
+        "degree_separated": true,
+        "degree_sequence": [
+          3,
+          3,
+          3,
+          3
+        ],
+        "description": "Complete graph K4 ambiguous control",
+        "edge_count": 6,
+        "id": "complete-k4",
+        "twist_edge": [
+          0,
+          1
+        ],
+        "vertex_count": 4
+      },
+      "cfi_vertex_count": 28,
+      "interpretation": "CFI base complete-k4 was not decoded by the bipartite structural baseline; keep it as proof debt, not evidence.",
+      "legal_access_model": "unlabeled adjacency matrix with explicit CFI gadget-family promise",
+      "recovers_global_twist": false,
+      "shuffled": true,
+      "status": "bipartite-structural-decoder-proof-debt",
+      "twisted_decode": {
+        "ambiguity": "ambiguous-edge-copy-pairing: Edge-copy twin signatures are not canonical size-two pairs. Observed group sizes: [4, 4, 4].; ambiguous-edge-copy-pairing: Edge-copy twin signatures are not canonical size-two pairs. Observed group sizes: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1].",
+        "bipartition_sizes": [
+          16,
+          12
+        ],
+        "edge_copy_vertex_count": 0,
+        "edge_pair_count": 0,
+        "global_twist_parity": null,
+        "inferred_base_degree_sequence": [],
+        "interpretation": "ambiguous-edge-copy-pairing: Edge-copy twin signatures are not canonical size-two pairs. Observed group sizes: [4, 4, 4].; ambiguous-edge-copy-pairing: Edge-copy twin signatures are not canonical size-two pairs. Observed group sizes: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1].",
+        "local_parities": [],
+        "middle_vertex_count": 0,
+        "selected_middle_side": null,
+        "status": "bipartite-cfi-decoder-failed",
+        "success": false,
+        "vertex_count": 28,
+        "vertex_gadget_count": 0
+      },
+      "untwisted_decode": {
+        "ambiguity": "ambiguous-edge-copy-pairing: Edge-copy twin signatures are not canonical size-two pairs. Observed group sizes: [4, 4, 4].; ambiguous-edge-copy-pairing: Edge-copy twin signatures are not canonical size-two pairs. Observed group sizes: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1].",
+        "bipartition_sizes": [
+          16,
+          12
+        ],
+        "edge_copy_vertex_count": 0,
+        "edge_pair_count": 0,
+        "global_twist_parity": null,
+        "inferred_base_degree_sequence": [],
+        "interpretation": "ambiguous-edge-copy-pairing: Edge-copy twin signatures are not canonical size-two pairs. Observed group sizes: [4, 4, 4].; ambiguous-edge-copy-pairing: Edge-copy twin signatures are not canonical size-two pairs. Observed group sizes: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1].",
+        "local_parities": [],
+        "middle_vertex_count": 0,
+        "selected_middle_side": null,
+        "status": "bipartite-cfi-decoder-failed",
+        "success": false,
+        "vertex_count": 28,
+        "vertex_gadget_count": 0
+      }
+    },
+    {
+      "base": {
+        "construction_note": "Single-edge twist in a CFI parity gadget audited through bipartition reconstruction.",
+        "degree_separated": true,
+        "degree_sequence": [
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3
+        ],
+        "description": "Mobius ladder M8 cubic base",
+        "edge_count": 12,
+        "id": "mobius-ladder-8",
+        "twist_edge": [
+          0,
+          1
+        ],
+        "vertex_count": 8
+      },
+      "cfi_vertex_count": 56,
+      "interpretation": "CFI base mobius-ladder-8 has global twist parity classically recovered from bipartition and gadget structure under the explicit CFI-gadget promise.",
+      "legal_access_model": "unlabeled adjacency matrix with explicit CFI gadget-family promise",
+      "recovers_global_twist": true,
+      "shuffled": true,
+      "status": "dequantized-by-bipartite-structural-cfi-decoder",
+      "twisted_decode": {
+        "ambiguity": "none",
+        "bipartition_sizes": [
+          24,
+          32
+        ],
+        "edge_copy_vertex_count": 24,
+        "edge_pair_count": 12,
+        "global_twist_parity": 1,
+        "inferred_base_degree_sequence": [
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3
+        ],
+        "interpretation": "Recovered CFI global twist parity from the bipartition, edge-copy twin signatures, and vertex-gadget parity profiles without assuming degree separation.",
+        "local_parities": [
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "middle_vertex_count": 32,
+        "selected_middle_side": 1,
+        "status": "decoded-bipartite-global-twist-parity",
+        "success": true,
+        "vertex_count": 56,
+        "vertex_gadget_count": 8
+      },
+      "untwisted_decode": {
+        "ambiguity": "none",
+        "bipartition_sizes": [
+          24,
+          32
+        ],
+        "edge_copy_vertex_count": 24,
+        "edge_pair_count": 12,
+        "global_twist_parity": 0,
+        "inferred_base_degree_sequence": [
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3
+        ],
+        "interpretation": "Recovered CFI global twist parity from the bipartition, edge-copy twin signatures, and vertex-gadget parity profiles without assuming degree separation.",
+        "local_parities": [
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "middle_vertex_count": 32,
+        "selected_middle_side": 1,
+        "status": "decoded-bipartite-global-twist-parity",
+        "success": true,
+        "vertex_count": 56,
+        "vertex_gadget_count": 8
+      }
+    },
+    {
+      "base": {
+        "construction_note": "Single-edge twist in a CFI parity gadget audited through bipartition reconstruction.",
+        "degree_separated": true,
+        "degree_sequence": [
+          3,
+          3,
+          3,
+          3,
+          3,
+          5,
+          5,
+          5
+        ],
+        "description": "Degree-separated complete bipartite K3,5 base",
+        "edge_count": 15,
+        "id": "complete-bipartite-3-5",
+        "twist_edge": [
+          0,
+          3
+        ],
+        "vertex_count": 8
+      },
+      "cfi_vertex_count": 98,
+      "interpretation": "CFI base complete-bipartite-3-5 has global twist parity classically recovered from bipartition and gadget structure under the explicit CFI-gadget promise.",
+      "legal_access_model": "unlabeled adjacency matrix with explicit CFI gadget-family promise",
+      "recovers_global_twist": true,
+      "shuffled": true,
+      "status": "dequantized-by-bipartite-structural-cfi-decoder",
+      "twisted_decode": {
+        "ambiguity": "none",
+        "bipartition_sizes": [
+          68,
+          30
+        ],
+        "edge_copy_vertex_count": 30,
+        "edge_pair_count": 15,
+        "global_twist_parity": 1,
+        "inferred_base_degree_sequence": [
+          3,
+          3,
+          3,
+          3,
+          3,
+          5,
+          5,
+          5
+        ],
+        "interpretation": "Recovered CFI global twist parity from the bipartition, edge-copy twin signatures, and vertex-gadget parity profiles without assuming degree separation.",
+        "local_parities": [
+          1,
+          1,
+          0,
+          0,
+          1,
+          0,
+          1,
+          1
+        ],
+        "middle_vertex_count": 68,
+        "selected_middle_side": 0,
+        "status": "decoded-bipartite-global-twist-parity",
+        "success": true,
+        "vertex_count": 98,
+        "vertex_gadget_count": 8
+      },
+      "untwisted_decode": {
+        "ambiguity": "none",
+        "bipartition_sizes": [
+          68,
+          30
+        ],
+        "edge_copy_vertex_count": 30,
+        "edge_pair_count": 15,
+        "global_twist_parity": 0,
+        "inferred_base_degree_sequence": [
+          3,
+          3,
+          3,
+          3,
+          3,
+          5,
+          5,
+          5
+        ],
+        "interpretation": "Recovered CFI global twist parity from the bipartition, edge-copy twin signatures, and vertex-gadget parity profiles without assuming degree separation.",
+        "local_parities": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          1,
+          1,
+          0
+        ],
+        "middle_vertex_count": 68,
+        "selected_middle_side": 0,
+        "status": "decoded-bipartite-global-twist-parity",
+        "success": true,
+        "vertex_count": 98,
+        "vertex_gadget_count": 8
+      }
+    },
+    {
+      "base": {
+        "construction_note": "Single-edge twist in a CFI parity gadget audited through bipartition reconstruction.",
+        "degree_separated": false,
+        "degree_sequence": [
+          3,
+          3,
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        "description": "Triangular prism plus degree-4 hub; middle degree 4 collides with 3-3 edge-copy degree",
+        "edge_count": 13,
+        "id": "prism-degree4-hub",
+        "twist_edge": [
+          0,
+          1
+        ],
+        "vertex_count": 7
+      },
+      "cfi_vertex_count": 74,
+      "interpretation": "CFI base prism-degree4-hub has global twist parity classically recovered from bipartition and gadget structure under the explicit CFI-gadget promise.",
+      "legal_access_model": "unlabeled adjacency matrix with explicit CFI gadget-family promise",
+      "recovers_global_twist": true,
+      "shuffled": true,
+      "status": "dequantized-by-bipartite-structural-cfi-decoder",
+      "twisted_decode": {
+        "ambiguity": "none",
+        "bipartition_sizes": [
+          26,
+          48
+        ],
+        "edge_copy_vertex_count": 26,
+        "edge_pair_count": 13,
+        "global_twist_parity": 1,
+        "inferred_base_degree_sequence": [
+          3,
+          3,
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        "interpretation": "Recovered CFI global twist parity from the bipartition, edge-copy twin signatures, and vertex-gadget parity profiles without assuming degree separation.",
+        "local_parities": [
+          1,
+          1,
+          1,
+          1,
+          0,
+          0,
+          1
+        ],
+        "middle_vertex_count": 48,
+        "selected_middle_side": 1,
+        "status": "decoded-bipartite-global-twist-parity",
+        "success": true,
+        "vertex_count": 74,
+        "vertex_gadget_count": 7
+      },
+      "untwisted_decode": {
+        "ambiguity": "none",
+        "bipartition_sizes": [
+          48,
+          26
+        ],
+        "edge_copy_vertex_count": 26,
+        "edge_pair_count": 13,
+        "global_twist_parity": 0,
+        "inferred_base_degree_sequence": [
+          3,
+          3,
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        "interpretation": "Recovered CFI global twist parity from the bipartition, edge-copy twin signatures, and vertex-gadget parity profiles without assuming degree separation.",
+        "local_parities": [
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "middle_vertex_count": 48,
+        "selected_middle_side": 0,
+        "status": "decoded-bipartite-global-twist-parity",
+        "success": true,
+        "vertex_count": 74,
+        "vertex_gadget_count": 7
+      }
+    }
+  ],
+  "status": "cfi-family-dequantized-under-bipartite-gadget-promise",
+  "summary": "Ran bipartition-based CFI structural decoding on 4 row(s). 3 row(s) were dequantized under the gadget promise; 1 remain proof debt."
+}

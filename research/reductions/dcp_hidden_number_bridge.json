@@ -1,0 +1,232 @@
+{
+  "bridge_edges": [
+    {
+      "assumptions": [
+        "The public Fourier label k is uniform in Z_N.",
+        "Good registers are standard DCP phase qubits.",
+        "Bad registers allowed by the f=1 source contract are computational-basis states after label measurement."
+      ],
+      "consequence": "The exact f=1 contamination model attenuates this local score but does not adversarially bias its mean.",
+      "direction": "DCP state samples -> classical random examples",
+      "id": "EDGE-DCP-TO-RANDOM-COMPLEX-CHARACTER",
+      "literature_ids": [
+        "regev-lattice-dhsp-2003"
+      ],
+      "mapping": "Measure each register in a uniformly random X/Y basis; encode z as 2z for X and 2iz for Y.",
+      "proof_or_obstruction": "Conditioned on k, averaging the random basis gives E[y|k,good]=exp(2 pi i k d/N); a computational-basis bad qubit has E[y|k,bad]=0. Measurement is irreversible, so no reverse state-preparation reduction is claimed.",
+      "source_model": "independent random-label DCP phase states, including hidden computational-basis bad registers",
+      "status": "proved-one-way-measurement-channel",
+      "target_model": "uniform random examples (k,B,z) whose encoded observation has character mean exp(2 pi i k d/N)"
+    },
+    {
+      "assumptions": [
+        "eta < 1",
+        "independent registers",
+        "all N candidate frequencies are explicitly scored"
+      ],
+      "consequence": "DCP reflection recovery is information-theoretically sample efficient; the unresolved bottleneck is computation.",
+      "direction": "random examples -> exhaustive correlation decoder",
+      "id": "EDGE-RANDOM-CHARACTER-TO-EXHAUSTIVE-ML",
+      "literature_ids": [
+        "arxiv:1607.01842"
+      ],
+      "mapping": "Score every t in Z_N by Re sum_j y_j exp(-2 pi i k_j t/N) and output the maximum.",
+      "proof_or_obstruction": "Character orthogonality gives true-versus-false expected gap at least 1-eta. Hoeffding plus a union bound gives failure at most N exp(-m(1-eta)^2/32). Explicit scoring costs Omega(Nm).",
+      "source_model": "uniform random complex-character examples with signal attenuation at least 1-eta",
+      "status": "proved-polynomial-samples-exponential-time",
+      "target_model": "complete hidden-reflection recovery"
+    },
+    {
+      "assumptions": [
+        "None: the required chosen-query capability is absent."
+      ],
+      "consequence": "Goldreich-Levin, generic SFT, and chosen-multiplier HNP routines cannot be imported as DCP decoders.",
+      "direction": "attempted algorithm transfer",
+      "id": "EDGE-QUERY-SFT-TO-RANDOM-DCP",
+      "literature_ids": [
+        "arxiv:1607.01842"
+      ],
+      "mapping": "The attempted transfer substitutes random public labels for adaptively chosen correlated queries.",
+      "proof_or_obstruction": "The DCP source emits independent random labels and has no chosen-query operation. It cannot request k, k+h, unit vectors, short intervals, or repeated labels. The SFT literature identifies these algebraic query relations as essential.",
+      "source_model": "query-access significant Fourier transform with correlated chosen inputs",
+      "status": "access-invalid",
+      "target_model": "random-label DCP measurement records"
+    },
+    {
+      "assumptions": [
+        "A missing channel conversion would preserve inverse-polynomial advantage.",
+        "The conversion would use only random multipliers and polynomial resources."
+      ],
+      "consequence": "Hidden-number lattice attacks are baselines to test, not evidence that DCP is solved or hard.",
+      "direction": "proposed problem reduction",
+      "id": "EDGE-DCP-TO-CLASSICAL-HNP",
+      "literature_ids": [
+        "mvhp-2015-111",
+        "arxiv:1607.01842"
+      ],
+      "mapping": "Both models hide a modular product k d, but their observation channels and legal multiplier access differ.",
+      "proof_or_obstruction": "A quadrature outcome is a fresh stochastic bit and does not reveal a deterministic interval, MSB, or LSB of k d. No polynomial reduction in either direction is established.",
+      "source_model": "random-basis one-bit outcomes with cyclic complex-character mean",
+      "status": "unproved-structural-analogy",
+      "target_model": "classical hidden-number samples revealing deterministic approximate bits or intervals of k d mod N"
+    },
+    {
+      "assumptions": [
+        "A formal average-case reduction would be required for hardness transfer."
+      ],
+      "consequence": "Use LPN/LWE algorithms as idea sources while recording every model mismatch and refusing hardness claims.",
+      "direction": "hardness analogy",
+      "id": "EDGE-DCP-TO-LPN-LWE",
+      "literature_ids": [
+        "arxiv:1607.01842"
+      ],
+      "mapping": "All expose a hidden frequency through random noisy samples rather than chosen function queries.",
+      "proof_or_obstruction": "The ambient groups, noise channels, outputs, secret distributions, and verification procedures differ. The cited random-access SFT limitation does not prove DCP hardness.",
+      "source_model": "random examples of a noisy character over Z_(2^n)",
+      "status": "analogy-only-no-hardness-transfer",
+      "target_model": "LPN/LWE random-example learning"
+    }
+  ],
+  "claim_gate": {
+    "complete_lattice_composition_proved": false,
+    "exact_f1_sample_robustness_proved": true,
+    "hidden_number_reduction_proved": false,
+    "lpn_lwe_hardness_transfer_proved": false,
+    "polynomial_sample_recovery_proved": true,
+    "polynomial_time_decoder_proved": false,
+    "random_label_access_respected": true,
+    "reason": "The bridge proves a clean polynomial-sample theorem and exact contamination attenuation, but every known complete decoder still enumerates N frequencies or uses a stronger access model.",
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-07-14T20:07:22.857563+00:00",
+  "exact_moment_identities": {
+    "exhaustive_failure_bound": "N exp(-m(1-eta)^2/32)",
+    "false_score_expectation_f1": 0.0,
+    "false_score_expectation_uniform_label": 0.0,
+    "true_score_expectation_f1_lower_bound": "1-1/log2(N)",
+    "true_score_expectation_good": 1.0
+  },
+  "falsifiers_triggered": [
+    "Query-access SFT requires chosen correlated inputs that random-label DCP does not supply.",
+    "The exact sample theorem uses exhaustive scoring over N frequencies and therefore is not an efficient DCP decoder.",
+    "Hidden-number and LPN/LWE connections remain analogies until explicit channel reductions are proved.",
+    "Sample-level f=1 robustness does not establish robustness of a future compressed or collective decoder."
+  ],
+  "headline_metrics": {
+    "access_invalid_transfer_count": 1,
+    "analogy_only_edge_count": 2,
+    "bridge_edge_count": 5,
+    "complete_lattice_composition_count": 0,
+    "maximum_sample_count_over_n": 24.8125,
+    "polynomial_sample_certificate_count": 6,
+    "proved_exact_f1_sample_robustness_count": 1,
+    "proved_hnp_reduction_count": 0,
+    "proved_lpn_lwe_reduction_count": 0,
+    "proved_one_way_edge_count": 2,
+    "proved_polynomial_time_decoder_count": 0
+  },
+  "observation_model": {
+    "access_excluded": "chosen labels, repeated labels, coherent evaluator, truth table, verification oracle",
+    "bad_moment": "E[y|k,bad computational-basis state]=0",
+    "encoding": "y=2z for X and y=2iz for Y",
+    "good_moment": "E[y|k,good]=exp(2 pi i k d/N)",
+    "good_state": "|psi_(k,d)>=(|0>+exp(2 pi i k d/N)|1>)/sqrt(2), with uniform public k",
+    "measurement": "choose B uniformly from {X,Y}; observe z in {-1,+1}"
+  },
+  "proof_obligations": [
+    {
+      "claim": "Localize the hidden frequency in poly(log N) time and memory from random-label quadrature records.",
+      "falsifier": "The method hides an N-sized table, score oracle, preprocessing advice, or subexponential collimation cost.",
+      "id": "PO-DCP-RANDOM-LABEL-LOCALIZATION",
+      "success_criterion": "A uniform decoder avoids enumerating N frequencies and uses no chosen/repeated labels or evaluator."
+    },
+    {
+      "claim": "Convert DCP quadrature outcomes to a standard random-multiplier hidden-number observation model.",
+      "falsifier": "The conversion assumes deterministic bits, chosen multipliers, interval conditioning, or secret verification.",
+      "id": "PO-DCP-HNP-CHANNEL-REDUCTION",
+      "success_criterion": "A polynomial, advantage-preserving channel reduction with explicit modulus, noise, and success map."
+    },
+    {
+      "claim": "Lift sample-level contamination tolerance to an efficient full reflection decoder and Regev lattice composition.",
+      "falsifier": "Only the exhaustive decoder is robust, or an efficient decoder amplifies bad registers adversarially.",
+      "id": "PO-DCP-F1-END-TO-END-DECODER",
+      "success_criterion": "Polynomial resources and bounded error on every exact f=1 promised instance."
+    }
+  ],
+  "sample_certificates": [
+    {
+      "bad_register_rate_upper_bound": 0.03125,
+      "exhaustive_memory_class": "O(m) streaming scores only with N passes; Theta(N) for one-pass score table",
+      "exhaustive_time_class": "Theta(N m)=2^Theta(n)",
+      "modulus": 4294967296,
+      "n_bits": 32,
+      "sample_complexity_class": "O((log N + log(1/delta))/(1-eta)^2)",
+      "sample_count_over_n": 24.8125,
+      "sufficient_sample_count": 794,
+      "target_failure_probability": 0.3333333333333333,
+      "theorem_statement": "For independent f=1 DCP registers measured in random X/Y bases, exhaustive correlation returns d with failure at most 0.333333 using m=794 samples."
+    },
+    {
+      "bad_register_rate_upper_bound": 0.015625,
+      "exhaustive_memory_class": "O(m) streaming scores only with N passes; Theta(N) for one-pass score table",
+      "exhaustive_time_class": "Theta(N m)=2^Theta(n)",
+      "modulus": 18446744073709551616,
+      "n_bits": 64,
+      "sample_complexity_class": "O((log N + log(1/delta))/(1-eta)^2)",
+      "sample_count_over_n": 23.46875,
+      "sufficient_sample_count": 1502,
+      "target_failure_probability": 0.3333333333333333,
+      "theorem_statement": "For independent f=1 DCP registers measured in random X/Y bases, exhaustive correlation returns d with failure at most 0.333333 using m=1502 samples."
+    },
+    {
+      "bad_register_rate_upper_bound": 0.0078125,
+      "exhaustive_memory_class": "O(m) streaming scores only with N passes; Theta(N) for one-pass score table",
+      "exhaustive_time_class": "Theta(N m)=2^Theta(n)",
+      "modulus": 340282366920938463463374607431768211456,
+      "n_bits": 128,
+      "sample_complexity_class": "O((log N + log(1/delta))/(1-eta)^2)",
+      "sample_count_over_n": 22.8125,
+      "sufficient_sample_count": 2920,
+      "target_failure_probability": 0.3333333333333333,
+      "theorem_statement": "For independent f=1 DCP registers measured in random X/Y bases, exhaustive correlation returns d with failure at most 0.333333 using m=2920 samples."
+    },
+    {
+      "bad_register_rate_upper_bound": 0.00390625,
+      "exhaustive_memory_class": "O(m) streaming scores only with N passes; Theta(N) for one-pass score table",
+      "exhaustive_time_class": "Theta(N m)=2^Theta(n)",
+      "modulus": 115792089237316195423570985008687907853269984665640564039457584007913129639936,
+      "n_bits": 256,
+      "sample_complexity_class": "O((log N + log(1/delta))/(1-eta)^2)",
+      "sample_count_over_n": 22.49609375,
+      "sufficient_sample_count": 5759,
+      "target_failure_probability": 0.3333333333333333,
+      "theorem_statement": "For independent f=1 DCP registers measured in random X/Y bases, exhaustive correlation returns d with failure at most 0.333333 using m=5759 samples."
+    },
+    {
+      "bad_register_rate_upper_bound": 0.001953125,
+      "exhaustive_memory_class": "O(m) streaming scores only with N passes; Theta(N) for one-pass score table",
+      "exhaustive_time_class": "Theta(N m)=2^Theta(n)",
+      "modulus": 13407807929942597099574024998205846127479365820592393377723561443721764030073546976801874298166903427690031858186486050853753882811946569946433649006084096,
+      "n_bits": 512,
+      "sample_complexity_class": "O((log N + log(1/delta))/(1-eta)^2)",
+      "sample_count_over_n": 22.337890625,
+      "sufficient_sample_count": 11437,
+      "target_failure_probability": 0.3333333333333333,
+      "theorem_statement": "For independent f=1 DCP registers measured in random X/Y bases, exhaustive correlation returns d with failure at most 0.333333 using m=11437 samples."
+    },
+    {
+      "bad_register_rate_upper_bound": 0.0009765625,
+      "exhaustive_memory_class": "O(m) streaming scores only with N passes; Theta(N) for one-pass score table",
+      "exhaustive_time_class": "Theta(N m)=2^Theta(n)",
+      "modulus": 179769313486231590772930519078902473361797697894230657273430081157732675805500963132708477322407536021120113879871393357658789768814416622492847430639474124377767893424865485276302219601246094119453082952085005768838150682342462881473913110540827237163350510684586298239947245938479716304835356329624224137216,
+      "n_bits": 1024,
+      "sample_complexity_class": "O((log N + log(1/delta))/(1-eta)^2)",
+      "sample_count_over_n": 22.2587890625,
+      "sufficient_sample_count": 22793,
+      "target_failure_probability": 0.3333333333333333,
+      "theorem_statement": "For independent f=1 DCP registers measured in random X/Y bases, exhaustive correlation returns d with failure at most 0.333333 using m=22793 samples."
+    }
+  ],
+  "status": "sample-theorem-proved-computational-bridge-open",
+  "summary": "Classified 5 DCP/Fourier/HNP bridge edges and proved 6 scaling certificates for polynomial-sample exhaustive recovery under f=1 contamination; zero polynomial-time decoders or hardness reductions were established."
+}

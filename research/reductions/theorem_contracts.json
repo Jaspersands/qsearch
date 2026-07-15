@@ -1,0 +1,98 @@
+{
+  "contract_count": 3,
+  "contracts": [
+    {
+      "id": "THM-REGEV-USVP-TO-DCP-2003",
+      "limitations": [
+        "This is not a reduction from exact SVP or arbitrary approximation factors.",
+        "It supplies coset-state samples, not automatically a public reversible evaluator for a phase family.",
+        "The f=1 theorem permits arbitrary bad basis-state registers at probability up to 1/log N; a perfect-state sieve does not cover the theorem input.",
+        "Hardness does not transfer to a restricted easy dihedral or hidden-shift subfamily without another reduction."
+      ],
+      "literature_id": "regev-lattice-dhsp-2003",
+      "parameter_map": "In the improved proof choose prime p>n^(2+2f), M=2^(4n), and map the n-dimensional two-point instance to DCP modulus N=(2M)^n, hence log N=Theta(n^2). The f=1 approximation factor is Theta(n^2.5); the DCP input uses poly(log N) registers.",
+      "primary_url": "https://arxiv.org/abs/cs/0304005",
+      "provenance_status": "primary-source-latex-theorem-and-definition-verified",
+      "quantifier_scope": "Worst-case promised lattice instances in the stated approximation regime.",
+      "reduction_resources": "Quantum polynomial-time reduction with polynomially many target coset samples.",
+      "source_problem": "theta-n-2.5-unique-svp",
+      "source_promise": "The f=1 specialization of the paper's theorem: an n-dimensional lattice with a Theta(n^(1/2+2f))=Theta(n^2.5) unique-shortest-vector gap.",
+      "source_solution_recovered": "A vector satisfying the paper's unique-SVP approximation promise.",
+      "success_requirement": "Output d with probability poly(1/log N) and time poly(log N) under the DCP failure-parameter promise; the lattice routine then succeeds with inverse-polynomial probability and polynomial repetition.",
+      "target_access_supplied": [
+        "independent-coset-state-samples",
+        "quantum-state-input",
+        "adversarial-bad-registers-at-rate-1-over-logN-to-f"
+      ],
+      "target_group_or_domain": "Dihedral groups D_N with log N polynomially related to the lattice input size.",
+      "target_instances_supplied": "poly(log N) tensor-product registers with a common hidden slope d. Each register is a valid dihedral coset state with probability at least 1-1/(log N)^f and otherwise may be an arbitrary basis state |b,x|.",
+      "target_problem": "dihedral-coset-problem",
+      "target_solver_contract": "For f=1, output the common hidden slope d with probability poly(1/log N) in time poly(log N), despite per-register bad probability at most 1/log N. A perfect-state or restricted-family solver is insufficient.",
+      "theorem_locator": "arXiv source quantum_average.tex: theorem_svp near line 125; formal DCP definition near line 255; n_dimensional_2pp near line 285; improved_main_lattice_lemma near line 602",
+      "title": "Approximate unique-SVP from dihedral coset sampling",
+      "uniformity_and_advice": "Uniform construction from the lattice instance; no family-specific nonuniform advice."
+    },
+    {
+      "id": "CONSTRUCTION-GI-TO-HIDDEN-INVOLUTION-HSP",
+      "limitations": [
+        "Strong Fourier sampling is insufficient on the relevant hidden subgroups.",
+        "Solving a restricted graph family does not solve general graph isomorphism.",
+        "A separating observable must be implementable and decoded, not merely information-theoretically existent."
+      ],
+      "literature_id": "symmetric-defies-fourier-2005",
+      "parameter_map": "The target permutation degree and oracle evaluation cost are polynomial in graph size.",
+      "primary_url": "https://arxiv.org/abs/quant-ph/0501056",
+      "provenance_status": "primary-source-described-standard-reduction",
+      "quantifier_scope": "All explicitly represented graph pairs, not only CFI, regular, or cospectral subfamilies.",
+      "reduction_resources": "Uniform polynomial-time classical/quantum oracle construction and classical verification.",
+      "source_problem": "graph-isomorphism-search",
+      "source_promise": "Two explicitly represented n-vertex graphs, with search output required on isomorphic inputs.",
+      "source_solution_recovered": "A vertex permutation mapping one input graph to the other.",
+      "success_requirement": "Bounded-error recovery on the full encoded graph-isomorphism promise.",
+      "target_access_supplied": [
+        "coherent-hiding-function-evaluation",
+        "coset-state-preparation"
+      ],
+      "target_group_or_domain": "The graph-isomorphism wreath-product/embedded symmetric-group construction.",
+      "target_instances_supplied": "A coherently evaluable hiding function whose hidden subgroup encodes an isomorphism as an involution.",
+      "target_problem": "graph-isomorphism-hidden-involution-hsp",
+      "target_solver_contract": "Recover enough of the hidden subgroup on every encoded graph pair to output and verify an isomorphism.",
+      "theorem_locator": "Graph-isomorphism-relevant hidden subgroup construction discussed in the paper",
+      "title": "Graph isomorphism as a hidden-involution subgroup problem",
+      "uniformity_and_advice": "Uniformly constructed from the two input graphs with no graph-family advice."
+    },
+    {
+      "id": "CONSTRUCTION-CODE-EQUIVALENCE-TO-NONABELIAN-HSP",
+      "limitations": [
+        "Many structured families are classically resolved by support splitting or stronger invariants.",
+        "Hardness of measuring a coset state is not evidence that the underlying code family is classically hard.",
+        "A solver for a restricted code family does not establish a route from general code equivalence."
+      ],
+      "literature_id": "code-equivalence-fourier-2011",
+      "parameter_map": "Group representation and oracle evaluation are polynomial in n, k, and log q.",
+      "primary_url": "https://arxiv.org/abs/1111.4382",
+      "provenance_status": "primary-source-construction",
+      "quantifier_scope": "The stated search code-equivalence problem, not only a selected algebraic code family.",
+      "reduction_resources": "Uniform polynomial-time group-action oracle construction plus linear-algebraic decoding.",
+      "source_problem": "linear-code-equivalence-search",
+      "source_promise": "Two full-rank generator matrices M and M' for equivalent q-ary linear codes, with M'=SMP.",
+      "source_solution_recovered": "A permutation P, and then S by polynomial-time linear algebra.",
+      "success_requirement": "Bounded-error recovery on every promised equivalent code pair in the claimed scope.",
+      "target_access_supplied": [
+        "coherent-hiding-function-evaluation",
+        "coset-state-preparation"
+      ],
+      "target_group_or_domain": "The row-operation and coordinate-permutation group action, converted to its standard hidden-subgroup form.",
+      "target_instances_supplied": "A coherently evaluable group-action hiding function derived from both generator matrices.",
+      "target_problem": "code-equivalence-nonabelian-hsp",
+      "target_solver_contract": "Recover the hidden subgroup/action element sufficiently to output the coordinate permutation P.",
+      "theorem_locator": "Introduction and the search code-equivalence hidden-subgroup formulation",
+      "title": "Search code equivalence as a nonabelian hidden subgroup problem",
+      "uniformity_and_advice": "Uniform construction from M and M'; no private code-family advice."
+    }
+  ],
+  "created_at": "2026-07-14T18:47:33.230047+00:00",
+  "interpretation": "These contracts certify only the listed upstream reductions. Candidate-specific family and access-model bridges remain separate proof obligations.",
+  "kind": "primary-source-reduction-theorem-contract-catalog",
+  "status": "contracts-validated"
+}

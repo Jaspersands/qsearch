@@ -1,0 +1,181 @@
+{
+  "claim_gate": {
+    "full_regev_composition_proved": false,
+    "generic_path_history_rejection_applies_to_internal_update": false,
+    "internal_walk_consistency_certified": true,
+    "paired_endpoint_output_fidelity_proved": false,
+    "polynomial_resource_contract_proved": false,
+    "primary_source_complete": true,
+    "reason": "The source certifies an internally history-independent 0.2182 QRAQM walk, but its positive time and memory exponents are exponential and the audited source contains no paired-endpoint output-state theorem for Regev's matching composition.",
+    "speedup_claim_allowed": false
+  },
+  "conformance": {
+    "access_model": "QRAQM",
+    "algorithm_id": "BBSS-NEW-QW-02182",
+    "decision": "internally-coherent-but-resource-and-output-interface-incompatible",
+    "deterministic_partial_function_interface": false,
+    "deterministic_vertex_data_structure": true,
+    "full_regev_composition": false,
+    "internal_update_history_independent": true,
+    "marked_vertex_fraction_preserved": true,
+    "memory_exponent": 0.2182,
+    "missing_obligations": [
+      "polynomial-time and polynomial-memory density-one subset-sum solver",
+      "standard-circuit or explicitly charged memory-access implementation",
+      "canonical or aligned target-paired marked-witness output theorem",
+      "inverse-polynomial paired output-workspace fidelity with reversible cleanup",
+      "end-to-end Regev matching composition under the exact source distribution"
+    ],
+    "output_contract": "high-probability marked-vertex output",
+    "paired_endpoint_output_fidelity_theorem": false,
+    "polynomial_resource_contract": false,
+    "remaining_heuristics": "standard classical subset-sum heuristics",
+    "source_id": "arXiv:2002.05276",
+    "time_exponent": 0.2182,
+    "update_error_data_independent": true
+  },
+  "created_at": "2026-07-15T06:38:59.599051+00:00",
+  "falsifiers_triggered": [
+    "The claim that the repaired 0.2182 walk still has path-dependent internal updates is contradicted by the source.",
+    "A positive 0.2182 time exponent and equal memory exponent falsify a polynomial-resource contract.",
+    "A marked-vertex theorem does not establish a deterministic partial function or aligned paired output state.",
+    "Internal history independence does not by itself establish paired-endpoint workspace fidelity."
+  ],
+  "headline_metrics": {
+    "data_independent_update_error_certificate_count": 1,
+    "deterministic_partial_function_interface_count": 0,
+    "deterministic_vertex_structure_certificate_count": 1,
+    "full_regev_composition_count": 0,
+    "internal_history_independence_certificate_count": 1,
+    "marked_fraction_preservation_certificate_count": 1,
+    "missing_source_claim_count": 0,
+    "paired_endpoint_output_fidelity_theorem_count": 0,
+    "polynomial_resource_contract_count": 0,
+    "positive_exponential_memory_count": 1,
+    "positive_exponential_time_count": 1,
+    "primary_source_claim_count": 9,
+    "qraqm_required_count": 1,
+    "verified_source_claim_count": 9
+  },
+  "source": {
+    "audit_method": "regex conformance checks over cached primary-source LaTeX",
+    "id": "arXiv:2002.05276",
+    "local_root": "/Users/jaspersands/Desktop/quantum algorithm search/research/literature_cache/2002.05276_source",
+    "url": "https://arxiv.org/abs/2002.05276"
+  },
+  "source_claims": [
+    {
+      "claim": "The repaired quantum walk has time and memory exponent 0.2182.",
+      "claim_id": "QW-02182-TIME-AND-MEMORY",
+      "evidence_sha256": "7288e3529a5963fdf658da1ef37d3fc0e508c11a69a6f6278d8afa064c6103ed",
+      "line_numbers": [
+        312
+      ],
+      "missing_patterns": [],
+      "relevance": "It is an exponential-resource baseline, not a polynomial partial solver.",
+      "source_file": "sauvetage.tex",
+      "verified": true
+    },
+    {
+      "claim": "The 0.2182 walk uses quantum-accessible quantum memory.",
+      "claim_id": "QW-QRAQM-ACCESS-MODEL",
+      "evidence_sha256": "4ff0c2a591ada81299f53422d2c49cdc55ce81dd86c4c1f9a64a94be861c20cf",
+      "line_numbers": [
+        19,
+        80
+      ],
+      "missing_patterns": [],
+      "relevance": "QRAQM must be charged explicitly in any DCP composition claim.",
+      "source_file": "intro.tex",
+      "verified": true
+    },
+    {
+      "claim": "The 0.218 variant removes the earlier quantum-walk update heuristic.",
+      "claim_id": "QW-UPDATE-HEURISTIC-REMOVED",
+      "evidence_sha256": "e9d2c337b130d55340f396704229ae9d773240fdb9e995d0629125554d1c9c35",
+      "line_numbers": [
+        38
+      ],
+      "missing_patterns": [],
+      "relevance": "Generic path-dependent-update objections do not apply to the repaired variant.",
+      "source_file": "intro.tex",
+      "verified": true
+    },
+    {
+      "claim": "The repaired update and data-structure transition are history-independent.",
+      "claim_id": "QW-HISTORY-INDEPENDENT-UPDATE",
+      "evidence_sha256": "51f540836fb4182dfe9a8cd9d40e386b291fbbfb0822977d08fb93a776287d4f",
+      "line_numbers": [
+        173,
+        176
+      ],
+      "missing_patterns": [],
+      "relevance": "This certifies internal walk consistency, not paired output-state fidelity.",
+      "source_file": "sauvetage.tex",
+      "verified": true
+    },
+    {
+      "claim": "The update error is data-independent and can be exponentially suppressed.",
+      "claim_id": "QW-DATA-INDEPENDENT-ERROR",
+      "evidence_sha256": "23bef30342cd6a4d5d54e4ab5537ddbdd532dc376ea90395bfb5cabb3ca15a3c",
+      "line_numbers": [
+        182,
+        198
+      ],
+      "missing_patterns": [],
+      "relevance": "The internal approximate walk admits the paper's hybrid-error argument.",
+      "source_file": "sauvetage.tex",
+      "verified": true
+    },
+    {
+      "claim": "The skip-list to bucket-modulus-list map is deterministic.",
+      "claim_id": "QW-DETERMINISTIC-BUCKET-MAPPING",
+      "evidence_sha256": "1aee0c16d3d5217ab0850084b19a41e7eeaa741aef6d03ee153492dd5e943e56",
+      "line_numbers": [
+        57
+      ],
+      "missing_patterns": [],
+      "relevance": "The vertex data structure is a function of its current list state.",
+      "source_file": "sauvetage.tex",
+      "verified": true
+    },
+    {
+      "claim": "Most marked vertices survive the repaired data structure on the stated random-instance model.",
+      "claim_id": "QW-MARKED-FRACTION-PRESERVED",
+      "evidence_sha256": "36a775671f487714b7420989c4eace491696a1dbe8de9c11f6fd29bd1443d0a3",
+      "line_numbers": [
+        205
+      ],
+      "missing_patterns": [],
+      "relevance": "Removing the update heuristic does not erase the walk's marked set asymptotically.",
+      "source_file": "sauvetage.tex",
+      "verified": true
+    },
+    {
+      "claim": "The invoked quantum-walk theorem outputs a marked vertex.",
+      "claim_id": "QW-MARKED-VERTEX-OUTPUT",
+      "evidence_sha256": "25c49a79603434b3d894a1c42f71546f5f848433107b073554cedcfcbcba0b82",
+      "line_numbers": [
+        161
+      ],
+      "missing_patterns": [],
+      "relevance": "A marked-vertex guarantee is weaker than a canonical coherent endpoint-output map.",
+      "source_file": "previous.tex",
+      "verified": true
+    },
+    {
+      "claim": "The 0.218 result still relies on standard classical subset-sum heuristics.",
+      "claim_id": "QW-STANDARD-SUBSET-SUM-HEURISTICS-REMAIN",
+      "evidence_sha256": "b6c5bf1aca3991dffc631c853d08070e36bdee463b293da165c5b2fef0ac0dfe",
+      "line_numbers": [
+        159
+      ],
+      "missing_patterns": [],
+      "relevance": "The resource estimate is not an unconditional worst-case theorem.",
+      "source_file": "qsubsum.tex",
+      "verified": true
+    }
+  ],
+  "status": "source-certified-composition-blocked",
+  "summary": "Verified 9/9 primary-source claims. The 0.2182 walk repairs internal history dependence, but remains exponential, uses QRAQM, and has no audited paired-endpoint output fidelity theorem or complete Regev composition."
+}

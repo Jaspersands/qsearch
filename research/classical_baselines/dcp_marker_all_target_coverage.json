@@ -1,0 +1,608 @@
+{
+  "census_contract": {
+    "assignments": "the entire Boolean cube in Gray-code order",
+    "coverage": "a target is covered iff at least one of all its witnesses lies in the fixed-depth one-step tree",
+    "geometry": "exact integer-scaled Gram-Schmidt projections of target-independent reduced kernels",
+    "labels": "independent uniform public labels for each census row",
+    "targets": "every target modulo 2^n, with exact legal-target conditioning"
+  },
+  "claim_gate": {
+    "all_legal_targets_exact_for_each_label_row": true,
+    "fixed_depth_source_coverage_bound_proved": false,
+    "general_affine_cvp_lower_bound_proved": false,
+    "random_label_scaling_is_asymptotic_theorem": false,
+    "reason": "Each finite label row has exact all-target coverage. Extrapolation over random labels and growing n still requires a theorem and says nothing about other affine decoders.",
+    "speedup_claim_allowed": false,
+    "target_sampling_noise_eliminated": true
+  },
+  "created_at": "2026-07-15T10:50:37.193757+00:00",
+  "falsifiers_triggered": [
+    "Every target and every witness assignment is included for each sampled label row.",
+    "Target independence of both kernel matrices is checked directly.",
+    "Exact rational Gram-Schmidt rows are converted to equivalent integer projection tests.",
+    "A target counts as solved only when at least one actual witness satisfies the branch grammar.",
+    "Finite exact coverage over targets is not promoted to an asymptotic law over random labels."
+  ],
+  "headline_metrics": {
+    "exact_all_target_coverage_census_count": 12,
+    "exact_assignment_count": 16711680,
+    "exact_legal_target_count": 4081274,
+    "full_boolean_cube_failure_count": 0,
+    "maximum_branch_depth": 2,
+    "maximum_n_bits": 20,
+    "polynomial_marker_aware_decoder_count": 0,
+    "proved_asymptotic_fixed_depth_coverage_bound_count": 0,
+    "row_count": 4,
+    "tail_mean_carry_max_depth_coverage": 0.9516438429432461,
+    "tail_mean_carry_no_one_step_target_fraction": 0.0,
+    "tail_mean_standard_max_depth_coverage": 0.9039562807239387,
+    "tail_mean_standard_no_one_step_target_fraction": 9.294266314208818e-05,
+    "target_independent_kernel_failure_count": 0,
+    "target_independent_rounding_identity_theorem_count": 1,
+    "trial_count": 12
+  },
+  "rows": [
+    {
+      "exact_assignment_count": 196608,
+      "exact_legal_target_count": 48194,
+      "finite_row_is_asymptotic_coverage_theorem": false,
+      "maximum_carry_max_depth_coverage": 0.9998770592574379,
+      "maximum_standard_max_depth_coverage": 0.99704942217851,
+      "mean_carry_legal_coverage_by_depth": [
+        0.7732637138616772,
+        0.9832896598102927,
+        0.9990825692355335
+      ],
+      "mean_carry_no_one_step_target_fraction": 0.0,
+      "mean_standard_legal_coverage_by_depth": [
+        0.5473975241137885,
+        0.9497228021559739,
+        0.9958849429069753
+      ],
+      "mean_standard_no_one_step_target_fraction": 0.0,
+      "minimum_carry_max_depth_coverage": 0.9976214321482223,
+      "minimum_standard_max_depth_coverage": 0.9939909864797196,
+      "n_bits": 14,
+      "register_offset": 2,
+      "trial_count": 3
+    },
+    {
+      "exact_assignment_count": 786432,
+      "exact_legal_target_count": 191315,
+      "finite_row_is_asymptotic_coverage_theorem": false,
+      "maximum_carry_max_depth_coverage": 0.9972638942868247,
+      "maximum_standard_max_depth_coverage": 0.9975612846012542,
+      "mean_carry_legal_coverage_by_depth": [
+        0.6120987980856709,
+        0.9556367630987918,
+        0.9960420970375359
+      ],
+      "mean_carry_no_one_step_target_fraction": 0.0,
+      "mean_standard_legal_coverage_by_depth": [
+        0.4434184874434867,
+        0.9104263178623317,
+        0.9916093008427055
+      ],
+      "mean_standard_no_one_step_target_fraction": 0.0,
+      "minimum_carry_max_depth_coverage": 0.9942670968954607,
+      "minimum_standard_max_depth_coverage": 0.9869051721437299,
+      "n_bits": 16,
+      "register_offset": 2,
+      "trial_count": 3
+    },
+    {
+      "exact_assignment_count": 3145728,
+      "exact_legal_target_count": 764769,
+      "finite_row_is_asymptotic_coverage_theorem": false,
+      "maximum_carry_max_depth_coverage": 0.9910408245278113,
+      "maximum_standard_max_depth_coverage": 0.9751230061965972,
+      "mean_carry_legal_coverage_by_depth": [
+        0.39330942017264214,
+        0.8881691469273182,
+        0.9872326948312646
+      ],
+      "mean_carry_no_one_step_target_fraction": 2.593004592211133e-06,
+      "mean_standard_legal_coverage_by_depth": [
+        0.228744567894144,
+        0.7820710647925472,
+        0.970810928268639
+      ],
+      "mean_standard_no_one_step_target_fraction": 8.138000001074734e-05,
+      "minimum_carry_max_depth_coverage": 0.9827614054024243,
+      "minimum_standard_max_depth_coverage": 0.9655623060108439,
+      "n_bits": 18,
+      "register_offset": 2,
+      "trial_count": 3
+    },
+    {
+      "exact_assignment_count": 12582912,
+      "exact_legal_target_count": 3076996,
+      "finite_row_is_asymptotic_coverage_theorem": false,
+      "maximum_carry_max_depth_coverage": 0.9892954654646444,
+      "maximum_standard_max_depth_coverage": 0.9183974387616537,
+      "mean_carry_legal_coverage_by_depth": [
+        0.3028038914714965,
+        0.7669846054115319,
+        0.9516438429432461
+      ],
+      "mean_carry_no_one_step_target_fraction": 0.0,
+      "mean_standard_legal_coverage_by_depth": [
+        0.09523163283139095,
+        0.5478280012968791,
+        0.9039562807239387
+      ],
+      "mean_standard_no_one_step_target_fraction": 9.294266314208818e-05,
+      "minimum_carry_max_depth_coverage": 0.8780624598169706,
+      "minimum_standard_max_depth_coverage": 0.8918687722889072,
+      "n_bits": 20,
+      "register_offset": 2,
+      "trial_count": 3
+    }
+  ],
+  "status": "exact-all-target-fixed-depth-coverage-census-asymptotic-label-law-open",
+  "summary": "Enumerated 16711680 assignments and 4081274 legal targets across 12 label rows through n=20; tail depth-2 standard/carry coverage=0.903956/0.951644; no random-label scaling theorem.",
+  "theorem": {
+    "all_target_census_exact_for_each_label_row": true,
+    "random_label_scaling_theorem": false,
+    "target_independent_kernel": true,
+    "witness_offset_identity": "offset_i=-round(<1-2x,b_i*>/||b_i*||^2)"
+  },
+  "trials": [
+    {
+      "assignment_count": 65536,
+      "carry_covered_target_count_by_depth": [
+        12192,
+        15660,
+        15946
+      ],
+      "carry_legal_coverage_by_depth": [
+        0.7643887147335423,
+        0.9818181818181818,
+        0.9997492163009405
+      ],
+      "carry_median_minimum_deviation_depth": 0.0,
+      "carry_no_one_step_witness_target_count": 0,
+      "constrained_low_bits": 4,
+      "full_boolean_cube_enumerated": true,
+      "legal_target_count": 15950,
+      "maximum_branch_depth": 2,
+      "mean_witness_multiplicity_over_legal_targets": 4.10884012539185,
+      "n_bits": 14,
+      "register_count": 16,
+      "register_offset": 2,
+      "standard_covered_target_count_by_depth": [
+        9730,
+        15224,
+        15896
+      ],
+      "standard_legal_coverage_by_depth": [
+        0.6100313479623825,
+        0.9544827586206897,
+        0.996614420062696
+      ],
+      "standard_median_minimum_deviation_depth": 0.0,
+      "standard_no_one_step_witness_target_count": 0,
+      "target_count": 16384,
+      "target_independent_kernel_verified": true,
+      "trial_index": 0
+    },
+    {
+      "assignment_count": 65536,
+      "carry_covered_target_count_by_depth": [
+        11177,
+        15552,
+        15938
+      ],
+      "carry_legal_coverage_by_depth": [
+        0.6996119178768152,
+        0.9734601902854282,
+        0.9976214321482223
+      ],
+      "carry_median_minimum_deviation_depth": 0.0,
+      "carry_no_one_step_witness_target_count": 0,
+      "constrained_low_bits": 4,
+      "full_boolean_cube_enumerated": true,
+      "legal_target_count": 15976,
+      "maximum_branch_depth": 2,
+      "mean_witness_multiplicity_over_legal_targets": 4.102153229844767,
+      "n_bits": 14,
+      "register_count": 16,
+      "register_offset": 2,
+      "standard_covered_target_count_by_depth": [
+        8546,
+        15032,
+        15880
+      ],
+      "standard_legal_coverage_by_depth": [
+        0.5349273910866299,
+        0.9409113670505759,
+        0.9939909864797196
+      ],
+      "standard_median_minimum_deviation_depth": 0.0,
+      "standard_no_one_step_witness_target_count": 0,
+      "target_count": 16384,
+      "target_independent_kernel_verified": true,
+      "trial_index": 1
+    },
+    {
+      "assignment_count": 65536,
+      "carry_covered_target_count_by_depth": [
+        13922,
+        16180,
+        16266
+      ],
+      "carry_legal_coverage_by_depth": [
+        0.8557905089746742,
+        0.9945906073272682,
+        0.9998770592574379
+      ],
+      "carry_median_minimum_deviation_depth": 0.0,
+      "carry_no_one_step_witness_target_count": 0,
+      "constrained_low_bits": 4,
+      "full_boolean_cube_enumerated": true,
+      "legal_target_count": 16268,
+      "maximum_branch_depth": 2,
+      "mean_witness_multiplicity_over_legal_targets": 4.028522252274404,
+      "n_bits": 14,
+      "register_count": 16,
+      "register_offset": 2,
+      "standard_covered_target_count_by_depth": [
+        8089,
+        15516,
+        16220
+      ],
+      "standard_legal_coverage_by_depth": [
+        0.4972338332923531,
+        0.953774280796656,
+        0.99704942217851
+      ],
+      "standard_median_minimum_deviation_depth": 1.0,
+      "standard_no_one_step_witness_target_count": 0,
+      "target_count": 16384,
+      "target_independent_kernel_verified": true,
+      "trial_index": 2
+    },
+    {
+      "assignment_count": 262144,
+      "carry_covered_target_count_by_depth": [
+        37252,
+        60272,
+        63476
+      ],
+      "carry_legal_coverage_by_depth": [
+        0.5835030230882491,
+        0.9440806992262147,
+        0.9942670968954607
+      ],
+      "carry_median_minimum_deviation_depth": 0.0,
+      "carry_no_one_step_witness_target_count": 0,
+      "constrained_low_bits": 4,
+      "full_boolean_cube_enumerated": true,
+      "legal_target_count": 63842,
+      "maximum_branch_depth": 2,
+      "mean_witness_multiplicity_over_legal_targets": 4.106137025782401,
+      "n_bits": 16,
+      "register_count": 18,
+      "register_offset": 2,
+      "standard_covered_target_count_by_depth": [
+        22832,
+        56336,
+        63006
+      ],
+      "standard_legal_coverage_by_depth": [
+        0.3576329062372733,
+        0.8824284953478901,
+        0.9869051721437299
+      ],
+      "standard_median_minimum_deviation_depth": 1.0,
+      "standard_no_one_step_witness_target_count": 0,
+      "target_count": 65536,
+      "target_independent_kernel_verified": true,
+      "trial_index": 0
+    },
+    {
+      "assignment_count": 262144,
+      "carry_covered_target_count_by_depth": [
+        40879,
+        60949,
+        62933
+      ],
+      "carry_legal_coverage_by_depth": [
+        0.6473522518527902,
+        0.9651770444036233,
+        0.9965952999303224
+      ],
+      "carry_median_minimum_deviation_depth": 0.0,
+      "carry_no_one_step_witness_target_count": 0,
+      "constrained_low_bits": 4,
+      "full_boolean_cube_enumerated": true,
+      "legal_target_count": 63148,
+      "maximum_branch_depth": 2,
+      "mean_witness_multiplicity_over_legal_targets": 4.15126369797935,
+      "n_bits": 16,
+      "register_count": 18,
+      "register_offset": 2,
+      "standard_covered_target_count_by_depth": [
+        37285,
+        59838,
+        62994
+      ],
+      "standard_legal_coverage_by_depth": [
+        0.5904383353392031,
+        0.9475834547412428,
+        0.9975612846012542
+      ],
+      "standard_median_minimum_deviation_depth": 0.0,
+      "standard_no_one_step_witness_target_count": 0,
+      "target_count": 65536,
+      "target_independent_kernel_verified": true,
+      "trial_index": 1
+    },
+    {
+      "assignment_count": 262144,
+      "carry_covered_target_count_by_depth": [
+        38945,
+        61601,
+        64149
+      ],
+      "carry_legal_coverage_by_depth": [
+        0.6054411193159736,
+        0.9576525456665371,
+        0.9972638942868247
+      ],
+      "carry_median_minimum_deviation_depth": 0.0,
+      "carry_no_one_step_witness_target_count": 0,
+      "constrained_low_bits": 4,
+      "full_boolean_cube_enumerated": true,
+      "legal_target_count": 64325,
+      "maximum_branch_depth": 2,
+      "mean_witness_multiplicity_over_legal_targets": 4.075305091333075,
+      "n_bits": 16,
+      "register_count": 18,
+      "register_offset": 2,
+      "standard_covered_target_count_by_depth": [
+        24584,
+        57974,
+        63705
+      ],
+      "standard_legal_coverage_by_depth": [
+        0.38218422075398367,
+        0.9012670034978624,
+        0.9903614457831326
+      ],
+      "standard_median_minimum_deviation_depth": 1.0,
+      "standard_no_one_step_witness_target_count": 0,
+      "target_count": 65536,
+      "target_independent_kernel_verified": true,
+      "trial_index": 2
+    },
+    {
+      "assignment_count": 1048576,
+      "carry_covered_target_count_by_depth": [
+        85570,
+        219153,
+        249473
+      ],
+      "carry_legal_coverage_by_depth": [
+        0.3370901598982072,
+        0.8633203203479234,
+        0.9827614054024243
+      ],
+      "carry_median_minimum_deviation_depth": 1.0,
+      "carry_no_one_step_witness_target_count": 0,
+      "constrained_low_bits": 5,
+      "full_boolean_cube_enumerated": true,
+      "legal_target_count": 253849,
+      "maximum_branch_depth": 2,
+      "mean_witness_multiplicity_over_legal_targets": 4.130707625399352,
+      "n_bits": 18,
+      "register_count": 20,
+      "register_offset": 2,
+      "standard_covered_target_count_by_depth": [
+        59792,
+        200196,
+        247534
+      ],
+      "standard_legal_coverage_by_depth": [
+        0.23554160150325587,
+        0.7886420667404638,
+        0.9751230061965972
+      ],
+      "standard_median_minimum_deviation_depth": 1.0,
+      "standard_no_one_step_witness_target_count": 60,
+      "target_count": 262144,
+      "target_independent_kernel_verified": true,
+      "trial_index": 0
+    },
+    {
+      "assignment_count": 1048576,
+      "carry_covered_target_count_by_depth": [
+        95945,
+        227218,
+        253990
+      ],
+      "carry_legal_coverage_by_depth": [
+        0.3731787383995457,
+        0.8837659761495438,
+        0.9878958545635584
+      ],
+      "carry_median_minimum_deviation_depth": 1.0,
+      "carry_no_one_step_witness_target_count": 2,
+      "constrained_low_bits": 5,
+      "full_boolean_cube_enumerated": true,
+      "legal_target_count": 257102,
+      "maximum_branch_depth": 2,
+      "mean_witness_multiplicity_over_legal_targets": 4.078443574923571,
+      "n_bits": 18,
+      "register_count": 20,
+      "register_offset": 2,
+      "standard_covered_target_count_by_depth": [
+        55995,
+        195912,
+        248248
+      ],
+      "standard_legal_coverage_by_depth": [
+        0.21779293821129359,
+        0.7620010735039012,
+        0.9655623060108439
+      ],
+      "standard_median_minimum_deviation_depth": 1.0,
+      "standard_no_one_step_witness_target_count": 2,
+      "target_count": 262144,
+      "target_independent_kernel_verified": true,
+      "trial_index": 1
+    },
+    {
+      "assignment_count": 1048576,
+      "carry_covered_target_count_by_depth": [
+        119208,
+        232858,
+        251544
+      ],
+      "carry_legal_coverage_by_depth": [
+        0.4696593622201735,
+        0.9174211442844873,
+        0.9910408245278113
+      ],
+      "carry_median_minimum_deviation_depth": 1.0,
+      "carry_no_one_step_witness_target_count": 0,
+      "constrained_low_bits": 5,
+      "full_boolean_cube_enumerated": true,
+      "legal_target_count": 253818,
+      "maximum_branch_depth": 2,
+      "mean_witness_multiplicity_over_legal_targets": 4.13121212837545,
+      "n_bits": 18,
+      "register_count": 20,
+      "register_offset": 2,
+      "standard_covered_target_count_by_depth": [
+        59114,
+        201930,
+        246647
+      ],
+      "standard_legal_coverage_by_depth": [
+        0.2328991639678825,
+        0.7955700541332766,
+        0.971747472598476
+      ],
+      "standard_median_minimum_deviation_depth": 1.0,
+      "standard_no_one_step_witness_target_count": 0,
+      "target_count": 262144,
+      "target_independent_kernel_verified": true,
+      "trial_index": 2
+    },
+    {
+      "assignment_count": 4194304,
+      "carry_covered_target_count_by_depth": [
+        96546,
+        524174,
+        898646
+      ],
+      "carry_legal_coverage_by_depth": [
+        0.09433460811653226,
+        0.5121677632928882,
+        0.8780624598169706
+      ],
+      "carry_median_minimum_deviation_depth": 1.0,
+      "carry_no_one_step_witness_target_count": 0,
+      "constrained_low_bits": 5,
+      "full_boolean_cube_enumerated": true,
+      "legal_target_count": 1023442,
+      "maximum_branch_depth": 2,
+      "mean_witness_multiplicity_over_legal_targets": 4.098233216928756,
+      "n_bits": 20,
+      "register_count": 22,
+      "register_offset": 2,
+      "standard_covered_target_count_by_depth": [
+        94500,
+        553733,
+        922738
+      ],
+      "standard_legal_coverage_by_depth": [
+        0.09233547186845957,
+        0.541049712636378,
+        0.9016026311212555
+      ],
+      "standard_median_minimum_deviation_depth": 1.0,
+      "standard_no_one_step_witness_target_count": 178,
+      "target_count": 1048576,
+      "target_independent_kernel_verified": true,
+      "trial_index": 0
+    },
+    {
+      "assignment_count": 4194304,
+      "carry_covered_target_count_by_depth": [
+        402309,
+        913530,
+        1016709
+      ],
+      "carry_legal_coverage_by_depth": [
+        0.39078020246682377,
+        0.8873513601721997,
+        0.9875736035481233
+      ],
+      "carry_median_minimum_deviation_depth": 1.0,
+      "carry_no_one_step_witness_target_count": 0,
+      "constrained_low_bits": 5,
+      "full_boolean_cube_enumerated": true,
+      "legal_target_count": 1029502,
+      "maximum_branch_depth": 2,
+      "mean_witness_multiplicity_over_legal_targets": 4.074109618048338,
+      "n_bits": 20,
+      "register_count": 22,
+      "register_offset": 2,
+      "standard_covered_target_count_by_depth": [
+        97074,
+        579158,
+        945492
+      ],
+      "standard_legal_coverage_by_depth": [
+        0.09429219175873384,
+        0.5625613160537813,
+        0.9183974387616537
+      ],
+      "standard_median_minimum_deviation_depth": 1.0,
+      "standard_no_one_step_witness_target_count": 108,
+      "target_count": 1048576,
+      "target_independent_kernel_verified": true,
+      "trial_index": 1
+    },
+    {
+      "assignment_count": 4194304,
+      "carry_covered_target_count_by_depth": [
+        433478,
+        923116,
+        1013090
+      ],
+      "carry_legal_coverage_by_depth": [
+        0.4232968638311336,
+        0.9014346927695078,
+        0.9892954654646444
+      ],
+      "carry_median_minimum_deviation_depth": 1.0,
+      "carry_no_one_step_witness_target_count": 0,
+      "constrained_low_bits": 5,
+      "full_boolean_cube_enumerated": true,
+      "legal_target_count": 1024052,
+      "maximum_branch_depth": 2,
+      "mean_witness_multiplicity_over_legal_targets": 4.095792010561964,
+      "n_bits": 20,
+      "register_count": 22,
+      "register_offset": 2,
+      "standard_covered_target_count_by_depth": [
+        101450,
+        552858,
+        913320
+      ],
+      "standard_legal_coverage_by_depth": [
+        0.09906723486697941,
+        0.5398729752004781,
+        0.8918687722889072
+      ],
+      "standard_median_minimum_deviation_depth": 1.0,
+      "standard_no_one_step_witness_target_count": 0,
+      "target_count": 1048576,
+      "target_independent_kernel_verified": true,
+      "trial_index": 2
+    }
+  ]
+}

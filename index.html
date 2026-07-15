@@ -3,184 +3,234 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Q-Search Dashboard | Quantum Algorithm Discovery Engine</title>
-    <!-- Google Fonts -->
+    <title>Q-Search Research Lab</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Stylesheet -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&family=Lora:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <div class="glow-bg"></div>
-    <div class="container">
-        <!-- Header -->
-        <header>
-            <div class="logo-container">
-                <svg class="quantum-logo-svg" width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <rect x="4" y="4" width="40" height="40" stroke-dasharray="2 2" />
-                    <circle cx="24" cy="24" r="16" />
-                    <line x1="24" y1="4" x2="24" y2="44" stroke-dasharray="3 3" />
-                    <line x1="4" y1="24" x2="44" y2="24" stroke-dasharray="3 3" />
-                    <line x1="24" y1="24" x2="35" y2="13" stroke-width="2" />
-                    <polygon points="35,13 32,17 36,16" fill="currentColor" stroke="none" />
-                </svg>
+    <header class="topbar">
+        <div>
+            <p class="eyebrow">Quantum Algorithm Research Lab</p>
+            <h1>Q-Search</h1>
+            <p class="subtitle">A no-toy research cockpit for Shor-level algorithm discovery.</p>
+        </div>
+        <nav class="nav-links" aria-label="Research sections">
+            <a href="#verdict">Verdict</a>
+            <a href="#interventions">Interventions</a>
+            <a href="#leads">Candidates</a>
+            <a href="#experiments">Experiments</a>
+            <a href="#results">Results</a>
+            <a href="#dequantization">Dequantization</a>
+            <a href="#proof-status">Proof Status</a>
+            <a href="#negative-results">Negative Results</a>
+            <a href="#rejected-candidates">Rejected</a>
+            <a href="#proof-gate">Proof Gate</a>
+            <a href="#ontology">Ontology</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="verdict" class="hero">
+            <div class="hero-copy">
+                <p class="eyebrow">Core Redirection</p>
+                <h2>Stop searching tiny circuits. Build a research engine.</h2>
+                <p id="mission-text">Loading research mission...</p>
+            </div>
+            <div class="scoreboard" aria-label="Research artifact counts">
                 <div>
-                    <h1>Q-SEARCH</h1>
-                    <p class="subtitle">Autonomous Quantum Algorithm Discovery Engine</p>
+                    <span id="count-candidates">--</span>
+                    <label>proof-gated candidates</label>
+                </div>
+                <div>
+                    <span id="count-experiments">--</span>
+                    <label>falsifiable experiments</label>
+                </div>
+                <div>
+                    <span id="count-results">--</span>
+                    <label>experiment results</label>
+                </div>
+                <div>
+                    <span id="count-dequantization">--</span>
+                    <label>dequantization blockers</label>
+                </div>
+                <div>
+                    <span id="count-proof-status">--</span>
+                    <label>proof statuses</label>
+                </div>
+                <div>
+                    <span id="count-negative">--</span>
+                    <label>negative results</label>
+                </div>
+                <div>
+                    <span id="count-rejected">--</span>
+                    <label>rejected hypotheses</label>
+                </div>
+                <div>
+                    <span id="count-obligations">--</span>
+                    <label>hard proof obligations</label>
                 </div>
             </div>
-            <div class="status-indicator-wrapper">
-                <span class="bracket">[</span>
-                <div class="pulse-indicator" id="global-pulse"></div>
-                <span id="global-status-text">CONNECTING TO VM...</span>
-                <span class="bracket">]</span>
-            </div>
-        </header>
+        </section>
 
-        <!-- Dashboard Grid -->
-        <div class="dashboard-grid">
-            
-            <!-- LEFT PANEL: Active Search & Queue -->
-            <div class="left-panel">
-                <!-- Active Search Run -->
-                <section class="card glass live-search-section">
-                    <div class="card-header">
-                        <h2><i class="fa-solid fa-microchip pulse-icon"></i> Active Search State</h2>
-                        <span class="badge" id="active-badge">STANDBY</span>
-                    </div>
-                    <div id="no-active-run" class="empty-state">
-                        <i class="fa-solid fa-moon"></i>
-                        <p>Search loop is currently resting or in sleep cycle.</p>
-                        <p class="sub-text" id="sleep-countdown"></p>
-                    </div>
-                    <div id="active-run-details" class="run-details hidden">
-                        <h3 id="active-problem-name">BV with Global Phase</h3>
-                        <p id="active-description" class="run-description">Searching for a hidden bitstring s with a global phase offset...</p>
-                        
-                        <!-- Progress Stepper -->
-                        <div class="stepper">
-                            <div class="step" id="step-theorist">
-                                <div class="step-icon">01</div>
-                                <span>Theorist</span>
-                            </div>
-                            <div class="step-connector"></div>
-                            <div class="step" id="step-simulating">
-                                <div class="step-icon">02</div>
-                                <span>Simulator</span>
-                            </div>
-                            <div class="step-connector"></div>
-                            <div class="step" id="step-synthesizing">
-                                <div class="step-icon">03</div>
-                                <span>Synthesis</span>
-                            </div>
-                            <div class="step-connector"></div>
-                            <div class="step" id="step-analyzing">
-                                <div class="step-icon">04</div>
-                                <span>Analyzer</span>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Search Queue / Backlog -->
-                <section class="card glass queue-section">
-                    <div class="card-header">
-                        <h2><i class="fa-solid fa-list-ul"></i> Search Backlog</h2>
-                        <span class="item-count" id="queue-count">0 items</span>
-                    </div>
-                    <div id="queue-list" class="queue-list">
-                        <!-- Queue items injected here -->
-                    </div>
-                </section>
-            </div>
-
-            <!-- RIGHT PANEL: Search History -->
-            <div class="right-panel">
-                <section class="card glass history-section">
-                    <div class="card-header">
-                        <h2><i class="fa-solid fa-database"></i> Discovered Algorithms & Run Logs</h2>
-                        <span class="item-count" id="history-count">0 runs</span>
-                    </div>
-                    <div class="search-filters">
-                        <div class="search-box">
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                            <input type="text" id="history-search" placeholder="Filter by name, complexity, speedup...">
-                        </div>
-                    </div>
-                    <div id="history-list" class="history-list">
-                        <!-- History cards injected here -->
-                    </div>
-                </section>
-            </div>
-            
-        </div>
-    </div>
-
-    <!-- Modal for Detailed Run Results -->
-    <div id="detail-modal" class="modal hidden">
-        <div class="modal-content glass">
-            <div class="modal-header">
-                <h2 id="modal-title">Bernstein-Vazirani</h2>
-                <button class="close-btn" id="close-modal"><i class="fa-solid fa-xmark"></i></button>
-            </div>
-            <div class="modal-body">
-                <div class="modal-meta-grid">
-                    <div class="meta-item">
-                        <span class="label">Speedup Type</span>
-                        <span class="val highlight" id="modal-speedup">Exponential</span>
-                    </div>
-                    <div class="meta-item">
-                        <span class="label">Query Complexity</span>
-                        <span class="val" id="modal-query">O(1)</span>
-                    </div>
-                    <div class="meta-item">
-                        <span class="label">Gate Complexity</span>
-                        <span class="val" id="modal-gates">O(N)</span>
-                    </div>
-                    <div class="meta-item">
-                        <span class="label">Success Rate</span>
-                        <span class="val" id="modal-success">1.0</span>
-                    </div>
+        <section class="panel-grid two-col">
+            <article class="panel danger">
+                <div class="panel-heading">
+                    <p class="eyebrow">Audit Verdict</p>
+                    <h3>Why the old project was a dead end</h3>
                 </div>
+                <ul id="diagnosis-list" class="plain-list"></ul>
+            </article>
 
-                <div class="modal-description-box">
-                    <h3>Description</h3>
-                    <p id="modal-description"></p>
+            <article class="panel">
+                <div class="panel-heading">
+                    <p class="eyebrow">Replacement Architecture</p>
+                    <h3>What this now needs to become</h3>
                 </div>
+                <div id="architecture-list" class="stack-list"></div>
+            </article>
+        </section>
 
-                <div class="tabs-container">
-                    <div class="tab-headers">
-                        <button class="tab-btn active" data-tab="tab-code">Synthesized Qiskit Code</button>
-                        <button class="tab-btn" data-tab="tab-theory">Complexity Analysis</button>
-                        <button class="tab-btn" data-tab="tab-applications">Potential Applications</button>
-                        <button class="tab-btn" data-tab="tab-oracle">Oracle Code</button>
+        <section id="interventions" class="panel">
+            <div class="section-head">
+                <div>
+                    <p class="eyebrow">Expected Research Impact</p>
+                    <h3>Highest-leverage improvements</h3>
+                </div>
+                <a class="file-link" href="research/exhaustive_audit.md">Open full audit</a>
+            </div>
+            <div id="intervention-list" class="ranked-list"></div>
+        </section>
+
+        <section id="leads" class="panel">
+            <div class="section-head">
+                <div>
+                    <p class="eyebrow">Candidate Registry</p>
+                    <h3>Proof-gated research candidates</h3>
+                </div>
+                <a class="file-link" href="research/registry/candidates.json">Open candidates</a>
+            </div>
+            <div id="lead-list" class="lead-grid"></div>
+        </section>
+
+        <section id="experiments" class="panel">
+            <div class="section-head">
+                <div>
+                    <p class="eyebrow">Experiment Registry</p>
+                    <h3>Falsifiable experiment records</h3>
+                </div>
+                <a class="file-link" href="research/registry/experiments.json">Open experiments</a>
+            </div>
+            <div id="experiment-list" class="lead-grid"></div>
+        </section>
+
+        <section id="results" class="panel">
+            <div class="section-head">
+                <div>
+                    <p class="eyebrow">Result Registry</p>
+                    <h3>Executed workbench results and falsifiers</h3>
+                </div>
+                <a class="file-link" href="research/registry/experiment_results.json">Open results</a>
+            </div>
+            <div id="result-list" class="lead-grid"></div>
+        </section>
+
+        <section id="dequantization" class="panel danger">
+            <div class="section-head">
+                <div>
+                    <p class="eyebrow">Classical Baselines</p>
+                    <h3>Active dequantization blockers</h3>
+                </div>
+                <a class="file-link" href="research/registry/dequantization_checks.json">Open checks</a>
+            </div>
+            <div id="dequantization-list" class="negative-list"></div>
+        </section>
+
+        <section id="proof-status" class="panel danger">
+            <div class="section-head">
+                <div>
+                    <p class="eyebrow">Proof Obligations</p>
+                    <h3>Candidate proof status</h3>
+                </div>
+                <a class="file-link" href="research/registry/proof_status.json">Open proof status</a>
+            </div>
+            <div id="proof-status-list" class="negative-list"></div>
+        </section>
+
+        <section id="negative-results" class="panel danger">
+            <div class="section-head">
+                <div>
+                    <p class="eyebrow">Negative Result Database</p>
+                    <h3>Legacy failures preserved as anti-patterns</h3>
+                </div>
+                <a class="file-link" href="research/registry/negative_results.json">Open negative results</a>
+            </div>
+            <div id="negative-list" class="negative-list"></div>
+        </section>
+
+        <section id="rejected-candidates" class="panel danger">
+            <div class="section-head">
+                <div>
+                    <p class="eyebrow">Proof-Gate Rejections</p>
+                    <h3>Generated hypotheses that failed hard obligations</h3>
+                </div>
+                <a class="file-link" href="research/registry/rejected_candidates.json">Open rejected candidates</a>
+            </div>
+            <div id="rejected-list" class="negative-list"></div>
+        </section>
+
+        <section id="proof-gate" class="panel">
+            <div class="section-head">
+                <div>
+                    <p class="eyebrow">Hard Reject Criteria</p>
+                    <h3>Proof obligations before any speedup claim</h3>
+                </div>
+                <a class="file-link" href="research/proof_obligations.json">Open JSON</a>
+            </div>
+            <div id="proof-list" class="proof-grid"></div>
+        </section>
+
+        <section id="ontology" class="panel-grid two-col">
+            <article class="panel">
+                <div class="section-head compact">
+                    <div>
+                        <p class="eyebrow">Reduction Graph</p>
+                        <h3>Problems and barriers</h3>
                     </div>
-                    <div class="tab-contents">
-                        <div class="tab-pane active" id="tab-code">
-                            <pre><code id="modal-qiskit-code" class="language-python"># Code here</code></pre>
-                        </div>
-                        <div class="tab-pane" id="tab-theory">
-                            <p id="modal-analysis-text"></p>
-                        </div>
-                        <div class="tab-pane" id="tab-applications">
-                            <p id="modal-applications-text" style="white-space: pre-wrap; line-height: 1.6;"></p>
-                        </div>
-                        <div class="tab-pane" id="tab-oracle">
-                            <h4>Base Function</h4>
-                            <pre><code id="modal-base-code" class="language-python"># Base function</code></pre>
-                            <h4>Oracle Generator</h4>
-                            <pre><code id="modal-oracle-code" class="language-python"># Oracle generator</code></pre>
-                        </div>
+                    <a class="file-link" href="research/problem_ontology.json">Open ontology</a>
+                </div>
+                <div id="barrier-list" class="stack-list"></div>
+            </article>
+
+            <article class="panel">
+                <div class="section-head compact">
+                    <div>
+                        <p class="eyebrow">Literature Radar</p>
+                        <h3>Structured papers by mechanism</h3>
                     </div>
+                    <a class="file-link" href="research/literature_records.json">Open records</a>
+                </div>
+                <div id="paper-list" class="paper-list"></div>
+            </article>
+        </section>
+
+        <section class="panel danger">
+            <div class="section-head">
+                <div>
+                    <p class="eyebrow">Cut List</p>
+                    <h3>Modules to delete, quarantine, or replace</h3>
                 </div>
             </div>
-        </div>
-    </div>
+            <div id="module-list" class="module-table"></div>
+        </section>
+    </main>
 
-    <!-- Javascript -->
+    <footer>
+        <span>Generated from <code>research/*.json</code>.</span>
+        <span>No dashboard trophies. No N=3 speedup claims.</span>
+    </footer>
+
     <script src="index.js"></script>
 </body>
 </html>

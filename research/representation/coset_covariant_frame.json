@@ -1,0 +1,2912 @@
+{
+  "claim_gate": {
+    "efficient_multi_copy_diagonal_action_circuit_proved": false,
+    "one_copy_frame_spectrally_explicit": true,
+    "one_copy_pgm_is_hidden_involution_algorithm": false,
+    "polynomial_outcome_decoder_proved": false,
+    "reason": "The one-copy class-sum frame is exactly normalized but yields only a constant-factor improvement over guessing. The multi-copy representation and decoder are the actual algorithmic obligations.",
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-07-15T05:17:11.279338+00:00",
+  "falsifiers_triggered": [
+    "One-copy PGM success is at most a factor two above uniform guessing for the conjugacy-class ensemble.",
+    "Central inverse-frame diagonalization alone is not a hidden-involution decoder.",
+    "An explicit outcome table over the conjugacy class is exponentially large.",
+    "Progress requires a polynomial multi-copy diagonal-action circuit and compressed decoder."
+  ],
+  "headline_metrics": {
+    "efficient_multi_copy_diagonal_action_circuit_count": 0,
+    "exact_central_frame_spectrum_count": 17,
+    "exact_single_copy_pgm_formula_count": 17,
+    "maximum_frontier_one_copy_pgm_advantage": 2.0000000000000004,
+    "maximum_frontier_one_copy_success_times_ensemble": 2.0000000000000004,
+    "maximum_frontier_support_condition_number": 5.0,
+    "maximum_n": 16,
+    "minimum_frontier_support_mass": 0.9986111111111111,
+    "multi_copy_diagonal_action_proof_debt_count": 11,
+    "n_count": 6,
+    "polynomial_outcome_decoder_count": 0,
+    "record_count": 17
+  },
+  "records": [
+    {
+      "central_inverse_frame_spectrally_explicit": true,
+      "efficient_multi_copy_diagonal_action_circuit_proved": false,
+      "ensemble_size": 15,
+      "exact_single_copy_pgm_success_probability": 0.13314814814814815,
+      "fixed_point_count": 4,
+      "frame_trace": 1.0,
+      "interpretation": "The one-copy frame is exactly diagonalized, but transpositions are a visible control class rather than a GI/code-equivalence frontier ensemble.",
+      "involution_type": "single_transposition_control",
+      "irrep_count": 11,
+      "kernel_plancherel_mass": 0.001388888888888884,
+      "log2_ensemble_size": 3.9068905956085187,
+      "maximum_frame_scalar": 2.0,
+      "minimum_positive_frame_scalar": 0.4,
+      "n": 6,
+      "one_copy_pgm_success_times_ensemble": 1.9972222222222222,
+      "pgm_advantage_over_guess": 1.9972222222222222,
+      "polynomial_outcome_decoder_proved": false,
+      "status": "one-copy-covariant-control",
+      "support_condition_number": 5.0,
+      "support_plancherel_mass": 0.9986111111111111,
+      "top_conditioning_irreps": [
+        {
+          "average_state_eigenvalue_times_group_order": 0.4,
+          "character": -3,
+          "character_ratio": -0.6,
+          "dimension": 5,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.5811388300841895,
+          "partition": [
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.034722222222222224
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.6666666666666667,
+          "character": -3,
+          "character_ratio": -0.3333333333333333,
+          "dimension": 9,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.224744871391589,
+          "partition": [
+            2,
+            2,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.1125
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.8,
+          "character": -2,
+          "character_ratio": -0.2,
+          "dimension": 10,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.118033988749895,
+          "partition": [
+            3,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.1388888888888889
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.8,
+          "character": -1,
+          "character_ratio": -0.2,
+          "dimension": 5,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.118033988749895,
+          "partition": [
+            2,
+            2,
+            2
+          ],
+          "plancherel_mass": 0.034722222222222224
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 1.0,
+          "character": 0,
+          "character_ratio": 0.0,
+          "dimension": 16,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.0,
+          "partition": [
+            3,
+            2,
+            1
+          ],
+          "plancherel_mass": 0.35555555555555557
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 1.2,
+          "character": 2,
+          "character_ratio": 0.2,
+          "dimension": 10,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 0.9128709291752769,
+          "partition": [
+            4,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.1388888888888889
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 1.2,
+          "character": 1,
+          "character_ratio": 0.2,
+          "dimension": 5,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 0.9128709291752769,
+          "partition": [
+            3,
+            3
+          ],
+          "plancherel_mass": 0.034722222222222224
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 1.3333333333333333,
+          "character": 3,
+          "character_ratio": 0.3333333333333333,
+          "dimension": 9,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 0.8660254037844387,
+          "partition": [
+            4,
+            2
+          ],
+          "plancherel_mass": 0.1125
+        }
+      ],
+      "transposition_count": 1,
+      "uniform_guess_success_probability": 0.06666666666666667
+    },
+    {
+      "central_inverse_frame_spectrally_explicit": true,
+      "efficient_multi_copy_diagonal_action_circuit_proved": false,
+      "ensemble_size": 15,
+      "exact_single_copy_pgm_success_probability": 0.13314814814814815,
+      "fixed_point_count": 0,
+      "frame_trace": 1.0000000000000002,
+      "interpretation": "The central one-copy normalization is explicit and its PGM improves random guessing by at most a factor two. A viable route must compress the k-copy diagonal conjugation algebra and decode the hidden involution without enumerating the conjugacy class.",
+      "involution_type": "fixed_point_free_involution",
+      "irrep_count": 11,
+      "kernel_plancherel_mass": 0.001388888888888884,
+      "log2_ensemble_size": 3.9068905956085187,
+      "maximum_frame_scalar": 2.0,
+      "minimum_positive_frame_scalar": 0.4,
+      "n": 6,
+      "one_copy_pgm_success_times_ensemble": 1.9972222222222222,
+      "pgm_advantage_over_guess": 1.9972222222222222,
+      "polynomial_outcome_decoder_proved": false,
+      "status": "multi-copy-diagonal-action-proof-debt",
+      "support_condition_number": 5.0,
+      "support_plancherel_mass": 0.9986111111111111,
+      "top_conditioning_irreps": [
+        {
+          "average_state_eigenvalue_times_group_order": 0.4,
+          "character": -3,
+          "character_ratio": -0.6,
+          "dimension": 5,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.5811388300841895,
+          "partition": [
+            3,
+            3
+          ],
+          "plancherel_mass": 0.034722222222222224
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.6666666666666667,
+          "character": -3,
+          "character_ratio": -0.3333333333333333,
+          "dimension": 9,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.224744871391589,
+          "partition": [
+            2,
+            2,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.1125
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.8,
+          "character": -2,
+          "character_ratio": -0.2,
+          "dimension": 10,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.118033988749895,
+          "partition": [
+            4,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.1388888888888889
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.8,
+          "character": -1,
+          "character_ratio": -0.2,
+          "dimension": 5,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.118033988749895,
+          "partition": [
+            5,
+            1
+          ],
+          "plancherel_mass": 0.034722222222222224
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 1.0,
+          "character": 0,
+          "character_ratio": 0.0,
+          "dimension": 16,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.0,
+          "partition": [
+            3,
+            2,
+            1
+          ],
+          "plancherel_mass": 0.35555555555555557
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 1.2,
+          "character": 2,
+          "character_ratio": 0.2,
+          "dimension": 10,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 0.9128709291752769,
+          "partition": [
+            3,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.1388888888888889
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 1.2,
+          "character": 1,
+          "character_ratio": 0.2,
+          "dimension": 5,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 0.9128709291752769,
+          "partition": [
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.034722222222222224
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 1.3333333333333333,
+          "character": 3,
+          "character_ratio": 0.3333333333333333,
+          "dimension": 9,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 0.8660254037844387,
+          "partition": [
+            4,
+            2
+          ],
+          "plancherel_mass": 0.1125
+        }
+      ],
+      "transposition_count": 3,
+      "uniform_guess_success_probability": 0.06666666666666667
+    },
+    {
+      "central_inverse_frame_spectrally_explicit": true,
+      "efficient_multi_copy_diagonal_action_circuit_proved": false,
+      "ensemble_size": 28,
+      "exact_single_copy_pgm_success_probability": 0.0714267998866213,
+      "fixed_point_count": 6,
+      "frame_trace": 0.9999999999999998,
+      "interpretation": "The one-copy frame is exactly diagonalized, but transpositions are a visible control class rather than a GI/code-equivalence frontier ensemble.",
+      "involution_type": "single_transposition_control",
+      "irrep_count": 22,
+      "kernel_plancherel_mass": 2.4801587301781503e-05,
+      "log2_ensemble_size": 4.807354922057604,
+      "maximum_frame_scalar": 2.0,
+      "minimum_positive_frame_scalar": 0.2857142857142857,
+      "n": 8,
+      "one_copy_pgm_success_times_ensemble": 1.9999503968253964,
+      "pgm_advantage_over_guess": 1.9999503968253967,
+      "polynomial_outcome_decoder_proved": false,
+      "status": "one-copy-covariant-control",
+      "support_condition_number": 7.0,
+      "support_plancherel_mass": 0.9999751984126982,
+      "top_conditioning_irreps": [
+        {
+          "average_state_eigenvalue_times_group_order": 0.2857142857142857,
+          "character": -5,
+          "character_ratio": -0.7142857142857143,
+          "dimension": 7,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.8708286933869707,
+          "partition": [
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.0012152777777777778
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.5,
+          "character": -10,
+          "character_ratio": -0.5,
+          "dimension": 20,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.414213562373095,
+          "partition": [
+            2,
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.00992063492063492
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.5714285714285714,
+          "character": -9,
+          "character_ratio": -0.42857142857142855,
+          "dimension": 21,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.3228756555322954,
+          "partition": [
+            3,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.0109375
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.6428571428571428,
+          "character": -10,
+          "character_ratio": -0.35714285714285715,
+          "dimension": 28,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.2472191289246473,
+          "partition": [
+            2,
+            2,
+            2,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.019444444444444445
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.7142857142857143,
+          "character": -4,
+          "character_ratio": -0.2857142857142857,
+          "dimension": 14,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.1832159566199232,
+          "partition": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "plancherel_mass": 0.004861111111111111
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.75,
+          "character": -16,
+          "character_ratio": -0.25,
+          "dimension": 64,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.1547005383792517,
+          "partition": [
+            3,
+            2,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.10158730158730159
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.8571428571428572,
+          "character": -10,
+          "character_ratio": -0.14285714285714285,
+          "dimension": 70,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.0801234497346432,
+          "partition": [
+            3,
+            2,
+            2,
+            1
+          ],
+          "plancherel_mass": 0.12152777777777778
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.8571428571428572,
+          "character": -5,
+          "character_ratio": -0.14285714285714285,
+          "dimension": 35,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.0801234497346432,
+          "partition": [
+            4,
+            1,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.030381944444444444
+        }
+      ],
+      "transposition_count": 1,
+      "uniform_guess_success_probability": 0.03571428571428571
+    },
+    {
+      "central_inverse_frame_spectrally_explicit": true,
+      "efficient_multi_copy_diagonal_action_circuit_proved": false,
+      "ensemble_size": 210,
+      "exact_single_copy_pgm_success_probability": 0.009523809523809521,
+      "fixed_point_count": 4,
+      "frame_trace": 0.9999999999999999,
+      "interpretation": "The central one-copy normalization is explicit and its PGM improves random guessing by at most a factor two. A viable route must compress the k-copy diagonal conjugation algebra and decode the hidden involution without enumerating the conjugacy class.",
+      "involution_type": "partial_matching",
+      "irrep_count": 22,
+      "kernel_plancherel_mass": 2.220446049250313e-16,
+      "log2_ensemble_size": 7.714245517666122,
+      "maximum_frame_scalar": 2.0,
+      "minimum_positive_frame_scalar": 0.8571428571428572,
+      "n": 8,
+      "one_copy_pgm_success_times_ensemble": 1.9999999999999996,
+      "pgm_advantage_over_guess": 1.9999999999999993,
+      "polynomial_outcome_decoder_proved": false,
+      "status": "multi-copy-diagonal-action-proof-debt",
+      "support_condition_number": 2.333333333333333,
+      "support_plancherel_mass": 0.9999999999999998,
+      "top_conditioning_irreps": [
+        {
+          "average_state_eigenvalue_times_group_order": 0.8571428571428572,
+          "character": -5,
+          "character_ratio": -0.14285714285714285,
+          "dimension": 35,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.0801234497346432,
+          "partition": [
+            4,
+            1,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.030381944444444444
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.8571428571428572,
+          "character": -5,
+          "character_ratio": -0.14285714285714285,
+          "dimension": 35,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.0801234497346432,
+          "partition": [
+            5,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.030381944444444444
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.9333333333333333,
+          "character": -6,
+          "character_ratio": -0.06666666666666667,
+          "dimension": 90,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.0350983390135313,
+          "partition": [
+            4,
+            2,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.20089285714285715
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 1.0,
+          "character": 0,
+          "character_ratio": 0.0,
+          "dimension": 64,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.0,
+          "partition": [
+            3,
+            2,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.10158730158730159
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 1.0,
+          "character": 0,
+          "character_ratio": 0.0,
+          "dimension": 64,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.0,
+          "partition": [
+            5,
+            2,
+            1
+          ],
+          "plancherel_mass": 0.10158730158730159
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 1.0,
+          "character": 0,
+          "character_ratio": 0.0,
+          "dimension": 56,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.0,
+          "partition": [
+            3,
+            3,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.07777777777777778
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 1.0,
+          "character": 0,
+          "character_ratio": 0.0,
+          "dimension": 56,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.0,
+          "partition": [
+            4,
+            2,
+            2
+          ],
+          "plancherel_mass": 0.07777777777777778
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 1.0285714285714285,
+          "character": 2,
+          "character_ratio": 0.02857142857142857,
+          "dimension": 70,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 0.9860132971832694,
+          "partition": [
+            3,
+            2,
+            2,
+            1
+          ],
+          "plancherel_mass": 0.12152777777777778
+        }
+      ],
+      "transposition_count": 2,
+      "uniform_guess_success_probability": 0.004761904761904762
+    },
+    {
+      "central_inverse_frame_spectrally_explicit": true,
+      "efficient_multi_copy_diagonal_action_circuit_proved": false,
+      "ensemble_size": 105,
+      "exact_single_copy_pgm_success_probability": 0.019047619047619042,
+      "fixed_point_count": 0,
+      "frame_trace": 1.0,
+      "interpretation": "The central one-copy normalization is explicit and its PGM improves random guessing by at most a factor two. A viable route must compress the k-copy diagonal conjugation algebra and decode the hidden involution without enumerating the conjugacy class.",
+      "involution_type": "fixed_point_free_involution",
+      "irrep_count": 22,
+      "kernel_plancherel_mass": 2.220446049250313e-16,
+      "log2_ensemble_size": 6.714245517666122,
+      "maximum_frame_scalar": 2.0,
+      "minimum_positive_frame_scalar": 0.8571428571428572,
+      "n": 8,
+      "one_copy_pgm_success_times_ensemble": 1.9999999999999996,
+      "pgm_advantage_over_guess": 1.9999999999999993,
+      "polynomial_outcome_decoder_proved": false,
+      "status": "multi-copy-diagonal-action-proof-debt",
+      "support_condition_number": 2.333333333333333,
+      "support_plancherel_mass": 0.9999999999999998,
+      "top_conditioning_irreps": [
+        {
+          "average_state_eigenvalue_times_group_order": 0.8571428571428572,
+          "character": -6,
+          "character_ratio": -0.14285714285714285,
+          "dimension": 42,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.0801234497346432,
+          "partition": [
+            3,
+            3,
+            2
+          ],
+          "plancherel_mass": 0.04375
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.8571428571428572,
+          "character": -4,
+          "character_ratio": -0.14285714285714285,
+          "dimension": 28,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.0801234497346432,
+          "partition": [
+            2,
+            2,
+            2,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.019444444444444445
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.8571428571428572,
+          "character": -4,
+          "character_ratio": -0.14285714285714285,
+          "dimension": 28,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.0801234497346432,
+          "partition": [
+            5,
+            3
+          ],
+          "plancherel_mass": 0.019444444444444445
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.8571428571428572,
+          "character": -3,
+          "character_ratio": -0.14285714285714285,
+          "dimension": 21,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.0801234497346432,
+          "partition": [
+            3,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.0109375
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.8571428571428572,
+          "character": -3,
+          "character_ratio": -0.14285714285714285,
+          "dimension": 21,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.0801234497346432,
+          "partition": [
+            6,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.0109375
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.8571428571428572,
+          "character": -1,
+          "character_ratio": -0.14285714285714285,
+          "dimension": 7,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.0801234497346432,
+          "partition": [
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.0012152777777777778
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.8571428571428572,
+          "character": -1,
+          "character_ratio": -0.14285714285714285,
+          "dimension": 7,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.0801234497346432,
+          "partition": [
+            7,
+            1
+          ],
+          "plancherel_mass": 0.0012152777777777778
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.9333333333333333,
+          "character": -6,
+          "character_ratio": -0.06666666666666667,
+          "dimension": 90,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.0350983390135313,
+          "partition": [
+            4,
+            2,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.20089285714285715
+        }
+      ],
+      "transposition_count": 4,
+      "uniform_guess_success_probability": 0.009523809523809525
+    },
+    {
+      "central_inverse_frame_spectrally_explicit": true,
+      "efficient_multi_copy_diagonal_action_circuit_proved": false,
+      "ensemble_size": 45,
+      "exact_single_copy_pgm_success_probability": 0.04444443219674702,
+      "fixed_point_count": 8,
+      "frame_trace": 1.0,
+      "interpretation": "The one-copy frame is exactly diagonalized, but transpositions are a visible control class rather than a GI/code-equivalence frontier ensemble.",
+      "involution_type": "single_transposition_control",
+      "irrep_count": 42,
+      "kernel_plancherel_mass": 2.7557319204341013e-07,
+      "log2_ensemble_size": 5.491853096329675,
+      "maximum_frame_scalar": 2.0,
+      "minimum_positive_frame_scalar": 0.2222222222222222,
+      "n": 10,
+      "one_copy_pgm_success_times_ensemble": 1.999999448853616,
+      "pgm_advantage_over_guess": 1.999999448853616,
+      "polynomial_outcome_decoder_proved": false,
+      "status": "one-copy-covariant-control",
+      "support_condition_number": 9.0,
+      "support_plancherel_mass": 0.999999724426808,
+      "top_conditioning_irreps": [
+        {
+          "average_state_eigenvalue_times_group_order": 0.2222222222222222,
+          "character": -7,
+          "character_ratio": -0.7777777777777778,
+          "dimension": 9,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 2.1213203435596424,
+          "partition": [
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 2.232142857142857e-05
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.4,
+          "character": -21,
+          "character_ratio": -0.6,
+          "dimension": 35,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.5811388300841895,
+          "partition": [
+            2,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.00033757716049382714
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.4444444444444444,
+          "character": -20,
+          "character_ratio": -0.5555555555555556,
+          "dimension": 36,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.5,
+          "partition": [
+            3,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.00035714285714285714
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.5333333333333333,
+          "character": -35,
+          "character_ratio": -0.4666666666666667,
+          "dimension": 75,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.3693063937629153,
+          "partition": [
+            2,
+            2,
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.0015500992063492063
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.6,
+          "character": -64,
+          "character_ratio": -0.4,
+          "dimension": 160,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.2909944487358056,
+          "partition": [
+            3,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.007054673721340388
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.6222222222222222,
+          "character": -34,
+          "character_ratio": -0.37777777777777777,
+          "dimension": 90,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.2677313820927747,
+          "partition": [
+            2,
+            2,
+            2,
+            2,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.002232142857142857
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.6666666666666667,
+          "character": -28,
+          "character_ratio": -0.3333333333333333,
+          "dimension": 84,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.224744871391589,
+          "partition": [
+            4,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.0019444444444444444
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.6666666666666667,
+          "character": -14,
+          "character_ratio": -0.3333333333333333,
+          "dimension": 42,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.224744871391589,
+          "partition": [
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "plancherel_mass": 0.0004861111111111111
+        }
+      ],
+      "transposition_count": 1,
+      "uniform_guess_success_probability": 0.022222222222222223
+    },
+    {
+      "central_inverse_frame_spectrally_explicit": true,
+      "efficient_multi_copy_diagonal_action_circuit_proved": false,
+      "ensemble_size": 630,
+      "exact_single_copy_pgm_success_probability": 0.0031746031746031755,
+      "fixed_point_count": 6,
+      "frame_trace": 1.0,
+      "interpretation": "The central one-copy normalization is explicit and its PGM improves random guessing by at most a factor two. A viable route must compress the k-copy diagonal conjugation algebra and decode the hidden involution without enumerating the conjugacy class.",
+      "involution_type": "partial_matching",
+      "irrep_count": 42,
+      "kernel_plancherel_mass": -2.220446049250313e-16,
+      "log2_ensemble_size": 9.29920801838728,
+      "maximum_frame_scalar": 2.0,
+      "minimum_positive_frame_scalar": 0.8888888888888888,
+      "n": 10,
+      "one_copy_pgm_success_times_ensemble": 2.0000000000000004,
+      "pgm_advantage_over_guess": 2.0000000000000004,
+      "polynomial_outcome_decoder_proved": false,
+      "status": "multi-copy-diagonal-action-proof-debt",
+      "support_condition_number": 2.25,
+      "support_plancherel_mass": 1.0000000000000002,
+      "top_conditioning_irreps": [
+        {
+          "average_state_eigenvalue_times_group_order": 0.8888888888888888,
+          "character": -14,
+          "character_ratio": -0.1111111111111111,
+          "dimension": 126,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.0606601717798212,
+          "partition": [
+            5,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.004375
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.8888888888888888,
+          "character": -14,
+          "character_ratio": -0.1111111111111111,
+          "dimension": 126,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.0606601717798212,
+          "partition": [
+            6,
+            1,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.004375
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.9285714285714286,
+          "character": -32,
+          "character_ratio": -0.07142857142857142,
+          "dimension": 448,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.0377490433255416,
+          "partition": [
+            5,
+            2,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.055308641975308645
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.9714285714285714,
+          "character": -15,
+          "character_ratio": -0.02857142857142857,
+          "dimension": 525,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.0145993123917847,
+          "partition": [
+            4,
+            3,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.0759548611111111
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.9714285714285714,
+          "character": -15,
+          "character_ratio": -0.02857142857142857,
+          "dimension": 525,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.0145993123917847,
+          "partition": [
+            5,
+            2,
+            2,
+            1
+          ],
+          "plancherel_mass": 0.0759548611111111
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.9714285714285714,
+          "character": -10,
+          "character_ratio": -0.02857142857142857,
+          "dimension": 350,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.0145993123917847,
+          "partition": [
+            4,
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.03375771604938271
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.9714285714285714,
+          "character": -10,
+          "character_ratio": -0.02857142857142857,
+          "dimension": 350,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.0145993123917847,
+          "partition": [
+            6,
+            2,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.03375771604938271
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.9841269841269842,
+          "character": -9,
+          "character_ratio": -0.015873015873015872,
+          "dimension": 567,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.0080322575483707,
+          "partition": [
+            4,
+            2,
+            2,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.08859375
+        }
+      ],
+      "transposition_count": 2,
+      "uniform_guess_success_probability": 0.0015873015873015873
+    },
+    {
+      "central_inverse_frame_spectrally_explicit": true,
+      "efficient_multi_copy_diagonal_action_circuit_proved": false,
+      "ensemble_size": 945,
+      "exact_single_copy_pgm_success_probability": 0.0021164015331784298,
+      "fixed_point_count": 0,
+      "frame_trace": 0.9999999999999999,
+      "interpretation": "The central one-copy normalization is explicit and its PGM improves random guessing by at most a factor two. A viable route must compress the k-copy diagonal conjugation algebra and decode the hidden involution without enumerating the conjugacy class.",
+      "involution_type": "fixed_point_free_involution",
+      "irrep_count": 42,
+      "kernel_plancherel_mass": 2.7557319204341013e-07,
+      "log2_ensemble_size": 9.884170519108435,
+      "maximum_frame_scalar": 2.0,
+      "minimum_positive_frame_scalar": 0.7619047619047619,
+      "n": 10,
+      "one_copy_pgm_success_times_ensemble": 1.9999994488536161,
+      "pgm_advantage_over_guess": 1.999999448853616,
+      "polynomial_outcome_decoder_proved": false,
+      "status": "multi-copy-diagonal-action-proof-debt",
+      "support_condition_number": 2.625,
+      "support_plancherel_mass": 0.999999724426808,
+      "top_conditioning_irreps": [
+        {
+          "average_state_eigenvalue_times_group_order": 0.7619047619047619,
+          "character": -10,
+          "character_ratio": -0.23809523809523808,
+          "dimension": 42,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.1456439237389602,
+          "partition": [
+            5,
+            5
+          ],
+          "plancherel_mass": 0.0004861111111111111
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.8571428571428572,
+          "character": -5,
+          "character_ratio": -0.14285714285714285,
+          "dimension": 35,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.0801234497346432,
+          "partition": [
+            2,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.00033757716049382714
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.8888888888888888,
+          "character": -10,
+          "character_ratio": -0.1111111111111111,
+          "dimension": 90,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.0606601717798212,
+          "partition": [
+            2,
+            2,
+            2,
+            2,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.002232142857142857
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.8888888888888888,
+          "character": -4,
+          "character_ratio": -0.1111111111111111,
+          "dimension": 36,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.0606601717798212,
+          "partition": [
+            8,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.00035714285714285714
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.8888888888888888,
+          "character": -1,
+          "character_ratio": -0.1111111111111111,
+          "dimension": 9,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.0606601717798212,
+          "partition": [
+            9,
+            1
+          ],
+          "plancherel_mass": 2.232142857142857e-05
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.9206349206349207,
+          "character": -20,
+          "character_ratio": -0.07936507936507936,
+          "dimension": 252,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.0422125006694767,
+          "partition": [
+            3,
+            3,
+            2,
+            2
+          ],
+          "plancherel_mass": 0.0175
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.9333333333333333,
+          "character": -20,
+          "character_ratio": -0.06666666666666667,
+          "dimension": 300,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.0350983390135313,
+          "partition": [
+            4,
+            4,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.0248015873015873
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.9333333333333333,
+          "character": -15,
+          "character_ratio": -0.06666666666666667,
+          "dimension": 225,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.0350983390135313,
+          "partition": [
+            3,
+            3,
+            1,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.013950892857142858
+        }
+      ],
+      "transposition_count": 5,
+      "uniform_guess_success_probability": 0.0010582010582010583
+    },
+    {
+      "central_inverse_frame_spectrally_explicit": true,
+      "efficient_multi_copy_diagonal_action_circuit_proved": false,
+      "ensemble_size": 66,
+      "exact_single_copy_pgm_success_probability": 0.030303030239767402,
+      "fixed_point_count": 10,
+      "frame_trace": 0.9999999999999999,
+      "interpretation": "The one-copy frame is exactly diagonalized, but transpositions are a visible control class rather than a GI/code-equivalence frontier ensemble.",
+      "involution_type": "single_transposition_control",
+      "irrep_count": 77,
+      "kernel_plancherel_mass": 2.0876756989807177e-09,
+      "log2_ensemble_size": 6.044394119358453,
+      "maximum_frame_scalar": 2.0,
+      "minimum_positive_frame_scalar": 0.18181818181818177,
+      "n": 12,
+      "one_copy_pgm_success_times_ensemble": 1.9999999958246486,
+      "pgm_advantage_over_guess": 1.9999999958246484,
+      "polynomial_outcome_decoder_proved": false,
+      "status": "one-copy-covariant-control",
+      "support_condition_number": 11.000000000000004,
+      "support_plancherel_mass": 0.9999999979123243,
+      "top_conditioning_irreps": [
+        {
+          "average_state_eigenvalue_times_group_order": 0.18181818181818177,
+          "character": -9,
+          "character_ratio": -0.8181818181818182,
+          "dimension": 11,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 2.345207879911715,
+          "partition": [
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 2.52608759553204e-07
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.33333333333333337,
+          "character": -36,
+          "character_ratio": -0.6666666666666666,
+          "dimension": 54,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.732050807568877,
+          "partition": [
+            2,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 6.087662337662338e-06
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.36363636363636365,
+          "character": -35,
+          "character_ratio": -0.6363636363636364,
+          "dimension": 55,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.6583123951777,
+          "partition": [
+            3,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 6.3152189888301e-06
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.4545454545454546,
+          "character": -84,
+          "character_ratio": -0.5454545454545454,
+          "dimension": 154,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.4832396974191324,
+          "partition": [
+            2,
+            2,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 4.951131687242798e-05
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.5,
+          "character": -160,
+          "character_ratio": -0.5,
+          "dimension": 320,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.414213562373095,
+          "partition": [
+            3,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.00021377799155576933
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.5454545454545454,
+          "character": -125,
+          "character_ratio": -0.45454545454545453,
+          "dimension": 275,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.35400640077266,
+          "partition": [
+            2,
+            2,
+            2,
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.0001578804747207525
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.5454545454545454,
+          "character": -75,
+          "character_ratio": -0.45454545454545453,
+          "dimension": 165,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.35400640077266,
+          "partition": [
+            4,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 5.6836970899470896e-05
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.6060606060606061,
+          "character": -351,
+          "character_ratio": -0.3939393939393939,
+          "dimension": 891,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.284523257866513,
+          "partition": [
+            3,
+            2,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.0016573660714285714
+        }
+      ],
+      "transposition_count": 1,
+      "uniform_guess_success_probability": 0.015151515151515152
+    },
+    {
+      "central_inverse_frame_spectrally_explicit": true,
+      "efficient_multi_copy_diagonal_action_circuit_proved": false,
+      "ensemble_size": 13860,
+      "exact_single_copy_pgm_success_probability": 0.00014430014399889238,
+      "fixed_point_count": 6,
+      "frame_trace": 0.9999999999999999,
+      "interpretation": "The central one-copy normalization is explicit and its PGM improves random guessing by at most a factor two. A viable route must compress the k-copy diagonal conjugation algebra and decode the hidden involution without enumerating the conjugacy class.",
+      "involution_type": "partial_matching",
+      "irrep_count": 77,
+      "kernel_plancherel_mass": 2.0876756989807177e-09,
+      "log2_ensemble_size": 13.758639637024576,
+      "maximum_frame_scalar": 2.0,
+      "minimum_positive_frame_scalar": 0.5454545454545454,
+      "n": 12,
+      "one_copy_pgm_success_times_ensemble": 1.9999999958246484,
+      "pgm_advantage_over_guess": 1.9999999958246484,
+      "polynomial_outcome_decoder_proved": false,
+      "status": "multi-copy-diagonal-action-proof-debt",
+      "support_condition_number": 3.666666666666667,
+      "support_plancherel_mass": 0.9999999979123243,
+      "top_conditioning_irreps": [
+        {
+          "average_state_eigenvalue_times_group_order": 0.5454545454545454,
+          "character": -5,
+          "character_ratio": -0.45454545454545453,
+          "dimension": 11,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.35400640077266,
+          "partition": [
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 2.52608759553204e-07
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.7777777777777778,
+          "character": -12,
+          "character_ratio": -0.2222222222222222,
+          "dimension": 54,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.1338934190276817,
+          "partition": [
+            2,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 6.087662337662338e-06
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.8701298701298701,
+          "character": -20,
+          "character_ratio": -0.12987012987012986,
+          "dimension": 154,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.072032523454062,
+          "partition": [
+            2,
+            2,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 4.951131687242798e-05
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.8727272727272728,
+          "character": -7,
+          "character_ratio": -0.12727272727272726,
+          "dimension": 55,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.070436048222094,
+          "partition": [
+            3,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 6.3152189888301e-06
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.9090909090909091,
+          "character": -25,
+          "character_ratio": -0.09090909090909091,
+          "dimension": 275,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.0488088481701514,
+          "partition": [
+            2,
+            2,
+            2,
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.0001578804747207525
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.9292929292929293,
+          "character": -21,
+          "character_ratio": -0.0707070707070707,
+          "dimension": 297,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.037346112212187,
+          "partition": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.00018415178571428573
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.9333333333333333,
+          "character": -22,
+          "character_ratio": -0.06666666666666667,
+          "dimension": 330,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.0350983390135313,
+          "partition": [
+            8,
+            1,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.00022734788359788359
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.9393939393939394,
+          "character": -8,
+          "character_ratio": -0.06060606060606061,
+          "dimension": 132,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.031753909143192,
+          "partition": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "plancherel_mass": 3.637566137566137e-05
+        }
+      ],
+      "transposition_count": 3,
+      "uniform_guess_success_probability": 7.215007215007215e-05
+    },
+    {
+      "central_inverse_frame_spectrally_explicit": true,
+      "efficient_multi_copy_diagonal_action_circuit_proved": false,
+      "ensemble_size": 10395,
+      "exact_single_copy_pgm_success_probability": 0.0001924001924001924,
+      "fixed_point_count": 0,
+      "frame_trace": 0.9999999999999997,
+      "interpretation": "The central one-copy normalization is explicit and its PGM improves random guessing by at most a factor two. A viable route must compress the k-copy diagonal conjugation algebra and decode the hidden involution without enumerating the conjugacy class.",
+      "involution_type": "fixed_point_free_involution",
+      "irrep_count": 77,
+      "kernel_plancherel_mass": 0.0,
+      "log2_ensemble_size": 13.343602137745732,
+      "maximum_frame_scalar": 2.0,
+      "minimum_positive_frame_scalar": 0.9090909090909091,
+      "n": 12,
+      "one_copy_pgm_success_times_ensemble": 2.0,
+      "pgm_advantage_over_guess": 2.0,
+      "polynomial_outcome_decoder_proved": false,
+      "status": "multi-copy-diagonal-action-proof-debt",
+      "support_condition_number": 2.2,
+      "support_plancherel_mass": 1.0,
+      "top_conditioning_irreps": [
+        {
+          "average_state_eigenvalue_times_group_order": 0.9090909090909091,
+          "character": -5,
+          "character_ratio": -0.09090909090909091,
+          "dimension": 55,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.0488088481701514,
+          "partition": [
+            3,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 6.3152189888301e-06
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.9090909090909091,
+          "character": -5,
+          "character_ratio": -0.09090909090909091,
+          "dimension": 55,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.0488088481701514,
+          "partition": [
+            10,
+            1,
+            1
+          ],
+          "plancherel_mass": 6.3152189888301e-06
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.9090909090909091,
+          "character": -1,
+          "character_ratio": -0.09090909090909091,
+          "dimension": 11,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.0488088481701514,
+          "partition": [
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 2.52608759553204e-07
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.9090909090909091,
+          "character": -1,
+          "character_ratio": -0.09090909090909091,
+          "dimension": 11,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.0488088481701514,
+          "partition": [
+            11,
+            1
+          ],
+          "plancherel_mass": 2.52608759553204e-07
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.9494949494949495,
+          "character": -15,
+          "character_ratio": -0.050505050505050504,
+          "dimension": 297,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.0262511823923528,
+          "partition": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.00018415178571428573
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.9494949494949495,
+          "character": -15,
+          "character_ratio": -0.050505050505050504,
+          "dimension": 297,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.0262511823923528,
+          "partition": [
+            7,
+            5
+          ],
+          "plancherel_mass": 0.00018415178571428573
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.961038961038961,
+          "character": -6,
+          "character_ratio": -0.03896103896103896,
+          "dimension": 154,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.0200688900954389,
+          "partition": [
+            2,
+            2,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 4.951131687242798e-05
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.961038961038961,
+          "character": -6,
+          "character_ratio": -0.03896103896103896,
+          "dimension": 154,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.0200688900954389,
+          "partition": [
+            9,
+            3
+          ],
+          "plancherel_mass": 4.951131687242798e-05
+        }
+      ],
+      "transposition_count": 6,
+      "uniform_guess_success_probability": 9.62000962000962e-05
+    },
+    {
+      "central_inverse_frame_spectrally_explicit": true,
+      "efficient_multi_copy_diagonal_action_circuit_proved": false,
+      "ensemble_size": 91,
+      "exact_single_copy_pgm_success_probability": 0.021978021977769876,
+      "fixed_point_count": 12,
+      "frame_trace": 0.9999999999999997,
+      "interpretation": "The one-copy frame is exactly diagonalized, but transpositions are a visible control class rather than a GI/code-equivalence frontier ensemble.",
+      "involution_type": "single_transposition_control",
+      "irrep_count": 135,
+      "kernel_plancherel_mass": 1.1470713268124655e-11,
+      "log2_ensemble_size": 6.507794640198696,
+      "maximum_frame_scalar": 2.0,
+      "minimum_positive_frame_scalar": 0.15384615384615385,
+      "n": 14,
+      "one_copy_pgm_success_times_ensemble": 1.9999999999770588,
+      "pgm_advantage_over_guess": 1.9999999999770586,
+      "polynomial_outcome_decoder_proved": false,
+      "status": "one-copy-covariant-control",
+      "support_condition_number": 13.0,
+      "support_plancherel_mass": 0.9999999999885293,
+      "top_conditioning_irreps": [
+        {
+          "average_state_eigenvalue_times_group_order": 0.15384615384615385,
+          "character": -11,
+          "character_ratio": -0.8461538461538461,
+          "dimension": 13,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 2.5495097567963922,
+          "partition": [
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 1.9385560060163236e-09
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.2857142857142857,
+          "character": -55,
+          "character_ratio": -0.7142857142857143,
+          "dimension": 77,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.8708286933869707,
+          "partition": [
+            2,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 6.801005064893954e-08
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.3076923076923077,
+          "character": -54,
+          "character_ratio": -0.6923076923076923,
+          "dimension": 78,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.8027756377319946,
+          "partition": [
+            3,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 6.978801621658764e-08
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.39560439560439564,
+          "character": -165,
+          "character_ratio": -0.6043956043956044,
+          "dimension": 273,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.5898986690282428,
+          "partition": [
+            2,
+            2,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 8.549031986531987e-07
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.4285714285714286,
+          "character": -320,
+          "character_ratio": -0.5714285714285714,
+          "dimension": 560,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.5275252316519465,
+          "partition": [
+            3,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 3.5972258194480417e-06
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.46153846153846156,
+          "character": -154,
+          "character_ratio": -0.5384615384615384,
+          "dimension": 286,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.4719601443879746,
+          "partition": [
+            4,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 9.382611069119006e-07
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.48351648351648346,
+          "character": -329,
+          "character_ratio": -0.5164835164835165,
+          "dimension": 637,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.4381174563233068,
+          "partition": [
+            2,
+            2,
+            2,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 4.654472970445193e-06
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.5274725274725275,
+          "character": -946,
+          "character_ratio": -0.4725274725274725,
+          "dimension": 2002,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.3768926368215255,
+          "partition": [
+            3,
+            2,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 4.5974794238683126e-05
+        }
+      ],
+      "transposition_count": 1,
+      "uniform_guess_success_probability": 0.01098901098901099
+    },
+    {
+      "central_inverse_frame_spectrally_explicit": true,
+      "efficient_multi_copy_diagonal_action_circuit_proved": false,
+      "ensemble_size": 45045,
+      "exact_single_copy_pgm_success_probability": 4.44000443995351e-05,
+      "fixed_point_count": 8,
+      "frame_trace": 1.0,
+      "interpretation": "The central one-copy normalization is explicit and its PGM improves random guessing by at most a factor two. A viable route must compress the k-copy diagonal conjugation algebra and decode the hidden involution without enumerating the conjugacy class.",
+      "involution_type": "partial_matching",
+      "irrep_count": 135,
+      "kernel_plancherel_mass": 1.1470713268124655e-11,
+      "log2_ensemble_size": 15.459079355165668,
+      "maximum_frame_scalar": 2.0,
+      "minimum_positive_frame_scalar": 0.46153846153846156,
+      "n": 14,
+      "one_copy_pgm_success_times_ensemble": 1.9999999999770588,
+      "pgm_advantage_over_guess": 1.9999999999770588,
+      "polynomial_outcome_decoder_proved": false,
+      "status": "multi-copy-diagonal-action-proof-debt",
+      "support_condition_number": 4.333333333333333,
+      "support_plancherel_mass": 0.9999999999885293,
+      "top_conditioning_irreps": [
+        {
+          "average_state_eigenvalue_times_group_order": 0.46153846153846156,
+          "character": -7,
+          "character_ratio": -0.5384615384615384,
+          "dimension": 13,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.4719601443879746,
+          "partition": [
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 1.9385560060163236e-09
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.7012987012987013,
+          "character": -23,
+          "character_ratio": -0.2987012987012987,
+          "dimension": 77,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.1941214033447043,
+          "partition": [
+            2,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 6.801005064893954e-08
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.7692307692307692,
+          "character": -18,
+          "character_ratio": -0.23076923076923078,
+          "dimension": 78,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.140175425099138,
+          "partition": [
+            3,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 6.978801621658764e-08
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.8205128205128205,
+          "character": -49,
+          "character_ratio": -0.1794871794871795,
+          "dimension": 273,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.1039701082909807,
+          "partition": [
+            2,
+            2,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 8.549031986531987e-07
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.8791208791208791,
+          "character": -77,
+          "character_ratio": -0.12087912087912088,
+          "dimension": 637,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.0665364503850772,
+          "partition": [
+            2,
+            2,
+            2,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 4.654472970445193e-06
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.8857142857142857,
+          "character": -64,
+          "character_ratio": -0.11428571428571428,
+          "dimension": 560,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.0625592962581034,
+          "partition": [
+            3,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 3.5972258194480417e-06
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.9090909090909091,
+          "character": -91,
+          "character_ratio": -0.09090909090909091,
+          "dimension": 1001,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.0488088481701514,
+          "partition": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 1.1493698559670782e-05
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.9250749250749251,
+          "character": -75,
+          "character_ratio": -0.07492507492507493,
+          "dimension": 1001,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.0397083824411335,
+          "partition": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            1,
+            1
+          ],
+          "plancherel_mass": 1.1493698559670782e-05
+        }
+      ],
+      "transposition_count": 3,
+      "uniform_guess_success_probability": 2.22000222000222e-05
+    },
+    {
+      "central_inverse_frame_spectrally_explicit": true,
+      "efficient_multi_copy_diagonal_action_circuit_proved": false,
+      "ensemble_size": 135135,
+      "exact_single_copy_pgm_success_probability": 1.4800014799845034e-05,
+      "fixed_point_count": 0,
+      "frame_trace": 0.9999999999999998,
+      "interpretation": "The central one-copy normalization is explicit and its PGM improves random guessing by at most a factor two. A viable route must compress the k-copy diagonal conjugation algebra and decode the hidden involution without enumerating the conjugacy class.",
+      "involution_type": "fixed_point_free_involution",
+      "irrep_count": 135,
+      "kernel_plancherel_mass": 1.1470713268124655e-11,
+      "log2_ensemble_size": 17.044041855886825,
+      "maximum_frame_scalar": 2.0,
+      "minimum_positive_frame_scalar": 0.9090909090909091,
+      "n": 14,
+      "one_copy_pgm_success_times_ensemble": 1.9999999999770586,
+      "pgm_advantage_over_guess": 1.9999999999770588,
+      "polynomial_outcome_decoder_proved": false,
+      "status": "multi-copy-diagonal-action-proof-debt",
+      "support_condition_number": 2.2,
+      "support_plancherel_mass": 0.9999999999885293,
+      "top_conditioning_irreps": [
+        {
+          "average_state_eigenvalue_times_group_order": 0.9090909090909091,
+          "character": -7,
+          "character_ratio": -0.09090909090909091,
+          "dimension": 77,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.0488088481701514,
+          "partition": [
+            2,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 6.801005064893954e-08
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.9184149184149184,
+          "character": -35,
+          "character_ratio": -0.08158508158508158,
+          "dimension": 429,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.0434713639145277,
+          "partition": [
+            7,
+            7
+          ],
+          "plancherel_mass": 2.1110874905517765e-06
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.9230769230769231,
+          "character": -6,
+          "character_ratio": -0.07692307692307693,
+          "dimension": 78,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.0408329997330663,
+          "partition": [
+            12,
+            1,
+            1
+          ],
+          "plancherel_mass": 6.978801621658764e-08
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.9230769230769231,
+          "character": -1,
+          "character_ratio": -0.07692307692307693,
+          "dimension": 13,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.0408329997330663,
+          "partition": [
+            13,
+            1
+          ],
+          "plancherel_mass": 1.9385560060163236e-09
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.965034965034965,
+          "character": -35,
+          "character_ratio": -0.03496503496503497,
+          "dimension": 1001,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.0179547554081032,
+          "partition": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            1,
+            1
+          ],
+          "plancherel_mass": 1.1493698559670782e-05
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.967032967032967,
+          "character": -21,
+          "character_ratio": -0.03296703296703297,
+          "dimension": 637,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.0169026055089587,
+          "partition": [
+            2,
+            2,
+            2,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 4.654472970445193e-06
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.9743589743589743,
+          "character": -35,
+          "character_ratio": -0.02564102564102564,
+          "dimension": 1365,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.0130724502589556,
+          "partition": [
+            3,
+            3,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 2.1372579966329967e-05
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.9743589743589743,
+          "character": -7,
+          "character_ratio": -0.02564102564102564,
+          "dimension": 273,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.0130724502589556,
+          "partition": [
+            11,
+            3
+          ],
+          "plancherel_mass": 8.549031986531987e-07
+        }
+      ],
+      "transposition_count": 7,
+      "uniform_guess_success_probability": 7.4000074000074e-06
+    },
+    {
+      "central_inverse_frame_spectrally_explicit": true,
+      "efficient_multi_copy_diagonal_action_circuit_proved": false,
+      "ensemble_size": 120,
+      "exact_single_copy_pgm_success_probability": 0.01666666666666585,
+      "fixed_point_count": 14,
+      "frame_trace": 0.9999999999999996,
+      "interpretation": "The one-copy frame is exactly diagonalized, but transpositions are a visible control class rather than a GI/code-equivalence frontier ensemble.",
+      "involution_type": "single_transposition_control",
+      "irrep_count": 231,
+      "kernel_plancherel_mass": 4.884981308350689e-14,
+      "log2_ensemble_size": 6.906890595608519,
+      "maximum_frame_scalar": 2.0,
+      "minimum_positive_frame_scalar": 0.1333333333333333,
+      "n": 16,
+      "one_copy_pgm_success_times_ensemble": 1.999999999999902,
+      "pgm_advantage_over_guess": 1.999999999999902,
+      "polynomial_outcome_decoder_proved": false,
+      "status": "one-copy-covariant-control",
+      "support_condition_number": 15.000000000000004,
+      "support_plancherel_mass": 0.9999999999999512,
+      "top_conditioning_irreps": [
+        {
+          "average_state_eigenvalue_times_group_order": 0.1333333333333333,
+          "character": -13,
+          "character_ratio": -0.8666666666666667,
+          "dimension": 15,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 2.7386127875258306,
+          "partition": [
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 1.0753823997871616e-11
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.25,
+          "character": -78,
+          "character_ratio": -0.75,
+          "dimension": 104,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 2.0,
+          "partition": [
+            2,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 5.169482682710196e-10
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.2666666666666667,
+          "character": -77,
+          "character_ratio": -0.7333333333333333,
+          "dimension": 105,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.9364916731037083,
+          "partition": [
+            3,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 5.269373758957093e-10
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.35,
+          "character": -286,
+          "character_ratio": -0.65,
+          "dimension": 440,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.6903085094570331,
+          "partition": [
+            2,
+            2,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 9.253068115501977e-09
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.375,
+          "character": -560,
+          "character_ratio": -0.625,
+          "dimension": 896,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.6329931618554523,
+          "partition": [
+            3,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 3.837040874077911e-08
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.4,
+          "character": -273,
+          "character_ratio": -0.6,
+          "dimension": 455,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.5811388300841895,
+          "partition": [
+            4,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 9.894712947374984e-09
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.43333333333333335,
+          "character": -714,
+          "character_ratio": -0.5666666666666667,
+          "dimension": 1260,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.5191090506254998,
+          "partition": [
+            2,
+            2,
+            2,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 7.587898212898213e-08
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.4666666666666667,
+          "character": -2080,
+          "character_ratio": -0.5333333333333333,
+          "dimension": 3900,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.4638501094227998,
+          "partition": [
+            3,
+            2,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 7.269585022561213e-07
+        }
+      ],
+      "transposition_count": 1,
+      "uniform_guess_success_probability": 0.008333333333333333
+    },
+    {
+      "central_inverse_frame_spectrally_explicit": true,
+      "efficient_multi_copy_diagonal_action_circuit_proved": false,
+      "ensemble_size": 1351350,
+      "exact_single_copy_pgm_success_probability": 1.4800014800014784e-06,
+      "fixed_point_count": 8,
+      "frame_trace": 1.0,
+      "interpretation": "The central one-copy normalization is explicit and its PGM improves random guessing by at most a factor two. A viable route must compress the k-copy diagonal conjugation algebra and decode the hidden involution without enumerating the conjugacy class.",
+      "involution_type": "partial_matching",
+      "irrep_count": 231,
+      "kernel_plancherel_mass": 1.1102230246251565e-15,
+      "log2_ensemble_size": 20.365969950774186,
+      "maximum_frame_scalar": 2.0,
+      "minimum_positive_frame_scalar": 0.9684981684981685,
+      "n": 16,
+      "one_copy_pgm_success_times_ensemble": 1.9999999999999978,
+      "pgm_advantage_over_guess": 1.9999999999999978,
+      "polynomial_outcome_decoder_proved": false,
+      "status": "multi-copy-diagonal-action-proof-debt",
+      "support_condition_number": 2.065052950075643,
+      "support_plancherel_mass": 0.9999999999999989,
+      "top_conditioning_irreps": [
+        {
+          "average_state_eigenvalue_times_group_order": 0.9684981684981685,
+          "character": -43,
+          "character_ratio": -0.0315018315018315,
+          "dimension": 1365,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.0161330990760125,
+          "partition": [
+            5,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 8.905241652637486e-08
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.9684981684981685,
+          "character": -43,
+          "character_ratio": -0.0315018315018315,
+          "dimension": 1365,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.0161330990760125,
+          "partition": [
+            12,
+            1,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 8.905241652637486e-08
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.9743589743589743,
+          "character": -77,
+          "character_ratio": -0.02564102564102564,
+          "dimension": 3003,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.0130724502589556,
+          "partition": [
+            6,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 4.3101369598765434e-07
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.9743589743589743,
+          "character": -77,
+          "character_ratio": -0.02564102564102564,
+          "dimension": 3003,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.0130724502589556,
+          "partition": [
+            11,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 4.3101369598765434e-07
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.9835164835164835,
+          "character": -192,
+          "character_ratio": -0.016483516483516484,
+          "dimension": 11648,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.0083450681866366,
+          "partition": [
+            5,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 6.48459907719167e-06
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.9835164835164835,
+          "character": -192,
+          "character_ratio": -0.016483516483516484,
+          "dimension": 11648,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.0083450681866366,
+          "partition": [
+            11,
+            2,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 6.48459907719167e-06
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.991008991008991,
+          "character": -216,
+          "character_ratio": -0.008991008991008992,
+          "dimension": 24024,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.0045260477683797,
+          "partition": [
+            6,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 2.7584876543209878e-05
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.991008991008991,
+          "character": -216,
+          "character_ratio": -0.008991008991008992,
+          "dimension": 24024,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.0045260477683797,
+          "partition": [
+            10,
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 2.7584876543209878e-05
+        }
+      ],
+      "transposition_count": 4,
+      "uniform_guess_success_probability": 7.4000074000074e-07
+    },
+    {
+      "central_inverse_frame_spectrally_explicit": true,
+      "efficient_multi_copy_diagonal_action_circuit_proved": false,
+      "ensemble_size": 2027025,
+      "exact_single_copy_pgm_success_probability": 9.86667653334319e-07,
+      "fixed_point_count": 0,
+      "frame_trace": 0.9999999999999999,
+      "interpretation": "The central one-copy normalization is explicit and its PGM improves random guessing by at most a factor two. A viable route must compress the k-copy diagonal conjugation algebra and decode the hidden involution without enumerating the conjugacy class.",
+      "involution_type": "fixed_point_free_involution",
+      "irrep_count": 231,
+      "kernel_plancherel_mass": 1.1102230246251565e-15,
+      "log2_ensemble_size": 20.950932451495344,
+      "maximum_frame_scalar": 2.0,
+      "minimum_positive_frame_scalar": 0.9333333333333333,
+      "n": 16,
+      "one_copy_pgm_success_times_ensemble": 1.9999999999999978,
+      "pgm_advantage_over_guess": 1.9999999999999978,
+      "polynomial_outcome_decoder_proved": false,
+      "status": "multi-copy-diagonal-action-proof-debt",
+      "support_condition_number": 2.142857142857143,
+      "support_plancherel_mass": 0.9999999999999989,
+      "top_conditioning_irreps": [
+        {
+          "average_state_eigenvalue_times_group_order": 0.9333333333333333,
+          "character": -7,
+          "character_ratio": -0.06666666666666667,
+          "dimension": 105,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.0350983390135313,
+          "partition": [
+            3,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 5.269373758957093e-10
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.9333333333333333,
+          "character": -7,
+          "character_ratio": -0.06666666666666667,
+          "dimension": 105,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.0350983390135313,
+          "partition": [
+            14,
+            1,
+            1
+          ],
+          "plancherel_mass": 5.269373758957093e-10
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.9333333333333333,
+          "character": -1,
+          "character_ratio": -0.06666666666666667,
+          "dimension": 15,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.0350983390135313,
+          "partition": [
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 1.0753823997871616e-11
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.9333333333333333,
+          "character": -1,
+          "character_ratio": -0.06666666666666667,
+          "dimension": 15,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.0350983390135313,
+          "partition": [
+            15,
+            1
+          ],
+          "plancherel_mass": 1.0753823997871616e-11
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.9818181818181818,
+          "character": -8,
+          "character_ratio": -0.01818181818181818,
+          "dimension": 440,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.0092167846991638,
+          "partition": [
+            2,
+            2,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 9.253068115501977e-09
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.9818181818181818,
+          "character": -8,
+          "character_ratio": -0.01818181818181818,
+          "dimension": 440,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.0092167846991638,
+          "partition": [
+            13,
+            3
+          ],
+          "plancherel_mass": 9.253068115501977e-09
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.9836829836829837,
+          "character": -56,
+          "character_ratio": -0.016317016317016316,
+          "dimension": 3432,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.008259727314901,
+          "partition": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            1,
+            1
+          ],
+          "plancherel_mass": 5.629566641471403e-07
+        },
+        {
+          "average_state_eigenvalue_times_group_order": 0.9836829836829837,
+          "character": -56,
+          "character_ratio": -0.016317016317016316,
+          "dimension": 3432,
+          "in_average_state_support": true,
+          "inverse_sqrt_scalar_times_group_order_root": 1.008259727314901,
+          "partition": [
+            9,
+            7
+          ],
+          "plancherel_mass": 5.629566641471403e-07
+        }
+      ],
+      "transposition_count": 8,
+      "uniform_guess_success_probability": 4.9333382666716e-07
+    }
+  ],
+  "status": "one-copy-frame-solved-multi-copy-covariant-decoder-open",
+  "summary": "Derived exact central frame spectra and one-copy PGM success for 17 involution ensembles. All 11 frontier rows retain multi-copy diagonal-action and decoder proof debt.",
+  "theorem_contract": {
+    "ensemble": "uniform conjugacy class of involutions in S_n",
+    "one_copy_frame": "S=(I+K_C/|C|)/|S_n|, a central class sum",
+    "open_mechanism": "k-copy diagonal conjugation decomposition and compressed outcome decoder",
+    "pgm_success": "(2/|C|) times Plancherel support mass of 1+chi_lambda(c)/d_lambda",
+    "state": "rho_h=(I+R_h)/|S_n|"
+  }
+}

@@ -1,0 +1,322 @@
+In this section, we provide a modified quantum walk \textsc{NEW-QW} for any quantum walk subset-sum algorithm \textsc{QW}, including \cite{DBLP:conf/pqcrypto/BernsteinJLM13,DBLP:conf/tqc/HelmM18} and ours, that will no longer rely on Heuristic~\ref{heuristic:helm-may}. In \textsc{NEW-QW}, the Johnson graph is the same, but the vertex data structure and the update procedure are different (Section~\ref{subsection:vertex-data-struct}). It allows us to guarantee the update time, at the expense of losing some marked vertices. In Section~\ref{subsection:fraction-marked}, we will show that most marked vertices in \textsc{QW} remain marked.
+
+% Hence, after detailing our new data structure and update unitary, we will bound the fraction of lost marked vertices.
+
+\subsection{New Data Structure for Storing Lists}\label{subsection:new-data-struct}
+
+The main requirement of the vertex data structure is to store lists of subknapsacks with modular constraints in QRAQM. For each list, we will use two data structures. The first one is the combination of a hash table and a skip list given in~\cite{DBLP:journals/siamcomp/Ambainis07} (abbreviated \emph{skip list} below) and the second one is a \emph{Bucket-modulus list} data structure, adapted from Definition~\ref{def:unique-mod}, that we define below.
+
+\paragraph{Hash Table and Skip List.}
+We use the data structure of~\cite{DBLP:journals/siamcomp/Ambainis07} to store lists of entries $(\vec{e}, \vec{e} \cdot \vec{a})$, sorted by knapsack value $\vec{e} \cdot \vec{a}$. The data structure for $M$ entries, that we denote $\mathcal{SL}(M)$, uses $\bigOt{M}$ qRAM memory cells and supports the following operations: inserting an entry in the list, deleting an entry from the list and producing the uniform superposition of entries in the list. All these operations require time $\mathsf{polylog}(M)$.
+
+We resort to this data structure because the proposal of ``radix trees'' in~\cite{DBLP:conf/pqcrypto/BernsteinJLM13} is less detailed. It is defined relatively to a choice of $\mathsf{polylog}(M) = \poly(n)$ hash functions selected from a family of independent hash functions of the entries (we refer to~\cite{DBLP:journals/siamcomp/Ambainis07} for more details). For a given choice of hash functions, the insertion or deletion operations can fail. Thus, the data structure is equipped with a superposition of such choices. Instead of storing $\mathcal{SL}(M)$, we store: $\sum_h \ket{h} \ket{\mathcal{SL}_h(M)}$ where $\mathcal{SL}_h$ is the data structure flavored with the choice of hash functions $h$. Insertions and deletions are performed depending on $h$. This allows for a globally negligible error: if sufficiently many hash functions are used, the insertion and deletion of \emph{any element} add a global error vector of amplitude $o(2^{-n})$ \emph{regardless of the current state of the data}. The standard ``hybrid argument'' from~\cite{DBLP:journals/siamcomp/BennettBBV97} and~\cite[Lemma 5]{DBLP:journals/siamcomp/Ambainis07} can then be used in the context of an MNRS quantum walk. % (we omit its proof, since it can be found in~\cite{DBLP:journals/siamcomp/BennettBBV97}).
+
+\begin{proposition}[\cite{DBLP:journals/siamcomp/Ambainis07}, Lemma 5, adapted]
+Consider an MNRS quantum walk with a ``perfect'' (theoretical) update unitary $U$, managing data structures, and an ``imperfect'' update unitary $U'$ such that, for any basis state $\ket{x}$:
+$$ U' \ket{x} = U \ket{x} + \ket{\delta_x}  $$
+where $\ket{\delta_x}$ is an error vector of amplitude bounded by $o(2^{-n})$ \emph{for any $x$}. Then running the walk with $U'$ instead of $U$, after $T$ steps, the final ``imperfect'' state $\ket{\psi'}$ deviates from the ``perfect'' state $\ket{\psi}$ by: $\| \ket{\psi'} - \ket{\psi} \| \leq o(2^{-n} T) $.
+\end{proposition}
+
+This holds as a general principle: in the update unitary, any perfect procedure can be replaced by an imperfect one as long as its error is negligible (with respect to the total number of updates) \emph{and data-independent}. In contrast, the problem with Heuristic~\ref{heuristic:helm-may} is that a generic constant-time update induces data-dependent errors (bad cases) that do not seem easy to overcome.
+
+%if we try to make a generic update constant time, we must abort it, and the update fails completely on some data structures. These errors are data-dependent.
+
+
+\paragraph{Bucket-modulus List.}
+Let $B = \poly(n)$ be a ``bucket size'' that will be chosen later. The bucket-modulus list is a tool for making our update time data-independent: it limits the number of vectors that can have a given modulus (where moduli are of the same order as the list size).
+
+\begin{definition}[Bucket-modulus list]\label{def:bucket-mod}
+A Bucket-modulus list $\mathcal{BL}(B, M)$ is a qRAM data structure that stores at most $B \times M$ entries $(\vec{e}, \vec{e} \cdot \vec{a})$, with at most $B$ entries sharing the same modulus $\vec{e} \cdot \vec{a} \mod M$. Thus, $\mathcal{BL}(B, M)$ contains $M$ ``buckets''. Buckets are indexed by moduli, and kept sorted. It supports the following operations:
+\begin{itemize}
+\item Insertion: insert $(\vec{e}, \vec{e} \cdot \vec{a})$. If the bucket at index $\vec{e} \cdot \vec{a} \mod M$ contains $B$ elements, \emph{empty the bucket}. Otherwise, sort it using a simple sorting circuit.
+\item Deletion: remove an entry from the corresponding bucket.
+\item Query in superposition: similar as in Definition~\ref{def:unique-mod}.
+\end{itemize}
+\end{definition}
+
+In our new quantum walks, each list will be stored in a skip list $\mathcal{SL}(M)$ associated with a bucket-modulus $\mathcal{BL}(B, M)$. Each time we insert or delete an element from $\mathcal{SL}(M)$, we update the bucket-modulus list accordingly, according to the following rules.
+
+Upon deletion of an element $\vec{e}$ in $\mathcal{SL}(M)$, let $\vec{e} \cdot \vec{a} = T \mod{M}$, there are three cases for $\mathcal{BL}(B, M)$:
+\begin{itemize}
+\item If $|\{ \vec{e'} \in \mathcal{SL}(M), \vec{e'} \cdot \vec{a} = T \}| > B+1$, then bucket number $T$ in $\mathcal{BL}(B,M)$ stays empty;
+\item If $|\{ \vec{e'} \in \mathcal{SL}(M), \vec{e'} \cdot \vec{a} = T \}| = B + 1$, then removing $\vec{e}$ makes the number of elements reach the bound $B$, so we add them all in the bucket at index $T$;
+\item If $|\{ \vec{e'} \in \mathcal{SL}(M), \vec{e'} \cdot \vec{a} = T \}| \leq B$, then we remove $\vec{e}$ from its bucket.
+\end{itemize}
+
+Upon insertion of an element $\vec{e}$ in $\mathcal{SL}(M)$, there are also three cases for $\mathcal{BL}(B, M)$:
+\begin{itemize}
+\item If $|\{ \vec{e'} \in \mathcal{SL}(M), \vec{e'} \cdot \vec{a} = T \}| = B$, then we empty the bucket at index $T$;
+%the bucket at index $T$ in $L_l'$ reaches an overfull: we remove all elements from it;
+\item If $|\{ \vec{e'} \in \mathcal{SL}(M), \vec{e'} \cdot \vec{a} = T \}| < B$, then we add $\vec{e}$ to the bucket at index $T$ in $\mathcal{BL}(B,M)$;
+\item If $|\{ \vec{e'} \in \mathcal{SL}(M), \vec{e'} \cdot \vec{a} = T \}| > B$, then the bucket is empty and remains empty.
+\end{itemize}
+
+In all cases, there are at most $B$ insertions or deletions in a single bucket. Note that $\mathcal{BL}(B,M) \subseteq \mathcal{SL}(M)$ but that some elements of $\mathcal{SL}(M)$ will be dropped. 
+
+\begin{remark}
+The mapping from a skip list of size $M$ (considered as perfect), which does not ``forget'' any of its elements, to a corresponding bucket-modulus list with $M$ buckets, which forgets some of the previous elements, is deterministic. Given a skip list $L$, a corresponding bucket modulus list $L'$ can be obtained by inserting all elements of $L$ into an empty bucket modulus list.
+\end{remark}
+
+
+
+\subsection{New Data Structure for Vertices}
+\label{subsection:vertex-data-struct}
+
+The algorithms that we consider use multiple levels of merging. However, we will focus only on a single level. Our arguments can be generalized to any constant number of merges (with an increase in the polynomial factors involved). Recall that the product Johnson graph on which we run the quantum walk is unchanged, only the data structure is adapted.
+
+
+%\paragraph{Storing Lists of Elements.}
+
+% We use the augmented radix tree data structure proposed in~\cite{DBLP:conf/pqcrypto/BernsteinJLM13}. In addition to fast superposition access, it allows to insert or to delete an element in a sorted list in time $\poly(n)$.
+
+In the following, we will consider the merging of two lists $L_l$ and $L_r$ of subknapsacks of respective sizes $\ell_l$ and $\ell_r$, with a modular constraint $c$ and a filtering probability $\pf$. The merged list is denoted $L^c= L_l \bowtie_c L_r$ and the filtered list is denoted $L^f$. We assume that pairs $(\vec{e_1}, \vec{e_2})$ in $L^c$ must satisfy $(\vec{e_1} + \vec{e_2}) \cdot \vec{a} = 0 \mod{2^{cn}}$ (the generalization to any value modulo any moduli is straightforward).
+
+On the positive side, our new data structure can be updated, \emph{by design}, with a fixed time that is data-independent. On the negative side, we will not build the complete list $L^f$, and miss some of the solutions. As we drop a fraction of the vectors, some nodes that were previously marked will potentially appear unmarked, but this fraction is polynomial at most. We defer a formal proof of this fact to Section~\ref{subsection:fraction-marked} and focus on the runtime.
+
+We will focus on the case where $\ell_l = \ell_r$ and either $L_l$ or $L_r$ are updated, which happens at all levels in our quantum walk, except the first level. Because there is no filtering at the first level, it is actually much simpler to study with the same arguments. In previous quantum walks, we had $\ell^c =  2\ell - c \leq \ell$, \emph{i.e.} $\ell \leq c$; now we will have $2\ell - c \geq \ell$ and $2 \ell - c + \pf \leq \ell$.
+
+%There are two situations that we need to consider: 
+%
+%1. when $\ell_l > \ell_r$, but only $L_l$ needs to be updated, and $\pf = 0$: this is the lowest level of our vertex data structure in our new quantum walk. 
+%
+%2. When $\ell_l = \ell_r$ and either $L_l$ or $L_r$ are updated: this happens at all upper levels in our algorithm. 
+%In previous quantum walks, we had $\ell^c =  2\ell - c \leq \ell$, \emph{i.e.} $\ell \leq c$; now we will have $2\ell - c \geq \ell$ and $2 \ell - c + \pf \leq \ell$. We will focus on situation 2., and the other one can easily be studied with the same arguments.
+
+Recall that our heuristic time complexity analysis assumes an update time $(\ell-c)/2$. Indeed, the update of an element in $L_l$ or $L_r$ modifies on average $(\ell-c)$ elements in $L_l \bowtie_c L_r$, among which we expect at most one filtered pair $(\vec{e_1}, \vec{e_2})$ (by the inequality $2 \ell - c + \pf \leq \ell$). We find this solution with a quantum search. In the following, we modify the data structure of vertices in order to guarantee the best update time possible, up to additional polynomial factors. We will see however that it does not reach $(\ell-c)/2$. We now define our intermediate lists and sublists, before giving the update procedure and its time complexity.
+
+%\paragraph{Preliminary: Ordering.} We need the following property to select subsets of representations in our data structure:
+%\begin{fact}
+%There exists an efficient mapping $\phi$ of representations to integers by Lemma~\ref{lemma:representation-bijection}, hence a canonical ordering of vectors and pairs of vectors.
+%\end{fact}
+
+\paragraph{Definitions.}
+Both lists $L_l, L_r$ are of size $M \simeq 2^{\ell n}$. We store them in skip lists. In both $L_r$ and $L_l$, for each $T \leq M$, we expect on average only one element $\vec{e}$ such that $\vec{e} \cdot \vec{a}  = T \mod{M}$. We introduce two \emph{Bucket-modulus lists} (Definition~\ref{def:bucket-mod}) $L_l'(B,M)$ and $L_r'(B,M)$ that we will write as $L_l'$ and $L_r'$ for simplicity, indexed by $\vec{e} \cdot \vec{a} \mod{M}$, with an arbitrary bound $B = \poly(n)$ for the bucket sizes. They are attached to $L_l$ and $L_r$ as detailed in Section~\ref{subsection:new-data-struct}. When an element in $L_l$ or $L_r$ is modified, they are modified accordingly.
+
+In $L_l'$ and $L_r'$, we consider the sublists of subknapsacks having the same modulo $C \mod{2^{cn}}$, and we denote by $L_{l,C}'$ and $L_{r,C}'$ these sublists. They can be easily considered separately since the vectors are sorted by knapsack weight. By design of the bucket-modulus lists, $L_{l,C}'$ and $L_{r,C}'$ both have size at most $B 2^{(\ell-c)n}$. We have:
+$$ L_l' \bowtie_c L_r' = \bigcup_{0 \leq C \leq 2^{cn} - 1} L_{l,C}' \times L_{r,C}' \enspace.$$
+
+Next, we have a case disjunction to make. The most complicated case is when $2\ell - 2c + \pf > 0$, that is, each product $L_{l,C}' \times L_{r,C}'$ for a given $C$ yields more than one filtered pair on average. In that case, we define sublists $L_{l,C,i}'$ of $L_{l,C}'$ and sublists $L_{r,C,j}'$ of $L_{r,C}'$ using a new arbitrary modular constraint, so that each of these sublists is of size $-\pf/2$ (at most). There are $\ell-c + \pf/2$ sublists (exactly). The rationale of this cut is that a product $L_{l,C,i}' \times L_{r,C,j}'$ for a given $i,j$ now yields on average a single filtered pair (or less). When $2\ell - 2c + \pf \leq 0$, we don't perform this last cut and consider the product $L_{l,C}' \times L_{r,C}'$ immediately. By a slight abuse of notation, we denote: $(L_{l,C,i}' \times L_{r,C,j}')^f$ the set of filtered pairs from $L_{l,C,i}' \times L_{r,C,j}'$, and we have:
+$$ L^f =  \bigcup_{0 \leq C \leq 2^{cn} - 1} \bigcup_{i,j}(L_{l,C,i}' \times L_{r,C,j}')^f \enspace. $$
+
+%When $2\ell - 2c + \pf > 0$, we cut $L_{l,C}'$ into sublists $L_{l,C,i}$, and $L_{r,C}'$ into sublists $L_{r,C,j}$, of size $-\pf/2$ each, so that any product $L_{l,C,i} \times L_{r,C,j}$ is supposed to contain on average a single valid pair. There are $\ell-c + \pf/2$ sublists. This cut is done with an arbitrary modular constraint, so the sizes of $L_{l,C,i}$ and $L_{r,C,j}$ are not bigger than $-\pf/2$ by more than a constant factor. As above, we will take at most $B$ pairs, and if there are more than $B$, we drop them all. 
+
+
+\begin{algorithm}[htb]
+\caption{Update algorithm: given $L_l, L_r$ of size $\ell$, we insert or delete an element in $L_l$ and update the filtered list $L^f$ accordingly. We focus here on the case $2\ell - 2c + \pf > 0$.}\label{algo:update}
+\begin{algorithmic}[1]
+\Statex \textbf{Data: } skip lists for $L_l, L_r, L^f$, bucket-modulus lists $L_l', L_r'$ 
+\State \Comment{The bucket-modulus list for $L^f$ will be updated later}
+\Statex \textbf{Input: } an insertion / deletion instruction for $L_l$
+\Statex \textbf{Output: } updates $L_l, L_l', L^f$ accordingly
+\State Insert or delete in $L_l$ \Comment{only one element to update}
+\State Update the bucket-modulus structure $L_l'$ \Comment{at most $B$ elements to update}
+%\State Initialize a list $A$ and a list $R$ of elements to add or remove in $L^f$
+%\Statex \Comment{these lists will contain at most $\bigOt{2^{(\ell-c + \pf/2)n}}$ elements}
+%\For{each newly inserted element $\vec{e}$ in $L_l'$}  \Comment{$B = \poly(n)$ iterations}
+%\State Select its corresponding sublist $L_{l,C,i}'$ \Comment{Size $-\pf/2$}
+%\For{each sublist $L_{r,C,j}'$}\Comment{$\ell-c + \pf/2$ iterations}
+%\State Estimate $|(L_{l,C,i}' \times L_{r,C,j}')^f|$ \Comment{time $\bigOt{B \times 2^{- \pf n/2}}$}  %the new number of filtered pairs in $L_{l,C,i}' \times L_{r,C,j}'$
+%\State \textbf{if}  $|(L_{l,C,i}' \times L_{r,C,j}')^f| \leq B$ \textbf{then} $L^f \leftarrow L^f \cup (L_{l,C,i}' \times L_{r,C,j}')^f$
+%\State \textbf{else} remove all pairs of $(L_{l,C,i}' \times L_{r,C,j}')^f \cap L^f$ from $L^f$
+%\EndFor
+%\EndFor
+%$L_{l,C,i}'' = L_{l,C,i}' \backslash \{\vec{e}\}$ or 
+
+\For{each element $\vec{e}$ to insert / delete in $L_l'$} \Comment{$B = \poly(n)$ iterations}
+\State Select its corresponding sublist $L_{l,C,i}'$
+\State Let $L_{l,C,i}'' = L_{l,C,i}' \cup \{ \vec{e} \}$ or $L_{l,C,i}' \backslash \{\vec{e}\}$
+\For{each sublist $L_{r,C,j}'$}\Comment{$\ell-c + \pf/2$ iterations}
+\State Estimate $s = |(L_{l,C,i}' \times L_{r,C,j}')^f|$ \Comment{time $\bigOt{B \times 2^{- \pf n/2}}$}
+\State Estimate $s' = |(L_{l,C,i}'' \times L_{r,C,j}')^f|$ \Comment{time $\bigOt{B \times 2^{- \pf n/2}}$}
+\Statex \Comment{In the case of an insertion, $s' \geq s$ and $s' \leq s$ for a deletion}
+\State \textbf{if} $s > B$ and $s' \leq B$
+\Statex \Comment{The removal of $\vec{e}$ makes the number of filtered pairs acceptable}
+\State ~~ ~~ \textbf{then} $L^f \leftarrow L^f \cup (L_{l,C,i}'' \times L_{r,C,j}')^f$
+\State \textbf{if} $s > B$ and $s' > B$
+\State ~~ ~~ \textbf{then} do nothing
+\State \textbf{if} $s \leq B$ and $s' > B$ 
+\Statex \Comment{The insertion of $\vec{e}$ overflows the filtered pairs}
+\State ~~ ~~ \textbf{then} remove all $(L_{l,C,i}' \times L_{r,C,j}')^f$ from $L^f$
+\State \textbf{if} $s \leq B$ and $s' \leq B$
+\State ~~ ~~ \textbf{then} update $L^f$ with the (at most) $B$ new or removed pairs
+%\State \textbf{if}  $|(L_{l,C,i}' \times L_{r,C,j}')^f| \leq B$ \textbf{then} add to $L^f$ all pairs in $(L_{l,C,i}' \times L_{r,C,j}')^f$ of which $\vec{e}$ is not a member
+%%$L^f \leftarrow L^f \cup (L_{l,C,i}' \times L_{r,C,j}')^f$
+%\State \textbf{else} remove all pairs of $(L_{l,C,i}' \times L_{r,C,j}')^f \cap L^f$ from $L^f$
+\EndFor
+\EndFor
+%%\If{ $|(L_{l,C,i}' \times L_{r,C,j}')^f| \leq B$}
+%%\State remove from $L^f$ all pairs of $|(L_{l,C,i}' \times L_{r,C,j}')^f|$ in which $\vec{e}$ intervenes
+%%\State add all pairs of $|(L_{l,C,i}' \times L_{r,C,j}')^f|$ in $L^f$
+%%\EndIf
+%% remove the pairs in which $\vec{e}$ intervenes
+%%\State \textbf{else} remove all pairs of $(L_{l,C,i}' \times L_{r,C,j}')^f \cap L^f$ from $L^f$
+
+%\State Update $L^f$ with $A$ and $R$
+\end{algorithmic}
+\end{algorithm}
+
+
+
+%We expect filtered pairs to be uniformly distributed among the joints $L_{l,C}' \times L_{r,C}'$ (of size $2\ell - 2c$), hence $2\ell - 2c + \pf$ filtered pairs should occur for each $L_{l,C}' \times L_{r,C}'$. We will compute some of these filtered pairs, but not all. If there are more than $2\ell - 2c + \pf$ of them, they will be lost.
+
+
+%\paragraph{First Step: Moduli Bounds.}
+%Both lists $L_l, L_r$ are of size $M \simeq 2^{\ell n}$. We store them in skip lists. In both $L_r$ and $L_l$, for each $T \leq M$, we expect on average only one element $\vec{e}$ such that $\vec{e} \cdot \vec{a}  = T \mod{M}$. We introduce two \emph{Bucket-modulus lists} (Definition~\ref{def:bucket-mod}) $L_l'$ and $L_r'$, indexed by $\vec{e} \cdot \vec{a} \mod{M}$, with an arbitrary bound $B = \poly(n)$ for the bucket sizes. They are attached to $L_l$ and $L_r$ as detailed in Section~\ref{subsection:new-data-struct}. When an element in $L_l$ or $L_r$ is modified, they are modified accordingly.
+
+\paragraph{Algorithm and Complexity.}
+Algorithm~\ref{algo:update} details our update procedure. We now compute its time complexity and explain why it remains data-independent. Recall that we want to avoid the ``bad cases'' where an update goes on for too long: this is the case where an update in $L_l$ (or $L_r$) creates too many updates in $L^f$. In Algorithm~\ref{algo:update}, we avoid this by deliberately limiting the number of elements that can be updated. We can see that $L^f$ will be smaller than the ``perfect'' one for two reasons: $\bullet$~the bucket-modulus data structure loses some vectors, since the buckets are dropped when they overflow. $\bullet$~filtered pairs are lost. Indeed, the algorithm ensures that in $L^f$, at most $B$ solutions $\vec{e}_l + \vec{e}_r$ come from a cross-product $L_{l,C,i}' \times L_{r,C,j}'$.
+%\begin{itemize}
+%\item the loss of vectors by the bucket-modulus data structure. Indeed, by construction, in $L_l'$ (of size $B \times 2^{n \ell_l}$, at most $B$ vectors have the same modulus $C$ for any $C \leq 2^{n \ell_l}$.
+%\item the loss of of filtered pairs. Indeed, the algorithm ensures that in $L^f$, at most $B$ solutions $\vec{e}_l + \vec{e}_r$ come from a cross-product $L_{l,C,i}' \times L_{r,C,j}'$.
+%\end{itemize}
+
+This makes the update procedure \emph{history-independent} and its time complexity \emph{data-independent}. Indeed:
+
+\begin{lemma}
+The state of the data structures $L_l, L_r, L^f$ after Algorithm~\ref{algo:update} depends only on $L_l, L_r, L^f$ before and on the element that was inserted / deleted.
+\end{lemma}
+
+We omit a formal proof, as it follows from our definition of the bucket-modulus list and of Algorithm~\ref{algo:update}.
+
+\begin{lemma}
+With a good choice of $B$, Algorithm~\ref{algo:update} runs with a data-independent error in $o(2^n)$. The time complexity of Algorithm~\ref{algo:update} is $\bigOt{2^{(\ell-c)n}}$ and an update modifies $\bigOt{2^{\max(\ell-c + \pf/2, 0)n}}$ elements in the filtered list $L^f$ at the next level (respectively $\ell-c$ and $\max(\ell-c + \pf/2, 0)$ in log scale).
+\end{lemma}
+
+
+
+\begin{proof}
+We check step by step the time complexity of Algorithm~\ref{algo:update}:
+\begin{itemize}
+\item Insertion and deletion from the skip list for $L_l$ is done in $\poly(n)$, with a global error that can be omitted.
+\item The bucket-modulus list $L_l'$ is updated in time $\bigO{B} = \poly(n)$ without errors. At most $B$ elements must be inserted or removed.
+\item For each insertion or removal in $L_l'$, we select the corresponding sublist $L_{l,C,i}'$ (or simply $L_{l,C}'$ if $2\ell - 2c + \pf \leq 0$). We look at the sublists $L_{r,C,j}'$ and we estimate the number of filtered pairs in the products $L_{l,C,i}' \times L_{r,C,j}'$ (of size $-\pf$), checking whether it is smaller or bigger than $B$. We explain in \ifeprint Appendix~C\else \cite[Appendix~C]{DBLP:journals/iacr/BonnetainBSS20} \fi how to do that reversibly in time $\bigOt{B \times 2^{-\pf n/2}}$ ($-\pf/2$ in log scale).
+%that, given a search space $X$ with good elements $G \subseteq X$, finds whether $|G| >  B = \poly(n)$ using $\poly(n)$ independent Grover searches in $X$. Since each product is of size $\pf$, the cost if $\pf / 2$. 
+There are $\ell-c + \pf/2$ classical iterations, thus the total time is $\ell-c$.
+\item Depending whether we have found more or less than $B$ filtered pairs, we will have to remove or to add all of them in $L^f$. This means that $B \times 2^{(\ell-c + \pf/2)n}$ insertion or deletion instructions will be passed over to $L^f$.
+\end{itemize}
+
+There are two sources of data-independent errors: first, the skip list data structure (see Section~\ref{subsection:new-data-struct}). Second, the procedure of \ifeprint Appendix~C\else \cite[Appendix~C]{DBLP:journals/iacr/BonnetainBSS20}\fi. Both can be made exponentially small at the price of a polynomial overhead. Note that $B$ will be set in order to get a sufficiently small probability of error (see the next section), and can be a global $\bigO{n}$. However, the polynomial overhead of our update unitary grows with the number of levels. \qed
+\end{proof}
+
+
+\subsection{Fraction of Marked Vertices}
+\label{subsection:fraction-marked}
+
+Now that we have computed the update time of \textsc{NEW-QW}, it remains to compute its fraction $\epsilon_{new}$ of marked vertices. We will show that $\epsilon_{new}= \epsilon \left(1 - \frac{1}{\poly(n)} \right)$ with overwhelming probability on the random subset-sum instance, where $\epsilon$ is the previous fraction in \textsc{QW}.
+
+
+Consider a marked vertex in \textsc{QW}. There is a path in the data structure leading to the solution, hence a constant number of subknapsacks $\vec{e_1}, \ldots, \vec{e_t}$ such that the vertex will remain marked \emph{if and only} if none of them is ``accidentally'' discarded by our new data structure. Thus, if $G$ is the graph of the walk, we want to upper bound:
+$$ \Pr_{v \in G} \left( \begin{matrix}
+\text{$v$ is marked in \textsc{QW} and} \\ \text{not marked in \textsc{NEW-QW}}
+\end{matrix} \right) \leq \sum_{ \vec{e_i}, 1 \leq i \leq t} \Pr_{v \in G} \left(  \begin{matrix}
+\vec{e_i} \in v \text{ in \textsc{QW}} \\
+\vec{e_i} \notin v \text{ in \textsc{NEW-QW}} \\
+\end{matrix} \right) \enspace. $$
+
+We focus on some level in the tree, on a list $L$ of average size $2^{\ell n}$, and on a single vector $\vec{e_0}$ that must appear in $L$. Subknapsacks in $L$ are taken from $\mathcal{B}\subseteq D^n[\alpha,\beta, \gamma]$. We study the event that $\vec{e_0}$ is accidentally discarded from $L$. This can happen for two reasons:
+\begin{itemize}
+\item we have $|\{\vec{e} \in L,  \vec{e}\dotprod \vec{a} = \vec{e_0}\dotprod \vec{a} \mod{2^{\ell n}}\}| > B$: the vector is dropped at the bucket-modulus level;
+\item at the next level, there are more than $B$ pairs from some product of lists $L_{l,C,i}' \times L_{r,C,j}'$ to which the vector $\vec{e_0}$ belongs, that will pass the filter.
+%\item at the next level, there are more than $B$ pairs $\vec{e_0}, \vec{e}$ such that $ (\vec{e_0} + \vec{e} ) \cdot \vec{a} = 0 \mod{ 2^{cn} }$ and $\vec{e_0} + \vec{e}$ is filtered.
+\end{itemize}
+
+
+%We show that the second ``bad case'' is actually very similar to the first one. Assume that there are more than $B$ pairs $\vec{e}, \vec{e'}$ such that $ (\vec{e} + \vec{e'} ) \cdot \vec{a} = 0 \mod{ 2^{cn} }$ and $\vec{e} + \vec{e'}$ is a valid representation, where there should have been only one. Then there are more than $B$ vectors $\vec{e'}$ satisfying a given modular condition $\vec{e'} \cdot \vec{a} = t \mod{2^{cn}}$ \emph{and} the condition ``$\vec{e} + \vec{e'}$ is a valid representation''. If the parameters are set such that the average number of such vectors is exponentially low, which is the case for us, then the probability that this event happens can be bounded by the same argument as the first ``bad case''. Then, in the update procedure, instead of taking only the ``smallest'' pair found, we take the ``$B$ smallest'' pairs. The time complexity increases by a factor $\poly(B) = \poly(n)$. \AS{argument barbare, mais je sais que ca marche.}
+
+% actually yields an instance of the first one. Assume that have set a modulus $P$ and considered all pairs of subknapsacks in a product of lists $L \times L'$, such that $\vec{e}\dotprod \vec{a} = \vec{e}_0 \dotprod \vec{a} + M' \pmod P$. The value of $P$ has been chosen so that on average a single pair was to be expected. Now, modify the update procedure as follows: instead of keeping only the smallest pair, we keep the $B$ smallest. The time complexity increases by a factor $\poly(B) = \poly(n)$. In the case where there are more than $B$ such pairs, all of them would have been passed to the upper level in \textsc{QW}, where they would give more than $B$ representations $\vec{e} + \vec{e'}$ with the same modulus. Hence, these vectors would be discarded. \AS{not exactly but close}
+
+We remark the following to make our computations easier.
+
+\begin{fact}
+We can replace the $L$ from our new data structure \textsc{NEW-QW} by a list of exact size $2^{\ell n}$, which is a sublist from the list $L$ in \textsc{QW}.
+\end{fact}
+
+At successive levels, our new data structure discards more and more vectors. Hence, the actual lists are smaller than in \textsc{QW}. However, removing a vector $\vec{e}$ from a list, if it does not unmark the vertex, does not increase the probability of unmarking it at the next level, since $\vec{e}$ does not belong to the unique solution.
+
+\begin{fact}
+When a vertex in \textsc{NEW-QW} is sampled uniformly at random, given a list $L$ at some merging level, we can assume that the elements of $L$ are sampled uniformly at random from their distribution $\mathcal{B}$ (with a modular constraint).
+\end{fact}
+
+This fact translates Heuristic~\ref{heur1} as a global property of the Johnson graph. At the first level, nodes contain lists of exponential size which are sampled without replacement. However, when sampling with replacement, the probability of collisions is exponentially low. Thus, we can replace $\Pr_{v \in G}$ by $\Pr_{v \in G'}$ where $G'$ is a ``completed'' graph containing all lists sampled uniformly at random with replacement. This adds only a negligible number of vertices and does not impact the probability of being discarded.
+
+%However, since the size of these lists is a lower exponential than the size of their distribution, the probability for a given list to contain a collision is exponentially low. Thus, if we complete the graph by taking lists sampled uniformly at random \emph{with replacement}, we add only a negligible number of vertices, and we do not impact the probability of being discarded.
+
+
+\paragraph{Number of Vectors Having the Same Modulus.}
+%This means that in the lists of the lowest level of the tree representing $\mathcal{N}$, there exists one decomposition of the final solution that passes all the modulus conditions and all the filters in each level.  $\mathcal{N}$ is no longer a marked node of \textsc{NEW-QW} if and only if, in one of the intermediate list $L$ containing a vector $\vec{e_0}$ that leads to the final solution, we have $\#\{\vec{e} \in L | \vec{e}\dotprod \vec{a}=\vec{e}_0\dotprod \vec{a} \pmod M\} > B\times 2^{l-c}$, where $L$ is of size upper-bounded by $C\times 2^l$ and $M\approx 2^c$.  Here $C$ is a constant.
+%Formally, let $\mathcal{B}\subseteq D^n[\alpha,\beta]$,
+Let $N \simeq 2^n$ and $M$ be a divisor of $N$. 
+Given a particular $\vec{e}_0\in\mathcal{B}$ and a vector $\vec{a}\in\mathbb{Z}_{N}^n$, 
+$$ \text{For $\vec{e}\in \mathcal{B}$, define } X_\vec{e}(a)= \begin{cases}
+  1 & \text{ if } \vec{e}\dotprod \vec{a} = \vec{e}_0 \dotprod \vec{a} \pmod M\\
+  0 & \text{ otherwise}
+\end{cases}$$
+
+We prove the following Lemma in \ifeprint Appendix~\ref{appendix:probas} \else the full version of the paper~\cite{DBLP:journals/iacr/BonnetainBSS20}\fi.
+
+\begin{lemma}\label{lemma:prob}
+If $|\mathcal{B}|\gg M \simeq |L|$, then for a $1-\negl(n)$ proportion of $\vec{a} \in \mathbb{Z}_{N}^n$, and with an appropriate $B = \bigO{n}$:
+\begin{equation}
+\label{eq:prob}
+\prob[\vec{e}_1, \cdots, \vec{e}_{|L|} \sim Unif(\mathcal{B})]{\sum_{i=1}^{|L|} X_{\vec{e}_i} (\vec{a})< B -1} > 1 - \frac{1}{\poly(n)}
+\end{equation}
+\end{lemma}
+
+
+% now prove that for a $1-\negl(n)$ portion of $\vec{a} \in \mathbb{Z}_{2^n}^n$,
+%$$ \prob[\vec{e}_1, \cdots, \vec{e}_{C\times |L|} \sim Unif(\mathcal{B})]{\sum_{i=1}^{C \times |L|} X_{\vec{e}_i} (\vec{a})< B -1} > 1 - \frac{1}{\poly(n)} \enspace.$$
+
+%$$\prob[U\subseteq \mathcal{B}, \#U\leq |L|, \vec{e}_0 \in U]{\sum_{\vec{e} \in U}{X_{\vec{e}}(\vec{a})< B }}>1 - \frac{1}{\poly(n)}$$
+%
+%\AS{pourquoi C fois la taille de L ? pourquoi ce facteur C en plus?}
+
+%\paragraph{Number of Filtered Pairs.}
+
+For the number of filtered pairs, we use the fact that the vectors at each level are sampled uniformly at random from their distribution. If this is the case, then a Chernoff bound (similar to the proof of Lemma~\ref{lemma:prob}) limits the deviation of the number of filtered pairs in $L_{l,C,i}' \times L_{r,C,j}'$ from its expectation (which is 1 by construction): the probability that there are more than $B + 1$ pairs is smaller than $e^{- (B+1)/3}$. By taking a sufficiently big $B = \bigO{n}$, we can take a union bound over all products of lists $L_{l,C,i}' \times L_{r,C,j}'$ in which $\vec{e_0}$ intervenes. We also take a union bound over the intermediate subknapsacks that we are considering. The loss of vertices remains inverse polynomial.
+
+%A similar proof can be done for the number of filtered pairs. For $\vec{e}\in \mathcal{B}$, define
+%$$Z_\vec{e}(a)= \begin{cases}
+%  1 & \text{ if } \vec{e}\dotprod \vec{a} = \vec{e}_0 \dotprod \vec{a} \pmod C \text{ and } \vec{e} + \vec{e_0} \text{ is filtered at the next level} \\
+%  0 & \text{ otherwise}
+%\end{cases}$$
+%where the condition of being filtered or not depends on $\vec{e_0}$, and $\mathbb{E}(Z_\vec{e}(a)) \leq \frac{1}{|L|} $ for some $r$ (which is implied by our constraints). Then: % a similar proof gives, via a Chernoff bound:
+%
+%\begin{lemma}\label{lemma:prob2}
+%If $|\mathcal{B}|\gg M$, then for a $1-\negl(n)$ proportion of $\vec{a} \in \mathbb{Z}_{N}^n$:
+%\begin{equation}
+%\prob[\vec{e}_1, \cdots, \vec{e}_{|L|} \sim Unif(\mathcal{B})]{\sum_{i=1}^{|L|} Z_{\vec{e}_i} (\vec{a})< B -1} > 1 - \frac{1}{\poly(n)}
+%\end{equation}
+%\end{lemma}
+%
+%By a union bound argument, since there is a constant number of intermediate subknapsacks to keep, the fraction of unmarked vertices is less than $\frac{1}{\poly(n)}$.
+
+
+
+%Using Chernoff's inequality, when $B$ is big enough, for a $1-\negl(n)$ portion of $\vec{a}\in \mathbb{Z}_{2^n}^n$,
+%$$\prob[U\subseteq \mathcal{B}, |U|\leq C\times 	2^l, \vec{e}_0 \in U]{\sum_{\vec{e} \in U}{X_{\vec{e}}(\vec{a})<B\times 2^{l-c}}}> (1-\negl(n))(1-\negl(n)) >\frac{1}{\poly(n)}$$
+%
+%Thus, we showed that for a particular $\vec{e}_0$ that leads to a final solution in an intermediate list of the tree, more that a fraction of $\frac{1}{\poly(n)}$ of the original marked nodes will not be unmarked due to this vector. Since the tree structure is fixed for each subset-sum algorithm,
+%by using a union bound argument, we have $\epsilon_{new}=\frac{\epsilon}{\poly(n)}$.
+
+\subsection{Time Complexities without Heuristic~2}
+\label{subsection:time-without-heuristics}
+
+\newcommand{\maxz}{\widehat{ \mathrm{max}}}
+
+Previous quantum subset-sum algorithms~\cite{DBLP:conf/pqcrypto/BernsteinJLM13,DBLP:conf/tqc/HelmM18} have the same time complexities without Heuristic~\ref{heuristic:helm-may}, as they fall in parameter ranges where the bucket-modulus data structure is enough. However, this is not the case of our new quantum walk. We keep the same set of constraints and optimize with a new update time. Although using the extended $\zomd$ representations brings an improvement, neither do the fifth level, nor the left-right split. This simplifies our constraints. Let $\maxz(\cdot) = \max(\cdot,0)$. The guaranteed update time becomes:
+\begin{multline*}
+\mathsf{U} = \maxz \bigg( \undertext{Level 2}{\ell_3 - (c_2 - c_3)}, \undertext{Number of elements to update at level 1}{\maxz(\ell_3 - (c_2 - c_3) + \frac{p_2}{2})} + \maxz(\ell_2 - (c_1-c_2)) ,\\
+\underbrace{ \frac{1}{2} \left( \maxz \!\left( \ell_3\! - \!(c_2 \!-\! c_3) \!+ \!\frac{p_2}{2}\right) \! + \maxz \!\left(\ell_2 \!- \!(c_1 - c_2) + \frac{p_1}{2}\right)\! + \maxz(\ell_1 - (1-c_1)) \right) }_{\mbox{Final quantum search among all updated elements}} \bigg)
+\end{multline*}
+
+We obtain the time exponent $0.2182$ (rounded upwards) with the following parameters (rounded). The memory exponent is $0.2182$ as well.
+\begin{gather*}
+\ell_0 = -0.2021, \ell_1 = 0.1883, \ell_2 = 0.2102, \ell_3 = 0.2182, \ell_4 = 0.2182  \\
+c_3 = 0.2182, c_2 = 0.4283, c_1 = 0.6305, p_0 = -0.2093, p_1 = -0.0298, p_2 = -0.0160 \\
+\alpha_1 = 0.0172, \alpha_2 = 0.0145, \alpha_3 = 0.0107, \gamma_1 = 0.0020
+\end{gather*}
+%$$ \ell_0 = -0.2021, \ell_1 = 0.1883, \ell_2 = 0.2102, \ell_3 = 0.2182, \ell_4 = 0.2182 $$
+%$$ c_3 = 0.2182, c_2 = 0.4283, c_1 = 0.6305, p_0 = -0.2093, p_1 = -0.0298, p_2 = -0.0160 $$
+%$$ \alpha_1 = 0.0172, \alpha_2 = 0.0145, \alpha_3 = 0.0107, \gamma_1 = 0.0020 $$
+%%$$  $$
+

@@ -1,0 +1,414 @@
+
+\section{Bijection between Representations and Integers}
+\label{appendix:rpbijection}
+
+%\AS{copié sur l'HDR de Nicolas, P 36}
+It is well known
+%\footnote{Thanks to Nicolas Sendrier for pointing out this to us.} 
+that there exists a bijection between $\left[0, {n \choose m} \right[$ and $n$-bit vectors of Hamming weight $m$, and this bijection can be computed in polynomial time in $n$~\cite{ch72}. In our case, $m = \beta n$ and such vectors are subknapsacks from $D^n[0, \beta]$. If $i_1, \ldots i_{m}$ are the bit-positions of the $m$ ``1'' in this vector, we map it to the $m$-tuple of integers: $(i_1, \ldots i_{m})$, and define the bijection as:
+\begin{align*}
+\phi~: (i_1, \ldots i_{m}) \mapsto {i_{m} - 1 \choose {m}} + \ldots + {i_1 - 1 \choose {1}}
+\end{align*}
+where ${i \choose {j}}$ has supposedly been precomputed for all $i \leq n, j \leq m$. In order to compute the inverse $\phi^{-1}$, we find for each $j \leq t$ the unique integer $i_j$ such that ${i_{j} - 1 \choose {m}} \leq x \leq {i_{j} \choose {m}}$.
+We can generalize this to an arbitrary number of nonzero symbols (3 in our paper: ``1'', ``-1'' and ``2''), that we denote $1, 2, \ldots t$.  Let $k_1, \ldots k_t$ be the counts of each symbol in the vector $\vec{v}$. We map it to a tuple of tuples: $ (i^1_1, \ldots i^1_{k_1}), \ldots$, $(i^t_1, \ldots i^t_{k_t}) $
+where the first vector represents the positions of the ``1'' among the $n$ bit positions, the second vector represents the positions of the ``2'' \emph{after having removed the ``1''}, and so on. Consequently, we have $0 \leq i^1_{j} \leq n-1$, $0 \leq i^2_{j} \leq n-1 - k_1$, \emph{etc}.
+
+Next, we map each of these $t$ tuples individually to an integer, as was done above: $\phi^j (i^j_1, \ldots i^j_{k_j}) = x^j$ where $0 \leq x^j \leq {n - k_1 \ldots -k_{j-1} \choose k_j }$. Finally, we compute:
+\begin{align*}
+\phi(\vec{v}) &= x^1 + {n \choose k_1} x^2 + {n \choose k_1, k_2} x^3 + \ldots + {n \choose k_1, \ldots k_t} x^t \\
+&= x^1 + {n \choose k_1} \left( x^2 + {n - k_1 \choose k_2} \left( x^3 + \ldots + {n - k_1 \ldots -k_{t-2} \choose k_{t-1} } x^t\right) \ldots \right) \enspace.
+\end{align*}
+
+$$  $$
+By the bounds on the $x^j$, we remark that $0 \leq \phi(\vec{v}) \leq {n \choose k_1, \ldots k_t } - 1$. Furthermore, we observe that one can easily retrieve the $x^j$ by successive euclidean divisions, and use the bijections $\phi^j$ to finish the computation.
+
+% Recall the multinomial coefficient expansion:
+%$$ {n \choose k_1, \ldots k_t } = {n \choose k_1} \times { n-k_1 \choose k_2 } \ldots \times {  (n - k_1 - \ldots -k_{t-1} \choose k_t } $$
+%to show that the result is between $0$ and ${n \choose k_1, \ldots k_t }$. To compute the inverse of this function, we start from an integer, 
+
+
+\begin{lemma}\label{lemma:representation-bijection}
+Let $n, k_1, \ldots k_t$ be $t +1$ integers such that $k_1 + \ldots + k_t \leq n$. There exists a quantum unitary, realized with $poly(n)$ gates, that on input a number $j$ in $\left[0, {n \choose {k_1, \ldots k_t}} \right[$, writes on its output register the $j$-th vector $\phi^{-1}(j) \in \{0, \ldots, t\}^n$ having, for each $1 \leq i \leq t$, exactly $k_i$ occurrences of the symbol ``$i$''. There exists another unitary which writes, on input $\vec{v}$, the integer value $\phi(\vec{v})$.
+\end{lemma}
+
+Using this unitary in combination with a Quantum Fourier Transform, we can, for example, easily produce superpositions of subsets of $D^n[\alpha, \beta, \gamma]$, by taking arbitrary integer intervals.
+
+%We can use this unitary in combination with a Hadamard transform on $\entr{\beta} n$ bits, by the approximation ${n \choose {\beta n}} = 2^{\entr{\beta}n}$. 
+
+\section{Filtering Probabilities}
+\label{appendix:filter}
+
+We give below the filtering probabilities for representations that use ``-1'' and ``2''. The principle is similar to Lemma~\ref{lemma:hgj-filter}, but the details are more technical. Notice that both of these lemmas assume symmetric input distributions, and thus are less general than Lemma~\ref{lemma:hgj-filter}.
+
+\begin{lemma}[Filtering BCJ-style representations]
+\label{lemma:bcj-filter}
+Let $\vec{e_1}, \vec{e_2} \in D^n[\alpha, \beta]$ and $\gamma \leq 2 \alpha$. Then the logarithm of the probability that $\vec{e_1} + \vec{e_2} \in D^n[\gamma, 2\beta]$ is:
+ \begin{multline*}
+ \pfilterbcj{\alpha}{\beta}{\gamma} = \bin{\beta+\alpha}{\alpha-\gamma/2} + \bin{\alpha}{\alpha-\gamma/2} \\+ \trin{1-\beta-2\alpha}{\gamma/2}{\beta+\gamma/2} - \trin{1}{\beta+\alpha}{\alpha} 
+ \end{multline*}
+ \end{lemma}
+
+\begin{proof}
+In order to estimate the success probability, we need to estimate the number of well-formed representations, and how they can be decomposed. Given a fixed vector $\vec{e_1} \in D$, we count the number of compatible $\vec{e_2}$ such that $xn$ positions with a -1 from $\vec{e_2}$ are cancelled by a 1 from $\vec{e_1}$. As $\vec{e_1+e_2} \in D^n[\gamma,2\beta]$, there are
+${(\beta+\alpha)n \choose xn} {\alpha n \choose (2\alpha - \gamma -x) n)} { (1-\beta-2\alpha)n \choose (\alpha-x)n, (\beta+\gamma-\alpha+x)n }$ such vectors.
+
+Taking the logarithm and the standard approximations, its derivative is $\log\left(\frac{\beta + \alpha -x}x \frac{2\alpha-\gamma -x}{\gamma-\alpha+x} \frac{\alpha-x}{\beta+\gamma-\alpha+x}\right)$. This term is strictly decreasing for $O< x < \gamma-\alpha$, and equals 0 for $x = \alpha-\gamma/2$. Hence, this is the maximum, which correspond to the balanced case. It is equal, up to a polynomial loss, to the total number of compatible vectors. Hence, the log of the number of compatible vectors is
+
+$\bin{\beta+\alpha}{\alpha-\gamma/2} + \bin{\alpha}{\alpha-\gamma/2} + \trin{1-\beta-2\alpha}{\gamma/2}{\beta+\gamma/2}.$
+As there are $\trin{1}{\beta+\alpha}{\alpha}$ vectors in $D^n[\alpha,\beta]$, the lemma holds. \qed
+\end{proof}
+
+
+%\RB{
+%\begin{lemma}[Filtering representations using ``2''s]
+%\label{lemma:better-filter}
+%Let $\vec{e_1}, \vec{e_2} \in D^n[\alpha_1, \beta, \gamma_1]$ and $\alpha_0, \gamma_0 \geq 0$. Let us define :
+%$\left\lbrace\begin{array}{l}
+%x_{min} = \max(0, \alpha_1+\beta_1 - \frac{1-\alpha_0+\gamma_0}{2}, \gamma_1 - \gamma_0/2)\\
+%x_{max} = \min(\alpha_1-\alpha_0/2, \alpha_0/2 + \beta_1 - \gamma_0, \gamma_1)
+%\end{array}\right.$. If $x_{min} \leqslant x_{max}$, then the logarithm of the probability that $\vec{e_1} + \vec{e_2} \in D^n[\alpha_0, 2\beta, \gamma_0]$ is at least:
+% \begin{multline*}
+% \pfilternous{\alpha_0}{\beta}{\gamma_0}{\alpha_1}{\gamma_1} = \max\limits_{x \in [x_{min}, x_{max}]} \bin{\alpha_0}{\alpha_0/2} + \trin{\gamma_0}{\gamma_1-x}{\gamma_1-x} \\ + \trin{1-2\alpha_0 - 2\beta + \gamma_0}{\alpha_1-\alpha_0/2-x}{\alpha_1-\alpha_0/2-x} \\ + \quadrin{\alpha_0 + 2\beta - 2\gamma_0}{x}{x}{\alpha_0/2+\beta-\gamma_0-x} \\ - \quadrin{1}{\alpha_1}{\alpha_1+\beta-2\gamma_1}{\gamma_1}
+% \end{multline*}
+%\end{lemma}
+%
+%\begin{proof}
+%To avoid the explosion of the number of variables, we restrain ourselves to the \textit{symmetric} cases (for which there are as much $1$s given by $0+1$ as $1$s given by $1+0$, etc.) Given some $\vec{e_1} \in D^n[\alpha_1, \beta, \gamma_1]$, we compute the number of compatible $\vec{e_2} \in D^n[\alpha_1, \beta, \gamma_1]$. These vectors can be sorted according to the number $x n$ of positions where a $-1$ from $\vec{e_1}$ cancels out a $2$ from $\vec{e_2}$. The number of such vectors $\vec{e_2}$ is ${\alpha_0 n \choose \alpha_0 n/2} {\gamma_0 n \choose (\gamma_1 -x)n, (\gamma_1-x)n} {(1-2\alpha_0-2\beta + \gamma_0)n \choose (\alpha_1-\alpha_0/2-x)n, (\alpha_1-\alpha_0/2-x)n} {(\alpha_0+2\beta - 2\gamma_0)n \choose x n, x n, (\alpha_0/2 + \beta - \gamma_0 - x) n}$. This quantity is only defined for $x_{min} \leqslant x \leqslant x_{max}$, if $x$ is outside of these bounds, there is no compatible $\vec{e_2}$. As $x n$ must be an integer, there are only a linear number of possible choices for $x$. Therefore the number of all possible $\vec{e_2}$ is given, up to a polynomial factor, by the number of $\vec{e_2}$s for the best $x$. In order to obtain a probability, we divide this number by $n \choose \alpha_1 n, (\alpha_1 + \beta - 2\gamma_1)n, \gamma_1 n)$, which is the size of $D^n[\alpha_1, \beta, \gamma_1]$. We observe here that the logarithm of the probability that $\vec{e_2}$ is compatible with $\vec{e_1}$ is exactly $\pfilternous{\alpha_0}{\beta}{\gamma_0}{\alpha_1}{\gamma_1}$. As we discarded all asymmetric cases, the real value of the logarithm of the probability that $\vec{e_1}$ and $\vec{e_2}$ are compatible is at least $\pfilternous{\alpha_0}{\beta}{\gamma_0}{\alpha_1}{\gamma_1}$. \qed
+%\end{proof}
+%}
+\begin{lemma}[Filtering representations using ``2''s]
+\label{lemma:better-filter}
+Let $\vec{e_1}, \vec{e_2} \in D^n[\alpha_1, \beta, \gamma_1]$ and $\alpha_0, \gamma_0 \geq 0$. Let us define :
+$\left\lbrace\begin{array}{l}
+x_{min} = \max(0, \alpha_1+\beta - \frac{1-\alpha_0+\gamma_0}{2}, \gamma_1 - \gamma_0/2)\\
+x_{max} = \min(\alpha_1-\alpha_0/2, \alpha_0/2 + \beta_1 - \gamma_0, \gamma_1)
+\end{array}\right.$. If $x_{min} \leqslant x_{max}$, then the logarithm of the probability that $\vec{e_1} + \vec{e_2} \in D^n[\alpha_0, 2\beta, \gamma_0]$ is at least:
+ \begin{multline*}
+ \pfilternous{\alpha_0}{\beta}{\gamma_0}{\alpha_1}{\gamma_1} = \max\limits_{x \in [x_{min}, x_{max}]} \trin{\alpha_1}{x}{\alpha_0/2} + \\ \trin{\alpha_1+\beta-2\gamma_1}{\gamma_0-2\gamma_1+2x}{\beta-\gamma_0-x+\alpha_0/2} + \bin{\gamma_1}{x} + \\ \quadrin{1-\beta-2\alpha_1+\gamma1}{\gamma_1-x}{\alpha_0/2}{\beta-\gamma_0-x+\alpha_0/2} -\\ \quadrin{1}{\alpha_1}{\alpha_1+\beta-2\gamma_1}{\gamma_1}
+ \end{multline*}
+\end{lemma}
+\begin{proof}
+To avoid the explosion of the number of variables, we restrain ourselves to the \textit{symmetric} cases (for which there are as much $1$s given by $0+1$ as $1$s given by $1+0$, etc.) Given some $\vec{e_1} \in D^n[\alpha_1, \beta, \gamma_1]$, we compute the number of compatible $\vec{e_2} \in D^n[\alpha_1, \beta, \gamma_1]$. These vectors can be sorted according to the number $x n$ of positions where a $-1$ from $\vec{e_1}$ cancels out a $2$ from $\vec{e_2}$. For $\vec{e_1} + \vec{e_2}$ to be in $D^n[\alpha_0, 2\beta, \gamma_0]$, we must have :
+\begin{itemize}
+\item $(-1) + (0) | (0) + (-1)$ : $\alpha_0 n/2$ times
+\item $(-1) + (1) | (1) + (-1)$ : $(\alpha_1 - x - \alpha_0/2)n$ times
+\item $(-1) + (2) | (2) + (-1)$ : $x n$ times
+\item $(1) + (0) | (0) + (1)$ : $(\alpha_0/2 + \beta - \gamma_0 - x)n$ times
+\item $(2) + (0) | (0) + (2)$ : $(\gamma_1 - x)n$ times
+\item $(1) + (1)$ : $(\gamma_0 - 2\gamma_1 + 2 x)n$ times
+\item $(0) + (0)$ : $(1 - \alpha_0 + \gamma_0 - 2\alpha_1 - 2\beta + 2x)n$ times (\emph{i.e.} the remaining)
+\end{itemize}
+Thus, in $\vec{e_1}$ (which contains $\alpha_1$ ``$-1$''s), $\alpha_0 n/2$ of the ``$-1$''s must match a ``$0$'', $(\alpha_1 - x - \alpha_0/2)n$ of the ``$-1$''s must match a ``$1$'' and the remaining $nx$ must match a ``$2$''. Therefore, there are ${\alpha_1 n \choose \alpha_0 n/2, x n}$ possible choices for the coordinates of $\vec{e_2}$ matching the ``$-1$''s of $\vec{e_1}$. Similarly, there are ${(\alpha_1+\beta-2\gamma_1) n \choose (\gamma_0-2\gamma_1+2x) n, (\beta-\gamma_0-x+\alpha_0/2) n}$ possibilities for the coordinates of $\vec{e_2}$ matching the ``$1$''s, ${\gamma_1 n \choose x n}$ for the coordinates matching the ``$2$''s, and ${(1-\beta-2\alpha_1+\gamma1) n \choose (\gamma_1-x) n, \alpha_0 n/2, (\beta-\gamma_0-x+\alpha_0/2)n}$ for the coordinates matching the ``$0$''s.
+%Thus, for $\vec{e_2}$, there are ${\alpha_1 n \choose \alpha_0 n/2, x n}$ possibilities for the elements matching the $-1$s of $\vec{e_1}$, ${(\alpha_1+\beta-2\gamma_1) n \choose (\gamma_0-2\gamma_1+2x) n, (\beta-\gamma_0-x+\alpha_0/2) n}$ possibilities for the elements matching the $1$s, ${\gamma_1 n \choose x n}$ for the elements matching the $2$s, and  ${(1-\beta-2\alpha_1+\gamma1) n \choose (\gamma_1-x) n, \alpha_0 n/2, (\beta-\gamma_0-x+\alpha_0/2)n}$ for the elements matching the $0$s.
+
+The total number of possibilities is :
+\begin{multline*}
+\sum\limits_x {\alpha_1 n \choose \alpha_0 n/2, x n} {(\alpha_1+\beta-2\gamma_1) n \choose (\gamma_0-2\gamma_1+2x) n, (\beta-\gamma_0-x+\alpha_0/2) n} \\ {\gamma_1 n \choose x n} {(1-\beta-2\alpha_1+\gamma1) n \choose (\gamma_1-x) n, \alpha_0 n/2, (\beta-\gamma_0-x+\alpha_0/2)n}
+\end{multline*}
+
+This quantity is defined only for $x_{min} \leqslant x \leqslant x_{max}$. If $x$ is outside of these bounds, one of these multinomial (at least) is zero and there is no compatible $\vec{e_2}$. As $x n$ must be an integer, there are only a linear number of possible choices for $x$. Therefore the number of all possible $\vec{e_2}$ is given, up to a polynomial factor, by the number of $\vec{e_2}$s for the best $x$.
+
+In order to obtain a probability, we divide the number of compatible $\vec{e_2}$ by $n \choose \alpha_1 n, (\alpha_1 + \beta - 2\gamma_1)n, \gamma_1 n)$, which is the size of $D^n[\alpha_1, \beta, \gamma_1]$. We observe here that the logarithm of the probability that $\vec{e_2}$ is compatible with $\vec{e_1}$ is exactly $\pfilternous{\alpha_0}{\beta}{\gamma_0}{\alpha_1}{\gamma_1}$.
+
+We only considered the symmetric cases, assuming that we can neglect the contribution of the asymmetric cases. If we cannot, it means that we underestimated the probability for $\vec{e_1}$ and $\vec{e_2}$ to be compatible, and we could improve further the parameters by taking into account the asymmetric cases as well. \qed
+\end{proof}
+
+
+
+\section{Estimating a Number of Solutions Reversibly}\label{appendix:nbsols}
+
+We give a reversible procedure that, given a search space $X$ with good elements $G \subseteq X$, finds whether $|G| >  B$ using $\bigOt{B}$ independent Grover searches in $X$. This procedure uses a coupon collector instead of quantum counting~\cite{DBLP:conf/icalp/BrassardHT98}, because $B$ is considered to be a constant, and we are interested in a good success probability rather than a quadratic speedup.
+
+\begin{lemma}
+Let $X$ be a search space of exact size $2^{\alpha n}$ and $G \subseteq X$ be a ``good'' subspace of exact size unknown. There exists a quantum algorithm that given superposition access to $X$, finds whether $|G| \geq B$ or not in time $\bigOt{B \sqrt{X}}$ and with a negligible probability of error.
+\end{lemma}
+
+\begin{proof}
+Although $|G|$ is not known, we use the idea (see \emph{e.g.}~\cite{brassard2002quantum}) that  we can perform quantum searches with an approximate number of iterations and still obtain solutions with a good probability.
+
+%, we can reuse an idea of~\cite{brassard2002quantum}: after performing $\bigO{\sqrt{|X|}}$ iterations of quantum search, one obtains a random quantum state in the plane spanned by the uniform superposition of $G$ and the uniform superposition of $X \backslash G$. That is, a state $\ket{\psi}$ that, if measured, yields a solution $g \in G$ with probability roughly $\frac{1}{2}$. 
+
+More precisely, there exists a number $t$, depending on $|G|$ (unknown) and $|X|$ (known) such that after $t$ iterations, the state will be exactly the uniform superposition of $G$. This ideal $t$ is not an integer; it is between $1$ and $\lceil\frac{\pi}{4} \sqrt{|X|} \rceil$ (we assume that there is at least a solution, otherwise we will also detect this). Since we don't know $t$, we will instead approximate it by a $t'$ such that $\frac{t}{2} \leq t' \leq \frac{3t}{2}$. If we perform $t'$ iterations with such a good $t'$, we will fall on a state with a constant global amplitude $b$ (roughly $\frac{1}{\sqrt{2}}$) on elements of $G$. Thus, we perform many different searches with different iteration numbers, ranging from $0, 1$ to $\lceil\frac{\pi}{4} \sqrt{|X|} \rceil$, and increasing exponentially. This ensures us that regardless of the value of $t$, one of these numbers will be an approximation sufficient for us.
+
+Since we want the algorithm to work with a global error negligible and independent of $|G|$, we set $c = \bigO{\ln \sqrt{|X|}  }$ the number of different searches and perform $c' B$ copies of each. Thus, we have a total of $c c' B$ independent states $\ket{\psi_i}$ for $1 \leq i \leq c$. One of these packets approximates the good $t$ at best, but we don't know which one. We see the state $\bigotimes_i (\ket{\psi_i}^{\otimes cB})$ as a superposition over tuples of $X^{c c' B}$:
+$$ \sum_{x_1, \ldots x_{c c'B}} \alpha_{x_1, \ldots x_{c c'B}}\ket{x_1} \ldots \ket{x_{c c'B}} \enspace. $$
+
+
+%we consider $c c' B$ copies of the final state $\ket{\psi}$ obtained with this good number of iterates, where $c = \bigO{\ln \sqrt{|X|}  }$. Note that the end states of the other searches are still here, and we don't know which ones correspond to the good $t'$. But the error can only decrease 
+%
+%he end states of the other searches are still here, and their presence can only improve the probability of success of the operation that we describe). We see the state $ \ket{\psi}^{\otimes cB}$ as a superposition over tuples of $X^{cB}$:
+%$$ \sum_{x_1, \ldots x_{cB}} \alpha_{x_1, \ldots x_{cB}}\ket{x_1} \ldots \ket{x_{cB}} \enspace. $$
+
+We check whether the tuple $(x_1, \ldots x_{c c' B})$ contains $\geq B$ distinct solutions and we put the result in a qubit:
+$$ \sum_{x_1, \ldots x_{ c c'B}} \alpha_{x_1, \ldots x_{c c'B}}\ket{x_1} \ldots \ket{x_{c c'B}} \ket{ (x_1, \ldots x_{c c' B} \mbox{ contains $\geq B$ distinct solutions} )} \enspace. $$
+
+%More precisely, let $\theta = \arcsin \sqrt{\frac{|G|}{|X|}}$. After performing $k$ iterations of quantum search, the probability $p$ of success is $\sin^2 ((2k+1)\theta)$. Thus whether $p$ is bigger than a constant is determined by whether $(2k+1)\theta \mod \pi$ belongs to an interval centered on $\pi / 2$.
+%
+%Since we want the algorithm to work with a global error negligible and independent of $|G|$, we will perform many quantum searches in parallel, \emph{with different numbers of iterations}. We select a constant $c$ and we perform $c B$ searches, with iteration numbers $k_1, \ldots, k_{cB}$ evenly distributed between $\lfloor \frac{\pi}{4} \sqrt{|X|} \rfloor$ and $2 \lfloor \frac{\pi}{4} \sqrt{|X|} \rfloor$. We denote $\ket{\psi_1}, \ldots, \ket{\psi_{cB}}$ the obtained results.
+%
+%Although $|G|$ can be anywhere between $B$ and $|X|$, there exists two constants $0 < c',b < 1$ such that a proportion $c'$ of our choices $k_1, \ldots, k_{cB}$ yield $\sin^2 ((2k_i+1)\theta)$ bigger than $b$, and these constants are independent of $|G|$. 
+%
+%We see the state $\ket{\psi_1} \otimes \ldots \otimes \ket{\psi_{cB}}$ as a superposition over tuples of $X^{cB}$. 
+%
+%$$ \sum_{x_1, \ldots x_{c'B}} \alpha_{x_1, \ldots x_{cB}}\ket{x_1} \ldots \ket{x_{cB}} \enspace. $$
+%We check whether the tuple $(x_1, \ldots x_{cB})$ contains $\geq B$ distinct solutions and we put the result in a qubit:
+%$$ \sum_{x_1, \ldots x_{c'B}} \alpha_{x_1, \ldots x_{cB}}\ket{x_1} \ldots \ket{x_{cB}} \ket{ (x_1, \ldots x_{cB} \mbox{ contains $\geq B$ distinct solutions} )} \enspace. $$
+
+
+If $|G| < B$, then this qubit is always $0$: we can immediately uncompute the quantum searches and we have obtained the result. If $|G| \geq B$, then some of these tuples contain $B$ distinct solutions, but not all. We must ensure that their proportion is overwhelming, so that after uncomputing, the algorithm actually adds an error vector of negligible amplitude. To do that, we will only focus on the block of $c' B$ states that corresponds to the good $t$, since for them, we have a lower bound on the probability of finding a solution. The other states, that we dismiss, can only improve our success in finding $B$ distinct solutions. So we now focus on $c'B$-tuples only.
+
+Let us consider $|G| = B$ which is the worst case.  First, we will look at the proportion of $c'B$-tuples that contain $(1- c'')c' b B$ solutions: this is the probability to succeed at least $(1- c'')c' b B$ times after $c' B$ independent trials of probability $b$ each, and it is higher than $1 - \exp(-c'' c' B b / 2)$ by a Chernoff bound. Next, assuming that there are $(1- c'')c' b B$ independent solutions, we check the probability that they span all the $B$ distinct solutions that there are in total. This is related to the coupon collector problem. The probability to miss at least a coupon among $B$ after $c^{(3)} B \ln B$ trials is lower than $B^{-c^{(3)} + 1}$. Thus, we may take $c^{(3)} = \bigO{n}$, $c'' = \frac{1}{2}$ and $c' = \bigO{n}$ for a total probability of failure in $o(2^{-n})$. \qed
+\end{proof}
+
+
+
+
+\section{Computing the Fraction of Marked Vertices}
+\label{appendix:probas}
+
+This section contains a proof for Lemma~\ref{lemma:prob} that was omitted from the main body of the paper. Recall that we defined:
+$$X_\vec{e}(\vec{a})= \begin{cases}
+  1 & \text{ if } \vec{e}\dotprod \vec{a} = \vec{e}_0 \dotprod \vec{a} \pmod M\\
+  0 & \text{ otherwise}
+\end{cases}$$
+
+We will first prove a result on the average number of vectors having the same modulus as $\vec{e}_0$, then we will use this in a Chernoff bound. Define
+\[
+    Y(\mathcal{B},\vec{e}_0;\vec{a})=
+        \card{\set{\vec{e}\in\mathcal{B}, \vec{a}\dotprod\vec{e}=\vec{a}\dotprod\vec{e}_0\pmod{M}}}.
+\]
+where $M$ divides $N \simeq 2^n$. For simplicity, we write $Y(\vec{a})$ for $Y(\mathcal{B},\vec{e}_0;\vec{a})$ in the following. We are interested in $Y(\vec{a})$ as a random variable when $\vec{a}$ is drawn uniformly from $\mathbb{Z}_{N}^n$. 
+
+%\begin{lemma}\label{lemma:yabound}
+%If $|\mathcal{B}|\gg M$, then with probability $1-\negl(n)$, 
+%\begin{equation}
+%\label{eq:1}
+%Y(\vec{a})\leq 2\Exp{\vec{a}}{Y(\vec{a})}\sim 2\cdot \frac{|\mathcal{B}|}{M}
+%\end{equation}
+%\end{lemma}
+%
+% Recall that we defined:
+%\[
+%    Y(\vec{a})=
+%        \card{\set{\vec{e}\in\mathcal{B}, \vec{a}\dotprod\vec{e}=\vec{a}\dotprod\vec{e}_0\pmod{M}}}
+%\]
+%and
+
+\begin{lemma}\label{lemma:yabound}
+If $|\mathcal{B}|\gg M$, then with probability $1-\negl(n)$, 
+\begin{equation}
+\label{eq:1}
+Y(\vec{a})\leq 2\Exp{\vec{a}}{Y(\vec{a})}\sim 2\cdot \frac{|\mathcal{B}|}{M}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+%Observe that
+%$Y(\vec{a})=\sum_{\vec{e}\in\mathcal{B}}X_{\vec{e}}(\vec{a})$
+%and the map
+%$\vec{a}\mapsto\vec{e}\dotprod \vec{a} - \vec{e}_0 \dotprod \vec{a}$
+%is affine over $\mathbb{Z}_M$. Hence for a given $\vec{e}$,
+%$\{\vec{a}:X_{\vec{e}}(\vec{a})=1\}$ is an affine hyperplane in
+%$\mathbb{Z}_M^N$ and contains exactly $M^{N-1}$ points.
+%It follows that, for the uniform distribution,
+%\[
+%	\Exp_{\vec{a}}{X_{\vec{e}}(\vec{a})}
+%		=\frac{|\{\vec{a}:X_{\vec{e}}(\vec{a})=1\}|}{|\mathbb{Z}_M^N|}
+%		=\frac{1}{M}
+%\]
+
+Following \cite{NSS01}, for any $z\in\mathbb{C}$, define $\mathcal{E}(z)=\exp(2\pi iz/M)$. It satisfies the identity
+\begin{equation}
+\label{eq:exp}
+\forall k\in \mathbb{N},
+\sum_{\lambda=0}^{kM-1}\mathcal{E}(\lambda u)=
+        \begin{cases}0&\text{if }u\neq 0\pmod{M}\\kM&\text{if }u=0\pmod{M}\end{cases}
+\end{equation}
+for any $u\in\mathbb{Z}$. We have
+%\AS{sentence missing here. Why can we write the next line?}
+\[
+	Y(\vec{a})=\sum_{\vec{e}\in\mathcal{B}}X_{\vec{e}}(\vec{a})
+	\qquad\text{and}\qquad
+    X_{\vec{e}}(\vec{a})=\frac{1}{M}\sum_{\lambda=0}^{M-1}
+        \mathcal{E}(\lambda\vec{a}\dotprod(\vec{e}-\vec{e}_0)).
+\]
+Therefore for any $\vec{e}\neq\vec{e}_0$,
+\begin{align*}
+	\Exp{\vec{a}}{X_{\vec{e}}(\vec{a})}
+	&=\frac{1}{N^{n}}\sum_{\vec{a}\in \mathbb{Z}_{N}^n} \frac{1}{M}
+		\sum_{\lambda=0}^{M-1}
+		\mathcal{E}(\lambda\vec{a}\dotprod(\vec{e}-\vec{e}_0))\\
+	&=\frac{1}{N^{n}}\sum_{\vec{a}\in \mathbb{Z}_{N}^n} \frac{1}{M}
+	+\frac{1}{N^{n}}\sum_{\vec{a}\in \mathbb{Z}_{N}^n}\frac{1}{M}
+		\sum_{\lambda=1}^{M-1}
+		\mathcal{E}(\lambda\vec{a}\dotprod(\vec{e}-\vec{e}_0))\\
+	&=\frac{1}{M}+\frac{1}{MN^{n}}\sum_{\lambda=1}^{M-1}
+		\sum_{\vec{a}\in \mathbb{Z}_{N}^n}
+	 	\mathcal{E}(\lambda\vec{a}\dotprod(\vec{e}-\vec{e}_0))\\
+	&=\frac{1}{M}+\frac{1}{MN^{n}}\sum_{\lambda=1}^{M-1}
+			\prod_{i=1}^n\sum_{a\in \mathbb{Z}_{N}}
+			\mathcal{E}(\lambda a(\vec{e}^i-\vec{e}_0^i)))\\
+&=\frac{1}{M}&&\text{(see below)}
+\end{align*}
+where in the last step, we used that if $\vec{e}\neq\vec{e}_0$,
+there exists $i\in [1,n]$ such that $\vec{e}^i\neq\vec{e}_0^i$,
+where $\vec{e}^i$ is the $i$th component of $\vec{e}$ and
+hence of the $i^{th}$ sum in the product is zero by \eqref{eq:exp}
+since $\lambda\neq 0\pmod M$. It follows by linearity that
+\[
+	\Exp{\vec{a}}{Y(\vec{a})}
+		=\Exp{\vec{a}}{X_{\vec{e}}(\vec{a})}
+			+\sum_{\vec{e}\in\mathcal{B}\setminus\{\vec{e}_0\}}
+				\Exp{\vec{a}}{X_{\vec{e}}(\vec{a})}
+		=1+\frac{|\mathcal{B}|-1}{M}
+\]
+since $\vec{e}_0\in\mathcal{B}$.
+Similarly for any
+$\vec{e},\vec{f}\in\mathcal{B}\setminus\{\vec{e}_0\}$,
+\begin{align*}
+	\Exp{\vec{a}}{X_{\vec{e}}(\vec{a})X_{\vec{f}}(\vec{a})}
+	&=\frac{1}{N^{n}}\sum_{\vec{a}\in \mathbb{Z}_{N}^n}
+		\left(\frac{1}{M}\sum_{\lambda=0}^{M-1}
+			\mathcal{E}(\lambda\vec{a}\dotprod(\vec{e}-\vec{e}_0)
+		)\right)
+		\left(\frac{1}{M}\sum_{\mu=0}^{M-1}
+			\mathcal{E}(\mu\vec{a}\dotprod(\vec{f}-\vec{e}_0)
+		)\right)\\
+	&=\frac{1}{M^2N^{n}}\sum_{\vec{a}\in \mathbb{Z}_{N}^n}
+		\sum_{\lambda=0}^{M-1}\sum_{\mu=0}^{M-1}
+			\mathcal{E}(\lambda\vec{a}\dotprod(\vec{e}-\vec{e}_0))
+			\mathcal{E}(\mu\vec{a}\dotprod(\vec{f}-\vec{e}_0))\\
+	&=\frac{1}{M^2N^{n}}\sum_{\vec{a}\in \mathbb{Z}_{N}^n}
+		\sum_{\lambda=0}^{M-1}\sum_{\mu=0}^{M-1}
+		\mathcal{E}(\vec{a}\dotprod(\lambda\vec{e}+\mu\vec{f}-(\lambda+\mu)\vec{e}_0))\\
+	&=\frac{1}{M^2N^{n}}
+		\sum_{\lambda=0}^{M-1}\sum_{\mu=0}^{M-1}
+		\sum_{\vec{a}\in \mathbb{Z}_{N}^n}
+		\mathcal{E}(\vec{a}\dotprod(\lambda\vec{e}+\mu\vec{f}-(\lambda+\mu)\vec{e}_0))\\
+	&=\frac{1}{M^2}
+		\sum_{\lambda=0}^{M-1}\sum_{\mu=0}^{M-1}
+		\mathds{1}\big[
+			\lambda\vec{e}+\mu\vec{f}=(\lambda+\mu)\vec{e}_0\mod{M}
+			\big]
+\end{align*}
+by \eqref{eq:exp}.
+If $\lambda=0$ then the equation $\lambda\vec{e}+\mu\vec{f}=(\lambda+\mu)\vec{e}_0\mod{M}$
+becomes $\mu\vec{f}=\mu\vec{e}_0$ but since $\vec{f}\neq\vec{e}_0$, the only solution is $\mu=0$.
+A symmetric reasoning shows that if $\mu=0$ then $\lambda=0$
+is the only solution. Hence, given $\vec{e}\neq\vec{e}_0$, we have
+\[
+	\sum_{\vec{f}\in\mathcal{B}\setminus\{\vec{e}_0\}}
+		\Exp{\vec{a}}{X_{\vec{e}}(\vec{a})X_{\vec{f}}(\vec{a})}
+		=\frac{|\mathcal{B}|-1+|F_{\vec{e}}|}{M^2}
+\]
+where
+\[
+	F_{\vec{e}}=\left\{(\lambda,\mu,\vec{f})\in
+		\{1,\dots,M-1\}^2\times\mathcal{B}\setminus\{\vec{e}_0\}:
+		\lambda\vec{e}+\mu\vec{f}=(\lambda+\mu)\vec{e}_0\mod{M
+		}\right\}.
+\]
+We now claim that this set is not too large.
+Assume that $(\lambda,\mu,\vec{f})\in F_{\vec{e}}$, recall
+that $\lambda,\mu\neq0$ and
+since $\vec{e}\neq\vec{e}_0$ then
+there exists $i$ such that $\vec{e}^i\neq\vec{e}_0^i$ so in 
+particular
+$\lambda(\vec{e}^i-\vec{e}_0^i)=\mu(\vec{f}^i-\vec{e}_0^i)$.
+But recall that
+$\vec{e},\vec{f},\vec{e}_0\in\mathcal{B}\subseteq\{-1,0,1,2\}^n$
+hence $\vec{e}^i-\vec{e}_0^i\in\{-3,-2,-1,1,2,3\}$.
+It follows that if we fix $\mu$ then there are at most $3$ possible
+values\footnote{If we have, say, $3\lambda=x\pmod{M}$ then
+$\lambda=x/3\pmod{M/3}$, which is only possible if $x$ and $M$
+are divisible by $3$, and then $\lambda\in\{x/3,(x+M)/3,(x+2M)/3\}$.}
+for $\lambda$. We note in passing that the constant $3$ is not
+magical: if we had $\mathcal{B}\subseteq\{-a,\ldots,a\}^n$ then it be
+bounded by $2a$. Now assume that
+$(\lambda,\mu,\vec{f}),(\lambda,\mu,\vec{g})\in F_{\vec{e}}$
+with $\vec{f}\neq\vec{g}$, then we must have
+\begin{align*}
+	\mu(\vec{f}-\vec{g})=0\mod M
+	&\qquad\Rightarrow\qquad \vec{f}-\vec{g}=0\mod M/\mu\\
+	&\qquad\Rightarrow\qquad\exists k\neq 0.
+		\forall i, \vec{g}^i=\vec{f}^i+kM/\mu
+\end{align*}
+which is only possible if $\mu$ divides $M$. In particular, we must have
+$M/\mu\geqslant2$, in other words all coordinates of $\vec{f}$
+and $\vec{g}$ are at least at distance $2$. This is clearly impossible because $\mathcal{B}\subseteq D^n[\alpha,\beta,\gamma]$:
+the distribution of ``-1'', ``0'', ``1'', ``2'' in one of $\vec{f}$ or
+$\vec{g}$ would be wrong. In summary, we have that:
+\begin{itemize}
+	\item for every $\mu$, $\vec{f}$, there are at most
+		3 possible values of $\lambda$ such that
+		$(\lambda,\mu,\vec{f})\in F_{\vec{e}}$,
+	\item for every $\lambda$ and $\mu$, there is at most one value
+		of $\vec{f}$ such that $(\lambda,\mu,\vec{f})\in F_{\vec{e}}$.
+\end{itemize}
+It follows that $F_{\vec{e}}$ has size at most $3M$.
+Then by linearity,
+\begin{align*}
+	\Exp{\vec{a}}{Y(\vec{a})^2}
+		&=\sum_{\vec{e},\vec{f}\in\mathcal{B}}\Exp{\vec{a}}{
+			X_{\vec{e}}(\vec{a})X_{\vec{f}}(\vec{a})}\\
+		&=\sum_{\vec{f}\in\mathcal{B}}
+			\Exp{\vec{a}}{X_{\vec{f}}(\vec{a})}
+			+\sum_{\vec{e}\in\mathcal{B}\setminus\{\vec{e}_0\}}
+			\Exp{\vec{a}}{X_{\vec{e}}(\vec{a})}
+			+\sum_{\vec{e},\vec{f}\in\setminus\{\vec{e}_0\}}\Exp{\vec{a}}{
+			X_{\vec{e}}(\vec{a})X_{\vec{f}}(\vec{a})}\\
+		&\leqslant2\Exp{\vec{a}}{Y(\vec{a})}-1
+			+(|\mathcal{B}|-1)\frac{|\mathcal{B}|-1+3M}{M^2}\\
+		&\leqslant1+2\frac{|\mathcal{B}|-1}{M}
+			+(|\mathcal{B}|-1)\frac{|\mathcal{B}|-1+3M}{M^2}\\
+		&\leqslant
+			\frac{M^2+(|\mathcal{B}|-1)(|\mathcal{B}|-1+5M)}{M^2}.
+\end{align*}
+Finally, we have
+\begin{align*}
+        \mathbb{V}_{\vec{a}}(Y(\vec{a}))
+            &=\Exp{\vec{a}}{Y(\vec{a})^2}-\Exp{\vec{a}}{Y(\vec{a})}^2\\
+            &\leqslant\frac{M^2+(|\mathcal{B}|-1)(|\mathcal{B}|-1+5M)
+            	-(|\mathcal{B}|+M-1)^2}{M^2}\\
+		&=\frac{3(|\mathcal{B}|-1)M}{M^2}\\
+		&=\frac{3(|\mathcal{B}|-1)}{M}.
+%            &=\frac{(M-1)(|\mathcal{B}|-1)}{M^2}.
+\end{align*}
+Thus $\Exp{\vec{a}}{Y(\vec{a})}\approx \mathbb{V}_{\vec{a}}(Y(\vec{a}))$ when we look at their order of magnitude.
+
+According to Tchebychev's inequality, $$\prob[\vec{a}]{|Y(\vec{a})-\Exp{\vec{a}}{Y(\vec{a})}|>\Exp{\vec{a}}{Y(\vec{a})}}\leq \frac{\mathbb{V}_{\vec{a}}(Y(\vec{a}))}{\Exp{\vec{a}}{Y(\vec{a})}^2} =\negl(n)$$
+which completes the proof. \qed
+\end{proof}
+
+\setcounter{lemma}{6}
+\begin{lemma}%\label{lemma:prob}
+If $|\mathcal{B}|\gg M \simeq |L|$, then for a $1-\negl(n)$ proportion of $\vec{a} \in \mathbb{Z}_{N}^n$, and with an appropriate $B = \bigO{n}$:
+\begin{equation}
+\prob[\vec{e}_1, \cdots, \vec{e}_{|L|} \sim Unif(\mathcal{B})]{\sum_{i=1}^{|L|} X_{\vec{e}_i} (\vec{a})< B -1} > 1 - \frac{1}{\poly(n)}
+\end{equation}
+\end{lemma}
+
+
+\begin{proof}
+
+\begin{multline*}
+\prob[\vec{e}_1, \cdots, \vec{e}_{|L|} \sim Unif(\mathcal{B})]{\sum_{i=1}^{|L|} X_{\vec{e}_i} (\vec{a})< B -1}  \\
+=  \sum_{y=1}^{|\mathcal{B}|} \prob[\vec{e}_1, \cdots, \vec{e}_{|L|} \sim Unif(\mathcal{B})]{\sum_{i=1}^{|L|} X_{\vec{e}_i} (\vec{a})<B -1 | Y(\vec{a})=y} \prob{Y(\vec{a})=y}\\
+\end{multline*}
+
+Under the condition of $Y(\vec{a})=y$, for all $i \in [1,|L|]$, $X_{\vec{e}_i}(\vec{a})$ can be seen as a random variable following $\Ber(\frac{y}{|\mathcal{B}|})$, since $\vec{e}_i$s' are randomly chosen from $\mathcal{B}$. Here $\Ber(p)$ is a Bernoulli distribution of parameter $p$. 
+
+Using equation (\ref{eq:1}), for a $1-\negl(n)$ portion of $\vec{a}\in \mathbb{Z}_{N}^n$, we have
+\begin{align*}
+&\prob[\vec{e}_1, \cdots, \vec{e}_{|L|} \sim Unif(\mathcal{B})]{\sum_{i=1}^{|L|} X_{\vec{e}_i} (\vec{a})<B -1}\\
+& >  \sum_{y=1}^{2\cdot\frac{|\mathcal{B}|}{M}} \prob[\vec{e}_1, \cdots, \vec{e}_{|L|} \sim Unif(\mathcal{B})]{\sum_{i=1}^{|L|} X_{\vec{e}_i} (\vec{a})<B -1 | Y(\vec{a})=y} \prob{Y(\vec{a})=y}    \\
+& =  (1-\negl(n))\sum_{y=1}^{2\cdot\frac{|\mathcal{B}|}{M}} \prob[\vec{e}_1, \cdots, \vec{e}_{|L|} \sim Unif(\mathcal{B})]{\sum_{i=1}^{|L|} X_{\vec{e}_i} (\vec{a})<B -1 | Y(\vec{a})=y} \\
+& >(1-\negl(n))\prob[\vec{e}_1, \cdots, \vec{e}_{|L|} \sim Unif(\mathcal{B})]{\sum_{i=1}^{|L|} X_{\vec{e}_i} (\vec{a})<B-1| Y(\vec{a})= 2\cdot \frac{|\mathcal{B}|}{M}}\\
+& = (1-\negl(n))\prob[X_{\vec{e}_i}\sim \Ber(2\cdot  \frac{|\mathcal{B}|}{M}\cdot \frac{1}{|\mathcal{B}|})=\Ber(\frac{2}{M})]{\sum_{i=1}^{|L|} X_{\vec{e}_i} (\vec{a})<B-1}
+\end{align*}
+
+Chernoff's inequality gives that for any $\delta \geq 1$:
+$$ \prob{ \sum_{i=1}^{|L|} X_{\vec{e}_i} (\vec{a}) \geq (1+\delta) \frac{2|L|}{M} } \leq e^{ - \frac{\delta}{3} \frac{2|L|}{M} } \enspace.$$
+
+Hence, when $M = |L|$, by taking $B$ linear in $n$, we obtain that the probability of being unmarked due to this $\vec{e_0}$ is less than $\frac{1}{\poly(n)}$. \qed
+\end{proof}

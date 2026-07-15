@@ -1,0 +1,770 @@
+[
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "evidence": "Linear code equivalence families over increasing block length and finite fields, with controlled automorphism strata and hard classical canonicalization baselines.",
+    "field": "problem_family",
+    "next_action": "Convert this prose obligation into a formal lemma, reduction, or executable check.",
+    "obligation_id": "PO-FAMILY",
+    "status": "text-present"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "evidence": "Efficient coherent preparation of hidden-permutation coset states derived from generator matrices; classical descriptions of code families are part of the input.",
+    "field": "input_model",
+    "next_action": "Convert this prose obligation into a formal lemma, reduction, or executable check.",
+    "obligation_id": "PO-INPUT-MODEL",
+    "status": "text-present"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "evidence": "Best available code-equivalence canonicalization, information-set, support-splitting, and automorphism-group tools on the same generated families.",
+    "field": "classical_baseline",
+    "next_action": "Convert this prose obligation into a formal lemma, reduction, or executable check.",
+    "obligation_id": "PO-CLASSICAL-BASELINE",
+    "status": "text-present"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "evidence": "No complete certificate-gated natural-problem route. Blocked routes: ROUTE-CODE-COSET-COLLECTIVE-CODE-EQUIVALENCE-VIA-SYMMETRIC-HSP. Exact theorem-interface failures: full-family-coverage, parameter-map, success-and-decoder, uniform-instance-construction",
+    "field": "reduction_or_lower_bound",
+    "next_action": "Prove family coverage, direction, model/promise preservation, polynomial overhead, uniformity, preprocessing semantics, and decoder success for every edge.",
+    "obligation_id": "PO-REDUCTION",
+    "status": "reduction-route-blocked"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "evidence": "Search for polynomial-description multi-register observables or tensor-network measurement ansatzes that distinguish coset states beyond individual strong Fourier labels.",
+    "field": "quantum_mechanism",
+    "next_action": "Convert this prose obligation into a formal lemma, reduction, or executable check.",
+    "obligation_id": "PO-MECHANISM",
+    "status": "text-present"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "evidence": "Count coset-state preparation, number of registers, tensor bond dimension, measurement synthesis, classical preprocessing, and decoding cost.",
+    "field": "cost_model",
+    "next_action": "Convert this prose obligation into a formal lemma, reduction, or executable check.",
+    "obligation_id": "PO-STATE-PREP",
+    "status": "text-present"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "evidence": "Use collective measurement candidates over several coset-state registers; decode candidate permutations or invariant separators and verify equivalence classically.",
+    "field": "measurement_and_decoding",
+    "next_action": "Convert this prose obligation into a formal lemma, reduction, or executable check.",
+    "obligation_id": "PO-MEASUREMENT",
+    "status": "text-present"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "evidence": "Conjecture: a restricted but hard code family admits a polynomial-bond collective observable whose distinguishing advantage remains inverse polynomial as length grows.",
+    "field": "success_statement",
+    "next_action": "Convert this prose obligation into a formal lemma, reduction, or executable check.",
+    "obligation_id": "PO-SUCCESS-PROOF",
+    "status": "text-present"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "evidence": "Separate coset-state samples, quantum measurement size, tensor contraction complexity, and classical verification; compare against canonicalization and automorphism baselines.",
+    "field": "complexity_accounting",
+    "next_action": "Convert this prose obligation into a formal lemma, reduction, or executable check.",
+    "obligation_id": "PO-COMPLEXITY",
+    "status": "text-present"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "evidence": "Strong Fourier sampling alone is ruled out for symmetric-group GI-style HSPs; this candidate survives only if it uses genuine collective measurements or leaves the blocked HSP route.",
+    "field": "no_go_analysis",
+    "next_action": "Convert this prose obligation into a formal lemma, reduction, or executable check.",
+    "obligation_id": "PO-NOGO",
+    "status": "text-present"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "evidence": "The workbench wrote 2 coset/nonabelian family negative-result record(s). | The workbench wrote 2 coset/nonabelian family negative-result record(s). | The workbench wrote 5 coset/nonabelian family negative-result record(s).",
+    "field": "dequantization_check",
+    "next_action": "Resolve dequantization findings or demote the candidate to a negative/blocked result.",
+    "obligation_id": "PO-DEQUANTIZATION",
+    "status": "blocked-by-classical-baseline"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "evidence": "Some affine-geometry collisions are explained by AGL(2,q) support automorphisms. | Many BCH defining intervals close to duplicate cyclotomic defining sets. | Some BCH collisions are explained by decimation/multiplier or canonical equivalence controls.",
+    "field": "falsifiers",
+    "next_action": "Either sharpen the model to escape these falsifiers or retire the affected family.",
+    "obligation_id": "PO-FALSIFIERS",
+    "status": "falsifiers-triggered"
+  },
+  {
+    "candidate_id": "DHS-GOWERS-SIEVE",
+    "evidence": "The full family of dihedral coset-problem state instances over D_N emitted by the exact Regev unique-SVP reduction as N grows. Structured quadratic, character, trace, and Gowers phase families are adversarial testbeds only and do not define the claimed algorithmic scope.",
+    "field": "problem_family",
+    "next_action": "Convert this prose obligation into a formal lemma, reduction, or executable check.",
+    "obligation_id": "PO-FAMILY",
+    "status": "text-present"
+  },
+  {
+    "candidate_id": "DHS-GOWERS-SIEVE",
+    "evidence": "Independent coset-state samples from D_N under the exact f=1 DCP promise: each register is good with probability at least 1-1/log N and otherwise may be an arbitrary basis-state register. Good registers transform into known uniformly random labels k and phase states. No evaluator or chosen labels are available.",
+    "field": "input_model",
+    "next_action": "Convert this prose obligation into a formal lemma, reduction, or executable check.",
+    "obligation_id": "PO-INPUT-MODEL",
+    "status": "text-present"
+  },
+  {
+    "candidate_id": "DHS-GOWERS-SIEVE",
+    "evidence": "Generic dihedral hidden-reflection and subset-sum postprocessing baselines, plus all classical attacks legal for any public side information. Explicit phase-family learners are rejection tests for restricted testbeds, not evidence about the full DCP state-input problem.",
+    "field": "classical_baseline",
+    "next_action": "Convert this prose obligation into a formal lemma, reduction, or executable check.",
+    "obligation_id": "PO-CLASSICAL-BASELINE",
+    "status": "text-present"
+  },
+  {
+    "candidate_id": "DHS-GOWERS-SIEVE",
+    "evidence": "No complete certificate-gated natural-problem route. Blocked routes: ROUTE-DHS-GOWERS-SIEVE-USVP-VIA-DHSP. Exact theorem-interface failures: bad-register-robustness, full-family-coverage, parameter-map, success-and-decoder, uniform-instance-construction",
+    "field": "reduction_or_lower_bound",
+    "next_action": "Prove family coverage, direction, model/promise preservation, polynomial overhead, uniformity, preprocessing semantics, and decoder success for every edge.",
+    "obligation_id": "PO-REDUCTION",
+    "status": "reduction-route-blocked"
+  },
+  {
+    "candidate_id": "DHS-GOWERS-SIEVE",
+    "evidence": "Combine independent labeled DCP phase states using uniform, state-only sum/difference measurements and postselection while tracking undetectable bad-register propagation. Search implicit merge rules over arbitrary D_N labels, never over a privileged phase evaluator.",
+    "field": "quantum_mechanism",
+    "next_action": "Convert this prose obligation into a formal lemma, reduction, or executable check.",
+    "obligation_id": "PO-MECHANISM",
+    "status": "text-present"
+  },
+  {
+    "candidate_id": "DHS-GOWERS-SIEVE",
+    "evidence": "Count every input coset state, zero-information label, 1/2 measurement branch, discarded state, live qubit, classical label operation, precision bit, merge depth, decoder stage, and lattice-reduction overhead.",
+    "field": "cost_model",
+    "next_action": "Convert this prose obligation into a formal lemma, reduction, or executable check.",
+    "obligation_id": "PO-STATE-PREP",
+    "status": "text-present"
+  },
+  {
+    "candidate_id": "DHS-GOWERS-SIEVE",
+    "evidence": "Measure known Fourier labels, perform auditable two-state or implicit multi-state collimation, recover each hidden-reflection congruence bit through a uniform recursive modulus reduction, and verify the full reflection before invoking the exact lattice decoder.",
+    "field": "measurement_and_decoding",
+    "next_action": "Convert this prose obligation into a formal lemma, reduction, or executable check.",
+    "obligation_id": "PO-MEASUREMENT",
+    "status": "text-present"
+  },
+  {
+    "candidate_id": "DHS-GOWERS-SIEVE",
+    "evidence": "Target theorem: on every DCP state instance in the Regev contract, recover the complete hidden reflection with bounded error while proving an asymptotic sample, time, or memory improvement over a named Kuperberg/Regev baseline and preserving the end-to-end lattice approximation guarantee.",
+    "field": "success_statement",
+    "next_action": "Convert this prose obligation into a formal lemma, reduction, or executable check.",
+    "obligation_id": "PO-SUCCESS-PROOF",
+    "status": "text-present"
+  },
+  {
+    "candidate_id": "DHS-GOWERS-SIEVE",
+    "evidence": "Report asymptotic functions of log N and lattice dimension for coset-state copies, branch survival, time, space, precision, full decoding, and reduction overhead; empirical schedules never establish an exponent.",
+    "field": "complexity_accounting",
+    "next_action": "Convert this prose obligation into a formal lemma, reduction, or executable check.",
+    "obligation_id": "PO-COMPLEXITY",
+    "status": "text-present"
+  },
+  {
+    "candidate_id": "DHS-GOWERS-SIEVE",
+    "evidence": "Reject deterministic favorable-branch traces, evaluator-dependent rules, selected easy phase subfamilies, valuation-only endpoints, hidden nonuniform advice, and any schedule that merely reproduces generic sieve behavior.",
+    "field": "no_go_analysis",
+    "next_action": "Convert this prose obligation into a formal lemma, reduction, or executable check.",
+    "obligation_id": "PO-NOGO",
+    "status": "text-present"
+  },
+  {
+    "candidate_id": "DHS-GOWERS-SIEVE",
+    "evidence": "Adaptive valuation theorems=1, inverse-polynomial no-go rows=5, exact optimum rows/layout evaluations=3/8837, maximum finite improvement bits=1.4739311883324122, fitted best-rank slope=0.4687412361808221, polynomial selector/contractions=0, general adaptive no-go theorems=0, relation solvers=0. | Instantiated/proved fixed-order certificates=11/11; general all-fixed theorem=1; growing-order obstructions=0; atypical-fiber obstructions=0. | All-target censuses/max n/depth=12/20/2; assignments/legal targets=16711680/4081274; tail standard/carry coverage=0.9039562807239387/0.9516438429432461; kernel/full-cube failures=0/0; asymptotic bounds=0.",
+    "field": "dequantization_check",
+    "next_action": "Resolve dequantization findings or demote the candidate to a negative/blocked result.",
+    "obligation_id": "PO-DEQUANTIZATION",
+    "status": "blocked-by-classical-baseline"
+  },
+  {
+    "candidate_id": "DHS-GOWERS-SIEVE",
+    "evidence": "Fixed chosen-query prefixes support polylogarithmic online decoding after domain-size preprocessing/advice. | The remaining uniform decoding gap has neither an unconditional lower bound nor a natural-problem reduction. | Pair-ratio character constraints recover shifts only by domain-linear candidate filtering.",
+    "field": "falsifiers",
+    "next_action": "Either sharpen the model to escape these falsifiers or retire the affected family.",
+    "obligation_id": "PO-FALSIFIERS",
+    "status": "falsifiers-triggered"
+  },
+  {
+    "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
+    "evidence": "Hidden permutation instances from graph isomorphism and linear code equivalence over growing sizes, with controlled automorphism strata and classical canonicalization baselines.",
+    "field": "problem_family",
+    "next_action": "Convert this prose obligation into a formal lemma, reduction, or executable check.",
+    "obligation_id": "PO-FAMILY",
+    "status": "text-present"
+  },
+  {
+    "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
+    "evidence": "Efficient coherent preparation of hidden-permutation coset states from explicit graph or generator-matrix inputs, with register count, state-preparation cost, and verification cost tracked separately.",
+    "field": "input_model",
+    "next_action": "Convert this prose obligation into a formal lemma, reduction, or executable check.",
+    "obligation_id": "PO-INPUT-MODEL",
+    "status": "text-present"
+  },
+  {
+    "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
+    "evidence": "Best available graph and code canonicalization, Weisfeiler-Leman/color-refinement variants, support splitting, automorphism tools, and instance-family-specific classical invariants.",
+    "field": "classical_baseline",
+    "next_action": "Convert this prose obligation into a formal lemma, reduction, or executable check.",
+    "obligation_id": "PO-CLASSICAL-BASELINE",
+    "status": "text-present"
+  },
+  {
+    "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
+    "evidence": "No complete certificate-gated natural-problem route. Blocked routes: ROUTE-HYP-LIT-COSET-OBSERVABLES-CODE-EQUIVALENCE-VIA-SYMMETRIC-HSP, ROUTE-HYP-LIT-COSET-OBSERVABLES-GRAPH-ISOMORPHISM-VIA-SYMMETRIC-HSP. Exact theorem-interface failures: full-family-coverage, parameter-map, success-and-decoder, uniform-instance-construction",
+    "field": "reduction_or_lower_bound",
+    "next_action": "Prove family coverage, direction, model/promise preservation, polynomial overhead, uniformity, preprocessing semantics, and decoder success for every edge.",
+    "obligation_id": "PO-REDUCTION",
+    "status": "reduction-route-blocked"
+  },
+  {
+    "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
+    "evidence": "Search for polynomial-description multi-register observables or tensor-network measurements that distinguish coset states where single-register strong Fourier sampling provably fails.",
+    "field": "quantum_mechanism",
+    "next_action": "Convert this prose obligation into a formal lemma, reduction, or executable check.",
+    "obligation_id": "PO-MECHANISM",
+    "status": "text-present"
+  },
+  {
+    "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
+    "evidence": "Count coset-state preparation, number of registers, representation-label manipulation, tensor-network bond dimension, measurement synthesis, contraction cost, and classical verification.",
+    "field": "cost_model",
+    "next_action": "Convert this prose obligation into a formal lemma, reduction, or executable check.",
+    "obligation_id": "PO-STATE-PREP",
+    "status": "text-present"
+  },
+  {
+    "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
+    "evidence": "Apply collective observables over k coset-state registers, decode candidate permutations or invariant separators, and verify equivalence or non-equivalence classically.",
+    "field": "measurement_and_decoding",
+    "next_action": "Convert this prose obligation into a formal lemma, reduction, or executable check.",
+    "obligation_id": "PO-MEASUREMENT",
+    "status": "text-present"
+  },
+  {
+    "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
+    "evidence": "Target theorem: a restricted but classically hard hidden-permutation family admits a polynomial-bond collective observable with inverse-polynomial distinguishing advantage as instance size grows.",
+    "field": "success_statement",
+    "next_action": "Convert this prose obligation into a formal lemma, reduction, or executable check.",
+    "obligation_id": "PO-SUCCESS-PROOF",
+    "status": "text-present"
+  },
+  {
+    "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
+    "evidence": "Separate coset-state samples, quantum measurement size, tensor contraction complexity, representation-theoretic preprocessing, and classical verification; compare against the strongest canonicalization baseline.",
+    "field": "complexity_accounting",
+    "next_action": "Convert this prose obligation into a formal lemma, reduction, or executable check.",
+    "obligation_id": "PO-COMPLEXITY",
+    "status": "text-present"
+  },
+  {
+    "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
+    "evidence": "Strong Fourier sampling alone is ruled out for symmetric-group GI-style HSPs; this hypothesis survives only if the observable is genuinely collective and does not collapse to a classical invariant.",
+    "field": "no_go_analysis",
+    "next_action": "Convert this prose obligation into a formal lemma, reduction, or executable check.",
+    "obligation_id": "PO-NOGO",
+    "status": "text-present"
+  },
+  {
+    "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
+    "evidence": "The workbench wrote 1 coset/nonabelian family negative-result record(s). | Triggered falsifiers: A classical graph invariant distinguishes the pair; any matching quantum observable is dequantized. | A higher-k WL baseline separates the pair; low-register tensor signals must exceed this classical refinement. | A low-register relation observable separates the pair but may reduce to a classical invariant.",
+    "field": "dequantization_check",
+    "next_action": "Resolve dequantization findings or demote the candidate to a negative/blocked result.",
+    "obligation_id": "PO-DEQUANTIZATION",
+    "status": "blocked-by-classical-baseline"
+  },
+  {
+    "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
+    "evidence": "A classical graph invariant distinguishes the pair; any matching quantum observable is dequantized. | A higher-k WL baseline separates the pair; low-register tensor signals must exceed this classical refinement. | A low-register relation observable separates the pair but may reduce to a classical invariant.",
+    "field": "falsifiers",
+    "next_action": "Either sharpen the model to escape these falsifiers or retire the affected family.",
+    "obligation_id": "PO-FALSIFIERS",
+    "status": "falsifiers-triggered"
+  },
+  {
+    "candidate_id": "HYP-LIT-HIDDEN-SHIFT-SIEVE",
+    "evidence": "The full family of D_N coset-state inputs emitted by the exact lattice-to-DCP reduction. Literature-mined structured phase families are retained only as counterexamples and mechanism testbeds, never as coverage of the full promise.",
+    "field": "problem_family",
+    "next_action": "Convert this prose obligation into a formal lemma, reduction, or executable check.",
+    "obligation_id": "PO-FAMILY",
+    "status": "text-present"
+  },
+  {
+    "candidate_id": "HYP-LIT-HIDDEN-SHIFT-SIEVE",
+    "evidence": "Independent coset-state samples transformed into known random Fourier labels and one-qubit DCP phase states. No coherent evaluator, chosen-label access, phase truth table, or literature-specific nonuniform advice is supplied.",
+    "field": "input_model",
+    "next_action": "Convert this prose obligation into a formal lemma, reduction, or executable check.",
+    "obligation_id": "PO-INPUT-MODEL",
+    "status": "text-present"
+  },
+  {
+    "candidate_id": "HYP-LIT-HIDDEN-SHIFT-SIEVE",
+    "evidence": "Known generic DCP/DHSP postprocessing and subset-sum baselines, exact Kuperberg/Regev resource classes, and classical attacks on any public structure introduced by a literature-mined restriction.",
+    "field": "classical_baseline",
+    "next_action": "Convert this prose obligation into a formal lemma, reduction, or executable check.",
+    "obligation_id": "PO-CLASSICAL-BASELINE",
+    "status": "text-present"
+  },
+  {
+    "candidate_id": "HYP-LIT-HIDDEN-SHIFT-SIEVE",
+    "evidence": "No complete certificate-gated natural-problem route. Blocked routes: ROUTE-HYP-LIT-HIDDEN-SHIFT-SIEVE-USVP-VIA-DHSP. Exact theorem-interface failures: bad-register-robustness, full-family-coverage, parameter-map, success-and-decoder, uniform-instance-construction",
+    "field": "reduction_or_lower_bound",
+    "next_action": "Prove family coverage, direction, model/promise preservation, polynomial overhead, uniformity, preprocessing semantics, and decoder success for every edge.",
+    "obligation_id": "PO-REDUCTION",
+    "status": "reduction-route-blocked"
+  },
+  {
+    "candidate_id": "HYP-LIT-HIDDEN-SHIFT-SIEVE",
+    "evidence": "Extract reusable state-processing primitives, implicit label-combination schemes, representation transforms, and decoder recurrences from the literature, then instantiate only operations legal on independent DCP phase states.",
+    "field": "quantum_mechanism",
+    "next_action": "Convert this prose obligation into a formal lemma, reduction, or executable check.",
+    "obligation_id": "PO-MECHANISM",
+    "status": "text-present"
+  },
+  {
+    "candidate_id": "HYP-LIT-HIDDEN-SHIFT-SIEVE",
+    "evidence": "Count input coset states, zero labels, physical sum/difference branches, postselection, memory, label arithmetic, precision, merge depth, every recursive decoder stage, and the lattice parameter map as functions of log N.",
+    "field": "cost_model",
+    "next_action": "Convert this prose obligation into a formal lemma, reduction, or executable check.",
+    "obligation_id": "PO-STATE-PREP",
+    "status": "text-present"
+  },
+  {
+    "candidate_id": "HYP-LIT-HIDDEN-SHIFT-SIEVE",
+    "evidence": "Apply uniform state-only collective measurements, recover all hidden-reflection congruence bits through a proved recurrence, verify the reflection from the supplied state interface, and compose it with the lattice decoder.",
+    "field": "measurement_and_decoding",
+    "next_action": "Convert this prose obligation into a formal lemma, reduction, or executable check.",
+    "obligation_id": "PO-MEASUREMENT",
+    "status": "text-present"
+  },
+  {
+    "candidate_id": "HYP-LIT-HIDDEN-SHIFT-SIEVE",
+    "evidence": "Target theorem: a literature-composed uniform algorithm recovers the complete reflection on every promised DCP state instance with bounded error and proves an asymptotic resource improvement over a named generic sieve baseline.",
+    "field": "success_statement",
+    "next_action": "Convert this prose obligation into a formal lemma, reduction, or executable check.",
+    "obligation_id": "PO-SUCCESS-PROOF",
+    "status": "text-present"
+  },
+  {
+    "candidate_id": "HYP-LIT-HIDDEN-SHIFT-SIEVE",
+    "evidence": "Report theorem-level sample, time, space, precision, postselection, and full-decoder bounds in log N and lattice dimension; empirical favorable schedules and online costs with hidden preprocessing do not count.",
+    "field": "complexity_accounting",
+    "next_action": "Convert this prose obligation into a formal lemma, reduction, or executable check.",
+    "obligation_id": "PO-COMPLEXITY",
+    "status": "text-present"
+  },
+  {
+    "candidate_id": "HYP-LIT-HIDDEN-SHIFT-SIEVE",
+    "evidence": "Known failure modes include evaluator smuggling, selected-family scope, deterministic favorable branches, parity-only endpoints, generic subset-sum behavior, nonuniform preprocessing, and exponential precision or memory.",
+    "field": "no_go_analysis",
+    "next_action": "Convert this prose obligation into a formal lemma, reduction, or executable check.",
+    "obligation_id": "PO-NOGO",
+    "status": "text-present"
+  },
+  {
+    "candidate_id": "HYP-LIT-HIDDEN-SHIFT-SIEVE",
+    "evidence": "4 audited families were marked high dequantization risk. | 16 audited families were marked high dequantization risk. | The workbench wrote 4 hidden-shift family negative-result record(s).",
+    "field": "dequantization_check",
+    "next_action": "Resolve dequantization findings or demote the candidate to a negative/blocked result.",
+    "obligation_id": "PO-DEQUANTIZATION",
+    "status": "blocked-by-classical-baseline"
+  },
+  {
+    "candidate_id": "HYP-LIT-HIDDEN-SHIFT-SIEVE",
+    "evidence": "Derivative spectrum is extremely sparse; the family may be classically learnable. | Full-table classical shift recovery succeeds; claimed advantage must rely on a stricter oracle/query model. | Deterministically retaining the favorable subtraction/sum label overstates physical sieve yield because each branch has probability 1/2.",
+    "field": "falsifiers",
+    "next_action": "Either sharpen the model to escape these falsifiers or retire the affected family.",
+    "obligation_id": "PO-FALSIFIERS",
+    "status": "falsifiers-triggered"
+  },
+  {
+    "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
+    "evidence": "Structured binary or finite-field linear-code equivalence families with balanced coordinate refinement profiles, large automorphism-aware profile buckets, and explicit algebraic construction metadata rather than random weak-invariant collisions.",
+    "field": "problem_family",
+    "next_action": "Convert this prose obligation into a formal lemma, reduction, or executable check.",
+    "obligation_id": "PO-FAMILY",
+    "status": "text-present"
+  },
+  {
+    "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
+    "evidence": "Public generator matrices and coherent hidden-permutation coset-state preparation; classical algorithms receive the same code descriptions, profile data, and any algebraic family metadata used by the quantum measurement.",
+    "field": "input_model",
+    "next_action": "Convert this prose obligation into a formal lemma, reduction, or executable check.",
+    "obligation_id": "PO-INPUT-MODEL",
+    "status": "text-present"
+  },
+  {
+    "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
+    "evidence": "Profile-pruned canonical forms, higher-order coordinate tuple profiles, support-splitting profiles, dual/hull invariants, puncturing/shortening profiles, bounded exact equivalence checks, information-set search, and automorphism-aware canonical labeling.",
+    "field": "classical_baseline",
+    "next_action": "Convert this prose obligation into a formal lemma, reduction, or executable check.",
+    "obligation_id": "PO-CLASSICAL-BASELINE",
+    "status": "text-present"
+  },
+  {
+    "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
+    "evidence": "No complete certificate-gated natural-problem route. Blocked routes: ROUTE-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-CODE-EQUIVALENCE-VIA-SYMMETRIC-HSP. Exact theorem-interface failures: full-family-coverage, parameter-map, success-and-decoder, uniform-instance-construction",
+    "field": "reduction_or_lower_bound",
+    "next_action": "Prove family coverage, direction, model/promise preservation, polynomial overhead, uniformity, preprocessing semantics, and decoder success for every edge.",
+    "obligation_id": "PO-REDUCTION",
+    "status": "reduction-route-blocked"
+  },
+  {
+    "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
+    "evidence": "Search multi-register coset-state observables or tensor-network measurements only after code rows survive canonicalization; the observable must expose structure not present in coordinate tuple profiles or support-splitting invariants.",
+    "field": "quantum_mechanism",
+    "next_action": "Convert this prose obligation into a formal lemma, reduction, or executable check.",
+    "obligation_id": "PO-MECHANISM",
+    "status": "text-present"
+  },
+  {
+    "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
+    "evidence": "Counts code length/dimension, coset-state samples, register count, measurement description length, tensor bond dimension, canonicalization assignment budgets, automorphism search, and classical verification cost.",
+    "field": "cost_model",
+    "next_action": "Convert this prose obligation into a formal lemma, reduction, or executable check.",
+    "obligation_id": "PO-STATE-PREP",
+    "status": "text-present"
+  },
+  {
+    "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
+    "evidence": "Apply candidate collective observables to hidden-permutation coset states, decode a permutation or invariant separator, then verify code equivalence or non-equivalence with the public generator matrices.",
+    "field": "measurement_and_decoding",
+    "next_action": "Convert this prose obligation into a formal lemma, reduction, or executable check.",
+    "obligation_id": "PO-MEASUREMENT",
+    "status": "text-present"
+  },
+  {
+    "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
+    "evidence": "A row is viable only if it survives profile-pruned canonicalization and support-splitting baselines while a polynomial-description collective observable retains inverse-polynomial distinguishing advantage as length grows.",
+    "field": "success_statement",
+    "next_action": "Convert this prose obligation into a formal lemma, reduction, or executable check.",
+    "obligation_id": "PO-SUCCESS-PROOF",
+    "status": "text-present"
+  },
+  {
+    "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
+    "evidence": "Reports profile bucket sizes, tuple-profile collision status, canonicalization assignments, support-splitting outcomes, automorphism estimates, register count, sample complexity, tensor bond dimension, and all classical invariant overlaps.",
+    "field": "complexity_accounting",
+    "next_action": "Convert this prose obligation into a formal lemma, reduction, or executable check.",
+    "obligation_id": "PO-COMPLEXITY",
+    "status": "text-present"
+  },
+  {
+    "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
+    "evidence": "Rejects weak weight-enumerator/column-statistic collisions, rows separated by coordinate/tuple profiles or exact canonical forms, and observables reducible to classical code invariants, bounded tensor contractions, or individualized rooted tensor shadows.",
+    "field": "no_go_analysis",
+    "next_action": "Convert this prose obligation into a formal lemma, reduction, or executable check.",
+    "obligation_id": "PO-NOGO",
+    "status": "text-present"
+  },
+  {
+    "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
+    "evidence": "The workbench wrote 5 coset/nonabelian family negative-result record(s). | The workbench wrote 3 coset/nonabelian family negative-result record(s). | The workbench wrote 6 coset/nonabelian family negative-result record(s).",
+    "field": "dequantization_check",
+    "next_action": "Resolve dequantization findings or demote the candidate to a negative/blocked result.",
+    "obligation_id": "PO-DEQUANTIZATION",
+    "status": "blocked-by-classical-baseline"
+  },
+  {
+    "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
+    "evidence": "Code-equivalence rows are separated by profile or exact canonical-form baselines. | Generated weak-invariant collisions are separated by stronger classical code invariants. | Higher-order coordinate tuple profiles separate current code-equivalence rows.",
+    "field": "falsifiers",
+    "next_action": "Either sharpen the model to escape these falsifiers or retire the affected family.",
+    "obligation_id": "PO-FALSIFIERS",
+    "status": "falsifiers-triggered"
+  },
+  {
+    "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
+    "evidence": "CFI-like graph/coset families beyond complete, regular, degree-separated irregular, and bipartition-visible promised gadgets, where structural CFI parity decoders are either illegal under a natural input model or empirically fail under explicit reconstruction checks.",
+    "field": "problem_family",
+    "next_action": "Convert this prose obligation into a formal lemma, reduction, or executable check.",
+    "obligation_id": "PO-FAMILY",
+    "status": "text-present"
+  },
+  {
+    "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
+    "evidence": "Public graph instances and coherent coset-state preparation, with the availability of any CFI gadget decomposition stated explicitly and granted to classical baselines whenever it is part of the construction.",
+    "field": "input_model",
+    "next_action": "Convert this prose obligation into a formal lemma, reduction, or executable check.",
+    "obligation_id": "PO-INPUT-MODEL",
+    "status": "text-present"
+  },
+  {
+    "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
+    "evidence": "Complete, regular, degree-separated irregular, and bipartition-based structural CFI parity decoding, gadget recognition, higher-k WL, spectra, walk counts, graphlet tensor contractions, individualized rooted tensor shadows, exact small-instance GI sanity checks, and low-rank relation-algebra baselines.",
+    "field": "classical_baseline",
+    "next_action": "Convert this prose obligation into a formal lemma, reduction, or executable check.",
+    "obligation_id": "PO-CLASSICAL-BASELINE",
+    "status": "text-present"
+  },
+  {
+    "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
+    "evidence": "No complete certificate-gated natural-problem route. Blocked routes: ROUTE-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-GRAPH-ISOMORPHISM-VIA-SYMMETRIC-HSP. Exact theorem-interface failures: full-family-coverage, parameter-map, success-and-decoder, uniform-instance-construction",
+    "field": "reduction_or_lower_bound",
+    "next_action": "Prove family coverage, direction, model/promise preservation, polynomial overhead, uniformity, preprocessing semantics, and decoder success for every edge.",
+    "obligation_id": "PO-REDUCTION",
+    "status": "reduction-route-blocked"
+  },
+  {
+    "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
+    "evidence": "Search collective coset-state measurements only on rows that survive promised-CFI parity decoding and classical graph invariant baselines.",
+    "field": "quantum_mechanism",
+    "next_action": "Convert this prose obligation into a formal lemma, reduction, or executable check.",
+    "obligation_id": "PO-MECHANISM",
+    "status": "text-present"
+  },
+  {
+    "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
+    "evidence": "Counts graph size, coset-state samples, register count, measurement description, tensor contraction cost, CFI decoder runtime, WL tuple budgets, and classical verification.",
+    "field": "cost_model",
+    "next_action": "Convert this prose obligation into a formal lemma, reduction, or executable check.",
+    "obligation_id": "PO-STATE-PREP",
+    "status": "text-present"
+  },
+  {
+    "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
+    "evidence": "Apply a multi-register observable, decode a hidden permutation or graph separator, and compare against CFI parity and WL baselines.",
+    "field": "measurement_and_decoding",
+    "next_action": "Convert this prose obligation into a formal lemma, reduction, or executable check.",
+    "obligation_id": "PO-MEASUREMENT",
+    "status": "text-present"
+  },
+  {
+    "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
+    "evidence": "A row remains viable only if the CFI parity decoder fails or is illegal, classical graph invariants fail at scaling budgets, and a polynomial-description collective measurement has stable distinguishing advantage.",
+    "field": "success_statement",
+    "next_action": "Convert this prose obligation into a formal lemma, reduction, or executable check.",
+    "obligation_id": "PO-SUCCESS-PROOF",
+    "status": "text-present"
+  },
+  {
+    "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
+    "evidence": "Reports CFI decoder status, WL dimension, tuple caps, tensor bond dimension, register count, sample complexity, and invariant overlap.",
+    "field": "complexity_accounting",
+    "next_action": "Convert this prose obligation into a formal lemma, reduction, or executable check.",
+    "obligation_id": "PO-COMPLEXITY",
+    "status": "text-present"
+  },
+  {
+    "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
+    "evidence": "Rejects complete-CFI promised rows decoded by cfi_parity_solver.py, regular CFI rows decoded by cfi_structural_decoder.py, degree-separated irregular rows decoded by cfi_irregular_structural_decoder.py, bipartition-visible rows decoded by cfi_bipartite_structural_decoder.py, WL/spectral/walk separations, and observables equivalent to graphlet, individualized rooted tensor, or low-rank tensor contractions.",
+    "field": "no_go_analysis",
+    "next_action": "Convert this prose obligation into a formal lemma, reduction, or executable check.",
+    "obligation_id": "PO-NOGO",
+    "status": "text-present"
+  },
+  {
+    "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
+    "evidence": "The workbench wrote 1 coset/nonabelian family negative-result record(s). | The workbench wrote 3 coset/nonabelian family negative-result record(s). | Coset/nonabelian candidate does not explicitly name classical invariant-overlap checks.",
+    "field": "dequantization_check",
+    "next_action": "Resolve dequantization findings or demote the candidate to a negative/blocked result.",
+    "obligation_id": "PO-DEQUANTIZATION",
+    "status": "blocked-by-classical-baseline"
+  },
+  {
+    "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
+    "evidence": "A classical graph invariant distinguishes the pair; any matching quantum observable is dequantized. | A higher-k WL baseline separates the pair; low-register tensor signals must exceed this classical refinement. | A low-register relation observable separates the pair but may reduce to a classical invariant.",
+    "field": "falsifiers",
+    "next_action": "Either sharpen the model to escape these falsifiers or retire the affected family.",
+    "obligation_id": "PO-FALSIFIERS",
+    "status": "falsifiers-triggered"
+  },
+  {
+    "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
+    "evidence": "Scalable hidden-permutation families including CFI-style graph pairs and code-equivalence instances that survive low-dimensional WL, spectra, walk counts, and canonicalization baselines before any quantum signal is considered.",
+    "field": "problem_family",
+    "next_action": "Convert this prose obligation into a formal lemma, reduction, or executable check.",
+    "obligation_id": "PO-FAMILY",
+    "status": "text-present"
+  },
+  {
+    "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
+    "evidence": "Coherent preparation of coset states for hidden permutations, with classical descriptions of graph/code families available to all classical baselines.",
+    "field": "input_model",
+    "next_action": "Convert this prose obligation into a formal lemma, reduction, or executable check.",
+    "obligation_id": "PO-INPUT-MODEL",
+    "status": "text-present"
+  },
+  {
+    "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
+    "evidence": "Higher-k WL scaling, CFI parity checks, graph spectra, support splitting, code canonicalization heuristics, low-rank tensor contractions, and exact small-instance GI sanity checks.",
+    "field": "classical_baseline",
+    "next_action": "Convert this prose obligation into a formal lemma, reduction, or executable check.",
+    "obligation_id": "PO-CLASSICAL-BASELINE",
+    "status": "text-present"
+  },
+  {
+    "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
+    "evidence": "No complete certificate-gated natural-problem route. Blocked routes: ROUTE-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-CODE-EQUIVALENCE-VIA-SYMMETRIC-HSP, ROUTE-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-GRAPH-ISOMORPHISM-VIA-SYMMETRIC-HSP. Exact theorem-interface failures: full-family-coverage, parameter-map, success-and-decoder, uniform-instance-construction",
+    "field": "reduction_or_lower_bound",
+    "next_action": "Prove family coverage, direction, model/promise preservation, polynomial overhead, uniformity, preprocessing semantics, and decoder success for every edge.",
+    "obligation_id": "PO-REDUCTION",
+    "status": "reduction-route-blocked"
+  },
+  {
+    "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
+    "evidence": "Search polynomial-description multi-register collective measurements whose distinguishability is not reproduced by WL refinement or classical tensor invariant contraction.",
+    "field": "quantum_mechanism",
+    "next_action": "Convert this prose obligation into a formal lemma, reduction, or executable check.",
+    "obligation_id": "PO-MECHANISM",
+    "status": "text-present"
+  },
+  {
+    "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
+    "evidence": "Counts coset-state samples, register count, measurement description length, tensor bond dimension, state preparation, classical preprocessing, and verification.",
+    "field": "cost_model",
+    "next_action": "Convert this prose obligation into a formal lemma, reduction, or executable check.",
+    "obligation_id": "PO-STATE-PREP",
+    "status": "text-present"
+  },
+  {
+    "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
+    "evidence": "Apply candidate collective observables to k-register coset ensembles, decode a hidden permutation or separator, and verify the proposed equivalence/non-equivalence classically.",
+    "field": "measurement_and_decoding",
+    "next_action": "Convert this prose obligation into a formal lemma, reduction, or executable check.",
+    "obligation_id": "PO-MEASUREMENT",
+    "status": "text-present"
+  },
+  {
+    "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
+    "evidence": "A candidate survives only if a scalable family remains hard for classical invariants while a polynomial-register collective observable has inverse-polynomial distinguishing advantage.",
+    "field": "success_statement",
+    "next_action": "Convert this prose obligation into a formal lemma, reduction, or executable check.",
+    "obligation_id": "PO-SUCCESS-PROOF",
+    "status": "text-present"
+  },
+  {
+    "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
+    "evidence": "Reports WL dimension reached, tuple caps, tensor bond dimension, register count, sample complexity, and classical invariant overlap as size grows.",
+    "field": "complexity_accounting",
+    "next_action": "Convert this prose obligation into a formal lemma, reduction, or executable check.",
+    "obligation_id": "PO-COMPLEXITY",
+    "status": "text-present"
+  },
+  {
+    "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
+    "evidence": "Strong Fourier sampling alone is treated as blocked; any observable reducible to WL, spectrum, support splitting, or low-rank classical tensor contraction is rejected.",
+    "field": "no_go_analysis",
+    "next_action": "Convert this prose obligation into a formal lemma, reduction, or executable check.",
+    "obligation_id": "PO-NOGO",
+    "status": "text-present"
+  },
+  {
+    "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
+    "evidence": "The workbench wrote 2 coset/nonabelian family negative-result record(s). | The workbench wrote 1 coset/nonabelian family negative-result record(s). | Coset/nonabelian candidate does not explicitly name classical invariant-overlap checks.",
+    "field": "dequantization_check",
+    "next_action": "Resolve dequantization findings or demote the candidate to a negative/blocked result.",
+    "obligation_id": "PO-DEQUANTIZATION",
+    "status": "blocked-by-classical-baseline"
+  },
+  {
+    "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
+    "evidence": "A classical code invariant distinguishes the pair; any matching coset observable is dequantized. | A classical graph invariant distinguishes the pair; any matching quantum observable is dequantized. | A higher-k WL baseline separates the pair; low-register tensor signals must exceed this classical refinement.",
+    "field": "falsifiers",
+    "next_action": "Either sharpen the model to escape these falsifiers or retire the affected family.",
+    "obligation_id": "PO-FALSIFIERS",
+    "status": "falsifiers-triggered"
+  },
+  {
+    "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
+    "evidence": "Scalable hidden-permutation families including CFI-style graph pairs and code-equivalence instances that survive low-dimensional WL, spectra, walk counts, and canonicalization baselines before any quantum signal is considered.",
+    "field": "problem_family",
+    "next_action": "Convert this prose obligation into a formal lemma, reduction, or executable check.",
+    "obligation_id": "PO-FAMILY",
+    "status": "text-present"
+  },
+  {
+    "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
+    "evidence": "Coherent preparation of coset states for hidden permutations, with classical descriptions of graph/code families available to all classical baselines.",
+    "field": "input_model",
+    "next_action": "Convert this prose obligation into a formal lemma, reduction, or executable check.",
+    "obligation_id": "PO-INPUT-MODEL",
+    "status": "text-present"
+  },
+  {
+    "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
+    "evidence": "Higher-k WL scaling, CFI parity checks, graph spectra, support splitting, code canonicalization heuristics, low-rank tensor contractions, and exact small-instance GI sanity checks.",
+    "field": "classical_baseline",
+    "next_action": "Convert this prose obligation into a formal lemma, reduction, or executable check.",
+    "obligation_id": "PO-CLASSICAL-BASELINE",
+    "status": "text-present"
+  },
+  {
+    "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
+    "evidence": "No complete certificate-gated natural-problem route. Blocked routes: ROUTE-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-CODE-EQUIVALENCE-VIA-SYMMETRIC-HSP, ROUTE-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-GRAPH-ISOMORPHISM-VIA-SYMMETRIC-HSP. Exact theorem-interface failures: full-family-coverage, parameter-map, success-and-decoder, uniform-instance-construction",
+    "field": "reduction_or_lower_bound",
+    "next_action": "Prove family coverage, direction, model/promise preservation, polynomial overhead, uniformity, preprocessing semantics, and decoder success for every edge.",
+    "obligation_id": "PO-REDUCTION",
+    "status": "reduction-route-blocked"
+  },
+  {
+    "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
+    "evidence": "Search polynomial-description multi-register collective measurements whose distinguishability is not reproduced by WL refinement or classical tensor invariant contraction.",
+    "field": "quantum_mechanism",
+    "next_action": "Convert this prose obligation into a formal lemma, reduction, or executable check.",
+    "obligation_id": "PO-MECHANISM",
+    "status": "text-present"
+  },
+  {
+    "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
+    "evidence": "Counts coset-state samples, register count, measurement description length, tensor bond dimension, state preparation, classical preprocessing, and verification.",
+    "field": "cost_model",
+    "next_action": "Convert this prose obligation into a formal lemma, reduction, or executable check.",
+    "obligation_id": "PO-STATE-PREP",
+    "status": "text-present"
+  },
+  {
+    "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
+    "evidence": "Apply candidate collective observables to k-register coset ensembles, decode a hidden permutation or separator, and verify the proposed equivalence/non-equivalence classically.",
+    "field": "measurement_and_decoding",
+    "next_action": "Convert this prose obligation into a formal lemma, reduction, or executable check.",
+    "obligation_id": "PO-MEASUREMENT",
+    "status": "text-present"
+  },
+  {
+    "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
+    "evidence": "A candidate survives only if a scalable family remains hard for classical invariants while a polynomial-register collective observable has inverse-polynomial distinguishing advantage.",
+    "field": "success_statement",
+    "next_action": "Convert this prose obligation into a formal lemma, reduction, or executable check.",
+    "obligation_id": "PO-SUCCESS-PROOF",
+    "status": "text-present"
+  },
+  {
+    "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
+    "evidence": "Reports WL dimension reached, tuple caps, tensor bond dimension, register count, sample complexity, and classical invariant overlap as size grows.",
+    "field": "complexity_accounting",
+    "next_action": "Convert this prose obligation into a formal lemma, reduction, or executable check.",
+    "obligation_id": "PO-COMPLEXITY",
+    "status": "text-present"
+  },
+  {
+    "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
+    "evidence": "Strong Fourier sampling alone is treated as blocked; any observable reducible to WL, spectrum, support splitting, or low-rank classical tensor contraction is rejected.",
+    "field": "no_go_analysis",
+    "next_action": "Convert this prose obligation into a formal lemma, reduction, or executable check.",
+    "obligation_id": "PO-NOGO",
+    "status": "text-present"
+  },
+  {
+    "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
+    "evidence": "The workbench wrote 2 coset/nonabelian family negative-result record(s). | Coset/nonabelian candidate does not explicitly name classical invariant-overlap checks. | Triggered falsifiers: A classical code invariant distinguishes the pair; any matching coset observable is dequantized.",
+    "field": "dequantization_check",
+    "next_action": "Resolve dequantization findings or demote the candidate to a negative/blocked result.",
+    "obligation_id": "PO-DEQUANTIZATION",
+    "status": "blocked-by-classical-baseline"
+  },
+  {
+    "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
+    "evidence": "A classical code invariant distinguishes the pair; any matching coset observable is dequantized.",
+    "field": "falsifiers",
+    "next_action": "Either sharpen the model to escape these falsifiers or retire the affected family.",
+    "obligation_id": "PO-FALSIFIERS",
+    "status": "falsifiers-triggered"
+  }
+]

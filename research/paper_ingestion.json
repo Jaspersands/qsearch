@@ -1,0 +1,456 @@
+[
+  {
+    "citation_keys": [
+      "2faces",
+      "ACGS",
+      "AGS",
+      "AKA-HNP",
+      "AKA-thesis",
+      "BS",
+      "BV",
+      "BV2",
+      "Beur-Hel",
+      "Bleichenbacher",
+      "De-Mulder",
+      "Duc",
+      "Eric-Verheul",
+      "Ext-KM",
+      "Fazio",
+      "Fourier_survey",
+      "GL",
+      "GLV/GLS",
+      "GVNS",
+      "GVS",
+      "GreKon",
+      "HN",
+      "HardCoreSurvey",
+      "HyperEDH",
+      "KM",
+      "Kiltz",
+      "KonShk",
+      "LS",
+      "LWE",
+      "LWR",
+      "LWR_reduction",
+      "Lebedev",
+      "MIHNP",
+      "MM",
+      "MR",
+      "MVHNP",
+      "ManSah",
+      "Mansour92",
+      "Mansour94",
+      "Moreno",
+      "NguShpa",
+      "Poly-HNP",
+      "Rackoff",
+      "SW",
+      "SW2",
+      "Shor",
+      "Shparlinski",
+      "Terras",
+      "WZZ",
+      "mod-dim",
+      "trace-HNP"
+    ],
+    "extracted_terms": [
+      "sparse fourier transform",
+      "significant fourier",
+      "hidden number",
+      "random access model",
+      "learning parity with noise",
+      "lattice"
+    ],
+    "id": "LOCAL-FOURIER7C",
+    "mechanism": "hash-based sparse Fourier localization; hidden-number Fourier/lattice decoding; lattice reduction interface; random-example noisy character learning; random-sample Fourier access separation; significant Fourier coefficient learning",
+    "no_go_barrier": "Since we have good evidence that LWE is a hard problem, this shows that we do not expect to be able to learn significant Fourier coefficients in the random access model.",
+    "open_question": "In particular, we point out that some of the most important bit security problems are still open.",
+    "problem_family": "LPN/LWE-style learning problems; hidden number problems; lattice problems; random-access noisy Fourier learning; sparse Fourier recovery",
+    "proof_technique": "In particular we provide a new proof of a result by Morillo and R \\` a fols~ MR (described in Section~ sec:i-th-bit ).",
+    "reduction": "The SFT algorithm has also been used to show search-to-decision reductions for the learning with errors and learning with rounding problems~ MM,LWR reduction .",
+    "reusable_abstraction": "Akavia, Goldwasser and Safra unified some of these ideas to give a complete algorithm that finds significant Fourier coefficients of functions on any finite abelian group.",
+    "source_format": "tex",
+    "source_path": "research/literature_cache/1607.01842_source/Fourier7c.tex",
+    "theorem_like_statements": [
+      {
+        "extraction_confidence": "high",
+        "kind": "definition",
+        "label": "definition-1",
+        "raw_latex": "[Restriction]\n    Given a function $f:G \\rightarrow \\C$ and a set of characters $\\Gamma \\subseteq \\widehat{G}$, the \\emph{restriction of $f$ to $\\Gamma$} is the function $f|_\\Gamma: G \\rightarrow \\C$ defined by $f|_\\Gamma := \\sum_{\\chi_\\alpha \\in \\Gamma}\\widehat{f}(\\alpha) \\chi_\\alpha$.",
+        "source_locator": "line 417; \\begin{definition}",
+        "statement": "[Restriction] Given a function $f:G \\rightarrow \\C$ and a set of characters $\\Gamma \\subseteq \\widehat{G}$, the \\emph{restriction of $f$ to $\\Gamma$} is the function $f|_\\Gamma: G \\rightarrow \\C$ defined by $f|_\\Gamma := \\sum_{\\chi_\\alpha \\in \\Gamma}\\widehat{f}(\\alpha) \\chi_\\alpha$."
+      },
+      {
+        "extraction_confidence": "high",
+        "kind": "definition",
+        "label": "definition-2",
+        "raw_latex": "[Concentration]\n%Let $\\famly = \\{f_i:G_i\\to \\C\\}_{i\\in \\N}$ be a family of functions. Let $\\epsilon>0$ be a real number.\n%Then $\\famly$ is \\emph{Fourier $\\epsilon$-concentrated} if there exist a polynomial $P \\in \\Z[s,t]$ and sets of characters $\\Gamma_i \\subseteq \\widehat{G}_i$ such that $|\\Gamma_i| \\le P\\Bigl( \\tfrac{1}{\\epsilon} , \\log|G_i| \\Big)$ and $\\| f_i - f_i|_{\\Gamma_i} \\|_{2}^{2} \\leq \\epsilon$ for all $i\\in \\N$. We say that $\\famly$ is \\emph{concentrated} if $\\famly$ is $\\epsilon$-concentrated for every $\\epsilon > 0$.\n%",
+        "source_locator": "line 421; \\begin{definition}",
+        "statement": "[Concentration] %Let $\\famly = \\{f_i:G_i\\to \\C\\}_{i\\in \\N}$ be a family of functions. Let $\\epsilon>0$ be a real number. %Then $\\famly$ is \\emph{Fourier $\\epsilon$-concentrated} if there exist a polynomial $P \\in \\Z[s,t]$ and sets of characters $\\Gamma_i \\subseteq \\widehat{G}_i$ such that $|\\Gamma_i| \\le P\\Bigl( \\tfrac{1}{\\epsilon} , \\log|G_i| \\Big)$ and $\\| f_i - f_i|_{\\Gamma_i} \\|_{2}^{2} \\leq \\epsilon$ for all $i\\in \\N$. We say that $\\famly$ is \\emph{concentrated} if $\\famly$ is $\\epsilon$-concentrated for every $\\epsilon > 0$. %"
+      },
+      {
+        "extraction_confidence": "high",
+        "kind": "definition",
+        "label": "definition-3",
+        "raw_latex": "[$\\epsilon$-Concentration]\n    Let $\\epsilon>0$ be a real number. A family of functions $\\{f_i:G_i\\to \\C\\}_{i\\in \\N}$ is \\emph{Fourier $\\epsilon$-concentrated} if there exists a polynomial $P$ and sets of characters $\\Gamma_i \\subseteq \\widehat{G}_i$ such that $|\\Gamma_i| \\le P( \\log|G_i| )$ and $\\| f_i - f_i|_{\\Gamma_i} \\|_{2}^{2} \\leq \\epsilon$ for all $i\\in \\N$.",
+        "source_locator": "line 426; \\begin{definition}",
+        "statement": "[$\\epsilon$-Concentration] Let $\\epsilon>0$ be a real number. A family of functions $\\{f_i:G_i\\to \\C\\}_{i\\in \\N}$ is \\emph{Fourier $\\epsilon$-concentrated} if there exists a polynomial $P$ and sets of characters $\\Gamma_i \\subseteq \\widehat{G}_i$ such that $|\\Gamma_i| \\le P( \\log|G_i| )$ and $\\| f_i - f_i|_{\\Gamma_i} \\|_{2}^{2} \\leq \\epsilon$ for all $i\\in \\N$."
+      },
+      {
+        "extraction_confidence": "high",
+        "kind": "definition",
+        "label": "definition-4",
+        "raw_latex": "[Concentration]\n    A family of functions $\\{f_i:G_i\\to \\C\\}_{i\\in \\N}$ is \\emph{Fourier concentrated} if there exists a polynomial $P$ and sets of characters $\\Gamma_i \\subseteq \\widehat{G}_i$ such that $|\\Gamma_i| \\le P( \\log|G_i|/\\epsilon )$ and $\\| f_i - f_i|_{\\Gamma_i} \\|_{2}^{2} \\leq \\epsilon$ for all $i\\in \\N$ and for all $\\epsilon > 0$.",
+        "source_locator": "line 430; \\begin{definition}",
+        "statement": "[Concentration] A family of functions $\\{f_i:G_i\\to \\C\\}_{i\\in \\N}$ is \\emph{Fourier concentrated} if there exists a polynomial $P$ and sets of characters $\\Gamma_i \\subseteq \\widehat{G}_i$ such that $|\\Gamma_i| \\le P( \\log|G_i|/\\epsilon )$ and $\\| f_i - f_i|_{\\Gamma_i} \\|_{2}^{2} \\leq \\epsilon$ for all $i\\in \\N$ and for all $\\epsilon > 0$."
+      },
+      {
+        "extraction_confidence": "high",
+        "kind": "definition",
+        "label": "definition-5",
+        "raw_latex": "[Heavy coefficient]\n    For a function $f:G \\rightarrow \\C$ and a threshold $\\tau>0$, we say that a coefficient $\\widehat{f}(\\alpha)$ (of the character $\\chi_\\alpha$) is \\emph{$\\tau$-heavy} if $|\\widehat{f}(\\alpha)|^2>\\tau$.",
+        "source_locator": "line 442; \\begin{definition}",
+        "statement": "[Heavy coefficient] For a function $f:G \\rightarrow \\C$ and a threshold $\\tau>0$, we say that a coefficient $\\widehat{f}(\\alpha)$ (of the character $\\chi_\\alpha$) is \\emph{$\\tau$-heavy} if $|\\widehat{f}(\\alpha)|^2>\\tau$."
+      },
+      {
+        "extraction_confidence": "high",
+        "kind": "theorem",
+        "label": "Chernoff",
+        "raw_latex": "[Chernoff] \\label{Chernoff}\n    Let $A$ be a set of complex numbers such that $|x|\\leq M$ for all $x\\in A$. Let $x_i\\in A$ be chosen independently and uniformly at randomly from $A$. Then\n    \\[\n        \\Pr\\left[\\left|\\E_{x\\in A}[x]-\\frac{1}{m}\\sum_{i=1}^mx_i\\right| > \\lambda \\right]\\leq 2 \\mathrm{e}^{-\\lambda^2 m / 2 M^2} .\n    \\]",
+        "source_locator": "line 509; \\begin{theorem}",
+        "statement": "[Chernoff] Let $A$ be a set of complex numbers such that $|x|\\leq M$ for all $x\\in A$. Let $x_i\\in A$ be chosen independently and uniformly at randomly from $A$. Then \\[ \\Pr\\left[\\left|\\E_{x\\in A}[x]-\\frac{1}{m}\\sum_{i=1}^mx_i\\right| > \\lambda \\right]\\leq 2 \\mathrm{e}^{-\\lambda^2 m / 2 M^2} . \\]"
+      },
+      {
+        "extraction_confidence": "high",
+        "kind": "theorem",
+        "label": "Chernoff",
+        "raw_latex": "[Chernoff-Hoeffding] \\label{Chernoff}\n%   Let $A$ be a set of complex numbers such that $|x|\\leq M$ for all $x\\in A$. Let $\\epsilon >0$. Let $m\\geq \\frac{2M^2}{\\epsilon^2}\\log(1/\\delta)$. Let $x_i\\in A$ be chosen randomly and uniformly from $A$ where $1\\leq i \\leq m$. Then\n%   \\[\n%       \\mathop{Pr}\\left[\\left|\\E_{x\\in A}[x]-\\frac{1}{m}\\sum_{i=1}^mx_i\\right| > \\epsilon \\right]\\leq \\delta\n%   \\]\n%",
+        "source_locator": "line 516; \\begin{theorem}",
+        "statement": "[Chernoff-Hoeffding] % Let $A$ be a set of complex numbers such that $|x|\\leq M$ for all $x\\in A$. Let $\\epsilon >0$. Let $m\\geq \\frac{2M^2}{\\epsilon^2}\\log(1/\\delta)$. Let $x_i\\in A$ be chosen randomly and uniformly from $A$ where $1\\leq i \\leq m$. Then % \\[ % \\mathop{Pr}\\left[\\left|\\E_{x\\in A}[x]-\\frac{1}{m}\\sum_{i=1}^mx_i\\right| > \\epsilon \\right]\\leq \\delta % \\] %"
+      },
+      {
+        "extraction_confidence": "high",
+        "kind": "theorem",
+        "label": "thm_sft_algo",
+        "raw_latex": "[{\\cite[SFT algorithm]{AKA-thesis}}{\\cite[Theorem 5]{AGS}}]\n    \\label{thm_sft_algo}\n    Let $G$ be an abelian group represented by a set of generators of known orders. There is a learning algorithm that, given query access to a function $f: G \\rightarrow \\C$, a threshold $\\tau > 0$ and $\\delta > 0$, outputs a list $L$ of size at most $2\\|f\\|_2^2 / \\tau$ such that\n    \\begin{itemize}\n        \\item $L$ contains all the $\\tau$-heavy Fourier coefficients of $f$ with probability at least $1-\\delta$;\n        \\item $L$ does not contain coefficients that are not $(\\tau/2)$-heavy with probability at least $1-\\delta$.\n    \\end{itemize}\n    The algorithm runs in polynomial time in $\\log\\left(|G|\\right)$, $\\| f \\|_\\infty^2 / \\tau$ and $\\log\\left(\\frac{1}{\\delta}\\right)$.",
+        "source_locator": "line 557; \\begin{theorem}",
+        "statement": "[{\\cite[SFT algorithm]{AKA-thesis}}{\\cite[Theorem 5]{AGS}}] Let $G$ be an abelian group represented by a set of generators of known orders. There is a learning algorithm that, given query access to a function $f: G \\rightarrow \\C$, a threshold $\\tau > 0$ and $\\delta > 0$, outputs a list $L$ of size at most $2\\|f\\|_2^2 / \\tau$ such that \\begin{itemize} \\item $L$ contains all the $\\tau$-heavy Fourier coefficients of $f$ with probability at least $1-\\delta$; \\item $L$ does not contain coefficients that are not $(\\tau/2)$-heavy with probability at least $1-\\delta$. \\end{itemize} The algorithm runs in polynomial time in $\\log\\left(|G|\\right)$, $\\| f \\|_\\infty^2 / \\tau$ and $\\log\\left(\\frac{1}{\\delta}\\right)$."
+      },
+      {
+        "extraction_confidence": "high",
+        "kind": "theorem",
+        "label": "thm:LS",
+        "raw_latex": "[{\\cite[Theorem 1.1]{LS}}]\\label{thm:LS}\n    Let $\\{n_k\\}_{k\\in\\N},\\{m_k\\}_{k\\in\\N}$ two sequences of positive integers with $m_k \\geq n_k/2$ for every $k\\in\\N$.\n    Let $Q\\in \\R[x]$ be a polynomial.\n    Let $\\{f_k:\\Z_{n_k}\\to\\C\\}_{k\\in\\N}$ be a concentrated family of functions such that $\\|f_k\\|_2^2 \\leq Q(\\log(n_k))$ for all $k\\in \\N$.\n    Then $\\{\\widetilde{f_k}:\\Z_{m_k}\\to\\C\\}_{k\\in\\N}$ is a concentrated family of functions.",
+        "source_locator": "line 1002; \\begin{theorem}",
+        "statement": "[{\\cite[Theorem 1.1]{LS}}] Let $\\{n_k\\}_{k\\in\\N},\\{m_k\\}_{k\\in\\N}$ two sequences of positive integers with $m_k \\geq n_k/2$ for every $k\\in\\N$. Let $Q\\in \\R[x]$ be a polynomial. Let $\\{f_k:\\Z_{n_k}\\to\\C\\}_{k\\in\\N}$ be a concentrated family of functions such that $\\|f_k\\|_2^2 \\leq Q(\\log(n_k))$ for all $k\\in \\N$. Then $\\{\\widetilde{f_k}:\\Z_{m_k}\\to\\C\\}_{k\\in\\N}$ is a concentrated family of functions."
+      },
+      {
+        "extraction_confidence": "high",
+        "kind": "theorem",
+        "label": "thm:mod-switch",
+        "raw_latex": "[{\\cite[Theorem 6.1]{LS}}]\\label{thm:mod-switch}\n    Consider a family of functions $\\famly = \\{ f_{2^k}:\\Z_{2^k} \\to \\C \\}_{k\\in\\N}$ and define the family $\\famly' = \\{ f_n:\\Z_n \\to \\C \\}_{n\\in\\N}$, where for each $2^{k-1} < n \\leq 2^k$ we let $f_n(x) := f_{2^k}(x)$ for every $x\\in\\Z_n$.\n    If $\\famly$ is concentrated then $\\famly'$ is concentrated.",
+        "source_locator": "line 1029; \\begin{theorem}",
+        "statement": "[{\\cite[Theorem 6.1]{LS}}] Consider a family of functions $\\famly = \\{ f_{2^k}:\\Z_{2^k} \\to \\C \\}_{k\\in\\N}$ and define the family $\\famly' = \\{ f_n:\\Z_n \\to \\C \\}_{n\\in\\N}$, where for each $2^{k-1} < n \\leq 2^k$ we let $f_n(x) := f_{2^k}(x)$ for every $x\\in\\Z_n$. If $\\famly$ is concentrated then $\\famly'$ is concentrated."
+      },
+      {
+        "extraction_confidence": "high",
+        "kind": "lemma",
+        "label": "lemma-11",
+        "raw_latex": "[{\\cite[Lemma 6.2]{LS}}]\n    Let $k \\in \\N$ and $0 \\le i < k$.\n    Define $\\bit_i : \\Z_{2^k} \\to \\{-1,1\\}$ by\n    $\\bit_i(x) = (-1)^{x_i}$ where $x = \\sum_{j=0}^{k-1} x_j 2^j$ and $x_j \\in \\{ 0,1 \\}$.\n    Let $\\alpha \\in \\Z_{2^k}$.\n    Then $\\widehat{\\bit_i}(\\alpha) = 0$ unless $\\alpha$ is an odd multiple of $2^{k-i-1}$ in which case $| \\widehat{\\bit_i}(\\alpha)| = O( 2^{k-i}/|\\alpha|_{2^k} )$.",
+        "source_locator": "line 1036; \\begin{lemma}",
+        "statement": "[{\\cite[Lemma 6.2]{LS}}] Let $k \\in \\N$ and $0 \\le i < k$. Define $\\bit_i : \\Z_{2^k} \\to \\{-1,1\\}$ by $\\bit_i(x) = (-1)^{x_i}$ where $x = \\sum_{j=0}^{k-1} x_j 2^j$ and $x_j \\in \\{ 0,1 \\}$. Let $\\alpha \\in \\Z_{2^k}$. Then $\\widehat{\\bit_i}(\\alpha) = 0$ unless $\\alpha$ is an odd multiple of $2^{k-i-1}$ in which case $| \\widehat{\\bit_i}(\\alpha)| = O( 2^{k-i}/|\\alpha|_{2^k} )$."
+      },
+      {
+        "extraction_confidence": "high",
+        "kind": "definition",
+        "label": "HNP_def",
+        "raw_latex": "[Hidden number problem]\n    \\label{HNP_def}\n    Let $(G,\\cdot)$ be a group, let $s \\neq 0$ be a secret (unknown) element of $G$ and let $f$ be a function defined over $G$. Find $s$ using oracle access to the function $f_s (x) := f(s \\cdot x)$.",
+        "source_locator": "line 1070; \\begin{definition}",
+        "statement": "[Hidden number problem] Let $(G,\\cdot)$ be a group, let $s \\neq 0$ be a secret (unknown) element of $G$ and let $f$ be a function defined over $G$. Find $s$ using oracle access to the function $f_s (x) := f(s \\cdot x)$."
+      },
+      {
+        "extraction_confidence": "high",
+        "kind": "theorem",
+        "label": "HNP_thm",
+        "raw_latex": "[\\cite{AGS}]\n    \\label{HNP_thm}\n    Let $f: \\Z_N \\to \\{-1,1\\}$ be a function with a $\\tau$-heavy Fourier coefficient $\\alpha\\in\\Z^*_N$ for $\\tau^{-1}=poly(\\log|G|)$. Then, the chosen-multiplier hidden number problem in $\\Z_N$ with $s \\in \\Z^*_N$ and the function $f$ can be solved in polynomial time.",
+        "source_locator": "line 1098; \\begin{theorem}",
+        "statement": "[\\cite{AGS}] Let $f: \\Z_N \\to \\{-1,1\\}$ be a function with a $\\tau$-heavy Fourier coefficient $\\alpha\\in\\Z^*_N$ for $\\tau^{-1}=poly(\\log|G|)$. Then, the chosen-multiplier hidden number problem in $\\Z_N$ with $s \\in \\Z^*_N$ and the function $f$ can be solved in polynomial time."
+      },
+      {
+        "extraction_confidence": "high",
+        "kind": "corollary",
+        "label": "cor_HNP-CM",
+        "raw_latex": "[\\cite{AGS}]\n%\\label{cor_HNP-CM}\n%For any concentrated function $f: \\Z_N \\rightarrow \\{-1,1\\}$, there exists an algorithm that solves CM-HNP in $\\Z^*_N$ in polynomial time, where the queries are made non-adaptively.\n%",
+        "source_locator": "line 1117; \\begin{corollary}",
+        "statement": "[\\cite{AGS}] % %For any concentrated function $f: \\Z_N \\rightarrow \\{-1,1\\}$, there exists an algorithm that solves CM-HNP in $\\Z^*_N$ in polynomial time, where the queries are made non-adaptively. %"
+      },
+      {
+        "extraction_confidence": "high",
+        "kind": "definition",
+        "label": "MVHNP_def",
+        "raw_latex": "[Multivariate hidden number problem]\n    \\label{MVHNP_def}\n    Let $R$ be a ring, let $\\textbf{s}=(s_1,\\dots,s_m)\\ne (0,\\dots,0)$ be a secret (unknown) element in $R^m$ and let $f$ be a function defined over $R$. Find $\\textbf{s}$ using oracle access to the function $f_\\textbf{s}(\\textbf{x}) := f (\\textbf{s} \\cdot \\textbf{x}) = f (s_1 x_1 + \\cdots + s_m x_m$).",
+        "source_locator": "line 1137; \\begin{definition}",
+        "statement": "[Multivariate hidden number problem] Let $R$ be a ring, let $\\textbf{s}=(s_1,\\dots,s_m)\\ne (0,\\dots,0)$ be a secret (unknown) element in $R^m$ and let $f$ be a function defined over $R$. Find $\\textbf{s}$ using oracle access to the function $f_\\textbf{s}(\\textbf{x}) := f (\\textbf{s} \\cdot \\textbf{x}) = f (s_1 x_1 + \\cdots + s_m x_m$)."
+      },
+      {
+        "extraction_confidence": "high",
+        "kind": "theorem",
+        "label": "MVHNP_thm",
+        "raw_latex": "[\\cite{MVHNP}]\n    \\label{MVHNP_thm}\n    Let $f: \\Z_p \\to \\{-1,1\\}$ be a function with a $\\tau$-heavy Fourier coefficient $\\alpha\\in\\Z^*_p$ for $\\tau^{-1}=poly(\\log|G|)$. Then, the chosen-multiplier multivariate hidden number problem in $\\Z_p^m$ with the function $f$ can be solved in polynomial time.",
+        "source_locator": "line 1161; \\begin{theorem}",
+        "statement": "[\\cite{MVHNP}] Let $f: \\Z_p \\to \\{-1,1\\}$ be a function with a $\\tau$-heavy Fourier coefficient $\\alpha\\in\\Z^*_p$ for $\\tau^{-1}=poly(\\log|G|)$. Then, the chosen-multiplier multivariate hidden number problem in $\\Z_p^m$ with the function $f$ can be solved in polynomial time."
+      },
+      {
+        "extraction_confidence": "high",
+        "kind": "lemma",
+        "label": "lem_character_sum",
+        "raw_latex": "\\label{lem_character_sum}\n    Let $\\varphi = \\frac{g}{h}$ be a non-constant quotient of two univariate polynomials with coefficients in $\\F_{p^m}$, let $Z_h$ denote the set of roots of $h$, and let $\\chi$ be a non-trivial additive character of $\\F_{p^m}$. The following bound holds\n    \\[ \\left| \\sum_{x \\in \\F_{p^m} \\setminus Z_h} \\chi\\left(\\varphi(x)\\right) \\right| \\leq \\left(\\max\\left\\{\\deg(g), \\deg(h)\\right\\} + u - 2 \\right) \\sqrt{p^m} + \\delta \\enspace, \\]\n    where\n    \\begin{displaymath}\n        (u,\\delta) = \\left\\{\n        \\begin{array}{l l}\n            (v,1)   & \\quad if \\ \\deg(g) \\leq \\deg(h),\\\\      (v+1,0) & \\quad if \\ \\deg(g)>\\deg(h),\n        \\end{array}\n        \\right .\n    \\end{displaymath}\n    and $v$ is the number of distinct roots of $h$ in the algebraic closure of $\\F_{p^m}$.",
+        "source_locator": "line 1309; \\begin{lemma}",
+        "statement": "Let $\\varphi = \\frac{g}{h}$ be a non-constant quotient of two univariate polynomials with coefficients in $\\F_{p^m}$, let $Z_h$ denote the set of roots of $h$, and let $\\chi$ be a non-trivial additive character of $\\F_{p^m}$. The following bound holds \\[ \\left| \\sum_{x \\in \\F_{p^m} \\setminus Z_h} \\chi\\left(\\varphi(x)\\right) \\right| \\leq \\left(\\max\\left\\{\\deg(g), \\deg(h)\\right\\} + u - 2 \\right) \\sqrt{p^m} + \\delta \\enspace, \\] where \\begin{displaymath} (u,\\delta) = \\left\\{ \\begin{array}{l l} (v,1) & \\quad if \\ \\deg(g) \\leq \\deg(h),\\\\ (v+1,0) & \\quad if \\ \\deg(g)>\\deg(h), \\end{array} \\right . \\end{displaymath} and $v$ is the number of distinct roots of $h$ in the algebraic closure of $\\F_{p^m}$."
+      },
+      {
+        "extraction_confidence": "high",
+        "kind": "lemma",
+        "label": "lem_character_sum",
+        "raw_latex": "\\label{lem_character_sum}\n    Let $q$ be prime. For any polynomials $f,g \\in \\F_q[x]$ such that the rational function $h = \\frac{f}{g}$ is not constant in $\\F_q$, the following bound holds\n    \\[ \\Bigg| \\sum_{\\lambda \\in \\F_p}{}^{*} \\omega_q^{h(\\lambda)} \\Bigg| \\leq (\\max\\{\\deg(f), \\deg(g)\\} + u -2) \\sqrt{q} + \\delta \\,, \\]\n    where $\\sum^*$ means that the summation is taken over all $\\lambda \\in \\F_q$ which are not poles of $h$ and\n    \\begin{displaymath}\n        (u,\\delta) = \\left\\{\n        \\begin{array}{l l}\n            (v,1)   & \\quad if \\ \\deg(f) \\leq \\deg(g),\\\\      (v+1,0) & \\quad if \\ \\deg(f)>\\deg(g),\n        \\end{array}\n        \\right .\n    \\end{displaymath}\n    and $v$ is the number of distinct zeros of $g$ in the algebraic closure of $\\F_q$.",
+        "source_locator": "line 1324; \\begin{lemma}",
+        "statement": "Let $q$ be prime. For any polynomials $f,g \\in \\F_q[x]$ such that the rational function $h = \\frac{f}{g}$ is not constant in $\\F_q$, the following bound holds \\[ \\Bigg| \\sum_{\\lambda \\in \\F_p}{}^{*} \\omega_q^{h(\\lambda)} \\Bigg| \\leq (\\max\\{\\deg(f), \\deg(g)\\} + u -2) \\sqrt{q} + \\delta \\,, \\] where $\\sum^*$ means that the summation is taken over all $\\lambda \\in \\F_q$ which are not poles of $h$ and \\begin{displaymath} (u,\\delta) = \\left\\{ \\begin{array}{l l} (v,1) & \\quad if \\ \\deg(f) \\leq \\deg(g),\\\\ (v+1,0) & \\quad if \\ \\deg(f)>\\deg(g), \\end{array} \\right . \\end{displaymath} and $v$ is the number of distinct zeros of $g$ in the algebraic closure of $\\F_q$."
+      },
+      {
+        "extraction_confidence": "high",
+        "kind": "proposition",
+        "label": "prop_limit",
+        "raw_latex": "\\label{prop_limit}\n    Let $q$ be a sufficiently large prime.\n    Let $f$ be a concentrated function on $\\Z_q$ such that $\\|f\\|_2=1$ and $\\widehat{f}(0) = 0$.\n    Let $g, h \\in \\Z_q[x]$ be polynomials of degree bounded by $poly(\\log(q))$ and let $Z_h$ be the set of zeroes of $h$.\n    Define $\\varphi(x)$ as above and suppose this function is non-constant.\n    Let $\\tau = 1/poly(\\log(q))$. If $f \\circ \\varphi$ has any $\\tau$-heavy Fourier coefficients then $\\varphi(x) = ax + b$ for some $a, b \\in \\Z_q$.",
+        "source_locator": "line 1346; \\begin{proposition}",
+        "statement": "Let $q$ be a sufficiently large prime. Let $f$ be a concentrated function on $\\Z_q$ such that $\\|f\\|_2=1$ and $\\widehat{f}(0) = 0$. Let $g, h \\in \\Z_q[x]$ be polynomials of degree bounded by $poly(\\log(q))$ and let $Z_h$ be the set of zeroes of $h$. Define $\\varphi(x)$ as above and suppose this function is non-constant. Let $\\tau = 1/poly(\\log(q))$. If $f \\circ \\varphi$ has any $\\tau$-heavy Fourier coefficients then $\\varphi(x) = ax + b$ for some $a, b \\in \\Z_q$."
+      },
+      {
+        "extraction_confidence": "low",
+        "kind": "theorem",
+        "label": "statement-20",
+        "raw_latex": "",
+        "source_locator": "flattened-text sentence match",
+        "statement": "theorem [ LS ] thm:LS Let \\ n k\\ k ,\\ m k\\ k two sequences of positive integers with m k n k/2 for every k ."
+      }
+    ],
+    "title": "Finding Significant Fourier Coefficients: Clarifications, Simplifications, Applications and Limitations"
+  },
+  {
+    "citation_keys": [
+      "AGS",
+      "Ak",
+      "BCGLS",
+      "Bourgain2014",
+      "CCF",
+      "CGV",
+      "CP",
+      "CT_CS",
+      "CTao",
+      "DIPW",
+      "DR93",
+      "Don",
+      "FR",
+      "GGIMS",
+      "GHIKPS",
+      "GL",
+      "GLPS",
+      "GMS",
+      "HAKI",
+      "HIKP",
+      "HIKP2",
+      "HR16",
+      "IK14a",
+      "IKP",
+      "Iw",
+      "Iw-arxiv",
+      "KM",
+      "MRICS",
+      "Man",
+      "PZ15",
+      "RV",
+      "arxiv:1207.6368",
+      "citeulike:6838680",
+      "heidersparse",
+      "pawar2013computing",
+      "pawar2014"
+    ],
+    "extracted_terms": [
+      "sparse fourier transform",
+      "hashtobins",
+      "correlated fashion"
+    ],
+    "id": "LOCAL-FT_HD",
+    "mechanism": "correlated sample-pair localization; filtered hash-to-bins Fourier measurements; hash-based sparse Fourier localization",
+    "no_go_barrier": "Unfortunately, the identification step alone increases the sampling complexity by O( N) per hash function, so unlike~ IK14a , here we cannot repeat this process using O( N) hash functions to ensure that each large coefficient is isolated by one of those functions.",
+    "open_question": "Fast Fourier Transform (FFT) computes the DFT of a length N signal in time O(N N) , and finding a faster algorithm for DFT is a major open problem in theoretical computer science.",
+    "problem_family": "sparse Fourier recovery; structured-query sparse Fourier recovery",
+    "proof_technique": "\\expect \\bf E \\prob \\bf Pr \\opt OPT gray rgb 0.5,0.5,0.5 \\e \\A A \\E E \\comment [1] gray [ #1 ] \\grainofsalt [1] gray [ #1 ] \\redospace \\baselinestretch 1.5 \\undospace \\baselinestretch 1 theorem Theorem [section] lemma [theorem] Lemma claim [theorem] Claim corollary [theorem] Corollary fact [theorem] Fact definition [theorem] Definition remark [theorem] Remark conjecture [theorem] Conjecture proposition [theorem] Proposition proofof [1] \\bf Proof of #1: hyperref bookmarksnumbered equation 1 \\thee",
+    "reduction": "Minimizing the sample complexity of acquiring a signal using Fourier measurements thus translates directly to reduction in the time the patient spends in the MRI machine~ MRICS while a scan is being taken.",
+    "reusable_abstraction": "definition We access the signal x in Fourier domain via the function HashToBins x, , (H, a) , which evaluates the hashing H of residual signal x- at point a , i.e.",
+    "source_format": "tex",
+    "source_path": "research/literature_cache/1604.00845_source/ft-hd.tex",
+    "theorem_like_statements": [
+      {
+        "extraction_confidence": "high",
+        "kind": "definition",
+        "label": "definition-1",
+        "raw_latex": "Suppose that $\\Sigma^{-1}$ exists $\\bmod~n$. For $a, q\\in \\nsq$ we define the\n  permutation $P_{\\Sigma, a, q}$ by $(P_{\\Sigma, a, q}\\hat x)_i=\\hat x_{\\Sigma^T(i-a)} \\omega^{i^T\\Sigma q}$.",
+        "source_locator": "line 331; \\begin{definition}",
+        "statement": "Suppose that $\\Sigma^{-1}$ exists $\\bmod~n$. For $a, q\\in \\nsq$ we define the permutation $P_{\\Sigma, a, q}$ by $(P_{\\Sigma, a, q}\\hat x)_i=\\hat x_{\\Sigma^T(i-a)} \\omega^{i^T\\Sigma q}$."
+      },
+      {
+        "extraction_confidence": "high",
+        "kind": "lemma",
+        "label": "lm:perm",
+        "raw_latex": "\\label{lm:perm}\n$\\F^{-1}({P_{\\Sigma, a, q} \\hat x})_{\\pi_{\\Sigma, q}(i)}=x_i \\omega^{a^T \\Sigma i}$",
+        "source_locator": "line 335; \\begin{lemma}",
+        "statement": "$\\F^{-1}({P_{\\Sigma, a, q} \\hat x})_{\\pi_{\\Sigma, q}(i)}=x_i \\omega^{a^T \\Sigma i}$"
+      },
+      {
+        "extraction_confidence": "high",
+        "kind": "lemma",
+        "label": "lm:filter-prop",
+        "raw_latex": "[Lemma~3.1 in~\\cite{IK14a}]\\label{lm:filter-prop}\nOne has {\\bf (1)} $G_j\\in [\\frac1{(2\\pi)^{\\fc \\cdot d}}, 1]$ for all $j\\in \\nsq$ such that $||j||_\\infty\\leq \\frac{n}{2b}$ and {\\bf (2)} $|G_j|\\leq \\left(\\frac2{1+(b/n)||j||_\\infty}\\right)^{\\fc}$ for all $j\\in \\nsq$\nas long as $b\\geq 3$ and {\\bf (3)} $G_j\\in [0, 1]$ for all $j$ as long as $F$ is even.",
+        "source_locator": "line 353; \\begin{lemma}",
+        "statement": "[Lemma~3.1 in~\\cite{IK14a}] One has {\\bf (1)} $G_j\\in [\\frac1{(2\\pi)^{\\fc \\cdot d}}, 1]$ for all $j\\in \\nsq$ such that $||j||_\\infty\\leq \\frac{n}{2b}$ and {\\bf (2)} $|G_j|\\leq \\left(\\frac2{1+(b/n)||j||_\\infty}\\right)^{\\fc}$ for all $j\\in \\nsq$ as long as $b\\geq 3$ and {\\bf (3)} $G_j\\in [0, 1]$ for all $j$ as long as $F$ is even."
+      },
+      {
+        "extraction_confidence": "high",
+        "kind": "lemma",
+        "label": "lemma:limitedindependence",
+        "raw_latex": "[Lemma~3.2 in~\\cite{IK14a}]\\label{lemma:limitedindependence}\nLet $i, j\\in \\nsq$. Let $\\Sigma$ be uniformly random with odd determinant. Then for all $t\\geq 0$ one has $\n\\Pr[||\\Sigma(i-j)||_\\infty \\leq t] \\leq 2(2t/n)^d$.",
+        "source_locator": "line 362; \\begin{lemma}",
+        "statement": "[Lemma~3.2 in~\\cite{IK14a}] Let $i, j\\in \\nsq$. Let $\\Sigma$ be uniformly random with odd determinant. Then for all $t\\geq 0$ one has $ \\Pr[||\\Sigma(i-j)||_\\infty \\leq t] \\leq 2(2t/n)^d$."
+      },
+      {
+        "extraction_confidence": "high",
+        "kind": "definition",
+        "label": "definition-5",
+        "raw_latex": "[Hashing $H=(\\pi, B, F)$]\nFor a permutation $\\pi=(\\Sigma, q)$, parameters $b>1$, $B=b^d$ and $F$,  a {\\em hashing} $H:=(\\pi, B, F)$ is a function mapping a signal $x\\in \\C^{\\nsq}$ to $B$ signals $H(x)=(u_s)_{s\\in [b]^d}$, where $u_s\\in \\C^{\\nsq}$ for each $s\\in [b]^d$, such that for each $i\\in \\nsq$\n$$\n  u_{s, i}  = \\sum_{j\\in \\nsq} G_{\\pi(j)-(n/b)\\cdot s}x_j \\omega^{i^T \\Sigma j}\\in \\C,\n$$\nwhere $G$ is a filter with $B$ buckets and sharpness $F$ constructed in Lemma~\\ref{lm:filter-prop}.",
+        "source_locator": "line 369; \\begin{definition}",
+        "statement": "[Hashing $H=(\\pi, B, F)$] For a permutation $\\pi=(\\Sigma, q)$, parameters $b>1$, $B=b^d$ and $F$, a {\\em hashing} $H:=(\\pi, B, F)$ is a function mapping a signal $x\\in \\C^{\\nsq}$ to $B$ signals $H(x)=(u_s)_{s\\in [b]^d}$, where $u_s\\in \\C^{\\nsq}$ for each $s\\in [b]^d$, such that for each $i\\in \\nsq$ $$ u_{s, i} = \\sum_{j\\in \\nsq} G_{\\pi(j)-(n/b)\\cdot s}x_j \\omega^{i^T \\Sigma j}\\in \\C, $$ where $G$ is a filter with $B$ buckets and sharpness $F$ constructed in Lemma~\\ref{lm:filter-prop}."
+      },
+      {
+        "extraction_confidence": "high",
+        "kind": "definition",
+        "label": "definition-6",
+        "raw_latex": "[Measurement $m=m(x, H, a)$]\nFor a signal $x\\in \\C^{\\nsq}$, a hashing $H=(\\pi, B, F)$ and a parameter $a\\in \\nsq$, a {\\em measurement} $m=m(x, H, a)\\in \\C^{[b]^d}$ is the $B$-dimensional complex valued vector of evaluations of a hashing $H(x)$ at $a\\in \\C^{\\nsq}$, i.e. \nlength $B$, indexed by $[b]^d$ and given by evaluating the hashing $H$ at $a\\in \\nsq$, i.e. for $s\\in [b]^d$\n$$\nm_s  = \\sum_{j\\in \\nsq} G_{\\pi(j)-(n/b)\\cdot s}x_j \\omega^{a^T \\Sigma j},\n$$\nwhere $G$ is a filter with $B$ buckets and sharpness $F$ constructed in Lemma~\\ref{lm:filter-prop}.",
+        "source_locator": "line 379; \\begin{definition}",
+        "statement": "[Measurement $m=m(x, H, a)$] For a signal $x\\in \\C^{\\nsq}$, a hashing $H=(\\pi, B, F)$ and a parameter $a\\in \\nsq$, a {\\em measurement} $m=m(x, H, a)\\in \\C^{[b]^d}$ is the $B$-dimensional complex valued vector of evaluations of a hashing $H(x)$ at $a\\in \\C^{\\nsq}$, i.e. length $B$, indexed by $[b]^d$ and given by evaluating the hashing $H$ at $a\\in \\nsq$, i.e. for $s\\in [b]^d$ $$ m_s = \\sum_{j\\in \\nsq} G_{\\pi(j)-(n/b)\\cdot s}x_j \\omega^{a^T \\Sigma j}, $$ where $G$ is a filter with $B$ buckets and sharpness $F$ constructed in Lemma~\\ref{lm:filter-prop}."
+      },
+      {
+        "extraction_confidence": "high",
+        "kind": "definition",
+        "label": "definition-7",
+        "raw_latex": "For any $x\\in \\C^\\nsq$ and any hashing $H=(\\pi, B, G)$ define the vector $\\mu^2_{H, \\cdot}(x)\\in \\R^\\nsq$ by letting for every $i\\in \\nsq$ \n$$\\mu^2_{H, i}(x):=\\abs{G_{o_i(i)}^{-1}}\\sum_{j \\in \\nsq\\setminus \\{i\\}} \\abs{x_j}^2 \\abs{G_{o_i(j)}}^2.$$",
+        "source_locator": "line 388; \\begin{definition}",
+        "statement": "For any $x\\in \\C^\\nsq$ and any hashing $H=(\\pi, B, G)$ define the vector $\\mu^2_{H, \\cdot}(x)\\in \\R^\\nsq$ by letting for every $i\\in \\nsq$ $$\\mu^2_{H, i}(x):=\\abs{G_{o_i(i)}^{-1}}\\sum_{j \\in \\nsq\\setminus \\{i\\}} \\abs{x_j}^2 \\abs{G_{o_i(j)}}^2.$$"
+      },
+      {
+        "extraction_confidence": "high",
+        "kind": "lemma",
+        "label": "lm:hashing",
+        "raw_latex": "\\label{lm:hashing}\nThere exists a constant $C>0$ such that for any dimension $d\\geq 1$, any integer $B\\geq 1$, any $x, \\chi\\in \\C^\\nsq, x':=x-\\chi$, if  $\\Sigma\\in \\gl, a, q\\in \\nsq$  are selected uniformly at random, the following conditions hold. \n\nLet $\\pi=(\\Sigma, q)$, $H=(\\pi, B, G)$, where $G$ is the filter with $B$ buckets and sharpness $F$ constructed in Lemma~\\ref{lm:filter-prop}, and let\n$u =\\Call{HashToBins}{\\hat x, \\chi, (H, a)}$.  Then if $\\fc\\geq 2d, F=\\Theta(d)$,  for any $i\\in \\nsq$\n  \\begin{description}\n\\item[(1)] For any $H$ one has $\\max_{a\\in \\nsq} \\abs{G_{o_i(i)}^{-1}\\omega^{-a^T\\Sigma i}u_{h(i)} - x'_i}\\leq G_{o_i(i)}^{-1}\\cdot \\sum_{j\\in S\\setminus \\{i\\}} G_{o_i(j)} |x'_j|$. Furthermore,\n$\\expect_H[G_{o_i(i)}^{-1}\\cdot \\sum_{j\\in S\\setminus \\{i\\}} G_{o_i(j)} |x'_j|]\\leq \\GS\\cdot C^d ||x'||_1/B+N^{-\\Omega(c)}$;\n  \\item[(2)] $\\expect_H[\\mu^2_{H, i}(x')] \\leq  \\GSS\\cdot C^d \\norm{2}{x'}^2/B$,\n\\end{description}\nFurthermore, \n\\begin{description}\n\\item[(3)] for any hashing $H$, if $a$ is chosen uniformly at random from $\\nsq$, one has \n  $$\n  \\expect_{a}[\\abs{G_{o_i(i)}^{-1}\\omega^{-a^T\\Sigma i}u_{h(i)} - x'_i}^2]\\leq \\mu^2_{H, i}(x')+N^{-\\Omega(c)}.\n  $$\n\\end{description}\nHere $c>0$ is an absolute constant that can be chosen arbitrarily large at the expense of a  factor of $c^{O(d)}$ in runtime.",
+        "source_locator": "line 394; \\begin{lemma}",
+        "statement": "There exists a constant $C>0$ such that for any dimension $d\\geq 1$, any integer $B\\geq 1$, any $x, \\chi\\in \\C^\\nsq, x':=x-\\chi$, if $\\Sigma\\in \\gl, a, q\\in \\nsq$ are selected uniformly at random, the following conditions hold. Let $\\pi=(\\Sigma, q)$, $H=(\\pi, B, G)$, where $G$ is the filter with $B$ buckets and sharpness $F$ constructed in Lemma~\\ref{lm:filter-prop}, and let $u =\\Call{HashToBins}{\\hat x, \\chi, (H, a)}$. Then if $\\fc\\geq 2d, F=\\Theta(d)$, for any $i\\in \\nsq$ \\begin{description} \\item[(1)] For any $H$ one has $\\max_{a\\in \\nsq} \\abs{G_{o_i(i)}^{-1}\\omega^{-a^T\\Sigma i}u_{h(i)} - x'_i}\\leq G_{o_i(i)}^{-1}\\cdot \\sum_{j\\in S\\setminus \\{i\\}} G_{o_i(j)} |x'_j|$. Furthermore, $\\expect_H[G_{o_i(i)}^{-1}\\cdot \\sum_{j\\in S\\setminus \\{i\\}} G_{o_i(j)} |x'_j|]\\leq \\GS\\cdot C^d ||x'||_1/B+N^{-\\Omega(c)}$; \\item[(2)] $\\expect_H[\\mu^2_{H, i}(x')] \\leq \\GSS\\cdot C^d \\norm{2}{x'}^2/B$, \\end{description} Furthermore, \\begin{description} \\item[(3)] for any hashing $H$, if $a$ is chosen uniformly at random from $\\nsq$, one has $$ \\expect_{a}[\\abs{G_{o_i(i)}^{-1}\\omega^{-a^T\\Sigma i}u_{h(i)} - x'_i}^2]\\leq \\mu^2_{H, i}(x')+N^{-\\Omega(c)}. $$ \\end{description} Here $c>0$ is an absolute constant that can be chosen arbitrarily large at the expense of a factor of $c^{O(d)}$ in runtime."
+      },
+      {
+        "extraction_confidence": "high",
+        "kind": "definition",
+        "label": "def:isolated",
+        "raw_latex": "[Isolated element]\\label{def:isolated}\nLet $H=(\\pi, B, F)$, where $\\pi=(\\Sigma, q)$, $\\Sigma\\in \\gl, q\\in \\nsq$. We say that an element $i\\in \\nsq$ is {\\em isolated} under hashing $H$ {\\em at scale $t$} if\n$$\n|\\pi(S\\setminus \\{i\\})\\cap \\B^\\infty_{(n/b)\\cdot h(i)}((n/b)\\cdot 2^t)|\\leq \\GI\\cdot \\alpha^{d/2} 2^{(t+1)d}\\cdot 2^{t}.\n$$\nWe say that $i$ is simply {\\em isolated} under hashing $H$ if it is isolated under $H$ at all scales $t\\geq 0$.",
+        "source_locator": "line 417; \\begin{definition}",
+        "statement": "[Isolated element] Let $H=(\\pi, B, F)$, where $\\pi=(\\Sigma, q)$, $\\Sigma\\in \\gl, q\\in \\nsq$. We say that an element $i\\in \\nsq$ is {\\em isolated} under hashing $H$ {\\em at scale $t$} if $$ |\\pi(S\\setminus \\{i\\})\\cap \\B^\\infty_{(n/b)\\cdot h(i)}((n/b)\\cdot 2^t)|\\leq \\GI\\cdot \\alpha^{d/2} 2^{(t+1)d}\\cdot 2^{t}. $$ We say that $i$ is simply {\\em isolated} under hashing $H$ if it is isolated under $H$ at all scales $t\\geq 0$."
+      },
+      {
+        "extraction_confidence": "high",
+        "kind": "lemma",
+        "label": "lm:isolated-pi",
+        "raw_latex": "\\label{lm:isolated-pi}\nFor any integer $k\\geq 1$ and any $S\\subseteq \\nsq, |S|\\leq 2k$, if  $B\\geq \\GT\\cdot k/\\alpha^d$ for $\\alpha\\in (0, 1)$ smaller than an absolute constant, $F\\geq 2d$, and a hashing $H=(\\pi, B, F)$ is chosen randomly (i.e. $\\Sigma\\in \\gl, q\\in \\nsq$ are chosen uniformly at random, and $\\pi=(\\Sigma, q)$), then each $i\\in \\nsq$ is {\\em isolated} under permutation $\\pi$ with probability at least $1-\\frac1{2}\\sqrt{\\alpha}$.",
+        "source_locator": "line 425; \\begin{lemma}",
+        "statement": "For any integer $k\\geq 1$ and any $S\\subseteq \\nsq, |S|\\leq 2k$, if $B\\geq \\GT\\cdot k/\\alpha^d$ for $\\alpha\\in (0, 1)$ smaller than an absolute constant, $F\\geq 2d$, and a hashing $H=(\\pi, B, F)$ is chosen randomly (i.e. $\\Sigma\\in \\gl, q\\in \\nsq$ are chosen uniformly at random, and $\\pi=(\\Sigma, q)$), then each $i\\in \\nsq$ is {\\em isolated} under permutation $\\pi$ with probability at least $1-\\frac1{2}\\sqrt{\\alpha}$."
+      },
+      {
+        "extraction_confidence": "high",
+        "kind": "lemma",
+        "label": "lm:good-prob",
+        "raw_latex": "\\label{lm:good-prob}\nFor any integer $k\\geq 1$, and any $S\\subseteq \\nsq, |S|\\leq 2k$, if $B\\geq \\GT\\cdot k/\\alpha^d$ for $\\alpha\\in (0, 1)$ smaller than an absolute constant, $F\\geq 2d$, $H_r=(\\pi_r, B, F)$, $r=1,\\ldots, r_{max}$ a sequence of random hashings, then every $i\\in \\nsq$ is isolated with respect to $S$ under at least $(1-\\sqrt{\\alpha})r_{max}$ hashings $H_r, r=1,\\ldots, r_{max}$ with probability at least $1-2^{-\\Omega(\\sqrt{\\alpha}r_{max})}$.",
+        "source_locator": "line 431; \\begin{lemma}",
+        "statement": "For any integer $k\\geq 1$, and any $S\\subseteq \\nsq, |S|\\leq 2k$, if $B\\geq \\GT\\cdot k/\\alpha^d$ for $\\alpha\\in (0, 1)$ smaller than an absolute constant, $F\\geq 2d$, $H_r=(\\pi_r, B, F)$, $r=1,\\ldots, r_{max}$ a sequence of random hashings, then every $i\\in \\nsq$ is isolated with respect to $S$ under at least $(1-\\sqrt{\\alpha})r_{max}$ hashings $H_r, r=1,\\ldots, r_{max}$ with probability at least $1-2^{-\\Omega(\\sqrt{\\alpha}r_{max})}$."
+      },
+      {
+        "extraction_confidence": "high",
+        "kind": "definition",
+        "label": "def:balance",
+        "raw_latex": "[Balanced set of points]\\label{def:balance}\nFor an integer $\\Delta\\geq 2$  we say that a (multi)set $\\mathcal{Z}\\subseteq \\nsq$ is {\\em $\\Delta$-balanced} in coordinate $s\\in [1:d]$ if for every $r=1,\\ldots, \\Delta-1$ at least $49/100$ fraction of elements in the set $\\{\\omega_{\\Delta}^{r\\cdot z_s}\\}_{z\\in \\mathcal{Z}}$ belong to the left halfplane $\\{u\\in \\C: \\text{Re}(u)\\leq 0\\}$ in the complex plane, where $\\omega_\\Delta=e^{2\\pi i/\\Delta}$ is the $\\Delta$-th root of unity.",
+        "source_locator": "line 450; \\begin{definition}",
+        "statement": "[Balanced set of points] For an integer $\\Delta\\geq 2$ we say that a (multi)set $\\mathcal{Z}\\subseteq \\nsq$ is {\\em $\\Delta$-balanced} in coordinate $s\\in [1:d]$ if for every $r=1,\\ldots, \\Delta-1$ at least $49/100$ fraction of elements in the set $\\{\\omega_{\\Delta}^{r\\cdot z_s}\\}_{z\\in \\mathcal{Z}}$ belong to the left halfplane $\\{u\\in \\C: \\text{Re}(u)\\leq 0\\}$ in the complex plane, where $\\omega_\\Delta=e^{2\\pi i/\\Delta}$ is the $\\Delta$-th root of unity."
+      },
+      {
+        "extraction_confidence": "high",
+        "kind": "theorem",
+        "label": "thm:l1-res-loc",
+        "raw_latex": "\\label{thm:l1-res-loc}\nFor any constant $C'>0$ there exist absolute constants $C_1, C_2, C_3>0$ such that for any $x, \\chi\\in \\C^N$, $x'=x-\\chi$, any integer $k\\geq 1$ and any $S\\subseteq \\nsq$ such that $||x_{\\nsq\\setminus S}||_\\infty\\leq C'\\mu$, where $\\mu=||x_{\\nsq\\setminus [k]}||_2/\\sqrt{k}$, the following conditions hold if $||x'||_\\infty/\\mu=N^{O(1)}$.\n\nLet $\\pi_r=(\\Sigma_r, q_r), r=1,\\ldots, r_{max}$ denote permutations, and let $H_r=(\\pi_r, B, F)$, $F\\geq 2d, F=\\Theta(d)$, where $B\\geq \\GT k/\\alpha^d$ for $\\alpha\\in (0, 1)$ smaller than a constant. Let $S^*\\subseteq S$ denote the set of elements that are not isolated with respect to at least a $\\sqrt{\\alpha}$ fraction of hashings $\\{H_r\\}$. Then if additionally for every $s\\in [1:d]$ the sets $\\A_r\\star (\\one, \\mathbf{e}_s)$ are balanced in coordinate $s$ (as per Definition~\\ref{def:balance}) for all $r=1,\\ldots, r_{max}$, and $r_{max}, c_{max}\\geq (C_1/\\sqrt{\\alpha})\\log\\log N$, then\n$$\nL:=\\bigcup_{r=1}^{r_{max}}\\textsc{LocateSignal}\\left(\\chi, k, \\{m(\\wh{x}, H_r, a\\star (\\one, \\h))\\}_{r=1, a\\in \\A_r, \\h\\in \\H}^{r_{max}}\\right)\n$$\nsatisfies\n$$\n||x'_{S\\setminus S^*\\setminus L}||_1\\leq (C_2\\alpha)^{d/2} ||x'_S||_1+C_3^{d^2}(||\\chi_{\\nsq\\setminus S}||_1+||x'_{S^*}||_1)+4\\mu |S|.\n$$",
+        "source_locator": "line 478; \\begin{theorem}",
+        "statement": "For any constant $C'>0$ there exist absolute constants $C_1, C_2, C_3>0$ such that for any $x, \\chi\\in \\C^N$, $x'=x-\\chi$, any integer $k\\geq 1$ and any $S\\subseteq \\nsq$ such that $||x_{\\nsq\\setminus S}||_\\infty\\leq C'\\mu$, where $\\mu=||x_{\\nsq\\setminus [k]}||_2/\\sqrt{k}$, the following conditions hold if $||x'||_\\infty/\\mu=N^{O(1)}$. Let $\\pi_r=(\\Sigma_r, q_r), r=1,\\ldots, r_{max}$ denote permutations, and let $H_r=(\\pi_r, B, F)$, $F\\geq 2d, F=\\Theta(d)$, where $B\\geq \\GT k/\\alpha^d$ for $\\alpha\\in (0, 1)$ smaller than a constant. Let $S^*\\subseteq S$ denote the set of elements that are not isolated with respect to at least a $\\sqrt{\\alpha}$ fraction of hashings $\\{H_r\\}$. Then if additionally for every $s\\in [1:d]$ the sets $\\A_r\\star (\\one, \\mathbf{e}_s)$ are balanced in coordinate $s$ (as per Definition~\\ref{def:balance}) for all $r=1,\\ldots, r_{max}$, and $r_{max}, c_{max}\\geq (C_1/\\sqrt{\\alpha})\\log\\log N$, then $$ L:=\\bigcup_{r=1}^{r_{max}}\\textsc{LocateSignal}\\left(\\chi, k, \\{m(\\wh{x}, H_r, a\\star (\\one, \\h))\\}_{r=1, a\\in \\A_r, \\h\\in \\H}^{r_{max}}\\right) $$ satisfies $$ ||x'_{S\\setminus S^*\\setminus L}||_1\\leq (C_2\\alpha)^{d/2} ||x'_S||_1+C_3^{d^2}(||\\chi_{\\nsq\\setminus S}||_1+||x'_{S^*}||_1)+4\\mu |S|. $$"
+      },
+      {
+        "extraction_confidence": "high",
+        "kind": "lemma",
+        "label": "lm:reduce-l1-norm",
+        "raw_latex": "\\label{lm:reduce-l1-norm}\nFor any $x\\in \\C^N$, any integer $k\\geq 1$, $B\\geq \\GT\\cdot k/\\alpha^d$ for $\\alpha\\in (0, 1]$ smaller than an absolute constant and $F\\geq 2d, F=\\Theta(d)$ the following conditions hold for the set $S:=\\{i\\in \\nsq: |x_i|>\\mu\\}$, where $\\mu^2:=||x_{\\nsq\\setminus [k]}||_2^2/k$. Suppose that $||x||_\\infty/\\mu=N^{O(1)}$.\n\nFor any sequence of hashings $H_r=(\\pi_r, B, F)$, $r=1,\\ldots, r_{max}$, if $S^*\\subseteq S$ denotes the set of elements of $S$ that are not isolated with respect to at least a $\\sqrt{\\alpha}$ fraction of the hashings  $H_r, r=1,\\ldots, r_{max}$, then for any $\\chi\\in \\C^\\nsq$, $x':=x-\\chi$, if $\\nu\\geq (\\log^4 N)\\mu$ is a parameter such that\n\\begin{description}\n\\item[A] $||(x-\\chi)_S||_1\\leq  (\\nu +20\\mu)k$;\n\\item[B] $||\\chi_{\\nsq\\setminus S}||_0\\leq \\frac{1}{\\log^{19} N}k$;\n\\item[C] $||(x-\\chi)_{S^*}||_1+||\\chi_{\\nsq\\setminus S}||_1\\leq \\frac{\\nu}{\\log^4 N}k$,\n\\end{description}\nthe following conditions hold.\n\nIf parameters $r_{max}, c_{max}$ are chosen to be at least $(C_1/\\sqrt{\\alpha})\\log\\log N$, where $C_1$ is the constant from Theorem~\\ref{thm:l1-res-loc} and measurements are taken as in Algorithm~\\ref{alg:main-sublinear}, then the output $\\chi'$ of the call \n$$\n\\Call{ReduceL1Norm}{\\chi, k, \\{m(\\wh{x}, H_r, a\\star (\\one, \\h))\\}_{r=1, a\\in \\A_r, \\h\\in \\H}^{r_{max}}, 4\\mu (\\log^4 n)^{T-t}, \\mu}\n$$ \nsatisfies\n\\begin{enumerate}\n\\item $||(x'-\\chi')_S||_1\\leq \\frac1{\\log^{4} N} \\nu k+20\\mu k$ ~~~~~~~~($\\ell_1$ norm of head elements is reduced by $\\approx \\log^4 N$ factor)\n\\item $||(\\chi+\\chi')_{\\nsq\\setminus S}||_0\\leq ||\\chi_{\\nsq\\setminus S}||_0+ \\frac1{\\log^{20} N}k$~~~~(few spurious coefficients are introduced)\n\\item $||(x'-\\chi')_{S^*}||_1+||(\\chi+\\chi')_{\\nsq\\setminus S}||_1\\leq ||x'_{S^*}||_1+||\\chi_{\\nsq\\setminus S}||_1+\\frac1{\\log^{20} N}\\nu k$ ~~~~($\\ell_1$ norm of spurious coefficients does not grow fast)\n\\end{enumerate}\nwith probability at least $1-1/\\log^{2} N$ over the randomness used to take measurements $m$ and by calls to \\textsc{EstimateValues}.\nThe number of samples used is bounded by $2^{O(d^2)}k(\\log\\log N)^2$, and the runtime is bounded by $2^{O(d^2)} k\\log^{d+2} N$.",
+        "source_locator": "line 531; \\begin{lemma}",
+        "statement": "For any $x\\in \\C^N$, any integer $k\\geq 1$, $B\\geq \\GT\\cdot k/\\alpha^d$ for $\\alpha\\in (0, 1]$ smaller than an absolute constant and $F\\geq 2d, F=\\Theta(d)$ the following conditions hold for the set $S:=\\{i\\in \\nsq: |x_i|>\\mu\\}$, where $\\mu^2:=||x_{\\nsq\\setminus [k]}||_2^2/k$. Suppose that $||x||_\\infty/\\mu=N^{O(1)}$. For any sequence of hashings $H_r=(\\pi_r, B, F)$, $r=1,\\ldots, r_{max}$, if $S^*\\subseteq S$ denotes the set of elements of $S$ that are not isolated with respect to at least a $\\sqrt{\\alpha}$ fraction of the hashings $H_r, r=1,\\ldots, r_{max}$, then for any $\\chi\\in \\C^\\nsq$, $x':=x-\\chi$, if $\\nu\\geq (\\log^4 N)\\mu$ is a parameter such that \\begin{description} \\item[A] $||(x-\\chi)_S||_1\\leq (\\nu +20\\mu)k$; \\item[B] $||\\chi_{\\nsq\\setminus S}||_0\\leq \\frac{1}{\\log^{19} N}k$; \\item[C] $||(x-\\chi)_{S^*}||_1+||\\chi_{\\nsq\\setminus S}||_1\\leq \\frac{\\nu}{\\log^4 N}k$, \\end{description} the following conditions hold. If parameters $r_{max}, c_{max}$ are chosen to be at least $(C_1/\\sqrt{\\alpha})\\log\\log N$, where $C_1$ is the constant from Theorem~\\ref{thm:l1-res-loc} and measurements are taken as in Algorithm~\\ref{alg:main-sublinear}, then the output $\\chi'$ of the call $$ \\Call{ReduceL1Norm}{\\chi, k, \\{m(\\wh{x}, H_r, a\\star (\\one, \\h))\\}_{r=1, a\\in \\A_r, \\h\\in \\H}^{r_{max}}, 4\\mu (\\log^4 n)^{T-t}, \\mu} $$ satisfies \\begin{enumerate} \\item $||(x'-\\chi')_S||_1\\leq \\frac1{\\log^{4} N} \\nu k+20\\mu k$ ~~~~~~~~($\\ell_1$ norm of head elements is reduced by $\\approx \\log^4 N$ factor) \\item $||(\\chi+\\chi')_{\\nsq\\setminus S}||_0\\leq ||\\chi_{\\nsq\\setminus S}||_0+ \\frac1{\\log^{20} N}k$~~~~(few spurious coefficients are introduced) \\item $||(x'-\\chi')_{S^*}||_1+||(\\chi+\\chi')_{\\nsq\\setminus S}||_1\\leq ||x'_{S^*}||_1+||\\chi_{\\nsq\\setminus S}||_1+\\frac1{\\log^{20} N}\\nu k$ ~~~~($\\ell_1$ norm of spurious coefficients does not grow fast) \\end{enumerate} with probability at least $1-1/\\log^{2} N$ over the randomness used to take measurements $m$ and by calls to \\textsc{EstimateV"
+      },
+      {
+        "extraction_confidence": "high",
+        "kind": "theorem",
+        "label": "thm:l1snr",
+        "raw_latex": "\\label{thm:l1snr}\nFor any $x\\in \\C^N$, any integer $k\\geq 1$, if $\\mu^2=\\err_k^2(x)/k$ and $R^*\\geq ||x||_\\infty/\\mu=N^{O(1)}$, the following conditions hold for the set $S:=\\{i\\in \\nsq: |x_i|>\\mu\\}\\subseteq \\nsq$.\n\nThen the SNR reduction loop of Algorithm~\\ref{alg:main-sublinear} (lines~19-25) returns $\\chi^{(T)}$ such that \n\\begin{equation*}\n\\begin{split}\n&||(x-\\chi^{(T)})_S||_1\\lesssim \\mu\\text{~~~~~~~~~~~~~~~~~($\\ell_1$-SNR on head elements is constant)}\\\\\n&||\\chi^{(T)}_{\\nsq\\setminus S}||_1\\lesssim \\mu \\text{~~~~~~~~~~~~~~~~~~~~~~~~~~(spurious elements contribute little in $\\ell_1$ norm)}\\\\\n&||\\chi^{(T)}_{\\nsq\\setminus S}||_0\\lesssim \\frac1{\\log^{19} N} k\\text{~~~~~~~~~~~~~(small number of spurious elements have been introduced)}\n\\end{split}\n\\end{equation*}\n\nwith probability at least $1-1/\\log N$ over the internal randomness used by Algorithm~\\ref{alg:main-sublinear}. The sample complexity is $2^{O(d^2)}k\\log N(\\log\\log N)$. The runtime is bounded by $2^{O(d^2)} k \\log^{d+3} N$.",
+        "source_locator": "line 557; \\begin{theorem}",
+        "statement": "For any $x\\in \\C^N$, any integer $k\\geq 1$, if $\\mu^2=\\err_k^2(x)/k$ and $R^*\\geq ||x||_\\infty/\\mu=N^{O(1)}$, the following conditions hold for the set $S:=\\{i\\in \\nsq: |x_i|>\\mu\\}\\subseteq \\nsq$. Then the SNR reduction loop of Algorithm~\\ref{alg:main-sublinear} (lines~19-25) returns $\\chi^{(T)}$ such that \\begin{equation*} \\begin{split} &||(x-\\chi^{(T)})_S||_1\\lesssim \\mu\\text{~~~~~~~~~~~~~~~~~($\\ell_1$-SNR on head elements is constant)}\\\\ &||\\chi^{(T)}_{\\nsq\\setminus S}||_1\\lesssim \\mu \\text{~~~~~~~~~~~~~~~~~~~~~~~~~~(spurious elements contribute little in $\\ell_1$ norm)}\\\\ &||\\chi^{(T)}_{\\nsq\\setminus S}||_0\\lesssim \\frac1{\\log^{19} N} k\\text{~~~~~~~~~~~~~(small number of spurious elements have been introduced)} \\end{split} \\end{equation*} with probability at least $1-1/\\log N$ over the internal randomness used by Algorithm~\\ref{alg:main-sublinear}. The sample complexity is $2^{O(d^2)}k\\log N(\\log\\log N)$. The runtime is bounded by $2^{O(d^2)} k \\log^{d+3} N$."
+      },
+      {
+        "extraction_confidence": "high",
+        "kind": "lemma",
+        "label": "lm:const-snr",
+        "raw_latex": "\\label{lm:const-snr}\nFor any $\\e>0$, $\\hat x, \\chi\\in \\C^N$, $x'=x-\\chi$ and any integer $k\\geq 1$ if $||x'_{[2k]}||_1\\leq O(||x_{\\nsq\\setminus [k]}||_2\\sqrt{k})$ and $||x'_{\\nsq\\setminus [2k]}||_2^2\\leq ||x_{\\nsq\\setminus [k]}||_2^2$, the following conditions hold. If $||x||_\\infty/\\mu=N^{O(1)}$, then the output $\\chi'$ of \n\\Call{RecoverAtConstantSNR}{$\\hat x, \\chi, 2k, \\e$} satisfies\n$$\n||x'-\\chi'||^2_2\\leq (1+O(\\e))||x_{\\nsq\\setminus [k]}||_2^2\n$$\nwith at least $99/100$ probability over its internal randomness. The sample complexity is $2^{O(d^2)}\\frac1{\\e}  k\\log N$, and the runtime complexity is at most $2^{O(d^2)}\\frac1{\\e}  k \\log^{d+1} N.$",
+        "source_locator": "line 575; \\begin{lemma}",
+        "statement": "For any $\\e>0$, $\\hat x, \\chi\\in \\C^N$, $x'=x-\\chi$ and any integer $k\\geq 1$ if $||x'_{[2k]}||_1\\leq O(||x_{\\nsq\\setminus [k]}||_2\\sqrt{k})$ and $||x'_{\\nsq\\setminus [2k]}||_2^2\\leq ||x_{\\nsq\\setminus [k]}||_2^2$, the following conditions hold. If $||x||_\\infty/\\mu=N^{O(1)}$, then the output $\\chi'$ of \\Call{RecoverAtConstantSNR}{$\\hat x, \\chi, 2k, \\e$} satisfies $$ ||x'-\\chi'||^2_2\\leq (1+O(\\e))||x_{\\nsq\\setminus [k]}||_2^2 $$ with at least $99/100$ probability over its internal randomness. The sample complexity is $2^{O(d^2)}\\frac1{\\e} k\\log N$, and the runtime complexity is at most $2^{O(d^2)}\\frac1{\\e} k \\log^{d+1} N.$"
+      },
+      {
+        "extraction_confidence": "high",
+        "kind": "theorem",
+        "label": "thm:main",
+        "raw_latex": "\\label{thm:main}\nFor any $\\e>0$, $x\\in \\C^\\nsq$ and any integer $k\\geq 1$, if $R^*\\geq ||x||_\\infty/\\mu=N^{O(1)}$, $\\mu^2=O(||x_{\\nsq\\setminus [k]}||_2^2/k)$  and $\\alpha>0$ is smaller than an absolute constant, \\textsc{SparseFFT}$(\\hat x, k, \\e, R^*, \\mu)$ solves the $\\ell_2/\\ell_2$ sparse recovery problem using $2^{O(d^2)} (k\\log N \\log\\log N+\\frac1{\\e}k\\log N)$ samples and \n$2^{O(d^2)} \\frac1{\\e}k \\log^{d+3} N$ time with at least $98/100$ success probability.",
+        "source_locator": "line 590; \\begin{theorem}",
+        "statement": "For any $\\e>0$, $x\\in \\C^\\nsq$ and any integer $k\\geq 1$, if $R^*\\geq ||x||_\\infty/\\mu=N^{O(1)}$, $\\mu^2=O(||x_{\\nsq\\setminus [k]}||_2^2/k)$ and $\\alpha>0$ is smaller than an absolute constant, \\textsc{SparseFFT}$(\\hat x, k, \\e, R^*, \\mu)$ solves the $\\ell_2/\\ell_2$ sparse recovery problem using $2^{O(d^2)} (k\\log N \\log\\log N+\\frac1{\\e}k\\log N)$ samples and $2^{O(d^2)} \\frac1{\\e}k \\log^{d+3} N$ time with at least $98/100$ success probability."
+      },
+      {
+        "extraction_confidence": "high",
+        "kind": "lemma",
+        "label": "lm:loc",
+        "raw_latex": "\\label{lm:loc}\nLet $H=(\\pi, B, R)$ be a hashing, and let $\\A\\subseteq \\nsq\\times \\nsq$. Then for every $S\\subseteq \\nsq$ and for every $x, \\chi\\in \\C^{\\nsq}$ and $x'=x-\\chi$, the following conditions hold.\nLet $L$ denote the output of \n$$\n\\Call{LocateSignal}{\\chi, H, \\{m(\\wh{x}, H, a\\star (\\one, \\h))\\}_{a\\in \\A, \\h\\in \\H}}.\n$$\n\nThen for any $i\\in S$ such that $|x'_i|>N^{-\\Omega(c)}$, if there exists $r\\in [1:r_{max}]$ such that \n\\begin{enumerate}\n\\item  $e^{head}_{i}(H, x')<|x'_i|/20$;\n\\item  $e^{tail}_{i}(H, \\A\\star (\\one, \\h), x')< |x'_i|/20$ for all $\\h\\in \\H$;\n\\item for every $s\\in [1:d]$ the set $\\A\\star(\\zero, \\mathbf{e}_s)$ is balanced in coordinate $s$ (as per Definition~\\ref{def:balance}),\n\\end{enumerate}\n then $i\\in L$. The time taken by the invocation of \\textsc{LocateSignal} is $O(B\\cdot \\log^{d+1} N)$.",
+        "source_locator": "line 746; \\begin{lemma}",
+        "statement": "Let $H=(\\pi, B, R)$ be a hashing, and let $\\A\\subseteq \\nsq\\times \\nsq$. Then for every $S\\subseteq \\nsq$ and for every $x, \\chi\\in \\C^{\\nsq}$ and $x'=x-\\chi$, the following conditions hold. Let $L$ denote the output of $$ \\Call{LocateSignal}{\\chi, H, \\{m(\\wh{x}, H, a\\star (\\one, \\h))\\}_{a\\in \\A, \\h\\in \\H}}. $$ Then for any $i\\in S$ such that $|x'_i|>N^{-\\Omega(c)}$, if there exists $r\\in [1:r_{max}]$ such that \\begin{enumerate} \\item $e^{head}_{i}(H, x')<|x'_i|/20$; \\item $e^{tail}_{i}(H, \\A\\star (\\one, \\h), x')< |x'_i|/20$ for all $\\h\\in \\H$; \\item for every $s\\in [1:d]$ the set $\\A\\star(\\zero, \\mathbf{e}_s)$ is balanced in coordinate $s$ (as per Definition~\\ref{def:balance}), \\end{enumerate} then $i\\in L$. The time taken by the invocation of \\textsc{LocateSignal} is $O(B\\cdot \\log^{d+1} N)$."
+      },
+      {
+        "extraction_confidence": "high",
+        "kind": "corollary",
+        "label": "cor:loc",
+        "raw_latex": "\\label{cor:loc}\nFor any integer $r_{max}\\geq 1$,  for any sequence of $r_{max}$ hashings $H_r=(\\pi_r, B, R), r\\in [1:r_{max}]$ and evaluation points $\\A_r\\subseteq \\nsq\\times \\nsq$,  for every $S\\subseteq \\nsq$ and for every $x, \\chi\\in \\C^{\\nsq}, x':=x-\\chi$, the following conditions hold.\nIf for each $r\\in [1:r_{max}]$ $L_r\\subseteq \\nsq$ denotes the output of \\Call{LocateSignal}{$\\wh{x}, \\chi, H_r, \\{m(\\wh{x}, H_r, a\\star (\\one, \\h))\\}_{a\\in \\A_r, \\h\\in \\H}$}, $L=\\bigcup_{r=1}^{r_{max}} L_r$, and the sets $\\A_r\\star(\\zero, \\h)$ are balanced for all $\\h\\in \\H$ and $r\\in [1:r_{max}]$, then\n\\begin{equation}\n||x'_{S\\setminus L}||_1\\leq 20 ||e^{head}_S(\\{H_r\\}, x, \\chi)||_1+20 ||e^{tail}_S(\\{H_r, \\A_r\\}, x)||_1+|S|\\cdot N^{-\\Omega(c)}.\\tag{*}\n\\end{equation}\nFurthermore, every element $i\\in S$ such that \n\\begin{equation}\n|x'_i|>20 (e^{head}_i(\\{H_r\\}, x, \\chi)+e^{tail}_i(\\{H_r, \\A_r\\}, x))+N^{-\\Omega(c)}\\tag{**}\n\\end{equation}\nbelongs to $L$.",
+        "source_locator": "line 855; \\begin{corollary}",
+        "statement": "For any integer $r_{max}\\geq 1$, for any sequence of $r_{max}$ hashings $H_r=(\\pi_r, B, R), r\\in [1:r_{max}]$ and evaluation points $\\A_r\\subseteq \\nsq\\times \\nsq$, for every $S\\subseteq \\nsq$ and for every $x, \\chi\\in \\C^{\\nsq}, x':=x-\\chi$, the following conditions hold. If for each $r\\in [1:r_{max}]$ $L_r\\subseteq \\nsq$ denotes the output of \\Call{LocateSignal}{$\\wh{x}, \\chi, H_r, \\{m(\\wh{x}, H_r, a\\star (\\one, \\h))\\}_{a\\in \\A_r, \\h\\in \\H}$}, $L=\\bigcup_{r=1}^{r_{max}} L_r$, and the sets $\\A_r\\star(\\zero, \\h)$ are balanced for all $\\h\\in \\H$ and $r\\in [1:r_{max}]$, then \\begin{equation} ||x'_{S\\setminus L}||_1\\leq 20 ||e^{head}_S(\\{H_r\\}, x, \\chi)||_1+20 ||e^{tail}_S(\\{H_r, \\A_r\\}, x)||_1+|S|\\cdot N^{-\\Omega(c)}.\\tag{*} \\end{equation} Furthermore, every element $i\\in S$ such that \\begin{equation} |x'_i|>20 (e^{head}_i(\\{H_r\\}, x, \\chi)+e^{tail}_i(\\{H_r, \\A_r\\}, x))+N^{-\\Omega(c)}\\tag{**} \\end{equation} belongs to $L$."
+      },
+      {
+        "extraction_confidence": "high",
+        "kind": "lemma",
+        "label": "lm:l1b-single-pi",
+        "raw_latex": "\\label{lm:l1b-single-pi}\nLet $x, \\chi\\in \\C^N, x'=x-\\chi$. \\defsk\nLet $\\pi=(\\Sigma, q)$ be a permutation, let $H=(\\pi, B, F), F\\geq 2d$ be a hashing into $B$ buckets and filter $G$ with sharpness $F$. Let $S^*_H\\subseteq S$ denote the set of elements $i\\in S$ that are not isolated under $H$. Then one has, for $e^{head}$ defined with respect to $S$, \n$$\n||e^{head}_{S\\setminus S^*_H}(H, x, \\chi)||_1\\leq 2^{O(d)} \\alpha^{d/2} ||x'_{S\\setminus S^*_H}||_1+\\GS \\cdot 2^{O(d)} (||x'_{S^*}||_1+||\\chi_{\\nsq\\setminus S}||_1).\n$$\nFurthermore, if $\\chi_{\\nsq\\setminus S}=0$ and $S^*_H=\\emptyset$, then one has $||e^{head}_{S}(H, x, \\chi)||_\\infty\\leq 2^{O(d)}\\alpha^{d/2} ||x'_S||_\\infty$.",
+        "source_locator": "line 925; \\begin{lemma}",
+        "statement": "Let $x, \\chi\\in \\C^N, x'=x-\\chi$. \\defsk Let $\\pi=(\\Sigma, q)$ be a permutation, let $H=(\\pi, B, F), F\\geq 2d$ be a hashing into $B$ buckets and filter $G$ with sharpness $F$. Let $S^*_H\\subseteq S$ denote the set of elements $i\\in S$ that are not isolated under $H$. Then one has, for $e^{head}$ defined with respect to $S$, $$ ||e^{head}_{S\\setminus S^*_H}(H, x, \\chi)||_1\\leq 2^{O(d)} \\alpha^{d/2} ||x'_{S\\setminus S^*_H}||_1+\\GS \\cdot 2^{O(d)} (||x'_{S^*}||_1+||\\chi_{\\nsq\\setminus S}||_1). $$ Furthermore, if $\\chi_{\\nsq\\setminus S}=0$ and $S^*_H=\\emptyset$, then one has $||e^{head}_{S}(H, x, \\chi)||_\\infty\\leq 2^{O(d)}\\alpha^{d/2} ||x'_S||_\\infty$."
+      }
+    ],
+    "title": "Sparse Fourier Transform in Any Constant Dimension with Nearly-Optimal Sample Complexity in Sublinear Time"
+  }
+]

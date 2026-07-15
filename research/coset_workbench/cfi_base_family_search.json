@@ -1,0 +1,428 @@
+{
+  "created_at": "2026-07-09T16:48:20.924487+00:00",
+  "exact_vertex_cap": 50,
+  "falsifiers_triggered": [
+    "Some CFI base rows are separated by low-cost or individualized-WL classical baselines.",
+    "Surviving CFI base rows lack asymptotic proof, exact sanity, or stronger individualization baselines."
+  ],
+  "headline_metrics": {
+    "base_count": 6,
+    "finite_survivor_count": 1,
+    "individualized_wl_dequantized_count": 3,
+    "invalid_isomorphic_count": 0,
+    "low_cost_dequantized_count": 0,
+    "max_cfi_vertex_count": 98,
+    "proof_debt_survivor_count": 2
+  },
+  "max_individualization": 3,
+  "records": [
+    {
+      "base": {
+        "construction_note": "Odd single-edge twist in the local CFI parity gadget over this base graph.",
+        "degree_sequence": [
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        "description": "Complete graph K5 control",
+        "edge_count": 10,
+        "id": "complete-k5",
+        "twist_edge": [
+          0,
+          1
+        ],
+        "vertex_count": 5
+      },
+      "cfi_edge_count": 160,
+      "cfi_vertex_count": 60,
+      "cheap_invariants_distinguish": false,
+      "exact_sanity_evaluated": false,
+      "exact_sanity_nonisomorphic": null,
+      "first_individualized_separator": 3,
+      "individualized_records": [
+        {
+          "distinguishes": false,
+          "evaluated": true,
+          "individualization_size": 1,
+          "interpretation": "1-individualization plus color refinement does not separate this CFI twist.",
+          "pair_id": "cfi-base-complete-k5",
+          "signature_a": "(('((0, 1), (1, 16), (2, 16), (3, 6), (4, 1), (5, 4), (6, 12), (7, 4))', 40), ('((0, 24), (1, 8), (2, 8), (3, 6), (4, 1), (5, 12), (6, 1))', 20))",
+          "signature_b": "(('((0, 1), (1, 16), (2, 16), (3, 6), (4, 1), (5, 4), (6, 12), (7, 4))', 40), ('((0, 24), (1, 8), (2, 8), (3, 6), (4, 1), (5, 12), (6, 1))', 20))",
+          "status": "no-individualized-wl-signal",
+          "tuple_count": 60
+        },
+        {
+          "distinguishes": false,
+          "evaluated": true,
+          "individualization_size": 2,
+          "interpretation": "2-individualization plus color refinement does not separate this CFI twist.",
+          "pair_id": "cfi-base-complete-k5",
+          "signature_a": "(('((0, 1), (1, 6), (2, 1), (3, 6), (4, 6), (5, 3), (6, 6), (7, 3), (8, 3), (9, 3), (10, 1), (11, 1), (12, 3), (13, 3), (14, 6), (15, 1), (16, 3), (17, 3), (18, 1))', 320), ('((0, 1), (1, 8), (2, 4), (3, 8), (4, 4), (5, 1), (6, 4), (7, 1), (8, 4), (9, 4), (10, 1), (11, 2), (12, 2), (13, 1), (14, 8), (15, 2), (16, 2), (17, 2), (18, 1))', 480), ('((0, 12), (1, 1), (2, 4), (3, 12), (4, 3), (5, 4), (6, 3), (7, 1), (8, 1), (9, 6), (10, 3), (11, 6), (12, 3), (13, 1))', 160), ('((0, 12), (1, 12), (2, 4",
+          "signature_b": "(('((0, 1), (1, 6), (2, 1), (3, 6), (4, 6), (5, 3), (6, 6), (7, 3), (8, 3), (9, 3), (10, 1), (11, 1), (12, 3), (13, 3), (14, 6), (15, 1), (16, 3), (17, 3), (18, 1))', 320), ('((0, 1), (1, 8), (2, 4), (3, 8), (4, 4), (5, 1), (6, 4), (7, 1), (8, 4), (9, 4), (10, 1), (11, 2), (12, 2), (13, 1), (14, 8), (15, 2), (16, 2), (17, 2), (18, 1))', 480), ('((0, 12), (1, 1), (2, 4), (3, 12), (4, 3), (5, 4), (6, 3), (7, 1), (8, 1), (9, 6), (10, 3), (11, 6), (12, 3), (13, 1))', 160), ('((0, 12), (1, 12), (2, 4",
+          "status": "no-individualized-wl-signal",
+          "tuple_count": 1770
+        },
+        {
+          "distinguishes": true,
+          "evaluated": true,
+          "individualization_size": 3,
+          "interpretation": "3-individualization plus color refinement separates this CFI twist.",
+          "pair_id": "cfi-base-complete-k5",
+          "signature_a": "(('((0, 1), (1, 1), (2, 1), (3, 1), (4, 2), (5, 2), (6, 2), (7, 2), (8, 2), (9, 1), (10, 2), (11, 2), (12, 1), (13, 1), (14, 2), (15, 1), (16, 1), (17, 2), (18, 2), (19, 1), (20, 2), (21, 2), (22, 2), (23, 2), (24, 1), (25, 1), (26, 1), (27, 1), (28, 1), (29, 1), (30, 2), (31, 2), (32, 2), (33, 2), (34, 1), (35, 2), (36, 1), (37, 2), (38, 1), (39, 1))', 1920), ('((0, 1), (1, 2), (2, 1), (3, 1), (4, 2), (5, 2), (6, 2), (7, 1), (8, 2), (9, 2), (10, 2), (11, 2), (12, 1), (13, 2), (14, 2), (15, 2), ",
+          "signature_b": "(('((0, 1), (1, 1), (2, 2), (3, 2), (4, 1), (5, 2), (6, 2), (7, 1), (8, 2), (9, 2), (10, 1), (11, 2), (12, 1), (13, 1), (14, 2), (15, 1), (16, 1), (17, 2), (18, 1), (19, 2), (20, 2), (21, 2), (22, 2), (23, 2), (24, 1), (25, 1), (26, 1), (27, 1), (28, 1), (29, 2), (30, 2), (31, 2), (32, 2), (33, 1), (34, 1), (35, 2), (36, 1), (37, 1), (38, 2), (39, 1))', 1920), ('((0, 1), (1, 2), (2, 1), (3, 1), (4, 2), (5, 2), (6, 2), (7, 1), (8, 2), (9, 2), (10, 2), (11, 2), (12, 1), (13, 2), (14, 2), (15, 2), ",
+          "status": "dequantized-by-individualized-wl",
+          "tuple_count": 34220
+        }
+      ],
+      "interpretation": "3-vertex individualization-refinement separates this CFI base row.",
+      "status": "dequantized-by-individualized-wl",
+      "wl2_distinguishes": false
+    },
+    {
+      "base": {
+        "construction_note": "Odd single-edge twist in the local CFI parity gadget over this base graph.",
+        "degree_sequence": [
+          3,
+          3,
+          3,
+          3,
+          3,
+          3
+        ],
+        "description": "Triangular prism cubic base",
+        "edge_count": 9,
+        "id": "triangular-prism",
+        "twist_edge": [
+          0,
+          1
+        ],
+        "vertex_count": 6
+      },
+      "cfi_edge_count": 72,
+      "cfi_vertex_count": 42,
+      "cheap_invariants_distinguish": false,
+      "exact_sanity_evaluated": true,
+      "exact_sanity_nonisomorphic": true,
+      "first_individualized_separator": 3,
+      "individualized_records": [
+        {
+          "distinguishes": false,
+          "evaluated": true,
+          "individualization_size": 1,
+          "interpretation": "1-individualization plus color refinement does not separate this CFI twist.",
+          "pair_id": "cfi-base-triangular-prism",
+          "signature_a": "(('((0, 16), (1, 4), (2, 4), (3, 8), (4, 1), (5, 8), (6, 1))', 6), ('((0, 4), (1, 8), (2, 4), (3, 4), (4, 4), (5, 4), (6, 2), (7, 2), (8, 1), (9, 4), (10, 4), (11, 1))', 12), ('((0, 8), (1, 2), (2, 4), (3, 2), (4, 4), (5, 2), (6, 1), (7, 1), (8, 2), (9, 4), (10, 4), (11, 1), (12, 2), (13, 2), (14, 1), (15, 2))', 24))",
+          "signature_b": "(('((0, 16), (1, 4), (2, 4), (3, 8), (4, 1), (5, 8), (6, 1))', 6), ('((0, 4), (1, 8), (2, 4), (3, 4), (4, 4), (5, 4), (6, 2), (7, 2), (8, 1), (9, 4), (10, 4), (11, 1))', 12), ('((0, 8), (1, 2), (2, 4), (3, 2), (4, 4), (5, 2), (6, 1), (7, 1), (8, 2), (9, 4), (10, 4), (11, 1), (12, 2), (13, 2), (14, 1), (15, 2))', 24))",
+          "status": "no-individualized-wl-signal",
+          "tuple_count": 42
+        },
+        {
+          "distinguishes": false,
+          "evaluated": true,
+          "individualization_size": 2,
+          "interpretation": "2-individualization plus color refinement does not separate this CFI twist.",
+          "pair_id": "cfi-base-triangular-prism",
+          "signature_a": "(('((0, 1), (1, 1), (2, 1), (3, 1), (4, 1), (5, 1), (6, 1), (7, 1), (8, 1), (9, 1), (10, 1), (11, 1), (12, 1), (13, 1), (14, 1), (15, 1), (16, 1), (17, 1), (18, 1), (19, 1), (20, 1), (21, 1), (22, 1), (23, 1), (24, 1), (25, 1), (26, 1), (27, 1), (28, 1), (29, 1), (30, 1), (31, 1), (32, 1), (33, 1), (34, 1), (35, 1), (36, 1), (37, 1), (38, 1), (39, 1), (40, 1), (41, 1))', 96), ('((0, 16), (1, 4), (2, 4), (3, 8), (4, 8), (5, 1), (6, 1))', 3), ('((0, 2), (1, 2), (2, 2), (3, 1), (4, 1), (5, 2), (6, ",
+          "signature_b": "(('((0, 1), (1, 1), (2, 1), (3, 1), (4, 1), (5, 1), (6, 1), (7, 1), (8, 1), (9, 1), (10, 1), (11, 1), (12, 1), (13, 1), (14, 1), (15, 1), (16, 1), (17, 1), (18, 1), (19, 1), (20, 1), (21, 1), (22, 1), (23, 1), (24, 1), (25, 1), (26, 1), (27, 1), (28, 1), (29, 1), (30, 1), (31, 1), (32, 1), (33, 1), (34, 1), (35, 1), (36, 1), (37, 1), (38, 1), (39, 1), (40, 1), (41, 1))', 96), ('((0, 16), (1, 4), (2, 4), (3, 8), (4, 8), (5, 1), (6, 1))', 3), ('((0, 2), (1, 2), (2, 2), (3, 1), (4, 1), (5, 2), (6, ",
+          "status": "no-individualized-wl-signal",
+          "tuple_count": 861
+        },
+        {
+          "distinguishes": true,
+          "evaluated": true,
+          "individualization_size": 3,
+          "interpretation": "3-individualization plus color refinement separates this CFI twist.",
+          "pair_id": "cfi-base-triangular-prism",
+          "signature_a": "(('((0, 1), (1, 1), (2, 1), (3, 1), (4, 1), (5, 1), (6, 1), (7, 1), (8, 1), (9, 1), (10, 1), (11, 1), (12, 1), (13, 1), (14, 1), (15, 1), (16, 1), (17, 1), (18, 1), (19, 1), (20, 1), (21, 1), (22, 1), (23, 1), (24, 1), (25, 1), (26, 1), (27, 1), (28, 1), (29, 1), (30, 1), (31, 1), (32, 1), (33, 1), (34, 1), (35, 1), (36, 1), (37, 1), (38, 1), (39, 1), (40, 1), (41, 1))', 4896), ('((0, 2), (1, 1), (2, 1), (3, 2), (4, 1), (5, 2), (6, 2), (7, 2), (8, 1), (9, 2), (10, 2), (11, 1), (12, 2), (13, 1), ",
+          "signature_b": "(('((0, 1), (1, 1), (2, 1), (3, 1), (4, 1), (5, 1), (6, 1), (7, 1), (8, 1), (9, 1), (10, 1), (11, 1), (12, 1), (13, 1), (14, 1), (15, 1), (16, 1), (17, 1), (18, 1), (19, 1), (20, 1), (21, 1), (22, 1), (23, 1), (24, 1), (25, 1), (26, 1), (27, 1), (28, 1), (29, 1), (30, 1), (31, 1), (32, 1), (33, 1), (34, 1), (35, 1), (36, 1), (37, 1), (38, 1), (39, 1), (40, 1), (41, 1))', 4896), ('((0, 1), (1, 1), (2, 2), (3, 2), (4, 2), (5, 2), (6, 2), (7, 2), (8, 1), (9, 2), (10, 2), (11, 2), (12, 2), (13, 1), ",
+          "status": "dequantized-by-individualized-wl",
+          "tuple_count": 11480
+        }
+      ],
+      "interpretation": "3-vertex individualization-refinement separates this CFI base row.",
+      "status": "dequantized-by-individualized-wl",
+      "wl2_distinguishes": false
+    },
+    {
+      "base": {
+        "construction_note": "Odd single-edge twist in the local CFI parity gadget over this base graph.",
+        "degree_sequence": [
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3
+        ],
+        "description": "3-cube cubic base",
+        "edge_count": 12,
+        "id": "cube-q3",
+        "twist_edge": [
+          0,
+          1
+        ],
+        "vertex_count": 8
+      },
+      "cfi_edge_count": 96,
+      "cfi_vertex_count": 56,
+      "cheap_invariants_distinguish": false,
+      "exact_sanity_evaluated": false,
+      "exact_sanity_nonisomorphic": null,
+      "first_individualized_separator": 3,
+      "individualized_records": [
+        {
+          "distinguishes": false,
+          "evaluated": true,
+          "individualization_size": 1,
+          "interpretation": "1-individualization plus color refinement does not separate this CFI twist.",
+          "pair_id": "cfi-base-cube-q3",
+          "signature_a": "(('((0, 4), (1, 12), (2, 6), (3, 6), (4, 3), (5, 1), (6, 6), (7, 12), (8, 3), (9, 3))', 32), ('((0, 8), (1, 16), (2, 4), (3, 4), (4, 2), (5, 8), (6, 4), (7, 1), (8, 8), (9, 1))', 24))",
+          "signature_b": "(('((0, 4), (1, 12), (2, 6), (3, 6), (4, 3), (5, 1), (6, 6), (7, 12), (8, 3), (9, 3))', 32), ('((0, 8), (1, 16), (2, 4), (3, 4), (4, 2), (5, 8), (6, 4), (7, 1), (8, 8), (9, 1))', 24))",
+          "status": "no-individualized-wl-signal",
+          "tuple_count": 56
+        },
+        {
+          "distinguishes": false,
+          "evaluated": true,
+          "individualization_size": 2,
+          "interpretation": "2-individualization plus color refinement does not separate this CFI twist.",
+          "pair_id": "cfi-base-cube-q3",
+          "signature_a": "(('((0, 2), (1, 4), (2, 4), (3, 2), (4, 2), (5, 2), (6, 2), (7, 2), (8, 1), (9, 2), (10, 2), (11, 2), (12, 1), (13, 2), (14, 1), (15, 1), (16, 4), (17, 4), (18, 2), (19, 1), (20, 2), (21, 1), (22, 2), (23, 2), (24, 1), (25, 2), (26, 1), (27, 2))', 192), ('((0, 2), (1, 8), (2, 4), (3, 2), (4, 2), (5, 2), (6, 2), (7, 1), (8, 4), (9, 2), (10, 2), (11, 1), (12, 1), (13, 4), (14, 4), (15, 1), (16, 2), (17, 4), (18, 4), (19, 1), (20, 2), (21, 1))', 192), ('((0, 4), (1, 16), (2, 4), (3, 4), (4, 4), (5,",
+          "signature_b": "(('((0, 2), (1, 4), (2, 4), (3, 2), (4, 2), (5, 2), (6, 2), (7, 2), (8, 1), (9, 2), (10, 2), (11, 2), (12, 1), (13, 2), (14, 1), (15, 1), (16, 4), (17, 4), (18, 2), (19, 1), (20, 2), (21, 1), (22, 2), (23, 2), (24, 1), (25, 2), (26, 1), (27, 2))', 192), ('((0, 2), (1, 8), (2, 4), (3, 2), (4, 2), (5, 2), (6, 2), (7, 1), (8, 4), (9, 2), (10, 2), (11, 1), (12, 1), (13, 4), (14, 4), (15, 1), (16, 2), (17, 4), (18, 4), (19, 1), (20, 2), (21, 1))', 192), ('((0, 4), (1, 16), (2, 4), (3, 4), (4, 4), (5,",
+          "status": "no-individualized-wl-signal",
+          "tuple_count": 1540
+        },
+        {
+          "distinguishes": true,
+          "evaluated": true,
+          "individualization_size": 3,
+          "interpretation": "3-individualization plus color refinement separates this CFI twist.",
+          "pair_id": "cfi-base-cube-q3",
+          "signature_a": "(('((0, 1), (1, 1), (2, 1), (3, 1), (4, 1), (5, 1), (6, 1), (7, 1), (8, 1), (9, 1), (10, 1), (11, 1), (12, 1), (13, 1), (14, 1), (15, 1), (16, 1), (17, 1), (18, 1), (19, 1), (20, 1), (21, 1), (22, 1), (23, 1), (24, 1), (25, 1), (26, 1), (27, 1), (28, 1), (29, 1), (30, 1), (31, 1), (32, 1), (33, 1), (34, 1), (35, 1), (36, 1), (37, 1), (38, 1), (39, 1), (40, 1), (41, 1), (42, 1), (43, 1), (44, 1), (45, 1), (46, 1), (47, 1), (48, 1), (49, 1), (50, 1), (51, 1), (52, 1), (53, 1), (54, 1), (55, 1))', ",
+          "signature_b": "(('((0, 1), (1, 1), (2, 1), (3, 1), (4, 1), (5, 1), (6, 1), (7, 1), (8, 1), (9, 1), (10, 1), (11, 1), (12, 1), (13, 1), (14, 1), (15, 1), (16, 1), (17, 1), (18, 1), (19, 1), (20, 1), (21, 1), (22, 1), (23, 1), (24, 1), (25, 1), (26, 1), (27, 1), (28, 1), (29, 1), (30, 1), (31, 1), (32, 1), (33, 1), (34, 1), (35, 1), (36, 1), (37, 1), (38, 1), (39, 1), (40, 1), (41, 1), (42, 1), (43, 1), (44, 1), (45, 1), (46, 1), (47, 1), (48, 1), (49, 1), (50, 1), (51, 1), (52, 1), (53, 1), (54, 1), (55, 1))', ",
+          "status": "dequantized-by-individualized-wl",
+          "tuple_count": 27720
+        }
+      ],
+      "interpretation": "3-vertex individualization-refinement separates this CFI base row.",
+      "status": "dequantized-by-individualized-wl",
+      "wl2_distinguishes": false
+    },
+    {
+      "base": {
+        "construction_note": "Odd single-edge twist in the local CFI parity gadget over this base graph.",
+        "degree_sequence": [
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3
+        ],
+        "description": "Mobius ladder M8 cubic base",
+        "edge_count": 12,
+        "id": "mobius-ladder-8",
+        "twist_edge": [
+          0,
+          1
+        ],
+        "vertex_count": 8
+      },
+      "cfi_edge_count": 96,
+      "cfi_vertex_count": 56,
+      "cheap_invariants_distinguish": false,
+      "exact_sanity_evaluated": false,
+      "exact_sanity_nonisomorphic": null,
+      "first_individualized_separator": null,
+      "individualized_records": [
+        {
+          "distinguishes": false,
+          "evaluated": true,
+          "individualization_size": 1,
+          "interpretation": "1-individualization plus color refinement does not separate this CFI twist.",
+          "pair_id": "cfi-base-mobius-ladder-8",
+          "signature_a": "(('((0, 8), (1, 16), (2, 4), (3, 4), (4, 2), (5, 8), (6, 4), (7, 1), (8, 8), (9, 1))', 8), ('((0, 8), (1, 8), (2, 4), (3, 2), (4, 4), (5, 2), (6, 1), (7, 2), (8, 1), (9, 2), (10, 4), (11, 4), (12, 4), (13, 4), (14, 2), (15, 1), (16, 2), (17, 1))', 32), ('((0, 8), (1, 8), (2, 8), (3, 4), (4, 4), (5, 8), (6, 4), (7, 2), (8, 1), (9, 4), (10, 4), (11, 1))', 16))",
+          "signature_b": "(('((0, 8), (1, 16), (2, 4), (3, 4), (4, 2), (5, 8), (6, 4), (7, 1), (8, 8), (9, 1))', 8), ('((0, 8), (1, 8), (2, 4), (3, 2), (4, 4), (5, 2), (6, 1), (7, 2), (8, 1), (9, 2), (10, 4), (11, 4), (12, 4), (13, 4), (14, 2), (15, 1), (16, 2), (17, 1))', 32), ('((0, 8), (1, 8), (2, 8), (3, 4), (4, 4), (5, 8), (6, 4), (7, 2), (8, 1), (9, 4), (10, 4), (11, 1))', 16))",
+          "status": "no-individualized-wl-signal",
+          "tuple_count": 56
+        },
+        {
+          "distinguishes": false,
+          "evaluated": true,
+          "individualization_size": 2,
+          "interpretation": "2-individualization plus color refinement does not separate this CFI twist.",
+          "pair_id": "cfi-base-mobius-ladder-8",
+          "signature_a": "(('((0, 2), (1, 2), (2, 2), (3, 2), (4, 1), (5, 2), (6, 2), (7, 2), (8, 1), (9, 1), (10, 1), (11, 2), (12, 1), (13, 2), (14, 2), (15, 1), (16, 1), (17, 1), (18, 1), (19, 1), (20, 1), (21, 1), (22, 2), (23, 2), (24, 1), (25, 1), (26, 1), (27, 1), (28, 2), (29, 2), (30, 2), (31, 1), (32, 1), (33, 1), (34, 1), (35, 1), (36, 1), (37, 1), (38, 1), (39, 1), (40, 1))', 128), ('((0, 2), (1, 2), (2, 2), (3, 2), (4, 2), (5, 2), (6, 1), (7, 1), (8, 2), (9, 1), (10, 1), (11, 1), (12, 1), (13, 1), (14, 2), (",
+          "signature_b": "(('((0, 2), (1, 2), (2, 2), (3, 2), (4, 1), (5, 2), (6, 2), (7, 2), (8, 1), (9, 1), (10, 1), (11, 2), (12, 1), (13, 2), (14, 2), (15, 1), (16, 1), (17, 1), (18, 1), (19, 1), (20, 1), (21, 1), (22, 2), (23, 2), (24, 1), (25, 1), (26, 1), (27, 1), (28, 2), (29, 2), (30, 2), (31, 1), (32, 1), (33, 1), (34, 1), (35, 1), (36, 1), (37, 1), (38, 1), (39, 1), (40, 1))', 128), ('((0, 2), (1, 2), (2, 2), (3, 2), (4, 2), (5, 2), (6, 1), (7, 1), (8, 2), (9, 1), (10, 1), (11, 1), (12, 1), (13, 1), (14, 2), (",
+          "status": "no-individualized-wl-signal",
+          "tuple_count": 1540
+        },
+        {
+          "distinguishes": false,
+          "evaluated": true,
+          "individualization_size": 3,
+          "interpretation": "3-individualization plus color refinement does not separate this CFI twist.",
+          "pair_id": "cfi-base-mobius-ladder-8",
+          "signature_a": "(('((0, 1), (1, 1), (2, 1), (3, 1), (4, 1), (5, 1), (6, 1), (7, 1), (8, 1), (9, 1), (10, 1), (11, 1), (12, 1), (13, 1), (14, 1), (15, 1), (16, 1), (17, 1), (18, 1), (19, 1), (20, 1), (21, 1), (22, 1), (23, 1), (24, 1), (25, 1), (26, 1), (27, 1), (28, 1), (29, 1), (30, 1), (31, 1), (32, 1), (33, 1), (34, 1), (35, 1), (36, 1), (37, 1), (38, 1), (39, 1), (40, 1), (41, 1), (42, 1), (43, 1), (44, 1), (45, 1), (46, 1), (47, 1), (48, 1), (49, 1), (50, 1), (51, 1), (52, 1), (53, 1), (54, 1), (55, 1))', ",
+          "signature_b": "(('((0, 1), (1, 1), (2, 1), (3, 1), (4, 1), (5, 1), (6, 1), (7, 1), (8, 1), (9, 1), (10, 1), (11, 1), (12, 1), (13, 1), (14, 1), (15, 1), (16, 1), (17, 1), (18, 1), (19, 1), (20, 1), (21, 1), (22, 1), (23, 1), (24, 1), (25, 1), (26, 1), (27, 1), (28, 1), (29, 1), (30, 1), (31, 1), (32, 1), (33, 1), (34, 1), (35, 1), (36, 1), (37, 1), (38, 1), (39, 1), (40, 1), (41, 1), (42, 1), (43, 1), (44, 1), (45, 1), (46, 1), (47, 1), (48, 1), (49, 1), (50, 1), (51, 1), (52, 1), (53, 1), (54, 1), (55, 1))', ",
+          "status": "no-individualized-wl-signal",
+          "tuple_count": 27720
+        }
+      ],
+      "interpretation": "The row survives the implemented finite baselines; do not promote without asymptotic proof and stronger attacks.",
+      "status": "finite-survivor-needs-proof",
+      "wl2_distinguishes": false
+    },
+    {
+      "base": {
+        "construction_note": "Odd single-edge twist in the local CFI parity gadget over this base graph.",
+        "degree_sequence": [
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3
+        ],
+        "description": "Petersen graph cubic base",
+        "edge_count": 15,
+        "id": "petersen",
+        "twist_edge": [
+          0,
+          1
+        ],
+        "vertex_count": 10
+      },
+      "cfi_edge_count": 120,
+      "cfi_vertex_count": 70,
+      "cheap_invariants_distinguish": false,
+      "exact_sanity_evaluated": false,
+      "exact_sanity_nonisomorphic": null,
+      "first_individualized_separator": null,
+      "individualized_records": [
+        {
+          "distinguishes": false,
+          "evaluated": true,
+          "individualization_size": 1,
+          "interpretation": "1-individualization plus color refinement does not separate this CFI twist.",
+          "pair_id": "cfi-base-petersen",
+          "signature_a": "(('((0, 16), (1, 16), (2, 4), (3, 4), (4, 4), (5, 16), (6, 1), (7, 8), (8, 1))', 30), ('((0, 24), (1, 6), (2, 6), (3, 3), (4, 1), (5, 12), (6, 12), (7, 3), (8, 3))', 40))",
+          "signature_b": "(('((0, 16), (1, 16), (2, 4), (3, 4), (4, 4), (5, 16), (6, 1), (7, 8), (8, 1))', 30), ('((0, 24), (1, 6), (2, 6), (3, 3), (4, 1), (5, 12), (6, 12), (7, 3), (8, 3))', 40))",
+          "status": "no-individualized-wl-signal",
+          "tuple_count": 70
+        },
+        {
+          "distinguishes": false,
+          "evaluated": true,
+          "individualization_size": 2,
+          "interpretation": "2-individualization plus color refinement does not separate this CFI twist.",
+          "pair_id": "cfi-base-petersen",
+          "signature_a": "(('((0, 16), (1, 16), (2, 4), (3, 4), (4, 4), (5, 16), (6, 8), (7, 1), (8, 1))', 15), ('((0, 16), (1, 4), (2, 4), (3, 4), (4, 1), (5, 4), (6, 1), (7, 2), (8, 2), (9, 1), (10, 1), (11, 4), (12, 8), (13, 8), (14, 2), (15, 2), (16, 2), (17, 1), (18, 2), (19, 1))', 120), ('((0, 16), (1, 4), (2, 4), (3, 4), (4, 2), (5, 4), (6, 2), (7, 1), (8, 1), (9, 1), (10, 1), (11, 4), (12, 8), (13, 8), (14, 2), (15, 2), (16, 1), (17, 2), (18, 2), (19, 1))', 120), ('((0, 16), (1, 8), (2, 4), (3, 2), (4, 4), (5, 2)",
+          "signature_b": "(('((0, 16), (1, 16), (2, 4), (3, 4), (4, 4), (5, 16), (6, 8), (7, 1), (8, 1))', 15), ('((0, 16), (1, 4), (2, 4), (3, 4), (4, 1), (5, 4), (6, 1), (7, 2), (8, 2), (9, 1), (10, 1), (11, 4), (12, 8), (13, 8), (14, 2), (15, 2), (16, 2), (17, 1), (18, 2), (19, 1))', 120), ('((0, 16), (1, 4), (2, 4), (3, 4), (4, 2), (5, 4), (6, 2), (7, 1), (8, 1), (9, 1), (10, 1), (11, 4), (12, 8), (13, 8), (14, 2), (15, 2), (16, 1), (17, 2), (18, 2), (19, 1))', 120), ('((0, 16), (1, 8), (2, 4), (3, 2), (4, 4), (5, 2)",
+          "status": "no-individualized-wl-signal",
+          "tuple_count": 2415
+        },
+        {
+          "distinguishes": false,
+          "evaluated": false,
+          "individualization_size": 3,
+          "interpretation": "3-individualization skipped at 54740 tuples above cap 40000.",
+          "pair_id": "cfi-base-petersen",
+          "signature_a": "skipped",
+          "signature_b": "skipped",
+          "status": "skipped-scaling-cap",
+          "tuple_count": 54740
+        }
+      ],
+      "interpretation": "The row survives evaluated baselines but higher individualization hit caps; keep as proof debt.",
+      "status": "survives-tested-baselines-proof-debt",
+      "wl2_distinguishes": false
+    },
+    {
+      "base": {
+        "construction_note": "Odd single-edge twist in the local CFI parity gadget over this base graph.",
+        "degree_sequence": [
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3
+        ],
+        "description": "14-vertex cubic incidence-style base",
+        "edge_count": 21,
+        "id": "heawood-like-14",
+        "twist_edge": [
+          0,
+          1
+        ],
+        "vertex_count": 14
+      },
+      "cfi_edge_count": 168,
+      "cfi_vertex_count": 98,
+      "cheap_invariants_distinguish": false,
+      "exact_sanity_evaluated": false,
+      "exact_sanity_nonisomorphic": null,
+      "first_individualized_separator": null,
+      "individualized_records": [
+        {
+          "distinguishes": false,
+          "evaluated": true,
+          "individualization_size": 1,
+          "interpretation": "1-individualization plus color refinement does not separate this CFI twist.",
+          "pair_id": "cfi-base-heawood-like-14",
+          "signature_a": "(('((0, 16), (1, 16), (2, 16), (3, 4), (4, 4), (5, 8), (6, 8), (7, 4), (8, 8), (9, 4), (10, 1), (11, 8), (12, 1))', 14), ('((0, 8), (1, 8), (2, 8), (3, 8), (4, 8), (5, 4), (6, 2), (7, 4), (8, 2), (9, 1), (10, 2), (11, 1), (12, 8), (13, 4), (14, 4), (15, 4), (16, 4), (17, 4), (18, 4), (19, 4), (20, 2), (21, 1), (22, 2), (23, 1))', 56), ('((0, 8), (1, 8), (2, 8), (3, 8), (4, 8), (5, 8), (6, 4), (7, 4), (8, 2), (9, 4), (10, 4), (11, 4), (12, 4), (13, 4), (14, 4), (15, 4), (16, 2), (17, 1), (18, 4),",
+          "signature_b": "(('((0, 16), (1, 16), (2, 16), (3, 4), (4, 4), (5, 8), (6, 8), (7, 4), (8, 8), (9, 4), (10, 1), (11, 8), (12, 1))', 14), ('((0, 8), (1, 8), (2, 8), (3, 8), (4, 8), (5, 4), (6, 2), (7, 4), (8, 2), (9, 1), (10, 2), (11, 1), (12, 8), (13, 4), (14, 4), (15, 4), (16, 4), (17, 4), (18, 4), (19, 4), (20, 2), (21, 1), (22, 2), (23, 1))', 56), ('((0, 8), (1, 8), (2, 8), (3, 8), (4, 8), (5, 8), (6, 4), (7, 4), (8, 2), (9, 4), (10, 4), (11, 4), (12, 4), (13, 4), (14, 4), (15, 4), (16, 2), (17, 1), (18, 4),",
+          "status": "no-individualized-wl-signal",
+          "tuple_count": 98
+        },
+        {
+          "distinguishes": false,
+          "evaluated": true,
+          "individualization_size": 2,
+          "interpretation": "2-individualization plus color refinement does not separate this CFI twist.",
+          "pair_id": "cfi-base-heawood-like-14",
+          "signature_a": "(('((0, 16), (1, 16), (2, 16), (3, 4), (4, 4), (5, 8), (6, 8), (7, 4), (8, 8), (9, 4), (10, 8), (11, 1), (12, 1))', 7), ('((0, 4), (1, 4), (2, 4), (3, 4), (4, 2), (5, 2), (6, 2), (7, 4), (8, 4), (9, 4), (10, 4), (11, 2), (12, 2), (13, 2), (14, 2), (15, 2), (16, 1), (17, 1), (18, 1), (19, 2), (20, 2), (21, 1), (22, 2), (23, 2), (24, 2), (25, 2), (26, 2), (27, 2), (28, 2), (29, 1), (30, 2), (31, 2), (32, 2), (33, 2), (34, 2), (35, 2), (36, 1), (37, 1), (38, 1), (39, 2), (40, 2), (41, 2), (42, 2), ",
+          "signature_b": "(('((0, 16), (1, 16), (2, 16), (3, 4), (4, 4), (5, 8), (6, 8), (7, 4), (8, 8), (9, 4), (10, 8), (11, 1), (12, 1))', 7), ('((0, 4), (1, 4), (2, 4), (3, 4), (4, 2), (5, 2), (6, 2), (7, 4), (8, 4), (9, 4), (10, 4), (11, 2), (12, 2), (13, 2), (14, 2), (15, 2), (16, 1), (17, 1), (18, 1), (19, 2), (20, 2), (21, 1), (22, 2), (23, 2), (24, 2), (25, 2), (26, 2), (27, 2), (28, 2), (29, 1), (30, 2), (31, 2), (32, 2), (33, 2), (34, 2), (35, 2), (36, 1), (37, 1), (38, 1), (39, 2), (40, 2), (41, 2), (42, 2), ",
+          "status": "no-individualized-wl-signal",
+          "tuple_count": 4753
+        },
+        {
+          "distinguishes": false,
+          "evaluated": false,
+          "individualization_size": 3,
+          "interpretation": "3-individualization skipped at 152096 tuples above cap 40000.",
+          "pair_id": "cfi-base-heawood-like-14",
+          "signature_a": "skipped",
+          "signature_b": "skipped",
+          "status": "skipped-scaling-cap",
+          "tuple_count": 152096
+        }
+      ],
+      "interpretation": "The row survives evaluated baselines but higher individualization hit caps; keep as proof debt.",
+      "status": "survives-tested-baselines-proof-debt",
+      "wl2_distinguishes": false
+    }
+  ],
+  "status": "cfi-base-survivors-are-proof-debt",
+  "summary": "Audited 6 CFI base family row(s). 3 were dequantized by implemented baselines; 3 survived only as proof debt.",
+  "tuple_cap": 40000
+}

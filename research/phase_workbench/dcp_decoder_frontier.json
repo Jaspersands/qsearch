@@ -1,0 +1,662 @@
+{
+  "claim_gate": {
+    "access_legality_explicit": true,
+    "complete_lattice_composition": false,
+    "named_generic_baselines_present": true,
+    "proved_polynomial_exact_f1_decoder": false,
+    "reason": "Every implemented legal route is exponential, subexponential, signal-only, restricted-no-go, or missing exact f=1 robustness.",
+    "sample_time_memory_separated": true,
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-07-15T08:31:58.537798+00:00",
+  "falsifiers_triggered": [
+    "Polynomial state samples do not imply polynomial decoding time.",
+    "Grover over candidate reflections remains exponential and loses to generic DCP sieves.",
+    "Chosen-label phase estimation does not preserve the theorem input interface.",
+    "Finite Clifford signal does not provide a full robust decoder.",
+    "Structured-query sparse FFT does not preserve iid DCP access.",
+    "Exact linear iid hash bins satisfy an exponential Parseval tradeoff.",
+    "Biased uniformly margin-separated one-score buckets retain the Parseval/MSE tradeoff.",
+    "Disjoint fixed-degree product kernels retain the aggregate-label Jensen/Parseval tradeoff and add a 4^r penalty.",
+    "Explicit overlapping product U-statistics require exponential records or tuple terms by Hoeffding decomposition.",
+    "Rank-one elementary-symmetric contraction removes tuple enumeration but still needs exponential records.",
+    "Tested polynomial-rank Fejer/Fourier contractions separate finitely but fail exact sample scaling.",
+    "Computing and QFTing a subset-sum ancilla is exactly uninformative while which-subset garbage remains.",
+    "Straightforward exact residue tensor networks have exponential bond dimension with high probability.",
+    "Fixed polynomial dictionaries of balanced 99-percent-fidelity fiber-state tensor layouts retain exponential bond with high probability.",
+    "Balanced label-adaptive valuation sorting cannot obtain a growing power-of-two subgroup compression; exact-rank adaptive scoring is exponential.",
+    "Uniform hashed-fiber erasure has exponentially small worst-d postselection success.",
+    "Changing to any public polynomial-trace reference effect cannot overcome the maximum-fiber bound.",
+    "Constant exact covariant-PGM success is information-theoretic evidence, not an efficient circuit.",
+    "Global linear-block PGM information survives exact f=1 product contamination, so signal-only robustness is no longer the open target.",
+    "Regev's partial average-case subset-sum route is source-verified, but polynomial explicit candidate enumeration has inadequate coverage.",
+    "Tested deterministic modular LLL embeddings show transient finite recovery but no tail coverage theorem.",
+    "Exact 2-adic carry fits are structural diagnostics, not polynomial witness solvers.",
+    "Every source-linked known subset-sum frontier retains a positive exponential time exponent.",
+    "Full-domain random carry ANFs reject bounded-degree algebraic reconstruction in the tested scaling range.",
+    "Polynomial logarithmic-low-bit BDD/state preparation leaves the high-bit witness problem open.",
+    "Exact conditioned high-bit quotients reject polynomial explicit-list concentration and still lack an implicit decoder theorem.",
+    "Carry-sliced constrained LLL fails to improve the live paired tail and has no legal-coverage theorem.",
+    "Planted target representation gains do not transfer to the independent uniform source law without coverage and detectability proofs.",
+    "Explicit target-independent shared-seed randomness is interface-compatible but supplies no subset-sum solver.",
+    "Arbitrary quantum relation solvers can erase phase information through orthogonal paired witness workspaces.",
+    "Signed self-reductions are embedding isometries; odd-unit LLL randomization remains coverage-blocked after tail collapse.",
+    "Separable likelihood interval bounds evaluate all N candidates in the live scaling sweep."
+  ],
+  "headline_metrics": {
+    "complete_lattice_composition_count": 0,
+    "exponential_time_row_count": 5,
+    "generic_subexponential_baseline_count": 2,
+    "illegal_access_row_count": 3,
+    "legal_row_count": 30,
+    "proved_polynomial_exact_f1_decoder_count": 0,
+    "proved_restricted_decoder_no_go_count": 1,
+    "row_count": 33
+  },
+  "parameter": "n=ceil(log2 N)",
+  "rows": [
+    {
+      "access_legal_for_regev_dcp": true,
+      "access_model": "random public DCP labels; independent X/Y measurements; classical length-N FFT",
+      "blocking_reason": "Exponential time and memory in n=log2(N).",
+      "decoder_status": "finite FFT recoveries=378",
+      "dominated_by": [
+        "kuperberg-generic-sieve",
+        "regev-polynomial-space-sieve"
+      ],
+      "exact_f1_robustness": "sample-level exhaustive-correlation theorem proved=1; decoder remains exponential",
+      "lattice_composition_status": "blocked",
+      "memory_class": "Theta(N)=2^(Theta(n))",
+      "method_id": "local-quadrature-full-fft",
+      "source_ids": [
+        "dcp_random_design_decoder.py"
+      ],
+      "state_sample_class": "poly(n) observed empirically",
+      "time_class": "Theta(N log N)=2^(Theta(n))"
+    },
+    {
+      "access_legal_for_regev_dcp": false,
+      "access_model": "coherent search over N candidate reflections using a score oracle built from measured records",
+      "blocking_reason": "Still exponential in n and assumes a coherent likelihood oracle not supplied by DCP.",
+      "decoder_status": "conceptual baseline only",
+      "dominated_by": [
+        "kuperberg-generic-sieve",
+        "regev-polynomial-space-sieve"
+      ],
+      "exact_f1_robustness": "not established",
+      "lattice_composition_status": "blocked",
+      "memory_class": "poly(n) only with nontrivial coherent record access",
+      "method_id": "grover-likelihood-search",
+      "source_ids": [
+        "Grover maximum-finding baseline",
+        "dcp_random_design_decoder.py"
+      ],
+      "state_sample_class": "poly(n) classical measurement records",
+      "time_class": "Omega(sqrt(N)) score evaluations=2^(Theta(n))"
+    },
+    {
+      "access_legal_for_regev_dcp": true,
+      "access_model": "independent random-label DCP phase states",
+      "blocking_reason": "Subexponential rather than polynomial and current implementation lacks exact bad-register proof.",
+      "decoder_status": "known generic subexponential DHSP baseline",
+      "dominated_by": [],
+      "exact_f1_robustness": "not established in this repository; exact audit robustness proofs=0",
+      "lattice_composition_status": "blocked on exact f=1 implementation contract",
+      "memory_class": "2^O(sqrt(n))",
+      "method_id": "kuperberg-generic-sieve",
+      "source_ids": [
+        "kuperberg-dhsp-2003",
+        "dcp_sample_workbench.py",
+        "dcp_bad_register_audit.py"
+      ],
+      "state_sample_class": "2^O(sqrt(n))",
+      "time_class": "2^O(sqrt(n))"
+    },
+    {
+      "access_legal_for_regev_dcp": true,
+      "access_model": "independent random-label DCP phase states with polynomial-space collimation",
+      "blocking_reason": "Subexponential time and no current end-to-end f=1 decoder certificate.",
+      "decoder_status": "known polynomial-space generic baseline",
+      "dominated_by": [],
+      "exact_f1_robustness": "not established by current executable workbench",
+      "lattice_composition_status": "source reduction known; executable decoder contract blocked",
+      "memory_class": "poly(n) quantum space",
+      "method_id": "regev-polynomial-space-sieve",
+      "source_ids": [
+        "regev-lattice-dhsp-2003",
+        "dcp_bad_register_audit.py"
+      ],
+      "state_sample_class": "2^O(sqrt(n log n))",
+      "time_class": "2^O(sqrt(n log n))"
+    },
+    {
+      "access_legal_for_regev_dcp": false,
+      "access_model": "chosen/repeated Fourier labels and adaptive quadrature tomography",
+      "blocking_reason": "Regev DCP supplies random labels; chosen and repeated labels cannot be requested.",
+      "decoder_status": "illegal oracle comparator",
+      "dominated_by": [],
+      "exact_f1_robustness": "irrelevant under access mismatch",
+      "lattice_composition_status": "invalid interface",
+      "memory_class": "poly(n)",
+      "method_id": "chosen-label-phase-estimation",
+      "source_ids": [
+        "query_model_ledger.py",
+        "dcp_random_design_decoder.py"
+      ],
+      "state_sample_class": "poly(n) under the stronger oracle",
+      "time_class": "poly(n) under the stronger oracle"
+    },
+    {
+      "access_legal_for_regev_dcp": true,
+      "access_model": "random public labels; public CZ-plus-Hadamard circuit; Hamming-weight decision",
+      "blocking_reason": "Efficient statistic decays in finite scaling and does not recover the reflection.",
+      "decoder_status": "finite log2 Hamming-TV slope=-0.6287216445695861",
+      "dominated_by": [
+        "kuperberg-generic-sieve"
+      ],
+      "exact_f1_robustness": "one-bad finite audit only",
+      "lattice_composition_status": "blocked",
+      "memory_class": "poly(n) circuit execution",
+      "method_id": "global-clifford-hamming-decoder",
+      "source_ids": [
+        "dcp_clifford_witness_search.py",
+        "dcp_clifford_contamination.py"
+      ],
+      "state_sample_class": "finite poly(n) batches plus inverse-bias repetition",
+      "time_class": "poly(n) per circuit and decision; repetition unresolved"
+    },
+    {
+      "access_legal_for_regev_dcp": false,
+      "access_model": "HashToBins or significant-Fourier measurements at selected shifted, filtered, and correlated locations",
+      "blocking_reason": "The joint query schedule is not iid and cannot be requested from DCP.",
+      "decoder_status": "direct transfer proofs=0; access-invalid methods=2",
+      "dominated_by": [],
+      "exact_f1_robustness": "irrelevant until random-label access is preserved",
+      "lattice_composition_status": "invalid interface",
+      "memory_class": "poly(n) only under structured query access",
+      "method_id": "structured-query-sparse-fft",
+      "source_ids": [
+        "arxiv:1604.00845",
+        "arxiv:1607.01842",
+        "dcp_sparse_fourier_transfer_audit.py"
+      ],
+      "state_sample_class": "poly(n) only under structured query access",
+      "time_class": "poly(n) only under structured query access"
+    },
+    {
+      "access_legal_for_regev_dcp": true,
+      "access_model": "iid random-label local measurements; one-pass exact unbiased linear bucket statistics",
+      "blocking_reason": "Parseval forces exponential samples for coarse buckets or exponentially many fine buckets.",
+      "decoder_status": "restricted Parseval no-go proofs=1; joint-poly rows=0",
+      "dominated_by": [
+        "kuperberg-generic-sieve",
+        "regev-polynomial-space-sieve"
+      ],
+      "exact_f1_robustness": "observation channel included; no decoder",
+      "lattice_composition_status": "blocked",
+      "memory_class": "poly(n) per bucket but no joint-polynomial sample/enumeration row",
+      "method_id": "iid-exact-linear-hash-buckets",
+      "source_ids": [
+        "dcp_iid_hash_estimator_audit.py"
+      ],
+      "state_sample_class": "2^Theta(n) for B=poly(n) coarse buckets",
+      "time_class": "2^(Theta(n)) sample processing or exponentially many fine buckets"
+    },
+    {
+      "access_legal_for_regev_dcp": true,
+      "access_model": "iid random-label local measurements; one biased linear score with a uniform decision margin",
+      "blocking_reason": "Bias and smoothing do not remove the Parseval sample/enumeration tradeoff for a uniformly margin-separated one-score empirical mean.",
+      "decoder_status": "restricted margin no-go proofs=1; joint-poly rows=0",
+      "dominated_by": [
+        "kuperberg-generic-sieve",
+        "regev-polynomial-space-sieve"
+      ],
+      "exact_f1_robustness": "observation channel included; no decoder",
+      "lattice_composition_status": "blocked",
+      "memory_class": "poly(n) per score but no joint-polynomial sample/enumeration row",
+      "method_id": "iid-biased-linear-margin-buckets",
+      "source_ids": [
+        "dcp_biased_linear_margin_audit.py"
+      ],
+      "state_sample_class": "2^Theta(n) for B=poly(n) coarse buckets under the uniform MSE contract",
+      "time_class": "2^(Theta(n)) sample processing or exponentially many fine bucket scores"
+    },
+    {
+      "access_legal_for_regev_dcp": true,
+      "access_model": "iid random-label local measurements grouped into disjoint fixed-degree signed-product blocks",
+      "blocking_reason": "Signed aggregate labels remain uniform, conditional Jensen retains response energy, and product outcomes add a 4^r second moment. Overlapping U-statistics are outside this row.",
+      "decoder_status": "restricted disjoint-block no-go proofs=1; overlapping U-statistic lower bounds=0",
+      "dominated_by": [
+        "iid-biased-linear-margin-buckets",
+        "kuperberg-generic-sieve",
+        "regev-polynomial-space-sieve"
+      ],
+      "exact_f1_robustness": "observation channel included; no decoder",
+      "lattice_composition_status": "blocked",
+      "memory_class": "poly(n) per kernel; no joint-polynomial sample/enumeration row",
+      "method_id": "iid-disjoint-multirecord-product-kernels",
+      "source_ids": [
+        "dcp_multirecord_estimator_hierarchy.py"
+      ],
+      "state_sample_class": "2^Theta(n) for coarse polynomial bucket counts under the uniform margin/MSE contract",
+      "time_class": "2^Theta(n) sample processing; degree r worsens the certified block second moment by 4^r"
+    },
+    {
+      "access_legal_for_regev_dcp": true,
+      "access_model": "iid random-label records; one symmetric signed-product kernel averaged over all r-subsets",
+      "blocking_reason": "Hoeffding decomposition forces exponentially many records at fixed degree or explicitly evaluated tuples at growing degree. Polynomial implicit contractions remain outside this row.",
+      "decoder_status": "restricted Hoeffding variance proofs=1; joint-poly explicit rows=0",
+      "dominated_by": [
+        "kuperberg-generic-sieve",
+        "regev-polynomial-space-sieve"
+      ],
+      "exact_f1_robustness": "observation channel included; no decoder",
+      "lattice_composition_status": "blocked",
+      "memory_class": "potentially polynomial streaming memory, but explicit arithmetic remains exponential",
+      "method_id": "iid-explicit-overlapping-product-ustatistics",
+      "source_ids": [
+        "dcp_ustatistic_variance_audit.py"
+      ],
+      "state_sample_class": "2^Omega(n/r) records at fixed degree; records can be polynomial at growing degree",
+      "time_class": "2^Omega(n) explicit tuple terms for coarse polynomial bucket counts"
+    },
+    {
+      "access_legal_for_regev_dcp": true,
+      "access_model": "iid random-label records; scalar rank-one product kernel contracted in O(mr)",
+      "blocking_reason": "Elementary-symmetric contraction removes tuple enumeration but the first Hoeffding projection forces exponential records. Polynomial-rank and low-bond kernels remain outside this row.",
+      "decoder_status": "restricted rank-one no-go proofs=1; joint-poly rows=0",
+      "dominated_by": [
+        "kuperberg-generic-sieve",
+        "regev-polynomial-space-sieve"
+      ],
+      "exact_f1_robustness": "observation channel included; no decoder",
+      "lattice_composition_status": "blocked",
+      "memory_class": "O(r) contraction state plus input records",
+      "method_id": "iid-rank-one-elementary-symmetric-contraction",
+      "source_ids": [
+        "dcp_factorized_contraction_audit.py"
+      ],
+      "state_sample_class": "Omega(r^2 N/B) for B equal buckets under the uniform margin/MSE contract",
+      "time_class": "O(mr) contraction but exponential because the required m is exponential for B=poly(n)"
+    },
+    {
+      "access_legal_for_regev_dcp": true,
+      "access_model": "iid random labels; polynomial-rank cosine/Fejer/hybrid product-kernel sums",
+      "blocking_reason": "Exact all-order cross-component covariance makes every tested uniform separator sample-superpolynomial. Only a genuinely new cancellation/tensor mechanism can reopen this class.",
+      "decoder_status": "uniform finite separators=16; finite joint-poly survivors=0; proved uniform families=0",
+      "dominated_by": [
+        "kuperberg-generic-sieve",
+        "regev-polynomial-space-sieve"
+      ],
+      "exact_f1_robustness": "not reached; no polynomial clean-channel decoder",
+      "lattice_composition_status": "blocked",
+      "memory_class": "polynomial rank and contraction state; analysis grid is not used at runtime",
+      "method_id": "iid-tested-polynomial-rank-contractions",
+      "source_ids": [
+        "dcp_low_rank_contraction_search.py"
+      ],
+      "state_sample_class": "superpolynomial in every finite uniformly separating row under exact covariance",
+      "time_class": "O(BRrm), superpolynomial because fitted m is superpolynomial"
+    },
+    {
+      "access_legal_for_regev_dcp": true,
+      "access_model": "collective phase qubits; reversible public-label subset sum and ancilla QFT",
+      "blocking_reason": "Orthogonal which-subset garbage makes the sum-register QFT output exactly uniform.",
+      "decoder_status": "exact QFT signal instances=0; uniformity failures=0",
+      "dominated_by": [
+        "no-information"
+      ],
+      "exact_f1_robustness": "irrelevant because the clean architecture has zero signal",
+      "lattice_composition_status": "blocked",
+      "memory_class": "m input qubits plus n-qubit sum register",
+      "method_id": "collective-compute-subset-sum-qft",
+      "source_ids": [
+        "dcp_subset_sum_measurement_audit.py"
+      ],
+      "state_sample_class": "poly(n)",
+      "time_class": "polynomial circuit"
+    },
+    {
+      "access_legal_for_regev_dcp": true,
+      "access_model": "collective phase qubits; sequential exact residue-tracking tensor network",
+      "blocking_reason": "A linear prefix has exponentially many distinct subset sums, forcing exact residue states.",
+      "decoder_status": "high-probability exponential-bond certificates=4",
+      "dominated_by": [
+        "kuperberg-generic-sieve",
+        "regev-polynomial-space-sieve"
+      ],
+      "exact_f1_robustness": "not reached",
+      "lattice_composition_status": "blocked",
+      "memory_class": "2^Omega(n) exact residue bond dimension on random labels",
+      "method_id": "collective-exact-residue-mps",
+      "source_ids": [
+        "dcp_subset_sum_measurement_audit.py"
+      ],
+      "state_sample_class": "poly(n)",
+      "time_class": "exponential exact bond contraction with high probability"
+    },
+    {
+      "access_legal_for_regev_dcp": true,
+      "access_model": "collective phase qubits; 99-percent-fidelity subset-sum fiber-state tensor over a fixed polynomial dictionary of balanced coordinate layouts",
+      "blocking_reason": "Second-moment purity and full-fiber concentration force exponential 99-percent-fidelity bond simultaneously across every layout in a fixed polynomial dictionary. Fully label-adaptive layouts cannot gain a growing 2-adic subgroup by valuation sorting; genuinely additive adaptive layouts and partial-instance relation tensors remain open and must prove polynomial selection and source coverage.",
+      "decoder_status": "approximate/layout no-go theorems=1/1; adaptive valuation/general-layout theorems=1/0",
+      "dominated_by": [
+        "fiber-schmidt-purity-obstruction"
+      ],
+      "exact_f1_robustness": "not reached",
+      "lattice_composition_status": "blocked",
+      "memory_class": "2^(Omega(n))/poly(n) approximate Schmidt rank on the certified balanced cut",
+      "method_id": "collective-approximate-fiber-tensor-layout-dictionary",
+      "source_ids": [
+        "dcp_fiber_entanglement.py"
+      ],
+      "state_sample_class": "poly(n) input registers assumed",
+      "time_class": "2^(Omega(n))/poly(n) certified bond on density-one random fibers"
+    },
+    {
+      "access_legal_for_regev_dcp": true,
+      "access_model": "collective phase qubits; public subset-sum hash followed by uniform input postselection",
+      "blocking_reason": "Hidden-average success is the exact subset-sum collision probability, independent of hash dimension; some hidden d therefore has exponentially small success.",
+      "decoder_status": "worst-d no-go certificates=5; fiber symmetrizations=0",
+      "dominated_by": [
+        "kuperberg-generic-sieve",
+        "regev-polynomial-space-sieve"
+      ],
+      "exact_f1_robustness": "not reached; clean-state postselection is already exponential",
+      "lattice_composition_status": "blocked",
+      "memory_class": "polynomial hash and input registers",
+      "method_id": "collective-hashed-hadamard-fiber-erasure",
+      "source_ids": [
+        "dcp_hashed_fiber_measurement_audit.py"
+      ],
+      "state_sample_class": "exponential repetitions in the worst hidden reflection with high probability",
+      "time_class": "polynomial conditional circuit plus exponential postselection/amplification overhead"
+    },
+    {
+      "access_legal_for_regev_dcp": true,
+      "access_model": "collective phase qubits; arbitrary public label-dependent effect E independent of hidden d",
+      "blocking_reason": "The exact hidden-average bound Tr(E)c_max/2^m blocks rank-one, polynomial-rank, and every public polynomial-trace reference effect. Full-rank many-outcome/adaptive measurements remain open.",
+      "decoder_status": "low-trace no-go proofs=1; full-rank no-go proofs=0",
+      "dominated_by": [
+        "kuperberg-generic-sieve",
+        "regev-polynomial-space-sieve"
+      ],
+      "exact_f1_robustness": "not reached; clean-state low-trace success is already exponential",
+      "lattice_composition_status": "blocked",
+      "memory_class": "polynomial-rank effects covered; full-rank many-outcome measurements excluded",
+      "method_id": "collective-public-low-trace-reference-projection",
+      "source_ids": [
+        "dcp_reference_projection_audit.py"
+      ],
+      "state_sample_class": "exponential for every polynomial-trace postselection effect on random m=Theta(n) labels",
+      "time_class": "preparation may be polynomial or unbounded; the information/success bound applies regardless"
+    },
+    {
+      "access_legal_for_regev_dcp": true,
+      "access_model": "clean collective public-label DCP ensemble; full-rank N-outcome covariant measurement",
+      "blocking_reason": "The exact PGM resolves clean information complexity, but implementing |F_s>->|s> requires an unknown normalized-fiber isometry, block encoding, or collision walk without N-sized advice.",
+      "decoder_status": "mean clean m=n success=0.5826527495468754; polynomial circuits=0",
+      "dominated_by": [
+        "information-positive-but-computationally-unresolved"
+      ],
+      "exact_f1_robustness": "information robustness proofs=1; robust circuits=0",
+      "lattice_composition_status": "blocked",
+      "memory_class": "unknown; explicit representation has N outcomes and N multiplicities",
+      "method_id": "collective-clean-covariant-pgm",
+      "source_ids": [
+        "dcp_covariant_pgm_audit.py"
+      ],
+      "state_sample_class": "Theta(n) clean states give constant finite information success",
+      "time_class": "unknown; explicit PGM matrix/multiplicity table costs 2^Theta(n)"
+    },
+    {
+      "access_legal_for_regev_dcp": true,
+      "access_model": "random public DCP labels; deterministic partial modular subset-sum solver at r=n+O(1)",
+      "blocking_reason": "A partial deterministic solver is sufficient and weaker than full PGM implementation, but no structural poly(n) solver with inverse-polynomial legal-input coverage exists in the project.",
+      "decoder_status": "primary-source bridges=1; polynomial partial solvers=0",
+      "dominated_by": [],
+      "exact_f1_robustness": "built into the primary-source conditional DCP matching theorem",
+      "lattice_composition_status": "conditional edge to the verified Regev lattice contract",
+      "memory_class": "poly(n) required; meet-in-the-middle tables are exponential",
+      "method_id": "regev-partial-average-subset-sum-route",
+      "source_ids": [
+        "regev-lattice-dhsp-2003",
+        "dcp_subset_sum_bridge.py"
+      ],
+      "state_sample_class": "poly(n) conditional on inverse-polynomial legal-input solver coverage",
+      "time_class": "poly(n) conditional theorem; every implemented exact control remains exponential"
+    },
+    {
+      "access_legal_for_regev_dcp": true,
+      "access_model": "uniform random density-one subset-sum inputs; explicit target-independent coins shared coherently across matched endpoints",
+      "blocking_reason": "The interface obstruction is resolved for explicit target-independent shared coins, but no polynomial partial subset-sum solver with inverse-polynomial source coverage has been constructed.",
+      "decoder_status": "proved seeded bridge certificates=12/12; actual solvers=0",
+      "dominated_by": [],
+      "exact_f1_robustness": "inherits the source all-good analysis under the certified shared-seed interface",
+      "lattice_composition_status": "conditional interface proved; solver construction and coverage remain open",
+      "memory_class": "polynomial shared seed and reversible workspace required",
+      "method_id": "shared-seed-randomized-partial-solver-interface",
+      "source_ids": [
+        "dcp_coherent_matching_interface.py",
+        "regev-lattice-dhsp-2003"
+      ],
+      "state_sample_class": "poly(n) conditional on inverse-polynomial average legal coverage",
+      "time_class": "polynomial composition overhead conditional on a polynomial fixed-seed solver"
+    },
+    {
+      "access_legal_for_regev_dcp": true,
+      "access_model": "target-dependent coherent witness relation with retained amplitude and garbage workspaces",
+      "blocking_reason": "A generic quantum relation solver can leave orthogonal which-path workspaces and erase the DCP phase. A concrete algorithm needs a seeded decomposition or inverse-polynomial paired-workspace fidelity theorem.",
+      "decoder_status": "proved arbitrary quantum bridges=0; zero-visibility counterexamples=1",
+      "dominated_by": [],
+      "exact_f1_robustness": "not reached until paired-endpoint coherence is proved",
+      "lattice_composition_status": "blocked on canonicalization, amplitude balance, workspace overlap, and erasure",
+      "memory_class": "open; paired witness workspaces may be asymptotically orthogonal",
+      "method_id": "general-quantum-relation-partial-solver-interface",
+      "source_ids": [
+        "dcp_coherent_matching_interface.py"
+      ],
+      "state_sample_class": "unknown; algorithm-specific",
+      "time_class": "open; no generic composition theorem"
+    },
+    {
+      "access_legal_for_regev_dcp": true,
+      "access_model": "independent uniform density-one labels and target; target-independent explicit odd-unit seeds shared coherently",
+      "blocking_reason": "Odd units are a legitimate non-sign-isometric presentation class, but success fits exponential decay, reaches zero in the scaling tail, and no pre-reduction rule survives there. Blind orbit sampling is cut unless a new odd-part invariant yields an easy-orbit measure and LLL theorem.",
+      "decoder_status": "source bijections=2; odd-unit rescues=1; tail unconditional success=0/128; orbit slope=-0.5948056651970821; orbit tail=0/256",
+      "dominated_by": [],
+      "exact_f1_robustness": "inherits the proved shared-seed matching interface if source coverage is established",
+      "lattice_composition_status": "exact source map proved; orbit-hitting and average-case LLL coverage open",
+      "memory_class": "poly(n) integer basis and explicit O(n)-bit seed",
+      "method_id": "odd-unit-randomized-lll-partial-subset-sum",
+      "source_ids": [
+        "dcp_subset_sum_random_self_reduction.py",
+        "dcp_odd_unit_orbit_geometry.py",
+        "dcp_coherent_matching_interface.py"
+      ],
+      "state_sample_class": "not a state routine; verified classical partial-solver candidate",
+      "time_class": "poly(n) LLL calls under a polynomial odd-unit seed budget"
+    },
+    {
+      "access_legal_for_regev_dcp": true,
+      "access_model": "uniform random density-one modular subset-sum inputs from Regev's matching interface",
+      "blocking_reason": "Small-n centered-embedding recovery collapses in the tail; no uniform inverse-polynomial legal-input coverage or reversible implementation theorem exists.",
+      "decoder_status": "finite success rows=131; tail success rows=1/72; coverage proofs=0",
+      "dominated_by": [
+        "regev-partial-average-subset-sum-route-target"
+      ],
+      "exact_f1_robustness": "would inherit source theorem only after the partial-solver coverage contract is proved",
+      "lattice_composition_status": "blocked on coverage and reversible uniform implementation",
+      "memory_class": "polynomial dimension and O(n)-bit entries",
+      "method_id": "deterministic-modular-lll-partial-subset-sum",
+      "source_ids": [
+        "dcp_subset_sum_lattice_search.py"
+      ],
+      "state_sample_class": "not a state routine; candidate classical preprocessing subroutine",
+      "time_class": "polynomial exact integer LLL and fixed-arity basis scan"
+    },
+    {
+      "access_legal_for_regev_dcp": true,
+      "access_model": "uniform random density-one subset-sum inputs over Z_(2^n)",
+      "blocking_reason": "The exact carry audit uses exponential enumeration; finite bounded-degree fits may be interpolation, affine hulls overcover exact fibers, and no polynomial witness-finding theorem exists.",
+      "decoder_status": "degree-censored lifts=7; all-affine legal trials=0; uniform polynomial solvers=0",
+      "dominated_by": [
+        "regev-partial-average-subset-sum-route-target"
+      ],
+      "exact_f1_robustness": "would inherit the source theorem only after satisfying the partial-solver contract",
+      "lattice_composition_status": "blocked on symbolic compactness, polynomial solving, coverage, and reversibility",
+      "memory_class": "exact fiber enumeration is exponential; compact symbolic representation remains open",
+      "method_id": "two-adic-carry-lifting-partial-subset-sum",
+      "source_ids": [
+        "dcp_subset_sum_two_adic_search.py"
+      ],
+      "state_sample_class": "not a state routine; structural candidate for Regev's partial solver",
+      "time_class": "current audit Theta(2^(n+offset)); no polynomial witness algorithm"
+    },
+    {
+      "access_legal_for_regev_dcp": true,
+      "access_model": "random density-one modular subset sum; algorithm-specific exact, heuristic, randomized, or quantum access",
+      "blocking_reason": "Known exponent improvements remain exponential in n=log2 N; heuristic/randomized/quantum routes also need an interface theorem before entering Regev's deterministic matching reduction.",
+      "decoder_status": "known algorithms=7; Regev-contract solvers=0",
+      "dominated_by": [
+        "regev-partial-average-subset-sum-route-target"
+      ],
+      "exact_f1_robustness": "only source-interface compatible after polynomial deterministic or coherent composition",
+      "lattice_composition_status": "blocked because every recorded route retains a positive time exponent",
+      "memory_class": "algorithm-dependent exponential memory or quantum-accessible memory; no polynomial complete route",
+      "method_id": "known-subset-sum-resource-frontier",
+      "source_ids": [
+        "dcp_subset_sum_resource_frontier.py"
+      ],
+      "state_sample_class": "not a DCP state routine; comparison frontier for the partial matching subroutine",
+      "time_class": "best recorded classical/quantum exponents=0.255/0.218"
+    },
+    {
+      "access_legal_for_regev_dcp": true,
+      "access_model": "public random density-one labels and target over Z_(2^n)",
+      "blocking_reason": "Exact full-domain high-bit carry ANFs are not bounded degree in the tested random family; the audit is exponential and no polynomial algebraic witness solver exists.",
+      "decoder_status": "tail bounded-degree rows=0/48; max degree=16",
+      "dominated_by": [
+        "regev-partial-average-subset-sum-route-target"
+      ],
+      "exact_f1_robustness": "would inherit source theorem only after satisfying the partial-solver contract",
+      "lattice_composition_status": "blocked on bounded representation, witness solving, legal coverage, and reversibility",
+      "memory_class": "full truth tables exponential; no uniform sparse representation proved",
+      "method_id": "bounded-degree-two-adic-carry-reconstruction",
+      "source_ids": [
+        "dcp_subset_sum_carry_anf.py"
+      ],
+      "state_sample_class": "not a state routine; proposed algebraic partial subset-sum subroutine",
+      "time_class": "current exact ANF audit costs 2^(n+O(1)); no polynomial symbolic solver"
+    },
+    {
+      "access_legal_for_regev_dcp": true,
+      "access_model": "public random density-one labels; exact congruence modulo 2^ceil(c log n)",
+      "blocking_reason": "The exact polynomial low-bit representation is proved, but O(log n)-bit conditioning leaves linear residual witness entropy and no polynomial high-bit decoder.",
+      "decoder_status": "width/state certificates=16/16; witness solvers=0",
+      "dominated_by": [],
+      "exact_f1_robustness": "preprocessing primitive only; would compose after a high-bit partial solver exists",
+      "lattice_composition_status": "positive low-bit primitive; blocked on conditioned high-bit geometry and legal coverage",
+      "memory_class": "O(2^b poly(n))=poly(n); completion counts have O(n) bits",
+      "method_id": "logarithmic-low-bit-bdd-preconditioner",
+      "source_ids": [
+        "dcp_subset_sum_low_bit_bdd.py"
+      ],
+      "state_sample_class": "polynomial reversible preparation of the low-bit-valid assignment fiber",
+      "time_class": "O(n 2^b poly(n))=poly(n) for fixed b/log n multiplier"
+    },
+    {
+      "access_legal_for_regev_dcp": true,
+      "access_model": "public random density-one labels conditioned by the exact O(log n)-bit BDD",
+      "blocking_reason": "Exact finite conditioned quotients remain broad and no polynomial implicit decoder or asymptotic geometry theorem exists; this rejects the explicit-list shortcut, not all quotient-lattice mechanisms.",
+      "decoder_status": "tail minimum normalized entropy=0.9851110745339363; polynomial high-bit decoders=0",
+      "dominated_by": [],
+      "exact_f1_robustness": "would inherit the source theorem only after legal coverage and reversible composition",
+      "lattice_composition_status": "open; must prove changed quotient geometry rather than explicit-list concentration",
+      "memory_class": "open target poly(n); current full quotient table costs 2^Theta(n)",
+      "method_id": "conditioned-high-bit-quotient-implicit-decoder",
+      "source_ids": [
+        "dcp_subset_sum_conditioned_quotient.py"
+      ],
+      "state_sample_class": "not yet a state routine; exact finite quotient multiplicities are an exponential audit",
+      "time_class": "open target poly(n); explicit multiplicity table costs 2^Theta(n)"
+    },
+    {
+      "access_legal_for_regev_dcp": true,
+      "access_model": "public random density-one labels; all exact O(log n)-bit carry slices",
+      "blocking_reason": "Carry slicing adds a real polynomial exact constraint but does not improve paired tail recovery in the live sweep and has no average-case short-vector separation or inverse-polynomial coverage theorem.",
+      "decoder_status": "paired baseline/sliced=30/31; tail=8/7",
+      "dominated_by": [
+        "deterministic-modular-lll-partial-subset-sum"
+      ],
+      "exact_f1_robustness": "would inherit source robustness only after the partial-solver coverage theorem",
+      "lattice_composition_status": "deterministic finite solver implemented; uniform legal coverage and reversibility open",
+      "memory_class": "poly(n)",
+      "method_id": "carry-sliced-quotient-lattice",
+      "source_ids": [
+        "dcp_subset_sum_carry_slice_lattice.py"
+      ],
+      "state_sample_class": "not a state routine; deterministic classical partial-solver candidate",
+      "time_class": "poly(n) LLL calls with O(n)-bit entries for fixed extraction arity"
+    },
+    {
+      "access_legal_for_regev_dcp": true,
+      "access_model": "independent uniform density-one labels and target; no planted witness",
+      "blocking_reason": "Planted targets are measurably size-biased; no independent-uniform source subfamily is proved both inverse-polynomially common and efficiently detectable, and no polynomial representation solver exists.",
+      "decoder_status": "planted/legal TV=0.17260219090706388; detectable source subfamilies=0",
+      "dominated_by": [],
+      "exact_f1_robustness": "would inherit source theorem only after a valid partial-solver contract",
+      "lattice_composition_status": "blocked on source coverage, efficient detection, witness recovery, and reversibility",
+      "memory_class": "open target poly(n); current multiplicity table is 2^Theta(n)",
+      "method_id": "source-target-high-representation-partial-solver",
+      "source_ids": [
+        "dcp_subset_sum_target_distribution.py"
+      ],
+      "state_sample_class": "not a state routine; proposed classical partial subset-sum solver",
+      "time_class": "open target poly(n); current full target-table audit is 2^Theta(n)"
+    },
+    {
+      "access_legal_for_regev_dcp": true,
+      "access_model": "iid random-label local measurements with f=1-rate basis-state contamination",
+      "blocking_reason": "Rigorous separable interval bounds evaluate an exponential candidate set.",
+      "decoder_status": "exact recoveries=20; fitted slope=1.0",
+      "dominated_by": [
+        "kuperberg-generic-sieve",
+        "regev-polynomial-space-sieve"
+      ],
+      "exact_f1_robustness": "finite exact search uses the allowed contamination channel; no efficient theorem",
+      "lattice_composition_status": "blocked",
+      "memory_class": "sublinear queue possible, but exponential score work remains",
+      "method_id": "exact-likelihood-interval-branch-bound",
+      "source_ids": [
+        "dcp_likelihood_branch_bound.py"
+      ],
+      "state_sample_class": "poly(n)",
+      "time_class": "2^(Theta(n)) candidate score evaluations in observed exact scaling"
+    },
+    {
+      "access_legal_for_regev_dcp": true,
+      "access_model": "exact f=1 random-label DCP state contract",
+      "blocking_reason": "No construction or proof currently exists.",
+      "decoder_status": "open target",
+      "dominated_by": [],
+      "exact_f1_robustness": "required",
+      "lattice_composition_status": "required with primary-source parameter map",
+      "memory_class": "poly(n)",
+      "method_id": "target-polynomial-dcp-decoder",
+      "source_ids": [
+        "THM-REGEV-USVP-TO-DCP-2003"
+      ],
+      "state_sample_class": "poly(n)",
+      "time_class": "poly(n)"
+    }
+  ],
+  "status": "polynomial-dcp-decoder-open",
+  "summary": "Compared 33 DCP decoder/resource classes. FFT, exact likelihood search, and exact or uniformly margin-separated linear iid hash and disjoint multirecord routes are dominated or restricted-no-go; structured sparse FFT and chosen-label methods are access-invalid; no polynomial exact-f=1 decoder exists.",
+  "target_contract": {
+    "input": "poly(n) independent registers, each good with probability >=1-1/n and otherwise arbitrary basis state",
+    "output": "complete hidden reflection d, not one parity bit or a detector statistic",
+    "resources": "poly(n) time, state samples, and memory",
+    "success": "inverse-polynomial in n"
+  }
+}

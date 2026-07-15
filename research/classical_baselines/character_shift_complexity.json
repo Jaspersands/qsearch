@@ -1,0 +1,2107 @@
+{
+  "claim_gate": {
+    "natural_reduction_known": false,
+    "online_advantage_requires_no_preprocessing_model": true,
+    "query_advantage_allowed": false,
+    "required_statement": "State the problem as a uniform single-instance computational decoding conjecture with explicit preprocessing/advice exclusions; supply a natural reduction or named hardness assumption before treating it as more than an oracle separation.",
+    "single_instance_uniform_model_required": true,
+    "unconditional_lower_bound_known": false
+  },
+  "classical_upper_bounds": [
+    {
+      "access_model": "classical evaluator oracle returning (x+s)^e",
+      "algorithm": "dense shifted-power interpolation",
+      "character_order": 2,
+      "family_id": "legendre_symbol",
+      "implication": "A uniform deterministic recovery upper bound is already domain-scale for fixed character order.",
+      "literature_id": "bourgain-hidden-shifted-power-2011",
+      "n_bits": 5,
+      "preprocessing_bound": "none",
+      "prime": 37,
+      "query_bound": "e+1=19",
+      "shifted_power_exponent": 18,
+      "theorem_or_section": "Introduction, interpolation baseline",
+      "time_bound": "e * poly(log p)",
+      "time_exponent_in_prime": 0.8004534658002197
+    },
+    {
+      "access_model": "classical shifted-power evaluator oracle",
+      "algorithm": "deterministic hidden-shifted-power candidate reduction",
+      "character_order": 2,
+      "family_id": "legendre_symbol",
+      "implication": "For e=(p-1)/character_order, classical query complexity is logarithmic even though the known uniform decoding time remains domain-linear.",
+      "literature_id": "bourgain-hidden-shifted-power-2011",
+      "n_bits": 5,
+      "preprocessing_bound": "none",
+      "prime": 37,
+      "query_bound": "O(log p / log(p/e)); numeric ceiling=6",
+      "shifted_power_exponent": 18,
+      "theorem_or_section": "Theorem 43",
+      "time_bound": "p * poly(log p)",
+      "time_exponent_in_prime": 1.0
+    },
+    {
+      "access_model": "classical evaluator oracle plus proposed candidate t",
+      "algorithm": "known-shift identity test",
+      "character_order": 2,
+      "family_id": "legendre_symbol",
+      "implication": "Sublinear candidate verification exists, but testing all p candidates is not a poly(log p) decoder.",
+      "literature_id": "bourgain-hidden-shifted-power-2011",
+      "n_bits": 5,
+      "preprocessing_bound": "none",
+      "prime": 37,
+      "query_bound": "included in p^(1/4+o(1)) running time",
+      "shifted_power_exponent": 18,
+      "theorem_or_section": "Theorem 46",
+      "time_bound": "p^(1/4+o(1)) for deciding s=t",
+      "time_exponent_in_prime": 0.25
+    },
+    {
+      "access_model": "fixed chosen queries with modulus-dependent preprocessing/advice",
+      "algorithm": "fixed-prefix signature table",
+      "character_order": 2,
+      "family_id": "legendre_symbol",
+      "implication": "Any online hardness claim must exclude exponential advice/preprocessing and state amortization assumptions.",
+      "literature_id": "project-character-preprocessing-baseline",
+      "n_bits": 5,
+      "preprocessing_bound": "Theta(p log p) labels plus shift dictionary",
+      "prime": 37,
+      "query_bound": "empirical O(log p) fixed prefix on tested rows",
+      "shifted_power_exponent": 18,
+      "theorem_or_section": "executable baseline",
+      "time_bound": "online O(log p), preprocessing O(p log p)",
+      "time_exponent_in_prime": 1.0
+    },
+    {
+      "access_model": "classical evaluator oracle returning (x+s)^e",
+      "algorithm": "dense shifted-power interpolation",
+      "character_order": 2,
+      "family_id": "legendre_symbol",
+      "implication": "A uniform deterministic recovery upper bound is already domain-scale for fixed character order.",
+      "literature_id": "bourgain-hidden-shifted-power-2011",
+      "n_bits": 6,
+      "preprocessing_bound": "none",
+      "prime": 67,
+      "query_bound": "e+1=34",
+      "shifted_power_exponent": 33,
+      "theorem_or_section": "Introduction, interpolation baseline",
+      "time_bound": "e * poly(log p)",
+      "time_exponent_in_prime": 0.8315726922204688
+    },
+    {
+      "access_model": "classical shifted-power evaluator oracle",
+      "algorithm": "deterministic hidden-shifted-power candidate reduction",
+      "character_order": 2,
+      "family_id": "legendre_symbol",
+      "implication": "For e=(p-1)/character_order, classical query complexity is logarithmic even though the known uniform decoding time remains domain-linear.",
+      "literature_id": "bourgain-hidden-shifted-power-2011",
+      "n_bits": 6,
+      "preprocessing_bound": "none",
+      "prime": 67,
+      "query_bound": "O(log p / log(p/e)); numeric ceiling=6",
+      "shifted_power_exponent": 33,
+      "theorem_or_section": "Theorem 43",
+      "time_bound": "p * poly(log p)",
+      "time_exponent_in_prime": 1.0
+    },
+    {
+      "access_model": "classical evaluator oracle plus proposed candidate t",
+      "algorithm": "known-shift identity test",
+      "character_order": 2,
+      "family_id": "legendre_symbol",
+      "implication": "Sublinear candidate verification exists, but testing all p candidates is not a poly(log p) decoder.",
+      "literature_id": "bourgain-hidden-shifted-power-2011",
+      "n_bits": 6,
+      "preprocessing_bound": "none",
+      "prime": 67,
+      "query_bound": "included in p^(1/4+o(1)) running time",
+      "shifted_power_exponent": 33,
+      "theorem_or_section": "Theorem 46",
+      "time_bound": "p^(1/4+o(1)) for deciding s=t",
+      "time_exponent_in_prime": 0.25
+    },
+    {
+      "access_model": "fixed chosen queries with modulus-dependent preprocessing/advice",
+      "algorithm": "fixed-prefix signature table",
+      "character_order": 2,
+      "family_id": "legendre_symbol",
+      "implication": "Any online hardness claim must exclude exponential advice/preprocessing and state amortization assumptions.",
+      "literature_id": "project-character-preprocessing-baseline",
+      "n_bits": 6,
+      "preprocessing_bound": "Theta(p log p) labels plus shift dictionary",
+      "prime": 67,
+      "query_bound": "empirical O(log p) fixed prefix on tested rows",
+      "shifted_power_exponent": 33,
+      "theorem_or_section": "executable baseline",
+      "time_bound": "online O(log p), preprocessing O(p log p)",
+      "time_exponent_in_prime": 1.0
+    },
+    {
+      "access_model": "classical evaluator oracle returning (x+s)^e",
+      "algorithm": "dense shifted-power interpolation",
+      "character_order": 2,
+      "family_id": "legendre_symbol",
+      "implication": "A uniform deterministic recovery upper bound is already domain-scale for fixed character order.",
+      "literature_id": "bourgain-hidden-shifted-power-2011",
+      "n_bits": 7,
+      "preprocessing_bound": "none",
+      "prime": 131,
+      "query_bound": "e+1=66",
+      "shifted_power_exponent": 65,
+      "theorem_or_section": "Introduction, interpolation baseline",
+      "time_bound": "e * poly(log p)",
+      "time_exponent_in_prime": 0.8562499101379247
+    },
+    {
+      "access_model": "classical shifted-power evaluator oracle",
+      "algorithm": "deterministic hidden-shifted-power candidate reduction",
+      "character_order": 2,
+      "family_id": "legendre_symbol",
+      "implication": "For e=(p-1)/character_order, classical query complexity is logarithmic even though the known uniform decoding time remains domain-linear.",
+      "literature_id": "bourgain-hidden-shifted-power-2011",
+      "n_bits": 7,
+      "preprocessing_bound": "none",
+      "prime": 131,
+      "query_bound": "O(log p / log(p/e)); numeric ceiling=7",
+      "shifted_power_exponent": 65,
+      "theorem_or_section": "Theorem 43",
+      "time_bound": "p * poly(log p)",
+      "time_exponent_in_prime": 1.0
+    },
+    {
+      "access_model": "classical evaluator oracle plus proposed candidate t",
+      "algorithm": "known-shift identity test",
+      "character_order": 2,
+      "family_id": "legendre_symbol",
+      "implication": "Sublinear candidate verification exists, but testing all p candidates is not a poly(log p) decoder.",
+      "literature_id": "bourgain-hidden-shifted-power-2011",
+      "n_bits": 7,
+      "preprocessing_bound": "none",
+      "prime": 131,
+      "query_bound": "included in p^(1/4+o(1)) running time",
+      "shifted_power_exponent": 65,
+      "theorem_or_section": "Theorem 46",
+      "time_bound": "p^(1/4+o(1)) for deciding s=t",
+      "time_exponent_in_prime": 0.25
+    },
+    {
+      "access_model": "fixed chosen queries with modulus-dependent preprocessing/advice",
+      "algorithm": "fixed-prefix signature table",
+      "character_order": 2,
+      "family_id": "legendre_symbol",
+      "implication": "Any online hardness claim must exclude exponential advice/preprocessing and state amortization assumptions.",
+      "literature_id": "project-character-preprocessing-baseline",
+      "n_bits": 7,
+      "preprocessing_bound": "Theta(p log p) labels plus shift dictionary",
+      "prime": 131,
+      "query_bound": "empirical O(log p) fixed prefix on tested rows",
+      "shifted_power_exponent": 65,
+      "theorem_or_section": "executable baseline",
+      "time_bound": "online O(log p), preprocessing O(p log p)",
+      "time_exponent_in_prime": 1.0
+    },
+    {
+      "access_model": "classical evaluator oracle returning (x+s)^e",
+      "algorithm": "dense shifted-power interpolation",
+      "character_order": 2,
+      "family_id": "legendre_symbol",
+      "implication": "A uniform deterministic recovery upper bound is already domain-scale for fixed character order.",
+      "literature_id": "bourgain-hidden-shifted-power-2011",
+      "n_bits": 8,
+      "preprocessing_bound": "none",
+      "prime": 257,
+      "query_bound": "e+1=129",
+      "shifted_power_exponent": 128,
+      "theorem_or_section": "Introduction, interpolation baseline",
+      "time_bound": "e * poly(log p)",
+      "time_exponent_in_prime": 0.8743852471453786
+    },
+    {
+      "access_model": "classical shifted-power evaluator oracle",
+      "algorithm": "deterministic hidden-shifted-power candidate reduction",
+      "character_order": 2,
+      "family_id": "legendre_symbol",
+      "implication": "For e=(p-1)/character_order, classical query complexity is logarithmic even though the known uniform decoding time remains domain-linear.",
+      "literature_id": "bourgain-hidden-shifted-power-2011",
+      "n_bits": 8,
+      "preprocessing_bound": "none",
+      "prime": 257,
+      "query_bound": "O(log p / log(p/e)); numeric ceiling=8",
+      "shifted_power_exponent": 128,
+      "theorem_or_section": "Theorem 43",
+      "time_bound": "p * poly(log p)",
+      "time_exponent_in_prime": 1.0
+    },
+    {
+      "access_model": "classical evaluator oracle plus proposed candidate t",
+      "algorithm": "known-shift identity test",
+      "character_order": 2,
+      "family_id": "legendre_symbol",
+      "implication": "Sublinear candidate verification exists, but testing all p candidates is not a poly(log p) decoder.",
+      "literature_id": "bourgain-hidden-shifted-power-2011",
+      "n_bits": 8,
+      "preprocessing_bound": "none",
+      "prime": 257,
+      "query_bound": "included in p^(1/4+o(1)) running time",
+      "shifted_power_exponent": 128,
+      "theorem_or_section": "Theorem 46",
+      "time_bound": "p^(1/4+o(1)) for deciding s=t",
+      "time_exponent_in_prime": 0.25
+    },
+    {
+      "access_model": "fixed chosen queries with modulus-dependent preprocessing/advice",
+      "algorithm": "fixed-prefix signature table",
+      "character_order": 2,
+      "family_id": "legendre_symbol",
+      "implication": "Any online hardness claim must exclude exponential advice/preprocessing and state amortization assumptions.",
+      "literature_id": "project-character-preprocessing-baseline",
+      "n_bits": 8,
+      "preprocessing_bound": "Theta(p log p) labels plus shift dictionary",
+      "prime": 257,
+      "query_bound": "empirical O(log p) fixed prefix on tested rows",
+      "shifted_power_exponent": 128,
+      "theorem_or_section": "executable baseline",
+      "time_bound": "online O(log p), preprocessing O(p log p)",
+      "time_exponent_in_prime": 1.0
+    },
+    {
+      "access_model": "classical evaluator oracle returning (x+s)^e",
+      "algorithm": "dense shifted-power interpolation",
+      "character_order": 2,
+      "family_id": "legendre_symbol",
+      "implication": "A uniform deterministic recovery upper bound is already domain-scale for fixed character order.",
+      "literature_id": "bourgain-hidden-shifted-power-2011",
+      "n_bits": 9,
+      "preprocessing_bound": "none",
+      "prime": 521,
+      "query_bound": "e+1=261",
+      "shifted_power_exponent": 260,
+      "theorem_or_section": "Introduction, interpolation baseline",
+      "time_bound": "e * poly(log p)",
+      "time_exponent_in_prime": 0.8888912750511648
+    },
+    {
+      "access_model": "classical shifted-power evaluator oracle",
+      "algorithm": "deterministic hidden-shifted-power candidate reduction",
+      "character_order": 2,
+      "family_id": "legendre_symbol",
+      "implication": "For e=(p-1)/character_order, classical query complexity is logarithmic even though the known uniform decoding time remains domain-linear.",
+      "literature_id": "bourgain-hidden-shifted-power-2011",
+      "n_bits": 9,
+      "preprocessing_bound": "none",
+      "prime": 521,
+      "query_bound": "O(log p / log(p/e)); numeric ceiling=10",
+      "shifted_power_exponent": 260,
+      "theorem_or_section": "Theorem 43",
+      "time_bound": "p * poly(log p)",
+      "time_exponent_in_prime": 1.0
+    },
+    {
+      "access_model": "classical evaluator oracle plus proposed candidate t",
+      "algorithm": "known-shift identity test",
+      "character_order": 2,
+      "family_id": "legendre_symbol",
+      "implication": "Sublinear candidate verification exists, but testing all p candidates is not a poly(log p) decoder.",
+      "literature_id": "bourgain-hidden-shifted-power-2011",
+      "n_bits": 9,
+      "preprocessing_bound": "none",
+      "prime": 521,
+      "query_bound": "included in p^(1/4+o(1)) running time",
+      "shifted_power_exponent": 260,
+      "theorem_or_section": "Theorem 46",
+      "time_bound": "p^(1/4+o(1)) for deciding s=t",
+      "time_exponent_in_prime": 0.25
+    },
+    {
+      "access_model": "fixed chosen queries with modulus-dependent preprocessing/advice",
+      "algorithm": "fixed-prefix signature table",
+      "character_order": 2,
+      "family_id": "legendre_symbol",
+      "implication": "Any online hardness claim must exclude exponential advice/preprocessing and state amortization assumptions.",
+      "literature_id": "project-character-preprocessing-baseline",
+      "n_bits": 9,
+      "preprocessing_bound": "Theta(p log p) labels plus shift dictionary",
+      "prime": 521,
+      "query_bound": "empirical O(log p) fixed prefix on tested rows",
+      "shifted_power_exponent": 260,
+      "theorem_or_section": "executable baseline",
+      "time_bound": "online O(log p), preprocessing O(p log p)",
+      "time_exponent_in_prime": 1.0
+    },
+    {
+      "access_model": "classical evaluator oracle returning (x+s)^e",
+      "algorithm": "dense shifted-power interpolation",
+      "character_order": 2,
+      "family_id": "legendre_symbol",
+      "implication": "A uniform deterministic recovery upper bound is already domain-scale for fixed character order.",
+      "literature_id": "bourgain-hidden-shifted-power-2011",
+      "n_bits": 10,
+      "preprocessing_bound": "none",
+      "prime": 1031,
+      "query_bound": "e+1=516",
+      "shifted_power_exponent": 515,
+      "theorem_or_section": "Introduction, interpolation baseline",
+      "time_bound": "e * poly(log p)",
+      "time_exponent_in_prime": 0.8999583276021337
+    },
+    {
+      "access_model": "classical shifted-power evaluator oracle",
+      "algorithm": "deterministic hidden-shifted-power candidate reduction",
+      "character_order": 2,
+      "family_id": "legendre_symbol",
+      "implication": "For e=(p-1)/character_order, classical query complexity is logarithmic even though the known uniform decoding time remains domain-linear.",
+      "literature_id": "bourgain-hidden-shifted-power-2011",
+      "n_bits": 10,
+      "preprocessing_bound": "none",
+      "prime": 1031,
+      "query_bound": "O(log p / log(p/e)); numeric ceiling=10",
+      "shifted_power_exponent": 515,
+      "theorem_or_section": "Theorem 43",
+      "time_bound": "p * poly(log p)",
+      "time_exponent_in_prime": 1.0
+    },
+    {
+      "access_model": "classical evaluator oracle plus proposed candidate t",
+      "algorithm": "known-shift identity test",
+      "character_order": 2,
+      "family_id": "legendre_symbol",
+      "implication": "Sublinear candidate verification exists, but testing all p candidates is not a poly(log p) decoder.",
+      "literature_id": "bourgain-hidden-shifted-power-2011",
+      "n_bits": 10,
+      "preprocessing_bound": "none",
+      "prime": 1031,
+      "query_bound": "included in p^(1/4+o(1)) running time",
+      "shifted_power_exponent": 515,
+      "theorem_or_section": "Theorem 46",
+      "time_bound": "p^(1/4+o(1)) for deciding s=t",
+      "time_exponent_in_prime": 0.25
+    },
+    {
+      "access_model": "fixed chosen queries with modulus-dependent preprocessing/advice",
+      "algorithm": "fixed-prefix signature table",
+      "character_order": 2,
+      "family_id": "legendre_symbol",
+      "implication": "Any online hardness claim must exclude exponential advice/preprocessing and state amortization assumptions.",
+      "literature_id": "project-character-preprocessing-baseline",
+      "n_bits": 10,
+      "preprocessing_bound": "Theta(p log p) labels plus shift dictionary",
+      "prime": 1031,
+      "query_bound": "empirical O(log p) fixed prefix on tested rows",
+      "shifted_power_exponent": 515,
+      "theorem_or_section": "executable baseline",
+      "time_bound": "online O(log p), preprocessing O(p log p)",
+      "time_exponent_in_prime": 1.0
+    },
+    {
+      "access_model": "classical evaluator oracle returning (x+s)^e",
+      "algorithm": "dense shifted-power interpolation",
+      "character_order": 4,
+      "family_id": "quartic_character",
+      "implication": "A uniform deterministic recovery upper bound is already domain-scale for fixed character order.",
+      "literature_id": "bourgain-hidden-shifted-power-2011",
+      "n_bits": 5,
+      "preprocessing_bound": "none",
+      "prime": 37,
+      "query_bound": "e+1=10",
+      "shifted_power_exponent": 9,
+      "theorem_or_section": "Introduction, interpolation baseline",
+      "time_bound": "e * poly(log p)",
+      "time_exponent_in_prime": 0.6084947457936597
+    },
+    {
+      "access_model": "classical shifted-power evaluator oracle",
+      "algorithm": "deterministic hidden-shifted-power candidate reduction",
+      "character_order": 4,
+      "family_id": "quartic_character",
+      "implication": "For e=(p-1)/character_order, classical query complexity is logarithmic even though the known uniform decoding time remains domain-linear.",
+      "literature_id": "bourgain-hidden-shifted-power-2011",
+      "n_bits": 5,
+      "preprocessing_bound": "none",
+      "prime": 37,
+      "query_bound": "O(log p / log(p/e)); numeric ceiling=3",
+      "shifted_power_exponent": 9,
+      "theorem_or_section": "Theorem 43",
+      "time_bound": "p * poly(log p)",
+      "time_exponent_in_prime": 1.0
+    },
+    {
+      "access_model": "classical evaluator oracle plus proposed candidate t",
+      "algorithm": "known-shift identity test",
+      "character_order": 4,
+      "family_id": "quartic_character",
+      "implication": "Sublinear candidate verification exists, but testing all p candidates is not a poly(log p) decoder.",
+      "literature_id": "bourgain-hidden-shifted-power-2011",
+      "n_bits": 5,
+      "preprocessing_bound": "none",
+      "prime": 37,
+      "query_bound": "included in p^(1/4+o(1)) running time",
+      "shifted_power_exponent": 9,
+      "theorem_or_section": "Theorem 46",
+      "time_bound": "p^(1/4+o(1)) for deciding s=t",
+      "time_exponent_in_prime": 0.25
+    },
+    {
+      "access_model": "fixed chosen queries with modulus-dependent preprocessing/advice",
+      "algorithm": "fixed-prefix signature table",
+      "character_order": 4,
+      "family_id": "quartic_character",
+      "implication": "Any online hardness claim must exclude exponential advice/preprocessing and state amortization assumptions.",
+      "literature_id": "project-character-preprocessing-baseline",
+      "n_bits": 5,
+      "preprocessing_bound": "Theta(p log p) labels plus shift dictionary",
+      "prime": 37,
+      "query_bound": "empirical O(log p) fixed prefix on tested rows",
+      "shifted_power_exponent": 9,
+      "theorem_or_section": "executable baseline",
+      "time_bound": "online O(log p), preprocessing O(p log p)",
+      "time_exponent_in_prime": 1.0
+    },
+    {
+      "access_model": "classical evaluator oracle returning (x+s)^e",
+      "algorithm": "dense shifted-power interpolation",
+      "character_order": 4,
+      "family_id": "quartic_character",
+      "implication": "A uniform deterministic recovery upper bound is already domain-scale for fixed character order.",
+      "literature_id": "bourgain-hidden-shifted-power-2011",
+      "n_bits": 6,
+      "preprocessing_bound": "none",
+      "prime": 73,
+      "query_bound": "e+1=19",
+      "shifted_power_exponent": 18,
+      "theorem_or_section": "Introduction, interpolation baseline",
+      "time_bound": "e * poly(log p)",
+      "time_exponent_in_prime": 0.67367418281025
+    },
+    {
+      "access_model": "classical shifted-power evaluator oracle",
+      "algorithm": "deterministic hidden-shifted-power candidate reduction",
+      "character_order": 4,
+      "family_id": "quartic_character",
+      "implication": "For e=(p-1)/character_order, classical query complexity is logarithmic even though the known uniform decoding time remains domain-linear.",
+      "literature_id": "bourgain-hidden-shifted-power-2011",
+      "n_bits": 6,
+      "preprocessing_bound": "none",
+      "prime": 73,
+      "query_bound": "O(log p / log(p/e)); numeric ceiling=4",
+      "shifted_power_exponent": 18,
+      "theorem_or_section": "Theorem 43",
+      "time_bound": "p * poly(log p)",
+      "time_exponent_in_prime": 1.0
+    },
+    {
+      "access_model": "classical evaluator oracle plus proposed candidate t",
+      "algorithm": "known-shift identity test",
+      "character_order": 4,
+      "family_id": "quartic_character",
+      "implication": "Sublinear candidate verification exists, but testing all p candidates is not a poly(log p) decoder.",
+      "literature_id": "bourgain-hidden-shifted-power-2011",
+      "n_bits": 6,
+      "preprocessing_bound": "none",
+      "prime": 73,
+      "query_bound": "included in p^(1/4+o(1)) running time",
+      "shifted_power_exponent": 18,
+      "theorem_or_section": "Theorem 46",
+      "time_bound": "p^(1/4+o(1)) for deciding s=t",
+      "time_exponent_in_prime": 0.25
+    },
+    {
+      "access_model": "fixed chosen queries with modulus-dependent preprocessing/advice",
+      "algorithm": "fixed-prefix signature table",
+      "character_order": 4,
+      "family_id": "quartic_character",
+      "implication": "Any online hardness claim must exclude exponential advice/preprocessing and state amortization assumptions.",
+      "literature_id": "project-character-preprocessing-baseline",
+      "n_bits": 6,
+      "preprocessing_bound": "Theta(p log p) labels plus shift dictionary",
+      "prime": 73,
+      "query_bound": "empirical O(log p) fixed prefix on tested rows",
+      "shifted_power_exponent": 18,
+      "theorem_or_section": "executable baseline",
+      "time_bound": "online O(log p), preprocessing O(p log p)",
+      "time_exponent_in_prime": 1.0
+    },
+    {
+      "access_model": "classical evaluator oracle returning (x+s)^e",
+      "algorithm": "dense shifted-power interpolation",
+      "character_order": 4,
+      "family_id": "quartic_character",
+      "implication": "A uniform deterministic recovery upper bound is already domain-scale for fixed character order.",
+      "literature_id": "bourgain-hidden-shifted-power-2011",
+      "n_bits": 7,
+      "preprocessing_bound": "none",
+      "prime": 137,
+      "query_bound": "e+1=35",
+      "shifted_power_exponent": 34,
+      "theorem_or_section": "Introduction, interpolation baseline",
+      "time_bound": "e * poly(log p)",
+      "time_exponent_in_prime": 0.7167427227418791
+    },
+    {
+      "access_model": "classical shifted-power evaluator oracle",
+      "algorithm": "deterministic hidden-shifted-power candidate reduction",
+      "character_order": 4,
+      "family_id": "quartic_character",
+      "implication": "For e=(p-1)/character_order, classical query complexity is logarithmic even though the known uniform decoding time remains domain-linear.",
+      "literature_id": "bourgain-hidden-shifted-power-2011",
+      "n_bits": 7,
+      "preprocessing_bound": "none",
+      "prime": 137,
+      "query_bound": "O(log p / log(p/e)); numeric ceiling=4",
+      "shifted_power_exponent": 34,
+      "theorem_or_section": "Theorem 43",
+      "time_bound": "p * poly(log p)",
+      "time_exponent_in_prime": 1.0
+    },
+    {
+      "access_model": "classical evaluator oracle plus proposed candidate t",
+      "algorithm": "known-shift identity test",
+      "character_order": 4,
+      "family_id": "quartic_character",
+      "implication": "Sublinear candidate verification exists, but testing all p candidates is not a poly(log p) decoder.",
+      "literature_id": "bourgain-hidden-shifted-power-2011",
+      "n_bits": 7,
+      "preprocessing_bound": "none",
+      "prime": 137,
+      "query_bound": "included in p^(1/4+o(1)) running time",
+      "shifted_power_exponent": 34,
+      "theorem_or_section": "Theorem 46",
+      "time_bound": "p^(1/4+o(1)) for deciding s=t",
+      "time_exponent_in_prime": 0.25
+    },
+    {
+      "access_model": "fixed chosen queries with modulus-dependent preprocessing/advice",
+      "algorithm": "fixed-prefix signature table",
+      "character_order": 4,
+      "family_id": "quartic_character",
+      "implication": "Any online hardness claim must exclude exponential advice/preprocessing and state amortization assumptions.",
+      "literature_id": "project-character-preprocessing-baseline",
+      "n_bits": 7,
+      "preprocessing_bound": "Theta(p log p) labels plus shift dictionary",
+      "prime": 137,
+      "query_bound": "empirical O(log p) fixed prefix on tested rows",
+      "shifted_power_exponent": 34,
+      "theorem_or_section": "executable baseline",
+      "time_bound": "online O(log p), preprocessing O(p log p)",
+      "time_exponent_in_prime": 1.0
+    },
+    {
+      "access_model": "classical evaluator oracle returning (x+s)^e",
+      "algorithm": "dense shifted-power interpolation",
+      "character_order": 4,
+      "family_id": "quartic_character",
+      "implication": "A uniform deterministic recovery upper bound is already domain-scale for fixed character order.",
+      "literature_id": "bourgain-hidden-shifted-power-2011",
+      "n_bits": 8,
+      "preprocessing_bound": "none",
+      "prime": 257,
+      "query_bound": "e+1=65",
+      "shifted_power_exponent": 64,
+      "theorem_or_section": "Introduction, interpolation baseline",
+      "time_bound": "e * poly(log p)",
+      "time_exponent_in_prime": 0.749473068981753
+    },
+    {
+      "access_model": "classical shifted-power evaluator oracle",
+      "algorithm": "deterministic hidden-shifted-power candidate reduction",
+      "character_order": 4,
+      "family_id": "quartic_character",
+      "implication": "For e=(p-1)/character_order, classical query complexity is logarithmic even though the known uniform decoding time remains domain-linear.",
+      "literature_id": "bourgain-hidden-shifted-power-2011",
+      "n_bits": 8,
+      "preprocessing_bound": "none",
+      "prime": 257,
+      "query_bound": "O(log p / log(p/e)); numeric ceiling=4",
+      "shifted_power_exponent": 64,
+      "theorem_or_section": "Theorem 43",
+      "time_bound": "p * poly(log p)",
+      "time_exponent_in_prime": 1.0
+    },
+    {
+      "access_model": "classical evaluator oracle plus proposed candidate t",
+      "algorithm": "known-shift identity test",
+      "character_order": 4,
+      "family_id": "quartic_character",
+      "implication": "Sublinear candidate verification exists, but testing all p candidates is not a poly(log p) decoder.",
+      "literature_id": "bourgain-hidden-shifted-power-2011",
+      "n_bits": 8,
+      "preprocessing_bound": "none",
+      "prime": 257,
+      "query_bound": "included in p^(1/4+o(1)) running time",
+      "shifted_power_exponent": 64,
+      "theorem_or_section": "Theorem 46",
+      "time_bound": "p^(1/4+o(1)) for deciding s=t",
+      "time_exponent_in_prime": 0.25
+    },
+    {
+      "access_model": "fixed chosen queries with modulus-dependent preprocessing/advice",
+      "algorithm": "fixed-prefix signature table",
+      "character_order": 4,
+      "family_id": "quartic_character",
+      "implication": "Any online hardness claim must exclude exponential advice/preprocessing and state amortization assumptions.",
+      "literature_id": "project-character-preprocessing-baseline",
+      "n_bits": 8,
+      "preprocessing_bound": "Theta(p log p) labels plus shift dictionary",
+      "prime": 257,
+      "query_bound": "empirical O(log p) fixed prefix on tested rows",
+      "shifted_power_exponent": 64,
+      "theorem_or_section": "executable baseline",
+      "time_bound": "online O(log p), preprocessing O(p log p)",
+      "time_exponent_in_prime": 1.0
+    },
+    {
+      "access_model": "classical evaluator oracle returning (x+s)^e",
+      "algorithm": "dense shifted-power interpolation",
+      "character_order": 4,
+      "family_id": "quartic_character",
+      "implication": "A uniform deterministic recovery upper bound is already domain-scale for fixed character order.",
+      "literature_id": "bourgain-hidden-shifted-power-2011",
+      "n_bits": 9,
+      "preprocessing_bound": "none",
+      "prime": 521,
+      "query_bound": "e+1=131",
+      "shifted_power_exponent": 130,
+      "theorem_or_section": "Introduction, interpolation baseline",
+      "time_bound": "e * poly(log p)",
+      "time_exponent_in_prime": 0.7780896643836022
+    },
+    {
+      "access_model": "classical shifted-power evaluator oracle",
+      "algorithm": "deterministic hidden-shifted-power candidate reduction",
+      "character_order": 4,
+      "family_id": "quartic_character",
+      "implication": "For e=(p-1)/character_order, classical query complexity is logarithmic even though the known uniform decoding time remains domain-linear.",
+      "literature_id": "bourgain-hidden-shifted-power-2011",
+      "n_bits": 9,
+      "preprocessing_bound": "none",
+      "prime": 521,
+      "query_bound": "O(log p / log(p/e)); numeric ceiling=5",
+      "shifted_power_exponent": 130,
+      "theorem_or_section": "Theorem 43",
+      "time_bound": "p * poly(log p)",
+      "time_exponent_in_prime": 1.0
+    },
+    {
+      "access_model": "classical evaluator oracle plus proposed candidate t",
+      "algorithm": "known-shift identity test",
+      "character_order": 4,
+      "family_id": "quartic_character",
+      "implication": "Sublinear candidate verification exists, but testing all p candidates is not a poly(log p) decoder.",
+      "literature_id": "bourgain-hidden-shifted-power-2011",
+      "n_bits": 9,
+      "preprocessing_bound": "none",
+      "prime": 521,
+      "query_bound": "included in p^(1/4+o(1)) running time",
+      "shifted_power_exponent": 130,
+      "theorem_or_section": "Theorem 46",
+      "time_bound": "p^(1/4+o(1)) for deciding s=t",
+      "time_exponent_in_prime": 0.25
+    },
+    {
+      "access_model": "fixed chosen queries with modulus-dependent preprocessing/advice",
+      "algorithm": "fixed-prefix signature table",
+      "character_order": 4,
+      "family_id": "quartic_character",
+      "implication": "Any online hardness claim must exclude exponential advice/preprocessing and state amortization assumptions.",
+      "literature_id": "project-character-preprocessing-baseline",
+      "n_bits": 9,
+      "preprocessing_bound": "Theta(p log p) labels plus shift dictionary",
+      "prime": 521,
+      "query_bound": "empirical O(log p) fixed prefix on tested rows",
+      "shifted_power_exponent": 130,
+      "theorem_or_section": "executable baseline",
+      "time_bound": "online O(log p), preprocessing O(p log p)",
+      "time_exponent_in_prime": 1.0
+    },
+    {
+      "access_model": "classical evaluator oracle returning (x+s)^e",
+      "algorithm": "dense shifted-power interpolation",
+      "character_order": 4,
+      "family_id": "quartic_character",
+      "implication": "A uniform deterministic recovery upper bound is already domain-scale for fixed character order.",
+      "literature_id": "bourgain-hidden-shifted-power-2011",
+      "n_bits": 10,
+      "preprocessing_bound": "none",
+      "prime": 1033,
+      "query_bound": "e+1=259",
+      "shifted_power_exponent": 258,
+      "theorem_or_section": "Introduction, interpolation baseline",
+      "time_bound": "e * poly(log p)",
+      "time_exponent_in_prime": 0.8001126202552417
+    },
+    {
+      "access_model": "classical shifted-power evaluator oracle",
+      "algorithm": "deterministic hidden-shifted-power candidate reduction",
+      "character_order": 4,
+      "family_id": "quartic_character",
+      "implication": "For e=(p-1)/character_order, classical query complexity is logarithmic even though the known uniform decoding time remains domain-linear.",
+      "literature_id": "bourgain-hidden-shifted-power-2011",
+      "n_bits": 10,
+      "preprocessing_bound": "none",
+      "prime": 1033,
+      "query_bound": "O(log p / log(p/e)); numeric ceiling=6",
+      "shifted_power_exponent": 258,
+      "theorem_or_section": "Theorem 43",
+      "time_bound": "p * poly(log p)",
+      "time_exponent_in_prime": 1.0
+    },
+    {
+      "access_model": "classical evaluator oracle plus proposed candidate t",
+      "algorithm": "known-shift identity test",
+      "character_order": 4,
+      "family_id": "quartic_character",
+      "implication": "Sublinear candidate verification exists, but testing all p candidates is not a poly(log p) decoder.",
+      "literature_id": "bourgain-hidden-shifted-power-2011",
+      "n_bits": 10,
+      "preprocessing_bound": "none",
+      "prime": 1033,
+      "query_bound": "included in p^(1/4+o(1)) running time",
+      "shifted_power_exponent": 258,
+      "theorem_or_section": "Theorem 46",
+      "time_bound": "p^(1/4+o(1)) for deciding s=t",
+      "time_exponent_in_prime": 0.25
+    },
+    {
+      "access_model": "fixed chosen queries with modulus-dependent preprocessing/advice",
+      "algorithm": "fixed-prefix signature table",
+      "character_order": 4,
+      "family_id": "quartic_character",
+      "implication": "Any online hardness claim must exclude exponential advice/preprocessing and state amortization assumptions.",
+      "literature_id": "project-character-preprocessing-baseline",
+      "n_bits": 10,
+      "preprocessing_bound": "Theta(p log p) labels plus shift dictionary",
+      "prime": 1033,
+      "query_bound": "empirical O(log p) fixed prefix on tested rows",
+      "shifted_power_exponent": 258,
+      "theorem_or_section": "executable baseline",
+      "time_bound": "online O(log p), preprocessing O(p log p)",
+      "time_exponent_in_prime": 1.0
+    }
+  ],
+  "created_at": "2026-07-14T05:50:18.413164+00:00",
+  "falsifiers_triggered": [
+    "Known classical hidden-shifted-power algorithms already use logarithmically many queries with domain-scale time.",
+    "Fixed public query prefixes admit polynomial-online decoding after domain-size preprocessing on every tested row.",
+    "No unconditional superpolynomial decoding lower bound or natural-problem reduction is present."
+  ],
+  "families": [
+    "legendre_symbol",
+    "quartic_character"
+  ],
+  "headline_metrics": {
+    "fixed_prefix_ambiguous_count": 0,
+    "fixed_prefix_decode_success_count": 12,
+    "known_classical_upper_bound_count": 48,
+    "logarithmic_query_domain_time_upper_bound_count": 12,
+    "max_online_operation_exponent_per_bit": 0.6,
+    "max_preprocessing_operation_exponent_per_bit": 1.6418906731257898,
+    "max_unique_prefix_over_n_bits": 2.0,
+    "natural_problem_reduction_count": 0,
+    "nonuniform_online_polylog_count": 12,
+    "positive_evidence_count": 0,
+    "preprocessing_row_count": 12,
+    "unconditional_superpolynomial_lower_bound_count": 0,
+    "uniform_polylog_classical_decoder_count": 0
+  },
+  "id": "CHARACTER-SHIFT-COMPLEXITY-LATEST",
+  "kind": "multiplicative-character-complexity-and-preprocessing-ledger",
+  "literature_ids": [
+    "bourgain-hidden-shifted-power-2011",
+    "ip-shift-deconvolution-2002",
+    "van-dam-hallgren-shifted-character-2000"
+  ],
+  "literature_sources": {
+    "bourgain-hidden-shifted-power-2011": "https://arxiv.org/abs/1110.0812",
+    "ip-shift-deconvolution-2002": "https://arxiv.org/abs/quant-ph/0205034",
+    "van-dam-hallgren-shifted-character-2000": "https://arxiv.org/abs/quant-ph/0011067"
+  },
+  "n_values": [
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "preprocessing_records": [
+    {
+      "access_model": "fixed chosen queries plus public modulus-dependent nonuniform preprocessing/advice",
+      "advice_bits_upper_bound": 777,
+      "amortized_operations_by_batch": {
+        "1": 304.0,
+        "37": 16.0,
+        "5": 67.2
+      },
+      "character_order": 2,
+      "collision_profile": [
+        {
+          "collision_pair_count": 324,
+          "distinct_signature_count": 2,
+          "max_bucket_size": 19,
+          "prefix_length": 1
+        },
+        {
+          "collision_pair_count": 153,
+          "distinct_signature_count": 4,
+          "max_bucket_size": 10,
+          "prefix_length": 2
+        },
+        {
+          "collision_pair_count": 68,
+          "distinct_signature_count": 8,
+          "max_bucket_size": 5,
+          "prefix_length": 3
+        },
+        {
+          "collision_pair_count": 29,
+          "distinct_signature_count": 16,
+          "max_bucket_size": 3,
+          "prefix_length": 4
+        },
+        {
+          "collision_pair_count": 9,
+          "distinct_signature_count": 28,
+          "max_bucket_size": 2,
+          "prefix_length": 5
+        },
+        {
+          "collision_pair_count": 3,
+          "distinct_signature_count": 34,
+          "max_bucket_size": 2,
+          "prefix_length": 6
+        },
+        {
+          "collision_pair_count": 1,
+          "distinct_signature_count": 36,
+          "max_bucket_size": 2,
+          "prefix_length": 7
+        },
+        {
+          "collision_pair_count": 0,
+          "distinct_signature_count": 37,
+          "max_bucket_size": 1,
+          "prefix_length": 8
+        }
+      ],
+      "family_id": "legendre_symbol",
+      "first_globally_unique_prefix": 8,
+      "fixed_query_positions": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "interpretation": "A fixed public prefix uniquely fingerprints every shift and a precomputed domain-size table decodes the observed prefix online. Online query/time cost is polynomial in log p, but preprocessing and advice remain Theta(p log p), exponential in the encoded input length.",
+      "memory_exponent_per_bit": 1.6418906731257898,
+      "n_bits": 5,
+      "online_lookup_operations": 8,
+      "online_operation_exponent_per_bit": 0.6,
+      "online_queries": 8,
+      "prefix_over_n_bits": 1.6,
+      "preprocessing_memory_labels": 296,
+      "preprocessing_operation_exponent_per_bit": 1.6418906731257898,
+      "preprocessing_operations": 296,
+      "prime": 37,
+      "recovered_shift": 7,
+      "single_instance_total_operations": 304,
+      "status": "fixed-query-fingerprint-with-domain-preprocessing",
+      "success": true,
+      "true_shift": 7,
+      "use_as_positive_evidence": false
+    },
+    {
+      "access_model": "fixed chosen queries plus public modulus-dependent nonuniform preprocessing/advice",
+      "advice_bits_upper_bound": 1474,
+      "amortized_operations_by_batch": {
+        "1": 544.0,
+        "6": 97.33333333333333,
+        "67": 16.0
+      },
+      "character_order": 2,
+      "collision_profile": [
+        {
+          "collision_pair_count": 1089,
+          "distinct_signature_count": 2,
+          "max_bucket_size": 34,
+          "prefix_length": 1
+        },
+        {
+          "collision_pair_count": 528,
+          "distinct_signature_count": 4,
+          "max_bucket_size": 17,
+          "prefix_length": 2
+        },
+        {
+          "collision_pair_count": 248,
+          "distinct_signature_count": 8,
+          "max_bucket_size": 9,
+          "prefix_length": 3
+        },
+        {
+          "collision_pair_count": 109,
+          "distinct_signature_count": 16,
+          "max_bucket_size": 5,
+          "prefix_length": 4
+        },
+        {
+          "collision_pair_count": 40,
+          "distinct_signature_count": 32,
+          "max_bucket_size": 3,
+          "prefix_length": 5
+        },
+        {
+          "collision_pair_count": 13,
+          "distinct_signature_count": 54,
+          "max_bucket_size": 2,
+          "prefix_length": 6
+        },
+        {
+          "collision_pair_count": 3,
+          "distinct_signature_count": 64,
+          "max_bucket_size": 2,
+          "prefix_length": 7
+        },
+        {
+          "collision_pair_count": 0,
+          "distinct_signature_count": 67,
+          "max_bucket_size": 1,
+          "prefix_length": 8
+        }
+      ],
+      "family_id": "legendre_symbol",
+      "first_globally_unique_prefix": 8,
+      "fixed_query_positions": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "interpretation": "A fixed public prefix uniquely fingerprints every shift and a precomputed domain-size table decodes the observed prefix online. Online query/time cost is polynomial in log p, but preprocessing and advice remain Theta(p log p), exponential in the encoded input length.",
+      "memory_exponent_per_bit": 1.5110148650762953,
+      "n_bits": 6,
+      "online_lookup_operations": 8,
+      "online_operation_exponent_per_bit": 0.5,
+      "online_queries": 8,
+      "prefix_over_n_bits": 1.3333333333333333,
+      "preprocessing_memory_labels": 536,
+      "preprocessing_operation_exponent_per_bit": 1.5110148650762953,
+      "preprocessing_operations": 536,
+      "prime": 67,
+      "recovered_shift": 7,
+      "single_instance_total_operations": 544,
+      "status": "fixed-query-fingerprint-with-domain-preprocessing",
+      "success": true,
+      "true_shift": 7,
+      "use_as_positive_evidence": false
+    },
+    {
+      "access_model": "fixed chosen queries plus public modulus-dependent nonuniform preprocessing/advice",
+      "advice_bits_upper_bound": 3799,
+      "amortized_operations_by_batch": {
+        "1": 1452.0,
+        "131": 22.0,
+        "7": 216.85714285714286
+      },
+      "character_order": 2,
+      "collision_profile": [
+        {
+          "collision_pair_count": 4225,
+          "distinct_signature_count": 2,
+          "max_bucket_size": 66,
+          "prefix_length": 1
+        },
+        {
+          "collision_pair_count": 2080,
+          "distinct_signature_count": 4,
+          "max_bucket_size": 33,
+          "prefix_length": 2
+        },
+        {
+          "collision_pair_count": 1008,
+          "distinct_signature_count": 8,
+          "max_bucket_size": 17,
+          "prefix_length": 3
+        },
+        {
+          "collision_pair_count": 473,
+          "distinct_signature_count": 16,
+          "max_bucket_size": 9,
+          "prefix_length": 4
+        },
+        {
+          "collision_pair_count": 206,
+          "distinct_signature_count": 32,
+          "max_bucket_size": 5,
+          "prefix_length": 5
+        },
+        {
+          "collision_pair_count": 92,
+          "distinct_signature_count": 62,
+          "max_bucket_size": 4,
+          "prefix_length": 6
+        },
+        {
+          "collision_pair_count": 36,
+          "distinct_signature_count": 98,
+          "max_bucket_size": 3,
+          "prefix_length": 7
+        },
+        {
+          "collision_pair_count": 15,
+          "distinct_signature_count": 116,
+          "max_bucket_size": 2,
+          "prefix_length": 8
+        },
+        {
+          "collision_pair_count": 7,
+          "distinct_signature_count": 124,
+          "max_bucket_size": 2,
+          "prefix_length": 9
+        },
+        {
+          "collision_pair_count": 2,
+          "distinct_signature_count": 129,
+          "max_bucket_size": 2,
+          "prefix_length": 10
+        },
+        {
+          "collision_pair_count": 0,
+          "distinct_signature_count": 131,
+          "max_bucket_size": 1,
+          "prefix_length": 11
+        }
+      ],
+      "family_id": "legendre_symbol",
+      "first_globally_unique_prefix": 11,
+      "fixed_query_positions": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "interpretation": "A fixed public prefix uniquely fingerprints every shift and a precomputed domain-size table decodes the observed prefix online. Online query/time cost is polynomial in log p, but preprocessing and advice remain Theta(p log p), exponential in the encoded input length.",
+      "memory_exponent_per_bit": 1.4989792314535355,
+      "n_bits": 7,
+      "online_lookup_operations": 11,
+      "online_operation_exponent_per_bit": 0.49420451694818535,
+      "online_queries": 11,
+      "prefix_over_n_bits": 1.5714285714285714,
+      "preprocessing_memory_labels": 1441,
+      "preprocessing_operation_exponent_per_bit": 1.4989792314535355,
+      "preprocessing_operations": 1441,
+      "prime": 131,
+      "recovered_shift": 7,
+      "single_instance_total_operations": 1452,
+      "status": "fixed-query-fingerprint-with-domain-preprocessing",
+      "success": true,
+      "true_shift": 7,
+      "use_as_positive_evidence": false
+    },
+    {
+      "access_model": "fixed chosen queries plus public modulus-dependent nonuniform preprocessing/advice",
+      "advice_bits_upper_bound": 8738,
+      "amortized_operations_by_batch": {
+        "1": 3354.0,
+        "257": 26.0,
+        "8": 430.625
+      },
+      "character_order": 2,
+      "collision_profile": [
+        {
+          "collision_pair_count": 16384,
+          "distinct_signature_count": 2,
+          "max_bucket_size": 129,
+          "prefix_length": 1
+        },
+        {
+          "collision_pair_count": 8128,
+          "distinct_signature_count": 4,
+          "max_bucket_size": 65,
+          "prefix_length": 2
+        },
+        {
+          "collision_pair_count": 4000,
+          "distinct_signature_count": 8,
+          "max_bucket_size": 33,
+          "prefix_length": 3
+        },
+        {
+          "collision_pair_count": 1937,
+          "distinct_signature_count": 16,
+          "max_bucket_size": 17,
+          "prefix_length": 4
+        },
+        {
+          "collision_pair_count": 907,
+          "distinct_signature_count": 32,
+          "max_bucket_size": 9,
+          "prefix_length": 5
+        },
+        {
+          "collision_pair_count": 421,
+          "distinct_signature_count": 64,
+          "max_bucket_size": 6,
+          "prefix_length": 6
+        },
+        {
+          "collision_pair_count": 189,
+          "distinct_signature_count": 122,
+          "max_bucket_size": 4,
+          "prefix_length": 7
+        },
+        {
+          "collision_pair_count": 76,
+          "distinct_signature_count": 185,
+          "max_bucket_size": 3,
+          "prefix_length": 8
+        },
+        {
+          "collision_pair_count": 34,
+          "distinct_signature_count": 223,
+          "max_bucket_size": 2,
+          "prefix_length": 9
+        },
+        {
+          "collision_pair_count": 14,
+          "distinct_signature_count": 243,
+          "max_bucket_size": 2,
+          "prefix_length": 10
+        },
+        {
+          "collision_pair_count": 5,
+          "distinct_signature_count": 252,
+          "max_bucket_size": 2,
+          "prefix_length": 11
+        },
+        {
+          "collision_pair_count": 1,
+          "distinct_signature_count": 256,
+          "max_bucket_size": 2,
+          "prefix_length": 12
+        },
+        {
+          "collision_pair_count": 0,
+          "distinct_signature_count": 257,
+          "max_bucket_size": 1,
+          "prefix_length": 13
+        }
+      ],
+      "family_id": "legendre_symbol",
+      "first_globally_unique_prefix": 13,
+      "fixed_query_positions": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "interpretation": "A fixed public prefix uniquely fingerprints every shift and a precomputed domain-size table decodes the observed prefix online. Online query/time cost is polynomial in log p, but preprocessing and advice remain Theta(p log p), exponential in the encoded input length.",
+      "memory_exponent_per_bit": 1.4632580334168712,
+      "n_bits": 8,
+      "online_lookup_operations": 13,
+      "online_operation_exponent_per_bit": 0.4625549647676365,
+      "online_queries": 13,
+      "prefix_over_n_bits": 1.625,
+      "preprocessing_memory_labels": 3341,
+      "preprocessing_operation_exponent_per_bit": 1.4632580334168712,
+      "preprocessing_operations": 3341,
+      "prime": 257,
+      "recovered_shift": 7,
+      "single_instance_total_operations": 3354,
+      "status": "fixed-query-fingerprint-with-domain-preprocessing",
+      "success": true,
+      "true_shift": 7,
+      "use_as_positive_evidence": false
+    },
+    {
+      "access_model": "fixed chosen queries plus public modulus-dependent nonuniform preprocessing/advice",
+      "advice_bits_upper_bound": 23445,
+      "amortized_operations_by_batch": {
+        "1": 9396.0,
+        "521": 36.0,
+        "9": 1060.0
+      },
+      "character_order": 2,
+      "collision_profile": [
+        {
+          "collision_pair_count": 67600,
+          "distinct_signature_count": 2,
+          "max_bucket_size": 261,
+          "prefix_length": 1
+        },
+        {
+          "collision_pair_count": 33670,
+          "distinct_signature_count": 4,
+          "max_bucket_size": 131,
+          "prefix_length": 2
+        },
+        {
+          "collision_pair_count": 16744,
+          "distinct_signature_count": 8,
+          "max_bucket_size": 69,
+          "prefix_length": 3
+        },
+        {
+          "collision_pair_count": 8337,
+          "distinct_signature_count": 16,
+          "max_bucket_size": 38,
+          "prefix_length": 4
+        },
+        {
+          "collision_pair_count": 4161,
+          "distinct_signature_count": 32,
+          "max_bucket_size": 24,
+          "prefix_length": 5
+        },
+        {
+          "collision_pair_count": 2057,
+          "distinct_signature_count": 64,
+          "max_bucket_size": 15,
+          "prefix_length": 6
+        },
+        {
+          "collision_pair_count": 1001,
+          "distinct_signature_count": 123,
+          "max_bucket_size": 8,
+          "prefix_length": 7
+        },
+        {
+          "collision_pair_count": 478,
+          "distinct_signature_count": 226,
+          "max_bucket_size": 6,
+          "prefix_length": 8
+        },
+        {
+          "collision_pair_count": 224,
+          "distinct_signature_count": 338,
+          "max_bucket_size": 4,
+          "prefix_length": 9
+        },
+        {
+          "collision_pair_count": 107,
+          "distinct_signature_count": 419,
+          "max_bucket_size": 3,
+          "prefix_length": 10
+        },
+        {
+          "collision_pair_count": 51,
+          "distinct_signature_count": 472,
+          "max_bucket_size": 3,
+          "prefix_length": 11
+        },
+        {
+          "collision_pair_count": 28,
+          "distinct_signature_count": 493,
+          "max_bucket_size": 2,
+          "prefix_length": 12
+        },
+        {
+          "collision_pair_count": 13,
+          "distinct_signature_count": 508,
+          "max_bucket_size": 2,
+          "prefix_length": 13
+        },
+        {
+          "collision_pair_count": 6,
+          "distinct_signature_count": 515,
+          "max_bucket_size": 2,
+          "prefix_length": 14
+        },
+        {
+          "collision_pair_count": 4,
+          "distinct_signature_count": 517,
+          "max_bucket_size": 2,
+          "prefix_length": 15
+        },
+        {
+          "collision_pair_count": 2,
+          "distinct_signature_count": 519,
+          "max_bucket_size": 2,
+          "prefix_length": 16
+        },
+        {
+          "collision_pair_count": 1,
+          "distinct_signature_count": 520,
+          "max_bucket_size": 2,
+          "prefix_length": 17
+        },
+        {
+          "collision_pair_count": 0,
+          "distinct_signature_count": 521,
+          "max_bucket_size": 1,
+          "prefix_length": 18
+        }
+      ],
+      "family_id": "legendre_symbol",
+      "first_globally_unique_prefix": 18,
+      "fixed_query_positions": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "interpretation": "A fixed public prefix uniquely fingerprints every shift and a precomputed domain-size table decodes the observed prefix online. Online query/time cost is polynomial in log p, but preprocessing and advice remain Theta(p log p), exponential in the encoded input length.",
+      "memory_exponent_per_bit": 1.4661182848578689,
+      "n_bits": 9,
+      "online_lookup_operations": 18,
+      "online_operation_exponent_per_bit": 0.4633250001602569,
+      "online_queries": 18,
+      "prefix_over_n_bits": 2.0,
+      "preprocessing_memory_labels": 9378,
+      "preprocessing_operation_exponent_per_bit": 1.4661182848578689,
+      "preprocessing_operations": 9378,
+      "prime": 521,
+      "recovered_shift": 7,
+      "single_instance_total_operations": 9396,
+      "status": "fixed-query-fingerprint-with-domain-preprocessing",
+      "success": true,
+      "true_shift": 7,
+      "use_as_positive_evidence": false
+    },
+    {
+      "access_model": "fixed chosen queries plus public modulus-dependent nonuniform preprocessing/advice",
+      "advice_bits_upper_bound": 49488,
+      "amortized_operations_by_batch": {
+        "1": 19608.0,
+        "10": 1977.9,
+        "1031": 38.0
+      },
+      "character_order": 2,
+      "collision_profile": [
+        {
+          "collision_pair_count": 265225,
+          "distinct_signature_count": 2,
+          "max_bucket_size": 516,
+          "prefix_length": 1
+        },
+        {
+          "collision_pair_count": 132355,
+          "distinct_signature_count": 4,
+          "max_bucket_size": 258,
+          "prefix_length": 2
+        },
+        {
+          "collision_pair_count": 65920,
+          "distinct_signature_count": 8,
+          "max_bucket_size": 129,
+          "prefix_length": 3
+        },
+        {
+          "collision_pair_count": 32754,
+          "distinct_signature_count": 16,
+          "max_bucket_size": 68,
+          "prefix_length": 4
+        },
+        {
+          "collision_pair_count": 16223,
+          "distinct_signature_count": 32,
+          "max_bucket_size": 38,
+          "prefix_length": 5
+        },
+        {
+          "collision_pair_count": 7985,
+          "distinct_signature_count": 64,
+          "max_bucket_size": 21,
+          "prefix_length": 6
+        },
+        {
+          "collision_pair_count": 3922,
+          "distinct_signature_count": 128,
+          "max_bucket_size": 12,
+          "prefix_length": 7
+        },
+        {
+          "collision_pair_count": 1892,
+          "distinct_signature_count": 254,
+          "max_bucket_size": 8,
+          "prefix_length": 8
+        },
+        {
+          "collision_pair_count": 911,
+          "distinct_signature_count": 465,
+          "max_bucket_size": 6,
+          "prefix_length": 9
+        },
+        {
+          "collision_pair_count": 444,
+          "distinct_signature_count": 669,
+          "max_bucket_size": 4,
+          "prefix_length": 10
+        },
+        {
+          "collision_pair_count": 228,
+          "distinct_signature_count": 815,
+          "max_bucket_size": 3,
+          "prefix_length": 11
+        },
+        {
+          "collision_pair_count": 132,
+          "distinct_signature_count": 903,
+          "max_bucket_size": 3,
+          "prefix_length": 12
+        },
+        {
+          "collision_pair_count": 61,
+          "distinct_signature_count": 970,
+          "max_bucket_size": 2,
+          "prefix_length": 13
+        },
+        {
+          "collision_pair_count": 24,
+          "distinct_signature_count": 1007,
+          "max_bucket_size": 2,
+          "prefix_length": 14
+        },
+        {
+          "collision_pair_count": 8,
+          "distinct_signature_count": 1023,
+          "max_bucket_size": 2,
+          "prefix_length": 15
+        },
+        {
+          "collision_pair_count": 5,
+          "distinct_signature_count": 1026,
+          "max_bucket_size": 2,
+          "prefix_length": 16
+        },
+        {
+          "collision_pair_count": 2,
+          "distinct_signature_count": 1029,
+          "max_bucket_size": 2,
+          "prefix_length": 17
+        },
+        {
+          "collision_pair_count": 1,
+          "distinct_signature_count": 1030,
+          "max_bucket_size": 2,
+          "prefix_length": 18
+        },
+        {
+          "collision_pair_count": 0,
+          "distinct_signature_count": 1031,
+          "max_bucket_size": 1,
+          "prefix_length": 19
+        }
+      ],
+      "family_id": "legendre_symbol",
+      "first_globally_unique_prefix": 19,
+      "fixed_query_positions": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ],
+      "interpretation": "A fixed public prefix uniquely fingerprints every shift and a precomputed domain-size table decodes the observed prefix online. Online query/time cost is polynomial in log p, but preprocessing and advice remain Theta(p log p), exponential in the encoded input length.",
+      "memory_exponent_per_bit": 1.4257756130811694,
+      "n_bits": 10,
+      "online_lookup_operations": 19,
+      "online_operation_exponent_per_bit": 0.4247927513443585,
+      "online_queries": 19,
+      "prefix_over_n_bits": 1.9,
+      "preprocessing_memory_labels": 19589,
+      "preprocessing_operation_exponent_per_bit": 1.4257756130811694,
+      "preprocessing_operations": 19589,
+      "prime": 1031,
+      "recovered_shift": 7,
+      "single_instance_total_operations": 19608,
+      "status": "fixed-query-fingerprint-with-domain-preprocessing",
+      "success": true,
+      "true_shift": 7,
+      "use_as_positive_evidence": false
+    },
+    {
+      "access_model": "fixed chosen queries plus public modulus-dependent nonuniform preprocessing/advice",
+      "advice_bits_upper_bound": 629,
+      "amortized_operations_by_batch": {
+        "1": 152.0,
+        "37": 8.0,
+        "5": 33.6
+      },
+      "character_order": 4,
+      "collision_profile": [
+        {
+          "collision_pair_count": 153,
+          "distinct_signature_count": 4,
+          "max_bucket_size": 10,
+          "prefix_length": 1
+        },
+        {
+          "collision_pair_count": 32,
+          "distinct_signature_count": 16,
+          "max_bucket_size": 4,
+          "prefix_length": 2
+        },
+        {
+          "collision_pair_count": 4,
+          "distinct_signature_count": 33,
+          "max_bucket_size": 2,
+          "prefix_length": 3
+        },
+        {
+          "collision_pair_count": 0,
+          "distinct_signature_count": 37,
+          "max_bucket_size": 1,
+          "prefix_length": 4
+        }
+      ],
+      "family_id": "quartic_character",
+      "first_globally_unique_prefix": 4,
+      "fixed_query_positions": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "interpretation": "A fixed public prefix uniquely fingerprints every shift and a precomputed domain-size table decodes the observed prefix online. Online query/time cost is polynomial in log p, but preprocessing and advice remain Theta(p log p), exponential in the encoded input length.",
+      "memory_exponent_per_bit": 1.4418906731257901,
+      "n_bits": 5,
+      "online_lookup_operations": 4,
+      "online_operation_exponent_per_bit": 0.4,
+      "online_queries": 4,
+      "prefix_over_n_bits": 0.8,
+      "preprocessing_memory_labels": 148,
+      "preprocessing_operation_exponent_per_bit": 1.4418906731257901,
+      "preprocessing_operations": 148,
+      "prime": 37,
+      "recovered_shift": 7,
+      "single_instance_total_operations": 152,
+      "status": "fixed-query-fingerprint-with-domain-preprocessing",
+      "success": true,
+      "true_shift": 7,
+      "use_as_positive_evidence": false
+    },
+    {
+      "access_model": "fixed chosen queries plus public modulus-dependent nonuniform preprocessing/advice",
+      "advice_bits_upper_bound": 1752,
+      "amortized_operations_by_batch": {
+        "1": 444.0,
+        "6": 79.0,
+        "73": 12.0
+      },
+      "character_order": 4,
+      "collision_profile": [
+        {
+          "collision_pair_count": 630,
+          "distinct_signature_count": 4,
+          "max_bucket_size": 19,
+          "prefix_length": 1
+        },
+        {
+          "collision_pair_count": 147,
+          "distinct_signature_count": 16,
+          "max_bucket_size": 7,
+          "prefix_length": 2
+        },
+        {
+          "collision_pair_count": 31,
+          "distinct_signature_count": 43,
+          "max_bucket_size": 3,
+          "prefix_length": 3
+        },
+        {
+          "collision_pair_count": 10,
+          "distinct_signature_count": 63,
+          "max_bucket_size": 2,
+          "prefix_length": 4
+        },
+        {
+          "collision_pair_count": 3,
+          "distinct_signature_count": 70,
+          "max_bucket_size": 2,
+          "prefix_length": 5
+        },
+        {
+          "collision_pair_count": 0,
+          "distinct_signature_count": 73,
+          "max_bucket_size": 1,
+          "prefix_length": 6
+        }
+      ],
+      "family_id": "quartic_character",
+      "first_globally_unique_prefix": 6,
+      "fixed_query_positions": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "interpretation": "A fixed public prefix uniquely fingerprints every shift and a precomputed domain-size table decodes the observed prefix online. Online query/time cost is polynomial in log p, but preprocessing and advice remain Theta(p log p), exponential in the encoded input length.",
+      "memory_exponent_per_bit": 1.462464509933529,
+      "n_bits": 6,
+      "online_lookup_operations": 6,
+      "online_operation_exponent_per_bit": 0.430827083453526,
+      "online_queries": 6,
+      "prefix_over_n_bits": 1.0,
+      "preprocessing_memory_labels": 438,
+      "preprocessing_operation_exponent_per_bit": 1.462464509933529,
+      "preprocessing_operations": 438,
+      "prime": 73,
+      "recovered_shift": 7,
+      "single_instance_total_operations": 444,
+      "status": "fixed-query-fingerprint-with-domain-preprocessing",
+      "success": true,
+      "true_shift": 7,
+      "use_as_positive_evidence": false
+    },
+    {
+      "access_model": "fixed chosen queries plus public modulus-dependent nonuniform preprocessing/advice",
+      "advice_bits_upper_bound": 3836,
+      "amortized_operations_by_batch": {
+        "1": 966.0,
+        "137": 14.0,
+        "7": 144.0
+      },
+      "character_order": 4,
+      "collision_profile": [
+        {
+          "collision_pair_count": 2278,
+          "distinct_signature_count": 4,
+          "max_bucket_size": 35,
+          "prefix_length": 1
+        },
+        {
+          "collision_pair_count": 553,
+          "distinct_signature_count": 16,
+          "max_bucket_size": 14,
+          "prefix_length": 2
+        },
+        {
+          "collision_pair_count": 130,
+          "distinct_signature_count": 54,
+          "max_bucket_size": 5,
+          "prefix_length": 3
+        },
+        {
+          "collision_pair_count": 28,
+          "distinct_signature_count": 111,
+          "max_bucket_size": 3,
+          "prefix_length": 4
+        },
+        {
+          "collision_pair_count": 5,
+          "distinct_signature_count": 132,
+          "max_bucket_size": 2,
+          "prefix_length": 5
+        },
+        {
+          "collision_pair_count": 1,
+          "distinct_signature_count": 136,
+          "max_bucket_size": 2,
+          "prefix_length": 6
+        },
+        {
+          "collision_pair_count": 0,
+          "distinct_signature_count": 137,
+          "max_bucket_size": 1,
+          "prefix_length": 7
+        }
+      ],
+      "family_id": "quartic_character",
+      "first_globally_unique_prefix": 7,
+      "fixed_query_positions": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "interpretation": "A fixed public prefix uniquely fingerprints every shift and a precomputed domain-size table decodes the observed prefix online. Online query/time cost is polynomial in log p, but preprocessing and advice remain Theta(p log p), exponential in the encoded input length.",
+      "memory_exponent_per_bit": 1.4150552864311616,
+      "n_bits": 7,
+      "online_lookup_operations": 7,
+      "online_operation_exponent_per_bit": 0.4010507031510863,
+      "online_queries": 7,
+      "prefix_over_n_bits": 1.0,
+      "preprocessing_memory_labels": 959,
+      "preprocessing_operation_exponent_per_bit": 1.4150552864311616,
+      "preprocessing_operations": 959,
+      "prime": 137,
+      "recovered_shift": 7,
+      "single_instance_total_operations": 966,
+      "status": "fixed-query-fingerprint-with-domain-preprocessing",
+      "success": true,
+      "true_shift": 7,
+      "use_as_positive_evidence": false
+    },
+    {
+      "access_model": "fixed chosen queries plus public modulus-dependent nonuniform preprocessing/advice",
+      "advice_bits_upper_bound": 8224,
+      "amortized_operations_by_batch": {
+        "1": 2064.0,
+        "257": 16.0,
+        "8": 265.0
+      },
+      "character_order": 4,
+      "collision_profile": [
+        {
+          "collision_pair_count": 8128,
+          "distinct_signature_count": 4,
+          "max_bucket_size": 65,
+          "prefix_length": 1
+        },
+        {
+          "collision_pair_count": 1984,
+          "distinct_signature_count": 16,
+          "max_bucket_size": 20,
+          "prefix_length": 2
+        },
+        {
+          "collision_pair_count": 524,
+          "distinct_signature_count": 58,
+          "max_bucket_size": 8,
+          "prefix_length": 3
+        },
+        {
+          "collision_pair_count": 123,
+          "distinct_signature_count": 161,
+          "max_bucket_size": 4,
+          "prefix_length": 4
+        },
+        {
+          "collision_pair_count": 35,
+          "distinct_signature_count": 222,
+          "max_bucket_size": 2,
+          "prefix_length": 5
+        },
+        {
+          "collision_pair_count": 9,
+          "distinct_signature_count": 248,
+          "max_bucket_size": 2,
+          "prefix_length": 6
+        },
+        {
+          "collision_pair_count": 2,
+          "distinct_signature_count": 255,
+          "max_bucket_size": 2,
+          "prefix_length": 7
+        },
+        {
+          "collision_pair_count": 0,
+          "distinct_signature_count": 257,
+          "max_bucket_size": 1,
+          "prefix_length": 8
+        }
+      ],
+      "family_id": "quartic_character",
+      "first_globally_unique_prefix": 8,
+      "fixed_query_positions": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "interpretation": "A fixed public prefix uniquely fingerprints every shift and a precomputed domain-size table decodes the observed prefix online. Online query/time cost is polynomial in log p, but preprocessing and advice remain Theta(p log p), exponential in the encoded input length.",
+      "memory_exponent_per_bit": 1.3757030686492349,
+      "n_bits": 8,
+      "online_lookup_operations": 8,
+      "online_operation_exponent_per_bit": 0.375,
+      "online_queries": 8,
+      "prefix_over_n_bits": 1.0,
+      "preprocessing_memory_labels": 2056,
+      "preprocessing_operation_exponent_per_bit": 1.3757030686492349,
+      "preprocessing_operations": 2056,
+      "prime": 257,
+      "recovered_shift": 7,
+      "single_instance_total_operations": 2064,
+      "status": "fixed-query-fingerprint-with-domain-preprocessing",
+      "success": true,
+      "true_shift": 7,
+      "use_as_positive_evidence": false
+    },
+    {
+      "access_model": "fixed chosen queries plus public modulus-dependent nonuniform preprocessing/advice",
+      "advice_bits_upper_bound": 23445,
+      "amortized_operations_by_batch": {
+        "1": 6264.0,
+        "521": 24.0,
+        "9": 706.6666666666666
+      },
+      "character_order": 4,
+      "collision_profile": [
+        {
+          "collision_pair_count": 33670,
+          "distinct_signature_count": 4,
+          "max_bucket_size": 131,
+          "prefix_length": 1
+        },
+        {
+          "collision_pair_count": 8329,
+          "distinct_signature_count": 16,
+          "max_bucket_size": 38,
+          "prefix_length": 2
+        },
+        {
+          "collision_pair_count": 2050,
+          "distinct_signature_count": 63,
+          "max_bucket_size": 16,
+          "prefix_length": 3
+        },
+        {
+          "collision_pair_count": 512,
+          "distinct_signature_count": 218,
+          "max_bucket_size": 5,
+          "prefix_length": 4
+        },
+        {
+          "collision_pair_count": 157,
+          "distinct_signature_count": 392,
+          "max_bucket_size": 5,
+          "prefix_length": 5
+        },
+        {
+          "collision_pair_count": 52,
+          "distinct_signature_count": 472,
+          "max_bucket_size": 3,
+          "prefix_length": 6
+        },
+        {
+          "collision_pair_count": 22,
+          "distinct_signature_count": 499,
+          "max_bucket_size": 2,
+          "prefix_length": 7
+        },
+        {
+          "collision_pair_count": 10,
+          "distinct_signature_count": 511,
+          "max_bucket_size": 2,
+          "prefix_length": 8
+        },
+        {
+          "collision_pair_count": 6,
+          "distinct_signature_count": 515,
+          "max_bucket_size": 2,
+          "prefix_length": 9
+        },
+        {
+          "collision_pair_count": 3,
+          "distinct_signature_count": 518,
+          "max_bucket_size": 2,
+          "prefix_length": 10
+        },
+        {
+          "collision_pair_count": 1,
+          "distinct_signature_count": 520,
+          "max_bucket_size": 2,
+          "prefix_length": 11
+        },
+        {
+          "collision_pair_count": 0,
+          "distinct_signature_count": 521,
+          "max_bucket_size": 1,
+          "prefix_length": 12
+        }
+      ],
+      "family_id": "quartic_character",
+      "first_globally_unique_prefix": 12,
+      "fixed_query_positions": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "interpretation": "A fixed public prefix uniquely fingerprints every shift and a precomputed domain-size table decodes the observed prefix online. Online query/time cost is polynomial in log p, but preprocessing and advice remain Theta(p log p), exponential in the encoded input length.",
+      "memory_exponent_per_bit": 1.4011224514444072,
+      "n_bits": 9,
+      "online_lookup_operations": 12,
+      "online_operation_exponent_per_bit": 0.39832916674679514,
+      "online_queries": 12,
+      "prefix_over_n_bits": 1.3333333333333333,
+      "preprocessing_memory_labels": 6252,
+      "preprocessing_operation_exponent_per_bit": 1.4011224514444072,
+      "preprocessing_operations": 6252,
+      "prime": 521,
+      "recovered_shift": 7,
+      "single_instance_total_operations": 6264,
+      "status": "fixed-query-fingerprint-with-domain-preprocessing",
+      "success": true,
+      "true_shift": 7,
+      "use_as_positive_evidence": false
+    },
+    {
+      "access_model": "fixed chosen queries plus public modulus-dependent nonuniform preprocessing/advice",
+      "advice_bits_upper_bound": 47518,
+      "amortized_operations_by_batch": {
+        "1": 12408.0,
+        "10": 1251.6,
+        "1033": 24.0
+      },
+      "character_order": 4,
+      "collision_profile": [
+        {
+          "collision_pair_count": 132870,
+          "distinct_signature_count": 4,
+          "max_bucket_size": 259,
+          "prefix_length": 1
+        },
+        {
+          "collision_pair_count": 33027,
+          "distinct_signature_count": 16,
+          "max_bucket_size": 72,
+          "prefix_length": 2
+        },
+        {
+          "collision_pair_count": 8379,
+          "distinct_signature_count": 64,
+          "max_bucket_size": 27,
+          "prefix_length": 3
+        },
+        {
+          "collision_pair_count": 2147,
+          "distinct_signature_count": 251,
+          "max_bucket_size": 10,
+          "prefix_length": 4
+        },
+        {
+          "collision_pair_count": 558,
+          "distinct_signature_count": 621,
+          "max_bucket_size": 6,
+          "prefix_length": 5
+        },
+        {
+          "collision_pair_count": 124,
+          "distinct_signature_count": 918,
+          "max_bucket_size": 4,
+          "prefix_length": 6
+        },
+        {
+          "collision_pair_count": 41,
+          "distinct_signature_count": 994,
+          "max_bucket_size": 3,
+          "prefix_length": 7
+        },
+        {
+          "collision_pair_count": 13,
+          "distinct_signature_count": 1020,
+          "max_bucket_size": 2,
+          "prefix_length": 8
+        },
+        {
+          "collision_pair_count": 7,
+          "distinct_signature_count": 1026,
+          "max_bucket_size": 2,
+          "prefix_length": 9
+        },
+        {
+          "collision_pair_count": 4,
+          "distinct_signature_count": 1029,
+          "max_bucket_size": 2,
+          "prefix_length": 10
+        },
+        {
+          "collision_pair_count": 1,
+          "distinct_signature_count": 1032,
+          "max_bucket_size": 2,
+          "prefix_length": 11
+        },
+        {
+          "collision_pair_count": 0,
+          "distinct_signature_count": 1033,
+          "max_bucket_size": 1,
+          "prefix_length": 12
+        }
+      ],
+      "family_id": "quartic_character",
+      "first_globally_unique_prefix": 12,
+      "fixed_query_positions": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "interpretation": "A fixed public prefix uniquely fingerprints every shift and a precomputed domain-size table decodes the observed prefix online. Online query/time cost is polynomial in log p, but preprocessing and advice remain Theta(p log p), exponential in the encoded input length.",
+      "memory_exponent_per_bit": 1.3597587039586216,
+      "n_bits": 10,
+      "online_lookup_operations": 12,
+      "online_operation_exponent_per_bit": 0.3584962500721156,
+      "online_queries": 12,
+      "prefix_over_n_bits": 1.2,
+      "preprocessing_memory_labels": 12396,
+      "preprocessing_operation_exponent_per_bit": 1.3597587039586216,
+      "preprocessing_operations": 12396,
+      "prime": 1033,
+      "recovered_shift": 7,
+      "single_instance_total_operations": 12408,
+      "status": "fixed-query-fingerprint-with-domain-preprocessing",
+      "success": true,
+      "true_shift": 7,
+      "use_as_positive_evidence": false
+    }
+  ],
+  "status": "conditional-uniform-decoding-gap-only",
+  "summary": "Audited 12 shifted-character preprocessing row(s) and 48 literature upper-bound row(s). Fixed O(log p)-scale prefixes plus domain-size advice decoded 12 row(s); no unconditional superpolynomial decoding lower bound or natural-problem reduction is recorded."
+}

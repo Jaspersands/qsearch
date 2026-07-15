@@ -1,0 +1,1925 @@
+{
+  "created_at": "2026-07-15T09:37:15.349524+00:00",
+  "falsifiers_triggered": [
+    "Some code-equivalence rows are already separated by classical code baselines.",
+    "Some code searches find only equivalent controls or no nontrivial hard row."
+  ],
+  "headline_metrics": {
+    "control_or_no_hard_row_count": 30,
+    "dequantizing_evidence_count": 55,
+    "evidence_count": 256,
+    "proof_debt_evidence_count": 24,
+    "proof_debt_row_count": 0,
+    "record_count": 46,
+    "rejected_row_count": 16,
+    "unclassified_row_count": 0
+  },
+  "records": [
+    {
+      "evidence": [
+        {
+          "detail": "Affine-geometry collisions found so far are affine-linear or canonical controls.",
+          "source": "affine_geometry_code_search",
+          "status": "affine-geometry-collisions-all-equivalent-controls",
+          "verdict": "control"
+        },
+        {
+          "detail": "All 3 evaluated pair(s) are known equivalent controls.",
+          "source": "code_closure_attack",
+          "status": "equivalent-controls-under-closure",
+          "verdict": "control"
+        },
+        {
+          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "All 3 evaluated pair(s) are known equivalent controls.",
+          "source": "code_schur_filtration",
+          "status": "equivalent-controls-under-schur-filtration",
+          "verdict": "control"
+        }
+      ],
+      "final_status": "control-or-no-hard-row-not-positive-evidence",
+      "required_next_step": "Treat equivalent controls and no-collision searches as negative search information; broaden the family generator.",
+      "row_family": "affine-geometry-code-family",
+      "row_id": "ag-family-ag2-f2-k3"
+    },
+    {
+      "evidence": [
+        {
+          "detail": "Affine-geometry collisions found so far are affine-linear or canonical controls.",
+          "source": "affine_geometry_code_search",
+          "status": "affine-geometry-collisions-all-equivalent-controls",
+          "verdict": "control"
+        },
+        {
+          "detail": "All 6 evaluated pair(s) are known equivalent controls.",
+          "source": "code_closure_attack",
+          "status": "equivalent-controls-under-closure",
+          "verdict": "control"
+        },
+        {
+          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "All 6 evaluated pair(s) are known equivalent controls.",
+          "source": "code_schur_filtration",
+          "status": "equivalent-controls-under-schur-filtration",
+          "verdict": "control"
+        }
+      ],
+      "final_status": "control-or-no-hard-row-not-positive-evidence",
+      "required_next_step": "Treat equivalent controls and no-collision searches as negative search information; broaden the family generator.",
+      "row_family": "affine-geometry-code-family",
+      "row_id": "ag-family-ag2-f3-k6"
+    },
+    {
+      "evidence": [
+        {
+          "detail": "BCH-code collisions found so far are equivalent controls under decimation/canonicalization.",
+          "source": "bch_code_search",
+          "status": "bch-collisions-all-equivalent-controls",
+          "verdict": "control"
+        },
+        {
+          "detail": "All 1 evaluated pair(s) are known equivalent controls.",
+          "source": "code_closure_attack",
+          "status": "equivalent-controls-under-closure",
+          "verdict": "control"
+        },
+        {
+          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "All 1 evaluated pair(s) are known equivalent controls.",
+          "source": "code_schur_filtration",
+          "status": "equivalent-controls-under-schur-filtration",
+          "verdict": "control"
+        }
+      ],
+      "final_status": "control-or-no-hard-row-not-positive-evidence",
+      "required_next_step": "Treat equivalent controls and no-collision searches as negative search information; broaden the family generator.",
+      "row_family": "bch-code-family",
+      "row_id": "bch-family-bch-m4-d3-9"
+    },
+    {
+      "evidence": [
+        {
+          "detail": "BCH-code collisions are rejected by structural, tuple, low-weight, or canonical baselines.",
+          "source": "bch_code_search",
+          "status": "bch-code-search-dequantized",
+          "verdict": "dequantizing"
+        },
+        {
+          "detail": "Conductor/t-closure attacks classically separate 3 pair(s) in this family.",
+          "source": "code_closure_attack",
+          "status": "rejected-by-t-closure-conductor",
+          "verdict": "dequantizing"
+        },
+        {
+          "detail": "Low-weight support enumeration exceeded a cap; this row remains proof debt and must not be used as positive quantum evidence without a scalable classical lower-bound argument.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-proof-debt",
+          "verdict": "proof-debt"
+        },
+        {
+          "detail": "Low-weight support enumeration exceeded a cap; this row remains proof debt and must not be used as positive quantum evidence without a scalable classical lower-bound argument.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-proof-debt",
+          "verdict": "proof-debt"
+        },
+        {
+          "detail": "Low-weight support enumeration exceeded a cap; this row remains proof debt and must not be used as positive quantum evidence without a scalable classical lower-bound argument.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-proof-debt",
+          "verdict": "proof-debt"
+        },
+        {
+          "detail": "Low-weight support enumeration exceeded a cap; this row remains proof debt and must not be used as positive quantum evidence without a scalable classical lower-bound argument.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-proof-debt",
+          "verdict": "proof-debt"
+        },
+        {
+          "detail": "Low-weight support enumeration exceeded a cap; this row remains proof debt and must not be used as positive quantum evidence without a scalable classical lower-bound argument.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-proof-debt",
+          "verdict": "proof-debt"
+        },
+        {
+          "detail": "Low-weight support enumeration exceeded a cap; this row remains proof debt and must not be used as positive quantum evidence without a scalable classical lower-bound argument.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-proof-debt",
+          "verdict": "proof-debt"
+        },
+        {
+          "detail": "Low-weight support enumeration exceeded a cap; this row remains proof debt and must not be used as positive quantum evidence without a scalable classical lower-bound argument.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-proof-debt",
+          "verdict": "proof-debt"
+        },
+        {
+          "detail": "Low-weight support enumeration exceeded a cap; this row remains proof debt and must not be used as positive quantum evidence without a scalable classical lower-bound argument.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-proof-debt",
+          "verdict": "proof-debt"
+        },
+        {
+          "detail": "Low-weight support enumeration exceeded a cap; this row remains proof debt and must not be used as positive quantum evidence without a scalable classical lower-bound argument.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-proof-debt",
+          "verdict": "proof-debt"
+        },
+        {
+          "detail": "Low-weight support enumeration exceeded a cap; this row remains proof debt and must not be used as positive quantum evidence without a scalable classical lower-bound argument.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-proof-debt",
+          "verdict": "proof-debt"
+        },
+        {
+          "detail": "Schur filtrations classically separate 3 pair(s) in this family.",
+          "source": "code_schur_filtration",
+          "status": "rejected-by-schur-filtration",
+          "verdict": "dequantizing"
+        }
+      ],
+      "final_status": "rejected-by-classical-code-baseline",
+      "required_next_step": "Do not use this code row for coset-state measurement design; mutate to a family that survives all listed baselines.",
+      "row_family": "bch-code-family",
+      "row_id": "bch-family-bch-m5-d3-11"
+    },
+    {
+      "evidence": [
+        {
+          "detail": "The code pair faithfully represents the CFI graph pair, but explicit-generator access recovers the graph and the legal regular-CFI promise decoder recovers global twist parity classically.",
+          "source": "cfi_code_reduction",
+          "status": "faithful-reduction-cfi-promise-dequantized",
+          "verdict": "dequantizing"
+        }
+      ],
+      "final_status": "rejected-by-classical-code-baseline",
+      "required_next_step": "Do not use this code row for coset-state measurement design; mutate to a family that survives all listed baselines.",
+      "row_family": "faithful-cfi-graph-code-reduction",
+      "row_id": "cfi-code-complete-k5"
+    },
+    {
+      "evidence": [
+        {
+          "detail": "The code pair faithfully represents the CFI graph pair, but explicit-generator access recovers the graph and the legal regular-CFI promise decoder recovers global twist parity classically.",
+          "source": "cfi_code_reduction",
+          "status": "faithful-reduction-cfi-promise-dequantized",
+          "verdict": "dequantizing"
+        }
+      ],
+      "final_status": "rejected-by-classical-code-baseline",
+      "required_next_step": "Do not use this code row for coset-state measurement design; mutate to a family that survives all listed baselines.",
+      "row_family": "faithful-cfi-graph-code-reduction",
+      "row_id": "cfi-code-cube-q3"
+    },
+    {
+      "evidence": [
+        {
+          "detail": "The code pair faithfully represents the CFI graph pair, but explicit-generator access recovers the graph and the legal regular-CFI promise decoder recovers global twist parity classically.",
+          "source": "cfi_code_reduction",
+          "status": "faithful-reduction-cfi-promise-dequantized",
+          "verdict": "dequantizing"
+        }
+      ],
+      "final_status": "rejected-by-classical-code-baseline",
+      "required_next_step": "Do not use this code row for coset-state measurement design; mutate to a family that survives all listed baselines.",
+      "row_family": "faithful-cfi-graph-code-reduction",
+      "row_id": "cfi-code-heawood-like-14"
+    },
+    {
+      "evidence": [
+        {
+          "detail": "The code pair faithfully represents the CFI graph pair, but explicit-generator access recovers the graph and the legal regular-CFI promise decoder recovers global twist parity classically.",
+          "source": "cfi_code_reduction",
+          "status": "faithful-reduction-cfi-promise-dequantized",
+          "verdict": "dequantizing"
+        }
+      ],
+      "final_status": "rejected-by-classical-code-baseline",
+      "required_next_step": "Do not use this code row for coset-state measurement design; mutate to a family that survives all listed baselines.",
+      "row_family": "faithful-cfi-graph-code-reduction",
+      "row_id": "cfi-code-mobius-ladder-8"
+    },
+    {
+      "evidence": [
+        {
+          "detail": "The code pair faithfully represents the CFI graph pair, but explicit-generator access recovers the graph and the legal regular-CFI promise decoder recovers global twist parity classically.",
+          "source": "cfi_code_reduction",
+          "status": "faithful-reduction-cfi-promise-dequantized",
+          "verdict": "dequantizing"
+        }
+      ],
+      "final_status": "rejected-by-classical-code-baseline",
+      "required_next_step": "Do not use this code row for coset-state measurement design; mutate to a family that survives all listed baselines.",
+      "row_family": "faithful-cfi-graph-code-reduction",
+      "row_id": "cfi-code-petersen"
+    },
+    {
+      "evidence": [
+        {
+          "detail": "The code pair faithfully represents the CFI graph pair, but explicit-generator access recovers the graph and the legal regular-CFI promise decoder recovers global twist parity classically.",
+          "source": "cfi_code_reduction",
+          "status": "faithful-reduction-cfi-promise-dequantized",
+          "verdict": "dequantizing"
+        }
+      ],
+      "final_status": "rejected-by-classical-code-baseline",
+      "required_next_step": "Do not use this code row for coset-state measurement design; mutate to a family that survives all listed baselines.",
+      "row_family": "faithful-cfi-graph-code-reduction",
+      "row_id": "cfi-code-triangular-prism"
+    },
+    {
+      "evidence": [
+        {
+          "detail": "Coordinate refinement profiles differ; this pair is separated by a support-splitting-style classical canonicalization invariant.",
+          "source": "code_canonicalization_baseline",
+          "status": "rejected-by-coordinate-profile-partition",
+          "verdict": "dequantizing"
+        },
+        {
+          "detail": "Conductor/t-closure attacks classically separate 1 pair(s) in this family.",
+          "source": "code_closure_attack",
+          "status": "rejected-by-t-closure-conductor",
+          "verdict": "dequantizing"
+        },
+        {
+          "detail": "The pair fools weak invariants but is separated by stronger classical code invariants: support_splitting_fingerprint, punctured_weight_profile, shortened_weight_profile",
+          "source": "code_family_search",
+          "status": "rejected-by-strong-classical-invariant",
+          "verdict": "dequantizing"
+        },
+        {
+          "detail": "Information-set canonical signatures differ; this row is classically rejected.",
+          "source": "code_information_set_baseline",
+          "status": "rejected-by-information-set-canonicalization",
+          "verdict": "dequantizing"
+        },
+        {
+          "detail": "Low-weight codeword support hypergraphs separate this row: coordinate_profiles, pair_profiles, incidence_wl.",
+          "source": "code_low_weight_structure",
+          "status": "rejected-by-low-weight-matroid-structure",
+          "verdict": "dequantizing"
+        },
+        {
+          "detail": "Schur filtrations classically separate 1 pair(s) in this family.",
+          "source": "code_schur_filtration",
+          "status": "rejected-by-schur-filtration",
+          "verdict": "dequantizing"
+        },
+        {
+          "detail": "The pair is separated by structural classical code invariants: support_splitting_fingerprint, punctured_weight_profile, shortened_weight_profile",
+          "source": "code_structural_invariants",
+          "status": "rejected-by-structural-code-invariant",
+          "verdict": "dequantizing"
+        },
+        {
+          "detail": "1-coordinate tuple residual weight profiles separate this code pair; a matching coset observable is a classical invariant shadow.",
+          "source": "code_tuple_profile_baseline",
+          "status": "rejected-by-coordinate-tuple-profile",
+          "verdict": "dequantizing"
+        }
+      ],
+      "final_status": "rejected-by-classical-code-baseline",
+      "required_next_step": "Do not use this code row for coset-state measurement design; mutate to a family that survives all listed baselines.",
+      "row_family": "random-weak-invariant-family",
+      "row_id": "code-family-random-weak-collision-10-4"
+    },
+    {
+      "evidence": [
+        {
+          "detail": "Coordinate refinement profiles differ; this pair is separated by a support-splitting-style classical canonicalization invariant.",
+          "source": "code_canonicalization_baseline",
+          "status": "rejected-by-coordinate-profile-partition",
+          "verdict": "dequantizing"
+        },
+        {
+          "detail": "Conductor/t-closure attacks classically separate 1 pair(s) in this family.",
+          "source": "code_closure_attack",
+          "status": "rejected-by-t-closure-conductor",
+          "verdict": "dequantizing"
+        },
+        {
+          "detail": "The pair fools weak invariants but is separated by stronger classical code invariants: support_splitting_fingerprint, punctured_weight_profile, shortened_weight_profile",
+          "source": "code_family_search",
+          "status": "rejected-by-strong-classical-invariant",
+          "verdict": "dequantizing"
+        },
+        {
+          "detail": "Information-set canonical signatures differ; this row is classically rejected.",
+          "source": "code_information_set_baseline",
+          "status": "rejected-by-information-set-canonicalization",
+          "verdict": "dequantizing"
+        },
+        {
+          "detail": "Low-weight codeword support hypergraphs separate this row: coordinate_profiles, pair_profiles, incidence_wl.",
+          "source": "code_low_weight_structure",
+          "status": "rejected-by-low-weight-matroid-structure",
+          "verdict": "dequantizing"
+        },
+        {
+          "detail": "Schur filtrations classically separate 1 pair(s) in this family.",
+          "source": "code_schur_filtration",
+          "status": "rejected-by-schur-filtration",
+          "verdict": "dequantizing"
+        },
+        {
+          "detail": "The pair is separated by structural classical code invariants: support_splitting_fingerprint, punctured_weight_profile, shortened_weight_profile",
+          "source": "code_structural_invariants",
+          "status": "rejected-by-structural-code-invariant",
+          "verdict": "dequantizing"
+        },
+        {
+          "detail": "1-coordinate tuple residual weight profiles separate this code pair; a matching coset observable is a classical invariant shadow.",
+          "source": "code_tuple_profile_baseline",
+          "status": "rejected-by-coordinate-tuple-profile",
+          "verdict": "dequantizing"
+        }
+      ],
+      "final_status": "rejected-by-classical-code-baseline",
+      "required_next_step": "Do not use this code row for coset-state measurement design; mutate to a family that survives all listed baselines.",
+      "row_family": "random-weak-invariant-family",
+      "row_id": "code-family-random-weak-collision-12-5"
+    },
+    {
+      "evidence": [
+        {
+          "detail": "Coordinate refinement profiles differ; this pair is separated by a support-splitting-style classical canonicalization invariant.",
+          "source": "code_canonicalization_baseline",
+          "status": "rejected-by-coordinate-profile-partition",
+          "verdict": "dequantizing"
+        },
+        {
+          "detail": "Conductor/t-closure attacks classically separate 1 pair(s) in this family.",
+          "source": "code_closure_attack",
+          "status": "rejected-by-t-closure-conductor",
+          "verdict": "dequantizing"
+        },
+        {
+          "detail": "The pair fools weak invariants but is separated by stronger classical code invariants: support_splitting_fingerprint, hull_dimension, punctured_weight_profile, shortened_weight_profile",
+          "source": "code_family_search",
+          "status": "rejected-by-strong-classical-invariant",
+          "verdict": "dequantizing"
+        },
+        {
+          "detail": "Information-set canonical signatures differ; this row is classically rejected.",
+          "source": "code_information_set_baseline",
+          "status": "rejected-by-information-set-canonicalization",
+          "verdict": "dequantizing"
+        },
+        {
+          "detail": "Low-weight codeword support hypergraphs separate this row: coordinate_profiles, pair_profiles, incidence_wl.",
+          "source": "code_low_weight_structure",
+          "status": "rejected-by-low-weight-matroid-structure",
+          "verdict": "dequantizing"
+        },
+        {
+          "detail": "Schur filtrations classically separate 1 pair(s) in this family.",
+          "source": "code_schur_filtration",
+          "status": "rejected-by-schur-filtration",
+          "verdict": "dequantizing"
+        },
+        {
+          "detail": "The pair is separated by structural classical code invariants: hull_dimension, support_splitting_fingerprint, punctured_weight_profile, shortened_weight_profile",
+          "source": "code_structural_invariants",
+          "status": "rejected-by-structural-code-invariant",
+          "verdict": "dequantizing"
+        },
+        {
+          "detail": "1-coordinate tuple residual weight profiles separate this code pair; a matching coset observable is a classical invariant shadow.",
+          "source": "code_tuple_profile_baseline",
+          "status": "rejected-by-coordinate-tuple-profile",
+          "verdict": "dequantizing"
+        }
+      ],
+      "final_status": "rejected-by-classical-code-baseline",
+      "required_next_step": "Do not use this code row for coset-state measurement design; mutate to a family that survives all listed baselines.",
+      "row_family": "random-weak-invariant-family",
+      "row_id": "code-family-random-weak-collision-9-4"
+    },
+    {
+      "evidence": [
+        {
+          "detail": "All 7 evaluated pair(s) are known equivalent controls.",
+          "source": "code_closure_attack",
+          "status": "equivalent-controls-under-closure",
+          "verdict": "control"
+        },
+        {
+          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "All 7 evaluated pair(s) are known equivalent controls.",
+          "source": "code_schur_filtration",
+          "status": "equivalent-controls-under-schur-filtration",
+          "verdict": "control"
+        },
+        {
+          "detail": "Cyclic-code collisions found so far are equivalent controls under the natural dihedral automorphism group.",
+          "source": "cyclic_code_search",
+          "status": "cyclic-collisions-all-dihedral-controls",
+          "verdict": "control"
+        }
+      ],
+      "final_status": "control-or-no-hard-row-not-positive-evidence",
+      "required_next_step": "Treat equivalent controls and no-collision searches as negative search information; broaden the family generator.",
+      "row_family": "cyclic-code-family",
+      "row_id": "cyclic-family-cyclic-n15"
+    },
+    {
+      "evidence": [
+        {
+          "detail": "All 8 evaluated pair(s) are known equivalent controls.",
+          "source": "code_closure_attack",
+          "status": "equivalent-controls-under-closure",
+          "verdict": "control"
+        },
+        {
+          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "All 8 evaluated pair(s) are known equivalent controls.",
+          "source": "code_schur_filtration",
+          "status": "equivalent-controls-under-schur-filtration",
+          "verdict": "control"
+        },
+        {
+          "detail": "Cyclic-code collisions found so far are equivalent controls under the natural dihedral automorphism group.",
+          "source": "cyclic_code_search",
+          "status": "cyclic-collisions-all-dihedral-controls",
+          "verdict": "control"
+        }
+      ],
+      "final_status": "control-or-no-hard-row-not-positive-evidence",
+      "required_next_step": "Treat equivalent controls and no-collision searches as negative search information; broaden the family generator.",
+      "row_family": "cyclic-code-family",
+      "row_id": "cyclic-family-cyclic-n21"
+    },
+    {
+      "evidence": [
+        {
+          "detail": "All 2 evaluated pair(s) are known equivalent controls.",
+          "source": "code_closure_attack",
+          "status": "equivalent-controls-under-closure",
+          "verdict": "control"
+        },
+        {
+          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "All 2 evaluated pair(s) are known equivalent controls.",
+          "source": "code_schur_filtration",
+          "status": "equivalent-controls-under-schur-filtration",
+          "verdict": "control"
+        },
+        {
+          "detail": "Cyclic-code collisions found so far are equivalent controls under the natural dihedral automorphism group.",
+          "source": "cyclic_code_search",
+          "status": "cyclic-collisions-all-dihedral-controls",
+          "verdict": "control"
+        }
+      ],
+      "final_status": "control-or-no-hard-row-not-positive-evidence",
+      "required_next_step": "Treat equivalent controls and no-collision searches as negative search information; broaden the family generator.",
+      "row_family": "cyclic-code-family",
+      "row_id": "cyclic-family-cyclic-n7"
+    },
+    {
+      "evidence": [
+        {
+          "detail": "All 5 evaluated pair(s) are known equivalent controls.",
+          "source": "code_closure_attack",
+          "status": "equivalent-controls-under-closure",
+          "verdict": "control"
+        },
+        {
+          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "All 5 evaluated pair(s) are known equivalent controls.",
+          "source": "code_schur_filtration",
+          "status": "equivalent-controls-under-schur-filtration",
+          "verdict": "control"
+        },
+        {
+          "detail": "Goppa tuple-profile collisions found so far are semilinear/equivalent controls.",
+          "source": "goppa_code_search",
+          "status": "goppa-collisions-all-semilinear-controls",
+          "verdict": "control"
+        }
+      ],
+      "final_status": "control-or-no-hard-row-not-positive-evidence",
+      "required_next_step": "Treat equivalent controls and no-collision searches as negative search information; broaden the family generator.",
+      "row_family": "goppa-code-family",
+      "row_id": "goppa-family-goppa-m3-t2"
+    },
+    {
+      "evidence": [
+        {
+          "detail": "All 5 evaluated pair(s) are known equivalent controls.",
+          "source": "code_closure_attack",
+          "status": "equivalent-controls-under-closure",
+          "verdict": "control"
+        },
+        {
+          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "All 5 evaluated pair(s) are known equivalent controls.",
+          "source": "code_schur_filtration",
+          "status": "equivalent-controls-under-schur-filtration",
+          "verdict": "control"
+        },
+        {
+          "detail": "Goppa tuple-profile collisions found so far are semilinear/equivalent controls.",
+          "source": "goppa_code_search",
+          "status": "goppa-collisions-all-semilinear-controls",
+          "verdict": "control"
+        }
+      ],
+      "final_status": "control-or-no-hard-row-not-positive-evidence",
+      "required_next_step": "Treat equivalent controls and no-collision searches as negative search information; broaden the family generator.",
+      "row_family": "goppa-code-family",
+      "row_id": "goppa-family-goppa-m4-t2"
+    },
+    {
+      "evidence": [
+        {
+          "detail": "All 5 evaluated pair(s) are known equivalent controls.",
+          "source": "code_closure_attack",
+          "status": "equivalent-controls-under-closure",
+          "verdict": "control"
+        },
+        {
+          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "All 5 evaluated pair(s) are known equivalent controls.",
+          "source": "code_schur_filtration",
+          "status": "equivalent-controls-under-schur-filtration",
+          "verdict": "control"
+        },
+        {
+          "detail": "Goppa tuple-profile collisions found so far are semilinear/equivalent controls.",
+          "source": "goppa_code_search",
+          "status": "goppa-collisions-all-semilinear-controls",
+          "verdict": "control"
+        }
+      ],
+      "final_status": "control-or-no-hard-row-not-positive-evidence",
+      "required_next_step": "Treat equivalent controls and no-collision searches as negative search information; broaden the family generator.",
+      "row_family": "goppa-code-family",
+      "row_id": "goppa-family-goppa-m4-t3"
+    },
+    {
+      "evidence": [
+        {
+          "detail": "Earlier scalable invariants already resolved every audited pair in this family.",
+          "source": "goppa_hull_projector_frontier",
+          "status": "no-unresolved-goppa-projector-frontier-pair",
+          "verdict": "unclassified"
+        },
+        {
+          "detail": "All 2 coarse collision(s) are separated or controlled by stronger classical checks.",
+          "source": "goppa_scaling_frontier",
+          "status": "goppa-scaling-collisions-classically-resolved",
+          "verdict": "dequantizing"
+        },
+        {
+          "detail": "Every audited unrelated pair is already classically resolved by the prior scalable signature or an exact Betti mismatch.",
+          "source": "goppa_syzygy_frontier",
+          "status": "goppa-syzygy-pairs-classically-resolved",
+          "verdict": "dequantizing"
+        }
+      ],
+      "final_status": "rejected-by-classical-code-baseline",
+      "required_next_step": "Do not use this code row for coset-state measurement design; mutate to a family that survives all listed baselines.",
+      "row_family": "punctured-goppa-scaling-family",
+      "row_id": "goppa-scaling-family-goppa-scale-m6-t3-n48"
+    },
+    {
+      "evidence": [
+        {
+          "detail": "Earlier scalable invariants already resolved every audited pair in this family.",
+          "source": "goppa_hull_projector_frontier",
+          "status": "no-unresolved-goppa-projector-frontier-pair",
+          "verdict": "unclassified"
+        },
+        {
+          "detail": "All 1 coarse collision(s) are separated or controlled by stronger classical checks.",
+          "source": "goppa_scaling_frontier",
+          "status": "goppa-scaling-collisions-classically-resolved",
+          "verdict": "dequantizing"
+        },
+        {
+          "detail": "Every audited unrelated pair is already classically resolved by the prior scalable signature or an exact Betti mismatch.",
+          "source": "goppa_syzygy_frontier",
+          "status": "goppa-syzygy-pairs-classically-resolved",
+          "verdict": "dequantizing"
+        }
+      ],
+      "final_status": "rejected-by-classical-code-baseline",
+      "required_next_step": "Do not use this code row for coset-state measurement design; mutate to a family that survives all listed baselines.",
+      "row_family": "punctured-goppa-scaling-family",
+      "row_id": "goppa-scaling-family-goppa-scale-m7-t3-n96"
+    },
+    {
+      "evidence": [
+        {
+          "detail": "All 1 previously unresolved pair(s) are classically rejected or verified equivalent.",
+          "source": "goppa_hull_projector_frontier",
+          "status": "goppa-projector-frontier-classically-resolved",
+          "verdict": "dequantizing"
+        },
+        {
+          "detail": "1 pair(s) are unresolved only because exact dual/semilinear baselines hit caps.",
+          "source": "goppa_scaling_frontier",
+          "status": "goppa-scaling-baseline-cap-proof-debt",
+          "verdict": "proof-debt"
+        },
+        {
+          "detail": "1 pair(s) survive exact whole-code and one-coordinate-shortening Betti invariants.",
+          "source": "goppa_syzygy_frontier",
+          "status": "exact-goppa-syzygy-collision-proof-debt",
+          "verdict": "proof-debt"
+        }
+      ],
+      "final_status": "rejected-by-classical-code-baseline",
+      "required_next_step": "Do not use this code row for coset-state measurement design; mutate to a family that survives all listed baselines.",
+      "row_family": "punctured-goppa-scaling-family",
+      "row_id": "goppa-scaling-family-goppa-scale-m8-t4-n160"
+    },
+    {
+      "evidence": [
+        {
+          "detail": "Coordinate refinement profiles differ; this pair is separated by a support-splitting-style classical canonicalization invariant.",
+          "source": "code_canonicalization_baseline",
+          "status": "rejected-by-coordinate-profile-partition",
+          "verdict": "dequantizing"
+        },
+        {
+          "detail": "Conductor/t-closure attacks classically separate 1 pair(s) in this family.",
+          "source": "code_closure_attack",
+          "status": "rejected-by-t-closure-conductor",
+          "verdict": "dequantizing"
+        },
+        {
+          "detail": "control: classical code-equivalence baseline distinguishes this pair",
+          "source": "code_equivalence_workbench",
+          "status": "rejected-by-code-workbench-falsifier",
+          "verdict": "dequantizing"
+        },
+        {
+          "detail": "Information-set canonical signatures differ; this row is classically rejected.",
+          "source": "code_information_set_baseline",
+          "status": "rejected-by-information-set-canonicalization",
+          "verdict": "dequantizing"
+        },
+        {
+          "detail": "Low-weight codeword support hypergraphs separate this row: minimum_weight, max_weight_evaluated, spectrum, coordinate_profiles, pair_profiles, incidence_wl.",
+          "source": "code_low_weight_structure",
+          "status": "rejected-by-low-weight-matroid-structure",
+          "verdict": "dequantizing"
+        },
+        {
+          "detail": "Schur filtrations classically separate 1 pair(s) in this family.",
+          "source": "code_schur_filtration",
+          "status": "rejected-by-schur-filtration",
+          "verdict": "dequantizing"
+        },
+        {
+          "detail": "The pair is separated by structural classical code invariants: weight_enumerator, dual_weight_enumerator, hull_dimension, support_splitting_fingerprint, punctured_weight_profile, shortened_weight_profile",
+          "source": "code_structural_invariants",
+          "status": "rejected-by-structural-code-invariant",
+          "verdict": "dequantizing"
+        },
+        {
+          "detail": "1-coordinate tuple residual weight profiles separate this code pair; a matching coset observable is a classical invariant shadow.",
+          "source": "code_tuple_profile_baseline",
+          "status": "rejected-by-coordinate-tuple-profile",
+          "verdict": "dequantizing"
+        }
+      ],
+      "final_status": "rejected-by-classical-code-baseline",
+      "required_next_step": "Do not use this code row for coset-state measurement design; mutate to a family that survives all listed baselines.",
+      "row_family": "seed-code-pair",
+      "row_id": "hamming-7-4-column-twist"
+    },
+    {
+      "evidence": [
+        {
+          "detail": "Exact profile-pruned canonical forms match; the pair is equivalent under this baseline.",
+          "source": "code_canonicalization_baseline",
+          "status": "canonical-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "All 1 evaluated pair(s) are known equivalent controls.",
+          "source": "code_closure_attack",
+          "status": "equivalent-controls-under-closure",
+          "verdict": "control"
+        },
+        {
+          "detail": "control equivalent pair: hidden permutation certificate verifies and invariants match",
+          "source": "code_equivalence_workbench",
+          "status": "equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "Information-set canonical signatures match on a known equivalent control pair.",
+          "source": "code_information_set_baseline",
+          "status": "information-set-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "All 1 evaluated pair(s) are known equivalent controls.",
+          "source": "code_schur_filtration",
+          "status": "equivalent-controls-under-schur-filtration",
+          "verdict": "control"
+        },
+        {
+          "detail": "Structural invariants match on a known equivalent control pair.",
+          "source": "code_structural_invariants",
+          "status": "structural-invariant-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "Tuple profiles match on a known equivalent control pair.",
+          "source": "code_tuple_profile_baseline",
+          "status": "tuple-profile-equivalent-control",
+          "verdict": "control"
+        }
+      ],
+      "final_status": "control-or-no-hard-row-not-positive-evidence",
+      "required_next_step": "Treat equivalent controls and no-collision searches as negative search information; broaden the family generator.",
+      "row_family": "seed-code-pair",
+      "row_id": "hamming-7-4-permuted"
+    },
+    {
+      "evidence": [
+        {
+          "detail": "All 3 evaluated pair(s) are known equivalent controls.",
+          "source": "code_closure_attack",
+          "status": "equivalent-controls-under-closure",
+          "verdict": "control"
+        },
+        {
+          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "All 3 evaluated pair(s) are known equivalent controls.",
+          "source": "code_schur_filtration",
+          "status": "equivalent-controls-under-schur-filtration",
+          "verdict": "control"
+        },
+        {
+          "detail": "Finite-geometry collisions found so far are projective-linear or canonical controls.",
+          "source": "projective_geometry_code_search",
+          "status": "projective-geometry-collisions-all-equivalent-controls",
+          "verdict": "control"
+        }
+      ],
+      "final_status": "control-or-no-hard-row-not-positive-evidence",
+      "required_next_step": "Treat equivalent controls and no-collision searches as negative search information; broaden the family generator.",
+      "row_family": "projective-geometry-code-family",
+      "row_id": "pg-family-pg2-f2-k6"
+    },
+    {
+      "evidence": [
+        {
+          "detail": "All 4 evaluated pair(s) are known equivalent controls.",
+          "source": "code_closure_attack",
+          "status": "equivalent-controls-under-closure",
+          "verdict": "control"
+        },
+        {
+          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "All 4 evaluated pair(s) are known equivalent controls.",
+          "source": "code_schur_filtration",
+          "status": "equivalent-controls-under-schur-filtration",
+          "verdict": "control"
+        },
+        {
+          "detail": "Finite-geometry collisions found so far are projective-linear or canonical controls.",
+          "source": "projective_geometry_code_search",
+          "status": "projective-geometry-collisions-all-equivalent-controls",
+          "verdict": "control"
+        }
+      ],
+      "final_status": "control-or-no-hard-row-not-positive-evidence",
+      "required_next_step": "Treat equivalent controls and no-collision searches as negative search information; broaden the family generator.",
+      "row_family": "projective-geometry-code-family",
+      "row_id": "pg-family-pg2-f3-k10"
+    },
+    {
+      "evidence": [
+        {
+          "detail": "Profile collisions found so far are equivalent controls under profile-pruned canonicalization.",
+          "source": "code_profile_collision_search",
+          "status": "profile-collisions-all-equivalent-controls",
+          "verdict": "control"
+        }
+      ],
+      "final_status": "control-or-no-hard-row-not-positive-evidence",
+      "required_next_step": "Treat equivalent controls and no-collision searches as negative search information; broaden the family generator.",
+      "row_family": "profile-collision-search",
+      "row_id": "profile-search-profile-collision-10-4"
+    },
+    {
+      "evidence": [
+        {
+          "detail": "Profile collisions found so far are equivalent controls under profile-pruned canonicalization.",
+          "source": "code_profile_collision_search",
+          "status": "profile-collisions-all-equivalent-controls",
+          "verdict": "control"
+        }
+      ],
+      "final_status": "control-or-no-hard-row-not-positive-evidence",
+      "required_next_step": "Treat equivalent controls and no-collision searches as negative search information; broaden the family generator.",
+      "row_family": "profile-collision-search",
+      "row_id": "profile-search-profile-collision-10-5"
+    },
+    {
+      "evidence": [
+        {
+          "detail": "Profile collisions found so far are equivalent controls under profile-pruned canonicalization.",
+          "source": "code_profile_collision_search",
+          "status": "profile-collisions-all-equivalent-controls",
+          "verdict": "control"
+        }
+      ],
+      "final_status": "control-or-no-hard-row-not-positive-evidence",
+      "required_next_step": "Treat equivalent controls and no-collision searches as negative search information; broaden the family generator.",
+      "row_family": "profile-collision-search",
+      "row_id": "profile-search-profile-collision-8-4"
+    },
+    {
+      "evidence": [
+        {
+          "detail": "Profile collisions found so far are equivalent controls under profile-pruned canonicalization.",
+          "source": "code_profile_collision_search",
+          "status": "profile-collisions-all-equivalent-controls",
+          "verdict": "control"
+        }
+      ],
+      "final_status": "control-or-no-hard-row-not-positive-evidence",
+      "required_next_step": "Treat equivalent controls and no-collision searches as negative search information; broaden the family generator.",
+      "row_family": "profile-collision-search",
+      "row_id": "profile-search-profile-collision-9-4"
+    },
+    {
+      "evidence": [
+        {
+          "detail": "All 2 evaluated pair(s) are known equivalent controls.",
+          "source": "code_closure_attack",
+          "status": "equivalent-controls-under-closure",
+          "verdict": "control"
+        },
+        {
+          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "All 2 evaluated pair(s) are known equivalent controls.",
+          "source": "code_schur_filtration",
+          "status": "equivalent-controls-under-schur-filtration",
+          "verdict": "control"
+        },
+        {
+          "detail": "The tuple-profile collision is equivalent under quasi-cyclic block permutations and cyclic shifts; it is a structured control, not hard evidence.",
+          "source": "quasi_cyclic_canonicalization",
+          "status": "equivalent-under-qc-automorphism-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "The tuple-profile collision is equivalent under quasi-cyclic block permutations and cyclic shifts; it is a structured control, not hard evidence.",
+          "source": "quasi_cyclic_canonicalization",
+          "status": "equivalent-under-qc-automorphism-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "Some quasi-cyclic tuple-profile collisions remain proof debt after tuple-profile and canonicalization checks.",
+          "source": "quasi_cyclic_code_search",
+          "status": "qc-tuple-collision-proof-debt",
+          "verdict": "proof-debt"
+        }
+      ],
+      "final_status": "control-or-no-hard-row-not-positive-evidence",
+      "required_next_step": "Treat equivalent controls and no-collision searches as negative search information; broaden the family generator.",
+      "row_family": "quasi-cyclic-family",
+      "row_id": "qc-family-qc-index4-two-circulants"
+    },
+    {
+      "evidence": [
+        {
+          "detail": "All 2 evaluated pair(s) are known equivalent controls.",
+          "source": "code_closure_attack",
+          "status": "equivalent-controls-under-closure",
+          "verdict": "control"
+        },
+        {
+          "detail": "Every one of the 1 source proof-debt row(s) is coordinate-permutation equivalent under an independently verified exact incidence-isomorphism witness.",
+          "source": "code_incidence_resolver",
+          "status": "incidence-family-all-equivalent-controls",
+          "verdict": "control"
+        },
+        {
+          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "All 2 evaluated pair(s) are known equivalent controls.",
+          "source": "code_schur_filtration",
+          "status": "equivalent-controls-under-schur-filtration",
+          "verdict": "control"
+        },
+        {
+          "detail": "A previous proof-debt row in this QC family was already resolved as an equivalent control.",
+          "source": "qc_information_set_resolver",
+          "status": "equivalent-control-family-already-resolved",
+          "verdict": "control"
+        },
+        {
+          "detail": "Exact ordered information-set canonicalization maps both QC rows to the same systematic canonical form; this is an equivalence control, not hard code-equivalence evidence.",
+          "source": "qc_information_set_resolver",
+          "status": "equivalent-control-under-information-set-canonicalization",
+          "verdict": "control"
+        },
+        {
+          "detail": "No equivalence was found inside the quasi-cyclic automorphism group.  This does not prove full non-equivalence; keep the row as proof debt for stronger canonicalization.",
+          "source": "quasi_cyclic_canonicalization",
+          "status": "qc-automorphism-no-equivalence-proof-debt",
+          "verdict": "proof-debt"
+        },
+        {
+          "detail": "No equivalence was found inside the quasi-cyclic automorphism group.  This does not prove full non-equivalence; keep the row as proof debt for stronger canonicalization.",
+          "source": "quasi_cyclic_canonicalization",
+          "status": "qc-automorphism-no-equivalence-proof-debt",
+          "verdict": "proof-debt"
+        },
+        {
+          "detail": "Some quasi-cyclic tuple-profile collisions remain proof debt after tuple-profile and canonicalization checks.",
+          "source": "quasi_cyclic_code_search",
+          "status": "qc-tuple-collision-proof-debt",
+          "verdict": "proof-debt"
+        }
+      ],
+      "final_status": "control-or-no-hard-row-not-positive-evidence",
+      "required_next_step": "Treat equivalent controls and no-collision searches as negative search information; broaden the family generator.",
+      "row_family": "quasi-cyclic-family",
+      "row_id": "qc-family-qc-index5-three-circulants"
+    },
+    {
+      "evidence": [
+        {
+          "detail": "All 2 evaluated pair(s) are known equivalent controls.",
+          "source": "code_closure_attack",
+          "status": "equivalent-controls-under-closure",
+          "verdict": "control"
+        },
+        {
+          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "All 2 evaluated pair(s) are known equivalent controls.",
+          "source": "code_schur_filtration",
+          "status": "equivalent-controls-under-schur-filtration",
+          "verdict": "control"
+        },
+        {
+          "detail": "Exact ordered information-set canonicalization maps both QC rows to the same systematic canonical form; this is an equivalence control, not hard code-equivalence evidence.",
+          "source": "qc_information_set_resolver",
+          "status": "equivalent-control-under-information-set-canonicalization",
+          "verdict": "control"
+        },
+        {
+          "detail": "The tuple-profile collision is equivalent under quasi-cyclic block permutations and cyclic shifts; it is a structured control, not hard evidence.",
+          "source": "quasi_cyclic_canonicalization",
+          "status": "equivalent-under-qc-automorphism-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "No equivalence was found inside the quasi-cyclic automorphism group.  This does not prove full non-equivalence; keep the row as proof debt for stronger canonicalization.",
+          "source": "quasi_cyclic_canonicalization",
+          "status": "qc-automorphism-no-equivalence-proof-debt",
+          "verdict": "proof-debt"
+        },
+        {
+          "detail": "Some quasi-cyclic tuple-profile collisions remain proof debt after tuple-profile and canonicalization checks.",
+          "source": "quasi_cyclic_code_search",
+          "status": "qc-tuple-collision-proof-debt",
+          "verdict": "proof-debt"
+        }
+      ],
+      "final_status": "control-or-no-hard-row-not-positive-evidence",
+      "required_next_step": "Treat equivalent controls and no-collision searches as negative search information; broaden the family generator.",
+      "row_family": "quasi-cyclic-family",
+      "row_id": "qc-family-qc-index5-two-circulants"
+    },
+    {
+      "evidence": [
+        {
+          "detail": "Coordinate refinement profiles differ; this pair is separated by a support-splitting-style classical canonicalization invariant.",
+          "source": "code_canonicalization_baseline",
+          "status": "rejected-by-coordinate-profile-partition",
+          "verdict": "dequantizing"
+        },
+        {
+          "detail": "Conductor/t-closure attacks classically separate 1 pair(s) in this family.",
+          "source": "code_closure_attack",
+          "status": "rejected-by-t-closure-conductor",
+          "verdict": "dequantizing"
+        },
+        {
+          "detail": "control: classical code-equivalence baseline distinguishes this pair",
+          "source": "code_equivalence_workbench",
+          "status": "rejected-by-code-workbench-falsifier",
+          "verdict": "dequantizing"
+        },
+        {
+          "detail": "Information-set canonical signatures differ; this row is classically rejected.",
+          "source": "code_information_set_baseline",
+          "status": "rejected-by-information-set-canonicalization",
+          "verdict": "dequantizing"
+        },
+        {
+          "detail": "Low-weight codeword support hypergraphs separate this row: coordinate_profiles, pair_profiles, incidence_wl.",
+          "source": "code_low_weight_structure",
+          "status": "rejected-by-low-weight-matroid-structure",
+          "verdict": "dequantizing"
+        },
+        {
+          "detail": "Schur filtrations classically separate 1 pair(s) in this family.",
+          "source": "code_schur_filtration",
+          "status": "rejected-by-schur-filtration",
+          "verdict": "dequantizing"
+        },
+        {
+          "detail": "The pair is separated by structural classical code invariants: hull_dimension, support_splitting_fingerprint, punctured_weight_profile, shortened_weight_profile",
+          "source": "code_structural_invariants",
+          "status": "rejected-by-structural-code-invariant",
+          "verdict": "dequantizing"
+        },
+        {
+          "detail": "1-coordinate tuple residual weight profiles separate this code pair; a matching coset observable is a classical invariant shadow.",
+          "source": "code_tuple_profile_baseline",
+          "status": "rejected-by-coordinate-tuple-profile",
+          "verdict": "dequantizing"
+        }
+      ],
+      "final_status": "rejected-by-classical-code-baseline",
+      "required_next_step": "Do not use this code row for coset-state measurement design; mutate to a family that survives all listed baselines.",
+      "row_family": "seed-code-pair",
+      "row_id": "random-8-4-weak-invariant-collision"
+    },
+    {
+      "evidence": [
+        {
+          "detail": "Trivial-hull fraction=0.38125; hull<=2 fraction=0.978125; finite projector/GI resolutions=10. This rejects independent code-native hardness, not graph-isomorphism hardness.",
+          "source": "code_hull_projector_reduction",
+          "status": "random-trivial-hull-code-equivalence-collapses-to-gi",
+          "verdict": "dequantizing"
+        }
+      ],
+      "final_status": "rejected-by-classical-code-baseline",
+      "required_next_step": "Do not use this code row for coset-state measurement design; mutate to a family that survives all listed baselines.",
+      "row_family": "random-code-hull-projector-family",
+      "row_id": "random-code-hull-projector-family"
+    },
+    {
+      "evidence": [
+        {
+          "detail": "3 pair(s) survive bounded closure signatures and require explicit recovery attacks.",
+          "source": "code_closure_attack",
+          "status": "closure-support-recovery-proof-debt",
+          "verdict": "proof-debt"
+        },
+        {
+          "detail": "Every one of the 3 source proof-debt row(s) is coordinate-permutation equivalent under an independently verified exact incidence-isomorphism witness.",
+          "source": "code_incidence_resolver",
+          "status": "incidence-family-all-equivalent-controls",
+          "verdict": "control"
+        },
+        {
+          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "Low-weight support hypergraphs match under the configured cap. This is proof debt only; run information-set/canonicalization/automorphism baselines and prove lower bounds before promotion.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-survivor-proof-debt",
+          "verdict": "proof-debt"
+        },
+        {
+          "detail": "Low-weight support hypergraphs match under the configured cap. This is proof debt only; run information-set/canonicalization/automorphism baselines and prove lower bounds before promotion.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-survivor-proof-debt",
+          "verdict": "proof-debt"
+        },
+        {
+          "detail": "Low-weight support hypergraphs match under the configured cap. This is proof debt only; run information-set/canonicalization/automorphism baselines and prove lower bounds before promotion.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-survivor-proof-debt",
+          "verdict": "proof-debt"
+        },
+        {
+          "detail": "3 pair(s) survive this filtration and require stronger algebraic recovery attacks.",
+          "source": "code_schur_filtration",
+          "status": "schur-filtration-proof-debt",
+          "verdict": "proof-debt"
+        },
+        {
+          "detail": "Some binary-expanded rank-metric rows survived implemented baselines and remain proof debt.",
+          "source": "rank_metric_code_search",
+          "status": "rank-metric-code-search-proof-debt",
+          "verdict": "proof-debt"
+        }
+      ],
+      "final_status": "control-or-no-hard-row-not-positive-evidence",
+      "required_next_step": "Treat equivalent controls and no-collision searches as negative search information; broaden the family generator.",
+      "row_family": "binary-expanded-rank-metric-family",
+      "row_id": "rank-metric-family-gabidulin-m4-n3-k2"
+    },
+    {
+      "evidence": [
+        {
+          "detail": "All 5 evaluated pair(s) are known equivalent controls.",
+          "source": "code_closure_attack",
+          "status": "equivalent-controls-under-closure",
+          "verdict": "control"
+        },
+        {
+          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "All 5 evaluated pair(s) are known equivalent controls.",
+          "source": "code_schur_filtration",
+          "status": "equivalent-controls-under-schur-filtration",
+          "verdict": "control"
+        },
+        {
+          "detail": "Rank-metric rows found so far are block-permutation or canonical controls.",
+          "source": "rank_metric_code_search",
+          "status": "rank-metric-collisions-all-equivalent-controls",
+          "verdict": "control"
+        }
+      ],
+      "final_status": "control-or-no-hard-row-not-positive-evidence",
+      "required_next_step": "Treat equivalent controls and no-collision searches as negative search information; broaden the family generator.",
+      "row_family": "binary-expanded-rank-metric-family",
+      "row_id": "rank-metric-family-gabidulin-m5-n3-k2"
+    },
+    {
+      "evidence": [
+        {
+          "detail": "All 5 evaluated pair(s) are known equivalent controls.",
+          "source": "code_closure_attack",
+          "status": "equivalent-controls-under-closure",
+          "verdict": "control"
+        },
+        {
+          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "All 5 evaluated pair(s) are known equivalent controls.",
+          "source": "code_schur_filtration",
+          "status": "equivalent-controls-under-schur-filtration",
+          "verdict": "control"
+        },
+        {
+          "detail": "Punctured RM rows found so far are affine/canonical equivalent controls.",
+          "source": "reed_muller_code_search",
+          "status": "reed-muller-collisions-all-equivalent-controls",
+          "verdict": "control"
+        }
+      ],
+      "final_status": "control-or-no-hard-row-not-positive-evidence",
+      "required_next_step": "Treat equivalent controls and no-collision searches as negative search information; broaden the family generator.",
+      "row_family": "punctured-reed-muller-family",
+      "row_id": "rm-family-rm-r1-m4-k12"
+    },
+    {
+      "evidence": [
+        {
+          "detail": "All 5 evaluated pair(s) are known equivalent controls.",
+          "source": "code_closure_attack",
+          "status": "equivalent-controls-under-closure",
+          "verdict": "control"
+        },
+        {
+          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "All 5 evaluated pair(s) are known equivalent controls.",
+          "source": "code_schur_filtration",
+          "status": "equivalent-controls-under-schur-filtration",
+          "verdict": "control"
+        },
+        {
+          "detail": "Punctured RM rows found so far are affine/canonical equivalent controls.",
+          "source": "reed_muller_code_search",
+          "status": "reed-muller-collisions-all-equivalent-controls",
+          "verdict": "control"
+        }
+      ],
+      "final_status": "control-or-no-hard-row-not-positive-evidence",
+      "required_next_step": "Treat equivalent controls and no-collision searches as negative search information; broaden the family generator.",
+      "row_family": "punctured-reed-muller-family",
+      "row_id": "rm-family-rm-r2-m4-k12"
+    },
+    {
+      "evidence": [
+        {
+          "detail": "All 5 evaluated pair(s) are known equivalent controls.",
+          "source": "code_closure_attack",
+          "status": "equivalent-controls-under-closure",
+          "verdict": "control"
+        },
+        {
+          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "All 5 evaluated pair(s) are known equivalent controls.",
+          "source": "code_schur_filtration",
+          "status": "equivalent-controls-under-schur-filtration",
+          "verdict": "control"
+        },
+        {
+          "detail": "Punctured RM rows found so far are affine/canonical equivalent controls.",
+          "source": "reed_muller_code_search",
+          "status": "reed-muller-collisions-all-equivalent-controls",
+          "verdict": "control"
+        }
+      ],
+      "final_status": "control-or-no-hard-row-not-positive-evidence",
+      "required_next_step": "Treat equivalent controls and no-collision searches as negative search information; broaden the family generator.",
+      "row_family": "punctured-reed-muller-family",
+      "row_id": "rm-family-rm-r2-m4-k14"
+    },
+    {
+      "evidence": [
+        {
+          "detail": "All 5 evaluated pair(s) are known equivalent controls.",
+          "source": "code_closure_attack",
+          "status": "equivalent-controls-under-closure",
+          "verdict": "control"
+        },
+        {
+          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "All 5 evaluated pair(s) are known equivalent controls.",
+          "source": "code_schur_filtration",
+          "status": "equivalent-controls-under-schur-filtration",
+          "verdict": "control"
+        },
+        {
+          "detail": "Tanner tuple-profile collisions found so far are equivalent controls.",
+          "source": "tanner_code_search",
+          "status": "tanner-collisions-all-equivalent-controls",
+          "verdict": "control"
+        }
+      ],
+      "final_status": "control-or-no-hard-row-not-positive-evidence",
+      "required_next_step": "Treat equivalent controls and no-collision searches as negative search information; broaden the family generator.",
+      "row_family": "tanner-ldpc-family",
+      "row_id": "tanner-family-tanner-10-5-dv2-dc4"
+    },
+    {
+      "evidence": [
+        {
+          "detail": "All 5 evaluated pair(s) are known equivalent controls.",
+          "source": "code_closure_attack",
+          "status": "equivalent-controls-under-closure",
+          "verdict": "control"
+        },
+        {
+          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "All 5 evaluated pair(s) are known equivalent controls.",
+          "source": "code_schur_filtration",
+          "status": "equivalent-controls-under-schur-filtration",
+          "verdict": "control"
+        },
+        {
+          "detail": "Tanner tuple-profile collisions found so far are equivalent controls.",
+          "source": "tanner_code_search",
+          "status": "tanner-collisions-all-equivalent-controls",
+          "verdict": "control"
+        }
+      ],
+      "final_status": "control-or-no-hard-row-not-positive-evidence",
+      "required_next_step": "Treat equivalent controls and no-collision searches as negative search information; broaden the family generator.",
+      "row_family": "tanner-ldpc-family",
+      "row_id": "tanner-family-tanner-12-6-dv2-dc4"
+    },
+    {
+      "evidence": [
+        {
+          "detail": "All 5 evaluated pair(s) are known equivalent controls.",
+          "source": "code_closure_attack",
+          "status": "equivalent-controls-under-closure",
+          "verdict": "control"
+        },
+        {
+          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "All 5 evaluated pair(s) are known equivalent controls.",
+          "source": "code_schur_filtration",
+          "status": "equivalent-controls-under-schur-filtration",
+          "verdict": "control"
+        },
+        {
+          "detail": "Tanner tuple-profile collisions found so far are equivalent controls.",
+          "source": "tanner_code_search",
+          "status": "tanner-collisions-all-equivalent-controls",
+          "verdict": "control"
+        }
+      ],
+      "final_status": "control-or-no-hard-row-not-positive-evidence",
+      "required_next_step": "Treat equivalent controls and no-collision searches as negative search information; broaden the family generator.",
+      "row_family": "tanner-ldpc-family",
+      "row_id": "tanner-family-tanner-12-9-dv3-dc4"
+    },
+    {
+      "evidence": [
+        {
+          "detail": "Tuple-profile collisions found so far are equivalent controls.",
+          "source": "code_tuple_profile_collision_search",
+          "status": "tuple-profile-collisions-all-equivalent-controls",
+          "verdict": "control"
+        }
+      ],
+      "final_status": "control-or-no-hard-row-not-positive-evidence",
+      "required_next_step": "Treat equivalent controls and no-collision searches as negative search information; broaden the family generator.",
+      "row_family": "tuple-profile-collision-search",
+      "row_id": "tuple-search-tuple-profile-10-5-t2"
+    },
+    {
+      "evidence": [
+        {
+          "detail": "Tuple-profile collisions found so far are equivalent controls.",
+          "source": "code_tuple_profile_collision_search",
+          "status": "tuple-profile-collisions-all-equivalent-controls",
+          "verdict": "control"
+        }
+      ],
+      "final_status": "control-or-no-hard-row-not-positive-evidence",
+      "required_next_step": "Treat equivalent controls and no-collision searches as negative search information; broaden the family generator.",
+      "row_family": "tuple-profile-collision-search",
+      "row_id": "tuple-search-tuple-profile-8-4-t2"
+    },
+    {
+      "evidence": [
+        {
+          "detail": "Tuple-profile collisions found so far are equivalent controls.",
+          "source": "code_tuple_profile_collision_search",
+          "status": "tuple-profile-collisions-all-equivalent-controls",
+          "verdict": "control"
+        }
+      ],
+      "final_status": "control-or-no-hard-row-not-positive-evidence",
+      "required_next_step": "Treat equivalent controls and no-collision searches as negative search information; broaden the family generator.",
+      "row_family": "tuple-profile-collision-search",
+      "row_id": "tuple-search-tuple-profile-9-4-t2"
+    }
+  ],
+  "status": "code-frontier-dequantized-or-control",
+  "summary": "Triage aggregated 46 code-equivalence row(s) across 256 evidence items. 16 row(s) are rejected by classical baselines, 0 remain proof debt, and 30 are equivalent controls or no-hard-row searches."
+}

@@ -1,0 +1,99 @@
+{
+  "base_sizes": [
+    4,
+    5,
+    6,
+    7
+  ],
+  "created_at": "2026-07-09T16:48:26.927205+00:00",
+  "falsifiers_triggered": [
+    "Boundary CFI rows still lack an explicit nonclassical collective measurement; current evidence is proof debt."
+  ],
+  "graphlet_tuple_cap": 1000000,
+  "headline_metrics": {
+    "base_size_count": 4,
+    "boundary_record_count": 4,
+    "cheap_invariant_distinguishes_count": 0,
+    "graphlet4_evaluated_count": 2,
+    "graphlet4_skipped_count": 2,
+    "max_vertex_count": 266,
+    "wl2_distinguishes_count": 0,
+    "wl2_evaluated_count": 2,
+    "wl2_skipped_count": 2,
+    "wl3_evaluated_count": 1,
+    "wl3_skipped_count": 3
+  },
+  "records": [
+    {
+      "base_size": 4,
+      "cheap_invariants_distinguish": false,
+      "edge_count": 48,
+      "graphlet4_distinguishes": false,
+      "graphlet4_evaluated": true,
+      "graphlet4_tuple_count": 20475,
+      "interpretation": "Low-cost, 3-WL, and graphlet probes do not distinguish this CFI instance at the current scale.",
+      "status": "finite-boundary-survives-current-probes",
+      "vertex_count": 28,
+      "wl2_distinguishes": false,
+      "wl2_evaluated": true,
+      "wl2_pair_count": 784,
+      "wl3_distinguishes": false,
+      "wl3_evaluated": true,
+      "wl3_tuple_count": 21952
+    },
+    {
+      "base_size": 5,
+      "cheap_invariants_distinguish": false,
+      "edge_count": 160,
+      "graphlet4_distinguishes": false,
+      "graphlet4_evaluated": true,
+      "graphlet4_tuple_count": 487635,
+      "interpretation": "Low-cost invariants fail, while brute-force WL/graphlet probes hit scaling caps; this is measurement-design proof debt.",
+      "status": "scaling-boundary-needs-implicit-observable",
+      "vertex_count": 60,
+      "wl2_distinguishes": false,
+      "wl2_evaluated": true,
+      "wl2_pair_count": 3600,
+      "wl3_distinguishes": null,
+      "wl3_evaluated": false,
+      "wl3_tuple_count": 216000
+    },
+    {
+      "base_size": 6,
+      "cheap_invariants_distinguish": false,
+      "edge_count": 480,
+      "graphlet4_distinguishes": null,
+      "graphlet4_evaluated": false,
+      "graphlet4_tuple_count": 10009125,
+      "interpretation": "Low-cost invariants fail, while brute-force WL/graphlet probes hit scaling caps; this is measurement-design proof debt.",
+      "status": "scaling-boundary-needs-implicit-observable",
+      "vertex_count": 126,
+      "wl2_distinguishes": false,
+      "wl2_evaluated": false,
+      "wl2_pair_count": 15876,
+      "wl3_distinguishes": null,
+      "wl3_evaluated": false,
+      "wl3_tuple_count": 2000376
+    },
+    {
+      "base_size": 7,
+      "cheap_invariants_distinguish": false,
+      "edge_count": 1344,
+      "graphlet4_distinguishes": null,
+      "graphlet4_evaluated": false,
+      "graphlet4_tuple_count": 203927570,
+      "interpretation": "Low-cost invariants fail, while brute-force WL/graphlet probes hit scaling caps; this is measurement-design proof debt.",
+      "status": "scaling-boundary-needs-implicit-observable",
+      "vertex_count": 266,
+      "wl2_distinguishes": false,
+      "wl2_evaluated": false,
+      "wl2_pair_count": 70756,
+      "wl3_distinguishes": null,
+      "wl3_evaluated": false,
+      "wl3_tuple_count": 18821096
+    }
+  ],
+  "status": "cfi-scaling-boundary-open",
+  "summary": "Audited CFI parity bases [4, 5, 6, 7]. 4 row(s) remain boundary/proof-debt cases; 3 skip 3-WL brute force and 2 skip four-graphlet enumeration.",
+  "wl_tuple_cap": 100000
+}

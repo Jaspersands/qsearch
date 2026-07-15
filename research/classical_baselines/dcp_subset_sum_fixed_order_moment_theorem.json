@@ -1,0 +1,291 @@
+{
+  "certificates": [
+    {
+      "asymptotic_excess_bound": "poly_2(n)*(1-2^-2)^n",
+      "bad_growth_ratio_upper_bound": 0.75,
+      "bad_growth_ratio_upper_bound_denominator": 4,
+      "bad_growth_ratio_upper_bound_numerator": 3,
+      "boolean_column_pattern_count": 4,
+      "coordinate_projection_bound_proved": true,
+      "distinct_rows_force_strict_rank_deficient_contraction": true,
+      "equality_forces_coordinate_copies_proved": true,
+      "finite_lattice_state_upper_bound": "2^(2^2)",
+      "finite_transfer_graph_proved_monotone": true,
+      "fixed_offset_source_excess_vanishes": true,
+      "limitations": [
+        "Moment order must remain fixed while n grows.",
+        "The finite-state and polynomial constants can be enormous functions of the order.",
+        "The theorem is source averaged over uniform labels and independent target.",
+        "It does not prove concentration for a selected low-bit fiber.",
+        "It supplies no implicit statistic, witness decoder, or computational lower bound."
+      ],
+      "moment_order": 2,
+      "proof": "Choose r coordinates giving an injective projection of the rank-r real span. This injects its Boolean points into {0,1}^r. Equality makes each remaining linear coordinate functional Boolean on the full cube; evaluation on e_i and e_i+e_j proves it is zero or one coordinate copy. The all-ones target excludes zero, and distinct rows exclude copies when r<k. At full rank, any lattice with an even Smith factor is proper and omits a Boolean basis vector. Thus b<=2^r-1 for every source-nongeneric terminal state. Finite monotone lattice transfer converts this strict ratio into the stated exponential bound.",
+      "proper_full_rank_two_adic_lattice_forces_strict_contraction": true
+    },
+    {
+      "asymptotic_excess_bound": "poly_3(n)*(1-2^-3)^n",
+      "bad_growth_ratio_upper_bound": 0.875,
+      "bad_growth_ratio_upper_bound_denominator": 8,
+      "bad_growth_ratio_upper_bound_numerator": 7,
+      "boolean_column_pattern_count": 8,
+      "coordinate_projection_bound_proved": true,
+      "distinct_rows_force_strict_rank_deficient_contraction": true,
+      "equality_forces_coordinate_copies_proved": true,
+      "finite_lattice_state_upper_bound": "2^(2^3)",
+      "finite_transfer_graph_proved_monotone": true,
+      "fixed_offset_source_excess_vanishes": true,
+      "limitations": [
+        "Moment order must remain fixed while n grows.",
+        "The finite-state and polynomial constants can be enormous functions of the order.",
+        "The theorem is source averaged over uniform labels and independent target.",
+        "It does not prove concentration for a selected low-bit fiber.",
+        "It supplies no implicit statistic, witness decoder, or computational lower bound."
+      ],
+      "moment_order": 3,
+      "proof": "Choose r coordinates giving an injective projection of the rank-r real span. This injects its Boolean points into {0,1}^r. Equality makes each remaining linear coordinate functional Boolean on the full cube; evaluation on e_i and e_i+e_j proves it is zero or one coordinate copy. The all-ones target excludes zero, and distinct rows exclude copies when r<k. At full rank, any lattice with an even Smith factor is proper and omits a Boolean basis vector. Thus b<=2^r-1 for every source-nongeneric terminal state. Finite monotone lattice transfer converts this strict ratio into the stated exponential bound.",
+      "proper_full_rank_two_adic_lattice_forces_strict_contraction": true
+    },
+    {
+      "asymptotic_excess_bound": "poly_4(n)*(1-2^-4)^n",
+      "bad_growth_ratio_upper_bound": 0.9375,
+      "bad_growth_ratio_upper_bound_denominator": 16,
+      "bad_growth_ratio_upper_bound_numerator": 15,
+      "boolean_column_pattern_count": 16,
+      "coordinate_projection_bound_proved": true,
+      "distinct_rows_force_strict_rank_deficient_contraction": true,
+      "equality_forces_coordinate_copies_proved": true,
+      "finite_lattice_state_upper_bound": "2^(2^4)",
+      "finite_transfer_graph_proved_monotone": true,
+      "fixed_offset_source_excess_vanishes": true,
+      "limitations": [
+        "Moment order must remain fixed while n grows.",
+        "The finite-state and polynomial constants can be enormous functions of the order.",
+        "The theorem is source averaged over uniform labels and independent target.",
+        "It does not prove concentration for a selected low-bit fiber.",
+        "It supplies no implicit statistic, witness decoder, or computational lower bound."
+      ],
+      "moment_order": 4,
+      "proof": "Choose r coordinates giving an injective projection of the rank-r real span. This injects its Boolean points into {0,1}^r. Equality makes each remaining linear coordinate functional Boolean on the full cube; evaluation on e_i and e_i+e_j proves it is zero or one coordinate copy. The all-ones target excludes zero, and distinct rows exclude copies when r<k. At full rank, any lattice with an even Smith factor is proper and omits a Boolean basis vector. Thus b<=2^r-1 for every source-nongeneric terminal state. Finite monotone lattice transfer converts this strict ratio into the stated exponential bound.",
+      "proper_full_rank_two_adic_lattice_forces_strict_contraction": true
+    },
+    {
+      "asymptotic_excess_bound": "poly_5(n)*(1-2^-5)^n",
+      "bad_growth_ratio_upper_bound": 0.96875,
+      "bad_growth_ratio_upper_bound_denominator": 32,
+      "bad_growth_ratio_upper_bound_numerator": 31,
+      "boolean_column_pattern_count": 32,
+      "coordinate_projection_bound_proved": true,
+      "distinct_rows_force_strict_rank_deficient_contraction": true,
+      "equality_forces_coordinate_copies_proved": true,
+      "finite_lattice_state_upper_bound": "2^(2^5)",
+      "finite_transfer_graph_proved_monotone": true,
+      "fixed_offset_source_excess_vanishes": true,
+      "limitations": [
+        "Moment order must remain fixed while n grows.",
+        "The finite-state and polynomial constants can be enormous functions of the order.",
+        "The theorem is source averaged over uniform labels and independent target.",
+        "It does not prove concentration for a selected low-bit fiber.",
+        "It supplies no implicit statistic, witness decoder, or computational lower bound."
+      ],
+      "moment_order": 5,
+      "proof": "Choose r coordinates giving an injective projection of the rank-r real span. This injects its Boolean points into {0,1}^r. Equality makes each remaining linear coordinate functional Boolean on the full cube; evaluation on e_i and e_i+e_j proves it is zero or one coordinate copy. The all-ones target excludes zero, and distinct rows exclude copies when r<k. At full rank, any lattice with an even Smith factor is proper and omits a Boolean basis vector. Thus b<=2^r-1 for every source-nongeneric terminal state. Finite monotone lattice transfer converts this strict ratio into the stated exponential bound.",
+      "proper_full_rank_two_adic_lattice_forces_strict_contraction": true
+    },
+    {
+      "asymptotic_excess_bound": "poly_6(n)*(1-2^-6)^n",
+      "bad_growth_ratio_upper_bound": 0.984375,
+      "bad_growth_ratio_upper_bound_denominator": 64,
+      "bad_growth_ratio_upper_bound_numerator": 63,
+      "boolean_column_pattern_count": 64,
+      "coordinate_projection_bound_proved": true,
+      "distinct_rows_force_strict_rank_deficient_contraction": true,
+      "equality_forces_coordinate_copies_proved": true,
+      "finite_lattice_state_upper_bound": "2^(2^6)",
+      "finite_transfer_graph_proved_monotone": true,
+      "fixed_offset_source_excess_vanishes": true,
+      "limitations": [
+        "Moment order must remain fixed while n grows.",
+        "The finite-state and polynomial constants can be enormous functions of the order.",
+        "The theorem is source averaged over uniform labels and independent target.",
+        "It does not prove concentration for a selected low-bit fiber.",
+        "It supplies no implicit statistic, witness decoder, or computational lower bound."
+      ],
+      "moment_order": 6,
+      "proof": "Choose r coordinates giving an injective projection of the rank-r real span. This injects its Boolean points into {0,1}^r. Equality makes each remaining linear coordinate functional Boolean on the full cube; evaluation on e_i and e_i+e_j proves it is zero or one coordinate copy. The all-ones target excludes zero, and distinct rows exclude copies when r<k. At full rank, any lattice with an even Smith factor is proper and omits a Boolean basis vector. Thus b<=2^r-1 for every source-nongeneric terminal state. Finite monotone lattice transfer converts this strict ratio into the stated exponential bound.",
+      "proper_full_rank_two_adic_lattice_forces_strict_contraction": true
+    },
+    {
+      "asymptotic_excess_bound": "poly_7(n)*(1-2^-7)^n",
+      "bad_growth_ratio_upper_bound": 0.9921875,
+      "bad_growth_ratio_upper_bound_denominator": 128,
+      "bad_growth_ratio_upper_bound_numerator": 127,
+      "boolean_column_pattern_count": 128,
+      "coordinate_projection_bound_proved": true,
+      "distinct_rows_force_strict_rank_deficient_contraction": true,
+      "equality_forces_coordinate_copies_proved": true,
+      "finite_lattice_state_upper_bound": "2^(2^7)",
+      "finite_transfer_graph_proved_monotone": true,
+      "fixed_offset_source_excess_vanishes": true,
+      "limitations": [
+        "Moment order must remain fixed while n grows.",
+        "The finite-state and polynomial constants can be enormous functions of the order.",
+        "The theorem is source averaged over uniform labels and independent target.",
+        "It does not prove concentration for a selected low-bit fiber.",
+        "It supplies no implicit statistic, witness decoder, or computational lower bound."
+      ],
+      "moment_order": 7,
+      "proof": "Choose r coordinates giving an injective projection of the rank-r real span. This injects its Boolean points into {0,1}^r. Equality makes each remaining linear coordinate functional Boolean on the full cube; evaluation on e_i and e_i+e_j proves it is zero or one coordinate copy. The all-ones target excludes zero, and distinct rows exclude copies when r<k. At full rank, any lattice with an even Smith factor is proper and omits a Boolean basis vector. Thus b<=2^r-1 for every source-nongeneric terminal state. Finite monotone lattice transfer converts this strict ratio into the stated exponential bound.",
+      "proper_full_rank_two_adic_lattice_forces_strict_contraction": true
+    },
+    {
+      "asymptotic_excess_bound": "poly_8(n)*(1-2^-8)^n",
+      "bad_growth_ratio_upper_bound": 0.99609375,
+      "bad_growth_ratio_upper_bound_denominator": 256,
+      "bad_growth_ratio_upper_bound_numerator": 255,
+      "boolean_column_pattern_count": 256,
+      "coordinate_projection_bound_proved": true,
+      "distinct_rows_force_strict_rank_deficient_contraction": true,
+      "equality_forces_coordinate_copies_proved": true,
+      "finite_lattice_state_upper_bound": "2^(2^8)",
+      "finite_transfer_graph_proved_monotone": true,
+      "fixed_offset_source_excess_vanishes": true,
+      "limitations": [
+        "Moment order must remain fixed while n grows.",
+        "The finite-state and polynomial constants can be enormous functions of the order.",
+        "The theorem is source averaged over uniform labels and independent target.",
+        "It does not prove concentration for a selected low-bit fiber.",
+        "It supplies no implicit statistic, witness decoder, or computational lower bound."
+      ],
+      "moment_order": 8,
+      "proof": "Choose r coordinates giving an injective projection of the rank-r real span. This injects its Boolean points into {0,1}^r. Equality makes each remaining linear coordinate functional Boolean on the full cube; evaluation on e_i and e_i+e_j proves it is zero or one coordinate copy. The all-ones target excludes zero, and distinct rows exclude copies when r<k. At full rank, any lattice with an even Smith factor is proper and omits a Boolean basis vector. Thus b<=2^r-1 for every source-nongeneric terminal state. Finite monotone lattice transfer converts this strict ratio into the stated exponential bound.",
+      "proper_full_rank_two_adic_lattice_forces_strict_contraction": true
+    },
+    {
+      "asymptotic_excess_bound": "poly_9(n)*(1-2^-9)^n",
+      "bad_growth_ratio_upper_bound": 0.998046875,
+      "bad_growth_ratio_upper_bound_denominator": 512,
+      "bad_growth_ratio_upper_bound_numerator": 511,
+      "boolean_column_pattern_count": 512,
+      "coordinate_projection_bound_proved": true,
+      "distinct_rows_force_strict_rank_deficient_contraction": true,
+      "equality_forces_coordinate_copies_proved": true,
+      "finite_lattice_state_upper_bound": "2^(2^9)",
+      "finite_transfer_graph_proved_monotone": true,
+      "fixed_offset_source_excess_vanishes": true,
+      "limitations": [
+        "Moment order must remain fixed while n grows.",
+        "The finite-state and polynomial constants can be enormous functions of the order.",
+        "The theorem is source averaged over uniform labels and independent target.",
+        "It does not prove concentration for a selected low-bit fiber.",
+        "It supplies no implicit statistic, witness decoder, or computational lower bound."
+      ],
+      "moment_order": 9,
+      "proof": "Choose r coordinates giving an injective projection of the rank-r real span. This injects its Boolean points into {0,1}^r. Equality makes each remaining linear coordinate functional Boolean on the full cube; evaluation on e_i and e_i+e_j proves it is zero or one coordinate copy. The all-ones target excludes zero, and distinct rows exclude copies when r<k. At full rank, any lattice with an even Smith factor is proper and omits a Boolean basis vector. Thus b<=2^r-1 for every source-nongeneric terminal state. Finite monotone lattice transfer converts this strict ratio into the stated exponential bound.",
+      "proper_full_rank_two_adic_lattice_forces_strict_contraction": true
+    },
+    {
+      "asymptotic_excess_bound": "poly_10(n)*(1-2^-10)^n",
+      "bad_growth_ratio_upper_bound": 0.9990234375,
+      "bad_growth_ratio_upper_bound_denominator": 1024,
+      "bad_growth_ratio_upper_bound_numerator": 1023,
+      "boolean_column_pattern_count": 1024,
+      "coordinate_projection_bound_proved": true,
+      "distinct_rows_force_strict_rank_deficient_contraction": true,
+      "equality_forces_coordinate_copies_proved": true,
+      "finite_lattice_state_upper_bound": "2^(2^10)",
+      "finite_transfer_graph_proved_monotone": true,
+      "fixed_offset_source_excess_vanishes": true,
+      "limitations": [
+        "Moment order must remain fixed while n grows.",
+        "The finite-state and polynomial constants can be enormous functions of the order.",
+        "The theorem is source averaged over uniform labels and independent target.",
+        "It does not prove concentration for a selected low-bit fiber.",
+        "It supplies no implicit statistic, witness decoder, or computational lower bound."
+      ],
+      "moment_order": 10,
+      "proof": "Choose r coordinates giving an injective projection of the rank-r real span. This injects its Boolean points into {0,1}^r. Equality makes each remaining linear coordinate functional Boolean on the full cube; evaluation on e_i and e_i+e_j proves it is zero or one coordinate copy. The all-ones target excludes zero, and distinct rows exclude copies when r<k. At full rank, any lattice with an even Smith factor is proper and omits a Boolean basis vector. Thus b<=2^r-1 for every source-nongeneric terminal state. Finite monotone lattice transfer converts this strict ratio into the stated exponential bound.",
+      "proper_full_rank_two_adic_lattice_forces_strict_contraction": true
+    },
+    {
+      "asymptotic_excess_bound": "poly_11(n)*(1-2^-11)^n",
+      "bad_growth_ratio_upper_bound": 0.99951171875,
+      "bad_growth_ratio_upper_bound_denominator": 2048,
+      "bad_growth_ratio_upper_bound_numerator": 2047,
+      "boolean_column_pattern_count": 2048,
+      "coordinate_projection_bound_proved": true,
+      "distinct_rows_force_strict_rank_deficient_contraction": true,
+      "equality_forces_coordinate_copies_proved": true,
+      "finite_lattice_state_upper_bound": "2^(2^11)",
+      "finite_transfer_graph_proved_monotone": true,
+      "fixed_offset_source_excess_vanishes": true,
+      "limitations": [
+        "Moment order must remain fixed while n grows.",
+        "The finite-state and polynomial constants can be enormous functions of the order.",
+        "The theorem is source averaged over uniform labels and independent target.",
+        "It does not prove concentration for a selected low-bit fiber.",
+        "It supplies no implicit statistic, witness decoder, or computational lower bound."
+      ],
+      "moment_order": 11,
+      "proof": "Choose r coordinates giving an injective projection of the rank-r real span. This injects its Boolean points into {0,1}^r. Equality makes each remaining linear coordinate functional Boolean on the full cube; evaluation on e_i and e_i+e_j proves it is zero or one coordinate copy. The all-ones target excludes zero, and distinct rows exclude copies when r<k. At full rank, any lattice with an even Smith factor is proper and omits a Boolean basis vector. Thus b<=2^r-1 for every source-nongeneric terminal state. Finite monotone lattice transfer converts this strict ratio into the stated exponential bound.",
+      "proper_full_rank_two_adic_lattice_forces_strict_contraction": true
+    },
+    {
+      "asymptotic_excess_bound": "poly_12(n)*(1-2^-12)^n",
+      "bad_growth_ratio_upper_bound": 0.999755859375,
+      "bad_growth_ratio_upper_bound_denominator": 4096,
+      "bad_growth_ratio_upper_bound_numerator": 4095,
+      "boolean_column_pattern_count": 4096,
+      "coordinate_projection_bound_proved": true,
+      "distinct_rows_force_strict_rank_deficient_contraction": true,
+      "equality_forces_coordinate_copies_proved": true,
+      "finite_lattice_state_upper_bound": "2^(2^12)",
+      "finite_transfer_graph_proved_monotone": true,
+      "fixed_offset_source_excess_vanishes": true,
+      "limitations": [
+        "Moment order must remain fixed while n grows.",
+        "The finite-state and polynomial constants can be enormous functions of the order.",
+        "The theorem is source averaged over uniform labels and independent target.",
+        "It does not prove concentration for a selected low-bit fiber.",
+        "It supplies no implicit statistic, witness decoder, or computational lower bound."
+      ],
+      "moment_order": 12,
+      "proof": "Choose r coordinates giving an injective projection of the rank-r real span. This injects its Boolean points into {0,1}^r. Equality makes each remaining linear coordinate functional Boolean on the full cube; evaluation on e_i and e_i+e_j proves it is zero or one coordinate copy. The all-ones target excludes zero, and distinct rows exclude copies when r<k. At full rank, any lattice with an even Smith factor is proper and omits a Boolean basis vector. Thus b<=2^r-1 for every source-nongeneric terminal state. Finite monotone lattice transfer converts this strict ratio into the stated exponential bound.",
+      "proper_full_rank_two_adic_lattice_forces_strict_contraction": true
+    }
+  ],
+  "claim_gate": {
+    "all_fixed_source_moment_orders_closed": true,
+    "atypical_conditioned_fibers_closed": false,
+    "growing_order_closed": false,
+    "polynomial_witness_decoder_constructed": false,
+    "reason": "Every fixed-order source-average factorial-moment excess contracts. Only an order growing with n, an atypical conditioned-fiber theorem, or a non-moment geometric mechanism can evade this gate.",
+    "reduced_basis_geometry_closed": false,
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-07-15T04:09:45.396301+00:00",
+  "falsifiers_triggered": [
+    "No generic source-average statistic of any fixed factorial-moment order can retain asymptotic excess.",
+    "Increasing a fixed constant moment order does not evade the theorem.",
+    "Finite-state constants depending badly on k prevent applying the result to k growing with n.",
+    "Source-average decay alone does not rule out a proved inverse-polynomial atypical conditioned-fiber tail."
+  ],
+  "headline_metrics": {
+    "certificate_count": 11,
+    "general_all_fixed_orders_theorem_count": 1,
+    "largest_instantiated_fixed_order": 12,
+    "maximum_instantiated_bad_growth_ratio_upper_bound": 0.999755859375,
+    "polynomial_witness_decoder_count": 0,
+    "proved_atypical_conditioned_fiber_obstruction_count": 0,
+    "proved_fixed_order_source_obstruction_count": 11,
+    "proved_growing_order_obstruction_count": 0
+  },
+  "status": "all-fixed-source-moment-orders-asymptotically-obstructed",
+  "summary": "Instantiated 11 fixed-order certificates through k=12. The projection/copy lemma proves the same strict contraction for every fixed k; growing order and conditioned-fiber concentration remain open.",
+  "theorem_contract": {
+    "conclusion": "E[(C)_k]-(2^m)_k/2^(nk) tends to zero exponentially up to a k-dependent polynomial",
+    "excluded": "k=k(n), conditioned-fiber tails, basis geometry, and decoder complexity",
+    "regime": "m=n+c with fixed c; factorial moment order k fixed before n tends to infinity",
+    "source": "uniform independent labels and uniform independent target over Z_(2^n)"
+  }
+}

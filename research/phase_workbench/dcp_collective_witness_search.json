@@ -1,0 +1,168 @@
+{
+  "claim_gate": {
+    "finite_signed_relations_observed": true,
+    "full_decoder_proved": false,
+    "hidden_bad_flags_used": false,
+    "logarithmic_locality_asymptotically_viable": false,
+    "polynomial_time_robust_witness_known": false,
+    "reason": "Efficient bounded-locality Pauli observables almost surely lack the required modular relation; more global measurements remain computationally and adversarially unresolved.",
+    "speedup_claim_allowed": false,
+    "state_sample_native": true
+  },
+  "created_at": "2026-07-14T19:21:15.641818+00:00",
+  "falsifiers_triggered": [
+    "A bounded-support X/Y correlator has zero hidden-reflection-averaged signal unless its public labels satisfy a signed modular relation.",
+    "With polynomially many random labels, the union bound eventually makes logarithmic-locality signed-relation witnesses negligible; small-n rows where the bound is vacuous are not counted as certificates.",
+    "Finite low-weight relations are postselected rare label events, not a uniform asymptotic DCP algorithm.",
+    "No polynomial-time robust measurement or full-reflection decoder is produced by relation enumeration."
+  ],
+  "headline_metrics": {
+    "finite_relation_count": 11,
+    "finite_relation_trial_count": 8,
+    "finite_trial_count": 48,
+    "locality_certificate_count": 6,
+    "logarithmic_locality_negligible_count": 4,
+    "maximum_first_unruled_relation_weight": 63,
+    "minimum_first_unruled_relation_weight": 4,
+    "polynomial_time_robust_witness_count": 0,
+    "proved_full_decoder_count": 0,
+    "scaling_row_count": 4
+  },
+  "locality_certificates": [
+    {
+      "all_good_probability_at_f1_rate_at_threshold": 0.8807382583618164,
+      "balanced_measurement_depth_at_threshold": 2,
+      "conclusion": "All X/Y correlators of support at most ceil(log2 n) have negligible aggregate relation probability over n^2 random labels. A viable polynomial-time witness needs substantially more global support or a non-Pauli structure.",
+      "first_unruled_weight_over_n": 0.125,
+      "first_weight_not_ruled_out_by_union_bound": 4,
+      "log2_relation_union_bound": 0.0,
+      "n_bits": 32,
+      "negligible_below_inverse_polynomial": false,
+      "polynomial_label_count": 1024,
+      "tested_locality": 5
+    },
+    {
+      "all_good_probability_at_f1_rate_at_threshold": 0.9098367039259756,
+      "balanced_measurement_depth_at_threshold": 3,
+      "conclusion": "All X/Y correlators of support at most ceil(log2 n) have negligible aggregate relation probability over n^2 random labels. A viable polynomial-time witness needs substantially more global support or a non-Pauli structure.",
+      "first_unruled_weight_over_n": 0.09375,
+      "first_weight_not_ruled_out_by_union_bound": 6,
+      "log2_relation_union_bound": 0.0,
+      "n_bits": 64,
+      "negligible_below_inverse_polynomial": false,
+      "polynomial_label_count": 4096,
+      "tested_locality": 6
+    },
+    {
+      "all_good_probability_at_f1_rate_at_threshold": 0.9173419714669381,
+      "balanced_measurement_depth_at_threshold": 4,
+      "conclusion": "All X/Y correlators of support at most ceil(log2 n) have negligible aggregate relation probability over n^2 random labels. A viable polynomial-time witness needs substantially more global support or a non-Pauli structure.",
+      "first_unruled_weight_over_n": 0.0859375,
+      "first_weight_not_ruled_out_by_union_bound": 11,
+      "log2_relation_union_bound": -36.30074909110046,
+      "n_bits": 128,
+      "negligible_below_inverse_polynomial": true,
+      "polynomial_label_count": 16384,
+      "tested_locality": 7
+    },
+    {
+      "all_good_probability_at_f1_rate_at_threshold": 0.9283336380005676,
+      "balanced_measurement_depth_at_threshold": 5,
+      "conclusion": "All X/Y correlators of support at most ceil(log2 n) have negligible aggregate relation probability over n^2 random labels. A viable polynomial-time witness needs substantially more global support or a non-Pauli structure.",
+      "first_unruled_weight_over_n": 0.07421875,
+      "first_weight_not_ruled_out_by_union_bound": 19,
+      "log2_relation_union_bound": -136.2997363611979,
+      "n_bits": 256,
+      "negligible_below_inverse_polynomial": true,
+      "polynomial_label_count": 65536,
+      "tested_locality": 8
+    },
+    {
+      "all_good_probability_at_f1_rate_at_threshold": 0.9356898779169108,
+      "balanced_measurement_depth_at_threshold": 6,
+      "conclusion": "All X/Y correlators of support at most ceil(log2 n) have negligible aggregate relation probability over n^2 random labels. A viable polynomial-time witness needs substantially more global support or a non-Pauli structure.",
+      "first_unruled_weight_over_n": 0.06640625,
+      "first_weight_not_ruled_out_by_union_bound": 34,
+      "log2_relation_union_bound": -360.4693063797002,
+      "n_bits": 512,
+      "negligible_below_inverse_polynomial": true,
+      "polynomial_label_count": 262144,
+      "tested_locality": 9
+    },
+    {
+      "all_good_probability_at_f1_rate_at_threshold": 0.9403026402589401,
+      "balanced_measurement_depth_at_threshold": 6,
+      "conclusion": "All X/Y correlators of support at most ceil(log2 n) have negligible aggregate relation probability over n^2 random labels. A viable polynomial-time witness needs substantially more global support or a non-Pauli structure.",
+      "first_unruled_weight_over_n": 0.0615234375,
+      "first_weight_not_ruled_out_by_union_bound": 63,
+      "log2_relation_union_bound": -836.7911161468304,
+      "n_bits": 1024,
+      "negligible_below_inverse_polynomial": true,
+      "polynomial_label_count": 1048576,
+      "tested_locality": 10
+    }
+  ],
+  "observable_schema": {
+    "bad_state_response": "any uniformly randomized bad basis bit dephases an X/Y-supported coordinate",
+    "family": "bounded-support products of X/Y Pauli operators on public-label phase qubits",
+    "search_legality": "uses only public Fourier labels; no evaluator, hidden reflection, or bad-validity flags",
+    "signal_condition": "sum_i epsilon_i k_i = 0 mod N for a sign assignment on the observable support"
+  },
+  "scaling_rows": [
+    {
+      "asymptotic_signal_class": "finite-relation-only",
+      "label_count": 12,
+      "maximum_weight": 4,
+      "minimum_observed_relation_weight": 3,
+      "n_bits": 12,
+      "polynomial_description": true,
+      "relation_trial_count": 6,
+      "relation_union_bound": 1.0,
+      "signed_pattern_count": 4984,
+      "total_relation_count": 9,
+      "trial_count": 12
+    },
+    {
+      "asymptotic_signal_class": "finite-relation-only",
+      "label_count": 16,
+      "maximum_weight": 4,
+      "minimum_observed_relation_weight": 4,
+      "n_bits": 16,
+      "polynomial_description": true,
+      "relation_trial_count": 2,
+      "relation_union_bound": 0.2602578774700542,
+      "signed_pattern_count": 17056,
+      "total_relation_count": 2,
+      "trial_count": 12
+    },
+    {
+      "asymptotic_signal_class": "none",
+      "label_count": 20,
+      "maximum_weight": 4,
+      "minimum_observed_relation_weight": 0,
+      "n_bits": 20,
+      "polynomial_description": true,
+      "relation_trial_count": 0,
+      "relation_union_bound": 0.04169468087642753,
+      "signed_pattern_count": 43720,
+      "total_relation_count": 0,
+      "trial_count": 12
+    },
+    {
+      "asymptotic_signal_class": "none",
+      "label_count": 24,
+      "maximum_weight": 4,
+      "minimum_observed_relation_weight": 0,
+      "n_bits": 24,
+      "polynomial_description": true,
+      "relation_trial_count": 0,
+      "relation_union_bound": 0.005583763455376831,
+      "signed_pattern_count": 93680,
+      "total_relation_count": 0,
+      "trial_count": 12
+    }
+  ],
+  "status": "bounded-locality-witness-class-obstructed",
+  "summary": "Enumerated 1913280 bounded-weight signed-label patterns in 48 finite trials and found relations in 8. 4/6 scaling rows certify logarithmic-locality Pauli witnesses below inverse-polynomial scale; no robust decoder was proved.",
+  "theorem_contract_id": "THM-REGEV-USVP-TO-DCP-2003"
+}

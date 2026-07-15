@@ -1,0 +1,2910 @@
+{
+  "claim_gate": {
+    "coherent_kronecker_transform_proved": false,
+    "commuting_rank_formula_falsified": true,
+    "polynomial_outcome_decoder_proved": false,
+    "reason": "The sector spectrum does not determine PGM success because individual states connect sectors. Transition coefficients, coherent recoupling, and hidden-involution decoding remain unresolved.",
+    "speedup_claim_allowed": false,
+    "two_copy_frame_spectrally_explicit": true,
+    "two_copy_pgm_exact_from_spectrum": false,
+    "two_copy_pgm_is_hidden_involution_algorithm": false
+  },
+  "created_at": "2026-07-15T05:27:45.310990+00:00",
+  "falsifiers_triggered": [
+    "The exact average-frame spectrum does not determine mixed-state PGM success.",
+    "An S_3 regular-representation control has a nonzero frame/state commutator and rejects the rank formula.",
+    "Explicit Kronecker-sector enumeration is not a polynomial coherent transform.",
+    "An exact spectrum is not an outcome decoder.",
+    "The k>=3 overlapping recoupling algebra remains unsolved."
+  ],
+  "headline_metrics": {
+    "coherent_kronecker_transform_count": 0,
+    "coherent_kronecker_transform_proof_debt_count": 6,
+    "exact_two_copy_pgm_formula_count": 0,
+    "exact_two_copy_recoupling_spectrum_count": 11,
+    "maximum_frontier_condition_number": 59.999999999999964,
+    "maximum_frontier_pgm_advantage_upper_bound": 15.0,
+    "maximum_n": 8,
+    "maximum_partition_count": 22,
+    "maximum_recoupling_sector_count": 5048,
+    "minimum_frontier_support_mass": 0.625,
+    "n_count": 5,
+    "polynomial_outcome_decoder_count": 0,
+    "polynomial_transition_algebra_count": 0,
+    "rank_formula_counterexample_count": 1,
+    "record_count": 11,
+    "spectral_pgm_bound_count": 11
+  },
+  "noncommutation_control": {
+    "absolute_formula_gap": 0.012709101870652328,
+    "commutator_frobenius_norm": 0.004364856673991033,
+    "ensemble_size": 3,
+    "exact_numerical_pgm_success_probability": 0.7650686759071255,
+    "frame_rank": 21,
+    "hilbert_dimension": 36,
+    "individual_state_commutes_with_average_frame": false,
+    "n": 3,
+    "rank_formula_falsified": true,
+    "rejected_commuting_rank_formula": 0.7777777777777778
+  },
+  "records": [
+    {
+      "coherent_kronecker_transform_proved": false,
+      "ensemble_size": 6,
+      "frame_trace": 0.9999999999999998,
+      "individual_state_commutes_with_average_frame_proved": false,
+      "interpretation": "The average frame is exactly diagonal in Kronecker sectors, but an individual state has off-diagonal sector transitions. Character multiplicities give only spectral PGM bounds; recoupling transition weights, a coherent transform, and a compressed decoder remain open.",
+      "involution_type": "single_transposition_control",
+      "kernel_hilbert_mass": 0.16666666666666674,
+      "maximum_frame_scalar": 4.0,
+      "minimum_positive_frame_scalar": 0.3333333333333334,
+      "n": 4,
+      "nonzero_recoupling_sector_count": 43,
+      "partition_count": 5,
+      "pgm_advantage_lower_bound": 1.0,
+      "pgm_advantage_upper_bound": 6.0,
+      "pgm_exact_from_sector_spectrum": false,
+      "pgm_success_spectral_lower_bound": 0.16666666666666666,
+      "pgm_success_spectral_upper_bound": 1.0,
+      "polynomial_outcome_decoder_proved": false,
+      "polynomial_transition_algebra_proved": false,
+      "rejected_commuting_rank_formula": 0.5555555555555555,
+      "smallest_positive_sectors": [
+        {
+          "coupled_character_ratio": 0.0,
+          "coupled_dimension": 2,
+          "coupled_partition": [
+            2,
+            2
+          ],
+          "frame_eigenvalue_times_group_order_squared": 0.3333333333333334,
+          "in_frame_support": true,
+          "kronecker_multiplicity": 1,
+          "left_character_ratio": -0.3333333333333333,
+          "left_dimension": 3,
+          "left_partition": [
+            2,
+            1,
+            1
+          ],
+          "normalized_hilbert_mass": 0.03125,
+          "right_character_ratio": -0.3333333333333333,
+          "right_dimension": 3,
+          "right_partition": [
+            2,
+            1,
+            1
+          ]
+        },
+        {
+          "coupled_character_ratio": -0.3333333333333333,
+          "coupled_dimension": 3,
+          "coupled_partition": [
+            2,
+            1,
+            1
+          ],
+          "frame_eigenvalue_times_group_order_squared": 0.3333333333333334,
+          "in_frame_support": true,
+          "kronecker_multiplicity": 1,
+          "left_character_ratio": -0.3333333333333333,
+          "left_dimension": 3,
+          "left_partition": [
+            2,
+            1,
+            1
+          ],
+          "normalized_hilbert_mass": 0.03125,
+          "right_character_ratio": 0.0,
+          "right_dimension": 2,
+          "right_partition": [
+            2,
+            2
+          ]
+        },
+        {
+          "coupled_character_ratio": -0.3333333333333333,
+          "coupled_dimension": 3,
+          "coupled_partition": [
+            2,
+            1,
+            1
+          ],
+          "frame_eigenvalue_times_group_order_squared": 0.3333333333333334,
+          "in_frame_support": true,
+          "kronecker_multiplicity": 1,
+          "left_character_ratio": 0.0,
+          "left_dimension": 2,
+          "left_partition": [
+            2,
+            2
+          ],
+          "normalized_hilbert_mass": 0.03125,
+          "right_character_ratio": -0.3333333333333333,
+          "right_dimension": 3,
+          "right_partition": [
+            2,
+            1,
+            1
+          ]
+        },
+        {
+          "coupled_character_ratio": 0.3333333333333333,
+          "coupled_dimension": 3,
+          "coupled_partition": [
+            3,
+            1
+          ],
+          "frame_eigenvalue_times_group_order_squared": 0.6666666666666667,
+          "in_frame_support": true,
+          "kronecker_multiplicity": 1,
+          "left_character_ratio": -0.3333333333333333,
+          "left_dimension": 3,
+          "left_partition": [
+            2,
+            1,
+            1
+          ],
+          "normalized_hilbert_mass": 0.046875,
+          "right_character_ratio": -0.3333333333333333,
+          "right_dimension": 3,
+          "right_partition": [
+            2,
+            1,
+            1
+          ]
+        },
+        {
+          "coupled_character_ratio": -0.3333333333333333,
+          "coupled_dimension": 3,
+          "coupled_partition": [
+            2,
+            1,
+            1
+          ],
+          "frame_eigenvalue_times_group_order_squared": 0.6666666666666667,
+          "in_frame_support": true,
+          "kronecker_multiplicity": 1,
+          "left_character_ratio": -0.3333333333333333,
+          "left_dimension": 3,
+          "left_partition": [
+            2,
+            1,
+            1
+          ],
+          "normalized_hilbert_mass": 0.046875,
+          "right_character_ratio": 0.3333333333333333,
+          "right_dimension": 3,
+          "right_partition": [
+            3,
+            1
+          ]
+        },
+        {
+          "coupled_character_ratio": -0.3333333333333333,
+          "coupled_dimension": 3,
+          "coupled_partition": [
+            2,
+            1,
+            1
+          ],
+          "frame_eigenvalue_times_group_order_squared": 0.6666666666666667,
+          "in_frame_support": true,
+          "kronecker_multiplicity": 1,
+          "left_character_ratio": 0.3333333333333333,
+          "left_dimension": 3,
+          "left_partition": [
+            3,
+            1
+          ],
+          "normalized_hilbert_mass": 0.046875,
+          "right_character_ratio": -0.3333333333333333,
+          "right_dimension": 3,
+          "right_partition": [
+            2,
+            1,
+            1
+          ]
+        },
+        {
+          "coupled_character_ratio": 0.3333333333333333,
+          "coupled_dimension": 3,
+          "coupled_partition": [
+            3,
+            1
+          ],
+          "frame_eigenvalue_times_group_order_squared": 1.0,
+          "in_frame_support": true,
+          "kronecker_multiplicity": 1,
+          "left_character_ratio": -0.3333333333333333,
+          "left_dimension": 3,
+          "left_partition": [
+            2,
+            1,
+            1
+          ],
+          "normalized_hilbert_mass": 0.03125,
+          "right_character_ratio": 0.0,
+          "right_dimension": 2,
+          "right_partition": [
+            2,
+            2
+          ]
+        },
+        {
+          "coupled_character_ratio": 0.0,
+          "coupled_dimension": 2,
+          "coupled_partition": [
+            2,
+            2
+          ],
+          "frame_eigenvalue_times_group_order_squared": 1.0,
+          "in_frame_support": true,
+          "kronecker_multiplicity": 1,
+          "left_character_ratio": -0.3333333333333333,
+          "left_dimension": 3,
+          "left_partition": [
+            2,
+            1,
+            1
+          ],
+          "normalized_hilbert_mass": 0.03125,
+          "right_character_ratio": 0.3333333333333333,
+          "right_dimension": 3,
+          "right_partition": [
+            3,
+            1
+          ]
+        }
+      ],
+      "status": "two-copy-recoupling-control",
+      "support_condition_number": 11.999999999999996,
+      "support_hilbert_mass": 0.8333333333333333,
+      "transposition_count": 1,
+      "uniform_guess_success_probability": 0.16666666666666666
+    },
+    {
+      "coherent_kronecker_transform_proved": false,
+      "ensemble_size": 3,
+      "frame_trace": 1.0000000000000002,
+      "individual_state_commutes_with_average_frame_proved": false,
+      "interpretation": "The average frame is exactly diagonal in Kronecker sectors, but an individual state has off-diagonal sector transitions. Character multiplicities give only spectral PGM bounds; recoupling transition weights, a coherent transform, and a compressed decoder remain open.",
+      "involution_type": "fixed_point_free_involution",
+      "kernel_hilbert_mass": 0.375,
+      "maximum_frame_scalar": 4.0,
+      "minimum_positive_frame_scalar": 1.3333333333333335,
+      "n": 4,
+      "nonzero_recoupling_sector_count": 43,
+      "partition_count": 5,
+      "pgm_advantage_lower_bound": 1.0,
+      "pgm_advantage_upper_bound": 3.0,
+      "pgm_exact_from_sector_spectrum": false,
+      "pgm_success_spectral_lower_bound": 0.3333333333333333,
+      "pgm_success_spectral_upper_bound": 1.0,
+      "polynomial_outcome_decoder_proved": false,
+      "polynomial_transition_algebra_proved": false,
+      "rejected_commuting_rank_formula": 0.8333333333333334,
+      "smallest_positive_sectors": [
+        {
+          "coupled_character_ratio": 1.0,
+          "coupled_dimension": 2,
+          "coupled_partition": [
+            2,
+            2
+          ],
+          "frame_eigenvalue_times_group_order_squared": 1.3333333333333335,
+          "in_frame_support": true,
+          "kronecker_multiplicity": 1,
+          "left_character_ratio": -0.3333333333333333,
+          "left_dimension": 3,
+          "left_partition": [
+            2,
+            1,
+            1
+          ],
+          "normalized_hilbert_mass": 0.03125,
+          "right_character_ratio": -0.3333333333333333,
+          "right_dimension": 3,
+          "right_partition": [
+            2,
+            1,
+            1
+          ]
+        },
+        {
+          "coupled_character_ratio": -0.3333333333333333,
+          "coupled_dimension": 3,
+          "coupled_partition": [
+            2,
+            1,
+            1
+          ],
+          "frame_eigenvalue_times_group_order_squared": 1.3333333333333335,
+          "in_frame_support": true,
+          "kronecker_multiplicity": 1,
+          "left_character_ratio": -0.3333333333333333,
+          "left_dimension": 3,
+          "left_partition": [
+            2,
+            1,
+            1
+          ],
+          "normalized_hilbert_mass": 0.03125,
+          "right_character_ratio": 1.0,
+          "right_dimension": 2,
+          "right_partition": [
+            2,
+            2
+          ]
+        },
+        {
+          "coupled_character_ratio": -0.3333333333333333,
+          "coupled_dimension": 3,
+          "coupled_partition": [
+            3,
+            1
+          ],
+          "frame_eigenvalue_times_group_order_squared": 1.3333333333333335,
+          "in_frame_support": true,
+          "kronecker_multiplicity": 1,
+          "left_character_ratio": -0.3333333333333333,
+          "left_dimension": 3,
+          "left_partition": [
+            2,
+            1,
+            1
+          ],
+          "normalized_hilbert_mass": 0.03125,
+          "right_character_ratio": 1.0,
+          "right_dimension": 2,
+          "right_partition": [
+            2,
+            2
+          ]
+        },
+        {
+          "coupled_character_ratio": 1.0,
+          "coupled_dimension": 2,
+          "coupled_partition": [
+            2,
+            2
+          ],
+          "frame_eigenvalue_times_group_order_squared": 1.3333333333333335,
+          "in_frame_support": true,
+          "kronecker_multiplicity": 1,
+          "left_character_ratio": -0.3333333333333333,
+          "left_dimension": 3,
+          "left_partition": [
+            2,
+            1,
+            1
+          ],
+          "normalized_hilbert_mass": 0.03125,
+          "right_character_ratio": -0.3333333333333333,
+          "right_dimension": 3,
+          "right_partition": [
+            3,
+            1
+          ]
+        },
+        {
+          "coupled_character_ratio": -0.3333333333333333,
+          "coupled_dimension": 3,
+          "coupled_partition": [
+            2,
+            1,
+            1
+          ],
+          "frame_eigenvalue_times_group_order_squared": 1.3333333333333335,
+          "in_frame_support": true,
+          "kronecker_multiplicity": 1,
+          "left_character_ratio": 1.0,
+          "left_dimension": 2,
+          "left_partition": [
+            2,
+            2
+          ],
+          "normalized_hilbert_mass": 0.03125,
+          "right_character_ratio": -0.3333333333333333,
+          "right_dimension": 3,
+          "right_partition": [
+            2,
+            1,
+            1
+          ]
+        },
+        {
+          "coupled_character_ratio": -0.3333333333333333,
+          "coupled_dimension": 3,
+          "coupled_partition": [
+            3,
+            1
+          ],
+          "frame_eigenvalue_times_group_order_squared": 1.3333333333333335,
+          "in_frame_support": true,
+          "kronecker_multiplicity": 1,
+          "left_character_ratio": 1.0,
+          "left_dimension": 2,
+          "left_partition": [
+            2,
+            2
+          ],
+          "normalized_hilbert_mass": 0.03125,
+          "right_character_ratio": -0.3333333333333333,
+          "right_dimension": 3,
+          "right_partition": [
+            2,
+            1,
+            1
+          ]
+        },
+        {
+          "coupled_character_ratio": -0.3333333333333333,
+          "coupled_dimension": 3,
+          "coupled_partition": [
+            2,
+            1,
+            1
+          ],
+          "frame_eigenvalue_times_group_order_squared": 1.3333333333333335,
+          "in_frame_support": true,
+          "kronecker_multiplicity": 1,
+          "left_character_ratio": 1.0,
+          "left_dimension": 2,
+          "left_partition": [
+            2,
+            2
+          ],
+          "normalized_hilbert_mass": 0.03125,
+          "right_character_ratio": -0.3333333333333333,
+          "right_dimension": 3,
+          "right_partition": [
+            3,
+            1
+          ]
+        },
+        {
+          "coupled_character_ratio": -0.3333333333333333,
+          "coupled_dimension": 3,
+          "coupled_partition": [
+            3,
+            1
+          ],
+          "frame_eigenvalue_times_group_order_squared": 1.3333333333333335,
+          "in_frame_support": true,
+          "kronecker_multiplicity": 1,
+          "left_character_ratio": 1.0,
+          "left_dimension": 2,
+          "left_partition": [
+            2,
+            2
+          ],
+          "normalized_hilbert_mass": 0.03125,
+          "right_character_ratio": -0.3333333333333333,
+          "right_dimension": 3,
+          "right_partition": [
+            3,
+            1
+          ]
+        }
+      ],
+      "status": "coherent-kronecker-transform-and-decoder-proof-debt",
+      "support_condition_number": 2.9999999999999996,
+      "support_hilbert_mass": 0.625,
+      "transposition_count": 2,
+      "uniform_guess_success_probability": 0.3333333333333333
+    },
+    {
+      "coherent_kronecker_transform_proved": false,
+      "ensemble_size": 10,
+      "frame_trace": 0.9999999999999996,
+      "individual_state_commutes_with_average_frame_proved": false,
+      "interpretation": "The average frame is exactly diagonal in Kronecker sectors, but an individual state has off-diagonal sector transitions. Character multiplicities give only spectral PGM bounds; recoupling transition weights, a coherent transform, and a compressed decoder remain open.",
+      "involution_type": "single_transposition_control",
+      "kernel_hilbert_mass": 0.04479166666666712,
+      "maximum_frame_scalar": 4.0,
+      "minimum_positive_frame_scalar": 0.09999999999999998,
+      "n": 5,
+      "nonzero_recoupling_sector_count": 143,
+      "partition_count": 7,
+      "pgm_advantage_lower_bound": 1.0,
+      "pgm_advantage_upper_bound": 10.0,
+      "pgm_exact_from_sector_spectrum": false,
+      "pgm_success_spectral_lower_bound": 0.1,
+      "pgm_success_spectral_upper_bound": 1.0,
+      "polynomial_outcome_decoder_proved": false,
+      "polynomial_transition_algebra_proved": false,
+      "rejected_commuting_rank_formula": 0.38208333333333316,
+      "smallest_positive_sectors": [
+        {
+          "coupled_character_ratio": -0.2,
+          "coupled_dimension": 5,
+          "coupled_partition": [
+            2,
+            2,
+            1
+          ],
+          "frame_eigenvalue_times_group_order_squared": 0.09999999999999998,
+          "in_frame_support": true,
+          "kronecker_multiplicity": 1,
+          "left_character_ratio": -0.5,
+          "left_dimension": 4,
+          "left_partition": [
+            2,
+            1,
+            1,
+            1
+          ],
+          "normalized_hilbert_mass": 0.006944444444444444,
+          "right_character_ratio": -0.2,
+          "right_dimension": 5,
+          "right_partition": [
+            2,
+            2,
+            1
+          ]
+        },
+        {
+          "coupled_character_ratio": -0.2,
+          "coupled_dimension": 5,
+          "coupled_partition": [
+            2,
+            2,
+            1
+          ],
+          "frame_eigenvalue_times_group_order_squared": 0.10000000000000003,
+          "in_frame_support": true,
+          "kronecker_multiplicity": 1,
+          "left_character_ratio": -0.2,
+          "left_dimension": 5,
+          "left_partition": [
+            2,
+            2,
+            1
+          ],
+          "normalized_hilbert_mass": 0.006944444444444444,
+          "right_character_ratio": -0.5,
+          "right_dimension": 4,
+          "right_partition": [
+            2,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "coupled_character_ratio": -0.5,
+          "coupled_dimension": 4,
+          "coupled_partition": [
+            2,
+            1,
+            1,
+            1
+          ],
+          "frame_eigenvalue_times_group_order_squared": 0.10000000000000009,
+          "in_frame_support": true,
+          "kronecker_multiplicity": 1,
+          "left_character_ratio": -0.2,
+          "left_dimension": 5,
+          "left_partition": [
+            2,
+            2,
+            1
+          ],
+          "normalized_hilbert_mass": 0.006944444444444444,
+          "right_character_ratio": -0.2,
+          "right_dimension": 5,
+          "right_partition": [
+            2,
+            2,
+            1
+          ]
+        },
+        {
+          "coupled_character_ratio": -0.5,
+          "coupled_dimension": 4,
+          "coupled_partition": [
+            2,
+            1,
+            1,
+            1
+          ],
+          "frame_eigenvalue_times_group_order_squared": 0.19999999999999996,
+          "in_frame_support": true,
+          "kronecker_multiplicity": 1,
+          "left_character_ratio": -0.5,
+          "left_dimension": 4,
+          "left_partition": [
+            2,
+            1,
+            1,
+            1
+          ],
+          "normalized_hilbert_mass": 0.005555555555555556,
+          "right_character_ratio": 0.2,
+          "right_dimension": 5,
+          "right_partition": [
+            3,
+            2
+          ]
+        },
+        {
+          "coupled_character_ratio": -0.5,
+          "coupled_dimension": 4,
+          "coupled_partition": [
+            2,
+            1,
+            1,
+            1
+          ],
+          "frame_eigenvalue_times_group_order_squared": 0.19999999999999996,
+          "in_frame_support": true,
+          "kronecker_multiplicity": 1,
+          "left_character_ratio": 0.2,
+          "left_dimension": 5,
+          "left_partition": [
+            3,
+            2
+          ],
+          "normalized_hilbert_mass": 0.005555555555555556,
+          "right_character_ratio": -0.5,
+          "right_dimension": 4,
+          "right_partition": [
+            2,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "coupled_character_ratio": 0.2,
+          "coupled_dimension": 5,
+          "coupled_partition": [
+            3,
+            2
+          ],
+          "frame_eigenvalue_times_group_order_squared": 0.2,
+          "in_frame_support": true,
+          "kronecker_multiplicity": 1,
+          "left_character_ratio": -0.5,
+          "left_dimension": 4,
+          "left_partition": [
+            2,
+            1,
+            1,
+            1
+          ],
+          "normalized_hilbert_mass": 0.005555555555555556,
+          "right_character_ratio": -0.5,
+          "right_dimension": 4,
+          "right_partition": [
+            2,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "coupled_character_ratio": 0.0,
+          "coupled_dimension": 6,
+          "coupled_partition": [
+            3,
+            1,
+            1
+          ],
+          "frame_eigenvalue_times_group_order_squared": 0.3,
+          "in_frame_support": true,
+          "kronecker_multiplicity": 1,
+          "left_character_ratio": -0.5,
+          "left_dimension": 4,
+          "left_partition": [
+            2,
+            1,
+            1,
+            1
+          ],
+          "normalized_hilbert_mass": 0.008333333333333333,
+          "right_character_ratio": -0.2,
+          "right_dimension": 5,
+          "right_partition": [
+            2,
+            2,
+            1
+          ]
+        },
+        {
+          "coupled_character_ratio": -0.2,
+          "coupled_dimension": 5,
+          "coupled_partition": [
+            2,
+            2,
+            1
+          ],
+          "frame_eigenvalue_times_group_order_squared": 0.3,
+          "in_frame_support": true,
+          "kronecker_multiplicity": 1,
+          "left_character_ratio": -0.5,
+          "left_dimension": 4,
+          "left_partition": [
+            2,
+            1,
+            1,
+            1
+          ],
+          "normalized_hilbert_mass": 0.008333333333333333,
+          "right_character_ratio": 0.0,
+          "right_dimension": 6,
+          "right_partition": [
+            3,
+            1,
+            1
+          ]
+        }
+      ],
+      "status": "two-copy-recoupling-control",
+      "support_condition_number": 40.00000000000001,
+      "support_hilbert_mass": 0.9552083333333329,
+      "transposition_count": 1,
+      "uniform_guess_success_probability": 0.1
+    },
+    {
+      "coherent_kronecker_transform_proved": false,
+      "ensemble_size": 15,
+      "frame_trace": 1.0,
+      "individual_state_commutes_with_average_frame_proved": false,
+      "interpretation": "The average frame is exactly diagonal in Kronecker sectors, but an individual state has off-diagonal sector transitions. Character multiplicities give only spectral PGM bounds; recoupling transition weights, a coherent transform, and a compressed decoder remain open.",
+      "involution_type": "near_fixed_point_free_involution",
+      "kernel_hilbert_mass": 0.015000000000000457,
+      "maximum_frame_scalar": 4.0,
+      "minimum_positive_frame_scalar": 0.3333333333333334,
+      "n": 5,
+      "nonzero_recoupling_sector_count": 143,
+      "partition_count": 7,
+      "pgm_advantage_lower_bound": 1.0,
+      "pgm_advantage_upper_bound": 11.999999999999996,
+      "pgm_exact_from_sector_spectrum": false,
+      "pgm_success_spectral_lower_bound": 0.06666666666666667,
+      "pgm_success_spectral_upper_bound": 0.7999999999999997,
+      "polynomial_outcome_decoder_proved": false,
+      "polynomial_transition_algebra_proved": false,
+      "rejected_commuting_rank_formula": 0.26266666666666655,
+      "smallest_positive_sectors": [
+        {
+          "coupled_character_ratio": -0.3333333333333333,
+          "coupled_dimension": 6,
+          "coupled_partition": [
+            3,
+            1,
+            1
+          ],
+          "frame_eigenvalue_times_group_order_squared": 0.3333333333333334,
+          "in_frame_support": true,
+          "kronecker_multiplicity": 1,
+          "left_character_ratio": 0.0,
+          "left_dimension": 4,
+          "left_partition": [
+            2,
+            1,
+            1,
+            1
+          ],
+          "normalized_hilbert_mass": 0.01,
+          "right_character_ratio": -0.3333333333333333,
+          "right_dimension": 6,
+          "right_partition": [
+            3,
+            1,
+            1
+          ]
+        },
+        {
+          "coupled_character_ratio": -0.3333333333333333,
+          "coupled_dimension": 6,
+          "coupled_partition": [
+            3,
+            1,
+            1
+          ],
+          "frame_eigenvalue_times_group_order_squared": 0.3333333333333334,
+          "in_frame_support": true,
+          "kronecker_multiplicity": 1,
+          "left_character_ratio": -0.3333333333333333,
+          "left_dimension": 6,
+          "left_partition": [
+            3,
+            1,
+            1
+          ],
+          "normalized_hilbert_mass": 0.01,
+          "right_character_ratio": 0.0,
+          "right_dimension": 4,
+          "right_partition": [
+            2,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "coupled_character_ratio": 0.0,
+          "coupled_dimension": 4,
+          "coupled_partition": [
+            2,
+            1,
+            1,
+            1
+          ],
+          "frame_eigenvalue_times_group_order_squared": 0.3333333333333334,
+          "in_frame_support": true,
+          "kronecker_multiplicity": 1,
+          "left_character_ratio": -0.3333333333333333,
+          "left_dimension": 6,
+          "left_partition": [
+            3,
+            1,
+            1
+          ],
+          "normalized_hilbert_mass": 0.01,
+          "right_character_ratio": -0.3333333333333333,
+          "right_dimension": 6,
+          "right_partition": [
+            3,
+            1,
+            1
+          ]
+        },
+        {
+          "coupled_character_ratio": 0.0,
+          "coupled_dimension": 4,
+          "coupled_partition": [
+            4,
+            1
+          ],
+          "frame_eigenvalue_times_group_order_squared": 0.3333333333333334,
+          "in_frame_support": true,
+          "kronecker_multiplicity": 1,
+          "left_character_ratio": -0.3333333333333333,
+          "left_dimension": 6,
+          "left_partition": [
+            3,
+            1,
+            1
+          ],
+          "normalized_hilbert_mass": 0.01,
+          "right_character_ratio": -0.3333333333333333,
+          "right_dimension": 6,
+          "right_partition": [
+            3,
+            1,
+            1
+          ]
+        },
+        {
+          "coupled_character_ratio": -0.3333333333333333,
+          "coupled_dimension": 6,
+          "coupled_partition": [
+            3,
+            1,
+            1
+          ],
+          "frame_eigenvalue_times_group_order_squared": 0.3333333333333334,
+          "in_frame_support": true,
+          "kronecker_multiplicity": 1,
+          "left_character_ratio": -0.3333333333333333,
+          "left_dimension": 6,
+          "left_partition": [
+            3,
+            1,
+            1
+          ],
+          "normalized_hilbert_mass": 0.01,
+          "right_character_ratio": 0.0,
+          "right_dimension": 4,
+          "right_partition": [
+            4,
+            1
+          ]
+        },
+        {
+          "coupled_character_ratio": -0.3333333333333333,
+          "coupled_dimension": 6,
+          "coupled_partition": [
+            3,
+            1,
+            1
+          ],
+          "frame_eigenvalue_times_group_order_squared": 0.3333333333333334,
+          "in_frame_support": true,
+          "kronecker_multiplicity": 1,
+          "left_character_ratio": 0.0,
+          "left_dimension": 4,
+          "left_partition": [
+            4,
+            1
+          ],
+          "normalized_hilbert_mass": 0.01,
+          "right_character_ratio": -0.3333333333333333,
+          "right_dimension": 6,
+          "right_partition": [
+            3,
+            1,
+            1
+          ]
+        },
+        {
+          "coupled_character_ratio": -0.3333333333333333,
+          "coupled_dimension": 6,
+          "coupled_partition": [
+            3,
+            1,
+            1
+          ],
+          "frame_eigenvalue_times_group_order_squared": 0.5333333333333334,
+          "in_frame_support": true,
+          "kronecker_multiplicity": 2,
+          "left_character_ratio": 0.2,
+          "left_dimension": 5,
+          "left_partition": [
+            2,
+            2,
+            1
+          ],
+          "normalized_hilbert_mass": 0.025,
+          "right_character_ratio": -0.3333333333333333,
+          "right_dimension": 6,
+          "right_partition": [
+            3,
+            1,
+            1
+          ]
+        },
+        {
+          "coupled_character_ratio": -0.3333333333333333,
+          "coupled_dimension": 6,
+          "coupled_partition": [
+            3,
+            1,
+            1
+          ],
+          "frame_eigenvalue_times_group_order_squared": 0.5333333333333334,
+          "in_frame_support": true,
+          "kronecker_multiplicity": 2,
+          "left_character_ratio": -0.3333333333333333,
+          "left_dimension": 6,
+          "left_partition": [
+            3,
+            1,
+            1
+          ],
+          "normalized_hilbert_mass": 0.025,
+          "right_character_ratio": 0.2,
+          "right_dimension": 5,
+          "right_partition": [
+            2,
+            2,
+            1
+          ]
+        }
+      ],
+      "status": "coherent-kronecker-transform-and-decoder-proof-debt",
+      "support_condition_number": 11.999999999999996,
+      "support_hilbert_mass": 0.9849999999999995,
+      "transposition_count": 2,
+      "uniform_guess_success_probability": 0.06666666666666667
+    },
+    {
+      "coherent_kronecker_transform_proved": false,
+      "ensemble_size": 15,
+      "frame_trace": 1.0,
+      "individual_state_commutes_with_average_frame_proved": false,
+      "interpretation": "The average frame is exactly diagonal in Kronecker sectors, but an individual state has off-diagonal sector transitions. Character multiplicities give only spectral PGM bounds; recoupling transition weights, a coherent transform, and a compressed decoder remain open.",
+      "involution_type": "single_transposition_control",
+      "kernel_hilbert_mass": 0.008501157407406867,
+      "maximum_frame_scalar": 4.0,
+      "minimum_positive_frame_scalar": 0.06666666666666671,
+      "n": 6,
+      "nonzero_recoupling_sector_count": 511,
+      "partition_count": 11,
+      "pgm_advantage_lower_bound": 1.0,
+      "pgm_advantage_upper_bound": 15.0,
+      "pgm_exact_from_sector_spectrum": false,
+      "pgm_success_spectral_lower_bound": 0.06666666666666667,
+      "pgm_success_spectral_upper_bound": 1.0,
+      "polynomial_outcome_decoder_proved": false,
+      "polynomial_transition_algebra_proved": false,
+      "rejected_commuting_rank_formula": 0.2643996913580248,
+      "smallest_positive_sectors": [
+        {
+          "coupled_character_ratio": 0.0,
+          "coupled_dimension": 16,
+          "coupled_partition": [
+            3,
+            2,
+            1
+          ],
+          "frame_eigenvalue_times_group_order_squared": 0.06666666666666671,
+          "in_frame_support": true,
+          "kronecker_multiplicity": 1,
+          "left_character_ratio": -0.6,
+          "left_dimension": 5,
+          "left_partition": [
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "normalized_hilbert_mass": 0.001388888888888889,
+          "right_character_ratio": -0.3333333333333333,
+          "right_dimension": 9,
+          "right_partition": [
+            2,
+            2,
+            1,
+            1
+          ]
+        },
+        {
+          "coupled_character_ratio": -0.3333333333333333,
+          "coupled_dimension": 9,
+          "coupled_partition": [
+            2,
+            2,
+            1,
+            1
+          ],
+          "frame_eigenvalue_times_group_order_squared": 0.06666666666666671,
+          "in_frame_support": true,
+          "kronecker_multiplicity": 1,
+          "left_character_ratio": -0.6,
+          "left_dimension": 5,
+          "left_partition": [
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "normalized_hilbert_mass": 0.001388888888888889,
+          "right_character_ratio": 0.0,
+          "right_dimension": 16,
+          "right_partition": [
+            3,
+            2,
+            1
+          ]
+        },
+        {
+          "coupled_character_ratio": -0.3333333333333333,
+          "coupled_dimension": 9,
+          "coupled_partition": [
+            2,
+            2,
+            1,
+            1
+          ],
+          "frame_eigenvalue_times_group_order_squared": 0.06666666666666671,
+          "in_frame_support": true,
+          "kronecker_multiplicity": 1,
+          "left_character_ratio": 0.0,
+          "left_dimension": 16,
+          "left_partition": [
+            3,
+            2,
+            1
+          ],
+          "normalized_hilbert_mass": 0.001388888888888889,
+          "right_character_ratio": -0.6,
+          "right_dimension": 5,
+          "right_partition": [
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "coupled_character_ratio": 0.0,
+          "coupled_dimension": 16,
+          "coupled_partition": [
+            3,
+            2,
+            1
+          ],
+          "frame_eigenvalue_times_group_order_squared": 0.06666666666666676,
+          "in_frame_support": true,
+          "kronecker_multiplicity": 1,
+          "left_character_ratio": -0.3333333333333333,
+          "left_dimension": 9,
+          "left_partition": [
+            2,
+            2,
+            1,
+            1
+          ],
+          "normalized_hilbert_mass": 0.001388888888888889,
+          "right_character_ratio": -0.6,
+          "right_dimension": 5,
+          "right_partition": [
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "coupled_character_ratio": -0.6,
+          "coupled_dimension": 5,
+          "coupled_partition": [
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "frame_eigenvalue_times_group_order_squared": 0.06666666666666676,
+          "in_frame_support": true,
+          "kronecker_multiplicity": 1,
+          "left_character_ratio": -0.3333333333333333,
+          "left_dimension": 9,
+          "left_partition": [
+            2,
+            2,
+            1,
+            1
+          ],
+          "normalized_hilbert_mass": 0.001388888888888889,
+          "right_character_ratio": 0.0,
+          "right_dimension": 16,
+          "right_partition": [
+            3,
+            2,
+            1
+          ]
+        },
+        {
+          "coupled_character_ratio": -0.6,
+          "coupled_dimension": 5,
+          "coupled_partition": [
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "frame_eigenvalue_times_group_order_squared": 0.06666666666666676,
+          "in_frame_support": true,
+          "kronecker_multiplicity": 1,
+          "left_character_ratio": 0.0,
+          "left_dimension": 16,
+          "left_partition": [
+            3,
+            2,
+            1
+          ],
+          "normalized_hilbert_mass": 0.001388888888888889,
+          "right_character_ratio": -0.3333333333333333,
+          "right_dimension": 9,
+          "right_partition": [
+            2,
+            2,
+            1,
+            1
+          ]
+        },
+        {
+          "coupled_character_ratio": -0.6,
+          "coupled_dimension": 5,
+          "coupled_partition": [
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "frame_eigenvalue_times_group_order_squared": 0.1333333333333333,
+          "in_frame_support": true,
+          "kronecker_multiplicity": 1,
+          "left_character_ratio": 0.3333333333333333,
+          "left_dimension": 9,
+          "left_partition": [
+            4,
+            2
+          ],
+          "normalized_hilbert_mass": 0.00043402777777777775,
+          "right_character_ratio": -0.6,
+          "right_dimension": 5,
+          "right_partition": [
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "coupled_character_ratio": 0.3333333333333333,
+          "coupled_dimension": 9,
+          "coupled_partition": [
+            4,
+            2
+          ],
+          "frame_eigenvalue_times_group_order_squared": 0.13333333333333336,
+          "in_frame_support": true,
+          "kronecker_multiplicity": 1,
+          "left_character_ratio": -0.6,
+          "left_dimension": 5,
+          "left_partition": [
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "normalized_hilbert_mass": 0.00043402777777777775,
+          "right_character_ratio": -0.6,
+          "right_dimension": 5,
+          "right_partition": [
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ],
+      "status": "two-copy-recoupling-control",
+      "support_condition_number": 59.999999999999964,
+      "support_hilbert_mass": 0.9914988425925931,
+      "transposition_count": 1,
+      "uniform_guess_success_probability": 0.06666666666666667
+    },
+    {
+      "coherent_kronecker_transform_proved": false,
+      "ensemble_size": 15,
+      "frame_trace": 1.0000000000000004,
+      "individual_state_commutes_with_average_frame_proved": false,
+      "interpretation": "The average frame is exactly diagonal in Kronecker sectors, but an individual state has off-diagonal sector transitions. Character multiplicities give only spectral PGM bounds; recoupling transition weights, a coherent transform, and a compressed decoder remain open.",
+      "involution_type": "fixed_point_free_involution",
+      "kernel_hilbert_mass": 0.008501157407406867,
+      "maximum_frame_scalar": 4.0,
+      "minimum_positive_frame_scalar": 0.06666666666666671,
+      "n": 6,
+      "nonzero_recoupling_sector_count": 511,
+      "partition_count": 11,
+      "pgm_advantage_lower_bound": 1.0,
+      "pgm_advantage_upper_bound": 15.0,
+      "pgm_exact_from_sector_spectrum": false,
+      "pgm_success_spectral_lower_bound": 0.06666666666666667,
+      "pgm_success_spectral_upper_bound": 1.0,
+      "polynomial_outcome_decoder_proved": false,
+      "polynomial_transition_algebra_proved": false,
+      "rejected_commuting_rank_formula": 0.2643996913580248,
+      "smallest_positive_sectors": [
+        {
+          "coupled_character_ratio": -0.3333333333333333,
+          "coupled_dimension": 9,
+          "coupled_partition": [
+            2,
+            2,
+            1,
+            1
+          ],
+          "frame_eigenvalue_times_group_order_squared": 0.06666666666666671,
+          "in_frame_support": true,
+          "kronecker_multiplicity": 1,
+          "left_character_ratio": 0.0,
+          "left_dimension": 16,
+          "left_partition": [
+            3,
+            2,
+            1
+          ],
+          "normalized_hilbert_mass": 0.001388888888888889,
+          "right_character_ratio": -0.6,
+          "right_dimension": 5,
+          "right_partition": [
+            3,
+            3
+          ]
+        },
+        {
+          "coupled_character_ratio": 0.0,
+          "coupled_dimension": 16,
+          "coupled_partition": [
+            3,
+            2,
+            1
+          ],
+          "frame_eigenvalue_times_group_order_squared": 0.06666666666666671,
+          "in_frame_support": true,
+          "kronecker_multiplicity": 1,
+          "left_character_ratio": -0.6,
+          "left_dimension": 5,
+          "left_partition": [
+            3,
+            3
+          ],
+          "normalized_hilbert_mass": 0.001388888888888889,
+          "right_character_ratio": -0.3333333333333333,
+          "right_dimension": 9,
+          "right_partition": [
+            2,
+            2,
+            1,
+            1
+          ]
+        },
+        {
+          "coupled_character_ratio": -0.3333333333333333,
+          "coupled_dimension": 9,
+          "coupled_partition": [
+            2,
+            2,
+            1,
+            1
+          ],
+          "frame_eigenvalue_times_group_order_squared": 0.06666666666666671,
+          "in_frame_support": true,
+          "kronecker_multiplicity": 1,
+          "left_character_ratio": -0.6,
+          "left_dimension": 5,
+          "left_partition": [
+            3,
+            3
+          ],
+          "normalized_hilbert_mass": 0.001388888888888889,
+          "right_character_ratio": 0.0,
+          "right_dimension": 16,
+          "right_partition": [
+            3,
+            2,
+            1
+          ]
+        },
+        {
+          "coupled_character_ratio": -0.6,
+          "coupled_dimension": 5,
+          "coupled_partition": [
+            3,
+            3
+          ],
+          "frame_eigenvalue_times_group_order_squared": 0.06666666666666676,
+          "in_frame_support": true,
+          "kronecker_multiplicity": 1,
+          "left_character_ratio": -0.3333333333333333,
+          "left_dimension": 9,
+          "left_partition": [
+            2,
+            2,
+            1,
+            1
+          ],
+          "normalized_hilbert_mass": 0.001388888888888889,
+          "right_character_ratio": 0.0,
+          "right_dimension": 16,
+          "right_partition": [
+            3,
+            2,
+            1
+          ]
+        },
+        {
+          "coupled_character_ratio": 0.0,
+          "coupled_dimension": 16,
+          "coupled_partition": [
+            3,
+            2,
+            1
+          ],
+          "frame_eigenvalue_times_group_order_squared": 0.06666666666666676,
+          "in_frame_support": true,
+          "kronecker_multiplicity": 1,
+          "left_character_ratio": -0.3333333333333333,
+          "left_dimension": 9,
+          "left_partition": [
+            2,
+            2,
+            1,
+            1
+          ],
+          "normalized_hilbert_mass": 0.001388888888888889,
+          "right_character_ratio": -0.6,
+          "right_dimension": 5,
+          "right_partition": [
+            3,
+            3
+          ]
+        },
+        {
+          "coupled_character_ratio": -0.6,
+          "coupled_dimension": 5,
+          "coupled_partition": [
+            3,
+            3
+          ],
+          "frame_eigenvalue_times_group_order_squared": 0.06666666666666676,
+          "in_frame_support": true,
+          "kronecker_multiplicity": 1,
+          "left_character_ratio": 0.0,
+          "left_dimension": 16,
+          "left_partition": [
+            3,
+            2,
+            1
+          ],
+          "normalized_hilbert_mass": 0.001388888888888889,
+          "right_character_ratio": -0.3333333333333333,
+          "right_dimension": 9,
+          "right_partition": [
+            2,
+            2,
+            1,
+            1
+          ]
+        },
+        {
+          "coupled_character_ratio": -0.6,
+          "coupled_dimension": 5,
+          "coupled_partition": [
+            3,
+            3
+          ],
+          "frame_eigenvalue_times_group_order_squared": 0.1333333333333333,
+          "in_frame_support": true,
+          "kronecker_multiplicity": 1,
+          "left_character_ratio": 0.3333333333333333,
+          "left_dimension": 9,
+          "left_partition": [
+            4,
+            2
+          ],
+          "normalized_hilbert_mass": 0.00043402777777777775,
+          "right_character_ratio": -0.6,
+          "right_dimension": 5,
+          "right_partition": [
+            3,
+            3
+          ]
+        },
+        {
+          "coupled_character_ratio": 0.3333333333333333,
+          "coupled_dimension": 9,
+          "coupled_partition": [
+            4,
+            2
+          ],
+          "frame_eigenvalue_times_group_order_squared": 0.13333333333333336,
+          "in_frame_support": true,
+          "kronecker_multiplicity": 1,
+          "left_character_ratio": -0.6,
+          "left_dimension": 5,
+          "left_partition": [
+            3,
+            3
+          ],
+          "normalized_hilbert_mass": 0.00043402777777777775,
+          "right_character_ratio": -0.6,
+          "right_dimension": 5,
+          "right_partition": [
+            3,
+            3
+          ]
+        }
+      ],
+      "status": "coherent-kronecker-transform-and-decoder-proof-debt",
+      "support_condition_number": 59.999999999999964,
+      "support_hilbert_mass": 0.9914988425925931,
+      "transposition_count": 3,
+      "uniform_guess_success_probability": 0.06666666666666667
+    },
+    {
+      "coherent_kronecker_transform_proved": false,
+      "ensemble_size": 21,
+      "frame_trace": 1.0000000000000018,
+      "individual_state_commutes_with_average_frame_proved": false,
+      "interpretation": "The average frame is exactly diagonal in Kronecker sectors, but an individual state has off-diagonal sector transitions. Character multiplicities give only spectral PGM bounds; recoupling transition weights, a coherent transform, and a compressed decoder remain open.",
+      "involution_type": "single_transposition_control",
+      "kernel_hilbert_mass": 0.0012169312169322266,
+      "maximum_frame_scalar": 4.0,
+      "minimum_positive_frame_scalar": 0.04761904761904756,
+      "n": 7,
+      "nonzero_recoupling_sector_count": 1599,
+      "partition_count": 15,
+      "pgm_advantage_lower_bound": 1.0,
+      "pgm_advantage_upper_bound": 21.0,
+      "pgm_exact_from_sector_spectrum": false,
+      "pgm_success_spectral_lower_bound": 0.047619047619047616,
+      "pgm_success_spectral_upper_bound": 1.0,
+      "polynomial_outcome_decoder_proved": false,
+      "polynomial_transition_algebra_proved": false,
+      "rejected_commuting_rank_formula": 0.19024439405391766,
+      "smallest_positive_sectors": [
+        {
+          "coupled_character_ratio": -0.6666666666666666,
+          "coupled_dimension": 6,
+          "coupled_partition": [
+            2,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "frame_eigenvalue_times_group_order_squared": 0.04761904761904756,
+          "in_frame_support": true,
+          "kronecker_multiplicity": 1,
+          "left_character_ratio": -0.42857142857142855,
+          "left_dimension": 14,
+          "left_partition": [
+            2,
+            2,
+            1,
+            1,
+            1
+          ],
+          "normalized_hilbert_mass": 0.00011574074074074075,
+          "right_character_ratio": 0.14285714285714285,
+          "right_dimension": 35,
+          "right_partition": [
+            4,
+            2,
+            1
+          ]
+        },
+        {
+          "coupled_character_ratio": -0.6666666666666666,
+          "coupled_dimension": 6,
+          "coupled_partition": [
+            2,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "frame_eigenvalue_times_group_order_squared": 0.04761904761904756,
+          "in_frame_support": true,
+          "kronecker_multiplicity": 1,
+          "left_character_ratio": 0.14285714285714285,
+          "left_dimension": 35,
+          "left_partition": [
+            4,
+            2,
+            1
+          ],
+          "normalized_hilbert_mass": 0.00011574074074074075,
+          "right_character_ratio": -0.42857142857142855,
+          "right_dimension": 14,
+          "right_partition": [
+            2,
+            2,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "coupled_character_ratio": 0.14285714285714285,
+          "coupled_dimension": 35,
+          "coupled_partition": [
+            4,
+            2,
+            1
+          ],
+          "frame_eigenvalue_times_group_order_squared": 0.047619047619047616,
+          "in_frame_support": true,
+          "kronecker_multiplicity": 1,
+          "left_character_ratio": -0.42857142857142855,
+          "left_dimension": 14,
+          "left_partition": [
+            2,
+            2,
+            1,
+            1,
+            1
+          ],
+          "normalized_hilbert_mass": 0.00011574074074074075,
+          "right_character_ratio": -0.6666666666666666,
+          "right_dimension": 6,
+          "right_partition": [
+            2,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "coupled_character_ratio": -0.42857142857142855,
+          "coupled_dimension": 14,
+          "coupled_partition": [
+            2,
+            2,
+            1,
+            1,
+            1
+          ],
+          "frame_eigenvalue_times_group_order_squared": 0.047619047619047616,
+          "in_frame_support": true,
+          "kronecker_multiplicity": 1,
+          "left_character_ratio": 0.14285714285714285,
+          "left_dimension": 35,
+          "left_partition": [
+            4,
+            2,
+            1
+          ],
+          "normalized_hilbert_mass": 0.00011574074074074075,
+          "right_character_ratio": -0.6666666666666666,
+          "right_dimension": 6,
+          "right_partition": [
+            2,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "coupled_character_ratio": -0.14285714285714285,
+          "coupled_dimension": 35,
+          "coupled_partition": [
+            3,
+            2,
+            1,
+            1
+          ],
+          "frame_eigenvalue_times_group_order_squared": 0.04761904761904767,
+          "in_frame_support": true,
+          "kronecker_multiplicity": 1,
+          "left_character_ratio": -0.6666666666666666,
+          "left_dimension": 6,
+          "left_partition": [
+            2,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "normalized_hilbert_mass": 0.00028935185185185184,
+          "right_character_ratio": -0.14285714285714285,
+          "right_dimension": 35,
+          "right_partition": [
+            3,
+            2,
+            1,
+            1
+          ]
+        },
+        {
+          "coupled_character_ratio": 0.14285714285714285,
+          "coupled_dimension": 35,
+          "coupled_partition": [
+            4,
+            2,
+            1
+          ],
+          "frame_eigenvalue_times_group_order_squared": 0.04761904761904767,
+          "in_frame_support": true,
+          "kronecker_multiplicity": 1,
+          "left_character_ratio": -0.6666666666666666,
+          "left_dimension": 6,
+          "left_partition": [
+            2,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "normalized_hilbert_mass": 0.00011574074074074075,
+          "right_character_ratio": -0.42857142857142855,
+          "right_dimension": 14,
+          "right_partition": [
+            2,
+            2,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "coupled_character_ratio": -0.42857142857142855,
+          "coupled_dimension": 14,
+          "coupled_partition": [
+            2,
+            2,
+            1,
+            1,
+            1
+          ],
+          "frame_eigenvalue_times_group_order_squared": 0.04761904761904767,
+          "in_frame_support": true,
+          "kronecker_multiplicity": 1,
+          "left_character_ratio": -0.6666666666666666,
+          "left_dimension": 6,
+          "left_partition": [
+            2,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "normalized_hilbert_mass": 0.00011574074074074075,
+          "right_character_ratio": 0.14285714285714285,
+          "right_dimension": 35,
+          "right_partition": [
+            4,
+            2,
+            1
+          ]
+        },
+        {
+          "coupled_character_ratio": -0.14285714285714285,
+          "coupled_dimension": 35,
+          "coupled_partition": [
+            3,
+            2,
+            1,
+            1
+          ],
+          "frame_eigenvalue_times_group_order_squared": 0.04761904761904773,
+          "in_frame_support": true,
+          "kronecker_multiplicity": 1,
+          "left_character_ratio": -0.14285714285714285,
+          "left_dimension": 35,
+          "left_partition": [
+            3,
+            2,
+            1,
+            1
+          ],
+          "normalized_hilbert_mass": 0.00028935185185185184,
+          "right_character_ratio": -0.6666666666666666,
+          "right_dimension": 6,
+          "right_partition": [
+            2,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ],
+      "status": "two-copy-recoupling-control",
+      "support_condition_number": 84.0000000000001,
+      "support_hilbert_mass": 0.9987830687830678,
+      "transposition_count": 1,
+      "uniform_guess_success_probability": 0.047619047619047616
+    },
+    {
+      "coherent_kronecker_transform_proved": false,
+      "ensemble_size": 105,
+      "frame_trace": 1.0000000000000033,
+      "individual_state_commutes_with_average_frame_proved": false,
+      "interpretation": "The average frame is exactly diagonal in Kronecker sectors, but an individual state has off-diagonal sector transitions. Character multiplicities give only spectral PGM bounds; recoupling transition weights, a coherent transform, and a compressed decoder remain open.",
+      "involution_type": "near_fixed_point_free_involution",
+      "kernel_hilbert_mass": 0.0005951199924425499,
+      "maximum_frame_scalar": 4.0,
+      "minimum_positive_frame_scalar": 0.4000000000000001,
+      "n": 7,
+      "nonzero_recoupling_sector_count": 1599,
+      "partition_count": 15,
+      "pgm_advantage_lower_bound": 1.0,
+      "pgm_advantage_upper_bound": 9.999999999999998,
+      "pgm_exact_from_sector_spectrum": false,
+      "pgm_success_spectral_lower_bound": 0.009523809523809525,
+      "pgm_success_spectral_upper_bound": 0.09523809523809522,
+      "polynomial_outcome_decoder_proved": false,
+      "polynomial_transition_algebra_proved": false,
+      "rejected_commuting_rank_formula": 0.03807256685743076,
+      "smallest_positive_sectors": [
+        {
+          "coupled_character_ratio": -0.2,
+          "coupled_dimension": 15,
+          "coupled_partition": [
+            5,
+            1,
+            1
+          ],
+          "frame_eigenvalue_times_group_order_squared": 0.4000000000000001,
+          "in_frame_support": true,
+          "kronecker_multiplicity": 1,
+          "left_character_ratio": -0.2,
+          "left_dimension": 15,
+          "left_partition": [
+            5,
+            1,
+            1
+          ],
+          "normalized_hilbert_mass": 0.0001328656462585034,
+          "right_character_ratio": -0.2,
+          "right_dimension": 15,
+          "right_partition": [
+            5,
+            1,
+            1
+          ]
+        },
+        {
+          "coupled_character_ratio": -0.2,
+          "coupled_dimension": 15,
+          "coupled_partition": [
+            5,
+            1,
+            1
+          ],
+          "frame_eigenvalue_times_group_order_squared": 0.5142857142857145,
+          "in_frame_support": true,
+          "kronecker_multiplicity": 1,
+          "left_character_ratio": -0.14285714285714285,
+          "left_dimension": 21,
+          "left_partition": [
+            3,
+            3,
+            1
+          ],
+          "normalized_hilbert_mass": 0.00026041666666666666,
+          "right_character_ratio": -0.14285714285714285,
+          "right_dimension": 21,
+          "right_partition": [
+            3,
+            3,
+            1
+          ]
+        },
+        {
+          "coupled_character_ratio": -0.14285714285714285,
+          "coupled_dimension": 21,
+          "coupled_partition": [
+            3,
+            3,
+            1
+          ],
+          "frame_eigenvalue_times_group_order_squared": 0.5142857142857145,
+          "in_frame_support": true,
+          "kronecker_multiplicity": 1,
+          "left_character_ratio": -0.14285714285714285,
+          "left_dimension": 21,
+          "left_partition": [
+            3,
+            3,
+            1
+          ],
+          "normalized_hilbert_mass": 0.00026041666666666666,
+          "right_character_ratio": -0.2,
+          "right_dimension": 15,
+          "right_partition": [
+            5,
+            1,
+            1
+          ]
+        },
+        {
+          "coupled_character_ratio": -0.14285714285714285,
+          "coupled_dimension": 21,
+          "coupled_partition": [
+            3,
+            3,
+            1
+          ],
+          "frame_eigenvalue_times_group_order_squared": 0.5142857142857145,
+          "in_frame_support": true,
+          "kronecker_multiplicity": 1,
+          "left_character_ratio": -0.2,
+          "left_dimension": 15,
+          "left_partition": [
+            5,
+            1,
+            1
+          ],
+          "normalized_hilbert_mass": 0.00026041666666666666,
+          "right_character_ratio": -0.14285714285714285,
+          "right_dimension": 21,
+          "right_partition": [
+            3,
+            3,
+            1
+          ]
+        },
+        {
+          "coupled_character_ratio": -0.2,
+          "coupled_dimension": 15,
+          "coupled_partition": [
+            5,
+            1,
+            1
+          ],
+          "frame_eigenvalue_times_group_order_squared": 0.5142857142857145,
+          "in_frame_support": true,
+          "kronecker_multiplicity": 1,
+          "left_character_ratio": -0.14285714285714285,
+          "left_dimension": 14,
+          "left_partition": [
+            2,
+            2,
+            1,
+            1,
+            1
+          ],
+          "normalized_hilbert_mass": 0.00011574074074074075,
+          "right_character_ratio": -0.14285714285714285,
+          "right_dimension": 14,
+          "right_partition": [
+            2,
+            2,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "coupled_character_ratio": -0.14285714285714285,
+          "coupled_dimension": 14,
+          "coupled_partition": [
+            2,
+            2,
+            1,
+            1,
+            1
+          ],
+          "frame_eigenvalue_times_group_order_squared": 0.5142857142857145,
+          "in_frame_support": true,
+          "kronecker_multiplicity": 1,
+          "left_character_ratio": -0.14285714285714285,
+          "left_dimension": 14,
+          "left_partition": [
+            2,
+            2,
+            1,
+            1,
+            1
+          ],
+          "normalized_hilbert_mass": 0.00011574074074074075,
+          "right_character_ratio": -0.2,
+          "right_dimension": 15,
+          "right_partition": [
+            5,
+            1,
+            1
+          ]
+        },
+        {
+          "coupled_character_ratio": -0.14285714285714285,
+          "coupled_dimension": 14,
+          "coupled_partition": [
+            2,
+            2,
+            1,
+            1,
+            1
+          ],
+          "frame_eigenvalue_times_group_order_squared": 0.5142857142857145,
+          "in_frame_support": true,
+          "kronecker_multiplicity": 1,
+          "left_character_ratio": -0.2,
+          "left_dimension": 15,
+          "left_partition": [
+            5,
+            1,
+            1
+          ],
+          "normalized_hilbert_mass": 0.00011574074074074075,
+          "right_character_ratio": -0.14285714285714285,
+          "right_dimension": 14,
+          "right_partition": [
+            2,
+            2,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "coupled_character_ratio": -0.2,
+          "coupled_dimension": 15,
+          "coupled_partition": [
+            5,
+            1,
+            1
+          ],
+          "frame_eigenvalue_times_group_order_squared": 0.5714285714285714,
+          "in_frame_support": true,
+          "kronecker_multiplicity": 1,
+          "left_character_ratio": -0.02857142857142857,
+          "left_dimension": 35,
+          "left_partition": [
+            3,
+            2,
+            1,
+            1
+          ],
+          "normalized_hilbert_mass": 0.00031001984126984125,
+          "right_character_ratio": -0.2,
+          "right_dimension": 15,
+          "right_partition": [
+            5,
+            1,
+            1
+          ]
+        }
+      ],
+      "status": "coherent-kronecker-transform-and-decoder-proof-debt",
+      "support_condition_number": 9.999999999999998,
+      "support_hilbert_mass": 0.9994048800075575,
+      "transposition_count": 3,
+      "uniform_guess_success_probability": 0.009523809523809525
+    },
+    {
+      "coherent_kronecker_transform_proved": false,
+      "ensemble_size": 28,
+      "frame_trace": 1.0000000000000016,
+      "individual_state_commutes_with_average_frame_proved": false,
+      "interpretation": "The average frame is exactly diagonal in Kronecker sectors, but an individual state has off-diagonal sector transitions. Character multiplicities give only spectral PGM bounds; recoupling transition weights, a coherent transform, and a compressed decoder remain open.",
+      "involution_type": "single_transposition_control",
+      "kernel_hilbert_mass": 0.00013959750566883145,
+      "maximum_frame_scalar": 4.0,
+      "minimum_positive_frame_scalar": 0.0357142857142857,
+      "n": 8,
+      "nonzero_recoupling_sector_count": 5048,
+      "partition_count": 22,
+      "pgm_advantage_lower_bound": 1.0,
+      "pgm_advantage_upper_bound": 28.0,
+      "pgm_exact_from_sector_spectrum": false,
+      "pgm_success_spectral_lower_bound": 0.03571428571428571,
+      "pgm_success_spectral_upper_bound": 1.0,
+      "polynomial_outcome_decoder_proved": false,
+      "polynomial_transition_algebra_proved": false,
+      "rejected_commuting_rank_formula": 0.14283720035633302,
+      "smallest_positive_sectors": [
+        {
+          "coupled_character_ratio": 0.0,
+          "coupled_dimension": 90,
+          "coupled_partition": [
+            4,
+            2,
+            1,
+            1
+          ],
+          "frame_eigenvalue_times_group_order_squared": 0.0357142857142857,
+          "in_frame_support": true,
+          "kronecker_multiplicity": 1,
+          "left_character_ratio": -0.7142857142857143,
+          "left_dimension": 7,
+          "left_partition": [
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "normalized_hilbert_mass": 2.48015873015873e-05,
+          "right_character_ratio": -0.25,
+          "right_dimension": 64,
+          "right_partition": [
+            3,
+            2,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "coupled_character_ratio": -0.25,
+          "coupled_dimension": 64,
+          "coupled_partition": [
+            3,
+            2,
+            1,
+            1,
+            1
+          ],
+          "frame_eigenvalue_times_group_order_squared": 0.0357142857142857,
+          "in_frame_support": true,
+          "kronecker_multiplicity": 1,
+          "left_character_ratio": -0.7142857142857143,
+          "left_dimension": 7,
+          "left_partition": [
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "normalized_hilbert_mass": 2.48015873015873e-05,
+          "right_character_ratio": 0.0,
+          "right_dimension": 90,
+          "right_partition": [
+            4,
+            2,
+            1,
+            1
+          ]
+        },
+        {
+          "coupled_character_ratio": 0.0,
+          "coupled_dimension": 90,
+          "coupled_partition": [
+            4,
+            2,
+            1,
+            1
+          ],
+          "frame_eigenvalue_times_group_order_squared": 0.0357142857142857,
+          "in_frame_support": true,
+          "kronecker_multiplicity": 1,
+          "left_character_ratio": -0.25,
+          "left_dimension": 64,
+          "left_partition": [
+            3,
+            2,
+            1,
+            1,
+            1
+          ],
+          "normalized_hilbert_mass": 2.48015873015873e-05,
+          "right_character_ratio": -0.7142857142857143,
+          "right_dimension": 7,
+          "right_partition": [
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "coupled_character_ratio": -0.7142857142857143,
+          "coupled_dimension": 7,
+          "coupled_partition": [
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "frame_eigenvalue_times_group_order_squared": 0.0357142857142857,
+          "in_frame_support": true,
+          "kronecker_multiplicity": 1,
+          "left_character_ratio": -0.25,
+          "left_dimension": 64,
+          "left_partition": [
+            3,
+            2,
+            1,
+            1,
+            1
+          ],
+          "normalized_hilbert_mass": 2.48015873015873e-05,
+          "right_character_ratio": 0.0,
+          "right_dimension": 90,
+          "right_partition": [
+            4,
+            2,
+            1,
+            1
+          ]
+        },
+        {
+          "coupled_character_ratio": -0.25,
+          "coupled_dimension": 64,
+          "coupled_partition": [
+            3,
+            2,
+            1,
+            1,
+            1
+          ],
+          "frame_eigenvalue_times_group_order_squared": 0.0357142857142857,
+          "in_frame_support": true,
+          "kronecker_multiplicity": 1,
+          "left_character_ratio": 0.0,
+          "left_dimension": 90,
+          "left_partition": [
+            4,
+            2,
+            1,
+            1
+          ],
+          "normalized_hilbert_mass": 2.48015873015873e-05,
+          "right_character_ratio": -0.7142857142857143,
+          "right_dimension": 7,
+          "right_partition": [
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "coupled_character_ratio": -0.7142857142857143,
+          "coupled_dimension": 7,
+          "coupled_partition": [
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "frame_eigenvalue_times_group_order_squared": 0.0357142857142857,
+          "in_frame_support": true,
+          "kronecker_multiplicity": 1,
+          "left_character_ratio": 0.0,
+          "left_dimension": 90,
+          "left_partition": [
+            4,
+            2,
+            1,
+            1
+          ],
+          "normalized_hilbert_mass": 2.48015873015873e-05,
+          "right_character_ratio": -0.25,
+          "right_dimension": 64,
+          "right_partition": [
+            3,
+            2,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "coupled_character_ratio": 0.25,
+          "coupled_dimension": 64,
+          "coupled_partition": [
+            5,
+            2,
+            1
+          ],
+          "frame_eigenvalue_times_group_order_squared": 0.0357142857142857,
+          "in_frame_support": true,
+          "kronecker_multiplicity": 1,
+          "left_character_ratio": -0.7142857142857143,
+          "left_dimension": 7,
+          "left_partition": [
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "normalized_hilbert_mass": 5.5114638447971785e-06,
+          "right_character_ratio": -0.5,
+          "right_dimension": 20,
+          "right_partition": [
+            2,
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "coupled_character_ratio": -0.5,
+          "coupled_dimension": 20,
+          "coupled_partition": [
+            2,
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "frame_eigenvalue_times_group_order_squared": 0.0357142857142857,
+          "in_frame_support": true,
+          "kronecker_multiplicity": 1,
+          "left_character_ratio": -0.7142857142857143,
+          "left_dimension": 7,
+          "left_partition": [
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "normalized_hilbert_mass": 5.5114638447971785e-06,
+          "right_character_ratio": 0.25,
+          "right_dimension": 64,
+          "right_partition": [
+            5,
+            2,
+            1
+          ]
+        }
+      ],
+      "status": "two-copy-recoupling-control",
+      "support_condition_number": 112.00000000000006,
+      "support_hilbert_mass": 0.9998604024943312,
+      "transposition_count": 1,
+      "uniform_guess_success_probability": 0.03571428571428571
+    },
+    {
+      "coherent_kronecker_transform_proved": false,
+      "ensemble_size": 210,
+      "frame_trace": 0.999999999999998,
+      "individual_state_commutes_with_average_frame_proved": false,
+      "interpretation": "The average frame is exactly diagonal in Kronecker sectors, but an individual state has off-diagonal sector transitions. Character multiplicities give only spectral PGM bounds; recoupling transition weights, a coherent transform, and a compressed decoder remain open.",
+      "involution_type": "partial_matching",
+      "kernel_hilbert_mass": 3.3306690738754696e-16,
+      "maximum_frame_scalar": 4.0,
+      "minimum_positive_frame_scalar": 0.5714285714285716,
+      "n": 8,
+      "nonzero_recoupling_sector_count": 5048,
+      "partition_count": 22,
+      "pgm_advantage_lower_bound": 1.0,
+      "pgm_advantage_upper_bound": 6.999999999999997,
+      "pgm_exact_from_sector_spectrum": false,
+      "pgm_success_spectral_lower_bound": 0.004761904761904762,
+      "pgm_success_spectral_upper_bound": 0.03333333333333332,
+      "polynomial_outcome_decoder_proved": false,
+      "polynomial_transition_algebra_proved": false,
+      "rejected_commuting_rank_formula": 0.019047619047619042,
+      "smallest_positive_sectors": [
+        {
+          "coupled_character_ratio": -0.14285714285714285,
+          "coupled_dimension": 35,
+          "coupled_partition": [
+            4,
+            1,
+            1,
+            1,
+            1
+          ],
+          "frame_eigenvalue_times_group_order_squared": 0.5714285714285716,
+          "in_frame_support": true,
+          "kronecker_multiplicity": 1,
+          "left_character_ratio": -0.14285714285714285,
+          "left_dimension": 35,
+          "left_partition": [
+            4,
+            1,
+            1,
+            1,
+            1
+          ],
+          "normalized_hilbert_mass": 2.6373215663580245e-05,
+          "right_character_ratio": -0.14285714285714285,
+          "right_dimension": 35,
+          "right_partition": [
+            4,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "coupled_character_ratio": -0.14285714285714285,
+          "coupled_dimension": 35,
+          "coupled_partition": [
+            5,
+            1,
+            1,
+            1
+          ],
+          "frame_eigenvalue_times_group_order_squared": 0.5714285714285716,
+          "in_frame_support": true,
+          "kronecker_multiplicity": 1,
+          "left_character_ratio": -0.14285714285714285,
+          "left_dimension": 35,
+          "left_partition": [
+            4,
+            1,
+            1,
+            1,
+            1
+          ],
+          "normalized_hilbert_mass": 2.6373215663580245e-05,
+          "right_character_ratio": -0.14285714285714285,
+          "right_dimension": 35,
+          "right_partition": [
+            4,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "coupled_character_ratio": -0.14285714285714285,
+          "coupled_dimension": 35,
+          "coupled_partition": [
+            4,
+            1,
+            1,
+            1,
+            1
+          ],
+          "frame_eigenvalue_times_group_order_squared": 0.5714285714285716,
+          "in_frame_support": true,
+          "kronecker_multiplicity": 1,
+          "left_character_ratio": -0.14285714285714285,
+          "left_dimension": 35,
+          "left_partition": [
+            4,
+            1,
+            1,
+            1,
+            1
+          ],
+          "normalized_hilbert_mass": 2.6373215663580245e-05,
+          "right_character_ratio": -0.14285714285714285,
+          "right_dimension": 35,
+          "right_partition": [
+            5,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "coupled_character_ratio": -0.14285714285714285,
+          "coupled_dimension": 35,
+          "coupled_partition": [
+            5,
+            1,
+            1,
+            1
+          ],
+          "frame_eigenvalue_times_group_order_squared": 0.5714285714285716,
+          "in_frame_support": true,
+          "kronecker_multiplicity": 1,
+          "left_character_ratio": -0.14285714285714285,
+          "left_dimension": 35,
+          "left_partition": [
+            4,
+            1,
+            1,
+            1,
+            1
+          ],
+          "normalized_hilbert_mass": 2.6373215663580245e-05,
+          "right_character_ratio": -0.14285714285714285,
+          "right_dimension": 35,
+          "right_partition": [
+            5,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "coupled_character_ratio": -0.14285714285714285,
+          "coupled_dimension": 35,
+          "coupled_partition": [
+            4,
+            1,
+            1,
+            1,
+            1
+          ],
+          "frame_eigenvalue_times_group_order_squared": 0.5714285714285716,
+          "in_frame_support": true,
+          "kronecker_multiplicity": 1,
+          "left_character_ratio": -0.14285714285714285,
+          "left_dimension": 35,
+          "left_partition": [
+            5,
+            1,
+            1,
+            1
+          ],
+          "normalized_hilbert_mass": 2.6373215663580245e-05,
+          "right_character_ratio": -0.14285714285714285,
+          "right_dimension": 35,
+          "right_partition": [
+            4,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "coupled_character_ratio": -0.14285714285714285,
+          "coupled_dimension": 35,
+          "coupled_partition": [
+            5,
+            1,
+            1,
+            1
+          ],
+          "frame_eigenvalue_times_group_order_squared": 0.5714285714285716,
+          "in_frame_support": true,
+          "kronecker_multiplicity": 1,
+          "left_character_ratio": -0.14285714285714285,
+          "left_dimension": 35,
+          "left_partition": [
+            5,
+            1,
+            1,
+            1
+          ],
+          "normalized_hilbert_mass": 2.6373215663580245e-05,
+          "right_character_ratio": -0.14285714285714285,
+          "right_dimension": 35,
+          "right_partition": [
+            4,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "coupled_character_ratio": -0.14285714285714285,
+          "coupled_dimension": 35,
+          "coupled_partition": [
+            4,
+            1,
+            1,
+            1,
+            1
+          ],
+          "frame_eigenvalue_times_group_order_squared": 0.5714285714285716,
+          "in_frame_support": true,
+          "kronecker_multiplicity": 1,
+          "left_character_ratio": -0.14285714285714285,
+          "left_dimension": 35,
+          "left_partition": [
+            5,
+            1,
+            1,
+            1
+          ],
+          "normalized_hilbert_mass": 2.6373215663580245e-05,
+          "right_character_ratio": -0.14285714285714285,
+          "right_dimension": 35,
+          "right_partition": [
+            5,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "coupled_character_ratio": -0.14285714285714285,
+          "coupled_dimension": 35,
+          "coupled_partition": [
+            5,
+            1,
+            1,
+            1
+          ],
+          "frame_eigenvalue_times_group_order_squared": 0.5714285714285716,
+          "in_frame_support": true,
+          "kronecker_multiplicity": 1,
+          "left_character_ratio": -0.14285714285714285,
+          "left_dimension": 35,
+          "left_partition": [
+            5,
+            1,
+            1,
+            1
+          ],
+          "normalized_hilbert_mass": 2.6373215663580245e-05,
+          "right_character_ratio": -0.14285714285714285,
+          "right_dimension": 35,
+          "right_partition": [
+            5,
+            1,
+            1,
+            1
+          ]
+        }
+      ],
+      "status": "coherent-kronecker-transform-and-decoder-proof-debt",
+      "support_condition_number": 6.999999999999997,
+      "support_hilbert_mass": 0.9999999999999997,
+      "transposition_count": 2,
+      "uniform_guess_success_probability": 0.004761904761904762
+    },
+    {
+      "coherent_kronecker_transform_proved": false,
+      "ensemble_size": 105,
+      "frame_trace": 0.9999999999999954,
+      "individual_state_commutes_with_average_frame_proved": false,
+      "interpretation": "The average frame is exactly diagonal in Kronecker sectors, but an individual state has off-diagonal sector transitions. Character multiplicities give only spectral PGM bounds; recoupling transition weights, a coherent transform, and a compressed decoder remain open.",
+      "involution_type": "fixed_point_free_involution",
+      "kernel_hilbert_mass": 3.3306690738754696e-16,
+      "maximum_frame_scalar": 4.0,
+      "minimum_positive_frame_scalar": 0.5714285714285716,
+      "n": 8,
+      "nonzero_recoupling_sector_count": 5048,
+      "partition_count": 22,
+      "pgm_advantage_lower_bound": 1.0,
+      "pgm_advantage_upper_bound": 6.999999999999997,
+      "pgm_exact_from_sector_spectrum": false,
+      "pgm_success_spectral_lower_bound": 0.009523809523809525,
+      "pgm_success_spectral_upper_bound": 0.06666666666666664,
+      "polynomial_outcome_decoder_proved": false,
+      "polynomial_transition_algebra_proved": false,
+      "rejected_commuting_rank_formula": 0.038095238095238085,
+      "smallest_positive_sectors": [
+        {
+          "coupled_character_ratio": -0.14285714285714285,
+          "coupled_dimension": 42,
+          "coupled_partition": [
+            3,
+            3,
+            2
+          ],
+          "frame_eigenvalue_times_group_order_squared": 0.5714285714285716,
+          "in_frame_support": true,
+          "kronecker_multiplicity": 1,
+          "left_character_ratio": -0.14285714285714285,
+          "left_dimension": 42,
+          "left_partition": [
+            3,
+            3,
+            2
+          ],
+          "normalized_hilbert_mass": 4.557291666666667e-05,
+          "right_character_ratio": -0.14285714285714285,
+          "right_dimension": 42,
+          "right_partition": [
+            3,
+            3,
+            2
+          ]
+        },
+        {
+          "coupled_character_ratio": -0.14285714285714285,
+          "coupled_dimension": 42,
+          "coupled_partition": [
+            3,
+            3,
+            2
+          ],
+          "frame_eigenvalue_times_group_order_squared": 0.5714285714285716,
+          "in_frame_support": true,
+          "kronecker_multiplicity": 1,
+          "left_character_ratio": -0.14285714285714285,
+          "left_dimension": 28,
+          "left_partition": [
+            2,
+            2,
+            2,
+            1,
+            1
+          ],
+          "normalized_hilbert_mass": 3.0381944444444444e-05,
+          "right_character_ratio": -0.14285714285714285,
+          "right_dimension": 42,
+          "right_partition": [
+            3,
+            3,
+            2
+          ]
+        },
+        {
+          "coupled_character_ratio": -0.14285714285714285,
+          "coupled_dimension": 42,
+          "coupled_partition": [
+            3,
+            3,
+            2
+          ],
+          "frame_eigenvalue_times_group_order_squared": 0.5714285714285716,
+          "in_frame_support": true,
+          "kronecker_multiplicity": 1,
+          "left_character_ratio": -0.14285714285714285,
+          "left_dimension": 42,
+          "left_partition": [
+            3,
+            3,
+            2
+          ],
+          "normalized_hilbert_mass": 3.0381944444444444e-05,
+          "right_character_ratio": -0.14285714285714285,
+          "right_dimension": 28,
+          "right_partition": [
+            2,
+            2,
+            2,
+            1,
+            1
+          ]
+        },
+        {
+          "coupled_character_ratio": -0.14285714285714285,
+          "coupled_dimension": 28,
+          "coupled_partition": [
+            2,
+            2,
+            2,
+            1,
+            1
+          ],
+          "frame_eigenvalue_times_group_order_squared": 0.5714285714285716,
+          "in_frame_support": true,
+          "kronecker_multiplicity": 1,
+          "left_character_ratio": -0.14285714285714285,
+          "left_dimension": 42,
+          "left_partition": [
+            3,
+            3,
+            2
+          ],
+          "normalized_hilbert_mass": 3.0381944444444444e-05,
+          "right_character_ratio": -0.14285714285714285,
+          "right_dimension": 42,
+          "right_partition": [
+            3,
+            3,
+            2
+          ]
+        },
+        {
+          "coupled_character_ratio": -0.14285714285714285,
+          "coupled_dimension": 28,
+          "coupled_partition": [
+            5,
+            3
+          ],
+          "frame_eigenvalue_times_group_order_squared": 0.5714285714285716,
+          "in_frame_support": true,
+          "kronecker_multiplicity": 1,
+          "left_character_ratio": -0.14285714285714285,
+          "left_dimension": 42,
+          "left_partition": [
+            3,
+            3,
+            2
+          ],
+          "normalized_hilbert_mass": 3.0381944444444444e-05,
+          "right_character_ratio": -0.14285714285714285,
+          "right_dimension": 42,
+          "right_partition": [
+            3,
+            3,
+            2
+          ]
+        },
+        {
+          "coupled_character_ratio": -0.14285714285714285,
+          "coupled_dimension": 42,
+          "coupled_partition": [
+            3,
+            3,
+            2
+          ],
+          "frame_eigenvalue_times_group_order_squared": 0.5714285714285716,
+          "in_frame_support": true,
+          "kronecker_multiplicity": 1,
+          "left_character_ratio": -0.14285714285714285,
+          "left_dimension": 42,
+          "left_partition": [
+            3,
+            3,
+            2
+          ],
+          "normalized_hilbert_mass": 3.0381944444444444e-05,
+          "right_character_ratio": -0.14285714285714285,
+          "right_dimension": 28,
+          "right_partition": [
+            5,
+            3
+          ]
+        },
+        {
+          "coupled_character_ratio": -0.14285714285714285,
+          "coupled_dimension": 42,
+          "coupled_partition": [
+            3,
+            3,
+            2
+          ],
+          "frame_eigenvalue_times_group_order_squared": 0.5714285714285716,
+          "in_frame_support": true,
+          "kronecker_multiplicity": 1,
+          "left_character_ratio": -0.14285714285714285,
+          "left_dimension": 28,
+          "left_partition": [
+            5,
+            3
+          ],
+          "normalized_hilbert_mass": 3.0381944444444444e-05,
+          "right_character_ratio": -0.14285714285714285,
+          "right_dimension": 42,
+          "right_partition": [
+            3,
+            3,
+            2
+          ]
+        },
+        {
+          "coupled_character_ratio": -0.14285714285714285,
+          "coupled_dimension": 42,
+          "coupled_partition": [
+            3,
+            3,
+            2
+          ],
+          "frame_eigenvalue_times_group_order_squared": 0.5714285714285716,
+          "in_frame_support": true,
+          "kronecker_multiplicity": 1,
+          "left_character_ratio": -0.14285714285714285,
+          "left_dimension": 21,
+          "left_partition": [
+            3,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "normalized_hilbert_mass": 2.2786458333333334e-05,
+          "right_character_ratio": -0.14285714285714285,
+          "right_dimension": 42,
+          "right_partition": [
+            3,
+            3,
+            2
+          ]
+        }
+      ],
+      "status": "coherent-kronecker-transform-and-decoder-proof-debt",
+      "support_condition_number": 6.999999999999997,
+      "support_hilbert_mass": 0.9999999999999997,
+      "transposition_count": 4,
+      "uniform_guess_success_probability": 0.009523809523809525
+    }
+  ],
+  "status": "two-copy-spectrum-solved-rank-formula-falsified-transition-algebra-open",
+  "summary": "Derived exact two-copy frame spectra for 11 ensembles through n=8 and falsified the rank-only PGM shortcut on S_3; 6 frontier rows retain transition-algebra, coherent-transform, and decoder proof debt.",
+  "theorem_contract": {
+    "frame_scalar": "1+r_lambda+r_mu+r_nu",
+    "open_mechanism": "Kronecker-sector transition weights, coherent transform, k>=3 algebra, decoder",
+    "pgm_bounds": "4/(M*max_scalar) <= P_PGM <= min(1,4/(M*min_positive_scalar))",
+    "rejected_shortcut": "4*support_hilbert_mass/M assumes false commutation with an individual state",
+    "sector_mass": "d_lambda*d_mu*g(lambda,mu,nu)*d_nu/|S_n|^2",
+    "two_copy_sector": "lambda tensor mu recoupled into nu with Kronecker multiplicity"
+  }
+}

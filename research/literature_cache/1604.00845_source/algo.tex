@@ -1,0 +1,169 @@
+%!TEX root = ./ft-hd.tex
+\section{The algorithm and proof overview}\label{sec:sublinear}
+
+In this section we state our algorithm and give an outline of the analysis. The formal proofs are then presented in the rest of the paper (the organization of the rest of the paper is presented in section~\ref{sec:org}).   Our algorithm (Algorithm~\ref{alg:main-sublinear}), at a high level, proceeds as follows. 
+
+{\bf Measuring $\wh{x}$.} The algorithms starts by taking measurements of the signal in lines~5-16. Note that the algorithm selects $O(\log\log N)$ hashings $H_r=(\pi_r, B, F), r=1,\ldots, O(\log\log N)$, where $\pi_r$ are selected uniformly at random, and for each $r$ selects a set $\A_r\subseteq \nsq\times \nsq$ of size $O(\log\log N)$ that determines locations to access in frequency domain. The signal $\wh{x}$ is accessed via the function \textsc{HashToBins} (see Lemma~\ref{lm:hashing} above for its properties. The function \textsc{HashToBins} accesses filtered versions of $\wh{x}$ shifted by elements of a randomly selected set (the number of shifts is $O(\log N/\log \log N)$). These shifts are useful for locating `heavy' elements from the output of \textsc{HashToBins}.  Note that since each hashing takes $O(B)=O(k)$ samples, the total sample complexity of the measurement step is $O(k\log N \log\log N)$. This is the dominant contribution to sample complexity, but it is not the only one. The other contribution of $O(k\log N\log\log N)$ comes from invocations of \textsc{EstimateValues} from our $\ell_1$-SNR reduction loop (see below). The loop goes over $O(\log R^*)=O(\log N)$ iterations, and in each iteration \textsc{EstimateValues} uses $O(\log\log N)$ fresh hash functions to keep the number of false positives and estimation error small.
+
+The location algorithm is Algorithm~\ref{alg:location}.  Our main tool for bounding performance of \textsc{LocateSignal} is Theorem~\ref{thm:l1-res-loc}, stated below. Theorem~\ref{thm:l1-res-loc} applies to the following setting. Fix a set $S\subseteq \nsq$ and a set of hashings $H_1,\ldots, H_{r_{max}}$ that encode signal measurement patterns, and let $S^*\subseteq S$ denote the set of elements of $S$ that are not isolated with respect to most of these hashings. Theorem~\ref{thm:l1-res-loc} shows that for any signal $x$ and partially recovered signal $\chi$, if $L$ denotes the output list of an invocation of \textsc{LocateSignal} on the pair $(x, \chi)$ with measurements given by $H_1,\ldots, H_{r_{max}}$ and a set of random shifts, then the $\ell_1$ norm of elements of the residual $(x-\chi)_S$ that are not discovered by \textsc{LocateSignal} can be bounded by a function of the amount of $\ell_1$ mass of the residual that fell outside of the `good' set $S\setminus S^*$, plus the `noise level' $\mu\geq ||x_{\nsq\setminus S}||_\infty$ times $k$.
+
+If we think of applying Theorem~\ref{thm:l1-res-loc} iteratively, we intuitively get that the fixed set of measurements given by hashings $H_1,\ldots, H_r$ allows us to always reduce the $\ell_1$ norm of the residual $x'=x-\chi$ on the `good' set $S\setminus S^*$ to about the amount of mass that is located outside of this good set(this is exactly how we use \textsc{LocateSignal} in our signal to noise ratio reduction loop below). In section~\ref{sec:l1} we prove
+
+\begin{theorem}\label{thm:l1-res-loc}
+For any constant $C'>0$ there exist absolute constants $C_1, C_2, C_3>0$ such that for any $x, \chi\in \C^N$, $x'=x-\chi$, any integer $k\geq 1$ and any $S\subseteq \nsq$ such that $||x_{\nsq\setminus S}||_\infty\leq C'\mu$, where $\mu=||x_{\nsq\setminus [k]}||_2/\sqrt{k}$, the following conditions hold if $||x'||_\infty/\mu=N^{O(1)}$.
+
+Let $\pi_r=(\Sigma_r, q_r), r=1,\ldots, r_{max}$ denote permutations, and let $H_r=(\pi_r, B, F)$, $F\geq 2d, F=\Theta(d)$, where $B\geq \GT k/\alpha^d$ for $\alpha\in (0, 1)$ smaller than a constant. Let $S^*\subseteq S$ denote the set of elements that are not isolated with respect to at least a $\sqrt{\alpha}$ fraction of hashings $\{H_r\}$. Then if additionally for every $s\in [1:d]$ the sets $\A_r\star (\one, \mathbf{e}_s)$ are balanced in coordinate $s$ (as per Definition~\ref{def:balance}) for all $r=1,\ldots, r_{max}$, and $r_{max}, c_{max}\geq (C_1/\sqrt{\alpha})\log\log N$, then
+$$
+L:=\bigcup_{r=1}^{r_{max}}\textsc{LocateSignal}\left(\chi, k, \{m(\wh{x}, H_r, a\star (\one, \h))\}_{r=1, a\in \A_r, \h\in \H}^{r_{max}}\right)
+$$
+satisfies
+$$
+||x'_{S\setminus S^*\setminus L}||_1\leq (C_2\alpha)^{d/2} ||x'_S||_1+C_3^{d^2}(||\chi_{\nsq\setminus S}||_1+||x'_{S^*}||_1)+4\mu |S|.
+$$
+\end{theorem}
+
+
+\paragraph{\bf Reducing signal to noise ratio.} Once the samples have been taken, the algorithm proceeds to the signal to noise (SNR) reduction loop (lines~17-23). The objective of this loop is to reduce the mass of the top (about $k$) elements in the residual signal to roughly the noise level $\mu\cdot k$ (once this is done, we run a `cleanup' primitive, referred to as \textsc{RecoverAtConstantSNR}, to complete the recovery process -- see below). Specifically, we define the set $S$ of `head elements' in the original signal $x$ as 
+\begin{equation}\label{eq:s-def-l1}
+S=\{i\in \nsq: |x_i|>\mu\},
+\end{equation}
+where $\mu^2=\err_k^2(x)/k$ is the average tail noise level. Note that we have $|S|\leq 2k$. Indeed, if $|S|>2k$, more than $k$ elements of $S$ belong to the tail, amounting to more than $\mu^2\cdot k=\err_k^2(x)$ tail mass. Ideally, we would like this loop to construct and approximation  $\chi^{(T)}$ to $x$ {\em supported only on $S$} such that $||(x-\chi^{(T)})_S||_1=O(\mu k)$, i.e. the $\ell_1$-SNR of the residual signal on the set $S$ of heavy elements is reduced to a constant. 
+As some false positives will unfortunately occur throughout the execution of our algorithm due to the weaker sublinear time location and estimation primitives that we use,  our SNR reduction loop is to construct an approximation $\chi^{(T)}$ to $x$ with the somewhat weaker properties that
+\begin{equation}\label{eq:294ht943htgrr}
+||(x-\chi^{(T)})_S||_1+||\chi^{(T)}||_{\nsq\setminus S}=O(\mu k)\text{~~~~~and~~~~}||\chi^{(T)}||_0\ll k.
+\end{equation}
+Thus, we reduce the $\ell_1$-SNR on the set $S$ of `head' elements to a constant, and at the same time not introduce too many spurious coefficients  (i.e. false positives) outside $S$, and these coefficients do not contribute much $\ell_1$ mass. The SNR reduction loop itself consists of repeated alternating invocations of two primitives, namely \textsc{ReduceL1Norm} and \textsc{ReduceInfNorm}. Of these two the former can be viewed as performing most of the reduction, and \textsc{ReduceInfNorm} is naturally viewed as performing a `cleanup' phase to fix inefficiencies of \textsc{ReduceL1Norm} that are due to the small number of hash functions (only $O(\log\log N)$ as opposed to $O(\log N)$ in~\cite{IK14a}) that we are allowed to use, as well as some mistakes that our sublinear runtime location and estimation primitives used in \textsc{ReduceL1Norm} might make.
+
+
+\begin{algorithm}[H]
+\caption{Location primitive: given a set of measurements corresponding to a single hash function, returns a list of elements in $\nsq$, one per each hash bucket}\label{alg:location}
+\begin{algorithmic}[1]
+\Procedure{LocateSignal}{$\chi, H, \{m(\wh{x}, H, a\star (\one, \h)\}_{a\in \A, \h\in \H}$}\Comment{$H=(\pi, B, F), B=b^d$}
+\State Let $x':=x-\chi$. Compute $\{m(\wh{x'}, H, a\star (\one, \h)\}_{a\in \A, \h\in \H}$ using Corollary~\ref{c:semiequi1} and \textsc{HashToBins}.
+\State $L\gets \emptyset$
+\For{$j \in [b]^d$}\Comment{Loop over all hash buckets, indexed by $j\in [b]^d$}
+\State ${\bf f}\gets {\bf 0}^d$
+\For {$s=1$ to $d$}\Comment{Recovering each of $d$ coordinates separately}
+\State $\Delta\gets 2^{\lfloor \frac1{2}\log_2 \log_2 n\rfloor}$
+\For {$g=1$ to $\log_\Delta n-1$} 
+\State $\h\gets n\Delta^{-g} \cdot \mathbf{e}_s$ \Comment{Note that $\h\in \H$}
+\State {\bf If}~there exists a unique $r\in [0:\Delta-1]$ such that  
+\State~~~~~$\left|\omega_{\Delta}^{-r\cdot \beta_s}\cdot \omega^{-(n\cdot \Delta^{-g} {\bf f}_s)\cdot \beta_s}\cdot \frac{m_j(\wh{x'}, H, a\star (\one, \h))}{m_j(\wh{x'}, H, a\star (\one, \zero))}-1\right|<1/3$ for at least $3/5$ fraction of $a=(\alpha, \beta)\in \A$
+\State {\bf then}  ${\bf f}\gets {\bf f}+\Delta^{g-1}\cdot r\cdot {\bf e}_s$ ~{\bf else} return {\bf FAIL}
+\EndFor
+\EndFor
+\State $L \gets L \cup \{\Sigma^{-1}{\bf f}\}$ \Comment{Add recovered element to output list}
+\EndFor
+\State \textbf{return} $L$
+\EndProcedure 
+\end{algorithmic}
+\end{algorithm}
+
+
+\textsc{ReduceL1Norm} is presented as Algorithm~\ref{alg:l1-norm-reduction} below. The algorithm performs $O(\log\log N)$ rounds of the following process: first, run \textsc{LocateSignal} on the current residual signal, then estimate values of the elements that belong to the list $L$ output by \textsc{LocateSignal}, and {\bf only keep those that are above a certain threshold} (see threshold $\frac1{10000} 2^{-t} \nu+4\mu$ in the call the \textsc{EstimateValues} in line~9 of Algorithm~\ref{alg:l1-norm-reduction}). This thresholding operation is crucial, and allows us to control the number of false positives. In fact, this is very similar to the approach of~\cite{IK14a} of recovering elements starting from the largest. The only difference is that {\bf (a)} our `reliability threshold' is dictated by the $\ell_1$ norm of the residual rather than the $\ell_\infty$ norm, as in~\cite{IK14a}, and {\bf (b)} some false positives can still occur due to our weaker estimation primitives. Our main tool for formally stating the effect of \textsc{ReduceL1Norm} is Lemma~\ref{lm:reduce-l1-norm}  below. Intuitively, the lemma shows that \textsc{ReduceL1Norm} reduces the $\ell_1$ norm of the head elements of the input signal $x-\chi$ by a polylogarthmic factor, and does not introduce too many new spurious elements (false positives) in the process. The  introduced spurious elements, if any, do not contribute much $\ell_1$ mass to the head of the signal. Formally, we show in section~\ref{sec:rl1n}
+
+\begin{lemma}\label{lm:reduce-l1-norm}
+For any $x\in \C^N$, any integer $k\geq 1$, $B\geq \GT\cdot k/\alpha^d$ for $\alpha\in (0, 1]$ smaller than an absolute constant and $F\geq 2d, F=\Theta(d)$ the following conditions hold for the set $S:=\{i\in \nsq: |x_i|>\mu\}$, where $\mu^2:=||x_{\nsq\setminus [k]}||_2^2/k$. Suppose that $||x||_\infty/\mu=N^{O(1)}$.
+
+For any sequence of hashings $H_r=(\pi_r, B, F)$, $r=1,\ldots, r_{max}$, if $S^*\subseteq S$ denotes the set of elements of $S$ that are not isolated with respect to at least a $\sqrt{\alpha}$ fraction of the hashings  $H_r, r=1,\ldots, r_{max}$, then for any $\chi\in \C^\nsq$, $x':=x-\chi$, if $\nu\geq (\log^4 N)\mu$ is a parameter such that
+\begin{description}
+\item[A] $||(x-\chi)_S||_1\leq  (\nu +20\mu)k$;
+\item[B] $||\chi_{\nsq\setminus S}||_0\leq \frac{1}{\log^{19} N}k$;
+\item[C] $||(x-\chi)_{S^*}||_1+||\chi_{\nsq\setminus S}||_1\leq \frac{\nu}{\log^4 N}k$,
+\end{description}
+the following conditions hold.
+
+If parameters $r_{max}, c_{max}$ are chosen to be at least $(C_1/\sqrt{\alpha})\log\log N$, where $C_1$ is the constant from Theorem~\ref{thm:l1-res-loc} and measurements are taken as in Algorithm~\ref{alg:main-sublinear}, then the output $\chi'$ of the call 
+$$
+\Call{ReduceL1Norm}{\chi, k, \{m(\wh{x}, H_r, a\star (\one, \h))\}_{r=1, a\in \A_r, \h\in \H}^{r_{max}}, 4\mu (\log^4 n)^{T-t}, \mu}
+$$ 
+satisfies
+\begin{enumerate}
+\item $||(x'-\chi')_S||_1\leq \frac1{\log^{4} N} \nu k+20\mu k$ ~~~~~~~~($\ell_1$ norm of head elements is reduced by $\approx \log^4 N$ factor)
+\item $||(\chi+\chi')_{\nsq\setminus S}||_0\leq ||\chi_{\nsq\setminus S}||_0+ \frac1{\log^{20} N}k$~~~~(few spurious coefficients are introduced)
+\item $||(x'-\chi')_{S^*}||_1+||(\chi+\chi')_{\nsq\setminus S}||_1\leq ||x'_{S^*}||_1+||\chi_{\nsq\setminus S}||_1+\frac1{\log^{20} N}\nu k$ ~~~~($\ell_1$ norm of spurious coefficients does not grow fast)
+\end{enumerate}
+with probability at least $1-1/\log^{2} N$ over the randomness used to take measurements $m$ and by calls to \textsc{EstimateValues}.
+The number of samples used is bounded by $2^{O(d^2)}k(\log\log N)^2$, and the runtime is bounded by $2^{O(d^2)} k\log^{d+2} N$.
+\end{lemma}
+
+Equipped with Lemma~\ref{lm:reduce-l1-norm} as well as its counterpart Lemma~\ref{lm:linf} that bounds the performance of \textsc{ReduceInfNorm} (see section~\ref{sec:linf}) we are able to prove that the SNR reduction loop indeed achieves its cause, namely~\eqref{eq:294ht943htgrr}. Formally, we prove in section~\ref{sec:snr-loop}
+\begin{theorem}\label{thm:l1snr}
+For any $x\in \C^N$, any integer $k\geq 1$, if $\mu^2=\err_k^2(x)/k$ and $R^*\geq ||x||_\infty/\mu=N^{O(1)}$, the following conditions hold for the set $S:=\{i\in \nsq: |x_i|>\mu\}\subseteq \nsq$.
+
+Then the SNR reduction loop of Algorithm~\ref{alg:main-sublinear} (lines~19-25) returns $\chi^{(T)}$ such that 
+\begin{equation*}
+\begin{split}
+&||(x-\chi^{(T)})_S||_1\lesssim \mu\text{~~~~~~~~~~~~~~~~~($\ell_1$-SNR on head elements is constant)}\\
+&||\chi^{(T)}_{\nsq\setminus S}||_1\lesssim \mu \text{~~~~~~~~~~~~~~~~~~~~~~~~~~(spurious elements contribute little in $\ell_1$ norm)}\\
+&||\chi^{(T)}_{\nsq\setminus S}||_0\lesssim \frac1{\log^{19} N} k\text{~~~~~~~~~~~~~(small number of spurious elements have been introduced)}
+\end{split}
+\end{equation*}
+
+with probability at least $1-1/\log N$ over the internal randomness used by Algorithm~\ref{alg:main-sublinear}. The sample complexity is $2^{O(d^2)}k\log N(\log\log N)$. The runtime is bounded by $2^{O(d^2)} k \log^{d+3} N$.
+\end{theorem}
+
+
+
+\paragraph{ Recovery at constant $\ell_1$-SNR.} Once ~\eqref{eq:294ht943htgrr} has been achieved, we run the \textsc{RecoverAtConstantSNR} primitive (Algorithm~\ref{alg:const-snr}) on the residual signal. Adding the correction $\chi'$ that it outputs to the output $\chi^{(T)}$ of the SNR reduction loop gives the final output of the algorithm. We prove in section~\ref{sec:const-snr}
+\begin{lemma}\label{lm:const-snr}
+For any $\e>0$, $\hat x, \chi\in \C^N$, $x'=x-\chi$ and any integer $k\geq 1$ if $||x'_{[2k]}||_1\leq O(||x_{\nsq\setminus [k]}||_2\sqrt{k})$ and $||x'_{\nsq\setminus [2k]}||_2^2\leq ||x_{\nsq\setminus [k]}||_2^2$, the following conditions hold. If $||x||_\infty/\mu=N^{O(1)}$, then the output $\chi'$ of 
+\Call{RecoverAtConstantSNR}{$\hat x, \chi, 2k, \e$} satisfies
+$$
+||x'-\chi'||^2_2\leq (1+O(\e))||x_{\nsq\setminus [k]}||_2^2
+$$
+with at least $99/100$ probability over its internal randomness. The sample complexity is $2^{O(d^2)}\frac1{\e}  k\log N$, and the runtime complexity is at most $2^{O(d^2)}\frac1{\e}  k \log^{d+1} N.$
+\end{lemma}
+We give the intuition behind the proof here, as the argument is somewhat more delicate than the analysis of \textsc{RecoverAtConstSNR} in~\cite{IKP}, due to the $\ell_1$-SNR, rather than $\ell_2$-SNR assumption.
+Specifically, if instead of $||(x-\chi)_{[2k]}||_1\leq O(\mu k)$ we had $||(x-\chi)_{[2k]}||_2^2\leq O(\mu^2 k)$, then it would be essentially sufficient to note that after a single hashing into about $k/(\e\alpha)$ buckets for a constant $\alpha\in (0, 1)$, every element $i\in [2k]$ is recovered with probability at least $1-O(\e\alpha)$, say, as it is enough to (on average) recover all but about an $\e$ fraction of coefficients. This would not be sufficient here since we only have a bound on the $\ell_1$ norm of the residual, and hence some elements can contribute much more $\ell_2$ norm than others. However, we are able to show that the probability that an element of the residual signal $x'_i$ is not recovered is bounded by
+$O(\frac{\alpha \e \mu^2}{|x'_i|^2}+\frac{\alpha \e \mu}{|x'_i|})$, where the first term corresponds to contribution of tail noise and the second corresponds to the head elements. This bound implies that the total expected $\ell_2^2$ mass in the elements that are not recovered  is upper bounded by 
+$\sum_{i\in [2k]} |x'_i|^2\cdot O(\frac{\alpha \e \mu^2}{|x'_i|^2}+\frac{\alpha \e \mu}{|x'_i|})\leq O(\e \mu^2 k+\e\mu \sum_{i\in [2k]} |x'_i|)=O(\e \mu^2 k)$, giving the result.
+
+Finally, putting the results above together, we prove in section~\ref{sec:sfft}
+
+\begin{theorem}\label{thm:main}
+For any $\e>0$, $x\in \C^\nsq$ and any integer $k\geq 1$, if $R^*\geq ||x||_\infty/\mu=N^{O(1)}$, $\mu^2=O(||x_{\nsq\setminus [k]}||_2^2/k)$  and $\alpha>0$ is smaller than an absolute constant, \textsc{SparseFFT}$(\hat x, k, \e, R^*, \mu)$ solves the $\ell_2/\ell_2$ sparse recovery problem using $2^{O(d^2)} (k\log N \log\log N+\frac1{\e}k\log N)$ samples and 
+$2^{O(d^2)} \frac1{\e}k \log^{d+3} N$ time with at least $98/100$ success probability.
+\end{theorem}
+
+
+\begin{algorithm}
+\caption{\textsc{SparseFFT}($\hat x, k, \e, R^*, \mu$)}\label{alg:main-sublinear} 
+\begin{algorithmic}[1] 
+\Procedure{SparseFFT}{$\hat x, k, \e, R^*, \mu$}
+\State $\chi^{(0)} \gets 0$ \Comment{in $\C^n$}.
+\State $T \gets \log_{(\log^4 N)} R^*$
+\State $F\gets 2d$
+\State $B\leftarrow \GT\cdot k/\alpha^d$, $\alpha>0$ sufficiently small constant
+\State $r_{max}\gets (C/\sqrt{\alpha})\log\log N, c_{max}\gets (C/\sqrt{\alpha})\log\log N$ for a sufficiently large constant $C>0$
+\State $\H\gets \{\mathbf{0}_d\}$, $\Delta\gets 2^{\lfloor \frac1{2}\log_2 \log_2 n\rfloor}$ \Comment{$\mathbf{0}_d$ is the zero vector in dimension $d$}
+\For {$g=1$ to $\lceil \log_\Delta n \rceil$}
+\State $\H\gets \H\cup \bigcup_{s=1}^d n \Delta^{-g} \cdot \mathbf{e}_s$ \Comment{$\mathbf{e}_s$ is the unit vector in direction $s$}
+\EndFor
+\State $G\gets$ filter with $B$ buckets and sharpness $F$, as per Lemma~\ref{lm:filter-prop}
+\For {$r=1$ to $r_{max}$}\Comment{Samples that will be used for location}
+\State Choose $\Sigma_r\in \gl$, $q_r\in \nsq$ uniformly at random, let $\pi_r:=(\Sigma_r, q_r)$ and let $H_r:=(\pi_r, B, F)$
+\State Let $\A_r\gets $ $C\log\log N$ elements of $\nsq\times \nsq$ sampled uniformly at random with replacement
+\For {$\h\in \H$}
+\State $m(\wh{x}, H_r, a\star(\one, \h))\gets \Call{HashToBins}{\hat x, 0, (H_r, a\star (\one, \h))}$ for all $a\in \A_r, \h\in \H$
+\EndFor
+\EndFor
+\For{$t = 0, 1, \dotsc,T-1$}
+%\State $L \gets L\cup \Call{LocateSignal}{\chi^{(r, t)},  H_r_s,  \{m(\wh{x}, H^t_s, a\star(\one, \zero)), m(\wh{x}, H^t_s, a\star (\one, \h)\}_{a\in \A, \h\in \H}}.$
+\State $\chi' \gets \textsc{ReduceL1Norm}\left(\chi^{(t)}, k, \{m(\wh{x}, H_r, a\star (\one, \h))\}_{r=1, a\in \A_r, \h\in \H}^{r_{max}}, 4\mu (\log^4 n)^{T-t}, \mu\right)$ 
+\State\Comment{Reduce $\ell_1$ norm of dominant elements in the residual signal}
+\State $\nu'\gets (\log^4 N)(4\mu (\log^4 N)^{T-(t+1)}+20\mu)$ \Comment{Threshold}
+\State $\chi'' \gets \Call{ReduceInfNorm}{\hat x,  \chi^{(t)}+\chi', 4k/(\log^4 N),  \nu', \nu'}$
+\State\Comment{Reduce $\ell_\infty$ norm of spurious elements introduced by \textsc{ReduceL1Nom}}
+\State $\chi^{(t+1)} \gets \chi^{(t)} + \chi'+\chi''$
+\EndFor
+\State $\chi' \gets \textsc{RecoverAtConstantSNR}(\hat x, \chi^{(T)}, 2k, \eps)$
+\State \textbf{return} $\chi^{(T)} + \chi'$
+\EndProcedure 
+\end{algorithmic}
+\end{algorithm}
+
+%\textsc{ReduceL1Norm} is given as Algorithm~\ref{alg:l1-norm-reduction}.
+
+
+

@@ -1,0 +1,149 @@
+{
+  "claim_gate": {
+    "marker_filter_is_algorithm": false,
+    "marker_zero_competitors_alone_rule_out_affine_decoder": false,
+    "polynomial_short_marker_decoder_constructed": false,
+    "reason": "The marker separates the relation kernel from the witness coset but does not solve nearest-vector search in that coset. A speedup requires an actual affine-CVP algorithm with source coverage.",
+    "short_marker_coset_search_equivalent_to_subset_sum": true,
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-07-15T04:51:17.787666+00:00",
+  "falsifiers_triggered": [
+    "Filtering reduced rows by marker coordinate is not a decoder theorem.",
+    "Marker-zero competitors do not by themselves prove affine-CVP failure.",
+    "Extended-gcd marker normalization has no shortness guarantee.",
+    "Any claimed rescue must provide source coverage and complexity for short affine-coset search."
+  ],
+  "headline_metrics": {
+    "basis_marker_gcd_one_theorem_count": 2,
+    "carry_sliced_scale_condition_row_count": 5,
+    "exact_marker_kernel_affine_coset_decomposition_count": 2,
+    "exact_witness_radius_equivalence_theorem_count": 2,
+    "polynomial_short_marker_one_decoder_count": 0,
+    "polynomial_unbounded_marker_one_vector_theorem_count": 2,
+    "proved_affine_cvp_easier_than_subset_sum_count": 0,
+    "row_count": 5,
+    "standard_scale_condition_row_count": 5
+  },
+  "reduction_contract": {
+    "equivalence": "radius sqrt(m+1) search is exactly binary witness search under explicit scale conditions",
+    "input": "public density-one modular subset-sum instance",
+    "output": "short vector in marker-minus-one affine lattice coset",
+    "resource_warning": "marker gcd normalization is polynomial but has no useful norm guarantee"
+  },
+  "rows": [
+    {
+      "carry_sliced_radius_equivalence_proved": true,
+      "carry_sliced_scale_condition_satisfied": true,
+      "embedding_scale": 3,
+      "finite_row_is_asymptotic_theorem": false,
+      "low_constraint_scale": 3,
+      "minimum_sliced_constraint_quantum_squared": 36,
+      "minimum_standard_constraint_quantum_squared": 36,
+      "n_bits": 16,
+      "register_count": 18,
+      "register_offset": 2,
+      "standard_radius_equivalence_proved": true,
+      "standard_scale_condition_satisfied": true,
+      "witness_radius_squared": 19
+    },
+    {
+      "carry_sliced_radius_equivalence_proved": true,
+      "carry_sliced_scale_condition_satisfied": true,
+      "embedding_scale": 3,
+      "finite_row_is_asymptotic_theorem": false,
+      "low_constraint_scale": 3,
+      "minimum_sliced_constraint_quantum_squared": 36,
+      "minimum_standard_constraint_quantum_squared": 36,
+      "n_bits": 32,
+      "register_count": 34,
+      "register_offset": 2,
+      "standard_radius_equivalence_proved": true,
+      "standard_scale_condition_satisfied": true,
+      "witness_radius_squared": 35
+    },
+    {
+      "carry_sliced_radius_equivalence_proved": true,
+      "carry_sliced_scale_condition_satisfied": true,
+      "embedding_scale": 5,
+      "finite_row_is_asymptotic_theorem": false,
+      "low_constraint_scale": 5,
+      "minimum_sliced_constraint_quantum_squared": 100,
+      "minimum_standard_constraint_quantum_squared": 100,
+      "n_bits": 64,
+      "register_count": 66,
+      "register_offset": 2,
+      "standard_radius_equivalence_proved": true,
+      "standard_scale_condition_satisfied": true,
+      "witness_radius_squared": 67
+    },
+    {
+      "carry_sliced_radius_equivalence_proved": true,
+      "carry_sliced_scale_condition_satisfied": true,
+      "embedding_scale": 6,
+      "finite_row_is_asymptotic_theorem": false,
+      "low_constraint_scale": 6,
+      "minimum_sliced_constraint_quantum_squared": 144,
+      "minimum_standard_constraint_quantum_squared": 144,
+      "n_bits": 128,
+      "register_count": 130,
+      "register_offset": 2,
+      "standard_radius_equivalence_proved": true,
+      "standard_scale_condition_satisfied": true,
+      "witness_radius_squared": 131
+    },
+    {
+      "carry_sliced_radius_equivalence_proved": true,
+      "carry_sliced_scale_condition_satisfied": true,
+      "embedding_scale": 9,
+      "finite_row_is_asymptotic_theorem": false,
+      "low_constraint_scale": 9,
+      "minimum_sliced_constraint_quantum_squared": 324,
+      "minimum_standard_constraint_quantum_squared": 324,
+      "n_bits": 256,
+      "register_count": 258,
+      "register_offset": 2,
+      "standard_radius_equivalence_proved": true,
+      "standard_scale_condition_satisfied": true,
+      "witness_radius_squared": 259
+    }
+  ],
+  "status": "marker-filter-reduced-to-original-subset-sum-search",
+  "summary": "Proved exact standard and carry-sliced marker-coset radius equivalences. Marker normalization is easy; short marker-one extraction remains exactly the binary subset-sum search problem.",
+  "theorem_certificates": [
+    {
+      "affine_coset_formula": "(2z-1, 2s(<a,z>-t+k*2^n), -1)",
+      "basis_marker_gcd_one_proved": true,
+      "embedding": "standard centered modular embedding",
+      "limitations": [
+        "The theorem is an equivalence, not an efficient affine-CVP algorithm.",
+        "It does not imply uniqueness when the target has multiple binary witnesses.",
+        "Bezout marker normalization can create exponentially long vectors."
+      ],
+      "marker_projection_surjective": true,
+      "polynomial_marker_one_vector_without_norm_bound": true,
+      "polynomial_short_marker_one_decoder_proved": false,
+      "proof": "A marker-minus-one vector has odd binary coordinates, each of squared magnitude at least one, and marker square one. If a nonzero constraint coordinate has quantum larger than sqrt(m+1), it cannot occur inside the witness radius. The remaining m+1 coordinates already attain the radius lower bound, forcing every odd coordinate to be +/-1 and hence every row coefficient to be binary. Conversely every binary witness gives the radius vector. Marker projection is onto Z, so every basis has marker gcd one; Bezout controls the marker but not the norm.",
+      "radius_search_equivalent_to_binary_subset_sum": true,
+      "sufficient_scale_condition": "(2s)^2 > m+1",
+      "witness_radius_squared_formula": "m+1"
+    },
+    {
+      "affine_coset_formula": "(2z-1, 2s(<a_hi,z>-t_hi+kQ), 2u(<a_lo,z>-L), -1)",
+      "basis_marker_gcd_one_proved": true,
+      "embedding": "exact low/high carry-sliced embedding for a fixed carry",
+      "limitations": [
+        "Equivalence holds for each fixed enumerated carry and does not choose the winning carry.",
+        "The theorem is an affine-CVP reformulation, not an efficient decoder.",
+        "Marker-zero relation counts do not decide marker-coset nearest-vector complexity."
+      ],
+      "marker_projection_surjective": true,
+      "polynomial_marker_one_vector_without_norm_bound": true,
+      "polynomial_short_marker_one_decoder_proved": false,
+      "proof": "A marker-minus-one vector has odd binary coordinates, each of squared magnitude at least one, and marker square one. If a nonzero constraint coordinate has quantum larger than sqrt(m+1), it cannot occur inside the witness radius. The remaining m+1 coordinates already attain the radius lower bound, forcing every odd coordinate to be +/-1 and hence every row coefficient to be binary. Conversely every binary witness gives the radius vector. Marker projection is onto Z, so every basis has marker gcd one; Bezout controls the marker but not the norm.",
+      "radius_search_equivalent_to_binary_subset_sum": true,
+      "sufficient_scale_condition": "min((2s)^2,(2u)^2) > m+1",
+      "witness_radius_squared_formula": "m+1"
+    }
+  ]
+}

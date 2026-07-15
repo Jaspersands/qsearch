@@ -1,0 +1,229 @@
+% !TeX root = ./qsubsum.tex
+
+
+In this section, we recall some preliminaries of quantum computation (quantum search and quantum walks) that will be useful throughout the rest of this paper. We also recall previous quantum algorithms for subset-sum. As we consider all our algorithms from the point of view of asymptotic complexities, and neglect polynomial factors in $n$, a high-level overview is often enough, and we will use quantum building blocks as black boxes. The interested reader may find more details in~\cite{nielsen2002quantum}.
+
+%In this section, we present two previous quantum algorithms for subset-sum: the first one was introduced in~\cite{DBLP:conf/pqcrypto/BernsteinJLM13} as a quantization of HGJ, the second one in~\cite{DBLP:conf/tqc/HelmM18}.
+
+
+\subsection{Quantum Preliminaries}
+
+%We start by covering some preliminaries of quantum algorithms required in this section and the rest of this paper. 
+
+%\subsubsection{Quantum Computation Model.}
+
+All the quantum algorithms considered in this paper run in the quantum circuit model, with quantum random-access memory, often denoted as qRAM. ``Baseline'' quantum circuits are simply built using a universal gate set. Many quantum algorithms use qRAM access, and require the circuit model to be augmented with the so-called ``qRAM gate''. This includes subset-sum, lattice sieving and generic decoding algorithms that obtain time speedups with respect to their classical counterparts. Given an input register $1 \leq i \leq r$, which represents the index of a memory cell, and many quantum registers $\ket{x_1 , \ldots x_r}$, which represent stored data, the qRAM gate fetches the data from register $x_i$:
+$$ \ket{i} \ket{x_1 , \ldots x_r} \ket{y} \mapsto \ket{i} \ket{x_1 , \ldots x_r} \ket{y \oplus x_i} \enspace.$$
+
+%This then enables various quantum data structures, such as the ones depicted in~\cite{DBLP:conf/pqcrypto/BernsteinJLM13} and~\cite{DBLP:journals/siamcomp/Ambainis07}, with fast access, even if the queries and the data are superpositions.
+
+We will use the terminology of~\cite{DBLP:conf/tqc/Kuperberg13} for the qRAM gate:
+\begin{itemize}
+\item If the input $i$ is classical, then this is the plain quantum circuit model (with classical RAM);
+\item If the $x_j$ are classical, we have \emph{quantum-accessible classical memory} (QRACM)
+\item In general, we have \emph{quantum-accessible quantum memory} (QRAQM)
+\end{itemize}
+
+All known quantum algorithms for subset-sum with a quantum time speedup over the best classical one require QRAQM. For comparison, speedups on heuristic lattice sieving algorithms exist in the QRACM model~\cite{DBLP:journals/dcc/LaarhovenMP15,DBLP:conf/asiacrypt/KirshanovaMPM19}, including the best one to date~\cite{laarhoven2015search}. While no physical architecture for quantum random access has been proposed that would indeed produce a constant or negligible overhead in time, some authors~\cite{DBLP:conf/tqc/Kuperberg13} consider the separation meaningful. If we assign a cost $\bigO{N}$ to a QRACM query of $N$ cells, then we can replace it by \emph{classical} memory. Subset-sum algorithms were studied in this setting by Helm and May~\cite{DBLP:conf/pqcrypto/Helm020}.
+
+%For example, notice that a quantum random access to a QRACM of size $N$ can be emulated in time $\bigO{N}$, while this is not the case for QRAQM.
+
+% note that the separation between QRACM and QRAQM remains a valid one, as the QRACM does not hold data in superposition\XB{Phrase pas claire.}. Furthermore, a quantum random access to a QRACM of size $N$ can be emulated in time $\bigO{N}$, while this is not the case for QRAQM.
+
+%In classical subset-sum algorithms, it is often assumed that one can sample from $D^n[\alpha, \beta]$ in time $\mathsf{poly}(n)$, uniformly at random. Since $\alpha n$ and $\beta n$ will in general not be integer, we suppose to have them rounded to the nearest integer, and proceed with $\alpha n$ and $\beta n$ as if they were integers. Throughout this paper, we assume that we can produce the uniform superposition of vectors of $D^n[\alpha, \beta, \gamma]$, using $\poly(n)$ quantum gates. 
+
+
+\subsubsection{Quantum Search.}
+
+One of the most well-known quantum algorithms is Grover's unstructured search algorithm~\cite{DBLP:conf/stoc/Grover96}. We present here its generalization, amplitude amplification~\cite{brassard2002quantum}.
+
+\begin{lemma}[Amplitude amplification, from \cite{brassard2002quantum}]\label{lemma:grover}
+Let $\mathcal{A}$ be a reversible quantum circuit, $f$ a computable boolean function over the output of $\mathcal{A}$, $O_f$ its implementation as a quantum circuit, and $a$ be the initial success probability of $\mathcal{A}$, that is, the probability that $O_f\mathcal{A}\ket0$ outputs ``true''. There exists a quantum reversible algorithm that calls $\bigO{\sqrt{1/a}}$ times $\mathcal{A}$, $\mathcal{A}^\dagger$ and $O_f$, uses as many qubits as $\mathcal{A}$ and $O_f$, and produces an output that passes the test $f$ with probability greater than $\max(a,1-a)$.
+\end{lemma}
+
+This is known to be optimal when the functions are black-box oracles~\cite{DBLP:journals/siamcomp/BennettBBV97}.
+
+As we will use quantum search as a subprocedure, we make some remarks similar to~\cite[Appendix A.2]{DBLP:journals/iacr/Naya-PlasenciaS19} and~\cite[Section 5.2]{DBLP:journals/tosc/BonnetainNS19} to justify that, up to additional polynomial factors in time, we can consider it runs with no errors and allows to return all the solutions efficiently.
+
+\begin{remark}[Error in a sequence of quantum searches]
+Throughout this paper, we will assume that a quantum search in a search space of size $S$ with $T$ solutions runs in exact time $\sqrt{S/T}$. In practice, there is a constant overhead, but since $S$ and $T$ are always exponential in $n$, the difference is negligible. Furthermore, this is a probabilistic procedure, and it will return a wrong result with a probability of the order $\sqrt{T/S}$. As we can test if an error occurs, we can make it negligible by redoing the quantum search polynomially many times.
+\end{remark}
+
+\begin{remark}[Finding all solutions]\label{remark:coupon-coll}
+Quantum search returns a solution among the $T$ possibilities, selected uniformly at random. Finding all solutions is then an instance of the coupon collector problem with $T$ coupons~\cite{newman1960double}; all coupons are collected after on average $\bigO{T\log(T)}$ trials. However, \emph{in the QRACM model}, which is assumed in this paper, this logarithmic factor disappears. We can run the search of Lemma~\ref{lemma:grover} with a new test function that returns $0$ if the output of $\mathcal{A}$ is incorrect, \emph{or} if it is correct but has already been found. The change to the runtime is negligible, and thus, we collect all solutions with only $\bigO{T}$ searches.
+%Finding all solutions is then an instance of the coupon collector problem with $T$ coupons~\cite{newman1960double}. For any $\beta$, the probability that recovering all coupons takes time $t$ satisfies:
+%$$ \prob{t > \beta T \log T }  \leq T^{- \beta + 1} \enspace.$$
+%In our algorithms, $T$ is always exponential in $n$. Therefore, our analysis can assume that all coupons are actually recovered in time $\bigOt{T}$. %The actual runtime will have a polynomial to ensure a success, that we neglect in the analysis.
+\end{remark}
+
+
+\subsubsection{Quantum Walks.}\label{subsection:mnrs}
+
+%On first reading, the reader may skip most of the details of this section and focus only on Algorithms~\ref{algo:cw}, \ref{algo:qw} and on Theorem~\ref{thm:qwgraph}.
+
+Quantum walks can be seen as a generalization of quantum search. They allow to obtain polynomial speedups on many unstructured problems, with sometimes optimal results (\emph{e.g.} Ambainis' algorithm for element distinctness~\cite{DBLP:journals/siamcomp/Ambainis07}). In this paper, we consider walks in the MNRS framework~\cite{mnrs11}.
+
+% We use detailed definitions borrowed from~\cite{DBLP:conf/soda/JefferyKM13}, Section 2.2, and which we reproduce in the next paragraphs.
+
+
+%We start from a reversible Markov chain $P$ on a finite state space $\Omega$, with a stationary distribution $\pi$. We denote by $P_{xy}$ the probability to transition from $x$ to $y$. To any state $x$ of the walk, we associate a \emph{perfect} data structure $\mathcal{D}(x)$, which has a purely classical definition from $x$. We let $M \subseteq \Omega$ be an arbitrary set of \emph{marked states}, and let $\epsilon$ be the probability that a state sampled from the stationary distribution $\pi$ is marked. We suppose that $\epsilon$ is known in advance (this is not necessary for classical and quantum walks, but makes the presentation easier). We let $\delta > 0$ be the spectral gap of $P$. 
+%
+%\subsubsection{Classical Walk.}
+%In a classical random walk, we assume that we have procedures:
+%\begin{itemize}
+%\item \textsf{Setup} that samples a state $x$ from the stationary distribution $\pi$ in time $\mathsf{S}$ (and constructs its data structure $\mathcal{D}(x)$)
+%\item \textsf{Check} that checks whether a state $x$ is marked in time $\mathsf{C}$
+%\item \textsf{Update} that performs a random walk step in time $\mathsf{U}$
+%\end{itemize}
+
+% to \emph{setup} a state $x$ sampled from the stationary distribution and its data structure $\mathcal{D}(x)$ (\textsf{Setup}), to \emph{check} whether a state is marked (\textsf{Check}) and to perform a walk step (\textsf{Update}).
+%Then, Algorithm~\ref{algo:cw} finds a marked state in expected time: $ \mathsf{S} + \frac{1}{\epsilon} \left( \frac{1}{\delta} \mathsf{U} + \mathsf{C} \right) \enspace. $ Indeed, by definition of $\delta$, the stationary distribution is reached from any state in approximately $\frac{1}{\delta}$ random walk steps. Then, such a random state is marked with probability $\epsilon$. After repeating this $1/\epsilon$ times, we will encounter a marked state.
+
+%In a \emph{classical} random walk on $G$, we can start from any vertex and reach the stationary distribution in approximately $\frac{1}{\delta}$ random walk steps. Then, such a random vertex is marked with probability $\epsilon$. Assume that we have a procedure \texttt{Setup} that samples a random vertex to start with in time $\mathsf{S}$, \texttt{Check} that verifies if a vertex is marked or not in time $\mathsf{C}$ and \texttt{Update} that performs a walk step in time $\mathsf{U}$, then we will
+%  have found a marked vertex in expected time:  
+% 
+
+
+%\begin{algorithm}
+%\begin{algorithmic}[1]
+%\State Sample a state from $\pi$ in time $\mathsf{S}$
+%\Repeat{$\frac{1}{\epsilon}$}
+%\State Perform $\frac{1}{\delta}$ update steps in time $\mathsf{U}$ for each
+%\State Check if the current state is marked, and if so, return it.
+%\EndRepeat
+%\end{algorithmic}
+%\caption{Generic classical walk.}\label{algo:cw}
+%\end{algorithm}
+%
+%\subsubsection{Quantum Walk.}
+%Quantum walks reproduce the same process, except that their internal state is not a state, but a superposition over all possible states of $\Omega$. The walk starts in a state $\ket{\pi}$, which represents the stationary distribution over all states. It repeats $\sqrt{1/ \epsilon}$ iterations that, similarly to amplitude amplification, move the amplitude towards the marked states. An update produces, from a state, the superposition of its neighbors, denoted: $\ket{p_x} = \sum_{y} \sqrt{P_{xy}} \ket{y}$. Each iteration does not need to repeat $\frac{1}{\delta}$ updates and, instead, takes a time equivalent to $\sqrt{1/\delta}$ updates to achieve a good mixing.
+%
+%
+%\paragraph{Setup.}
+%Define $\mathcal{H}_L \simeq \mathcal{H}_R \simeq \mathcal{H}_\Omega$ which is generated by $\{\ket{x}, x \in \Omega$. The setup cost $\mathsf{S}(P, \mathcal{D})$ is the cost of constructing:
+%$$ \ket{\pi} = \sum_{x \in \Omega} \sqrt{\pi_x} \ket{x}_L \ket{0}_R \ket{\mathcal{D}(x)}_D, $$
+%which is the starting state of the walk, and represents a uniform distribution over all vertices.
+%
+%\paragraph{Update.}
+%Here, the presentation differs slightly from~\cite{mnrs11}, as there are \emph{two} update operators which respectively update the \emph{walk} and the \emph{data structure}:
+%\begin{align*}
+%U_P~: & \ket{x}_L \ket{0}_R \mapsto \ket{x} \sum_{y \in \Omega} \sqrt{P_{xy}} \ket{y}_R \\
+%U_D~: & \ket{x}_L \ket{y}_R \ket{\mathcal{D}(x)}_D \mapsto \ket{x}_R \ket{y}_L \ket{\mathcal{D}(y)}_D \enspace.
+%\end{align*}
+%
+%The update cost $\mathsf{U}(P, \mathcal{D})$ is the cost of implementing $U_D U_P$.
+%
+%\paragraph{Checking.}
+%The checking unitary $C$ performs:
+%\begin{align*}
+%\ket{x}_\Omega \ket{\mathcal{D}(x)}_D \mapsto \begin{cases} -\ket{x}_\Omega \ket{\mathcal{D}(x)}_D \text{ if } x \in M \\ \ket{x}_\Omega \ket{\mathcal{D}(x)}_D \text{ otherwise} \end{cases}
+%\end{align*}
+%and we let $\mathsf{C}$ denote the \emph{checking cost}.
+%
+%
+%\begin{theorem}[Quantum walk, \cite{mnrs11}]\label{thm:qwalk}
+%Let $\delta > 0$ be the spectral gap of $P$. Let $\epsilon$ be the proportion of marked states $M \subseteq \Omega$, if there are marked states. There is a quantum algorithm with cost $\bigO{ \mathsf{S} + \frac{1}{\sqrt{\epsilon}} \left( \frac{1}{\sqrt{\delta}} \mathsf{U} + \mathsf{C} \right) }$ that creates the uniform superposition $\sum_{x \in M} \ket{x} \ket{p_x} \ket{\mathcal{D}(x)}$, that is, the superposition over edges $(x,y)$ where $x$ is marked.
+%\end{theorem}
+%
+%The generic quantum walk algorithm for a reversible Markov chain $P$ is given in Algorithm~\ref{algo:qw}. %(see~\cite{mnrs11}, Section 3.3).
+%
+%\begin{algorithm}
+%\begin{algorithmic}[1]
+%\State Create the initial state $\ket{\pi}$  in time $\mathsf{S}$
+%\Repeat{$\frac{1}{\sqrt{\epsilon}}$}
+%\State Simulate $\frac{1}{\delta}$ update steps in time $\frac{1}{\sqrt{\delta}} \mathsf{U}$, using a phase estimation circuit
+%\State Apply the checking unitary in time $\mathsf{C}$
+%\EndRepeat
+%\State Measure
+%\end{algorithmic}
+%\caption{Generic quantum walk (simplified, see~\cite{mnrs11}, Section 3.3 for more details).}\label{algo:qw}
+%\end{algorithm}
+%
+%It is proven in~\cite{mnrs11}, using a hybrid argument, that each iteration of Algorithm~\ref{algo:qw} emulates a product of reflections through $\ket{\pi}$ and $\ket{\mu}$, the uniform superposition of marked vertices, with an arbitrary precision. Thus, the evolution of the state follows what would happen in Grover's algorithm, except that $\ket{\pi}$ does not need to be recomputed at each iteration. This is emphasized with the \emph{data structure} $\mathcal{D}(x)$, which is completely constructed in the setup and then only updated at each iteration.
+%
+%\subsubsection{Quantum Walks on Graphs.}
+%In this paper, we consider quantum walks on connected, regular, undirected graphs $G = (V,E)$. The vertex set $V$ is the state set $\Omega$ of the Markov chain. The edge set $E$ is the set of all possible transitions. The spectral gap $\delta$ is the spectral gap of $G$. The stationary distribution is the uniform distribution over $V$. Thus, the \texttt{Setup} procedures creates $\sum_{x \in V} \ket{x}$ and each update simply produces, on input $x$, the uniform superposition of neighboring vertices $y$.
+%
+%%The following fact is also given by Ambainis in~\cite{DBLP:journals/siamcomp/Ambainis07}, Lemma 1.
+
+
+%\subsubsection{Quantum Walks.}
+
+Let $G = (V,E)$ be an undirected, connected, regular graph, such that some vertices of $G$ are ``marked''. Let $\epsilon$ be the fraction of marked vertices, that is, a random vertex has a probability $\epsilon$ of being marked. Let $\delta$ be the spectral gap of $G$, which is defined as the difference between its two largest eigenvalues.
+
+In a \emph{classical} random walk on $G$, we can start from any vertex and reach the stationary distribution in approximately $\frac{1}{\delta}$ random walk steps. Then, such a random vertex is marked with probability $\epsilon$. Assume that we have a procedure \texttt{Setup} that samples a random vertex to start with in time $\mathsf{S}$, \texttt{Check} that verifies if a vertex is marked or not in time $\mathsf{C}$ and \texttt{Update} that performs a walk step in time $\mathsf{U}$, then we will have found a marked vertex in expected time:  $ \mathsf{S} + \frac{1}{\epsilon} \left( \frac{1}{\delta} \mathsf{U} + \mathsf{C} \right) \enspace. $
+
+Quantum walks reproduce the same process, except that their internal state is not a vertex of $G$, but a superposition of vertices. The walk starts in the uniform superposition $\sum_{v \in V} \ket{v}$, which must be generated by the \texttt{Setup} procedure. It repeats $\sqrt{1/ \epsilon}$ iterations that, similarly to amplitude amplification, move the amplitude towards the marked vertices. An update produces, from a vertex, the superposition of its neighbors. Each iteration does not need to repeat $\frac{1}{\delta}$ vertex updates and, instead, takes a time equivalent to $\sqrt{1/\delta}$ updates to achieve a good mixing.
+Thanks to the following theorem~, we will only need to specify the setup, checking and update unitaries.
+
+
+\begin{theorem}[Quantum walk on a graph (adapted from~\cite{mnrs11})]\label{thm:qwgraph}
+Let $G=(V,E)$ be a regular graph with spectral gap $\delta>0$. Let $\epsilon>0$ be a lower bound on the probability that a vertex chosen randomly of $G$ is marked. For a random walk on $G$, let $\mathsf{S},\mathsf{U}, \mathsf{C}$ be the setup, update and checking cost. Then there exists a quantum algorithm that with high probability finds a marked vertex in time $$ \bigO{ \mathsf{S} + \frac{1}{\sqrt{\epsilon}} \left( \frac{1}{\sqrt{\delta}}\mathsf{U} + \mathsf{C} \right)} .$$
+\end{theorem}
+
+
+%\begin{minipage}{0.5\textwidth}
+%\begin{algorithm}[H]
+%\begin{algorithmic}[1]
+%\State Create the initial state $\ket{\pi}$  in time $\mathsf{S}$
+%\Repeat{$\frac{1}{\sqrt{\epsilon}}$}
+%\State Simulate $\frac{1}{\delta}$ update steps in time $\frac{1}{\sqrt{\delta}} \mathsf{U}$, using a phase estimation circuit
+%\State Apply the checking unitary in time $\mathsf{C}$
+%\EndRepeat
+%\State Measure
+%\end{algorithmic}
+%\caption{Generic quantum walk (simplified, see~\cite{mnrs11}, Section 3.3 for more details).}\label{algo:qw}
+%\end{algorithm}
+%\end{minipage}
+
+
+
+\subsection{Solving Subset-sum with Quantum Walks}\label{subsection:subsumqw}
+
+In 2013, Bernstein, Jeffery, Lange and Meurer~\cite{DBLP:conf/pqcrypto/BernsteinJLM13} constructed quantum subset sum algorithms inspired by Schroeppel-Shamir~\cite{DBLP:journals/siamcomp/SchroeppelS81} and HGJ~\cite{DBLP:conf/eurocrypt/Howgrave-GrahamJ10}. We briefly explain the idea of their quantum walk for HGJ. The graph $G$ that they consider is a product Johnson graph. We recall formal definitions from~\cite{DBLP:conf/pqcrypto/KachigarT17}.
+
+\begin{definition}[Johnson graph]
+A Johnson graph $J(N,R)$ is an undirected graph whose vertices are the subsets of $R$ elements among a set of size $N$, and there is an edge between two vertices $S$ and $S'$ iff $|S \cap S'| = R-1$, in other words, if $S'$ can be obtained from $S$ by replacing an element. Its spectral gap is given by $\delta = \frac{N}{R(N-R)}$.
+\end{definition}
+
+\begin{theorem}[Cartesian product of Johnson graphs~\cite{DBLP:conf/pqcrypto/KachigarT17}]
+Let $J^m(N, R)$ be defined as the cartesian product of $m$ Johnson graphs $J(N,R)$, \emph{i.e.}, a vertex in $J^m(N, R)$ is a tuple of $m$ subsets $S_1, \ldots S_m$ and there is an edge between $S_1, \ldots S_m$ and $S_1', \ldots S_m'$ iff all subsets are equal at all indices except one index $i$, which satisfies $|S_i \cap S_i'| = R-1$. Then it has ${N \choose R}^{m}$ vertices and its spectral gap is greater than $\frac{1}{m} \frac{N}{R(N-R)}$.
+\end{theorem}
+
+% (see~\cite{DBLP:conf/pqcrypto/KachigarT17} for a precise description). 
+In ~\cite{DBLP:conf/pqcrypto/BernsteinJLM13}, a vertex contains a product of 8 sublists $L_0'^3 \subset L_0^3, \ldots, L_7'^3 \subset L_7^3$ of a smaller size than the classical lists: $\ell < \ell_3$. There is an edge between two vertices if we can transform one into the other by replacing only one element in one of the sublists. The spectral gap of such a graph is (in $\log_2$, relative to $n$) $- \ell$.
+
+In addition, each vertex has an internal data structure which reproduces the HGJ merging tree, from level 3 to level 0. Since the initial lists are smaller, the list $L^0$ is now of expected size $8(\ell - \ell_3)$ (in $\log_2$, relative to $n$), \emph{i.e.} the walk needs to run for $4(\ell_3 - \ell)$ steps. Each step requires $\ell / 2$ updates.
+
+In the \texttt{Setup} procedure, we simply start from all choices for the sublists and build the tree by merging and filtering. Assuming that the merged lists have decreasing sizes, the setup time is $\ell$. The vertex is marked if it contains a solution at level 0. Hence, checking if a vertex is marked takes time $\mathsf{C} = 1$, but the update procedure needs to ensure the consistency of the data structure. Indeed, when updating, we remove an element $\vec{e}$ from one of the lists $L_i'^3$ and replace it by a $\vec{e'}$ from $L_i^3$. We then have to track all subknapsacks in the upper levels where $\vec{e}$ intervened, to remove them, and to add the new collisions where $\vec{e'}$ intervenes.
+
+Assuming that the update can run in $\poly(n)$, an optimization with the new parameter $\ell$ yields an exponent 0.241. In~\cite{DBLP:conf/pqcrypto/BernsteinJLM13}, the parameters are such that on average, a subknapsack intervenes only in a single sum at the next level. The authors propose to simply limit the number of elements to be updated at each level, in order to guarantee a constant update time.
+
+\paragraph{Quantum Walk Based on BCJ.}
+In~\cite{DBLP:conf/tqc/HelmM18}, Helm and May quantize, in the same way, the BCJ algorithm. They add ``-1'' symbols and a new level in the merging tree data structure, reaching a time exponent of 0.226. But they remark that this result depends on a conjecture, or a heuristic, that was implicit in~\cite{DBLP:conf/pqcrypto/BernsteinJLM13}.% and that they make explicit. 
+
+\begin{heuristic}[Helm-May]\label{heuristic:helm-may}
+In these quantum walk subset-sum algorithms, an update with expected constant time $\mathsf{U}$ can be replaced by an update with exact time $\mathsf{U}$ without affecting the runtime of the algorithm, up to a polynomial factor.
+\end{heuristic}
+
+Indeed, it is easy to construct ``bad'' vertices and edges for which an exact update, \emph{i.e.} the complete reconstruction of the merging tree, will take exponential time: by adding a single new subknapsack $\vec{e}$, we find an exponential number of pairs $\vec{e} + \vec{e'}$ to include at the next level. So we would like to update only a few elements among them. But in the MNRS framework, the data structure of a vertex must depend solely on the vertex itself (\emph{i.e.} on the lowest-level lists in the merging tree). And if we do as proposed in~\cite{DBLP:conf/pqcrypto/BernsteinJLM13}, we add a dependency on the path that lead to the vertex, and lose the consistency of the walk.
+
+In a related context, the problem of ``quantum search with variable times'' was studied by Ambainis~\cite{DBLP:journals/mst/Ambainis10}. In a quantum search for some $x$ such that $f(x) = 1$, in a set of size $N$, if the time to evaluate $f$ on $x$ is always $1$, then the search requires time $\bigO{\sqrt{N}}$. Ambainis showed that if the elements have different evaluation times $t_1, \ldots t_N$, then the search now requires $\widetilde{\mathcal{O}}(\sqrt{ t_1^2 + \ldots + t_N^2 })$, the geometric mean of $t_1, \ldots t_N$. As quantum search can be seen as a particular type of quantum walk, this shows that Heuristic~\ref{heuristic:helm-may} is wrong in general, as we can artificially create a gap between the geometric mean and expectation of the update time $\mathsf{U}$; but also, that it may be difficult to actually overcome. In this paper, we will obtain different heuristic and non-heuristic times.
+% \footnote{Although this heuristic appears justified \emph{classically}, since it makes sense when running a classical random walk.}
+
+% by the classical algorithms such as Schroeppel-Shamir~\cite{DBLP:journals/siamcomp/SchroeppelS81} and HGJ \cite{hgj}.
+
+% They used the MNRS quantum walk framework. However, their run time analysis of the quantum walk is based on some unproven conjecture that was made explicit by Helm and May in~\cite{DBLP:conf/tqc/HelmM18}. Helm and May also use this conjecture to quantize the BCJ algorithm, reaching a time complexity exponent of 0.226 instead of 0.241.
+
+% the fastest classical algorithm known for the random subset sum problem, i.e. the Becker, Coron, Joux algorithm \cite{bcj}.  
+%
+%\paragraph{The Helm-May Conjecture.}
+%In a nutshell, the conjecture states that in the run-time analysis, we can replace in a quantum walk an update with expected constant cost by an update with polynomially upper-bounded cost (i.e. if the update exceeds some $\kappa=\poly(n)$ steps, we simply stop the update of all nodes and proceed as if the update has been completed.). They conjecture that this will not affect significantly the error probability and the structure of the random walk graph. A similar heuristic was also used in Kachigar, Tillich~\cite{DBLP:conf/pqcrypto/KachigarT17} for analyzing quantum decoding algorithms. 
+%
+%\begin{heuristic}[Helm-May]\label{heuristic:helm-may}
+%In known quantum walk subset-sum algorithms, an update with expected time $T$ can be replaced by an update with exact time $T$ without affecting the runtime of the algorithm, up to a polynomial factor.
+%\end{heuristic}
+%
+%One of the issue of this approach is that the data-structure stored in each node is no longer fixed. Depending on the path that we use to arrive on the node from another node, we may omit different elements in the update steps and end up with a different data structure. This will create some unexpected inconsistency issues in the quantum algorithms.
+
+

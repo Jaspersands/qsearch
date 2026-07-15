@@ -1,0 +1,94 @@
+% !TeX root = ./qsubsum.tex
+
+
+We study the \emph{subset-sum problem}, also known as \emph{knapsack problem}: given $n$ integers $\vec{a} = (a_1, \ldots a_n)$, and a target integer $S$, find an $n$-bit vector $\vec{e} = (e_1, \ldots e_n) \in \zo^n$ such that $\vec{e} \cdot \vec{a} = \sum_i e_i a_i = S$. The \emph{density} of the knapsack instance is defined as $d = n / (\log_2 \max_i a_i)$, and for a random instance $\vec{a}$, it is related to the number of solutions that one can expect.
+
+The decision version of the knapsack problem is NP-complete~\cite{DBLP:books/fm/GareyJ79}. Although certain densities admit efficient algorithms, related to lattice reduction~\cite{DBLP:conf/focs/LagariasO83,DBLP:conf/approx/Lyubashevsky05}, the best algorithms known for the knapsack problem when the density is close to 1 are  exponential-time, which is why we name these instances ``hard'' knapsacks. This problem underlies some cryptographic schemes aiming at post-quantum security (see \emph{e.g.}~\cite{DBLP:conf/tcc/LyubashevskyPS10}), 
+and is used as a building block in some quantum hidden shift algorithms~\cite{Arxiv:Bonnetain19}, which have some applications in quantum cryptanalysis of isogeny-based~\cite{BonSch20} and symmetric cryptographic schemes~\cite{DBLP:conf/asiacrypt/BonnetainN18}. % \AS{for more citations, see the intro of this paper}.% and~\cite{odlyzko1990rise}).
+
+In this paper, we focus on the case where $d = 1$, where expectedly a single solution exists. Instead of naively looking for the solution $\vec{e}$ via exhaustive search, in time $2^n$, Horowitz and Sahni~\cite{DBLP:journals/jacm/HorowitzS74} proposed to use a meet-in-the-middle approach in $2^{n/2}$ time and memory. The idea is to find a collision between two lists of $2^{n/2}$ subknapsacks, \emph{i.e.} to merge these two lists for a single solution. Schroeppel and Shamir~\cite{DBLP:journals/siamcomp/SchroeppelS81} later improved this to a 4-list merge, in which the memory complexity can be reduced down to $2^{n/4}$.
+
+\paragraph{The Representation Technique.}
+At EUROCRYPT 2010, Howgrave-Graham and Joux~\cite{DBLP:conf/eurocrypt/Howgrave-GrahamJ10} (HGJ) proposed a heuristic algorithm solving \emph{random} subset-sum instances in time $\bigOt{2^{0.337 n}}$, thereby breaking the $2^{n/2}$ bound. Their key idea was to represent the knapsack solution ambiguously as a sum of vectors in $\zo^n$. This \emph{representation technique} increases the search space size, allowing to merge more lists, with new arbitrary  constraints, thereby allowing for a more time-efficient algorithm. The time complexity exponent is obtained by numerical optimization of the list sizes and constraints, assuming that the individual elements obtained in the merging steps are well-distributed. This is the standard heuristic of classical and quantum subset-sum algorithms. Later, Becker, Coron and Joux~\cite{DBLP:conf/eurocrypt/BeckerCJ11} (BCJ) improved the asymptotic runtime down to $\bigOt{2^{0.291 n}}$ by allowing even more representations, with vectors in $\zom^n$.
+
+The BCJ representation technique is not only a tool for subset-sums, as it has been used to speed up generic decoding algorithms, classically~\cite{DBLP:conf/asiacrypt/MayMT11,DBLP:conf/eurocrypt/BeckerJMM12,DBLP:conf/eurocrypt/0001O15} and quantumly~\cite{DBLP:conf/pqcrypto/KachigarT17}. Therefore, the subset-sum problem serves as the simplest application of representations, and improving our understanding of the classical and quantum algorithms may have consequences on these other generic problems.
+
+\paragraph{Quantum Algorithms for the Subset-Sum Problem.}
+Cryptosystems based on hard subset-sums are natural candidates for post-quantum cryptography, but to understand precisely their security, we have to study the best generic algorithms for solving subset-sums. The first quantum time speedup for this problem was obtained in~\cite{DBLP:conf/pqcrypto/BernsteinJLM13}, with a quantum time $\bigOt{2^{0.241 n}}$. The algorithm was based on the HGJ algorithm. Later on,~\cite{DBLP:conf/tqc/HelmM18} devised an algorithm based on BCJ, running in time $\bigOt{2^{0.226 n}}$. Both algorithms use the corresponding classical merging structure, wrapped in a quantum walk on a Johnson graph, in the MNRS quantum walk framework ~\cite{mnrs11}. However, they suffer from two limitations. 
+
+First, both use the model of \emph{quantum memory with quantum random-access} (QRAQM), which is stronger than the standard quantum circuit model, as it allows unit-time lookups in superposition of all the qubits in the circuit. The QRAQM model is used in most\XB{Most?} quantum walk algorithms to date, but its practical realizations are still unclear. With a more restrictive model, i.e. \emph{classical memory with quantum random-access} (QRACM), no quantum time speedup over BCJ was previously known. This is not the case for some other hard problems in post-quantum cryptography, \emph{e.g.} heuristic lattice sieving for the Shortest Vector Problem, where the best quantum algorithms to date require only QRACM~\cite{laarhoven2015search}.
+
+Second, both use a conjecture (implicit in~\cite{DBLP:conf/pqcrypto/BernsteinJLM13}, made explicit in~\cite{DBLP:conf/tqc/HelmM18}) about quantum walk updates. In short, the quantum walk maintains a data structure, that contains a merging tree similar to HGJ (resp. BCJ), with lists of smaller size. A quantum walk step is made of updates that changes an element in the lowest-level lists, and requires to modify the upper levels accordingly, \emph{i.e.} to track the partial collisions that must be removed or added. In order to be efficient, the update needs to run in polynomial time. Moreover, the resulting data structure shall be a function of the lowest-level list, and not depend on the path taken in the walk. The conjecture states that it should be possible to guarantee sound updates without impacting the time complexity exponent. However, it does not seem an easy task and the current literature on subset-sums lacks further justification or workarounds.
+
+%\XB{Petit changement dans le contenu du paragraphe, checkez si ça vous plait.}
+
+%The conjecture states in this precise situation, the time complexity analysis remains correct with an update of \emph{expected} polynomial time.
+
+% Hence, the update only handles the first $\mathsf{poly}(n)$ such collisions. The conjecture then states that, up to another $\mathsf{poly}(n)$ time factor, the modified quantum walk remains correct.
+
+\paragraph{Contributions.}
+In this paper, we improve classical and quantum subset-sum algorithms based on representations. We write these algorithms as sequences of ``merge-and-filter'' operations, where lists of subknapsacks are first merged with respect to an arbitrary constraint, then \emph{filtered} to remove the subknapsacks that cannot be part of a solution.
+
+First, we propose a more time-efficient classical subset-sum algorithm based on representations. We have two classical improvements: we revisit the previous algorithms and show that some of the constraints they enforced were not needed, and we use more general distributions by allowing ``2''s in the representations. Overall, we obtain a better time complexity exponent of $0.283$.
+
+%The main difference from BCJ is the use of ``2''s to obtain better representations. A new optimization of the parameters gives a time complexity exponent of $0.283$.
+
+Most of our contributions concern quantum algorithms. As a generic tool, we introduce \emph{quantum filtering}, which speeds up the filtering of representations with a quantum search. We use this improvement in all our new quantum algorithms.
+
+We give an improved quantum walk based on quantum filtering and our extended $\{-1,0,1,2\}$ representations. Our best runtime exponent is $0.216$, under the quantum walk update heuristic of~\cite{DBLP:conf/tqc/HelmM18}. Next, we show how to overcome this heuristic, by designing a new data structure for the vertices in the quantum walk, and a new update procedure with guaranteed time. We remove this heuristic from the previous algorithms~\cite{DBLP:conf/pqcrypto/BernsteinJLM13,DBLP:conf/tqc/HelmM18} with no additional cost. However, we find that removing it from our quantum walk increases its cost to $0.218$.
+
+In a different direction, we devise a new quantum subset-sum algorithm based on HGJ, with time $\bigOt{2^{0.236 n}}$. It is the first quantum time speedup on subset-sums that is \emph{not} based on a quantum walk. The algorithm performs instead a depth-first traversal of the HGJ tree, using quantum search as its only building block. Hence, by construction, it does not require the additional heuristic of~\cite{DBLP:conf/tqc/HelmM18} \emph{and} it only uses \emph{classical memory with quantum random-access}, giving also the first quantum time speedup for subset-sum in this memory model.
+
+A summary of our contributions is given in Table~\ref{table:results}\footnote{After this work, Alexander May has informed us that the thesis~\cite{bohme11} contains unpublished results using more symbols, with the best exponent of 0.2871 obtained with the symbol set $\{-2, -1,0,1,2\}$. }. 
+All these complexity exponents are obtained by numerical optimization. Our code is available at \url{https://github.com/xbonnetain/optimization-subset-sum}.
+
+%\footnote{Note that the idea of using more symbols than ``-1, 0, 1'' had been considered before in~\cite{bohme11}, independently from our work, but never been published. The exponents obtained in~\cite{bohme11} are higher than our results.}
+
+\begin{table}
+\centering
+\caption{Previous and {\bf new} algorithms for subset-sum, classical and quantum, with time and memory exponents rounded upwards. We note that the removal of Heuristic~\ref{heuristic:helm-may} in~\cite{DBLP:conf/pqcrypto/BernsteinJLM13,DBLP:conf/tqc/HelmM18} comes from our new analysis in Section~\ref{subsection:time-without-heuristics}. QW: Quantum Walk. QS: Quantum Search. CF: Constraint filtering (not studied in this paper). QF: Quantum filtering.}
+% \XB{Je ne sais pas si ça a un intérêt de rajouter d'autres algos là-dedans.}
+\label{table:results}
+
+\begin{tabular}{ccccccc}
+\toprule
+ \begin{tabular}{c}  Time \\ exp. \end{tabular} &  \begin{tabular}{c}  Memory \\ exp. \end{tabular}  & \begin{tabular}{c}Represen-\\tations\end{tabular} & \begin{tabular}{c}
+ Memory \\ model
+\end{tabular} & Techniques &\begin{tabular}{c}
+Requires \\
+ Heur.~\ref{heuristic:helm-may}
+\end{tabular}  & Reference \\
+\midrule
+\multicolumn{6}{c}{Classical} \\
+\midrule
+ 0.3370 & 0.3113 & $\zo$ & RAM & &   & \cite{DBLP:conf/eurocrypt/Howgrave-GrahamJ10} \\
+0.2909 & 0.2909 & $\zom$ & RAM &  & & \cite{DBLP:conf/eurocrypt/BeckerCJ11} \\
+%& 0.289 & ``1, -1'' & RAM &  & & Sec.~\ref{subsection:new-classical-bcj} \\
+%{-1,0,1,2}: Time/Memory 2^{0.287485n}
+%{-2,-1,0,1,2}: Time/Memory 2^{0.287053n}
+0.287 &  & $\zom$ & RAM & CF && \cite{ozerovphd} \\
+\bf 0.2830 & \bf  0.2830 &  $\zomd$ & RAM & &  & Sec.~\ref{subsection:new-classical-bcj} \\
+ \midrule
+ \multicolumn{6}{c}{Quantum} \\
+ \midrule
+0.241 & 0.241 & $\zo$ & QRAQM & QW & \bf No & \cite{DBLP:conf/pqcrypto/BernsteinJLM13} + Sec.~\ref{subsection:time-without-heuristics}  \\
+0.226 & 0.226 & $\zom$ & QRAQM & QW & \bf No & \cite{DBLP:conf/tqc/HelmM18} + Sec.~\ref{subsection:time-without-heuristics} \\
+\bf 0.2356 & \bf 0.2356 & $\zo$ & \bf QRACM &QS + QF & No & Sec~\ref{subsection:hgj-quantum-second} \\
+%& 0.217 & QW + ``1, -1''+ QF & QRAQM & Yes & Sec.~\ref{subsection:new-quantum-bcj} \\
+\bf 0.2156 & \bf 0.2110 & $\zomd$ & QRAQM & QW + QF &Yes & Sec.~\ref{subsection:new-quantum-bcj} \\
+%& 0.220 & QW + ``1, -1''+ QF & QRAQM & No & Sec.~\ref{subsection:time-without-heuristics} \\
+\bf 0.2182 & \bf 0.2182 & $\zomd$ & QRAQM & QW + QF &No & Sec.~\ref{subsection:time-without-heuristics} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+%0.2875 & $\{-1,0,1,2\}$ & RAM & & & \cite{bohme11} \\
+%0.2871 & $\{-2, -1,0,1,2\}$ & RAM & & &  \cite{bohme11} \\
+
+
+%We note that, in a different but close context, this technique can be also applied to the quantum generic decoding algorithm of~\cite{DBLP:conf/pqcrypto/KachigarT17}. \AS{plz verify what the paper says about the heuristic.}
+
+
+\paragraph{Outline.}
+In Section~\ref{section:classical-algos}, we study classical algorithms. We review the representation technique, the HGJ algorithm and introduce our new $\{-1,0,1,2\}$ representations to improve over~\cite{DBLP:conf/eurocrypt/BeckerCJ11}. In Section~\ref{section:quantum-prelim}, we move to the quantum setting, introduce some preliminaries and the previous quantum algorithms for subset-sum. In Section~\ref{section:hgj-asymmetric}, we present and study our new quantum algorithm based on HGJ and quantum search. We give different optimizations and time-memory tradeoffs. In Section~\ref{section:new-qw}, we present our new quantum algorithm based on a quantum walk. Finally, in Section~\ref{section:fix-qw} we show how to overcome the quantum walk update conjecture, up to a potential increase in the update cost. We conclude, and give a summary of our new results in Section~\ref{section:conclusion}.
+

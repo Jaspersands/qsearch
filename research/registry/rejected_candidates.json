@@ -1,0 +1,250 @@
+[
+  {
+    "candidate": {
+      "classical_baseline": "Exact ANF degree and sparsity over F_2^n, prime-field finite-difference degree tests, sparse polynomial learning, Goldreich-Levin/Fourier recovery, derivative-spectrum learning, chosen-query reconstruction, and sample-budget sweeps.",
+      "complexity_accounting": "Reports sample exponent, memory exponent, low-degree degree/sparsity, finite-difference acceptance, sample-recovery thresholds, query-model legality, and all classical learner budgets.",
+      "cost_model": "Counts coherent queries, reversible evaluator size, phase precision, phase-state samples, sieve memory/depth, classical learner query budgets, and interpolation/search costs as functions of n.",
+      "created_at": "2026-07-14T16:21:27.679468+00:00",
+      "dequantization_check": "Must pass learnability_baselines.py, classical_baseline_suite.py, hidden_shift_query_lower_bounds.py, dequantization attack matrix, query_model_ledger.py, and proof-debt counterexample searches before any positive signal is promoted.",
+      "experiment_ids": [
+        "EXP-MUT-DHS-GOWERS-SIEVE-LEARNABILITY",
+        "EXP-MUT-DHS-GOWERS-SIEVE-FOURIER-COMPRESSIBILITY",
+        "EXP-MUT-DHS-GOWERS-SIEVE-CLASSICAL-BASELINES"
+      ],
+      "falsifiers": [
+        "Exact ANF or finite-field polynomial degree is constant or sparse enough for classical interpolation.",
+        "Goldreich-Levin, sparse Fourier, or derivative-spectrum learning reconstructs the shift or phase.",
+        "Random-sample baselines recover the shift at collision-scale budgets.",
+        "The family is hard only because it hides a random table or withholds the evaluator from the classical baseline."
+      ],
+      "id": "MUT-CAND-DHS-GOWERS-SIEVE-LEARNABILITY-RESISTANT",
+      "input_model": "Coherent oracle access with efficient reversible evaluation from a public structured description; classical baselines receive the same public description, random samples, and any explicit evaluator access allowed by the problem statement.",
+      "literature_ids": [
+        "kuperberg-dhsp-2003",
+        "regev-lattice-dhsp-2003",
+        "roetteler-hidden-shift-gowers-2009",
+        "gowers-norm-algorithms-2025"
+      ],
+      "measurement_and_decoding": "Prepare phase states, run generic and family-specific merge schedules, decode candidate shifts from high-valuation labels, and verify against the public structured evaluator.",
+      "no_go_analysis": "Rejects hidden random tables, low-degree polynomials, sparse ANF/sparse Fourier families, finite-field quadratics/cubics, and any family recovered by sampled or chosen-query baselines.",
+      "notes": "Generated from mutation proposal MUTATE-DHS-GOWERS-SIEVE-LEARNABILITY-RESISTANT-HS targeting proof debts ['DEBT-DHS-GOWERS-SIEVE-PO-DEQUANTIZATION', 'DEBT-DHS-GOWERS-SIEVE-PO-REDUCTION', 'DEBT-DHS-GOWERS-SIEVE-PO-FALSIFIERS'].",
+      "ontology_node_ids": [
+        "hidden-shift",
+        "dihedral-hsp",
+        "unique-svp",
+        "gowers-structure"
+      ],
+      "problem_family": "Explicit hidden-shift families over finite abelian groups or algebraic group actions whose phase functions are not low-degree, not sparse-polynomial/ANF learnable, not finite-difference reconstructible, and not random hidden tables.",
+      "quantum_mechanism": "Use phase-state Fourier sampling and auditable sieve/merge rules on a family whose structure is visible to quantum phase states but not captured by low-degree, sparse, derivative, or sampled classical learners.",
+      "reduction_or_lower_bound": "Must either reduce from a natural hidden-shift/DHSP/lattice-relevant problem while preserving the access model, or provide query-complexity lower bounds against the listed learnability baselines.",
+      "status": "mutated-hypothesis",
+      "success_statement": "A candidate remains viable only if scaling sweeps show nontrivial phase-state structure while every implemented legal classical learner fails and the remaining gap is stated as a formal lower-bound obligation.",
+      "title": "Learnability-resistant hidden-shift family search candidate",
+      "updated_at": "2026-07-14T16:21:27.679468+00:00"
+    },
+    "created_at": "2026-07-14T16:26:03.781980+00:00",
+    "id": "MUT-CAND-DHS-GOWERS-SIEVE-LEARNABILITY-RESISTANT",
+    "issues": [
+      {
+        "field": "input_model",
+        "hard_reject": true,
+        "message": "Construct a uniform conversion for missing capabilities: coherent-phase-oracle-evaluation",
+        "obligation_id": "PO-REDUCTION"
+      }
+    ],
+    "quarantine_status": "rejected-by-exact-reduction-access-contract",
+    "route_ids": [
+      "ROUTE-MUT-CAND-DHS-GOWERS-SIEVE-LEARNABILITY-RESISTANT-USVP-VIA-DHSP"
+    ],
+    "source": "research/reductions/interface_audit.json",
+    "theorem_contract_ids": [
+      "THM-REGEV-USVP-TO-DCP-2003"
+    ],
+    "title": "Learnability-resistant hidden-shift family search candidate"
+  },
+  {
+    "candidate": {
+      "classical_baseline": "Attack-legality matrix covering full-table correlation, sparse Fourier/Goldreich-Levin recovery, derivative learning, low-degree algebraic reconstruction, chosen-query exhaustive scoring, and sample-complexity probes.",
+      "complexity_accounting": "Reports sample exponent, memory exponent, target valuation success, query-model legality, evaluator query budget, and lower-bound debt across scaling sweeps.",
+      "cost_model": "Counts coherent queries, reversible evaluation, phase precision, phase-state samples, merge depth, memory exponent, decoding, and classical postprocessing against every legal classical baseline.",
+      "created_at": "2026-07-14T16:21:27.682644+00:00",
+      "dequantization_check": "Must pass the dequantization attack matrix and proof-debt tracker, including random-sample overlap probes, chosen-query reconstruction, and coherent-oracle lower-bound obligations.",
+      "experiment_ids": [
+        "EXP-MUT-DHS-GOWERS-SIEVE-QUERY-MODEL",
+        "EXP-MUT-DHS-GOWERS-SIEVE-PHASE-SIEVE"
+      ],
+      "falsifiers": [
+        "Attack-legality matrix finds polynomial-query evaluator reconstruction.",
+        "Sample-limited survival disappears once budgets cross the overlap lower-bound probe.",
+        "Phase-state merge traces match generic Kuperberg/Regev exponents.",
+        "The family lacks a natural reduction or becomes an artificial inaccessible table."
+      ],
+      "id": "MUT-CAND-DHS-GOWERS-SIEVE-QUERY-MODEL-HARDENED",
+      "input_model": "Coherent oracle access and separately audited random-sample access; full-table access is treated only as a dequantization baseline, with oracle synthesis and evaluator availability stated as assumptions.",
+      "literature_ids": [
+        "kuperberg-dhsp-2003",
+        "regev-lattice-dhsp-2003",
+        "roetteler-hidden-shift-gowers-2009"
+      ],
+      "measurement_and_decoding": "Use audited low-bit collimation or family-specific merge rules on phase-state labels, then decode the shift from high-valuation survivor states with explicit success and failure accounting.",
+      "no_go_analysis": "Rejects families dequantized by full-table/evaluator access unless the restricted model is natural and formally separated; rejects low-degree, sparse-derivative, and random-table artifacts.",
+      "notes": "Generated from mutation proposal MUTATE-DHS-GOWERS-SIEVE-QUERY-MODEL-HARDENED-HS targeting proof debts ['DEBT-DHS-GOWERS-SIEVE-PO-DEQUANTIZATION', 'DEBT-DHS-GOWERS-SIEVE-PO-REDUCTION', 'DEBT-DHS-GOWERS-SIEVE-PO-FALSIFIERS'].",
+      "ontology_node_ids": [
+        "hidden-shift",
+        "dihedral-hsp",
+        "unique-svp",
+        "gowers-structure"
+      ],
+      "problem_family": "Explicit hidden-shift/DHSP phase families over growing finite groups where the input is a coherent oracle or sample-limited distribution, not a hidden random table, and where every family is rejected if low-degree or chosen-query reconstruction succeeds.",
+      "quantum_mechanism": "Prepare DHSP phase states, track explicit labels omega_N^(k*s), and search merge rules whose sample/memory exponents beat generic Kuperberg/Regev collimation on a non-classically-learnable family.",
+      "reduction_or_lower_bound": "Must either preserve a reduction to DHSP/lattice-relevant phase states or prove a query-complexity lower bound for the restricted access model before any speedup claim.",
+      "status": "mutated-hypothesis",
+      "success_statement": "A candidate survives only if it gives asymptotic evidence of better-than-generic phase-state sieving while the strongest legal classical baseline remains superpolynomial or formally lower bounded.",
+      "title": "Query-model-hardened hidden-shift phase-state candidate",
+      "updated_at": "2026-07-14T16:21:27.682644+00:00"
+    },
+    "created_at": "2026-07-14T16:26:03.802012+00:00",
+    "id": "MUT-CAND-DHS-GOWERS-SIEVE-QUERY-MODEL-HARDENED",
+    "issues": [
+      {
+        "field": "input_model",
+        "hard_reject": true,
+        "message": "Construct a uniform conversion for missing capabilities: coherent-phase-oracle-evaluation",
+        "obligation_id": "PO-REDUCTION"
+      }
+    ],
+    "quarantine_status": "rejected-by-exact-reduction-access-contract",
+    "route_ids": [
+      "ROUTE-MUT-CAND-DHS-GOWERS-SIEVE-QUERY-MODEL-HARDENED-USVP-VIA-DHSP"
+    ],
+    "source": "research/reductions/interface_audit.json",
+    "theorem_contract_ids": [
+      "THM-REGEV-USVP-TO-DCP-2003"
+    ],
+    "title": "Query-model-hardened hidden-shift phase-state candidate"
+  },
+  {
+    "candidate": {
+      "classical_baseline": "Exact ANF degree and sparsity over F_2^n, prime-field finite-difference degree tests, sparse polynomial learning, Goldreich-Levin/Fourier recovery, derivative-spectrum learning, chosen-query reconstruction, and sample-budget sweeps.",
+      "complexity_accounting": "Reports sample exponent, memory exponent, low-degree degree/sparsity, finite-difference acceptance, sample-recovery thresholds, query-model legality, and all classical learner budgets.",
+      "cost_model": "Counts coherent queries, reversible evaluator size, phase precision, phase-state samples, sieve memory/depth, classical learner query budgets, and interpolation/search costs as functions of n.",
+      "created_at": "2026-07-14T16:21:27.686962+00:00",
+      "dequantization_check": "Must pass learnability_baselines.py, classical_baseline_suite.py, hidden_shift_query_lower_bounds.py, dequantization attack matrix, query_model_ledger.py, and proof-debt counterexample searches before any positive signal is promoted.",
+      "experiment_ids": [
+        "EXP-MUT-HYP-LIT-HIDDEN-SHIFT-SIEVE-LEARNABILITY",
+        "EXP-MUT-HYP-LIT-HIDDEN-SHIFT-SIEVE-FOURIER-COMPRESSIBILITY",
+        "EXP-MUT-HYP-LIT-HIDDEN-SHIFT-SIEVE-CLASSICAL-BASELINES"
+      ],
+      "falsifiers": [
+        "Exact ANF or finite-field polynomial degree is constant or sparse enough for classical interpolation.",
+        "Goldreich-Levin, sparse Fourier, or derivative-spectrum learning reconstructs the shift or phase.",
+        "Random-sample baselines recover the shift at collision-scale budgets.",
+        "The family is hard only because it hides a random table or withholds the evaluator from the classical baseline."
+      ],
+      "id": "MUT-CAND-HYP-LIT-HIDDEN-SHIFT-SIEVE-LEARNABILITY-RESISTANT",
+      "input_model": "Coherent oracle access with efficient reversible evaluation from a public structured description; classical baselines receive the same public description, random samples, and any explicit evaluator access allowed by the problem statement.",
+      "literature_ids": [
+        "kuperberg-dhsp-2003",
+        "regev-lattice-dhsp-2003",
+        "roetteler-hidden-shift-gowers-2009",
+        "gowers-norm-algorithms-2025"
+      ],
+      "measurement_and_decoding": "Prepare phase states, run generic and family-specific merge schedules, decode candidate shifts from high-valuation labels, and verify against the public structured evaluator.",
+      "no_go_analysis": "Rejects hidden random tables, low-degree polynomials, sparse ANF/sparse Fourier families, finite-field quadratics/cubics, and any family recovered by sampled or chosen-query baselines.",
+      "notes": "Generated from mutation proposal MUTATE-HYP-LIT-HIDDEN-SHIFT-SIEVE-LEARNABILITY-RESISTANT-HS targeting proof debts ['DEBT-HYP-LIT-HIDDEN-SHIFT-SIEVE-PO-DEQUANTIZATION', 'DEBT-HYP-LIT-HIDDEN-SHIFT-SIEVE-PO-REDUCTION', 'DEBT-HYP-LIT-HIDDEN-SHIFT-SIEVE-PO-FALSIFIERS'].",
+      "ontology_node_ids": [
+        "hidden-shift",
+        "dihedral-hsp",
+        "unique-svp",
+        "gowers-structure"
+      ],
+      "problem_family": "Explicit hidden-shift families over finite abelian groups or algebraic group actions whose phase functions are not low-degree, not sparse-polynomial/ANF learnable, not finite-difference reconstructible, and not random hidden tables.",
+      "quantum_mechanism": "Use phase-state Fourier sampling and auditable sieve/merge rules on a family whose structure is visible to quantum phase states but not captured by low-degree, sparse, derivative, or sampled classical learners.",
+      "reduction_or_lower_bound": "Must either reduce from a natural hidden-shift/DHSP/lattice-relevant problem while preserving the access model, or provide query-complexity lower bounds against the listed learnability baselines.",
+      "status": "mutated-hypothesis",
+      "success_statement": "A candidate remains viable only if scaling sweeps show nontrivial phase-state structure while every implemented legal classical learner fails and the remaining gap is stated as a formal lower-bound obligation.",
+      "title": "Learnability-resistant hidden-shift family search candidate",
+      "updated_at": "2026-07-14T16:21:27.686962+00:00"
+    },
+    "created_at": "2026-07-14T16:26:03.810567+00:00",
+    "id": "MUT-CAND-HYP-LIT-HIDDEN-SHIFT-SIEVE-LEARNABILITY-RESISTANT",
+    "issues": [
+      {
+        "field": "input_model",
+        "hard_reject": true,
+        "message": "Construct a uniform conversion for missing capabilities: coherent-phase-oracle-evaluation",
+        "obligation_id": "PO-REDUCTION"
+      }
+    ],
+    "quarantine_status": "rejected-by-exact-reduction-access-contract",
+    "route_ids": [
+      "ROUTE-MUT-CAND-HYP-LIT-HIDDEN-SHIFT-SIEVE-LEARNABILITY-RESISTANT-USVP-VIA-DHSP"
+    ],
+    "source": "research/reductions/interface_audit.json",
+    "theorem_contract_ids": [
+      "THM-REGEV-USVP-TO-DCP-2003"
+    ],
+    "title": "Learnability-resistant hidden-shift family search candidate"
+  },
+  {
+    "candidate": {
+      "classical_baseline": "Attack-legality matrix covering full-table correlation, sparse Fourier/Goldreich-Levin recovery, derivative learning, low-degree algebraic reconstruction, chosen-query exhaustive scoring, and sample-complexity probes.",
+      "complexity_accounting": "Reports sample exponent, memory exponent, target valuation success, query-model legality, evaluator query budget, and lower-bound debt across scaling sweeps.",
+      "cost_model": "Counts coherent queries, reversible evaluation, phase precision, phase-state samples, merge depth, memory exponent, decoding, and classical postprocessing against every legal classical baseline.",
+      "created_at": "2026-07-14T16:21:27.689997+00:00",
+      "dequantization_check": "Must pass the dequantization attack matrix and proof-debt tracker, including random-sample overlap probes, chosen-query reconstruction, and coherent-oracle lower-bound obligations.",
+      "experiment_ids": [
+        "EXP-MUT-HYP-LIT-HIDDEN-SHIFT-SIEVE-QUERY-MODEL",
+        "EXP-MUT-HYP-LIT-HIDDEN-SHIFT-SIEVE-PHASE-SIEVE"
+      ],
+      "falsifiers": [
+        "Attack-legality matrix finds polynomial-query evaluator reconstruction.",
+        "Sample-limited survival disappears once budgets cross the overlap lower-bound probe.",
+        "Phase-state merge traces match generic Kuperberg/Regev exponents.",
+        "The family lacks a natural reduction or becomes an artificial inaccessible table."
+      ],
+      "id": "MUT-CAND-HYP-LIT-HIDDEN-SHIFT-SIEVE-QUERY-MODEL-HARDENED",
+      "input_model": "Coherent oracle access and separately audited random-sample access; full-table access is treated only as a dequantization baseline, with oracle synthesis and evaluator availability stated as assumptions.",
+      "literature_ids": [
+        "kuperberg-dhsp-2003",
+        "regev-lattice-dhsp-2003",
+        "roetteler-hidden-shift-gowers-2009"
+      ],
+      "measurement_and_decoding": "Use audited low-bit collimation or family-specific merge rules on phase-state labels, then decode the shift from high-valuation survivor states with explicit success and failure accounting.",
+      "no_go_analysis": "Rejects families dequantized by full-table/evaluator access unless the restricted model is natural and formally separated; rejects low-degree, sparse-derivative, and random-table artifacts.",
+      "notes": "Generated from mutation proposal MUTATE-HYP-LIT-HIDDEN-SHIFT-SIEVE-QUERY-MODEL-HARDENED-HS targeting proof debts ['DEBT-HYP-LIT-HIDDEN-SHIFT-SIEVE-PO-DEQUANTIZATION', 'DEBT-HYP-LIT-HIDDEN-SHIFT-SIEVE-PO-REDUCTION', 'DEBT-HYP-LIT-HIDDEN-SHIFT-SIEVE-PO-FALSIFIERS'].",
+      "ontology_node_ids": [
+        "hidden-shift",
+        "dihedral-hsp",
+        "unique-svp",
+        "gowers-structure"
+      ],
+      "problem_family": "Explicit hidden-shift/DHSP phase families over growing finite groups where the input is a coherent oracle or sample-limited distribution, not a hidden random table, and where every family is rejected if low-degree or chosen-query reconstruction succeeds.",
+      "quantum_mechanism": "Prepare DHSP phase states, track explicit labels omega_N^(k*s), and search merge rules whose sample/memory exponents beat generic Kuperberg/Regev collimation on a non-classically-learnable family.",
+      "reduction_or_lower_bound": "Must either preserve a reduction to DHSP/lattice-relevant phase states or prove a query-complexity lower bound for the restricted access model before any speedup claim.",
+      "status": "mutated-hypothesis",
+      "success_statement": "A candidate survives only if it gives asymptotic evidence of better-than-generic phase-state sieving while the strongest legal classical baseline remains superpolynomial or formally lower bounded.",
+      "title": "Query-model-hardened hidden-shift phase-state candidate",
+      "updated_at": "2026-07-14T16:21:27.689997+00:00"
+    },
+    "created_at": "2026-07-14T16:26:03.818702+00:00",
+    "id": "MUT-CAND-HYP-LIT-HIDDEN-SHIFT-SIEVE-QUERY-MODEL-HARDENED",
+    "issues": [
+      {
+        "field": "input_model",
+        "hard_reject": true,
+        "message": "Construct a uniform conversion for missing capabilities: coherent-phase-oracle-evaluation",
+        "obligation_id": "PO-REDUCTION"
+      }
+    ],
+    "quarantine_status": "rejected-by-exact-reduction-access-contract",
+    "route_ids": [
+      "ROUTE-MUT-CAND-HYP-LIT-HIDDEN-SHIFT-SIEVE-QUERY-MODEL-HARDENED-USVP-VIA-DHSP"
+    ],
+    "source": "research/reductions/interface_audit.json",
+    "theorem_contract_ids": [
+      "THM-REGEV-USVP-TO-DCP-2003"
+    ],
+    "title": "Query-model-hardened hidden-shift phase-state candidate"
+  }
+]

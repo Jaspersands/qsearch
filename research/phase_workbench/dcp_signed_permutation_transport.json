@@ -1,0 +1,122 @@
+{
+  "claim_gate": {
+    "nonlinear_implicit_transport_route_alive": true,
+    "partial_or_walk_transport_route_alive": true,
+    "polynomial_relation_solver_proved": false,
+    "reason": "All total signed-coordinate permutations collapse exactly to the existing v2 pivot condition, which has exponentially small incidence at linear depth. Only genuinely coordinate-mixing, nonlinear, partial, or walk-based mechanisms remain outside this theorem.",
+    "signed_permutation_classification_proved": true,
+    "signed_permutation_linear_depth_route_alive": false,
+    "signed_permutation_route_extends_single_pivot": false,
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-07-15T07:21:59.411044+00:00",
+  "exhaustive_rows": [
+    {
+      "complement_mask_count": 8,
+      "depth": 1,
+      "label_tuple_count": 64,
+      "mismatch_count": 0,
+      "modulus": 4,
+      "pivot_condition_count": 37,
+      "register_count": 3,
+      "signed_balance_transport_count": 37
+    },
+    {
+      "complement_mask_count": 8,
+      "depth": 2,
+      "label_tuple_count": 512,
+      "mismatch_count": 0,
+      "modulus": 8,
+      "pivot_condition_count": 169,
+      "register_count": 3,
+      "signed_balance_transport_count": 169
+    },
+    {
+      "complement_mask_count": 8,
+      "depth": 3,
+      "label_tuple_count": 4096,
+      "mismatch_count": 0,
+      "modulus": 16,
+      "pivot_condition_count": 721,
+      "register_count": 3,
+      "signed_balance_transport_count": 721
+    }
+  ],
+  "falsifiers_triggered": [
+    "Permuting complemented coordinates cannot synthesize a new constant next-bit translation.",
+    "Sign-paired non-self-inverse labels cancel from the constant translation term.",
+    "The only useful self-inverse residue is 2^k, exactly the original single-coordinate pivot.",
+    "Random density-one labels contain such a pivot at linear depth with probability at most m/2^(k+1).",
+    "This theorem does not reject partial transports, nonlinear global maps, or fiber quantum walks."
+  ],
+  "headline_metrics": {
+    "exact_classification_theorem_count": 1,
+    "exhaustive_classification_mismatch_count": 0,
+    "exhaustive_label_tuple_count": 4672,
+    "linear_depth_exponential_no_go_row_count": 4,
+    "linear_depth_scaling_row_count": 4,
+    "maximum_linear_depth_transport_probability_bound": 0.000274658203125,
+    "proved_polynomial_relation_solver_count": 0,
+    "proved_signed_permutation_advantage_count": 0
+  },
+  "scaling_rows": [
+    {
+      "exact_transport_probability": 0.00027462153546919943,
+      "expected_transport_count": 0.000274658203125,
+      "exponentially_small_at_linear_depth": true,
+      "inverse_polynomial_threshold": 0.0009765625,
+      "n_bits": 32,
+      "register_count": 36,
+      "tested_depth": 16,
+      "union_bound_probability": 0.000274658203125
+    },
+    {
+      "exact_transport_probability": 7.916241884231567e-09,
+      "expected_transport_count": 7.916241884231567e-09,
+      "exponentially_small_at_linear_depth": true,
+      "inverse_polynomial_threshold": 0.000244140625,
+      "n_bits": 64,
+      "register_count": 68,
+      "tested_depth": 32,
+      "union_bound_probability": 7.916241884231567e-09
+    },
+    {
+      "exact_transport_probability": 0.0,
+      "expected_transport_count": 3.577867169202165e-18,
+      "exponentially_small_at_linear_depth": true,
+      "inverse_polynomial_threshold": 6.103515625e-05,
+      "n_bits": 128,
+      "register_count": 132,
+      "tested_depth": 64,
+      "union_bound_probability": 3.577867169202165e-18
+    },
+    {
+      "exact_transport_probability": 0.0,
+      "expected_transport_count": 3.820356640172434e-37,
+      "exponentially_small_at_linear_depth": true,
+      "inverse_polynomial_threshold": 1.52587890625e-05,
+      "n_bits": 256,
+      "register_count": 260,
+      "tested_depth": 128,
+      "union_bound_probability": 3.820356640172434e-37
+    }
+  ],
+  "status": "signed-permutation-transport-class-collapses-to-single-pivot",
+  "summary": "Proved and exhaustively checked the signed-permutation collapse on 4672 label tuples with 0 mismatches. Linear-depth incidence is below n^-2 in 4/4 scaling rows.",
+  "theorem": {
+    "coefficient_condition": "Writing B={j:b_j=1}, constancy for all x requires the signed multiset {(-1)^(b_j) A_j}_j to equal {A_j}_j modulo 2^(k+1).",
+    "constant_term_condition": "The translation is sum_{j in B} A_j and must equal 2^k modulo 2^(k+1).",
+    "converse_construction": "If A_j=2^k, complement coordinate j and use the identity permutation. Since -A_j=A_j modulo 2^(k+1), every assignment is translated by exactly 2^k.",
+    "exact_classification_proved": true,
+    "excluded_transform_classes": [
+      "general GF(2)-affine maps with coordinate mixing",
+      "nonlinear or arithmetic global bijections",
+      "partial transports defined only on a subset of a fiber",
+      "quantum walks and non-bijective relation samplers"
+    ],
+    "necessary_and_sufficient_condition": "There exists j with A_j=2^k modulo 2^(k+1), equivalently v_2(A_j)=k.",
+    "orbit_argument": "On every non-self-inverse sign orbit {a,-a}, multiset balance forces equal selected counts, whose contribution cancels. The only self-inverse residues are 0 and 2^k; therefore the constant is 2^k exactly when B contains an odd number of labels congruent to 2^k.",
+    "theorem_id": "THEOREM-DCP-SIGNED-PERMUTATION-COLLAPSE",
+    "transform_class": "total maps T(x)_j=x_{pi(j)} xor b_j on the Boolean cube"
+  }
+}

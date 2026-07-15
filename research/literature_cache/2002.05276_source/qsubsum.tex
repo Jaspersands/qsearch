@@ -1,0 +1,254 @@
+% !TeX root = ./qsubsum.tex
+
+\documentclass{llncs}
+\pagestyle{plain}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{hyperref}
+
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage[utf8]{inputenc}
+\usepackage{tikz}
+\usepackage{pgfplots}
+% less pages for the planet !
+%\usepackage{fullpage}
+\usepackage{bbm}
+\usepackage{multirow}
+\usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage{booktabs}
+%\useackage{graphicx}
+%\usepackage[T1]{fontenc}
+%\usePackage{enumerate}
+\usepackage{xcolor}
+\usepackage{xifthen}
+\usepackage{tikz}
+\usetikzlibrary{trees}
+\usepackage{dsfont}
+
+\allowdisplaybreaks
+
+\usepackage{calc}
+\usepackage{setspace}
+\newcommand{\undertext}[3][0]{\underset{\text{\parbox{\widthof{$#3$} + #1cm}{\small \centering \setstretch{0.7}{#2}}}}{\underbrace{#3}}}
+
+\pgfplotscreateplotcyclelist{my black white}{%
+solid, every mark/.append style={solid, fill=gray}, mark=*\\%
+dotted, every mark/.append style={solid, fill=gray}, mark=square*\\%
+densely dotted, every mark/.append style={solid, fill=gray}, mark=otimes*\\%
+loosely dotted, every mark/.append style={solid, fill=gray}, mark=triangle*\\%
+dashed, every mark/.append style={solid, fill=gray},mark=diamond*\\%
+}
+
+\renewcommand{\vec}[1]{\ensuremath{\mathbf{#1}}}
+
+%\newcommand{\bernoulli}[2][]{\ensuremath{\mathcal{B}
+%\ifthenelse{\isempty{#1}}{}{^{#1}}
+%\ifthenelse{\isempty{#2}}{}{\left( #2 \right)}
+%}}
+
+
+\newcommand{\entr}[1]{h(#1)}
+\newcommand{\bin}[2]{\mathrm{bin}\left(#1,#2\right)}
+\newcommand{\trin}[3]{\mathrm{trin}\left(#1,#2,#3\right)}
+\newcommand{\quadrin}[4]{\mathrm{quadrin}\left(#1,#2,#3,#4\right)}
+
+%\newcommand{\parmi}[2]{\left( \begin{matrix}
+%#2 \\ #1
+%\end{matrix} \right)}
+
+
+%\newcommand{\binomial}[3][]{\ensuremath{\mathsf{Bin}
+%\ifthenelse{\isempty{#1}}{}{^{#1}}
+%\left( #2, #3 \right)
+%}}
+
+\newcommand{\bigO}[1]{ \mathcal{O} \left(#1 \right)}
+\newcommand{\bigOt}[1]{ \widetilde{\mathcal{O}} \left(#1 \right)}
+\newcommand{\zo}{\{0,1\}}
+\newcommand{\zom}{\{-1,0,1\}}
+\newcommand{\zomd}{\{-1,0,1,2\}}
+%\newcommand{\bigO}[1]{\mathcal{O} \left( #1 \right)}
+\newcommand{\bra}[1]{\left\langle #1 \right|}
+\newcommand{\ket}[1]{\left| #1 \right\rangle}
+\newcommand{\ceil}[1]{\left \lceil #1 \right\rceil}
+
+%\newcommand{\pfilter}[2]{\ensuremath{\mathsf{pfilter}\left(#1, #2\right)}}
+
+\newcommand{\poly}{\operatorname{poly}}
+\newcommand{\negl}{\operatorname{negl}}
+\newcommand{\card}[1]{\left|#1\right|}
+\newcommand{\dotprod}{\boldsymbol{\cdot}}
+\newcommand{\Var}[2]{\operatorname{Var}_{#1}\bracket{#2}}
+\newcommand{\Exp}[2]{\mathbb{E}_{#1}\bracket{#2}}
+\newcommand{\Ber}{\operatorname{Ber}}
+
+\newcommand{\COMMENT}[1]{}
+
+\newcommand{\pfilterhgj}[2]{\mathsf{pf}_1 \left(#1, #2 \right)}
+\newcommand{\pfilterbcj}[3]{\mathsf{pf}_2 \left(#1, #2, #3 \right)}
+\newcommand{\pfilternous}[5]{\mathsf{pf}_3 \left(#1, #2, #3, #4, #5 \right)}
+\newcommand{\pf}{\mathsf{pf}}
+
+\usepackage{xifthen}
+
+\newcommand{\prob}[2][]{\Pr
+\ifthenelse{\isempty{#1}}{}{_{#1}}
+\ifthenelse{\isempty{#2}}{}{\left[ #2 \right]}
+}
+
+\newcommand{\Prob}[2]{\Pr_{#1}\bracket{#2}}
+
+\DeclarePairedDelimiter{\set}{\{}{\}}
+\DeclarePairedDelimiter{\bracket}{[}{]}
+
+\newif\ifeprint
+\eprintfalse
+
+%\newcommand{\refappendix}[1]{
+%\ifeprint Appendix~\ref{#1} \else the full version of the paper~\cite{DBLP:journals/iacr/BonnetainBSS20}\fi
+%}
+
+% comments
+\newcommand{\AS}[1]{\textcolor{red}{[{\bf Andr\'{e} S:} #1]}}
+\newcommand{\XB}[1]{\textcolor{blue}{[{\bf Xavier B:} #1]}}
+\newcommand{\YS}[1]{\textcolor{green}{[{\bf Yixin S:} #1]}}
+\newcommand{\RB}[1]{\textcolor{orange}{[{\bf Rémi B:} #1]}}
+ \renewcommand{\AS}[1]{}
+ \renewcommand{\XB}[1]{}
+ \renewcommand{\YS}[1]{}
+ \renewcommand{\RB}[1]{}
+
+\newtheorem{heuristic}{Heuristic}
+\newtheorem{fact}{Fact}
+
+
+\algblockdefx[Repeat]{Repeat}{EndRepeat}%
+[1]{\textbf{Repeat} #1 \textbf{times}}%
+{\textbf{EndRepeat}}
+
+%=========================
+\title{Improved Classical and Quantum Algorithms for Subset-Sum}
+%\ifeprint
+\author{Xavier Bonnetain\inst{1} \and Rémi Bricout\inst{2,3} \and André Schrottenloher\inst{3} \and Yixin Shen\inst{4}}
+\institute{Institute for Quantum Computing, Department of Combinatorics and Optimization, University of Waterloo, Waterloo, ON, Canada \and Sorbonne Université, Collège Doctoral, F-75005 Paris, France\and Inria, France \and  Université de Paris, IRIF, CNRS, F-75006 Paris, France}
+%\else
+%\author{}
+%\institute{}
+%\fi
+%==========================
+
+
+
+%==========================
+\begin{document}
+%
+\maketitle
+\renewcommand{\labelitemi}{$\bullet$}
+%
+
+\begin{abstract}
+We present new classical and quantum algorithms for solving random subset-sum instances. First, we improve over the Becker-Coron-Joux algorithm (EUROCRYPT 2011) from $\bigOt{2^{0.291 n}}$ down to $\bigOt{2^{0.283 n}}$, using more general representations with values in $\zomd$.
+
+Next, we improve the state of the art of quantum algorithms for this problem in several directions. By combining the Howgrave-Graham-Joux algorithm (EUROCRYPT 2010) and quantum search, we devise an algorithm with asymptotic running time $\bigOt{2^{0.236 n}}$, lower than the cost of the quantum walk based on the same classical algorithm proposed by Bernstein, Jeffery, Lange and Meurer (PQCRYPTO 2013). This algorithm has the advantage of using \emph{classical} memory with quantum random access, while the previously known algorithms used the quantum walk framework, and required \emph{quantum} memory with quantum random access.
+
+We also propose new quantum walks for subset-sum, performing better than the previous best time complexity of $\bigOt{2^{0.226 n}}$ given by Helm and May (TQC 2018). We combine our new techniques to reach a time $\bigOt{2^{0.216 n}}$. This time is dependent on a heuristic on quantum walk updates, formalized by Helm and May, that is also required by the previous algorithms. We show how to partially overcome this heuristic, and we obtain an algorithm with quantum time $\bigOt{2^{0.218 n}}$ requiring only the standard classical subset-sum heuristics.
+
+% In particular, we propose a quantum walk built upon the Becker-Coron-Joux algorithm (EUROCRYPT 2011) that performs better than the one proposed by Helm and May (TQC 2018), by filtering more efficiently the representations, and decrease its time complexity downto $\bigO{2^{0.217 n}}$. 
+
+\end{abstract}
+
+
+
+\keywords{subset-sum, representation technique, quantum search, quantum walk, list merging.}
+
+\section{Introduction}
+\label{section:intro}
+\input{intro.tex}
+
+
+\section{List Merging and Classical Subset-sum Algorithms}
+\label{section:classical-algos}
+\input{classical-algos.tex}
+
+\section{Quantum Preliminaries and Previous Work}
+%\section{Quantum Preliminaries}
+\label{section:quantum-prelim}
+\input{previous.tex}
+
+%\section{Previous Work}
+%\label{section:previous-work}
+%\input{previous.tex}
+
+%\section{New Tools}
+%\label{section:new-tools}
+%\input{tools.tex}
+
+\section{Quantum Asymmetric HGJ}
+\label{section:hgj-asymmetric}
+\input{hgj-asymmetric.tex}
+
+\section{New Algorithms Based on Quantum Walks}
+\label{section:new-qw}
+
+%In this section, we write new algorithms based on quantum walks, using only the standard classical heuristics of subset-sums. \AS{contrary to TQC 18}
+
+\input{qw-opti.tex}
+
+\section{Mitigating Quantum Walk Heuristics for Subset-Sum}
+\label{section:fix-qw}
+%\input{fix-qw.tex}
+
+\input{sauvetage.tex}
+
+
+%\input{new-sauv.tex}
+
+\section{Conclusion}
+\label{section:conclusion}
+\input{conclusion.tex}
+
+
+
+%\ifeprint
+\subsubsection*{Acknowledgments.}
+The authors want to thank André Chailloux, Stacey Jeffery, Antoine Joux, Frédéric Magniez, Alexander May, Amaury Pouly, Nicolas Sendrier for helpful discussions and comments. Thanks to Zhenzhen Bao and the anonymous CRYPTO and ASIACRYPT referees for their detailed comments. This project has received funding from the European Research Council (ERC) under the European Union’s Horizon 2020 research and innovation programme (grant agreement no. 714294 - acronym QUASYModo). Research also supported in part by the ERA-NET Cofund in Quantum Technologies project QuantAlgo and the French ANR Blanc project RDAM.
+
+%\else
+%\fi
+
+
+
+%\nocite{*}
+\bibliography{biblio}
+%\bibliographystyle{alpha}
+\bibliographystyle{splncs03}
+%\printbibliography
+
+
+
+\newpage
+%\ifeprint
+\section*{\huge{Appendices}}
+\appendix
+
+\input{appendix.tex}
+
+
+%\else \fi
+%\input{cryptoreviews.tex}
+
+%\section*{Supplementary Material}
+%\appendix
+%\input{appendix.tex}
+%%\input{cryptoreviews.tex}
+%
+%\fi
+
+
+
+\end{document}

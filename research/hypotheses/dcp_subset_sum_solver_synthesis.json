@@ -1,0 +1,753 @@
+{
+  "claim_gate": {
+    "candidate_records_accepted": false,
+    "negative_results_used_as_rejection_filters": true,
+    "proposal_is_algorithmic_evidence": false,
+    "reason": "The grammar identifies high-variance research programs, but none supplies a polynomial coverage or interface theorem.",
+    "source_interface_attached_to_every_survivor": true,
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-07-15T10:51:05.191275+00:00",
+  "falsifiers_triggered": [
+    "LLL constant retuning is rejected after tail collapse.",
+    "Bounded-degree carry solving is rejected by full-domain ANF growth.",
+    "Basic deep Wagner trees are rejected by density-one list-volume accounting.",
+    "Known positive quantum subset-sum exponents are rejected as non-polynomial and interface-incompatible.",
+    "Surviving hybrids remain proposals until uniform coverage, complexity, witness, and reversibility theorems exist."
+  ],
+  "headline_metrics": {
+    "accepted_candidate_count": 0,
+    "hypothesis_count": 11,
+    "maximum_survivor_priority_score": 104,
+    "negative_match_rejection_count": 5,
+    "primitive_count": 44,
+    "proposal_only_survivor_count": 6,
+    "source_contract_satisfying_hypothesis_count": 0
+  },
+  "hypotheses": [
+    {
+      "expected_upside": "A polynomial decoder with inverse-polynomial source coverage would directly satisfy the missing density-one partial subset-sum interface and improve the DCP frontier.",
+      "falsifiers": [
+        "Every polynomial marker weighting has exponentially small uniform-legal positive-cell probability.",
+        "Short incompatible relations force exponentially poor Gram-Schmidt margins for every legal basis transform.",
+        "The decoder needs witness-dependent basis choices, exponential precision, or exponential candidate lists.",
+        "The apparent effect disappears when targets are sampled uniformly conditioned legal."
+      ],
+      "first_experiments": [
+        "Derive a source-average law for the fixed-depth nearest-plane cell union already implemented, stratified by marker-zero relation projections.",
+        "Search held-out marker-weighted basis objectives and require a preregistered inverse-polynomial positive-margin tail.",
+        "Reject any gain that appears only under planted targets, postselected easy instances, or exponential witness enumeration."
+      ],
+      "hypothesis_id": "HYP-DCP-SS-MARKER-AWARE-AFFINE-DECODER",
+      "mechanism": "Exploit the proved linear Hamming separation of valid Boolean witnesses under the uniform-legal source to design a marker-aware affine-coset decoder whose acceptance cell ignores incompatible marker-zero relations and returns any verified far-separated witness.",
+      "novelty_over_tested_routes": "Abandons planted-SVP uniqueness and volume gaps. It targets the exact unresolved distinction between short kernel vectors and Boolean-compatible affine witnesses.",
+      "preflight_status": "proposal-only-proof-debt",
+      "primitive_ids": [
+        "partial-source-contract",
+        "uniform-legal-boolean-coset-separation",
+        "marker-coset-affine-cvp-equivalence",
+        "marker-aware-affine-babai-baseline",
+        "fixed-depth-marker-aware-cell-list",
+        "exact-marker-witness-deviation-geometry",
+        "exact-all-target-marker-list-coverage",
+        "source-native-affine-cvp-scaling",
+        "exact-affine-babai-cell-geometry",
+        "standard-embedding-short-relation-obstruction",
+        "carry-sliced-relation-source-obstruction",
+        "coherent-matching-interface"
+      ],
+      "priority_score": 104,
+      "proof_obligations": [
+        "Prove poly(n) time, memory, precision, and uniform preprocessing.",
+        "Prove inverse-polynomial success conditioned on the primary-source legal-input distribution.",
+        "Return a verified binary witness, not only distinguish or estimate a residue.",
+        "Provide a deterministic interface, the proved target-independent shared-seed interface, or an algorithm-specific coherent matching theorem.",
+        "Give a reversible implementation with no exponential advice, QRAM, or hidden candidate list.",
+        "Define a polynomial marker-aware cell or projection computable from public labels and target.",
+        "Prove inverse-polynomial coverage over the independent uniform target conditioned legal, not a planted target.",
+        "Bound the effect of abundant incompatible marker-zero relations on the decoder's reduced basis or walk.",
+        "Use sub-half Hamming separation only to control Boolean compatibility; do not infer far-witness uniqueness.",
+        "Return and verify an explicit binary witness with polynomial time, memory, and precision."
+      ],
+      "rejection_reason": null,
+      "title": "Marker-aware affine decoder from source-separated Boolean witness cosets"
+    },
+    {
+      "expected_upside": "Could turn power-of-two arithmetic into an average-case short-vector gap absent from generic embeddings.",
+      "falsifiers": [
+        "Compact low-bit representation width is superpolynomial.",
+        "Conditioned quotients remain generic for every preregistered geometry statistic.",
+        "Conditioning destroys uniform legal-input coverage or leaves standard LLL geometry unchanged.",
+        "Tail recovery remains exponentially decaying after preregistered scaling."
+      ],
+      "first_experiments": [
+        "Preregister an atypical-fiber fourth-order statistic, a growing-order correlation, or an explicit LLL basis event, not a generic source-average order-four statistic, count window, or degree<=3 moment.",
+        "Feed compact fibers into alternate embeddings and compare held-out tail recovery, not training constants.",
+        "Search for analytic anti-concentration bounds on competing short vectors."
+      ],
+      "hypothesis_id": "HYP-DCP-SS-TWO-ADIC-LATTICE-PRECONDITIONER",
+      "mechanism": "Construct a polynomial-size exact representation of the first O(log n) lift constraints, eliminate those carries symbolically, and embed only the quotient/high-bit residual so the planted binary vector is separated from random short vectors.",
+      "novelty_over_tested_routes": "Must change higher-order or reduced-basis geometry using exact low-bit structure; exact pairwise moments now rule out candidate-count and fixed-window explanations.",
+      "preflight_status": "proposal-only-proof-debt",
+      "primitive_ids": [
+        "logarithmic-low-bit-bdd",
+        "conditioned-high-bit-quotient",
+        "conditional-residual-pairwise-moment-theorem",
+        "carry-selected-high-part-product-no-go",
+        "low-fiber-fourth-moment-additive-energy",
+        "subset-sum-smith-moment-spectrum",
+        "subset-sum-order-six-smith-transfer",
+        "subset-sum-all-fixed-moment-obstruction",
+        "subset-sum-conditioned-fixed-moment-tail",
+        "subset-sum-sub-half-log-moment-obstruction",
+        "subset-sum-embedding-volume-obstruction",
+        "standard-embedding-short-relation-obstruction",
+        "carry-sliced-relation-source-obstruction",
+        "uniform-legal-boolean-coset-separation",
+        "marker-coset-affine-cvp-equivalence",
+        "marker-aware-affine-babai-baseline",
+        "source-native-affine-cvp-scaling",
+        "exact-affine-babai-cell-geometry",
+        "carry-sliced-quotient-lattice",
+        "two-adic-lift-representation",
+        "two-adic-fiber-transport",
+        "fiber-transport-graph-walk",
+        "signed-permutation-transport-no-go",
+        "affine-transport-witness-reduction",
+        "total-transport-fourier-no-go",
+        "explicit-partial-relation-coverage-no-go",
+        "target-indexed-locality-no-go",
+        "fiber-entanglement-bond-obstruction",
+        "adaptive-layout-valuation-obstruction",
+        "modular-lattice-embedding"
+      ],
+      "priority_score": 100,
+      "proof_obligations": [
+        "Prove poly(n) time, memory, precision, and uniform preprocessing.",
+        "Prove inverse-polynomial success conditioned on the primary-source legal-input distribution.",
+        "Return a verified binary witness, not only distinguish or estimate a residue.",
+        "Provide a deterministic interface, the proved target-independent shared-seed interface, or an algorithm-specific coherent matching theorem.",
+        "Give a reversible implementation with no exponential advice, QRAM, or hidden candidate list.",
+        "Bound compact preconditioner width for random labels through O(log n) lifts.",
+        "Prove quotient labels retain the exact legal-input distribution needed by matching.",
+        "Retain a genuinely joint low/high constraint or prove a concrete generic high event already has inverse-polynomial probability; low-only carry selection gives an exactly generic quotient.",
+        "Define a higher-order residual or reduced-basis statistic not determined by exact pairwise moments.",
+        "At fixed order four, prove an inverse-polynomial atypical-fiber tail and an implicit estimator/decoder despite the vanishing source average; otherwise use growing order or basis geometry explicitly.",
+        "No larger fixed order is admissible as a generic source mechanism; specify k(n) with full resource accounting or prove an atypical conditioned-fiber tail.",
+        "Prove a short-vector separation or decoding theorem after preconditioning."
+      ],
+      "rejection_reason": null,
+      "title": "Symbolic 2-adic preconditioning that changes modular lattice geometry"
+    },
+    {
+      "expected_upside": "A polynomial relation solver would now transfer to DCP with a conservative seventh-power success loss, opening the lattice route without first canonicalizing every witness.",
+      "falsifiers": [
+        "Every purified relation mechanism has exponentially small mean valid-output probability.",
+        "Amplification, relation verification, or memory remains exponential.",
+        "Known quantum subset-sum walks remain exponential after complete composition.",
+        "Bad-register contamination destroys the paired state faster than the seventh-power signal survives."
+      ],
+      "first_experiments": [
+        "Search source-audited walk/dissection primitives for a polynomial-time valid-output relation subroutine.",
+        "Estimate target-success weight distributions and attack any apparent mean with classical algorithms.",
+        "Mechanize source-distribution, weighted-matching, and product-contamination constants end to end."
+      ],
+      "hypothesis_id": "HYP-DCP-SS-COHERENT-PARTIAL-SOLVER-BRIDGE",
+      "mechanism": "Construct a polynomial purified circuit whose measured valid binary-witness output has inverse-polynomial mean probability on the exact density-one source; feed it through fixed-order double endpoint evaluation and the proved weighted matching transfer.",
+      "novelty_over_tested_routes": "Deterministic selection, shared classical coins, and native one-call workspace overlap are no longer required. The remaining problem is the substantive one: obtaining polynomial quantum relation success.",
+      "preflight_status": "proposal-only-proof-debt",
+      "primitive_ids": [
+        "partial-source-contract",
+        "coherent-matching-interface",
+        "quantum-relation-fidelity",
+        "symmetric-quantum-relation-lift",
+        "source-audited-quantum-walk",
+        "two-adic-fiber-transport",
+        "fiber-transport-graph-walk",
+        "signed-permutation-transport-no-go",
+        "affine-transport-witness-reduction",
+        "total-transport-fourier-no-go",
+        "explicit-partial-relation-coverage-no-go",
+        "target-indexed-locality-no-go",
+        "fiber-entanglement-bond-obstruction",
+        "adaptive-layout-valuation-obstruction",
+        "quantum-fiber-walk",
+        "representation-dissection"
+      ],
+      "priority_score": 94,
+      "proof_obligations": [
+        "Prove poly(n) time, memory, precision, and uniform preprocessing.",
+        "Prove inverse-polynomial success conditioned on the primary-source legal-input distribution.",
+        "Return a verified binary witness, not only distinguish or estimate a residue.",
+        "Provide a deterministic interface, the proved target-independent shared-seed interface, or an algorithm-specific coherent matching theorem.",
+        "Give a reversible implementation with no exponential advice, QRAM, or hidden candidate list.",
+        "State a polynomial-size purified relation circuit with an efficiently verifiable binary witness register.",
+        "Show that valid outputs have linear support beyond the target-indexed locality threshold.",
+        "If tensor preparation is used, leave the fixed polynomial balanced-layout class or prove a valid partial-instance source-coverage theorem.",
+        "Prove inverse-polynomial global mean valid-output probability on Regev's exact random legal-input source.",
+        "Instantiate fixed-order double evaluation and charge the global seventh-power matching loss.",
+        "Retain the product-mixture contamination lower bound and compose approximation errors through all reflection bits."
+      ],
+      "rejection_reason": null,
+      "title": "Polynomial purified quantum relation solver under the symmetric matching lift"
+    },
+    {
+      "expected_upside": "A provable representation explosion specific to legal matching inputs could invalidate generic subset-sum exponents.",
+      "falsifiers": [
+        "Legal conditioning is asymptotically contiguous with generic random targets for all tested statistics.",
+        "Any representation gain is only constant/exponential-exponent improvement, not exponent collapse.",
+        "The effect appears only under size-biased planted witnesses."
+      ],
+      "first_experiments": [
+        "Extend exact source-target factorial moments or contiguity bounds beyond the implemented second moment.",
+        "Measure representation-count likelihood ratios under preregistered coefficient alphabets.",
+        "Attempt a second-moment theorem for any persistent legal-distribution bias."
+      ],
+      "hypothesis_id": "HYP-DCP-SS-NONGENERIC-REPRESENTATION-COLLAPSE",
+      "mechanism": "Test whether Regev's legal target distribution, unlike an unconditional random target, has a hidden many-representation bias that permits aggressive list filtering with polynomial retained mass.",
+      "novelty_over_tested_routes": "Questions random-list genericity on the exact conditioned legal distribution instead of optimizing a known exponent.",
+      "preflight_status": "proposal-only-proof-debt",
+      "primitive_ids": [
+        "partial-source-contract",
+        "source-target-representation-law",
+        "representation-dissection"
+      ],
+      "priority_score": 94,
+      "proof_obligations": [
+        "Prove poly(n) time, memory, precision, and uniform preprocessing.",
+        "Prove inverse-polynomial success conditioned on the primary-source legal-input distribution.",
+        "Return a verified binary witness, not only distinguish or estimate a residue.",
+        "Provide a deterministic interface, the proved target-independent shared-seed interface, or an algorithm-specific coherent matching theorem.",
+        "Give a reversible implementation with no exponential advice, QRAM, or hidden candidate list.",
+        "Derive the exact legal target distribution from the primary source.",
+        "Prove representation multiplicity concentration and polynomial filter survival.",
+        "Exclude size-biased planted-target sampling artifacts."
+      ],
+      "rejection_reason": null,
+      "title": "Non-generic representation multiplicity on the legal matching distribution"
+    },
+    {
+      "expected_upside": "Could import mature coding-theory decoders and expose an unrecognized easy legal subdistribution.",
+      "falsifiers": [
+        "The induced code is generic random linear decoding at hard parameters.",
+        "Structure needed by the decoder is absent or leaks exponential advice.",
+        "Coverage vanishes after preserving the source distribution and witness map."
+      ],
+      "first_experiments": [
+        "Generate exact small-n syndrome ensembles for BCH, alternant, quasi-cyclic, and rank-metric targets.",
+        "Measure statistical distance from each decoder's proved easy distribution.",
+        "Reject any family requiring hidden structure not computable from public labels."
+      ],
+      "hypothesis_id": "HYP-DCP-SS-DECODING-REDUCTION",
+      "mechanism": "Encode modular subset-sum witnesses as errors in a structured code whose syndrome distribution preserves random legal instances, then use a uniform polynomial decoder on an inverse-polynomial subfamily.",
+      "novelty_over_tested_routes": "Searches a model-preserving algorithmic reduction instead of an analogy to LPN, LWE, or decoding.",
+      "preflight_status": "proposal-only-proof-debt",
+      "primitive_ids": [
+        "average-case-decoding-reduction",
+        "partial-source-contract"
+      ],
+      "priority_score": 90,
+      "proof_obligations": [
+        "Prove poly(n) time, memory, precision, and uniform preprocessing.",
+        "Prove inverse-polynomial success conditioned on the primary-source legal-input distribution.",
+        "Return a verified binary witness, not only distinguish or estimate a residue.",
+        "Provide a deterministic interface, the proved target-independent shared-seed interface, or an algorithm-specific coherent matching theorem.",
+        "Give a reversible implementation with no exponential advice, QRAM, or hidden candidate list.",
+        "Specify reduction direction, syndrome distribution, rate, weight, and parameter blowup.",
+        "Prove the target decoder's success on the induced distribution without nonuniform code advice.",
+        "Map decoded errors back to verified binary modular witnesses."
+      ],
+      "rejection_reason": null,
+      "title": "Average-case reduction to a polynomially decodable structured code ensemble"
+    },
+    {
+      "expected_upside": "A proved odd-part easy-orbit condition would revive the exact source-preserving polynomial solver route.",
+      "falsifiers": [
+        "The statistic reduces to preserved 2-adic signatures.",
+        "Its easy-unit orbit measure is exponentially small.",
+        "It predicts only post-LLL diagnostics or loses held-out enrichment in the scaling tail.",
+        "No deterministic implication from the statistic to witness extraction can be proved."
+      ],
+      "first_experiments": [
+        "Derive symbolic residue-order or quotient anti-concentration identities before adding another feature sweep.",
+        "Evaluate a preregistered theorem-motivated statistic on n>=28 held-out units.",
+        "Abandon the route if the statistic cannot produce a uniform LLL implication."
+      ],
+      "hypothesis_id": "HYP-DCP-SS-ODD-PART-ORBIT-CERTIFICATE",
+      "mechanism": "Derive a new odd-residue equidistribution or anti-concentration invariant over the unit orbit, prove that an inverse-polynomial set of units satisfies it, and prove that condition forces LLL to expose a witness.",
+      "novelty_over_tested_routes": "Targets the only degrees of freedom odd units can change after exact 2-adic valuation invariants and blind finite feature thresholds have been exhausted.",
+      "preflight_status": "proposal-only-proof-debt",
+      "primitive_ids": [
+        "partial-source-contract",
+        "coherent-matching-interface",
+        "source-preserving-random-self-reduction",
+        "modular-lattice-embedding"
+      ],
+      "priority_score": 82,
+      "proof_obligations": [
+        "Prove poly(n) time, memory, precision, and uniform preprocessing.",
+        "Prove inverse-polynomial success conditioned on the primary-source legal-input distribution.",
+        "Return a verified binary witness, not only distinguish or estimate a residue.",
+        "Provide a deterministic interface, the proved target-independent shared-seed interface, or an algorithm-specific coherent matching theorem.",
+        "Give a reversible implementation with no exponential advice, QRAM, or hidden candidate list.",
+        "Define an odd-part statistic not determined by the preserved valuation signatures.",
+        "Prove inverse-polynomial unit-orbit and unconditional source prevalence.",
+        "Prove the statistic forces a reduced-basis witness rather than merely correlating finitely with success."
+      ],
+      "rejection_reason": null,
+      "title": "Analytic odd-part orbit certificate beyond preserved 2-adic signatures"
+    },
+    {
+      "expected_upside": "Would be decisive if the easy-unit orbit fraction were inverse polynomial.",
+      "falsifiers": [
+        "Odd-unit success becomes zero with upper confidence below every preregistered inverse-polynomial target.",
+        "All rescues are reproduced by sign-only isometric controls or unstable LLL tie breaking.",
+        "The easy-unit predicate has exponentially small source-orbit measure or cannot be recognized efficiently.",
+        "A proof requires target-dependent random coins, advice, or exponentially many unit trials."
+      ],
+      "first_experiments": [
+        "Run held-out odd-unit-only sweeps beyond the observed collapse with confidence bounds against n^-1 and n^-2.",
+        "Record quotient, Gram-Schmidt, and reduced-basis features before decoding to identify a proof candidate.",
+        "Condition only on efficiently computable features and measure their unconditional source prevalence."
+      ],
+      "hypothesis_id": "REJECT-DCP-SS-BLIND-ODD-UNIT-ORBIT-LLL",
+      "mechanism": "Sample polynomially many odd units u modulo 2^n, apply the exact source automorphism (A,t)->(uA,ut), and run a deterministic verified LLL extractor until one canonical embedding presentation exposes a witness.",
+      "novelty_over_tested_routes": "Randomizes a source-equivalent but not sign-isometric modular embedding presentation rather than retuning a fixed embedding scale or sampling planted targets.",
+      "preflight_status": "rejected-negative-result-match",
+      "primitive_ids": [
+        "partial-source-contract",
+        "coherent-matching-interface",
+        "source-preserving-random-self-reduction",
+        "modular-lattice-embedding"
+      ],
+      "priority_score": 15,
+      "proof_obligations": [
+        "Prove poly(n) time, memory, precision, and uniform preprocessing.",
+        "Prove inverse-polynomial success conditioned on the primary-source legal-input distribution.",
+        "Return a verified binary witness, not only distinguish or estimate a residue.",
+        "Provide a deterministic interface, the proved target-independent shared-seed interface, or an algorithm-specific coherent matching theorem.",
+        "Give a reversible implementation with no exponential advice, QRAM, or hidden candidate list.",
+        "Prove an inverse-polynomial fraction of odd units produce a decodable reduced basis on uniform inputs.",
+        "Identify an embedding invariant or anti-concentration event that predicts LLL witness extraction.",
+        "Separate odd-unit geometry from sign-only isometric basis-presentation effects."
+      ],
+      "rejection_reason": "Held-out source-uniform sweeps fit log2 success slope near -0.595 per n, reach 0/256 at n=32, and retain no pre-reduction rule beyond n=24. Blind sampling has no surviving easy-orbit mechanism.",
+      "title": "Blind polynomial odd-unit orbit sampling"
+    },
+    {
+      "expected_upside": "Invalid under the audited random-list threshold.",
+      "falsifiers": [
+        "Every live k>=4 density-one certificate lacks basic leaf-list volume."
+      ],
+      "first_experiments": [],
+      "hypothesis_id": "REJECT-DCP-SS-BASIC-DEEP-WAGNER",
+      "mechanism": "Increase list count without representation expansion.",
+      "novelty_over_tested_routes": "None.",
+      "preflight_status": "rejected-negative-result-match",
+      "primitive_ids": [
+        "representation-dissection"
+      ],
+      "priority_score": 0,
+      "proof_obligations": [
+        "Prove poly(n) time, memory, precision, and uniform preprocessing.",
+        "Prove inverse-polynomial success conditioned on the primary-source legal-input distribution.",
+        "Return a verified binary witness, not only distinguish or estimate a residue.",
+        "Provide a deterministic interface, the proved target-independent shared-seed interface, or an algorithm-specific coherent matching theorem.",
+        "Give a reversible implementation with no exponential advice, QRAM, or hidden candidate list."
+      ],
+      "rejection_reason": "Basic deeper trees require representation expansion; known expanded routes remain exponential.",
+      "title": "Apply a deeper basic Wagner tree to disjoint binary blocks"
+    },
+    {
+      "expected_upside": "Invalid as stated.",
+      "falsifiers": [
+        "No high-bit bounded-degree rows in the live full-domain tail audit."
+      ],
+      "first_experiments": [],
+      "hypothesis_id": "REJECT-DCP-SS-BOUNDED-DEGREE-CARRY",
+      "mechanism": "Assume every high carry has constant algebraic degree.",
+      "novelty_over_tested_routes": "None; contradicted by full-domain audit.",
+      "preflight_status": "rejected-negative-result-match",
+      "primitive_ids": [
+        "full-domain-carry-algebra"
+      ],
+      "priority_score": 0,
+      "proof_obligations": [
+        "Prove poly(n) time, memory, precision, and uniform preprocessing.",
+        "Prove inverse-polynomial success conditioned on the primary-source legal-input distribution.",
+        "Return a verified binary witness, not only distinguish or estimate a residue.",
+        "Provide a deterministic interface, the proved target-independent shared-seed interface, or an algorithm-specific coherent matching theorem.",
+        "Give a reversible implementation with no exponential advice, QRAM, or hidden candidate list."
+      ],
+      "rejection_reason": "Exact full-domain ANF degree grows with n in the tested random family.",
+      "title": "Solve all carries as a bounded-degree ANF system"
+    },
+    {
+      "expected_upside": "Does not meet polynomial DCP complexity.",
+      "falsifiers": [
+        "Positive exponential time exponent and interface mismatch."
+      ],
+      "first_experiments": [],
+      "hypothesis_id": "REJECT-DCP-SS-KNOWN-QUANTUM-EXPONENT",
+      "mechanism": "Use an existing exponential quantum subset-sum walk as the matching subroutine.",
+      "novelty_over_tested_routes": "None.",
+      "preflight_status": "rejected-resource-contract",
+      "primitive_ids": [
+        "quantum-fiber-walk"
+      ],
+      "priority_score": 0,
+      "proof_obligations": [
+        "Prove poly(n) time, memory, precision, and uniform preprocessing.",
+        "Prove inverse-polynomial success conditioned on the primary-source legal-input distribution.",
+        "Return a verified binary witness, not only distinguish or estimate a residue.",
+        "Provide a deterministic interface, the proved target-independent shared-seed interface, or an algorithm-specific coherent matching theorem.",
+        "Give a reversible implementation with no exponential advice, QRAM, or hidden candidate list."
+      ],
+      "rejection_reason": "2^(0.218n) remains exponential in n=log2 N and is not a deterministic drop-in solver.",
+      "title": "Insert the known 0.218-exponent quantum subset-sum algorithm"
+    },
+    {
+      "expected_upside": "Low.",
+      "falsifiers": [
+        "Existing tail collapse and absent coverage theorem."
+      ],
+      "first_experiments": [],
+      "hypothesis_id": "REJECT-DCP-SS-LLL-CONSTANT-RETUNE",
+      "mechanism": "Sweep more embedding constants without changing short-vector geometry.",
+      "novelty_over_tested_routes": "None.",
+      "preflight_status": "rejected-negative-result-match",
+      "primitive_ids": [
+        "modular-lattice-embedding"
+      ],
+      "priority_score": 0,
+      "proof_obligations": [
+        "Prove poly(n) time, memory, precision, and uniform preprocessing.",
+        "Prove inverse-polynomial success conditioned on the primary-source legal-input distribution.",
+        "Return a verified binary witness, not only distinguish or estimate a residue.",
+        "Provide a deterministic interface, the proved target-independent shared-seed interface, or an algorithm-specific coherent matching theorem.",
+        "Give a reversible implementation with no exponential advice, QRAM, or hidden candidate list."
+      ],
+      "rejection_reason": "The tested LLL family already shows finite success with tail collapse; constant retuning adds no asymptotic mechanism.",
+      "title": "Retune centered LLL scales and deltas"
+    }
+  ],
+  "primitives": [
+    {
+      "current_evidence": "source reductions=1; contract rows=0",
+      "interface_status": "source verified; solver open",
+      "primitive_id": "partial-source-contract",
+      "resource_status": "requires deterministic poly(n) time and inverse-polynomial legal coverage",
+      "role": "target interface"
+    },
+    {
+      "current_evidence": "seeded bridge certificates=12/12; zero-visibility counterexamples=1; arbitrary quantum bridges=0",
+      "interface_status": "explicit target-independent shared-seed randomness proved compatible; arbitrary quantum relation requires canonicalization or paired-workspace fidelity",
+      "primitive_id": "coherent-matching-interface",
+      "resource_status": "shared-seed interface overhead is polynomial; no partial subset-sum solver is constructed",
+      "role": "solver-to-DCP composition contract"
+    },
+    {
+      "current_evidence": "zero/exponential-history mechanisms=2/1; inverse-polynomial overlap proofs=1; polynomial partial solvers=0; full compositions=0",
+      "interface_status": "shared-seed control composes but constructs no solver; endpoint-tagged and sparse-history shortcuts are rejected; canonical cleanup remains proof debt",
+      "primitive_id": "quantum-relation-fidelity",
+      "resource_status": "exact uniform-support overlap identity is proved; arbitrary amplitudes require an explicit inner-product calculation from a concrete circuit",
+      "role": "paired endpoint amplitude and witness/history workspace composition gate"
+    },
+    {
+      "current_evidence": "source claims=9/9; internal history certificates=1; positive exponential time/memory=1/1; QRAQM=1; paired-output/full-composition=0/0",
+      "interface_status": "internal walk history consistency is certified; canonical paired marked-witness output and Regev composition are not certified",
+      "primitive_id": "source-audited-quantum-walk",
+      "resource_status": "source-certified time and memory exponent 0.2182 in QRAQM; mechanism baseline only, not polynomial",
+      "role": "concrete exponential quantum-walk mechanism and output-interface audit target"
+    },
+    {
+      "current_evidence": "interface certificates=1; exact pair identities=2/2; fixed/global loss exponents=5/7; polynomial relation solvers=0; product contamination certificates=1",
+      "interface_status": "conditional product-source lift proved without deterministic selection; marginal-only contamination remains out of scope",
+      "primitive_id": "symmetric-quantum-relation-lift",
+      "resource_status": "two purified solver calls per endpoint pair and polynomial matching-family overhead; solver resources dominate",
+      "role": "purified relation-solver to Regev matching interface"
+    },
+    {
+      "current_evidence": "exact identities=3; single/swap/block linear-depth rows=0/0/0; local no-go rows=2; open implicit architectures=2",
+      "interface_status": "exact local child-fiber identities proved; full verified relation output remains open",
+      "primitive_id": "two-adic-fiber-transport",
+      "resource_status": "explicit local dictionaries and all total full-cube transports are closed; target-partial map or polynomial-gap walk unconstructed",
+      "role": "reversible low-fiber child transport and target-partial/walk search space"
+    },
+    {
+      "current_evidence": "linear rows=16; fragmented/zero-cross-child=16/9; minimum positive finite gap=2.220446049250313e-16; uniform gap/walk/classical separation=0/0/0",
+      "interface_status": "source-uniform low residues and cross-child labels audited; verified polynomial relation output open",
+      "primitive_id": "fiber-transport-graph-walk",
+      "resource_status": "finite exact graph enumeration and BFS only; linear-depth state preparation and uniform coherent walk costs unproved",
+      "role": "implicit child-fiber transfer through local-move graph spectral structure"
+    },
+    {
+      "current_evidence": "classification theorems=1; exhaustive tuples/mismatches=4672/0; linear-depth no-go rows=4/4",
+      "interface_status": "no solver primitive produced; the broader Fourier theorem closes all total full-cube mechanisms",
+      "primitive_id": "signed-permutation-transport-no-go",
+      "resource_status": "closed: total coordinate permutations with complements have only the exponentially rare exact-valuation pivot incidence",
+      "role": "exact exclusion of total signed-coordinate fiber transports"
+    },
+    {
+      "current_evidence": "ANF/witness theorems=1/1; mismatches=0; affine-only instances=0; polynomial searches=0",
+      "interface_status": "retain the ANF verifier only for explicitly partial target-fiber proposals",
+      "primitive_id": "affine-transport-witness-reduction",
+      "resource_status": "closed as a total transport route; constructing T already constructs b=T(0), and the full-cube theorem forces a pivot",
+      "role": "exact affine verifier and direct-witness equivalence"
+    },
+    {
+      "current_evidence": "theorems/mismatches=1/0; linear pivot rows=0/20; partial-pairing mass range=0.69036865234375-0.9851226806640625; polynomial target maps=0",
+      "interface_status": "surviving maps must declare target law, partial coverage, success flag, inverse-on-image, and classical relation access",
+      "primitive_id": "total-transport-fourier-no-go",
+      "resource_status": "total route closed exactly; target-dependent partial maps have no polynomial construction",
+      "role": "exact exclusion of every total full-cube next-bit transport"
+    },
+    {
+      "current_evidence": "linear-support/dictionary theorems=1/1; union-bound exponent=-0.10020993338298612; existence/dictionary no-go rows=3/1; implicit target-indexed no-go theorems=0",
+      "interface_status": "survivors must be implicitly target-indexed or nontranslation and prove source-law coverage explicitly",
+      "primitive_id": "explicit-partial-relation-coverage-no-go",
+      "resource_status": "polynomial explicit masks closed by linear minimum support and exponential compatible-domain loss",
+      "role": "exclude polynomial dictionaries of fixed signed-difference partial maps"
+    },
+    {
+      "current_evidence": "local-map/batch theorems=1/1; entropy threshold/chosen beta=0.11002786443835955/0.09; polynomial classical/quantum solvers=0/0; unrestricted time lower bounds=0",
+      "interface_status": "survivors must output linear-distance partners under the exact source law and expose identical label access to classical baselines",
+      "primitive_id": "target-indexed-locality-no-go",
+      "resource_status": "all beta-local target-indexed maps below the entropy threshold are closed; linear-support search complexity remains open",
+      "role": "exclude arbitrary implicit maps confined to a low-radius Hamming ball"
+    },
+    {
+      "current_evidence": "exact-spectrum/random-rank/density-one no-go theorems=1/1/1; minimum hard probability=0.2857142857142857; approximate bond/layout/general-circuit no-go theorems=1/1/0; polynomial preparations/solvers=0/0",
+      "interface_status": "surviving partial-instance tensor proposals must prove source coverage, coherent preparation, verified output, and matched classical contraction",
+      "primitive_id": "fiber-entanglement-bond-obstruction",
+      "resource_status": "exact and 99-percent-fidelity polynomial-bond density-one routes and fixed polynomial layout dictionaries closed; label-adaptive and partial tensors unclassified",
+      "role": "exclude exact low-bond density-one tensor preparation while preserving approximate-route debt"
+    },
+    {
+      "current_evidence": "valuation theorems/no-go rows=1/5; exact/evaluated layouts=3/8837; fitted rank slope=0.4687412361808221; polynomial selector/contractions=0; general adaptive theorems=0",
+      "interface_status": "surviving additive layout needs a polynomial selector, all-n bond/source theorem, coherent contraction, and relation output",
+      "primitive_id": "adaptive-layout-valuation-obstruction",
+      "resource_status": "valuation-only adaptive cuts closed; exact-rank adaptive selection costs O(m 2^q) per layout",
+      "role": "separate impossible valuation compression from open additive label-adaptive layouts"
+    },
+    {
+      "current_evidence": "source bijections=2/2; sign isometries=2; odd-unit rescues=1; tail odd-unit success=0/128; orbit-geometry slope=-0.5948056651970821; orbit tail=0/256",
+      "interface_status": "exact source and witness bijection plus shared-seed compatibility proved; signs are isometric controls, odd units remain a non-isometric presentation search",
+      "primitive_id": "source-preserving-random-self-reduction",
+      "resource_status": "polynomial explicit seed budget and LLL calls; no uniform orbit-hitting theorem",
+      "role": "randomize canonical subset-sum presentation without changing Regev's source law"
+    },
+    {
+      "current_evidence": "finite/tail success rows=131/1; coverage proofs=0",
+      "interface_status": "deterministic but no coverage/reversible theorem",
+      "primitive_id": "modular-lattice-embedding",
+      "resource_status": "polynomial LLL baseline; tested geometry loses tail coverage",
+      "role": "global arithmetic geometry"
+    },
+    {
+      "current_evidence": "degree-censored lifts=7; all-affine legal trials=0",
+      "interface_status": "no compact exact fiber or witness solver",
+      "primitive_id": "two-adic-lift-representation",
+      "resource_status": "exact current representation costs 2^(n+O(1))",
+      "role": "power-of-two local arithmetic"
+    },
+    {
+      "current_evidence": "polynomial width/state-preparation certificates=16/16; linear residual certificates=16",
+      "interface_status": "reversible low-fiber preparation proved; high-bit geometry/decoder open",
+      "primitive_id": "logarithmic-low-bit-bdd",
+      "resource_status": "polynomial for b=O(log n); residual high-bit witness space remains exponential",
+      "role": "exact polynomial preconditioner and conditional state preparation"
+    },
+    {
+      "current_evidence": "tail minimum normalized entropy=0.9851110745339363; maximum target mass=0.00021114864864864866; geometry improvements=0",
+      "interface_status": "needs asymptotic quotient law and polynomial implicit decoder",
+      "primitive_id": "conditioned-high-bit-quotient",
+      "resource_status": "exact finite audit exponential; explicit polynomial quotient lists do not decode",
+      "role": "postconditioned average-case geometry"
+    },
+    {
+      "current_evidence": "first/second-factorial/variance certificates=10/10/10; density exponent change=0.0; LLL geometry proofs=0",
+      "interface_status": "kills count/window explanations; higher-order correlation and basis geometry remain open",
+      "primitive_id": "conditional-residual-pairwise-moment-theorem",
+      "resource_status": "exact theorem; no simulation or exponential table is needed for the moment identities",
+      "role": "no-go gate for count-only low-bit preconditioner mechanisms"
+    },
+    {
+      "current_evidence": "conditional product/low-selector/union-bound theorems=1/1/1; joint low/high no-go=0",
+      "interface_status": "closes high-only quotient bias and polynomial rescue of exponentially rare events; joint low/high basis geometry and concrete generic event probabilities remain open",
+      "primitive_id": "carry-selected-high-part-product-no-go",
+      "resource_status": "exact distribution theorem; no high-state enumeration is required",
+      "role": "no-go gate for low-only carry selection followed by an ordinary high-quotient solver"
+    },
+    {
+      "current_evidence": "triplewise/fourth-localization certificates=8/8; tail energy inflation=2.5837260924233405; relative fourth-excess bound=0.039362420761545086; source-average fixed-fourth obstructions=8",
+      "interface_status": "orders <=3 and generic source-average order four rejected; only atypical fibers, growing order, or basis geometry remain",
+      "primitive_id": "low-fiber-fourth-moment-additive-energy",
+      "resource_status": "exact source-average fourth theorem is analytic; individual-fiber Walsh energy remains exponential without an implicit estimator",
+      "role": "localize the first possible fixed-order residual signal"
+    },
+    {
+      "current_evidence": "complete/sampled rows=11/29; fourth cross-checks=2; fixed-fifth/order>=6/growing obstructions=8/0/0",
+      "interface_status": "fixed fifth source average is closed; remaining classes require uniform counts, implicit observables, and decoder implications",
+      "primitive_id": "subset-sum-smith-moment-spectrum",
+      "resource_status": "complete finite censuses are exact but exponential; sampled spectra are explicitly rare-event blind",
+      "role": "classify the first unresolved high-order 2-adic dependency mechanisms"
+    },
+    {
+      "current_evidence": "reachable/bad states=2336/1097; worst growth ratio=0.75; fixed-sixth obstructions=1",
+      "interface_status": "generic fixed sixth is closed; only atypical fibers, order>=7/growing order, or non-moment geometry remain",
+      "primitive_id": "subset-sum-order-six-smith-transfer",
+      "resource_status": "exact finite-state analytic certificate; no assignment-tuple enumeration scales with n",
+      "role": "exact no-go gate for generic fixed-sixth source moments"
+    },
+    {
+      "current_evidence": "instantiated/proved certificates=11/11; general theorem=1; growing-order obstructions=0",
+      "interface_status": "all fixed source moments closed; only charged growing order, atypical fibers, or non-moment geometry remain",
+      "primitive_id": "subset-sum-all-fixed-moment-obstruction",
+      "resource_status": "analytic k-dependent finite-state theorem; constants are not uniform when k grows with n",
+      "role": "general no-go gate for generic source statistics of every fixed factorial-moment order"
+    },
+    {
+      "current_evidence": "proved/total tail certificates=33/33; general theorem=1; growing/signed/basis proofs=0/0/0",
+      "interface_status": "fixed bad-tuple fiber tails closed; growing order, signed observables, and basis events remain",
+      "primitive_id": "subset-sum-conditioned-fixed-moment-tail",
+      "resource_status": "analytic tower-plus-Markov theorem; no finite fiber enumeration is evidence",
+      "role": "no-go gate for selecting rare low fibers with fixed-order bad-tuple signal"
+    },
+    {
+      "current_evidence": "sub-half-log/half-log/signed obstructions=1/0/0; finite below-one rows=5/5",
+      "interface_status": "sub-half-log nonnegative moments closed; boundary/larger order, signed observables, and basis events remain",
+      "primitive_id": "subset-sum-sub-half-log-moment-obstruction",
+      "resource_status": "analytic path-count theorem charges q=2^k patterns and non-self transitions",
+      "role": "uniform no-go gate for growing nonnegative moment schedules below half-logarithmic order"
+    },
+    {
+      "current_evidence": "standard/sliced volume theorems=1/1; volume obstructions=2; local gaps=0",
+      "interface_status": "volume-only gaps closed; explicit local basis events, short-vector counts, and decoders remain",
+      "primitive_id": "subset-sum-embedding-volume-obstruction",
+      "resource_status": "exact determinant and Cauchy-Binet theorem; Gaussian scale is only a benchmark",
+      "role": "no-go gate for determinant-only standard and logarithmic carry-sliced lattice gaps"
+    },
+    {
+      "current_evidence": "expectation/second-moment/high-probability certificates=1/1/1; standard/carry obstructions=1/0",
+      "interface_status": "standard uniqueness closed; carry-sliced relation count and marker-aware extraction remain",
+      "primitive_id": "standard-embedding-short-relation-obstruction",
+      "resource_status": "exact source-distribution second moment; no Gaussian heuristic or finite LLL inference",
+      "role": "no-go gate for planted shortest-vector uniqueness in the standard modular embedding"
+    },
+    {
+      "current_evidence": "expectation/joint/inverse-poly/high-probability certificates=1/1/1/0; isolation obstructions=1",
+      "interface_status": "uniform carry-sliced isolation closed; source-subset separation and marker-aware extraction remain",
+      "primitive_id": "carry-sliced-relation-source-obstruction",
+      "resource_status": "analytic first/second-moment theorem with inverse-polynomial source coverage",
+      "role": "no-go gate for uniform shortest-vector isolation after logarithmic low-bit slicing"
+    },
+    {
+      "current_evidence": "source/exponential-separation theorems=1/1; exact census failures=0; tail close-pair no-go rows=6; marker decoders=0",
+      "interface_status": "short relation abundance no longer closes marker-aware decoding; polynomial affine decoder and coverage remain open",
+      "primitive_id": "uniform-legal-boolean-coset-separation",
+      "resource_status": "exact pair counting, Paley-Zygmund source conditioning, and Hamming-ball entropy theorem",
+      "role": "source-correct separation between abundant kernel relations and compatible Boolean witnesses"
+    },
+    {
+      "current_evidence": "decomposition/gcd/radius equivalence theorems=2/2/2; short decoders=0",
+      "interface_status": "marker filtering formalized; affine-CVP algorithm and source coverage remain open",
+      "primitive_id": "marker-coset-affine-cvp-equivalence",
+      "resource_status": "deterministic exact reduction under explicit polynomial-size scale choices",
+      "role": "exact interface separating easy marker normalization from hard short affine-coset search"
+    },
+    {
+      "current_evidence": "trials/legal/standard/carry successes=12/12/8/11; coverage/scaling theorems=0/0",
+      "interface_status": "verified baseline implemented; source-conditioned BDD coverage theorem absent",
+      "primitive_id": "marker-aware-affine-babai-baseline",
+      "resource_status": "deterministic polynomial exact-rational nearest plane after LLL",
+      "role": "classical nearest-plane attack on standard and carry-sliced marker-one affine cosets"
+    },
+    {
+      "current_evidence": "list theorem/count failures/max depth=1/0/2; depth-zero/max-depth standard=0/0, carry=0/1; coverage theorems=0; tail standard/carry/legals=0/0/4",
+      "interface_status": "stronger verified classical baseline; source-conditioned cell-union mass remains unproved",
+      "primitive_id": "fixed-depth-marker-aware-cell-list",
+      "resource_status": "O(n^(k+1)) candidate vectors over all carries for each fixed branch depth k",
+      "role": "polynomial target-dependent list attack over neighboring standard and carry-sliced nearest-plane cells"
+    },
+    {
+      "current_evidence": "complete legal/replay failures/max-n=19/0/36; tail depth-two standard/carry=0/0 over 3; tree escapes=0/0; asymptotic laws=0",
+      "interface_status": "bounded-list failure explained; source law or different decoder mechanism remains open",
+      "primitive_id": "exact-marker-witness-deviation-geometry",
+      "resource_status": "exact MITM witness enumeration and rational LLL-coordinate replay; finite diagnostic only",
+      "role": "witness-complete exact coordinate replay explaining bounded nearest-plane list membership"
+    },
+    {
+      "current_evidence": "label rows/max-n/depth=12/20/2; assignments/legal targets=16711680/4081274; tail standard/carry=0.9039562807239387/0.9516438429432461; asymptotic laws=0",
+      "interface_status": "target sampling resolved exactly; random-label concentration and scalable decoder remain open",
+      "primitive_id": "exact-all-target-marker-list-coverage",
+      "resource_status": "full Boolean-cube and target census per finite label row; exponential diagnostic",
+      "role": "target-noise-free legal-coverage census for fixed-depth standard and carry-sliced branch grammars"
+    },
+    {
+      "current_evidence": "trials/max-n/tail standard/carry=10/32/0/0; coverage/asymptotic theorems=0/0",
+      "interface_status": "source-native scaling implemented; analytic BDD/source-coverage law absent",
+      "primitive_id": "source-native-affine-cvp-scaling",
+      "resource_status": "exact MITM legality plus polynomial affine Babai attack",
+      "role": "larger-n classical attack with exact meet-in-the-middle legality for failed and successful runs"
+    },
+    {
+      "current_evidence": "witness audits/standard/carry/tail cells=12/3/5/0/0; source theorems=0",
+      "interface_status": "finite mechanism diagnosed; source law for positive margin absent",
+      "primitive_id": "exact-affine-babai-cell-geometry",
+      "resource_status": "exact MITM witnesses and exact-rational Gram-Schmidt cell tests",
+      "role": "witness-complete diagnosis of nearest-plane success via exact reduced-kernel decoding cells"
+    },
+    {
+      "current_evidence": "paired baseline/sliced successes=30/31; tail baseline/sliced=8/7",
+      "interface_status": "deterministic witness verification implemented; reversible source composition open",
+      "primitive_id": "carry-sliced-quotient-lattice",
+      "resource_status": "polynomial carry count and LLL bit complexity; no uniform coverage theorem",
+      "role": "deterministic polynomial low-carry decomposition plus constrained high-modulus LLL"
+    },
+    {
+      "current_evidence": "tail planted/legal TV=0.17260219090706388; uniform quadratic-tail probability=0.0; source subfamilies=0",
+      "interface_status": "no detectable source subfamily or polynomial representation witness algorithm",
+      "primitive_id": "source-target-representation-law",
+      "resource_status": "full finite target tables exponential; exact first two moments are theorem-certified",
+      "role": "separate independent uniform, uniform legal, and planted target multiplicity"
+    },
+    {
+      "current_evidence": "tail bounded-degree=0/48; maximum degree=16",
+      "interface_status": "other symbolic representations remain open",
+      "primitive_id": "full-domain-carry-algebra",
+      "resource_status": "bounded-degree random carry route rejected in tested scaling",
+      "role": "symbolic low-bit constraints"
+    },
+    {
+      "current_evidence": "best classical exponent=0.255; deep Wagner failures=36/36",
+      "interface_status": "heuristic/randomized variants need deterministic or coherent composition",
+      "primitive_id": "representation-dissection",
+      "resource_status": "all recorded routes retain positive exponential exponents",
+      "role": "many-representation collision search"
+    },
+    {
+      "current_evidence": "best recorded quantum subset-sum exponent=0.218",
+      "interface_status": "requires new coherent Regev matching theorem",
+      "primitive_id": "quantum-fiber-walk",
+      "resource_status": "known routes exponential; full-rank adaptive walks remain conceptually open",
+      "role": "coherent many-target collision search"
+    },
+    {
+      "current_evidence": "no model-preserving polynomial reduction with an easy target family is registered",
+      "interface_status": "must preserve random legal distribution, witness, and uniformity",
+      "primitive_id": "average-case-decoding-reduction",
+      "resource_status": "open reduction search",
+      "role": "transfer to coding/lattice algorithms"
+    }
+  ],
+  "source_contract": {
+    "coverage": "inverse-polynomial conditioned on legal random density-one inputs",
+    "interface": "deterministic consistent solver or separately proved coherent replacement",
+    "output": "verified binary witness",
+    "promotion": "no proposal becomes a CandidateRecord until every obligation is supported by a theorem artifact",
+    "time": "poly(n)"
+  },
+  "status": "typed-solver-hypotheses-generated-all-proof-gated",
+  "summary": "Generated 11 typed partial-solver hypotheses from 44 primitives; 6 survive only as proof-debt proposals, 5 match existing negative/resource gates, and zero enter the candidate registry."
+}

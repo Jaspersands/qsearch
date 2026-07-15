@@ -1,0 +1,897 @@
+{
+  "access_mismatch_count": 0,
+  "audits": [
+    {
+      "candidate_id": "CODE-COSET-COLLECTIVE",
+      "checks": [
+        {
+          "axis": "theorem-contract",
+          "burden": "Link the upstream literature edge to a validated exact theorem contract.",
+          "candidate_claim": "Code equivalence embeds as a hidden permutation problem in the symmetric-group HSP frontier, but must explicitly bypass strong Fourier sampling no-go barriers.",
+          "passed": true,
+          "upstream_contract": "CONSTRUCTION-CODE-EQUIVALENCE-TO-NONABELIAN-HSP"
+        },
+        {
+          "axis": "upstream-edge",
+          "burden": "Resolve every theorem-edge gate issue before attempting candidate specialization.",
+          "candidate_claim": "The natural source problem reduces to the theorem target problem.",
+          "passed": true,
+          "upstream_contract": "accepted-reduction-edge"
+        },
+        {
+          "axis": "group-or-domain",
+          "burden": "Prove that the candidate mechanism acts on the exact target group/domain emitted by the reduction.",
+          "candidate_claim": "nonabelian-hsp, symmetric-hsp, code-equivalence",
+          "passed": true,
+          "upstream_contract": "The row-operation and coordinate-permutation group action, converted to its standard hidden-subgroup form."
+        },
+        {
+          "axis": "access-model",
+          "burden": "Keep the state/oracle preparation cost in the end-to-end resource bound.",
+          "candidate_claim": "coset-state-preparation",
+          "passed": true,
+          "upstream_contract": "coherent-hiding-function-evaluation, coset-state-preparation"
+        },
+        {
+          "axis": "full-family-coverage",
+          "burden": "Map every upstream promised instance into the candidate family; a hard-looking subfamily is insufficient.",
+          "candidate_claim": "Linear code equivalence families over increasing block length and finite fields, with controlled automorphism strata and hard classical canonicalization baselines.",
+          "passed": false,
+          "upstream_contract": "The stated search code-equivalence problem, not only a selected algebraic code family."
+        },
+        {
+          "axis": "parameter-map",
+          "burden": "Attach a formal polynomial parameter, precision, query, copy, time, and memory map.",
+          "candidate_claim": "Separate coset-state samples, quantum measurement size, tensor contraction complexity, and classical verification; compare against canonicalization and automorphism baselines.",
+          "passed": false,
+          "upstream_contract": "Group representation and oracle evaluation are polynomial in n, k, and log q."
+        },
+        {
+          "axis": "success-and-decoder",
+          "burden": "Prove target success composes with decoding to solve the exact natural source problem.",
+          "candidate_claim": "Conjecture: a restricted but hard code family admits a polynomial-bond collective observable whose distinguishing advantage remains inverse polynomial as length grows.",
+          "passed": false,
+          "upstream_contract": "Bounded-error recovery on every promised equivalent code pair in the claimed scope."
+        },
+        {
+          "axis": "uniform-instance-construction",
+          "burden": "Give a uniform instance map with no hidden family advice or uncharged preprocessing.",
+          "candidate_claim": "Efficient coherent preparation of hidden-permutation coset states derived from generator matrices; classical descriptions of code families are part of the input.",
+          "passed": false,
+          "upstream_contract": "Uniform construction from M and M'; no private code-family advice."
+        },
+        {
+          "axis": "bad-register-robustness",
+          "burden": "Prove adversarial bad-register tolerance across state merging and full recursive decoding.",
+          "candidate_claim": "Strong Fourier sampling alone is ruled out for symmetric-group GI-style HSPs; this candidate survives only if it uses genuine collective measurements or leaves the blocked HSP route.",
+          "passed": true,
+          "upstream_contract": "not applicable"
+        }
+      ],
+      "counterexample_witnesses": [
+        "Coverage witness: the upstream theorem quantifies over The stated search code-equivalence problem, not only a selected algebraic code family., but the candidate states only: Linear code equivalence families over increasing block length and finite fields, with controlled automorphism strata and hard classical canonicalization baselines.",
+        "Parameter witness: no attached proof maps the theorem parameters to candidate costs and precision.",
+        "Decoder witness: empirical decoding prose is not a composable success theorem."
+      ],
+      "id": "AUDIT-ROUTE-CODE-COSET-COLLECTIVE-CODE-EQUIVALENCE-VIA-SYMMETRIC-HSP",
+      "proof_debt_score": 50,
+      "route_id": "ROUTE-CODE-COSET-COLLECTIVE-CODE-EQUIVALENCE-VIA-SYMMETRIC-HSP",
+      "source_problem": "linear-code-equivalence-search",
+      "status": "interface-blocked",
+      "target_problem": "candidate-collective-observable-family",
+      "theorem_contract_id": "CONSTRUCTION-CODE-EQUIVALENCE-TO-NONABELIAN-HSP"
+    },
+    {
+      "candidate_id": "DHS-GOWERS-SIEVE",
+      "checks": [
+        {
+          "axis": "theorem-contract",
+          "burden": "Link the upstream literature edge to a validated exact theorem contract.",
+          "candidate_claim": "Use the exact THM-REGEV-USVP-TO-DCP-2003 contract. A speedup claim requires full-family coverage, a uniform lattice-dimension/modulus/sample/precision map, and bounded-error composition with the lattice decoder.",
+          "passed": true,
+          "upstream_contract": "THM-REGEV-USVP-TO-DCP-2003"
+        },
+        {
+          "axis": "upstream-edge",
+          "burden": "Resolve every theorem-edge gate issue before attempting candidate specialization.",
+          "candidate_claim": "The natural source problem reduces to the theorem target problem.",
+          "passed": true,
+          "upstream_contract": "accepted-reduction-edge"
+        },
+        {
+          "axis": "group-or-domain",
+          "burden": "Prove that the candidate mechanism acts on the exact target group/domain emitted by the reduction.",
+          "candidate_claim": "hidden-shift, dihedral-hsp, unique-svp, gowers-structure",
+          "passed": true,
+          "upstream_contract": "Dihedral groups D_N with log N polynomially related to the lattice input size."
+        },
+        {
+          "axis": "access-model",
+          "burden": "Keep the state/oracle preparation cost in the end-to-end resource bound.",
+          "candidate_claim": "independent-coset-state-samples, phase-state-preparation",
+          "passed": true,
+          "upstream_contract": "adversarial-bad-registers-at-rate-1-over-logN-to-f, independent-coset-state-samples, phase-state-preparation, quantum-state-input"
+        },
+        {
+          "axis": "full-family-coverage",
+          "burden": "Map every upstream promised instance into the candidate family; a hard-looking subfamily is insufficient.",
+          "candidate_claim": "The full family of dihedral coset-problem state instances over D_N emitted by the exact Regev unique-SVP reduction as N grows. Structured quadratic, character, trace, and Gowers phase families are adversarial testbeds only and do not define the claimed algorithmic scope.",
+          "passed": false,
+          "upstream_contract": "Worst-case promised lattice instances in the stated approximation regime."
+        },
+        {
+          "axis": "parameter-map",
+          "burden": "Attach a formal polynomial parameter, precision, query, copy, time, and memory map.",
+          "candidate_claim": "Report asymptotic functions of log N and lattice dimension for coset-state copies, branch survival, time, space, precision, full decoding, and reduction overhead; empirical schedules never establish an exponent.",
+          "passed": false,
+          "upstream_contract": "In the improved proof choose prime p>n^(2+2f), M=2^(4n), and map the n-dimensional two-point instance to DCP modulus N=(2M)^n, hence log N=Theta(n^2). The f=1 approximation factor is Theta(n^2.5); the DCP input uses poly(log N) registers."
+        },
+        {
+          "axis": "success-and-decoder",
+          "burden": "Prove target success composes with decoding to solve the exact natural source problem.",
+          "candidate_claim": "Target theorem: on every DCP state instance in the Regev contract, recover the complete hidden reflection with bounded error while proving an asymptotic sample, time, or memory improvement over a named Kuperberg/Regev baseline and preserving the end-to-end lattice approximation guarantee.",
+          "passed": false,
+          "upstream_contract": "Output d with probability poly(1/log N) and time poly(log N) under the DCP failure-parameter promise; the lattice routine then succeeds with inverse-polynomial probability and polynomial repetition."
+        },
+        {
+          "axis": "uniform-instance-construction",
+          "burden": "Give a uniform instance map with no hidden family advice or uncharged preprocessing.",
+          "candidate_claim": "Independent coset-state samples from D_N under the exact f=1 DCP promise: each register is good with probability at least 1-1/log N and otherwise may be an arbitrary basis-state register. Good registers transform into known uniformly random labels k and phase states. No evaluator or chosen labels are available.",
+          "passed": false,
+          "upstream_contract": "Uniform construction from the lattice instance; no family-specific nonuniform advice."
+        },
+        {
+          "axis": "bad-register-robustness",
+          "burden": "Prove adversarial bad-register tolerance across state merging and full recursive decoding.",
+          "candidate_claim": "Reject deterministic favorable-branch traces, evaluator-dependent rules, selected easy phase subfamilies, valuation-only endpoints, hidden nonuniform advice, and any schedule that merely reproduces generic sieve behavior.",
+          "passed": false,
+          "upstream_contract": "For f=1, every DCP register may be an arbitrary bad basis state with probability up to 1/log N."
+        }
+      ],
+      "counterexample_witnesses": [
+        "Coverage witness: the upstream theorem quantifies over Worst-case promised lattice instances in the stated approximation regime., but the candidate states only: The full family of dihedral coset-problem state instances over D_N emitted by the exact Regev unique-SVP reduction as N grows. Structured quadratic, character, trace, and Gowers phase families are adversarial testbeds only and do not define the claimed algorithmic scope.",
+        "Parameter witness: no attached proof maps the theorem parameters to candidate costs and precision.",
+        "Decoder witness: empirical decoding prose is not a composable success theorem.",
+        "Bad-register witness: the exact f=1 theorem allows hidden arbitrary basis-state registers at rate 1/log N, but no formal robustness proof is attached."
+      ],
+      "id": "AUDIT-ROUTE-DHS-GOWERS-SIEVE-USVP-VIA-DHSP",
+      "proof_debt_score": 60,
+      "route_id": "ROUTE-DHS-GOWERS-SIEVE-USVP-VIA-DHSP",
+      "source_problem": "theta-n-2.5-unique-svp",
+      "status": "interface-blocked",
+      "target_problem": "candidate-specific-hidden-shift-family",
+      "theorem_contract_id": "THM-REGEV-USVP-TO-DCP-2003"
+    },
+    {
+      "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
+      "checks": [
+        {
+          "axis": "theorem-contract",
+          "burden": "Link the upstream literature edge to a validated exact theorem contract.",
+          "candidate_claim": "Use the symmetric-group HSP embedding as the reduction frame while requiring a route around the strong-Fourier-sampling no-go theorem.",
+          "passed": true,
+          "upstream_contract": "CONSTRUCTION-CODE-EQUIVALENCE-TO-NONABELIAN-HSP"
+        },
+        {
+          "axis": "upstream-edge",
+          "burden": "Resolve every theorem-edge gate issue before attempting candidate specialization.",
+          "candidate_claim": "The natural source problem reduces to the theorem target problem.",
+          "passed": true,
+          "upstream_contract": "accepted-reduction-edge"
+        },
+        {
+          "axis": "group-or-domain",
+          "burden": "Prove that the candidate mechanism acts on the exact target group/domain emitted by the reduction.",
+          "candidate_claim": "nonabelian-hsp, symmetric-hsp, graph-isomorphism, code-equivalence",
+          "passed": true,
+          "upstream_contract": "The row-operation and coordinate-permutation group action, converted to its standard hidden-subgroup form."
+        },
+        {
+          "axis": "access-model",
+          "burden": "Keep the state/oracle preparation cost in the end-to-end resource bound.",
+          "candidate_claim": "coset-state-preparation",
+          "passed": true,
+          "upstream_contract": "coherent-hiding-function-evaluation, coset-state-preparation"
+        },
+        {
+          "axis": "full-family-coverage",
+          "burden": "Map every upstream promised instance into the candidate family; a hard-looking subfamily is insufficient.",
+          "candidate_claim": "Hidden permutation instances from graph isomorphism and linear code equivalence over growing sizes, with controlled automorphism strata and classical canonicalization baselines.",
+          "passed": false,
+          "upstream_contract": "The stated search code-equivalence problem, not only a selected algebraic code family."
+        },
+        {
+          "axis": "parameter-map",
+          "burden": "Attach a formal polynomial parameter, precision, query, copy, time, and memory map.",
+          "candidate_claim": "Separate coset-state samples, quantum measurement size, tensor contraction complexity, representation-theoretic preprocessing, and classical verification; compare against the strongest canonicalization baseline.",
+          "passed": false,
+          "upstream_contract": "Group representation and oracle evaluation are polynomial in n, k, and log q."
+        },
+        {
+          "axis": "success-and-decoder",
+          "burden": "Prove target success composes with decoding to solve the exact natural source problem.",
+          "candidate_claim": "Target theorem: a restricted but classically hard hidden-permutation family admits a polynomial-bond collective observable with inverse-polynomial distinguishing advantage as instance size grows.",
+          "passed": false,
+          "upstream_contract": "Bounded-error recovery on every promised equivalent code pair in the claimed scope."
+        },
+        {
+          "axis": "uniform-instance-construction",
+          "burden": "Give a uniform instance map with no hidden family advice or uncharged preprocessing.",
+          "candidate_claim": "Efficient coherent preparation of hidden-permutation coset states from explicit graph or generator-matrix inputs, with register count, state-preparation cost, and verification cost tracked separately.",
+          "passed": false,
+          "upstream_contract": "Uniform construction from M and M'; no private code-family advice."
+        },
+        {
+          "axis": "bad-register-robustness",
+          "burden": "Prove adversarial bad-register tolerance across state merging and full recursive decoding.",
+          "candidate_claim": "Strong Fourier sampling alone is ruled out for symmetric-group GI-style HSPs; this hypothesis survives only if the observable is genuinely collective and does not collapse to a classical invariant.",
+          "passed": true,
+          "upstream_contract": "not applicable"
+        }
+      ],
+      "counterexample_witnesses": [
+        "Coverage witness: the upstream theorem quantifies over The stated search code-equivalence problem, not only a selected algebraic code family., but the candidate states only: Hidden permutation instances from graph isomorphism and linear code equivalence over growing sizes, with controlled automorphism strata and classical canonicalization baselines.",
+        "Parameter witness: no attached proof maps the theorem parameters to candidate costs and precision.",
+        "Decoder witness: empirical decoding prose is not a composable success theorem."
+      ],
+      "id": "AUDIT-ROUTE-HYP-LIT-COSET-OBSERVABLES-CODE-EQUIVALENCE-VIA-SYMMETRIC-HSP",
+      "proof_debt_score": 50,
+      "route_id": "ROUTE-HYP-LIT-COSET-OBSERVABLES-CODE-EQUIVALENCE-VIA-SYMMETRIC-HSP",
+      "source_problem": "linear-code-equivalence-search",
+      "status": "interface-blocked",
+      "target_problem": "candidate-collective-observable-family",
+      "theorem_contract_id": "CONSTRUCTION-CODE-EQUIVALENCE-TO-NONABELIAN-HSP"
+    },
+    {
+      "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
+      "checks": [
+        {
+          "axis": "theorem-contract",
+          "burden": "Link the upstream literature edge to a validated exact theorem contract.",
+          "candidate_claim": "Use the symmetric-group HSP embedding as the reduction frame while requiring a route around the strong-Fourier-sampling no-go theorem.",
+          "passed": true,
+          "upstream_contract": "CONSTRUCTION-GI-TO-HIDDEN-INVOLUTION-HSP"
+        },
+        {
+          "axis": "upstream-edge",
+          "burden": "Resolve every theorem-edge gate issue before attempting candidate specialization.",
+          "candidate_claim": "The natural source problem reduces to the theorem target problem.",
+          "passed": true,
+          "upstream_contract": "accepted-reduction-edge"
+        },
+        {
+          "axis": "group-or-domain",
+          "burden": "Prove that the candidate mechanism acts on the exact target group/domain emitted by the reduction.",
+          "candidate_claim": "nonabelian-hsp, symmetric-hsp, graph-isomorphism, code-equivalence",
+          "passed": true,
+          "upstream_contract": "The graph-isomorphism wreath-product/embedded symmetric-group construction."
+        },
+        {
+          "axis": "access-model",
+          "burden": "Keep the state/oracle preparation cost in the end-to-end resource bound.",
+          "candidate_claim": "coset-state-preparation",
+          "passed": true,
+          "upstream_contract": "coherent-hiding-function-evaluation, coset-state-preparation"
+        },
+        {
+          "axis": "full-family-coverage",
+          "burden": "Map every upstream promised instance into the candidate family; a hard-looking subfamily is insufficient.",
+          "candidate_claim": "Hidden permutation instances from graph isomorphism and linear code equivalence over growing sizes, with controlled automorphism strata and classical canonicalization baselines.",
+          "passed": false,
+          "upstream_contract": "All explicitly represented graph pairs, not only CFI, regular, or cospectral subfamilies."
+        },
+        {
+          "axis": "parameter-map",
+          "burden": "Attach a formal polynomial parameter, precision, query, copy, time, and memory map.",
+          "candidate_claim": "Separate coset-state samples, quantum measurement size, tensor contraction complexity, representation-theoretic preprocessing, and classical verification; compare against the strongest canonicalization baseline.",
+          "passed": false,
+          "upstream_contract": "The target permutation degree and oracle evaluation cost are polynomial in graph size."
+        },
+        {
+          "axis": "success-and-decoder",
+          "burden": "Prove target success composes with decoding to solve the exact natural source problem.",
+          "candidate_claim": "Target theorem: a restricted but classically hard hidden-permutation family admits a polynomial-bond collective observable with inverse-polynomial distinguishing advantage as instance size grows.",
+          "passed": false,
+          "upstream_contract": "Bounded-error recovery on the full encoded graph-isomorphism promise."
+        },
+        {
+          "axis": "uniform-instance-construction",
+          "burden": "Give a uniform instance map with no hidden family advice or uncharged preprocessing.",
+          "candidate_claim": "Efficient coherent preparation of hidden-permutation coset states from explicit graph or generator-matrix inputs, with register count, state-preparation cost, and verification cost tracked separately.",
+          "passed": false,
+          "upstream_contract": "Uniformly constructed from the two input graphs with no graph-family advice."
+        },
+        {
+          "axis": "bad-register-robustness",
+          "burden": "Prove adversarial bad-register tolerance across state merging and full recursive decoding.",
+          "candidate_claim": "Strong Fourier sampling alone is ruled out for symmetric-group GI-style HSPs; this hypothesis survives only if the observable is genuinely collective and does not collapse to a classical invariant.",
+          "passed": true,
+          "upstream_contract": "not applicable"
+        }
+      ],
+      "counterexample_witnesses": [
+        "Coverage witness: the upstream theorem quantifies over All explicitly represented graph pairs, not only CFI, regular, or cospectral subfamilies., but the candidate states only: Hidden permutation instances from graph isomorphism and linear code equivalence over growing sizes, with controlled automorphism strata and classical canonicalization baselines.",
+        "Parameter witness: no attached proof maps the theorem parameters to candidate costs and precision.",
+        "Decoder witness: empirical decoding prose is not a composable success theorem."
+      ],
+      "id": "AUDIT-ROUTE-HYP-LIT-COSET-OBSERVABLES-GRAPH-ISOMORPHISM-VIA-SYMMETRIC-HSP",
+      "proof_debt_score": 50,
+      "route_id": "ROUTE-HYP-LIT-COSET-OBSERVABLES-GRAPH-ISOMORPHISM-VIA-SYMMETRIC-HSP",
+      "source_problem": "graph-isomorphism-search",
+      "status": "interface-blocked",
+      "target_problem": "candidate-collective-observable-family",
+      "theorem_contract_id": "CONSTRUCTION-GI-TO-HIDDEN-INVOLUTION-HSP"
+    },
+    {
+      "candidate_id": "HYP-LIT-HIDDEN-SHIFT-SIEVE",
+      "checks": [
+        {
+          "axis": "theorem-contract",
+          "burden": "Link the upstream literature edge to a validated exact theorem contract.",
+          "candidate_claim": "Compose only through THM-REGEV-USVP-TO-DCP-2003 and require full-family coverage, uniform state construction, parameter preservation, bounded success, and a complete lattice decoder before claiming relevance.",
+          "passed": true,
+          "upstream_contract": "THM-REGEV-USVP-TO-DCP-2003"
+        },
+        {
+          "axis": "upstream-edge",
+          "burden": "Resolve every theorem-edge gate issue before attempting candidate specialization.",
+          "candidate_claim": "The natural source problem reduces to the theorem target problem.",
+          "passed": true,
+          "upstream_contract": "accepted-reduction-edge"
+        },
+        {
+          "axis": "group-or-domain",
+          "burden": "Prove that the candidate mechanism acts on the exact target group/domain emitted by the reduction.",
+          "candidate_claim": "hidden-shift, dihedral-hsp, unique-svp, gowers-structure",
+          "passed": true,
+          "upstream_contract": "Dihedral groups D_N with log N polynomially related to the lattice input size."
+        },
+        {
+          "axis": "access-model",
+          "burden": "Keep the state/oracle preparation cost in the end-to-end resource bound.",
+          "candidate_claim": "independent-coset-state-samples, phase-state-preparation",
+          "passed": true,
+          "upstream_contract": "adversarial-bad-registers-at-rate-1-over-logN-to-f, independent-coset-state-samples, phase-state-preparation, quantum-state-input"
+        },
+        {
+          "axis": "full-family-coverage",
+          "burden": "Map every upstream promised instance into the candidate family; a hard-looking subfamily is insufficient.",
+          "candidate_claim": "The full family of D_N coset-state inputs emitted by the exact lattice-to-DCP reduction. Literature-mined structured phase families are retained only as counterexamples and mechanism testbeds, never as coverage of the full promise.",
+          "passed": false,
+          "upstream_contract": "Worst-case promised lattice instances in the stated approximation regime."
+        },
+        {
+          "axis": "parameter-map",
+          "burden": "Attach a formal polynomial parameter, precision, query, copy, time, and memory map.",
+          "candidate_claim": "Report theorem-level sample, time, space, precision, postselection, and full-decoder bounds in log N and lattice dimension; empirical favorable schedules and online costs with hidden preprocessing do not count.",
+          "passed": false,
+          "upstream_contract": "In the improved proof choose prime p>n^(2+2f), M=2^(4n), and map the n-dimensional two-point instance to DCP modulus N=(2M)^n, hence log N=Theta(n^2). The f=1 approximation factor is Theta(n^2.5); the DCP input uses poly(log N) registers."
+        },
+        {
+          "axis": "success-and-decoder",
+          "burden": "Prove target success composes with decoding to solve the exact natural source problem.",
+          "candidate_claim": "Target theorem: a literature-composed uniform algorithm recovers the complete reflection on every promised DCP state instance with bounded error and proves an asymptotic resource improvement over a named generic sieve baseline.",
+          "passed": false,
+          "upstream_contract": "Output d with probability poly(1/log N) and time poly(log N) under the DCP failure-parameter promise; the lattice routine then succeeds with inverse-polynomial probability and polynomial repetition."
+        },
+        {
+          "axis": "uniform-instance-construction",
+          "burden": "Give a uniform instance map with no hidden family advice or uncharged preprocessing.",
+          "candidate_claim": "Independent coset-state samples transformed into known random Fourier labels and one-qubit DCP phase states. No coherent evaluator, chosen-label access, phase truth table, or literature-specific nonuniform advice is supplied.",
+          "passed": false,
+          "upstream_contract": "Uniform construction from the lattice instance; no family-specific nonuniform advice."
+        },
+        {
+          "axis": "bad-register-robustness",
+          "burden": "Prove adversarial bad-register tolerance across state merging and full recursive decoding.",
+          "candidate_claim": "Known failure modes include evaluator smuggling, selected-family scope, deterministic favorable branches, parity-only endpoints, generic subset-sum behavior, nonuniform preprocessing, and exponential precision or memory.",
+          "passed": false,
+          "upstream_contract": "For f=1, every DCP register may be an arbitrary bad basis state with probability up to 1/log N."
+        }
+      ],
+      "counterexample_witnesses": [
+        "Coverage witness: the upstream theorem quantifies over Worst-case promised lattice instances in the stated approximation regime., but the candidate states only: The full family of D_N coset-state inputs emitted by the exact lattice-to-DCP reduction. Literature-mined structured phase families are retained only as counterexamples and mechanism testbeds, never as coverage of the full promise.",
+        "Parameter witness: no attached proof maps the theorem parameters to candidate costs and precision.",
+        "Decoder witness: empirical decoding prose is not a composable success theorem.",
+        "Bad-register witness: the exact f=1 theorem allows hidden arbitrary basis-state registers at rate 1/log N, but no formal robustness proof is attached."
+      ],
+      "id": "AUDIT-ROUTE-HYP-LIT-HIDDEN-SHIFT-SIEVE-USVP-VIA-DHSP",
+      "proof_debt_score": 60,
+      "route_id": "ROUTE-HYP-LIT-HIDDEN-SHIFT-SIEVE-USVP-VIA-DHSP",
+      "source_problem": "theta-n-2.5-unique-svp",
+      "status": "interface-blocked",
+      "target_problem": "candidate-specific-hidden-shift-family",
+      "theorem_contract_id": "THM-REGEV-USVP-TO-DCP-2003"
+    },
+    {
+      "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
+      "checks": [
+        {
+          "axis": "theorem-contract",
+          "burden": "Link the upstream literature edge to a validated exact theorem contract.",
+          "candidate_claim": "Must remain a genuine hidden-permutation/code-equivalence problem and state why the surviving family avoids known canonicalization heuristics; lower-bound claims must be separated from mere assignment-cap exhaustion.",
+          "passed": true,
+          "upstream_contract": "CONSTRUCTION-CODE-EQUIVALENCE-TO-NONABELIAN-HSP"
+        },
+        {
+          "axis": "upstream-edge",
+          "burden": "Resolve every theorem-edge gate issue before attempting candidate specialization.",
+          "candidate_claim": "The natural source problem reduces to the theorem target problem.",
+          "passed": true,
+          "upstream_contract": "accepted-reduction-edge"
+        },
+        {
+          "axis": "group-or-domain",
+          "burden": "Prove that the candidate mechanism acts on the exact target group/domain emitted by the reduction.",
+          "candidate_claim": "nonabelian-hsp, symmetric-hsp, code-equivalence",
+          "passed": true,
+          "upstream_contract": "The row-operation and coordinate-permutation group action, converted to its standard hidden-subgroup form."
+        },
+        {
+          "axis": "access-model",
+          "burden": "Keep the state/oracle preparation cost in the end-to-end resource bound.",
+          "candidate_claim": "coset-state-preparation",
+          "passed": true,
+          "upstream_contract": "coherent-hiding-function-evaluation, coset-state-preparation"
+        },
+        {
+          "axis": "full-family-coverage",
+          "burden": "Map every upstream promised instance into the candidate family; a hard-looking subfamily is insufficient.",
+          "candidate_claim": "Structured binary or finite-field linear-code equivalence families with balanced coordinate refinement profiles, large automorphism-aware profile buckets, and explicit algebraic construction metadata rather than random weak-invariant collisions.",
+          "passed": false,
+          "upstream_contract": "The stated search code-equivalence problem, not only a selected algebraic code family."
+        },
+        {
+          "axis": "parameter-map",
+          "burden": "Attach a formal polynomial parameter, precision, query, copy, time, and memory map.",
+          "candidate_claim": "Reports profile bucket sizes, tuple-profile collision status, canonicalization assignments, support-splitting outcomes, automorphism estimates, register count, sample complexity, tensor bond dimension, and all classical invariant overlaps.",
+          "passed": false,
+          "upstream_contract": "Group representation and oracle evaluation are polynomial in n, k, and log q."
+        },
+        {
+          "axis": "success-and-decoder",
+          "burden": "Prove target success composes with decoding to solve the exact natural source problem.",
+          "candidate_claim": "A row is viable only if it survives profile-pruned canonicalization and support-splitting baselines while a polynomial-description collective observable retains inverse-polynomial distinguishing advantage as length grows.",
+          "passed": false,
+          "upstream_contract": "Bounded-error recovery on every promised equivalent code pair in the claimed scope."
+        },
+        {
+          "axis": "uniform-instance-construction",
+          "burden": "Give a uniform instance map with no hidden family advice or uncharged preprocessing.",
+          "candidate_claim": "Public generator matrices and coherent hidden-permutation coset-state preparation; classical algorithms receive the same code descriptions, profile data, and any algebraic family metadata used by the quantum measurement.",
+          "passed": false,
+          "upstream_contract": "Uniform construction from M and M'; no private code-family advice."
+        },
+        {
+          "axis": "bad-register-robustness",
+          "burden": "Prove adversarial bad-register tolerance across state merging and full recursive decoding.",
+          "candidate_claim": "Rejects weak weight-enumerator/column-statistic collisions, rows separated by coordinate/tuple profiles or exact canonical forms, and observables reducible to classical code invariants, bounded tensor contractions, or individualized rooted tensor shadows.",
+          "passed": true,
+          "upstream_contract": "not applicable"
+        }
+      ],
+      "counterexample_witnesses": [
+        "Coverage witness: the upstream theorem quantifies over The stated search code-equivalence problem, not only a selected algebraic code family., but the candidate states only: Structured binary or finite-field linear-code equivalence families with balanced coordinate refinement profiles, large automorphism-aware profile buckets, and explicit algebraic construction metadata rather than random weak-invariant collisions.",
+        "Parameter witness: no attached proof maps the theorem parameters to candidate costs and precision.",
+        "Decoder witness: empirical decoding prose is not a composable success theorem."
+      ],
+      "id": "AUDIT-ROUTE-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-CODE-EQUIVALENCE-VIA-SYMMETRIC-HSP",
+      "proof_debt_score": 50,
+      "route_id": "ROUTE-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-CODE-EQUIVALENCE-VIA-SYMMETRIC-HSP",
+      "source_problem": "linear-code-equivalence-search",
+      "status": "interface-blocked",
+      "target_problem": "candidate-collective-observable-family",
+      "theorem_contract_id": "CONSTRUCTION-CODE-EQUIVALENCE-TO-NONABELIAN-HSP"
+    },
+    {
+      "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
+      "checks": [
+        {
+          "axis": "theorem-contract",
+          "burden": "Link the upstream literature edge to a validated exact theorem contract.",
+          "candidate_claim": "Must keep a legitimate graph-isomorphism/nonabelian-HSP reduction while explaining why structural CFI parity decoding does not apply or is not legal in the chosen input model.",
+          "passed": true,
+          "upstream_contract": "CONSTRUCTION-GI-TO-HIDDEN-INVOLUTION-HSP"
+        },
+        {
+          "axis": "upstream-edge",
+          "burden": "Resolve every theorem-edge gate issue before attempting candidate specialization.",
+          "candidate_claim": "The natural source problem reduces to the theorem target problem.",
+          "passed": true,
+          "upstream_contract": "accepted-reduction-edge"
+        },
+        {
+          "axis": "group-or-domain",
+          "burden": "Prove that the candidate mechanism acts on the exact target group/domain emitted by the reduction.",
+          "candidate_claim": "nonabelian-hsp, symmetric-hsp, graph-isomorphism",
+          "passed": true,
+          "upstream_contract": "The graph-isomorphism wreath-product/embedded symmetric-group construction."
+        },
+        {
+          "axis": "access-model",
+          "burden": "Keep the state/oracle preparation cost in the end-to-end resource bound.",
+          "candidate_claim": "coset-state-preparation",
+          "passed": true,
+          "upstream_contract": "coherent-hiding-function-evaluation, coset-state-preparation"
+        },
+        {
+          "axis": "full-family-coverage",
+          "burden": "Map every upstream promised instance into the candidate family; a hard-looking subfamily is insufficient.",
+          "candidate_claim": "CFI-like graph/coset families beyond complete, regular, degree-separated irregular, and bipartition-visible promised gadgets, where structural CFI parity decoders are either illegal under a natural input model or empirically fail under explicit reconstruction checks.",
+          "passed": false,
+          "upstream_contract": "All explicitly represented graph pairs, not only CFI, regular, or cospectral subfamilies."
+        },
+        {
+          "axis": "parameter-map",
+          "burden": "Attach a formal polynomial parameter, precision, query, copy, time, and memory map.",
+          "candidate_claim": "Reports CFI decoder status, WL dimension, tuple caps, tensor bond dimension, register count, sample complexity, and invariant overlap.",
+          "passed": false,
+          "upstream_contract": "The target permutation degree and oracle evaluation cost are polynomial in graph size."
+        },
+        {
+          "axis": "success-and-decoder",
+          "burden": "Prove target success composes with decoding to solve the exact natural source problem.",
+          "candidate_claim": "A row remains viable only if the CFI parity decoder fails or is illegal, classical graph invariants fail at scaling budgets, and a polynomial-description collective measurement has stable distinguishing advantage.",
+          "passed": false,
+          "upstream_contract": "Bounded-error recovery on the full encoded graph-isomorphism promise."
+        },
+        {
+          "axis": "uniform-instance-construction",
+          "burden": "Give a uniform instance map with no hidden family advice or uncharged preprocessing.",
+          "candidate_claim": "Public graph instances and coherent coset-state preparation, with the availability of any CFI gadget decomposition stated explicitly and granted to classical baselines whenever it is part of the construction.",
+          "passed": false,
+          "upstream_contract": "Uniformly constructed from the two input graphs with no graph-family advice."
+        },
+        {
+          "axis": "bad-register-robustness",
+          "burden": "Prove adversarial bad-register tolerance across state merging and full recursive decoding.",
+          "candidate_claim": "Rejects complete-CFI promised rows decoded by cfi_parity_solver.py, regular CFI rows decoded by cfi_structural_decoder.py, degree-separated irregular rows decoded by cfi_irregular_structural_decoder.py, bipartition-visible rows decoded by cfi_bipartite_structural_decoder.py, WL/spectral/walk separations, and observables equivalent to graphlet, individualized rooted tensor, or low-rank tensor contractions.",
+          "passed": true,
+          "upstream_contract": "not applicable"
+        }
+      ],
+      "counterexample_witnesses": [
+        "Coverage witness: the upstream theorem quantifies over All explicitly represented graph pairs, not only CFI, regular, or cospectral subfamilies., but the candidate states only: CFI-like graph/coset families beyond complete, regular, degree-separated irregular, and bipartition-visible promised gadgets, where structural CFI parity decoders are either illegal under a natural input model or empirically fail under explicit reconstruction checks.",
+        "Parameter witness: no attached proof maps the theorem parameters to candidate costs and precision.",
+        "Decoder witness: empirical decoding prose is not a composable success theorem."
+      ],
+      "id": "AUDIT-ROUTE-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-GRAPH-ISOMORPHISM-VIA-SYMMETRIC-HSP",
+      "proof_debt_score": 50,
+      "route_id": "ROUTE-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-GRAPH-ISOMORPHISM-VIA-SYMMETRIC-HSP",
+      "source_problem": "graph-isomorphism-search",
+      "status": "interface-blocked",
+      "target_problem": "candidate-collective-observable-family",
+      "theorem_contract_id": "CONSTRUCTION-GI-TO-HIDDEN-INVOLUTION-HSP"
+    },
+    {
+      "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
+      "checks": [
+        {
+          "axis": "theorem-contract",
+          "burden": "Link the upstream literature edge to a validated exact theorem contract.",
+          "candidate_claim": "Reduction path must remain inside symmetric/nonabelian HSP or code-equivalence hardness while explicitly bypassing strong Fourier sampling no-go results.",
+          "passed": true,
+          "upstream_contract": "CONSTRUCTION-CODE-EQUIVALENCE-TO-NONABELIAN-HSP"
+        },
+        {
+          "axis": "upstream-edge",
+          "burden": "Resolve every theorem-edge gate issue before attempting candidate specialization.",
+          "candidate_claim": "The natural source problem reduces to the theorem target problem.",
+          "passed": true,
+          "upstream_contract": "accepted-reduction-edge"
+        },
+        {
+          "axis": "group-or-domain",
+          "burden": "Prove that the candidate mechanism acts on the exact target group/domain emitted by the reduction.",
+          "candidate_claim": "nonabelian-hsp, symmetric-hsp, graph-isomorphism, code-equivalence",
+          "passed": true,
+          "upstream_contract": "The row-operation and coordinate-permutation group action, converted to its standard hidden-subgroup form."
+        },
+        {
+          "axis": "access-model",
+          "burden": "Keep the state/oracle preparation cost in the end-to-end resource bound.",
+          "candidate_claim": "coset-state-preparation",
+          "passed": true,
+          "upstream_contract": "coherent-hiding-function-evaluation, coset-state-preparation"
+        },
+        {
+          "axis": "full-family-coverage",
+          "burden": "Map every upstream promised instance into the candidate family; a hard-looking subfamily is insufficient.",
+          "candidate_claim": "Scalable hidden-permutation families including CFI-style graph pairs and code-equivalence instances that survive low-dimensional WL, spectra, walk counts, and canonicalization baselines before any quantum signal is considered.",
+          "passed": false,
+          "upstream_contract": "The stated search code-equivalence problem, not only a selected algebraic code family."
+        },
+        {
+          "axis": "parameter-map",
+          "burden": "Attach a formal polynomial parameter, precision, query, copy, time, and memory map.",
+          "candidate_claim": "Reports WL dimension reached, tuple caps, tensor bond dimension, register count, sample complexity, and classical invariant overlap as size grows.",
+          "passed": false,
+          "upstream_contract": "Group representation and oracle evaluation are polynomial in n, k, and log q."
+        },
+        {
+          "axis": "success-and-decoder",
+          "burden": "Prove target success composes with decoding to solve the exact natural source problem.",
+          "candidate_claim": "A candidate survives only if a scalable family remains hard for classical invariants while a polynomial-register collective observable has inverse-polynomial distinguishing advantage.",
+          "passed": false,
+          "upstream_contract": "Bounded-error recovery on every promised equivalent code pair in the claimed scope."
+        },
+        {
+          "axis": "uniform-instance-construction",
+          "burden": "Give a uniform instance map with no hidden family advice or uncharged preprocessing.",
+          "candidate_claim": "Coherent preparation of coset states for hidden permutations, with classical descriptions of graph/code families available to all classical baselines.",
+          "passed": false,
+          "upstream_contract": "Uniform construction from M and M'; no private code-family advice."
+        },
+        {
+          "axis": "bad-register-robustness",
+          "burden": "Prove adversarial bad-register tolerance across state merging and full recursive decoding.",
+          "candidate_claim": "Strong Fourier sampling alone is treated as blocked; any observable reducible to WL, spectrum, support splitting, or low-rank classical tensor contraction is rejected.",
+          "passed": true,
+          "upstream_contract": "not applicable"
+        }
+      ],
+      "counterexample_witnesses": [
+        "Coverage witness: the upstream theorem quantifies over The stated search code-equivalence problem, not only a selected algebraic code family., but the candidate states only: Scalable hidden-permutation families including CFI-style graph pairs and code-equivalence instances that survive low-dimensional WL, spectra, walk counts, and canonicalization baselines before any quantum signal is considered.",
+        "Parameter witness: no attached proof maps the theorem parameters to candidate costs and precision.",
+        "Decoder witness: empirical decoding prose is not a composable success theorem."
+      ],
+      "id": "AUDIT-ROUTE-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-CODE-EQUIVALENCE-VIA-SYMMETRIC-HSP",
+      "proof_debt_score": 50,
+      "route_id": "ROUTE-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-CODE-EQUIVALENCE-VIA-SYMMETRIC-HSP",
+      "source_problem": "linear-code-equivalence-search",
+      "status": "interface-blocked",
+      "target_problem": "candidate-collective-observable-family",
+      "theorem_contract_id": "CONSTRUCTION-CODE-EQUIVALENCE-TO-NONABELIAN-HSP"
+    },
+    {
+      "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
+      "checks": [
+        {
+          "axis": "theorem-contract",
+          "burden": "Link the upstream literature edge to a validated exact theorem contract.",
+          "candidate_claim": "Reduction path must remain inside symmetric/nonabelian HSP or code-equivalence hardness while explicitly bypassing strong Fourier sampling no-go results.",
+          "passed": true,
+          "upstream_contract": "CONSTRUCTION-GI-TO-HIDDEN-INVOLUTION-HSP"
+        },
+        {
+          "axis": "upstream-edge",
+          "burden": "Resolve every theorem-edge gate issue before attempting candidate specialization.",
+          "candidate_claim": "The natural source problem reduces to the theorem target problem.",
+          "passed": true,
+          "upstream_contract": "accepted-reduction-edge"
+        },
+        {
+          "axis": "group-or-domain",
+          "burden": "Prove that the candidate mechanism acts on the exact target group/domain emitted by the reduction.",
+          "candidate_claim": "nonabelian-hsp, symmetric-hsp, graph-isomorphism, code-equivalence",
+          "passed": true,
+          "upstream_contract": "The graph-isomorphism wreath-product/embedded symmetric-group construction."
+        },
+        {
+          "axis": "access-model",
+          "burden": "Keep the state/oracle preparation cost in the end-to-end resource bound.",
+          "candidate_claim": "coset-state-preparation",
+          "passed": true,
+          "upstream_contract": "coherent-hiding-function-evaluation, coset-state-preparation"
+        },
+        {
+          "axis": "full-family-coverage",
+          "burden": "Map every upstream promised instance into the candidate family; a hard-looking subfamily is insufficient.",
+          "candidate_claim": "Scalable hidden-permutation families including CFI-style graph pairs and code-equivalence instances that survive low-dimensional WL, spectra, walk counts, and canonicalization baselines before any quantum signal is considered.",
+          "passed": false,
+          "upstream_contract": "All explicitly represented graph pairs, not only CFI, regular, or cospectral subfamilies."
+        },
+        {
+          "axis": "parameter-map",
+          "burden": "Attach a formal polynomial parameter, precision, query, copy, time, and memory map.",
+          "candidate_claim": "Reports WL dimension reached, tuple caps, tensor bond dimension, register count, sample complexity, and classical invariant overlap as size grows.",
+          "passed": false,
+          "upstream_contract": "The target permutation degree and oracle evaluation cost are polynomial in graph size."
+        },
+        {
+          "axis": "success-and-decoder",
+          "burden": "Prove target success composes with decoding to solve the exact natural source problem.",
+          "candidate_claim": "A candidate survives only if a scalable family remains hard for classical invariants while a polynomial-register collective observable has inverse-polynomial distinguishing advantage.",
+          "passed": false,
+          "upstream_contract": "Bounded-error recovery on the full encoded graph-isomorphism promise."
+        },
+        {
+          "axis": "uniform-instance-construction",
+          "burden": "Give a uniform instance map with no hidden family advice or uncharged preprocessing.",
+          "candidate_claim": "Coherent preparation of coset states for hidden permutations, with classical descriptions of graph/code families available to all classical baselines.",
+          "passed": false,
+          "upstream_contract": "Uniformly constructed from the two input graphs with no graph-family advice."
+        },
+        {
+          "axis": "bad-register-robustness",
+          "burden": "Prove adversarial bad-register tolerance across state merging and full recursive decoding.",
+          "candidate_claim": "Strong Fourier sampling alone is treated as blocked; any observable reducible to WL, spectrum, support splitting, or low-rank classical tensor contraction is rejected.",
+          "passed": true,
+          "upstream_contract": "not applicable"
+        }
+      ],
+      "counterexample_witnesses": [
+        "Coverage witness: the upstream theorem quantifies over All explicitly represented graph pairs, not only CFI, regular, or cospectral subfamilies., but the candidate states only: Scalable hidden-permutation families including CFI-style graph pairs and code-equivalence instances that survive low-dimensional WL, spectra, walk counts, and canonicalization baselines before any quantum signal is considered.",
+        "Parameter witness: no attached proof maps the theorem parameters to candidate costs and precision.",
+        "Decoder witness: empirical decoding prose is not a composable success theorem."
+      ],
+      "id": "AUDIT-ROUTE-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-GRAPH-ISOMORPHISM-VIA-SYMMETRIC-HSP",
+      "proof_debt_score": 50,
+      "route_id": "ROUTE-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-GRAPH-ISOMORPHISM-VIA-SYMMETRIC-HSP",
+      "source_problem": "graph-isomorphism-search",
+      "status": "interface-blocked",
+      "target_problem": "candidate-collective-observable-family",
+      "theorem_contract_id": "CONSTRUCTION-GI-TO-HIDDEN-INVOLUTION-HSP"
+    },
+    {
+      "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
+      "checks": [
+        {
+          "axis": "theorem-contract",
+          "burden": "Link the upstream literature edge to a validated exact theorem contract.",
+          "candidate_claim": "Reduction path must remain inside symmetric/nonabelian HSP or code-equivalence hardness while explicitly bypassing strong Fourier sampling no-go results.",
+          "passed": true,
+          "upstream_contract": "CONSTRUCTION-CODE-EQUIVALENCE-TO-NONABELIAN-HSP"
+        },
+        {
+          "axis": "upstream-edge",
+          "burden": "Resolve every theorem-edge gate issue before attempting candidate specialization.",
+          "candidate_claim": "The natural source problem reduces to the theorem target problem.",
+          "passed": true,
+          "upstream_contract": "accepted-reduction-edge"
+        },
+        {
+          "axis": "group-or-domain",
+          "burden": "Prove that the candidate mechanism acts on the exact target group/domain emitted by the reduction.",
+          "candidate_claim": "nonabelian-hsp, symmetric-hsp, graph-isomorphism, code-equivalence",
+          "passed": true,
+          "upstream_contract": "The row-operation and coordinate-permutation group action, converted to its standard hidden-subgroup form."
+        },
+        {
+          "axis": "access-model",
+          "burden": "Keep the state/oracle preparation cost in the end-to-end resource bound.",
+          "candidate_claim": "coset-state-preparation",
+          "passed": true,
+          "upstream_contract": "coherent-hiding-function-evaluation, coset-state-preparation"
+        },
+        {
+          "axis": "full-family-coverage",
+          "burden": "Map every upstream promised instance into the candidate family; a hard-looking subfamily is insufficient.",
+          "candidate_claim": "Scalable hidden-permutation families including CFI-style graph pairs and code-equivalence instances that survive low-dimensional WL, spectra, walk counts, and canonicalization baselines before any quantum signal is considered.",
+          "passed": false,
+          "upstream_contract": "The stated search code-equivalence problem, not only a selected algebraic code family."
+        },
+        {
+          "axis": "parameter-map",
+          "burden": "Attach a formal polynomial parameter, precision, query, copy, time, and memory map.",
+          "candidate_claim": "Reports WL dimension reached, tuple caps, tensor bond dimension, register count, sample complexity, and classical invariant overlap as size grows.",
+          "passed": false,
+          "upstream_contract": "Group representation and oracle evaluation are polynomial in n, k, and log q."
+        },
+        {
+          "axis": "success-and-decoder",
+          "burden": "Prove target success composes with decoding to solve the exact natural source problem.",
+          "candidate_claim": "A candidate survives only if a scalable family remains hard for classical invariants while a polynomial-register collective observable has inverse-polynomial distinguishing advantage.",
+          "passed": false,
+          "upstream_contract": "Bounded-error recovery on every promised equivalent code pair in the claimed scope."
+        },
+        {
+          "axis": "uniform-instance-construction",
+          "burden": "Give a uniform instance map with no hidden family advice or uncharged preprocessing.",
+          "candidate_claim": "Coherent preparation of coset states for hidden permutations, with classical descriptions of graph/code families available to all classical baselines.",
+          "passed": false,
+          "upstream_contract": "Uniform construction from M and M'; no private code-family advice."
+        },
+        {
+          "axis": "bad-register-robustness",
+          "burden": "Prove adversarial bad-register tolerance across state merging and full recursive decoding.",
+          "candidate_claim": "Strong Fourier sampling alone is treated as blocked; any observable reducible to WL, spectrum, support splitting, or low-rank classical tensor contraction is rejected.",
+          "passed": true,
+          "upstream_contract": "not applicable"
+        }
+      ],
+      "counterexample_witnesses": [
+        "Coverage witness: the upstream theorem quantifies over The stated search code-equivalence problem, not only a selected algebraic code family., but the candidate states only: Scalable hidden-permutation families including CFI-style graph pairs and code-equivalence instances that survive low-dimensional WL, spectra, walk counts, and canonicalization baselines before any quantum signal is considered.",
+        "Parameter witness: no attached proof maps the theorem parameters to candidate costs and precision.",
+        "Decoder witness: empirical decoding prose is not a composable success theorem."
+      ],
+      "id": "AUDIT-ROUTE-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-CODE-EQUIVALENCE-VIA-SYMMETRIC-HSP",
+      "proof_debt_score": 50,
+      "route_id": "ROUTE-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-CODE-EQUIVALENCE-VIA-SYMMETRIC-HSP",
+      "source_problem": "linear-code-equivalence-search",
+      "status": "interface-blocked",
+      "target_problem": "candidate-collective-observable-family",
+      "theorem_contract_id": "CONSTRUCTION-CODE-EQUIVALENCE-TO-NONABELIAN-HSP"
+    },
+    {
+      "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
+      "checks": [
+        {
+          "axis": "theorem-contract",
+          "burden": "Link the upstream literature edge to a validated exact theorem contract.",
+          "candidate_claim": "Reduction path must remain inside symmetric/nonabelian HSP or code-equivalence hardness while explicitly bypassing strong Fourier sampling no-go results.",
+          "passed": true,
+          "upstream_contract": "CONSTRUCTION-GI-TO-HIDDEN-INVOLUTION-HSP"
+        },
+        {
+          "axis": "upstream-edge",
+          "burden": "Resolve every theorem-edge gate issue before attempting candidate specialization.",
+          "candidate_claim": "The natural source problem reduces to the theorem target problem.",
+          "passed": true,
+          "upstream_contract": "accepted-reduction-edge"
+        },
+        {
+          "axis": "group-or-domain",
+          "burden": "Prove that the candidate mechanism acts on the exact target group/domain emitted by the reduction.",
+          "candidate_claim": "nonabelian-hsp, symmetric-hsp, graph-isomorphism, code-equivalence",
+          "passed": true,
+          "upstream_contract": "The graph-isomorphism wreath-product/embedded symmetric-group construction."
+        },
+        {
+          "axis": "access-model",
+          "burden": "Keep the state/oracle preparation cost in the end-to-end resource bound.",
+          "candidate_claim": "coset-state-preparation",
+          "passed": true,
+          "upstream_contract": "coherent-hiding-function-evaluation, coset-state-preparation"
+        },
+        {
+          "axis": "full-family-coverage",
+          "burden": "Map every upstream promised instance into the candidate family; a hard-looking subfamily is insufficient.",
+          "candidate_claim": "Scalable hidden-permutation families including CFI-style graph pairs and code-equivalence instances that survive low-dimensional WL, spectra, walk counts, and canonicalization baselines before any quantum signal is considered.",
+          "passed": false,
+          "upstream_contract": "All explicitly represented graph pairs, not only CFI, regular, or cospectral subfamilies."
+        },
+        {
+          "axis": "parameter-map",
+          "burden": "Attach a formal polynomial parameter, precision, query, copy, time, and memory map.",
+          "candidate_claim": "Reports WL dimension reached, tuple caps, tensor bond dimension, register count, sample complexity, and classical invariant overlap as size grows.",
+          "passed": false,
+          "upstream_contract": "The target permutation degree and oracle evaluation cost are polynomial in graph size."
+        },
+        {
+          "axis": "success-and-decoder",
+          "burden": "Prove target success composes with decoding to solve the exact natural source problem.",
+          "candidate_claim": "A candidate survives only if a scalable family remains hard for classical invariants while a polynomial-register collective observable has inverse-polynomial distinguishing advantage.",
+          "passed": false,
+          "upstream_contract": "Bounded-error recovery on the full encoded graph-isomorphism promise."
+        },
+        {
+          "axis": "uniform-instance-construction",
+          "burden": "Give a uniform instance map with no hidden family advice or uncharged preprocessing.",
+          "candidate_claim": "Coherent preparation of coset states for hidden permutations, with classical descriptions of graph/code families available to all classical baselines.",
+          "passed": false,
+          "upstream_contract": "Uniformly constructed from the two input graphs with no graph-family advice."
+        },
+        {
+          "axis": "bad-register-robustness",
+          "burden": "Prove adversarial bad-register tolerance across state merging and full recursive decoding.",
+          "candidate_claim": "Strong Fourier sampling alone is treated as blocked; any observable reducible to WL, spectrum, support splitting, or low-rank classical tensor contraction is rejected.",
+          "passed": true,
+          "upstream_contract": "not applicable"
+        }
+      ],
+      "counterexample_witnesses": [
+        "Coverage witness: the upstream theorem quantifies over All explicitly represented graph pairs, not only CFI, regular, or cospectral subfamilies., but the candidate states only: Scalable hidden-permutation families including CFI-style graph pairs and code-equivalence instances that survive low-dimensional WL, spectra, walk counts, and canonicalization baselines before any quantum signal is considered.",
+        "Parameter witness: no attached proof maps the theorem parameters to candidate costs and precision.",
+        "Decoder witness: empirical decoding prose is not a composable success theorem."
+      ],
+      "id": "AUDIT-ROUTE-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-GRAPH-ISOMORPHISM-VIA-SYMMETRIC-HSP",
+      "proof_debt_score": 50,
+      "route_id": "ROUTE-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-GRAPH-ISOMORPHISM-VIA-SYMMETRIC-HSP",
+      "source_problem": "graph-isomorphism-search",
+      "status": "interface-blocked",
+      "target_problem": "candidate-collective-observable-family",
+      "theorem_contract_id": "CONSTRUCTION-GI-TO-HIDDEN-INVOLUTION-HSP"
+    }
+  ],
+  "blocked_interface_count": 11,
+  "candidate_count": 8,
+  "certified_interface_count": 0,
+  "created_at": "2026-07-14T18:47:33.231622+00:00",
+  "family_coverage_mismatch_count": 11,
+  "kind": "reduction-theorem-contract-interface-audit",
+  "route_audit_count": 11,
+  "status": "candidate-interfaces-blocked",
+  "summary": "Audited 11 route interface(s) against 3 exact theorem contract(s): 11 blocked, 0 access mismatch(es), and 11 family-coverage mismatch(es).",
+  "theorem_contract_count": 3
+}
