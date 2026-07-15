@@ -1,0 +1,425 @@
+%!TEX root = ./ft-hd.tex 
+\documentclass[11pt]{article}
+\usepackage{fullpage}
+\usepackage{times}
+%\usepackage[small, compact]{titlesec}
+\usepackage{subfigure}
+\usepackage{color}
+\usepackage{url}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{mathtools}
+\textheight 9.05in 
+\textwidth 6.7in 
+
+\usepackage{tikz}
+\usetikzlibrary{positioning, calc, chains}
+
+% Complex \xxx for making notes of things to do.  Use \xxx{...} for general
+% notes, and \xxx[who]{...} if you want to blame someone in particular.
+% Puts text in brackets and in bold font, and normally adds a marginpar
+% with the text ``xxx'' so that it is easy to find.  On the other hand, if
+% the comment is in a minipage, figure, or caption, the xxx goes in the text,
+% because marginpars are not possible in these situations.
+{\makeatletter
+ \gdef\xxxmark{%
+   \expandafter\ifx\csname @mpargs\endcsname\relax % in minipage?
+     \expandafter\ifx\csname @captype\endcsname\relax % in figure/caption?
+       \marginpar{xxx}% not in a caption or minipage, can use marginpar
+     \else
+       xxx % notice trailing space
+     \fi
+   \else
+     xxx % notice trailing space
+   \fi}
+ \gdef\xxx{\@ifnextchar[\xxx@lab\xxx@nolab}
+ \long\gdef\xxx@lab[#1]#2{{\bf [\xxxmark #2 ---{\sc #1}]}}
+ \long\gdef\xxx@nolab#1{{\bf [\xxxmark #1]}}
+ % This turns them off:
+%\long\gdef\xxx@lab[#1]#2{}\long\gdef\xxx@nolab#1{}%
+}
+
+
+\newcommand{\head}[2]{#1_{[#2]}}
+\newcommand{\tail}[2]{#1_{\overline{[#2]}}}
+\newcommand{\abs}[1]{|#1|}
+\newcommand{\ceil}[1]{\lceil#1\rceil}
+\newcommand{\floor}[1]{\lfloor#1\rfloor}
+\newcommand{\inner}[1]{\langle#1\rangle}
+\newcommand{\tnorm}[2]{\left \lVert#2\right \rVert_{#1}}
+\newcommand{\norm}[2]{\lVert#2\rVert_{#1}}
+\newcommand{\range}[3]{#1_{\overline{[#2]}\cap[#3]}}
+%\newcommand{\I}{\mathrm{I}}
+\newcommand{\gaplinf}{\mathsf{Gap}\ell_{\infty}}
+\newcommand{\gaplinfL}{\mathsf{LooseGap}\ell_{\infty}}
+\newcommand{\multiLinf}{\mathsf{Multi}\ell_{\infty}}
+\newcommand{\indlinf}{\mathsf{Ind}\ell_{\infty}}
+\newcommand{\indlinfL}{\mathsf{LooseInd}\ell_{\infty}}
+\newcommand{\IC}{\mathrm{IC}}
+\newcommand{\wh}{\widehat}
+\newcommand{\twidt}[1]{\tilde{#1}^{(t)}}
+\newcommand{\twid}[1]{\tilde{#1}}
+\newcommand{\ostar}{O^*}
+\newcommand{\cc}{\mathcal{C}}
+
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator*{\median}{median}
+\DeclareMathOperator*{\mean}{mean}
+%\DeclareMathOperator*{\E}{\mathbb{E}}
+%\DeclareMathOperator*{\Q}{Quant}
+\newcommand{\Q}[1]{\operatorname*{quant^{\mathnormal{#1}}}}
+\def\R{\mathbb{R}}
+\def\Z{\mathbb{Z}}
+\def\C{\mathbb{C}}
+\def\F{\mathcal{F}}
+\def\B{\mathbb{B}}
+\def\eps{\epsilon}
+
+
+
+\newcommand{\etal}{{\em et al.}}
+%\newcommand{\qed}{\mbox{}\hspace*{\fill}\nolinebreak\mbox{$\rule{0.6em}{0.6em}$}}
+\newcommand{\expect}{{\bf \mbox{\bf E}}}
+\newcommand{\prob}{{\bf \mbox{\bf Pr}}}
+\newcommand{\opt}{{\rm OPT}}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\newcommand{\e}{{\epsilon}}
+\newcommand{\A}{{\mathcal{A}}}
+\newcommand{\E}{{\mathcal{E}}}
+
+\newcommand{\comment}[1]{{\color{gray}[\textsf{#1}]}}
+\newcommand{\grainofsalt}[1]{{\color{gray}[\textsf{#1}]}}
+\newcommand{\redospace}{\small\renewcommand{\baselinestretch}{1.5}\normalsize}
+\newcommand{\undospace}{\small\renewcommand{\baselinestretch}{1}\normalsize}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{fact}[theorem]{Fact}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{proposition}[theorem]{Proposition}
+%\newenvironment{proof}{{\bf Proof:}}{$\qed$\par}
+%\newenvironment{proofnoqed}{{\bf Proof:}}{}
+\newenvironment{proofof}[1]{\noindent{\bf Proof of #1:}}{$\qed$\par}
+%\newenvironment{proofsketch}{{\sc{Proof Outline:}}}{$\qed$\par}
+\usepackage{hyperref}
+\hypersetup{
+bookmarksnumbered
+}
+
+
+\newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
+\newcommand{\I}{\mathcal{I}}
+
+\renewcommand{\b}{{\mbox {\bf b}}}
+\newcommand{\barb}{{\mbox {\bf \bar{b}}}}
+\newcommand{\coll}{{\mathcal R}}
+\newcommand{\colltwo}{{\mathcal T}}
+\newcommand{\collpart}{{\mathcal S}}
+\newcommand{\edgesets}{\mathcal X}
+
+\newcommand{\sinc}{\text{sinc}}
+\DeclareMathOperator{\err}{Err}
+\newcommand{\poly}{\text{poly}}
+\newcommand{\SNR}{\text{SNR~}}
+%\renewcommand{\E}{{\mathcal{E}}}
+\newcommand{\SCALE}{\text{SCALE}}
+\renewcommand{\top}{\text{top}}
+
+\newcommand{\Ev}{\mathcal{E}}
+\newcommand{\one}{\mathbf{1}}
+\newcommand{\csl}{(n/B)^{1/d}}
+\newcommand{\U}{\mathcal{U}}
+\newcommand{\fc}{F}
+%\newcommand{\gl}{GL(d, \Z_n)}
+\newcommand{\gl}{\mathcal{M}_{d\times d}}
+\newcommand{\rect}{\text{rect}}
+\newcommand{\spc}{12}%sparsity of z is |S|/\log^\spc n
+\newcommand{\gapc}{4}%gap
+
+\renewcommand{\H}{\mathcal{W}}
+\newcommand{\h}{\mathbf{w}}
+
+\newcommand{\zero}{\mathbf{0}}
+
+\newcommand{\defsk}{Let $S\subseteq \nsq, |S|\leq 2k$, be such that $||x_{\nsq\setminus S}||_\infty\leq \mu$. Suppose that $||x||_\infty/\mu\leq N^{O(1)}$.~Let $B\geq \GT\cdot k/\alpha^d$.~}
+%\newcommand{\defskmin}{Let $S\subseteq \nsq, |S|\leq 2k$. ~Let $B\geq \GT\cdot k/\alpha^d$.~}
+
+
+\newcommand{\f}{\mathbf{f}}
+\newcommand{\quant}{\text{quant}}
+\newcommand{\GS}{(2\pi)^{d\cdot \fc}}
+\newcommand{\GSS}{(2\pi)^{2d\cdot \fc}}
+\newcommand{\GT}{(2\pi)^{4d\cdot \fc}}
+\newcommand{\GI}{(2\pi)^{-d\cdot \fc}}
+\begin{document}
+
+\begin{titlepage}
+\title{Sparse Fourier Transform in Any Constant Dimension with Nearly-Optimal Sample Complexity in Sublinear Time}
+\author{Michael Kapralov\\EPFL}
+
+\maketitle
+
+\begin{abstract}
+We consider the problem of computing a $k$-sparse approximation to the Fourier transform of a length $N$ signal. Our main result is a randomized algorithm for computing such an approximation (i.e. achieving the $\ell_2/\ell_2$ sparse recovery guarantees using Fourier measurements) using $O_d(k\log N\log\log N)$ samples of the signal in time domain that runs in time $O_d(k\log^{d+3} N)$, where $d\geq 1$ is the dimensionality of the Fourier transform. The sample complexity matches the lower bound of $\Omega(k\log (N/k))$ for non-adaptive algorithms due to~\cite{DIPW} for any $k\leq N^{1-\delta}$ for a constant $\delta>0$ up to an $O(\log\log N)$ factor. Prior to our work a result with comparable sample complexity $k\log N \log^{O(1)}\log N$ and sublinear runtime was known for the Fourier transform on the line~\cite{IKP}, but for any dimension $d\geq 2$ previously known techniques either suffered from a $\poly(\log N)$ factor loss in sample complexity or required $\Omega(N)$ runtime.
+\end{abstract}
+\thispagestyle{empty}
+\end{titlepage}
+
+\tableofcontents
+
+\newpage
+
+
+\newcommand{\nsq}{{[n]^d}}
+
+
+\input{intro.tex}
+\input{preliminaries.tex}
+\input{algo.tex}
+
+
+\begin{algorithm}
+
+\caption{\textsc{ReduceL1Norm}$\left(\wh{x}, \chi, k, \chi^{(t)}, k, \{m(\wh{x}, H_r, a\star (\one, \h))\}_{r=1, a\in \A_r, \h\in \H}^{r_{max}}, \nu, \mu\right)$}\label{alg:l1-norm-reduction} 
+\begin{algorithmic}[1] 
+\Procedure{ReduceL1Norm}{\mbox{$\wh{x}, \chi, k, \chi^{(t)}, k, \{m(\wh{x}, H_r, a\star (\one, \h))\}_{r=1, a\in \A_r, \h\in \H}^{r_{max}}, \nu, \mu$}}
+\State $\chi^{(0)} \gets 0$ \Comment{in $\C^n$}
+\State $B\gets  \GT\cdot k/\alpha^d$
+\For{$t=0$ to $\log_2 (\log^4 N)$} 
+\For {$r=1$ to $r_{max}$}
+\State $L_r \gets \textsc{LocateSignal}\left(\chi+\chi^{(t)}, k, \{m(\wh{x}, H_r, a\star (\one, \h))\}_{r=1, a\in \A_r, \h\in \H}^{r_{max}}\right)$ 
+\EndFor
+\State $L\gets \bigcup_{r=1}^{r_{max}} L_r$
+%\State Choose $\Sigma_q^{est}, b_q^{est}, a_q^{est}$ uniformly at random, $\Sigma_q^{est}$ invertible, for $q=1,\ldots, q_{max}=\Theta(\log\log n)$ 
+\State $\chi' \gets \Call{EstimateValues}{\wh{x},  \chi+\chi^{(t)}, L, 4k, 1, \frac1{1000} \nu 2^{-t}+4\mu, C(\log\log N+d^2+\log (B/k))}$
+\State $\chi^{(t+1)} \gets \chi^{(t)} + \chi'$
+\EndFor
+\State \textbf{return} $\chi+\chi^{(T)}$
+\EndProcedure 
+\end{algorithmic}
+\end{algorithm}
+
+
+
+
+
+
+
+
+
+\input{l1-part1.tex}
+\input{l1.tex}
+\input{combo.tex}
+\input{linf.tex}
+\input{constsnr.tex}
+\input{utilities.tex}
+\input{semiequi.tex}
+
+\section{Acknowledgements}
+The author would like to thank Piotr Indyk for many useful discussions at various stages of this work.
+
+
+%\bibliographystyle{alpha}
+%\bibliography{paper}
+
+\newcommand{\etalchar}[1]{$^{#1}$}
+\begin{thebibliography}{HIKP12b}
+
+\bibitem[AGS03]{AGS}
+A.~Akavia, S.~Goldwasser, and S.~Safra.
+\newblock Proving hard-core predicates using list decoding.
+\newblock {\em FOCS}, 44:146--159, 2003.
+
+\bibitem[Aka10]{Ak}
+A.~Akavia.
+\newblock Deterministic sparse {F}ourier approximation via fooling arithmetic
+  progressions.
+\newblock {\em COLT}, pages 381--393, 2010.
+
+\bibitem[BCG{\etalchar{+}}12]{BCGLS}
+P.~Boufounos, V.~Cevher, A.~C. Gilbert, Y.~Li, and M.~J. Strauss.
+\newblock What's the frequency, {K}enneth?: Sublinear {F}ourier sampling off
+  the grid.
+\newblock {\em RANDOM/APPROX}, 2012.
+
+\bibitem[Bou14]{Bourgain2014}
+J.~Bourgain.
+\newblock An improved estimate in the restricted isometry problem.
+\newblock {\em GAFA}, 2014.
+
+\bibitem[CCFC02]{CCF}
+M.~Charikar, K.~Chen, and M.~Farach-Colton.
+\newblock Finding frequent items in data streams.
+\newblock {\em ICALP}, 2002.
+
+\bibitem[CGV12]{CGV}
+M.~Cheraghchi, V.~Guruswami, and A.~Velingker.
+\newblock Restricted isometry of {F}ourier matrices and list decodability of
+  random linear codes.
+\newblock {\em SODA}, 2012.
+
+\bibitem[Cip00]{citeulike:6838680}
+B.~A. Cipra.
+\newblock {The Best of the 20th Century: Editors Name Top 10 Algorithms}.
+\newblock {\em SIAM News}, 33, 2000.
+
+\bibitem[CP10]{CP}
+E.~Candes and Y.~Plan.
+\newblock A probabilistic and ripless theory of compressed sensing.
+\newblock {\em IEEE Transactions on Information Theory}, 2010.
+
+\bibitem[CT06]{CTao}
+E.~Candes and T.~Tao.
+\newblock Near optimal signal recovery from random projections: Universal
+  encoding strategies.
+\newblock {\em IEEE Trans. on Info.Theory}, 2006.
+
+\bibitem[DIPW10]{DIPW}
+K.~{Do Ba}, P.~Indyk, E.~Price, and D.~Woodruff.
+\newblock {Lower Bounds for Sparse Recovery}.
+\newblock {\em SODA}, 2010.
+
+\bibitem[Don06]{Don}
+D.~Donoho.
+\newblock Compressed sensing.
+\newblock {\em IEEE Transactions on Information Theory}, 52(4):1289--1306,
+  2006.
+
+\bibitem[DR93]{DR93}
+A.~Dutt and V.~Rokhlin.
+\newblock Fast fourier transforms for nonequispaced data.
+\newblock {\em SIAM J. Sci. Comput.}, 14(6):1368--1393, November 1993.
+
+\bibitem[GGI{\etalchar{+}}02]{GGIMS}
+A.~Gilbert, S.~Guha, P.~Indyk, M.~Muthukrishnan, and M.~Strauss.
+\newblock Near-optimal sparse {F}ourier representations via sampling.
+\newblock {\em STOC}, 2002.
+
+\bibitem[GHI{\etalchar{+}}13]{GHIKPS}
+B.~Ghazi, H.~Hassanieh, P.~Indyk, D.~Katabi, E.~Price, and L.~Shi.
+\newblock Sample-optimal average-case sparse {F}ourier transform in two
+  dimensions.
+\newblock {\em Allerton}, 2013.
+
+\bibitem[GL89]{GL}
+O.~Goldreich and L.~Levin.
+\newblock A hard-corepredicate for allone-way functions.
+\newblock {\em STOC}, pages 25--32, 1989.
+
+\bibitem[GLPS10]{GLPS}
+A.~C. Gilbert, Y.~Li, E.~Porat, and M.~J. Strauss.
+\newblock Approximate sparse recovery: optimizing time and measurements.
+\newblock In {\em STOC}, pages 475--484, 2010.
+
+\bibitem[GMS05]{GMS}
+A.~Gilbert, M.~Muthukrishnan, and M.~Strauss.
+\newblock Improved time bounds for near-optimal space {F}ourier
+  representations.
+\newblock {\em SPIE Conference, Wavelets}, 2005.
+
+\bibitem[HAKI12]{HAKI}
+H.~Hassanieh, F.~Adib, D.~Katabi, and P.~Indyk.
+\newblock Faster {GPS} via the {S}parse {F}ourier {T}ransform.
+\newblock {\em MOBICOM}, 2012.
+
+\bibitem[HIKP12a]{HIKP2}
+H.~Hassanieh, P.~Indyk, D.~Katabi, and E.~Price.
+\newblock Near-optimal algorithm for sparse {F}ourier transform.
+\newblock {\em STOC}, 2012.
+
+\bibitem[HIKP12b]{HIKP}
+H.~Hassanieh, P.~Indyk, D.~Katabi, and E.~Price.
+\newblock Simple and practical algorithm for sparse {F}ourier transform.
+\newblock {\em SODA}, 2012.
+
+\bibitem[HKPV13]{heidersparse}
+S.~Heider, S.~Kunis, D.~Potts, and M.~Veit.
+\newblock A sparse {P}rony {FFT}.
+\newblock {\em SAMPTA}, 2013.
+
+\bibitem[HR16]{HR16}
+I.~Haviv and O.~Regev.
+\newblock The restricted isometry property of subsampled fourier matrices.
+\newblock {\em SODA}, 2016.
+
+\bibitem[IK14]{IK14a}
+P.~Indyk and M.~Kapralov.
+\newblock Sample-optimal {F}ourier sampling in any fixed dimension.
+\newblock {\em FOCS}, 2014.
+
+\bibitem[IKP14]{IKP}
+P.~Indyk, M.~Kapralov, and E.~Price.
+\newblock ({N}early) sample-optimal sparse {F}ourier transform.
+\newblock {\em SODA}, 2014.
+
+\bibitem[Iwe10]{Iw}
+M.~A. Iwen.
+\newblock Combinatorial sublinear-time {F}ourier algorithms.
+\newblock {\em Foundations of Computational Mathematics}, 10:303--338, 2010.
+
+\bibitem[Iwe12]{Iw-arxiv}
+M.A. Iwen.
+\newblock Improved approximation guarantees for sublinear-time {F}ourier
+  algorithms.
+\newblock {\em Applied And Computational Harmonic Analysis}, 2012.
+
+\bibitem[KM91]{KM}
+E.~Kushilevitz and Y.~Mansour.
+\newblock Learning decision trees using the {F}ourier spectrum.
+\newblock {\em STOC}, 1991.
+
+\bibitem[LDSP08]{MRICS}
+M.~Lustig, D.L. Donoho, J.M. Santos, and J.M. Pauly.
+\newblock Compressed sensing mri.
+\newblock {\em Signal Processing Magazine, IEEE}, 25(2):72--82, 2008.
+
+\bibitem[LWC12]{LWC}
+D.~Lawlor, Y.~Wang, and A.~Christlieb.
+\newblock Adaptive sub-linear time fourier algorithms.
+\newblock {\em arXiv:1207.6368}, 2012.
+
+\bibitem[Man92]{Man}
+Y.~Mansour.
+\newblock Randomized interpolation and approximation of sparse polynomials.
+\newblock {\em ICALP}, 1992.
+
+\bibitem[PR13]{pawar2013computing}
+S.~Pawar and K.~Ramchandran.
+\newblock Computing a $k$-sparse $n$-length {D}iscrete {F}ourier {T}ransform
+  using at most $4k$ samples and {$O(k log k)$} complexity.
+\newblock {\em ISIT}, 2013.
+
+\bibitem[PS15]{PZ15}
+E.~Price and Z.~Song.
+\newblock A robust sparse {F}ourier transform in the continuous setting.
+\newblock {\em FOCS}, 2015.
+
+\bibitem[RV08]{RV}
+M.~Rudelson and R.~Vershynin.
+\newblock On sparse reconstruction from {F}ourier and {G}aussian measurements.
+\newblock {\em CPAM}, 61(8):1025--1171, 2008.
+
+\bibitem[Sid11]{CT_CS}
+Emil Sidky.
+\newblock {What does compressive sensing mean for X-ray CT and comparisons with
+  its MRI application}.
+\newblock In {\em Conference on Mathematics of Medical Imaging}, 2011.
+
+\end{thebibliography}
+
+
+\begin{appendix}
+\input{app.tex}
+\end{appendix}
+
+\end{document} 

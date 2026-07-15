@@ -1,0 +1,231 @@
+{
+  "claim_gate": {
+    "bad_register_fail_safe_behavior_required": false,
+    "general_purified_relation_solver_interface_proved": true,
+    "polynomial_density_one_relation_solver_proved": false,
+    "primary_source_structure_verified": true,
+    "product_contamination_information_bound_composed": true,
+    "reason": "Symmetric double evaluation removes determinism and native paired-workspace overlap as interface requirements with an explicit fixed-list mu_A^5 and global-source mu^7 loss. Product f=1 contamination preserves a constant all-good success contribution, but no polynomial density-one relation solver is known.",
+    "speedup_claim_allowed": false,
+    "symmetric_double_evaluation_identity_proved": true,
+    "weighted_matching_inverse_polynomial_transfer_proved": true
+  },
+  "contamination_certificates": [
+    {
+      "all_good_probability_lower_bound": 0.3188759448902919,
+      "constant_weight_regime": true,
+      "contaminated_to_clean_success_ratio_lower_bound": 0.3188759448902919,
+      "n_bits": 32,
+      "per_register_bad_probability_bound": 0.03125,
+      "register_count": 36,
+      "register_offset": 4
+    },
+    {
+      "all_good_probability_lower_bound": 0.34270396721004415,
+      "constant_weight_regime": true,
+      "contaminated_to_clean_success_ratio_lower_bound": 0.34270396721004415,
+      "n_bits": 64,
+      "per_register_bad_probability_bound": 0.015625,
+      "register_count": 68,
+      "register_offset": 4
+    },
+    {
+      "all_good_probability_lower_bound": 0.35512003323956715,
+      "constant_weight_regime": true,
+      "contaminated_to_clean_success_ratio_lower_bound": 0.35512003323956715,
+      "n_bits": 128,
+      "per_register_bad_probability_bound": 0.0078125,
+      "register_count": 132,
+      "register_offset": 4
+    },
+    {
+      "all_good_probability_lower_bound": 0.36145641074864776,
+      "constant_weight_regime": true,
+      "contaminated_to_clean_success_ratio_lower_bound": 0.36145641074864776,
+      "n_bits": 256,
+      "per_register_bad_probability_bound": 0.00390625,
+      "register_count": 260,
+      "register_offset": 4
+    },
+    {
+      "all_good_probability_lower_bound": 0.3646570430192567,
+      "constant_weight_regime": true,
+      "contaminated_to_clean_success_ratio_lower_bound": 0.3646570430192567,
+      "n_bits": 512,
+      "per_register_bad_probability_bound": 0.001953125,
+      "register_count": 516,
+      "register_offset": 4
+    },
+    {
+      "all_good_probability_lower_bound": 0.3662655149295278,
+      "constant_weight_regime": true,
+      "contaminated_to_clean_success_ratio_lower_bound": 0.3662655149295278,
+      "n_bits": 1024,
+      "per_register_bad_probability_bound": 0.0009765625,
+      "register_count": 1028,
+      "register_offset": 4
+    }
+  ],
+  "created_at": "2026-07-15T06:52:18.969088+00:00",
+  "falsifiers_triggered": [
+    "Determinism is not necessary when both matched endpoint solvers are evaluated in a fixed order.",
+    "A direct one-call relation substitution can still fail; the proof relies on double evaluation and symmetric labeling.",
+    "Fixed-list success incurs a fifth-power loss; selecting one matching across random lists raises the conservative global loss to the seventh power.",
+    "The exponential 0.2182 QRAQM walk remains an exponential mechanism despite satisfying the purified interface form.",
+    "Product f=1 contamination preserves the clean routine's correct-output probability up to a constant; marginal-only promises would not suffice."
+  ],
+  "finite_matching_probes": [
+    {
+      "best_matching_id": "f1-distance-1",
+      "best_weighted_mass": 3.9328,
+      "matching_count": 88,
+      "mean_probability": 0.185,
+      "modulus": 128,
+      "normalized_routine_success": 0.003840625,
+      "q": 1,
+      "threshold": 0.0925,
+      "threshold_support_size": 64
+    },
+    {
+      "best_matching_id": "f1-distance-31",
+      "best_weighted_mass": 8.009199999999993,
+      "matching_count": 120,
+      "mean_probability": 0.136328125,
+      "modulus": 256,
+      "normalized_routine_success": 0.0039107421874999965,
+      "q": 1,
+      "threshold": 0.0681640625,
+      "threshold_support_size": 66
+    }
+  ],
+  "headline_metrics": {
+    "coherent_relation_interface_certificate_count": 1,
+    "deterministic_selector_required_count": 0,
+    "exact_symmetric_pair_identity_count": 2,
+    "finite_matching_probe_count": 2,
+    "fixed_list_weighted_matching_loss_exponent": 5,
+    "global_source_weighted_matching_loss_exponent": 7,
+    "minimum_all_good_probability_lower_bound": 0.3188759448902919,
+    "ordered_garbage_alignment_certificate_count": 1,
+    "positive_finite_weighted_matching_count": 2,
+    "primary_source_site_count": 4,
+    "product_contamination_composition_certificate_count": 1,
+    "proved_end_to_end_dcp_speedup_count": 0,
+    "proved_polynomial_relation_solver_count": 0,
+    "symmetric_pair_identity_count": 2,
+    "verified_primary_source_site_count": 4
+  },
+  "pair_audits": [
+    {
+      "amplitude_difference": 0.0,
+      "decision": "exact-symmetric-pair-state",
+      "left_orientation_amplitude": {
+        "imag": -0.13489847085556633,
+        "real": 0.319064887696578
+      },
+      "lower_target": 6,
+      "lower_witness": "0011",
+      "ordered_workspace_equal": true,
+      "pair_id": "PAIR-6-7-0011-1010",
+      "paired_visibility": 1.0,
+      "right_orientation_amplitude": {
+        "imag": -0.13489847085556633,
+        "real": 0.319064887696578
+      },
+      "upper_target": 7,
+      "upper_witness": "1010"
+    },
+    {
+      "amplitude_difference": 0.0,
+      "decision": "exact-symmetric-pair-state",
+      "left_orientation_amplitude": {
+        "imag": 0.09110613904121714,
+        "real": 0.10816501943328263
+      },
+      "lower_target": 6,
+      "lower_witness": "0101",
+      "ordered_workspace_equal": true,
+      "pair_id": "PAIR-6-7-0101-1100",
+      "paired_visibility": 1.0,
+      "right_orientation_amplitude": {
+        "imag": 0.09110613904121714,
+        "real": 0.10816501943328263
+      },
+      "upper_target": 7,
+      "upper_witness": "1100"
+    }
+  ],
+  "source_sites": [
+    {
+      "evidence_sha256": "517703a8f7cfad155bc6d83476303711fc93bbbbcb5a9cb54ccc1e4822d5ac9b",
+      "line_number": 741,
+      "site_id": "REGEV-DETERMINISTIC-SUBROUTINE-ASSUMPTION",
+      "structural_role": "Original partial-function assumption",
+      "verified": true
+    },
+    {
+      "evidence_sha256": "d220d27f2d39d3ed18313536102c59f4a626e808c815abb818fc49b93694275d",
+      "line_number": 887,
+      "site_id": "REGEV-CURRENT-WITNESS-SELECTOR-CHECK",
+      "structural_role": "Current subset must equal the selected witness",
+      "verified": true
+    },
+    {
+      "evidence_sha256": "d220d27f2d39d3ed18313536102c59f4a626e808c815abb818fc49b93694275d",
+      "line_number": 887,
+      "site_id": "REGEV-PARTNER-WITNESS-CALL",
+      "structural_role": "The matched target's selected witness supplies the partner branch",
+      "verified": true
+    },
+    {
+      "evidence_sha256": "42891dbcf0eb8c66413c1f2cbf35ec8e5b3bd7893273cf863084082a5a09ded5",
+      "line_number": 959,
+      "site_id": "REGEV-PAIR-LABEL-MEASUREMENT",
+      "structural_role": "A measured common label isolates a two-branch phase state",
+      "verified": true
+    }
+  ],
+  "status": "quantum-relation-interface-proved-solver-open",
+  "summary": "Proved a scoped symmetric double-evaluation lift for purified quantum relation solvers: accepted matched branches have identical amplitude products and ordered garbage, and inverse-polynomial mean relation success transfers with a conservative seventh-power global-source loss. No polynomial subset-sum relation solver was constructed.",
+  "theorem_scope": {
+    "all_good_register_scope": true,
+    "deterministic_partial_function_required": false,
+    "marginal_only_contamination_composition_included": false,
+    "native_one_call_workspace_overlap_required": false,
+    "polynomial_solver_constructed": false,
+    "product_contamination_composition_included": true,
+    "purified_relation_solver_sufficient": true,
+    "symmetric_double_evaluation_required": true
+  },
+  "weighted_matching_certificate": {
+    "conditions": [
+      "0 < mu <= 1 and q < N mu/32, ignoring integer rounding in the global asymptotic statement",
+      "the relation solver is a polynomial-size purified circuit controlled by (A,t)",
+      "valid outputs are efficiently verifiable binary subset witnesses",
+      "both matched endpoint circuits are evaluated in a fixed lower/upper target order",
+      "the symmetric witness-pair label and accept flag can be measured",
+      "the DCP register batch is all-good; contamination is charged separately",
+      "targets follow Regev's random density-one source with fixed offset c"
+    ],
+    "fixed_list_polynomial_loss_exponent": 5,
+    "fixed_list_routine_success_lower_bound": "Omega(mu_A^5 / 2^c) for a fixed A with mean_t p_(A,t)=mu_A",
+    "global_source_polynomial_loss_exponent": 7,
+    "global_source_routine_success_lower_bound": "at least mu^7 / 2^(c+20) for one source-independent matching, before the all-good-register factor",
+    "matching_pair_lower_bound": "at least N mu^3 / 256 pairs for one Regev matching",
+    "mean_valid_output_probability_symbol": "mu = N^(-1) sum_t p_t",
+    "per_pair_weight_lower_bound": "p_t p_f(t) >= mu^2/4",
+    "proof_steps": [
+      "For fixed A, p_t<=1 implies |{t:p_t>=mu_A/2}|>=mu_A N/2.",
+      "Regev's q-matching lemma then gives fixed-A weighted mass Omega(N mu_A^5).",
+      "For global mean mu, lists with mu_A>=mu/2 have source probability at least mu/2.",
+      "Use threshold mu/4 and common s=4/mu; one matching per good A has mass at least N mu^5/2^15.",
+      "Pigeonhole over at most 32/mu matchings to obtain one source-independent matching with expected mass at least N mu^7/2^21.",
+      "Ordered double evaluation gives both orientations amplitude a_t(x)a_f(t)(y).",
+      "The two orientations have identical ordered conditional garbage and unit visibility.",
+      "Summing label probabilities gives 2^(1-r) times the weighted matching mass."
+    ],
+    "threshold_support_lower_bound": "|{t:p_t>=tau}| >= mu N/2",
+    "threshold_symbol": "tau = mu/2",
+    "weighted_matching_mass_lower_bound": "sum_pairs p_t p_f(t) >= N mu^5 / 1024"
+  }
+}

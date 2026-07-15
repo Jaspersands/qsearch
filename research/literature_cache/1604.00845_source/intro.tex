@@ -1,0 +1,124 @@
+%!TEX root = ./ft-hd.tex
+%Fourier sampling is important
+
+\section{Introduction}
+
+The Discrete Fourier Transform (DFT) is a fundamental mathematical concept that allows to represent a discrete signal of length $N$ as a linear combination of $N$ pure harmonics, or frequencies. The development of a fast algorithm for Discrete Fourier Transform, known as FFT (Fast Fourier Transform) in 1965 revolutionized digital signal processing, earning FFT a place in the top 10 most important algorithms of the twentieth century~\cite{citeulike:6838680}. Fast Fourier Transform (FFT) computes the DFT of a length $N$ signal in time $O(N\log N)$, and finding a faster algorithm for DFT is a major open problem in theoretical computer science.  While FFT applies to general signals, many of the applications of FFT (e.g. image and video compression schemes such as JPEG and MPEG) rely on the fact that  the Fourier spectrum of signals that arise in practice can often be approximated very well by only a few of the top Fourier coefficients, i.e. practical signals are often (approximately) {\em sparse} in the Fourier basis. 
+
+%Other applications where sample complexity is a crucial measure of efficiency include wideband spectrum sensing, \xxx{ blah and blah} (see~\cite{} for a more complete overview).  Note that the problem of reconstructing a signal from Fourier measurements is equivalent to the problem of computing the Fourier transform of a signal $x$ whose spectrum is approximately sparse, as the DFT and its inverse are only different by a conjugation.
+
+Besides applications in signal processing, the Fourier sparsity property of real world signal plays and important role in medical imaging, where the cost of {\em measuring a signal}, i.e. {\em sample complexity}, is often a major bottleneck.  For example, an MRI machine effectively measures the Fourier transform of a signal $x$ representing the object being scanned, and the reconstruction problem is exactly the problem of inverting the Fourier transform $\wh{x}$ of $x$ approximately given a set of measurements. Minimizing the sample complexity of acquiring a signal using Fourier measurements thus translates directly to reduction in the time the patient spends in the MRI machine~\cite{MRICS} while a scan is being taken. In applications to Computed Tomography (CT) reduction in measurement cost leads to reduction in the radiation dose that a patient receives~\cite{CT_CS}.  Because of this strong practical motivation, 
+the problem of computing a good approximation to the FFT of a Fourier sparse signal fast and using few measurements in time domain has been the subject of much attention several communities. 
+In the area of {\em compressive sensing}~\cite{Don,CTao}, where one studies the task of recovering (approximately) sparse signals from linear measurements,  Fourier measurements have been one of the key settings of interest. In particular, the seminal work of~\cite{CTao,RV} has shown that length $N$ signals with at most $k$ nonzero Fourier coefficients can be recovered using only $k \log^{O(1)} N$ samples in time domain. The recovery algorithms are based on linear programming and run in time polynomial in $N$. %See~\cite{FR} for an introduction to the area.
+A different line of research on the {\em Sparse Fourier Transform} (Sparse FFT), initiated in the fields of computational complexity and learning theory, has been focused on  developing algorithms whose sample complexity {\em and} running time scale with the sparsity as opposed to the length of the input signal. Many such algorithms have been proposed in the literature, including \cite{GL,KM,Man,GGIMS,AGS,GMS,Iw,Ak,HIKP,HIKP2,BCGLS,HAKI,pawar2013computing,heidersparse, IKP}. These works show that, for a wide range of signals, both the time complexity and the number of signal samples taken can be significantly sub-linear in $N$, often of the form $k \log^{O(1)} N$.  
+
+In this paper we consider the problem of computing a sparse approximation to a signal $x\in \mathbb{C}^N$ given access to its Fourier transform $\wh{x}\in \mathbb{C}^N$.\footnote{Note that the problem of reconstructing a signal from Fourier measurements is equivalent to the problem of computing the Fourier transform of a signal $x$ whose spectrum is approximately sparse, as the DFT and its inverse are only different by a conjugation.} The best known results obtained in both compressive sensing literature and sparse FFT literature on this problem are summarized in Fig.~\ref{fig:1}. 
+We focus on algorithms that work for worst-case signals and recover $k$-sparse approximations satisfying the so-called $\ell_2/\ell_2$ approximation
+guarantee. In this case, the goal of an algorithm is as follows: given $m$ samples of the Fourier transform $\wh{x}$ of a signal $x$,  and the sparsity parameter $k$, output $x'$ satisfying
+\begin{equation}
+\label{e:l2l2}
+\| x-x'\|_2 \le C \min_{k \text{-sparse } y }  \|x-y\|_2,
+\end{equation}
+%where $\wh{x}$ denotes the complex DFT of $x$. 
+The algorithms are randomized\footnote{Some of the algorithms~\cite{CTao,RV,CGV} can in
+  fact be made deterministic, but at the cost of satisfying a somewhat
+  weaker $\ell_2/\ell_1$ guarantee.}
+ and succeed with at least constant probability.
+ 
+ \begin{figure*}[h]
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+Reference & Time & Samples & $C$  & Dimension\\
+&  & & &  $d>1$?\\
+\hline\hline
+ \cite{CTao,RV, CGV}&  &  & &\\
+ \cite{Bourgain2014, HR16}  & $N \times m$ linear program & $O(k \log^2(k) \log(N))$ & $O(1)$ &yes\\
+\cite{CP} & $N \times m$ linear program & $O(k \log N)$ & $(\log N)^{O(1)}$ &yes\\
+\cite{HIKP2} & $O(k \log(N) \log(N/k))$ & $O(k \log(N) \log(N/k))$   &   any &no \\
+%\cite{GHIKPS} & $O(k \log^2 N)$ & $O(k \log N)$ & $O(1)$ & average case, &yes\\
+%& & & & $k=\Theta(\sqrt{N})$&\\
+%\cite{pawar2014} & $O(N \log N)$ & $O(k \log N)$ & $O(1)$ & average case,&yes\\
+%& & & & $k=O(N^{\alpha})$,&\\
+%& & & & $\alpha<1$&\\
+\cite{IKP} &  $k \log^2(N)  \log^{O(1)} \log N$ & $k \log(N) \log^{O(1)} \log N$ & any &no\\
+\cite{IK14a} & $N \log^{O(1)} N$ & $O(k \log N)$ & any & yes\\
+\hline
+\cite{DIPW} & & $\Omega(k \log(N/k))$ & O(1) & lower bound\\
+\hline
+\end{tabular}
+\end{center}
+\caption{Bounds for the algorithms that recover $k$-sparse Fourier approximations. All algorithms produce an output satisfying Equation~\ref{e:l2l2} with probability of success that is at least constant. The forth column specifies constraints on approximation factor $C$. For example, $C=O(1)$ means that the algorithm can only handle constant $C$ as opposed to any $C>1$. The last column specifies whether the sample complexity bounds are unchanged, up to factors that depend on dimension $d$ only, for higher dimensional DFT.}\label{fig:1}
+%We use $\ostar(f(N))$ to denote a function bounded by $f(N) (\log \log N)^{O(1)}$.}
+\end{figure*}
+
+
+{\bf Higher dimensional Fourier transform.}  While significant attention in the sublinear Sparse FFT literature has been devoted to the basic case of Fourier transform on the line (i.e. one-dimensional signals),  the  sparsest signals often occur in applications involving higher-dimensional DFTs.  Although a reduction from DFT on a two-dimensional grid {\em with relatively prime side lengths} $p \times q$ to a one-dimensional DFT of length $pq$ is possible~\cite{GMS,Iw-arxiv}),  the reduction does not apply to the most common case when the side lengths of the grid are equal to the same powers of two. It turns out that most sublinear Sparse FFT techniques developed for the one-dimensional DFT do not extend well to the higher dimensional setting, suffering from {\em at least a polylogaritmic loss in sample complexity}. Specifically, the only prior sublinear time algorithm that applies to general $m\times m$ grids is due to  to~\cite{GMS}, has $O(k \log^c N)$ sample and time complexity for a
+ rather large value of $c$.  If $N$ is a power of $2$, a
+ two-dimensional adaptation of the~\cite{HIKP2} algorithm (outlined in~\cite{GHIKPS}) 
+has roughly $O(k \log^3 N)$ time and sample complexity, and an adaptation of~\cite{IKP} has $O(k\log^2 N(\log\log N)^{O(1)})$ sample complexity. In general dimension $d\geq 1$ both of these algorithms have sample complexity $\Omega(k\log^d N)$.
+
+Thus, none of the results obtained so far was able to guarantee sparse recovery from high dimensional (any $d\geq 2$) Fourier measurements without suffering at least a polylogarithmic loss in sample complexity, while at the same time achieving sublinear runtime. 
+
+
+
+{\bf Our results.} In this paper we give an algorithm that achieves the $\ell_2/\ell_2$ sparse recovery guarantees~\eqref{e:l2l2} with $d$-dimensional Fourier measurements that uses $O_d(k \log N$ $\log \log N)$ samples of the signal and has the running time of $O_d(k \log^{d+3} N)$. This is the first sublinear time algorithm that comes within a $\poly(\log\log N)$ factor of the sample complexity lower bound of $\Omega(k\log (N/k))$ due to ~\cite{DIPW} for any dimension higher than one.
+
+
+{\bf Sparse Fourier Transform overview.}  The overall outline of our algorithm follows the framework of~\cite{GMS, HIKP2,IKP,IK14a}, which adapt the methods of~\cite{CCF,GLPS} from arbitrary linear
+measurements to Fourier measurements.  The idea is to take, multiple times,  a set of $B=O(k)$
+linear measurements of the form
+\[
+\twid{u}_j = \sum_{i : h(i) = j} s_i x_i 
+\]
+for random hash functions $h: [N] \to [B]$ and random sign changes
+$s_i$ with $\abs{s_i} = 1$.  This corresponds to \emph{hashing} to $B$
+\emph{buckets}.  With such ideal linear measurements, $O(\log(N/k))$
+hashes suffice for sparse recovery, giving an $O(k \log(N/k))$ sample
+complexity.
+
+The sparse Fourier transform algorithms approximate $\twid{u}$ using linear combinations of Fourier samples. Specifically, the coefficients of $x$ are first permuted via a random affine permutation of the input space.  Then the coefficients are partitioned into buckets. This step uses  the``filtering'' process that approximately partitions the range of $x$ into intervals (or, in higher dimension, squares, or $\ell_\infty$ balls) with $N/B$ coefficients each, where each interval corresponds to one bucket. Overall, this  ensures that
+ most of the large coefficients are ``isolated'', i.e.,  are hashed to unique buckets, as well as that the contributions from the  ``tail'' of the signal $x$ to those buckets is not much greater than the average (the tail of the signal defined as $\err_k(x)=\min_{k-\text{sparse}~y} ||x-y||_2$).  This allows one to mimic the iterative recovery algorithm described for linear measurements above. However, there are several difficulties in making this work using an optimal number of samples.
+
+ 
+ This enables the algorithm to identify the locations of the dominant coefficients and estimate their values, producing a sparse estimate $\chi$ of $x$.  To improve this
+estimate, we repeat the process on $x - \chi$ by subtracting the
+influence of $\chi$ during hashing, thereby {\em refining } the approximation of $x$ constructed.  After a few iterations of this refinement process the algorithm obtains a good 
+sparse approximation $\chi$ of $x$.
+
+A major hurdle in implementing this strategy is that any filter that has been constructed in the literature so far is imprecise in that  coefficients  contribute (``leak''') to buckets other than the one they are technically mapped into. This contribution, however, is limited and can be controlled by the quality of the filter.  The details of filter choice have played a crucial role in recent developments in Sparse FFT algorithms. For example, the best known runtime for one-dimensional Sparse FFT, due to~\cite{HIKP}, was obtained by constructing filters that (almost) precisely mimic the ideal hash process, allowing for a very fast implementation of the process in dimension one. The price to pay for the precision of the filter, however, is that each hashing becomes a $\log^d N$ factor more costly in terms of sample complexity and runtime than in the idealized case. At the other extreme, the algorithm of~\cite{GMS} uses much less precise filters, which only lead to a $C^d$ loss of sample complexity in higher dimensions $d$, for a constant $C>0$. Unfortunately, because of the imprecision of the filters the iterative improvement process becomes quite noisy, requiring $\Omega(\log N)$ iterations of the refinement process above. As~\cite{GMS} use fresh randomness for each such iteration, this results in an $\Omega(\log N)$ factor loss in sample complexity. The result of~\cite{IKP} uses a hybrid strategy, effectively interpolating between~\cite{HIKP} and~\cite{GMS}. This gives the near optimal $O(k\log N \log^{O(1)}\log N)$ sample complexity in dimension one (i.e. Fourier transform on the line), but still suffers from a $\log^{d-1} N$ loss in dimension $d$.
+
+
+% In a nutshell we use a ``filter'' that lets us ``hash'' the $k$ large coefficients of $x$ to $B = O(k)$ buckets.  
+
+% However, it was not known how to implement this process in a way that guaranteed optimal sample complexity.
+%The main difficulty is that each repetition required using new samples, which multiplied the sample complexity per round by the number of repetitions, which was super-constant.
+
+{\bf Techniques of~\cite{IK14a}.} The first algorithm to achieve optimal sample complexity was recently introduced in~\cite{IK14a}.  The algorithms uses an approach inspired by~\cite{GMS} (and hence uses `crude' filters that do not lose much in sample complexity), but introduces a key innovation enabling optimal sample complexity: the algorithm does {\em not} use fresh hash functions in every repetition of the refinement process. Instead, $O(\log N)$ hash functions are chosen at the beginning of the process, such that each large coefficient is isolated by most of those functions with high probability.  The same hash functions are then used throughout the execution of the algorithm. As every hash function required a separate set of samples to construct the buckets, reusing the hash functions makes sample complexity {\em independent of the number of iterations}, leading to the optimal bound. 
+ 
+ While a natural idea, reusing hash functions creates a major difficulty: if the algorithm identified a non-existent large coefficient (i.e. a false positive) by mistake and added it to $\chi$, this coefficient would be present in the difference vector $x - \chi$ (i.e. residual signal) and would need to be corrected later. As the spurious coefficient depends on the measurements, the `isolation' properties required for recovery need not hold for it as its position is determined by the hash functions themselves, and the algorithm might not be able to correct the mistake.  This hurdle was overcome in~\cite{IK14a} by ensuring that no large coefficients are created spuriously throughout the execution process. This is a nontrivial property to achieve, as the hashing process is quite noisy due to use of the `crude' filters to reduce the number of samples (because the filters are quite simple, the bucketing process suffers from substantial leakage). The solution was to recover the large coefficients in decreasing order of their magnitude. Specifically, in each step, the algorithm recovered coefficients with magnitude that exceeded a specific threshold (that decreases at an exponential rate). With this approach the $\ell_\infty$ norm of the residual signal decreases by a constant factor in every round, resulting in the even stronger $\ell_\infty/\ell_2$ sparse recovery guarantees in the end. The price to pay for this strong guarantee was the need for a very strong primitive for locating dominant elements in the residual signal: a primitive was needed that would make mistakes with at most inverse polynomial probability. This was achieved by essentially brute-force decoding over all potential elements in $[N]$: the algorithm loops over all elements $i\in [N]$ and for each $i$ tests, using the $O(\log N)$ measurements taken, whether $i$ is a dominant element in the residual signal. This resulted in $\Omega(N)$ runtime.
+
+\if 0
+Overall, the algorithm had two key properties (i) it was iterative, and therefore the values of the coefficients estimated in one stage could be corrected in the second stage and (ii) did not require fresh hash functions (and therefore new measurements) in each iteration. Property (ii) implied that the number of measurements was determined by only a single (first) stage, and did not increase beyond that. Property (i) implied that the bucketing and estimation process could be achieved using rather ``crude'' filters\footnote{In fact, the filters are only slightly more accurate than the filters introduced in~\cite{GMS}, and require the same number of samples.}, since the estimated values could be corrected in the future stages. As a result each of the hash function require only $O(k)$ samples;  since the algorithm used $O(\log N)$ hash functions, the $O(k \log N)$ bound follows. This stands in contrast with the algorithm of $\cite{GMS}$ (which used crude filters of similar complexity but required new measurements per each iteration) or~\cite{HIKP2} (which used much stronger filters with $O(k \log N)$ sample complexity) or~\cite{IKP} (which used filters of varying quality and sample complexity). The advantage of the approach is amplified in higher dimension, as the ratio of the number of samples required by the filter to the value $k$ grows exponentially in the dimension. Thus, the filters still require $O(k)$ samples in any fixed dimension $d$, while for~\cite{HIKP2, IKP} this bound increases to $O(k \log^d N)$. 
+\fi 
+
+{\bf Our techniques.} In this paper we show how to make the aforementioned algorithm run in sub-linear time, at the price of a slightly increased sampling complexity of $O_d(k\log N$ $\log\log N)$. To achieve a sub-linear runtime, we need to replace the loop over all $N$ coefficients by a location  primitive (similar to that in prior works) that identifies the position of any large coefficient that is isolated in a bucket in $\log^{O(1)} N$ time per bucket, i.e. without resorting to brute force enumeration over the domain of size $N$. Unfortunately, the identification step alone increases the sampling complexity by $O(\log N)$ per hash function, so unlike~\cite{IK14a}, here we cannot repeat this process using $O(\log N)$ hash functions to ensure that each large coefficient is isolated by one of those functions. Instead, we can only afford $O(\log \log N)$  hash functions overall, which means that $1/\log^{O(1)} N$ fraction of large coefficients will not be isolated in most hashings. This immediately precludes the possibility of using the initial samples to achieve $\ell_\infty$ norm reduction as in~\cite{IK14a}. Another problem, however, is that the weaker location primitive that we use may  generate {\em spurious coefficients} at every step of the recovery process. These spurious coefficients, together with the $1/\log^{O(1)} N$ fraction of non-isolated elements, contaminate the recovery process and essentially render the original samples useless after a small number of refinement steps. To overcome these hurdles, instead of the $\ell_\infty$ reduction process of~\cite{IK14a} we use a weaker invariant on the reduction of mass in the `heavy' elements of the signal throughout our iterative process. Specifically, instead of reduction of $\ell_\infty$ norm of the residual as in~\cite{IK14a} we give a procedure for reducing the $\ell_1$ norm of the `head' of the signal. To overcome the contamination coming from non-isolated as well as spuriously created coefficients, we achieve $\ell_1$ norm reduction by alternating two procedures. The first procedure uses the $O(\log\log N)$ hash functions to reduce the $\ell_1$ norm of `well-hashed' elements in the signal, and the second uses a simple sparse recovery primitive to reduce the $\ell_\infty$ norm of offending coefficients when the first procedure gets stuck.  This can be viewed as a signal-to-noise ratio (SNR) reduction step similar in spirit the one achieved in~\cite{IKP}. The SNR reduction phase is insufficient for achieving the $\ell_2/\ell_2$ sparse recovery guarantee, and hence we need to run a cleanup phase at the end, when the signal to noise ratio is constant. It has been observed before (in~\cite{IKP}) that if the signal to noise ratio is constant, then recovery can be done using standard techniques with optimal sample complexity. The crucial difference between~\cite{IKP} and our setting is, however, that we only have bounds on $\ell_1$-SNR as opposed to $\ell_2$-SNR In~\cite{IKP}. It turns out, however, that this is not a problem -- we give a stronger analysis of the corresponding primitive from~\cite{IKP}, showing that $\ell_1$-SNR bound is sufficient.
+
+{\bf Related work on continuous Sparse FFT.} Recently \cite{BCGLS} and \cite{PZ15} gave algorithms for the related problem of computing Sparse FFT in the continuous setting. These results are not directly comparable to ours, and suffer from a polylogarithmic  inefficiency in sample complexity bounds.
+
+\if 0
+We show, however, that recovery can be performed even in the presence of false positives using just a small amount of fresh randomness at every iteration of the refinement process. The fresh randomness allows us to ensure that {\bf (a)}  the number of false positives remains small (they constitute at most a $k/\log^{\Theta(1)} N$) fraction of the elements in the head of the signal) and {\bf (b)} that the $\ell_\infty$ norm of the false positives, as well as the non-isolated elements remains small. 
+Due to the complications introduced by the more efficient (but weaker) location primitive,
+\fi 
+%building on techniques from~\cite{IK14a} and~\cite{IKP}. Similarly to~\cite{IK14a} our sample efficiency stems from the fact that we reuse measurements.
+
+% Our final algorithm overcomes these hurdles building on techniques from~\cite{IK14a} and~\cite{IKP}, and extends these to achieve .  
+
+%While~\cite{IK14a}, we cannot ensure that no false positives are created since we would like to achieve sublinear runtime. 
+
+\if 0
+In fact, the situation is somewhat more complicated. Using $O(\log\log N)$ hash functions only guarantees that essentially all but a $1/\log^{O(1)} N$ fraction of heavy hitters is located, but does not preclude a large number of false positives, i.e. spurious coefficients. We deal with this by estimating the value of each located coefficient using $O(\log \log N)$ fresh hash functions, which allows us to ensure that at most a $1/\log^{O(1)} N$ fraction of coefficients are spurious. Because of this, the sample complexity of our sublinear time algorithm does in fact increase with the number of iterations, which is not the case for the $\tilde O(n)$ time algorithm. The sampling complexity of the estimation stage, however, is $O(k\log\log N)$, amounting to $O(k\log N\log \log N)$ samples overall.
+
+
+In order to eliminate those coefficients, every $O(\log\log N)$ iterations we run a different procedure\footnote{The procedure is essentially the original algorithm of~\cite{GMS} with slightly different analysis} that identifies and subtracts the missed and spurious large coefficients using fresh randomness.  That procedure is less efficient: it requires $k' \log^{O(1)} N$ samples, where $k'$ is the number of spurious coefficients. However, since $k' \le k/ \log^{O(1)} n$, the total number of samples remains small. 
+\fi 

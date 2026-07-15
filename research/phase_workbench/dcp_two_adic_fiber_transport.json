@@ -1,0 +1,337 @@
+{
+  "claim_gate": {
+    "fiber_transport_quantum_walk_route_alive": true,
+    "implicit_global_total_transport_route_alive": false,
+    "local_dictionary_linear_depth_route_alive": false,
+    "low_bit_transport_identities_proved": true,
+    "polynomial_linear_depth_transport_proved": false,
+    "polynomial_relation_solver_proved": false,
+    "reason": "Exact local transports expose useful low-bit symmetries, but observed and union-bound reach is logarithmic while exact inversion needs linear depth. The full-cube Fourier theorem also closes total global transports; only target-dependent partial maps or a proved polynomial-gap fiber walk remain.",
+    "speedup_claim_allowed": false,
+    "target_dependent_partial_transport_route_alive": true
+  },
+  "created_at": "2026-07-15T07:37:56.850697+00:00",
+  "falsifiers_triggered": [
+    "Single-coordinate pivots are exact total transports but disappear after logarithmic depth on random labels.",
+    "Residue-matched swaps extend local reach but remain partial and logarithmic-depth.",
+    "Polynomial families of logarithmic-size explicit blocks have exponentially small collision probability at linear depth.",
+    "Finite low-bit transport is not evidence for a full relation solver.",
+    "The local no-go does not cover target-dependent partial fiber maps or polynomial-gap walks; total full-cube transports are closed separately."
+  ],
+  "fiber_contract": {
+    "fiber": "F_k(t)={x in {0,1}^m : sum_i A_i x_i=t mod 2^k}",
+    "no_go_scope": "explicit polynomial families of O(log n)-bit local block dictionaries only",
+    "solver_requirement": "compose through k=Theta(n) and return a verified full-modulus binary witness",
+    "source": "independent uniform A_i modulo 2^n with m=n+O(1)",
+    "transport_goal": "reversible map preserving the low-k residue and toggling residue bit k"
+  },
+  "headline_metrics": {
+    "exact_identity_certificate_count": 3,
+    "identity_certificate_count": 3,
+    "linear_depth_block_transport_count": 0,
+    "linear_depth_single_flip_count": 0,
+    "linear_depth_swap_count": 0,
+    "local_dictionary_linear_depth_no_go_count": 2,
+    "maximum_observed_block_transport_depth": 21,
+    "maximum_observed_single_flip_depth": 9,
+    "maximum_observed_swap_depth": 20,
+    "minimum_tail_transport_free_bits": 234,
+    "open_implicit_transport_architecture_count": 2,
+    "proved_polynomial_linear_depth_transport_count": 0,
+    "proved_polynomial_relation_solver_count": 0,
+    "scaling_row_count": 12
+  },
+  "identity_certificates": [
+    {
+      "involutive": true,
+      "low_residue_preserved": true,
+      "next_bit_toggled": true,
+      "proof": "Toggling x_j changes the sum by +/-A_j; when v2(A_j)=k, both signs equal 2^k modulo 2^(k+1).",
+      "scope": "all assignments when v2(A_j)=k",
+      "total_on_fiber": true,
+      "transport_class": "single-coordinate flip",
+      "transport_id": "TRANSPORT-SINGLE-V2-PIVOT"
+    },
+    {
+      "involutive": true,
+      "low_residue_preserved": true,
+      "next_bit_toggled": true,
+      "proof": "Swapping unequal bits changes the sum by +/-(A_i-A_j), which is 2^k modulo 2^(k+1). Equal bits are fixed.",
+      "scope": "assignments with x_i != x_j when A_i-A_j=2^k mod 2^(k+1)",
+      "total_on_fiber": false,
+      "transport_class": "coordinate swap",
+      "transport_id": "TRANSPORT-RESIDUE-MATCHED-SWAP"
+    },
+    {
+      "involutive": true,
+      "low_residue_preserved": true,
+      "next_bit_toggled": true,
+      "proof": "A transposition of two named block patterns is reversible; the certified subset-sum difference toggles exactly the next residue bit.",
+      "scope": "two block patterns whose sums agree mod 2^k and differ in bit k",
+      "total_on_fiber": false,
+      "transport_class": "small-block basis-pattern transposition",
+      "transport_id": "TRANSPORT-BLOCK-PATTERN-SWAP"
+    }
+  ],
+  "local_dictionary_no_go": [
+    {
+      "block_size": 5,
+      "collision_union_bound": 1.0,
+      "inverse_polynomial_threshold": 0.0009765625,
+      "linear_depth_transport_ruled_out_for_model": false,
+      "n_bits": 32,
+      "polynomial_block_family_size": 1024,
+      "tested_linear_depth": 16,
+      "theorem_scope": "Union bound for a target-independent explicit family of fixed blocks, each enumerating all 2^b subset patterns over independent uniform labels. Overlapping/adaptive blocks require a separate dependence audit; implicit global transforms are not covered."
+    },
+    {
+      "block_size": 6,
+      "collision_union_bound": 0.001953125,
+      "inverse_polynomial_threshold": 0.000244140625,
+      "linear_depth_transport_ruled_out_for_model": false,
+      "n_bits": 64,
+      "polynomial_block_family_size": 4096,
+      "tested_linear_depth": 32,
+      "theorem_scope": "Union bound for a target-independent explicit family of fixed blocks, each enumerating all 2^b subset patterns over independent uniform labels. Overlapping/adaptive blocks require a separate dependence audit; implicit global transforms are not covered."
+    },
+    {
+      "block_size": 7,
+      "collision_union_bound": 7.275957614183426e-12,
+      "inverse_polynomial_threshold": 6.103515625e-05,
+      "linear_depth_transport_ruled_out_for_model": true,
+      "n_bits": 128,
+      "polynomial_block_family_size": 16384,
+      "tested_linear_depth": 64,
+      "theorem_scope": "Union bound for a target-independent explicit family of fixed blocks, each enumerating all 2^b subset patterns over independent uniform labels. Overlapping/adaptive blocks require a separate dependence audit; implicit global transforms are not covered."
+    },
+    {
+      "block_size": 8,
+      "collision_union_bound": 6.310887241768095e-30,
+      "inverse_polynomial_threshold": 1.52587890625e-05,
+      "linear_depth_transport_ruled_out_for_model": true,
+      "n_bits": 256,
+      "polynomial_block_family_size": 65536,
+      "tested_linear_depth": 128,
+      "theorem_scope": "Union bound for a target-independent explicit family of fixed blocks, each enumerating all 2^b subset patterns over independent uniform labels. Overlapping/adaptive blocks require a separate dependence audit; implicit global transforms are not covered."
+    }
+  ],
+  "open_architectures": [
+    {
+      "architecture_id": "OPEN-TARGET-DEPENDENT-PARTIAL-FIBER-MAP",
+      "first_falsifiers": [
+        "The map extends to a total full-cube transport and is therefore killed by the Fourier pivot theorem.",
+        "The transform encodes an explicit polynomial correction dictionary.",
+        "Coverage collapses past O(log n) depth.",
+        "Computing one transport is equivalent to solving the target subset-sum instance."
+      ],
+      "mechanism": "Compute a target-dependent partial map on F_k(t) that pairs inverse-polynomial source mass across the two child fibers without extending to a total full-cube bijection.",
+      "proof_obligations": [
+        "Give a polynomial circuit for the partial map, inverse on its image, and success flag.",
+        "Prove it preserves F_k(t), toggles bit k, and covers inverse-polynomial source-weighted fiber mass.",
+        "Compose transports through k=Theta(n) without exponential condition-number or precision loss.",
+        "Beat classical reconstruction from the same transport oracle."
+      ],
+      "why_not_ruled_out": "The total-transport Fourier collapse does not cover target-fiber partial maps, and the local dictionary union bound does not cover an implicit arithmetic relation sampler."
+    },
+    {
+      "architecture_id": "OPEN-FIBER-TRANSPORT-QUANTUM-WALK",
+      "first_falsifiers": [
+        "The transport graph fragments by a classical invariant.",
+        "The spectral gap or marked fraction is exponentially small.",
+        "Preparing a vertex in F_k(t) already costs exponential time at linear k."
+      ],
+      "mechanism": "Use local certified swaps as edges of a walk on F_k(t), then implement a coherent child-fiber transfer from spectral structure rather than a named correction.",
+      "proof_obligations": [
+        "Prove conductance or spectral gap on random density-one fibers through linear k.",
+        "Construct a starting-state preparation and child-marking reflection with polynomial resources.",
+        "Show the walk transfer produces a verified witness relation, not only a residue distinguisher.",
+        "Audit classical mixing and local-search baselines on the same graph."
+      ],
+      "why_not_ruled_out": "Sparse local moves can generate a large connected component even when no single explicit move reaches every witness."
+    }
+  ],
+  "scaling_rows": [
+    {
+      "block_count": 8,
+      "block_linear_depth_reached": false,
+      "block_size": 5,
+      "maximum_block_transport_depth": 11,
+      "maximum_single_flip_depth": 3,
+      "maximum_swap_depth": 9,
+      "maximum_tested_depth": 20,
+      "n_bits": 32,
+      "register_count": 36,
+      "single_flip_linear_depth_reached": false,
+      "swap_linear_depth_reached": false,
+      "transport_free_tail_bits": 20,
+      "trial_index": 0
+    },
+    {
+      "block_count": 8,
+      "block_linear_depth_reached": false,
+      "block_size": 5,
+      "maximum_block_transport_depth": 12,
+      "maximum_single_flip_depth": 3,
+      "maximum_swap_depth": 8,
+      "maximum_tested_depth": 20,
+      "n_bits": 32,
+      "register_count": 36,
+      "single_flip_linear_depth_reached": false,
+      "swap_linear_depth_reached": false,
+      "transport_free_tail_bits": 19,
+      "trial_index": 1
+    },
+    {
+      "block_count": 8,
+      "block_linear_depth_reached": false,
+      "block_size": 5,
+      "maximum_block_transport_depth": 13,
+      "maximum_single_flip_depth": 4,
+      "maximum_swap_depth": 14,
+      "maximum_tested_depth": 20,
+      "n_bits": 32,
+      "register_count": 36,
+      "single_flip_linear_depth_reached": false,
+      "swap_linear_depth_reached": false,
+      "transport_free_tail_bits": 17,
+      "trial_index": 2
+    },
+    {
+      "block_count": 12,
+      "block_linear_depth_reached": false,
+      "block_size": 6,
+      "maximum_block_transport_depth": 13,
+      "maximum_single_flip_depth": 4,
+      "maximum_swap_depth": 10,
+      "maximum_tested_depth": 24,
+      "n_bits": 64,
+      "register_count": 68,
+      "single_flip_linear_depth_reached": false,
+      "swap_linear_depth_reached": false,
+      "transport_free_tail_bits": 50,
+      "trial_index": 0
+    },
+    {
+      "block_count": 12,
+      "block_linear_depth_reached": false,
+      "block_size": 6,
+      "maximum_block_transport_depth": 10,
+      "maximum_single_flip_depth": 8,
+      "maximum_swap_depth": 14,
+      "maximum_tested_depth": 24,
+      "n_bits": 64,
+      "register_count": 68,
+      "single_flip_linear_depth_reached": false,
+      "swap_linear_depth_reached": false,
+      "transport_free_tail_bits": 49,
+      "trial_index": 1
+    },
+    {
+      "block_count": 12,
+      "block_linear_depth_reached": false,
+      "block_size": 6,
+      "maximum_block_transport_depth": 12,
+      "maximum_single_flip_depth": 4,
+      "maximum_swap_depth": 9,
+      "maximum_tested_depth": 24,
+      "n_bits": 64,
+      "register_count": 68,
+      "single_flip_linear_depth_reached": false,
+      "swap_linear_depth_reached": false,
+      "transport_free_tail_bits": 51,
+      "trial_index": 2
+    },
+    {
+      "block_count": 19,
+      "block_linear_depth_reached": false,
+      "block_size": 7,
+      "maximum_block_transport_depth": 14,
+      "maximum_single_flip_depth": 7,
+      "maximum_swap_depth": 18,
+      "maximum_tested_depth": 28,
+      "n_bits": 128,
+      "register_count": 132,
+      "single_flip_linear_depth_reached": false,
+      "swap_linear_depth_reached": false,
+      "transport_free_tail_bits": 109,
+      "trial_index": 0
+    },
+    {
+      "block_count": 19,
+      "block_linear_depth_reached": false,
+      "block_size": 7,
+      "maximum_block_transport_depth": 15,
+      "maximum_single_flip_depth": 5,
+      "maximum_swap_depth": 13,
+      "maximum_tested_depth": 28,
+      "n_bits": 128,
+      "register_count": 132,
+      "single_flip_linear_depth_reached": false,
+      "swap_linear_depth_reached": false,
+      "transport_free_tail_bits": 112,
+      "trial_index": 1
+    },
+    {
+      "block_count": 19,
+      "block_linear_depth_reached": false,
+      "block_size": 7,
+      "maximum_block_transport_depth": 19,
+      "maximum_single_flip_depth": 6,
+      "maximum_swap_depth": 17,
+      "maximum_tested_depth": 28,
+      "n_bits": 128,
+      "register_count": 132,
+      "single_flip_linear_depth_reached": false,
+      "swap_linear_depth_reached": false,
+      "transport_free_tail_bits": 108,
+      "trial_index": 2
+    },
+    {
+      "block_count": 33,
+      "block_linear_depth_reached": false,
+      "block_size": 8,
+      "maximum_block_transport_depth": 21,
+      "maximum_single_flip_depth": 9,
+      "maximum_swap_depth": 13,
+      "maximum_tested_depth": 32,
+      "n_bits": 256,
+      "register_count": 260,
+      "single_flip_linear_depth_reached": false,
+      "swap_linear_depth_reached": false,
+      "transport_free_tail_bits": 234,
+      "trial_index": 0
+    },
+    {
+      "block_count": 33,
+      "block_linear_depth_reached": false,
+      "block_size": 8,
+      "maximum_block_transport_depth": 18,
+      "maximum_single_flip_depth": 7,
+      "maximum_swap_depth": 16,
+      "maximum_tested_depth": 32,
+      "n_bits": 256,
+      "register_count": 260,
+      "single_flip_linear_depth_reached": false,
+      "swap_linear_depth_reached": false,
+      "transport_free_tail_bits": 237,
+      "trial_index": 1
+    },
+    {
+      "block_count": 33,
+      "block_linear_depth_reached": false,
+      "block_size": 8,
+      "maximum_block_transport_depth": 15,
+      "maximum_single_flip_depth": 8,
+      "maximum_swap_depth": 20,
+      "maximum_tested_depth": 32,
+      "n_bits": 256,
+      "register_count": 260,
+      "single_flip_linear_depth_reached": false,
+      "swap_linear_depth_reached": false,
+      "transport_free_tail_bits": 235,
+      "trial_index": 2
+    }
+  ],
+  "status": "local-fiber-transport-stalls-implicit-global-route-open",
+  "summary": "Certified 3 exact 2-adic transport identities across 12 scaling rows. No explicit local class reached linear depth; 2/4 asymptotic rows rule out the polynomial small-block dictionary model at k=n/2."
+}

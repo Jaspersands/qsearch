@@ -1,0 +1,218 @@
+{
+  "circuit_contract": {
+    "block_encoding": "Enumerate O(n^5) bounded-support orbit terms and SELECT controlled Young-basis group actions via the S_n QFT and reversible multiplication.",
+    "finite_dense_diagonalization_used_by_uniform_circuit": false,
+    "lcu_normalization_charged": true,
+    "phase_estimation_cost": "polynomial only if the LCU-normalized multiplicity eigenvalue gap is inverse polynomial",
+    "unproved_requirement": "all-n inverse-polynomial normalized gap on every reduction-relevant sector"
+  },
+  "claim_gate": {
+    "bounded_support_commutant_block_encoding_polynomial": true,
+    "coherent_polynomial_multiplicity_transform_proved": false,
+    "finite_all_multiplicity_blocks_split": true,
+    "hidden_involution_decoder_proved": false,
+    "inverse_polynomial_normalized_gap_proved": false,
+    "kcopy_associator_polynomial_proved": false,
+    "reason": "Bounded-support commutant Hamiltonians split every audited finite multiplicity block, but no all-n inverse-polynomial normalized gap, associator, transition filter, or decoder theorem is known.",
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-07-15T11:12:33.830271+00:00",
+  "falsifiers_triggered": [
+    "Finite simple multiplicity spectra do not prove an inverse-polynomial all-n spectral gap.",
+    "Noncommuting commutant generators require one explicit combined Hamiltonian rather than simultaneous measurement.",
+    "A multiplicity basis for one coupling does not implement overlapping Racah associators.",
+    "No hidden-involution decoder follows from a basis construction alone."
+  ],
+  "headline_metrics": {
+    "bounded_support_commutant_block_encoding_count": 1,
+    "coherent_polynomial_multiplicity_transform_count": 0,
+    "finite_all_block_split_count": 2,
+    "hidden_involution_decoder_count": 0,
+    "inverse_polynomial_gap_theorem_count": 0,
+    "kcopy_associator_count": 0,
+    "maximum_kronecker_multiplicity": 5,
+    "maximum_n": 6,
+    "maximum_target_tableau_spectrum_consistency_residual": 6.942010710158233e-14,
+    "maximum_tensor_dimension": 256,
+    "minimum_observed_lcu_normalized_gap": 0.020914784743274437,
+    "record_count": 2
+  },
+  "records": [
+    {
+      "all_finite_multiplicity_blocks_split": true,
+      "best_coefficients": {
+        "ORB-TC-INTERSECTION-0": 1,
+        "ORB-TC-INTERSECTION-1": 0,
+        "ORB-TC-INTERSECTION-2": 0,
+        "ORB-TT-DISJOINT": 0
+      },
+      "best_lcu_normalization": 20,
+      "coefficient_candidate_count": 312,
+      "coherent_polynomial_multiplicity_transform_proved": false,
+      "finite_matrix_search_only": true,
+      "fully_split_label_count": 10,
+      "fully_split_target_count": 2,
+      "generators": [
+        {
+          "diagonal_action_commutator_residual": 8.983126890656514e-15,
+          "hermiticity_residual": 2.8346039808028825e-15,
+          "id": "ORB-TT-DISJOINT",
+          "left_cycle_type": "2",
+          "maximum_union_support": 4,
+          "right_cycle_type": "2",
+          "support_intersection": 0,
+          "term_count": 30,
+          "term_count_polynomial_bound": "O(n^4)"
+        },
+        {
+          "diagonal_action_commutator_residual": 5.9141706678193166e-15,
+          "hermiticity_residual": 2.7052788744732948e-15,
+          "id": "ORB-TC-INTERSECTION-0",
+          "left_cycle_type": "2",
+          "maximum_union_support": 5,
+          "right_cycle_type": "3",
+          "support_intersection": 0,
+          "term_count": 20,
+          "term_count_polynomial_bound": "O(n^5)"
+        },
+        {
+          "diagonal_action_commutator_residual": 1.9275017566785944e-14,
+          "hermiticity_residual": 9.820278024439013e-15,
+          "id": "ORB-TC-INTERSECTION-1",
+          "left_cycle_type": "2",
+          "maximum_union_support": 4,
+          "right_cycle_type": "3",
+          "support_intersection": 1,
+          "term_count": 120,
+          "term_count_polynomial_bound": "O(n^5)"
+        },
+        {
+          "diagonal_action_commutator_residual": 9.040302515464661e-15,
+          "hermiticity_residual": 4.157283539937996e-15,
+          "id": "ORB-TC-INTERSECTION-2",
+          "left_cycle_type": "2",
+          "maximum_union_support": 3,
+          "right_cycle_type": "3",
+          "support_intersection": 2,
+          "term_count": 60,
+          "term_count_polynomial_bound": "O(n^5)"
+        }
+      ],
+      "inverse_polynomial_gap_proved": false,
+      "left_partition": [
+        3,
+        1,
+        1
+      ],
+      "maximum_generator_commutator_norm": 438.17804600413285,
+      "maximum_kronecker_multiplicity": 2,
+      "minimum_lcu_normalized_eigenvalue_gap": 0.4898979485566356,
+      "minimum_raw_eigenvalue_gap": 9.797958971132712,
+      "n": 5,
+      "noncommuting_generator_pair_count": 3,
+      "nontrivial_multiplicity_label_count": 10,
+      "nontrivial_multiplicity_target_count": 2,
+      "right_partition": [
+        3,
+        1,
+        1
+      ],
+      "status": "finite-simple-commutant-spectrum-gap-theorem-open",
+      "target_tableau_spectrum_consistency_residual": 7.993605777301127e-15,
+      "tensor_dimension": 36
+    },
+    {
+      "all_finite_multiplicity_blocks_split": true,
+      "best_coefficients": {
+        "ORB-TC-INTERSECTION-0": -1,
+        "ORB-TC-INTERSECTION-1": 0,
+        "ORB-TC-INTERSECTION-2": 1,
+        "ORB-TT-DISJOINT": 2
+      },
+      "best_lcu_normalization": 420,
+      "coefficient_candidate_count": 312,
+      "coherent_polynomial_multiplicity_transform_proved": false,
+      "finite_matrix_search_only": true,
+      "fully_split_label_count": 74,
+      "fully_split_target_count": 9,
+      "generators": [
+        {
+          "diagonal_action_commutator_residual": 4.2143112973487103e-14,
+          "hermiticity_residual": 1.605770830875601e-14,
+          "id": "ORB-TT-DISJOINT",
+          "left_cycle_type": "2",
+          "maximum_union_support": 4,
+          "right_cycle_type": "2",
+          "support_intersection": 0,
+          "term_count": 90,
+          "term_count_polynomial_bound": "O(n^4)"
+        },
+        {
+          "diagonal_action_commutator_residual": 5.89938772379321e-14,
+          "hermiticity_residual": 1.9844414473797276e-14,
+          "id": "ORB-TC-INTERSECTION-0",
+          "left_cycle_type": "2",
+          "maximum_union_support": 5,
+          "right_cycle_type": "3",
+          "support_intersection": 0,
+          "term_count": 120,
+          "term_count_polynomial_bound": "O(n^5)"
+        },
+        {
+          "diagonal_action_commutator_residual": 2.2637774907181344e-13,
+          "hermiticity_residual": 4.813560194975516e-14,
+          "id": "ORB-TC-INTERSECTION-1",
+          "left_cycle_type": "2",
+          "maximum_union_support": 4,
+          "right_cycle_type": "3",
+          "support_intersection": 1,
+          "term_count": 360,
+          "term_count_polynomial_bound": "O(n^5)"
+        },
+        {
+          "diagonal_action_commutator_residual": 7.620930876688966e-14,
+          "hermiticity_residual": 2.1159549101405647e-14,
+          "id": "ORB-TC-INTERSECTION-2",
+          "left_cycle_type": "2",
+          "maximum_union_support": 3,
+          "right_cycle_type": "3",
+          "support_intersection": 2,
+          "term_count": 120,
+          "term_count_polynomial_bound": "O(n^5)"
+        }
+      ],
+      "inverse_polynomial_gap_proved": false,
+      "left_partition": [
+        3,
+        2,
+        1
+      ],
+      "maximum_generator_commutator_norm": 1609.9689437998486,
+      "maximum_kronecker_multiplicity": 5,
+      "minimum_lcu_normalized_eigenvalue_gap": 0.020914784743274437,
+      "minimum_raw_eigenvalue_gap": 8.784209592175264,
+      "n": 6,
+      "noncommuting_generator_pair_count": 6,
+      "nontrivial_multiplicity_label_count": 74,
+      "nontrivial_multiplicity_target_count": 9,
+      "right_partition": [
+        3,
+        2,
+        1
+      ],
+      "status": "finite-simple-commutant-spectrum-gap-theorem-open",
+      "target_tableau_spectrum_consistency_residual": 6.942010710158233e-14,
+      "tensor_dimension": 256
+    }
+  ],
+  "status": "finite-multiplicity-basis-witness-gap-and-decoder-open",
+  "summary": "Searched polynomial-description commutant Hamiltonians on 2 sectors through n=6; 2 split every finite multiplicity block.",
+  "theorem_contract": {
+    "commutant_operator": "A_O=sum_(a,b in simultaneous-conjugacy orbit O) rho_lambda(a) tensor rho_mu(b)",
+    "diagonal_action_commutation": "Conjugation by rho_lambda(g) tensor rho_mu(g) permutes orbit terms, so [A_O,rho_diag(g)]=0.",
+    "multiplicity_action": "By Schur's lemma A_O=direct_sum_nu I_(V_nu) tensor M_(O,nu).",
+    "orbit_term_bound": "O(n^5)",
+    "searched_support": "disjoint (2,2) and support-intersection-stratified (2,3) permutation pairs",
+    "simple_finite_spectrum_is_asymptotic_gap_theorem": false
+  }
+}

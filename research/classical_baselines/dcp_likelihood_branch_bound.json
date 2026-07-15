@@ -1,0 +1,112 @@
+{
+  "asymptotic_fit": {
+    "classified_exponential": true,
+    "intercept": -1.5888218580782547e-15,
+    "model": "log2(mean unique candidate score evaluations)=slope*n+intercept",
+    "slope": 1.0
+  },
+  "claim_gate": {
+    "exact_f1_measurement_channel_used": true,
+    "exact_search_certified": true,
+    "general_nonlinear_lower_bound_proved": false,
+    "polynomial_branch_bound_proved": false,
+    "random_label_access_respected": true,
+    "reason": "The exact nonlinear decoder preserves access and avoids a score table, but its interval bounds leave exponentially many candidate evaluations in the observed scaling.",
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-07-14T20:27:38.626633+00:00",
+  "decoder_contract": {
+    "bound": "center score plus the sum of exact per-term Lipschitz variation caps",
+    "correctness": "complete search with a rigorous upper bound; no hidden-reflection verification is used",
+    "input": "iid random-label quadrature records with computational-basis bad-register rate 1/n",
+    "objective": "maximize the exact correlation likelihood over every d in Z_(2^n)",
+    "search": "priority branch-and-bound over integer frequency intervals"
+  },
+  "falsifiers_triggered": [
+    "Random high-frequency labels saturate the separable Lipschitz bound over broad candidate intervals.",
+    "Avoiding an N-entry score table does not help when exact search still evaluates an exponential fraction of candidates.",
+    "Finite exact recovery under f=1 contamination is information evidence, not polynomial decoding evidence.",
+    "This baseline rejects only the implemented interval bound; stronger nonlinear or algebraic global optimization remains open."
+  ],
+  "headline_metrics": {
+    "complete_exact_search_count": 20,
+    "exact_decode_success_count": 20,
+    "fitted_log2_evaluation_slope_per_n": 1.0,
+    "maximum_score_evaluation_count": 65536,
+    "mean_score_evaluation_fraction": 1.0,
+    "minimum_score_evaluation_fraction": 1.0,
+    "proved_nonlinear_decoder_lower_bound_count": 0,
+    "proved_polynomial_branch_bound_count": 0,
+    "scaling_row_count": 5,
+    "trial_count": 20
+  },
+  "rows": [
+    {
+      "exact_decode_success_count": 4,
+      "maximum_queue_size": 128,
+      "mean_pruned_interval_count": 256.0,
+      "mean_root_saturated_term_fraction": 0.9921875,
+      "mean_score_evaluation_count": 256.0,
+      "mean_score_evaluation_fraction": 1.0,
+      "minimum_score_evaluation_fraction": 1.0,
+      "modulus": 256,
+      "n_bits": 8,
+      "sample_count": 96,
+      "trial_count": 4
+    },
+    {
+      "exact_decode_success_count": 4,
+      "maximum_queue_size": 509,
+      "mean_pruned_interval_count": 1024.0,
+      "mean_root_saturated_term_fraction": 1.0,
+      "mean_score_evaluation_count": 1024.0,
+      "mean_score_evaluation_fraction": 1.0,
+      "minimum_score_evaluation_fraction": 1.0,
+      "modulus": 1024,
+      "n_bits": 10,
+      "sample_count": 120,
+      "trial_count": 4
+    },
+    {
+      "exact_decode_success_count": 4,
+      "maximum_queue_size": 2047,
+      "mean_pruned_interval_count": 4096.0,
+      "mean_root_saturated_term_fraction": 1.0,
+      "mean_score_evaluation_count": 4096.0,
+      "mean_score_evaluation_fraction": 1.0,
+      "minimum_score_evaluation_fraction": 1.0,
+      "modulus": 4096,
+      "n_bits": 12,
+      "sample_count": 144,
+      "trial_count": 4
+    },
+    {
+      "exact_decode_success_count": 4,
+      "maximum_queue_size": 8182,
+      "mean_pruned_interval_count": 16384.0,
+      "mean_root_saturated_term_fraction": 1.0,
+      "mean_score_evaluation_count": 16384.0,
+      "mean_score_evaluation_fraction": 1.0,
+      "minimum_score_evaluation_fraction": 1.0,
+      "modulus": 16384,
+      "n_bits": 14,
+      "sample_count": 168,
+      "trial_count": 4
+    },
+    {
+      "exact_decode_success_count": 4,
+      "maximum_queue_size": 32746,
+      "mean_pruned_interval_count": 65536.0,
+      "mean_root_saturated_term_fraction": 1.0,
+      "mean_score_evaluation_count": 65536.0,
+      "mean_score_evaluation_fraction": 1.0,
+      "minimum_score_evaluation_fraction": 1.0,
+      "modulus": 65536,
+      "n_bits": 16,
+      "sample_count": 192,
+      "trial_count": 4
+    }
+  ],
+  "status": "exact-nonlinear-decoder-observed-exponential-scaling",
+  "summary": "Ran 20 exact branch-and-bound decodes with f=1-rate contamination. Exact reflection recoveries=20; fitted log2 candidate-evaluation slope=1.0000; polynomial branch-and-bound proofs=0."
+}

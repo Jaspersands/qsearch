@@ -1,0 +1,1052 @@
+{
+  "created_at": "2026-07-08T15:24:07.235798+00:00",
+  "falsifiers_triggered": [
+    "Single-register strong Fourier sampling is treated as blocked for symmetric hidden-permutation routes."
+  ],
+  "headline_metrics": {
+    "max_balanced_shape_mass": 0.9999998828542459,
+    "max_n": 16,
+    "max_partition_count": 231,
+    "min_low_dimension_mass": 8.17017103909465e-06,
+    "n_count": 8,
+    "no_go_pressure_count": 3,
+    "small_control_count": 3
+  },
+  "n_values": [
+    4,
+    5,
+    6,
+    8,
+    10,
+    12,
+    14,
+    16
+  ],
+  "records": [
+    {
+      "balanced_shape_mass": 0.9166666666666666,
+      "factorial_order": 24,
+      "interpretation": "Small symmetric group where representation labels are not asymptotic evidence.",
+      "low_dimension_mass": 1.0,
+      "max_dimension": 3,
+      "max_plancherel_mass": 0.375,
+      "n": 4,
+      "partition_count": 5,
+      "status": "small-n-control",
+      "top_irreps": [
+        {
+          "dimension": 3,
+          "first_column": 3,
+          "first_row": 2,
+          "normalized_first_column": 0.75,
+          "normalized_first_row": 0.5,
+          "partition": [
+            2,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.375,
+          "shape_class": "balanced"
+        },
+        {
+          "dimension": 3,
+          "first_column": 2,
+          "first_row": 3,
+          "normalized_first_column": 0.5,
+          "normalized_first_row": 0.75,
+          "partition": [
+            3,
+            1
+          ],
+          "plancherel_mass": 0.375,
+          "shape_class": "balanced"
+        },
+        {
+          "dimension": 2,
+          "first_column": 2,
+          "first_row": 2,
+          "normalized_first_column": 0.5,
+          "normalized_first_row": 0.5,
+          "partition": [
+            2,
+            2
+          ],
+          "plancherel_mass": 0.16666666666666666,
+          "shape_class": "balanced"
+        },
+        {
+          "dimension": 1,
+          "first_column": 4,
+          "first_row": 1,
+          "normalized_first_column": 1.0,
+          "normalized_first_row": 0.25,
+          "partition": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.041666666666666664,
+          "shape_class": "sign"
+        },
+        {
+          "dimension": 1,
+          "first_column": 1,
+          "first_row": 4,
+          "normalized_first_column": 0.25,
+          "normalized_first_row": 1.0,
+          "partition": [
+            4
+          ],
+          "plancherel_mass": 0.041666666666666664,
+          "shape_class": "trivial"
+        }
+      ],
+      "trivial_and_sign_mass": 0.08333333333333333
+    },
+    {
+      "balanced_shape_mass": 0.7166666666666667,
+      "factorial_order": 120,
+      "interpretation": "Small symmetric group where representation labels are not asymptotic evidence.",
+      "low_dimension_mass": 1.0,
+      "max_dimension": 6,
+      "max_plancherel_mass": 0.3,
+      "n": 5,
+      "partition_count": 7,
+      "status": "small-n-control",
+      "top_irreps": [
+        {
+          "dimension": 6,
+          "first_column": 3,
+          "first_row": 3,
+          "normalized_first_column": 0.6,
+          "normalized_first_row": 0.6,
+          "partition": [
+            3,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.3,
+          "shape_class": "balanced"
+        },
+        {
+          "dimension": 5,
+          "first_column": 3,
+          "first_row": 2,
+          "normalized_first_column": 0.6,
+          "normalized_first_row": 0.4,
+          "partition": [
+            2,
+            2,
+            1
+          ],
+          "plancherel_mass": 0.20833333333333334,
+          "shape_class": "balanced"
+        },
+        {
+          "dimension": 5,
+          "first_column": 2,
+          "first_row": 3,
+          "normalized_first_column": 0.4,
+          "normalized_first_row": 0.6,
+          "partition": [
+            3,
+            2
+          ],
+          "plancherel_mass": 0.20833333333333334,
+          "shape_class": "balanced"
+        },
+        {
+          "dimension": 4,
+          "first_column": 4,
+          "first_row": 2,
+          "normalized_first_column": 0.8,
+          "normalized_first_row": 0.4,
+          "partition": [
+            2,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.13333333333333333,
+          "shape_class": "column-heavy"
+        },
+        {
+          "dimension": 4,
+          "first_column": 2,
+          "first_row": 4,
+          "normalized_first_column": 0.4,
+          "normalized_first_row": 0.8,
+          "partition": [
+            4,
+            1
+          ],
+          "plancherel_mass": 0.13333333333333333,
+          "shape_class": "row-heavy"
+        },
+        {
+          "dimension": 1,
+          "first_column": 5,
+          "first_row": 1,
+          "normalized_first_column": 1.0,
+          "normalized_first_row": 0.2,
+          "partition": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.008333333333333333,
+          "shape_class": "sign"
+        },
+        {
+          "dimension": 1,
+          "first_column": 1,
+          "first_row": 5,
+          "normalized_first_column": 0.2,
+          "normalized_first_row": 1.0,
+          "partition": [
+            5
+          ],
+          "plancherel_mass": 0.008333333333333333,
+          "shape_class": "trivial"
+        }
+      ],
+      "trivial_and_sign_mass": 0.016666666666666666
+    },
+    {
+      "balanced_shape_mass": 0.9277777777777778,
+      "factorial_order": 720,
+      "interpretation": "Small symmetric group where representation labels are not asymptotic evidence.",
+      "low_dimension_mass": 1.0,
+      "max_dimension": 16,
+      "max_plancherel_mass": 0.35555555555555557,
+      "n": 6,
+      "partition_count": 11,
+      "status": "small-n-control",
+      "top_irreps": [
+        {
+          "dimension": 16,
+          "first_column": 3,
+          "first_row": 3,
+          "normalized_first_column": 0.5,
+          "normalized_first_row": 0.5,
+          "partition": [
+            3,
+            2,
+            1
+          ],
+          "plancherel_mass": 0.35555555555555557,
+          "shape_class": "balanced"
+        },
+        {
+          "dimension": 10,
+          "first_column": 4,
+          "first_row": 3,
+          "normalized_first_column": 0.6666666666666666,
+          "normalized_first_row": 0.5,
+          "partition": [
+            3,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.1388888888888889,
+          "shape_class": "balanced"
+        },
+        {
+          "dimension": 10,
+          "first_column": 3,
+          "first_row": 4,
+          "normalized_first_column": 0.5,
+          "normalized_first_row": 0.6666666666666666,
+          "partition": [
+            4,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.1388888888888889,
+          "shape_class": "balanced"
+        },
+        {
+          "dimension": 9,
+          "first_column": 4,
+          "first_row": 2,
+          "normalized_first_column": 0.6666666666666666,
+          "normalized_first_row": 0.3333333333333333,
+          "partition": [
+            2,
+            2,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.1125,
+          "shape_class": "balanced"
+        },
+        {
+          "dimension": 9,
+          "first_column": 2,
+          "first_row": 4,
+          "normalized_first_column": 0.3333333333333333,
+          "normalized_first_row": 0.6666666666666666,
+          "partition": [
+            4,
+            2
+          ],
+          "plancherel_mass": 0.1125,
+          "shape_class": "balanced"
+        },
+        {
+          "dimension": 5,
+          "first_column": 5,
+          "first_row": 2,
+          "normalized_first_column": 0.8333333333333334,
+          "normalized_first_row": 0.3333333333333333,
+          "partition": [
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.034722222222222224,
+          "shape_class": "column-heavy"
+        },
+        {
+          "dimension": 5,
+          "first_column": 3,
+          "first_row": 2,
+          "normalized_first_column": 0.5,
+          "normalized_first_row": 0.3333333333333333,
+          "partition": [
+            2,
+            2,
+            2
+          ],
+          "plancherel_mass": 0.034722222222222224,
+          "shape_class": "balanced"
+        },
+        {
+          "dimension": 5,
+          "first_column": 2,
+          "first_row": 3,
+          "normalized_first_column": 0.3333333333333333,
+          "normalized_first_row": 0.5,
+          "partition": [
+            3,
+            3
+          ],
+          "plancherel_mass": 0.034722222222222224,
+          "shape_class": "balanced"
+        }
+      ],
+      "trivial_and_sign_mass": 0.002777777777777778
+    },
+    {
+      "balanced_shape_mass": 0.9975198412698413,
+      "factorial_order": 40320,
+      "interpretation": "Representation mass is transitioning; use only as a finite-size control, not a positive signal.",
+      "low_dimension_mass": 1.0,
+      "max_dimension": 90,
+      "max_plancherel_mass": 0.20089285714285715,
+      "n": 8,
+      "partition_count": 22,
+      "status": "representation-regime-transition",
+      "top_irreps": [
+        {
+          "dimension": 90,
+          "first_column": 4,
+          "first_row": 4,
+          "normalized_first_column": 0.5,
+          "normalized_first_row": 0.5,
+          "partition": [
+            4,
+            2,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.20089285714285715,
+          "shape_class": "balanced"
+        },
+        {
+          "dimension": 70,
+          "first_column": 4,
+          "first_row": 3,
+          "normalized_first_column": 0.5,
+          "normalized_first_row": 0.375,
+          "partition": [
+            3,
+            2,
+            2,
+            1
+          ],
+          "plancherel_mass": 0.12152777777777778,
+          "shape_class": "balanced"
+        },
+        {
+          "dimension": 70,
+          "first_column": 3,
+          "first_row": 4,
+          "normalized_first_column": 0.375,
+          "normalized_first_row": 0.5,
+          "partition": [
+            4,
+            3,
+            1
+          ],
+          "plancherel_mass": 0.12152777777777778,
+          "shape_class": "balanced"
+        },
+        {
+          "dimension": 64,
+          "first_column": 5,
+          "first_row": 3,
+          "normalized_first_column": 0.625,
+          "normalized_first_row": 0.375,
+          "partition": [
+            3,
+            2,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.10158730158730159,
+          "shape_class": "balanced"
+        },
+        {
+          "dimension": 64,
+          "first_column": 3,
+          "first_row": 5,
+          "normalized_first_column": 0.375,
+          "normalized_first_row": 0.625,
+          "partition": [
+            5,
+            2,
+            1
+          ],
+          "plancherel_mass": 0.10158730158730159,
+          "shape_class": "balanced"
+        },
+        {
+          "dimension": 56,
+          "first_column": 4,
+          "first_row": 3,
+          "normalized_first_column": 0.5,
+          "normalized_first_row": 0.375,
+          "partition": [
+            3,
+            3,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.07777777777777778,
+          "shape_class": "balanced"
+        },
+        {
+          "dimension": 56,
+          "first_column": 3,
+          "first_row": 4,
+          "normalized_first_column": 0.375,
+          "normalized_first_row": 0.5,
+          "partition": [
+            4,
+            2,
+            2
+          ],
+          "plancherel_mass": 0.07777777777777778,
+          "shape_class": "balanced"
+        },
+        {
+          "dimension": 42,
+          "first_column": 3,
+          "first_row": 3,
+          "normalized_first_column": 0.375,
+          "normalized_first_row": 0.375,
+          "partition": [
+            3,
+            3,
+            2
+          ],
+          "plancherel_mass": 0.04375,
+          "shape_class": "balanced"
+        }
+      ],
+      "trivial_and_sign_mass": 4.96031746031746e-05
+    },
+    {
+      "balanced_shape_mass": 0.9985653659611993,
+      "factorial_order": 3628800,
+      "interpretation": "Representation mass is transitioning; use only as a finite-size control, not a positive signal.",
+      "low_dimension_mass": 1.0,
+      "max_dimension": 768,
+      "max_plancherel_mass": 0.16253968253968254,
+      "n": 10,
+      "partition_count": 42,
+      "status": "representation-regime-transition",
+      "top_irreps": [
+        {
+          "dimension": 768,
+          "first_column": 4,
+          "first_row": 4,
+          "normalized_first_column": 0.4,
+          "normalized_first_row": 0.4,
+          "partition": [
+            4,
+            3,
+            2,
+            1
+          ],
+          "plancherel_mass": 0.16253968253968254,
+          "shape_class": "balanced"
+        },
+        {
+          "dimension": 567,
+          "first_column": 5,
+          "first_row": 4,
+          "normalized_first_column": 0.5,
+          "normalized_first_row": 0.4,
+          "partition": [
+            4,
+            2,
+            2,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.08859375,
+          "shape_class": "balanced"
+        },
+        {
+          "dimension": 567,
+          "first_column": 4,
+          "first_row": 5,
+          "normalized_first_column": 0.4,
+          "normalized_first_row": 0.5,
+          "partition": [
+            5,
+            3,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.08859375,
+          "shape_class": "balanced"
+        },
+        {
+          "dimension": 525,
+          "first_column": 5,
+          "first_row": 4,
+          "normalized_first_column": 0.5,
+          "normalized_first_row": 0.4,
+          "partition": [
+            4,
+            3,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.0759548611111111,
+          "shape_class": "balanced"
+        },
+        {
+          "dimension": 525,
+          "first_column": 4,
+          "first_row": 5,
+          "normalized_first_column": 0.4,
+          "normalized_first_row": 0.5,
+          "partition": [
+            5,
+            2,
+            2,
+            1
+          ],
+          "plancherel_mass": 0.0759548611111111,
+          "shape_class": "balanced"
+        },
+        {
+          "dimension": 450,
+          "first_column": 5,
+          "first_row": 3,
+          "normalized_first_column": 0.5,
+          "normalized_first_row": 0.3,
+          "partition": [
+            3,
+            3,
+            2,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.05580357142857143,
+          "shape_class": "balanced"
+        },
+        {
+          "dimension": 450,
+          "first_column": 3,
+          "first_row": 5,
+          "normalized_first_column": 0.3,
+          "normalized_first_row": 0.5,
+          "partition": [
+            5,
+            3,
+            2
+          ],
+          "plancherel_mass": 0.05580357142857143,
+          "shape_class": "balanced"
+        },
+        {
+          "dimension": 448,
+          "first_column": 5,
+          "first_row": 5,
+          "normalized_first_column": 0.5,
+          "normalized_first_row": 0.5,
+          "partition": [
+            5,
+            2,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.055308641975308645,
+          "shape_class": "balanced"
+        }
+      ],
+      "trivial_and_sign_mass": 5.511463844797178e-07
+    },
+    {
+      "balanced_shape_mass": 0.9999746848444765,
+      "factorial_order": 479001600,
+      "interpretation": "Plancherel mass has moved to high-dimensional balanced irreps; single-register strong Fourier labels are unlikely to expose hidden permutations without collective measurements.",
+      "low_dimension_mass": 0.06645242938645717,
+      "max_dimension": 7700,
+      "max_plancherel_mass": 0.12377829218106996,
+      "n": 12,
+      "partition_count": 77,
+      "status": "strong-fourier-no-go-pressure",
+      "top_irreps": [
+        {
+          "dimension": 7700,
+          "first_column": 5,
+          "first_row": 5,
+          "normalized_first_column": 0.4166666666666667,
+          "normalized_first_row": 0.4166666666666667,
+          "partition": [
+            5,
+            3,
+            2,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.12377829218106996,
+          "shape_class": "balanced"
+        },
+        {
+          "dimension": 5775,
+          "first_column": 5,
+          "first_row": 4,
+          "normalized_first_column": 0.4166666666666667,
+          "normalized_first_row": 0.3333333333333333,
+          "partition": [
+            4,
+            3,
+            2,
+            2,
+            1
+          ],
+          "plancherel_mass": 0.06962528935185185,
+          "shape_class": "balanced"
+        },
+        {
+          "dimension": 5775,
+          "first_column": 4,
+          "first_row": 5,
+          "normalized_first_column": 0.3333333333333333,
+          "normalized_first_row": 0.4166666666666667,
+          "partition": [
+            5,
+            4,
+            2,
+            1
+          ],
+          "plancherel_mass": 0.06962528935185185,
+          "shape_class": "balanced"
+        },
+        {
+          "dimension": 5632,
+          "first_column": 6,
+          "first_row": 4,
+          "normalized_first_column": 0.5,
+          "normalized_first_row": 0.3333333333333333,
+          "partition": [
+            4,
+            3,
+            2,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.0662198706643151,
+          "shape_class": "balanced"
+        },
+        {
+          "dimension": 5632,
+          "first_column": 4,
+          "first_row": 6,
+          "normalized_first_column": 0.3333333333333333,
+          "normalized_first_row": 0.5,
+          "partition": [
+            6,
+            3,
+            2,
+            1
+          ],
+          "plancherel_mass": 0.0662198706643151,
+          "shape_class": "balanced"
+        },
+        {
+          "dimension": 4455,
+          "first_column": 5,
+          "first_row": 4,
+          "normalized_first_column": 0.4166666666666667,
+          "normalized_first_row": 0.3333333333333333,
+          "partition": [
+            4,
+            4,
+            2,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.04143415178571429,
+          "shape_class": "balanced"
+        },
+        {
+          "dimension": 4455,
+          "first_column": 4,
+          "first_row": 5,
+          "normalized_first_column": 0.3333333333333333,
+          "normalized_first_row": 0.4166666666666667,
+          "partition": [
+            5,
+            3,
+            2,
+            2
+          ],
+          "plancherel_mass": 0.04143415178571429,
+          "shape_class": "balanced"
+        },
+        {
+          "dimension": 4158,
+          "first_column": 5,
+          "first_row": 4,
+          "normalized_first_column": 0.4166666666666667,
+          "normalized_first_row": 0.3333333333333333,
+          "partition": [
+            4,
+            3,
+            3,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.03609375,
+          "shape_class": "balanced"
+        }
+      ],
+      "trivial_and_sign_mass": 4.17535139757362e-09
+    },
+    {
+      "balanced_shape_mass": 0.9999889397235627,
+      "factorial_order": 87178291200,
+      "interpretation": "Plancherel mass has moved to high-dimensional balanced irreps; single-register strong Fourier labels are unlikely to expose hidden permutations without collective measurements.",
+      "low_dimension_mass": 0.00042170223221810524,
+      "max_dimension": 69498,
+      "max_plancherel_mass": 0.055403380102040815,
+      "n": 14,
+      "partition_count": 135,
+      "status": "strong-fourier-no-go-pressure",
+      "top_irreps": [
+        {
+          "dimension": 69498,
+          "first_column": 6,
+          "first_row": 5,
+          "normalized_first_column": 0.42857142857142855,
+          "normalized_first_row": 0.35714285714285715,
+          "partition": [
+            5,
+            3,
+            2,
+            2,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.055403380102040815,
+          "shape_class": "balanced"
+        },
+        {
+          "dimension": 69498,
+          "first_column": 5,
+          "first_row": 6,
+          "normalized_first_column": 0.35714285714285715,
+          "normalized_first_row": 0.42857142857142855,
+          "partition": [
+            6,
+            4,
+            2,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.055403380102040815,
+          "shape_class": "balanced"
+        },
+        {
+          "dimension": 68640,
+          "first_column": 5,
+          "first_row": 5,
+          "normalized_first_column": 0.35714285714285715,
+          "normalized_first_row": 0.35714285714285715,
+          "partition": [
+            5,
+            4,
+            2,
+            2,
+            1
+          ],
+          "plancherel_mass": 0.054043839758125475,
+          "shape_class": "balanced"
+        },
+        {
+          "dimension": 64064,
+          "first_column": 5,
+          "first_row": 5,
+          "normalized_first_column": 0.35714285714285715,
+          "normalized_first_row": 0.35714285714285715,
+          "partition": [
+            5,
+            3,
+            3,
+            2,
+            1
+          ],
+          "plancherel_mass": 0.04707818930041152,
+          "shape_class": "balanced"
+        },
+        {
+          "dimension": 64064,
+          "first_column": 5,
+          "first_row": 5,
+          "normalized_first_column": 0.35714285714285715,
+          "normalized_first_row": 0.35714285714285715,
+          "partition": [
+            5,
+            4,
+            3,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.04707818930041152,
+          "shape_class": "balanced"
+        },
+        {
+          "dimension": 63063,
+          "first_column": 6,
+          "first_row": 5,
+          "normalized_first_column": 0.42857142857142855,
+          "normalized_first_row": 0.35714285714285715,
+          "partition": [
+            5,
+            4,
+            2,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.04561848958333333,
+          "shape_class": "balanced"
+        },
+        {
+          "dimension": 63063,
+          "first_column": 5,
+          "first_row": 6,
+          "normalized_first_column": 0.35714285714285715,
+          "normalized_first_row": 0.42857142857142855,
+          "partition": [
+            6,
+            3,
+            2,
+            2,
+            1
+          ],
+          "plancherel_mass": 0.04561848958333333,
+          "shape_class": "balanced"
+        },
+        {
+          "dimension": 59904,
+          "first_column": 6,
+          "first_row": 6,
+          "normalized_first_column": 0.42857142857142855,
+          "normalized_first_row": 0.42857142857142855,
+          "partition": [
+            6,
+            3,
+            2,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.04116264687693259,
+          "shape_class": "balanced"
+        }
+      ],
+      "trivial_and_sign_mass": 2.294149119545945e-11
+    },
+    {
+      "balanced_shape_mass": 0.9999998828542459,
+      "factorial_order": 20922789888000,
+      "interpretation": "Plancherel mass has moved to high-dimensional balanced irreps; single-register strong Fourier labels are unlikely to expose hidden permutations without collective measurements.",
+      "low_dimension_mass": 8.17017103909465e-06,
+      "max_dimension": 1153152,
+      "max_plancherel_mass": 0.06355555555555556,
+      "n": 16,
+      "partition_count": 231,
+      "status": "strong-fourier-no-go-pressure",
+      "top_irreps": [
+        {
+          "dimension": 1153152,
+          "first_column": 6,
+          "first_row": 5,
+          "normalized_first_column": 0.375,
+          "normalized_first_row": 0.3125,
+          "partition": [
+            5,
+            4,
+            3,
+            2,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.06355555555555556,
+          "shape_class": "balanced"
+        },
+        {
+          "dimension": 1153152,
+          "first_column": 5,
+          "first_row": 6,
+          "normalized_first_column": 0.3125,
+          "normalized_first_row": 0.375,
+          "partition": [
+            6,
+            4,
+            3,
+            2,
+            1
+          ],
+          "plancherel_mass": 0.06355555555555556,
+          "shape_class": "balanced"
+        },
+        {
+          "dimension": 928746,
+          "first_column": 6,
+          "first_row": 6,
+          "normalized_first_column": 0.375,
+          "normalized_first_row": 0.375,
+          "partition": [
+            6,
+            4,
+            2,
+            2,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.041226296164772726,
+          "shape_class": "balanced"
+        },
+        {
+          "dimension": 819000,
+          "first_column": 6,
+          "first_row": 6,
+          "normalized_first_column": 0.375,
+          "normalized_first_row": 0.375,
+          "partition": [
+            6,
+            3,
+            3,
+            2,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.03205886994949495,
+          "shape_class": "balanced"
+        },
+        {
+          "dimension": 819000,
+          "first_column": 6,
+          "first_row": 6,
+          "normalized_first_column": 0.375,
+          "normalized_first_row": 0.375,
+          "partition": [
+            6,
+            4,
+            3,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.03205886994949495,
+          "shape_class": "balanced"
+        },
+        {
+          "dimension": 698880,
+          "first_column": 7,
+          "first_row": 5,
+          "normalized_first_column": 0.4375,
+          "normalized_first_row": 0.3125,
+          "partition": [
+            5,
+            4,
+            2,
+            2,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.02334455667789001,
+          "shape_class": "balanced"
+        },
+        {
+          "dimension": 698880,
+          "first_column": 5,
+          "first_row": 7,
+          "normalized_first_column": 0.3125,
+          "normalized_first_row": 0.4375,
+          "partition": [
+            7,
+            4,
+            2,
+            2,
+            1
+          ],
+          "plancherel_mass": 0.02334455667789001,
+          "shape_class": "balanced"
+        },
+        {
+          "dimension": 673920,
+          "first_column": 7,
+          "first_row": 5,
+          "normalized_first_column": 0.4375,
+          "normalized_first_row": 0.3125,
+          "partition": [
+            5,
+            3,
+            3,
+            2,
+            1,
+            1,
+            1
+          ],
+          "plancherel_mass": 0.02170686456400742,
+          "shape_class": "balanced"
+        }
+      ],
+      "trivial_and_sign_mass": 9.55895466477477e-14
+    }
+  ],
+  "status": "strong-fourier-route-blocked",
+  "summary": "Audited S_n representation growth for n=[4, 5, 6, 8, 10, 12, 14, 16]. 3 row(s) show strong-Fourier no-go pressure; minimum low-dimensional Plancherel mass is 8.17e-06."
+}

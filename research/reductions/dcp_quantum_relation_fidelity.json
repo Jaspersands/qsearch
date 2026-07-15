@@ -1,0 +1,182 @@
+{
+  "claim_gate": {
+    "concrete_quantum_walk_audited": false,
+    "full_quantum_relation_composition_proved": false,
+    "paired_workspace_identity_proved": true,
+    "polynomial_density_one_solver_proved": false,
+    "reason": "Success probabilities do not control paired workspace fidelity. The only proved overlap row is the existing shared-seed interface control, which does not construct a partial solver.",
+    "shared_seed_interface_control_retained": true,
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-07-15T06:29:46.881068+00:00",
+  "falsifiers_triggered": [
+    "Endpoint-tagged or measured histories have exactly zero paired visibility.",
+    "Independent sparse path supports have exponentially decaying expected normalized overlap at linear depth.",
+    "A finite common-history fraction is not an all-n overlap theorem.",
+    "Canonical witness cleanup is a proposal, not a circuit, until uniqueness and reversible erasure are proved.",
+    "The shared-seed interface control proves composability only; it does not construct a partial solver."
+  ],
+  "headline_metrics": {
+    "exact_zero_visibility_count": 2,
+    "exponential_history_overlap_count": 1,
+    "finite_only_or_conditional_count": 2,
+    "maximum_noncontrol_valid_weighted_visibility": 1.0,
+    "mechanism_count": 6,
+    "proved_full_quantum_relation_composition_count": 0,
+    "proved_inverse_polynomial_overlap_count": 1,
+    "proved_polynomial_partial_solver_count": 0,
+    "proved_shared_seed_interface_control_count": 1
+  },
+  "mechanisms": [
+    {
+      "amplitude_balance_factor": 1.0,
+      "asymptotic_overlap_class": "constant-proved-interface-control",
+      "decision": "proved-interface-control-no-solver",
+      "exact_zero_visibility": false,
+      "full_composition_proved": false,
+      "history_collision_fraction": 1.0,
+      "inverse_polynomial_overlap_proved": true,
+      "mechanism_id": "SHARED-SEED-DETERMINISTIC-CONTROL",
+      "missing_obligations": [
+        "polynomial density-one partial subset-sum solver with source coverage"
+      ],
+      "paired_visibility": 1.0,
+      "polynomial_solver_proved": false,
+      "title": "Target-independent shared-seed deterministic control",
+      "valid_weighted_visibility": 1.0,
+      "workspace_overlap": 1.0
+    },
+    {
+      "amplitude_balance_factor": 1.0,
+      "asymptotic_overlap_class": "zero-proved-for-model",
+      "decision": "rejected-zero-visibility",
+      "exact_zero_visibility": true,
+      "full_composition_proved": false,
+      "history_collision_fraction": 0.0,
+      "inverse_polynomial_overlap_proved": false,
+      "mechanism_id": "ENDPOINT-TAGGED-WALK-HISTORY",
+      "missing_obligations": [
+        "uniform inverse-polynomial paired-workspace overlap theorem",
+        "polynomial density-one partial subset-sum solver with source coverage",
+        "reversible endpoint-independent history/witness cleanup"
+      ],
+      "paired_visibility": 0.0,
+      "polynomial_solver_proved": false,
+      "title": "Endpoint-tagged quantum-walk history",
+      "valid_weighted_visibility": 0.0,
+      "workspace_overlap": 0.0
+    },
+    {
+      "amplitude_balance_factor": 1.0,
+      "asymptotic_overlap_class": "exponential-expected-under-sparse-history-model",
+      "decision": "rejected-exponential-history-overlap",
+      "exact_zero_visibility": false,
+      "full_composition_proved": false,
+      "history_collision_fraction": 0.000244140625,
+      "inverse_polynomial_overlap_proved": false,
+      "mechanism_id": "INDEPENDENT-SPARSE-PATH-HISTORIES",
+      "missing_obligations": [
+        "uniform inverse-polynomial paired-workspace overlap theorem",
+        "polynomial density-one partial subset-sum solver with source coverage",
+        "reversible endpoint-independent history/witness cleanup"
+      ],
+      "paired_visibility": 0.015625,
+      "polynomial_solver_proved": false,
+      "title": "Independent sparse path-history supports",
+      "valid_weighted_visibility": 0.015625,
+      "workspace_overlap": 0.015625
+    },
+    {
+      "amplitude_balance_factor": 0.9797958971132712,
+      "asymptotic_overlap_class": "finite-only-no-asymptotic-overlap-proof",
+      "decision": "proposal-only-proof-debt",
+      "exact_zero_visibility": false,
+      "full_composition_proved": false,
+      "history_collision_fraction": 0.0078125,
+      "inverse_polynomial_overlap_proved": false,
+      "mechanism_id": "CORRELATED-COMMON-HISTORY-CORE",
+      "missing_obligations": [
+        "uniform inverse-polynomial paired-workspace overlap theorem",
+        "polynomial density-one partial subset-sum solver with source coverage",
+        "reversible endpoint-independent history/witness cleanup",
+        "coherent invalid-witness rejection with composed error bound"
+      ],
+      "paired_visibility": 0.2449489742783178,
+      "polynomial_solver_proved": false,
+      "title": "Correlated common-history core",
+      "valid_weighted_visibility": 0.2327015255644019,
+      "workspace_overlap": 0.25
+    },
+    {
+      "amplitude_balance_factor": 1.0,
+      "asymptotic_overlap_class": "constant-conditional-on-unproved-canonical-cleanup",
+      "decision": "proposal-only-proof-debt",
+      "exact_zero_visibility": false,
+      "full_composition_proved": false,
+      "history_collision_fraction": 1.0,
+      "inverse_polynomial_overlap_proved": false,
+      "mechanism_id": "REVERSIBLE-CANONICAL-WITNESS-CLEANUP",
+      "missing_obligations": [
+        "uniform inverse-polynomial paired-workspace overlap theorem",
+        "polynomial density-one partial subset-sum solver with source coverage",
+        "reversible endpoint-independent history/witness cleanup"
+      ],
+      "paired_visibility": 1.0,
+      "polynomial_solver_proved": false,
+      "title": "Reversible canonical witness cleanup",
+      "valid_weighted_visibility": 1.0,
+      "workspace_overlap": 1.0
+    },
+    {
+      "amplitude_balance_factor": 1.0,
+      "asymptotic_overlap_class": "zero-proved-for-model",
+      "decision": "rejected-zero-visibility",
+      "exact_zero_visibility": true,
+      "full_composition_proved": false,
+      "history_collision_fraction": 0.0,
+      "inverse_polynomial_overlap_proved": false,
+      "mechanism_id": "MEASURED-ENDPOINT-DEPENDENT-HISTORY",
+      "missing_obligations": [
+        "uniform inverse-polynomial paired-workspace overlap theorem",
+        "polynomial density-one partial subset-sum solver with source coverage",
+        "reversible endpoint-independent history/witness cleanup"
+      ],
+      "paired_visibility": 0.0,
+      "polynomial_solver_proved": false,
+      "title": "Measured endpoint-dependent history control",
+      "valid_weighted_visibility": 0.0,
+      "workspace_overlap": 0.0
+    }
+  ],
+  "scaling_certificates": [
+    {
+      "branch_factor": 2,
+      "certificate_id": "CERT-DCP-SPARSE-INDEPENDENT-HISTORY-OVERLAP",
+      "classification": "exponential when L=Omega(n) and alpha is bounded below one",
+      "endpoint_support_size": "B^(alpha L), 0<=alpha<1",
+      "expected_common_histories": "B^((2 alpha - 1)L)",
+      "history_depth_symbol": "L",
+      "normalized_overlap": "B^(-(1-alpha)L)",
+      "theorem_scope": "Expectation under independent uniformly placed endpoint history supports; this is not a lower bound for correlated or coherently cleaned quantum walks."
+    },
+    {
+      "branch_factor": 2,
+      "certificate_id": "CERT-DCP-COMMON-CORE-OVERLAP-REQUIREMENT",
+      "classification": "must be at least inverse polynomial for this matching composition",
+      "endpoint_support_size": "M_0(n), M_1(n)",
+      "expected_common_histories": "C(n)",
+      "history_depth_symbol": "L",
+      "normalized_overlap": "C(n)/sqrt(M_0(n) M_1(n))",
+      "theorem_scope": "Exact for uniform positive workspace amplitudes after aligning paired witnesses; arbitrary amplitudes require their full inner product rather than support counts."
+    }
+  ],
+  "status": "quantum-relation-workspace-fidelity-blocked",
+  "summary": "Audited 6 paired-workspace mechanisms: 2 have exact zero visibility, 1 has exponential expected overlap decay, and zero combine a polynomial density-one solver with a complete coherence theorem.",
+  "theorem": {
+    "amplitude_balance_identity": true,
+    "required_extension": "A concrete quantum walk must expose target-by-target amplitudes, witness alignment, histories, cleanup, precision, and an all-n inverse-polynomial overlap or shared-seed theorem.",
+    "scope": "Regev-style paired-endpoint matching with uniform positive workspace amplitudes; arbitrary quantum states use the exact paired workspace inner product.",
+    "success_probability_alone_implies_interference": false,
+    "uniform_support_workspace_overlap_identity": true
+  }
+}

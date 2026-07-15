@@ -1,0 +1,340 @@
+{
+  "claim_gate": {
+    "classical_time_lower_bound_proved": false,
+    "polynomial_relation_sampler_constructed": false,
+    "quantum_speedup_claim_allowed": false,
+    "reason": "Arbitrary target-indexed maps returning beta-local partners are exponentially unlikely when H_2(beta)<alpha. This is a geometric existence obstruction only; linear-support implicit samplers remain open and must beat exact exponential classical baselines under matched access.",
+    "target_indexed_linear_support_relation_route_alive": true,
+    "target_indexed_local_map_route_alive_below_chosen_fraction": false
+  },
+  "classical_and_quantum_baselines": [
+    {
+      "asymptotic_memory": "O(2^(k+1))",
+      "asymptotic_time": "O(m*2^(k+1))",
+      "attack_id": "classical-modular-dynamic-programming",
+      "illegal_query_models": [
+        "random_sample"
+      ],
+      "legal_query_models": [
+        "full_table",
+        "explicit_evaluator",
+        "coherent_oracle"
+      ],
+      "limitation": "Exact and reconstructive, but exponential when k=Theta(n).",
+      "polynomial_at_linear_depth": false
+    },
+    {
+      "asymptotic_memory": "2^(m/2+o(m))",
+      "asymptotic_time": "2^(m/2+o(m))",
+      "attack_id": "classical-meet-in-the-middle",
+      "illegal_query_models": [
+        "random_sample"
+      ],
+      "legal_query_models": [
+        "full_table",
+        "explicit_evaluator",
+        "coherent_oracle"
+      ],
+      "limitation": "Uses the entire explicit label instance and gives no polynomial relation sampler.",
+      "polynomial_at_linear_depth": false
+    },
+    {
+      "asymptotic_memory": "poly(n)",
+      "asymptotic_time": "2^(H_2(beta)*n+o(n))",
+      "attack_id": "classical-local-hamming-ball-enumeration",
+      "illegal_query_models": [
+        "random_sample"
+      ],
+      "legal_query_models": [
+        "full_table",
+        "explicit_evaluator",
+        "coherent_oracle"
+      ],
+      "limitation": "The theorem shows this search region is empty with exponentially high probability below the entropy threshold.",
+      "polynomial_at_linear_depth": false
+    },
+    {
+      "asymptotic_memory": "poly(n) excluding oracle implementation",
+      "asymptotic_time": "2^(m/2+o(m)) coherent relation-predicate calls",
+      "attack_id": "quantum-grover-over-flip-sets",
+      "illegal_query_models": [
+        "full_table",
+        "random_sample",
+        "explicit_evaluator"
+      ],
+      "legal_query_models": [
+        "coherent_oracle"
+      ],
+      "limitation": "A classical label table can be hardcoded into a coherent verifier at polynomial gate overhead, but that is an additional circuit construction rather than classical table access alone.",
+      "polynomial_at_linear_depth": false
+    }
+  ],
+  "created_at": "2026-07-15T08:06:03.201953+00:00",
+  "falsifiers_triggered": [
+    "Target dependence does not create extra sign choices: the source assignment fixes every flip sign.",
+    "Any beta-local map is rejected below the entropy threshold, even if its mask is computed implicitly from the target.",
+    "Polynomially many sampled sources do not overcome the negative union-bound exponent.",
+    "Small finite nearest-partner supports are not extrapolated against the asymptotic theorem.",
+    "Linear Hamming support is not promoted as a computational lower bound.",
+    "Quantum Grover search remains exponential and is not counted as a polynomial relation solver."
+  ],
+  "finite_rows": [
+    {
+      "chosen_locality_cutoff": 1,
+      "depth": 6,
+      "exact_dynamic_programming_state_count": 2048,
+      "finite_row_is_asymptotic_evidence": false,
+      "local_partner_exists": true,
+      "minimum_legal_partner_support": 1,
+      "n_bits": 12,
+      "normalized_minimum_support": 0.08333333333333333,
+      "register_count": 16,
+      "trial_index": 0
+    },
+    {
+      "chosen_locality_cutoff": 1,
+      "depth": 6,
+      "exact_dynamic_programming_state_count": 2048,
+      "finite_row_is_asymptotic_evidence": false,
+      "local_partner_exists": false,
+      "minimum_legal_partner_support": 3,
+      "n_bits": 12,
+      "normalized_minimum_support": 0.25,
+      "register_count": 16,
+      "trial_index": 1
+    },
+    {
+      "chosen_locality_cutoff": 1,
+      "depth": 6,
+      "exact_dynamic_programming_state_count": 2048,
+      "finite_row_is_asymptotic_evidence": false,
+      "local_partner_exists": true,
+      "minimum_legal_partner_support": 1,
+      "n_bits": 12,
+      "normalized_minimum_support": 0.08333333333333333,
+      "register_count": 16,
+      "trial_index": 2
+    },
+    {
+      "chosen_locality_cutoff": 1,
+      "depth": 8,
+      "exact_dynamic_programming_state_count": 10240,
+      "finite_row_is_asymptotic_evidence": false,
+      "local_partner_exists": false,
+      "minimum_legal_partner_support": 3,
+      "n_bits": 16,
+      "normalized_minimum_support": 0.1875,
+      "register_count": 20,
+      "trial_index": 0
+    },
+    {
+      "chosen_locality_cutoff": 1,
+      "depth": 8,
+      "exact_dynamic_programming_state_count": 10240,
+      "finite_row_is_asymptotic_evidence": false,
+      "local_partner_exists": false,
+      "minimum_legal_partner_support": 2,
+      "n_bits": 16,
+      "normalized_minimum_support": 0.125,
+      "register_count": 20,
+      "trial_index": 1
+    },
+    {
+      "chosen_locality_cutoff": 1,
+      "depth": 8,
+      "exact_dynamic_programming_state_count": 10240,
+      "finite_row_is_asymptotic_evidence": false,
+      "local_partner_exists": false,
+      "minimum_legal_partner_support": 3,
+      "n_bits": 16,
+      "normalized_minimum_support": 0.1875,
+      "register_count": 20,
+      "trial_index": 2
+    },
+    {
+      "chosen_locality_cutoff": 1,
+      "depth": 10,
+      "exact_dynamic_programming_state_count": 49152,
+      "finite_row_is_asymptotic_evidence": false,
+      "local_partner_exists": false,
+      "minimum_legal_partner_support": 4,
+      "n_bits": 20,
+      "normalized_minimum_support": 0.2,
+      "register_count": 24,
+      "trial_index": 0
+    },
+    {
+      "chosen_locality_cutoff": 1,
+      "depth": 10,
+      "exact_dynamic_programming_state_count": 49152,
+      "finite_row_is_asymptotic_evidence": false,
+      "local_partner_exists": false,
+      "minimum_legal_partner_support": 3,
+      "n_bits": 20,
+      "normalized_minimum_support": 0.15,
+      "register_count": 24,
+      "trial_index": 1
+    },
+    {
+      "chosen_locality_cutoff": 1,
+      "depth": 10,
+      "exact_dynamic_programming_state_count": 49152,
+      "finite_row_is_asymptotic_evidence": false,
+      "local_partner_exists": false,
+      "minimum_legal_partner_support": 4,
+      "n_bits": 20,
+      "normalized_minimum_support": 0.2,
+      "register_count": 24,
+      "trial_index": 2
+    },
+    {
+      "chosen_locality_cutoff": 2,
+      "depth": 12,
+      "exact_dynamic_programming_state_count": 229376,
+      "finite_row_is_asymptotic_evidence": false,
+      "local_partner_exists": false,
+      "minimum_legal_partner_support": 5,
+      "n_bits": 24,
+      "normalized_minimum_support": 0.20833333333333334,
+      "register_count": 28,
+      "trial_index": 0
+    },
+    {
+      "chosen_locality_cutoff": 2,
+      "depth": 12,
+      "exact_dynamic_programming_state_count": 229376,
+      "finite_row_is_asymptotic_evidence": false,
+      "local_partner_exists": false,
+      "minimum_legal_partner_support": 4,
+      "n_bits": 24,
+      "normalized_minimum_support": 0.16666666666666666,
+      "register_count": 28,
+      "trial_index": 1
+    },
+    {
+      "chosen_locality_cutoff": 2,
+      "depth": 12,
+      "exact_dynamic_programming_state_count": 229376,
+      "finite_row_is_asymptotic_evidence": false,
+      "local_partner_exists": true,
+      "minimum_legal_partner_support": 2,
+      "n_bits": 24,
+      "normalized_minimum_support": 0.08333333333333333,
+      "register_count": 28,
+      "trial_index": 2
+    }
+  ],
+  "headline_metrics": {
+    "arbitrary_target_indexed_local_map_no_go_theorem_count": 1,
+    "asymptotic_locality_union_bound_exponent": -0.06353018293589713,
+    "asymptotic_polynomial_batch_no_go_row_count": 2,
+    "asymptotic_single_source_no_go_row_count": 3,
+    "chosen_locality_fraction": 0.09,
+    "entropy_threshold_locality_fraction": 0.11002786443835955,
+    "finite_exact_row_count": 12,
+    "finite_local_partner_count": 3,
+    "maximum_finite_minimum_partner_support": 5,
+    "polynomial_classical_relation_solver_count": 0,
+    "polynomial_quantum_relation_solver_count": 0,
+    "polynomial_source_batch_local_map_no_go_theorem_count": 1,
+    "query_model_baseline_count": 4,
+    "scaling_row_count": 5,
+    "unrestricted_linear_support_time_lower_bound_count": 0
+  },
+  "scaling_rows": [
+    {
+      "depth": 64,
+      "inverse_polynomial_batch_probability_ruled_out": false,
+      "inverse_polynomial_single_source_probability_ruled_out": false,
+      "log2_local_flip_set_count": 51.75507656704568,
+      "log2_polynomial_batch_union_bound": 14.755076567045677,
+      "log2_single_source_union_bound": -13.244923432954323,
+      "maximum_local_support": 11,
+      "n_bits": 128,
+      "polynomial_batch_union_bound": 1.0,
+      "polynomial_source_batch_size": 268435456,
+      "register_count": 132,
+      "single_source_union_bound": 0.00010301032476879502
+    },
+    {
+      "depth": 128,
+      "inverse_polynomial_batch_probability_ruled_out": false,
+      "inverse_polynomial_single_source_probability_ruled_out": true,
+      "log2_local_flip_set_count": 108.76141844965677,
+      "log2_polynomial_batch_union_bound": 11.761418449656773,
+      "log2_single_source_union_bound": -20.238581550343227,
+      "maximum_local_support": 23,
+      "n_bits": 256,
+      "polynomial_batch_union_bound": 1.0,
+      "polynomial_source_batch_size": 4294967296,
+      "register_count": 260,
+      "single_source_union_bound": 8.083135957637282e-07
+    },
+    {
+      "depth": 256,
+      "inverse_polynomial_batch_probability_ruled_out": false,
+      "inverse_polynomial_single_source_probability_ruled_out": true,
+      "log2_local_flip_set_count": 219.87150299116317,
+      "log2_polynomial_batch_union_bound": -1.1284970088368311,
+      "log2_single_source_union_bound": -37.12849700883683,
+      "maximum_local_support": 46,
+      "n_bits": 512,
+      "polynomial_batch_union_bound": 0.4573919852548777,
+      "polynomial_source_batch_size": 68719476736,
+      "register_count": 516,
+      "single_source_union_bound": 6.655929395563401e-12
+    },
+    {
+      "depth": 512,
+      "inverse_polynomial_batch_probability_ruled_out": true,
+      "inverse_polynomial_single_source_probability_ruled_out": true,
+      "log2_local_flip_set_count": 442.5806361077009,
+      "log2_polynomial_batch_union_bound": -30.41936389229909,
+      "log2_single_source_union_bound": -70.41936389229909,
+      "maximum_local_support": 92,
+      "n_bits": 1024,
+      "polynomial_batch_union_bound": 6.964004120324224e-10,
+      "polynomial_source_batch_size": 1099511627776,
+      "register_count": 1028,
+      "single_source_union_bound": 6.333724850559724e-22
+    },
+    {
+      "depth": 1024,
+      "inverse_polynomial_batch_probability_ruled_out": true,
+      "inverse_polynomial_single_source_probability_ruled_out": true,
+      "log2_local_flip_set_count": 888.4933217594674,
+      "log2_polynomial_batch_union_bound": -92.50667824053255,
+      "log2_single_source_union_bound": -136.50667824053255,
+      "maximum_local_support": 184,
+      "n_bits": 2048,
+      "polynomial_batch_union_bound": 1.4213958737264798e-28,
+      "polynomial_source_batch_size": 17592186044416,
+      "register_count": 2052,
+      "single_source_union_bound": 8.079700101725847e-42
+    }
+  ],
+  "status": "target-indexed-local-maps-closed-linear-support-relation-samplers-open",
+  "summary": "Proved target-indexed locality exponent -0.0635302 at beta=0.09, below entropy threshold 0.110028. Exact finite rows=12; polynomial classical/quantum relation solvers=0/0.",
+  "theorem": {
+    "arbitrary_target_indexed_local_map_no_go_proved": true,
+    "asymptotic_exponent": -0.06353018293589713,
+    "chosen_locality_fraction": 0.09,
+    "depth_fraction": 0.5,
+    "entropy_threshold_locality_fraction": 0.11002786443835955,
+    "fixed_support_hit_probability": "2^-(k+1), since every nonempty S has a unit coefficient",
+    "legal_support_count": "sum_{1<=s<=beta*n} binom(m,s)",
+    "partner_equation": "sum_{j in S}(1-2*x_j)A_j = 2^k mod 2^(k+1)",
+    "polynomial_source_batch_no_go_proved": true,
+    "proof": "For fixed x and S, one signed label has coefficient +/-1, so conditioning on all other labels leaves a uniform residue. Union bound over the Hamming ball gives the stated exponent. Multiplying by any polynomial number of independently selected source assignments changes only the o(n) term.",
+    "scope_exclusions": [
+      "maps returning partners at Hamming distance above beta*n",
+      "time lower bounds for finding a linear-support relation",
+      "input-dependent source choices selected after inspecting all labels without a source-law proof",
+      "nonuniform advice containing exponentially many instance-specific relations",
+      "claims under a target distribution different from the DCP source contract"
+    ],
+    "source_model": "m=n+O(1) independent uniform labels modulo 2^(k+1), arbitrary fixed or independent-uniform source x",
+    "theorem_id": "THEOREM-DCP-TARGET-INDEXED-LOCALITY-OBSTRUCTION",
+    "union_bound_exponent": "H_2(beta)-alpha+o(1) for k=alpha*n and m=n+O(1)"
+  }
+}

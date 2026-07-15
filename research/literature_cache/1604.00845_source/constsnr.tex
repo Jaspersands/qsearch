@@ -1,0 +1,206 @@
+%!TEX root = ./ft-hd.tex
+\subsection{Recovery at constant SNR}\label{sec:const-snr}
+The algorithm is given by
+
+\begin{algorithm}[H]
+\caption{\textsc{RecoverAtConstantSNR}($\hat x, \chi, k, \e$)}\label{alg:const-snr} 
+\begin{algorithmic}[1] 
+\Procedure{RecoverAtConstantSNR}{$\hat x, \chi, k, \e$}
+\State $B\gets  \GT\cdot k/(\e\alpha^d)$
+\State Choose $\Sigma\in \gl$, $q\in \nsq$ uniformly at random, let $\pi:=(\Sigma, q)$ and let $H_r:=(\pi_r, B, F)$
+\State Let $\A\gets $ $C\log\log N$ elements of $\nsq\times \nsq$ sampled uniformly at random with replacement
+\State $\H\gets \{\mathbf{0}_d\}$, $\Delta\gets 2^{\lfloor \frac1{2}\log_2 \log_2 n\rfloor}$ \Comment{$\mathbf{0}_d$ is the zero vector in dimension $d$}
+\For {$g=1$ to $\lceil \log_\Delta n \rceil$}
+\State $\H\gets \H\cup \bigcup_{s=1}^d n \Delta^{-g} \cdot \mathbf{e}_s$ \Comment{$\mathbf{e}_s$ is the unit vector in direction $s$}
+\EndFor
+\For {$\h\in \H$}
+\State $m(\wh{x}, H, a\star(\one, \h))\gets \Call{HashToBins}{\hat x, 0, (H, a\star (\one, \h))}$ for all $a\in \A, \h\in \H$
+\EndFor
+\State $L \gets \textsc{LocateSignal}\left(\chi^{(t)}, k, \{m(\wh{x}, H, a\star (\one, \h))\}_{a\in \A, \h\in \H}\right)$
+\State $\chi' \gets \Call{EstimateValues}{\hat x,  \chi, 2k, \e, O(\log N), 0}$
+\State $L'\gets $top $4k$ elements of $\chi'$
+\State \textbf{return} $\chi+\chi'_{L'}$
+\EndProcedure 
+\end{algorithmic}
+\end{algorithm}
+
+
+Our analysis will use 
+\begin{lemma}[Lemma~9.1 from~\cite{IKP}]\label{lm:comparison}
+Let $x, z\in \C^n$ and $k\leq n$. Let $S$ contain the largest $k$ terms of $x$, and $T$ contain the largest $2k$ terms of $z$. Then $||x-z_T||_2^2\leq ||x-x_S||_2^2+4||(x-z)_{S\cup T}||_2^2$.
+\end{lemma}
+
+
+\noindent{\em {\bf Lemma~\ref{lm:const-snr}}
+For any $\e>0$, $\hat x, \chi\in \C^N$, $x'=x-\chi$ and any integer $k\geq 1$ if $||x'_{[2k]}||_1\leq O(||x_{\nsq\setminus [k]}||_2\sqrt{k})$ and $||x'_{\nsq\setminus [2k]}||_2^2\leq ||x_{\nsq\setminus [k]}||_2^2$, the following conditions hold. If $||x||_\infty/\mu=N^{O(1)}$, then the output $\chi'$ of 
+\Call{RecoverAtConstantSNR}{$\hat x, \chi, 2k, \e$} satisfies
+$$
+||x'-\chi'||^2_2\leq (1+O(\e))||x_{\nsq\setminus [k]}||_2^2
+$$
+with at least $99/100$ probability over its internal randomness. The sample complexity is $2^{O(d^2)}\frac1{\e}  k\log N$, and the runtime complexity is at most $2^{O(d^2)}\frac1{\e}  k \log^{d+1} N.$
+}
+
+\begin{remark}
+We note that the error bound is in terms of the $k$-term approximation error of $x$ as opposed to the $2k$-term approximation error of $x'=x-\chi$.
+\end{remark}
+\begin{proof}
+Let $S$ denote the top $2k$ coefficients of $x'$. We first derive bounds on the probability that an element $i\in S$ is not located.
+Recall that by Lemma~\ref{lm:loc} for any $i\in S$ if
+\begin{enumerate}
+\item  $e^{head}_{i}(H, x', 0)<|x'_i|/20$;
+\item  $e^{tail}_{i}(H, \A\star (\one, \h), x')< |x'_i|/20$ for all $\h\in \H$;
+\item for every $s\in [1:d]$ the set $\A\star(\zero, \mathbf{e}_s)$ is balanced (as per Definition~\ref{def:balance}),
+\end{enumerate}
+then $i\in L$, i.e. $i$ is successfully located in \textsc{LocateSignal}. 
+  
+
+We now upper bound the probability that an element $i\in S$ is not located.  We let $\mu^2:=||x_{\nsq\setminus k}||_2^2/k$ to simplify notation.
+
+\paragraph{Contribution from head elements.} We need to bound, for $i\in S$, the quantity
+\begin{equation*}
+\begin{split}
+e^{head}_i(H, x', 0)&=G_{o_i(i)}^{-1}\cdot \sum_{j\in S\setminus \{i\}} G_{o_i(j)}|x'_j|.
+\end{split}
+\end{equation*}
+Recall that $m(\wh{x}, H, a\star(\one, \h))=\Call{HashToBins}{\hat x, 0, (H, a\star (\one, \h))}$, and let $m:=m(\wh{x}, H, a\star(\one, \h))$ to simplify notation. By Lemma~\ref{lm:hashing}, {\bf (1)} one has 
+\begin{equation}\label{eq:const-h}
+\expect_H[\max_{a\in \nsq} \abs{G_{o_i(i)}^{-1}\omega^{-a^T\Sigma i}m_{h(i)} - (x'_{S})_i}]\leq \GS\cdot C^d ||x'_{S}||_1/B+\mu/N^2
+\end{equation}
+for a constant $C>0$. This yields
+$$
+\expect_H[e^{head}_i(H, x', 0)]\leq \GS \cdot C^d ||x'_{S}||_1/B\lesssim  \GS \cdot C^d \mu k/B\lesssim \alpha^d C^d \e \mu.
+$$
+by the choice of $B$ in \textsc{RecoverAtConstantSNR}. Now by Markov's inequality we have for each $i\in \nsq$ 
+\begin{equation}\label{eq:const-eh-prob}
+\prob_H[e^{head}_{i}(H, x', 0)>|x'_i|/20]\lesssim \alpha^d C^d \e \mu/|x'_i|\lesssim \alpha \e \mu/|x'_i|
+\end{equation}
+as long as $\alpha$ is smaller than a constant.
+
+\paragraph{Contribution of tail elements}
+We restate the definitions of $e^{tail}$ variables here for convenience of the reader (see~\eqref{eq:et-pi}, \eqref{eq:et-pi-a-h}, \eqref{eq:et-pi-a} and \eqref{eq:et}). 
+
+We have
+\begin{equation*}
+e^{tail}_i(H, z, x):=\left|G_{o_i(i)}^{-1}\cdot \sum_{j\in \nsq\setminus S} G_{o_i(j)}x_j \omega^{z^T \Sigma (j-i)}\right|.
+\end{equation*}
+
+For any $\mathcal{Z}\subseteq \nsq$ we have
+\begin{equation*}
+e^{tail}_i(H, \mathcal{Z}, x):=\quant^{1/5}_{z\in \mathcal{Z}} \left|G_{o_i(i)}^{-1}\cdot \sum_{j\in \nsq\setminus S} G_{o_i(j)}x_j \omega^{z^T \Sigma (j-i)}\right|.
+\end{equation*}
+Note that the algorithm first selects sets $\A_r\subseteq \nsq\times \nsq$, and then accesses the signal at locations given by $\A_r\star (\one, \h), \h\in \H$ (after permuting input space).
+
+The definition of $e^{tail}_i(H, \A_r, x')$ for permutation $\pi=(\Sigma, q)$ allows us to capture the amount of noise that our measurements for locating a specific set of bits of $\Sigma i$ suffer from. Since the algorithm requires all $\h\in \H$ to be not too noisy in order to succeed (see preconditions 2 and 3 of Lemma~\ref{lm:loc}), we have
+\begin{equation*}
+e^{tail}_i(H, \A, x')=40\mu_{H, i}(x)+\sum_{\h\in \H} \left|e^{tail}_i(H, \A\star (\one, \h), x')-40\mu_{H, i}(x')\right|_+
+\end{equation*}
+where for any $\eta\in \mathbb{R}$ one has $|\eta|_+=\eta$ if $\eta>0$ and $|\eta|_+=0$ otherwise. 
+
+
+For each $i\in S$ we now define an error event $\E^*_i$ whose non-occurrence implies location of element $i$, and then show that for each $i\in S$ one has
+\begin{equation}\label{eq:g}
+\prob_{H, \A}[\E^*_i]\lesssim \frac{\alpha \e \mu^2}{|x'_i|^2}.
+\end{equation}
+Once we have ~\eqref{eq:g}, together with~\eqref{eq:const-eh-prob} it allows us to prove the main result of the lemma. In what follows we concentrate on proving 
+~\eqref{eq:g}. Specifically, for each $i\in S$ define
+\begin{equation*}
+\E^*_i=\{(H, \A): \exists \h\in \H \text{~s.t.~} e^{tail}_i(H,\A\star (\one, \h), x')>|x'_i|/20\}.
+\end{equation*}
+
+
+Recall that $e^{tail}_i(H, z, x')=\Call{HashToBins}{\widehat{x_{\nsq\setminus S}}, \chi_{\nsq\setminus S}, (H, z)}$ by definition of the measurements $m$.  By Lemma~\ref{lm:hashing}, {\bf (3)} one has, for a uniformly random $z\in \nsq$, that 
+$\expect_z[|e^{tail}_i(H, z, x')|^2|]=\mu_{H, i}^2(x')$. By Lemma~\ref{lm:hashing}, {\bf (2)}, we have that 
+\begin{equation}\label{eq:expect-sigmaq}
+\expect_H[\mu^2_{H, i}(x')] \leq  \GSS\cdot C^d \norm{2}{(x-\chi)_{\nsq\setminus S}}^2/B+\mu^2/N^2\leq  \alpha \e \mu^2.
+\end{equation} 
+Thus by Markov's inequality 
+$$
+\prob_{z}[e^{tail}_{i}(H, z, x')^2> (|x'_i|/20)^2]\leq \alpha\e (\mu_{H, i}(x'))^2/(|x'_i|/20)^2.
+$$
+Combining this with Lemma~\ref{lm:quant-exp}, we get for all $\tau\leq (1/20)(|x'_i|/20)$ and all $\h\in \H$
+\begin{equation}\label{eq:xyz}
+\prob_{\A}[\quant^{1/5}_{z\in \A\star (\one, \h)} e^{tail}_{i}(H, z, x')> |x'_i|/20| \mu_{H, i}^2(x')=\tau]<(4\tau/(|x'_i|/20))^{\Omega(|\A|)}.
+\end{equation}
+
+
+Equipped with the bounds above, we now bound $\prob[\E^*_i]$. To that effect, for each $\tau>0$ let the event $\E_i(\tau)$ be defined as 
+$\E_i(\tau)=\{\mu_{H, i}(x')=\tau\}$. Note that since we assume that we operate on $O(\log n)$ bit integers, $\mu_{H, i}(x')$ takes on a finite number of values, and hence $\E_i(\tau)$ is well-defined. It is convenient to bound $\prob[\E_i^*]$ as a sum of three terms:
+\begin{equation*}
+\begin{split}
+\prob_{H, \A}[\E^*_i]&\leq \prob_{H, \A}\left[\left.e^{tail}_{i}(H, \A, x')> |x'_i|/20\right|\bigcup_{\tau\leq \sqrt{\alpha \e}\mu}\E_i(\tau)\right] \\
+&+\int_{\sqrt{\alpha \e}\mu}^{(1/8)(|x'_i|/20)} \prob_{H, \A}\left[\left.e^{tail}_{i}(H, \A, x')> |x'_i|/20\right.|\E_i(\tau)\right] \prob[\E_i(\tau)]d\tau\\
+&+\int_{(1/8)(|x'_i|/20)}^\infty \prob[\E_i(\tau)]d\tau\\
+\end{split}
+\end{equation*}
+
+
+We now bound each of the three terms separately for $i$ such that $|x'_i|/20\geq 2\sqrt{\alpha\e} \mu_{H, i}(x')$. This is sufficient for our purposes, as other elements only contribute a small amount of $\ell_2^2$ mass.
+\begin{description}
+\item[1.] By \eqref{eq:xyz} and a union bound over $\H$ the first term is bounded by 
+\begin{equation}\label{eq:r-ub-1}
+|\H|\cdot (\sqrt{\alpha \e}\mu/(|x'_i|/20))^{\Omega(|A|)}\leq \alpha \e \mu^2/|x'_i|^2\cdot |\H|\cdot 2^{-\Omega(|A|)}\leq \alpha\e \mu^2/|x'_i|^2.
+\end{equation}
+since $|\A|\geq C\log \log N$ for a sufficiently large constant $C>0$ in \textsc{RecoverAtConstantSNR}.
+
+\item[2.] The second term, again by a union bound over $\H$ and using \eqref{eq:xyz}, is bounded by 
+\begin{equation}\label{eq:const-snr-abc}
+\begin{split}
+&\int_{\sqrt{\alpha \e}\mu}^{(1/8)(|x'_i|/20)} |\H|\cdot (4\tau /(|x'_i|/20))^{\Omega(|A|)} \prob[\E_i(\tau)]d\tau\\
+\leq &\int_{\sqrt{\alpha \e}\mu}^{(1/8)(|x'_i|/20)} |\H|\cdot (4\tau /(|x'_i|/20))^{\Omega(|A|)} (4\tau /(|x'_i|/20))^{2}\prob[\E_i(\tau)] d\tau\\
+\end{split}
+\end{equation}
+Since $|\A|\geq C\log \log N$ for a sufficiently large constant $C>0$ and $(4\tau /(|x'_i|/20))\leq 1/2$ over the whole range of $\tau$ by our assumption that $|x'_i|/20\geq 2\sqrt{\alpha\e} \mu_{H, i}(x')$, we have
+$$
+|\H|\cdot (4\tau /(|x'_i|/20))^{\Omega(|A|)}\leq |\H|\cdot (1/2)^{\Omega(|A|)}=o(1)
+$$ 
+for each $\tau\in [\sqrt{\alpha \e}\mu, (1/8)(|x'_i|/20)]$. Thus, \eqref{eq:const-snr-abc} is upper bounded by
+\begin{equation*}
+\begin{split}
+\int_{\sqrt{\alpha \e}\mu}^{(1/8)(|x'_i|/20)} (4\tau /(|x'_i|/20))^{2}\prob[\E_i(\tau)] d\tau\\
+\lesssim \frac1{(|x'_i|/20)^{2}}\int_{\sqrt{\alpha \e}\mu}^{(1/8)(|x'_i|/20)} \tau^2\prob[\E_i(\tau)] d\tau\\
+\leq \frac{\alpha \e \mu^2}{(|x'_i|/20)^2}\\
+\end{split}
+\end{equation*}
+since 
+$$
+\int_{\sqrt{\alpha \e}\mu}^{(1/8)(|x'_i|/20)} \tau^2\prob[\E_i(\tau)] d\tau\leq \int_{0}^{\infty} \tau^2\prob[\E_i(\tau)] d\tau=\expect_H[\mu^2_{H, i}(x')]=O(\alpha)\e \mu^2
+$$
+by \eqref{eq:expect-sigmaq}.
+
+
+\item [3.] For the third term we have
+$$
+\int_{(1/8)(|x'_i|/20)}^\infty \prob[\E_i(\tau)]d\tau=\prob[\mu_{H, i}(x')>(1/8)(|x'_i|/20)]\lesssim \frac{\alpha \e \mu^2}{|x'_i|^2}
+$$
+by Markov's inequality applied to \eqref{eq:expect-sigmaq}.
+\end{description}
+Putting the three estimates together, we get $\prob[\E_i^*]=\frac{O(\alpha)\e \mu^2}{|x'_i|^2}$. Together with \eqref{eq:const-eh-prob} this yields for $i\in S$
+$$
+\prob[i\not \in L]\lesssim \frac{\alpha \e \mu^2}{|x'_i|^2}+\frac{\alpha \e \mu}{|x'_i|}.
+$$
+
+In particular, 
+\begin{equation*}
+\begin{split}
+\expect\left[\sum_{i\in S} |x'_i|^2\cdot \mathbf{1}_{i\in S\setminus L}\right]&\leq \sum_{i\in S} |x'_i|^2 \prob[i\not \in L]\\
+&\lesssim \sum_{i\in S} |x'_i|^2 \left(\frac{\alpha \e \mu}{|x'_i|}+\frac{\alpha \e \mu^2}{|x'_i|^2}\right)\lesssim \alpha \e\mu^2 k,
+\end{split}
+\end{equation*}
+where we used the assumption of the lemma that $||x'_{[2k]}||_1\leq O(||x_{\nsq\setminus [k]}||_2\sqrt{k})$ and $||x'_{\nsq\setminus [2k]}||_2^2\leq ||x_{\nsq\setminus [k]}||_2^2$ in the last line.
+By Markov's inequality we thus have $\prob[||x'_{S\setminus L}||_2^2>\e \mu^2 k]<1/10$ as long as $\alpha$ is smaller than a constant. 
+
+We now upper bound $||x'-\chi'||_2^2$. We apply Lemma~\ref{lm:comparison} to vectors $x'$ and $\chi'$ with sets $S$ and $L'$ respectively, getting 
+\begin{equation*}
+\begin{split}
+||x'-\chi'_{L'}||_2^2&\leq ||x'-x'_S||_2^2+4||(x'-\chi')_{S\cup L'}||_2^2\\
+&\leq ||x_{\nsq\setminus [k]}||_2^2+4||(x'-\chi')_{S\setminus L}||_2^2+4||(x'-\chi')_{S\cap L}||_2^2\\
+&\leq ||x_{\nsq\setminus [k]}||_2^2+4\e \mu^2 k+4\e \mu^2 |S|\\
+&\leq ||x_{\nsq\setminus [k]}||_2^2+O(\e \mu^2 k),\\
+\end{split}
+\end{equation*}
+where we used the fact that $||(x'-\chi')_{S\cap L}||_\infty\leq \sqrt{\e} \mu$ with probability at least $1-1/N$ over the randomness used in \textsc{EstimateValues} by Lemma~\ref{lm:estimate-l1l2}, {\bf (3)}.
+This completes the proof of correctness.
+
+
+\paragraph{Sample complexity and runtime}The number of samples taken is bounded by $2^{O(d^2)}\frac1{\e} k\log N$ by Lemma~\ref{l:hashtobins}, the choice of $B$. The sampling complexity of the call to \textsc{EstimateValues} is at most $2^{O(d^2)}\frac1{\e} k\log N$. The runtime is bounded by $2^{O(d^2)}\frac1{\e}k \log^{d+1} N \log\log N$ for computing the measurements $m(\wh{x}, H, a\star (\one, \h))$ and $2^{O(d^2)}\frac1{\e} k \log^{d+1} N$ for estimation.
+\end{proof}

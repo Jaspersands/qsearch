@@ -1,0 +1,512 @@
+{
+  "created_at": "2026-07-09T17:02:53.264945+00:00",
+  "falsifiers_triggered": [
+    "Some coset frontier rows are already dequantized by classical baselines."
+  ],
+  "headline_metrics": {
+    "dequantizing_evidence_count": 32,
+    "evidence_count": 52,
+    "nonclassical_candidate_count": 0,
+    "proof_debt_evidence_count": 18,
+    "proof_debt_pair_count": 0,
+    "record_count": 18,
+    "rejected_pair_count": 18,
+    "survivor_pair_count": 0
+  },
+  "records": [
+    {
+      "evidence": [
+        {
+          "detail": "CFI base complete-bipartite-3-5 has global twist parity classically recovered from bipartition and gadget structure under the explicit CFI-gadget promise.",
+          "source": "cfi_bipartite_structural_decoder",
+          "status": "dequantized-by-bipartite-structural-cfi-decoder",
+          "verdict": "dequantizing"
+        },
+        {
+          "detail": "Irregular CFI base complete-bipartite-3-5 still has global twist parity classically recovered from the unlabeled adjacency matrix under the degree-separated CFI-gadget promise.",
+          "source": "cfi_irregular_structural_decoder",
+          "status": "dequantized-by-irregular-structural-cfi-decoder",
+          "verdict": "dequantizing"
+        }
+      ],
+      "final_status": "rejected-by-classical-coset-baseline",
+      "graph_a": "Untwisted CFI parity graph over Degree-separated complete bipartite K3,5 base",
+      "graph_b": "Single-edge twisted CFI parity graph over Degree-separated complete bipartite K3,5 base",
+      "pair_id": "cfi-base-complete-bipartite-3-5",
+      "required_next_step": "Do not use this row for measurement design; mutate to a graph/coset family that survives the listed baselines.",
+      "vertex_count": 98
+    },
+    {
+      "evidence": [
+        {
+          "detail": "Irregular CFI base complete-bipartite-4-5 still has global twist parity classically recovered from the unlabeled adjacency matrix under the degree-separated CFI-gadget promise.",
+          "source": "cfi_irregular_structural_decoder",
+          "status": "dequantized-by-irregular-structural-cfi-decoder",
+          "verdict": "dequantizing"
+        }
+      ],
+      "final_status": "rejected-by-classical-coset-baseline",
+      "graph_a": "Untwisted CFI parity graph over Degree-separated complete bipartite K4,5 base",
+      "graph_b": "Single-edge twisted CFI parity graph over Degree-separated complete bipartite K4,5 base",
+      "pair_id": "cfi-base-complete-bipartite-4-5",
+      "required_next_step": "Do not use this row for measurement design; mutate to a graph/coset family that survives the listed baselines.",
+      "vertex_count": 144
+    },
+    {
+      "evidence": [
+        {
+          "detail": "Irregular CFI base complete-tripartite-2-3-4 still has global twist parity classically recovered from the unlabeled adjacency matrix under the degree-separated CFI-gadget promise.",
+          "source": "cfi_irregular_structural_decoder",
+          "status": "dequantized-by-irregular-structural-cfi-decoder",
+          "verdict": "dequantizing"
+        }
+      ],
+      "final_status": "rejected-by-classical-coset-baseline",
+      "graph_a": "Untwisted CFI parity graph over Degree-separated complete tripartite K2,3,4 base",
+      "graph_b": "Single-edge twisted CFI parity graph over Degree-separated complete tripartite K2,3,4 base",
+      "pair_id": "cfi-base-complete-tripartite-2-3-4",
+      "required_next_step": "Do not use this row for measurement design; mutate to a graph/coset family that survives the listed baselines.",
+      "vertex_count": 340
+    },
+    {
+      "evidence": [
+        {
+          "detail": "3-vertex individualization-refinement separates this CFI base row.",
+          "source": "cfi_base_family_search",
+          "status": "dequantized-by-individualized-wl",
+          "verdict": "dequantizing"
+        },
+        {
+          "detail": "CFI base cube-q3 has global twist parity classically recovered from the unlabeled adjacency matrix under the explicit regular CFI-gadget promise.",
+          "source": "cfi_structural_decoder",
+          "status": "dequantized-by-structural-cfi-decoder",
+          "verdict": "dequantizing"
+        }
+      ],
+      "final_status": "rejected-by-classical-coset-baseline",
+      "graph_a": "Untwisted CFI parity graph over 3-cube cubic base",
+      "graph_b": "Single-edge twisted CFI parity graph over 3-cube cubic base",
+      "pair_id": "cfi-base-cube-q3",
+      "required_next_step": "Do not use this row for measurement design; mutate to a graph/coset family that survives the listed baselines.",
+      "vertex_count": 56
+    },
+    {
+      "evidence": [
+        {
+          "detail": "The row survives evaluated baselines but higher individualization hit caps; keep as proof debt.",
+          "source": "cfi_base_family_search",
+          "status": "survives-tested-baselines-proof-debt",
+          "verdict": "proof-debt"
+        },
+        {
+          "detail": "CFI base heawood-like-14 has global twist parity classically recovered from the unlabeled adjacency matrix under the explicit regular CFI-gadget promise.",
+          "source": "cfi_structural_decoder",
+          "status": "dequantized-by-structural-cfi-decoder",
+          "verdict": "dequantizing"
+        }
+      ],
+      "final_status": "rejected-by-classical-coset-baseline",
+      "graph_a": "Untwisted CFI parity graph over 14-vertex cubic incidence-style base",
+      "graph_b": "Single-edge twisted CFI parity graph over 14-vertex cubic incidence-style base",
+      "pair_id": "cfi-base-heawood-like-14",
+      "required_next_step": "Do not use this row for measurement design; mutate to a graph/coset family that survives the listed baselines.",
+      "vertex_count": 98
+    },
+    {
+      "evidence": [
+        {
+          "detail": "The row survives the implemented finite baselines; do not promote without asymptotic proof and stronger attacks.",
+          "source": "cfi_base_family_search",
+          "status": "finite-survivor-needs-proof",
+          "verdict": "proof-debt"
+        },
+        {
+          "detail": "CFI base mobius-ladder-8 has global twist parity classically recovered from bipartition and gadget structure under the explicit CFI-gadget promise.",
+          "source": "cfi_bipartite_structural_decoder",
+          "status": "dequantized-by-bipartite-structural-cfi-decoder",
+          "verdict": "dequantizing"
+        },
+        {
+          "detail": "CFI base mobius-ladder-8 has global twist parity classically recovered from the unlabeled adjacency matrix under the explicit regular CFI-gadget promise.",
+          "source": "cfi_structural_decoder",
+          "status": "dequantized-by-structural-cfi-decoder",
+          "verdict": "dequantizing"
+        }
+      ],
+      "final_status": "rejected-by-classical-coset-baseline",
+      "graph_a": "Untwisted CFI parity graph over Mobius ladder M8 cubic base",
+      "graph_b": "Single-edge twisted CFI parity graph over Mobius ladder M8 cubic base",
+      "pair_id": "cfi-base-mobius-ladder-8",
+      "required_next_step": "Do not use this row for measurement design; mutate to a graph/coset family that survives the listed baselines.",
+      "vertex_count": 56
+    },
+    {
+      "evidence": [
+        {
+          "detail": "The row survives evaluated baselines but higher individualization hit caps; keep as proof debt.",
+          "source": "cfi_base_family_search",
+          "status": "survives-tested-baselines-proof-debt",
+          "verdict": "proof-debt"
+        },
+        {
+          "detail": "CFI base petersen has global twist parity classically recovered from the unlabeled adjacency matrix under the explicit regular CFI-gadget promise.",
+          "source": "cfi_structural_decoder",
+          "status": "dequantized-by-structural-cfi-decoder",
+          "verdict": "dequantizing"
+        }
+      ],
+      "final_status": "rejected-by-classical-coset-baseline",
+      "graph_a": "Untwisted CFI parity graph over Petersen graph cubic base",
+      "graph_b": "Single-edge twisted CFI parity graph over Petersen graph cubic base",
+      "pair_id": "cfi-base-petersen",
+      "required_next_step": "Do not use this row for measurement design; mutate to a graph/coset family that survives the listed baselines.",
+      "vertex_count": 70
+    },
+    {
+      "evidence": [
+        {
+          "detail": "CFI base prism-degree4-hub has global twist parity classically recovered from bipartition and gadget structure under the explicit CFI-gadget promise.",
+          "source": "cfi_bipartite_structural_decoder",
+          "status": "dequantized-by-bipartite-structural-cfi-decoder",
+          "verdict": "dequantizing"
+        }
+      ],
+      "final_status": "rejected-by-classical-coset-baseline",
+      "graph_a": "Untwisted CFI parity graph over Triangular prism plus degree-4 hub; middle degree 4 collides with 3-3 edge-copy degree",
+      "graph_b": "Single-edge twisted CFI parity graph over Triangular prism plus degree-4 hub; middle degree 4 collides with 3-3 edge-copy degree",
+      "pair_id": "cfi-base-prism-degree4-hub",
+      "required_next_step": "Do not use this row for measurement design; mutate to a graph/coset family that survives the listed baselines.",
+      "vertex_count": 74
+    },
+    {
+      "evidence": [
+        {
+          "detail": "3-vertex individualization-refinement separates this CFI base row.",
+          "source": "cfi_base_family_search",
+          "status": "dequantized-by-individualized-wl",
+          "verdict": "dequantizing"
+        },
+        {
+          "detail": "CFI base triangular-prism has global twist parity classically recovered from the unlabeled adjacency matrix under the explicit regular CFI-gadget promise.",
+          "source": "cfi_structural_decoder",
+          "status": "dequantized-by-structural-cfi-decoder",
+          "verdict": "dequantizing"
+        }
+      ],
+      "final_status": "rejected-by-classical-coset-baseline",
+      "graph_a": "Untwisted CFI parity graph over Triangular prism cubic base",
+      "graph_b": "Single-edge twisted CFI parity graph over Triangular prism cubic base",
+      "pair_id": "cfi-base-triangular-prism",
+      "required_next_step": "Do not use this row for measurement design; mutate to a graph/coset family that survives the listed baselines.",
+      "vertex_count": 42
+    },
+    {
+      "evidence": [
+        {
+          "detail": "CFI base complete-k4 was not decoded by the bipartite structural baseline; keep it as proof debt, not evidence.",
+          "source": "cfi_bipartite_structural_decoder",
+          "status": "bipartite-structural-decoder-proof-debt",
+          "verdict": "proof-debt"
+        },
+        {
+          "detail": "Complete-CFI K4 has an ambiguous edge-copy pairing for this decoder; keep it as a control/proof-debt row.",
+          "source": "cfi_parity_solver",
+          "status": "decoder-ambiguous-control",
+          "verdict": "proof-debt"
+        },
+        {
+          "detail": "Low-cost, 3-WL, and graphlet probes do not distinguish this CFI instance at the current scale.",
+          "source": "cfi_scaling_probe",
+          "status": "finite-boundary-survives-current-probes",
+          "verdict": "proof-debt"
+        },
+        {
+          "detail": "Higher-register brute-force observable search hit the tuple cap; implicit tensor machinery is required.; Known non-isomorphic boundary pair has no implemented separating low-rank collective observable.",
+          "source": "collective_observable_search",
+          "status": "boundary-no-current-observable",
+          "verdict": "proof-debt"
+        },
+        {
+          "detail": "Audited 4 hidden-permutation graph pairs. 2 pair survives current classical and low-register tests; 1 control pair is classically distinguished; 2 CFI-style parity benchmark(s) included.",
+          "source": "coset_state_workbench",
+          "status": "boundary-survives-current-coset-workbench",
+          "verdict": "proof-debt"
+        },
+        {
+          "detail": "Known non-isomorphic graph pair has no separating graphlet tensor signal at this bond/register budget.",
+          "source": "graphlet_tensor_observables",
+          "status": "boundary-no-graphlet-signal",
+          "verdict": "proof-debt"
+        },
+        {
+          "detail": "Audited 5 graph/coset pair(s) with individualized rooted tensor signatures up to root size 2. 2 pair(s) were separated by classical rooted tensor shadows, 1 survived, and 2 hit caps.",
+          "source": "individualized_tensor_observables",
+          "status": "survives-individualized-tensor-baseline",
+          "verdict": "survivor"
+        },
+        {
+          "detail": "Individualization-refinement separates this graph pair classically.",
+          "source": "individualized_wl_baseline",
+          "status": "dequantized-by-individualized-wl",
+          "verdict": "dequantizing"
+        }
+      ],
+      "final_status": "rejected-by-classical-coset-baseline",
+      "graph_a": "Untwisted CFI-style parity graph over K4",
+      "graph_b": "Single-edge twisted CFI-style parity graph over K4",
+      "pair_id": "cfi-k4-parity-twist",
+      "required_next_step": "Do not use this row for measurement design; mutate to a graph/coset family that survives the listed baselines.",
+      "vertex_count": 28
+    },
+    {
+      "evidence": [
+        {
+          "detail": "3-vertex individualization-refinement separates this CFI base row.",
+          "source": "cfi_base_family_search",
+          "status": "dequantized-by-individualized-wl",
+          "verdict": "dequantizing"
+        },
+        {
+          "detail": "Complete-CFI K5 twist parity is classically recovered from the adjacency matrix under the explicit CFI-gadget promise; this family is not evidence for a nonabelian speedup.",
+          "source": "cfi_parity_solver",
+          "status": "dequantized-by-promised-cfi-parity-decoder",
+          "verdict": "dequantizing"
+        },
+        {
+          "detail": "Low-cost invariants fail, while brute-force WL/graphlet probes hit scaling caps; this is measurement-design proof debt.",
+          "source": "cfi_scaling_probe",
+          "status": "scaling-boundary-needs-implicit-observable",
+          "verdict": "proof-debt"
+        },
+        {
+          "detail": "CFI base complete-k5 has global twist parity classically recovered from the unlabeled adjacency matrix under the explicit regular CFI-gadget promise.",
+          "source": "cfi_structural_decoder",
+          "status": "dequantized-by-structural-cfi-decoder",
+          "verdict": "dequantizing"
+        },
+        {
+          "detail": "Higher-register brute-force observable search hit the tuple cap; implicit tensor machinery is required.; Known non-isomorphic boundary pair has no implemented separating low-rank collective observable.",
+          "source": "collective_observable_search",
+          "status": "boundary-no-current-observable",
+          "verdict": "proof-debt"
+        },
+        {
+          "detail": "Audited 4 hidden-permutation graph pairs. 2 pair survives current classical and low-register tests; 1 control pair is classically distinguished; 2 CFI-style parity benchmark(s) included.",
+          "source": "coset_state_workbench",
+          "status": "boundary-survives-current-coset-workbench",
+          "verdict": "proof-debt"
+        },
+        {
+          "detail": "Known non-isomorphic graph pair has no separating graphlet tensor signal at this bond/register budget.",
+          "source": "graphlet_tensor_observables",
+          "status": "boundary-no-graphlet-signal",
+          "verdict": "proof-debt"
+        },
+        {
+          "detail": "Individualized rooted tensor enumeration hit scaling caps; unresolved rows are proof debt.",
+          "source": "individualized_tensor_observables",
+          "status": "individualized-tensor-proof-debt",
+          "verdict": "proof-debt"
+        },
+        {
+          "detail": "Individualization-refinement separates this graph pair classically.",
+          "source": "individualized_wl_baseline",
+          "status": "dequantized-by-individualized-wl",
+          "verdict": "dequantizing"
+        }
+      ],
+      "final_status": "rejected-by-classical-coset-baseline",
+      "graph_a": "Untwisted CFI-style parity graph over K5",
+      "graph_b": "Single-edge twisted CFI-style parity graph over K5",
+      "pair_id": "cfi-k5-parity-twist",
+      "required_next_step": "Do not use this row for measurement design; mutate to a graph/coset family that survives the listed baselines.",
+      "vertex_count": 60
+    },
+    {
+      "evidence": [
+        {
+          "detail": "Complete-CFI K6 twist parity is classically recovered from the adjacency matrix under the explicit CFI-gadget promise; this family is not evidence for a nonabelian speedup.",
+          "source": "cfi_parity_solver",
+          "status": "dequantized-by-promised-cfi-parity-decoder",
+          "verdict": "dequantizing"
+        },
+        {
+          "detail": "Low-cost invariants fail, while brute-force WL/graphlet probes hit scaling caps; this is measurement-design proof debt.",
+          "source": "cfi_scaling_probe",
+          "status": "scaling-boundary-needs-implicit-observable",
+          "verdict": "proof-debt"
+        },
+        {
+          "detail": "Graphlet tensor enumeration hit the tuple cap; implicit contraction proof is required.; Known non-isomorphic graph pair has no separating graphlet tensor signal at this bond/register budget.",
+          "source": "graphlet_tensor_observables",
+          "status": "boundary-no-graphlet-signal",
+          "verdict": "proof-debt"
+        },
+        {
+          "detail": "Individualized rooted tensor enumeration hit scaling caps; unresolved rows are proof debt.",
+          "source": "individualized_tensor_observables",
+          "status": "individualized-tensor-proof-debt",
+          "verdict": "proof-debt"
+        }
+      ],
+      "final_status": "rejected-by-classical-coset-baseline",
+      "graph_a": "Untwisted CFI-style parity graph over K6",
+      "graph_b": "Single-edge twisted CFI-style parity graph over K6",
+      "pair_id": "cfi-k6-parity-twist",
+      "required_next_step": "Do not use this row for measurement design; mutate to a graph/coset family that survives the listed baselines.",
+      "vertex_count": 126
+    },
+    {
+      "evidence": [
+        {
+          "detail": "Complete-CFI K7 twist parity is classically recovered from the adjacency matrix under the explicit CFI-gadget promise; this family is not evidence for a nonabelian speedup.",
+          "source": "cfi_parity_solver",
+          "status": "dequantized-by-promised-cfi-parity-decoder",
+          "verdict": "dequantizing"
+        },
+        {
+          "detail": "Low-cost invariants fail, while brute-force WL/graphlet probes hit scaling caps; this is measurement-design proof debt.",
+          "source": "cfi_scaling_probe",
+          "status": "scaling-boundary-needs-implicit-observable",
+          "verdict": "proof-debt"
+        }
+      ],
+      "final_status": "rejected-by-classical-coset-baseline",
+      "graph_a": "Untwisted complete-CFI K7",
+      "graph_b": "Single-edge twisted complete-CFI K7",
+      "pair_id": "cfi-k7-parity-twist",
+      "required_next_step": "Do not use this row for measurement design; mutate to a graph/coset family that survives the listed baselines.",
+      "vertex_count": 266
+    },
+    {
+      "evidence": [
+        {
+          "detail": "Complete-CFI K8 twist parity is classically recovered from the adjacency matrix under the explicit CFI-gadget promise; this family is not evidence for a nonabelian speedup.",
+          "source": "cfi_parity_solver",
+          "status": "dequantized-by-promised-cfi-parity-decoder",
+          "verdict": "dequantizing"
+        }
+      ],
+      "final_status": "rejected-by-classical-coset-baseline",
+      "graph_a": "Untwisted complete-CFI K8",
+      "graph_b": "Single-edge twisted complete-CFI K8",
+      "pair_id": "cfi-k8-parity-twist",
+      "required_next_step": "Do not use this row for measurement design; mutate to a graph/coset family that survives the listed baselines.",
+      "vertex_count": 568
+    },
+    {
+      "evidence": [
+        {
+          "detail": "A classical graph invariant distinguishes the pair; any matching quantum observable is dequantized.; A higher-k WL baseline separates the pair; low-register tensor signals must exceed this classical refinement.; A low-register relation observable separates the pair but may reduce to a classical invariant.; A searched collective observable separates only through a known classical shadow.",
+          "source": "collective_observable_search",
+          "status": "classical-shadow-collapse",
+          "verdict": "dequantizing"
+        },
+        {
+          "detail": "A classical graph invariant distinguishes the pair; any matching quantum observable is dequantized.; A low-register relation observable separates the pair but may reduce to a classical invariant.; A higher-k WL baseline separates the pair; low-register tensor signals must exceed this classical refinement.",
+          "source": "coset_state_workbench",
+          "status": "dequantized-by-coset-workbench-falsifier",
+          "verdict": "dequantizing"
+        },
+        {
+          "detail": "A graphlet/tensor observable is exactly a classical small-pattern count.",
+          "source": "graphlet_tensor_observables",
+          "status": "classical-shadow-collapse",
+          "verdict": "dequantizing"
+        },
+        {
+          "detail": "Individualized rooted graphlet/tensor signatures separate this graph/coset row classically.",
+          "source": "individualized_tensor_observables",
+          "status": "dequantized-by-individualized-tensor-shadow",
+          "verdict": "dequantizing"
+        },
+        {
+          "detail": "Audited 4 graph/coset pair(s) with individualization up to 3. 3 pair(s) were separated, 1 survived, and 0 hit proof-debt caps.",
+          "source": "individualized_wl_baseline",
+          "status": "survives-individualized-wl-baseline",
+          "verdict": "survivor"
+        }
+      ],
+      "final_status": "rejected-by-classical-coset-baseline",
+      "graph_a": "Cycle graph C16",
+      "graph_b": "C16 with distance-2 chords",
+      "pair_id": "cycle-vs-chorded-cycle",
+      "required_next_step": "Do not use this row for measurement design; mutate to a graph/coset family that survives the listed baselines.",
+      "vertex_count": 16
+    },
+    {
+      "evidence": [
+        {
+          "detail": "The switched pair is cospectral and non-isomorphic, but classical baselines distinguish it: 4-wl, graphlet-tensor, individualized-wl-2, rooted-tensor-2 Distinguishing baselines: 4-wl, graphlet-tensor, individualized-wl-2, rooted-tensor-2.",
+          "source": "godsil_mckay_search",
+          "status": "dequantized-by-gm-classical-baseline",
+          "verdict": "dequantizing"
+        }
+      ],
+      "final_status": "rejected-by-classical-coset-baseline",
+      "graph_a": "4x4 rook graph before Godsil-McKay switching",
+      "graph_b": "4x4 rook graph after Godsil-McKay switching",
+      "pair_id": "gm-rook-4x4-4-325",
+      "required_next_step": "Do not use this row for measurement design; mutate to a graph/coset family that survives the listed baselines.",
+      "vertex_count": 16
+    },
+    {
+      "evidence": [
+        {
+          "detail": "The switched pair is cospectral and non-isomorphic, but classical baselines distinguish it: 4-wl, graphlet-tensor, individualized-wl-2, rooted-tensor-2 Distinguishing baselines: 4-wl, graphlet-tensor, individualized-wl-2, rooted-tensor-2.",
+          "source": "godsil_mckay_search",
+          "status": "dequantized-by-gm-classical-baseline",
+          "verdict": "dequantizing"
+        }
+      ],
+      "final_status": "rejected-by-classical-coset-baseline",
+      "graph_a": "Shrikhande Cayley graph on Z_4 x Z_4 before Godsil-McKay switching",
+      "graph_b": "Shrikhande Cayley graph on Z_4 x Z_4 after Godsil-McKay switching",
+      "pair_id": "gm-shrikhande-z4x4-4-143",
+      "required_next_step": "Do not use this row for measurement design; mutate to a graph/coset family that survives the listed baselines.",
+      "vertex_count": 16
+    },
+    {
+      "evidence": [
+        {
+          "detail": "A higher-k WL baseline separates the pair; low-register tensor signals must exceed this classical refinement.; A searched collective observable separates only through a known classical shadow.",
+          "source": "collective_observable_search",
+          "status": "classical-shadow-collapse",
+          "verdict": "dequantizing"
+        },
+        {
+          "detail": "A higher-k WL baseline separates the pair; low-register tensor signals must exceed this classical refinement.",
+          "source": "coset_state_workbench",
+          "status": "dequantized-by-coset-workbench-falsifier",
+          "verdict": "dequantizing"
+        },
+        {
+          "detail": "A graphlet/tensor observable is exactly a classical small-pattern count.",
+          "source": "graphlet_tensor_observables",
+          "status": "classical-shadow-collapse",
+          "verdict": "dequantizing"
+        },
+        {
+          "detail": "Individualized rooted graphlet/tensor signatures separate this graph/coset row classically.",
+          "source": "individualized_tensor_observables",
+          "status": "dequantized-by-individualized-tensor-shadow",
+          "verdict": "dequantizing"
+        },
+        {
+          "detail": "Individualization-refinement separates this graph pair classically.",
+          "source": "individualized_wl_baseline",
+          "status": "dequantized-by-individualized-wl",
+          "verdict": "dequantizing"
+        }
+      ],
+      "final_status": "rejected-by-classical-coset-baseline",
+      "graph_a": "Shrikhande graph",
+      "graph_b": "4x4 rook graph",
+      "pair_id": "shrikhande-vs-rook",
+      "required_next_step": "Do not use this row for measurement design; mutate to a graph/coset family that survives the listed baselines.",
+      "vertex_count": 16
+    }
+  ],
+  "status": "coset-frontier-mostly-dequantized",
+  "summary": "Triage aggregated 18 graph/coset row(s) across 52 baseline evidence items. 18 row(s) are rejected by classical baselines, 0 remain proof debt, and 0 survive current baselines only as measurement-design proof debt."
+}

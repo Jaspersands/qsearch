@@ -1,0 +1,155 @@
+%!TEX root = ./ft-hd.tex
+\section{Preliminaries}\label{sec:prelim}
+
+For a positive even integer $a$ we will use the notation $[a]=\{-\frac{a}{2}, -\frac{a}{2}+1, \ldots, -1, 0, 1,\ldots, \frac{a}{2}-1\}$. We will consider signals of length $N=n^d$, where $n$ is a power of $2$ and $d\geq 1$ is the dimension.  We use the notation $\omega=e^{2\pi i/n}$ for the root of unity of order $n$. The $d$-dimensional forward and inverse Fourier transforms are given by
+\begin{equation}\label{eq:dft-forward}
+\hat x_{j}=\frac1{\sqrt{N}}\sum_{i\in \nsq}  \omega^{-i^Tj}x_i \text{~~and~~}x_{j}=\frac1{\sqrt{N}}\sum_{i\in \nsq}  \omega^{i^Tj}\hat x_i
+\end{equation}
+respectively, where $j\in \nsq$. We will denote the forward Fourier transform by $\F$ and 
+Note that we use the orthonormal version of the Fourier transform. We assume that the input signal has entries of polynomial precision and range. Thus, we have $||\hat x||_2=||x||_2$ for all $x\in \C^N$ (Parseval's identity).
+Given access to samples of $\wh{x}$, we recover a signal $z$ such that 
+\begin{equation*}
+||x-z||_2\leq (1+\e)\min_{k-\text{~sparse~} y} ||x-y||_2
+\end{equation*}
+
+
+
+We will use pseudorandom spectrum permutations, which we now define.  We write $\gl$ for the set of $d\times d$ matrices  over $\Z_n$ with odd determinant.
+For $\Sigma\in \gl, q\in \nsq$ and $i\in \nsq$ let 
+$\pi_{\Sigma, q}(i)=\Sigma(i-q) \mod n$.
+Since $\Sigma\in \gl$, this is a permutation. Our algorithm will use $\pi$ to hash heavy hitters into $B$ buckets, where we will choose $B\approx k$. We will often omit the subscript $\Sigma, q$ and simply write $\pi(i)$ when $\Sigma, q$ is fixed or clear from context. For $i, j\in \nsq$ we let $o_i(j)= \pi(j) - (n/b) h(i)$  be the ``offset'' of $j\in \nsq$ relative to $i\in \nsq$ (note that this definition is different from the one in~\cite{IK14a}). We will always have $B=b^d$, where $b$ is a power of $2$. 
+\begin{definition}
+  Suppose that $\Sigma^{-1}$ exists $\bmod~n$. For $a, q\in \nsq$ we define the
+  permutation $P_{\Sigma, a, q}$ by $(P_{\Sigma, a, q}\hat x)_i=\hat x_{\Sigma^T(i-a)} \omega^{i^T\Sigma q}$.  
+\end{definition}
+\begin{lemma}\label{lm:perm}
+$\F^{-1}({P_{\Sigma, a, q} \hat x})_{\pi_{\Sigma, q}(i)}=x_i \omega^{a^T \Sigma i}$
+\end{lemma}
+The proof is given in~\cite{IK14a} and we do not repeat it here. 
+Define 
+\begin{equation}\label{eq:mu-def}
+\begin{split}
+\err_k(x)=\min_{k-\text{sparse}~y} ||x-y||_2\text{~~and~~}\mu^2=\err_k^2(x)/k.
+\end{split}
+\end{equation}
+In this paper, we assume knowledge of $\mu$ (a constant factor upper bound on $\mu$ suffices). We also assume that the signal to noise ration is bounded by a polynomial, namely 
+that $R^*:=||x||_\infty/\mu\leq N^{O(1)}$. 
+We use the notation $\B^\infty_{r}(x)$ to denote the $\ell_\infty$ ball of radius $r$ around $x$:
+$\B^\infty_{r}(x)=\{y\in \nsq: ||x-y||_\infty\leq r\}$, where $||x-y||_\infty=\max_{s\in d} ||x_s-y_s||_{\circ}$, and $||x_s-y_s||_{\circ}$ is the circular distance on $\mathbb{Z}_n$. 
+We will also use the notation $f\lesssim g$ to denote $f=O(g)$. For a real number $a$ we write $|a|_+$ to denote the positive part of $a$, i.e. $|a|_+=a$ if $a\geq 0$ and $|a|_+=0$ otherwise.
+
+
+We will use the filter $G, \hat G$ constructed in~\cite{IK14a}. The filter is defined by a parameter $F\geq 1$ that governs its decay properties. The filter satisfies  $\supp \hat G\subseteq [-F\cdot b, F\cdot b]^d$ and 
+\begin{lemma}[Lemma~3.1 in~\cite{IK14a}]\label{lm:filter-prop}
+One has {\bf (1)} $G_j\in [\frac1{(2\pi)^{\fc \cdot d}}, 1]$ for all $j\in \nsq$ such that $||j||_\infty\leq \frac{n}{2b}$ and {\bf (2)} $|G_j|\leq \left(\frac2{1+(b/n)||j||_\infty}\right)^{\fc}$ for all $j\in \nsq$
+as long as $b\geq 3$ and {\bf (3)} $G_j\in [0, 1]$ for all $j$ as long as $F$ is even.
+\end{lemma}
+\begin{remark}
+Property {\bf (3)} was not stated explicitly in Lemma~3.1 of~\cite{IK14a}, but follows directly from their construction.
+\end{remark}
+The properties above imply that most of the mass of the filter is concentrated in a square of side $O(n/b)$, approximating the ``ideal'' filter (whose value would be equal to $1$ for entries within the square and equal to $0$ outside of it). 
+Note that for each $i\in \nsq$ one has $|G_{o_i(i)}|\geq \frac1{\GS}$. We refer to the parameter $F$ as the {\em sharpness} of the filter. Our hash functions are not pairwise independent, but possess a property that still makes hashing using our filters efficient:
+\begin{lemma}[Lemma~3.2 in~\cite{IK14a}]\label{lemma:limitedindependence}
+Let $i, j\in \nsq$. Let $\Sigma$ be uniformly random with odd determinant. Then for all $t\geq 0$ one has $
+\Pr[||\Sigma(i-j)||_\infty \leq t] \leq 2(2t/n)^d$.
+\end{lemma}
+
+Pseudorandom spectrum permutations combined with a filter $G$ give us the ability to `hash' the elements of the input signal into a number of buckets (denoted by $B$). We formalize this using the notion of a {\em hashing}. A hashing is a tuple consisting of a pseudorandom spectrum permutation $\pi$, target number of buckets $B$ and a sharpness parameter $F$ of our filter, denoted by $H=(\pi, B, F)$. Formally, $H$ is a function that maps a signal $x$ to $B$ signals, each corresponding to a hash bucket, allowing us to solve the $k$-sparse recovery problem on input $x$ by reducing it to $1$-sparse recovery problems on the bucketed signals. We give the formal definition below.
+
+\begin{definition}[Hashing $H=(\pi, B, F)$]
+For a permutation $\pi=(\Sigma, q)$, parameters $b>1$, $B=b^d$ and $F$,  a {\em hashing} $H:=(\pi, B, F)$ is a function mapping a signal $x\in \C^{\nsq}$ to $B$ signals $H(x)=(u_s)_{s\in [b]^d}$, where $u_s\in \C^{\nsq}$ for each $s\in [b]^d$, such that for each $i\in \nsq$
+$$
+  u_{s, i}  = \sum_{j\in \nsq} G_{\pi(j)-(n/b)\cdot s}x_j \omega^{i^T \Sigma j}\in \C,
+$$
+where $G$ is a filter with $B$ buckets and sharpness $F$ constructed in Lemma~\ref{lm:filter-prop}.
+\end{definition}
+
+For a hashing $H=(\pi, B, F), \pi=(\Sigma, q)$ we sometimes write $P_{H, a}, a\in \nsq$ to denote $P_{\Sigma, a, q}$. We will consider hashings of the input signal $x$, as well as the residual signal $x-\chi$, where 
+
+\begin{definition}[Measurement $m=m(x, H, a)$]
+For a signal $x\in \C^{\nsq}$, a hashing $H=(\pi, B, F)$ and a parameter $a\in \nsq$, a {\em measurement} $m=m(x, H, a)\in \C^{[b]^d}$ is the $B$-dimensional complex valued vector of evaluations of a hashing $H(x)$ at $a\in \C^{\nsq}$, i.e. 
+length $B$, indexed by $[b]^d$ and given by evaluating the hashing $H$ at $a\in \nsq$, i.e. for $s\in [b]^d$
+$$
+m_s  = \sum_{j\in \nsq} G_{\pi(j)-(n/b)\cdot s}x_j \omega^{a^T \Sigma j},
+$$
+where $G$ is a filter with $B$ buckets and sharpness $F$ constructed in Lemma~\ref{lm:filter-prop}.
+\end{definition}
+
+\begin{definition}
+For any $x\in \C^\nsq$ and any hashing $H=(\pi, B, G)$ define the vector $\mu^2_{H, \cdot}(x)\in \R^\nsq$ by letting for every $i\in \nsq$ 
+$$\mu^2_{H, i}(x):=\abs{G_{o_i(i)}^{-1}}\sum_{j \in \nsq\setminus \{i\}} \abs{x_j}^2 \abs{G_{o_i(j)}}^2.$$
+\end{definition}
+
+We access the signal $x$ in Fourier domain via the function $\Call{HashToBins}{\hat x, \chi, (H, a)}$, which evaluates the hashing $H$ of residual signal $x-\chi$ at point $a\in \nsq$, i.e. computes the measurement $m(x, H, a)$ (the computation is done with polynomial precision). One can view this function as ``hashing''  $x$ into $B$ bins by convolving it with the filter $G$ constructed above and subsampling appropriately. The pseudocode for this function is given in section~\ref{sec:hash2bins}. In what follows we will use the following properties of \textsc{HashToBins}:
+\begin{lemma}\label{lm:hashing}
+There exists a constant $C>0$ such that for any dimension $d\geq 1$, any integer $B\geq 1$, any $x, \chi\in \C^\nsq, x':=x-\chi$, if  $\Sigma\in \gl, a, q\in \nsq$  are selected uniformly at random, the following conditions hold. 
+
+Let $\pi=(\Sigma, q)$, $H=(\pi, B, G)$, where $G$ is the filter with $B$ buckets and sharpness $F$ constructed in Lemma~\ref{lm:filter-prop}, and let
+$u =\Call{HashToBins}{\hat x, \chi, (H, a)}$.  Then if $\fc\geq 2d, F=\Theta(d)$,  for any $i\in \nsq$
+  \begin{description}
+\item[(1)] For any $H$ one has $\max_{a\in \nsq} \abs{G_{o_i(i)}^{-1}\omega^{-a^T\Sigma i}u_{h(i)} - x'_i}\leq G_{o_i(i)}^{-1}\cdot \sum_{j\in S\setminus \{i\}} G_{o_i(j)} |x'_j|$. Furthermore,
+$\expect_H[G_{o_i(i)}^{-1}\cdot \sum_{j\in S\setminus \{i\}} G_{o_i(j)} |x'_j|]\leq \GS\cdot C^d ||x'||_1/B+N^{-\Omega(c)}$;
+  \item[(2)] $\expect_H[\mu^2_{H, i}(x')] \leq  \GSS\cdot C^d \norm{2}{x'}^2/B$,
+\end{description}
+Furthermore, 
+\begin{description}
+\item[(3)] for any hashing $H$, if $a$ is chosen uniformly at random from $\nsq$, one has 
+  $$
+  \expect_{a}[\abs{G_{o_i(i)}^{-1}\omega^{-a^T\Sigma i}u_{h(i)} - x'_i}^2]\leq \mu^2_{H, i}(x')+N^{-\Omega(c)}.
+  $$
+\end{description}
+Here $c>0$ is an absolute constant that can be chosen arbitrarily large at the expense of a  factor of $c^{O(d)}$ in runtime.
+\end{lemma}
+The proof of Lemma~\ref{lm:hashing} is given in Appendix~\ref{app:A}.  We will need several definitions and lemmas from~\cite{IK14a}, which we state here. We sometimes need slight modifications of the corresponding statements from~\cite{IK14a}, in which case we provide proofs in Appendix~\ref{app:A}.  
+Throughout this paper the main object of our analysis is a properly defined set $S\subseteq \nsq$ that contains the 'large' coefficients of the input vector $x$. Below we state our definitions and auxiliary lemmas without specifying the identity of this set, and then use specific instantiations of $S$ to analyze outer primitives such as \textsc{ReduceL1Norm}, \textsc{ReduceInfNorm} and \textsc{RecoverAtConstSNR}.  This is convenient because the analysis of all of these primitives can then use the same basic claims about estimation and location primitives. The definition of $S$ given in~\eqref{eq:s-def-l1} above is the one we use for analyzing \textsc{ReduceL1Norm} and the SNR reduction loop. Analysis of \textsc{ReduceInfNorm} (section~\ref{sec:linf}) and \textsc{RecoverAtConstantSNR} (section~\ref{sec:const-snr}) use different instantiations of $S$, but these are local to the corresponding sections, and hence the definition in~\eqref{eq:s-def-l1} is the best one to have in mind for the rest of this section. 
+
+First, we need the definition of an element $i\in \nsq$ being isolated under a hashing $H=(\pi, B, F)$. Intuitively, an element $i\in S$ is isolated under hashing $H$ with respect to set $S$ if not too many other elements $S$ are hashed too close to $i$. Formally, we have
+\begin{definition}[Isolated element]\label{def:isolated}
+Let $H=(\pi, B, F)$, where $\pi=(\Sigma, q)$, $\Sigma\in \gl, q\in \nsq$. We say that an element $i\in \nsq$ is {\em isolated} under hashing $H$ {\em at scale $t$} if
+$$
+|\pi(S\setminus \{i\})\cap \B^\infty_{(n/b)\cdot h(i)}((n/b)\cdot 2^t)|\leq \GI\cdot \alpha^{d/2} 2^{(t+1)d}\cdot 2^{t}.
+$$
+We say that $i$ is simply {\em isolated} under hashing $H$ if it is isolated under $H$ at all scales $t\geq 0$.
+\end{definition}
+The following lemma shows that any element $i\in S$ is likely to be isolated under a random permutation $\pi$:
+\begin{lemma}\label{lm:isolated-pi}
+For any integer $k\geq 1$ and any $S\subseteq \nsq, |S|\leq 2k$, if  $B\geq \GT\cdot k/\alpha^d$ for $\alpha\in (0, 1)$ smaller than an absolute constant, $F\geq 2d$, and a hashing $H=(\pi, B, F)$ is chosen randomly (i.e. $\Sigma\in \gl, q\in \nsq$ are chosen uniformly at random, and $\pi=(\Sigma, q)$), then each $i\in \nsq$ is {\em isolated} under permutation $\pi$ with probability at least $1-\frac1{2}\sqrt{\alpha}$.
+\end{lemma}
+The proof of the lemma is very similar to Lemma~5.4 in~\cite{IK14a} (the only difference is that the $\ell_\infty$ ball is centered at the point that $i$ hashes to in Lemma~\ref{lm:isolated-pi}, whereas it was centered at $\pi(i)$ in Lemma~5.4 of~\cite{IK14a}) and is given in Appendix~\ref{app:A} for completeness.
+
+As every element $i\in S$ is likely to be isolated under one random hashing, it is very likely to be isolated under a large fraction of hashings $H_1,\ldots, H_{r_{max}}$:
+\begin{lemma}\label{lm:good-prob}
+For any integer $k\geq 1$, and any $S\subseteq \nsq, |S|\leq 2k$, if $B\geq \GT\cdot k/\alpha^d$ for $\alpha\in (0, 1)$ smaller than an absolute constant, $F\geq 2d$, $H_r=(\pi_r, B, F)$, $r=1,\ldots, r_{max}$ a sequence of random hashings, then every $i\in \nsq$ is isolated with respect to $S$ under at least $(1-\sqrt{\alpha})r_{max}$ hashings $H_r, r=1,\ldots, r_{max}$ with probability at least $1-2^{-\Omega(\sqrt{\alpha}r_{max})}$.
+\end{lemma}
+\begin{proof}
+Follows by an application of Chernoff bounds and Lemma~\ref{lm:isolated-pi}.
+\end{proof}
+
+It is convenient for our location primitive (\textsc{LocateSignal}, see Algorithm~\ref{alg:location}) to sample the signal at pairs of locations chosen randomly (but in a correlated fashion). The two points are then combined into one in a linear fashion. We now define notation for this common operation on pairs of numbers in $\nsq$. Note that we are viewing pairs in $\nsq\times \nsq$ as vectors in dimension $2$, and the $\star$ operation below is just the dot product over this two dimensional space. However, since our input space is already endowed with a dot product (for $i, j\in \nsq$ we denote their dot product by $i^Tj$), having special notation here will help avoid confusion.
+\paragraph{Operations on vectors in $\nsq$.} For a pair of vectors $(\alpha_1, \beta_1), (\alpha_2, \beta_2)\in \nsq\times \nsq$ we let $(\alpha_1, \beta_1)\star (\alpha_2, \beta_2)$ denote the vector $\gamma\in \nsq$ such that 
+$$
+\gamma_i=(\alpha_1)_i\cdot (\alpha_2)_i+(\beta_1)_i\cdot (\beta_2)_i\text{~~~for all ~}i\in [d].
+$$
+Note that for any $a, b, c\in \nsq\times \nsq$ one has $a\star b+a\star c=a\star (b+c)$, where addition for elements of $\nsq\times \nsq$ is componentwise.
+We write $\one\in \nsq$ for the all ones vector in dimension $d$, and $\zero\in \nsq$ for the zero vector. For a set $\A\subseteq \nsq\times \nsq$ and a vector $(\alpha, \beta)\in \nsq\times \nsq$ we denote
+$$
+\A\star (\alpha, \beta):=\{a\star(\alpha, \beta): a\in \A\}.
+$$
+
+
+\begin{definition}[Balanced set of points]\label{def:balance}
+For an integer $\Delta\geq 2$  we say that a (multi)set $\mathcal{Z}\subseteq \nsq$ is {\em $\Delta$-balanced} in coordinate $s\in [1:d]$ if for every $r=1,\ldots, \Delta-1$ at least $49/100$ fraction of elements in the set $\{\omega_{\Delta}^{r\cdot z_s}\}_{z\in \mathcal{Z}}$ belong to the left halfplane $\{u\in \C: \text{Re}(u)\leq 0\}$ in the complex plane, where $\omega_\Delta=e^{2\pi i/\Delta}$ is the $\Delta$-th root of unity.
+\end{definition}
+
+Note that if $\Delta$ divides $n$, then for any fixed value of $r$ the point $\omega_\Delta^{r\cdot z_s}$ is uniformly distributed over the $\Delta'$-th roots of unity for some $\Delta'$ between $2$ and $\Delta$ for every $r=1,\ldots, \Delta-1$ when $z_s$ is uniformly random in $[n]$. Thus for $r\neq 0$ we expect at least half the points to lie in the halfplane $\{u\in \C: \text{Re}(u)\leq 0\}$. A set $\mathcal{Z}$ is balanced if it does not deviate from expected behavior too much.
+The following claim is immediate via standard concentration bounds:
+%\begin{claim}\label{cl:balanced-p}
+%There exists a constant $C>0$ such that for any $\Delta\geq 2$ a power of two  and $n$ a power of $2$ the following holds if $\Delta<n$. If elements of a (multi)set $\mathcal{Z}\subseteq [n]$ of size $C(\log\log N+\log d)$ are chosen uniformly at random with replacement from $\nsq$, then $\mathcal{Z}$ is $\Delta$-balanced with probability at least $1-1/(10d\log^2 N)$.
+%\end{claim}
+
+\begin{claim}\label{cl:balanced}
+There exists a constant $C>0$ such that for any $\Delta$ a power of two, $\Delta=\log^{O(1)} n$,  and $n$ a power of $2$ the following holds if $\Delta<n$. If elements of a (multi)set $\A\subseteq \nsq\times \nsq$ of size $C\log\log N$ are chosen uniformly at random with replacement from $\nsq\times \nsq$, then with probability at least $1-1/\log^4 N$ one has that for every $s\in [1:d]$ the set $\A\star (\zero, \mathbf{e}_s)$ is $\Delta$-balanced in coordinate $s$.
+\end{claim}
+Since we only use one value of $\Delta$ in the paper (see line~8 in Algorithm~\ref{alg:location}), we will usually say that a set is simply `balanced'  to denote the $\Delta$-balanced property for this value of $\Delta$.
+
+

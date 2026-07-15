@@ -1,0 +1,105 @@
+%!TEX root = ./ft-hd.tex
+\section{$\ell_\infty/\ell_2$ guarantees and constant SNR case}
+In this section we state and analyze our algorithm for obtaining $\ell_\infty/\ell_2$ guarantees in $\tilde O(k)$ time, as well as a procedure for recovery under the assumption of bounded $\ell_1$ norm of heavy hitters (which is very similar to the \textsc{RecoverAtConstSNR} procedure used in \cite{IKP}).
+
+\subsection{$\ell_\infty/\ell_2$ guarantees}\label{sec:linf}
+The algorithm is given as Algorithm~\ref{alg:inf-norm-reduction}.
+
+\begin{algorithm}
+\caption{\textsc{ReduceInfNorm}($\hat x, \chi, k, \nu, R^*, \mu$)}\label{alg:inf-norm-reduction} 
+\begin{algorithmic}[1] 
+\Procedure{ReduceInfNorm}{$\hat x, \chi, k, \nu, R^*, \mu$}
+\State $\chi^{(0)} \gets 0$ \Comment{in $\C^n$}
+\State $B\gets \GT\cdot k/\alpha^d$ for a small constant $\alpha>0$
+\State $T\gets \log_2 R^*$
+\State $r_{max}\gets (C/\sqrt{\alpha})\log N$ for sufficiently large constant $C>0$
+\State $\H\gets \{\mathbf{0}_d\}$, $\Delta\gets 2^{\lfloor \frac1{2}\log_2 \log_2 n\rfloor}$ \Comment{$\mathbf{0}_d$ is the zero vector in dimension $d$}
+\For {$g=1$ to $\lceil \log_\Delta n \rceil$}
+\State $\H\gets \H\cup \bigcup_{s=1}^d \{n \Delta^{-g} \cdot \mathbf{e}_s\}$ \Comment{$\mathbf{e}_s$ is the unit vector in direction $s$}
+\EndFor
+\State $G\gets$ filter with $B$ buckets and sharpness $F$, as per Lemma~\ref{lm:filter-prop}
+\For {$r=1$ to $r_{max}$}\Comment{Samples that will be used for location}
+\State Choose $\Sigma_r\in \gl$, $q_r\in \nsq$ uniformly at random, let $\pi_r:=(\Sigma_r, q_r)$ and let $H_r:=(\pi_r, B, F)$
+\State Let $\A_r\gets $ $C\log\log N$ elements of $\nsq\times \nsq$ sampled uniformly at random with replacement
+\For {$\h\in \H$}
+\State $m(\wh{x}, H_r, a\star(\one, \h))\gets \Call{HashToBins}{\hat x, 0, (H_r, a\star (\one, \h))}$ for all $a\in \A_r, \h\in \H$
+%\State Measure $m(\wh{x}, H^t_s, a\star (\one, \h)\}_{a\in \A, \h\in \H}}
+%\State Measure $u_r(a, \h) \gets \Call{HashToBins}{\hat x, 0, H_r, a\star (\one, \h)}$ for all $a\in \A^t_s$
+\EndFor
+\EndFor
+\For{$t=0$ to $T-1$} \Comment{Locating elements of the residual that pass a threshold test}
+\For{$r=1$ to $r_{max}$}
+\State $L_r \gets \textsc{LocateSignal}\left(\chi^{(t)}, k, \{m(\wh{x}, H_r, a\star (\one, \h))\}_{r=1, a\in \A_r, \h\in \H}^{r_{max}}\right)$
+\EndFor
+\State $L\gets \bigcup_{r=1}^{r_{max}} L_r$
+\State $\chi' \gets \Call{EstimateValues}{\hat x,  \chi^{(t)}, L, k, 1, O(\log n), 5(\nu 2^{T-(t+1)}+\mu), \infty}$
+\State $\chi^{(t+1)} \gets \chi^{(t)} + \chi'$
+\EndFor
+\State \textbf{return} $\chi^{(T)}$
+\EndProcedure 
+\end{algorithmic}
+\end{algorithm}
+
+\begin{lemma}\label{lm:linf}
+For any $x, \chi\in \C^n$, $x'=x-\chi$, any integer $k\geq 1$, if parameters $\nu$ and $\mu$ satisfy $\nu\geq ||x'_{[k]}||_1/k$, $\mu^2\geq ||x'_{\nsq\setminus [k]}||_2^2/k$, then the following conditions hold. If $S\subseteq \nsq$ is the set of top $k$ elements of $x'$ in terms of absolute value, and $||x'_{\nsq\setminus S}||_\infty\leq \nu$, then the output $\chi\in \C^\nsq$ of a call to \Call{ReduceInfNorm}{$\wh{x}, \chi, k, \nu, R^*, \mu$}  with probability at least $1-N^{-10}$ over the randomness used in the call satisfies
+$$
+||x'-\chi||_\infty\leq 8(\nu+\mu)+O(1/N^c), \text{~~~~~(all elements in $S$ have been reduced to about $\nu+\mu$)},
+$$
+where the $O(||x'||_\infty/N^c)$ term corresponds to polynomially small error in our computation of the semiequispaced Fourier transform. Furthermore, we have $\chi_{\nsq\setminus S}\equiv 0$.
+The number of samples used is bounded by $2^{O(d^2)} k\log^3 N$. The runtime is bounded by $2^{O(d^2)} k \log^{d+3} N$.
+\end{lemma}
+\begin{proof}
+ We prove by induction on $t$ that with probability at least $1-N^{-10}$ one has for each $t=0,\ldots, T-1$
+\begin{description}
+\item[{\bf (1)}] $||(x'-\chi^{(t)})_S||_\infty\leq 8(\nu 2^{T-t}+\mu)$
+\item[{\bf (2)}] $\chi^{(t)}_{\nsq\setminus S}\equiv 0$
+\item[{\bf (3)}] $|(x'_i-\chi^{(t)})_i|\leq |x'_i|$ for all $i\in \nsq$
+\end{description}
+for all such $t$.
+
+The {\bf base} $t=0$ holds trivially. We now prove the {\bf inductive step}. First, since $r=C\log N$ for a constant $C>0$, we have by Lemma~\ref{lm:good-prob} that each $i\in S$ is isolated under at least a $1-\sqrt{\alpha}$ fraction of hashings $H_1,\ldots, H_{r_{max}}$ with probability at least $1-2^{-\Omega(\sqrt{\alpha}r_{max})}\geq 1- N^{-10}$ as long as $C>0$ is sufficiently large. This lets us invoke Lemma~\ref{lm:eh-s-sstar} with $S^*=\emptyset$. We now use Lemma~\ref{lm:eh-s-sstar} to obtain bounds on functions $e^{head}$ and $e^{tail}$ applied to our hashings $\{H_r\}$ and vector $x'$. Note that $e^{head}$ and $e^{tail}$ are defined in terms of a set $S\subseteq \nsq$ (this dependence is not made explicit to alleviate notation). We use $S=[\tilde k]$, i.e. $S$ is the top $k$ elements of $x'$. The inductive hypothesis together with the second part of Lemma~\ref{lm:eh-s-sstar} gives for each $i\in S$ 
+$$
+||e^{head}_S(\{H_r\}, x', \chi^{(t)})||_\infty\leq (C\alpha)^{d/2} ||(x'-\chi^{(t)})_S||_\infty.
+$$
+To bound the effect of tail noise, we invoke the second part of Lemma~\ref{lm:loc-tail-small}, which states that if $r_{max}=C\log N$ for a sufficiently large constant $C>0$ , we have
+$||e^{tail}_S(\{H_r, \A_r\}, x')||_\infty=O(\sqrt{\alpha} \mu)$. 
+
+These two facts together imply by the second claim of Corollary~\ref{cor:loc} that each $i\in S$ such that 
+$$
+|(x'-\chi^{(t)})_i|\geq 20\sqrt{\alpha} ||(x'-\chi^{(t)})_S||_\infty+20\sqrt{\alpha} \mu
+$$
+is located. In particular, by the inductive hypothesis this means that every $i\in S$ such that 
+$$
+|(x'-\chi^{(t)})_i|\geq 20\sqrt{\alpha} (\nu 2^{T-t}+2\mu)+(4\mu)
+$$
+is located and reported in the list $L$ . This means that 
+$$
+||(x'-\chi^{(t)})_{\nsq\setminus L}||_\infty\leq 20\sqrt{\alpha} (\nu 2^{T-t}+2\mu)+(4\mu),
+$$
+and hence it remains to show that each such element in $L$ is properly estimated in the call to \textsc{EstimateValues}, and that no elements outside of $S$ are updated. 
+
+We first bound estimation quality. First note that by part {\bf (3)} of the inductive hypothesis together with Lemma~\ref{lm:estimate-l1l2}, {\bf (1)} one has for each $i\in L$
+$$
+\prob[|\chi'- (x'-\chi^{(t)})_i|>\sqrt{\alpha}\cdot (\nu+\mu)]<2^{-\Omega(r_{max})}<N^{-10},
+$$
+as long as $r_{max}\geq C\log N$ for a sufficiently large constant $C>0$.
+This means that all elements in the list $L$ are estimated up to an additive $(\nu+\mu)/10\leq (\nu 2^{T-t}+\mu)/10$ term as long as $\alpha$ is smaller than an absolute constant. Putting the bounds above together proves part {\bf (1)} of the inductive step. 
+
+To prove parts {\bf (2)} and {\bf (3)} of the inductive step, we recall that the only elements $i\in \nsq$ that are updated are the ones that satisfy $|\chi'|\geq 5(\nu 2^{T-(t+1)}+\mu)$. By the triangle inequality and the bound on additive estimation error above that 
+$$
+|(x'-\chi^{(t)})_i|\geq 5(\nu 2^{T-(t+1)}+\mu)-(\nu +\mu)/10> 4(\nu 2^{T-(t+1)}+\mu)\geq 4(\nu+\mu).
+$$
+Since $|(x'-\chi^{(t)})_i|\leq |x_i|$ by part {\bf (2)} of the inductive hypothesis, we have that only elements $i\in \nsq$ with  $|x'_i|\geq 4(\nu+\mu)$ are updated, but those belong to $S$ since $||x'_{\nsq\setminus S}||_\infty\leq \nu$ by assumption of the lemma. This proves part {\bf (3)} of the inductive step. Part {\bf (2)} of the inductive step follows since
+$|(x'-\chi^{(t)}-\chi')_i|\leq (\nu +\mu)/10$ by the additive error bounds above, and the fact that $|(x'-\chi^{(t)})_i|>4(\nu+\mu)$. This completes the proof of the inductive step and the proof of correctness. 
+
+\paragraph{Sample complexity and runtime} Since \textsc{HashToBins} uses $B\cdot \fc^d$  samples by Lemma~\ref{l:hashtobins}, the sample complexity of location is bounded by
+$$
+B\cdot \fc^d\cdot r_{max}\cdot c_{max}\cdot |\H|=2^{O(d^2)} k\log^3 N.
+$$
+Each call to \textsc{EstimateValues} uses $B\cdot \fc^d\cdot k \cdot r_{max}$ samples, and there are $O(\log N)$ such calls overall, resulting in sample complexity of 
+$$
+B\cdot \fc^d \cdot r_{max}\cdot \log N=2^{O(d^2)} k\log^2 N.
+$$
+Thus, the sample complexity is bounded by $2^{O(d^2)} k\log^3 N$. The runtime bound follows analogously.
+\end{proof}
+

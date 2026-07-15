@@ -1,0 +1,74 @@
+[
+  {
+    "id": "PO-FAMILY",
+    "obligation": "Define an explicit asymptotic problem family.",
+    "reject_if_missing": true,
+    "why_required": "Shor-level claims are asymptotic, not small-instance phenomena."
+  },
+  {
+    "id": "PO-INPUT-MODEL",
+    "obligation": "State the input/oracle/access model exactly.",
+    "reject_if_missing": true,
+    "why_required": "Many quantum speedups disappear under realistic data access."
+  },
+  {
+    "id": "PO-CLASSICAL-BASELINE",
+    "obligation": "Name the best known classical algorithms and hardness evidence.",
+    "reject_if_missing": true,
+    "why_required": "Beating brute force is not meaningful."
+  },
+  {
+    "id": "PO-REDUCTION",
+    "obligation": "Connect the family to a known hard problem, lower-bound target, or frontier reduction.",
+    "reject_if_missing": true,
+    "why_required": "This separates natural problems from arbitrary oracle puzzles."
+  },
+  {
+    "id": "PO-MECHANISM",
+    "obligation": "Identify the quantum mechanism: Fourier, phase estimation, walk, QSVT, span program, collective measurement, etc.",
+    "reject_if_missing": true,
+    "why_required": "The mechanism drives both search and proof."
+  },
+  {
+    "id": "PO-STATE-PREP",
+    "obligation": "Account for state preparation, block encoding, QRAM, precision, and reversible arithmetic.",
+    "reject_if_missing": true,
+    "why_required": "Hidden costs often erase the claimed speedup."
+  },
+  {
+    "id": "PO-MEASUREMENT",
+    "obligation": "Specify the measurement and decoding procedure.",
+    "reject_if_missing": true,
+    "why_required": "For nonabelian/coset problems this is usually the hard part."
+  },
+  {
+    "id": "PO-SUCCESS-PROOF",
+    "obligation": "State a success probability theorem or conjecture with parameters.",
+    "reject_if_missing": true,
+    "why_required": "Finite experiments need a proof target."
+  },
+  {
+    "id": "PO-COMPLEXITY",
+    "obligation": "Separate query, gate, space, precision, and classical postprocessing complexity.",
+    "reject_if_missing": true,
+    "why_required": "A query speedup alone may not be an algorithmic speedup."
+  },
+  {
+    "id": "PO-NOGO",
+    "obligation": "List applicable no-go barriers and how the proposal avoids them.",
+    "reject_if_missing": true,
+    "why_required": "Avoids rediscovering known dead ends."
+  },
+  {
+    "id": "PO-DEQUANTIZATION",
+    "obligation": "Check whether a classical randomized/low-rank/dequantized method matches the claimed advantage.",
+    "reject_if_missing": true,
+    "why_required": "Modern quantum linear algebra claims especially need this."
+  },
+  {
+    "id": "PO-FALSIFIERS",
+    "obligation": "Provide explicit experiments or counterexamples that would kill the idea.",
+    "reject_if_missing": true,
+    "why_required": "A research engine must conserve attention."
+  }
+]

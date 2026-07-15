@@ -1,0 +1,2117 @@
+{
+  "claim_gate": {
+    "bounded_list_membership_characterized_exactly": true,
+    "finite_deviation_growth_is_asymptotic_theorem": false,
+    "fixed_depth_source_coverage_upper_bound_proved": false,
+    "general_affine_cvp_lower_bound_proved": false,
+    "reason": "Exact witness paths explain finite bounded-list failure, but LLL-dependent coordinate growth still needs a source theorem and does not constrain different affine decoders.",
+    "speedup_claim_allowed": false,
+    "witness_paths_replayed_exactly": true
+  },
+  "created_at": "2026-07-15T10:51:00.183926+00:00",
+  "falsifiers_triggered": [
+    "Every witness coordinate vector and nearest-plane replay is exact rational/integer arithmetic.",
+    "Targets are independent uniform and legality is determined only after sampling.",
+    "Witness truncation is explicit and excluded from witness-complete conclusions.",
+    "One-step tree escape does not rule out larger offsets, growing depth, or another affine decoder.",
+    "Finite deviation trends are not promoted to source-probability bounds."
+  ],
+  "geometry_contract": {
+    "claim_rule": "finite deviation growth or tree escape is not an asymptotic source bound",
+    "coordinate_map": "solve each witness lattice point exactly in the LLL-reduced marker-zero row basis",
+    "list_equivalence": "one-step tree depth k iff all offsets have magnitude <=1 and at most k are nonzero",
+    "path_replay": "use true later coefficients when recomputing every nearest-plane rounding decision",
+    "source": "independent uniform labels and target with exact post-sampling legality and witness enumeration"
+  },
+  "headline_metrics": {
+    "complete_witness_enumeration_trial_count": 19,
+    "exact_replay_failure_count": 0,
+    "legal_trial_count": 19,
+    "maximum_n_bits": 36,
+    "polynomial_marker_aware_decoder_count": 0,
+    "proved_asymptotic_deviation_growth_count": 0,
+    "proved_fixed_depth_source_coverage_upper_bound_count": 0,
+    "row_count": 5,
+    "tail_carry_depth_two_predicted_success_count": 0,
+    "tail_carry_one_step_tree_escape_count": 0,
+    "tail_complete_legal_trial_count": 3,
+    "tail_standard_depth_two_predicted_success_count": 0,
+    "tail_standard_one_step_tree_escape_count": 0,
+    "trial_count": 20,
+    "witness_complete_deviation_profile_theorem_count": 1
+  },
+  "rows": [
+    {
+      "carry_depth_one_predicted_success_count": 2,
+      "carry_depth_two_predicted_success_count": 3,
+      "carry_depth_zero_predicted_success_count": 0,
+      "carry_one_step_tree_escape_trial_count": 0,
+      "complete_witness_enumeration_count": 4,
+      "finite_row_is_deviation_growth_theorem": false,
+      "legal_trial_count": 4,
+      "median_carry_minimum_deviation_depth": 1.5,
+      "median_carry_minimum_maximum_offset": 1.0,
+      "median_standard_minimum_deviation_depth": 1.0,
+      "median_standard_minimum_maximum_offset": 1.0,
+      "n_bits": 20,
+      "register_offset": 2,
+      "standard_depth_one_predicted_success_count": 3,
+      "standard_depth_two_predicted_success_count": 4,
+      "standard_depth_zero_predicted_success_count": 1,
+      "standard_one_step_tree_escape_trial_count": 0,
+      "trial_count": 4
+    },
+    {
+      "carry_depth_one_predicted_success_count": 4,
+      "carry_depth_two_predicted_success_count": 4,
+      "carry_depth_zero_predicted_success_count": 2,
+      "carry_one_step_tree_escape_trial_count": 0,
+      "complete_witness_enumeration_count": 4,
+      "finite_row_is_deviation_growth_theorem": false,
+      "legal_trial_count": 4,
+      "median_carry_minimum_deviation_depth": 0.5,
+      "median_carry_minimum_maximum_offset": 0.5,
+      "median_standard_minimum_deviation_depth": 1.5,
+      "median_standard_minimum_maximum_offset": 1.0,
+      "n_bits": 24,
+      "register_offset": 2,
+      "standard_depth_one_predicted_success_count": 2,
+      "standard_depth_two_predicted_success_count": 4,
+      "standard_depth_zero_predicted_success_count": 1,
+      "standard_one_step_tree_escape_trial_count": 0,
+      "trial_count": 4
+    },
+    {
+      "carry_depth_one_predicted_success_count": 1,
+      "carry_depth_two_predicted_success_count": 2,
+      "carry_depth_zero_predicted_success_count": 0,
+      "carry_one_step_tree_escape_trial_count": 0,
+      "complete_witness_enumeration_count": 4,
+      "finite_row_is_deviation_growth_theorem": false,
+      "legal_trial_count": 4,
+      "median_carry_minimum_deviation_depth": 2.5,
+      "median_carry_minimum_maximum_offset": 1.0,
+      "median_standard_minimum_deviation_depth": 3.0,
+      "median_standard_minimum_maximum_offset": 1.0,
+      "n_bits": 28,
+      "register_offset": 2,
+      "standard_depth_one_predicted_success_count": 0,
+      "standard_depth_two_predicted_success_count": 0,
+      "standard_depth_zero_predicted_success_count": 0,
+      "standard_one_step_tree_escape_trial_count": 0,
+      "trial_count": 4
+    },
+    {
+      "carry_depth_one_predicted_success_count": 0,
+      "carry_depth_two_predicted_success_count": 2,
+      "carry_depth_zero_predicted_success_count": 0,
+      "carry_one_step_tree_escape_trial_count": 0,
+      "complete_witness_enumeration_count": 4,
+      "finite_row_is_deviation_growth_theorem": false,
+      "legal_trial_count": 4,
+      "median_carry_minimum_deviation_depth": 3.0,
+      "median_carry_minimum_maximum_offset": 1.0,
+      "median_standard_minimum_deviation_depth": 4.0,
+      "median_standard_minimum_maximum_offset": 1.0,
+      "n_bits": 32,
+      "register_offset": 2,
+      "standard_depth_one_predicted_success_count": 0,
+      "standard_depth_two_predicted_success_count": 0,
+      "standard_depth_zero_predicted_success_count": 0,
+      "standard_one_step_tree_escape_trial_count": 0,
+      "trial_count": 4
+    },
+    {
+      "carry_depth_one_predicted_success_count": 0,
+      "carry_depth_two_predicted_success_count": 0,
+      "carry_depth_zero_predicted_success_count": 0,
+      "carry_one_step_tree_escape_trial_count": 0,
+      "complete_witness_enumeration_count": 3,
+      "finite_row_is_deviation_growth_theorem": false,
+      "legal_trial_count": 3,
+      "median_carry_minimum_deviation_depth": 4.0,
+      "median_carry_minimum_maximum_offset": 1.0,
+      "median_standard_minimum_deviation_depth": 5.0,
+      "median_standard_minimum_maximum_offset": 1.0,
+      "n_bits": 36,
+      "register_offset": 2,
+      "standard_depth_one_predicted_success_count": 0,
+      "standard_depth_two_predicted_success_count": 0,
+      "standard_depth_zero_predicted_success_count": 0,
+      "standard_one_step_tree_escape_trial_count": 0,
+      "trial_count": 4
+    }
+  ],
+  "status": "exact-witness-deviation-geometry-measured-asymptotic-law-open",
+  "summary": "Profiled exact nearest-plane paths for 19 complete legal trials through n=36; tail depth-two standard/carry predictions=0/0 over 3 trials, tree escapes=0/0; no asymptotic source theorem.",
+  "trials": [
+    {
+      "carry_depth_two_predicted_solved": true,
+      "carry_minimum_maximum_offset": 1,
+      "carry_minimum_one_step_depth": 1,
+      "carry_sliced_profiles": [
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 1,
+          "nonzero_rounding_deviation_count": 1,
+          "normalized_deviation_depth": 0.043478260869565216,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 1
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 3,
+          "nonzero_rounding_deviation_count": 3,
+          "normalized_deviation_depth": 0.13043478260869565,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 3
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 1,
+          "nonzero_rounding_deviation_count": 1,
+          "normalized_deviation_depth": 0.043478260869565216,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 1
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 1,
+          "nonzero_rounding_deviation_count": 1,
+          "normalized_deviation_depth": 0.043478260869565216,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 1
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 1,
+          "nonzero_rounding_deviation_count": 1,
+          "normalized_deviation_depth": 0.043478260869565216,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 1
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 2,
+          "nonzero_rounding_deviation_count": 2,
+          "normalized_deviation_depth": 0.08695652173913043,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 2
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 1,
+          "nonzero_rounding_deviation_count": 1,
+          "normalized_deviation_depth": 0.043478260869565216,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 1
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 2,
+          "nonzero_rounding_deviation_count": 2,
+          "normalized_deviation_depth": 0.08695652173913043,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 2
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 3,
+          "nonzero_rounding_deviation_count": 3,
+          "normalized_deviation_depth": 0.13043478260869565,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 3
+        }
+      ],
+      "constrained_low_bits": 5,
+      "enumerated_witness_count": 9,
+      "exact_witness_count": 9,
+      "n_bits": 20,
+      "register_count": 22,
+      "register_offset": 2,
+      "source_is_independent_uniform_target": true,
+      "standard_depth_two_predicted_solved": true,
+      "standard_minimum_maximum_offset": 0,
+      "standard_minimum_one_step_depth": 0,
+      "standard_profiles": [
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 3,
+          "nonzero_rounding_deviation_count": 3,
+          "normalized_deviation_depth": 0.13043478260869565,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 3
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 1,
+          "nonzero_rounding_deviation_count": 1,
+          "normalized_deviation_depth": 0.043478260869565216,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 1
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 1,
+          "nonzero_rounding_deviation_count": 1,
+          "normalized_deviation_depth": 0.043478260869565216,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 1
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 0,
+          "minimum_one_step_branch_depth": 0,
+          "nonzero_rounding_deviation_count": 0,
+          "normalized_deviation_depth": 0.0,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 0
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 4,
+          "nonzero_rounding_deviation_count": 4,
+          "normalized_deviation_depth": 0.17391304347826086,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 4
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 2,
+          "nonzero_rounding_deviation_count": 2,
+          "normalized_deviation_depth": 0.08695652173913043,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 2
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 3,
+          "nonzero_rounding_deviation_count": 3,
+          "normalized_deviation_depth": 0.13043478260869565,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 3
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 2,
+          "nonzero_rounding_deviation_count": 2,
+          "normalized_deviation_depth": 0.08695652173913043,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 2
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 2,
+          "nonzero_rounding_deviation_count": 2,
+          "normalized_deviation_depth": 0.08695652173913043,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 2
+        }
+      ],
+      "target_legal": true,
+      "trial_index": 0,
+      "witness_enumeration_truncated": false
+    },
+    {
+      "carry_depth_two_predicted_solved": true,
+      "carry_minimum_maximum_offset": 1,
+      "carry_minimum_one_step_depth": 1,
+      "carry_sliced_profiles": [
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 1,
+          "nonzero_rounding_deviation_count": 1,
+          "normalized_deviation_depth": 0.043478260869565216,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 1
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 2,
+          "nonzero_rounding_deviation_count": 2,
+          "normalized_deviation_depth": 0.08695652173913043,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 2
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 1,
+          "nonzero_rounding_deviation_count": 1,
+          "normalized_deviation_depth": 0.043478260869565216,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 1
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 1,
+          "nonzero_rounding_deviation_count": 1,
+          "normalized_deviation_depth": 0.043478260869565216,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 1
+        }
+      ],
+      "constrained_low_bits": 5,
+      "enumerated_witness_count": 4,
+      "exact_witness_count": 4,
+      "n_bits": 20,
+      "register_count": 22,
+      "register_offset": 2,
+      "source_is_independent_uniform_target": true,
+      "standard_depth_two_predicted_solved": true,
+      "standard_minimum_maximum_offset": 1,
+      "standard_minimum_one_step_depth": 1,
+      "standard_profiles": [
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 3,
+          "nonzero_rounding_deviation_count": 3,
+          "normalized_deviation_depth": 0.13043478260869565,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 3
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 1,
+          "nonzero_rounding_deviation_count": 1,
+          "normalized_deviation_depth": 0.043478260869565216,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 1
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 1,
+          "nonzero_rounding_deviation_count": 1,
+          "normalized_deviation_depth": 0.043478260869565216,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 1
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 2,
+          "nonzero_rounding_deviation_count": 2,
+          "normalized_deviation_depth": 0.08695652173913043,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 2
+        }
+      ],
+      "target_legal": true,
+      "trial_index": 1,
+      "witness_enumeration_truncated": false
+    },
+    {
+      "carry_depth_two_predicted_solved": true,
+      "carry_minimum_maximum_offset": 1,
+      "carry_minimum_one_step_depth": 2,
+      "carry_sliced_profiles": [
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 2,
+          "nonzero_rounding_deviation_count": 2,
+          "normalized_deviation_depth": 0.08695652173913043,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 2
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 2,
+          "nonzero_rounding_deviation_count": 2,
+          "normalized_deviation_depth": 0.08695652173913043,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 2
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 4,
+          "nonzero_rounding_deviation_count": 4,
+          "normalized_deviation_depth": 0.17391304347826086,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 4
+        }
+      ],
+      "constrained_low_bits": 5,
+      "enumerated_witness_count": 3,
+      "exact_witness_count": 3,
+      "n_bits": 20,
+      "register_count": 22,
+      "register_offset": 2,
+      "source_is_independent_uniform_target": true,
+      "standard_depth_two_predicted_solved": true,
+      "standard_minimum_maximum_offset": 1,
+      "standard_minimum_one_step_depth": 2,
+      "standard_profiles": [
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 3,
+          "nonzero_rounding_deviation_count": 3,
+          "normalized_deviation_depth": 0.13043478260869565,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 3
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 2,
+          "nonzero_rounding_deviation_count": 2,
+          "normalized_deviation_depth": 0.08695652173913043,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 2
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 2,
+          "nonzero_rounding_deviation_count": 2,
+          "normalized_deviation_depth": 0.08695652173913043,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 2
+        }
+      ],
+      "target_legal": true,
+      "trial_index": 2,
+      "witness_enumeration_truncated": false
+    },
+    {
+      "carry_depth_two_predicted_solved": false,
+      "carry_minimum_maximum_offset": 1,
+      "carry_minimum_one_step_depth": 3,
+      "carry_sliced_profiles": [
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 3,
+          "nonzero_rounding_deviation_count": 3,
+          "normalized_deviation_depth": 0.13043478260869565,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 3
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 3,
+          "nonzero_rounding_deviation_count": 3,
+          "normalized_deviation_depth": 0.13043478260869565,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 3
+        }
+      ],
+      "constrained_low_bits": 5,
+      "enumerated_witness_count": 2,
+      "exact_witness_count": 2,
+      "n_bits": 20,
+      "register_count": 22,
+      "register_offset": 2,
+      "source_is_independent_uniform_target": true,
+      "standard_depth_two_predicted_solved": true,
+      "standard_minimum_maximum_offset": 1,
+      "standard_minimum_one_step_depth": 1,
+      "standard_profiles": [
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 1,
+          "nonzero_rounding_deviation_count": 1,
+          "normalized_deviation_depth": 0.043478260869565216,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 1
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 1,
+          "nonzero_rounding_deviation_count": 1,
+          "normalized_deviation_depth": 0.043478260869565216,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 1
+        }
+      ],
+      "target_legal": true,
+      "trial_index": 3,
+      "witness_enumeration_truncated": false
+    },
+    {
+      "carry_depth_two_predicted_solved": true,
+      "carry_minimum_maximum_offset": 0,
+      "carry_minimum_one_step_depth": 0,
+      "carry_sliced_profiles": [
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 3,
+          "nonzero_rounding_deviation_count": 3,
+          "normalized_deviation_depth": 0.1111111111111111,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 3
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 1,
+          "nonzero_rounding_deviation_count": 1,
+          "normalized_deviation_depth": 0.037037037037037035,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 1
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 1,
+          "nonzero_rounding_deviation_count": 1,
+          "normalized_deviation_depth": 0.037037037037037035,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 1
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 1,
+          "nonzero_rounding_deviation_count": 1,
+          "normalized_deviation_depth": 0.037037037037037035,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 1
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 1,
+          "nonzero_rounding_deviation_count": 1,
+          "normalized_deviation_depth": 0.037037037037037035,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 1
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 0,
+          "minimum_one_step_branch_depth": 0,
+          "nonzero_rounding_deviation_count": 0,
+          "normalized_deviation_depth": 0.0,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 0
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 2,
+          "nonzero_rounding_deviation_count": 2,
+          "normalized_deviation_depth": 0.07407407407407407,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 2
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 1,
+          "nonzero_rounding_deviation_count": 1,
+          "normalized_deviation_depth": 0.037037037037037035,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 1
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 1,
+          "nonzero_rounding_deviation_count": 1,
+          "normalized_deviation_depth": 0.037037037037037035,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 1
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 4,
+          "nonzero_rounding_deviation_count": 4,
+          "normalized_deviation_depth": 0.14814814814814814,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 4
+        }
+      ],
+      "constrained_low_bits": 5,
+      "enumerated_witness_count": 10,
+      "exact_witness_count": 10,
+      "n_bits": 24,
+      "register_count": 26,
+      "register_offset": 2,
+      "source_is_independent_uniform_target": true,
+      "standard_depth_two_predicted_solved": true,
+      "standard_minimum_maximum_offset": 0,
+      "standard_minimum_one_step_depth": 0,
+      "standard_profiles": [
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 5,
+          "nonzero_rounding_deviation_count": 5,
+          "normalized_deviation_depth": 0.18518518518518517,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 5
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 5,
+          "nonzero_rounding_deviation_count": 5,
+          "normalized_deviation_depth": 0.18518518518518517,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 5
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 4,
+          "nonzero_rounding_deviation_count": 4,
+          "normalized_deviation_depth": 0.14814814814814814,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 4
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 2,
+          "nonzero_rounding_deviation_count": 2,
+          "normalized_deviation_depth": 0.07407407407407407,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 2
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 4,
+          "nonzero_rounding_deviation_count": 4,
+          "normalized_deviation_depth": 0.14814814814814814,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 4
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 3,
+          "nonzero_rounding_deviation_count": 3,
+          "normalized_deviation_depth": 0.1111111111111111,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 3
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 3,
+          "nonzero_rounding_deviation_count": 3,
+          "normalized_deviation_depth": 0.1111111111111111,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 3
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 2,
+          "nonzero_rounding_deviation_count": 2,
+          "normalized_deviation_depth": 0.07407407407407407,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 2
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 0,
+          "minimum_one_step_branch_depth": 0,
+          "nonzero_rounding_deviation_count": 0,
+          "normalized_deviation_depth": 0.0,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 0
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 2,
+          "nonzero_rounding_deviation_count": 2,
+          "normalized_deviation_depth": 0.07407407407407407,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 2
+        }
+      ],
+      "target_legal": true,
+      "trial_index": 0,
+      "witness_enumeration_truncated": false
+    },
+    {
+      "carry_depth_two_predicted_solved": true,
+      "carry_minimum_maximum_offset": 0,
+      "carry_minimum_one_step_depth": 0,
+      "carry_sliced_profiles": [
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 3,
+          "nonzero_rounding_deviation_count": 3,
+          "normalized_deviation_depth": 0.1111111111111111,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 3
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 0,
+          "minimum_one_step_branch_depth": 0,
+          "nonzero_rounding_deviation_count": 0,
+          "normalized_deviation_depth": 0.0,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 0
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 3,
+          "nonzero_rounding_deviation_count": 3,
+          "normalized_deviation_depth": 0.1111111111111111,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 3
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 1,
+          "nonzero_rounding_deviation_count": 1,
+          "normalized_deviation_depth": 0.037037037037037035,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 1
+        }
+      ],
+      "constrained_low_bits": 5,
+      "enumerated_witness_count": 4,
+      "exact_witness_count": 4,
+      "n_bits": 24,
+      "register_count": 26,
+      "register_offset": 2,
+      "source_is_independent_uniform_target": true,
+      "standard_depth_two_predicted_solved": true,
+      "standard_minimum_maximum_offset": 1,
+      "standard_minimum_one_step_depth": 1,
+      "standard_profiles": [
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 1,
+          "nonzero_rounding_deviation_count": 1,
+          "normalized_deviation_depth": 0.037037037037037035,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 1
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 3,
+          "nonzero_rounding_deviation_count": 3,
+          "normalized_deviation_depth": 0.1111111111111111,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 3
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 3,
+          "nonzero_rounding_deviation_count": 3,
+          "normalized_deviation_depth": 0.1111111111111111,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 3
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 3,
+          "nonzero_rounding_deviation_count": 3,
+          "normalized_deviation_depth": 0.1111111111111111,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 3
+        }
+      ],
+      "target_legal": true,
+      "trial_index": 1,
+      "witness_enumeration_truncated": false
+    },
+    {
+      "carry_depth_two_predicted_solved": true,
+      "carry_minimum_maximum_offset": 1,
+      "carry_minimum_one_step_depth": 1,
+      "carry_sliced_profiles": [
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 3,
+          "nonzero_rounding_deviation_count": 3,
+          "normalized_deviation_depth": 0.1111111111111111,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 3
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 2,
+          "nonzero_rounding_deviation_count": 2,
+          "normalized_deviation_depth": 0.07407407407407407,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 2
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 1,
+          "nonzero_rounding_deviation_count": 1,
+          "normalized_deviation_depth": 0.037037037037037035,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 1
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 1,
+          "nonzero_rounding_deviation_count": 1,
+          "normalized_deviation_depth": 0.037037037037037035,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 1
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 1,
+          "nonzero_rounding_deviation_count": 1,
+          "normalized_deviation_depth": 0.037037037037037035,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 1
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 2,
+          "nonzero_rounding_deviation_count": 2,
+          "normalized_deviation_depth": 0.07407407407407407,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 2
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 2,
+          "nonzero_rounding_deviation_count": 2,
+          "normalized_deviation_depth": 0.07407407407407407,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 2
+        }
+      ],
+      "constrained_low_bits": 5,
+      "enumerated_witness_count": 7,
+      "exact_witness_count": 7,
+      "n_bits": 24,
+      "register_count": 26,
+      "register_offset": 2,
+      "source_is_independent_uniform_target": true,
+      "standard_depth_two_predicted_solved": true,
+      "standard_minimum_maximum_offset": 1,
+      "standard_minimum_one_step_depth": 2,
+      "standard_profiles": [
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 3,
+          "nonzero_rounding_deviation_count": 3,
+          "normalized_deviation_depth": 0.1111111111111111,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 3
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 3,
+          "nonzero_rounding_deviation_count": 3,
+          "normalized_deviation_depth": 0.1111111111111111,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 3
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 4,
+          "nonzero_rounding_deviation_count": 4,
+          "normalized_deviation_depth": 0.14814814814814814,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 4
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 2,
+          "nonzero_rounding_deviation_count": 2,
+          "normalized_deviation_depth": 0.07407407407407407,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 2
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 4,
+          "nonzero_rounding_deviation_count": 4,
+          "normalized_deviation_depth": 0.14814814814814814,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 4
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 3,
+          "nonzero_rounding_deviation_count": 3,
+          "normalized_deviation_depth": 0.1111111111111111,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 3
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 3,
+          "nonzero_rounding_deviation_count": 3,
+          "normalized_deviation_depth": 0.1111111111111111,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 3
+        }
+      ],
+      "target_legal": true,
+      "trial_index": 2,
+      "witness_enumeration_truncated": false
+    },
+    {
+      "carry_depth_two_predicted_solved": true,
+      "carry_minimum_maximum_offset": 1,
+      "carry_minimum_one_step_depth": 1,
+      "carry_sliced_profiles": [
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 3,
+          "nonzero_rounding_deviation_count": 3,
+          "normalized_deviation_depth": 0.1111111111111111,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 3
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 4,
+          "nonzero_rounding_deviation_count": 4,
+          "normalized_deviation_depth": 0.14814814814814814,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 4
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 2,
+          "nonzero_rounding_deviation_count": 2,
+          "normalized_deviation_depth": 0.07407407407407407,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 2
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 2,
+          "nonzero_rounding_deviation_count": 2,
+          "normalized_deviation_depth": 0.07407407407407407,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 2
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 1,
+          "nonzero_rounding_deviation_count": 1,
+          "normalized_deviation_depth": 0.037037037037037035,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 1
+        }
+      ],
+      "constrained_low_bits": 5,
+      "enumerated_witness_count": 5,
+      "exact_witness_count": 5,
+      "n_bits": 24,
+      "register_count": 26,
+      "register_offset": 2,
+      "source_is_independent_uniform_target": true,
+      "standard_depth_two_predicted_solved": true,
+      "standard_minimum_maximum_offset": 1,
+      "standard_minimum_one_step_depth": 2,
+      "standard_profiles": [
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 5,
+          "nonzero_rounding_deviation_count": 5,
+          "normalized_deviation_depth": 0.18518518518518517,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 5
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 2,
+          "nonzero_rounding_deviation_count": 2,
+          "normalized_deviation_depth": 0.07407407407407407,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 2
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 3,
+          "nonzero_rounding_deviation_count": 3,
+          "normalized_deviation_depth": 0.1111111111111111,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 3
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 5,
+          "nonzero_rounding_deviation_count": 5,
+          "normalized_deviation_depth": 0.18518518518518517,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 5
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 2,
+          "nonzero_rounding_deviation_count": 2,
+          "normalized_deviation_depth": 0.07407407407407407,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 2
+        }
+      ],
+      "target_legal": true,
+      "trial_index": 3,
+      "witness_enumeration_truncated": false
+    },
+    {
+      "carry_depth_two_predicted_solved": false,
+      "carry_minimum_maximum_offset": 1,
+      "carry_minimum_one_step_depth": 3,
+      "carry_sliced_profiles": [
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 5,
+          "nonzero_rounding_deviation_count": 5,
+          "normalized_deviation_depth": 0.16129032258064516,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 5
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 3,
+          "nonzero_rounding_deviation_count": 3,
+          "normalized_deviation_depth": 0.0967741935483871,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 3
+        }
+      ],
+      "constrained_low_bits": 5,
+      "enumerated_witness_count": 2,
+      "exact_witness_count": 2,
+      "n_bits": 28,
+      "register_count": 30,
+      "register_offset": 2,
+      "source_is_independent_uniform_target": true,
+      "standard_depth_two_predicted_solved": false,
+      "standard_minimum_maximum_offset": 1,
+      "standard_minimum_one_step_depth": 5,
+      "standard_profiles": [
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 5,
+          "nonzero_rounding_deviation_count": 5,
+          "normalized_deviation_depth": 0.16129032258064516,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 5
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 5,
+          "nonzero_rounding_deviation_count": 5,
+          "normalized_deviation_depth": 0.16129032258064516,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 5
+        }
+      ],
+      "target_legal": true,
+      "trial_index": 0,
+      "witness_enumeration_truncated": false
+    },
+    {
+      "carry_depth_two_predicted_solved": false,
+      "carry_minimum_maximum_offset": 1,
+      "carry_minimum_one_step_depth": 3,
+      "carry_sliced_profiles": [
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 5,
+          "nonzero_rounding_deviation_count": 5,
+          "normalized_deviation_depth": 0.16129032258064516,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 5
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 5,
+          "nonzero_rounding_deviation_count": 5,
+          "normalized_deviation_depth": 0.16129032258064516,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 5
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 5,
+          "nonzero_rounding_deviation_count": 5,
+          "normalized_deviation_depth": 0.16129032258064516,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 5
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 4,
+          "nonzero_rounding_deviation_count": 4,
+          "normalized_deviation_depth": 0.12903225806451613,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 4
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 3,
+          "nonzero_rounding_deviation_count": 3,
+          "normalized_deviation_depth": 0.0967741935483871,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 3
+        }
+      ],
+      "constrained_low_bits": 5,
+      "enumerated_witness_count": 5,
+      "exact_witness_count": 5,
+      "n_bits": 28,
+      "register_count": 30,
+      "register_offset": 2,
+      "source_is_independent_uniform_target": true,
+      "standard_depth_two_predicted_solved": false,
+      "standard_minimum_maximum_offset": 1,
+      "standard_minimum_one_step_depth": 3,
+      "standard_profiles": [
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 7,
+          "nonzero_rounding_deviation_count": 7,
+          "normalized_deviation_depth": 0.22580645161290322,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 7
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 4,
+          "nonzero_rounding_deviation_count": 4,
+          "normalized_deviation_depth": 0.12903225806451613,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 4
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 7,
+          "nonzero_rounding_deviation_count": 7,
+          "normalized_deviation_depth": 0.22580645161290322,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 7
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 3,
+          "nonzero_rounding_deviation_count": 3,
+          "normalized_deviation_depth": 0.0967741935483871,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 3
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 5,
+          "nonzero_rounding_deviation_count": 5,
+          "normalized_deviation_depth": 0.16129032258064516,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 5
+        }
+      ],
+      "target_legal": true,
+      "trial_index": 1,
+      "witness_enumeration_truncated": false
+    },
+    {
+      "carry_depth_two_predicted_solved": true,
+      "carry_minimum_maximum_offset": 1,
+      "carry_minimum_one_step_depth": 1,
+      "carry_sliced_profiles": [
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 1,
+          "nonzero_rounding_deviation_count": 1,
+          "normalized_deviation_depth": 0.03225806451612903,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 1
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 2,
+          "nonzero_rounding_deviation_count": 2,
+          "normalized_deviation_depth": 0.06451612903225806,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 2
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 3,
+          "nonzero_rounding_deviation_count": 3,
+          "normalized_deviation_depth": 0.0967741935483871,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 3
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 2,
+          "nonzero_rounding_deviation_count": 2,
+          "normalized_deviation_depth": 0.06451612903225806,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 2
+        }
+      ],
+      "constrained_low_bits": 5,
+      "enumerated_witness_count": 4,
+      "exact_witness_count": 4,
+      "n_bits": 28,
+      "register_count": 30,
+      "register_offset": 2,
+      "source_is_independent_uniform_target": true,
+      "standard_depth_two_predicted_solved": false,
+      "standard_minimum_maximum_offset": 1,
+      "standard_minimum_one_step_depth": 3,
+      "standard_profiles": [
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 4,
+          "nonzero_rounding_deviation_count": 4,
+          "normalized_deviation_depth": 0.12903225806451613,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 4
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 5,
+          "nonzero_rounding_deviation_count": 5,
+          "normalized_deviation_depth": 0.16129032258064516,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 5
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 3,
+          "nonzero_rounding_deviation_count": 3,
+          "normalized_deviation_depth": 0.0967741935483871,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 3
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 5,
+          "nonzero_rounding_deviation_count": 5,
+          "normalized_deviation_depth": 0.16129032258064516,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 5
+        }
+      ],
+      "target_legal": true,
+      "trial_index": 2,
+      "witness_enumeration_truncated": false
+    },
+    {
+      "carry_depth_two_predicted_solved": true,
+      "carry_minimum_maximum_offset": 1,
+      "carry_minimum_one_step_depth": 2,
+      "carry_sliced_profiles": [
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 3,
+          "nonzero_rounding_deviation_count": 3,
+          "normalized_deviation_depth": 0.0967741935483871,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 3
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 4,
+          "nonzero_rounding_deviation_count": 4,
+          "normalized_deviation_depth": 0.12903225806451613,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 4
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 2,
+          "nonzero_rounding_deviation_count": 2,
+          "normalized_deviation_depth": 0.06451612903225806,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 2
+        }
+      ],
+      "constrained_low_bits": 5,
+      "enumerated_witness_count": 3,
+      "exact_witness_count": 3,
+      "n_bits": 28,
+      "register_count": 30,
+      "register_offset": 2,
+      "source_is_independent_uniform_target": true,
+      "standard_depth_two_predicted_solved": false,
+      "standard_minimum_maximum_offset": 1,
+      "standard_minimum_one_step_depth": 3,
+      "standard_profiles": [
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 6,
+          "nonzero_rounding_deviation_count": 6,
+          "normalized_deviation_depth": 0.1935483870967742,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 6
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 7,
+          "nonzero_rounding_deviation_count": 7,
+          "normalized_deviation_depth": 0.22580645161290322,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 7
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 3,
+          "nonzero_rounding_deviation_count": 3,
+          "normalized_deviation_depth": 0.0967741935483871,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 3
+        }
+      ],
+      "target_legal": true,
+      "trial_index": 3,
+      "witness_enumeration_truncated": false
+    },
+    {
+      "carry_depth_two_predicted_solved": false,
+      "carry_minimum_maximum_offset": 1,
+      "carry_minimum_one_step_depth": 4,
+      "carry_sliced_profiles": [
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 7,
+          "nonzero_rounding_deviation_count": 7,
+          "normalized_deviation_depth": 0.2,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 7
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 4,
+          "nonzero_rounding_deviation_count": 4,
+          "normalized_deviation_depth": 0.11428571428571428,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 4
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 4,
+          "nonzero_rounding_deviation_count": 4,
+          "normalized_deviation_depth": 0.11428571428571428,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 4
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 7,
+          "nonzero_rounding_deviation_count": 7,
+          "normalized_deviation_depth": 0.2,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 7
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 4,
+          "nonzero_rounding_deviation_count": 4,
+          "normalized_deviation_depth": 0.11428571428571428,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 4
+        }
+      ],
+      "constrained_low_bits": 5,
+      "enumerated_witness_count": 5,
+      "exact_witness_count": 5,
+      "n_bits": 32,
+      "register_count": 34,
+      "register_offset": 2,
+      "source_is_independent_uniform_target": true,
+      "standard_depth_two_predicted_solved": false,
+      "standard_minimum_maximum_offset": 1,
+      "standard_minimum_one_step_depth": 4,
+      "standard_profiles": [
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 9,
+          "nonzero_rounding_deviation_count": 9,
+          "normalized_deviation_depth": 0.2571428571428571,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 9
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 5,
+          "nonzero_rounding_deviation_count": 5,
+          "normalized_deviation_depth": 0.14285714285714285,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 5
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 6,
+          "nonzero_rounding_deviation_count": 6,
+          "normalized_deviation_depth": 0.17142857142857143,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 6
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 4,
+          "nonzero_rounding_deviation_count": 4,
+          "normalized_deviation_depth": 0.11428571428571428,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 4
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 6,
+          "nonzero_rounding_deviation_count": 6,
+          "normalized_deviation_depth": 0.17142857142857143,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 6
+        }
+      ],
+      "target_legal": true,
+      "trial_index": 0,
+      "witness_enumeration_truncated": false
+    },
+    {
+      "carry_depth_two_predicted_solved": false,
+      "carry_minimum_maximum_offset": 1,
+      "carry_minimum_one_step_depth": 5,
+      "carry_sliced_profiles": [
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 5,
+          "nonzero_rounding_deviation_count": 5,
+          "normalized_deviation_depth": 0.14285714285714285,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 5
+        }
+      ],
+      "constrained_low_bits": 5,
+      "enumerated_witness_count": 1,
+      "exact_witness_count": 1,
+      "n_bits": 32,
+      "register_count": 34,
+      "register_offset": 2,
+      "source_is_independent_uniform_target": true,
+      "standard_depth_two_predicted_solved": false,
+      "standard_minimum_maximum_offset": 1,
+      "standard_minimum_one_step_depth": 6,
+      "standard_profiles": [
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 6,
+          "nonzero_rounding_deviation_count": 6,
+          "normalized_deviation_depth": 0.17142857142857143,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 6
+        }
+      ],
+      "target_legal": true,
+      "trial_index": 1,
+      "witness_enumeration_truncated": false
+    },
+    {
+      "carry_depth_two_predicted_solved": true,
+      "carry_minimum_maximum_offset": 1,
+      "carry_minimum_one_step_depth": 2,
+      "carry_sliced_profiles": [
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 2,
+          "nonzero_rounding_deviation_count": 2,
+          "normalized_deviation_depth": 0.05714285714285714,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 2
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 2,
+          "nonzero_rounding_deviation_count": 2,
+          "normalized_deviation_depth": 0.05714285714285714,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 2
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 6,
+          "nonzero_rounding_deviation_count": 6,
+          "normalized_deviation_depth": 0.17142857142857143,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 6
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 5,
+          "nonzero_rounding_deviation_count": 5,
+          "normalized_deviation_depth": 0.14285714285714285,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 5
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 3,
+          "nonzero_rounding_deviation_count": 3,
+          "normalized_deviation_depth": 0.08571428571428572,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 3
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 4,
+          "nonzero_rounding_deviation_count": 4,
+          "normalized_deviation_depth": 0.11428571428571428,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 4
+        }
+      ],
+      "constrained_low_bits": 5,
+      "enumerated_witness_count": 6,
+      "exact_witness_count": 6,
+      "n_bits": 32,
+      "register_count": 34,
+      "register_offset": 2,
+      "source_is_independent_uniform_target": true,
+      "standard_depth_two_predicted_solved": false,
+      "standard_minimum_maximum_offset": 1,
+      "standard_minimum_one_step_depth": 4,
+      "standard_profiles": [
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 6,
+          "nonzero_rounding_deviation_count": 6,
+          "normalized_deviation_depth": 0.17142857142857143,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 6
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 7,
+          "nonzero_rounding_deviation_count": 7,
+          "normalized_deviation_depth": 0.2,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 7
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 5,
+          "nonzero_rounding_deviation_count": 5,
+          "normalized_deviation_depth": 0.14285714285714285,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 5
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 4,
+          "nonzero_rounding_deviation_count": 4,
+          "normalized_deviation_depth": 0.11428571428571428,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 4
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 5,
+          "nonzero_rounding_deviation_count": 5,
+          "normalized_deviation_depth": 0.14285714285714285,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 5
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 5,
+          "nonzero_rounding_deviation_count": 5,
+          "normalized_deviation_depth": 0.14285714285714285,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 5
+        }
+      ],
+      "target_legal": true,
+      "trial_index": 2,
+      "witness_enumeration_truncated": false
+    },
+    {
+      "carry_depth_two_predicted_solved": true,
+      "carry_minimum_maximum_offset": 1,
+      "carry_minimum_one_step_depth": 2,
+      "carry_sliced_profiles": [
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 3,
+          "nonzero_rounding_deviation_count": 3,
+          "normalized_deviation_depth": 0.08571428571428572,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 3
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 6,
+          "nonzero_rounding_deviation_count": 6,
+          "normalized_deviation_depth": 0.17142857142857143,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 6
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 7,
+          "nonzero_rounding_deviation_count": 7,
+          "normalized_deviation_depth": 0.2,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 7
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 4,
+          "nonzero_rounding_deviation_count": 4,
+          "normalized_deviation_depth": 0.11428571428571428,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 4
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 4,
+          "nonzero_rounding_deviation_count": 4,
+          "normalized_deviation_depth": 0.11428571428571428,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 4
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 2,
+          "nonzero_rounding_deviation_count": 2,
+          "normalized_deviation_depth": 0.05714285714285714,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 2
+        }
+      ],
+      "constrained_low_bits": 5,
+      "enumerated_witness_count": 6,
+      "exact_witness_count": 6,
+      "n_bits": 32,
+      "register_count": 34,
+      "register_offset": 2,
+      "source_is_independent_uniform_target": true,
+      "standard_depth_two_predicted_solved": false,
+      "standard_minimum_maximum_offset": 1,
+      "standard_minimum_one_step_depth": 3,
+      "standard_profiles": [
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 8,
+          "nonzero_rounding_deviation_count": 8,
+          "normalized_deviation_depth": 0.22857142857142856,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 8
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 5,
+          "nonzero_rounding_deviation_count": 5,
+          "normalized_deviation_depth": 0.14285714285714285,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 5
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 9,
+          "nonzero_rounding_deviation_count": 9,
+          "normalized_deviation_depth": 0.2571428571428571,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 9
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 5,
+          "nonzero_rounding_deviation_count": 5,
+          "normalized_deviation_depth": 0.14285714285714285,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 5
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 5,
+          "nonzero_rounding_deviation_count": 5,
+          "normalized_deviation_depth": 0.14285714285714285,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 5
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 3,
+          "nonzero_rounding_deviation_count": 3,
+          "normalized_deviation_depth": 0.08571428571428572,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 3
+        }
+      ],
+      "target_legal": true,
+      "trial_index": 3,
+      "witness_enumeration_truncated": false
+    },
+    {
+      "carry_depth_two_predicted_solved": false,
+      "carry_minimum_maximum_offset": 1,
+      "carry_minimum_one_step_depth": 8,
+      "carry_sliced_profiles": [
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 8,
+          "nonzero_rounding_deviation_count": 8,
+          "normalized_deviation_depth": 0.20512820512820512,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 8
+        }
+      ],
+      "constrained_low_bits": 6,
+      "enumerated_witness_count": 1,
+      "exact_witness_count": 1,
+      "n_bits": 36,
+      "register_count": 38,
+      "register_offset": 2,
+      "source_is_independent_uniform_target": true,
+      "standard_depth_two_predicted_solved": false,
+      "standard_minimum_maximum_offset": 1,
+      "standard_minimum_one_step_depth": 5,
+      "standard_profiles": [
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 5,
+          "nonzero_rounding_deviation_count": 5,
+          "normalized_deviation_depth": 0.1282051282051282,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 5
+        }
+      ],
+      "target_legal": true,
+      "trial_index": 0,
+      "witness_enumeration_truncated": false
+    },
+    {
+      "carry_depth_two_predicted_solved": false,
+      "carry_minimum_maximum_offset": null,
+      "carry_minimum_one_step_depth": null,
+      "carry_sliced_profiles": [],
+      "constrained_low_bits": 6,
+      "enumerated_witness_count": 0,
+      "exact_witness_count": 0,
+      "n_bits": 36,
+      "register_count": 38,
+      "register_offset": 2,
+      "source_is_independent_uniform_target": true,
+      "standard_depth_two_predicted_solved": false,
+      "standard_minimum_maximum_offset": null,
+      "standard_minimum_one_step_depth": null,
+      "standard_profiles": [],
+      "target_legal": false,
+      "trial_index": 1,
+      "witness_enumeration_truncated": false
+    },
+    {
+      "carry_depth_two_predicted_solved": false,
+      "carry_minimum_maximum_offset": 1,
+      "carry_minimum_one_step_depth": 4,
+      "carry_sliced_profiles": [
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 6,
+          "nonzero_rounding_deviation_count": 6,
+          "normalized_deviation_depth": 0.15384615384615385,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 6
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 6,
+          "nonzero_rounding_deviation_count": 6,
+          "normalized_deviation_depth": 0.15384615384615385,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 6
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 7,
+          "nonzero_rounding_deviation_count": 7,
+          "normalized_deviation_depth": 0.1794871794871795,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 7
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 4,
+          "nonzero_rounding_deviation_count": 4,
+          "normalized_deviation_depth": 0.10256410256410256,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 4
+        }
+      ],
+      "constrained_low_bits": 6,
+      "enumerated_witness_count": 4,
+      "exact_witness_count": 4,
+      "n_bits": 36,
+      "register_count": 38,
+      "register_offset": 2,
+      "source_is_independent_uniform_target": true,
+      "standard_depth_two_predicted_solved": false,
+      "standard_minimum_maximum_offset": 1,
+      "standard_minimum_one_step_depth": 6,
+      "standard_profiles": [
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 10,
+          "nonzero_rounding_deviation_count": 10,
+          "normalized_deviation_depth": 0.2564102564102564,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 10
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 7,
+          "nonzero_rounding_deviation_count": 7,
+          "normalized_deviation_depth": 0.1794871794871795,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 7
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 7,
+          "nonzero_rounding_deviation_count": 7,
+          "normalized_deviation_depth": 0.1794871794871795,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 7
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 6,
+          "nonzero_rounding_deviation_count": 6,
+          "normalized_deviation_depth": 0.15384615384615385,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 6
+        }
+      ],
+      "target_legal": true,
+      "trial_index": 2,
+      "witness_enumeration_truncated": false
+    },
+    {
+      "carry_depth_two_predicted_solved": false,
+      "carry_minimum_maximum_offset": 1,
+      "carry_minimum_one_step_depth": 4,
+      "carry_sliced_profiles": [
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 7,
+          "nonzero_rounding_deviation_count": 7,
+          "normalized_deviation_depth": 0.1794871794871795,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 7
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 4,
+          "nonzero_rounding_deviation_count": 4,
+          "normalized_deviation_depth": 0.10256410256410256,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 4
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 4,
+          "nonzero_rounding_deviation_count": 4,
+          "normalized_deviation_depth": 0.10256410256410256,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 4
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 8,
+          "nonzero_rounding_deviation_count": 8,
+          "normalized_deviation_depth": 0.20512820512820512,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 8
+        }
+      ],
+      "constrained_low_bits": 6,
+      "enumerated_witness_count": 4,
+      "exact_witness_count": 4,
+      "n_bits": 36,
+      "register_count": 38,
+      "register_offset": 2,
+      "source_is_independent_uniform_target": true,
+      "standard_depth_two_predicted_solved": false,
+      "standard_minimum_maximum_offset": 1,
+      "standard_minimum_one_step_depth": 4,
+      "standard_profiles": [
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 4,
+          "nonzero_rounding_deviation_count": 4,
+          "normalized_deviation_depth": 0.10256410256410256,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 4
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 5,
+          "nonzero_rounding_deviation_count": 5,
+          "normalized_deviation_depth": 0.1282051282051282,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 5
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 5,
+          "nonzero_rounding_deviation_count": 5,
+          "normalized_deviation_depth": 0.1282051282051282,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 5
+        },
+        {
+          "exact_replay_verified": true,
+          "maximum_absolute_rounding_offset": 1,
+          "minimum_one_step_branch_depth": 4,
+          "nonzero_rounding_deviation_count": 4,
+          "normalized_deviation_depth": 0.10256410256410256,
+          "one_step_branch_tree_eligible": true,
+          "total_absolute_rounding_offset": 4
+        }
+      ],
+      "target_legal": true,
+      "trial_index": 3,
+      "witness_enumeration_truncated": false
+    }
+  ]
+}

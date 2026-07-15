@@ -1,0 +1,266 @@
+{
+  "created_at": "2026-07-13T16:55:33.834721+00:00",
+  "failure_probability": 0.01,
+  "families": [
+    "legendre_symbol",
+    "quartic_character"
+  ],
+  "family_summaries": [
+    {
+      "best_status": "query-lower-bound-route-killed",
+      "family_id": "legendre_symbol",
+      "lesson": "Random samples fingerprint shifts with logarithmic query ceilings; focus on decoding-time lower bounds instead.",
+      "max_query_ceiling_over_log2_prime": 2.495463360085282,
+      "max_union_bound_queries": 15,
+      "query_lower_bound_killed_count": 4,
+      "tested_n_bits": [
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "best_status": "query-lower-bound-route-killed",
+      "family_id": "quartic_character",
+      "lesson": "Random samples fingerprint shifts with logarithmic query ceilings; focus on decoding-time lower bounds instead.",
+      "max_query_ceiling_over_log2_prime": 1.151752320039361,
+      "max_union_bound_queries": 8,
+      "query_lower_bound_killed_count": 4,
+      "tested_n_bits": [
+        5,
+        6,
+        7,
+        8
+      ]
+    }
+  ],
+  "headline_metrics": {
+    "max_query_ceiling_over_log2_prime": 2.495463360085282,
+    "max_union_bound_queries": 15,
+    "max_wrong_shift_agreement_fraction": 0.5135135135135135,
+    "positive_evidence_count": 0,
+    "query_lower_bound_killed_count": 8
+  },
+  "id": "CHARACTER-QUERY-INFORMATION-LATEST",
+  "kind": "multiplicative-character-query-information-ceiling",
+  "n_values": [
+    5,
+    6,
+    7,
+    8
+  ],
+  "row_count": 8,
+  "rows": [
+    {
+      "agreement_profile": {
+        "agreement_fraction_interpretation": "constant-disagreement",
+        "family_id": "legendre_symbol",
+        "max_wrong_shift_agreement_count": 19,
+        "max_wrong_shift_agreement_fraction": 0.5135135135135135,
+        "median_wrong_shift_agreement_count": 18.0,
+        "min_wrong_shift_agreement_count": 17,
+        "min_wrong_shift_disagreement_fraction": 0.4864864864864865,
+        "n_bits": 5,
+        "prime": 37,
+        "worst_delta": 1
+      },
+      "candidate_check_operations": 481,
+      "decoding_status": "information-theoretic-only-exhaustive-candidate-decoding",
+      "exhaustive_candidates_compared": 36,
+      "failure_probability": 0.01,
+      "family_id": "legendre_symbol",
+      "n_bits": 5,
+      "prime": 37,
+      "proof_implication": "A random-sample query lower bound stronger than logarithmic is implausible for this family; the remaining research question is computational decoding time under the legal access model.",
+      "query_ceiling_over_log2_prime": 2.495463360085282,
+      "query_status": "no-superlog-query-lower-bound",
+      "random_sample_union_bound_queries": 13,
+      "use_as_positive_evidence": false
+    },
+    {
+      "agreement_profile": {
+        "agreement_fraction_interpretation": "constant-disagreement",
+        "family_id": "legendre_symbol",
+        "max_wrong_shift_agreement_count": 33,
+        "max_wrong_shift_agreement_fraction": 0.4925373134328358,
+        "median_wrong_shift_agreement_count": 33.0,
+        "min_wrong_shift_agreement_count": 33,
+        "min_wrong_shift_disagreement_fraction": 0.5074626865671642,
+        "n_bits": 6,
+        "prime": 67,
+        "worst_delta": 1
+      },
+      "candidate_check_operations": 871,
+      "decoding_status": "information-theoretic-only-exhaustive-candidate-decoding",
+      "exhaustive_candidates_compared": 66,
+      "failure_probability": 0.01,
+      "family_id": "legendre_symbol",
+      "n_bits": 6,
+      "prime": 67,
+      "proof_implication": "A random-sample query lower bound stronger than logarithmic is implausible for this family; the remaining research question is computational decoding time under the legal access model.",
+      "query_ceiling_over_log2_prime": 2.143061137388085,
+      "query_status": "no-superlog-query-lower-bound",
+      "random_sample_union_bound_queries": 13,
+      "use_as_positive_evidence": false
+    },
+    {
+      "agreement_profile": {
+        "agreement_fraction_interpretation": "constant-disagreement",
+        "family_id": "legendre_symbol",
+        "max_wrong_shift_agreement_count": 65,
+        "max_wrong_shift_agreement_fraction": 0.4961832061068702,
+        "median_wrong_shift_agreement_count": 65.0,
+        "min_wrong_shift_agreement_count": 65,
+        "min_wrong_shift_disagreement_fraction": 0.5038167938931297,
+        "n_bits": 7,
+        "prime": 131,
+        "worst_delta": 1
+      },
+      "candidate_check_operations": 1834,
+      "decoding_status": "information-theoretic-only-exhaustive-candidate-decoding",
+      "exhaustive_candidates_compared": 130,
+      "failure_probability": 0.01,
+      "family_id": "legendre_symbol",
+      "n_bits": 7,
+      "prime": 131,
+      "proof_implication": "A random-sample query lower bound stronger than logarithmic is implausible for this family; the remaining research question is computational decoding time under the legal access model.",
+      "query_ceiling_over_log2_prime": 1.9904959501141495,
+      "query_status": "no-superlog-query-lower-bound",
+      "random_sample_union_bound_queries": 14,
+      "use_as_positive_evidence": false
+    },
+    {
+      "agreement_profile": {
+        "agreement_fraction_interpretation": "constant-disagreement",
+        "family_id": "legendre_symbol",
+        "max_wrong_shift_agreement_count": 129,
+        "max_wrong_shift_agreement_fraction": 0.5019455252918288,
+        "median_wrong_shift_agreement_count": 128.0,
+        "min_wrong_shift_agreement_count": 127,
+        "min_wrong_shift_disagreement_fraction": 0.4980544747081712,
+        "n_bits": 8,
+        "prime": 257,
+        "worst_delta": 1
+      },
+      "candidate_check_operations": 3855,
+      "decoding_status": "information-theoretic-only-exhaustive-candidate-decoding",
+      "exhaustive_candidates_compared": 256,
+      "failure_probability": 0.01,
+      "family_id": "legendre_symbol",
+      "n_bits": 8,
+      "prime": 257,
+      "proof_implication": "A random-sample query lower bound stronger than logarithmic is implausible for this family; the remaining research question is computational decoding time under the legal access model.",
+      "query_ceiling_over_log2_prime": 1.8736826724543827,
+      "query_status": "no-superlog-query-lower-bound",
+      "random_sample_union_bound_queries": 15,
+      "use_as_positive_evidence": false
+    },
+    {
+      "agreement_profile": {
+        "agreement_fraction_interpretation": "constant-disagreement",
+        "family_id": "quartic_character",
+        "max_wrong_shift_agreement_count": 9,
+        "max_wrong_shift_agreement_fraction": 0.24324324324324326,
+        "median_wrong_shift_agreement_count": 8.5,
+        "min_wrong_shift_agreement_count": 8,
+        "min_wrong_shift_disagreement_fraction": 0.7567567567567568,
+        "n_bits": 5,
+        "prime": 37,
+        "worst_delta": 1
+      },
+      "candidate_check_operations": 222,
+      "decoding_status": "information-theoretic-only-exhaustive-candidate-decoding",
+      "exhaustive_candidates_compared": 36,
+      "failure_probability": 0.01,
+      "family_id": "quartic_character",
+      "n_bits": 5,
+      "prime": 37,
+      "proof_implication": "A random-sample query lower bound stronger than logarithmic is implausible for this family; the remaining research question is computational decoding time under the legal access model.",
+      "query_ceiling_over_log2_prime": 1.151752320039361,
+      "query_status": "no-superlog-query-lower-bound",
+      "random_sample_union_bound_queries": 6,
+      "use_as_positive_evidence": false
+    },
+    {
+      "agreement_profile": {
+        "agreement_fraction_interpretation": "constant-disagreement",
+        "family_id": "quartic_character",
+        "max_wrong_shift_agreement_count": 19,
+        "max_wrong_shift_agreement_fraction": 0.2602739726027397,
+        "median_wrong_shift_agreement_count": 17.0,
+        "min_wrong_shift_agreement_count": 17,
+        "min_wrong_shift_disagreement_fraction": 0.7397260273972603,
+        "n_bits": 6,
+        "prime": 73,
+        "worst_delta": 1
+      },
+      "candidate_check_operations": 511,
+      "decoding_status": "information-theoretic-only-exhaustive-candidate-decoding",
+      "exhaustive_candidates_compared": 72,
+      "failure_probability": 0.01,
+      "family_id": "quartic_character",
+      "n_bits": 6,
+      "prime": 73,
+      "proof_implication": "A random-sample query lower bound stronger than logarithmic is implausible for this family; the remaining research question is computational decoding time under the legal access model.",
+      "query_ceiling_over_log2_prime": 1.1308882721009745,
+      "query_status": "no-superlog-query-lower-bound",
+      "random_sample_union_bound_queries": 7,
+      "use_as_positive_evidence": false
+    },
+    {
+      "agreement_profile": {
+        "agreement_fraction_interpretation": "constant-disagreement",
+        "family_id": "quartic_character",
+        "max_wrong_shift_agreement_count": 35,
+        "max_wrong_shift_agreement_fraction": 0.25547445255474455,
+        "median_wrong_shift_agreement_count": 33.0,
+        "min_wrong_shift_agreement_count": 33,
+        "min_wrong_shift_disagreement_fraction": 0.7445255474452555,
+        "n_bits": 7,
+        "prime": 137,
+        "worst_delta": 1
+      },
+      "candidate_check_operations": 959,
+      "decoding_status": "information-theoretic-only-exhaustive-candidate-decoding",
+      "exhaustive_candidates_compared": 136,
+      "failure_probability": 0.01,
+      "family_id": "quartic_character",
+      "n_bits": 7,
+      "prime": 137,
+      "proof_implication": "A random-sample query lower bound stronger than logarithmic is implausible for this family; the remaining research question is computational decoding time under the legal access model.",
+      "query_ceiling_over_log2_prime": 0.9861888363119883,
+      "query_status": "no-superlog-query-lower-bound",
+      "random_sample_union_bound_queries": 7,
+      "use_as_positive_evidence": false
+    },
+    {
+      "agreement_profile": {
+        "agreement_fraction_interpretation": "constant-disagreement",
+        "family_id": "quartic_character",
+        "max_wrong_shift_agreement_count": 65,
+        "max_wrong_shift_agreement_fraction": 0.2529182879377432,
+        "median_wrong_shift_agreement_count": 63.0,
+        "min_wrong_shift_agreement_count": 63,
+        "min_wrong_shift_disagreement_fraction": 0.7470817120622568,
+        "n_bits": 8,
+        "prime": 257,
+        "worst_delta": 1
+      },
+      "candidate_check_operations": 2056,
+      "decoding_status": "information-theoretic-only-exhaustive-candidate-decoding",
+      "exhaustive_candidates_compared": 256,
+      "failure_probability": 0.01,
+      "family_id": "quartic_character",
+      "n_bits": 8,
+      "prime": 257,
+      "proof_implication": "A random-sample query lower bound stronger than logarithmic is implausible for this family; the remaining research question is computational decoding time under the legal access model.",
+      "query_ceiling_over_log2_prime": 0.9992974253090041,
+      "query_status": "no-superlog-query-lower-bound",
+      "random_sample_union_bound_queries": 8,
+      "use_as_positive_evidence": false
+    }
+  ],
+  "status": "query-lower-bound-route-killed",
+  "summary": "Audited 8 multiplicative-character query-information rows; 8 row(s) have logarithmic random-sample query ceilings by pairwise agreement and union bound."
+}

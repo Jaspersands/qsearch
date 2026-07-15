@@ -1,0 +1,527 @@
+{
+  "capabilities": [
+    {
+      "availability": "proved-information-bound-not-measurement",
+      "classical_comparison": "This is a resource lower bound, not a quantum/classical separation.",
+      "handles_overlapping_k_copy_associators": false,
+      "id": "CAP-EXACT-HOLEVO-COPY-BOUND",
+      "literature_ids": [
+        "project-coset-holevo-character-formula"
+      ],
+      "primitive": "Exact character-theoretic Holevo/Fano copy-budget certificate",
+      "proved_scope": "For uniform involution conjugacy classes, computes exact one-copy Holevo information and certifies same-hidden k-copy lower bounds by entropy subadditivity and Fano's inequality.",
+      "resolves_internal_sn_kronecker_basis": false,
+      "scope_limit": "Prices copies but constructs no measurement, recoupling transform, transition filter, or decoder; the resulting hard-family bound remains polynomial.",
+      "supplies_hidden_involution_decoder": false,
+      "uniform_polynomial_gate_complexity_proved": false
+    },
+    {
+      "availability": "proved-polynomial",
+      "classical_comparison": "No classical analogue is required for this basis-change capability claim.",
+      "handles_overlapping_k_copy_associators": false,
+      "id": "CAP-SN-QFT",
+      "literature_ids": [
+        "beals-symmetric-qft-1997"
+      ],
+      "primitive": "Quantum Fourier transform over the S_n regular representation",
+      "proved_scope": "Uniform polynomial-time transform from permutation basis to Young/Fourier labels and matrix indices.",
+      "resolves_internal_sn_kronecker_basis": false,
+      "scope_limit": "Acts on one group-algebra register; does not decompose Specht(lambda) tensor Specht(mu).",
+      "supplies_hidden_involution_decoder": false,
+      "uniform_polynomial_gate_complexity_proved": true
+    },
+    {
+      "availability": "proved-polynomial-scope-mismatch",
+      "classical_comparison": "Not a speedup claim; it is a known circuit primitive in a different tensor decomposition.",
+      "handles_overlapping_k_copy_associators": false,
+      "id": "CAP-SCHUR-WEYL-CG",
+      "literature_ids": [
+        "bacon-chuang-harrow-schur-2004",
+        "burchardt-high-dimensional-schur-2025"
+      ],
+      "primitive": "Schur-Weyl transform and U(d) Clebsch-Gordan recursion",
+      "proved_scope": "Efficient Schur transforms on qudit tensor powers, with corrected multiplicity-space isometries.",
+      "resolves_internal_sn_kronecker_basis": false,
+      "scope_limit": "Schur-Weyl/U(d) coupling is not the internal Kronecker product of two S_n irreps.",
+      "supplies_hidden_involution_decoder": false,
+      "uniform_polynomial_gate_complexity_proved": true
+    },
+    {
+      "availability": "proved-label-or-projector-only",
+      "classical_comparison": "Projection can estimate representation statistics but does not establish a natural-problem separation.",
+      "handles_overlapping_k_copy_associators": false,
+      "id": "CAP-WEAK-IRREP-PROJECTION",
+      "literature_ids": [
+        "bacon-chuang-harrow-schur-2004",
+        "ikenmeyer-subramanian-kronecker-2023"
+      ],
+      "primitive": "Generalized phase estimation and invariant-space projection",
+      "proved_scope": "Project onto irrep labels or invariant subspaces when the required group action and QFT are efficient.",
+      "resolves_internal_sn_kronecker_basis": false,
+      "scope_limit": "Does not produce a coherent orthonormal basis inside Kronecker multiplicity spaces.",
+      "supplies_hidden_involution_decoder": false,
+      "uniform_polynomial_gate_complexity_proved": true
+    },
+    {
+      "availability": "proved-polynomial-label-only",
+      "classical_comparison": "This is a quantum basis-label primitive, not a separation; finite spectra can be reproduced classically and the hard multiplicity-space state dependence remains untouched.",
+      "handles_overlapping_k_copy_associators": false,
+      "id": "CAP-DIAGONAL-JM-LABEL-TRANSFORM",
+      "literature_ids": [
+        "okounkov-vershik-yjm-2005",
+        "beals-symmetric-qft-1997",
+        "bravyi-et-al-kronecker-2023"
+      ],
+      "primitive": "Simultaneous diagonal Young--Jucys--Murphy target-tableau label measurement",
+      "proved_scope": "Measure the target Gelfand--Tsetlin path in V_lambda tensor V_mu using commuting diagonal Jucys--Murphy sums, controlled diagonal S_n actions, and polynomial block encoding at integer spectral gap.",
+      "resolves_internal_sn_kronecker_basis": false,
+      "scope_limit": "The YJM algebra is identity on each g(lambda,mu,nu)-dimensional multiplicity register; it supplies no multiplicity basis, Racah associator, transition filter, or hidden-involution decoder.",
+      "supplies_hidden_involution_decoder": false,
+      "uniform_polynomial_gate_complexity_proved": true
+    },
+    {
+      "availability": "proved-polynomial-block-encoding-only",
+      "classical_comparison": "Finite multiplicity spectra are classically diagonalized only as verification; no quantum advantage is claimed without an asymptotic gap and natural-problem decoder.",
+      "handles_overlapping_k_copy_associators": false,
+      "id": "CAP-BOUNDED-SUPPORT-COMMUTANT-BLOCK-ENCODING",
+      "literature_ids": [
+        "project-coset-multiplicity-commutant-search",
+        "beals-symmetric-qft-1997"
+      ],
+      "primitive": "LCU block encoding of bounded-support simultaneous-conjugacy orbit sums",
+      "proved_scope": "Enumerate O(n^5) transposition/transposition and transposition/3-cycle orbit terms and implement each Young-basis factor through the solved S_n QFT and reversible multiplication.",
+      "resolves_internal_sn_kronecker_basis": false,
+      "scope_limit": "Block encoding alone does not imply efficient eigenbasis resolution; phase estimation additionally needs an inverse-polynomial LCU-normalized multiplicity gap.",
+      "supplies_hidden_involution_decoder": false,
+      "uniform_polynomial_gate_complexity_proved": true
+    },
+    {
+      "availability": "open",
+      "classical_comparison": "A finite simple spectrum is not a separation; classical representation algorithms and normalized-gap scaling must be compared on every source family.",
+      "handles_overlapping_k_copy_associators": false,
+      "id": "CAP-GAPPED-KRONECKER-MULTIPLICITY-TRANSFORM",
+      "literature_ids": [
+        "project-coset-multiplicity-commutant-search"
+      ],
+      "primitive": "Coherent multiplicity basis from a uniformly gapped commutant Hamiltonian",
+      "proved_scope": "Finite sectors through S_6 admit bounded-support commutant combinations with simple multiplicity spectra.",
+      "resolves_internal_sn_kronecker_basis": true,
+      "scope_limit": "No all-n inverse-polynomial normalized gap is proved, and a one-tree multiplicity basis supplies neither Racah associators nor state-dependent hidden-involution decoding.",
+      "supplies_hidden_involution_decoder": false,
+      "uniform_polynomial_gate_complexity_proved": false
+    },
+    {
+      "availability": "counting-class-upper-bound-not-bqp-evaluation",
+      "classical_comparison": "#BQP membership is not an efficient exact scalar-evaluation or basis-construction algorithm.",
+      "handles_overlapping_k_copy_associators": false,
+      "id": "CAP-KRONECKER-SHARP-BQP",
+      "literature_ids": [
+        "ikenmeyer-subramanian-kronecker-2023"
+      ],
+      "primitive": "#BQP characterization of exact Kronecker multiplicities",
+      "proved_scope": "The multiplicity is the dimension of the image of a composition of implementable commuting projectors.",
+      "resolves_internal_sn_kronecker_basis": false,
+      "scope_limit": "Counts an invariant space; it does not expose its basis or state-dependent transition matrix elements.",
+      "supplies_hidden_involution_decoder": false,
+      "uniform_polynomial_gate_complexity_proved": false
+    },
+    {
+      "availability": "restricted-and-classically-matched-on-many-families",
+      "classical_comparison": "Polynomial classical algorithms refute the proposed superpolynomial advantage on many studied families.",
+      "handles_overlapping_k_copy_associators": false,
+      "id": "CAP-RESTRICTED-MULTIPLICITY-ESTIMATION",
+      "literature_ids": [
+        "larocca-havlicek-multiplicities-2024",
+        "panova-classical-multiplicities-2025"
+      ],
+      "primitive": "Multiplicity estimation under dimension-ratio promises",
+      "proved_scope": "Quantum algorithms on restricted partition families with sample cost controlled by representation-dimension ratios.",
+      "resolves_internal_sn_kronecker_basis": false,
+      "scope_limit": "Outputs multiplicities under promises; it neither prepares a full Kronecker basis nor decodes a coset ensemble.",
+      "supplies_hidden_involution_decoder": false,
+      "uniform_polynomial_gate_complexity_proved": true
+    },
+    {
+      "availability": "defined-no-unrestricted-uniform-cost-proof-in-ledger",
+      "classical_comparison": "No classical comparison is meaningful until a uniform quantum implementation and task are specified.",
+      "handles_overlapping_k_copy_associators": false,
+      "id": "CAP-INTERNAL-SN-KRONECKER-TRANSFORM",
+      "literature_ids": [
+        "yoshida-random-dilation-2025",
+        "burchardt-high-dimensional-schur-2025"
+      ],
+      "primitive": "Coherent internal S_n Kronecker transform with explicit multiplicity basis",
+      "proved_scope": "Defined as a unitary basis change and used schematically in representation-theoretic circuit identities.",
+      "resolves_internal_sn_kronecker_basis": true,
+      "scope_limit": "A definition or circuit box is not a gate synthesis, precision analysis, or state-transition implementation.",
+      "supplies_hidden_involution_decoder": false,
+      "uniform_polynomial_gate_complexity_proved": false
+    },
+    {
+      "availability": "open",
+      "classical_comparison": "Must be compared with classical representation and invariant algorithms after a circuit exists.",
+      "handles_overlapping_k_copy_associators": true,
+      "id": "CAP-KCOPY-RACAH-ASSOCIATOR",
+      "literature_ids": [
+        "burchardt-high-dimensional-schur-2025"
+      ],
+      "primitive": "Coherent Racah/F-move network for overlapping k-copy S_n subset class sums",
+      "proved_scope": "No unrestricted implementation applicable to the audited hidden-involution frame is established in this ledger.",
+      "resolves_internal_sn_kronecker_basis": true,
+      "scope_limit": "The project proves that one pairwise basis is insufficient at k=3 but has no replacement circuit.",
+      "supplies_hidden_involution_decoder": false,
+      "uniform_polynomial_gate_complexity_proved": false
+    },
+    {
+      "availability": "open",
+      "classical_comparison": "Must beat graph/code invariants and canonicalization on a natural reduction-backed family.",
+      "handles_overlapping_k_copy_associators": false,
+      "id": "CAP-HIDDEN-INVOLUTION-OUTCOME-DECODER",
+      "literature_ids": [
+        "symmetric-defies-fourier-2005",
+        "hsp-survey-2010"
+      ],
+      "primitive": "Compressed multi-register measurement outcome to hidden involution",
+      "proved_scope": "No polynomial decoder is established for the symmetric-group involution ensembles under study.",
+      "resolves_internal_sn_kronecker_basis": false,
+      "scope_limit": "Information-theoretic distinguishability, QFT labels, or multiplicity estimates are not a decoder.",
+      "supplies_hidden_involution_decoder": true,
+      "uniform_polynomial_gate_complexity_proved": false
+    }
+  ],
+  "claim_gate": {
+    "bounded_support_commutant_block_encoding_polynomial_proved": true,
+    "classical_superpolynomial_separation_proved": false,
+    "diagonal_jm_label_transform_polynomial_proved": true,
+    "diagonal_jm_labels_resolve_multiplicity_basis": false,
+    "exact_holevo_copy_budget_proved": true,
+    "gapped_kronecker_multiplicity_transform_polynomial_proved": false,
+    "hidden_involution_decoder_proved": false,
+    "holevo_copy_budget_constructs_measurement": false,
+    "internal_sn_kronecker_transform_polynomial_proved": false,
+    "kcopy_associator_polynomial_proved": false,
+    "multiplicity_counting_implies_coherent_transform": false,
+    "reason": "Known polynomial QFT/projection primitives stop before the internal Kronecker transform, overlapping associators, state transitions, and decoder. Diagonal YJM labels narrow but do not close the multiplicity-space gap; restricted multiplicity advantages are classically eroded.",
+    "schur_transform_implies_internal_kronecker_transform": false,
+    "sn_qft_is_open_bottleneck": false,
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-07-15T11:12:38.442220+00:00",
+  "false_transfer_rules": [
+    {
+      "from": "exact Holevo/Fano copy lower bound",
+      "invalid_to": "efficient collective measurement, decoder, or no-algorithm theorem",
+      "reason": "The bound prices information but the certified hard-family copy count is polynomial."
+    },
+    {
+      "from": "efficient S_n QFT",
+      "invalid_to": "efficient internal S_n Kronecker transform or hidden-involution decoder",
+      "reason": "The transforms decompose different group actions and expose different multiplicity data."
+    },
+    {
+      "from": "finite simple spectrum of a polynomial-description commutant Hamiltonian",
+      "invalid_to": "polynomial coherent multiplicity transform",
+      "reason": "Phase-estimation cost depends on the LCU-normalized minimum gap; finite splitting supplies no inverse-polynomial all-n lower bound."
+    },
+    {
+      "from": "polynomial diagonal YJM target-tableau label measurement",
+      "invalid_to": "coherent Kronecker multiplicity basis, Racah associator, or decoder",
+      "reason": "The commuting YJM algebra is exactly degenerate on the multiplicity register and cannot choose or manipulate a basis within it."
+    },
+    {
+      "from": "#BQP multiplicity characterization or invariant projector",
+      "invalid_to": "coherent basis of the invariant space and state-dependent transition amplitudes",
+      "reason": "Subspace dimension and label projection do not construct a basis-change unitary."
+    },
+    {
+      "from": "efficient Schur-Weyl/U(d) Clebsch-Gordan transform",
+      "invalid_to": "internal tensor product decomposition of arbitrary S_n Specht modules",
+      "reason": "These are distinct representation-theoretic decompositions."
+    },
+    {
+      "from": "restricted quantum multiplicity estimator",
+      "invalid_to": "superpolynomial advantage or Shor-level mechanism",
+      "reason": "Many proposed restricted families now have polynomial classical algorithms."
+    },
+    {
+      "from": "large irrep dimension or Kronecker multiplicity",
+      "invalid_to": "quantum circuit lower bound",
+      "reason": "Logarithmic-size quantum registers can encode large spaces; gate lower bounds require proof."
+    }
+  ],
+  "falsifiers_triggered": [
+    "The S_n QFT is already polynomial and cannot be presented as the missing breakthrough.",
+    "Exact Holevo/Fano accounting charges copies but does not construct a collective measurement or decoder.",
+    "#BQP multiplicity counting does not construct a coherent Kronecker basis.",
+    "Schur-Weyl Clebsch-Gordan circuits do not automatically solve internal Specht tensor products.",
+    "Diagonal YJM tableau labels retain exact Kronecker multiplicity degeneracy.",
+    "Finite commutant-Hamiltonian splitting has no all-n LCU-normalized gap theorem.",
+    "Many restricted multiplicity speedup candidates have polynomial classical algorithms.",
+    "Finite growth of dimensions or multiplicities is not a circuit lower bound."
+  ],
+  "growth_records": [
+    {
+      "dimension_or_multiplicity_is_lower_bound": false,
+      "finite_exact_table_only": true,
+      "log2_maximum_irrep_dimension": 1.584962500721156,
+      "maximum_irrep_dimension": 3,
+      "maximum_kronecker_multiplicity": 1,
+      "maximum_multiplicity_triple": [
+        [
+          4
+        ],
+        [
+          4
+        ],
+        [
+          4
+        ]
+      ],
+      "multiplicity_register_bits": 0,
+      "n": 4,
+      "nonzero_kronecker_sector_count": 43,
+      "partition_count": 5,
+      "partition_triple_count": 125
+    },
+    {
+      "dimension_or_multiplicity_is_lower_bound": false,
+      "finite_exact_table_only": true,
+      "log2_maximum_irrep_dimension": 2.584962500721156,
+      "maximum_irrep_dimension": 6,
+      "maximum_kronecker_multiplicity": 2,
+      "maximum_multiplicity_triple": [
+        [
+          3,
+          2
+        ],
+        [
+          3,
+          1,
+          1
+        ],
+        [
+          3,
+          1,
+          1
+        ]
+      ],
+      "multiplicity_register_bits": 1,
+      "n": 5,
+      "nonzero_kronecker_sector_count": 143,
+      "partition_count": 7,
+      "partition_triple_count": 343
+    },
+    {
+      "dimension_or_multiplicity_is_lower_bound": false,
+      "finite_exact_table_only": true,
+      "log2_maximum_irrep_dimension": 4.0,
+      "maximum_irrep_dimension": 16,
+      "maximum_kronecker_multiplicity": 5,
+      "maximum_multiplicity_triple": [
+        [
+          3,
+          2,
+          1
+        ],
+        [
+          3,
+          2,
+          1
+        ],
+        [
+          3,
+          2,
+          1
+        ]
+      ],
+      "multiplicity_register_bits": 3,
+      "n": 6,
+      "nonzero_kronecker_sector_count": 511,
+      "partition_count": 11,
+      "partition_triple_count": 1331
+    },
+    {
+      "dimension_or_multiplicity_is_lower_bound": false,
+      "finite_exact_table_only": true,
+      "log2_maximum_irrep_dimension": 5.129283016944966,
+      "maximum_irrep_dimension": 35,
+      "maximum_kronecker_multiplicity": 9,
+      "maximum_multiplicity_triple": [
+        [
+          4,
+          2,
+          1
+        ],
+        [
+          4,
+          2,
+          1
+        ],
+        [
+          4,
+          2,
+          1
+        ]
+      ],
+      "multiplicity_register_bits": 4,
+      "n": 7,
+      "nonzero_kronecker_sector_count": 1599,
+      "partition_count": 15,
+      "partition_triple_count": 3375
+    },
+    {
+      "dimension_or_multiplicity_is_lower_bound": false,
+      "finite_exact_table_only": true,
+      "log2_maximum_irrep_dimension": 6.491853096329675,
+      "maximum_irrep_dimension": 90,
+      "maximum_kronecker_multiplicity": 17,
+      "maximum_multiplicity_triple": [
+        [
+          4,
+          2,
+          1,
+          1
+        ],
+        [
+          4,
+          2,
+          1,
+          1
+        ],
+        [
+          4,
+          2,
+          1,
+          1
+        ]
+      ],
+      "multiplicity_register_bits": 5,
+      "n": 8,
+      "nonzero_kronecker_sector_count": 5048,
+      "partition_count": 22,
+      "partition_triple_count": 10648
+    },
+    {
+      "dimension_or_multiplicity_is_lower_bound": false,
+      "finite_exact_table_only": true,
+      "log2_maximum_irrep_dimension": 7.754887502163468,
+      "maximum_irrep_dimension": 216,
+      "maximum_kronecker_multiplicity": 28,
+      "maximum_multiplicity_triple": [
+        [
+          4,
+          3,
+          1,
+          1
+        ],
+        [
+          4,
+          3,
+          1,
+          1
+        ],
+        [
+          4,
+          2,
+          2,
+          1
+        ]
+      ],
+      "multiplicity_register_bits": 5,
+      "n": 9,
+      "nonzero_kronecker_sector_count": 14294,
+      "partition_count": 30,
+      "partition_triple_count": 27000
+    },
+    {
+      "dimension_or_multiplicity_is_lower_bound": false,
+      "finite_exact_table_only": true,
+      "log2_maximum_irrep_dimension": 9.584962500721156,
+      "maximum_irrep_dimension": 768,
+      "maximum_kronecker_multiplicity": 117,
+      "maximum_multiplicity_triple": [
+        [
+          4,
+          3,
+          2,
+          1
+        ],
+        [
+          4,
+          3,
+          2,
+          1
+        ],
+        [
+          4,
+          3,
+          2,
+          1
+        ]
+      ],
+      "multiplicity_register_bits": 7,
+      "n": 10,
+      "nonzero_kronecker_sector_count": 40860,
+      "partition_count": 42,
+      "partition_triple_count": 74088
+    }
+  ],
+  "headline_metrics": {
+    "bounded_support_commutant_block_encoding_poly_proof_count": 1,
+    "capability_count": 12,
+    "diagonal_jm_label_transform_poly_proof_count": 1,
+    "exact_holevo_copy_budget_theorem_count": 1,
+    "gapped_kronecker_multiplicity_transform_poly_proof_count": 0,
+    "growth_record_count": 7,
+    "hidden_involution_decoder_count": 0,
+    "internal_kronecker_transform_poly_proof_count": 0,
+    "kcopy_associator_poly_proof_count": 0,
+    "maximum_kronecker_multiplicity": 117,
+    "maximum_multiplicity_register_bits": 7,
+    "maximum_n": 10,
+    "maximum_partition_count": 42,
+    "proved_polynomial_primitive_count": 6,
+    "restricted_multiplicity_classical_match_count": 1,
+    "unresolved_required_capability_count": 4
+  },
+  "literature_scope": [
+    {
+      "id": "beals-symmetric-qft-1997",
+      "url": "https://doi.org/10.1145/258533.258548"
+    },
+    {
+      "id": "okounkov-vershik-yjm-2005",
+      "url": "https://arxiv.org/abs/math/0503040"
+    },
+    {
+      "id": "bravyi-et-al-kronecker-2023",
+      "url": "https://arxiv.org/abs/2302.11454"
+    },
+    {
+      "id": "bacon-chuang-harrow-schur-2004",
+      "url": "https://arxiv.org/abs/quant-ph/0407082"
+    },
+    {
+      "id": "ikenmeyer-subramanian-kronecker-2023",
+      "url": "https://arxiv.org/abs/2307.02389"
+    },
+    {
+      "id": "larocca-havlicek-multiplicities-2024",
+      "url": "https://arxiv.org/abs/2407.17649"
+    },
+    {
+      "id": "panova-classical-multiplicities-2025",
+      "url": "https://arxiv.org/abs/2502.20253"
+    },
+    {
+      "id": "burchardt-high-dimensional-schur-2025",
+      "url": "https://arxiv.org/abs/2509.22640"
+    },
+    {
+      "id": "yoshida-random-dilation-2025",
+      "url": "https://arxiv.org/abs/2512.21260"
+    }
+  ],
+  "status": "known-primitives-separated-from-open-recoupling-and-decoder",
+  "summary": "Classified 12 representation primitives and exact finite Kronecker growth through n=10 without transferring solved QFT/counting results to the open decoder."
+}

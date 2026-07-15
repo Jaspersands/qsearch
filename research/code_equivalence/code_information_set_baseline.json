@@ -1,0 +1,256 @@
+{
+  "created_at": "2026-07-11T08:27:22.376933+00:00",
+  "falsifiers_triggered": [
+    "Information-set canonicalization separates current code-equivalence rows."
+  ],
+  "headline_metrics": {
+    "cap_proof_debt_count": 0,
+    "equivalent_control_count": 1,
+    "information_set_rejection_count": 5,
+    "max_ordered_information_sets_evaluated": 38400,
+    "record_count": 6,
+    "survivor_proof_debt_count": 0
+  },
+  "include_code_family_search": true,
+  "max_ordered_information_sets": 250000,
+  "records": [
+    {
+      "canonical_equal": true,
+      "dimension": 4,
+      "id": "hamming-7-4-permuted",
+      "interpretation": "Information-set canonical signatures match on a known equivalent control pair.",
+      "known_equivalent": true,
+      "left_form": {
+        "canonical_signature": [
+          7,
+          11,
+          13
+        ],
+        "cost_model": "Enumerated 28 independent information set(s) and 672 ordered basis choice(s) under cap 250000.",
+        "estimated_ordered_information_sets": 840,
+        "evaluated": true,
+        "independent_set_count": 28,
+        "interpretation": "Computed a canonical systematic-form suffix-column multiset over ordered information sets.",
+        "ordered_information_set_count": 672
+      },
+      "length": 7,
+      "right_form": {
+        "canonical_signature": [
+          7,
+          11,
+          13
+        ],
+        "cost_model": "Enumerated 28 independent information set(s) and 672 ordered basis choice(s) under cap 250000.",
+        "estimated_ordered_information_sets": 840,
+        "evaluated": true,
+        "independent_set_count": 28,
+        "interpretation": "Computed a canonical systematic-form suffix-column multiset over ordered information sets.",
+        "ordered_information_set_count": 672
+      },
+      "source": "code_equivalence_workbench",
+      "status": "information-set-equivalent-control"
+    },
+    {
+      "canonical_equal": false,
+      "dimension": 4,
+      "id": "hamming-7-4-column-twist",
+      "interpretation": "Information-set canonical signatures differ; this row is classically rejected.",
+      "known_equivalent": false,
+      "left_form": {
+        "canonical_signature": [
+          7,
+          11,
+          13
+        ],
+        "cost_model": "Enumerated 28 independent information set(s) and 672 ordered basis choice(s) under cap 250000.",
+        "estimated_ordered_information_sets": 840,
+        "evaluated": true,
+        "independent_set_count": 28,
+        "interpretation": "Computed a canonical systematic-form suffix-column multiset over ordered information sets.",
+        "ordered_information_set_count": 672
+      },
+      "length": 7,
+      "right_form": {
+        "canonical_signature": [
+          1,
+          7,
+          11
+        ],
+        "cost_model": "Enumerated 20 independent information set(s) and 480 ordered basis choice(s) under cap 250000.",
+        "estimated_ordered_information_sets": 840,
+        "evaluated": true,
+        "independent_set_count": 20,
+        "interpretation": "Computed a canonical systematic-form suffix-column multiset over ordered information sets.",
+        "ordered_information_set_count": 480
+      },
+      "source": "code_equivalence_workbench",
+      "status": "rejected-by-information-set-canonicalization"
+    },
+    {
+      "canonical_equal": false,
+      "dimension": 4,
+      "id": "random-8-4-weak-invariant-collision",
+      "interpretation": "Information-set canonical signatures differ; this row is classically rejected.",
+      "known_equivalent": false,
+      "left_form": {
+        "canonical_signature": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "cost_model": "Enumerated 16 independent information set(s) and 384 ordered basis choice(s) under cap 250000.",
+        "estimated_ordered_information_sets": 1680,
+        "evaluated": true,
+        "independent_set_count": 16,
+        "interpretation": "Computed a canonical systematic-form suffix-column multiset over ordered information sets.",
+        "ordered_information_set_count": 384
+      },
+      "length": 8,
+      "right_form": {
+        "canonical_signature": [
+          1,
+          1,
+          3,
+          6
+        ],
+        "cost_model": "Enumerated 18 independent information set(s) and 432 ordered basis choice(s) under cap 250000.",
+        "estimated_ordered_information_sets": 1680,
+        "evaluated": true,
+        "independent_set_count": 18,
+        "interpretation": "Computed a canonical systematic-form suffix-column multiset over ordered information sets.",
+        "ordered_information_set_count": 432
+      },
+      "source": "code_equivalence_workbench",
+      "status": "rejected-by-information-set-canonicalization"
+    },
+    {
+      "canonical_equal": false,
+      "dimension": 4,
+      "id": "code-family-random-weak-collision-9-4",
+      "interpretation": "Information-set canonical signatures differ; this row is classically rejected.",
+      "known_equivalent": false,
+      "left_form": {
+        "canonical_signature": [
+          1,
+          3,
+          6,
+          10,
+          12
+        ],
+        "cost_model": "Enumerated 64 independent information set(s) and 1536 ordered basis choice(s) under cap 250000.",
+        "estimated_ordered_information_sets": 3024,
+        "evaluated": true,
+        "independent_set_count": 64,
+        "interpretation": "Computed a canonical systematic-form suffix-column multiset over ordered information sets.",
+        "ordered_information_set_count": 1536
+      },
+      "length": 9,
+      "right_form": {
+        "canonical_signature": [
+          1,
+          3,
+          5,
+          10,
+          12
+        ],
+        "cost_model": "Enumerated 66 independent information set(s) and 1584 ordered basis choice(s) under cap 250000.",
+        "estimated_ordered_information_sets": 3024,
+        "evaluated": true,
+        "independent_set_count": 66,
+        "interpretation": "Computed a canonical systematic-form suffix-column multiset over ordered information sets.",
+        "ordered_information_set_count": 1584
+      },
+      "source": "code_family_search",
+      "status": "rejected-by-information-set-canonicalization"
+    },
+    {
+      "canonical_equal": false,
+      "dimension": 4,
+      "id": "code-family-random-weak-collision-10-4",
+      "interpretation": "Information-set canonical signatures differ; this row is classically rejected.",
+      "known_equivalent": false,
+      "left_form": {
+        "canonical_signature": [
+          1,
+          2,
+          3,
+          5,
+          11,
+          12
+        ],
+        "cost_model": "Enumerated 98 independent information set(s) and 2352 ordered basis choice(s) under cap 250000.",
+        "estimated_ordered_information_sets": 5040,
+        "evaluated": true,
+        "independent_set_count": 98,
+        "interpretation": "Computed a canonical systematic-form suffix-column multiset over ordered information sets.",
+        "ordered_information_set_count": 2352
+      },
+      "length": 10,
+      "right_form": {
+        "canonical_signature": [
+          1,
+          2,
+          5,
+          6,
+          9,
+          12
+        ],
+        "cost_model": "Enumerated 94 independent information set(s) and 2256 ordered basis choice(s) under cap 250000.",
+        "estimated_ordered_information_sets": 5040,
+        "evaluated": true,
+        "independent_set_count": 94,
+        "interpretation": "Computed a canonical systematic-form suffix-column multiset over ordered information sets.",
+        "ordered_information_set_count": 2256
+      },
+      "source": "code_family_search",
+      "status": "rejected-by-information-set-canonicalization"
+    },
+    {
+      "canonical_equal": false,
+      "dimension": 5,
+      "id": "code-family-random-weak-collision-12-5",
+      "interpretation": "Information-set canonical signatures differ; this row is classically rejected.",
+      "known_equivalent": false,
+      "left_form": {
+        "canonical_signature": [
+          1,
+          2,
+          7,
+          11,
+          12,
+          21,
+          25
+        ],
+        "cost_model": "Enumerated 320 independent information set(s) and 38400 ordered basis choice(s) under cap 250000.",
+        "estimated_ordered_information_sets": 95040,
+        "evaluated": true,
+        "independent_set_count": 320,
+        "interpretation": "Computed a canonical systematic-form suffix-column multiset over ordered information sets.",
+        "ordered_information_set_count": 38400
+      },
+      "length": 12,
+      "right_form": {
+        "canonical_signature": [
+          1,
+          2,
+          7,
+          12,
+          21,
+          24,
+          29
+        ],
+        "cost_model": "Enumerated 316 independent information set(s) and 37920 ordered basis choice(s) under cap 250000.",
+        "estimated_ordered_information_sets": 95040,
+        "evaluated": true,
+        "independent_set_count": 316,
+        "interpretation": "Computed a canonical systematic-form suffix-column multiset over ordered information sets.",
+        "ordered_information_set_count": 37920
+      },
+      "source": "code_family_search",
+      "status": "rejected-by-information-set-canonicalization"
+    }
+  ],
+  "status": "code-rows-dequantized-by-information-set-canonicalization",
+  "summary": "Audited 6 code-equivalence row(s) by information-set canonicalization. 5 row(s) were rejected; 0 remain proof debt."
+}

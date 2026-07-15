@@ -1,0 +1,184 @@
+{
+  "created_at": "2026-07-09T00:01:51.393710+00:00",
+  "falsifiers_triggered": [
+    "A classical code invariant distinguishes the pair; any matching coset observable is dequantized."
+  ],
+  "pair_audits": [
+    {
+      "certificate": {
+        "cost_model": "O(k n) verification for a supplied generation permutation; not a scalable solver.",
+        "equivalent": true,
+        "evaluated": true,
+        "interpretation": "Supplied generation permutation certifies equivalence for the control pair.",
+        "name": "known_generation_permutation"
+      },
+      "falsifiers_triggered": [],
+      "invariants": [
+        {
+          "distinguishes": false,
+          "interpretation": "Length/dimension/rank matches on this code pair.",
+          "name": "length_dimension_rank",
+          "signature_a": "(7, 4)",
+          "signature_b": "(7, 4)"
+        },
+        {
+          "distinguishes": false,
+          "interpretation": "Full codeword weight enumerator matches on this code pair.",
+          "name": "weight_enumerator",
+          "signature_a": "((0, 1), (3, 7), (4, 7), (7, 1))",
+          "signature_b": "((0, 1), (3, 7), (4, 7), (7, 1))"
+        },
+        {
+          "distinguishes": false,
+          "interpretation": "Generator column-weight multiset matches on this code pair.",
+          "name": "column_weight_multiset",
+          "signature_a": "(1, 1, 1, 1, 3, 3, 3)",
+          "signature_b": "(1, 1, 1, 1, 3, 3, 3)"
+        },
+        {
+          "distinguishes": false,
+          "interpretation": "Pairwise column inner-product multiset matches on this code pair.",
+          "name": "pairwise_column_inner_products",
+          "signature_a": "(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1)",
+          "signature_b": "(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1)"
+        },
+        {
+          "distinguishes": false,
+          "interpretation": "Support-splitting-style coordinate fingerprint matches on this code pair.",
+          "name": "support_splitting_fingerprint",
+          "signature_a": "((3, 3, 3, 4, 4, 4, 4, 7), (3, 3, 3, 4, 4, 4, 4, 7), (3, 3, 3, 4, 4, 4, 4, 7), (3, 3, 3, 4, 4, 4, 4, 7), (3, 3, 3, 4, 4, 4, 4, 7), (3, 3, 3, 4, 4, 4, 4, 7), (3, 3, 3, 4, 4, 4, 4, 7))",
+          "signature_b": "((3, 3, 3, 4, 4, 4, 4, 7), (3, 3, 3, 4, 4, 4, 4, 7), (3, 3, 3, 4, 4, 4, 4, 7), (3, 3, 3, 4, 4, 4, 4, 7), (3, 3, 3, 4, 4, 4, 4, 7), (3, 3, 3, 4, 4, 4, 4, 7), (3, 3, 3, 4, 4, 4, 4, 7))"
+        }
+      ],
+      "pair": {
+        "code_a": "[7,4] Hamming generator",
+        "code_b": "Column-permuted [7,4] Hamming generator",
+        "dimension": 4,
+        "id": "hamming-7-4-permuted",
+        "known_equivalent": true,
+        "length": 7,
+        "reason": "Control pair with a known hidden permutation."
+      },
+      "positive_signal": "control equivalent pair: hidden permutation certificate verifies and invariants match"
+    },
+    {
+      "certificate": {
+        "cost_model": "Checked all 5040 column permutations; exponential sanity check only.",
+        "equivalent": false,
+        "evaluated": true,
+        "interpretation": "Exact bounded search certifies no column permutation equivalence at this size.",
+        "name": "bounded_exact_permutation_search"
+      },
+      "falsifiers_triggered": [
+        "A classical code invariant distinguishes the pair; any matching coset observable is dequantized."
+      ],
+      "invariants": [
+        {
+          "distinguishes": false,
+          "interpretation": "Length/dimension/rank matches on this code pair.",
+          "name": "length_dimension_rank",
+          "signature_a": "(7, 4)",
+          "signature_b": "(7, 4)"
+        },
+        {
+          "distinguishes": true,
+          "interpretation": "Full codeword weight enumerator distinguishes the code pair; a matching coset observable would be classically dequantized.",
+          "name": "weight_enumerator",
+          "signature_a": "((0, 1), (3, 7), (4, 7), (7, 1))",
+          "signature_b": "((0, 1), (2, 2), (3, 5), (4, 5), (5, 2), (7, 1))"
+        },
+        {
+          "distinguishes": true,
+          "interpretation": "Generator column-weight multiset distinguishes the code pair; a matching coset observable would be classically dequantized.",
+          "name": "column_weight_multiset",
+          "signature_a": "(1, 1, 1, 1, 3, 3, 3)",
+          "signature_b": "(1, 1, 1, 1, 1, 3, 3)"
+        },
+        {
+          "distinguishes": true,
+          "interpretation": "Pairwise column inner-product multiset distinguishes the code pair; a matching coset observable would be classically dequantized.",
+          "name": "pairwise_column_inner_products",
+          "signature_a": "(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1)",
+          "signature_b": "(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1)"
+        },
+        {
+          "distinguishes": true,
+          "interpretation": "Support-splitting-style coordinate fingerprint distinguishes the code pair; a matching coset observable would be classically dequantized.",
+          "name": "support_splitting_fingerprint",
+          "signature_a": "((3, 3, 3, 4, 4, 4, 4, 7), (3, 3, 3, 4, 4, 4, 4, 7), (3, 3, 3, 4, 4, 4, 4, 7), (3, 3, 3, 4, 4, 4, 4, 7), (3, 3, 3, 4, 4, 4, 4, 7), (3, 3, 3, 4, 4, 4, 4, 7), (3, 3, 3, 4, 4, 4, 4, 7))",
+          "signature_b": "((2, 3, 3, 4, 4, 4, 5, 7), (2, 3, 3, 4, 4, 4, 5, 7), (2, 3, 3, 4, 4, 4, 5, 7), (2, 3, 3, 4, 4, 4, 5, 7), (3, 3, 3, 3, 3, 5, 5, 7), (3, 4, 4, 4, 4, 5, 5, 7), (3, 4, 4, 4, 4, 5, 5, 7))"
+        }
+      ],
+      "pair": {
+        "code_a": "[7,4] Hamming generator",
+        "code_b": "Hamming generator with one duplicated column",
+        "dimension": 4,
+        "id": "hamming-7-4-column-twist",
+        "known_equivalent": false,
+        "length": 7,
+        "reason": "Control non-equivalent pair that classical code invariants should reject."
+      },
+      "positive_signal": "control: classical code-equivalence baseline distinguishes this pair"
+    },
+    {
+      "certificate": {
+        "cost_model": "Checked all 40320 column permutations; exponential sanity check only.",
+        "equivalent": false,
+        "evaluated": true,
+        "interpretation": "Exact bounded search certifies no column permutation equivalence at this size.",
+        "name": "bounded_exact_permutation_search"
+      },
+      "falsifiers_triggered": [
+        "A classical code invariant distinguishes the pair; any matching coset observable is dequantized."
+      ],
+      "invariants": [
+        {
+          "distinguishes": false,
+          "interpretation": "Length/dimension/rank matches on this code pair.",
+          "name": "length_dimension_rank",
+          "signature_a": "(8, 4)",
+          "signature_b": "(8, 4)"
+        },
+        {
+          "distinguishes": false,
+          "interpretation": "Full codeword weight enumerator matches on this code pair.",
+          "name": "weight_enumerator",
+          "signature_a": "((0, 1), (1, 1), (2, 1), (3, 3), (4, 3), (5, 3), (6, 3), (7, 1))",
+          "signature_b": "((0, 1), (1, 1), (2, 1), (3, 3), (4, 3), (5, 3), (6, 3), (7, 1))"
+        },
+        {
+          "distinguishes": false,
+          "interpretation": "Generator column-weight multiset matches on this code pair.",
+          "name": "column_weight_multiset",
+          "signature_a": "(1, 1, 2, 2, 2, 2, 2, 3)",
+          "signature_b": "(1, 1, 2, 2, 2, 2, 2, 3)"
+        },
+        {
+          "distinguishes": false,
+          "interpretation": "Pairwise column inner-product multiset matches on this code pair.",
+          "name": "pairwise_column_inner_products",
+          "signature_a": "(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)",
+          "signature_b": "(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)"
+        },
+        {
+          "distinguishes": true,
+          "interpretation": "Support-splitting-style coordinate fingerprint distinguishes the code pair; a matching coset observable would be classically dequantized.",
+          "name": "support_splitting_fingerprint",
+          "signature_a": "((1, 3, 4, 4, 5, 6, 6, 7), (2, 3, 5, 5, 6, 6, 6, 7), (2, 3, 5, 5, 6, 6, 6, 7), (3, 3, 4, 4, 5, 5, 6, 6), (3, 4, 4, 5, 5, 6, 6, 7), (3, 4, 4, 5, 5, 6, 6, 7), (3, 4, 4, 5, 5, 6, 6, 7), (3, 4, 4, 5, 5, 6, 6, 7))",
+          "signature_b": "((1, 3, 4, 4, 5, 6, 6, 7), (2, 3, 3, 4, 5, 6, 6, 7), (2, 3, 3, 4, 5, 6, 6, 7), (3, 3, 4, 4, 4, 5, 6, 7), (3, 3, 4, 4, 5, 5, 6, 6), (4, 5, 5, 5, 6, 6, 6, 7), (4, 5, 5, 5, 6, 6, 6, 7), (4, 5, 5, 5, 6, 6, 6, 7))"
+        }
+      ],
+      "pair": {
+        "code_a": "Random full-rank [8,4] generator A with weak invariant collision",
+        "code_b": "Random full-rank [8,4] generator B with matching weak invariants",
+        "dimension": 4,
+        "id": "random-8-4-weak-invariant-collision",
+        "known_equivalent": false,
+        "length": 8,
+        "reason": "Weight enumerator, column weights, and pairwise inner-product multisets match; support splitting and exact bounded permutation search reject equivalence."
+      },
+      "positive_signal": "control: classical code-equivalence baseline distinguishes this pair"
+    }
+  ],
+  "summary": "Audited 3 code-equivalence pairs. 1 equivalent control pair(s) verified; 2 non-equivalent control pair(s) classically distinguished."
+}

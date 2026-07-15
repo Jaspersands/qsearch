@@ -1,0 +1,325 @@
+{
+  "claim_gate": {
+    "constant_arity_query_schedule_synthesis_survives": false,
+    "general_random_example_lower_bound_proved": false,
+    "known_sparse_fft_directly_transfers": false,
+    "polylog_random_example_decoder_proved": false,
+    "reason": "Known polylog sparse-Fourier runtimes rely on structured sample schedules. Constant-arity attempts to recover those schedules from iid labels fail, while a genuinely new iid estimator remains open.",
+    "speedup_claim_allowed": false
+  },
+  "closure_certificates": [
+    {
+      "interpretation": "Polynomial iid labels cannot supply even one of the prescribed correlated offsets through this constant-arity signed-combination template at inverse-polynomial probability.",
+      "inverse_polynomial_coverage_ruled_out": true,
+      "log2_union_bound": -14.0,
+      "modulus": 18446744073709551616,
+      "n_bits": 64,
+      "prescribed_offset_count": 4096,
+      "prescribed_offset_count_power": 2,
+      "sample_budget": 262144,
+      "sample_budget_power": 3,
+      "signed_combination_arity": 2,
+      "union_bound": 6.103515625e-05
+    },
+    {
+      "interpretation": "The finite-size union bound is inconclusive; it is not positive evidence for a decoder.",
+      "inverse_polynomial_coverage_ruled_out": false,
+      "log2_union_bound": 5.0,
+      "modulus": 18446744073709551616,
+      "n_bits": 64,
+      "prescribed_offset_count": 4096,
+      "prescribed_offset_count_power": 2,
+      "sample_budget": 262144,
+      "sample_budget_power": 3,
+      "signed_combination_arity": 3,
+      "union_bound": 1.0
+    },
+    {
+      "interpretation": "The finite-size union bound is inconclusive; it is not positive evidence for a decoder.",
+      "inverse_polynomial_coverage_ruled_out": false,
+      "log2_union_bound": 24.0,
+      "modulus": 18446744073709551616,
+      "n_bits": 64,
+      "prescribed_offset_count": 4096,
+      "prescribed_offset_count_power": 2,
+      "sample_budget": 262144,
+      "sample_budget_power": 3,
+      "signed_combination_arity": 4,
+      "union_bound": 1.0
+    },
+    {
+      "interpretation": "Polynomial iid labels cannot supply even one of the prescribed correlated offsets through this constant-arity signed-combination template at inverse-polynomial probability.",
+      "inverse_polynomial_coverage_ruled_out": true,
+      "log2_union_bound": -70.0,
+      "modulus": 340282366920938463463374607431768211456,
+      "n_bits": 128,
+      "prescribed_offset_count": 16384,
+      "prescribed_offset_count_power": 2,
+      "sample_budget": 2097152,
+      "sample_budget_power": 3,
+      "signed_combination_arity": 2,
+      "union_bound": 8.470329472543003e-22
+    },
+    {
+      "interpretation": "Polynomial iid labels cannot supply even one of the prescribed correlated offsets through this constant-arity signed-combination template at inverse-polynomial probability.",
+      "inverse_polynomial_coverage_ruled_out": true,
+      "log2_union_bound": -48.0,
+      "modulus": 340282366920938463463374607431768211456,
+      "n_bits": 128,
+      "prescribed_offset_count": 16384,
+      "prescribed_offset_count_power": 2,
+      "sample_budget": 2097152,
+      "sample_budget_power": 3,
+      "signed_combination_arity": 3,
+      "union_bound": 3.552713678800501e-15
+    },
+    {
+      "interpretation": "Polynomial iid labels cannot supply even one of the prescribed correlated offsets through this constant-arity signed-combination template at inverse-polynomial probability.",
+      "inverse_polynomial_coverage_ruled_out": true,
+      "log2_union_bound": -26.0,
+      "modulus": 340282366920938463463374607431768211456,
+      "n_bits": 128,
+      "prescribed_offset_count": 16384,
+      "prescribed_offset_count_power": 2,
+      "sample_budget": 2097152,
+      "sample_budget_power": 3,
+      "signed_combination_arity": 4,
+      "union_bound": 1.4901161193847656e-08
+    },
+    {
+      "interpretation": "Polynomial iid labels cannot supply even one of the prescribed correlated offsets through this constant-arity signed-combination template at inverse-polynomial probability.",
+      "inverse_polynomial_coverage_ruled_out": true,
+      "log2_union_bound": -190.0,
+      "modulus": 115792089237316195423570985008687907853269984665640564039457584007913129639936,
+      "n_bits": 256,
+      "prescribed_offset_count": 65536,
+      "prescribed_offset_count_power": 2,
+      "sample_budget": 16777216,
+      "sample_budget_power": 3,
+      "signed_combination_arity": 2,
+      "union_bound": 6.372367644529809e-58
+    },
+    {
+      "interpretation": "Polynomial iid labels cannot supply even one of the prescribed correlated offsets through this constant-arity signed-combination template at inverse-polynomial probability.",
+      "inverse_polynomial_coverage_ruled_out": true,
+      "log2_union_bound": -165.0,
+      "modulus": 115792089237316195423570985008687907853269984665640564039457584007913129639936,
+      "n_bits": 256,
+      "prescribed_offset_count": 65536,
+      "prescribed_offset_count_power": 2,
+      "sample_budget": 16777216,
+      "sample_budget_power": 3,
+      "signed_combination_arity": 3,
+      "union_bound": 2.1382117680737565e-50
+    },
+    {
+      "interpretation": "Polynomial iid labels cannot supply even one of the prescribed correlated offsets through this constant-arity signed-combination template at inverse-polynomial probability.",
+      "inverse_polynomial_coverage_ruled_out": true,
+      "log2_union_bound": -140.0,
+      "modulus": 115792089237316195423570985008687907853269984665640564039457584007913129639936,
+      "n_bits": 256,
+      "prescribed_offset_count": 65536,
+      "prescribed_offset_count_power": 2,
+      "sample_budget": 16777216,
+      "sample_budget_power": 3,
+      "signed_combination_arity": 4,
+      "union_bound": 7.174648137343064e-43
+    },
+    {
+      "interpretation": "Polynomial iid labels cannot supply even one of the prescribed correlated offsets through this constant-arity signed-combination template at inverse-polynomial probability.",
+      "inverse_polynomial_coverage_ruled_out": true,
+      "log2_union_bound": -438.0,
+      "modulus": 13407807929942597099574024998205846127479365820592393377723561443721764030073546976801874298166903427690031858186486050853753882811946569946433649006084096,
+      "n_bits": 512,
+      "prescribed_offset_count": 262144,
+      "prescribed_offset_count_power": 2,
+      "sample_budget": 134217728,
+      "sample_budget_power": 3,
+      "signed_combination_arity": 2,
+      "union_bound": 1.4088407314736535e-132
+    },
+    {
+      "interpretation": "Polynomial iid labels cannot supply even one of the prescribed correlated offsets through this constant-arity signed-combination template at inverse-polynomial probability.",
+      "inverse_polynomial_coverage_ruled_out": true,
+      "log2_union_bound": -410.0,
+      "modulus": 13407807929942597099574024998205846127479365820592393377723561443721764030073546976801874298166903427690031858186486050853753882811946569946433649006084096,
+      "n_bits": 512,
+      "prescribed_offset_count": 262144,
+      "prescribed_offset_count_power": 2,
+      "sample_budget": 134217728,
+      "sample_budget_power": 3,
+      "signed_combination_arity": 3,
+      "union_bound": 3.7818280418450374e-124
+    },
+    {
+      "interpretation": "Polynomial iid labels cannot supply even one of the prescribed correlated offsets through this constant-arity signed-combination template at inverse-polynomial probability.",
+      "inverse_polynomial_coverage_ruled_out": true,
+      "log2_union_bound": -382.0,
+      "modulus": 13407807929942597099574024998205846127479365820592393377723561443721764030073546976801874298166903427690031858186486050853753882811946569946433649006084096,
+      "n_bits": 512,
+      "prescribed_offset_count": 262144,
+      "prescribed_offset_count_power": 2,
+      "sample_budget": 134217728,
+      "sample_budget_power": 3,
+      "signed_combination_arity": 4,
+      "union_bound": 1.0151767349262597e-115
+    },
+    {
+      "interpretation": "Polynomial iid labels cannot supply even one of the prescribed correlated offsets through this constant-arity signed-combination template at inverse-polynomial probability.",
+      "inverse_polynomial_coverage_ruled_out": true,
+      "log2_union_bound": -942.0,
+      "modulus": 179769313486231590772930519078902473361797697894230657273430081157732675805500963132708477322407536021120113879871393357658789768814416622492847430639474124377767893424865485276302219601246094119453082952085005768838150682342462881473913110540827237163350510684586298239947245938479716304835356329624224137216,
+      "n_bits": 1024,
+      "prescribed_offset_count": 1048576,
+      "prescribed_offset_count_power": 2,
+      "sample_budget": 1073741824,
+      "sample_budget_power": 3,
+      "signed_combination_arity": 2,
+      "union_bound": 2.689949238098904e-284
+    },
+    {
+      "interpretation": "Polynomial iid labels cannot supply even one of the prescribed correlated offsets through this constant-arity signed-combination template at inverse-polynomial probability.",
+      "inverse_polynomial_coverage_ruled_out": true,
+      "log2_union_bound": -911.0,
+      "modulus": 179769313486231590772930519078902473361797697894230657273430081157732675805500963132708477322407536021120113879871393357658789768814416622492847430639474124377767893424865485276302219601246094119453082952085005768838150682342462881473913110540827237163350510684586298239947245938479716304835356329624224137216,
+      "n_bits": 1024,
+      "prescribed_offset_count": 1048576,
+      "prescribed_offset_count_power": 2,
+      "sample_budget": 1073741824,
+      "sample_budget_power": 3,
+      "signed_combination_arity": 3,
+      "union_bound": 5.776622002767455e-275
+    },
+    {
+      "interpretation": "Polynomial iid labels cannot supply even one of the prescribed correlated offsets through this constant-arity signed-combination template at inverse-polynomial probability.",
+      "inverse_polynomial_coverage_ruled_out": true,
+      "log2_union_bound": -880.0,
+      "modulus": 179769313486231590772930519078902473361797697894230657273430081157732675805500963132708477322407536021120113879871393357658789768814416622492847430639474124377767893424865485276302219601246094119453082952085005768838150682342462881473913110540827237163350510684586298239947245938479716304835356329624224137216,
+      "n_bits": 1024,
+      "prescribed_offset_count": 1048576,
+      "prescribed_offset_count_power": 2,
+      "sample_budget": 1073741824,
+      "sample_budget_power": 3,
+      "signed_combination_arity": 4,
+      "union_bound": 1.240520129162012e-265
+    }
+  ],
+  "created_at": "2026-07-14T20:16:43.193847+00:00",
+  "dcp_access_contract": {
+    "available_postprocessing": "polynomial-time classical processing of public labels and outcomes",
+    "labels": "independent uniform k in Z_(2^n), supplied rather than chosen",
+    "observations": "one stochastic X/Y outcome per phase register",
+    "unavailable": "evaluator, repeated labels, chosen shifts, filter queries, coherent score oracle"
+  },
+  "falsifiers_triggered": [
+    "Existing significant-Fourier and HashToBins algorithms construct chosen, shifted, or correlated sample schedules absent from DCP.",
+    "Marginal randomness of a sparse-FFT query schedule does not make its joint distribution iid.",
+    "Constant-arity signed closure of polynomially many iid labels does not cover polynomially many prescribed offsets asymptotically.",
+    "Generic compressed sensing and full periodograms preserve random access but hide N-dimensional time or memory.",
+    "The restricted closure bound is not a general lower bound against a new random-example estimator."
+  ],
+  "headline_metrics": {
+    "closure_certificate_count": 15,
+    "direct_access_invalid_count": 2,
+    "legal_but_exponential_count": 1,
+    "maximum_tail_union_bound": 7.174648137343064e-43,
+    "mechanism_count": 6,
+    "open_random_example_localizer_count": 1,
+    "proved_general_random_example_lower_bound_count": 0,
+    "proved_polylog_random_example_decoder_count": 0,
+    "proved_sparse_fft_transfer_count": 0,
+    "tail_certificate_count": 9,
+    "tail_inverse_polynomial_coverage_ruled_out_count": 9
+  },
+  "mechanism_transfers": [
+    {
+      "access_status": "invalid-for-random-label-dcp",
+      "literature_ids": [
+        "galbraith-laity-shani-fourier-limitations-2016"
+      ],
+      "memory_class_in_n": "poly(n)",
+      "method_id": "significant-fourier-query-access",
+      "obstruction_or_open_bridge": "DCP supplies iid labels after state measurement and cannot request the correlated query pattern.",
+      "required_primitive": "queries at x and x+h, subgroup restrictions, and repeated evaluation patterns",
+      "source_locator": "arXiv:1607.01842, random-access/query-access definitions and LPN limitation section",
+      "supplied_input": "an evaluator queried at adaptively or nonadaptively selected correlated group elements",
+      "time_class_in_n": "poly(n) under the stronger query oracle"
+    },
+    {
+      "access_status": "invalid-direct-transfer",
+      "literature_ids": [
+        "kapralov-sparse-fourier-2016"
+      ],
+      "memory_class_in_n": "poly(n)",
+      "method_id": "kapralov-hash-to-bins",
+      "obstruction_or_open_bridge": "Marginally random locations are insufficient: the locator constructs shared hash functions, shifts, filters, and correlated pairs. An iid-example estimator for the same bins is not supplied.",
+      "required_primitive": "filtered HashToBins measurements at shifted locations and randomly correlated sample pairs",
+      "source_locator": "arXiv:1604.00845 source algo.tex:6 and preliminaries.tex:128",
+      "supplied_input": "time-domain signal values at locations selected by randomized hash functions and filters",
+      "time_class_in_n": "poly(n) for one-sparse spectra with legal structured samples"
+    },
+    {
+      "access_status": "access-compatible-computational-cost-open",
+      "literature_ids": [
+        "kapralov-sparse-fourier-2016"
+      ],
+      "memory_class_in_n": "generic formulations materialize N candidate coordinates",
+      "method_id": "iid-fourier-compressed-sensing",
+      "obstruction_or_open_bridge": "Random measurement compatibility resolves sample access only. The repository has no certified implicit solver whose arithmetic and storage are polynomial in n=log2(N).",
+      "required_primitive": "solve a one-sparse inverse problem from an unstructured random design",
+      "source_locator": "comparison class; no direct-transfer theorem claimed",
+      "supplied_input": "iid random rows of a partial Fourier design with noisy bounded responses",
+      "time_class_in_n": "generic solvers are poly(N), not certified poly(n)"
+    },
+    {
+      "access_status": "legal-but-exponential",
+      "literature_ids": [
+        "internal:dcp-random-design-decoder"
+      ],
+      "memory_class_in_n": "Theta(N)=2^Theta(n) for a one-pass score table",
+      "method_id": "full-periodogram-or-fft",
+      "obstruction_or_open_bridge": "It proves information recovery but loses to generic subexponential DCP sieves.",
+      "required_primitive": "score all N frequencies or run a length-N transform",
+      "source_locator": "dcp_random_design_decoder.py",
+      "supplied_input": "iid random DCP quadrature records",
+      "time_class_in_n": "Theta(N log N)=2^Theta(n)"
+    },
+    {
+      "access_status": "legal-template-asymptotically-insufficient",
+      "literature_ids": [
+        "internal:dcp-multiscale-aliasing"
+      ],
+      "memory_class_in_n": "poly(n) for fixed arity",
+      "method_id": "constant-arity-signed-label-closure",
+      "obstruction_or_open_bridge": "The number of constant-arity expressions is polynomial and each nondegenerate label is uniform; prescribed offset coverage remains exponentially small. Products also compound measurement noise.",
+      "required_primitive": "post-hoc products or signed combinations intended to synthesize prescribed offsets",
+      "source_locator": "exact union-bound certificates in this artifact",
+      "supplied_input": "m=poly(n) iid public labels and local measurement outcomes",
+      "time_class_in_n": "poly(n) for fixed arity"
+    },
+    {
+      "access_status": "open-research-target",
+      "literature_ids": [
+        "kapralov-sparse-fourier-2016",
+        "galbraith-laity-shani-fourier-limitations-2016"
+      ],
+      "memory_class_in_n": "target poly(n); no theorem",
+      "method_id": "target-iid-random-example-localizer",
+      "obstruction_or_open_bridge": "A valid construction must estimate useful hash/alias statistics from iid records, prove variance and worst-frequency bounds, and remain robust under f=1 bad registers.",
+      "required_primitive": "implicit heavy-frequency localization without chosen samples or N-sized candidate state",
+      "source_locator": "new adaptation obligation; not present in cited algorithms",
+      "supplied_input": "iid random labels with bounded stochastic complex-character observations",
+      "time_class_in_n": "target poly(n); no theorem"
+    }
+  ],
+  "open_adaptation_contract": {
+    "input": "iid records (k,B,z) from the exact DCP measurement channel",
+    "kill_test": "reject if any data structure, loop, oracle, preprocessing table, or advice has size N^Omega(1)",
+    "output": "the complete d in Z_(2^n) with bounded error",
+    "required_novelty": "estimate and decode multiscale hash statistics from iid records without reconstructing missing query pairs",
+    "resources": "poly(n) states, time, memory, and bit precision",
+    "robustness": "retain bounded error with hidden computational-basis bad registers at rate at most 1/n"
+  },
+  "status": "known-sparse-fourier-transfer-blocked-random-example-adaptation-open",
+  "summary": "Audited 6 Fourier-localization mechanisms and 15 constant-arity closure certificates; 9/9 tail certificates rule out the tested schedule-synthesis template, with zero polylog iid decoders and zero general lower bounds proved."
+}

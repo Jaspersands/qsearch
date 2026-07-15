@@ -1,222 +1,268 @@
-document.addEventListener('DOMContentLoaded', () => {
-    let historyData = [];
+const $ = (selector) => document.querySelector(selector);
 
-    // Fetch and render data
-    async function updateDashboard() {
-        try {
-            const [statusRes, queueRes, historyRes] = await Promise.all([
-                fetch('status.json?nocache=' + Date.now()).then(r => r.json()).catch(() => ({ status: 'sleeping' })),
-                fetch('queue.json?nocache=' + Date.now()).then(r => r.json()).catch(() => []),
-                fetch('history.json?nocache=' + Date.now()).then(r => r.json()).catch(() => [])
-            ]);
+function text(value, fallback = "Not specified") {
+    if (value === undefined || value === null || value === "") return fallback;
+    return String(value);
+}
 
-            renderStatus(statusRes);
-            renderQueue(queueRes);
-            historyData = historyRes;
-            renderHistory(historyData);
+function short(value, limit = 170) {
+    const raw = text(value, "");
+    return raw.length > limit ? `${raw.slice(0, limit - 1)}...` : raw;
+}
 
-        } catch (error) {
-            console.error('Error fetching dashboard stats:', error);
-        }
+function tag(label) {
+    return `<span class="tag">${label}</span>`;
+}
+
+async function loadJson(path, fallback) {
+    try {
+        const response = await fetch(`${path}?v=${Date.now()}`);
+        if (!response.ok) throw new Error(`${path}: ${response.status}`);
+        return await response.json();
+    } catch (error) {
+        console.error(error);
+        return fallback;
     }
+}
 
-    // Render live status
-    function renderStatus(data) {
-        const pulse = document.getElementById('global-pulse');
-        const statusText = document.getElementById('global-status-text');
-        const activeBadge = document.getElementById('active-badge');
-        const noActive = document.getElementById('no-active-run');
-        const activeDetails = document.getElementById('active-run-details');
+function renderDiagnosis(agenda) {
+    const items = agenda?.diagnosis?.blunt_diagnosis || [];
+    $("#diagnosis-list").innerHTML = items.map((item) => `<li>${item}</li>`).join("");
+    $("#mission-text").textContent = agenda?.mission || "Research agenda unavailable.";
+}
 
-        // Reset pulse styles
-        pulse.className = 'pulse-indicator';
-        activeBadge.className = 'badge';
+function renderCounts(candidates, experiments, results, dequantization, proofStatus, negatives, rejected, obligations) {
+    $("#count-candidates").textContent = candidates.length;
+    $("#count-experiments").textContent = experiments.length;
+    $("#count-results").textContent = results.length;
+    $("#count-dequantization").textContent = dequantization.length;
+    $("#count-proof-status").textContent = proofStatus.length;
+    $("#count-negative").textContent = negatives.length;
+    $("#count-rejected").textContent = rejected.length;
+    $("#count-obligations").textContent = obligations.length;
+}
 
-        if (data.status === 'searching') {
-            pulse.classList.add('active');
-            statusText.innerText = 'SEARCHING FOR ALGORITHMS...';
-            activeBadge.innerText = 'SEARCHING';
-            activeBadge.classList.add('searching');
+function renderArchitecture(audit) {
+    const architecture = audit?.new_architecture || {};
+    $("#architecture-list").innerHTML = Object.entries(architecture)
+        .map(([key, value]) => `
+            <div class="stack-item">
+                <strong>${key.replace(/^\d+_/, "").replaceAll("_", " ")}</strong>
+                <p>${value}</p>
+            </div>
+        `)
+        .join("");
+}
 
-            noActive.classList.add('hidden');
-            activeDetails.classList.remove('hidden');
-
-            document.getElementById('active-problem-name').innerText = data.current_run?.problem_name || 'Quantum Discovery';
-            document.getElementById('active-description').innerText = data.current_run?.description || '';
-
-            // Update Progress Stepper
-            const stages = ['theorist', 'simulating', 'synthesizing', 'analyzing'];
-            const currentStage = data.current_run?.stage;
-            const currentIdx = stages.indexOf(currentStage);
-
-            stages.forEach((stage, idx) => {
-                const stepElem = document.getElementById('step-' + stage);
-                if (stepElem) {
-                    stepElem.className = 'step';
-                    if (idx < currentIdx) {
-                        stepElem.classList.add('completed');
-                    } else if (idx === currentIdx) {
-                        stepElem.classList.add('active');
-                    }
-                }
-            });
-
-        } else if (data.status === 'sleeping') {
-            pulse.classList.add('sleeping');
-            statusText.innerText = 'RESTING BETWEEN SEARCHES';
-            activeBadge.innerText = 'SLEEPING';
-            activeBadge.classList.add('sleeping');
-
-            noActive.classList.remove('hidden');
-            activeDetails.classList.add('hidden');
-
-            const countdown = document.getElementById('sleep-countdown');
-            if (data.next_run_at) {
-                const nextRun = new Date(data.next_run_at);
-                const secondsLeft = Math.max(0, Math.floor((nextRun - new Date()) / 1000));
-                countdown.innerText = `Next search run starts in ~${secondsLeft}s`;
-            } else {
-                countdown.innerText = 'Next search run is queueing up.';
-            }
-        } else {
-            pulse.classList.add('idle');
-            statusText.innerText = 'SYSTEM STANDBY';
-            activeBadge.innerText = 'STANDBY';
-
-            noActive.classList.remove('hidden');
-            activeDetails.classList.add('hidden');
-            document.getElementById('sleep-countdown').innerText = 'Persistent search engine is ready.';
-        }
-    }
-
-    // Render backlog queue
-    function renderQueue(items) {
-        const queueList = document.getElementById('queue-list');
-        const queueCount = document.getElementById('queue-count');
-        queueList.innerHTML = '';
-        queueCount.innerText = `${items.length} items`;
-
-        if (items.length === 0) {
-            queueList.innerHTML = `
-                <div class="empty-state">
-                    <p style="font-size: 0.85rem; color: var(--text-muted);">Backlog is empty. Theorist will queue items soon.</p>
+function renderInterventions(interventions) {
+    $("#intervention-list").innerHTML = interventions.slice(0, 12).map((item, index) => `
+        <article class="ranked-item">
+            <div class="rank">${index + 1}</div>
+            <div class="rank-body">
+                <div class="rank-title">
+                    <h4>${item.title}</h4>
+                    <span class="lift">${Number(item.expected_breakthrough_lift).toFixed(1)}</span>
                 </div>
-            `;
-            return;
-        }
-
-        items.forEach(item => {
-            const itemDiv = document.createElement('div');
-            itemDiv.className = 'queue-item';
-            
-            const priorityClass = (item.priority || 'medium').toLowerCase();
-            itemDiv.innerHTML = `
-                <span class="theme">${item.theme || 'Exploration Topic'}</span>
-                <span class="priority ${priorityClass}">${item.priority || 'Medium'}</span>
-            `;
-            queueList.appendChild(itemDiv);
-        });
-    }
-
-    // Render search history
-    function renderHistory(runs) {
-        const historyList = document.getElementById('history-list');
-        const historyCount = document.getElementById('history-count');
-        historyList.innerHTML = '';
-        historyCount.innerText = `${runs.length} runs`;
-
-        if (runs.length === 0) {
-            historyList.innerHTML = `
-                <div class="empty-state">
-                    <i class="fa-solid fa-folder-open"></i>
-                    <p>No algorithms discovered yet.</p>
+                <p>${item.why_it_matters}</p>
+                <div class="meta-row">
+                    ${tag(item.category)}
+                    ${tag(item.difficulty)}
+                    ${item.dependencies?.slice(0, 3).map(tag).join("") || ""}
                 </div>
-            `;
-            return;
-        }
+                <details>
+                    <summary>Failure modes and falsifiers</summary>
+                    <p><strong>Likely failure:</strong> ${item.likely_failure_modes?.join(" ") || "Not listed."}</p>
+                    <p><strong>Falsify if:</strong> ${item.falsifying_evidence?.join(" ") || "Not listed."}</p>
+                    <p><strong>Status:</strong> ${item.implementation_status}</p>
+                </details>
+            </div>
+        </article>
+    `).join("");
+}
 
-        runs.forEach((run, index) => {
-            const card = document.createElement('div');
-            card.className = 'history-card';
-            card.addEventListener('click', () => openModal(run));
+function renderLeads(candidates) {
+    $("#lead-list").innerHTML = candidates.map((lead, index) => `
+        <article class="lead-card">
+            <div class="lead-top">
+                <span class="rank-badge">#${index + 1}</span>
+                <span class="score">${lead.status}</span>
+            </div>
+            <h4>${lead.title}</h4>
+            <p>${short(lead.problem_family, 220)}</p>
+            <div class="meta-row">${lead.ontology_node_ids?.map(tag).join("") || ""}</div>
+            <details>
+                <summary>Proof-gated record</summary>
+                <p><strong>Mechanism:</strong> ${lead.quantum_mechanism}</p>
+                <p><strong>Classical baseline:</strong> ${lead.classical_baseline}</p>
+                <p><strong>Falsifiers:</strong> ${lead.falsifiers?.join(" ")}</p>
+                <p><strong>Literature:</strong> ${lead.literature_ids?.join(", ")}</p>
+            </details>
+        </article>
+    `).join("");
+}
 
-            card.innerHTML = `
-                <div class="history-info">
-                    <h3>${run.problem_name}</h3>
-                    <p>${run.description}</p>
-                </div>
-                <div class="history-stats">
-                    <span class="stat-pill speedup"><i class="fa-solid fa-gauge-high"></i> ${run.speedup_type || 'Unknown'}</span>
-                    <span class="stat-pill success"><i class="fa-solid fa-circle-check"></i> ${run.success_rate * 100}%</span>
-                    <i class="fa-solid fa-chevron-right"></i>
-                </div>
-            `;
-            historyList.appendChild(card);
-        });
-    }
+function renderExperiments(experiments) {
+    $("#experiment-list").innerHTML = experiments.map((experiment) => `
+        <article class="lead-card">
+            <div class="lead-top">
+                <span class="rank-badge">${experiment.candidate_id}</span>
+                <span class="score">${experiment.status}</span>
+            </div>
+            <h4>${experiment.title}</h4>
+            <p>${experiment.hypothesis}</p>
+            <div class="meta-row">${experiment.metrics?.slice(0, 4).map(tag).join("") || ""}</div>
+            <details>
+                <summary>Protocol and falsifiers</summary>
+                <p><strong>Protocol:</strong> ${experiment.protocol}</p>
+                <p><strong>Positive signal:</strong> ${experiment.positive_signal}</p>
+                <p><strong>Falsifiers:</strong> ${experiment.falsifiers?.join(" ")}</p>
+                <p><strong>Next:</strong> ${experiment.next_actions?.join(" ")}</p>
+            </details>
+        </article>
+    `).join("");
+}
 
-    // Filter history on search input
-    document.getElementById('history-search').addEventListener('input', (e) => {
-        const searchVal = e.target.value.toLowerCase();
-        const filtered = historyData.filter(run => 
-            run.problem_name.toLowerCase().includes(searchVal) ||
-            run.description.toLowerCase().includes(searchVal) ||
-            (run.speedup_type && run.speedup_type.toLowerCase().includes(searchVal))
-        );
-        renderHistory(filtered);
-    });
+function renderResults(results) {
+    $("#result-list").innerHTML = results.map((result) => `
+        <article class="lead-card">
+            <div class="lead-top">
+                <span class="rank-badge">${result.experiment_id}</span>
+                <span class="score">${result.status}</span>
+            </div>
+            <h4>${result.id}</h4>
+            <p>${short(result.summary, 260)}</p>
+            <div class="meta-row">${Object.keys(result.metrics || {}).slice(0, 4).map(tag).join("")}</div>
+            <details>
+                <summary>Metrics and falsifiers</summary>
+                <p><strong>Metrics:</strong> ${JSON.stringify(result.metrics || {})}</p>
+                <p><strong>Falsifiers:</strong> ${result.falsifiers_triggered?.join(" ") || "None triggered."}</p>
+                <p><strong>Artifacts:</strong> ${Object.values(result.artifacts || {}).join(", ")}</p>
+            </details>
+        </article>
+    `).join("");
+}
 
-    // Modal Operations
-    const modal = document.getElementById('detail-modal');
-    const closeModal = document.getElementById('close-modal');
+function renderDequantization(findings) {
+    $("#dequantization-list").innerHTML = findings.slice(0, 18).map((finding) => `
+        <article class="negative-item">
+            <h4>${finding.target_id}</h4>
+            <p><strong>${finding.severity}:</strong> ${finding.claim_under_test}</p>
+            <p><strong>Evidence:</strong> ${finding.evidence}</p>
+            <p><strong>Required:</strong> ${finding.required_action}</p>
+        </article>
+    `).join("");
+}
 
-    function openModal(run) {
-        document.getElementById('modal-title').innerText = run.problem_name;
-        document.getElementById('modal-speedup').innerText = run.speedup_type || 'Unknown';
-        document.getElementById('modal-query').innerText = run.quantum_query_complexity || 'O(1)';
-        document.getElementById('modal-gates').innerText = run.quantum_gate_complexity || 'O(N)';
-        document.getElementById('modal-success').innerText = run.success_rate;
-        document.getElementById('modal-description').innerText = run.description;
+function renderProofStatus(records) {
+    const visible = records.filter((record) => record.status !== "text-present").slice(0, 24);
+    $("#proof-status-list").innerHTML = visible.map((record) => `
+        <article class="negative-item">
+            <h4>${record.candidate_id} ${record.obligation_id}</h4>
+            <p><strong>Status:</strong> ${record.status}</p>
+            <p><strong>Evidence:</strong> ${record.evidence}</p>
+            <p><strong>Next:</strong> ${record.next_action}</p>
+        </article>
+    `).join("");
+}
 
-        // Code and theory text
-        document.getElementById('modal-qiskit-code').innerText = run.synthesis_code || '# No code generated';
-        document.getElementById('modal-analysis-text').innerText = run.analysis_text || 'No scaling details available.';
-        document.getElementById('modal-applications-text').innerText = run.potential_applications || 'No practical application mapping available yet.';
-        document.getElementById('modal-base-code').innerText = run.base_function_code || '# N/A';
-        document.getElementById('modal-oracle-code').innerText = run.oracle_generator_code || '# N/A';
+function renderNegativeResults(negatives) {
+    $("#negative-list").innerHTML = negatives.slice(0, 18).map((item) => `
+        <article class="negative-item">
+            <h4>${item.claim}</h4>
+            <p><strong>Invalid because:</strong> ${item.reason_invalid}</p>
+            <p><strong>Lesson:</strong> ${item.lesson}</p>
+            <div class="meta-row">${item.applies_to?.map(tag).join("") || ""}</div>
+        </article>
+    `).join("");
+}
 
-        // Reset tabs
-        document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-        document.querySelectorAll('.tab-pane').forEach(pane => pane.classList.remove('active'));
-        document.querySelector('[data-tab="tab-code"]').classList.add('active');
-        document.getElementById('tab-code').classList.add('active');
+function renderRejectedCandidates(rejected) {
+    $("#rejected-list").innerHTML = rejected.slice(0, 18).map((item) => `
+        <article class="negative-item">
+            <h4>${item.title}</h4>
+            <p><strong>ID:</strong> ${item.id}</p>
+            <p><strong>Rejected because:</strong> ${(item.issues || []).map((issue) => `${issue.obligation_id}: ${issue.message}`).join(" ")}</p>
+            <div class="meta-row">${item.ontology_node_ids?.map(tag).join("") || ""}</div>
+        </article>
+    `).join("");
+}
 
-        modal.classList.remove('hidden');
-    }
+function renderProofGate(obligations) {
+    $("#proof-list").innerHTML = obligations.map((item) => `
+        <article class="proof-card">
+            <span>${item.id}</span>
+            <h4>${item.obligation}</h4>
+            <p>${item.why_required}</p>
+        </article>
+    `).join("");
+}
 
-    closeModal.addEventListener('click', () => {
-        modal.classList.add('hidden');
-    });
+function renderBarriers(ontology) {
+    $("#barrier-list").innerHTML = (ontology.barriers || []).map((barrier) => `
+        <div class="stack-item">
+            <strong>${barrier.id}</strong>
+            <p>${barrier.barrier}</p>
+            <p><em>Avoid by:</em> ${barrier.avoid_by}</p>
+            <div class="meta-row">${barrier.applies_to?.map(tag).join("") || ""}</div>
+        </div>
+    `).join("");
+}
 
-    window.addEventListener('click', (e) => {
-        if (e.target === modal) {
-            modal.classList.add('hidden');
-        }
-    });
+function renderPapers(literatureRecords, literatureIndex) {
+    const papers = literatureRecords.length ? literatureRecords : (literatureIndex.seed_papers || []);
+    $("#paper-list").innerHTML = papers.slice(0, 10).map((paper) => `
+        <a class="paper-item" href="${paper.url}" target="_blank" rel="noreferrer">
+            <span>${paper.year || "n/a"}</span>
+            <strong>${paper.title}</strong>
+            <p>${short(paper.mechanism || paper.why_it_matters, 130)}</p>
+        </a>
+    `).join("");
+}
 
-    // Modal Tabs Navigation
-    document.querySelectorAll('.tab-btn').forEach(button => {
-        button.addEventListener('click', () => {
-            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-            document.querySelectorAll('.tab-pane').forEach(pane => pane.classList.remove('active'));
+function renderModules(audit) {
+    $("#module-list").innerHTML = (audit.module_decisions || []).map((item) => `
+        <div class="module-row">
+            <code>${item.path}</code>
+            <strong>${item.decision}</strong>
+            <p>${item.reason}</p>
+            <span>${item.replacement}</span>
+        </div>
+    `).join("");
+}
 
-            button.classList.add('active');
-            const tabId = button.getAttribute('data-tab');
-            document.getElementById(tabId).classList.add('active');
-        });
-    });
+async function main() {
+    const [agenda, audit, interventions, obligations, literature, literatureRecords, ontology, candidates, experiments, results, dequantization, proofStatus, negatives, rejected] = await Promise.all([
+        loadJson("research/agenda.json", {}),
+        loadJson("research/exhaustive_audit.json", {}),
+        loadJson("research/interventions.json", []),
+        loadJson("research/proof_obligations.json", []),
+        loadJson("research/literature_index.json", {}),
+        loadJson("research/literature_records.json", []),
+        loadJson("research/problem_ontology.json", {}),
+        loadJson("research/registry/candidates.json", []),
+        loadJson("research/registry/experiments.json", []),
+        loadJson("research/registry/experiment_results.json", []),
+        loadJson("research/registry/dequantization_checks.json", []),
+        loadJson("research/registry/proof_status.json", []),
+        loadJson("research/registry/negative_results.json", []),
+        loadJson("research/registry/rejected_candidates.json", []),
+    ]);
 
-    // Initial update and periodic polling (every 10 seconds)
-    updateDashboard();
-    setInterval(updateDashboard, 10000);
-});
+    renderDiagnosis(agenda);
+    renderCounts(candidates, experiments, results, dequantization, proofStatus, negatives, rejected, obligations);
+    renderArchitecture(audit);
+    renderInterventions(interventions);
+    renderLeads(candidates);
+    renderExperiments(experiments);
+    renderResults(results);
+    renderDequantization(dequantization);
+    renderProofStatus(proofStatus);
+    renderNegativeResults(negatives);
+    renderRejectedCandidates(rejected);
+    renderProofGate(obligations);
+    renderBarriers(ontology);
+    renderPapers(literatureRecords, literature);
+    renderModules(audit);
+}
+
+document.addEventListener("DOMContentLoaded", main);

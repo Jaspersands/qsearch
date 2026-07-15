@@ -1,0 +1,112 @@
+{
+  "claim_gate": {
+    "half_log_boundary_closed": false,
+    "larger_growing_order_closed": false,
+    "polynomial_witness_decoder_constructed": false,
+    "reason": "Every nonnegative moment route below the half-logarithmic order threshold is asymptotically obstructed. A survivor must operate at the boundary or above with explicit resources, or leave this moment class.",
+    "reduced_basis_geometry_closed": false,
+    "signed_statistics_closed": false,
+    "speedup_claim_allowed": false,
+    "sub_half_log_growing_order_closed": true
+  },
+  "created_at": "2026-07-15T04:25:04.435615+00:00",
+  "falsifiers_triggered": [
+    "Any fixed or sub-half-logarithmic nonnegative moment-order schedule is asymptotically obstructed.",
+    "Increasing k without charging q=2^k transition patterns is rejected.",
+    "Finite positive moment excess cannot override the uniform path-count theorem.",
+    "The theorem does not reject half-logarithmic or signed/non-moment mechanisms."
+  ],
+  "headline_metrics": {
+    "finite_bound_below_one_row_count": 5,
+    "maximum_four_to_k_log_n_over_n": 0.4332169878499658,
+    "maximum_instantiated_moment_order": 6,
+    "polynomial_witness_decoder_count": 0,
+    "proved_half_log_boundary_obstruction_count": 0,
+    "proved_signed_statistic_obstruction_count": 0,
+    "proved_sub_half_log_growing_order_obstruction_count": 1,
+    "proved_super_half_log_order_obstruction_count": 0,
+    "row_count": 5
+  },
+  "rows": [
+    {
+      "boolean_pattern_count": 4,
+      "epsilon": 0.2,
+      "finite_row_is_asymptotic_theorem": false,
+      "finite_upper_bound_below_one": true,
+      "four_to_k_log_n_over_n": 0.34657359027997264,
+      "log2_bad_contribution_upper_bound": -59.89465428508835,
+      "moment_order": 2,
+      "n_bits": 256,
+      "register_offset": 2
+    },
+    {
+      "boolean_pattern_count": 8,
+      "epsilon": 0.2,
+      "finite_row_is_asymptotic_theorem": false,
+      "finite_upper_bound_below_one": true,
+      "four_to_k_log_n_over_n": 0.4332169878499658,
+      "log2_bad_contribution_upper_bound": -83.49795231984763,
+      "moment_order": 3,
+      "n_bits": 1024,
+      "register_offset": 2
+    },
+    {
+      "boolean_pattern_count": 8,
+      "epsilon": 0.2,
+      "finite_row_is_asymptotic_theorem": false,
+      "finite_upper_bound_below_one": true,
+      "four_to_k_log_n_over_n": 0.12996509635498973,
+      "log2_bad_contribution_upper_bound": -659.3289452923551,
+      "moment_order": 3,
+      "n_bits": 4096,
+      "register_offset": 2
+    },
+    {
+      "boolean_pattern_count": 16,
+      "epsilon": 0.2,
+      "finite_row_is_asymptotic_theorem": false,
+      "finite_upper_bound_below_one": true,
+      "four_to_k_log_n_over_n": 0.04332169878499658,
+      "log2_bad_contribution_upper_bound": -5768.617464102903,
+      "moment_order": 4,
+      "n_bits": 65536,
+      "register_offset": 2
+    },
+    {
+      "boolean_pattern_count": 64,
+      "epsilon": 0.2,
+      "finite_row_is_asymptotic_theorem": false,
+      "finite_upper_bound_below_one": true,
+      "four_to_k_log_n_over_n": 0.05415212348124573,
+      "log2_bad_contribution_upper_bound": -22138.54024445063,
+      "moment_order": 6,
+      "n_bits": 1048576,
+      "register_offset": 2
+    }
+  ],
+  "status": "sub-half-logarithmic-growing-order-moments-asymptotically-obstructed",
+  "summary": "Proved bad-tuple decay whenever 4^k log n=o(n); instantiated 5 scaling rows with 5 finite bounds below one. The half-log boundary, larger orders, signed observables, and basis geometry remain open.",
+  "theorem_certificate": {
+    "bad_state_contraction_bound": "b/2^r <= 1-1/q",
+    "condition": "4^k(n) * log n = o(n)",
+    "limitations": [
+      "The half-logarithmic boundary k approximately (1/2)log_2 n is not closed.",
+      "Larger growing orders are not controlled.",
+      "The theorem bounds a nonnegative source bad-tuple contribution, not arbitrary signed observables.",
+      "It does not construct or rule out a polynomial decoder based on non-moment geometry."
+    ],
+    "nonself_transition_bound": "at most q=2^k lattice-enlarging columns",
+    "path_count_bound": "(m+1)^q (q+1)^q",
+    "proof": "Each non-self transition adds a Boolean pattern not previously in the integer lattice, so at most q occur. Choose their positions and identities with (m+1)^q(q+1)^q possibilities. All intervening self-loop patterns lie in the final bad lattice and contribute at most b per coordinate. Hadamard bounds the Smith numerator by k^(k/2). Dividing the logarithm of the path overhead by the contraction exponent n/q leaves O(q^2 log n/n), which vanishes under the stated condition.",
+    "smith_numerator_bound": "product of relevant Smith gcd factors <= k^(k/2)",
+    "sub_half_log_order_obstructed": true,
+    "sufficient_schedule": "k(n) <= (1/2-epsilon) log_2 n for any fixed epsilon>0"
+  },
+  "theorem_contract": {
+    "conclusion": "nonnegative bad-tuple source contribution tends to zero if 4^k log n=o(n)",
+    "excluded": "half-log boundary, larger order, signed observables, and reduced-basis geometry",
+    "order_schedule": "k=k(n), q=2^k",
+    "register_regime": "m=n+c for fixed c",
+    "source": "uniform independent density-one modular subset-sum labels and target"
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "claim_gate": {
+    "adversarial_threshold_proved": false,
+    "full_decoder_proved": false,
+    "inverse_polynomial_signal_proved": false,
+    "polynomial_circuit_descriptions": true,
+    "polynomial_hamming_decision_rule": true,
+    "public_labels_only": true,
+    "reason": "The search evaluates a legitimate global Clifford measurement language, but finite Hamming-weight biases have no uniform lower bound, contamination theorem, or full reflection decoder.",
+    "speedup_claim_allowed": false,
+    "unrestricted_tv_counted_as_efficient_decoder": false
+  },
+  "created_at": "2026-07-14T19:30:35.514191+00:00",
+  "falsifiers_triggered": [
+    "Unrestricted output total variation may require an exponentially described accepting set; it is not counted as an efficient decoder.",
+    "Hamming-weight decoding is polynomial but finite inverse-polynomial signals are not asymptotic proofs.",
+    "All-bad computational-basis inputs are exactly uniform under every searched diagonal-Clifford-plus-Hadamard circuit.",
+    "Partial arbitrary contamination, repeated-batch sample cost, and full-reflection recovery remain unproved."
+  ],
+  "headline_metrics": {
+    "collision_instance_count": 20,
+    "finite_log2_hamming_tv_slope_per_n": -0.6287216445695861,
+    "instance_count": 20,
+    "inverse_polynomial_hamming_signal_count": 3,
+    "maximum_full_tv": 0.162109375,
+    "maximum_hamming_tv": 0.01904296875,
+    "proved_adversarial_threshold_count": 0,
+    "proved_full_decoder_count": 0,
+    "proved_inverse_polynomial_signal_family_count": 0,
+    "scaling_row_count": 5,
+    "schema_evaluation_count": 260
+  },
+  "measurement_contract": {
+    "bad_input": "every computational-basis input yields the uniform output distribution",
+    "circuit": "public-label-derived CZ phase layer followed by H on every phase qubit",
+    "efficient_decoder": "Hamming weight of the measured output; unrestricted optimal accepting sets are excluded",
+    "simulation": "exact subset-sum collision blocks and Walsh-Hadamard transform; exponential simulation cost is not algorithm cost"
+  },
+  "rows": [
+    {
+      "best_hamming_schema_histogram": {
+        "hadamard-product": 4
+      },
+      "collision_instance_count": 4,
+      "inverse_polynomial_hamming_signal_count": 2,
+      "maximum_best_hamming_tv": 0.01904296875,
+      "mean_best_full_tv": 0.122314453125,
+      "mean_best_hamming_tv": 0.0149993896484375,
+      "mean_exact_trace_distance": 0.31640625,
+      "mean_log2_shots_for_best_hamming_bias": 14.003741533851501,
+      "n_bits": 8,
+      "register_count": 8,
+      "schema_count": 13,
+      "trial_count": 4
+    },
+    {
+      "best_hamming_schema_histogram": {
+        "hadamard-product": 4
+      },
+      "collision_instance_count": 4,
+      "inverse_polynomial_hamming_signal_count": 1,
+      "maximum_best_hamming_tv": 0.01422882080078125,
+      "mean_best_full_tv": 0.12674713134765625,
+      "mean_best_hamming_tv": 0.007903099060058594,
+      "mean_exact_trace_distance": 0.373046875,
+      "mean_log2_shots_for_best_hamming_bias": 16.09475417568122,
+      "n_bits": 10,
+      "register_count": 10,
+      "schema_count": 13,
+      "trial_count": 4
+    },
+    {
+      "best_hamming_schema_histogram": {
+        "hadamard-product": 4
+      },
+      "collision_instance_count": 4,
+      "inverse_polynomial_hamming_signal_count": 0,
+      "maximum_best_hamming_tv": 0.0052051544189453125,
+      "mean_best_full_tv": 0.07613271474838257,
+      "mean_best_hamming_tv": 0.002482801675796509,
+      "mean_exact_trace_distance": 0.33209228515625,
+      "mean_log2_shots_for_best_hamming_bias": 19.740759706972316,
+      "n_bits": 12,
+      "register_count": 12,
+      "schema_count": 13,
+      "trial_count": 4
+    },
+    {
+      "best_hamming_schema_histogram": {
+        "hadamard-product": 4
+      },
+      "collision_instance_count": 4,
+      "inverse_polynomial_hamming_signal_count": 0,
+      "maximum_best_hamming_tv": 0.0022886842489242554,
+      "mean_best_full_tv": 0.0723646990954876,
+      "mean_best_hamming_tv": 0.0012144334614276886,
+      "mean_exact_trace_distance": 0.3696136474609375,
+      "mean_log2_shots_for_best_hamming_bias": 21.57249775303081,
+      "n_bits": 14,
+      "register_count": 14,
+      "schema_count": 13,
+      "trial_count": 4
+    },
+    {
+      "best_hamming_schema_histogram": {
+        "hadamard-product": 4
+      },
+      "collision_instance_count": 4,
+      "inverse_polynomial_hamming_signal_count": 0,
+      "maximum_best_hamming_tv": 0.0007477216422557831,
+      "mean_best_full_tv": 0.04968814575113356,
+      "mean_best_hamming_tv": 0.000489942030981183,
+      "mean_exact_trace_distance": 0.3587074279785156,
+      "mean_log2_shots_for_best_hamming_bias": 24.121649052633273,
+      "n_bits": 16,
+      "register_count": 16,
+      "schema_count": 13,
+      "trial_count": 4
+    }
+  ],
+  "status": "finite-clifford-signal-proof-blocked",
+  "summary": "Evaluated 260 public-label Clifford measurements on 20 exact DCP batches. 3 finite instances had Hamming-weight bias at least 1/n^2, but zero asymptotic signal families, adversarial thresholds, or full decoders were proved.",
+  "theorem_contract_id": "THM-REGEV-USVP-TO-DCP-2003"
+}

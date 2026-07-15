@@ -1,0 +1,367 @@
+%!TEX root = ./ft-hd.tex
+\section{Utilities}\label{sec:utils}
+
+\subsection{Properties of \textsc{EstimateValues}}
+In this section we describe the procedure \textsc{EstimateValues} (see Algorithm~\ref{alg:est}), which, given access to a signal $x$ in frequency domain (i.e. given $\wh{x}$), a partially recovered signal $\chi$ and a target list of locations $L\subseteq \nsq$,
+estimates values of the elements in $L$, and outputs the elements that are above a threshold $\nu$ in absolute value. The SNR reduction loop uses the thresholding function of \textsc{EstimateValues} and passes a nonzero threshold, while \textsc{RecoverAtConstantSNR} uses $\nu=0$.
+
+\begin{algorithm}
+\caption{\textsc{EstimateValues}($x, \chi, L, k, \e, \nu, r_{max}$)}\label{alg:est} 
+\begin{algorithmic}[1] 
+\Procedure{EstimateValues}{$x, \chi, L, k, \e, \nu, r_{max}$}\Comment{$r_{max}$ controls estimate confidence}
+\State $B\gets \GT\cdot k/(\e \alpha^{2d})$
+\For {$r=0$ to $r_{max}$}
+\State Choose $\Sigma_r\in \gl, q_r, z_r\in \nsq$ uniformly at random
+\State Let $\pi_r:=(\Sigma_r, q_r)$, $H_r:=(\pi_r, B, F), F= 2d$
+\State $u_r \gets \Call{HashToBins}{\hat x, \chi, \chi, (H_r, z_r)}$
+\State \Comment{Using semi-equispaced Fourier transform  (Corollary~\ref{c:semiequi1})}
+\EndFor
+\State $L'\gets \emptyset$\Comment{Initialize output list to empty}
+\For{$f\in L$}
+\For{$r=0$ to $r_{max}$}
+\State $j\gets h_r(f)$ 
+\State $w^r_f\gets v_{r, j} G^{-1}_{o_f(f)}\omega^{-z_r^T \Sigma_r f}$ \Comment{Estimate $x'_f$ from each measurement}
+\EndFor
+\State $w_f\gets \text{median}\{w^r_f\}_{r=1}^ {r_{max}}$ \Comment{Median is taken coordinatewise}
+\State {\bf If~} $|w_f|>\nu$ {\bf then~} $L'\gets L'\cup \{f\}$
+\EndFor
+\State \textbf{return} $w_{L'}$
+\EndProcedure 
+\end{algorithmic}
+\end{algorithm}
+
+\begin{lemma}[$\ell_1/\ell_2$ bounds on estimation quality]\label{lm:estimate-l1l2}
+For any $\e\in (0, 1]$, any $x, \chi\in \C^n, x'=x-\chi$, any $L\subseteq \nsq$, any integer $k$ and any set $S\subseteq \nsq, |S|\leq 2k$ the following conditions hold. If $\nu\geq ||(x-\chi)_S||_1/k$ and $\mu^2\geq ||(x-\chi)_{\nsq\setminus S}||_2^2/k$, then the output $w$ of \Call{EstimateValues}{$\hat x, \chi, L, k, \e, \nu, r_{max}$} satisfies the following bounds if $r_{max}$ is larger than an absolute constant.
+
+For each $i\in L$ 
+\begin{description}
+\item[(1)] $\prob[|w_i- x'_i|>\sqrt{\e \alpha}(\nu+\mu)]<2^{-\Omega(r_{max})}$;
+\item[(2)] $\expect\left[\left||w_i- x'_i|-\sqrt{\e \alpha}(\nu+\mu)\right|_+\right]\leq \sqrt{\e\alpha}(\nu+\mu)2^{-\Omega(r_{max})}$;
+\item[(3)] $\expect\left[\left||w_i-x'_i|^2-\e \alpha(\nu+\mu)^2\right|_+\right]\leq 2^{-\Omega(r_{max})}\e(\nu^2+\mu^2)$.
+\end{description}
+The sample complexity is bounded by $\frac1{\e}2^{O(d^2)} k r_{max}$. The runtime is bounded by $2^{O(d^2)}\frac1{\e}k \log^{d+1} N r_{max}$.
+\end{lemma}
+\begin{proof}
+We analyze  the vector $u_{r} \gets \Call{HashToBins}{\hat x, \chi, (H_r, z_r)}$ using the approximate linearity of \textsc{HashToBins} given by Lemma~\ref{lm:linearity} (see Appendix~\ref{app:A}).  Writing $x'=x'_S+x'_{\nsq\setminus S}$, we let 
+$$
+u^{head}_r:=\Call{HashToBins}{\widehat{x_S}, \chi_S, (H_r, z_r)}\text{~~~and~~~}u^{tail}_r:=\Call{HashToBins}{\widehat{x_{\nsq\setminus S}}, \chi_{\nsq\setminus S}, (H_r, z_r)}
+$$
+we apply Lemma~\ref{lm:hashing}, {\bf (1)} to the first vector, obtaining 
+\begin{equation}\label{eq:ig34gwgt43tUf}
+\expect_{H_r, z_r}[\abs{G_{o_i(i)}^{-1}\omega^{-z_r^T\Sigma i}u^{head}_{h(i)} - (x'_S)_i}]\leq \GS\cdot C^d ||x_S||_1/B+\mu/N^2
+\end{equation} 
+Similarly applying Lemma~\ref{lm:hashing}, {\bf (2)} and {\bf (3)} to the $u^{tail}$, we get
+\begin{equation*}
+\expect_{H_r, z_r}[\abs{G_{o_i(i)}^{-1}\omega^{-z_r^T\Sigma i}u^{tail}_{h_r(i)} - (x'_{\nsq\setminus S})_i}^2]\leq \GSS\cdot C^d \norm{2}{x'_{\nsq\setminus S}}^2/B,
+\end{equation*} 
+which by Jensen's inequality implies 
+\begin{equation}\label{eq:02ht42jggdsgfgxcc}
+\begin{split}
+\expect_{H_r, z_r}[\abs{G_{o_i(i)}^{-1}\omega^{-a_r^T\Sigma i}u^{tail}_{h(i)} - ((x-\chi)_{\nsq\setminus S})_i}]&\leq \GS\cdot C^d \sqrt{\norm{2}{x_{\nsq\setminus S}}^2/B}\\
+&\leq \GS\cdot C^d \mu\cdot \sqrt{k/B}.
+\end{split}
+\end{equation}
+ Putting~\eqref{eq:ig34gwgt43tUf} and ~\eqref{eq:02ht42jggdsgfgxcc} together and using Lemma~\ref{lm:linearity}, we get 
+\begin{equation}\label{eq:02ht42jggdsggggrg344c}
+\expect_{H_r, z_r}[\abs{G_{o_i(i)}^{-1}\omega^{-z_r^T\Sigma i}u_{h(i)} - (x-\chi)_i}]\leq \GS\cdot C^d (||x_S||_1/B+\mu \cdot \sqrt{k/B}).
+\end{equation}
+We hence get by Markov's inequality together with the choice $B=\GT\cdot k/(\e \alpha^{2d})$ in \textsc{EstimateValues} (see Algorithm~\ref{alg:est})
+\begin{equation}\label{eq:geropghj3g34t}
+\prob_{H_r, z_r}[\abs{G_{o_i(i)}^{-1}\omega^{-z_r^T\Sigma i}u_{h(i)} - (x-\chi)_i}>\frac1{2}\sqrt{\e \alpha}(\nu+\mu)]\leq (C\alpha)^{d/2}.
+\end{equation}
+The rhs is smaller than $1/10$ as long as $\alpha$ is smaller than an absolute constant. 
+
+Since $w_i$ is obtained by taking the median in real and imaginary components, we get by Lemma~\ref{lm:median-est}
+$$
+|w_i-x_i'|\leq 2\text{median}(|w^1_i-x'_i|, \ldots, |w^{r_{max}}_i-x'_i|).
+$$
+
+By ~\eqref{eq:geropghj3g34t} combined with Lemma~\ref{lm:quant-exp} with $\gamma=1/10$ we thus have
+$$
+\prob_{\{H_r, z_r\}}[|w_i-x'_i|>\sqrt{\e \alpha}(\nu+\mu)]<2^{-\Omega(r_{max})}.
+$$
+This establishes {\bf (1)}. {\bf (2)} follows similarly by applying the first bound from Lemma~\ref{lm:quant-exp} with $\gamma=1/2$ to random variables $X_r=|w^r_i-x_i|, r=1,\ldots, r_{max}$ and $Y=|w_i-x_i|$.
+The third claim of the lemma follows analogously.
+
+The sample and runtime bounds follow by Lemma~\ref{l:hashtobins} and Lemma~\ref{l:semiequi1} by the choice of parameters.
+\end{proof}
+
+
+\if 0
+\begin{lemma}\label{lm:estimate}
+Let $x, \chi\in \C^n, x'=x-\chi$, let $S\subseteq \nsq, |S|\leq 2k/\e$ be such that $||x_S||_1\leq \nu\cdot k$, and let $\mu^2=\e \err_k^2(x)/k$.
+Consider a call to \Call{EstimateValues}{$\hat x, \chi, L, k, \e, \nu, r_{max}, m$}, and let $w_i$ denote the final output. 
+
+If $\nu=\infty$ (no thresholding), then for each $i\in L$ the estimates $w_i$ satisfy the following bounds for sufficiently large $r_{max}$:
+\begin{enumerate}
+\item $\prob[|w_i- x'_i|>\sqrt{\alpha}(\nu+\mu)]<2^{-\Omega(r_{max})}$;
+\if 0
+\item $\expect[|w_i- x'_i|\cdot \mathbf{1}_{|w_i- x'_i|>\sqrt{\alpha}\mu}]\leq 2^{-\Omega(r_{max})}\mu$;
+\item $\expect[|w_i-x'_i|^2| \cdot \mathbf{1}_{| w_i- x'_i|^2>\sqrt{\alpha}\mu^2}]\leq 2^{-\Omega(r_{max})}\mu^2$.
+\fi
+\end{enumerate}
+The sample complexity is bounded by $2^{O(d^2)}\frac1{\e} k r_{max}$. The runtime complexity is bounded by $2^{O(d^2)}\frac1{\e}k \log^{d+1} N r_{max}$.
+\end{lemma}
+\begin{proof}
+Consider an element $i\in S$. By Lemma~\ref{lm:hashing}, (4) we have
+$$
+\prob_{\Sigma, q, a}[|w_i-x'_i|< \alpha^{d/2}C^d (\mu+\e\norm{1}{x'_S}/k)]\geq 1-O(\sqrt{\alpha}),
+$$
+so for sufficiently small constant $\alpha$ one has 
+$$
+\prob_{\Sigma, q, a}[|w_i-x'_i|<O(\sqrt{\alpha})(\nu+\mu)]\geq 3/4.
+$$
+
+Since $w_i$ is obtained by taking the median, we get by Lemma~\ref{lm:median-est}
+$$
+|w_i-x'_i|\leq \text{median}(
+$$
+
+Lemma~\ref{lm:quant-01} that 
+$$
+\prob_{\Sigma_r, q_r, a_r, r=1,\ldots, r_{max}}[|w_i-x_i|>O(\sqrt{\alpha})(\nu+\mu)]<2^{-\Omega(r_{max})}.
+$$
+The second and third bounds follow similarly.
+
+The sample and runtime bounds follow by Lemma~\ref{l:hashtobins} and Lemma~\ref{l:semiequi1} by the choice of parameters.
+\end{proof}
+\fi 
+
+\subsection{Properties of \textsc{HashToBins}}\label{sec:hash2bins}
+\begin{algorithm}
+\caption{Hashing using Fourier samples (analyzed in Lemma~\ref{l:hashtobins})}\label{alg:hash2bins} 
+\begin{algorithmic}[1] 
+\Procedure{HashToBins}{$\wh{x}, \chi, (H, a)$}
+\State $G \gets$ filter with $B$ buckets, $\fc=2d$\Comment{$H=(\pi, B, F), \pi=(\Sigma q)$}
+\State Compute $y'=\hat G\cdot P_{\Sigma, a, q}(\hat x-\hat \chi')$,
+for some $\chi'$ with $\norm{\infty}{\wh{\chi}-\wh{\chi}'}<N^{-\Omega(c)}$\Comment{$c$ is a large constant}
+%\Comment{Have $\norm{0}{y'} \lesssim B \log R$}
+\State Compute $u_j = \sqrt{N}\F^{-1}(y')_{(n/b)\cdot j}$ for $j \in [b]^d$
+\State {\bf return} $u$
+\EndProcedure 
+\end{algorithmic}
+\end{algorithm}
+
+\begin{lemma}\label{l:hashtobins}
+  \Call{HashToBins}{$\wh{x}, \chi, (H, a)$} computes
+  $u$ such that for any $i \in [n]$,
+  \[
+  u_{h(i)} = \Delta_{h(i)} + \sum_j G_{o_i(j)}(x - \chi)_j \omega^{a^T\Sigma j}
+  \]
+  where $G$ is the filter defined in section~\ref{sec:prelim}, and $\Delta_{h(i)}^2 \leq \norm{2}{\chi}^2
+  / ((R^*)^2N^{11})$ is a negligible error term.  It takes $O(B \fc^d)$
+  samples, and if $\norm{0}{\chi} \lesssim B$, it takes $O(2^{O(d)}\cdot B\log^d N)$ time.
+\end{lemma}
+\begin{proof}
+  Let $S = \supp(\wh{G})$, so $\abs{S} \lesssim (2\fc)^d\cdot B$ and in fact
+  $S \subset \B^\infty_{\fc \cdot B^{1/d}}(0)$.
+
+  First, \textsc{HashToBins} computes
+ \[
+  y'=\wh{G} \cdot P_{\Sigma, a, q}\wh{x - \chi'}=\wh{G} \cdot P_{\Sigma, a, q}\wh{x - \chi}+\wh{G} \cdot P_{\Sigma, a, q}\wh{\chi - \chi'},
+  \]
+  for an approximation $\wh{\chi}'$ to $\wh{\chi}$.  This is efficient
+  because one can compute $(P_{\Sigma, a, q}\wh{x})_S$ with
+  $O(\abs{S})$ time and samples, and $P_{\Sigma, a, q}\wh{\chi}'_S$ is
+  easily computed from $\wh{\chi}'_T$ for $T = \{\Sigma(j-b) : j \in
+  S\}$.  Since $T$ is an image of an $\ell_\infty$ ball under a linear transformation and $\chi$ is $B$-sparse, by
+Corollary~\ref{c:semiequi1}, an approximation $\wh{\chi}'$ to
+  $\wh{\chi}$ can be computed in $O(2^{O(d)}\cdot B\log^d N)$ time such
+  that $|\wh{\chi}_i-\wh{\chi}'_i|<N^{-\Omega(c)}$
+  for all $i\in T$. Since $\norm{1}{\wh{G}} \leq
+  \sqrt{N}\norm{2}{\wh{G}} = \sqrt{N}\norm{2}{G} \leq N
+  \norm{\infty}{G} \leq N$ and $\wh{G}$ is $0$ outside $S$, this
+  implies that
+  \begin{equation}\label{eq:gh-norm}
+    \norm{2}{\wh{G}\cdot P_{\Sigma, a, q}(\wh{\chi-\chi'})}\leq \norm{1}{\wh{G}}\max_{i \in S} \abs{(P_{\Sigma, a, q}(\wh{\chi-\chi'}))_i} = \norm{1}{\wh{G}}\max_{i \in T} \abs{(\wh{\chi-\chi'})_i} \leq N^{-\Omega(c)}
+  \end{equation}
+  as long as $c$ is larger than an absolute constant. 
+  Define $\Delta$ by $\wh{\Delta}=\sqrt{N}\wh{G}\cdot P_{\Sigma, a, q}(\wh{\chi-\chi'})$.  Then \textsc{HashToBins} computes $u \in
+  \C^B$ such that for all $i$,
+  \[
+  u_{h(i)} =
+  \sqrt{N}\F^{-1}(y')_{(n/b)\cdot h(i)}=\sqrt{N}\F^{-1}(y)_{(n/b)\cdot h(i)}+\Delta_{(n/b)\cdot h(i)},
+  \]
+  for $y = \wh{G} \cdot P_{\Sigma, a, q}\wh{x - \chi}$.  This
+  computation takes $O(\norm{0}{y'} + B \log B) \lesssim B \log (N)$
+  time.  We have by the convolution theorem that
+  \begin{align*}
+    u_{h(i)} &= \sqrt{N}\F^{-1}(\wh{G} \cdot P_{\Sigma, a, q}\wh{(x - \chi)})_{(n/b)\cdot h(i)} + \Delta_{(n/b)\cdot h(i)}\\
+    &= (G * \F(P_{\Sigma, a, q}\wh{(x - \chi)}))_{(n/b)\cdot h(i)}+\Delta_{(n/b)\cdot h(i)}\\
+    &= \sum_{\pi(j) \in [N]} G_{(n/b)\cdot h(i)-\pi(j)} \F(P_{\Sigma, a, q}\wh{(x - \chi)})_{\pi(j)}+\Delta_{(n/b)\cdot h(i)}\\
+    &= \sum_{i \in [N]} G_{o_i(j)} (x - \chi)_{j} \omega^{a^T\Sigma j}+\Delta_{(n/b)\cdot h(i)}
+  \end{align*}
+  where the last step is the definition of $o_i(j)$ and Lemma~\ref{lm:perm}.
+  
+Finally, we note that 
+\[
+|\Delta_{(n/b)\cdot h(i)}|\leq \norm{2}{\Delta} =\norm{2}{\wh{\Delta}}=\sqrt{N}\norm{2}{\wh{G}\cdot P_{\Sigma, a, q}(\wh{\chi-\chi'})}\leq N^{-\Omega(c)},
+\]
+ where we used \eqref{eq:gh-norm} in the last step. This completes the proof.
+\end{proof}
+
+
+\if 0
+\subsection{Convolution theorem and Parseval's identity}
+\begin{fact}[Convolution theorem]\label{f:convolution}
+For $f, g\in \C^n$ one has $\widehat{f\cdot g}=\widehat f * \widehat g$. 
+\end{fact}
+\begin{proof}
+\begin{equation*}
+\begin{split}
+\widehat {(f\cdot g)}_{j}&=\frac1{n}\sum_{i\in [n]}  \omega^{ij} f(i)g(i)=\frac1{n}\sum_{i\in [n]}  \omega^{ij} \left(\sum_{a\in [n]}\hat f(a)\omega^{-ai}\sum_{b\in [n]}\hat g(b)\omega^{-bi}\right)\\
+&=\frac1{n}\sum_{i\in [n]}  \omega^{ij} \left(\sum_{a, b\in [n]}\hat f(a) \hat g(b)\omega^{-(a+b)i}\right)\\
+&=\frac1{n}\left(\sum_{a, b\in [n]}\hat f(a) \hat g(b)\sum_{i\in [n]}  \omega^{(j-(a+b))i}\right)\\
+&=\sum_{a\in [n]}\hat f(a) \hat g(j-a)=f*g
+\end{split}
+\end{equation*}
+\end{proof}
+
+\begin{fact}[Parseval's identity]\label{f:parseval}
+For $f\in \C^n$ one has $||\widehat{f}||_2^2=\frac1{n}||f||_2^2$.
+\end{fact}
+\begin{proof}
+We calculate the norm of the forward Fourier transform matrix. The dot product of two rows is
+$$
+\sum_{i\in [n]} \left(\frac1{n}\omega^{ia}\right)\left(\frac1{n}\omega^{ib}\right)=\frac1{n}\mathbf{1}_{a=b}.
+$$
+Thus, the norm is $1/\sqrt{n}$, implying that $||\widehat{f}||_2=(1/\sqrt{n}) ||f||_2$, and hence the result.
+\end{proof}
+\fi
+
+\subsection{Lemmas on quantiles and the median estimator}
+In this section we prove several lemmas   useful for analyzing the concentration properties of the median estimate. We will use 
+
+\begin{theorem}[Chernoff bound]\label{thm:chernoff}
+Let $X_1,\ldots, X_n$ be independent $0/1$ Bernoulli random variables with $\sum_{i=1}^n \expect[X_i]=\mu$. Then for any $\delta>1$ one has $\prob[\sum_{i=1}^n X_i>(1+\delta)\mu]<e^{-\delta \mu/3}$.
+\end{theorem}
+
+\if 0
+\begin{lemma}\label{lm:median}
+For any constant $\mu>0$ and any sequence of nonnegative independent random variables  $X_1,\ldots, X_n\geq 0$ with $\expect[X_i] \leq \mu$ for all $i=1,\ldots, n$,  the following conditions hold. If $Y:=\text{median} (X_1,\ldots, X_n)$, then for any $t\geq 4$ one has
+$\prob[Y>t \mu]<2^{-\Omega(n)}$. Furthermore, for any $t\geq 4$ one has 
+$\expect[Y\cdot \mathbf{1}_{Y\geq t\cdot \mu}]=O(\mu\cdot 2^{-\Omega(n)})$.
+\end{lemma}
+\begin{proof}
+For any $t\geq 1$ by Markov's inequality $\prob[X_i>t \mu]\leq 1/t$. Define indicator random variables $Z_i$ by letting $Z_i=1$ if $X_i>t \mu$ and $Z_i=0$ otherwise.
+Then $\prob[Y>t \mu]\leq \prob[\sum_{i=1}^n Z_i\geq n/2]$. At the same time we have 
+\begin{equation}\label{eq:vi34g43g}
+\prob\left[\sum_{i=1}^n Z_i\geq n/2\right]\leq e^{-(t/2-1)n/6}
+\end{equation}
+by Theorem~\ref{thm:chernoff} invoked with $\delta=\prob[Z_i=1]^{-1}-1\geq t/2-1$ (note that we required $t$ to be larger than $4$ to be able to use the simplified version of the Chernoff bound provided by Theorem~\ref{thm:chernoff}; one can see that the same result holds for any $t>2$ bounded away from $2$ by a constant). This proves the first claim.
+
+For the second claim we have
+\begin{equation*}
+\begin{split}
+\expect[Y\cdot \mathbf{1}_{Y\geq t_*\cdot \mu}]&\leq \int_{t^*}^\infty t \mu \cdot \prob[Y\geq t\cdot \mu]dt\\
+&\leq \int_{t^*}^\infty t \mu e^{-(t/2-1)n/6}dt\text{~~~~~~~~~~ (by~\eqref{eq:vi34g43g})}\\
+&\leq e^{-n/6}\int_{t^*}^\infty t \mu e^{-(t/2-2)n/6}dt\\
+&=O(\mu\cdot e^{-n/6})
+\end{split}
+\end{equation*}
+as required.
+\end{proof}
+\fi
+
+\if 0
+\begin{lemma}\label{lm:quant-01}
+Let $X_1,\ldots, X_n\in \{0, 1\}$ be independent random variables with $\expect[X_i] \leq 1/4$ for all $i$. Let $Y:=\text{median} (X_1,\ldots, X_n)$. Then 
+$\prob[Y>0]<2^{-\Omega(n)}$.
+\end{lemma}
+\begin{proof}
+Follows directly by Chernoff bounds.
+\end{proof}
+\fi
+
+\begin{lemma}[Error bounds for the median estimator]\label{lm:median-est}
+Let $X_1,\ldots, X_n\in \C$ be independent random variables. Let $Y:=\text{median} (X_1,\ldots, X_n)$, where the median is applied coordinatewise. Then for any $a\in \C$ one has
+\if 0
+\begin{equation*}
+\begin{split}
+|Y-a|^2\leq &\text{median} ((\text{re}(X_1)-\text{re}(a))^2,\ldots, (\text{re}(X_n)-\text{re}(a))^2)\\
+&+\text{median} ((\text{im}(X_1)-\text{im}(a))^2,\ldots, (\text{im}(X_n)-\text{im}(a))^2)\\
+|Y-a|\leq &\text{median}(|\text{re}(X_1)-\text{re}(a)|,\ldots, |\text{re}(X_n)-\text{re}(a)|)\\
+&+\text{median} (|\text{im}(X_1)-\text{im}(a)|,\ldots, |\text{im}(X_n)-\text{im}(a)|).
+\end{split}
+\end{equation*}
+\fi
+\begin{equation*}
+\begin{split}
+|Y-a|\leq &2\text{median}(|X_1-a|,\ldots, |X_n-a|)\\
+= &2\sqrt{\text{median}(|X_1-a|^2,\ldots, |X_n-a|^2)}.\\
+\end{split}
+\end{equation*}
+
+\end{lemma}
+\begin{proof}
+Let $i, j\in [n]$ be such that $Y=\text{re}(X_i)+\mathbf{i}\cdot \text{im}(X_j)$. 
+Suppose that $\text{re}(X_i)\geq \text{re}(a)$ (the other case is analogous). Then since $\text{re}(X_i)$  is the median in the list $(\text{re}(X_1),\ldots, \text{re}(X_n))$ by definition of $Y$, we have that at least half of $X_s, s=1,\ldots, n$ satisfy $|\text{re}(X_s)-\text{re}(a)|>|\text{re}(X_i)-\text{re}(a)|$, and hence 
+\begin{equation}\label{eq:25855ughgf-1}
+|\text{re}(X_i)-\text{re}(a)|\leq \text{median}(|\text{re}(X_1)-\text{re}(a)|,\ldots, |\text{re}(X_n)-\text{re}(a)|).
+\end{equation}
+Since squaring a list of numbers preserves the order, we also have
+\begin{equation}\label{eq:25855ughgf-2}
+(\text{re}(X_i)-\text{re}(a))^2\leq \text{median}((\text{re}(X_1)-\text{re}(a))^2,\ldots, (\text{re}(X_n)-\text{re}(a))^2).
+\end{equation}
+
+ A similar argument holds for the imaginary part.
+Combining
+$$
+|Y-a|^2=(\text{re}(a)-\text{re}(X_i))^2+(\text{im}(a)-\text{im}(X_i))^2
+$$
+with~\eqref{eq:25855ughgf-1} gives 
+\begin{equation*}
+\begin{split}
+|Y-a|^2\leq &\text{median} ((\text{re}(X_1)-\text{re}(a))^2,\ldots, (\text{re}(X_n)-\text{re}(a))^2)\\
+&+\text{median} ((\text{im}(X_1)-\text{im}(a))^2,\ldots, (\text{im}(X_n)-\text{im}(a))^2)\\
+\end{split}
+\end{equation*}
+Noting that 
+$$
+|Y-a|=((\text{re}(a)-\text{re}(X_i))^2+(\text{im}(a)-\text{im}(X_i))^2)^{1/2}\leq |\text{re}(a)-\text{re}(X_i)|+|\text{im}(a)-\text{im}(X_i)|
+$$
+and using ~\eqref{eq:25855ughgf-2}, we also get 
+\begin{equation*}
+\begin{split}
+|Y-a|\leq &\text{median}(|\text{re}(X_1)-\text{re}(a)|,\ldots, |\text{re}(X_n)-\text{re}(a)|)\\
+&+\text{median} (|\text{im}(X_1)-\text{im}(a)|,\ldots, |\text{im}(X_n)-\text{im}(a)|).
+\end{split}
+\end{equation*}
+The results of the lemma follow by noting that $|\text{re}(X)-\text{re}(a)|\leq |X-a|$ and $|\text{im}(X)-\text{im}(a)|\leq |X-a|$.
+\end{proof}
+
+
+\begin{lemma}\label{lm:quant-exp}
+Let $X_1,\ldots, X_n\geq 0$ be independent random variables with $\expect[X_i]\leq \mu$ for each $i=1,\ldots, n$. Then for any $\gamma\in (0, 1)$ if $Y\leq\quant^{\gamma} (X_1,\ldots, X_n)$,
+then 
+$$
+\expect[\left|Y-4\mu/\gamma\right|_+]\leq (\mu/\gamma) \cdot 2^{-\Omega(n)}
+$$
+and 
+$$
+\prob[Y\geq 4\mu/\gamma]\leq 2^{-\Omega(n)}.
+$$
+\end{lemma}
+\begin{proof}
+%The proof is analogous to the proof of Lemma~\ref{lm:median}.
+
+For any $t\geq 1$ by Markov's inequality $\prob[X_i>t \mu/\gamma]\leq \gamma/t$. Define indicator random variables $Z_i$ by letting $Z_i=1$ if $X_i>t \mu/\gamma$ and $Z_i=0$ otherwise. Note that $\expect[Z_i]\leq \gamma/t$ for each $i$.
+Then since $Y$ is bounded above by the $\gamma n$-th largest of $\{X_i\}_{i=1}^n$, we have $\prob[Y>t \mu/\gamma]\leq \prob[\sum_{i=1}^n Z_i\geq \gamma n]$. As $\expect[Z_i]\leq \gamma/t$, this can only happen if the sum $\sum_{i=1}^n Z_i$ exceeds expectation by a factor of at least $t$. We now apply Theorem~\ref{thm:chernoff} to the sequence $Z_i,i=1,\ldots, n$. We have
+\begin{equation}\label{eq:vi34g43qqg}
+\prob\left[\sum_{i=1}^n Z_i\geq \gamma n\right]\leq e^{-(t-1)\gamma n/3}
+\end{equation}
+by Theorem~\ref{thm:chernoff} invoked with $\delta=t-1$. The assumptions of Theorem~\ref{thm:chernoff} are satisfied as long as $t> 2$.  This proves the second claim we have $t=4$ in that case.
+
+For the first claim we have
+\begin{equation*}
+\begin{split}
+\expect[Y\cdot \mathbf{1}_{Y\geq 4\cdot \mu/\gamma}]&\leq \int_{4}^\infty t \mu \cdot \prob[Y\geq t\cdot \mu/\gamma]dt\\
+&\leq \int_{4}^\infty t \mu e^{-(t-1)n/3}dt\text{~~~~~~~~~~ (by~\eqref{eq:vi34g43qqg})}\\
+&\leq e^{-n/3}\int_{4}^\infty t \mu e^{-(t-2)n/3}dt\\
+&=O(\mu\cdot e^{-n/3})
+\end{split}
+\end{equation*}
+as required.
+\end{proof}
+
+

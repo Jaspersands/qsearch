@@ -1,0 +1,1322 @@
+{
+  "action_cluster_count": 4,
+  "action_clusters": [
+    {
+      "affected_candidate_count": 2,
+      "affected_candidates": [
+        "DHS-GOWERS-SIEVE",
+        "HYP-LIT-HIDDEN-SHIFT-SIEVE"
+      ],
+      "kill_criterion": "Success collapses in the scaling tail, covers only polynomially many explicit candidates, uses target-dependent or measured coins, or leaves paired quantum workspaces with vanishing overlap.",
+      "linked_work_items": [
+        "WORK-DEBT-DHS-GOWERS-SIEVE-PO-DEQUANTIZATION-DCP-DENSITY-ONE-PARTIAL-SUBSET-SUM-SOLVER",
+        "WORK-DEBT-HYP-LIT-HIDDEN-SHIFT-SIEVE-PO-DEQUANTIZATION-DCP-DENSITY-ONE-PARTIAL-SUBSET-SUM-SOLVER",
+        "WORK-DEBT-DHS-GOWERS-SIEVE-PO-FALSIFIERS-DCP-DENSITY-ONE-PARTIAL-SUBSET-SUM-SOLVER",
+        "WORK-DEBT-HYP-LIT-HIDDEN-SHIFT-SIEVE-PO-FALSIFIERS-DCP-DENSITY-ONE-PARTIAL-SUBSET-SUM-SOLVER"
+      ],
+      "priority_score": 160,
+      "recommended_command": "python qsearch.py dcp-subset-sum-bridge && python qsearch.py dcp-coherent-matching && python qsearch.py dcp-subset-sum-randomize && python qsearch.py dcp-odd-unit-geometry && python qsearch.py dcp-subset-sum-resource-frontier && python qsearch.py dcp-subset-sum-lattice && python qsearch.py dcp-subset-sum-two-adic && python qsearch.py dcp-subset-sum-carry-anf && python qsearch.py dcp-subset-sum-low-bit-bdd && python qsearch.py dcp-subset-sum-conditioned-quotient && python qsearch.py dcp-subset-sum-carry-slice-lattice && python qsearch.py dcp-subset-sum-target-distribution && python qsearch.py dcp-subset-sum-synthesize && python qsearch.py dcp-decoder-frontier && python qsearch.py proofs && python qsearch.py mutate",
+      "success_criterion": "At least one source-contract row has a uniform inverse-polynomial legal-input coverage theorem, polynomial time and memory, verified witnesses, and a deterministic, shared-seed randomized, or algorithm-specific coherent interface.",
+      "work_type": "dcp-density-one-partial-subset-sum-solver"
+    },
+    {
+      "affected_candidate_count": 8,
+      "affected_candidates": [
+        "DHS-GOWERS-SIEVE",
+        "HYP-LIT-HIDDEN-SHIFT-SIEVE",
+        "CODE-COSET-COLLECTIVE",
+        "HYP-LIT-COSET-OBSERVABLES",
+        "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
+        "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
+        "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
+        "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET"
+      ],
+      "kill_criterion": "Every route retains a blocked family-specialization or model-preservation edge.",
+      "linked_work_items": [
+        "WORK-DEBT-DHS-GOWERS-SIEVE-PO-REDUCTION-REDUCTION-ROUTE-CERTIFICATION",
+        "WORK-DEBT-HYP-LIT-HIDDEN-SHIFT-SIEVE-PO-REDUCTION-REDUCTION-ROUTE-CERTIFICATION",
+        "WORK-DEBT-CODE-COSET-COLLECTIVE-PO-REDUCTION-REDUCTION-ROUTE-CERTIFICATION",
+        "WORK-DEBT-HYP-LIT-COSET-OBSERVABLES-PO-REDUCTION-REDUCTION-ROUTE-CERTIFICATION",
+        "WORK-DEBT-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-PO-REDUCTION-REDUCTION-ROUTE-CERTIFICATION",
+        "WORK-DEBT-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-PO-REDUCTION-REDUCTION-ROUTE-CERTIFICATION",
+        "WORK-DEBT-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-PO-REDUCTION-REDUCTION-ROUTE-CERTIFICATION",
+        "WORK-DEBT-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-PO-REDUCTION-REDUCTION-ROUTE-CERTIFICATION"
+      ],
+      "priority_score": 158,
+      "recommended_command": "python qsearch.py reduction-contracts && python qsearch.py reductions && python qsearch.py conjectures && python qsearch.py proofs",
+      "success_criterion": "At least one natural-problem route for the candidate has status complete-certified-route.",
+      "work_type": "reduction-route-certification"
+    },
+    {
+      "affected_candidate_count": 6,
+      "affected_candidates": [
+        "CODE-COSET-COLLECTIVE",
+        "HYP-LIT-COSET-OBSERVABLES",
+        "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
+        "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
+        "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
+        "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET"
+      ],
+      "kill_criterion": "Rows are rejected or classified as equivalent/no-hard controls by code_frontier_triage.py.",
+      "linked_work_items": [
+        "WORK-DEBT-CODE-COSET-COLLECTIVE-PO-DEQUANTIZATION-CODE-FAMILY-HARDENING",
+        "WORK-DEBT-HYP-LIT-COSET-OBSERVABLES-PO-DEQUANTIZATION-CODE-FAMILY-HARDENING",
+        "WORK-DEBT-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-PO-DEQUANTIZATION-CODE-FAMILY-HARDENING",
+        "WORK-DEBT-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-PO-DEQUANTIZATION-CODE-FAMILY-HARDENING",
+        "WORK-DEBT-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-PO-DEQUANTIZATION-CODE-FAMILY-HARDENING",
+        "WORK-DEBT-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-PO-DEQUANTIZATION-CODE-FAMILY-HARDENING",
+        "WORK-DEBT-CODE-COSET-COLLECTIVE-PO-FALSIFIERS-CODE-FAMILY-HARDENING",
+        "WORK-DEBT-HYP-LIT-COSET-OBSERVABLES-PO-FALSIFIERS-CODE-FAMILY-HARDENING",
+        "WORK-DEBT-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-PO-FALSIFIERS-CODE-FAMILY-HARDENING",
+        "WORK-DEBT-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-PO-FALSIFIERS-CODE-FAMILY-HARDENING",
+        "WORK-DEBT-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-PO-FALSIFIERS-CODE-FAMILY-HARDENING",
+        "WORK-DEBT-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-PO-FALSIFIERS-CODE-FAMILY-HARDENING"
+      ],
+      "priority_score": 140,
+      "recommended_command": "python qsearch.py code-cyclic-search && python qsearch.py code-bch-search && python qsearch.py code-goppa-search && python qsearch.py code-tanner-search && python qsearch.py code-rm-search && python qsearch.py code-pg-search && python qsearch.py code-qc-search && python qsearch.py code-qc-canonicalize && python qsearch.py code-qc-info-resolve && python qsearch.py code-low-weight && python qsearch.py code-schur-filtration && python qsearch.py code-closure-attack && python qsearch.py code-triage && python qsearch.py mutate",
+      "success_criterion": "A non-equivalent code family row survives code_frontier_triage.py as proof debt rather than rejection or equivalent control.",
+      "work_type": "code-family-hardening"
+    },
+    {
+      "affected_candidate_count": 1,
+      "affected_candidates": [
+        "DHS-GOWERS-SIEVE"
+      ],
+      "kill_criterion": "The falsification test finds a legal classical attack or no-go reduction.",
+      "linked_work_items": [
+        "WORK-LEMMA-LEMMA-DHS-GOWERS-SIEVE-CLASSICAL-LOWER-BOUND",
+        "WORK-LEMMA-LEMMA-DHS-GOWERS-SIEVE-DCP-AFFINE-BDD-CELL-SOURCE-LAW",
+        "WORK-LEMMA-LEMMA-DHS-GOWERS-SIEVE-DCP-AFFINE-CVP-SOURCE-COVERAGE",
+        "WORK-LEMMA-LEMMA-DHS-GOWERS-SIEVE-DCP-AFFINE-TRANSPORT-WITNESS-REDUCTION",
+        "WORK-LEMMA-LEMMA-DHS-GOWERS-SIEVE-DCP-ALL-FIXED-ORDER-SOURCE-MOMENT-OBSTRUCTION",
+        "WORK-LEMMA-LEMMA-DHS-GOWERS-SIEVE-DCP-CARRY-SLICED-RELATION-SOURCE-COVERAGE"
+      ],
+      "priority_score": 95,
+      "recommended_command": "python qsearch.py query-lower-bounds && python qsearch.py character-query-info && python qsearch.py character-lower-bound && python qsearch.py character-moments && python qsearch.py query-models && python qsearch.py baselines && python qsearch.py proofs",
+      "success_criterion": "Lemma is either proved with explicit assumptions or replaced by a negative result.",
+      "work_type": "lemma-formalization"
+    }
+  ],
+  "created_at": "2026-07-15T07:45:31.942295+00:00",
+  "items": [
+    {
+      "blocker": "code-equivalence-invariant-collapse",
+      "candidate_id": "DHS-GOWERS-SIEVE",
+      "claim": "PO-DEQUANTIZATION",
+      "dependencies": [
+        "dcp_subset_sum_bridge.py",
+        "dcp_subset_sum_lattice_search.py",
+        "dcp_subset_sum_two_adic_search.py",
+        "dcp_subset_sum_resource_frontier.py",
+        "dcp_subset_sum_carry_anf.py",
+        "dcp_subset_sum_solver_synthesis.py",
+        "dcp_subset_sum_low_bit_bdd.py",
+        "dcp_subset_sum_conditioned_quotient.py",
+        "dcp_subset_sum_carry_slice_lattice.py",
+        "dcp_subset_sum_target_distribution.py",
+        "dcp_coherent_matching_interface.py",
+        "dcp_subset_sum_random_self_reduction.py",
+        "dcp_odd_unit_orbit_geometry.py",
+        "dcp_decoder_frontier.py",
+        "proof_tracker.py",
+        "mutation_engine.py"
+      ],
+      "id": "WORK-DEBT-DHS-GOWERS-SIEVE-PO-DEQUANTIZATION-DCP-DENSITY-ONE-PARTIAL-SUBSET-SUM-SOLVER",
+      "kill_criterion": "Success collapses in the scaling tail, covers only polynomially many explicit candidates, uses target-dependent or measured coins, or leaves paired quantum workspaces with vanishing overlap.",
+      "linked_artifacts": [
+        "research/reductions/dcp_subset_sum_bridge.json",
+        "research/classical_baselines/dcp_subset_sum_lattice_search.json",
+        "research/classical_baselines/dcp_subset_sum_two_adic_search.json",
+        "research/classical_baselines/dcp_subset_sum_resource_frontier.json",
+        "research/classical_baselines/dcp_subset_sum_carry_anf.json",
+        "research/hypotheses/dcp_subset_sum_solver_synthesis.json",
+        "research/classical_baselines/dcp_subset_sum_low_bit_bdd.json",
+        "research/classical_baselines/dcp_subset_sum_conditioned_quotient.json",
+        "research/classical_baselines/dcp_subset_sum_carry_slice_lattice.json",
+        "research/classical_baselines/dcp_subset_sum_target_distribution.json",
+        "research/reductions/dcp_coherent_matching_interface.json",
+        "research/reductions/dcp_subset_sum_random_self_reduction.json",
+        "research/classical_baselines/dcp_odd_unit_orbit_geometry.json",
+        "research/phase_workbench/dcp_decoder_frontier.json",
+        "research/proof_debt_report.json",
+        "research/mutation_report.json"
+      ],
+      "linked_debts": [
+        "DEBT-DHS-GOWERS-SIEVE-PO-DEQUANTIZATION"
+      ],
+      "priority_score": 160,
+      "recommended_action": "Construct a deterministic or explicit target-independent shared-seed randomized polynomial-time partial solver for random density-one modular subset sum with uniform inverse-polynomial legal-input coverage. For a genuinely quantum relation solver, prove a target-independent decomposition or paired-workspace fidelity.",
+      "recommended_command": "python qsearch.py dcp-subset-sum-bridge && python qsearch.py dcp-coherent-matching && python qsearch.py dcp-subset-sum-randomize && python qsearch.py dcp-odd-unit-geometry && python qsearch.py dcp-subset-sum-resource-frontier && python qsearch.py dcp-subset-sum-lattice && python qsearch.py dcp-subset-sum-two-adic && python qsearch.py dcp-subset-sum-carry-anf && python qsearch.py dcp-subset-sum-low-bit-bdd && python qsearch.py dcp-subset-sum-conditioned-quotient && python qsearch.py dcp-subset-sum-carry-slice-lattice && python qsearch.py dcp-subset-sum-target-distribution && python qsearch.py dcp-subset-sum-synthesize && python qsearch.py dcp-decoder-frontier && python qsearch.py proofs && python qsearch.py mutate",
+      "status": "theory-and-experiment",
+      "success_criterion": "At least one source-contract row has a uniform inverse-polynomial legal-input coverage theorem, polynomial time and memory, verified witnesses, and a deterministic, shared-seed randomized, or algorithm-specific coherent interface.",
+      "work_type": "dcp-density-one-partial-subset-sum-solver"
+    },
+    {
+      "blocker": "code-equivalence-invariant-collapse",
+      "candidate_id": "HYP-LIT-HIDDEN-SHIFT-SIEVE",
+      "claim": "PO-DEQUANTIZATION",
+      "dependencies": [
+        "dcp_subset_sum_bridge.py",
+        "dcp_subset_sum_lattice_search.py",
+        "dcp_subset_sum_two_adic_search.py",
+        "dcp_subset_sum_resource_frontier.py",
+        "dcp_subset_sum_carry_anf.py",
+        "dcp_subset_sum_solver_synthesis.py",
+        "dcp_subset_sum_low_bit_bdd.py",
+        "dcp_subset_sum_conditioned_quotient.py",
+        "dcp_subset_sum_carry_slice_lattice.py",
+        "dcp_subset_sum_target_distribution.py",
+        "dcp_coherent_matching_interface.py",
+        "dcp_subset_sum_random_self_reduction.py",
+        "dcp_odd_unit_orbit_geometry.py",
+        "dcp_decoder_frontier.py",
+        "proof_tracker.py",
+        "mutation_engine.py"
+      ],
+      "id": "WORK-DEBT-HYP-LIT-HIDDEN-SHIFT-SIEVE-PO-DEQUANTIZATION-DCP-DENSITY-ONE-PARTIAL-SUBSET-SUM-SOLVER",
+      "kill_criterion": "Success collapses in the scaling tail, covers only polynomially many explicit candidates, uses target-dependent or measured coins, or leaves paired quantum workspaces with vanishing overlap.",
+      "linked_artifacts": [
+        "research/reductions/dcp_subset_sum_bridge.json",
+        "research/classical_baselines/dcp_subset_sum_lattice_search.json",
+        "research/classical_baselines/dcp_subset_sum_two_adic_search.json",
+        "research/classical_baselines/dcp_subset_sum_resource_frontier.json",
+        "research/classical_baselines/dcp_subset_sum_carry_anf.json",
+        "research/hypotheses/dcp_subset_sum_solver_synthesis.json",
+        "research/classical_baselines/dcp_subset_sum_low_bit_bdd.json",
+        "research/classical_baselines/dcp_subset_sum_conditioned_quotient.json",
+        "research/classical_baselines/dcp_subset_sum_carry_slice_lattice.json",
+        "research/classical_baselines/dcp_subset_sum_target_distribution.json",
+        "research/reductions/dcp_coherent_matching_interface.json",
+        "research/reductions/dcp_subset_sum_random_self_reduction.json",
+        "research/classical_baselines/dcp_odd_unit_orbit_geometry.json",
+        "research/phase_workbench/dcp_decoder_frontier.json",
+        "research/proof_debt_report.json",
+        "research/mutation_report.json"
+      ],
+      "linked_debts": [
+        "DEBT-HYP-LIT-HIDDEN-SHIFT-SIEVE-PO-DEQUANTIZATION"
+      ],
+      "priority_score": 160,
+      "recommended_action": "Construct a deterministic or explicit target-independent shared-seed randomized polynomial-time partial solver for random density-one modular subset sum with uniform inverse-polynomial legal-input coverage. For a genuinely quantum relation solver, prove a target-independent decomposition or paired-workspace fidelity.",
+      "recommended_command": "python qsearch.py dcp-subset-sum-bridge && python qsearch.py dcp-coherent-matching && python qsearch.py dcp-subset-sum-randomize && python qsearch.py dcp-odd-unit-geometry && python qsearch.py dcp-subset-sum-resource-frontier && python qsearch.py dcp-subset-sum-lattice && python qsearch.py dcp-subset-sum-two-adic && python qsearch.py dcp-subset-sum-carry-anf && python qsearch.py dcp-subset-sum-low-bit-bdd && python qsearch.py dcp-subset-sum-conditioned-quotient && python qsearch.py dcp-subset-sum-carry-slice-lattice && python qsearch.py dcp-subset-sum-target-distribution && python qsearch.py dcp-subset-sum-synthesize && python qsearch.py dcp-decoder-frontier && python qsearch.py proofs && python qsearch.py mutate",
+      "status": "theory-and-experiment",
+      "success_criterion": "At least one source-contract row has a uniform inverse-polynomial legal-input coverage theorem, polynomial time and memory, verified witnesses, and a deterministic, shared-seed randomized, or algorithm-specific coherent interface.",
+      "work_type": "dcp-density-one-partial-subset-sum-solver"
+    },
+    {
+      "blocker": "code-equivalence-invariant-collapse",
+      "candidate_id": "DHS-GOWERS-SIEVE",
+      "claim": "PO-REDUCTION",
+      "dependencies": [
+        "reduction_theorem_catalog.py",
+        "reduction_contract_audit.py",
+        "reduction_gate.py",
+        "proof_tracker.py",
+        "conjecture_tracker.py"
+      ],
+      "id": "WORK-DEBT-DHS-GOWERS-SIEVE-PO-REDUCTION-REDUCTION-ROUTE-CERTIFICATION",
+      "kill_criterion": "Every route retains a blocked family-specialization or model-preservation edge.",
+      "linked_artifacts": [
+        "research/reductions/theorem_contracts.json",
+        "research/reductions/interface_audit.json",
+        "research/reductions/reduction_ledger.json",
+        "research/registry/reductions.json",
+        "research/proof_debt_report.json"
+      ],
+      "linked_debts": [
+        "DEBT-DHS-GOWERS-SIEVE-PO-REDUCTION"
+      ],
+      "priority_score": 158,
+      "recommended_action": "Compose the exact primary-source theorem contract with a complete candidate edge whose access, group, promise, overhead, uniformity, family coverage, and decoder all pass the gate.",
+      "recommended_command": "python qsearch.py reduction-contracts && python qsearch.py reductions && python qsearch.py conjectures && python qsearch.py proofs",
+      "status": "theory-or-mixed",
+      "success_criterion": "At least one natural-problem route for the candidate has status complete-certified-route.",
+      "work_type": "reduction-route-certification"
+    },
+    {
+      "blocker": "code-equivalence-invariant-collapse",
+      "candidate_id": "HYP-LIT-HIDDEN-SHIFT-SIEVE",
+      "claim": "PO-REDUCTION",
+      "dependencies": [
+        "reduction_theorem_catalog.py",
+        "reduction_contract_audit.py",
+        "reduction_gate.py",
+        "proof_tracker.py",
+        "conjecture_tracker.py"
+      ],
+      "id": "WORK-DEBT-HYP-LIT-HIDDEN-SHIFT-SIEVE-PO-REDUCTION-REDUCTION-ROUTE-CERTIFICATION",
+      "kill_criterion": "Every route retains a blocked family-specialization or model-preservation edge.",
+      "linked_artifacts": [
+        "research/reductions/theorem_contracts.json",
+        "research/reductions/interface_audit.json",
+        "research/reductions/reduction_ledger.json",
+        "research/registry/reductions.json",
+        "research/proof_debt_report.json"
+      ],
+      "linked_debts": [
+        "DEBT-HYP-LIT-HIDDEN-SHIFT-SIEVE-PO-REDUCTION"
+      ],
+      "priority_score": 158,
+      "recommended_action": "Compose the exact primary-source theorem contract with a complete candidate edge whose access, group, promise, overhead, uniformity, family coverage, and decoder all pass the gate.",
+      "recommended_command": "python qsearch.py reduction-contracts && python qsearch.py reductions && python qsearch.py conjectures && python qsearch.py proofs",
+      "status": "theory-or-mixed",
+      "success_criterion": "At least one natural-problem route for the candidate has status complete-certified-route.",
+      "work_type": "reduction-route-certification"
+    },
+    {
+      "blocker": "code-equivalence-invariant-collapse",
+      "candidate_id": "DHS-GOWERS-SIEVE",
+      "claim": "PO-FALSIFIERS",
+      "dependencies": [
+        "dcp_subset_sum_bridge.py",
+        "dcp_subset_sum_lattice_search.py",
+        "dcp_subset_sum_two_adic_search.py",
+        "dcp_subset_sum_resource_frontier.py",
+        "dcp_subset_sum_carry_anf.py",
+        "dcp_subset_sum_solver_synthesis.py",
+        "dcp_subset_sum_low_bit_bdd.py",
+        "dcp_subset_sum_conditioned_quotient.py",
+        "dcp_subset_sum_carry_slice_lattice.py",
+        "dcp_subset_sum_target_distribution.py",
+        "dcp_coherent_matching_interface.py",
+        "dcp_subset_sum_random_self_reduction.py",
+        "dcp_odd_unit_orbit_geometry.py",
+        "dcp_decoder_frontier.py",
+        "proof_tracker.py",
+        "mutation_engine.py"
+      ],
+      "id": "WORK-DEBT-DHS-GOWERS-SIEVE-PO-FALSIFIERS-DCP-DENSITY-ONE-PARTIAL-SUBSET-SUM-SOLVER",
+      "kill_criterion": "Success collapses in the scaling tail, covers only polynomially many explicit candidates, uses target-dependent or measured coins, or leaves paired quantum workspaces with vanishing overlap.",
+      "linked_artifacts": [
+        "research/reductions/dcp_subset_sum_bridge.json",
+        "research/classical_baselines/dcp_subset_sum_lattice_search.json",
+        "research/classical_baselines/dcp_subset_sum_two_adic_search.json",
+        "research/classical_baselines/dcp_subset_sum_resource_frontier.json",
+        "research/classical_baselines/dcp_subset_sum_carry_anf.json",
+        "research/hypotheses/dcp_subset_sum_solver_synthesis.json",
+        "research/classical_baselines/dcp_subset_sum_low_bit_bdd.json",
+        "research/classical_baselines/dcp_subset_sum_conditioned_quotient.json",
+        "research/classical_baselines/dcp_subset_sum_carry_slice_lattice.json",
+        "research/classical_baselines/dcp_subset_sum_target_distribution.json",
+        "research/reductions/dcp_coherent_matching_interface.json",
+        "research/reductions/dcp_subset_sum_random_self_reduction.json",
+        "research/classical_baselines/dcp_odd_unit_orbit_geometry.json",
+        "research/phase_workbench/dcp_decoder_frontier.json",
+        "research/proof_debt_report.json",
+        "research/mutation_report.json"
+      ],
+      "linked_debts": [
+        "DEBT-DHS-GOWERS-SIEVE-PO-FALSIFIERS"
+      ],
+      "priority_score": 150,
+      "recommended_action": "Construct a deterministic or explicit target-independent shared-seed randomized polynomial-time partial solver for random density-one modular subset sum with uniform inverse-polynomial legal-input coverage. For a genuinely quantum relation solver, prove a target-independent decomposition or paired-workspace fidelity.",
+      "recommended_command": "python qsearch.py dcp-subset-sum-bridge && python qsearch.py dcp-coherent-matching && python qsearch.py dcp-subset-sum-randomize && python qsearch.py dcp-odd-unit-geometry && python qsearch.py dcp-subset-sum-resource-frontier && python qsearch.py dcp-subset-sum-lattice && python qsearch.py dcp-subset-sum-two-adic && python qsearch.py dcp-subset-sum-carry-anf && python qsearch.py dcp-subset-sum-low-bit-bdd && python qsearch.py dcp-subset-sum-conditioned-quotient && python qsearch.py dcp-subset-sum-carry-slice-lattice && python qsearch.py dcp-subset-sum-target-distribution && python qsearch.py dcp-subset-sum-synthesize && python qsearch.py dcp-decoder-frontier && python qsearch.py proofs && python qsearch.py mutate",
+      "status": "theory-and-experiment",
+      "success_criterion": "At least one source-contract row has a uniform inverse-polynomial legal-input coverage theorem, polynomial time and memory, verified witnesses, and a deterministic, shared-seed randomized, or algorithm-specific coherent interface.",
+      "work_type": "dcp-density-one-partial-subset-sum-solver"
+    },
+    {
+      "blocker": "code-equivalence-invariant-collapse",
+      "candidate_id": "HYP-LIT-HIDDEN-SHIFT-SIEVE",
+      "claim": "PO-FALSIFIERS",
+      "dependencies": [
+        "dcp_subset_sum_bridge.py",
+        "dcp_subset_sum_lattice_search.py",
+        "dcp_subset_sum_two_adic_search.py",
+        "dcp_subset_sum_resource_frontier.py",
+        "dcp_subset_sum_carry_anf.py",
+        "dcp_subset_sum_solver_synthesis.py",
+        "dcp_subset_sum_low_bit_bdd.py",
+        "dcp_subset_sum_conditioned_quotient.py",
+        "dcp_subset_sum_carry_slice_lattice.py",
+        "dcp_subset_sum_target_distribution.py",
+        "dcp_coherent_matching_interface.py",
+        "dcp_subset_sum_random_self_reduction.py",
+        "dcp_odd_unit_orbit_geometry.py",
+        "dcp_decoder_frontier.py",
+        "proof_tracker.py",
+        "mutation_engine.py"
+      ],
+      "id": "WORK-DEBT-HYP-LIT-HIDDEN-SHIFT-SIEVE-PO-FALSIFIERS-DCP-DENSITY-ONE-PARTIAL-SUBSET-SUM-SOLVER",
+      "kill_criterion": "Success collapses in the scaling tail, covers only polynomially many explicit candidates, uses target-dependent or measured coins, or leaves paired quantum workspaces with vanishing overlap.",
+      "linked_artifacts": [
+        "research/reductions/dcp_subset_sum_bridge.json",
+        "research/classical_baselines/dcp_subset_sum_lattice_search.json",
+        "research/classical_baselines/dcp_subset_sum_two_adic_search.json",
+        "research/classical_baselines/dcp_subset_sum_resource_frontier.json",
+        "research/classical_baselines/dcp_subset_sum_carry_anf.json",
+        "research/hypotheses/dcp_subset_sum_solver_synthesis.json",
+        "research/classical_baselines/dcp_subset_sum_low_bit_bdd.json",
+        "research/classical_baselines/dcp_subset_sum_conditioned_quotient.json",
+        "research/classical_baselines/dcp_subset_sum_carry_slice_lattice.json",
+        "research/classical_baselines/dcp_subset_sum_target_distribution.json",
+        "research/reductions/dcp_coherent_matching_interface.json",
+        "research/reductions/dcp_subset_sum_random_self_reduction.json",
+        "research/classical_baselines/dcp_odd_unit_orbit_geometry.json",
+        "research/phase_workbench/dcp_decoder_frontier.json",
+        "research/proof_debt_report.json",
+        "research/mutation_report.json"
+      ],
+      "linked_debts": [
+        "DEBT-HYP-LIT-HIDDEN-SHIFT-SIEVE-PO-FALSIFIERS"
+      ],
+      "priority_score": 150,
+      "recommended_action": "Construct a deterministic or explicit target-independent shared-seed randomized polynomial-time partial solver for random density-one modular subset sum with uniform inverse-polynomial legal-input coverage. For a genuinely quantum relation solver, prove a target-independent decomposition or paired-workspace fidelity.",
+      "recommended_command": "python qsearch.py dcp-subset-sum-bridge && python qsearch.py dcp-coherent-matching && python qsearch.py dcp-subset-sum-randomize && python qsearch.py dcp-odd-unit-geometry && python qsearch.py dcp-subset-sum-resource-frontier && python qsearch.py dcp-subset-sum-lattice && python qsearch.py dcp-subset-sum-two-adic && python qsearch.py dcp-subset-sum-carry-anf && python qsearch.py dcp-subset-sum-low-bit-bdd && python qsearch.py dcp-subset-sum-conditioned-quotient && python qsearch.py dcp-subset-sum-carry-slice-lattice && python qsearch.py dcp-subset-sum-target-distribution && python qsearch.py dcp-subset-sum-synthesize && python qsearch.py dcp-decoder-frontier && python qsearch.py proofs && python qsearch.py mutate",
+      "status": "theory-and-experiment",
+      "success_criterion": "At least one source-contract row has a uniform inverse-polynomial legal-input coverage theorem, polynomial time and memory, verified witnesses, and a deterministic, shared-seed randomized, or algorithm-specific coherent interface.",
+      "work_type": "dcp-density-one-partial-subset-sum-solver"
+    },
+    {
+      "blocker": "code-equivalence-invariant-collapse",
+      "candidate_id": "CODE-COSET-COLLECTIVE",
+      "claim": "PO-DEQUANTIZATION",
+      "dependencies": [
+        "cyclic_code_search.py",
+        "bch_code_search.py",
+        "goppa_code_search.py",
+        "tanner_code_search.py",
+        "reed_muller_code_search.py",
+        "projective_geometry_code_search.py",
+        "quasi_cyclic_code_search.py",
+        "quasi_cyclic_canonicalization.py",
+        "qc_information_set_resolver.py",
+        "code_low_weight_structure.py",
+        "code_schur_filtration.py",
+        "code_closure_attack.py",
+        "code_frontier_triage.py",
+        "mutation_engine.py"
+      ],
+      "id": "WORK-DEBT-CODE-COSET-COLLECTIVE-PO-DEQUANTIZATION-CODE-FAMILY-HARDENING",
+      "kill_criterion": "Rows are rejected or classified as equivalent/no-hard controls by code_frontier_triage.py.",
+      "linked_artifacts": [
+        "research/code_equivalence/cyclic_code_search.json",
+        "research/code_equivalence/bch_code_search.json",
+        "research/code_equivalence/goppa_code_search.json",
+        "research/code_equivalence/tanner_code_search.json",
+        "research/code_equivalence/reed_muller_code_search.json",
+        "research/code_equivalence/projective_geometry_code_search.json",
+        "research/code_equivalence/quasi_cyclic_code_search.json",
+        "research/code_equivalence/quasi_cyclic_canonicalization.json",
+        "research/code_equivalence/qc_information_set_resolver.json",
+        "research/code_equivalence/code_low_weight_structure.json",
+        "research/code_equivalence/code_schur_filtration.json",
+        "research/code_equivalence/code_closure_attack.json",
+        "research/code_equivalence/code_frontier_triage.json"
+      ],
+      "linked_debts": [
+        "DEBT-CODE-COSET-COLLECTIVE-PO-DEQUANTIZATION"
+      ],
+      "priority_score": 140,
+      "recommended_action": "Search algebraic code families that survive Schur products, conductor/t-closure support recovery, low-weight matroid, structural, tuple-profile, automorphism, and aggregate code-triage baselines before coset use.",
+      "recommended_command": "python qsearch.py code-cyclic-search && python qsearch.py code-bch-search && python qsearch.py code-goppa-search && python qsearch.py code-tanner-search && python qsearch.py code-rm-search && python qsearch.py code-pg-search && python qsearch.py code-qc-search && python qsearch.py code-qc-canonicalize && python qsearch.py code-qc-info-resolve && python qsearch.py code-low-weight && python qsearch.py code-schur-filtration && python qsearch.py code-closure-attack && python qsearch.py code-triage && python qsearch.py mutate",
+      "status": "ready-to-run",
+      "success_criterion": "A non-equivalent code family row survives code_frontier_triage.py as proof debt rather than rejection or equivalent control.",
+      "work_type": "code-family-hardening"
+    },
+    {
+      "blocker": "code-equivalence-invariant-collapse",
+      "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
+      "claim": "PO-DEQUANTIZATION",
+      "dependencies": [
+        "cyclic_code_search.py",
+        "bch_code_search.py",
+        "goppa_code_search.py",
+        "tanner_code_search.py",
+        "reed_muller_code_search.py",
+        "projective_geometry_code_search.py",
+        "quasi_cyclic_code_search.py",
+        "quasi_cyclic_canonicalization.py",
+        "qc_information_set_resolver.py",
+        "code_low_weight_structure.py",
+        "code_schur_filtration.py",
+        "code_closure_attack.py",
+        "code_frontier_triage.py",
+        "mutation_engine.py"
+      ],
+      "id": "WORK-DEBT-HYP-LIT-COSET-OBSERVABLES-PO-DEQUANTIZATION-CODE-FAMILY-HARDENING",
+      "kill_criterion": "Rows are rejected or classified as equivalent/no-hard controls by code_frontier_triage.py.",
+      "linked_artifacts": [
+        "research/code_equivalence/cyclic_code_search.json",
+        "research/code_equivalence/bch_code_search.json",
+        "research/code_equivalence/goppa_code_search.json",
+        "research/code_equivalence/tanner_code_search.json",
+        "research/code_equivalence/reed_muller_code_search.json",
+        "research/code_equivalence/projective_geometry_code_search.json",
+        "research/code_equivalence/quasi_cyclic_code_search.json",
+        "research/code_equivalence/quasi_cyclic_canonicalization.json",
+        "research/code_equivalence/qc_information_set_resolver.json",
+        "research/code_equivalence/code_low_weight_structure.json",
+        "research/code_equivalence/code_schur_filtration.json",
+        "research/code_equivalence/code_closure_attack.json",
+        "research/code_equivalence/code_frontier_triage.json"
+      ],
+      "linked_debts": [
+        "DEBT-HYP-LIT-COSET-OBSERVABLES-PO-DEQUANTIZATION"
+      ],
+      "priority_score": 140,
+      "recommended_action": "Search algebraic code families that survive Schur products, conductor/t-closure support recovery, low-weight matroid, structural, tuple-profile, automorphism, and aggregate code-triage baselines before coset use.",
+      "recommended_command": "python qsearch.py code-cyclic-search && python qsearch.py code-bch-search && python qsearch.py code-goppa-search && python qsearch.py code-tanner-search && python qsearch.py code-rm-search && python qsearch.py code-pg-search && python qsearch.py code-qc-search && python qsearch.py code-qc-canonicalize && python qsearch.py code-qc-info-resolve && python qsearch.py code-low-weight && python qsearch.py code-schur-filtration && python qsearch.py code-closure-attack && python qsearch.py code-triage && python qsearch.py mutate",
+      "status": "ready-to-run",
+      "success_criterion": "A non-equivalent code family row survives code_frontier_triage.py as proof debt rather than rejection or equivalent control.",
+      "work_type": "code-family-hardening"
+    },
+    {
+      "blocker": "code-equivalence-invariant-collapse",
+      "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
+      "claim": "PO-DEQUANTIZATION",
+      "dependencies": [
+        "cyclic_code_search.py",
+        "bch_code_search.py",
+        "goppa_code_search.py",
+        "tanner_code_search.py",
+        "reed_muller_code_search.py",
+        "projective_geometry_code_search.py",
+        "quasi_cyclic_code_search.py",
+        "quasi_cyclic_canonicalization.py",
+        "qc_information_set_resolver.py",
+        "code_low_weight_structure.py",
+        "code_schur_filtration.py",
+        "code_closure_attack.py",
+        "code_frontier_triage.py",
+        "mutation_engine.py"
+      ],
+      "id": "WORK-DEBT-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-PO-DEQUANTIZATION-CODE-FAMILY-HARDENING",
+      "kill_criterion": "Rows are rejected or classified as equivalent/no-hard controls by code_frontier_triage.py.",
+      "linked_artifacts": [
+        "research/code_equivalence/cyclic_code_search.json",
+        "research/code_equivalence/bch_code_search.json",
+        "research/code_equivalence/goppa_code_search.json",
+        "research/code_equivalence/tanner_code_search.json",
+        "research/code_equivalence/reed_muller_code_search.json",
+        "research/code_equivalence/projective_geometry_code_search.json",
+        "research/code_equivalence/quasi_cyclic_code_search.json",
+        "research/code_equivalence/quasi_cyclic_canonicalization.json",
+        "research/code_equivalence/qc_information_set_resolver.json",
+        "research/code_equivalence/code_low_weight_structure.json",
+        "research/code_equivalence/code_schur_filtration.json",
+        "research/code_equivalence/code_closure_attack.json",
+        "research/code_equivalence/code_frontier_triage.json"
+      ],
+      "linked_debts": [
+        "DEBT-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-PO-DEQUANTIZATION"
+      ],
+      "priority_score": 140,
+      "recommended_action": "Search algebraic code families that survive Schur products, conductor/t-closure support recovery, low-weight matroid, structural, tuple-profile, automorphism, and aggregate code-triage baselines before coset use.",
+      "recommended_command": "python qsearch.py code-cyclic-search && python qsearch.py code-bch-search && python qsearch.py code-goppa-search && python qsearch.py code-tanner-search && python qsearch.py code-rm-search && python qsearch.py code-pg-search && python qsearch.py code-qc-search && python qsearch.py code-qc-canonicalize && python qsearch.py code-qc-info-resolve && python qsearch.py code-low-weight && python qsearch.py code-schur-filtration && python qsearch.py code-closure-attack && python qsearch.py code-triage && python qsearch.py mutate",
+      "status": "ready-to-run",
+      "success_criterion": "A non-equivalent code family row survives code_frontier_triage.py as proof debt rather than rejection or equivalent control.",
+      "work_type": "code-family-hardening"
+    },
+    {
+      "blocker": "code-equivalence-invariant-collapse",
+      "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
+      "claim": "PO-DEQUANTIZATION",
+      "dependencies": [
+        "cyclic_code_search.py",
+        "bch_code_search.py",
+        "goppa_code_search.py",
+        "tanner_code_search.py",
+        "reed_muller_code_search.py",
+        "projective_geometry_code_search.py",
+        "quasi_cyclic_code_search.py",
+        "quasi_cyclic_canonicalization.py",
+        "qc_information_set_resolver.py",
+        "code_low_weight_structure.py",
+        "code_schur_filtration.py",
+        "code_closure_attack.py",
+        "code_frontier_triage.py",
+        "mutation_engine.py"
+      ],
+      "id": "WORK-DEBT-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-PO-DEQUANTIZATION-CODE-FAMILY-HARDENING",
+      "kill_criterion": "Rows are rejected or classified as equivalent/no-hard controls by code_frontier_triage.py.",
+      "linked_artifacts": [
+        "research/code_equivalence/cyclic_code_search.json",
+        "research/code_equivalence/bch_code_search.json",
+        "research/code_equivalence/goppa_code_search.json",
+        "research/code_equivalence/tanner_code_search.json",
+        "research/code_equivalence/reed_muller_code_search.json",
+        "research/code_equivalence/projective_geometry_code_search.json",
+        "research/code_equivalence/quasi_cyclic_code_search.json",
+        "research/code_equivalence/quasi_cyclic_canonicalization.json",
+        "research/code_equivalence/qc_information_set_resolver.json",
+        "research/code_equivalence/code_low_weight_structure.json",
+        "research/code_equivalence/code_schur_filtration.json",
+        "research/code_equivalence/code_closure_attack.json",
+        "research/code_equivalence/code_frontier_triage.json"
+      ],
+      "linked_debts": [
+        "DEBT-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-PO-DEQUANTIZATION"
+      ],
+      "priority_score": 140,
+      "recommended_action": "Search algebraic code families that survive Schur products, conductor/t-closure support recovery, low-weight matroid, structural, tuple-profile, automorphism, and aggregate code-triage baselines before coset use.",
+      "recommended_command": "python qsearch.py code-cyclic-search && python qsearch.py code-bch-search && python qsearch.py code-goppa-search && python qsearch.py code-tanner-search && python qsearch.py code-rm-search && python qsearch.py code-pg-search && python qsearch.py code-qc-search && python qsearch.py code-qc-canonicalize && python qsearch.py code-qc-info-resolve && python qsearch.py code-low-weight && python qsearch.py code-schur-filtration && python qsearch.py code-closure-attack && python qsearch.py code-triage && python qsearch.py mutate",
+      "status": "ready-to-run",
+      "success_criterion": "A non-equivalent code family row survives code_frontier_triage.py as proof debt rather than rejection or equivalent control.",
+      "work_type": "code-family-hardening"
+    },
+    {
+      "blocker": "code-equivalence-invariant-collapse",
+      "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
+      "claim": "PO-DEQUANTIZATION",
+      "dependencies": [
+        "cyclic_code_search.py",
+        "bch_code_search.py",
+        "goppa_code_search.py",
+        "tanner_code_search.py",
+        "reed_muller_code_search.py",
+        "projective_geometry_code_search.py",
+        "quasi_cyclic_code_search.py",
+        "quasi_cyclic_canonicalization.py",
+        "qc_information_set_resolver.py",
+        "code_low_weight_structure.py",
+        "code_schur_filtration.py",
+        "code_closure_attack.py",
+        "code_frontier_triage.py",
+        "mutation_engine.py"
+      ],
+      "id": "WORK-DEBT-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-PO-DEQUANTIZATION-CODE-FAMILY-HARDENING",
+      "kill_criterion": "Rows are rejected or classified as equivalent/no-hard controls by code_frontier_triage.py.",
+      "linked_artifacts": [
+        "research/code_equivalence/cyclic_code_search.json",
+        "research/code_equivalence/bch_code_search.json",
+        "research/code_equivalence/goppa_code_search.json",
+        "research/code_equivalence/tanner_code_search.json",
+        "research/code_equivalence/reed_muller_code_search.json",
+        "research/code_equivalence/projective_geometry_code_search.json",
+        "research/code_equivalence/quasi_cyclic_code_search.json",
+        "research/code_equivalence/quasi_cyclic_canonicalization.json",
+        "research/code_equivalence/qc_information_set_resolver.json",
+        "research/code_equivalence/code_low_weight_structure.json",
+        "research/code_equivalence/code_schur_filtration.json",
+        "research/code_equivalence/code_closure_attack.json",
+        "research/code_equivalence/code_frontier_triage.json"
+      ],
+      "linked_debts": [
+        "DEBT-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-PO-DEQUANTIZATION"
+      ],
+      "priority_score": 140,
+      "recommended_action": "Search algebraic code families that survive Schur products, conductor/t-closure support recovery, low-weight matroid, structural, tuple-profile, automorphism, and aggregate code-triage baselines before coset use.",
+      "recommended_command": "python qsearch.py code-cyclic-search && python qsearch.py code-bch-search && python qsearch.py code-goppa-search && python qsearch.py code-tanner-search && python qsearch.py code-rm-search && python qsearch.py code-pg-search && python qsearch.py code-qc-search && python qsearch.py code-qc-canonicalize && python qsearch.py code-qc-info-resolve && python qsearch.py code-low-weight && python qsearch.py code-schur-filtration && python qsearch.py code-closure-attack && python qsearch.py code-triage && python qsearch.py mutate",
+      "status": "ready-to-run",
+      "success_criterion": "A non-equivalent code family row survives code_frontier_triage.py as proof debt rather than rejection or equivalent control.",
+      "work_type": "code-family-hardening"
+    },
+    {
+      "blocker": "code-equivalence-invariant-collapse",
+      "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
+      "claim": "PO-DEQUANTIZATION",
+      "dependencies": [
+        "cyclic_code_search.py",
+        "bch_code_search.py",
+        "goppa_code_search.py",
+        "tanner_code_search.py",
+        "reed_muller_code_search.py",
+        "projective_geometry_code_search.py",
+        "quasi_cyclic_code_search.py",
+        "quasi_cyclic_canonicalization.py",
+        "qc_information_set_resolver.py",
+        "code_low_weight_structure.py",
+        "code_schur_filtration.py",
+        "code_closure_attack.py",
+        "code_frontier_triage.py",
+        "mutation_engine.py"
+      ],
+      "id": "WORK-DEBT-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-PO-DEQUANTIZATION-CODE-FAMILY-HARDENING",
+      "kill_criterion": "Rows are rejected or classified as equivalent/no-hard controls by code_frontier_triage.py.",
+      "linked_artifacts": [
+        "research/code_equivalence/cyclic_code_search.json",
+        "research/code_equivalence/bch_code_search.json",
+        "research/code_equivalence/goppa_code_search.json",
+        "research/code_equivalence/tanner_code_search.json",
+        "research/code_equivalence/reed_muller_code_search.json",
+        "research/code_equivalence/projective_geometry_code_search.json",
+        "research/code_equivalence/quasi_cyclic_code_search.json",
+        "research/code_equivalence/quasi_cyclic_canonicalization.json",
+        "research/code_equivalence/qc_information_set_resolver.json",
+        "research/code_equivalence/code_low_weight_structure.json",
+        "research/code_equivalence/code_schur_filtration.json",
+        "research/code_equivalence/code_closure_attack.json",
+        "research/code_equivalence/code_frontier_triage.json"
+      ],
+      "linked_debts": [
+        "DEBT-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-PO-DEQUANTIZATION"
+      ],
+      "priority_score": 140,
+      "recommended_action": "Search algebraic code families that survive Schur products, conductor/t-closure support recovery, low-weight matroid, structural, tuple-profile, automorphism, and aggregate code-triage baselines before coset use.",
+      "recommended_command": "python qsearch.py code-cyclic-search && python qsearch.py code-bch-search && python qsearch.py code-goppa-search && python qsearch.py code-tanner-search && python qsearch.py code-rm-search && python qsearch.py code-pg-search && python qsearch.py code-qc-search && python qsearch.py code-qc-canonicalize && python qsearch.py code-qc-info-resolve && python qsearch.py code-low-weight && python qsearch.py code-schur-filtration && python qsearch.py code-closure-attack && python qsearch.py code-triage && python qsearch.py mutate",
+      "status": "ready-to-run",
+      "success_criterion": "A non-equivalent code family row survives code_frontier_triage.py as proof debt rather than rejection or equivalent control.",
+      "work_type": "code-family-hardening"
+    },
+    {
+      "blocker": "code-equivalence-invariant-collapse",
+      "candidate_id": "CODE-COSET-COLLECTIVE",
+      "claim": "PO-REDUCTION",
+      "dependencies": [
+        "reduction_theorem_catalog.py",
+        "reduction_contract_audit.py",
+        "reduction_gate.py",
+        "proof_tracker.py",
+        "conjecture_tracker.py"
+      ],
+      "id": "WORK-DEBT-CODE-COSET-COLLECTIVE-PO-REDUCTION-REDUCTION-ROUTE-CERTIFICATION",
+      "kill_criterion": "Every route retains a blocked family-specialization or model-preservation edge.",
+      "linked_artifacts": [
+        "research/reductions/theorem_contracts.json",
+        "research/reductions/interface_audit.json",
+        "research/reductions/reduction_ledger.json",
+        "research/registry/reductions.json",
+        "research/proof_debt_report.json"
+      ],
+      "linked_debts": [
+        "DEBT-CODE-COSET-COLLECTIVE-PO-REDUCTION"
+      ],
+      "priority_score": 138,
+      "recommended_action": "Compose the exact primary-source theorem contract with a complete candidate edge whose access, group, promise, overhead, uniformity, family coverage, and decoder all pass the gate.",
+      "recommended_command": "python qsearch.py reduction-contracts && python qsearch.py reductions && python qsearch.py conjectures && python qsearch.py proofs",
+      "status": "theory-or-mixed",
+      "success_criterion": "At least one natural-problem route for the candidate has status complete-certified-route.",
+      "work_type": "reduction-route-certification"
+    },
+    {
+      "blocker": "code-equivalence-invariant-collapse",
+      "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
+      "claim": "PO-REDUCTION",
+      "dependencies": [
+        "reduction_theorem_catalog.py",
+        "reduction_contract_audit.py",
+        "reduction_gate.py",
+        "proof_tracker.py",
+        "conjecture_tracker.py"
+      ],
+      "id": "WORK-DEBT-HYP-LIT-COSET-OBSERVABLES-PO-REDUCTION-REDUCTION-ROUTE-CERTIFICATION",
+      "kill_criterion": "Every route retains a blocked family-specialization or model-preservation edge.",
+      "linked_artifacts": [
+        "research/reductions/theorem_contracts.json",
+        "research/reductions/interface_audit.json",
+        "research/reductions/reduction_ledger.json",
+        "research/registry/reductions.json",
+        "research/proof_debt_report.json"
+      ],
+      "linked_debts": [
+        "DEBT-HYP-LIT-COSET-OBSERVABLES-PO-REDUCTION"
+      ],
+      "priority_score": 138,
+      "recommended_action": "Compose the exact primary-source theorem contract with a complete candidate edge whose access, group, promise, overhead, uniformity, family coverage, and decoder all pass the gate.",
+      "recommended_command": "python qsearch.py reduction-contracts && python qsearch.py reductions && python qsearch.py conjectures && python qsearch.py proofs",
+      "status": "theory-or-mixed",
+      "success_criterion": "At least one natural-problem route for the candidate has status complete-certified-route.",
+      "work_type": "reduction-route-certification"
+    },
+    {
+      "blocker": "code-equivalence-invariant-collapse",
+      "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
+      "claim": "PO-REDUCTION",
+      "dependencies": [
+        "reduction_theorem_catalog.py",
+        "reduction_contract_audit.py",
+        "reduction_gate.py",
+        "proof_tracker.py",
+        "conjecture_tracker.py"
+      ],
+      "id": "WORK-DEBT-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-PO-REDUCTION-REDUCTION-ROUTE-CERTIFICATION",
+      "kill_criterion": "Every route retains a blocked family-specialization or model-preservation edge.",
+      "linked_artifacts": [
+        "research/reductions/theorem_contracts.json",
+        "research/reductions/interface_audit.json",
+        "research/reductions/reduction_ledger.json",
+        "research/registry/reductions.json",
+        "research/proof_debt_report.json"
+      ],
+      "linked_debts": [
+        "DEBT-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-PO-REDUCTION"
+      ],
+      "priority_score": 138,
+      "recommended_action": "Compose the exact primary-source theorem contract with a complete candidate edge whose access, group, promise, overhead, uniformity, family coverage, and decoder all pass the gate.",
+      "recommended_command": "python qsearch.py reduction-contracts && python qsearch.py reductions && python qsearch.py conjectures && python qsearch.py proofs",
+      "status": "theory-or-mixed",
+      "success_criterion": "At least one natural-problem route for the candidate has status complete-certified-route.",
+      "work_type": "reduction-route-certification"
+    },
+    {
+      "blocker": "code-equivalence-invariant-collapse",
+      "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
+      "claim": "PO-REDUCTION",
+      "dependencies": [
+        "reduction_theorem_catalog.py",
+        "reduction_contract_audit.py",
+        "reduction_gate.py",
+        "proof_tracker.py",
+        "conjecture_tracker.py"
+      ],
+      "id": "WORK-DEBT-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-PO-REDUCTION-REDUCTION-ROUTE-CERTIFICATION",
+      "kill_criterion": "Every route retains a blocked family-specialization or model-preservation edge.",
+      "linked_artifacts": [
+        "research/reductions/theorem_contracts.json",
+        "research/reductions/interface_audit.json",
+        "research/reductions/reduction_ledger.json",
+        "research/registry/reductions.json",
+        "research/proof_debt_report.json"
+      ],
+      "linked_debts": [
+        "DEBT-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-PO-REDUCTION"
+      ],
+      "priority_score": 138,
+      "recommended_action": "Compose the exact primary-source theorem contract with a complete candidate edge whose access, group, promise, overhead, uniformity, family coverage, and decoder all pass the gate.",
+      "recommended_command": "python qsearch.py reduction-contracts && python qsearch.py reductions && python qsearch.py conjectures && python qsearch.py proofs",
+      "status": "theory-or-mixed",
+      "success_criterion": "At least one natural-problem route for the candidate has status complete-certified-route.",
+      "work_type": "reduction-route-certification"
+    },
+    {
+      "blocker": "code-equivalence-invariant-collapse",
+      "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
+      "claim": "PO-REDUCTION",
+      "dependencies": [
+        "reduction_theorem_catalog.py",
+        "reduction_contract_audit.py",
+        "reduction_gate.py",
+        "proof_tracker.py",
+        "conjecture_tracker.py"
+      ],
+      "id": "WORK-DEBT-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-PO-REDUCTION-REDUCTION-ROUTE-CERTIFICATION",
+      "kill_criterion": "Every route retains a blocked family-specialization or model-preservation edge.",
+      "linked_artifacts": [
+        "research/reductions/theorem_contracts.json",
+        "research/reductions/interface_audit.json",
+        "research/reductions/reduction_ledger.json",
+        "research/registry/reductions.json",
+        "research/proof_debt_report.json"
+      ],
+      "linked_debts": [
+        "DEBT-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-PO-REDUCTION"
+      ],
+      "priority_score": 138,
+      "recommended_action": "Compose the exact primary-source theorem contract with a complete candidate edge whose access, group, promise, overhead, uniformity, family coverage, and decoder all pass the gate.",
+      "recommended_command": "python qsearch.py reduction-contracts && python qsearch.py reductions && python qsearch.py conjectures && python qsearch.py proofs",
+      "status": "theory-or-mixed",
+      "success_criterion": "At least one natural-problem route for the candidate has status complete-certified-route.",
+      "work_type": "reduction-route-certification"
+    },
+    {
+      "blocker": "code-equivalence-invariant-collapse",
+      "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
+      "claim": "PO-REDUCTION",
+      "dependencies": [
+        "reduction_theorem_catalog.py",
+        "reduction_contract_audit.py",
+        "reduction_gate.py",
+        "proof_tracker.py",
+        "conjecture_tracker.py"
+      ],
+      "id": "WORK-DEBT-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-PO-REDUCTION-REDUCTION-ROUTE-CERTIFICATION",
+      "kill_criterion": "Every route retains a blocked family-specialization or model-preservation edge.",
+      "linked_artifacts": [
+        "research/reductions/theorem_contracts.json",
+        "research/reductions/interface_audit.json",
+        "research/reductions/reduction_ledger.json",
+        "research/registry/reductions.json",
+        "research/proof_debt_report.json"
+      ],
+      "linked_debts": [
+        "DEBT-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-PO-REDUCTION"
+      ],
+      "priority_score": 138,
+      "recommended_action": "Compose the exact primary-source theorem contract with a complete candidate edge whose access, group, promise, overhead, uniformity, family coverage, and decoder all pass the gate.",
+      "recommended_command": "python qsearch.py reduction-contracts && python qsearch.py reductions && python qsearch.py conjectures && python qsearch.py proofs",
+      "status": "theory-or-mixed",
+      "success_criterion": "At least one natural-problem route for the candidate has status complete-certified-route.",
+      "work_type": "reduction-route-certification"
+    },
+    {
+      "blocker": "code-equivalence-invariant-collapse",
+      "candidate_id": "CODE-COSET-COLLECTIVE",
+      "claim": "PO-FALSIFIERS",
+      "dependencies": [
+        "cyclic_code_search.py",
+        "bch_code_search.py",
+        "goppa_code_search.py",
+        "tanner_code_search.py",
+        "reed_muller_code_search.py",
+        "projective_geometry_code_search.py",
+        "quasi_cyclic_code_search.py",
+        "quasi_cyclic_canonicalization.py",
+        "qc_information_set_resolver.py",
+        "code_low_weight_structure.py",
+        "code_schur_filtration.py",
+        "code_closure_attack.py",
+        "code_frontier_triage.py",
+        "mutation_engine.py"
+      ],
+      "id": "WORK-DEBT-CODE-COSET-COLLECTIVE-PO-FALSIFIERS-CODE-FAMILY-HARDENING",
+      "kill_criterion": "Rows are rejected or classified as equivalent/no-hard controls by code_frontier_triage.py.",
+      "linked_artifacts": [
+        "research/code_equivalence/cyclic_code_search.json",
+        "research/code_equivalence/bch_code_search.json",
+        "research/code_equivalence/goppa_code_search.json",
+        "research/code_equivalence/tanner_code_search.json",
+        "research/code_equivalence/reed_muller_code_search.json",
+        "research/code_equivalence/projective_geometry_code_search.json",
+        "research/code_equivalence/quasi_cyclic_code_search.json",
+        "research/code_equivalence/quasi_cyclic_canonicalization.json",
+        "research/code_equivalence/qc_information_set_resolver.json",
+        "research/code_equivalence/code_low_weight_structure.json",
+        "research/code_equivalence/code_schur_filtration.json",
+        "research/code_equivalence/code_closure_attack.json",
+        "research/code_equivalence/code_frontier_triage.json"
+      ],
+      "linked_debts": [
+        "DEBT-CODE-COSET-COLLECTIVE-PO-FALSIFIERS"
+      ],
+      "priority_score": 130,
+      "recommended_action": "Search algebraic code families that survive Schur products, conductor/t-closure support recovery, low-weight matroid, structural, tuple-profile, automorphism, and aggregate code-triage baselines before coset use.",
+      "recommended_command": "python qsearch.py code-cyclic-search && python qsearch.py code-bch-search && python qsearch.py code-goppa-search && python qsearch.py code-tanner-search && python qsearch.py code-rm-search && python qsearch.py code-pg-search && python qsearch.py code-qc-search && python qsearch.py code-qc-canonicalize && python qsearch.py code-qc-info-resolve && python qsearch.py code-low-weight && python qsearch.py code-schur-filtration && python qsearch.py code-closure-attack && python qsearch.py code-triage && python qsearch.py mutate",
+      "status": "ready-to-run",
+      "success_criterion": "A non-equivalent code family row survives code_frontier_triage.py as proof debt rather than rejection or equivalent control.",
+      "work_type": "code-family-hardening"
+    },
+    {
+      "blocker": "code-equivalence-invariant-collapse",
+      "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
+      "claim": "PO-FALSIFIERS",
+      "dependencies": [
+        "cyclic_code_search.py",
+        "bch_code_search.py",
+        "goppa_code_search.py",
+        "tanner_code_search.py",
+        "reed_muller_code_search.py",
+        "projective_geometry_code_search.py",
+        "quasi_cyclic_code_search.py",
+        "quasi_cyclic_canonicalization.py",
+        "qc_information_set_resolver.py",
+        "code_low_weight_structure.py",
+        "code_schur_filtration.py",
+        "code_closure_attack.py",
+        "code_frontier_triage.py",
+        "mutation_engine.py"
+      ],
+      "id": "WORK-DEBT-HYP-LIT-COSET-OBSERVABLES-PO-FALSIFIERS-CODE-FAMILY-HARDENING",
+      "kill_criterion": "Rows are rejected or classified as equivalent/no-hard controls by code_frontier_triage.py.",
+      "linked_artifacts": [
+        "research/code_equivalence/cyclic_code_search.json",
+        "research/code_equivalence/bch_code_search.json",
+        "research/code_equivalence/goppa_code_search.json",
+        "research/code_equivalence/tanner_code_search.json",
+        "research/code_equivalence/reed_muller_code_search.json",
+        "research/code_equivalence/projective_geometry_code_search.json",
+        "research/code_equivalence/quasi_cyclic_code_search.json",
+        "research/code_equivalence/quasi_cyclic_canonicalization.json",
+        "research/code_equivalence/qc_information_set_resolver.json",
+        "research/code_equivalence/code_low_weight_structure.json",
+        "research/code_equivalence/code_schur_filtration.json",
+        "research/code_equivalence/code_closure_attack.json",
+        "research/code_equivalence/code_frontier_triage.json"
+      ],
+      "linked_debts": [
+        "DEBT-HYP-LIT-COSET-OBSERVABLES-PO-FALSIFIERS"
+      ],
+      "priority_score": 130,
+      "recommended_action": "Search algebraic code families that survive Schur products, conductor/t-closure support recovery, low-weight matroid, structural, tuple-profile, automorphism, and aggregate code-triage baselines before coset use.",
+      "recommended_command": "python qsearch.py code-cyclic-search && python qsearch.py code-bch-search && python qsearch.py code-goppa-search && python qsearch.py code-tanner-search && python qsearch.py code-rm-search && python qsearch.py code-pg-search && python qsearch.py code-qc-search && python qsearch.py code-qc-canonicalize && python qsearch.py code-qc-info-resolve && python qsearch.py code-low-weight && python qsearch.py code-schur-filtration && python qsearch.py code-closure-attack && python qsearch.py code-triage && python qsearch.py mutate",
+      "status": "ready-to-run",
+      "success_criterion": "A non-equivalent code family row survives code_frontier_triage.py as proof debt rather than rejection or equivalent control.",
+      "work_type": "code-family-hardening"
+    },
+    {
+      "blocker": "code-equivalence-invariant-collapse",
+      "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
+      "claim": "PO-FALSIFIERS",
+      "dependencies": [
+        "cyclic_code_search.py",
+        "bch_code_search.py",
+        "goppa_code_search.py",
+        "tanner_code_search.py",
+        "reed_muller_code_search.py",
+        "projective_geometry_code_search.py",
+        "quasi_cyclic_code_search.py",
+        "quasi_cyclic_canonicalization.py",
+        "qc_information_set_resolver.py",
+        "code_low_weight_structure.py",
+        "code_schur_filtration.py",
+        "code_closure_attack.py",
+        "code_frontier_triage.py",
+        "mutation_engine.py"
+      ],
+      "id": "WORK-DEBT-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-PO-FALSIFIERS-CODE-FAMILY-HARDENING",
+      "kill_criterion": "Rows are rejected or classified as equivalent/no-hard controls by code_frontier_triage.py.",
+      "linked_artifacts": [
+        "research/code_equivalence/cyclic_code_search.json",
+        "research/code_equivalence/bch_code_search.json",
+        "research/code_equivalence/goppa_code_search.json",
+        "research/code_equivalence/tanner_code_search.json",
+        "research/code_equivalence/reed_muller_code_search.json",
+        "research/code_equivalence/projective_geometry_code_search.json",
+        "research/code_equivalence/quasi_cyclic_code_search.json",
+        "research/code_equivalence/quasi_cyclic_canonicalization.json",
+        "research/code_equivalence/qc_information_set_resolver.json",
+        "research/code_equivalence/code_low_weight_structure.json",
+        "research/code_equivalence/code_schur_filtration.json",
+        "research/code_equivalence/code_closure_attack.json",
+        "research/code_equivalence/code_frontier_triage.json"
+      ],
+      "linked_debts": [
+        "DEBT-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-PO-FALSIFIERS"
+      ],
+      "priority_score": 130,
+      "recommended_action": "Search algebraic code families that survive Schur products, conductor/t-closure support recovery, low-weight matroid, structural, tuple-profile, automorphism, and aggregate code-triage baselines before coset use.",
+      "recommended_command": "python qsearch.py code-cyclic-search && python qsearch.py code-bch-search && python qsearch.py code-goppa-search && python qsearch.py code-tanner-search && python qsearch.py code-rm-search && python qsearch.py code-pg-search && python qsearch.py code-qc-search && python qsearch.py code-qc-canonicalize && python qsearch.py code-qc-info-resolve && python qsearch.py code-low-weight && python qsearch.py code-schur-filtration && python qsearch.py code-closure-attack && python qsearch.py code-triage && python qsearch.py mutate",
+      "status": "ready-to-run",
+      "success_criterion": "A non-equivalent code family row survives code_frontier_triage.py as proof debt rather than rejection or equivalent control.",
+      "work_type": "code-family-hardening"
+    },
+    {
+      "blocker": "code-equivalence-invariant-collapse",
+      "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
+      "claim": "PO-FALSIFIERS",
+      "dependencies": [
+        "cyclic_code_search.py",
+        "bch_code_search.py",
+        "goppa_code_search.py",
+        "tanner_code_search.py",
+        "reed_muller_code_search.py",
+        "projective_geometry_code_search.py",
+        "quasi_cyclic_code_search.py",
+        "quasi_cyclic_canonicalization.py",
+        "qc_information_set_resolver.py",
+        "code_low_weight_structure.py",
+        "code_schur_filtration.py",
+        "code_closure_attack.py",
+        "code_frontier_triage.py",
+        "mutation_engine.py"
+      ],
+      "id": "WORK-DEBT-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-PO-FALSIFIERS-CODE-FAMILY-HARDENING",
+      "kill_criterion": "Rows are rejected or classified as equivalent/no-hard controls by code_frontier_triage.py.",
+      "linked_artifacts": [
+        "research/code_equivalence/cyclic_code_search.json",
+        "research/code_equivalence/bch_code_search.json",
+        "research/code_equivalence/goppa_code_search.json",
+        "research/code_equivalence/tanner_code_search.json",
+        "research/code_equivalence/reed_muller_code_search.json",
+        "research/code_equivalence/projective_geometry_code_search.json",
+        "research/code_equivalence/quasi_cyclic_code_search.json",
+        "research/code_equivalence/quasi_cyclic_canonicalization.json",
+        "research/code_equivalence/qc_information_set_resolver.json",
+        "research/code_equivalence/code_low_weight_structure.json",
+        "research/code_equivalence/code_schur_filtration.json",
+        "research/code_equivalence/code_closure_attack.json",
+        "research/code_equivalence/code_frontier_triage.json"
+      ],
+      "linked_debts": [
+        "DEBT-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-PO-FALSIFIERS"
+      ],
+      "priority_score": 130,
+      "recommended_action": "Search algebraic code families that survive Schur products, conductor/t-closure support recovery, low-weight matroid, structural, tuple-profile, automorphism, and aggregate code-triage baselines before coset use.",
+      "recommended_command": "python qsearch.py code-cyclic-search && python qsearch.py code-bch-search && python qsearch.py code-goppa-search && python qsearch.py code-tanner-search && python qsearch.py code-rm-search && python qsearch.py code-pg-search && python qsearch.py code-qc-search && python qsearch.py code-qc-canonicalize && python qsearch.py code-qc-info-resolve && python qsearch.py code-low-weight && python qsearch.py code-schur-filtration && python qsearch.py code-closure-attack && python qsearch.py code-triage && python qsearch.py mutate",
+      "status": "ready-to-run",
+      "success_criterion": "A non-equivalent code family row survives code_frontier_triage.py as proof debt rather than rejection or equivalent control.",
+      "work_type": "code-family-hardening"
+    },
+    {
+      "blocker": "code-equivalence-invariant-collapse",
+      "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
+      "claim": "PO-FALSIFIERS",
+      "dependencies": [
+        "cyclic_code_search.py",
+        "bch_code_search.py",
+        "goppa_code_search.py",
+        "tanner_code_search.py",
+        "reed_muller_code_search.py",
+        "projective_geometry_code_search.py",
+        "quasi_cyclic_code_search.py",
+        "quasi_cyclic_canonicalization.py",
+        "qc_information_set_resolver.py",
+        "code_low_weight_structure.py",
+        "code_schur_filtration.py",
+        "code_closure_attack.py",
+        "code_frontier_triage.py",
+        "mutation_engine.py"
+      ],
+      "id": "WORK-DEBT-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-PO-FALSIFIERS-CODE-FAMILY-HARDENING",
+      "kill_criterion": "Rows are rejected or classified as equivalent/no-hard controls by code_frontier_triage.py.",
+      "linked_artifacts": [
+        "research/code_equivalence/cyclic_code_search.json",
+        "research/code_equivalence/bch_code_search.json",
+        "research/code_equivalence/goppa_code_search.json",
+        "research/code_equivalence/tanner_code_search.json",
+        "research/code_equivalence/reed_muller_code_search.json",
+        "research/code_equivalence/projective_geometry_code_search.json",
+        "research/code_equivalence/quasi_cyclic_code_search.json",
+        "research/code_equivalence/quasi_cyclic_canonicalization.json",
+        "research/code_equivalence/qc_information_set_resolver.json",
+        "research/code_equivalence/code_low_weight_structure.json",
+        "research/code_equivalence/code_schur_filtration.json",
+        "research/code_equivalence/code_closure_attack.json",
+        "research/code_equivalence/code_frontier_triage.json"
+      ],
+      "linked_debts": [
+        "DEBT-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-PO-FALSIFIERS"
+      ],
+      "priority_score": 130,
+      "recommended_action": "Search algebraic code families that survive Schur products, conductor/t-closure support recovery, low-weight matroid, structural, tuple-profile, automorphism, and aggregate code-triage baselines before coset use.",
+      "recommended_command": "python qsearch.py code-cyclic-search && python qsearch.py code-bch-search && python qsearch.py code-goppa-search && python qsearch.py code-tanner-search && python qsearch.py code-rm-search && python qsearch.py code-pg-search && python qsearch.py code-qc-search && python qsearch.py code-qc-canonicalize && python qsearch.py code-qc-info-resolve && python qsearch.py code-low-weight && python qsearch.py code-schur-filtration && python qsearch.py code-closure-attack && python qsearch.py code-triage && python qsearch.py mutate",
+      "status": "ready-to-run",
+      "success_criterion": "A non-equivalent code family row survives code_frontier_triage.py as proof debt rather than rejection or equivalent control.",
+      "work_type": "code-family-hardening"
+    },
+    {
+      "blocker": "code-equivalence-invariant-collapse",
+      "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
+      "claim": "PO-FALSIFIERS",
+      "dependencies": [
+        "cyclic_code_search.py",
+        "bch_code_search.py",
+        "goppa_code_search.py",
+        "tanner_code_search.py",
+        "reed_muller_code_search.py",
+        "projective_geometry_code_search.py",
+        "quasi_cyclic_code_search.py",
+        "quasi_cyclic_canonicalization.py",
+        "qc_information_set_resolver.py",
+        "code_low_weight_structure.py",
+        "code_schur_filtration.py",
+        "code_closure_attack.py",
+        "code_frontier_triage.py",
+        "mutation_engine.py"
+      ],
+      "id": "WORK-DEBT-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-PO-FALSIFIERS-CODE-FAMILY-HARDENING",
+      "kill_criterion": "Rows are rejected or classified as equivalent/no-hard controls by code_frontier_triage.py.",
+      "linked_artifacts": [
+        "research/code_equivalence/cyclic_code_search.json",
+        "research/code_equivalence/bch_code_search.json",
+        "research/code_equivalence/goppa_code_search.json",
+        "research/code_equivalence/tanner_code_search.json",
+        "research/code_equivalence/reed_muller_code_search.json",
+        "research/code_equivalence/projective_geometry_code_search.json",
+        "research/code_equivalence/quasi_cyclic_code_search.json",
+        "research/code_equivalence/quasi_cyclic_canonicalization.json",
+        "research/code_equivalence/qc_information_set_resolver.json",
+        "research/code_equivalence/code_low_weight_structure.json",
+        "research/code_equivalence/code_schur_filtration.json",
+        "research/code_equivalence/code_closure_attack.json",
+        "research/code_equivalence/code_frontier_triage.json"
+      ],
+      "linked_debts": [
+        "DEBT-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-PO-FALSIFIERS"
+      ],
+      "priority_score": 130,
+      "recommended_action": "Search algebraic code families that survive Schur products, conductor/t-closure support recovery, low-weight matroid, structural, tuple-profile, automorphism, and aggregate code-triage baselines before coset use.",
+      "recommended_command": "python qsearch.py code-cyclic-search && python qsearch.py code-bch-search && python qsearch.py code-goppa-search && python qsearch.py code-tanner-search && python qsearch.py code-rm-search && python qsearch.py code-pg-search && python qsearch.py code-qc-search && python qsearch.py code-qc-canonicalize && python qsearch.py code-qc-info-resolve && python qsearch.py code-low-weight && python qsearch.py code-schur-filtration && python qsearch.py code-closure-attack && python qsearch.py code-triage && python qsearch.py mutate",
+      "status": "ready-to-run",
+      "success_criterion": "A non-equivalent code family row survives code_frontier_triage.py as proof debt rather than rejection or equivalent control.",
+      "work_type": "code-family-hardening"
+    },
+    {
+      "blocker": "code-equivalence-invariant-collapse",
+      "candidate_id": "DHS-GOWERS-SIEVE",
+      "claim": "Classical correlation, sparse Fourier, derivative learning, and algebraic reconstruction require superpolynomial resources under the stated input model.",
+      "dependencies": [
+        "proof_tracker.py"
+      ],
+      "id": "WORK-LEMMA-LEMMA-DHS-GOWERS-SIEVE-CLASSICAL-LOWER-BOUND",
+      "kill_criterion": "The falsification test finds a legal classical attack or no-go reduction.",
+      "linked_artifacts": [
+        "research/classical_baselines/hidden_shift_query_lower_bounds.json",
+        "research/query_model_ledger.json",
+        "research/dequantization_attack_matrix.json"
+      ],
+      "linked_debts": [],
+      "priority_score": 95,
+      "recommended_action": "Search for low-degree, Goldreich-Levin, autocorrelation, and chosen-query reconstruction counterexamples.",
+      "recommended_command": "python qsearch.py query-lower-bounds && python qsearch.py character-query-info && python qsearch.py character-lower-bound && python qsearch.py character-moments && python qsearch.py query-models && python qsearch.py baselines && python qsearch.py proofs",
+      "status": "theory-and-experiment",
+      "success_criterion": "Lemma is either proved with explicit assumptions or replaced by a negative result.",
+      "work_type": "lemma-formalization"
+    },
+    {
+      "blocker": "code-equivalence-invariant-collapse",
+      "candidate_id": "DHS-GOWERS-SIEVE",
+      "claim": "Witness-specific errors have positive exact Babai-cell margin on an inverse-polynomial legal source subset, yielding a verified marker-aware decoder.",
+      "dependencies": [
+        "proof_tracker.py"
+      ],
+      "id": "WORK-LEMMA-LEMMA-DHS-GOWERS-SIEVE-DCP-AFFINE-BDD-CELL-SOURCE-LAW",
+      "kill_criterion": "The falsification test finds a legal classical attack or no-go reduction.",
+      "linked_artifacts": [
+        "research/classical_baselines/hidden_shift_query_lower_bounds.json",
+        "research/query_model_ledger.json",
+        "research/dequantization_attack_matrix.json"
+      ],
+      "linked_debts": [],
+      "priority_score": 95,
+      "recommended_action": "Enumerate all tractable witnesses, verify exact cell predictions, then prove a source lower bound for positive margin rather than fitting finite cell frequencies.",
+      "recommended_command": "python qsearch.py query-lower-bounds && python qsearch.py character-query-info && python qsearch.py character-lower-bound && python qsearch.py character-moments && python qsearch.py query-models && python qsearch.py baselines && python qsearch.py proofs",
+      "status": "theory-and-experiment",
+      "success_criterion": "Lemma is either proved with explicit assumptions or replaced by a negative result.",
+      "work_type": "lemma-formalization"
+    },
+    {
+      "blocker": "code-equivalence-invariant-collapse",
+      "candidate_id": "DHS-GOWERS-SIEVE",
+      "claim": "A polynomial marker-aware affine-CVP decoder returns verified witnesses on an inverse-polynomial fraction of legal uniform density-one inputs.",
+      "dependencies": [
+        "proof_tracker.py"
+      ],
+      "id": "WORK-LEMMA-LEMMA-DHS-GOWERS-SIEVE-DCP-AFFINE-CVP-SOURCE-COVERAGE",
+      "kill_criterion": "The falsification test finds a legal classical attack or no-go reduction.",
+      "linked_artifacts": [
+        "research/classical_baselines/hidden_shift_query_lower_bounds.json",
+        "research/query_model_ledger.json",
+        "research/dequantization_attack_matrix.json"
+      ],
+      "linked_debts": [],
+      "priority_score": 95,
+      "recommended_action": "Run source-native held-out scaling and prove a BDD-radius or Gram-Schmidt event with an inverse-polynomial legal-input lower bound; finite Babai success is insufficient.",
+      "recommended_command": "python qsearch.py query-lower-bounds && python qsearch.py character-query-info && python qsearch.py character-lower-bound && python qsearch.py character-moments && python qsearch.py query-models && python qsearch.py baselines && python qsearch.py proofs",
+      "status": "theory-and-experiment",
+      "success_criterion": "Lemma is either proved with explicit assumptions or replaced by a negative result.",
+      "work_type": "lemma-formalization"
+    },
+    {
+      "blocker": "code-equivalence-invariant-collapse",
+      "candidate_id": "DHS-GOWERS-SIEVE",
+      "claim": "The exact ANF conditions characterize every total GF(2)-affine next-bit transport, and any constructible transport returns the target subset-sum witness as T(0).",
+      "dependencies": [
+        "proof_tracker.py"
+      ],
+      "id": "WORK-LEMMA-LEMMA-DHS-GOWERS-SIEVE-DCP-AFFINE-TRANSPORT-WITNESS-REDUCTION",
+      "kill_criterion": "The falsification test finds a legal classical attack or no-go reduction.",
+      "linked_artifacts": [
+        "research/classical_baselines/hidden_shift_query_lower_bounds.json",
+        "research/query_model_ledger.json",
+        "research/dequantization_attack_matrix.json"
+      ],
+      "linked_debts": [],
+      "priority_score": 95,
+      "recommended_action": "Produce an affine transport passing all truth-table equations whose offset b does not satisfy the target subset-sum congruence.",
+      "recommended_command": "python qsearch.py query-lower-bounds && python qsearch.py character-query-info && python qsearch.py character-lower-bound && python qsearch.py character-moments && python qsearch.py query-models && python qsearch.py baselines && python qsearch.py proofs",
+      "status": "theory-and-experiment",
+      "success_criterion": "Lemma is either proved with explicit assumptions or replaced by a negative result.",
+      "work_type": "lemma-formalization"
+    },
+    {
+      "blocker": "code-equivalence-invariant-collapse",
+      "candidate_id": "DHS-GOWERS-SIEVE",
+      "claim": "For every fixed k, the density-one modular subset-sum source factorial-moment excess is poly_k(n)*(1-2^-k)^n-bounded at fixed register offset.",
+      "dependencies": [
+        "proof_tracker.py"
+      ],
+      "id": "WORK-LEMMA-LEMMA-DHS-GOWERS-SIEVE-DCP-ALL-FIXED-ORDER-SOURCE-MOMENT-OBSTRUCTION",
+      "kill_criterion": "The falsification test finds a legal classical attack or no-go reduction.",
+      "linked_artifacts": [
+        "research/classical_baselines/hidden_shift_query_lower_bounds.json",
+        "research/query_model_ledger.json",
+        "research/dequantization_attack_matrix.json"
+      ],
+      "linked_debts": [],
+      "priority_score": 95,
+      "recommended_action": "Check the injective coordinate projection, equality classification of Boolean linear functionals, strict contraction from row distinctness, and finite monotone transfer argument.",
+      "recommended_command": "python qsearch.py query-lower-bounds && python qsearch.py character-query-info && python qsearch.py character-lower-bound && python qsearch.py character-moments && python qsearch.py query-models && python qsearch.py baselines && python qsearch.py proofs",
+      "status": "theory-and-experiment",
+      "success_criterion": "Lemma is either proved with explicit assumptions or replaced by a negative result.",
+      "work_type": "lemma-formalization"
+    },
+    {
+      "blocker": "code-equivalence-invariant-collapse",
+      "candidate_id": "DHS-GOWERS-SIEVE",
+      "claim": "For m=n+O(1) and b=O(log n), inverse-polynomial source mass has exponentially many balanced marker-zero carry-sliced relation vectors no longer than the planted witness.",
+      "dependencies": [
+        "proof_tracker.py"
+      ],
+      "id": "WORK-LEMMA-LEMMA-DHS-GOWERS-SIEVE-DCP-CARRY-SLICED-RELATION-SOURCE-COVERAGE",
+      "kill_criterion": "The falsification test finds a legal classical attack or no-go reduction.",
+      "linked_artifacts": [
+        "research/classical_baselines/hidden_shift_query_lower_bounds.json",
+        "research/query_model_ledger.json",
+        "research/dequantization_attack_matrix.json"
+      ],
+      "linked_debts": [],
+      "priority_score": 95,
+      "recommended_action": "Verify the balanced-family count, Cauchy-Schwarz low collision bound, Smith joint high bound, second-moment ratio, and Paley-Zygmund source coverage without assuming high probability.",
+      "recommended_command": "python qsearch.py query-lower-bounds && python qsearch.py character-query-info && python qsearch.py character-lower-bound && python qsearch.py character-moments && python qsearch.py query-models && python qsearch.py baselines && python qsearch.py proofs",
+      "status": "theory-and-experiment",
+      "success_criterion": "Lemma is either proved with explicit assumptions or replaced by a negative result.",
+      "work_type": "lemma-formalization"
+    }
+  ],
+  "ready_to_run_count": 12,
+  "status": "proof-work-ready",
+  "theory_or_mixed_count": 18,
+  "top_action_cluster": {
+    "affected_candidate_count": 2,
+    "affected_candidates": [
+      "DHS-GOWERS-SIEVE",
+      "HYP-LIT-HIDDEN-SHIFT-SIEVE"
+    ],
+    "kill_criterion": "Success collapses in the scaling tail, covers only polynomially many explicit candidates, uses target-dependent or measured coins, or leaves paired quantum workspaces with vanishing overlap.",
+    "linked_work_items": [
+      "WORK-DEBT-DHS-GOWERS-SIEVE-PO-DEQUANTIZATION-DCP-DENSITY-ONE-PARTIAL-SUBSET-SUM-SOLVER",
+      "WORK-DEBT-HYP-LIT-HIDDEN-SHIFT-SIEVE-PO-DEQUANTIZATION-DCP-DENSITY-ONE-PARTIAL-SUBSET-SUM-SOLVER",
+      "WORK-DEBT-DHS-GOWERS-SIEVE-PO-FALSIFIERS-DCP-DENSITY-ONE-PARTIAL-SUBSET-SUM-SOLVER",
+      "WORK-DEBT-HYP-LIT-HIDDEN-SHIFT-SIEVE-PO-FALSIFIERS-DCP-DENSITY-ONE-PARTIAL-SUBSET-SUM-SOLVER"
+    ],
+    "priority_score": 160,
+    "recommended_command": "python qsearch.py dcp-subset-sum-bridge && python qsearch.py dcp-coherent-matching && python qsearch.py dcp-subset-sum-randomize && python qsearch.py dcp-odd-unit-geometry && python qsearch.py dcp-subset-sum-resource-frontier && python qsearch.py dcp-subset-sum-lattice && python qsearch.py dcp-subset-sum-two-adic && python qsearch.py dcp-subset-sum-carry-anf && python qsearch.py dcp-subset-sum-low-bit-bdd && python qsearch.py dcp-subset-sum-conditioned-quotient && python qsearch.py dcp-subset-sum-carry-slice-lattice && python qsearch.py dcp-subset-sum-target-distribution && python qsearch.py dcp-subset-sum-synthesize && python qsearch.py dcp-decoder-frontier && python qsearch.py proofs && python qsearch.py mutate",
+    "success_criterion": "At least one source-contract row has a uniform inverse-polynomial legal-input coverage theorem, polynomial time and memory, verified witnesses, and a deterministic, shared-seed randomized, or algorithm-specific coherent interface.",
+    "work_type": "dcp-density-one-partial-subset-sum-solver"
+  },
+  "top_work_item": {
+    "blocker": "code-equivalence-invariant-collapse",
+    "candidate_id": "DHS-GOWERS-SIEVE",
+    "claim": "PO-DEQUANTIZATION",
+    "dependencies": [
+      "dcp_subset_sum_bridge.py",
+      "dcp_subset_sum_lattice_search.py",
+      "dcp_subset_sum_two_adic_search.py",
+      "dcp_subset_sum_resource_frontier.py",
+      "dcp_subset_sum_carry_anf.py",
+      "dcp_subset_sum_solver_synthesis.py",
+      "dcp_subset_sum_low_bit_bdd.py",
+      "dcp_subset_sum_conditioned_quotient.py",
+      "dcp_subset_sum_carry_slice_lattice.py",
+      "dcp_subset_sum_target_distribution.py",
+      "dcp_coherent_matching_interface.py",
+      "dcp_subset_sum_random_self_reduction.py",
+      "dcp_odd_unit_orbit_geometry.py",
+      "dcp_decoder_frontier.py",
+      "proof_tracker.py",
+      "mutation_engine.py"
+    ],
+    "id": "WORK-DEBT-DHS-GOWERS-SIEVE-PO-DEQUANTIZATION-DCP-DENSITY-ONE-PARTIAL-SUBSET-SUM-SOLVER",
+    "kill_criterion": "Success collapses in the scaling tail, covers only polynomially many explicit candidates, uses target-dependent or measured coins, or leaves paired quantum workspaces with vanishing overlap.",
+    "linked_artifacts": [
+      "research/reductions/dcp_subset_sum_bridge.json",
+      "research/classical_baselines/dcp_subset_sum_lattice_search.json",
+      "research/classical_baselines/dcp_subset_sum_two_adic_search.json",
+      "research/classical_baselines/dcp_subset_sum_resource_frontier.json",
+      "research/classical_baselines/dcp_subset_sum_carry_anf.json",
+      "research/hypotheses/dcp_subset_sum_solver_synthesis.json",
+      "research/classical_baselines/dcp_subset_sum_low_bit_bdd.json",
+      "research/classical_baselines/dcp_subset_sum_conditioned_quotient.json",
+      "research/classical_baselines/dcp_subset_sum_carry_slice_lattice.json",
+      "research/classical_baselines/dcp_subset_sum_target_distribution.json",
+      "research/reductions/dcp_coherent_matching_interface.json",
+      "research/reductions/dcp_subset_sum_random_self_reduction.json",
+      "research/classical_baselines/dcp_odd_unit_orbit_geometry.json",
+      "research/phase_workbench/dcp_decoder_frontier.json",
+      "research/proof_debt_report.json",
+      "research/mutation_report.json"
+    ],
+    "linked_debts": [
+      "DEBT-DHS-GOWERS-SIEVE-PO-DEQUANTIZATION"
+    ],
+    "priority_score": 160,
+    "recommended_action": "Construct a deterministic or explicit target-independent shared-seed randomized polynomial-time partial solver for random density-one modular subset sum with uniform inverse-polynomial legal-input coverage. For a genuinely quantum relation solver, prove a target-independent decomposition or paired-workspace fidelity.",
+    "recommended_command": "python qsearch.py dcp-subset-sum-bridge && python qsearch.py dcp-coherent-matching && python qsearch.py dcp-subset-sum-randomize && python qsearch.py dcp-odd-unit-geometry && python qsearch.py dcp-subset-sum-resource-frontier && python qsearch.py dcp-subset-sum-lattice && python qsearch.py dcp-subset-sum-two-adic && python qsearch.py dcp-subset-sum-carry-anf && python qsearch.py dcp-subset-sum-low-bit-bdd && python qsearch.py dcp-subset-sum-conditioned-quotient && python qsearch.py dcp-subset-sum-carry-slice-lattice && python qsearch.py dcp-subset-sum-target-distribution && python qsearch.py dcp-subset-sum-synthesize && python qsearch.py dcp-decoder-frontier && python qsearch.py proofs && python qsearch.py mutate",
+    "status": "theory-and-experiment",
+    "success_criterion": "At least one source-contract row has a uniform inverse-polynomial legal-input coverage theorem, polynomial time and memory, verified witnesses, and a deterministic, shared-seed randomized, or algorithm-specific coherent interface.",
+    "work_type": "dcp-density-one-partial-subset-sum-solver"
+  },
+  "total_candidate_work_item_count": 174,
+  "work_item_count": 30
+}

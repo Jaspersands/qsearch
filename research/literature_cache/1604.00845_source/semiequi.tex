@@ -1,0 +1,109 @@
+%!TEX root = ./ft-hd.tex
+%\newcommand{\rect}[1]{\text{rect}_{#1}}
+\section{Semi-equispaced Fourier Transform}\label{sec:semiequi}
+In this section we give an algorithm for computing the semi-equispaced Fourier transform, prove its correctness and give runtime bounds.
+\begin{algorithm}[H]
+\caption{Semi-equispaced Fourier Transform in $2^{O(d)}k \log^{d} N$ time}\label{alg:semi-fft}
+\begin{algorithmic}[1]
+\Procedure{SemiEquispacedFFT}{$x$, $c$}\Comment{$x \in \C^{\nsq}$ is $k$-sparse}
+\State Let $B\geq 2^d k$, be a power of $2^d$, $b=B^{1/d}$
+\State $G, \wh{G'} \gets $ $d$-th tensor powers of the flat window functions of~\cite{HIKP2}, see below
+%\State $H\gets G^{*d}, H'\gets (G')^{*d}$ \Comment{Tensor filters to get a $d$-dimensional filter}
+\State $y_i \gets \frac{1}{\sqrt{N}}(x * G)_{i\cdot \frac{n}{2b}}$ for $i \in [2b]^d$.
+\State $\wh{y} \gets \textsc{FFT}(y)$ \Comment{FFT on $[2b]^d$}
+\State $\wh{x}'_i \gets \wh{y}_i$ for $||i||_\infty \leq b/2$.
+\State \Return $\wh{x}'$
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+  We define filters $G, \wh{G'}$ as $d$-th tensor powers of the flat window functions of~\cite{HIKP2}, so
+  that $G_i = 0$ for all $||i||_\infty \gtrsim c (n/b) \log N$,
+  $\norm{2}{G -G'} \leq N^{-c}$,
+  \[
+  \wh{G'}_i = \left\{
+    \begin{array}{cl}
+      1 & \text{ if } ||i||_\infty \leq b/2\\
+      0 & \text{ if } ||i||_\infty > b\\
+    \end{array}
+  \right.,
+  \]
+  and $\wh{G'}_i \in [0, 1]$ everywhere. 
+
+
+The following is similar to results of~\cite{DR93, IKP}.
+
+\begin{lemma}\label{l:semiequi1}
+  Let $n$ be a power of two, $N=n^d$, $c\geq 2$ a constant. Let integer $B\geq 1$, be a power of $2^d$, $b=B^{1/d}$. For any $x\in \C^\nsq$ Algorithm~\ref{alg:semi-fft} computes $\wh{x}'_i$
+  for all $||i||_\infty \leq b/2$ such that
+  \[
+  \abs{\wh{x}'_i - \wh{x}_i} \leq \norm{2}{x} / N^c
+  \]
+in $c^{O(d)}||x||_0 \log^{d} N+2^{O(d)}B\log B$   time.
+\end{lemma}
+\begin{proof}
+  Define
+  \[
+  z = \frac{1}{\sqrt{N}}x * G.
+  \]
+  We have that $\wh{z}_i = \wh{x}_i \wh{G}_i$ for all $i\in \nsq$.
+  Furthermore, because subsampling and aliasing are dual under the
+  Fourier transform, since $y_i = z_{i\cdot (n/2b)}, i\in [2b]^d$ is a subsampling of $z$ we have for
+  $i$ such that $||i||_\infty \leq b/2$ that
+  \begin{align*}
+    \wh{x}'_i = \wh{y}_i &= \sum_{j \in [n/(2b)]^d} \wh{z}_{i + 2b\cdot j} \\
+    &= \sum_{j\in [n/(2b)]^d} \wh{x}_{i + 2b \cdot j}\wh{G}_{i+2b\cdot j} \\
+    &= \sum_{j\in [n/(2b)]^d } \wh{x}_{i + 2b\cdot j}\wh{G'}_{i+2b\cdot j} + \sum_{j\in [n/(2b)]^d} \wh{x}_{i + 2b\cdot j}(\wh{G}_{i+2b\cdot j} - \wh{G'}_{i+2b\cdot j})\\
+    &= \sum_{j\in [n/(2b)]^d} \wh{x}_{i +
+      2b\cdot j}\wh{G'}_{i+2b\cdot j}+ \sum_{j\in [n/(2b)]^d} \wh{x}_{i +
+      2b\cdot j}(\wh{G}_{i+2b\cdot j} -\wh{G'}_{i+2b\cdot j}).
+  \end{align*}
+For the second term we have using Cauchy-Schwarz 
+$$
+\sum_{j\in [n/(2b)]^d} \wh{x}_{i + 2b\cdot j}(\wh{G}_{i+2b\cdot j} -\wh{G'}_{i+2b\cdot j})\leq ||x||_2 ||\wh{G} -\wh{G'}||_2\leq ||x||_2/N^c.
+$$
+For the first term we have 
+$$
+\sum_{j\in [n/(2b)]^d} \wh{x}_{i + 2b\cdot j}\wh{G'}_{i+2b\cdot j}=\wh{x}_i\cdot \wh{G'}_{i+2b\cdot 0}=\wh{x}_i
+$$
+for all $i\in [2b]^d$ such that $||i||_\infty\leq b$, since for any $j\neq 0$ the argument of $\wh{G'}_{i+2b\cdot j}$ is larger than $b$ in $\ell_\infty$ norm, and hence $\wh{G'}_{i+2b\cdot j}=0$ for all $j\neq 0$. 
+
+Putting these bounds together we get that 
+  \[
+  \abs{\wh{x}'_i - \wh{x}_i} \leq \norm{2}{\wh{x}}
+  \norm{2}{\wh{G}-\wh{G'}} \leq \norm{2}{x}N^{-c}
+  \]
+  as desired.
+
+  The time complexity of computing the FFT of $y$ is $2^{O(d)}B\log B$. 
+  The vector $y$ can  be constructed in time $c^{O(d)}||x||_0\log^d N$. This is because the support of $G_i$ is localized so that 
+  each nonzero coordinate $i$ of $x$ only contributes to $c^{O(d)}\log^d N$
+  entries of $y$. 
+\end{proof}
+
+We will need the following simple generalization:
+\begin{corollary}\label{c:semiequi1}
+  Let $n$ be a power of two, $N=n^d$, $c\geq 2$ a constant, and $\Sigma\in \gl, q\in \nsq$.  Let integer $B\geq 1$ be a power of $2^d$, $b=B^{1/d}$.
+   Let $S = \{\Sigma(i - q) : i  \in \Z, ||i||_\infty \leq b/2\}$.  Then for any $x\in \C^\nsq$ we can compute $\wh{x}'_i$ for all
+  $i \in S$ time such that
+  \[
+  \abs{\wh{x}'_i - \wh{x}_i} \leq \norm{2}{x} / N^c
+  \]
+in $c^{O(d)}||x||_0 \log^d N+2^{O(d)}B\log B$ time.  
+\end{corollary}
+\begin{proof}
+Define
+  $x^*_j = \omega^{qj}x_{\Sigma^{-T}j}$.  Then for all $i \in [n]$,
+  \begin{align*}
+    \wh{x}_{\Sigma(i-q)}
+    &= \frac{1}{\sqrt{N}}\sum_{j \in \nsq} \omega^{-j^T\Sigma(i-q)}x_j\\
+    &= \frac{1}{\sqrt{N}}\sum_{j \in \nsq} \omega^{-j^T\Sigma i}\omega^{j^T\Sigma q}x_j\\    
+    &= \frac{1}{\sqrt{N}}\sum_{j'=\Sigma^{T}j \in \nsq} \omega^{-(j')^Ti}\omega^{(j')^Tq}x_{\Sigma^{-T}j'}\\    
+    &= \frac{1}{\sqrt{N}}\sum_{j'=\Sigma^{T}j \in \nsq} \omega^{-(j')^Ti}x^*_{j'}\\        
+    &= \wh{x}^*_i.
+  \end{align*}
+  We can access $\wh{x}^*_i$ with $O(d^2)$ overhead, so by
+  Lemma~\ref{l:semiequi1} we can approximate $\wh{x}_{\Sigma(i-q)} =
+  \wh{x}^*_i$ for $||i||_\infty \leq k$ in $c^{O(d)}k\log^d N$ time.
+\end{proof}
+

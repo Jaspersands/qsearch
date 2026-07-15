@@ -1,0 +1,1412 @@
+{
+  "affine_map_cap": 250000,
+  "canonical_max_assignments": 200000,
+  "created_at": "2026-07-13T23:38:53.268244+00:00",
+  "falsifiers_triggered": [
+    "Some affine-geometry collisions are explained by AGL(2,q) support automorphisms."
+  ],
+  "headline_metrics": {
+    "affine_control_count": 7,
+    "canonicalization_rejection_count": 0,
+    "code_count": 18,
+    "equivalent_control_count": 2,
+    "low_weight_rejection_count": 0,
+    "max_ambient_point_count": 9,
+    "no_collision_count": 0,
+    "proof_debt_collision_count": 0,
+    "search_count": 2,
+    "structural_rejection_count": 0,
+    "support_affine_profile_collision_count": 5,
+    "tuple_collision_count": 9,
+    "tuple_profile_rejection_count": 0
+  },
+  "records": [
+    {
+      "affine_control_count": 3,
+      "ambient_point_count": 4,
+      "canonicalization_rejection_count": 0,
+      "code_count": 10,
+      "collision_audits": [],
+      "control_audits": [
+        {
+          "affine_support": {
+            "equivalent": true,
+            "estimated_affine_maps": 2,
+            "evaluated": true,
+            "interpretation": "Puncturing supports are AGL(2,q)-equivalent; this is a finite-geometry automorphism control.",
+            "maps_checked": 2
+          },
+          "canonical_equal": null,
+          "canonical_status": "skipped-after-earlier-baseline",
+          "collision_source": "affine-control",
+          "dimension": 3,
+          "field_order": 2,
+          "generator_a": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ],
+          "generator_b": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ],
+          "id": "ag2-f2-k3-trial-1-0,2,3-0,1,2",
+          "interpretation": "Puncturing supports are AGL(2,q)-equivalent; this is a finite-geometry automorphism control.",
+          "length": 3,
+          "low_weight_status": "skipped-after-earlier-baseline",
+          "status": "equivalent-under-affine-linear-support-automorphism",
+          "structural_distinguishing_invariants": [],
+          "support_a": [
+            0,
+            2,
+            3
+          ],
+          "support_b": [
+            0,
+            1,
+            2
+          ],
+          "support_line_profile": [
+            2,
+            2,
+            2,
+            1,
+            1,
+            1
+          ],
+          "support_parallel_class_profile": [
+            [
+              2,
+              1
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              2,
+              1
+            ]
+          ],
+          "trial": 1,
+          "tuple_profile_bucket_size": 2,
+          "tuple_profile_status": "skipped-after-affine-control"
+        },
+        {
+          "affine_support": {
+            "equivalent": true,
+            "estimated_affine_maps": 1,
+            "evaluated": true,
+            "interpretation": "Puncturing supports are AGL(2,q)-equivalent; this is a finite-geometry automorphism control.",
+            "maps_checked": 1
+          },
+          "canonical_equal": null,
+          "canonical_status": "skipped-after-earlier-baseline",
+          "collision_source": "affine-control",
+          "dimension": 3,
+          "field_order": 2,
+          "generator_a": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ],
+          "generator_b": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ],
+          "id": "ag2-f2-k3-trial-3-0,2,3-0,1,3",
+          "interpretation": "Puncturing supports are AGL(2,q)-equivalent; this is a finite-geometry automorphism control.",
+          "length": 3,
+          "low_weight_status": "skipped-after-earlier-baseline",
+          "status": "equivalent-under-affine-linear-support-automorphism",
+          "structural_distinguishing_invariants": [],
+          "support_a": [
+            0,
+            2,
+            3
+          ],
+          "support_b": [
+            0,
+            1,
+            3
+          ],
+          "support_line_profile": [
+            2,
+            2,
+            2,
+            1,
+            1,
+            1
+          ],
+          "support_parallel_class_profile": [
+            [
+              2,
+              1
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              2,
+              1
+            ]
+          ],
+          "trial": 3,
+          "tuple_profile_bucket_size": 2,
+          "tuple_profile_status": "skipped-after-affine-control"
+        },
+        {
+          "affine_support": {
+            "equivalent": true,
+            "estimated_affine_maps": 4,
+            "evaluated": true,
+            "interpretation": "Puncturing supports are AGL(2,q)-equivalent; this is a finite-geometry automorphism control.",
+            "maps_checked": 4
+          },
+          "canonical_equal": null,
+          "canonical_status": "skipped-after-earlier-baseline",
+          "collision_source": "affine-control",
+          "dimension": 3,
+          "field_order": 2,
+          "generator_a": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ],
+          "generator_b": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ],
+          "id": "ag2-f2-k3-trial-5-1,2,3-0,1,2",
+          "interpretation": "Puncturing supports are AGL(2,q)-equivalent; this is a finite-geometry automorphism control.",
+          "length": 3,
+          "low_weight_status": "skipped-after-earlier-baseline",
+          "status": "equivalent-under-affine-linear-support-automorphism",
+          "structural_distinguishing_invariants": [],
+          "support_a": [
+            1,
+            2,
+            3
+          ],
+          "support_b": [
+            0,
+            1,
+            2
+          ],
+          "support_line_profile": [
+            2,
+            2,
+            2,
+            1,
+            1,
+            1
+          ],
+          "support_parallel_class_profile": [
+            [
+              2,
+              1
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              2,
+              1
+            ]
+          ],
+          "trial": 5,
+          "tuple_profile_bucket_size": 2,
+          "tuple_profile_status": "skipped-after-affine-control"
+        }
+      ],
+      "equivalent_control_count": 0,
+      "interpretation": "Affine-geometry collisions found so far are affine-linear or canonical controls.",
+      "line_count": 6,
+      "low_weight_rejection_count": 0,
+      "no_collision_count": 0,
+      "parallel_class_count": 3,
+      "proof_debt_collision_count": 0,
+      "spec": {
+        "field_order": 2,
+        "id": "ag2-f2-k3",
+        "max_collisions": 3,
+        "max_trials": 24,
+        "puncture_size": 3,
+        "seed": 8102,
+        "tuple_size": 2
+      },
+      "status": "affine-geometry-collisions-all-equivalent-controls",
+      "structural_rejection_count": 0,
+      "support_affine_profile_collision_count": 1,
+      "support_profile_key_count": 1,
+      "trials_run": 5,
+      "tuple_collision_count": 3,
+      "tuple_profile_key_count": 1,
+      "tuple_profile_rejection_count": 0
+    },
+    {
+      "affine_control_count": 4,
+      "ambient_point_count": 9,
+      "canonicalization_rejection_count": 0,
+      "code_count": 8,
+      "collision_audits": [
+        {
+          "affine_support": {
+            "equivalent": false,
+            "estimated_affine_maps": 432,
+            "evaluated": true,
+            "interpretation": "No affine-linear support equivalence was found under the configured enumeration.",
+            "maps_checked": 432
+          },
+          "canonical_equal": true,
+          "canonical_status": "canonical-equivalent-or-automorphic",
+          "collision_source": "tuple-profile",
+          "dimension": 6,
+          "field_order": 3,
+          "generator_a": [
+            [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ]
+          ],
+          "generator_b": [
+            [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ]
+          ],
+          "id": "ag2-f3-k6-trial-3-0,1,3,5,6,8-3,4,5,6,7,8",
+          "interpretation": "Canonicalization proves this affine-geometry collision is an equivalent control.",
+          "length": 6,
+          "low_weight_status": "low-weight-matroid-survivor-proof-debt",
+          "status": "canonical-equivalent-control",
+          "structural_distinguishing_invariants": [],
+          "support_a": [
+            0,
+            1,
+            3,
+            5,
+            6,
+            8
+          ],
+          "support_b": [
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "support_line_profile": [
+            3,
+            3,
+            3,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            1,
+            1,
+            1
+          ],
+          "support_parallel_class_profile": [
+            [
+              3,
+              2,
+              1
+            ],
+            [
+              3,
+              2,
+              1
+            ],
+            [
+              3,
+              2,
+              1
+            ],
+            [
+              2,
+              2,
+              2
+            ]
+          ],
+          "trial": 3,
+          "tuple_profile_bucket_size": 8,
+          "tuple_profile_status": "tuple-profile-survivor-needs-canonicalization"
+        },
+        {
+          "affine_support": {
+            "equivalent": false,
+            "estimated_affine_maps": 432,
+            "evaluated": true,
+            "interpretation": "No affine-linear support equivalence was found under the configured enumeration.",
+            "maps_checked": 432
+          },
+          "canonical_equal": true,
+          "canonical_status": "canonical-equivalent-or-automorphic",
+          "collision_source": "tuple-profile",
+          "dimension": 6,
+          "field_order": 3,
+          "generator_a": [
+            [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ]
+          ],
+          "generator_b": [
+            [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ]
+          ],
+          "id": "ag2-f3-k6-trial-3-0,1,3,5,6,8-0,1,3,5,7,8",
+          "interpretation": "Canonicalization proves this affine-geometry collision is an equivalent control.",
+          "length": 6,
+          "low_weight_status": "low-weight-matroid-survivor-proof-debt",
+          "status": "canonical-equivalent-control",
+          "structural_distinguishing_invariants": [],
+          "support_a": [
+            0,
+            1,
+            3,
+            5,
+            6,
+            8
+          ],
+          "support_b": [
+            0,
+            1,
+            3,
+            5,
+            7,
+            8
+          ],
+          "support_line_profile": [
+            3,
+            3,
+            3,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            1,
+            1,
+            1
+          ],
+          "support_parallel_class_profile": [
+            [
+              3,
+              2,
+              1
+            ],
+            [
+              3,
+              2,
+              1
+            ],
+            [
+              3,
+              2,
+              1
+            ],
+            [
+              2,
+              2,
+              2
+            ]
+          ],
+          "trial": 3,
+          "tuple_profile_bucket_size": 8,
+          "tuple_profile_status": "tuple-profile-survivor-needs-canonicalization"
+        }
+      ],
+      "control_audits": [
+        {
+          "affine_support": {
+            "equivalent": true,
+            "estimated_affine_maps": 12,
+            "evaluated": true,
+            "interpretation": "Puncturing supports are AGL(2,q)-equivalent; this is a finite-geometry automorphism control.",
+            "maps_checked": 12
+          },
+          "canonical_equal": null,
+          "canonical_status": "skipped-after-earlier-baseline",
+          "collision_source": "affine-control",
+          "dimension": 6,
+          "field_order": 3,
+          "generator_a": [
+            [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ]
+          ],
+          "generator_b": [
+            [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ]
+          ],
+          "id": "ag2-f3-k6-trial-1-0,1,3,5,6,8-0,1,2,3,6,8",
+          "interpretation": "Puncturing supports are AGL(2,q)-equivalent; this is a finite-geometry automorphism control.",
+          "length": 6,
+          "low_weight_status": "skipped-after-earlier-baseline",
+          "status": "equivalent-under-affine-linear-support-automorphism",
+          "structural_distinguishing_invariants": [],
+          "support_a": [
+            0,
+            1,
+            3,
+            5,
+            6,
+            8
+          ],
+          "support_b": [
+            0,
+            1,
+            2,
+            3,
+            6,
+            8
+          ],
+          "support_line_profile": [
+            3,
+            3,
+            3,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            1,
+            1,
+            1
+          ],
+          "support_parallel_class_profile": [
+            [
+              3,
+              2,
+              1
+            ],
+            [
+              3,
+              2,
+              1
+            ],
+            [
+              3,
+              2,
+              1
+            ],
+            [
+              2,
+              2,
+              2
+            ]
+          ],
+          "trial": 1,
+          "tuple_profile_bucket_size": 2,
+          "tuple_profile_status": "skipped-after-affine-control"
+        },
+        {
+          "affine_support": {
+            "equivalent": true,
+            "estimated_affine_maps": 166,
+            "evaluated": true,
+            "interpretation": "Puncturing supports are AGL(2,q)-equivalent; this is a finite-geometry automorphism control.",
+            "maps_checked": 166
+          },
+          "canonical_equal": null,
+          "canonical_status": "skipped-after-earlier-baseline",
+          "collision_source": "affine-control",
+          "dimension": 6,
+          "field_order": 3,
+          "generator_a": [
+            [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ]
+          ],
+          "generator_b": [
+            [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ]
+          ],
+          "id": "ag2-f3-k6-trial-2-0,1,4,6,7,8-0,1,3,4,7,8",
+          "interpretation": "Puncturing supports are AGL(2,q)-equivalent; this is a finite-geometry automorphism control.",
+          "length": 6,
+          "low_weight_status": "skipped-after-earlier-baseline",
+          "status": "equivalent-under-affine-linear-support-automorphism",
+          "structural_distinguishing_invariants": [],
+          "support_a": [
+            0,
+            1,
+            4,
+            6,
+            7,
+            8
+          ],
+          "support_b": [
+            0,
+            1,
+            3,
+            4,
+            7,
+            8
+          ],
+          "support_line_profile": [
+            3,
+            3,
+            3,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            1,
+            1,
+            1
+          ],
+          "support_parallel_class_profile": [
+            [
+              3,
+              2,
+              1
+            ],
+            [
+              3,
+              2,
+              1
+            ],
+            [
+              3,
+              2,
+              1
+            ],
+            [
+              2,
+              2,
+              2
+            ]
+          ],
+          "trial": 2,
+          "tuple_profile_bucket_size": 2,
+          "tuple_profile_status": "skipped-after-affine-control"
+        },
+        {
+          "affine_support": {
+            "equivalent": true,
+            "estimated_affine_maps": 21,
+            "evaluated": true,
+            "interpretation": "Puncturing supports are AGL(2,q)-equivalent; this is a finite-geometry automorphism control.",
+            "maps_checked": 21
+          },
+          "canonical_equal": null,
+          "canonical_status": "skipped-after-earlier-baseline",
+          "collision_source": "affine-control",
+          "dimension": 6,
+          "field_order": 3,
+          "generator_a": [
+            [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ]
+          ],
+          "generator_b": [
+            [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ]
+          ],
+          "id": "ag2-f3-k6-trial-3-3,4,5,6,7,8-0,1,3,5,7,8",
+          "interpretation": "Puncturing supports are AGL(2,q)-equivalent; this is a finite-geometry automorphism control.",
+          "length": 6,
+          "low_weight_status": "skipped-after-earlier-baseline",
+          "status": "equivalent-under-affine-linear-support-automorphism",
+          "structural_distinguishing_invariants": [],
+          "support_a": [
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "support_b": [
+            0,
+            1,
+            3,
+            5,
+            7,
+            8
+          ],
+          "support_line_profile": [
+            3,
+            3,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            0
+          ],
+          "support_parallel_class_profile": [
+            [
+              3,
+              3,
+              0
+            ],
+            [
+              2,
+              2,
+              2
+            ],
+            [
+              2,
+              2,
+              2
+            ],
+            [
+              2,
+              2,
+              2
+            ]
+          ],
+          "trial": 3,
+          "tuple_profile_bucket_size": 2,
+          "tuple_profile_status": "skipped-after-affine-control"
+        },
+        {
+          "affine_support": {
+            "equivalent": true,
+            "estimated_affine_maps": 110,
+            "evaluated": true,
+            "interpretation": "Puncturing supports are AGL(2,q)-equivalent; this is a finite-geometry automorphism control.",
+            "maps_checked": 110
+          },
+          "canonical_equal": null,
+          "canonical_status": "skipped-after-earlier-baseline",
+          "collision_source": "affine-control",
+          "dimension": 6,
+          "field_order": 3,
+          "generator_a": [
+            [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ]
+          ],
+          "generator_b": [
+            [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ]
+          ],
+          "id": "ag2-f3-k6-trial-4-0,1,3,5,6,7-1,2,3,4,7,8",
+          "interpretation": "Puncturing supports are AGL(2,q)-equivalent; this is a finite-geometry automorphism control.",
+          "length": 6,
+          "low_weight_status": "skipped-after-earlier-baseline",
+          "status": "equivalent-under-affine-linear-support-automorphism",
+          "structural_distinguishing_invariants": [],
+          "support_a": [
+            0,
+            1,
+            3,
+            5,
+            6,
+            7
+          ],
+          "support_b": [
+            1,
+            2,
+            3,
+            4,
+            7,
+            8
+          ],
+          "support_line_profile": [
+            3,
+            3,
+            3,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            1,
+            1,
+            1
+          ],
+          "support_parallel_class_profile": [
+            [
+              3,
+              2,
+              1
+            ],
+            [
+              3,
+              2,
+              1
+            ],
+            [
+              3,
+              2,
+              1
+            ],
+            [
+              2,
+              2,
+              2
+            ]
+          ],
+          "trial": 4,
+          "tuple_profile_bucket_size": 2,
+          "tuple_profile_status": "skipped-after-affine-control"
+        }
+      ],
+      "equivalent_control_count": 2,
+      "interpretation": "Affine-geometry collisions found so far are affine-linear or canonical controls.",
+      "line_count": 12,
+      "low_weight_rejection_count": 0,
+      "no_collision_count": 0,
+      "parallel_class_count": 4,
+      "proof_debt_collision_count": 0,
+      "spec": {
+        "field_order": 3,
+        "id": "ag2-f3-k6",
+        "max_collisions": 4,
+        "max_trials": 70,
+        "puncture_size": 6,
+        "seed": 8103,
+        "tuple_size": 2
+      },
+      "status": "affine-geometry-collisions-all-equivalent-controls",
+      "structural_rejection_count": 0,
+      "support_affine_profile_collision_count": 4,
+      "support_profile_key_count": 2,
+      "trials_run": 4,
+      "tuple_collision_count": 6,
+      "tuple_profile_key_count": 1,
+      "tuple_profile_rejection_count": 0
+    }
+  ],
+  "status": "affine-geometry-code-search-dequantized-or-controls",
+  "summary": "Searched 2 affine-geometry parameter window(s), sampling 18 code(s). Found 9 tuple-profile/control collision(s), including 5 support affine-profile candidate(s): 7 affine-linear control(s), 0 rejection(s), and 0 proof-debt row(s).",
+  "tuple_cap": 50000
+}

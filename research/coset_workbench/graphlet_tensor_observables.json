@@ -1,0 +1,255 @@
+{
+  "created_at": "2026-07-08T16:14:27.986041+00:00",
+  "falsifiers_triggered": [
+    "A graphlet/tensor observable is exactly a classical small-pattern count.",
+    "Graphlet tensor enumeration hit the tuple cap; implicit contraction proof is required.",
+    "Known non-isomorphic graph pair has no separating graphlet tensor signal at this bond/register budget."
+  ],
+  "headline_metrics": {
+    "boundary_pair_count": 3,
+    "classical_shadow_collapse_count": 3,
+    "max_bond_dimension": 7,
+    "max_vertex_count": 126,
+    "no_signal_count": 6,
+    "nonclassical_candidate_count": 0,
+    "observable_count": 10,
+    "pair_count": 5,
+    "skipped_scaling_count": 1
+  },
+  "pair_audits": [
+    {
+      "falsifiers_triggered": [
+        "A graphlet/tensor observable is exactly a classical small-pattern count."
+      ],
+      "pair": {
+        "graph_a": "Shrikhande graph",
+        "graph_b": "4x4 rook graph",
+        "id": "shrikhande-vs-rook",
+        "known_nonisomorphic": true,
+        "reason": "Standard non-isomorphic strongly regular pair with identical parameters (16,6,2,2).",
+        "vertex_count": 16
+      },
+      "records": [
+        {
+          "bond_dimension": 4,
+          "classical_shadow": "edge/wedge/triangle/four-cycle count invariant",
+          "distinguishes": false,
+          "evaluated": true,
+          "id": "GRAPHLET-TENSOR-shrikhande-vs-rook-homomorphism-moments",
+          "interpretation": "Rank-2/3 homomorphism moment tensor gives matching signatures; no tensor-observable evidence.",
+          "observable_name": "Rank-2/3 homomorphism moment tensor",
+          "pair_id": "shrikhande-vs-rook",
+          "register_count": 3,
+          "status": "no-signal",
+          "tuple_count": 4096,
+          "value_a": "(('edges', 48), ('wedges', 240), ('triangles', 32), ('four_cycles', 60))",
+          "value_b": "(('edges', 48), ('wedges', 240), ('triangles', 32), ('four_cycles', 60))"
+        },
+        {
+          "bond_dimension": 7,
+          "classical_shadow": "induced four-vertex graphlet count invariant",
+          "distinguishes": true,
+          "evaluated": true,
+          "id": "GRAPHLET-TENSOR-shrikhande-vs-rook-four-vertex-graphlet-histogram",
+          "interpretation": "Four-register graphlet histogram tensor distinguishes the pair, but it is a classical induced four-vertex graphlet count invariant computation.",
+          "observable_name": "Four-register graphlet histogram tensor",
+          "pair_id": "shrikhande-vs-rook",
+          "register_count": 4,
+          "status": "classical-shadow-collapse",
+          "tuple_count": 1820,
+          "value_a": "((0, 16), (1, 336), (2, 672), (3, 544), (4, 204), (5, 48), (6, 0))",
+          "value_b": "((0, 24), (1, 288), (2, 792), (3, 384), (4, 324), (5, 0), (6, 8))"
+        }
+      ],
+      "status": "classical-shadow-collapse"
+    },
+    {
+      "falsifiers_triggered": [
+        "Known non-isomorphic graph pair has no separating graphlet tensor signal at this bond/register budget."
+      ],
+      "pair": {
+        "graph_a": "Untwisted CFI-style parity graph over K4",
+        "graph_b": "Single-edge twisted CFI-style parity graph over K4",
+        "id": "cfi-k4-parity-twist",
+        "known_nonisomorphic": true,
+        "reason": "CFI-style parity obstruction: low-dimensional WL and spectral checks are expected to fail before high-register or exact methods see the twist.",
+        "vertex_count": 28
+      },
+      "records": [
+        {
+          "bond_dimension": 4,
+          "classical_shadow": "edge/wedge/triangle/four-cycle count invariant",
+          "distinguishes": false,
+          "evaluated": true,
+          "id": "GRAPHLET-TENSOR-cfi-k4-parity-twist-homomorphism-moments",
+          "interpretation": "Rank-2/3 homomorphism moment tensor gives matching signatures; no tensor-observable evidence.",
+          "observable_name": "Rank-2/3 homomorphism moment tensor",
+          "pair_id": "cfi-k4-parity-twist",
+          "register_count": 3,
+          "status": "no-signal",
+          "tuple_count": 21952,
+          "value_a": "(('edges', 48), ('wedges', 120), ('triangles', 0), ('four_cycles', 0))",
+          "value_b": "(('edges', 48), ('wedges', 120), ('triangles', 0), ('four_cycles', 0))"
+        },
+        {
+          "bond_dimension": 7,
+          "classical_shadow": "induced four-vertex graphlet count invariant",
+          "distinguishes": false,
+          "evaluated": true,
+          "id": "GRAPHLET-TENSOR-cfi-k4-parity-twist-four-vertex-graphlet-histogram",
+          "interpretation": "Four-register graphlet histogram tensor gives matching signatures; no tensor-observable evidence.",
+          "observable_name": "Four-register graphlet histogram tensor",
+          "pair_id": "cfi-k4-parity-twist",
+          "register_count": 4,
+          "status": "no-signal",
+          "tuple_count": 20475,
+          "value_a": "((0, 8531), (1, 8640), (2, 2952), (3, 352), (4, 0), (5, 0), (6, 0))",
+          "value_b": "((0, 8531), (1, 8640), (2, 2952), (3, 352), (4, 0), (5, 0), (6, 0))"
+        }
+      ],
+      "status": "boundary-no-graphlet-signal"
+    },
+    {
+      "falsifiers_triggered": [
+        "Known non-isomorphic graph pair has no separating graphlet tensor signal at this bond/register budget."
+      ],
+      "pair": {
+        "graph_a": "Untwisted CFI-style parity graph over K5",
+        "graph_b": "Single-edge twisted CFI-style parity graph over K5",
+        "id": "cfi-k5-parity-twist",
+        "known_nonisomorphic": true,
+        "reason": "CFI-style parity obstruction: low-dimensional WL and spectral checks are expected to fail before high-register or exact methods see the twist.",
+        "vertex_count": 60
+      },
+      "records": [
+        {
+          "bond_dimension": 4,
+          "classical_shadow": "edge/wedge/triangle/four-cycle count invariant",
+          "distinguishes": false,
+          "evaluated": true,
+          "id": "GRAPHLET-TENSOR-cfi-k5-parity-twist-homomorphism-moments",
+          "interpretation": "Rank-2/3 homomorphism moment tensor gives matching signatures; no tensor-observable evidence.",
+          "observable_name": "Rank-2/3 homomorphism moment tensor",
+          "pair_id": "cfi-k5-parity-twist",
+          "register_count": 3,
+          "status": "no-signal",
+          "tuple_count": 216000,
+          "value_a": "(('edges', 160), ('wedges', 800), ('triangles', 0), ('four_cycles', 120))",
+          "value_b": "(('edges', 160), ('wedges', 800), ('triangles', 0), ('four_cycles', 120))"
+        },
+        {
+          "bond_dimension": 7,
+          "classical_shadow": "induced four-vertex graphlet count invariant",
+          "distinguishes": false,
+          "evaluated": true,
+          "id": "GRAPHLET-TENSOR-cfi-k5-parity-twist-four-vertex-graphlet-histogram",
+          "interpretation": "Four-register graphlet histogram tensor gives matching signatures; no tensor-observable evidence.",
+          "observable_name": "Four-register graphlet histogram tensor",
+          "pair_id": "cfi-k5-parity-twist",
+          "register_count": 4,
+          "status": "no-signal",
+          "tuple_count": 487635,
+          "value_a": "((0, 276155), (1, 162880), (2, 44320), (3, 4160), (4, 120), (5, 0), (6, 0))",
+          "value_b": "((0, 276155), (1, 162880), (2, 44320), (3, 4160), (4, 120), (5, 0), (6, 0))"
+        }
+      ],
+      "status": "boundary-no-graphlet-signal"
+    },
+    {
+      "falsifiers_triggered": [
+        "A graphlet/tensor observable is exactly a classical small-pattern count."
+      ],
+      "pair": {
+        "graph_a": "Cycle graph C16",
+        "graph_b": "C16 with distance-2 chords",
+        "id": "cycle-vs-chorded-cycle",
+        "known_nonisomorphic": true,
+        "reason": "Control pair that classical invariants should distinguish immediately.",
+        "vertex_count": 16
+      },
+      "records": [
+        {
+          "bond_dimension": 4,
+          "classical_shadow": "edge/wedge/triangle/four-cycle count invariant",
+          "distinguishes": true,
+          "evaluated": true,
+          "id": "GRAPHLET-TENSOR-cycle-vs-chorded-cycle-homomorphism-moments",
+          "interpretation": "Rank-2/3 homomorphism moment tensor distinguishes the pair, but it is a classical edge/wedge/triangle/four-cycle count invariant computation.",
+          "observable_name": "Rank-2/3 homomorphism moment tensor",
+          "pair_id": "cycle-vs-chorded-cycle",
+          "register_count": 3,
+          "status": "classical-shadow-collapse",
+          "tuple_count": 4096,
+          "value_a": "(('edges', 16), ('wedges', 16), ('triangles', 0), ('four_cycles', 0))",
+          "value_b": "(('edges', 32), ('wedges', 96), ('triangles', 16), ('four_cycles', 16))"
+        },
+        {
+          "bond_dimension": 7,
+          "classical_shadow": "induced four-vertex graphlet count invariant",
+          "distinguishes": true,
+          "evaluated": true,
+          "id": "GRAPHLET-TENSOR-cycle-vs-chorded-cycle-four-vertex-graphlet-histogram",
+          "interpretation": "Four-register graphlet histogram tensor distinguishes the pair, but it is a classical induced four-vertex graphlet count invariant computation.",
+          "observable_name": "Four-register graphlet histogram tensor",
+          "pair_id": "cycle-vs-chorded-cycle",
+          "register_count": 4,
+          "status": "classical-shadow-collapse",
+          "tuple_count": 1820,
+          "value_a": "((0, 660), (1, 880), (2, 264), (3, 16), (4, 0), (5, 0), (6, 0))",
+          "value_b": "((0, 140), (1, 784), (2, 624), (3, 224), (4, 32), (5, 16), (6, 0))"
+        }
+      ],
+      "status": "classical-shadow-collapse"
+    },
+    {
+      "falsifiers_triggered": [
+        "Graphlet tensor enumeration hit the tuple cap; implicit contraction proof is required.",
+        "Known non-isomorphic graph pair has no separating graphlet tensor signal at this bond/register budget."
+      ],
+      "pair": {
+        "graph_a": "Untwisted CFI-style parity graph over K6",
+        "graph_b": "Single-edge twisted CFI-style parity graph over K6",
+        "id": "cfi-k6-parity-twist",
+        "known_nonisomorphic": true,
+        "reason": "CFI-style parity obstruction: low-dimensional WL and spectral checks are expected to fail before high-register or exact methods see the twist.",
+        "vertex_count": 126
+      },
+      "records": [
+        {
+          "bond_dimension": 4,
+          "classical_shadow": "edge/wedge/triangle/four-cycle count invariant",
+          "distinguishes": false,
+          "evaluated": true,
+          "id": "GRAPHLET-TENSOR-cfi-k6-parity-twist-homomorphism-moments",
+          "interpretation": "Rank-2/3 homomorphism moment tensor gives matching signatures; no tensor-observable evidence.",
+          "observable_name": "Rank-2/3 homomorphism moment tensor",
+          "pair_id": "cfi-k6-parity-twist",
+          "register_count": 3,
+          "status": "no-signal",
+          "tuple_count": 2000376,
+          "value_a": "(('edges', 480), ('wedges', 4560), ('triangles', 0), ('four_cycles', 1440))",
+          "value_b": "(('edges', 480), ('wedges', 4560), ('triangles', 0), ('four_cycles', 1440))"
+        },
+        {
+          "bond_dimension": 7,
+          "classical_shadow": "induced four-vertex graphlet count invariant",
+          "distinguishes": false,
+          "evaluated": false,
+          "id": "GRAPHLET-TENSOR-cfi-k6-parity-twist-four-vertex-graphlet-histogram",
+          "interpretation": "Four-register graphlet histogram tensor exceeded the tuple cap; a real tensor ansatz needs an implicit contraction certificate.",
+          "observable_name": "Four-register graphlet histogram tensor",
+          "pair_id": "cfi-k6-parity-twist",
+          "register_count": 4,
+          "status": "skipped-scaling-cap",
+          "tuple_count": 10009125,
+          "value_a": "skipped",
+          "value_b": "skipped"
+        }
+      ],
+      "status": "boundary-no-graphlet-signal"
+    }
+  ],
+  "status": "blocked-no-graphlet-tensor-separator",
+  "summary": "Audited 10 graphlet tensor observables across 5 graph pairs. 3 signal(s) collapse to small-pattern classical counts; 3 boundary pair(s) remain without graphlet-tensor signal.",
+  "tuple_cap": 1000000
+}

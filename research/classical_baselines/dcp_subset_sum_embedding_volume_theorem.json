@@ -1,0 +1,143 @@
+{
+  "claim_gate": {
+    "average_case_short_vector_gap_proved": false,
+    "local_reduced_basis_gap_proved": false,
+    "logarithmic_slice_volume_only_gap_exists": false,
+    "polynomial_witness_decoder_constructed": false,
+    "reason": "The planted witness remains on the Gaussian volume scale in both embeddings. Any surviving lattice route must prove a non-volume local basis event, short-vector count separation, and decoder coverage.",
+    "speedup_claim_allowed": false,
+    "standard_volume_only_gap_exists": false
+  },
+  "created_at": "2026-07-15T04:33:14.619914+00:00",
+  "falsifiers_triggered": [
+    "The standard density-one planted witness is not asymptotically below the volume scale.",
+    "O(log n) carry slicing changes covolume only subexponentially and cannot create a volume-root gap.",
+    "Finite LLL success cannot be explained as an asymptotic determinant separation.",
+    "The theorem leaves local reduced-basis and average short-vector count mechanisms open."
+  ],
+  "headline_metrics": {
+    "exact_carry_sliced_covolume_theorem_count": 1,
+    "exact_standard_covolume_theorem_count": 1,
+    "limiting_witness_to_gaussian_scale_ratio": 1.0331828385306232,
+    "polynomial_witness_decoder_count": 0,
+    "proved_average_case_short_vector_gap_count": 0,
+    "proved_local_reduced_basis_separation_count": 0,
+    "row_count": 5,
+    "tail_carry_slice_log2_root_change": 0.022542832414382895,
+    "tail_carry_sliced_witness_to_gaussian_scale_ratio": 1.0233583703587357,
+    "tail_standard_witness_to_gaussian_scale_ratio": 1.039474440250656,
+    "volume_only_asymptotic_separation_ruled_out_count": 2
+  },
+  "rows": [
+    {
+      "carry_slice_log2_root_change": 0.18625531182094335,
+      "carry_sliced_determinant_root": 4.101794776489839,
+      "carry_sliced_log2_covolume": 40.72510623641887,
+      "carry_sliced_witness_to_gaussian_scale_ratio": 0.9820306667182083,
+      "constrained_low_bits": 4,
+      "embedding_scale": 4,
+      "finite_row_is_asymptotic_theorem": false,
+      "low_constraint_scale": 4,
+      "n_bits": 16,
+      "planted_witness_norm": 4.358898943540674,
+      "register_count": 18,
+      "register_offset": 2,
+      "standard_determinant_root": 3.605001850443321,
+      "standard_log2_covolume": 37.0,
+      "standard_witness_to_gaussian_scale_ratio": 1.1173609407723968
+    },
+    {
+      "carry_slice_log2_root_change": 0.10722273789718094,
+      "carry_sliced_determinant_root": 4.0667869257458475,
+      "carry_sliced_log2_covolume": 72.86001856429851,
+      "carry_sliced_witness_to_gaussian_scale_ratio": 1.0020018612368427,
+      "constrained_low_bits": 5,
+      "embedding_scale": 4,
+      "finite_row_is_asymptotic_theorem": false,
+      "low_constraint_scale": 4,
+      "n_bits": 32,
+      "planted_witness_norm": 5.916079783099616,
+      "register_count": 34,
+      "register_offset": 2,
+      "standard_determinant_root": 3.775497250726774,
+      "standard_log2_covolume": 69.0,
+      "standard_witness_to_gaussian_scale_ratio": 1.0793089752791059
+    },
+    {
+      "carry_slice_log2_root_change": 0.07522694931567282,
+      "carry_sliced_determinant_root": 4.087189975066942,
+      "carry_sliced_log2_covolume": 138.11543255346575,
+      "carry_sliced_witness_to_gaussian_scale_ratio": 1.0036800588933281,
+      "constrained_low_bits": 6,
+      "embedding_scale": 4,
+      "finite_row_is_asymptotic_theorem": false,
+      "low_constraint_scale": 4,
+      "n_bits": 64,
+      "planted_witness_norm": 8.18535277187245,
+      "register_count": 66,
+      "register_offset": 2,
+      "standard_determinant_root": 3.8795312653899314,
+      "standard_log2_covolume": 133.0,
+      "standard_witness_to_gaussian_scale_ratio": 1.0574037929479334
+    },
+    {
+      "carry_slice_log2_root_change": 0.03561594079665922,
+      "carry_sliced_determinant_root": 4.035895075704105,
+      "carry_sliced_log2_covolume": 265.701304185159,
+      "carry_sliced_witness_to_gaussian_scale_ratio": 1.0201076168625272,
+      "constrained_low_bits": 7,
+      "embedding_scale": 4,
+      "finite_row_is_asymptotic_theorem": false,
+      "low_constraint_scale": 4,
+      "n_bits": 128,
+      "planted_witness_norm": 11.445523142259598,
+      "register_count": 130,
+      "register_offset": 2,
+      "standard_determinant_root": 3.937480359623423,
+      "standard_log2_covolume": 261.0,
+      "standard_witness_to_gaussian_scale_ratio": 1.0456045317207558
+    },
+    {
+      "carry_slice_log2_root_change": 0.022542832414382895,
+      "carry_sliced_determinant_root": 4.030627253054977,
+      "carry_sliced_log2_covolume": 522.8611364277396,
+      "carry_sliced_witness_to_gaussian_scale_ratio": 1.0233583703587357,
+      "constrained_low_bits": 8,
+      "embedding_scale": 4,
+      "finite_row_is_asymptotic_theorem": false,
+      "low_constraint_scale": 4,
+      "n_bits": 256,
+      "planted_witness_norm": 16.09347693943108,
+      "register_count": 258,
+      "register_offset": 2,
+      "standard_determinant_root": 3.9681361825647303,
+      "standard_log2_covolume": 517.0,
+      "standard_witness_to_gaussian_scale_ratio": 1.039474440250656
+    }
+  ],
+  "status": "standard-and-log-sliced-volume-only-lattice-gap-obstructed",
+  "summary": "Proved exact covolumes for standard and carry-sliced embeddings. Both determinant roots tend to 4 and the planted/Gaussian scale ratio tends to 1.03318; no volume-only asymptotic gap exists.",
+  "theorem_certificate": {
+    "carry_sliced_covolume_squared_formula": "[2^m*(2*s*2^(n-b))]^2 * [1+t^2*(sum l_i^2+(2L-sum l_i)^2)]",
+    "carry_sliced_determinant_root_limit": 4.0,
+    "cauchy_binet_proved": true,
+    "limitations": [
+      "The Gaussian scale is a volume benchmark, not a theorem about the actual shortest vector.",
+      "The result rules out volume-only asymptotic separation, not local Gram-Schmidt structure.",
+      "BKZ/LLL behavior can depend on correlations not represented by covolume.",
+      "No average-case short-vector count or decoding lower bound is proved."
+    ],
+    "logarithmic_slice_volume_only_separation_ruled_out": true,
+    "planted_witness_to_gaussian_scale_limit": 1.0331828385306232,
+    "proof": "Expand the square standard determinant along the marker and modulus rows. For the rectangular sliced basis, Cauchy-Binet leaves the low-column-deleted minor, one minor for each deleted binary coordinate, and the marker-deleted minor; their squared ratios are 1, t^2 l_i^2, and t^2(2L-sum l_i)^2. With m=n+c, b=O(log n), and polynomial scales, both log covolumes equal 2n+o(n), so both determinant roots tend to four.",
+    "standard_covolume_formula": "2^m * (2*s*2^n)",
+    "standard_determinant_root_limit": 4.0,
+    "standard_volume_only_separation_ruled_out": true
+  },
+  "theorem_contract": {
+    "embeddings": "standard centered modular embedding and exact carry-sliced low/high embedding",
+    "not_proved": "actual shortest-vector law, local reduced-basis behavior, or decoder complexity",
+    "proved": "exact covolumes and determinant-root limits",
+    "regime": "m=n+c, b=O(log n), polynomial embedding scales"
+  }
+}

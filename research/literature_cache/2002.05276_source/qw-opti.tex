@@ -1,0 +1,154 @@
+
+
+In this section, we improve the algorithm by Helm and May~\cite{DBLP:conf/tqc/HelmM18} based on BCJ and the MNRS quantum walk framework. Our algorithm is a quantum walk on a product Johnson graph, as in Section~\ref{subsection:subsumqw}. There are two new ideas involved.
+
+%In~\cite{DBLP:conf/tqc/HelmM18}, Helm and May gave a quantum version of the BCJ algorithm. We found two ways of improving this algorithm, leading to complexity $2^{0.217n}$ (from $2^{0.226n}$).
+
+
+\subsection{Asymmetric 5th level}
+
+In our new algorithm, we can afford one more level than BCJ. We then have a 6-level merging tree, with levels numbered 5 down to 0. Lists at level $i$ all have the same size $\ell_i$, \emph{except at level 5}. Recall that the merging tree, and all its lists, is the additional data structure attached to a node in the Johnson graph. In the original algorithm of~\cite{DBLP:conf/tqc/HelmM18}, there are 5 levels, and a node is a collection of $16$ lists, each list being a subset of size $\ell_4$ among the $g(1/16+\alpha_3,\alpha_3)/2$ vectors having the right distribution.
+
+%In the original algorithm of~\cite{DBLP:conf/tqc/HelmM18}, there are 5 levels, and a node is a subset of size $\ell_4$ among the $g(1/16+\alpha_3,\alpha_3)/2$ vectors having the right distribution. It is cut in 16 for the 16 lists at level 4, which have then all size $\ell_4$ (up to constant factors).\XB{J'ai corrigé, il n'y a pas de 2 ni de 5eme étage dans Helm \& May.}
+
+%Our new algorithm is based on a 5-level merging tree, as BCJ, with levels numbered 4 downto 0. Lists at level $i$ all have the same size $\ell_i$, \emph{except at level 4}. Recall that the merging tree, and all its lists, is the additional data structure attached to a node in the Johnson graph. In the original algorithm of~\cite{DBLP:conf/tqc/HelmM18}, a node is a subset of size $\ell_4$ among the $g(1/16+\alpha_3, \alpha_3)/2$ vectors having the right distribution. It is cut in 16 for the 16 lists at level 4, which have then all size $\ell_4$ (up to constant factors).
+
+In our new algorithm, at level 5, we separate the lists into ``left'' lists of size $\ell_5^l$ and ``right'' lists of size $\ell_5^r$. The quantum walk will only be performed on the left lists, while the right ones are full enumerations. Each list at level 4 is obtained by merging a ``left'' and a ``right'' list. The left-right-split at level 5 is then asymmetric: vectors in one of the left lists $L_5^l$ are sampled from $D^{\eta n}[\alpha_4, 1/32, \gamma_4] \times \{0^{(1 -\eta) n}\}$ and the right lists $L_5^r$ contain \emph{all} the vectors from $\{0^{\eta n}\} \times D^{(1-\eta) n}[\alpha_4, 1/32, \gamma_4]$. This yields a new constraint: $\ell_5^r = f(1/32+\alpha_4-2\gamma_4, \alpha_4, \gamma_4) (1 - \eta)$.
+
+
+%In \cite{DBLP:conf/tqc/HelmM18}, an element $\mathbf{e}_4$ at level 4 has length $n/2$. A level-4 list is then composed of $|L_4|$ elements taken randomly from the $n h(1/8+\alpha_3, \alpha_3)/2$ vectors which have the right proportions. They then perform a quantum walk over those lists.
+
+%Here, the level-4 lists are not all alike. Below each level-3 list, there is a left list and a right list, whose sizes are respectively $|L_{4, l}|$ and $|L_{4, r}|$. The quantum walk will only be performed on the left lists, while the right ones are full enumerations. Notice that the relation between level-4 lists and level-3 lists is now $|L_{4, l}||L_{4, r}| = 2^{c_3}|L_3|$. The size of an element from a left list is $\gamma n$, and $(1-\gamma) n$ for a right list, for some parameter $\gamma$.
+
+While this asymmetry does not bring any advantage classically, it helps in reducing the update time. We enforce the constraint $\ell_5^r = c_4$, so that for each element of $L_5^l$, there is on average one matching element in $L_5^r$. So updating the list $L_4$ at level 4 is done on average time 1. Then we also have $\ell_4 = \ell_5^l$.
+
+%As $|L_{4, l}|$ will determine the diameter of the Johnson graph and the mixing time of the quantum walk, we want to keep it as small as possible. In an other hand, we require $|L_{4, l}| \geqslant |L_3|$ for the update cost of a level-3 list to be constant. We hence fix $|L_{4, l}| = |L_3|$ (and then $|L_{4, r}| = 2^{c_3}$).% The right lists being full enumerations, $\gamma$ is related to the other parameters by $|L_{4, r}| = 2^{(1-\gamma) n h(1/8+\alpha_3, \alpha_3)}$.
+
+
+With this construction, $\ell_5^r$ and $\ell_5^l$ are actually unneeded parameters. We only need the constraints $c_4 (= \ell_5^r) = f(1/32+\alpha_4-2\gamma_4, \alpha_4, \gamma_4) (1 - \eta)$ and $\ell_4 (= \ell_5^l) \leq f(1/32+\alpha_4-2\gamma, \alpha_4, \gamma_4) \eta$. The total setup time is now:
+\begin{multline*}
+\mathsf{S} = \max \bigg( \undertext[1]{Lv. 5 and 4}{ c_4, \ell_4 },~\undertext{Level 3}{2\ell_4  - (c_3 - c_4)},~\undertext{Level 2}{2\ell_3  - (c_2 - c_3)},~\undertext{Level 1}{2\ell_2 - (c_1 - c_2)}, \\
+\undertext{Level 0}{\ell_1 + \max(\ell_1 - (1-c_1), 0) } \bigg)
+\end{multline*}
+and the expected update time for level 5 (inserting a new element in a list $L_5^l$ at the bottom of the tree) and at level 4 (inserting a new element in $L_4$) is 1. The spectral gap of the graph is $\delta = - \ell_5^l $
+%$ \Omega \left( \dfrac{1}{|L_5^l|} \right)$ 
+and the proportion of marked vertices is $\epsilon = -\ell_0$.
+
+%\paragraph{Spectral Gap.}
+%The spectral gap of the graph is $\delta = \Omega \left( \dfrac{1}{|L_{4, l}|} \right)$. % (we denote it $\delta = \ell_3$ in $\log_2$, by abuse of notation).
+
+\paragraph{Saturation Constraints.}
+In the quantum walk, we have $\ell_0 < 0$, since we expect only some proportion of the nodes to be marked (to contain a solution). This proportion is hence $\ell_0$. The saturation constraints are modified as follows:
+\begin{align*}
+\begin{array}{ll}
+\ell_5^l \leq \frac{\ell_0}{16} + f(\frac{1}{32} + \alpha_4 - 2\gamma_4, \alpha_4, \gamma_4) \eta, & \ell_4 \leq \frac{\ell_0}{16} + f(\frac{1}{32} + \alpha_4 - 2\gamma_4, \alpha_4, \gamma_4) - c_4\\
+\ell_3 \leq \frac{\ell_0}{8} + f(\frac{1}{16} + \alpha_3 - 2\gamma_3, \alpha_3, \gamma_3) - c_3,  & \ell_2 \leq \frac{\ell_0}{4} + f(\frac{1}{8} + \alpha_2 - 2\gamma_2, \alpha_2, \gamma_2) - c_2 \\
+\ell_1 \leq \frac{\ell_0}{2} + f(1/4 + \alpha_1 - 2\gamma_1, \alpha_1, \gamma_1) - c_1 & \\
+\end{array}
+\end{align*}
+%\begin{center}
+%\begin{tabular}{llp{0.4cm}ll}
+%$\ell_3 \leq \frac{\ell_0}{8} + g(1/16 + \alpha_3, \alpha_3)$ & ~for $\ell_4^l,$ & & $\ell_3 \leq \frac{\ell_0}{8} + g(1/16 + \alpha_3, \alpha_3) - c_3$ & ~for $\ell_4^r$ \\
+%$\ell_2 \leq \frac{\ell_0}{4} + g(1/8 + \alpha_2, \alpha_2) - c_2$ & & & $\ell_1 \leq \frac{\ell_0}{2} + g(1/4 + \alpha_1, \alpha_1) - c_1$ & \\
+%\end{tabular}
+%\end{center}
+
+
+Indeed, the \emph{classical} walk will go through a total of $-\ell_0$ trees before finding a solution. Hence, it needs to go through $-\ell_0/16$ different lists at level 5 (and 4), which is why we need to introduce $\ell_0$ in the saturation constraint: there must be enough elements, not only in $L_5^l$, but in the whole search space that will be spanned by the walk. These constraints ensure the existence of marked vertices in the walk.
+
+
+%Remark that the quantum walk can only succeed if there is at least one marked 
+%
+%
+%With this construction :
+%\begin{itemize}
+%\item the setup time for level 4 is $|L_{4, l}| + |L_{4, r}|$
+%\item the setup time for level 3 is $\dfrac{|L_{4, l}||L_{4, r}|}{2^{c_3}} = |L_3|$
+%\item the expected update time for level 4 is $1$
+%\item the expected update time for level 3 is $1$
+%\item the spectral gap is $\delta = \Omega \left( \dfrac{1}{|L_{4, l}|} \right)$
+%\item the probability of getting a solution is $\epsilon = \left( \dfrac{|L_{4, l}|}{2^{\gamma n h(1/8+\alpha_3, \alpha_3)}} \right)^8$
+%\end{itemize}
+
+
+
+\subsection{Better Setup and Updates using quantum search}\label{subsection:update-qsearch}
+
+Along the lines of Lemma~\ref{lemma:quantum-matching-filtering} and corollary~\ref{lemma:symmetric-merging}, we now show how to use a quantum search to speed up the \textsf{Setup} and \textsf{Update} steps in the quantum walk. As the structure of the graph is unchanged, we still have $\epsilon = - \ell_0$ and a spectral gap $\delta = - \ell_5^l$.
+
+\paragraph{Setup.} 
+Let $p_i, (1 \leq i \leq 3)$ be the filtering probabilities at level $i$, \emph{i.e.} the (logarithms of the) probabilities that an element that satisfies the modulo condition resp. at level $i$ also has the desired distribution of $0$s, $1$s, $-1$s and $2$s, and appears in list $L_i$. Notice that $p_i \leq 0$. Due to the left-right split, there is no filtering at level 4.
+
+We use quantum filtering (Corollary~\ref{lemma:symmetric-merging}) to speed up the computation of lists at levels 3, 2 and 1 in the setup, reducing in general a time $2 \ell - c$ to $2 \ell -c + \pf/2$.
+%We remark that we can find the elements that pass the filter with a quantum search; thus, we can speed up the computation of lists at levels 3, 2 and 1 in the setup. We use Corollary~\ref{lemma:symmetric-merging} with these lists, reducing a time $2 \ell - c$ to $2 \ell -c + \pf/2$ via quantum filtering. 
+It does not apply for level 0, since $L_0$ has a negative expected size. At this level, we will simply perform a quantum search over $L_1$. If there is too much constraint, \emph{i.e.} $(1-c_1) > \ell_1$, then for a given element in $L_1$, there is on average less than one modular candidate. If $(1-c_1) < \ell_1$, there is on average more than one (although less than one with the filter) and we have to do another quantum search on them all. This is why the setup time at level 0, in full generality, becomes $(\ell_1 + \max(\ell_1 - (1-c_1), 0))/2$. The setup time can thus be improved to:
+%\text{\XB{C'est joli, mais ça manque pas d'une définition ?}}\\
+\begin{multline*}
+\mathsf{S} = \max \bigg( \undertext[1]{Lv. 5 and 4}{c_4, \ell_4}, \undertext{Level 3}{2\ell_4 - (c_3- c_4) + p_3/2}, \undertext{Level 2}{2\ell_3 - (c_2- c_3) + p_2/2}, \\
+\undertext{Level 1}{2\ell_2 - (c_1 - c_2) + p_1/2}, \undertext{Level 0}{ (\ell_1 + \max(\ell_1 - (1 - c_1), 0))/2 } \bigg) \enspace.
+\end{multline*}
+
+
+%When building the level-2 lists, there are $\frac{|L_3|^2}{2^{c_2}}$ vectors that satisfy the modulo condition. However, we only want to get the $|L_2|$ elements that also have the desired distribution of $0$s, $1$s and $-1$s. Using Grover's algorithm, we can find those elements in time $|L_2|\sqrt{\frac{|L_3|^2}{2^{c_2}|L_2|}}$ (Lemma~\ref{lemma:symmetric-merging}).
+%Similarly, we can build the level-1 lists in time $|L_1|\sqrt{\frac{|L_2|^2}{2^{c_1}|L_1|}}$.
+%For the level-0 list, we just perform a Grover search to find if there in one solution, which costs $\sqrt{\frac{|L_1|^2}{2^{c_0}}}$. Thus, our setup time is :
+%$$ T_S = \max \left\lbrace |L_{4, l}|+|L_{4, r}|, \dfrac{|L_{4, l}||L_{4, r}|}{2^{c_3}}, |L_2|\sqrt{\frac{|L_3|^2}{2^{c_2}|L_2|}}, |L_1|\sqrt{\frac{|L_2|^2}{2^{c_1}|L_1|}}, \sqrt{\frac{|L_1|^2}{2^{c_0}}} \right\rbrace $$
+
+\paragraph{Update.} Our update will also use a quantum search. First of all, recall that the updates of levels 5 and 4 are performed in (expected) time 1. Having added an element in $L_4$, we need to update the upper level. There are on average $\ell_4 - (c_3 - c_4)$ candidates satisfying the modular condition. To avoid a blowup in the time complexity, we forbid to have more than one element inserted in $L_3$ on average, which means: $\ell_4 - (c_3 - c_4) + p_3 \leq 0 \iff \ell_3 \leq \ell_4$. We then find this element, if it exists, with a quantum search among the $\ell_4 - (c_3 - c_4)$ candidates. % (their uniform superposition is created using QRACM queries, as in Lemma ??). 
+
+Similarly, as at most one element is updated in $L_3$, we can move on to the upper levels 2, 1 and 0 and use the same argument. We forbid to have more than one element inserted in $L_2$ on average: $\ell_3 - (c_2 - c_3) + p_2 \leq 0 \iff \ell_2 \leq \ell_3$, and in $L_1$: $\ell_1 \leq \ell_2$. At level 0, a quantum search may not be needed, hence a time $\max(\ell_1 - (1 - c_1), 0) / 2$\XB{Pas clair.}. The expected update time becomes:
+\begin{multline*}
+ \mathsf{U} =  \max \bigg( 0, \undertext{Level 3}{(\ell_4 - (c_3 - c_4))/2}, \undertext{Level 2}{(\ell_3 - (c_2 - c_3))/2},\\
+\undertext{Level 1}{(\ell_2 - (c_1 - c_2))/2},~\undertext{Level 0}{(\ell_1 - (1-c_1))/2} \bigg) \enspace.
+\end{multline*}
+
+
+% In our construction, we enforce the conditions : $|L_{4, l}| \geqslant |L_3| \geqslant |L_2| \geqslant |L_1| \geqslant |L_0|$. Thus, when we update one element in a list, we expect only one change (at most) in the list above. However, the condition $|L_3|^2 \leqslant 2^{c_2}|L_2|$ is not necessarily satisfied. This implies that when we add an element in a level-3 list, it leads to $\frac{|L_3|}{2^{c_2}}$ candidate elements for the level-2 list above, but we do not expect more than one of them to get the target densities of $0$s, $1$s and $-1$s. Using Grover's search, it costs a time $\sqrt{\frac{|L_3|}{2^{c_2}}}$ to determine the update for the level-2 list. Similarly, we can update the level-1 lists in time $\sqrt{\frac{|L_2|}{2^{c_1}}}$, and the level-0 list in time $\sqrt{\frac{|L_1|}{2^{c_0}}}$. The expected time required for one update step is thus :
+%$$T_U = \max \left\lbrace 1, \sqrt{\frac{|L_3|}{2^{c_2}}}, \sqrt{\frac{|L_2|}{2^{c_1}}}, \sqrt{\frac{|L_1|}{2^{c_0}}} \right\rbrace
+%$$
+
+
+
+\subsection{Parameters}\label{subsection:new-quantum-bcj}
+Using the following parameters, we found an algorithm that runs in time $\bigOt{2^{0.2156n}}$:
+%\begin{gather*}
+%\ell_0 = -0.1899, \ell_1 = 0.1994, \ell_2 = 0.2033, \ell_3 = 0.2127, \ell_4 (=\ell_5^l) = 0.2127 \\
+%c_1 = 0.6228, c_2 = 0.4480, c_3 = 0.2505, c_4 (=\ell_5^r) = 0.0435 \\
+%\alpha_1 = 0.0180, \alpha_2 = 0.0157, \alpha_3 = 0.0133, \alpha_4 = 0.0066 \\
+%\gamma_1 = 0.0020, \gamma_2 = \gamma_3 = \gamma_4 = 0, \eta = 0.8496
+%\end{gather*}
+\begin{gather*}
+\ell_0 = -0.1916, \ell_1 = 0.1996, \ell_2 = 0.2030, \ell_3 = 0.2110, \ell_4 (=\ell_5^l) = 0.2110 \\
+c_1 = 0.6190, c2 = 0.4445, c3 =0.2506, c_4 (=\ell_5^r) = 0.0487 \\
+\alpha_1 = 0.0176, \alpha_2 = 0.0153, \alpha_3 = 0.0131, \alpha_4 = 0.0087 \\
+\gamma_1 = 0.0019, \gamma_2 = \gamma_3 = \gamma_4 = 0, \eta = 0.8448
+\end{gather*}
+
+%Time:  0.2156
+%p0 -0.2097
+%p1 -0.0321
+%p2 -0.0251
+%p3 -0.0091
+%l0 -0.1916
+%l1 0.1996
+%l2 0.2030
+%l3 0.2110
+%l4 0.2110
+%eta 0.8448
+%c1 0.6190
+%c2 0.4445
+%c3 0.2506
+%c4 0.0487
+%alpha1 0.0176
+%alpha2 0.0153
+%alpha3 0.0131
+%alpha4 0.0087
+%gamma1 0.0019
+
+There are many different parameters that achieve the same time. The above set achieves the lowest memory that we found, at $\bigOt{2^{0.2110n}}$. Note that time and memory complexities are different in this quantum walk, contrary to previous works, since the update procedure has now a (small) exponential cost.
+
+\begin{remark}[Time-memory tradeoffs]
+Quantum walks have a natural time-memory tradeoff which consists in reducing the vertex size. Smaller vertices have a smaller chance of being marked, and the walk goes on for a longer time. This is also applicable to our algorithms, but requires a re-optimization with a memory constraint.
+\end{remark}
+
+

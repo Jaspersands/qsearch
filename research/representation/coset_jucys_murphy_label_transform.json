@@ -1,0 +1,184 @@
+{
+  "circuit_contract": {
+    "assumptions": [
+      "uniform polynomial controlled S_n QFT and inverse QFT",
+      "uniform polynomial reversible permutation multiplication",
+      "standard LCU/block encoding and Hamiltonian simulation with explicit precision"
+    ],
+    "claim": "polynomial target-tableau label measurement, conditional on standard known primitives",
+    "coherent_multiplicity_basis_produced": false,
+    "complexity_conclusion": "polynomial in n and log(1/error) under the listed primitives",
+    "diagonal_group_action_implementation": "Conjugate reversible multiplication by the S_n QFT to apply each Young-basis rho_lambda((i k)) tensor rho_mu((i k)) block.",
+    "finite_matrix_diagonalization_used_by_circuit": false,
+    "required_eigenvalue_precision": "strictly less than 1/2 because contents are integers",
+    "total_diagonal_transposition_terms": "n(n-1)/2 across X_2,...,X_n"
+  },
+  "claim_gate": {
+    "classical_superpolynomial_separation_proved": false,
+    "coherent_multiplicity_basis_proved": false,
+    "diagonal_jm_label_measurement_polynomial_contract": true,
+    "finite_seminormal_verification_passed": true,
+    "hidden_involution_decoder_proved": false,
+    "internal_sn_kronecker_transform_polynomial_proved": false,
+    "kcopy_associator_polynomial_proved": false,
+    "reason": "Commuting YJM operators expose target tableau labels but are exactly degenerate on Kronecker multiplicity spaces; the state-dependent multiplicity basis, associators, and decoder remain open.",
+    "speedup_claim_allowed": false,
+    "target_partition_and_tableau_label_accessible": true
+  },
+  "created_at": "2026-07-15T11:03:50.387891+00:00",
+  "falsifiers_triggered": [
+    "Target partition/tableau labels do not select a basis inside Kronecker multiplicity spaces.",
+    "A polynomial diagonal-label measurement is not a full internal Kronecker transform.",
+    "Finite eigendecomposition is used only as verification and is not part of the uniform circuit.",
+    "Neither label extraction nor multiplicity counting supplies a hidden-involution decoder."
+  ],
+  "headline_metrics": {
+    "coherent_multiplicity_basis_count": 0,
+    "diagonal_jm_label_poly_contract_count": 1,
+    "finite_label_spectrum_verified_count": 3,
+    "hidden_involution_decoder_count": 0,
+    "kcopy_associator_count": 0,
+    "maximum_encoded_spectrum_residual": 7.566995918750763e-10,
+    "maximum_kronecker_multiplicity": 5,
+    "maximum_n": 6,
+    "maximum_tensor_dimension": 256,
+    "maximum_yjm_commutator_residual": 2.1824922357237446e-14,
+    "nontrivial_multiplicity_witness_count": 2,
+    "record_count": 3
+  },
+  "literature_scope": [
+    {
+      "id": "okounkov-vershik-yjm-2005",
+      "url": "https://arxiv.org/abs/math/0503040"
+    },
+    {
+      "id": "beals-symmetric-qft-1997",
+      "url": "https://doi.org/10.1145/258533.258548"
+    },
+    {
+      "id": "bravyi-et-al-kronecker-2023",
+      "url": "https://arxiv.org/abs/2302.11454"
+    },
+    {
+      "id": "ikenmeyer-subramanian-kronecker-2023",
+      "url": "https://arxiv.org/abs/2307.02389"
+    }
+  ],
+  "records": [
+    {
+      "coxeter_maximum_residual": 1.5700924586837752e-16,
+      "diagonal_transposition_term_count": 6,
+      "encoded_spectrum_maximum_residual": 2.2737367544323206e-13,
+      "encoding_base": 9,
+      "expected_joint_label_count": 9,
+      "finite_matrix_verification_only": true,
+      "kronecker_degeneracies_exactly_reproduced": true,
+      "left_dimension": 3,
+      "left_partition": [
+        3,
+        1
+      ],
+      "maximum_joint_eigenspace_degeneracy": 1,
+      "maximum_kronecker_multiplicity": 1,
+      "maximum_multiplicity_target": [
+        4
+      ],
+      "multiplicity_basis_resolved": false,
+      "n": 4,
+      "observed_joint_label_count": 9,
+      "right_dimension": 3,
+      "right_partition": [
+        3,
+        1
+      ],
+      "status": "label-spectrum-verified-multiplicity-unresolved",
+      "target_tableau_labels_resolved": true,
+      "tensor_dimension": 9,
+      "transposition_involution_maximum_residual": 3.502851861293101e-16,
+      "yjm_commutator_maximum_residual": 1.2262814116578437e-15
+    },
+    {
+      "coxeter_maximum_residual": 2.220446049250313e-16,
+      "diagonal_transposition_term_count": 10,
+      "encoded_spectrum_maximum_residual": 1.2732925824820995e-11,
+      "encoding_base": 11,
+      "expected_joint_label_count": 26,
+      "finite_matrix_verification_only": true,
+      "kronecker_degeneracies_exactly_reproduced": true,
+      "left_dimension": 6,
+      "left_partition": [
+        3,
+        1,
+        1
+      ],
+      "maximum_joint_eigenspace_degeneracy": 2,
+      "maximum_kronecker_multiplicity": 2,
+      "maximum_multiplicity_target": [
+        3,
+        2
+      ],
+      "multiplicity_basis_resolved": false,
+      "n": 5,
+      "observed_joint_label_count": 26,
+      "right_dimension": 6,
+      "right_partition": [
+        3,
+        1,
+        1
+      ],
+      "status": "label-spectrum-verified-multiplicity-unresolved",
+      "target_tableau_labels_resolved": true,
+      "tensor_dimension": 36,
+      "transposition_involution_maximum_residual": 4.44115999894893e-16,
+      "yjm_commutator_maximum_residual": 4.315437421161959e-15
+    },
+    {
+      "coxeter_maximum_residual": 4.965068306494546e-16,
+      "diagonal_transposition_term_count": 15,
+      "encoded_spectrum_maximum_residual": 7.566995918750763e-10,
+      "encoding_base": 13,
+      "expected_joint_label_count": 76,
+      "finite_matrix_verification_only": true,
+      "kronecker_degeneracies_exactly_reproduced": true,
+      "left_dimension": 16,
+      "left_partition": [
+        3,
+        2,
+        1
+      ],
+      "maximum_joint_eigenspace_degeneracy": 5,
+      "maximum_kronecker_multiplicity": 5,
+      "maximum_multiplicity_target": [
+        3,
+        2,
+        1
+      ],
+      "multiplicity_basis_resolved": false,
+      "n": 6,
+      "observed_joint_label_count": 76,
+      "right_dimension": 16,
+      "right_partition": [
+        3,
+        2,
+        1
+      ],
+      "status": "label-spectrum-verified-multiplicity-unresolved",
+      "target_tableau_labels_resolved": true,
+      "tensor_dimension": 256,
+      "transposition_involution_maximum_residual": 1.2373719192993453e-15,
+      "yjm_commutator_maximum_residual": 2.1824922357237446e-14
+    }
+  ],
+  "status": "diagonal-label-transform-isolated-multiplicity-space-open",
+  "summary": "Verified diagonal YJM content spectra on 3 finite Kronecker sectors through n=6; 2 sector(s) explicitly retain nontrivial unresolved multiplicity degeneracy.",
+  "theorem_contract": {
+    "commuting_algebra": "Young--Jucys--Murphy/Gelfand--Tsetlin algebra",
+    "decomposition": "direct_sum_nu V_nu tensor C^{g(lambda,mu,nu)}",
+    "input_space": "V_lambda tensor V_mu under the diagonal S_n action",
+    "integer_content_gap": 1,
+    "joint_eigenlabel": "target standard-tableau content vector",
+    "multiplicity_action": "identity on C^{g(lambda,mu,nu)}",
+    "operators": "X_k=sum_{i<k} rho_lambda((i k)) tensor rho_mu((i k))",
+    "target_label_is_multiplicity_basis": false
+  }
+}

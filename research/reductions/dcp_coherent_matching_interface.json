@@ -1,0 +1,379 @@
+{
+  "claim_gate": {
+    "arbitrary_quantum_relation_solver_bridge_proved": false,
+    "partial_subset_sum_solver_constructed": false,
+    "polynomial_dcp_decoder_constructed": false,
+    "primary_source_deterministic_use_sites_extracted": true,
+    "reason": "The theorem interface is extended to target-independent shared-seed randomized solvers, but no such polynomial subset-sum solver is constructed. Arbitrary quantum relation solvers remain blocked by canonicalization, amplitude balance, and paired-workspace overlap.",
+    "seeded_randomized_partial_solver_bridge_proved": true,
+    "speedup_claim_allowed": false,
+    "workspace_overlap_required": true
+  },
+  "created_at": "2026-07-15T00:12:55.262659+00:00",
+  "deterministic_use_sites": [
+    {
+      "failure_if_removed": "Different witnesses survive as orthogonal which-path labels instead of a two-point phase pair.",
+      "requirement": "The solver output on t_alpha must equal the coherent branch alpha.",
+      "source_lines": "research/literature_cache/cs_0304005_source/quantum_average.tex:887 and :907",
+      "use_site_id": "canonical-preimage-check"
+    },
+    {
+      "failure_if_removed": "The two endpoints need not map to a common beta register and cannot interfere.",
+      "requirement": "The matching partner uses the same fixed solver function on f(t_alpha).",
+      "source_lines": "research/literature_cache/cs_0304005_source/quantum_average.tex:895 and :915",
+      "use_site_id": "paired-endpoint-output"
+    },
+    {
+      "failure_if_removed": "The reduced endpoint qubit loses visibility by the workspace overlap factor.",
+      "requirement": "Paired branches have the same measured beta and all remaining solver workspace is coherent.",
+      "source_lines": "research/literature_cache/cs_0304005_source/quantum_average.tex:928-956",
+      "use_site_id": "common-workspace-erasure"
+    },
+    {
+      "failure_if_removed": "The qd/N phase remains encoded between unknown basis states rather than a measurable qubit.",
+      "requirement": "Given beta, the partner endpoint is recomputable and both endpoints are reversibly mapped to 0/1.",
+      "source_lines": "research/literature_cache/cs_0304005_source/quantum_average.tex:959-964",
+      "use_site_id": "postmeasurement-endpoint-normalization"
+    }
+  ],
+  "falsifiers_triggered": [
+    "Classical randomness is acceptable only when represented by target-independent explicit coins shared coherently across both endpoints.",
+    "Freshly measured or target-dependent randomness does not define the fixed answered set required by the matching lemma.",
+    "Multiple valid witnesses do not help unless the circuit canonically couples paired endpoints and erases witness garbage.",
+    "Orthogonal paired workspaces make every endpoint X/Y phase statistic exactly independent of qd/N.",
+    "Proving an interface theorem does not construct the required polynomial subset-sum solver."
+  ],
+  "headline_metrics": {
+    "maximum_polynomial_success_exponent": 15,
+    "minimum_certified_routine_success_probability": 2.087208213499279e-39,
+    "primary_source_deterministic_use_site_count": 4,
+    "proved_arbitrary_quantum_relation_solver_bridge_count": 0,
+    "proved_polynomial_dcp_decoder_count": 0,
+    "proved_polynomial_partial_subset_sum_solver_count": 0,
+    "proved_seeded_randomized_solver_bridge_count": 12,
+    "seeded_bridge_certificate_count": 12,
+    "source_contract_satisfying_solver_count": 0,
+    "workspace_visibility_case_count": 3,
+    "zero_visibility_counterexample_count": 1
+  },
+  "interface_classes": [
+    {
+      "bridge_proved": true,
+      "condition": "source theorem as written",
+      "interface_id": "deterministic-partial-function"
+    },
+    {
+      "bridge_proved": true,
+      "condition": "fixed-seed valid-or-error deterministic functions, polynomial explicit coins, coherent shared seed, reversible evaluation, and inverse-polynomial average legal coverage",
+      "interface_id": "target-independent-shared-seed-randomized-solver"
+    },
+    {
+      "bridge_proved": false,
+      "condition": "requires a common-seed coupling and workspace-overlap theorem",
+      "interface_id": "target-dependent-randomness-or-measured-randomized-solver"
+    },
+    {
+      "bridge_proved": false,
+      "condition": "requires canonical coherent witness selection or balanced paired workspaces with inverse-polynomial overlap",
+      "interface_id": "arbitrary-quantum-relation-solver"
+    }
+  ],
+  "seeded_bridge_certificates": [
+    {
+      "all_good_register_probability": 0.2750587898883363,
+      "conditional_seeded_randomized_bridge_proved": true,
+      "controlled_endpoint_normalization": true,
+      "dense_seed_fraction_lower_bound": 0.015873015873015872,
+      "dense_set_matching_intersection_fraction_lower_bound": 1.1920928955078125e-07,
+      "fixed_matching_average_intersection_fraction_lower_bound": 3.695724502442375e-12,
+      "fixed_seed_deterministic": true,
+      "legal_coverage": 0.0625,
+      "legal_coverage_exponent": 1,
+      "matching_family_size_upper_bound": 512,
+      "n_bits": 16,
+      "polynomial_success_exponent": 5,
+      "reversible_evaluation": true,
+      "routine_success_probability_lower_bound": 6.353384433765459e-14,
+      "shared_seed_register": true,
+      "target_independent_seed_distribution": true,
+      "unconditional_coverage_lower_bound": 0.03125,
+      "valid_witness_or_error": true
+    },
+    {
+      "all_good_register_probability": 0.2750587898883363,
+      "conditional_seeded_randomized_bridge_proved": true,
+      "controlled_endpoint_normalization": true,
+      "dense_seed_fraction_lower_bound": 0.0009775171065493646,
+      "dense_set_matching_intersection_fraction_lower_bound": 2.9103830456733704e-11,
+      "fixed_matching_average_intersection_fraction_lower_bound": 3.4728383956994144e-18,
+      "fixed_seed_deterministic": true,
+      "legal_coverage": 0.00390625,
+      "legal_coverage_exponent": 2,
+      "matching_family_size_upper_bound": 8192,
+      "n_bits": 16,
+      "polynomial_success_exponent": 10,
+      "reversible_evaluation": true,
+      "routine_success_probability_lower_bound": 5.970217041242701e-20,
+      "shared_seed_register": true,
+      "target_independent_seed_distribution": true,
+      "unconditional_coverage_lower_bound": 0.001953125,
+      "valid_witness_or_error": true
+    },
+    {
+      "all_good_register_probability": 0.2750587898883363,
+      "conditional_seeded_randomized_bridge_proved": true,
+      "controlled_endpoint_normalization": true,
+      "dense_seed_fraction_lower_bound": 6.103888176768602e-05,
+      "dense_set_matching_intersection_fraction_lower_bound": 7.105427357601002e-15,
+      "fixed_matching_average_intersection_fraction_lower_bound": 3.308924410930551e-24,
+      "fixed_seed_deterministic": true,
+      "legal_coverage": 0.000244140625,
+      "legal_coverage_exponent": 3,
+      "matching_family_size_upper_bound": 131072,
+      "n_bits": 16,
+      "polynomial_success_exponent": 15,
+      "reversible_evaluation": true,
+      "routine_success_probability_lower_bound": 5.688429651890835e-26,
+      "shared_seed_register": true,
+      "target_independent_seed_distribution": true,
+      "unconditional_coverage_lower_bound": 0.0001220703125,
+      "valid_witness_or_error": true
+    },
+    {
+      "all_good_register_probability": 0.3188759448902919,
+      "conditional_seeded_randomized_bridge_proved": true,
+      "controlled_endpoint_normalization": true,
+      "dense_seed_fraction_lower_bound": 0.007874015748031496,
+      "dense_set_matching_intersection_fraction_lower_bound": 1.4901161193847656e-08,
+      "fixed_matching_average_intersection_fraction_lower_bound": 1.1458200967217993e-13,
+      "fixed_seed_deterministic": true,
+      "legal_coverage": 0.03125,
+      "legal_coverage_exponent": 1,
+      "matching_family_size_upper_bound": 1024,
+      "n_bits": 32,
+      "polynomial_success_exponent": 5,
+      "reversible_evaluation": true,
+      "routine_success_probability_lower_bound": 2.283590412602809e-15,
+      "shared_seed_register": true,
+      "target_independent_seed_distribution": true,
+      "unconditional_coverage_lower_bound": 0.015625,
+      "valid_witness_or_error": true
+    },
+    {
+      "all_good_register_probability": 0.3188759448902919,
+      "conditional_seeded_randomized_bridge_proved": true,
+      "controlled_endpoint_normalization": true,
+      "dense_seed_fraction_lower_bound": 0.0002442002442002442,
+      "dense_set_matching_intersection_fraction_lower_bound": 4.547473508864641e-13,
+      "fixed_matching_average_intersection_fraction_lower_bound": 3.388959171627462e-21,
+      "fixed_seed_deterministic": true,
+      "legal_coverage": 0.0009765625,
+      "legal_coverage_exponent": 2,
+      "matching_family_size_upper_bound": 32768,
+      "n_bits": 32,
+      "polynomial_success_exponent": 10,
+      "reversible_evaluation": true,
+      "routine_success_probability_lower_bound": 6.754109737795799e-23,
+      "shared_seed_register": true,
+      "target_independent_seed_distribution": true,
+      "unconditional_coverage_lower_bound": 0.00048828125,
+      "valid_witness_or_error": true
+    },
+    {
+      "all_good_register_probability": 0.3188759448902919,
+      "conditional_seeded_randomized_bridge_proved": true,
+      "controlled_endpoint_normalization": true,
+      "dense_seed_fraction_lower_bound": 7.629452739355006e-06,
+      "dense_set_matching_intersection_fraction_lower_bound": 1.3877787807814457e-17,
+      "fixed_matching_average_intersection_fraction_lower_bound": 1.0097496624614478e-28,
+      "fixed_seed_deterministic": true,
+      "legal_coverage": 3.0517578125e-05,
+      "legal_coverage_exponent": 3,
+      "matching_family_size_upper_bound": 1048576,
+      "n_bits": 32,
+      "polynomial_success_exponent": 15,
+      "reversible_evaluation": true,
+      "routine_success_probability_lower_bound": 2.0124054857502968e-30,
+      "shared_seed_register": true,
+      "target_independent_seed_distribution": true,
+      "unconditional_coverage_lower_bound": 1.52587890625e-05,
+      "valid_witness_or_error": true
+    },
+    {
+      "all_good_register_probability": 0.34270396721004415,
+      "conditional_seeded_randomized_bridge_proved": true,
+      "controlled_endpoint_normalization": true,
+      "dense_seed_fraction_lower_bound": 0.00392156862745098,
+      "dense_set_matching_intersection_fraction_lower_bound": 1.862645149230957e-09,
+      "fixed_matching_average_intersection_fraction_lower_bound": 3.566645889305601e-15,
+      "fixed_seed_deterministic": true,
+      "legal_coverage": 0.015625,
+      "legal_coverage_exponent": 1,
+      "matching_family_size_upper_bound": 2048,
+      "n_bits": 64,
+      "polynomial_success_exponent": 5,
+      "reversible_evaluation": true,
+      "routine_success_probability_lower_bound": 7.639398099365159e-17,
+      "shared_seed_register": true,
+      "target_independent_seed_distribution": true,
+      "unconditional_coverage_lower_bound": 0.0078125,
+      "valid_witness_or_error": true
+    },
+    {
+      "all_good_register_probability": 0.34270396721004415,
+      "conditional_seeded_randomized_bridge_proved": true,
+      "controlled_endpoint_normalization": true,
+      "dense_seed_fraction_lower_bound": 6.103888176768602e-05,
+      "dense_set_matching_intersection_fraction_lower_bound": 7.105427357601002e-15,
+      "fixed_matching_average_intersection_fraction_lower_bound": 3.308924410930551e-24,
+      "fixed_seed_deterministic": true,
+      "legal_coverage": 0.000244140625,
+      "legal_coverage_exponent": 2,
+      "matching_family_size_upper_bound": 131072,
+      "n_bits": 64,
+      "polynomial_success_exponent": 10,
+      "reversible_evaluation": true,
+      "routine_success_probability_lower_bound": 7.087384517650364e-26,
+      "shared_seed_register": true,
+      "target_independent_seed_distribution": true,
+      "unconditional_coverage_lower_bound": 0.0001220703125,
+      "valid_witness_or_error": true
+    },
+    {
+      "all_good_register_probability": 0.34270396721004415,
+      "conditional_seeded_randomized_bridge_proved": true,
+      "controlled_endpoint_normalization": true,
+      "dense_seed_fraction_lower_bound": 9.536752259018191e-07,
+      "dense_set_matching_intersection_fraction_lower_bound": 2.710505431213761e-20,
+      "fixed_matching_average_intersection_fraction_lower_bound": 3.081490849758257e-33,
+      "fixed_seed_deterministic": true,
+      "legal_coverage": 3.814697265625e-06,
+      "legal_coverage_exponent": 3,
+      "matching_family_size_upper_bound": 8388608,
+      "n_bits": 64,
+      "polynomial_success_exponent": 15,
+      "reversible_evaluation": true,
+      "routine_success_probability_lower_bound": 6.60024461958503e-35,
+      "shared_seed_register": true,
+      "target_independent_seed_distribution": true,
+      "unconditional_coverage_lower_bound": 1.9073486328125e-06,
+      "valid_witness_or_error": true
+    },
+    {
+      "all_good_register_probability": 0.35512003323956715,
+      "conditional_seeded_randomized_bridge_proved": true,
+      "controlled_endpoint_normalization": true,
+      "dense_seed_fraction_lower_bound": 0.0019569471624266144,
+      "dense_set_matching_intersection_fraction_lower_bound": 2.3283064365386963e-10,
+      "fixed_matching_average_intersection_fraction_lower_bound": 1.1123956724228574e-16,
+      "fixed_seed_deterministic": true,
+      "legal_coverage": 0.0078125,
+      "legal_coverage_exponent": 1,
+      "matching_family_size_upper_bound": 4096,
+      "n_bits": 128,
+      "polynomial_success_exponent": 5,
+      "reversible_evaluation": true,
+      "routine_success_probability_lower_bound": 2.4689624260397233e-18,
+      "shared_seed_register": true,
+      "target_independent_seed_distribution": true,
+      "unconditional_coverage_lower_bound": 0.00390625,
+      "valid_witness_or_error": true
+    },
+    {
+      "all_good_register_probability": 0.35512003323956715,
+      "conditional_seeded_randomized_bridge_proved": true,
+      "controlled_endpoint_normalization": true,
+      "dense_seed_fraction_lower_bound": 1.5259021896696422e-05,
+      "dense_set_matching_intersection_fraction_lower_bound": 1.1102230246251565e-16,
+      "fixed_matching_average_intersection_fraction_lower_bound": 3.2312235723441685e-27,
+      "fixed_seed_deterministic": true,
+      "legal_coverage": 6.103515625e-05,
+      "legal_coverage_exponent": 2,
+      "matching_family_size_upper_bound": 524288,
+      "n_bits": 128,
+      "polynomial_success_exponent": 10,
+      "reversible_evaluation": true,
+      "routine_success_probability_lower_bound": 7.171701390095838e-29,
+      "shared_seed_register": true,
+      "target_independent_seed_distribution": true,
+      "unconditional_coverage_lower_bound": 3.0517578125e-05,
+      "valid_witness_or_error": true
+    },
+    {
+      "all_good_register_probability": 0.35512003323956715,
+      "conditional_seeded_randomized_bridge_proved": true,
+      "controlled_endpoint_normalization": true,
+      "dense_seed_fraction_lower_bound": 1.1920930376163766e-07,
+      "dense_set_matching_intersection_fraction_lower_bound": 5.293955920339377e-23,
+      "fixed_matching_average_intersection_fraction_lower_bound": 9.403955927617205e-38,
+      "fixed_seed_deterministic": true,
+      "legal_coverage": 4.76837158203125e-07,
+      "legal_coverage_exponent": 3,
+      "matching_family_size_upper_bound": 67108864,
+      "n_bits": 128,
+      "polynomial_success_exponent": 15,
+      "reversible_evaluation": true,
+      "routine_success_probability_lower_bound": 2.087208213499279e-39,
+      "shared_seed_register": true,
+      "target_independent_seed_distribution": true,
+      "unconditional_coverage_lower_bound": 2.384185791015625e-07,
+      "valid_witness_or_error": true
+    }
+  ],
+  "source_contract": {
+    "coverage_extension": "average seeded coverage p gives at least p/(2-p) dense (A,r) pairs; the source matching family and averaging yield a fixed matching with Omega(p^5) intersection probability",
+    "deterministic_role": "S(A,t) defines one partial function whose paired endpoints erase to the same beta workspace",
+    "primary_source": "cs/0304005 quantum_average.tex lines 737-745 and 878-994",
+    "quantum_obstruction": "a general relation solver needs a target-independent seeded decomposition or an explicit inverse-polynomial paired-workspace overlap and balanced-amplitude theorem",
+    "seeded_extension": "R(A,t;r) is deterministic for each explicit target-independent seed r; a shared coherent seed register turns the source proof into a direct sum of deterministic routines"
+  },
+  "status": "seeded-randomized-interface-proved-general-quantum-interface-blocked",
+  "summary": "Certified 12/12 seeded-randomized interface rows and extracted 4 deterministic source use sites. General quantum relation bridges=0; zero-visibility workspace counterexamples=1.",
+  "workspace_visibility_cases": [
+    {
+      "case_id": "shared-target-independent-seed",
+      "interpretation": "A shared explicit seed factors from the normalized endpoint qubit, preserving full visibility.",
+      "left_workspace": [
+        1.0,
+        0.0
+      ],
+      "phase_signal_preserved": true,
+      "right_workspace": [
+        1.0,
+        0.0
+      ],
+      "workspace_overlap": 1.0,
+      "x_y_signal_visibility": 1.0
+    },
+    {
+      "case_id": "partially-overlapping-target-workspace",
+      "interpretation": "Target-dependent garbage attenuates every X/Y phase statistic by its workspace overlap.",
+      "left_workspace": [
+        1.0,
+        0.0
+      ],
+      "phase_signal_preserved": true,
+      "right_workspace": [
+        0.5,
+        0.8660254037844386
+      ],
+      "workspace_overlap": 0.5000000000000001,
+      "x_y_signal_visibility": 0.5000000000000001
+    },
+    {
+      "case_id": "orthogonal-target-dependent-witness-tags",
+      "interpretation": "Orthogonal witness or failure tags erase the phase signal completely after workspace is ignored.",
+      "left_workspace": [
+        1.0,
+        0.0
+      ],
+      "phase_signal_preserved": false,
+      "right_workspace": [
+        0.0,
+        1.0
+      ],
+      "workspace_overlap": 0.0,
+      "x_y_signal_visibility": 0.0
+    }
+  ]
+}

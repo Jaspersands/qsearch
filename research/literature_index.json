@@ -1,0 +1,884 @@
+{
+  "arxiv_metadata": [],
+  "seed_papers": [
+    {
+      "id": "shor-1994",
+      "tags": [
+        "period-finding",
+        "abelian-hsp",
+        "number-theory",
+        "breakthrough-template"
+      ],
+      "title": "Algorithms for quantum computation: discrete logarithms and factoring",
+      "url": "https://arxiv.org/abs/quant-ph/9508027",
+      "why_it_matters": "Reference model for a Shor-level algorithm: reduction plus Fourier sampling plus classical postprocessing.",
+      "year": 1994
+    },
+    {
+      "id": "hsp-survey-2010",
+      "tags": [
+        "hidden-subgroup",
+        "nonabelian-hsp",
+        "survey",
+        "representation-theory"
+      ],
+      "title": "The Hidden Subgroup Problem",
+      "url": "https://arxiv.org/abs/1008.0010",
+      "why_it_matters": "Maps the HSP search space and nonabelian barriers.",
+      "year": 2010
+    },
+    {
+      "id": "symmetric-defies-fourier-2005",
+      "tags": [
+        "graph-isomorphism",
+        "nonabelian-hsp",
+        "no-go",
+        "fourier-sampling"
+      ],
+      "title": "The Symmetric Group Defies Strong Fourier Sampling",
+      "url": "https://arxiv.org/abs/quant-ph/0501056",
+      "why_it_matters": "Prevents the project from rediscovering a known-dead GI strategy.",
+      "year": 2005
+    },
+    {
+      "id": "beals-symmetric-qft-1997",
+      "tags": [
+        "symmetric-qft",
+        "representation-theory",
+        "quantum-fourier",
+        "proved-primitive"
+      ],
+      "title": "Quantum computation of Fourier transforms over symmetric groups",
+      "url": "https://doi.org/10.1145/258533.258548",
+      "why_it_matters": "Makes the S_n quantum Fourier transform a solved polynomial-time primitive; a new coset-state route must identify the additional recoupling and decoding operations rather than relabel QFT as the obstacle.",
+      "year": 1997
+    },
+    {
+      "id": "bacon-chuang-harrow-schur-2004",
+      "tags": [
+        "schur-transform",
+        "clebsch-gordan",
+        "generalized-phase-estimation",
+        "proved-primitive"
+      ],
+      "title": "Efficient Quantum Circuits for Schur and Clebsch-Gordan Transforms",
+      "url": "https://arxiv.org/abs/quant-ph/0407082",
+      "why_it_matters": "Provides efficient Schur-Weyl/Clebsch-Gordan circuits and weak irrep projection, but does not by itself supply the internal Specht-module Kronecker transform needed by symmetric-group coset-state decoding.",
+      "year": 2004
+    },
+    {
+      "id": "ikenmeyer-subramanian-kronecker-2023",
+      "tags": [
+        "kronecker-coefficient",
+        "sharp-bqp",
+        "invariant-projector",
+        "representation-theory"
+      ],
+      "title": "A remark on the quantum complexity of the Kronecker coefficients",
+      "url": "https://arxiv.org/abs/2307.02389",
+      "why_it_matters": "Places exact Kronecker multiplicity counting in #BQP using commuting projectors; counting an invariant space is weaker than coherently resolving a basis and its state-dependent transition amplitudes.",
+      "year": 2023
+    },
+    {
+      "id": "larocca-havlicek-multiplicities-2024",
+      "tags": [
+        "kronecker-coefficient",
+        "multiplicity-estimation",
+        "dimension-ratio",
+        "representation-theory"
+      ],
+      "title": "Quantum Algorithms for Representation-Theoretic Multiplicities",
+      "url": "https://arxiv.org/abs/2407.17649",
+      "why_it_matters": "Gives quantum multiplicity algorithms under dimension-ratio restrictions, but the revised paper no longer supports the original conjecture of a superpolynomial Kronecker advantage on those families.",
+      "year": 2024
+    },
+    {
+      "id": "panova-classical-multiplicities-2025",
+      "tags": [
+        "kronecker-coefficient",
+        "classical-algorithm",
+        "dequantization",
+        "representation-theory"
+      ],
+      "title": "Polynomial time classical versus quantum algorithms for representation theoretic multiplicities",
+      "url": "https://arxiv.org/abs/2502.20253",
+      "why_it_matters": "Classically resolves many restricted Kronecker and plethysm instances previously proposed as quantum speedups, sharply limiting multiplicity estimation as an independent breakthrough direction.",
+      "year": 2025
+    },
+    {
+      "id": "burchardt-high-dimensional-schur-2025",
+      "tags": [
+        "schur-transform",
+        "multiplicity-space",
+        "recoupling",
+        "representation-theory"
+      ],
+      "title": "High-dimensional quantum Schur transforms",
+      "url": "https://arxiv.org/abs/2509.22640",
+      "why_it_matters": "Corrects a multiplicity-space step that had been treated as a classical permutation and makes the required quantum isometry/F-moves explicit, a direct warning against hand-waving recoupling registers.",
+      "year": 2025
+    },
+    {
+      "id": "yoshida-random-dilation-2025",
+      "tags": [
+        "kronecker-transform",
+        "schur-transform",
+        "multiplicity-space",
+        "representation-theory"
+      ],
+      "title": "Random dilation superchannel",
+      "url": "https://arxiv.org/abs/2512.21260",
+      "why_it_matters": "Defines the internal S_n Kronecker transform as a basis-change primitive in a circuit identity, but does not turn that definition into the hidden-involution recoupling and decoding theorem needed here.",
+      "year": 2025
+    },
+    {
+      "id": "code-equivalence-fourier-2011",
+      "tags": [
+        "code-equivalence",
+        "nonabelian-hsp",
+        "reduction",
+        "classical-no-go",
+        "fourier-sampling"
+      ],
+      "title": "Quantum Fourier sampling, Code Equivalence, and the quantum security of the McEliece and Sidelnikov cryptosystems",
+      "url": "https://arxiv.org/abs/1111.4382",
+      "why_it_matters": "States the search code-equivalence HSP construction and warns that HSP measurement hardness is irrelevant when support splitting or other classical invariants solve the code family.",
+      "year": 2011
+    },
+    {
+      "id": "bardet-otmani-saeed-trivial-hull-2019",
+      "tags": [
+        "code-equivalence",
+        "graph-isomorphism",
+        "hull",
+        "projector",
+        "classical-reduction",
+        "classical-no-go"
+      ],
+      "title": "Permutation Code Equivalence is not Harder than Graph Isomorphism when Hulls are Trivial",
+      "url": "https://arxiv.org/abs/1905.00073",
+      "why_it_matters": "Gives an exact polynomial reduction from trivial-hull permutation code equivalence to weighted graph isomorphism and a shortening upper bound parameterized by hull dimension, preventing random planted codes from being treated as independent nonabelian hardness without a hull audit.",
+      "year": 2019
+    },
+    {
+      "id": "kuperberg-dhsp-2003",
+      "tags": [
+        "dihedral-hsp",
+        "hidden-shift",
+        "sieve",
+        "lattice-adjacent"
+      ],
+      "title": "A subexponential-time quantum algorithm for the dihedral hidden subgroup problem",
+      "url": "https://arxiv.org/abs/quant-ph/0302112",
+      "why_it_matters": "Core algorithmic template for hidden shift and phase-state combining.",
+      "year": 2003
+    },
+    {
+      "id": "regev-lattice-dhsp-2003",
+      "tags": [
+        "lattice",
+        "dihedral-hsp",
+        "unique-svp",
+        "reduction"
+      ],
+      "title": "Quantum Computation and Lattice Problems",
+      "url": "https://arxiv.org/abs/cs/0304005",
+      "why_it_matters": "Connects efficient dihedral HSP progress to lattice breakthroughs.",
+      "year": 2003
+    },
+    {
+      "id": "galbraith-shani-multivariate-hnp-2015",
+      "tags": [
+        "hidden-number",
+        "random-multiplier",
+        "noisy-fourier",
+        "access-model",
+        "uniform-samples"
+      ],
+      "title": "The Multivariate Hidden Number Problem",
+      "url": "https://eprint.iacr.org/2015/111",
+      "why_it_matters": "Separates uniform random-multiplier hidden-number access from chosen-multiplier Fourier methods and warns that the latter do not automatically solve the uniform distribution model.",
+      "year": 2015
+    },
+    {
+      "id": "galbraith-laity-shani-fourier-limitations-2016",
+      "tags": [
+        "hidden-number",
+        "significant-fourier",
+        "access-model",
+        "chosen-query",
+        "limitations"
+      ],
+      "title": "Finding Significant Fourier Coefficients: Clarifications, Simplifications, Applications and Limitations",
+      "url": "https://arxiv.org/abs/1607.01842",
+      "why_it_matters": "Provides a primary-source guide to significant-Fourier-coefficient algorithms and their access limitations, preventing chosen-query tools from being imported into random-label DCP decoding without proof.",
+      "year": 2016
+    },
+    {
+      "id": "kapralov-sparse-fourier-2016",
+      "tags": [
+        "sparse-fourier",
+        "hash-to-bins",
+        "correlated-samples",
+        "access-model",
+        "heavy-hitters"
+      ],
+      "title": "Sparse Fourier Transform in Any Constant Dimension with Nearly-Optimal Sample Complexity in Sublinear Time",
+      "url": "https://arxiv.org/abs/1604.00845",
+      "why_it_matters": "Provides a polylogarithmic sparse-spectrum localization benchmark, but its HashToBins measurements use algorithm-selected shifted and correlated sample locations that must not be conflated with iid DCP labels.",
+      "year": 2016
+    },
+    {
+      "id": "roetteler-hidden-shift-gowers-2009",
+      "tags": [
+        "hidden-shift",
+        "gowers-norm",
+        "quadratic-forms",
+        "harmonic-analysis"
+      ],
+      "title": "Quantum algorithms to solve the hidden shift problem for quadratics and for functions of large Gowers norm",
+      "url": "https://arxiv.org/abs/0911.4724",
+      "why_it_matters": "Shows that higher-order Fourier structure is an algorithmic handle, not just a statistic.",
+      "year": 2009
+    },
+    {
+      "id": "van-dam-hallgren-shifted-character-2000",
+      "tags": [
+        "hidden-shift",
+        "shifted-character",
+        "multiplicative-character",
+        "finite-fields",
+        "quantum-fourier"
+      ],
+      "title": "Efficient Quantum Algorithms for Shifted Quadratic Character Problems",
+      "url": "https://arxiv.org/abs/quant-ph/0011067",
+      "why_it_matters": "Provides the quantum Fourier template for shifted quadratic characters over finite fields.",
+      "year": 2000
+    },
+    {
+      "id": "ip-shift-deconvolution-2002",
+      "tags": [
+        "hidden-shift",
+        "shifted-character",
+        "multiplicative-character",
+        "finite-fields",
+        "deconvolution"
+      ],
+      "title": "Solving Shift Problems and Hidden Coset Problem Using the Fourier Transform",
+      "url": "https://arxiv.org/abs/quant-ph/0205034",
+      "why_it_matters": "Generalizes shifted multiplicative-character recovery through finite-field Fourier deconvolution.",
+      "year": 2002
+    },
+    {
+      "id": "bourgain-hidden-shifted-power-2011",
+      "tags": [
+        "hidden-shifted-power",
+        "shifted-character",
+        "multiplicative-character",
+        "finite-fields",
+        "classical-upper-bound"
+      ],
+      "title": "On the Hidden Shifted Power Problem",
+      "url": "https://arxiv.org/abs/1110.0812",
+      "why_it_matters": "Supplies classical query/time upper bounds that prevent shifted-character query gaps from being overstated.",
+      "year": 2011
+    },
+    {
+      "id": "bardet-high-rate-alternant-2023",
+      "tags": [
+        "code-equivalence",
+        "alternant-code",
+        "schur-product",
+        "support-recovery",
+        "classical-no-go"
+      ],
+      "title": "Polynomial time key-recovery attack on high rate random alternant codes",
+      "url": "https://arxiv.org/abs/2304.14757",
+      "why_it_matters": "Shows that shortening, componentwise products, conductors, and algebraic recovery can destroy apparent alternant-code hardness.",
+      "year": 2023
+    },
+    {
+      "id": "mora-tillich-dual-goppa-square-2021",
+      "tags": [
+        "code-equivalence",
+        "goppa-code",
+        "schur-product",
+        "betti-number",
+        "classical-distinguisher"
+      ],
+      "title": "On the dimension and structure of the square of the dual of a Goppa code",
+      "url": "https://arxiv.org/abs/2111.13038",
+      "why_it_matters": "Relates the dual Goppa square-code dimension to quadratic relations and supplies rigorous parameter-dependent bounds for classical distinguishers.",
+      "year": 2021
+    },
+    {
+      "id": "randriambololona-syzygy-distinguisher-2024",
+      "tags": [
+        "code-equivalence",
+        "alternant-code",
+        "goppa-code",
+        "syzygy",
+        "betti-number",
+        "classical-distinguisher"
+      ],
+      "title": "The syzygy distinguisher",
+      "url": "https://arxiv.org/abs/2407.15740",
+      "why_it_matters": "Generalizes square-code tests to higher linear-strand Betti invariants of shortened dual codes and extends the classical distinguishing regime.",
+      "year": 2024
+    },
+    {
+      "id": "couvreur-ag-code-closure-2014",
+      "tags": [
+        "code-equivalence",
+        "algebraic-geometry-code",
+        "schur-product",
+        "t-closure",
+        "support-recovery",
+        "classical-no-go"
+      ],
+      "title": "Cryptanalysis of public-key cryptosystems that use subcodes of algebraic geometry codes",
+      "url": "https://arxiv.org/abs/1409.8220",
+      "why_it_matters": "Introduces t-closure-based polynomial attacks that can reconstruct ambient algebraic-geometry codes from subcodes, closing a major gap left by dimension-only Schur tests.",
+      "year": 2014
+    },
+    {
+      "id": "astore-rank-metric-geometric-invariant-2024",
+      "tags": [
+        "code-equivalence",
+        "rank-metric",
+        "schur-product",
+        "geometric-invariant",
+        "classical-baseline"
+      ],
+      "title": "A geometric invariant of linear rank-metric codes",
+      "url": "https://arxiv.org/abs/2411.19087",
+      "why_it_matters": "Extends Schur-power dimension-sequence thinking to geometric invariants that distinguish Gabidulin structure.",
+      "year": 2024
+    },
+    {
+      "id": "hallgren-pell-2002",
+      "tags": [
+        "number-theory",
+        "principal-ideal",
+        "infrastructure",
+        "periodicity"
+      ],
+      "title": "Polynomial-Time Quantum Algorithms for Pell's Equation and the Principal Ideal Problem",
+      "url": "https://authors.library.caltech.edu/records/wwa5n-3k633",
+      "why_it_matters": "A non-Shor number-theoretic breakthrough template based on hidden periodic structure.",
+      "year": 2002
+    },
+    {
+      "id": "span-programs-adversary-2009",
+      "tags": [
+        "query-complexity",
+        "span-programs",
+        "adversary-bound",
+        "quantum-walks"
+      ],
+      "title": "Span programs and quantum query complexity: The general adversary bound is nearly tight for every boolean function",
+      "url": "https://arxiv.org/abs/0904.2759",
+      "why_it_matters": "Turns lower-bound machinery into algorithm synthesis machinery for query problems.",
+      "year": 2009
+    },
+    {
+      "id": "qsvt-2018",
+      "tags": [
+        "qsvt",
+        "block-encoding",
+        "hamiltonian-simulation",
+        "linear-algebra"
+      ],
+      "title": "Quantum singular value transformation and beyond",
+      "url": "https://arxiv.org/abs/1806.01838",
+      "why_it_matters": "Modern unifying framework for many quantum algorithms; useful for abstraction mining.",
+      "year": 2018
+    },
+    {
+      "id": "cs-guide-qsvt-2023",
+      "tags": [
+        "qsvt",
+        "exposition",
+        "block-encoding",
+        "algorithm-framework"
+      ],
+      "title": "A CS guide to the quantum singular value transformation",
+      "url": "https://arxiv.org/abs/2302.14324",
+      "why_it_matters": "Makes QSVT components easier to represent as reusable program abstractions.",
+      "year": 2023
+    },
+    {
+      "id": "program-synthesis-components-2023",
+      "tags": [
+        "program-synthesis",
+        "component-library",
+        "automation",
+        "circuit-synthesis"
+      ],
+      "title": "Discovering Quantum Circuit Components with Program Synthesis",
+      "url": "https://arxiv.org/abs/2305.01707",
+      "why_it_matters": "Useful for subroutine discovery, but must be subordinated to scalable math structure.",
+      "year": 2023
+    },
+    {
+      "id": "automated-algorithm-synthesis-2025",
+      "tags": [
+        "automated-discovery",
+        "algorithm-synthesis",
+        "known-algorithms",
+        "generalization"
+      ],
+      "title": "Automated Quantum Algorithm Synthesis",
+      "url": "https://arxiv.org/html/2503.08449v2",
+      "why_it_matters": "Evidence that example-driven synthesis can rediscover structure; also a warning about rediscovery-only systems.",
+      "year": 2025
+    },
+    {
+      "id": "gowers-norm-algorithms-2025",
+      "tags": [
+        "gowers-norm",
+        "property-testing",
+        "higher-order-fourier",
+        "finite-fields"
+      ],
+      "title": "Quantum Algorithms for Gowers Norm Estimation, Polynomial Structure Testing, and Counting Arithmetic Progressions",
+      "url": "https://arxiv.org/abs/2508.01231",
+      "why_it_matters": "Recent signal that higher-order harmonic analysis is an active quantum algorithms interface.",
+      "year": 2025
+    },
+    {
+      "id": "randomized-qsvt-2025",
+      "tags": [
+        "qsvt",
+        "randomization",
+        "early-fault-tolerant",
+        "linear-systems"
+      ],
+      "title": "Randomized Quantum Singular Value Transformation",
+      "url": "https://arxiv.org/abs/2510.06851",
+      "why_it_matters": "Suggests a frontier around replacing costly block encodings with randomized primitives.",
+      "year": 2025
+    },
+    {
+      "id": "state-isomorphism-2026",
+      "tags": [
+        "group-actions",
+        "hidden-shift",
+        "state-isomorphism",
+        "complexity"
+      ],
+      "title": "Quantum state isomorphism problems for groups",
+      "url": "https://arxiv.org/abs/2605.12615",
+      "why_it_matters": "Recent nearby problem class linking group actions, quantum states, and hidden-shift style structure.",
+      "year": 2026
+    },
+    {
+      "id": "near-term-ai-discovery-2026",
+      "tags": [
+        "automated-discovery",
+        "quantum-chemistry",
+        "heuristics",
+        "interpretability"
+      ],
+      "title": "Automated near-term quantum algorithm discovery for molecular ground states",
+      "url": "https://arxiv.org/abs/2603.26359",
+      "why_it_matters": "Shows useful automation patterns, but targets heuristic near-term chemistry rather than Shor-level complexity.",
+      "year": 2026
+    },
+    {
+      "id": "proof-quantum-programs-2020",
+      "tags": [
+        "formal-verification",
+        "proof-assistant",
+        "quantum-programs",
+        "correctness"
+      ],
+      "title": "Proving Quantum Programs Correct",
+      "url": "https://arxiv.org/abs/2010.01240",
+      "why_it_matters": "Points toward proof-checking candidate algorithms rather than trusting generated explanations.",
+      "year": 2020
+    }
+  ],
+  "tag_index": {
+    "abelian-hsp": [
+      "shor-1994"
+    ],
+    "access-model": [
+      "galbraith-shani-multivariate-hnp-2015",
+      "galbraith-laity-shani-fourier-limitations-2016",
+      "kapralov-sparse-fourier-2016"
+    ],
+    "adversary-bound": [
+      "span-programs-adversary-2009"
+    ],
+    "algebraic-geometry-code": [
+      "couvreur-ag-code-closure-2014"
+    ],
+    "algorithm-framework": [
+      "cs-guide-qsvt-2023"
+    ],
+    "algorithm-synthesis": [
+      "automated-algorithm-synthesis-2025"
+    ],
+    "alternant-code": [
+      "bardet-high-rate-alternant-2023",
+      "randriambololona-syzygy-distinguisher-2024"
+    ],
+    "automated-discovery": [
+      "automated-algorithm-synthesis-2025",
+      "near-term-ai-discovery-2026"
+    ],
+    "automation": [
+      "program-synthesis-components-2023"
+    ],
+    "betti-number": [
+      "mora-tillich-dual-goppa-square-2021",
+      "randriambololona-syzygy-distinguisher-2024"
+    ],
+    "block-encoding": [
+      "qsvt-2018",
+      "cs-guide-qsvt-2023"
+    ],
+    "breakthrough-template": [
+      "shor-1994"
+    ],
+    "chosen-query": [
+      "galbraith-laity-shani-fourier-limitations-2016"
+    ],
+    "circuit-synthesis": [
+      "program-synthesis-components-2023"
+    ],
+    "classical-algorithm": [
+      "panova-classical-multiplicities-2025"
+    ],
+    "classical-baseline": [
+      "astore-rank-metric-geometric-invariant-2024"
+    ],
+    "classical-distinguisher": [
+      "mora-tillich-dual-goppa-square-2021",
+      "randriambololona-syzygy-distinguisher-2024"
+    ],
+    "classical-no-go": [
+      "code-equivalence-fourier-2011",
+      "bardet-otmani-saeed-trivial-hull-2019",
+      "bardet-high-rate-alternant-2023",
+      "couvreur-ag-code-closure-2014"
+    ],
+    "classical-reduction": [
+      "bardet-otmani-saeed-trivial-hull-2019"
+    ],
+    "classical-upper-bound": [
+      "bourgain-hidden-shifted-power-2011"
+    ],
+    "clebsch-gordan": [
+      "bacon-chuang-harrow-schur-2004"
+    ],
+    "code-equivalence": [
+      "code-equivalence-fourier-2011",
+      "bardet-otmani-saeed-trivial-hull-2019",
+      "bardet-high-rate-alternant-2023",
+      "mora-tillich-dual-goppa-square-2021",
+      "randriambololona-syzygy-distinguisher-2024",
+      "couvreur-ag-code-closure-2014",
+      "astore-rank-metric-geometric-invariant-2024"
+    ],
+    "complexity": [
+      "state-isomorphism-2026"
+    ],
+    "component-library": [
+      "program-synthesis-components-2023"
+    ],
+    "correctness": [
+      "proof-quantum-programs-2020"
+    ],
+    "correlated-samples": [
+      "kapralov-sparse-fourier-2016"
+    ],
+    "deconvolution": [
+      "ip-shift-deconvolution-2002"
+    ],
+    "dequantization": [
+      "panova-classical-multiplicities-2025"
+    ],
+    "dihedral-hsp": [
+      "kuperberg-dhsp-2003",
+      "regev-lattice-dhsp-2003"
+    ],
+    "dimension-ratio": [
+      "larocca-havlicek-multiplicities-2024"
+    ],
+    "early-fault-tolerant": [
+      "randomized-qsvt-2025"
+    ],
+    "exposition": [
+      "cs-guide-qsvt-2023"
+    ],
+    "finite-fields": [
+      "van-dam-hallgren-shifted-character-2000",
+      "ip-shift-deconvolution-2002",
+      "bourgain-hidden-shifted-power-2011",
+      "gowers-norm-algorithms-2025"
+    ],
+    "formal-verification": [
+      "proof-quantum-programs-2020"
+    ],
+    "fourier-sampling": [
+      "symmetric-defies-fourier-2005",
+      "code-equivalence-fourier-2011"
+    ],
+    "generalization": [
+      "automated-algorithm-synthesis-2025"
+    ],
+    "generalized-phase-estimation": [
+      "bacon-chuang-harrow-schur-2004"
+    ],
+    "geometric-invariant": [
+      "astore-rank-metric-geometric-invariant-2024"
+    ],
+    "goppa-code": [
+      "mora-tillich-dual-goppa-square-2021",
+      "randriambololona-syzygy-distinguisher-2024"
+    ],
+    "gowers-norm": [
+      "roetteler-hidden-shift-gowers-2009",
+      "gowers-norm-algorithms-2025"
+    ],
+    "graph-isomorphism": [
+      "symmetric-defies-fourier-2005",
+      "bardet-otmani-saeed-trivial-hull-2019"
+    ],
+    "group-actions": [
+      "state-isomorphism-2026"
+    ],
+    "hamiltonian-simulation": [
+      "qsvt-2018"
+    ],
+    "harmonic-analysis": [
+      "roetteler-hidden-shift-gowers-2009"
+    ],
+    "hash-to-bins": [
+      "kapralov-sparse-fourier-2016"
+    ],
+    "heavy-hitters": [
+      "kapralov-sparse-fourier-2016"
+    ],
+    "heuristics": [
+      "near-term-ai-discovery-2026"
+    ],
+    "hidden-number": [
+      "galbraith-shani-multivariate-hnp-2015",
+      "galbraith-laity-shani-fourier-limitations-2016"
+    ],
+    "hidden-shift": [
+      "kuperberg-dhsp-2003",
+      "roetteler-hidden-shift-gowers-2009",
+      "van-dam-hallgren-shifted-character-2000",
+      "ip-shift-deconvolution-2002",
+      "state-isomorphism-2026"
+    ],
+    "hidden-shifted-power": [
+      "bourgain-hidden-shifted-power-2011"
+    ],
+    "hidden-subgroup": [
+      "hsp-survey-2010"
+    ],
+    "higher-order-fourier": [
+      "gowers-norm-algorithms-2025"
+    ],
+    "hull": [
+      "bardet-otmani-saeed-trivial-hull-2019"
+    ],
+    "infrastructure": [
+      "hallgren-pell-2002"
+    ],
+    "interpretability": [
+      "near-term-ai-discovery-2026"
+    ],
+    "invariant-projector": [
+      "ikenmeyer-subramanian-kronecker-2023"
+    ],
+    "known-algorithms": [
+      "automated-algorithm-synthesis-2025"
+    ],
+    "kronecker-coefficient": [
+      "ikenmeyer-subramanian-kronecker-2023",
+      "larocca-havlicek-multiplicities-2024",
+      "panova-classical-multiplicities-2025"
+    ],
+    "kronecker-transform": [
+      "yoshida-random-dilation-2025"
+    ],
+    "lattice": [
+      "regev-lattice-dhsp-2003"
+    ],
+    "lattice-adjacent": [
+      "kuperberg-dhsp-2003"
+    ],
+    "limitations": [
+      "galbraith-laity-shani-fourier-limitations-2016"
+    ],
+    "linear-algebra": [
+      "qsvt-2018"
+    ],
+    "linear-systems": [
+      "randomized-qsvt-2025"
+    ],
+    "multiplicative-character": [
+      "van-dam-hallgren-shifted-character-2000",
+      "ip-shift-deconvolution-2002",
+      "bourgain-hidden-shifted-power-2011"
+    ],
+    "multiplicity-estimation": [
+      "larocca-havlicek-multiplicities-2024"
+    ],
+    "multiplicity-space": [
+      "burchardt-high-dimensional-schur-2025",
+      "yoshida-random-dilation-2025"
+    ],
+    "no-go": [
+      "symmetric-defies-fourier-2005"
+    ],
+    "noisy-fourier": [
+      "galbraith-shani-multivariate-hnp-2015"
+    ],
+    "nonabelian-hsp": [
+      "hsp-survey-2010",
+      "symmetric-defies-fourier-2005",
+      "code-equivalence-fourier-2011"
+    ],
+    "number-theory": [
+      "shor-1994",
+      "hallgren-pell-2002"
+    ],
+    "period-finding": [
+      "shor-1994"
+    ],
+    "periodicity": [
+      "hallgren-pell-2002"
+    ],
+    "principal-ideal": [
+      "hallgren-pell-2002"
+    ],
+    "program-synthesis": [
+      "program-synthesis-components-2023"
+    ],
+    "projector": [
+      "bardet-otmani-saeed-trivial-hull-2019"
+    ],
+    "proof-assistant": [
+      "proof-quantum-programs-2020"
+    ],
+    "property-testing": [
+      "gowers-norm-algorithms-2025"
+    ],
+    "proved-primitive": [
+      "beals-symmetric-qft-1997",
+      "bacon-chuang-harrow-schur-2004"
+    ],
+    "qsvt": [
+      "qsvt-2018",
+      "cs-guide-qsvt-2023",
+      "randomized-qsvt-2025"
+    ],
+    "quadratic-forms": [
+      "roetteler-hidden-shift-gowers-2009"
+    ],
+    "quantum-chemistry": [
+      "near-term-ai-discovery-2026"
+    ],
+    "quantum-fourier": [
+      "beals-symmetric-qft-1997",
+      "van-dam-hallgren-shifted-character-2000"
+    ],
+    "quantum-programs": [
+      "proof-quantum-programs-2020"
+    ],
+    "quantum-walks": [
+      "span-programs-adversary-2009"
+    ],
+    "query-complexity": [
+      "span-programs-adversary-2009"
+    ],
+    "random-multiplier": [
+      "galbraith-shani-multivariate-hnp-2015"
+    ],
+    "randomization": [
+      "randomized-qsvt-2025"
+    ],
+    "rank-metric": [
+      "astore-rank-metric-geometric-invariant-2024"
+    ],
+    "recoupling": [
+      "burchardt-high-dimensional-schur-2025"
+    ],
+    "reduction": [
+      "code-equivalence-fourier-2011",
+      "regev-lattice-dhsp-2003"
+    ],
+    "representation-theory": [
+      "hsp-survey-2010",
+      "beals-symmetric-qft-1997",
+      "ikenmeyer-subramanian-kronecker-2023",
+      "larocca-havlicek-multiplicities-2024",
+      "panova-classical-multiplicities-2025",
+      "burchardt-high-dimensional-schur-2025",
+      "yoshida-random-dilation-2025"
+    ],
+    "schur-product": [
+      "bardet-high-rate-alternant-2023",
+      "mora-tillich-dual-goppa-square-2021",
+      "couvreur-ag-code-closure-2014",
+      "astore-rank-metric-geometric-invariant-2024"
+    ],
+    "schur-transform": [
+      "bacon-chuang-harrow-schur-2004",
+      "burchardt-high-dimensional-schur-2025",
+      "yoshida-random-dilation-2025"
+    ],
+    "sharp-bqp": [
+      "ikenmeyer-subramanian-kronecker-2023"
+    ],
+    "shifted-character": [
+      "van-dam-hallgren-shifted-character-2000",
+      "ip-shift-deconvolution-2002",
+      "bourgain-hidden-shifted-power-2011"
+    ],
+    "sieve": [
+      "kuperberg-dhsp-2003"
+    ],
+    "significant-fourier": [
+      "galbraith-laity-shani-fourier-limitations-2016"
+    ],
+    "span-programs": [
+      "span-programs-adversary-2009"
+    ],
+    "sparse-fourier": [
+      "kapralov-sparse-fourier-2016"
+    ],
+    "state-isomorphism": [
+      "state-isomorphism-2026"
+    ],
+    "support-recovery": [
+      "bardet-high-rate-alternant-2023",
+      "couvreur-ag-code-closure-2014"
+    ],
+    "survey": [
+      "hsp-survey-2010"
+    ],
+    "symmetric-qft": [
+      "beals-symmetric-qft-1997"
+    ],
+    "syzygy": [
+      "randriambololona-syzygy-distinguisher-2024"
+    ],
+    "t-closure": [
+      "couvreur-ag-code-closure-2014"
+    ],
+    "uniform-samples": [
+      "galbraith-shani-multivariate-hnp-2015"
+    ],
+    "unique-svp": [
+      "regev-lattice-dhsp-2003"
+    ]
+  }
+}

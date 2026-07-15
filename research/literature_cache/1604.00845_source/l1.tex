@@ -1,0 +1,351 @@
+%!TEX root = ./ft-hd.tex
+\section{Analysis of \textsc{LocateSignal}: bounding $\ell_1$ norm of undiscovered elements}\label{sec:l1}
+
+The main result of this section is Theorem~\ref{thm:l1-res-loc}, which is our main tool for showing efficiency of \textsc{LocateSignal}. Theorem~\ref{thm:l1-res-loc} applies to the following setting. Fix a set $S\subseteq \nsq$ and a set of hashings $H_1,\ldots, H_{r_{max}}$, and let $S^*\subseteq S$ denote the set of elements of $S$ that are not isolated with respect to most of these hashings $H_1,\ldots, H_{r_{max}}$. Theorem~\ref{thm:l1-res-loc} shows that for any signal $x$ and partially recovered signal $\chi$, if $L$ denotes the output list of an invocation of \textsc{LocateSignal} on the pair $(x, \chi)$ with hashings $H_1,\ldots, H_{r_{max}}$, then 
+the $\ell_1$ norm of elements of the residual $(x-\chi)_S$ that are not discovered by \textsc{LocateSignal} can be bounded by a function of the amount of $\ell_1$ mass of the residual that fell outside of the `good' set $S\setminus S^*$, plus the `noise level' $\mu\geq ||x_{\nsq\setminus S}||_\infty$ times $k$.
+
+If we think of applying Theorem~\ref{thm:l1-res-loc} iteratively, we intuitively get that the fixed set of measurements with hashings $\{H_r\}$ allows us to always reduce the $\ell_1$ norm of the residual $x'=x-\chi$ on the `good' set $S\setminus S^*$ to about the amount of mass that is located outside of this good set.
+
+
+\noindent{\em {\bf Theorem~\ref{thm:l1-res-loc}}
+There exist absolute constants $C_1, C_2, C_3>0$ such that for any $x, \chi\in \C^N$ and residual signal $x'=x-\chi$ the following conditions hold. \defsk   Let $S^*\subseteq S$ denote the set of elements that are not isolated with respect to at least a $\sqrt{\alpha}$ fraction of hashings $\{H_r\}_{r=1}^{r_{max}}$.   Suppose that for every $s\in [1:d]$ the sets $\A_r\star(\zero, \mathbf{e}_s)$ are balanced (as per Definition~\ref{def:balance}),  $r=1,\ldots, r_{max}$, and the exponent $F$ of the filter $G$ is even and satisfies $F\geq 2d$.  
+Let 
+$$
+L=\bigcup_{r=1}^{r_{max}}\Call{LocateSignal}{\chi, H_r, \{m(\wh{x}, H_r, a\star (\one, \h)\}_{a\in \A_r, \h\in \H_r}}.
+$$
+
+
+Then if $r_{max}, c_{max}\geq (C_1/\sqrt{\alpha})\log\log N$, one has
+$$
+||x'_{S\setminus S^*\setminus L}||_1\leq (C_2\alpha)^{d/2} ||x'_S||_1+C_3^{d^2}(||\chi_{\nsq\setminus S}||_1+||x'_{S^*}||_1)+4\mu |S|.
+$$
+}
+
+
+As we will show later, Theorem~\ref{thm:l1-res-loc} can be used to show that (assuming perfect estimation) invoking \textsc{LocateSignal} repeatedly allows one to reduce to $\ell_1$ norm of the head elements down to essentially
+$$
+||x'_{S^*}||_1+||\chi_{\nsq\setminus S}||_1,
+$$
+i.e. the $\ell_1$ norm of the elements that are not well isolated and the set of new elements created by the process due to false positives in location. 
+In what follows we derive bounds on $||e^{head}||_1$ (in section~\ref{sec:h-noise}) and $||e^{tail}||_1$ (in section~\ref{sec:tail-noise}) that lead to a proof of Theorem~\ref{thm:l1-res-loc}.
+
+\subsection{Bounding noise from heavy hitters}\label{sec:h-noise}
+
+We first derive bounds on noise from heavy hitters that a single hashing $H$ results in, i.e. $e^{head}(H, x)$,  (see Lemma~\ref{lm:l1b-single-pi}), and then use these bounds to bound $e^{head}(\{H\}, x)$ (see Lemma~\ref{lm:eh-s-sstar}). These bounds, together with upper bounds on contribution of tail noise from the next section, then lead to a proof of Theorem~\ref{thm:l1-res-loc}.
+
+\begin{lemma}\label{lm:l1b-single-pi}
+Let $x, \chi\in \C^N, x'=x-\chi$. \defsk
+Let $\pi=(\Sigma, q)$ be a permutation, let $H=(\pi, B, F), F\geq 2d$ be a hashing into $B$ buckets and filter $G$ with sharpness $F$. Let $S^*_H\subseteq S$ denote the set of elements $i\in S$ that are not isolated under $H$. Then one has, for $e^{head}$ defined with respect to $S$, 
+$$
+||e^{head}_{S\setminus S^*_H}(H, x, \chi)||_1\leq 2^{O(d)} \alpha^{d/2} ||x'_{S\setminus S^*_H}||_1+\GS \cdot 2^{O(d)} (||x'_{S^*}||_1+||\chi_{\nsq\setminus S}||_1).
+$$
+Furthermore, if $\chi_{\nsq\setminus S}=0$ and $S^*_H=\emptyset$, then one has $||e^{head}_{S}(H, x, \chi)||_\infty\leq 2^{O(d)}\alpha^{d/2} ||x'_S||_\infty$.
+\end{lemma}
+\begin{proof}
+By \eqref{eq:eh-pi} for $i\in S\setminus S^*_H$
+\begin{equation}\label{eq:asdf}
+\begin{split}
+e^{head}_{i}(H, x')&= |G_{o_i(i)}^{-1}|\cdot \sum_{j\in S\setminus S^*_H \setminus  \{i\}} |G_{o_i(j)}|x'_j|\text{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~(isolated head elements)}\\
+&+|G_{o_i(i)}^{-1}|\cdot \left[\sum_{j\in S^*_H} |G_{o_i(j)}|x'_j|+\sum_{j\in \nsq\setminus S} |G_{o_i(j)}||\chi_j|\right]\text{~~~(non-isolated head elements and false positives)}\\
+&=|G_{o_i(i)}^{-1}|\cdot (A_1(i)+A_2(i)).
+\end{split}
+\end{equation}
+Let $A_1:=\sum_{i\in S\setminus S^*_H} A_1(i), A_2:=\sum_{i\in S\setminus S^*_H} A_2(i)$.
+
+We bound $A_1$ and $A_2$ separately. 
+
+\paragraph{Bounding $A_1$.} We start with a convenient upper bound on $A_1$:
+\begin{equation}\label{eq:2pogh}
+\begin{split}
+A_1=&\sum_{i\in S\setminus S^*_H} \sum_{j\in S\setminus S^*_H\setminus  \{i\}} |G_{o_i(j)}||x'_j|~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\text{(recall that $o_i(j)=\pi(j)-(n/b)h(i)$)}\\
+& =\sum_{t\geq 0} \sum_{i\in S\setminus S^*_H} \sum_{\substack{j\in S\setminus S^*_H\setminus \{i\}\text{~s.t.~}\\ ||\pi(j)-\pi(i)||_\infty\in (n/b)\cdot [2^t-1, 2^{t+1}-1)}} |G_{o_i(j)}||x'_j|, \text{~~~(consider all scales $t\geq 0$)}\\
+& \leq  \sum_{t\geq 0} \sum_{i\in S\setminus S^*_H} \max_{||\pi(j)-\pi(i)||_\infty\geq (n/b)\cdot (2^t-1)} G_{o_i(j)}\cdot \sum_{\substack{j\in S\setminus S^*_H\setminus \{i\}\text{~s.t.~}\\ ||\pi(j)-\pi(i)||_\infty\leq (n/b)\cdot (2^{t+1}-1)}} |x'_j|\\
+&= \sum_{j\in S\setminus S^*_H} |x'_j|\cdot \sum_{t\geq 0} \max_{\substack{||\pi(j)-\pi(i)||_\infty\geq \\(n/b)\cdot (2^t-1)}} G_{o_i(j)}\cdot \left|\left\{i\in S\setminus S^*_H\setminus \{j\} \text{~s.t.~}||\pi(j)-\pi(i)||_\infty\leq (n/b)\cdot (2^{t+1}-1)\right\}\right|.
+\end{split}
+\end{equation}
+Note that in the first line we summed, over all $i\in S\setminus S^*_H$  (i.e. all isolated $i$), the contributions of all other $i\in S$ to the noise in their buckets. We need to bound the first line in terms of $||x'_{S\setminus S^*_H}||_1$. For that, we first classified all $j\in S\setminus S^*_H$ according to the $\ell_\infty$ distance from $i$ to $j$ (in the second line), then upper bounded the value of the filter $G_{o_i(j)}$ based on the distance $||\pi(i)-\pi(j)||_\infty$, and finally changed order of summation to ensure that the outer summation is a weighted sum of absolute values of $x'_j$ {\em over all $j\in S\setminus S^*_H$}\footnote{We note here that we started by summing over $i$ first and then over $j$, but switched the order of summation to the opposite in the last line. This is because the quantity $G_{o_i(j)}$, which determines contribution of $j\in S$ to the estimation error of $i\in S$ {\em is not symmetric} in $i$ and $j$. Indeed, even though $G$ itself is symmetric around the origin, we have $o_i(j)=\pi(j)-(n/b)h(i)\neq o_j(i)$. }.  In order to upper bound $A_1$ it now suffices to upper bound all factors multiplying $x'_j$ in the last line of the equation above. As we now show, a strong bound follows from isolation properties of $i$. 
+
+We start by upper bounding $G$ using Lemma~\ref{lm:filter-prop}, {\bf (2)}. We first note that by triangle inequality 
+$$
+||\pi(j)-(n/b)h(i)||_\infty\geq ||\pi(j)-\pi(i)||_\infty-||\pi(i)-(n/b)h(i)||_\infty\geq (n/b)(2^t-1)-(n/b)= (n/b) (2^{t-1}-2).
+$$
+The rhs is positive for all $t\geq 3$ and for such $t$ satisfies $2^{t-1}-2\leq 2^{t-2}$. We hence get for all  $t\geq 3$
+\begin{equation}\label{eq:g-ubound}
+\begin{split}
+\max_{||\pi(j)-\pi(i)||_\infty\geq (n/b)\cdot (2^{t-1}-1)} G_{o_i(j)}\leq \left(\frac2{1+||\pi(j)-(n/b)h(i)||_\infty}\right)^{\fc}\leq \left(\frac2{1+2^{t-2}}\right)^{\fc}\leq 2^{-(t-3)\fc}.
+\end{split}
+\end{equation}
+We also have the  bound $||G||_\infty\leq 1$ from Lemma~\ref{lm:filter-prop}, {\bf (3)}. It remains to bound the last term on the rhs of the last line in~\eqref{eq:2pogh}. We need the fact that for a pair $i, j$ such that $||\pi(j)-\pi(i)||_\infty\leq 2^{t+1}-1$ we have by triangle inequality
+$$
+||\pi(j)-(n/b)h(i)||_\infty\leq ||\pi(j)-\pi(i)||_\infty+||\pi(i)-(n/b)h(i)||_\infty\leq (n/b)(2^{t+1}-1)+(n/b)= (n/b) 2^{t+1}.
+$$
+Equipped with this bound, we now conclude that
+\begin{equation}\label{eq:3hrgrg}
+\begin{split}
+&\left|\left\{i\in S\setminus S^*_H\setminus \{j\} \text{~s.t.~}||\pi(j)-\pi(i)||_\infty\leq (n/b)\cdot (2^{t+1}-1)\right\}\right|\\
+&=|\pi(S\setminus \{i\})\cap \B^\infty_{(n/b) h(i)}((n/b)\cdot 2^{t+1})|\leq \GI\cdot \alpha^{d/2} 2^{(t+2)d+1}\cdot 2^t,
+\end{split}
+\end{equation}
+where we used the assumption that $i\in S\setminus S^*_H$ are isolated  (see Definition~\ref{def:isolated}). We thus get for any $j\in S\setminus S^*_H$
+\begin{equation*}
+\begin{split}
+\eta_j:=&\sum_{t\geq 0} \max_{\substack{||\pi(j)-\pi(i)||_\infty\geq \\(n/b)\cdot (2^t-1)}} G_{o_i(j)}\cdot \left|\left\{i\in S\setminus S^*_H\setminus \{j\} \text{~s.t.~}||\pi(j)-\pi(i)||_\infty\leq (n/b)\cdot (2^{t+1}-1)\right\}\right|\\
+&\leq \sum_{t\geq 0} (\GI\cdot  \alpha^{d/2} 2^{(t+2)d+1}\cdot 2^{t}) \min\{1,  2^{-(t-3)\fc}\} \\
+&\leq \GI\cdot  \alpha^{d/2} 2^{2d+1} \sum_{t\geq 0} 2^{t(d+1)}\cdot \min\{1, 2^{-(t-3)\fc}\}\\
+\end{split}
+\end{equation*}
+We now note that
+\begin{equation*}
+\begin{split}
+\sum_{t\geq 0} 2^{t(d+1)}\cdot \min\{1, 2^{-(t-3)\fc}\}&=1+2^{2(d+1)}+2^{3(d+1)}\sum_{t\geq 3} 2^{(t-3)(d+1)}\cdot \min\{1, 2^{-(t-3)\fc}\}\\
+&=1+2^{2(d+1)}+2^{3(d+1)}\sum_{t\geq 3} 2^{(t-3)(d+1-\fc)}\leq 1+2^{2(d+1)}+2^{3(d+1)+1}\leq 2^{4(d+1)+1},\\
+\end{split}
+\end{equation*}
+since $\fc\geq 2d$ by assumption of the lemma, and hence for all $j\in S\setminus S^*_H$ one has $\eta_j\leq  \GI\cdot 2^{O(d)} \alpha^{d/2}$. Combining the estimates above, we now get
+\begin{equation*}
+\begin{split}
+A_1\leq &\sum_{j\in S\setminus S^*_H} |x'_j|\cdot \eta_j\leq  ||x'_S||_1\GI\cdot 2^{O(d)}\alpha^{d/2}, \\
+\end{split}
+\end{equation*}
+ as required.  The $\ell_\infty$ bound for the case when $\chi_{\nsq\setminus S}=0$ follows in a similar manner and is hence omitted.
+
+
+
+We now turn to bounding $A_2$. The bound that we get here is weaker since $\chi_{\nsq\setminus S}$ is an adversarially placed signal and we do not have isolation properties with respect to it, resulting in a weaker bound on (the equivalent of) $\eta_j$ for $j\in S^*_H$ than we had for $j\in S\setminus S^*_H$.  We let $y:=x'_{S^*}-\chi_{\nsq\setminus S}$ to simplify notation. We have, as in~\eqref{eq:2pogh},
+\begin{equation*}
+\begin{split}
+A_2&\leq \sum_{j\in S\setminus S^*_H} |x'_j|\cdot \kappa_j,\\
+& \text{~where~}\\
+&\kappa_j=\sum_{t\geq 0} \max_{\substack{||\pi(j)-\pi(i)||_\infty\geq \\(n/b)\cdot (2^t-1)}} G_{o_i(j)}\cdot \left|\left\{i\in S\setminus S^*_H\setminus \{j\} \text{~s.t.~}||\pi(j)-\pi(i)||_\infty\leq (n/b)\cdot (2^{t+1}-1)\right\}\right|.
+\end{split}
+\end{equation*}
+The first term can be upper bounded as before. For the second term, we note that every pair of points $i_1, i_2\in S\setminus S^*_H$ by triangle inequality satisfy 
+$$
+(n/b)||\pi(i_1)-\pi(i_2)||_\infty\leq (n/b)||\pi(i_1)-\pi(j)||_\infty+||\pi(j)-\pi(i_2)||_\infty\leq (n/b)\cdot (2^{t+2}-2)\leq (n/b)\cdot 2^{t+2}
+$$ 
+Since both $i_1$ and $i_2$ are isolated under $\pi$, this means that 
+$$
+\left|\left\{i\in S\setminus S^*_H\setminus \{j\} \text{~s.t.~}||\pi(j)-\pi(i)||_\infty\leq (n/b)\cdot (2^{t+1}-1)\right\}\right|\leq \GI\cdot \alpha^{d/2} 2^{(t+3)d}\cdot 2^{t+2}+1,
+$$
+where we used the bound from Definition~\ref{def:isolated} for $i$, but counted the point $i$ itself (this is what makes the bound on $\kappa_j$ weaker than the bound on $\eta_j$). A similar calculation to the one above for $A_1$ now gives
+\begin{equation*}
+\begin{split}
+\kappa_j:=&\sum_{t\geq 0} \max_{\substack{||\pi(j)-\pi(i)||_\infty\geq \\(n/b)\cdot (2^t-1)}} G_{o_i(j)}\cdot \left|\left\{i\in S\setminus S^*_H\setminus \{j\} \text{~s.t.~}||\pi(j)-\pi(i)||_\infty\leq (n/b)\cdot (2^{t+1}-1)\right\}\right|\\
+&\leq \sum_{t\geq 0} (\GI\cdot  \alpha^{d/2} 2^{(t+3)d}\cdot 2^{t+2}+1) \min\{1,  2^{-(t-3)\fc}\} \\
+&\leq 2^{O(d)}(\GI\cdot \alpha^{d/2}+1)= 2^{O(d)}.
+\end{split}
+\end{equation*}
+We thus have
+\begin{equation*}
+\begin{split}
+A_2\leq &\sum_{j\in \nsq} |y_j|  \kappa_j\leq 2^{O(d)} ||y||_1.
+\end{split}
+\end{equation*}
+Plugging our bounds on $A_1$ and $A_2$ into \eqref{eq:asdf}, we get
+\begin{equation*}
+\begin{split}
+e^{head}_{i}(H, x, \chi)&\leq |G_{o_i(i)}^{-1}|\cdot (A_1+A_2)\leq |G_{o_i(i)}^{-1}|(2^{O(d)}\GI\cdot \alpha^{d/2} ||x'_S||_1+2^{O(d)}||y||_1)\\
+&\leq 2^{O(d)}\alpha^{d/2} ||x'_S||_1+\GS \cdot 2^{O(d)} ||y||_1\\
+\end{split}
+\end{equation*}
+as required.
+
+\if 0
+Now to obtain the $\ell_\infty$ bound for the case when $\chi_{\nsq\setminus S}=0$, we write for each $i\in S\setminus S^*_H$
+\begin{equation}\label{eq:odfjgh}
+\begin{split}
+A_1(i)\leq &\sum_{t\geq 0} \left(\frac2{1+2^t}\right)^{\fc} \sum_{i'\in S\setminus \{i\}, ||h(i')-h(i)||_\infty\leq 2^t} |x'_{i'}|\\
+&\leq ||x'||_\infty\cdot \sum_{t\geq 0} \left(\frac2{1+2^t}\right)^{\fc} \sum_{i\in S\setminus S^*_H}(|S^\pi\cap \B^\infty_{(n/b)\cdot h(i)}((n/b)\cdot 2^{t+2})|-1)\\
+\end{split}
+\end{equation}
+and use the fact that 
+$$
+|\B^\infty_{h(i)}((n/b)\cdot 2^{t+1})\cap S^\pi|-1\leq \GI\cdot \alpha^{d/2} 2^{(t+3)d}\cdot 2^{t}
+$$
+for every $i\in (S\setminus S^*_H)$ by definition of an isolated element (see Definition~\ref{def:isolated}). Continuing \eqref{eq:odfjgh}, we get
+\begin{equation*}
+\begin{split}
+A_1\leq ||x'||_\infty\cdot \sum_{t\geq 0} \left(\frac2{1+2^t}\right)^{\fc}\GI\cdot \alpha^{d/2} 2^{(t+3)d}\cdot 2^{t}=||x'||_\infty\cdot \GI 2^{O(d)} \alpha^{d/2},\\
+\end{split}
+\end{equation*}
+implying that 
+$$
+||e^{head}_{S\setminus S^*_H}(H, x, \chi)||_\infty\leq |G_{o_i(i)}^{-1}|\cdot  A_1\leq 2^{O(d)}\alpha^{d/2} ||x'_S||_\infty
+$$
+as required.
+\fi 
+\end{proof}
+\begin{remark}
+The second bound of this lemma will be useful later in section~\ref{sec:linf} for analyzing \textsc{ReduceInfNorm}.
+\end{remark}
+
+
+We now bound the final error induced by head elements, i.e. $e^{head}(\{H_r\}, x, \chi)$:
+\begin{lemma}\label{lm:eh-s-sstar}
+Let $x, \chi\in \nsq$, $x'=x-\chi$. \defsk Let $\{\pi_r\}_{r=1}^{r_{max}}$ be a set of permutations, let $H_r=(\pi_r, B, F), F\geq 2d$ be a hashing into $B$ buckets and filter $G$ with sharpness $F$. Let $S^*$ denote the set of elements $i\in S$ that are not isolated under at least $\sqrt{\alpha}$  fraction of $H_r$. Then, one has for $e^{head}$ defined with respect to $S$, 
+$$
+||e^{head}_{S\setminus S^*}(\{H_r\}, x, \chi)||_1\leq 2^{O(d)}\alpha^{d/2} ||x'_S||_1+\GS \cdot 2^{O(d)} ||\chi_{\nsq\setminus S}||_1.
+$$
+Furthermore, if $\chi_{\nsq\setminus S}=0$, then $||e^{head}_{S\setminus S^*}(\{H_r\}, x, \chi)||_\infty\leq 2^{d/2}\alpha^{d/2} ||x'_S||_\infty$.
+\end{lemma}
+\begin{proof}
+Recall that by \eqref{eq:eh} one has for each $i\in \nsq$ $e^{head}_i(\{H_r\}, x, \chi)=\quant^{1/5}_{r\in [1:r_{max}]} e^{head}_i(H_r, x, \chi)$. This means that for each $i\in S\setminus S^*$ there exist at least $(1/5-\sqrt{\alpha})r_{max}$ values of $r$ such that 
+$e^{head}_i(H_r, x, \chi)>e^{head}_i(\{H_r\}, x, \chi)$, and hence
+$$
+||e^{head}_{S\setminus S^*}(\{H_r\}, x, \chi)||_1\leq \frac1{(1/5-\sqrt{\alpha})r_{max}}\sum_{r=1}^{r_{max}} ||e^{head}_{S\setminus S^*_r}(H_r, x, \chi)||_1.
+$$
+
+By Lemma~\ref{lm:l1b-single-pi} one has
+$$
+||e^{head}_{S\setminus S^*_{H_r}}(H_r, x, \chi)||_1\leq 2^{O(d)}\alpha^{d/2} ||x'_S||_1+\GS \cdot 2^{O(d)} ||\chi_{\nsq\setminus S}||_1
+$$
+for all $r$, implying that 
+\begin{equation*}
+\begin{split}
+||e^{head}_{S\setminus S^*}(\{H_r\}, x, \chi)||_1&\leq \frac{1}{(1/5-\sqrt{\alpha})}(2^{O(d)}\alpha^{d/2} ||x'_S||_1+\GS \cdot 2^{O(d)} ||\chi_{\nsq\setminus S}||_1)\\
+&\leq 2^{O(d)}\alpha^{d/2} ||x'_S||_1+\GS \cdot 2^{O(d)} ||\chi_{\nsq\setminus S}||_1
+\end{split}
+\end{equation*}
+as required.
+
+The proof of the second bound follows analogously using the $\ell_\infty$ bound from Lemma~\ref{lm:l1b-single-pi}.
+\end{proof}
+\begin{remark}
+The second bound of this lemma will be useful later in section~\ref{sec:linf} for analyzing \textsc{ReduceInfNorm}.
+\end{remark}
+
+
+\subsection{Bounding effect of tail noise}\label{sec:tail-noise}
+
+
+\begin{lemma}\label{lm:loc-tail-small-single-H}
+For any constant $C'>0$ there exists an absolute constant $C>0$ such that for any $x\in \C^{\nsq}$, any integer $k\geq 1$ and $S\subseteq \nsq$ such that $||x_{\nsq\setminus S}||_\infty\leq C'||x_{\nsq\setminus [k]}||_2/\sqrt{k}$, for any integer $B\geq 1$ a power of $2^d$ the following conditions hold.
+If $(H, \A)$ are random measurements as in Algorithm~\ref{alg:main-sublinear}, $H=(\pi, B, F)$ satisfies $F\geq 2d$ and $||x_{\nsq\setminus [k]}||_2\geq N^{-\Omega(c)}$, where $O(c)$ is the word precision of our semi-equispaced Fourier transform computation, then for any $i\in \nsq$ one has, for $e^{tail}$ defined with respect to $S$, 
+$$
+\expect_{H, \A}\left[e^{tail}_{i}(H, \A, x)\right]\leq  \GS \cdot C^d(40+|\H|2^{-\Omega(|\A|)})  ||x_{\nsq \setminus [k]}||_2/\sqrt{B}.
+$$ 
+\end{lemma}
+\begin{proof}
+
+Recall that for any $H=(\pi, B, G), a, \h$ one has $(e^{tail}(H, a\star (\one, \h), x_{\nsq\setminus [k]}))^2=|u_i|^2$, where 
+$$
+u =\Call{HashToBins}{\widehat{x_{\nsq\setminus S}}, 0, (H, a\star (\one, \h))}.
+$$
+
+Since the elements of $\A$ are selected uniformly at random, we have for any $H$ and $\h$ by Lemma~\ref{lm:hashing}, {\bf (3)}, since $a\star (\one, \h)$ is uniformly random in $\nsq$, that
+\begin{equation}\label{eq:expect-a-0hg443g}
+\expect_a[(e^{tail}_i(H, a\star (\one, \h), x))^2]=\expect_{a}[\abs{G_{o_i(i)}^{-1}\omega^{-(a\star (\one, \h))^T\Sigma i}u_{h(i)} - x_i}^2]\leq \mu^2_{H, i}(x)+N^{-\Omega(c)},
+\end{equation}
+where $c>0$ is the large constant that governs the precision of our Fourier transform computations. 
+By Lemma~\ref{lm:hashing}, {\bf (2)} applied to the pair $(\widehat{x_{\nsq\setminus S}}, 0)$ there exists a constant $C>0$ such that
+$$
+\expect_H[\mu^2_{H, i}] \leq  \GSS\cdot C^d ||x_{\nsq \setminus S}||_2^2/B
+$$ 
+We would like to upper bound the rhs in terms of $||x_{\nsq\setminus [k]}||_2^2$ (the tail energy), but this requires an argument since $S$ is not exactly the set of top $k$ elements of $x$. However, since $S$ contains the large coefficients of $x$, a bound is easy to obtain. Indeed, denoting the set of top $k$ coefficients of $x$ by $[k]\subseteq \nsq$ as usual, we get
+\begin{equation*}
+||x_{\nsq \setminus S}||_2^2\leq ||x_{\nsq \setminus (S\cup [k])}||_2^2+||x_{[k]\setminus S}||_2^2\leq ||x_{\nsq \setminus [k]}||_2^2+k\cdot ||x_{[k]\setminus S}||_\infty^2\leq (C'+1)||x_{\nsq \setminus [k]}||_2.
+\end{equation*}
+Thus, we have  
+\begin{equation*}
+\expect_H[\mu^2_{H, i}(x)+N^{-\Omega(c)}]\leq \GSS\cdot (C'+2)C^d ||x_{\nsq \setminus [k]}||_2^2/B,
+\end{equation*}
+where we used the assumption that $||x_{\nsq \setminus k}||_2\geq N^{-\Omega(c)}$.
+We now get by Jensen's inequality 
+\begin{equation}\label{eq:mu-b}
+\expect_H[\mu_{H, i}(x)]\leq\GS\cdot (C'')^d ||x_{\nsq \setminus k}||_2/\sqrt{B}
+\end{equation}
+for a constant $C''>0$. Note that 
+
+
+By ~\eqref{eq:expect-a-0hg443g} for each $i\in \nsq$, hashing $H$, evaluation point $a\in \nsq\times \nsq$ and direction $\h$ we have
+$\expect_a[(e^{tail}_i(H, a\star (\one,  \h), x))^2]=(\mu_{H, i}(x))^2$. Applying Jensen's inequality, we hence get for any $H$ and $\h\in \H$
+\begin{equation}
+\expect_a[e^{tail}_{i}(H, a\star (\one, \h), x)]\leq \mu_{H, i}(x).
+\end{equation}
+ Applying Lemma~\ref{lm:quant-exp} with $Y=e^{tail}_{i}(H, a\star (\one, \h), x)$ and $\gamma=1/5$ (recall that the definition of $e^{tail}_i(H, z, x)$ involves a $1/5$-quantile over $\A$) and using the previous bound, we get, for any fixed $H$ and $\h\in \H$
+\begin{equation}\label{eq:e-b-exp}
+\expect_\A\left[\left|e^{tail}_{i}(H, \A\star (\one, \h), x)-40\cdot \mu_{H, i}(x)\right|_+\right]\leq \mu_{H, i}(x)\cdot 2^{-\Omega(|\A|)},
+\end{equation}
+and hence by a union bound over all $\h\in \H$ we have 
+\begin{equation*}
+\expect_\A\left[\sum_{\h\in \H}\left|e^{tail}_{i}(H, \A\star (\one, \h), x)-40\cdot \mu_{H, i}(x)\right|_+\right]\leq \mu_{H, i}(x)\cdot |\H|2^{-\Omega(|\A|)}.
+\end{equation*}
+Putting this together with~\eqref{eq:mu-b}, we get 
+\begin{equation*}
+\begin{split}
+&\expect_{H, \A}\left[e^{tail}_i(H, \A, x)\right]\\
+&=\expect_H\left[\expect_\A\left[40\mu_{H, i}(x)+\sum_{\h\in \H}\left|e^{tail}_{i}(H, \A\star (\one, \h), x)-40\cdot \mu_{H, i}(x)\right|_+\right]\right]\\
+&\leq\expect_H\left[\mu_{H, i}(x)(40+|\H|2^{-\Omega(|\A|)})\right]\\
+&\leq \GS (C'')^d (40+|\H|2^{-\Omega(|\A|)}) ||x_{\nsq \setminus k}||_2/\sqrt{B}
+\end{split}
+\end{equation*}
+as required.
+\end{proof}
+
+
+\begin{lemma}\label{lm:loc-tail-small}
+For any constant $C'>0$ there exists an absolute constant $C>0$ such that for any $x\in \C^{\nsq}$, any integer $k\geq 1$ and $S\subseteq \nsq$ such that $||x_{\nsq\setminus S}||_\infty\leq C'||x_{\nsq\setminus [k]}||/\sqrt{k}$, if $B\geq 1$, then the following conditions hold , for $e^{tail}$ defined with respect to $S$.
+
+
+If hashings $H_r=(\pi_r, B, F), F\geq 2d$ and sets $\A_r, |\A_r|\geq c_{max}$ for $r=1,\ldots, r_{max}$ are chosen at random, then
+\begin{description}
+\item[(1)] for every $i\in \nsq$ one has 
+$$
+\expect_{\{(H_r, \A_r)\}}\left[e^{tail}_i(\{H_r, \A_r\}, x)\right]\leq  \GS C^d (40+|\H|2^{-\Omega(c_{max})})  ||x_{\nsq \setminus [k]}||_2/\sqrt{B}.
+$$ 
+
+\item[(2)] for every $i\in \nsq$ one has 
+$$
+\prob_{\{(H_r, \A_r)\}}\left[e^{tail}_i(\{H_r, \A_r\}, x)>  \GS C^d (40+|\H|2^{-\Omega(c_{max})})  ||x_{\nsq \setminus [k]}||_2/\sqrt{B}\right]=2^{-\Omega(r_{max})}
+$$ 
+and
+\begin{equation*}
+\begin{split}
+&\expect_{\{(H_r, \A_r)\}}\left[\left|e^{tail}_i(\{H_r, \A_r\}, x)- \GS C^d (40+|\H|2^{-\Omega(c_{max})})  ||x_{\nsq \setminus [k]}||_2/\sqrt{B}\right|_+\right]\\
+&=2^{-\Omega(r_{max})}\cdot \GS C^d (40+|\H|2^{-\Omega(c_{max})})  ||x_{\nsq \setminus [k]}||_2/\sqrt{B}.
+\end{split}
+\end{equation*}
+
+\end{description}
+\end{lemma}
+\begin{proof}
+
+Follows by applying  Lemma~\ref{lm:quant-exp} with $Y=e^{tail}_{i}(H_r, \A_r, x)$.
+\end{proof}
+
+\subsection{Putting it together}
+The bounds from the previous two sections yield a proof of Theorem~\ref{thm:l1-res-loc}, which we restate here for convenience of the reader:
+
+{\em {\bf Theorem~\ref{thm:l1-res-loc}}
+For any constant $C'>0$ there exist absolute constants $C_1, C_2, C_3>0$ such that for any $x\in \C^\nsq$, any integer $k\geq 1$ and any $S\subseteq \nsq$ such that $||x_{\nsq\setminus S}||_\infty\leq C'\mu$, where $\mu=||x_{\nsq\setminus [k]}||_2/\sqrt{k}$, the following conditions hold.
+
+Let $\pi_r=(\Sigma_r, q_r), r=1,\ldots, r_{max}$ denote permutations, and let $H_r=(\pi_r, B, F)$, $F\geq 2d$, where $B\geq \GT k/\alpha^d$ for $\alpha\in (0, 1)$ smaller than a constant. Let $S^*\subseteq S$ denote the set of elements that are not isolated with respect to at least a $\sqrt{\alpha}$ fraction of hashings $\{H_r\}$. Then if $r_{max}, c_{max}\geq (C_1/\sqrt{\alpha})\log\log N$, then with probability at least $1-1/\log^2 N$ over the randomness of the measurements for all $\chi\in \C^\nsq$ such that $x':=x-\chi$ satisifies $||x'||_\infty/\mu\leq N^{O(1)}$ one has
+$$
+L:=\bigcup_{r=1}^{r_{max}}\textsc{LocateSignal}\left(\chi, k, \{m(\wh{x}, H_r, a\star (\one, \h))\}_{r=1, a\in \A_r, \h\in \H}^{r_{max}}\right)
+$$
+satisfies
+$$
+||x'_{S\setminus S^*\setminus L}||_1\leq (C_2\alpha)^{d/2} ||x'_S||_1+C_3^{d^2}(||\chi_{\nsq\setminus S}||_1+||x'_{S^*}||_1)+4\mu |S|.
+$$
+
+}
+\begin{proof}
+First note that with probability at least  $1-1/(10\log^2 N)$  for every $s\in [1:d]$ the sets $\A_r\star (\zero, \mathbf{e}_s)$ are balanced (as per Definition~\ref{def:balance}) for all $r=1,\ldots, r_{max}$ and all $\h\in \H$ by Claim~\ref{cl:balanced}.
+
+By Corollary~\ref{cor:loc} applied with $S'=S\setminus S^*$ one has 
+$$
+||(x-\chi)_{(S\setminus S^*)\setminus L}||_1\leq 20 \cdot (||e^{head}_{S\setminus S^*}(\{H_r\}, x')||_1+||e^{tail}(\{H_r, \A_r\}, x)||_1)+||x'||_\infty |S|\cdot N^{-\Omega(c)}.
+$$
+
+We also have  
+$$
+||e^{head}_{S\setminus S^*}(\{H_r\}, x')||_1\leq 2^{O(d)}\alpha^{d/2} ||x'_S||_1+\GS \cdot 2^{O(d)} ||\chi_{\nsq\setminus S}||_1
+$$
+by Lemma~\ref{lm:eh-s-sstar} and with probability at least $1-1/(10\log^2 N)$
+\begin{equation*}
+||e^{tail}_{S\setminus S^*}(\{H_r, \A_r\}, x)||_1\leq \GS C^d (40+|\H|2^{-\Omega(c_{max})})  ||x_{\nsq \setminus [k]}||_2|S|/\sqrt{B} 
+\end{equation*}
+by Lemma~\ref{lm:loc-tail-small}. The rhs of the previous equation is bounded by $|S|\mu$ by the choice of $B$ as long as $\alpha$ is smaller than a absolute constant, as required.
+Putting these bounds together and using the fact that $|\H|\leq \log N$ (so that $|\H|\cdot (2^{-\Omega(r_{max})}+2^{-\Omega(c_{max})})\leq 1$), and taking a union bound over the failure events, we get the result.
+\end{proof}
+

@@ -1,0 +1,533 @@
+{
+  "created_at": "2026-07-08T23:41:44.963755+00:00",
+  "falsifiers_triggered": [
+    "A classical graph invariant distinguishes the pair; any matching quantum observable is dequantized.",
+    "A higher-k WL baseline separates the pair; low-register tensor signals must exceed this classical refinement.",
+    "A low-register relation observable separates the pair but may reduce to a classical invariant."
+  ],
+  "pair_audits": [
+    {
+      "classical_invariants": [
+        {
+          "distinguishes": false,
+          "interpretation": "Degree sequence does not distinguish the pair.",
+          "name": "degree_sequence",
+          "signature_a": "(6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6)",
+          "signature_b": "(6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6)"
+        },
+        {
+          "distinguishes": false,
+          "interpretation": "Adjacency spectrum does not distinguish the pair.",
+          "name": "adjacency_spectrum",
+          "signature_a": "(-2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 6.0)",
+          "signature_b": "(-2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 6.0)"
+        },
+        {
+          "distinguishes": false,
+          "interpretation": "Triangle profile does not distinguish the pair.",
+          "name": "triangle_profile",
+          "signature_a": "(6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6)",
+          "signature_b": "(6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6)"
+        },
+        {
+          "distinguishes": false,
+          "interpretation": "1-WL color refinement does not distinguish the pair.",
+          "name": "wl1_color_refinement",
+          "signature_a": "((0, 16),)",
+          "signature_b": "((0, 16),)"
+        },
+        {
+          "distinguishes": false,
+          "interpretation": "2-WL pair refinement does not distinguish the pair.",
+          "name": "wl2_pair_refinement",
+          "signature_a": "((0, 16), (1, 96), (2, 144))",
+          "signature_b": "((0, 16), (1, 96), (2, 144))"
+        },
+        {
+          "distinguishes": false,
+          "interpretation": "3-WL tuple refinement does not distinguish the pair.",
+          "name": "wl3_tuple_refinement",
+          "signature_a": "((0, 16), (1, 96), (2, 144), (3, 96), (4, 96), (5, 192), (6, 288), (7, 288), (8, 576), (9, 144), (10, 288), (11, 576), (12, 144), (13, 576), (14, 576))",
+          "signature_b": "((0, 16), (1, 96), (2, 144), (3, 96), (4, 96), (5, 192), (6, 288), (7, 288), (8, 576), (9, 144), (10, 288), (11, 576), (12, 144), (13, 576), (14, 576))"
+        }
+      ],
+      "exact_isomorphism_check": {
+        "cost_model": "Exact backtracking GI sanity check; not treated as a scalable low-complexity invariant.",
+        "evaluated": true,
+        "interpretation": "Exact GI sanity check confirms the pair is non-isomorphic.",
+        "isomorphic": false,
+        "name": "networkx_exact_isomorphism",
+        "supports_known_status": true
+      },
+      "falsifiers_triggered": [
+        "A higher-k WL baseline separates the pair; low-register tensor signals must exceed this classical refinement."
+      ],
+      "pair": {
+        "graph_a": "Shrikhande graph",
+        "graph_b": "4x4 rook graph",
+        "id": "shrikhande-vs-rook",
+        "known_nonisomorphic": true,
+        "reason": "Standard non-isomorphic strongly regular pair with identical parameters (16,6,2,2).",
+        "vertex_count": 16
+      },
+      "positive_signal": "partial: higher-k WL baseline distinguishes this pair before any quantum observable is needed",
+      "relation_observables": [
+        {
+          "distinguishes": false,
+          "interpretation": "Adjacency algebra rank matches; this low-register observable gives no separation.",
+          "name": "adjacency_algebra_rank",
+          "value_a": "3",
+          "value_b": "3"
+        },
+        {
+          "distinguishes": false,
+          "interpretation": "Closed-walk counts match; spectral walk observables give no separation.",
+          "name": "closed_walk_counts",
+          "value_a": "(0, 96, 192, 1536, 7680)",
+          "value_b": "(0, 96, 192, 1536, 7680)"
+        },
+        {
+          "distinguishes": false,
+          "interpretation": "3-register tuple relation colors match; this observable gives no separation.",
+          "name": "three_register_tuple_relation_colors",
+          "value_a": "((0, 16), (1, 96), (2, 144), (3, 96), (4, 96), (5, 192), (6, 288), (7, 288))",
+          "value_b": "((0, 16), (1, 96), (2, 144), (3, 96), (4, 96), (5, 192), (6, 288), (7, 288))"
+        }
+      ],
+      "wl_scaling": [
+        {
+          "distinguishes": false,
+          "evaluated": true,
+          "interpretation": "1-WL does not distinguish the pair at 3 refinement round(s).",
+          "k": 1,
+          "rounds": 3,
+          "signature_a": "((0, 16),)",
+          "signature_b": "((0, 16),)",
+          "tuple_count": 16
+        },
+        {
+          "distinguishes": false,
+          "evaluated": true,
+          "interpretation": "2-WL does not distinguish the pair at 3 refinement round(s).",
+          "k": 2,
+          "rounds": 3,
+          "signature_a": "((0, 16), (1, 96), (2, 144))",
+          "signature_b": "((0, 16), (1, 96), (2, 144))",
+          "tuple_count": 256
+        },
+        {
+          "distinguishes": false,
+          "evaluated": true,
+          "interpretation": "3-WL does not distinguish the pair at 3 refinement round(s).",
+          "k": 3,
+          "rounds": 3,
+          "signature_a": "((0, 16), (1, 96), (2, 144), (3, 96), (4, 96), (5, 192), (6, 288), (7, 288), (8, 576), (9, 144), (10, 288), (11, 576))",
+          "signature_b": "((0, 16), (1, 96), (2, 144), (3, 96), (4, 96), (5, 192), (6, 288), (7, 288), (8, 576), (9, 144), (10, 288), (11, 576))",
+          "tuple_count": 4096
+        },
+        {
+          "distinguishes": true,
+          "evaluated": true,
+          "interpretation": "4-WL distinguishes the pair; corresponding low-register relation signal is classically dequantized.",
+          "k": 4,
+          "rounds": 3,
+          "signature_a": "((0, 16), (1, 96), (2, 96), (3, 48), (4, 96), (5, 96), (6, 192), (7, 192), (8, 96), (9, 192), (10, 96), (11, 192))",
+          "signature_b": "((0, 16), (1, 96), (2, 144), (3, 96), (4, 96), (5, 192), (6, 288), (7, 288), (8, 576), (9, 144), (10, 288), (11, 576))",
+          "tuple_count": 65536
+        }
+      ]
+    },
+    {
+      "classical_invariants": [
+        {
+          "distinguishes": false,
+          "interpretation": "Degree sequence does not distinguish the pair.",
+          "name": "degree_sequence",
+          "signature_a": "(3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4)",
+          "signature_b": "(3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4)"
+        },
+        {
+          "distinguishes": false,
+          "interpretation": "Adjacency spectrum does not distinguish the pair.",
+          "name": "adjacency_spectrum",
+          "signature_a": "(-3.46410162, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -0.0, -0.0, -0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 3.46410162)",
+          "signature_b": "(-3.46410162, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -0.0, -0.0, -0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 3.46410162)"
+        },
+        {
+          "distinguishes": false,
+          "interpretation": "Triangle profile does not distinguish the pair.",
+          "name": "triangle_profile",
+          "signature_a": "(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)",
+          "signature_b": "(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)"
+        },
+        {
+          "distinguishes": false,
+          "interpretation": "1-WL color refinement does not distinguish the pair.",
+          "name": "wl1_color_refinement",
+          "signature_a": "((0, 16), (1, 12))",
+          "signature_b": "((0, 16), (1, 12))"
+        },
+        {
+          "distinguishes": false,
+          "interpretation": "2-WL pair refinement does not distinguish the pair.",
+          "name": "wl2_pair_refinement",
+          "signature_a": "((0, 12), (1, 16), (2, 48), (3, 48), (4, 96), (5, 144), (6, 36), (7, 144), (8, 144), (9, 96))",
+          "signature_b": "((0, 12), (1, 16), (2, 48), (3, 48), (4, 96), (5, 144), (6, 36), (7, 144), (8, 144), (9, 96))"
+        },
+        {
+          "distinguishes": false,
+          "interpretation": "3-WL tuple refinement does not distinguish the pair.",
+          "name": "wl3_tuple_refinement",
+          "signature_a": "((0, 12), (1, 16), (2, 48), (3, 48), (4, 96), (5, 144), (6, 36), (7, 144), (8, 144), (9, 96), (10, 48), (11, 48), (12, 48), (13, 48), (14, 96), (15, 144), (16, 144), (17, 96), (18, 288), (19, 288), (20, 144), (21, 288), (22, 288), (23, 288), (24, 144), (25, 288), (26, 96), (27, 144), (28, 36), (29, 144), (30, 144), (31, 96), (32, 96), (33, 144), (34, 288), (35, 288), (36, 144), (37, 288), (38, 144), (39, 288), (40, 288), (41, 288), (42, 96), (43, 36), (44, 144), (45, 144), (46, 144), (47, 96), (48, 288), (49, 288), (50, 144), (51, 288), (52, 288), (53, 144), (54, 288), (55, 288), (56, 384), (57, 288), (58, 288), (59, 864), (60, 576), (61, 576), (62, 1008), (63, 576), (64, 288), (65, 288), (66, 72), (67, 288), (68, 1008), (69, 864), (70, 288), (71, 576), (72, 864), (73, 288), (74, 1008), (75, 576), (76, 576), (77, 288), (78, 576), (79, 288), (80, 192))",
+          "signature_b": "((0, 12), (1, 16), (2, 48), (3, 48), (4, 96), (5, 144), (6, 36), (7, 144), (8, 144), (9, 96), (10, 48), (11, 48), (12, 48), (13, 48), (14, 96), (15, 144), (16, 144), (17, 96), (18, 288), (19, 288), (20, 144), (21, 288), (22, 288), (23, 288), (24, 144), (25, 288), (26, 96), (27, 144), (28, 36), (29, 144), (30, 144), (31, 96), (32, 96), (33, 144), (34, 288), (35, 288), (36, 144), (37, 288), (38, 144), (39, 288), (40, 288), (41, 288), (42, 96), (43, 36), (44, 144), (45, 144), (46, 144), (47, 96), (48, 288), (49, 288), (50, 144), (51, 288), (52, 288), (53, 144), (54, 288), (55, 288), (56, 384), (57, 288), (58, 288), (59, 864), (60, 576), (61, 576), (62, 1008), (63, 576), (64, 288), (65, 288), (66, 72), (67, 288), (68, 1008), (69, 864), (70, 288), (71, 576), (72, 864), (73, 288), (74, 1008), (75, 576), (76, 576), (77, 288), (78, 576), (79, 288), (80, 192))"
+        }
+      ],
+      "exact_isomorphism_check": {
+        "cost_model": "Exact backtracking GI sanity check; not treated as a scalable low-complexity invariant.",
+        "evaluated": true,
+        "interpretation": "Exact GI sanity check confirms the pair is non-isomorphic.",
+        "isomorphic": false,
+        "name": "networkx_exact_isomorphism",
+        "supports_known_status": true
+      },
+      "falsifiers_triggered": [],
+      "pair": {
+        "graph_a": "Untwisted CFI-style parity graph over K4",
+        "graph_b": "Single-edge twisted CFI-style parity graph over K4",
+        "id": "cfi-k4-parity-twist",
+        "known_nonisomorphic": true,
+        "reason": "Compact Cai-Furer-Immerman-style parity obstruction: exact GI detects non-isomorphism, but low-dimensional WL and spectral invariants are designed to fail.",
+        "vertex_count": 28
+      },
+      "positive_signal": "boundary instance: known non-isomorphic pair survives current classical and low-register relation tests",
+      "relation_observables": [
+        {
+          "distinguishes": false,
+          "interpretation": "Adjacency algebra rank matches; this low-register observable gives no separation.",
+          "name": "adjacency_algebra_rank",
+          "value_a": "5",
+          "value_b": "5"
+        },
+        {
+          "distinguishes": false,
+          "interpretation": "Closed-walk counts match; spectral walk observables give no separation.",
+          "name": "closed_walk_counts",
+          "value_a": "(0, 96, 0, 576, 0)",
+          "value_b": "(0, 96, 0, 576, 0)"
+        },
+        {
+          "distinguishes": false,
+          "interpretation": "3-register tuple relation colors match; this observable gives no separation.",
+          "name": "three_register_tuple_relation_colors",
+          "value_a": "((0, 12), (1, 16), (2, 48), (3, 48), (4, 96), (5, 144), (6, 36), (7, 144))",
+          "value_b": "((0, 12), (1, 16), (2, 48), (3, 48), (4, 96), (5, 144), (6, 36), (7, 144))"
+        }
+      ],
+      "wl_scaling": [
+        {
+          "distinguishes": false,
+          "evaluated": true,
+          "interpretation": "1-WL does not distinguish the pair at 3 refinement round(s).",
+          "k": 1,
+          "rounds": 3,
+          "signature_a": "((0, 16), (1, 12))",
+          "signature_b": "((0, 16), (1, 12))",
+          "tuple_count": 28
+        },
+        {
+          "distinguishes": false,
+          "evaluated": true,
+          "interpretation": "2-WL does not distinguish the pair at 3 refinement round(s).",
+          "k": 2,
+          "rounds": 3,
+          "signature_a": "((0, 12), (1, 16), (2, 48), (3, 48), (4, 96), (5, 144), (6, 36), (7, 144), (8, 144), (9, 96))",
+          "signature_b": "((0, 12), (1, 16), (2, 48), (3, 48), (4, 96), (5, 144), (6, 36), (7, 144), (8, 144), (9, 96))",
+          "tuple_count": 784
+        },
+        {
+          "distinguishes": false,
+          "evaluated": true,
+          "interpretation": "3-WL does not distinguish the pair at 3 refinement round(s).",
+          "k": 3,
+          "rounds": 3,
+          "signature_a": "((0, 12), (1, 16), (2, 48), (3, 48), (4, 96), (5, 144), (6, 36), (7, 144), (8, 144), (9, 96), (10, 48), (11, 48))",
+          "signature_b": "((0, 12), (1, 16), (2, 48), (3, 48), (4, 96), (5, 144), (6, 36), (7, 144), (8, 144), (9, 96), (10, 48), (11, 48))",
+          "tuple_count": 21952
+        },
+        {
+          "distinguishes": false,
+          "evaluated": false,
+          "interpretation": "4-WL skipped because 614656 tuples exceeds cap 100000; this is a scaling blocker for brute-force classical refinement.",
+          "k": 4,
+          "rounds": 3,
+          "signature_a": "skipped",
+          "signature_b": "skipped",
+          "tuple_count": 614656
+        }
+      ]
+    },
+    {
+      "classical_invariants": [
+        {
+          "distinguishes": false,
+          "interpretation": "Degree sequence does not distinguish the pair.",
+          "name": "degree_sequence",
+          "signature_a": "(4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8)",
+          "signature_b": "(4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8)"
+        },
+        {
+          "distinguishes": false,
+          "interpretation": "Adjacency spectrum does not distinguish the pair.",
+          "name": "adjacency_spectrum",
+          "signature_a": "(-5.65685425, -3.46410162, -3.46410162, -3.46410162, -3.46410162, -2.82842712, -2.82842712, -2.82842712, -2.82842712, -2.82842712, -2.82842712, -2.82842712, -2.82842712, -2.82842712, -2.82842712, -0.0, -0.0, -0.0, -0.0, -0.0, -0.0, -0.0, -0.0, -0.0, -0.0, -0.0, -0.0, -0.0, -0.0, -0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 2.82842712, 2.82842712, 2.82842712, 2.82842712, 2.82842712, 2.82842712, 2.82842712, 2.82842712, 2.82842712, 2.82842712, 3.46410162, 3.46410162, 3.46410162, 3.46410162, 5.65685425)",
+          "signature_b": "(-5.65685425, -3.46410162, -3.46410162, -3.46410162, -3.46410162, -2.82842712, -2.82842712, -2.82842712, -2.82842712, -2.82842712, -2.82842712, -2.82842712, -2.82842712, -2.82842712, -2.82842712, -0.0, -0.0, -0.0, -0.0, -0.0, -0.0, -0.0, -0.0, -0.0, -0.0, -0.0, -0.0, -0.0, -0.0, -0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 2.82842712, 2.82842712, 2.82842712, 2.82842712, 2.82842712, 2.82842712, 2.82842712, 2.82842712, 2.82842712, 2.82842712, 3.46410162, 3.46410162, 3.46410162, 3.46410162, 5.65685425)"
+        },
+        {
+          "distinguishes": false,
+          "interpretation": "Triangle profile does not distinguish the pair.",
+          "name": "triangle_profile",
+          "signature_a": "(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)",
+          "signature_b": "(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)"
+        },
+        {
+          "distinguishes": false,
+          "interpretation": "1-WL color refinement does not distinguish the pair.",
+          "name": "wl1_color_refinement",
+          "signature_a": "((0, 40), (1, 20))",
+          "signature_b": "((0, 40), (1, 20))"
+        },
+        {
+          "distinguishes": false,
+          "interpretation": "2-WL pair refinement does not distinguish the pair.",
+          "name": "wl2_pair_refinement",
+          "signature_a": "((0, 20), (1, 40), (2, 160), (3, 160), (4, 240), (5, 240), (6, 640), (7, 20), (8, 120), (9, 160), (10, 480), (11, 160), (12, 480), (13, 40), (14, 640))",
+          "signature_b": "((0, 20), (1, 40), (2, 160), (3, 160), (4, 240), (5, 240), (6, 640), (7, 20), (8, 120), (9, 160), (10, 480), (11, 160), (12, 480), (13, 40), (14, 640))"
+        },
+        {
+          "distinguishes": false,
+          "interpretation": "3-WL skipped because 216000 tuples exceeds cap 100000; this is a classical scaling blocker.",
+          "name": "wl3_tuple_refinement",
+          "signature_a": "skipped",
+          "signature_b": "skipped"
+        }
+      ],
+      "exact_isomorphism_check": {
+        "cost_model": "Skipped: vertex count 60 exceeds exact-check cap 40.",
+        "evaluated": false,
+        "interpretation": "Known CFI parity status is construction-derived; exact GI sanity is skipped at this scale.",
+        "isomorphic": null,
+        "name": "networkx_exact_isomorphism",
+        "supports_known_status": false
+      },
+      "falsifiers_triggered": [],
+      "pair": {
+        "graph_a": "Untwisted CFI-style parity graph over K5",
+        "graph_b": "Single-edge twisted CFI-style parity graph over K5",
+        "id": "cfi-k5-parity-twist",
+        "known_nonisomorphic": true,
+        "reason": "Compact Cai-Furer-Immerman-style parity obstruction: exact GI detects non-isomorphism, but low-dimensional WL and spectral invariants are designed to fail.",
+        "vertex_count": 60
+      },
+      "positive_signal": "boundary instance: known non-isomorphic pair survives current classical and low-register relation tests",
+      "relation_observables": [
+        {
+          "distinguishes": false,
+          "interpretation": "Adjacency algebra rank matches; this low-register observable gives no separation.",
+          "name": "adjacency_algebra_rank",
+          "value_a": "6",
+          "value_b": "6"
+        },
+        {
+          "distinguishes": false,
+          "interpretation": "Closed-walk counts match; spectral walk observables give no separation.",
+          "name": "closed_walk_counts",
+          "value_a": "(0, 320, 0, 4480, 0)",
+          "value_b": "(0, 320, 0, 4480, 0)"
+        },
+        {
+          "distinguishes": false,
+          "interpretation": "3-register tuple relation skipped because 216000 tuples exceeds cap 100000; larger CFI instances need tensor/implicit observables rather than brute-force relation tables.",
+          "name": "three_register_tuple_relation_colors",
+          "value_a": "skipped",
+          "value_b": "skipped"
+        }
+      ],
+      "wl_scaling": [
+        {
+          "distinguishes": false,
+          "evaluated": true,
+          "interpretation": "1-WL does not distinguish the pair at 3 refinement round(s).",
+          "k": 1,
+          "rounds": 3,
+          "signature_a": "((0, 40), (1, 20))",
+          "signature_b": "((0, 40), (1, 20))",
+          "tuple_count": 60
+        },
+        {
+          "distinguishes": false,
+          "evaluated": true,
+          "interpretation": "2-WL does not distinguish the pair at 3 refinement round(s).",
+          "k": 2,
+          "rounds": 3,
+          "signature_a": "((0, 20), (1, 40), (2, 160), (3, 160), (4, 240), (5, 240), (6, 640), (7, 20), (8, 120), (9, 160), (10, 480), (11, 160))",
+          "signature_b": "((0, 20), (1, 40), (2, 160), (3, 160), (4, 240), (5, 240), (6, 640), (7, 20), (8, 120), (9, 160), (10, 480), (11, 160))",
+          "tuple_count": 3600
+        },
+        {
+          "distinguishes": false,
+          "evaluated": false,
+          "interpretation": "3-WL skipped because 216000 tuples exceeds cap 100000; this is a scaling blocker for brute-force classical refinement.",
+          "k": 3,
+          "rounds": 3,
+          "signature_a": "skipped",
+          "signature_b": "skipped",
+          "tuple_count": 216000
+        },
+        {
+          "distinguishes": false,
+          "evaluated": false,
+          "interpretation": "4-WL skipped because 12960000 tuples exceeds cap 100000; this is a scaling blocker for brute-force classical refinement.",
+          "k": 4,
+          "rounds": 3,
+          "signature_a": "skipped",
+          "signature_b": "skipped",
+          "tuple_count": 12960000
+        }
+      ]
+    },
+    {
+      "classical_invariants": [
+        {
+          "distinguishes": true,
+          "interpretation": "Degree sequence distinguishes the pair; quantum observable would be dequantized.",
+          "name": "degree_sequence",
+          "signature_a": "(2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2)",
+          "signature_b": "(4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4)"
+        },
+        {
+          "distinguishes": true,
+          "interpretation": "Adjacency spectrum distinguishes the pair; quantum observable would be dequantized.",
+          "name": "adjacency_spectrum",
+          "signature_a": "(-2.0, -1.84775907, -1.84775907, -1.41421356, -1.41421356, -0.76536686, -0.76536686, -0.0, 0.0, 0.76536686, 0.76536686, 1.41421356, 1.41421356, 1.84775907, 1.84775907, 2.0)",
+          "signature_b": "(-2.17958043, -2.17958043, -2.0, -2.0, -1.41421356, -1.41421356, -0.6488467, -0.6488467, -0.4335455, -0.4335455, 0.0, 1.41421356, 1.41421356, 3.26197263, 3.26197263, 4.0)"
+        },
+        {
+          "distinguishes": true,
+          "interpretation": "Triangle profile distinguishes the pair; quantum observable would be dequantized.",
+          "name": "triangle_profile",
+          "signature_a": "(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)",
+          "signature_b": "(3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3)"
+        },
+        {
+          "distinguishes": false,
+          "interpretation": "1-WL color refinement does not distinguish the pair.",
+          "name": "wl1_color_refinement",
+          "signature_a": "((0, 16),)",
+          "signature_b": "((0, 16),)"
+        },
+        {
+          "distinguishes": false,
+          "interpretation": "2-WL pair refinement does not distinguish the pair.",
+          "name": "wl2_pair_refinement",
+          "signature_a": "((0, 16), (1, 32), (2, 32), (3, 32), (4, 32), (5, 32), (6, 32), (7, 32), (8, 16))",
+          "signature_b": "((0, 16), (1, 32), (2, 32), (3, 32), (4, 32), (5, 32), (6, 32), (7, 32), (8, 16))"
+        },
+        {
+          "distinguishes": true,
+          "interpretation": "3-WL tuple refinement distinguishes the pair; quantum observable would be dequantized.",
+          "name": "wl3_tuple_refinement",
+          "signature_a": "((0, 16), (1, 32), (2, 32), (3, 32), (4, 32), (5, 32), (6, 32), (7, 32), (8, 16), (9, 32), (10, 32), (11, 32), (12, 32), (13, 32), (14, 32), (15, 32), (16, 32), (17, 32), (18, 32), (19, 32), (20, 32), (21, 32), (22, 32), (23, 32), (24, 32), (25, 32), (26, 32), (27, 32), (28, 32), (29, 32), (30, 32), (31, 16), (32, 32), (33, 32), (34, 32), (35, 32), (36, 32), (37, 32), (38, 32), (39, 32), (40, 32), (41, 32), (42, 32), (43, 32), (44, 32), (45, 32), (46, 32), (47, 32), (48, 32), (49, 32), (50, 32), (51, 16), (52, 32), (53, 32), (54, 32), (55, 32), (56, 32), (57, 32), (58, 32), (59, 32), (60, 32), (61, 32), (62, 32), (63, 32), (64, 32), (65, 32), (66, 32), (67, 32), (68, 32), (69, 32), (70, 32), (71, 32), (72, 32), (73, 32), (74, 32), (75, 32), (76, 32), (77, 32), (78, 32), (79, 32), (80, 32), (81, 32), (82, 32), (83, 32), (84, 32), (85, 32), (86, 32), (87, 32), (88, 32), (89, 32), (90, 32), (91, 32), (92, 32), (93, 32), (94, 32), (95, 32), (96, 32), (97, 32), (98, 32), (99, 32), (100, 32), (101, 32), (102, 32), (103, 32), (104, 32), (105, 32), (106, 32), (107, 32), (108, 32), (109, 32), (110, 32), (111, 32), (112, 32), (113, 32), (114, 32), (115, 32), (116, 32), (117, 32), (118, 32), (119, 32), (120, 32), (121, 32), (122, 32), (123, 32), (124, 32), (125, 32), (126, 32), (127, 32), (128, 32), (129, 32))",
+          "signature_b": "((0, 16), (1, 32), (2, 32), (3, 32), (4, 32), (5, 32), (6, 32), (7, 32), (8, 16), (9, 32), (10, 32), (11, 32), (12, 32), (13, 32), (14, 32), (15, 32), (16, 32), (17, 32), (18, 32), (19, 32), (20, 32), (21, 32), (22, 32), (23, 32), (24, 32), (25, 32), (26, 32), (27, 32), (28, 32), (29, 32), (30, 32), (31, 32), (32, 32), (33, 32), (34, 32), (35, 32), (36, 32), (37, 32), (38, 32), (39, 32), (40, 32), (41, 32), (42, 32), (43, 32), (44, 32), (45, 32), (46, 16), (47, 32), (48, 32), (49, 32), (50, 32), (51, 32), (52, 32), (53, 32), (54, 32), (55, 32), (56, 32), (57, 32), (58, 32), (59, 32), (60, 32), (61, 32), (62, 32), (63, 32), (64, 32), (65, 32), (66, 32), (67, 32), (68, 32), (69, 32), (70, 32), (71, 32), (72, 32), (73, 32), (74, 16), (75, 32), (76, 32), (77, 32), (78, 32), (79, 32), (80, 32), (81, 32), (82, 32), (83, 32), (84, 32), (85, 32), (86, 32), (87, 32), (88, 32), (89, 32), (90, 32), (91, 32), (92, 32), (93, 32), (94, 32), (95, 32), (96, 32), (97, 32), (98, 32), (99, 32), (100, 32), (101, 32), (102, 32), (103, 32), (104, 32), (105, 32), (106, 32), (107, 32), (108, 32), (109, 32), (110, 32), (111, 32), (112, 32), (113, 32), (114, 32), (115, 32), (116, 32), (117, 32), (118, 32), (119, 32), (120, 32), (121, 32), (122, 32), (123, 32), (124, 32), (125, 32), (126, 32), (127, 32), (128, 32), (129, 32))"
+        }
+      ],
+      "exact_isomorphism_check": {
+        "cost_model": "Exact backtracking GI sanity check; not treated as a scalable low-complexity invariant.",
+        "evaluated": true,
+        "interpretation": "Exact GI sanity check confirms the pair is non-isomorphic.",
+        "isomorphic": false,
+        "name": "networkx_exact_isomorphism",
+        "supports_known_status": true
+      },
+      "falsifiers_triggered": [
+        "A classical graph invariant distinguishes the pair; any matching quantum observable is dequantized.",
+        "A low-register relation observable separates the pair but may reduce to a classical invariant.",
+        "A higher-k WL baseline separates the pair; low-register tensor signals must exceed this classical refinement."
+      ],
+      "pair": {
+        "graph_a": "Cycle graph C16",
+        "graph_b": "C16 with distance-2 chords",
+        "id": "cycle-vs-chorded-cycle",
+        "known_nonisomorphic": true,
+        "reason": "Control pair that classical invariants should distinguish immediately.",
+        "vertex_count": 16
+      },
+      "positive_signal": "control: classical baseline distinguishes this pair",
+      "relation_observables": [
+        {
+          "distinguishes": false,
+          "interpretation": "Adjacency algebra rank matches; this low-register observable gives no separation.",
+          "name": "adjacency_algebra_rank",
+          "value_a": "6",
+          "value_b": "6"
+        },
+        {
+          "distinguishes": true,
+          "interpretation": "Closed-walk counts separate the pair and likely dequantize this observable.",
+          "name": "closed_walk_counts",
+          "value_a": "(0, 32, 0, 96, 0)",
+          "value_b": "(0, 64, 96, 576, 1600)"
+        },
+        {
+          "distinguishes": true,
+          "interpretation": "A 3-register tuple relation separates the pair, but this is mirrored by classical 3-WL.",
+          "name": "three_register_tuple_relation_colors",
+          "value_a": "((0, 16), (1, 32), (2, 32), (3, 32), (4, 32), (5, 32), (6, 32), (7, 32))",
+          "value_b": "((0, 16), (1, 32), (2, 32), (3, 32), (4, 32), (5, 32), (6, 32), (7, 32))"
+        }
+      ],
+      "wl_scaling": [
+        {
+          "distinguishes": false,
+          "evaluated": true,
+          "interpretation": "1-WL does not distinguish the pair at 3 refinement round(s).",
+          "k": 1,
+          "rounds": 3,
+          "signature_a": "((0, 16),)",
+          "signature_b": "((0, 16),)",
+          "tuple_count": 16
+        },
+        {
+          "distinguishes": false,
+          "evaluated": true,
+          "interpretation": "2-WL does not distinguish the pair at 3 refinement round(s).",
+          "k": 2,
+          "rounds": 3,
+          "signature_a": "((0, 16), (1, 32), (2, 32), (3, 32), (4, 32), (5, 32), (6, 32), (7, 32), (8, 16))",
+          "signature_b": "((0, 16), (1, 32), (2, 32), (3, 32), (4, 32), (5, 32), (6, 32), (7, 32), (8, 16))",
+          "tuple_count": 256
+        },
+        {
+          "distinguishes": true,
+          "evaluated": true,
+          "interpretation": "3-WL distinguishes the pair; corresponding low-register relation signal is classically dequantized.",
+          "k": 3,
+          "rounds": 3,
+          "signature_a": "((0, 16), (1, 32), (2, 32), (3, 32), (4, 32), (5, 32), (6, 32), (7, 32), (8, 16), (9, 32), (10, 32), (11, 32))",
+          "signature_b": "((0, 16), (1, 32), (2, 32), (3, 32), (4, 32), (5, 32), (6, 32), (7, 32), (8, 16), (9, 32), (10, 32), (11, 32))",
+          "tuple_count": 4096
+        },
+        {
+          "distinguishes": true,
+          "evaluated": true,
+          "interpretation": "4-WL distinguishes the pair; corresponding low-register relation signal is classically dequantized.",
+          "k": 4,
+          "rounds": 3,
+          "signature_a": "((0, 16), (1, 32), (2, 32), (3, 32), (4, 32), (5, 32), (6, 32), (7, 32), (8, 16), (9, 32), (10, 32), (11, 32))",
+          "signature_b": "((0, 16), (1, 32), (2, 32), (3, 32), (4, 32), (5, 32), (6, 32), (7, 32), (8, 16), (9, 32), (10, 32), (11, 32))",
+          "tuple_count": 65536
+        }
+      ]
+    }
+  ],
+  "summary": "Audited 4 hidden-permutation graph pairs. 2 pair survives current classical and low-register tests; 1 control pair is classically distinguished; 2 CFI-style parity benchmark(s) included."
+}

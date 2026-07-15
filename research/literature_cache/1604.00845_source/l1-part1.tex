@@ -1,0 +1,221 @@
+%!TEX root = ./ft-hd.tex
+\section{Organization}\label{sec:org}
+The rest of the paper is organized as follows. In section~\ref{sec:l11} we set up notation necessary for the analysis of \textsc{LocateSignal}, and specifically for a proof of Theorem~\ref{thm:l1-res-loc}, as well as prove some basic claims. In section~\ref{sec:l1} we prove Theorem~\ref{thm:l1-res-loc}. In section~\ref{sec:reduce-l1} we prove performance guarantees for \textsc{ReduceL1Norm} (Lemma~\ref{lm:reduce-l1-norm}), then combine them with Lemma~\ref{lm:linf} to prove that the main loop in Algorithm~\ref{alg:main-sublinear} reduces $\ell_1$ norm of the head elements. We then conclude with a proof of correctness for Algorithm~\ref{alg:main-sublinear}. Section~\ref{sec:linf} is devoted to analyzing the \textsc{ReduceInfNorm} procedure, and section~\ref{sec:const-snr} is devoted to analyzing the \textsc{RecoverAtConstantSNR} procedure. Some useful lemmas are gathered in section~\ref{sec:utils}, and section~\ref{sec:semiequi} describes the algorithm for semiequispaced Fourier transform that we use to update our samples with the residual signal. Appendix~\ref{app:A} contains proofs omitted from the main body of the paper.
+
+
+
+\section{Analysis of \textsc{LocateSignal}: main definitions and basic claims}\label{sec:l11}
+
+In this section we state our main signal location primitive, \textsc{LocateSignal} (Algorithm~\ref{alg:location}). Given a sequence of measurements $m(\wh{x}, H_r, a\star (\one, \h))\}_{a\in \A_r, \h\in \H}, r=1,\ldots, r_{max}$ a  signal $\wh{x}\in \mathbb{C}^\nsq$ and a partially recovered signal $\chi\in \mathbb{C}^\nsq$, \textsc{LocateSignal} outputs a list of locations $L\subseteq \nsq$ that, as we show below in Theorem~\ref{thm:l1-res-loc} (see section~\ref{sec:l1}), contains the elements of $x$ that contribute most of its $\ell_1$ mass. An important feature of \textsc{LocateSignal} is that it is an entirely deterministic procedure, giving recovery guarantees for any signal $x$ and any partially recovered signal $\chi$.  As Theorem~\ref{thm:l1-res-loc} shows, however, these guarantees are strongest when most of the mass of the residual $x-\chi$ resides on elements in $\nsq$ that are {\em isolated with respect to most hashings $H_1,\ldots, H_{r_{max}}$} used for measurements. This flexibility is crucial for our analysis, and is exactly what allows us to reuse measurements and thereby achieve near-optimal sample complexity.
+
+In the rest of this section we first state Algorithm~\ref{alg:location}, and then derive useful characterization of elements $i$ of the input signal $(x-\chi)_i$ that are successfully located by \textsc{LocateSignal}. The main result of this section is Corollary~\ref{cor:loc}. This comes down to bounding, for a given input signal $x$ and partially recovered signal $\chi$, the expected $\ell_1$ norm of the noise contributed to the process of locating heavy hitters in a call to \Call{LocateSignal}{$\wh{x}, \chi, H, \{m(\wh{x}, H, a\star (\one, \h))\}_{a\in \A, \h\in \H}$} by {\bf (a)} the tail of the original signal $x$ (tail noise $e^{tail}$) and {\bf (b)} the heavy hitters and false positives (heavy hitter noise $e^{head}$). It is useful to note that unlike in ~\cite{IK14a}, we cannot expect the tail of the signal to not change, but rather need to control this change. 
+
+In what follows we derive useful conditions under which an element $i\in \nsq$ is identified by \textsc{LocateSignal}. Let $S\subseteq \nsq$ be any set of size at most $2k$, and let $\mu$ be such that $x_{\nsq\setminus S}\leq \mu$. Note that this fits the definition of $S$ given in~\eqref{eq:s-def-l1} (but other instantiations are possible, and will be used later in section~\ref{sec:const-snr}).
+
+Consider a call to 
+$$
+\Call{LocateSignal}{\chi, H, \{m(\wh{x}, H, a\star (\one, \h)\}_{a\in \A, \h\in \H}}.
+$$ 
+For each $a\in \A$ and fixed $\h\in \H$ we let $z:=a\star (\one, \h)\in \nsq$ to simplify notation. The measurement vectors $m:=m(\wh{x'}, H, z)$  computed in \textsc{LocateSignal} satisfy, for every $i\in S$,  (by Lemma~\ref{l:hashtobins})
+  \[
+  m_{h(i)}  = \sum_{j\in \nsq} G_{o_i(j)}x'_j \omega^{z^T \Sigma j}+\Delta_{h(i), z},
+  \]
+where $\Delta$ corresponds to polynomially small estimation noise due to approximate computation of the Fourier transform, and the filter $G_{o_i(j)}$ is the filter corresponding to hashing $H$. In particular, for each hashing $H$ and  parameter $a\in \nsq$ one has:
+\begin{equation*}
+\begin{split}
+G_{o_i(i)}^{-1}m_{h(i)} \omega^{-z^T \Sigma i} = x'_i + G_{o_i(i)}^{-1}\sum_{j\in \nsq\setminus \{i\}} G_{o_i(j)}x'_j \omega^{z^T \Sigma (j-i)}+G_{o_i(i)}^{-1}\Delta_{h(i), z}\omega^{-z^T \Sigma i}
+\end{split}
+\end{equation*}
+It is useful to represent the residual signal $x$ as a sum of three terms: $x'=(x-\chi)_S-\chi_{\nsq\setminus S}+x_{\nsq\setminus S}$, where the first term is the residual signal coming from the `heavy' elements in $S$, the second corresponds to false positives, or spurious elements discovered and erroneously subtracted by the algorithm, and the third corresponds to the tail of the signal. Similarly, we bound the noise contributed by the first two (head elements and false positives) and the third (tail noise) parts of the residual signal to the location process separately. For each $i\in S$ we write
+\begin{equation}\label{eq:uexp1}
+\begin{split}
+&G_{o_i(i)}^{-1}m_{h(i)}\omega^{-z^T \Sigma i}=x'_i \\
+&+G_{o_i(i)}^{-1}\cdot \left[\sum_{j\in S\setminus \{i\}} G_{o_i(j)}x'_j \omega^{z^T \Sigma (j-i)}-\sum_{j\in \nsq\setminus S} G_{o_i(j)}\chi_j \omega^{z^T \Sigma (j-i)}\right]\text{~~~~(head elements and false positives)}\\
+ &+G_{o_i(i)}^{-1}\cdot \sum_{j\in \nsq\setminus S} G_{o_i(j)}x_j \omega^{z^T \Sigma (j-i)}\text{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~(tail noise)}\\
+&+G_{o_i(i)}^{-1}\cdot \Delta_{h(i)}\omega^{-z^T \Sigma i}.
+\end{split}
+\end{equation}
+
+\paragraph{Noise from heavy hitters.} The first term in \eqref{eq:uexp1} corresponds to noise from $(x-\chi)_{S\setminus \{i\}}-\chi_{\nsq\setminus (S\setminus \{i\})}$, i.e. noise from heavy hitters and false positives. For every $i\in S$, hashing $H$  we let
+\begin{equation}\label{eq:eh-pi}
+e^{head}_{i}(H, x, \chi):=G_{o_i(i)}^{-1}\cdot \sum_{j\in S\setminus \{i\}} G_{o_i(j)} |y_j|,\text{~~~~where~}y=(x-\chi)_{S}-\chi_{\nsq\setminus S}.\\
+\end{equation}
+We thus get that $e^{head}_i(H, x, \chi)$ upper bounds the absolute value of the first error term in~\eqref{eq:uexp1}. Note that $G\geq 0$ by Lemma~\ref{lm:filter-prop} as long as $F$ is even, which is the setting that we are in. If $e^{head}_{i}(H, x, \chi)$ is large, \textsc{LocateSignal} may not be able to locate $i$ using measurements of the residual signal $x-\chi$ taken with hashing $H$. However, the noise in other hashings may be smaller, allowing recovery. In order to reflect this fact we define, for a sequence of hashings $H_1,\ldots, H_r$ and a signal $y\in \C^\nsq$
+\begin{equation}\label{eq:eh}
+e^{head}_{i}(\{H_r\}, x, \chi):=\quant^{1/5}_r e^{head}_i(H_r, x, \chi),
+\end{equation}
+where for a list of reals $u_1,\ldots, u_s$ and a number $f\in (0, 1)$ we let $\quant^{f}(u_1,\ldots, u_s)$ denote the $\lceil f \cdot s\rceil$-th largest element of $u_1,\ldots, u_s$.  
+
+\paragraph{Tail noise.} To capture the second term in \eqref{eq:uexp1} (corresponding to tail noise), we define, for any $i\in S, z\in \nsq, \h\in \H$, permutation $\pi=(\Sigma, q)$ and hashing $H=(\pi, B, F)$
+\begin{equation}\label{eq:et-pi}
+e^{tail}_i(H, z, x):=\left|G_{o_i(i)}^{-1}\cdot \sum_{j\in \nsq\setminus S} G_{o_i(j)}x_j \omega^{z^T \Sigma (j-i)}\right|.
+\end{equation}
+
+With this definition in place $e^{tail}_i(H, z, x)$ upper bounds the second term in~\eqref{eq:uexp1}. As our algorithm uses several values of $a\in \A_r\subseteq \nsq\times \nsq$ to perform location, a more robust version of $e^{tail}_i(H, z)$ will be useful. To that effect we let for any $\mathcal{Z}\subseteq \nsq$ (we will later use $\mathcal{Z}=\A_r\star (\one, \h)$ for various $\h\in \H$)
+\begin{equation}\label{eq:et-pi-a-h}
+e^{tail}_i(H, \mathcal{Z}, x):=\quant^{1/5}_{z\in \mathcal{Z}} \left|G_{o_i(i)}^{-1}\cdot \sum_{j\in \nsq\setminus S} G_{o_i(j)}x_j \omega^{z^T \Sigma (j-i)}\right|.
+\end{equation}
+Note that the algorithm first selects sets $\A_r\subseteq \nsq\times \nsq$, and then access the signal at locations $\A_r\star (\one, \h), \h\in \H$.
+
+The definition of $e^{tail}_i(H, \A\star (\one, \h), x)$ for a fixed $\h\in \H$ allows us to capture the amount of noise that our measurements that use $H$ suffer from for locating a specific set of bits of $\Sigma i$. Since the algorithm requires all $\h\in \H$ to be not too noisy in order to succeed (see precondition 2 of Lemma~\ref{lm:loc}), it is convenient to introduce notation that captures this. We define
+\begin{equation}\label{eq:et-pi-a}
+e^{tail}_i(H, \A, x):=40\mu_{H, i}(x)+\sum_{\h\in \H} \left|e^{tail}_i(H, \A\star (\one, \h), x)-40\mu_{H, i}(x)\right|_+
+\end{equation}
+where for any $\eta\in \mathbb{R}$ one has $|\eta|_+=\eta$ if $\eta>0$ and $|\eta|_+=0$ otherwise. 
+
+The following definition is useful for bounding the norm of elements $i\in S$ that are not discovered by several calls to \textsc{LocateSignal} on a sequence of hashings $\{H_r\}$. For a sequence of measurement patterns $\{H_r, \A_r\}$ we let
+\begin{equation}\label{eq:et}
+e^{tail}_i(\{H_r, \A_r\}, x):=\quant^{1/5}_r e^{tail}_i(H_r, \A_r, x).
+\end{equation}
+
+Finally, for any $S\subseteq \nsq$ we let 
+$$
+e^{head}_S(\cdot):=\sum_{i\in S} e^{head}_i(\cdot)\text{~~~and~~~}e^{tail}_S(\cdot):=\sum_{i\in S} e^{tail}_i(\cdot),
+$$
+where $\cdot$ stands for any set of parameters as above.
+
+
+Equipped with the definitions above,  we now prove the following lemma, which yields sufficient conditions for recovery of elements $i\in S$ in \textsc{LocateSignal} in terms of $e^{head}$ and $e^{tail}$.
+\begin{lemma}\label{lm:loc}
+Let $H=(\pi, B, R)$ be a hashing, and let $\A\subseteq \nsq\times \nsq$. Then for every $S\subseteq \nsq$ and for every $x, \chi\in \C^{\nsq}$ and $x'=x-\chi$, the following conditions hold.
+Let $L$ denote the output of 
+$$
+\Call{LocateSignal}{\chi, H, \{m(\wh{x}, H, a\star (\one, \h))\}_{a\in \A, \h\in \H}}.
+$$
+
+Then for any $i\in S$ such that $|x'_i|>N^{-\Omega(c)}$, if there exists $r\in [1:r_{max}]$ such that 
+\begin{enumerate}
+\item  $e^{head}_{i}(H, x')<|x'_i|/20$;
+\item  $e^{tail}_{i}(H, \A\star (\one, \h), x')< |x'_i|/20$ for all $\h\in \H$;
+\item for every $s\in [1:d]$ the set $\A\star(\zero, \mathbf{e}_s)$ is balanced in coordinate $s$ (as per Definition~\ref{def:balance}),
+\end{enumerate}
+ then $i\in L$. The time taken by the invocation of \textsc{LocateSignal} is $O(B\cdot \log^{d+1} N)$.
+\end{lemma}
+\begin{proof}
+We show that each coordinate $s=1,\ldots, d$ of $\Sigma i$ is successfully recovered in \textsc{LocateSignal}. Let $q=\Sigma i$ for convenience.
+Fix $s\in [1:d]$. We show by induction on $g=0,\ldots, \log_{\Delta} n-1$ that after the $g$-th iteration of lines~6-10 of Algorithm~\ref{alg:location} we have that ${\bf f}_s$ coincides with ${\bf q}_s$ on the bottom $g\cdot \log_2 \Delta$ bits, i.e. ${\bf f}_s-{\bf q}_s= 0 \mod \Delta^g$ (note that we trivially have ${\bf f}_s< \Delta^g$ after iteration $g$).
+
+The {\bf base} of the induction is trivial and is provided by $g=0$.  
+We now show the {\bf inductive step}. Assume by the inductive hypothesis that ${\bf f}_s-{\bf q}_s= 0 \mod \Delta^{g-1}$, so that
+${\bf q}_s={\bf f}_s+\Delta^{g-1}(r_0+\Delta r_1+\Delta^2 r_2+\ldots)$ for some sequence $r_0,r_1,\ldots$, $0\leq r_j<\Delta$. Thus,  $(r_0, r_1,\ldots)$ is the expansion of $({\bf q}_s-{\bf f}_s)/\Delta^{g-1}$ base $\Delta$, and $r_0$ is the least significant digit. We now show that $r_0$ is the unique value of $r$ that satisfies the conditions of lines~8-10 of Algorithm~\ref{alg:location}. 
+
+First, we have by~\eqref{eq:uexp1} together with \eqref{eq:eh-pi} and ~\eqref{eq:et-pi} one has for each $a\in \A$ and $\h\in \H$
+\begin{equation*}
+\begin{split}
+\left|m_{h(i)}(\wh{x'}, H, a\star (\one, \h))- G_{o_i(i)} x'_i \omega^{((a\star(\one, \h))^T {\bf q}}\right|&\leq  e^{head}_i(H, x, \chi)+e^{tail}_i(H, a\star(\one, \h), x)+N^{-\Omega(c)}.
+\end{split}
+\end{equation*}
+Since $\zero\in \H$, we also have for all $a\in \A$
+\begin{equation*}
+\begin{split}
+\left|m_{h(i)}(\wh{x'}, H, a\star (\one, \zero))- G_{o_i(i)} x'_i \omega^{(a\star(\one, \zero))^T {\bf q}}\right|&\leq  e^{head}_i(H, x, \chi)+e^{tail}_i(H, a\star (\one, \zero), x)+N^{-\Omega(c)},
+\end{split}
+\end{equation*}
+where the $N^{-\Omega(c)}$ terms correspond to polynomially small error from approximate computation of the Fourier transform via Lemma~\ref{c:semiequi1}.
+%\leq  \left|\sum_{j\in \nsq\setminus S} G_{o_i(j)}x'_j \omega^{(a\cdot (\one+\h))^T \Sigma j}+\sum_{j\in S\setminus \{i\}} G_{o_i(j)}x'_j \omega^{(a\cdot (\one+\h))^T \Sigma j}+\Delta_{h(i)}\omega^{(a\cdot (\one+\h))^T \Sigma i}\right|\\
+
+
+Let $j:=h(i)$. We will show that $i$ is recovered from bucket $j$. The bounds above imply that 
+\begin{equation}\label{eq:gergergre}
+\begin{split}
+\frac{m_j(\wh{x'}, H, a\star (\one, \h))}{m_j(\wh{x'}, H, a\star (\one, \zero))}=\frac{x'_i \omega^{(a\star (\one, \h))^T {\bf q}}+E'}{x'_i \omega^{(a\star (\one, \zero))^T {\bf q}}+E''}
+\end{split}
+\end{equation}
+for some $E', E''$ satisfying $|E'|\leq e^{head}_i(H, x, \chi)+e^{tail}_i(H, a\star (\one, \h), x)+N^{-\Omega(c)}$ and $|E''|\leq e^{head}_i(H, x, \chi)+e^{tail}_i(H, a\star (\one, \zero))+N^{-\Omega(c)}$. For all but $1/5$ fraction of $a\in \A$ we have by definition of $e^{tail}$ (see~\eqref{eq:et-pi-a-h}) that {\bf both} 
+\begin{equation}\label{eq:etail-bounds-eq-1}
+e^{tail}_i(H, a\star (\one, \h), x)\leq e^{tail}_i(H, \A\star (\one, \h), x)\leq |x'_i|/20
+\end{equation}
+ and 
+\begin{equation}\label{eq:etail-bounds-eq-2}
+ e^{tail}_i(H, a\star (\one, \zero)\leq e^{tail}_i(H, \A\star (\one, \zero), x)\leq |x'_i|/20.
+\end{equation}
+In particular, we can rewrite ~\eqref{eq:gergergre} as
+\begin{equation}\label{eq:gergergre-2}
+\begin{split}
+\frac{m_j(\wh{x'}, H, a\star (\one, \h))}{m_j(\wh{x'}, H, a\star (\one, \zero))}&=\frac{x'_i \omega^{(a\star (\one, \h))^T {\bf q}}+E'}{x'_i \omega^{(a\star (\one, \zero))^T {\bf q}}+E''}\\
+&=\frac{\omega^{(a\star (\one, \h))^T {\bf q}}}{\omega^{(a\star (\one, \zero))^T {\bf q}}}\cdot\xi\text{~~~where~~}\xi=\frac{1+\omega^{-(a\star (\one, \h))^T {\bf q}}E'/x_i'}{1+\omega^{-(a\star (\one, \zero))^T{\bf q}} E''/x_i'}\\
+&=\omega^{(a\star (\one, \h))^T {\bf q}-(a\star (\one, \zero))^T {\bf q}}\cdot\xi\\
+&=\omega^{(a\star (\zero, \h))^T {\bf q}}\cdot\xi.\\
+\end{split}
+\end{equation}
+
+Let $\A^*\subseteq \A$ denote the set of values of $a\in \A$ that satisfy the bounds~\eqref{eq:etail-bounds-eq-1} and~\eqref{eq:etail-bounds-eq-2} above.
+We thus have for  $a\in \A^*$, combining ~\eqref{eq:gergergre-2} with assumptions {\bf 1-2} of the lemma, that
+\begin{equation}\label{eq:bound-1-oigb344tg32t}
+|E'|/x_i'\leq  (2/20)+1/N^{-\Omega(c)}\leq 1/8\text{~~~and~~~~}|E''|/x_i'\leq  (2/20)+1/N^{-\Omega(c)}\leq 1/8
+\end{equation}
+for sufficiently large $N$, where $O(c)$ is the word precision of our semi-equispaced Fourier transform computation. Note that we used the assumption that $|x'_i|\geq N^{-\Omega(c)}$.
+
+Writing $a=(\alpha, \beta)\in\nsq\times \nsq$, we have by~\eqref{eq:gergergre-2} that $\frac{m_j(\wh{x'}, H, a\star (\one, \h))}{m_j(\wh{x'}, H, a\star (\one, \zero))}=\omega^{((\alpha, \beta)\star (\zero, \h))^T {\bf q}}\cdot\xi$, and since $\h^T{\bf q}=n\Delta^{-g}{\bf q}_s$ when $\h=n \Delta^{-g} {\bf e}_s$ (as in line~8 of Algorithm~\ref{alg:location}), we get 
+$$
+\frac{m_j(\wh{x'}, H, a\star (\one, \h))}{m_j(\wh{x'}, H, a\star (\one, \zero))}=\omega^{(a\star (\zero, \h))^T {\bf q}}\cdot\xi=\omega^{n\Delta^{-g} \beta_s {\bf q}_s}\cdot\xi=\omega^{n\Delta^{-g} \beta_s {\bf q}_s}+\omega^{n\Delta^{-g} \beta_s {\bf q}_s}(\xi-1). 
+$$
+We analyze the first term now, and will show later that the second term is small. Since ${\bf q}_s={\bf f}_s+\Delta^{g-1}(r_0+\Delta r_1+\Delta^2 r_2+\ldots)$ by the inductive hypothesis, we have, substituting the first term above into the expression in line~10 of Algorithm~\ref{alg:location},
+\begin{equation*}
+\begin{split}
+\omega_\Delta^{-r\cdot \beta_s}\cdot \omega^{-n\Delta^{-g}{\bf f_s}\cdot \beta_s}\cdot \omega^{n\Delta^{-g} \beta_s {\bf q}_s}&=\omega_\Delta^{-r\cdot \beta_s}\cdot \omega^{n\Delta^{-g}({\bf q}_s-{\bf f_s})\cdot \beta_s}\\
+&=\omega_\Delta^{-r\cdot \beta_s}\cdot \omega^{n\Delta^{-g}(\Delta^{g-1}(r_0+\Delta r_1+\Delta^2 r_2+\ldots))\cdot \beta_s}\\
+&=\omega_\Delta^{-r\cdot \beta_s}\cdot \omega^{(n/\Delta)\cdot (r_0+\Delta r_1+\Delta^2 r_2+\ldots)\cdot \beta_s}\\
+&=\omega_\Delta^{-r\cdot \beta_s}\cdot \omega_{\Delta}^{r_0\cdot \beta_s}\\
+&=\omega_\Delta^{(-r+r_0)\cdot \beta_s}.
+\end{split}
+\end{equation*}
+We used the fact that $\omega^{n/\Delta}=e^{2\pi i (n/\Delta)/n}=e^{2\pi i/\Delta}=\omega_\Delta$ and $(\omega_{\Delta})^\Delta=1$. Thus, we have
+\begin{equation}\label{eq:92hg34grggggdds}
+\omega_{\Delta}^{-r\cdot \beta_s}\omega^{-(n2^{-g}{\bf f_s})\cdot \beta_s}\frac{m_j(\wh{x'}, H, a\star (\one, \h))}{m_j(\wh{x'}, H, a\star (\one, \zero))}=\omega_\Delta^{(-r+r_0)\cdot \beta_s}+\omega_\Delta^{(-r+r_0)\cdot \beta_s}(\xi-1).
+\end{equation}
+
+We now consider two cases. First suppose that $r=r_0$. Then $\omega_\Delta^{(-r+r_0)\cdot \beta_s}=1$, and it remains to note that  by~\eqref{eq:bound-1-oigb344tg32t} we have $|\xi-1|\leq \frac{1+1/8}{1-1/8}-1\leq 2/7< 1/3$.
+Thus every $a\in \A^*$ passes the test in line~9 of Algorithm~\ref{alg:location}. Since $|\A^*|\geq (4/5)|\A|>(3/5)|\A|$ by the argument above, we have that $r_0$ passes the test in line~9. It remains to show that $r_0$ is the unique element in $0,\ldots, \Delta-1$ that passes this test.
+
+Now suppose that $r\neq r_0$. Then by the assumption that $\A\star (\zero, \mathbf{e}_s)$ is balanced (assumption {\bf 3} of the lemma) at least $49/100$ fraction of $\omega_\Delta^{(-r+r_0)\cdot \beta_s}$ have negative real part.  This means that for at least $49/100$ of $a\in \A$ we have using triangle inequality
+\begin{equation*}
+\begin{split}
+\left|\left[\omega_\Delta^{(-r+r_0)\cdot \beta_s}+\omega_\Delta^{(-r+r_0)\cdot \beta_s}(\xi-1)\right]-1\right|&\geq \left|\omega_\Delta^{(-r+r_0)\cdot \beta_s}-1\right|-\left|\omega_\Delta^{(-r+r_0)\cdot \beta_s}(\xi-1)\right|\\
+&\geq \left|\mathbf{i}-1\right|-1/3\\
+&\geq \sqrt{2}-1/3> 1/3,
+\end{split}
+\end{equation*}
+and hence the condition in line~9 of Algorithm~\ref{alg:location} is not satisfied for any $r\neq r_0$. This shows that location is successful and completes the proof of correctness.
+
+Runtime bounds follow by noting that \textsc{LocateSignal} recovers $d$ coordinates with $\log n$ bits per coordinate. Coordinates are recovered in batches of $\log \Delta$ bits, and the time taken is bounded by $B\cdot d(\log_\Delta n)\Delta\leq B (\log N)^{3/2}$. Updating the measurements using semi-equispaced FFT takes $B\log^{d+1} N$ time.
+\end{proof}
+
+
+
+
+We also get an immediate corollary of Lemma~\ref{lm:loc}. The corollary is crucial to our proof of Theorem~\ref{thm:l1-res-loc} (the main result about efficiency of \textsc{LocateSignal}) in the next section.
+\begin{corollary}\label{cor:loc}
+For any integer $r_{max}\geq 1$,  for any sequence of $r_{max}$ hashings $H_r=(\pi_r, B, R), r\in [1:r_{max}]$ and evaluation points $\A_r\subseteq \nsq\times \nsq$,  for every $S\subseteq \nsq$ and for every $x, \chi\in \C^{\nsq}, x':=x-\chi$, the following conditions hold.
+If for each $r\in [1:r_{max}]$ $L_r\subseteq \nsq$ denotes the output of \Call{LocateSignal}{$\wh{x}, \chi, H_r, \{m(\wh{x}, H_r, a\star (\one, \h))\}_{a\in \A_r, \h\in \H}$}, $L=\bigcup_{r=1}^{r_{max}} L_r$, and the sets $\A_r\star(\zero, \h)$ are balanced for all $\h\in \H$ and $r\in [1:r_{max}]$, then
+\begin{equation}
+||x'_{S\setminus L}||_1\leq 20 ||e^{head}_S(\{H_r\}, x, \chi)||_1+20 ||e^{tail}_S(\{H_r, \A_r\}, x)||_1+|S|\cdot N^{-\Omega(c)}.\tag{*}
+\end{equation}
+Furthermore, every element $i\in S$ such that 
+\begin{equation}
+|x'_i|>20 (e^{head}_i(\{H_r\}, x, \chi)+e^{tail}_i(\{H_r, \A_r\}, x))+N^{-\Omega(c)}\tag{**}
+\end{equation}
+belongs to $L$.
+\end{corollary}
+\begin{proof}
+Suppose that $i\in S$ fails to be located in any of the $R$ calls, and $|x'_i|\geq N^{-\Omega(c)}$. By Lemma~\ref{lm:loc} and the assumption that $\A_r\star(\zero, \h)$ is balanced for all $\h\in \H$ and $r\in [1:r_{max}]$ this means that for at least one half of values $r\in [1:r_{max}]$  either {\bf (A)} $e^{head}_{i}(H_r, x, \chi)\geq |x_i|/20$ or {\bf (B)} $e^{tail}_{i}(H_r, \A_r\star (\one, \h), x)> |x_i|/20$ for at least one $\h\in \H$. We consider these two cases separately.
+
+\paragraph{Case (A).} In this case we have $e^{head}_{i}(H_s, x, \chi)\geq |x_i|/20$ for at least one half of $r\in [1:r_{max}]$, so 
+in particular $e^{head}_i(\{H_r\}, x, \chi)\geq \text{quant}^{1/5}_r e^{head}_{i}(H_r, x, \chi)\geq |x'_i|/20$. 
+
+
+\paragraph{Case (B).} Suppose that $e^{tail}_{i}(H_r, \A_r\star (\one, \h), x)> |x'_i|/20$ for some $\h=\h(r)\in \H$ for at least one half of $r\in [1:r_{max}]$ (denote this set by $Q\subseteq [1:r_{max}]$). We then have
+\begin{equation*}
+\begin{split}
+e^{tail}_i(\{H_r, \A_r\}, x)&=\quant^{1/5}_{r\in [1:r_{max}]} e^{tail}_i(H_r, \A_r, x)\\
+&=\quant^{1/5}_{r\in [1:r_{max}]} \left[40\mu_{H_r, i}(x)+\sum_{\h\in \H} \left|e^{tail}_i(H_r, \A_r\star (\one, \h), x)-40\mu_{H_r, i}(x)\right|_+\right]\\
+&\geq \min_{r\in Q} \left[40\mu_{H_r, i}(x)+\left|e^{tail}_i(H_r, \A_r\star (\one, \h(r)), x)-40\mu_{H_r, i}(x)\right|_+\right]\\
+&\geq \min_{r\in Q} e^{tail}_i(H_r, \A_r\star (\one, \h(r)), x)\\
+&\geq |x'_i|/20
+\end{split}
+\end{equation*}
+ as required. This completes the proof of {\bf (*)} as well as {\bf (**)}.
+\end{proof}
+
+
+

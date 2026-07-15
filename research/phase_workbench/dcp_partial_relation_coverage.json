@@ -1,0 +1,186 @@
+{
+  "claim_gate": {
+    "nontranslation_partial_map_route_alive": true,
+    "polynomial_explicit_signed_relation_dictionary_route_alive": false,
+    "polynomial_relation_solver_proved": false,
+    "reason": "At linear depth, every fixed signed-difference relation has linear support with exponentially high probability, so polynomial explicit dictionaries have exponentially small subset-sample-weighted coverage. Exponentially indexed target-dependent maps and nontranslation relations remain open.",
+    "speedup_claim_allowed": false,
+    "target_indexed_implicit_partial_map_route_alive": true
+  },
+  "created_at": "2026-07-15T07:44:39.785467+00:00",
+  "falsifiers_triggered": [
+    "Inverse-polynomial coverage from one fixed translation requires logarithmic support, which is absent with exponentially high probability.",
+    "A polynomial dictionary cannot compensate for the exponentially small domain of linear-support relations.",
+    "Finite low-support relations do not override the negative asymptotic union-bound exponent.",
+    "Subset-sample-weighted coverage is not silently substituted for uniform-supported-target coverage.",
+    "The theorem leaves exponentially indexed target-dependent or nontranslation maps open."
+  ],
+  "finite_rows": [
+    {
+      "depth": 3,
+      "finite_row_is_asymptotic_theorem": false,
+      "minimum_relation_paired_domain_fraction": 0.5,
+      "minimum_relation_support": 2,
+      "n_bits": 6,
+      "register_count": 8,
+      "searched_relation_count": 57,
+      "trial_index": 0
+    },
+    {
+      "depth": 3,
+      "finite_row_is_asymptotic_theorem": false,
+      "minimum_relation_paired_domain_fraction": 1.0,
+      "minimum_relation_support": 1,
+      "n_bits": 6,
+      "register_count": 8,
+      "searched_relation_count": 3,
+      "trial_index": 1
+    },
+    {
+      "depth": 4,
+      "finite_row_is_asymptotic_theorem": false,
+      "minimum_relation_paired_domain_fraction": 0.5,
+      "minimum_relation_support": 2,
+      "n_bits": 8,
+      "register_count": 10,
+      "searched_relation_count": 57,
+      "trial_index": 0
+    },
+    {
+      "depth": 4,
+      "finite_row_is_asymptotic_theorem": false,
+      "minimum_relation_paired_domain_fraction": 0.5,
+      "minimum_relation_support": 2,
+      "n_bits": 8,
+      "register_count": 10,
+      "searched_relation_count": 21,
+      "trial_index": 1
+    },
+    {
+      "depth": 5,
+      "finite_row_is_asymptotic_theorem": false,
+      "minimum_relation_paired_domain_fraction": 1.0,
+      "minimum_relation_support": 1,
+      "n_bits": 10,
+      "register_count": 12,
+      "searched_relation_count": 11,
+      "trial_index": 0
+    },
+    {
+      "depth": 5,
+      "finite_row_is_asymptotic_theorem": false,
+      "minimum_relation_paired_domain_fraction": 0.5,
+      "minimum_relation_support": 2,
+      "n_bits": 10,
+      "register_count": 12,
+      "searched_relation_count": 94,
+      "trial_index": 1
+    }
+  ],
+  "headline_metrics": {
+    "asymptotic_inverse_polynomial_dictionary_coverage_no_go_row_count": 1,
+    "asymptotic_inverse_polynomial_existence_no_go_row_count": 3,
+    "asymptotic_union_bound_exponent": -0.10020993338298612,
+    "finite_row_count": 6,
+    "linear_minimum_support_theorem_count": 1,
+    "maximum_finite_minimum_relation_support": 2,
+    "polynomial_dictionary_exponential_coverage_theorem_count": 1,
+    "proved_polynomial_relation_solver_count": 0,
+    "proved_target_indexed_implicit_map_no_go_count": 0,
+    "scaling_row_count": 5
+  },
+  "scaling_rows": [
+    {
+      "depth": 32,
+      "dictionary_source_coverage_bound": 1.0,
+      "existence_union_bound": 0.0015646610409021378,
+      "inverse_polynomial_dictionary_coverage_ruled_out": false,
+      "inverse_polynomial_existence_ruled_out": false,
+      "log2_dictionary_source_coverage_bound": 20.0,
+      "log2_existence_union_bound": -9.319934130746603,
+      "log2_relation_count": 23.680065869253397,
+      "maximum_ruled_out_support": 4,
+      "n_bits": 64,
+      "polynomial_dictionary_size": 16777216,
+      "register_count": 68
+    },
+    {
+      "depth": 64,
+      "dictionary_source_coverage_bound": 1.0,
+      "existence_union_bound": 1.3197901149913346e-05,
+      "inverse_polynomial_dictionary_coverage_ruled_out": false,
+      "inverse_polynomial_existence_ruled_out": true,
+      "log2_dictionary_source_coverage_bound": 20.0,
+      "log2_existence_union_bound": -16.209331957078,
+      "log2_relation_count": 48.790668042922,
+      "maximum_ruled_out_support": 8,
+      "n_bits": 128,
+      "polynomial_dictionary_size": 268435456,
+      "register_count": 132
+    },
+    {
+      "depth": 128,
+      "dictionary_source_coverage_bound": 1.0,
+      "existence_union_bound": 1.29538764239308e-09,
+      "inverse_polynomial_dictionary_coverage_ruled_out": false,
+      "inverse_polynomial_existence_ruled_out": true,
+      "log2_dictionary_source_coverage_bound": 16.0,
+      "log2_existence_union_bound": -29.52396896760142,
+      "log2_relation_count": 99.47603103239858,
+      "maximum_ruled_out_support": 16,
+      "n_bits": 256,
+      "polynomial_dictionary_size": 4294967296,
+      "register_count": 260
+    },
+    {
+      "depth": 256,
+      "dictionary_source_coverage_bound": 1.0,
+      "existence_union_bound": 1.7425950619388736e-17,
+      "inverse_polynomial_dictionary_coverage_ruled_out": false,
+      "inverse_polynomial_existence_ruled_out": true,
+      "log2_dictionary_source_coverage_bound": 4.0,
+      "log2_existence_union_bound": -55.671540253033385,
+      "log2_relation_count": 201.32845974696662,
+      "maximum_ruled_out_support": 32,
+      "n_bits": 512,
+      "polynomial_dictionary_size": 68719476736,
+      "register_count": 516
+    },
+    {
+      "depth": 512,
+      "dictionary_source_coverage_bound": 5.960464477539063e-08,
+      "existence_union_bound": 4.431209419800702e-33,
+      "inverse_polynomial_dictionary_coverage_ruled_out": true,
+      "inverse_polynomial_existence_ruled_out": true,
+      "log2_dictionary_source_coverage_bound": -24.0,
+      "log2_existence_union_bound": -107.47592662080564,
+      "log2_relation_count": 405.52407337919436,
+      "maximum_ruled_out_support": 64,
+      "n_bits": 1024,
+      "polynomial_dictionary_size": 1099511627776,
+      "register_count": 1028
+    }
+  ],
+  "status": "explicit-partial-relation-dictionaries-closed-implicit-target-indexed-route-open",
+  "summary": "Proved asymptotic signed-relation union-bound exponent -0.10021 and closed polynomial explicit dictionaries under subset-sample weighting. Finite rows=6; target-indexed implicit map no-go theorems=0.",
+  "theorem": {
+    "asymptotic_exponent": -0.10020993338298612,
+    "chosen_depth_fraction": 0.5,
+    "chosen_support_fraction": 0.0625,
+    "linear_minimum_support_with_high_probability_proved": true,
+    "negative_exponent_proved": true,
+    "polynomial_dictionary_exponential_coverage_bound_proved": true,
+    "relation_count": "sum_{s<=beta*n} binom(m,s) 2^s",
+    "scope_exclusions": [
+      "target-indexed implicit families containing exponentially many distinct masks",
+      "partial maps not expressible as fixed signed translations",
+      "non-bijective relation samplers",
+      "quantum walks with implicit global transition structure",
+      "uniform-supported-target coverage without a source-law transfer"
+    ],
+    "single_relation_probability": "2^-(k+1), because any +/-1 coefficient makes the signed sum uniform",
+    "source": "m=n+O(1) independent uniform labels modulo 2^n",
+    "theorem_id": "THEOREM-DCP-EXPLICIT-PARTIAL-RELATION-COVERAGE",
+    "union_bound_exponent": "H_2(beta)+beta-alpha+o(1) for k=alpha*n"
+  }
+}

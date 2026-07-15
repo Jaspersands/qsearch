@@ -1,0 +1,139 @@
+{
+  "claim_gate": {
+    "carry_sliced_embedding_obstructed_by_same_relations": false,
+    "lll_failure_probability_proved": false,
+    "polynomial_witness_decoder_constructed": false,
+    "reason": "The standard embedding has exponentially many marker-zero competitors no longer than the planted witness. A surviving lattice route must use additional constraints, distinguish marker structure, and prove extraction coverage rather than shortest-vector uniqueness.",
+    "speedup_claim_allowed": false,
+    "standard_embedding_has_exponentially_many_short_competitors": true,
+    "standard_embedding_planted_shortest_vector_unique": false
+  },
+  "created_at": "2026-07-15T04:40:24.204361+00:00",
+  "falsifiers_triggered": [
+    "The standard embedding cannot rely on the planted vector being uniquely shortest.",
+    "Volume-scale ambiguity is strengthened to an explicit high-probability short-relation family.",
+    "Finite LLL recovery does not remove exponentially many source-distributed marker-zero competitors.",
+    "The theorem does not transfer automatically to carry-sliced low-coordinate constraints."
+  ],
+  "headline_metrics": {
+    "asymptotic_log2_expectation_rate": 0.06127812445913294,
+    "carry_sliced_short_relation_obstruction_count": 0,
+    "competitor_no_longer_than_planted_row_count": 5,
+    "exact_second_moment_theorem_count": 1,
+    "high_probability_exponential_competitor_theorem_count": 1,
+    "polynomial_witness_decoder_count": 0,
+    "positive_expectation_exponent_theorem_count": 1,
+    "proved_lll_failure_probability_count": 0,
+    "row_count": 5,
+    "standard_embedding_shortest_vector_uniqueness_ruled_out_count": 1,
+    "tail_chebyshev_zero_count_probability_upper_bound": 9.951624692773614e-09,
+    "tail_log2_expected_relation_count": 26.582420776082472
+  },
+  "rows": [
+    {
+      "chebyshev_zero_count_probability_upper_bound": 1.0,
+      "competitor_no_longer_than_planted": true,
+      "competitor_norm_squared": 32,
+      "expectation_exponent_per_n": -0.02768877288857652,
+      "finite_row_is_asymptotic_theorem": false,
+      "log2_expected_relation_count": -0.8860407324344486,
+      "n_bits": 32,
+      "planted_witness_norm_squared": 35,
+      "register_count": 34,
+      "register_offset": 2,
+      "relative_variance_upper_bound": 1.8480973767630628,
+      "sign_classes_per_support": 128,
+      "support_count": 18156204,
+      "support_weight": 8
+    },
+    {
+      "chebyshev_zero_count_probability_upper_bound": 0.6580972322003175,
+      "competitor_no_longer_than_planted": true,
+      "competitor_norm_squared": 64,
+      "expectation_exponent_per_n": 0.009431677197471178,
+      "finite_row_is_asymptotic_theorem": false,
+      "log2_expected_relation_count": 0.6036273406381554,
+      "n_bits": 64,
+      "planted_witness_norm_squared": 67,
+      "register_count": 66,
+      "register_offset": 2,
+      "relative_variance_upper_bound": 0.6580972322003175,
+      "sign_classes_per_support": 32768,
+      "support_count": 855420636763836,
+      "support_weight": 16
+    },
+    {
+      "chebyshev_zero_count_probability_upper_bound": 0.060779431061088414,
+      "competitor_no_longer_than_planted": true,
+      "competitor_norm_squared": 128,
+      "expectation_exponent_per_n": 0.03156463296490575,
+      "finite_row_is_asymptotic_theorem": false,
+      "log2_expected_relation_count": 4.040273019507936,
+      "n_bits": 128,
+      "planted_witness_norm_squared": 131,
+      "register_count": 130,
+      "register_offset": 2,
+      "relative_variance_upper_bound": 0.060779431061088414,
+      "sign_classes_per_support": 2147483648,
+      "support_count": 2607071541509914451952987793500,
+      "support_weight": 32
+    },
+    {
+      "chebyshev_zero_count_probability_upper_bound": 0.0003722559591447819,
+      "competitor_no_longer_than_planted": true,
+      "competitor_norm_squared": 256,
+      "expectation_exponent_per_n": 0.04449772435788413,
+      "finite_row_is_asymptotic_theorem": false,
+      "log2_expected_relation_count": 11.391417435618337,
+      "n_bits": 256,
+      "planted_witness_norm_squared": 259,
+      "register_count": 258,
+      "register_offset": 2,
+      "relative_variance_upper_bound": 0.0003722559591447819,
+      "sign_classes_per_support": 9223372036854775808,
+      "support_count": 33724654132106509293509522272911093876655225449154271830489500,
+      "support_weight": 64
+    },
+    {
+      "chebyshev_zero_count_probability_upper_bound": 9.951624692773614e-09,
+      "competitor_no_longer_than_planted": true,
+      "competitor_norm_squared": 512,
+      "expectation_exponent_per_n": 0.05191879057828608,
+      "finite_row_is_asymptotic_theorem": false,
+      "log2_expected_relation_count": 26.582420776082472,
+      "n_bits": 512,
+      "planted_witness_norm_squared": 515,
+      "register_count": 514,
+      "register_offset": 2,
+      "relative_variance_upper_bound": 9.951624692773614e-09,
+      "sign_classes_per_support": 170141183460469231731687303715884105728,
+      "support_count": 7918708233642579846101977562916244858219872915045083651571358007536105948009871880179759773947492343470978178734177658262556,
+      "support_weight": 128
+    }
+  ],
+  "source_contract": {
+    "conclusion": "exponentially many marker-zero vectors no longer than the planted witness with high probability",
+    "embedding": "standard centered modular subset-sum lattice",
+    "labels": "independent uniform labels modulo 2^n",
+    "relation_family": "weight floor((m+1)/4) signed vectors modulo global negation"
+  },
+  "status": "standard-embedding-planted-shortest-vector-uniqueness-obstructed",
+  "summary": "Proved a high-probability exponential family of standard-embedding competitors with expectation rate 0.0612781; tail log2 expected count=26.5824. Carry-sliced relations and LLL output probabilities remain open.",
+  "theorem_certificate": {
+    "asymptotic_log2_expectation_rate": 0.06127812445913294,
+    "competitor_norm_no_larger_than_planted_proved": true,
+    "different_support_unit_minor_proved": true,
+    "exact_relative_variance_formula": "1/E[X] + (1-2/M)/N",
+    "high_probability_exponentially_many_competitors_proved": true,
+    "limitations": [
+      "The theorem applies to the standard embedding's marker-zero sublattice.",
+      "Carry-sliced low-coordinate constraints can eliminate these relations and require a separate count.",
+      "Many short competitors do not by themselves prove LLL or BKZ cannot return a valid marker vector.",
+      "No runtime lower bound for witness extraction is proved."
+    ],
+    "positive_expectation_exponent_proved": true,
+    "proof": "Fix the first sign on each support to quotient global negation. Distinct equal-size supports have indices in both set differences, yielding a unit minor and independent zero-sum equations. Distinct sign classes on one support share odd support mod two but have a sign disagreement, giving Smith factors (1,2). The exact second moment yields relative variance 1/E[X]+(1-2/M)/N, which vanishes because H_2(1/4)+1/4-1>0.",
+    "same_support_smith_one_two_proved": true,
+    "support_fraction": 0.25
+  }
+}

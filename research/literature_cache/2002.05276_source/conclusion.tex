@@ -1,0 +1,13 @@
+
+In this paper, we proposed improved classical and quantum heuristic algorithms for subset-sum, building upon several new ideas. First, we used extended representations ($\zomd$) to improve the current best classical and quantum algorithms. In the quantum setting, we showed how to use a quantum search to speed up the process of \emph{filtering} representations, leading to an overall improvement on existing work. We built an ``asymmetric HGJ'' algorithm that uses a nested quantum search, leading to the first quantum speedup on subset-sum in the model of \emph{classical memory with quantum random access}. By combining all our ideas, we obtained the best quantum walk algorithm for subset-sum in the MNRS framework. Although its complexity still relies on Heuristic~\ref{heuristic:helm-may}, we showed how to partially overcome it and obtained the first quantum walk that requires only the classical subset-sum heuristic, and the best to date for this problem. %A summary of our contributions is given in Table~\ref{table:results}.
+
+
+\subsubsection*{Open Questions.}
+We leave as open the possibility to use representations with ``-1''s (or even ``2''s) in a quantum asymmetric merging tree, as in Section~\ref{subsection:hgj-quantum-second}. Another question is how to bridge the gap between heuristic and non-heuristic quantum walk complexities. In our work, the use of an improved vertex data structure seems to encounter a limitation, and we may need a more generic result on quantum walks, similar to~\cite{DBLP:journals/mst/Ambainis10}. Finally, it would be of interest to study representations with a larger set of integers.
+
+%Finally, we managed to improve the classical algorithm by adding ``2''s, it would be of interest to study if adding ``-2''s (or, more generally, using a larger set of integers) can lead to better algorithms.
+
+
+\XB{Vérifier si ça ne donne pas trop l'impression qu'on a eu la flemme de finir le boulot.}
+
+%Although we could obtain an adapted filtering lemma, the resulting formula contains many parameters, that seem to make the search for an optimum drastically harder. Another open question is whether there exists a data structure for our quantum walks that would guarantee a time close to its average (when we used Grover's algorithm at each update).%, or a more generic result allowing to make some errors during the update.

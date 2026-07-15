@@ -1,0 +1,934 @@
+{
+  "capability_gaps": [
+    "No living literature ingestion or claim extraction.",
+    "No formal problem ontology or reduction search.",
+    "No proof-obligation gate before claiming speedups.",
+    "No representation-theory toolkit for nonabelian HSP/coset states.",
+    "No hidden-shift phase-state or sieve simulator.",
+    "No adversary-bound/span-program synthesis.",
+    "No hard instance generators for GI/code equivalence/lattice families.",
+    "No counterexample search or theorem-proving path.",
+    "No classical baseline/dequantization checker.",
+    "No experiment database with scaling-law model comparison."
+  ],
+  "critique_passes": [
+    {
+      "core_assumptions": [
+        "There exist structured instance families where collective observables have polynomial descriptions.",
+        "Those observables are not equivalent to classical canonicalization or refinement."
+      ],
+      "falsifiers": [
+        "Coset-state distinguishability remains exponentially small under all low-complexity observables tested.",
+        "Classical GI/code-equivalence tools solve every generated family."
+      ],
+      "likely_to_fail_because": [
+        "Known Fourier-sampling barriers are strong and old.",
+        "Collective measurements may require exponential entanglement or preprocessing.",
+        "Hard instances may have too little representation-theoretic signal."
+      ],
+      "revised_recommendation": "Keep as high-upside, but only with no-go-aware measurement search and hard-instance generators.",
+      "target": "Nonabelian HSP / code equivalence / graph isomorphism"
+    },
+    {
+      "core_assumptions": [
+        "There are algebraic hidden-shift distributions with phase-state structure not captured by generic subset-sum hardness.",
+        "A sieve improvement can be linked to a meaningful lattice or number-theory problem."
+      ],
+      "falsifiers": [
+        "All families either have simple classical correlation attacks or reduce to generic Kuperberg/Regev scaling.",
+        "No reversible map with polynomial precision survives cost audit."
+      ],
+      "likely_to_fail_because": [
+        "Generic DHSP has resisted polynomial algorithms for decades.",
+        "Structured exceptions may be classically easy.",
+        "Approximate lattice periodicity may need infeasible precision."
+      ],
+      "revised_recommendation": "Keep as top target; add Gowers/derivative tests and phase-sieve simulator before broader speculation.",
+      "target": "Hidden shift / dihedral HSP / lattice route"
+    },
+    {
+      "core_assumptions": [
+        "The generated witness has a recursively describable structure.",
+        "The query model has a plausible explicit computational analogue."
+      ],
+      "falsifiers": [
+        "Witness size improvements vanish outside handcrafted Boolean functions.",
+        "No reduction connects the query family to a natural problem."
+      ],
+      "likely_to_fail_because": [
+        "It may produce only oracle/query separations.",
+        "SDP witnesses can be opaque and fail to generalize."
+      ],
+      "revised_recommendation": "Build it, but force every witness through natural-family and reduction gates.",
+      "target": "Span-program/adversary synthesis"
+    },
+    {
+      "core_assumptions": [
+        "There are structured operators whose spectra are quantum-accessible but classically hard to estimate.",
+        "Encoding costs remain below the claimed separation."
+      ],
+      "falsifiers": [
+        "Block encoding dominates total cost.",
+        "Classical trace/Lanczos/sketching recovers the same invariant."
+      ],
+      "likely_to_fail_because": [
+        "Most QSVT novelty is incremental or input-model-sensitive.",
+        "Classical randomized linear algebra may dequantize the advantage."
+      ],
+      "revised_recommendation": "Keep as secondary target with strict cost calculus and dequantization checks.",
+      "target": "QSVT/block-encoding frontier"
+    },
+    {
+      "core_assumptions": [
+        "LLMs are constrained by typed schemas, literature citations, proof obligations, and adversarial review.",
+        "Generated leads are evaluated by executable structural tests."
+      ],
+      "falsifiers": [
+        "Generated ideas are not traceable to mechanisms or falsifiers.",
+        "The same dead-end families recur with new names."
+      ],
+      "likely_to_fail_because": [
+        "LLMs hallucinate complexity claims and overfit labels like HSP/QFT.",
+        "The old corpus proves prompt novelty is not research novelty."
+      ],
+      "revised_recommendation": "Use LLMs only as breadth generators inside a hard-gated research pipeline.",
+      "target": "LLM-based hypothesis generation"
+    }
+  ],
+  "current_project_diagnosis": {
+    "blunt_diagnosis": [
+      "The old loop is not a credible path to a Shor-level algorithm.",
+      "It searches tiny circuits and arbitrary oracle puzzles, then lets an LLM label complexity from N<=3 data.",
+      "Most successful runs rediscover Bernstein-Vazirani-like parity structure; most exotic names are unsolved or unsupported.",
+      "The dashboard's 'solved novel algorithms' criterion is just success_rate >= 1.0 on tiny instances, not a research result.",
+      "The project needs explicit scalable families, classical baselines, structural quantum handles, and kill criteria."
+    ],
+    "claimed_speedups": {},
+    "history_runs": 0,
+    "most_repeated_problem_names": [],
+    "scanned_files_excluding_vendor_and_git": 29,
+    "source_notes": [],
+    "success_rate_1_runs": 0,
+    "toy_term_counts": {
+      "bernstein-vazirani": 0,
+      "bitwise": 0,
+      "oracle": 0,
+      "secret finding": 0,
+      "state preparation": 0,
+      "unitary synthesis": 0
+    }
+  },
+  "implemented_this_pass": [
+    "Seed literature radar.",
+    "Problem/reduction ontology.",
+    "Proof-obligation list.",
+    "Ranked intervention portfolio.",
+    "Self-critique passes.",
+    "Higher-order Fourier/Gowers structural tests."
+  ],
+  "mission": "Maximize expected contribution to a Shor-level quantum algorithmic breakthrough.",
+  "module_decisions": [
+    {
+      "decision": "delete_or_quarantine",
+      "path": "search_engine.py",
+      "reason": "Depth-5/N<=3 circuit search optimizes the wrong object.",
+      "replacement": "schema-level and structural experiment engines"
+    },
+    {
+      "decision": "delete_or_quarantine",
+      "path": "simulator.py",
+      "reason": "Only wraps the toy circuit search.",
+      "replacement": "structural_tests.py and future experiment workbenches"
+    },
+    {
+      "decision": "delete",
+      "path": "theorist.py",
+      "reason": "Prompt-driven toy-problem generation caused the bad result corpus.",
+      "replacement": "LLM hypothesis generator gated by literature/proof obligations"
+    },
+    {
+      "decision": "delete",
+      "path": "analyzer.py",
+      "reason": "LLM complexity labels from tiny data are actively misleading.",
+      "replacement": "proof obligation gate plus baseline checker"
+    },
+    {
+      "decision": "delete",
+      "path": "synthesis.py",
+      "reason": "Qiskit snippets are not research contributions.",
+      "replacement": "algorithm-schema synthesis and formal proof artifacts"
+    },
+    {
+      "decision": "replace",
+      "path": "run_continuous.py",
+      "reason": "A timed loop creates volume, not insight.",
+      "replacement": "event-driven literature/experiment pipeline"
+    },
+    {
+      "decision": "deprioritize_or_remove",
+      "path": "index.html/index.js/index.css",
+      "reason": "Dashboard polish rewards demos and legacy hits.",
+      "replacement": "research log generated from audit artifacts"
+    },
+    {
+      "decision": "quarantine_as_negative_examples",
+      "path": "results/",
+      "reason": "The corpus is useful mainly as evidence of failure modes.",
+      "replacement": "negative-result database"
+    },
+    {
+      "decision": "quarantine_as_negative_examples",
+      "path": "history.json",
+      "reason": "Contains repeated unsupported claims.",
+      "replacement": "decision log with proof obligations"
+    },
+    {
+      "decision": "delete_from_repo",
+      "path": "google-cloud-sdk/ and google-cloud-cli.tar.gz",
+      "reason": "Vendored 500MB toolchain has no research value.",
+      "replacement": "document external setup if deployment is ever needed"
+    },
+    {
+      "decision": "keep_and_expand",
+      "path": "research_engine.py",
+      "reason": "Good first agenda generator but still too static.",
+      "replacement": "research_lab.py plus literature/ontology/counterexample engines"
+    },
+    {
+      "decision": "keep_and_expand",
+      "path": "structural_tests.py",
+      "reason": "Contains relevant early filters.",
+      "replacement": "add group representation, Gowers, span-program, and lattice tests"
+    }
+  ],
+  "new_architecture": {
+    "1_literature_memory": "Continuously ingest papers, extract mechanisms/barriers/reductions, and update a knowledge graph.",
+    "2_problem_ontology": "Represent problems, reductions, no-go barriers, and hard families as graph data.",
+    "3_hypothesis_factory": "Generate candidates by recombining mechanisms across the ontology, not by inventing oracles.",
+    "4_proof_gate": "Reject candidates missing family/input model/baseline/reduction/mechanism/falsifiers.",
+    "5_structural_labs": "Run dedicated experiments for HSP/coset states, hidden shift, span programs, walks, QSVT, and Gowers structure.",
+    "6_counterexample_loop": "Automatically search small finite models for falsifiers before investing in proof.",
+    "7_human_review": "Produce decision logs and questions for expert review instead of dashboard trophies."
+  },
+  "proof_obligations": [
+    {
+      "id": "PO-FAMILY",
+      "obligation": "Define an explicit asymptotic problem family.",
+      "reject_if_missing": true,
+      "why_required": "Shor-level claims are asymptotic, not small-instance phenomena."
+    },
+    {
+      "id": "PO-INPUT-MODEL",
+      "obligation": "State the input/oracle/access model exactly.",
+      "reject_if_missing": true,
+      "why_required": "Many quantum speedups disappear under realistic data access."
+    },
+    {
+      "id": "PO-CLASSICAL-BASELINE",
+      "obligation": "Name the best known classical algorithms and hardness evidence.",
+      "reject_if_missing": true,
+      "why_required": "Beating brute force is not meaningful."
+    },
+    {
+      "id": "PO-REDUCTION",
+      "obligation": "Connect the family to a known hard problem, lower-bound target, or frontier reduction.",
+      "reject_if_missing": true,
+      "why_required": "This separates natural problems from arbitrary oracle puzzles."
+    },
+    {
+      "id": "PO-MECHANISM",
+      "obligation": "Identify the quantum mechanism: Fourier, phase estimation, walk, QSVT, span program, collective measurement, etc.",
+      "reject_if_missing": true,
+      "why_required": "The mechanism drives both search and proof."
+    },
+    {
+      "id": "PO-STATE-PREP",
+      "obligation": "Account for state preparation, block encoding, QRAM, precision, and reversible arithmetic.",
+      "reject_if_missing": true,
+      "why_required": "Hidden costs often erase the claimed speedup."
+    },
+    {
+      "id": "PO-MEASUREMENT",
+      "obligation": "Specify the measurement and decoding procedure.",
+      "reject_if_missing": true,
+      "why_required": "For nonabelian/coset problems this is usually the hard part."
+    },
+    {
+      "id": "PO-SUCCESS-PROOF",
+      "obligation": "State a success probability theorem or conjecture with parameters.",
+      "reject_if_missing": true,
+      "why_required": "Finite experiments need a proof target."
+    },
+    {
+      "id": "PO-COMPLEXITY",
+      "obligation": "Separate query, gate, space, precision, and classical postprocessing complexity.",
+      "reject_if_missing": true,
+      "why_required": "A query speedup alone may not be an algorithmic speedup."
+    },
+    {
+      "id": "PO-NOGO",
+      "obligation": "List applicable no-go barriers and how the proposal avoids them.",
+      "reject_if_missing": true,
+      "why_required": "Avoids rediscovering known dead ends."
+    },
+    {
+      "id": "PO-DEQUANTIZATION",
+      "obligation": "Check whether a classical randomized/low-rank/dequantized method matches the claimed advantage.",
+      "reject_if_missing": true,
+      "why_required": "Modern quantum linear algebra claims especially need this."
+    },
+    {
+      "id": "PO-FALSIFIERS",
+      "obligation": "Provide explicit experiments or counterexamples that would kill the idea.",
+      "reject_if_missing": true,
+      "why_required": "A research engine must conserve attention."
+    }
+  ],
+  "ranked_improvements": [
+    {
+      "category": "literature",
+      "dependencies": [
+        "arXiv API",
+        "paper parser",
+        "embedding/search index",
+        "human curation"
+      ],
+      "difficulty": "High",
+      "expected_breakthrough_lift": 9.7,
+      "falsifying_evidence": [
+        "New leads are not traceable to papers or barriers.",
+        "Researchers cannot query for analogous proof techniques across domains."
+      ],
+      "id": "IMP-LITERATURE-KG",
+      "implementation_status": "Seeded by literature_radar.py; full parser/search still needed.",
+      "likely_failure_modes": [
+        "Extraction summarizes papers without capturing proof constraints.",
+        "The graph becomes a bibliography instead of a source of hypotheses."
+      ],
+      "title": "Living literature knowledge graph with technique extraction",
+      "why_it_matters": "Breakthrough work is usually recombination of known mechanisms and unresolved barriers; the project needs memory of the field."
+    },
+    {
+      "category": "evaluation",
+      "dependencies": [
+        "structured schemas",
+        "complexity model",
+        "review workflow"
+      ],
+      "difficulty": "Medium",
+      "expected_breakthrough_lift": 9.6,
+      "falsifying_evidence": [
+        "Candidates pass without input model, lower-bound target, or oracle/state-preparation costs."
+      ],
+      "id": "IMP-PROOF-GATE",
+      "implementation_status": "Basic enforcement implemented in proof_gate.py; candidate generation still needs to call it by default.",
+      "likely_failure_modes": [
+        "The gate becomes paperwork and blocks speculative ideas too early.",
+        "Generated proof sketches remain unchecked."
+      ],
+      "title": "Proof-obligation gate for every candidate algorithm",
+      "why_it_matters": "Prevents the system from recording unsupported speedup claims and forces scalable problem families, reductions, and cost accounting."
+    },
+    {
+      "category": "mathematical representation",
+      "dependencies": [
+        "curated reductions",
+        "negative-result database",
+        "graph search"
+      ],
+      "difficulty": "Medium",
+      "expected_breakthrough_lift": 9.4,
+      "falsifying_evidence": [
+        "A proposed lead can ignore known no-go barriers without being flagged."
+      ],
+      "id": "IMP-REDUCTION-ONTOLOGY",
+      "implementation_status": "Implemented in problem_ontology.py with first reduction/barrier graph.",
+      "likely_failure_modes": [
+        "Ontology freezes current beliefs and misses unconventional routes.",
+        "Edges are too informal for automated reasoning."
+      ],
+      "title": "Problem and reduction ontology with no-go barriers",
+      "why_it_matters": "Shor-level algorithms come from reductions and structural reframings; a circuit search cannot see that."
+    },
+    {
+      "category": "experiment",
+      "dependencies": [
+        "SageMath",
+        "GAP",
+        "character tables",
+        "tensor-network backend"
+      ],
+      "difficulty": "Extreme",
+      "expected_breakthrough_lift": 9.2,
+      "falsifying_evidence": [
+        "All observables collapse to strong Fourier sampling or classical refinement invariants."
+      ],
+      "id": "IMP-REP-THEORY-LAB",
+      "implementation_status": "Not yet implemented beyond coset fingerprint smoke metrics.",
+      "likely_failure_modes": [
+        "Known no-go results dominate.",
+        "Interesting measurements require exponential classical preprocessing."
+      ],
+      "title": "Representation-theory and coset-state laboratory",
+      "why_it_matters": "Nonabelian HSP, GI, and code equivalence require irreps, coset states, and collective measurements, not qubit-level BFS."
+    },
+    {
+      "category": "experiment",
+      "dependencies": [
+        "finite abelian group library",
+        "phase-state simulator",
+        "sieve optimizer"
+      ],
+      "difficulty": "High",
+      "expected_breakthrough_lift": 9.0,
+      "falsifying_evidence": [
+        "Sieve scaling matches Kuperberg/Regev with no structural improvement.",
+        "A classical correlation attack recovers the shift."
+      ],
+      "id": "IMP-HSHIFT-SIEVE",
+      "implementation_status": "Partially supported by hidden_shift_metrics and new Gowers/derivative tests.",
+      "likely_failure_modes": [
+        "Structured families are classically easy.",
+        "Generic subset-sum hardness reappears."
+      ],
+      "title": "Hidden-shift and dihedral phase-state sieve workbench",
+      "why_it_matters": "This is one of the few frontier zones with a known subexponential quantum algorithm and lattice implications."
+    },
+    {
+      "category": "query complexity",
+      "dependencies": [
+        "CVXPY or MOSEK",
+        "span-program compiler",
+        "Boolean function family generator"
+      ],
+      "difficulty": "High",
+      "expected_breakthrough_lift": 8.8,
+      "falsifying_evidence": [
+        "Witnesses do not generalize across n.",
+        "No explicit problem family survives the proof-obligation gate."
+      ],
+      "id": "IMP-ADVERSARY-SPAN",
+      "implementation_status": "Not implemented; should replace most oracle-circuit search.",
+      "likely_failure_modes": [
+        "Only produces oracle separations.",
+        "SDPs scale poorly and yield uninterpretable witnesses."
+      ],
+      "title": "Adversary-bound SDP and span-program synthesizer",
+      "why_it_matters": "Span programs convert query lower-bound structure into algorithms; this is a principled alternative to random circuit search."
+    },
+    {
+      "category": "proof workflow",
+      "dependencies": [
+        "SAT/SMT",
+        "SymPy/Sage",
+        "finite model generators"
+      ],
+      "difficulty": "High",
+      "expected_breakthrough_lift": 8.5,
+      "falsifying_evidence": [
+        "Conjectures lack formal predicates.",
+        "No generated counterexample changes a research lead."
+      ],
+      "id": "IMP-COUNTEREXAMPLE-ENGINE",
+      "implementation_status": "Not implemented.",
+      "likely_failure_modes": [
+        "Search spaces are too arbitrary.",
+        "Counterexamples do not scale or teach structure."
+      ],
+      "title": "Conjecture and counterexample engine",
+      "why_it_matters": "Research progress often comes from killing false conjectures cheaply and finding the exact boundary of a phenomenon."
+    },
+    {
+      "category": "quantum information",
+      "dependencies": [
+        "quimb or opt_einsum",
+        "representation labels",
+        "optimization backend"
+      ],
+      "difficulty": "Extreme",
+      "expected_breakthrough_lift": 8.4,
+      "falsifying_evidence": [
+        "No polynomial-bond ansatz separates hard instances.",
+        "Success relies on memorizing small instances."
+      ],
+      "id": "IMP-TENSOR-MEASUREMENTS",
+      "implementation_status": "Not implemented.",
+      "likely_failure_modes": [
+        "Bond dimension grows exponentially.",
+        "Optimized measurement has no clean mathematical description."
+      ],
+      "title": "Tensor-network search for multi-register measurements",
+      "why_it_matters": "Known barriers suggest single-register sampling is too weak; tensor networks are the plausible classical tool for exploring collective measurements."
+    },
+    {
+      "category": "evaluation",
+      "dependencies": [
+        "classical algorithm registry",
+        "complexity annotations",
+        "randomized estimator library"
+      ],
+      "difficulty": "Medium",
+      "expected_breakthrough_lift": 8.3,
+      "falsifying_evidence": [
+        "A claimed speedup survives only against brute force.",
+        "Classical randomized estimators match the proposed quantum invariant."
+      ],
+      "id": "IMP-CLASSICAL-BASELINE",
+      "implementation_status": "Specified in proof obligations; checker not yet implemented.",
+      "likely_failure_modes": [
+        "Baselines are incomplete.",
+        "The checker rejects speculative leads without proof."
+      ],
+      "title": "Classical baseline and dequantization checker",
+      "why_it_matters": "Most false quantum speedups hide in weak baselines, data loading, or low-rank dequantization."
+    },
+    {
+      "category": "harmonic analysis",
+      "dependencies": [
+        "finite fields",
+        "fast transforms",
+        "property-testing datasets"
+      ],
+      "difficulty": "Medium",
+      "expected_breakthrough_lift": 8.1,
+      "falsifying_evidence": [
+        "Derivative spectra are sparse only for classically learnable families."
+      ],
+      "id": "IMP-GOWERS-HARMONIC",
+      "implementation_status": "Implemented exact small-instance U^k and derivative spectrum metrics.",
+      "likely_failure_modes": [
+        "Only rediscovers known quadratic cases.",
+        "High Gowers norm correlates with classical learnability."
+      ],
+      "title": "Higher-order Fourier and Gowers-uniformity testbed",
+      "why_it_matters": "Large-Gowers-norm hidden shift algorithms show that higher-order harmonic analysis can be a real algorithmic handle."
+    },
+    {
+      "category": "number theory",
+      "dependencies": [
+        "SageMath",
+        "PARI/GP",
+        "lattice reduction",
+        "reversible arithmetic cost model"
+      ],
+      "difficulty": "Extreme",
+      "expected_breakthrough_lift": 8.0,
+      "falsifying_evidence": [
+        "Period ridges require exponential precision.",
+        "No reduction to a hard lattice problem is found."
+      ],
+      "id": "IMP-LATTICE-INFRASTRUCTURE",
+      "implementation_status": "Not implemented.",
+      "likely_failure_modes": [
+        "Maps are not efficiently reversible.",
+        "Classical lattice reduction exploits the same structure."
+      ],
+      "title": "Lattice and algebraic-number-theory periodicity workbench",
+      "why_it_matters": "Hallgren/Regev-style ideas show hidden periodicity in number theory is one of the best places to hunt."
+    },
+    {
+      "category": "linear algebra",
+      "dependencies": [
+        "matrix access model schema",
+        "polynomial approximation tools",
+        "classical randomized baseline"
+      ],
+      "difficulty": "High",
+      "expected_breakthrough_lift": 7.7,
+      "falsifying_evidence": [
+        "No candidate invariant survives data-loading and dequantization checks."
+      ],
+      "id": "IMP-QSVT-COST-CALCULUS",
+      "implementation_status": "Not implemented.",
+      "likely_failure_modes": [
+        "Focus drifts to incremental primitive optimization.",
+        "Input model assumptions dominate everything."
+      ],
+      "title": "QSVT/block-encoding cost calculus",
+      "why_it_matters": "QSVT is powerful but dangerous: many apparent speedups disappear once encoding and precision are counted."
+    },
+    {
+      "category": "hypothesis generation",
+      "dependencies": [
+        "literature KG",
+        "LLM hypothesis generator",
+        "red-team verifier"
+      ],
+      "difficulty": "High",
+      "expected_breakthrough_lift": 7.6,
+      "falsifying_evidence": [
+        "Generated analogies cannot state proof obligations or falsifiers."
+      ],
+      "id": "IMP-TECHNIQUE-RECOMBINATION",
+      "implementation_status": "Not implemented.",
+      "likely_failure_modes": [
+        "Produces plausible nonsense.",
+        "Recombinations ignore theorem assumptions."
+      ],
+      "title": "Cross-paper technique recombination engine",
+      "why_it_matters": "The system should ask questions like: can the proof trick from hidden shift apply to code equivalence?"
+    },
+    {
+      "category": "mathematics",
+      "dependencies": [
+        "SMT",
+        "Lean",
+        "Sage",
+        "domain schemas"
+      ],
+      "difficulty": "Extreme",
+      "expected_breakthrough_lift": 7.5,
+      "falsifying_evidence": [
+        "No nontrivial reduction can be machine-checked on finite models."
+      ],
+      "id": "IMP-REDUCTION-MINER",
+      "implementation_status": "Not implemented.",
+      "likely_failure_modes": [
+        "Formalizing domains costs more than the search.",
+        "Generated reductions are too weak or circular."
+      ],
+      "title": "Reduction miner using symbolic unification",
+      "why_it_matters": "A new reduction can be as valuable as a new circuit; reductions define what a breakthrough would affect."
+    },
+    {
+      "category": "validation",
+      "dependencies": [
+        "canonical instances",
+        "expected structural signatures",
+        "negative tests"
+      ],
+      "difficulty": "Medium",
+      "expected_breakthrough_lift": 7.3,
+      "falsifying_evidence": [
+        "The engine scores toy BV variants higher than known frontier problems."
+      ],
+      "id": "IMP-KNOWN-ALGO-REGRESSION",
+      "implementation_status": "Partially implemented through audit diagnostics; benchmark suite still needed.",
+      "likely_failure_modes": [
+        "Benchmarks reward imitation over novelty.",
+        "Negative tests are too narrow."
+      ],
+      "title": "Benchmark suite of known algorithms and no-go barriers",
+      "why_it_matters": "A discovery engine must rediscover Shor/Simon/Hallgren mechanisms and fail on known-dead strategies before being trusted."
+    },
+    {
+      "category": "workflow",
+      "dependencies": [
+        "LLM",
+        "structured schemas",
+        "critique prompts",
+        "literature KG"
+      ],
+      "difficulty": "Medium",
+      "expected_breakthrough_lift": 7.1,
+      "falsifying_evidence": [
+        "Claims are not linked to papers, reductions, or experiments."
+      ],
+      "id": "IMP-LLM-REDTEAM",
+      "implementation_status": "Not implemented; old Theorist/Analyzer should be deleted rather than extended.",
+      "likely_failure_modes": [
+        "Agents converge on fashionable buzzwords.",
+        "Critique is rhetorical rather than mathematical."
+      ],
+      "title": "Multi-agent hypothesis generation with adversarial review",
+      "why_it_matters": "LLMs are useful for breadth, but only with red-team critique and hard gates."
+    },
+    {
+      "category": "automation",
+      "dependencies": [
+        "DSL for algorithms",
+        "typed transformations",
+        "symbolic executor"
+      ],
+      "difficulty": "High",
+      "expected_breakthrough_lift": 6.9,
+      "falsifying_evidence": [
+        "Synthesized schema lacks a proof path or scalable invariant."
+      ],
+      "id": "IMP-SCHEMA-PROGRAM-SYNTHESIS",
+      "implementation_status": "Not implemented.",
+      "likely_failure_modes": [
+        "DSL misses the next paradigm.",
+        "Search still overfits tiny examples."
+      ],
+      "title": "Program synthesis over algorithm schemas, not gate sequences",
+      "why_it_matters": "Searching over QFT/phase-estimation/walk/QSVT schemas has far higher ceiling than raw gates."
+    },
+    {
+      "category": "experiment",
+      "dependencies": [
+        "experiment database",
+        "statistical model fitting"
+      ],
+      "difficulty": "Medium",
+      "expected_breakthrough_lift": 6.8,
+      "falsifying_evidence": [
+        "Positive signals disappear under larger generated families."
+      ],
+      "id": "IMP-SCALING-BAYES",
+      "implementation_status": "Not implemented.",
+      "likely_failure_modes": [
+        "Small-n data remains misleading.",
+        "Wrong model class gives false optimism."
+      ],
+      "title": "Scaling-law experiment manager with Bayesian model comparison",
+      "why_it_matters": "Finite experiments matter only if they compare asymptotic hypotheses and fail fast."
+    },
+    {
+      "category": "proof workflow",
+      "dependencies": [
+        "Lean",
+        "SQIR/QWIRE",
+        "linear algebra libraries"
+      ],
+      "difficulty": "Extreme",
+      "expected_breakthrough_lift": 6.7,
+      "falsifying_evidence": [
+        "Only trivial circuits can be verified."
+      ],
+      "id": "IMP-FORMAL-VERIFY",
+      "implementation_status": "Not implemented.",
+      "likely_failure_modes": [
+        "Formalization overhead overwhelms ideation.",
+        "Proof assistant libraries lack required mathematics."
+      ],
+      "title": "Formal verification path for candidate algorithms",
+      "why_it_matters": "A serious system should eventually prove circuit identities and reductions, not trust prose."
+    },
+    {
+      "category": "experiment",
+      "dependencies": [
+        "graph generators",
+        "spectral tools",
+        "conductance estimators"
+      ],
+      "difficulty": "High",
+      "expected_breakthrough_lift": 6.6,
+      "falsifying_evidence": [
+        "Gap-overlap product never beats amplitude amplification."
+      ],
+      "id": "IMP-WALK-GEOMETRY",
+      "implementation_status": "Basic spectral metric exists; full analyzer not implemented.",
+      "likely_failure_modes": [
+        "Spectral proxies do not imply implementable walks.",
+        "Classical walks improve similarly."
+      ],
+      "title": "Quantum-walk geometry analyzer",
+      "why_it_matters": "Walk algorithms need geometry; this checks whether state spaces beat Grover before algorithm design."
+    },
+    {
+      "category": "mathematics",
+      "dependencies": [
+        "SageMath",
+        "finite fields",
+        "algebraic curves"
+      ],
+      "difficulty": "High",
+      "expected_breakthrough_lift": 6.5,
+      "falsifying_evidence": [
+        "No family passes classical-baseline and proof-obligation gates."
+      ],
+      "id": "IMP-FINITE-FIELD-FAMILIES",
+      "implementation_status": "Not implemented.",
+      "likely_failure_modes": [
+        "Families are classically easy.",
+        "Generated structures have no hard baseline."
+      ],
+      "title": "Finite-field and algebraic-geometry family generator",
+      "why_it_matters": "Explicit families are the raw material for hidden shift, property testing, and code-equivalence experiments."
+    },
+    {
+      "category": "benchmarks",
+      "dependencies": [
+        "Magma/Sage/GAP",
+        "nauty/traces",
+        "coding theory library"
+      ],
+      "difficulty": "High",
+      "expected_breakthrough_lift": 6.4,
+      "falsifying_evidence": [
+        "Classical canonicalization solves all generated families quickly."
+      ],
+      "id": "IMP-CODE-GI-INSTANCES",
+      "implementation_status": "Not implemented.",
+      "likely_failure_modes": [
+        "Generated instances are easy for classical tools.",
+        "Automorphism promises remove hardness."
+      ],
+      "title": "Hard instance generators for code equivalence and graph isomorphism",
+      "why_it_matters": "Without hard families, coset-state experiments are meaningless."
+    },
+    {
+      "category": "repo hygiene",
+      "dependencies": [],
+      "difficulty": "Low",
+      "expected_breakthrough_lift": 6.2,
+      "falsifying_evidence": [
+        "Any future run produces unsupported speedup claims again."
+      ],
+      "id": "IMP-DELETE-LEGACY-LOOP",
+      "implementation_status": "Recommended; root entrypoint already bypasses it, files still present for now.",
+      "likely_failure_modes": [
+        "Losing a small sanity-check tool.",
+        "Deletion hides historical mistakes instead of documenting them."
+      ],
+      "title": "Delete the old tiny-circuit LLM loop",
+      "why_it_matters": "It actively creates false confidence and should not remain a first-class path."
+    },
+    {
+      "category": "repo hygiene",
+      "dependencies": [],
+      "difficulty": "Low",
+      "expected_breakthrough_lift": 6.0,
+      "falsifying_evidence": [
+        "Dashboard presents them as successes."
+      ],
+      "id": "IMP-QUARANTINE-RESULTS",
+      "implementation_status": "Partially done through dashboard relabeling; physical quarantine still pending.",
+      "likely_failure_modes": [
+        "Historical data may be accidentally treated as discoveries.",
+        "Deleting loses negative training data."
+      ],
+      "title": "Quarantine legacy result corpus as negative examples",
+      "why_it_matters": "The old outputs are useful only as anti-examples for the proof gate."
+    },
+    {
+      "category": "safety/evaluation",
+      "dependencies": [
+        "restricted interpreter",
+        "AST validator"
+      ],
+      "difficulty": "Medium",
+      "expected_breakthrough_lift": 5.8,
+      "falsifying_evidence": [
+        "Generated code still controls evaluation without typed semantics."
+      ],
+      "id": "IMP-SANDBOX-GENERATED-CODE",
+      "implementation_status": "Not implemented; best resolved by deleting legacy simulator.",
+      "likely_failure_modes": [
+        "Sandbox engineering distracts from research.",
+        "Better answer is to delete the code path."
+      ],
+      "title": "Sandbox or eliminate generated Python execution",
+      "why_it_matters": "The current `exec` path is unsafe and scientifically noisy."
+    },
+    {
+      "category": "workflow",
+      "dependencies": [],
+      "difficulty": "Low",
+      "expected_breakthrough_lift": 5.5,
+      "falsifying_evidence": [
+        "Dashboard metrics drive decisions instead of proof obligations."
+      ],
+      "id": "IMP-REMOVE-DASHBOARD",
+      "implementation_status": "Recommended; wording changed but file remains.",
+      "likely_failure_modes": [
+        "Loses lightweight visibility into runs.",
+        "A research log still needs a readable surface."
+      ],
+      "title": "Remove web dashboard as a central artifact",
+      "why_it_matters": "The dashboard incentivizes demos and status optics instead of research progress."
+    },
+    {
+      "category": "workflow",
+      "dependencies": [
+        "issue templates",
+        "review rubric",
+        "research notebook"
+      ],
+      "difficulty": "Medium",
+      "expected_breakthrough_lift": 5.4,
+      "falsifying_evidence": [
+        "Rejected ideas keep returning without new evidence."
+      ],
+      "id": "IMP-HUMAN-REVIEW",
+      "implementation_status": "Not implemented.",
+      "likely_failure_modes": [
+        "Becomes bureaucratic.",
+        "Reviews are not tied to experiments."
+      ],
+      "title": "Expert review workflow with decision logs",
+      "why_it_matters": "Breakthrough odds rise when machine-generated hypotheses are aggressively reviewed by humans with field context."
+    },
+    {
+      "category": "workflow",
+      "dependencies": [
+        "structured failures",
+        "literature links"
+      ],
+      "difficulty": "Medium",
+      "expected_breakthrough_lift": 5.2,
+      "falsifying_evidence": [
+        "The same toy-oracle or no-go-barrier mistake recurs."
+      ],
+      "id": "IMP-NEGATIVE-RESULTS",
+      "implementation_status": "Partially represented by ontology barriers.",
+      "likely_failure_modes": [
+        "Negative results overgeneralize and block creativity."
+      ],
+      "title": "Negative-result database",
+      "why_it_matters": "Avoiding repeated dead ends is a direct expected-value gain."
+    },
+    {
+      "category": "literature",
+      "dependencies": [
+        "arXiv API",
+        "scheduler",
+        "deduplication"
+      ],
+      "difficulty": "Medium",
+      "expected_breakthrough_lift": 5.0,
+      "falsifying_evidence": [
+        "New relevant papers are absent from the knowledge graph for months."
+      ],
+      "id": "IMP-ARXIV-MONITOR",
+      "implementation_status": "Static seeds implemented; recurring automation not implemented.",
+      "likely_failure_modes": [
+        "Noise from irrelevant papers overwhelms signal.",
+        "Summaries are shallow."
+      ],
+      "title": "Recurring arXiv monitor for quantum algorithms",
+      "why_it_matters": "Current literature can change frontier priorities; the project should notice automatically."
+    },
+    {
+      "category": "experiment",
+      "dependencies": [
+        "linear algebra",
+        "graph/code generators",
+        "classical estimators"
+      ],
+      "difficulty": "High",
+      "expected_breakthrough_lift": 4.8,
+      "falsifying_evidence": [
+        "Classical trace estimators match quantum access-model cost."
+      ],
+      "id": "IMP-RANDOM-MATRIX-INVARIANTS",
+      "implementation_status": "Not implemented.",
+      "likely_failure_modes": [
+        "Produces dequantized invariants.",
+        "Separates only easy instances."
+      ],
+      "title": "Random-matrix and spectral invariant search",
+      "why_it_matters": "May reveal separations for isomorphism-like problems, but many invariants are classically estimable."
+    },
+    {
+      "category": "cost model",
+      "dependencies": [
+        "resource estimation library"
+      ],
+      "difficulty": "Medium",
+      "expected_breakthrough_lift": 4.2,
+      "falsifying_evidence": [
+        "Used to rank ideas before proof obligations are met."
+      ],
+      "id": "IMP-RESOURCE-ESTIMATOR",
+      "implementation_status": "Not implemented.",
+      "likely_failure_modes": [
+        "Optimizes constants too early.",
+        "Distracts from asymptotic mechanism."
+      ],
+      "title": "Fault-tolerant resource estimator",
+      "why_it_matters": "Useful after a real candidate exists; not a primary discovery driver."
+    }
+  ]
+}

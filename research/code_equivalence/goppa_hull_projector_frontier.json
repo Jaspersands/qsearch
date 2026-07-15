@@ -1,0 +1,1306 @@
+{
+  "claim_gate": {
+    "classical_superpolynomial_lower_bound_proved": false,
+    "code_native_hard_pair_survives": false,
+    "explicit_public_generators_available": true,
+    "gi_reduction_is_polynomial_gi_solver": false,
+    "nonabelian_measurement_necessity_proved": false,
+    "reason": "Public trivial-hull generators expose a basis-independent projector reduction. Polynomial invariant mismatches reject code equivalence; collisions only transfer debt to graph isomorphism.",
+    "speedup_claim_allowed": false,
+    "trivial_hull_projector_reduction_legal": true,
+    "wl_hash_collision_is_hardness_evidence": false,
+    "wl_hash_mismatch_is_polynomial_nonequivalence_certificate": true
+  },
+  "created_at": "2026-07-15T09:36:57.907434+00:00",
+  "falsifiers_triggered": [
+    "A trivial-hull public generator exposes the exact basis-independent projector reduction.",
+    "Different loop/degree/WL projector signatures prove nonequivalence in polynomial time.",
+    "A verified projector-graph mapping proves the row is equivalent rather than hard.",
+    "A projector signature collision only transfers the row to graph-isomorphism debt.",
+    "A finite exact matcher timeout is not a classical lower bound or quantum signal."
+  ],
+  "headline_metrics": {
+    "classical_superpolynomial_lower_bound_count": 0,
+    "code_native_hard_pair_count": 0,
+    "control_failure_count": 0,
+    "control_inapplicable_count": 2,
+    "equivalent_or_automorphic_count": 0,
+    "exact_graph_rejection_count": 0,
+    "family_count": 3,
+    "frontier_pair_count": 1,
+    "instance_count": 13,
+    "known_permutation_control_count": 3,
+    "nonabelian_measurement_necessity_proof_count": 0,
+    "polynomial_projector_rejection_count": 1,
+    "projector_proof_debt_count": 0,
+    "trivial_hull_certificate_count": 4
+  },
+  "records": [
+    {
+      "control_audits": [
+        {
+          "both_trivial_hull_certified": false,
+          "family_id": "goppa-scale-m6-t3-n48",
+          "graph_match": null,
+          "id": "goppa-scale-m6-t3-n48-known-permutation-projector-control",
+          "interpretation": "The known equivalent control has nontrivial hull, so the direct projector theorem is inapplicable rather than failed.",
+          "known_equivalent": true,
+          "left_id": "goppa-scale-m6-t3-n48-code-0",
+          "polynomial_signatures_match": null,
+          "prior_status": null,
+          "right_id": "goppa-scale-m6-t3-n48-code-0-permuted",
+          "status": "equivalent-control-projector-inapplicable-nontrivial-hull"
+        }
+      ],
+      "equivalent_or_automorphic_count": 0,
+      "exact_graph_rejection_count": 0,
+      "family_id": "goppa-scale-m6-t3-n48",
+      "frontier_pair_count": 0,
+      "instances": [
+        {
+          "certificate": {
+            "available": false,
+            "basis_invariant": false,
+            "hull_dimension": 1,
+            "idempotent": false,
+            "image_contains_generator_rows": false,
+            "interpretation": "The Euclidean Gram matrix is singular. Use the source-linked shortening reduction or another inner product; do not apply the trivial-hull projector theorem.",
+            "rank_matches_code": false,
+            "status": "nontrivial-hull-projector-unavailable",
+            "symmetric": false
+          },
+          "instance_id": "goppa-scale-m6-t3-n48-code-0",
+          "signature": null
+        },
+        {
+          "certificate": {
+            "available": false,
+            "basis_invariant": false,
+            "hull_dimension": 1,
+            "idempotent": false,
+            "image_contains_generator_rows": false,
+            "interpretation": "The Euclidean Gram matrix is singular. Use the source-linked shortening reduction or another inner product; do not apply the trivial-hull projector theorem.",
+            "rank_matches_code": false,
+            "status": "nontrivial-hull-projector-unavailable",
+            "symmetric": false
+          },
+          "instance_id": "goppa-scale-m6-t3-n48-code-1",
+          "signature": null
+        },
+        {
+          "certificate": {
+            "available": false,
+            "basis_invariant": false,
+            "hull_dimension": 1,
+            "idempotent": false,
+            "image_contains_generator_rows": false,
+            "interpretation": "The Euclidean Gram matrix is singular. Use the source-linked shortening reduction or another inner product; do not apply the trivial-hull projector theorem.",
+            "rank_matches_code": false,
+            "status": "nontrivial-hull-projector-unavailable",
+            "symmetric": false
+          },
+          "instance_id": "goppa-scale-m6-t3-n48-code-2",
+          "signature": null
+        },
+        {
+          "certificate": {
+            "available": true,
+            "basis_invariant": true,
+            "hull_dimension": 0,
+            "idempotent": true,
+            "image_contains_generator_rows": true,
+            "interpretation": "The basis-independent symmetric idempotent has image equal to the code.",
+            "rank_matches_code": true,
+            "status": "trivial-hull-projector-certified",
+            "symmetric": true
+          },
+          "instance_id": "goppa-scale-m6-t3-n48-code-3",
+          "signature": {
+            "degree_histogram": [
+              [
+                16,
+                3
+              ],
+              [
+                18,
+                5
+              ],
+              [
+                20,
+                7
+              ],
+              [
+                22,
+                5
+              ],
+              [
+                24,
+                10
+              ],
+              [
+                26,
+                11
+              ],
+              [
+                28,
+                4
+              ],
+              [
+                30,
+                3
+              ]
+            ],
+            "length": 48,
+            "loop_degree_histogram": [
+              [
+                32,
+                1
+              ],
+              [
+                33,
+                2
+              ],
+              [
+                36,
+                2
+              ],
+              [
+                37,
+                3
+              ],
+              [
+                40,
+                4
+              ],
+              [
+                41,
+                3
+              ],
+              [
+                44,
+                4
+              ],
+              [
+                45,
+                1
+              ],
+              [
+                48,
+                1
+              ],
+              [
+                49,
+                9
+              ],
+              [
+                52,
+                2
+              ],
+              [
+                53,
+                9
+              ],
+              [
+                56,
+                1
+              ],
+              [
+                57,
+                3
+              ],
+              [
+                60,
+                3
+              ]
+            ],
+            "loop_weight_count": 30,
+            "wl_hash": "3ee6d735b0b6f0dc4816c02cbe2e237b",
+            "wl_iterations": 8
+          }
+        },
+        {
+          "certificate": {
+            "available": true,
+            "basis_invariant": true,
+            "hull_dimension": 0,
+            "idempotent": true,
+            "image_contains_generator_rows": true,
+            "interpretation": "The basis-independent symmetric idempotent has image equal to the code.",
+            "rank_matches_code": true,
+            "status": "trivial-hull-projector-certified",
+            "symmetric": true
+          },
+          "instance_id": "goppa-scale-m6-t3-n48-code-4",
+          "signature": {
+            "degree_histogram": [
+              [
+                16,
+                2
+              ],
+              [
+                18,
+                4
+              ],
+              [
+                20,
+                5
+              ],
+              [
+                22,
+                12
+              ],
+              [
+                24,
+                11
+              ],
+              [
+                26,
+                4
+              ],
+              [
+                28,
+                7
+              ],
+              [
+                30,
+                2
+              ],
+              [
+                32,
+                1
+              ]
+            ],
+            "length": 48,
+            "loop_degree_histogram": [
+              [
+                32,
+                1
+              ],
+              [
+                33,
+                1
+              ],
+              [
+                36,
+                2
+              ],
+              [
+                37,
+                2
+              ],
+              [
+                40,
+                3
+              ],
+              [
+                41,
+                2
+              ],
+              [
+                44,
+                5
+              ],
+              [
+                45,
+                7
+              ],
+              [
+                48,
+                5
+              ],
+              [
+                49,
+                6
+              ],
+              [
+                52,
+                3
+              ],
+              [
+                53,
+                1
+              ],
+              [
+                56,
+                5
+              ],
+              [
+                57,
+                2
+              ],
+              [
+                60,
+                1
+              ],
+              [
+                61,
+                1
+              ],
+              [
+                64,
+                1
+              ]
+            ],
+            "loop_weight_count": 22,
+            "wl_hash": "5f08a83d5aafb75e688a6f4ac8be5641",
+            "wl_iterations": 8
+          }
+        },
+        {
+          "certificate": {
+            "available": false,
+            "basis_invariant": false,
+            "hull_dimension": 2,
+            "idempotent": false,
+            "image_contains_generator_rows": false,
+            "interpretation": "The Euclidean Gram matrix is singular. Use the source-linked shortening reduction or another inner product; do not apply the trivial-hull projector theorem.",
+            "rank_matches_code": false,
+            "status": "nontrivial-hull-projector-unavailable",
+            "symmetric": false
+          },
+          "instance_id": "goppa-scale-m6-t3-n48-code-5",
+          "signature": null
+        }
+      ],
+      "interpretation": "Earlier scalable invariants already resolved every audited pair in this family.",
+      "pair_audits": [
+        {
+          "both_trivial_hull_certified": false,
+          "family_id": "goppa-scale-m6-t3-n48",
+          "graph_match": null,
+          "id": "goppa-scale-m6-t3-n48-0-2",
+          "interpretation": "A prior exact scalable invariant already rejects this pair; projector applicability does not reopen it.",
+          "known_equivalent": false,
+          "left_id": "goppa-scale-m6-t3-n48-code-0",
+          "polynomial_signatures_match": null,
+          "prior_status": "rejected-by-scalable-goppa-invariant",
+          "right_id": "goppa-scale-m6-t3-n48-code-2",
+          "status": "prior-classical-rejection-preserved-projector-inapplicable"
+        },
+        {
+          "both_trivial_hull_certified": true,
+          "family_id": "goppa-scale-m6-t3-n48",
+          "graph_match": null,
+          "id": "goppa-scale-m6-t3-n48-3-4",
+          "interpretation": "The basis-independent projector graphs have different loop/degree/WL signatures, proving code nonequivalence in polynomial time.",
+          "known_equivalent": false,
+          "left_id": "goppa-scale-m6-t3-n48-code-3",
+          "polynomial_signatures_match": false,
+          "prior_status": "rejected-by-scalable-goppa-invariant",
+          "right_id": "goppa-scale-m6-t3-n48-code-4",
+          "status": "rejected-by-polynomial-goppa-projector-invariant"
+        },
+        {
+          "both_trivial_hull_certified": false,
+          "family_id": "goppa-scale-m6-t3-n48",
+          "graph_match": null,
+          "id": "goppa-scale-m6-t3-n48-0-1",
+          "interpretation": "A prior exact scalable invariant already rejects this pair; projector applicability does not reopen it.",
+          "known_equivalent": false,
+          "left_id": "goppa-scale-m6-t3-n48-code-0",
+          "polynomial_signatures_match": null,
+          "prior_status": "rejected-by-scalable-goppa-invariant",
+          "right_id": "goppa-scale-m6-t3-n48-code-1",
+          "status": "prior-classical-rejection-preserved-projector-inapplicable"
+        },
+        {
+          "both_trivial_hull_certified": false,
+          "family_id": "goppa-scale-m6-t3-n48",
+          "graph_match": null,
+          "id": "goppa-scale-m6-t3-n48-0-3",
+          "interpretation": "A prior exact scalable invariant already rejects this pair; projector applicability does not reopen it.",
+          "known_equivalent": false,
+          "left_id": "goppa-scale-m6-t3-n48-code-0",
+          "polynomial_signatures_match": null,
+          "prior_status": "rejected-by-scalable-goppa-invariant",
+          "right_id": "goppa-scale-m6-t3-n48-code-3",
+          "status": "prior-classical-rejection-preserved-projector-inapplicable"
+        },
+        {
+          "both_trivial_hull_certified": false,
+          "family_id": "goppa-scale-m6-t3-n48",
+          "graph_match": null,
+          "id": "goppa-scale-m6-t3-n48-0-4",
+          "interpretation": "A prior exact scalable invariant already rejects this pair; projector applicability does not reopen it.",
+          "known_equivalent": false,
+          "left_id": "goppa-scale-m6-t3-n48-code-0",
+          "polynomial_signatures_match": null,
+          "prior_status": "rejected-by-scalable-goppa-invariant",
+          "right_id": "goppa-scale-m6-t3-n48-code-4",
+          "status": "prior-classical-rejection-preserved-projector-inapplicable"
+        },
+        {
+          "both_trivial_hull_certified": false,
+          "family_id": "goppa-scale-m6-t3-n48",
+          "graph_match": null,
+          "id": "goppa-scale-m6-t3-n48-0-5",
+          "interpretation": "A prior exact scalable invariant already rejects this pair; projector applicability does not reopen it.",
+          "known_equivalent": false,
+          "left_id": "goppa-scale-m6-t3-n48-code-0",
+          "polynomial_signatures_match": null,
+          "prior_status": "rejected-by-scalable-goppa-invariant",
+          "right_id": "goppa-scale-m6-t3-n48-code-5",
+          "status": "prior-classical-rejection-preserved-projector-inapplicable"
+        }
+      ],
+      "polynomial_projector_rejection_count": 0,
+      "projector_proof_debt_count": 0,
+      "status": "no-unresolved-goppa-projector-frontier-pair"
+    },
+    {
+      "control_audits": [
+        {
+          "both_trivial_hull_certified": false,
+          "family_id": "goppa-scale-m7-t3-n96",
+          "graph_match": null,
+          "id": "goppa-scale-m7-t3-n96-known-permutation-projector-control",
+          "interpretation": "The known equivalent control has nontrivial hull, so the direct projector theorem is inapplicable rather than failed.",
+          "known_equivalent": true,
+          "left_id": "goppa-scale-m7-t3-n96-code-0",
+          "polynomial_signatures_match": null,
+          "prior_status": null,
+          "right_id": "goppa-scale-m7-t3-n96-code-0-permuted",
+          "status": "equivalent-control-projector-inapplicable-nontrivial-hull"
+        }
+      ],
+      "equivalent_or_automorphic_count": 0,
+      "exact_graph_rejection_count": 0,
+      "family_id": "goppa-scale-m7-t3-n96",
+      "frontier_pair_count": 0,
+      "instances": [
+        {
+          "certificate": {
+            "available": false,
+            "basis_invariant": false,
+            "hull_dimension": 2,
+            "idempotent": false,
+            "image_contains_generator_rows": false,
+            "interpretation": "The Euclidean Gram matrix is singular. Use the source-linked shortening reduction or another inner product; do not apply the trivial-hull projector theorem.",
+            "rank_matches_code": false,
+            "status": "nontrivial-hull-projector-unavailable",
+            "symmetric": false
+          },
+          "instance_id": "goppa-scale-m7-t3-n96-code-0",
+          "signature": null
+        },
+        {
+          "certificate": {
+            "available": false,
+            "basis_invariant": false,
+            "hull_dimension": 2,
+            "idempotent": false,
+            "image_contains_generator_rows": false,
+            "interpretation": "The Euclidean Gram matrix is singular. Use the source-linked shortening reduction or another inner product; do not apply the trivial-hull projector theorem.",
+            "rank_matches_code": false,
+            "status": "nontrivial-hull-projector-unavailable",
+            "symmetric": false
+          },
+          "instance_id": "goppa-scale-m7-t3-n96-code-1",
+          "signature": null
+        },
+        {
+          "certificate": {
+            "available": false,
+            "basis_invariant": false,
+            "hull_dimension": 1,
+            "idempotent": false,
+            "image_contains_generator_rows": false,
+            "interpretation": "The Euclidean Gram matrix is singular. Use the source-linked shortening reduction or another inner product; do not apply the trivial-hull projector theorem.",
+            "rank_matches_code": false,
+            "status": "nontrivial-hull-projector-unavailable",
+            "symmetric": false
+          },
+          "instance_id": "goppa-scale-m7-t3-n96-code-2",
+          "signature": null
+        },
+        {
+          "certificate": {
+            "available": false,
+            "basis_invariant": false,
+            "hull_dimension": 1,
+            "idempotent": false,
+            "image_contains_generator_rows": false,
+            "interpretation": "The Euclidean Gram matrix is singular. Use the source-linked shortening reduction or another inner product; do not apply the trivial-hull projector theorem.",
+            "rank_matches_code": false,
+            "status": "nontrivial-hull-projector-unavailable",
+            "symmetric": false
+          },
+          "instance_id": "goppa-scale-m7-t3-n96-code-3",
+          "signature": null
+        }
+      ],
+      "interpretation": "Earlier scalable invariants already resolved every audited pair in this family.",
+      "pair_audits": [
+        {
+          "both_trivial_hull_certified": false,
+          "family_id": "goppa-scale-m7-t3-n96",
+          "graph_match": null,
+          "id": "goppa-scale-m7-t3-n96-0-1",
+          "interpretation": "A prior exact scalable invariant already rejects this pair; projector applicability does not reopen it.",
+          "known_equivalent": false,
+          "left_id": "goppa-scale-m7-t3-n96-code-0",
+          "polynomial_signatures_match": null,
+          "prior_status": "rejected-by-scalable-goppa-invariant",
+          "right_id": "goppa-scale-m7-t3-n96-code-1",
+          "status": "prior-classical-rejection-preserved-projector-inapplicable"
+        },
+        {
+          "both_trivial_hull_certified": false,
+          "family_id": "goppa-scale-m7-t3-n96",
+          "graph_match": null,
+          "id": "goppa-scale-m7-t3-n96-0-2",
+          "interpretation": "A prior exact scalable invariant already rejects this pair; projector applicability does not reopen it.",
+          "known_equivalent": false,
+          "left_id": "goppa-scale-m7-t3-n96-code-0",
+          "polynomial_signatures_match": null,
+          "prior_status": "rejected-by-scalable-goppa-invariant",
+          "right_id": "goppa-scale-m7-t3-n96-code-2",
+          "status": "prior-classical-rejection-preserved-projector-inapplicable"
+        },
+        {
+          "both_trivial_hull_certified": false,
+          "family_id": "goppa-scale-m7-t3-n96",
+          "graph_match": null,
+          "id": "goppa-scale-m7-t3-n96-0-3",
+          "interpretation": "A prior exact scalable invariant already rejects this pair; projector applicability does not reopen it.",
+          "known_equivalent": false,
+          "left_id": "goppa-scale-m7-t3-n96-code-0",
+          "polynomial_signatures_match": null,
+          "prior_status": "rejected-by-scalable-goppa-invariant",
+          "right_id": "goppa-scale-m7-t3-n96-code-3",
+          "status": "prior-classical-rejection-preserved-projector-inapplicable"
+        },
+        {
+          "both_trivial_hull_certified": false,
+          "family_id": "goppa-scale-m7-t3-n96",
+          "graph_match": null,
+          "id": "goppa-scale-m7-t3-n96-1-2",
+          "interpretation": "A prior exact scalable invariant already rejects this pair; projector applicability does not reopen it.",
+          "known_equivalent": false,
+          "left_id": "goppa-scale-m7-t3-n96-code-1",
+          "polynomial_signatures_match": null,
+          "prior_status": "rejected-by-scalable-goppa-invariant",
+          "right_id": "goppa-scale-m7-t3-n96-code-2",
+          "status": "prior-classical-rejection-preserved-projector-inapplicable"
+        },
+        {
+          "both_trivial_hull_certified": false,
+          "family_id": "goppa-scale-m7-t3-n96",
+          "graph_match": null,
+          "id": "goppa-scale-m7-t3-n96-1-3",
+          "interpretation": "A prior exact scalable invariant already rejects this pair; projector applicability does not reopen it.",
+          "known_equivalent": false,
+          "left_id": "goppa-scale-m7-t3-n96-code-1",
+          "polynomial_signatures_match": null,
+          "prior_status": "rejected-by-scalable-goppa-invariant",
+          "right_id": "goppa-scale-m7-t3-n96-code-3",
+          "status": "prior-classical-rejection-preserved-projector-inapplicable"
+        },
+        {
+          "both_trivial_hull_certified": false,
+          "family_id": "goppa-scale-m7-t3-n96",
+          "graph_match": null,
+          "id": "goppa-scale-m7-t3-n96-2-3",
+          "interpretation": "A prior exact scalable invariant already rejects this pair; projector applicability does not reopen it.",
+          "known_equivalent": false,
+          "left_id": "goppa-scale-m7-t3-n96-code-2",
+          "polynomial_signatures_match": null,
+          "prior_status": "rejected-by-scalable-goppa-invariant",
+          "right_id": "goppa-scale-m7-t3-n96-code-3",
+          "status": "prior-classical-rejection-preserved-projector-inapplicable"
+        }
+      ],
+      "polynomial_projector_rejection_count": 0,
+      "projector_proof_debt_count": 0,
+      "status": "no-unresolved-goppa-projector-frontier-pair"
+    },
+    {
+      "control_audits": [
+        {
+          "both_trivial_hull_certified": true,
+          "family_id": "goppa-scale-m8-t4-n160",
+          "graph_match": {
+            "cost_model": "O(n^3) GF(2) projector construction plus exact colored VF2. The reduction is polynomial; the bundled graph matcher has no polynomial worst-case guarantee.",
+            "equivalent": true,
+            "evaluated": true,
+            "interpretation": "Recovered a graph isomorphism and verified its coordinate permutation on the complete code row spaces.",
+            "mapping_verified": true,
+            "recovered_coordinate_permutation": [
+              108,
+              31,
+              9,
+              132,
+              87,
+              113,
+              32,
+              21,
+              89,
+              131,
+              125,
+              48,
+              144,
+              64,
+              105,
+              114,
+              88,
+              124,
+              90,
+              84,
+              58,
+              96,
+              99,
+              12,
+              26,
+              41,
+              71,
+              8,
+              52,
+              145,
+              118,
+              72,
+              115,
+              120,
+              134,
+              129,
+              13,
+              77,
+              4,
+              148,
+              85,
+              86,
+              149,
+              1,
+              46,
+              83,
+              54,
+              34,
+              5,
+              43,
+              107,
+              7,
+              103,
+              127,
+              29,
+              91,
+              101,
+              104,
+              117,
+              15,
+              60,
+              10,
+              110,
+              17,
+              76,
+              57,
+              30,
+              157,
+              142,
+              92,
+              51,
+              59,
+              36,
+              143,
+              75,
+              116,
+              35,
+              67,
+              45,
+              93,
+              80,
+              119,
+              53,
+              112,
+              65,
+              140,
+              61,
+              24,
+              97,
+              40,
+              18,
+              82,
+              79,
+              38,
+              42,
+              141,
+              126,
+              94,
+              154,
+              147,
+              135,
+              19,
+              2,
+              44,
+              56,
+              63,
+              122,
+              47,
+              25,
+              121,
+              50,
+              78,
+              150,
+              62,
+              68,
+              20,
+              136,
+              49,
+              102,
+              158,
+              159,
+              100,
+              39,
+              81,
+              95,
+              153,
+              146,
+              0,
+              27,
+              111,
+              22,
+              156,
+              139,
+              151,
+              130,
+              133,
+              69,
+              109,
+              14,
+              6,
+              33,
+              3,
+              98,
+              28,
+              37,
+              137,
+              106,
+              66,
+              138,
+              55,
+              23,
+              74,
+              123,
+              152,
+              73,
+              70,
+              11,
+              16,
+              128,
+              155
+            ],
+            "search_seconds": 0.087307,
+            "status": "projector-graph-equivalence-witness-verified",
+            "timed_out": false,
+            "wl_hash_match": true
+          },
+          "id": "goppa-scale-m8-t4-n160-known-permutation-projector-control",
+          "interpretation": "Known coordinate permutation preserves the projector signature and yields a verified code-space mapping.",
+          "known_equivalent": true,
+          "left_id": "goppa-scale-m8-t4-n160-code-0",
+          "polynomial_signatures_match": true,
+          "prior_status": null,
+          "right_id": "goppa-scale-m8-t4-n160-code-0-permuted",
+          "status": "equivalent-control-goppa-projector-witness-verified"
+        }
+      ],
+      "equivalent_or_automorphic_count": 0,
+      "exact_graph_rejection_count": 0,
+      "family_id": "goppa-scale-m8-t4-n160",
+      "frontier_pair_count": 1,
+      "instances": [
+        {
+          "certificate": {
+            "available": true,
+            "basis_invariant": true,
+            "hull_dimension": 0,
+            "idempotent": true,
+            "image_contains_generator_rows": true,
+            "interpretation": "The basis-independent symmetric idempotent has image equal to the code.",
+            "rank_matches_code": true,
+            "status": "trivial-hull-projector-certified",
+            "symmetric": true
+          },
+          "instance_id": "goppa-scale-m8-t4-n160-code-0",
+          "signature": {
+            "degree_histogram": [
+              [
+                64,
+                1
+              ],
+              [
+                66,
+                5
+              ],
+              [
+                68,
+                7
+              ],
+              [
+                70,
+                8
+              ],
+              [
+                72,
+                10
+              ],
+              [
+                74,
+                14
+              ],
+              [
+                76,
+                17
+              ],
+              [
+                78,
+                22
+              ],
+              [
+                80,
+                13
+              ],
+              [
+                82,
+                20
+              ],
+              [
+                84,
+                18
+              ],
+              [
+                86,
+                12
+              ],
+              [
+                88,
+                8
+              ],
+              [
+                90,
+                3
+              ],
+              [
+                92,
+                2
+              ]
+            ],
+            "length": 160,
+            "loop_degree_histogram": [
+              [
+                128,
+                1
+              ],
+              [
+                132,
+                4
+              ],
+              [
+                133,
+                1
+              ],
+              [
+                136,
+                6
+              ],
+              [
+                137,
+                1
+              ],
+              [
+                140,
+                5
+              ],
+              [
+                141,
+                3
+              ],
+              [
+                144,
+                6
+              ],
+              [
+                145,
+                4
+              ],
+              [
+                148,
+                9
+              ],
+              [
+                149,
+                5
+              ],
+              [
+                152,
+                9
+              ],
+              [
+                153,
+                8
+              ],
+              [
+                156,
+                13
+              ],
+              [
+                157,
+                9
+              ],
+              [
+                160,
+                8
+              ],
+              [
+                161,
+                5
+              ],
+              [
+                164,
+                9
+              ],
+              [
+                165,
+                11
+              ],
+              [
+                168,
+                7
+              ],
+              [
+                169,
+                11
+              ],
+              [
+                172,
+                6
+              ],
+              [
+                173,
+                6
+              ],
+              [
+                176,
+                2
+              ],
+              [
+                177,
+                6
+              ],
+              [
+                180,
+                2
+              ],
+              [
+                181,
+                1
+              ],
+              [
+                184,
+                1
+              ],
+              [
+                185,
+                1
+              ]
+            ],
+            "loop_weight_count": 72,
+            "wl_hash": "316cf3b1928c425ef5893a1fc4242a9a",
+            "wl_iterations": 8
+          }
+        },
+        {
+          "certificate": {
+            "available": false,
+            "basis_invariant": false,
+            "hull_dimension": 1,
+            "idempotent": false,
+            "image_contains_generator_rows": false,
+            "interpretation": "The Euclidean Gram matrix is singular. Use the source-linked shortening reduction or another inner product; do not apply the trivial-hull projector theorem.",
+            "rank_matches_code": false,
+            "status": "nontrivial-hull-projector-unavailable",
+            "symmetric": false
+          },
+          "instance_id": "goppa-scale-m8-t4-n160-code-1",
+          "signature": null
+        },
+        {
+          "certificate": {
+            "available": true,
+            "basis_invariant": true,
+            "hull_dimension": 0,
+            "idempotent": true,
+            "image_contains_generator_rows": true,
+            "interpretation": "The basis-independent symmetric idempotent has image equal to the code.",
+            "rank_matches_code": true,
+            "status": "trivial-hull-projector-certified",
+            "symmetric": true
+          },
+          "instance_id": "goppa-scale-m8-t4-n160-code-2",
+          "signature": {
+            "degree_histogram": [
+              [
+                64,
+                2
+              ],
+              [
+                66,
+                4
+              ],
+              [
+                68,
+                6
+              ],
+              [
+                70,
+                5
+              ],
+              [
+                72,
+                9
+              ],
+              [
+                74,
+                12
+              ],
+              [
+                76,
+                17
+              ],
+              [
+                78,
+                29
+              ],
+              [
+                80,
+                18
+              ],
+              [
+                82,
+                16
+              ],
+              [
+                84,
+                11
+              ],
+              [
+                86,
+                11
+              ],
+              [
+                88,
+                8
+              ],
+              [
+                90,
+                5
+              ],
+              [
+                92,
+                5
+              ],
+              [
+                94,
+                2
+              ]
+            ],
+            "length": 160,
+            "loop_degree_histogram": [
+              [
+                128,
+                1
+              ],
+              [
+                129,
+                1
+              ],
+              [
+                132,
+                4
+              ],
+              [
+                136,
+                2
+              ],
+              [
+                137,
+                4
+              ],
+              [
+                140,
+                4
+              ],
+              [
+                141,
+                1
+              ],
+              [
+                144,
+                3
+              ],
+              [
+                145,
+                6
+              ],
+              [
+                148,
+                7
+              ],
+              [
+                149,
+                5
+              ],
+              [
+                152,
+                6
+              ],
+              [
+                153,
+                11
+              ],
+              [
+                156,
+                14
+              ],
+              [
+                157,
+                15
+              ],
+              [
+                160,
+                10
+              ],
+              [
+                161,
+                8
+              ],
+              [
+                164,
+                7
+              ],
+              [
+                165,
+                9
+              ],
+              [
+                168,
+                4
+              ],
+              [
+                169,
+                7
+              ],
+              [
+                172,
+                6
+              ],
+              [
+                173,
+                5
+              ],
+              [
+                176,
+                3
+              ],
+              [
+                177,
+                5
+              ],
+              [
+                180,
+                4
+              ],
+              [
+                181,
+                1
+              ],
+              [
+                184,
+                3
+              ],
+              [
+                185,
+                2
+              ],
+              [
+                188,
+                2
+              ]
+            ],
+            "loop_weight_count": 80,
+            "wl_hash": "4b246a17995a23a27a296832aa72c4de",
+            "wl_iterations": 8
+          }
+        }
+      ],
+      "interpretation": "All 1 previously unresolved pair(s) are classically rejected or verified equivalent.",
+      "pair_audits": [
+        {
+          "both_trivial_hull_certified": true,
+          "family_id": "goppa-scale-m8-t4-n160",
+          "graph_match": null,
+          "id": "goppa-scale-m8-t4-n160-0-2",
+          "interpretation": "The basis-independent projector graphs have different loop/degree/WL signatures, proving code nonequivalence in polynomial time.",
+          "known_equivalent": false,
+          "left_id": "goppa-scale-m8-t4-n160-code-0",
+          "polynomial_signatures_match": false,
+          "prior_status": "goppa-scaling-baseline-cap-proof-debt",
+          "right_id": "goppa-scale-m8-t4-n160-code-2",
+          "status": "rejected-by-polynomial-goppa-projector-invariant"
+        },
+        {
+          "both_trivial_hull_certified": false,
+          "family_id": "goppa-scale-m8-t4-n160",
+          "graph_match": null,
+          "id": "goppa-scale-m8-t4-n160-0-1",
+          "interpretation": "A prior exact scalable invariant already rejects this pair; projector applicability does not reopen it.",
+          "known_equivalent": false,
+          "left_id": "goppa-scale-m8-t4-n160-code-0",
+          "polynomial_signatures_match": null,
+          "prior_status": "rejected-by-scalable-goppa-invariant",
+          "right_id": "goppa-scale-m8-t4-n160-code-1",
+          "status": "prior-classical-rejection-preserved-projector-inapplicable"
+        },
+        {
+          "both_trivial_hull_certified": false,
+          "family_id": "goppa-scale-m8-t4-n160",
+          "graph_match": null,
+          "id": "goppa-scale-m8-t4-n160-1-2",
+          "interpretation": "A prior exact scalable invariant already rejects this pair; projector applicability does not reopen it.",
+          "known_equivalent": false,
+          "left_id": "goppa-scale-m8-t4-n160-code-1",
+          "polynomial_signatures_match": null,
+          "prior_status": "rejected-by-scalable-goppa-invariant",
+          "right_id": "goppa-scale-m8-t4-n160-code-2",
+          "status": "prior-classical-rejection-preserved-projector-inapplicable"
+        }
+      ],
+      "polynomial_projector_rejection_count": 1,
+      "projector_proof_debt_count": 0,
+      "status": "goppa-projector-frontier-classically-resolved"
+    }
+  ],
+  "source_artifact": "research/code_equivalence/goppa_scaling_frontier.json",
+  "status": "goppa-projector-frontier-resolved-no-code-native-hard-row",
+  "summary": "Applied the trivial-hull projector reduction to 1 scalable Goppa frontier pair(s); resolved=1, remaining proof debt=0.",
+  "theorem": {
+    "basis_independence_proved": true,
+    "domain": "Permutation equivalence of full-rank linear codes; executable workbench specializes to binary codes.",
+    "limitations": [
+      "The theorem reduces code equivalence to graph isomorphism; it does not put GI in polynomial time.",
+      "The executable graph matcher is a finite baseline with no polynomial worst-case guarantee.",
+      "The direct projector requires explicit generator matrices and a trivial hull.",
+      "For nontrivial hulls this module records the source theorem's shortening cost but does not implement all GI calls.",
+      "Random finite hull statistics are not an asymptotic bounded-hull theorem."
+    ],
+    "literature_ids": [
+      "bardet-otmani-saeed-trivial-hull-2019"
+    ],
+    "nontrivial_hull_upper_bound": "O(h n^(omega+h+1) GI(n)) for hull dimension h via shortening.",
+    "permutation_conjugacy_proved": true,
+    "primary_url": "https://arxiv.org/abs/1905.00073",
+    "projector_formula": "Sigma_C = G^T (G G^T)^(-1) G for hull(C)={0}.",
+    "reverse_image_implication_proved": true,
+    "theorem_id": "THM-TRIVIAL-HULL-PCE-TO-WEIGHTED-GI-2019",
+    "theorem_locator": "Theorem 6 for trivial hulls; Proposition 9 and Theorem 10 for shortening nontrivial hulls.",
+    "trivial_hull_reduction_cost": "O(n^omega) field operations plus one weighted graph-isomorphism instance."
+  }
+}

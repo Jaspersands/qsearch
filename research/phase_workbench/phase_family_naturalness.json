@@ -1,0 +1,874 @@
+{
+  "created_at": "2026-07-07T16:12:27.513748+00:00",
+  "families": [
+    "quadratic_chirp",
+    "cubic_chirp",
+    "noisy_cubic_chirp",
+    "kloosterman_trace",
+    "quartic_character",
+    "legendre_symbol",
+    "fp2_quadratic_form",
+    "mm_majority_bent_f2",
+    "bent_quadratic_f2",
+    "masked_quadratic_f2"
+  ],
+  "family_summaries": [
+    {
+      "artificial_record_count": 0,
+      "best_status": "natural-control-needs-baselines",
+      "family_id": "bent_quadratic_f2",
+      "lesson": "Natural enough to study, but not positive evidence without lower bounds and dequantization survival.",
+      "natural_record_count": 4,
+      "tested_n_bits": [
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "artificial_record_count": 0,
+      "best_status": "natural-control-needs-baselines",
+      "family_id": "cubic_chirp",
+      "lesson": "Natural enough to study, but not positive evidence without lower bounds and dequantization survival.",
+      "natural_record_count": 4,
+      "tested_n_bits": [
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "artificial_record_count": 0,
+      "best_status": "natural-control-needs-baselines",
+      "family_id": "fp2_quadratic_form",
+      "lesson": "Natural enough to study, but not positive evidence without lower bounds and dequantization survival.",
+      "natural_record_count": 4,
+      "tested_n_bits": [
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "artificial_record_count": 0,
+      "best_status": "natural-control-needs-baselines",
+      "family_id": "kloosterman_trace",
+      "lesson": "Natural enough to study, but not positive evidence without lower bounds and dequantization survival.",
+      "natural_record_count": 4,
+      "tested_n_bits": [
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "artificial_record_count": 0,
+      "best_status": "natural-control-needs-baselines",
+      "family_id": "legendre_symbol",
+      "lesson": "Natural enough to study, but not positive evidence without lower bounds and dequantization survival.",
+      "natural_record_count": 4,
+      "tested_n_bits": [
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "artificial_record_count": 4,
+      "best_status": "reject-artificial-mask",
+      "family_id": "masked_quadratic_f2",
+      "lesson": "Do not use this family as evidence; hardness may be an artifact of hiding pseudorandomness in the generator.",
+      "natural_record_count": 0,
+      "tested_n_bits": [
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "artificial_record_count": 0,
+      "best_status": "natural-control-needs-baselines",
+      "family_id": "mm_majority_bent_f2",
+      "lesson": "Natural enough to study, but not positive evidence without lower bounds and dequantization survival.",
+      "natural_record_count": 4,
+      "tested_n_bits": [
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "artificial_record_count": 4,
+      "best_status": "reject-artificial-mask",
+      "family_id": "noisy_cubic_chirp",
+      "lesson": "Do not use this family as evidence; hardness may be an artifact of hiding pseudorandomness in the generator.",
+      "natural_record_count": 0,
+      "tested_n_bits": [
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "artificial_record_count": 0,
+      "best_status": "natural-control-needs-baselines",
+      "family_id": "quadratic_chirp",
+      "lesson": "Natural enough to study, but not positive evidence without lower bounds and dequantization survival.",
+      "natural_record_count": 4,
+      "tested_n_bits": [
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "artificial_record_count": 0,
+      "best_status": "natural-control-needs-baselines",
+      "family_id": "quartic_character",
+      "lesson": "Natural enough to study, but not positive evidence without lower bounds and dequantization survival.",
+      "natural_record_count": 4,
+      "tested_n_bits": [
+        5,
+        6,
+        7,
+        8
+      ]
+    }
+  ],
+  "headline_metrics": {
+    "artificial_record_count": 8,
+    "natural_algebraic_record_count": 32,
+    "positive_evidence_record_count": 0,
+    "unsupported_record_count": 0
+  },
+  "id": "PHASE-FAMILY-NATURALNESS-LATEST",
+  "kind": "hidden-shift-phase-family-naturalness",
+  "n_values": [
+    5,
+    6,
+    7,
+    8
+  ],
+  "record_count": 40,
+  "records": [
+    {
+      "description_complexity": "named-algebraic-family",
+      "domain_size": 37,
+      "family_id": "quadratic_chirp",
+      "group": "Z_p",
+      "has_hash_or_mask": false,
+      "has_named_algebraic_structure": true,
+      "has_reduction_hint": false,
+      "n_bits": 5,
+      "naturalness_class": "natural-algebraic-control",
+      "next_action": "Use as a baseline/control and require separate lower-bound or reduction evidence.",
+      "parameters": {
+        "a": 1,
+        "prime": 37
+      },
+      "rejection_reason": "Structured control family; naturalness alone is not positive evidence.",
+      "use_as_positive_evidence": false
+    },
+    {
+      "description_complexity": "named-algebraic-family",
+      "domain_size": 67,
+      "family_id": "quadratic_chirp",
+      "group": "Z_p",
+      "has_hash_or_mask": false,
+      "has_named_algebraic_structure": true,
+      "has_reduction_hint": false,
+      "n_bits": 6,
+      "naturalness_class": "natural-algebraic-control",
+      "next_action": "Use as a baseline/control and require separate lower-bound or reduction evidence.",
+      "parameters": {
+        "a": 1,
+        "prime": 67
+      },
+      "rejection_reason": "Structured control family; naturalness alone is not positive evidence.",
+      "use_as_positive_evidence": false
+    },
+    {
+      "description_complexity": "named-algebraic-family",
+      "domain_size": 131,
+      "family_id": "quadratic_chirp",
+      "group": "Z_p",
+      "has_hash_or_mask": false,
+      "has_named_algebraic_structure": true,
+      "has_reduction_hint": false,
+      "n_bits": 7,
+      "naturalness_class": "natural-algebraic-control",
+      "next_action": "Use as a baseline/control and require separate lower-bound or reduction evidence.",
+      "parameters": {
+        "a": 1,
+        "prime": 131
+      },
+      "rejection_reason": "Structured control family; naturalness alone is not positive evidence.",
+      "use_as_positive_evidence": false
+    },
+    {
+      "description_complexity": "named-algebraic-family",
+      "domain_size": 257,
+      "family_id": "quadratic_chirp",
+      "group": "Z_p",
+      "has_hash_or_mask": false,
+      "has_named_algebraic_structure": true,
+      "has_reduction_hint": false,
+      "n_bits": 8,
+      "naturalness_class": "natural-algebraic-control",
+      "next_action": "Use as a baseline/control and require separate lower-bound or reduction evidence.",
+      "parameters": {
+        "a": 1,
+        "prime": 257
+      },
+      "rejection_reason": "Structured control family; naturalness alone is not positive evidence.",
+      "use_as_positive_evidence": false
+    },
+    {
+      "description_complexity": "named-algebraic-family",
+      "domain_size": 37,
+      "family_id": "cubic_chirp",
+      "group": "Z_p",
+      "has_hash_or_mask": false,
+      "has_named_algebraic_structure": true,
+      "has_reduction_hint": false,
+      "n_bits": 5,
+      "naturalness_class": "natural-algebraic-control",
+      "next_action": "Use as a baseline/control and require separate lower-bound or reduction evidence.",
+      "parameters": {
+        "a": 1,
+        "prime": 37
+      },
+      "rejection_reason": "Structured control family; naturalness alone is not positive evidence.",
+      "use_as_positive_evidence": false
+    },
+    {
+      "description_complexity": "named-algebraic-family",
+      "domain_size": 67,
+      "family_id": "cubic_chirp",
+      "group": "Z_p",
+      "has_hash_or_mask": false,
+      "has_named_algebraic_structure": true,
+      "has_reduction_hint": false,
+      "n_bits": 6,
+      "naturalness_class": "natural-algebraic-control",
+      "next_action": "Use as a baseline/control and require separate lower-bound or reduction evidence.",
+      "parameters": {
+        "a": 1,
+        "prime": 67
+      },
+      "rejection_reason": "Structured control family; naturalness alone is not positive evidence.",
+      "use_as_positive_evidence": false
+    },
+    {
+      "description_complexity": "named-algebraic-family",
+      "domain_size": 131,
+      "family_id": "cubic_chirp",
+      "group": "Z_p",
+      "has_hash_or_mask": false,
+      "has_named_algebraic_structure": true,
+      "has_reduction_hint": false,
+      "n_bits": 7,
+      "naturalness_class": "natural-algebraic-control",
+      "next_action": "Use as a baseline/control and require separate lower-bound or reduction evidence.",
+      "parameters": {
+        "a": 1,
+        "prime": 131
+      },
+      "rejection_reason": "Structured control family; naturalness alone is not positive evidence.",
+      "use_as_positive_evidence": false
+    },
+    {
+      "description_complexity": "named-algebraic-family",
+      "domain_size": 257,
+      "family_id": "cubic_chirp",
+      "group": "Z_p",
+      "has_hash_or_mask": false,
+      "has_named_algebraic_structure": true,
+      "has_reduction_hint": false,
+      "n_bits": 8,
+      "naturalness_class": "natural-algebraic-control",
+      "next_action": "Use as a baseline/control and require separate lower-bound or reduction evidence.",
+      "parameters": {
+        "a": 1,
+        "prime": 257
+      },
+      "rejection_reason": "Structured control family; naturalness alone is not positive evidence.",
+      "use_as_positive_evidence": false
+    },
+    {
+      "description_complexity": "concise-code-but-random-looking-mask",
+      "domain_size": 37,
+      "family_id": "noisy_cubic_chirp",
+      "group": "Z_p",
+      "has_hash_or_mask": true,
+      "has_named_algebraic_structure": true,
+      "has_reduction_hint": false,
+      "n_bits": 5,
+      "naturalness_class": "artificial-hash-or-mask",
+      "next_action": "Reject as positive evidence; replace with a natural family or prove the mask arises from a named hard problem.",
+      "parameters": {
+        "a": 1,
+        "mask_seed": 31,
+        "prime": 37
+      },
+      "rejection_reason": "Apparent hardness depends on a deterministic mask/noise source rather than a natural algebraic problem family or reduction. This can hide a random table inside a concise generator.",
+      "use_as_positive_evidence": false
+    },
+    {
+      "description_complexity": "concise-code-but-random-looking-mask",
+      "domain_size": 67,
+      "family_id": "noisy_cubic_chirp",
+      "group": "Z_p",
+      "has_hash_or_mask": true,
+      "has_named_algebraic_structure": true,
+      "has_reduction_hint": false,
+      "n_bits": 6,
+      "naturalness_class": "artificial-hash-or-mask",
+      "next_action": "Reject as positive evidence; replace with a natural family or prove the mask arises from a named hard problem.",
+      "parameters": {
+        "a": 1,
+        "mask_seed": 31,
+        "prime": 67
+      },
+      "rejection_reason": "Apparent hardness depends on a deterministic mask/noise source rather than a natural algebraic problem family or reduction. This can hide a random table inside a concise generator.",
+      "use_as_positive_evidence": false
+    },
+    {
+      "description_complexity": "concise-code-but-random-looking-mask",
+      "domain_size": 131,
+      "family_id": "noisy_cubic_chirp",
+      "group": "Z_p",
+      "has_hash_or_mask": true,
+      "has_named_algebraic_structure": true,
+      "has_reduction_hint": false,
+      "n_bits": 7,
+      "naturalness_class": "artificial-hash-or-mask",
+      "next_action": "Reject as positive evidence; replace with a natural family or prove the mask arises from a named hard problem.",
+      "parameters": {
+        "a": 1,
+        "mask_seed": 31,
+        "prime": 131
+      },
+      "rejection_reason": "Apparent hardness depends on a deterministic mask/noise source rather than a natural algebraic problem family or reduction. This can hide a random table inside a concise generator.",
+      "use_as_positive_evidence": false
+    },
+    {
+      "description_complexity": "concise-code-but-random-looking-mask",
+      "domain_size": 257,
+      "family_id": "noisy_cubic_chirp",
+      "group": "Z_p",
+      "has_hash_or_mask": true,
+      "has_named_algebraic_structure": true,
+      "has_reduction_hint": false,
+      "n_bits": 8,
+      "naturalness_class": "artificial-hash-or-mask",
+      "next_action": "Reject as positive evidence; replace with a natural family or prove the mask arises from a named hard problem.",
+      "parameters": {
+        "a": 1,
+        "mask_seed": 31,
+        "prime": 257
+      },
+      "rejection_reason": "Apparent hardness depends on a deterministic mask/noise source rather than a natural algebraic problem family or reduction. This can hide a random table inside a concise generator.",
+      "use_as_positive_evidence": false
+    },
+    {
+      "description_complexity": "named-algebraic-family",
+      "domain_size": 37,
+      "family_id": "kloosterman_trace",
+      "group": "Z_p",
+      "has_hash_or_mask": false,
+      "has_named_algebraic_structure": true,
+      "has_reduction_hint": true,
+      "n_bits": 5,
+      "naturalness_class": "natural-algebraic-with-reduction-hint",
+      "next_action": "Keep only as a structured testbed until classical baselines and reductions are resolved.",
+      "parameters": {
+        "prime": 37,
+        "trace_function": "x_plus_inverse_x"
+      },
+      "rejection_reason": "Natural enough to study, but still needs dequantization and lower-bound evidence before promotion.",
+      "use_as_positive_evidence": false
+    },
+    {
+      "description_complexity": "named-algebraic-family",
+      "domain_size": 67,
+      "family_id": "kloosterman_trace",
+      "group": "Z_p",
+      "has_hash_or_mask": false,
+      "has_named_algebraic_structure": true,
+      "has_reduction_hint": true,
+      "n_bits": 6,
+      "naturalness_class": "natural-algebraic-with-reduction-hint",
+      "next_action": "Keep only as a structured testbed until classical baselines and reductions are resolved.",
+      "parameters": {
+        "prime": 67,
+        "trace_function": "x_plus_inverse_x"
+      },
+      "rejection_reason": "Natural enough to study, but still needs dequantization and lower-bound evidence before promotion.",
+      "use_as_positive_evidence": false
+    },
+    {
+      "description_complexity": "named-algebraic-family",
+      "domain_size": 131,
+      "family_id": "kloosterman_trace",
+      "group": "Z_p",
+      "has_hash_or_mask": false,
+      "has_named_algebraic_structure": true,
+      "has_reduction_hint": true,
+      "n_bits": 7,
+      "naturalness_class": "natural-algebraic-with-reduction-hint",
+      "next_action": "Keep only as a structured testbed until classical baselines and reductions are resolved.",
+      "parameters": {
+        "prime": 131,
+        "trace_function": "x_plus_inverse_x"
+      },
+      "rejection_reason": "Natural enough to study, but still needs dequantization and lower-bound evidence before promotion.",
+      "use_as_positive_evidence": false
+    },
+    {
+      "description_complexity": "named-algebraic-family",
+      "domain_size": 257,
+      "family_id": "kloosterman_trace",
+      "group": "Z_p",
+      "has_hash_or_mask": false,
+      "has_named_algebraic_structure": true,
+      "has_reduction_hint": true,
+      "n_bits": 8,
+      "naturalness_class": "natural-algebraic-with-reduction-hint",
+      "next_action": "Keep only as a structured testbed until classical baselines and reductions are resolved.",
+      "parameters": {
+        "prime": 257,
+        "trace_function": "x_plus_inverse_x"
+      },
+      "rejection_reason": "Natural enough to study, but still needs dequantization and lower-bound evidence before promotion.",
+      "use_as_positive_evidence": false
+    },
+    {
+      "description_complexity": "named-algebraic-family",
+      "domain_size": 37,
+      "family_id": "quartic_character",
+      "group": "Z_p",
+      "has_hash_or_mask": false,
+      "has_named_algebraic_structure": true,
+      "has_reduction_hint": true,
+      "n_bits": 5,
+      "naturalness_class": "natural-algebraic-with-reduction-hint",
+      "next_action": "Keep only as a structured testbed until classical baselines and reductions are resolved.",
+      "parameters": {
+        "prime": 37,
+        "primitive_root": 2
+      },
+      "rejection_reason": "Natural enough to study, but still needs dequantization and lower-bound evidence before promotion.",
+      "use_as_positive_evidence": false
+    },
+    {
+      "description_complexity": "named-algebraic-family",
+      "domain_size": 73,
+      "family_id": "quartic_character",
+      "group": "Z_p",
+      "has_hash_or_mask": false,
+      "has_named_algebraic_structure": true,
+      "has_reduction_hint": true,
+      "n_bits": 6,
+      "naturalness_class": "natural-algebraic-with-reduction-hint",
+      "next_action": "Keep only as a structured testbed until classical baselines and reductions are resolved.",
+      "parameters": {
+        "prime": 73,
+        "primitive_root": 5
+      },
+      "rejection_reason": "Natural enough to study, but still needs dequantization and lower-bound evidence before promotion.",
+      "use_as_positive_evidence": false
+    },
+    {
+      "description_complexity": "named-algebraic-family",
+      "domain_size": 137,
+      "family_id": "quartic_character",
+      "group": "Z_p",
+      "has_hash_or_mask": false,
+      "has_named_algebraic_structure": true,
+      "has_reduction_hint": true,
+      "n_bits": 7,
+      "naturalness_class": "natural-algebraic-with-reduction-hint",
+      "next_action": "Keep only as a structured testbed until classical baselines and reductions are resolved.",
+      "parameters": {
+        "prime": 137,
+        "primitive_root": 3
+      },
+      "rejection_reason": "Natural enough to study, but still needs dequantization and lower-bound evidence before promotion.",
+      "use_as_positive_evidence": false
+    },
+    {
+      "description_complexity": "named-algebraic-family",
+      "domain_size": 257,
+      "family_id": "quartic_character",
+      "group": "Z_p",
+      "has_hash_or_mask": false,
+      "has_named_algebraic_structure": true,
+      "has_reduction_hint": true,
+      "n_bits": 8,
+      "naturalness_class": "natural-algebraic-with-reduction-hint",
+      "next_action": "Keep only as a structured testbed until classical baselines and reductions are resolved.",
+      "parameters": {
+        "prime": 257,
+        "primitive_root": 3
+      },
+      "rejection_reason": "Natural enough to study, but still needs dequantization and lower-bound evidence before promotion.",
+      "use_as_positive_evidence": false
+    },
+    {
+      "description_complexity": "named-algebraic-family",
+      "domain_size": 37,
+      "family_id": "legendre_symbol",
+      "group": "Z_p",
+      "has_hash_or_mask": false,
+      "has_named_algebraic_structure": true,
+      "has_reduction_hint": true,
+      "n_bits": 5,
+      "naturalness_class": "natural-algebraic-with-reduction-hint",
+      "next_action": "Keep only as a structured testbed until classical baselines and reductions are resolved.",
+      "parameters": {
+        "prime": 37
+      },
+      "rejection_reason": "Natural enough to study, but still needs dequantization and lower-bound evidence before promotion.",
+      "use_as_positive_evidence": false
+    },
+    {
+      "description_complexity": "named-algebraic-family",
+      "domain_size": 67,
+      "family_id": "legendre_symbol",
+      "group": "Z_p",
+      "has_hash_or_mask": false,
+      "has_named_algebraic_structure": true,
+      "has_reduction_hint": true,
+      "n_bits": 6,
+      "naturalness_class": "natural-algebraic-with-reduction-hint",
+      "next_action": "Keep only as a structured testbed until classical baselines and reductions are resolved.",
+      "parameters": {
+        "prime": 67
+      },
+      "rejection_reason": "Natural enough to study, but still needs dequantization and lower-bound evidence before promotion.",
+      "use_as_positive_evidence": false
+    },
+    {
+      "description_complexity": "named-algebraic-family",
+      "domain_size": 131,
+      "family_id": "legendre_symbol",
+      "group": "Z_p",
+      "has_hash_or_mask": false,
+      "has_named_algebraic_structure": true,
+      "has_reduction_hint": true,
+      "n_bits": 7,
+      "naturalness_class": "natural-algebraic-with-reduction-hint",
+      "next_action": "Keep only as a structured testbed until classical baselines and reductions are resolved.",
+      "parameters": {
+        "prime": 131
+      },
+      "rejection_reason": "Natural enough to study, but still needs dequantization and lower-bound evidence before promotion.",
+      "use_as_positive_evidence": false
+    },
+    {
+      "description_complexity": "named-algebraic-family",
+      "domain_size": 257,
+      "family_id": "legendre_symbol",
+      "group": "Z_p",
+      "has_hash_or_mask": false,
+      "has_named_algebraic_structure": true,
+      "has_reduction_hint": true,
+      "n_bits": 8,
+      "naturalness_class": "natural-algebraic-with-reduction-hint",
+      "next_action": "Keep only as a structured testbed until classical baselines and reductions are resolved.",
+      "parameters": {
+        "prime": 257
+      },
+      "rejection_reason": "Natural enough to study, but still needs dequantization and lower-bound evidence before promotion.",
+      "use_as_positive_evidence": false
+    },
+    {
+      "description_complexity": "named-algebraic-family",
+      "domain_size": 49,
+      "family_id": "fp2_quadratic_form",
+      "group": "F_p^2",
+      "has_hash_or_mask": false,
+      "has_named_algebraic_structure": true,
+      "has_reduction_hint": true,
+      "n_bits": 5,
+      "naturalness_class": "natural-algebraic-with-reduction-hint",
+      "next_action": "Keep only as a structured testbed until classical baselines and reductions are resolved.",
+      "parameters": {
+        "prime": 7,
+        "quadratic_y2_coefficient": 5
+      },
+      "rejection_reason": "Natural enough to study, but still needs dequantization and lower-bound evidence before promotion.",
+      "use_as_positive_evidence": false
+    },
+    {
+      "description_complexity": "named-algebraic-family",
+      "domain_size": 121,
+      "family_id": "fp2_quadratic_form",
+      "group": "F_p^2",
+      "has_hash_or_mask": false,
+      "has_named_algebraic_structure": true,
+      "has_reduction_hint": true,
+      "n_bits": 6,
+      "naturalness_class": "natural-algebraic-with-reduction-hint",
+      "next_action": "Keep only as a structured testbed until classical baselines and reductions are resolved.",
+      "parameters": {
+        "prime": 11,
+        "quadratic_y2_coefficient": 5
+      },
+      "rejection_reason": "Natural enough to study, but still needs dequantization and lower-bound evidence before promotion.",
+      "use_as_positive_evidence": false
+    },
+    {
+      "description_complexity": "named-algebraic-family",
+      "domain_size": 169,
+      "family_id": "fp2_quadratic_form",
+      "group": "F_p^2",
+      "has_hash_or_mask": false,
+      "has_named_algebraic_structure": true,
+      "has_reduction_hint": true,
+      "n_bits": 7,
+      "naturalness_class": "natural-algebraic-with-reduction-hint",
+      "next_action": "Keep only as a structured testbed until classical baselines and reductions are resolved.",
+      "parameters": {
+        "prime": 13,
+        "quadratic_y2_coefficient": 5
+      },
+      "rejection_reason": "Natural enough to study, but still needs dequantization and lower-bound evidence before promotion.",
+      "use_as_positive_evidence": false
+    },
+    {
+      "description_complexity": "named-algebraic-family",
+      "domain_size": 289,
+      "family_id": "fp2_quadratic_form",
+      "group": "F_p^2",
+      "has_hash_or_mask": false,
+      "has_named_algebraic_structure": true,
+      "has_reduction_hint": true,
+      "n_bits": 8,
+      "naturalness_class": "natural-algebraic-with-reduction-hint",
+      "next_action": "Keep only as a structured testbed until classical baselines and reductions are resolved.",
+      "parameters": {
+        "prime": 17,
+        "quadratic_y2_coefficient": 5
+      },
+      "rejection_reason": "Natural enough to study, but still needs dequantization and lower-bound evidence before promotion.",
+      "use_as_positive_evidence": false
+    },
+    {
+      "description_complexity": "named-algebraic-family",
+      "domain_size": 32,
+      "family_id": "mm_majority_bent_f2",
+      "group": "F2^n",
+      "has_hash_or_mask": false,
+      "has_named_algebraic_structure": true,
+      "has_reduction_hint": false,
+      "n_bits": 5,
+      "naturalness_class": "natural-algebraic-control",
+      "next_action": "Use as a baseline/control and require separate lower-bound or reduction evidence.",
+      "parameters": {
+        "mask_seed": "none"
+      },
+      "rejection_reason": "Structured control family; naturalness alone is not positive evidence.",
+      "use_as_positive_evidence": false
+    },
+    {
+      "description_complexity": "named-algebraic-family",
+      "domain_size": 64,
+      "family_id": "mm_majority_bent_f2",
+      "group": "F2^n",
+      "has_hash_or_mask": false,
+      "has_named_algebraic_structure": true,
+      "has_reduction_hint": false,
+      "n_bits": 6,
+      "naturalness_class": "natural-algebraic-control",
+      "next_action": "Use as a baseline/control and require separate lower-bound or reduction evidence.",
+      "parameters": {
+        "mask_seed": "none"
+      },
+      "rejection_reason": "Structured control family; naturalness alone is not positive evidence.",
+      "use_as_positive_evidence": false
+    },
+    {
+      "description_complexity": "named-algebraic-family",
+      "domain_size": 128,
+      "family_id": "mm_majority_bent_f2",
+      "group": "F2^n",
+      "has_hash_or_mask": false,
+      "has_named_algebraic_structure": true,
+      "has_reduction_hint": false,
+      "n_bits": 7,
+      "naturalness_class": "natural-algebraic-control",
+      "next_action": "Use as a baseline/control and require separate lower-bound or reduction evidence.",
+      "parameters": {
+        "mask_seed": "none"
+      },
+      "rejection_reason": "Structured control family; naturalness alone is not positive evidence.",
+      "use_as_positive_evidence": false
+    },
+    {
+      "description_complexity": "named-algebraic-family",
+      "domain_size": 256,
+      "family_id": "mm_majority_bent_f2",
+      "group": "F2^n",
+      "has_hash_or_mask": false,
+      "has_named_algebraic_structure": true,
+      "has_reduction_hint": false,
+      "n_bits": 8,
+      "naturalness_class": "natural-algebraic-control",
+      "next_action": "Use as a baseline/control and require separate lower-bound or reduction evidence.",
+      "parameters": {
+        "mask_seed": "none"
+      },
+      "rejection_reason": "Structured control family; naturalness alone is not positive evidence.",
+      "use_as_positive_evidence": false
+    },
+    {
+      "description_complexity": "named-algebraic-family",
+      "domain_size": 32,
+      "family_id": "bent_quadratic_f2",
+      "group": "F2^n",
+      "has_hash_or_mask": false,
+      "has_named_algebraic_structure": true,
+      "has_reduction_hint": false,
+      "n_bits": 5,
+      "naturalness_class": "natural-algebraic-control",
+      "next_action": "Use as a baseline/control and require separate lower-bound or reduction evidence.",
+      "parameters": {
+        "mask_seed": "none"
+      },
+      "rejection_reason": "Structured control family; naturalness alone is not positive evidence.",
+      "use_as_positive_evidence": false
+    },
+    {
+      "description_complexity": "named-algebraic-family",
+      "domain_size": 64,
+      "family_id": "bent_quadratic_f2",
+      "group": "F2^n",
+      "has_hash_or_mask": false,
+      "has_named_algebraic_structure": true,
+      "has_reduction_hint": false,
+      "n_bits": 6,
+      "naturalness_class": "natural-algebraic-control",
+      "next_action": "Use as a baseline/control and require separate lower-bound or reduction evidence.",
+      "parameters": {
+        "mask_seed": "none"
+      },
+      "rejection_reason": "Structured control family; naturalness alone is not positive evidence.",
+      "use_as_positive_evidence": false
+    },
+    {
+      "description_complexity": "named-algebraic-family",
+      "domain_size": 128,
+      "family_id": "bent_quadratic_f2",
+      "group": "F2^n",
+      "has_hash_or_mask": false,
+      "has_named_algebraic_structure": true,
+      "has_reduction_hint": false,
+      "n_bits": 7,
+      "naturalness_class": "natural-algebraic-control",
+      "next_action": "Use as a baseline/control and require separate lower-bound or reduction evidence.",
+      "parameters": {
+        "mask_seed": "none"
+      },
+      "rejection_reason": "Structured control family; naturalness alone is not positive evidence.",
+      "use_as_positive_evidence": false
+    },
+    {
+      "description_complexity": "named-algebraic-family",
+      "domain_size": 256,
+      "family_id": "bent_quadratic_f2",
+      "group": "F2^n",
+      "has_hash_or_mask": false,
+      "has_named_algebraic_structure": true,
+      "has_reduction_hint": false,
+      "n_bits": 8,
+      "naturalness_class": "natural-algebraic-control",
+      "next_action": "Use as a baseline/control and require separate lower-bound or reduction evidence.",
+      "parameters": {
+        "mask_seed": "none"
+      },
+      "rejection_reason": "Structured control family; naturalness alone is not positive evidence.",
+      "use_as_positive_evidence": false
+    },
+    {
+      "description_complexity": "concise-code-but-random-looking-mask",
+      "domain_size": 32,
+      "family_id": "masked_quadratic_f2",
+      "group": "F2^n",
+      "has_hash_or_mask": true,
+      "has_named_algebraic_structure": true,
+      "has_reduction_hint": false,
+      "n_bits": 5,
+      "naturalness_class": "artificial-hash-or-mask",
+      "next_action": "Reject as positive evidence; replace with a natural family or prove the mask arises from a named hard problem.",
+      "parameters": {
+        "mask_seed": 17
+      },
+      "rejection_reason": "Apparent hardness depends on a deterministic mask/noise source rather than a natural algebraic problem family or reduction. This can hide a random table inside a concise generator.",
+      "use_as_positive_evidence": false
+    },
+    {
+      "description_complexity": "concise-code-but-random-looking-mask",
+      "domain_size": 64,
+      "family_id": "masked_quadratic_f2",
+      "group": "F2^n",
+      "has_hash_or_mask": true,
+      "has_named_algebraic_structure": true,
+      "has_reduction_hint": false,
+      "n_bits": 6,
+      "naturalness_class": "artificial-hash-or-mask",
+      "next_action": "Reject as positive evidence; replace with a natural family or prove the mask arises from a named hard problem.",
+      "parameters": {
+        "mask_seed": 17
+      },
+      "rejection_reason": "Apparent hardness depends on a deterministic mask/noise source rather than a natural algebraic problem family or reduction. This can hide a random table inside a concise generator.",
+      "use_as_positive_evidence": false
+    },
+    {
+      "description_complexity": "concise-code-but-random-looking-mask",
+      "domain_size": 128,
+      "family_id": "masked_quadratic_f2",
+      "group": "F2^n",
+      "has_hash_or_mask": true,
+      "has_named_algebraic_structure": true,
+      "has_reduction_hint": false,
+      "n_bits": 7,
+      "naturalness_class": "artificial-hash-or-mask",
+      "next_action": "Reject as positive evidence; replace with a natural family or prove the mask arises from a named hard problem.",
+      "parameters": {
+        "mask_seed": 17
+      },
+      "rejection_reason": "Apparent hardness depends on a deterministic mask/noise source rather than a natural algebraic problem family or reduction. This can hide a random table inside a concise generator.",
+      "use_as_positive_evidence": false
+    },
+    {
+      "description_complexity": "concise-code-but-random-looking-mask",
+      "domain_size": 256,
+      "family_id": "masked_quadratic_f2",
+      "group": "F2^n",
+      "has_hash_or_mask": true,
+      "has_named_algebraic_structure": true,
+      "has_reduction_hint": false,
+      "n_bits": 8,
+      "naturalness_class": "artificial-hash-or-mask",
+      "next_action": "Reject as positive evidence; replace with a natural family or prove the mask arises from a named hard problem.",
+      "parameters": {
+        "mask_seed": 17
+      },
+      "rejection_reason": "Apparent hardness depends on a deterministic mask/noise source rather than a natural algebraic problem family or reduction. This can hide a random table inside a concise generator.",
+      "use_as_positive_evidence": false
+    }
+  ],
+  "status": "blocked-by-artificial-phase-families",
+  "summary": "Audited 40 phase-family descriptions for naturalness and description complexity; 8 record(s) are hash/mask/noise artificial and 0 are unsupported."
+}
