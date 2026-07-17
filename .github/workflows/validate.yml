@@ -1,0 +1,31 @@
+name: Validate research snapshot
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: pip
+      - run: python -m pip install -r requirements.txt
+      - name: Compile Python modules
+        run: python -m py_compile $(git ls-files '*.py')
+      - name: Validate research registries
+        run: python qsearch.py validate
+      - name: Verify public progress snapshot
+        run: |
+          python tools/build_progress_snapshot.py
+          git diff --exit-code research/progress_snapshot.json
+      - name: Check website JavaScript
+        run: node --check site/progress.js

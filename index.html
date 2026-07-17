@@ -3,234 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Q-Search Research Lab</title>
+    <meta name="description" content="Q-Search is a proof-gated research program investigating structural routes to major quantum algorithms.">
+    <title>Q-Search | Research Progress</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&family=Lora:wght@500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="site/styles.css">
 </head>
 <body>
-    <header class="topbar">
-        <div>
-            <p class="eyebrow">Quantum Algorithm Research Lab</p>
-            <h1>Q-Search</h1>
-            <p class="subtitle">A no-toy research cockpit for Shor-level algorithm discovery.</p>
-        </div>
-        <nav class="nav-links" aria-label="Research sections">
-            <a href="#verdict">Verdict</a>
-            <a href="#interventions">Interventions</a>
-            <a href="#leads">Candidates</a>
-            <a href="#experiments">Experiments</a>
-            <a href="#results">Results</a>
-            <a href="#dequantization">Dequantization</a>
-            <a href="#proof-status">Proof Status</a>
-            <a href="#negative-results">Negative Results</a>
-            <a href="#rejected-candidates">Rejected</a>
-            <a href="#proof-gate">Proof Gate</a>
-            <a href="#ontology">Ontology</a>
+    <header class="site-header">
+        <a class="brand" href="#top" aria-label="Q-Search home">
+            <span class="brand-mark" aria-hidden="true">Q</span>
+            <span>Q-Search</span>
+        </a>
+        <nav aria-label="Progress sections">
+            <a href="#overview">Overview</a>
+            <a href="#tracks">Research tracks</a>
+            <a href="#evidence">Evidence</a>
+            <a href="#next">Next</a>
         </nav>
+        <a class="github-link" href="https://github.com/Jaspersands/qsearch" target="_blank" rel="noreferrer">GitHub</a>
     </header>
 
-    <main>
-        <section id="verdict" class="hero">
+    <main id="top">
+        <section class="hero" aria-labelledby="page-title">
             <div class="hero-copy">
-                <p class="eyebrow">Core Redirection</p>
-                <h2>Stop searching tiny circuits. Build a research engine.</h2>
-                <p id="mission-text">Loading research mission...</p>
+                <p class="eyebrow">Quantum algorithms research program</p>
+                <h1 id="page-title">Q-Search</h1>
+                <p class="hero-lede">
+                    A proof-gated search for structural quantum advantage. The project tests high-upside ideas,
+                    attacks them with classical baselines, and records failures instead of promoting small examples.
+                </p>
+                <div class="hero-actions">
+                    <a class="primary-action" href="README.md">Research methodology</a>
+                    <a class="secondary-action" href="research/frontier_map.json">Raw frontier data</a>
+                </div>
             </div>
-            <div class="scoreboard" aria-label="Research artifact counts">
-                <div>
-                    <span id="count-candidates">--</span>
-                    <label>proof-gated candidates</label>
-                </div>
-                <div>
-                    <span id="count-experiments">--</span>
-                    <label>falsifiable experiments</label>
-                </div>
-                <div>
-                    <span id="count-results">--</span>
-                    <label>experiment results</label>
-                </div>
-                <div>
-                    <span id="count-dequantization">--</span>
-                    <label>dequantization blockers</label>
-                </div>
-                <div>
-                    <span id="count-proof-status">--</span>
-                    <label>proof statuses</label>
-                </div>
-                <div>
-                    <span id="count-negative">--</span>
-                    <label>negative results</label>
-                </div>
-                <div>
-                    <span id="count-rejected">--</span>
-                    <label>rejected hypotheses</label>
-                </div>
-                <div>
-                    <span id="count-obligations">--</span>
-                    <label>hard proof obligations</label>
+            <div class="verdict-block" aria-label="Current research verdict">
+                <p class="eyebrow">Current verdict</p>
+                <strong id="verdict-title">Loading status...</strong>
+                <p id="verdict-detail">Reading the latest proof and experiment registries.</p>
+                <div class="updated-row">
+                    <span class="status-dot" aria-hidden="true"></span>
+                    <span id="last-updated">Snapshot loading</span>
                 </div>
             </div>
         </section>
 
-        <section class="panel-grid two-col">
-            <article class="panel danger">
-                <div class="panel-heading">
-                    <p class="eyebrow">Audit Verdict</p>
-                    <h3>Why the old project was a dead end</h3>
-                </div>
-                <ul id="diagnosis-list" class="plain-list"></ul>
-            </article>
-
-            <article class="panel">
-                <div class="panel-heading">
-                    <p class="eyebrow">Replacement Architecture</p>
-                    <h3>What this now needs to become</h3>
-                </div>
-                <div id="architecture-list" class="stack-list"></div>
-            </article>
+        <section class="metric-strip" aria-label="Research registry summary">
+            <div><strong id="metric-experiments">--</strong><span>experiments specified</span></div>
+            <div><strong id="metric-results">--</strong><span>results recorded</span></div>
+            <div><strong id="metric-blockers">--</strong><span>active claim blockers</span></div>
+            <div><strong id="metric-negatives">--</strong><span>negative results retained</span></div>
+            <div><strong id="metric-debts">--</strong><span>open proof debts</span></div>
         </section>
 
-        <section id="interventions" class="panel">
-            <div class="section-head">
-                <div>
-                    <p class="eyebrow">Expected Research Impact</p>
-                    <h3>Highest-leverage improvements</h3>
-                </div>
-                <a class="file-link" href="research/exhaustive_audit.md">Open full audit</a>
+        <section id="overview" class="content-section overview-section">
+            <div class="section-heading">
+                <p class="eyebrow">Research position</p>
+                <h2>What has actually been learned</h2>
+                <p id="overview-copy">Loading the current research position...</p>
             </div>
-            <div id="intervention-list" class="ranked-list"></div>
-        </section>
-
-        <section id="leads" class="panel">
-            <div class="section-head">
-                <div>
-                    <p class="eyebrow">Candidate Registry</p>
-                    <h3>Proof-gated research candidates</h3>
-                </div>
-                <a class="file-link" href="research/registry/candidates.json">Open candidates</a>
-            </div>
-            <div id="lead-list" class="lead-grid"></div>
-        </section>
-
-        <section id="experiments" class="panel">
-            <div class="section-head">
-                <div>
-                    <p class="eyebrow">Experiment Registry</p>
-                    <h3>Falsifiable experiment records</h3>
-                </div>
-                <a class="file-link" href="research/registry/experiments.json">Open experiments</a>
-            </div>
-            <div id="experiment-list" class="lead-grid"></div>
-        </section>
-
-        <section id="results" class="panel">
-            <div class="section-head">
-                <div>
-                    <p class="eyebrow">Result Registry</p>
-                    <h3>Executed workbench results and falsifiers</h3>
-                </div>
-                <a class="file-link" href="research/registry/experiment_results.json">Open results</a>
-            </div>
-            <div id="result-list" class="lead-grid"></div>
-        </section>
-
-        <section id="dequantization" class="panel danger">
-            <div class="section-head">
-                <div>
-                    <p class="eyebrow">Classical Baselines</p>
-                    <h3>Active dequantization blockers</h3>
-                </div>
-                <a class="file-link" href="research/registry/dequantization_checks.json">Open checks</a>
-            </div>
-            <div id="dequantization-list" class="negative-list"></div>
-        </section>
-
-        <section id="proof-status" class="panel danger">
-            <div class="section-head">
-                <div>
-                    <p class="eyebrow">Proof Obligations</p>
-                    <h3>Candidate proof status</h3>
-                </div>
-                <a class="file-link" href="research/registry/proof_status.json">Open proof status</a>
-            </div>
-            <div id="proof-status-list" class="negative-list"></div>
-        </section>
-
-        <section id="negative-results" class="panel danger">
-            <div class="section-head">
-                <div>
-                    <p class="eyebrow">Negative Result Database</p>
-                    <h3>Legacy failures preserved as anti-patterns</h3>
-                </div>
-                <a class="file-link" href="research/registry/negative_results.json">Open negative results</a>
-            </div>
-            <div id="negative-list" class="negative-list"></div>
-        </section>
-
-        <section id="rejected-candidates" class="panel danger">
-            <div class="section-head">
-                <div>
-                    <p class="eyebrow">Proof-Gate Rejections</p>
-                    <h3>Generated hypotheses that failed hard obligations</h3>
-                </div>
-                <a class="file-link" href="research/registry/rejected_candidates.json">Open rejected candidates</a>
-            </div>
-            <div id="rejected-list" class="negative-list"></div>
-        </section>
-
-        <section id="proof-gate" class="panel">
-            <div class="section-head">
-                <div>
-                    <p class="eyebrow">Hard Reject Criteria</p>
-                    <h3>Proof obligations before any speedup claim</h3>
-                </div>
-                <a class="file-link" href="research/proof_obligations.json">Open JSON</a>
-            </div>
-            <div id="proof-list" class="proof-grid"></div>
-        </section>
-
-        <section id="ontology" class="panel-grid two-col">
-            <article class="panel">
-                <div class="section-head compact">
+            <div class="pipeline-visual">
+                <div class="visual-heading">
                     <div>
-                        <p class="eyebrow">Reduction Graph</p>
-                        <h3>Problems and barriers</h3>
+                        <p class="eyebrow">Structural progress map</p>
+                        <h3>How far each route has survived</h3>
                     </div>
-                    <a class="file-link" href="research/problem_ontology.json">Open ontology</a>
-                </div>
-                <div id="barrier-list" class="stack-list"></div>
-            </article>
-
-            <article class="panel">
-                <div class="section-head compact">
-                    <div>
-                        <p class="eyebrow">Literature Radar</p>
-                        <h3>Structured papers by mechanism</h3>
+                    <div class="legend" aria-label="Chart legend">
+                        <span><i class="legend-line active"></i>surviving structure</span>
+                        <span><i class="legend-line blocked"></i>blocked claim</span>
                     </div>
-                    <a class="file-link" href="research/literature_records.json">Open records</a>
                 </div>
-                <div id="paper-list" class="paper-list"></div>
-            </article>
-        </section>
-
-        <section class="panel danger">
-            <div class="section-head">
-                <div>
-                    <p class="eyebrow">Cut List</p>
-                    <h3>Modules to delete, quarantine, or replace</h3>
+                <canvas id="signal-canvas" width="1000" height="340" aria-label="Research track progress across hypothesis, structure, classical attacks, proof, and speedup stages"></canvas>
+                <div class="stage-labels" aria-hidden="true">
+                    <span>Hypothesis</span><span>Structure</span><span>Classical attacks</span><span>Proof</span><span>Speedup</span>
                 </div>
             </div>
-            <div id="module-list" class="module-table"></div>
+        </section>
+
+        <section id="tracks" class="content-section">
+            <div class="section-heading compact">
+                <p class="eyebrow">Three main programs</p>
+                <h2>Research tracks</h2>
+            </div>
+            <div id="track-list" class="track-list" aria-live="polite"></div>
+        </section>
+
+        <section id="evidence" class="content-section evidence-layout">
+            <div>
+                <div class="section-heading compact">
+                    <p class="eyebrow">Recent milestones</p>
+                    <h2>Strongest evidence so far</h2>
+                </div>
+                <div id="milestone-list" class="milestone-list"></div>
+            </div>
+            <aside class="conjecture-panel" aria-labelledby="conjecture-title">
+                <p class="eyebrow">Active mathematical target</p>
+                <h2 id="conjecture-title">Uniform commutant gap</h2>
+                <div class="formula" aria-label="Conjectured normalized spectral gap">2 / [n(n - 1)]</div>
+                <p id="conjecture-summary">Loading conjecture status...</p>
+                <dl id="conjecture-facts" class="fact-list"></dl>
+                <p class="boundary-note"><strong>Boundary:</strong> even a proof would not yet provide Racah associators or a hidden-involution decoder.</p>
+            </aside>
+        </section>
+
+        <section id="next" class="content-section next-section">
+            <div class="section-heading compact">
+                <p class="eyebrow">Highest-value work</p>
+                <h2>What must happen next</h2>
+            </div>
+            <ol id="next-list" class="next-list"></ol>
+        </section>
+
+        <section class="content-section operations-band" aria-labelledby="operations-title">
+            <div>
+                <p class="eyebrow">Execution model</p>
+                <h2 id="operations-title">How the project runs</h2>
+            </div>
+            <p id="execution-copy">
+                Research runs interactively during active Codex sessions. GitHub validates pushed snapshots, but no unattended process invents or tests algorithms between sessions.
+            </p>
+            <div class="operations-links">
+                <a href="docs/REPOSITORY_MAP.md">Repository map</a>
+                <a href="research/proof_debt_report.json">Proof debt</a>
+                <a href="research/registry/negative_results.json">Negative results</a>
+            </div>
         </section>
     </main>
 
     <footer>
-        <span>Generated from <code>research/*.json</code>.</span>
-        <span>No dashboard trophies. No N=3 speedup claims.</span>
+        <span>Q-Search research progress</span>
+        <span>No breakthrough claim is made without a proof-complete complexity separation.</span>
     </footer>
 
-    <script src="index.js"></script>
+    <script src="site/progress.js" defer></script>
 </body>
 </html>

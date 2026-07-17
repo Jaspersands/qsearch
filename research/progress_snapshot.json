@@ -1,0 +1,105 @@
+{
+  "active_conjecture": {
+    "facts": [
+      {
+        "label": "Finite verification",
+        "value": "5/5 rows, n=6-10"
+      },
+      {
+        "label": "All-n proof",
+        "value": "Open"
+      },
+      {
+        "label": "Associator",
+        "value": "Open"
+      },
+      {
+        "label": "Hidden decoder",
+        "value": "Open"
+      }
+    ],
+    "summary": "For lambda = mu = (n-2,2), one fixed transposition/3-cycle orbit Hamiltonian appears to have raw gap 2(n-2) on the multiplicity-two target (n-3,2,1). With exactly n(n-1)(n-2) LCU terms, the normalized gap is inverse quadratic."
+  },
+  "execution_model": "Research generation and experiments run interactively during active Codex sessions. A GitHub workflow validates pushed snapshots, and a scheduled backup can commit only validation-passing changes; neither mechanism performs autonomous quantum-algorithm research between sessions.",
+  "metrics": {
+    "blocking_findings": 473,
+    "experiments": 151,
+    "negative_results": 464,
+    "proof_debts": 24,
+    "results": 220
+  },
+  "milestones": [
+    {
+      "detail": "Candidates now require reductions, complexity accounting, falsifiers, classical baselines, and proof obligations before acceptance.",
+      "title": "Toy circuit search was removed"
+    },
+    {
+      "detail": "Exact all-target and witness-path experiments showed why fixed-depth lattice lists look good at small sizes and fail in the tail.",
+      "title": "The density-one decoder optimism was reduced"
+    },
+    {
+      "detail": "Successive invariants and exact reductions eliminated every generated row as a hard quantum target.",
+      "title": "The current code frontier was classically exhausted"
+    },
+    {
+      "detail": "Diagonal Jucys-Murphy labels are accessible, but exact multiplicity degeneracy proves that labels alone are not the internal Kronecker transform.",
+      "title": "A nonabelian transform was split into precise subproblems"
+    },
+    {
+      "detail": "A polynomial-description commutant Hamiltonian splits all audited blocks, including multiplicity five, after charging its LCU normalization.",
+      "title": "Finite multiplicity blocks were split"
+    }
+  ],
+  "next_actions": [
+    {
+      "detail": "Compute the exact 2x2 multiplicity action using the 2-subset permutation module, partition algebra, or orbit-character traces.",
+      "title": "Prove or kill the commutant gap formula"
+    },
+    {
+      "detail": "A one-tree multiplicity basis is insufficient because the three-copy overlapping class sums provably do not commute.",
+      "title": "Construct overlapping Racah operations"
+    },
+    {
+      "detail": "No representation label or finite spectrum matters unless it recovers a hidden involution and beats legal graph/code baselines.",
+      "title": "Demand an end-to-end natural-problem decoder"
+    }
+  ],
+  "overview": "The project is now useful primarily as a research filter. It has replaced tiny-circuit search with proof obligations, access-model accounting, classical attacks, exact finite representation theory, and a permanent negative-result memory. The strongest surviving lead is not an algorithm: it is a specific spectral-gap theorem that could unlock one missing transform in a nonabelian HSP route.",
+  "tracks": [
+    {
+      "evidence": "The all-target census evaluated millions of legal targets; the remaining question is a source-conditioned reduced-basis theorem, not another target sweep.",
+      "next": "Prove a random-label LLL geometry law or abandon nearest-plane branching.",
+      "short_title": "DHSP",
+      "stage": 2,
+      "status": "Current decoder route blocked",
+      "summary": "Exact source models, sieve accounting, lattice attacks, and marker-aware decoders were implemented. Fixed-depth nearest-plane lists eventually collapse, so small-n decoder success is not evidence of a polynomial algorithm.",
+      "title": "Hidden shift / DHSP",
+      "tone": "blocked"
+    },
+    {
+      "evidence": "Current triage retains 0 viable code rows; the last Goppa syzygy collision was resolved by the hull-projector route.",
+      "next": "Generate a new natural family that survives the complete classical triage gate.",
+      "short_title": "Codes",
+      "stage": 1,
+      "status": "Generated frontier closed",
+      "summary": "Goppa, quasi-cyclic, finite-geometry, rank-metric, and CFI-derived rows were attacked with support, hull, Schur, syzygy, projector, recovery, and graph-side invariants.",
+      "title": "Code equivalence",
+      "tone": "blocked"
+    },
+    {
+      "evidence": "YJM spectra were verified on 3 sectors, and bounded-support commutants split 2 finite multiplicity sectors up to multiplicity 5.",
+      "next": "Prove the uniform normalized-gap formula, then attack coherent Racah transforms.",
+      "short_title": "Cosets",
+      "stage": 3,
+      "status": "Active structural lead",
+      "summary": "The project separated efficient Fourier/tableau labels from the genuinely open multiplicity-space, Racah, transition-filter, and hidden-involution decoder operations.",
+      "title": "Nonabelian coset states",
+      "tone": "active"
+    }
+  ],
+  "updated_at": "2026-07-17",
+  "verdict": {
+    "detail": "Every speedup claim remains blocked. The project has isolated one concrete representation-theoretic gap conjecture, while current hidden-shift and code-equivalence families have failed their classical tests.",
+    "title": "No breakthrough yet"
+  }
+}
