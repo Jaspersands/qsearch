@@ -1,0 +1,352 @@
+{
+  "claim_gate": {
+    "all_n_critical_gap_formula_proved": false,
+    "conditional_polynomial_multiplicity_transform": true,
+    "critical_gap_formula_finite_verified": true,
+    "hidden_involution_decoder_proved": false,
+    "kcopy_associator_polynomial_proved": false,
+    "lcu_normalization_formula_proved": true,
+    "reason": "The same Hamiltonian has the predicted inverse-quadratic normalized gap on every finite row, but finite interpolation is not an all-n proof and neither associators nor decoding are constructed.",
+    "speedup_claim_allowed": false,
+    "unconditional_polynomial_multiplicity_transform": false,
+    "uniform_coefficient_rule": true
+  },
+  "conjecture": {
+    "consequence_if_proved": "The LCU-normalized gap is 2/[n(n-1)], so multiplicity-label phase estimation is polynomial on this family.",
+    "id": "CONJ-COSET-COMMUTANT-RAW-GAP-NMINUS3-2-1",
+    "proof_status": "finite-verified-all-n-proof-open",
+    "required_proof_route": "Evaluate trace and determinant of the 2x2 multiplicity action using the 2-subset permutation module, partition algebra, or exact character-orbit sums.",
+    "statement": "On the multiplicity-two target nu=(n-3,2,1), H_n has eigenvalue gap exactly 2(n-2) for every n>=6."
+  },
+  "created_at": "2026-07-17T23:29:37.176767+00:00",
+  "falsifiers_triggered": [
+    "Optimizing coefficients independently at each n is rejected as nonuniform advice.",
+    "Finite exact-looking gap formulas are retained as conjectures until an all-n representation-theoretic proof exists.",
+    "A gapped one-tree multiplicity Hamiltonian does not supply Racah associators or a hidden-involution decoder."
+  ],
+  "family_contract": {
+    "access_model": "controlled Young-basis group actions after the polynomial S_n QFT",
+    "coefficient_rule": "one for every orbit term, independent of n and the target sector",
+    "lcu_term_count_theorem": "6*C(n,3)=n(n-1)(n-2)",
+    "source_partitions": "lambda_n=mu_n=(n-2,2), n>=6",
+    "uniform_hamiltonian": "H_n=sum rho_lambda(tau) tensor rho_mu(c), over oriented 3-cycles c and transpositions tau contained in supp(c)"
+  },
+  "headline_metrics": {
+    "all_n_critical_gap_theorem_count": 0,
+    "all_nontrivial_targets_split_count": 5,
+    "critical_gap_formula_finite_verified_count": 5,
+    "empirical_log_log_gap_slope": -2.150465523945385,
+    "hidden_involution_decoder_count": 0,
+    "kcopy_associator_count": 0,
+    "maximum_critical_gap_formula_residual": 3.126388037344441e-13,
+    "maximum_n": 10,
+    "minimum_n": 6,
+    "minimum_observed_critical_normalized_gap": 0.022222222222222657,
+    "record_count": 5,
+    "term_count_formula_verified_count": 5
+  },
+  "records": [
+    {
+      "all_nontrivial_targets_split": true,
+      "all_other_target_gaps_at_least_critical": true,
+      "critical_gap_formula_residual": 0.0,
+      "critical_normalized_gap": 0.06666666666666667,
+      "critical_raw_gap": 8.0,
+      "critical_target": [
+        3,
+        2,
+        1
+      ],
+      "critical_target_present": true,
+      "finite_dense_verification_only": true,
+      "lcu_term_count": 120,
+      "maximum_kronecker_multiplicity": 2,
+      "n": 6,
+      "nontrivial_multiplicity_target_count": 2,
+      "predicted_critical_normalized_gap": 0.06666666666666667,
+      "predicted_critical_raw_gap": 8.0,
+      "proved_lcu_term_count_formula": 120,
+      "source_irrep_dimension": 9,
+      "source_partition": [
+        4,
+        2
+      ],
+      "status": "critical-inverse-quadratic-gap-formula-finite-verified",
+      "target_gaps": [
+        {
+          "critical_formula_residual": null,
+          "kronecker_multiplicity": 2,
+          "lcu_normalized_gap": 0.10671873729054733,
+          "predicted_critical_normalized_gap": null,
+          "predicted_critical_raw_gap": null,
+          "raw_gap": 12.80624847486568,
+          "tableau_label_count": 9,
+          "tableau_spectrum_consistency_residual": 3.557151798805476e-14,
+          "target_partition": [
+            4,
+            2
+          ]
+        },
+        {
+          "critical_formula_residual": 0.0,
+          "kronecker_multiplicity": 2,
+          "lcu_normalized_gap": 0.06666666666666667,
+          "predicted_critical_normalized_gap": 0.06666666666666667,
+          "predicted_critical_raw_gap": 8.0,
+          "raw_gap": 8.0,
+          "tableau_label_count": 16,
+          "tableau_spectrum_consistency_residual": 2.2267653283136557e-14,
+          "target_partition": [
+            3,
+            2,
+            1
+          ]
+        }
+      ],
+      "tensor_dimension": 81,
+      "term_count_formula_verified": true
+    },
+    {
+      "all_nontrivial_targets_split": true,
+      "all_other_target_gaps_at_least_critical": true,
+      "critical_gap_formula_residual": 2.1316282072803006e-14,
+      "critical_normalized_gap": 0.04761904761904752,
+      "critical_raw_gap": 9.999999999999979,
+      "critical_target": [
+        4,
+        2,
+        1
+      ],
+      "critical_target_present": true,
+      "finite_dense_verification_only": true,
+      "lcu_term_count": 210,
+      "maximum_kronecker_multiplicity": 2,
+      "n": 7,
+      "nontrivial_multiplicity_target_count": 2,
+      "predicted_critical_normalized_gap": 0.047619047619047616,
+      "predicted_critical_raw_gap": 10.0,
+      "proved_lcu_term_count_formula": 210,
+      "source_irrep_dimension": 14,
+      "source_partition": [
+        5,
+        2
+      ],
+      "status": "critical-inverse-quadratic-gap-formula-finite-verified",
+      "target_gaps": [
+        {
+          "critical_formula_residual": null,
+          "kronecker_multiplicity": 2,
+          "lcu_normalized_gap": 0.08302664654363126,
+          "predicted_critical_normalized_gap": null,
+          "predicted_critical_raw_gap": null,
+          "raw_gap": 17.435595774162564,
+          "tableau_label_count": 14,
+          "tableau_spectrum_consistency_residual": 2.061798643431261e-13,
+          "target_partition": [
+            5,
+            2
+          ]
+        },
+        {
+          "critical_formula_residual": 2.1316282072803006e-14,
+          "kronecker_multiplicity": 2,
+          "lcu_normalized_gap": 0.04761904761904752,
+          "predicted_critical_normalized_gap": 0.047619047619047616,
+          "predicted_critical_raw_gap": 10.0,
+          "raw_gap": 9.999999999999979,
+          "tableau_label_count": 35,
+          "tableau_spectrum_consistency_residual": 9.066383310010086e-14,
+          "target_partition": [
+            4,
+            2,
+            1
+          ]
+        }
+      ],
+      "tensor_dimension": 196,
+      "term_count_formula_verified": true
+    },
+    {
+      "all_nontrivial_targets_split": true,
+      "all_other_target_gaps_at_least_critical": true,
+      "critical_gap_formula_residual": 1.4210854715202004e-14,
+      "critical_normalized_gap": 0.03571428571428567,
+      "critical_raw_gap": 11.999999999999986,
+      "critical_target": [
+        5,
+        2,
+        1
+      ],
+      "critical_target_present": true,
+      "finite_dense_verification_only": true,
+      "lcu_term_count": 336,
+      "maximum_kronecker_multiplicity": 2,
+      "n": 8,
+      "nontrivial_multiplicity_target_count": 2,
+      "predicted_critical_normalized_gap": 0.03571428571428571,
+      "predicted_critical_raw_gap": 12.0,
+      "proved_lcu_term_count_formula": 336,
+      "source_irrep_dimension": 20,
+      "source_partition": [
+        6,
+        2
+      ],
+      "status": "critical-inverse-quadratic-gap-formula-finite-verified",
+      "target_gaps": [
+        {
+          "critical_formula_residual": null,
+          "kronecker_multiplicity": 2,
+          "lcu_normalized_gap": 0.07241383964640559,
+          "predicted_critical_normalized_gap": null,
+          "predicted_critical_raw_gap": null,
+          "raw_gap": 24.331050121192277,
+          "tableau_label_count": 20,
+          "tableau_spectrum_consistency_residual": 8.974241952641332e-13,
+          "target_partition": [
+            6,
+            2
+          ]
+        },
+        {
+          "critical_formula_residual": 1.4210854715202004e-14,
+          "kronecker_multiplicity": 2,
+          "lcu_normalized_gap": 0.03571428571428567,
+          "predicted_critical_normalized_gap": 0.03571428571428571,
+          "predicted_critical_raw_gap": 12.0,
+          "raw_gap": 11.999999999999986,
+          "tableau_label_count": 64,
+          "tableau_spectrum_consistency_residual": 3.8950446633139524e-13,
+          "target_partition": [
+            5,
+            2,
+            1
+          ]
+        }
+      ],
+      "tensor_dimension": 400,
+      "term_count_formula_verified": true
+    },
+    {
+      "all_nontrivial_targets_split": true,
+      "all_other_target_gaps_at_least_critical": true,
+      "critical_gap_formula_residual": 2.984279490192421e-13,
+      "critical_normalized_gap": 0.02777777777777837,
+      "critical_raw_gap": 14.000000000000298,
+      "critical_target": [
+        6,
+        2,
+        1
+      ],
+      "critical_target_present": true,
+      "finite_dense_verification_only": true,
+      "lcu_term_count": 504,
+      "maximum_kronecker_multiplicity": 2,
+      "n": 9,
+      "nontrivial_multiplicity_target_count": 2,
+      "predicted_critical_normalized_gap": 0.027777777777777776,
+      "predicted_critical_raw_gap": 14.0,
+      "proved_lcu_term_count_formula": 504,
+      "source_irrep_dimension": 27,
+      "source_partition": [
+        7,
+        2
+      ],
+      "status": "critical-inverse-quadratic-gap-formula-finite-verified",
+      "target_gaps": [
+        {
+          "critical_formula_residual": null,
+          "kronecker_multiplicity": 2,
+          "lcu_normalized_gap": 0.06652005799301595,
+          "predicted_critical_normalized_gap": null,
+          "predicted_critical_raw_gap": null,
+          "raw_gap": 33.52610922848004,
+          "tableau_label_count": 27,
+          "tableau_spectrum_consistency_residual": 9.800339540542306e-13,
+          "target_partition": [
+            7,
+            2
+          ]
+        },
+        {
+          "critical_formula_residual": 2.984279490192421e-13,
+          "kronecker_multiplicity": 2,
+          "lcu_normalized_gap": 0.02777777777777837,
+          "predicted_critical_normalized_gap": 0.027777777777777776,
+          "predicted_critical_raw_gap": 14.0,
+          "raw_gap": 14.000000000000298,
+          "tableau_label_count": 105,
+          "tableau_spectrum_consistency_residual": 1.4281732235759946e-12,
+          "target_partition": [
+            6,
+            2,
+            1
+          ]
+        }
+      ],
+      "tensor_dimension": 729,
+      "term_count_formula_verified": true
+    },
+    {
+      "all_nontrivial_targets_split": true,
+      "all_other_target_gaps_at_least_critical": true,
+      "critical_gap_formula_residual": 3.126388037344441e-13,
+      "critical_normalized_gap": 0.022222222222222657,
+      "critical_raw_gap": 16.000000000000313,
+      "critical_target": [
+        7,
+        2,
+        1
+      ],
+      "critical_target_present": true,
+      "finite_dense_verification_only": true,
+      "lcu_term_count": 720,
+      "maximum_kronecker_multiplicity": 2,
+      "n": 10,
+      "nontrivial_multiplicity_target_count": 2,
+      "predicted_critical_normalized_gap": 0.022222222222222223,
+      "predicted_critical_raw_gap": 16.0,
+      "proved_lcu_term_count_formula": 720,
+      "source_irrep_dimension": 35,
+      "source_partition": [
+        8,
+        2
+      ],
+      "status": "critical-inverse-quadratic-gap-formula-finite-verified",
+      "target_gaps": [
+        {
+          "critical_formula_residual": null,
+          "kronecker_multiplicity": 2,
+          "lcu_normalized_gap": 0.06242279181734484,
+          "predicted_critical_normalized_gap": null,
+          "predicted_critical_raw_gap": null,
+          "raw_gap": 44.944410108488285,
+          "tableau_label_count": 35,
+          "tableau_spectrum_consistency_residual": 2.9453995592670335e-09,
+          "target_partition": [
+            8,
+            2
+          ]
+        },
+        {
+          "critical_formula_residual": 3.126388037344441e-13,
+          "kronecker_multiplicity": 2,
+          "lcu_normalized_gap": 0.022222222222222657,
+          "predicted_critical_normalized_gap": 0.022222222222222223,
+          "predicted_critical_raw_gap": 16.0,
+          "raw_gap": 16.000000000000313,
+          "tableau_label_count": 160,
+          "tableau_spectrum_consistency_residual": 1.470884805404387e-09,
+          "target_partition": [
+            7,
+            2,
+            1
+          ]
+        }
+      ],
+      "tensor_dimension": 1225,
+      "term_count_formula_verified": true
+    }
+  ],
+  "status": "uniform-inverse-quadratic-gap-conjecture-survives-finite-scaling",
+  "summary": "Tested one uniform commutant Hamiltonian on lambda=(n-2,2) for n=[6, 7, 8, 9, 10]; the predicted 2/[n(n-1)] normalized critical gap matched 5/5 rows."
+}
