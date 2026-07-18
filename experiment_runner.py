@@ -62,6 +62,12 @@ from coset_stable_second_moment_certificate import (
 from coset_stable_third_moment_certificate import (
     write_stable_third_moment_certificate,
 )
+from coset_stable_fourth_moment_certificate import (
+    write_stable_fourth_moment_certificate,
+)
+from coset_stable_root_separation_certificate import (
+    write_stable_root_separation_certificate,
+)
 from coset_recoupling_capability_ledger import write_recoupling_capability_report
 from coset_recoupling_mechanism_synthesis import write_recoupling_mechanism_synthesis_report
 from coset_state_distinguishability import write_coset_distinguishability_report
@@ -508,6 +514,8 @@ COSET_EXPERIMENTS = {
     "EXP-COSET-STABLE-TRACE-CERTIFICATE",
     "EXP-COSET-STABLE-SECOND-MOMENT-CERTIFICATE",
     "EXP-COSET-STABLE-THIRD-MOMENT-CERTIFICATE",
+    "EXP-COSET-STABLE-FOURTH-MOMENT-CERTIFICATE",
+    "EXP-COSET-STABLE-ROOT-SEPARATION-CERTIFICATE",
     "EXP-COSET-RECOUPLING-CAPABILITY-LEDGER",
     "EXP-COSET-RECOUPLING-MECHANISM-SYNTHESIS",
 }
@@ -1322,6 +1330,8 @@ def select_next_experiment() -> NextExperimentSelection:
         "EXP-COSET-STABLE-TRACE-CERTIFICATE": 36,
         "EXP-COSET-STABLE-SECOND-MOMENT-CERTIFICATE": 37,
         "EXP-COSET-STABLE-THIRD-MOMENT-CERTIFICATE": 38,
+        "EXP-COSET-STABLE-FOURTH-MOMENT-CERTIFICATE": 39,
+        "EXP-COSET-STABLE-ROOT-SEPARATION-CERTIFICATE": 40,
         "EXP-COSET-RECOUPLING-CAPABILITY-LEDGER": 24,
         "EXP-COSET-RECOUPLING-MECHANISM-SYNTHESIS": 25,
     }
@@ -2753,6 +2763,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             )
         elif experiment_id == "EXP-COSET-STABLE-THIRD-MOMENT-CERTIFICATE":
             payload = write_stable_third_moment_certificate(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif experiment_id == "EXP-COSET-STABLE-FOURTH-MOMENT-CERTIFICATE":
+            payload = write_stable_fourth_moment_certificate(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif experiment_id == "EXP-COSET-STABLE-ROOT-SEPARATION-CERTIFICATE":
+            payload = write_stable_root_separation_certificate(
                 write_registry=True,
                 registry_experiment_id=experiment_id,
                 registry_candidate_id=experiment["candidate_id"],

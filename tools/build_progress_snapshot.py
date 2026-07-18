@@ -89,6 +89,12 @@ def build_snapshot() -> dict[str, Any]:
     stable_third_moment = read_json(
         RESEARCH / "representation/coset_stable_third_moment_certificate.json", {}
     )
+    stable_fourth_moment = read_json(
+        RESEARCH / "representation/coset_stable_fourth_moment_certificate.json", {}
+    )
+    stable_root_separation = read_json(
+        RESEARCH / "representation/coset_stable_root_separation_certificate.json", {}
+    )
 
     blocking = sum(bool(item.get("blocks_speedup_claim", False)) for item in findings)
     updated = latest_artifact_date(
@@ -112,6 +118,8 @@ def build_snapshot() -> dict[str, Any]:
         stable_trace_certificate,
         stable_second_moment,
         stable_third_moment,
+        stable_fourth_moment,
+        stable_root_separation,
     )
     gap_rows = metric(gap, "critical_gap_formula_finite_verified_count", 0)
     gap_total = metric(gap, "record_count", 0)
@@ -125,8 +133,9 @@ def build_snapshot() -> dict[str, Any]:
             "title": "No breakthrough yet",
             "detail": (
                 "Every speedup claim remains blocked. One restricted representation-theoretic gap theorem is now proved, "
-                "a bounded-support hierarchy resolves the complete finite S_6 Racah table, and three stable quartic "
-                "coefficients are exact. The determinant, root gaps, coherent recoupling, and decoding remain open."
+                "a bounded-support hierarchy resolves the complete finite S_6 Racah table, and one stable "
+                "multiplicity-four channel now has a complete exact quartic plus a normalized polynomial gap. "
+                "Coherent recoupling, all-sector coverage, and decoding remain open."
             ),
         },
         "overview": (
@@ -195,7 +204,7 @@ def build_snapshot() -> dict[str, Any]:
                     f"{metric(sparse_gap, 'integer_characteristic_polynomial_candidate_count', 0)} integer quartics through "
                     f"n={metric(sparse_gap, 'maximum_n', 0)}."
                 ),
-                "next": "Prove the determinant and normalized root gaps exactly, then compile the hierarchy coherently.",
+                "next": "Compile the proved stable spectral hierarchy coherently and determine whether its labels carry decoder information.",
             },
         ],
         "milestones": [
@@ -216,34 +225,36 @@ def build_snapshot() -> dict[str, Any]:
                 "detail": "A second bounded-support Hamiltonian splits residual multiplicities up to four and produces unitary left/right matrices in all ten final sectors.",
             },
             {
-                "title": "Three stable quartic coefficients were proved",
-                "detail": "Exact falling-cycle and 129-class relative-orbit calculations prove Tr(H), Tr(H^2), Tr(H^3), and hence the first three characteristic coefficients for every n>=7.",
+                "title": "A complete stable quartic and root gap were proved",
+                "detail": "Exact falling-cycle sums through 1,628 fourth-moment classes prove all four coefficients and an inverse-polynomial normalized gap for one multiplicity-four channel.",
             },
         ],
         "active_conjecture": {
             "summary": (
                 "For W_n=(n-2,2) and alpha_n=xi_n=(n-3,2,1), sparse multiplicity-four spectra through n=11 "
                 "reconstruct monic integer quartics. Exact marked-cycle equality patterns now prove their trace is "
-                "4n^3-46n^2+149n-118 for every n>=7. Seventeen relative classes prove Tr(H^2), and 129 classes "
-                "prove Tr(H^3). The next theorem targets are Tr(H^4), the determinant, and quartic root separation."
+                "4n^3-46n^2+149n-118 for every n>=7. Seventeen, 129, and 1,628 relative classes prove the next "
+                "three moments, completing the quartic. Its discriminant proves a normalized n^-53 gap. The next "
+                "target is a uniform coherent implementation and decoder, not another finite spectral probe."
             ),
             "facts": [
                 {"label": "Pair gap", "value": "Exact inverse-quadratic theorem"},
                 {"label": "Finite Racah table", "value": f"{metric(hierarchical_racah, 'complete_hierarchical_finite_racah_matrix_count', 0)}/10 S_6 sectors"},
                 {"label": "Stable quartics", "value": f"n=7-{metric(sparse_gap, 'maximum_n', 0)}, integer reconstructed"},
                 {"label": "Stable trace", "value": f"{metric(stable_trace_certificate, 'exact_marked_cycle_trace_theorem_count', 0)} exact theorem"},
-                {"label": "Quartic coefficients", "value": f"{metric(stable_third_moment, 'proved_quartic_coefficient_count', metric(stable_second_moment, 'proved_quartic_coefficient_count', 0))}/4 proved"},
+                {"label": "Quartic coefficients", "value": f"{metric(stable_fourth_moment, 'proved_quartic_coefficient_count', metric(stable_third_moment, 'proved_quartic_coefficient_count', 0))}/4 proved"},
+                {"label": "Normalized root gap", "value": f"{metric(stable_root_separation, 'stable_channel_root_separation_theorem_count', 0)} exact theorem"},
                 {"label": "Hidden decoder", "value": "Open"},
             ],
         },
         "next_actions": [
             {
-                "title": "Prove the determinant",
-                "detail": "Generalize the relative-orbit engine once more to H^4, or derive the constant coefficient directly from the stable multiplicity block.",
+                "title": "Compile the stable hierarchy coherently",
+                "detail": "Construct a uniform block encoding and phase-estimation circuit using the proved normalized spectral gap.",
             },
             {
-                "title": "Recover the full stable quartic",
-                "detail": "Derive Tr(H^4), apply Newton's fourth identity, and prove inverse-polynomial root separation after LCU normalization.",
+                "title": "Cover every required sector",
+                "detail": "Extend bounded-support spectral control beyond the single stable multiplicity-four channel without dense tableau enumeration.",
             },
             {
                 "title": "Compile and test the actual decoder",

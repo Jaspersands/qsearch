@@ -66,8 +66,8 @@
       "target_claim": "The coset observable is not a disguised classical invariant."
     }
   ],
-  "created_at": "2026-07-18T20:00:08.389423+00:00",
-  "lemma_count": 322,
+  "created_at": "2026-07-18T22:32:55.903590+00:00",
+  "lemma_count": 334,
   "lemmas": [
     {
       "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -273,6 +273,30 @@
       "id": "LEMMA-CODE-COSET-COLLECTIVE-COSET-STABLE-RACAH-THIRD-MOMENT",
       "statement": "The stable multiplicity-four orbit Hamiltonian has an exact degree-nine Tr(H^3), and Newton's third identity proves the third characteristic coefficient for every n>=7.",
       "status": "proved-exact-stable-racah-third-moment"
+    },
+    {
+      "candidate_id": "CODE-COSET-COLLECTIVE",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Verify incidence-mask multiplicities, all 1,628 class summaries, the stable symbolic sum, exact n=7..19 endpoints, and determinant agreement with sparse quartics.",
+      "id": "LEMMA-CODE-COSET-COLLECTIVE-COSET-STABLE-RACAH-FOURTH-MOMENT",
+      "statement": "The stable multiplicity-four orbit Hamiltonian has exact Tr(H^4) and determinant formulas, completing its quartic for every n>=7.",
+      "status": "proved-exact-stable-racah-quartic"
+    },
+    {
+      "candidate_id": "CODE-COSET-COLLECTIVE",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Verify discriminant factorization, positivity of 1000*q(n)-n^18 after n=m+7, the Cauchy coefficient bound, and explicit orbit-LCU normalization.",
+      "id": "LEMMA-CODE-COSET-COLLECTIVE-COSET-STABLE-RACAH-ROOT-SEPARATION",
+      "statement": "The stable multiplicity-four quartic has an explicit inverse-polynomial eigenvalue gap after n(n-1)(n-2)-term LCU normalization for every n>=7.",
+      "status": "proved-stable-racah-normalized-root-separation"
     },
     {
       "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -1571,6 +1595,30 @@
         "PO-COMPLEXITY",
         "PO-NO-GO"
       ],
+      "falsification_test": "Verify incidence-mask multiplicities, all 1,628 class summaries, the stable symbolic sum, exact n=7..19 endpoints, and determinant agreement with sparse quartics.",
+      "id": "LEMMA-HYP-LIT-COSET-OBSERVABLES-COSET-STABLE-RACAH-FOURTH-MOMENT",
+      "statement": "The stable multiplicity-four orbit Hamiltonian has exact Tr(H^4) and determinant formulas, completing its quartic for every n>=7.",
+      "status": "proved-exact-stable-racah-quartic"
+    },
+    {
+      "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Verify discriminant factorization, positivity of 1000*q(n)-n^18 after n=m+7, the Cauchy coefficient bound, and explicit orbit-LCU normalization.",
+      "id": "LEMMA-HYP-LIT-COSET-OBSERVABLES-COSET-STABLE-RACAH-ROOT-SEPARATION",
+      "statement": "The stable multiplicity-four quartic has an explicit inverse-polynomial eigenvalue gap after n(n-1)(n-2)-term LCU normalization for every n>=7.",
+      "status": "proved-stable-racah-normalized-root-separation"
+    },
+    {
+      "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
       "falsification_test": "Require a cited circuit theorem with gate count, precision, multiplicity basis, promises, and uniformity; a unitary definition, #BQP count, or Schur-Weyl transform does not satisfy it.",
       "id": "LEMMA-HYP-LIT-COSET-OBSERVABLES-COSET-INTERNAL-KRONECKER-TRANSFORM",
       "statement": "There is a uniform polynomial-gate internal S_n Kronecker transform with explicit multiplicity basis and state-transition access for unrestricted relevant irreps.",
@@ -2861,6 +2909,30 @@
         "PO-COMPLEXITY",
         "PO-NO-GO"
       ],
+      "falsification_test": "Verify incidence-mask multiplicities, all 1,628 class summaries, the stable symbolic sum, exact n=7..19 endpoints, and determinant agreement with sparse quartics.",
+      "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-COSET-STABLE-RACAH-FOURTH-MOMENT",
+      "statement": "The stable multiplicity-four orbit Hamiltonian has exact Tr(H^4) and determinant formulas, completing its quartic for every n>=7.",
+      "status": "proved-exact-stable-racah-quartic"
+    },
+    {
+      "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Verify discriminant factorization, positivity of 1000*q(n)-n^18 after n=m+7, the Cauchy coefficient bound, and explicit orbit-LCU normalization.",
+      "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-COSET-STABLE-RACAH-ROOT-SEPARATION",
+      "statement": "The stable multiplicity-four quartic has an explicit inverse-polynomial eigenvalue gap after n(n-1)(n-2)-term LCU normalization for every n>=7.",
+      "status": "proved-stable-racah-normalized-root-separation"
+    },
+    {
+      "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
       "falsification_test": "Require a cited circuit theorem with gate count, precision, multiplicity basis, promises, and uniformity; a unitary definition, #BQP count, or Schur-Weyl transform does not satisfy it.",
       "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-COSET-INTERNAL-KRONECKER-TRANSFORM",
       "statement": "There is a uniform polynomial-gate internal S_n Kronecker transform with explicit multiplicity basis and state-transition access for unrestricted relevant irreps.",
@@ -3182,6 +3254,30 @@
       "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-COSET-STABLE-RACAH-THIRD-MOMENT",
       "statement": "The stable multiplicity-four orbit Hamiltonian has an exact degree-nine Tr(H^3), and Newton's third identity proves the third characteristic coefficient for every n>=7.",
       "status": "proved-exact-stable-racah-third-moment"
+    },
+    {
+      "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Verify incidence-mask multiplicities, all 1,628 class summaries, the stable symbolic sum, exact n=7..19 endpoints, and determinant agreement with sparse quartics.",
+      "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-COSET-STABLE-RACAH-FOURTH-MOMENT",
+      "statement": "The stable multiplicity-four orbit Hamiltonian has exact Tr(H^4) and determinant formulas, completing its quartic for every n>=7.",
+      "status": "proved-exact-stable-racah-quartic"
+    },
+    {
+      "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Verify discriminant factorization, positivity of 1000*q(n)-n^18 after n=m+7, the Cauchy coefficient bound, and explicit orbit-LCU normalization.",
+      "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-COSET-STABLE-RACAH-ROOT-SEPARATION",
+      "statement": "The stable multiplicity-four quartic has an explicit inverse-polynomial eigenvalue gap after n(n-1)(n-2)-term LCU normalization for every n>=7.",
+      "status": "proved-stable-racah-normalized-root-separation"
     },
     {
       "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
@@ -3519,6 +3615,30 @@
         "PO-COMPLEXITY",
         "PO-NO-GO"
       ],
+      "falsification_test": "Verify incidence-mask multiplicities, all 1,628 class summaries, the stable symbolic sum, exact n=7..19 endpoints, and determinant agreement with sparse quartics.",
+      "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-COSET-STABLE-RACAH-FOURTH-MOMENT",
+      "statement": "The stable multiplicity-four orbit Hamiltonian has exact Tr(H^4) and determinant formulas, completing its quartic for every n>=7.",
+      "status": "proved-exact-stable-racah-quartic"
+    },
+    {
+      "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Verify discriminant factorization, positivity of 1000*q(n)-n^18 after n=m+7, the Cauchy coefficient bound, and explicit orbit-LCU normalization.",
+      "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-COSET-STABLE-RACAH-ROOT-SEPARATION",
+      "statement": "The stable multiplicity-four quartic has an explicit inverse-polynomial eigenvalue gap after n(n-1)(n-2)-term LCU normalization for every n>=7.",
+      "status": "proved-stable-racah-normalized-root-separation"
+    },
+    {
+      "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
       "falsification_test": "Require a cited circuit theorem with gate count, precision, multiplicity basis, promises, and uniformity; a unitary definition, #BQP count, or Schur-Weyl transform does not satisfy it.",
       "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-COSET-INTERNAL-KRONECKER-TRANSFORM",
       "statement": "There is a uniform polynomial-gate internal S_n Kronecker transform with explicit multiplicity basis and state-transition access for unrestricted relevant irreps.",
@@ -3840,6 +3960,30 @@
       "id": "LEMMA-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-COSET-STABLE-RACAH-THIRD-MOMENT",
       "statement": "The stable multiplicity-four orbit Hamiltonian has an exact degree-nine Tr(H^3), and Newton's third identity proves the third characteristic coefficient for every n>=7.",
       "status": "proved-exact-stable-racah-third-moment"
+    },
+    {
+      "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Verify incidence-mask multiplicities, all 1,628 class summaries, the stable symbolic sum, exact n=7..19 endpoints, and determinant agreement with sparse quartics.",
+      "id": "LEMMA-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-COSET-STABLE-RACAH-FOURTH-MOMENT",
+      "statement": "The stable multiplicity-four orbit Hamiltonian has exact Tr(H^4) and determinant formulas, completing its quartic for every n>=7.",
+      "status": "proved-exact-stable-racah-quartic"
+    },
+    {
+      "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Verify discriminant factorization, positivity of 1000*q(n)-n^18 after n=m+7, the Cauchy coefficient bound, and explicit orbit-LCU normalization.",
+      "id": "LEMMA-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-COSET-STABLE-RACAH-ROOT-SEPARATION",
+      "statement": "The stable multiplicity-four quartic has an explicit inverse-polynomial eigenvalue gap after n(n-1)(n-2)-term LCU normalization for every n>=7.",
+      "status": "proved-stable-racah-normalized-root-separation"
     },
     {
       "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",

@@ -6564,6 +6564,92 @@ def seed_candidate_records() -> tuple[list[CandidateRecord], list[ExperimentReco
             ],
         ),
         ExperimentRecord(
+            id="EXP-COSET-STABLE-FOURTH-MOMENT-CERTIFICATE",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Exact stable Racah fourth-moment certificate",
+            status="planned",
+            hypothesis=(
+                "Three relative orbit terms admit a finite incidence-mask classification whose exact correlations "
+                "complete the stable multiplicity-four characteristic polynomial."
+            ),
+            protocol=(
+                "Compress outside labels by three-support incidence masks, classify 27,787,968 weighted terms into "
+                "1,628 simultaneous-conjugacy classes, checkpoint exact falling-cycle summaries, prove the n>=20 "
+                "symbolic identity, and close n=7..19 exactly."
+            ),
+            positive_signal=(
+                "Tr(H^4), the determinant, all 13 endpoints, and five sparse quartics agree exactly without interpolation."
+            ),
+            falsifiers=[
+                "Incidence-mask weights do not reproduce the labeled orbit totals.",
+                "The 1,628 classes do not exhaust the four-orbit trace.",
+                "The stable symbolic formula disagrees with exact endpoints.",
+                "A complete quartic is promoted as a circuit or decoder theorem.",
+            ],
+            metrics=[
+                "exact_fourth_power_trace_theorem_count",
+                "exact_determinant_theorem_count",
+                "relative_orbit_class_count",
+                "completed_pattern_class_count",
+                "all_n_quartic_theorem_count",
+                "all_n_root_separation_theorem_count",
+            ],
+            dependencies=[
+                "coset_stable_fourth_moment_certificate.py",
+                "coset_stable_fourth_moment_patterns.json",
+                "incidence-mask orbit compression",
+                "Newton identities",
+            ],
+            next_actions=[
+                "Factor the exact quartic discriminant and prove normalized root separation.",
+                "Extend stable spectral control to all decoder-relevant sectors.",
+                "Compile the hierarchy and phase estimation coherently.",
+                "Test hidden-involution decoder information against classical baselines.",
+            ],
+        ),
+        ExperimentRecord(
+            id="EXP-COSET-STABLE-ROOT-SEPARATION-CERTIFICATE",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Exact stable Racah root-separation certificate",
+            status="planned",
+            hypothesis=(
+                "The exact stable quartic has a uniformly positive integer discriminant and therefore an "
+                "inverse-polynomial gap after orbit-LCU normalization."
+            ),
+            protocol=(
+                "Factor the discriminant, certify positivity after n=m+7, lower-bound it by n^20/1960, combine with "
+                "an explicit Cauchy radius, and divide the raw gap by n(n-1)(n-2)."
+            ),
+            positive_signal=(
+                "Every n>=7 stable-channel eigenvalue pair has the explicit raw n^-50 and normalized n^-53 lower bounds."
+            ),
+            falsifiers=[
+                "The discriminant vanishes for an integer n>=7.",
+                "The shifted positivity or coefficient norm bound fails.",
+                "LCU normalization is omitted from the gap theorem.",
+                "A one-channel spectral theorem is promoted as an end-to-end HSP algorithm.",
+            ],
+            metrics=[
+                "stable_channel_root_separation_theorem_count",
+                "discriminant_degree",
+                "normalized_gap_inverse_polynomial_exponent",
+                "uniform_polynomial_racah_circuit_count",
+                "hidden_involution_decoder_count",
+            ],
+            dependencies=[
+                "coset_stable_root_separation_certificate.py",
+                "coset_stable_fourth_moment_certificate.py",
+                "integer polynomial discriminant",
+                "Cauchy root bound",
+            ],
+            next_actions=[
+                "Construct a uniform block encoding of the bounded-support hierarchy.",
+                "Prove efficient phase estimation with the certified normalized gap.",
+                "Cover all intermediate and final sectors required by the reduction.",
+                "Build and dequantize a hidden-involution decoder from the spectral labels.",
+            ],
+        ),
+        ExperimentRecord(
             id="EXP-COSET-RECOUPLING-CAPABILITY-LEDGER",
             candidate_id="CODE-COSET-COLLECTIVE",
             title="Literature-backed symmetric-group recoupling capability ledger",

@@ -99,6 +99,8 @@ Commands:
   python qsearch.py coset-racah-trace-proof
   python qsearch.py coset-racah-second-moment-proof
   python qsearch.py coset-racah-third-moment-proof
+  python qsearch.py coset-racah-fourth-moment-proof
+  python qsearch.py coset-racah-root-separation-proof
   python qsearch.py coset-recoupling-capabilities
   python qsearch.py coset-recoupling-synthesize
   python qsearch.py code-equivalence
@@ -313,6 +315,12 @@ from coset_stable_second_moment_certificate import (
 )
 from coset_stable_third_moment_certificate import (
     write_stable_third_moment_certificate,
+)
+from coset_stable_fourth_moment_certificate import (
+    write_stable_fourth_moment_certificate,
+)
+from coset_stable_root_separation_certificate import (
+    write_stable_root_separation_certificate,
 )
 from coset_recoupling_capability_ledger import write_recoupling_capability_report
 from coset_recoupling_mechanism_synthesis import write_recoupling_mechanism_synthesis_report
@@ -4019,6 +4027,64 @@ def command_coset_racah_third_moment_proof(args: argparse.Namespace) -> int:
     return 0
 
 
+def command_coset_racah_fourth_moment_proof(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_stable_fourth_moment_certificate(
+        workers=args.workers,
+        resume=not args.no_resume,
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Exact stable Racah fourth-moment certificate complete")
+    print(
+        "Artifact: research/representation/"
+        "coset_stable_fourth_moment_certificate.json"
+    )
+    print(f"Tr(H^4): {payload['theorem']['fourth_power_trace']}")
+    print(f"Determinant: {payload['theorem']['determinant']}")
+    print(
+        "Proved quartic coefficients: "
+        f"{metrics['proved_quartic_coefficient_count']}/"
+        f"{metrics['required_quartic_coefficient_count']}"
+    )
+    print(f"Relative orbit classes: {metrics['relative_orbit_class_count']}")
+    print(f"Speedup claim allowed: {payload['claim_gate']['speedup_claim_allowed']}")
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_coset_racah_root_separation_proof(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_stable_root_separation_certificate(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Exact stable Racah root-separation certificate complete")
+    print(
+        "Artifact: research/representation/"
+        "coset_stable_root_separation_certificate.json"
+    )
+    print(
+        "Normalized gap lower bound: "
+        f"{payload['theorem']['lcu_normalized_gap_lower_bound']}"
+    )
+    print(
+        "Stable root-separation theorems: "
+        f"{metrics['stable_channel_root_separation_theorem_count']}"
+    )
+    print(f"Speedup claim allowed: {payload['claim_gate']['speedup_claim_allowed']}")
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
 def command_coset_recoupling_synthesize(args: argparse.Namespace) -> int:
     initialize_seed_registry(overwrite=False)
     payload = write_recoupling_mechanism_synthesis_report(
@@ -7244,6 +7310,28 @@ def build_parser() -> argparse.ArgumentParser:
     )
     coset_racah_third_moment_proof.set_defaults(
         func=command_coset_racah_third_moment_proof
+    )
+
+    coset_racah_fourth_moment_proof = subparsers.add_parser(
+        "coset-racah-fourth-moment-proof",
+        help="Complete the stable Racah quartic with a resumable exact Tr(H^4) certificate.",
+    )
+    coset_racah_fourth_moment_proof.add_argument("--workers", type=int, default=None)
+    coset_racah_fourth_moment_proof.add_argument("--no-resume", action="store_true")
+    coset_racah_fourth_moment_proof.add_argument("--no-registry", action="store_true")
+    coset_racah_fourth_moment_proof.set_defaults(
+        func=command_coset_racah_fourth_moment_proof
+    )
+
+    coset_racah_root_separation_proof = subparsers.add_parser(
+        "coset-racah-root-separation-proof",
+        help="Prove an inverse-polynomial LCU-normalized gap from the exact stable quartic discriminant.",
+    )
+    coset_racah_root_separation_proof.add_argument(
+        "--no-registry", action="store_true"
+    )
+    coset_racah_root_separation_proof.set_defaults(
+        func=command_coset_racah_root_separation_proof
     )
 
     coset_recoupling_synthesize = subparsers.add_parser(

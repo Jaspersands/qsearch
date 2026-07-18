@@ -642,9 +642,17 @@ classes. Falling-cycle patterns prove
 `Tr(H^3)=4n^9-138n^8+2037n^7-16798n^6+84810n^5-270165n^4+539231n^3-646446n^2+422442n-115228`:
 the symbolic proof is literal for `n>=17`, exact pattern counts close
 `n=7..16`, and all five sparse quartics agree. Newton's third identity proves
-the third characteristic coefficient without interpolation. `Tr(H^4)`, the
-determinant, normalized root separation, coherent synthesis, and decoding
-remain open.
+the third characteristic coefficient without interpolation. The fourth-moment
+pipeline compresses 27,787,968 labeled relative terms by three-support
+incidence masks, reduces them to 1,628 simultaneous-conjugacy classes, and
+checkpoints 20,607,987,763 exact canonical equality patterns. It proves
+`Tr(H^4)` and the determinant for every `n>=7`, completing all four quartic
+coefficients. The discriminant factors as `(n-2)^2 q(n)`; positivity after
+`n=m+7`, an explicit discriminant lower bound, and a Cauchy root bound prove an
+LCU-normalized gap of at least `1/(C*n^53)` for an explicit constant `C`.
+This closes the spectral theorem in one stable multiplicity-four channel.
+Uniform coherent synthesis, all-sector coverage, hidden-involution decoding,
+and any speedup claim remain open.
 
 ```bash
 python qsearch.py coset-racah-gap-scaling
@@ -653,6 +661,8 @@ python qsearch.py coset-racah-trace-conjecture
 python qsearch.py coset-racah-trace-proof
 python qsearch.py coset-racah-second-moment-proof
 python qsearch.py coset-racah-third-moment-proof
+python qsearch.py coset-racah-fourth-moment-proof
+python qsearch.py coset-racah-root-separation-proof
 ```
 
 The capability ledger separates the solved `S_n` QFT, Schur-Weyl transforms,

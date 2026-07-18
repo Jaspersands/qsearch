@@ -135,6 +135,12 @@ COSET_STABLE_SECOND_MOMENT_PATH = Path(
 COSET_STABLE_THIRD_MOMENT_PATH = Path(
     "research/representation/coset_stable_third_moment_certificate.json"
 )
+COSET_STABLE_FOURTH_MOMENT_PATH = Path(
+    "research/representation/coset_stable_fourth_moment_certificate.json"
+)
+COSET_STABLE_ROOT_SEPARATION_PATH = Path(
+    "research/representation/coset_stable_root_separation_certificate.json"
+)
 COSET_RECOUPLING_CAPABILITY_PATH = Path(
     "research/representation/coset_recoupling_capability_ledger.json"
 )
@@ -642,6 +648,28 @@ def lemma_templates(candidate: dict[str, Any]) -> list[LemmaRecord]:
             "headline_metrics", {}
         )
         try:
+            stable_fourth_moment = (
+                json.loads(COSET_STABLE_FOURTH_MOMENT_PATH.read_text())
+                if COSET_STABLE_FOURTH_MOMENT_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            stable_fourth_moment = {}
+        stable_fourth_moment_metrics = stable_fourth_moment.get(
+            "headline_metrics", {}
+        )
+        try:
+            stable_root_separation = (
+                json.loads(COSET_STABLE_ROOT_SEPARATION_PATH.read_text())
+                if COSET_STABLE_ROOT_SEPARATION_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            stable_root_separation = {}
+        stable_root_separation_metrics = stable_root_separation.get(
+            "headline_metrics", {}
+        )
+        try:
             recoupling_capabilities = (
                 json.loads(COSET_RECOUPLING_CAPABILITY_PATH.read_text())
                 if COSET_RECOUPLING_CAPABILITY_PATH.exists()
@@ -1109,6 +1137,54 @@ def lemma_templates(candidate: dict[str, Any]) -> list[LemmaRecord]:
                     falsification_test=(
                         "Verify all 129 relative simultaneous-conjugacy classes, the stable equality-pattern sum, "
                         "exact n=7..16 endpoints, and the Newton coefficient against sparse quartics."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-COSET-STABLE-RACAH-FOURTH-MOMENT",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "The stable multiplicity-four orbit Hamiltonian has exact Tr(H^4) and determinant formulas, "
+                        "completing its quartic for every n>=7."
+                    ),
+                    depends_on=["PO-MEASUREMENT", "PO-COMPLEXITY", "PO-NO-GO"],
+                    status=(
+                        "proved-exact-stable-racah-quartic"
+                        if int(
+                            stable_fourth_moment_metrics.get(
+                                "all_n_quartic_theorem_count", 0
+                            )
+                            or 0
+                        )
+                        > 0
+                        else "blocked-stable-racah-fourth-moment-certificate-missing"
+                    ),
+                    falsification_test=(
+                        "Verify incidence-mask multiplicities, all 1,628 class summaries, the stable symbolic sum, "
+                        "exact n=7..19 endpoints, and determinant agreement with sparse quartics."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-COSET-STABLE-RACAH-ROOT-SEPARATION",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "The stable multiplicity-four quartic has an explicit inverse-polynomial eigenvalue gap after "
+                        "n(n-1)(n-2)-term LCU normalization for every n>=7."
+                    ),
+                    depends_on=["PO-MEASUREMENT", "PO-COMPLEXITY", "PO-NO-GO"],
+                    status=(
+                        "proved-stable-racah-normalized-root-separation"
+                        if int(
+                            stable_root_separation_metrics.get(
+                                "stable_channel_root_separation_theorem_count", 0
+                            )
+                            or 0
+                        )
+                        > 0
+                        else "blocked-stable-racah-root-separation-certificate-missing"
+                    ),
+                    falsification_test=(
+                        "Verify discriminant factorization, positivity of 1000*q(n)-n^18 after n=m+7, the Cauchy "
+                        "coefficient bound, and explicit orbit-LCU normalization."
                     ),
                 ),
                 LemmaRecord(

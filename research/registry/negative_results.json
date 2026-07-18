@@ -36341,6 +36341,36 @@
   {
     "applies_to": [
       "CODE-COSET-COLLECTIVE",
+      "EXP-COSET-STABLE-FOURTH-MOMENT-CERTIFICATE"
+    ],
+    "claim": "A complete exact stable Racah quartic establishes an efficient collective measurement or speedup.",
+    "evidence": {
+      "all_n_quartic_theorem_count": 1,
+      "all_n_root_separation_theorem_count": 0,
+      "completed_pattern_class_count": 1628,
+      "exact_determinant_theorem_count": 1,
+      "exact_endpoint_verified_count": 13,
+      "exact_fourth_power_trace_theorem_count": 1,
+      "hidden_involution_decoder_count": 0,
+      "maximum_active_support_size": 12,
+      "nonzero_pattern_coefficient_count": 51265,
+      "proved_quartic_coefficient_count": 4,
+      "raw_canonical_pattern_count": 20607987763,
+      "raw_relative_term_type_count": 27787968,
+      "relative_orbit_class_count": 1628,
+      "required_quartic_coefficient_count": 4,
+      "sparse_quartic_reference_match_count": 5,
+      "stable_symbolic_minimum_n": 20,
+      "uniform_polynomial_racah_circuit_count": 0
+    },
+    "id": "NEG-COSET-COMPLETE-QUARTIC-AS-RACAH-ALGORITHM",
+    "lesson": "Use the exact quartic to prove or falsify normalized root separation, then address circuit synthesis and decoder information.",
+    "reason_invalid": "Root separation, uniform coherent implementation, sector coverage, and hidden-involution decoding remain open.",
+    "source": "research/representation/coset_stable_fourth_moment_certificate.json"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
       "EXP-COSET-HIERARCHICAL-RACAH-CONTROL"
     ],
     "claim": "A complete finite S_6 hierarchical Racah table establishes a uniform efficient associator.",
@@ -36781,6 +36811,33 @@
     "lesson": "Use the reconstructed quartics as targets for exact character-orbit or partition-algebra trace identities, then prove root separation uniformly.",
     "reason_invalid": "The coefficients are numerically reconstructed at finitely many n and no exact coefficient formula or root-separation theorem is supplied.",
     "source": "research/representation/coset_sparse_stable_gap_probe.json"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "EXP-COSET-STABLE-ROOT-SEPARATION-CERTIFICATE"
+    ],
+    "claim": "An inverse-polynomial normalized gap in one stable Racah channel yields an efficient nonabelian HSP algorithm.",
+    "evidence": {
+      "all_n_quartic_theorem_count": 1,
+      "all_n_root_separation_theorem_count": 1,
+      "all_sector_uniform_gap_theorem_count": 0,
+      "coefficient_norm_bound": 38014592,
+      "discriminant_degree": 20,
+      "discriminant_quotient_degree": 18,
+      "gap_constant_denominator": 114317894658451640616249126635327696917920,
+      "hidden_involution_decoder_count": 0,
+      "normalized_gap_inverse_polynomial_exponent": 53,
+      "raw_gap_inverse_polynomial_exponent": 50,
+      "scaled_margin_positive_coefficient_count": 19,
+      "shifted_positive_coefficient_count": 19,
+      "stable_channel_root_separation_theorem_count": 1,
+      "uniform_polynomial_racah_circuit_count": 0
+    },
+    "id": "NEG-COSET-STABLE-ROOT-GAP-AS-END-TO-END-DECODER",
+    "lesson": "Compile the bounded-support hierarchy and phase estimation coherently, then quantify decoder information against classical baselines.",
+    "reason_invalid": "Uniform coherent implementation, all-sector coverage, and a reduction-compatible hidden-involution decoder remain absent.",
+    "source": "research/representation/coset_stable_root_separation_certificate.json"
   },
   {
     "applies_to": [

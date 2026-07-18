@@ -2865,6 +2865,76 @@
   },
   {
     "artifacts": {
+      "coset_stable_fourth_moment_certificate": "research/representation/coset_stable_fourth_moment_certificate.json",
+      "coset_stable_fourth_moment_patterns": "research/representation/coset_stable_fourth_moment_patterns.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-07-18T22:22:26.315993+00:00",
+    "experiment_id": "EXP-COSET-STABLE-FOURTH-MOMENT-CERTIFICATE",
+    "falsifiers_triggered": [
+      "A complete characteristic polynomial does not itself prove inverse-polynomial normalized root separation.",
+      "One stable multiplicity-four channel does not cover every decoder-relevant sector.",
+      "Exact spectral labels do not supply a coherent polynomial-size Racah transform.",
+      "No measurement outcome has been connected to a hidden-involution decoder."
+    ],
+    "id": "RESULT-EXP-COSET-STABLE-FOURTH-MOMENT-CERTIFICATE-LATEST",
+    "metrics": {
+      "all_n_quartic_theorem_count": 1,
+      "all_n_root_separation_theorem_count": 0,
+      "completed_pattern_class_count": 1628,
+      "exact_determinant_theorem_count": 1,
+      "exact_endpoint_verified_count": 13,
+      "exact_fourth_power_trace_theorem_count": 1,
+      "hidden_involution_decoder_count": 0,
+      "maximum_active_support_size": 12,
+      "nonzero_pattern_coefficient_count": 51265,
+      "proved_quartic_coefficient_count": 4,
+      "raw_canonical_pattern_count": 20607987763,
+      "raw_relative_term_type_count": 27787968,
+      "relative_orbit_class_count": 1628,
+      "required_quartic_coefficient_count": 4,
+      "sparse_quartic_reference_match_count": 5,
+      "stable_symbolic_minimum_n": 20,
+      "uniform_polynomial_racah_circuit_count": 0
+    },
+    "status": "stable-quartic-proved-root-separation-open",
+    "summary": "Proved the complete all-n stable quartic through 1,628 exact relative classes; root separation and algorithmic obligations remain open."
+  },
+  {
+    "artifacts": {
+      "coset_stable_root_separation_certificate": "research/representation/coset_stable_root_separation_certificate.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-07-18T22:22:28.426940+00:00",
+    "experiment_id": "EXP-COSET-STABLE-ROOT-SEPARATION-CERTIFICATE",
+    "falsifiers_triggered": [
+      "A separated abstract spectrum does not provide a coherent circuit for the orbit Hamiltonian or its phase estimation.",
+      "One stable multiplicity-four channel does not cover all intermediate and final sectors.",
+      "No theorem maps these spectral labels to a hidden-involution decoder.",
+      "No classical baseline is defeated by the spectral theorem alone."
+    ],
+    "id": "RESULT-EXP-COSET-STABLE-ROOT-SEPARATION-CERTIFICATE-LATEST",
+    "metrics": {
+      "all_n_quartic_theorem_count": 1,
+      "all_n_root_separation_theorem_count": 1,
+      "all_sector_uniform_gap_theorem_count": 0,
+      "coefficient_norm_bound": 38014592,
+      "discriminant_degree": 20,
+      "discriminant_quotient_degree": 18,
+      "gap_constant_denominator": 114317894658451640616249126635327696917920,
+      "hidden_involution_decoder_count": 0,
+      "normalized_gap_inverse_polynomial_exponent": 53,
+      "raw_gap_inverse_polynomial_exponent": 50,
+      "scaled_margin_positive_coefficient_count": 19,
+      "shifted_positive_coefficient_count": 19,
+      "stable_channel_root_separation_theorem_count": 1,
+      "uniform_polynomial_racah_circuit_count": 0
+    },
+    "status": "stable-root-separation-proved-circuit-decoder-open",
+    "summary": "Proved an explicit inverse-polynomial LCU-normalized eigenvalue gap for the stable multiplicity-four Racah block; circuit synthesis, sector coverage, and decoding remain open."
+  },
+  {
+    "artifacts": {
       "coset_stable_second_moment_certificate": "research/representation/coset_stable_second_moment_certificate.json"
     },
     "candidate_id": "CODE-COSET-COLLECTIVE",
