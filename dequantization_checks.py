@@ -177,6 +177,27 @@ COSET_JM_LABEL_TRANSFORM_PATH = Path(
 COSET_MULTIPLICITY_COMMUTANT_PATH = Path(
     "research/representation/coset_multiplicity_commutant_search.json"
 )
+COSET_COMMUTANT_GAP_CERTIFICATE_PATH = Path(
+    "research/representation/coset_commutant_gap_certificate.json"
+)
+COSET_RESTRICTED_RACAH_CONTROL_PATH = Path(
+    "research/representation/coset_restricted_racah_control.json"
+)
+COSET_COMPLETE_RACAH_CONTROL_PATH = Path(
+    "research/representation/coset_complete_racah_control.json"
+)
+COSET_HIERARCHICAL_RACAH_CONTROL_PATH = Path(
+    "research/representation/coset_hierarchical_racah_control.json"
+)
+COSET_HIERARCHICAL_GAP_SCALING_PATH = Path(
+    "research/representation/coset_hierarchical_gap_scaling.json"
+)
+COSET_SPARSE_STABLE_GAP_PATH = Path(
+    "research/representation/coset_sparse_stable_gap_probe.json"
+)
+COSET_STABLE_TRACE_CONJECTURE_PATH = Path(
+    "research/representation/coset_stable_trace_conjecture.json"
+)
 COSET_RECOUPLING_CAPABILITY_PATH = Path(
     "research/representation/coset_recoupling_capability_ledger.json"
 )
@@ -3588,6 +3609,211 @@ def findings_from_coset_three_copy_recoupling(
     ]
 
 
+def findings_from_coset_restricted_racah_control(
+    path: Path = COSET_RESTRICTED_RACAH_CONTROL_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    return [
+        DequantizationFinding(
+            id="DEQ-COSET-RESTRICTED-RACAH-SUBBLOCK-LEAKAGE",
+            created_at=utc_now(),
+            target_type="coset_restricted_racah_control",
+            target_id=str(path),
+            severity="high",
+            claim_under_test=(
+                "The solved pairwise commutant-gap channel is already a closed three-copy Racah transform."
+            ),
+            evidence=(
+                f"Tableau-consistent/rational subblocks={metrics.get('tableau_consistent_subblock_count', 0)}/"
+                f"{metrics.get('rational_subblock_reconstruction_count', 0)}, but nonunitary blocks/leaking channels="
+                f"{metrics.get('nonunitary_restricted_subblock_count', 0)}/"
+                f"{metrics.get('channel_leakage_detected_count', 0)} and full/uniform associators="
+                f"{metrics.get('full_racah_associator_count', 0)}/"
+                f"{metrics.get('uniform_polynomial_racah_circuit_count', 0)}."
+            ),
+            required_action=(
+                "Include every intermediate partition and multiplicity channel, derive complete unitary Racah blocks "
+                "at the partition level, and give a uniform coherent implementation before using the pair gap in a decoder."
+            ),
+            blocks_speedup_claim=True,
+        )
+    ]
+
+
+def findings_from_coset_complete_racah_control(
+    path: Path = COSET_COMPLETE_RACAH_CONTROL_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    return [
+        DequantizationFinding(
+            id="DEQ-COSET-COMPLETE-FINITE-RACAH-NOT-UNIFORM",
+            created_at=utc_now(),
+            target_type="coset_complete_racah_control",
+            target_id=str(path),
+            severity="high",
+            claim_under_test=(
+                "Complete finite Racah matrices constitute a scalable coherent associator and support a speedup."
+            ),
+            evidence=(
+                f"Complete/nontrivial finite matrices="
+                f"{metrics.get('complete_finite_racah_matrix_count', 0)}/"
+                f"{metrics.get('nontrivial_complete_finite_racah_matrix_count', 0)}, but unresolved "
+                f"second-stage sectors={metrics.get('unresolved_second_stage_multiplicity_sector_count', 0)}, "
+                f"all-n formulas/uniform circuits/decoders="
+                f"{metrics.get('all_n_racah_formula_count', 0)}/"
+                f"{metrics.get('uniform_polynomial_racah_circuit_count', 0)}/"
+                f"{metrics.get('hidden_involution_decoder_count', 0)}."
+            ),
+            required_action=(
+                "Resolve the remaining second-stage multiplicity spaces, derive a compressed stable-n Racah rule, "
+                "compile it coherently with polynomial precision and cost, and connect outcomes to a decoder."
+            ),
+            blocks_speedup_claim=True,
+        )
+    ]
+
+
+def findings_from_coset_hierarchical_racah_control(
+    path: Path = COSET_HIERARCHICAL_RACAH_CONTROL_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    return [
+        DequantizationFinding(
+            id="DEQ-COSET-COMPLETE-S6-RACAH-NOT-STABLE-N-CIRCUIT",
+            created_at=utc_now(),
+            target_type="coset_hierarchical_racah_control",
+            target_id=str(path),
+            severity="high",
+            claim_under_test=(
+                "A complete finite S_6 joint Racah basis establishes a scalable coherent measurement."
+            ),
+            evidence=(
+                f"Complete finite sectors="
+                f"{metrics.get('complete_hierarchical_finite_racah_matrix_count', 0)}/"
+                f"{metrics.get('final_target_count', 0)} with maximum second-stage multiplicity "
+                f"{metrics.get('maximum_second_stage_multiplicity', 0)}, but stable-n gap theorems/uniform "
+                f"circuits/decoders={metrics.get('stable_n_joint_gap_theorem_count', 0)}/"
+                f"{metrics.get('uniform_polynomial_racah_circuit_count', 0)}/"
+                f"{metrics.get('hidden_involution_decoder_count', 0)}."
+            ),
+            required_action=(
+                "Prove stable-n joint spectral gaps for the hierarchical orbit operators, derive compressed Racah "
+                "matrix elements, implement phase estimation coherently, and audit decoder information and classical simulation."
+            ),
+            blocks_speedup_claim=True,
+        )
+    ]
+
+
+def findings_from_coset_hierarchical_gap_scaling(
+    path: Path = COSET_HIERARCHICAL_GAP_SCALING_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    return [
+        DequantizationFinding(
+            id="DEQ-COSET-FINITE-HIERARCHICAL-GAPS-NOT-ALL-N-THEOREM",
+            created_at=utc_now(),
+            target_type="coset_hierarchical_gap_scaling",
+            target_id=str(path),
+            severity="high",
+            claim_under_test=(
+                "Finite second-stage gap scaling establishes an efficient all-n Racah transform."
+            ),
+            evidence=(
+                f"Finite split rows={metrics.get('finite_all_blocks_split_count', 0)}/"
+                f"{metrics.get('record_count', 0)}, maximum multiplicity="
+                f"{metrics.get('maximum_second_stage_multiplicity', 0)}, minimum observed normalized gap="
+                f"{metrics.get('minimum_observed_normalized_gap', 0)}, but all-n gap theorems/uniform circuits="
+                f"{metrics.get('all_n_second_stage_gap_theorem_count', 0)}/"
+                f"{metrics.get('uniform_polynomial_racah_circuit_count', 0)}."
+            ),
+            required_action=(
+                "Derive exact stable-family characteristic polynomials and prove inverse-polynomial gap bounds; "
+                "then cover every decoder-relevant final sector and compile the hierarchy coherently."
+            ),
+            blocks_speedup_claim=True,
+        )
+    ]
+
+
+def findings_from_coset_sparse_stable_gap(
+    path: Path = COSET_SPARSE_STABLE_GAP_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    return [
+        DequantizationFinding(
+            id="DEQ-COSET-SPARSE-INTEGER-QUARTICS-NOT-EXACT-GAP-THEOREM",
+            created_at=utc_now(),
+            target_type="coset_sparse_stable_gap_probe",
+            target_id=str(path),
+            severity="high",
+            claim_under_test=(
+                "Numerically reconstructed integer quartics prove a stable efficient Racah channel."
+            ),
+            evidence=(
+                f"Finite split/integer-polynomial rows={metrics.get('finite_split_count', 0)}/"
+                f"{metrics.get('integer_characteristic_polynomial_candidate_count', 0)} through n="
+                f"{metrics.get('maximum_n', 0)}, but all-n polynomial/gap theorems="
+                f"{metrics.get('all_n_characteristic_polynomial_theorem_count', 0)}/"
+                f"{metrics.get('all_n_gap_theorem_count', 0)}."
+            ),
+            required_action=(
+                "Derive exact trace identities for the quartic coefficients, prove their stable formulas and root "
+                "separation, then extend beyond the one critical channel and supply a coherent implementation."
+            ),
+            blocks_speedup_claim=True,
+        )
+    ]
+
+
+def findings_from_coset_stable_trace_conjecture(
+    path: Path = COSET_STABLE_TRACE_CONJECTURE_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    return [
+        DequantizationFinding(
+            id="DEQ-COSET-TRACE-HOLDOUT-NOT-EXACT-CHARACTER-PROOF",
+            created_at=utc_now(),
+            target_type="coset_stable_trace_conjecture",
+            target_id=str(path),
+            severity="high",
+            claim_under_test=(
+                "A cubic interpolation with held-out agreement proves the exact stable Racah trace."
+            ),
+            evidence=(
+                f"Holdout matches={metrics.get('holdout_match_count', 0)}/"
+                f"{metrics.get('holdout_row_count', 0)}, but exact trace/full quartic/root-separation theorems="
+                f"{metrics.get('exact_marked_cycle_trace_theorem_count', 0)}/"
+                f"{metrics.get('all_n_quartic_theorem_count', 0)}/"
+                f"{metrics.get('all_n_root_separation_theorem_count', 0)}."
+            ),
+            required_action=(
+                "Evaluate the explicit marked-cycle character sum exactly, derive all four quartic coefficients via "
+                "power traces, and prove normalized root separation before circuit synthesis."
+            ),
+            blocks_speedup_claim=True,
+        )
+    ]
+
+
 def findings_from_coset_recoupling_capability_ledger(
     path: Path = COSET_RECOUPLING_CAPABILITY_PATH,
 ) -> list[DequantizationFinding]:
@@ -3655,11 +3881,17 @@ def findings_from_coset_jucys_murphy_label_transform(
 
 def findings_from_coset_multiplicity_commutant_search(
     path: Path = COSET_MULTIPLICITY_COMMUTANT_PATH,
+    certificate_path: Path = COSET_COMMUTANT_GAP_CERTIFICATE_PATH,
 ) -> list[DequantizationFinding]:
     payload = _read_json(path, {})
-    if not payload:
+    certificate = _read_json(certificate_path, {})
+    if not payload and not certificate:
         return []
     metrics = payload.get("headline_metrics", {})
+    certificate_metrics = certificate.get("headline_metrics", {})
+    restricted_theorems = int(
+        certificate_metrics.get("all_n_critical_gap_theorem_count", 0) or 0
+    )
     return [
         DequantizationFinding(
             id="DEQ-COSET-FINITE-COMMUTANT-SPLITTING-NEEDS-GAP-THEOREM",
@@ -3668,19 +3900,20 @@ def findings_from_coset_multiplicity_commutant_search(
             target_id=str(path),
             severity="high",
             claim_under_test=(
-                "Finite simple spectra of bounded-support commutant Hamiltonians provide a polynomial multiplicity transform."
+                "Finite spectra or one restricted all-n gap theorem provide a general polynomial multiplicity transform."
             ),
             evidence=(
                 f"Finite all-block splits={metrics.get('finite_all_block_split_count', 0)}/"
                 f"{metrics.get('record_count', 0)}, maximum multiplicity="
                 f"{metrics.get('maximum_kronecker_multiplicity', 0)}, minimum observed LCU-normalized gap="
-                f"{metrics.get('minimum_observed_lcu_normalized_gap', 0)}, but gap theorems/polynomial transforms="
-                f"{metrics.get('inverse_polynomial_gap_theorem_count', 0)}/"
+                f"{metrics.get('minimum_observed_lcu_normalized_gap', 0)}, restricted all-n gap theorems="
+                f"{restricted_theorems}, but general gap theorems/polynomial transforms="
+                f"{certificate_metrics.get('general_sector_gap_theorem_count', 0)}/"
                 f"{metrics.get('coherent_polynomial_multiplicity_transform_count', 0)}."
             ),
             required_action=(
-                "Prove or falsify an inverse-polynomial all-n LCU-normalized gap on balanced source-relevant "
-                "partitions, then separately construct associators and an outcome decoder."
+                "Use the solved multiplicity-two family as a Racah control, then prove gap and preparation bounds on "
+                "balanced source-relevant partitions and separately construct associators and an outcome decoder."
             ),
             blocks_speedup_claim=True,
         )
@@ -6524,6 +6757,12 @@ def build_dequantization_report() -> dict[str, Any]:
         *findings_from_coset_two_copy_frame(),
         *findings_from_coset_two_copy_transition_audit(),
         *findings_from_coset_three_copy_recoupling(),
+        *findings_from_coset_restricted_racah_control(),
+        *findings_from_coset_complete_racah_control(),
+        *findings_from_coset_hierarchical_racah_control(),
+        *findings_from_coset_hierarchical_gap_scaling(),
+        *findings_from_coset_sparse_stable_gap(),
+        *findings_from_coset_stable_trace_conjecture(),
         *findings_from_coset_jucys_murphy_label_transform(),
         *findings_from_coset_multiplicity_commutant_search(),
         *findings_from_coset_recoupling_capability_ledger(),

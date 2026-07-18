@@ -880,6 +880,24 @@
           "severity": "medium"
         },
         {
+          "evidence": "Triggered falsifiers: Finite interpolation is not used: both parity Rayleigh quotients are exact symbolic expressions. | A theorem on one multiplicity-two family is not promoted to a general internal Kronecker transform. | Polynomial phase estimation for this label does not implement overlapping Racah moves or decode a hidden involution.",
+          "finding_id": "DEQ-RESULT-EXP-COSET-COMMUTANT-GAP-CERTIFICATE-LATEST-FALSIFIERS",
+          "required_action": "Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.",
+          "severity": "medium"
+        },
+        {
+          "evidence": "Triggered falsifiers: Optimizing coefficients independently at each n is rejected as nonuniform advice. | Finite exact-looking gap formulas are retained as conjectures until an all-n representation-theoretic proof exists. | A gapped one-tree multiplicity Hamiltonian does not supply Racah associators or a hidden-involution decoder.",
+          "finding_id": "DEQ-RESULT-EXP-COSET-COMMUTANT-GAP-SCALING-LATEST-FALSIFIERS",
+          "required_action": "Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.",
+          "severity": "medium"
+        },
+        {
+          "evidence": "Triggered falsifiers: The earlier nonunitary 2x2 blocks were not closed Racah transforms; omitted intermediate partitions carry the missing probability. | Pair central signatures plus one first-stage gap Hamiltonian do not resolve second-stage multiplicity in every final sector. | A finite dense unitary overlap table does not imply a uniform polynomial coherent associator. | No hidden-involution decoder follows from finite recoupling matrices.",
+          "finding_id": "DEQ-RESULT-EXP-COSET-COMPLETE-RACAH-CONTROL-LATEST-FALSIFIERS",
+          "required_action": "Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.",
+          "severity": "medium"
+        },
+        {
           "evidence": "Triggered falsifiers: One-copy PGM success is at most a factor two above uniform guessing for the conjugacy-class ensemble. | Central inverse-frame diagonalization alone is not a hidden-involution decoder. | An explicit outcome table over the conjugacy class is exponentially large. | Progress requires a polynomial multi-copy diagonal-action circuit and compressed decoder.",
           "finding_id": "DEQ-RESULT-EXP-COSET-COVARIANT-FRAME-COSET-FALSIFIERS",
           "required_action": "Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.",
@@ -900,6 +918,18 @@
         {
           "evidence": "Triggered falsifiers: Godsil-McKay switched rows were distinguished by classical WL/graphlet/individualization/rooted-tensor baselines.",
           "finding_id": "DEQ-RESULT-EXP-COSET-GM-SWITCHING-SEARCH-COSET-FALSIFIERS",
+          "required_action": "Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.",
+          "severity": "medium"
+        },
+        {
+          "evidence": "Triggered falsifiers: Finite nonzero gaps cannot be extrapolated into an inverse-polynomial all-n theorem. | The empirical gap slope is descriptive and is not a complexity proof. | One stable final-target family does not cover all source-relevant sectors. | A gapped multiplicity label does not by itself implement Racah amplitudes or hidden-involution decoding.",
+          "finding_id": "DEQ-RESULT-EXP-COSET-HIERARCHICAL-GAP-SCALING-LATEST-FALSIFIERS",
+          "required_action": "Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.",
+          "severity": "medium"
+        },
+        {
+          "evidence": "Triggered falsifiers: One pair Hamiltonian is insufficient in sectors with second-stage Kronecker multiplicity. | A complete finite S_6 Racah table is not evidence of inverse-polynomial gaps at growing n. | Dense joint diagonalization does not compile the basis into a uniform coherent circuit. | Recoupling coordinates alone do not recover the hidden involution.",
+          "finding_id": "DEQ-RESULT-EXP-COSET-HIERARCHICAL-RACAH-CONTROL-LATEST-FALSIFIERS",
           "required_action": "Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.",
           "severity": "medium"
         },
@@ -978,6 +1008,24 @@
         {
           "evidence": "Triggered falsifiers: Single-register strong Fourier sampling is treated as blocked for symmetric hidden-permutation routes.",
           "finding_id": "DEQ-RESULT-EXP-COSET-REPRESENTATION-OBSTRUCTIONS-COSET-FALSIFIERS",
+          "required_action": "Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.",
+          "severity": "medium"
+        },
+        {
+          "evidence": "Triggered falsifiers: An inverse-polynomial pairwise multiplicity gap does not by itself supply a three-copy Racah transform. | The 2x2 parity overlap is a nonunitary subblock; discarding the complementary intermediate channels loses probability. | Finite dense diagonalization at n=6 is a control artifact, not a uniform polynomial circuit. | No hidden-involution decoder follows from a recoupling overlap table.",
+          "finding_id": "DEQ-RESULT-EXP-COSET-RESTRICTED-RACAH-CONTROL-LATEST-FALSIFIERS",
+          "required_action": "Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.",
+          "severity": "medium"
+        },
+        {
+          "evidence": "Triggered falsifiers: Integer polynomial reconstruction from floating spectra is a conjecture generator, not an exact proof. | One critical stable channel does not cover every intermediate or final sector. | Sparse finite block extraction does not establish polynomial complexity as n grows. | No coherent circuit or hidden-involution decoder is constructed.",
+          "finding_id": "DEQ-RESULT-EXP-COSET-SPARSE-STABLE-GAP-PROBE-LATEST-FALSIFIERS",
+          "required_action": "Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.",
+          "severity": "medium"
+        },
+        {
+          "evidence": "Triggered falsifiers: A cubic interpolation, even with holdout matches, is not an all-n character identity. | The trace alone does not determine a multiplicity-four spectrum. | Integer characteristic coefficients do not imply inverse-polynomial root separation. | A spectral theorem still would not supply a coherent circuit or decoder.",
+          "finding_id": "DEQ-RESULT-EXP-COSET-STABLE-TRACE-CONJECTURE-LATEST-FALSIFIERS",
           "required_action": "Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.",
           "severity": "medium"
         },
@@ -1067,7 +1115,7 @@
         }
       ],
       "candidate_id": "CODE-COSET-COLLECTIVE",
-      "created_at": "2026-07-15T11:12:46.337724+00:00",
+      "created_at": "2026-07-18T01:45:43.679160+00:00",
       "id": "CONJ-CODE-COSET-COLLECTIVE",
       "next_actions": [
         "Resolve every blocking finding before promotion.",
@@ -2412,6 +2460,61 @@
           "summary": "Searched 28 low-register collective observables across 4 graph pairs. 6 separating signal(s) collapse to classical shadows; 2 boundary pair(s) remain without an implemented nonclassical separator; 3 high-register probe(s) hit scaling caps."
         },
         {
+          "experiment_result_id": "RESULT-EXP-COSET-COMMUTANT-GAP-CERTIFICATE-LATEST",
+          "metrics": {
+            "all_n_critical_gap_theorem_count": 1,
+            "general_sector_gap_theorem_count": 0,
+            "hidden_involution_decoder_count": 0,
+            "kcopy_associator_count": 0,
+            "lcu_normalized_gap_exponent": 2,
+            "minimum_proved_n": 6,
+            "restricted_family_inverse_polynomial_gap_count": 1,
+            "stable_kronecker_multiplicity": 2,
+            "symbolic_parity_eigenvalue_count": 2
+          },
+          "status": "all-n-restricted-commutant-gap-proved-associator-decoder-open",
+          "summary": "Proved the raw 2(n-2) and LCU-normalized 2/[n(n-1)] multiplicity gap for lambda=(n-2,2), nu=(n-3,2,1), all n>=6; general-sector, Racah, and decoder obligations remain open."
+        },
+        {
+          "experiment_result_id": "RESULT-EXP-COSET-COMMUTANT-GAP-SCALING-LATEST",
+          "metrics": {
+            "all_n_critical_gap_theorem_count": 0,
+            "all_nontrivial_targets_split_count": 5,
+            "critical_gap_formula_finite_verified_count": 5,
+            "empirical_log_log_gap_slope": -2.150465523945385,
+            "hidden_involution_decoder_count": 0,
+            "kcopy_associator_count": 0,
+            "maximum_critical_gap_formula_residual": 3.126388037344441e-13,
+            "maximum_n": 10,
+            "minimum_n": 6,
+            "minimum_observed_critical_normalized_gap": 0.022222222222222657,
+            "record_count": 5,
+            "term_count_formula_verified_count": 5
+          },
+          "status": "uniform-inverse-quadratic-gap-conjecture-survives-finite-scaling",
+          "summary": "Tested one uniform commutant Hamiltonian on lambda=(n-2,2) for n=[6, 7, 8, 9, 10]; the predicted 2/[n(n-1)] normalized critical gap matched 5/5 rows."
+        },
+        {
+          "experiment_result_id": "RESULT-EXP-COSET-COMPLETE-RACAH-CONTROL-LATEST",
+          "metrics": {
+            "all_n_racah_formula_count": 0,
+            "complete_finite_racah_matrix_count": 5,
+            "final_target_count": 10,
+            "hidden_involution_decoder_count": 0,
+            "maximum_complete_matrix_dimension": 6,
+            "maximum_dense_dimension": 729,
+            "maximum_second_stage_multiplicity": 3,
+            "maximum_tableau_absolute_consistency_residual": 8.313387968343065e-14,
+            "maximum_unitarity_residual": 1.210269206297575e-14,
+            "maximum_unresolved_matrix_dimension": 16,
+            "nontrivial_complete_finite_racah_matrix_count": 4,
+            "uniform_polynomial_racah_circuit_count": 0,
+            "unresolved_second_stage_multiplicity_sector_count": 5
+          },
+          "status": "finite-complete-racah-controls-verified-uniform-associator-open",
+          "summary": "Constructed 5 complete finite Racah matrices at n=6, including 4 nontrivial transforms; 5 final sectors still require second-stage multiplicity operators."
+        },
+        {
           "experiment_result_id": "RESULT-EXP-COSET-COVARIANT-FRAME-COSET",
           "metrics": {
             "efficient_multi_copy_diagonal_action_circuit_count": 0,
@@ -2483,6 +2586,53 @@
           },
           "status": "gm-search-dequantized-current-rows",
           "summary": "Godsil-McKay search checked 963 subsets across 3 graph families, found 2 non-isomorphic cospectral row(s), dequantized 2 row(s), and left 0 row(s) as proof debt."
+        },
+        {
+          "experiment_result_id": "RESULT-EXP-COSET-HIERARCHICAL-GAP-SCALING-LATEST",
+          "metrics": {
+            "all_n_second_stage_gap_theorem_count": 0,
+            "audited_nontrivial_channel_count": 18,
+            "empirical_log_log_normalized_gap_slope": -1.8932685429119105,
+            "finite_all_blocks_split_count": 3,
+            "hidden_involution_decoder_count": 0,
+            "maximum_final_total_multiplicity": 25,
+            "maximum_n": 8,
+            "maximum_second_stage_multiplicity": 4,
+            "maximum_tableau_spectrum_consistency_residual": 4.4786743584721263e-13,
+            "minimum_n": 6,
+            "minimum_observed_normalized_gap": 0.028261280371763634,
+            "minimum_observed_raw_gap": 5.830951894845291,
+            "record_count": 3,
+            "uniform_polynomial_racah_circuit_count": 0
+          },
+          "status": "hierarchical-gap-finite-scaling-survives-all-n-proof-open",
+          "summary": "Audited 18 second-stage multiplicity blocks over n=6..8; all split finitely, with minimum normalized gap 0.0282613, but no all-n theorem or circuit follows."
+        },
+        {
+          "experiment_result_id": "RESULT-EXP-COSET-HIERARCHICAL-RACAH-CONTROL-LATEST",
+          "metrics": {
+            "complete_hierarchical_finite_racah_matrix_count": 10,
+            "final_target_count": 10,
+            "hidden_involution_decoder_count": 0,
+            "maximum_dense_dimension": 729,
+            "maximum_matrix_dimension": 16,
+            "maximum_second_stage_multiplicity": 3,
+            "maximum_tableau_absolute_consistency_residual": 9.726143089020922e-14,
+            "maximum_unitarity_residual": 1.619093517085688e-14,
+            "minimum_observed_first_stage_raw_gap": 7.999999999999979,
+            "minimum_observed_second_stage_normalized_gap": 0.048591265790377376,
+            "minimum_observed_second_stage_raw_gap": 5.830951894845285,
+            "nontrivial_complete_finite_racah_matrix_count": 9,
+            "second_stage_lcu_term_count": 120,
+            "second_stage_multiplicity_resolved_sector_count": 10,
+            "second_stage_term_count_formula": 120,
+            "second_stage_term_count_formula_verified_count": 1,
+            "stable_n_joint_gap_theorem_count": 0,
+            "uniform_polynomial_racah_circuit_count": 0,
+            "unresolved_finite_sector_count": 0
+          },
+          "status": "complete-s6-hierarchical-racah-table-stable-n-circuit-open",
+          "summary": "Resolved all 10 final S_6 sectors with a two-level bounded-support commutant hierarchy; the finite Racah table is complete, while stable-n gaps, a circuit, and a decoder remain open."
         },
         {
           "experiment_result_id": "RESULT-EXP-COSET-HOLEVO-INFORMATION-COSET-HOLEVO",
@@ -2722,6 +2872,65 @@
           "summary": "Audited S_n representation growth for n=[4, 5, 6, 8, 10, 12, 14, 16]. 3 row(s) show strong-Fourier no-go pressure; minimum low-dimensional Plancherel mass is 8.17e-06."
         },
         {
+          "experiment_result_id": "RESULT-EXP-COSET-RESTRICTED-RACAH-CONTROL-LATEST",
+          "metrics": {
+            "channel_leakage_detected_count": 4,
+            "final_target_count": 4,
+            "full_racah_associator_count": 0,
+            "hidden_involution_decoder_count": 0,
+            "maximum_channel_leakage": 0.917777777777778,
+            "maximum_dense_dimension": 729,
+            "maximum_tableau_consistency_residual": 3.805450359397229e-15,
+            "nonunitary_restricted_subblock_count": 4,
+            "rational_subblock_reconstruction_count": 4,
+            "record_count": 4,
+            "tableau_consistent_subblock_count": 4,
+            "uniform_polynomial_racah_circuit_count": 0
+          },
+          "status": "restricted-racah-subblocks-resolved-full-associator-open",
+          "summary": "Resolved 4 parity-channel Racah subblocks at n=6; every restricted block leaks to other intermediate irreps, so the exact pair gap does not close the associator obligation."
+        },
+        {
+          "experiment_result_id": "RESULT-EXP-COSET-SPARSE-STABLE-GAP-PROBE-LATEST",
+          "metrics": {
+            "all_n_characteristic_polynomial_theorem_count": 0,
+            "all_n_gap_theorem_count": 0,
+            "finite_split_count": 5,
+            "full_dense_hamiltonian_materialization_count": 0,
+            "integer_characteristic_polynomial_candidate_count": 5,
+            "maximum_integer_polynomial_reconstruction_residual": 5.53131103515625e-05,
+            "maximum_integer_polynomial_relative_reconstruction_residual": 8.317917063596713e-15,
+            "maximum_n": 11,
+            "maximum_second_stage_multiplicity": 4,
+            "maximum_sparse_tensor_dimension": 10164,
+            "maximum_sparse_yjm_nonzero_count": 20185822,
+            "maximum_target_eigenspace_relative_residual": 1.1380162528156609e-12,
+            "minimum_n": 7,
+            "minimum_observed_normalized_gap": 0.01877888555149967,
+            "minimum_observed_raw_gap": 7.211102550927969,
+            "record_count": 5,
+            "uniform_polynomial_racah_circuit_count": 0
+          },
+          "status": "sparse-stable-gap-probe-survives-symbolic-proof-open",
+          "summary": "Extracted the multiplicity-4 critical block through n=11 without dense Hamiltonians; all spectra split and reconstruct integer polynomials, but exact all-n formulas and gap bounds remain open."
+        },
+        {
+          "experiment_result_id": "RESULT-EXP-COSET-STABLE-TRACE-CONJECTURE-LATEST",
+          "metrics": {
+            "all_n_quartic_theorem_count": 0,
+            "all_n_root_separation_theorem_count": 0,
+            "constant_third_difference_count": 1,
+            "exact_marked_cycle_trace_theorem_count": 0,
+            "holdout_match_count": 1,
+            "holdout_row_count": 1,
+            "interpolated_degree": 3,
+            "maximum_holdout_residual": 0,
+            "training_row_count": 4
+          },
+          "status": "stable-trace-cubic-survives-holdout-exact-proof-open",
+          "summary": "The cubic trace candidate 4*n**3 - 46*n**2 + 149*n - 118 matches 1/1 out-of-sample rows; an exact marked-cycle proof remains open."
+        },
+        {
           "experiment_result_id": "RESULT-EXP-COSET-STATE-DISTINGUISHABILITY-COSET",
           "metrics": {
             "control_count": 7,
@@ -2873,7 +3082,7 @@
           "summary": "Audited 17 weak Fourier involution label distributions over S_n for n=[6, 8, 10, 12, 14, 16]. 4 row(s) are nearly Plancherel and 6 row(s) have only small label signal."
         }
       ],
-      "updated_at": "2026-07-15T11:12:46.337724+00:00"
+      "updated_at": "2026-07-18T01:45:43.679160+00:00"
     },
     {
       "assumptions": [
@@ -4055,7 +4264,7 @@
         }
       ],
       "candidate_id": "DHS-GOWERS-SIEVE",
-      "created_at": "2026-07-15T11:12:46.337724+00:00",
+      "created_at": "2026-07-18T01:45:43.679160+00:00",
       "id": "CONJ-DHS-GOWERS-SIEVE",
       "next_actions": [
         "Resolve every blocking finding before promotion.",
@@ -6125,7 +6334,7 @@
           "summary": "Audited 40 explicit hidden-shift instances across 10 phase families. 0 instances show Fourier/derivative structure; 16 are critical/high dequantization risk; 40 survive at least one restricted query model. Best DHSP sieve strategy aggressive_doubling reaches v2=7 from 2048 phase labels; explicit phase-state trace reaches v2=7 with 44 survivor states."
         }
       ],
-      "updated_at": "2026-07-15T11:12:46.337724+00:00"
+      "updated_at": "2026-07-18T01:45:43.679160+00:00"
     },
     {
       "assumptions": [
@@ -6183,7 +6392,7 @@
         }
       ],
       "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
-      "created_at": "2026-07-15T11:12:46.337724+00:00",
+      "created_at": "2026-07-18T01:45:43.679160+00:00",
       "id": "CONJ-HYP-LIT-COSET-OBSERVABLES",
       "next_actions": [
         "Resolve every blocking finding before promotion.",
@@ -6223,7 +6432,7 @@
           "summary": "Audited 4 hidden-permutation graph pairs. 2 pair survives current classical and low-register tests; 1 control pair is classically distinguished; 2 CFI-style parity benchmark(s) included."
         }
       ],
-      "updated_at": "2026-07-15T11:12:46.337724+00:00"
+      "updated_at": "2026-07-18T01:45:43.679160+00:00"
     },
     {
       "assumptions": [
@@ -6313,7 +6522,7 @@
         }
       ],
       "candidate_id": "HYP-LIT-HIDDEN-SHIFT-SIEVE",
-      "created_at": "2026-07-15T11:12:46.337724+00:00",
+      "created_at": "2026-07-18T01:45:43.679160+00:00",
       "id": "CONJ-HYP-LIT-HIDDEN-SHIFT-SIEVE",
       "next_actions": [
         "Resolve every blocking finding before promotion.",
@@ -6395,7 +6604,7 @@
           "summary": "Audited 40 explicit hidden-shift instances across 10 phase families. 0 instances show Fourier/derivative structure; 16 are critical/high dequantization risk; 40 survive at least one restricted query model. Best DHSP sieve strategy aggressive_doubling reaches v2=7 from 2048 phase labels; explicit phase-state trace reaches v2=7 with 44 survivor states."
         }
       ],
-      "updated_at": "2026-07-15T11:12:46.337724+00:00"
+      "updated_at": "2026-07-18T01:45:43.679160+00:00"
     },
     {
       "assumptions": [
@@ -6476,15 +6685,15 @@
           "severity": "negative-result"
         },
         {
-          "evidence": "Exact coefficient and sign-orbit balance forces the translation to come from an odd number of labels congruent to 2^k, so the class exists exactly when a single pivot exists.",
-          "finding_id": "NEG-DCP-SIGNED-PERMUTATIONS-AS-GLOBAL-FIBER-TRANSPORT",
-          "required_action": "Exclude all signed-coordinate permutations from the global transport search. Search only genuine coordinate-mixing GF(2)-affine maps, nonlinear arithmetic maps, partial transports, or walks, and subject each to source and classical-access audits.",
+          "evidence": "Finite numerical spectra do not prove the exact multiplicity action or exclude a later gap collapse.",
+          "finding_id": "NEG-COSET-FINITE-GAP-INTERPOLATION-AS-THEOREM",
+          "required_action": "Derive the 2x2 multiplicity trace and determinant symbolically from the 2-subset module or orbit characters.",
           "severity": "negative-result"
         },
         {
-          "evidence": "The exact upstream theorem contract does not supply the coherent evaluator or stronger oracle access required by this mutation.",
-          "finding_id": "NEG-QUARANTINE-MUT-CAND-DHS-GOWERS-SIEVE-LEARNABILITY-RESISTANT",
-          "required_action": "Mutations must repair the exact state interface before proof-gate promotion.",
+          "evidence": "An n- and sector-specific coefficient table is nonuniform advice. The scaling probe therefore uses one fixed support-intersection-two orbit Hamiltonian at every n.",
+          "finding_id": "NEG-COSET-NONUNIFORM-COMMUTANT-COEFFICIENT-SEARCH",
+          "required_action": "Require a closed coefficient rule and normalized-gap theorem before circuit promotion.",
           "severity": "negative-result"
         },
         {
@@ -6495,7 +6704,7 @@
         }
       ],
       "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
-      "created_at": "2026-07-15T11:12:46.337724+00:00",
+      "created_at": "2026-07-18T01:45:43.679160+00:00",
       "id": "CONJ-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
       "next_actions": [
         "Resolve every blocking finding before promotion.",
@@ -6579,7 +6788,7 @@
           "summary": "Audited 10 graphlet tensor observables across 5 graph pairs. 3 signal(s) collapse to small-pattern classical counts; 3 boundary pair(s) remain without graphlet-tensor signal."
         }
       ],
-      "updated_at": "2026-07-15T11:12:46.337724+00:00"
+      "updated_at": "2026-07-18T01:45:43.679160+00:00"
     },
     {
       "assumptions": [
@@ -6636,15 +6845,15 @@
           "severity": "negative-result"
         },
         {
-          "evidence": "Exact coefficient and sign-orbit balance forces the translation to come from an odd number of labels congruent to 2^k, so the class exists exactly when a single pivot exists.",
-          "finding_id": "NEG-DCP-SIGNED-PERMUTATIONS-AS-GLOBAL-FIBER-TRANSPORT",
-          "required_action": "Exclude all signed-coordinate permutations from the global transport search. Search only genuine coordinate-mixing GF(2)-affine maps, nonlinear arithmetic maps, partial transports, or walks, and subject each to source and classical-access audits.",
+          "evidence": "Finite numerical spectra do not prove the exact multiplicity action or exclude a later gap collapse.",
+          "finding_id": "NEG-COSET-FINITE-GAP-INTERPOLATION-AS-THEOREM",
+          "required_action": "Derive the 2x2 multiplicity trace and determinant symbolically from the 2-subset module or orbit characters.",
           "severity": "negative-result"
         },
         {
-          "evidence": "The exact upstream theorem contract does not supply the coherent evaluator or stronger oracle access required by this mutation.",
-          "finding_id": "NEG-QUARANTINE-MUT-CAND-DHS-GOWERS-SIEVE-LEARNABILITY-RESISTANT",
-          "required_action": "Mutations must repair the exact state interface before proof-gate promotion.",
+          "evidence": "An n- and sector-specific coefficient table is nonuniform advice. The scaling probe therefore uses one fixed support-intersection-two orbit Hamiltonian at every n.",
+          "finding_id": "NEG-COSET-NONUNIFORM-COMMUTANT-COEFFICIENT-SEARCH",
+          "required_action": "Require a closed coefficient rule and normalized-gap theorem before circuit promotion.",
           "severity": "negative-result"
         },
         {
@@ -6655,7 +6864,7 @@
         }
       ],
       "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
-      "created_at": "2026-07-15T11:12:46.337724+00:00",
+      "created_at": "2026-07-18T01:45:43.679160+00:00",
       "id": "CONJ-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
       "next_actions": [
         "Resolve every blocking finding before promotion.",
@@ -6710,7 +6919,7 @@
           "summary": "Audited 10 graphlet tensor observables across 5 graph pairs. 3 signal(s) collapse to small-pattern classical counts; 3 boundary pair(s) remain without graphlet-tensor signal."
         }
       ],
-      "updated_at": "2026-07-15T11:12:46.337724+00:00"
+      "updated_at": "2026-07-18T01:45:43.679160+00:00"
     },
     {
       "assumptions": [
@@ -6767,15 +6976,15 @@
           "severity": "negative-result"
         },
         {
-          "evidence": "Exact coefficient and sign-orbit balance forces the translation to come from an odd number of labels congruent to 2^k, so the class exists exactly when a single pivot exists.",
-          "finding_id": "NEG-DCP-SIGNED-PERMUTATIONS-AS-GLOBAL-FIBER-TRANSPORT",
-          "required_action": "Exclude all signed-coordinate permutations from the global transport search. Search only genuine coordinate-mixing GF(2)-affine maps, nonlinear arithmetic maps, partial transports, or walks, and subject each to source and classical-access audits.",
+          "evidence": "Finite numerical spectra do not prove the exact multiplicity action or exclude a later gap collapse.",
+          "finding_id": "NEG-COSET-FINITE-GAP-INTERPOLATION-AS-THEOREM",
+          "required_action": "Derive the 2x2 multiplicity trace and determinant symbolically from the 2-subset module or orbit characters.",
           "severity": "negative-result"
         },
         {
-          "evidence": "The exact upstream theorem contract does not supply the coherent evaluator or stronger oracle access required by this mutation.",
-          "finding_id": "NEG-QUARANTINE-MUT-CAND-DHS-GOWERS-SIEVE-LEARNABILITY-RESISTANT",
-          "required_action": "Mutations must repair the exact state interface before proof-gate promotion.",
+          "evidence": "An n- and sector-specific coefficient table is nonuniform advice. The scaling probe therefore uses one fixed support-intersection-two orbit Hamiltonian at every n.",
+          "finding_id": "NEG-COSET-NONUNIFORM-COMMUTANT-COEFFICIENT-SEARCH",
+          "required_action": "Require a closed coefficient rule and normalized-gap theorem before circuit promotion.",
           "severity": "negative-result"
         },
         {
@@ -6786,7 +6995,7 @@
         }
       ],
       "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
-      "created_at": "2026-07-15T11:12:46.337724+00:00",
+      "created_at": "2026-07-18T01:45:43.679160+00:00",
       "id": "CONJ-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
       "next_actions": [
         "Resolve every blocking finding before promotion.",
@@ -6840,7 +7049,7 @@
           "summary": "Audited 4 hidden-permutation graph pairs. 2 pair survives current classical and low-register tests; 1 control pair is classically distinguished; 2 CFI-style parity benchmark(s) included."
         }
       ],
-      "updated_at": "2026-07-15T11:12:46.337724+00:00"
+      "updated_at": "2026-07-18T01:45:43.679160+00:00"
     },
     {
       "assumptions": [
@@ -6885,15 +7094,15 @@
           "severity": "negative-result"
         },
         {
-          "evidence": "Exact coefficient and sign-orbit balance forces the translation to come from an odd number of labels congruent to 2^k, so the class exists exactly when a single pivot exists.",
-          "finding_id": "NEG-DCP-SIGNED-PERMUTATIONS-AS-GLOBAL-FIBER-TRANSPORT",
-          "required_action": "Exclude all signed-coordinate permutations from the global transport search. Search only genuine coordinate-mixing GF(2)-affine maps, nonlinear arithmetic maps, partial transports, or walks, and subject each to source and classical-access audits.",
+          "evidence": "Finite numerical spectra do not prove the exact multiplicity action or exclude a later gap collapse.",
+          "finding_id": "NEG-COSET-FINITE-GAP-INTERPOLATION-AS-THEOREM",
+          "required_action": "Derive the 2x2 multiplicity trace and determinant symbolically from the 2-subset module or orbit characters.",
           "severity": "negative-result"
         },
         {
-          "evidence": "The exact upstream theorem contract does not supply the coherent evaluator or stronger oracle access required by this mutation.",
-          "finding_id": "NEG-QUARANTINE-MUT-CAND-DHS-GOWERS-SIEVE-LEARNABILITY-RESISTANT",
-          "required_action": "Mutations must repair the exact state interface before proof-gate promotion.",
+          "evidence": "An n- and sector-specific coefficient table is nonuniform advice. The scaling probe therefore uses one fixed support-intersection-two orbit Hamiltonian at every n.",
+          "finding_id": "NEG-COSET-NONUNIFORM-COMMUTANT-COEFFICIENT-SEARCH",
+          "required_action": "Require a closed coefficient rule and normalized-gap theorem before circuit promotion.",
           "severity": "negative-result"
         },
         {
@@ -6904,7 +7113,7 @@
         }
       ],
       "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
-      "created_at": "2026-07-15T11:12:46.337724+00:00",
+      "created_at": "2026-07-18T01:45:43.679160+00:00",
       "id": "CONJ-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
       "next_actions": [
         "Resolve every blocking finding before promotion.",
@@ -6938,10 +7147,10 @@
           "summary": "Audited 3 code-equivalence pairs. 1 equivalent control pair(s) verified; 2 non-equivalent control pair(s) classically distinguished."
         }
       ],
-      "updated_at": "2026-07-15T11:12:46.337724+00:00"
+      "updated_at": "2026-07-18T01:45:43.679160+00:00"
     }
   ],
-  "created_at": "2026-07-15T11:12:46.456850+00:00",
+  "created_at": "2026-07-18T01:45:43.765409+00:00",
   "needs_evidence_count": 0,
   "status": "blocked"
 }

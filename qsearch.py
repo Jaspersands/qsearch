@@ -88,6 +88,14 @@ Commands:
   python qsearch.py coset-two-copy-frame
   python qsearch.py coset-two-copy-transitions
   python qsearch.py coset-three-copy-recoupling
+  python qsearch.py coset-commutant-gap-scaling
+  python qsearch.py coset-commutant-gap-proof
+  python qsearch.py coset-racah-control
+  python qsearch.py coset-racah-complete-control
+  python qsearch.py coset-racah-hierarchical-control
+  python qsearch.py coset-racah-gap-scaling
+  python qsearch.py coset-racah-sparse-gap
+  python qsearch.py coset-racah-trace-conjecture
   python qsearch.py coset-recoupling-capabilities
   python qsearch.py coset-recoupling-synthesize
   python qsearch.py code-equivalence
@@ -288,6 +296,14 @@ from coset_two_copy_transition_audit import write_two_copy_transition_report
 from coset_three_copy_recoupling_obstruction import write_three_copy_recoupling_report
 from coset_jucys_murphy_label_transform import write_jucys_murphy_label_transform_report
 from coset_multiplicity_commutant_search import write_multiplicity_commutant_report
+from coset_commutant_gap_scaling import write_commutant_gap_scaling_report
+from coset_commutant_gap_certificate import write_commutant_gap_certificate
+from coset_restricted_racah_control import write_restricted_racah_control_report
+from coset_complete_racah_control import write_complete_racah_control_report
+from coset_hierarchical_racah_control import write_hierarchical_racah_control_report
+from coset_hierarchical_gap_scaling import write_hierarchical_gap_scaling_report
+from coset_sparse_stable_gap_probe import write_sparse_stable_gap_report
+from coset_stable_trace_conjecture import write_stable_trace_conjecture_report
 from coset_recoupling_capability_ledger import write_recoupling_capability_report
 from coset_recoupling_mechanism_synthesis import write_recoupling_mechanism_synthesis_report
 from classical_baseline_suite import write_hidden_shift_baselines
@@ -3660,6 +3676,236 @@ def command_coset_multiplicity_commutant(args: argparse.Namespace) -> int:
     return 0
 
 
+def command_coset_commutant_gap_scaling(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    n_values = [int(value.strip()) for value in args.n_values.split(",") if value.strip()]
+    payload = write_commutant_gap_scaling_report(
+        n_values=n_values,
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Uniform Kronecker-commutant gap scaling audit complete")
+    print("Artifact: research/representation/coset_commutant_gap_scaling.json")
+    print(
+        "Finite critical-gap matches: "
+        f"{metrics['critical_gap_formula_finite_verified_count']}/{metrics['record_count']}"
+    )
+    print(f"All-n critical-gap theorems: {metrics['all_n_critical_gap_theorem_count']}")
+    print(f"Speedup claim allowed: {payload['claim_gate']['speedup_claim_allowed']}")
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_coset_commutant_gap_proof(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_commutant_gap_certificate(write_registry=not args.no_registry)
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    gap = payload["exact_gap_certificate"]
+    print("Exact Kronecker-commutant gap certificate complete")
+    print("Artifact: research/representation/coset_commutant_gap_certificate.json")
+    print(f"All-n restricted gap theorems: {metrics['all_n_critical_gap_theorem_count']}")
+    print(f"Raw gap: {gap['raw_gap']}")
+    print(f"LCU-normalized gap: {gap['lcu_normalized_gap']}")
+    print(f"General-sector gap theorems: {metrics['general_sector_gap_theorem_count']}")
+    print(f"Racah associators: {metrics['kcopy_associator_count']}")
+    print(f"Hidden-involution decoders: {metrics['hidden_involution_decoder_count']}")
+    print(f"Speedup claim allowed: {payload['claim_gate']['speedup_claim_allowed']}")
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_coset_racah_control(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_restricted_racah_control_report(
+        n=args.n,
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Restricted three-copy Racah control complete")
+    print("Artifact: research/representation/coset_restricted_racah_control.json")
+    print(f"Tableau-consistent subblocks: {metrics['tableau_consistent_subblock_count']}/{metrics['record_count']}")
+    print(f"Channels with leakage: {metrics['channel_leakage_detected_count']}")
+    print(f"Full Racah associators: {metrics['full_racah_associator_count']}")
+    print(f"Uniform polynomial Racah circuits: {metrics['uniform_polynomial_racah_circuit_count']}")
+    print(f"Speedup claim allowed: {payload['claim_gate']['speedup_claim_allowed']}")
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_coset_racah_complete_control(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_complete_racah_control_report(
+        n=args.n,
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Complete finite three-copy Racah control complete")
+    print("Artifact: research/representation/coset_complete_racah_control.json")
+    print(
+        "Complete finite matrices: "
+        f"{metrics['complete_finite_racah_matrix_count']}/"
+        f"{metrics['final_target_count']} final sectors"
+    )
+    print(
+        "Nontrivial finite matrices: "
+        f"{metrics['nontrivial_complete_finite_racah_matrix_count']}"
+    )
+    print(
+        "Unresolved second-stage multiplicity sectors: "
+        f"{metrics['unresolved_second_stage_multiplicity_sector_count']}"
+    )
+    print(
+        "Uniform polynomial Racah circuits: "
+        f"{metrics['uniform_polynomial_racah_circuit_count']}"
+    )
+    print(f"Speedup claim allowed: {payload['claim_gate']['speedup_claim_allowed']}")
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_coset_racah_hierarchical_control(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_hierarchical_racah_control_report(
+        n=args.n,
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Hierarchical finite three-copy Racah control complete")
+    print("Artifact: research/representation/coset_hierarchical_racah_control.json")
+    print(
+        "Complete hierarchical matrices: "
+        f"{metrics['complete_hierarchical_finite_racah_matrix_count']}/"
+        f"{metrics['final_target_count']} final sectors"
+    )
+    print(
+        "Second-stage multiplicity resolved sectors: "
+        f"{metrics['second_stage_multiplicity_resolved_sector_count']}"
+    )
+    print(
+        "Minimum observed second-stage normalized gap: "
+        f"{metrics['minimum_observed_second_stage_normalized_gap']:.6g}"
+    )
+    print(f"Stable-n joint-gap theorems: {metrics['stable_n_joint_gap_theorem_count']}")
+    print(
+        "Uniform polynomial Racah circuits: "
+        f"{metrics['uniform_polynomial_racah_circuit_count']}"
+    )
+    print(f"Speedup claim allowed: {payload['claim_gate']['speedup_claim_allowed']}")
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_coset_racah_gap_scaling(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    n_values = parse_int_csv(args.n_values)
+    payload = write_hierarchical_gap_scaling_report(
+        n_values=n_values,
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Hierarchical Racah gap scaling audit complete")
+    print("Artifact: research/representation/coset_hierarchical_gap_scaling.json")
+    print(
+        "Finite all-block split rows: "
+        f"{metrics['finite_all_blocks_split_count']}/{metrics['record_count']}"
+    )
+    print(f"Maximum second-stage multiplicity: {metrics['maximum_second_stage_multiplicity']}")
+    print(f"Minimum normalized gap: {metrics['minimum_observed_normalized_gap']:.6g}")
+    print(
+        "Empirical log-log gap slope: "
+        f"{metrics['empirical_log_log_normalized_gap_slope']:.6g}"
+    )
+    print(
+        "All-n second-stage gap theorems: "
+        f"{metrics['all_n_second_stage_gap_theorem_count']}"
+    )
+    print(f"Speedup claim allowed: {payload['claim_gate']['speedup_claim_allowed']}")
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_coset_racah_sparse_gap(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    n_values = parse_int_csv(args.n_values)
+    payload = write_sparse_stable_gap_report(
+        n_values=n_values,
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Sparse stable Racah gap probe complete")
+    print("Artifact: research/representation/coset_sparse_stable_gap_probe.json")
+    print(f"Finite split rows: {metrics['finite_split_count']}/{metrics['record_count']}")
+    print(
+        "Integer characteristic polynomials: "
+        f"{metrics['integer_characteristic_polynomial_candidate_count']}/"
+        f"{metrics['record_count']}"
+    )
+    print(f"Maximum sparse tensor dimension: {metrics['maximum_sparse_tensor_dimension']}")
+    print(f"Minimum normalized gap: {metrics['minimum_observed_normalized_gap']:.6g}")
+    print(
+        "All-n characteristic-polynomial theorems: "
+        f"{metrics['all_n_characteristic_polynomial_theorem_count']}"
+    )
+    print(f"Speedup claim allowed: {payload['claim_gate']['speedup_claim_allowed']}")
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_coset_racah_trace_conjecture(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_stable_trace_conjecture_report(
+        training_count=args.training_count,
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Stable Racah trace conjecture audit complete")
+    print("Artifact: research/representation/coset_stable_trace_conjecture.json")
+    print(f"Candidate trace formula: {payload['candidate_trace_formula_expanded']}")
+    print(
+        "Holdout matches: "
+        f"{metrics['holdout_match_count']}/{metrics['holdout_row_count']}"
+    )
+    print(
+        "Exact marked-cycle trace theorems: "
+        f"{metrics['exact_marked_cycle_trace_theorem_count']}"
+    )
+    print(f"Speedup claim allowed: {payload['claim_gate']['speedup_claim_allowed']}")
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
 def command_coset_recoupling_synthesize(args: argparse.Namespace) -> int:
     initialize_seed_registry(overwrite=False)
     payload = write_recoupling_mechanism_synthesis_report(
@@ -6785,6 +7031,77 @@ def build_parser() -> argparse.ArgumentParser:
     coset_multiplicity_commutant.add_argument("--coefficient-bound", type=int, default=2)
     coset_multiplicity_commutant.add_argument("--no-registry", action="store_true")
     coset_multiplicity_commutant.set_defaults(func=command_coset_multiplicity_commutant)
+
+    coset_commutant_gap_scaling = subparsers.add_parser(
+        "coset-commutant-gap-scaling",
+        help="Verify finite scaling of one uniform multiplicity-commutant gap family.",
+    )
+    coset_commutant_gap_scaling.add_argument("--n-values", default="6,7,8,9,10")
+    coset_commutant_gap_scaling.add_argument("--no-registry", action="store_true")
+    coset_commutant_gap_scaling.set_defaults(func=command_coset_commutant_gap_scaling)
+
+    coset_commutant_gap_proof = subparsers.add_parser(
+        "coset-commutant-gap-proof",
+        help="Build the exact all-n Specht-polytabloid gap certificate.",
+    )
+    coset_commutant_gap_proof.add_argument("--no-registry", action="store_true")
+    coset_commutant_gap_proof.set_defaults(func=command_coset_commutant_gap_proof)
+
+    coset_racah_control = subparsers.add_parser(
+        "coset-racah-control",
+        help="Resolve finite parity-channel Racah subblocks and measure leakage into other intermediates.",
+    )
+    coset_racah_control.add_argument("--n", type=int, default=6)
+    coset_racah_control.add_argument("--no-registry", action="store_true")
+    coset_racah_control.set_defaults(func=command_coset_racah_control)
+
+    coset_racah_complete_control = subparsers.add_parser(
+        "coset-racah-complete-control",
+        help="Assemble complete finite Racah matrices where second-stage coupling is multiplicity-free.",
+    )
+    coset_racah_complete_control.add_argument("--n", type=int, default=6)
+    coset_racah_complete_control.add_argument("--no-registry", action="store_true")
+    coset_racah_complete_control.set_defaults(
+        func=command_coset_racah_complete_control
+    )
+
+    coset_racah_hierarchical_control = subparsers.add_parser(
+        "coset-racah-hierarchical-control",
+        help="Resolve every finite S_6 Racah sector with a two-level bounded-support commutant hierarchy.",
+    )
+    coset_racah_hierarchical_control.add_argument("--n", type=int, default=6)
+    coset_racah_hierarchical_control.add_argument(
+        "--no-registry", action="store_true"
+    )
+    coset_racah_hierarchical_control.set_defaults(
+        func=command_coset_racah_hierarchical_control
+    )
+
+    coset_racah_gap_scaling = subparsers.add_parser(
+        "coset-racah-gap-scaling",
+        help="Scale second-stage multiplicity gaps on the stable (n-2,2) three-copy target family.",
+    )
+    coset_racah_gap_scaling.add_argument("--n-values", default="6,7,8")
+    coset_racah_gap_scaling.add_argument("--no-registry", action="store_true")
+    coset_racah_gap_scaling.set_defaults(func=command_coset_racah_gap_scaling)
+
+    coset_racah_sparse_gap = subparsers.add_parser(
+        "coset-racah-sparse-gap",
+        help="Extract the stable multiplicity-four Racah block sparsely and reconstruct integer quartics.",
+    )
+    coset_racah_sparse_gap.add_argument("--n-values", default="7,8,9,10")
+    coset_racah_sparse_gap.add_argument("--no-registry", action="store_true")
+    coset_racah_sparse_gap.set_defaults(func=command_coset_racah_sparse_gap)
+
+    coset_racah_trace_conjecture = subparsers.add_parser(
+        "coset-racah-trace-conjecture",
+        help="Generate and hold out-test an exact trace formula target from sparse Racah quartics.",
+    )
+    coset_racah_trace_conjecture.add_argument("--training-count", type=int, default=4)
+    coset_racah_trace_conjecture.add_argument("--no-registry", action="store_true")
+    coset_racah_trace_conjecture.set_defaults(
+        func=command_coset_racah_trace_conjecture
+    )
 
     coset_recoupling_synthesize = subparsers.add_parser(
         "coset-recoupling-synthesize",

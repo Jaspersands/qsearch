@@ -572,10 +572,68 @@ The multiplicity-commutant search then acts inside that residual register. It
 constructs simultaneous-conjugacy orbit sums with at most `O(n^5)` terms and
 searches small-integer Hermitian combinations after charging the full LCU
 normalization. The current combination splits every audited multiplicity block
-through `S_6`, including multiplicity five. This is a finite structural witness,
-not a scalable transform: polynomial phase estimation still requires an all-n
-inverse-polynomial normalized-gap theorem, and no Racah network or decoder is
-inferred from the simple spectra.
+through `S_6`, including multiplicity five. Most sectors remain finite structural
+witnesses rather than scalable transforms.
+
+One restricted family now goes further. For
+`lambda=mu=(n-2,2)` and `nu=(n-3,2,1)`, an exact 12-term Specht-polytabloid
+certificate constructs the symmetric and antisymmetric multiplicity copies and
+derives their eigenvalues symbolically. Their raw gap is `2(n-2)` for every
+`n>=6`; after the exact `n(n-1)(n-2)` LCU normalization, the gap is
+`2/[n(n-1)]`. This proves polynomial phase-estimation resolution for that label
+family only. It does not prove a general internal Kronecker transform, balanced
+sector coverage, a Racah network, or a hidden-involution decoder.
+
+```bash
+python qsearch.py coset-commutant-gap-scaling
+python qsearch.py coset-commutant-gap-proof
+```
+
+The first three-copy Racah control uses that solved pair channel at `n=6`.
+Across four final targets, the left/right parity overlap subblocks are
+tableau-independent and reconstruct to small rationals, but every `2x2`
+subblock is nonunitary: probability leaks into other intermediate partitions.
+This rejects the shortcut from a pairwise gap to a closed associator. A valid
+next construction must include all intermediate channels, produce complete
+unitary Racah blocks, and avoid dense tableau enumeration.
+
+```bash
+python qsearch.py coset-racah-control
+```
+
+That next finite construction is now explicit. Pair transposition and 3-cycle
+central signatures identify every intermediate partition; the first orbit
+Hamiltonian resolves pair multiplicity. For the five sectors with
+multiplicity-free second coupling, including every intermediate channel gives
+complete signed unitary Racah matrices and exactly explains the earlier
+`2x2` leakage.
+
+A second bounded-support Hamiltonian then acts between the pair-diagonal
+representation and the third copy. Its joint spectrum with the first-stage
+labels resolves second-stage multiplicities up to four and completes all ten
+final `S_6` sectors, including a 16-dimensional multiplicity space. This is a
+complete finite table, not a uniform circuit.
+
+```bash
+python qsearch.py coset-racah-complete-control
+python qsearch.py coset-racah-hierarchical-control
+```
+
+Finite scaling on `W_n=(n-2,2)` and final
+`xi_n=(n-3,2,1)` splits every audited second-stage block through `n=8`.
+A sparse target-block extractor extends the hardest multiplicity-four channel
+through `n=11` without materializing dense Hamiltonians and reconstructs five
+monic integer characteristic polynomials. The trace rows at `n=7..10` generate
+the cubic target `4n^3-46n^2+149n-118`, which matches the held-out `n=11` row.
+Interpolation is explicitly rejected as proof: the next obligation is an exact
+marked-cycle character-sum derivation, followed by the remaining quartic
+coefficients and a normalized root-separation theorem.
+
+```bash
+python qsearch.py coset-racah-gap-scaling
+python qsearch.py coset-racah-sparse-gap --n-values 7,8,9,10,11
+python qsearch.py coset-racah-trace-conjecture
+```
 
 The capability ledger separates the solved `S_n` QFT, Schur-Weyl transforms,
 weak projection, and multiplicity counting from the still-open internal

@@ -59,6 +59,27 @@ def build_snapshot() -> dict[str, Any]:
     jm = read_json(RESEARCH / "representation/coset_jucys_murphy_label_transform.json", {})
     commutant = read_json(RESEARCH / "representation/coset_multiplicity_commutant_search.json", {})
     gap = read_json(RESEARCH / "representation/coset_commutant_gap_scaling.json", {})
+    gap_certificate = read_json(
+        RESEARCH / "representation/coset_commutant_gap_certificate.json", {}
+    )
+    racah = read_json(
+        RESEARCH / "representation/coset_restricted_racah_control.json", {}
+    )
+    complete_racah = read_json(
+        RESEARCH / "representation/coset_complete_racah_control.json", {}
+    )
+    hierarchical_racah = read_json(
+        RESEARCH / "representation/coset_hierarchical_racah_control.json", {}
+    )
+    hierarchical_gap = read_json(
+        RESEARCH / "representation/coset_hierarchical_gap_scaling.json", {}
+    )
+    sparse_gap = read_json(
+        RESEARCH / "representation/coset_sparse_stable_gap_probe.json", {}
+    )
+    stable_trace = read_json(
+        RESEARCH / "representation/coset_stable_trace_conjecture.json", {}
+    )
 
     blocking = sum(bool(item.get("blocks_speedup_claim", False)) for item in findings)
     updated = latest_artifact_date(
@@ -72,6 +93,13 @@ def build_snapshot() -> dict[str, Any]:
         jm,
         commutant,
         gap,
+        gap_certificate,
+        racah,
+        complete_racah,
+        hierarchical_racah,
+        hierarchical_gap,
+        sparse_gap,
+        stable_trace,
     )
     gap_rows = metric(gap, "critical_gap_formula_finite_verified_count", 0)
     gap_total = metric(gap, "record_count", 0)
@@ -84,15 +112,16 @@ def build_snapshot() -> dict[str, Any]:
         "verdict": {
             "title": "No breakthrough yet",
             "detail": (
-                "Every speedup claim remains blocked. The project has isolated one concrete representation-theoretic "
-                "gap conjecture, while current hidden-shift and code-equivalence families have failed their classical tests."
+                "Every speedup claim remains blocked. One restricted representation-theoretic gap theorem is now proved, "
+                "and a bounded-support hierarchy resolves the complete finite S_6 Racah table. Stable-n gaps, a coherent "
+                "recoupling circuit, and hidden-involution decoding remain open."
             ),
         },
         "overview": (
             "The project is now useful primarily as a research filter. It has replaced tiny-circuit search with "
             "proof obligations, access-model accounting, classical attacks, exact finite representation theory, "
             "and a permanent negative-result memory. The strongest surviving lead is not an algorithm: it is a "
-            "specific spectral-gap theorem that could unlock one missing transform in a nonabelian HSP route."
+            "specific bounded-support operator hierarchy with exact and falsifiable spectral theorem targets in a nonabelian HSP route."
         ),
         "metrics": {
             "experiments": len(experiments),
@@ -147,9 +176,14 @@ def build_snapshot() -> dict[str, Any]:
                 "evidence": (
                     f"YJM spectra were verified on {metric(jm, 'record_count', 3)} sectors, and bounded-support "
                     f"commutants split {metric(commutant, 'finite_all_block_split_count', 2)} finite multiplicity sectors up to multiplicity "
-                    f"{metric(commutant, 'maximum_kronecker_multiplicity', 5)}."
+                    f"{metric(commutant, 'maximum_kronecker_multiplicity', 5)}. The stable multiplicity-two family now has "
+                    f"{metric(gap_certificate, 'all_n_critical_gap_theorem_count', 0)} exact all-n gap theorem; "
+                    f"the hierarchy resolves {metric(hierarchical_racah, 'complete_hierarchical_finite_racah_matrix_count', 0)}/"
+                    f"{metric(hierarchical_racah, 'final_target_count', 0)} finite S_6 sectors. Sparse stable probes reconstruct "
+                    f"{metric(sparse_gap, 'integer_characteristic_polynomial_candidate_count', 0)} integer quartics through "
+                    f"n={metric(sparse_gap, 'maximum_n', 0)}."
                 ),
-                "next": "Prove the uniform normalized-gap formula, then attack coherent Racah transforms.",
+                "next": "Prove the stable quartic coefficients and root gaps exactly, then compile the hierarchy coherently.",
             },
         ],
         "milestones": [
@@ -158,46 +192,48 @@ def build_snapshot() -> dict[str, Any]:
                 "detail": "Candidates now require reductions, complexity accounting, falsifiers, classical baselines, and proof obligations before acceptance.",
             },
             {
-                "title": "The density-one decoder optimism was reduced",
-                "detail": "Exact all-target and witness-path experiments showed why fixed-depth lattice lists look good at small sizes and fail in the tail.",
-            },
-            {
-                "title": "The current code frontier was classically exhausted",
-                "detail": "Successive invariants and exact reductions eliminated every generated row as a hard quantum target.",
-            },
-            {
                 "title": "A nonabelian transform was split into precise subproblems",
                 "detail": "Diagonal Jucys-Murphy labels are accessible, but exact multiplicity degeneracy proves that labels alone are not the internal Kronecker transform.",
             },
             {
-                "title": "Finite multiplicity blocks were split",
-                "detail": "A polynomial-description commutant Hamiltonian splits all audited blocks, including multiplicity five, after charging its LCU normalization.",
+                "title": "A restricted all-n commutant gap was proved",
+                "detail": "Exact Specht polytabloids give raw gap 2(n-2) and LCU-normalized gap 2/[n(n-1)] for one stable multiplicity-two family.",
+            },
+            {
+                "title": "The complete finite S_6 Racah table was resolved",
+                "detail": "A second bounded-support Hamiltonian splits residual multiplicities up to four and produces unitary left/right matrices in all ten final sectors.",
+            },
+            {
+                "title": "Stable sparse quartics became exact proof targets",
+                "detail": "Target-only sparse extraction avoids dense Hamiltonians through n=11 and reconstructs five monic integer characteristic polynomials; no all-n formula is claimed.",
             },
         ],
         "active_conjecture": {
             "summary": (
-                "For lambda = mu = (n-2,2), one fixed transposition/3-cycle orbit Hamiltonian appears to have raw gap "
-                "2(n-2) on the multiplicity-two target (n-3,2,1). With exactly n(n-1)(n-2) LCU terms, the normalized gap is inverse quadratic."
+                "For W_n=(n-2,2) and alpha_n=xi_n=(n-3,2,1), sparse multiplicity-four spectra through n=11 "
+                "reconstruct monic integer quartics. Their trace fits 4n^3-46n^2+149n-118 on n=7..10 and matches "
+                "the held-out n=11 value. The formula still requires an exact marked-cycle character proof."
             ),
             "facts": [
-                {"label": "Finite verification", "value": f"{gap_rows or 5}/{gap_total or 5} rows, {gap_range}"},
-                {"label": "All-n proof", "value": "Open"},
-                {"label": "Associator", "value": "Open"},
+                {"label": "Pair gap", "value": "Exact inverse-quadratic theorem"},
+                {"label": "Finite Racah table", "value": f"{metric(hierarchical_racah, 'complete_hierarchical_finite_racah_matrix_count', 0)}/10 S_6 sectors"},
+                {"label": "Stable quartics", "value": f"n=7-{metric(sparse_gap, 'maximum_n', 0)}, integer reconstructed"},
+                {"label": "Trace holdout", "value": f"{metric(stable_trace, 'holdout_match_count', 0)}/{metric(stable_trace, 'holdout_row_count', 0)} matched; proof open"},
                 {"label": "Hidden decoder", "value": "Open"},
             ],
         },
         "next_actions": [
             {
-                "title": "Prove or kill the commutant gap formula",
-                "detail": "Compute the exact 2x2 multiplicity action using the 2-subset permutation module, partition algebra, or orbit-character traces.",
+                "title": "Prove the marked-cycle trace identity",
+                "detail": "Evaluate the explicit shifted character sum exactly; interpolation and the n=11 holdout are theorem targets, not proof.",
             },
             {
-                "title": "Construct overlapping Racah operations",
-                "detail": "A one-tree multiplicity basis is insufficient because the three-copy overlapping class sums provably do not commute.",
+                "title": "Recover the full stable quartic",
+                "detail": "Derive traces H^2, H^3, and H^4, apply Newton identities, and prove inverse-polynomial root separation after LCU normalization.",
             },
             {
-                "title": "Demand an end-to-end natural-problem decoder",
-                "detail": "No representation label or finite spectrum matters unless it recovers a hidden involution and beats legal graph/code baselines.",
+                "title": "Compile and test the actual decoder",
+                "detail": "Turn nested labels into a uniform coherent circuit and show that its outcomes recover a hidden involution beyond legal graph/code baselines.",
             },
         ],
         "execution_model": (

@@ -47,6 +47,14 @@ from coset_two_copy_transition_audit import write_two_copy_transition_report
 from coset_three_copy_recoupling_obstruction import write_three_copy_recoupling_report
 from coset_jucys_murphy_label_transform import write_jucys_murphy_label_transform_report
 from coset_multiplicity_commutant_search import write_multiplicity_commutant_report
+from coset_commutant_gap_scaling import write_commutant_gap_scaling_report
+from coset_commutant_gap_certificate import write_commutant_gap_certificate
+from coset_restricted_racah_control import write_restricted_racah_control_report
+from coset_complete_racah_control import write_complete_racah_control_report
+from coset_hierarchical_racah_control import write_hierarchical_racah_control_report
+from coset_hierarchical_gap_scaling import write_hierarchical_gap_scaling_report
+from coset_sparse_stable_gap_probe import write_sparse_stable_gap_report
+from coset_stable_trace_conjecture import write_stable_trace_conjecture_report
 from coset_recoupling_capability_ledger import write_recoupling_capability_report
 from coset_recoupling_mechanism_synthesis import write_recoupling_mechanism_synthesis_report
 from coset_state_distinguishability import write_coset_distinguishability_report
@@ -482,6 +490,14 @@ COSET_EXPERIMENTS = {
     "EXP-COSET-THREE-COPY-RECOUPLING-OBSTRUCTION",
     "EXP-COSET-JUCYS-MURPHY-LABEL-TRANSFORM",
     "EXP-COSET-MULTIPLICITY-COMMUTANT-SEARCH",
+    "EXP-COSET-COMMUTANT-GAP-SCALING",
+    "EXP-COSET-COMMUTANT-GAP-CERTIFICATE",
+    "EXP-COSET-RESTRICTED-RACAH-CONTROL",
+    "EXP-COSET-COMPLETE-RACAH-CONTROL",
+    "EXP-COSET-HIERARCHICAL-RACAH-CONTROL",
+    "EXP-COSET-HIERARCHICAL-GAP-SCALING",
+    "EXP-COSET-SPARSE-STABLE-GAP-PROBE",
+    "EXP-COSET-STABLE-TRACE-CONJECTURE",
     "EXP-COSET-RECOUPLING-CAPABILITY-LEDGER",
     "EXP-COSET-RECOUPLING-MECHANISM-SYNTHESIS",
 }
@@ -1285,6 +1301,14 @@ def select_next_experiment() -> NextExperimentSelection:
         "EXP-COSET-THREE-COPY-RECOUPLING-OBSTRUCTION": 23,
         "EXP-COSET-JUCYS-MURPHY-LABEL-TRANSFORM": 26,
         "EXP-COSET-MULTIPLICITY-COMMUTANT-SEARCH": 27,
+        "EXP-COSET-COMMUTANT-GAP-SCALING": 28,
+        "EXP-COSET-COMMUTANT-GAP-CERTIFICATE": 29,
+        "EXP-COSET-RESTRICTED-RACAH-CONTROL": 30,
+        "EXP-COSET-COMPLETE-RACAH-CONTROL": 31,
+        "EXP-COSET-HIERARCHICAL-RACAH-CONTROL": 32,
+        "EXP-COSET-HIERARCHICAL-GAP-SCALING": 33,
+        "EXP-COSET-SPARSE-STABLE-GAP-PROBE": 34,
+        "EXP-COSET-STABLE-TRACE-CONJECTURE": 35,
         "EXP-COSET-RECOUPLING-CAPABILITY-LEDGER": 24,
         "EXP-COSET-RECOUPLING-MECHANISM-SYNTHESIS": 25,
     }
@@ -2639,6 +2663,62 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             )
         elif experiment_id == "EXP-COSET-MULTIPLICITY-COMMUTANT-SEARCH":
             payload = write_multiplicity_commutant_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif experiment_id == "EXP-COSET-COMMUTANT-GAP-SCALING":
+            payload = write_commutant_gap_scaling_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif experiment_id == "EXP-COSET-COMMUTANT-GAP-CERTIFICATE":
+            payload = write_commutant_gap_certificate(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif experiment_id == "EXP-COSET-RESTRICTED-RACAH-CONTROL":
+            payload = write_restricted_racah_control_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif experiment_id == "EXP-COSET-COMPLETE-RACAH-CONTROL":
+            payload = write_complete_racah_control_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif experiment_id == "EXP-COSET-HIERARCHICAL-RACAH-CONTROL":
+            payload = write_hierarchical_racah_control_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif experiment_id == "EXP-COSET-HIERARCHICAL-GAP-SCALING":
+            payload = write_hierarchical_gap_scaling_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif experiment_id == "EXP-COSET-SPARSE-STABLE-GAP-PROBE":
+            payload = write_sparse_stable_gap_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif experiment_id == "EXP-COSET-STABLE-TRACE-CONJECTURE":
+            payload = write_stable_trace_conjecture_report(
                 write_registry=True,
                 registry_experiment_id=experiment_id,
                 registry_candidate_id=experiment["candidate_id"],

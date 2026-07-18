@@ -105,6 +105,27 @@ COSET_JM_LABEL_TRANSFORM_PATH = Path(
 COSET_MULTIPLICITY_COMMUTANT_PATH = Path(
     "research/representation/coset_multiplicity_commutant_search.json"
 )
+COSET_COMMUTANT_GAP_CERTIFICATE_PATH = Path(
+    "research/representation/coset_commutant_gap_certificate.json"
+)
+COSET_RESTRICTED_RACAH_CONTROL_PATH = Path(
+    "research/representation/coset_restricted_racah_control.json"
+)
+COSET_COMPLETE_RACAH_CONTROL_PATH = Path(
+    "research/representation/coset_complete_racah_control.json"
+)
+COSET_HIERARCHICAL_RACAH_CONTROL_PATH = Path(
+    "research/representation/coset_hierarchical_racah_control.json"
+)
+COSET_HIERARCHICAL_GAP_SCALING_PATH = Path(
+    "research/representation/coset_hierarchical_gap_scaling.json"
+)
+COSET_SPARSE_STABLE_GAP_PATH = Path(
+    "research/representation/coset_sparse_stable_gap_probe.json"
+)
+COSET_STABLE_TRACE_CONJECTURE_PATH = Path(
+    "research/representation/coset_stable_trace_conjecture.json"
+)
 COSET_RECOUPLING_CAPABILITY_PATH = Path(
     "research/representation/coset_recoupling_capability_ledger.json"
 )
@@ -515,6 +536,70 @@ def lemma_templates(candidate: dict[str, Any]) -> list[LemmaRecord]:
         commutant_metrics = multiplicity_commutant.get("headline_metrics", {})
         commutant_gate = multiplicity_commutant.get("claim_gate", {})
         try:
+            commutant_gap_certificate = (
+                json.loads(COSET_COMMUTANT_GAP_CERTIFICATE_PATH.read_text())
+                if COSET_COMMUTANT_GAP_CERTIFICATE_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            commutant_gap_certificate = {}
+        commutant_gap_metrics = commutant_gap_certificate.get("headline_metrics", {})
+        commutant_gap_gate = commutant_gap_certificate.get("claim_gate", {})
+        try:
+            restricted_racah = (
+                json.loads(COSET_RESTRICTED_RACAH_CONTROL_PATH.read_text())
+                if COSET_RESTRICTED_RACAH_CONTROL_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            restricted_racah = {}
+        restricted_racah_metrics = restricted_racah.get("headline_metrics", {})
+        try:
+            complete_racah = (
+                json.loads(COSET_COMPLETE_RACAH_CONTROL_PATH.read_text())
+                if COSET_COMPLETE_RACAH_CONTROL_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            complete_racah = {}
+        complete_racah_metrics = complete_racah.get("headline_metrics", {})
+        try:
+            hierarchical_racah = (
+                json.loads(COSET_HIERARCHICAL_RACAH_CONTROL_PATH.read_text())
+                if COSET_HIERARCHICAL_RACAH_CONTROL_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            hierarchical_racah = {}
+        hierarchical_racah_metrics = hierarchical_racah.get("headline_metrics", {})
+        try:
+            hierarchical_gap = (
+                json.loads(COSET_HIERARCHICAL_GAP_SCALING_PATH.read_text())
+                if COSET_HIERARCHICAL_GAP_SCALING_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            hierarchical_gap = {}
+        hierarchical_gap_metrics = hierarchical_gap.get("headline_metrics", {})
+        try:
+            sparse_stable_gap = (
+                json.loads(COSET_SPARSE_STABLE_GAP_PATH.read_text())
+                if COSET_SPARSE_STABLE_GAP_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            sparse_stable_gap = {}
+        sparse_stable_gap_metrics = sparse_stable_gap.get("headline_metrics", {})
+        try:
+            stable_trace = (
+                json.loads(COSET_STABLE_TRACE_CONJECTURE_PATH.read_text())
+                if COSET_STABLE_TRACE_CONJECTURE_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            stable_trace = {}
+        stable_trace_metrics = stable_trace.get("headline_metrics", {})
+        try:
             recoupling_capabilities = (
                 json.loads(COSET_RECOUPLING_CAPABILITY_PATH.read_text())
                 if COSET_RECOUPLING_CAPABILITY_PATH.exists()
@@ -800,6 +885,35 @@ def lemma_templates(candidate: dict[str, Any]) -> list[LemmaRecord]:
                     ),
                 ),
                 LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-COSET-RESTRICTED-COMMUTANT-GAP",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "For lambda=(n-2,2) and nu=(n-3,2,1), the fixed support-intersection-two orbit "
+                        "Hamiltonian has raw multiplicity gap 2(n-2) and LCU-normalized gap 2/[n(n-1)] for every n>=6."
+                    ),
+                    depends_on=["PO-MEASUREMENT", "PO-COMPLEXITY", "PO-NO-GO"],
+                    status=(
+                        "proved-exact-restricted-inverse-quadratic-commutant-gap"
+                        if bool(
+                            commutant_gap_gate.get(
+                                "all_n_restricted_gap_theorem_proved", False
+                            )
+                        )
+                        and int(
+                            commutant_gap_metrics.get(
+                                "all_n_critical_gap_theorem_count", 0
+                            )
+                            or 0
+                        )
+                        > 0
+                        else "blocked-restricted-commutant-gap-certificate-missing"
+                    ),
+                    falsification_test=(
+                        "Verify the projected-edge Gram form, both nonzero Specht parity maps, total Kronecker "
+                        "multiplicity two, exact symbolic Rayleigh quotients, and finite seminormal cross-checks."
+                    ),
+                ),
+                LemmaRecord(
                     id=f"LEMMA-{candidate_id}-COSET-KRONECKER-MULTIPLICITY-BASIS",
                     candidate_id=candidate_id,
                     statement=(
@@ -815,14 +929,96 @@ def lemma_templates(candidate: dict[str, Any]) -> list[LemmaRecord]:
                             )
                         )
                         else (
-                            "blocked-finite-commutant-splitting-no-normalized-gap-theorem"
-                            if int(commutant_metrics.get("finite_all_block_split_count", 0) or 0) > 0
-                            else "blocked-yjm-labels-retain-kronecker-multiplicity-degeneracy"
+                            "blocked-restricted-gap-proved-general-multiplicity-basis-open"
+                            if bool(
+                                commutant_gap_gate.get(
+                                    "all_n_restricted_gap_theorem_proved", False
+                                )
+                            )
+                            else (
+                                "blocked-finite-commutant-splitting-no-normalized-gap-theorem"
+                                if int(commutant_metrics.get("finite_all_block_split_count", 0) or 0) > 0
+                                else "blocked-yjm-labels-retain-kronecker-multiplicity-degeneracy"
+                            )
                         )
                     ),
                     falsification_test=(
-                        "Exhibit nontrivial g(lambda,mu,nu) sectors, construct a commutant Hamiltonian, charge its LCU "
-                        "normalization, and prove an inverse-polynomial all-n minimum gap before phase estimation."
+                        "Extend exact normalized-gap and coherent preparation guarantees from the solved "
+                        "multiplicity-two family to every reduction-relevant sector before claiming a general basis transform."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-COSET-HIERARCHICAL-RACAH-STABLE-GAP",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "The nested bounded-support orbit Hamiltonians have inverse-polynomial normalized gaps on "
+                        "every stable multiplicity channel needed for coherent three-copy Racah recoupling."
+                    ),
+                    depends_on=["PO-MEASUREMENT", "PO-COMPLEXITY", "PO-SUCCESS", "PO-NO-GO"],
+                    status=(
+                        "proved-all-n-hierarchical-racah-gap"
+                        if int(
+                            hierarchical_gap_metrics.get(
+                                "all_n_second_stage_gap_theorem_count", 0
+                            )
+                            or 0
+                        )
+                        > 0
+                        else (
+                            "blocked-sparse-integer-quartics-through-n10-no-exact-all-n-proof"
+                            if int(
+                                sparse_stable_gap_metrics.get(
+                                    "integer_characteristic_polynomial_candidate_count",
+                                    0,
+                                )
+                                or 0
+                            )
+                            > 0
+                            else (
+                                "blocked-finite-n6-n8-hierarchical-gaps-no-all-n-proof"
+                                if int(
+                                    hierarchical_gap_metrics.get(
+                                        "finite_all_blocks_split_count", 0
+                                    )
+                                    or 0
+                                )
+                                > 0
+                                else "blocked-hierarchical-gap-scaling-artifact-missing"
+                            )
+                        )
+                    ),
+                    falsification_test=(
+                        "For every stable intermediate and final partition family, derive the exact multiplicity "
+                        "action and prove a uniform inverse-polynomial normalized gap; finite regression does not count."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-COSET-STABLE-RACAH-TRACE-IDENTITY",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "On the stable multiplicity-four channel, the hierarchical orbit Hamiltonian trace is "
+                        "4n^3-46n^2+149n-118 for every n>=7 by an exact marked-cycle character calculation."
+                    ),
+                    depends_on=["PO-MEASUREMENT", "PO-COMPLEXITY", "PO-NO-GO"],
+                    status=(
+                        "proved-exact-stable-racah-trace-identity"
+                        if int(
+                            stable_trace_metrics.get(
+                                "exact_marked_cycle_trace_theorem_count", 0
+                            )
+                            or 0
+                        )
+                        > 0
+                        else (
+                            "blocked-cubic-trace-matches-n11-holdout-no-exact-character-proof"
+                            if int(stable_trace_metrics.get("holdout_match_count", 0) or 0)
+                            > 0
+                            else "blocked-stable-trace-conjecture-artifact-missing"
+                        )
+                    ),
+                    falsification_test=(
+                        "Evaluate n(n-1)(n-2)/n! times sum_g chi_xi(g) chi_xi(g tau) chi_W(g c) exactly from "
+                        "the stable character polynomials; interpolation and holdout matches do not count."
                     ),
                 ),
                 LemmaRecord(
@@ -961,11 +1157,43 @@ def lemma_templates(candidate: dict[str, Any]) -> list[LemmaRecord]:
                             or 0
                         )
                         > 0
-                        else "blocked-overlapping-recoupling-associator-and-decoder-open"
+                        else (
+                            "blocked-complete-s6-racah-table-no-stable-n-circuit"
+                            if int(
+                                hierarchical_racah_metrics.get(
+                                    "complete_hierarchical_finite_racah_matrix_count",
+                                    0,
+                                )
+                                or 0
+                            )
+                            > 0
+                            else (
+                                "blocked-finite-complete-racah-controls-no-uniform-circuit"
+                                if int(
+                                    complete_racah_metrics.get(
+                                        "complete_finite_racah_matrix_count", 0
+                                    )
+                                    or 0
+                                )
+                                > 0
+                                else (
+                                    "blocked-restricted-racah-subblocks-leak-full-associator-open"
+                                    if int(
+                                        restricted_racah_metrics.get(
+                                            "channel_leakage_detected_count", 0
+                                        )
+                                        or 0
+                                    )
+                                    > 0
+                                    else "blocked-overlapping-recoupling-associator-and-decoder-open"
+                                )
+                            )
+                        )
                     ),
                     falsification_test=(
-                        "Require gate complexity, precision, multiplicity-register size, and end-to-end decoding for "
-                        "k growing with n; finite block diagonalization or tableau enumeration does not count."
+                        "Require every intermediate partition, a unitary partition-level Racah matrix, gate complexity, "
+                        "precision, multiplicity-register size, and end-to-end decoding for k growing with n; finite "
+                        "subblocks or tableau enumeration do not count."
                     ),
                 ),
             ]

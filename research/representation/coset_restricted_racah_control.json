@@ -1,0 +1,302 @@
+{
+  "claim_gate": {
+    "full_racah_associator_constructed": false,
+    "hidden_involution_decoder_proved": false,
+    "pair_gap_implies_closed_associator": false,
+    "reason": "The parity-resolved 2x2 blocks are reproducible but nonunitary because other intermediate irreps carry amplitude; a full coherent associator remains open.",
+    "restricted_channel_leakage_detected": true,
+    "solved_pair_gap_used_as_control": true,
+    "speedup_claim_allowed": false,
+    "tableau_independent_subblocks_verified": true,
+    "uniform_polynomial_racah_circuit_proved": false
+  },
+  "created_at": "2026-07-18T01:08:56.932041+00:00",
+  "falsifiers_triggered": [
+    "An inverse-polynomial pairwise multiplicity gap does not by itself supply a three-copy Racah transform.",
+    "The 2x2 parity overlap is a nonunitary subblock; discarding the complementary intermediate channels loses probability.",
+    "Finite dense diagonalization at n=6 is a control artifact, not a uniform polynomial circuit.",
+    "No hidden-involution decoder follows from a recoupling overlap table."
+  ],
+  "headline_metrics": {
+    "channel_leakage_detected_count": 4,
+    "final_target_count": 4,
+    "full_racah_associator_count": 0,
+    "hidden_involution_decoder_count": 0,
+    "maximum_channel_leakage": 0.917777777777778,
+    "maximum_dense_dimension": 729,
+    "maximum_tableau_consistency_residual": 3.805450359397229e-15,
+    "nonunitary_restricted_subblock_count": 4,
+    "rational_subblock_reconstruction_count": 4,
+    "record_count": 4,
+    "tableau_consistent_subblock_count": 4,
+    "uniform_polynomial_racah_circuit_count": 0
+  },
+  "interface_contract": {
+    "left_coupling": "resolve nu in copies (1,2), then condition on one final target tableau",
+    "not_reported_as": "a complete Racah matrix or uniform coherent circuit",
+    "reported_object": "absolute 2x2 overlap subblock between the two parity-resolved intermediate channels",
+    "right_coupling": "resolve nu in copies (2,3), then condition on the same final target tableau",
+    "solved_pair_channel": "intermediate nu=(n-3,2,1), split by the exact commutant-gap parity basis",
+    "source": "three copies of V_(n-2,2)"
+  },
+  "records": [
+    {
+      "absolute_overlap_subblock": [
+        [
+          0.5000000000000004,
+          0.16666666666666657
+        ],
+        [
+          0.16666666666666705,
+          0.23333333333333295
+        ]
+      ],
+      "final_irrep_dimension": 5,
+      "final_partition": [
+        5,
+        1
+      ],
+      "final_tableau_count": 5,
+      "final_total_multiplicity": 6,
+      "finite_dense_control_only": true,
+      "full_associator_constructed": false,
+      "intermediate_partition": [
+        3,
+        2,
+        1
+      ],
+      "intermediate_to_final_multiplicity": 1,
+      "left_channel_dimension": 2,
+      "maximum_channel_leakage": 0.9177777777777778,
+      "minimum_channel_leakage": 0.7222222222222219,
+      "n": 6,
+      "overlap_singular_values": [
+        0.580104141247762,
+        0.15322919208557134
+      ],
+      "pair_hamiltonian_eigenvalues": [
+        -10.000000000000004,
+        -1.9999999999999993
+      ],
+      "rational_absolute_overlap_subblock": [
+        [
+          "1/2",
+          "1/6"
+        ],
+        [
+          "1/6",
+          "7/30"
+        ]
+      ],
+      "rational_reconstruction_residual": 4.440892098500626e-16,
+      "restricted_subblock_is_unitary": false,
+      "right_channel_dimension": 2,
+      "row_leakage_probabilities": [
+        0.7222222222222219,
+        0.9177777777777778
+      ],
+      "source_partition": [
+        4,
+        2
+      ],
+      "status": "nonunitary-racah-subblock-leaks-to-other-intermediate-channels",
+      "tableau_overlap_consistency_residual": 1.1706800367418746e-15,
+      "tableau_singular_value_consistency_residual": 9.992007221626409e-16
+    },
+    {
+      "absolute_overlap_subblock": [
+        [
+          0.500000000000001,
+          0.16666666666666594
+        ],
+        [
+          0.16666666666666646,
+          0.8333333333333318
+        ]
+      ],
+      "final_irrep_dimension": 5,
+      "final_partition": [
+        3,
+        3
+      ],
+      "final_tableau_count": 5,
+      "final_total_multiplicity": 4,
+      "finite_dense_control_only": true,
+      "full_associator_constructed": false,
+      "intermediate_partition": [
+        3,
+        2,
+        1
+      ],
+      "intermediate_to_final_multiplicity": 1,
+      "left_channel_dimension": 2,
+      "maximum_channel_leakage": 0.7222222222222214,
+      "minimum_channel_leakage": 0.27777777777778045,
+      "n": 6,
+      "overlap_singular_values": [
+        0.8538509376029417,
+        0.520517604269611
+      ],
+      "pair_hamiltonian_eigenvalues": [
+        -10.0,
+        -1.9999999999999956
+      ],
+      "rational_absolute_overlap_subblock": [
+        [
+          "1/2",
+          "1/6"
+        ],
+        [
+          "1/6",
+          "5/6"
+        ]
+      ],
+      "rational_reconstruction_residual": 1.5543122344752192e-15,
+      "restricted_subblock_is_unitary": false,
+      "right_channel_dimension": 2,
+      "row_leakage_probabilities": [
+        0.7222222222222214,
+        0.27777777777778045
+      ],
+      "source_partition": [
+        4,
+        2
+      ],
+      "status": "nonunitary-racah-subblock-leaks-to-other-intermediate-channels",
+      "tableau_overlap_consistency_residual": 2.462124508011986e-15,
+      "tableau_singular_value_consistency_residual": 1.7554167342883505e-15
+    },
+    {
+      "absolute_overlap_subblock": [
+        [
+          0.49999999999999956,
+          0.16666666666666646
+        ],
+        [
+          0.16666666666666635,
+          0.23333333333333306
+        ]
+      ],
+      "final_irrep_dimension": 5,
+      "final_partition": [
+        2,
+        2,
+        2
+      ],
+      "final_tableau_count": 5,
+      "final_total_multiplicity": 6,
+      "finite_dense_control_only": true,
+      "full_associator_constructed": false,
+      "intermediate_partition": [
+        3,
+        2,
+        1
+      ],
+      "intermediate_to_final_multiplicity": 1,
+      "left_channel_dimension": 2,
+      "maximum_channel_leakage": 0.917777777777778,
+      "minimum_channel_leakage": 0.7222222222222228,
+      "n": 6,
+      "overlap_singular_values": [
+        0.580104141247761,
+        0.15322919208557162
+      ],
+      "pair_hamiltonian_eigenvalues": [
+        -10.0,
+        -1.9999999999999987
+      ],
+      "rational_absolute_overlap_subblock": [
+        [
+          "1/2",
+          "1/6"
+        ],
+        [
+          "1/6",
+          "7/30"
+        ]
+      ],
+      "rational_reconstruction_residual": 4.440892098500626e-16,
+      "restricted_subblock_is_unitary": false,
+      "right_channel_dimension": 2,
+      "row_leakage_probabilities": [
+        0.7222222222222228,
+        0.917777777777778
+      ],
+      "source_partition": [
+        4,
+        2
+      ],
+      "status": "nonunitary-racah-subblock-leaks-to-other-intermediate-channels",
+      "tableau_overlap_consistency_residual": 1.447819792471103e-15,
+      "tableau_singular_value_consistency_residual": 1.3348671786163112e-15
+    },
+    {
+      "absolute_overlap_subblock": [
+        [
+          0.5000000000000001,
+          0.16666666666666682
+        ],
+        [
+          0.16666666666666619,
+          0.8333333333333353
+        ]
+      ],
+      "final_irrep_dimension": 5,
+      "final_partition": [
+        2,
+        1,
+        1,
+        1,
+        1
+      ],
+      "final_tableau_count": 5,
+      "final_total_multiplicity": 4,
+      "finite_dense_control_only": true,
+      "full_associator_constructed": false,
+      "intermediate_partition": [
+        3,
+        2,
+        1
+      ],
+      "intermediate_to_final_multiplicity": 1,
+      "left_channel_dimension": 2,
+      "maximum_channel_leakage": 0.7222222222222221,
+      "minimum_channel_leakage": 0.2777777777777748,
+      "n": 6,
+      "overlap_singular_values": [
+        0.8538509376029453,
+        0.5205176042696101
+      ],
+      "pair_hamiltonian_eigenvalues": [
+        -9.999999999999996,
+        -1.9999999999999976
+      ],
+      "rational_absolute_overlap_subblock": [
+        [
+          "1/2",
+          "1/6"
+        ],
+        [
+          "1/6",
+          "5/6"
+        ]
+      ],
+      "rational_reconstruction_residual": 1.887379141862766e-15,
+      "restricted_subblock_is_unitary": false,
+      "right_channel_dimension": 2,
+      "row_leakage_probabilities": [
+        0.7222222222222221,
+        0.2777777777777748
+      ],
+      "source_partition": [
+        4,
+        2
+      ],
+      "status": "nonunitary-racah-subblock-leaks-to-other-intermediate-channels",
+      "tableau_overlap_consistency_residual": 3.805450359397229e-15,
+      "tableau_singular_value_consistency_residual": 3.66205343881779e-15
+    }
+  ],
+  "status": "restricted-racah-subblocks-resolved-full-associator-open",
+  "summary": "Resolved 4 parity-channel Racah subblocks at n=6; every restricted block leaks to other intermediate irreps, so the exact pair gap does not close the associator obligation."
+}

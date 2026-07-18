@@ -36341,6 +36341,38 @@
   {
     "applies_to": [
       "CODE-COSET-COLLECTIVE",
+      "EXP-COSET-HIERARCHICAL-RACAH-CONTROL"
+    ],
+    "claim": "A complete finite S_6 hierarchical Racah table establishes a uniform efficient associator.",
+    "evidence": {
+      "complete_hierarchical_finite_racah_matrix_count": 10,
+      "final_target_count": 10,
+      "hidden_involution_decoder_count": 0,
+      "maximum_dense_dimension": 729,
+      "maximum_matrix_dimension": 16,
+      "maximum_second_stage_multiplicity": 3,
+      "maximum_tableau_absolute_consistency_residual": 9.726143089020922e-14,
+      "maximum_unitarity_residual": 1.619093517085688e-14,
+      "minimum_observed_first_stage_raw_gap": 7.999999999999979,
+      "minimum_observed_second_stage_normalized_gap": 0.048591265790377376,
+      "minimum_observed_second_stage_raw_gap": 5.830951894845285,
+      "nontrivial_complete_finite_racah_matrix_count": 9,
+      "second_stage_lcu_term_count": 120,
+      "second_stage_multiplicity_resolved_sector_count": 10,
+      "second_stage_term_count_formula": 120,
+      "second_stage_term_count_formula_verified_count": 1,
+      "stable_n_joint_gap_theorem_count": 0,
+      "uniform_polynomial_racah_circuit_count": 0,
+      "unresolved_finite_sector_count": 0
+    },
+    "id": "NEG-COSET-COMPLETE-S6-RACAH-AS-STABLE-N-CIRCUIT",
+    "lesson": "Promote the bounded-support operator hierarchy, not the dense matrices: derive its stable-n multiplicity action and gap before making an algorithmic claim.",
+    "reason_invalid": "The table is obtained by dense 729-dimensional diagonalization; no stable-n joint-gap bound, compressed formula, or coherent circuit is proved.",
+    "source": "research/representation/coset_hierarchical_racah_control.json"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
       "EXP-COSET-TWO-COPY-TRANSITION-ALGEBRA"
     ],
     "claim": "A finite explicit regular-representation transition table is a scalable collective measurement.",
@@ -36387,6 +36419,84 @@
     "lesson": "Search for an exactly solvable commutant algebra or prove normalized gap concentration before treating finite multiplicity splitting as a circuit primitive.",
     "reason_invalid": "Phase-estimation complexity depends on the LCU-normalized minimum eigenvalue gap. The finite search supplies no inverse-polynomial all-n lower bound on reduction-relevant sectors.",
     "source": "research/representation/coset_multiplicity_commutant_search.json"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "EXP-COSET-COMMUTANT-GAP-SCALING"
+    ],
+    "claim": "Agreement with 2/[n(n-1)] on finite rows proves the all-n multiplicity gap.",
+    "evidence": {
+      "all_n_critical_gap_theorem_count": 0,
+      "all_nontrivial_targets_split_count": 5,
+      "critical_gap_formula_finite_verified_count": 5,
+      "empirical_log_log_gap_slope": -2.150465523945385,
+      "hidden_involution_decoder_count": 0,
+      "kcopy_associator_count": 0,
+      "maximum_critical_gap_formula_residual": 3.126388037344441e-13,
+      "maximum_n": 10,
+      "minimum_n": 6,
+      "minimum_observed_critical_normalized_gap": 0.022222222222222657,
+      "record_count": 5,
+      "term_count_formula_verified_count": 5
+    },
+    "id": "NEG-COSET-FINITE-GAP-INTERPOLATION-AS-THEOREM",
+    "lesson": "Derive the 2x2 multiplicity trace and determinant symbolically from the 2-subset module or orbit characters.",
+    "reason_invalid": "Finite numerical spectra do not prove the exact multiplicity action or exclude a later gap collapse.",
+    "source": "research/representation/coset_commutant_gap_scaling.json"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "EXP-COSET-HIERARCHICAL-GAP-SCALING"
+    ],
+    "claim": "Nonzero hierarchical Racah gaps through n=8 establish an efficient all-n multiplicity transform.",
+    "evidence": {
+      "all_n_second_stage_gap_theorem_count": 0,
+      "audited_nontrivial_channel_count": 18,
+      "empirical_log_log_normalized_gap_slope": -1.8932685429119105,
+      "finite_all_blocks_split_count": 3,
+      "hidden_involution_decoder_count": 0,
+      "maximum_final_total_multiplicity": 25,
+      "maximum_n": 8,
+      "maximum_second_stage_multiplicity": 4,
+      "maximum_tableau_spectrum_consistency_residual": 4.4786743584721263e-13,
+      "minimum_n": 6,
+      "minimum_observed_normalized_gap": 0.028261280371763634,
+      "minimum_observed_raw_gap": 5.830951894845291,
+      "record_count": 3,
+      "uniform_polynomial_racah_circuit_count": 0
+    },
+    "id": "NEG-COSET-FINITE-HIERARCHICAL-GAP-SCALING-AS-THEOREM",
+    "lesson": "Use the observed spectra to conjecture exact stable formulas, then prove them with character-orbit or partition-algebra methods before algorithmic promotion.",
+    "reason_invalid": "The evidence is finite dense diagonalization on one final-target family and contains no inverse-polynomial lower bound or coherent circuit.",
+    "source": "research/representation/coset_hierarchical_gap_scaling.json"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "EXP-COSET-COMPLETE-RACAH-CONTROL"
+    ],
+    "claim": "Complete finite left/right recoupling matrices imply a scalable coherent Racah associator.",
+    "evidence": {
+      "all_n_racah_formula_count": 0,
+      "complete_finite_racah_matrix_count": 5,
+      "final_target_count": 10,
+      "hidden_involution_decoder_count": 0,
+      "maximum_complete_matrix_dimension": 6,
+      "maximum_dense_dimension": 729,
+      "maximum_second_stage_multiplicity": 3,
+      "maximum_tableau_absolute_consistency_residual": 8.313387968343065e-14,
+      "maximum_unitarity_residual": 1.210269206297575e-14,
+      "maximum_unresolved_matrix_dimension": 16,
+      "nontrivial_complete_finite_racah_matrix_count": 4,
+      "uniform_polynomial_racah_circuit_count": 0,
+      "unresolved_second_stage_multiplicity_sector_count": 5
+    },
+    "id": "NEG-COSET-FINITE-RACAH-AS-UNIFORM-ASSOCIATOR",
+    "lesson": "Use the finite matrices as exact controls for deriving compressed partition-level identities; require a uniform gate construction and decoder before algorithmic promotion.",
+    "reason_invalid": "The construction uses dense n=6 diagonalization, leaves five second-stage multiplicity sectors unresolved, and supplies neither an all-n formula nor a circuit.",
+    "source": "research/representation/coset_complete_racah_control.json"
   },
   {
     "applies_to": [
@@ -36468,6 +36578,56 @@
   {
     "applies_to": [
       "CODE-COSET-COLLECTIVE",
+      "EXP-COSET-COMMUTANT-GAP-SCALING"
+    ],
+    "claim": "Independently optimized finite-n commutant coefficients define a uniform quantum transform.",
+    "evidence": {
+      "all_n_critical_gap_theorem_count": 0,
+      "all_nontrivial_targets_split_count": 5,
+      "critical_gap_formula_finite_verified_count": 5,
+      "empirical_log_log_gap_slope": -2.150465523945385,
+      "hidden_involution_decoder_count": 0,
+      "kcopy_associator_count": 0,
+      "maximum_critical_gap_formula_residual": 3.126388037344441e-13,
+      "maximum_n": 10,
+      "minimum_n": 6,
+      "minimum_observed_critical_normalized_gap": 0.022222222222222657,
+      "record_count": 5,
+      "term_count_formula_verified_count": 5
+    },
+    "id": "NEG-COSET-NONUNIFORM-COMMUTANT-COEFFICIENT-SEARCH",
+    "lesson": "Require a closed coefficient rule and normalized-gap theorem before circuit promotion.",
+    "reason_invalid": "An n- and sector-specific coefficient table is nonuniform advice. The scaling probe therefore uses one fixed support-intersection-two orbit Hamiltonian at every n.",
+    "source": "research/representation/coset_commutant_gap_scaling.json"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "EXP-COSET-RESTRICTED-RACAH-CONTROL"
+    ],
+    "claim": "The solved pairwise commutant gap directly supplies a closed three-copy Racah transform on the same channel.",
+    "evidence": {
+      "channel_leakage_detected_count": 4,
+      "final_target_count": 4,
+      "full_racah_associator_count": 0,
+      "hidden_involution_decoder_count": 0,
+      "maximum_channel_leakage": 0.917777777777778,
+      "maximum_dense_dimension": 729,
+      "maximum_tableau_consistency_residual": 3.805450359397229e-15,
+      "nonunitary_restricted_subblock_count": 4,
+      "rational_subblock_reconstruction_count": 4,
+      "record_count": 4,
+      "tableau_consistent_subblock_count": 4,
+      "uniform_polynomial_racah_circuit_count": 0
+    },
+    "id": "NEG-COSET-PAIR-GAP-AS-THREE-COPY-RACAH-TRANSFORM",
+    "lesson": "A full associator must coherently include all intermediate partitions and multiplicity channels, not only the solved pair block.",
+    "reason_invalid": "Every audited parity-resolved 2x2 overlap is a nonunitary subblock with explicit leakage to other intermediate irreps.",
+    "source": "research/representation/coset_restricted_racah_control.json"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
       "EXP-COSET-HOLEVO-INFORMATION"
     ],
     "claim": "The Omega(n log n) hard-family copy requirement rules out a polynomial quantum algorithm.",
@@ -36488,6 +36648,28 @@
     "lesson": "Charge the exact copy lower bound, then focus research on uniform recoupling circuits, state-dependent frame action, and a compressed verified decoder.",
     "reason_invalid": "The certified copy count is polynomial; it only rules out under-sampled mechanisms.",
     "source": "research/representation/coset_holevo_information.json"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "EXP-COSET-COMMUTANT-GAP-CERTIFICATE"
+    ],
+    "claim": "The proved (n-2,2) multiplicity-two gap supplies a general efficient internal S_n Kronecker transform.",
+    "evidence": {
+      "all_n_critical_gap_theorem_count": 1,
+      "general_sector_gap_theorem_count": 0,
+      "hidden_involution_decoder_count": 0,
+      "kcopy_associator_count": 0,
+      "lcu_normalized_gap_exponent": 2,
+      "minimum_proved_n": 6,
+      "restricted_family_inverse_polynomial_gap_count": 1,
+      "stable_kronecker_multiplicity": 2,
+      "symbolic_parity_eigenvalue_count": 2
+    },
+    "id": "NEG-COSET-RESTRICTED-GAP-AS-GENERAL-KRONECKER-TRANSFORM",
+    "lesson": "Use the exact family as a test case for Racah constructions, not as an end-to-end algorithm claim.",
+    "reason_invalid": "The certificate proves one stable parity-split block only; balanced sectors, larger multiplicities, associators, and decoding are absent.",
+    "source": "research/representation/coset_commutant_gap_certificate.json"
   },
   {
     "applies_to": [
@@ -36546,6 +36728,58 @@
     "lesson": "Track each representation primitive by exact action, promise, circuit cost, output, and decoder role.",
     "reason_invalid": "The QFT is a solved one-register basis transform and does not implement internal Kronecker recoupling or decoding.",
     "source": "research/representation/coset_recoupling_capability_ledger.json"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "EXP-COSET-SPARSE-STABLE-GAP-PROBE"
+    ],
+    "claim": "Sparse finite integer characteristic polynomials prove a stable inverse-polynomial Racah gap.",
+    "evidence": {
+      "all_n_characteristic_polynomial_theorem_count": 0,
+      "all_n_gap_theorem_count": 0,
+      "finite_split_count": 5,
+      "full_dense_hamiltonian_materialization_count": 0,
+      "integer_characteristic_polynomial_candidate_count": 5,
+      "maximum_integer_polynomial_reconstruction_residual": 5.53131103515625e-05,
+      "maximum_integer_polynomial_relative_reconstruction_residual": 8.317917063596713e-15,
+      "maximum_n": 11,
+      "maximum_second_stage_multiplicity": 4,
+      "maximum_sparse_tensor_dimension": 10164,
+      "maximum_sparse_yjm_nonzero_count": 20185822,
+      "maximum_target_eigenspace_relative_residual": 1.1380162528156609e-12,
+      "minimum_n": 7,
+      "minimum_observed_normalized_gap": 0.01877888555149967,
+      "minimum_observed_raw_gap": 7.211102550927969,
+      "record_count": 5,
+      "uniform_polynomial_racah_circuit_count": 0
+    },
+    "id": "NEG-COSET-SPARSE-INTEGER-SPECTRA-AS-ALL-N-GAP-PROOF",
+    "lesson": "Use the reconstructed quartics as targets for exact character-orbit or partition-algebra trace identities, then prove root separation uniformly.",
+    "reason_invalid": "The coefficients are numerically reconstructed at finitely many n and no exact coefficient formula or root-separation theorem is supplied.",
+    "source": "research/representation/coset_sparse_stable_gap_probe.json"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "EXP-COSET-STABLE-TRACE-CONJECTURE"
+    ],
+    "claim": "A cubic trace interpolation with an n=11 holdout match proves the stable character identity.",
+    "evidence": {
+      "all_n_quartic_theorem_count": 0,
+      "all_n_root_separation_theorem_count": 0,
+      "constant_third_difference_count": 1,
+      "exact_marked_cycle_trace_theorem_count": 0,
+      "holdout_match_count": 1,
+      "holdout_row_count": 1,
+      "interpolated_degree": 3,
+      "maximum_holdout_residual": 0,
+      "training_row_count": 4
+    },
+    "id": "NEG-COSET-TRACE-HOLDOUT-AS-EXACT-CHARACTER-IDENTITY",
+    "lesson": "Use the formula as a precise theorem target and prove it by marked-cycle factorial moments or partition algebra before deriving any gap consequence.",
+    "reason_invalid": "No degree bound or exact marked-cycle character-sum evaluation has been proved, and the trace does not determine the full quartic spectrum.",
+    "source": "research/representation/coset_stable_trace_conjecture.json"
   },
   {
     "applies_to": [

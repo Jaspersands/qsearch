@@ -66,8 +66,8 @@
       "target_claim": "The coset observable is not a disguised classical invariant."
     }
   ],
-  "created_at": "2026-07-15T11:12:42.751916+00:00",
-  "lemma_count": 292,
+  "created_at": "2026-07-18T01:45:39.147360+00:00",
+  "lemma_count": 310,
   "lemmas": [
     {
       "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -205,13 +205,50 @@
       "depends_on": [
         "PO-MEASUREMENT",
         "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Verify the projected-edge Gram form, both nonzero Specht parity maps, total Kronecker multiplicity two, exact symbolic Rayleigh quotients, and finite seminormal cross-checks.",
+      "id": "LEMMA-CODE-COSET-COLLECTIVE-COSET-RESTRICTED-COMMUTANT-GAP",
+      "statement": "For lambda=(n-2,2) and nu=(n-3,2,1), the fixed support-intersection-two orbit Hamiltonian has raw multiplicity gap 2(n-2) and LCU-normalized gap 2/[n(n-1)] for every n>=6.",
+      "status": "proved-exact-restricted-inverse-quadratic-commutant-gap"
+    },
+    {
+      "candidate_id": "CODE-COSET-COLLECTIVE",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
         "PO-SUCCESS",
         "PO-NO-GO"
       ],
-      "falsification_test": "Exhibit nontrivial g(lambda,mu,nu) sectors, construct a commutant Hamiltonian, charge its LCU normalization, and prove an inverse-polynomial all-n minimum gap before phase estimation.",
+      "falsification_test": "Extend exact normalized-gap and coherent preparation guarantees from the solved multiplicity-two family to every reduction-relevant sector before claiming a general basis transform.",
       "id": "LEMMA-CODE-COSET-COLLECTIVE-COSET-KRONECKER-MULTIPLICITY-BASIS",
       "statement": "After target-tableau label extraction, a uniform polynomial coherent transform selects and manipulates a basis in every residual g(lambda,mu,nu)-dimensional Kronecker multiplicity space.",
-      "status": "blocked-finite-commutant-splitting-no-normalized-gap-theorem"
+      "status": "blocked-restricted-gap-proved-general-multiplicity-basis-open"
+    },
+    {
+      "candidate_id": "CODE-COSET-COLLECTIVE",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-SUCCESS",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "For every stable intermediate and final partition family, derive the exact multiplicity action and prove a uniform inverse-polynomial normalized gap; finite regression does not count.",
+      "id": "LEMMA-CODE-COSET-COLLECTIVE-COSET-HIERARCHICAL-RACAH-STABLE-GAP",
+      "statement": "The nested bounded-support orbit Hamiltonians have inverse-polynomial normalized gaps on every stable multiplicity channel needed for coherent three-copy Racah recoupling.",
+      "status": "blocked-sparse-integer-quartics-through-n10-no-exact-all-n-proof"
+    },
+    {
+      "candidate_id": "CODE-COSET-COLLECTIVE",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Evaluate n(n-1)(n-2)/n! times sum_g chi_xi(g) chi_xi(g tau) chi_W(g c) exactly from the stable character polynomials; interpolation and holdout matches do not count.",
+      "id": "LEMMA-CODE-COSET-COLLECTIVE-COSET-STABLE-RACAH-TRACE-IDENTITY",
+      "statement": "On the stable multiplicity-four channel, the hierarchical orbit Hamiltonian trace is 4n^3-46n^2+149n-118 for every n>=7 by an exact marked-cycle character calculation.",
+      "status": "blocked-cubic-trace-matches-n11-holdout-no-exact-character-proof"
     },
     {
       "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -283,10 +320,10 @@
         "PO-SUCCESS",
         "PO-NO-GO"
       ],
-      "falsification_test": "Require gate complexity, precision, multiplicity-register size, and end-to-end decoding for k growing with n; finite block diagonalization or tableau enumeration does not count.",
+      "falsification_test": "Require every intermediate partition, a unitary partition-level Racah matrix, gate complexity, precision, multiplicity-register size, and end-to-end decoding for k growing with n; finite subblocks or tableau enumeration do not count.",
       "id": "LEMMA-CODE-COSET-COLLECTIVE-COSET-K3-COHERENT-ASSOCIATOR-DECODER",
       "statement": "A uniform polynomial Racah/associator circuit handles overlapping k-copy subset class sums and a polynomial multiplicity-space decoder recovers the hidden involution.",
-      "status": "blocked-overlapping-recoupling-associator-and-decoder-open"
+      "status": "blocked-complete-s6-racah-table-no-stable-n-circuit"
     },
     {
       "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -1434,13 +1471,50 @@
       "depends_on": [
         "PO-MEASUREMENT",
         "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Verify the projected-edge Gram form, both nonzero Specht parity maps, total Kronecker multiplicity two, exact symbolic Rayleigh quotients, and finite seminormal cross-checks.",
+      "id": "LEMMA-HYP-LIT-COSET-OBSERVABLES-COSET-RESTRICTED-COMMUTANT-GAP",
+      "statement": "For lambda=(n-2,2) and nu=(n-3,2,1), the fixed support-intersection-two orbit Hamiltonian has raw multiplicity gap 2(n-2) and LCU-normalized gap 2/[n(n-1)] for every n>=6.",
+      "status": "proved-exact-restricted-inverse-quadratic-commutant-gap"
+    },
+    {
+      "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
         "PO-SUCCESS",
         "PO-NO-GO"
       ],
-      "falsification_test": "Exhibit nontrivial g(lambda,mu,nu) sectors, construct a commutant Hamiltonian, charge its LCU normalization, and prove an inverse-polynomial all-n minimum gap before phase estimation.",
+      "falsification_test": "Extend exact normalized-gap and coherent preparation guarantees from the solved multiplicity-two family to every reduction-relevant sector before claiming a general basis transform.",
       "id": "LEMMA-HYP-LIT-COSET-OBSERVABLES-COSET-KRONECKER-MULTIPLICITY-BASIS",
       "statement": "After target-tableau label extraction, a uniform polynomial coherent transform selects and manipulates a basis in every residual g(lambda,mu,nu)-dimensional Kronecker multiplicity space.",
-      "status": "blocked-finite-commutant-splitting-no-normalized-gap-theorem"
+      "status": "blocked-restricted-gap-proved-general-multiplicity-basis-open"
+    },
+    {
+      "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-SUCCESS",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "For every stable intermediate and final partition family, derive the exact multiplicity action and prove a uniform inverse-polynomial normalized gap; finite regression does not count.",
+      "id": "LEMMA-HYP-LIT-COSET-OBSERVABLES-COSET-HIERARCHICAL-RACAH-STABLE-GAP",
+      "statement": "The nested bounded-support orbit Hamiltonians have inverse-polynomial normalized gaps on every stable multiplicity channel needed for coherent three-copy Racah recoupling.",
+      "status": "blocked-sparse-integer-quartics-through-n10-no-exact-all-n-proof"
+    },
+    {
+      "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Evaluate n(n-1)(n-2)/n! times sum_g chi_xi(g) chi_xi(g tau) chi_W(g c) exactly from the stable character polynomials; interpolation and holdout matches do not count.",
+      "id": "LEMMA-HYP-LIT-COSET-OBSERVABLES-COSET-STABLE-RACAH-TRACE-IDENTITY",
+      "statement": "On the stable multiplicity-four channel, the hierarchical orbit Hamiltonian trace is 4n^3-46n^2+149n-118 for every n>=7 by an exact marked-cycle character calculation.",
+      "status": "blocked-cubic-trace-matches-n11-holdout-no-exact-character-proof"
     },
     {
       "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
@@ -1512,10 +1586,10 @@
         "PO-SUCCESS",
         "PO-NO-GO"
       ],
-      "falsification_test": "Require gate complexity, precision, multiplicity-register size, and end-to-end decoding for k growing with n; finite block diagonalization or tableau enumeration does not count.",
+      "falsification_test": "Require every intermediate partition, a unitary partition-level Racah matrix, gate complexity, precision, multiplicity-register size, and end-to-end decoding for k growing with n; finite subblocks or tableau enumeration do not count.",
       "id": "LEMMA-HYP-LIT-COSET-OBSERVABLES-COSET-K3-COHERENT-ASSOCIATOR-DECODER",
       "statement": "A uniform polynomial Racah/associator circuit handles overlapping k-copy subset class sums and a polynomial multiplicity-space decoder recovers the hidden involution.",
-      "status": "blocked-overlapping-recoupling-associator-and-decoder-open"
+      "status": "blocked-complete-s6-racah-table-no-stable-n-circuit"
     },
     {
       "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
@@ -2663,13 +2737,50 @@
       "depends_on": [
         "PO-MEASUREMENT",
         "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Verify the projected-edge Gram form, both nonzero Specht parity maps, total Kronecker multiplicity two, exact symbolic Rayleigh quotients, and finite seminormal cross-checks.",
+      "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-COSET-RESTRICTED-COMMUTANT-GAP",
+      "statement": "For lambda=(n-2,2) and nu=(n-3,2,1), the fixed support-intersection-two orbit Hamiltonian has raw multiplicity gap 2(n-2) and LCU-normalized gap 2/[n(n-1)] for every n>=6.",
+      "status": "proved-exact-restricted-inverse-quadratic-commutant-gap"
+    },
+    {
+      "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
         "PO-SUCCESS",
         "PO-NO-GO"
       ],
-      "falsification_test": "Exhibit nontrivial g(lambda,mu,nu) sectors, construct a commutant Hamiltonian, charge its LCU normalization, and prove an inverse-polynomial all-n minimum gap before phase estimation.",
+      "falsification_test": "Extend exact normalized-gap and coherent preparation guarantees from the solved multiplicity-two family to every reduction-relevant sector before claiming a general basis transform.",
       "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-COSET-KRONECKER-MULTIPLICITY-BASIS",
       "statement": "After target-tableau label extraction, a uniform polynomial coherent transform selects and manipulates a basis in every residual g(lambda,mu,nu)-dimensional Kronecker multiplicity space.",
-      "status": "blocked-finite-commutant-splitting-no-normalized-gap-theorem"
+      "status": "blocked-restricted-gap-proved-general-multiplicity-basis-open"
+    },
+    {
+      "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-SUCCESS",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "For every stable intermediate and final partition family, derive the exact multiplicity action and prove a uniform inverse-polynomial normalized gap; finite regression does not count.",
+      "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-COSET-HIERARCHICAL-RACAH-STABLE-GAP",
+      "statement": "The nested bounded-support orbit Hamiltonians have inverse-polynomial normalized gaps on every stable multiplicity channel needed for coherent three-copy Racah recoupling.",
+      "status": "blocked-sparse-integer-quartics-through-n10-no-exact-all-n-proof"
+    },
+    {
+      "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Evaluate n(n-1)(n-2)/n! times sum_g chi_xi(g) chi_xi(g tau) chi_W(g c) exactly from the stable character polynomials; interpolation and holdout matches do not count.",
+      "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-COSET-STABLE-RACAH-TRACE-IDENTITY",
+      "statement": "On the stable multiplicity-four channel, the hierarchical orbit Hamiltonian trace is 4n^3-46n^2+149n-118 for every n>=7 by an exact marked-cycle character calculation.",
+      "status": "blocked-cubic-trace-matches-n11-holdout-no-exact-character-proof"
     },
     {
       "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
@@ -2741,10 +2852,10 @@
         "PO-SUCCESS",
         "PO-NO-GO"
       ],
-      "falsification_test": "Require gate complexity, precision, multiplicity-register size, and end-to-end decoding for k growing with n; finite block diagonalization or tableau enumeration does not count.",
+      "falsification_test": "Require every intermediate partition, a unitary partition-level Racah matrix, gate complexity, precision, multiplicity-register size, and end-to-end decoding for k growing with n; finite subblocks or tableau enumeration do not count.",
       "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-COSET-K3-COHERENT-ASSOCIATOR-DECODER",
       "statement": "A uniform polynomial Racah/associator circuit handles overlapping k-copy subset class sums and a polynomial multiplicity-space decoder recovers the hidden involution.",
-      "status": "blocked-overlapping-recoupling-associator-and-decoder-open"
+      "status": "blocked-complete-s6-racah-table-no-stable-n-circuit"
     },
     {
       "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
@@ -2931,13 +3042,50 @@
       "depends_on": [
         "PO-MEASUREMENT",
         "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Verify the projected-edge Gram form, both nonzero Specht parity maps, total Kronecker multiplicity two, exact symbolic Rayleigh quotients, and finite seminormal cross-checks.",
+      "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-COSET-RESTRICTED-COMMUTANT-GAP",
+      "statement": "For lambda=(n-2,2) and nu=(n-3,2,1), the fixed support-intersection-two orbit Hamiltonian has raw multiplicity gap 2(n-2) and LCU-normalized gap 2/[n(n-1)] for every n>=6.",
+      "status": "proved-exact-restricted-inverse-quadratic-commutant-gap"
+    },
+    {
+      "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
         "PO-SUCCESS",
         "PO-NO-GO"
       ],
-      "falsification_test": "Exhibit nontrivial g(lambda,mu,nu) sectors, construct a commutant Hamiltonian, charge its LCU normalization, and prove an inverse-polynomial all-n minimum gap before phase estimation.",
+      "falsification_test": "Extend exact normalized-gap and coherent preparation guarantees from the solved multiplicity-two family to every reduction-relevant sector before claiming a general basis transform.",
       "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-COSET-KRONECKER-MULTIPLICITY-BASIS",
       "statement": "After target-tableau label extraction, a uniform polynomial coherent transform selects and manipulates a basis in every residual g(lambda,mu,nu)-dimensional Kronecker multiplicity space.",
-      "status": "blocked-finite-commutant-splitting-no-normalized-gap-theorem"
+      "status": "blocked-restricted-gap-proved-general-multiplicity-basis-open"
+    },
+    {
+      "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-SUCCESS",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "For every stable intermediate and final partition family, derive the exact multiplicity action and prove a uniform inverse-polynomial normalized gap; finite regression does not count.",
+      "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-COSET-HIERARCHICAL-RACAH-STABLE-GAP",
+      "statement": "The nested bounded-support orbit Hamiltonians have inverse-polynomial normalized gaps on every stable multiplicity channel needed for coherent three-copy Racah recoupling.",
+      "status": "blocked-sparse-integer-quartics-through-n10-no-exact-all-n-proof"
+    },
+    {
+      "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Evaluate n(n-1)(n-2)/n! times sum_g chi_xi(g) chi_xi(g tau) chi_W(g c) exactly from the stable character polynomials; interpolation and holdout matches do not count.",
+      "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-COSET-STABLE-RACAH-TRACE-IDENTITY",
+      "statement": "On the stable multiplicity-four channel, the hierarchical orbit Hamiltonian trace is 4n^3-46n^2+149n-118 for every n>=7 by an exact marked-cycle character calculation.",
+      "status": "blocked-cubic-trace-matches-n11-holdout-no-exact-character-proof"
     },
     {
       "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
@@ -3009,10 +3157,10 @@
         "PO-SUCCESS",
         "PO-NO-GO"
       ],
-      "falsification_test": "Require gate complexity, precision, multiplicity-register size, and end-to-end decoding for k growing with n; finite block diagonalization or tableau enumeration does not count.",
+      "falsification_test": "Require every intermediate partition, a unitary partition-level Racah matrix, gate complexity, precision, multiplicity-register size, and end-to-end decoding for k growing with n; finite subblocks or tableau enumeration do not count.",
       "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-COSET-K3-COHERENT-ASSOCIATOR-DECODER",
       "statement": "A uniform polynomial Racah/associator circuit handles overlapping k-copy subset class sums and a polynomial multiplicity-space decoder recovers the hidden involution.",
-      "status": "blocked-overlapping-recoupling-associator-and-decoder-open"
+      "status": "blocked-complete-s6-racah-table-no-stable-n-circuit"
     },
     {
       "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
@@ -3199,13 +3347,50 @@
       "depends_on": [
         "PO-MEASUREMENT",
         "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Verify the projected-edge Gram form, both nonzero Specht parity maps, total Kronecker multiplicity two, exact symbolic Rayleigh quotients, and finite seminormal cross-checks.",
+      "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-COSET-RESTRICTED-COMMUTANT-GAP",
+      "statement": "For lambda=(n-2,2) and nu=(n-3,2,1), the fixed support-intersection-two orbit Hamiltonian has raw multiplicity gap 2(n-2) and LCU-normalized gap 2/[n(n-1)] for every n>=6.",
+      "status": "proved-exact-restricted-inverse-quadratic-commutant-gap"
+    },
+    {
+      "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
         "PO-SUCCESS",
         "PO-NO-GO"
       ],
-      "falsification_test": "Exhibit nontrivial g(lambda,mu,nu) sectors, construct a commutant Hamiltonian, charge its LCU normalization, and prove an inverse-polynomial all-n minimum gap before phase estimation.",
+      "falsification_test": "Extend exact normalized-gap and coherent preparation guarantees from the solved multiplicity-two family to every reduction-relevant sector before claiming a general basis transform.",
       "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-COSET-KRONECKER-MULTIPLICITY-BASIS",
       "statement": "After target-tableau label extraction, a uniform polynomial coherent transform selects and manipulates a basis in every residual g(lambda,mu,nu)-dimensional Kronecker multiplicity space.",
-      "status": "blocked-finite-commutant-splitting-no-normalized-gap-theorem"
+      "status": "blocked-restricted-gap-proved-general-multiplicity-basis-open"
+    },
+    {
+      "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-SUCCESS",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "For every stable intermediate and final partition family, derive the exact multiplicity action and prove a uniform inverse-polynomial normalized gap; finite regression does not count.",
+      "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-COSET-HIERARCHICAL-RACAH-STABLE-GAP",
+      "statement": "The nested bounded-support orbit Hamiltonians have inverse-polynomial normalized gaps on every stable multiplicity channel needed for coherent three-copy Racah recoupling.",
+      "status": "blocked-sparse-integer-quartics-through-n10-no-exact-all-n-proof"
+    },
+    {
+      "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Evaluate n(n-1)(n-2)/n! times sum_g chi_xi(g) chi_xi(g tau) chi_W(g c) exactly from the stable character polynomials; interpolation and holdout matches do not count.",
+      "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-COSET-STABLE-RACAH-TRACE-IDENTITY",
+      "statement": "On the stable multiplicity-four channel, the hierarchical orbit Hamiltonian trace is 4n^3-46n^2+149n-118 for every n>=7 by an exact marked-cycle character calculation.",
+      "status": "blocked-cubic-trace-matches-n11-holdout-no-exact-character-proof"
     },
     {
       "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
@@ -3277,10 +3462,10 @@
         "PO-SUCCESS",
         "PO-NO-GO"
       ],
-      "falsification_test": "Require gate complexity, precision, multiplicity-register size, and end-to-end decoding for k growing with n; finite block diagonalization or tableau enumeration does not count.",
+      "falsification_test": "Require every intermediate partition, a unitary partition-level Racah matrix, gate complexity, precision, multiplicity-register size, and end-to-end decoding for k growing with n; finite subblocks or tableau enumeration do not count.",
       "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-COSET-K3-COHERENT-ASSOCIATOR-DECODER",
       "statement": "A uniform polynomial Racah/associator circuit handles overlapping k-copy subset class sums and a polynomial multiplicity-space decoder recovers the hidden involution.",
-      "status": "blocked-overlapping-recoupling-associator-and-decoder-open"
+      "status": "blocked-complete-s6-racah-table-no-stable-n-circuit"
     },
     {
       "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
@@ -3467,13 +3652,50 @@
       "depends_on": [
         "PO-MEASUREMENT",
         "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Verify the projected-edge Gram form, both nonzero Specht parity maps, total Kronecker multiplicity two, exact symbolic Rayleigh quotients, and finite seminormal cross-checks.",
+      "id": "LEMMA-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-COSET-RESTRICTED-COMMUTANT-GAP",
+      "statement": "For lambda=(n-2,2) and nu=(n-3,2,1), the fixed support-intersection-two orbit Hamiltonian has raw multiplicity gap 2(n-2) and LCU-normalized gap 2/[n(n-1)] for every n>=6.",
+      "status": "proved-exact-restricted-inverse-quadratic-commutant-gap"
+    },
+    {
+      "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
         "PO-SUCCESS",
         "PO-NO-GO"
       ],
-      "falsification_test": "Exhibit nontrivial g(lambda,mu,nu) sectors, construct a commutant Hamiltonian, charge its LCU normalization, and prove an inverse-polynomial all-n minimum gap before phase estimation.",
+      "falsification_test": "Extend exact normalized-gap and coherent preparation guarantees from the solved multiplicity-two family to every reduction-relevant sector before claiming a general basis transform.",
       "id": "LEMMA-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-COSET-KRONECKER-MULTIPLICITY-BASIS",
       "statement": "After target-tableau label extraction, a uniform polynomial coherent transform selects and manipulates a basis in every residual g(lambda,mu,nu)-dimensional Kronecker multiplicity space.",
-      "status": "blocked-finite-commutant-splitting-no-normalized-gap-theorem"
+      "status": "blocked-restricted-gap-proved-general-multiplicity-basis-open"
+    },
+    {
+      "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-SUCCESS",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "For every stable intermediate and final partition family, derive the exact multiplicity action and prove a uniform inverse-polynomial normalized gap; finite regression does not count.",
+      "id": "LEMMA-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-COSET-HIERARCHICAL-RACAH-STABLE-GAP",
+      "statement": "The nested bounded-support orbit Hamiltonians have inverse-polynomial normalized gaps on every stable multiplicity channel needed for coherent three-copy Racah recoupling.",
+      "status": "blocked-sparse-integer-quartics-through-n10-no-exact-all-n-proof"
+    },
+    {
+      "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Evaluate n(n-1)(n-2)/n! times sum_g chi_xi(g) chi_xi(g tau) chi_W(g c) exactly from the stable character polynomials; interpolation and holdout matches do not count.",
+      "id": "LEMMA-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-COSET-STABLE-RACAH-TRACE-IDENTITY",
+      "statement": "On the stable multiplicity-four channel, the hierarchical orbit Hamiltonian trace is 4n^3-46n^2+149n-118 for every n>=7 by an exact marked-cycle character calculation.",
+      "status": "blocked-cubic-trace-matches-n11-holdout-no-exact-character-proof"
     },
     {
       "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
@@ -3545,10 +3767,10 @@
         "PO-SUCCESS",
         "PO-NO-GO"
       ],
-      "falsification_test": "Require gate complexity, precision, multiplicity-register size, and end-to-end decoding for k growing with n; finite block diagonalization or tableau enumeration does not count.",
+      "falsification_test": "Require every intermediate partition, a unitary partition-level Racah matrix, gate complexity, precision, multiplicity-register size, and end-to-end decoding for k growing with n; finite subblocks or tableau enumeration do not count.",
       "id": "LEMMA-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-COSET-K3-COHERENT-ASSOCIATOR-DECODER",
       "statement": "A uniform polynomial Racah/associator circuit handles overlapping k-copy subset class sums and a polynomial multiplicity-space decoder recovers the hidden involution.",
-      "status": "blocked-overlapping-recoupling-associator-and-decoder-open"
+      "status": "blocked-complete-s6-racah-table-no-stable-n-circuit"
     },
     {
       "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",

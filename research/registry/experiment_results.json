@@ -2093,6 +2093,95 @@
   },
   {
     "artifacts": {
+      "coset_commutant_gap_certificate": "research/representation/coset_commutant_gap_certificate.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-07-18T01:00:26.854085+00:00",
+    "experiment_id": "EXP-COSET-COMMUTANT-GAP-CERTIFICATE",
+    "falsifiers_triggered": [
+      "Finite interpolation is not used: both parity Rayleigh quotients are exact symbolic expressions.",
+      "A theorem on one multiplicity-two family is not promoted to a general internal Kronecker transform.",
+      "Polynomial phase estimation for this label does not implement overlapping Racah moves or decode a hidden involution."
+    ],
+    "id": "RESULT-EXP-COSET-COMMUTANT-GAP-CERTIFICATE-LATEST",
+    "metrics": {
+      "all_n_critical_gap_theorem_count": 1,
+      "general_sector_gap_theorem_count": 0,
+      "hidden_involution_decoder_count": 0,
+      "kcopy_associator_count": 0,
+      "lcu_normalized_gap_exponent": 2,
+      "minimum_proved_n": 6,
+      "restricted_family_inverse_polynomial_gap_count": 1,
+      "stable_kronecker_multiplicity": 2,
+      "symbolic_parity_eigenvalue_count": 2
+    },
+    "status": "all-n-restricted-commutant-gap-proved-associator-decoder-open",
+    "summary": "Proved the raw 2(n-2) and LCU-normalized 2/[n(n-1)] multiplicity gap for lambda=(n-2,2), nu=(n-3,2,1), all n>=6; general-sector, Racah, and decoder obligations remain open."
+  },
+  {
+    "artifacts": {
+      "coset_commutant_gap_scaling": "research/representation/coset_commutant_gap_scaling.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-07-18T01:00:16.685266+00:00",
+    "experiment_id": "EXP-COSET-COMMUTANT-GAP-SCALING",
+    "falsifiers_triggered": [
+      "Optimizing coefficients independently at each n is rejected as nonuniform advice.",
+      "Finite exact-looking gap formulas are retained as conjectures until an all-n representation-theoretic proof exists.",
+      "A gapped one-tree multiplicity Hamiltonian does not supply Racah associators or a hidden-involution decoder."
+    ],
+    "id": "RESULT-EXP-COSET-COMMUTANT-GAP-SCALING-LATEST",
+    "metrics": {
+      "all_n_critical_gap_theorem_count": 0,
+      "all_nontrivial_targets_split_count": 5,
+      "critical_gap_formula_finite_verified_count": 5,
+      "empirical_log_log_gap_slope": -2.150465523945385,
+      "hidden_involution_decoder_count": 0,
+      "kcopy_associator_count": 0,
+      "maximum_critical_gap_formula_residual": 3.126388037344441e-13,
+      "maximum_n": 10,
+      "minimum_n": 6,
+      "minimum_observed_critical_normalized_gap": 0.022222222222222657,
+      "record_count": 5,
+      "term_count_formula_verified_count": 5
+    },
+    "status": "uniform-inverse-quadratic-gap-conjecture-survives-finite-scaling",
+    "summary": "Tested one uniform commutant Hamiltonian on lambda=(n-2,2) for n=[6, 7, 8, 9, 10]; the predicted 2/[n(n-1)] normalized critical gap matched 5/5 rows."
+  },
+  {
+    "artifacts": {
+      "coset_complete_racah_control": "research/representation/coset_complete_racah_control.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-07-18T01:17:57.828010+00:00",
+    "experiment_id": "EXP-COSET-COMPLETE-RACAH-CONTROL",
+    "falsifiers_triggered": [
+      "The earlier nonunitary 2x2 blocks were not closed Racah transforms; omitted intermediate partitions carry the missing probability.",
+      "Pair central signatures plus one first-stage gap Hamiltonian do not resolve second-stage multiplicity in every final sector.",
+      "A finite dense unitary overlap table does not imply a uniform polynomial coherent associator.",
+      "No hidden-involution decoder follows from finite recoupling matrices."
+    ],
+    "id": "RESULT-EXP-COSET-COMPLETE-RACAH-CONTROL-LATEST",
+    "metrics": {
+      "all_n_racah_formula_count": 0,
+      "complete_finite_racah_matrix_count": 5,
+      "final_target_count": 10,
+      "hidden_involution_decoder_count": 0,
+      "maximum_complete_matrix_dimension": 6,
+      "maximum_dense_dimension": 729,
+      "maximum_second_stage_multiplicity": 3,
+      "maximum_tableau_absolute_consistency_residual": 8.313387968343065e-14,
+      "maximum_unitarity_residual": 1.210269206297575e-14,
+      "maximum_unresolved_matrix_dimension": 16,
+      "nontrivial_complete_finite_racah_matrix_count": 4,
+      "uniform_polynomial_racah_circuit_count": 0,
+      "unresolved_second_stage_multiplicity_sector_count": 5
+    },
+    "status": "finite-complete-racah-controls-verified-uniform-associator-open",
+    "summary": "Constructed 5 complete finite Racah matrices at n=6, including 4 nontrivial transforms; 5 final sectors still require second-stage multiplicity operators."
+  },
+  {
+    "artifacts": {
       "coset_covariant_frame": "research/representation/coset_covariant_frame.json"
     },
     "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -2205,6 +2294,115 @@
     },
     "status": "gm-search-dequantized-current-rows",
     "summary": "Godsil-McKay search checked 963 subsets across 3 graph families, found 2 non-isomorphic cospectral row(s), dequantized 2 row(s), and left 0 row(s) as proof debt."
+  },
+  {
+    "artifacts": {
+      "coset_hierarchical_gap_scaling": "research/representation/coset_hierarchical_gap_scaling.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-07-18T01:28:45.871507+00:00",
+    "experiment_id": "EXP-COSET-HIERARCHICAL-GAP-SCALING",
+    "falsifiers_triggered": [
+      "Finite nonzero gaps cannot be extrapolated into an inverse-polynomial all-n theorem.",
+      "The empirical gap slope is descriptive and is not a complexity proof.",
+      "One stable final-target family does not cover all source-relevant sectors.",
+      "A gapped multiplicity label does not by itself implement Racah amplitudes or hidden-involution decoding."
+    ],
+    "id": "RESULT-EXP-COSET-HIERARCHICAL-GAP-SCALING-LATEST",
+    "metrics": {
+      "all_n_second_stage_gap_theorem_count": 0,
+      "audited_nontrivial_channel_count": 18,
+      "empirical_log_log_normalized_gap_slope": -1.8932685429119105,
+      "finite_all_blocks_split_count": 3,
+      "hidden_involution_decoder_count": 0,
+      "maximum_final_total_multiplicity": 25,
+      "maximum_n": 8,
+      "maximum_second_stage_multiplicity": 4,
+      "maximum_tableau_spectrum_consistency_residual": 4.4786743584721263e-13,
+      "minimum_n": 6,
+      "minimum_observed_normalized_gap": 0.028261280371763634,
+      "minimum_observed_raw_gap": 5.830951894845291,
+      "record_count": 3,
+      "uniform_polynomial_racah_circuit_count": 0
+    },
+    "status": "hierarchical-gap-finite-scaling-survives-all-n-proof-open",
+    "summary": "Audited 18 second-stage multiplicity blocks over n=6..8; all split finitely, with minimum normalized gap 0.0282613, but no all-n theorem or circuit follows."
+  },
+  {
+    "artifacts": {
+      "coset_hierarchical_racah_control": "research/representation/coset_hierarchical_racah_control.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-07-18T01:48:05.415602+00:00",
+    "experiment_id": "EXP-COSET-HIERARCHICAL-RACAH-CONTROL",
+    "falsifiers_triggered": [
+      "One pair Hamiltonian is insufficient in sectors with second-stage Kronecker multiplicity.",
+      "A complete finite S_6 Racah table is not evidence of inverse-polynomial gaps at growing n.",
+      "Dense joint diagonalization does not compile the basis into a uniform coherent circuit.",
+      "Recoupling coordinates alone do not recover the hidden involution."
+    ],
+    "id": "RESULT-EXP-COSET-HIERARCHICAL-RACAH-CONTROL-COSET",
+    "metrics": {
+      "complete_hierarchical_finite_racah_matrix_count": 10,
+      "final_target_count": 10,
+      "hidden_involution_decoder_count": 0,
+      "maximum_dense_dimension": 729,
+      "maximum_matrix_dimension": 16,
+      "maximum_second_stage_multiplicity": 3,
+      "maximum_tableau_absolute_consistency_residual": 9.726143089020922e-14,
+      "maximum_unitarity_residual": 1.619093517085688e-14,
+      "minimum_observed_first_stage_raw_gap": 7.999999999999979,
+      "minimum_observed_second_stage_normalized_gap": 0.048591265790377376,
+      "minimum_observed_second_stage_raw_gap": 5.830951894845285,
+      "nontrivial_complete_finite_racah_matrix_count": 9,
+      "second_stage_lcu_term_count": 120,
+      "second_stage_multiplicity_resolved_sector_count": 10,
+      "second_stage_term_count_formula": 120,
+      "second_stage_term_count_formula_verified_count": 1,
+      "stable_n_joint_gap_theorem_count": 0,
+      "uniform_polynomial_racah_circuit_count": 0,
+      "unresolved_finite_sector_count": 0
+    },
+    "status": "complete-s6-hierarchical-racah-table-stable-n-circuit-open",
+    "summary": "Resolved all 10 final S_6 sectors with a two-level bounded-support commutant hierarchy; the finite Racah table is complete, while stable-n gaps, a circuit, and a decoder remain open."
+  },
+  {
+    "artifacts": {
+      "coset_hierarchical_racah_control": "research/representation/coset_hierarchical_racah_control.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-07-18T01:23:05.613556+00:00",
+    "experiment_id": "EXP-COSET-HIERARCHICAL-RACAH-CONTROL",
+    "falsifiers_triggered": [
+      "One pair Hamiltonian is insufficient in sectors with second-stage Kronecker multiplicity.",
+      "A complete finite S_6 Racah table is not evidence of inverse-polynomial gaps at growing n.",
+      "Dense joint diagonalization does not compile the basis into a uniform coherent circuit.",
+      "Recoupling coordinates alone do not recover the hidden involution."
+    ],
+    "id": "RESULT-EXP-COSET-HIERARCHICAL-RACAH-CONTROL-LATEST",
+    "metrics": {
+      "complete_hierarchical_finite_racah_matrix_count": 10,
+      "final_target_count": 10,
+      "hidden_involution_decoder_count": 0,
+      "maximum_dense_dimension": 729,
+      "maximum_matrix_dimension": 16,
+      "maximum_second_stage_multiplicity": 3,
+      "maximum_tableau_absolute_consistency_residual": 9.726143089020922e-14,
+      "maximum_unitarity_residual": 1.619093517085688e-14,
+      "minimum_observed_first_stage_raw_gap": 7.999999999999979,
+      "minimum_observed_second_stage_normalized_gap": 0.048591265790377376,
+      "minimum_observed_second_stage_raw_gap": 5.830951894845285,
+      "nontrivial_complete_finite_racah_matrix_count": 9,
+      "second_stage_lcu_term_count": 120,
+      "second_stage_multiplicity_resolved_sector_count": 10,
+      "second_stage_term_count_formula": 120,
+      "second_stage_term_count_formula_verified_count": 1,
+      "stable_n_joint_gap_theorem_count": 0,
+      "uniform_polynomial_racah_circuit_count": 0,
+      "unresolved_finite_sector_count": 0
+    },
+    "status": "complete-s6-hierarchical-racah-table-stable-n-circuit-open",
+    "summary": "Resolved all 10 final S_6 sectors with a two-level bounded-support commutant hierarchy; the finite Racah table is complete, while stable-n gaps, a circuit, and a decoder remain open."
   },
   {
     "artifacts": {
@@ -2597,6 +2795,129 @@
     },
     "status": "strong-fourier-route-blocked",
     "summary": "Audited S_n representation growth for n=[4, 5, 6, 8, 10, 12, 14, 16]. 3 row(s) show strong-Fourier no-go pressure; minimum low-dimensional Plancherel mass is 8.17e-06."
+  },
+  {
+    "artifacts": {
+      "coset_restricted_racah_control": "research/representation/coset_restricted_racah_control.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-07-18T01:08:56.932041+00:00",
+    "experiment_id": "EXP-COSET-RESTRICTED-RACAH-CONTROL",
+    "falsifiers_triggered": [
+      "An inverse-polynomial pairwise multiplicity gap does not by itself supply a three-copy Racah transform.",
+      "The 2x2 parity overlap is a nonunitary subblock; discarding the complementary intermediate channels loses probability.",
+      "Finite dense diagonalization at n=6 is a control artifact, not a uniform polynomial circuit.",
+      "No hidden-involution decoder follows from a recoupling overlap table."
+    ],
+    "id": "RESULT-EXP-COSET-RESTRICTED-RACAH-CONTROL-LATEST",
+    "metrics": {
+      "channel_leakage_detected_count": 4,
+      "final_target_count": 4,
+      "full_racah_associator_count": 0,
+      "hidden_involution_decoder_count": 0,
+      "maximum_channel_leakage": 0.917777777777778,
+      "maximum_dense_dimension": 729,
+      "maximum_tableau_consistency_residual": 3.805450359397229e-15,
+      "nonunitary_restricted_subblock_count": 4,
+      "rational_subblock_reconstruction_count": 4,
+      "record_count": 4,
+      "tableau_consistent_subblock_count": 4,
+      "uniform_polynomial_racah_circuit_count": 0
+    },
+    "status": "restricted-racah-subblocks-resolved-full-associator-open",
+    "summary": "Resolved 4 parity-channel Racah subblocks at n=6; every restricted block leaks to other intermediate irreps, so the exact pair gap does not close the associator obligation."
+  },
+  {
+    "artifacts": {
+      "coset_sparse_stable_gap_probe": "research/representation/coset_sparse_stable_gap_probe.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-07-18T01:40:25.577885+00:00",
+    "experiment_id": "EXP-COSET-SPARSE-STABLE-GAP-PROBE",
+    "falsifiers_triggered": [
+      "Integer polynomial reconstruction from floating spectra is a conjecture generator, not an exact proof.",
+      "One critical stable channel does not cover every intermediate or final sector.",
+      "Sparse finite block extraction does not establish polynomial complexity as n grows.",
+      "No coherent circuit or hidden-involution decoder is constructed."
+    ],
+    "id": "RESULT-EXP-COSET-SPARSE-STABLE-GAP-PROBE-LATEST",
+    "metrics": {
+      "all_n_characteristic_polynomial_theorem_count": 0,
+      "all_n_gap_theorem_count": 0,
+      "finite_split_count": 5,
+      "full_dense_hamiltonian_materialization_count": 0,
+      "integer_characteristic_polynomial_candidate_count": 5,
+      "maximum_integer_polynomial_reconstruction_residual": 5.53131103515625e-05,
+      "maximum_integer_polynomial_relative_reconstruction_residual": 8.317917063596713e-15,
+      "maximum_n": 11,
+      "maximum_second_stage_multiplicity": 4,
+      "maximum_sparse_tensor_dimension": 10164,
+      "maximum_sparse_yjm_nonzero_count": 20185822,
+      "maximum_target_eigenspace_relative_residual": 1.1380162528156609e-12,
+      "minimum_n": 7,
+      "minimum_observed_normalized_gap": 0.01877888555149967,
+      "minimum_observed_raw_gap": 7.211102550927969,
+      "record_count": 5,
+      "uniform_polynomial_racah_circuit_count": 0
+    },
+    "status": "sparse-stable-gap-probe-survives-symbolic-proof-open",
+    "summary": "Extracted the multiplicity-4 critical block through n=11 without dense Hamiltonians; all spectra split and reconstruct integer polynomials, but exact all-n formulas and gap bounds remain open."
+  },
+  {
+    "artifacts": {
+      "coset_stable_trace_conjecture": "research/representation/coset_stable_trace_conjecture.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-07-18T01:48:11.020682+00:00",
+    "experiment_id": "EXP-COSET-STABLE-TRACE-CONJECTURE",
+    "falsifiers_triggered": [
+      "A cubic interpolation, even with holdout matches, is not an all-n character identity.",
+      "The trace alone does not determine a multiplicity-four spectrum.",
+      "Integer characteristic coefficients do not imply inverse-polynomial root separation.",
+      "A spectral theorem still would not supply a coherent circuit or decoder."
+    ],
+    "id": "RESULT-EXP-COSET-STABLE-TRACE-CONJECTURE-COSET",
+    "metrics": {
+      "all_n_quartic_theorem_count": 0,
+      "all_n_root_separation_theorem_count": 0,
+      "constant_third_difference_count": 1,
+      "exact_marked_cycle_trace_theorem_count": 0,
+      "holdout_match_count": 1,
+      "holdout_row_count": 1,
+      "interpolated_degree": 3,
+      "maximum_holdout_residual": 0,
+      "training_row_count": 4
+    },
+    "status": "stable-trace-cubic-survives-holdout-exact-proof-open",
+    "summary": "The cubic trace candidate 4*n**3 - 46*n**2 + 149*n - 118 matches 1/1 out-of-sample rows; an exact marked-cycle proof remains open."
+  },
+  {
+    "artifacts": {
+      "coset_stable_trace_conjecture": "research/representation/coset_stable_trace_conjecture.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-07-18T01:44:15.122687+00:00",
+    "experiment_id": "EXP-COSET-STABLE-TRACE-CONJECTURE",
+    "falsifiers_triggered": [
+      "A cubic interpolation, even with holdout matches, is not an all-n character identity.",
+      "The trace alone does not determine a multiplicity-four spectrum.",
+      "Integer characteristic coefficients do not imply inverse-polynomial root separation.",
+      "A spectral theorem still would not supply a coherent circuit or decoder."
+    ],
+    "id": "RESULT-EXP-COSET-STABLE-TRACE-CONJECTURE-LATEST",
+    "metrics": {
+      "all_n_quartic_theorem_count": 0,
+      "all_n_root_separation_theorem_count": 0,
+      "constant_third_difference_count": 1,
+      "exact_marked_cycle_trace_theorem_count": 0,
+      "holdout_match_count": 1,
+      "holdout_row_count": 1,
+      "interpolated_degree": 3,
+      "maximum_holdout_residual": 0,
+      "training_row_count": 4
+    },
+    "status": "stable-trace-cubic-survives-holdout-exact-proof-open",
+    "summary": "The cubic trace candidate 4*n**3 - 46*n**2 + 149*n - 118 matches 1/1 out-of-sample rows; an exact marked-cycle proof remains open."
   },
   {
     "artifacts": {

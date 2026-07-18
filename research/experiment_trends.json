@@ -1,8 +1,8 @@
 {
-  "created_at": "2026-07-15T11:12:33.849573+00:00",
+  "created_at": "2026-07-18T01:48:11.037310+00:00",
   "history_artifact": "research/experiment_run_history.json",
-  "history_count": 158,
-  "trend_count": 128,
+  "history_count": 160,
+  "trend_count": 130,
   "trends": [
     {
       "blocking_run_count": 1,
@@ -3685,6 +3685,175 @@
     },
     {
       "blocking_run_count": 1,
+      "experiment_id": "EXP-COSET-HIERARCHICAL-RACAH-CONTROL",
+      "falsifier_count_sequence": [
+        4
+      ],
+      "interpretation": "Repeated runs continue to trigger falsifiers; this is proof debt, not progress.",
+      "latest_result_id": "RESULT-EXP-COSET-HIERARCHICAL-RACAH-CONTROL-COSET",
+      "latest_status": "complete-s6-hierarchical-racah-table-stable-n-circuit-open",
+      "latest_summary": "Resolved all 10 final S_6 sectors with a two-level bounded-support commutant hierarchy; the finite Racah table is complete, while stable-n gaps, a circuit, and a decoder remain open.",
+      "numeric_metric_trends": {
+        "complete_hierarchical_finite_racah_matrix_count": {
+          "delta": 0.0,
+          "first": 10.0,
+          "latest": 10.0,
+          "max": 10.0,
+          "min": 10.0,
+          "observations": 1
+        },
+        "final_target_count": {
+          "delta": 0.0,
+          "first": 10.0,
+          "latest": 10.0,
+          "max": 10.0,
+          "min": 10.0,
+          "observations": 1
+        },
+        "hidden_involution_decoder_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        },
+        "maximum_dense_dimension": {
+          "delta": 0.0,
+          "first": 729.0,
+          "latest": 729.0,
+          "max": 729.0,
+          "min": 729.0,
+          "observations": 1
+        },
+        "maximum_matrix_dimension": {
+          "delta": 0.0,
+          "first": 16.0,
+          "latest": 16.0,
+          "max": 16.0,
+          "min": 16.0,
+          "observations": 1
+        },
+        "maximum_second_stage_multiplicity": {
+          "delta": 0.0,
+          "first": 3.0,
+          "latest": 3.0,
+          "max": 3.0,
+          "min": 3.0,
+          "observations": 1
+        },
+        "maximum_tableau_absolute_consistency_residual": {
+          "delta": 0.0,
+          "first": 9.726143089020922e-14,
+          "latest": 9.726143089020922e-14,
+          "max": 9.726143089020922e-14,
+          "min": 9.726143089020922e-14,
+          "observations": 1
+        },
+        "maximum_unitarity_residual": {
+          "delta": 0.0,
+          "first": 1.619093517085688e-14,
+          "latest": 1.619093517085688e-14,
+          "max": 1.619093517085688e-14,
+          "min": 1.619093517085688e-14,
+          "observations": 1
+        },
+        "minimum_observed_first_stage_raw_gap": {
+          "delta": 0.0,
+          "first": 7.999999999999979,
+          "latest": 7.999999999999979,
+          "max": 7.999999999999979,
+          "min": 7.999999999999979,
+          "observations": 1
+        },
+        "minimum_observed_second_stage_normalized_gap": {
+          "delta": 0.0,
+          "first": 0.048591265790377376,
+          "latest": 0.048591265790377376,
+          "max": 0.048591265790377376,
+          "min": 0.048591265790377376,
+          "observations": 1
+        },
+        "minimum_observed_second_stage_raw_gap": {
+          "delta": 0.0,
+          "first": 5.830951894845285,
+          "latest": 5.830951894845285,
+          "max": 5.830951894845285,
+          "min": 5.830951894845285,
+          "observations": 1
+        },
+        "nontrivial_complete_finite_racah_matrix_count": {
+          "delta": 0.0,
+          "first": 9.0,
+          "latest": 9.0,
+          "max": 9.0,
+          "min": 9.0,
+          "observations": 1
+        },
+        "second_stage_lcu_term_count": {
+          "delta": 0.0,
+          "first": 120.0,
+          "latest": 120.0,
+          "max": 120.0,
+          "min": 120.0,
+          "observations": 1
+        },
+        "second_stage_multiplicity_resolved_sector_count": {
+          "delta": 0.0,
+          "first": 10.0,
+          "latest": 10.0,
+          "max": 10.0,
+          "min": 10.0,
+          "observations": 1
+        },
+        "second_stage_term_count_formula": {
+          "delta": 0.0,
+          "first": 120.0,
+          "latest": 120.0,
+          "max": 120.0,
+          "min": 120.0,
+          "observations": 1
+        },
+        "second_stage_term_count_formula_verified_count": {
+          "delta": 0.0,
+          "first": 1.0,
+          "latest": 1.0,
+          "max": 1.0,
+          "min": 1.0,
+          "observations": 1
+        },
+        "stable_n_joint_gap_theorem_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        },
+        "uniform_polynomial_racah_circuit_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        },
+        "unresolved_finite_sector_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        }
+      },
+      "run_count": 1,
+      "status_sequence": [
+        "complete-s6-hierarchical-racah-table-stable-n-circuit-open"
+      ]
+    },
+    {
+      "blocking_run_count": 1,
       "experiment_id": "EXP-COSET-INDIVIDUALIZED-TENSOR-OBSERVABLES",
       "falsifier_count_sequence": [
         4
@@ -4489,6 +4658,95 @@
       "run_count": 1,
       "status_sequence": [
         "strong-fourier-route-blocked"
+      ]
+    },
+    {
+      "blocking_run_count": 1,
+      "experiment_id": "EXP-COSET-STABLE-TRACE-CONJECTURE",
+      "falsifier_count_sequence": [
+        4
+      ],
+      "interpretation": "Repeated runs continue to trigger falsifiers; this is proof debt, not progress.",
+      "latest_result_id": "RESULT-EXP-COSET-STABLE-TRACE-CONJECTURE-COSET",
+      "latest_status": "stable-trace-cubic-survives-holdout-exact-proof-open",
+      "latest_summary": "The cubic trace candidate 4*n**3 - 46*n**2 + 149*n - 118 matches 1/1 out-of-sample rows; an exact marked-cycle proof remains open.",
+      "numeric_metric_trends": {
+        "all_n_quartic_theorem_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        },
+        "all_n_root_separation_theorem_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        },
+        "constant_third_difference_count": {
+          "delta": 0.0,
+          "first": 1.0,
+          "latest": 1.0,
+          "max": 1.0,
+          "min": 1.0,
+          "observations": 1
+        },
+        "exact_marked_cycle_trace_theorem_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        },
+        "holdout_match_count": {
+          "delta": 0.0,
+          "first": 1.0,
+          "latest": 1.0,
+          "max": 1.0,
+          "min": 1.0,
+          "observations": 1
+        },
+        "holdout_row_count": {
+          "delta": 0.0,
+          "first": 1.0,
+          "latest": 1.0,
+          "max": 1.0,
+          "min": 1.0,
+          "observations": 1
+        },
+        "interpolated_degree": {
+          "delta": 0.0,
+          "first": 3.0,
+          "latest": 3.0,
+          "max": 3.0,
+          "min": 3.0,
+          "observations": 1
+        },
+        "maximum_holdout_residual": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        },
+        "training_row_count": {
+          "delta": 0.0,
+          "first": 4.0,
+          "latest": 4.0,
+          "max": 4.0,
+          "min": 4.0,
+          "observations": 1
+        }
+      },
+      "run_count": 1,
+      "status_sequence": [
+        "stable-trace-cubic-survives-holdout-exact-proof-open"
       ]
     },
     {

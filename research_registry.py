@@ -512,6 +512,9 @@ def seed_candidate_records() -> tuple[list[CandidateRecord], list[ExperimentReco
                 "EXP-COSET-HOLEVO-INFORMATION",
                 "EXP-COSET-JUCYS-MURPHY-LABEL-TRANSFORM",
                 "EXP-COSET-MULTIPLICITY-COMMUTANT-SEARCH",
+                "EXP-COSET-COMMUTANT-GAP-SCALING",
+                "EXP-COSET-COMMUTANT-GAP-CERTIFICATE",
+                "EXP-COSET-RESTRICTED-RACAH-CONTROL",
                 "EXP-CODE-TENSOR-MEASUREMENT",
             ],
             notes="High upside but high no-go risk; registry keeps the no-go analysis mandatory.",
@@ -6073,6 +6076,356 @@ def seed_candidate_records() -> tuple[list[CandidateRecord], list[ExperimentReco
                 "Derive exact multiplicity spectra for bounded-support orbit Hamiltonians as functions of partitions.",
                 "Prove or falsify inverse-polynomial normalized gaps on balanced Plancherel-relevant sectors.",
                 "Construct coherent Racah matrices between multiplicity bases only after the gap theorem survives.",
+            ],
+        ),
+        ExperimentRecord(
+            id="EXP-COSET-COMMUTANT-GAP-SCALING",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Uniform Kronecker-commutant gap scaling",
+            status="planned",
+            hypothesis=(
+                "One fixed support-intersection-two orbit Hamiltonian has an inverse-polynomial normalized gap on "
+                "the stable lambda=(n-2,2), nu=(n-3,2,1) multiplicity-two family."
+            ),
+            protocol=(
+                "Construct exact seminormal matrices for increasing n, restrict the uniform orbit Hamiltonian to "
+                "every YJM copy of the target, charge n(n-1)(n-2) LCU terms, and test the proposed 2(n-2) raw gap."
+            ),
+            positive_signal=(
+                "The same coefficient rule survives scaling and admits an independent symbolic all-n proof."
+            ),
+            falsifiers=[
+                "Any finite n violates the proposed raw-gap identity.",
+                "Target-tableau copies have inconsistent spectra.",
+                "The LCU-normalized gap closes faster than inverse polynomial.",
+                "Finite interpolation is presented as an all-n theorem.",
+            ],
+            metrics=[
+                "critical_gap_formula_finite_verified_count",
+                "term_count_formula_verified_count",
+                "all_nontrivial_targets_split_count",
+                "minimum_observed_critical_normalized_gap",
+                "all_n_critical_gap_theorem_count",
+            ],
+            dependencies=[
+                "coset_commutant_gap_scaling.py",
+                "coset_multiplicity_commutant_search.py",
+                "coset_jucys_murphy_label_transform.py",
+            ],
+            next_actions=[
+                "Replace finite interpolation with an exact representation-theoretic certificate.",
+                "Test whether the same construction extends beyond one stable multiplicity-two family.",
+                "Keep Racah and decoder obligations separate from the gap calculation.",
+            ],
+        ),
+        ExperimentRecord(
+            id="EXP-COSET-COMMUTANT-GAP-CERTIFICATE",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Exact all-n Kronecker-commutant gap certificate",
+            status="planned",
+            hypothesis=(
+                "Explicit symmetric and antisymmetric Specht maps in the projected 2-subset module prove the "
+                "observed raw gap 2(n-2) for every n>=6."
+            ),
+            protocol=(
+                "Build a 12-term (n-3,2,1) polytabloid, map it equivariantly into both swap parities of "
+                "V_(n-2,2) tensor V_(n-2,2), evaluate exact Gram and Hamiltonian forms by support orbits, and "
+                "certify total Kronecker multiplicity two with character factorial moments."
+            ),
+            positive_signal=(
+                "Both parity images are nonzero, their exact eigenvalues differ by 2(n-2), and the normalized "
+                "gap is exactly 2/[n(n-1)] without dense matrices or interpolation."
+            ),
+            falsifiers=[
+                "Either Specht image has zero norm for some n>=6.",
+                "The character-polynomial multiplicity certificate is not two.",
+                "The symbolic Rayleigh quotients disagree with finite seminormal spectra.",
+                "The restricted theorem is promoted to general Kronecker, Racah, or decoder access.",
+            ],
+            metrics=[
+                "all_n_critical_gap_theorem_count",
+                "symbolic_parity_eigenvalue_count",
+                "stable_kronecker_multiplicity",
+                "general_sector_gap_theorem_count",
+                "kcopy_associator_count",
+                "hidden_involution_decoder_count",
+            ],
+            dependencies=[
+                "coset_commutant_gap_certificate.py",
+                "coset_commutant_gap_scaling.py",
+                "symmetric_character.py",
+                "2-subset Specht-module realization",
+            ],
+            next_actions=[
+                "Construct exact overlapping Racah maps using this solved parity block as a control family.",
+                "Search for analogous bounded-support certificates on larger multiplicity and balanced sectors.",
+                "Require a hidden-involution decoder before any speedup claim.",
+            ],
+        ),
+        ExperimentRecord(
+            id="EXP-COSET-RESTRICTED-RACAH-CONTROL",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Restricted three-copy Racah subblock control",
+            status="planned",
+            hypothesis=(
+                "The solved pairwise parity basis can serve as an exact control for left/right recoupling and reveal "
+                "whether the pair gap closes a three-copy associator channel."
+            ),
+            protocol=(
+                "At n=6, resolve final total-tableau sectors, select the multiplicity-two intermediate "
+                "nu=(3,2,1) with pair class sums, diagonalize the proved-gap Hamiltonian in the left and right "
+                "couplings, and compute sign-invariant overlap subblocks, singular values, and channel leakage."
+            ),
+            positive_signal=(
+                "Tableau-independent overlap blocks expose a compressible partition-level Racah rule that extends "
+                "with all intermediate channels and admits a uniform circuit."
+            ),
+            falsifiers=[
+                "The restricted parity overlap depends on the final tableau.",
+                "The 2x2 subblock is nonunitary because omitted intermediate partitions carry amplitude.",
+                "Dense finite diagonalization is presented as a scalable associator.",
+                "A recoupling table is presented without a hidden-involution decoder.",
+            ],
+            metrics=[
+                "tableau_consistent_subblock_count",
+                "rational_subblock_reconstruction_count",
+                "channel_leakage_detected_count",
+                "maximum_channel_leakage",
+                "full_racah_associator_count",
+                "uniform_polynomial_racah_circuit_count",
+            ],
+            dependencies=[
+                "coset_restricted_racah_control.py",
+                "coset_commutant_gap_certificate.py",
+                "coset_jucys_murphy_label_transform.py",
+                "symmetric_character.py",
+            ],
+            next_actions=[
+                "Add all intermediate partitions to obtain complete finite Racah matrices.",
+                "Derive partition-level formulas without dense tableau spaces.",
+                "Translate the complete transform into a uniform coherent circuit and test decoder relevance.",
+            ],
+        ),
+        ExperimentRecord(
+            id="EXP-COSET-COMPLETE-RACAH-CONTROL",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Complete finite three-copy Racah controls",
+            status="planned",
+            hypothesis=(
+                "The leakage in the restricted parity blocks is exactly accounted for by omitted intermediate "
+                "partitions, and complete left/right coupling matrices can expose the remaining multiplicity debt."
+            ),
+            protocol=(
+                "At n=6, use total YJM labels for final tableaux, pair transposition/3-cycle central signatures "
+                "for intermediate partitions, and the bounded-support gap Hamiltonian for first-stage multiplicity; "
+                "assemble complete signed overlaps wherever the second coupling is multiplicity-free."
+            ),
+            positive_signal=(
+                "Complete target-sector overlap matrices are unitary and tableau-independent up to basis signs, "
+                "and their structure suggests a compressed all-n formula with a coherent implementation."
+            ),
+            falsifiers=[
+                "The signed complete matrices fail unitarity.",
+                "Absolute overlaps or probabilities depend on the final tableau.",
+                "Second-stage Kronecker multiplicities remain unresolved by the pair operator family.",
+                "Finite dense matrices are presented as a uniform circuit or decoder.",
+            ],
+            metrics=[
+                "complete_finite_racah_matrix_count",
+                "nontrivial_complete_finite_racah_matrix_count",
+                "unresolved_second_stage_multiplicity_sector_count",
+                "maximum_second_stage_multiplicity",
+                "maximum_unitarity_residual",
+                "uniform_polynomial_racah_circuit_count",
+            ],
+            dependencies=[
+                "coset_complete_racah_control.py",
+                "coset_restricted_racah_control.py",
+                "coset_commutant_gap_certificate.py",
+                "symmetric_character.py",
+            ],
+            next_actions=[
+                "Construct operators that resolve second-stage multiplicity in the five uncovered final sectors.",
+                "Derive exact partition-level formulas for the finite overlap matrices.",
+                "Generalize to stable n and synthesize a coherent circuit before testing decoder relevance.",
+            ],
+        ),
+        ExperimentRecord(
+            id="EXP-COSET-HIERARCHICAL-RACAH-CONTROL",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Hierarchical bounded-support Racah basis control",
+            status="planned",
+            hypothesis=(
+                "A second bounded-support orbit Hamiltonian between the pair-diagonal representation and the third "
+                "copy resolves residual second-stage Kronecker multiplicity and completes the finite Racah basis."
+            ),
+            protocol=(
+                "At n=6, jointly resolve pair central signatures, the first-stage pair commutant Hamiltonian, and a "
+                "second-stage Hamiltonian sum rho(tau) tensor rho(tau) tensor rho(c); construct both coupling trees "
+                "and verify their full signed overlap matrices sector by sector."
+            ),
+            positive_signal=(
+                "The joint spectrum is simple in every final sector, complete Racah matrices are unitary and "
+                "tableau-independent, and the operator hierarchy admits stable-n gap bounds and coherent synthesis."
+            ),
+            falsifiers=[
+                "The second-stage operator fails to split multiplicity-two or multiplicity-three channels.",
+                "Left and right joint spectra disagree.",
+                "Any complete signed overlap fails unitarity or tableau consistency.",
+                "Finite dense gaps are promoted without a stable-n theorem, circuit, or decoder.",
+            ],
+            metrics=[
+                "complete_hierarchical_finite_racah_matrix_count",
+                "second_stage_multiplicity_resolved_sector_count",
+                "maximum_second_stage_multiplicity",
+                "minimum_observed_second_stage_normalized_gap",
+                "stable_n_joint_gap_theorem_count",
+                "uniform_polynomial_racah_circuit_count",
+            ],
+            dependencies=[
+                "coset_hierarchical_racah_control.py",
+                "coset_complete_racah_control.py",
+                "coset_commutant_gap_certificate.py",
+                "bounded-support simultaneous-conjugacy orbit sums",
+            ],
+            next_actions=[
+                "Scale the joint-spectrum audit to stable partition families without cubic dense matrices.",
+                "Prove inverse-polynomial first- and second-stage normalized gaps on source-relevant sectors.",
+                "Derive compressed Racah matrix elements and compile the hierarchy coherently.",
+                "Test whether the resulting labels carry decodable hidden-involution information.",
+            ],
+        ),
+        ExperimentRecord(
+            id="EXP-COSET-HIERARCHICAL-GAP-SCALING",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Stable-family hierarchical Racah gap scaling",
+            status="planned",
+            hypothesis=(
+                "The second-stage bounded-support Hamiltonian has an inverse-polynomial normalized gap on every "
+                "intermediate channel feeding xi_n=(n-3,2,1) from W_n=(n-2,2)^tensor3."
+            ),
+            protocol=(
+                "For n=6,7,8 and every relevant intermediate alpha, isolate xi_n target-tableau blocks in "
+                "V_alpha tensor W_n, diagonalize the support-intersection-two orbit Hamiltonian, charge its exact "
+                "n(n-1)(n-2) LCU normalization, and compare spectra across tableaux."
+            ),
+            positive_signal=(
+                "Every multiplicity block, including multiplicity four, remains split with a pattern admitting an "
+                "exact all-n spectral formula and inverse-polynomial normalized lower bound."
+            ),
+            falsifiers=[
+                "Any relevant second-stage multiplicity block becomes degenerate.",
+                "The minimum normalized gap decays superpolynomially or inconsistently.",
+                "Spectra depend on the target tableau beyond numerical tolerance.",
+                "Finite regression is presented as an all-n gap theorem.",
+            ],
+            metrics=[
+                "finite_all_blocks_split_count",
+                "audited_nontrivial_channel_count",
+                "maximum_second_stage_multiplicity",
+                "minimum_observed_normalized_gap",
+                "empirical_log_log_normalized_gap_slope",
+                "all_n_second_stage_gap_theorem_count",
+            ],
+            dependencies=[
+                "coset_hierarchical_gap_scaling.py",
+                "coset_hierarchical_racah_control.py",
+                "coset_jucys_murphy_label_transform.py",
+                "symmetric_character.py",
+            ],
+            next_actions=[
+                "Derive exact characteristic polynomials for stable intermediate partition families.",
+                "Prove a uniform inverse-polynomial lower bound without dense matrices or interpolation.",
+                "Audit all final partition families carrying hidden-involution information.",
+                "Compile the nested phase-estimation labels into a coherent recoupling circuit.",
+            ],
+        ),
+        ExperimentRecord(
+            id="EXP-COSET-SPARSE-STABLE-GAP-PROBE",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Sparse stable-channel Racah polynomial probe",
+            status="planned",
+            hypothesis=(
+                "The multiplicity-four alpha_n=xi_n=(n-3,2,1) channel has a monic integer characteristic "
+                "polynomial with stable coefficient formulas and inverse-polynomial root separation."
+            ),
+            protocol=(
+                "Find a deterministic low-magnitude YJM functional separating one xi_n tableau, extract its "
+                "multiplicity block with sparse shift-invert, apply the bounded-support Hamiltonian termwise, and "
+                "reconstruct the monic integer characteristic polynomial for n=7..10."
+            ),
+            positive_signal=(
+                "Every sparse block splits, polynomial reconstruction residuals remain controlled, and the coefficient "
+                "sequence admits an exact character-orbit or partition-algebra derivation with uniform root separation."
+            ),
+            falsifiers=[
+                "The sparse YJM functional fails to isolate the target block.",
+                "The critical multiplicity-four spectrum becomes degenerate.",
+                "Characteristic coefficients do not reconstruct near integers.",
+                "Numerical coefficient sequences are presented as exact all-n formulas.",
+            ],
+            metrics=[
+                "finite_split_count",
+                "integer_characteristic_polynomial_candidate_count",
+                "maximum_sparse_tensor_dimension",
+                "minimum_observed_normalized_gap",
+                "all_n_characteristic_polynomial_theorem_count",
+                "all_n_gap_theorem_count",
+            ],
+            dependencies=[
+                "coset_sparse_stable_gap_probe.py",
+                "scipy sparse shift-invert eigensolver",
+                "coset_hierarchical_gap_scaling.py",
+                "symmetric_character.py",
+            ],
+            next_actions=[
+                "Express quartic coefficients as exact orbit-character traces of H^k for k<=4.",
+                "Derive stable coefficient formulas and certify them without interpolation.",
+                "Prove uniform quartic root separation after LCU normalization.",
+                "Extend sparse extraction to all stable intermediate and final partition families.",
+            ],
+        ),
+        ExperimentRecord(
+            id="EXP-COSET-STABLE-TRACE-CONJECTURE",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Exact stable Racah trace conjecture",
+            status="planned",
+            hypothesis=(
+                "The trace of the multiplicity-four stable-channel orbit Hamiltonian is exactly "
+                "4n^3-46n^2+149n-118 for every n>=7."
+            ),
+            protocol=(
+                "Interpolate only the n=7..10 trace rows, reserve n=11 as an out-of-sample falsifier, record finite "
+                "differences, and specify the exact marked-cycle character sum that must replace interpolation."
+            ),
+            positive_signal=(
+                "The holdout matches and an exact marked-cycle factorial-moment, partition-algebra, or stable Specht "
+                "calculation proves the cubic identity without interpolation."
+            ),
+            falsifiers=[
+                "Any held-out sparse trace disagrees with the cubic formula.",
+                "The presumed stable range begins later than n=7.",
+                "No exact degree bound or character-sum derivation supports interpolation.",
+                "A trace identity is promoted as a full quartic or gap theorem.",
+            ],
+            metrics=[
+                "training_row_count",
+                "holdout_row_count",
+                "holdout_match_count",
+                "interpolated_degree",
+                "exact_marked_cycle_trace_theorem_count",
+                "all_n_quartic_theorem_count",
+            ],
+            dependencies=[
+                "coset_stable_trace_conjecture.py",
+                "coset_sparse_stable_gap_probe.py",
+                "stable character polynomials for (n-2,2) and (n-3,2,1)",
+            ],
+            next_actions=[
+                "Evaluate the marked-cycle character sum exactly with factorial moments.",
+                "Derive exact formulas for traces H^2, H^3, and H^4.",
+                "Convert power sums to the full quartic by Newton identities.",
+                "Prove root separation after LCU normalization.",
             ],
         ),
         ExperimentRecord(
