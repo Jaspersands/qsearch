@@ -6474,6 +6474,51 @@ def seed_candidate_records() -> tuple[list[CandidateRecord], list[ExperimentReco
             ],
         ),
         ExperimentRecord(
+            id="EXP-COSET-STABLE-SECOND-MOMENT-CERTIFICATE",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Exact stable Racah second-moment certificate",
+            status="planned",
+            hypothesis=(
+                "Fixing one orbit term reduces Tr(H^2) to finitely many relative simultaneous-conjugacy classes, "
+                "whose shifted character correlations yield an exact degree-six polynomial."
+            ),
+            protocol=(
+                "Classify products (tau_0 tau,c_0 c) by support overlap and simultaneous conjugacy; evaluate all "
+                "17 class correlations with generalized falling-cycle equality patterns; prove the stable n>=14 "
+                "formula and close n=7..13 by exact finite pattern counts."
+            ),
+            positive_signal=(
+                "The exact second power trace matches all sparse quartics, and Newton's identity proves the quartic's "
+                "second coefficient for every n>=7 without interpolation."
+            ),
+            falsifiers=[
+                "The 17 relative classes do not exhaust the double orbit sum.",
+                "The stable symbolic second moment disagrees with exact finite endpoints.",
+                "Newton reconstruction disagrees with sparse characteristic coefficients.",
+                "Two exact coefficients are promoted as a complete quartic or root-gap theorem.",
+            ],
+            metrics=[
+                "exact_second_power_trace_theorem_count",
+                "exact_second_characteristic_coefficient_theorem_count",
+                "relative_orbit_class_count",
+                "exact_endpoint_verified_count",
+                "proved_quartic_coefficient_count",
+                "all_n_root_separation_theorem_count",
+            ],
+            dependencies=[
+                "coset_stable_second_moment_certificate.py",
+                "coset_stable_trace_certificate.py",
+                "relative simultaneous-conjugacy orbit classification",
+                "Newton identities",
+            ],
+            next_actions=[
+                "Classify two relative orbit terms for Tr(H^3).",
+                "Generalize the equality-pattern engine to third and fourth moments.",
+                "Reconstruct the remaining quartic coefficients and prove root separation.",
+                "Compile the resulting stable labels into a coherent circuit and test decoder information.",
+            ],
+        ),
+        ExperimentRecord(
             id="EXP-COSET-RECOUPLING-CAPABILITY-LEDGER",
             candidate_id="CODE-COSET-COLLECTIVE",
             title="Literature-backed symmetric-group recoupling capability ledger",

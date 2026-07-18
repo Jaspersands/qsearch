@@ -56,6 +56,9 @@ from coset_hierarchical_gap_scaling import write_hierarchical_gap_scaling_report
 from coset_sparse_stable_gap_probe import write_sparse_stable_gap_report
 from coset_stable_trace_conjecture import write_stable_trace_conjecture_report
 from coset_stable_trace_certificate import write_stable_trace_certificate
+from coset_stable_second_moment_certificate import (
+    write_stable_second_moment_certificate,
+)
 from coset_recoupling_capability_ledger import write_recoupling_capability_report
 from coset_recoupling_mechanism_synthesis import write_recoupling_mechanism_synthesis_report
 from coset_state_distinguishability import write_coset_distinguishability_report
@@ -500,6 +503,7 @@ COSET_EXPERIMENTS = {
     "EXP-COSET-SPARSE-STABLE-GAP-PROBE",
     "EXP-COSET-STABLE-TRACE-CONJECTURE",
     "EXP-COSET-STABLE-TRACE-CERTIFICATE",
+    "EXP-COSET-STABLE-SECOND-MOMENT-CERTIFICATE",
     "EXP-COSET-RECOUPLING-CAPABILITY-LEDGER",
     "EXP-COSET-RECOUPLING-MECHANISM-SYNTHESIS",
 }
@@ -1312,6 +1316,7 @@ def select_next_experiment() -> NextExperimentSelection:
         "EXP-COSET-SPARSE-STABLE-GAP-PROBE": 34,
         "EXP-COSET-STABLE-TRACE-CONJECTURE": 35,
         "EXP-COSET-STABLE-TRACE-CERTIFICATE": 36,
+        "EXP-COSET-STABLE-SECOND-MOMENT-CERTIFICATE": 37,
         "EXP-COSET-RECOUPLING-CAPABILITY-LEDGER": 24,
         "EXP-COSET-RECOUPLING-MECHANISM-SYNTHESIS": 25,
     }
@@ -2729,6 +2734,13 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             )
         elif experiment_id == "EXP-COSET-STABLE-TRACE-CERTIFICATE":
             payload = write_stable_trace_certificate(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif experiment_id == "EXP-COSET-STABLE-SECOND-MOMENT-CERTIFICATE":
+            payload = write_stable_second_moment_certificate(
                 write_registry=True,
                 registry_experiment_id=experiment_id,
                 registry_candidate_id=experiment["candidate_id"],

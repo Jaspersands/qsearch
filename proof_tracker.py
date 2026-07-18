@@ -129,6 +129,9 @@ COSET_STABLE_TRACE_CONJECTURE_PATH = Path(
 COSET_STABLE_TRACE_CERTIFICATE_PATH = Path(
     "research/representation/coset_stable_trace_certificate.json"
 )
+COSET_STABLE_SECOND_MOMENT_PATH = Path(
+    "research/representation/coset_stable_second_moment_certificate.json"
+)
 COSET_RECOUPLING_CAPABILITY_PATH = Path(
     "research/representation/coset_recoupling_capability_ledger.json"
 )
@@ -614,6 +617,17 @@ def lemma_templates(candidate: dict[str, Any]) -> list[LemmaRecord]:
             "headline_metrics", {}
         )
         try:
+            stable_second_moment = (
+                json.loads(COSET_STABLE_SECOND_MOMENT_PATH.read_text())
+                if COSET_STABLE_SECOND_MOMENT_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            stable_second_moment = {}
+        stable_second_moment_metrics = stable_second_moment.get(
+            "headline_metrics", {}
+        )
+        try:
             recoupling_capabilities = (
                 json.loads(COSET_RECOUPLING_CAPABILITY_PATH.read_text())
                 if COSET_RECOUPLING_CAPABILITY_PATH.exists()
@@ -1033,6 +1047,30 @@ def lemma_templates(candidate: dict[str, Any]) -> list[LemmaRecord]:
                     falsification_test=(
                         "Evaluate n(n-1)(n-2)/n! times sum_g chi_xi(g) chi_xi(g tau) chi_W(g c) exactly from "
                         "the stable character polynomials; interpolation and holdout matches do not count."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-COSET-STABLE-RACAH-SECOND-MOMENT",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "The stable multiplicity-four orbit Hamiltonian has the exact degree-six Tr(H^2) formula, "
+                        "and Newton's identity proves the second characteristic coefficient for every n>=7."
+                    ),
+                    depends_on=["PO-MEASUREMENT", "PO-COMPLEXITY", "PO-NO-GO"],
+                    status=(
+                        "proved-exact-stable-racah-second-moment"
+                        if int(
+                            stable_second_moment_metrics.get(
+                                "exact_second_power_trace_theorem_count", 0
+                            )
+                            or 0
+                        )
+                        > 0
+                        else "blocked-stable-racah-second-moment-certificate-missing"
+                    ),
+                    falsification_test=(
+                        "Verify all 17 relative simultaneous-conjugacy classes, the stable equality-pattern sum, "
+                        "exact n=7..13 endpoints, and the Newton coefficient against sparse quartics."
                     ),
                 ),
                 LemmaRecord(

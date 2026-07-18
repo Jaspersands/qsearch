@@ -2,8 +2,8 @@
   "blocking_status_count": 24,
   "candidate_count": 8,
   "counterexample_search_count": 8,
-  "created_at": "2026-07-18T01:57:27.315621+00:00",
-  "lemma_count": 310,
+  "created_at": "2026-07-18T02:08:31.702226+00:00",
+  "lemma_count": 316,
   "needs_evidence_count": 0,
   "proof_debt": {
     "counterexample_search_count": 8,
@@ -73,8 +73,8 @@
         "target_claim": "The coset observable is not a disguised classical invariant."
       }
     ],
-    "created_at": "2026-07-18T01:57:27.314900+00:00",
-    "lemma_count": 310,
+    "created_at": "2026-07-18T02:08:31.701452+00:00",
+    "lemma_count": 316,
     "lemmas": [
       {
         "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -256,6 +256,18 @@
         "id": "LEMMA-CODE-COSET-COLLECTIVE-COSET-STABLE-RACAH-TRACE-IDENTITY",
         "statement": "On the stable multiplicity-four channel, the hierarchical orbit Hamiltonian trace is 4n^3-46n^2+149n-118 for every n>=7 by an exact marked-cycle character calculation.",
         "status": "proved-exact-stable-racah-trace-identity"
+      },
+      {
+        "candidate_id": "CODE-COSET-COLLECTIVE",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Verify all 17 relative simultaneous-conjugacy classes, the stable equality-pattern sum, exact n=7..13 endpoints, and the Newton coefficient against sparse quartics.",
+        "id": "LEMMA-CODE-COSET-COLLECTIVE-COSET-STABLE-RACAH-SECOND-MOMENT",
+        "statement": "The stable multiplicity-four orbit Hamiltonian has the exact degree-six Tr(H^2) formula, and Newton's identity proves the second characteristic coefficient for every n>=7.",
+        "status": "proved-exact-stable-racah-second-moment"
       },
       {
         "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -1530,6 +1542,18 @@
           "PO-COMPLEXITY",
           "PO-NO-GO"
         ],
+        "falsification_test": "Verify all 17 relative simultaneous-conjugacy classes, the stable equality-pattern sum, exact n=7..13 endpoints, and the Newton coefficient against sparse quartics.",
+        "id": "LEMMA-HYP-LIT-COSET-OBSERVABLES-COSET-STABLE-RACAH-SECOND-MOMENT",
+        "statement": "The stable multiplicity-four orbit Hamiltonian has the exact degree-six Tr(H^2) formula, and Newton's identity proves the second characteristic coefficient for every n>=7.",
+        "status": "proved-exact-stable-racah-second-moment"
+      },
+      {
+        "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-NO-GO"
+        ],
         "falsification_test": "Require a cited circuit theorem with gate count, precision, multiplicity basis, promises, and uniformity; a unitary definition, #BQP count, or Schur-Weyl transform does not satisfy it.",
         "id": "LEMMA-HYP-LIT-COSET-OBSERVABLES-COSET-INTERNAL-KRONECKER-TRANSFORM",
         "statement": "There is a uniform polynomial-gate internal S_n Kronecker transform with explicit multiplicity basis and state-transition access for unrestricted relevant irreps.",
@@ -2796,6 +2820,18 @@
           "PO-COMPLEXITY",
           "PO-NO-GO"
         ],
+        "falsification_test": "Verify all 17 relative simultaneous-conjugacy classes, the stable equality-pattern sum, exact n=7..13 endpoints, and the Newton coefficient against sparse quartics.",
+        "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-COSET-STABLE-RACAH-SECOND-MOMENT",
+        "statement": "The stable multiplicity-four orbit Hamiltonian has the exact degree-six Tr(H^2) formula, and Newton's identity proves the second characteristic coefficient for every n>=7.",
+        "status": "proved-exact-stable-racah-second-moment"
+      },
+      {
+        "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-NO-GO"
+        ],
         "falsification_test": "Require a cited circuit theorem with gate count, precision, multiplicity basis, promises, and uniformity; a unitary definition, #BQP count, or Schur-Weyl transform does not satisfy it.",
         "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-COSET-INTERNAL-KRONECKER-TRANSFORM",
         "statement": "There is a uniform polynomial-gate internal S_n Kronecker transform with explicit multiplicity basis and state-transition access for unrestricted relevant irreps.",
@@ -3093,6 +3129,18 @@
         "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-COSET-STABLE-RACAH-TRACE-IDENTITY",
         "statement": "On the stable multiplicity-four channel, the hierarchical orbit Hamiltonian trace is 4n^3-46n^2+149n-118 for every n>=7 by an exact marked-cycle character calculation.",
         "status": "proved-exact-stable-racah-trace-identity"
+      },
+      {
+        "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Verify all 17 relative simultaneous-conjugacy classes, the stable equality-pattern sum, exact n=7..13 endpoints, and the Newton coefficient against sparse quartics.",
+        "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-COSET-STABLE-RACAH-SECOND-MOMENT",
+        "statement": "The stable multiplicity-four orbit Hamiltonian has the exact degree-six Tr(H^2) formula, and Newton's identity proves the second characteristic coefficient for every n>=7.",
+        "status": "proved-exact-stable-racah-second-moment"
       },
       {
         "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
@@ -3406,6 +3454,18 @@
           "PO-COMPLEXITY",
           "PO-NO-GO"
         ],
+        "falsification_test": "Verify all 17 relative simultaneous-conjugacy classes, the stable equality-pattern sum, exact n=7..13 endpoints, and the Newton coefficient against sparse quartics.",
+        "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-COSET-STABLE-RACAH-SECOND-MOMENT",
+        "statement": "The stable multiplicity-four orbit Hamiltonian has the exact degree-six Tr(H^2) formula, and Newton's identity proves the second characteristic coefficient for every n>=7.",
+        "status": "proved-exact-stable-racah-second-moment"
+      },
+      {
+        "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-NO-GO"
+        ],
         "falsification_test": "Require a cited circuit theorem with gate count, precision, multiplicity basis, promises, and uniformity; a unitary definition, #BQP count, or Schur-Weyl transform does not satisfy it.",
         "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-COSET-INTERNAL-KRONECKER-TRANSFORM",
         "statement": "There is a uniform polynomial-gate internal S_n Kronecker transform with explicit multiplicity basis and state-transition access for unrestricted relevant irreps.",
@@ -3703,6 +3763,18 @@
         "id": "LEMMA-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-COSET-STABLE-RACAH-TRACE-IDENTITY",
         "statement": "On the stable multiplicity-four channel, the hierarchical orbit Hamiltonian trace is 4n^3-46n^2+149n-118 for every n>=7 by an exact marked-cycle character calculation.",
         "status": "proved-exact-stable-racah-trace-identity"
+      },
+      {
+        "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Verify all 17 relative simultaneous-conjugacy classes, the stable equality-pattern sum, exact n=7..13 endpoints, and the Newton coefficient against sparse quartics.",
+        "id": "LEMMA-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-COSET-STABLE-RACAH-SECOND-MOMENT",
+        "statement": "The stable multiplicity-four orbit Hamiltonian has the exact degree-six Tr(H^2) formula, and Newton's identity proves the second characteristic coefficient for every n>=7.",
+        "status": "proved-exact-stable-racah-second-moment"
       },
       {
         "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",

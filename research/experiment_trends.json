@@ -1,8 +1,8 @@
 {
-  "created_at": "2026-07-18T01:57:56.154653+00:00",
+  "created_at": "2026-07-18T02:09:07.125281+00:00",
   "history_artifact": "research/experiment_run_history.json",
-  "history_count": 161,
-  "trend_count": 131,
+  "history_count": 162,
+  "trend_count": 132,
   "trends": [
     {
       "blocking_run_count": 1,
@@ -4658,6 +4658,111 @@
       "run_count": 1,
       "status_sequence": [
         "strong-fourier-route-blocked"
+      ]
+    },
+    {
+      "blocking_run_count": 1,
+      "experiment_id": "EXP-COSET-STABLE-SECOND-MOMENT-CERTIFICATE",
+      "falsifier_count_sequence": [
+        4
+      ],
+      "interpretation": "Repeated runs continue to trigger falsifiers; this is proof debt, not progress.",
+      "latest_result_id": "RESULT-EXP-COSET-STABLE-SECOND-MOMENT-CERTIFICATE-COSET",
+      "latest_status": "exact-stable-second-moment-proved-two-quartic-coefficients-known",
+      "latest_summary": "Proved the stable second power trace and the quartic's second coefficient for every n>=7 using 17 relative orbit classes; two quartic coefficients, root separation, circuit, and decoder remain open.",
+      "numeric_metric_trends": {
+        "all_n_quartic_theorem_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        },
+        "all_n_root_separation_theorem_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        },
+        "exact_endpoint_verified_count": {
+          "delta": 0.0,
+          "first": 7.0,
+          "latest": 7.0,
+          "max": 7.0,
+          "min": 7.0,
+          "observations": 1
+        },
+        "exact_second_characteristic_coefficient_theorem_count": {
+          "delta": 0.0,
+          "first": 1.0,
+          "latest": 1.0,
+          "max": 1.0,
+          "min": 1.0,
+          "observations": 1
+        },
+        "exact_second_power_trace_theorem_count": {
+          "delta": 0.0,
+          "first": 1.0,
+          "latest": 1.0,
+          "max": 1.0,
+          "min": 1.0,
+          "observations": 1
+        },
+        "hidden_involution_decoder_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        },
+        "minimum_proved_n": {
+          "delta": 0.0,
+          "first": 7.0,
+          "latest": 7.0,
+          "max": 7.0,
+          "min": 7.0,
+          "observations": 1
+        },
+        "proved_quartic_coefficient_count": {
+          "delta": 0.0,
+          "first": 2.0,
+          "latest": 2.0,
+          "max": 2.0,
+          "min": 2.0,
+          "observations": 1
+        },
+        "relative_orbit_class_count": {
+          "delta": 0.0,
+          "first": 17.0,
+          "latest": 17.0,
+          "max": 17.0,
+          "min": 17.0,
+          "observations": 1
+        },
+        "required_quartic_coefficient_count": {
+          "delta": 0.0,
+          "first": 4.0,
+          "latest": 4.0,
+          "max": 4.0,
+          "min": 4.0,
+          "observations": 1
+        },
+        "uniform_polynomial_racah_circuit_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        }
+      },
+      "run_count": 1,
+      "status_sequence": [
+        "exact-stable-second-moment-proved-two-quartic-coefficients-known"
       ]
     },
     {

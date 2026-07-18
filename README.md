@@ -630,14 +630,20 @@ are expanded in falling cycle counts, 48 monomial products are reduced through
 canonical partial-permutation equality patterns, and the resulting shifted
 character correlation is the cubic divided by the exact orbit size. An exact
 `S_7` character sum closes the endpoint. The theorem supplies only `Tr(H)`;
-`Tr(H^2)`, `Tr(H^3)`, `Tr(H^4)`, the full quartic, and normalized root
-separation remain open.
+the same machinery now also proves
+`Tr(H^2)=4n^6-92n^5+828n^4-3678n^3+8355n^2-8992n+3624`.
+Fixing the first orbit term collapses the double sum to 17 relative
+simultaneous-conjugacy classes. The symbolic calculation covers `n>=14`, and
+exact finite pattern counts close `n=7..13`. Newton's identity therefore gives
+the quartic's second coefficient exactly. `Tr(H^3)`, `Tr(H^4)`, the remaining
+two coefficients, and normalized root separation remain open.
 
 ```bash
 python qsearch.py coset-racah-gap-scaling
 python qsearch.py coset-racah-sparse-gap --n-values 7,8,9,10,11
 python qsearch.py coset-racah-trace-conjecture
 python qsearch.py coset-racah-trace-proof
+python qsearch.py coset-racah-second-moment-proof
 ```
 
 The capability ledger separates the solved `S_n` QFT, Schur-Weyl transforms,

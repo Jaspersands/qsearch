@@ -2865,6 +2865,66 @@
   },
   {
     "artifacts": {
+      "coset_stable_second_moment_certificate": "research/representation/coset_stable_second_moment_certificate.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-07-18T02:09:07.102820+00:00",
+    "experiment_id": "EXP-COSET-STABLE-SECOND-MOMENT-CERTIFICATE",
+    "falsifiers_triggered": [
+      "Two exact characteristic coefficients do not determine a quartic spectrum.",
+      "A complete characteristic polynomial would still need normalized root separation.",
+      "One stable multiplicity-four channel does not cover every decoder-relevant sector.",
+      "No coherent recoupling circuit or hidden-involution decoder follows from moment identities."
+    ],
+    "id": "RESULT-EXP-COSET-STABLE-SECOND-MOMENT-CERTIFICATE-COSET",
+    "metrics": {
+      "all_n_quartic_theorem_count": 0,
+      "all_n_root_separation_theorem_count": 0,
+      "exact_endpoint_verified_count": 7,
+      "exact_second_characteristic_coefficient_theorem_count": 1,
+      "exact_second_power_trace_theorem_count": 1,
+      "hidden_involution_decoder_count": 0,
+      "minimum_proved_n": 7,
+      "proved_quartic_coefficient_count": 2,
+      "relative_orbit_class_count": 17,
+      "required_quartic_coefficient_count": 4,
+      "uniform_polynomial_racah_circuit_count": 0
+    },
+    "status": "exact-stable-second-moment-proved-two-quartic-coefficients-known",
+    "summary": "Proved the stable second power trace and the quartic's second coefficient for every n>=7 using 17 relative orbit classes; two quartic coefficients, root separation, circuit, and decoder remain open."
+  },
+  {
+    "artifacts": {
+      "coset_stable_second_moment_certificate": "research/representation/coset_stable_second_moment_certificate.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-07-18T02:07:45.610656+00:00",
+    "experiment_id": "EXP-COSET-STABLE-SECOND-MOMENT-CERTIFICATE",
+    "falsifiers_triggered": [
+      "Two exact characteristic coefficients do not determine a quartic spectrum.",
+      "A complete characteristic polynomial would still need normalized root separation.",
+      "One stable multiplicity-four channel does not cover every decoder-relevant sector.",
+      "No coherent recoupling circuit or hidden-involution decoder follows from moment identities."
+    ],
+    "id": "RESULT-EXP-COSET-STABLE-SECOND-MOMENT-CERTIFICATE-LATEST",
+    "metrics": {
+      "all_n_quartic_theorem_count": 0,
+      "all_n_root_separation_theorem_count": 0,
+      "exact_endpoint_verified_count": 7,
+      "exact_second_characteristic_coefficient_theorem_count": 1,
+      "exact_second_power_trace_theorem_count": 1,
+      "hidden_involution_decoder_count": 0,
+      "minimum_proved_n": 7,
+      "proved_quartic_coefficient_count": 2,
+      "relative_orbit_class_count": 17,
+      "required_quartic_coefficient_count": 4,
+      "uniform_polynomial_racah_circuit_count": 0
+    },
+    "status": "exact-stable-second-moment-proved-two-quartic-coefficients-known",
+    "summary": "Proved the stable second power trace and the quartic's second coefficient for every n>=7 using 17 relative orbit classes; two quartic coefficients, root separation, circuit, and decoder remain open."
+  },
+  {
+    "artifacts": {
       "coset_stable_trace_certificate": "research/representation/coset_stable_trace_certificate.json"
     },
     "candidate_id": "CODE-COSET-COLLECTIVE",

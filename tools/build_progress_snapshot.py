@@ -83,6 +83,9 @@ def build_snapshot() -> dict[str, Any]:
     stable_trace_certificate = read_json(
         RESEARCH / "representation/coset_stable_trace_certificate.json", {}
     )
+    stable_second_moment = read_json(
+        RESEARCH / "representation/coset_stable_second_moment_certificate.json", {}
+    )
 
     blocking = sum(bool(item.get("blocks_speedup_claim", False)) for item in findings)
     updated = latest_artifact_date(
@@ -104,6 +107,7 @@ def build_snapshot() -> dict[str, Any]:
         sparse_gap,
         stable_trace,
         stable_trace_certificate,
+        stable_second_moment,
     )
     gap_rows = metric(gap, "critical_gap_formula_finite_verified_count", 0)
     gap_total = metric(gap, "record_count", 0)
@@ -117,8 +121,8 @@ def build_snapshot() -> dict[str, Any]:
             "title": "No breakthrough yet",
             "detail": (
                 "Every speedup claim remains blocked. One restricted representation-theoretic gap theorem is now proved, "
-                "a bounded-support hierarchy resolves the complete finite S_6 Racah table, and one stable power trace "
-                "is exact. The full quartic, root gaps, coherent recoupling, and hidden-involution decoding remain open."
+                "a bounded-support hierarchy resolves the complete finite S_6 Racah table, and two stable quartic "
+                "coefficients are exact. The remaining coefficients, root gaps, coherent recoupling, and decoding remain open."
             ),
         },
         "overview": (
@@ -208,29 +212,30 @@ def build_snapshot() -> dict[str, Any]:
                 "detail": "A second bounded-support Hamiltonian splits residual multiplicities up to four and produces unitary left/right matrices in all ten final sectors.",
             },
             {
-                "title": "The first stable quartic coefficient was proved",
-                "detail": "Exact falling-cycle equality patterns prove Tr(H)=4n^3-46n^2+149n-118 for every n>=7; the other three coefficients remain open.",
+                "title": "Two stable quartic coefficients were proved",
+                "detail": "Exact falling-cycle and relative-orbit calculations prove Tr(H), Tr(H^2), and hence the first two characteristic coefficients for every n>=7.",
             },
         ],
         "active_conjecture": {
             "summary": (
                 "For W_n=(n-2,2) and alpha_n=xi_n=(n-3,2,1), sparse multiplicity-four spectra through n=11 "
                 "reconstruct monic integer quartics. Exact marked-cycle equality patterns now prove their trace is "
-                "4n^3-46n^2+149n-118 for every n>=7. The next theorem target is the remaining three power traces, "
-                "followed by quartic root separation."
+                "4n^3-46n^2+149n-118 for every n>=7, and 17 relative orbit classes prove Tr(H^2). The next theorem "
+                "targets are Tr(H^3), Tr(H^4), and quartic root separation."
             ),
             "facts": [
                 {"label": "Pair gap", "value": "Exact inverse-quadratic theorem"},
                 {"label": "Finite Racah table", "value": f"{metric(hierarchical_racah, 'complete_hierarchical_finite_racah_matrix_count', 0)}/10 S_6 sectors"},
                 {"label": "Stable quartics", "value": f"n=7-{metric(sparse_gap, 'maximum_n', 0)}, integer reconstructed"},
                 {"label": "Stable trace", "value": f"{metric(stable_trace_certificate, 'exact_marked_cycle_trace_theorem_count', 0)} exact theorem"},
+                {"label": "Quartic coefficients", "value": f"{metric(stable_second_moment, 'proved_quartic_coefficient_count', 0)}/4 proved"},
                 {"label": "Hidden decoder", "value": "Open"},
             ],
         },
         "next_actions": [
             {
-                "title": "Evaluate the next three power traces",
-                "detail": "Generalize the exact marked-cycle engine to H^2, H^3, and H^4; the first power trace is now proved.",
+                "title": "Evaluate the next two power traces",
+                "detail": "Generalize the relative-orbit engine to H^3 and H^4; the first and second power traces are now proved.",
             },
             {
                 "title": "Recover the full stable quartic",

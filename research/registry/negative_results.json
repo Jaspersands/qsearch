@@ -36836,6 +36836,30 @@
   {
     "applies_to": [
       "CODE-COSET-COLLECTIVE",
+      "EXP-COSET-STABLE-SECOND-MOMENT-CERTIFICATE"
+    ],
+    "claim": "The first two exact characteristic coefficients determine the stable Racah spectrum and gap.",
+    "evidence": {
+      "all_n_quartic_theorem_count": 0,
+      "all_n_root_separation_theorem_count": 0,
+      "exact_endpoint_verified_count": 7,
+      "exact_second_characteristic_coefficient_theorem_count": 1,
+      "exact_second_power_trace_theorem_count": 1,
+      "hidden_involution_decoder_count": 0,
+      "minimum_proved_n": 7,
+      "proved_quartic_coefficient_count": 2,
+      "relative_orbit_class_count": 17,
+      "required_quartic_coefficient_count": 4,
+      "uniform_polynomial_racah_circuit_count": 0
+    },
+    "id": "NEG-COSET-TWO-QUARTIC-COEFFICIENTS-AS-COMPLETE-GAP-THEOREM",
+    "lesson": "Extend the relative-orbit engine to third and fourth moments, reconstruct the complete quartic, and prove normalized root separation before circuit claims.",
+    "reason_invalid": "A quartic still needs its cubic and constant coefficients, followed by a uniform root-separation theorem.",
+    "source": "research/representation/coset_stable_second_moment_certificate.json"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
       "EXP-COSET-HOLEVO-INFORMATION"
     ],
     "claim": "A collective hidden-involution decoder may use fewer than the exact Holevo/Fano copy lower bound.",
