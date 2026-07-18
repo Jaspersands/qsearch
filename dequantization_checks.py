@@ -198,6 +198,9 @@ COSET_SPARSE_STABLE_GAP_PATH = Path(
 COSET_STABLE_TRACE_CONJECTURE_PATH = Path(
     "research/representation/coset_stable_trace_conjecture.json"
 )
+COSET_STABLE_TRACE_CERTIFICATE_PATH = Path(
+    "research/representation/coset_stable_trace_certificate.json"
+)
 COSET_RECOUPLING_CAPABILITY_PATH = Path(
     "research/representation/coset_recoupling_capability_ledger.json"
 )
@@ -3814,6 +3817,40 @@ def findings_from_coset_stable_trace_conjecture(
     ]
 
 
+def findings_from_coset_stable_trace_certificate(
+    path: Path = COSET_STABLE_TRACE_CERTIFICATE_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    return [
+        DequantizationFinding(
+            id="DEQ-COSET-EXACT-FIRST-TRACE-NOT-FULL-QUARTIC-GAP",
+            created_at=utc_now(),
+            target_type="coset_stable_trace_certificate",
+            target_id=str(path),
+            severity="high",
+            claim_under_test=(
+                "The exact first stable power trace determines an efficient multiplicity-four Racah transform."
+            ),
+            evidence=(
+                f"Exact trace theorems={metrics.get('exact_marked_cycle_trace_theorem_count', 0)}, but full "
+                f"quartic/root-separation/circuit/decoder theorems="
+                f"{metrics.get('all_n_quartic_theorem_count', 0)}/"
+                f"{metrics.get('all_n_root_separation_theorem_count', 0)}/"
+                f"{metrics.get('uniform_polynomial_racah_circuit_count', 0)}/"
+                f"{metrics.get('hidden_involution_decoder_count', 0)}."
+            ),
+            required_action=(
+                "Evaluate the next three power traces exactly, reconstruct the quartic via Newton identities, prove "
+                "normalized root separation, and only then address coherent synthesis and decoding."
+            ),
+            blocks_speedup_claim=True,
+        )
+    ]
+
+
 def findings_from_coset_recoupling_capability_ledger(
     path: Path = COSET_RECOUPLING_CAPABILITY_PATH,
 ) -> list[DequantizationFinding]:
@@ -6763,6 +6800,7 @@ def build_dequantization_report() -> dict[str, Any]:
         *findings_from_coset_hierarchical_gap_scaling(),
         *findings_from_coset_sparse_stable_gap(),
         *findings_from_coset_stable_trace_conjecture(),
+        *findings_from_coset_stable_trace_certificate(),
         *findings_from_coset_jucys_murphy_label_transform(),
         *findings_from_coset_multiplicity_commutant_search(),
         *findings_from_coset_recoupling_capability_ledger(),

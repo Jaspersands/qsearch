@@ -96,6 +96,7 @@ Commands:
   python qsearch.py coset-racah-gap-scaling
   python qsearch.py coset-racah-sparse-gap
   python qsearch.py coset-racah-trace-conjecture
+  python qsearch.py coset-racah-trace-proof
   python qsearch.py coset-recoupling-capabilities
   python qsearch.py coset-recoupling-synthesize
   python qsearch.py code-equivalence
@@ -304,6 +305,7 @@ from coset_hierarchical_racah_control import write_hierarchical_racah_control_re
 from coset_hierarchical_gap_scaling import write_hierarchical_gap_scaling_report
 from coset_sparse_stable_gap_probe import write_sparse_stable_gap_report
 from coset_stable_trace_conjecture import write_stable_trace_conjecture_report
+from coset_stable_trace_certificate import write_stable_trace_certificate
 from coset_recoupling_capability_ledger import write_recoupling_capability_report
 from coset_recoupling_mechanism_synthesis import write_recoupling_mechanism_synthesis_report
 from classical_baseline_suite import write_hidden_shift_baselines
@@ -3906,6 +3908,38 @@ def command_coset_racah_trace_conjecture(args: argparse.Namespace) -> int:
     return 0
 
 
+def command_coset_racah_trace_proof(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_stable_trace_certificate(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Exact stable Racah trace certificate complete")
+    print("Artifact: research/representation/coset_stable_trace_certificate.json")
+    print(
+        "Exact stable trace theorems: "
+        f"{metrics['exact_marked_cycle_trace_theorem_count']}"
+    )
+    print(f"Trace formula: {payload['stable_symbolic_certificate']['trace']}")
+    print(
+        "Equality patterns: "
+        f"{metrics['canonical_equality_pattern_count']} across "
+        f"{metrics['falling_monomial_product_count']} monomial products"
+    )
+    print(f"Full quartic theorems: {metrics['all_n_quartic_theorem_count']}")
+    print(
+        "Root-separation theorems: "
+        f"{metrics['all_n_root_separation_theorem_count']}"
+    )
+    print(f"Speedup claim allowed: {payload['claim_gate']['speedup_claim_allowed']}")
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
 def command_coset_recoupling_synthesize(args: argparse.Namespace) -> int:
     initialize_seed_registry(overwrite=False)
     payload = write_recoupling_mechanism_synthesis_report(
@@ -7102,6 +7136,13 @@ def build_parser() -> argparse.ArgumentParser:
     coset_racah_trace_conjecture.set_defaults(
         func=command_coset_racah_trace_conjecture
     )
+
+    coset_racah_trace_proof = subparsers.add_parser(
+        "coset-racah-trace-proof",
+        help="Prove the stable Racah trace by exact falling-cycle equality patterns.",
+    )
+    coset_racah_trace_proof.add_argument("--no-registry", action="store_true")
+    coset_racah_trace_proof.set_defaults(func=command_coset_racah_trace_proof)
 
     coset_recoupling_synthesize = subparsers.add_parser(
         "coset-recoupling-synthesize",

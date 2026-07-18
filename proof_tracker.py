@@ -126,6 +126,9 @@ COSET_SPARSE_STABLE_GAP_PATH = Path(
 COSET_STABLE_TRACE_CONJECTURE_PATH = Path(
     "research/representation/coset_stable_trace_conjecture.json"
 )
+COSET_STABLE_TRACE_CERTIFICATE_PATH = Path(
+    "research/representation/coset_stable_trace_certificate.json"
+)
 COSET_RECOUPLING_CAPABILITY_PATH = Path(
     "research/representation/coset_recoupling_capability_ledger.json"
 )
@@ -600,6 +603,17 @@ def lemma_templates(candidate: dict[str, Any]) -> list[LemmaRecord]:
             stable_trace = {}
         stable_trace_metrics = stable_trace.get("headline_metrics", {})
         try:
+            stable_trace_certificate = (
+                json.loads(COSET_STABLE_TRACE_CERTIFICATE_PATH.read_text())
+                if COSET_STABLE_TRACE_CERTIFICATE_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            stable_trace_certificate = {}
+        stable_trace_certificate_metrics = stable_trace_certificate.get(
+            "headline_metrics", {}
+        )
+        try:
             recoupling_capabilities = (
                 json.loads(COSET_RECOUPLING_CAPABILITY_PATH.read_text())
                 if COSET_RECOUPLING_CAPABILITY_PATH.exists()
@@ -1003,7 +1017,7 @@ def lemma_templates(candidate: dict[str, Any]) -> list[LemmaRecord]:
                     status=(
                         "proved-exact-stable-racah-trace-identity"
                         if int(
-                            stable_trace_metrics.get(
+                            stable_trace_certificate_metrics.get(
                                 "exact_marked_cycle_trace_theorem_count", 0
                             )
                             or 0

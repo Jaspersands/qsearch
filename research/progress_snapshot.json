@@ -14,23 +14,23 @@
         "value": "n=7-11, integer reconstructed"
       },
       {
-        "label": "Trace holdout",
-        "value": "1/1 matched; proof open"
+        "label": "Stable trace",
+        "value": "1 exact theorem"
       },
       {
         "label": "Hidden decoder",
         "value": "Open"
       }
     ],
-    "summary": "For W_n=(n-2,2) and alpha_n=xi_n=(n-3,2,1), sparse multiplicity-four spectra through n=11 reconstruct monic integer quartics. Their trace fits 4n^3-46n^2+149n-118 on n=7..10 and matches the held-out n=11 value. The formula still requires an exact marked-cycle character proof."
+    "summary": "For W_n=(n-2,2) and alpha_n=xi_n=(n-3,2,1), sparse multiplicity-four spectra through n=11 reconstruct monic integer quartics. Exact marked-cycle equality patterns now prove their trace is 4n^3-46n^2+149n-118 for every n>=7. The next theorem target is the remaining three power traces, followed by quartic root separation."
   },
   "execution_model": "Research generation and experiments run interactively during active Codex sessions. A GitHub workflow validates pushed snapshots, and a scheduled backup can commit only validation-passing changes; neither mechanism performs autonomous quantum-algorithm research between sessions.",
   "metrics": {
-    "blocking_findings": 487,
-    "experiments": 159,
-    "negative_results": 473,
+    "blocking_findings": 491,
+    "experiments": 160,
+    "negative_results": 474,
     "proof_debts": 24,
-    "results": 228
+    "results": 232
   },
   "milestones": [
     {
@@ -50,14 +50,14 @@
       "title": "The complete finite S_6 Racah table was resolved"
     },
     {
-      "detail": "Target-only sparse extraction avoids dense Hamiltonians through n=11 and reconstructs five monic integer characteristic polynomials; no all-n formula is claimed.",
-      "title": "Stable sparse quartics became exact proof targets"
+      "detail": "Exact falling-cycle equality patterns prove Tr(H)=4n^3-46n^2+149n-118 for every n>=7; the other three coefficients remain open.",
+      "title": "The first stable quartic coefficient was proved"
     }
   ],
   "next_actions": [
     {
-      "detail": "Evaluate the explicit shifted character sum exactly; interpolation and the n=11 holdout are theorem targets, not proof.",
-      "title": "Prove the marked-cycle trace identity"
+      "detail": "Generalize the exact marked-cycle engine to H^2, H^3, and H^4; the first power trace is now proved.",
+      "title": "Evaluate the next three power traces"
     },
     {
       "detail": "Derive traces H^2, H^3, and H^4, apply Newton identities, and prove inverse-polynomial root separation after LCU normalization.",
@@ -103,7 +103,7 @@
   ],
   "updated_at": "2026-07-18",
   "verdict": {
-    "detail": "Every speedup claim remains blocked. One restricted representation-theoretic gap theorem is now proved, and a bounded-support hierarchy resolves the complete finite S_6 Racah table. Stable-n gaps, a coherent recoupling circuit, and hidden-involution decoding remain open.",
+    "detail": "Every speedup claim remains blocked. One restricted representation-theoretic gap theorem is now proved, a bounded-support hierarchy resolves the complete finite S_6 Racah table, and one stable power trace is exact. The full quartic, root gaps, coherent recoupling, and hidden-involution decoding remain open.",
     "title": "No breakthrough yet"
   }
 }

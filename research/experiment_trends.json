@@ -1,8 +1,8 @@
 {
-  "created_at": "2026-07-18T01:48:11.037310+00:00",
+  "created_at": "2026-07-18T01:57:56.154653+00:00",
   "history_artifact": "research/experiment_run_history.json",
-  "history_count": 160,
-  "trend_count": 130,
+  "history_count": 161,
+  "trend_count": 131,
   "trends": [
     {
       "blocking_run_count": 1,
@@ -4658,6 +4658,103 @@
       "run_count": 1,
       "status_sequence": [
         "strong-fourier-route-blocked"
+      ]
+    },
+    {
+      "blocking_run_count": 1,
+      "experiment_id": "EXP-COSET-STABLE-TRACE-CERTIFICATE",
+      "falsifier_count_sequence": [
+        4
+      ],
+      "interpretation": "Repeated runs continue to trigger falsifiers; this is proof debt, not progress.",
+      "latest_result_id": "RESULT-EXP-COSET-STABLE-TRACE-CERTIFICATE-COSET",
+      "latest_status": "exact-stable-racah-trace-proved-full-quartic-open",
+      "latest_summary": "Proved the cubic stable-channel trace for every n>=7 by exact falling-cycle equality patterns plus an exact S_7 endpoint character sum; the full quartic and gap theorem remain open.",
+      "numeric_metric_trends": {
+        "all_n_quartic_theorem_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        },
+        "all_n_root_separation_theorem_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        },
+        "canonical_equality_pattern_count": {
+          "delta": 0.0,
+          "first": 68146.0,
+          "latest": 68146.0,
+          "max": 68146.0,
+          "min": 68146.0,
+          "observations": 1
+        },
+        "exact_endpoint_verified_count": {
+          "delta": 0.0,
+          "first": 1.0,
+          "latest": 1.0,
+          "max": 1.0,
+          "min": 1.0,
+          "observations": 1
+        },
+        "exact_marked_cycle_trace_theorem_count": {
+          "delta": 0.0,
+          "first": 1.0,
+          "latest": 1.0,
+          "max": 1.0,
+          "min": 1.0,
+          "observations": 1
+        },
+        "falling_monomial_product_count": {
+          "delta": 0.0,
+          "first": 48.0,
+          "latest": 48.0,
+          "max": 48.0,
+          "min": 48.0,
+          "observations": 1
+        },
+        "hidden_involution_decoder_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        },
+        "minimum_proved_n": {
+          "delta": 0.0,
+          "first": 7.0,
+          "latest": 7.0,
+          "max": 7.0,
+          "min": 7.0,
+          "observations": 1
+        },
+        "stable_symbolic_range_proved_count": {
+          "delta": 0.0,
+          "first": 1.0,
+          "latest": 1.0,
+          "max": 1.0,
+          "min": 1.0,
+          "observations": 1
+        },
+        "uniform_polynomial_racah_circuit_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        }
+      },
+      "run_count": 1,
+      "status_sequence": [
+        "exact-stable-racah-trace-proved-full-quartic-open"
       ]
     },
     {

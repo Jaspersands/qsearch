@@ -36373,6 +36373,29 @@
   {
     "applies_to": [
       "CODE-COSET-COLLECTIVE",
+      "EXP-COSET-STABLE-TRACE-CERTIFICATE"
+    ],
+    "claim": "The exact first power trace determines the stable quartic spectrum and an efficient Racah transform.",
+    "evidence": {
+      "all_n_quartic_theorem_count": 0,
+      "all_n_root_separation_theorem_count": 0,
+      "canonical_equality_pattern_count": 68146,
+      "exact_endpoint_verified_count": 1,
+      "exact_marked_cycle_trace_theorem_count": 1,
+      "falling_monomial_product_count": 48,
+      "hidden_involution_decoder_count": 0,
+      "minimum_proved_n": 7,
+      "stable_symbolic_range_proved_count": 1,
+      "uniform_polynomial_racah_circuit_count": 0
+    },
+    "id": "NEG-COSET-EXACT-TRACE-AS-COMPLETE-QUARTIC-GAP",
+    "lesson": "Apply the same marked-cycle machinery to H^2, H^3, and H^4, use Newton identities, and prove normalized root separation before promotion.",
+    "reason_invalid": "A 4x4 characteristic polynomial requires three additional independent coefficients or power traces, followed by root separation and circuit synthesis.",
+    "source": "research/representation/coset_stable_trace_certificate.json"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
       "EXP-COSET-TWO-COPY-TRANSITION-ALGEBRA"
     ],
     "claim": "A finite explicit regular-representation transition table is a scalable collective measurement.",

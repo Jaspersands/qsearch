@@ -4856,5 +4856,36 @@
     "run_id": "RUN-EXP-COSET-STABLE-TRACE-CONJECTURE-00160",
     "status": "stable-trace-cubic-survives-holdout-exact-proof-open",
     "summary": "The cubic trace candidate 4*n**3 - 46*n**2 + 149*n - 118 matches 1/1 out-of-sample rows; an exact marked-cycle proof remains open."
+  },
+  {
+    "artifacts": {
+      "coset_stable_trace_certificate": "research/representation/coset_stable_trace_certificate.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "experiment_id": "EXP-COSET-STABLE-TRACE-CERTIFICATE",
+    "falsifier_count": 4,
+    "falsifiers_triggered": [
+      "The trace identity alone does not determine a multiplicity-four characteristic polynomial.",
+      "A characteristic polynomial still needs an all-n normalized root-separation theorem.",
+      "One stable channel does not cover every Racah sector required by a decoder.",
+      "No coherent circuit or hidden-involution decoder follows from the trace calculation."
+    ],
+    "metrics": {
+      "all_n_quartic_theorem_count": 0,
+      "all_n_root_separation_theorem_count": 0,
+      "canonical_equality_pattern_count": 68146,
+      "exact_endpoint_verified_count": 1,
+      "exact_marked_cycle_trace_theorem_count": 1,
+      "falling_monomial_product_count": 48,
+      "hidden_involution_decoder_count": 0,
+      "minimum_proved_n": 7,
+      "stable_symbolic_range_proved_count": 1,
+      "uniform_polynomial_racah_circuit_count": 0
+    },
+    "recorded_at": "2026-07-18T01:57:56.150738+00:00",
+    "result_id": "RESULT-EXP-COSET-STABLE-TRACE-CERTIFICATE-COSET",
+    "run_id": "RUN-EXP-COSET-STABLE-TRACE-CERTIFICATE-00161",
+    "status": "exact-stable-racah-trace-proved-full-quartic-open",
+    "summary": "Proved the cubic stable-channel trace for every n>=7 by exact falling-cycle equality patterns plus an exact S_7 endpoint character sum; the full quartic and gap theorem remain open."
   }
 ]

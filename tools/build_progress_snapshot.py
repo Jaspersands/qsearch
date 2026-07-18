@@ -80,6 +80,9 @@ def build_snapshot() -> dict[str, Any]:
     stable_trace = read_json(
         RESEARCH / "representation/coset_stable_trace_conjecture.json", {}
     )
+    stable_trace_certificate = read_json(
+        RESEARCH / "representation/coset_stable_trace_certificate.json", {}
+    )
 
     blocking = sum(bool(item.get("blocks_speedup_claim", False)) for item in findings)
     updated = latest_artifact_date(
@@ -100,6 +103,7 @@ def build_snapshot() -> dict[str, Any]:
         hierarchical_gap,
         sparse_gap,
         stable_trace,
+        stable_trace_certificate,
     )
     gap_rows = metric(gap, "critical_gap_formula_finite_verified_count", 0)
     gap_total = metric(gap, "record_count", 0)
@@ -113,8 +117,8 @@ def build_snapshot() -> dict[str, Any]:
             "title": "No breakthrough yet",
             "detail": (
                 "Every speedup claim remains blocked. One restricted representation-theoretic gap theorem is now proved, "
-                "and a bounded-support hierarchy resolves the complete finite S_6 Racah table. Stable-n gaps, a coherent "
-                "recoupling circuit, and hidden-involution decoding remain open."
+                "a bounded-support hierarchy resolves the complete finite S_6 Racah table, and one stable power trace "
+                "is exact. The full quartic, root gaps, coherent recoupling, and hidden-involution decoding remain open."
             ),
         },
         "overview": (
@@ -204,28 +208,29 @@ def build_snapshot() -> dict[str, Any]:
                 "detail": "A second bounded-support Hamiltonian splits residual multiplicities up to four and produces unitary left/right matrices in all ten final sectors.",
             },
             {
-                "title": "Stable sparse quartics became exact proof targets",
-                "detail": "Target-only sparse extraction avoids dense Hamiltonians through n=11 and reconstructs five monic integer characteristic polynomials; no all-n formula is claimed.",
+                "title": "The first stable quartic coefficient was proved",
+                "detail": "Exact falling-cycle equality patterns prove Tr(H)=4n^3-46n^2+149n-118 for every n>=7; the other three coefficients remain open.",
             },
         ],
         "active_conjecture": {
             "summary": (
                 "For W_n=(n-2,2) and alpha_n=xi_n=(n-3,2,1), sparse multiplicity-four spectra through n=11 "
-                "reconstruct monic integer quartics. Their trace fits 4n^3-46n^2+149n-118 on n=7..10 and matches "
-                "the held-out n=11 value. The formula still requires an exact marked-cycle character proof."
+                "reconstruct monic integer quartics. Exact marked-cycle equality patterns now prove their trace is "
+                "4n^3-46n^2+149n-118 for every n>=7. The next theorem target is the remaining three power traces, "
+                "followed by quartic root separation."
             ),
             "facts": [
                 {"label": "Pair gap", "value": "Exact inverse-quadratic theorem"},
                 {"label": "Finite Racah table", "value": f"{metric(hierarchical_racah, 'complete_hierarchical_finite_racah_matrix_count', 0)}/10 S_6 sectors"},
                 {"label": "Stable quartics", "value": f"n=7-{metric(sparse_gap, 'maximum_n', 0)}, integer reconstructed"},
-                {"label": "Trace holdout", "value": f"{metric(stable_trace, 'holdout_match_count', 0)}/{metric(stable_trace, 'holdout_row_count', 0)} matched; proof open"},
+                {"label": "Stable trace", "value": f"{metric(stable_trace_certificate, 'exact_marked_cycle_trace_theorem_count', 0)} exact theorem"},
                 {"label": "Hidden decoder", "value": "Open"},
             ],
         },
         "next_actions": [
             {
-                "title": "Prove the marked-cycle trace identity",
-                "detail": "Evaluate the explicit shifted character sum exactly; interpolation and the n=11 holdout are theorem targets, not proof.",
+                "title": "Evaluate the next three power traces",
+                "detail": "Generalize the exact marked-cycle engine to H^2, H^3, and H^4; the first power trace is now proved.",
             },
             {
                 "title": "Recover the full stable quartic",

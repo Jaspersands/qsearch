@@ -625,14 +625,19 @@ A sparse target-block extractor extends the hardest multiplicity-four channel
 through `n=11` without materializing dense Hamiltonians and reconstructs five
 monic integer characteristic polynomials. The trace rows at `n=7..10` generate
 the cubic target `4n^3-46n^2+149n-118`, which matches the held-out `n=11` row.
-Interpolation is explicitly rejected as proof: the next obligation is an exact
-marked-cycle character-sum derivation, followed by the remaining quartic
-coefficients and a normalized root-separation theorem.
+That trace target is now proved exactly for every `n>=7`: the stable characters
+are expanded in falling cycle counts, 48 monomial products are reduced through
+canonical partial-permutation equality patterns, and the resulting shifted
+character correlation is the cubic divided by the exact orbit size. An exact
+`S_7` character sum closes the endpoint. The theorem supplies only `Tr(H)`;
+`Tr(H^2)`, `Tr(H^3)`, `Tr(H^4)`, the full quartic, and normalized root
+separation remain open.
 
 ```bash
 python qsearch.py coset-racah-gap-scaling
 python qsearch.py coset-racah-sparse-gap --n-values 7,8,9,10,11
 python qsearch.py coset-racah-trace-conjecture
+python qsearch.py coset-racah-trace-proof
 ```
 
 The capability ledger separates the solved `S_n` QFT, Schur-Weyl transforms,

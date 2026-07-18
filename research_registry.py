@@ -6429,6 +6429,51 @@ def seed_candidate_records() -> tuple[list[CandidateRecord], list[ExperimentReco
             ],
         ),
         ExperimentRecord(
+            id="EXP-COSET-STABLE-TRACE-CERTIFICATE",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Exact stable Racah trace certificate",
+            status="planned",
+            hypothesis=(
+                "The shifted character correlation for the stable multiplicity-four channel can be evaluated exactly "
+                "from falling cycle counts, proving trace 4n^3-46n^2+149n-118 for every n>=7."
+            ),
+            protocol=(
+                "Expand the stable W_n and xi_n characters in falling cycle counts; enumerate canonical equality "
+                "patterns for cycles selected from g, g tau, and g c; sum exact (n-3)_k/(n)_r contributions for "
+                "n>=8 and close n=7 with an exact character sum."
+            ),
+            positive_signal=(
+                "The exact shifted correlation simplifies to the conjectured cubic divided by the orbit size, the "
+                "S_7 endpoint agrees, and no interpolation enters the identity proof."
+            ),
+            falsifiers=[
+                "The equality-pattern sum disagrees with the sparse quartic traces.",
+                "The stable symbolic identity fails to simplify exactly.",
+                "The n=7 endpoint does not equal the stable formula.",
+                "One exact power trace is presented as the full quartic or a gap theorem.",
+            ],
+            metrics=[
+                "exact_marked_cycle_trace_theorem_count",
+                "stable_symbolic_range_proved_count",
+                "exact_endpoint_verified_count",
+                "canonical_equality_pattern_count",
+                "all_n_quartic_theorem_count",
+                "all_n_root_separation_theorem_count",
+            ],
+            dependencies=[
+                "coset_stable_trace_certificate.py",
+                "stable character polynomials",
+                "partial-permutation equality-pattern enumeration",
+                "symmetric_character.py",
+            ],
+            next_actions=[
+                "Generalize the exact marked-cycle engine to two, three, and four orbit insertions.",
+                "Compute Tr(H^2), Tr(H^3), and Tr(H^4) and reconstruct the quartic with Newton identities.",
+                "Prove inverse-polynomial normalized root separation.",
+                "Compile the nested Hamiltonian labels coherently and test decoder information.",
+            ],
+        ),
+        ExperimentRecord(
             id="EXP-COSET-RECOUPLING-CAPABILITY-LEDGER",
             candidate_id="CODE-COSET-COLLECTIVE",
             title="Literature-backed symmetric-group recoupling capability ledger",

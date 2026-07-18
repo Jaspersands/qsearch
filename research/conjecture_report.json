@@ -929,6 +929,12 @@
         },
         {
           "evidence": "Triggered falsifiers: One pair Hamiltonian is insufficient in sectors with second-stage Kronecker multiplicity. | A complete finite S_6 Racah table is not evidence of inverse-polynomial gaps at growing n. | Dense joint diagonalization does not compile the basis into a uniform coherent circuit. | Recoupling coordinates alone do not recover the hidden involution.",
+          "finding_id": "DEQ-RESULT-EXP-COSET-HIERARCHICAL-RACAH-CONTROL-COSET-FALSIFIERS",
+          "required_action": "Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.",
+          "severity": "medium"
+        },
+        {
+          "evidence": "Triggered falsifiers: One pair Hamiltonian is insufficient in sectors with second-stage Kronecker multiplicity. | A complete finite S_6 Racah table is not evidence of inverse-polynomial gaps at growing n. | Dense joint diagonalization does not compile the basis into a uniform coherent circuit. | Recoupling coordinates alone do not recover the hidden involution.",
           "finding_id": "DEQ-RESULT-EXP-COSET-HIERARCHICAL-RACAH-CONTROL-LATEST-FALSIFIERS",
           "required_action": "Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.",
           "severity": "medium"
@@ -1024,6 +1030,18 @@
           "severity": "medium"
         },
         {
+          "evidence": "Triggered falsifiers: The trace identity alone does not determine a multiplicity-four characteristic polynomial. | A characteristic polynomial still needs an all-n normalized root-separation theorem. | One stable channel does not cover every Racah sector required by a decoder. | No coherent circuit or hidden-involution decoder follows from the trace calculation.",
+          "finding_id": "DEQ-RESULT-EXP-COSET-STABLE-TRACE-CERTIFICATE-LATEST-FALSIFIERS",
+          "required_action": "Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.",
+          "severity": "medium"
+        },
+        {
+          "evidence": "Triggered falsifiers: A cubic interpolation, even with holdout matches, is not an all-n character identity. | The trace alone does not determine a multiplicity-four spectrum. | Integer characteristic coefficients do not imply inverse-polynomial root separation. | A spectral theorem still would not supply a coherent circuit or decoder.",
+          "finding_id": "DEQ-RESULT-EXP-COSET-STABLE-TRACE-CONJECTURE-COSET-FALSIFIERS",
+          "required_action": "Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.",
+          "severity": "medium"
+        },
+        {
           "evidence": "Triggered falsifiers: A cubic interpolation, even with holdout matches, is not an all-n character identity. | The trace alone does not determine a multiplicity-four spectrum. | Integer characteristic coefficients do not imply inverse-polynomial root separation. | A spectral theorem still would not supply a coherent circuit or decoder.",
           "finding_id": "DEQ-RESULT-EXP-COSET-STABLE-TRACE-CONJECTURE-LATEST-FALSIFIERS",
           "required_action": "Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.",
@@ -1115,7 +1133,7 @@
         }
       ],
       "candidate_id": "CODE-COSET-COLLECTIVE",
-      "created_at": "2026-07-18T01:45:43.679160+00:00",
+      "created_at": "2026-07-18T01:57:46.186428+00:00",
       "id": "CONJ-CODE-COSET-COLLECTIVE",
       "next_actions": [
         "Resolve every blocking finding before promotion.",
@@ -2609,6 +2627,32 @@
           "summary": "Audited 18 second-stage multiplicity blocks over n=6..8; all split finitely, with minimum normalized gap 0.0282613, but no all-n theorem or circuit follows."
         },
         {
+          "experiment_result_id": "RESULT-EXP-COSET-HIERARCHICAL-RACAH-CONTROL-COSET",
+          "metrics": {
+            "complete_hierarchical_finite_racah_matrix_count": 10,
+            "final_target_count": 10,
+            "hidden_involution_decoder_count": 0,
+            "maximum_dense_dimension": 729,
+            "maximum_matrix_dimension": 16,
+            "maximum_second_stage_multiplicity": 3,
+            "maximum_tableau_absolute_consistency_residual": 9.726143089020922e-14,
+            "maximum_unitarity_residual": 1.619093517085688e-14,
+            "minimum_observed_first_stage_raw_gap": 7.999999999999979,
+            "minimum_observed_second_stage_normalized_gap": 0.048591265790377376,
+            "minimum_observed_second_stage_raw_gap": 5.830951894845285,
+            "nontrivial_complete_finite_racah_matrix_count": 9,
+            "second_stage_lcu_term_count": 120,
+            "second_stage_multiplicity_resolved_sector_count": 10,
+            "second_stage_term_count_formula": 120,
+            "second_stage_term_count_formula_verified_count": 1,
+            "stable_n_joint_gap_theorem_count": 0,
+            "uniform_polynomial_racah_circuit_count": 0,
+            "unresolved_finite_sector_count": 0
+          },
+          "status": "complete-s6-hierarchical-racah-table-stable-n-circuit-open",
+          "summary": "Resolved all 10 final S_6 sectors with a two-level bounded-support commutant hierarchy; the finite Racah table is complete, while stable-n gaps, a circuit, and a decoder remain open."
+        },
+        {
           "experiment_result_id": "RESULT-EXP-COSET-HIERARCHICAL-RACAH-CONTROL-LATEST",
           "metrics": {
             "complete_hierarchical_finite_racah_matrix_count": 10,
@@ -2915,6 +2959,39 @@
           "summary": "Extracted the multiplicity-4 critical block through n=11 without dense Hamiltonians; all spectra split and reconstruct integer polynomials, but exact all-n formulas and gap bounds remain open."
         },
         {
+          "experiment_result_id": "RESULT-EXP-COSET-STABLE-TRACE-CERTIFICATE-LATEST",
+          "metrics": {
+            "all_n_quartic_theorem_count": 0,
+            "all_n_root_separation_theorem_count": 0,
+            "canonical_equality_pattern_count": 68146,
+            "exact_endpoint_verified_count": 1,
+            "exact_marked_cycle_trace_theorem_count": 1,
+            "falling_monomial_product_count": 48,
+            "hidden_involution_decoder_count": 0,
+            "minimum_proved_n": 7,
+            "stable_symbolic_range_proved_count": 1,
+            "uniform_polynomial_racah_circuit_count": 0
+          },
+          "status": "exact-stable-racah-trace-proved-full-quartic-open",
+          "summary": "Proved the cubic stable-channel trace for every n>=7 by exact falling-cycle equality patterns plus an exact S_7 endpoint character sum; the full quartic and gap theorem remain open."
+        },
+        {
+          "experiment_result_id": "RESULT-EXP-COSET-STABLE-TRACE-CONJECTURE-COSET",
+          "metrics": {
+            "all_n_quartic_theorem_count": 0,
+            "all_n_root_separation_theorem_count": 0,
+            "constant_third_difference_count": 1,
+            "exact_marked_cycle_trace_theorem_count": 0,
+            "holdout_match_count": 1,
+            "holdout_row_count": 1,
+            "interpolated_degree": 3,
+            "maximum_holdout_residual": 0,
+            "training_row_count": 4
+          },
+          "status": "stable-trace-cubic-survives-holdout-exact-proof-open",
+          "summary": "The cubic trace candidate 4*n**3 - 46*n**2 + 149*n - 118 matches 1/1 out-of-sample rows; an exact marked-cycle proof remains open."
+        },
+        {
           "experiment_result_id": "RESULT-EXP-COSET-STABLE-TRACE-CONJECTURE-LATEST",
           "metrics": {
             "all_n_quartic_theorem_count": 0,
@@ -3082,7 +3159,7 @@
           "summary": "Audited 17 weak Fourier involution label distributions over S_n for n=[6, 8, 10, 12, 14, 16]. 4 row(s) are nearly Plancherel and 6 row(s) have only small label signal."
         }
       ],
-      "updated_at": "2026-07-18T01:45:43.679160+00:00"
+      "updated_at": "2026-07-18T01:57:46.186428+00:00"
     },
     {
       "assumptions": [
@@ -4264,7 +4341,7 @@
         }
       ],
       "candidate_id": "DHS-GOWERS-SIEVE",
-      "created_at": "2026-07-18T01:45:43.679160+00:00",
+      "created_at": "2026-07-18T01:57:46.186428+00:00",
       "id": "CONJ-DHS-GOWERS-SIEVE",
       "next_actions": [
         "Resolve every blocking finding before promotion.",
@@ -6334,7 +6411,7 @@
           "summary": "Audited 40 explicit hidden-shift instances across 10 phase families. 0 instances show Fourier/derivative structure; 16 are critical/high dequantization risk; 40 survive at least one restricted query model. Best DHSP sieve strategy aggressive_doubling reaches v2=7 from 2048 phase labels; explicit phase-state trace reaches v2=7 with 44 survivor states."
         }
       ],
-      "updated_at": "2026-07-18T01:45:43.679160+00:00"
+      "updated_at": "2026-07-18T01:57:46.186428+00:00"
     },
     {
       "assumptions": [
@@ -6392,7 +6469,7 @@
         }
       ],
       "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
-      "created_at": "2026-07-18T01:45:43.679160+00:00",
+      "created_at": "2026-07-18T01:57:46.186428+00:00",
       "id": "CONJ-HYP-LIT-COSET-OBSERVABLES",
       "next_actions": [
         "Resolve every blocking finding before promotion.",
@@ -6432,7 +6509,7 @@
           "summary": "Audited 4 hidden-permutation graph pairs. 2 pair survives current classical and low-register tests; 1 control pair is classically distinguished; 2 CFI-style parity benchmark(s) included."
         }
       ],
-      "updated_at": "2026-07-18T01:45:43.679160+00:00"
+      "updated_at": "2026-07-18T01:57:46.186428+00:00"
     },
     {
       "assumptions": [
@@ -6522,7 +6599,7 @@
         }
       ],
       "candidate_id": "HYP-LIT-HIDDEN-SHIFT-SIEVE",
-      "created_at": "2026-07-18T01:45:43.679160+00:00",
+      "created_at": "2026-07-18T01:57:46.186428+00:00",
       "id": "CONJ-HYP-LIT-HIDDEN-SHIFT-SIEVE",
       "next_actions": [
         "Resolve every blocking finding before promotion.",
@@ -6604,7 +6681,7 @@
           "summary": "Audited 40 explicit hidden-shift instances across 10 phase families. 0 instances show Fourier/derivative structure; 16 are critical/high dequantization risk; 40 survive at least one restricted query model. Best DHSP sieve strategy aggressive_doubling reaches v2=7 from 2048 phase labels; explicit phase-state trace reaches v2=7 with 44 survivor states."
         }
       ],
-      "updated_at": "2026-07-18T01:45:43.679160+00:00"
+      "updated_at": "2026-07-18T01:57:46.186428+00:00"
     },
     {
       "assumptions": [
@@ -6704,7 +6781,7 @@
         }
       ],
       "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
-      "created_at": "2026-07-18T01:45:43.679160+00:00",
+      "created_at": "2026-07-18T01:57:46.186428+00:00",
       "id": "CONJ-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
       "next_actions": [
         "Resolve every blocking finding before promotion.",
@@ -6788,7 +6865,7 @@
           "summary": "Audited 10 graphlet tensor observables across 5 graph pairs. 3 signal(s) collapse to small-pattern classical counts; 3 boundary pair(s) remain without graphlet-tensor signal."
         }
       ],
-      "updated_at": "2026-07-18T01:45:43.679160+00:00"
+      "updated_at": "2026-07-18T01:57:46.186428+00:00"
     },
     {
       "assumptions": [
@@ -6864,7 +6941,7 @@
         }
       ],
       "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
-      "created_at": "2026-07-18T01:45:43.679160+00:00",
+      "created_at": "2026-07-18T01:57:46.186428+00:00",
       "id": "CONJ-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
       "next_actions": [
         "Resolve every blocking finding before promotion.",
@@ -6919,7 +6996,7 @@
           "summary": "Audited 10 graphlet tensor observables across 5 graph pairs. 3 signal(s) collapse to small-pattern classical counts; 3 boundary pair(s) remain without graphlet-tensor signal."
         }
       ],
-      "updated_at": "2026-07-18T01:45:43.679160+00:00"
+      "updated_at": "2026-07-18T01:57:46.186428+00:00"
     },
     {
       "assumptions": [
@@ -6995,7 +7072,7 @@
         }
       ],
       "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
-      "created_at": "2026-07-18T01:45:43.679160+00:00",
+      "created_at": "2026-07-18T01:57:46.186428+00:00",
       "id": "CONJ-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
       "next_actions": [
         "Resolve every blocking finding before promotion.",
@@ -7049,7 +7126,7 @@
           "summary": "Audited 4 hidden-permutation graph pairs. 2 pair survives current classical and low-register tests; 1 control pair is classically distinguished; 2 CFI-style parity benchmark(s) included."
         }
       ],
-      "updated_at": "2026-07-18T01:45:43.679160+00:00"
+      "updated_at": "2026-07-18T01:57:46.186428+00:00"
     },
     {
       "assumptions": [
@@ -7113,7 +7190,7 @@
         }
       ],
       "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
-      "created_at": "2026-07-18T01:45:43.679160+00:00",
+      "created_at": "2026-07-18T01:57:46.186428+00:00",
       "id": "CONJ-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
       "next_actions": [
         "Resolve every blocking finding before promotion.",
@@ -7147,10 +7224,10 @@
           "summary": "Audited 3 code-equivalence pairs. 1 equivalent control pair(s) verified; 2 non-equivalent control pair(s) classically distinguished."
         }
       ],
-      "updated_at": "2026-07-18T01:45:43.679160+00:00"
+      "updated_at": "2026-07-18T01:57:46.186428+00:00"
     }
   ],
-  "created_at": "2026-07-18T01:45:43.765409+00:00",
+  "created_at": "2026-07-18T01:57:46.264855+00:00",
   "needs_evidence_count": 0,
   "status": "blocked"
 }
