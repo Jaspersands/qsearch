@@ -20,6 +20,8 @@ introduced gradually.
   workbenches.
 - `coset_*.py`, `cfi_*.py` - nonabelian coset states, symmetric-group
   representation theory, and graph-isomorphism reductions.
+- `coset_stable_*_certificate.py` - exact falling-cycle and relative-orbit
+  certificates for stable Racah characteristic coefficients.
 - `code_*.py` plus named code-family modules - code-equivalence generators and
   classical attacks.
 - `character_*.py`, `phase_*.py`, `trace_function_search.py` - hidden-shift

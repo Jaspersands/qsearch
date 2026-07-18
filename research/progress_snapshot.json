@@ -19,22 +19,22 @@
       },
       {
         "label": "Quartic coefficients",
-        "value": "2/4 proved"
+        "value": "3/4 proved"
       },
       {
         "label": "Hidden decoder",
         "value": "Open"
       }
     ],
-    "summary": "For W_n=(n-2,2) and alpha_n=xi_n=(n-3,2,1), sparse multiplicity-four spectra through n=11 reconstruct monic integer quartics. Exact marked-cycle equality patterns now prove their trace is 4n^3-46n^2+149n-118 for every n>=7, and 17 relative orbit classes prove Tr(H^2). The next theorem targets are Tr(H^3), Tr(H^4), and quartic root separation."
+    "summary": "For W_n=(n-2,2) and alpha_n=xi_n=(n-3,2,1), sparse multiplicity-four spectra through n=11 reconstruct monic integer quartics. Exact marked-cycle equality patterns now prove their trace is 4n^3-46n^2+149n-118 for every n>=7. Seventeen relative classes prove Tr(H^2), and 129 classes prove Tr(H^3). The next theorem targets are Tr(H^4), the determinant, and quartic root separation."
   },
   "execution_model": "Research generation and experiments run interactively during active Codex sessions. A GitHub workflow validates pushed snapshots, and a scheduled backup can commit only validation-passing changes; neither mechanism performs autonomous quantum-algorithm research between sessions.",
   "metrics": {
-    "blocking_findings": 494,
-    "experiments": 161,
-    "negative_results": 475,
+    "blocking_findings": 497,
+    "experiments": 162,
+    "negative_results": 476,
     "proof_debts": 24,
-    "results": 234
+    "results": 236
   },
   "milestones": [
     {
@@ -54,17 +54,17 @@
       "title": "The complete finite S_6 Racah table was resolved"
     },
     {
-      "detail": "Exact falling-cycle and relative-orbit calculations prove Tr(H), Tr(H^2), and hence the first two characteristic coefficients for every n>=7.",
-      "title": "Two stable quartic coefficients were proved"
+      "detail": "Exact falling-cycle and 129-class relative-orbit calculations prove Tr(H), Tr(H^2), Tr(H^3), and hence the first three characteristic coefficients for every n>=7.",
+      "title": "Three stable quartic coefficients were proved"
     }
   ],
   "next_actions": [
     {
-      "detail": "Generalize the relative-orbit engine to H^3 and H^4; the first and second power traces are now proved.",
-      "title": "Evaluate the next two power traces"
+      "detail": "Generalize the relative-orbit engine once more to H^4, or derive the constant coefficient directly from the stable multiplicity block.",
+      "title": "Prove the determinant"
     },
     {
-      "detail": "Derive traces H^2, H^3, and H^4, apply Newton identities, and prove inverse-polynomial root separation after LCU normalization.",
+      "detail": "Derive Tr(H^4), apply Newton's fourth identity, and prove inverse-polynomial root separation after LCU normalization.",
       "title": "Recover the full stable quartic"
     },
     {
@@ -96,7 +96,7 @@
     },
     {
       "evidence": "YJM spectra were verified on 3 sectors, and bounded-support commutants split 2 finite multiplicity sectors up to multiplicity 5. The stable multiplicity-two family now has 1 exact all-n gap theorem; the hierarchy resolves 10/10 finite S_6 sectors. Sparse stable probes reconstruct 5 integer quartics through n=11.",
-      "next": "Prove the stable quartic coefficients and root gaps exactly, then compile the hierarchy coherently.",
+      "next": "Prove the determinant and normalized root gaps exactly, then compile the hierarchy coherently.",
       "short_title": "Cosets",
       "stage": 3,
       "status": "Active structural lead",
@@ -107,7 +107,7 @@
   ],
   "updated_at": "2026-07-18",
   "verdict": {
-    "detail": "Every speedup claim remains blocked. One restricted representation-theoretic gap theorem is now proved, a bounded-support hierarchy resolves the complete finite S_6 Racah table, and two stable quartic coefficients are exact. The remaining coefficients, root gaps, coherent recoupling, and decoding remain open.",
+    "detail": "Every speedup claim remains blocked. One restricted representation-theoretic gap theorem is now proved, a bounded-support hierarchy resolves the complete finite S_6 Racah table, and three stable quartic coefficients are exact. The determinant, root gaps, coherent recoupling, and decoding remain open.",
     "title": "No breakthrough yet"
   }
 }

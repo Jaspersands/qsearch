@@ -1,0 +1,4303 @@
+{
+  "claim_gate": {
+    "all_n_root_separation_proved": false,
+    "full_quartic_proved": false,
+    "hidden_involution_decoder_proved": false,
+    "reason": "Three exact quartic coefficients still leave the determinant, all-n root separation, coherent Racah implementation, and reduction-compatible decoder unproved.",
+    "speedup_claim_allowed": false,
+    "third_characteristic_coefficient_proved": true,
+    "third_power_trace_proved": true,
+    "uniform_polynomial_racah_circuit_proved": false
+  },
+  "class_records": [
+    {
+      "active_support_size": 7,
+      "left_shift": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6,
+        5
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        0,
+        0,
+        72,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 32,
+      "raw_canonical_pattern_count": 6618198,
+      "right_shift": [
+        1,
+        0,
+        3,
+        2,
+        5,
+        6,
+        4
+      ],
+      "shifted_character_correlation": "(4*n**6 - 126*n**5 + 1585*n**4 - 10024*n**3 + 32959*n**2 - 52094*n + 29896)/(n*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "72*binomial(n - 3, 4)"
+    },
+    {
+      "active_support_size": 6,
+      "left_shift": [
+        0,
+        1,
+        2,
+        3,
+        5,
+        4
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        0,
+        150,
+        0,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 31,
+      "raw_canonical_pattern_count": 2215462,
+      "right_shift": [
+        1,
+        0,
+        3,
+        5,
+        2,
+        4
+      ],
+      "shifted_character_correlation": "(4*n**6 - 118*n**5 + 1393*n**4 - 8324*n**3 + 26115*n**2 - 39822*n + 22248)/(n*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "150*binomial(n - 3, 3)"
+    },
+    {
+      "active_support_size": 6,
+      "left_shift": [
+        0,
+        1,
+        2,
+        3,
+        5,
+        4
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        0,
+        90,
+        72,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 31,
+      "raw_canonical_pattern_count": 2148418,
+      "right_shift": [
+        1,
+        2,
+        0,
+        4,
+        5,
+        3
+      ],
+      "shifted_character_correlation": "(4*n**5 - 98*n**4 + 897*n**3 - 3750*n**2 + 6928*n - 4344)/(n*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "90*binomial(n - 3, 3) + 72*binomial(n - 3, 4)"
+    },
+    {
+      "active_support_size": 6,
+      "left_shift": [
+        0,
+        1,
+        2,
+        3,
+        5,
+        4
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        0,
+        6,
+        0,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 30,
+      "raw_canonical_pattern_count": 2413759,
+      "right_shift": [
+        1,
+        3,
+        0,
+        2,
+        5,
+        4
+      ],
+      "shifted_character_correlation": "4*(n**6 - 29*n**5 + 335*n**4 - 1953*n**3 + 5976*n**2 - 8914*n + 4892)/(n*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "6*binomial(n - 3, 3)"
+    },
+    {
+      "active_support_size": 5,
+      "left_shift": [
+        0,
+        1,
+        2,
+        4,
+        3
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        64,
+        0,
+        0,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 28,
+      "raw_canonical_pattern_count": 767440,
+      "right_shift": [
+        1,
+        0,
+        3,
+        2,
+        4
+      ],
+      "shifted_character_correlation": "(4*n**5 - 90*n**4 + 771*n**3 - 3071*n**2 + 5490*n - 3368)/(n*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "64*binomial(n - 3, 2)"
+    },
+    {
+      "active_support_size": 5,
+      "left_shift": [
+        0,
+        1,
+        2,
+        4,
+        3
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        6,
+        0,
+        0,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 28,
+      "raw_canonical_pattern_count": 821528,
+      "right_shift": [
+        1,
+        2,
+        0,
+        3,
+        4
+      ],
+      "shifted_character_correlation": "2*(2*n**4 - 36*n**3 + 220*n**2 - 507*n + 354)/(n*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "6*binomial(n - 3, 2)"
+    },
+    {
+      "active_support_size": 5,
+      "left_shift": [
+        0,
+        1,
+        2,
+        4,
+        3
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        186,
+        102,
+        0,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 29,
+      "raw_canonical_pattern_count": 701028,
+      "right_shift": [
+        1,
+        3,
+        0,
+        4,
+        2
+      ],
+      "shifted_character_correlation": "(4*n**5 - 90*n**4 + 761*n**3 - 2970*n**2 + 5208*n - 3144)/(n*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "186*binomial(n - 3, 2) + 102*binomial(n - 3, 3)"
+    },
+    {
+      "active_support_size": 6,
+      "left_shift": [
+        0,
+        1,
+        2,
+        4,
+        3,
+        5
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        0,
+        84,
+        0,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 31,
+      "raw_canonical_pattern_count": 2091729,
+      "right_shift": [
+        1,
+        0,
+        3,
+        5,
+        2,
+        4
+      ],
+      "shifted_character_correlation": "2*(2*n**5 - 50*n**4 + 471*n**3 - 2034*n**2 + 3876*n - 2496)/(n*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "84*binomial(n - 3, 3)"
+    },
+    {
+      "active_support_size": 7,
+      "left_shift": [
+        0,
+        1,
+        2,
+        5,
+        3,
+        6,
+        4
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        0,
+        0,
+        24,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 32,
+      "raw_canonical_pattern_count": 5365037,
+      "right_shift": [
+        1,
+        3,
+        0,
+        5,
+        2,
+        6,
+        4
+      ],
+      "shifted_character_correlation": "(4*n**7 - 158*n**6 + 2591*n**5 - 22725*n**4 + 114098*n**3 - 323465*n**2 + 468746*n - 256872)/(n*(n - 6)*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "24*binomial(n - 3, 4)"
+    },
+    {
+      "active_support_size": 4,
+      "left_shift": [
+        0,
+        1,
+        3,
+        2
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        22,
+        50,
+        0,
+        0,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 25,
+      "raw_canonical_pattern_count": 279033,
+      "right_shift": [
+        1,
+        0,
+        3,
+        2
+      ],
+      "shifted_character_correlation": "4*(n**4 - 16*n**3 + 89*n**2 - 193*n + 130)/(n*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "22*n + 50*binomial(n - 3, 2) - 66"
+    },
+    {
+      "active_support_size": 4,
+      "left_shift": [
+        0,
+        1,
+        3,
+        2
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        104,
+        44,
+        0,
+        0,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 25,
+      "raw_canonical_pattern_count": 222102,
+      "right_shift": [
+        1,
+        2,
+        0,
+        3
+      ],
+      "shifted_character_correlation": "(4*n**4 - 66*n**3 + 371*n**2 - 807*n + 542)/(n*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "104*n + 44*binomial(n - 3, 2) - 312"
+    },
+    {
+      "active_support_size": 5,
+      "left_shift": [
+        0,
+        1,
+        3,
+        2,
+        4
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        152,
+        66,
+        0,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 28,
+      "raw_canonical_pattern_count": 635556,
+      "right_shift": [
+        1,
+        3,
+        0,
+        4,
+        2
+      ],
+      "shifted_character_correlation": "(4*n**5 - 92*n**4 + 796*n**3 - 3187*n**2 + 5750*n - 3568)/(n*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "152*binomial(n - 3, 2) + 66*binomial(n - 3, 3)"
+    },
+    {
+      "active_support_size": 8,
+      "left_shift": [
+        0,
+        1,
+        3,
+        4,
+        2,
+        5,
+        7,
+        6
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        360,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 32,
+      "raw_canonical_pattern_count": 13284439,
+      "right_shift": [
+        1,
+        3,
+        0,
+        4,
+        2,
+        6,
+        7,
+        5
+      ],
+      "shifted_character_correlation": "(4*n**7 - 172*n**6 + 3062*n**5 - 29070*n**4 + 157436*n**3 - 479230*n**2 + 741109*n - 430260)/(n*(n - 6)*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "360*binomial(n - 3, 5)"
+    },
+    {
+      "active_support_size": 7,
+      "left_shift": [
+        0,
+        1,
+        3,
+        4,
+        2,
+        6,
+        5
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        0,
+        0,
+        72,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 32,
+      "raw_canonical_pattern_count": 4359887,
+      "right_shift": [
+        1,
+        3,
+        0,
+        4,
+        6,
+        2,
+        5
+      ],
+      "shifted_character_correlation": "(4*n**7 - 166*n**6 + 2863*n**5 - 26439*n**4 + 139932*n**3 - 418686*n**2 + 641076*n - 371490)/(n*(n - 6)*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "72*binomial(n - 3, 4)"
+    },
+    {
+      "active_support_size": 7,
+      "left_shift": [
+        0,
+        1,
+        3,
+        4,
+        2,
+        6,
+        5
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        0,
+        0,
+        72,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 32,
+      "raw_canonical_pattern_count": 4359887,
+      "right_shift": [
+        1,
+        3,
+        0,
+        5,
+        2,
+        6,
+        4
+      ],
+      "shifted_character_correlation": "(4*n**7 - 166*n**6 + 2863*n**5 - 26439*n**4 + 139932*n**3 - 418686*n**2 + 641076*n - 371490)/(n*(n - 6)*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "72*binomial(n - 3, 4)"
+    },
+    {
+      "active_support_size": 6,
+      "left_shift": [
+        0,
+        1,
+        3,
+        5,
+        2,
+        4
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        0,
+        6,
+        0,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 29,
+      "raw_canonical_pattern_count": 2101383,
+      "right_shift": [
+        1,
+        0,
+        3,
+        5,
+        2,
+        4
+      ],
+      "shifted_character_correlation": "4*(n**6 - 31*n**5 + 385*n**4 - 2423*n**3 + 8004*n**2 - 12782*n + 7304)/(n*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "6*binomial(n - 3, 3)"
+    },
+    {
+      "active_support_size": 6,
+      "left_shift": [
+        0,
+        1,
+        3,
+        5,
+        2,
+        4
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        0,
+        72,
+        0,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 30,
+      "raw_canonical_pattern_count": 1698490,
+      "right_shift": [
+        1,
+        2,
+        0,
+        5,
+        3,
+        4
+      ],
+      "shifted_character_correlation": "(4*n**6 - 128*n**5 + 1639*n**4 - 10643*n**3 + 36411*n**2 - 60668*n + 36602)/(n*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "72*binomial(n - 3, 3)"
+    },
+    {
+      "active_support_size": 6,
+      "left_shift": [
+        0,
+        1,
+        3,
+        5,
+        2,
+        4
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        0,
+        48,
+        0,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 30,
+      "raw_canonical_pattern_count": 1566134,
+      "right_shift": [
+        1,
+        3,
+        0,
+        2,
+        5,
+        4
+      ],
+      "shifted_character_correlation": "(4*n**6 - 130*n**5 + 1693*n**4 - 11197*n**3 + 39072*n**2 - 66540*n + 41236)/(n*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "48*binomial(n - 3, 3)"
+    },
+    {
+      "active_support_size": 6,
+      "left_shift": [
+        0,
+        1,
+        3,
+        5,
+        2,
+        4
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        0,
+        30,
+        0,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 29,
+      "raw_canonical_pattern_count": 1699370,
+      "right_shift": [
+        1,
+        3,
+        0,
+        4,
+        2,
+        5
+      ],
+      "shifted_character_correlation": "(4*n**6 - 128*n**5 + 1641*n**4 - 10675*n**3 + 36585*n**2 - 61044*n + 36882)/(n*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "30*binomial(n - 3, 3)"
+    },
+    {
+      "active_support_size": 6,
+      "left_shift": [
+        0,
+        1,
+        3,
+        5,
+        2,
+        4
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        0,
+        30,
+        0,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 29,
+      "raw_canonical_pattern_count": 1699370,
+      "right_shift": [
+        1,
+        3,
+        0,
+        5,
+        4,
+        2
+      ],
+      "shifted_character_correlation": "(4*n**6 - 128*n**5 + 1641*n**4 - 10675*n**3 + 36585*n**2 - 61044*n + 36882)/(n*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "30*binomial(n - 3, 3)"
+    },
+    {
+      "active_support_size": 7,
+      "left_shift": [
+        0,
+        1,
+        3,
+        5,
+        2,
+        4,
+        6
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        0,
+        0,
+        168,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 32,
+      "raw_canonical_pattern_count": 4941644,
+      "right_shift": [
+        1,
+        3,
+        0,
+        5,
+        2,
+        6,
+        4
+      ],
+      "shifted_character_correlation": "(4*n**7 - 160*n**6 + 2660*n**5 - 23685*n**4 + 120915*n**3 - 349121*n**2 + 516170*n - 289344)/(n*(n - 6)*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "168*binomial(n - 3, 4)"
+    },
+    {
+      "active_support_size": 7,
+      "left_shift": [
+        0,
+        1,
+        3,
+        5,
+        2,
+        4,
+        6
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        0,
+        0,
+        96,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 32,
+      "raw_canonical_pattern_count": 4970244,
+      "right_shift": [
+        1,
+        3,
+        0,
+        6,
+        2,
+        4,
+        5
+      ],
+      "shifted_character_correlation": "(4*n**7 - 160*n**6 + 2660*n**5 - 23685*n**4 + 120928*n**3 - 349327*n**2 + 517132*n - 290508)/(n*(n - 6)*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "96*binomial(n - 3, 4)"
+    },
+    {
+      "active_support_size": 7,
+      "left_shift": [
+        0,
+        1,
+        3,
+        6,
+        2,
+        5,
+        4
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        0,
+        0,
+        96,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 32,
+      "raw_canonical_pattern_count": 4970244,
+      "right_shift": [
+        1,
+        3,
+        0,
+        6,
+        5,
+        2,
+        4
+      ],
+      "shifted_character_correlation": "(4*n**7 - 160*n**6 + 2660*n**5 - 23685*n**4 + 120928*n**3 - 349327*n**2 + 517132*n - 290508)/(n*(n - 6)*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "96*binomial(n - 3, 4)"
+    },
+    {
+      "active_support_size": 6,
+      "left_shift": [
+        0,
+        1,
+        4,
+        2,
+        5,
+        3
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        0,
+        120,
+        0,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 30,
+      "raw_canonical_pattern_count": 1686984,
+      "right_shift": [
+        1,
+        3,
+        0,
+        2,
+        5,
+        4
+      ],
+      "shifted_character_correlation": "(4*n**6 - 128*n**5 + 1639*n**4 - 10642*n**3 + 36381*n**2 - 60488*n + 36376)/(n*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "120*binomial(n - 3, 3)"
+    },
+    {
+      "active_support_size": 7,
+      "left_shift": [
+        0,
+        1,
+        4,
+        5,
+        2,
+        6,
+        3
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        0,
+        0,
+        96,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 32,
+      "raw_canonical_pattern_count": 4723805,
+      "right_shift": [
+        1,
+        3,
+        0,
+        5,
+        2,
+        6,
+        4
+      ],
+      "shifted_character_correlation": "(4*n**7 - 164*n**6 + 2791*n**5 - 25406*n**4 + 132396*n**3 - 389445*n**2 + 584798*n - 330930)/(n*(n - 6)*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "96*binomial(n - 3, 4)"
+    },
+    {
+      "active_support_size": 6,
+      "left_shift": [
+        0,
+        1,
+        4,
+        5,
+        3,
+        2
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        0,
+        48,
+        0,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 29,
+      "raw_canonical_pattern_count": 1821100,
+      "right_shift": [
+        1,
+        3,
+        0,
+        5,
+        4,
+        2
+      ],
+      "shifted_character_correlation": "(4*n**6 - 126*n**5 + 1589*n**4 - 10152*n**3 + 34068*n**2 - 55368*n + 32302)/(n*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "48*binomial(n - 3, 3)"
+    },
+    {
+      "active_support_size": 7,
+      "left_shift": [
+        0,
+        1,
+        4,
+        6,
+        5,
+        2,
+        3
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        0,
+        0,
+        96,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 32,
+      "raw_canonical_pattern_count": 4723805,
+      "right_shift": [
+        1,
+        3,
+        0,
+        6,
+        5,
+        2,
+        4
+      ],
+      "shifted_character_correlation": "(4*n**7 - 164*n**6 + 2791*n**5 - 25406*n**4 + 132396*n**3 - 389445*n**2 + 584798*n - 330930)/(n*(n - 6)*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "96*binomial(n - 3, 4)"
+    },
+    {
+      "active_support_size": 3,
+      "left_shift": [
+        0,
+        2,
+        1
+      ],
+      "multiplicities_by_outside_support_count": [
+        27,
+        109,
+        76,
+        18,
+        0,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 18,
+      "raw_canonical_pattern_count": 68146,
+      "right_shift": [
+        1,
+        2,
+        0
+      ],
+      "shifted_character_correlation": "(4*n**3 - 46*n**2 + 149*n - 118)/(n*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "109*n + 76*binomial(n - 3, 2) + 18*binomial(n - 3, 3) - 300"
+    },
+    {
+      "active_support_size": 4,
+      "left_shift": [
+        0,
+        2,
+        1,
+        3
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        36,
+        42,
+        0,
+        0,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 25,
+      "raw_canonical_pattern_count": 206279,
+      "right_shift": [
+        1,
+        0,
+        3,
+        2
+      ],
+      "shifted_character_correlation": "2*(2*n**4 - 34*n**3 + 199*n**2 - 458*n + 324)/(n*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "36*n + 42*binomial(n - 3, 2) - 108"
+    },
+    {
+      "active_support_size": 9,
+      "left_shift": [
+        0,
+        2,
+        1,
+        3,
+        5,
+        4,
+        6,
+        8,
+        7
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        720
+      ],
+      "nonzero_pattern_coefficient_count": 31,
+      "raw_canonical_pattern_count": 32273392,
+      "right_shift": [
+        1,
+        2,
+        0,
+        4,
+        5,
+        3,
+        7,
+        8,
+        6
+      ],
+      "shifted_character_correlation": "(4*n**7 - 186*n**6 + 3571*n**5 - 36432*n**4 + 211069*n**3 - 683406*n**2 + 1116588*n - 680400)/(n*(n - 6)*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "720*binomial(n - 3, 6)"
+    },
+    {
+      "active_support_size": 8,
+      "left_shift": [
+        0,
+        2,
+        1,
+        3,
+        5,
+        4,
+        7,
+        6
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        720,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 32,
+      "raw_canonical_pattern_count": 11268485,
+      "right_shift": [
+        1,
+        2,
+        0,
+        4,
+        6,
+        3,
+        7,
+        5
+      ],
+      "shifted_character_correlation": "2*(2*n**7 - 90*n**6 + 1679*n**5 - 16720*n**4 + 95037*n**3 - 303685*n**2 + 492958*n - 300412)/(n*(n - 6)*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "720*binomial(n - 3, 5)"
+    },
+    {
+      "active_support_size": 7,
+      "left_shift": [
+        0,
+        2,
+        1,
+        3,
+        5,
+        6,
+        4
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        0,
+        0,
+        432,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 32,
+      "raw_canonical_pattern_count": 4520331,
+      "right_shift": [
+        1,
+        2,
+        0,
+        4,
+        3,
+        6,
+        5
+      ],
+      "shifted_character_correlation": "(4*n**7 - 166*n**6 + 2866*n**5 - 26531*n**4 + 140959*n**3 - 423872*n**2 + 652724*n - 380748)/(n*(n - 6)*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "432*binomial(n - 3, 4)"
+    },
+    {
+      "active_support_size": 7,
+      "left_shift": [
+        0,
+        2,
+        1,
+        3,
+        5,
+        6,
+        4
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        0,
+        0,
+        216,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 32,
+      "raw_canonical_pattern_count": 4743763,
+      "right_shift": [
+        1,
+        2,
+        0,
+        4,
+        5,
+        3,
+        6
+      ],
+      "shifted_character_correlation": "2*(2*n**7 - 82*n**6 + 1398*n**5 - 12766*n**4 + 66807*n**3 - 197464*n**2 + 297915*n - 169272)/(n*(n - 6)*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "216*binomial(n - 3, 4)"
+    },
+    {
+      "active_support_size": 7,
+      "left_shift": [
+        0,
+        2,
+        1,
+        3,
+        5,
+        6,
+        4
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        0,
+        0,
+        72,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 32,
+      "raw_canonical_pattern_count": 4378775,
+      "right_shift": [
+        1,
+        3,
+        0,
+        5,
+        2,
+        6,
+        4
+      ],
+      "shifted_character_correlation": "(4*n**7 - 166*n**6 + 2864*n**5 - 26477*n**4 + 140414*n**3 - 421316*n**2 + 647161*n - 376008)/(n*(n - 6)*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "72*binomial(n - 3, 4)"
+    },
+    {
+      "active_support_size": 7,
+      "left_shift": [
+        0,
+        2,
+        1,
+        3,
+        6,
+        4,
+        5
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        0,
+        0,
+        144,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 32,
+      "raw_canonical_pattern_count": 4537109,
+      "right_shift": [
+        1,
+        2,
+        0,
+        4,
+        5,
+        3,
+        6
+      ],
+      "shifted_character_correlation": "(4*n**7 - 166*n**6 + 2868*n**5 - 26579*n**4 + 141411*n**3 - 425948*n**2 + 657334*n - 384648)/(n*(n - 6)*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "144*binomial(n - 3, 4)"
+    },
+    {
+      "active_support_size": 8,
+      "left_shift": [
+        0,
+        2,
+        1,
+        3,
+        6,
+        4,
+        5,
+        7
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1080,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 32,
+      "raw_canonical_pattern_count": 12534519,
+      "right_shift": [
+        1,
+        2,
+        0,
+        4,
+        6,
+        3,
+        7,
+        5
+      ],
+      "shifted_character_correlation": "(4*n**7 - 174*n**6 + 3139*n**5 - 30248*n**4 + 166541*n**3 - 516281*n**2 + 814753*n - 484086)/(n*(n - 6)*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "1080*binomial(n - 3, 5)"
+    },
+    {
+      "active_support_size": 8,
+      "left_shift": [
+        0,
+        2,
+        1,
+        3,
+        6,
+        7,
+        4,
+        5
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1080,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 32,
+      "raw_canonical_pattern_count": 11967670,
+      "right_shift": [
+        1,
+        2,
+        0,
+        4,
+        6,
+        3,
+        7,
+        5
+      ],
+      "shifted_character_correlation": "(4*n**7 - 178*n**6 + 3278*n**5 - 32171*n**4 + 179944*n**3 - 564980*n**2 + 899438*n - 535808)/(n*(n - 6)*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "1080*binomial(n - 3, 5)"
+    },
+    {
+      "active_support_size": 7,
+      "left_shift": [
+        0,
+        2,
+        1,
+        4,
+        3,
+        6,
+        5
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        0,
+        0,
+        144,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 32,
+      "raw_canonical_pattern_count": 4280820,
+      "right_shift": [
+        1,
+        2,
+        0,
+        3,
+        5,
+        6,
+        4
+      ],
+      "shifted_character_correlation": "(4*n**7 - 170*n**6 + 3003*n**5 - 28400*n**4 + 153860*n**3 - 470717*n**2 + 735344*n - 433172)/(n*(n - 6)*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "144*binomial(n - 3, 4)"
+    },
+    {
+      "active_support_size": 7,
+      "left_shift": [
+        0,
+        2,
+        1,
+        4,
+        3,
+        6,
+        5
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        0,
+        0,
+        72,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 32,
+      "raw_canonical_pattern_count": 5151350,
+      "right_shift": [
+        1,
+        2,
+        0,
+        4,
+        3,
+        6,
+        5
+      ],
+      "shifted_character_correlation": "(4*n**7 - 166*n**6 + 2845*n**5 - 25946*n**4 + 134719*n**3 - 392268*n**2 + 577740*n - 315488)/(n*(n - 6)*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "72*binomial(n - 3, 4)"
+    },
+    {
+      "active_support_size": 7,
+      "left_shift": [
+        0,
+        2,
+        1,
+        4,
+        3,
+        6,
+        5
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        0,
+        0,
+        72,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 31,
+      "raw_canonical_pattern_count": 3634942,
+      "right_shift": [
+        1,
+        2,
+        0,
+        5,
+        6,
+        3,
+        4
+      ],
+      "shifted_character_correlation": "(4*n**7 - 174*n**6 + 3149*n**5 - 30534*n**4 + 169719*n**3 - 533068*n**2 + 855620*n - 518912)/(n*(n - 6)*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "72*binomial(n - 3, 4)"
+    },
+    {
+      "active_support_size": 7,
+      "left_shift": [
+        0,
+        2,
+        1,
+        4,
+        3,
+        6,
+        5
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        0,
+        0,
+        144,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 31,
+      "raw_canonical_pattern_count": 3598574,
+      "right_shift": [
+        1,
+        3,
+        0,
+        5,
+        2,
+        6,
+        4
+      ],
+      "shifted_character_correlation": "(4*n**7 - 174*n**6 + 3149*n**5 - 30542*n**4 + 169875*n**3 - 534196*n**2 + 859088*n - 522152)/(n*(n - 6)*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "144*binomial(n - 3, 4)"
+    },
+    {
+      "active_support_size": 6,
+      "left_shift": [
+        0,
+        2,
+        1,
+        4,
+        5,
+        3
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        0,
+        36,
+        0,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 30,
+      "raw_canonical_pattern_count": 1787263,
+      "right_shift": [
+        1,
+        2,
+        0,
+        3,
+        4,
+        5
+      ],
+      "shifted_character_correlation": "(4*n**6 - 130*n**5 + 1687*n**4 - 11082*n**3 + 38227*n**2 - 63752*n + 37974)/(n*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "36*binomial(n - 3, 3)"
+    },
+    {
+      "active_support_size": 6,
+      "left_shift": [
+        0,
+        2,
+        1,
+        4,
+        5,
+        3
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        0,
+        90,
+        72,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 31,
+      "raw_canonical_pattern_count": 1768345,
+      "right_shift": [
+        1,
+        2,
+        0,
+        4,
+        5,
+        3
+      ],
+      "shifted_character_correlation": "(4*n**6 - 130*n**5 + 1681*n**4 - 10974*n**3 + 37519*n**2 - 61772*n + 36024)/(n*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "90*binomial(n - 3, 3) + 72*binomial(n - 3, 4)"
+    },
+    {
+      "active_support_size": 6,
+      "left_shift": [
+        0,
+        2,
+        1,
+        4,
+        5,
+        3
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        0,
+        18,
+        0,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 31,
+      "raw_canonical_pattern_count": 1414111,
+      "right_shift": [
+        1,
+        2,
+        0,
+        5,
+        3,
+        4
+      ],
+      "shifted_character_correlation": "(4*n**6 - 136*n**5 + 1861*n**4 - 12963*n**3 + 47638*n**2 - 85160*n + 55128)/(n*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "18*binomial(n - 3, 3)"
+    },
+    {
+      "active_support_size": 6,
+      "left_shift": [
+        0,
+        2,
+        1,
+        4,
+        5,
+        3
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        0,
+        108,
+        0,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 30,
+      "raw_canonical_pattern_count": 1375643,
+      "right_shift": [
+        1,
+        3,
+        0,
+        2,
+        5,
+        4
+      ],
+      "shifted_character_correlation": "(4*n**6 - 136*n**5 + 1857*n**4 - 12901*n**3 + 47315*n**2 - 84511*n + 54564)/(n*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "108*binomial(n - 3, 3)"
+    },
+    {
+      "active_support_size": 6,
+      "left_shift": [
+        0,
+        2,
+        1,
+        4,
+        5,
+        3
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        0,
+        54,
+        0,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 31,
+      "raw_canonical_pattern_count": 1461091,
+      "right_shift": [
+        1,
+        3,
+        0,
+        4,
+        2,
+        5
+      ],
+      "shifted_character_correlation": "(4*n**6 - 134*n**5 + 1799*n**4 - 12266*n**3 + 44078*n**2 - 76975*n + 48346)/(n*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "54*binomial(n - 3, 3)"
+    },
+    {
+      "active_support_size": 6,
+      "left_shift": [
+        0,
+        2,
+        1,
+        5,
+        3,
+        4
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        0,
+        48,
+        0,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 31,
+      "raw_canonical_pattern_count": 1480559,
+      "right_shift": [
+        1,
+        0,
+        3,
+        5,
+        2,
+        4
+      ],
+      "shifted_character_correlation": "(4*n**6 - 134*n**5 + 1799*n**4 - 12270*n**3 + 44128*n**2 - 77175*n + 48596)/(n*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "48*binomial(n - 3, 3)"
+    },
+    {
+      "active_support_size": 6,
+      "left_shift": [
+        0,
+        2,
+        1,
+        5,
+        3,
+        4
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        0,
+        36,
+        0,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 30,
+      "raw_canonical_pattern_count": 1369337,
+      "right_shift": [
+        1,
+        3,
+        0,
+        4,
+        2,
+        5
+      ],
+      "shifted_character_correlation": "(4*n**6 - 136*n**5 + 1855*n**4 - 12865*n**3 + 47079*n**2 - 83851*n + 53914)/(n*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "36*binomial(n - 3, 3)"
+    },
+    {
+      "active_support_size": 7,
+      "left_shift": [
+        0,
+        2,
+        1,
+        5,
+        3,
+        4,
+        6
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        0,
+        0,
+        216,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 32,
+      "raw_canonical_pattern_count": 4085731,
+      "right_shift": [
+        1,
+        3,
+        0,
+        5,
+        2,
+        6,
+        4
+      ],
+      "shifted_character_correlation": "(4*n**7 - 168*n**6 + 2938*n**5 - 27566*n**4 + 148525*n**3 - 453240*n**2 + 709012*n - 420684)/(n*(n - 6)*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "216*binomial(n - 3, 4)"
+    },
+    {
+      "active_support_size": 7,
+      "left_shift": [
+        0,
+        2,
+        1,
+        5,
+        3,
+        4,
+        6
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        0,
+        0,
+        216,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 32,
+      "raw_canonical_pattern_count": 4085731,
+      "right_shift": [
+        1,
+        3,
+        0,
+        6,
+        2,
+        4,
+        5
+      ],
+      "shifted_character_correlation": "(4*n**7 - 168*n**6 + 2938*n**5 - 27566*n**4 + 148525*n**3 - 453240*n**2 + 709012*n - 420684)/(n*(n - 6)*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "216*binomial(n - 3, 4)"
+    },
+    {
+      "active_support_size": 7,
+      "left_shift": [
+        0,
+        2,
+        1,
+        5,
+        4,
+        6,
+        3
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        0,
+        0,
+        72,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 32,
+      "raw_canonical_pattern_count": 4378775,
+      "right_shift": [
+        1,
+        3,
+        0,
+        5,
+        2,
+        6,
+        4
+      ],
+      "shifted_character_correlation": "(4*n**7 - 166*n**6 + 2864*n**5 - 26477*n**4 + 140414*n**3 - 421316*n**2 + 647161*n - 376008)/(n*(n - 6)*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "72*binomial(n - 3, 4)"
+    },
+    {
+      "active_support_size": 7,
+      "left_shift": [
+        0,
+        2,
+        1,
+        5,
+        6,
+        3,
+        4
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        0,
+        0,
+        216,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 31,
+      "raw_canonical_pattern_count": 3889372,
+      "right_shift": [
+        1,
+        3,
+        0,
+        5,
+        2,
+        6,
+        4
+      ],
+      "shifted_character_correlation": "(4*n**7 - 172*n**6 + 3073*n**5 - 29393*n**4 + 161085*n**3 - 498728*n**2 + 788954*n - 470912)/(n*(n - 6)*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "216*binomial(n - 3, 4)"
+    },
+    {
+      "active_support_size": 6,
+      "left_shift": [
+        0,
+        2,
+        3,
+        1,
+        5,
+        4
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        0,
+        174,
+        0,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 29,
+      "raw_canonical_pattern_count": 1465549,
+      "right_shift": [
+        1,
+        0,
+        3,
+        5,
+        2,
+        4
+      ],
+      "shifted_character_correlation": "(4*n**6 - 134*n**5 + 1797*n**4 - 12230*n**3 + 43857*n**2 - 76446*n + 47914)/(n*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "174*binomial(n - 3, 3)"
+    },
+    {
+      "active_support_size": 6,
+      "left_shift": [
+        0,
+        2,
+        3,
+        1,
+        5,
+        4
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        0,
+        108,
+        0,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 31,
+      "raw_canonical_pattern_count": 1360633,
+      "right_shift": [
+        1,
+        0,
+        4,
+        2,
+        5,
+        3
+      ],
+      "shifted_character_correlation": "(4*n**6 - 136*n**5 + 1855*n**4 - 12861*n**3 + 47044*n**2 - 83782*n + 53882)/(n*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "108*binomial(n - 3, 3)"
+    },
+    {
+      "active_support_size": 6,
+      "left_shift": [
+        0,
+        2,
+        3,
+        1,
+        5,
+        4
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        0,
+        138,
+        0,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 31,
+      "raw_canonical_pattern_count": 1452957,
+      "right_shift": [
+        1,
+        2,
+        0,
+        4,
+        5,
+        3
+      ],
+      "shifted_character_correlation": "(4*n**6 - 134*n**5 + 1797*n**4 - 12222*n**3 + 43756*n**2 - 76059*n + 47506)/(n*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "138*binomial(n - 3, 3)"
+    },
+    {
+      "active_support_size": 5,
+      "left_shift": [
+        0,
+        2,
+        3,
+        4,
+        1
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        134,
+        0,
+        0,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 29,
+      "raw_canonical_pattern_count": 494293,
+      "right_shift": [
+        1,
+        3,
+        0,
+        4,
+        2
+      ],
+      "shifted_character_correlation": "(4*n**5 - 102*n**4 + 985*n**3 - 4420*n**2 + 8930*n - 6078)/(n*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "134*binomial(n - 3, 2)"
+    },
+    {
+      "active_support_size": 5,
+      "left_shift": [
+        0,
+        2,
+        4,
+        1,
+        3
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        108,
+        0,
+        0,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 29,
+      "raw_canonical_pattern_count": 549137,
+      "right_shift": [
+        1,
+        0,
+        2,
+        4,
+        3
+      ],
+      "shifted_character_correlation": "(4*n**5 - 100*n**4 + 947*n**3 - 4168*n**2 + 8246*n - 5478)/(n*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "108*binomial(n - 3, 2)"
+    },
+    {
+      "active_support_size": 5,
+      "left_shift": [
+        0,
+        2,
+        4,
+        1,
+        3
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        60,
+        0,
+        0,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 29,
+      "raw_canonical_pattern_count": 504199,
+      "right_shift": [
+        1,
+        0,
+        3,
+        2,
+        4
+      ],
+      "shifted_character_correlation": "(4*n**5 - 102*n**4 + 987*n**3 - 4450*n**2 + 9052*n - 6220)/(n*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "60*binomial(n - 3, 2)"
+    },
+    {
+      "active_support_size": 5,
+      "left_shift": [
+        0,
+        2,
+        4,
+        1,
+        3
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        108,
+        0,
+        0,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 29,
+      "raw_canonical_pattern_count": 549137,
+      "right_shift": [
+        1,
+        0,
+        4,
+        3,
+        2
+      ],
+      "shifted_character_correlation": "(4*n**5 - 100*n**4 + 947*n**3 - 4168*n**2 + 8246*n - 5478)/(n*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "108*binomial(n - 3, 2)"
+    },
+    {
+      "active_support_size": 5,
+      "left_shift": [
+        0,
+        2,
+        4,
+        1,
+        3
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        82,
+        0,
+        0,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 29,
+      "raw_canonical_pattern_count": 581451,
+      "right_shift": [
+        1,
+        2,
+        0,
+        3,
+        4
+      ],
+      "shifted_character_correlation": "(4*n**5 - 98*n**4 + 905*n**3 - 3855*n**2 + 7294*n - 4562)/(n*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "82*binomial(n - 3, 2)"
+    },
+    {
+      "active_support_size": 5,
+      "left_shift": [
+        0,
+        2,
+        4,
+        1,
+        3
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        68,
+        0,
+        0,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 29,
+      "raw_canonical_pattern_count": 449255,
+      "right_shift": [
+        1,
+        3,
+        0,
+        4,
+        2
+      ],
+      "shifted_character_correlation": "(4*n**5 - 104*n**4 + 1027*n**3 - 4724*n**2 + 9800*n - 6876)/(n*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "68*binomial(n - 3, 2)"
+    },
+    {
+      "active_support_size": 6,
+      "left_shift": [
+        0,
+        2,
+        4,
+        1,
+        3,
+        5
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        0,
+        198,
+        0,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 30,
+      "raw_canonical_pattern_count": 1578795,
+      "right_shift": [
+        1,
+        0,
+        4,
+        2,
+        5,
+        3
+      ],
+      "shifted_character_correlation": "(4*n**6 - 130*n**5 + 1696*n**4 - 11261*n**3 + 39527*n**2 - 67748*n + 42144)/(n*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "198*binomial(n - 3, 3)"
+    },
+    {
+      "active_support_size": 6,
+      "left_shift": [
+        0,
+        2,
+        4,
+        1,
+        3,
+        5
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        0,
+        120,
+        0,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 30,
+      "raw_canonical_pattern_count": 1687531,
+      "right_shift": [
+        1,
+        0,
+        4,
+        5,
+        3,
+        2
+      ],
+      "shifted_character_correlation": "2*(2*n**6 - 64*n**5 + 820*n**4 - 5333*n**3 + 18286*n**2 - 30525*n + 18385)/(n*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "120*binomial(n - 3, 3)"
+    },
+    {
+      "active_support_size": 6,
+      "left_shift": [
+        0,
+        2,
+        4,
+        1,
+        3,
+        5
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        0,
+        198,
+        0,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 30,
+      "raw_canonical_pattern_count": 1578795,
+      "right_shift": [
+        1,
+        0,
+        5,
+        2,
+        3,
+        4
+      ],
+      "shifted_character_correlation": "(4*n**6 - 130*n**5 + 1696*n**4 - 11261*n**3 + 39527*n**2 - 67748*n + 42144)/(n*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "198*binomial(n - 3, 3)"
+    },
+    {
+      "active_support_size": 6,
+      "left_shift": [
+        0,
+        2,
+        4,
+        1,
+        3,
+        5
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        0,
+        138,
+        0,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 30,
+      "raw_canonical_pattern_count": 1546011,
+      "right_shift": [
+        1,
+        2,
+        0,
+        4,
+        5,
+        3
+      ],
+      "shifted_character_correlation": "2*(2*n**6 - 65*n**5 + 847*n**4 - 5610*n**3 + 19616*n**2 - 33447*n + 20669)/(n*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "138*binomial(n - 3, 3)"
+    },
+    {
+      "active_support_size": 6,
+      "left_shift": [
+        0,
+        2,
+        4,
+        1,
+        3,
+        5
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        0,
+        72,
+        0,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 30,
+      "raw_canonical_pattern_count": 1653573,
+      "right_shift": [
+        1,
+        2,
+        0,
+        5,
+        3,
+        4
+      ],
+      "shifted_character_correlation": "2*(2*n**6 - 64*n**5 + 819*n**4 - 5313*n**3 + 18144*n**2 - 30099*n + 17966)/(n*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "72*binomial(n - 3, 3)"
+    },
+    {
+      "active_support_size": 6,
+      "left_shift": [
+        0,
+        2,
+        4,
+        5,
+        1,
+        3
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        0,
+        54,
+        0,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 31,
+      "raw_canonical_pattern_count": 1452957,
+      "right_shift": [
+        1,
+        3,
+        0,
+        5,
+        4,
+        2
+      ],
+      "shifted_character_correlation": "(4*n**6 - 134*n**5 + 1797*n**4 - 12222*n**3 + 43756*n**2 - 76059*n + 47506)/(n*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "54*binomial(n - 3, 3)"
+    },
+    {
+      "active_support_size": 6,
+      "left_shift": [
+        0,
+        2,
+        5,
+        3,
+        1,
+        4
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        0,
+        174,
+        0,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 30,
+      "raw_canonical_pattern_count": 1566681,
+      "right_shift": [
+        1,
+        3,
+        0,
+        2,
+        5,
+        4
+      ],
+      "shifted_character_correlation": "(4*n**6 - 130*n**5 + 1694*n**4 - 11221*n**3 + 39263*n**2 - 67102*n + 41630)/(n*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "174*binomial(n - 3, 3)"
+    },
+    {
+      "active_support_size": 7,
+      "left_shift": [
+        0,
+        3,
+        1,
+        2,
+        4,
+        6,
+        5
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        0,
+        0,
+        312,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 31,
+      "raw_canonical_pattern_count": 4371871,
+      "right_shift": [
+        1,
+        3,
+        0,
+        5,
+        2,
+        6,
+        4
+      ],
+      "shifted_character_correlation": "(4*n**7 - 166*n**6 + 2864*n**5 - 26473*n**4 + 140344*n**3 - 420892*n**2 + 646115*n - 375126)/(n*(n - 6)*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "312*binomial(n - 3, 4)"
+    },
+    {
+      "active_support_size": 7,
+      "left_shift": [
+        0,
+        3,
+        1,
+        2,
+        4,
+        6,
+        5
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        0,
+        0,
+        312,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 31,
+      "raw_canonical_pattern_count": 4371871,
+      "right_shift": [
+        1,
+        4,
+        0,
+        2,
+        6,
+        3,
+        5
+      ],
+      "shifted_character_correlation": "(4*n**7 - 166*n**6 + 2864*n**5 - 26473*n**4 + 140344*n**3 - 420892*n**2 + 646115*n - 375126)/(n*(n - 6)*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "312*binomial(n - 3, 4)"
+    },
+    {
+      "active_support_size": 7,
+      "left_shift": [
+        0,
+        3,
+        1,
+        2,
+        4,
+        6,
+        5
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        0,
+        0,
+        216,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 32,
+      "raw_canonical_pattern_count": 4113253,
+      "right_shift": [
+        1,
+        4,
+        0,
+        6,
+        3,
+        2,
+        5
+      ],
+      "shifted_character_correlation": "(4*n**7 - 168*n**6 + 2938*n**5 - 27564*n**4 + 148501*n**3 - 453220*n**2 + 709489*n - 421554)/(n*(n - 6)*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "216*binomial(n - 3, 4)"
+    },
+    {
+      "active_support_size": 6,
+      "left_shift": [
+        0,
+        3,
+        1,
+        2,
+        5,
+        4
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        0,
+        84,
+        0,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 31,
+      "raw_canonical_pattern_count": 1366939,
+      "right_shift": [
+        1,
+        2,
+        0,
+        4,
+        5,
+        3
+      ],
+      "shifted_character_correlation": "(4*n**6 - 136*n**5 + 1857*n**4 - 12897*n**3 + 47280*n**2 - 84442*n + 54532)/(n*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "84*binomial(n - 3, 3)"
+    },
+    {
+      "active_support_size": 6,
+      "left_shift": [
+        0,
+        3,
+        1,
+        2,
+        5,
+        4
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        0,
+        150,
+        0,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 29,
+      "raw_canonical_pattern_count": 1786161,
+      "right_shift": [
+        1,
+        3,
+        0,
+        2,
+        5,
+        4
+      ],
+      "shifted_character_correlation": "(4*n**6 - 130*n**5 + 1681*n**4 - 10968*n**3 + 37460*n**2 - 61635*n + 35954)/(n*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "150*binomial(n - 3, 3)"
+    },
+    {
+      "active_support_size": 6,
+      "left_shift": [
+        0,
+        3,
+        1,
+        2,
+        5,
+        4
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        0,
+        54,
+        0,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 30,
+      "raw_canonical_pattern_count": 1479647,
+      "right_shift": [
+        1,
+        3,
+        0,
+        4,
+        2,
+        5
+      ],
+      "shifted_character_correlation": "(4*n**6 - 134*n**5 + 1801*n**4 - 12302*n**3 + 44320*n**2 - 77686*n + 49084)/(n*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "54*binomial(n - 3, 3)"
+    },
+    {
+      "active_support_size": 6,
+      "left_shift": [
+        0,
+        3,
+        1,
+        2,
+        5,
+        4
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        0,
+        54,
+        0,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 30,
+      "raw_canonical_pattern_count": 1479647,
+      "right_shift": [
+        1,
+        4,
+        0,
+        2,
+        3,
+        5
+      ],
+      "shifted_character_correlation": "(4*n**6 - 134*n**5 + 1801*n**4 - 12302*n**3 + 44320*n**2 - 77686*n + 49084)/(n*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "54*binomial(n - 3, 3)"
+    },
+    {
+      "active_support_size": 6,
+      "left_shift": [
+        0,
+        3,
+        1,
+        2,
+        5,
+        4
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        0,
+        96,
+        0,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 30,
+      "raw_canonical_pattern_count": 1471855,
+      "right_shift": [
+        1,
+        4,
+        0,
+        3,
+        5,
+        2
+      ],
+      "shifted_character_correlation": "(4*n**6 - 134*n**5 + 1799*n**4 - 12266*n**3 + 44093*n**2 - 77106*n + 48564)/(n*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "96*binomial(n - 3, 3)"
+    },
+    {
+      "active_support_size": 6,
+      "left_shift": [
+        0,
+        3,
+        1,
+        2,
+        5,
+        4
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        0,
+        108,
+        0,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 31,
+      "raw_canonical_pattern_count": 1233501,
+      "right_shift": [
+        1,
+        4,
+        0,
+        5,
+        2,
+        3
+      ],
+      "shifted_character_correlation": "(4*n**6 - 138*n**5 + 1913*n**4 - 13490*n**3 + 50208*n**2 - 90997*n + 59564)/(n*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "108*binomial(n - 3, 3)"
+    },
+    {
+      "active_support_size": 7,
+      "left_shift": [
+        0,
+        3,
+        1,
+        2,
+        6,
+        5,
+        4
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        0,
+        0,
+        336,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 32,
+      "raw_canonical_pattern_count": 4363333,
+      "right_shift": [
+        1,
+        3,
+        0,
+        5,
+        2,
+        6,
+        4
+      ],
+      "shifted_character_correlation": "(4*n**7 - 166*n**6 + 2864*n**5 - 26473*n**4 + 140335*n**3 - 420759*n**2 + 645542*n - 374460)/(n*(n - 6)*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "336*binomial(n - 3, 4)"
+    },
+    {
+      "active_support_size": 7,
+      "left_shift": [
+        0,
+        3,
+        1,
+        2,
+        6,
+        5,
+        4
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        0,
+        0,
+        336,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 32,
+      "raw_canonical_pattern_count": 4363333,
+      "right_shift": [
+        1,
+        4,
+        0,
+        2,
+        6,
+        3,
+        5
+      ],
+      "shifted_character_correlation": "(4*n**7 - 166*n**6 + 2864*n**5 - 26473*n**4 + 140335*n**3 - 420759*n**2 + 645542*n - 374460)/(n*(n - 6)*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "336*binomial(n - 3, 4)"
+    },
+    {
+      "active_support_size": 5,
+      "left_shift": [
+        0,
+        3,
+        1,
+        4,
+        2
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        68,
+        0,
+        0,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 29,
+      "raw_canonical_pattern_count": 549237,
+      "right_shift": [
+        1,
+        2,
+        0,
+        3,
+        4
+      ],
+      "shifted_character_correlation": "(4*n**5 - 100*n**4 + 945*n**3 - 4146*n**2 + 8182*n - 5422)/(n*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "68*binomial(n - 3, 2)"
+    },
+    {
+      "active_support_size": 5,
+      "left_shift": [
+        0,
+        3,
+        1,
+        4,
+        2
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        186,
+        102,
+        0,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 28,
+      "raw_canonical_pattern_count": 591557,
+      "right_shift": [
+        1,
+        3,
+        0,
+        4,
+        2
+      ],
+      "shifted_character_correlation": "(4*n**5 - 98*n**4 + 903*n**3 - 3841*n**2 + 7288*n - 4592)/(n*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "186*binomial(n - 3, 2) + 102*binomial(n - 3, 3)"
+    },
+    {
+      "active_support_size": 5,
+      "left_shift": [
+        0,
+        3,
+        1,
+        4,
+        2
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        64,
+        0,
+        0,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 29,
+      "raw_canonical_pattern_count": 461679,
+      "right_shift": [
+        1,
+        4,
+        0,
+        2,
+        3
+      ],
+      "shifted_character_correlation": "(4*n**5 - 104*n**4 + 1033*n**3 - 4799*n**2 + 10074*n - 7162)/(n*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "64*binomial(n - 3, 2)"
+    },
+    {
+      "active_support_size": 6,
+      "left_shift": [
+        0,
+        3,
+        1,
+        4,
+        2,
+        5
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        0,
+        60,
+        0,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 30,
+      "raw_canonical_pattern_count": 1456773,
+      "right_shift": [
+        1,
+        2,
+        0,
+        5,
+        3,
+        4
+      ],
+      "shifted_character_correlation": "2*(2*n**6 - 66*n**5 + 875*n**4 - 5908*n**3 + 21106*n**2 - 36875*n + 23470)/(n*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "60*binomial(n - 3, 3)"
+    },
+    {
+      "active_support_size": 6,
+      "left_shift": [
+        0,
+        3,
+        1,
+        4,
+        2,
+        5
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        0,
+        114,
+        0,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 30,
+      "raw_canonical_pattern_count": 1678075,
+      "right_shift": [
+        1,
+        3,
+        0,
+        5,
+        4,
+        2
+      ],
+      "shifted_character_correlation": "(4*n**6 - 128*n**5 + 1642*n**4 - 10698*n**3 + 36739*n**2 - 61348*n + 36920)/(n*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "114*binomial(n - 3, 3)"
+    },
+    {
+      "active_support_size": 6,
+      "left_shift": [
+        0,
+        3,
+        1,
+        4,
+        2,
+        5
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        0,
+        84,
+        0,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 30,
+      "raw_canonical_pattern_count": 1589131,
+      "right_shift": [
+        1,
+        4,
+        0,
+        3,
+        5,
+        2
+      ],
+      "shifted_character_correlation": "(4*n**6 - 130*n**5 + 1696*n**4 - 11261*n**3 + 39534*n**2 - 67826*n + 42274)/(n*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "84*binomial(n - 3, 3)"
+    },
+    {
+      "active_support_size": 7,
+      "left_shift": [
+        0,
+        3,
+        1,
+        4,
+        2,
+        5,
+        6
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        0,
+        0,
+        384,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 32,
+      "raw_canonical_pattern_count": 4672217,
+      "right_shift": [
+        1,
+        3,
+        0,
+        6,
+        5,
+        2,
+        4
+      ],
+      "shifted_character_correlation": "(4*n**6 - 138*n**5 + 1903*n**4 - 13278*n**3 + 48597*n**2 - 86002*n + 54688)/(n*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "384*binomial(n - 3, 4)"
+    },
+    {
+      "active_support_size": 6,
+      "left_shift": [
+        0,
+        3,
+        1,
+        5,
+        4,
+        2
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        0,
+        114,
+        0,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 30,
+      "raw_canonical_pattern_count": 1678075,
+      "right_shift": [
+        1,
+        4,
+        0,
+        3,
+        5,
+        2
+      ],
+      "shifted_character_correlation": "(4*n**6 - 128*n**5 + 1642*n**4 - 10698*n**3 + 36739*n**2 - 61348*n + 36920)/(n*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "114*binomial(n - 3, 3)"
+    },
+    {
+      "active_support_size": 7,
+      "left_shift": [
+        0,
+        3,
+        4,
+        1,
+        2,
+        6,
+        5
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        0,
+        0,
+        216,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 32,
+      "raw_canonical_pattern_count": 3849418,
+      "right_shift": [
+        1,
+        3,
+        0,
+        4,
+        6,
+        2,
+        5
+      ],
+      "shifted_character_correlation": "(4*n**7 - 172*n**6 + 3071*n**5 - 29333*n**4 + 160415*n**3 - 495267*n**2 + 780782*n - 464024)/(n*(n - 6)*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "216*binomial(n - 3, 4)"
+    },
+    {
+      "active_support_size": 7,
+      "left_shift": [
+        0,
+        3,
+        4,
+        1,
+        2,
+        6,
+        5
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        0,
+        0,
+        384,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 32,
+      "raw_canonical_pattern_count": 4175052,
+      "right_shift": [
+        1,
+        3,
+        0,
+        5,
+        2,
+        6,
+        4
+      ],
+      "shifted_character_correlation": "(4*n**7 - 170*n**6 + 2995*n**5 - 28184*n**4 + 151623*n**3 - 459725*n**2 + 710090*n - 411812)/(n*(n - 6)*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "384*binomial(n - 3, 4)"
+    },
+    {
+      "active_support_size": 6,
+      "left_shift": [
+        0,
+        3,
+        4,
+        1,
+        5,
+        2
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        0,
+        96,
+        0,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 29,
+      "raw_canonical_pattern_count": 1315709,
+      "right_shift": [
+        1,
+        2,
+        0,
+        4,
+        5,
+        3
+      ],
+      "shifted_character_correlation": "(4*n**6 - 136*n**5 + 1853*n**4 - 12817*n**3 + 46721*n**2 - 82840*n + 52940)/(n*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "96*binomial(n - 3, 3)"
+    },
+    {
+      "active_support_size": 6,
+      "left_shift": [
+        0,
+        3,
+        4,
+        1,
+        5,
+        2
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        0,
+        198,
+        0,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 31,
+      "raw_canonical_pattern_count": 1473863,
+      "right_shift": [
+        1,
+        3,
+        0,
+        2,
+        5,
+        4
+      ],
+      "shifted_character_correlation": "(4*n**6 - 134*n**5 + 1795*n**4 - 12188*n**3 + 43546*n**2 - 75529*n + 47122)/(n*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "198*binomial(n - 3, 3)"
+    },
+    {
+      "active_support_size": 6,
+      "left_shift": [
+        0,
+        3,
+        4,
+        1,
+        5,
+        2
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        0,
+        54,
+        0,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 31,
+      "raw_canonical_pattern_count": 1480169,
+      "right_shift": [
+        1,
+        3,
+        0,
+        4,
+        2,
+        5
+      ],
+      "shifted_character_correlation": "(4*n**6 - 134*n**5 + 1797*n**4 - 12224*n**3 + 43782*n**2 - 76189*n + 47772)/(n*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "54*binomial(n - 3, 3)"
+    },
+    {
+      "active_support_size": 6,
+      "left_shift": [
+        0,
+        3,
+        4,
+        1,
+        5,
+        2
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        0,
+        114,
+        0,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 31,
+      "raw_canonical_pattern_count": 1574895,
+      "right_shift": [
+        1,
+        3,
+        0,
+        5,
+        4,
+        2
+      ],
+      "shifted_character_correlation": "(4*n**6 - 132*n**5 + 1741*n**4 - 11625*n**3 + 40763*n**2 - 69153*n + 41944)/(n*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "114*binomial(n - 3, 3)"
+    },
+    {
+      "active_support_size": 6,
+      "left_shift": [
+        0,
+        3,
+        4,
+        1,
+        5,
+        2
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        0,
+        30,
+        0,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 31,
+      "raw_canonical_pattern_count": 1592877,
+      "right_shift": [
+        1,
+        4,
+        0,
+        3,
+        5,
+        2
+      ],
+      "shifted_character_correlation": "(4*n**6 - 132*n**5 + 1741*n**4 - 11629*n**3 + 40822*n**2 - 69433*n + 42324)/(n*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "30*binomial(n - 3, 3)"
+    },
+    {
+      "active_support_size": 7,
+      "left_shift": [
+        0,
+        3,
+        4,
+        1,
+        5,
+        2,
+        6
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        0,
+        0,
+        168,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 32,
+      "raw_canonical_pattern_count": 4689047,
+      "right_shift": [
+        1,
+        3,
+        0,
+        6,
+        5,
+        2,
+        4
+      ],
+      "shifted_character_correlation": "(4*n**7 - 164*n**6 + 2790*n**5 - 25384*n**4 + 132217*n**3 - 388722*n**2 + 583098*n - 328962)/(n*(n - 6)*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "168*binomial(n - 3, 4)"
+    },
+    {
+      "active_support_size": 5,
+      "left_shift": [
+        0,
+        3,
+        4,
+        2,
+        1
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        40,
+        0,
+        0,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 29,
+      "raw_canonical_pattern_count": 536613,
+      "right_shift": [
+        1,
+        2,
+        0,
+        3,
+        4
+      ],
+      "shifted_character_correlation": "(4*n**5 - 100*n**4 + 943*n**3 - 4115*n**2 + 8036*n - 5248)/(n*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "40*binomial(n - 3, 2)"
+    },
+    {
+      "active_support_size": 5,
+      "left_shift": [
+        0,
+        3,
+        4,
+        2,
+        1
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        106,
+        0,
+        0,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 29,
+      "raw_canonical_pattern_count": 494193,
+      "right_shift": [
+        1,
+        3,
+        0,
+        4,
+        2
+      ],
+      "shifted_character_correlation": "(4*n**5 - 102*n**4 + 987*n**3 - 4442*n**2 + 8994*n - 6134)/(n*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "106*binomial(n - 3, 2)"
+    },
+    {
+      "active_support_size": 5,
+      "left_shift": [
+        0,
+        3,
+        4,
+        2,
+        1
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        106,
+        0,
+        0,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 29,
+      "raw_canonical_pattern_count": 494193,
+      "right_shift": [
+        1,
+        4,
+        0,
+        2,
+        3
+      ],
+      "shifted_character_correlation": "(4*n**5 - 102*n**4 + 987*n**3 - 4442*n**2 + 8994*n - 6134)/(n*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "106*binomial(n - 3, 2)"
+    },
+    {
+      "active_support_size": 6,
+      "left_shift": [
+        0,
+        3,
+        4,
+        5,
+        2,
+        1
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        0,
+        198,
+        0,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 31,
+      "raw_canonical_pattern_count": 1473863,
+      "right_shift": [
+        1,
+        4,
+        0,
+        5,
+        2,
+        3
+      ],
+      "shifted_character_correlation": "(4*n**6 - 134*n**5 + 1795*n**4 - 12188*n**3 + 43546*n**2 - 75529*n + 47122)/(n*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "198*binomial(n - 3, 3)"
+    },
+    {
+      "active_support_size": 6,
+      "left_shift": [
+        0,
+        3,
+        5,
+        1,
+        2,
+        4
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        0,
+        102,
+        0,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 29,
+      "raw_canonical_pattern_count": 1317195,
+      "right_shift": [
+        1,
+        4,
+        0,
+        5,
+        2,
+        3
+      ],
+      "shifted_character_correlation": "(4*n**6 - 136*n**5 + 1853*n**4 - 12817*n**3 + 46712*n**2 - 82760*n + 52810)/(n*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "102*binomial(n - 3, 3)"
+    },
+    {
+      "active_support_size": 7,
+      "left_shift": [
+        0,
+        3,
+        5,
+        1,
+        6,
+        2,
+        4
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        0,
+        0,
+        216,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 32,
+      "raw_canonical_pattern_count": 3849418,
+      "right_shift": [
+        1,
+        4,
+        0,
+        5,
+        6,
+        2,
+        3
+      ],
+      "shifted_character_correlation": "(4*n**7 - 172*n**6 + 3071*n**5 - 29333*n**4 + 160415*n**3 - 495267*n**2 + 780782*n - 464024)/(n*(n - 6)*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "216*binomial(n - 3, 4)"
+    },
+    {
+      "active_support_size": 6,
+      "left_shift": [
+        0,
+        3,
+        5,
+        4,
+        1,
+        2
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        0,
+        96,
+        0,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 29,
+      "raw_canonical_pattern_count": 1315709,
+      "right_shift": [
+        1,
+        2,
+        0,
+        4,
+        5,
+        3
+      ],
+      "shifted_character_correlation": "(4*n**6 - 136*n**5 + 1853*n**4 - 12817*n**3 + 46721*n**2 - 82840*n + 52940)/(n*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "96*binomial(n - 3, 3)"
+    },
+    {
+      "active_support_size": 6,
+      "left_shift": [
+        0,
+        3,
+        5,
+        4,
+        1,
+        2
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        0,
+        102,
+        0,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 29,
+      "raw_canonical_pattern_count": 1317195,
+      "right_shift": [
+        1,
+        3,
+        0,
+        2,
+        5,
+        4
+      ],
+      "shifted_character_correlation": "(4*n**6 - 136*n**5 + 1853*n**4 - 12817*n**3 + 46712*n**2 - 82760*n + 52810)/(n*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "102*binomial(n - 3, 3)"
+    },
+    {
+      "active_support_size": 6,
+      "left_shift": [
+        0,
+        3,
+        5,
+        4,
+        1,
+        2
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        0,
+        30,
+        0,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 31,
+      "raw_canonical_pattern_count": 1592877,
+      "right_shift": [
+        1,
+        3,
+        0,
+        4,
+        2,
+        5
+      ],
+      "shifted_character_correlation": "(4*n**6 - 132*n**5 + 1741*n**4 - 11629*n**3 + 40822*n**2 - 69433*n + 42324)/(n*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "30*binomial(n - 3, 3)"
+    },
+    {
+      "active_support_size": 6,
+      "left_shift": [
+        0,
+        3,
+        5,
+        4,
+        1,
+        2
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        0,
+        114,
+        0,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 31,
+      "raw_canonical_pattern_count": 1574895,
+      "right_shift": [
+        1,
+        3,
+        0,
+        5,
+        4,
+        2
+      ],
+      "shifted_character_correlation": "(4*n**6 - 132*n**5 + 1741*n**4 - 11625*n**3 + 40763*n**2 - 69153*n + 41944)/(n*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "114*binomial(n - 3, 3)"
+    },
+    {
+      "active_support_size": 6,
+      "left_shift": [
+        0,
+        3,
+        5,
+        4,
+        1,
+        2
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        0,
+        54,
+        0,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 31,
+      "raw_canonical_pattern_count": 1480169,
+      "right_shift": [
+        1,
+        4,
+        0,
+        3,
+        5,
+        2
+      ],
+      "shifted_character_correlation": "(4*n**6 - 134*n**5 + 1797*n**4 - 12224*n**3 + 43782*n**2 - 76189*n + 47772)/(n*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "54*binomial(n - 3, 3)"
+    },
+    {
+      "active_support_size": 2,
+      "left_shift": [
+        1,
+        0
+      ],
+      "multiplicities_by_outside_support_count": [
+        9,
+        13,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 15,
+      "raw_canonical_pattern_count": 21563,
+      "right_shift": [
+        0,
+        1
+      ],
+      "shifted_character_correlation": "4*(n - 6)/n",
+      "symbolic_multiplicity": "13*n - 30"
+    },
+    {
+      "active_support_size": 6,
+      "left_shift": [
+        1,
+        0,
+        3,
+        2,
+        5,
+        4
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        0,
+        36,
+        0,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 31,
+      "raw_canonical_pattern_count": 1270147,
+      "right_shift": [
+        0,
+        2,
+        4,
+        1,
+        5,
+        3
+      ],
+      "shifted_character_correlation": "2*(n - 6)*(2*n**5 - 58*n**4 + 632*n**3 - 3160*n**2 + 6965*n - 5056)/(n*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "36*binomial(n - 3, 3)"
+    },
+    {
+      "active_support_size": 6,
+      "left_shift": [
+        1,
+        0,
+        3,
+        2,
+        5,
+        4
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        0,
+        84,
+        0,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 31,
+      "raw_canonical_pattern_count": 1540509,
+      "right_shift": [
+        1,
+        0,
+        3,
+        5,
+        2,
+        4
+      ],
+      "shifted_character_correlation": "2*(2*n**6 - 68*n**5 + 916*n**4 - 6195*n**3 + 21824*n**2 - 36859*n + 21934)/(n*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "84*binomial(n - 3, 3)"
+    },
+    {
+      "active_support_size": 6,
+      "left_shift": [
+        1,
+        0,
+        3,
+        2,
+        5,
+        4
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        0,
+        60,
+        0,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 31,
+      "raw_canonical_pattern_count": 1270147,
+      "right_shift": [
+        1,
+        2,
+        0,
+        4,
+        5,
+        3
+      ],
+      "shifted_character_correlation": "2*(n - 6)*(2*n**5 - 58*n**4 + 632*n**3 - 3160*n**2 + 6965*n - 5056)/(n*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "60*binomial(n - 3, 3)"
+    },
+    {
+      "active_support_size": 6,
+      "left_shift": [
+        1,
+        0,
+        3,
+        2,
+        5,
+        4
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        0,
+        108,
+        0,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 30,
+      "raw_canonical_pattern_count": 1146138,
+      "right_shift": [
+        2,
+        3,
+        0,
+        5,
+        1,
+        4
+      ],
+      "shifted_character_correlation": "(4*n**6 - 142*n**5 + 2018*n**4 - 14537*n**3 + 55052*n**2 - 101001*n + 66402)/(n*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "108*binomial(n - 3, 3)"
+    },
+    {
+      "active_support_size": 5,
+      "left_shift": [
+        1,
+        0,
+        3,
+        4,
+        2
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        6,
+        0,
+        0,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 28,
+      "raw_canonical_pattern_count": 628601,
+      "right_shift": [
+        0,
+        1,
+        3,
+        4,
+        2
+      ],
+      "shifted_character_correlation": "4*(n**5 - 25*n**4 + 233*n**3 - 992*n**2 + 1860*n - 1149)/(n*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "6*binomial(n - 3, 2)"
+    },
+    {
+      "active_support_size": 5,
+      "left_shift": [
+        1,
+        0,
+        3,
+        4,
+        2
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        60,
+        0,
+        0,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 29,
+      "raw_canonical_pattern_count": 465439,
+      "right_shift": [
+        0,
+        2,
+        1,
+        4,
+        3
+      ],
+      "shifted_character_correlation": "(4*n**5 - 106*n**4 + 1060*n**3 - 4907*n**2 + 10154*n - 6994)/(n*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "60*binomial(n - 3, 2)"
+    },
+    {
+      "active_support_size": 5,
+      "left_shift": [
+        1,
+        0,
+        3,
+        4,
+        2
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        40,
+        0,
+        0,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 28,
+      "raw_canonical_pattern_count": 495523,
+      "right_shift": [
+        0,
+        2,
+        3,
+        1,
+        4
+      ],
+      "shifted_character_correlation": "(4*n**5 - 104*n**4 + 1016*n**3 - 4572*n**2 + 9147*n - 6040)/(n*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "40*binomial(n - 3, 2)"
+    },
+    {
+      "active_support_size": 5,
+      "left_shift": [
+        1,
+        0,
+        3,
+        4,
+        2
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        64,
+        0,
+        0,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 29,
+      "raw_canonical_pattern_count": 580413,
+      "right_shift": [
+        1,
+        0,
+        2,
+        4,
+        3
+      ],
+      "shifted_character_correlation": "(4*n**5 - 102*n**4 + 972*n**3 - 4243*n**2 + 8175*n - 5190)/(n*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "64*binomial(n - 3, 2)"
+    },
+    {
+      "active_support_size": 5,
+      "left_shift": [
+        1,
+        0,
+        3,
+        4,
+        2
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        68,
+        0,
+        0,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 29,
+      "raw_canonical_pattern_count": 504575,
+      "right_shift": [
+        1,
+        2,
+        0,
+        3,
+        4
+      ],
+      "shifted_character_correlation": "(4*n**5 - 104*n**4 + 1018*n**3 - 4602*n**2 + 9283*n - 6220)/(n*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "68*binomial(n - 3, 2)"
+    },
+    {
+      "active_support_size": 5,
+      "left_shift": [
+        1,
+        0,
+        3,
+        4,
+        2
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        152,
+        66,
+        0,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 29,
+      "raw_canonical_pattern_count": 499169,
+      "right_shift": [
+        1,
+        3,
+        0,
+        4,
+        2
+      ],
+      "shifted_character_correlation": "(4*n**5 - 104*n**4 + 1012*n**3 - 4524*n**2 + 8965*n - 5830)/(n*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "152*binomial(n - 3, 2) + 66*binomial(n - 3, 3)"
+    },
+    {
+      "active_support_size": 5,
+      "left_shift": [
+        1,
+        0,
+        3,
+        4,
+        2
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        64,
+        0,
+        0,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 29,
+      "raw_canonical_pattern_count": 422657,
+      "right_shift": [
+        2,
+        0,
+        4,
+        1,
+        3
+      ],
+      "shifted_character_correlation": "(4*n**5 - 108*n**4 + 1106*n**3 - 5260*n**2 + 11207*n - 7978)/(n*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "64*binomial(n - 3, 2)"
+    },
+    {
+      "active_support_size": 5,
+      "left_shift": [
+        1,
+        0,
+        3,
+        4,
+        2
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        50,
+        0,
+        0,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 28,
+      "raw_canonical_pattern_count": 411557,
+      "right_shift": [
+        2,
+        3,
+        0,
+        1,
+        4
+      ],
+      "shifted_character_correlation": "2*(2*n**5 - 54*n**4 + 552*n**3 - 2617*n**2 + 5554*n - 3917)/(n*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "50*binomial(n - 3, 2)"
+    },
+    {
+      "active_support_size": 5,
+      "left_shift": [
+        1,
+        0,
+        3,
+        4,
+        2
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        64,
+        0,
+        0,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 29,
+      "raw_canonical_pattern_count": 377827,
+      "right_shift": [
+        2,
+        3,
+        4,
+        0,
+        1
+      ],
+      "shifted_character_correlation": "(4*n**5 - 110*n**4 + 1152*n**3 - 5617*n**2 + 12297*n - 8998)/(n*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "64*binomial(n - 3, 2)"
+    },
+    {
+      "active_support_size": 5,
+      "left_shift": [
+        1,
+        0,
+        4,
+        2,
+        3
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        12,
+        0,
+        0,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 29,
+      "raw_canonical_pattern_count": 465439,
+      "right_shift": [
+        0,
+        2,
+        3,
+        1,
+        4
+      ],
+      "shifted_character_correlation": "(4*n**5 - 106*n**4 + 1060*n**3 - 4907*n**2 + 10154*n - 6994)/(n*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "12*binomial(n - 3, 2)"
+    },
+    {
+      "active_support_size": 5,
+      "left_shift": [
+        1,
+        0,
+        4,
+        2,
+        3
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        68,
+        0,
+        0,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 25,
+      "raw_canonical_pattern_count": 416963,
+      "right_shift": [
+        2,
+        3,
+        4,
+        0,
+        1
+      ],
+      "shifted_character_correlation": "2*(2*n**5 - 54*n**4 + 555*n**3 - 2656*n**2 + 5713*n - 4112)/(n*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "68*binomial(n - 3, 2)"
+    },
+    {
+      "active_support_size": 6,
+      "left_shift": [
+        1,
+        0,
+        4,
+        5,
+        2,
+        3
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        0,
+        84,
+        0,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 31,
+      "raw_canonical_pattern_count": 1379580,
+      "right_shift": [
+        0,
+        2,
+        4,
+        1,
+        5,
+        3
+      ],
+      "shifted_character_correlation": "(4*n**6 - 138*n**5 + 1898*n**4 - 13187*n**3 + 48030*n**2 - 84531*n + 53118)/(n*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "84*binomial(n - 3, 3)"
+    },
+    {
+      "active_support_size": 6,
+      "left_shift": [
+        1,
+        0,
+        5,
+        4,
+        3,
+        2
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        0,
+        12,
+        0,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 29,
+      "raw_canonical_pattern_count": 1043413,
+      "right_shift": [
+        2,
+        4,
+        3,
+        0,
+        5,
+        1
+      ],
+      "shifted_character_correlation": "2*(2*n**6 - 72*n**5 + 1040*n**4 - 7629*n**3 + 29462*n**2 - 55170*n + 37032)/(n*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "12*binomial(n - 3, 3)"
+    },
+    {
+      "active_support_size": 4,
+      "left_shift": [
+        1,
+        2,
+        3,
+        0
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        88,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 25,
+      "raw_canonical_pattern_count": 150203,
+      "right_shift": [
+        2,
+        0,
+        1,
+        3
+      ],
+      "shifted_character_correlation": "(4*n**4 - 78*n**3 + 528*n**2 - 1403*n + 1104)/(n*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "88*n - 264"
+    },
+    {
+      "active_support_size": 4,
+      "left_shift": [
+        1,
+        2,
+        3,
+        0
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        104,
+        44,
+        0,
+        0,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 26,
+      "raw_canonical_pattern_count": 178723,
+      "right_shift": [
+        2,
+        1,
+        3,
+        0
+      ],
+      "shifted_character_correlation": "(4*n**4 - 74*n**3 + 464*n**2 - 1111*n + 776)/(n*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "104*n + 44*binomial(n - 3, 2) - 312"
+    },
+    {
+      "active_support_size": 4,
+      "left_shift": [
+        1,
+        2,
+        3,
+        0
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        14,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 25,
+      "raw_canonical_pattern_count": 134813,
+      "right_shift": [
+        2,
+        3,
+        0,
+        1
+      ],
+      "shifted_character_correlation": "4*(n - 7)*(n**3 - 13*n**2 + 48*n - 44)/(n*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "14*n - 42"
+    },
+    {
+      "active_support_size": 4,
+      "left_shift": [
+        1,
+        3,
+        0,
+        2
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        14,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 25,
+      "raw_canonical_pattern_count": 191853,
+      "right_shift": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "shifted_character_correlation": "4*(n - 8)*(n - 6)/(n*(n - 2))",
+      "symbolic_multiplicity": "14*n - 42"
+    },
+    {
+      "active_support_size": 4,
+      "left_shift": [
+        1,
+        3,
+        0,
+        2
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        36,
+        42,
+        0,
+        0,
+        0,
+        0
+      ],
+      "nonzero_pattern_coefficient_count": 25,
+      "raw_canonical_pattern_count": 163333,
+      "right_shift": [
+        1,
+        0,
+        3,
+        2
+      ],
+      "shifted_character_correlation": "4*(n**4 - 19*n**3 + 123*n**2 - 307*n + 226)/(n*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "36*n + 42*binomial(n - 3, 2) - 108"
+    }
+  ],
+  "created_at": "2026-07-18T20:02:07.203280+00:00",
+  "endpoint_records": [
+    {
+      "exact_pattern_trace": 18829,
+      "formula_trace": 18829,
+      "n": 7,
+      "sparse_reference_coefficient": 156,
+      "sparse_reference_residual": 0,
+      "third_characteristic_coefficient": 156,
+      "trace_residual": 0,
+      "verified": true
+    },
+    {
+      "exact_pattern_trace": 455092,
+      "formula_trace": 455092,
+      "n": 8,
+      "sparse_reference_coefficient": 319136,
+      "sparse_reference_residual": 0,
+      "third_characteristic_coefficient": 319136,
+      "trace_residual": 0,
+      "verified": true
+    },
+    {
+      "exact_pattern_trace": 4813541,
+      "formula_trace": 4813541,
+      "n": 9,
+      "sparse_reference_coefficient": 4269052,
+      "sparse_reference_residual": 0,
+      "third_characteristic_coefficient": 4269052,
+      "trace_residual": 0,
+      "verified": true
+    },
+    {
+      "exact_pattern_trace": 30045592,
+      "formula_trace": 30045592,
+      "n": 10,
+      "sparse_reference_coefficient": 28333728,
+      "sparse_reference_residual": 0,
+      "third_characteristic_coefficient": 28333728,
+      "trace_residual": 0,
+      "verified": true
+    },
+    {
+      "exact_pattern_trace": 134228509,
+      "formula_trace": 134228509,
+      "n": 11,
+      "sparse_reference_coefficient": 129624524,
+      "sparse_reference_residual": 0,
+      "third_characteristic_coefficient": 129624524,
+      "trace_residual": 0,
+      "verified": true
+    },
+    {
+      "exact_pattern_trace": 477438524,
+      "formula_trace": 477438524,
+      "n": 12,
+      "sparse_reference_coefficient": null,
+      "sparse_reference_residual": null,
+      "third_characteristic_coefficient": 466420336,
+      "trace_residual": 0,
+      "verified": true
+    },
+    {
+      "exact_pattern_trace": 1439143957,
+      "formula_trace": 1439143957,
+      "n": 13,
+      "sparse_reference_coefficient": null,
+      "sparse_reference_residual": null,
+      "third_characteristic_coefficient": 1415102316,
+      "trace_residual": 0,
+      "verified": true
+    },
+    {
+      "exact_pattern_trace": 3824399536,
+      "formula_trace": 3824399536,
+      "n": 14,
+      "sparse_reference_coefficient": null,
+      "sparse_reference_residual": null,
+      "third_characteristic_coefficient": 3775744352,
+      "trace_residual": 0,
+      "verified": true
+    },
+    {
+      "exact_pattern_trace": 9201525677,
+      "formula_trace": 9201525677,
+      "n": 15,
+      "sparse_reference_coefficient": null,
+      "sparse_reference_residual": null,
+      "third_characteristic_coefficient": 9109022908,
+      "trace_residual": 0,
+      "verified": true
+    },
+    {
+      "exact_pattern_trace": 20425810564,
+      "formula_trace": 20425810564,
+      "n": 16,
+      "sparse_reference_coefficient": null,
+      "sparse_reference_residual": null,
+      "third_characteristic_coefficient": 20258963904,
+      "trace_residual": 0,
+      "verified": true
+    }
+  ],
+  "falsifiers_triggered": [
+    "The exact third moment proves only three of four quartic coefficients.",
+    "A complete characteristic polynomial would still require uniform root separation after LCU normalization.",
+    "Spectral labels do not supply a coherent polynomial-size Racah transform.",
+    "No measurement outcome has been connected to a hidden-involution decoder."
+  ],
+  "headline_metrics": {
+    "all_n_quartic_theorem_count": 0,
+    "all_n_root_separation_theorem_count": 0,
+    "exact_endpoint_verified_count": 10,
+    "exact_third_characteristic_coefficient_theorem_count": 1,
+    "exact_third_power_trace_theorem_count": 1,
+    "hidden_involution_decoder_count": 0,
+    "maximum_active_support_size": 9,
+    "nonzero_pattern_coefficient_count": 3845,
+    "proved_quartic_coefficient_count": 3,
+    "raw_canonical_pattern_count": 324051233,
+    "raw_relative_term_type_count": 18144,
+    "relative_orbit_class_count": 129,
+    "required_quartic_coefficient_count": 4,
+    "sparse_quartic_reference_match_count": 5,
+    "stable_symbolic_minimum_n": 17,
+    "uniform_polynomial_racah_circuit_count": 0
+  },
+  "newton_certificate": {
+    "first_characteristic_coefficient": "4*n**3 - 46*n**2 + 149*n - 118",
+    "identity": "p3 - e1*p2 + e2*p1 - 3*e3 = 0",
+    "identity_verified": true,
+    "second_characteristic_coefficient": "6*n**6 - 138*n**5 + 1240*n**4 - 5487*n**3 + 12351*n**2 - 13086*n + 5150",
+    "third_characteristic_coefficient": "4*n**9 - 138*n**8 + 2033*n**7 - 16692*n**6 + 83608*n**5 - 262838*n**4 + 514175*n**3 - 599392*n**2 + 377636*n - 98432"
+  },
+  "relative_orbit_certificate": {
+    "canonicalization": "exact rooted BFS canonical form of the two-colored permutation graph, minimized over roots and sorted by component",
+    "classification": "simultaneous conjugacy class of (tau_0 tau_1 tau_2, c_0 c_1 c_2), grouped by 0..6 outside support points",
+    "classification_verified": true,
+    "expected_raw_counts_by_outside_support": [
+      36,
+      540,
+      2484,
+      5292,
+      5832,
+      3240,
+      720
+    ],
+    "fixed_first_term": "tau_0=(1 2), c_0=(1 2 3)",
+    "raw_counts_by_outside_support": [
+      36,
+      540,
+      2484,
+      5292,
+      5832,
+      3240,
+      720
+    ],
+    "relative_orbit_class_count": 129,
+    "remaining_relative_term_count": "[n(n-1)(n-2)]^2"
+  },
+  "stable_symbolic_certificate": {
+    "identity_verified": true,
+    "interpolation_used": false,
+    "literal_range": "n>=17",
+    "polynomial_degree": 9,
+    "reason": "at most nine marked shift-support points and eight selected falling-cycle points occur",
+    "third_power_trace": "4*n**9 - 138*n**8 + 2037*n**7 - 16798*n**6 + 84810*n**5 - 270165*n**4 + 539231*n**3 - 646446*n**2 + 422442*n - 115228"
+  },
+  "status": "stable-third-moment-proved-determinant-open",
+  "summary": "Reduced Tr(H^3) to 129 exact relative classes and proved its all-n polynomial plus the third quartic coefficient; the determinant and algorithmic obligations remain open.",
+  "theorem": {
+    "proved": true,
+    "range": "every integer n>=7",
+    "statement": "The stable multiplicity-four hierarchical orbit Hamiltonian has the displayed exact Tr(H^3), and its quartic x coefficient follows by Newton's third identity.",
+    "third_characteristic_coefficient": "4*n**9 - 138*n**8 + 2033*n**7 - 16692*n**6 + 83608*n**5 - 262838*n**4 + 514175*n**3 - 599392*n**2 + 377636*n - 98432",
+    "third_power_trace": "4*n**9 - 138*n**8 + 2037*n**7 - 16798*n**6 + 84810*n**5 - 270165*n**4 + 539231*n**3 - 646446*n**2 + 422442*n - 115228"
+  }
+}

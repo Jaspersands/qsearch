@@ -36785,6 +36785,35 @@
   {
     "applies_to": [
       "CODE-COSET-COLLECTIVE",
+      "EXP-COSET-STABLE-THIRD-MOMENT-CERTIFICATE"
+    ],
+    "claim": "Three exact stable quartic coefficients establish a usable collective measurement or quantum speedup.",
+    "evidence": {
+      "all_n_quartic_theorem_count": 0,
+      "all_n_root_separation_theorem_count": 0,
+      "exact_endpoint_verified_count": 10,
+      "exact_third_characteristic_coefficient_theorem_count": 1,
+      "exact_third_power_trace_theorem_count": 1,
+      "hidden_involution_decoder_count": 0,
+      "maximum_active_support_size": 9,
+      "nonzero_pattern_coefficient_count": 3845,
+      "proved_quartic_coefficient_count": 3,
+      "raw_canonical_pattern_count": 324051233,
+      "raw_relative_term_type_count": 18144,
+      "relative_orbit_class_count": 129,
+      "required_quartic_coefficient_count": 4,
+      "sparse_quartic_reference_match_count": 5,
+      "stable_symbolic_minimum_n": 17,
+      "uniform_polynomial_racah_circuit_count": 0
+    },
+    "id": "NEG-COSET-THREE-COEFFICIENTS-AS-COMPLETE-RACAH-SOLUTION",
+    "lesson": "Close Tr(H^4) or the determinant next, then attack root separation and implementation before evaluating decoder information.",
+    "reason_invalid": "The determinant, normalized root separation, coherent Racah circuit, and hidden-involution decoder remain open.",
+    "source": "research/representation/coset_stable_third_moment_certificate.json"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
       "EXP-COSET-STABLE-TRACE-CONJECTURE"
     ],
     "claim": "A cubic trace interpolation with an n=11 holdout match proves the stable character identity.",

@@ -98,6 +98,7 @@ Commands:
   python qsearch.py coset-racah-trace-conjecture
   python qsearch.py coset-racah-trace-proof
   python qsearch.py coset-racah-second-moment-proof
+  python qsearch.py coset-racah-third-moment-proof
   python qsearch.py coset-recoupling-capabilities
   python qsearch.py coset-recoupling-synthesize
   python qsearch.py code-equivalence
@@ -309,6 +310,9 @@ from coset_stable_trace_conjecture import write_stable_trace_conjecture_report
 from coset_stable_trace_certificate import write_stable_trace_certificate
 from coset_stable_second_moment_certificate import (
     write_stable_second_moment_certificate,
+)
+from coset_stable_third_moment_certificate import (
+    write_stable_third_moment_certificate,
 )
 from coset_recoupling_capability_ledger import write_recoupling_capability_report
 from coset_recoupling_mechanism_synthesis import write_recoupling_mechanism_synthesis_report
@@ -3979,6 +3983,42 @@ def command_coset_racah_second_moment_proof(args: argparse.Namespace) -> int:
     return 0
 
 
+def command_coset_racah_third_moment_proof(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_stable_third_moment_certificate(
+        workers=args.workers,
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Exact stable Racah third-moment certificate complete")
+    print(
+        "Artifact: research/representation/"
+        "coset_stable_third_moment_certificate.json"
+    )
+    print(
+        "Exact third-moment theorems: "
+        f"{metrics['exact_third_power_trace_theorem_count']}"
+    )
+    print(f"Tr(H^3): {payload['theorem']['third_power_trace']}")
+    print(
+        "Proved quartic coefficients: "
+        f"{metrics['proved_quartic_coefficient_count']}/"
+        f"{metrics['required_quartic_coefficient_count']}"
+    )
+    print(f"Relative orbit classes: {metrics['relative_orbit_class_count']}")
+    print(
+        "Root-separation theorems: "
+        f"{metrics['all_n_root_separation_theorem_count']}"
+    )
+    print(f"Speedup claim allowed: {payload['claim_gate']['speedup_claim_allowed']}")
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
 def command_coset_recoupling_synthesize(args: argparse.Namespace) -> int:
     initialize_seed_registry(overwrite=False)
     payload = write_recoupling_mechanism_synthesis_report(
@@ -7192,6 +7232,18 @@ def build_parser() -> argparse.ArgumentParser:
     )
     coset_racah_second_moment_proof.set_defaults(
         func=command_coset_racah_second_moment_proof
+    )
+
+    coset_racah_third_moment_proof = subparsers.add_parser(
+        "coset-racah-third-moment-proof",
+        help="Prove Tr(H^3) and the third stable quartic coefficient by two-relative-term orbit classes.",
+    )
+    coset_racah_third_moment_proof.add_argument("--workers", type=int, default=None)
+    coset_racah_third_moment_proof.add_argument(
+        "--no-registry", action="store_true"
+    )
+    coset_racah_third_moment_proof.set_defaults(
+        func=command_coset_racah_third_moment_proof
     )
 
     coset_recoupling_synthesize = subparsers.add_parser(

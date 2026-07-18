@@ -635,8 +635,16 @@ the same machinery now also proves
 Fixing the first orbit term collapses the double sum to 17 relative
 simultaneous-conjugacy classes. The symbolic calculation covers `n>=14`, and
 exact finite pattern counts close `n=7..13`. Newton's identity therefore gives
-the quartic's second coefficient exactly. `Tr(H^3)`, `Tr(H^4)`, the remaining
-two coefficients, and normalized root separation remain open.
+the quartic's second coefficient exactly. The same exact engine now fixes one
+term in the ordered triple sum, canonicalizes the remaining two terms as
+two-colored permutation graphs, and collapses `Tr(H^3)` to 129 relative
+classes. Falling-cycle patterns prove
+`Tr(H^3)=4n^9-138n^8+2037n^7-16798n^6+84810n^5-270165n^4+539231n^3-646446n^2+422442n-115228`:
+the symbolic proof is literal for `n>=17`, exact pattern counts close
+`n=7..16`, and all five sparse quartics agree. Newton's third identity proves
+the third characteristic coefficient without interpolation. `Tr(H^4)`, the
+determinant, normalized root separation, coherent synthesis, and decoding
+remain open.
 
 ```bash
 python qsearch.py coset-racah-gap-scaling
@@ -644,6 +652,7 @@ python qsearch.py coset-racah-sparse-gap --n-values 7,8,9,10,11
 python qsearch.py coset-racah-trace-conjecture
 python qsearch.py coset-racah-trace-proof
 python qsearch.py coset-racah-second-moment-proof
+python qsearch.py coset-racah-third-moment-proof
 ```
 
 The capability ledger separates the solved `S_n` QFT, Schur-Weyl transforms,
