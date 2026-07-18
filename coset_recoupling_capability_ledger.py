@@ -187,8 +187,8 @@ CAPABILITIES = (
             "claimed without an asymptotic gap and natural-problem decoder."
         ),
         scope_limit=(
-            "Block encoding alone does not imply efficient eigenbasis resolution; phase estimation additionally needs "
-            "an inverse-polynomial LCU-normalized multiplicity gap."
+            "Block encoding alone does not imply efficient eigenbasis resolution. The project now proves the needed "
+            "normalized gap only for xi_n=(n-3,2,1) inside xi_n tensor (n-2,2); other sectors remain unaudited."
         ),
     ),
     RepresentationCapability(
@@ -196,10 +196,12 @@ CAPABILITIES = (
         literature_ids=["project-coset-multiplicity-commutant-search"],
         primitive="Coherent multiplicity basis from a uniformly gapped commutant Hamiltonian",
         proved_scope=(
-            "Finite sectors through S_6 admit bounded-support commutant combinations with simple multiplicity spectra."
+            "For every n>=7, the xi_n=(n-3,2,1) channel inside xi_n tensor W_n with W_n=(n-2,2) has an explicit "
+            "n(n-1)(n-2)-term block encoding, a proved normalized gap at least 1/(C n^53), and a polynomial coherent "
+            "four-valued eigenlabel append by phase estimation."
         ),
-        availability="open",
-        uniform_polynomial_gate_complexity_proved=False,
+        availability="proved-one-stable-channel-only",
+        uniform_polynomial_gate_complexity_proved=True,
         resolves_internal_sn_kronecker_basis=True,
         handles_overlapping_k_copy_associators=False,
         supplies_hidden_involution_decoder=False,
@@ -208,8 +210,8 @@ CAPABILITIES = (
             "scaling must be compared on every source family."
         ),
         scope_limit=(
-            "No all-n inverse-polynomial normalized gap is proved, and a one-tree multiplicity basis supplies neither "
-            "Racah associators nor state-dependent hidden-involution decoding."
+            "The theorem applies to one declared multiplicity-four channel. It supplies neither unrestricted internal "
+            "Kronecker decomposition, all-sector routing, Racah associators, nor hidden-involution decoding."
         ),
     ),
     RepresentationCapability(
@@ -342,6 +344,13 @@ def build_recoupling_capability_report(
         ),
         "gapped_kronecker_multiplicity_transform_poly_proof_count": sum(
             capability.id == "CAP-GAPPED-KRONECKER-MULTIPLICITY-TRANSFORM"
+            and capability.availability == "proved-unrestricted"
+            and capability.uniform_polynomial_gate_complexity_proved
+            for capability in CAPABILITIES
+        ),
+        "stable_channel_gapped_label_transform_poly_proof_count": sum(
+            capability.id == "CAP-GAPPED-KRONECKER-MULTIPLICITY-TRANSFORM"
+            and capability.availability == "proved-one-stable-channel-only"
             and capability.uniform_polynomial_gate_complexity_proved
             for capability in CAPABILITIES
         ),
@@ -399,11 +408,11 @@ def build_recoupling_capability_report(
                 "reason": "The transforms decompose different group actions and expose different multiplicity data.",
             },
             {
-                "from": "finite simple spectrum of a polynomial-description commutant Hamiltonian",
-                "invalid_to": "polynomial coherent multiplicity transform",
+                "from": "one stable channel with a proved polynomial coherent eigenlabel transform",
+                "invalid_to": "unrestricted internal Kronecker transform, overlapping Racah associator, or decoder",
                 "reason": (
-                    "Phase-estimation cost depends on the LCU-normalized minimum gap; finite splitting supplies no "
-                    "inverse-polynomial all-n lower bound."
+                    "The block encoding and normalized-gap theorem are scope-specific; they do not route arbitrary "
+                    "sectors or change coupling trees."
                 ),
             },
             {
@@ -444,6 +453,7 @@ def build_recoupling_capability_report(
             "diagonal_jm_label_transform_polynomial_proved": True,
             "diagonal_jm_labels_resolve_multiplicity_basis": False,
             "bounded_support_commutant_block_encoding_polynomial_proved": True,
+            "stable_channel_gapped_multiplicity_label_polynomial_proved": True,
             "gapped_kronecker_multiplicity_transform_polynomial_proved": False,
             "internal_sn_kronecker_transform_polynomial_proved": False,
             "kcopy_associator_polynomial_proved": False,
@@ -451,9 +461,10 @@ def build_recoupling_capability_report(
             "classical_superpolynomial_separation_proved": False,
             "speedup_claim_allowed": False,
             "reason": (
-            "Known polynomial QFT/projection primitives stop before the internal Kronecker transform, overlapping "
-                "associators, state transitions, and decoder. Diagonal YJM labels narrow but do not close the "
-                "multiplicity-space gap; restricted multiplicity advantages are classically eroded."
+                "A coherent gapped eigenlabel transform is now proved in one stable multiplicity-four channel. Known "
+                "primitives still stop before unrestricted internal Kronecker transforms, overlapping associators, "
+                "all-sector routing, state transitions, and decoding; restricted multiplicity advantages are "
+                "classically eroded."
             ),
         },
         status="known-primitives-separated-from-open-recoupling-and-decoder",
@@ -467,7 +478,7 @@ def build_recoupling_capability_report(
             "#BQP multiplicity counting does not construct a coherent Kronecker basis.",
             "Schur-Weyl Clebsch-Gordan circuits do not automatically solve internal Specht tensor products.",
             "Diagonal YJM tableau labels retain exact Kronecker multiplicity degeneracy.",
-            "Finite commutant-Hamiltonian splitting has no all-n LCU-normalized gap theorem.",
+            "One stable gapped multiplicity label cannot be transferred to unaudited sectors or overlapping trees.",
             "Many restricted multiplicity speedup candidates have polynomial classical algorithms.",
             "Finite growth of dimensions or multiplicities is not a circuit lower bound.",
         ],

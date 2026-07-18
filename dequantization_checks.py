@@ -207,6 +207,18 @@ COSET_STABLE_SECOND_MOMENT_PATH = Path(
 COSET_STABLE_THIRD_MOMENT_PATH = Path(
     "research/representation/coset_stable_third_moment_certificate.json"
 )
+COSET_STABLE_FOURTH_MOMENT_PATH = Path(
+    "research/representation/coset_stable_fourth_moment_certificate.json"
+)
+COSET_STABLE_ROOT_SEPARATION_PATH = Path(
+    "research/representation/coset_stable_root_separation_certificate.json"
+)
+COSET_STABLE_COHERENT_LABEL_PATH = Path(
+    "research/representation/coset_stable_coherent_label_certificate.json"
+)
+COSET_STABLE_SUBSPACE_TRANSITION_PATH = Path(
+    "research/representation/coset_stable_subspace_transition_probe.json"
+)
 COSET_RECOUPLING_CAPABILITY_PATH = Path(
     "research/representation/coset_recoupling_capability_ledger.json"
 )
@@ -3927,6 +3939,138 @@ def findings_from_coset_stable_third_moment_certificate(
     ]
 
 
+def findings_from_coset_stable_fourth_moment_certificate(
+    path: Path = COSET_STABLE_FOURTH_MOMENT_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    return [
+        DequantizationFinding(
+            id="DEQ-COSET-COMPLETE-STABLE-QUARTIC-NOT-CIRCUIT-OR-DECODER",
+            created_at=utc_now(),
+            target_type="coset_stable_fourth_moment_certificate",
+            target_id=str(path),
+            severity="high",
+            claim_under_test="A complete exact stable Racah quartic yields an efficient nonabelian HSP algorithm.",
+            evidence=(
+                f"Quartic/root-gap/circuit/decoder theorems="
+                f"{metrics.get('all_n_quartic_theorem_count', 0)}/"
+                f"{metrics.get('all_n_root_separation_theorem_count', 0)}/"
+                f"{metrics.get('uniform_polynomial_racah_circuit_count', 0)}/"
+                f"{metrics.get('hidden_involution_decoder_count', 0)}."
+            ),
+            required_action=(
+                "Prove normalized root separation, compile the hierarchy coherently across required sectors, and "
+                "show hidden-involution decoder information against classical baselines."
+            ),
+            blocks_speedup_claim=True,
+        )
+    ]
+
+
+def findings_from_coset_stable_root_separation_certificate(
+    path: Path = COSET_STABLE_ROOT_SEPARATION_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    return [
+        DequantizationFinding(
+            id="DEQ-COSET-STABLE-ROOT-GAP-NOT-END-TO-END-HSP-ALGORITHM",
+            created_at=utc_now(),
+            target_type="coset_stable_root_separation_certificate",
+            target_id=str(path),
+            severity="high",
+            claim_under_test=(
+                "A normalized inverse-polynomial gap in one stable channel supplies an efficient hidden-involution decoder."
+            ),
+            evidence=(
+                f"Stable gap/circuit/decoder/all-sector theorems="
+                f"{metrics.get('stable_channel_root_separation_theorem_count', 0)}/"
+                f"{metrics.get('uniform_polynomial_racah_circuit_count', 0)}/"
+                f"{metrics.get('hidden_involution_decoder_count', 0)}/"
+                f"{metrics.get('all_sector_uniform_gap_theorem_count', 0)}."
+            ),
+            required_action=(
+                "Build a uniform block encoding and phase-estimation circuit, cover all reduction-relevant sectors, "
+                "and quantify decoder information against legal classical baselines."
+            ),
+            blocks_speedup_claim=True,
+        )
+    ]
+
+
+def findings_from_coset_stable_coherent_label_certificate(
+    path: Path = COSET_STABLE_COHERENT_LABEL_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    return [
+        DequantizationFinding(
+            id="DEQ-COSET-ONE-STABLE-COHERENT-LABEL-NOT-RACAH-DECODER",
+            created_at=utc_now(),
+            target_type="coset_stable_coherent_label_certificate",
+            target_id=str(path),
+            severity="high",
+            claim_under_test=(
+                "A polynomial coherent multiplicity label in one stable channel closes the nonabelian HSP measurement."
+            ),
+            evidence=(
+                f"Stable-label/unrestricted-Kronecker/associator/all-sector/decoder theorems="
+                f"{metrics.get('uniform_polynomial_stable_multiplicity_label_transform_count', 0)}/"
+                f"{metrics.get('unrestricted_internal_kronecker_transform_count', 0)}/"
+                f"{metrics.get('overlapping_racah_associator_count', 0)}/"
+                f"{metrics.get('all_sector_uniform_transform_count', 0)}/"
+                f"{metrics.get('hidden_involution_decoder_count', 0)}."
+            ),
+            required_action=(
+                "Construct scope-matched label primitives on overlapping coupling trees, analyze their transition "
+                "kernel, cover every reduction-relevant sector, and test hidden-involution information against "
+                "classical representation and graph/code invariant baselines."
+            ),
+            blocks_speedup_claim=True,
+        )
+    ]
+
+
+def findings_from_coset_stable_subspace_transition_probe(
+    path: Path = COSET_STABLE_SUBSPACE_TRANSITION_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    return [
+        DequantizationFinding(
+            id="DEQ-COSET-STABLE-BRANCH-LEAKS-BEFORE-DECODER",
+            created_at=utc_now(),
+            target_type="coset_stable_subspace_transition_probe",
+            target_id=str(path),
+            severity="high",
+            claim_under_test=(
+                "The scoped 2x4 coherent stable labels close under reassociation and can be treated as a Racah decoder."
+            ),
+            evidence=(
+                f"Audited/leaky/closed branches="
+                f"{metrics.get('stable_scaling_point_count', 0)}/"
+                f"{metrics.get('leaky_stable_subspace_count', 0)}/"
+                f"{metrics.get('closed_stable_associator_count', 0)}; minimum maximally mixed leakage="
+                f"{float(metrics.get('minimum_maximally_mixed_leakage', 0.0)):.6f}."
+            ),
+            required_action=(
+                "Derive exact transition-support formulas, identify the complementary intermediate sectors, and "
+                "supply coherent labels and gap bounds for them before any associator or decoder claim."
+            ),
+            blocks_speedup_claim=True,
+        )
+    ]
+
+
 def findings_from_coset_recoupling_capability_ledger(
     path: Path = COSET_RECOUPLING_CAPABILITY_PATH,
 ) -> list[DequantizationFinding]:
@@ -6879,6 +7023,10 @@ def build_dequantization_report() -> dict[str, Any]:
         *findings_from_coset_stable_trace_certificate(),
         *findings_from_coset_stable_second_moment_certificate(),
         *findings_from_coset_stable_third_moment_certificate(),
+        *findings_from_coset_stable_fourth_moment_certificate(),
+        *findings_from_coset_stable_root_separation_certificate(),
+        *findings_from_coset_stable_coherent_label_certificate(),
+        *findings_from_coset_stable_subspace_transition_probe(),
         *findings_from_coset_jucys_murphy_label_transform(),
         *findings_from_coset_multiplicity_commutant_search(),
         *findings_from_coset_recoupling_capability_ledger(),

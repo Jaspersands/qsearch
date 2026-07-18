@@ -135,7 +135,7 @@ class MutationEngineTests(unittest.TestCase):
             for proposal in proposals
             if proposal["mutation_type"] == "typed-recoupling-mechanism"
         ]
-        self.assertEqual(len(typed), 2)
+        self.assertEqual(len(typed), 3)
         self.assertTrue(all(proposal["proof_gate_eligible"] is False for proposal in typed))
         self.assertFalse(any(proposal["mutation_type"] == "blocker-driven-search" for proposal in proposals))
 
@@ -282,7 +282,7 @@ class MutationEngineTests(unittest.TestCase):
         self.assertIn("no evaluator oracle", sample_native["new_hypothesis"].lower())
         self.assertFalse(any(proposal["source_candidate_id"].startswith("MUT-CAND-") for proposal in proposals))
         self.assertEqual(report["interface_repair_proposal_count"], 3)
-        self.assertEqual(report["proposal_only_count"], 5)
+        self.assertEqual(report["proposal_only_count"], 6)
         self.assertEqual(
             len(
                 [
@@ -291,7 +291,7 @@ class MutationEngineTests(unittest.TestCase):
                     if proposal["mutation_type"] == "typed-recoupling-mechanism"
                 ]
             ),
-            2,
+            3,
         )
 
 

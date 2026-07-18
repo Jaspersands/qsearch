@@ -91,12 +91,12 @@
       "primitive": "LCU block encoding of bounded-support simultaneous-conjugacy orbit sums",
       "proved_scope": "Enumerate O(n^5) transposition/transposition and transposition/3-cycle orbit terms and implement each Young-basis factor through the solved S_n QFT and reversible multiplication.",
       "resolves_internal_sn_kronecker_basis": false,
-      "scope_limit": "Block encoding alone does not imply efficient eigenbasis resolution; phase estimation additionally needs an inverse-polynomial LCU-normalized multiplicity gap.",
+      "scope_limit": "Block encoding alone does not imply efficient eigenbasis resolution. The project now proves the needed normalized gap only for xi_n=(n-3,2,1) inside xi_n tensor (n-2,2); other sectors remain unaudited.",
       "supplies_hidden_involution_decoder": false,
       "uniform_polynomial_gate_complexity_proved": true
     },
     {
-      "availability": "open",
+      "availability": "proved-one-stable-channel-only",
       "classical_comparison": "A finite simple spectrum is not a separation; classical representation algorithms and normalized-gap scaling must be compared on every source family.",
       "handles_overlapping_k_copy_associators": false,
       "id": "CAP-GAPPED-KRONECKER-MULTIPLICITY-TRANSFORM",
@@ -104,11 +104,11 @@
         "project-coset-multiplicity-commutant-search"
       ],
       "primitive": "Coherent multiplicity basis from a uniformly gapped commutant Hamiltonian",
-      "proved_scope": "Finite sectors through S_6 admit bounded-support commutant combinations with simple multiplicity spectra.",
+      "proved_scope": "For every n>=7, the xi_n=(n-3,2,1) channel inside xi_n tensor W_n with W_n=(n-2,2) has an explicit n(n-1)(n-2)-term block encoding, a proved normalized gap at least 1/(C n^53), and a polynomial coherent four-valued eigenlabel append by phase estimation.",
       "resolves_internal_sn_kronecker_basis": true,
-      "scope_limit": "No all-n inverse-polynomial normalized gap is proved, and a one-tree multiplicity basis supplies neither Racah associators nor state-dependent hidden-involution decoding.",
+      "scope_limit": "The theorem applies to one declared multiplicity-four channel. It supplies neither unrestricted internal Kronecker decomposition, all-sector routing, Racah associators, nor hidden-involution decoding.",
       "supplies_hidden_involution_decoder": false,
-      "uniform_polynomial_gate_complexity_proved": false
+      "uniform_polynomial_gate_complexity_proved": true
     },
     {
       "availability": "counting-class-upper-bound-not-bqp-evaluation",
@@ -201,12 +201,13 @@
     "internal_sn_kronecker_transform_polynomial_proved": false,
     "kcopy_associator_polynomial_proved": false,
     "multiplicity_counting_implies_coherent_transform": false,
-    "reason": "Known polynomial QFT/projection primitives stop before the internal Kronecker transform, overlapping associators, state transitions, and decoder. Diagonal YJM labels narrow but do not close the multiplicity-space gap; restricted multiplicity advantages are classically eroded.",
+    "reason": "A coherent gapped eigenlabel transform is now proved in one stable multiplicity-four channel. Known primitives still stop before unrestricted internal Kronecker transforms, overlapping associators, all-sector routing, state transitions, and decoding; restricted multiplicity advantages are classically eroded.",
     "schur_transform_implies_internal_kronecker_transform": false,
     "sn_qft_is_open_bottleneck": false,
-    "speedup_claim_allowed": false
+    "speedup_claim_allowed": false,
+    "stable_channel_gapped_multiplicity_label_polynomial_proved": true
   },
-  "created_at": "2026-07-15T11:12:38.442220+00:00",
+  "created_at": "2026-07-18T22:43:08.329488+00:00",
   "false_transfer_rules": [
     {
       "from": "exact Holevo/Fano copy lower bound",
@@ -219,9 +220,9 @@
       "reason": "The transforms decompose different group actions and expose different multiplicity data."
     },
     {
-      "from": "finite simple spectrum of a polynomial-description commutant Hamiltonian",
-      "invalid_to": "polynomial coherent multiplicity transform",
-      "reason": "Phase-estimation cost depends on the LCU-normalized minimum gap; finite splitting supplies no inverse-polynomial all-n lower bound."
+      "from": "one stable channel with a proved polynomial coherent eigenlabel transform",
+      "invalid_to": "unrestricted internal Kronecker transform, overlapping Racah associator, or decoder",
+      "reason": "The block encoding and normalized-gap theorem are scope-specific; they do not route arbitrary sectors or change coupling trees."
     },
     {
       "from": "polynomial diagonal YJM target-tableau label measurement",
@@ -255,7 +256,7 @@
     "#BQP multiplicity counting does not construct a coherent Kronecker basis.",
     "Schur-Weyl Clebsch-Gordan circuits do not automatically solve internal Specht tensor products.",
     "Diagonal YJM tableau labels retain exact Kronecker multiplicity degeneracy.",
-    "Finite commutant-Hamiltonian splitting has no all-n LCU-normalized gap theorem.",
+    "One stable gapped multiplicity label cannot be transferred to unaudited sectors or overlapping trees.",
     "Many restricted multiplicity speedup candidates have polynomial classical algorithms.",
     "Finite growth of dimensions or multiplicities is not a circuit lower bound."
   ],
@@ -480,9 +481,10 @@
     "maximum_multiplicity_register_bits": 7,
     "maximum_n": 10,
     "maximum_partition_count": 42,
-    "proved_polynomial_primitive_count": 6,
+    "proved_polynomial_primitive_count": 7,
     "restricted_multiplicity_classical_match_count": 1,
-    "unresolved_required_capability_count": 4
+    "stable_channel_gapped_label_transform_poly_proof_count": 1,
+    "unresolved_required_capability_count": 3
   },
   "literature_scope": [
     {

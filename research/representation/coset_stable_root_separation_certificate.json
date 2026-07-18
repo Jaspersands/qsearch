@@ -1,0 +1,122 @@
+{
+  "claim_gate": {
+    "all_decoder_relevant_sectors_covered": false,
+    "complete_stable_quartic_proved": true,
+    "hidden_involution_decoder_proved": false,
+    "reason": "A polynomial spectral gap in one stable multiplicity channel does not implement the Racah transform, cover all sectors, or turn measurement outcomes into a hidden-involution decoder.",
+    "speedup_claim_allowed": false,
+    "stable_channel_root_separation_proved": true,
+    "uniform_polynomial_racah_circuit_proved": false
+  },
+  "created_at": "2026-07-18T22:22:28.426940+00:00",
+  "discriminant_certificate": {
+    "discriminant": "(n - 2)**2*(52*n**18 - 3344*n**17 + 99984*n**16 - 1843156*n**15 + 23436541*n**14 - 217982038*n**13 + 1535194223*n**12 - 8363589036*n**11 + 35706498811*n**10 - 120299635718*n**9 + 320526730897*n**8 - 673736225940*n**7 + 1109055400932*n**6 - 1410705027072*n**5 + 1356571599360*n**4 - 952061440032*n**3 + 459447926400*n**2 - 136129055616*n + 18648101376)",
+    "factorization": "(n - 2)^2*(52*n**18 - 3344*n**17 + 99984*n**16 - 1843156*n**15 + 23436541*n**14 - 217982038*n**13 + 1535194223*n**12 - 8363589036*n**11 + 35706498811*n**10 - 120299635718*n**9 + 320526730897*n**8 - 673736225940*n**7 + 1109055400932*n**6 - 1410705027072*n**5 + 1356571599360*n**4 - 952061440032*n**3 + 459447926400*n**2 - 136129055616*n + 18648101376)",
+    "identity_verified": true,
+    "lower_bound": "Disc(p_n)>=n^20/1960 for n>=7",
+    "positivity_verified": true,
+    "quotient": "52*n**18 - 3344*n**17 + 99984*n**16 - 1843156*n**15 + 23436541*n**14 - 217982038*n**13 + 1535194223*n**12 - 8363589036*n**11 + 35706498811*n**10 - 120299635718*n**9 + 320526730897*n**8 - 673736225940*n**7 + 1109055400932*n**6 - 1410705027072*n**5 + 1356571599360*n**4 - 952061440032*n**3 + 459447926400*n**2 - 136129055616*n + 18648101376",
+    "quotient_shift": "n=m+7",
+    "scaled_margin": "1000*q(n)-n^18",
+    "scaled_margin_shifted_coefficients": [
+      51999,
+      3207874,
+      91884503,
+      1624532112,
+      19896293940,
+      179780909624,
+      1248258355964,
+      6860363611568,
+      30555473927842,
+      112360767343660,
+      345412854326258,
+      891353546122768,
+      1920883873057636,
+      3411859897908824,
+      4898979797910060,
+      5528272235246512,
+      4661966384179047,
+      2636620834694274,
+      750854200425551
+    ],
+    "shifted_quotient_coefficients": [
+      52,
+      3208,
+      91892,
+      1624812,
+      19903641,
+      179924912,
+      1250442392,
+      6886572044,
+      30807730090,
+      114322759716,
+      357773406272,
+      954279992392,
+      2177833528657,
+      4242004939076,
+      6974342400828,
+      9402282427360,
+      9746604761328,
+      6823970086464,
+      2379267798336
+    ]
+  },
+  "falsifiers_triggered": [
+    "A separated abstract spectrum does not provide a coherent circuit for the orbit Hamiltonian or its phase estimation.",
+    "One stable multiplicity-four channel does not cover all intermediate and final sectors.",
+    "No theorem maps these spectral labels to a hidden-involution decoder.",
+    "No classical baseline is defeated by the spectral theorem alone."
+  ],
+  "headline_metrics": {
+    "all_n_quartic_theorem_count": 1,
+    "all_n_root_separation_theorem_count": 1,
+    "all_sector_uniform_gap_theorem_count": 0,
+    "coefficient_norm_bound": 38014592,
+    "discriminant_degree": 20,
+    "discriminant_quotient_degree": 18,
+    "gap_constant_denominator": 114317894658451640616249126635327696917920,
+    "hidden_involution_decoder_count": 0,
+    "normalized_gap_inverse_polynomial_exponent": 53,
+    "raw_gap_inverse_polynomial_exponent": 50,
+    "scaled_margin_positive_coefficient_count": 19,
+    "shifted_positive_coefficient_count": 19,
+    "stable_channel_root_separation_theorem_count": 1,
+    "uniform_polynomial_racah_circuit_count": 0
+  },
+  "lcu_normalization_certificate": {
+    "normalization_applied": true,
+    "normalized_gap_exponent": 53,
+    "orbit_term_count": "n(n-1)(n-2)",
+    "orbit_term_count_upper_bound": "n^3"
+  },
+  "quartic_certificate": {
+    "all_roots_real": true,
+    "characteristic_polynomial": "n**12 - 46*n**11 + 942*n**10 - 4*n**9*x - 11323*n**9 + 138*n**8*x + 88681*n**8 - 2033*n**7*x - 474944*n**7 + 6*n**6*x**2 + 16692*n**6*x + 1776057*n**6 - 138*n**5*x**2 - 83608*n**5*x - 4651896*n**5 + 1240*n**4*x**2 + 262838*n**4*x + 8434537*n**4 - 4*n**3*x**3 - 5487*n**3*x**2 - 514175*n**3*x - 10291787*n**3 + 46*n**2*x**3 + 12351*n**2*x**2 + 599392*n**2*x + 8012686*n**2 - 149*n*x**3 - 13086*n*x**2 - 377636*n*x - 3577300*n + x**4 + 118*x**3 + 5150*x**2 + 98432*x + 694392",
+    "coefficient_bound_verified": true,
+    "coefficient_l1_norms": [
+      317,
+      37458,
+      1954948,
+      38014592
+    ],
+    "hermitian_source": "the transposition/3-cycle orbit sum includes inverse 3-cycle pairs and is Hermitian",
+    "maximum_coefficient_l1_norm": 38014592
+  },
+  "root_bound_certificate": {
+    "cauchy_bound": "max_i |lambda_i|<=38014593*n^12",
+    "constant_denominator": 114317894658451640616249126635327696917920,
+    "discriminant_identity": "sqrt(Disc(p_n))=product_{i<j}|lambda_i-lambda_j|",
+    "minimum_gap_argument": "Bound five of the six pair gaps above by twice the Cauchy radius and bound the discriminant below; the remaining minimum pair gap is at least n^-50 divided by the explicit constant.",
+    "pair_gap_upper_bound": "2*38014593*n^12",
+    "raw_gap_exponent": 50
+  },
+  "status": "stable-root-separation-proved-circuit-decoder-open",
+  "summary": "Proved an explicit inverse-polynomial LCU-normalized eigenvalue gap for the stable multiplicity-four Racah block; circuit synthesis, sector coverage, and decoding remain open.",
+  "theorem": {
+    "lcu_normalized_gap_lower_bound": "1/(114317894658451640616249126635327696917920*n^53)",
+    "proved": true,
+    "range": "every integer n>=7",
+    "raw_gap_lower_bound": "1/(114317894658451640616249126635327696917920*n^50)",
+    "statement": "Every pair of eigenvalues in the stable multiplicity-four Racah block is separated by the displayed raw bound, and by the displayed bound after orbit-LCU normalization."
+  }
+}
