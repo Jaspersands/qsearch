@@ -2925,6 +2925,76 @@
   },
   {
     "artifacts": {
+      "coset_stable_third_moment_certificate": "research/representation/coset_stable_third_moment_certificate.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-07-18T20:02:07.203280+00:00",
+    "experiment_id": "EXP-COSET-STABLE-THIRD-MOMENT-CERTIFICATE",
+    "falsifiers_triggered": [
+      "The exact third moment proves only three of four quartic coefficients.",
+      "A complete characteristic polynomial would still require uniform root separation after LCU normalization.",
+      "Spectral labels do not supply a coherent polynomial-size Racah transform.",
+      "No measurement outcome has been connected to a hidden-involution decoder."
+    ],
+    "id": "RESULT-EXP-COSET-STABLE-THIRD-MOMENT-CERTIFICATE-COSET",
+    "metrics": {
+      "all_n_quartic_theorem_count": 0,
+      "all_n_root_separation_theorem_count": 0,
+      "exact_endpoint_verified_count": 10,
+      "exact_third_characteristic_coefficient_theorem_count": 1,
+      "exact_third_power_trace_theorem_count": 1,
+      "hidden_involution_decoder_count": 0,
+      "maximum_active_support_size": 9,
+      "nonzero_pattern_coefficient_count": 3845,
+      "proved_quartic_coefficient_count": 3,
+      "raw_canonical_pattern_count": 324051233,
+      "raw_relative_term_type_count": 18144,
+      "relative_orbit_class_count": 129,
+      "required_quartic_coefficient_count": 4,
+      "sparse_quartic_reference_match_count": 5,
+      "stable_symbolic_minimum_n": 17,
+      "uniform_polynomial_racah_circuit_count": 0
+    },
+    "status": "stable-third-moment-proved-determinant-open",
+    "summary": "Reduced Tr(H^3) to 129 exact relative classes and proved its all-n polynomial plus the third quartic coefficient; the determinant and algorithmic obligations remain open."
+  },
+  {
+    "artifacts": {
+      "coset_stable_third_moment_certificate": "research/representation/coset_stable_third_moment_certificate.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-07-18T19:54:10.722831+00:00",
+    "experiment_id": "EXP-COSET-STABLE-THIRD-MOMENT-CERTIFICATE",
+    "falsifiers_triggered": [
+      "The exact third moment proves only three of four quartic coefficients.",
+      "A complete characteristic polynomial would still require uniform root separation after LCU normalization.",
+      "Spectral labels do not supply a coherent polynomial-size Racah transform.",
+      "No measurement outcome has been connected to a hidden-involution decoder."
+    ],
+    "id": "RESULT-EXP-COSET-STABLE-THIRD-MOMENT-CERTIFICATE-LATEST",
+    "metrics": {
+      "all_n_quartic_theorem_count": 0,
+      "all_n_root_separation_theorem_count": 0,
+      "exact_endpoint_verified_count": 10,
+      "exact_third_characteristic_coefficient_theorem_count": 1,
+      "exact_third_power_trace_theorem_count": 1,
+      "hidden_involution_decoder_count": 0,
+      "maximum_active_support_size": 9,
+      "nonzero_pattern_coefficient_count": 3845,
+      "proved_quartic_coefficient_count": 3,
+      "raw_canonical_pattern_count": 324051233,
+      "raw_relative_term_type_count": 18144,
+      "relative_orbit_class_count": 129,
+      "required_quartic_coefficient_count": 4,
+      "sparse_quartic_reference_match_count": 5,
+      "stable_symbolic_minimum_n": 17,
+      "uniform_polynomial_racah_circuit_count": 0
+    },
+    "status": "stable-third-moment-proved-determinant-open",
+    "summary": "Reduced Tr(H^3) to 129 exact relative classes and proved its all-n polynomial plus the third quartic coefficient; the determinant and algorithmic obligations remain open."
+  },
+  {
+    "artifacts": {
       "coset_stable_trace_certificate": "research/representation/coset_stable_trace_certificate.json"
     },
     "candidate_id": "CODE-COSET-COLLECTIVE",

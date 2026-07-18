@@ -132,6 +132,9 @@ COSET_STABLE_TRACE_CERTIFICATE_PATH = Path(
 COSET_STABLE_SECOND_MOMENT_PATH = Path(
     "research/representation/coset_stable_second_moment_certificate.json"
 )
+COSET_STABLE_THIRD_MOMENT_PATH = Path(
+    "research/representation/coset_stable_third_moment_certificate.json"
+)
 COSET_RECOUPLING_CAPABILITY_PATH = Path(
     "research/representation/coset_recoupling_capability_ledger.json"
 )
@@ -628,6 +631,17 @@ def lemma_templates(candidate: dict[str, Any]) -> list[LemmaRecord]:
             "headline_metrics", {}
         )
         try:
+            stable_third_moment = (
+                json.loads(COSET_STABLE_THIRD_MOMENT_PATH.read_text())
+                if COSET_STABLE_THIRD_MOMENT_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            stable_third_moment = {}
+        stable_third_moment_metrics = stable_third_moment.get(
+            "headline_metrics", {}
+        )
+        try:
             recoupling_capabilities = (
                 json.loads(COSET_RECOUPLING_CAPABILITY_PATH.read_text())
                 if COSET_RECOUPLING_CAPABILITY_PATH.exists()
@@ -1071,6 +1085,30 @@ def lemma_templates(candidate: dict[str, Any]) -> list[LemmaRecord]:
                     falsification_test=(
                         "Verify all 17 relative simultaneous-conjugacy classes, the stable equality-pattern sum, "
                         "exact n=7..13 endpoints, and the Newton coefficient against sparse quartics."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-COSET-STABLE-RACAH-THIRD-MOMENT",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "The stable multiplicity-four orbit Hamiltonian has an exact degree-nine Tr(H^3), and "
+                        "Newton's third identity proves the third characteristic coefficient for every n>=7."
+                    ),
+                    depends_on=["PO-MEASUREMENT", "PO-COMPLEXITY", "PO-NO-GO"],
+                    status=(
+                        "proved-exact-stable-racah-third-moment"
+                        if int(
+                            stable_third_moment_metrics.get(
+                                "exact_third_power_trace_theorem_count", 0
+                            )
+                            or 0
+                        )
+                        > 0
+                        else "blocked-stable-racah-third-moment-certificate-missing"
+                    ),
+                    falsification_test=(
+                        "Verify all 129 relative simultaneous-conjugacy classes, the stable equality-pattern sum, "
+                        "exact n=7..16 endpoints, and the Newton coefficient against sparse quartics."
                     ),
                 ),
                 LemmaRecord(

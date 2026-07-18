@@ -6519,6 +6519,51 @@ def seed_candidate_records() -> tuple[list[CandidateRecord], list[ExperimentReco
             ],
         ),
         ExperimentRecord(
+            id="EXP-COSET-STABLE-THIRD-MOMENT-CERTIFICATE",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Exact stable Racah third-moment certificate",
+            status="planned",
+            hypothesis=(
+                "Fixing one orbit term reduces Tr(H^3) to finitely many simultaneous-conjugacy classes of two "
+                "relative terms, yielding an exact degree-nine polynomial and the third quartic coefficient."
+            ),
+            protocol=(
+                "Canonicalize pairs (tau_0 tau_1 tau_2,c_0 c_1 c_2) as two-colored permutation graphs; evaluate "
+                "all 129 class correlations by exact falling-cycle patterns; prove the stable n>=17 identity and "
+                "close n=7..16 with exact finite pattern counts."
+            ),
+            positive_signal=(
+                "The exact third power trace agrees with every endpoint and sparse quartic reference, while Newton's "
+                "third identity proves the quartic x coefficient without interpolation."
+            ),
+            falsifiers=[
+                "The 129 classes do not exhaust the ordered triple-orbit sum.",
+                "The stable symbolic third moment disagrees with exact finite endpoints.",
+                "Newton reconstruction disagrees with sparse characteristic coefficients.",
+                "Three exact coefficients are promoted as a determinant, root-gap, circuit, or decoder theorem.",
+            ],
+            metrics=[
+                "exact_third_power_trace_theorem_count",
+                "exact_third_characteristic_coefficient_theorem_count",
+                "relative_orbit_class_count",
+                "exact_endpoint_verified_count",
+                "proved_quartic_coefficient_count",
+                "all_n_root_separation_theorem_count",
+            ],
+            dependencies=[
+                "coset_stable_third_moment_certificate.py",
+                "coset_stable_second_moment_certificate.py",
+                "two-colored permutation-graph canonicalization",
+                "Newton identities",
+            ],
+            next_actions=[
+                "Compute Tr(H^4) or the determinant exactly.",
+                "Reconstruct the complete quartic and prove normalized root separation.",
+                "Compile the stable labels into a coherent circuit.",
+                "Test whether the labels carry hidden-involution decoder information.",
+            ],
+        ),
+        ExperimentRecord(
             id="EXP-COSET-RECOUPLING-CAPABILITY-LEDGER",
             candidate_id="CODE-COSET-COLLECTIVE",
             title="Literature-backed symmetric-group recoupling capability ledger",

@@ -183,15 +183,19 @@ def generalized_equality_pattern_counts(
     special_count = len(left_shift)
     if len(right_shift) != special_count:
         raise ValueError("shift permutations must have equal size")
-    cycles: list[tuple[int, list[int]]] = []
     factors: list[int] = []
-    cycles_ending_at: dict[int, list[tuple[int, list[int]]]] = defaultdict(list)
+    constraints_ready_at: dict[int, list[tuple[int, int, int]]] = defaultdict(list)
     position_count = 0
     for factor, lengths in enumerate((first, second, third)):
         for length in lengths:
             positions = list(range(position_count, position_count + length))
-            cycles.append((factor, positions))
-            cycles_ending_at[positions[-1]].append((factor, positions))
+            for offset in range(1, length):
+                constraints_ready_at[positions[offset]].append(
+                    (factor, positions[offset - 1], positions[offset])
+                )
+            constraints_ready_at[positions[-1]].append(
+                (factor, positions[-1], positions[0])
+            )
             factors.extend([factor] * length)
             position_count += length
     multipliers = (tuple(range(special_count)), left_shift, right_shift)
@@ -214,28 +218,27 @@ def generalized_equality_pattern_counts(
             used_by_factor[factor].add(value)
             added_constraints: list[tuple[int, int]] = []
             consistent = True
-            for cycle_factor, cycle_positions in cycles_ending_at.get(position, []):
-                values = [assigned[index] for index in cycle_positions]
-                for index, source in enumerate(values):
-                    domain = (
-                        multipliers[cycle_factor][source]
-                        if source < special_count
-                        else source
-                    )
-                    output = values[(index + 1) % len(values)]
-                    if (
-                        domain in partial_map and partial_map[domain] != output
-                    ) or (
-                        output in inverse_map and inverse_map[output] != domain
-                    ):
-                        consistent = False
-                        break
-                    if domain not in partial_map:
-                        partial_map[domain] = output
-                        inverse_map[output] = domain
-                        added_constraints.append((domain, output))
-                if not consistent:
+            for cycle_factor, source_position, output_position in constraints_ready_at.get(
+                position, []
+            ):
+                source = assigned[source_position]
+                domain = (
+                    multipliers[cycle_factor][source]
+                    if source < special_count
+                    else source
+                )
+                output = assigned[output_position]
+                if (
+                    domain in partial_map and partial_map[domain] != output
+                ) or (
+                    output in inverse_map and inverse_map[output] != domain
+                ):
+                    consistent = False
                     break
+                if domain not in partial_map:
+                    partial_map[domain] = output
+                    inverse_map[output] = domain
+                    added_constraints.append((domain, output))
             if consistent:
                 visit(position + 1, generic_count + int(is_new_generic))
             for domain, output in reversed(added_constraints):

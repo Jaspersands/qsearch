@@ -1,8 +1,8 @@
 {
-  "created_at": "2026-07-18T02:09:07.125281+00:00",
+  "created_at": "2026-07-18T20:02:07.233072+00:00",
   "history_artifact": "research/experiment_run_history.json",
-  "history_count": 162,
-  "trend_count": 132,
+  "history_count": 163,
+  "trend_count": 133,
   "trends": [
     {
       "blocking_run_count": 1,
@@ -4763,6 +4763,151 @@
       "run_count": 1,
       "status_sequence": [
         "exact-stable-second-moment-proved-two-quartic-coefficients-known"
+      ]
+    },
+    {
+      "blocking_run_count": 1,
+      "experiment_id": "EXP-COSET-STABLE-THIRD-MOMENT-CERTIFICATE",
+      "falsifier_count_sequence": [
+        4
+      ],
+      "interpretation": "Repeated runs continue to trigger falsifiers; this is proof debt, not progress.",
+      "latest_result_id": "RESULT-EXP-COSET-STABLE-THIRD-MOMENT-CERTIFICATE-COSET",
+      "latest_status": "stable-third-moment-proved-determinant-open",
+      "latest_summary": "Reduced Tr(H^3) to 129 exact relative classes and proved its all-n polynomial plus the third quartic coefficient; the determinant and algorithmic obligations remain open.",
+      "numeric_metric_trends": {
+        "all_n_quartic_theorem_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        },
+        "all_n_root_separation_theorem_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        },
+        "exact_endpoint_verified_count": {
+          "delta": 0.0,
+          "first": 10.0,
+          "latest": 10.0,
+          "max": 10.0,
+          "min": 10.0,
+          "observations": 1
+        },
+        "exact_third_characteristic_coefficient_theorem_count": {
+          "delta": 0.0,
+          "first": 1.0,
+          "latest": 1.0,
+          "max": 1.0,
+          "min": 1.0,
+          "observations": 1
+        },
+        "exact_third_power_trace_theorem_count": {
+          "delta": 0.0,
+          "first": 1.0,
+          "latest": 1.0,
+          "max": 1.0,
+          "min": 1.0,
+          "observations": 1
+        },
+        "hidden_involution_decoder_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        },
+        "maximum_active_support_size": {
+          "delta": 0.0,
+          "first": 9.0,
+          "latest": 9.0,
+          "max": 9.0,
+          "min": 9.0,
+          "observations": 1
+        },
+        "nonzero_pattern_coefficient_count": {
+          "delta": 0.0,
+          "first": 3845.0,
+          "latest": 3845.0,
+          "max": 3845.0,
+          "min": 3845.0,
+          "observations": 1
+        },
+        "proved_quartic_coefficient_count": {
+          "delta": 0.0,
+          "first": 3.0,
+          "latest": 3.0,
+          "max": 3.0,
+          "min": 3.0,
+          "observations": 1
+        },
+        "raw_canonical_pattern_count": {
+          "delta": 0.0,
+          "first": 324051233.0,
+          "latest": 324051233.0,
+          "max": 324051233.0,
+          "min": 324051233.0,
+          "observations": 1
+        },
+        "raw_relative_term_type_count": {
+          "delta": 0.0,
+          "first": 18144.0,
+          "latest": 18144.0,
+          "max": 18144.0,
+          "min": 18144.0,
+          "observations": 1
+        },
+        "relative_orbit_class_count": {
+          "delta": 0.0,
+          "first": 129.0,
+          "latest": 129.0,
+          "max": 129.0,
+          "min": 129.0,
+          "observations": 1
+        },
+        "required_quartic_coefficient_count": {
+          "delta": 0.0,
+          "first": 4.0,
+          "latest": 4.0,
+          "max": 4.0,
+          "min": 4.0,
+          "observations": 1
+        },
+        "sparse_quartic_reference_match_count": {
+          "delta": 0.0,
+          "first": 5.0,
+          "latest": 5.0,
+          "max": 5.0,
+          "min": 5.0,
+          "observations": 1
+        },
+        "stable_symbolic_minimum_n": {
+          "delta": 0.0,
+          "first": 17.0,
+          "latest": 17.0,
+          "max": 17.0,
+          "min": 17.0,
+          "observations": 1
+        },
+        "uniform_polynomial_racah_circuit_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        }
+      },
+      "run_count": 1,
+      "status_sequence": [
+        "stable-third-moment-proved-determinant-open"
       ]
     },
     {
