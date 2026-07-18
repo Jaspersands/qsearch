@@ -1,0 +1,105 @@
+{
+  "block_encoding_certificate": {
+    "ancilla_qubits": "3*ceil(log2(n))+O(log(1/epsilon))",
+    "assumption_boundary": "Uses the existing CAP-SN-QFT and bounded-support controlled representation-action capabilities; it does not assume an internal Kronecker transform.",
+    "hamiltonian_is_hermitian": true,
+    "inverse_cycle_terms_included": true,
+    "lcu_normalization": "n(n-1)(n-2)",
+    "literature_capabilities": [
+      "CAP-SN-QFT",
+      "CAP-BOUNDED-SUPPORT-COMMUTANT-BLOCK-ENCODING"
+    ],
+    "prepare": "Reversibly prepare the uniform superposition over distinct ordered triples using three O(log n)-qubit registers; power-of-two rejection/amplitude amplification gives inverse-polynomial precision with polynomial gates.",
+    "proved": true,
+    "select": "Controlled on (a,b,c), apply rho_xi((a b)) and rho_W((a b c)); the 3-cycle is two transpositions, and controlled Young-basis actions follow by the polynomial S_n QFT and reversible multiplication.",
+    "select_term_is_unitary": true
+  },
+  "claim_gate": {
+    "all_sector_uniform_transform_proved": false,
+    "hidden_involution_decoder_proved": false,
+    "overlapping_racah_associator_proved": false,
+    "reason": "The coherent label transform is restricted to one stable multiplicity-four channel and does not implement coupling-tree transitions or decode the hidden involution.",
+    "speedup_claim_allowed": false,
+    "stable_channel_block_encoding_proved": true,
+    "stable_channel_coherent_multiplicity_label_proved": true,
+    "unrestricted_internal_kronecker_transform_proved": false
+  },
+  "created_at": "2026-07-18T22:43:01.041220+00:00",
+  "falsifiers_triggered": [
+    "The input must already be routed into the declared target irrep channel.",
+    "A one-channel multiplicity label is not an unrestricted internal Kronecker transform.",
+    "Diagonalizing one coupling tree does not implement a Racah associator between overlapping trees.",
+    "No hidden-involution decoder or classical separation follows from the label transform alone."
+  ],
+  "headline_metrics": {
+    "all_sector_uniform_transform_count": 0,
+    "hidden_involution_decoder_count": 0,
+    "normalized_gap_inverse_polynomial_exponent": 53,
+    "ordered_triple_bijection_theorem_count": 1,
+    "overlapping_racah_associator_count": 0,
+    "phase_estimation_query_exponent": 53,
+    "resolved_multiplicity_dimension": 4,
+    "stable_channel_block_encoding_count": 1,
+    "stable_channel_normalized_gap_theorem_count": 1,
+    "term_index_register_count": 3,
+    "uniform_polynomial_stable_multiplicity_label_transform_count": 1,
+    "uniform_prepare_circuit_count": 1,
+    "uniform_select_circuit_count": 1,
+    "unrestricted_internal_kronecker_transform_count": 0
+  },
+  "interface_contract": {
+    "does_not_produce": [
+      "an unrestricted internal S_n Kronecker transform",
+      "a change between overlapping coupling trees",
+      "coverage of every intermediate/final sector",
+      "a hidden-involution estimate or graph-isomorphism decision"
+    ],
+    "produces": [
+      "a coherent four-valued stable-channel multiplicity eigenlabel",
+      "the input eigenstate preserved up to requested simulation precision"
+    ],
+    "requires": [
+      "Young-basis xi_n and W_n representation registers",
+      "coherent projection or routing into the declared xi_n output channel",
+      "polynomial S_n QFT and reversible permutation multiplication",
+      "standard block-Hamiltonian simulation and phase estimation"
+    ]
+  },
+  "phase_estimation_certificate": {
+    "block_encoding_query_complexity": "O(114317894658451640616249126635327696917920*n^53*log(1/epsilon))",
+    "classical_root_intervals": "compute the four roots of the exact quartic to matching polynomial precision and reversibly map estimates to labels 0..3",
+    "coherent_label_count": 4,
+    "input": "a state already in the declared xi_n target irrep channel, with an unresolved four-dimensional multiplicity register",
+    "operation": "simulate the normalized block-encoded Hamiltonian and coherently estimate its eigenvalue to less than one third of the proved gap",
+    "phase_register_qubits": "O(log(n)+log(1/epsilon))",
+    "precision": "less than 1/(3*114317894658451640616249126635327696917920*n^53)",
+    "proved": true
+  },
+  "status": "stable-coherent-label-proved-associator-decoder-open",
+  "summary": "Combined an explicit ordered-triple LCU with the proved normalized gap to obtain a uniform coherent four-valued multiplicity label transform in one stable channel; associators and decoding remain open.",
+  "term_index_certificate": {
+    "audited_n_values": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "finite_bijection_checks_passed": true,
+    "index": "ordered triples (a,b,c) of distinct elements of [n]",
+    "orientation_canonicalization": "cyclic rotations are identified while inverse orientations remain distinct; the six signatures per support are exactly 3x2",
+    "symbolic_count_proof": "n choices for a, n-1 for b, and n-2 for c; each support has three transpositions and two oriented cycles",
+    "term_count": "n(n-1)(n-2)",
+    "term_map": "(a,b,c) -> rho_xi((a b)) tensor rho_W((a b c))",
+    "terms_per_three_point_support": 6
+  },
+  "theorem": {
+    "channel": "xi_n=(n-3,2,1) inside xi_n tensor W_n, W_n=(n-2,2)",
+    "normalized_gap": "at least 1/(114317894658451640616249126635327696917920*n^53)",
+    "proved": true,
+    "range": "every integer n>=7",
+    "statement": "There is a uniform polynomial-size coherent transform that appends the four-valued eigenlabel of the stable multiplicity-four orbit Hamiltonian to a state in the declared channel."
+  }
+}

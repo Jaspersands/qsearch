@@ -515,6 +515,8 @@ def seed_candidate_records() -> tuple[list[CandidateRecord], list[ExperimentReco
                 "EXP-COSET-COMMUTANT-GAP-SCALING",
                 "EXP-COSET-COMMUTANT-GAP-CERTIFICATE",
                 "EXP-COSET-RESTRICTED-RACAH-CONTROL",
+                "EXP-COSET-STABLE-COHERENT-LABEL-CERTIFICATE",
+                "EXP-COSET-STABLE-SUBSPACE-TRANSITION-PROBE",
                 "EXP-CODE-TENSOR-MEASUREMENT",
             ],
             notes="High upside but high no-go risk; registry keeps the no-go analysis mandatory.",
@@ -6647,6 +6649,100 @@ def seed_candidate_records() -> tuple[list[CandidateRecord], list[ExperimentReco
                 "Prove efficient phase estimation with the certified normalized gap.",
                 "Cover all intermediate and final sectors required by the reduction.",
                 "Build and dequantize a hidden-involution decoder from the spectral labels.",
+            ],
+        ),
+        ExperimentRecord(
+            id="EXP-COSET-STABLE-COHERENT-LABEL-CERTIFICATE",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Uniform coherent label for one stable Racah channel",
+            status="planned",
+            hypothesis=(
+                "The ordered-triple orbit Hamiltonian admits a uniform LCU block encoding, and its proved "
+                "normalized gap permits polynomial phase estimation of the four stable multiplicity labels."
+            ),
+            protocol=(
+                "Prove the ordered-triple-to-orbit-term bijection, construct uniform PREPARE and SELECT interfaces "
+                "from controlled Young-basis actions, combine them with the n^-53 normalized-gap certificate, and "
+                "audit every scope transfer to unrestricted Kronecker, Racah, and decoder claims."
+            ),
+            positive_signal=(
+                "A state already routed into xi_n=(n-3,2,1) inside xi_n tensor (n-2,2) can receive a coherent "
+                "four-valued multiplicity eigenlabel with polynomial gates and precision."
+            ),
+            falsifiers=[
+                "The ordered triples fail to index exactly three transpositions times two oriented cycles per support.",
+                "PREPARE or controlled Young-basis SELECT requires an unproved internal Kronecker transform.",
+                "The LCU normalization or normalized-gap dependence is omitted.",
+                "The one-channel label is promoted as an overlapping associator, all-sector transform, or decoder.",
+            ],
+            metrics=[
+                "ordered_triple_bijection_theorem_count",
+                "stable_channel_block_encoding_count",
+                "uniform_polynomial_stable_multiplicity_label_transform_count",
+                "normalized_gap_inverse_polynomial_exponent",
+                "unrestricted_internal_kronecker_transform_count",
+                "overlapping_racah_associator_count",
+                "hidden_involution_decoder_count",
+            ],
+            dependencies=[
+                "coset_stable_coherent_label_certificate.py",
+                "coset_stable_root_separation_certificate.py",
+                "CAP-SN-QFT",
+                "CAP-BOUNDED-SUPPORT-COMMUTANT-BLOCK-ENCODING",
+                "block-Hamiltonian simulation and coherent phase estimation",
+            ],
+            next_actions=[
+                "Construct the corresponding stable label primitive for an overlapping coupling tree.",
+                "Compute or bound the left/right stable transition kernel.",
+                "Classify all reduction-relevant sectors and locate failures of uniform gap or routing.",
+                "Test whether joint labels contain hidden-involution information beyond classical invariants.",
+            ],
+        ),
+        ExperimentRecord(
+            id="EXP-COSET-STABLE-SUBSPACE-TRANSITION-PROBE",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Gauge-invariant stable Racah subspace-transition probe",
+            status="planned",
+            hypothesis=(
+                "The 2x4 stable multiplicity branch may close under left/right reassociation, allowing the scoped "
+                "coherent labels to form a restricted Racah associator."
+            ),
+            protocol=(
+                "Construct Hom(1,W tensor W tensor xi) and Hom(1,xi tensor W tensor xi) as nullspaces of the "
+                "Coxeter invariant Laplacian, compose all eight left/right intertwiners, and compute the singular "
+                "values and Tr(P_left P_right) independent of multiplicity-basis gauge."
+            ),
+            positive_signal=(
+                "Tr(P_left P_right)=8 with all singular values one across growing n, proving that the stable branch "
+                "is closed before attempting coherent transition synthesis."
+            ),
+            falsifiers=[
+                "The character multiplicities are not stably 2 and 4.",
+                "Invariant nullspace dimensions disagree with the character multiplicities.",
+                "Embedding isometry or Coxeter invariance residuals exceed tolerance.",
+                "Tr(P_left P_right)<8, proving leakage into complementary intermediate sectors.",
+                "Finite rational-looking overlaps are promoted as an all-n theorem.",
+            ],
+            metrics=[
+                "stable_scaling_point_count",
+                "stable_multiplicity_2x4_verified_count",
+                "full_rank_transition_subblock_count",
+                "closed_stable_associator_count",
+                "maximum_maximally_mixed_retention",
+                "minimum_maximally_mixed_leakage",
+                "all_n_leakage_theorem_count",
+            ],
+            dependencies=[
+                "coset_stable_subspace_transition_probe.py",
+                "Young orthogonal adjacent-transposition matrices",
+                "Kronecker character multiplicities",
+                "sparse Hermitian eigensolver",
+            ],
+            next_actions=[
+                "Derive an exact character or diagram-algebra formula for Tr(P_left P_right).",
+                "Classify which complementary intermediate partitions receive the leaked mass.",
+                "Extend coherent label and gap certificates to the highest-weight complementary sectors.",
+                "Do not synthesize a decoder until the complete transition support is covered.",
             ],
         ),
         ExperimentRecord(

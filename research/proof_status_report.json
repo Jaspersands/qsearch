@@ -2,8 +2,8 @@
   "blocking_status_count": 24,
   "candidate_count": 8,
   "counterexample_search_count": 8,
-  "created_at": "2026-07-18T22:32:55.904336+00:00",
-  "lemma_count": 334,
+  "created_at": "2026-07-18T23:12:26.105351+00:00",
+  "lemma_count": 346,
   "needs_evidence_count": 0,
   "proof_debt": {
     "counterexample_search_count": 8,
@@ -73,8 +73,8 @@
         "target_claim": "The coset observable is not a disguised classical invariant."
       }
     ],
-    "created_at": "2026-07-18T22:32:55.903590+00:00",
-    "lemma_count": 334,
+    "created_at": "2026-07-18T23:12:26.104467+00:00",
+    "lemma_count": 346,
     "lemmas": [
       {
         "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -304,6 +304,30 @@
         "id": "LEMMA-CODE-COSET-COLLECTIVE-COSET-STABLE-RACAH-ROOT-SEPARATION",
         "statement": "The stable multiplicity-four quartic has an explicit inverse-polynomial eigenvalue gap after n(n-1)(n-2)-term LCU normalization for every n>=7.",
         "status": "proved-stable-racah-normalized-root-separation"
+      },
+      {
+        "candidate_id": "CODE-COSET-COLLECTIVE",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Verify the 3x2 orbit-term indexing on every three-point support, the explicit LCU normalization, controlled Young-basis SELECT assumptions, n^-53 precision dependence, and the zero unrestricted-transform/associator/decoder claim gates.",
+        "id": "LEMMA-CODE-COSET-COLLECTIVE-COSET-STABLE-RACAH-COHERENT-LABEL",
+        "statement": "The xi_n=(n-3,2,1) multiplicity-four channel inside xi_n tensor (n-2,2) admits a uniform polynomial coherent four-valued eigenlabel append by ordered-triple LCU and phase estimation.",
+        "status": "proved-one-stable-channel-coherent-multiplicity-label"
+      },
+      {
+        "candidate_id": "CODE-COSET-COLLECTIVE",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Compute the gauge-invariant projector overlap Tr(P_left P_right); any value below the branch rank eight proves that the one-channel branch is not closed.",
+        "id": "LEMMA-CODE-COSET-COLLECTIVE-COSET-STABLE-RACAH-SUBSPACE-CLOSURE",
+        "statement": "The 2x4 stable left and right branches form the same eight-dimensional subspace and can be reassociated without introducing complementary intermediate sectors.",
+        "status": "refuted-finite-stable-branch-leakage-observed"
       },
       {
         "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -1626,6 +1650,30 @@
           "PO-COMPLEXITY",
           "PO-NO-GO"
         ],
+        "falsification_test": "Verify the 3x2 orbit-term indexing on every three-point support, the explicit LCU normalization, controlled Young-basis SELECT assumptions, n^-53 precision dependence, and the zero unrestricted-transform/associator/decoder claim gates.",
+        "id": "LEMMA-HYP-LIT-COSET-OBSERVABLES-COSET-STABLE-RACAH-COHERENT-LABEL",
+        "statement": "The xi_n=(n-3,2,1) multiplicity-four channel inside xi_n tensor (n-2,2) admits a uniform polynomial coherent four-valued eigenlabel append by ordered-triple LCU and phase estimation.",
+        "status": "proved-one-stable-channel-coherent-multiplicity-label"
+      },
+      {
+        "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Compute the gauge-invariant projector overlap Tr(P_left P_right); any value below the branch rank eight proves that the one-channel branch is not closed.",
+        "id": "LEMMA-HYP-LIT-COSET-OBSERVABLES-COSET-STABLE-RACAH-SUBSPACE-CLOSURE",
+        "statement": "The 2x4 stable left and right branches form the same eight-dimensional subspace and can be reassociated without introducing complementary intermediate sectors.",
+        "status": "refuted-finite-stable-branch-leakage-observed"
+      },
+      {
+        "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-NO-GO"
+        ],
         "falsification_test": "Require a cited circuit theorem with gate count, precision, multiplicity basis, promises, and uniformity; a unitary definition, #BQP count, or Schur-Weyl transform does not satisfy it.",
         "id": "LEMMA-HYP-LIT-COSET-OBSERVABLES-COSET-INTERNAL-KRONECKER-TRANSFORM",
         "statement": "There is a uniform polynomial-gate internal S_n Kronecker transform with explicit multiplicity basis and state-transition access for unrestricted relevant irreps.",
@@ -2940,6 +2988,30 @@
           "PO-COMPLEXITY",
           "PO-NO-GO"
         ],
+        "falsification_test": "Verify the 3x2 orbit-term indexing on every three-point support, the explicit LCU normalization, controlled Young-basis SELECT assumptions, n^-53 precision dependence, and the zero unrestricted-transform/associator/decoder claim gates.",
+        "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-COSET-STABLE-RACAH-COHERENT-LABEL",
+        "statement": "The xi_n=(n-3,2,1) multiplicity-four channel inside xi_n tensor (n-2,2) admits a uniform polynomial coherent four-valued eigenlabel append by ordered-triple LCU and phase estimation.",
+        "status": "proved-one-stable-channel-coherent-multiplicity-label"
+      },
+      {
+        "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Compute the gauge-invariant projector overlap Tr(P_left P_right); any value below the branch rank eight proves that the one-channel branch is not closed.",
+        "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-COSET-STABLE-RACAH-SUBSPACE-CLOSURE",
+        "statement": "The 2x4 stable left and right branches form the same eight-dimensional subspace and can be reassociated without introducing complementary intermediate sectors.",
+        "status": "refuted-finite-stable-branch-leakage-observed"
+      },
+      {
+        "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-NO-GO"
+        ],
         "falsification_test": "Require a cited circuit theorem with gate count, precision, multiplicity basis, promises, and uniformity; a unitary definition, #BQP count, or Schur-Weyl transform does not satisfy it.",
         "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-COSET-INTERNAL-KRONECKER-TRANSFORM",
         "statement": "There is a uniform polynomial-gate internal S_n Kronecker transform with explicit multiplicity basis and state-transition access for unrestricted relevant irreps.",
@@ -3285,6 +3357,30 @@
         "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-COSET-STABLE-RACAH-ROOT-SEPARATION",
         "statement": "The stable multiplicity-four quartic has an explicit inverse-polynomial eigenvalue gap after n(n-1)(n-2)-term LCU normalization for every n>=7.",
         "status": "proved-stable-racah-normalized-root-separation"
+      },
+      {
+        "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Verify the 3x2 orbit-term indexing on every three-point support, the explicit LCU normalization, controlled Young-basis SELECT assumptions, n^-53 precision dependence, and the zero unrestricted-transform/associator/decoder claim gates.",
+        "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-COSET-STABLE-RACAH-COHERENT-LABEL",
+        "statement": "The xi_n=(n-3,2,1) multiplicity-four channel inside xi_n tensor (n-2,2) admits a uniform polynomial coherent four-valued eigenlabel append by ordered-triple LCU and phase estimation.",
+        "status": "proved-one-stable-channel-coherent-multiplicity-label"
+      },
+      {
+        "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Compute the gauge-invariant projector overlap Tr(P_left P_right); any value below the branch rank eight proves that the one-channel branch is not closed.",
+        "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-COSET-STABLE-RACAH-SUBSPACE-CLOSURE",
+        "statement": "The 2x4 stable left and right branches form the same eight-dimensional subspace and can be reassociated without introducing complementary intermediate sectors.",
+        "status": "refuted-finite-stable-branch-leakage-observed"
       },
       {
         "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
@@ -3646,6 +3742,30 @@
           "PO-COMPLEXITY",
           "PO-NO-GO"
         ],
+        "falsification_test": "Verify the 3x2 orbit-term indexing on every three-point support, the explicit LCU normalization, controlled Young-basis SELECT assumptions, n^-53 precision dependence, and the zero unrestricted-transform/associator/decoder claim gates.",
+        "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-COSET-STABLE-RACAH-COHERENT-LABEL",
+        "statement": "The xi_n=(n-3,2,1) multiplicity-four channel inside xi_n tensor (n-2,2) admits a uniform polynomial coherent four-valued eigenlabel append by ordered-triple LCU and phase estimation.",
+        "status": "proved-one-stable-channel-coherent-multiplicity-label"
+      },
+      {
+        "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Compute the gauge-invariant projector overlap Tr(P_left P_right); any value below the branch rank eight proves that the one-channel branch is not closed.",
+        "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-COSET-STABLE-RACAH-SUBSPACE-CLOSURE",
+        "statement": "The 2x4 stable left and right branches form the same eight-dimensional subspace and can be reassociated without introducing complementary intermediate sectors.",
+        "status": "refuted-finite-stable-branch-leakage-observed"
+      },
+      {
+        "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-NO-GO"
+        ],
         "falsification_test": "Require a cited circuit theorem with gate count, precision, multiplicity basis, promises, and uniformity; a unitary definition, #BQP count, or Schur-Weyl transform does not satisfy it.",
         "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-COSET-INTERNAL-KRONECKER-TRANSFORM",
         "statement": "There is a uniform polynomial-gate internal S_n Kronecker transform with explicit multiplicity basis and state-transition access for unrestricted relevant irreps.",
@@ -3991,6 +4111,30 @@
         "id": "LEMMA-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-COSET-STABLE-RACAH-ROOT-SEPARATION",
         "statement": "The stable multiplicity-four quartic has an explicit inverse-polynomial eigenvalue gap after n(n-1)(n-2)-term LCU normalization for every n>=7.",
         "status": "proved-stable-racah-normalized-root-separation"
+      },
+      {
+        "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Verify the 3x2 orbit-term indexing on every three-point support, the explicit LCU normalization, controlled Young-basis SELECT assumptions, n^-53 precision dependence, and the zero unrestricted-transform/associator/decoder claim gates.",
+        "id": "LEMMA-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-COSET-STABLE-RACAH-COHERENT-LABEL",
+        "statement": "The xi_n=(n-3,2,1) multiplicity-four channel inside xi_n tensor (n-2,2) admits a uniform polynomial coherent four-valued eigenlabel append by ordered-triple LCU and phase estimation.",
+        "status": "proved-one-stable-channel-coherent-multiplicity-label"
+      },
+      {
+        "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Compute the gauge-invariant projector overlap Tr(P_left P_right); any value below the branch rank eight proves that the one-channel branch is not closed.",
+        "id": "LEMMA-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-COSET-STABLE-RACAH-SUBSPACE-CLOSURE",
+        "statement": "The 2x4 stable left and right branches form the same eight-dimensional subspace and can be reassociated without introducing complementary intermediate sectors.",
+        "status": "refuted-finite-stable-branch-leakage-observed"
       },
       {
         "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",

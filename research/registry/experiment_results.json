@@ -2677,7 +2677,7 @@
       "coset_recoupling_capability_ledger": "research/representation/coset_recoupling_capability_ledger.json"
     },
     "candidate_id": "CODE-COSET-COLLECTIVE",
-    "created_at": "2026-07-15T11:12:38.442220+00:00",
+    "created_at": "2026-07-18T22:43:08.329488+00:00",
     "experiment_id": "EXP-COSET-RECOUPLING-CAPABILITY-LEDGER",
     "falsifiers_triggered": [
       "The S_n QFT is already polynomial and cannot be presented as the missing breakthrough.",
@@ -2685,7 +2685,7 @@
       "#BQP multiplicity counting does not construct a coherent Kronecker basis.",
       "Schur-Weyl Clebsch-Gordan circuits do not automatically solve internal Specht tensor products.",
       "Diagonal YJM tableau labels retain exact Kronecker multiplicity degeneracy.",
-      "Finite commutant-Hamiltonian splitting has no all-n LCU-normalized gap theorem.",
+      "One stable gapped multiplicity label cannot be transferred to unaudited sectors or overlapping trees.",
       "Many restricted multiplicity speedup candidates have polynomial classical algorithms.",
       "Finite growth of dimensions or multiplicities is not a circuit lower bound."
     ],
@@ -2704,9 +2704,10 @@
       "maximum_multiplicity_register_bits": 7,
       "maximum_n": 10,
       "maximum_partition_count": 42,
-      "proved_polynomial_primitive_count": 6,
+      "proved_polynomial_primitive_count": 7,
       "restricted_multiplicity_classical_match_count": 1,
-      "unresolved_required_capability_count": 4
+      "stable_channel_gapped_label_transform_poly_proof_count": 1,
+      "unresolved_required_capability_count": 3
     },
     "status": "known-primitives-separated-from-open-recoupling-and-decoder",
     "summary": "Classified 12 representation primitives and exact finite Kronecker growth through n=10 without transferring solved QFT/counting results to the open decoder."
@@ -2865,6 +2866,39 @@
   },
   {
     "artifacts": {
+      "coset_stable_coherent_label_certificate": "research/representation/coset_stable_coherent_label_certificate.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-07-18T22:43:01.041220+00:00",
+    "experiment_id": "EXP-COSET-STABLE-COHERENT-LABEL-CERTIFICATE",
+    "falsifiers_triggered": [
+      "The input must already be routed into the declared target irrep channel.",
+      "A one-channel multiplicity label is not an unrestricted internal Kronecker transform.",
+      "Diagonalizing one coupling tree does not implement a Racah associator between overlapping trees.",
+      "No hidden-involution decoder or classical separation follows from the label transform alone."
+    ],
+    "id": "RESULT-EXP-COSET-STABLE-COHERENT-LABEL-CERTIFICATE-LATEST",
+    "metrics": {
+      "all_sector_uniform_transform_count": 0,
+      "hidden_involution_decoder_count": 0,
+      "normalized_gap_inverse_polynomial_exponent": 53,
+      "ordered_triple_bijection_theorem_count": 1,
+      "overlapping_racah_associator_count": 0,
+      "phase_estimation_query_exponent": 53,
+      "resolved_multiplicity_dimension": 4,
+      "stable_channel_block_encoding_count": 1,
+      "stable_channel_normalized_gap_theorem_count": 1,
+      "term_index_register_count": 3,
+      "uniform_polynomial_stable_multiplicity_label_transform_count": 1,
+      "uniform_prepare_circuit_count": 1,
+      "uniform_select_circuit_count": 1,
+      "unrestricted_internal_kronecker_transform_count": 0
+    },
+    "status": "stable-coherent-label-proved-associator-decoder-open",
+    "summary": "Combined an explicit ordered-triple LCU with the proved normalized gap to obtain a uniform coherent four-valued multiplicity label transform in one stable channel; associators and decoding remain open."
+  },
+  {
+    "artifacts": {
       "coset_stable_fourth_moment_certificate": "research/representation/coset_stable_fourth_moment_certificate.json",
       "coset_stable_fourth_moment_patterns": "research/representation/coset_stable_fourth_moment_patterns.json"
     },
@@ -2992,6 +3026,37 @@
     },
     "status": "exact-stable-second-moment-proved-two-quartic-coefficients-known",
     "summary": "Proved the stable second power trace and the quartic's second coefficient for every n>=7 using 17 relative orbit classes; two quartic coefficients, root separation, circuit, and decoder remain open."
+  },
+  {
+    "artifacts": {
+      "coset_stable_subspace_transition_probe": "research/representation/coset_stable_subspace_transition_probe.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-07-18T23:10:00.269448+00:00",
+    "experiment_id": "EXP-COSET-STABLE-SUBSPACE-TRANSITION-PROBE",
+    "falsifiers_triggered": [
+      "A coherent label in one stable channel is not a closed Racah associator.",
+      "Full-rank overlap inside the retained 8x8 subblock does not eliminate leakage outside that subblock.",
+      "Finite rational-looking projector overlaps are conjectural until an exact all-n character or intertwiner proof is supplied.",
+      "No hidden-involution information follows from subspace overlap geometry alone."
+    ],
+    "id": "RESULT-EXP-COSET-STABLE-SUBSPACE-TRANSITION-PROBE-LATEST",
+    "metrics": {
+      "all_n_leakage_theorem_count": 0,
+      "closed_stable_associator_count": 0,
+      "full_rank_transition_subblock_count": 4,
+      "hidden_involution_decoder_count": 0,
+      "leaky_stable_subspace_count": 4,
+      "maximum_maximally_mixed_retention": 0.3499228395061754,
+      "maximum_n": 10,
+      "minimum_maximally_mixed_leakage": 0.6500771604938246,
+      "minimum_n": 7,
+      "overlapping_racah_associator_count": 0,
+      "stable_multiplicity_2x4_verified_count": 4,
+      "stable_scaling_point_count": 4
+    },
+    "status": "stable-branch-leakage-scaling-observed",
+    "summary": "Computed gauge-invariant left/right overlap for the 2x4 stable branch at 4 sizes; all 4 audited branches leak into complementary intermediate sectors."
   },
   {
     "artifacts": {

@@ -129,7 +129,7 @@ class DCPBooleanCosetSeparationTests(unittest.TestCase):
         )
         self.assertEqual(
             lemma_by_id["LEMMA-DHS-GOWERS-SIEVE-DCP-MARKER-AWARE-AFFINE-DECODER"]["status"],
-            "blocked-separation-proved-decoder-and-coverage-open",
+            "blocked-separation-and-fixed-list-proved-source-coverage-open",
         )
         query = next(
             item for item in queries["records"] if item["candidate_id"] == "DHS-GOWERS-SIEVE"

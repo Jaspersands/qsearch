@@ -101,6 +101,8 @@ Commands:
   python qsearch.py coset-racah-third-moment-proof
   python qsearch.py coset-racah-fourth-moment-proof
   python qsearch.py coset-racah-root-separation-proof
+  python qsearch.py coset-racah-coherent-label-proof
+  python qsearch.py coset-racah-stable-transition
   python qsearch.py coset-recoupling-capabilities
   python qsearch.py coset-recoupling-synthesize
   python qsearch.py code-equivalence
@@ -321,6 +323,12 @@ from coset_stable_fourth_moment_certificate import (
 )
 from coset_stable_root_separation_certificate import (
     write_stable_root_separation_certificate,
+)
+from coset_stable_coherent_label_certificate import (
+    write_stable_coherent_label_certificate,
+)
+from coset_stable_subspace_transition_probe import (
+    write_stable_subspace_transition_report,
 )
 from coset_recoupling_capability_ledger import write_recoupling_capability_report
 from coset_recoupling_mechanism_synthesis import write_recoupling_mechanism_synthesis_report
@@ -4085,6 +4093,66 @@ def command_coset_racah_root_separation_proof(args: argparse.Namespace) -> int:
     return 0
 
 
+def command_coset_racah_coherent_label_proof(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_stable_coherent_label_certificate(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Scoped stable Racah coherent-label certificate complete")
+    print(
+        "Artifact: research/representation/"
+        "coset_stable_coherent_label_certificate.json"
+    )
+    print(
+        "Stable coherent-label theorems: "
+        f"{metrics['uniform_polynomial_stable_multiplicity_label_transform_count']}"
+    )
+    print(
+        "Unrestricted Kronecker/associator/decoder theorems: "
+        f"{metrics['unrestricted_internal_kronecker_transform_count']}/"
+        f"{metrics['overlapping_racah_associator_count']}/"
+        f"{metrics['hidden_involution_decoder_count']}"
+    )
+    print(f"Speedup claim allowed: {payload['claim_gate']['speedup_claim_allowed']}")
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_coset_racah_stable_transition(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    n_values = tuple(
+        int(value.strip()) for value in args.n_values.split(",") if value.strip()
+    )
+    payload = write_stable_subspace_transition_report(
+        n_values=n_values,
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Stable Racah subspace-transition probe complete")
+    print(
+        "Artifact: research/representation/"
+        "coset_stable_subspace_transition_probe.json"
+    )
+    print(f"Scaling points: {metrics['stable_scaling_point_count']}")
+    print(
+        "Minimum leakage: "
+        f"{metrics['minimum_maximally_mixed_leakage']:.6f}"
+    )
+    print(f"Closed stable associators: {metrics['closed_stable_associator_count']}")
+    print(f"Speedup claim allowed: {payload['claim_gate']['speedup_claim_allowed']}")
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
 def command_coset_recoupling_synthesize(args: argparse.Namespace) -> int:
     initialize_seed_registry(overwrite=False)
     payload = write_recoupling_mechanism_synthesis_report(
@@ -7332,6 +7400,31 @@ def build_parser() -> argparse.ArgumentParser:
     )
     coset_racah_root_separation_proof.set_defaults(
         func=command_coset_racah_root_separation_proof
+    )
+
+    coset_racah_coherent_label_proof = subparsers.add_parser(
+        "coset-racah-coherent-label-proof",
+        help="Certify a uniform coherent eigenlabel transform in one stable multiplicity-four channel.",
+    )
+    coset_racah_coherent_label_proof.add_argument(
+        "--no-registry", action="store_true"
+    )
+    coset_racah_coherent_label_proof.set_defaults(
+        func=command_coset_racah_coherent_label_proof
+    )
+
+    coset_racah_stable_transition = subparsers.add_parser(
+        "coset-racah-stable-transition",
+        help="Measure gauge-invariant leakage between left/right stable 2x4 Racah branches.",
+    )
+    coset_racah_stable_transition.add_argument(
+        "--n-values", default="7,8"
+    )
+    coset_racah_stable_transition.add_argument(
+        "--no-registry", action="store_true"
+    )
+    coset_racah_stable_transition.set_defaults(
+        func=command_coset_racah_stable_transition
     )
 
     coset_recoupling_synthesize = subparsers.add_parser(

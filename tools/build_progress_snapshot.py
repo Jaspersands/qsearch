@@ -95,6 +95,12 @@ def build_snapshot() -> dict[str, Any]:
     stable_root_separation = read_json(
         RESEARCH / "representation/coset_stable_root_separation_certificate.json", {}
     )
+    stable_coherent_label = read_json(
+        RESEARCH / "representation/coset_stable_coherent_label_certificate.json", {}
+    )
+    stable_transition = read_json(
+        RESEARCH / "representation/coset_stable_subspace_transition_probe.json", {}
+    )
 
     blocking = sum(bool(item.get("blocks_speedup_claim", False)) for item in findings)
     updated = latest_artifact_date(
@@ -120,6 +126,8 @@ def build_snapshot() -> dict[str, Any]:
         stable_third_moment,
         stable_fourth_moment,
         stable_root_separation,
+        stable_coherent_label,
+        stable_transition,
     )
     gap_rows = metric(gap, "critical_gap_formula_finite_verified_count", 0)
     gap_total = metric(gap, "record_count", 0)
@@ -134,8 +142,8 @@ def build_snapshot() -> dict[str, Any]:
             "detail": (
                 "Every speedup claim remains blocked. One restricted representation-theoretic gap theorem is now proved, "
                 "a bounded-support hierarchy resolves the complete finite S_6 Racah table, and one stable "
-                "multiplicity-four channel now has a complete exact quartic plus a normalized polynomial gap. "
-                "Coherent recoupling, all-sector coverage, and decoding remain open."
+                "multiplicity-four channel now has a complete exact quartic, normalized polynomial gap, and a scoped "
+                "coherent eigenlabel primitive. Overlapping recoupling, all-sector coverage, and decoding remain open."
             ),
         },
         "overview": (
@@ -204,7 +212,7 @@ def build_snapshot() -> dict[str, Any]:
                     f"{metric(sparse_gap, 'integer_characteristic_polynomial_candidate_count', 0)} integer quartics through "
                     f"n={metric(sparse_gap, 'maximum_n', 0)}."
                 ),
-                "next": "Compile the proved stable spectral hierarchy coherently and determine whether its labels carry decoder information.",
+                "next": "Classify the complementary sectors receiving the roughly two-thirds stable-branch leakage.",
             },
         ],
         "milestones": [
@@ -225,8 +233,8 @@ def build_snapshot() -> dict[str, Any]:
                 "detail": "A second bounded-support Hamiltonian splits residual multiplicities up to four and produces unitary left/right matrices in all ten final sectors.",
             },
             {
-                "title": "A complete stable quartic and root gap were proved",
-                "detail": "Exact falling-cycle sums through 1,628 fourth-moment classes prove all four coefficients and an inverse-polynomial normalized gap for one multiplicity-four channel.",
+                "title": "One stable coherent multiplicity label was proved",
+                "detail": "Exact falling-cycle sums, a normalized n^-53 gap, ordered-triple LCU, and phase estimation give a polynomial four-valued label in one channel; this is not an associator or decoder.",
             },
         ],
         "active_conjecture": {
@@ -234,8 +242,10 @@ def build_snapshot() -> dict[str, Any]:
                 "For W_n=(n-2,2) and alpha_n=xi_n=(n-3,2,1), sparse multiplicity-four spectra through n=11 "
                 "reconstruct monic integer quartics. Exact marked-cycle equality patterns now prove their trace is "
                 "4n^3-46n^2+149n-118 for every n>=7. Seventeen, 129, and 1,628 relative classes prove the next "
-                "three moments, completing the quartic. Its discriminant proves a normalized n^-53 gap. The next "
-                "target is a uniform coherent implementation and decoder, not another finite spectral probe."
+                "three moments, completing the quartic. Its discriminant proves a normalized n^-53 gap, and an "
+                "ordered-triple block encoding plus phase estimation implements that one-channel label. The left/right "
+                "stable subspaces retain only about one third of their mass through n=10, so the single-channel "
+                "associator route is cut. The next target is exact complementary-sector support."
             ),
             "facts": [
                 {"label": "Pair gap", "value": "Exact inverse-quadratic theorem"},
@@ -244,13 +254,15 @@ def build_snapshot() -> dict[str, Any]:
                 {"label": "Stable trace", "value": f"{metric(stable_trace_certificate, 'exact_marked_cycle_trace_theorem_count', 0)} exact theorem"},
                 {"label": "Quartic coefficients", "value": f"{metric(stable_fourth_moment, 'proved_quartic_coefficient_count', metric(stable_third_moment, 'proved_quartic_coefficient_count', 0))}/4 proved"},
                 {"label": "Normalized root gap", "value": f"{metric(stable_root_separation, 'stable_channel_root_separation_theorem_count', 0)} exact theorem"},
+                {"label": "Scoped coherent label", "value": f"{metric(stable_coherent_label, 'uniform_polynomial_stable_multiplicity_label_transform_count', 0)} proved channel"},
+                {"label": "Stable branch leakage", "value": f"{100 * metric(stable_transition, 'minimum_maximally_mixed_leakage', 0.0):.1f}% minimum"},
                 {"label": "Hidden decoder", "value": "Open"},
             ],
         },
         "next_actions": [
             {
-                "title": "Compile the stable hierarchy coherently",
-                "detail": "Construct a uniform block encoding and phase-estimation circuit using the proved normalized spectral gap.",
+                "title": "Resolve complementary transition sectors",
+                "detail": "Derive an exact projector-overlap formula and identify which intermediate partitions receive the stable branch leakage.",
             },
             {
                 "title": "Cover every required sector",

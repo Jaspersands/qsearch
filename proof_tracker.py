@@ -141,6 +141,12 @@ COSET_STABLE_FOURTH_MOMENT_PATH = Path(
 COSET_STABLE_ROOT_SEPARATION_PATH = Path(
     "research/representation/coset_stable_root_separation_certificate.json"
 )
+COSET_STABLE_COHERENT_LABEL_PATH = Path(
+    "research/representation/coset_stable_coherent_label_certificate.json"
+)
+COSET_STABLE_SUBSPACE_TRANSITION_PATH = Path(
+    "research/representation/coset_stable_subspace_transition_probe.json"
+)
 COSET_RECOUPLING_CAPABILITY_PATH = Path(
     "research/representation/coset_recoupling_capability_ledger.json"
 )
@@ -670,6 +676,28 @@ def lemma_templates(candidate: dict[str, Any]) -> list[LemmaRecord]:
             "headline_metrics", {}
         )
         try:
+            stable_coherent_label = (
+                json.loads(COSET_STABLE_COHERENT_LABEL_PATH.read_text())
+                if COSET_STABLE_COHERENT_LABEL_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            stable_coherent_label = {}
+        stable_coherent_label_metrics = stable_coherent_label.get(
+            "headline_metrics", {}
+        )
+        try:
+            stable_subspace_transition = (
+                json.loads(COSET_STABLE_SUBSPACE_TRANSITION_PATH.read_text())
+                if COSET_STABLE_SUBSPACE_TRANSITION_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            stable_subspace_transition = {}
+        stable_subspace_transition_metrics = stable_subspace_transition.get(
+            "headline_metrics", {}
+        )
+        try:
             recoupling_capabilities = (
                 json.loads(COSET_RECOUPLING_CAPABILITY_PATH.read_text())
                 if COSET_RECOUPLING_CAPABILITY_PATH.exists()
@@ -1185,6 +1213,56 @@ def lemma_templates(candidate: dict[str, Any]) -> list[LemmaRecord]:
                     falsification_test=(
                         "Verify discriminant factorization, positivity of 1000*q(n)-n^18 after n=m+7, the Cauchy "
                         "coefficient bound, and explicit orbit-LCU normalization."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-COSET-STABLE-RACAH-COHERENT-LABEL",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "The xi_n=(n-3,2,1) multiplicity-four channel inside xi_n tensor (n-2,2) admits a uniform "
+                        "polynomial coherent four-valued eigenlabel append by ordered-triple LCU and phase estimation."
+                    ),
+                    depends_on=["PO-MEASUREMENT", "PO-COMPLEXITY", "PO-NO-GO"],
+                    status=(
+                        "proved-one-stable-channel-coherent-multiplicity-label"
+                        if int(
+                            stable_coherent_label_metrics.get(
+                                "uniform_polynomial_stable_multiplicity_label_transform_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        > 0
+                        else "blocked-stable-coherent-label-certificate-missing"
+                    ),
+                    falsification_test=(
+                        "Verify the 3x2 orbit-term indexing on every three-point support, the explicit LCU "
+                        "normalization, controlled Young-basis SELECT assumptions, n^-53 precision dependence, and "
+                        "the zero unrestricted-transform/associator/decoder claim gates."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-COSET-STABLE-RACAH-SUBSPACE-CLOSURE",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "The 2x4 stable left and right branches form the same eight-dimensional subspace and can be "
+                        "reassociated without introducing complementary intermediate sectors."
+                    ),
+                    depends_on=["PO-MEASUREMENT", "PO-COMPLEXITY", "PO-NO-GO"],
+                    status=(
+                        "refuted-finite-stable-branch-leakage-observed"
+                        if int(
+                            stable_subspace_transition_metrics.get(
+                                "leaky_stable_subspace_count", 0
+                            )
+                            or 0
+                        )
+                        > 0
+                        else "blocked-stable-subspace-transition-evidence-missing"
+                    ),
+                    falsification_test=(
+                        "Compute the gauge-invariant projector overlap Tr(P_left P_right); any value below the branch "
+                        "rank eight proves that the one-channel branch is not closed."
                     ),
                 ),
                 LemmaRecord(

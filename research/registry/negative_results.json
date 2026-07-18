@@ -36619,9 +36619,10 @@
       "maximum_multiplicity_register_bits": 7,
       "maximum_n": 10,
       "maximum_partition_count": 42,
-      "proved_polynomial_primitive_count": 6,
+      "proved_polynomial_primitive_count": 7,
       "restricted_multiplicity_classical_match_count": 1,
-      "unresolved_required_capability_count": 4
+      "stable_channel_gapped_label_transform_poly_proof_count": 1,
+      "unresolved_required_capability_count": 3
     },
     "id": "NEG-COSET-KRONECKER-COUNT-AS-TRANSFORM",
     "lesson": "Track each representation primitive by exact action, promise, circuit cost, output, and decoder role.",
@@ -36744,9 +36745,10 @@
       "maximum_multiplicity_register_bits": 7,
       "maximum_n": 10,
       "maximum_partition_count": 42,
-      "proved_polynomial_primitive_count": 6,
+      "proved_polynomial_primitive_count": 7,
       "restricted_multiplicity_classical_match_count": 1,
-      "unresolved_required_capability_count": 4
+      "stable_channel_gapped_label_transform_poly_proof_count": 1,
+      "unresolved_required_capability_count": 3
     },
     "id": "NEG-COSET-RESTRICTED-MULTIPLICITY-AS-BREAKTHROUGH",
     "lesson": "Track each representation primitive by exact action, promise, circuit cost, output, and decoder role.",
@@ -36773,9 +36775,10 @@
       "maximum_multiplicity_register_bits": 7,
       "maximum_n": 10,
       "maximum_partition_count": 42,
-      "proved_polynomial_primitive_count": 6,
+      "proved_polynomial_primitive_count": 7,
       "restricted_multiplicity_classical_match_count": 1,
-      "unresolved_required_capability_count": 4
+      "stable_channel_gapped_label_transform_poly_proof_count": 1,
+      "unresolved_required_capability_count": 3
     },
     "id": "NEG-COSET-SN-QFT-AS-MULTICOPY-DECODER",
     "lesson": "Track each representation primitive by exact action, promise, circuit cost, output, and decoder role.",
@@ -36811,6 +36814,58 @@
     "lesson": "Use the reconstructed quartics as targets for exact character-orbit or partition-algebra trace identities, then prove root separation uniformly.",
     "reason_invalid": "The coefficients are numerically reconstructed at finitely many n and no exact coefficient formula or root-separation theorem is supplied.",
     "source": "research/representation/coset_sparse_stable_gap_probe.json"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "EXP-COSET-STABLE-SUBSPACE-TRANSITION-PROBE"
+    ],
+    "claim": "The proved 2x4 stable multiplicity labels close under left/right recoupling and therefore form an associator.",
+    "evidence": {
+      "all_n_leakage_theorem_count": 0,
+      "closed_stable_associator_count": 0,
+      "full_rank_transition_subblock_count": 4,
+      "hidden_involution_decoder_count": 0,
+      "leaky_stable_subspace_count": 4,
+      "maximum_maximally_mixed_retention": 0.3499228395061754,
+      "maximum_n": 10,
+      "minimum_maximally_mixed_leakage": 0.6500771604938246,
+      "minimum_n": 7,
+      "overlapping_racah_associator_count": 0,
+      "stable_multiplicity_2x4_verified_count": 4,
+      "stable_scaling_point_count": 4
+    },
+    "id": "NEG-COSET-STABLE-CHANNEL-AS-CLOSED-RACAH-SUBSPACE",
+    "lesson": "Classify and coherently cover the complementary sectors before searching for a transition filter or decoder.",
+    "reason_invalid": "Gauge-invariant projector overlap shows substantial probability leakage into complementary intermediate sectors.",
+    "source": "research/representation/coset_stable_subspace_transition_probe.json"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "EXP-COSET-STABLE-COHERENT-LABEL-CERTIFICATE"
+    ],
+    "claim": "A coherent multiplicity label in one stable channel implements the full Racah network or hidden-involution decoder.",
+    "evidence": {
+      "all_sector_uniform_transform_count": 0,
+      "hidden_involution_decoder_count": 0,
+      "normalized_gap_inverse_polynomial_exponent": 53,
+      "ordered_triple_bijection_theorem_count": 1,
+      "overlapping_racah_associator_count": 0,
+      "phase_estimation_query_exponent": 53,
+      "resolved_multiplicity_dimension": 4,
+      "stable_channel_block_encoding_count": 1,
+      "stable_channel_normalized_gap_theorem_count": 1,
+      "term_index_register_count": 3,
+      "uniform_polynomial_stable_multiplicity_label_transform_count": 1,
+      "uniform_prepare_circuit_count": 1,
+      "uniform_select_circuit_count": 1,
+      "unrestricted_internal_kronecker_transform_count": 0
+    },
+    "id": "NEG-COSET-STABLE-COHERENT-LABEL-AS-RACAH-DECODER",
+    "lesson": "Construct overlapping left/right stable label transforms and analyze their transition kernel before any decoder claim.",
+    "reason_invalid": "The construction does not change coupling trees, cover all sectors, or map labels to the hidden involution.",
+    "source": "research/representation/coset_stable_coherent_label_certificate.json"
   },
   {
     "applies_to": [

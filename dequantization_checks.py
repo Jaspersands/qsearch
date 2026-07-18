@@ -213,6 +213,12 @@ COSET_STABLE_FOURTH_MOMENT_PATH = Path(
 COSET_STABLE_ROOT_SEPARATION_PATH = Path(
     "research/representation/coset_stable_root_separation_certificate.json"
 )
+COSET_STABLE_COHERENT_LABEL_PATH = Path(
+    "research/representation/coset_stable_coherent_label_certificate.json"
+)
+COSET_STABLE_SUBSPACE_TRANSITION_PATH = Path(
+    "research/representation/coset_stable_subspace_transition_probe.json"
+)
 COSET_RECOUPLING_CAPABILITY_PATH = Path(
     "research/representation/coset_recoupling_capability_ledger.json"
 )
@@ -3997,6 +4003,74 @@ def findings_from_coset_stable_root_separation_certificate(
     ]
 
 
+def findings_from_coset_stable_coherent_label_certificate(
+    path: Path = COSET_STABLE_COHERENT_LABEL_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    return [
+        DequantizationFinding(
+            id="DEQ-COSET-ONE-STABLE-COHERENT-LABEL-NOT-RACAH-DECODER",
+            created_at=utc_now(),
+            target_type="coset_stable_coherent_label_certificate",
+            target_id=str(path),
+            severity="high",
+            claim_under_test=(
+                "A polynomial coherent multiplicity label in one stable channel closes the nonabelian HSP measurement."
+            ),
+            evidence=(
+                f"Stable-label/unrestricted-Kronecker/associator/all-sector/decoder theorems="
+                f"{metrics.get('uniform_polynomial_stable_multiplicity_label_transform_count', 0)}/"
+                f"{metrics.get('unrestricted_internal_kronecker_transform_count', 0)}/"
+                f"{metrics.get('overlapping_racah_associator_count', 0)}/"
+                f"{metrics.get('all_sector_uniform_transform_count', 0)}/"
+                f"{metrics.get('hidden_involution_decoder_count', 0)}."
+            ),
+            required_action=(
+                "Construct scope-matched label primitives on overlapping coupling trees, analyze their transition "
+                "kernel, cover every reduction-relevant sector, and test hidden-involution information against "
+                "classical representation and graph/code invariant baselines."
+            ),
+            blocks_speedup_claim=True,
+        )
+    ]
+
+
+def findings_from_coset_stable_subspace_transition_probe(
+    path: Path = COSET_STABLE_SUBSPACE_TRANSITION_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    return [
+        DequantizationFinding(
+            id="DEQ-COSET-STABLE-BRANCH-LEAKS-BEFORE-DECODER",
+            created_at=utc_now(),
+            target_type="coset_stable_subspace_transition_probe",
+            target_id=str(path),
+            severity="high",
+            claim_under_test=(
+                "The scoped 2x4 coherent stable labels close under reassociation and can be treated as a Racah decoder."
+            ),
+            evidence=(
+                f"Audited/leaky/closed branches="
+                f"{metrics.get('stable_scaling_point_count', 0)}/"
+                f"{metrics.get('leaky_stable_subspace_count', 0)}/"
+                f"{metrics.get('closed_stable_associator_count', 0)}; minimum maximally mixed leakage="
+                f"{float(metrics.get('minimum_maximally_mixed_leakage', 0.0)):.6f}."
+            ),
+            required_action=(
+                "Derive exact transition-support formulas, identify the complementary intermediate sectors, and "
+                "supply coherent labels and gap bounds for them before any associator or decoder claim."
+            ),
+            blocks_speedup_claim=True,
+        )
+    ]
+
+
 def findings_from_coset_recoupling_capability_ledger(
     path: Path = COSET_RECOUPLING_CAPABILITY_PATH,
 ) -> list[DequantizationFinding]:
@@ -6951,6 +7025,8 @@ def build_dequantization_report() -> dict[str, Any]:
         *findings_from_coset_stable_third_moment_certificate(),
         *findings_from_coset_stable_fourth_moment_certificate(),
         *findings_from_coset_stable_root_separation_certificate(),
+        *findings_from_coset_stable_coherent_label_certificate(),
+        *findings_from_coset_stable_subspace_transition_probe(),
         *findings_from_coset_jucys_murphy_label_transform(),
         *findings_from_coset_multiplicity_commutant_search(),
         *findings_from_coset_recoupling_capability_ledger(),

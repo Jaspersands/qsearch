@@ -68,6 +68,12 @@ from coset_stable_fourth_moment_certificate import (
 from coset_stable_root_separation_certificate import (
     write_stable_root_separation_certificate,
 )
+from coset_stable_coherent_label_certificate import (
+    write_stable_coherent_label_certificate,
+)
+from coset_stable_subspace_transition_probe import (
+    write_stable_subspace_transition_report,
+)
 from coset_recoupling_capability_ledger import write_recoupling_capability_report
 from coset_recoupling_mechanism_synthesis import write_recoupling_mechanism_synthesis_report
 from coset_state_distinguishability import write_coset_distinguishability_report
@@ -148,7 +154,10 @@ from dcp_uniform_schedule_family import write_dcp_uniform_schedule_report
 from dcp_sample_workbench import write_dcp_sample_workbench
 from fourier_compressibility_baselines import write_fourier_compressibility_report
 from goppa_code_search import write_goppa_code_search
-from goppa_scaling_frontier import write_goppa_scaling_frontier
+from goppa_scaling_frontier import (
+    GOPPA_SCALING_FRONTIER_PATH,
+    write_goppa_scaling_frontier,
+)
 from goppa_syzygy_frontier import write_goppa_syzygy_frontier
 from goppa_hull_projector_frontier import write_goppa_hull_projector_frontier
 from graphlet_tensor_observables import write_graphlet_tensor_observables
@@ -516,6 +525,8 @@ COSET_EXPERIMENTS = {
     "EXP-COSET-STABLE-THIRD-MOMENT-CERTIFICATE",
     "EXP-COSET-STABLE-FOURTH-MOMENT-CERTIFICATE",
     "EXP-COSET-STABLE-ROOT-SEPARATION-CERTIFICATE",
+    "EXP-COSET-STABLE-COHERENT-LABEL-CERTIFICATE",
+    "EXP-COSET-STABLE-SUBSPACE-TRANSITION-PROBE",
     "EXP-COSET-RECOUPLING-CAPABILITY-LEDGER",
     "EXP-COSET-RECOUPLING-MECHANISM-SYNTHESIS",
 }
@@ -1128,9 +1139,12 @@ def _frontier_bonus(experiment_id: str, experiment: dict[str, Any]) -> tuple[int
         if is_code_experiment:
             bonus += 70
             reasons.append("top frontier is code-equivalence")
+        if experiment_id == "EXP-CODE-CLOSURE-CONDUCTOR-ATTACK":
+            bonus += 10
+            reasons.append("closure/conductor directly tests invariant collapse")
     elif top_frontier == "character-shift-decoding-lower-bound":
         if is_character_experiment:
-            bonus += 70
+            bonus += 100
             reasons.append("top frontier is hidden-shift decoding/lower-bound work")
     elif top_frontier == "dcp-density-one-subset-sum-partial-solver":
         if is_density_one_subset_sum_experiment:
@@ -1332,6 +1346,8 @@ def select_next_experiment() -> NextExperimentSelection:
         "EXP-COSET-STABLE-THIRD-MOMENT-CERTIFICATE": 38,
         "EXP-COSET-STABLE-FOURTH-MOMENT-CERTIFICATE": 39,
         "EXP-COSET-STABLE-ROOT-SEPARATION-CERTIFICATE": 40,
+        "EXP-COSET-STABLE-COHERENT-LABEL-CERTIFICATE": 41,
+        "EXP-COSET-STABLE-SUBSPACE-TRANSITION-PROBE": 42,
         "EXP-COSET-RECOUPLING-CAPABILITY-LEDGER": 24,
         "EXP-COSET-RECOUPLING-MECHANISM-SYNTHESIS": 25,
     }
@@ -2782,6 +2798,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
                 registry_candidate_id=experiment["candidate_id"],
                 registry_result_id=result_id,
             )
+        elif experiment_id == "EXP-COSET-STABLE-COHERENT-LABEL-CERTIFICATE":
+            payload = write_stable_coherent_label_certificate(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif experiment_id == "EXP-COSET-STABLE-SUBSPACE-TRANSITION-PROBE":
+            payload = write_stable_subspace_transition_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
         elif experiment_id == "EXP-COSET-RECOUPLING-CAPABILITY-LEDGER":
             payload = write_recoupling_capability_report(
                 write_registry=True,
@@ -2931,6 +2961,8 @@ def run_experiment(experiment_id: str) -> RunnerResult:
                 registry_result_id=result_id,
             )
         elif experiment_id == "EXP-CODE-GOPPA-HULL-PROJECTOR":
+            if not GOPPA_SCALING_FRONTIER_PATH.exists():
+                write_goppa_scaling_frontier(write_registry=False)
             payload = write_goppa_hull_projector_frontier(
                 write_registry=True,
                 registry_experiment_id=experiment_id,

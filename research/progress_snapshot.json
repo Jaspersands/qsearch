@@ -26,19 +26,27 @@
         "value": "1 exact theorem"
       },
       {
+        "label": "Scoped coherent label",
+        "value": "1 proved channel"
+      },
+      {
+        "label": "Stable branch leakage",
+        "value": "65.0% minimum"
+      },
+      {
         "label": "Hidden decoder",
         "value": "Open"
       }
     ],
-    "summary": "For W_n=(n-2,2) and alpha_n=xi_n=(n-3,2,1), sparse multiplicity-four spectra through n=11 reconstruct monic integer quartics. Exact marked-cycle equality patterns now prove their trace is 4n^3-46n^2+149n-118 for every n>=7. Seventeen, 129, and 1,628 relative classes prove the next three moments, completing the quartic. Its discriminant proves a normalized n^-53 gap. The next target is a uniform coherent implementation and decoder, not another finite spectral probe."
+    "summary": "For W_n=(n-2,2) and alpha_n=xi_n=(n-3,2,1), sparse multiplicity-four spectra through n=11 reconstruct monic integer quartics. Exact marked-cycle equality patterns now prove their trace is 4n^3-46n^2+149n-118 for every n>=7. Seventeen, 129, and 1,628 relative classes prove the next three moments, completing the quartic. Its discriminant proves a normalized n^-53 gap, and an ordered-triple block encoding plus phase estimation implements that one-channel label. The left/right stable subspaces retain only about one third of their mass through n=10, so the single-channel associator route is cut. The next target is exact complementary-sector support."
   },
   "execution_model": "Research generation and experiments run interactively during active Codex sessions. A GitHub workflow validates pushed snapshots, and a scheduled backup can commit only validation-passing changes; neither mechanism performs autonomous quantum-algorithm research between sessions.",
   "metrics": {
-    "blocking_findings": 502,
-    "experiments": 164,
-    "negative_results": 478,
+    "blocking_findings": 506,
+    "experiments": 166,
+    "negative_results": 480,
     "proof_debts": 24,
-    "results": 238
+    "results": 240
   },
   "milestones": [
     {
@@ -58,14 +66,14 @@
       "title": "The complete finite S_6 Racah table was resolved"
     },
     {
-      "detail": "Exact falling-cycle sums through 1,628 fourth-moment classes prove all four coefficients and an inverse-polynomial normalized gap for one multiplicity-four channel.",
-      "title": "A complete stable quartic and root gap were proved"
+      "detail": "Exact falling-cycle sums, a normalized n^-53 gap, ordered-triple LCU, and phase estimation give a polynomial four-valued label in one channel; this is not an associator or decoder.",
+      "title": "One stable coherent multiplicity label was proved"
     }
   ],
   "next_actions": [
     {
-      "detail": "Construct a uniform block encoding and phase-estimation circuit using the proved normalized spectral gap.",
-      "title": "Compile the stable hierarchy coherently"
+      "detail": "Derive an exact projector-overlap formula and identify which intermediate partitions receive the stable branch leakage.",
+      "title": "Resolve complementary transition sectors"
     },
     {
       "detail": "Extend bounded-support spectral control beyond the single stable multiplicity-four channel without dense tableau enumeration.",
@@ -100,7 +108,7 @@
     },
     {
       "evidence": "YJM spectra were verified on 3 sectors, and bounded-support commutants split 2 finite multiplicity sectors up to multiplicity 5. The stable multiplicity-two family now has 1 exact all-n gap theorem; the hierarchy resolves 10/10 finite S_6 sectors. Sparse stable probes reconstruct 5 integer quartics through n=11.",
-      "next": "Compile the proved stable spectral hierarchy coherently and determine whether its labels carry decoder information.",
+      "next": "Classify the complementary sectors receiving the roughly two-thirds stable-branch leakage.",
       "short_title": "Cosets",
       "stage": 3,
       "status": "Active structural lead",
@@ -111,7 +119,7 @@
   ],
   "updated_at": "2026-07-18",
   "verdict": {
-    "detail": "Every speedup claim remains blocked. One restricted representation-theoretic gap theorem is now proved, a bounded-support hierarchy resolves the complete finite S_6 Racah table, and one stable multiplicity-four channel now has a complete exact quartic plus a normalized polynomial gap. Coherent recoupling, all-sector coverage, and decoding remain open.",
+    "detail": "Every speedup claim remains blocked. One restricted representation-theoretic gap theorem is now proved, a bounded-support hierarchy resolves the complete finite S_6 Racah table, and one stable multiplicity-four channel now has a complete exact quartic, normalized polynomial gap, and a scoped coherent eigenlabel primitive. Overlapping recoupling, all-sector coverage, and decoding remain open.",
     "title": "No breakthrough yet"
   }
 }

@@ -1,0 +1,206 @@
+{
+  "claim_gate": {
+    "all_n_leakage_proved": false,
+    "finite_leakage_observed": true,
+    "hidden_involution_decoder_proved": false,
+    "overlapping_racah_associator_proved": false,
+    "reason": "The one-channel labels define leaky left/right subspaces at every audited n. A closed associator must include complementary intermediate sectors; the finite probe is not an all-n leakage theorem.",
+    "speedup_claim_allowed": false,
+    "stable_branch_closed_under_recoupling": false
+  },
+  "created_at": "2026-07-18T23:10:00.269448+00:00",
+  "falsifiers_triggered": [
+    "A coherent label in one stable channel is not a closed Racah associator.",
+    "Full-rank overlap inside the retained 8x8 subblock does not eliminate leakage outside that subblock.",
+    "Finite rational-looking projector overlaps are conjectural until an exact all-n character or intertwiner proof is supplied.",
+    "No hidden-involution information follows from subspace overlap geometry alone."
+  ],
+  "headline_metrics": {
+    "all_n_leakage_theorem_count": 0,
+    "closed_stable_associator_count": 0,
+    "full_rank_transition_subblock_count": 4,
+    "hidden_involution_decoder_count": 0,
+    "leaky_stable_subspace_count": 4,
+    "maximum_maximally_mixed_retention": 0.3499228395061754,
+    "maximum_n": 10,
+    "minimum_maximally_mixed_leakage": 0.6500771604938246,
+    "minimum_n": 7,
+    "overlapping_racah_associator_count": 0,
+    "stable_multiplicity_2x4_verified_count": 4,
+    "stable_scaling_point_count": 4
+  },
+  "mathematical_contract": {
+    "basis_construction": "numerical nullspace of sum_i(I-rho(s_i)^tensor3) for adjacent Coxeter generators",
+    "branch_dimension": "g(W,W,xi)*g(xi,W,xi)=2*4=8",
+    "final_irrep": "xi_n=(n-3,2,1)",
+    "gauge_invariant_observable": "Tr(P_left P_right)=||U_left^* U_right||_F^2; divide by 8 for maximally mixed branch retention",
+    "left_branch": "(W_n tensor W_n -> xi_n) tensor W_n -> xi_n",
+    "right_branch": "W_n tensor (W_n tensor W_n -> xi_n) -> xi_n",
+    "scope": "finite numerical scaling evidence only",
+    "source": "three copies of W_n=(n-2,2)"
+  },
+  "records": [
+    {
+      "finite_numerical_probe_only": true,
+      "first_invariant_laplacian_gap": 0.1980622641951606,
+      "first_stage_multiplicity": 2,
+      "maximally_mixed_branch_leakage": 0.6500771604938246,
+      "maximally_mixed_branch_retention": 0.3499228395061754,
+      "maximum_embedding_isometry_residual": 5.1211115413934683e-14,
+      "maximum_invariant_residual": 2.141189790543286e-14,
+      "n": 7,
+      "overlap_rank": 8,
+      "overlap_singular_values": [
+        0.8842412450418861,
+        0.7294435384650139,
+        0.6814940697526056,
+        0.6319124185791047,
+        0.5110738079578376,
+        0.43087680593819055,
+        0.41384682808492473,
+        0.05953429896605889
+      ],
+      "projector_overlap_rational_candidate": "907/324",
+      "projector_overlap_trace": 2.7993827160494034,
+      "rational_candidate_residual": 2.042810365310288e-14,
+      "second_invariant_laplacian_gap": 0.19806226419515688,
+      "second_stage_multiplicity": 4,
+      "source_irrep_dimension": 14,
+      "source_partition": [
+        5,
+        2
+      ],
+      "stable_branch_closed_under_recoupling": false,
+      "stable_branch_dimension": 8,
+      "stable_irrep_dimension": 35,
+      "stable_partition": [
+        4,
+        2,
+        1
+      ],
+      "status": "stable-branch-leaks-under-recoupling"
+    },
+    {
+      "finite_numerical_probe_only": true,
+      "first_invariant_laplacian_gap": 0.1522409349774232,
+      "first_stage_multiplicity": 2,
+      "maximally_mixed_branch_leakage": 0.6578911564625849,
+      "maximally_mixed_branch_retention": 0.34210884353741516,
+      "maximum_embedding_isometry_residual": 1.367144700718818e-13,
+      "maximum_invariant_residual": 4.75874035934498e-14,
+      "n": 8,
+      "overlap_rank": 8,
+      "overlap_singular_values": [
+        0.8875540657966514,
+        0.7413607553671531,
+        0.6976533539794993,
+        0.6180059343929565,
+        0.5182560712960962,
+        0.41902366518505124,
+        0.2909033438029484,
+        0.0453462111838352
+      ],
+      "projector_overlap_rational_candidate": "10058/3675",
+      "projector_overlap_trace": 2.7368707482993213,
+      "rational_candidate_residual": 1.7763568394002505e-15,
+      "second_invariant_laplacian_gap": 0.1522409349774274,
+      "second_stage_multiplicity": 4,
+      "source_irrep_dimension": 20,
+      "source_partition": [
+        6,
+        2
+      ],
+      "stable_branch_closed_under_recoupling": false,
+      "stable_branch_dimension": 8,
+      "stable_irrep_dimension": 64,
+      "stable_partition": [
+        5,
+        2,
+        1
+      ],
+      "status": "stable-branch-leaks-under-recoupling"
+    },
+    {
+      "finite_numerical_probe_only": true,
+      "first_invariant_laplacian_gap": 0.12061475842817952,
+      "first_stage_multiplicity": 2,
+      "maximally_mixed_branch_leakage": 0.6601803626543217,
+      "maximally_mixed_branch_retention": 0.3398196373456784,
+      "maximum_embedding_isometry_residual": 4.810072582415627e-13,
+      "maximum_invariant_residual": 1.0004113246053233e-13,
+      "n": 9,
+      "overlap_rank": 8,
+      "overlap_singular_values": [
+        0.9017752384859302,
+        0.7481601293490925,
+        0.6917741353928387,
+        0.6086632491828344,
+        0.5248620008566742,
+        0.41674925312203054,
+        0.21505864090183044,
+        0.034383929669554954
+      ],
+      "projector_overlap_rational_candidate": "14093/5184",
+      "projector_overlap_trace": 2.718557098765427,
+      "rational_candidate_residual": 4.884981308350689e-15,
+      "second_invariant_laplacian_gap": 0.12061475842814466,
+      "second_stage_multiplicity": 4,
+      "source_irrep_dimension": 27,
+      "source_partition": [
+        7,
+        2
+      ],
+      "stable_branch_closed_under_recoupling": false,
+      "stable_branch_dimension": 8,
+      "stable_irrep_dimension": 105,
+      "stable_partition": [
+        6,
+        2,
+        1
+      ],
+      "status": "stable-branch-leaks-under-recoupling"
+    },
+    {
+      "finite_numerical_probe_only": true,
+      "first_invariant_laplacian_gap": 0.09788696740968356,
+      "first_stage_multiplicity": 2,
+      "maximally_mixed_branch_leakage": 0.6612180510064118,
+      "maximally_mixed_branch_retention": 0.3387819489935881,
+      "maximum_embedding_isometry_residual": 1.1493216656543234e-12,
+      "maximum_invariant_residual": 1.892603480162464e-13,
+      "n": 10,
+      "overlap_rank": 8,
+      "overlap_singular_values": [
+        0.9157378545217031,
+        0.7431001671084256,
+        0.6890441250388669,
+        0.6026593531294401,
+        0.5305258314578607,
+        0.4126509827976857,
+        0.170452633880082,
+        0.026631210609776187
+      ],
+      "projector_overlap_rational_candidate": "2420326/893025",
+      "projector_overlap_trace": 2.710255591948705,
+      "rational_candidate_residual": 8.881784197001252e-15,
+      "second_invariant_laplacian_gap": 0.09788696740960758,
+      "second_stage_multiplicity": 4,
+      "source_irrep_dimension": 35,
+      "source_partition": [
+        8,
+        2
+      ],
+      "stable_branch_closed_under_recoupling": false,
+      "stable_branch_dimension": 8,
+      "stable_irrep_dimension": 160,
+      "stable_partition": [
+        7,
+        2,
+        1
+      ],
+      "status": "stable-branch-leaks-under-recoupling"
+    }
+  ],
+  "status": "stable-branch-leakage-scaling-observed",
+  "summary": "Computed gauge-invariant left/right overlap for the 2x4 stable branch at 4 sizes; all 4 audited branches leak into complementary intermediate sectors."
+}

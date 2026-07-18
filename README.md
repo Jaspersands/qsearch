@@ -650,9 +650,23 @@ checkpoints 20,607,987,763 exact canonical equality patterns. It proves
 coefficients. The discriminant factors as `(n-2)^2 q(n)`; positivity after
 `n=m+7`, an explicit discriminant lower bound, and a Cauchy root bound prove an
 LCU-normalized gap of at least `1/(C*n^53)` for an explicit constant `C`.
-This closes the spectral theorem in one stable multiplicity-four channel.
-Uniform coherent synthesis, all-sector coverage, hidden-involution decoding,
-and any speedup claim remain open.
+This closes the spectral theorem in one stable multiplicity-four channel. The
+ordered-triple orbit terms also give a uniform LCU block encoding, so the
+proved normalized gap and coherent phase estimation append a polynomial-cost
+four-valued eigenlabel in that declared channel. This does not route arbitrary
+Kronecker sectors or change coupling trees. Overlapping Racah synthesis,
+all-sector coverage, hidden-involution decoding, and any speedup claim remain
+open.
+
+The first transition stress test now shows why the one-channel result does not
+close that gap. For `n=7..10`, sparse Coxeter-Laplacian nullspaces construct the
+`2 x 4 = 8` stable intertwiner branch on both coupling trees. The
+basis-independent quantity `Tr(P_left P_right)/8` falls from about `0.350` to
+`0.339`, so roughly two thirds of a maximally mixed stable branch leaks into
+complementary intermediate sectors. The retained `8 x 8` overlap is full rank
+but increasingly ill-conditioned. This is finite scaling evidence, not an
+all-`n` leakage theorem; it cuts the single-channel associator direction and
+makes complementary-sector classification the next proof target.
 
 ```bash
 python qsearch.py coset-racah-gap-scaling
@@ -663,6 +677,8 @@ python qsearch.py coset-racah-second-moment-proof
 python qsearch.py coset-racah-third-moment-proof
 python qsearch.py coset-racah-fourth-moment-proof
 python qsearch.py coset-racah-root-separation-proof
+python qsearch.py coset-racah-coherent-label-proof
+python qsearch.py coset-racah-stable-transition --n-values 7,8,9,10
 ```
 
 The capability ledger separates the solved `S_n` QFT, Schur-Weyl transforms,

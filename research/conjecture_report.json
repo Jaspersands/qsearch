@@ -994,7 +994,7 @@
           "severity": "medium"
         },
         {
-          "evidence": "Triggered falsifiers: The S_n QFT is already polynomial and cannot be presented as the missing breakthrough. | Exact Holevo/Fano accounting charges copies but does not construct a collective measurement or decoder. | #BQP multiplicity counting does not construct a coherent Kronecker basis. | Schur-Weyl Clebsch-Gordan circuits do not automatically solve internal Specht tensor products. | Diagonal YJM tableau labels retain exact Kronecker multiplicity degeneracy. | Finite commutant-Hamiltonian splitting has no all-n LCU-normalized gap theorem. | Many restricted multiplicity speedup candidates have polynomial classical algorithms. | Finite growth of dimensions or multiplicities is not a circuit lower bound.",
+          "evidence": "Triggered falsifiers: The S_n QFT is already polynomial and cannot be presented as the missing breakthrough. | Exact Holevo/Fano accounting charges copies but does not construct a collective measurement or decoder. | #BQP multiplicity counting does not construct a coherent Kronecker basis. | Schur-Weyl Clebsch-Gordan circuits do not automatically solve internal Specht tensor products. | Diagonal YJM tableau labels retain exact Kronecker multiplicity degeneracy. | One stable gapped multiplicity label cannot be transferred to unaudited sectors or overlapping trees. | Many restricted multiplicity speedup candidates have polynomial classical algorithms. | Finite growth of dimensions or multiplicities is not a circuit lower bound.",
           "finding_id": "DEQ-RESULT-EXP-COSET-RECOUPLING-CAPABILITY-LEDGER-LATEST-FALSIFIERS",
           "required_action": "Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.",
           "severity": "medium"
@@ -1030,6 +1030,12 @@
           "severity": "medium"
         },
         {
+          "evidence": "Triggered falsifiers: The input must already be routed into the declared target irrep channel. | A one-channel multiplicity label is not an unrestricted internal Kronecker transform. | Diagonalizing one coupling tree does not implement a Racah associator between overlapping trees. | No hidden-involution decoder or classical separation follows from the label transform alone.",
+          "finding_id": "DEQ-RESULT-EXP-COSET-STABLE-COHERENT-LABEL-CERTIFICATE-LATEST-FALSIFIERS",
+          "required_action": "Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.",
+          "severity": "medium"
+        },
+        {
           "evidence": "Triggered falsifiers: A complete characteristic polynomial does not itself prove inverse-polynomial normalized root separation. | One stable multiplicity-four channel does not cover every decoder-relevant sector. | Exact spectral labels do not supply a coherent polynomial-size Racah transform. | No measurement outcome has been connected to a hidden-involution decoder.",
           "finding_id": "DEQ-RESULT-EXP-COSET-STABLE-FOURTH-MOMENT-CERTIFICATE-LATEST-FALSIFIERS",
           "required_action": "Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.",
@@ -1050,6 +1056,12 @@
         {
           "evidence": "Triggered falsifiers: Two exact characteristic coefficients do not determine a quartic spectrum. | A complete characteristic polynomial would still need normalized root separation. | One stable multiplicity-four channel does not cover every decoder-relevant sector. | No coherent recoupling circuit or hidden-involution decoder follows from moment identities.",
           "finding_id": "DEQ-RESULT-EXP-COSET-STABLE-SECOND-MOMENT-CERTIFICATE-LATEST-FALSIFIERS",
+          "required_action": "Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.",
+          "severity": "medium"
+        },
+        {
+          "evidence": "Triggered falsifiers: A coherent label in one stable channel is not a closed Racah associator. | Full-rank overlap inside the retained 8x8 subblock does not eliminate leakage outside that subblock. | Finite rational-looking projector overlaps are conjectural until an exact all-n character or intertwiner proof is supplied. | No hidden-involution information follows from subspace overlap geometry alone.",
+          "finding_id": "DEQ-RESULT-EXP-COSET-STABLE-SUBSPACE-TRANSITION-PROBE-LATEST-FALSIFIERS",
           "required_action": "Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.",
           "severity": "medium"
         },
@@ -1175,7 +1187,7 @@
         }
       ],
       "candidate_id": "CODE-COSET-COLLECTIVE",
-      "created_at": "2026-07-18T22:32:57.285429+00:00",
+      "created_at": "2026-07-18T23:12:43.648249+00:00",
       "id": "CONJ-CODE-COSET-COLLECTIVE",
       "next_actions": [
         "Resolve every blocking finding before promotion.",
@@ -2901,9 +2913,10 @@
             "maximum_multiplicity_register_bits": 7,
             "maximum_n": 10,
             "maximum_partition_count": 42,
-            "proved_polynomial_primitive_count": 6,
+            "proved_polynomial_primitive_count": 7,
             "restricted_multiplicity_classical_match_count": 1,
-            "unresolved_required_capability_count": 4
+            "stable_channel_gapped_label_transform_poly_proof_count": 1,
+            "unresolved_required_capability_count": 3
           },
           "status": "known-primitives-separated-from-open-recoupling-and-decoder",
           "summary": "Classified 12 representation primitives and exact finite Kronecker growth through n=10 without transferring solved QFT/counting results to the open decoder."
@@ -3001,6 +3014,27 @@
           "summary": "Extracted the multiplicity-4 critical block through n=11 without dense Hamiltonians; all spectra split and reconstruct integer polynomials, but exact all-n formulas and gap bounds remain open."
         },
         {
+          "experiment_result_id": "RESULT-EXP-COSET-STABLE-COHERENT-LABEL-CERTIFICATE-LATEST",
+          "metrics": {
+            "all_sector_uniform_transform_count": 0,
+            "hidden_involution_decoder_count": 0,
+            "normalized_gap_inverse_polynomial_exponent": 53,
+            "ordered_triple_bijection_theorem_count": 1,
+            "overlapping_racah_associator_count": 0,
+            "phase_estimation_query_exponent": 53,
+            "resolved_multiplicity_dimension": 4,
+            "stable_channel_block_encoding_count": 1,
+            "stable_channel_normalized_gap_theorem_count": 1,
+            "term_index_register_count": 3,
+            "uniform_polynomial_stable_multiplicity_label_transform_count": 1,
+            "uniform_prepare_circuit_count": 1,
+            "uniform_select_circuit_count": 1,
+            "unrestricted_internal_kronecker_transform_count": 0
+          },
+          "status": "stable-coherent-label-proved-associator-decoder-open",
+          "summary": "Combined an explicit ordered-triple LCU with the proved normalized gap to obtain a uniform coherent four-valued multiplicity label transform in one stable channel; associators and decoding remain open."
+        },
+        {
           "experiment_result_id": "RESULT-EXP-COSET-STABLE-FOURTH-MOMENT-CERTIFICATE-LATEST",
           "metrics": {
             "all_n_quartic_theorem_count": 1,
@@ -3080,6 +3114,25 @@
           },
           "status": "exact-stable-second-moment-proved-two-quartic-coefficients-known",
           "summary": "Proved the stable second power trace and the quartic's second coefficient for every n>=7 using 17 relative orbit classes; two quartic coefficients, root separation, circuit, and decoder remain open."
+        },
+        {
+          "experiment_result_id": "RESULT-EXP-COSET-STABLE-SUBSPACE-TRANSITION-PROBE-LATEST",
+          "metrics": {
+            "all_n_leakage_theorem_count": 0,
+            "closed_stable_associator_count": 0,
+            "full_rank_transition_subblock_count": 4,
+            "hidden_involution_decoder_count": 0,
+            "leaky_stable_subspace_count": 4,
+            "maximum_maximally_mixed_retention": 0.3499228395061754,
+            "maximum_n": 10,
+            "minimum_maximally_mixed_leakage": 0.6500771604938246,
+            "minimum_n": 7,
+            "overlapping_racah_associator_count": 0,
+            "stable_multiplicity_2x4_verified_count": 4,
+            "stable_scaling_point_count": 4
+          },
+          "status": "stable-branch-leakage-scaling-observed",
+          "summary": "Computed gauge-invariant left/right overlap for the 2x4 stable branch at 4 sizes; all 4 audited branches leak into complementary intermediate sectors."
         },
         {
           "experiment_result_id": "RESULT-EXP-COSET-STABLE-THIRD-MOMENT-CERTIFICATE-COSET",
@@ -3345,7 +3398,7 @@
           "summary": "Audited 17 weak Fourier involution label distributions over S_n for n=[6, 8, 10, 12, 14, 16]. 4 row(s) are nearly Plancherel and 6 row(s) have only small label signal."
         }
       ],
-      "updated_at": "2026-07-18T22:32:57.285429+00:00"
+      "updated_at": "2026-07-18T23:12:43.648249+00:00"
     },
     {
       "assumptions": [
@@ -4527,7 +4580,7 @@
         }
       ],
       "candidate_id": "DHS-GOWERS-SIEVE",
-      "created_at": "2026-07-18T22:32:57.285429+00:00",
+      "created_at": "2026-07-18T23:12:43.648249+00:00",
       "id": "CONJ-DHS-GOWERS-SIEVE",
       "next_actions": [
         "Resolve every blocking finding before promotion.",
@@ -6597,7 +6650,7 @@
           "summary": "Audited 40 explicit hidden-shift instances across 10 phase families. 0 instances show Fourier/derivative structure; 16 are critical/high dequantization risk; 40 survive at least one restricted query model. Best DHSP sieve strategy aggressive_doubling reaches v2=7 from 2048 phase labels; explicit phase-state trace reaches v2=7 with 44 survivor states."
         }
       ],
-      "updated_at": "2026-07-18T22:32:57.285429+00:00"
+      "updated_at": "2026-07-18T23:12:43.648249+00:00"
     },
     {
       "assumptions": [
@@ -6655,7 +6708,7 @@
         }
       ],
       "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
-      "created_at": "2026-07-18T22:32:57.285429+00:00",
+      "created_at": "2026-07-18T23:12:43.648249+00:00",
       "id": "CONJ-HYP-LIT-COSET-OBSERVABLES",
       "next_actions": [
         "Resolve every blocking finding before promotion.",
@@ -6695,7 +6748,7 @@
           "summary": "Audited 4 hidden-permutation graph pairs. 2 pair survives current classical and low-register tests; 1 control pair is classically distinguished; 2 CFI-style parity benchmark(s) included."
         }
       ],
-      "updated_at": "2026-07-18T22:32:57.285429+00:00"
+      "updated_at": "2026-07-18T23:12:43.648249+00:00"
     },
     {
       "assumptions": [
@@ -6785,7 +6838,7 @@
         }
       ],
       "candidate_id": "HYP-LIT-HIDDEN-SHIFT-SIEVE",
-      "created_at": "2026-07-18T22:32:57.285429+00:00",
+      "created_at": "2026-07-18T23:12:43.648249+00:00",
       "id": "CONJ-HYP-LIT-HIDDEN-SHIFT-SIEVE",
       "next_actions": [
         "Resolve every blocking finding before promotion.",
@@ -6867,7 +6920,7 @@
           "summary": "Audited 40 explicit hidden-shift instances across 10 phase families. 0 instances show Fourier/derivative structure; 16 are critical/high dequantization risk; 40 survive at least one restricted query model. Best DHSP sieve strategy aggressive_doubling reaches v2=7 from 2048 phase labels; explicit phase-state trace reaches v2=7 with 44 survivor states."
         }
       ],
-      "updated_at": "2026-07-18T22:32:57.285429+00:00"
+      "updated_at": "2026-07-18T23:12:43.648249+00:00"
     },
     {
       "assumptions": [
@@ -6967,7 +7020,7 @@
         }
       ],
       "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
-      "created_at": "2026-07-18T22:32:57.285429+00:00",
+      "created_at": "2026-07-18T23:12:43.648249+00:00",
       "id": "CONJ-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
       "next_actions": [
         "Resolve every blocking finding before promotion.",
@@ -7051,7 +7104,7 @@
           "summary": "Audited 10 graphlet tensor observables across 5 graph pairs. 3 signal(s) collapse to small-pattern classical counts; 3 boundary pair(s) remain without graphlet-tensor signal."
         }
       ],
-      "updated_at": "2026-07-18T22:32:57.285429+00:00"
+      "updated_at": "2026-07-18T23:12:43.648249+00:00"
     },
     {
       "assumptions": [
@@ -7127,7 +7180,7 @@
         }
       ],
       "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
-      "created_at": "2026-07-18T22:32:57.285429+00:00",
+      "created_at": "2026-07-18T23:12:43.648249+00:00",
       "id": "CONJ-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
       "next_actions": [
         "Resolve every blocking finding before promotion.",
@@ -7182,7 +7235,7 @@
           "summary": "Audited 10 graphlet tensor observables across 5 graph pairs. 3 signal(s) collapse to small-pattern classical counts; 3 boundary pair(s) remain without graphlet-tensor signal."
         }
       ],
-      "updated_at": "2026-07-18T22:32:57.285429+00:00"
+      "updated_at": "2026-07-18T23:12:43.648249+00:00"
     },
     {
       "assumptions": [
@@ -7258,7 +7311,7 @@
         }
       ],
       "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
-      "created_at": "2026-07-18T22:32:57.285429+00:00",
+      "created_at": "2026-07-18T23:12:43.648249+00:00",
       "id": "CONJ-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
       "next_actions": [
         "Resolve every blocking finding before promotion.",
@@ -7312,7 +7365,7 @@
           "summary": "Audited 4 hidden-permutation graph pairs. 2 pair survives current classical and low-register tests; 1 control pair is classically distinguished; 2 CFI-style parity benchmark(s) included."
         }
       ],
-      "updated_at": "2026-07-18T22:32:57.285429+00:00"
+      "updated_at": "2026-07-18T23:12:43.648249+00:00"
     },
     {
       "assumptions": [
@@ -7376,7 +7429,7 @@
         }
       ],
       "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
-      "created_at": "2026-07-18T22:32:57.285429+00:00",
+      "created_at": "2026-07-18T23:12:43.648249+00:00",
       "id": "CONJ-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
       "next_actions": [
         "Resolve every blocking finding before promotion.",
@@ -7410,10 +7463,10 @@
           "summary": "Audited 3 code-equivalence pairs. 1 equivalent control pair(s) verified; 2 non-equivalent control pair(s) classically distinguished."
         }
       ],
-      "updated_at": "2026-07-18T22:32:57.285429+00:00"
+      "updated_at": "2026-07-18T23:12:43.648249+00:00"
     }
   ],
-  "created_at": "2026-07-18T22:32:57.373298+00:00",
+  "created_at": "2026-07-18T23:12:43.738586+00:00",
   "needs_evidence_count": 0,
   "status": "blocked"
 }
