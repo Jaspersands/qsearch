@@ -1,0 +1,106 @@
+{
+  "claim_gate": {
+    "all_n_restricted_gap_theorem_proved": true,
+    "balanced_or_plancherel_relevant_sector_coverage_proved": false,
+    "exact_symbolic_specht_calculation": true,
+    "general_kronecker_multiplicity_transform_proved": false,
+    "hidden_involution_decoder_proved": false,
+    "kcopy_associator_polynomial_proved": false,
+    "reason": "The exact gap theorem covers one stable two-row source and multiplicity-two target. It does not cover general sectors, recoupling, or decoding.",
+    "restricted_family_phase_estimation_polynomial": true,
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-07-18T01:00:26.854085+00:00",
+  "exact_gap_certificate": {
+    "antisymmetric_eigenvalue": "(n - 1)*(n**2 - 10*n + 22)",
+    "lcu_normalization": "n*(n - 2)*(n - 1)",
+    "lcu_normalized_gap": "2/(n*(n - 1))",
+    "phase_estimation_inverse_gap_scaling": "n(n-1)/2",
+    "raw_gap": "2*(n - 2)",
+    "symbolic_identities_verified": true,
+    "symmetric_eigenvalue": "n**3 - 11*n**2 + 34*n - 26"
+  },
+  "falsifiers_triggered": [
+    "Finite interpolation is not used: both parity Rayleigh quotients are exact symbolic expressions.",
+    "A theorem on one multiplicity-two family is not promoted to a general internal Kronecker transform.",
+    "Polynomial phase estimation for this label does not implement overlapping Racah moves or decode a hidden involution."
+  ],
+  "headline_metrics": {
+    "all_n_critical_gap_theorem_count": 1,
+    "general_sector_gap_theorem_count": 0,
+    "hidden_involution_decoder_count": 0,
+    "kcopy_associator_count": 0,
+    "lcu_normalized_gap_exponent": 2,
+    "minimum_proved_n": 6,
+    "restricted_family_inverse_polynomial_gap_count": 1,
+    "stable_kronecker_multiplicity": 2,
+    "symbolic_parity_eigenvalue_count": 2
+  },
+  "literature_scope": [
+    {
+      "id": "arXiv:1210.5579",
+      "role": "Partition-algebra framework for stable Kronecker coefficients and two-row families."
+    },
+    {
+      "id": "arXiv:1204.4533",
+      "role": "FI-module and character-polynomial stability context; not used as a substitute for the explicit calculation."
+    }
+  ],
+  "local_operator_certificate": {
+    "lcu_term_count": "6*binomial(n,3)=n(n-1)(n-2)",
+    "local_s3_identity": "On V_(n-2,2), the local 3-cycle class sum Z_S equals T_S-I because the restricted S_3 module has no sign constituent.",
+    "projected_edge_gram_entry": "delta(e,f)-(|e intersect f|-2/(n-1))/(n-2)",
+    "proved": true,
+    "swap_symmetry": "Summing T_S tensor (T_S-I) over triples is swap invariant since sum_S T_S is a one-sided central scalar.",
+    "two_subset_realization": "V_(n-2,2) is the kernel component of the vertex-edge incidence map in the 2-subset permutation module."
+  },
+  "multiplicity_certificate": {
+    "all_n_at_least_6_multiplicity": 2,
+    "cycle_factorial_moment_rule": "E[product_i (X_i)_{a_i}]=product_i i^{-a_i} whenever sum_i i*a_i<=n",
+    "direct_n6_multiplicity": 2,
+    "proved": true,
+    "source_character_polynomial": "binomial(X1,2)+X2-X1",
+    "stable_factorial_moment_threshold": 7,
+    "stable_multiplicity_for_n_at_least_7": 2,
+    "target_character_polynomial": "(X1^3-6*X1^2+8*X1)/3-X3"
+  },
+  "parity_records": [
+    {
+      "exact_eigenvalue": "n**3 - 11*n**2 + 34*n - 26",
+      "exact_hamiltonian_expectation": "24*(n - 3)*(n**3 - 11*n**2 + 34*n - 26)/(n - 2)",
+      "exact_norm": "24*(n - 3)/(n - 2)",
+      "nonzero_for_all_n_at_least_6": true,
+      "parity": "symmetric",
+      "sparse_vector_term_count": 24
+    },
+    {
+      "exact_eigenvalue": "(n - 1)*(n**2 - 10*n + 22)",
+      "exact_hamiltonian_expectation": "72*(n - 5)*(n - 1)*(n**2 - 10*n + 22)/(n - 2)",
+      "exact_norm": "72*(n - 5)/(n - 2)",
+      "nonzero_for_all_n_at_least_6": true,
+      "parity": "antisymmetric",
+      "sparse_vector_term_count": 36
+    }
+  ],
+  "specht_map_certificate": {
+    "antisymmetric_image_norm": "72*(n - 5)/(n - 2)",
+    "domain": "Young permutation module M^(n-3,2,1)",
+    "equivariant_map": "({a,b},c) maps to w_ab tensor (w_ac+w_bc) plus or minus its swapped tensor.",
+    "nonzero_for_every_n_at_least_6": true,
+    "parity_multiplicities": "Each image supplies one target copy in opposite swap parity; total Kronecker multiplicity two makes both parity blocks one-dimensional.",
+    "polytabloid_column_groups": "S_{1,3,5} x S_{2,4}",
+    "polytabloid_term_count": 12,
+    "proved": true,
+    "symmetric_image_norm": "24*(n - 3)/(n - 2)"
+  },
+  "status": "all-n-restricted-commutant-gap-proved-associator-decoder-open",
+  "summary": "Proved the raw 2(n-2) and LCU-normalized 2/[n(n-1)] multiplicity gap for lambda=(n-2,2), nu=(n-3,2,1), all n>=6; general-sector, Racah, and decoder obligations remain open.",
+  "theorem": {
+    "hamiltonian": "H_n=sum rho_lambda(tau) tensor rho_lambda(c) over oriented 3-cycles c and transpositions tau on supp(c)",
+    "proof_method": "Explicit symmetric/antisymmetric Specht polytabloids in the projected 2-subset module, with exact support-orbit aggregation.",
+    "range": "every integer n>=6",
+    "source_partition": "lambda_n=(n-2,2)",
+    "statement": "The two target multiplicity eigenvalues differ by exactly 2(n-2), hence the LCU-normalized gap is 2/[n(n-1)].",
+    "target_partition": "nu_n=(n-3,2,1)"
+  }
+}

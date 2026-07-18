@@ -1,0 +1,359 @@
+{
+  "claim_gate": {
+    "all_audited_critical_blocks_split": true,
+    "all_n_characteristic_polynomial_proved": false,
+    "all_n_gap_proved": false,
+    "full_dense_hamiltonians_avoided": true,
+    "integer_characteristic_polynomials_reconstructed": true,
+    "reason": "Sparse finite extraction and integer reconstruction provide theorem targets, not exact coefficient formulas, all-n root separation, complete sector coverage, or a coherent circuit.",
+    "speedup_claim_allowed": false,
+    "uniform_polynomial_racah_circuit_proved": false
+  },
+  "created_at": "2026-07-18T01:40:25.577885+00:00",
+  "falsifiers_triggered": [
+    "Integer polynomial reconstruction from floating spectra is a conjecture generator, not an exact proof.",
+    "One critical stable channel does not cover every intermediate or final sector.",
+    "Sparse finite block extraction does not establish polynomial complexity as n grows.",
+    "No coherent circuit or hidden-involution decoder is constructed."
+  ],
+  "headline_metrics": {
+    "all_n_characteristic_polynomial_theorem_count": 0,
+    "all_n_gap_theorem_count": 0,
+    "finite_split_count": 5,
+    "full_dense_hamiltonian_materialization_count": 0,
+    "integer_characteristic_polynomial_candidate_count": 5,
+    "maximum_integer_polynomial_reconstruction_residual": 5.53131103515625e-05,
+    "maximum_integer_polynomial_relative_reconstruction_residual": 8.317917063596713e-15,
+    "maximum_n": 11,
+    "maximum_second_stage_multiplicity": 4,
+    "maximum_sparse_tensor_dimension": 10164,
+    "maximum_sparse_yjm_nonzero_count": 20185822,
+    "maximum_target_eigenspace_relative_residual": 1.1380162528156609e-12,
+    "minimum_n": 7,
+    "minimum_observed_normalized_gap": 0.01877888555149967,
+    "minimum_observed_raw_gap": 7.211102550927969,
+    "record_count": 5,
+    "uniform_polynomial_racah_circuit_count": 0
+  },
+  "method_contract": {
+    "hamiltonian_application": "termwise sparse action; no dense tensor-sector Hamiltonian",
+    "sparse_solver": "shift-invert extraction of only the g(alpha_n,W_n,xi_n)-dimensional block",
+    "stable_channel": "alpha_n=xi_n=(n-3,2,1), W_n=(n-2,2)",
+    "symbolic_target": "monic integer characteristic polynomial of the multiplicity action",
+    "target_extraction": "deterministic low-magnitude separating linear functional of diagonal YJM operators"
+  },
+  "records": [
+    {
+      "all_n_gap_proved": false,
+      "eigenvalues": [
+        -3.861406616345065,
+        7.394448724536017,
+        14.605551275463986,
+        24.861406616345054
+      ],
+      "exact_integer_polynomial_candidate": true,
+      "final_partition": [
+        4,
+        2,
+        1
+      ],
+      "full_dense_hamiltonian_materialized": false,
+      "integer_characteristic_polynomial": [
+        1,
+        -43,
+        474,
+        -156,
+        -10368
+      ],
+      "integer_polynomial_reconstruction_residual": 2.000888343900442e-11,
+      "integer_polynomial_relative_reconstruction_residual": 1.929869158854593e-15,
+      "intermediate_irrep_dimension": 35,
+      "intermediate_partition": [
+        4,
+        2,
+        1
+      ],
+      "lcu_normalized_gap": 0.03433858357584747,
+      "lcu_term_count": 210,
+      "lcu_term_count_formula": 210,
+      "minimum_label_separation": 8104,
+      "multiplicity_fully_split": true,
+      "n": 7,
+      "raw_gap": 7.211102550927969,
+      "second_stage_multiplicity": 4,
+      "separating_yjm_weights": [
+        -499000,
+        -566627,
+        164547,
+        744214,
+        -749561,
+        -383186
+      ],
+      "source_irrep_dimension": 14,
+      "source_partition": [
+        5,
+        2
+      ],
+      "sparse_yjm_nonzero_count": 81398,
+      "status": "sparse-critical-block-split-integer-polynomial-reconstructed",
+      "target_basis_orthogonality_residual": 1.5114016900373872e-15,
+      "target_eigenspace_relative_residual": 6.457448261222317e-15,
+      "target_eigenspace_residual": 5.500964567321806e-09,
+      "target_yjm_label": -851879,
+      "tensor_dimension": 490,
+      "total_tableau_content_count": 232
+    },
+    {
+      "all_n_gap_proved": false,
+      "eigenvalues": [
+        26.268369170660723,
+        39.11210881938122,
+        48.60789902429369,
+        64.0116229856643
+      ],
+      "exact_integer_polynomial_candidate": true,
+      "final_partition": [
+        5,
+        2,
+        1
+      ],
+      "full_dense_hamiltonian_materialized": false,
+      "integer_characteristic_polynomial": [
+        1,
+        -178,
+        11502,
+        -319136,
+        3196760
+      ],
+      "integer_polynomial_reconstruction_residual": 5.122274160385132e-09,
+      "integer_polynomial_relative_reconstruction_residual": 1.6023330373206408e-15,
+      "intermediate_irrep_dimension": 64,
+      "intermediate_partition": [
+        5,
+        2,
+        1
+      ],
+      "lcu_normalized_gap": 0.028261280371763293,
+      "lcu_term_count": 336,
+      "lcu_term_count_formula": 336,
+      "minimum_label_separation": 9532,
+      "multiplicity_fully_split": true,
+      "n": 8,
+      "raw_gap": 9.495790204912467,
+      "second_stage_multiplicity": 4,
+      "separating_yjm_weights": [
+        -298583,
+        440452,
+        23684,
+        -201475,
+        -206241,
+        998203,
+        368495
+      ],
+      "source_irrep_dimension": 20,
+      "source_partition": [
+        6,
+        2
+      ],
+      "sparse_yjm_nonzero_count": 460731,
+      "status": "sparse-critical-block-split-integer-polynomial-reconstructed",
+      "target_basis_orthogonality_residual": 1.0503408780565894e-15,
+      "target_eigenspace_relative_residual": 5.099035531757295e-13,
+      "target_eigenspace_residual": 1.783372380125519e-06,
+      "target_yjm_label": 3497470,
+      "tensor_dimension": 1280,
+      "total_tableau_content_count": 764
+    },
+    {
+      "all_n_gap_proved": false,
+      "eigenvalues": [
+        80.12310728525853,
+        94.84892367101652,
+        108.80829165306676,
+        129.21967739065852
+      ],
+      "exact_integer_polynomial_candidate": true,
+      "final_partition": [
+        6,
+        2,
+        1
+      ],
+      "full_dense_hamiltonian_materialized": false,
+      "integer_characteristic_polynomial": [
+        1,
+        -413,
+        63308,
+        -4269052,
+        106851552
+      ],
+      "integer_polynomial_reconstruction_residual": 3.427267074584961e-07,
+      "integer_polynomial_relative_reconstruction_residual": 3.207503316924176e-15,
+      "intermediate_irrep_dimension": 105,
+      "intermediate_partition": [
+        6,
+        2,
+        1
+      ],
+      "lcu_normalized_gap": 0.027697158694544123,
+      "lcu_term_count": 504,
+      "lcu_term_count_formula": 504,
+      "minimum_label_separation": 4010,
+      "multiplicity_fully_split": true,
+      "n": 9,
+      "raw_gap": 13.959367982050239,
+      "second_stage_multiplicity": 4,
+      "separating_yjm_weights": [
+        -614491,
+        417653,
+        -721519,
+        737977,
+        995582,
+        171194,
+        -701220,
+        384433
+      ],
+      "source_irrep_dimension": 27,
+      "source_partition": [
+        7,
+        2
+      ],
+      "sparse_yjm_nonzero_count": 1960593,
+      "status": "sparse-critical-block-split-integer-polynomial-reconstructed",
+      "target_basis_orthogonality_residual": 2.563254356904514e-15,
+      "target_eigenspace_relative_residual": 1.1380162528156609e-12,
+      "target_eigenspace_residual": 7.735062329900462e-07,
+      "target_yjm_label": 679697,
+      "tensor_dimension": 2835,
+      "total_tableau_content_count": 2620
+    },
+    {
+      "all_n_gap_proved": false,
+      "eigenvalues": [
+        163.7150953490924,
+        180.37261348091891,
+        201.45367795404408,
+        226.4586132159462
+      ],
+      "exact_integer_polynomial_candidate": true,
+      "final_partition": [
+        7,
+        2,
+        1
+      ],
+      "full_dense_hamiltonian_materialized": false,
+      "integer_characteristic_polynomial": [
+        1,
+        -772,
+        222390,
+        -28333728,
+        1347172992
+      ],
+      "integer_polynomial_reconstruction_residual": 1.1205673217773438e-05,
+      "integer_polynomial_relative_reconstruction_residual": 8.317917063596713e-15,
+      "intermediate_irrep_dimension": 160,
+      "intermediate_partition": [
+        7,
+        2,
+        1
+      ],
+      "lcu_normalized_gap": 0.023135441849759058,
+      "lcu_term_count": 720,
+      "lcu_term_count_formula": 720,
+      "minimum_label_separation": 955,
+      "multiplicity_fully_split": true,
+      "n": 10,
+      "raw_gap": 16.65751813182652,
+      "second_stage_multiplicity": 4,
+      "separating_yjm_weights": [
+        906458,
+        -697179,
+        -520444,
+        971347,
+        -176475,
+        684514,
+        971589,
+        -44247,
+        -393572
+      ],
+      "source_irrep_dimension": 35,
+      "source_partition": [
+        8,
+        2
+      ],
+      "sparse_yjm_nonzero_count": 6772566,
+      "status": "sparse-critical-block-split-integer-polynomial-reconstructed",
+      "target_basis_orthogonality_residual": 5.665705209752064e-15,
+      "target_eigenspace_relative_residual": 7.797125674922511e-14,
+      "target_eigenspace_residual": 2.31710068618172e-07,
+      "target_yjm_label": 2971737,
+      "tensor_dimension": 5600,
+      "total_tableau_content_count": 9496
+    },
+    {
+      "all_n_gap_proved": false,
+      "eigenvalues": [
+        283.12561291972634,
+        301.716709615711,
+        332.44200410180207,
+        361.71567336276235
+      ],
+      "exact_integer_polynomial_candidate": true,
+      "final_partition": [
+        8,
+        2,
+        1
+      ],
+      "full_dense_hamiltonian_materialized": false,
+      "integer_characteristic_polynomial": [
+        1,
+        -1279,
+        611646,
+        -129624524,
+        10272159200
+      ],
+      "integer_polynomial_reconstruction_residual": 5.53131103515625e-05,
+      "integer_polynomial_relative_reconstruction_residual": 5.384759842075121e-15,
+      "intermediate_irrep_dimension": 231,
+      "intermediate_partition": [
+        8,
+        2,
+        1
+      ],
+      "lcu_normalized_gap": 0.01877888555149967,
+      "lcu_term_count": 990,
+      "lcu_term_count_formula": 990,
+      "minimum_label_separation": 104,
+      "multiplicity_fully_split": true,
+      "n": 11,
+      "raw_gap": 18.591096695984675,
+      "second_stage_multiplicity": 4,
+      "separating_yjm_weights": [
+        275088,
+        215520,
+        890204,
+        -990491,
+        888663,
+        -706872,
+        215616,
+        887168,
+        -27653,
+        -334227
+      ],
+      "source_irrep_dimension": 44,
+      "source_partition": [
+        9,
+        2
+      ],
+      "sparse_yjm_nonzero_count": 20185822,
+      "status": "sparse-critical-block-split-integer-polynomial-reconstructed",
+      "target_basis_orthogonality_residual": 1.0477310988651074e-14,
+      "target_eigenspace_relative_residual": 2.1688570498118862e-14,
+      "target_eigenspace_residual": 5.711865055814737e-08,
+      "target_yjm_label": 2633583,
+      "tensor_dimension": 10164,
+      "total_tableau_content_count": 35696
+    }
+  ],
+  "status": "sparse-stable-gap-probe-survives-symbolic-proof-open",
+  "summary": "Extracted the multiplicity-4 critical block through n=11 without dense Hamiltonians; all spectra split and reconstruct integer polynomials, but exact all-n formulas and gap bounds remain open."
+}

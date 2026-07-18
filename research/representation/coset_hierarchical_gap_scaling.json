@@ -1,0 +1,506 @@
+{
+  "claim_gate": {
+    "all_audited_second_stage_blocks_split": true,
+    "all_n_second_stage_gap_proved": false,
+    "hidden_involution_decoder_proved": false,
+    "multiplicity_four_audited": true,
+    "reason": "Finite splitting through n=8 does not prove an inverse-polynomial all-n gap, cover every final family, compile phase estimation, or decode the hidden involution.",
+    "speedup_claim_allowed": false,
+    "uniform_polynomial_racah_circuit_proved": false
+  },
+  "created_at": "2026-07-18T01:28:45.871507+00:00",
+  "falsifiers_triggered": [
+    "Finite nonzero gaps cannot be extrapolated into an inverse-polynomial all-n theorem.",
+    "The empirical gap slope is descriptive and is not a complexity proof.",
+    "One stable final-target family does not cover all source-relevant sectors.",
+    "A gapped multiplicity label does not by itself implement Racah amplitudes or hidden-involution decoding."
+  ],
+  "family_contract": {
+    "final_target": "xi_n=(n-3,2,1)",
+    "finite_extraction": "dense diagonal YJM target-tableau blocks",
+    "intermediates": "every alpha with g(W_n,W_n,alpha) g(alpha,W_n,xi_n)>0",
+    "lcu_term_count": "n(n-1)(n-2)",
+    "second_stage_hamiltonian": "H_(alpha,W)=sum rho_alpha(tau) tensor rho_W(c) for tau contained in oriented 3-cycle c",
+    "source": "W_n=(n-2,2)"
+  },
+  "headline_metrics": {
+    "all_n_second_stage_gap_theorem_count": 0,
+    "audited_nontrivial_channel_count": 18,
+    "empirical_log_log_normalized_gap_slope": -1.8932685429119105,
+    "finite_all_blocks_split_count": 3,
+    "hidden_involution_decoder_count": 0,
+    "maximum_final_total_multiplicity": 25,
+    "maximum_n": 8,
+    "maximum_second_stage_multiplicity": 4,
+    "maximum_tableau_spectrum_consistency_residual": 4.4786743584721263e-13,
+    "minimum_n": 6,
+    "minimum_observed_normalized_gap": 0.028261280371763634,
+    "minimum_observed_raw_gap": 5.830951894845291,
+    "record_count": 3,
+    "uniform_polynomial_racah_circuit_count": 0
+  },
+  "records": [
+    {
+      "all_second_stage_blocks_split": true,
+      "channels": [
+        {
+          "eigenvalues": [
+            -10.0,
+            -2.0000000000000004
+          ],
+          "finite_dense_verification_only": true,
+          "first_stage_multiplicity": 2,
+          "intermediate_irrep_dimension": 9,
+          "intermediate_partition": [
+            4,
+            2
+          ],
+          "lcu_normalized_gap": 0.06666666666666667,
+          "multiplicity_fully_split": true,
+          "raw_gap": 8.0,
+          "second_stage_multiplicity": 2,
+          "tableau_block_count": 16,
+          "tableau_spectrum_consistency_residual": 2.208423090471775e-14,
+          "tensor_dimension": 81
+        },
+        {
+          "eigenvalues": [
+            -12.717797887081334,
+            4.717797887081348
+          ],
+          "finite_dense_verification_only": true,
+          "first_stage_multiplicity": 1,
+          "intermediate_irrep_dimension": 10,
+          "intermediate_partition": [
+            4,
+            1,
+            1
+          ],
+          "lcu_normalized_gap": 0.14529663145135568,
+          "multiplicity_fully_split": true,
+          "raw_gap": 17.43559577416268,
+          "second_stage_multiplicity": 2,
+          "tableau_block_count": 16,
+          "tableau_spectrum_consistency_residual": 1.6852000649168165e-14,
+          "tensor_dimension": 90
+        },
+        {
+          "eigenvalues": [
+            -5.830951894845296,
+            -5.59616081223379e-15,
+            5.830951894845299
+          ],
+          "finite_dense_verification_only": true,
+          "first_stage_multiplicity": 2,
+          "intermediate_irrep_dimension": 16,
+          "intermediate_partition": [
+            3,
+            2,
+            1
+          ],
+          "lcu_normalized_gap": 0.048591265790377425,
+          "multiplicity_fully_split": true,
+          "raw_gap": 5.830951894845291,
+          "second_stage_multiplicity": 3,
+          "tableau_block_count": 16,
+          "tableau_spectrum_consistency_residual": 1.843201578754315e-14,
+          "tensor_dimension": 144
+        },
+        {
+          "eigenvalues": [
+            -4.717797887081347,
+            12.717797887081355
+          ],
+          "finite_dense_verification_only": true,
+          "first_stage_multiplicity": 1,
+          "intermediate_irrep_dimension": 10,
+          "intermediate_partition": [
+            3,
+            1,
+            1,
+            1
+          ],
+          "lcu_normalized_gap": 0.14529663145135585,
+          "multiplicity_fully_split": true,
+          "raw_gap": 17.435595774162703,
+          "second_stage_multiplicity": 2,
+          "tableau_block_count": 16,
+          "tableau_spectrum_consistency_residual": 2.02730493912521e-14,
+          "tensor_dimension": 90
+        }
+      ],
+      "final_partition": [
+        3,
+        2,
+        1
+      ],
+      "final_total_multiplicity": 16,
+      "finite_dense_verification_only": true,
+      "lcu_term_count": 120,
+      "lcu_term_count_formula": 120,
+      "maximum_second_stage_multiplicity": 3,
+      "minimum_lcu_normalized_gap": 0.048591265790377425,
+      "minimum_raw_gap": 5.830951894845291,
+      "n": 6,
+      "nontrivial_second_stage_channel_count": 4,
+      "source_irrep_dimension": 9,
+      "source_partition": [
+        4,
+        2
+      ],
+      "status": "all-second-stage-blocks-finite-split",
+      "term_count_formula_verified": true
+    },
+    {
+      "all_second_stage_blocks_split": true,
+      "channels": [
+        {
+          "eigenvalues": [
+            5.999999999999995,
+            15.999999999999973
+          ],
+          "finite_dense_verification_only": true,
+          "first_stage_multiplicity": 2,
+          "intermediate_irrep_dimension": 14,
+          "intermediate_partition": [
+            5,
+            2
+          ],
+          "lcu_normalized_gap": 0.04761904761904752,
+          "multiplicity_fully_split": true,
+          "raw_gap": 9.999999999999979,
+          "second_stage_multiplicity": 2,
+          "tableau_block_count": 35,
+          "tableau_spectrum_consistency_residual": 9.070297889567868e-14,
+          "tensor_dimension": 196
+        },
+        {
+          "eigenvalues": [
+            2.559693491089424,
+            23.44030650891054
+          ],
+          "finite_dense_verification_only": true,
+          "first_stage_multiplicity": 1,
+          "intermediate_irrep_dimension": 15,
+          "intermediate_partition": [
+            5,
+            1,
+            1
+          ],
+          "lcu_normalized_gap": 0.09943149056105294,
+          "multiplicity_fully_split": true,
+          "raw_gap": 20.880613017821116,
+          "second_stage_multiplicity": 2,
+          "tableau_block_count": 35,
+          "tableau_spectrum_consistency_residual": 7.403381368993218e-14,
+          "tensor_dimension": 210
+        },
+        {
+          "eigenvalues": [
+            3.4792027106038454,
+            15.520797289396125
+          ],
+          "finite_dense_verification_only": true,
+          "first_stage_multiplicity": 1,
+          "intermediate_irrep_dimension": 14,
+          "intermediate_partition": [
+            4,
+            3
+          ],
+          "lcu_normalized_gap": 0.057340926565677526,
+          "multiplicity_fully_split": true,
+          "raw_gap": 12.04159457879228,
+          "second_stage_multiplicity": 2,
+          "tableau_block_count": 35,
+          "tableau_spectrum_consistency_residual": 3.860256791927826e-14,
+          "tensor_dimension": 196
+        },
+        {
+          "eigenvalues": [
+            -3.861406616345078,
+            7.394448724536001,
+            14.605551275463977,
+            24.86140661634505
+          ],
+          "finite_dense_verification_only": true,
+          "first_stage_multiplicity": 2,
+          "intermediate_irrep_dimension": 35,
+          "intermediate_partition": [
+            4,
+            2,
+            1
+          ],
+          "lcu_normalized_gap": 0.03433858357584751,
+          "multiplicity_fully_split": true,
+          "raw_gap": 7.2111025509279765,
+          "second_stage_multiplicity": 4,
+          "tableau_block_count": 35,
+          "tableau_spectrum_consistency_residual": 7.339170430538501e-14,
+          "tensor_dimension": 490
+        },
+        {
+          "eigenvalues": [
+            6.452011649300123,
+            32.54798835069994
+          ],
+          "finite_dense_verification_only": true,
+          "first_stage_multiplicity": 1,
+          "intermediate_irrep_dimension": 20,
+          "intermediate_partition": [
+            4,
+            1,
+            1,
+            1
+          ],
+          "lcu_normalized_gap": 0.12426655572095151,
+          "multiplicity_fully_split": true,
+          "raw_gap": 26.095976701399817,
+          "second_stage_multiplicity": 2,
+          "tableau_block_count": 35,
+          "tableau_spectrum_consistency_residual": 1.3616676068818947e-13,
+          "tensor_dimension": 280
+        },
+        {
+          "eigenvalues": [
+            8.479202710603856,
+            20.520797289396157
+          ],
+          "finite_dense_verification_only": true,
+          "first_stage_multiplicity": 1,
+          "intermediate_irrep_dimension": 21,
+          "intermediate_partition": [
+            3,
+            3,
+            1
+          ],
+          "lcu_normalized_gap": 0.05734092656567762,
+          "multiplicity_fully_split": true,
+          "raw_gap": 12.041594578792301,
+          "second_stage_multiplicity": 2,
+          "tableau_block_count": 35,
+          "tableau_spectrum_consistency_residual": 9.60711850196813e-14,
+          "tensor_dimension": 294
+        },
+        {
+          "eigenvalues": [
+            0.9999999999999929,
+            16.0
+          ],
+          "finite_dense_verification_only": true,
+          "first_stage_multiplicity": 1,
+          "intermediate_irrep_dimension": 21,
+          "intermediate_partition": [
+            3,
+            2,
+            2
+          ],
+          "lcu_normalized_gap": 0.07142857142857147,
+          "multiplicity_fully_split": true,
+          "raw_gap": 15.000000000000007,
+          "second_stage_multiplicity": 2,
+          "tableau_block_count": 35,
+          "tableau_spectrum_consistency_residual": 2.8491879111055443e-14,
+          "tensor_dimension": 294
+        }
+      ],
+      "final_partition": [
+        4,
+        2,
+        1
+      ],
+      "final_total_multiplicity": 23,
+      "finite_dense_verification_only": true,
+      "lcu_term_count": 210,
+      "lcu_term_count_formula": 210,
+      "maximum_second_stage_multiplicity": 4,
+      "minimum_lcu_normalized_gap": 0.03433858357584751,
+      "minimum_raw_gap": 7.2111025509279765,
+      "n": 7,
+      "nontrivial_second_stage_channel_count": 7,
+      "source_irrep_dimension": 14,
+      "source_partition": [
+        5,
+        2
+      ],
+      "status": "all-second-stage-blocks-finite-split",
+      "term_count_formula_verified": true
+    },
+    {
+      "all_second_stage_blocks_split": true,
+      "channels": [
+        {
+          "eigenvalues": [
+            41.999999999999964,
+            53.99999999999995
+          ],
+          "finite_dense_verification_only": true,
+          "first_stage_multiplicity": 2,
+          "intermediate_irrep_dimension": 20,
+          "intermediate_partition": [
+            6,
+            2
+          ],
+          "lcu_normalized_gap": 0.03571428571428567,
+          "multiplicity_fully_split": true,
+          "raw_gap": 11.999999999999986,
+          "second_stage_multiplicity": 2,
+          "tableau_block_count": 64,
+          "tableau_spectrum_consistency_residual": 3.8950446633139524e-13,
+          "tensor_dimension": 400
+        },
+        {
+          "eigenvalues": [
+            37.83447493940342,
+            62.16552506059638
+          ],
+          "finite_dense_verification_only": true,
+          "first_stage_multiplicity": 1,
+          "intermediate_irrep_dimension": 21,
+          "intermediate_partition": [
+            6,
+            1,
+            1
+          ],
+          "lcu_normalized_gap": 0.07241383964640762,
+          "multiplicity_fully_split": true,
+          "raw_gap": 24.33105012119296,
+          "second_stage_multiplicity": 2,
+          "tableau_block_count": 64,
+          "tableau_spectrum_consistency_residual": 4.4786743584721263e-13,
+          "tensor_dimension": 420
+        },
+        {
+          "eigenvalues": [
+            34.83484861008831,
+            53.16515138991171
+          ],
+          "finite_dense_verification_only": true,
+          "first_stage_multiplicity": 1,
+          "intermediate_irrep_dimension": 28,
+          "intermediate_partition": [
+            5,
+            3
+          ],
+          "lcu_normalized_gap": 0.05455447255899823,
+          "multiplicity_fully_split": true,
+          "raw_gap": 18.330302779823406,
+          "second_stage_multiplicity": 2,
+          "tableau_block_count": 64,
+          "tableau_spectrum_consistency_residual": 1.6342482922482304e-13,
+          "tensor_dimension": 560
+        },
+        {
+          "eigenvalues": [
+            26.268369170660776,
+            39.11210881938118,
+            48.60789902429376,
+            64.01162298566422
+          ],
+          "finite_dense_verification_only": true,
+          "first_stage_multiplicity": 2,
+          "intermediate_irrep_dimension": 64,
+          "intermediate_partition": [
+            5,
+            2,
+            1
+          ],
+          "lcu_normalized_gap": 0.028261280371763634,
+          "multiplicity_fully_split": true,
+          "raw_gap": 9.49579020491258,
+          "second_stage_multiplicity": 4,
+          "tableau_block_count": 64,
+          "tableau_spectrum_consistency_residual": 3.035647797493934e-13,
+          "tensor_dimension": 1280
+        },
+        {
+          "eigenvalues": [
+            35.5609110854142,
+            72.43908891458577
+          ],
+          "finite_dense_verification_only": true,
+          "first_stage_multiplicity": 1,
+          "intermediate_irrep_dimension": 35,
+          "intermediate_partition": [
+            5,
+            1,
+            1,
+            1
+          ],
+          "lcu_normalized_gap": 0.1097564816344392,
+          "multiplicity_fully_split": true,
+          "raw_gap": 36.87817782917157,
+          "second_stage_multiplicity": 2,
+          "tableau_block_count": 64,
+          "tableau_spectrum_consistency_residual": 2.700997158733033e-13,
+          "tensor_dimension": 700
+        },
+        {
+          "eigenvalues": [
+            19.789295763897705,
+            39.944508004477356,
+            54.26619623162494
+          ],
+          "finite_dense_verification_only": true,
+          "first_stage_multiplicity": 1,
+          "intermediate_irrep_dimension": 70,
+          "intermediate_partition": [
+            4,
+            3,
+            1
+          ],
+          "lcu_normalized_gap": 0.0426240721046059,
+          "multiplicity_fully_split": true,
+          "raw_gap": 14.321688227147582,
+          "second_stage_multiplicity": 3,
+          "tableau_block_count": 64,
+          "tableau_spectrum_consistency_residual": 2.552025790133139e-13,
+          "tensor_dimension": 1400
+        },
+        {
+          "eigenvalues": [
+            29.999999999999986,
+            48.000000000000014
+          ],
+          "finite_dense_verification_only": true,
+          "first_stage_multiplicity": 1,
+          "intermediate_irrep_dimension": 56,
+          "intermediate_partition": [
+            4,
+            2,
+            2
+          ],
+          "lcu_normalized_gap": 0.05357142857142866,
+          "multiplicity_fully_split": true,
+          "raw_gap": 18.00000000000003,
+          "second_stage_multiplicity": 2,
+          "tableau_block_count": 64,
+          "tableau_spectrum_consistency_residual": 1.191086668529821e-13,
+          "tensor_dimension": 1120
+        }
+      ],
+      "final_partition": [
+        5,
+        2,
+        1
+      ],
+      "final_total_multiplicity": 25,
+      "finite_dense_verification_only": true,
+      "lcu_term_count": 336,
+      "lcu_term_count_formula": 336,
+      "maximum_second_stage_multiplicity": 4,
+      "minimum_lcu_normalized_gap": 0.028261280371763634,
+      "minimum_raw_gap": 9.49579020491258,
+      "n": 8,
+      "nontrivial_second_stage_channel_count": 7,
+      "source_irrep_dimension": 20,
+      "source_partition": [
+        6,
+        2
+      ],
+      "status": "all-second-stage-blocks-finite-split",
+      "term_count_formula_verified": true
+    }
+  ],
+  "status": "hierarchical-gap-finite-scaling-survives-all-n-proof-open",
+  "summary": "Audited 18 second-stage multiplicity blocks over n=6..8; all split finitely, with minimum normalized gap 0.0282613, but no all-n theorem or circuit follows."
+}

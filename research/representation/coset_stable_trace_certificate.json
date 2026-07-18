@@ -1,0 +1,120 @@
+{
+  "character_polynomial_certificate": {
+    "W_falling_cycle_terms": [
+      {
+        "coefficient": "1/2",
+        "cycle_lengths": [
+          1,
+          1
+        ]
+      },
+      {
+        "coefficient": "-1",
+        "cycle_lengths": [
+          1
+        ]
+      },
+      {
+        "coefficient": "1",
+        "cycle_lengths": [
+          2
+        ]
+      }
+    ],
+    "W_n": "binomial(X1,2)+X2-X1",
+    "shifted_correlation": "E_g[chi_xi(g) chi_xi(g tau) chi_W(g c)] for tau=(1 2), c=(1 2 3)",
+    "xi_falling_cycle_terms": [
+      {
+        "coefficient": "1",
+        "cycle_lengths": [
+          1
+        ]
+      },
+      {
+        "coefficient": "-1",
+        "cycle_lengths": [
+          1,
+          1
+        ]
+      },
+      {
+        "coefficient": "1/3",
+        "cycle_lengths": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "coefficient": "-1",
+        "cycle_lengths": [
+          3
+        ]
+      }
+    ],
+    "xi_n": "(X1^3-6*X1^2+8*X1)/3-X3"
+  },
+  "claim_gate": {
+    "complete_quartic_formula_proved": false,
+    "exact_marked_cycle_trace_proved": true,
+    "hidden_involution_decoder_proved": false,
+    "reason": "The exact first power trace is proved. Three additional power traces, Newton reconstruction, root separation, complete sector coverage, coherent synthesis, and decoding remain open.",
+    "root_separation_proved": false,
+    "speedup_claim_allowed": false,
+    "uniform_polynomial_racah_circuit_proved": false
+  },
+  "created_at": "2026-07-18T01:57:56.134324+00:00",
+  "endpoint_certificate": {
+    "division_remainder": 0,
+    "formula_value": 43,
+    "formula_verified": true,
+    "group_order": 5040,
+    "integer_character_correlation_sum": 1032,
+    "n": 7,
+    "orbit_size": 210,
+    "trace": 43
+  },
+  "equality_pattern_certificate": {
+    "canonical_equality_pattern_count": 68146,
+    "exact_rational_arithmetic": true,
+    "falling_monomial_product_count": 48,
+    "literal_stable_range": "n>=8",
+    "maximum_partial_permutation_constraint_count": 8,
+    "maximum_selected_point_count": 8,
+    "method": "Selected falling-factorial cycles impose a partial bijection on g. A canonical equality pattern with k generic labels and r constraints contributes (n-3)_k/(n)_r, divided by cycle rotations."
+  },
+  "falsifiers_triggered": [
+    "The trace identity alone does not determine a multiplicity-four characteristic polynomial.",
+    "A characteristic polynomial still needs an all-n normalized root-separation theorem.",
+    "One stable channel does not cover every Racah sector required by a decoder.",
+    "No coherent circuit or hidden-involution decoder follows from the trace calculation."
+  ],
+  "headline_metrics": {
+    "all_n_quartic_theorem_count": 0,
+    "all_n_root_separation_theorem_count": 0,
+    "canonical_equality_pattern_count": 68146,
+    "exact_endpoint_verified_count": 1,
+    "exact_marked_cycle_trace_theorem_count": 1,
+    "falling_monomial_product_count": 48,
+    "hidden_involution_decoder_count": 0,
+    "minimum_proved_n": 7,
+    "stable_symbolic_range_proved_count": 1,
+    "uniform_polynomial_racah_circuit_count": 0
+  },
+  "stable_symbolic_certificate": {
+    "identity_verified": true,
+    "orbit_size": "n*(n - 2)*(n - 1)",
+    "range": "n>=8",
+    "shifted_character_correlation": "(4*n**3 - 46*n**2 + 149*n - 118)/(n*(n - 2)*(n - 1))",
+    "trace": "4*n**3 - 46*n**2 + 149*n - 118"
+  },
+  "status": "exact-stable-racah-trace-proved-full-quartic-open",
+  "summary": "Proved the cubic stable-channel trace for every n>=7 by exact falling-cycle equality patterns plus an exact S_7 endpoint character sum; the full quartic and gap theorem remain open.",
+  "theorem": {
+    "intermediate_and_final_partition": "xi_n=(n-3,2,1)",
+    "proved": true,
+    "range": "every integer n>=7",
+    "source_partition": "W_n=(n-2,2)",
+    "statement": "The second-stage support-intersection-two orbit Hamiltonian has trace 4n^3-46n^2+149n-118 on Hom_Sn(V_xi,V_xi tensor V_W)."
+  }
+}

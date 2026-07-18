@@ -1,0 +1,1064 @@
+{
+  "claim_gate": {
+    "all_final_sectors_resolved": false,
+    "all_n_racah_formula_proved": false,
+    "complete_finite_matrices_verified": true,
+    "hidden_involution_decoder_proved": false,
+    "reason": "Five finite target sectors have complete unitary controls, but five sectors retain second-stage multiplicity, and no compressed all-n circuit or hidden-involution decoder exists.",
+    "restricted_subblock_leakage_explained_by_omitted_channels": true,
+    "speedup_claim_allowed": false,
+    "uniform_polynomial_racah_circuit_proved": false
+  },
+  "created_at": "2026-07-18T01:17:57.828010+00:00",
+  "falsifiers_triggered": [
+    "The earlier nonunitary 2x2 blocks were not closed Racah transforms; omitted intermediate partitions carry the missing probability.",
+    "Pair central signatures plus one first-stage gap Hamiltonian do not resolve second-stage multiplicity in every final sector.",
+    "A finite dense unitary overlap table does not imply a uniform polynomial coherent associator.",
+    "No hidden-involution decoder follows from finite recoupling matrices."
+  ],
+  "headline_metrics": {
+    "all_n_racah_formula_count": 0,
+    "complete_finite_racah_matrix_count": 5,
+    "final_target_count": 10,
+    "hidden_involution_decoder_count": 0,
+    "maximum_complete_matrix_dimension": 6,
+    "maximum_dense_dimension": 729,
+    "maximum_second_stage_multiplicity": 3,
+    "maximum_tableau_absolute_consistency_residual": 8.313387968343065e-14,
+    "maximum_unitarity_residual": 1.210269206297575e-14,
+    "maximum_unresolved_matrix_dimension": 16,
+    "nontrivial_complete_finite_racah_matrix_count": 4,
+    "uniform_polynomial_racah_circuit_count": 0,
+    "unresolved_second_stage_multiplicity_sector_count": 5
+  },
+  "interface_contract": {
+    "complete_scope": "all intermediate channels for final sectors with g(alpha,(4,2),xi)=1",
+    "final_sector_resolution": "total diagonal Young-Jucys-Murphy tableau labels",
+    "first_stage_multiplicity_resolution": "the bounded-support transposition/3-cycle orbit Hamiltonian",
+    "intermediate_partition_resolution": "pair transposition and 3-cycle central signatures",
+    "not_reported_as": "a uniform all-n coherent circuit, a complete S_6 associator, or a decoder",
+    "reported_object": "signed unitary left-tree/right-tree overlap matrices and gauge-invariant probabilities",
+    "source": "three copies of V_(4,2) for S_6"
+  },
+  "records": [
+    {
+      "absolute_overlap_matrix": [
+        [
+          1.000000000000001,
+          1.5594655924071512e-16
+        ],
+        [
+          1.5594655924071512e-16,
+          1.0000000000000002
+        ]
+      ],
+      "channels": [
+        {
+          "first_stage_multiplicity": 2,
+          "intermediate_partition": [
+            4,
+            2
+          ],
+          "pair_central_signature": 500,
+          "pair_hamiltonian_eigenvalue": 2.5968757625671532,
+          "second_stage_multiplicity": 1
+        },
+        {
+          "first_stage_multiplicity": 2,
+          "intermediate_partition": [
+            4,
+            2
+          ],
+          "pair_central_signature": 500,
+          "pair_hamiltonian_eigenvalue": 15.403124237432804,
+          "second_stage_multiplicity": 1
+        }
+      ],
+      "complete_for_final_sector": true,
+      "final_irrep_dimension": 1,
+      "final_partition": [
+        6
+      ],
+      "final_tableau_count": 1,
+      "final_total_multiplicity": 2,
+      "finite_dense_control_only": true,
+      "left_right_pair_spectrum_residual": 1.9860273225978185e-15,
+      "maximum_transition_probability": 1.0000000000000022,
+      "minimum_nonzero_transition_probability": 1.0000000000000004,
+      "n": 6,
+      "nontrivial_recoupling": false,
+      "signed_overlap_matrix": [
+        [
+          1.000000000000001,
+          1.5594655924071512e-16
+        ],
+        [
+          1.5594655924071512e-16,
+          1.0000000000000002
+        ]
+      ],
+      "source_partition": [
+        4,
+        2
+      ],
+      "status": "complete-unitary-finite-racah-control",
+      "tableau_absolute_consistency_residual": 0.0,
+      "tableau_probability_consistency_residual": 0.0,
+      "transition_probability_matrix": [
+        [
+          1.0000000000000022,
+          2.431932933901787e-32
+        ],
+        [
+          2.431932933901787e-32,
+          1.0000000000000004
+        ]
+      ],
+      "unitarity_residual": 2.306978655871944e-15
+    },
+    {
+      "absolute_overlap_matrix": [
+        [
+          0.4166666666666676,
+          0.3890624242213342,
+          0.4014105505078548,
+          0.26352313834736496,
+          0.4714045207910312,
+          0.4714045207910316
+        ],
+        [
+          0.3890624242213338,
+          0.30523431780746274,
+          7.98340539954319e-16,
+          0.45541185375764415,
+          0.6672459833979956,
+          0.3206949990066874
+        ],
+        [
+          0.40141055050785507,
+          1.2710114276765358e-16,
+          0.6552343178074628,
+          0.3429286273512712,
+          0.23405725290886098,
+          0.48698533613662387
+        ],
+        [
+          0.2635231383473635,
+          0.45541185375764465,
+          0.34292862735126806,
+          0.4999999999999997,
+          7.409437562607624e-17,
+          0.5962847939999436
+        ],
+        [
+          0.47140452079103073,
+          0.6672459833979966,
+          0.2340572529088609,
+          1.27621152707072e-15,
+          0.5000000000000003,
+          0.166666666666667
+        ],
+        [
+          0.4714045207910321,
+          0.3206949990066872,
+          0.4869853361366252,
+          0.5962847939999436,
+          0.16666666666666685,
+          0.23333333333333348
+        ]
+      ],
+      "channels": [
+        {
+          "first_stage_multiplicity": 1,
+          "intermediate_partition": [
+            5,
+            1
+          ],
+          "pair_central_signature": 916,
+          "pair_hamiltonian_eigenvalue": 21.999999999999993,
+          "second_stage_multiplicity": 1
+        },
+        {
+          "first_stage_multiplicity": 2,
+          "intermediate_partition": [
+            4,
+            2
+          ],
+          "pair_central_signature": 500,
+          "pair_hamiltonian_eigenvalue": 2.5968757625671484,
+          "second_stage_multiplicity": 1
+        },
+        {
+          "first_stage_multiplicity": 2,
+          "intermediate_partition": [
+            4,
+            2
+          ],
+          "pair_central_signature": 500,
+          "pair_hamiltonian_eigenvalue": 15.403124237432845,
+          "second_stage_multiplicity": 1
+        },
+        {
+          "first_stage_multiplicity": 1,
+          "intermediate_partition": [
+            4,
+            1,
+            1
+          ],
+          "pair_central_signature": 304,
+          "pair_hamiltonian_eigenvalue": 1.999999999999997,
+          "second_stage_multiplicity": 1
+        },
+        {
+          "first_stage_multiplicity": 2,
+          "intermediate_partition": [
+            3,
+            2,
+            1
+          ],
+          "pair_central_signature": -5,
+          "pair_hamiltonian_eigenvalue": -10.000000000000004,
+          "second_stage_multiplicity": 1
+        },
+        {
+          "first_stage_multiplicity": 2,
+          "intermediate_partition": [
+            3,
+            2,
+            1
+          ],
+          "pair_central_signature": -5,
+          "pair_hamiltonian_eigenvalue": -2.0000000000000013,
+          "second_stage_multiplicity": 1
+        }
+      ],
+      "complete_for_final_sector": true,
+      "final_irrep_dimension": 5,
+      "final_partition": [
+        5,
+        1
+      ],
+      "final_tableau_count": 5,
+      "final_total_multiplicity": 6,
+      "finite_dense_control_only": true,
+      "left_right_pair_spectrum_residual": 9.328542846836189e-14,
+      "maximum_transition_probability": 0.4452172023607595,
+      "minimum_nonzero_transition_probability": 0.02777777777777784,
+      "n": 6,
+      "nontrivial_recoupling": true,
+      "signed_overlap_matrix": [
+        [
+          0.4166666666666676,
+          0.3890624242213342,
+          0.4014105505078548,
+          0.26352313834736496,
+          -0.4714045207910312,
+          -0.4714045207910316
+        ],
+        [
+          0.3890624242213338,
+          -0.30523431780746274,
+          7.98340539954319e-16,
+          0.45541185375764415,
+          0.6672459833979956,
+          -0.3206949990066874
+        ],
+        [
+          0.40141055050785507,
+          1.2710114276765358e-16,
+          0.6552343178074628,
+          -0.3429286273512712,
+          0.23405725290886098,
+          0.48698533613662387
+        ],
+        [
+          0.2635231383473635,
+          0.45541185375764465,
+          -0.34292862735126806,
+          0.4999999999999997,
+          7.409437562607624e-17,
+          0.5962847939999436
+        ],
+        [
+          -0.47140452079103073,
+          0.6672459833979966,
+          0.2340572529088609,
+          -1.27621152707072e-15,
+          0.5000000000000003,
+          -0.166666666666667
+        ],
+        [
+          0.4714045207910321,
+          0.3206949990066872,
+          -0.4869853361366252,
+          -0.5962847939999436,
+          0.16666666666666685,
+          -0.23333333333333348
+        ]
+      ],
+      "source_partition": [
+        4,
+        2
+      ],
+      "status": "complete-unitary-finite-racah-control",
+      "tableau_absolute_consistency_residual": 8.876119242823282e-15,
+      "tableau_probability_consistency_residual": 8.448148209850453e-15,
+      "transition_probability_matrix": [
+        [
+          0.17361111111111185,
+          0.1513695699409814,
+          0.16113043005901903,
+          0.06944444444444445,
+          0.22222222222222174,
+          0.22222222222222215
+        ],
+        [
+          0.1513695699409811,
+          0.09316798876738716,
+          6.373476177345536e-31,
+          0.20739995654297386,
+          0.4452172023607582,
+          0.10284528238789924
+        ],
+        [
+          0.16113043005901925,
+          1.6154700492843457e-32,
+          0.4293320112326111,
+          0.11760004345702704,
+          0.054782797639242514,
+          0.23715471761210055
+        ],
+        [
+          0.0694444444444437,
+          0.2073999565429743,
+          0.11760004345702488,
+          0.24999999999999972,
+          5.489976499418081e-33,
+          0.3555555555555552
+        ],
+        [
+          0.22222222222222132,
+          0.4452172023607595,
+          0.05478279763924247,
+          1.628715861828179e-30,
+          0.25000000000000033,
+          0.027777777777777887
+        ],
+        [
+          0.22222222222222263,
+          0.1028452823878991,
+          0.23715471761210183,
+          0.3555555555555552,
+          0.02777777777777784,
+          0.05444444444444451
+        ]
+      ],
+      "unitarity_residual": 1.210269206297575e-14
+    },
+    {
+      "absolute_overlap_matrix": [
+        [
+          0.3333333333333336,
+          0.6666666666666667,
+          0.47140452079103257,
+          0.4714045207910311
+        ],
+        [
+          0.6666666666666671,
+          4.517255441794439e-16,
+          0.7071067811865477,
+          0.23570226039551567
+        ],
+        [
+          0.4714045207910331,
+          0.707106781186548,
+          0.4999999999999996,
+          0.1666666666666665
+        ],
+        [
+          0.4714045207910308,
+          0.235702260395516,
+          0.16666666666666619,
+          0.8333333333333324
+        ]
+      ],
+      "channels": [
+        {
+          "first_stage_multiplicity": 1,
+          "intermediate_partition": [
+            5,
+            1
+          ],
+          "pair_central_signature": 916,
+          "pair_hamiltonian_eigenvalue": 22.0,
+          "second_stage_multiplicity": 1
+        },
+        {
+          "first_stage_multiplicity": 1,
+          "intermediate_partition": [
+            4,
+            1,
+            1
+          ],
+          "pair_central_signature": 304,
+          "pair_hamiltonian_eigenvalue": 2.0000000000000027,
+          "second_stage_multiplicity": 1
+        },
+        {
+          "first_stage_multiplicity": 2,
+          "intermediate_partition": [
+            3,
+            2,
+            1
+          ],
+          "pair_central_signature": -5,
+          "pair_hamiltonian_eigenvalue": -10.00000000000001,
+          "second_stage_multiplicity": 1
+        },
+        {
+          "first_stage_multiplicity": 2,
+          "intermediate_partition": [
+            3,
+            2,
+            1
+          ],
+          "pair_central_signature": -5,
+          "pair_hamiltonian_eigenvalue": -1.9999999999999958,
+          "second_stage_multiplicity": 1
+        }
+      ],
+      "complete_for_final_sector": true,
+      "final_irrep_dimension": 5,
+      "final_partition": [
+        3,
+        3
+      ],
+      "final_tableau_count": 5,
+      "final_total_multiplicity": 4,
+      "finite_dense_control_only": true,
+      "left_right_pair_spectrum_residual": 3.103306710357722e-14,
+      "maximum_transition_probability": 0.6944444444444429,
+      "minimum_nonzero_transition_probability": 0.027777777777777617,
+      "n": 6,
+      "nontrivial_recoupling": true,
+      "signed_overlap_matrix": [
+        [
+          0.3333333333333336,
+          0.6666666666666667,
+          0.47140452079103257,
+          -0.4714045207910311
+        ],
+        [
+          -0.6666666666666671,
+          -4.517255441794439e-16,
+          0.7071067811865477,
+          0.23570226039551567
+        ],
+        [
+          -0.4714045207910331,
+          0.707106781186548,
+          -0.4999999999999996,
+          0.1666666666666665
+        ],
+        [
+          -0.4714045207910308,
+          -0.235702260395516,
+          -0.16666666666666619,
+          -0.8333333333333324
+        ]
+      ],
+      "source_partition": [
+        4,
+        2
+      ],
+      "status": "complete-unitary-finite-racah-control",
+      "tableau_absolute_consistency_residual": 4.611834994815151e-15,
+      "tableau_probability_consistency_residual": 5.40631128640521e-15,
+      "transition_probability_matrix": [
+        [
+          0.11111111111111129,
+          0.44444444444444453,
+          0.22222222222222304,
+          0.22222222222222168
+        ],
+        [
+          0.444444444444445,
+          2.0405596726421474e-31,
+          0.5000000000000002,
+          0.055555555555555476
+        ],
+        [
+          0.22222222222222357,
+          0.5000000000000007,
+          0.2499999999999996,
+          0.02777777777777772
+        ],
+        [
+          0.22222222222222138,
+          0.055555555555555636,
+          0.027777777777777617,
+          0.6944444444444429
+        ]
+      ],
+      "unitarity_residual": 6.808839365045061e-15
+    },
+    {
+      "absolute_overlap_matrix": [
+        [
+          0.28041728927480897,
+          0.46852128566581813,
+          0.2340572529088597,
+          0.580608237300168,
+          0.552275798603699,
+          0.07040360907235231
+        ],
+        [
+          0.4685212856658183,
+          0.06958271072519043,
+          0.6672459833979952,
+          0.05379660564748952,
+          0.14139109687899912,
+          0.5545658949390839
+        ],
+        [
+          0.23405725290886084,
+          0.6672459833979953,
+          0.5,
+          0.1666666666666672,
+          1.7322628773223171e-15,
+          0.47140452079103173
+        ],
+        [
+          0.5806082373001682,
+          0.053796605647489726,
+          0.16666666666666644,
+          0.23333333333333325,
+          0.5962847939999449,
+          0.4714045207910295
+        ],
+        [
+          0.5522757986036985,
+          0.14139109687900117,
+          1.2581304894060638e-15,
+          0.5962847939999443,
+          0.49999999999999883,
+          0.2635231383473652
+        ],
+        [
+          0.07040360907235328,
+          0.5545658949390837,
+          0.47140452079103173,
+          0.4714045207910304,
+          0.26352313834736424,
+          0.41666666666666796
+        ]
+      ],
+      "channels": [
+        {
+          "first_stage_multiplicity": 2,
+          "intermediate_partition": [
+            4,
+            2
+          ],
+          "pair_central_signature": 500,
+          "pair_hamiltonian_eigenvalue": 2.596875762567147,
+          "second_stage_multiplicity": 1
+        },
+        {
+          "first_stage_multiplicity": 2,
+          "intermediate_partition": [
+            4,
+            2
+          ],
+          "pair_central_signature": 500,
+          "pair_hamiltonian_eigenvalue": 15.403124237432852,
+          "second_stage_multiplicity": 1
+        },
+        {
+          "first_stage_multiplicity": 2,
+          "intermediate_partition": [
+            3,
+            2,
+            1
+          ],
+          "pair_central_signature": -5,
+          "pair_hamiltonian_eigenvalue": -10.000000000000004,
+          "second_stage_multiplicity": 1
+        },
+        {
+          "first_stage_multiplicity": 2,
+          "intermediate_partition": [
+            3,
+            2,
+            1
+          ],
+          "pair_central_signature": -5,
+          "pair_hamiltonian_eigenvalue": -2.0000000000000018,
+          "second_stage_multiplicity": 1
+        },
+        {
+          "first_stage_multiplicity": 1,
+          "intermediate_partition": [
+            3,
+            1,
+            1,
+            1
+          ],
+          "pair_central_signature": -296,
+          "pair_hamiltonian_eigenvalue": -3.9999999999999996,
+          "second_stage_multiplicity": 1
+        },
+        {
+          "first_stage_multiplicity": 1,
+          "intermediate_partition": [
+            2,
+            2,
+            2
+          ],
+          "pair_central_signature": -308,
+          "pair_hamiltonian_eigenvalue": -19.999999999999996,
+          "second_stage_multiplicity": 1
+        }
+      ],
+      "complete_for_final_sector": true,
+      "final_irrep_dimension": 5,
+      "final_partition": [
+        2,
+        2,
+        2
+      ],
+      "final_tableau_count": 5,
+      "final_total_multiplicity": 6,
+      "finite_dense_control_only": true,
+      "left_right_pair_spectrum_residual": 4.8173445711724707e-14,
+      "maximum_transition_probability": 0.4452172023607579,
+      "minimum_nonzero_transition_probability": 0.002894074779191501,
+      "n": 6,
+      "nontrivial_recoupling": true,
+      "signed_overlap_matrix": [
+        [
+          0.28041728927480897,
+          -0.46852128566581813,
+          -0.2340572529088597,
+          -0.580608237300168,
+          0.552275798603699,
+          -0.07040360907235231
+        ],
+        [
+          -0.4685212856658183,
+          0.06958271072519043,
+          -0.6672459833979952,
+          0.05379660564748952,
+          0.14139109687899912,
+          0.5545658949390839
+        ],
+        [
+          0.23405725290886084,
+          0.6672459833979953,
+          -0.5,
+          -0.1666666666666672,
+          1.7322628773223171e-15,
+          -0.47140452079103173
+        ],
+        [
+          0.5806082373001682,
+          -0.053796605647489726,
+          -0.16666666666666644,
+          -0.23333333333333325,
+          -0.5962847939999449,
+          0.4714045207910295
+        ],
+        [
+          0.5522757986036985,
+          0.14139109687900117,
+          -1.2581304894060638e-15,
+          0.5962847939999443,
+          0.49999999999999883,
+          0.2635231383473652
+        ],
+        [
+          -0.07040360907235328,
+          0.5545658949390837,
+          0.47140452079103173,
+          -0.4714045207910304,
+          0.26352313834736424,
+          0.41666666666666796
+        ]
+      ],
+      "source_partition": [
+        4,
+        2
+      ],
+      "status": "complete-unitary-finite-racah-control",
+      "tableau_absolute_consistency_residual": 5.188510835590917e-14,
+      "tableau_probability_consistency_residual": 3.7036652928328543e-14,
+      "transition_probability_matrix": [
+        [
+          0.07863385612423189,
+          0.21951219512195116,
+          0.05478279763924191,
+          0.3371059252208082,
+          0.3050085577233535,
+          0.0049566681704126085
+        ],
+        [
+          0.2195121951219513,
+          0.004841753631865531,
+          0.44521720236075774,
+          0.002894074779191501,
+          0.019991442276646513,
+          0.3075433318295871
+        ],
+        [
+          0.054782797639242445,
+          0.4452172023607579,
+          0.25,
+          0.02777777777777796,
+          3.000734676148993e-30,
+          0.22222222222222227
+        ],
+        [
+          0.3371059252208084,
+          0.0028940747791915233,
+          0.0277777777777777,
+          0.054444444444444406,
+          0.3555555555555568,
+          0.22222222222222018
+        ],
+        [
+          0.3050085577233529,
+          0.019991442276647096,
+          1.5828923283731416e-30,
+          0.35555555555555596,
+          0.24999999999999883,
+          0.06944444444444457
+        ],
+        [
+          0.0049566681704127456,
+          0.3075433318295868,
+          0.22222222222222227,
+          0.22222222222222102,
+          0.06944444444444407,
+          0.1736111111111122
+        ]
+      ],
+      "unitarity_residual": 7.407296580686569e-15
+    },
+    {
+      "absolute_overlap_matrix": [
+        [
+          0.5,
+          0.16666666666666666,
+          0.7071067811865468,
+          0.47140452079103184
+        ],
+        [
+          0.16666666666666666,
+          0.8333333333333347,
+          0.23570226039551578,
+          0.47140452079103123
+        ],
+        [
+          0.7071067811865457,
+          0.23570226039551853,
+          5.275053041962651e-15,
+          0.6666666666666682
+        ],
+        [
+          0.4714045207910361,
+          0.4714045207910314,
+          0.6666666666666669,
+          0.3333333333333284
+        ]
+      ],
+      "channels": [
+        {
+          "first_stage_multiplicity": 2,
+          "intermediate_partition": [
+            3,
+            2,
+            1
+          ],
+          "pair_central_signature": -5,
+          "pair_hamiltonian_eigenvalue": -10.000000000000002,
+          "second_stage_multiplicity": 1
+        },
+        {
+          "first_stage_multiplicity": 2,
+          "intermediate_partition": [
+            3,
+            2,
+            1
+          ],
+          "pair_central_signature": -5,
+          "pair_hamiltonian_eigenvalue": -1.999999999999999,
+          "second_stage_multiplicity": 1
+        },
+        {
+          "first_stage_multiplicity": 1,
+          "intermediate_partition": [
+            3,
+            1,
+            1,
+            1
+          ],
+          "pair_central_signature": -296,
+          "pair_hamiltonian_eigenvalue": -4.000000000000002,
+          "second_stage_multiplicity": 1
+        },
+        {
+          "first_stage_multiplicity": 1,
+          "intermediate_partition": [
+            2,
+            2,
+            2
+          ],
+          "pair_central_signature": -308,
+          "pair_hamiltonian_eigenvalue": -20.000000000000004,
+          "second_stage_multiplicity": 1
+        }
+      ],
+      "complete_for_final_sector": true,
+      "final_irrep_dimension": 5,
+      "final_partition": [
+        2,
+        1,
+        1,
+        1,
+        1
+      ],
+      "final_tableau_count": 5,
+      "final_total_multiplicity": 4,
+      "finite_dense_control_only": true,
+      "left_right_pair_spectrum_residual": 2.304241074671479e-14,
+      "maximum_transition_probability": 0.6944444444444468,
+      "minimum_nonzero_transition_probability": 0.027777777777777776,
+      "n": 6,
+      "nontrivial_recoupling": true,
+      "signed_overlap_matrix": [
+        [
+          0.5,
+          0.16666666666666666,
+          0.7071067811865468,
+          -0.47140452079103184
+        ],
+        [
+          0.16666666666666666,
+          -0.8333333333333347,
+          -0.23570226039551578,
+          -0.47140452079103123
+        ],
+        [
+          -0.7071067811865457,
+          0.23570226039551853,
+          -5.275053041962651e-15,
+          -0.6666666666666682
+        ],
+        [
+          0.4714045207910361,
+          0.4714045207910314,
+          -0.6666666666666669,
+          -0.3333333333333284
+        ]
+      ],
+      "source_partition": [
+        4,
+        2
+      ],
+      "status": "complete-unitary-finite-racah-control",
+      "tableau_absolute_consistency_residual": 8.313387968343065e-14,
+      "tableau_probability_consistency_residual": 6.583980550693198e-14,
+      "transition_probability_matrix": [
+        [
+          0.25,
+          0.027777777777777776,
+          0.49999999999999895,
+          0.22222222222222238
+        ],
+        [
+          0.027777777777777776,
+          0.6944444444444468,
+          0.05555555555555553,
+          0.2222222222222218
+        ],
+        [
+          0.4999999999999974,
+          0.05555555555555682,
+          2.782618459551942e-29,
+          0.4444444444444465
+        ],
+        [
+          0.2222222222222264,
+          0.22222222222222196,
+          0.4444444444444447,
+          0.1111111111111078
+        ]
+      ],
+      "unitarity_residual": 8.364030262899591e-15
+    }
+  ],
+  "status": "finite-complete-racah-controls-verified-uniform-associator-open",
+  "summary": "Constructed 5 complete finite Racah matrices at n=6, including 4 nontrivial transforms; 5 final sectors still require second-stage multiplicity operators.",
+  "unresolved_sectors": [
+    {
+      "final_partition": [
+        4,
+        2
+      ],
+      "final_total_multiplicity": 13,
+      "maximum_second_stage_multiplicity": 2,
+      "reason": "Pair central signatures and the first-stage gap Hamiltonian do not resolve the second-stage Kronecker multiplicity.",
+      "unresolved_channels": [
+        {
+          "first_stage_multiplicity": 2,
+          "intermediate_partition": [
+            4,
+            2
+          ],
+          "second_stage_multiplicity": 2
+        },
+        {
+          "first_stage_multiplicity": 2,
+          "intermediate_partition": [
+            3,
+            2,
+            1
+          ],
+          "second_stage_multiplicity": 2
+        }
+      ]
+    },
+    {
+      "final_partition": [
+        4,
+        1,
+        1
+      ],
+      "final_total_multiplicity": 10,
+      "maximum_second_stage_multiplicity": 2,
+      "reason": "Pair central signatures and the first-stage gap Hamiltonian do not resolve the second-stage Kronecker multiplicity.",
+      "unresolved_channels": [
+        {
+          "first_stage_multiplicity": 1,
+          "intermediate_partition": [
+            4,
+            1,
+            1
+          ],
+          "second_stage_multiplicity": 2
+        },
+        {
+          "first_stage_multiplicity": 2,
+          "intermediate_partition": [
+            3,
+            2,
+            1
+          ],
+          "second_stage_multiplicity": 2
+        }
+      ]
+    },
+    {
+      "final_partition": [
+        3,
+        2,
+        1
+      ],
+      "final_total_multiplicity": 16,
+      "maximum_second_stage_multiplicity": 3,
+      "reason": "Pair central signatures and the first-stage gap Hamiltonian do not resolve the second-stage Kronecker multiplicity.",
+      "unresolved_channels": [
+        {
+          "first_stage_multiplicity": 2,
+          "intermediate_partition": [
+            4,
+            2
+          ],
+          "second_stage_multiplicity": 2
+        },
+        {
+          "first_stage_multiplicity": 1,
+          "intermediate_partition": [
+            4,
+            1,
+            1
+          ],
+          "second_stage_multiplicity": 2
+        },
+        {
+          "first_stage_multiplicity": 2,
+          "intermediate_partition": [
+            3,
+            2,
+            1
+          ],
+          "second_stage_multiplicity": 3
+        },
+        {
+          "first_stage_multiplicity": 1,
+          "intermediate_partition": [
+            3,
+            1,
+            1,
+            1
+          ],
+          "second_stage_multiplicity": 2
+        }
+      ]
+    },
+    {
+      "final_partition": [
+        3,
+        1,
+        1,
+        1
+      ],
+      "final_total_multiplicity": 10,
+      "maximum_second_stage_multiplicity": 2,
+      "reason": "Pair central signatures and the first-stage gap Hamiltonian do not resolve the second-stage Kronecker multiplicity.",
+      "unresolved_channels": [
+        {
+          "first_stage_multiplicity": 2,
+          "intermediate_partition": [
+            3,
+            2,
+            1
+          ],
+          "second_stage_multiplicity": 2
+        },
+        {
+          "first_stage_multiplicity": 1,
+          "intermediate_partition": [
+            3,
+            1,
+            1,
+            1
+          ],
+          "second_stage_multiplicity": 2
+        }
+      ]
+    },
+    {
+      "final_partition": [
+        2,
+        2,
+        1,
+        1
+      ],
+      "final_total_multiplicity": 6,
+      "maximum_second_stage_multiplicity": 2,
+      "reason": "Pair central signatures and the first-stage gap Hamiltonian do not resolve the second-stage Kronecker multiplicity.",
+      "unresolved_channels": [
+        {
+          "first_stage_multiplicity": 2,
+          "intermediate_partition": [
+            3,
+            2,
+            1
+          ],
+          "second_stage_multiplicity": 2
+        }
+      ]
+    }
+  ]
+}

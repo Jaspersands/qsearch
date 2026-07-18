@@ -1,0 +1,507 @@
+{
+  "claim_gate": {
+    "complete_quartic_formula_proved": false,
+    "exact_second_power_trace_proved": true,
+    "first_two_quartic_coefficients_proved": true,
+    "hidden_involution_decoder_proved": false,
+    "reason": "Two of four quartic coefficients are exact. Tr(H^3), Tr(H^4), root separation, complete sector coverage, coherent synthesis, and decoding remain open.",
+    "root_separation_proved": false,
+    "speedup_claim_allowed": false,
+    "uniform_polynomial_racah_circuit_proved": false
+  },
+  "class_records": [
+    {
+      "active_support_size": 0,
+      "left_shift": [],
+      "multiplicities_by_outside_support_count": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "right_shift": [],
+      "shifted_character_correlation": "4",
+      "symbolic_multiplicity": "1"
+    },
+    {
+      "active_support_size": 3,
+      "left_shift": [
+        0,
+        1,
+        2
+      ],
+      "multiplicities_by_outside_support_count": [
+        1,
+        1,
+        0,
+        0
+      ],
+      "right_shift": [
+        1,
+        2,
+        0
+      ],
+      "shifted_character_correlation": "4*(n - 6)/n",
+      "symbolic_multiplicity": "n - 2"
+    },
+    {
+      "active_support_size": 4,
+      "left_shift": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "right_shift": [
+        1,
+        0,
+        3,
+        2
+      ],
+      "shifted_character_correlation": "4*(n**2 - 11*n + 32)/(n*(n - 3))",
+      "symbolic_multiplicity": "n - 3"
+    },
+    {
+      "active_support_size": 6,
+      "left_shift": [
+        0,
+        1,
+        3,
+        2,
+        5,
+        4
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        0,
+        6
+      ],
+      "right_shift": [
+        2,
+        4,
+        3,
+        0,
+        5,
+        1
+      ],
+      "shifted_character_correlation": "2*(2*n**6 - 64*n**5 + 821*n**4 - 5353*n**3 + 18413*n**2 - 30813*n + 18632)/(n*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "6*binomial(n - 3, 3)"
+    },
+    {
+      "active_support_size": 5,
+      "left_shift": [
+        0,
+        1,
+        3,
+        4,
+        2
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        2,
+        0
+      ],
+      "right_shift": [
+        1,
+        2,
+        3,
+        4,
+        0
+      ],
+      "shifted_character_correlation": "(4*n**5 - 94*n**4 + 833*n**3 - 3420*n**2 + 6314*n - 3940)/(n*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "2*binomial(n - 3, 2)"
+    },
+    {
+      "active_support_size": 5,
+      "left_shift": [
+        0,
+        1,
+        3,
+        4,
+        2
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        6,
+        0
+      ],
+      "right_shift": [
+        2,
+        3,
+        1,
+        4,
+        0
+      ],
+      "shifted_character_correlation": "(4*n**5 - 96*n**4 + 874*n**3 - 3710*n**2 + 7120*n - 4635)/(n*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "6*binomial(n - 3, 2)"
+    },
+    {
+      "active_support_size": 5,
+      "left_shift": [
+        0,
+        2,
+        1,
+        4,
+        3
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        6,
+        0
+      ],
+      "right_shift": [
+        1,
+        2,
+        3,
+        4,
+        0
+      ],
+      "shifted_character_correlation": "(4*n**5 - 100*n**4 + 943*n**3 - 4114*n**2 + 8027*n - 5244)/(n*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "6*binomial(n - 3, 2)"
+    },
+    {
+      "active_support_size": 5,
+      "left_shift": [
+        0,
+        2,
+        1,
+        4,
+        3
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        0,
+        4,
+        0
+      ],
+      "right_shift": [
+        1,
+        3,
+        0,
+        4,
+        2
+      ],
+      "shifted_character_correlation": "(4*n**5 - 102*n**4 + 987*n**3 - 4447*n**2 + 9018*n - 6164)/(n*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "4*binomial(n - 3, 2)"
+    },
+    {
+      "active_support_size": 4,
+      "left_shift": [
+        0,
+        2,
+        3,
+        1
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        6,
+        0,
+        0
+      ],
+      "right_shift": [
+        1,
+        0,
+        3,
+        2
+      ],
+      "shifted_character_correlation": "(4*n**4 - 72*n**3 + 447*n**2 - 1092*n + 809)/(n*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "6*n - 18"
+    },
+    {
+      "active_support_size": 4,
+      "left_shift": [
+        0,
+        2,
+        3,
+        1
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        3,
+        0,
+        0
+      ],
+      "right_shift": [
+        1,
+        2,
+        0,
+        3
+      ],
+      "shifted_character_correlation": "(4*n**4 - 70*n**3 + 419*n**2 - 969*n + 660)/(n*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "3*n - 9"
+    },
+    {
+      "active_support_size": 4,
+      "left_shift": [
+        0,
+        2,
+        3,
+        1
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        2,
+        0,
+        0
+      ],
+      "right_shift": [
+        1,
+        3,
+        2,
+        0
+      ],
+      "shifted_character_correlation": "(4*n**4 - 72*n**3 + 447*n**2 - 1092*n + 809)/(n*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "2*n - 6"
+    },
+    {
+      "active_support_size": 4,
+      "left_shift": [
+        1,
+        0,
+        3,
+        2
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        2,
+        0,
+        0
+      ],
+      "right_shift": [
+        0,
+        2,
+        3,
+        1
+      ],
+      "shifted_character_correlation": "2*(2*n**4 - 38*n**3 + 248*n**2 - 627*n + 472)/(n*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "2*n - 6"
+    },
+    {
+      "active_support_size": 4,
+      "left_shift": [
+        1,
+        0,
+        3,
+        2
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "right_shift": [
+        1,
+        0,
+        3,
+        2
+      ],
+      "shifted_character_correlation": "4*(n - 8)*(n - 6)/(n*(n - 2))",
+      "symbolic_multiplicity": "n - 3"
+    },
+    {
+      "active_support_size": 4,
+      "left_shift": [
+        1,
+        0,
+        3,
+        2
+      ],
+      "multiplicities_by_outside_support_count": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "right_shift": [
+        2,
+        3,
+        0,
+        1
+      ],
+      "shifted_character_correlation": "4*(n**4 - 20*n**3 + 139*n**2 - 377*n + 301)/(n*(n - 3)*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "n - 3"
+    },
+    {
+      "active_support_size": 3,
+      "left_shift": [
+        1,
+        2,
+        0
+      ],
+      "multiplicities_by_outside_support_count": [
+        2,
+        0,
+        0,
+        0
+      ],
+      "right_shift": [
+        0,
+        1,
+        2
+      ],
+      "shifted_character_correlation": "4*(n**2 - 11*n + 27)/(n*(n - 2))",
+      "symbolic_multiplicity": "2"
+    },
+    {
+      "active_support_size": 3,
+      "left_shift": [
+        1,
+        2,
+        0
+      ],
+      "multiplicities_by_outside_support_count": [
+        1,
+        1,
+        0,
+        0
+      ],
+      "right_shift": [
+        1,
+        2,
+        0
+      ],
+      "shifted_character_correlation": "4*(n**2 - 11*n + 27)/(n*(n - 2))",
+      "symbolic_multiplicity": "n - 2"
+    },
+    {
+      "active_support_size": 3,
+      "left_shift": [
+        1,
+        2,
+        0
+      ],
+      "multiplicities_by_outside_support_count": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "right_shift": [
+        2,
+        0,
+        1
+      ],
+      "shifted_character_correlation": "(4*n**3 - 54*n**2 + 218*n - 207)/(n*(n - 2)*(n - 1))",
+      "symbolic_multiplicity": "1"
+    }
+  ],
+  "created_at": "2026-07-18T02:09:07.102820+00:00",
+  "endpoint_records": [
+    {
+      "exact_pattern_trace": 901,
+      "formula_trace": 901,
+      "n": 7,
+      "second_characteristic_coefficient": 474,
+      "trace_residual": 0,
+      "verified": true
+    },
+    {
+      "exact_pattern_trace": 8680,
+      "formula_trace": 8680,
+      "n": 8,
+      "second_characteristic_coefficient": 11502,
+      "trace_residual": 0,
+      "verified": true
+    },
+    {
+      "exact_pattern_trace": 43953,
+      "formula_trace": 43953,
+      "n": 9,
+      "second_characteristic_coefficient": 63308,
+      "trace_residual": 0,
+      "verified": true
+    },
+    {
+      "exact_pattern_trace": 151204,
+      "formula_trace": 151204,
+      "n": 10,
+      "second_characteristic_coefficient": 222390,
+      "trace_residual": 0,
+      "verified": true
+    },
+    {
+      "exact_pattern_trace": 412549,
+      "formula_trace": 412549,
+      "n": 11,
+      "second_characteristic_coefficient": 611646,
+      "trace_residual": 0,
+      "verified": true
+    },
+    {
+      "exact_pattern_trace": 964056,
+      "formula_trace": 964056,
+      "n": 12,
+      "second_characteristic_coefficient": 1434854,
+      "trace_residual": 0,
+      "verified": true
+    },
+    {
+      "exact_pattern_trace": 2014945,
+      "formula_trace": 2014945,
+      "n": 13,
+      "second_characteristic_coefficient": 3005472,
+      "trace_residual": 0,
+      "verified": true
+    }
+  ],
+  "falsifiers_triggered": [
+    "Two exact characteristic coefficients do not determine a quartic spectrum.",
+    "A complete characteristic polynomial would still need normalized root separation.",
+    "One stable multiplicity-four channel does not cover every decoder-relevant sector.",
+    "No coherent recoupling circuit or hidden-involution decoder follows from moment identities."
+  ],
+  "headline_metrics": {
+    "all_n_quartic_theorem_count": 0,
+    "all_n_root_separation_theorem_count": 0,
+    "exact_endpoint_verified_count": 7,
+    "exact_second_characteristic_coefficient_theorem_count": 1,
+    "exact_second_power_trace_theorem_count": 1,
+    "hidden_involution_decoder_count": 0,
+    "minimum_proved_n": 7,
+    "proved_quartic_coefficient_count": 2,
+    "relative_orbit_class_count": 17,
+    "required_quartic_coefficient_count": 4,
+    "uniform_polynomial_racah_circuit_count": 0
+  },
+  "newton_certificate": {
+    "first_trace": "4*n**3 - 46*n**2 + 149*n - 118",
+    "identity": "e2=(Tr(H)^2-Tr(H^2))/2",
+    "identity_verified": true,
+    "second_characteristic_coefficient": "6*n**6 - 138*n**5 + 1240*n**4 - 5487*n**3 + 12351*n**2 - 13086*n + 5150",
+    "second_trace": "4*n**6 - 92*n**5 + 828*n**4 - 3678*n**3 + 8355*n**2 - 8992*n + 3624"
+  },
+  "relative_orbit_certificate": {
+    "classification": "simultaneous conjugacy class of (tau_0 tau, c_0 c), grouped by 0..3 outside support points",
+    "finite_exact_endpoint_range": "7<=n<=13",
+    "fixed_first_term": "tau_0=(1 2), c_0=(1 2 3)",
+    "relative_orbit_class_count": 17,
+    "relative_term_count": "n(n-1)(n-2)",
+    "stable_literal_range": "n>=14"
+  },
+  "stable_symbolic_certificate": {
+    "identity_verified": true,
+    "range": "n>=14",
+    "second_power_trace": "4*n**6 - 92*n**5 + 828*n**4 - 3678*n**3 + 8355*n**2 - 8992*n + 3624",
+    "shifted_correlation_monomial_product_count": 816
+  },
+  "status": "exact-stable-second-moment-proved-two-quartic-coefficients-known",
+  "summary": "Proved the stable second power trace and the quartic's second coefficient for every n>=7 using 17 relative orbit classes; two quartic coefficients, root separation, circuit, and decoder remain open.",
+  "theorem": {
+    "proved": true,
+    "range": "every integer n>=7",
+    "second_characteristic_coefficient": "6*n**6 - 138*n**5 + 1240*n**4 - 5487*n**3 + 12351*n**2 - 13086*n + 5150",
+    "second_power_trace": "4*n**6 - 92*n**5 + 828*n**4 - 3678*n**3 + 8355*n**2 - 8992*n + 3624",
+    "statement": "The stable multiplicity-four hierarchical orbit Hamiltonian has the displayed exact Tr(H^2), and its quartic x^2 coefficient follows by Newton's identity."
+  }
+}

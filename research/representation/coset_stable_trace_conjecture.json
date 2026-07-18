@@ -1,0 +1,97 @@
+{
+  "candidate_trace_formula": "4*n**3 - 46*n**2 + 149*n - 118",
+  "candidate_trace_formula_expanded": "4*n**3 - 46*n**2 + 149*n - 118",
+  "channel_contract": {
+    "intermediate_and_final": "alpha_n=xi_n=(n-3,2,1)",
+    "operator": "support-intersection-two transposition/3-cycle orbit Hamiltonian",
+    "source": "W_n=(n-2,2)",
+    "stable_range_under_test": "n>=7",
+    "trace_source": "minus the linear coefficient of the multiplicity-four characteristic polynomial"
+  },
+  "claim_gate": {
+    "complete_quartic_formula_proved": false,
+    "cubic_candidate_generated": true,
+    "exact_marked_cycle_trace_proved": false,
+    "out_of_sample_holdouts_match": true,
+    "reason": "The cubic trace formula survives holdout data, but interpolation gives neither an exact character identity nor the remaining quartic coefficients or root separation.",
+    "root_separation_proved": false,
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-07-18T01:48:11.020682+00:00",
+  "falsifiers_triggered": [
+    "A cubic interpolation, even with holdout matches, is not an all-n character identity.",
+    "The trace alone does not determine a multiplicity-four spectrum.",
+    "Integer characteristic coefficients do not imply inverse-polynomial root separation.",
+    "A spectral theorem still would not supply a coherent circuit or decoder."
+  ],
+  "finite_difference_rows": [
+    [
+      43,
+      178,
+      413,
+      772
+    ],
+    [
+      135,
+      235,
+      359
+    ],
+    [
+      100,
+      124
+    ],
+    [
+      24
+    ]
+  ],
+  "headline_metrics": {
+    "all_n_quartic_theorem_count": 0,
+    "all_n_root_separation_theorem_count": 0,
+    "constant_third_difference_count": 1,
+    "exact_marked_cycle_trace_theorem_count": 0,
+    "holdout_match_count": 1,
+    "holdout_row_count": 1,
+    "interpolated_degree": 3,
+    "maximum_holdout_residual": 0,
+    "training_row_count": 4
+  },
+  "holdout_records": [
+    {
+      "matched": true,
+      "n": 11,
+      "observed_trace": 1279,
+      "predicted_trace": 1279,
+      "residual": 0
+    }
+  ],
+  "interpolated_degree": 3,
+  "proof_obligation": {
+    "acceptable_routes": [
+      "marked-cycle factorial-moment enumeration",
+      "partition-algebra trace evaluation",
+      "explicit stable Specht intertwiners"
+    ],
+    "character_polynomials": {
+      "W_n": "binomial(X1,2)+X2-X1",
+      "xi_n": "(X1^3-6*X1^2+8*X1)/3-X3"
+    },
+    "character_sum": "n(n-1)(n-2)/n! times sum_g chi_xi(g) chi_xi(g tau) chi_W(g c), with tau=(1 2), c=(1 2 3)",
+    "exact_identity_to_prove": "Tr H_n = 4*n^3 - 46*n^2 + 149*n - 118 on Hom_Sn(V_xi, V_xi tensor V_W)",
+    "interpolation_is_not_acceptable_as_proof": true
+  },
+  "source_artifact": "research/representation/coset_sparse_stable_gap_probe.json",
+  "status": "stable-trace-cubic-survives-holdout-exact-proof-open",
+  "summary": "The cubic trace candidate 4*n**3 - 46*n**2 + 149*n - 118 matches 1/1 out-of-sample rows; an exact marked-cycle proof remains open.",
+  "training_n_values": [
+    7,
+    8,
+    9,
+    10
+  ],
+  "training_trace_values": [
+    43,
+    178,
+    413,
+    772
+  ]
+}
