@@ -36796,7 +36796,7 @@
     "claim": "A #BQP characterization of Kronecker coefficients supplies a coherent Kronecker transform.",
     "evidence": {
       "bounded_support_commutant_block_encoding_poly_proof_count": 1,
-      "capability_count": 15,
+      "capability_count": 16,
       "diagonal_jm_label_transform_poly_proof_count": 1,
       "exact_holevo_copy_budget_theorem_count": 1,
       "exact_stable_nine_shape_sector_classification_count": 1,
@@ -36809,7 +36809,7 @@
       "maximum_multiplicity_register_bits": 7,
       "maximum_n": 10,
       "maximum_partition_count": 42,
-      "proved_polynomial_primitive_count": 9,
+      "proved_polynomial_primitive_count": 10,
       "restricted_multiplicity_classical_match_count": 1,
       "stable_channel_gapped_label_transform_poly_proof_count": 1,
       "stable_shape_compressed_channel_routing_isometry_count": 0,
@@ -36818,6 +36818,8 @@
       "stable_shape_encoded_coupling_tree_transition_isometry_count": 1,
       "stable_shape_local_gapped_label_transform_count": 7,
       "stable_shape_transition_filter_count": 0,
+      "stable_three_copy_frame_all_n_conditioning_theorem_count": 0,
+      "stable_three_copy_frame_block_encoding_count": 1,
       "unresolved_required_capability_count": 3
     },
     "id": "NEG-COSET-KRONECKER-COUNT-AS-TRANSFORM",
@@ -36958,7 +36960,7 @@
     "claim": "Restricted multiplicity estimation currently supports a superpolynomial representation-theoretic speedup.",
     "evidence": {
       "bounded_support_commutant_block_encoding_poly_proof_count": 1,
-      "capability_count": 15,
+      "capability_count": 16,
       "diagonal_jm_label_transform_poly_proof_count": 1,
       "exact_holevo_copy_budget_theorem_count": 1,
       "exact_stable_nine_shape_sector_classification_count": 1,
@@ -36971,7 +36973,7 @@
       "maximum_multiplicity_register_bits": 7,
       "maximum_n": 10,
       "maximum_partition_count": 42,
-      "proved_polynomial_primitive_count": 9,
+      "proved_polynomial_primitive_count": 10,
       "restricted_multiplicity_classical_match_count": 1,
       "stable_channel_gapped_label_transform_poly_proof_count": 1,
       "stable_shape_compressed_channel_routing_isometry_count": 0,
@@ -36980,6 +36982,8 @@
       "stable_shape_encoded_coupling_tree_transition_isometry_count": 1,
       "stable_shape_local_gapped_label_transform_count": 7,
       "stable_shape_transition_filter_count": 0,
+      "stable_three_copy_frame_all_n_conditioning_theorem_count": 0,
+      "stable_three_copy_frame_block_encoding_count": 1,
       "unresolved_required_capability_count": 3
     },
     "id": "NEG-COSET-RESTRICTED-MULTIPLICITY-AS-BREAKTHROUGH",
@@ -37045,7 +37049,7 @@
     "claim": "An efficient S_n QFT supplies the missing multi-copy hidden-involution decoder.",
     "evidence": {
       "bounded_support_commutant_block_encoding_poly_proof_count": 1,
-      "capability_count": 15,
+      "capability_count": 16,
       "diagonal_jm_label_transform_poly_proof_count": 1,
       "exact_holevo_copy_budget_theorem_count": 1,
       "exact_stable_nine_shape_sector_classification_count": 1,
@@ -37058,7 +37062,7 @@
       "maximum_multiplicity_register_bits": 7,
       "maximum_n": 10,
       "maximum_partition_count": 42,
-      "proved_polynomial_primitive_count": 9,
+      "proved_polynomial_primitive_count": 10,
       "restricted_multiplicity_classical_match_count": 1,
       "stable_channel_gapped_label_transform_poly_proof_count": 1,
       "stable_shape_compressed_channel_routing_isometry_count": 0,
@@ -37067,6 +37071,8 @@
       "stable_shape_encoded_coupling_tree_transition_isometry_count": 1,
       "stable_shape_local_gapped_label_transform_count": 7,
       "stable_shape_transition_filter_count": 0,
+      "stable_three_copy_frame_all_n_conditioning_theorem_count": 0,
+      "stable_three_copy_frame_block_encoding_count": 1,
       "unresolved_required_capability_count": 3
     },
     "id": "NEG-COSET-SN-QFT-AS-MULTICOPY-DECODER",
@@ -37208,6 +37214,32 @@
     "lesson": "Compile the bounded-support hierarchy and phase estimation coherently, then quantify decoder information against classical baselines.",
     "reason_invalid": "Uniform coherent implementation, all-sector coverage, and a reduction-compatible hidden-involution decoder remain absent.",
     "source": "research/representation/coset_stable_root_separation_certificate.json"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "EXP-COSET-STABLE-THREE-COPY-FRAME"
+    ],
+    "claim": "Full-rank well-conditioned n=8 stable frame spectra prove a polynomial inverse-frame filter and decoder.",
+    "evidence": {
+      "all_n_inverse_polynomial_minimum_eigenvalue_theorem_count": 0,
+      "exact_three_copy_frame_expansion_count": 1,
+      "finite_frame_record_count": 3,
+      "finite_full_support_frame_count": 3,
+      "frontier_frame_record_count": 2,
+      "hidden_involution_decoder_count": 0,
+      "maximum_frontier_finite_condition_number": 1.5984800944800495,
+      "maximum_overlap_unitarity_residual": 4.4587466369455423e-14,
+      "maximum_trace_formula_residual": 0.0,
+      "minimum_frontier_finite_frame_eigenvalue": 1.3609452405794213,
+      "polynomial_inverse_square_root_filter_count": 0,
+      "polynomial_three_copy_frame_block_encoding_count": 1,
+      "stable_multiplicity_dimension": 25
+    },
+    "id": "NEG-COSET-STABLE-THREE-COPY-FINITE-CONDITIONING-AS-INVERSE-FRAME-THEOREM",
+    "lesson": "Derive exact stable frame characteristic data or a representation-theoretic coercivity bound, then separately analyze PGM outcome information and classical simulation.",
+    "reason_invalid": "The exact block encoding is uniform, but no all-n lower bound on the positive spectrum or hidden-involution outcome theorem has been proved.",
+    "source": "research/representation/coset_stable_three_copy_frame.json"
   },
   {
     "applies_to": [

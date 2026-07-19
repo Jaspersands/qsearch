@@ -255,6 +255,9 @@ COSET_STABLE_SHAPE_ROUTER_PATH = Path(
 COSET_STABLE_ENCODED_TREE_PATH = Path(
     "research/representation/coset_stable_encoded_tree_certificate.json"
 )
+COSET_STABLE_THREE_COPY_FRAME_PATH = Path(
+    "research/representation/coset_stable_three_copy_frame.json"
+)
 COSET_RECOUPLING_CAPABILITY_PATH = Path(
     "research/representation/coset_recoupling_capability_ledger.json"
 )
@@ -4516,6 +4519,40 @@ def findings_from_coset_stable_encoded_tree_certificate(
     ]
 
 
+def findings_from_coset_stable_three_copy_frame(
+    path: Path = COSET_STABLE_THREE_COPY_FRAME_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    return [
+        DequantizationFinding(
+            id="DEQ-COSET-STABLE-FRAME-BLOCK-ENCODING-STILL-LACKS-ALL-N-CONDITIONING-AND-DECODER",
+            created_at=utc_now(),
+            target_type="coset_stable_three_copy_frame",
+            target_id=str(path),
+            severity="high",
+            claim_under_test=(
+                "A polynomial stable three-copy frame block encoding and well-conditioned n=8 spectra imply an efficient PGM decoder."
+            ),
+            evidence=(
+                f"Frame block encodings/full-support finite controls/all-n conditioning theorems/inverse filters/decoders="
+                f"{metrics.get('polynomial_three_copy_frame_block_encoding_count', 0)}/"
+                f"{metrics.get('finite_full_support_frame_count', 0)}/"
+                f"{metrics.get('all_n_inverse_polynomial_minimum_eigenvalue_theorem_count', 0)}/"
+                f"{metrics.get('polynomial_inverse_square_root_filter_count', 0)}/"
+                f"{metrics.get('hidden_involution_decoder_count', 0)}."
+            ),
+            required_action=(
+                "Prove stable all-n positive-spectrum conditioning, compile the inverse-square-root filter, quantify "
+                "outcome information about h, and compare the resulting statistics with classical character and tensor contractions."
+            ),
+            blocks_speedup_claim=True,
+        )
+    ]
+
+
 def findings_from_coset_recoupling_capability_ledger(
     path: Path = COSET_RECOUPLING_CAPABILITY_PATH,
 ) -> list[DequantizationFinding]:
@@ -7484,6 +7521,7 @@ def build_dequantization_report() -> dict[str, Any]:
         *findings_from_coset_stable_first_stage_label_certificate(),
         *findings_from_coset_stable_shape_router_certificate(),
         *findings_from_coset_stable_encoded_tree_certificate(),
+        *findings_from_coset_stable_three_copy_frame(),
         *findings_from_coset_jucys_murphy_label_transform(),
         *findings_from_coset_multiplicity_commutant_search(),
         *findings_from_coset_recoupling_capability_ledger(),

@@ -7319,6 +7319,54 @@ def seed_candidate_records() -> tuple[list[CandidateRecord], list[ExperimentReco
             ],
         ),
         ExperimentRecord(
+            id="EXP-COSET-STABLE-THREE-COPY-FRAME",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Exact stable three-copy frame block encoding",
+            status="planned",
+            hypothesis=(
+                "The conditioned three-copy involution frame is a short LCU of three overlapping pair class sums, "
+                "so it can be block-encoded directly on W_n^tensor3 without a dense Racah matrix."
+            ),
+            protocol=(
+                "Expand the averaged conditional coset state exactly, certify reversible uniform involution-class "
+                "preparation and controlled representation SELECT, construct the full n=8 stable multiplicity frame, "
+                "and measure support rank and conditioning for control and frontier involution classes."
+            ),
+            positive_signal=(
+                "A uniform polynomial frame block encoding exists and the n=8 frontier stable blocks have full support "
+                "with moderate condition number, motivating an all-n coercivity theorem."
+            ),
+            falsifiers=[
+                "The expansion omits an overlapping pair term or has an incorrect character scalar.",
+                "Uniform involution-class PREPARE requires explicit class enumeration.",
+                "A finite overlap basis fails unitarity or the exact trace identity.",
+                "A frontier stable frame has a numerical kernel or severe finite conditioning.",
+                "Finite conditioning is promoted as an all-n inverse-frame theorem or decoder.",
+            ],
+            metrics=[
+                "exact_three_copy_frame_expansion_count",
+                "polynomial_three_copy_frame_block_encoding_count",
+                "finite_full_support_frame_count",
+                "minimum_frontier_finite_frame_eigenvalue",
+                "maximum_frontier_finite_condition_number",
+                "all_n_inverse_polynomial_minimum_eigenvalue_theorem_count",
+                "polynomial_inverse_square_root_filter_count",
+                "hidden_involution_decoder_count",
+            ],
+            dependencies=[
+                "coset_stable_three_copy_frame.py",
+                "complete stable encoded coupling-tree labels",
+                "uniform involution-class ranking/unranking",
+                "controlled Young-basis permutation actions",
+            ],
+            next_actions=[
+                "Derive exact characteristic or moment data for the 25-dimensional stable frame family.",
+                "Prove or falsify an inverse-polynomial lower bound on its positive spectrum.",
+                "Compile an inverse-square-root polynomial only after conditioning is proved.",
+                "Quantify hidden-involution information in the resulting PGM outcomes and run classical baselines.",
+            ],
+        ),
+        ExperimentRecord(
             id="EXP-COSET-RECOUPLING-CAPABILITY-LEDGER",
             candidate_id="CODE-COSET-COLLECTIVE",
             title="Literature-backed symmetric-group recoupling capability ledger",

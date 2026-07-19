@@ -66,8 +66,8 @@
       "target_claim": "The coset observable is not a disguised classical invariant."
     }
   ],
-  "created_at": "2026-07-19T02:58:12.981149+00:00",
-  "lemma_count": 418,
+  "created_at": "2026-07-19T03:52:59.865076+00:00",
+  "lemma_count": 430,
   "lemmas": [
     {
       "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -405,6 +405,30 @@
       "id": "LEMMA-CODE-COSET-COLLECTIVE-COSET-STABLE-RACAH-COMPLETE-ENCODED-TREE-LABELS",
       "statement": "Commuting shape, first-stage, and second-stage observables give all 25 stable multiplicity labels on both coupling trees and a polynomial encoded left/right label isometry.",
       "status": "proved-complete-stable-encoded-tree-labels-transition-filter-decoder-open"
+    },
+    {
+      "candidate_id": "CODE-COSET-COLLECTIVE",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Verify the tensor expansion, singleton/final character scalars, all three pair terms, reversible involution-class PREPARE, finite overlap unitarity, and exact trace identity.",
+      "id": "LEMMA-CODE-COSET-COLLECTIVE-COSET-STABLE-THREE-COPY-FRAME-BLOCK-ENCODING",
+      "statement": "The stable three-copy involution frame is a polynomial block encoding of identity plus three overlapping normalized pair class sums, without a dense Racah table.",
+      "status": "proved-stable-three-copy-frame-block-encoding-conditioning-decoder-open"
+    },
+    {
+      "candidate_id": "CODE-COSET-COLLECTIVE",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Derive exact characteristic data or a coercive sum-of-projectors bound and search scaling families for a vanishing eigenvalue faster than every inverse polynomial.",
+      "id": "LEMMA-CODE-COSET-COLLECTIVE-COSET-STABLE-THREE-COPY-FRAME-CONDITIONING",
+      "statement": "The positive stable three-copy frame spectrum has an inverse-polynomial all-n lower bound on reduction-relevant involution families.",
+      "status": "blocked-n8-full-rank-well-conditioned-all-n-coercivity-open"
     },
     {
       "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -1895,6 +1919,30 @@
         "PO-COMPLEXITY",
         "PO-NO-GO"
       ],
+      "falsification_test": "Verify the tensor expansion, singleton/final character scalars, all three pair terms, reversible involution-class PREPARE, finite overlap unitarity, and exact trace identity.",
+      "id": "LEMMA-HYP-LIT-COSET-OBSERVABLES-COSET-STABLE-THREE-COPY-FRAME-BLOCK-ENCODING",
+      "statement": "The stable three-copy involution frame is a polynomial block encoding of identity plus three overlapping normalized pair class sums, without a dense Racah table.",
+      "status": "proved-stable-three-copy-frame-block-encoding-conditioning-decoder-open"
+    },
+    {
+      "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Derive exact characteristic data or a coercive sum-of-projectors bound and search scaling families for a vanishing eigenvalue faster than every inverse polynomial.",
+      "id": "LEMMA-HYP-LIT-COSET-OBSERVABLES-COSET-STABLE-THREE-COPY-FRAME-CONDITIONING",
+      "statement": "The positive stable three-copy frame spectrum has an inverse-polynomial all-n lower bound on reduction-relevant involution families.",
+      "status": "blocked-n8-full-rank-well-conditioned-all-n-coercivity-open"
+    },
+    {
+      "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
       "falsification_test": "Verify the cubic discriminant factorization and positivity, coefficient L1 root bound, discriminant-to-pair-gap inequality, exact LCU normalization, and the five quadratic plus one original stable gap source certificates.",
       "id": "LEMMA-HYP-LIT-COSET-OBSERVABLES-COSET-STABLE-RACAH-ALL-SEVEN-SHAPE-GAPS",
       "statement": "Every nontrivial stable intermediate-shape Hamiltonian has an inverse-polynomial LCU-normalized minimum root gap for every integer n>=8.",
@@ -3377,6 +3425,30 @@
         "PO-COMPLEXITY",
         "PO-NO-GO"
       ],
+      "falsification_test": "Verify the tensor expansion, singleton/final character scalars, all three pair terms, reversible involution-class PREPARE, finite overlap unitarity, and exact trace identity.",
+      "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-COSET-STABLE-THREE-COPY-FRAME-BLOCK-ENCODING",
+      "statement": "The stable three-copy involution frame is a polynomial block encoding of identity plus three overlapping normalized pair class sums, without a dense Racah table.",
+      "status": "proved-stable-three-copy-frame-block-encoding-conditioning-decoder-open"
+    },
+    {
+      "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Derive exact characteristic data or a coercive sum-of-projectors bound and search scaling families for a vanishing eigenvalue faster than every inverse polynomial.",
+      "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-COSET-STABLE-THREE-COPY-FRAME-CONDITIONING",
+      "statement": "The positive stable three-copy frame spectrum has an inverse-polynomial all-n lower bound on reduction-relevant involution families.",
+      "status": "blocked-n8-full-rank-well-conditioned-all-n-coercivity-open"
+    },
+    {
+      "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
       "falsification_test": "Verify the cubic discriminant factorization and positivity, coefficient L1 root bound, discriminant-to-pair-gap inequality, exact LCU normalization, and the five quadratic plus one original stable gap source certificates.",
       "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-COSET-STABLE-RACAH-ALL-SEVEN-SHAPE-GAPS",
       "statement": "Every nontrivial stable intermediate-shape Hamiltonian has an inverse-polynomial LCU-normalized minimum root gap for every integer n>=8.",
@@ -3890,6 +3962,30 @@
       "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-COSET-STABLE-RACAH-COMPLETE-ENCODED-TREE-LABELS",
       "statement": "Commuting shape, first-stage, and second-stage observables give all 25 stable multiplicity labels on both coupling trees and a polynomial encoded left/right label isometry.",
       "status": "proved-complete-stable-encoded-tree-labels-transition-filter-decoder-open"
+    },
+    {
+      "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Verify the tensor expansion, singleton/final character scalars, all three pair terms, reversible involution-class PREPARE, finite overlap unitarity, and exact trace identity.",
+      "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-COSET-STABLE-THREE-COPY-FRAME-BLOCK-ENCODING",
+      "statement": "The stable three-copy involution frame is a polynomial block encoding of identity plus three overlapping normalized pair class sums, without a dense Racah table.",
+      "status": "proved-stable-three-copy-frame-block-encoding-conditioning-decoder-open"
+    },
+    {
+      "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Derive exact characteristic data or a coercive sum-of-projectors bound and search scaling families for a vanishing eigenvalue faster than every inverse polynomial.",
+      "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-COSET-STABLE-THREE-COPY-FRAME-CONDITIONING",
+      "statement": "The positive stable three-copy frame spectrum has an inverse-polynomial all-n lower bound on reduction-relevant involution families.",
+      "status": "blocked-n8-full-rank-well-conditioned-all-n-coercivity-open"
     },
     {
       "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
@@ -4419,6 +4515,30 @@
         "PO-COMPLEXITY",
         "PO-NO-GO"
       ],
+      "falsification_test": "Verify the tensor expansion, singleton/final character scalars, all three pair terms, reversible involution-class PREPARE, finite overlap unitarity, and exact trace identity.",
+      "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-COSET-STABLE-THREE-COPY-FRAME-BLOCK-ENCODING",
+      "statement": "The stable three-copy involution frame is a polynomial block encoding of identity plus three overlapping normalized pair class sums, without a dense Racah table.",
+      "status": "proved-stable-three-copy-frame-block-encoding-conditioning-decoder-open"
+    },
+    {
+      "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Derive exact characteristic data or a coercive sum-of-projectors bound and search scaling families for a vanishing eigenvalue faster than every inverse polynomial.",
+      "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-COSET-STABLE-THREE-COPY-FRAME-CONDITIONING",
+      "statement": "The positive stable three-copy frame spectrum has an inverse-polynomial all-n lower bound on reduction-relevant involution families.",
+      "status": "blocked-n8-full-rank-well-conditioned-all-n-coercivity-open"
+    },
+    {
+      "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
       "falsification_test": "Verify the cubic discriminant factorization and positivity, coefficient L1 root bound, discriminant-to-pair-gap inequality, exact LCU normalization, and the five quadratic plus one original stable gap source certificates.",
       "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-COSET-STABLE-RACAH-ALL-SEVEN-SHAPE-GAPS",
       "statement": "Every nontrivial stable intermediate-shape Hamiltonian has an inverse-polynomial LCU-normalized minimum root gap for every integer n>=8.",
@@ -4932,6 +5052,30 @@
       "id": "LEMMA-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-COSET-STABLE-RACAH-COMPLETE-ENCODED-TREE-LABELS",
       "statement": "Commuting shape, first-stage, and second-stage observables give all 25 stable multiplicity labels on both coupling trees and a polynomial encoded left/right label isometry.",
       "status": "proved-complete-stable-encoded-tree-labels-transition-filter-decoder-open"
+    },
+    {
+      "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Verify the tensor expansion, singleton/final character scalars, all three pair terms, reversible involution-class PREPARE, finite overlap unitarity, and exact trace identity.",
+      "id": "LEMMA-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-COSET-STABLE-THREE-COPY-FRAME-BLOCK-ENCODING",
+      "statement": "The stable three-copy involution frame is a polynomial block encoding of identity plus three overlapping normalized pair class sums, without a dense Racah table.",
+      "status": "proved-stable-three-copy-frame-block-encoding-conditioning-decoder-open"
+    },
+    {
+      "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Derive exact characteristic data or a coercive sum-of-projectors bound and search scaling families for a vanishing eigenvalue faster than every inverse polynomial.",
+      "id": "LEMMA-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-COSET-STABLE-THREE-COPY-FRAME-CONDITIONING",
+      "statement": "The positive stable three-copy frame spectrum has an inverse-polynomial all-n lower bound on reduction-relevant involution families.",
+      "status": "blocked-n8-full-rank-well-conditioned-all-n-coercivity-open"
     },
     {
       "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",

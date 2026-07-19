@@ -792,6 +792,18 @@ bottleneck is now a polynomial state-dependent transition/frame filter and a
 demonstration that its outcomes reveal the hidden involution beyond classical
 character or tensor contractions.
 
+The stable three-copy average frame no longer requires an explicit Racah
+matrix. After conditioning on three `W_n` labels and final `xi_n`, it is
+exactly
+`F=(1+3r_W+r_xi)I+A_12+A_13+A_23`, where each `A_ij` is the normalized
+involution class sum on one pair. Uniform involutions with `t` disjoint
+transpositions have a polynomial reversible rank/unrank construction, so all
+three terms admit direct LCU block encodings on the physical registers. At
+`n=8`, all three audited classes have full rank on the 25-dimensional stable
+multiplicity block; the two frontier condition numbers are at most `1.599`.
+This is finite evidence only. An all-`n` lower bound on the positive spectrum,
+the inverse-square-root filter, outcome information, and decoding remain open.
+
 ```bash
 python qsearch.py coset-racah-gap-scaling
 python qsearch.py coset-racah-sparse-gap --n-values 7,8,9,10,11
@@ -815,6 +827,7 @@ python qsearch.py coset-racah-stable-shape-coherent-labels
 python qsearch.py coset-racah-stable-first-stage-labels
 python qsearch.py coset-racah-stable-shape-router
 python qsearch.py coset-racah-stable-encoded-tree
+python qsearch.py coset-racah-stable-three-copy-frame
 ```
 
 The capability ledger separates the solved `S_n` QFT, Schur-Weyl transforms,

@@ -159,6 +159,22 @@
       "uniform_polynomial_gate_complexity_proved": true
     },
     {
+      "availability": "proved-block-encoding-conditioning-open",
+      "classical_comparison": "The same finite 25-dimensional frame spectra can be formed classically; advantage requires scalable inverse filtering and outcome decoding beyond classical contractions.",
+      "handles_overlapping_k_copy_associators": false,
+      "id": "CAP-STABLE-THREE-COPY-FRAME-BLOCK-ENCODING",
+      "literature_ids": [
+        "project-coset-covariant-frame",
+        "project-coset-stable-shape-family-certificate"
+      ],
+      "primitive": "Direct LCU block encoding of the stable three-copy involution frame",
+      "proved_scope": "Conditioned on W_n^tensor3 and final xi_n, the frame is identity plus three normalized overlapping pair class sums, each implemented by reversible involution-class preparation and controlled representation actions.",
+      "resolves_internal_sn_kronecker_basis": false,
+      "scope_limit": "No all-n positive-spectrum lower bound, inverse-square-root filter, PGM outcome-information theorem, or hidden-involution decoder has been proved.",
+      "supplies_hidden_involution_decoder": false,
+      "uniform_polynomial_gate_complexity_proved": true
+    },
+    {
       "availability": "counting-class-upper-bound-not-bqp-evaluation",
       "classical_comparison": "#BQP membership is not an efficient exact scalar-evaluation or basis-construction algorithm.",
       "handles_overlapping_k_copy_associators": false,
@@ -251,7 +267,7 @@
     "internal_sn_kronecker_transform_polynomial_proved": false,
     "kcopy_associator_polynomial_proved": false,
     "multiplicity_counting_implies_coherent_transform": false,
-    "reason": "Coherent gapped eigenlabel transforms are proved for every nontrivial shape in one bounded stable family. Complete encoded labels and left/right relabelling are proved on one stable final branch, but the carrier is not compressed. Known primitives still stop before state-dependent transition filters, full-sector associators, hidden-involution decoding, and separation.",
+    "reason": "Coherent gapped eigenlabel transforms are proved for every nontrivial shape in one bounded stable family. Complete encoded labels and left/right relabelling are proved on one stable final branch, and its three-copy frame is directly block-encoded, but the carrier is not compressed. Known primitives still stop before an all-n conditioning theorem, inverse frame filter, full-sector coverage, hidden-involution decoding, and separation.",
     "schur_transform_implies_internal_kronecker_transform": false,
     "sn_qft_is_open_bottleneck": false,
     "speedup_claim_allowed": false,
@@ -261,9 +277,11 @@
     "stable_shape_compressed_racah_associator_polynomial_proved": false,
     "stable_shape_encoded_channel_routing_polynomial_proved": true,
     "stable_shape_encoded_coupling_tree_transition_polynomial_proved": true,
-    "stable_shape_transition_filter_polynomial_proved": false
+    "stable_shape_transition_filter_polynomial_proved": false,
+    "stable_three_copy_frame_all_n_conditioning_proved": false,
+    "stable_three_copy_frame_block_encoding_polynomial_proved": true
   },
-  "created_at": "2026-07-19T02:57:33.746516+00:00",
+  "created_at": "2026-07-19T03:52:41.458586+00:00",
   "false_transfer_rules": [
     {
       "from": "exact Holevo/Fano copy lower bound",
@@ -289,6 +307,11 @@
       "from": "complete encoded left/right stable-tree labels and U_R U_L^dagger",
       "invalid_to": "state-dependent transition filter, hidden-involution decoder, or full-sector associator",
       "reason": "The relabelling isometry preserves the physical tensor encoding and exposes no frame inverse, outcome-information theorem, or sectors outside one stable final branch."
+    },
+    {
+      "from": "a direct polynomial stable three-copy frame block encoding and well-conditioned n=8 controls",
+      "invalid_to": "uniform inverse-frame filter or hidden-involution decoder",
+      "reason": "QSVT inversion requires an all-n lower bound on the positive frame spectrum, and measurement outcomes still need an information and decoding theorem."
     },
     {
       "from": "polynomial diagonal YJM target-tableau label measurement",
@@ -324,6 +347,7 @@
     "Diagonal YJM tableau labels retain exact Kronecker multiplicity degeneracy.",
     "An encoded stable shape router does not construct a compressed Clebsch channel isometry.",
     "An encoded left/right relabelling isometry does not construct the state-dependent frame filter or decoder.",
+    "A finite well-conditioned stable frame does not prove all-n inverse filtering or outcome decoding.",
     "Many restricted multiplicity speedup candidates have polynomial classical algorithms.",
     "Finite growth of dimensions or multiplicities is not a circuit lower bound."
   ],
@@ -536,7 +560,7 @@
   ],
   "headline_metrics": {
     "bounded_support_commutant_block_encoding_poly_proof_count": 1,
-    "capability_count": 15,
+    "capability_count": 16,
     "diagonal_jm_label_transform_poly_proof_count": 1,
     "exact_holevo_copy_budget_theorem_count": 1,
     "exact_stable_nine_shape_sector_classification_count": 1,
@@ -549,7 +573,7 @@
     "maximum_multiplicity_register_bits": 7,
     "maximum_n": 10,
     "maximum_partition_count": 42,
-    "proved_polynomial_primitive_count": 9,
+    "proved_polynomial_primitive_count": 10,
     "restricted_multiplicity_classical_match_count": 1,
     "stable_channel_gapped_label_transform_poly_proof_count": 1,
     "stable_shape_compressed_channel_routing_isometry_count": 0,
@@ -558,6 +582,8 @@
     "stable_shape_encoded_coupling_tree_transition_isometry_count": 1,
     "stable_shape_local_gapped_label_transform_count": 7,
     "stable_shape_transition_filter_count": 0,
+    "stable_three_copy_frame_all_n_conditioning_theorem_count": 0,
+    "stable_three_copy_frame_block_encoding_count": 1,
     "unresolved_required_capability_count": 3
   },
   "literature_scope": [
@@ -599,5 +625,5 @@
     }
   ],
   "status": "known-primitives-separated-from-open-recoupling-and-decoder",
-  "summary": "Classified 15 representation primitives and exact finite Kronecker growth through n=10 without transferring solved QFT/counting results to the open decoder."
+  "summary": "Classified 16 representation primitives and exact finite Kronecker growth through n=10 without transferring solved QFT/counting results to the open decoder."
 }

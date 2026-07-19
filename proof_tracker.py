@@ -183,6 +183,9 @@ COSET_STABLE_SHAPE_ROUTER_PATH = Path(
 COSET_STABLE_ENCODED_TREE_PATH = Path(
     "research/representation/coset_stable_encoded_tree_certificate.json"
 )
+COSET_STABLE_THREE_COPY_FRAME_PATH = Path(
+    "research/representation/coset_stable_three_copy_frame.json"
+)
 COSET_RECOUPLING_CAPABILITY_PATH = Path(
     "research/representation/coset_recoupling_capability_ledger.json"
 )
@@ -863,6 +866,17 @@ def lemma_templates(candidate: dict[str, Any]) -> list[LemmaRecord]:
         except (json.JSONDecodeError, OSError):
             stable_encoded_tree = {}
         stable_encoded_tree_metrics = stable_encoded_tree.get(
+            "headline_metrics", {}
+        )
+        try:
+            stable_three_copy_frame = (
+                json.loads(COSET_STABLE_THREE_COPY_FRAME_PATH.read_text())
+                if COSET_STABLE_THREE_COPY_FRAME_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            stable_three_copy_frame = {}
+        stable_three_copy_frame_metrics = stable_three_copy_frame.get(
             "headline_metrics", {}
         )
         try:
@@ -1665,6 +1679,55 @@ def lemma_templates(candidate: dict[str, Any]) -> list[LemmaRecord]:
                     falsification_test=(
                         "Verify all observable commutators, branchwise product multiplicities, exact total 25, both "
                         "phase-estimation interfaces, and the encoded-not-compressed transition scope."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-COSET-STABLE-THREE-COPY-FRAME-BLOCK-ENCODING",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "The stable three-copy involution frame is a polynomial block encoding of identity plus three "
+                        "overlapping normalized pair class sums, without a dense Racah table."
+                    ),
+                    depends_on=["PO-MEASUREMENT", "PO-COMPLEXITY", "PO-NO-GO"],
+                    status=(
+                        "proved-stable-three-copy-frame-block-encoding-conditioning-decoder-open"
+                        if int(
+                            stable_three_copy_frame_metrics.get(
+                                "polynomial_three_copy_frame_block_encoding_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        == 1
+                        else "blocked-stable-three-copy-frame-certificate-missing"
+                    ),
+                    falsification_test=(
+                        "Verify the tensor expansion, singleton/final character scalars, all three pair terms, "
+                        "reversible involution-class PREPARE, finite overlap unitarity, and exact trace identity."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-COSET-STABLE-THREE-COPY-FRAME-CONDITIONING",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "The positive stable three-copy frame spectrum has an inverse-polynomial all-n lower bound on "
+                        "reduction-relevant involution families."
+                    ),
+                    depends_on=["PO-MEASUREMENT", "PO-COMPLEXITY", "PO-NO-GO"],
+                    status=(
+                        "blocked-n8-full-rank-well-conditioned-all-n-coercivity-open"
+                        if int(
+                            stable_three_copy_frame_metrics.get(
+                                "finite_full_support_frame_count", 0
+                            )
+                            or 0
+                        )
+                        == 3
+                        else "blocked-stable-three-copy-frame-finite-controls-missing"
+                    ),
+                    falsification_test=(
+                        "Derive exact characteristic data or a coercive sum-of-projectors bound and search scaling "
+                        "families for a vanishing eigenvalue faster than every inverse polynomial."
                     ),
                 ),
                 LemmaRecord(

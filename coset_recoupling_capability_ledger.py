@@ -291,6 +291,31 @@ CAPABILITIES = (
         ),
     ),
     RepresentationCapability(
+        id="CAP-STABLE-THREE-COPY-FRAME-BLOCK-ENCODING",
+        literature_ids=[
+            "project-coset-covariant-frame",
+            "project-coset-stable-shape-family-certificate",
+        ],
+        primitive="Direct LCU block encoding of the stable three-copy involution frame",
+        proved_scope=(
+            "Conditioned on W_n^tensor3 and final xi_n, the frame is identity plus three normalized overlapping pair "
+            "class sums, each implemented by reversible involution-class preparation and controlled representation actions."
+        ),
+        availability="proved-block-encoding-conditioning-open",
+        uniform_polynomial_gate_complexity_proved=True,
+        resolves_internal_sn_kronecker_basis=False,
+        handles_overlapping_k_copy_associators=False,
+        supplies_hidden_involution_decoder=False,
+        classical_comparison=(
+            "The same finite 25-dimensional frame spectra can be formed classically; advantage requires scalable "
+            "inverse filtering and outcome decoding beyond classical contractions."
+        ),
+        scope_limit=(
+            "No all-n positive-spectrum lower bound, inverse-square-root filter, PGM outcome-information theorem, or "
+            "hidden-involution decoder has been proved."
+        ),
+    ),
+    RepresentationCapability(
         id="CAP-KRONECKER-SHARP-BQP",
         literature_ids=["ikenmeyer-subramanian-kronecker-2023"],
         primitive="#BQP characterization of exact Kronecker multiplicities",
@@ -435,6 +460,8 @@ def build_recoupling_capability_report(
         "stable_shape_compressed_channel_routing_isometry_count": 0,
         "stable_shape_encoded_coupling_tree_transition_isometry_count": 1,
         "stable_shape_compressed_racah_associator_count": 0,
+        "stable_three_copy_frame_block_encoding_count": 1,
+        "stable_three_copy_frame_all_n_conditioning_theorem_count": 0,
         "stable_shape_transition_filter_count": 0,
         "exact_stable_nine_shape_sector_classification_count": sum(
             capability.id == "CAP-STABLE-NINE-SHAPE-SECTOR-CLASSIFICATION"
@@ -518,6 +545,14 @@ def build_recoupling_capability_report(
                 ),
             },
             {
+                "from": "a direct polynomial stable three-copy frame block encoding and well-conditioned n=8 controls",
+                "invalid_to": "uniform inverse-frame filter or hidden-involution decoder",
+                "reason": (
+                    "QSVT inversion requires an all-n lower bound on the positive frame spectrum, and measurement "
+                    "outcomes still need an information and decoding theorem."
+                ),
+            },
+            {
                 "from": "polynomial diagonal YJM target-tableau label measurement",
                 "invalid_to": "coherent Kronecker multiplicity basis, Racah associator, or decoder",
                 "reason": (
@@ -562,6 +597,8 @@ def build_recoupling_capability_report(
             "stable_shape_complete_encoded_tree_labels_polynomial_proved": True,
             "stable_shape_encoded_coupling_tree_transition_polynomial_proved": True,
             "stable_shape_compressed_racah_associator_polynomial_proved": False,
+            "stable_three_copy_frame_block_encoding_polynomial_proved": True,
+            "stable_three_copy_frame_all_n_conditioning_proved": False,
             "stable_shape_transition_filter_polynomial_proved": False,
             "exact_bounded_stable_sector_family_proved": True,
             "gapped_kronecker_multiplicity_transform_polynomial_proved": False,
@@ -573,8 +610,9 @@ def build_recoupling_capability_report(
             "reason": (
                 "Coherent gapped eigenlabel transforms are proved for every nontrivial shape in one bounded stable "
                 "family. Complete encoded labels and left/right relabelling are proved on one stable final branch, "
-                "but the carrier is not compressed. Known primitives still stop before state-dependent transition "
-                "filters, full-sector associators, hidden-involution decoding, and separation."
+                "and its three-copy frame is directly block-encoded, but the carrier is not compressed. Known "
+                "primitives still stop before an all-n conditioning theorem, inverse frame filter, full-sector "
+                "coverage, hidden-involution decoding, and separation."
             ),
         },
         status="known-primitives-separated-from-open-recoupling-and-decoder",
@@ -590,6 +628,7 @@ def build_recoupling_capability_report(
             "Diagonal YJM tableau labels retain exact Kronecker multiplicity degeneracy.",
             "An encoded stable shape router does not construct a compressed Clebsch channel isometry.",
             "An encoded left/right relabelling isometry does not construct the state-dependent frame filter or decoder.",
+            "A finite well-conditioned stable frame does not prove all-n inverse filtering or outcome decoding.",
             "Many restricted multiplicity speedup candidates have polynomial classical algorithms.",
             "Finite growth of dimensions or multiplicities is not a circuit lower bound.",
         ],

@@ -111,6 +111,9 @@ from coset_stable_shape_router_certificate import (
 from coset_stable_encoded_tree_certificate import (
     write_stable_encoded_tree_certificate,
 )
+from coset_stable_three_copy_frame import (
+    write_stable_three_copy_frame_report,
+)
 from coset_recoupling_capability_ledger import write_recoupling_capability_report
 from coset_recoupling_mechanism_synthesis import write_recoupling_mechanism_synthesis_report
 from coset_state_distinguishability import write_coset_distinguishability_report
@@ -576,6 +579,7 @@ COSET_EXPERIMENTS = {
     "EXP-COSET-STABLE-FIRST-STAGE-LABEL-CERTIFICATE",
     "EXP-COSET-STABLE-SHAPE-ROUTER-CERTIFICATE",
     "EXP-COSET-STABLE-ENCODED-TREE-CERTIFICATE",
+    "EXP-COSET-STABLE-THREE-COPY-FRAME",
     "EXP-COSET-RECOUPLING-CAPABILITY-LEDGER",
     "EXP-COSET-RECOUPLING-MECHANISM-SYNTHESIS",
 }
@@ -1409,6 +1413,7 @@ def select_next_experiment() -> NextExperimentSelection:
         "EXP-COSET-STABLE-FIRST-STAGE-LABEL-CERTIFICATE": 52,
         "EXP-COSET-STABLE-SHAPE-ROUTER-CERTIFICATE": 53,
         "EXP-COSET-STABLE-ENCODED-TREE-CERTIFICATE": 54,
+        "EXP-COSET-STABLE-THREE-COPY-FRAME": 55,
         "EXP-COSET-RECOUPLING-CAPABILITY-LEDGER": 24,
         "EXP-COSET-RECOUPLING-MECHANISM-SYNTHESIS": 25,
     }
@@ -2953,6 +2958,13 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             )
         elif experiment_id == "EXP-COSET-STABLE-ENCODED-TREE-CERTIFICATE":
             payload = write_stable_encoded_tree_certificate(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif experiment_id == "EXP-COSET-STABLE-THREE-COPY-FRAME":
+            payload = write_stable_three_copy_frame_report(
                 write_registry=True,
                 registry_experiment_id=experiment_id,
                 registry_candidate_id=experiment["candidate_id"],

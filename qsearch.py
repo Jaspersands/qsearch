@@ -115,6 +115,7 @@ Commands:
   python qsearch.py coset-racah-stable-first-stage-labels
   python qsearch.py coset-racah-stable-shape-router
   python qsearch.py coset-racah-stable-encoded-tree
+  python qsearch.py coset-racah-stable-three-copy-frame
   python qsearch.py coset-recoupling-capabilities
   python qsearch.py coset-recoupling-synthesize
   python qsearch.py code-equivalence
@@ -375,6 +376,9 @@ from coset_stable_shape_router_certificate import (
 )
 from coset_stable_encoded_tree_certificate import (
     write_stable_encoded_tree_certificate,
+)
+from coset_stable_three_copy_frame import (
+    write_stable_three_copy_frame_report,
 )
 from coset_recoupling_capability_ledger import write_recoupling_capability_report
 from coset_recoupling_mechanism_synthesis import write_recoupling_mechanism_synthesis_report
@@ -4585,6 +4589,46 @@ def command_coset_racah_stable_encoded_tree(args: argparse.Namespace) -> int:
     return 0
 
 
+def command_coset_racah_stable_three_copy_frame(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_stable_three_copy_frame_report(
+        n=args.n,
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Stable Racah three-copy frame certificate complete")
+    print(
+        "Artifact: research/representation/"
+        "coset_stable_three_copy_frame.json"
+    )
+    print(
+        "Polynomial frame block encodings: "
+        f"{metrics['polynomial_three_copy_frame_block_encoding_count']}"
+    )
+    print(
+        "Finite full-support frames: "
+        f"{metrics['finite_full_support_frame_count']}/"
+        f"{metrics['finite_frame_record_count']}"
+    )
+    print(
+        "Maximum frontier finite condition number: "
+        f"{metrics['maximum_frontier_finite_condition_number']:.6f}"
+    )
+    print(
+        "All-n conditioning theorems: "
+        f"{metrics['all_n_inverse_polynomial_minimum_eigenvalue_theorem_count']}"
+    )
+    print(f"Speedup claim allowed: {payload['claim_gate']['speedup_claim_allowed']}")
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
 def command_coset_recoupling_synthesize(args: argparse.Namespace) -> int:
     initialize_seed_registry(overwrite=False)
     payload = write_recoupling_mechanism_synthesis_report(
@@ -7998,6 +8042,18 @@ def build_parser() -> argparse.ArgumentParser:
     )
     coset_racah_stable_encoded_tree.set_defaults(
         func=command_coset_racah_stable_encoded_tree
+    )
+
+    coset_racah_stable_three_copy_frame = subparsers.add_parser(
+        "coset-racah-stable-three-copy-frame",
+        help="Block-encode the exact stable three-copy frame and audit finite support conditioning.",
+    )
+    coset_racah_stable_three_copy_frame.add_argument("--n", type=int, default=8)
+    coset_racah_stable_three_copy_frame.add_argument(
+        "--no-registry", action="store_true"
+    )
+    coset_racah_stable_three_copy_frame.set_defaults(
+        func=command_coset_racah_stable_three_copy_frame
     )
 
     coset_recoupling_synthesize = subparsers.add_parser(

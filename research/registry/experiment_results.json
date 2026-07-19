@@ -2677,7 +2677,7 @@
       "coset_recoupling_capability_ledger": "research/representation/coset_recoupling_capability_ledger.json"
     },
     "candidate_id": "CODE-COSET-COLLECTIVE",
-    "created_at": "2026-07-19T02:57:33.746516+00:00",
+    "created_at": "2026-07-19T03:52:41.458586+00:00",
     "experiment_id": "EXP-COSET-RECOUPLING-CAPABILITY-LEDGER",
     "falsifiers_triggered": [
       "The S_n QFT is already polynomial and cannot be presented as the missing breakthrough.",
@@ -2687,13 +2687,14 @@
       "Diagonal YJM tableau labels retain exact Kronecker multiplicity degeneracy.",
       "An encoded stable shape router does not construct a compressed Clebsch channel isometry.",
       "An encoded left/right relabelling isometry does not construct the state-dependent frame filter or decoder.",
+      "A finite well-conditioned stable frame does not prove all-n inverse filtering or outcome decoding.",
       "Many restricted multiplicity speedup candidates have polynomial classical algorithms.",
       "Finite growth of dimensions or multiplicities is not a circuit lower bound."
     ],
     "id": "RESULT-EXP-COSET-RECOUPLING-CAPABILITY-LEDGER-LATEST",
     "metrics": {
       "bounded_support_commutant_block_encoding_poly_proof_count": 1,
-      "capability_count": 15,
+      "capability_count": 16,
       "diagonal_jm_label_transform_poly_proof_count": 1,
       "exact_holevo_copy_budget_theorem_count": 1,
       "exact_stable_nine_shape_sector_classification_count": 1,
@@ -2706,7 +2707,7 @@
       "maximum_multiplicity_register_bits": 7,
       "maximum_n": 10,
       "maximum_partition_count": 42,
-      "proved_polynomial_primitive_count": 9,
+      "proved_polynomial_primitive_count": 10,
       "restricted_multiplicity_classical_match_count": 1,
       "stable_channel_gapped_label_transform_poly_proof_count": 1,
       "stable_shape_compressed_channel_routing_isometry_count": 0,
@@ -2715,10 +2716,12 @@
       "stable_shape_encoded_coupling_tree_transition_isometry_count": 1,
       "stable_shape_local_gapped_label_transform_count": 7,
       "stable_shape_transition_filter_count": 0,
+      "stable_three_copy_frame_all_n_conditioning_theorem_count": 0,
+      "stable_three_copy_frame_block_encoding_count": 1,
       "unresolved_required_capability_count": 3
     },
     "status": "known-primitives-separated-from-open-recoupling-and-decoder",
-    "summary": "Classified 15 representation primitives and exact finite Kronecker growth through n=10 without transferring solved QFT/counting results to the open decoder."
+    "summary": "Classified 16 representation primitives and exact finite Kronecker growth through n=10 without transferring solved QFT/counting results to the open decoder."
   },
   {
     "artifacts": {
@@ -3530,6 +3533,38 @@
     },
     "status": "stable-third-moment-proved-determinant-open",
     "summary": "Reduced Tr(H^3) to 129 exact relative classes and proved its all-n polynomial plus the third quartic coefficient; the determinant and algorithmic obligations remain open."
+  },
+  {
+    "artifacts": {
+      "coset_stable_three_copy_frame": "research/representation/coset_stable_three_copy_frame.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-07-19T03:52:36.497698+00:00",
+    "experiment_id": "EXP-COSET-STABLE-THREE-COPY-FRAME",
+    "falsifiers_triggered": [
+      "The multi-copy frame is not a scalar function of one coupling-tree label; all three overlapping pair class sums occur.",
+      "A dense Racah matrix is unnecessary for block encoding because each pair class sum acts directly on physical registers.",
+      "Finite full rank and condition number below two do not prove inverse-polynomial all-n conditioning.",
+      "An inverse-frame block encoding would still not identify or decode the hidden involution by itself."
+    ],
+    "id": "RESULT-EXP-COSET-STABLE-THREE-COPY-FRAME-LATEST",
+    "metrics": {
+      "all_n_inverse_polynomial_minimum_eigenvalue_theorem_count": 0,
+      "exact_three_copy_frame_expansion_count": 1,
+      "finite_frame_record_count": 3,
+      "finite_full_support_frame_count": 3,
+      "frontier_frame_record_count": 2,
+      "hidden_involution_decoder_count": 0,
+      "maximum_frontier_finite_condition_number": 1.5984800944800495,
+      "maximum_overlap_unitarity_residual": 4.4587466369455423e-14,
+      "maximum_trace_formula_residual": 0.0,
+      "minimum_frontier_finite_frame_eigenvalue": 1.3609452405794213,
+      "polynomial_inverse_square_root_filter_count": 0,
+      "polynomial_three_copy_frame_block_encoding_count": 1,
+      "stable_multiplicity_dimension": 25
+    },
+    "status": "stable-three-copy-frame-block-encoding-proved-conditioning-decoder-open",
+    "summary": "Derived and block-encoded the exact stable three-copy frame and found full support with condition number at most 1.598 on the n=8 frontier controls; the all-n lower eigenvalue and decoder remain open."
   },
   {
     "artifacts": {
