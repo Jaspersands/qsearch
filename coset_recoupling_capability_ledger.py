@@ -196,11 +196,11 @@ CAPABILITIES = (
         literature_ids=["project-coset-multiplicity-commutant-search"],
         primitive="Coherent multiplicity basis from a uniformly gapped commutant Hamiltonian",
         proved_scope=(
-            "For every n>=7, the xi_n=(n-3,2,1) channel inside xi_n tensor W_n with W_n=(n-2,2) has an explicit "
-            "n(n-1)(n-2)-term block encoding, a proved normalized gap at least 1/(C n^53), and a polynomial coherent "
-            "four-valued eigenlabel append by phase estimation."
+            "For W_n=(n-2,2), final xi_n=(n-3,2,1), and every n>=8, all seven nontrivial padded stable "
+            "intermediate shapes have exact characteristic polynomials, inverse-polynomial normalized spectral gaps, "
+            "and shape-controlled coherent eigenlabel append procedures from a common bounded-support block encoding."
         ),
-        availability="proved-one-stable-channel-only",
+        availability="proved-bounded-stable-family-shape-local-only",
         uniform_polynomial_gate_complexity_proved=True,
         resolves_internal_sn_kronecker_basis=True,
         handles_overlapping_k_copy_associators=False,
@@ -210,8 +210,9 @@ CAPABILITIES = (
             "scaling must be compared on every source family."
         ),
         scope_limit=(
-            "The theorem applies to one declared multiplicity-four channel. It supplies neither unrestricted internal "
-            "Kronecker decomposition, all-sector routing, Racah associators, nor hidden-involution decoding."
+            "Each procedure assumes the state is already coherently routed into its declared eta tensor W to xi "
+            "multiplicity block. No channel-routing isometry, coupling-tree transition, Racah associator, or "
+            "hidden-involution decoder has been synthesized."
         ),
     ),
     RepresentationCapability(
@@ -234,8 +235,9 @@ CAPABILITIES = (
             "The certificate is an exact classical character-polynomial calculation and makes no separation claim."
         ),
         scope_limit=(
-            "Six nontrivial second-stage shape families still lack coherent normalized-gap labels; exact support "
-            "does not synthesize their transitions or decode the hidden involution."
+            "All seven nontrivial second-stage shapes now have local coherent normalized-gap labels, but exact support "
+            "and local labels do not route amplitudes into those blocks, synthesize transitions, or decode the hidden "
+            "involution."
         ),
     ),
     RepresentationCapability(
@@ -374,10 +376,13 @@ def build_recoupling_capability_report(
         ),
         "stable_channel_gapped_label_transform_poly_proof_count": sum(
             capability.id == "CAP-GAPPED-KRONECKER-MULTIPLICITY-TRANSFORM"
-            and capability.availability == "proved-one-stable-channel-only"
+            and capability.availability == "proved-bounded-stable-family-shape-local-only"
             and capability.uniform_polynomial_gate_complexity_proved
             for capability in CAPABILITIES
         ),
+        "stable_shape_local_gapped_label_transform_count": 7,
+        "stable_shape_channel_routing_circuit_count": 0,
+        "stable_shape_coupling_tree_transition_circuit_count": 0,
         "exact_stable_nine_shape_sector_classification_count": sum(
             capability.id == "CAP-STABLE-NINE-SHAPE-SECTOR-CLASSIFICATION"
             for capability in CAPABILITIES
@@ -436,11 +441,11 @@ def build_recoupling_capability_report(
                 "reason": "The transforms decompose different group actions and expose different multiplicity data.",
             },
             {
-                "from": "one stable channel with a proved polynomial coherent eigenlabel transform",
+                "from": "all seven nontrivial stable shapes with polynomial local coherent eigenlabel transforms",
                 "invalid_to": "unrestricted internal Kronecker transform, overlapping Racah associator, or decoder",
                 "reason": (
-                    "The block encoding and normalized-gap theorem are scope-specific; they do not route arbitrary "
-                    "sectors or change coupling trees."
+                    "The shape-local procedures assume a routed input; they neither construct the routing isometry "
+                    "nor transport multiplicity amplitudes between coupling trees."
                 ),
             },
             {
@@ -482,6 +487,9 @@ def build_recoupling_capability_report(
             "diagonal_jm_labels_resolve_multiplicity_basis": False,
             "bounded_support_commutant_block_encoding_polynomial_proved": True,
             "stable_channel_gapped_multiplicity_label_polynomial_proved": True,
+            "all_seven_stable_shape_local_labels_polynomial_proved": True,
+            "stable_shape_channel_routing_polynomial_proved": False,
+            "stable_shape_coupling_tree_transition_polynomial_proved": False,
             "exact_bounded_stable_sector_family_proved": True,
             "gapped_kronecker_multiplicity_transform_polynomial_proved": False,
             "internal_sn_kronecker_transform_polynomial_proved": False,
@@ -490,10 +498,10 @@ def build_recoupling_capability_report(
             "classical_superpolynomial_separation_proved": False,
             "speedup_claim_allowed": False,
             "reason": (
-                "A coherent gapped eigenlabel transform is now proved in one stable multiplicity-four channel. Known "
-                "primitives still stop before unrestricted internal Kronecker transforms, overlapping associators, "
-                "all-sector routing, state transitions, and decoding; restricted multiplicity advantages are "
-                "classically eroded."
+                "Coherent gapped eigenlabel transforms are proved for every nontrivial shape in one bounded stable "
+                "family, conditional on already-routed inputs. Known primitives still stop before channel routing, "
+                "coupling-tree transitions, unrestricted internal Kronecker transforms, and decoding; restricted "
+                "multiplicity advantages are classically eroded."
             ),
         },
         status="known-primitives-separated-from-open-recoupling-and-decoder",
@@ -507,8 +515,8 @@ def build_recoupling_capability_report(
             "#BQP multiplicity counting does not construct a coherent Kronecker basis.",
             "Schur-Weyl Clebsch-Gordan circuits do not automatically solve internal Specht tensor products.",
             "Diagonal YJM tableau labels retain exact Kronecker multiplicity degeneracy.",
-            "One stable gapped multiplicity label cannot be transferred to unaudited sectors or overlapping trees.",
-            "An exact nine-shape sector list does not supply the six missing nontrivial coherent label families.",
+            "Seven stable shape-local labels do not construct the missing coherent channel-routing isometry.",
+            "Shape-local spectral labels do not transport multiplicity amplitudes between overlapping coupling trees.",
             "Many restricted multiplicity speedup candidates have polynomial classical algorithms.",
             "Finite growth of dimensions or multiplicities is not a circuit lower bound.",
         ],

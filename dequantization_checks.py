@@ -231,6 +231,21 @@ COSET_STABLE_SHAPE_LABEL_PATH = Path(
 COSET_STABLE_SHAPE_TRACE_PATH = Path(
     "research/representation/coset_stable_shape_trace_certificate.json"
 )
+COSET_STABLE_SHAPE_SECOND_MOMENT_PATH = Path(
+    "research/representation/coset_stable_shape_second_moment_certificate.json"
+)
+COSET_STABLE_SHAPE_CUBIC_DETERMINANT_PATH = Path(
+    "research/representation/coset_stable_shape_cubic_determinant_certificate.json"
+)
+COSET_STABLE_SHAPE_QUADRATIC_GAP_PATH = Path(
+    "research/representation/coset_stable_shape_quadratic_gap_certificate.json"
+)
+COSET_STABLE_SHAPE_CUBIC_GAP_PATH = Path(
+    "research/representation/coset_stable_shape_cubic_gap_certificate.json"
+)
+COSET_STABLE_SHAPE_COHERENT_LABEL_PATH = Path(
+    "research/representation/coset_stable_shape_coherent_label_certificate.json"
+)
 COSET_RECOUPLING_CAPABILITY_PATH = Path(
     "research/representation/coset_recoupling_capability_ledger.json"
 )
@@ -4219,6 +4234,179 @@ def findings_from_coset_stable_shape_trace_certificate(
     ]
 
 
+def findings_from_coset_stable_shape_second_moment_certificate(
+    path: Path = COSET_STABLE_SHAPE_SECOND_MOMENT_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    return [
+        DequantizationFinding(
+            id="DEQ-COSET-FIVE-EXACT-QUADRATIC-SHAPES-STILL-LACK-GAPS-AND-CIRCUITS",
+            created_at=utc_now(),
+            target_type="coset_stable_shape_second_moment_certificate",
+            target_id=str(path),
+            severity="high",
+            claim_under_test=(
+                "Exact characteristic polynomials on five complementary shapes close stable Racah synthesis."
+            ),
+            evidence=(
+                f"Exact second moments/complete new quadratics="
+                f"{metrics.get('exact_all_n_shape_second_moment_theorem_count', 0)}/"
+                f"{metrics.get('new_exact_complete_quadratic_shape_polynomial_count', 0)}; remaining coefficient "
+                f"families={metrics.get('remaining_open_shape_characteristic_coefficient_family_count', 0)}; "
+                f"new gap/circuit/decoder counts={metrics.get('new_normalized_gap_theorem_count', 0)}/"
+                f"{metrics.get('new_coherent_shape_label_count', 0)}/"
+                f"{metrics.get('hidden_involution_decoder_count', 0)}."
+            ),
+            required_action=(
+                "Prove the lone cubic determinant, normalized discriminant/root-separation bounds for all six "
+                "shapes, coherent common-orbit block encoding, and complete transition/decoder behavior."
+            ),
+            blocks_speedup_claim=True,
+        )
+    ]
+
+
+def findings_from_coset_stable_shape_cubic_determinant_certificate(
+    path: Path = COSET_STABLE_SHAPE_CUBIC_DETERMINANT_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    return [
+        DequantizationFinding(
+            id="DEQ-COSET-EXACT-NINE-SHAPE-SPECTRA-STILL-LACK-ALGORITHMIC-CLOSURE",
+            created_at=utc_now(),
+            target_type="coset_stable_shape_cubic_determinant_certificate",
+            target_id=str(path),
+            severity="high",
+            claim_under_test=(
+                "Exact stable-shape spectral classification supplies a major nonabelian HSP algorithm."
+            ),
+            evidence=(
+                f"Exact stable-shape polynomials/remaining coefficient families="
+                f"{metrics.get('exact_complete_stable_shape_polynomial_count', 0)}/"
+                f"{metrics.get('remaining_open_shape_characteristic_coefficient_family_count', 0)}; new normalized "
+                f"gaps/coherent labels/associators/decoders="
+                f"{metrics.get('new_normalized_gap_theorem_count', 0)}/"
+                f"{metrics.get('new_coherent_shape_label_count', 0)}/"
+                f"{metrics.get('complete_racah_associator_count', 0)}/"
+                f"{metrics.get('hidden_involution_decoder_count', 0)}."
+            ),
+            required_action=(
+                "Prove six normalized gap families, compile the common orbit operator coherently, synthesize all "
+                "left/right transitions, and demonstrate hidden-involution information beyond classical baselines."
+            ),
+            blocks_speedup_claim=True,
+        )
+    ]
+
+
+def findings_from_coset_stable_shape_quadratic_gap_certificate(
+    path: Path = COSET_STABLE_SHAPE_QUADRATIC_GAP_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    return [
+        DequantizationFinding(
+            id="DEQ-COSET-FIVE-QUADRATIC-GAPS-LEAVE-CUBIC-AND-ALGORITHMIC-CLOSURE",
+            created_at=utc_now(),
+            target_type="coset_stable_shape_quadratic_gap_certificate",
+            target_id=str(path),
+            severity="high",
+            claim_under_test=(
+                "Five inverse-polynomial complementary root gaps complete the stable Racah algorithm."
+            ),
+            evidence=(
+                f"Quadratic gap theorems/remaining gap families="
+                f"{metrics.get('new_normalized_gap_theorem_count', 0)}/"
+                f"{metrics.get('remaining_open_stable_shape_gap_family_count', 0)}; coherent labels/associators/"
+                f"decoders={metrics.get('new_coherent_shape_label_count', 0)}/"
+                f"{metrics.get('complete_racah_associator_count', 0)}/"
+                f"{metrics.get('hidden_involution_decoder_count', 0)}."
+            ),
+            required_action=(
+                "Close cubic root separation, then prove coherent common-orbit compilation, all coupling-tree "
+                "transitions, hidden-involution information, and classical separation."
+            ),
+            blocks_speedup_claim=True,
+        )
+    ]
+
+
+def findings_from_coset_stable_shape_cubic_gap_certificate(
+    path: Path = COSET_STABLE_SHAPE_CUBIC_GAP_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    return [
+        DequantizationFinding(
+            id="DEQ-COSET-COMPLETE-STABLE-SPECTRAL-CONTROL-STILL-LACKS-COHERENT-DECODER",
+            created_at=utc_now(),
+            target_type="coset_stable_shape_cubic_gap_certificate",
+            target_id=str(path),
+            severity="high",
+            claim_under_test=(
+                "Complete exact spectra and normalized gaps on all stable shapes close a nonabelian HSP algorithm."
+            ),
+            evidence=(
+                f"Complementary/all nontrivial gap theorems="
+                f"{metrics.get('complementary_shape_normalized_gap_theorem_count', 0)}/"
+                f"{metrics.get('all_nontrivial_stable_shape_normalized_gap_theorem_count', 0)}; coherent labels/"
+                f"associators/decoders={metrics.get('new_coherent_shape_label_count', 0)}/"
+                f"{metrics.get('complete_racah_associator_count', 0)}/"
+                f"{metrics.get('hidden_involution_decoder_count', 0)}."
+            ),
+            required_action=(
+                "Prove a uniform common-orbit block encoding and coherent labels for every shape, synthesize the "
+                "overlapping coupling-tree transition, then demonstrate decoder information beyond classical baselines."
+            ),
+            blocks_speedup_claim=True,
+        )
+    ]
+
+
+def findings_from_coset_stable_shape_coherent_label_certificate(
+    path: Path = COSET_STABLE_SHAPE_COHERENT_LABEL_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    return [
+        DequantizationFinding(
+            id="DEQ-COSET-ALL-SHAPE-LOCAL-LABELS-STILL-ASSUME-ROUTING-AND-LACK-TRANSITION",
+            created_at=utc_now(),
+            target_type="coset_stable_shape_coherent_label_certificate",
+            target_id=str(path),
+            severity="high",
+            claim_under_test=(
+                "Coherent local eigenlabels on every stable shape implement the overlapping Racah associator."
+            ),
+            evidence=(
+                f"Shape-local coherent labels/routing circuits/transition circuits/associators/decoders="
+                f"{metrics.get('all_nontrivial_stable_shape_coherent_label_count', 0)}/"
+                f"{metrics.get('channel_routing_circuit_count', 0)}/"
+                f"{metrics.get('coupling_tree_transition_circuit_count', 0)}/"
+                f"{metrics.get('complete_racah_associator_count', 0)}/"
+                f"{metrics.get('hidden_involution_decoder_count', 0)}."
+            ),
+            required_action=(
+                "Construct coherent channel routing and the complete left/right transition isometry, then measure "
+                "hidden-involution information and attack it with classical baselines."
+            ),
+            blocks_speedup_claim=True,
+        )
+    ]
+
+
 def findings_from_coset_recoupling_capability_ledger(
     path: Path = COSET_RECOUPLING_CAPABILITY_PATH,
 ) -> list[DequantizationFinding]:
@@ -7179,6 +7367,11 @@ def build_dequantization_report() -> dict[str, Any]:
         *findings_from_coset_stable_shape_family_certificate(),
         *findings_from_coset_stable_shape_label_probe(),
         *findings_from_coset_stable_shape_trace_certificate(),
+        *findings_from_coset_stable_shape_second_moment_certificate(),
+        *findings_from_coset_stable_shape_cubic_determinant_certificate(),
+        *findings_from_coset_stable_shape_quadratic_gap_certificate(),
+        *findings_from_coset_stable_shape_cubic_gap_certificate(),
+        *findings_from_coset_stable_shape_coherent_label_certificate(),
         *findings_from_coset_jucys_murphy_label_transform(),
         *findings_from_coset_multiplicity_commutant_search(),
         *findings_from_coset_recoupling_capability_ledger(),

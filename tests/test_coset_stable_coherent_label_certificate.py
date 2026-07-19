@@ -75,8 +75,11 @@ class StableCoherentLabelCertificateTests(unittest.TestCase):
             if item.id == "CAP-GAPPED-KRONECKER-MULTIPLICITY-TRANSFORM"
         )
         self.assertTrue(capability.uniform_polynomial_gate_complexity_proved)
-        self.assertEqual(capability.availability, "proved-one-stable-channel-only")
-        self.assertIn("one declared multiplicity-four channel", capability.scope_limit)
+        self.assertEqual(
+            capability.availability,
+            "proved-bounded-stable-family-shape-local-only",
+        )
+        self.assertIn("already coherently routed", capability.scope_limit)
         self.assertFalse(capability.handles_overlapping_k_copy_associators)
         self.assertFalse(capability.supplies_hidden_involution_decoder)
 

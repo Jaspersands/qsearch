@@ -86,6 +86,22 @@ from coset_stable_shape_label_probe import write_stable_shape_label_report
 from coset_stable_shape_trace_certificate import (
     write_stable_shape_trace_certificate,
 )
+from coset_stable_shape_second_moment_certificate import (
+    write_stable_shape_second_moment_certificate,
+)
+from coset_stable_shape_cubic_determinant_certificate import (
+    COSET_STABLE_SHAPE_CUBIC_PATTERN_PATH,
+    write_stable_shape_cubic_determinant_certificate,
+)
+from coset_stable_shape_quadratic_gap_certificate import (
+    write_stable_shape_quadratic_gap_certificate,
+)
+from coset_stable_shape_cubic_gap_certificate import (
+    write_stable_shape_cubic_gap_certificate,
+)
+from coset_stable_shape_coherent_label_certificate import (
+    write_stable_shape_coherent_label_certificate,
+)
 from coset_recoupling_capability_ledger import write_recoupling_capability_report
 from coset_recoupling_mechanism_synthesis import write_recoupling_mechanism_synthesis_report
 from coset_state_distinguishability import write_coset_distinguishability_report
@@ -543,6 +559,11 @@ COSET_EXPERIMENTS = {
     "EXP-COSET-STABLE-SHAPE-FAMILY-CERTIFICATE",
     "EXP-COSET-STABLE-SHAPE-LABEL-PROBE",
     "EXP-COSET-STABLE-SHAPE-TRACE-CERTIFICATE",
+    "EXP-COSET-STABLE-SHAPE-SECOND-MOMENT-CERTIFICATE",
+    "EXP-COSET-STABLE-SHAPE-CUBIC-DETERMINANT-CERTIFICATE",
+    "EXP-COSET-STABLE-SHAPE-QUADRATIC-GAP-CERTIFICATE",
+    "EXP-COSET-STABLE-SHAPE-CUBIC-GAP-CERTIFICATE",
+    "EXP-COSET-STABLE-SHAPE-COHERENT-LABEL-CERTIFICATE",
     "EXP-COSET-RECOUPLING-CAPABILITY-LEDGER",
     "EXP-COSET-RECOUPLING-MECHANISM-SYNTHESIS",
 }
@@ -1368,6 +1389,11 @@ def select_next_experiment() -> NextExperimentSelection:
         "EXP-COSET-STABLE-SHAPE-FAMILY-CERTIFICATE": 44,
         "EXP-COSET-STABLE-SHAPE-LABEL-PROBE": 45,
         "EXP-COSET-STABLE-SHAPE-TRACE-CERTIFICATE": 46,
+        "EXP-COSET-STABLE-SHAPE-SECOND-MOMENT-CERTIFICATE": 47,
+        "EXP-COSET-STABLE-SHAPE-CUBIC-DETERMINANT-CERTIFICATE": 48,
+        "EXP-COSET-STABLE-SHAPE-QUADRATIC-GAP-CERTIFICATE": 49,
+        "EXP-COSET-STABLE-SHAPE-CUBIC-GAP-CERTIFICATE": 50,
+        "EXP-COSET-STABLE-SHAPE-COHERENT-LABEL-CERTIFICATE": 51,
         "EXP-COSET-RECOUPLING-CAPABILITY-LEDGER": 24,
         "EXP-COSET-RECOUPLING-MECHANISM-SYNTHESIS": 25,
     }
@@ -2860,6 +2886,42 @@ def run_experiment(experiment_id: str) -> RunnerResult:
                 registry_candidate_id=experiment["candidate_id"],
                 registry_result_id=result_id,
             )
+        elif experiment_id == "EXP-COSET-STABLE-SHAPE-SECOND-MOMENT-CERTIFICATE":
+            payload = write_stable_shape_second_moment_certificate(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif experiment_id == "EXP-COSET-STABLE-SHAPE-CUBIC-DETERMINANT-CERTIFICATE":
+            payload = write_stable_shape_cubic_determinant_certificate(
+                workers=1,
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif experiment_id == "EXP-COSET-STABLE-SHAPE-QUADRATIC-GAP-CERTIFICATE":
+            payload = write_stable_shape_quadratic_gap_certificate(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif experiment_id == "EXP-COSET-STABLE-SHAPE-CUBIC-GAP-CERTIFICATE":
+            payload = write_stable_shape_cubic_gap_certificate(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif experiment_id == "EXP-COSET-STABLE-SHAPE-COHERENT-LABEL-CERTIFICATE":
+            payload = write_stable_shape_coherent_label_certificate(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
         elif experiment_id == "EXP-COSET-RECOUPLING-CAPABILITY-LEDGER":
             payload = write_recoupling_capability_report(
                 write_registry=True,
@@ -3282,6 +3344,9 @@ def run_supported_experiments() -> list[RunnerResult]:
         "EXP-CODE-GOPPA-SYZYGY-FRONTIER": GOPPA_SCALING_FRONTIER_PATH,
         "EXP-COSET-STABLE-THIRD-MOMENT-CERTIFICATE": (
             COSET_STABLE_THIRD_MOMENT_PATH
+        ),
+        "EXP-COSET-STABLE-SHAPE-CUBIC-DETERMINANT-CERTIFICATE": (
+            COSET_STABLE_SHAPE_CUBIC_PATTERN_PATH
         ),
     }
 

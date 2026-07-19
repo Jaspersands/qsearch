@@ -107,6 +107,11 @@ Commands:
   python qsearch.py coset-racah-stable-shape-proof
   python qsearch.py coset-racah-stable-shape-labels
   python qsearch.py coset-racah-stable-shape-traces
+  python qsearch.py coset-racah-stable-shape-second-moments
+  python qsearch.py coset-racah-stable-shape-cubic-determinant
+  python qsearch.py coset-racah-stable-shape-quadratic-gaps
+  python qsearch.py coset-racah-stable-shape-cubic-gap
+  python qsearch.py coset-racah-stable-shape-coherent-labels
   python qsearch.py coset-recoupling-capabilities
   python qsearch.py coset-recoupling-synthesize
   python qsearch.py code-equivalence
@@ -343,6 +348,21 @@ from coset_stable_shape_family_certificate import (
 from coset_stable_shape_label_probe import write_stable_shape_label_report
 from coset_stable_shape_trace_certificate import (
     write_stable_shape_trace_certificate,
+)
+from coset_stable_shape_second_moment_certificate import (
+    write_stable_shape_second_moment_certificate,
+)
+from coset_stable_shape_cubic_determinant_certificate import (
+    write_stable_shape_cubic_determinant_certificate,
+)
+from coset_stable_shape_quadratic_gap_certificate import (
+    write_stable_shape_quadratic_gap_certificate,
+)
+from coset_stable_shape_cubic_gap_certificate import (
+    write_stable_shape_cubic_gap_certificate,
+)
+from coset_stable_shape_coherent_label_certificate import (
+    write_stable_shape_coherent_label_certificate,
 )
 from coset_recoupling_capability_ledger import write_recoupling_capability_report
 from coset_recoupling_mechanism_synthesis import write_recoupling_mechanism_synthesis_report
@@ -4294,6 +4314,165 @@ def command_coset_racah_stable_shape_traces(args: argparse.Namespace) -> int:
     return 0
 
 
+def command_coset_racah_stable_shape_second_moments(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_stable_shape_second_moment_certificate(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Exact stable Racah shape second-moment certificate complete")
+    print(
+        "Artifact: research/representation/"
+        "coset_stable_shape_second_moment_certificate.json"
+    )
+    print(
+        "Exact all-n shape second moments: "
+        f"{metrics['exact_all_n_shape_second_moment_theorem_count']}/9"
+    )
+    print(
+        "New complete quadratic shape polynomials: "
+        f"{metrics['new_exact_complete_quadratic_shape_polynomial_count']}/5"
+    )
+    print(
+        "Remaining characteristic-coefficient families: "
+        f"{metrics['remaining_open_shape_characteristic_coefficient_family_count']}"
+    )
+    print(f"Speedup claim allowed: {payload['claim_gate']['speedup_claim_allowed']}")
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_coset_racah_stable_shape_cubic_determinant(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_stable_shape_cubic_determinant_certificate(
+        workers=args.workers,
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Exact stable Racah cubic-shape determinant certificate complete")
+    print(
+        "Artifact: research/representation/"
+        "coset_stable_shape_cubic_determinant_certificate.json"
+    )
+    print(
+        "Exact cubic determinant theorems: "
+        f"{metrics['exact_cubic_shape_determinant_theorem_count']}"
+    )
+    print(
+        "Exact stable-shape polynomials: "
+        f"{metrics['exact_complete_stable_shape_polynomial_count']}/9"
+    )
+    print(
+        "Remaining characteristic-coefficient families: "
+        f"{metrics['remaining_open_shape_characteristic_coefficient_family_count']}"
+    )
+    print(f"Speedup claim allowed: {payload['claim_gate']['speedup_claim_allowed']}")
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_coset_racah_stable_shape_quadratic_gaps(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_stable_shape_quadratic_gap_certificate(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Exact stable Racah quadratic-shape gap certificate complete")
+    print(
+        "Artifact: research/representation/"
+        "coset_stable_shape_quadratic_gap_certificate.json"
+    )
+    print(
+        "New normalized gap theorems: "
+        f"{metrics['new_normalized_gap_theorem_count']}/5"
+    )
+    print(
+        "Remaining stable-shape gap families: "
+        f"{metrics['remaining_open_stable_shape_gap_family_count']}"
+    )
+    print(f"Speedup claim allowed: {payload['claim_gate']['speedup_claim_allowed']}")
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_coset_racah_stable_shape_cubic_gap(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_stable_shape_cubic_gap_certificate(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Exact stable Racah cubic-shape gap certificate complete")
+    print(
+        "Artifact: research/representation/"
+        "coset_stable_shape_cubic_gap_certificate.json"
+    )
+    print(
+        "Complementary normalized gap families: "
+        f"{metrics['complementary_shape_normalized_gap_theorem_count']}/6"
+    )
+    print(
+        "All nontrivial stable-shape gap families: "
+        f"{metrics['all_nontrivial_stable_shape_normalized_gap_theorem_count']}/7"
+    )
+    print(f"Speedup claim allowed: {payload['claim_gate']['speedup_claim_allowed']}")
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_coset_racah_stable_shape_coherent_labels(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_stable_shape_coherent_label_certificate(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Stable Racah all-shape coherent-label certificate complete")
+    print(
+        "Artifact: research/representation/"
+        "coset_stable_shape_coherent_label_certificate.json"
+    )
+    print(
+        "All nontrivial coherent shape labels: "
+        f"{metrics['all_nontrivial_stable_shape_coherent_label_count']}/7"
+    )
+    print(
+        "Coupling-tree transition circuits: "
+        f"{metrics['coupling_tree_transition_circuit_count']}"
+    )
+    print(f"Speedup claim allowed: {payload['claim_gate']['speedup_claim_allowed']}")
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
 def command_coset_recoupling_synthesize(args: argparse.Namespace) -> int:
     initialize_seed_registry(overwrite=False)
     payload = write_recoupling_mechanism_synthesis_report(
@@ -7616,6 +7795,64 @@ def build_parser() -> argparse.ArgumentParser:
     )
     coset_racah_stable_shape_traces.set_defaults(
         func=command_coset_racah_stable_shape_traces
+    )
+
+    coset_racah_stable_shape_second_moments = subparsers.add_parser(
+        "coset-racah-stable-shape-second-moments",
+        help="Prove exact second moments and all five open quadratic shape polynomials.",
+    )
+    coset_racah_stable_shape_second_moments.add_argument(
+        "--no-registry", action="store_true"
+    )
+    coset_racah_stable_shape_second_moments.set_defaults(
+        func=command_coset_racah_stable_shape_second_moments
+    )
+
+    coset_racah_stable_shape_cubic_determinant = subparsers.add_parser(
+        "coset-racah-stable-shape-cubic-determinant",
+        help="Prove the final multiplicity-three determinant and complete all nine stable-shape spectra.",
+    )
+    coset_racah_stable_shape_cubic_determinant.add_argument(
+        "--workers", type=int, default=None
+    )
+    coset_racah_stable_shape_cubic_determinant.add_argument(
+        "--no-registry", action="store_true"
+    )
+    coset_racah_stable_shape_cubic_determinant.set_defaults(
+        func=command_coset_racah_stable_shape_cubic_determinant
+    )
+
+    coset_racah_stable_shape_quadratic_gaps = subparsers.add_parser(
+        "coset-racah-stable-shape-quadratic-gaps",
+        help="Prove normalized root gaps for all five complementary quadratic stable shapes.",
+    )
+    coset_racah_stable_shape_quadratic_gaps.add_argument(
+        "--no-registry", action="store_true"
+    )
+    coset_racah_stable_shape_quadratic_gaps.set_defaults(
+        func=command_coset_racah_stable_shape_quadratic_gaps
+    )
+
+    coset_racah_stable_shape_cubic_gap = subparsers.add_parser(
+        "coset-racah-stable-shape-cubic-gap",
+        help="Prove the final cubic normalized gap and close all stable-shape spectral gaps.",
+    )
+    coset_racah_stable_shape_cubic_gap.add_argument(
+        "--no-registry", action="store_true"
+    )
+    coset_racah_stable_shape_cubic_gap.set_defaults(
+        func=command_coset_racah_stable_shape_cubic_gap
+    )
+
+    coset_racah_stable_shape_coherent_labels = subparsers.add_parser(
+        "coset-racah-stable-shape-coherent-labels",
+        help="Prove shape-local coherent eigenlabels on all seven nontrivial stable shapes.",
+    )
+    coset_racah_stable_shape_coherent_labels.add_argument(
+        "--no-registry", action="store_true"
+    )
+    coset_racah_stable_shape_coherent_labels.set_defaults(
+        func=command_coset_racah_stable_shape_coherent_labels
     )
 
     coset_recoupling_synthesize = subparsers.add_parser(

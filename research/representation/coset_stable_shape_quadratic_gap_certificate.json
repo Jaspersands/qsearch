@@ -1,0 +1,151 @@
+{
+  "claim_gate": {
+    "all_five_quadratic_normalized_gaps_proved": true,
+    "all_six_coherent_label_circuits_proved": false,
+    "all_six_complementary_shape_gaps_proved": false,
+    "complete_racah_associator_proved": false,
+    "hidden_involution_decoder_proved": false,
+    "multiplicity_three_normalized_gap_proved": false,
+    "reason": "Five normalized quadratic gaps are exact, but the cubic root gap, coherent implementations, coupling-tree transitions, decoder, and classical separation remain unproved.",
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-07-19T02:13:07.693260+00:00",
+  "falsifiers_triggered": [
+    "Five quadratic gap theorems do not prove separation of the multiplicity-three roots.",
+    "A normalized spectral gap does not by itself compile a coherent phase-estimation circuit.",
+    "Shape-wise phase estimation does not implement coupling-tree transitions.",
+    "No decoder or classical separation follows from root gaps alone."
+  ],
+  "headline_metrics": {
+    "complete_racah_associator_count": 0,
+    "hidden_involution_decoder_count": 0,
+    "minimum_uniform_raw_gap_lower_bound": 12,
+    "new_coherent_shape_label_count": 0,
+    "new_normalized_gap_theorem_count": 5,
+    "positive_discriminant_theorem_count": 5,
+    "quadratic_shape_count": 5,
+    "remaining_open_stable_shape_gap_family_count": 1,
+    "uniform_inverse_polynomial_gap_exponent": 3
+  },
+  "method_contract": {
+    "floating_arithmetic_used": false,
+    "interpolation_used": false,
+    "lcu_normalization": "n(n-1)(n-2)<=n^3",
+    "positivity_method": "substitute n=m+8 and verify every discriminant coefficient is nonnegative with positive constant term",
+    "raw_gap_identity": "gap=sqrt(e1^2-4e2)",
+    "uniform_bound": "gap_normalized>=12/n^3"
+  },
+  "shape_records": [
+    {
+      "coherent_label_circuit_proved": false,
+      "conservative_raw_gap_lower_bound": 12,
+      "discriminant_positive_for_every_integer_n_at_least_8": true,
+      "exact_characteristic_polynomial": "n**6 - 22*n**5 + 187*n**4 - 2*n**3*x - 774*n**3 + 22*n**2*x + 1616*n**2 - 66*n*x - 1580*n + x**2 + 48*x + 572",
+      "exact_discriminant": "4*n**2 - 16*n + 16",
+      "exact_discriminant_at_n8": 144,
+      "factored_discriminant": "4*(n - 2)**2",
+      "intermediate_partition": "(n-2,2)",
+      "intermediate_tail": [
+        2
+      ],
+      "inverse_polynomial_normalized_gap_proved": true,
+      "lcu_normalization": "alpha_n=n(n-1)(n-2)",
+      "minimum_shifted_coefficient": 4,
+      "normalized_gap_lower_bound": "12/n^3",
+      "shifted_coefficient_count": 3,
+      "shifted_discriminant_at_n_equals_m_plus_8": "4*m**2 + 48*m + 144",
+      "status": "exact-quadratic-normalized-gap-proved-circuit-open"
+    },
+    {
+      "coherent_label_circuit_proved": false,
+      "conservative_raw_gap_lower_bound": 24,
+      "discriminant_positive_for_every_integer_n_at_least_8": true,
+      "exact_characteristic_polynomial": "n**6 - 22*n**5 + 187*n**4 - 2*n**3*x - 770*n**3 + 22*n**2*x + 1570*n**2 - 66*n*x - 1446*n + x**2 + 44*x + 480",
+      "exact_discriminant": "12*n**2 - 24*n + 16",
+      "exact_discriminant_at_n8": 592,
+      "factored_discriminant": "4*(3*n**2 - 6*n + 4)",
+      "intermediate_partition": "(n-2,1,1)",
+      "intermediate_tail": [
+        1,
+        1
+      ],
+      "inverse_polynomial_normalized_gap_proved": true,
+      "lcu_normalization": "alpha_n=n(n-1)(n-2)",
+      "minimum_shifted_coefficient": 12,
+      "normalized_gap_lower_bound": "24/n^3",
+      "shifted_coefficient_count": 3,
+      "shifted_discriminant_at_n_equals_m_plus_8": "12*m**2 + 168*m + 592",
+      "status": "exact-quadratic-normalized-gap-proved-circuit-open"
+    },
+    {
+      "coherent_label_circuit_proved": false,
+      "conservative_raw_gap_lower_bound": 18,
+      "discriminant_positive_for_every_integer_n_at_least_8": true,
+      "exact_characteristic_polynomial": "n**6 - 23*n**5 + 208*n**4 - 2*n**3*x - 942*n**3 + 23*n**2*x + 2248*n**2 - 76*n*x - 2676*n + x**2 + 72*x + 1244",
+      "exact_discriminant": "n**4 - 16*n**3 + 96*n**2 - 240*n + 208",
+      "exact_discriminant_at_n8": 336,
+      "factored_discriminant": "(n - 2)*(n**3 - 14*n**2 + 68*n - 104)",
+      "intermediate_partition": "(n-3,3)",
+      "intermediate_tail": [
+        3
+      ],
+      "inverse_polynomial_normalized_gap_proved": true,
+      "lcu_normalization": "alpha_n=n(n-1)(n-2)",
+      "minimum_shifted_coefficient": 1,
+      "normalized_gap_lower_bound": "18/n^3",
+      "shifted_coefficient_count": 5,
+      "shifted_discriminant_at_n_equals_m_plus_8": "m**4 + 16*m**3 + 96*m**2 + 272*m + 336",
+      "status": "exact-quadratic-normalized-gap-proved-circuit-open"
+    },
+    {
+      "coherent_label_circuit_proved": false,
+      "conservative_raw_gap_lower_bound": 36,
+      "discriminant_positive_for_every_integer_n_at_least_8": true,
+      "exact_characteristic_polynomial": "n**6 - 23*n**5 + 208*n**4 - 2*n**3*x - 924*n**3 + 23*n**2*x + 2036*n**2 - 76*n*x - 1970*n + x**2 + 52*x + 672",
+      "exact_discriminant": "n**4 - 8*n**3 + 24*n**2 - 24*n + 16",
+      "exact_discriminant_at_n8": 1360,
+      "factored_discriminant": "n**4 - 8*n**3 + 24*n**2 - 24*n + 16",
+      "intermediate_partition": "(n-3,1,1,1)",
+      "intermediate_tail": [
+        1,
+        1,
+        1
+      ],
+      "inverse_polynomial_normalized_gap_proved": true,
+      "lcu_normalization": "alpha_n=n(n-1)(n-2)",
+      "minimum_shifted_coefficient": 1,
+      "normalized_gap_lower_bound": "36/n^3",
+      "shifted_coefficient_count": 5,
+      "shifted_discriminant_at_n_equals_m_plus_8": "m**4 + 24*m**3 + 216*m**2 + 872*m + 1360",
+      "status": "exact-quadratic-normalized-gap-proved-circuit-open"
+    },
+    {
+      "coherent_label_circuit_proved": false,
+      "conservative_raw_gap_lower_bound": 18,
+      "discriminant_positive_for_every_integer_n_at_least_8": true,
+      "exact_characteristic_polynomial": "n**6 - 24*n**5 + 227*n**4 - 2*n**3*x - 1070*n**3 + 24*n**2*x + 2608*n**2 - 83*n*x - 3062*n + x**2 + 74*x + 1360",
+      "exact_discriminant": "9*n**2 - 36*n + 36",
+      "exact_discriminant_at_n8": 324,
+      "factored_discriminant": "9*(n - 2)**2",
+      "intermediate_partition": "(n-4,2,2)",
+      "intermediate_tail": [
+        2,
+        2
+      ],
+      "inverse_polynomial_normalized_gap_proved": true,
+      "lcu_normalization": "alpha_n=n(n-1)(n-2)",
+      "minimum_shifted_coefficient": 9,
+      "normalized_gap_lower_bound": "18/n^3",
+      "shifted_coefficient_count": 3,
+      "shifted_discriminant_at_n_equals_m_plus_8": "9*m**2 + 108*m + 324",
+      "status": "exact-quadratic-normalized-gap-proved-circuit-open"
+    }
+  ],
+  "status": "five-quadratic-normalized-gaps-proved-one-cubic-gap-open",
+  "summary": "Factored and proved positivity of all five complementary quadratic discriminants, giving uniform LCU-normalized gaps at least 12/n^3; the lone cubic gap and all circuit/decoder obligations remain.",
+  "theorem": {
+    "proved": true,
+    "range": "every integer n>=8",
+    "statement": "Each of the five complementary multiplicity-two shape Hamiltonians has positive discriminant and LCU-normalized eigenvalue gap at least 12/n^3."
+  }
+}
