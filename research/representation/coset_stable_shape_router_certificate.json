@@ -1,0 +1,839 @@
+{
+  "central_class_sum_certificate": {
+    "finite_signature_checks": {
+      "8": 9,
+      "9": 9,
+      "10": 9,
+      "11": 9,
+      "12": 9,
+      "13": 9,
+      "14": 9,
+      "15": 9,
+      "16": 9,
+      "17": 9,
+      "18": 9,
+      "19": 9,
+      "20": 9
+    },
+    "integer_eigenvalues": true,
+    "maximum_collision_point": 6,
+    "required_raw_precision": "strictly less than 1/2 for each class sum",
+    "simultaneous_pair_collision_free_for_n_at_least_8": true,
+    "three_cycle_identity": "C_3=sum_i J_i^2-binomial(n,2) I has eigenvalue sum_(cells u in eta) content(u)^2-binomial(n,2)",
+    "three_cycle_lcu_term_count": "2*binomial(n,3)=n(n-1)(n-2)/3",
+    "transposition_identity": "C_2=sum_i J_i has eigenvalue sum_(cells u in eta) content(u)",
+    "transposition_lcu_term_count": "binomial(n,2)"
+  },
+  "circuit_contract": {
+    "complexity": "polynomial in n and log(1/error)",
+    "dense_eigendecomposition_used_by_circuit": false,
+    "input": "three W_n registers already projected to the final xi_n isotypic component",
+    "operators": [
+      "C_2 on pair (1,2)",
+      "C_3 on pair (1,2)"
+    ],
+    "precision": "O(1/n^3) normalized precision suffices because raw class-sum eigenvalues are integral",
+    "prepare": "uniform reversible preparation over class elements",
+    "select": "controlled diagonal Young-basis representation action on W_n tensor W_n"
+  },
+  "claim_gate": {
+    "all_pair_symbolic_collision_audits_passed": true,
+    "coherent_encoded_intermediate_shape_router_proved": true,
+    "complete_encoded_left_tree_basis_proved": false,
+    "compressed_clebsch_isometry_proved": false,
+    "coupling_tree_transition_proved": false,
+    "exact_nine_shape_support_proved": true,
+    "hidden_involution_decoder_proved": false,
+    "reason": "The intermediate shape can now be routed coherently in the original tensor encoding, but complete left-tree labels require first- and second-stage multiplicity labels, and reassociation and decoding remain open.",
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-07-19T02:57:24.188320+00:00",
+  "falsifiers_triggered": [
+    "A transposition class sum alone collides on stable shapes at n=8, 9, and 12.",
+    "The 3-cycle class sum repairs those collisions only when used jointly with the transposition sum.",
+    "A coherent shape label does not compress the eta carrier or resolve multiplicity registers.",
+    "Shape routing is not a left/right coupling-tree transition or hidden-involution decoder."
+  ],
+  "headline_metrics": {
+    "central_class_sum_label_count": 2,
+    "coherent_intermediate_shape_router_count": 1,
+    "compressed_clebsch_isometry_count": 0,
+    "coupling_tree_transition_circuit_count": 0,
+    "finite_unique_signature_check_count": 13,
+    "first_stage_multiplicity_label_count": 0,
+    "hidden_involution_decoder_count": 0,
+    "maximum_lcu_term_exponent": 3,
+    "maximum_simultaneous_integer_collision_point": 6,
+    "minimum_raw_joint_signature_gap": 1,
+    "second_stage_multiplicity_label_count": 0,
+    "shape_pair_collision_audit_count": 36,
+    "stable_range_shape_pair_collision_count": 0,
+    "stable_shape_count": 9
+  },
+  "interface_contract": {
+    "commutes_with": [
+      "the first-stage multiplicity commutant Hamiltonian",
+      "the total diagonal S_n action and final-irrep projector",
+      "the second-stage eta-pair/third-factor equivariant orbit Hamiltonian"
+    ],
+    "does_not_produce": [
+      "a standalone compressed eta carrier register",
+      "first- or second-stage multiplicity eigenlabels",
+      "a left/right coupling-tree transition",
+      "a hidden-involution decoder"
+    ],
+    "produces": [
+      "a coherent nine-valued intermediate-shape label eta",
+      "the eta-sector state preserved in the original W_n tensor W_n encoding"
+    ]
+  },
+  "pair_collision_records": [
+    {
+      "collision_in_stable_range": false,
+      "left_tail": [
+        1
+      ],
+      "polynomial_gcd": "n - 2",
+      "right_tail": [
+        2
+      ],
+      "simultaneous_integer_collision_points": [
+        2
+      ],
+      "three_cycle_eigenvalue_difference": "(n - 2)**2",
+      "transposition_eigenvalue_difference": "n - 2"
+    },
+    {
+      "collision_in_stable_range": false,
+      "left_tail": [
+        1
+      ],
+      "polynomial_gcd": "n",
+      "right_tail": [
+        1,
+        1
+      ],
+      "simultaneous_integer_collision_points": [
+        0
+      ],
+      "three_cycle_eigenvalue_difference": "n*(n - 4)",
+      "transposition_eigenvalue_difference": "n"
+    },
+    {
+      "collision_in_stable_range": false,
+      "left_tail": [
+        1
+      ],
+      "polynomial_gcd": "2*n - 6",
+      "right_tail": [
+        3
+      ],
+      "simultaneous_integer_collision_points": [
+        3
+      ],
+      "three_cycle_eigenvalue_difference": "2*(n - 3)*(n - 2)",
+      "transposition_eigenvalue_difference": "2*(n - 3)"
+    },
+    {
+      "collision_in_stable_range": false,
+      "left_tail": [
+        1
+      ],
+      "polynomial_gcd": "1",
+      "right_tail": [
+        2,
+        1
+      ],
+      "simultaneous_integer_collision_points": [],
+      "three_cycle_eigenvalue_difference": "2*n**2 - 10*n + 9",
+      "transposition_eigenvalue_difference": "2*n - 3"
+    },
+    {
+      "collision_in_stable_range": false,
+      "left_tail": [
+        1
+      ],
+      "polynomial_gcd": "2*n",
+      "right_tail": [
+        1,
+        1,
+        1
+      ],
+      "simultaneous_integer_collision_points": [
+        0
+      ],
+      "three_cycle_eigenvalue_difference": "2*n*(n - 5)",
+      "transposition_eigenvalue_difference": "2*n"
+    },
+    {
+      "collision_in_stable_range": false,
+      "left_tail": [
+        1
+      ],
+      "polynomial_gcd": "3*n - 12",
+      "right_tail": [
+        4
+      ],
+      "simultaneous_integer_collision_points": [
+        4
+      ],
+      "three_cycle_eigenvalue_difference": "3*(n - 4)*(n - 2)",
+      "transposition_eigenvalue_difference": "3*(n - 4)"
+    },
+    {
+      "collision_in_stable_range": false,
+      "left_tail": [
+        1
+      ],
+      "polynomial_gcd": "1",
+      "right_tail": [
+        3,
+        1
+      ],
+      "simultaneous_integer_collision_points": [],
+      "three_cycle_eigenvalue_difference": "3*(n - 4)*(n - 2)",
+      "transposition_eigenvalue_difference": "3*n - 8"
+    },
+    {
+      "collision_in_stable_range": false,
+      "left_tail": [
+        1
+      ],
+      "polynomial_gcd": "3*n - 6",
+      "right_tail": [
+        2,
+        2
+      ],
+      "simultaneous_integer_collision_points": [
+        2
+      ],
+      "three_cycle_eigenvalue_difference": "3*(n - 4)*(n - 2)",
+      "transposition_eigenvalue_difference": "3*(n - 2)"
+    },
+    {
+      "collision_in_stable_range": false,
+      "left_tail": [
+        2
+      ],
+      "polynomial_gcd": "2",
+      "right_tail": [
+        1,
+        1
+      ],
+      "simultaneous_integer_collision_points": [],
+      "three_cycle_eigenvalue_difference": "-4",
+      "transposition_eigenvalue_difference": "2"
+    },
+    {
+      "collision_in_stable_range": false,
+      "left_tail": [
+        2
+      ],
+      "polynomial_gcd": "n - 4",
+      "right_tail": [
+        3
+      ],
+      "simultaneous_integer_collision_points": [
+        4
+      ],
+      "three_cycle_eigenvalue_difference": "(n - 4)*(n - 2)",
+      "transposition_eigenvalue_difference": "n - 4"
+    },
+    {
+      "collision_in_stable_range": false,
+      "left_tail": [
+        2
+      ],
+      "polynomial_gcd": "n - 1",
+      "right_tail": [
+        2,
+        1
+      ],
+      "simultaneous_integer_collision_points": [
+        1
+      ],
+      "three_cycle_eigenvalue_difference": "(n - 5)*(n - 1)",
+      "transposition_eigenvalue_difference": "n - 1"
+    },
+    {
+      "collision_in_stable_range": false,
+      "left_tail": [
+        2
+      ],
+      "polynomial_gcd": "1",
+      "right_tail": [
+        1,
+        1,
+        1
+      ],
+      "simultaneous_integer_collision_points": [],
+      "three_cycle_eigenvalue_difference": "n**2 - 6*n - 4",
+      "transposition_eigenvalue_difference": "n + 2"
+    },
+    {
+      "collision_in_stable_range": false,
+      "left_tail": [
+        2
+      ],
+      "polynomial_gcd": "2*n - 10",
+      "right_tail": [
+        4
+      ],
+      "simultaneous_integer_collision_points": [
+        5
+      ],
+      "three_cycle_eigenvalue_difference": "2*(n - 5)*(n - 2)",
+      "transposition_eigenvalue_difference": "2*(n - 5)"
+    },
+    {
+      "collision_in_stable_range": false,
+      "left_tail": [
+        2
+      ],
+      "polynomial_gcd": "2",
+      "right_tail": [
+        3,
+        1
+      ],
+      "simultaneous_integer_collision_points": [],
+      "three_cycle_eigenvalue_difference": "2*(n - 5)*(n - 2)",
+      "transposition_eigenvalue_difference": "2*(n - 3)"
+    },
+    {
+      "collision_in_stable_range": false,
+      "left_tail": [
+        2
+      ],
+      "polynomial_gcd": "2*n - 4",
+      "right_tail": [
+        2,
+        2
+      ],
+      "simultaneous_integer_collision_points": [
+        2
+      ],
+      "three_cycle_eigenvalue_difference": "2*(n - 5)*(n - 2)",
+      "transposition_eigenvalue_difference": "2*(n - 2)"
+    },
+    {
+      "collision_in_stable_range": false,
+      "left_tail": [
+        1,
+        1
+      ],
+      "polynomial_gcd": "1",
+      "right_tail": [
+        3
+      ],
+      "simultaneous_integer_collision_points": [],
+      "three_cycle_eigenvalue_difference": "n**2 - 6*n + 12",
+      "transposition_eigenvalue_difference": "n - 6"
+    },
+    {
+      "collision_in_stable_range": false,
+      "left_tail": [
+        1,
+        1
+      ],
+      "polynomial_gcd": "n - 3",
+      "right_tail": [
+        2,
+        1
+      ],
+      "simultaneous_integer_collision_points": [
+        3
+      ],
+      "three_cycle_eigenvalue_difference": "(n - 3)**2",
+      "transposition_eigenvalue_difference": "n - 3"
+    },
+    {
+      "collision_in_stable_range": false,
+      "left_tail": [
+        1,
+        1
+      ],
+      "polynomial_gcd": "n",
+      "right_tail": [
+        1,
+        1,
+        1
+      ],
+      "simultaneous_integer_collision_points": [
+        0
+      ],
+      "three_cycle_eigenvalue_difference": "n*(n - 6)",
+      "transposition_eigenvalue_difference": "n"
+    },
+    {
+      "collision_in_stable_range": false,
+      "left_tail": [
+        1,
+        1
+      ],
+      "polynomial_gcd": "2",
+      "right_tail": [
+        4
+      ],
+      "simultaneous_integer_collision_points": [],
+      "three_cycle_eigenvalue_difference": "2*(n - 4)*(n - 3)",
+      "transposition_eigenvalue_difference": "2*(n - 6)"
+    },
+    {
+      "collision_in_stable_range": false,
+      "left_tail": [
+        1,
+        1
+      ],
+      "polynomial_gcd": "2*n - 8",
+      "right_tail": [
+        3,
+        1
+      ],
+      "simultaneous_integer_collision_points": [
+        4
+      ],
+      "three_cycle_eigenvalue_difference": "2*(n - 4)*(n - 3)",
+      "transposition_eigenvalue_difference": "2*(n - 4)"
+    },
+    {
+      "collision_in_stable_range": false,
+      "left_tail": [
+        1,
+        1
+      ],
+      "polynomial_gcd": "2*n - 6",
+      "right_tail": [
+        2,
+        2
+      ],
+      "simultaneous_integer_collision_points": [
+        3
+      ],
+      "three_cycle_eigenvalue_difference": "2*(n - 4)*(n - 3)",
+      "transposition_eigenvalue_difference": "2*(n - 3)"
+    },
+    {
+      "collision_in_stable_range": false,
+      "left_tail": [
+        3
+      ],
+      "polynomial_gcd": "3",
+      "right_tail": [
+        2,
+        1
+      ],
+      "simultaneous_integer_collision_points": [],
+      "three_cycle_eigenvalue_difference": "-3",
+      "transposition_eigenvalue_difference": "3"
+    },
+    {
+      "collision_in_stable_range": false,
+      "left_tail": [
+        3
+      ],
+      "polynomial_gcd": "6",
+      "right_tail": [
+        1,
+        1,
+        1
+      ],
+      "simultaneous_integer_collision_points": [],
+      "three_cycle_eigenvalue_difference": "-12",
+      "transposition_eigenvalue_difference": "6"
+    },
+    {
+      "collision_in_stable_range": false,
+      "left_tail": [
+        3
+      ],
+      "polynomial_gcd": "n - 6",
+      "right_tail": [
+        4
+      ],
+      "simultaneous_integer_collision_points": [
+        6
+      ],
+      "three_cycle_eigenvalue_difference": "(n - 6)*(n - 2)",
+      "transposition_eigenvalue_difference": "n - 6"
+    },
+    {
+      "collision_in_stable_range": false,
+      "left_tail": [
+        3
+      ],
+      "polynomial_gcd": "n - 2",
+      "right_tail": [
+        3,
+        1
+      ],
+      "simultaneous_integer_collision_points": [
+        2
+      ],
+      "three_cycle_eigenvalue_difference": "(n - 6)*(n - 2)",
+      "transposition_eigenvalue_difference": "n - 2"
+    },
+    {
+      "collision_in_stable_range": false,
+      "left_tail": [
+        3
+      ],
+      "polynomial_gcd": "1",
+      "right_tail": [
+        2,
+        2
+      ],
+      "simultaneous_integer_collision_points": [],
+      "three_cycle_eigenvalue_difference": "(n - 6)*(n - 2)",
+      "transposition_eigenvalue_difference": "n"
+    },
+    {
+      "collision_in_stable_range": false,
+      "left_tail": [
+        2,
+        1
+      ],
+      "polynomial_gcd": "3",
+      "right_tail": [
+        1,
+        1,
+        1
+      ],
+      "simultaneous_integer_collision_points": [],
+      "three_cycle_eigenvalue_difference": "-9",
+      "transposition_eigenvalue_difference": "3"
+    },
+    {
+      "collision_in_stable_range": false,
+      "left_tail": [
+        2,
+        1
+      ],
+      "polynomial_gcd": "1",
+      "right_tail": [
+        4
+      ],
+      "simultaneous_integer_collision_points": [],
+      "three_cycle_eigenvalue_difference": "(n - 5)*(n - 3)",
+      "transposition_eigenvalue_difference": "n - 9"
+    },
+    {
+      "collision_in_stable_range": false,
+      "left_tail": [
+        2,
+        1
+      ],
+      "polynomial_gcd": "n - 5",
+      "right_tail": [
+        3,
+        1
+      ],
+      "simultaneous_integer_collision_points": [
+        5
+      ],
+      "three_cycle_eigenvalue_difference": "(n - 5)*(n - 3)",
+      "transposition_eigenvalue_difference": "n - 5"
+    },
+    {
+      "collision_in_stable_range": false,
+      "left_tail": [
+        2,
+        1
+      ],
+      "polynomial_gcd": "n - 3",
+      "right_tail": [
+        2,
+        2
+      ],
+      "simultaneous_integer_collision_points": [
+        3
+      ],
+      "three_cycle_eigenvalue_difference": "(n - 5)*(n - 3)",
+      "transposition_eigenvalue_difference": "n - 3"
+    },
+    {
+      "collision_in_stable_range": false,
+      "left_tail": [
+        1,
+        1,
+        1
+      ],
+      "polynomial_gcd": "1",
+      "right_tail": [
+        4
+      ],
+      "simultaneous_integer_collision_points": [],
+      "three_cycle_eigenvalue_difference": "n**2 - 8*n + 24",
+      "transposition_eigenvalue_difference": "n - 12"
+    },
+    {
+      "collision_in_stable_range": false,
+      "left_tail": [
+        1,
+        1,
+        1
+      ],
+      "polynomial_gcd": "1",
+      "right_tail": [
+        3,
+        1
+      ],
+      "simultaneous_integer_collision_points": [],
+      "three_cycle_eigenvalue_difference": "n**2 - 8*n + 24",
+      "transposition_eigenvalue_difference": "n - 8"
+    },
+    {
+      "collision_in_stable_range": false,
+      "left_tail": [
+        1,
+        1,
+        1
+      ],
+      "polynomial_gcd": "1",
+      "right_tail": [
+        2,
+        2
+      ],
+      "simultaneous_integer_collision_points": [],
+      "three_cycle_eigenvalue_difference": "n**2 - 8*n + 24",
+      "transposition_eigenvalue_difference": "n - 6"
+    },
+    {
+      "collision_in_stable_range": false,
+      "left_tail": [
+        4
+      ],
+      "polynomial_gcd": "4",
+      "right_tail": [
+        3,
+        1
+      ],
+      "simultaneous_integer_collision_points": [],
+      "three_cycle_eigenvalue_difference": "0",
+      "transposition_eigenvalue_difference": "4"
+    },
+    {
+      "collision_in_stable_range": false,
+      "left_tail": [
+        4
+      ],
+      "polynomial_gcd": "6",
+      "right_tail": [
+        2,
+        2
+      ],
+      "simultaneous_integer_collision_points": [],
+      "three_cycle_eigenvalue_difference": "0",
+      "transposition_eigenvalue_difference": "6"
+    },
+    {
+      "collision_in_stable_range": false,
+      "left_tail": [
+        3,
+        1
+      ],
+      "polynomial_gcd": "2",
+      "right_tail": [
+        2,
+        2
+      ],
+      "simultaneous_integer_collision_points": [],
+      "three_cycle_eigenvalue_difference": "0",
+      "transposition_eigenvalue_difference": "2"
+    }
+  ],
+  "shape_records": [
+    {
+      "n12_signature": [
+        54,
+        320
+      ],
+      "n8_signature": [
+        20,
+        64
+      ],
+      "n9_signature": [
+        27,
+        105
+      ],
+      "padded_partition": "(n-1,1)",
+      "tail": [
+        1
+      ],
+      "three_cycle_class_eigenvalue": "n**3/3 - 2*n**2 + 8*n/3",
+      "transposition_class_eigenvalue": "n**2/2 - 3*n/2"
+    },
+    {
+      "n12_signature": [
+        44,
+        220
+      ],
+      "n8_signature": [
+        14,
+        28
+      ],
+      "n9_signature": [
+        20,
+        56
+      ],
+      "padded_partition": "(n-2,2)",
+      "tail": [
+        2
+      ],
+      "three_cycle_class_eigenvalue": "n**3/3 - 3*n**2 + 20*n/3 - 4",
+      "transposition_class_eigenvalue": "n**2/2 - 5*n/2 + 2"
+    },
+    {
+      "n12_signature": [
+        42,
+        224
+      ],
+      "n8_signature": [
+        12,
+        32
+      ],
+      "n9_signature": [
+        18,
+        60
+      ],
+      "padded_partition": "(n-2,1,1)",
+      "tail": [
+        1,
+        1
+      ],
+      "three_cycle_class_eigenvalue": "n**3/3 - 3*n**2 + 20*n/3",
+      "transposition_class_eigenvalue": "n**2/2 - 5*n/2"
+    },
+    {
+      "n12_signature": [
+        36,
+        140
+      ],
+      "n8_signature": [
+        10,
+        4
+      ],
+      "n9_signature": [
+        15,
+        21
+      ],
+      "padded_partition": "(n-3,3)",
+      "tail": [
+        3
+      ],
+      "three_cycle_class_eigenvalue": "n**3/3 - 4*n**2 + 38*n/3 - 12",
+      "transposition_class_eigenvalue": "n**2/2 - 7*n/2 + 6"
+    },
+    {
+      "n12_signature": [
+        33,
+        143
+      ],
+      "n8_signature": [
+        7,
+        7
+      ],
+      "n9_signature": [
+        12,
+        24
+      ],
+      "padded_partition": "(n-3,2,1)",
+      "tail": [
+        2,
+        1
+      ],
+      "three_cycle_class_eigenvalue": "n**3/3 - 4*n**2 + 38*n/3 - 9",
+      "transposition_class_eigenvalue": "n**2/2 - 7*n/2 + 3"
+    },
+    {
+      "n12_signature": [
+        30,
+        152
+      ],
+      "n8_signature": [
+        4,
+        16
+      ],
+      "n9_signature": [
+        9,
+        33
+      ],
+      "padded_partition": "(n-3,1,1,1)",
+      "tail": [
+        1,
+        1,
+        1
+      ],
+      "three_cycle_class_eigenvalue": "n**3/3 - 4*n**2 + 38*n/3",
+      "transposition_class_eigenvalue": "n**2/2 - 7*n/2"
+    },
+    {
+      "n12_signature": [
+        30,
+        80
+      ],
+      "n8_signature": [
+        8,
+        -8
+      ],
+      "n9_signature": [
+        12,
+        0
+      ],
+      "padded_partition": "(n-4,4)",
+      "tail": [
+        4
+      ],
+      "three_cycle_class_eigenvalue": "n**3/3 - 5*n**2 + 62*n/3 - 24",
+      "transposition_class_eigenvalue": "n**2/2 - 9*n/2 + 12"
+    },
+    {
+      "n12_signature": [
+        26,
+        80
+      ],
+      "n8_signature": [
+        4,
+        -8
+      ],
+      "n9_signature": [
+        8,
+        0
+      ],
+      "padded_partition": "(n-4,3,1)",
+      "tail": [
+        3,
+        1
+      ],
+      "three_cycle_class_eigenvalue": "n**3/3 - 5*n**2 + 62*n/3 - 24",
+      "transposition_class_eigenvalue": "n**2/2 - 9*n/2 + 8"
+    },
+    {
+      "n12_signature": [
+        24,
+        80
+      ],
+      "n8_signature": [
+        2,
+        -8
+      ],
+      "n9_signature": [
+        6,
+        0
+      ],
+      "padded_partition": "(n-4,2,2)",
+      "tail": [
+        2,
+        2
+      ],
+      "three_cycle_class_eigenvalue": "n**3/3 - 5*n**2 + 62*n/3 - 24",
+      "transposition_class_eigenvalue": "n**2/2 - 9*n/2 + 6"
+    }
+  ],
+  "status": "coherent-stable-intermediate-shape-router-proved-multiplicity-transition-open",
+  "summary": "Proved an exact collision-free pair of central signatures and a polynomial coherent intermediate-shape router for all nine stable channels without dense Clebsch tables.",
+  "theorem": {
+    "proved": true,
+    "range": "every integer n>=8",
+    "statement": "On the exact final-xi stable branch, the pair of transposition and 3-cycle central eigenvalues uniquely labels all nine allowed intermediate shapes. Coherent phase estimation therefore routes the branch nondestructively into a nine-valued eta label register."
+  }
+}

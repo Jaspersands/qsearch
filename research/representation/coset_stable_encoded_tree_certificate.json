@@ -1,0 +1,236 @@
+{
+  "algebraic_commutation_certificate": {
+    "encoded_second_stage_realization": "On the eta isotypic block, D_12(tau) acts as rho_eta(tau) tensor I_first, so one global triple-register operator restricts to every certified H_eta tensor I_first without constructing an eta register.",
+    "final_irrep_preservation": "Every orbit sum is invariant under total simultaneous conjugation and commutes with the final-xi projector.",
+    "first_second_stage_commutation": "K_12 lies in End_Sn(W tensor W), while K_(12),3 is a sum of D_12(tau) tensor rho_W(c); therefore [K_12,K_(12),3]=0 term by term.",
+    "joint_label_count_identity": "sum_eta g(W,W,eta)g(eta,W,xi)=25=dim Hom_Sn(xi,W^tensor3)",
+    "pair_shape_centrality": "C_2^(12) and C_3^(12) are central in the diagonal pair representation and commute with pair commutants.",
+    "proved": true
+  },
+  "branch_records": [
+    {
+      "complete_joint_branch_label_proved": true,
+      "first_stage_label_proved": true,
+      "first_stage_multiplicity": 1,
+      "intermediate_tail": [
+        1
+      ],
+      "joint_multiplicity_label_count": 1,
+      "padded_partition": "(n-1,1)",
+      "second_stage_label_proved": true,
+      "second_stage_multiplicity": 1,
+      "shape_label_proved": true,
+      "status": "complete-encoded-branch-label-proved"
+    },
+    {
+      "complete_joint_branch_label_proved": true,
+      "first_stage_label_proved": true,
+      "first_stage_multiplicity": 2,
+      "intermediate_tail": [
+        2
+      ],
+      "joint_multiplicity_label_count": 4,
+      "padded_partition": "(n-2,2)",
+      "second_stage_label_proved": true,
+      "second_stage_multiplicity": 2,
+      "shape_label_proved": true,
+      "status": "complete-encoded-branch-label-proved"
+    },
+    {
+      "complete_joint_branch_label_proved": true,
+      "first_stage_label_proved": true,
+      "first_stage_multiplicity": 1,
+      "intermediate_tail": [
+        1,
+        1
+      ],
+      "joint_multiplicity_label_count": 2,
+      "padded_partition": "(n-2,1,1)",
+      "second_stage_label_proved": true,
+      "second_stage_multiplicity": 2,
+      "shape_label_proved": true,
+      "status": "complete-encoded-branch-label-proved"
+    },
+    {
+      "complete_joint_branch_label_proved": true,
+      "first_stage_label_proved": true,
+      "first_stage_multiplicity": 1,
+      "intermediate_tail": [
+        3
+      ],
+      "joint_multiplicity_label_count": 2,
+      "padded_partition": "(n-3,3)",
+      "second_stage_label_proved": true,
+      "second_stage_multiplicity": 2,
+      "shape_label_proved": true,
+      "status": "complete-encoded-branch-label-proved"
+    },
+    {
+      "complete_joint_branch_label_proved": true,
+      "first_stage_label_proved": true,
+      "first_stage_multiplicity": 2,
+      "intermediate_tail": [
+        2,
+        1
+      ],
+      "joint_multiplicity_label_count": 8,
+      "padded_partition": "(n-3,2,1)",
+      "second_stage_label_proved": true,
+      "second_stage_multiplicity": 4,
+      "shape_label_proved": true,
+      "status": "complete-encoded-branch-label-proved"
+    },
+    {
+      "complete_joint_branch_label_proved": true,
+      "first_stage_label_proved": true,
+      "first_stage_multiplicity": 1,
+      "intermediate_tail": [
+        1,
+        1,
+        1
+      ],
+      "joint_multiplicity_label_count": 2,
+      "padded_partition": "(n-3,1,1,1)",
+      "second_stage_label_proved": true,
+      "second_stage_multiplicity": 2,
+      "shape_label_proved": true,
+      "status": "complete-encoded-branch-label-proved"
+    },
+    {
+      "complete_joint_branch_label_proved": true,
+      "first_stage_label_proved": true,
+      "first_stage_multiplicity": 1,
+      "intermediate_tail": [
+        4
+      ],
+      "joint_multiplicity_label_count": 1,
+      "padded_partition": "(n-4,4)",
+      "second_stage_label_proved": true,
+      "second_stage_multiplicity": 1,
+      "shape_label_proved": true,
+      "status": "complete-encoded-branch-label-proved"
+    },
+    {
+      "complete_joint_branch_label_proved": true,
+      "first_stage_label_proved": true,
+      "first_stage_multiplicity": 1,
+      "intermediate_tail": [
+        3,
+        1
+      ],
+      "joint_multiplicity_label_count": 3,
+      "padded_partition": "(n-4,3,1)",
+      "second_stage_label_proved": true,
+      "second_stage_multiplicity": 3,
+      "shape_label_proved": true,
+      "status": "complete-encoded-branch-label-proved"
+    },
+    {
+      "complete_joint_branch_label_proved": true,
+      "first_stage_label_proved": true,
+      "first_stage_multiplicity": 1,
+      "intermediate_tail": [
+        2,
+        2
+      ],
+      "joint_multiplicity_label_count": 2,
+      "padded_partition": "(n-4,2,2)",
+      "second_stage_label_proved": true,
+      "second_stage_multiplicity": 2,
+      "shape_label_proved": true,
+      "status": "complete-encoded-branch-label-proved"
+    }
+  ],
+  "claim_gate": {
+    "classical_superpolynomial_separation_proved": false,
+    "complete_encoded_left_tree_joint_labels_proved": true,
+    "complete_encoded_right_tree_joint_labels_proved": true,
+    "compressed_internal_kronecker_transform_proved": false,
+    "compressed_racah_associator_proved": false,
+    "encoded_coupling_tree_transition_label_isometry_proved": true,
+    "hidden_involution_decoder_proved": false,
+    "reason": "The stable final branch now has complete coherent left/right labels and an encoded relabelling isometry, but no compressed Racah matrix, state-dependent frame filter, hidden-involution decoder, source-family coverage theorem, or classical separation.",
+    "speedup_claim_allowed": false,
+    "state_dependent_transition_filter_proved": false
+  },
+  "created_at": "2026-07-19T02:57:28.981945+00:00",
+  "encoded_transition_contract": {
+    "compressed_25_by_25_racah_unitary_produced": false,
+    "left_label_unitary": "U_L appends the complete (12)3 joint label",
+    "polynomial_encoded_transition_label_isometry_proved": true,
+    "right_label_unitary": "U_R is the factor-permuted construction appending the 1(23) joint label",
+    "state_dependent_transition_filter_implemented": false,
+    "transition": "T_encoded=U_R U_L^dagger on valid left-labelled encoded states",
+    "transition_amplitude_table_materialized": false,
+    "transition_error": "inverse polynomial after choosing each phase-estimation precision below one third of its proved gap",
+    "transition_preserves_physical_state": true
+  },
+  "falsifiers_triggered": [
+    "The three observable layers must commute; the finite operator audit would reject an incorrect composition.",
+    "The sum of branch label products must equal the exact final multiplicity 25.",
+    "An encoded label transition is not a standalone compressed 25x25 Racah matrix.",
+    "No state-dependent transition filter or hidden-involution information follows from basis labels alone.",
+    "A result conditioned on one stable source/final branch is not full symmetric-HSP sector coverage."
+  ],
+  "finite_commutation_audit": {
+    "finite_control_only": true,
+    "first_stage_orbit_term_count": 60,
+    "maximum_normalized_commutator_residual": 5.819445280406994e-17,
+    "n": 5,
+    "numerical_identity_check_passed": true,
+    "operator_names": [
+      "pair-transposition-class",
+      "pair-three-cycle-class",
+      "first-stage-commutant",
+      "second-stage-equivariant-orbit"
+    ],
+    "pairwise_commutator_count": 6,
+    "second_stage_orbit_term_count": 60,
+    "source_dimension": 5,
+    "source_partition": [
+      3,
+      2
+    ],
+    "triple_dimension": 125
+  },
+  "headline_metrics": {
+    "coherent_first_stage_label_transform_count": 1,
+    "coherent_second_stage_nontrivial_shape_label_count": 7,
+    "coherent_shape_router_count": 1,
+    "complete_encoded_left_tree_label_transform_count": 1,
+    "complete_encoded_right_tree_label_transform_count": 1,
+    "complete_joint_branch_label_count": 9,
+    "compressed_clebsch_transform_count": 0,
+    "compressed_racah_associator_count": 0,
+    "encoded_coupling_tree_transition_isometry_count": 1,
+    "final_multiplicity_dimension": 25,
+    "finite_commutation_audit_pair_count": 6,
+    "hidden_involution_decoder_count": 0,
+    "joint_multiplicity_label_count": 25,
+    "maximum_finite_normalized_commutator_residual": 5.819445280406994e-17,
+    "maximum_phase_estimation_query_exponent": 53,
+    "stable_branch_count": 9,
+    "transition_filter_count": 0
+  },
+  "left_tree_circuit_contract": {
+    "complexity": "polynomial in n and log(1/error)",
+    "dense_clebsch_or_racah_table_used": false,
+    "input": "W_n^tensor3 conditioned on the final xi_n irrep label",
+    "joint_label_count": 25,
+    "maximum_inverse_gap_exponent": 53,
+    "output_label": "(eta, first multiplicity index, second multiplicity index)",
+    "physical_state_encoding": "unchanged W_n^tensor3 registers",
+    "steps": [
+      "append pair central signature (C_2^(12),C_3^(12)) and decode eta",
+      "append the K_12 first-stage multiplicity eigenlabel",
+      "append the K_(12),3 second-stage multiplicity eigenlabel"
+    ]
+  },
+  "status": "complete-stable-encoded-tree-labels-and-transition-proved-filter-decoder-open",
+  "summary": "Composed exact shape, first-stage, and second-stage observables into 25 complete coherent labels on both stable coupling trees and a polynomial encoded transition-label isometry; filtering and decoding remain open.",
+  "theorem": {
+    "proved": true,
+    "range": "every integer n>=8",
+    "statement": "On the final xi_n isotypic branch of W_n^tensor3, commuting shape, first-stage multiplicity, and second-stage multiplicity observables provide exactly 25 coherent joint labels, one for every left-coupled multiplicity line. The mirrored construction gives the right-coupled labels."
+  }
+}
