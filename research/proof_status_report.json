@@ -2,8 +2,8 @@
   "blocking_status_count": 24,
   "candidate_count": 8,
   "counterexample_search_count": 8,
-  "created_at": "2026-07-18T23:12:26.105351+00:00",
-  "lemma_count": 346,
+  "created_at": "2026-07-19T01:00:18.607814+00:00",
+  "lemma_count": 370,
   "needs_evidence_count": 0,
   "proof_debt": {
     "counterexample_search_count": 8,
@@ -73,8 +73,8 @@
         "target_claim": "The coset observable is not a disguised classical invariant."
       }
     ],
-    "created_at": "2026-07-18T23:12:26.104467+00:00",
-    "lemma_count": 346,
+    "created_at": "2026-07-19T01:00:18.606859+00:00",
+    "lemma_count": 370,
     "lemmas": [
       {
         "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -328,6 +328,54 @@
         "id": "LEMMA-CODE-COSET-COLLECTIVE-COSET-STABLE-RACAH-SUBSPACE-CLOSURE",
         "statement": "The 2x4 stable left and right branches form the same eight-dimensional subspace and can be reassociated without introducing complementary intermediate sectors.",
         "status": "refuted-finite-stable-branch-leakage-observed"
+      },
+      {
+        "candidate_id": "CODE-COSET-COLLECTIVE",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Resolve Tr(P_left,eta P_right,xi) over every character-allowed eta and verify the rank-eight sum rule; nonzero support on multiple eta refutes a one-sector repair.",
+        "id": "LEMMA-CODE-COSET-COLLECTIVE-COSET-STABLE-RACAH-SINGLE-COMPLEMENT-REPAIR",
+        "statement": "One complementary intermediate partition captures all leakage from the right stable branch, so a constant one-sector extension closes the restricted Racah support.",
+        "status": "refuted-finite-leakage-spans-all-complementary-sectors"
+      },
+      {
+        "candidate_id": "CODE-COSET-COLLECTIVE",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Verify full-rank bounded-degree character-polynomial witnesses, exact cycle-type checks, factorial moment multiplicities, total multiplicity 25, and the direct n=8 endpoint.",
+        "id": "LEMMA-CODE-COSET-COLLECTIVE-COSET-STABLE-RACAH-NINE-SHAPE-FAMILY",
+        "statement": "Exactly nine padded intermediate partition shapes, with fixed first/second Kronecker multiplicities and total final multiplicity 25, cover the stable final-xi sector for n>=9.",
+        "status": "proved-exact-nine-shape-stable-sector-family"
+      },
+      {
+        "candidate_id": "CODE-COSET-COLLECTIVE",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "For every one of the six open nontrivial tails, derive the exact all-n characteristic polynomial, prove normalized root separation, and compile the common orbit LCU; finite floating spectra satisfy none of those proof obligations.",
+        "id": "LEMMA-CODE-COSET-COLLECTIVE-COSET-STABLE-RACAH-UNIFORM-SHAPE-LABEL",
+        "statement": "The same bounded-support transposition/three-cycle orbit Hamiltonian has a simple, inverse-polynomial normalized spectrum on every nontrivial second-stage block in the exact nine-shape stable family and admits a coherent polynomial implementation.",
+        "status": "blocked-six-exact-traces-proved-seven-coefficients-gaps-and-circuits-open"
+      },
+      {
+        "candidate_id": "CODE-COSET-COLLECTIVE",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Audit falling-cycle conversion, every marked equality-pattern sum, exact S_8 endpoints, and agreement with all finite sparse traces; no interpolation or floating arithmetic may enter the theorem.",
+        "id": "LEMMA-CODE-COSET-COLLECTIVE-COSET-STABLE-RACAH-NINE-SHAPE-TRACES",
+        "statement": "The support-intersection-two orbit Hamiltonian has an exact cubic-or-lower all-n trace polynomial on every second-stage block in the exact nine-shape stable family.",
+        "status": "proved-exact-all-nine-stable-shape-traces"
       },
       {
         "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -1674,6 +1722,54 @@
           "PO-COMPLEXITY",
           "PO-NO-GO"
         ],
+        "falsification_test": "Resolve Tr(P_left,eta P_right,xi) over every character-allowed eta and verify the rank-eight sum rule; nonzero support on multiple eta refutes a one-sector repair.",
+        "id": "LEMMA-HYP-LIT-COSET-OBSERVABLES-COSET-STABLE-RACAH-SINGLE-COMPLEMENT-REPAIR",
+        "statement": "One complementary intermediate partition captures all leakage from the right stable branch, so a constant one-sector extension closes the restricted Racah support.",
+        "status": "refuted-finite-leakage-spans-all-complementary-sectors"
+      },
+      {
+        "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Verify full-rank bounded-degree character-polynomial witnesses, exact cycle-type checks, factorial moment multiplicities, total multiplicity 25, and the direct n=8 endpoint.",
+        "id": "LEMMA-HYP-LIT-COSET-OBSERVABLES-COSET-STABLE-RACAH-NINE-SHAPE-FAMILY",
+        "statement": "Exactly nine padded intermediate partition shapes, with fixed first/second Kronecker multiplicities and total final multiplicity 25, cover the stable final-xi sector for n>=9.",
+        "status": "proved-exact-nine-shape-stable-sector-family"
+      },
+      {
+        "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "For every one of the six open nontrivial tails, derive the exact all-n characteristic polynomial, prove normalized root separation, and compile the common orbit LCU; finite floating spectra satisfy none of those proof obligations.",
+        "id": "LEMMA-HYP-LIT-COSET-OBSERVABLES-COSET-STABLE-RACAH-UNIFORM-SHAPE-LABEL",
+        "statement": "The same bounded-support transposition/three-cycle orbit Hamiltonian has a simple, inverse-polynomial normalized spectrum on every nontrivial second-stage block in the exact nine-shape stable family and admits a coherent polynomial implementation.",
+        "status": "blocked-six-exact-traces-proved-seven-coefficients-gaps-and-circuits-open"
+      },
+      {
+        "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Audit falling-cycle conversion, every marked equality-pattern sum, exact S_8 endpoints, and agreement with all finite sparse traces; no interpolation or floating arithmetic may enter the theorem.",
+        "id": "LEMMA-HYP-LIT-COSET-OBSERVABLES-COSET-STABLE-RACAH-NINE-SHAPE-TRACES",
+        "statement": "The support-intersection-two orbit Hamiltonian has an exact cubic-or-lower all-n trace polynomial on every second-stage block in the exact nine-shape stable family.",
+        "status": "proved-exact-all-nine-stable-shape-traces"
+      },
+      {
+        "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-NO-GO"
+        ],
         "falsification_test": "Require a cited circuit theorem with gate count, precision, multiplicity basis, promises, and uniformity; a unitary definition, #BQP count, or Schur-Weyl transform does not satisfy it.",
         "id": "LEMMA-HYP-LIT-COSET-OBSERVABLES-COSET-INTERNAL-KRONECKER-TRANSFORM",
         "statement": "There is a uniform polynomial-gate internal S_n Kronecker transform with explicit multiplicity basis and state-transition access for unrestricted relevant irreps.",
@@ -3012,6 +3108,54 @@
           "PO-COMPLEXITY",
           "PO-NO-GO"
         ],
+        "falsification_test": "Resolve Tr(P_left,eta P_right,xi) over every character-allowed eta and verify the rank-eight sum rule; nonzero support on multiple eta refutes a one-sector repair.",
+        "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-COSET-STABLE-RACAH-SINGLE-COMPLEMENT-REPAIR",
+        "statement": "One complementary intermediate partition captures all leakage from the right stable branch, so a constant one-sector extension closes the restricted Racah support.",
+        "status": "refuted-finite-leakage-spans-all-complementary-sectors"
+      },
+      {
+        "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Verify full-rank bounded-degree character-polynomial witnesses, exact cycle-type checks, factorial moment multiplicities, total multiplicity 25, and the direct n=8 endpoint.",
+        "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-COSET-STABLE-RACAH-NINE-SHAPE-FAMILY",
+        "statement": "Exactly nine padded intermediate partition shapes, with fixed first/second Kronecker multiplicities and total final multiplicity 25, cover the stable final-xi sector for n>=9.",
+        "status": "proved-exact-nine-shape-stable-sector-family"
+      },
+      {
+        "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "For every one of the six open nontrivial tails, derive the exact all-n characteristic polynomial, prove normalized root separation, and compile the common orbit LCU; finite floating spectra satisfy none of those proof obligations.",
+        "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-COSET-STABLE-RACAH-UNIFORM-SHAPE-LABEL",
+        "statement": "The same bounded-support transposition/three-cycle orbit Hamiltonian has a simple, inverse-polynomial normalized spectrum on every nontrivial second-stage block in the exact nine-shape stable family and admits a coherent polynomial implementation.",
+        "status": "blocked-six-exact-traces-proved-seven-coefficients-gaps-and-circuits-open"
+      },
+      {
+        "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Audit falling-cycle conversion, every marked equality-pattern sum, exact S_8 endpoints, and agreement with all finite sparse traces; no interpolation or floating arithmetic may enter the theorem.",
+        "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-COSET-STABLE-RACAH-NINE-SHAPE-TRACES",
+        "statement": "The support-intersection-two orbit Hamiltonian has an exact cubic-or-lower all-n trace polynomial on every second-stage block in the exact nine-shape stable family.",
+        "status": "proved-exact-all-nine-stable-shape-traces"
+      },
+      {
+        "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-NO-GO"
+        ],
         "falsification_test": "Require a cited circuit theorem with gate count, precision, multiplicity basis, promises, and uniformity; a unitary definition, #BQP count, or Schur-Weyl transform does not satisfy it.",
         "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-COSET-INTERNAL-KRONECKER-TRANSFORM",
         "statement": "There is a uniform polynomial-gate internal S_n Kronecker transform with explicit multiplicity basis and state-transition access for unrestricted relevant irreps.",
@@ -3381,6 +3525,54 @@
         "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-COSET-STABLE-RACAH-SUBSPACE-CLOSURE",
         "statement": "The 2x4 stable left and right branches form the same eight-dimensional subspace and can be reassociated without introducing complementary intermediate sectors.",
         "status": "refuted-finite-stable-branch-leakage-observed"
+      },
+      {
+        "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Resolve Tr(P_left,eta P_right,xi) over every character-allowed eta and verify the rank-eight sum rule; nonzero support on multiple eta refutes a one-sector repair.",
+        "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-COSET-STABLE-RACAH-SINGLE-COMPLEMENT-REPAIR",
+        "statement": "One complementary intermediate partition captures all leakage from the right stable branch, so a constant one-sector extension closes the restricted Racah support.",
+        "status": "refuted-finite-leakage-spans-all-complementary-sectors"
+      },
+      {
+        "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Verify full-rank bounded-degree character-polynomial witnesses, exact cycle-type checks, factorial moment multiplicities, total multiplicity 25, and the direct n=8 endpoint.",
+        "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-COSET-STABLE-RACAH-NINE-SHAPE-FAMILY",
+        "statement": "Exactly nine padded intermediate partition shapes, with fixed first/second Kronecker multiplicities and total final multiplicity 25, cover the stable final-xi sector for n>=9.",
+        "status": "proved-exact-nine-shape-stable-sector-family"
+      },
+      {
+        "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "For every one of the six open nontrivial tails, derive the exact all-n characteristic polynomial, prove normalized root separation, and compile the common orbit LCU; finite floating spectra satisfy none of those proof obligations.",
+        "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-COSET-STABLE-RACAH-UNIFORM-SHAPE-LABEL",
+        "statement": "The same bounded-support transposition/three-cycle orbit Hamiltonian has a simple, inverse-polynomial normalized spectrum on every nontrivial second-stage block in the exact nine-shape stable family and admits a coherent polynomial implementation.",
+        "status": "blocked-six-exact-traces-proved-seven-coefficients-gaps-and-circuits-open"
+      },
+      {
+        "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Audit falling-cycle conversion, every marked equality-pattern sum, exact S_8 endpoints, and agreement with all finite sparse traces; no interpolation or floating arithmetic may enter the theorem.",
+        "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-COSET-STABLE-RACAH-NINE-SHAPE-TRACES",
+        "statement": "The support-intersection-two orbit Hamiltonian has an exact cubic-or-lower all-n trace polynomial on every second-stage block in the exact nine-shape stable family.",
+        "status": "proved-exact-all-nine-stable-shape-traces"
       },
       {
         "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
@@ -3766,6 +3958,54 @@
           "PO-COMPLEXITY",
           "PO-NO-GO"
         ],
+        "falsification_test": "Resolve Tr(P_left,eta P_right,xi) over every character-allowed eta and verify the rank-eight sum rule; nonzero support on multiple eta refutes a one-sector repair.",
+        "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-COSET-STABLE-RACAH-SINGLE-COMPLEMENT-REPAIR",
+        "statement": "One complementary intermediate partition captures all leakage from the right stable branch, so a constant one-sector extension closes the restricted Racah support.",
+        "status": "refuted-finite-leakage-spans-all-complementary-sectors"
+      },
+      {
+        "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Verify full-rank bounded-degree character-polynomial witnesses, exact cycle-type checks, factorial moment multiplicities, total multiplicity 25, and the direct n=8 endpoint.",
+        "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-COSET-STABLE-RACAH-NINE-SHAPE-FAMILY",
+        "statement": "Exactly nine padded intermediate partition shapes, with fixed first/second Kronecker multiplicities and total final multiplicity 25, cover the stable final-xi sector for n>=9.",
+        "status": "proved-exact-nine-shape-stable-sector-family"
+      },
+      {
+        "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "For every one of the six open nontrivial tails, derive the exact all-n characteristic polynomial, prove normalized root separation, and compile the common orbit LCU; finite floating spectra satisfy none of those proof obligations.",
+        "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-COSET-STABLE-RACAH-UNIFORM-SHAPE-LABEL",
+        "statement": "The same bounded-support transposition/three-cycle orbit Hamiltonian has a simple, inverse-polynomial normalized spectrum on every nontrivial second-stage block in the exact nine-shape stable family and admits a coherent polynomial implementation.",
+        "status": "blocked-six-exact-traces-proved-seven-coefficients-gaps-and-circuits-open"
+      },
+      {
+        "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Audit falling-cycle conversion, every marked equality-pattern sum, exact S_8 endpoints, and agreement with all finite sparse traces; no interpolation or floating arithmetic may enter the theorem.",
+        "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-COSET-STABLE-RACAH-NINE-SHAPE-TRACES",
+        "statement": "The support-intersection-two orbit Hamiltonian has an exact cubic-or-lower all-n trace polynomial on every second-stage block in the exact nine-shape stable family.",
+        "status": "proved-exact-all-nine-stable-shape-traces"
+      },
+      {
+        "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-NO-GO"
+        ],
         "falsification_test": "Require a cited circuit theorem with gate count, precision, multiplicity basis, promises, and uniformity; a unitary definition, #BQP count, or Schur-Weyl transform does not satisfy it.",
         "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-COSET-INTERNAL-KRONECKER-TRANSFORM",
         "statement": "There is a uniform polynomial-gate internal S_n Kronecker transform with explicit multiplicity basis and state-transition access for unrestricted relevant irreps.",
@@ -4135,6 +4375,54 @@
         "id": "LEMMA-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-COSET-STABLE-RACAH-SUBSPACE-CLOSURE",
         "statement": "The 2x4 stable left and right branches form the same eight-dimensional subspace and can be reassociated without introducing complementary intermediate sectors.",
         "status": "refuted-finite-stable-branch-leakage-observed"
+      },
+      {
+        "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Resolve Tr(P_left,eta P_right,xi) over every character-allowed eta and verify the rank-eight sum rule; nonzero support on multiple eta refutes a one-sector repair.",
+        "id": "LEMMA-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-COSET-STABLE-RACAH-SINGLE-COMPLEMENT-REPAIR",
+        "statement": "One complementary intermediate partition captures all leakage from the right stable branch, so a constant one-sector extension closes the restricted Racah support.",
+        "status": "refuted-finite-leakage-spans-all-complementary-sectors"
+      },
+      {
+        "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Verify full-rank bounded-degree character-polynomial witnesses, exact cycle-type checks, factorial moment multiplicities, total multiplicity 25, and the direct n=8 endpoint.",
+        "id": "LEMMA-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-COSET-STABLE-RACAH-NINE-SHAPE-FAMILY",
+        "statement": "Exactly nine padded intermediate partition shapes, with fixed first/second Kronecker multiplicities and total final multiplicity 25, cover the stable final-xi sector for n>=9.",
+        "status": "proved-exact-nine-shape-stable-sector-family"
+      },
+      {
+        "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "For every one of the six open nontrivial tails, derive the exact all-n characteristic polynomial, prove normalized root separation, and compile the common orbit LCU; finite floating spectra satisfy none of those proof obligations.",
+        "id": "LEMMA-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-COSET-STABLE-RACAH-UNIFORM-SHAPE-LABEL",
+        "statement": "The same bounded-support transposition/three-cycle orbit Hamiltonian has a simple, inverse-polynomial normalized spectrum on every nontrivial second-stage block in the exact nine-shape stable family and admits a coherent polynomial implementation.",
+        "status": "blocked-six-exact-traces-proved-seven-coefficients-gaps-and-circuits-open"
+      },
+      {
+        "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Audit falling-cycle conversion, every marked equality-pattern sum, exact S_8 endpoints, and agreement with all finite sparse traces; no interpolation or floating arithmetic may enter the theorem.",
+        "id": "LEMMA-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-COSET-STABLE-RACAH-NINE-SHAPE-TRACES",
+        "statement": "The support-intersection-two orbit Hamiltonian has an exact cubic-or-lower all-n trace polynomial on every second-stage block in the exact nine-shape stable family.",
+        "status": "proved-exact-all-nine-stable-shape-traces"
       },
       {
         "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",

@@ -1,0 +1,346 @@
+{
+  "character_polynomial_contract": {
+    "all_n_moment_threshold": 9,
+    "basis": "ordinary monomials in X_i with weighted degree sum(i*a_i)<=tail size",
+    "exhaustion_identity": "sum_eta g(W,W,eta)g(eta,W,xi)=<chi_W^3,chi_xi>=25; the nine displayed positive terms already sum to 25",
+    "existence_theorem_threshold": "n>=tail size + largest tail row",
+    "maximum_product_weight": 9,
+    "moment_identity": "E[product_i (X_i)_(a_i)]=product_i i^(-a_i) when total support<=n",
+    "reconstruction": "full-rank exact character-value witness system",
+    "total_exact_verification_rows": 3212
+  },
+  "claim_gate": {
+    "all_required_normalized_gaps_proved": false,
+    "all_required_second_stage_labels_coherently_implemented": false,
+    "exact_bounded_stable_sector_family_proved": true,
+    "hidden_involution_decoder_proved": false,
+    "overlapping_racah_associator_proved": false,
+    "reason": "The theorem bounds the relevant sector family exactly, but six nontrivial second-stage shape families still lack coherent gapped labels; no associator or decoder is constructed.",
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-07-18T23:58:26.108495+00:00",
+  "endpoint_certificate": {
+    "all_multiplicity_pairs_match": true,
+    "direct_all_partition_channel_count": 9,
+    "direct_total_multiplicity": 25,
+    "distinct_intermediate_partition_count": 9,
+    "final_partition": [
+      5,
+      2,
+      1
+    ],
+    "n": 8,
+    "selected_shapes_exhaust_all_channels": true,
+    "source_partition": [
+      6,
+      2
+    ]
+  },
+  "falsifiers_triggered": [
+    "The stable final sector does not require an unbounded number of intermediate partition shapes.",
+    "A bounded nine-shape list is not a coherent all-sector transform.",
+    "Only one of seven nontrivial second-stage multiplicity shapes currently has a coherent normalized-gap certificate.",
+    "Exact sector multiplicities do not imply hidden-involution information or quantum advantage."
+  ],
+  "headline_metrics": {
+    "all_n_multiplicity_formula_count": 9,
+    "all_n_sector_exhaustion_theorem_count": 1,
+    "coherent_all_sector_transform_count": 0,
+    "coherent_gapped_second_stage_shape_count": 1,
+    "direct_triple_character_moment_multiplicity": 25,
+    "exact_character_polynomial_count": 9,
+    "exact_stable_shape_family_theorem_count": 1,
+    "hidden_involution_decoder_count": 0,
+    "maximum_first_stage_multiplicity": 2,
+    "maximum_second_stage_multiplicity": 4,
+    "n8_endpoint_verified_shape_count": 9,
+    "nontrivial_second_stage_shape_count": 7,
+    "overlapping_racah_associator_count": 0,
+    "stable_final_total_multiplicity": 25,
+    "stable_intermediate_shape_count": 9,
+    "unresolved_coherent_second_stage_shape_count": 6
+  },
+  "literature_scope": [
+    {
+      "id": "church-ellenberg-farb-fi-modules-2015",
+      "role": "bounded-degree character polynomials and stable padded S_n representations",
+      "url": "https://arxiv.org/abs/1204.4533"
+    },
+    {
+      "id": "macdonald-symmetric-functions-1995",
+      "role": "symmetric-group characters and cycle-index inner products",
+      "url": "https://global.oup.com/academic/product/symmetric-functions-and-hall-polynomials-9780198504504"
+    }
+  ],
+  "shape_records": [
+    {
+      "all_n_at_least_9_formula_verified": true,
+      "branch_dimension": 1,
+      "character_polynomial": "X1 - 1",
+      "character_polynomial_basis_dimension": 2,
+      "character_polynomial_threshold": 2,
+      "coherent_second_stage_label_proved": false,
+      "exact_verification_row_count": 371,
+      "first_stage_multiplicity": 1,
+      "n8_endpoint_first_stage_multiplicity": 1,
+      "n8_endpoint_second_stage_multiplicity": 1,
+      "normalized_second_stage_gap_proved": false,
+      "padded_partition": "(n-1,1)",
+      "reconstruction_witness_rank": 2,
+      "second_stage_multiplicity": 1,
+      "tail": [
+        1
+      ],
+      "tail_size": 1
+    },
+    {
+      "all_n_at_least_9_formula_verified": true,
+      "branch_dimension": 4,
+      "character_polynomial": "(X1**2 - 3*X1 + 2*X2)/2",
+      "character_polynomial_basis_dimension": 4,
+      "character_polynomial_threshold": 4,
+      "coherent_second_stage_label_proved": false,
+      "exact_verification_row_count": 366,
+      "first_stage_multiplicity": 2,
+      "n8_endpoint_first_stage_multiplicity": 2,
+      "n8_endpoint_second_stage_multiplicity": 2,
+      "normalized_second_stage_gap_proved": false,
+      "padded_partition": "(n-2,2)",
+      "reconstruction_witness_rank": 4,
+      "second_stage_multiplicity": 2,
+      "tail": [
+        2
+      ],
+      "tail_size": 2
+    },
+    {
+      "all_n_at_least_9_formula_verified": true,
+      "branch_dimension": 2,
+      "character_polynomial": "(X1**2 - 3*X1 - 2*X2 + 2)/2",
+      "character_polynomial_basis_dimension": 4,
+      "character_polynomial_threshold": 3,
+      "coherent_second_stage_label_proved": false,
+      "exact_verification_row_count": 369,
+      "first_stage_multiplicity": 1,
+      "n8_endpoint_first_stage_multiplicity": 1,
+      "n8_endpoint_second_stage_multiplicity": 2,
+      "normalized_second_stage_gap_proved": false,
+      "padded_partition": "(n-2,1,1)",
+      "reconstruction_witness_rank": 4,
+      "second_stage_multiplicity": 2,
+      "tail": [
+        1,
+        1
+      ],
+      "tail_size": 2
+    },
+    {
+      "all_n_at_least_9_formula_verified": true,
+      "branch_dimension": 2,
+      "character_polynomial": "(X1**3 - 6*X1**2 + 6*X1*X2 + 5*X1 - 6*X2 + 6*X3)/6",
+      "character_polynomial_basis_dimension": 7,
+      "character_polynomial_threshold": 6,
+      "coherent_second_stage_label_proved": false,
+      "exact_verification_row_count": 354,
+      "first_stage_multiplicity": 1,
+      "n8_endpoint_first_stage_multiplicity": 1,
+      "n8_endpoint_second_stage_multiplicity": 2,
+      "normalized_second_stage_gap_proved": false,
+      "padded_partition": "(n-3,3)",
+      "reconstruction_witness_rank": 7,
+      "second_stage_multiplicity": 2,
+      "tail": [
+        3
+      ],
+      "tail_size": 3
+    },
+    {
+      "all_n_at_least_9_formula_verified": true,
+      "branch_dimension": 8,
+      "character_polynomial": "(X1**3 - 6*X1**2 + 8*X1 - 3*X3)/3",
+      "character_polynomial_basis_dimension": 7,
+      "character_polynomial_threshold": 5,
+      "coherent_second_stage_label_proved": true,
+      "exact_verification_row_count": 361,
+      "first_stage_multiplicity": 2,
+      "n8_endpoint_first_stage_multiplicity": 2,
+      "n8_endpoint_second_stage_multiplicity": 4,
+      "normalized_second_stage_gap_proved": true,
+      "padded_partition": "(n-3,2,1)",
+      "reconstruction_witness_rank": 7,
+      "second_stage_multiplicity": 4,
+      "tail": [
+        2,
+        1
+      ],
+      "tail_size": 3
+    },
+    {
+      "all_n_at_least_9_formula_verified": true,
+      "branch_dimension": 2,
+      "character_polynomial": "(X1**3 - 6*X1**2 - 6*X1*X2 + 11*X1 + 6*X2 + 6*X3 - 6)/6",
+      "character_polynomial_basis_dimension": 7,
+      "character_polynomial_threshold": 4,
+      "coherent_second_stage_label_proved": false,
+      "exact_verification_row_count": 366,
+      "first_stage_multiplicity": 1,
+      "n8_endpoint_first_stage_multiplicity": 1,
+      "n8_endpoint_second_stage_multiplicity": 2,
+      "normalized_second_stage_gap_proved": false,
+      "padded_partition": "(n-3,1,1,1)",
+      "reconstruction_witness_rank": 7,
+      "second_stage_multiplicity": 2,
+      "tail": [
+        1,
+        1,
+        1
+      ],
+      "tail_size": 3
+    },
+    {
+      "all_n_at_least_9_formula_verified": true,
+      "branch_dimension": 1,
+      "character_polynomial": "(X1**4 - 10*X1**3 + 12*X1**2*X2 + 23*X1**2 - 36*X1*X2 + 24*X1*X3 - 14*X1 + 12*X2**2 - 12*X2 - 24*X3 + 24*X4)/24",
+      "character_polynomial_basis_dimension": 12,
+      "character_polynomial_threshold": 8,
+      "coherent_second_stage_label_proved": false,
+      "exact_verification_row_count": 328,
+      "first_stage_multiplicity": 1,
+      "n8_endpoint_first_stage_multiplicity": 1,
+      "n8_endpoint_second_stage_multiplicity": 1,
+      "normalized_second_stage_gap_proved": false,
+      "padded_partition": "(n-4,4)",
+      "reconstruction_witness_rank": 12,
+      "second_stage_multiplicity": 1,
+      "tail": [
+        4
+      ],
+      "tail_size": 4
+    },
+    {
+      "all_n_at_least_9_formula_verified": true,
+      "branch_dimension": 3,
+      "character_polynomial": "(X1**4 - 10*X1**3 + 4*X1**2*X2 + 27*X1**2 - 12*X1*X2 - 18*X1 - 4*X2**2 + 12*X2 - 8*X4)/8",
+      "character_polynomial_basis_dimension": 12,
+      "character_polynomial_threshold": 7,
+      "coherent_second_stage_label_proved": false,
+      "exact_verification_row_count": 343,
+      "first_stage_multiplicity": 1,
+      "n8_endpoint_first_stage_multiplicity": 1,
+      "n8_endpoint_second_stage_multiplicity": 3,
+      "normalized_second_stage_gap_proved": false,
+      "padded_partition": "(n-4,3,1)",
+      "reconstruction_witness_rank": 12,
+      "second_stage_multiplicity": 3,
+      "tail": [
+        3,
+        1
+      ],
+      "tail_size": 4
+    },
+    {
+      "all_n_at_least_9_formula_verified": true,
+      "branch_dimension": 2,
+      "character_polynomial": "(X1**4 - 10*X1**3 + 29*X1**2 - 12*X1*X3 - 20*X1 + 12*X2**2 - 24*X2 + 12*X3)/12",
+      "character_polynomial_basis_dimension": 12,
+      "character_polynomial_threshold": 6,
+      "coherent_second_stage_label_proved": false,
+      "exact_verification_row_count": 354,
+      "first_stage_multiplicity": 1,
+      "n8_endpoint_first_stage_multiplicity": 1,
+      "n8_endpoint_second_stage_multiplicity": 2,
+      "normalized_second_stage_gap_proved": false,
+      "padded_partition": "(n-4,2,2)",
+      "reconstruction_witness_rank": 12,
+      "second_stage_multiplicity": 2,
+      "tail": [
+        2,
+        2
+      ],
+      "tail_size": 4
+    }
+  ],
+  "status": "exact-nine-shape-family-proved-six-label-families-open",
+  "summary": "Proved an exact nine-shape intermediate family with total final multiplicity 25 for n>=9 and exact n=8 endpoint; six nontrivial second-stage label families remain open.",
+  "theorem": {
+    "final": "xi_n=(n-3,2,1)",
+    "final_total_multiplicity": 25,
+    "intermediate_tails": [
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        3
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        1,
+        1,
+        1
+      ],
+      [
+        4
+      ],
+      [
+        3,
+        1
+      ],
+      [
+        2,
+        2
+      ]
+    ],
+    "multiplicity_pairs": {
+      "(1, 1)": [
+        1,
+        2
+      ],
+      "(1, 1, 1)": [
+        1,
+        2
+      ],
+      "(1,)": [
+        1,
+        1
+      ],
+      "(2, 1)": [
+        2,
+        4
+      ],
+      "(2, 2)": [
+        1,
+        2
+      ],
+      "(2,)": [
+        2,
+        2
+      ],
+      "(3, 1)": [
+        1,
+        3
+      ],
+      "(3,)": [
+        1,
+        2
+      ],
+      "(4,)": [
+        1,
+        1
+      ]
+    },
+    "proved": true,
+    "range": "every integer n>=9, with n=8 closed by exact endpoint characters",
+    "source": "W_n=(n-2,2)",
+    "statement": "Exactly nine padded intermediate shapes occur in the final-xi_n component of W_n^tensor3, with the displayed first/second Kronecker multiplicities and total multiplicity 25."
+  }
+}

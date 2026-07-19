@@ -219,6 +219,18 @@ COSET_STABLE_COHERENT_LABEL_PATH = Path(
 COSET_STABLE_SUBSPACE_TRANSITION_PATH = Path(
     "research/representation/coset_stable_subspace_transition_probe.json"
 )
+COSET_STABLE_COMPLEMENTARY_SECTOR_PATH = Path(
+    "research/representation/coset_stable_complementary_sector_probe.json"
+)
+COSET_STABLE_SHAPE_FAMILY_PATH = Path(
+    "research/representation/coset_stable_shape_family_certificate.json"
+)
+COSET_STABLE_SHAPE_LABEL_PATH = Path(
+    "research/representation/coset_stable_shape_label_probe.json"
+)
+COSET_STABLE_SHAPE_TRACE_PATH = Path(
+    "research/representation/coset_stable_shape_trace_certificate.json"
+)
 COSET_RECOUPLING_CAPABILITY_PATH = Path(
     "research/representation/coset_recoupling_capability_ledger.json"
 )
@@ -4071,6 +4083,142 @@ def findings_from_coset_stable_subspace_transition_probe(
     ]
 
 
+def findings_from_coset_stable_complementary_sector_probe(
+    path: Path = COSET_STABLE_COMPLEMENTARY_SECTOR_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    return [
+        DequantizationFinding(
+            id="DEQ-COSET-STABLE-LEAKAGE-REQUIRES-MULTISECTOR-COVERAGE",
+            created_at=utc_now(),
+            target_type="coset_stable_complementary_sector_probe",
+            target_id=str(path),
+            severity="high",
+            claim_under_test=(
+                "A single complementary stable-shape channel repairs the leaky one-channel Racah construction."
+            ),
+            evidence=(
+                f"Minimum nonzero complementary sectors="
+                f"{metrics.get('minimum_nonzero_complementary_sector_count', 0)}; largest one-sector leakage share="
+                f"{float(metrics.get('maximum_single_complementary_leakage_share', 0.0)):.6f}; single-repair count="
+                f"{metrics.get('single_complement_repair_count', 0)}."
+            ),
+            required_action=(
+                "Prove exact all-n transition-support formulas and coherent gapped labels for every stable-shape "
+                "sector before treating the hierarchy as a Racah transform or decoder."
+            ),
+            blocks_speedup_claim=True,
+        )
+    ]
+
+
+def findings_from_coset_stable_shape_family_certificate(
+    path: Path = COSET_STABLE_SHAPE_FAMILY_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    return [
+        DequantizationFinding(
+            id="DEQ-COSET-NINE-STABLE-SHAPES-STILL-LACK-SIX-GAPPED-LABELS",
+            created_at=utc_now(),
+            target_type="coset_stable_shape_family_certificate",
+            target_id=str(path),
+            severity="high",
+            claim_under_test=(
+                "An exact constant-size intermediate shape family closes coherent Racah synthesis."
+            ),
+            evidence=(
+                f"Exact shapes/nontrivial second stages/coherent gapped second stages/unresolved="
+                f"{metrics.get('stable_intermediate_shape_count', 0)}/"
+                f"{metrics.get('nontrivial_second_stage_shape_count', 0)}/"
+                f"{metrics.get('coherent_gapped_second_stage_shape_count', 0)}/"
+                f"{metrics.get('unresolved_coherent_second_stage_shape_count', 0)}."
+            ),
+            required_action=(
+                "Construct and certify bounded-support label Hamiltonians and normalized gaps for the six unresolved "
+                "nontrivial shape families, then synthesize left/right measurements and test decoder information."
+            ),
+            blocks_speedup_claim=True,
+        )
+    ]
+
+
+def findings_from_coset_stable_shape_label_probe(
+    path: Path = COSET_STABLE_SHAPE_LABEL_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    return [
+        DequantizationFinding(
+            id="DEQ-COSET-SIX-FINITE-SHAPE-LABEL-TARGETS-LACK-ALL-N-PROOFS",
+            created_at=utc_now(),
+            target_type="coset_stable_shape_label_probe",
+            target_id=str(path),
+            severity="high",
+            claim_under_test=(
+                "A uniform finite splitting signal across the exact nine-shape family closes coherent Racah synthesis."
+            ),
+            evidence=(
+                f"Audited/fully split nontrivial blocks="
+                f"{metrics.get('finite_nontrivial_block_count', 0)}/"
+                f"{metrics.get('finite_fully_split_nontrivial_block_count', 0)}; six-family finite targets="
+                f"{metrics.get('unproved_shape_finite_target_count', 0)}; new exact gap/coherent labels="
+                f"{metrics.get('new_normalized_gap_theorem_count', 0)}/"
+                f"{metrics.get('new_coherent_shape_label_count', 0)}."
+            ),
+            required_action=(
+                "Convert each reconstructed bounded-degree polynomial into an exact all-n trace-moment theorem, "
+                "prove normalized root separation, and compile the shared orbit operator coherently before using "
+                "these finite targets as labels."
+            ),
+            blocks_speedup_claim=True,
+        )
+    ]
+
+
+def findings_from_coset_stable_shape_trace_certificate(
+    path: Path = COSET_STABLE_SHAPE_TRACE_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    return [
+        DequantizationFinding(
+            id="DEQ-COSET-EXACT-SHAPE-TRACES-LEAVE-SEVEN-SPECTRAL-COEFFICIENT-FAMILIES",
+            created_at=utc_now(),
+            target_type="coset_stable_shape_trace_certificate",
+            target_id=str(path),
+            severity="high",
+            claim_under_test=(
+                "Exact eigenvalue sums on all stable shapes close the common Racah label operator."
+            ),
+            evidence=(
+                f"Exact all-n traces/new open-shape traces="
+                f"{metrics.get('exact_all_n_shape_trace_theorem_count', 0)}/"
+                f"{metrics.get('new_exact_open_shape_trace_theorem_count', 0)}; remaining higher coefficient "
+                f"families={metrics.get('remaining_open_shape_characteristic_coefficient_family_count', 0)}; "
+                f"new complete polynomials/gaps/circuits="
+                f"{metrics.get('new_exact_complete_characteristic_polynomial_count', 0)}/"
+                f"{metrics.get('new_normalized_gap_theorem_count', 0)}/"
+                f"{metrics.get('new_coherent_shape_label_count', 0)}."
+            ),
+            required_action=(
+                "Prove five determinant families and the two remaining multiplicity-three coefficient families, "
+                "then establish normalized root separation and coherent compilation for all six labels."
+            ),
+            blocks_speedup_claim=True,
+        )
+    ]
+
+
 def findings_from_coset_recoupling_capability_ledger(
     path: Path = COSET_RECOUPLING_CAPABILITY_PATH,
 ) -> list[DequantizationFinding]:
@@ -7027,6 +7175,10 @@ def build_dequantization_report() -> dict[str, Any]:
         *findings_from_coset_stable_root_separation_certificate(),
         *findings_from_coset_stable_coherent_label_certificate(),
         *findings_from_coset_stable_subspace_transition_probe(),
+        *findings_from_coset_stable_complementary_sector_probe(),
+        *findings_from_coset_stable_shape_family_certificate(),
+        *findings_from_coset_stable_shape_label_probe(),
+        *findings_from_coset_stable_shape_trace_certificate(),
         *findings_from_coset_jucys_murphy_label_transform(),
         *findings_from_coset_multiplicity_commutant_search(),
         *findings_from_coset_recoupling_capability_ledger(),

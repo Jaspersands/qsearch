@@ -36403,6 +36403,33 @@
   {
     "applies_to": [
       "CODE-COSET-COLLECTIVE",
+      "EXP-COSET-STABLE-SHAPE-TRACE-CERTIFICATE"
+    ],
+    "claim": "Exact first characteristic coefficients for all nine shapes prove complete coherent labels.",
+    "evidence": {
+      "complete_racah_associator_count": 0,
+      "exact_all_n_shape_trace_theorem_count": 9,
+      "exact_n8_endpoint_count": 9,
+      "finite_probe_trace_agreement_count": 27,
+      "finite_probe_trace_comparison_count": 27,
+      "hidden_involution_decoder_count": 0,
+      "maximum_canonical_equality_pattern_count": 329728,
+      "maximum_partial_permutation_constraint_count": 9,
+      "new_coherent_shape_label_count": 0,
+      "new_exact_complete_characteristic_polynomial_count": 0,
+      "new_exact_open_shape_trace_theorem_count": 6,
+      "new_normalized_gap_theorem_count": 0,
+      "remaining_open_shape_characteristic_coefficient_family_count": 7,
+      "stable_shape_count": 9
+    },
+    "id": "NEG-COSET-EXACT-NINE-SHAPE-TRACES-AS-COMPLETE-LABEL-PROOF",
+    "lesson": "Generalize marked-cycle moments only to the seven remaining coefficient families, then apply exact root separation and coherent block-encoding proof gates.",
+    "reason_invalid": "Five open multiplicity-two shapes still need determinants, one multiplicity-three shape needs two higher coefficients, and all six need normalized gap and circuit theorems.",
+    "source": "research/representation/coset_stable_shape_trace_certificate.json"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
       "EXP-COSET-STABLE-TRACE-CERTIFICATE"
     ],
     "claim": "The exact first power trace determines the stable quartic spectrum and an efficient Racah transform.",
@@ -36528,6 +36555,36 @@
   {
     "applies_to": [
       "CODE-COSET-COLLECTIVE",
+      "EXP-COSET-STABLE-SHAPE-LABEL-PROBE"
+    ],
+    "claim": "Finite simple spectra from one orbit Hamiltonian close all nine stable Racah shape labels.",
+    "evidence": {
+      "finite_fully_split_nontrivial_block_count": 21,
+      "finite_nontrivial_block_count": 21,
+      "maximum_integer_polynomial_relative_reconstruction_residual": 1.2605008621701887e-14,
+      "maximum_n": 10,
+      "maximum_target_eigenspace_relative_residual": 1.5194090854857235e-12,
+      "minimum_n": 8,
+      "minimum_observed_unproved_shape_lcu_normalized_gap": 0.022222222222222143,
+      "minimum_observed_unproved_shape_raw_gap": 11.99999999999995,
+      "new_coherent_shape_label_count": 0,
+      "new_exact_all_n_characteristic_polynomial_count": 0,
+      "new_normalized_gap_theorem_count": 0,
+      "nontrivial_second_stage_shape_count": 7,
+      "scaling_point_count": 3,
+      "stable_shape_count": 9,
+      "uniform_orbit_generator_count": 1,
+      "uniform_polynomial_racah_circuit_count": 0,
+      "unproved_shape_finite_target_count": 6
+    },
+    "id": "NEG-COSET-FINITE-NINE-SHAPE-SPECTRA-AS-COMPLETE-RACAH-LABELS",
+    "lesson": "Use the shape-resolved integer polynomials as exact trace-moment targets, then prove each bounded-degree family before attempting coherent phase estimation.",
+    "reason_invalid": "Six shape families still lack exact all-n characteristic polynomials, normalized root separation, and coherent LCU compilation; all labels also lack a complete transition circuit.",
+    "source": "research/representation/coset_stable_shape_label_probe.json"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
       "EXP-COSET-COMPLETE-RACAH-CONTROL"
     ],
     "claim": "Complete finite left/right recoupling matrices imply a scalable coherent Racah associator.",
@@ -36607,9 +36664,10 @@
     "claim": "A #BQP characterization of Kronecker coefficients supplies a coherent Kronecker transform.",
     "evidence": {
       "bounded_support_commutant_block_encoding_poly_proof_count": 1,
-      "capability_count": 12,
+      "capability_count": 13,
       "diagonal_jm_label_transform_poly_proof_count": 1,
       "exact_holevo_copy_budget_theorem_count": 1,
+      "exact_stable_nine_shape_sector_classification_count": 1,
       "gapped_kronecker_multiplicity_transform_poly_proof_count": 0,
       "growth_record_count": 7,
       "hidden_involution_decoder_count": 0,
@@ -36628,6 +36686,35 @@
     "lesson": "Track each representation primitive by exact action, promise, circuit cost, output, and decoder role.",
     "reason_invalid": "Counting an invariant-space dimension by projectors does not construct its basis or transition amplitudes.",
     "source": "research/representation/coset_recoupling_capability_ledger.json"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "EXP-COSET-STABLE-SHAPE-FAMILY-CERTIFICATE"
+    ],
+    "claim": "An exact constant-size list of stable intermediate shapes supplies a coherent Racah transform and decoder.",
+    "evidence": {
+      "all_n_multiplicity_formula_count": 9,
+      "all_n_sector_exhaustion_theorem_count": 1,
+      "coherent_all_sector_transform_count": 0,
+      "coherent_gapped_second_stage_shape_count": 1,
+      "direct_triple_character_moment_multiplicity": 25,
+      "exact_character_polynomial_count": 9,
+      "exact_stable_shape_family_theorem_count": 1,
+      "hidden_involution_decoder_count": 0,
+      "maximum_first_stage_multiplicity": 2,
+      "maximum_second_stage_multiplicity": 4,
+      "n8_endpoint_verified_shape_count": 9,
+      "nontrivial_second_stage_shape_count": 7,
+      "overlapping_racah_associator_count": 0,
+      "stable_final_total_multiplicity": 25,
+      "stable_intermediate_shape_count": 9,
+      "unresolved_coherent_second_stage_shape_count": 6
+    },
+    "id": "NEG-COSET-NINE-STABLE-SHAPES-AS-COHERENT-RACAH-TRANSFORM",
+    "lesson": "Use the theorem to bound operator synthesis to nine shapes, then prove every label/gap and transition primitive explicitly.",
+    "reason_invalid": "Six nontrivial second-stage multiplicity families still lack coherent normalized-gap labels, and transitions are not synthesized.",
+    "source": "research/representation/coset_stable_shape_family_certificate.json"
   },
   {
     "applies_to": [
@@ -36733,9 +36820,10 @@
     "claim": "Restricted multiplicity estimation currently supports a superpolynomial representation-theoretic speedup.",
     "evidence": {
       "bounded_support_commutant_block_encoding_poly_proof_count": 1,
-      "capability_count": 12,
+      "capability_count": 13,
       "diagonal_jm_label_transform_poly_proof_count": 1,
       "exact_holevo_copy_budget_theorem_count": 1,
+      "exact_stable_nine_shape_sector_classification_count": 1,
       "gapped_kronecker_multiplicity_transform_poly_proof_count": 0,
       "growth_record_count": 7,
       "hidden_involution_decoder_count": 0,
@@ -36763,9 +36851,10 @@
     "claim": "An efficient S_n QFT supplies the missing multi-copy hidden-involution decoder.",
     "evidence": {
       "bounded_support_commutant_block_encoding_poly_proof_count": 1,
-      "capability_count": 12,
+      "capability_count": 13,
       "diagonal_jm_label_transform_poly_proof_count": 1,
       "exact_holevo_copy_budget_theorem_count": 1,
+      "exact_stable_nine_shape_sector_classification_count": 1,
       "gapped_kronecker_multiplicity_transform_poly_proof_count": 0,
       "growth_record_count": 7,
       "hidden_involution_decoder_count": 0,
@@ -36866,6 +36955,32 @@
     "lesson": "Construct overlapping left/right stable label transforms and analyze their transition kernel before any decoder claim.",
     "reason_invalid": "The construction does not change coupling trees, cover all sectors, or map labels to the hidden involution.",
     "source": "research/representation/coset_stable_coherent_label_certificate.json"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "EXP-COSET-STABLE-COMPLEMENTARY-SECTOR-PROBE"
+    ],
+    "claim": "One additional intermediate partition captures the stable branch leakage and closes a restricted associator.",
+    "evidence": {
+      "all_n_complementary_support_theorem_count": 0,
+      "coherent_all_sector_transform_count": 0,
+      "complete_projector_resolution_count": 2,
+      "hidden_involution_decoder_count": 0,
+      "maximum_n": 8,
+      "maximum_nonzero_complementary_sector_count": 8,
+      "maximum_single_complementary_leakage_share": 0.2630071002653973,
+      "minimum_effective_complementary_sector_count": 6.067528583918332,
+      "minimum_intermediate_sector_count": 8,
+      "minimum_n": 7,
+      "minimum_nonzero_complementary_sector_count": 7,
+      "scaling_point_count": 2,
+      "single_complement_repair_count": 0
+    },
+    "id": "NEG-COSET-STABLE-LEAKAGE-AS-SINGLE-COMPLEMENT-REPAIR",
+    "lesson": "Derive an all-n support formula and cover the full intermediate-sector family before coherent synthesis.",
+    "reason_invalid": "Every character-allowed complementary sector has nonzero projector overlap, and no one sector captures all leaked mass.",
+    "source": "research/representation/coset_stable_complementary_sector_probe.json"
   },
   {
     "applies_to": [

@@ -1,0 +1,1616 @@
+{
+  "claim_gate": {
+    "all_n_characteristic_polynomials_proved": false,
+    "all_n_normalized_gaps_proved": false,
+    "all_six_unproved_shape_targets_found": true,
+    "coherent_lcu_implementations_proved": false,
+    "complete_racah_associator_proved": false,
+    "hidden_involution_decoder_proved": false,
+    "integer_characteristic_polynomial_candidates_at_every_audited_block": true,
+    "reason": "One uniform orbit Hamiltonian supplies finite theorem targets for the six missing labels, but those targets still lack exact all-n spectra, normalized gaps, coherent implementation, and a decoder.",
+    "speedup_claim_allowed": false,
+    "uniform_operator_splits_every_audited_nontrivial_shape": true
+  },
+  "created_at": "2026-07-19T00:13:08.994322+00:00",
+  "falsifiers_triggered": [
+    "Finite splitting at three sizes does not imply an all-n simple spectrum.",
+    "Near-integer floating characteristic coefficients are not exact identities.",
+    "An observed raw or LCU-normalized gap is not a uniform asymptotic lower bound.",
+    "A formal orbit sum is not a compiled coherent SELECT/PREPARE circuit.",
+    "Complete intermediate labels would still not constitute a hidden-involution decoder or a classical separation."
+  ],
+  "headline_metrics": {
+    "finite_fully_split_nontrivial_block_count": 21,
+    "finite_nontrivial_block_count": 21,
+    "maximum_integer_polynomial_relative_reconstruction_residual": 1.2605008621701887e-14,
+    "maximum_n": 10,
+    "maximum_target_eigenspace_relative_residual": 1.5194090854857235e-12,
+    "minimum_n": 8,
+    "minimum_observed_unproved_shape_lcu_normalized_gap": 0.022222222222222143,
+    "minimum_observed_unproved_shape_raw_gap": 11.99999999999995,
+    "new_coherent_shape_label_count": 0,
+    "new_exact_all_n_characteristic_polynomial_count": 0,
+    "new_normalized_gap_theorem_count": 0,
+    "nontrivial_second_stage_shape_count": 7,
+    "scaling_point_count": 3,
+    "stable_shape_count": 9,
+    "uniform_orbit_generator_count": 1,
+    "uniform_polynomial_racah_circuit_count": 0,
+    "unproved_shape_finite_target_count": 6
+  },
+  "mathematical_contract": {
+    "final_family": "xi_n=(n-3,2,1)",
+    "intermediate_family": "the exact nine padded shapes from the character-polynomial certificate",
+    "operator": "sum rho_eta(tau) tensor rho_W(c) over transpositions tau and oriented three-cycles c with support intersection two",
+    "operator_term_count": "n(n-1)(n-2)",
+    "proof_boundary": "floating finite spectra and integer polynomial reconstruction are conjecture targets only",
+    "source_family": "W_n=(n-2,2)",
+    "target_extraction": "one separating YJM tableau label; diagonal equivariance makes the multiplicity spectrum independent of the chosen final-irrep tableau"
+  },
+  "records": [
+    {
+      "branch_dimension": 1,
+      "coherent_normalized_gap_already_proved": false,
+      "eigenvalues": [
+        36.0
+      ],
+      "exact_integer_polynomial_candidate": true,
+      "extracted_tensor_dimension": 140,
+      "final_partition": [
+        5,
+        2,
+        1
+      ],
+      "finite_numerical_probe_only": true,
+      "first_stage_multiplicity": 1,
+      "integer_characteristic_polynomial_candidate": [
+        1,
+        -36
+      ],
+      "integer_polynomial_reconstruction_residual": 0.0,
+      "integer_polynomial_relative_reconstruction_residual": 0.0,
+      "intermediate_irrep_dimension": 7,
+      "intermediate_partition": [
+        7,
+        1
+      ],
+      "intermediate_tail": [
+        1
+      ],
+      "lcu_normalized_minimum_gap": 0.0,
+      "minimum_yjm_label_separation": 9532,
+      "n": 8,
+      "nontrivial_multiplicity_fully_split": true,
+      "orbit_generator_id": "ORB-TC-INTERSECTION-2",
+      "orbit_term_count": 336,
+      "orbit_term_count_formula": 336,
+      "raw_minimum_gap": 0.0,
+      "second_stage_multiplicity": 1,
+      "source_irrep_dimension": 20,
+      "source_partition": [
+        6,
+        2
+      ],
+      "sparse_yjm_nonzero_count": 6130,
+      "status": "finite-uniform-orbit-label-target-found",
+      "target_basis_orthogonality_residual": 2.220446049250313e-16,
+      "target_eigenspace_relative_residual": 9.66680792100689e-17,
+      "target_eigenspace_residual": 3.3809370699483965e-10,
+      "target_yjm_label": 3497470
+    },
+    {
+      "branch_dimension": 4,
+      "coherent_normalized_gap_already_proved": false,
+      "eigenvalues": [
+        41.99999999999997,
+        53.99999999999992
+      ],
+      "exact_integer_polynomial_candidate": true,
+      "extracted_tensor_dimension": 400,
+      "final_partition": [
+        5,
+        2,
+        1
+      ],
+      "finite_numerical_probe_only": true,
+      "first_stage_multiplicity": 2,
+      "integer_characteristic_polynomial_candidate": [
+        1,
+        -96,
+        2268
+      ],
+      "integer_polynomial_reconstruction_residual": 5.002220859751105e-12,
+      "integer_polynomial_relative_reconstruction_residual": 2.2055647529766777e-15,
+      "intermediate_irrep_dimension": 20,
+      "intermediate_partition": [
+        6,
+        2
+      ],
+      "intermediate_tail": [
+        2
+      ],
+      "lcu_normalized_minimum_gap": 0.03571428571428557,
+      "minimum_yjm_label_separation": 9532,
+      "n": 8,
+      "nontrivial_multiplicity_fully_split": true,
+      "orbit_generator_id": "ORB-TC-INTERSECTION-2",
+      "orbit_term_count": 336,
+      "orbit_term_count_formula": 336,
+      "raw_minimum_gap": 11.99999999999995,
+      "second_stage_multiplicity": 2,
+      "source_irrep_dimension": 20,
+      "source_partition": [
+        6,
+        2
+      ],
+      "sparse_yjm_nonzero_count": 48532,
+      "status": "finite-uniform-orbit-label-target-found",
+      "target_basis_orthogonality_residual": 1.3540980775238796e-15,
+      "target_eigenspace_relative_residual": 5.743942711114632e-16,
+      "target_eigenspace_residual": 2.008926731384209e-09,
+      "target_yjm_label": 3497470
+    },
+    {
+      "branch_dimension": 2,
+      "coherent_normalized_gap_already_proved": false,
+      "eigenvalues": [
+        37.834474939403535,
+        62.165525060596366
+      ],
+      "exact_integer_polynomial_candidate": true,
+      "extracted_tensor_dimension": 420,
+      "final_partition": [
+        5,
+        2,
+        1
+      ],
+      "finite_numerical_probe_only": true,
+      "first_stage_multiplicity": 1,
+      "integer_characteristic_polynomial_candidate": [
+        1,
+        -100,
+        2352
+      ],
+      "integer_polynomial_reconstruction_residual": 4.547473508864641e-12,
+      "integer_polynomial_relative_reconstruction_residual": 1.933449621115919e-15,
+      "intermediate_irrep_dimension": 21,
+      "intermediate_partition": [
+        6,
+        1,
+        1
+      ],
+      "intermediate_tail": [
+        1,
+        1
+      ],
+      "lcu_normalized_minimum_gap": 0.07241383964640724,
+      "minimum_yjm_label_separation": 9532,
+      "n": 8,
+      "nontrivial_multiplicity_fully_split": true,
+      "orbit_generator_id": "ORB-TC-INTERSECTION-2",
+      "orbit_term_count": 336,
+      "orbit_term_count_formula": 336,
+      "raw_minimum_gap": 24.33105012119283,
+      "second_stage_multiplicity": 2,
+      "source_irrep_dimension": 20,
+      "source_partition": [
+        6,
+        2
+      ],
+      "sparse_yjm_nonzero_count": 47961,
+      "status": "finite-uniform-orbit-label-target-found",
+      "target_basis_orthogonality_residual": 1.032240547852626e-15,
+      "target_eigenspace_relative_residual": 1.5194090854857235e-12,
+      "target_eigenspace_residual": 5.314087694213753e-06,
+      "target_yjm_label": 3497470
+    },
+    {
+      "branch_dimension": 2,
+      "coherent_normalized_gap_already_proved": false,
+      "eigenvalues": [
+        34.83484861008833,
+        53.1651513899117
+      ],
+      "exact_integer_polynomial_candidate": true,
+      "extracted_tensor_dimension": 560,
+      "final_partition": [
+        5,
+        2,
+        1
+      ],
+      "finite_numerical_probe_only": true,
+      "first_stage_multiplicity": 1,
+      "integer_characteristic_polynomial_candidate": [
+        1,
+        -88,
+        1852
+      ],
+      "integer_polynomial_reconstruction_residual": 1.1368683772161603e-12,
+      "integer_polynomial_relative_reconstruction_residual": 6.138598149115336e-16,
+      "intermediate_irrep_dimension": 28,
+      "intermediate_partition": [
+        5,
+        3
+      ],
+      "intermediate_tail": [
+        3
+      ],
+      "lcu_normalized_minimum_gap": 0.054554472558998125,
+      "minimum_yjm_label_separation": 9532,
+      "n": 8,
+      "nontrivial_multiplicity_fully_split": true,
+      "orbit_generator_id": "ORB-TC-INTERSECTION-2",
+      "orbit_term_count": 336,
+      "orbit_term_count_formula": 336,
+      "raw_minimum_gap": 18.33030277982337,
+      "second_stage_multiplicity": 2,
+      "source_irrep_dimension": 20,
+      "source_partition": [
+        6,
+        2
+      ],
+      "sparse_yjm_nonzero_count": 99408,
+      "status": "finite-uniform-orbit-label-target-found",
+      "target_basis_orthogonality_residual": 8.168024283359841e-16,
+      "target_eigenspace_relative_residual": 7.1624429590962e-13,
+      "target_eigenspace_residual": 2.5050429376150187e-06,
+      "target_yjm_label": 3497470
+    },
+    {
+      "branch_dimension": 8,
+      "coherent_normalized_gap_already_proved": true,
+      "eigenvalues": [
+        26.268369170660723,
+        39.11210881938122,
+        48.60789902429369,
+        64.01162298566425
+      ],
+      "exact_integer_polynomial_candidate": true,
+      "extracted_tensor_dimension": 1280,
+      "final_partition": [
+        5,
+        2,
+        1
+      ],
+      "finite_numerical_probe_only": true,
+      "first_stage_multiplicity": 2,
+      "integer_characteristic_polynomial_candidate": [
+        1,
+        -178,
+        11502,
+        -319136,
+        3196760
+      ],
+      "integer_polynomial_reconstruction_residual": 7.916241884231567e-09,
+      "integer_polynomial_relative_reconstruction_residual": 2.476332875859172e-15,
+      "intermediate_irrep_dimension": 64,
+      "intermediate_partition": [
+        5,
+        2,
+        1
+      ],
+      "intermediate_tail": [
+        2,
+        1
+      ],
+      "lcu_normalized_minimum_gap": 0.028261280371763293,
+      "minimum_yjm_label_separation": 9532,
+      "n": 8,
+      "nontrivial_multiplicity_fully_split": true,
+      "orbit_generator_id": "ORB-TC-INTERSECTION-2",
+      "orbit_term_count": 336,
+      "orbit_term_count_formula": 336,
+      "raw_minimum_gap": 9.495790204912467,
+      "second_stage_multiplicity": 4,
+      "source_irrep_dimension": 20,
+      "source_partition": [
+        6,
+        2
+      ],
+      "sparse_yjm_nonzero_count": 460731,
+      "status": "coherent-normalized-gap-already-proved",
+      "target_basis_orthogonality_residual": 1.9536415769577603e-15,
+      "target_eigenspace_relative_residual": 4.598390534846415e-13,
+      "target_eigenspace_residual": 1.608273294390929e-06,
+      "target_yjm_label": 3497470
+    },
+    {
+      "branch_dimension": 2,
+      "coherent_normalized_gap_already_proved": false,
+      "eigenvalues": [
+        35.56091108541423,
+        72.43908891458578
+      ],
+      "exact_integer_polynomial_candidate": true,
+      "extracted_tensor_dimension": 700,
+      "final_partition": [
+        5,
+        2,
+        1
+      ],
+      "finite_numerical_probe_only": true,
+      "first_stage_multiplicity": 1,
+      "integer_characteristic_polynomial_candidate": [
+        1,
+        -108,
+        2576
+      ],
+      "integer_polynomial_reconstruction_residual": 9.094947017729282e-13,
+      "integer_polynomial_relative_reconstruction_residual": 3.5306471342116777e-16,
+      "intermediate_irrep_dimension": 35,
+      "intermediate_partition": [
+        5,
+        1,
+        1,
+        1
+      ],
+      "intermediate_tail": [
+        1,
+        1,
+        1
+      ],
+      "lcu_normalized_minimum_gap": 0.10975648163443913,
+      "minimum_yjm_label_separation": 9532,
+      "n": 8,
+      "nontrivial_multiplicity_fully_split": true,
+      "orbit_generator_id": "ORB-TC-INTERSECTION-2",
+      "orbit_term_count": 336,
+      "orbit_term_count_formula": 336,
+      "raw_minimum_gap": 36.87817782917155,
+      "second_stage_multiplicity": 2,
+      "source_irrep_dimension": 20,
+      "source_partition": [
+        6,
+        2
+      ],
+      "sparse_yjm_nonzero_count": 124616,
+      "status": "finite-uniform-orbit-label-target-found",
+      "target_basis_orthogonality_residual": 4.644930641600016e-16,
+      "target_eigenspace_relative_residual": 7.0705644349268e-16,
+      "target_eigenspace_residual": 2.4729086994223437e-09,
+      "target_yjm_label": 3497470
+    },
+    {
+      "branch_dimension": 1,
+      "coherent_normalized_gap_already_proved": false,
+      "eigenvalues": [
+        36.0
+      ],
+      "exact_integer_polynomial_candidate": true,
+      "extracted_tensor_dimension": 280,
+      "final_partition": [
+        5,
+        2,
+        1
+      ],
+      "finite_numerical_probe_only": true,
+      "first_stage_multiplicity": 1,
+      "integer_characteristic_polynomial_candidate": [
+        1,
+        -36
+      ],
+      "integer_polynomial_reconstruction_residual": 0.0,
+      "integer_polynomial_relative_reconstruction_residual": 0.0,
+      "intermediate_irrep_dimension": 14,
+      "intermediate_partition": [
+        4,
+        4
+      ],
+      "intermediate_tail": [
+        4
+      ],
+      "lcu_normalized_minimum_gap": 0.0,
+      "minimum_yjm_label_separation": 9532,
+      "n": 8,
+      "nontrivial_multiplicity_fully_split": true,
+      "orbit_generator_id": "ORB-TC-INTERSECTION-2",
+      "orbit_term_count": 336,
+      "orbit_term_count_formula": 336,
+      "raw_minimum_gap": 0.0,
+      "second_stage_multiplicity": 1,
+      "source_irrep_dimension": 20,
+      "source_partition": [
+        6,
+        2
+      ],
+      "sparse_yjm_nonzero_count": 27722,
+      "status": "finite-uniform-orbit-label-target-found",
+      "target_basis_orthogonality_residual": 0.0,
+      "target_eigenspace_relative_residual": 4.715074357116368e-16,
+      "target_eigenspace_residual": 1.6490831111783782e-09,
+      "target_yjm_label": 3497470
+    },
+    {
+      "branch_dimension": 3,
+      "coherent_normalized_gap_already_proved": false,
+      "eigenvalues": [
+        19.78929576389769,
+        39.9445080044774,
+        54.26619623162495
+      ],
+      "exact_integer_polynomial_candidate": true,
+      "extracted_tensor_dimension": 1400,
+      "final_partition": [
+        5,
+        2,
+        1
+      ],
+      "finite_numerical_probe_only": true,
+      "first_stage_multiplicity": 1,
+      "integer_characteristic_polynomial_candidate": [
+        1,
+        -114,
+        4032,
+        -42896
+      ],
+      "integer_polynomial_reconstruction_residual": 2.9103830456733704e-11,
+      "integer_polynomial_relative_reconstruction_residual": 6.784742273576489e-16,
+      "intermediate_irrep_dimension": 70,
+      "intermediate_partition": [
+        4,
+        3,
+        1
+      ],
+      "intermediate_tail": [
+        3,
+        1
+      ],
+      "lcu_normalized_minimum_gap": 0.042624072104605816,
+      "minimum_yjm_label_separation": 9532,
+      "n": 8,
+      "nontrivial_multiplicity_fully_split": true,
+      "orbit_generator_id": "ORB-TC-INTERSECTION-2",
+      "orbit_term_count": 336,
+      "orbit_term_count_formula": 336,
+      "raw_minimum_gap": 14.321688227147554,
+      "second_stage_multiplicity": 3,
+      "source_irrep_dimension": 20,
+      "source_partition": [
+        6,
+        2
+      ],
+      "sparse_yjm_nonzero_count": 613246,
+      "status": "finite-uniform-orbit-label-target-found",
+      "target_basis_orthogonality_residual": 2.181273971097431e-15,
+      "target_eigenspace_relative_residual": 1.2410696285973463e-14,
+      "target_eigenspace_residual": 4.340603793930361e-08,
+      "target_yjm_label": 3497470
+    },
+    {
+      "branch_dimension": 2,
+      "coherent_normalized_gap_already_proved": false,
+      "eigenvalues": [
+        30.000000000000014,
+        48.000000000000014
+      ],
+      "exact_integer_polynomial_candidate": true,
+      "extracted_tensor_dimension": 1120,
+      "final_partition": [
+        5,
+        2,
+        1
+      ],
+      "finite_numerical_probe_only": true,
+      "first_stage_multiplicity": 1,
+      "integer_characteristic_polynomial_candidate": [
+        1,
+        -78,
+        1440
+      ],
+      "integer_polynomial_reconstruction_residual": 1.1368683772161603e-12,
+      "integer_polynomial_relative_reconstruction_residual": 7.894919286223335e-16,
+      "intermediate_irrep_dimension": 56,
+      "intermediate_partition": [
+        4,
+        2,
+        2
+      ],
+      "intermediate_tail": [
+        2,
+        2
+      ],
+      "lcu_normalized_minimum_gap": 0.05357142857142857,
+      "minimum_yjm_label_separation": 9532,
+      "n": 8,
+      "nontrivial_multiplicity_fully_split": true,
+      "orbit_generator_id": "ORB-TC-INTERSECTION-2",
+      "orbit_term_count": 336,
+      "orbit_term_count_formula": 336,
+      "raw_minimum_gap": 18.0,
+      "second_stage_multiplicity": 2,
+      "source_irrep_dimension": 20,
+      "source_partition": [
+        6,
+        2
+      ],
+      "sparse_yjm_nonzero_count": 382953,
+      "status": "finite-uniform-orbit-label-target-found",
+      "target_basis_orthogonality_residual": 1.1514703212509881e-15,
+      "target_eigenspace_relative_residual": 1.370802912917142e-15,
+      "target_eigenspace_residual": 4.794342063840316e-09,
+      "target_yjm_label": 3497470
+    },
+    {
+      "branch_dimension": 1,
+      "coherent_normalized_gap_already_proved": false,
+      "eigenvalues": [
+        97.00000000000014
+      ],
+      "exact_integer_polynomial_candidate": true,
+      "extracted_tensor_dimension": 216,
+      "final_partition": [
+        6,
+        2,
+        1
+      ],
+      "finite_numerical_probe_only": true,
+      "first_stage_multiplicity": 1,
+      "integer_characteristic_polynomial_candidate": [
+        1,
+        -97
+      ],
+      "integer_polynomial_reconstruction_residual": 1.4210854715202004e-13,
+      "integer_polynomial_relative_reconstruction_residual": 1.465036568577526e-15,
+      "intermediate_irrep_dimension": 8,
+      "intermediate_partition": [
+        8,
+        1
+      ],
+      "intermediate_tail": [
+        1
+      ],
+      "lcu_normalized_minimum_gap": 0.0,
+      "minimum_yjm_label_separation": 4010,
+      "n": 9,
+      "nontrivial_multiplicity_fully_split": true,
+      "orbit_generator_id": "ORB-TC-INTERSECTION-2",
+      "orbit_term_count": 504,
+      "orbit_term_count_formula": 504,
+      "raw_minimum_gap": 0.0,
+      "second_stage_multiplicity": 1,
+      "source_irrep_dimension": 27,
+      "source_partition": [
+        7,
+        2
+      ],
+      "sparse_yjm_nonzero_count": 13520,
+      "status": "finite-uniform-orbit-label-target-found",
+      "target_basis_orthogonality_residual": 1.3322676295501878e-15,
+      "target_eigenspace_relative_residual": 1.1847370764223445e-15,
+      "target_eigenspace_residual": 8.052622366330384e-10,
+      "target_yjm_label": 679697
+    },
+    {
+      "branch_dimension": 4,
+      "coherent_normalized_gap_already_proved": false,
+      "eigenvalues": [
+        103.99999999999997,
+        117.9999999999997
+      ],
+      "exact_integer_polynomial_candidate": true,
+      "extracted_tensor_dimension": 729,
+      "final_partition": [
+        6,
+        2,
+        1
+      ],
+      "finite_numerical_probe_only": true,
+      "first_stage_multiplicity": 2,
+      "integer_characteristic_polynomial_candidate": [
+        1,
+        -222,
+        12272
+      ],
+      "integer_polynomial_reconstruction_residual": 3.456079866737127e-11,
+      "integer_polynomial_relative_reconstruction_residual": 2.816231964420736e-15,
+      "intermediate_irrep_dimension": 27,
+      "intermediate_partition": [
+        7,
+        2
+      ],
+      "intermediate_tail": [
+        2
+      ],
+      "lcu_normalized_minimum_gap": 0.027777777777777242,
+      "minimum_yjm_label_separation": 4010,
+      "n": 9,
+      "nontrivial_multiplicity_fully_split": true,
+      "orbit_generator_id": "ORB-TC-INTERSECTION-2",
+      "orbit_term_count": 504,
+      "orbit_term_count_formula": 504,
+      "raw_minimum_gap": 13.99999999999973,
+      "second_stage_multiplicity": 2,
+      "source_irrep_dimension": 27,
+      "source_partition": [
+        7,
+        2
+      ],
+      "sparse_yjm_nonzero_count": 145001,
+      "status": "finite-uniform-orbit-label-target-found",
+      "target_basis_orthogonality_residual": 1.9191314902997587e-15,
+      "target_eigenspace_relative_residual": 4.223559784081585e-13,
+      "target_eigenspace_residual": 2.870740914560901e-07,
+      "target_yjm_label": 679697
+    },
+    {
+      "branch_dimension": 2,
+      "coherent_normalized_gap_already_proved": false,
+      "eigenvalues": [
+        99.10755601055025,
+        126.89244398945004
+      ],
+      "exact_integer_polynomial_candidate": true,
+      "extracted_tensor_dimension": 756,
+      "final_partition": [
+        6,
+        2,
+        1
+      ],
+      "finite_numerical_probe_only": true,
+      "first_stage_multiplicity": 1,
+      "integer_characteristic_polynomial_candidate": [
+        1,
+        -226,
+        12576
+      ],
+      "integer_polynomial_reconstruction_residual": 3.092281986027956e-11,
+      "integer_polynomial_relative_reconstruction_residual": 2.4588756250222295e-15,
+      "intermediate_irrep_dimension": 28,
+      "intermediate_partition": [
+        7,
+        1,
+        1
+      ],
+      "intermediate_tail": [
+        1,
+        1
+      ],
+      "lcu_normalized_minimum_gap": 0.05512874598988053,
+      "minimum_yjm_label_separation": 4010,
+      "n": 9,
+      "nontrivial_multiplicity_fully_split": true,
+      "orbit_generator_id": "ORB-TC-INTERSECTION-2",
+      "orbit_term_count": 504,
+      "orbit_term_count_formula": 504,
+      "raw_minimum_gap": 27.78488797889979,
+      "second_stage_multiplicity": 2,
+      "source_irrep_dimension": 27,
+      "source_partition": [
+        7,
+        2
+      ],
+      "sparse_yjm_nonzero_count": 140175,
+      "status": "finite-uniform-orbit-label-target-found",
+      "target_basis_orthogonality_residual": 2.1153969472150435e-15,
+      "target_eigenspace_relative_residual": 3.243482685612436e-13,
+      "target_eigenspace_residual": 2.2045854509627161e-07,
+      "target_yjm_label": 679697
+    },
+    {
+      "branch_dimension": 2,
+      "coherent_normalized_gap_already_proved": false,
+      "eigenvalues": [
+        90.07427841790245,
+        116.92572158209765
+      ],
+      "exact_integer_polynomial_candidate": true,
+      "extracted_tensor_dimension": 1296,
+      "final_partition": [
+        6,
+        2,
+        1
+      ],
+      "finite_numerical_probe_only": true,
+      "first_stage_multiplicity": 1,
+      "integer_characteristic_polynomial_candidate": [
+        1,
+        -207,
+        10532
+      ],
+      "integer_polynomial_reconstruction_residual": 9.094947017729282e-12,
+      "integer_polynomial_relative_reconstruction_residual": 8.63553647714516e-16,
+      "intermediate_irrep_dimension": 48,
+      "intermediate_partition": [
+        6,
+        3
+      ],
+      "intermediate_tail": [
+        3
+      ],
+      "lcu_normalized_minimum_gap": 0.05327667294483175,
+      "minimum_yjm_label_separation": 4010,
+      "n": 9,
+      "nontrivial_multiplicity_fully_split": true,
+      "orbit_generator_id": "ORB-TC-INTERSECTION-2",
+      "orbit_term_count": 504,
+      "orbit_term_count_formula": 504,
+      "raw_minimum_gap": 26.851443164195203,
+      "second_stage_multiplicity": 2,
+      "source_irrep_dimension": 27,
+      "source_partition": [
+        7,
+        2
+      ],
+      "sparse_yjm_nonzero_count": 454697,
+      "status": "finite-uniform-orbit-label-target-found",
+      "target_basis_orthogonality_residual": 9.05333717871791e-16,
+      "target_eigenspace_relative_residual": 4.935347261350201e-14,
+      "target_eigenspace_residual": 3.3545407274979473e-08,
+      "target_yjm_label": 679697
+    },
+    {
+      "branch_dimension": 8,
+      "coherent_normalized_gap_already_proved": true,
+      "eigenvalues": [
+        80.12310728525877,
+        94.8489236710165,
+        108.80829165306658,
+        129.21967739065852
+      ],
+      "exact_integer_polynomial_candidate": true,
+      "extracted_tensor_dimension": 2835,
+      "final_partition": [
+        6,
+        2,
+        1
+      ],
+      "finite_numerical_probe_only": true,
+      "first_stage_multiplicity": 2,
+      "integer_characteristic_polynomial_candidate": [
+        1,
+        -413,
+        63308,
+        -4269052,
+        106851552
+      ],
+      "integer_polynomial_reconstruction_residual": 4.470348358154297e-07,
+      "integer_polynomial_relative_reconstruction_residual": 4.183699978596752e-15,
+      "intermediate_irrep_dimension": 105,
+      "intermediate_partition": [
+        6,
+        2,
+        1
+      ],
+      "intermediate_tail": [
+        2,
+        1
+      ],
+      "lcu_normalized_minimum_gap": 0.027697158694543814,
+      "minimum_yjm_label_separation": 4010,
+      "n": 9,
+      "nontrivial_multiplicity_fully_split": true,
+      "orbit_generator_id": "ORB-TC-INTERSECTION-2",
+      "orbit_term_count": 504,
+      "orbit_term_count_formula": 504,
+      "raw_minimum_gap": 13.959367982050082,
+      "second_stage_multiplicity": 4,
+      "source_irrep_dimension": 27,
+      "source_partition": [
+        7,
+        2
+      ],
+      "sparse_yjm_nonzero_count": 1960593,
+      "status": "coherent-normalized-gap-already-proved",
+      "target_basis_orthogonality_residual": 3.9595537084963415e-15,
+      "target_eigenspace_relative_residual": 8.388986185750717e-13,
+      "target_eigenspace_residual": 5.701968743496205e-07,
+      "target_yjm_label": 679697
+    },
+    {
+      "branch_dimension": 2,
+      "coherent_normalized_gap_already_proved": false,
+      "eigenvalues": [
+        88.6353664816872,
+        138.36463351831287
+      ],
+      "exact_integer_polynomial_candidate": true,
+      "extracted_tensor_dimension": 1512,
+      "final_partition": [
+        6,
+        2,
+        1
+      ],
+      "finite_numerical_probe_only": true,
+      "first_stage_multiplicity": 1,
+      "integer_characteristic_polynomial_candidate": [
+        1,
+        -227,
+        12264
+      ],
+      "integer_polynomial_reconstruction_residual": 1.8189894035458565e-12,
+      "integer_polynomial_relative_reconstruction_residual": 1.4831942298971432e-16,
+      "intermediate_irrep_dimension": 56,
+      "intermediate_partition": [
+        6,
+        1,
+        1,
+        1
+      ],
+      "intermediate_tail": [
+        1,
+        1,
+        1
+      ],
+      "lcu_normalized_minimum_gap": 0.09866918062822554,
+      "minimum_yjm_label_separation": 4010,
+      "n": 9,
+      "nontrivial_multiplicity_fully_split": true,
+      "orbit_generator_id": "ORB-TC-INTERSECTION-2",
+      "orbit_term_count": 504,
+      "orbit_term_count_formula": 504,
+      "raw_minimum_gap": 49.72926703662567,
+      "second_stage_multiplicity": 2,
+      "source_irrep_dimension": 27,
+      "source_partition": [
+        7,
+        2
+      ],
+      "sparse_yjm_nonzero_count": 516566,
+      "status": "finite-uniform-orbit-label-target-found",
+      "target_basis_orthogonality_residual": 2.3388087198504742e-15,
+      "target_eigenspace_relative_residual": 7.688228594036956e-15,
+      "target_eigenspace_residual": 5.225665910681137e-09,
+      "target_yjm_label": 679697
+    },
+    {
+      "branch_dimension": 1,
+      "coherent_normalized_gap_already_proved": false,
+      "eigenvalues": [
+        92.00000000000016
+      ],
+      "exact_integer_polynomial_candidate": true,
+      "extracted_tensor_dimension": 1134,
+      "final_partition": [
+        6,
+        2,
+        1
+      ],
+      "finite_numerical_probe_only": true,
+      "first_stage_multiplicity": 1,
+      "integer_characteristic_polynomial_candidate": [
+        1,
+        -92
+      ],
+      "integer_polynomial_reconstruction_residual": 1.5631940186722204e-13,
+      "integer_polynomial_relative_reconstruction_residual": 1.69912393333937e-15,
+      "intermediate_irrep_dimension": 42,
+      "intermediate_partition": [
+        5,
+        4
+      ],
+      "intermediate_tail": [
+        4
+      ],
+      "lcu_normalized_minimum_gap": 0.0,
+      "minimum_yjm_label_separation": 4010,
+      "n": 9,
+      "nontrivial_multiplicity_fully_split": true,
+      "orbit_generator_id": "ORB-TC-INTERSECTION-2",
+      "orbit_term_count": 504,
+      "orbit_term_count_formula": 504,
+      "raw_minimum_gap": 0.0,
+      "second_stage_multiplicity": 1,
+      "source_irrep_dimension": 27,
+      "source_partition": [
+        7,
+        2
+      ],
+      "sparse_yjm_nonzero_count": 392367,
+      "status": "finite-uniform-orbit-label-target-found",
+      "target_basis_orthogonality_residual": 1.7763568394002505e-15,
+      "target_eigenspace_relative_residual": 7.742846634550646e-15,
+      "target_eigenspace_residual": 5.2627896289641705e-09,
+      "target_yjm_label": 679697
+    },
+    {
+      "branch_dimension": 3,
+      "coherent_normalized_gap_already_proved": false,
+      "eigenvalues": [
+        71.58144005647304,
+        95.40663175211951,
+        112.01192819140745
+      ],
+      "exact_integer_polynomial_candidate": true,
+      "extracted_tensor_dimension": 4374,
+      "final_partition": [
+        6,
+        2,
+        1
+      ],
+      "finite_numerical_probe_only": true,
+      "first_stage_multiplicity": 1,
+      "integer_characteristic_polynomial_candidate": [
+        1,
+        -279,
+        25534,
+        -764968
+      ],
+      "integer_polynomial_reconstruction_residual": 1.1641532182693481e-10,
+      "integer_polynomial_relative_reconstruction_residual": 1.521832571126306e-16,
+      "intermediate_irrep_dimension": 162,
+      "intermediate_partition": [
+        5,
+        3,
+        1
+      ],
+      "intermediate_tail": [
+        3,
+        1
+      ],
+      "lcu_normalized_minimum_gap": 0.03294701674461893,
+      "minimum_yjm_label_separation": 4010,
+      "n": 9,
+      "nontrivial_multiplicity_fully_split": true,
+      "orbit_generator_id": "ORB-TC-INTERSECTION-2",
+      "orbit_term_count": 504,
+      "orbit_term_count_formula": 504,
+      "raw_minimum_gap": 16.60529643928794,
+      "second_stage_multiplicity": 3,
+      "source_irrep_dimension": 27,
+      "source_partition": [
+        7,
+        2
+      ],
+      "sparse_yjm_nonzero_count": 4801016,
+      "status": "finite-uniform-orbit-label-target-found",
+      "target_basis_orthogonality_residual": 3.0642383922517934e-15,
+      "target_eigenspace_relative_residual": 4.9368217727074726e-14,
+      "target_eigenspace_residual": 3.355542948443951e-08,
+      "target_yjm_label": 679697
+    },
+    {
+      "branch_dimension": 2,
+      "coherent_normalized_gap_already_proved": false,
+      "eigenvalues": [
+        83.00000000000006,
+        103.99999999999993
+      ],
+      "exact_integer_polynomial_candidate": true,
+      "extracted_tensor_dimension": 3240,
+      "final_partition": [
+        6,
+        2,
+        1
+      ],
+      "finite_numerical_probe_only": true,
+      "first_stage_multiplicity": 1,
+      "integer_characteristic_polynomial_candidate": [
+        1,
+        -187,
+        8632
+      ],
+      "integer_polynomial_reconstruction_residual": 0.0,
+      "integer_polynomial_relative_reconstruction_residual": 0.0,
+      "intermediate_irrep_dimension": 120,
+      "intermediate_partition": [
+        5,
+        2,
+        2
+      ],
+      "intermediate_tail": [
+        2,
+        2
+      ],
+      "lcu_normalized_minimum_gap": 0.041666666666666415,
+      "minimum_yjm_label_separation": 4010,
+      "n": 9,
+      "nontrivial_multiplicity_fully_split": true,
+      "orbit_generator_id": "ORB-TC-INTERSECTION-2",
+      "orbit_term_count": 504,
+      "orbit_term_count_formula": 504,
+      "raw_minimum_gap": 20.999999999999872,
+      "second_stage_multiplicity": 2,
+      "source_irrep_dimension": 27,
+      "source_partition": [
+        7,
+        2
+      ],
+      "sparse_yjm_nonzero_count": 2637855,
+      "status": "finite-uniform-orbit-label-target-found",
+      "target_basis_orthogonality_residual": 9.101869424520468e-16,
+      "target_eigenspace_relative_residual": 3.267656076239678e-14,
+      "target_eigenspace_residual": 2.2210160320518806e-08,
+      "target_yjm_label": 679697
+    },
+    {
+      "branch_dimension": 1,
+      "coherent_normalized_gap_already_proved": false,
+      "eigenvalues": [
+        189.99999999999966
+      ],
+      "exact_integer_polynomial_candidate": true,
+      "extracted_tensor_dimension": 315,
+      "final_partition": [
+        7,
+        2,
+        1
+      ],
+      "finite_numerical_probe_only": true,
+      "first_stage_multiplicity": 1,
+      "integer_characteristic_polynomial_candidate": [
+        1,
+        -190
+      ],
+      "integer_polynomial_reconstruction_residual": 3.410605131648481e-13,
+      "integer_polynomial_relative_reconstruction_residual": 1.795055332446569e-15,
+      "intermediate_irrep_dimension": 9,
+      "intermediate_partition": [
+        9,
+        1
+      ],
+      "intermediate_tail": [
+        1
+      ],
+      "lcu_normalized_minimum_gap": 0.0,
+      "minimum_yjm_label_separation": 955,
+      "n": 10,
+      "nontrivial_multiplicity_fully_split": true,
+      "orbit_generator_id": "ORB-TC-INTERSECTION-2",
+      "orbit_term_count": 720,
+      "orbit_term_count_formula": 720,
+      "raw_minimum_gap": 0.0,
+      "second_stage_multiplicity": 1,
+      "source_irrep_dimension": 35,
+      "source_partition": [
+        8,
+        2
+      ],
+      "sparse_yjm_nonzero_count": 27652,
+      "status": "finite-uniform-orbit-label-target-found",
+      "target_basis_orthogonality_residual": 8.881784197001252e-16,
+      "target_eigenspace_relative_residual": 1.6541986100006082e-16,
+      "target_eigenspace_residual": 4.915843214687377e-10,
+      "target_yjm_label": 2971737
+    },
+    {
+      "branch_dimension": 4,
+      "coherent_normalized_gap_already_proved": false,
+      "eigenvalues": [
+        198.00000000000006,
+        214.0
+      ],
+      "exact_integer_polynomial_candidate": true,
+      "extracted_tensor_dimension": 1225,
+      "final_partition": [
+        7,
+        2,
+        1
+      ],
+      "finite_numerical_probe_only": true,
+      "first_stage_multiplicity": 2,
+      "integer_characteristic_polynomial_candidate": [
+        1,
+        -412,
+        42372
+      ],
+      "integer_polynomial_reconstruction_residual": 1.4551915228366852e-11,
+      "integer_polynomial_relative_reconstruction_residual": 3.434323427821876e-16,
+      "intermediate_irrep_dimension": 35,
+      "intermediate_partition": [
+        8,
+        2
+      ],
+      "intermediate_tail": [
+        2
+      ],
+      "lcu_normalized_minimum_gap": 0.022222222222222143,
+      "minimum_yjm_label_separation": 955,
+      "n": 10,
+      "nontrivial_multiplicity_fully_split": true,
+      "orbit_generator_id": "ORB-TC-INTERSECTION-2",
+      "orbit_term_count": 720,
+      "orbit_term_count_formula": 720,
+      "raw_minimum_gap": 15.999999999999943,
+      "second_stage_multiplicity": 2,
+      "source_irrep_dimension": 35,
+      "source_partition": [
+        8,
+        2
+      ],
+      "sparse_yjm_nonzero_count": 375319,
+      "status": "finite-uniform-orbit-label-target-found",
+      "target_basis_orthogonality_residual": 1.133742325605103e-15,
+      "target_eigenspace_relative_residual": 2.011421695951317e-14,
+      "target_eigenspace_residual": 5.977416276461279e-08,
+      "target_yjm_label": 2971737
+    },
+    {
+      "branch_dimension": 2,
+      "coherent_normalized_gap_already_proved": false,
+      "eigenvalues": [
+        192.37950064818637,
+        223.62049935181273
+      ],
+      "exact_integer_polynomial_candidate": true,
+      "extracted_tensor_dimension": 1260,
+      "final_partition": [
+        7,
+        2,
+        1
+      ],
+      "finite_numerical_probe_only": true,
+      "first_stage_multiplicity": 1,
+      "integer_characteristic_polynomial_candidate": [
+        1,
+        -416,
+        43020
+      ],
+      "integer_polynomial_reconstruction_residual": 1.8189894035458565e-10,
+      "integer_polynomial_relative_reconstruction_residual": 4.228241291366473e-15,
+      "intermediate_irrep_dimension": 36,
+      "intermediate_partition": [
+        8,
+        1,
+        1
+      ],
+      "intermediate_tail": [
+        1,
+        1
+      ],
+      "lcu_normalized_minimum_gap": 0.043390275977258835,
+      "minimum_yjm_label_separation": 955,
+      "n": 10,
+      "nontrivial_multiplicity_fully_split": true,
+      "orbit_generator_id": "ORB-TC-INTERSECTION-2",
+      "orbit_term_count": 720,
+      "orbit_term_count_formula": 720,
+      "raw_minimum_gap": 31.24099870362636,
+      "second_stage_multiplicity": 2,
+      "source_irrep_dimension": 35,
+      "source_partition": [
+        8,
+        2
+      ],
+      "sparse_yjm_nonzero_count": 362458,
+      "status": "finite-uniform-orbit-label-target-found",
+      "target_basis_orthogonality_residual": 2.449031463035052e-15,
+      "target_eigenspace_relative_residual": 3.565444969794638e-14,
+      "target_eigenspace_residual": 1.0595564738202609e-07,
+      "target_yjm_label": 2971737
+    },
+    {
+      "branch_dimension": 2,
+      "coherent_normalized_gap_already_proved": false,
+      "eigenvalues": [
+        175.23833696070662,
+        212.76166303929423
+      ],
+      "exact_integer_polynomial_candidate": true,
+      "extracted_tensor_dimension": 2625,
+      "final_partition": [
+        7,
+        2,
+        1
+      ],
+      "finite_numerical_probe_only": true,
+      "first_stage_multiplicity": 1,
+      "integer_characteristic_polynomial_candidate": [
+        1,
+        -388,
+        37284
+      ],
+      "integer_polynomial_reconstruction_residual": 1.6007106751203537e-10,
+      "integer_polynomial_relative_reconstruction_residual": 4.293291157387495e-15,
+      "intermediate_irrep_dimension": 75,
+      "intermediate_partition": [
+        7,
+        3
+      ],
+      "intermediate_tail": [
+        3
+      ],
+      "lcu_normalized_minimum_gap": 0.05211573066470502,
+      "minimum_yjm_label_separation": 955,
+      "n": 10,
+      "nontrivial_multiplicity_fully_split": true,
+      "orbit_generator_id": "ORB-TC-INTERSECTION-2",
+      "orbit_term_count": 720,
+      "orbit_term_count_formula": 720,
+      "raw_minimum_gap": 37.523326078587615,
+      "second_stage_multiplicity": 2,
+      "source_irrep_dimension": 35,
+      "source_partition": [
+        8,
+        2
+      ],
+      "sparse_yjm_nonzero_count": 1627520,
+      "status": "finite-uniform-orbit-label-target-found",
+      "target_basis_orthogonality_residual": 3.0790559994155506e-15,
+      "target_eigenspace_relative_residual": 1.231753767599982e-14,
+      "target_eigenspace_residual": 3.6604482460662676e-08,
+      "target_yjm_label": 2971737
+    },
+    {
+      "branch_dimension": 8,
+      "coherent_normalized_gap_already_proved": true,
+      "eigenvalues": [
+        163.7150953490937,
+        180.37261348091823,
+        201.45367795404354,
+        226.45861321594586
+      ],
+      "exact_integer_polynomial_candidate": true,
+      "extracted_tensor_dimension": 5600,
+      "final_partition": [
+        7,
+        2,
+        1
+      ],
+      "finite_numerical_probe_only": true,
+      "first_stage_multiplicity": 2,
+      "integer_characteristic_polynomial_candidate": [
+        1,
+        -772,
+        222390,
+        -28333728,
+        1347172992
+      ],
+      "integer_polynomial_reconstruction_residual": 1.0967254638671875e-05,
+      "integer_polynomial_relative_reconstruction_residual": 8.140940104796782e-15,
+      "intermediate_irrep_dimension": 160,
+      "intermediate_partition": [
+        7,
+        2,
+        1
+      ],
+      "intermediate_tail": [
+        2,
+        1
+      ],
+      "lcu_normalized_minimum_gap": 0.023135441849756293,
+      "minimum_yjm_label_separation": 955,
+      "n": 10,
+      "nontrivial_multiplicity_fully_split": true,
+      "orbit_generator_id": "ORB-TC-INTERSECTION-2",
+      "orbit_term_count": 720,
+      "orbit_term_count_formula": 720,
+      "raw_minimum_gap": 16.65751813182453,
+      "second_stage_multiplicity": 4,
+      "source_irrep_dimension": 35,
+      "source_partition": [
+        8,
+        2
+      ],
+      "sparse_yjm_nonzero_count": 6772566,
+      "status": "coherent-normalized-gap-already-proved",
+      "target_basis_orthogonality_residual": 9.78675238688045e-15,
+      "target_eigenspace_relative_residual": 4.8840135474846597e-14,
+      "target_eigenspace_residual": 1.451400376756142e-07,
+      "target_yjm_label": 2971737
+    },
+    {
+      "branch_dimension": 2,
+      "coherent_normalized_gap_already_proved": false,
+      "eigenvalues": [
+        171.6890111571929,
+        236.31098884280692
+      ],
+      "exact_integer_polynomial_candidate": true,
+      "extracted_tensor_dimension": 2940,
+      "final_partition": [
+        7,
+        2,
+        1
+      ],
+      "finite_numerical_probe_only": true,
+      "first_stage_multiplicity": 1,
+      "integer_characteristic_polynomial_candidate": [
+        1,
+        -408,
+        40572
+      ],
+      "integer_polynomial_reconstruction_residual": 3.637978807091713e-11,
+      "integer_polynomial_relative_reconstruction_residual": 8.966722880537595e-16,
+      "intermediate_irrep_dimension": 84,
+      "intermediate_partition": [
+        7,
+        1,
+        1,
+        1
+      ],
+      "intermediate_tail": [
+        1,
+        1,
+        1
+      ],
+      "lcu_normalized_minimum_gap": 0.08975274678557502,
+      "minimum_yjm_label_separation": 955,
+      "n": 10,
+      "nontrivial_multiplicity_fully_split": true,
+      "orbit_generator_id": "ORB-TC-INTERSECTION-2",
+      "orbit_term_count": 720,
+      "orbit_term_count_formula": 720,
+      "raw_minimum_gap": 64.62197768561401,
+      "second_stage_multiplicity": 2,
+      "source_irrep_dimension": 35,
+      "source_partition": [
+        8,
+        2
+      ],
+      "sparse_yjm_nonzero_count": 1765586,
+      "status": "finite-uniform-orbit-label-target-found",
+      "target_basis_orthogonality_residual": 8.324684743400652e-16,
+      "target_eigenspace_relative_residual": 2.0426925061664736e-15,
+      "target_eigenspace_residual": 6.070344900197638e-09,
+      "target_yjm_label": 2971737
+    },
+    {
+      "branch_dimension": 1,
+      "coherent_normalized_gap_already_proved": false,
+      "eigenvalues": [
+        178.0000000000002
+      ],
+      "exact_integer_polynomial_candidate": true,
+      "extracted_tensor_dimension": 3150,
+      "final_partition": [
+        7,
+        2,
+        1
+      ],
+      "finite_numerical_probe_only": true,
+      "first_stage_multiplicity": 1,
+      "integer_characteristic_polynomial_candidate": [
+        1,
+        -178
+      ],
+      "integer_polynomial_reconstruction_residual": 1.9895196601282805e-13,
+      "integer_polynomial_relative_reconstruction_residual": 1.117707674229371e-15,
+      "intermediate_irrep_dimension": 90,
+      "intermediate_partition": [
+        6,
+        4
+      ],
+      "intermediate_tail": [
+        4
+      ],
+      "lcu_normalized_minimum_gap": 0.0,
+      "minimum_yjm_label_separation": 955,
+      "n": 10,
+      "nontrivial_multiplicity_fully_split": true,
+      "orbit_generator_id": "ORB-TC-INTERSECTION-2",
+      "orbit_term_count": 720,
+      "orbit_term_count_formula": 720,
+      "raw_minimum_gap": 0.0,
+      "second_stage_multiplicity": 1,
+      "source_irrep_dimension": 35,
+      "source_partition": [
+        8,
+        2
+      ],
+      "sparse_yjm_nonzero_count": 2516846,
+      "status": "finite-uniform-orbit-label-target-found",
+      "target_basis_orthogonality_residual": 1.5543122344752192e-15,
+      "target_eigenspace_relative_residual": 2.1934204396339516e-15,
+      "target_eigenspace_residual": 6.51826867701648e-09,
+      "target_yjm_label": 2971737
+    },
+    {
+      "branch_dimension": 3,
+      "coherent_normalized_gap_already_proved": false,
+      "eigenvalues": [
+        153.37528948789142,
+        180.86684181600955,
+        199.7578686961011
+      ],
+      "exact_integer_polynomial_candidate": true,
+      "extracted_tensor_dimension": 11025,
+      "final_partition": [
+        7,
+        2,
+        1
+      ],
+      "finite_numerical_probe_only": true,
+      "first_stage_multiplicity": 1,
+      "integer_characteristic_polynomial_candidate": [
+        1,
+        -534,
+        94508,
+        -5541384
+      ],
+      "integer_polynomial_reconstruction_residual": 6.984919309616089e-08,
+      "integer_polynomial_relative_reconstruction_residual": 1.2605008621701887e-14,
+      "intermediate_irrep_dimension": 315,
+      "intermediate_partition": [
+        6,
+        3,
+        1
+      ],
+      "intermediate_tail": [
+        3,
+        1
+      ],
+      "lcu_normalized_minimum_gap": 0.02623753733346048,
+      "minimum_yjm_label_separation": 955,
+      "n": 10,
+      "nontrivial_multiplicity_fully_split": true,
+      "orbit_generator_id": "ORB-TC-INTERSECTION-2",
+      "orbit_term_count": 720,
+      "orbit_term_count_formula": 720,
+      "raw_minimum_gap": 18.891026880091545,
+      "second_stage_multiplicity": 3,
+      "source_irrep_dimension": 35,
+      "source_partition": [
+        8,
+        2
+      ],
+      "sparse_yjm_nonzero_count": 25254704,
+      "status": "finite-uniform-orbit-label-target-found",
+      "target_basis_orthogonality_residual": 8.862262030596017e-15,
+      "target_eigenspace_relative_residual": 2.2021447086483422e-14,
+      "target_eigenspace_residual": 6.544194910044499e-08,
+      "target_yjm_label": 2971737
+    },
+    {
+      "branch_dimension": 2,
+      "coherent_normalized_gap_already_proved": false,
+      "eigenvalues": [
+        166.00000000000037,
+        189.99999999999966
+      ],
+      "exact_integer_polynomial_candidate": true,
+      "extracted_tensor_dimension": 7875,
+      "final_partition": [
+        7,
+        2,
+        1
+      ],
+      "finite_numerical_probe_only": true,
+      "first_stage_multiplicity": 1,
+      "integer_characteristic_polynomial_candidate": [
+        1,
+        -356,
+        31540
+      ],
+      "integer_polynomial_reconstruction_residual": 1.4551915228366852e-11,
+      "integer_polynomial_relative_reconstruction_residual": 4.613796838416884e-16,
+      "intermediate_irrep_dimension": 225,
+      "intermediate_partition": [
+        6,
+        2,
+        2
+      ],
+      "intermediate_tail": [
+        2,
+        2
+      ],
+      "lcu_normalized_minimum_gap": 0.03333333333333235,
+      "minimum_yjm_label_separation": 955,
+      "n": 10,
+      "nontrivial_multiplicity_fully_split": true,
+      "orbit_generator_id": "ORB-TC-INTERSECTION-2",
+      "orbit_term_count": 720,
+      "orbit_term_count_formula": 720,
+      "raw_minimum_gap": 23.99999999999929,
+      "second_stage_multiplicity": 2,
+      "source_irrep_dimension": 35,
+      "source_partition": [
+        8,
+        2
+      ],
+      "sparse_yjm_nonzero_count": 13143421,
+      "status": "finite-uniform-orbit-label-target-found",
+      "target_basis_orthogonality_residual": 3.5426991224972815e-15,
+      "target_eigenspace_relative_residual": 1.1170735711654626e-14,
+      "target_eigenspace_residual": 3.319648863154538e-08,
+      "target_yjm_label": 2971737
+    }
+  ],
+  "shape_summaries": [
+    {
+      "all_audited_sizes_split": true,
+      "coherent_normalized_gap_proved": false,
+      "integer_polynomial_candidate_at_every_size": true,
+      "intermediate_tail": [
+        1
+      ],
+      "minimum_observed_lcu_normalized_gap": 0.0,
+      "minimum_observed_raw_gap": 0.0,
+      "proof_target": "multiplicity one; no internal label split required",
+      "second_stage_multiplicity": 1
+    },
+    {
+      "all_audited_sizes_split": true,
+      "coherent_normalized_gap_proved": false,
+      "integer_polynomial_candidate_at_every_size": true,
+      "intermediate_tail": [
+        2
+      ],
+      "minimum_observed_lcu_normalized_gap": 0.022222222222222143,
+      "minimum_observed_raw_gap": 11.99999999999995,
+      "proof_target": "derive exact characteristic polynomial and normalized root separation",
+      "second_stage_multiplicity": 2
+    },
+    {
+      "all_audited_sizes_split": true,
+      "coherent_normalized_gap_proved": false,
+      "integer_polynomial_candidate_at_every_size": true,
+      "intermediate_tail": [
+        1,
+        1
+      ],
+      "minimum_observed_lcu_normalized_gap": 0.043390275977258835,
+      "minimum_observed_raw_gap": 24.33105012119283,
+      "proof_target": "derive exact characteristic polynomial and normalized root separation",
+      "second_stage_multiplicity": 2
+    },
+    {
+      "all_audited_sizes_split": true,
+      "coherent_normalized_gap_proved": false,
+      "integer_polynomial_candidate_at_every_size": true,
+      "intermediate_tail": [
+        3
+      ],
+      "minimum_observed_lcu_normalized_gap": 0.05211573066470502,
+      "minimum_observed_raw_gap": 18.33030277982337,
+      "proof_target": "derive exact characteristic polynomial and normalized root separation",
+      "second_stage_multiplicity": 2
+    },
+    {
+      "all_audited_sizes_split": true,
+      "coherent_normalized_gap_proved": true,
+      "integer_polynomial_candidate_at_every_size": true,
+      "intermediate_tail": [
+        2,
+        1
+      ],
+      "minimum_observed_lcu_normalized_gap": 0.023135441849756293,
+      "minimum_observed_raw_gap": 9.495790204912467,
+      "proof_target": "already closed by exact stable-shape certificate",
+      "second_stage_multiplicity": 4
+    },
+    {
+      "all_audited_sizes_split": true,
+      "coherent_normalized_gap_proved": false,
+      "integer_polynomial_candidate_at_every_size": true,
+      "intermediate_tail": [
+        1,
+        1,
+        1
+      ],
+      "minimum_observed_lcu_normalized_gap": 0.08975274678557502,
+      "minimum_observed_raw_gap": 36.87817782917155,
+      "proof_target": "derive exact characteristic polynomial and normalized root separation",
+      "second_stage_multiplicity": 2
+    },
+    {
+      "all_audited_sizes_split": true,
+      "coherent_normalized_gap_proved": false,
+      "integer_polynomial_candidate_at_every_size": true,
+      "intermediate_tail": [
+        4
+      ],
+      "minimum_observed_lcu_normalized_gap": 0.0,
+      "minimum_observed_raw_gap": 0.0,
+      "proof_target": "multiplicity one; no internal label split required",
+      "second_stage_multiplicity": 1
+    },
+    {
+      "all_audited_sizes_split": true,
+      "coherent_normalized_gap_proved": false,
+      "integer_polynomial_candidate_at_every_size": true,
+      "intermediate_tail": [
+        3,
+        1
+      ],
+      "minimum_observed_lcu_normalized_gap": 0.02623753733346048,
+      "minimum_observed_raw_gap": 14.321688227147554,
+      "proof_target": "derive exact characteristic polynomial and normalized root separation",
+      "second_stage_multiplicity": 3
+    },
+    {
+      "all_audited_sizes_split": true,
+      "coherent_normalized_gap_proved": false,
+      "integer_polynomial_candidate_at_every_size": true,
+      "intermediate_tail": [
+        2,
+        2
+      ],
+      "minimum_observed_lcu_normalized_gap": 0.03333333333333235,
+      "minimum_observed_raw_gap": 18.0,
+      "proof_target": "derive exact characteristic polynomial and normalized root separation",
+      "second_stage_multiplicity": 2
+    }
+  ],
+  "status": "uniform-finite-label-targets-found-six-all-n-proofs-open",
+  "summary": "The same support-intersection-two orbit Hamiltonian split all 21 audited nontrivial blocks across n=8..10, yielding finite integer-polynomial targets for all 6 previously unproved shape families; no new all-n or coherent label theorem follows."
+}

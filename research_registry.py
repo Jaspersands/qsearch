@@ -517,6 +517,8 @@ def seed_candidate_records() -> tuple[list[CandidateRecord], list[ExperimentReco
                 "EXP-COSET-RESTRICTED-RACAH-CONTROL",
                 "EXP-COSET-STABLE-COHERENT-LABEL-CERTIFICATE",
                 "EXP-COSET-STABLE-SUBSPACE-TRANSITION-PROBE",
+                "EXP-COSET-STABLE-COMPLEMENTARY-SECTOR-PROBE",
+                "EXP-COSET-STABLE-SHAPE-FAMILY-CERTIFICATE",
                 "EXP-CODE-TENSOR-MEASUREMENT",
             ],
             notes="High upside but high no-go risk; registry keeps the no-go analysis mandatory.",
@@ -6743,6 +6745,196 @@ def seed_candidate_records() -> tuple[list[CandidateRecord], list[ExperimentReco
                 "Classify which complementary intermediate partitions receive the leaked mass.",
                 "Extend coherent label and gap certificates to the highest-weight complementary sectors.",
                 "Do not synthesize a decoder until the complete transition support is covered.",
+            ],
+        ),
+        ExperimentRecord(
+            id="EXP-COSET-STABLE-COMPLEMENTARY-SECTOR-PROBE",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Complete finite stable Racah leakage-support resolution",
+            status="planned",
+            hypothesis=(
+                "Stable-branch leakage may concentrate in one complementary intermediate partition, allowing a "
+                "small extension of the scoped coherent label family."
+            ),
+            protocol=(
+                "Enumerate every eta with g(W,W,eta)g(eta,W,xi)>0, construct both intertwiner stages from Coxeter "
+                "invariant nullspaces, and evaluate Tr(P_left,eta P_right,xi) with the exact rank-eight sum rule."
+            ),
+            positive_signal=(
+                "One complementary eta captures all leakage across growing n, reducing all-sector recoupling to a "
+                "constant number of stable operator families."
+            ),
+            falsifiers=[
+                "The projector contributions do not sum to the right stable branch rank eight.",
+                "Every complementary intermediate sector has nonzero transition support.",
+                "No single complementary sector captures most leaked mass.",
+                "Finite rational candidates are promoted as exact all-n support formulas.",
+            ],
+            metrics=[
+                "scaling_point_count",
+                "complete_projector_resolution_count",
+                "minimum_intermediate_sector_count",
+                "minimum_nonzero_complementary_sector_count",
+                "maximum_single_complementary_leakage_share",
+                "minimum_effective_complementary_sector_count",
+                "single_complement_repair_count",
+            ],
+            dependencies=[
+                "coset_stable_complementary_sector_probe.py",
+                "coset_stable_subspace_transition_probe.py",
+                "Kronecker character multiplicities",
+                "Coxeter invariant intertwiners",
+            ],
+            next_actions=[
+                "Prove the projector contributions as exact rational functions of n.",
+                "Group complementary sectors into finitely many stable partition shapes.",
+                "Search for one bounded-support operator family per stable shape and prove normalized gaps.",
+                "Quantify whether complete sector labels expose hidden-involution information.",
+            ],
+        ),
+        ExperimentRecord(
+            id="EXP-COSET-STABLE-SHAPE-FAMILY-CERTIFICATE",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Exact nine-shape stable Racah family certificate",
+            status="planned",
+            hypothesis=(
+                "The finite complementary-sector support stabilizes to a bounded padded-partition family whose "
+                "Kronecker multiplicities can be proved exactly for all n."
+            ),
+            protocol=(
+                "Reconstruct every tail-size-at-most-four irreducible character polynomial from a full-rank exact "
+                "witness system, evaluate W^2 eta and eta W xi inner products by factorial cycle moments, and close "
+                "n=8 directly with exact characters."
+            ),
+            positive_signal=(
+                "Exactly nine padded shapes with fixed multiplicity pairs cover the final-xi component for every "
+                "n>=9 and the n=8 endpoint, reducing coherent synthesis to a constant family."
+            ),
+            falsifiers=[
+                "The character-polynomial witness system is rank deficient.",
+                "Exact character verification fails beyond the reconstruction rows.",
+                "Factorial cycle moments disagree with direct Kronecker coefficients.",
+                "The n=8 endpoint has an extra or missing intermediate shape.",
+                "A bounded shape list is promoted as a coherent transform or decoder.",
+            ],
+            metrics=[
+                "exact_stable_shape_family_theorem_count",
+                "stable_intermediate_shape_count",
+                "exact_character_polynomial_count",
+                "all_n_multiplicity_formula_count",
+                "stable_final_total_multiplicity",
+                "all_n_sector_exhaustion_theorem_count",
+                "nontrivial_second_stage_shape_count",
+                "unresolved_coherent_second_stage_shape_count",
+            ],
+            dependencies=[
+                "coset_stable_shape_family_certificate.py",
+                "stable irreducible character-polynomial theorem",
+                "factorial cycle-count moment identity",
+                "symmetric_character.py",
+            ],
+            next_actions=[
+                "Construct bounded-support second-stage Hamiltonians for the six unresolved nontrivial shapes.",
+                "Prove exact characteristic polynomials and normalized gaps shape by shape.",
+                "Compile the nine labels into left/right projective measurements.",
+                "Test complete label outcomes for hidden-involution information against classical baselines.",
+            ],
+        ),
+        ExperimentRecord(
+            id="EXP-COSET-STABLE-SHAPE-LABEL-PROBE",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Uniform stable-shape Racah label probe",
+            status="planned",
+            hypothesis=(
+                "One bounded-support orbit Hamiltonian may split every nontrivial second-stage block in the "
+                "proved nine-shape stable family, reducing six operator searches to six exact spectral proofs."
+            ),
+            protocol=(
+                "For every stable intermediate shape and n=8,9,10, isolate one final-xi tableau block with a "
+                "separating YJM functional and restrict the support-intersection-two transposition/three-cycle "
+                "orbit Hamiltonian without materializing its dense tensor matrix."
+            ),
+            positive_signal=(
+                "The same n(n-1)(n-2)-term operator has simple spectra and integer characteristic-polynomial "
+                "candidates on every nontrivial shape at every audited size."
+            ),
+            falsifiers=[
+                "A nontrivial stable-shape multiplicity block remains degenerate.",
+                "The finite spectra fail integer characteristic-polynomial reconstruction.",
+                "YJM extraction residuals are too large to identify the target block.",
+                "Finite splitting is promoted as an exact all-n gap or coherent circuit.",
+                "Complete shape labels are promoted as a hidden-involution decoder.",
+            ],
+            metrics=[
+                "stable_shape_count",
+                "nontrivial_second_stage_shape_count",
+                "finite_nontrivial_block_count",
+                "finite_fully_split_nontrivial_block_count",
+                "unproved_shape_finite_target_count",
+                "minimum_observed_unproved_shape_lcu_normalized_gap",
+                "new_exact_all_n_characteristic_polynomial_count",
+                "new_normalized_gap_theorem_count",
+                "new_coherent_shape_label_count",
+            ],
+            dependencies=[
+                "coset_stable_shape_label_probe.py",
+                "coset_stable_shape_family_certificate.py",
+                "coset_sparse_stable_gap_probe.py",
+                "Young--Jucys--Murphy target extraction",
+            ],
+            next_actions=[
+                "Derive exact trace moments and characteristic polynomials for each of the six open shapes.",
+                "Prove all-n normalized root separation shape by shape.",
+                "Compile the common orbit Hamiltonian with uniform coherent SELECT/PREPARE primitives.",
+                "Construct complete left/right transition circuits and test decoder information.",
+            ],
+        ),
+        ExperimentRecord(
+            id="EXP-COSET-STABLE-SHAPE-TRACE-CERTIFICATE",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Exact stable-shape Racah trace certificate",
+            status="planned",
+            hypothesis=(
+                "The marked-cycle trace proof for the stable multiplicity-four block extends uniformly to every "
+                "intermediate shape in the exact nine-shape family."
+            ),
+            protocol=(
+                "Convert each reconstructed stable irreducible character polynomial to falling cycle counts, "
+                "evaluate E[chi_xi(g)chi_eta(g tau)chi_W(g c)] by exact partial-permutation equality patterns, "
+                "and close the n=8 endpoint by a direct exact character sum."
+            ),
+            positive_signal=(
+                "Nine exact cubic-or-lower trace formulas hold for every n>=8 and agree with every finite sparse "
+                "spectral target, proving the first characteristic coefficient for all six open labels."
+            ),
+            falsifiers=[
+                "A shifted character correlation fails to simplify to a polynomial.",
+                "The exact n=8 character sum disagrees with the symbolic formula.",
+                "A finite sparse trace disagrees with an exact formula.",
+                "One trace coefficient is promoted as a complete spectrum or gap theorem.",
+                "Exact spectral data are promoted as a coherent circuit or decoder.",
+            ],
+            metrics=[
+                "exact_all_n_shape_trace_theorem_count",
+                "new_exact_open_shape_trace_theorem_count",
+                "exact_n8_endpoint_count",
+                "finite_probe_trace_comparison_count",
+                "finite_probe_trace_agreement_count",
+                "remaining_open_shape_characteristic_coefficient_family_count",
+                "new_exact_complete_characteristic_polynomial_count",
+                "new_normalized_gap_theorem_count",
+            ],
+            dependencies=[
+                "coset_stable_shape_trace_certificate.py",
+                "coset_stable_shape_family_certificate.py",
+                "coset_stable_trace_certificate.py",
+                "exact stable character polynomials",
+            ],
+            next_actions=[
+                "Prove determinants for the five open multiplicity-two shapes.",
+                "Prove second and third characteristic coefficients for the multiplicity-three (3,1) tail.",
+                "Prove normalized root separation for all six shapes.",
+                "Compile the common orbit LCU and complete the coupling-tree transition.",
             ],
         ),
         ExperimentRecord(

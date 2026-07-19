@@ -147,6 +147,18 @@ COSET_STABLE_COHERENT_LABEL_PATH = Path(
 COSET_STABLE_SUBSPACE_TRANSITION_PATH = Path(
     "research/representation/coset_stable_subspace_transition_probe.json"
 )
+COSET_STABLE_COMPLEMENTARY_SECTOR_PATH = Path(
+    "research/representation/coset_stable_complementary_sector_probe.json"
+)
+COSET_STABLE_SHAPE_FAMILY_PATH = Path(
+    "research/representation/coset_stable_shape_family_certificate.json"
+)
+COSET_STABLE_SHAPE_LABEL_PATH = Path(
+    "research/representation/coset_stable_shape_label_probe.json"
+)
+COSET_STABLE_SHAPE_TRACE_PATH = Path(
+    "research/representation/coset_stable_shape_trace_certificate.json"
+)
 COSET_RECOUPLING_CAPABILITY_PATH = Path(
     "research/representation/coset_recoupling_capability_ledger.json"
 )
@@ -695,6 +707,50 @@ def lemma_templates(candidate: dict[str, Any]) -> list[LemmaRecord]:
         except (json.JSONDecodeError, OSError):
             stable_subspace_transition = {}
         stable_subspace_transition_metrics = stable_subspace_transition.get(
+            "headline_metrics", {}
+        )
+        try:
+            stable_complementary_sectors = (
+                json.loads(COSET_STABLE_COMPLEMENTARY_SECTOR_PATH.read_text())
+                if COSET_STABLE_COMPLEMENTARY_SECTOR_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            stable_complementary_sectors = {}
+        stable_complementary_sector_metrics = stable_complementary_sectors.get(
+            "headline_metrics", {}
+        )
+        try:
+            stable_shape_family = (
+                json.loads(COSET_STABLE_SHAPE_FAMILY_PATH.read_text())
+                if COSET_STABLE_SHAPE_FAMILY_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            stable_shape_family = {}
+        stable_shape_family_metrics = stable_shape_family.get(
+            "headline_metrics", {}
+        )
+        try:
+            stable_shape_labels = (
+                json.loads(COSET_STABLE_SHAPE_LABEL_PATH.read_text())
+                if COSET_STABLE_SHAPE_LABEL_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            stable_shape_labels = {}
+        stable_shape_label_metrics = stable_shape_labels.get(
+            "headline_metrics", {}
+        )
+        try:
+            stable_shape_traces = (
+                json.loads(COSET_STABLE_SHAPE_TRACE_PATH.read_text())
+                if COSET_STABLE_SHAPE_TRACE_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            stable_shape_traces = {}
+        stable_shape_trace_metrics = stable_shape_traces.get(
             "headline_metrics", {}
         )
         try:
@@ -1263,6 +1319,123 @@ def lemma_templates(candidate: dict[str, Any]) -> list[LemmaRecord]:
                     falsification_test=(
                         "Compute the gauge-invariant projector overlap Tr(P_left P_right); any value below the branch "
                         "rank eight proves that the one-channel branch is not closed."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-COSET-STABLE-RACAH-SINGLE-COMPLEMENT-REPAIR",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "One complementary intermediate partition captures all leakage from the right stable branch, "
+                        "so a constant one-sector extension closes the restricted Racah support."
+                    ),
+                    depends_on=["PO-MEASUREMENT", "PO-COMPLEXITY", "PO-NO-GO"],
+                    status=(
+                        "refuted-finite-leakage-spans-all-complementary-sectors"
+                        if int(
+                            stable_complementary_sector_metrics.get(
+                                "minimum_nonzero_complementary_sector_count", 0
+                            )
+                            or 0
+                        )
+                        > 1
+                        else "blocked-complementary-sector-resolution-missing"
+                    ),
+                    falsification_test=(
+                        "Resolve Tr(P_left,eta P_right,xi) over every character-allowed eta and verify the rank-eight "
+                        "sum rule; nonzero support on multiple eta refutes a one-sector repair."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-COSET-STABLE-RACAH-NINE-SHAPE-FAMILY",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "Exactly nine padded intermediate partition shapes, with fixed first/second Kronecker "
+                        "multiplicities and total final multiplicity 25, cover the stable final-xi sector for n>=9."
+                    ),
+                    depends_on=["PO-MEASUREMENT", "PO-COMPLEXITY", "PO-NO-GO"],
+                    status=(
+                        "proved-exact-nine-shape-stable-sector-family"
+                        if int(
+                            stable_shape_family_metrics.get(
+                                "exact_stable_shape_family_theorem_count", 0
+                            )
+                            or 0
+                        )
+                        > 0
+                        else "blocked-stable-shape-family-certificate-missing"
+                    ),
+                    falsification_test=(
+                        "Verify full-rank bounded-degree character-polynomial witnesses, exact cycle-type checks, "
+                        "factorial moment multiplicities, total multiplicity 25, and the direct n=8 endpoint."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-COSET-STABLE-RACAH-UNIFORM-SHAPE-LABEL",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "The same bounded-support transposition/three-cycle orbit Hamiltonian has a simple, "
+                        "inverse-polynomial normalized spectrum on every nontrivial second-stage block in the "
+                        "exact nine-shape stable family and admits a coherent polynomial implementation."
+                    ),
+                    depends_on=["PO-MEASUREMENT", "PO-COMPLEXITY", "PO-NO-GO"],
+                    status=(
+                        "proved-uniform-nine-shape-coherent-label-family"
+                        if int(
+                            stable_shape_label_metrics.get(
+                                "new_coherent_shape_label_count", 0
+                            )
+                            or 0
+                        )
+                        >= 6
+                        else (
+                            "blocked-six-exact-traces-proved-seven-coefficients-gaps-and-circuits-open"
+                            if int(
+                                stable_shape_trace_metrics.get(
+                                    "new_exact_open_shape_trace_theorem_count", 0
+                                )
+                                or 0
+                            )
+                            == 6
+                            else "blocked-six-finite-spectral-targets-found-exact-gaps-and-circuits-open"
+                            if int(
+                                stable_shape_label_metrics.get(
+                                    "unproved_shape_finite_target_count", 0
+                                )
+                                or 0
+                            )
+                            == 6
+                            else "blocked-uniform-shape-label-probe-missing"
+                        )
+                    ),
+                    falsification_test=(
+                        "For every one of the six open nontrivial tails, derive the exact all-n characteristic "
+                        "polynomial, prove normalized root separation, and compile the common orbit LCU; finite "
+                        "floating spectra satisfy none of those proof obligations."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-COSET-STABLE-RACAH-NINE-SHAPE-TRACES",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "The support-intersection-two orbit Hamiltonian has an exact cubic-or-lower all-n trace "
+                        "polynomial on every second-stage block in the exact nine-shape stable family."
+                    ),
+                    depends_on=["PO-MEASUREMENT", "PO-COMPLEXITY", "PO-NO-GO"],
+                    status=(
+                        "proved-exact-all-nine-stable-shape-traces"
+                        if int(
+                            stable_shape_trace_metrics.get(
+                                "exact_all_n_shape_trace_theorem_count", 0
+                            )
+                            or 0
+                        )
+                        == 9
+                        else "blocked-nine-shape-trace-certificate-missing"
+                    ),
+                    falsification_test=(
+                        "Audit falling-cycle conversion, every marked equality-pattern sum, exact S_8 endpoints, "
+                        "and agreement with all finite sparse traces; no interpolation or floating arithmetic may "
+                        "enter the theorem."
                     ),
                 ),
                 LemmaRecord(

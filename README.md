@@ -668,6 +668,45 @@ but increasingly ill-conditioned. This is finite scaling evidence, not an
 all-`n` leakage theorem; it cuts the single-channel associator direction and
 makes complementary-sector classification the next proof target.
 
+That classification is now complete numerically at `n=7,8`. The projector
+contributions sum to rank eight within `6.4e-14` and `3.6e-15`. Every
+character-allowed complementary partition has nonzero support: seven sectors
+at `n=7` and eight stable-shape sectors at `n=8`. The largest sector captures
+only `26.3%` of leaked mass, with effective support over more than six sectors.
+This refutes a one-complement repair but also reveals a bounded nine-shape
+stable family for the audited final irrep. The next constructive target is one
+exact transition formula and one coherent gapped label primitive for each
+shape, not unrestricted partition enumeration.
+
+The bounded shape list is now exact rather than an extrapolation. Full-rank
+irreducible character-polynomial witnesses and factorial cycle moments prove
+the nine first/second multiplicity pairs for every `n>=9`; direct characters
+close `n=8`. Independently, `E[chi_W^3 chi_xi]=25`, exactly equal to the sum of
+the nine branch dimensions, so no omitted positive intermediate sector can
+exist. Seven shapes have nontrivial second-stage multiplicity and only the
+`(n-3,2,1)` shape currently has a coherent normalized-gap label, leaving six
+specific operator families rather than an undefined all-partition problem.
+
+The first shape-resolved operator pass supplies a common target for all six.
+At `n=8,9,10`, the same support-intersection-two transposition/three-cycle
+orbit Hamiltonian splits every one of the 21 audited nontrivial blocks. Every
+restricted characteristic polynomial reconstructs to integer coefficients,
+and the smallest observed LCU-normalized gap among the six open shapes is
+positive. This is useful compression of the proof search, not a new theorem:
+the six exact all-`n` characteristic polynomials, normalized root gaps, and
+coherent LCU implementations remain unproved, as do the coupling-tree
+transition and hidden-involution decoder.
+
+The first exact coefficient pass is now complete across the family. Each
+stable character polynomial is converted to falling cycle counts, and exact
+partial-permutation equality patterns evaluate
+`n(n-1)(n-2) E[chi_xi(g) chi_eta(g tau) chi_W(g c)]`. Direct `S_8` character
+sums close the only symbolic endpoint. This proves all nine trace polynomials,
+including the first characteristic coefficient for all six open nontrivial
+shapes, with 27/27 agreement against the `n=8,9,10` sparse blocks. Five
+multiplicity-two determinants and two higher multiplicity-three coefficients
+remain before complete shape spectra can be claimed.
+
 ```bash
 python qsearch.py coset-racah-gap-scaling
 python qsearch.py coset-racah-sparse-gap --n-values 7,8,9,10,11
@@ -679,6 +718,10 @@ python qsearch.py coset-racah-fourth-moment-proof
 python qsearch.py coset-racah-root-separation-proof
 python qsearch.py coset-racah-coherent-label-proof
 python qsearch.py coset-racah-stable-transition --n-values 7,8,9,10
+python qsearch.py coset-racah-complementary-sectors --n-values 7,8
+python qsearch.py coset-racah-stable-shape-proof
+python qsearch.py coset-racah-stable-shape-labels --n-values 8,9,10
+python qsearch.py coset-racah-stable-shape-traces
 ```
 
 The capability ledger separates the solved `S_n` QFT, Schur-Weyl transforms,

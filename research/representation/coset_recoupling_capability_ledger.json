@@ -111,6 +111,22 @@
       "uniform_polynomial_gate_complexity_proved": true
     },
     {
+      "availability": "proved-exact-structural-not-circuit",
+      "classical_comparison": "The certificate is an exact classical character-polynomial calculation and makes no separation claim.",
+      "handles_overlapping_k_copy_associators": false,
+      "id": "CAP-STABLE-NINE-SHAPE-SECTOR-CLASSIFICATION",
+      "literature_ids": [
+        "church-ellenberg-farb-fi-modules-2015",
+        "project-coset-stable-shape-family-certificate"
+      ],
+      "primitive": "Exact bounded intermediate-sector family for one stable three-copy final irrep",
+      "proved_scope": "For W_n=(n-2,2) and final xi_n=(n-3,2,1), exactly nine padded intermediate shapes with fixed multiplicity pairs exhaust the final component for every n>=9, with n=8 closed exactly.",
+      "resolves_internal_sn_kronecker_basis": false,
+      "scope_limit": "Six nontrivial second-stage shape families still lack coherent normalized-gap labels; exact support does not synthesize their transitions or decode the hidden involution.",
+      "supplies_hidden_involution_decoder": false,
+      "uniform_polynomial_gate_complexity_proved": false
+    },
+    {
       "availability": "counting-class-upper-bound-not-bqp-evaluation",
       "classical_comparison": "#BQP membership is not an efficient exact scalar-evaluation or basis-construction algorithm.",
       "handles_overlapping_k_copy_associators": false,
@@ -194,6 +210,7 @@
     "classical_superpolynomial_separation_proved": false,
     "diagonal_jm_label_transform_polynomial_proved": true,
     "diagonal_jm_labels_resolve_multiplicity_basis": false,
+    "exact_bounded_stable_sector_family_proved": true,
     "exact_holevo_copy_budget_proved": true,
     "gapped_kronecker_multiplicity_transform_polynomial_proved": false,
     "hidden_involution_decoder_proved": false,
@@ -207,7 +224,7 @@
     "speedup_claim_allowed": false,
     "stable_channel_gapped_multiplicity_label_polynomial_proved": true
   },
-  "created_at": "2026-07-18T22:43:08.329488+00:00",
+  "created_at": "2026-07-18T23:59:21.702001+00:00",
   "false_transfer_rules": [
     {
       "from": "exact Holevo/Fano copy lower bound",
@@ -257,6 +274,7 @@
     "Schur-Weyl Clebsch-Gordan circuits do not automatically solve internal Specht tensor products.",
     "Diagonal YJM tableau labels retain exact Kronecker multiplicity degeneracy.",
     "One stable gapped multiplicity label cannot be transferred to unaudited sectors or overlapping trees.",
+    "An exact nine-shape sector list does not supply the six missing nontrivial coherent label families.",
     "Many restricted multiplicity speedup candidates have polynomial classical algorithms.",
     "Finite growth of dimensions or multiplicities is not a circuit lower bound."
   ],
@@ -469,9 +487,10 @@
   ],
   "headline_metrics": {
     "bounded_support_commutant_block_encoding_poly_proof_count": 1,
-    "capability_count": 12,
+    "capability_count": 13,
     "diagonal_jm_label_transform_poly_proof_count": 1,
     "exact_holevo_copy_budget_theorem_count": 1,
+    "exact_stable_nine_shape_sector_classification_count": 1,
     "gapped_kronecker_multiplicity_transform_poly_proof_count": 0,
     "growth_record_count": 7,
     "hidden_involution_decoder_count": 0,
@@ -525,5 +544,5 @@
     }
   ],
   "status": "known-primitives-separated-from-open-recoupling-and-decoder",
-  "summary": "Classified 12 representation primitives and exact finite Kronecker growth through n=10 without transferring solved QFT/counting results to the open decoder."
+  "summary": "Classified 13 representation primitives and exact finite Kronecker growth through n=10 without transferring solved QFT/counting results to the open decoder."
 }
