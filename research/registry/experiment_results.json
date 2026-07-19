@@ -2677,7 +2677,7 @@
       "coset_recoupling_capability_ledger": "research/representation/coset_recoupling_capability_ledger.json"
     },
     "candidate_id": "CODE-COSET-COLLECTIVE",
-    "created_at": "2026-07-18T23:59:21.702001+00:00",
+    "created_at": "2026-07-19T02:29:33.361277+00:00",
     "experiment_id": "EXP-COSET-RECOUPLING-CAPABILITY-LEDGER",
     "falsifiers_triggered": [
       "The S_n QFT is already polynomial and cannot be presented as the missing breakthrough.",
@@ -2685,8 +2685,8 @@
       "#BQP multiplicity counting does not construct a coherent Kronecker basis.",
       "Schur-Weyl Clebsch-Gordan circuits do not automatically solve internal Specht tensor products.",
       "Diagonal YJM tableau labels retain exact Kronecker multiplicity degeneracy.",
-      "One stable gapped multiplicity label cannot be transferred to unaudited sectors or overlapping trees.",
-      "An exact nine-shape sector list does not supply the six missing nontrivial coherent label families.",
+      "Seven stable shape-local labels do not construct the missing coherent channel-routing isometry.",
+      "Shape-local spectral labels do not transport multiplicity amplitudes between overlapping coupling trees.",
       "Many restricted multiplicity speedup candidates have polynomial classical algorithms.",
       "Finite growth of dimensions or multiplicities is not a circuit lower bound."
     ],
@@ -2709,6 +2709,9 @@
       "proved_polynomial_primitive_count": 7,
       "restricted_multiplicity_classical_match_count": 1,
       "stable_channel_gapped_label_transform_poly_proof_count": 1,
+      "stable_shape_channel_routing_circuit_count": 0,
+      "stable_shape_coupling_tree_transition_circuit_count": 0,
+      "stable_shape_local_gapped_label_transform_count": 7,
       "unresolved_required_capability_count": 3
     },
     "status": "known-primitives-separated-from-open-recoupling-and-decoder",
@@ -3063,6 +3066,102 @@
   },
   {
     "artifacts": {
+      "coset_stable_shape_coherent_label_certificate": "research/representation/coset_stable_shape_coherent_label_certificate.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-07-19T02:23:13.090733+00:00",
+    "experiment_id": "EXP-COSET-STABLE-SHAPE-COHERENT-LABEL-CERTIFICATE",
+    "falsifiers_triggered": [
+      "The theorem assumes a state already routed into a declared intermediate/final channel.",
+      "Shape-local phase estimation does not change coupling trees.",
+      "Seven coherent labels are not a complete Racah associator.",
+      "No hidden-involution decoder or classical separation follows from local labels."
+    ],
+    "id": "RESULT-EXP-COSET-STABLE-SHAPE-COHERENT-LABEL-CERTIFICATE-LATEST",
+    "metrics": {
+      "all_nontrivial_stable_shape_coherent_label_count": 7,
+      "channel_routing_circuit_count": 0,
+      "common_shape_controlled_block_encoding_count": 1,
+      "complete_racah_associator_count": 0,
+      "coupling_tree_transition_circuit_count": 0,
+      "hidden_involution_decoder_count": 0,
+      "maximum_multiplicity_dimension": 4,
+      "maximum_phase_estimation_query_exponent": 53,
+      "new_coherent_shape_label_count": 6,
+      "nontrivial_stable_shape_count": 7
+    },
+    "status": "all-seven-shape-local-coherent-labels-proved-routing-transition-decoder-open",
+    "summary": "Extended the common ordered-triple block encoding and exact gaps to coherent labels on all seven nontrivial stable shapes; routing, reassociation, decoding, and separation remain open."
+  },
+  {
+    "artifacts": {
+      "coset_stable_shape_cubic_determinant_certificate": "research/representation/coset_stable_shape_cubic_determinant_certificate.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-07-19T01:49:40.721288+00:00",
+    "experiment_id": "EXP-COSET-STABLE-SHAPE-CUBIC-DETERMINANT-CERTIFICATE",
+    "falsifiers_triggered": [
+      "Exact characteristic polynomials do not imply inverse-polynomial normalized root gaps.",
+      "Exact spectral formulas do not compile the common orbit Hamiltonian coherently.",
+      "Shape-wise eigenlabels do not implement the left/right associator transition.",
+      "No hidden-involution information or classical separation follows from spectral completeness alone."
+    ],
+    "id": "RESULT-EXP-COSET-STABLE-SHAPE-CUBIC-DETERMINANT-CERTIFICATE-LATEST",
+    "metrics": {
+      "complete_racah_associator_count": 0,
+      "exact_complete_stable_shape_polynomial_count": 9,
+      "exact_cubic_shape_determinant_theorem_count": 1,
+      "exact_endpoint_verified_count": 9,
+      "finite_sparse_determinant_comparison_count": 3,
+      "finite_sparse_determinant_match_count": 3,
+      "hidden_involution_decoder_count": 0,
+      "literal_symbolic_minimum_n": 17,
+      "maximum_active_support_size": 9,
+      "new_coherent_shape_label_count": 0,
+      "new_exact_complete_cubic_shape_polynomial_count": 1,
+      "new_normalized_gap_theorem_count": 0,
+      "nonzero_pattern_coefficient_count": 4493,
+      "raw_canonical_pattern_count": 2212218888,
+      "raw_relative_term_type_count": 18144,
+      "relative_orbit_class_count": 129,
+      "remaining_open_shape_characteristic_coefficient_family_count": 0
+    },
+    "status": "all-nine-stable-shape-polynomials-exact-six-gap-and-circuit-proofs-open",
+    "summary": "Proved the final multiplicity-three determinant by 129 exact relative orbit classes, completing all nine stable-shape characteristic polynomials; gap, circuit, transition, and decoder proofs remain."
+  },
+  {
+    "artifacts": {
+      "coset_stable_shape_cubic_gap_certificate": "research/representation/coset_stable_shape_cubic_gap_certificate.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-07-19T02:17:52.518609+00:00",
+    "experiment_id": "EXP-COSET-STABLE-SHAPE-CUBIC-GAP-CERTIFICATE",
+    "falsifiers_triggered": [
+      "Complete spectral separation does not provide coherent multiplicity-label circuits.",
+      "Shape-local labels do not synthesize the overlapping left/right associator.",
+      "No hidden-involution information theorem follows from separated eigenvalues.",
+      "No quantum speedup follows without a decoder and serious classical baselines."
+    ],
+    "id": "RESULT-EXP-COSET-STABLE-SHAPE-CUBIC-GAP-CERTIFICATE-LATEST",
+    "metrics": {
+      "all_nontrivial_stable_shape_normalized_gap_theorem_count": 7,
+      "cauchy_root_bound_constant": 903473,
+      "complementary_shape_normalized_gap_theorem_count": 6,
+      "complete_racah_associator_count": 0,
+      "exact_cubic_discriminant_identity_count": 1,
+      "hidden_involution_decoder_count": 0,
+      "lcu_normalized_gap_inverse_polynomial_exponent": 21,
+      "new_coherent_shape_label_count": 0,
+      "new_normalized_gap_theorem_count": 1,
+      "positive_cubic_discriminant_theorem_count": 1,
+      "raw_gap_inverse_polynomial_exponent": 18,
+      "remaining_open_stable_shape_gap_family_count": 0
+    },
+    "status": "all-seven-nontrivial-stable-shape-gaps-proved-circuits-transitions-decoder-open",
+    "summary": "Proved the final cubic normalized root gap and thereby all seven nontrivial stable-shape gap families; coherent implementation, transition synthesis, decoding, and classical separation remain open."
+  },
+  {
+    "artifacts": {
       "coset_stable_shape_family_certificate": "research/representation/coset_stable_shape_family_certificate.json"
     },
     "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -3132,6 +3231,65 @@
     },
     "status": "uniform-finite-label-targets-found-six-all-n-proofs-open",
     "summary": "The same support-intersection-two orbit Hamiltonian split all 21 audited nontrivial blocks across n=8..10, yielding finite integer-polynomial targets for all 6 previously unproved shape families; no new all-n or coherent label theorem follows."
+  },
+  {
+    "artifacts": {
+      "coset_stable_shape_quadratic_gap_certificate": "research/representation/coset_stable_shape_quadratic_gap_certificate.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-07-19T02:13:07.693260+00:00",
+    "experiment_id": "EXP-COSET-STABLE-SHAPE-QUADRATIC-GAP-CERTIFICATE",
+    "falsifiers_triggered": [
+      "Five quadratic gap theorems do not prove separation of the multiplicity-three roots.",
+      "A normalized spectral gap does not by itself compile a coherent phase-estimation circuit.",
+      "Shape-wise phase estimation does not implement coupling-tree transitions.",
+      "No decoder or classical separation follows from root gaps alone."
+    ],
+    "id": "RESULT-EXP-COSET-STABLE-SHAPE-QUADRATIC-GAP-CERTIFICATE-LATEST",
+    "metrics": {
+      "complete_racah_associator_count": 0,
+      "hidden_involution_decoder_count": 0,
+      "minimum_uniform_raw_gap_lower_bound": 12,
+      "new_coherent_shape_label_count": 0,
+      "new_normalized_gap_theorem_count": 5,
+      "positive_discriminant_theorem_count": 5,
+      "quadratic_shape_count": 5,
+      "remaining_open_stable_shape_gap_family_count": 1,
+      "uniform_inverse_polynomial_gap_exponent": 3
+    },
+    "status": "five-quadratic-normalized-gaps-proved-one-cubic-gap-open",
+    "summary": "Factored and proved positivity of all five complementary quadratic discriminants, giving uniform LCU-normalized gaps at least 12/n^3; the lone cubic gap and all circuit/decoder obligations remain."
+  },
+  {
+    "artifacts": {
+      "coset_stable_shape_second_moment_certificate": "research/representation/coset_stable_shape_second_moment_certificate.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-07-19T01:11:07.892835+00:00",
+    "experiment_id": "EXP-COSET-STABLE-SHAPE-SECOND-MOMENT-CERTIFICATE",
+    "falsifiers_triggered": [
+      "Exact quadratic characteristic polynomials still require normalized discriminant bounds.",
+      "The multiplicity-three shape still lacks its determinant.",
+      "Exact spectra do not compile the common orbit Hamiltonian into a coherent circuit.",
+      "Complete shape labels do not synthesize coupling-tree transitions or decode a hidden involution."
+    ],
+    "id": "RESULT-EXP-COSET-STABLE-SHAPE-SECOND-MOMENT-CERTIFICATE-LATEST",
+    "metrics": {
+      "complete_racah_associator_count": 0,
+      "exact_all_n_shape_second_moment_theorem_count": 9,
+      "exact_endpoint_verified_count": 53,
+      "finite_probe_second_coefficient_agreement_count": 21,
+      "finite_probe_second_coefficient_comparison_count": 21,
+      "hidden_involution_decoder_count": 0,
+      "new_coherent_shape_label_count": 0,
+      "new_exact_complete_quadratic_shape_polynomial_count": 5,
+      "new_exact_open_shape_second_moment_theorem_count": 6,
+      "new_normalized_gap_theorem_count": 0,
+      "remaining_open_shape_characteristic_coefficient_family_count": 1,
+      "stable_shape_count": 9
+    },
+    "status": "five-exact-quadratic-shape-polynomials-proved-one-cubic-determinant-open",
+    "summary": "Proved 9/9 exact second moments, completing all five previously open quadratic shape characteristic polynomials; 1 higher coefficient family remains before every stable-shape spectrum is exact."
   },
   {
     "artifacts": {

@@ -159,6 +159,21 @@ COSET_STABLE_SHAPE_LABEL_PATH = Path(
 COSET_STABLE_SHAPE_TRACE_PATH = Path(
     "research/representation/coset_stable_shape_trace_certificate.json"
 )
+COSET_STABLE_SHAPE_SECOND_MOMENT_PATH = Path(
+    "research/representation/coset_stable_shape_second_moment_certificate.json"
+)
+COSET_STABLE_SHAPE_CUBIC_DETERMINANT_PATH = Path(
+    "research/representation/coset_stable_shape_cubic_determinant_certificate.json"
+)
+COSET_STABLE_SHAPE_QUADRATIC_GAP_PATH = Path(
+    "research/representation/coset_stable_shape_quadratic_gap_certificate.json"
+)
+COSET_STABLE_SHAPE_CUBIC_GAP_PATH = Path(
+    "research/representation/coset_stable_shape_cubic_gap_certificate.json"
+)
+COSET_STABLE_SHAPE_COHERENT_LABEL_PATH = Path(
+    "research/representation/coset_stable_shape_coherent_label_certificate.json"
+)
 COSET_RECOUPLING_CAPABILITY_PATH = Path(
     "research/representation/coset_recoupling_capability_ledger.json"
 )
@@ -752,6 +767,61 @@ def lemma_templates(candidate: dict[str, Any]) -> list[LemmaRecord]:
             stable_shape_traces = {}
         stable_shape_trace_metrics = stable_shape_traces.get(
             "headline_metrics", {}
+        )
+        try:
+            stable_shape_second_moments = (
+                json.loads(COSET_STABLE_SHAPE_SECOND_MOMENT_PATH.read_text())
+                if COSET_STABLE_SHAPE_SECOND_MOMENT_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            stable_shape_second_moments = {}
+        stable_shape_second_moment_metrics = stable_shape_second_moments.get(
+            "headline_metrics", {}
+        )
+        try:
+            stable_shape_cubic_determinant = (
+                json.loads(COSET_STABLE_SHAPE_CUBIC_DETERMINANT_PATH.read_text())
+                if COSET_STABLE_SHAPE_CUBIC_DETERMINANT_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            stable_shape_cubic_determinant = {}
+        stable_shape_cubic_determinant_metrics = (
+            stable_shape_cubic_determinant.get("headline_metrics", {})
+        )
+        try:
+            stable_shape_quadratic_gaps = (
+                json.loads(COSET_STABLE_SHAPE_QUADRATIC_GAP_PATH.read_text())
+                if COSET_STABLE_SHAPE_QUADRATIC_GAP_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            stable_shape_quadratic_gaps = {}
+        stable_shape_quadratic_gap_metrics = stable_shape_quadratic_gaps.get(
+            "headline_metrics", {}
+        )
+        try:
+            stable_shape_cubic_gap = (
+                json.loads(COSET_STABLE_SHAPE_CUBIC_GAP_PATH.read_text())
+                if COSET_STABLE_SHAPE_CUBIC_GAP_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            stable_shape_cubic_gap = {}
+        stable_shape_cubic_gap_metrics = stable_shape_cubic_gap.get(
+            "headline_metrics", {}
+        )
+        try:
+            stable_shape_coherent_labels = (
+                json.loads(COSET_STABLE_SHAPE_COHERENT_LABEL_PATH.read_text())
+                if COSET_STABLE_SHAPE_COHERENT_LABEL_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            stable_shape_coherent_labels = {}
+        stable_shape_coherent_label_metrics = (
+            stable_shape_coherent_labels.get("headline_metrics", {})
         )
         try:
             recoupling_capabilities = (
@@ -1379,16 +1449,52 @@ def lemma_templates(candidate: dict[str, Any]) -> list[LemmaRecord]:
                     ),
                     depends_on=["PO-MEASUREMENT", "PO-COMPLEXITY", "PO-NO-GO"],
                     status=(
-                        "proved-uniform-nine-shape-coherent-label-family"
+                        "proved-all-seven-nontrivial-shape-local-coherent-labels"
                         if int(
-                            stable_shape_label_metrics.get(
-                                "new_coherent_shape_label_count", 0
+                            stable_shape_coherent_label_metrics.get(
+                                "all_nontrivial_stable_shape_coherent_label_count",
+                                0,
                             )
                             or 0
                         )
-                        >= 6
+                        == 7
                         else (
-                            "blocked-six-exact-traces-proved-seven-coefficients-gaps-and-circuits-open"
+                            "blocked-all-nine-polynomials-and-seven-gaps-proved-six-circuits-transitions-and-decoder-open"
+                            if int(
+                                stable_shape_cubic_gap_metrics.get(
+                                    "all_nontrivial_stable_shape_normalized_gap_theorem_count",
+                                    0,
+                                )
+                                or 0
+                            )
+                            == 7
+                            else "blocked-all-nine-polynomials-and-five-quadratic-gaps-proved-one-cubic-gap-circuits-transitions-decoder-open"
+                            if int(
+                                stable_shape_quadratic_gap_metrics.get(
+                                    "new_normalized_gap_theorem_count", 0
+                                )
+                                or 0
+                            )
+                            == 5
+                            else "blocked-all-nine-shape-polynomials-proved-six-gaps-circuits-transitions-and-decoder-open"
+                            if int(
+                                stable_shape_cubic_determinant_metrics.get(
+                                    "exact_complete_stable_shape_polynomial_count",
+                                    0,
+                                )
+                                or 0
+                            )
+                            == 9
+                            else "blocked-five-quadratic-polynomials-proved-one-cubic-determinant-gaps-and-circuits-open"
+                            if int(
+                                stable_shape_second_moment_metrics.get(
+                                    "new_exact_complete_quadratic_shape_polynomial_count",
+                                    0,
+                                )
+                                or 0
+                            )
+                            == 5
+                            else "blocked-six-exact-traces-proved-seven-coefficients-gaps-and-circuits-open"
                             if int(
                                 stable_shape_trace_metrics.get(
                                     "new_exact_open_shape_trace_theorem_count", 0
@@ -1411,6 +1517,131 @@ def lemma_templates(candidate: dict[str, Any]) -> list[LemmaRecord]:
                         "For every one of the six open nontrivial tails, derive the exact all-n characteristic "
                         "polynomial, prove normalized root separation, and compile the common orbit LCU; finite "
                         "floating spectra satisfy none of those proof obligations."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-COSET-STABLE-RACAH-ALL-SEVEN-SHAPE-LOCAL-LABELS",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "One common ordered-triple block-encoding architecture coherently appends the multiplicity "
+                        "eigenlabel on every nontrivial stable intermediate shape, given routed channel input."
+                    ),
+                    depends_on=["PO-MEASUREMENT", "PO-COMPLEXITY", "PO-NO-GO"],
+                    status=(
+                        "proved-all-seven-shape-local-coherent-labels-routing-open"
+                        if int(
+                            stable_shape_coherent_label_metrics.get(
+                                "all_nontrivial_stable_shape_coherent_label_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        == 7
+                        else "blocked-all-shape-coherent-label-certificate-missing"
+                    ),
+                    falsification_test=(
+                        "Verify ordered-triple term bijection, shape-controlled representation SELECT, every exact "
+                        "gap dependency, and explicit exclusion of routing and coupling-tree transition claims."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-COSET-STABLE-RACAH-ALL-SEVEN-SHAPE-GAPS",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "Every nontrivial stable intermediate-shape Hamiltonian has an inverse-polynomial "
+                        "LCU-normalized minimum root gap for every integer n>=8."
+                    ),
+                    depends_on=["PO-MEASUREMENT", "PO-COMPLEXITY", "PO-NO-GO"],
+                    status=(
+                        "proved-all-seven-nontrivial-stable-shape-normalized-gaps"
+                        if int(
+                            stable_shape_cubic_gap_metrics.get(
+                                "all_nontrivial_stable_shape_normalized_gap_theorem_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        == 7
+                        else "blocked-cubic-shape-gap-certificate-missing"
+                    ),
+                    falsification_test=(
+                        "Verify the cubic discriminant factorization and positivity, coefficient L1 root bound, "
+                        "discriminant-to-pair-gap inequality, exact LCU normalization, and the five quadratic plus "
+                        "one original stable gap source certificates."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-COSET-STABLE-RACAH-FIVE-QUADRATIC-SHAPE-GAPS",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "All five complementary multiplicity-two stable-shape Hamiltonians have inverse-polynomial "
+                        "LCU-normalized root gaps for every integer n>=8."
+                    ),
+                    depends_on=["PO-MEASUREMENT", "PO-COMPLEXITY", "PO-NO-GO"],
+                    status=(
+                        "proved-five-quadratic-stable-shape-normalized-gaps"
+                        if int(
+                            stable_shape_quadratic_gap_metrics.get(
+                                "new_normalized_gap_theorem_count", 0
+                            )
+                            or 0
+                        )
+                        == 5
+                        else "blocked-quadratic-shape-gap-certificate-missing"
+                    ),
+                    falsification_test=(
+                        "Verify each exact discriminant, its n=m+8 nonnegative-coefficient decomposition, positive "
+                        "constant term, exact orbit normalization, and the uniform 12/n^3 lower bound."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-COSET-STABLE-RACAH-ALL-NINE-SHAPE-POLYNOMIALS",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "The common orbit Hamiltonian has an exact all-n characteristic polynomial on every one "
+                        "of the nine stable intermediate shapes in the final-xi sector."
+                    ),
+                    depends_on=["PO-MEASUREMENT", "PO-COMPLEXITY", "PO-NO-GO"],
+                    status=(
+                        "proved-exact-all-nine-stable-shape-polynomials"
+                        if int(
+                            stable_shape_cubic_determinant_metrics.get(
+                                "exact_complete_stable_shape_polynomial_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        == 9
+                        else "blocked-cubic-shape-determinant-certificate-missing"
+                    ),
+                    falsification_test=(
+                        "Verify the 129-class checksum, exact rational pattern checkpoint, degree-nine third "
+                        "moment and determinant, n=8..16 endpoints, and all sparse determinant references."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-COSET-STABLE-RACAH-FIVE-QUADRATIC-SHAPE-POLYNOMIALS",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "The common orbit Hamiltonian has exact all-n characteristic polynomials on all five "
+                        "previously open multiplicity-two stable intermediate shapes."
+                    ),
+                    depends_on=["PO-MEASUREMENT", "PO-COMPLEXITY", "PO-NO-GO"],
+                    status=(
+                        "proved-exact-five-quadratic-stable-shape-polynomials"
+                        if int(
+                            stable_shape_second_moment_metrics.get(
+                                "new_exact_complete_quadratic_shape_polynomial_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        == 5
+                        else "blocked-stable-shape-second-moment-certificate-missing"
+                    ),
+                    falsification_test=(
+                        "Verify all 17 relative-orbit classes, exact finite endpoint counts through each symbolic "
+                        "threshold, Newton's identity, and agreement with all 21 independent sparse coefficients."
                     ),
                 ),
                 LemmaRecord(

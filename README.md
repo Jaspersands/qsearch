@@ -707,6 +707,53 @@ shapes, with 27/27 agreement against the `n=8,9,10` sparse blocks. Five
 multiplicity-two determinants and two higher multiplicity-three coefficients
 remain before complete shape spectra can be claimed.
 
+The second-moment pass closes almost all of that debt. The 17 relative
+simultaneous-conjugacy classes for `H^2` are reused with each shape character;
+53 exact low-`n` endpoint checks bridge the symbolic stability ranges and all
+21 independent sparse second coefficients agree. Newton's identity therefore
+proves the complete quadratic characteristic polynomial for each of the five
+open multiplicity-two shapes. Only the determinant of the multiplicity-three
+`(n-4,3,1)` shape remains before all nine stable-shape spectra are exact.
+Normalized discriminant/root-gap bounds and coherent circuits are still open.
+
+That final determinant is now exact as well. The third-moment calculation
+classifies 18,144 relative term types into 129 simultaneous-conjugacy classes
+and compresses 2,212,218,888 raw canonical marked assignments to 4,493 nonzero
+rational coefficients. Exact counts close `n=8..16`; the stable symbolic sum
+proves the degree-nine determinant from `n>=17`, and all three sparse
+determinants agree. All nine stable-shape characteristic polynomials are now
+exact. This is a structural representation-theory result, not an algorithmic
+breakthrough: six normalized gap families, coherent common-orbit compilation,
+left/right transition synthesis, hidden-involution decoding, and classical
+separation remain open.
+
+Five of the six remaining gap families are now closed exactly. For every
+multiplicity-two complementary shape, the discriminant becomes a polynomial
+with nonnegative coefficients after `n=m+8` and has a positive constant term.
+The smallest raw-gap lower bound is `12`; dividing by the exact
+`n(n-1)(n-2)` orbit normalization proves a uniform normalized gap of at least
+`12/n^3` for all five. The multiplicity-three cubic root separation is the
+only remaining stable-shape spectral gap obligation.
+
+The cubic gap is now closed too. Its discriminant is
+`4(n-2)^3(621n^3-4266n^2+9612n-7192)` and has strictly positive shifted
+coefficients at `n=m+8`. A coefficient-L1 Cauchy bound places every root in
+`[-903473 n^9, 903473 n^9]`; the discriminant product then gives a raw gap at
+least `1/(3265053846916 n^18)` and an LCU-normalized gap at least
+`1/(3265053846916 n^21)`. All seven nontrivial stable-shape gap families are
+therefore exact. The next bottleneck is no longer spectral: it is coherent
+common-orbit compilation, complete coupling-tree transitions, and a decoder.
+
+The common-orbit compilation is now proved at the shape-local interface. A
+single reversible ordered-triple PREPARE and shape-controlled Young-basis
+SELECT block-encode `H_eta` with normalization `n(n-1)(n-2)` for every fixed
+stable shape. Combining that circuit with the seven exact gaps gives coherent
+multiplicity eigenlabels of dimensions two, three, or four on all nontrivial
+shapes. This theorem assumes the state is already routed into a declared
+`eta tensor W -> xi` channel. Coherent channel routing and the complete
+left/right coupling-tree transition are still missing, so this is not yet a
+Racah associator or decoder.
+
 ```bash
 python qsearch.py coset-racah-gap-scaling
 python qsearch.py coset-racah-sparse-gap --n-values 7,8,9,10,11
@@ -722,6 +769,11 @@ python qsearch.py coset-racah-complementary-sectors --n-values 7,8
 python qsearch.py coset-racah-stable-shape-proof
 python qsearch.py coset-racah-stable-shape-labels --n-values 8,9,10
 python qsearch.py coset-racah-stable-shape-traces
+python qsearch.py coset-racah-stable-shape-second-moments
+python qsearch.py coset-racah-stable-shape-cubic-determinant
+python qsearch.py coset-racah-stable-shape-quadratic-gaps
+python qsearch.py coset-racah-stable-shape-cubic-gap
+python qsearch.py coset-racah-stable-shape-coherent-labels
 ```
 
 The capability ledger separates the solved `S_n` QFT, Schur-Weyl transforms,

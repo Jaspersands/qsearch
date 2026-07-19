@@ -1,0 +1,181 @@
+{
+  "claim_gate": {
+    "all_nine_stable_shape_characteristic_polynomials_proved": true,
+    "all_six_coherent_label_circuits_proved": false,
+    "all_six_normalized_gaps_proved": false,
+    "complete_racah_associator_proved": false,
+    "cubic_shape_determinant_proved": true,
+    "hidden_involution_decoder_proved": false,
+    "reason": "All stable-shape spectra are exact, but six normalized gap bounds, coherent label circuits, coupling-tree transitions, hidden-involution decoding, and classical separation remain unproved.",
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-07-19T01:49:40.721288+00:00",
+  "endpoint_records": [
+    {
+      "exact_determinant": 42896,
+      "exact_pattern_third_power_trace": 231288,
+      "n": 8,
+      "sparse_reference_determinant": 42896,
+      "sparse_reference_residual": 0,
+      "symbolic_formula_value": 231288,
+      "trace_residual": 0,
+      "verified": true
+    },
+    {
+      "exact_determinant": 764968,
+      "exact_pattern_third_power_trace": 2640585,
+      "n": 9,
+      "sparse_reference_determinant": 764968,
+      "sparse_reference_residual": 0,
+      "symbolic_formula_value": 2640585,
+      "trace_residual": 0,
+      "verified": true
+    },
+    {
+      "exact_determinant": 5541384,
+      "exact_pattern_third_power_trace": 17495640,
+      "n": 10,
+      "sparse_reference_determinant": 5541384,
+      "sparse_reference_residual": 0,
+      "symbolic_formula_value": 17495640,
+      "trace_residual": 0,
+      "verified": true
+    },
+    {
+      "exact_determinant": 26521424,
+      "exact_pattern_third_power_trace": 81429135,
+      "n": 11,
+      "sparse_reference_determinant": null,
+      "sparse_reference_residual": null,
+      "symbolic_formula_value": 81429135,
+      "trace_residual": 0,
+      "verified": true
+    },
+    {
+      "exact_determinant": 98210608,
+      "exact_pattern_third_power_trace": 298207704,
+      "n": 12,
+      "sparse_reference_determinant": null,
+      "sparse_reference_residual": null,
+      "symbolic_formula_value": 298207704,
+      "trace_residual": 0,
+      "verified": true
+    },
+    {
+      "exact_determinant": 304113576,
+      "exact_pattern_third_power_trace": 918670293,
+      "n": 13,
+      "sparse_reference_determinant": null,
+      "sparse_reference_residual": null,
+      "symbolic_formula_value": 918670293,
+      "trace_residual": 0,
+      "verified": true
+    },
+    {
+      "exact_determinant": 824117288,
+      "exact_pattern_third_power_trace": 2482887480,
+      "n": 14,
+      "sparse_reference_determinant": null,
+      "sparse_reference_residual": null,
+      "symbolic_formula_value": 2482887480,
+      "trace_residual": 0,
+      "verified": true
+    },
+    {
+      "exact_determinant": 2012835664,
+      "exact_pattern_third_power_trace": 6055205115,
+      "n": 15,
+      "sparse_reference_determinant": null,
+      "sparse_reference_residual": null,
+      "symbolic_formula_value": 6055205115,
+      "trace_residual": 0,
+      "verified": true
+    },
+    {
+      "exact_determinant": 4522039824,
+      "exact_pattern_third_power_trace": 13591544760,
+      "n": 16,
+      "sparse_reference_determinant": null,
+      "sparse_reference_residual": null,
+      "symbolic_formula_value": 13591544760,
+      "trace_residual": 0,
+      "verified": true
+    }
+  ],
+  "falsifiers_triggered": [
+    "Exact characteristic polynomials do not imply inverse-polynomial normalized root gaps.",
+    "Exact spectral formulas do not compile the common orbit Hamiltonian coherently.",
+    "Shape-wise eigenlabels do not implement the left/right associator transition.",
+    "No hidden-involution information or classical separation follows from spectral completeness alone."
+  ],
+  "headline_metrics": {
+    "complete_racah_associator_count": 0,
+    "exact_complete_stable_shape_polynomial_count": 9,
+    "exact_cubic_shape_determinant_theorem_count": 1,
+    "exact_endpoint_verified_count": 9,
+    "finite_sparse_determinant_comparison_count": 3,
+    "finite_sparse_determinant_match_count": 3,
+    "hidden_involution_decoder_count": 0,
+    "literal_symbolic_minimum_n": 17,
+    "maximum_active_support_size": 9,
+    "new_coherent_shape_label_count": 0,
+    "new_exact_complete_cubic_shape_polynomial_count": 1,
+    "new_normalized_gap_theorem_count": 0,
+    "nonzero_pattern_coefficient_count": 4493,
+    "raw_canonical_pattern_count": 2212218888,
+    "raw_relative_term_type_count": 18144,
+    "relative_orbit_class_count": 129,
+    "remaining_open_shape_characteristic_coefficient_family_count": 0
+  },
+  "newton_certificate": {
+    "first_characteristic_coefficient": "3*n**3 - 36*n**2 + 126*n - 126",
+    "identity": "p3-e1*p2+e2*p1-3*e3=0",
+    "identity_verified": true,
+    "second_characteristic_coefficient": "3*n**6 - 72*n**5 + 684*n**4 - 3276*n**3 + 8307*n**2 - 10544*n + 5248",
+    "third_characteristic_coefficient_determinant": "n**9 - 36*n**8 + 558*n**7 - 4878*n**6 + 26451*n**5 - 92084*n**4 + 205482*n**3 - 283150*n**2 + 218656*n - 72176"
+  },
+  "relative_orbit_certificate": {
+    "canonicalization": "two-colored permutation graph canonical form",
+    "classification_verified": true,
+    "exact_pattern_checkpoint": "research/representation/coset_stable_shape_cubic_pattern_checkpoint.json",
+    "expected_raw_counts_by_outside_support": [
+      36,
+      540,
+      2484,
+      5292,
+      5832,
+      3240,
+      720
+    ],
+    "fixed_first_term": "tau_0=(1 2), c_0=(1 2 3)",
+    "raw_counts_by_outside_support": [
+      36,
+      540,
+      2484,
+      5292,
+      5832,
+      3240,
+      720
+    ],
+    "relative_orbit_class_count": 129
+  },
+  "status": "all-nine-stable-shape-polynomials-exact-six-gap-and-circuit-proofs-open",
+  "summary": "Proved the final multiplicity-three determinant by 129 exact relative orbit classes, completing all nine stable-shape characteristic polynomials; gap, circuit, transition, and decoder proofs remain.",
+  "symbolic_certificate": {
+    "identity_verified": true,
+    "interpolation_used": false,
+    "literal_range": "n>=17",
+    "maximum_constraint_count": 8,
+    "maximum_support_plus_generic_count": 17,
+    "polynomial_degree": 9,
+    "third_power_trace": "3*n**9 - 108*n**8 + 1674*n**7 - 14634*n**6 + 79434*n**5 - 277584*n**4 + 624564*n**3 - 872724*n**2 + 687720*n - 233160"
+  },
+  "theorem": {
+    "determinant": "n**9 - 36*n**8 + 558*n**7 - 4878*n**6 + 26451*n**5 - 92084*n**4 + 205482*n**3 - 283150*n**2 + 218656*n - 72176",
+    "intermediate_partition": "eta_n=(n-4,3,1)",
+    "proved": true,
+    "range": "every integer n>=8",
+    "statement": "The multiplicity-three stable-shape orbit Hamiltonian has the displayed exact determinant and complete cubic characteristic polynomial for every n>=8.",
+    "third_power_trace": "3*n**9 - 108*n**8 + 1674*n**7 - 14634*n**6 + 79434*n**5 - 277584*n**4 + 624564*n**3 - 872724*n**2 + 687720*n - 233160"
+  }
+}

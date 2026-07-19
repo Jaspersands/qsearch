@@ -1970,6 +1970,119 @@
   {
     "candidate_id": "CODE-COSET-COLLECTIVE",
     "dependencies": [
+      "coset_stable_shape_coherent_label_certificate.py",
+      "all stable-shape normalized gap certificates",
+      "CAP-SN-QFT",
+      "CAP-BOUNDED-SUPPORT-COMMUTANT-BLOCK-ENCODING"
+    ],
+    "falsifiers": [
+      "Ordered triples do not index every orbit term exactly once.",
+      "Shape-controlled Young representation actions lack a polynomial implementation.",
+      "A source normalized gap is missing.",
+      "The theorem silently assumes routing or a coupling-tree transition.",
+      "Local eigenlabels are promoted as an associator or decoder."
+    ],
+    "hypothesis": "The original ordered-triple block encoding generalizes uniformly to every fixed padded stable shape, and the complete gap family permits coherent shape-local eigenlabels.",
+    "id": "EXP-COSET-STABLE-SHAPE-COHERENT-LABEL-CERTIFICATE",
+    "metrics": [
+      "nontrivial_stable_shape_count",
+      "common_shape_controlled_block_encoding_count",
+      "new_coherent_shape_label_count",
+      "all_nontrivial_stable_shape_coherent_label_count",
+      "maximum_phase_estimation_query_exponent",
+      "channel_routing_circuit_count",
+      "coupling_tree_transition_circuit_count",
+      "complete_racah_associator_count"
+    ],
+    "next_actions": [
+      "Construct coherent routing/projectors into all nine intermediate/final channels.",
+      "Synthesize the full left/right coupling-tree transition isometry.",
+      "Estimate transition kernels and hidden-involution information at scaling sizes.",
+      "Attack any decoder signal with classical representation-theory baselines."
+    ],
+    "positive_signal": "All seven nontrivial shape-local multiplicity eigenlabels are appended coherently with polynomial cost under one common block-encoding architecture.",
+    "protocol": "Use one reversible distinct-triple PREPARE and shape-controlled Young-basis SELECT for rho_eta((a b)) tensor rho_W((a b c)); apply phase estimation at each exact gap precision, assuming the input is already routed into the declared eta tensor W -> xi channel.",
+    "status": "planned",
+    "title": "Uniform coherent labels on all stable shapes"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "coset_stable_shape_cubic_determinant_certificate.py",
+      "coset_stable_third_moment_certificate.py",
+      "coset_stable_shape_second_moment_certificate.py",
+      "exact 129-class pattern checkpoint"
+    ],
+    "falsifiers": [
+      "The 129 relative classes fail their raw orbit-count checksum.",
+      "The third power trace fails to simplify to a degree-at-most-nine polynomial.",
+      "Any exact endpoint or sparse determinant disagrees.",
+      "Complete spectra are promoted without normalized root gaps or circuits.",
+      "Spectral completeness is promoted as a hidden-involution decoder or speedup."
+    ],
+    "hypothesis": "The 129-class third-moment proof extends to the lone multiplicity-three (n-4,3,1) intermediate shape and completes the stable nine-shape spectral classification.",
+    "id": "EXP-COSET-STABLE-SHAPE-CUBIC-DETERMINANT-CERTIFICATE",
+    "metrics": [
+      "relative_orbit_class_count",
+      "raw_canonical_pattern_count",
+      "exact_endpoint_verified_count",
+      "finite_sparse_determinant_match_count",
+      "exact_cubic_shape_determinant_theorem_count",
+      "exact_complete_stable_shape_polynomial_count",
+      "remaining_open_shape_characteristic_coefficient_family_count",
+      "new_normalized_gap_theorem_count"
+    ],
+    "next_actions": [
+      "Prove normalized root separation for the five quadratic and one cubic open shapes.",
+      "Compile the common orbit Hamiltonian as a uniform coherent block encoding.",
+      "Synthesize all nine left/right shape-label transitions.",
+      "Test complete outcomes for hidden-involution information against classical baselines."
+    ],
+    "positive_signal": "The degree-nine determinant formula passes all exact endpoints and sparse references, leaving zero unknown stable-shape characteristic coefficients.",
+    "protocol": "Enumerate the exact relative simultaneous-conjugacy classes for H^3, reduce the (3,1)-tail falling character correlations to rational pattern coefficients, close n=8..16 exactly, and apply Newton's third identity.",
+    "status": "planned",
+    "title": "Exact final stable-shape cubic determinant certificate"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "coset_stable_shape_cubic_gap_certificate.py",
+      "exact cubic determinant certificate",
+      "exact five-quadratic gap certificate",
+      "Cauchy root bound and cubic discriminant identity"
+    ],
+    "falsifiers": [
+      "The cubic discriminant vanishes or becomes negative for n>=8.",
+      "The Cauchy coefficient bound does not dominate all roots.",
+      "The discriminant-to-minimum-gap inequality omits a pairwise factor.",
+      "The LCU normalization is understated.",
+      "Complete gap theorems are promoted as circuits, transitions, decoders, or speedups."
+    ],
+    "hypothesis": "The exact multiplicity-three discriminant is positive in the stable range and yields an inverse-polynomial normalized minimum root separation.",
+    "id": "EXP-COSET-STABLE-SHAPE-CUBIC-GAP-CERTIFICATE",
+    "metrics": [
+      "exact_cubic_discriminant_identity_count",
+      "positive_cubic_discriminant_theorem_count",
+      "new_normalized_gap_theorem_count",
+      "complementary_shape_normalized_gap_theorem_count",
+      "all_nontrivial_stable_shape_normalized_gap_theorem_count",
+      "lcu_normalized_gap_inverse_polynomial_exponent",
+      "new_coherent_shape_label_count"
+    ],
+    "next_actions": [
+      "Compile one uniform common-orbit block encoding across all six complementary shapes.",
+      "Prove coherent phase-estimation precision and labels for every shape.",
+      "Synthesize complete left/right nine-shape transitions.",
+      "Test resulting outcomes for hidden-involution information against classical baselines."
+    ],
+    "positive_signal": "The cubic normalized gap is inverse polynomial, completing all six complementary and all seven nontrivial stable-shape gap families.",
+    "protocol": "Factor the exact cubic discriminant, prove positivity after n=m+8, bound all roots by a Cauchy coefficient estimate, convert the discriminant product to a minimum pair gap, and divide by the common orbit-LCU normalization.",
+    "status": "planned",
+    "title": "Exact final cubic stable-shape gap certificate"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
       "coset_stable_shape_family_certificate.py",
       "stable irreducible character-polynomial theorem",
       "factorial cycle-count moment identity",
@@ -2043,6 +2156,81 @@
     "protocol": "For every stable intermediate shape and n=8,9,10, isolate one final-xi tableau block with a separating YJM functional and restrict the support-intersection-two transposition/three-cycle orbit Hamiltonian without materializing its dense tensor matrix.",
     "status": "planned",
     "title": "Uniform stable-shape Racah label probe"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "coset_stable_shape_quadratic_gap_certificate.py",
+      "coset_stable_shape_second_moment_certificate.py",
+      "exact quadratic discriminants",
+      "common orbit-LCU normalization"
+    ],
+    "falsifiers": [
+      "A discriminant vanishes or becomes negative in the stable range.",
+      "The declared LCU normalization omits orbit terms.",
+      "A raw gap is confused with a normalized phase-estimation gap.",
+      "Five quadratic gaps are promoted as the unresolved cubic gap.",
+      "Gap theorems are promoted as circuits, transitions, or decoders."
+    ],
+    "hypothesis": "The five exact multiplicity-two characteristic polynomials have uniformly positive discriminants and inverse-polynomial gaps after common orbit-LCU normalization.",
+    "id": "EXP-COSET-STABLE-SHAPE-QUADRATIC-GAP-CERTIFICATE",
+    "metrics": [
+      "quadratic_shape_count",
+      "positive_discriminant_theorem_count",
+      "new_normalized_gap_theorem_count",
+      "minimum_uniform_raw_gap_lower_bound",
+      "uniform_inverse_polynomial_gap_exponent",
+      "remaining_open_stable_shape_gap_family_count",
+      "new_coherent_shape_label_count"
+    ],
+    "next_actions": [
+      "Prove normalized root separation for the multiplicity-three cubic shape.",
+      "Compile one uniform common-orbit block encoding for all six complementary shapes.",
+      "Synthesize left/right transitions across all nine shapes.",
+      "Test complete label outcomes against hidden-involution classical baselines."
+    ],
+    "positive_signal": "All five discriminants are positive for every n>=8 and every normalized gap is at least 12/n^3.",
+    "protocol": "Factor each exact discriminant e1^2-4e2, substitute n=m+8 to prove positivity by nonnegative coefficients, and divide the raw square-root gap by alpha=n(n-1)(n-2).",
+    "status": "planned",
+    "title": "Exact complementary quadratic-shape gap certificate"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "coset_stable_shape_second_moment_certificate.py",
+      "coset_stable_second_moment_certificate.py",
+      "coset_stable_shape_trace_certificate.py",
+      "17 relative simultaneous-conjugacy classes"
+    ],
+    "falsifiers": [
+      "A second moment fails to simplify to a degree-at-most-six polynomial.",
+      "An exact finite endpoint disagrees with the symbolic formula.",
+      "A Newton coefficient disagrees with an independent sparse characteristic polynomial.",
+      "Exact quadratic polynomials are promoted without normalized root separation.",
+      "Exact spectra are promoted as coherent circuits or decoders."
+    ],
+    "hypothesis": "The universal 17-class relative-orbit proof for Tr(H^2) extends to every stable intermediate shape, completing all five open multiplicity-two characteristic polynomials.",
+    "id": "EXP-COSET-STABLE-SHAPE-SECOND-MOMENT-CERTIFICATE",
+    "metrics": [
+      "exact_all_n_shape_second_moment_theorem_count",
+      "new_exact_open_shape_second_moment_theorem_count",
+      "new_exact_complete_quadratic_shape_polynomial_count",
+      "finite_probe_second_coefficient_comparison_count",
+      "finite_probe_second_coefficient_agreement_count",
+      "exact_endpoint_verified_count",
+      "remaining_open_shape_characteristic_coefficient_family_count",
+      "new_normalized_gap_theorem_count"
+    ],
+    "next_actions": [
+      "Prove the multiplicity-three (3,1)-tail determinant.",
+      "Factor and prove positivity of all five quadratic discriminants.",
+      "Prove normalized separation for the cubic shape.",
+      "Compile the common orbit LCU and complete coupling-tree transitions."
+    ],
+    "positive_signal": "Nine exact second-moment formulas agree with every sparse coefficient; five quadratic spectra become exact and only the multiplicity-three determinant remains.",
+    "protocol": "Evaluate each relative orbit class with the shape-specific falling character polynomial, close every size below the symbolic stability range by exact pattern counts, and apply Newton's second identity with the proved trace formulas.",
+    "status": "planned",
+    "title": "Exact stable-shape Racah second-moment certificate"
   },
   {
     "candidate_id": "CODE-COSET-COLLECTIVE",

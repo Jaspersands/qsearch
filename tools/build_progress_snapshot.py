@@ -113,6 +113,26 @@ def build_snapshot() -> dict[str, Any]:
     stable_shape_traces = read_json(
         RESEARCH / "representation/coset_stable_shape_trace_certificate.json", {}
     )
+    stable_shape_second_moments = read_json(
+        RESEARCH / "representation/coset_stable_shape_second_moment_certificate.json",
+        {},
+    )
+    stable_shape_cubic = read_json(
+        RESEARCH / "representation/coset_stable_shape_cubic_determinant_certificate.json",
+        {},
+    )
+    stable_shape_quadratic_gaps = read_json(
+        RESEARCH / "representation/coset_stable_shape_quadratic_gap_certificate.json",
+        {},
+    )
+    stable_shape_cubic_gap = read_json(
+        RESEARCH / "representation/coset_stable_shape_cubic_gap_certificate.json",
+        {},
+    )
+    stable_shape_coherent_labels = read_json(
+        RESEARCH / "representation/coset_stable_shape_coherent_label_certificate.json",
+        {},
+    )
 
     blocking = sum(bool(item.get("blocks_speedup_claim", False)) for item in findings)
     updated = latest_artifact_date(
@@ -144,6 +164,11 @@ def build_snapshot() -> dict[str, Any]:
         stable_shapes,
         stable_shape_labels,
         stable_shape_traces,
+        stable_shape_second_moments,
+        stable_shape_cubic,
+        stable_shape_quadratic_gaps,
+        stable_shape_cubic_gap,
+        stable_shape_coherent_labels,
     )
     gap_rows = metric(gap, "critical_gap_formula_finite_verified_count", 0)
     gap_total = metric(gap, "record_count", 0)
@@ -265,8 +290,12 @@ def build_snapshot() -> dict[str, Any]:
                 "complementary sector. Character-polynomial moments prove that exactly nine stable shapes exhaust "
                 "the final sector for all n>=9. One common bounded-support Hamiltonian splits all six remaining "
                 "nontrivial shape families at n=8..10. Exact marked-cycle sums now prove the first characteristic "
-                "coefficient for all nine shapes. Seven higher coefficient families, all six normalized gaps, and "
-                "their coherent implementations remain open."
+                "coefficient for all nine shapes, and exact second moments complete five quadratic shape spectra. "
+                "A 129-class third-moment proof completes the final cubic determinant, so all nine stable-shape "
+                "spectra are exact. Five complementary quadratic normalized gaps are also proved; one cubic gap "
+                "and a cubic discriminant/Cauchy argument closes the seventh. Spectral control is complete on the "
+                "nine-shape family. A common ordered-triple block encoding now supplies all seven shape-local "
+                "coherent labels, but channel routing, coupling-tree transitions, and decoding remain open."
             ),
             "facts": [
                 {"label": "Pair gap", "value": "Exact inverse-quadratic theorem"},
@@ -281,13 +310,18 @@ def build_snapshot() -> dict[str, Any]:
                 {"label": "Exact stable shapes", "value": f"{metric(stable_shapes, 'stable_intermediate_shape_count', 0)}; {metric(stable_shapes, 'unresolved_coherent_second_stage_shape_count', 0)} gapped labels open"},
                 {"label": "Finite shape targets", "value": f"{metric(stable_shape_labels, 'unproved_shape_finite_target_count', 0)}/6 found; exact proofs open"},
                 {"label": "Exact shape traces", "value": f"{metric(stable_shape_traces, 'exact_all_n_shape_trace_theorem_count', 0)}/9; {metric(stable_shape_traces, 'remaining_open_shape_characteristic_coefficient_family_count', 0)} coefficients open"},
+                {"label": "Exact shape quadratics", "value": f"{metric(stable_shape_second_moments, 'new_exact_complete_quadratic_shape_polynomial_count', 0)}/5; {metric(stable_shape_second_moments, 'remaining_open_shape_characteristic_coefficient_family_count', 0)} cubic coefficient open"},
+                {"label": "Exact shape spectra", "value": f"{metric(stable_shape_cubic, 'exact_complete_stable_shape_polynomial_count', 0)}/9; gaps and circuits open"},
+                {"label": "Complementary gaps", "value": f"{metric(stable_shape_quadratic_gaps, 'new_normalized_gap_theorem_count', 0)}/6; cubic gap open"},
+                {"label": "Stable spectral gaps", "value": f"{metric(stable_shape_cubic_gap, 'all_nontrivial_stable_shape_normalized_gap_theorem_count', 0)}/7; circuits open"},
+                {"label": "Coherent shape labels", "value": f"{metric(stable_shape_coherent_labels, 'all_nontrivial_stable_shape_coherent_label_count', 0)}/7; routing and transition open"},
                 {"label": "Hidden decoder", "value": "Open"},
             ],
         },
         "next_actions": [
             {
                 "title": "Prove the nine-shape transition family",
-                "detail": "Prove the seven remaining higher characteristic-coefficient families, then establish all six normalized gaps.",
+                "detail": "Construct coherent routing into the nine stable channels and synthesize the complete left/right coupling-tree transition.",
             },
             {
                 "title": "Cover every required sector",

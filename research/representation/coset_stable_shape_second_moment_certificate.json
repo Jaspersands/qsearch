@@ -1,0 +1,662 @@
+{
+  "claim_gate": {
+    "all_coherent_label_circuits_proved": false,
+    "all_five_open_quadratic_characteristic_polynomials_proved": true,
+    "all_nine_second_moments_proved": true,
+    "all_normalized_gaps_proved": false,
+    "complete_racah_associator_proved": false,
+    "hidden_involution_decoder_proved": false,
+    "multiplicity_three_characteristic_polynomial_proved": false,
+    "reason": "Five quadratic spectra are exact, but their normalized root gaps and coherent implementations are unproved; the multiplicity-three determinant, transitions, and decoder also remain open.",
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-07-19T01:11:07.892835+00:00",
+  "falsifiers_triggered": [
+    "Exact quadratic characteristic polynomials still require normalized discriminant bounds.",
+    "The multiplicity-three shape still lacks its determinant.",
+    "Exact spectra do not compile the common orbit Hamiltonian into a coherent circuit.",
+    "Complete shape labels do not synthesize coupling-tree transitions or decode a hidden involution."
+  ],
+  "headline_metrics": {
+    "complete_racah_associator_count": 0,
+    "exact_all_n_shape_second_moment_theorem_count": 9,
+    "exact_endpoint_verified_count": 53,
+    "finite_probe_second_coefficient_agreement_count": 21,
+    "finite_probe_second_coefficient_comparison_count": 21,
+    "hidden_involution_decoder_count": 0,
+    "new_coherent_shape_label_count": 0,
+    "new_exact_complete_quadratic_shape_polynomial_count": 5,
+    "new_exact_open_shape_second_moment_theorem_count": 6,
+    "new_normalized_gap_theorem_count": 0,
+    "remaining_open_shape_characteristic_coefficient_family_count": 1,
+    "stable_shape_count": 9
+  },
+  "method_contract": {
+    "fixed_first_term": "tau_0=(1 2), c_0=(1 2 3)",
+    "floating_arithmetic_used_for_theorem": false,
+    "interpolation_used": false,
+    "newton_identity": "e2=(Tr(H)^2-Tr(H^2))/2",
+    "relative_orbit_class_count": 17,
+    "symbolic_method": "exact relative-orbit multiplicities times falling-cycle partial-permutation correlations"
+  },
+  "shape_records": [
+    {
+      "complete_characteristic_polynomial_already_proved": false,
+      "complete_characteristic_polynomial_proved_by_this_pass": false,
+      "endpoint_records": [
+        {
+          "exact_pattern_second_power_trace": 1296,
+          "n": 8,
+          "residual": 0,
+          "symbolic_formula_value": 1296,
+          "verified": true
+        },
+        {
+          "exact_pattern_second_power_trace": 9409,
+          "n": 9,
+          "residual": 0,
+          "symbolic_formula_value": 9409,
+          "verified": true
+        },
+        {
+          "exact_pattern_second_power_trace": 36100,
+          "n": 10,
+          "residual": 0,
+          "symbolic_formula_value": 36100,
+          "verified": true
+        },
+        {
+          "exact_pattern_second_power_trace": 103041,
+          "n": 11,
+          "residual": 0,
+          "symbolic_formula_value": 103041,
+          "verified": true
+        }
+      ],
+      "exact_all_n_at_least_8_second_moment_proved": true,
+      "exact_first_power_trace": "n**3 - 11*n**2 + 31*n - 20",
+      "exact_second_characteristic_coefficient": "0",
+      "exact_second_power_trace": "n**6 - 22*n**5 + 183*n**4 - 722*n**3 + 1401*n**2 - 1240*n + 400",
+      "falling_character_term_count": 2,
+      "finite_probe_agreement_count": 0,
+      "finite_probe_comparison_count": 0,
+      "intermediate_partition": "(n-1,1)",
+      "intermediate_tail": [
+        1
+      ],
+      "literal_symbolic_range_start": 12,
+      "maximum_partial_permutation_constraint_count": 6,
+      "maximum_special_plus_generic_count": 12,
+      "relative_orbit_class_count": 17,
+      "remaining_exact_characteristic_coefficient_count": 0,
+      "second_power_trace_degree": 6,
+      "second_stage_multiplicity": 1,
+      "shifted_correlation_monomial_product_count": 408,
+      "status": "exact-second-moment-proved-multiplicity-one"
+    },
+    {
+      "complete_characteristic_polynomial_already_proved": false,
+      "complete_characteristic_polynomial_proved_by_this_pass": true,
+      "endpoint_records": [
+        {
+          "exact_pattern_second_power_trace": 4680,
+          "n": 8,
+          "residual": 0,
+          "symbolic_formula_value": 4680,
+          "verified": true
+        },
+        {
+          "exact_pattern_second_power_trace": 24740,
+          "n": 9,
+          "residual": 0,
+          "symbolic_formula_value": 24740,
+          "verified": true
+        },
+        {
+          "exact_pattern_second_power_trace": 85000,
+          "n": 10,
+          "residual": 0,
+          "symbolic_formula_value": 85000,
+          "verified": true
+        },
+        {
+          "exact_pattern_second_power_trace": 230004,
+          "n": 11,
+          "residual": 0,
+          "symbolic_formula_value": 230004,
+          "verified": true
+        },
+        {
+          "exact_pattern_second_power_trace": 532712,
+          "n": 12,
+          "residual": 0,
+          "symbolic_formula_value": 532712,
+          "verified": true
+        }
+      ],
+      "exact_all_n_at_least_8_second_moment_proved": true,
+      "exact_first_power_trace": "2*n**3 - 22*n**2 + 66*n - 48",
+      "exact_second_characteristic_coefficient": "(n - 1)*(n**2 - 10*n + 22)*(n**3 - 11*n**2 + 34*n - 26)",
+      "exact_second_power_trace": "2*n**6 - 44*n**5 + 374*n**4 - 1548*n**3 + 3236*n**2 - 3176*n + 1160",
+      "falling_character_term_count": 3,
+      "finite_probe_agreement_count": 3,
+      "finite_probe_comparison_count": 3,
+      "intermediate_partition": "(n-2,2)",
+      "intermediate_tail": [
+        2
+      ],
+      "literal_symbolic_range_start": 13,
+      "maximum_partial_permutation_constraint_count": 7,
+      "maximum_special_plus_generic_count": 13,
+      "relative_orbit_class_count": 17,
+      "remaining_exact_characteristic_coefficient_count": 0,
+      "second_power_trace_degree": 6,
+      "second_stage_multiplicity": 2,
+      "shifted_correlation_monomial_product_count": 612,
+      "status": "exact-quadratic-characteristic-polynomial-proved-gap-open"
+    },
+    {
+      "complete_characteristic_polynomial_already_proved": false,
+      "complete_characteristic_polynomial_proved_by_this_pass": true,
+      "endpoint_records": [
+        {
+          "exact_pattern_second_power_trace": 5296,
+          "n": 8,
+          "residual": 0,
+          "symbolic_formula_value": 5296,
+          "verified": true
+        },
+        {
+          "exact_pattern_second_power_trace": 25924,
+          "n": 9,
+          "residual": 0,
+          "symbolic_formula_value": 25924,
+          "verified": true
+        },
+        {
+          "exact_pattern_second_power_trace": 87016,
+          "n": 10,
+          "residual": 0,
+          "symbolic_formula_value": 87016,
+          "verified": true
+        },
+        {
+          "exact_pattern_second_power_trace": 233164,
+          "n": 11,
+          "residual": 0,
+          "symbolic_formula_value": 233164,
+          "verified": true
+        },
+        {
+          "exact_pattern_second_power_trace": 537376,
+          "n": 12,
+          "residual": 0,
+          "symbolic_formula_value": 537376,
+          "verified": true
+        }
+      ],
+      "exact_all_n_at_least_8_second_moment_proved": true,
+      "exact_first_power_trace": "2*n**3 - 22*n**2 + 66*n - 44",
+      "exact_second_characteristic_coefficient": "(n - 5)*(n - 1)*(n**4 - 16*n**3 + 86*n**2 - 174*n + 96)",
+      "exact_second_power_trace": "2*n**6 - 44*n**5 + 374*n**4 - 1540*n**3 + 3152*n**2 - 2916*n + 976",
+      "falling_character_term_count": 4,
+      "finite_probe_agreement_count": 3,
+      "finite_probe_comparison_count": 3,
+      "intermediate_partition": "(n-2,1,1)",
+      "intermediate_tail": [
+        1,
+        1
+      ],
+      "literal_symbolic_range_start": 13,
+      "maximum_partial_permutation_constraint_count": 7,
+      "maximum_special_plus_generic_count": 13,
+      "relative_orbit_class_count": 17,
+      "remaining_exact_characteristic_coefficient_count": 0,
+      "second_power_trace_degree": 6,
+      "second_stage_multiplicity": 2,
+      "shifted_correlation_monomial_product_count": 816,
+      "status": "exact-quadratic-characteristic-polynomial-proved-gap-open"
+    },
+    {
+      "complete_characteristic_polynomial_already_proved": false,
+      "complete_characteristic_polynomial_proved_by_this_pass": true,
+      "endpoint_records": [
+        {
+          "exact_pattern_second_power_trace": 4040,
+          "n": 8,
+          "residual": 0,
+          "symbolic_formula_value": 4040,
+          "verified": true
+        },
+        {
+          "exact_pattern_second_power_trace": 21785,
+          "n": 9,
+          "residual": 0,
+          "symbolic_formula_value": 21785,
+          "verified": true
+        },
+        {
+          "exact_pattern_second_power_trace": 75976,
+          "n": 10,
+          "residual": 0,
+          "symbolic_formula_value": 75976,
+          "verified": true
+        },
+        {
+          "exact_pattern_second_power_trace": 207989,
+          "n": 11,
+          "residual": 0,
+          "symbolic_formula_value": 207989,
+          "verified": true
+        },
+        {
+          "exact_pattern_second_power_trace": 486248,
+          "n": 12,
+          "residual": 0,
+          "symbolic_formula_value": 486248,
+          "verified": true
+        },
+        {
+          "exact_pattern_second_power_trace": 1015825,
+          "n": 13,
+          "residual": 0,
+          "symbolic_formula_value": 1015825,
+          "verified": true
+        }
+      ],
+      "exact_all_n_at_least_8_second_moment_proved": true,
+      "exact_first_power_trace": "2*n**3 - 23*n**2 + 76*n - 72",
+      "exact_second_characteristic_coefficient": "n**6 - 23*n**5 + 208*n**4 - 942*n**3 + 2248*n**2 - 2676*n + 1244",
+      "exact_second_power_trace": "2*n**6 - 46*n**5 + 417*n**4 - 1900*n**3 + 4592*n**2 - 5592*n + 2696",
+      "falling_character_term_count": 5,
+      "finite_probe_agreement_count": 3,
+      "finite_probe_comparison_count": 3,
+      "intermediate_partition": "(n-3,3)",
+      "intermediate_tail": [
+        3
+      ],
+      "literal_symbolic_range_start": 14,
+      "maximum_partial_permutation_constraint_count": 8,
+      "maximum_special_plus_generic_count": 14,
+      "relative_orbit_class_count": 17,
+      "remaining_exact_characteristic_coefficient_count": 0,
+      "second_power_trace_degree": 6,
+      "second_stage_multiplicity": 2,
+      "shifted_correlation_monomial_product_count": 1020,
+      "status": "exact-quadratic-characteristic-polynomial-proved-gap-open"
+    },
+    {
+      "complete_characteristic_polynomial_already_proved": true,
+      "complete_characteristic_polynomial_proved_by_this_pass": false,
+      "endpoint_records": [
+        {
+          "exact_pattern_second_power_trace": 8680,
+          "n": 8,
+          "residual": 0,
+          "symbolic_formula_value": 8680,
+          "verified": true
+        },
+        {
+          "exact_pattern_second_power_trace": 43953,
+          "n": 9,
+          "residual": 0,
+          "symbolic_formula_value": 43953,
+          "verified": true
+        },
+        {
+          "exact_pattern_second_power_trace": 151204,
+          "n": 10,
+          "residual": 0,
+          "symbolic_formula_value": 151204,
+          "verified": true
+        },
+        {
+          "exact_pattern_second_power_trace": 412549,
+          "n": 11,
+          "residual": 0,
+          "symbolic_formula_value": 412549,
+          "verified": true
+        },
+        {
+          "exact_pattern_second_power_trace": 964056,
+          "n": 12,
+          "residual": 0,
+          "symbolic_formula_value": 964056,
+          "verified": true
+        },
+        {
+          "exact_pattern_second_power_trace": 2014945,
+          "n": 13,
+          "residual": 0,
+          "symbolic_formula_value": 2014945,
+          "verified": true
+        }
+      ],
+      "exact_all_n_at_least_8_second_moment_proved": true,
+      "exact_first_power_trace": "4*n**3 - 46*n**2 + 149*n - 118",
+      "exact_second_characteristic_coefficient": "6*n**6 - 138*n**5 + 1240*n**4 - 5487*n**3 + 12351*n**2 - 13086*n + 5150",
+      "exact_second_power_trace": "4*n**6 - 92*n**5 + 828*n**4 - 3678*n**3 + 8355*n**2 - 8992*n + 3624",
+      "falling_character_term_count": 4,
+      "finite_probe_agreement_count": 3,
+      "finite_probe_comparison_count": 3,
+      "intermediate_partition": "(n-3,2,1)",
+      "intermediate_tail": [
+        2,
+        1
+      ],
+      "literal_symbolic_range_start": 14,
+      "maximum_partial_permutation_constraint_count": 8,
+      "maximum_special_plus_generic_count": 14,
+      "relative_orbit_class_count": 17,
+      "remaining_exact_characteristic_coefficient_count": 0,
+      "second_power_trace_degree": 6,
+      "second_stage_multiplicity": 4,
+      "shifted_correlation_monomial_product_count": 816,
+      "status": "exact-second-moment-proved-complete-polynomial-already-known"
+    },
+    {
+      "complete_characteristic_polynomial_already_proved": false,
+      "complete_characteristic_polynomial_proved_by_this_pass": true,
+      "endpoint_records": [
+        {
+          "exact_pattern_second_power_trace": 6512,
+          "n": 8,
+          "residual": 0,
+          "symbolic_formula_value": 6512,
+          "verified": true
+        },
+        {
+          "exact_pattern_second_power_trace": 27001,
+          "n": 9,
+          "residual": 0,
+          "symbolic_formula_value": 27001,
+          "verified": true
+        },
+        {
+          "exact_pattern_second_power_trace": 85320,
+          "n": 10,
+          "residual": 0,
+          "symbolic_formula_value": 85320,
+          "verified": true
+        },
+        {
+          "exact_pattern_second_power_trace": 223109,
+          "n": 11,
+          "residual": 0,
+          "symbolic_formula_value": 223109,
+          "verified": true
+        },
+        {
+          "exact_pattern_second_power_trace": 509056,
+          "n": 12,
+          "residual": 0,
+          "symbolic_formula_value": 509056,
+          "verified": true
+        },
+        {
+          "exact_pattern_second_power_trace": 1048497,
+          "n": 13,
+          "residual": 0,
+          "symbolic_formula_value": 1048497,
+          "verified": true
+        }
+      ],
+      "exact_all_n_at_least_8_second_moment_proved": true,
+      "exact_first_power_trace": "2*n**3 - 23*n**2 + 76*n - 52",
+      "exact_second_characteristic_coefficient": "(n - 1)*(n**5 - 22*n**4 + 186*n**3 - 738*n**2 + 1298*n - 672)",
+      "exact_second_power_trace": "2*n**6 - 46*n**5 + 417*n**4 - 1856*n**3 + 4096*n**2 - 3964*n + 1360",
+      "falling_character_term_count": 7,
+      "finite_probe_agreement_count": 3,
+      "finite_probe_comparison_count": 3,
+      "intermediate_partition": "(n-3,1,1,1)",
+      "intermediate_tail": [
+        1,
+        1,
+        1
+      ],
+      "literal_symbolic_range_start": 14,
+      "maximum_partial_permutation_constraint_count": 8,
+      "maximum_special_plus_generic_count": 14,
+      "relative_orbit_class_count": 17,
+      "remaining_exact_characteristic_coefficient_count": 0,
+      "second_power_trace_degree": 6,
+      "second_stage_multiplicity": 2,
+      "shifted_correlation_monomial_product_count": 1428,
+      "status": "exact-quadratic-characteristic-polynomial-proved-gap-open"
+    },
+    {
+      "complete_characteristic_polynomial_already_proved": false,
+      "complete_characteristic_polynomial_proved_by_this_pass": false,
+      "endpoint_records": [
+        {
+          "exact_pattern_second_power_trace": 1296,
+          "n": 8,
+          "residual": 0,
+          "symbolic_formula_value": 1296,
+          "verified": true
+        },
+        {
+          "exact_pattern_second_power_trace": 8464,
+          "n": 9,
+          "residual": 0,
+          "symbolic_formula_value": 8464,
+          "verified": true
+        },
+        {
+          "exact_pattern_second_power_trace": 31684,
+          "n": 10,
+          "residual": 0,
+          "symbolic_formula_value": 31684,
+          "verified": true
+        },
+        {
+          "exact_pattern_second_power_trace": 90000,
+          "n": 11,
+          "residual": 0,
+          "symbolic_formula_value": 90000,
+          "verified": true
+        },
+        {
+          "exact_pattern_second_power_trace": 215296,
+          "n": 12,
+          "residual": 0,
+          "symbolic_formula_value": 215296,
+          "verified": true
+        },
+        {
+          "exact_pattern_second_power_trace": 456976,
+          "n": 13,
+          "residual": 0,
+          "symbolic_formula_value": 456976,
+          "verified": true
+        },
+        {
+          "exact_pattern_second_power_trace": 887364,
+          "n": 14,
+          "residual": 0,
+          "symbolic_formula_value": 887364,
+          "verified": true
+        }
+      ],
+      "exact_all_n_at_least_8_second_moment_proved": true,
+      "exact_first_power_trace": "n**3 - 12*n**2 + 43*n - 52",
+      "exact_second_characteristic_coefficient": "0",
+      "exact_second_power_trace": "n**6 - 24*n**5 + 230*n**4 - 1136*n**3 + 3097*n**2 - 4472*n + 2704",
+      "falling_character_term_count": 8,
+      "finite_probe_agreement_count": 0,
+      "finite_probe_comparison_count": 0,
+      "intermediate_partition": "(n-4,4)",
+      "intermediate_tail": [
+        4
+      ],
+      "literal_symbolic_range_start": 15,
+      "maximum_partial_permutation_constraint_count": 9,
+      "maximum_special_plus_generic_count": 15,
+      "relative_orbit_class_count": 17,
+      "remaining_exact_characteristic_coefficient_count": 0,
+      "second_power_trace_degree": 6,
+      "second_stage_multiplicity": 1,
+      "shifted_correlation_monomial_product_count": 1632,
+      "status": "exact-second-moment-proved-multiplicity-one"
+    },
+    {
+      "complete_characteristic_polynomial_already_proved": false,
+      "complete_characteristic_polynomial_proved_by_this_pass": false,
+      "endpoint_records": [
+        {
+          "exact_pattern_second_power_trace": 4932,
+          "n": 8,
+          "residual": 0,
+          "symbolic_formula_value": 4932,
+          "verified": true
+        },
+        {
+          "exact_pattern_second_power_trace": 26773,
+          "n": 9,
+          "residual": 0,
+          "symbolic_formula_value": 26773,
+          "verified": true
+        },
+        {
+          "exact_pattern_second_power_trace": 96140,
+          "n": 10,
+          "residual": 0,
+          "symbolic_formula_value": 96140,
+          "verified": true
+        },
+        {
+          "exact_pattern_second_power_trace": 269589,
+          "n": 11,
+          "residual": 0,
+          "symbolic_formula_value": 269589,
+          "verified": true
+        },
+        {
+          "exact_pattern_second_power_trace": 642052,
+          "n": 12,
+          "residual": 0,
+          "symbolic_formula_value": 642052,
+          "verified": true
+        },
+        {
+          "exact_pattern_second_power_trace": 1360877,
+          "n": 13,
+          "residual": 0,
+          "symbolic_formula_value": 1360877,
+          "verified": true
+        },
+        {
+          "exact_pattern_second_power_trace": 2642028,
+          "n": 14,
+          "residual": 0,
+          "symbolic_formula_value": 2642028,
+          "verified": true
+        }
+      ],
+      "exact_all_n_at_least_8_second_moment_proved": true,
+      "exact_first_power_trace": "3*n**3 - 36*n**2 + 126*n - 126",
+      "exact_second_characteristic_coefficient": "3*n**6 - 72*n**5 + 684*n**4 - 3276*n**3 + 8307*n**2 - 10544*n + 5248",
+      "exact_second_power_trace": "3*n**6 - 72*n**5 + 684*n**4 - 3276*n**3 + 8334*n**2 - 10664*n + 5380",
+      "falling_character_term_count": 8,
+      "finite_probe_agreement_count": 3,
+      "finite_probe_comparison_count": 3,
+      "intermediate_partition": "(n-4,3,1)",
+      "intermediate_tail": [
+        3,
+        1
+      ],
+      "literal_symbolic_range_start": 15,
+      "maximum_partial_permutation_constraint_count": 9,
+      "maximum_special_plus_generic_count": 15,
+      "relative_orbit_class_count": 17,
+      "remaining_exact_characteristic_coefficient_count": 1,
+      "second_power_trace_degree": 6,
+      "second_stage_multiplicity": 3,
+      "shifted_correlation_monomial_product_count": 1632,
+      "status": "exact-cubic-first-two-coefficients-proved-determinant-open"
+    },
+    {
+      "complete_characteristic_polynomial_already_proved": false,
+      "complete_characteristic_polynomial_proved_by_this_pass": true,
+      "endpoint_records": [
+        {
+          "exact_pattern_second_power_trace": 3204,
+          "n": 8,
+          "residual": 0,
+          "symbolic_formula_value": 3204,
+          "verified": true
+        },
+        {
+          "exact_pattern_second_power_trace": 17705,
+          "n": 9,
+          "residual": 0,
+          "symbolic_formula_value": 17705,
+          "verified": true
+        },
+        {
+          "exact_pattern_second_power_trace": 63656,
+          "n": 10,
+          "residual": 0,
+          "symbolic_formula_value": 63656,
+          "verified": true
+        },
+        {
+          "exact_pattern_second_power_trace": 178569,
+          "n": 11,
+          "residual": 0,
+          "symbolic_formula_value": 178569,
+          "verified": true
+        },
+        {
+          "exact_pattern_second_power_trace": 425492,
+          "n": 12,
+          "residual": 0,
+          "symbolic_formula_value": 425492,
+          "verified": true
+        },
+        {
+          "exact_pattern_second_power_trace": 902369,
+          "n": 13,
+          "residual": 0,
+          "symbolic_formula_value": 902369,
+          "verified": true
+        },
+        {
+          "exact_pattern_second_power_trace": 1752840,
+          "n": 14,
+          "residual": 0,
+          "symbolic_formula_value": 1752840,
+          "verified": true
+        }
+      ],
+      "exact_all_n_at_least_8_second_moment_proved": true,
+      "exact_first_power_trace": "2*n**3 - 24*n**2 + 83*n - 74",
+      "exact_second_characteristic_coefficient": "(n - 5)*(n**2 - 7*n + 8)*(n**3 - 12*n**2 + 40*n - 34)",
+      "exact_second_power_trace": "2*n**6 - 48*n**5 + 454*n**4 - 2140*n**3 + 5225*n**2 - 6160*n + 2756",
+      "falling_character_term_count": 7,
+      "finite_probe_agreement_count": 3,
+      "finite_probe_comparison_count": 3,
+      "intermediate_partition": "(n-4,2,2)",
+      "intermediate_tail": [
+        2,
+        2
+      ],
+      "literal_symbolic_range_start": 15,
+      "maximum_partial_permutation_constraint_count": 9,
+      "maximum_special_plus_generic_count": 15,
+      "relative_orbit_class_count": 17,
+      "remaining_exact_characteristic_coefficient_count": 0,
+      "second_power_trace_degree": 6,
+      "second_stage_multiplicity": 2,
+      "shifted_correlation_monomial_product_count": 1428,
+      "status": "exact-quadratic-characteristic-polynomial-proved-gap-open"
+    }
+  ],
+  "status": "five-exact-quadratic-shape-polynomials-proved-one-cubic-determinant-open",
+  "summary": "Proved 9/9 exact second moments, completing all five previously open quadratic shape characteristic polynomials; 1 higher coefficient family remains before every stable-shape spectrum is exact.",
+  "theorem": {
+    "proved": true,
+    "range": "every integer n>=8",
+    "statement": "The common orbit Hamiltonian has the listed exact Tr(H^2) and second characteristic coefficient on every stable intermediate shape; all five open multiplicity-two characteristic polynomials are therefore exact."
+  }
+}

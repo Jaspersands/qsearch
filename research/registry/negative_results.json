@@ -36316,6 +36316,31 @@
   {
     "applies_to": [
       "CODE-COSET-COLLECTIVE",
+      "EXP-COSET-STABLE-SHAPE-CUBIC-GAP-CERTIFICATE"
+    ],
+    "claim": "Exact normalized gaps for every nontrivial stable shape constitute a nonabelian HSP algorithm.",
+    "evidence": {
+      "all_nontrivial_stable_shape_normalized_gap_theorem_count": 7,
+      "cauchy_root_bound_constant": 903473,
+      "complementary_shape_normalized_gap_theorem_count": 6,
+      "complete_racah_associator_count": 0,
+      "exact_cubic_discriminant_identity_count": 1,
+      "hidden_involution_decoder_count": 0,
+      "lcu_normalized_gap_inverse_polynomial_exponent": 21,
+      "new_coherent_shape_label_count": 0,
+      "new_normalized_gap_theorem_count": 1,
+      "positive_cubic_discriminant_theorem_count": 1,
+      "raw_gap_inverse_polynomial_exponent": 18,
+      "remaining_open_stable_shape_gap_family_count": 0
+    },
+    "id": "NEG-COSET-ALL-STABLE-SHAPE-GAPS-AS-COMPLETE-QUANTUM-ALGORITHM",
+    "lesson": "Compile the common orbit Hamiltonian uniformly across all shapes, synthesize the complete coupling-tree transition, then test decoder information against classical baselines.",
+    "reason_invalid": "Coherent label and transition circuits, decoder information, sample complexity, and classical separation remain unproved.",
+    "source": "research/representation/coset_stable_shape_cubic_gap_certificate.json"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
       "EXP-COSET-COVARIANT-FRAME"
     ],
     "claim": "Diagonalizing the central one-copy coset-state frame supplies a hidden-involution algorithm.",
@@ -36399,6 +36424,36 @@
     "lesson": "Promote the bounded-support operator hierarchy, not the dense matrices: derive its stable-n multiplicity action and gap before making an algorithmic claim.",
     "reason_invalid": "The table is obtained by dense 729-dimensional diagonalization; no stable-n joint-gap bound, compressed formula, or coherent circuit is proved.",
     "source": "research/representation/coset_hierarchical_racah_control.json"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "EXP-COSET-STABLE-SHAPE-CUBIC-DETERMINANT-CERTIFICATE"
+    ],
+    "claim": "Exact characteristic polynomials for all nine stable shapes constitute a major quantum algorithm.",
+    "evidence": {
+      "complete_racah_associator_count": 0,
+      "exact_complete_stable_shape_polynomial_count": 9,
+      "exact_cubic_shape_determinant_theorem_count": 1,
+      "exact_endpoint_verified_count": 9,
+      "finite_sparse_determinant_comparison_count": 3,
+      "finite_sparse_determinant_match_count": 3,
+      "hidden_involution_decoder_count": 0,
+      "literal_symbolic_minimum_n": 17,
+      "maximum_active_support_size": 9,
+      "new_coherent_shape_label_count": 0,
+      "new_exact_complete_cubic_shape_polynomial_count": 1,
+      "new_normalized_gap_theorem_count": 0,
+      "nonzero_pattern_coefficient_count": 4493,
+      "raw_canonical_pattern_count": 2212218888,
+      "raw_relative_term_type_count": 18144,
+      "relative_orbit_class_count": 129,
+      "remaining_open_shape_characteristic_coefficient_family_count": 0
+    },
+    "id": "NEG-COSET-EXACT-NINE-SHAPE-SPECTRA-AS-SHOR-LEVEL-ALGORITHM",
+    "lesson": "Proceed next to exact normalized root separation and common-orbit LCU compilation, then test whether complete label outcomes carry reduction-compatible information.",
+    "reason_invalid": "Normalized gaps, coherent label/transition circuits, a hidden-involution decoder, sample complexity, and classical separation are all independent unresolved obligations.",
+    "source": "research/representation/coset_stable_shape_cubic_determinant_certificate.json"
   },
   {
     "applies_to": [
@@ -36611,6 +36666,53 @@
   {
     "applies_to": [
       "CODE-COSET-COLLECTIVE",
+      "EXP-COSET-STABLE-SHAPE-SECOND-MOMENT-CERTIFICATE"
+    ],
+    "claim": "Exact characteristic polynomials for five complementary shapes close the stable Racah transform.",
+    "evidence": {
+      "complete_racah_associator_count": 0,
+      "exact_all_n_shape_second_moment_theorem_count": 9,
+      "exact_endpoint_verified_count": 53,
+      "finite_probe_second_coefficient_agreement_count": 21,
+      "finite_probe_second_coefficient_comparison_count": 21,
+      "hidden_involution_decoder_count": 0,
+      "new_coherent_shape_label_count": 0,
+      "new_exact_complete_quadratic_shape_polynomial_count": 5,
+      "new_exact_open_shape_second_moment_theorem_count": 6,
+      "new_normalized_gap_theorem_count": 0,
+      "remaining_open_shape_characteristic_coefficient_family_count": 1,
+      "stable_shape_count": 9
+    },
+    "id": "NEG-COSET-FIVE-EXACT-QUADRATIC-SHAPES-AS-COMPLETE-RACAH",
+    "lesson": "Finish the lone cubic determinant, prove each quadratic/cubic normalized discriminant bound, then satisfy circuit and decoder proof gates independently.",
+    "reason_invalid": "The multiplicity-three determinant, six normalized gap theorems, coherent orbit-LCU compilation, coupling-tree transitions, and hidden-involution decoder remain unproved.",
+    "source": "research/representation/coset_stable_shape_second_moment_certificate.json"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "EXP-COSET-STABLE-SHAPE-QUADRATIC-GAP-CERTIFICATE"
+    ],
+    "claim": "Five exact complementary normalized gaps complete the stable Racah associator.",
+    "evidence": {
+      "complete_racah_associator_count": 0,
+      "hidden_involution_decoder_count": 0,
+      "minimum_uniform_raw_gap_lower_bound": 12,
+      "new_coherent_shape_label_count": 0,
+      "new_normalized_gap_theorem_count": 5,
+      "positive_discriminant_theorem_count": 5,
+      "quadratic_shape_count": 5,
+      "remaining_open_stable_shape_gap_family_count": 1,
+      "uniform_inverse_polynomial_gap_exponent": 3
+    },
+    "id": "NEG-COSET-FIVE-GAPPED-QUADRATIC-SHAPES-AS-COMPLETE-ASSOCIATOR",
+    "lesson": "Close the cubic discriminant/root separation next, then prove common-orbit block encoding and complete transition behavior before decoder experiments.",
+    "reason_invalid": "The cubic gap, coherent label circuits, left/right transition synthesis, hidden-involution decoder, and classical separation remain unproved.",
+    "source": "research/representation/coset_stable_shape_quadratic_gap_certificate.json"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
       "EXP-COSET-JUCYS-MURPHY-LABEL-TRANSFORM"
     ],
     "claim": "Simultaneous diagonal Young--Jucys--Murphy labels implement the full internal S_n Kronecker transform and its hidden-involution decoder.",
@@ -36680,6 +36782,9 @@
       "proved_polynomial_primitive_count": 7,
       "restricted_multiplicity_classical_match_count": 1,
       "stable_channel_gapped_label_transform_poly_proof_count": 1,
+      "stable_shape_channel_routing_circuit_count": 0,
+      "stable_shape_coupling_tree_transition_circuit_count": 0,
+      "stable_shape_local_gapped_label_transform_count": 7,
       "unresolved_required_capability_count": 3
     },
     "id": "NEG-COSET-KRONECKER-COUNT-AS-TRANSFORM",
@@ -36836,12 +36941,38 @@
       "proved_polynomial_primitive_count": 7,
       "restricted_multiplicity_classical_match_count": 1,
       "stable_channel_gapped_label_transform_poly_proof_count": 1,
+      "stable_shape_channel_routing_circuit_count": 0,
+      "stable_shape_coupling_tree_transition_circuit_count": 0,
+      "stable_shape_local_gapped_label_transform_count": 7,
       "unresolved_required_capability_count": 3
     },
     "id": "NEG-COSET-RESTRICTED-MULTIPLICITY-AS-BREAKTHROUGH",
     "lesson": "Track each representation primitive by exact action, promise, circuit cost, output, and decoder role.",
     "reason_invalid": "Polynomial classical algorithms cover many proposed restricted families, and no hidden-involution reduction is supplied.",
     "source": "research/representation/coset_recoupling_capability_ledger.json"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "EXP-COSET-STABLE-SHAPE-COHERENT-LABEL-CERTIFICATE"
+    ],
+    "claim": "Coherent eigenlabels on all stable shapes implement a full Racah decoder.",
+    "evidence": {
+      "all_nontrivial_stable_shape_coherent_label_count": 7,
+      "channel_routing_circuit_count": 0,
+      "common_shape_controlled_block_encoding_count": 1,
+      "complete_racah_associator_count": 0,
+      "coupling_tree_transition_circuit_count": 0,
+      "hidden_involution_decoder_count": 0,
+      "maximum_multiplicity_dimension": 4,
+      "maximum_phase_estimation_query_exponent": 53,
+      "new_coherent_shape_label_count": 6,
+      "nontrivial_stable_shape_count": 7
+    },
+    "id": "NEG-COSET-SEVEN-COHERENT-SHAPE-LABELS-AS-COMPLETE-RACAH-DECODER",
+    "lesson": "Construct coherent projectors/routing and the complete left/right transition isometry before testing whether label outcomes support a reduction-compatible decoder.",
+    "reason_invalid": "Channel routing, coupling-tree transitions, hidden-involution information, and classical separation remain unproved.",
+    "source": "research/representation/coset_stable_shape_coherent_label_certificate.json"
   },
   {
     "applies_to": [
@@ -36867,6 +36998,9 @@
       "proved_polynomial_primitive_count": 7,
       "restricted_multiplicity_classical_match_count": 1,
       "stable_channel_gapped_label_transform_poly_proof_count": 1,
+      "stable_shape_channel_routing_circuit_count": 0,
+      "stable_shape_coupling_tree_transition_circuit_count": 0,
+      "stable_shape_local_gapped_label_transform_count": 7,
       "unresolved_required_capability_count": 3
     },
     "id": "NEG-COSET-SN-QFT-AS-MULTICOPY-DECODER",

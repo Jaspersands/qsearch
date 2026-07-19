@@ -1,0 +1,83 @@
+{
+  "claim_gate": {
+    "all_seven_nontrivial_stable_shape_gaps_proved": true,
+    "all_six_complementary_coherent_label_circuits_proved": false,
+    "all_six_complementary_shape_gaps_proved": true,
+    "complete_racah_associator_proved": false,
+    "cubic_normalized_gap_proved": true,
+    "hidden_involution_decoder_proved": false,
+    "reason": "All seven nontrivial stable-shape spectra and normalized gaps are exact, but six coherent label circuits, coupling-tree transitions, decoder information, and classical separation remain open.",
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-07-19T02:17:52.518609+00:00",
+  "discriminant_certificate": {
+    "exact_discriminant": "2484*n**6 - 31968*n**5 + 170640*n**4 - 484096*n**3 + 770496*n**2 - 652800*n + 230144",
+    "expected_factorization": "4*(n - 2)**3*(621*n**3 - 4266*n**2 + 9612*n - 7192)",
+    "factored_discriminant": "4*(n - 2)**3*(621*n**3 - 4266*n**2 + 9612*n - 7192)",
+    "factorization_verified": true,
+    "positive_for_every_integer_n_at_least_8": true,
+    "root_consequence": "three distinct real roots",
+    "shift_n_equals_m_plus_8": "2484*m**6 + 87264*m**5 + 1276560*m**4 + 9953024*m**3 + 43618752*m**2 + 101869056*m + 99042048",
+    "shifted_coefficients": [
+      2484,
+      87264,
+      1276560,
+      9953024,
+      43618752,
+      101869056,
+      99042048
+    ]
+  },
+  "exact_polynomial_certificate": {
+    "characteristic_polynomial": "-n**9 + 36*n**8 - 558*n**7 + 3*n**6*x + 4878*n**6 - 72*n**5*x - 26451*n**5 + 684*n**4*x + 92084*n**4 - 3*n**3*x**2 - 3276*n**3*x - 205482*n**3 + 36*n**2*x**2 + 8307*n**2*x + 283150*n**2 - 126*n*x**2 - 10544*n*x - 218656*n + x**3 + 126*x**2 + 5248*x + 72176",
+    "determinant": "n**9 - 36*n**8 + 558*n**7 - 4878*n**6 + 26451*n**5 - 92084*n**4 + 205482*n**3 - 283150*n**2 + 218656*n - 72176",
+    "first_characteristic_coefficient": "3*n**3 - 36*n**2 + 126*n - 126",
+    "intermediate_partition": "eta_n=(n-4,3,1)",
+    "second_characteristic_coefficient": "3*n**6 - 72*n**5 + 684*n**4 - 3276*n**3 + 8307*n**2 - 10544*n + 5248"
+  },
+  "falsifiers_triggered": [
+    "Complete spectral separation does not provide coherent multiplicity-label circuits.",
+    "Shape-local labels do not synthesize the overlapping left/right associator.",
+    "No hidden-involution information theorem follows from separated eigenvalues.",
+    "No quantum speedup follows without a decoder and serious classical baselines."
+  ],
+  "headline_metrics": {
+    "all_nontrivial_stable_shape_normalized_gap_theorem_count": 7,
+    "cauchy_root_bound_constant": 903473,
+    "complementary_shape_normalized_gap_theorem_count": 6,
+    "complete_racah_associator_count": 0,
+    "exact_cubic_discriminant_identity_count": 1,
+    "hidden_involution_decoder_count": 0,
+    "lcu_normalized_gap_inverse_polynomial_exponent": 21,
+    "new_coherent_shape_label_count": 0,
+    "new_normalized_gap_theorem_count": 1,
+    "positive_cubic_discriminant_theorem_count": 1,
+    "raw_gap_inverse_polynomial_exponent": 18,
+    "remaining_open_stable_shape_gap_family_count": 0
+  },
+  "normalized_gap_certificate": {
+    "inverse_polynomial_gap_proved": true,
+    "normalized_gap_lower_bound": "delta_n/alpha_n>=1/(3265053846916*n^21)",
+    "orbit_lcu_normalization": "alpha_n=n(n-1)(n-2)<=n^3"
+  },
+  "root_bound_certificate": {
+    "cauchy_bound": "R_n<=903473*n^9",
+    "coefficient_l1_bounds": {
+      "e1": 291,
+      "e2": 28134,
+      "e3": 903472
+    },
+    "discriminant_gap_inequality": "delta_n>=sqrt(Disc_n)/(4*R_n^2)",
+    "maximum_coefficient_l1_bound": 903472,
+    "raw_gap_lower_bound": "delta_n>=1/(3265053846916*n^18)"
+  },
+  "source_certificate_contract": {
+    "all_sources_proved": true,
+    "cubic_determinant_certificate": "research/representation/coset_stable_shape_cubic_determinant_certificate.json",
+    "five_quadratic_gap_certificate": "research/representation/coset_stable_shape_quadratic_gap_certificate.json",
+    "original_stable_gap_certificate": "research/representation/coset_stable_root_separation_certificate.json",
+    "second_moment_certificate": "research/representation/coset_stable_shape_second_moment_certificate.json"
+  },
+  "status": "all-seven-nontrivial-stable-shape-gaps-proved-circuits-transitions-decoder-open",
+  "summary": "Proved the final cubic normalized root gap and thereby all seven nontrivial stable-shape gap families; coherent implementation, transition synthesis, decoding, and classical separation remain open."
+}
