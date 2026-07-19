@@ -112,6 +112,9 @@ Commands:
   python qsearch.py coset-racah-stable-shape-quadratic-gaps
   python qsearch.py coset-racah-stable-shape-cubic-gap
   python qsearch.py coset-racah-stable-shape-coherent-labels
+  python qsearch.py coset-racah-stable-first-stage-labels
+  python qsearch.py coset-racah-stable-shape-router
+  python qsearch.py coset-racah-stable-encoded-tree
   python qsearch.py coset-recoupling-capabilities
   python qsearch.py coset-recoupling-synthesize
   python qsearch.py code-equivalence
@@ -363,6 +366,15 @@ from coset_stable_shape_cubic_gap_certificate import (
 )
 from coset_stable_shape_coherent_label_certificate import (
     write_stable_shape_coherent_label_certificate,
+)
+from coset_stable_first_stage_label_certificate import (
+    write_stable_first_stage_label_certificate,
+)
+from coset_stable_shape_router_certificate import (
+    write_stable_shape_router_certificate,
+)
+from coset_stable_encoded_tree_certificate import (
+    write_stable_encoded_tree_certificate,
 )
 from coset_recoupling_capability_ledger import write_recoupling_capability_report
 from coset_recoupling_mechanism_synthesis import write_recoupling_mechanism_synthesis_report
@@ -4473,6 +4485,106 @@ def command_coset_racah_stable_shape_coherent_labels(
     return 0
 
 
+def command_coset_racah_stable_first_stage_labels(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_stable_first_stage_label_certificate(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Stable Racah first-stage multiplicity-label certificate complete")
+    print(
+        "Artifact: research/representation/"
+        "coset_stable_first_stage_label_certificate.json"
+    )
+    print(
+        "Nontrivial first-stage gaps: "
+        f"{metrics['all_nontrivial_first_stage_gap_theorem_count']}/2"
+    )
+    print(
+        "Stable shapes with first-stage multiplicity resolved: "
+        f"{metrics['all_stable_first_stage_multiplicity_resolved_shape_count']}/9"
+    )
+    print(
+        "Coupling-tree transition circuits: "
+        f"{metrics['coupling_tree_transition_circuit_count']}"
+    )
+    print(f"Speedup claim allowed: {payload['claim_gate']['speedup_claim_allowed']}")
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_coset_racah_stable_shape_router(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_stable_shape_router_certificate(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Stable Racah intermediate-shape router certificate complete")
+    print(
+        "Artifact: research/representation/"
+        "coset_stable_shape_router_certificate.json"
+    )
+    print(
+        "Stable-range signature collisions: "
+        f"{metrics['stable_range_shape_pair_collision_count']}/"
+        f"{metrics['shape_pair_collision_audit_count']} pairs"
+    )
+    print(
+        "Coherent encoded shape routers: "
+        f"{metrics['coherent_intermediate_shape_router_count']}"
+    )
+    print(
+        "Compressed Clebsch isometries: "
+        f"{metrics['compressed_clebsch_isometry_count']}"
+    )
+    print(f"Speedup claim allowed: {payload['claim_gate']['speedup_claim_allowed']}")
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_coset_racah_stable_encoded_tree(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_stable_encoded_tree_certificate(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Stable Racah encoded coupling-tree certificate complete")
+    print(
+        "Artifact: research/representation/"
+        "coset_stable_encoded_tree_certificate.json"
+    )
+    print(
+        "Complete joint labels: "
+        f"{metrics['joint_multiplicity_label_count']}/"
+        f"{metrics['final_multiplicity_dimension']}"
+    )
+    print(
+        "Encoded coupling-tree transition isometries: "
+        f"{metrics['encoded_coupling_tree_transition_isometry_count']}"
+    )
+    print(
+        "State-dependent transition filters: "
+        f"{metrics['transition_filter_count']}"
+    )
+    print(f"Speedup claim allowed: {payload['claim_gate']['speedup_claim_allowed']}")
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
 def command_coset_recoupling_synthesize(args: argparse.Namespace) -> int:
     initialize_seed_registry(overwrite=False)
     payload = write_recoupling_mechanism_synthesis_report(
@@ -7853,6 +7965,39 @@ def build_parser() -> argparse.ArgumentParser:
     )
     coset_racah_stable_shape_coherent_labels.set_defaults(
         func=command_coset_racah_stable_shape_coherent_labels
+    )
+
+    coset_racah_stable_first_stage_labels = subparsers.add_parser(
+        "coset-racah-stable-first-stage-labels",
+        help="Prove coherent labels for both nontrivial first-stage stable multiplicity blocks.",
+    )
+    coset_racah_stable_first_stage_labels.add_argument(
+        "--no-registry", action="store_true"
+    )
+    coset_racah_stable_first_stage_labels.set_defaults(
+        func=command_coset_racah_stable_first_stage_labels
+    )
+
+    coset_racah_stable_shape_router = subparsers.add_parser(
+        "coset-racah-stable-shape-router",
+        help="Prove a collision-free coherent intermediate-shape router on the stable branch.",
+    )
+    coset_racah_stable_shape_router.add_argument(
+        "--no-registry", action="store_true"
+    )
+    coset_racah_stable_shape_router.set_defaults(
+        func=command_coset_racah_stable_shape_router
+    )
+
+    coset_racah_stable_encoded_tree = subparsers.add_parser(
+        "coset-racah-stable-encoded-tree",
+        help="Compose complete encoded left/right stable coupling-tree labels and their transition isometry.",
+    )
+    coset_racah_stable_encoded_tree.add_argument(
+        "--no-registry", action="store_true"
+    )
+    coset_racah_stable_encoded_tree.set_defaults(
+        func=command_coset_racah_stable_encoded_tree
     )
 
     coset_recoupling_synthesize = subparsers.add_parser(

@@ -1,0 +1,183 @@
+{
+  "circuit_contract": {
+    "complexity": "polynomial in n and log(1/error)",
+    "does_not_produce": [
+      "the intermediate shape label",
+      "a compressed eta carrier register",
+      "a left/right coupling-tree transition",
+      "a hidden-involution decoder"
+    ],
+    "encoding": "the original W_n tensor W_n registers; no dense Clebsch table is used",
+    "label_method": "coherent phase estimation at the proved target-controlled precision",
+    "multiplicity_free_targets": "require no internal eigenlabel",
+    "operator": "H_12=sum rho_W(tau) tensor rho_W(c) over ordered triples with tau supported on c",
+    "prepare": "uniform reversible preparation over n(n-1)(n-2) ordered triples",
+    "select": "controlled Young-basis transposition and oriented 3-cycle actions"
+  },
+  "claim_gate": {
+    "all_nontrivial_first_stage_gaps_proved": true,
+    "all_stable_first_stage_multiplicity_labels_proved": true,
+    "coupling_tree_transition_proved": false,
+    "encoded_channel_router_proved": false,
+    "hidden_involution_decoder_proved": false,
+    "intermediate_shape_label_proved_by_this_certificate": false,
+    "reason": "First-stage multiplicity is now fully resolved on the stable family, but shape identification, encoded channel routing, coupling-tree transitions, decoding, and separation remain separate obligations.",
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-07-19T02:43:52.905710+00:00",
+  "endpoint_records": [
+    {
+      "exact_pattern_second_power_trace": 244,
+      "formula_second_power_trace": 244,
+      "n": 6,
+      "residual": 0,
+      "verified": true
+    },
+    {
+      "exact_pattern_second_power_trace": 3040,
+      "formula_second_power_trace": 3040,
+      "n": 7,
+      "residual": 0,
+      "verified": true
+    },
+    {
+      "exact_pattern_second_power_trace": 16496,
+      "formula_second_power_trace": 16496,
+      "n": 8,
+      "residual": 0,
+      "verified": true
+    },
+    {
+      "exact_pattern_second_power_trace": 59044,
+      "formula_second_power_trace": 59044,
+      "n": 9,
+      "residual": 0,
+      "verified": true
+    },
+    {
+      "exact_pattern_second_power_trace": 165748,
+      "formula_second_power_trace": 165748,
+      "n": 10,
+      "residual": 0,
+      "verified": true
+    },
+    {
+      "exact_pattern_second_power_trace": 395984,
+      "formula_second_power_trace": 395984,
+      "n": 11,
+      "residual": 0,
+      "verified": true
+    }
+  ],
+  "equality_pattern_certificate": {
+    "discriminant": "n**4 - 14*n**3 + 73*n**2 - 136*n + 80",
+    "discriminant_after_n_equals_m_plus_6": "m**4 + 10*m**3 + 37*m**2 + 92*m + 164",
+    "first_power_trace": "2*n**3 - 19*n**2 + 51*n - 36",
+    "literal_first_moment_range_start": 6,
+    "literal_second_moment_range_start": 12,
+    "positive_for_every_n_at_least_6": true,
+    "proved": true,
+    "relative_orbit_class_count": 17,
+    "second_characteristic_coefficient": "(n - 4)*(n - 1)*(n**4 - 14*n**3 + 67*n**2 - 126*n + 76)",
+    "second_power_trace": "2*n**6 - 38*n**5 + 283*n**4 - 1048*n**3 + 2021*n**2 - 1904*n + 688",
+    "shifted_discriminant_coefficients": [
+      1,
+      10,
+      37,
+      92,
+      164
+    ]
+  },
+  "falsifiers_triggered": [
+    "Second-stage shape-local labels cannot silently stand in for unresolved first-stage multiplicity.",
+    "Exact first-stage gaps do not identify the intermediate shape without a commuting shape label.",
+    "A nondestructive encoded eigenlabel is not automatically a compressed Clebsch isometry.",
+    "First-stage spectral control alone does not construct a Racah transition or decoder."
+  ],
+  "headline_metrics": {
+    "all_nontrivial_first_stage_gap_theorem_count": 2,
+    "all_stable_first_stage_multiplicity_resolved_shape_count": 9,
+    "coherent_first_stage_label_transform_count": 1,
+    "coupling_tree_transition_circuit_count": 0,
+    "exact_endpoint_verified_count": 6,
+    "hidden_involution_decoder_count": 0,
+    "intermediate_shape_label_transform_count": 0,
+    "maximum_normalized_gap_inverse_polynomial_exponent": 3,
+    "minimum_uniform_raw_gap_lower_bound": 12,
+    "multiplicity_free_first_stage_shape_count": 7,
+    "new_exact_first_stage_gap_theorem_count": 1,
+    "nontrivial_first_stage_shape_count": 2,
+    "relative_orbit_class_count": 17,
+    "stable_intermediate_shape_count": 9
+  },
+  "multiplicity_certificate": {
+    "W_target": {
+      "all_n_at_least_6_multiplicity": 2,
+      "character_polynomial": "binomial(X1,2)+X2-X1",
+      "direct_n6_multiplicity": 2,
+      "falling_factorial_term_count": 36,
+      "proved": true,
+      "stable_factorial_moment_threshold": 6,
+      "stable_multiplicity": 2
+    },
+    "exact_nontrivial_target_set": [
+      [
+        2
+      ],
+      [
+        2,
+        1
+      ]
+    ],
+    "exact_nontrivial_target_set_proved": true,
+    "xi_target_source": "coset_commutant_gap_certificate.py"
+  },
+  "status": "all-stable-first-stage-multiplicity-labels-proved-shape-routing-open",
+  "summary": "Proved the missing W_n first-stage quadratic gap and combined it with the xi_n parity gap, resolving all nontrivial first-stage multiplicities in the exact nine-shape stable family.",
+  "target_records": [
+    {
+      "coherent_phase_estimation_label_proved": true,
+      "exact_characteristic_polynomial": "n**6 - 19*n**5 + 141*n**4 - 517*n**3 + 974*n**2 - 884*n + x**2 + x*(-2*n**3 + 19*n**2 - 51*n + 36) + 304",
+      "exact_discriminant": "n**4 - 14*n**3 + 73*n**2 - 136*n + 80",
+      "exact_first_power_trace": "2*n**3 - 19*n**2 + 51*n - 36",
+      "exact_normalized_gap": "sqrt(n**4 - 14*n**3 + 73*n**2 - 136*n + 80)/(n*(n - 2)*(n - 1))",
+      "exact_raw_gap": "sqrt(n**4 - 14*n**3 + 73*n**2 - 136*n + 80)",
+      "exact_second_power_trace": "2*n**6 - 38*n**5 + 283*n**4 - 1048*n**3 + 2021*n**2 - 1904*n + 688",
+      "lcu_term_count": "n*(n - 2)*(n - 1)",
+      "multiplicity": 2,
+      "normalized_gap_inverse_polynomial_exponent": 3,
+      "normalized_gap_lower_bound": "12/n**3",
+      "proof_source": "exact equality-pattern first/second moments and positive discriminant",
+      "status": "exact-first-stage-W-label-proved",
+      "target_partition": "W_n=(n-2,2)",
+      "target_tail": [
+        2
+      ]
+    },
+    {
+      "coherent_phase_estimation_label_proved": true,
+      "exact_characteristic_polynomial": "product over the exact symmetric/antisymmetric eigenvalues",
+      "exact_discriminant": "4*(n-2)**2",
+      "exact_first_power_trace": "sum of the two parity eigenvalues",
+      "exact_normalized_gap": "2/(n*(n-1))",
+      "exact_raw_gap": "2*(n-2)",
+      "exact_second_power_trace": "sum of the squared parity eigenvalues",
+      "lcu_term_count": "n*(n - 2)*(n - 1)",
+      "multiplicity": 2,
+      "normalized_gap_inverse_polynomial_exponent": 2,
+      "normalized_gap_lower_bound": "2/n**2",
+      "proof_source": "coset_commutant_gap_certificate.py",
+      "status": "exact-first-stage-xi-label-proved",
+      "target_partition": "xi_n=(n-3,2,1)",
+      "target_tail": [
+        2,
+        1
+      ]
+    }
+  ],
+  "theorem": {
+    "proved": true,
+    "range": "every integer n>=6",
+    "statement": "The support-intersection-two orbit Hamiltonian has an inverse-polynomial normalized gap in both nontrivial first-stage stable multiplicity blocks. Combined with the seven multiplicity-free targets, every one of the nine stable W_n tensor W_n intermediate shapes has resolved first-stage multiplicity."
+  }
+}

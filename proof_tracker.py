@@ -174,6 +174,15 @@ COSET_STABLE_SHAPE_CUBIC_GAP_PATH = Path(
 COSET_STABLE_SHAPE_COHERENT_LABEL_PATH = Path(
     "research/representation/coset_stable_shape_coherent_label_certificate.json"
 )
+COSET_STABLE_FIRST_STAGE_LABEL_PATH = Path(
+    "research/representation/coset_stable_first_stage_label_certificate.json"
+)
+COSET_STABLE_SHAPE_ROUTER_PATH = Path(
+    "research/representation/coset_stable_shape_router_certificate.json"
+)
+COSET_STABLE_ENCODED_TREE_PATH = Path(
+    "research/representation/coset_stable_encoded_tree_certificate.json"
+)
 COSET_RECOUPLING_CAPABILITY_PATH = Path(
     "research/representation/coset_recoupling_capability_ledger.json"
 )
@@ -822,6 +831,39 @@ def lemma_templates(candidate: dict[str, Any]) -> list[LemmaRecord]:
             stable_shape_coherent_labels = {}
         stable_shape_coherent_label_metrics = (
             stable_shape_coherent_labels.get("headline_metrics", {})
+        )
+        try:
+            stable_first_stage_labels = (
+                json.loads(COSET_STABLE_FIRST_STAGE_LABEL_PATH.read_text())
+                if COSET_STABLE_FIRST_STAGE_LABEL_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            stable_first_stage_labels = {}
+        stable_first_stage_label_metrics = stable_first_stage_labels.get(
+            "headline_metrics", {}
+        )
+        try:
+            stable_shape_router = (
+                json.loads(COSET_STABLE_SHAPE_ROUTER_PATH.read_text())
+                if COSET_STABLE_SHAPE_ROUTER_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            stable_shape_router = {}
+        stable_shape_router_metrics = stable_shape_router.get(
+            "headline_metrics", {}
+        )
+        try:
+            stable_encoded_tree = (
+                json.loads(COSET_STABLE_ENCODED_TREE_PATH.read_text())
+                if COSET_STABLE_ENCODED_TREE_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            stable_encoded_tree = {}
+        stable_encoded_tree_metrics = stable_encoded_tree.get(
+            "headline_metrics", {}
         )
         try:
             recoupling_capabilities = (
@@ -1542,6 +1584,87 @@ def lemma_templates(candidate: dict[str, Any]) -> list[LemmaRecord]:
                     falsification_test=(
                         "Verify ordered-triple term bijection, shape-controlled representation SELECT, every exact "
                         "gap dependency, and explicit exclusion of routing and coupling-tree transition claims."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-COSET-STABLE-RACAH-FIRST-STAGE-MULTIPLICITY-LABELS",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "Every nontrivial first-stage multiplicity block in the exact nine-shape stable family has "
+                        "an inverse-polynomial normalized orbit-Hamiltonian gap and a coherent encoded eigenlabel."
+                    ),
+                    depends_on=["PO-MEASUREMENT", "PO-COMPLEXITY", "PO-NO-GO"],
+                    status=(
+                        "proved-all-stable-first-stage-multiplicity-labels-shape-routing-open"
+                        if int(
+                            stable_first_stage_label_metrics.get(
+                                "all_stable_first_stage_multiplicity_resolved_shape_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        == 9
+                        else "blocked-stable-first-stage-gap-certificate-missing"
+                    ),
+                    falsification_test=(
+                        "Verify the exact W_n cubic multiplicity, both marked-cycle moments, every n=6..11 endpoint, "
+                        "positive shifted discriminant, LCU normalization, and the independent xi_n parity gap."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-COSET-STABLE-RACAH-INTERMEDIATE-SHAPE-ROUTER",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "Two polynomial central class sums coherently and uniquely route the final-xi stable branch "
+                        "into all nine allowed intermediate-shape labels for every n>=8."
+                    ),
+                    depends_on=["PO-MEASUREMENT", "PO-COMPLEXITY", "PO-NO-GO"],
+                    status=(
+                        "proved-coherent-nine-shape-encoded-router-compressed-clebsch-open"
+                        if int(
+                            stable_shape_router_metrics.get(
+                                "coherent_intermediate_shape_router_count", 0
+                            )
+                            or 0
+                        )
+                        == 1
+                        else "blocked-stable-shape-router-certificate-missing"
+                    ),
+                    falsification_test=(
+                        "Check the content-power class eigenvalues, all 36 polynomial gcd collision audits, integer "
+                        "spectral precision, class-sum LCU costs, and the explicit encoded-not-compressed interface."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-COSET-STABLE-RACAH-COMPLETE-ENCODED-TREE-LABELS",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "Commuting shape, first-stage, and second-stage observables give all 25 stable multiplicity "
+                        "labels on both coupling trees and a polynomial encoded left/right label isometry."
+                    ),
+                    depends_on=["PO-MEASUREMENT", "PO-COMPLEXITY", "PO-NO-GO"],
+                    status=(
+                        "proved-complete-stable-encoded-tree-labels-transition-filter-decoder-open"
+                        if int(
+                            stable_encoded_tree_metrics.get(
+                                "encoded_coupling_tree_transition_isometry_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        == 1
+                        and int(
+                            stable_encoded_tree_metrics.get(
+                                "joint_multiplicity_label_count", 0
+                            )
+                            or 0
+                        )
+                        == 25
+                        else "blocked-stable-encoded-tree-certificate-missing"
+                    ),
+                    falsification_test=(
+                        "Verify all observable commutators, branchwise product multiplicities, exact total 25, both "
+                        "phase-estimation interfaces, and the encoded-not-compressed transition scope."
                     ),
                 ),
                 LemmaRecord(

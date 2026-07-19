@@ -133,6 +133,18 @@ def build_snapshot() -> dict[str, Any]:
         RESEARCH / "representation/coset_stable_shape_coherent_label_certificate.json",
         {},
     )
+    stable_first_stage_labels = read_json(
+        RESEARCH / "representation/coset_stable_first_stage_label_certificate.json",
+        {},
+    )
+    stable_shape_router = read_json(
+        RESEARCH / "representation/coset_stable_shape_router_certificate.json",
+        {},
+    )
+    stable_encoded_tree = read_json(
+        RESEARCH / "representation/coset_stable_encoded_tree_certificate.json",
+        {},
+    )
 
     blocking = sum(bool(item.get("blocks_speedup_claim", False)) for item in findings)
     updated = latest_artifact_date(
@@ -169,6 +181,9 @@ def build_snapshot() -> dict[str, Any]:
         stable_shape_quadratic_gaps,
         stable_shape_cubic_gap,
         stable_shape_coherent_labels,
+        stable_first_stage_labels,
+        stable_shape_router,
+        stable_encoded_tree,
     )
     gap_rows = metric(gap, "critical_gap_formula_finite_verified_count", 0)
     gap_total = metric(gap, "record_count", 0)
@@ -315,6 +330,9 @@ def build_snapshot() -> dict[str, Any]:
                 {"label": "Complementary gaps", "value": f"{metric(stable_shape_quadratic_gaps, 'new_normalized_gap_theorem_count', 0)}/6; cubic gap open"},
                 {"label": "Stable spectral gaps", "value": f"{metric(stable_shape_cubic_gap, 'all_nontrivial_stable_shape_normalized_gap_theorem_count', 0)}/7; circuits open"},
                 {"label": "Coherent shape labels", "value": f"{metric(stable_shape_coherent_labels, 'all_nontrivial_stable_shape_coherent_label_count', 0)}/7; routing and transition open"},
+                {"label": "First-stage labels", "value": f"{metric(stable_first_stage_labels, 'all_stable_first_stage_multiplicity_resolved_shape_count', 0)}/9 stable shapes; shape routing open"},
+                {"label": "Shape router", "value": f"{metric(stable_shape_router, 'coherent_intermediate_shape_router_count', 0)} encoded router; compressed Clebsch and transition open"},
+                {"label": "Encoded tree basis", "value": f"{metric(stable_encoded_tree, 'joint_multiplicity_label_count', 0)}/25 labels; {metric(stable_encoded_tree, 'encoded_coupling_tree_transition_isometry_count', 0)} left/right isometry; filter open"},
                 {"label": "Hidden decoder", "value": "Open"},
             ],
         },

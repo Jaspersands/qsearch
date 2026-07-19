@@ -246,6 +246,15 @@ COSET_STABLE_SHAPE_CUBIC_GAP_PATH = Path(
 COSET_STABLE_SHAPE_COHERENT_LABEL_PATH = Path(
     "research/representation/coset_stable_shape_coherent_label_certificate.json"
 )
+COSET_STABLE_FIRST_STAGE_LABEL_PATH = Path(
+    "research/representation/coset_stable_first_stage_label_certificate.json"
+)
+COSET_STABLE_SHAPE_ROUTER_PATH = Path(
+    "research/representation/coset_stable_shape_router_certificate.json"
+)
+COSET_STABLE_ENCODED_TREE_PATH = Path(
+    "research/representation/coset_stable_encoded_tree_certificate.json"
+)
 COSET_RECOUPLING_CAPABILITY_PATH = Path(
     "research/representation/coset_recoupling_capability_ledger.json"
 )
@@ -4407,6 +4416,106 @@ def findings_from_coset_stable_shape_coherent_label_certificate(
     ]
 
 
+def findings_from_coset_stable_first_stage_label_certificate(
+    path: Path = COSET_STABLE_FIRST_STAGE_LABEL_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    return [
+        DequantizationFinding(
+            id="DEQ-COSET-FIRST-STAGE-LABELS-STILL-LACK-SHAPE-ROUTING-AND-TRANSITION",
+            created_at=utc_now(),
+            target_type="coset_stable_first_stage_label_certificate",
+            target_id=str(path),
+            severity="high",
+            claim_under_test=(
+                "Exact first-stage multiplicity labels plus second-stage local labels already form a complete Racah decoder."
+            ),
+            evidence=(
+                f"Stable first-stage resolved shapes/shape labels/transition circuits/decoders="
+                f"{metrics.get('all_stable_first_stage_multiplicity_resolved_shape_count', 0)}/"
+                f"{metrics.get('intermediate_shape_label_transform_count', 0)}/"
+                f"{metrics.get('coupling_tree_transition_circuit_count', 0)}/"
+                f"{metrics.get('hidden_involution_decoder_count', 0)}."
+            ),
+            required_action=(
+                "Construct a commuting intermediate-shape router in the original tensor registers, prove joint-label "
+                "completeness, then audit a coherent left/right transition before testing hidden-involution information."
+            ),
+            blocks_speedup_claim=True,
+        )
+    ]
+
+
+def findings_from_coset_stable_shape_router_certificate(
+    path: Path = COSET_STABLE_SHAPE_ROUTER_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    return [
+        DequantizationFinding(
+            id="DEQ-COSET-ENCODED-SHAPE-ROUTER-NOT-COMPRESSED-CLEBSCH-OR-RACAH-TRANSITION",
+            created_at=utc_now(),
+            target_type="coset_stable_shape_router_certificate",
+            target_id=str(path),
+            severity="high",
+            claim_under_test=(
+                "A coherent central-signature shape router is already a compressed internal Kronecker transform and Racah associator."
+            ),
+            evidence=(
+                f"Encoded routers/compressed Clebsch isometries/transition circuits/decoders="
+                f"{metrics.get('coherent_intermediate_shape_router_count', 0)}/"
+                f"{metrics.get('compressed_clebsch_isometry_count', 0)}/"
+                f"{metrics.get('coupling_tree_transition_circuit_count', 0)}/"
+                f"{metrics.get('hidden_involution_decoder_count', 0)}."
+            ),
+            required_action=(
+                "Compose all commuting multiplicity labels, prove 25-way joint-label completeness, and explicitly "
+                "audit whether left/right label extraction implements the transition needed by a state-dependent filter."
+            ),
+            blocks_speedup_claim=True,
+        )
+    ]
+
+
+def findings_from_coset_stable_encoded_tree_certificate(
+    path: Path = COSET_STABLE_ENCODED_TREE_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    return [
+        DequantizationFinding(
+            id="DEQ-COSET-COMPLETE-ENCODED-TREE-LABELS-STILL-LACK-FILTER-INFORMATION-DECODER",
+            created_at=utc_now(),
+            target_type="coset_stable_encoded_tree_certificate",
+            target_id=str(path),
+            severity="high",
+            claim_under_test=(
+                "Complete encoded left/right coupling-tree labels on one stable branch imply a nonabelian-HSP speedup."
+            ),
+            evidence=(
+                f"Joint labels/encoded transitions/transition filters/decoders="
+                f"{metrics.get('joint_multiplicity_label_count', 0)}/"
+                f"{metrics.get('encoded_coupling_tree_transition_isometry_count', 0)}/"
+                f"{metrics.get('transition_filter_count', 0)}/"
+                f"{metrics.get('hidden_involution_decoder_count', 0)}."
+            ),
+            required_action=(
+                "Express the conditioned coset-state/frame operator in these labels, construct or obstruct a "
+                "polynomial transition filter, quantify hidden-involution mutual information, and compare against "
+                "legal classical character/tensor contractions."
+            ),
+            blocks_speedup_claim=True,
+        )
+    ]
+
+
 def findings_from_coset_recoupling_capability_ledger(
     path: Path = COSET_RECOUPLING_CAPABILITY_PATH,
 ) -> list[DequantizationFinding]:
@@ -7372,6 +7481,9 @@ def build_dequantization_report() -> dict[str, Any]:
         *findings_from_coset_stable_shape_quadratic_gap_certificate(),
         *findings_from_coset_stable_shape_cubic_gap_certificate(),
         *findings_from_coset_stable_shape_coherent_label_certificate(),
+        *findings_from_coset_stable_first_stage_label_certificate(),
+        *findings_from_coset_stable_shape_router_certificate(),
+        *findings_from_coset_stable_encoded_tree_certificate(),
         *findings_from_coset_jucys_murphy_label_transform(),
         *findings_from_coset_multiplicity_commutant_search(),
         *findings_from_coset_recoupling_capability_ledger(),

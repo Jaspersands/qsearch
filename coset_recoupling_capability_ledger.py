@@ -241,6 +241,56 @@ CAPABILITIES = (
         ),
     ),
     RepresentationCapability(
+        id="CAP-STABLE-ENCODED-SHAPE-ROUTER",
+        literature_ids=[
+            "okounkov-vershik-yjm-2005",
+            "project-coset-stable-shape-family-certificate",
+        ],
+        primitive="Coherent central-signature routing of the stable intermediate shape",
+        proved_scope=(
+            "On the final xi_n branch of W_n^tensor3, transposition and 3-cycle pair class sums have a jointly "
+            "collision-free integer signature on all nine allowed intermediate shapes for every n>=8."
+        ),
+        availability="proved-bounded-stable-family-encoded-only",
+        uniform_polynomial_gate_complexity_proved=True,
+        resolves_internal_sn_kronecker_basis=False,
+        handles_overlapping_k_copy_associators=False,
+        supplies_hidden_involution_decoder=False,
+        classical_comparison=(
+            "The signatures are exact classical content invariants; the quantum capability is nondestructive coherent "
+            "routing, not a separation claim."
+        ),
+        scope_limit=(
+            "The eta carrier remains encoded in the original W_n tensor W_n registers. No compressed Clebsch "
+            "isometry, left/right transition, or decoder follows from the shape label."
+        ),
+    ),
+    RepresentationCapability(
+        id="CAP-STABLE-ENCODED-TREE-TRANSITION",
+        literature_ids=[
+            "project-coset-multiplicity-commutant-search",
+            "project-coset-stable-shape-family-certificate",
+        ],
+        primitive="Complete encoded stable coupling-tree labels and left/right relabelling isometry",
+        proved_scope=(
+            "On the final xi_n branch of W_n^tensor3, commuting shape, first-stage, and second-stage observables "
+            "provide all 25 multiplicity labels on either binary tree; U_R U_L^dagger changes the encoded label interface."
+        ),
+        availability="proved-one-stable-final-branch-encoded-only",
+        uniform_polynomial_gate_complexity_proved=True,
+        resolves_internal_sn_kronecker_basis=True,
+        handles_overlapping_k_copy_associators=False,
+        supplies_hidden_involution_decoder=False,
+        classical_comparison=(
+            "The label count and commutators are classically certifiable; no advantage exists until a state-dependent "
+            "filter and decoder beat legal classical contractions."
+        ),
+        scope_limit=(
+            "The physical state remains in W_n^tensor3, only one source/final stable branch is covered, and no "
+            "compressed Racah matrix, transition filter, or hidden-involution decoder is supplied."
+        ),
+    ),
+    RepresentationCapability(
         id="CAP-KRONECKER-SHARP-BQP",
         literature_ids=["ikenmeyer-subramanian-kronecker-2023"],
         primitive="#BQP characterization of exact Kronecker multiplicities",
@@ -381,8 +431,11 @@ def build_recoupling_capability_report(
             for capability in CAPABILITIES
         ),
         "stable_shape_local_gapped_label_transform_count": 7,
-        "stable_shape_channel_routing_circuit_count": 0,
-        "stable_shape_coupling_tree_transition_circuit_count": 0,
+        "stable_shape_encoded_channel_router_count": 1,
+        "stable_shape_compressed_channel_routing_isometry_count": 0,
+        "stable_shape_encoded_coupling_tree_transition_isometry_count": 1,
+        "stable_shape_compressed_racah_associator_count": 0,
+        "stable_shape_transition_filter_count": 0,
         "exact_stable_nine_shape_sector_classification_count": sum(
             capability.id == "CAP-STABLE-NINE-SHAPE-SECTOR-CLASSIFICATION"
             for capability in CAPABILITIES
@@ -449,6 +502,22 @@ def build_recoupling_capability_report(
                 ),
             },
             {
+                "from": "a coherent collision-free encoded intermediate-shape router",
+                "invalid_to": "compressed Clebsch isometry, Racah associator, or decoder",
+                "reason": (
+                    "Central phase estimation appends eta while leaving its carrier in the original tensor encoding; "
+                    "it does not transfer amplitudes to a standalone eta register or change coupling trees."
+                ),
+            },
+            {
+                "from": "complete encoded left/right stable-tree labels and U_R U_L^dagger",
+                "invalid_to": "state-dependent transition filter, hidden-involution decoder, or full-sector associator",
+                "reason": (
+                    "The relabelling isometry preserves the physical tensor encoding and exposes no frame inverse, "
+                    "outcome-information theorem, or sectors outside one stable final branch."
+                ),
+            },
+            {
                 "from": "polynomial diagonal YJM target-tableau label measurement",
                 "invalid_to": "coherent Kronecker multiplicity basis, Racah associator, or decoder",
                 "reason": (
@@ -488,8 +557,12 @@ def build_recoupling_capability_report(
             "bounded_support_commutant_block_encoding_polynomial_proved": True,
             "stable_channel_gapped_multiplicity_label_polynomial_proved": True,
             "all_seven_stable_shape_local_labels_polynomial_proved": True,
-            "stable_shape_channel_routing_polynomial_proved": False,
-            "stable_shape_coupling_tree_transition_polynomial_proved": False,
+            "stable_shape_encoded_channel_routing_polynomial_proved": True,
+            "stable_shape_compressed_channel_routing_isometry_polynomial_proved": False,
+            "stable_shape_complete_encoded_tree_labels_polynomial_proved": True,
+            "stable_shape_encoded_coupling_tree_transition_polynomial_proved": True,
+            "stable_shape_compressed_racah_associator_polynomial_proved": False,
+            "stable_shape_transition_filter_polynomial_proved": False,
             "exact_bounded_stable_sector_family_proved": True,
             "gapped_kronecker_multiplicity_transform_polynomial_proved": False,
             "internal_sn_kronecker_transform_polynomial_proved": False,
@@ -499,9 +572,9 @@ def build_recoupling_capability_report(
             "speedup_claim_allowed": False,
             "reason": (
                 "Coherent gapped eigenlabel transforms are proved for every nontrivial shape in one bounded stable "
-                "family, conditional on already-routed inputs. Known primitives still stop before channel routing, "
-                "coupling-tree transitions, unrestricted internal Kronecker transforms, and decoding; restricted "
-                "multiplicity advantages are classically eroded."
+                "family. Complete encoded labels and left/right relabelling are proved on one stable final branch, "
+                "but the carrier is not compressed. Known primitives still stop before state-dependent transition "
+                "filters, full-sector associators, hidden-involution decoding, and separation."
             ),
         },
         status="known-primitives-separated-from-open-recoupling-and-decoder",
@@ -515,8 +588,8 @@ def build_recoupling_capability_report(
             "#BQP multiplicity counting does not construct a coherent Kronecker basis.",
             "Schur-Weyl Clebsch-Gordan circuits do not automatically solve internal Specht tensor products.",
             "Diagonal YJM tableau labels retain exact Kronecker multiplicity degeneracy.",
-            "Seven stable shape-local labels do not construct the missing coherent channel-routing isometry.",
-            "Shape-local spectral labels do not transport multiplicity amplitudes between overlapping coupling trees.",
+            "An encoded stable shape router does not construct a compressed Clebsch channel isometry.",
+            "An encoded left/right relabelling isometry does not construct the state-dependent frame filter or decoder.",
             "Many restricted multiplicity speedup candidates have polynomial classical algorithms.",
             "Finite growth of dimensions or multiplicities is not a circuit lower bound.",
         ],

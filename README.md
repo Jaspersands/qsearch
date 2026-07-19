@@ -754,6 +754,44 @@ shapes. This theorem assumes the state is already routed into a declared
 left/right coupling-tree transition are still missing, so this is not yet a
 Racah associator or decoder.
 
+The first-stage multiplicity gap is now closed as well. In the nine-shape
+family, only `W_n` and `xi_n` occur with first-stage multiplicity two. The
+`xi_n` block uses the existing exact parity gap `2(n-2)`. For the missing
+`W_n` block, exact marked-cycle moments give
+`Tr(H)=2n^3-19n^2+51n-36` and
+`Tr(H^2)=2n^6-38n^5+283n^4-1048n^3+2021n^2-1904n+688`.
+The resulting discriminant is
+`n^4-14n^3+73n^2-136n+80`; after `n=m+6` its coefficients are
+`[1,10,37,92,164]`, proving a normalized gap above `12/n^3`. Thus all
+nine first-stage multiplicities are resolved in the original tensor-register
+encoding. A commuting intermediate-shape router and left/right transition are
+still required.
+
+The intermediate-shape router is now exact. On the final-`xi_n` branch, the
+pair transposition class sum has eigenvalue `sum content(u)` and the pair
+3-cycle class sum has eigenvalue
+`sum content(u)^2-binomial(n,2)`. An all-36-pair symbolic gcd audit proves
+that their joint signatures never collide for `n>=8`; all common collision
+points are at most `n=6`. Both class sums have polynomial LCU descriptions and
+integer raw gaps, so coherent phase estimation appends a nine-valued shape
+label while leaving the state in the original `W_n tensor W_n` encoding. This
+is encoded routing, not a compressed Clebsch isometry. The next obligation is
+to compose shape, first-stage, and second-stage labels and test whether their
+left/right versions provide the transition interface needed by a decoder.
+
+That composition is now proved on the stable final branch. Pair central sums,
+the first-stage commutant Hamiltonian, and the pair/third-factor orbit
+Hamiltonian commute algebraically; a finite operator audit confirms all six
+pairwise commutators below `6e-17`. Their branchwise label products sum to
+exactly 25, the known final multiplicity, so the left and mirrored right trees
+both have complete coherent encoded labels. The circuit
+`T_encoded = U_R U_L^dagger` coherently changes those label interfaces with
+maximum inverse-gap exponent 53. It leaves the physical state encoded in
+`W_n^tensor3`: no compressed 25-by-25 Racah table is materialized. The active
+bottleneck is now a polynomial state-dependent transition/frame filter and a
+demonstration that its outcomes reveal the hidden involution beyond classical
+character or tensor contractions.
+
 ```bash
 python qsearch.py coset-racah-gap-scaling
 python qsearch.py coset-racah-sparse-gap --n-values 7,8,9,10,11
@@ -774,6 +812,9 @@ python qsearch.py coset-racah-stable-shape-cubic-determinant
 python qsearch.py coset-racah-stable-shape-quadratic-gaps
 python qsearch.py coset-racah-stable-shape-cubic-gap
 python qsearch.py coset-racah-stable-shape-coherent-labels
+python qsearch.py coset-racah-stable-first-stage-labels
+python qsearch.py coset-racah-stable-shape-router
+python qsearch.py coset-racah-stable-encoded-tree
 ```
 
 The capability ledger separates the solved `S_n` QFT, Schur-Weyl transforms,

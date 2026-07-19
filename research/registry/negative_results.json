@@ -36428,6 +36428,36 @@
   {
     "applies_to": [
       "CODE-COSET-COLLECTIVE",
+      "EXP-COSET-STABLE-ENCODED-TREE-CERTIFICATE"
+    ],
+    "claim": "Complete coherent coupling-tree labels on one stable branch already implement the hidden-involution decoder.",
+    "evidence": {
+      "coherent_first_stage_label_transform_count": 1,
+      "coherent_second_stage_nontrivial_shape_label_count": 7,
+      "coherent_shape_router_count": 1,
+      "complete_encoded_left_tree_label_transform_count": 1,
+      "complete_encoded_right_tree_label_transform_count": 1,
+      "complete_joint_branch_label_count": 9,
+      "compressed_clebsch_transform_count": 0,
+      "compressed_racah_associator_count": 0,
+      "encoded_coupling_tree_transition_isometry_count": 1,
+      "final_multiplicity_dimension": 25,
+      "finite_commutation_audit_pair_count": 6,
+      "hidden_involution_decoder_count": 0,
+      "joint_multiplicity_label_count": 25,
+      "maximum_finite_normalized_commutator_residual": 5.819445280406994e-17,
+      "maximum_phase_estimation_query_exponent": 53,
+      "stable_branch_count": 9,
+      "transition_filter_count": 0
+    },
+    "id": "NEG-COSET-ENCODED-TREE-LABELS-AS-COMPLETE-HSP-DECODER",
+    "lesson": "Use the encoded transition to formulate and test scalable frame/measurement operators, then kill any signal with legal classical representation baselines before promoting it.",
+    "reason_invalid": "The construction exposes a basis interface but no state-dependent transition filter, outcome information theorem, full-sector coverage, or classical separation.",
+    "source": "research/representation/coset_stable_encoded_tree_certificate.json"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
       "EXP-COSET-STABLE-SHAPE-CUBIC-DETERMINANT-CERTIFICATE"
     ],
     "claim": "Exact characteristic polynomials for all nine stable shapes constitute a major quantum algorithm.",
@@ -36766,7 +36796,7 @@
     "claim": "A #BQP characterization of Kronecker coefficients supplies a coherent Kronecker transform.",
     "evidence": {
       "bounded_support_commutant_block_encoding_poly_proof_count": 1,
-      "capability_count": 13,
+      "capability_count": 15,
       "diagonal_jm_label_transform_poly_proof_count": 1,
       "exact_holevo_copy_budget_theorem_count": 1,
       "exact_stable_nine_shape_sector_classification_count": 1,
@@ -36779,12 +36809,15 @@
       "maximum_multiplicity_register_bits": 7,
       "maximum_n": 10,
       "maximum_partition_count": 42,
-      "proved_polynomial_primitive_count": 7,
+      "proved_polynomial_primitive_count": 9,
       "restricted_multiplicity_classical_match_count": 1,
       "stable_channel_gapped_label_transform_poly_proof_count": 1,
-      "stable_shape_channel_routing_circuit_count": 0,
-      "stable_shape_coupling_tree_transition_circuit_count": 0,
+      "stable_shape_compressed_channel_routing_isometry_count": 0,
+      "stable_shape_compressed_racah_associator_count": 0,
+      "stable_shape_encoded_channel_router_count": 1,
+      "stable_shape_encoded_coupling_tree_transition_isometry_count": 1,
       "stable_shape_local_gapped_label_transform_count": 7,
+      "stable_shape_transition_filter_count": 0,
       "unresolved_required_capability_count": 3
     },
     "id": "NEG-COSET-KRONECKER-COUNT-AS-TRANSFORM",
@@ -36925,7 +36958,7 @@
     "claim": "Restricted multiplicity estimation currently supports a superpolynomial representation-theoretic speedup.",
     "evidence": {
       "bounded_support_commutant_block_encoding_poly_proof_count": 1,
-      "capability_count": 13,
+      "capability_count": 15,
       "diagonal_jm_label_transform_poly_proof_count": 1,
       "exact_holevo_copy_budget_theorem_count": 1,
       "exact_stable_nine_shape_sector_classification_count": 1,
@@ -36938,18 +36971,48 @@
       "maximum_multiplicity_register_bits": 7,
       "maximum_n": 10,
       "maximum_partition_count": 42,
-      "proved_polynomial_primitive_count": 7,
+      "proved_polynomial_primitive_count": 9,
       "restricted_multiplicity_classical_match_count": 1,
       "stable_channel_gapped_label_transform_poly_proof_count": 1,
-      "stable_shape_channel_routing_circuit_count": 0,
-      "stable_shape_coupling_tree_transition_circuit_count": 0,
+      "stable_shape_compressed_channel_routing_isometry_count": 0,
+      "stable_shape_compressed_racah_associator_count": 0,
+      "stable_shape_encoded_channel_router_count": 1,
+      "stable_shape_encoded_coupling_tree_transition_isometry_count": 1,
       "stable_shape_local_gapped_label_transform_count": 7,
+      "stable_shape_transition_filter_count": 0,
       "unresolved_required_capability_count": 3
     },
     "id": "NEG-COSET-RESTRICTED-MULTIPLICITY-AS-BREAKTHROUGH",
     "lesson": "Track each representation primitive by exact action, promise, circuit cost, output, and decoder role.",
     "reason_invalid": "Polynomial classical algorithms cover many proposed restricted families, and no hidden-involution reduction is supplied.",
     "source": "research/representation/coset_recoupling_capability_ledger.json"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "EXP-COSET-STABLE-FIRST-STAGE-LABEL-CERTIFICATE"
+    ],
+    "claim": "Second-stage stable-shape eigenlabels alone resolve the complete left-coupled multiplicity basis.",
+    "evidence": {
+      "all_nontrivial_first_stage_gap_theorem_count": 2,
+      "all_stable_first_stage_multiplicity_resolved_shape_count": 9,
+      "coherent_first_stage_label_transform_count": 1,
+      "coupling_tree_transition_circuit_count": 0,
+      "exact_endpoint_verified_count": 6,
+      "hidden_involution_decoder_count": 0,
+      "intermediate_shape_label_transform_count": 0,
+      "maximum_normalized_gap_inverse_polynomial_exponent": 3,
+      "minimum_uniform_raw_gap_lower_bound": 12,
+      "multiplicity_free_first_stage_shape_count": 7,
+      "new_exact_first_stage_gap_theorem_count": 1,
+      "nontrivial_first_stage_shape_count": 2,
+      "relative_orbit_class_count": 17,
+      "stable_intermediate_shape_count": 9
+    },
+    "id": "NEG-COSET-SECOND-STAGE-LABELS-AS-COMPLETE-LEFT-TREE-BASIS",
+    "lesson": "Compose commuting shape, first-stage multiplicity, and second-stage multiplicity labels before claiming a complete encoded coupling-tree basis.",
+    "reason_invalid": "Two intermediate targets also have first-stage multiplicity two. Those labels require their own exact gap theorem, now supplied here; intermediate shape routing remains separate.",
+    "source": "research/representation/coset_stable_first_stage_label_certificate.json"
   },
   {
     "applies_to": [
@@ -36982,7 +37045,7 @@
     "claim": "An efficient S_n QFT supplies the missing multi-copy hidden-involution decoder.",
     "evidence": {
       "bounded_support_commutant_block_encoding_poly_proof_count": 1,
-      "capability_count": 13,
+      "capability_count": 15,
       "diagonal_jm_label_transform_poly_proof_count": 1,
       "exact_holevo_copy_budget_theorem_count": 1,
       "exact_stable_nine_shape_sector_classification_count": 1,
@@ -36995,12 +37058,15 @@
       "maximum_multiplicity_register_bits": 7,
       "maximum_n": 10,
       "maximum_partition_count": 42,
-      "proved_polynomial_primitive_count": 7,
+      "proved_polynomial_primitive_count": 9,
       "restricted_multiplicity_classical_match_count": 1,
       "stable_channel_gapped_label_transform_poly_proof_count": 1,
-      "stable_shape_channel_routing_circuit_count": 0,
-      "stable_shape_coupling_tree_transition_circuit_count": 0,
+      "stable_shape_compressed_channel_routing_isometry_count": 0,
+      "stable_shape_compressed_racah_associator_count": 0,
+      "stable_shape_encoded_channel_router_count": 1,
+      "stable_shape_encoded_coupling_tree_transition_isometry_count": 1,
       "stable_shape_local_gapped_label_transform_count": 7,
+      "stable_shape_transition_filter_count": 0,
       "unresolved_required_capability_count": 3
     },
     "id": "NEG-COSET-SN-QFT-AS-MULTICOPY-DECODER",
@@ -37193,6 +37259,33 @@
     "lesson": "Use the formula as a precise theorem target and prove it by marked-cycle factorial moments or partition algebra before deriving any gap consequence.",
     "reason_invalid": "No degree bound or exact marked-cycle character-sum evaluation has been proved, and the trace does not determine the full quartic spectrum.",
     "source": "research/representation/coset_stable_trace_conjecture.json"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "EXP-COSET-STABLE-SHAPE-ROUTER-CERTIFICATE"
+    ],
+    "claim": "The pair transposition class sum alone uniformly distinguishes every stable intermediate shape.",
+    "evidence": {
+      "central_class_sum_label_count": 2,
+      "coherent_intermediate_shape_router_count": 1,
+      "compressed_clebsch_isometry_count": 0,
+      "coupling_tree_transition_circuit_count": 0,
+      "finite_unique_signature_check_count": 13,
+      "first_stage_multiplicity_label_count": 0,
+      "hidden_involution_decoder_count": 0,
+      "maximum_lcu_term_exponent": 3,
+      "maximum_simultaneous_integer_collision_point": 6,
+      "minimum_raw_joint_signature_gap": 1,
+      "second_stage_multiplicity_label_count": 0,
+      "shape_pair_collision_audit_count": 36,
+      "stable_range_shape_pair_collision_count": 0,
+      "stable_shape_count": 9
+    },
+    "id": "NEG-COSET-TRANSPOSITION-SIGNATURE-ALONE-AS-STABLE-SHAPE-ROUTER",
+    "lesson": "Use the exact two-class central signature and retain a separate obligation for multiplicity labels.",
+    "reason_invalid": "Exact content formulas exhibit collisions at n=8, n=9, and n=12. The joint 3-cycle signature is required for a uniform stable-range router.",
+    "source": "research/representation/coset_stable_shape_router_certificate.json"
   },
   {
     "applies_to": [

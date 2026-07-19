@@ -7174,6 +7174,151 @@ def seed_candidate_records() -> tuple[list[CandidateRecord], list[ExperimentReco
             ],
         ),
         ExperimentRecord(
+            id="EXP-COSET-STABLE-FIRST-STAGE-LABEL-CERTIFICATE",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Exact first-stage stable multiplicity-label certificate",
+            status="planned",
+            hypothesis=(
+                "Only W_n and xi_n have nontrivial first-stage multiplicity in the exact nine-shape family, and the "
+                "common bounded-support orbit Hamiltonian has inverse-polynomial normalized gaps on both targets."
+            ),
+            protocol=(
+                "Derive exact Tr(H) and Tr(H^2) for W_n tensor W_n -> W_n with the marked-cycle equality-pattern "
+                "engine, verify every endpoint below the literal stable range, prove positivity of the quadratic "
+                "discriminant, and combine it with the existing exact xi_n parity-gap theorem."
+            ),
+            positive_signal=(
+                "Both multiplicity-two first-stage blocks admit coherent phase-estimation labels, while the other "
+                "seven stable intermediate targets are multiplicity-free."
+            ),
+            falsifiers=[
+                "The W_n cubic character moment is not exactly two in the declared range.",
+                "An endpoint second moment disagrees with the symbolic formula.",
+                "The W_n quadratic discriminant vanishes or is not uniformly positive.",
+                "The LCU-normalized gap is not inverse polynomial.",
+                "First-stage labels are promoted as shape routing, reassociation, or decoding.",
+            ],
+            metrics=[
+                "nontrivial_first_stage_shape_count",
+                "new_exact_first_stage_gap_theorem_count",
+                "all_nontrivial_first_stage_gap_theorem_count",
+                "all_stable_first_stage_multiplicity_resolved_shape_count",
+                "exact_endpoint_verified_count",
+                "maximum_normalized_gap_inverse_polynomial_exponent",
+                "intermediate_shape_label_transform_count",
+                "coupling_tree_transition_circuit_count",
+            ],
+            dependencies=[
+                "coset_stable_first_stage_label_certificate.py",
+                "exact nine-shape stable family certificate",
+                "coset_commutant_gap_certificate.py",
+                "marked-cycle equality-pattern engine",
+            ],
+            next_actions=[
+                "Construct a commuting intermediate-shape label on the original W_n tensor W_n registers.",
+                "Compose shape, first-stage, and second-stage labels into a complete encoded left-tree basis.",
+                "Build the analogous right-tree labels and audit a coherent transition-label isometry.",
+                "Reject any transition that still requires an exponential dense Clebsch table.",
+            ],
+        ),
+        ExperimentRecord(
+            id="EXP-COSET-STABLE-SHAPE-ROUTER-CERTIFICATE",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Coherent stable intermediate-shape router",
+            status="planned",
+            hypothesis=(
+                "A constant pair of polynomial-size central class sums uniquely labels all nine stable intermediate "
+                "shapes on the final-xi branch, avoiding a dense internal Clebsch transform."
+            ),
+            protocol=(
+                "Derive exact transposition and 3-cycle class-sum eigenvalues from Young-diagram content power sums; "
+                "audit all 36 symbolic shape pairs for simultaneous collisions; compile both integer-gap observables "
+                "as coherent phase-estimation labels on the original W_n tensor W_n registers."
+            ),
+            positive_signal=(
+                "Every stable intermediate shape has a unique two-class signature for all n>=8, yielding a coherent "
+                "nine-valued encoded shape router with polynomial precision."
+            ),
+            falsifiers=[
+                "A shape pair has a simultaneous class-signature collision for some n>=8.",
+                "The claimed 3-cycle content identity omits a class-sum term.",
+                "Raw integer gaps are not divided by the class-sum LCU normalization.",
+                "The router requires a dense eta eigenbasis table.",
+                "An encoded shape label is promoted as a compressed Clebsch isometry or Racah transition.",
+            ],
+            metrics=[
+                "stable_shape_count",
+                "shape_pair_collision_audit_count",
+                "stable_range_shape_pair_collision_count",
+                "maximum_simultaneous_integer_collision_point",
+                "minimum_raw_joint_signature_gap",
+                "coherent_intermediate_shape_router_count",
+                "compressed_clebsch_isometry_count",
+                "coupling_tree_transition_circuit_count",
+            ],
+            dependencies=[
+                "coset_stable_shape_router_certificate.py",
+                "exact nine-shape stable support theorem",
+                "Young--Jucys--Murphy content identities",
+                "controlled diagonal S_n representation actions",
+            ],
+            next_actions=[
+                "Compose the router with exact first- and second-stage multiplicity labels.",
+                "Prove the resulting joint labels are complete on the 25-dimensional final multiplicity space.",
+                "Construct the mirrored right-tree router and coherent transition-label isometry.",
+                "Audit whether encoded transition access avoids an exponential state-transfer requirement.",
+            ],
+        ),
+        ExperimentRecord(
+            id="EXP-COSET-STABLE-ENCODED-TREE-CERTIFICATE",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Complete encoded stable coupling-tree labels",
+            status="planned",
+            hypothesis=(
+                "The coherent shape router and exact first/second-stage multiplicity Hamiltonians form a commuting "
+                "complete observable family on the 25-dimensional stable final multiplicity space."
+            ),
+            protocol=(
+                "Prove algebraically that pair central sums, the pair commutant, and the pair/third-factor orbit "
+                "Hamiltonian commute; verify the operator identities on a finite exact-control representation; count "
+                "joint branch labels; mirror the construction and define U_R U_L^dagger on valid encoded states."
+            ),
+            positive_signal=(
+                "Exactly 25 coherent joint labels exhaust the stable final multiplicity on both coupling trees and "
+                "their encoded label interfaces are connected by a polynomial coherent isometry."
+            ),
+            falsifiers=[
+                "Any observable-layer commutator is nonzero.",
+                "The joint branch label count differs from the exact final multiplicity 25.",
+                "A branch lacks a shape, first-stage, or second-stage gap theorem.",
+                "The mirrored right-tree construction has a different cost or unsupported operator.",
+                "The encoded label isometry is promoted as a compressed Racah matrix, transition filter, or decoder.",
+            ],
+            metrics=[
+                "complete_joint_branch_label_count",
+                "joint_multiplicity_label_count",
+                "final_multiplicity_dimension",
+                "complete_encoded_left_tree_label_transform_count",
+                "complete_encoded_right_tree_label_transform_count",
+                "encoded_coupling_tree_transition_isometry_count",
+                "compressed_racah_associator_count",
+                "transition_filter_count",
+                "hidden_involution_decoder_count",
+            ],
+            dependencies=[
+                "coset_stable_encoded_tree_certificate.py",
+                "coherent stable shape router",
+                "complete first-stage stable multiplicity labels",
+                "complete second-stage stable multiplicity labels",
+            ],
+            next_actions=[
+                "Express reduction-relevant frame and coset-state operators in the encoded left/right label interfaces.",
+                "Search for polynomial block encodings of state-dependent transition filters.",
+                "Measure whether stable-branch outcomes contain hidden-involution information beyond weak labels.",
+                "Attack every observed signal with classical character and tensor-contraction baselines.",
+            ],
+        ),
+        ExperimentRecord(
             id="EXP-COSET-RECOUPLING-CAPABILITY-LEDGER",
             candidate_id="CODE-COSET-COLLECTIVE",
             title="Literature-backed symmetric-group recoupling capability ledger",

@@ -2677,7 +2677,7 @@
       "coset_recoupling_capability_ledger": "research/representation/coset_recoupling_capability_ledger.json"
     },
     "candidate_id": "CODE-COSET-COLLECTIVE",
-    "created_at": "2026-07-19T02:29:33.361277+00:00",
+    "created_at": "2026-07-19T02:57:33.746516+00:00",
     "experiment_id": "EXP-COSET-RECOUPLING-CAPABILITY-LEDGER",
     "falsifiers_triggered": [
       "The S_n QFT is already polynomial and cannot be presented as the missing breakthrough.",
@@ -2685,15 +2685,15 @@
       "#BQP multiplicity counting does not construct a coherent Kronecker basis.",
       "Schur-Weyl Clebsch-Gordan circuits do not automatically solve internal Specht tensor products.",
       "Diagonal YJM tableau labels retain exact Kronecker multiplicity degeneracy.",
-      "Seven stable shape-local labels do not construct the missing coherent channel-routing isometry.",
-      "Shape-local spectral labels do not transport multiplicity amplitudes between overlapping coupling trees.",
+      "An encoded stable shape router does not construct a compressed Clebsch channel isometry.",
+      "An encoded left/right relabelling isometry does not construct the state-dependent frame filter or decoder.",
       "Many restricted multiplicity speedup candidates have polynomial classical algorithms.",
       "Finite growth of dimensions or multiplicities is not a circuit lower bound."
     ],
     "id": "RESULT-EXP-COSET-RECOUPLING-CAPABILITY-LEDGER-LATEST",
     "metrics": {
       "bounded_support_commutant_block_encoding_poly_proof_count": 1,
-      "capability_count": 13,
+      "capability_count": 15,
       "diagonal_jm_label_transform_poly_proof_count": 1,
       "exact_holevo_copy_budget_theorem_count": 1,
       "exact_stable_nine_shape_sector_classification_count": 1,
@@ -2706,16 +2706,19 @@
       "maximum_multiplicity_register_bits": 7,
       "maximum_n": 10,
       "maximum_partition_count": 42,
-      "proved_polynomial_primitive_count": 7,
+      "proved_polynomial_primitive_count": 9,
       "restricted_multiplicity_classical_match_count": 1,
       "stable_channel_gapped_label_transform_poly_proof_count": 1,
-      "stable_shape_channel_routing_circuit_count": 0,
-      "stable_shape_coupling_tree_transition_circuit_count": 0,
+      "stable_shape_compressed_channel_routing_isometry_count": 0,
+      "stable_shape_compressed_racah_associator_count": 0,
+      "stable_shape_encoded_channel_router_count": 1,
+      "stable_shape_encoded_coupling_tree_transition_isometry_count": 1,
       "stable_shape_local_gapped_label_transform_count": 7,
+      "stable_shape_transition_filter_count": 0,
       "unresolved_required_capability_count": 3
     },
     "status": "known-primitives-separated-from-open-recoupling-and-decoder",
-    "summary": "Classified 13 representation primitives and exact finite Kronecker growth through n=10 without transferring solved QFT/counting results to the open decoder."
+    "summary": "Classified 15 representation primitives and exact finite Kronecker growth through n=10 without transferring solved QFT/counting results to the open decoder."
   },
   {
     "artifacts": {
@@ -2933,6 +2936,76 @@
     },
     "status": "complete-finite-leakage-support-single-channel-repair-refuted",
     "summary": "Resolved stable-branch leakage over all intermediate sectors at 2 sizes; every audited complementary sector has nonzero support, refuting a one-complement repair."
+  },
+  {
+    "artifacts": {
+      "coset_stable_encoded_tree_certificate": "research/representation/coset_stable_encoded_tree_certificate.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-07-19T02:57:28.981945+00:00",
+    "experiment_id": "EXP-COSET-STABLE-ENCODED-TREE-CERTIFICATE",
+    "falsifiers_triggered": [
+      "The three observable layers must commute; the finite operator audit would reject an incorrect composition.",
+      "The sum of branch label products must equal the exact final multiplicity 25.",
+      "An encoded label transition is not a standalone compressed 25x25 Racah matrix.",
+      "No state-dependent transition filter or hidden-involution information follows from basis labels alone.",
+      "A result conditioned on one stable source/final branch is not full symmetric-HSP sector coverage."
+    ],
+    "id": "RESULT-EXP-COSET-STABLE-ENCODED-TREE-CERTIFICATE-LATEST",
+    "metrics": {
+      "coherent_first_stage_label_transform_count": 1,
+      "coherent_second_stage_nontrivial_shape_label_count": 7,
+      "coherent_shape_router_count": 1,
+      "complete_encoded_left_tree_label_transform_count": 1,
+      "complete_encoded_right_tree_label_transform_count": 1,
+      "complete_joint_branch_label_count": 9,
+      "compressed_clebsch_transform_count": 0,
+      "compressed_racah_associator_count": 0,
+      "encoded_coupling_tree_transition_isometry_count": 1,
+      "final_multiplicity_dimension": 25,
+      "finite_commutation_audit_pair_count": 6,
+      "hidden_involution_decoder_count": 0,
+      "joint_multiplicity_label_count": 25,
+      "maximum_finite_normalized_commutator_residual": 5.819445280406994e-17,
+      "maximum_phase_estimation_query_exponent": 53,
+      "stable_branch_count": 9,
+      "transition_filter_count": 0
+    },
+    "status": "complete-stable-encoded-tree-labels-and-transition-proved-filter-decoder-open",
+    "summary": "Composed exact shape, first-stage, and second-stage observables into 25 complete coherent labels on both stable coupling trees and a polynomial encoded transition-label isometry; filtering and decoding remain open."
+  },
+  {
+    "artifacts": {
+      "coset_stable_first_stage_label_certificate": "research/representation/coset_stable_first_stage_label_certificate.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-07-19T02:43:52.905710+00:00",
+    "experiment_id": "EXP-COSET-STABLE-FIRST-STAGE-LABEL-CERTIFICATE",
+    "falsifiers_triggered": [
+      "Second-stage shape-local labels cannot silently stand in for unresolved first-stage multiplicity.",
+      "Exact first-stage gaps do not identify the intermediate shape without a commuting shape label.",
+      "A nondestructive encoded eigenlabel is not automatically a compressed Clebsch isometry.",
+      "First-stage spectral control alone does not construct a Racah transition or decoder."
+    ],
+    "id": "RESULT-EXP-COSET-STABLE-FIRST-STAGE-LABEL-CERTIFICATE-LATEST",
+    "metrics": {
+      "all_nontrivial_first_stage_gap_theorem_count": 2,
+      "all_stable_first_stage_multiplicity_resolved_shape_count": 9,
+      "coherent_first_stage_label_transform_count": 1,
+      "coupling_tree_transition_circuit_count": 0,
+      "exact_endpoint_verified_count": 6,
+      "hidden_involution_decoder_count": 0,
+      "intermediate_shape_label_transform_count": 0,
+      "maximum_normalized_gap_inverse_polynomial_exponent": 3,
+      "minimum_uniform_raw_gap_lower_bound": 12,
+      "multiplicity_free_first_stage_shape_count": 7,
+      "new_exact_first_stage_gap_theorem_count": 1,
+      "nontrivial_first_stage_shape_count": 2,
+      "relative_orbit_class_count": 17,
+      "stable_intermediate_shape_count": 9
+    },
+    "status": "all-stable-first-stage-multiplicity-labels-proved-shape-routing-open",
+    "summary": "Proved the missing W_n first-stage quadratic gap and combined it with the xi_n parity gap, resolving all nontrivial first-stage multiplicities in the exact nine-shape stable family."
   },
   {
     "artifacts": {
@@ -3259,6 +3332,39 @@
     },
     "status": "five-quadratic-normalized-gaps-proved-one-cubic-gap-open",
     "summary": "Factored and proved positivity of all five complementary quadratic discriminants, giving uniform LCU-normalized gaps at least 12/n^3; the lone cubic gap and all circuit/decoder obligations remain."
+  },
+  {
+    "artifacts": {
+      "coset_stable_shape_router_certificate": "research/representation/coset_stable_shape_router_certificate.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-07-19T02:57:24.188320+00:00",
+    "experiment_id": "EXP-COSET-STABLE-SHAPE-ROUTER-CERTIFICATE",
+    "falsifiers_triggered": [
+      "A transposition class sum alone collides on stable shapes at n=8, 9, and 12.",
+      "The 3-cycle class sum repairs those collisions only when used jointly with the transposition sum.",
+      "A coherent shape label does not compress the eta carrier or resolve multiplicity registers.",
+      "Shape routing is not a left/right coupling-tree transition or hidden-involution decoder."
+    ],
+    "id": "RESULT-EXP-COSET-STABLE-SHAPE-ROUTER-CERTIFICATE-LATEST",
+    "metrics": {
+      "central_class_sum_label_count": 2,
+      "coherent_intermediate_shape_router_count": 1,
+      "compressed_clebsch_isometry_count": 0,
+      "coupling_tree_transition_circuit_count": 0,
+      "finite_unique_signature_check_count": 13,
+      "first_stage_multiplicity_label_count": 0,
+      "hidden_involution_decoder_count": 0,
+      "maximum_lcu_term_exponent": 3,
+      "maximum_simultaneous_integer_collision_point": 6,
+      "minimum_raw_joint_signature_gap": 1,
+      "second_stage_multiplicity_label_count": 0,
+      "shape_pair_collision_audit_count": 36,
+      "stable_range_shape_pair_collision_count": 0,
+      "stable_shape_count": 9
+    },
+    "status": "coherent-stable-intermediate-shape-router-proved-multiplicity-transition-open",
+    "summary": "Proved an exact collision-free pair of central signatures and a polynomial coherent intermediate-shape router for all nine stable channels without dense Clebsch tables."
   },
   {
     "artifacts": {

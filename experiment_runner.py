@@ -102,6 +102,15 @@ from coset_stable_shape_cubic_gap_certificate import (
 from coset_stable_shape_coherent_label_certificate import (
     write_stable_shape_coherent_label_certificate,
 )
+from coset_stable_first_stage_label_certificate import (
+    write_stable_first_stage_label_certificate,
+)
+from coset_stable_shape_router_certificate import (
+    write_stable_shape_router_certificate,
+)
+from coset_stable_encoded_tree_certificate import (
+    write_stable_encoded_tree_certificate,
+)
 from coset_recoupling_capability_ledger import write_recoupling_capability_report
 from coset_recoupling_mechanism_synthesis import write_recoupling_mechanism_synthesis_report
 from coset_state_distinguishability import write_coset_distinguishability_report
@@ -564,6 +573,9 @@ COSET_EXPERIMENTS = {
     "EXP-COSET-STABLE-SHAPE-QUADRATIC-GAP-CERTIFICATE",
     "EXP-COSET-STABLE-SHAPE-CUBIC-GAP-CERTIFICATE",
     "EXP-COSET-STABLE-SHAPE-COHERENT-LABEL-CERTIFICATE",
+    "EXP-COSET-STABLE-FIRST-STAGE-LABEL-CERTIFICATE",
+    "EXP-COSET-STABLE-SHAPE-ROUTER-CERTIFICATE",
+    "EXP-COSET-STABLE-ENCODED-TREE-CERTIFICATE",
     "EXP-COSET-RECOUPLING-CAPABILITY-LEDGER",
     "EXP-COSET-RECOUPLING-MECHANISM-SYNTHESIS",
 }
@@ -1394,6 +1406,9 @@ def select_next_experiment() -> NextExperimentSelection:
         "EXP-COSET-STABLE-SHAPE-QUADRATIC-GAP-CERTIFICATE": 49,
         "EXP-COSET-STABLE-SHAPE-CUBIC-GAP-CERTIFICATE": 50,
         "EXP-COSET-STABLE-SHAPE-COHERENT-LABEL-CERTIFICATE": 51,
+        "EXP-COSET-STABLE-FIRST-STAGE-LABEL-CERTIFICATE": 52,
+        "EXP-COSET-STABLE-SHAPE-ROUTER-CERTIFICATE": 53,
+        "EXP-COSET-STABLE-ENCODED-TREE-CERTIFICATE": 54,
         "EXP-COSET-RECOUPLING-CAPABILITY-LEDGER": 24,
         "EXP-COSET-RECOUPLING-MECHANISM-SYNTHESIS": 25,
     }
@@ -2922,6 +2937,27 @@ def run_experiment(experiment_id: str) -> RunnerResult:
                 registry_candidate_id=experiment["candidate_id"],
                 registry_result_id=result_id,
             )
+        elif experiment_id == "EXP-COSET-STABLE-FIRST-STAGE-LABEL-CERTIFICATE":
+            payload = write_stable_first_stage_label_certificate(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif experiment_id == "EXP-COSET-STABLE-SHAPE-ROUTER-CERTIFICATE":
+            payload = write_stable_shape_router_certificate(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif experiment_id == "EXP-COSET-STABLE-ENCODED-TREE-CERTIFICATE":
+            payload = write_stable_encoded_tree_certificate(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
         elif experiment_id == "EXP-COSET-RECOUPLING-CAPABILITY-LEDGER":
             payload = write_recoupling_capability_report(
                 write_registry=True,
@@ -3337,22 +3373,40 @@ def run_supported_experiments() -> list[RunnerResult]:
     available = {experiment["id"] for experiment in load_experiments()}
     # Bulk mode must not synthesize multi-minute proof checkpoints from scratch.
     # Each experiment remains directly runnable and may create its own prerequisites.
-    bulk_requires_existing_artifact = {
+    bulk_requires_existing_artifacts = {
         "EXP-COSET-STABLE-FOURTH-MOMENT-CERTIFICATE": (
-            COSET_STABLE_FOURTH_PATTERN_PATH
+            COSET_STABLE_FOURTH_PATTERN_PATH,
         ),
-        "EXP-CODE-GOPPA-SYZYGY-FRONTIER": GOPPA_SCALING_FRONTIER_PATH,
+        "EXP-CODE-GOPPA-SYZYGY-FRONTIER": (GOPPA_SCALING_FRONTIER_PATH,),
         "EXP-COSET-STABLE-THIRD-MOMENT-CERTIFICATE": (
-            COSET_STABLE_THIRD_MOMENT_PATH
+            COSET_STABLE_THIRD_MOMENT_PATH,
         ),
         "EXP-COSET-STABLE-SHAPE-CUBIC-DETERMINANT-CERTIFICATE": (
-            COSET_STABLE_SHAPE_CUBIC_PATTERN_PATH
+            COSET_STABLE_SHAPE_CUBIC_PATTERN_PATH,
+        ),
+        "EXP-COSET-STABLE-SHAPE-CUBIC-GAP-CERTIFICATE": (
+            Path(
+                "research/representation/"
+                "coset_stable_shape_cubic_determinant_certificate.json"
+            ),
+        ),
+        "EXP-COSET-STABLE-SHAPE-COHERENT-LABEL-CERTIFICATE": (
+            Path(
+                "research/representation/"
+                "coset_stable_shape_cubic_gap_certificate.json"
+            ),
+        ),
+        "EXP-COSET-STABLE-ENCODED-TREE-CERTIFICATE": (
+            Path(
+                "research/representation/"
+                "coset_stable_shape_coherent_label_certificate.json"
+            ),
         ),
     }
 
     def bulk_prerequisites_satisfied(experiment_id: str) -> bool:
-        required = bulk_requires_existing_artifact.get(experiment_id)
-        if required is not None and not required.exists():
+        required = bulk_requires_existing_artifacts.get(experiment_id, ())
+        if any(not path.exists() for path in required):
             return False
         if experiment_id == "EXP-COSET-STABLE-TRACE-CONJECTURE":
             sparse_path = Path(
