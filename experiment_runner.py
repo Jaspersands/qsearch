@@ -60,9 +60,11 @@ from coset_stable_second_moment_certificate import (
     write_stable_second_moment_certificate,
 )
 from coset_stable_third_moment_certificate import (
+    COSET_STABLE_THIRD_MOMENT_PATH,
     write_stable_third_moment_certificate,
 )
 from coset_stable_fourth_moment_certificate import (
+    COSET_STABLE_FOURTH_PATTERN_PATH,
     write_stable_fourth_moment_certificate,
 )
 from coset_stable_root_separation_certificate import (
@@ -73,6 +75,16 @@ from coset_stable_coherent_label_certificate import (
 )
 from coset_stable_subspace_transition_probe import (
     write_stable_subspace_transition_report,
+)
+from coset_stable_complementary_sector_probe import (
+    write_complementary_sector_report,
+)
+from coset_stable_shape_family_certificate import (
+    write_stable_shape_family_certificate,
+)
+from coset_stable_shape_label_probe import write_stable_shape_label_report
+from coset_stable_shape_trace_certificate import (
+    write_stable_shape_trace_certificate,
 )
 from coset_recoupling_capability_ledger import write_recoupling_capability_report
 from coset_recoupling_mechanism_synthesis import write_recoupling_mechanism_synthesis_report
@@ -527,6 +539,10 @@ COSET_EXPERIMENTS = {
     "EXP-COSET-STABLE-ROOT-SEPARATION-CERTIFICATE",
     "EXP-COSET-STABLE-COHERENT-LABEL-CERTIFICATE",
     "EXP-COSET-STABLE-SUBSPACE-TRANSITION-PROBE",
+    "EXP-COSET-STABLE-COMPLEMENTARY-SECTOR-PROBE",
+    "EXP-COSET-STABLE-SHAPE-FAMILY-CERTIFICATE",
+    "EXP-COSET-STABLE-SHAPE-LABEL-PROBE",
+    "EXP-COSET-STABLE-SHAPE-TRACE-CERTIFICATE",
     "EXP-COSET-RECOUPLING-CAPABILITY-LEDGER",
     "EXP-COSET-RECOUPLING-MECHANISM-SYNTHESIS",
 }
@@ -1348,6 +1364,10 @@ def select_next_experiment() -> NextExperimentSelection:
         "EXP-COSET-STABLE-ROOT-SEPARATION-CERTIFICATE": 40,
         "EXP-COSET-STABLE-COHERENT-LABEL-CERTIFICATE": 41,
         "EXP-COSET-STABLE-SUBSPACE-TRANSITION-PROBE": 42,
+        "EXP-COSET-STABLE-COMPLEMENTARY-SECTOR-PROBE": 43,
+        "EXP-COSET-STABLE-SHAPE-FAMILY-CERTIFICATE": 44,
+        "EXP-COSET-STABLE-SHAPE-LABEL-PROBE": 45,
+        "EXP-COSET-STABLE-SHAPE-TRACE-CERTIFICATE": 46,
         "EXP-COSET-RECOUPLING-CAPABILITY-LEDGER": 24,
         "EXP-COSET-RECOUPLING-MECHANISM-SYNTHESIS": 25,
     }
@@ -2812,6 +2832,34 @@ def run_experiment(experiment_id: str) -> RunnerResult:
                 registry_candidate_id=experiment["candidate_id"],
                 registry_result_id=result_id,
             )
+        elif experiment_id == "EXP-COSET-STABLE-COMPLEMENTARY-SECTOR-PROBE":
+            payload = write_complementary_sector_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif experiment_id == "EXP-COSET-STABLE-SHAPE-FAMILY-CERTIFICATE":
+            payload = write_stable_shape_family_certificate(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif experiment_id == "EXP-COSET-STABLE-SHAPE-LABEL-PROBE":
+            payload = write_stable_shape_label_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif experiment_id == "EXP-COSET-STABLE-SHAPE-TRACE-CERTIFICATE":
+            payload = write_stable_shape_trace_certificate(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
         elif experiment_id == "EXP-COSET-RECOUPLING-CAPABILITY-LEDGER":
             payload = write_recoupling_capability_report(
                 write_registry=True,
@@ -3225,7 +3273,42 @@ def run_experiment(experiment_id: str) -> RunnerResult:
 
 def run_supported_experiments() -> list[RunnerResult]:
     available = {experiment["id"] for experiment in load_experiments()}
-    return [run_experiment(experiment_id) for experiment_id in supported_experiment_ids() if experiment_id in available]
+    # Bulk mode must not synthesize multi-minute proof checkpoints from scratch.
+    # Each experiment remains directly runnable and may create its own prerequisites.
+    bulk_requires_existing_artifact = {
+        "EXP-COSET-STABLE-FOURTH-MOMENT-CERTIFICATE": (
+            COSET_STABLE_FOURTH_PATTERN_PATH
+        ),
+        "EXP-CODE-GOPPA-SYZYGY-FRONTIER": GOPPA_SCALING_FRONTIER_PATH,
+        "EXP-COSET-STABLE-THIRD-MOMENT-CERTIFICATE": (
+            COSET_STABLE_THIRD_MOMENT_PATH
+        ),
+    }
+
+    def bulk_prerequisites_satisfied(experiment_id: str) -> bool:
+        required = bulk_requires_existing_artifact.get(experiment_id)
+        if required is not None and not required.exists():
+            return False
+        if experiment_id == "EXP-COSET-STABLE-TRACE-CONJECTURE":
+            sparse_path = Path(
+                "research/representation/coset_sparse_stable_gap_probe.json"
+            )
+            if not sparse_path.exists():
+                return False
+            try:
+                sparse_rows = json.loads(sparse_path.read_text()).get("records", [])
+            except (json.JSONDecodeError, OSError):
+                return False
+            return len(sparse_rows) >= 5
+        return True
+
+    runnable = [
+        experiment_id
+        for experiment_id in supported_experiment_ids()
+        if experiment_id in available
+        and bulk_prerequisites_satisfied(experiment_id)
+    ]
+    return [run_experiment(experiment_id) for experiment_id in runnable]
 
 
 def run_next_experiment() -> tuple[NextExperimentSelection, RunnerResult]:

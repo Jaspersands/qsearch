@@ -101,6 +101,18 @@ def build_snapshot() -> dict[str, Any]:
     stable_transition = read_json(
         RESEARCH / "representation/coset_stable_subspace_transition_probe.json", {}
     )
+    stable_complements = read_json(
+        RESEARCH / "representation/coset_stable_complementary_sector_probe.json", {}
+    )
+    stable_shapes = read_json(
+        RESEARCH / "representation/coset_stable_shape_family_certificate.json", {}
+    )
+    stable_shape_labels = read_json(
+        RESEARCH / "representation/coset_stable_shape_label_probe.json", {}
+    )
+    stable_shape_traces = read_json(
+        RESEARCH / "representation/coset_stable_shape_trace_certificate.json", {}
+    )
 
     blocking = sum(bool(item.get("blocks_speedup_claim", False)) for item in findings)
     updated = latest_artifact_date(
@@ -128,6 +140,10 @@ def build_snapshot() -> dict[str, Any]:
         stable_root_separation,
         stable_coherent_label,
         stable_transition,
+        stable_complements,
+        stable_shapes,
+        stable_shape_labels,
+        stable_shape_traces,
     )
     gap_rows = metric(gap, "critical_gap_formula_finite_verified_count", 0)
     gap_total = metric(gap, "record_count", 0)
@@ -212,7 +228,7 @@ def build_snapshot() -> dict[str, Any]:
                     f"{metric(sparse_gap, 'integer_characteristic_polynomial_candidate_count', 0)} integer quartics through "
                     f"n={metric(sparse_gap, 'maximum_n', 0)}."
                 ),
-                "next": "Classify the complementary sectors receiving the roughly two-thirds stable-branch leakage.",
+                "next": "Prove exact transition formulas and gapped coherent labels for the nine stable sector shapes.",
             },
         ],
         "milestones": [
@@ -245,7 +261,12 @@ def build_snapshot() -> dict[str, Any]:
                 "three moments, completing the quartic. Its discriminant proves a normalized n^-53 gap, and an "
                 "ordered-triple block encoding plus phase estimation implements that one-channel label. The left/right "
                 "stable subspaces retain only about one third of their mass through n=10, so the single-channel "
-                "associator route is cut. The next target is exact complementary-sector support."
+                "associator route is cut. Complete finite projector resolution shows nonzero support on every "
+                "complementary sector. Character-polynomial moments prove that exactly nine stable shapes exhaust "
+                "the final sector for all n>=9. One common bounded-support Hamiltonian splits all six remaining "
+                "nontrivial shape families at n=8..10. Exact marked-cycle sums now prove the first characteristic "
+                "coefficient for all nine shapes. Seven higher coefficient families, all six normalized gaps, and "
+                "their coherent implementations remain open."
             ),
             "facts": [
                 {"label": "Pair gap", "value": "Exact inverse-quadratic theorem"},
@@ -256,13 +277,17 @@ def build_snapshot() -> dict[str, Any]:
                 {"label": "Normalized root gap", "value": f"{metric(stable_root_separation, 'stable_channel_root_separation_theorem_count', 0)} exact theorem"},
                 {"label": "Scoped coherent label", "value": f"{metric(stable_coherent_label, 'uniform_polynomial_stable_multiplicity_label_transform_count', 0)} proved channel"},
                 {"label": "Stable branch leakage", "value": f"{100 * metric(stable_transition, 'minimum_maximally_mixed_leakage', 0.0):.1f}% minimum"},
+                {"label": "Complement support", "value": f"{metric(stable_complements, 'minimum_nonzero_complementary_sector_count', 0)}-{metric(stable_complements, 'maximum_nonzero_complementary_sector_count', 0)} sectors observed"},
+                {"label": "Exact stable shapes", "value": f"{metric(stable_shapes, 'stable_intermediate_shape_count', 0)}; {metric(stable_shapes, 'unresolved_coherent_second_stage_shape_count', 0)} gapped labels open"},
+                {"label": "Finite shape targets", "value": f"{metric(stable_shape_labels, 'unproved_shape_finite_target_count', 0)}/6 found; exact proofs open"},
+                {"label": "Exact shape traces", "value": f"{metric(stable_shape_traces, 'exact_all_n_shape_trace_theorem_count', 0)}/9; {metric(stable_shape_traces, 'remaining_open_shape_characteristic_coefficient_family_count', 0)} coefficients open"},
                 {"label": "Hidden decoder", "value": "Open"},
             ],
         },
         "next_actions": [
             {
-                "title": "Resolve complementary transition sectors",
-                "detail": "Derive an exact projector-overlap formula and identify which intermediate partitions receive the stable branch leakage.",
+                "title": "Prove the nine-shape transition family",
+                "detail": "Prove the seven remaining higher characteristic-coefficient families, then establish all six normalized gaps.",
             },
             {
                 "title": "Cover every required sector",

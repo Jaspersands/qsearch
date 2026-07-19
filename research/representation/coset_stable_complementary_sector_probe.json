@@ -1,0 +1,439 @@
+{
+  "claim_gate": {
+    "all_n_support_formula_proved": false,
+    "coherent_all_sector_transform_proved": false,
+    "complete_finite_projector_resolution": true,
+    "hidden_involution_decoder_proved": false,
+    "leakage_spread_across_all_complementary_sectors": true,
+    "reason": "The stable branch leaks across every finite complementary sector. The complete numerical sum rule does not provide exact all-n support, coherent sector transforms, or a decoder.",
+    "single_complement_repair_supported": false,
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-07-18T23:54:53.588475+00:00",
+  "falsifiers_triggered": [
+    "Adding only the largest complementary partition cannot close the stable Racah branch.",
+    "A full-rank stable 8x8 overlap hides substantial support in every other intermediate sector.",
+    "Finite projector-trace decompositions do not prove an all-n transition-support formula.",
+    "Numerical sector coverage does not compile coherent labels or decode a hidden involution."
+  ],
+  "headline_metrics": {
+    "all_n_complementary_support_theorem_count": 0,
+    "coherent_all_sector_transform_count": 0,
+    "complete_projector_resolution_count": 2,
+    "hidden_involution_decoder_count": 0,
+    "maximum_n": 8,
+    "maximum_nonzero_complementary_sector_count": 8,
+    "maximum_single_complementary_leakage_share": 0.2630071002653973,
+    "minimum_effective_complementary_sector_count": 6.067528583918332,
+    "minimum_intermediate_sector_count": 8,
+    "minimum_n": 7,
+    "minimum_nonzero_complementary_sector_count": 7,
+    "scaling_point_count": 2,
+    "single_complement_repair_count": 0
+  },
+  "mathematical_contract": {
+    "gauge_invariance": "each contribution is a projector trace and independent of intertwiner bases",
+    "left_resolution": "every character-allowed intermediate partition",
+    "observable": "Tr(P_left,eta P_right,xi) for every allowed intermediate eta",
+    "right_branch": "the stable 2x4 xi_n branch",
+    "scope": "finite numerical scaling evidence only",
+    "sum_rule": "sum_eta Tr(P_left,eta P_right,xi)=rank(P_right,xi)=8"
+  },
+  "records": [
+    {
+      "all_complementary_sectors_required_at_finite_n": true,
+      "effective_complementary_sector_count": 6.067528583918332,
+      "final_irrep_dimension": 35,
+      "final_partition": [
+        4,
+        2,
+        1
+      ],
+      "final_total_multiplicity": 23,
+      "finite_numerical_probe_only": true,
+      "intermediate_sector_count": 8,
+      "largest_complementary_leakage_share": 0.26080118694362325,
+      "n": 7,
+      "nonzero_complementary_sector_count": 7,
+      "projector_resolution_residual": 6.394884621840902e-14,
+      "projector_resolution_sum": 8.000000000000064,
+      "right_stable_branch_dimension": 8,
+      "sector_contributions": [
+        {
+          "branch_dimension": 1,
+          "first_stage_multiplicity": 1,
+          "fraction_of_complementary_leakage": 0.06480712166172184,
+          "fraction_of_right_stable_branch": 0.04212962962962997,
+          "intermediate_irrep_dimension": 6,
+          "intermediate_partition": [
+            6,
+            1
+          ],
+          "is_stable_intermediate": false,
+          "maximum_overlap_singular_value": 0.5805489101161415,
+          "nonzero_transition_support": true,
+          "overlap_rank_with_right_stable": 1,
+          "projector_overlap_contribution": 0.33703703703703974,
+          "projector_overlap_rational_candidate": "91/270",
+          "rational_candidate_residual": 2.7200464103316335e-15,
+          "second_stage_multiplicity": 1
+        },
+        {
+          "branch_dimension": 4,
+          "first_stage_multiplicity": 2,
+          "fraction_of_complementary_leakage": 0.26080118694362325,
+          "fraction_of_right_stable_branch": 0.16954089506172973,
+          "intermediate_irrep_dimension": 14,
+          "intermediate_partition": [
+            5,
+            2
+          ],
+          "is_stable_intermediate": false,
+          "maximum_overlap_singular_value": 0.7339585746637437,
+          "nonzero_transition_support": true,
+          "overlap_rank_with_right_stable": 4,
+          "projector_overlap_contribution": 1.3563271604938378,
+          "projector_overlap_rational_candidate": "8789/6480",
+          "rational_candidate_residual": 1.0658141036401503e-14,
+          "second_stage_multiplicity": 2
+        },
+        {
+          "branch_dimension": 2,
+          "first_stage_multiplicity": 1,
+          "fraction_of_complementary_leakage": 0.1421153030945329,
+          "fraction_of_right_stable_branch": 0.0923859126984132,
+          "intermediate_irrep_dimension": 15,
+          "intermediate_partition": [
+            5,
+            1,
+            1
+          ],
+          "is_stable_intermediate": false,
+          "maximum_overlap_singular_value": 0.6517253942631938,
+          "nonzero_transition_support": true,
+          "overlap_rank_with_right_stable": 2,
+          "projector_overlap_contribution": 0.7390873015873056,
+          "projector_overlap_rational_candidate": "745/1008",
+          "rational_candidate_residual": 3.9968028886505635e-15,
+          "second_stage_multiplicity": 2
+        },
+        {
+          "branch_dimension": 2,
+          "first_stage_multiplicity": 1,
+          "fraction_of_complementary_leakage": 0.15994065281899325,
+          "fraction_of_right_stable_branch": 0.10397376543209975,
+          "intermediate_irrep_dimension": 14,
+          "intermediate_partition": [
+            4,
+            3
+          ],
+          "is_stable_intermediate": false,
+          "maximum_overlap_singular_value": 0.6672222833935867,
+          "nonzero_transition_support": true,
+          "overlap_rank_with_right_stable": 2,
+          "projector_overlap_contribution": 0.831790123456798,
+          "projector_overlap_rational_candidate": "539/648",
+          "rational_candidate_residual": 7.882583474838611e-15,
+          "second_stage_multiplicity": 2
+        },
+        {
+          "branch_dimension": 8,
+          "first_stage_multiplicity": 2,
+          "fraction_of_complementary_leakage": 0.0,
+          "fraction_of_right_stable_branch": 0.3499228395061754,
+          "intermediate_irrep_dimension": 35,
+          "intermediate_partition": [
+            4,
+            2,
+            1
+          ],
+          "is_stable_intermediate": true,
+          "maximum_overlap_singular_value": 0.8842412450418874,
+          "nonzero_transition_support": true,
+          "overlap_rank_with_right_stable": 8,
+          "projector_overlap_contribution": 2.7993827160494034,
+          "projector_overlap_rational_candidate": "907/324",
+          "rational_candidate_residual": 2.042810365310288e-14,
+          "second_stage_multiplicity": 4
+        },
+        {
+          "branch_dimension": 2,
+          "first_stage_multiplicity": 1,
+          "fraction_of_complementary_leakage": 0.1209410767274284,
+          "fraction_of_right_stable_branch": 0.07862103174603242,
+          "intermediate_irrep_dimension": 20,
+          "intermediate_partition": [
+            4,
+            1,
+            1,
+            1
+          ],
+          "is_stable_intermediate": false,
+          "maximum_overlap_singular_value": 0.6341540315683801,
+          "nonzero_transition_support": true,
+          "overlap_rank_with_right_stable": 2,
+          "projector_overlap_contribution": 0.6289682539682594,
+          "projector_overlap_rational_candidate": "317/504",
+          "rational_candidate_residual": 5.440092820663267e-15,
+          "second_stage_multiplicity": 2
+        },
+        {
+          "branch_dimension": 2,
+          "first_stage_multiplicity": 1,
+          "fraction_of_complementary_leakage": 0.1428783382789339,
+          "fraction_of_right_stable_branch": 0.09288194444444547,
+          "intermediate_irrep_dimension": 21,
+          "intermediate_partition": [
+            3,
+            3,
+            1
+          ],
+          "is_stable_intermediate": false,
+          "maximum_overlap_singular_value": 0.689243000185491,
+          "nonzero_transition_support": true,
+          "overlap_rank_with_right_stable": 2,
+          "projector_overlap_contribution": 0.7430555555555638,
+          "projector_overlap_rational_candidate": "107/144",
+          "rational_candidate_residual": 8.215650382226158e-15,
+          "second_stage_multiplicity": 2
+        },
+        {
+          "branch_dimension": 2,
+          "first_stage_multiplicity": 1,
+          "fraction_of_complementary_leakage": 0.10851632047477872,
+          "fraction_of_right_stable_branch": 0.07054398148148203,
+          "intermediate_irrep_dimension": 21,
+          "intermediate_partition": [
+            3,
+            2,
+            2
+          ],
+          "is_stable_intermediate": false,
+          "maximum_overlap_singular_value": 0.6227318176982255,
+          "nonzero_transition_support": true,
+          "overlap_rank_with_right_stable": 2,
+          "projector_overlap_contribution": 0.5643518518518562,
+          "projector_overlap_rational_candidate": "1219/2160",
+          "rational_candidate_residual": 4.3298697960381105e-15,
+          "second_stage_multiplicity": 2
+        }
+      ],
+      "source_irrep_dimension": 14,
+      "source_partition": [
+        5,
+        2
+      ],
+      "stable_branch_leakage": 0.6500771604938246,
+      "stable_branch_retention": 0.3499228395061754,
+      "status": "complete-finite-complementary-leakage-resolution"
+    },
+    {
+      "all_complementary_sectors_required_at_finite_n": true,
+      "effective_complementary_sector_count": 6.423956836493054,
+      "final_irrep_dimension": 64,
+      "final_partition": [
+        5,
+        2,
+        1
+      ],
+      "final_total_multiplicity": 25,
+      "finite_numerical_probe_only": true,
+      "intermediate_sector_count": 9,
+      "largest_complementary_leakage_share": 0.2630071002653973,
+      "n": 8,
+      "nonzero_complementary_sector_count": 8,
+      "projector_resolution_residual": 6.217248937900877e-15,
+      "projector_resolution_sum": 7.999999999999994,
+      "right_stable_branch_dimension": 8,
+      "sector_contributions": [
+        {
+          "branch_dimension": 1,
+          "first_stage_multiplicity": 1,
+          "fraction_of_complementary_leakage": 0.05157170923379163,
+          "fraction_of_right_stable_branch": 0.03392857142857142,
+          "intermediate_irrep_dimension": 7,
+          "intermediate_partition": [
+            7,
+            1
+          ],
+          "is_stable_intermediate": false,
+          "maximum_overlap_singular_value": 0.5209880722517276,
+          "nonzero_transition_support": true,
+          "overlap_rank_with_right_stable": 1,
+          "projector_overlap_contribution": 0.27142857142857135,
+          "projector_overlap_rational_candidate": "19/70",
+          "rational_candidate_residual": 5.551115123125783e-17,
+          "second_stage_multiplicity": 1
+        },
+        {
+          "branch_dimension": 4,
+          "first_stage_multiplicity": 2,
+          "fraction_of_complementary_leakage": 0.2630071002653973,
+          "fraction_of_right_stable_branch": 0.17303004535147362,
+          "intermediate_irrep_dimension": 20,
+          "intermediate_partition": [
+            6,
+            2
+          ],
+          "is_stable_intermediate": false,
+          "maximum_overlap_singular_value": 0.7396657123386602,
+          "nonzero_transition_support": true,
+          "overlap_rank_with_right_stable": 4,
+          "projector_overlap_contribution": 1.384240362811789,
+          "projector_overlap_rational_candidate": "12209/8820",
+          "rational_candidate_residual": 2.4424906541753444e-15,
+          "second_stage_multiplicity": 2
+        },
+        {
+          "branch_dimension": 2,
+          "first_stage_multiplicity": 1,
+          "fraction_of_complementary_leakage": 0.13747931961534657,
+          "fraction_of_right_stable_branch": 0.09044642857142988,
+          "intermediate_irrep_dimension": 21,
+          "intermediate_partition": [
+            6,
+            1,
+            1
+          ],
+          "is_stable_intermediate": false,
+          "maximum_overlap_singular_value": 0.6422821822053394,
+          "nonzero_transition_support": true,
+          "overlap_rank_with_right_stable": 2,
+          "projector_overlap_contribution": 0.7235714285714391,
+          "projector_overlap_rational_candidate": "1013/1400",
+          "rational_candidate_residual": 1.0547118733938987e-14,
+          "second_stage_multiplicity": 2
+        },
+        {
+          "branch_dimension": 2,
+          "first_stage_multiplicity": 1,
+          "fraction_of_complementary_leakage": 0.13797694137110714,
+          "fraction_of_right_stable_branch": 0.09077380952380815,
+          "intermediate_irrep_dimension": 28,
+          "intermediate_partition": [
+            5,
+            3
+          ],
+          "is_stable_intermediate": false,
+          "maximum_overlap_singular_value": 0.6988542169085845,
+          "nonzero_transition_support": true,
+          "overlap_rank_with_right_stable": 2,
+          "projector_overlap_contribution": 0.7261904761904652,
+          "projector_overlap_rational_candidate": "61/84",
+          "rational_candidate_residual": 1.099120794378905e-14,
+          "second_stage_multiplicity": 2
+        },
+        {
+          "branch_dimension": 8,
+          "first_stage_multiplicity": 2,
+          "fraction_of_complementary_leakage": 0.0,
+          "fraction_of_right_stable_branch": 0.34210884353741366,
+          "intermediate_irrep_dimension": 64,
+          "intermediate_partition": [
+            5,
+            2,
+            1
+          ],
+          "is_stable_intermediate": true,
+          "maximum_overlap_singular_value": 0.8875540657966446,
+          "nonzero_transition_support": true,
+          "overlap_rank_with_right_stable": 8,
+          "projector_overlap_contribution": 2.7368707482993093,
+          "projector_overlap_rational_candidate": "10058/3675",
+          "rational_candidate_residual": 1.021405182655144e-14,
+          "second_stage_multiplicity": 4
+        },
+        {
+          "branch_dimension": 2,
+          "first_stage_multiplicity": 1,
+          "fraction_of_complementary_leakage": 0.11196489504704768,
+          "fraction_of_right_stable_branch": 0.0736607142857143,
+          "intermediate_irrep_dimension": 35,
+          "intermediate_partition": [
+            5,
+            1,
+            1,
+            1
+          ],
+          "is_stable_intermediate": false,
+          "maximum_overlap_singular_value": 0.6066557113389139,
+          "nonzero_transition_support": true,
+          "overlap_rank_with_right_stable": 2,
+          "projector_overlap_contribution": 0.5892857142857144,
+          "projector_overlap_rational_candidate": "33/56",
+          "rational_candidate_residual": 1.1102230246251565e-16,
+          "second_stage_multiplicity": 2
+        },
+        {
+          "branch_dimension": 1,
+          "first_stage_multiplicity": 1,
+          "fraction_of_complementary_leakage": 0.055793954434219355,
+          "fraction_of_right_stable_branch": 0.036706349206349416,
+          "intermediate_irrep_dimension": 14,
+          "intermediate_partition": [
+            4,
+            4
+          ],
+          "is_stable_intermediate": false,
+          "maximum_overlap_singular_value": 0.5418955560352893,
+          "nonzero_transition_support": true,
+          "overlap_rank_with_right_stable": 1,
+          "projector_overlap_contribution": 0.2936507936507953,
+          "projector_overlap_rational_candidate": "37/126",
+          "rational_candidate_residual": 1.6653345369377348e-15,
+          "second_stage_multiplicity": 1
+        },
+        {
+          "branch_dimension": 3,
+          "first_stage_multiplicity": 1,
+          "fraction_of_complementary_leakage": 0.14250077551442467,
+          "fraction_of_right_stable_branch": 0.09375000000000025,
+          "intermediate_irrep_dimension": 70,
+          "intermediate_partition": [
+            4,
+            3,
+            1
+          ],
+          "is_stable_intermediate": false,
+          "maximum_overlap_singular_value": 0.6324555320336762,
+          "nonzero_transition_support": true,
+          "overlap_rank_with_right_stable": 2,
+          "projector_overlap_contribution": 0.750000000000002,
+          "projector_overlap_rational_candidate": "3/4",
+          "rational_candidate_residual": 1.9984014443252818e-15,
+          "second_stage_multiplicity": 3
+        },
+        {
+          "branch_dimension": 2,
+          "first_stage_multiplicity": 1,
+          "fraction_of_complementary_leakage": 0.09970530451866444,
+          "fraction_of_right_stable_branch": 0.06559523809523848,
+          "intermediate_irrep_dimension": 56,
+          "intermediate_partition": [
+            4,
+            2,
+            2
+          ],
+          "is_stable_intermediate": false,
+          "maximum_overlap_singular_value": 0.6076289599184481,
+          "nonzero_transition_support": true,
+          "overlap_rank_with_right_stable": 2,
+          "projector_overlap_contribution": 0.5247619047619079,
+          "projector_overlap_rational_candidate": "551/1050",
+          "rational_candidate_residual": 3.1086244689504383e-15,
+          "second_stage_multiplicity": 2
+        }
+      ],
+      "source_irrep_dimension": 20,
+      "source_partition": [
+        6,
+        2
+      ],
+      "stable_branch_leakage": 0.6578911564625863,
+      "stable_branch_retention": 0.34210884353741366,
+      "status": "complete-finite-complementary-leakage-resolution"
+    }
+  ],
+  "status": "complete-finite-leakage-support-single-channel-repair-refuted",
+  "summary": "Resolved stable-branch leakage over all intermediate sectors at 2 sizes; every audited complementary sector has nonzero support, refuting a one-complement repair."
+}

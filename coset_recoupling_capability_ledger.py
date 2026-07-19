@@ -215,6 +215,30 @@ CAPABILITIES = (
         ),
     ),
     RepresentationCapability(
+        id="CAP-STABLE-NINE-SHAPE-SECTOR-CLASSIFICATION",
+        literature_ids=[
+            "church-ellenberg-farb-fi-modules-2015",
+            "project-coset-stable-shape-family-certificate",
+        ],
+        primitive="Exact bounded intermediate-sector family for one stable three-copy final irrep",
+        proved_scope=(
+            "For W_n=(n-2,2) and final xi_n=(n-3,2,1), exactly nine padded intermediate shapes with fixed "
+            "multiplicity pairs exhaust the final component for every n>=9, with n=8 closed exactly."
+        ),
+        availability="proved-exact-structural-not-circuit",
+        uniform_polynomial_gate_complexity_proved=False,
+        resolves_internal_sn_kronecker_basis=False,
+        handles_overlapping_k_copy_associators=False,
+        supplies_hidden_involution_decoder=False,
+        classical_comparison=(
+            "The certificate is an exact classical character-polynomial calculation and makes no separation claim."
+        ),
+        scope_limit=(
+            "Six nontrivial second-stage shape families still lack coherent normalized-gap labels; exact support "
+            "does not synthesize their transitions or decode the hidden involution."
+        ),
+    ),
+    RepresentationCapability(
         id="CAP-KRONECKER-SHARP-BQP",
         literature_ids=["ikenmeyer-subramanian-kronecker-2023"],
         primitive="#BQP characterization of exact Kronecker multiplicities",
@@ -354,6 +378,10 @@ def build_recoupling_capability_report(
             and capability.uniform_polynomial_gate_complexity_proved
             for capability in CAPABILITIES
         ),
+        "exact_stable_nine_shape_sector_classification_count": sum(
+            capability.id == "CAP-STABLE-NINE-SHAPE-SECTOR-CLASSIFICATION"
+            for capability in CAPABILITIES
+        ),
         "kcopy_associator_poly_proof_count": sum(
             capability.handles_overlapping_k_copy_associators
             and capability.uniform_polynomial_gate_complexity_proved
@@ -454,6 +482,7 @@ def build_recoupling_capability_report(
             "diagonal_jm_labels_resolve_multiplicity_basis": False,
             "bounded_support_commutant_block_encoding_polynomial_proved": True,
             "stable_channel_gapped_multiplicity_label_polynomial_proved": True,
+            "exact_bounded_stable_sector_family_proved": True,
             "gapped_kronecker_multiplicity_transform_polynomial_proved": False,
             "internal_sn_kronecker_transform_polynomial_proved": False,
             "kcopy_associator_polynomial_proved": False,
@@ -479,6 +508,7 @@ def build_recoupling_capability_report(
             "Schur-Weyl Clebsch-Gordan circuits do not automatically solve internal Specht tensor products.",
             "Diagonal YJM tableau labels retain exact Kronecker multiplicity degeneracy.",
             "One stable gapped multiplicity label cannot be transferred to unaudited sectors or overlapping trees.",
+            "An exact nine-shape sector list does not supply the six missing nontrivial coherent label families.",
             "Many restricted multiplicity speedup candidates have polynomial classical algorithms.",
             "Finite growth of dimensions or multiplicities is not a circuit lower bound.",
         ],

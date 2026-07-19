@@ -34,19 +34,35 @@
         "value": "65.0% minimum"
       },
       {
+        "label": "Complement support",
+        "value": "7-8 sectors observed"
+      },
+      {
+        "label": "Exact stable shapes",
+        "value": "9; 6 gapped labels open"
+      },
+      {
+        "label": "Finite shape targets",
+        "value": "6/6 found; exact proofs open"
+      },
+      {
+        "label": "Exact shape traces",
+        "value": "9/9; 7 coefficients open"
+      },
+      {
         "label": "Hidden decoder",
         "value": "Open"
       }
     ],
-    "summary": "For W_n=(n-2,2) and alpha_n=xi_n=(n-3,2,1), sparse multiplicity-four spectra through n=11 reconstruct monic integer quartics. Exact marked-cycle equality patterns now prove their trace is 4n^3-46n^2+149n-118 for every n>=7. Seventeen, 129, and 1,628 relative classes prove the next three moments, completing the quartic. Its discriminant proves a normalized n^-53 gap, and an ordered-triple block encoding plus phase estimation implements that one-channel label. The left/right stable subspaces retain only about one third of their mass through n=10, so the single-channel associator route is cut. The next target is exact complementary-sector support."
+    "summary": "For W_n=(n-2,2) and alpha_n=xi_n=(n-3,2,1), sparse multiplicity-four spectra through n=11 reconstruct monic integer quartics. Exact marked-cycle equality patterns now prove their trace is 4n^3-46n^2+149n-118 for every n>=7. Seventeen, 129, and 1,628 relative classes prove the next three moments, completing the quartic. Its discriminant proves a normalized n^-53 gap, and an ordered-triple block encoding plus phase estimation implements that one-channel label. The left/right stable subspaces retain only about one third of their mass through n=10, so the single-channel associator route is cut. Complete finite projector resolution shows nonzero support on every complementary sector. Character-polynomial moments prove that exactly nine stable shapes exhaust the final sector for all n>=9. One common bounded-support Hamiltonian splits all six remaining nontrivial shape families at n=8..10. Exact marked-cycle sums now prove the first characteristic coefficient for all nine shapes. Seven higher coefficient families, all six normalized gaps, and their coherent implementations remain open."
   },
   "execution_model": "Research generation and experiments run interactively during active Codex sessions. A GitHub workflow validates pushed snapshots, and a scheduled backup can commit only validation-passing changes; neither mechanism performs autonomous quantum-algorithm research between sessions.",
   "metrics": {
-    "blocking_findings": 506,
-    "experiments": 166,
-    "negative_results": 480,
+    "blocking_findings": 514,
+    "experiments": 170,
+    "negative_results": 484,
     "proof_debts": 24,
-    "results": 240
+    "results": 244
   },
   "milestones": [
     {
@@ -72,8 +88,8 @@
   ],
   "next_actions": [
     {
-      "detail": "Derive an exact projector-overlap formula and identify which intermediate partitions receive the stable branch leakage.",
-      "title": "Resolve complementary transition sectors"
+      "detail": "Prove the seven remaining higher characteristic-coefficient families, then establish all six normalized gaps.",
+      "title": "Prove the nine-shape transition family"
     },
     {
       "detail": "Extend bounded-support spectral control beyond the single stable multiplicity-four channel without dense tableau enumeration.",
@@ -108,7 +124,7 @@
     },
     {
       "evidence": "YJM spectra were verified on 3 sectors, and bounded-support commutants split 2 finite multiplicity sectors up to multiplicity 5. The stable multiplicity-two family now has 1 exact all-n gap theorem; the hierarchy resolves 10/10 finite S_6 sectors. Sparse stable probes reconstruct 5 integer quartics through n=11.",
-      "next": "Classify the complementary sectors receiving the roughly two-thirds stable-branch leakage.",
+      "next": "Prove exact transition formulas and gapped coherent labels for the nine stable sector shapes.",
       "short_title": "Cosets",
       "stage": 3,
       "status": "Active structural lead",
@@ -117,7 +133,7 @@
       "tone": "active"
     }
   ],
-  "updated_at": "2026-07-18",
+  "updated_at": "2026-07-19",
   "verdict": {
     "detail": "Every speedup claim remains blocked. One restricted representation-theoretic gap theorem is now proved, a bounded-support hierarchy resolves the complete finite S_6 Racah table, and one stable multiplicity-four channel now has a complete exact quartic, normalized polynomial gap, and a scoped coherent eigenlabel primitive. Overlapping recoupling, all-sector coverage, and decoding remain open.",
     "title": "No breakthrough yet"

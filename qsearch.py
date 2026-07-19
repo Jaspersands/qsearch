@@ -103,6 +103,10 @@ Commands:
   python qsearch.py coset-racah-root-separation-proof
   python qsearch.py coset-racah-coherent-label-proof
   python qsearch.py coset-racah-stable-transition
+  python qsearch.py coset-racah-complementary-sectors
+  python qsearch.py coset-racah-stable-shape-proof
+  python qsearch.py coset-racah-stable-shape-labels
+  python qsearch.py coset-racah-stable-shape-traces
   python qsearch.py coset-recoupling-capabilities
   python qsearch.py coset-recoupling-synthesize
   python qsearch.py code-equivalence
@@ -329,6 +333,16 @@ from coset_stable_coherent_label_certificate import (
 )
 from coset_stable_subspace_transition_probe import (
     write_stable_subspace_transition_report,
+)
+from coset_stable_complementary_sector_probe import (
+    write_complementary_sector_report,
+)
+from coset_stable_shape_family_certificate import (
+    write_stable_shape_family_certificate,
+)
+from coset_stable_shape_label_probe import write_stable_shape_label_report
+from coset_stable_shape_trace_certificate import (
+    write_stable_shape_trace_certificate,
 )
 from coset_recoupling_capability_ledger import write_recoupling_capability_report
 from coset_recoupling_mechanism_synthesis import write_recoupling_mechanism_synthesis_report
@@ -4153,6 +4167,133 @@ def command_coset_racah_stable_transition(args: argparse.Namespace) -> int:
     return 0
 
 
+def command_coset_racah_complementary_sectors(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    n_values = tuple(
+        int(value.strip()) for value in args.n_values.split(",") if value.strip()
+    )
+    payload = write_complementary_sector_report(
+        n_values=n_values,
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Stable Racah complementary-sector resolution complete")
+    print(
+        "Artifact: research/representation/"
+        "coset_stable_complementary_sector_probe.json"
+    )
+    print(f"Scaling points: {metrics['scaling_point_count']}")
+    print(
+        "Minimum nonzero complementary sectors: "
+        f"{metrics['minimum_nonzero_complementary_sector_count']}"
+    )
+    print(
+        "Largest one-sector leakage share: "
+        f"{metrics['maximum_single_complementary_leakage_share']:.6f}"
+    )
+    print(f"Speedup claim allowed: {payload['claim_gate']['speedup_claim_allowed']}")
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_coset_racah_stable_shape_proof(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_stable_shape_family_certificate(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Exact stable Racah shape-family certificate complete")
+    print(
+        "Artifact: research/representation/"
+        "coset_stable_shape_family_certificate.json"
+    )
+    print(
+        "Stable shape theorems: "
+        f"{metrics['exact_stable_shape_family_theorem_count']}"
+    )
+    print(f"Intermediate shapes: {metrics['stable_intermediate_shape_count']}")
+    print(
+        "Open nontrivial second-stage label shapes: "
+        f"{metrics['unresolved_coherent_second_stage_shape_count']}"
+    )
+    print(f"Speedup claim allowed: {payload['claim_gate']['speedup_claim_allowed']}")
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_coset_racah_stable_shape_labels(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    n_values = tuple(
+        int(value.strip()) for value in args.n_values.split(",") if value.strip()
+    )
+    payload = write_stable_shape_label_report(
+        n_values=n_values,
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Stable Racah shape-label spectral probe complete")
+    print(
+        "Artifact: research/representation/"
+        "coset_stable_shape_label_probe.json"
+    )
+    print(f"Audited nontrivial blocks: {metrics['finite_nontrivial_block_count']}")
+    print(
+        "Fully split finite blocks: "
+        f"{metrics['finite_fully_split_nontrivial_block_count']}"
+    )
+    print(
+        "Unproved shape theorem targets: "
+        f"{metrics['unproved_shape_finite_target_count']}"
+    )
+    print(f"Speedup claim allowed: {payload['claim_gate']['speedup_claim_allowed']}")
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_coset_racah_stable_shape_traces(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_stable_shape_trace_certificate(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Exact stable Racah shape-trace certificate complete")
+    print(
+        "Artifact: research/representation/"
+        "coset_stable_shape_trace_certificate.json"
+    )
+    print(
+        "Exact all-n shape traces: "
+        f"{metrics['exact_all_n_shape_trace_theorem_count']}/9"
+    )
+    print(
+        "New exact open-shape traces: "
+        f"{metrics['new_exact_open_shape_trace_theorem_count']}/6"
+    )
+    print(
+        "Remaining characteristic-coefficient families: "
+        f"{metrics['remaining_open_shape_characteristic_coefficient_family_count']}"
+    )
+    print(f"Speedup claim allowed: {payload['claim_gate']['speedup_claim_allowed']}")
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
 def command_coset_recoupling_synthesize(args: argparse.Namespace) -> int:
     initialize_seed_registry(overwrite=False)
     payload = write_recoupling_mechanism_synthesis_report(
@@ -7425,6 +7566,56 @@ def build_parser() -> argparse.ArgumentParser:
     )
     coset_racah_stable_transition.set_defaults(
         func=command_coset_racah_stable_transition
+    )
+
+    coset_racah_complementary_sectors = subparsers.add_parser(
+        "coset-racah-complementary-sectors",
+        help="Resolve stable-branch leakage across every character-allowed intermediate sector.",
+    )
+    coset_racah_complementary_sectors.add_argument(
+        "--n-values", default="7,8"
+    )
+    coset_racah_complementary_sectors.add_argument(
+        "--no-registry", action="store_true"
+    )
+    coset_racah_complementary_sectors.set_defaults(
+        func=command_coset_racah_complementary_sectors
+    )
+
+    coset_racah_stable_shape_proof = subparsers.add_parser(
+        "coset-racah-stable-shape-proof",
+        help="Prove the exact nine-shape intermediate family by character polynomials.",
+    )
+    coset_racah_stable_shape_proof.add_argument(
+        "--no-registry", action="store_true"
+    )
+    coset_racah_stable_shape_proof.set_defaults(
+        func=command_coset_racah_stable_shape_proof
+    )
+
+    coset_racah_stable_shape_labels = subparsers.add_parser(
+        "coset-racah-stable-shape-labels",
+        help="Probe one uniform bounded-support label Hamiltonian on all nine stable shapes.",
+    )
+    coset_racah_stable_shape_labels.add_argument(
+        "--n-values", default="8,9,10"
+    )
+    coset_racah_stable_shape_labels.add_argument(
+        "--no-registry", action="store_true"
+    )
+    coset_racah_stable_shape_labels.set_defaults(
+        func=command_coset_racah_stable_shape_labels
+    )
+
+    coset_racah_stable_shape_traces = subparsers.add_parser(
+        "coset-racah-stable-shape-traces",
+        help="Prove exact first characteristic coefficients for all nine stable shapes.",
+    )
+    coset_racah_stable_shape_traces.add_argument(
+        "--no-registry", action="store_true"
+    )
+    coset_racah_stable_shape_traces.set_defaults(
+        func=command_coset_racah_stable_shape_traces
     )
 
     coset_recoupling_synthesize = subparsers.add_parser(

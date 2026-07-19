@@ -2677,7 +2677,7 @@
       "coset_recoupling_capability_ledger": "research/representation/coset_recoupling_capability_ledger.json"
     },
     "candidate_id": "CODE-COSET-COLLECTIVE",
-    "created_at": "2026-07-18T22:43:08.329488+00:00",
+    "created_at": "2026-07-18T23:59:21.702001+00:00",
     "experiment_id": "EXP-COSET-RECOUPLING-CAPABILITY-LEDGER",
     "falsifiers_triggered": [
       "The S_n QFT is already polynomial and cannot be presented as the missing breakthrough.",
@@ -2686,15 +2686,17 @@
       "Schur-Weyl Clebsch-Gordan circuits do not automatically solve internal Specht tensor products.",
       "Diagonal YJM tableau labels retain exact Kronecker multiplicity degeneracy.",
       "One stable gapped multiplicity label cannot be transferred to unaudited sectors or overlapping trees.",
+      "An exact nine-shape sector list does not supply the six missing nontrivial coherent label families.",
       "Many restricted multiplicity speedup candidates have polynomial classical algorithms.",
       "Finite growth of dimensions or multiplicities is not a circuit lower bound."
     ],
     "id": "RESULT-EXP-COSET-RECOUPLING-CAPABILITY-LEDGER-LATEST",
     "metrics": {
       "bounded_support_commutant_block_encoding_poly_proof_count": 1,
-      "capability_count": 12,
+      "capability_count": 13,
       "diagonal_jm_label_transform_poly_proof_count": 1,
       "exact_holevo_copy_budget_theorem_count": 1,
+      "exact_stable_nine_shape_sector_classification_count": 1,
       "gapped_kronecker_multiplicity_transform_poly_proof_count": 0,
       "growth_record_count": 7,
       "hidden_involution_decoder_count": 0,
@@ -2710,7 +2712,7 @@
       "unresolved_required_capability_count": 3
     },
     "status": "known-primitives-separated-from-open-recoupling-and-decoder",
-    "summary": "Classified 12 representation primitives and exact finite Kronecker growth through n=10 without transferring solved QFT/counting results to the open decoder."
+    "summary": "Classified 13 representation primitives and exact finite Kronecker growth through n=10 without transferring solved QFT/counting results to the open decoder."
   },
   {
     "artifacts": {
@@ -2899,6 +2901,38 @@
   },
   {
     "artifacts": {
+      "coset_stable_complementary_sector_probe": "research/representation/coset_stable_complementary_sector_probe.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-07-18T23:54:53.588475+00:00",
+    "experiment_id": "EXP-COSET-STABLE-COMPLEMENTARY-SECTOR-PROBE",
+    "falsifiers_triggered": [
+      "Adding only the largest complementary partition cannot close the stable Racah branch.",
+      "A full-rank stable 8x8 overlap hides substantial support in every other intermediate sector.",
+      "Finite projector-trace decompositions do not prove an all-n transition-support formula.",
+      "Numerical sector coverage does not compile coherent labels or decode a hidden involution."
+    ],
+    "id": "RESULT-EXP-COSET-STABLE-COMPLEMENTARY-SECTOR-PROBE-LATEST",
+    "metrics": {
+      "all_n_complementary_support_theorem_count": 0,
+      "coherent_all_sector_transform_count": 0,
+      "complete_projector_resolution_count": 2,
+      "hidden_involution_decoder_count": 0,
+      "maximum_n": 8,
+      "maximum_nonzero_complementary_sector_count": 8,
+      "maximum_single_complementary_leakage_share": 0.2630071002653973,
+      "minimum_effective_complementary_sector_count": 6.067528583918332,
+      "minimum_intermediate_sector_count": 8,
+      "minimum_n": 7,
+      "minimum_nonzero_complementary_sector_count": 7,
+      "scaling_point_count": 2,
+      "single_complement_repair_count": 0
+    },
+    "status": "complete-finite-leakage-support-single-channel-repair-refuted",
+    "summary": "Resolved stable-branch leakage over all intermediate sectors at 2 sizes; every audited complementary sector has nonzero support, refuting a one-complement repair."
+  },
+  {
+    "artifacts": {
       "coset_stable_fourth_moment_certificate": "research/representation/coset_stable_fourth_moment_certificate.json",
       "coset_stable_fourth_moment_patterns": "research/representation/coset_stable_fourth_moment_patterns.json"
     },
@@ -3026,6 +3060,111 @@
     },
     "status": "exact-stable-second-moment-proved-two-quartic-coefficients-known",
     "summary": "Proved the stable second power trace and the quartic's second coefficient for every n>=7 using 17 relative orbit classes; two quartic coefficients, root separation, circuit, and decoder remain open."
+  },
+  {
+    "artifacts": {
+      "coset_stable_shape_family_certificate": "research/representation/coset_stable_shape_family_certificate.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-07-18T23:58:26.108495+00:00",
+    "experiment_id": "EXP-COSET-STABLE-SHAPE-FAMILY-CERTIFICATE",
+    "falsifiers_triggered": [
+      "The stable final sector does not require an unbounded number of intermediate partition shapes.",
+      "A bounded nine-shape list is not a coherent all-sector transform.",
+      "Only one of seven nontrivial second-stage multiplicity shapes currently has a coherent normalized-gap certificate.",
+      "Exact sector multiplicities do not imply hidden-involution information or quantum advantage."
+    ],
+    "id": "RESULT-EXP-COSET-STABLE-SHAPE-FAMILY-CERTIFICATE-LATEST",
+    "metrics": {
+      "all_n_multiplicity_formula_count": 9,
+      "all_n_sector_exhaustion_theorem_count": 1,
+      "coherent_all_sector_transform_count": 0,
+      "coherent_gapped_second_stage_shape_count": 1,
+      "direct_triple_character_moment_multiplicity": 25,
+      "exact_character_polynomial_count": 9,
+      "exact_stable_shape_family_theorem_count": 1,
+      "hidden_involution_decoder_count": 0,
+      "maximum_first_stage_multiplicity": 2,
+      "maximum_second_stage_multiplicity": 4,
+      "n8_endpoint_verified_shape_count": 9,
+      "nontrivial_second_stage_shape_count": 7,
+      "overlapping_racah_associator_count": 0,
+      "stable_final_total_multiplicity": 25,
+      "stable_intermediate_shape_count": 9,
+      "unresolved_coherent_second_stage_shape_count": 6
+    },
+    "status": "exact-nine-shape-family-proved-six-label-families-open",
+    "summary": "Proved an exact nine-shape intermediate family with total final multiplicity 25 for n>=9 and exact n=8 endpoint; six nontrivial second-stage label families remain open."
+  },
+  {
+    "artifacts": {
+      "coset_stable_shape_label_probe": "research/representation/coset_stable_shape_label_probe.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-07-19T00:13:08.994322+00:00",
+    "experiment_id": "EXP-COSET-STABLE-SHAPE-LABEL-PROBE",
+    "falsifiers_triggered": [
+      "Finite splitting at three sizes does not imply an all-n simple spectrum.",
+      "Near-integer floating characteristic coefficients are not exact identities.",
+      "An observed raw or LCU-normalized gap is not a uniform asymptotic lower bound.",
+      "A formal orbit sum is not a compiled coherent SELECT/PREPARE circuit.",
+      "Complete intermediate labels would still not constitute a hidden-involution decoder or a classical separation."
+    ],
+    "id": "RESULT-EXP-COSET-STABLE-SHAPE-LABEL-PROBE-LATEST",
+    "metrics": {
+      "finite_fully_split_nontrivial_block_count": 21,
+      "finite_nontrivial_block_count": 21,
+      "maximum_integer_polynomial_relative_reconstruction_residual": 1.2605008621701887e-14,
+      "maximum_n": 10,
+      "maximum_target_eigenspace_relative_residual": 1.5194090854857235e-12,
+      "minimum_n": 8,
+      "minimum_observed_unproved_shape_lcu_normalized_gap": 0.022222222222222143,
+      "minimum_observed_unproved_shape_raw_gap": 11.99999999999995,
+      "new_coherent_shape_label_count": 0,
+      "new_exact_all_n_characteristic_polynomial_count": 0,
+      "new_normalized_gap_theorem_count": 0,
+      "nontrivial_second_stage_shape_count": 7,
+      "scaling_point_count": 3,
+      "stable_shape_count": 9,
+      "uniform_orbit_generator_count": 1,
+      "uniform_polynomial_racah_circuit_count": 0,
+      "unproved_shape_finite_target_count": 6
+    },
+    "status": "uniform-finite-label-targets-found-six-all-n-proofs-open",
+    "summary": "The same support-intersection-two orbit Hamiltonian split all 21 audited nontrivial blocks across n=8..10, yielding finite integer-polynomial targets for all 6 previously unproved shape families; no new all-n or coherent label theorem follows."
+  },
+  {
+    "artifacts": {
+      "coset_stable_shape_trace_certificate": "research/representation/coset_stable_shape_trace_certificate.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-07-19T00:36:53.981675+00:00",
+    "experiment_id": "EXP-COSET-STABLE-SHAPE-TRACE-CERTIFICATE",
+    "falsifiers_triggered": [
+      "One exact trace does not determine a quadratic or cubic characteristic polynomial.",
+      "Exact eigenvalue sums do not prove normalized eigenvalue separation.",
+      "A spectral identity does not compile the orbit sum into a coherent circuit.",
+      "Shape labels do not implement coupling-tree transitions or decode a hidden involution."
+    ],
+    "id": "RESULT-EXP-COSET-STABLE-SHAPE-TRACE-CERTIFICATE-LATEST",
+    "metrics": {
+      "complete_racah_associator_count": 0,
+      "exact_all_n_shape_trace_theorem_count": 9,
+      "exact_n8_endpoint_count": 9,
+      "finite_probe_trace_agreement_count": 27,
+      "finite_probe_trace_comparison_count": 27,
+      "hidden_involution_decoder_count": 0,
+      "maximum_canonical_equality_pattern_count": 329728,
+      "maximum_partial_permutation_constraint_count": 9,
+      "new_coherent_shape_label_count": 0,
+      "new_exact_complete_characteristic_polynomial_count": 0,
+      "new_exact_open_shape_trace_theorem_count": 6,
+      "new_normalized_gap_theorem_count": 0,
+      "remaining_open_shape_characteristic_coefficient_family_count": 7,
+      "stable_shape_count": 9
+    },
+    "status": "exact-nine-shape-traces-proved-seven-coefficient-families-open",
+    "summary": "Proved 9/9 exact stable-shape trace polynomials for every n>=8, including all six previously open nontrivial label families; 7 higher characteristic-coefficient families remain before gap analysis."
   },
   {
     "artifacts": {

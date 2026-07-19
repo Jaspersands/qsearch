@@ -57,6 +57,8 @@
       "EXP-COSET-RESTRICTED-RACAH-CONTROL",
       "EXP-COSET-STABLE-COHERENT-LABEL-CERTIFICATE",
       "EXP-COSET-STABLE-SUBSPACE-TRANSITION-PROBE",
+      "EXP-COSET-STABLE-COMPLEMENTARY-SECTOR-PROBE",
+      "EXP-COSET-STABLE-SHAPE-FAMILY-CERTIFICATE",
       "EXP-CODE-TENSOR-MEASUREMENT"
     ],
     "falsifiers": [
@@ -86,7 +88,7 @@
     "status": "active",
     "success_statement": "Conjecture: a restricted but hard code family admits a polynomial-bond collective observable whose distinguishing advantage remains inverse polynomial as length grows.",
     "title": "Collective coset-state observables for code equivalence",
-    "updated_at": "2026-07-18T23:04:01.600776+00:00"
+    "updated_at": "2026-07-18T23:54:11.001121+00:00"
   },
   {
     "classical_baseline": "Generic dihedral hidden-reflection and subset-sum postprocessing baselines, plus all classical attacks legal for any public side information. Explicit phase-family learners are rejection tests for restricted testbeds, not evidence about the full DCP state-input problem.",
@@ -249,7 +251,7 @@
     "classical_baseline": "Profile-pruned canonical forms, higher-order coordinate tuple profiles, support-splitting profiles, dual/hull invariants, puncturing/shortening profiles, bounded exact equivalence checks, information-set search, and automorphism-aware canonical labeling.",
     "complexity_accounting": "Reports profile bucket sizes, tuple-profile collision status, canonicalization assignments, support-splitting outcomes, automorphism estimates, register count, sample complexity, tensor bond dimension, and all classical invariant overlaps.",
     "cost_model": "Counts code length/dimension, coset-state samples, register count, measurement description length, tensor bond dimension, canonicalization assignment budgets, automorphism search, and classical verification cost.",
-    "created_at": "2026-07-18T23:12:43.712316+00:00",
+    "created_at": "2026-07-19T01:00:31.197852+00:00",
     "dequantization_check": "Must pass code_tuple_profile_baseline.py, code_canonicalization_baseline.py, code_family_search.py, graphlet/tensor observable audits, individualized rooted tensor audits, dequantization checks, and proof-debt review before any positive signal is promoted.",
     "experiment_ids": [
       "EXP-MUT-CODE-COSET-COLLECTIVE-CODE-CANONICALIZATION",
@@ -286,13 +288,13 @@
     "status": "mutated-hypothesis",
     "success_statement": "A row is viable only if it survives profile-pruned canonicalization and support-splitting baselines while a polynomial-description collective observable retains inverse-polynomial distinguishing advantage as length grows.",
     "title": "Canonicalization-resistant code-equivalence coset candidate",
-    "updated_at": "2026-07-18T23:12:43.712316+00:00"
+    "updated_at": "2026-07-19T01:00:31.197852+00:00"
   },
   {
     "classical_baseline": "Complete, regular, degree-separated irregular, and bipartition-based structural CFI parity decoding, gadget recognition, higher-k WL, spectra, walk counts, graphlet tensor contractions, individualized rooted tensor shadows, exact small-instance GI sanity checks, and low-rank relation-algebra baselines.",
     "complexity_accounting": "Reports CFI decoder status, WL dimension, tuple caps, tensor bond dimension, register count, sample complexity, and invariant overlap.",
     "cost_model": "Counts graph size, coset-state samples, register count, measurement description, tensor contraction cost, CFI decoder runtime, WL tuple budgets, and classical verification.",
-    "created_at": "2026-07-18T23:12:43.720032+00:00",
+    "created_at": "2026-07-19T01:00:31.205303+00:00",
     "dequantization_check": "Must pass cfi_parity_solver.py, cfi_structural_decoder.py, cfi_irregular_structural_decoder.py, cfi_bipartite_structural_decoder.py, cfi_scaling_probe.py, collective_observable_search.py, graphlet_tensor_observables.py, individualized_tensor_observables.py, and the dequantization ledger.",
     "experiment_ids": [
       "EXP-MUT-CODE-COSET-COLLECTIVE-CFI-PROMISE-COSET-WL",
@@ -324,13 +326,13 @@
     "status": "mutated-hypothesis",
     "success_statement": "A row remains viable only if the CFI parity decoder fails or is illegal, classical graph invariants fail at scaling budgets, and a polynomial-description collective measurement has stable distinguishing advantage.",
     "title": "CFI promise-escape collective coset candidate",
-    "updated_at": "2026-07-18T23:12:43.720032+00:00"
+    "updated_at": "2026-07-19T01:00:31.205303+00:00"
   },
   {
     "classical_baseline": "Higher-k WL scaling, CFI parity checks, graph spectra, support splitting, code canonicalization heuristics, low-rank tensor contractions, and exact small-instance GI sanity checks.",
     "complexity_accounting": "Reports WL dimension reached, tuple caps, tensor bond dimension, register count, sample complexity, and classical invariant overlap as size grows.",
     "cost_model": "Counts coset-state samples, register count, measurement description length, tensor bond dimension, state preparation, classical preprocessing, and verification.",
-    "created_at": "2026-07-18T23:12:43.703994+00:00",
+    "created_at": "2026-07-19T01:00:31.189474+00:00",
     "dequantization_check": "Must pass CFI/WL-hard baselines, code-equivalence canonicalization checks, and tensor-observable invariant overlap tests.",
     "experiment_ids": [
       "EXP-MUT-CODE-COSET-COLLECTIVE-COSET-WL",
@@ -363,13 +365,13 @@
     "status": "mutated-hypothesis",
     "success_statement": "A candidate survives only if a scalable family remains hard for classical invariants while a polynomial-register collective observable has inverse-polynomial distinguishing advantage.",
     "title": "CFI/WL-hard collective coset-state observable candidate",
-    "updated_at": "2026-07-18T23:12:43.703994+00:00"
+    "updated_at": "2026-07-19T01:00:31.189474+00:00"
   },
   {
     "classical_baseline": "Higher-k WL scaling, CFI parity checks, graph spectra, support splitting, code canonicalization heuristics, low-rank tensor contractions, and exact small-instance GI sanity checks.",
     "complexity_accounting": "Reports WL dimension reached, tuple caps, tensor bond dimension, register count, sample complexity, and classical invariant overlap as size grows.",
     "cost_model": "Counts coset-state samples, register count, measurement description length, tensor bond dimension, state preparation, classical preprocessing, and verification.",
-    "created_at": "2026-07-18T23:12:43.708218+00:00",
+    "created_at": "2026-07-19T01:00:31.193640+00:00",
     "dequantization_check": "Must pass CFI/WL-hard baselines, code-equivalence canonicalization checks, and tensor-observable invariant overlap tests.",
     "experiment_ids": [
       "EXP-MUT-HYP-LIT-COSET-OBSERVABLES-COSET-WL",
@@ -402,6 +404,6 @@
     "status": "mutated-hypothesis",
     "success_statement": "A candidate survives only if a scalable family remains hard for classical invariants while a polynomial-register collective observable has inverse-polynomial distinguishing advantage.",
     "title": "CFI/WL-hard collective coset-state observable candidate",
-    "updated_at": "2026-07-18T23:12:43.708218+00:00"
+    "updated_at": "2026-07-19T01:00:31.193640+00:00"
   }
 ]
