@@ -296,12 +296,14 @@ CAPABILITIES = (
             "project-coset-covariant-frame",
             "project-coset-stable-shape-family-certificate",
         ],
-        primitive="Direct LCU block encoding of the stable three-copy involution frame",
+        primitive="Direct LCU block encoding and conditioned inverse filter for the stable three-copy involution frame",
         proved_scope=(
             "Conditioned on W_n^tensor3 and final xi_n, the frame is identity plus three normalized overlapping pair "
-            "class sums, each implemented by reversible involution-class preparation and controlled representation actions."
+            "class sums, each implemented by reversible involution-class preparation and controlled representation actions. "
+            "Exact character-ratio coercivity gives an inverse-polynomial lower bound and QSVT inverse-square-root "
+            "filter for t=floor(n/4) and t=floor(n/2), every n>=8."
         ),
-        availability="proved-block-encoding-conditioning-open",
+        availability="proved-block-encoding-conditioning-and-inverse-filter",
         uniform_polynomial_gate_complexity_proved=True,
         resolves_internal_sn_kronecker_basis=False,
         handles_overlapping_k_copy_associators=False,
@@ -311,8 +313,10 @@ CAPABILITIES = (
             "inverse filtering and outcome decoding beyond classical contractions."
         ),
         scope_limit=(
-            "No all-n positive-spectrum lower bound, inverse-square-root filter, PGM outcome-information theorem, or "
-            "hidden-involution decoder has been proved."
+            "No PGM outcome-information theorem, conditioned-branch probability lower bound, hidden-involution "
+            "reconstruction rule, or classical separation has been proved. Moreover, the fixed W_n^tensor3/final-"
+            "xi_n branch has exact natural probability at most (25/3)n^9/(n!)^3, so this primitive is currently a "
+            "mechanism control rather than an end-to-end algorithmic route."
         ),
     ),
     RepresentationCapability(
@@ -461,7 +465,16 @@ def build_recoupling_capability_report(
         "stable_shape_encoded_coupling_tree_transition_isometry_count": 1,
         "stable_shape_compressed_racah_associator_count": 0,
         "stable_three_copy_frame_block_encoding_count": 1,
-        "stable_three_copy_frame_all_n_conditioning_theorem_count": 0,
+        "stable_three_copy_frame_all_n_conditioning_theorem_count": 2,
+        "stable_three_copy_frame_inverse_square_root_filter_count": 2,
+        "stable_branch_superpolynomial_rarity_theorem_count": 1,
+        "stable_branch_natural_input_accessible_count": 0,
+        "stable_branch_direct_conditioned_preparation_count": 0,
+        "stable_branch_typical_irrep_transfer_count": 0,
+        "bounded_tail_natural_access_no_go_theorem_count": 1,
+        "typical_irrep_uniform_commutant_gap_theorem_count": 0,
+        "typical_irrep_uniform_encoded_tree_transform_count": 0,
+        "typical_irrep_frame_conditioning_theorem_count": 0,
         "stable_shape_transition_filter_count": 0,
         "exact_stable_nine_shape_sector_classification_count": sum(
             capability.id == "CAP-STABLE-NINE-SHAPE-SECTOR-CLASSIFICATION"
@@ -545,11 +558,27 @@ def build_recoupling_capability_report(
                 ),
             },
             {
-                "from": "a direct polynomial stable three-copy frame block encoding and well-conditioned n=8 controls",
-                "invalid_to": "uniform inverse-frame filter or hidden-involution decoder",
+                "from": "a direct polynomial stable three-copy frame block encoding, all-n coercivity, and inverse filter",
+                "invalid_to": "hidden-involution decoder or quantum speedup",
                 "reason": (
-                    "QSVT inversion requires an all-n lower bound on the positive frame spectrum, and measurement "
-                    "outcomes still need an information and decoding theorem."
+                    "Measurement outcomes still need branch-probability, parameter-information, reconstruction, and "
+                    "classical-separation theorems."
+                ),
+            },
+            {
+                "from": "polynomial recoupling and inverse filtering inside the fixed W_n^tensor3/final-xi_n branch",
+                "invalid_to": "a polynomial algorithm from natural involution coset-state inputs",
+                "reason": (
+                    "The exact branch probability is at most (25/3)n^9/(n!)^3. Passive postselection and generic "
+                    "amplitude amplification are superpolynomial without a new direct preparation or typical-irrep transfer."
+                ),
+            },
+            {
+                "from": "a polynomial circuit theorem on any predetermined fixed bounded-tail partition family",
+                "invalid_to": "a natural-input symmetric-group Fourier algorithm",
+                "reason": (
+                    "For fixed tail budget K, the total weak-Fourier probability is at most "
+                    "2*P_K*n^(2K)/n!. The algorithm must instead adapt uniformly to sampled typical labels."
                 ),
             },
             {
@@ -598,7 +627,13 @@ def build_recoupling_capability_report(
             "stable_shape_encoded_coupling_tree_transition_polynomial_proved": True,
             "stable_shape_compressed_racah_associator_polynomial_proved": False,
             "stable_three_copy_frame_block_encoding_polynomial_proved": True,
-            "stable_three_copy_frame_all_n_conditioning_proved": False,
+            "stable_three_copy_frame_all_n_conditioning_proved": True,
+            "stable_three_copy_frame_inverse_square_root_filter_polynomial_proved": True,
+            "stable_branch_natural_input_access_polynomial_proved": False,
+            "stable_branch_superpolynomial_postselection_obstruction_proved": True,
+            "stable_branch_typical_irrep_transfer_proved": False,
+            "bounded_tail_natural_access_no_go_proved": True,
+            "typical_irrep_uniform_recoupling_transfer_proved": False,
             "stable_shape_transition_filter_polynomial_proved": False,
             "exact_bounded_stable_sector_family_proved": True,
             "gapped_kronecker_multiplicity_transform_polynomial_proved": False,
@@ -610,9 +645,10 @@ def build_recoupling_capability_report(
             "reason": (
                 "Coherent gapped eigenlabel transforms are proved for every nontrivial shape in one bounded stable "
                 "family. Complete encoded labels and left/right relabelling are proved on one stable final branch, "
-                "and its three-copy frame is directly block-encoded, but the carrier is not compressed. Known "
-                "primitives still stop before an all-n conditioning theorem, inverse frame filter, full-sector "
-                "coverage, hidden-involution decoding, and separation."
+                "and its three-copy frame is directly block-encoded, all-n conditioned, and inverse-filterable, but "
+                "the fixed branch is factorially rare under natural input. Known primitives still stop before transfer "
+                "to typical irreps, full-sector coverage, an outcome-information theorem, hidden-involution decoding, "
+                "and separation."
             ),
         },
         status="known-primitives-separated-from-open-recoupling-and-decoder",
@@ -628,7 +664,9 @@ def build_recoupling_capability_report(
             "Diagonal YJM tableau labels retain exact Kronecker multiplicity degeneracy.",
             "An encoded stable shape router does not construct a compressed Clebsch channel isometry.",
             "An encoded left/right relabelling isometry does not construct the state-dependent frame filter or decoder.",
-            "A finite well-conditioned stable frame does not prove all-n inverse filtering or outcome decoding.",
+            "An all-n conditioned and inverse-filterable stable frame still does not prove outcome decoding or separation.",
+            "The solved stable W_n^tensor3 branch is factorially rare under natural coset-state preparation.",
+            "Every predetermined fixed bounded-tail Fourier family has factorially small natural mass.",
             "Many restricted multiplicity speedup candidates have polynomial classical algorithms.",
             "Finite growth of dimensions or multiplicities is not a circuit lower bound.",
         ],

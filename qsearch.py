@@ -380,6 +380,15 @@ from coset_stable_encoded_tree_certificate import (
 from coset_stable_three_copy_frame import (
     write_stable_three_copy_frame_report,
 )
+from coset_stable_three_copy_frame_conditioning import (
+    write_stable_three_copy_frame_conditioning_report,
+)
+from coset_stable_branch_accessibility import (
+    write_stable_branch_accessibility_report,
+)
+from coset_typical_irrep_transfer_audit import (
+    write_typical_irrep_transfer_report,
+)
 from coset_recoupling_capability_ledger import write_recoupling_capability_report
 from coset_recoupling_mechanism_synthesis import write_recoupling_mechanism_synthesis_report
 from classical_baseline_suite import write_hidden_shift_baselines
@@ -4629,6 +4638,120 @@ def command_coset_racah_stable_three_copy_frame(
     return 0
 
 
+def command_coset_racah_stable_three_copy_frame_conditioning(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_stable_three_copy_frame_conditioning_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Stable Racah three-copy frame all-n conditioning certificate complete")
+    print(
+        "Artifact: research/representation/"
+        "coset_stable_three_copy_frame_conditioning.json"
+    )
+    print(
+        "Exact residue/shape coercivity certificates: "
+        f"{metrics['verified_coercivity_residue_certificate_count']}/"
+        f"{metrics['coercivity_residue_certificate_count']}"
+    )
+    print(
+        "Global eigenvalue lower bound: "
+        f"{metrics['global_minimum_eigenvalue_lower_bound_constant']}/"
+        f"n^{metrics['global_minimum_eigenvalue_lower_bound_exponent']}"
+    )
+    print(
+        "Polynomial inverse-square-root filters: "
+        f"{metrics['polynomial_inverse_square_root_filter_count']}"
+    )
+    print(f"Hidden-involution decoders: {metrics['hidden_involution_decoder_count']}")
+    print(f"Speedup claim allowed: {payload['claim_gate']['speedup_claim_allowed']}")
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_coset_racah_stable_branch_access(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    n_values = tuple(parse_int_csv(args.n_values))
+    payload = write_stable_branch_accessibility_report(
+        n_values=n_values,
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Stable Racah branch natural-input accessibility audit complete")
+    print(
+        "Artifact: research/representation/"
+        "coset_stable_branch_accessibility.json"
+    )
+    print(
+        "Exact branch probability identities: "
+        f"{metrics['exact_branch_probability_identity_count']}"
+    )
+    print(
+        "Asymptotic superpolynomial rarity theorems: "
+        f"{metrics['asymptotic_superpolynomial_rarity_theorem_count']}"
+    )
+    print(
+        "Natural-input polynomially accessible stable branches: "
+        f"{metrics['natural_input_polynomial_accessible_branch_count']}"
+    )
+    print(
+        "Largest audited log2 amplitude-amplification cost: "
+        f"{metrics['maximum_log2_generic_amplitude_amplification_iterations']:.3f}"
+    )
+    print(f"Speedup claim allowed: {payload['claim_gate']['speedup_claim_allowed']}")
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_coset_racah_typical_irrep_transfer(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    n_values = tuple(parse_int_csv(args.n_values))
+    payload = write_typical_irrep_transfer_report(
+        n_values=n_values,
+        bounded_tail_limit=args.tail_limit,
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Typical-irrep recoupling transfer audit complete")
+    print(
+        "Artifact: research/representation/"
+        "coset_typical_irrep_transfer_audit.json"
+    )
+    print(
+        "Fixed bounded-tail natural-access no-go theorems: "
+        f"{metrics['bounded_tail_natural_access_no_go_theorem_count']}"
+    )
+    print(
+        "Largest exact typical-sector multiplicity: "
+        f"{metrics['maximum_kronecker_multiplicity']}"
+    )
+    print(
+        "Minimum audited bounded-tail coupling mass: "
+        f"{metrics['minimum_bounded_tail_coupling_mass']:.3e}"
+    )
+    print(
+        "Uniform typical-label commutant-gap theorems: "
+        f"{metrics['uniform_typical_label_commutant_gap_theorem_count']}"
+    )
+    print(f"Speedup claim allowed: {payload['claim_gate']['speedup_claim_allowed']}")
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
 def command_coset_recoupling_synthesize(args: argparse.Namespace) -> int:
     initialize_seed_registry(overwrite=False)
     payload = write_recoupling_mechanism_synthesis_report(
@@ -8054,6 +8177,48 @@ def build_parser() -> argparse.ArgumentParser:
     )
     coset_racah_stable_three_copy_frame.set_defaults(
         func=command_coset_racah_stable_three_copy_frame
+    )
+
+    coset_racah_stable_three_copy_frame_conditioning = subparsers.add_parser(
+        "coset-racah-stable-three-copy-frame-conditioning",
+        help="Prove all-n stable-frame coercivity and the polynomial inverse-square-root filter contract.",
+    )
+    coset_racah_stable_three_copy_frame_conditioning.add_argument(
+        "--no-registry", action="store_true"
+    )
+    coset_racah_stable_three_copy_frame_conditioning.set_defaults(
+        func=command_coset_racah_stable_three_copy_frame_conditioning
+    )
+
+    coset_racah_stable_branch_access = subparsers.add_parser(
+        "coset-racah-stable-branch-access",
+        help="Prove or falsify natural-input access to the solved stable W-cubed branch.",
+    )
+    coset_racah_stable_branch_access.add_argument(
+        "--n-values", default="8,9,10,12,16,20,24,32"
+    )
+    coset_racah_stable_branch_access.add_argument(
+        "--no-registry", action="store_true"
+    )
+    coset_racah_stable_branch_access.set_defaults(
+        func=command_coset_racah_stable_branch_access
+    )
+
+    coset_racah_typical_irrep_transfer = subparsers.add_parser(
+        "coset-racah-typical-irrep-transfer",
+        help="Prove the fixed-tail access no-go and audit transfer to naturally sampled typical partitions.",
+    )
+    coset_racah_typical_irrep_transfer.add_argument(
+        "--n-values", default="8,10,12,14,16,18,20"
+    )
+    coset_racah_typical_irrep_transfer.add_argument(
+        "--tail-limit", type=int, default=4
+    )
+    coset_racah_typical_irrep_transfer.add_argument(
+        "--no-registry", action="store_true"
+    )
+    coset_racah_typical_irrep_transfer.set_defaults(
+        func=command_coset_racah_typical_irrep_transfer
     )
 
     coset_recoupling_synthesize = subparsers.add_parser(

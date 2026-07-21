@@ -186,6 +186,15 @@ COSET_STABLE_ENCODED_TREE_PATH = Path(
 COSET_STABLE_THREE_COPY_FRAME_PATH = Path(
     "research/representation/coset_stable_three_copy_frame.json"
 )
+COSET_STABLE_THREE_COPY_FRAME_CONDITIONING_PATH = Path(
+    "research/representation/coset_stable_three_copy_frame_conditioning.json"
+)
+COSET_STABLE_BRANCH_ACCESSIBILITY_PATH = Path(
+    "research/representation/coset_stable_branch_accessibility.json"
+)
+COSET_TYPICAL_IRREP_TRANSFER_PATH = Path(
+    "research/representation/coset_typical_irrep_transfer_audit.json"
+)
 COSET_RECOUPLING_CAPABILITY_PATH = Path(
     "research/representation/coset_recoupling_capability_ledger.json"
 )
@@ -877,6 +886,39 @@ def lemma_templates(candidate: dict[str, Any]) -> list[LemmaRecord]:
         except (json.JSONDecodeError, OSError):
             stable_three_copy_frame = {}
         stable_three_copy_frame_metrics = stable_three_copy_frame.get(
+            "headline_metrics", {}
+        )
+        try:
+            stable_three_copy_frame_conditioning = (
+                json.loads(COSET_STABLE_THREE_COPY_FRAME_CONDITIONING_PATH.read_text())
+                if COSET_STABLE_THREE_COPY_FRAME_CONDITIONING_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            stable_three_copy_frame_conditioning = {}
+        stable_three_copy_frame_conditioning_metrics = (
+            stable_three_copy_frame_conditioning.get("headline_metrics", {})
+        )
+        try:
+            stable_branch_accessibility = (
+                json.loads(COSET_STABLE_BRANCH_ACCESSIBILITY_PATH.read_text())
+                if COSET_STABLE_BRANCH_ACCESSIBILITY_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            stable_branch_accessibility = {}
+        stable_branch_accessibility_metrics = stable_branch_accessibility.get(
+            "headline_metrics", {}
+        )
+        try:
+            typical_irrep_transfer = (
+                json.loads(COSET_TYPICAL_IRREP_TRANSFER_PATH.read_text())
+                if COSET_TYPICAL_IRREP_TRANSFER_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            typical_irrep_transfer = {}
+        typical_irrep_transfer_metrics = typical_irrep_transfer.get(
             "headline_metrics", {}
         )
         try:
@@ -1715,19 +1757,119 @@ def lemma_templates(candidate: dict[str, Any]) -> list[LemmaRecord]:
                     ),
                     depends_on=["PO-MEASUREMENT", "PO-COMPLEXITY", "PO-NO-GO"],
                     status=(
-                        "blocked-n8-full-rank-well-conditioned-all-n-coercivity-open"
+                        "proved-all-n-stable-frame-coercivity-and-polynomial-inverse-filter-decoder-open"
                         if int(
-                            stable_three_copy_frame_metrics.get(
-                                "finite_full_support_frame_count", 0
+                            stable_three_copy_frame_conditioning_metrics.get(
+                                "all_n_inverse_polynomial_minimum_eigenvalue_theorem_count",
+                                0,
                             )
                             or 0
                         )
-                        == 3
-                        else "blocked-stable-three-copy-frame-finite-controls-missing"
+                        == 2
+                        and int(
+                            stable_three_copy_frame_conditioning_metrics.get(
+                                "polynomial_inverse_square_root_filter_count", 0
+                            )
+                            or 0
+                        )
+                        == 2
+                        else (
+                            "blocked-n8-full-rank-well-conditioned-all-n-coercivity-open"
+                            if int(
+                                stable_three_copy_frame_metrics.get(
+                                    "finite_full_support_frame_count", 0
+                                )
+                                or 0
+                            )
+                            == 3
+                            else "blocked-stable-three-copy-frame-finite-controls-missing"
+                        )
                     ),
                     falsification_test=(
-                        "Derive exact characteristic data or a coercive sum-of-projectors bound and search scaling "
-                        "families for a vanishing eigenvalue faster than every inverse polynomial."
+                        "Verify all 54 residue/shape character-ratio inequalities, their stable thresholds, the Weyl "
+                        "step, and the explicit global inverse-polynomial lower bound."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-COSET-STABLE-BRANCH-NATURAL-INPUT-ACCESS",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "The solved W_n^tensor3/final-xi_n stable branch is reachable with polynomial overhead from "
+                        "natural involution coset-state preparation."
+                    ),
+                    depends_on=["PO-INPUT-MODEL", "PO-MEASUREMENT", "PO-COMPLEXITY", "PO-NO-GO"],
+                    status=(
+                        "falsified-factorial-postselection-probability-pivot-to-typical-irreps"
+                        if int(
+                            stable_branch_accessibility_metrics.get(
+                                "asymptotic_superpolynomial_rarity_theorem_count", 0
+                            )
+                            or 0
+                        )
+                        == 1
+                        and int(
+                            stable_branch_accessibility_metrics.get(
+                                "natural_input_polynomial_accessible_branch_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        == 0
+                        else "blocked-stable-branch-accessibility-audit-missing"
+                    ),
+                    falsification_test=(
+                        "Verify the exact Fourier-block probability identity, the weak-label factorization, the "
+                        "stable trace bound, and p<=(25/3)n^9/(n!)^3; accept revival only with a direct preparation "
+                        "or typical-irrep transfer theorem."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-COSET-TYPICAL-IRREP-UNIFORM-TRANSFER",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "The stable commutant, recoupling, and frame mechanisms extend uniformly to naturally sampled "
+                        "high-dimensional partition labels with polynomial normalized gaps and decoding cost."
+                    ),
+                    depends_on=["PO-INPUT-MODEL", "PO-MEASUREMENT", "PO-COMPLEXITY", "PO-NO-GO"],
+                    status=(
+                        "proved-uniform-typical-irrep-transfer"
+                        if int(
+                            typical_irrep_transfer_metrics.get(
+                                "uniform_typical_label_commutant_gap_theorem_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        and int(
+                            typical_irrep_transfer_metrics.get(
+                                "uniform_typical_label_encoded_tree_transform_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        and int(
+                            typical_irrep_transfer_metrics.get(
+                                "typical_label_frame_conditioning_theorem_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        else (
+                            "blocked-bounded-tail-route-falsified-typical-irrep-uniformity-open"
+                            if int(
+                                typical_irrep_transfer_metrics.get(
+                                    "bounded_tail_natural_access_no_go_theorem_count",
+                                    0,
+                                )
+                                or 0
+                            )
+                            == 1
+                            else "blocked-typical-irrep-transfer-audit-missing"
+                        )
+                    ),
+                    falsification_test=(
+                        "Sample natural labels, require partition-description-uniform circuits, certify normalized "
+                        "gaps across broad Kronecker support, price branch mass, and reject any proof using fixed tails."
                     ),
                 ),
                 LemmaRecord(

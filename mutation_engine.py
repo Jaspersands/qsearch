@@ -1223,6 +1223,11 @@ def candidate_from_mutation_proposal(proposal: dict[str, Any]) -> CandidateRecor
                 "Counts coherent queries, reversible evaluation, phase precision, phase-state samples, merge depth, memory "
                 "exponent, decoding, and classical postprocessing against every legal classical baseline."
             ),
+            natural_access_analysis=(
+                "Every phase state must be prepared from the declared coherent oracle or random-sample interface. Chosen "
+                "labels and favorable merge branches are unavailable unless their preparation and postselection probabilities "
+                "are explicitly charged."
+            ),
             measurement_and_decoding=(
                 "Use audited low-bit collimation or family-specific merge rules on phase-state labels, then decode the shift "
                 "from high-valuation survivor states with explicit success and failure accounting."
@@ -1295,6 +1300,10 @@ def candidate_from_mutation_proposal(proposal: dict[str, Any]) -> CandidateRecor
                 "Counts coherent queries, reversible evaluator size, phase precision, phase-state samples, sieve memory/depth, classical learner "
                 "query budgets, and interpolation/search costs as functions of n."
             ),
+            natural_access_analysis=(
+                "The public reversible evaluator supplies phase states directly, but every Fourier-label restriction, sieve "
+                "branch, and postselection event must retain inverse-polynomial probability after all preparation costs."
+            ),
             measurement_and_decoding=(
                 "Prepare phase states, run generic and family-specific merge schedules, decode candidate shifts from high-valuation labels, "
                 "and verify against the public structured evaluator."
@@ -1362,6 +1371,11 @@ def candidate_from_mutation_proposal(proposal: dict[str, Any]) -> CandidateRecor
                 "Counts coset-state samples, register count, measurement description length, tensor bond dimension, state "
                 "preparation, classical preprocessing, and verification."
             ),
+            natural_access_analysis=(
+                "Measurements must accept naturally sampled symmetric-group labels and sectors. Predetermined bounded-tail "
+                "postselection is forbidden; every conditioned branch needs inverse-polynomial probability or a direct "
+                "preparation theorem."
+            ),
             measurement_and_decoding=(
                 "Apply candidate collective observables to k-register coset ensembles, decode a hidden permutation or separator, "
                 "and verify the proposed equivalence/non-equivalence classically."
@@ -1428,6 +1442,11 @@ def candidate_from_mutation_proposal(proposal: dict[str, Any]) -> CandidateRecor
             cost_model=(
                 "Counts code length/dimension, coset-state samples, register count, measurement description length, tensor bond dimension, "
                 "canonicalization assignment budgets, automorphism search, and classical verification cost."
+            ),
+            natural_access_analysis=(
+                "The public code instance supplies coset states, but representation labels must be consumed at their natural "
+                "distribution. Any sector conditioning must include exact branch probability or direct preparation cost; fixed "
+                "stable-tail labels are not a valid input shortcut."
             ),
             measurement_and_decoding=(
                 "Apply candidate collective observables to hidden-permutation coset states, decode a permutation or invariant separator, "
@@ -1497,6 +1516,10 @@ def candidate_from_mutation_proposal(proposal: dict[str, Any]) -> CandidateRecor
             cost_model=(
                 "Counts graph size, coset-state samples, register count, measurement description, tensor contraction cost, CFI decoder "
                 "runtime, WL tuple budgets, and classical verification."
+            ),
+            natural_access_analysis=(
+                "The public graph instance supplies coset states. All collective measurements must operate on naturally sampled "
+                "labels, and any promised or conditioned sector must prove inverse-polynomial occurrence or direct preparation."
             ),
             measurement_and_decoding=(
                 "Apply a multi-register observable, decode a hidden permutation or graph separator, and compare against CFI parity and WL baselines."

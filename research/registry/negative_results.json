@@ -36743,6 +36743,31 @@
   {
     "applies_to": [
       "CODE-COSET-COLLECTIVE",
+      "EXP-COSET-TYPICAL-IRREP-TRANSFER-AUDIT"
+    ],
+    "claim": "A polynomial recoupling algorithm restricted to a predetermined bounded-tail partition family can process natural coset states efficiently.",
+    "evidence": {
+      "bounded_tail_natural_access_no_go_theorem_count": 1,
+      "exact_kronecker_weighted_dimension_identity_count": 7,
+      "maximum_kronecker_multiplicity": 6408361,
+      "maximum_kronecker_target_support_fraction": 1.0,
+      "maximum_partition_count": 627,
+      "maximum_targets_for_ninety_percent_coupling_mass": 148,
+      "minimum_bounded_tail_coupling_mass": 2.6036736028506456e-10,
+      "typical_label_frame_conditioning_theorem_count": 0,
+      "typical_label_hidden_involution_decoder_count": 0,
+      "typical_transfer_record_count": 7,
+      "uniform_typical_label_commutant_gap_theorem_count": 0,
+      "uniform_typical_label_encoded_tree_transform_count": 0
+    },
+    "id": "NEG-COSET-FIXED-BOUNDED-TAIL-FOURIER-ROUTE",
+    "lesson": "Require uniform label-adaptive primitives on sampled typical partitions. Stable families may be used only to discover algebraic mechanisms that are subsequently transferred and reproved.",
+    "reason_invalid": "For every fixed tail budget K, the entire family's weak-Fourier probability is at most 2*P_K*n^(2K)/n!, smaller than every inverse polynomial.",
+    "source": "research/representation/coset_typical_irrep_transfer_audit.json"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
       "EXP-COSET-JUCYS-MURPHY-LABEL-TRANSFORM"
     ],
     "claim": "Simultaneous diagonal Young--Jucys--Murphy labels implement the full internal S_n Kronecker transform and its hidden-involution decoder.",
@@ -36796,6 +36821,7 @@
     "claim": "A #BQP characterization of Kronecker coefficients supplies a coherent Kronecker transform.",
     "evidence": {
       "bounded_support_commutant_block_encoding_poly_proof_count": 1,
+      "bounded_tail_natural_access_no_go_theorem_count": 1,
       "capability_count": 16,
       "diagonal_jm_label_transform_poly_proof_count": 1,
       "exact_holevo_copy_budget_theorem_count": 1,
@@ -36811,6 +36837,10 @@
       "maximum_partition_count": 42,
       "proved_polynomial_primitive_count": 10,
       "restricted_multiplicity_classical_match_count": 1,
+      "stable_branch_direct_conditioned_preparation_count": 0,
+      "stable_branch_natural_input_accessible_count": 0,
+      "stable_branch_superpolynomial_rarity_theorem_count": 1,
+      "stable_branch_typical_irrep_transfer_count": 0,
       "stable_channel_gapped_label_transform_poly_proof_count": 1,
       "stable_shape_compressed_channel_routing_isometry_count": 0,
       "stable_shape_compressed_racah_associator_count": 0,
@@ -36818,8 +36848,12 @@
       "stable_shape_encoded_coupling_tree_transition_isometry_count": 1,
       "stable_shape_local_gapped_label_transform_count": 7,
       "stable_shape_transition_filter_count": 0,
-      "stable_three_copy_frame_all_n_conditioning_theorem_count": 0,
+      "stable_three_copy_frame_all_n_conditioning_theorem_count": 2,
       "stable_three_copy_frame_block_encoding_count": 1,
+      "stable_three_copy_frame_inverse_square_root_filter_count": 2,
+      "typical_irrep_frame_conditioning_theorem_count": 0,
+      "typical_irrep_uniform_commutant_gap_theorem_count": 0,
+      "typical_irrep_uniform_encoded_tree_transform_count": 0,
       "unresolved_required_capability_count": 3
     },
     "id": "NEG-COSET-KRONECKER-COUNT-AS-TRANSFORM",
@@ -36960,6 +36994,7 @@
     "claim": "Restricted multiplicity estimation currently supports a superpolynomial representation-theoretic speedup.",
     "evidence": {
       "bounded_support_commutant_block_encoding_poly_proof_count": 1,
+      "bounded_tail_natural_access_no_go_theorem_count": 1,
       "capability_count": 16,
       "diagonal_jm_label_transform_poly_proof_count": 1,
       "exact_holevo_copy_budget_theorem_count": 1,
@@ -36975,6 +37010,10 @@
       "maximum_partition_count": 42,
       "proved_polynomial_primitive_count": 10,
       "restricted_multiplicity_classical_match_count": 1,
+      "stable_branch_direct_conditioned_preparation_count": 0,
+      "stable_branch_natural_input_accessible_count": 0,
+      "stable_branch_superpolynomial_rarity_theorem_count": 1,
+      "stable_branch_typical_irrep_transfer_count": 0,
       "stable_channel_gapped_label_transform_poly_proof_count": 1,
       "stable_shape_compressed_channel_routing_isometry_count": 0,
       "stable_shape_compressed_racah_associator_count": 0,
@@ -36982,8 +37021,12 @@
       "stable_shape_encoded_coupling_tree_transition_isometry_count": 1,
       "stable_shape_local_gapped_label_transform_count": 7,
       "stable_shape_transition_filter_count": 0,
-      "stable_three_copy_frame_all_n_conditioning_theorem_count": 0,
+      "stable_three_copy_frame_all_n_conditioning_theorem_count": 2,
       "stable_three_copy_frame_block_encoding_count": 1,
+      "stable_three_copy_frame_inverse_square_root_filter_count": 2,
+      "typical_irrep_frame_conditioning_theorem_count": 0,
+      "typical_irrep_uniform_commutant_gap_theorem_count": 0,
+      "typical_irrep_uniform_encoded_tree_transform_count": 0,
       "unresolved_required_capability_count": 3
     },
     "id": "NEG-COSET-RESTRICTED-MULTIPLICITY-AS-BREAKTHROUGH",
@@ -37049,6 +37092,7 @@
     "claim": "An efficient S_n QFT supplies the missing multi-copy hidden-involution decoder.",
     "evidence": {
       "bounded_support_commutant_block_encoding_poly_proof_count": 1,
+      "bounded_tail_natural_access_no_go_theorem_count": 1,
       "capability_count": 16,
       "diagonal_jm_label_transform_poly_proof_count": 1,
       "exact_holevo_copy_budget_theorem_count": 1,
@@ -37064,6 +37108,10 @@
       "maximum_partition_count": 42,
       "proved_polynomial_primitive_count": 10,
       "restricted_multiplicity_classical_match_count": 1,
+      "stable_branch_direct_conditioned_preparation_count": 0,
+      "stable_branch_natural_input_accessible_count": 0,
+      "stable_branch_superpolynomial_rarity_theorem_count": 1,
+      "stable_branch_typical_irrep_transfer_count": 0,
       "stable_channel_gapped_label_transform_poly_proof_count": 1,
       "stable_shape_compressed_channel_routing_isometry_count": 0,
       "stable_shape_compressed_racah_associator_count": 0,
@@ -37071,8 +37119,12 @@
       "stable_shape_encoded_coupling_tree_transition_isometry_count": 1,
       "stable_shape_local_gapped_label_transform_count": 7,
       "stable_shape_transition_filter_count": 0,
-      "stable_three_copy_frame_all_n_conditioning_theorem_count": 0,
+      "stable_three_copy_frame_all_n_conditioning_theorem_count": 2,
       "stable_three_copy_frame_block_encoding_count": 1,
+      "stable_three_copy_frame_inverse_square_root_filter_count": 2,
+      "typical_irrep_frame_conditioning_theorem_count": 0,
+      "typical_irrep_uniform_commutant_gap_theorem_count": 0,
+      "typical_irrep_uniform_encoded_tree_transform_count": 0,
       "unresolved_required_capability_count": 3
     },
     "id": "NEG-COSET-SN-QFT-AS-MULTICOPY-DECODER",
@@ -37218,6 +37270,30 @@
   {
     "applies_to": [
       "CODE-COSET-COLLECTIVE",
+      "EXP-COSET-STABLE-THREE-COPY-FRAME-CONDITIONING"
+    ],
+    "claim": "An all-n conditioned stable frame and polynomial inverse-square-root filter constitute a hidden-involution decoder.",
+    "evidence": {
+      "all_n_inverse_polynomial_minimum_eigenvalue_theorem_count": 2,
+      "coercivity_residue_certificate_count": 54,
+      "exact_character_ratio_count": 9,
+      "global_minimum_eigenvalue_lower_bound_constant": "71/825",
+      "global_minimum_eigenvalue_lower_bound_exponent": 5,
+      "hidden_involution_decoder_count": 0,
+      "involution_family_count": 2,
+      "polynomial_inverse_square_root_filter_count": 2,
+      "residue_class_count": 6,
+      "stable_intermediate_shape_count": 9,
+      "verified_coercivity_residue_certificate_count": 54
+    },
+    "id": "NEG-COSET-STABLE-THREE-COPY-CONDITIONING-AS-HIDDEN-INVOLUTION-DECODER",
+    "lesson": "Compute the parameter-dependent PGM outcome law, prove mutual-information or reconstruction guarantees, and attack it with classical character and bounded-treewidth tensor contractions.",
+    "reason_invalid": "The filter is only an implementable measurement primitive on one conditioned branch; no outcome-information, reconstruction, branch-probability, or classical-separation theorem follows.",
+    "source": "research/representation/coset_stable_three_copy_frame_conditioning.json"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
       "EXP-COSET-STABLE-THREE-COPY-FRAME"
     ],
     "claim": "Full-rank well-conditioned n=8 stable frame spectra prove a polynomial inverse-frame filter and decoder.",
@@ -37237,9 +37313,33 @@
       "stable_multiplicity_dimension": 25
     },
     "id": "NEG-COSET-STABLE-THREE-COPY-FINITE-CONDITIONING-AS-INVERSE-FRAME-THEOREM",
-    "lesson": "Derive exact stable frame characteristic data or a representation-theoretic coercivity bound, then separately analyze PGM outcome information and classical simulation.",
-    "reason_invalid": "The exact block encoding is uniform, but no all-n lower bound on the positive spectrum or hidden-involution outcome theorem has been proved.",
+    "lesson": "Use the proved coercivity bound and inverse filter, then separately analyze PGM outcome information, reconstruction, branch probability, and classical simulation.",
+    "reason_invalid": "Finite spectra do not supply an all-n lower bound. The separate exact character-ratio coercivity certificate now supplies that bound, but no hidden-involution outcome theorem follows.",
     "source": "research/representation/coset_stable_three_copy_frame.json"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "EXP-COSET-STABLE-BRANCH-ACCESSIBILITY"
+    ],
+    "claim": "The polynomial stable W_n^tensor3 frame filter is directly usable on natural symmetric-group involution coset states.",
+    "evidence": {
+      "accessibility_record_count": 16,
+      "asymptotic_superpolynomial_rarity_theorem_count": 1,
+      "direct_conditioned_state_preparation_count": 0,
+      "exact_branch_probability_identity_count": 16,
+      "hidden_involution_decoder_count": 0,
+      "maximum_log2_generic_amplitude_amplification_iterations": 154.24656076769259,
+      "maximum_n": 32,
+      "minimum_log2_branch_probability": -308.49312153538517,
+      "natural_input_polynomial_accessible_branch_count": 0,
+      "typical_irrep_transfer_theorem_count": 0,
+      "universal_probability_upper_bound_verified_count": 16
+    },
+    "id": "NEG-COSET-STABLE-W3-BRANCH-NATURAL-INPUT-POSTSELECTION",
+    "lesson": "Keep the stable branch only as a proof/mechanism control. Transfer the construction to typical high-dimensional Plancherel labels or prove a new direct conditioned-state preparation route.",
+    "reason_invalid": "The exact source/final branch probability is d_W^3*d_xi*Tr(F)/(n!)^3 and is bounded by (25/3)n^9/(n!)^3, so postselection and generic amplitude amplification are superpolynomial.",
+    "source": "research/representation/coset_stable_branch_accessibility.json"
   },
   {
     "applies_to": [

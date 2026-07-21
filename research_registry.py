@@ -59,6 +59,7 @@ class CandidateRecord:
     falsifiers: list[str]
     experiment_ids: list[str] = field(default_factory=list)
     notes: str = ""
+    natural_access_analysis: str = ""
 
 
 @dataclass(frozen=True)
@@ -338,6 +339,11 @@ def seed_candidate_records() -> tuple[list[CandidateRecord], list[ExperimentReco
                 "Count every input coset state, zero-information label, 1/2 measurement branch, discarded state, live qubit, "
                 "classical label operation, precision bit, merge depth, decoder stage, and lattice-reduction overhead."
             ),
+            natural_access_analysis=(
+                "Independent DCP coset states are supplied directly by the reduction. Every zero label, merge branch, "
+                "postselection probability, discarded register, and bad-state contamination event is charged; no "
+                "conditioned label or phase evaluator may be prepared for free."
+            ),
             measurement_and_decoding=(
                 "Measure known Fourier labels, perform auditable two-state or implicit multi-state collimation, recover each "
                 "hidden-reflection congruence bit through a uniform recursive modulus reduction, and verify the full reflection "
@@ -438,6 +444,11 @@ def seed_candidate_records() -> tuple[list[CandidateRecord], list[ExperimentReco
             cost_model=(
                 "Count coset-state preparation, number of registers, tensor bond dimension, measurement synthesis, "
                 "classical preprocessing, and decoding cost."
+            ),
+            natural_access_analysis=(
+                "All representation labels and sectors must arise from naturally sampled coset-state registers. Any "
+                "conditioned branch must have inverse-polynomial total probability or a proved direct preparation; "
+                "predetermined bounded-tail Fourier postselection is explicitly disallowed."
             ),
             measurement_and_decoding=(
                 "Use collective measurement candidates over several coset-state registers; decode candidate permutations "
@@ -7364,6 +7375,150 @@ def seed_candidate_records() -> tuple[list[CandidateRecord], list[ExperimentReco
                 "Prove or falsify an inverse-polynomial lower bound on its positive spectrum.",
                 "Compile an inverse-square-root polynomial only after conditioning is proved.",
                 "Quantify hidden-involution information in the resulting PGM outcomes and run classical baselines.",
+            ],
+        ),
+        ExperimentRecord(
+            id="EXP-COSET-STABLE-THREE-COPY-FRAME-CONDITIONING",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="All-n stable three-copy frame coercivity",
+            status="planned",
+            hypothesis=(
+                "Exact stable character ratios and Weyl's inequality give a uniform inverse-polynomial lower bound "
+                "on the three-copy frame for partial and dense involution matchings."
+            ),
+            protocol=(
+                "Substitute X1=n-2t and X2=t into all nine exact stable character polynomials, form "
+                "1+3*r_W+r_xi+3*r_eta, split t=floor(n/4) and t=floor(n/2) into residue classes, and certify "
+                "positive shifted numerator and denominator coefficients for every n>=8."
+            ),
+            positive_signal=(
+                "Every residue/shape bound is positive with an explicit inverse-polynomial lower bound, closing "
+                "all-n conditioning and enabling a polynomial inverse-square-root filter."
+            ),
+            falsifiers=[
+                "A stable character polynomial is used below its exact threshold.",
+                "A shifted numerator or denominator has a negative coefficient or nonpositive constant.",
+                "The pair-operator spectrum contains a shape outside the exact nine-shape family.",
+                "The Weyl lower bound is nonpositive on a reduction-relevant residue class.",
+                "Conditioning or QSVT implementability is promoted as a hidden-involution decoder.",
+            ],
+            metrics=[
+                "coercivity_residue_certificate_count",
+                "verified_coercivity_residue_certificate_count",
+                "all_n_inverse_polynomial_minimum_eigenvalue_theorem_count",
+                "global_minimum_eigenvalue_lower_bound_constant",
+                "global_minimum_eigenvalue_lower_bound_exponent",
+                "polynomial_inverse_square_root_filter_count",
+                "hidden_involution_decoder_count",
+            ],
+            dependencies=[
+                "coset_stable_three_copy_frame_conditioning.py",
+                "exact stable nine-shape character polynomials",
+                "exact stable three-copy frame formula",
+                "Weyl eigenvalue inequality",
+                "polynomial frame block encoding",
+            ],
+            next_actions=[
+                "Derive the hidden-involution-dependent PGM outcome law on the conditioned stable branch.",
+                "Measure branch probability and mutual information across scalable involution families.",
+                "Search for a polynomial reconstruction rule from filtered outcomes.",
+                "Attack the outcome statistics with classical character and tensor-network contractions.",
+            ],
+        ),
+        ExperimentRecord(
+            id="EXP-COSET-STABLE-BRANCH-ACCESSIBILITY",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Natural-input accessibility of the stable W-cubed branch",
+            status="planned",
+            hypothesis=(
+                "The low-dimensional W_n^tensor3/final-xi_n branch may be too rare under natural coset-state Fourier "
+                "sampling for its polynomial internal frame filter to contribute to an end-to-end algorithm."
+            ),
+            protocol=(
+                "Derive the exact joint source/final projection probability from Fourier block traces, factor it into "
+                "weak-label and conditional-final probabilities, verify exact character-ratio scaling rows, and prove "
+                "a universal asymptotic upper bound using irrep dimensions and |r_eta|<=1."
+            ),
+            positive_signal=(
+                "A polynomial or inverse-polynomial branch probability, or a direct conditioned-state preparation "
+                "theorem that avoids postselection, would preserve the stable branch as an algorithmic route."
+            ),
+            falsifiers=[
+                "The direct Fourier-block trace and weak-label factorization disagree.",
+                "The stable multiplicity weights do not sum to 25.",
+                "The exact probability is bounded by exp(-Theta(n log n)).",
+                "Generic amplitude amplification remains superpolynomial.",
+                "A rare conditioned branch is promoted as natural-input algorithmic evidence.",
+            ],
+            metrics=[
+                "exact_branch_probability_identity_count",
+                "universal_probability_upper_bound_verified_count",
+                "asymptotic_superpolynomial_rarity_theorem_count",
+                "natural_input_polynomial_accessible_branch_count",
+                "maximum_log2_generic_amplitude_amplification_iterations",
+                "direct_conditioned_state_preparation_count",
+                "typical_irrep_transfer_theorem_count",
+            ],
+            dependencies=[
+                "coset_stable_branch_accessibility.py",
+                "exact stable frame trace",
+                "weak Fourier block probability",
+                "stable nine-shape multiplicity theorem",
+            ],
+            next_actions=[
+                "Quarantine the fixed low-dimensional stable branch as a mechanism control.",
+                "Search for analogous bounded-observable algebras on typical Plancherel labels.",
+                "Audit whether any direct conditioned-state preparation avoids the factorial postselection cost.",
+                "Require branch-probability accounting for every future conditioned recoupling proposal.",
+            ],
+        ),
+        ExperimentRecord(
+            id="EXP-COSET-TYPICAL-IRREP-TRANSFER-AUDIT",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Typical-irrep transfer frontier",
+            status="planned",
+            hypothesis=(
+                "Any natural-input continuation of the stable recoupling mechanism must operate uniformly on sampled "
+                "high-dimensional partitions rather than postselecting a fixed bounded-tail family."
+            ),
+            protocol=(
+                "Prove a union weak-Fourier probability bound for every fixed tail budget, then compute exact "
+                "self-Kronecker profiles of maximum-Plancherel source partitions to measure target support, "
+                "multiplicity growth, coupling entropy, and bounded-tail coupling mass."
+            ),
+            positive_signal=(
+                "A uniform partition-description circuit with inverse-polynomial gaps resolves broad typical-sector "
+                "multiplicities, frame filters, and coupling-tree transitions without conditioning on rare labels."
+            ),
+            falsifiers=[
+                "A proposed source family has total weak-Fourier probability smaller than every inverse polynomial.",
+                "The construction assumes fixed character-polynomial tails.",
+                "Typical target support or multiplicity exceeds the declared circuit interface.",
+                "Finite multiplicity data is promoted as a complexity separation.",
+                "No branch-weighted frame or hidden-involution decoder is supplied.",
+            ],
+            metrics=[
+                "bounded_tail_natural_access_no_go_theorem_count",
+                "typical_transfer_record_count",
+                "maximum_kronecker_target_support_fraction",
+                "maximum_kronecker_multiplicity",
+                "minimum_bounded_tail_coupling_mass",
+                "uniform_typical_label_commutant_gap_theorem_count",
+                "uniform_typical_label_encoded_tree_transform_count",
+                "typical_label_frame_conditioning_theorem_count",
+                "typical_label_hidden_involution_decoder_count",
+            ],
+            dependencies=[
+                "coset_typical_irrep_transfer_audit.py",
+                "hook-length dimension formula",
+                "exact symmetric-group characters",
+                "Kronecker weighted-dimension identity",
+            ],
+            next_actions=[
+                "Design partition-description-uniform orbit-sum commutant observables.",
+                "Search typical-sector normalized gaps without constructing full representation matrices.",
+                "Identify aggregate coupling observables whose output alphabet stays polynomial.",
+                "Price natural branch mass and classical character contractions at every stage.",
             ],
         ),
         ExperimentRecord(

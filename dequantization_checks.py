@@ -258,6 +258,15 @@ COSET_STABLE_ENCODED_TREE_PATH = Path(
 COSET_STABLE_THREE_COPY_FRAME_PATH = Path(
     "research/representation/coset_stable_three_copy_frame.json"
 )
+COSET_STABLE_THREE_COPY_FRAME_CONDITIONING_PATH = Path(
+    "research/representation/coset_stable_three_copy_frame_conditioning.json"
+)
+COSET_STABLE_BRANCH_ACCESSIBILITY_PATH = Path(
+    "research/representation/coset_stable_branch_accessibility.json"
+)
+COSET_TYPICAL_IRREP_TRANSFER_PATH = Path(
+    "research/representation/coset_typical_irrep_transfer_audit.json"
+)
 COSET_RECOUPLING_CAPABILITY_PATH = Path(
     "research/representation/coset_recoupling_capability_ledger.json"
 )
@@ -4521,32 +4530,127 @@ def findings_from_coset_stable_encoded_tree_certificate(
 
 def findings_from_coset_stable_three_copy_frame(
     path: Path = COSET_STABLE_THREE_COPY_FRAME_PATH,
+    conditioning_path: Path = COSET_STABLE_THREE_COPY_FRAME_CONDITIONING_PATH,
 ) -> list[DequantizationFinding]:
     payload = _read_json(path, {})
-    if not payload:
+    conditioning = _read_json(conditioning_path, {})
+    if not payload and not conditioning:
         return []
     metrics = payload.get("headline_metrics", {})
+    conditioning_metrics = conditioning.get("headline_metrics", {})
+    conditioning_theorems = int(
+        conditioning_metrics.get(
+            "all_n_inverse_polynomial_minimum_eigenvalue_theorem_count", 0
+        )
+        or 0
+    )
+    inverse_filters = int(
+        conditioning_metrics.get("polynomial_inverse_square_root_filter_count", 0)
+        or 0
+    )
     return [
         DequantizationFinding(
-            id="DEQ-COSET-STABLE-FRAME-BLOCK-ENCODING-STILL-LACKS-ALL-N-CONDITIONING-AND-DECODER",
+            id="DEQ-COSET-STABLE-CONDITIONED-FRAME-STILL-LACKS-OUTCOME-DECODER-AND-SEPARATION",
             created_at=utc_now(),
-            target_type="coset_stable_three_copy_frame",
-            target_id=str(path),
+            target_type="coset_stable_three_copy_frame_conditioning",
+            target_id=str(conditioning_path if conditioning else path),
             severity="high",
             claim_under_test=(
-                "A polynomial stable three-copy frame block encoding and well-conditioned n=8 spectra imply an efficient PGM decoder."
+                "A polynomial stable three-copy frame block encoding, all-n conditioning, and inverse filter imply an efficient hidden-involution decoder."
             ),
             evidence=(
                 f"Frame block encodings/full-support finite controls/all-n conditioning theorems/inverse filters/decoders="
                 f"{metrics.get('polynomial_three_copy_frame_block_encoding_count', 0)}/"
                 f"{metrics.get('finite_full_support_frame_count', 0)}/"
-                f"{metrics.get('all_n_inverse_polynomial_minimum_eigenvalue_theorem_count', 0)}/"
-                f"{metrics.get('polynomial_inverse_square_root_filter_count', 0)}/"
-                f"{metrics.get('hidden_involution_decoder_count', 0)}."
+                f"{conditioning_theorems}/"
+                f"{inverse_filters}/"
+                f"{conditioning_metrics.get('hidden_involution_decoder_count', metrics.get('hidden_involution_decoder_count', 0))}."
             ),
             required_action=(
-                "Prove stable all-n positive-spectrum conditioning, compile the inverse-square-root filter, quantify "
-                "outcome information about h, and compare the resulting statistics with classical character and tensor contractions."
+                "Derive the parameter-dependent filtered outcome law, prove branch probability and mutual-information "
+                "or reconstruction guarantees, and compare the statistics with classical character and tensor contractions."
+            ),
+            blocks_speedup_claim=True,
+        )
+    ]
+
+
+def findings_from_coset_stable_branch_accessibility(
+    path: Path = COSET_STABLE_BRANCH_ACCESSIBILITY_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    rarity_theorems = int(
+        metrics.get("asymptotic_superpolynomial_rarity_theorem_count", 0) or 0
+    )
+    accessible = int(
+        metrics.get("natural_input_polynomial_accessible_branch_count", 0) or 0
+    )
+    if not rarity_theorems:
+        return []
+    return [
+        DequantizationFinding(
+            id="DEQ-COSET-STABLE-W3-BRANCH-FACTORIAL-POSTSELECTION-NOGO",
+            created_at=utc_now(),
+            target_type="coset_stable_branch_accessibility",
+            target_id=str(path),
+            severity="critical",
+            claim_under_test=(
+                "Polynomial stable-branch recoupling and inverse filtering yield a polynomial natural-input coset-state algorithm."
+            ),
+            evidence=(
+                f"Superpolynomial rarity theorems/naturally accessible branches/direct preparations/typical-irrep transfers="
+                f"{rarity_theorems}/{accessible}/"
+                f"{metrics.get('direct_conditioned_state_preparation_count', 0)}/"
+                f"{metrics.get('typical_irrep_transfer_theorem_count', 0)}; exact bound "
+                "p_branch<=(25/3)n^9/(n!)^3."
+            ),
+            required_action=(
+                "Quarantine the fixed W_n^tensor3 branch as a mechanism control. Resume algorithmic promotion only "
+                "after proving a polynomial direct conditioned-state preparation or transferring the observable/frame "
+                "construction to typical high-dimensional Fourier labels with nonnegligible natural mass."
+            ),
+            blocks_speedup_claim=True,
+        )
+    ]
+
+
+def findings_from_coset_typical_irrep_transfer(
+    path: Path = COSET_TYPICAL_IRREP_TRANSFER_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    bounded_no_go = int(
+        metrics.get("bounded_tail_natural_access_no_go_theorem_count", 0) or 0
+    )
+    if not bounded_no_go:
+        return []
+    return [
+        DequantizationFinding(
+            id="DEQ-COSET-FIXED-BOUNDED-TAIL-ROUTE-NATURAL-MASS-NOGO",
+            created_at=utc_now(),
+            target_type="coset_typical_irrep_transfer",
+            target_id=str(path),
+            severity="critical",
+            claim_under_test=(
+                "A recoupling algorithm restricted to any predetermined fixed bounded-tail irrep family is a natural-input quantum algorithm."
+            ),
+            evidence=(
+                "For fixed K, total weak-Fourier mass is at most 2*P_K*n^(2K)/n!. "
+                f"Typical commutant-gap/encoded-tree/frame/decoder theorem counts="
+                f"{metrics.get('uniform_typical_label_commutant_gap_theorem_count', 0)}/"
+                f"{metrics.get('uniform_typical_label_encoded_tree_transform_count', 0)}/"
+                f"{metrics.get('typical_label_frame_conditioning_theorem_count', 0)}/"
+                f"{metrics.get('typical_label_hidden_involution_decoder_count', 0)}."
+            ),
+            required_action=(
+                "Require algorithms to accept naturally sampled partition labels and implement every commutant, "
+                "recoupling, frame, and decoder step uniformly from their bit descriptions. Treat fixed-tail results "
+                "only as mechanism controls until such a transfer theorem is proved."
             ),
             blocks_speedup_claim=True,
         )
@@ -7522,6 +7626,8 @@ def build_dequantization_report() -> dict[str, Any]:
         *findings_from_coset_stable_shape_router_certificate(),
         *findings_from_coset_stable_encoded_tree_certificate(),
         *findings_from_coset_stable_three_copy_frame(),
+        *findings_from_coset_stable_branch_accessibility(),
+        *findings_from_coset_typical_irrep_transfer(),
         *findings_from_coset_jucys_murphy_label_transform(),
         *findings_from_coset_multiplicity_commutant_search(),
         *findings_from_coset_recoupling_capability_ledger(),

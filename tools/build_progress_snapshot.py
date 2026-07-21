@@ -149,6 +149,18 @@ def build_snapshot() -> dict[str, Any]:
         RESEARCH / "representation/coset_stable_three_copy_frame.json",
         {},
     )
+    stable_frame_conditioning = read_json(
+        RESEARCH / "representation/coset_stable_three_copy_frame_conditioning.json",
+        {},
+    )
+    stable_branch_access = read_json(
+        RESEARCH / "representation/coset_stable_branch_accessibility.json",
+        {},
+    )
+    typical_irrep_transfer = read_json(
+        RESEARCH / "representation/coset_typical_irrep_transfer_audit.json",
+        {},
+    )
 
     blocking = sum(bool(item.get("blocks_speedup_claim", False)) for item in findings)
     updated = latest_artifact_date(
@@ -189,6 +201,9 @@ def build_snapshot() -> dict[str, Any]:
         stable_shape_router,
         stable_encoded_tree,
         stable_three_copy_frame,
+        stable_frame_conditioning,
+        stable_branch_access,
+        typical_irrep_transfer,
     )
     gap_rows = metric(gap, "critical_gap_formula_finite_verified_count", 0)
     gap_total = metric(gap, "record_count", 0)
@@ -201,17 +216,16 @@ def build_snapshot() -> dict[str, Any]:
         "verdict": {
             "title": "No breakthrough yet",
             "detail": (
-                "Every speedup claim remains blocked. One restricted representation-theoretic gap theorem is now proved, "
-                "a bounded-support hierarchy resolves the complete finite S_6 Racah table, and one stable "
-                "multiplicity-four channel now has a complete exact quartic, normalized polynomial gap, and a scoped "
-                "coherent eigenlabel primitive. Overlapping recoupling, all-sector coverage, and decoding remain open."
+                "Every speedup claim remains blocked. A complete 25-label stable coupling-tree interface, direct frame "
+                "block encoding, all-n conditioning bound, and polynomial inverse filter are proved. The same audit "
+                "then cuts this branch as an algorithmic route: its natural-input probability is factorially small."
             ),
         },
         "overview": (
-            "The project is now useful primarily as a research filter. It has replaced tiny-circuit search with "
-            "proof obligations, access-model accounting, classical attacks, exact finite representation theory, "
-            "and a permanent negative-result memory. The strongest surviving lead is not an algorithm: it is a "
-            "specific bounded-support operator hierarchy with exact and falsifiable spectral theorem targets in a nonabelian HSP route."
+            "The project is a proof and falsification engine, not an algorithm demo. Its strongest constructive result "
+            "is a polynomially filterable three-copy stable frame. Its strongest negative result is more important: "
+            "every predetermined bounded-tail Fourier family has factorially small natural mass. The nonabelian route "
+            "must now work uniformly on naturally sampled high-dimensional partitions."
         ),
         "metrics": {
             "experiments": len(experiments),
@@ -256,104 +270,76 @@ def build_snapshot() -> dict[str, Any]:
             {
                 "title": "Nonabelian coset states",
                 "short_title": "Cosets",
-                "status": "Active structural lead",
+                "status": "Stable route cut; typical-label frontier active",
                 "tone": "active",
                 "stage": 3,
                 "summary": (
-                    "The project separated efficient Fourier/tableau labels from the genuinely open multiplicity-space, "
-                    "Racah, transition-filter, and hidden-involution decoder operations."
+                    "One fixed stable family now has complete encoded coupling-tree labels, a direct three-copy frame "
+                    "block encoding, an all-n eigenvalue lower bound, and polynomial inverse filters. Exact access "
+                    "accounting proves that branch, and every fixed bounded-tail extension, is naturally inaccessible."
                 ),
                 "evidence": (
-                    f"YJM spectra were verified on {metric(jm, 'record_count', 3)} sectors, and bounded-support "
-                    f"commutants split {metric(commutant, 'finite_all_block_split_count', 2)} finite multiplicity sectors up to multiplicity "
-                    f"{metric(commutant, 'maximum_kronecker_multiplicity', 5)}. The stable multiplicity-two family now has "
-                    f"{metric(gap_certificate, 'all_n_critical_gap_theorem_count', 0)} exact all-n gap theorem; "
-                    f"the hierarchy resolves {metric(hierarchical_racah, 'complete_hierarchical_finite_racah_matrix_count', 0)}/"
-                    f"{metric(hierarchical_racah, 'final_target_count', 0)} finite S_6 sectors. Sparse stable probes reconstruct "
-                    f"{metric(sparse_gap, 'integer_characteristic_polynomial_candidate_count', 0)} integer quartics through "
-                    f"n={metric(sparse_gap, 'maximum_n', 0)}."
+                    f"Encoded labels: {metric(stable_encoded_tree, 'joint_multiplicity_label_count', 0)}/25. "
+                    f"All-n conditioning families: {metric(stable_frame_conditioning, 'all_n_inverse_polynomial_minimum_eigenvalue_theorem_count', 0)}. "
+                    f"Naturally accessible fixed branches: {metric(stable_branch_access, 'natural_input_polynomial_accessible_branch_count', 0)}. "
+                    f"At n=20 the typical-source audit reaches multiplicity "
+                    f"{metric(typical_irrep_transfer, 'maximum_kronecker_multiplicity', 0):,}."
                 ),
-                "next": "Prove exact transition formulas and gapped coherent labels for the nine stable sector shapes.",
+                "next": "Transfer bounded-support observables to naturally sampled typical partitions with uniform gaps and no postselection.",
             },
         ],
         "milestones": [
             {
-                "title": "Toy circuit search was removed",
-                "detail": "Candidates now require reductions, complexity accounting, falsifiers, classical baselines, and proof obligations before acceptance.",
+                "title": "Candidate admission now prices natural access",
+                "detail": "The proof gate requires reductions, classical baselines, falsifiers, and an explicit path from the input model to every conditioned state or sector.",
             },
             {
-                "title": "A nonabelian transform was split into precise subproblems",
-                "detail": "Diagonal Jucys-Murphy labels are accessible, but exact multiplicity degeneracy proves that labels alone are not the internal Kronecker transform.",
+                "title": "The stable coupling-tree interface is complete",
+                "detail": "Shape, first-stage, and second-stage observables give all 25 encoded labels on both trees and a polynomial left/right relabelling isometry.",
             },
             {
-                "title": "A restricted all-n commutant gap was proved",
-                "detail": "Exact Specht polytabloids give raw gap 2(n-2) and LCU-normalized gap 2/[n(n-1)] for one stable multiplicity-two family.",
+                "title": "The stable three-copy frame is filterable",
+                "detail": "Fifty-four exact character-ratio inequalities prove lambda_min(F)>=(71/825)n^-5 and polynomial inverse-square-root filters for two involution families.",
             },
             {
-                "title": "The complete finite S_6 Racah table was resolved",
-                "detail": "A second bounded-support Hamiltonian splits residual multiplicities up to four and produces unitary left/right matrices in all ten final sectors.",
+                "title": "Natural access kills the fixed stable branch",
+                "detail": "Its exact probability is d_W^3 d_xi Tr(F)/(n!)^3, at most (25/3)n^9/(n!)^3; postselection and generic amplification are superpolynomial.",
             },
             {
-                "title": "One stable coherent multiplicity label was proved",
-                "detail": "Exact falling-cycle sums, a normalized n^-53 gap, ordered-triple LCU, and phase estimation give a polynomial four-valued label in one channel; this is not an associator or decoder.",
+                "title": "Every fixed bounded-tail route is cut",
+                "detail": "For fixed K, total weak-Fourier mass is at most 2 P_K n^(2K)/n!. Uniform adaptation to typical high-dimensional partitions is now mandatory.",
             },
         ],
         "active_conjecture": {
             "summary": (
-                "For W_n=(n-2,2) and alpha_n=xi_n=(n-3,2,1), sparse multiplicity-four spectra through n=11 "
-                "reconstruct monic integer quartics. Exact marked-cycle equality patterns now prove their trace is "
-                "4n^3-46n^2+149n-118 for every n>=7. Seventeen, 129, and 1,628 relative classes prove the next "
-                "three moments, completing the quartic. Its discriminant proves a normalized n^-53 gap, and an "
-                "ordered-triple block encoding plus phase estimation implements that one-channel label. The left/right "
-                "stable subspaces retain only about one third of their mass through n=10, so the single-channel "
-                "associator route is cut. Complete finite projector resolution shows nonzero support on every "
-                "complementary sector. Character-polynomial moments prove that exactly nine stable shapes exhaust "
-                "the final sector for all n>=9. One common bounded-support Hamiltonian splits all six remaining "
-                "nontrivial shape families at n=8..10. Exact marked-cycle sums now prove the first characteristic "
-                "coefficient for all nine shapes, and exact second moments complete five quadratic shape spectra. "
-                "A 129-class third-moment proof completes the final cubic determinant, so all nine stable-shape "
-                "spectra are exact. Five complementary quadratic normalized gaps are also proved; one cubic gap "
-                "and a cubic discriminant/Cauchy argument closes the seventh. Spectral control is complete on the "
-                "nine-shape family. A common ordered-triple block encoding now supplies all seven shape-local "
-                "coherent labels, but channel routing, coupling-tree transitions, and decoding remain open."
+                "The active conjecture is no longer about the fixed stable family. It asks whether bounded-support "
+                "commutant observables can be synthesized uniformly from arbitrary sampled partition labels, retain "
+                "inverse-polynomial normalized gaps across broad Kronecker support, and feed a branch-weighted frame "
+                "whose outcomes decode the hidden involution. Finite typical profiles are only stress tests."
             ),
             "facts": [
-                {"label": "Pair gap", "value": "Exact inverse-quadratic theorem"},
-                {"label": "Finite Racah table", "value": f"{metric(hierarchical_racah, 'complete_hierarchical_finite_racah_matrix_count', 0)}/10 S_6 sectors"},
-                {"label": "Stable quartics", "value": f"n=7-{metric(sparse_gap, 'maximum_n', 0)}, integer reconstructed"},
-                {"label": "Stable trace", "value": f"{metric(stable_trace_certificate, 'exact_marked_cycle_trace_theorem_count', 0)} exact theorem"},
-                {"label": "Quartic coefficients", "value": f"{metric(stable_fourth_moment, 'proved_quartic_coefficient_count', metric(stable_third_moment, 'proved_quartic_coefficient_count', 0))}/4 proved"},
-                {"label": "Normalized root gap", "value": f"{metric(stable_root_separation, 'stable_channel_root_separation_theorem_count', 0)} exact theorem"},
-                {"label": "Scoped coherent label", "value": f"{metric(stable_coherent_label, 'uniform_polynomial_stable_multiplicity_label_transform_count', 0)} proved channel"},
-                {"label": "Stable branch leakage", "value": f"{100 * metric(stable_transition, 'minimum_maximally_mixed_leakage', 0.0):.1f}% minimum"},
-                {"label": "Complement support", "value": f"{metric(stable_complements, 'minimum_nonzero_complementary_sector_count', 0)}-{metric(stable_complements, 'maximum_nonzero_complementary_sector_count', 0)} sectors observed"},
-                {"label": "Exact stable shapes", "value": f"{metric(stable_shapes, 'stable_intermediate_shape_count', 0)}; {metric(stable_shapes, 'unresolved_coherent_second_stage_shape_count', 0)} gapped labels open"},
-                {"label": "Finite shape targets", "value": f"{metric(stable_shape_labels, 'unproved_shape_finite_target_count', 0)}/6 found; exact proofs open"},
-                {"label": "Exact shape traces", "value": f"{metric(stable_shape_traces, 'exact_all_n_shape_trace_theorem_count', 0)}/9; {metric(stable_shape_traces, 'remaining_open_shape_characteristic_coefficient_family_count', 0)} coefficients open"},
-                {"label": "Exact shape quadratics", "value": f"{metric(stable_shape_second_moments, 'new_exact_complete_quadratic_shape_polynomial_count', 0)}/5; {metric(stable_shape_second_moments, 'remaining_open_shape_characteristic_coefficient_family_count', 0)} cubic coefficient open"},
-                {"label": "Exact shape spectra", "value": f"{metric(stable_shape_cubic, 'exact_complete_stable_shape_polynomial_count', 0)}/9; gaps and circuits open"},
-                {"label": "Complementary gaps", "value": f"{metric(stable_shape_quadratic_gaps, 'new_normalized_gap_theorem_count', 0)}/6; cubic gap open"},
-                {"label": "Stable spectral gaps", "value": f"{metric(stable_shape_cubic_gap, 'all_nontrivial_stable_shape_normalized_gap_theorem_count', 0)}/7; circuits open"},
-                {"label": "Coherent shape labels", "value": f"{metric(stable_shape_coherent_labels, 'all_nontrivial_stable_shape_coherent_label_count', 0)}/7; routing and transition open"},
-                {"label": "First-stage labels", "value": f"{metric(stable_first_stage_labels, 'all_stable_first_stage_multiplicity_resolved_shape_count', 0)}/9 stable shapes; shape routing open"},
-                {"label": "Shape router", "value": f"{metric(stable_shape_router, 'coherent_intermediate_shape_router_count', 0)} encoded router; compressed Clebsch and transition open"},
-                {"label": "Encoded tree basis", "value": f"{metric(stable_encoded_tree, 'joint_multiplicity_label_count', 0)}/25 labels; {metric(stable_encoded_tree, 'encoded_coupling_tree_transition_isometry_count', 0)} left/right isometry; filter open"},
-                {"label": "Three-copy frame", "value": f"{metric(stable_three_copy_frame, 'polynomial_three_copy_frame_block_encoding_count', 0)} block encoding; n=8 frontier condition <= {metric(stable_three_copy_frame, 'maximum_frontier_finite_condition_number', 0.0):.3f}; all-n bound open"},
+                {"label": "Stable encoded basis", "value": f"{metric(stable_encoded_tree, 'joint_multiplicity_label_count', 0)}/25 labels"},
+                {"label": "Inverse filters", "value": f"{metric(stable_frame_conditioning, 'polynomial_inverse_square_root_filter_count', 0)} proved families"},
+                {"label": "Stable natural access", "value": f"{metric(stable_branch_access, 'natural_input_polynomial_accessible_branch_count', 0)} viable branches"},
+                {"label": "Bounded-tail route", "value": "Factorial weak-Fourier mass"},
+                {"label": "Typical support", "value": f"{100 * metric(typical_irrep_transfer, 'maximum_kronecker_target_support_fraction', 0.0):.1f}% audited targets"},
+                {"label": "Typical max multiplicity", "value": f"{metric(typical_irrep_transfer, 'maximum_kronecker_multiplicity', 0):,}"},
+                {"label": "Typical uniform transforms", "value": f"{metric(typical_irrep_transfer, 'uniform_typical_label_encoded_tree_transform_count', 0)} proved"},
                 {"label": "Hidden decoder", "value": "Open"},
             ],
         },
         "next_actions": [
             {
-                "title": "Prove the nine-shape transition family",
-                "detail": "Construct coherent routing into the nine stable channels and synthesize the complete left/right coupling-tree transition.",
+                "title": "Build typical-label commutant observables",
+                "detail": "Define orbit-sum block encodings uniformly from arbitrary partition descriptions and seek character-only normalized-gap certificates.",
             },
             {
-                "title": "Cover every required sector",
-                "detail": "Extend bounded-support spectral control beyond the single stable multiplicity-four channel without dense tableau enumeration.",
+                "title": "Keep natural branch mass in every theorem",
+                "detail": "Aggregate over naturally sampled labels instead of postselecting sectors, and prove the retained mass remains inverse polynomial.",
             },
             {
-                "title": "Compile and test the actual decoder",
-                "detail": "Turn nested labels into a uniform coherent circuit and show that its outcomes recover a hidden involution beyond legal graph/code baselines.",
+                "title": "Derive and attack an outcome law",
+                "detail": "Specify the hidden-involution-dependent measurement distribution, construct a decoder, and try to reproduce it with classical character and tensor methods.",
             },
         ],
         "execution_model": (

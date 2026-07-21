@@ -66,8 +66,8 @@
       "target_claim": "The coset observable is not a disguised classical invariant."
     }
   ],
-  "created_at": "2026-07-19T03:52:59.865076+00:00",
-  "lemma_count": 430,
+  "created_at": "2026-07-19T04:34:45.761527+00:00",
+  "lemma_count": 442,
   "lemmas": [
     {
       "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -425,10 +425,36 @@
         "PO-COMPLEXITY",
         "PO-NO-GO"
       ],
-      "falsification_test": "Derive exact characteristic data or a coercive sum-of-projectors bound and search scaling families for a vanishing eigenvalue faster than every inverse polynomial.",
+      "falsification_test": "Verify all 54 residue/shape character-ratio inequalities, their stable thresholds, the Weyl step, and the explicit global inverse-polynomial lower bound.",
       "id": "LEMMA-CODE-COSET-COLLECTIVE-COSET-STABLE-THREE-COPY-FRAME-CONDITIONING",
       "statement": "The positive stable three-copy frame spectrum has an inverse-polynomial all-n lower bound on reduction-relevant involution families.",
-      "status": "blocked-n8-full-rank-well-conditioned-all-n-coercivity-open"
+      "status": "proved-all-n-stable-frame-coercivity-and-polynomial-inverse-filter-decoder-open"
+    },
+    {
+      "candidate_id": "CODE-COSET-COLLECTIVE",
+      "depends_on": [
+        "PO-INPUT-MODEL",
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Verify the exact Fourier-block probability identity, the weak-label factorization, the stable trace bound, and p<=(25/3)n^9/(n!)^3; accept revival only with a direct preparation or typical-irrep transfer theorem.",
+      "id": "LEMMA-CODE-COSET-COLLECTIVE-COSET-STABLE-BRANCH-NATURAL-INPUT-ACCESS",
+      "statement": "The solved W_n^tensor3/final-xi_n stable branch is reachable with polynomial overhead from natural involution coset-state preparation.",
+      "status": "falsified-factorial-postselection-probability-pivot-to-typical-irreps"
+    },
+    {
+      "candidate_id": "CODE-COSET-COLLECTIVE",
+      "depends_on": [
+        "PO-INPUT-MODEL",
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Sample natural labels, require partition-description-uniform circuits, certify normalized gaps across broad Kronecker support, price branch mass, and reject any proof using fixed tails.",
+      "id": "LEMMA-CODE-COSET-COLLECTIVE-COSET-TYPICAL-IRREP-UNIFORM-TRANSFER",
+      "statement": "The stable commutant, recoupling, and frame mechanisms extend uniformly to naturally sampled high-dimensional partition labels with polynomial normalized gaps and decoding cost.",
+      "status": "blocked-bounded-tail-route-falsified-typical-irrep-uniformity-open"
     },
     {
       "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -1931,10 +1957,36 @@
         "PO-COMPLEXITY",
         "PO-NO-GO"
       ],
-      "falsification_test": "Derive exact characteristic data or a coercive sum-of-projectors bound and search scaling families for a vanishing eigenvalue faster than every inverse polynomial.",
+      "falsification_test": "Verify all 54 residue/shape character-ratio inequalities, their stable thresholds, the Weyl step, and the explicit global inverse-polynomial lower bound.",
       "id": "LEMMA-HYP-LIT-COSET-OBSERVABLES-COSET-STABLE-THREE-COPY-FRAME-CONDITIONING",
       "statement": "The positive stable three-copy frame spectrum has an inverse-polynomial all-n lower bound on reduction-relevant involution families.",
-      "status": "blocked-n8-full-rank-well-conditioned-all-n-coercivity-open"
+      "status": "proved-all-n-stable-frame-coercivity-and-polynomial-inverse-filter-decoder-open"
+    },
+    {
+      "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
+      "depends_on": [
+        "PO-INPUT-MODEL",
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Verify the exact Fourier-block probability identity, the weak-label factorization, the stable trace bound, and p<=(25/3)n^9/(n!)^3; accept revival only with a direct preparation or typical-irrep transfer theorem.",
+      "id": "LEMMA-HYP-LIT-COSET-OBSERVABLES-COSET-STABLE-BRANCH-NATURAL-INPUT-ACCESS",
+      "statement": "The solved W_n^tensor3/final-xi_n stable branch is reachable with polynomial overhead from natural involution coset-state preparation.",
+      "status": "falsified-factorial-postselection-probability-pivot-to-typical-irreps"
+    },
+    {
+      "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
+      "depends_on": [
+        "PO-INPUT-MODEL",
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Sample natural labels, require partition-description-uniform circuits, certify normalized gaps across broad Kronecker support, price branch mass, and reject any proof using fixed tails.",
+      "id": "LEMMA-HYP-LIT-COSET-OBSERVABLES-COSET-TYPICAL-IRREP-UNIFORM-TRANSFER",
+      "statement": "The stable commutant, recoupling, and frame mechanisms extend uniformly to naturally sampled high-dimensional partition labels with polynomial normalized gaps and decoding cost.",
+      "status": "blocked-bounded-tail-route-falsified-typical-irrep-uniformity-open"
     },
     {
       "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
@@ -3437,10 +3489,36 @@
         "PO-COMPLEXITY",
         "PO-NO-GO"
       ],
-      "falsification_test": "Derive exact characteristic data or a coercive sum-of-projectors bound and search scaling families for a vanishing eigenvalue faster than every inverse polynomial.",
+      "falsification_test": "Verify all 54 residue/shape character-ratio inequalities, their stable thresholds, the Weyl step, and the explicit global inverse-polynomial lower bound.",
       "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-COSET-STABLE-THREE-COPY-FRAME-CONDITIONING",
       "statement": "The positive stable three-copy frame spectrum has an inverse-polynomial all-n lower bound on reduction-relevant involution families.",
-      "status": "blocked-n8-full-rank-well-conditioned-all-n-coercivity-open"
+      "status": "proved-all-n-stable-frame-coercivity-and-polynomial-inverse-filter-decoder-open"
+    },
+    {
+      "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
+      "depends_on": [
+        "PO-INPUT-MODEL",
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Verify the exact Fourier-block probability identity, the weak-label factorization, the stable trace bound, and p<=(25/3)n^9/(n!)^3; accept revival only with a direct preparation or typical-irrep transfer theorem.",
+      "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-COSET-STABLE-BRANCH-NATURAL-INPUT-ACCESS",
+      "statement": "The solved W_n^tensor3/final-xi_n stable branch is reachable with polynomial overhead from natural involution coset-state preparation.",
+      "status": "falsified-factorial-postselection-probability-pivot-to-typical-irreps"
+    },
+    {
+      "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
+      "depends_on": [
+        "PO-INPUT-MODEL",
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Sample natural labels, require partition-description-uniform circuits, certify normalized gaps across broad Kronecker support, price branch mass, and reject any proof using fixed tails.",
+      "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-COSET-TYPICAL-IRREP-UNIFORM-TRANSFER",
+      "statement": "The stable commutant, recoupling, and frame mechanisms extend uniformly to naturally sampled high-dimensional partition labels with polynomial normalized gaps and decoding cost.",
+      "status": "blocked-bounded-tail-route-falsified-typical-irrep-uniformity-open"
     },
     {
       "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
@@ -3982,10 +4060,36 @@
         "PO-COMPLEXITY",
         "PO-NO-GO"
       ],
-      "falsification_test": "Derive exact characteristic data or a coercive sum-of-projectors bound and search scaling families for a vanishing eigenvalue faster than every inverse polynomial.",
+      "falsification_test": "Verify all 54 residue/shape character-ratio inequalities, their stable thresholds, the Weyl step, and the explicit global inverse-polynomial lower bound.",
       "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-COSET-STABLE-THREE-COPY-FRAME-CONDITIONING",
       "statement": "The positive stable three-copy frame spectrum has an inverse-polynomial all-n lower bound on reduction-relevant involution families.",
-      "status": "blocked-n8-full-rank-well-conditioned-all-n-coercivity-open"
+      "status": "proved-all-n-stable-frame-coercivity-and-polynomial-inverse-filter-decoder-open"
+    },
+    {
+      "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
+      "depends_on": [
+        "PO-INPUT-MODEL",
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Verify the exact Fourier-block probability identity, the weak-label factorization, the stable trace bound, and p<=(25/3)n^9/(n!)^3; accept revival only with a direct preparation or typical-irrep transfer theorem.",
+      "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-COSET-STABLE-BRANCH-NATURAL-INPUT-ACCESS",
+      "statement": "The solved W_n^tensor3/final-xi_n stable branch is reachable with polynomial overhead from natural involution coset-state preparation.",
+      "status": "falsified-factorial-postselection-probability-pivot-to-typical-irreps"
+    },
+    {
+      "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
+      "depends_on": [
+        "PO-INPUT-MODEL",
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Sample natural labels, require partition-description-uniform circuits, certify normalized gaps across broad Kronecker support, price branch mass, and reject any proof using fixed tails.",
+      "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-COSET-TYPICAL-IRREP-UNIFORM-TRANSFER",
+      "statement": "The stable commutant, recoupling, and frame mechanisms extend uniformly to naturally sampled high-dimensional partition labels with polynomial normalized gaps and decoding cost.",
+      "status": "blocked-bounded-tail-route-falsified-typical-irrep-uniformity-open"
     },
     {
       "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
@@ -4527,10 +4631,36 @@
         "PO-COMPLEXITY",
         "PO-NO-GO"
       ],
-      "falsification_test": "Derive exact characteristic data or a coercive sum-of-projectors bound and search scaling families for a vanishing eigenvalue faster than every inverse polynomial.",
+      "falsification_test": "Verify all 54 residue/shape character-ratio inequalities, their stable thresholds, the Weyl step, and the explicit global inverse-polynomial lower bound.",
       "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-COSET-STABLE-THREE-COPY-FRAME-CONDITIONING",
       "statement": "The positive stable three-copy frame spectrum has an inverse-polynomial all-n lower bound on reduction-relevant involution families.",
-      "status": "blocked-n8-full-rank-well-conditioned-all-n-coercivity-open"
+      "status": "proved-all-n-stable-frame-coercivity-and-polynomial-inverse-filter-decoder-open"
+    },
+    {
+      "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
+      "depends_on": [
+        "PO-INPUT-MODEL",
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Verify the exact Fourier-block probability identity, the weak-label factorization, the stable trace bound, and p<=(25/3)n^9/(n!)^3; accept revival only with a direct preparation or typical-irrep transfer theorem.",
+      "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-COSET-STABLE-BRANCH-NATURAL-INPUT-ACCESS",
+      "statement": "The solved W_n^tensor3/final-xi_n stable branch is reachable with polynomial overhead from natural involution coset-state preparation.",
+      "status": "falsified-factorial-postselection-probability-pivot-to-typical-irreps"
+    },
+    {
+      "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
+      "depends_on": [
+        "PO-INPUT-MODEL",
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Sample natural labels, require partition-description-uniform circuits, certify normalized gaps across broad Kronecker support, price branch mass, and reject any proof using fixed tails.",
+      "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-COSET-TYPICAL-IRREP-UNIFORM-TRANSFER",
+      "statement": "The stable commutant, recoupling, and frame mechanisms extend uniformly to naturally sampled high-dimensional partition labels with polynomial normalized gaps and decoding cost.",
+      "status": "blocked-bounded-tail-route-falsified-typical-irrep-uniformity-open"
     },
     {
       "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
@@ -5072,10 +5202,36 @@
         "PO-COMPLEXITY",
         "PO-NO-GO"
       ],
-      "falsification_test": "Derive exact characteristic data or a coercive sum-of-projectors bound and search scaling families for a vanishing eigenvalue faster than every inverse polynomial.",
+      "falsification_test": "Verify all 54 residue/shape character-ratio inequalities, their stable thresholds, the Weyl step, and the explicit global inverse-polynomial lower bound.",
       "id": "LEMMA-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-COSET-STABLE-THREE-COPY-FRAME-CONDITIONING",
       "statement": "The positive stable three-copy frame spectrum has an inverse-polynomial all-n lower bound on reduction-relevant involution families.",
-      "status": "blocked-n8-full-rank-well-conditioned-all-n-coercivity-open"
+      "status": "proved-all-n-stable-frame-coercivity-and-polynomial-inverse-filter-decoder-open"
+    },
+    {
+      "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
+      "depends_on": [
+        "PO-INPUT-MODEL",
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Verify the exact Fourier-block probability identity, the weak-label factorization, the stable trace bound, and p<=(25/3)n^9/(n!)^3; accept revival only with a direct preparation or typical-irrep transfer theorem.",
+      "id": "LEMMA-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-COSET-STABLE-BRANCH-NATURAL-INPUT-ACCESS",
+      "statement": "The solved W_n^tensor3/final-xi_n stable branch is reachable with polynomial overhead from natural involution coset-state preparation.",
+      "status": "falsified-factorial-postselection-probability-pivot-to-typical-irreps"
+    },
+    {
+      "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
+      "depends_on": [
+        "PO-INPUT-MODEL",
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Sample natural labels, require partition-description-uniform circuits, certify normalized gaps across broad Kronecker support, price branch mass, and reject any proof using fixed tails.",
+      "id": "LEMMA-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-COSET-TYPICAL-IRREP-UNIFORM-TRANSFER",
+      "statement": "The stable commutant, recoupling, and frame mechanisms extend uniformly to naturally sampled high-dimensional partition labels with polynomial normalized gaps and decoding cost.",
+      "status": "blocked-bounded-tail-route-falsified-typical-irrep-uniformity-open"
     },
     {
       "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",

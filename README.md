@@ -787,10 +787,11 @@ exactly 25, the known final multiplicity, so the left and mirrored right trees
 both have complete coherent encoded labels. The circuit
 `T_encoded = U_R U_L^dagger` coherently changes those label interfaces with
 maximum inverse-gap exponent 53. It leaves the physical state encoded in
-`W_n^tensor3`: no compressed 25-by-25 Racah table is materialized. The active
-bottleneck is now a polynomial state-dependent transition/frame filter and a
-demonstration that its outcomes reveal the hidden involution beyond classical
-character or tensor contractions.
+`W_n^tensor3`: no compressed 25-by-25 Racah table is materialized. The direct
+frame block encoding and the all-`n` conditioning certificate now supply the
+needed inverse filter on this branch; the active bottleneck is demonstrating
+that its outcomes reveal the hidden involution beyond classical character or
+tensor contractions.
 
 The stable three-copy average frame no longer requires an explicit Racah
 matrix. After conditioning on three `W_n` labels and final `xi_n`, it is
@@ -801,8 +802,41 @@ transpositions have a polynomial reversible rank/unrank construction, so all
 three terms admit direct LCU block encodings on the physical registers. At
 `n=8`, all three audited classes have full rank on the 25-dimensional stable
 multiplicity block; the two frontier condition numbers are at most `1.599`.
-This is finite evidence only. An all-`n` lower bound on the positive spectrum,
-the inverse-square-root filter, outcome information, and decoding remain open.
+The finite pattern now has an exact all-`n` proof. Each pair operator has the
+nine stable character ratios `r_eta` as its spectrum, so Weyl's inequality
+gives `lambda_min(F)>=min_eta(1+3r_W+r_xi+3r_eta)`. Substituting the exact
+character polynomials and splitting `t=floor(n/4)` and `t=floor(n/2)` by
+residue class produces 54 shifted rational functions with nonnegative
+numerator and denominator coefficients and positive constants. This proves
+`lambda_min(F)>=(71/825)/n^5` for every `n>=8` in both families. Combined with
+the direct frame block encoding, it gives polynomial QSVT inverse-square-root
+filters. This closes internal conditioning but does not establish that the
+conditioned branch is naturally reachable or that its outcomes contain
+reconstructible information about the hidden involution.
+
+The first access calculation falsifies this fixed branch as an end-to-end
+route. From three natural involution coset states, the exact probability of
+the three `W_n` labels and final `xi_n` projection is
+`d_W^3*d_xi*Tr(F)/(n!)^3`. Since `Tr(F)<=200`,
+`d_W<=n^2/2`, and `d_xi<=n^3/3`, this is at most
+`(25/3)n^9/(n!)^3`, or `exp(-Theta(n log n))`. Passive postselection and
+generic amplitude amplification are both superpolynomial. The solved stable
+branch is therefore quarantined as a mechanism/proof control, not algorithmic
+evidence. The representation frontier must now transfer these observables to
+typical high-dimensional Fourier labels with nonnegligible natural mass, or
+prove a genuinely new direct conditioned-state preparation theorem.
+
+This obstruction extends beyond `W_n`: for every fixed tail budget `K`, the
+entire family of partitions `(n-|tau|,tau)` with `|tau|<=K` has weak-Fourier
+probability at most `2*P_K*n^(2K)/n!`. Thus no predetermined stable
+character-polynomial family is naturally accessible. The typical-irrep audit
+uses maximum-Plancherel source partitions as finite controls. By `n=20`, their
+self-Kronecker product supports 626 of 627 targets, has maximum multiplicity
+6,408,361, needs 148 targets for 90% of coupling mass, and assigns only
+`2.60e-10` mass to all targets with tail size at most four. These are not
+hardness theorems; they specify the new architecture requirement: every
+commutant, recoupling, frame, and decoder operation must be uniform in the bit
+description of naturally sampled high-dimensional partitions.
 
 ```bash
 python qsearch.py coset-racah-gap-scaling
@@ -828,6 +862,9 @@ python qsearch.py coset-racah-stable-first-stage-labels
 python qsearch.py coset-racah-stable-shape-router
 python qsearch.py coset-racah-stable-encoded-tree
 python qsearch.py coset-racah-stable-three-copy-frame
+python qsearch.py coset-racah-stable-three-copy-frame-conditioning
+python qsearch.py coset-racah-stable-branch-access
+python qsearch.py coset-racah-typical-irrep-transfer
 ```
 
 The capability ledger separates the solved `S_n` QFT, Schur-Weyl transforms,

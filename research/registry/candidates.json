@@ -75,6 +75,7 @@
       "program-synthesis-components-2023"
     ],
     "measurement_and_decoding": "Use collective measurement candidates over several coset-state registers; decode candidate permutations or invariant separators and verify equivalence classically.",
+    "natural_access_analysis": "All representation labels and sectors must arise from naturally sampled coset-state registers. Any conditioned branch must have inverse-polynomial total probability or a proved direct preparation; predetermined bounded-tail Fourier postselection is explicitly disallowed.",
     "no_go_analysis": "Strong Fourier sampling alone is ruled out for symmetric-group GI-style HSPs; this candidate survives only if it uses genuine collective measurements or leaves the blocked HSP route.",
     "notes": "High upside but high no-go risk; registry keeps the no-go analysis mandatory.",
     "ontology_node_ids": [
@@ -88,7 +89,7 @@
     "status": "active",
     "success_statement": "Conjecture: a restricted but hard code family admits a polynomial-bond collective observable whose distinguishing advantage remains inverse polynomial as length grows.",
     "title": "Collective coset-state observables for code equivalence",
-    "updated_at": "2026-07-18T23:54:11.001121+00:00"
+    "updated_at": "2026-07-19T04:34:19.144281+00:00"
   },
   {
     "classical_baseline": "Generic dihedral hidden-reflection and subset-sum postprocessing baselines, plus all classical attacks legal for any public side information. Explicit phase-family learners are rejection tests for restricted testbeds, not evidence about the full DCP state-input problem.",
@@ -146,6 +147,7 @@
       "gowers-norm-algorithms-2025"
     ],
     "measurement_and_decoding": "Measure known Fourier labels, perform auditable two-state or implicit multi-state collimation, recover each hidden-reflection congruence bit through a uniform recursive modulus reduction, and verify the full reflection before invoking the exact lattice decoder.",
+    "natural_access_analysis": "Independent DCP coset states are supplied directly by the reduction. Every zero label, merge branch, postselection probability, discarded register, and bad-state contamination event is charged; no conditioned label or phase evaluator may be prepared for free.",
     "no_go_analysis": "Reject deterministic favorable-branch traces, evaluator-dependent rules, selected easy phase subfamilies, valuation-only endpoints, hidden nonuniform advice, and any schedule that merely reproduces generic sieve behavior.",
     "notes": "Primary high-upside candidate. The authoritative algorithmic interface is independent DCP state input; all evaluator-based phase-family artifacts are negative-test infrastructure only.",
     "ontology_node_ids": [
@@ -160,13 +162,13 @@
     "status": "active",
     "success_statement": "Target theorem: on every DCP state instance in the Regev contract, recover the complete hidden reflection with bounded error while proving an asymptotic sample, time, or memory improvement over a named Kuperberg/Regev baseline and preserving the end-to-end lattice approximation guarantee.",
     "title": "State-sample-native generic DCP sieve and decoder",
-    "updated_at": "2026-07-15T10:41:29.803122+00:00"
+    "updated_at": "2026-07-19T04:34:19.144253+00:00"
   },
   {
     "classical_baseline": "Best available graph and code canonicalization, Weisfeiler-Leman/color-refinement variants, support splitting, automorphism tools, and instance-family-specific classical invariants.",
     "complexity_accounting": "Separate coset-state samples, quantum measurement size, tensor contraction complexity, representation-theoretic preprocessing, and classical verification; compare against the strongest canonicalization baseline.",
     "cost_model": "Count coset-state preparation, number of registers, representation-label manipulation, tensor-network bond dimension, measurement synthesis, contraction cost, and classical verification.",
-    "created_at": "2026-07-14T16:25:53.672027+00:00",
+    "created_at": "2026-07-19T04:34:19.467438+00:00",
     "dequantization_check": "For each observable, test whether the same separator is reproduced by color refinement, code support splitting, canonical labeling, or low-rank classical tensor contractions.",
     "experiment_ids": [
       "EXP-HYP-COSET-NOGO-MAP",
@@ -181,11 +183,17 @@
     "id": "HYP-LIT-COSET-OBSERVABLES",
     "input_model": "Efficient coherent preparation of hidden-permutation coset states from explicit graph or generator-matrix inputs, with register count, state-preparation cost, and verification cost tracked separately.",
     "literature_ids": [
+      "bardet-otmani-saeed-trivial-hull-2019",
+      "beals-symmetric-qft-1997",
+      "burchardt-high-dimensional-schur-2025",
       "code-equivalence-fourier-2011",
       "hsp-survey-2010",
-      "symmetric-defies-fourier-2005"
+      "ikenmeyer-subramanian-kronecker-2023",
+      "larocca-havlicek-multiplicities-2024",
+      "panova-classical-multiplicities-2025"
     ],
     "measurement_and_decoding": "Apply collective observables over k coset-state registers, decode candidate permutations or invariant separators, and verify equivalence or non-equivalence classically.",
+    "natural_access_analysis": "Collective observables must accept representation labels sampled naturally from the coset states. Every conditioned sector needs an inverse-polynomial branch-probability theorem or a direct preparation circuit; fixed bounded-tail postselection is rejected.",
     "no_go_analysis": "Strong Fourier sampling alone is ruled out for symmetric-group GI-style HSPs; this hypothesis survives only if the observable is genuinely collective and does not collapse to a classical invariant.",
     "notes": "Generated from nonabelian HSP, symmetric-group no-go, and representation-theory literature records.",
     "ontology_node_ids": [
@@ -200,13 +208,13 @@
     "status": "hypothesis",
     "success_statement": "Target theorem: a restricted but classically hard hidden-permutation family admits a polynomial-bond collective observable with inverse-polynomial distinguishing advantage as instance size grows.",
     "title": "Literature-mined collective coset-state observables for hidden permutation problems",
-    "updated_at": "2026-07-14T16:25:53.672027+00:00"
+    "updated_at": "2026-07-19T04:34:19.467438+00:00"
   },
   {
     "classical_baseline": "Known generic DCP/DHSP postprocessing and subset-sum baselines, exact Kuperberg/Regev resource classes, and classical attacks on any public structure introduced by a literature-mined restriction.",
     "complexity_accounting": "Report theorem-level sample, time, space, precision, postselection, and full-decoder bounds in log N and lattice dimension; empirical favorable schedules and online costs with hidden preprocessing do not count.",
     "cost_model": "Count input coset states, zero labels, physical sum/difference branches, postselection, memory, label arithmetic, precision, merge depth, every recursive decoder stage, and the lattice parameter map as functions of log N.",
-    "created_at": "2026-07-14T16:25:53.671943+00:00",
+    "created_at": "2026-07-19T04:34:19.467352+00:00",
     "dequantization_check": "Audit the exact theorem interface and physical branch probabilities; attack every introduced public structure with autocorrelation, sparse Fourier, derivative, algebraic, sample, and preprocessing baselines before promotion.",
     "experiment_ids": [
       "EXP-HYP-HS-LIT-SPECTRUM",
@@ -220,7 +228,7 @@
       "The theorem-level bound matches or loses to Kuperberg/Regev after all overheads."
     ],
     "id": "HYP-LIT-HIDDEN-SHIFT-SIEVE",
-    "input_model": "Independent coset-state samples transformed into known random Fourier labels and one-qubit DCP phase states. No coherent evaluator, chosen-label access, phase truth table, or literature-specific nonuniform advice is supplied.",
+    "input_model": "Independent coset-state samples under the f=1 DCP promise, including arbitrary bad basis-state registers at per-register probability up to 1/log N; good registers transform into known random Fourier labels and one-qubit phase states. No coherent evaluator, chosen-label access, or nonuniform advice is supplied.",
     "literature_ids": [
       "gowers-norm-algorithms-2025",
       "ip-shift-deconvolution-2002",
@@ -231,6 +239,7 @@
       "van-dam-hallgren-shifted-character-2000"
     ],
     "measurement_and_decoding": "Apply uniform state-only collective measurements, recover all hidden-reflection congruence bits through a proved recurrence, verify the reflection from the supplied state interface, and compose it with the lattice decoder.",
+    "natural_access_analysis": "The reduction supplies independent DCP states directly. Literature-mined operations must consume those random labels, charge every physical branch and postselection event, and may not assume chosen labels, an evaluator, or free preparation of a favorable phase state.",
     "no_go_analysis": "Known failure modes include evaluator smuggling, selected-family scope, deterministic favorable branches, parity-only endpoints, generic subset-sum behavior, nonuniform preprocessing, and exponential precision or memory.",
     "notes": "Generated from DHSP/lattice literature under the exact independent-state access contract; phase-family records are falsification inputs only.",
     "ontology_node_ids": [
@@ -245,13 +254,13 @@
     "status": "hypothesis",
     "success_statement": "Target theorem: a literature-composed uniform algorithm recovers the complete reflection on every promised DCP state instance with bounded error and proves an asymptotic resource improvement over a named generic sieve baseline.",
     "title": "Literature-mined state-sample-native DCP sieve and decoder",
-    "updated_at": "2026-07-14T16:25:53.671943+00:00"
+    "updated_at": "2026-07-19T04:34:19.467352+00:00"
   },
   {
     "classical_baseline": "Profile-pruned canonical forms, higher-order coordinate tuple profiles, support-splitting profiles, dual/hull invariants, puncturing/shortening profiles, bounded exact equivalence checks, information-set search, and automorphism-aware canonical labeling.",
     "complexity_accounting": "Reports profile bucket sizes, tuple-profile collision status, canonicalization assignments, support-splitting outcomes, automorphism estimates, register count, sample complexity, tensor bond dimension, and all classical invariant overlaps.",
     "cost_model": "Counts code length/dimension, coset-state samples, register count, measurement description length, tensor bond dimension, canonicalization assignment budgets, automorphism search, and classical verification cost.",
-    "created_at": "2026-07-19T03:53:03.119100+00:00",
+    "created_at": "2026-07-19T04:34:21.147022+00:00",
     "dequantization_check": "Must pass code_tuple_profile_baseline.py, code_canonicalization_baseline.py, code_family_search.py, graphlet/tensor observable audits, individualized rooted tensor audits, dequantization checks, and proof-debt review before any positive signal is promoted.",
     "experiment_ids": [
       "EXP-MUT-CODE-COSET-COLLECTIVE-CODE-CANONICALIZATION",
@@ -275,6 +284,7 @@
       "program-synthesis-components-2023"
     ],
     "measurement_and_decoding": "Apply candidate collective observables to hidden-permutation coset states, decode a permutation or invariant separator, then verify code equivalence or non-equivalence with the public generator matrices.",
+    "natural_access_analysis": "The public code instance supplies coset states, but representation labels must be consumed at their natural distribution. Any sector conditioning must include exact branch probability or direct preparation cost; fixed stable-tail labels are not a valid input shortcut.",
     "no_go_analysis": "Rejects weak weight-enumerator/column-statistic collisions, rows separated by coordinate/tuple profiles or exact canonical forms, and observables reducible to classical code invariants, bounded tensor contractions, or individualized rooted tensor shadows.",
     "notes": "Generated from mutation proposal MUTATE-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES targeting blockers ['DEQ-CODE-CANONICALIZATION-REJECTIONS', 'DEQ-CODE-STRUCTURAL-INVARIANT-REJECTIONS', 'DEQ-CODE-INFORMATION-SET-CANONICALIZATION-REJECTIONS', 'DEQ-CODE-TUPLE-PROFILE-DEQUANTIZED', 'DEQ-CODE-FAMILY-SEARCH-CLASSICAL-REJECTION', 'code-equivalence-invariant-collapse'].",
     "ontology_node_ids": [
@@ -288,13 +298,13 @@
     "status": "mutated-hypothesis",
     "success_statement": "A row is viable only if it survives profile-pruned canonicalization and support-splitting baselines while a polynomial-description collective observable retains inverse-polynomial distinguishing advantage as length grows.",
     "title": "Canonicalization-resistant code-equivalence coset candidate",
-    "updated_at": "2026-07-19T03:53:03.119100+00:00"
+    "updated_at": "2026-07-19T04:34:21.147022+00:00"
   },
   {
     "classical_baseline": "Complete, regular, degree-separated irregular, and bipartition-based structural CFI parity decoding, gadget recognition, higher-k WL, spectra, walk counts, graphlet tensor contractions, individualized rooted tensor shadows, exact small-instance GI sanity checks, and low-rank relation-algebra baselines.",
     "complexity_accounting": "Reports CFI decoder status, WL dimension, tuple caps, tensor bond dimension, register count, sample complexity, and invariant overlap.",
     "cost_model": "Counts graph size, coset-state samples, register count, measurement description, tensor contraction cost, CFI decoder runtime, WL tuple budgets, and classical verification.",
-    "created_at": "2026-07-19T03:53:03.127007+00:00",
+    "created_at": "2026-07-19T04:34:21.155650+00:00",
     "dequantization_check": "Must pass cfi_parity_solver.py, cfi_structural_decoder.py, cfi_irregular_structural_decoder.py, cfi_bipartite_structural_decoder.py, cfi_scaling_probe.py, collective_observable_search.py, graphlet_tensor_observables.py, individualized_tensor_observables.py, and the dequantization ledger.",
     "experiment_ids": [
       "EXP-MUT-CODE-COSET-COLLECTIVE-CFI-PROMISE-COSET-WL",
@@ -313,6 +323,7 @@
       "symmetric-defies-fourier-2005"
     ],
     "measurement_and_decoding": "Apply a multi-register observable, decode a hidden permutation or graph separator, and compare against CFI parity and WL baselines.",
+    "natural_access_analysis": "The public graph instance supplies coset states. All collective measurements must operate on naturally sampled labels, and any promised or conditioned sector must prove inverse-polynomial occurrence or direct preparation.",
     "no_go_analysis": "Rejects complete-CFI promised rows decoded by cfi_parity_solver.py, regular CFI rows decoded by cfi_structural_decoder.py, degree-separated irregular rows decoded by cfi_irregular_structural_decoder.py, bipartition-visible rows decoded by cfi_bipartite_structural_decoder.py, WL/spectral/walk separations, and observables equivalent to graphlet, individualized rooted tensor, or low-rank tensor contractions.",
     "notes": "Generated from mutation proposal MUTATE-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE targeting blockers ['DEQ-CFI-PARITY-SOLVER-PROMISED-GADGET', 'DEQ-CFI-STRUCTURAL-DECODER-PROMISED-GADGET', 'DEQ-CFI-IRREGULAR-STRUCTURAL-DECODER-PROMISED-GADGET', 'DEQ-CFI-BIPARTITE-STRUCTURAL-DECODER-PROMISED-GADGET', 'coset-classical-invariant-collapse'].",
     "ontology_node_ids": [
@@ -326,13 +337,13 @@
     "status": "mutated-hypothesis",
     "success_statement": "A row remains viable only if the CFI parity decoder fails or is illegal, classical graph invariants fail at scaling budgets, and a polynomial-description collective measurement has stable distinguishing advantage.",
     "title": "CFI promise-escape collective coset candidate",
-    "updated_at": "2026-07-19T03:53:03.127007+00:00"
+    "updated_at": "2026-07-19T04:34:21.155650+00:00"
   },
   {
     "classical_baseline": "Higher-k WL scaling, CFI parity checks, graph spectra, support splitting, code canonicalization heuristics, low-rank tensor contractions, and exact small-instance GI sanity checks.",
     "complexity_accounting": "Reports WL dimension reached, tuple caps, tensor bond dimension, register count, sample complexity, and classical invariant overlap as size grows.",
     "cost_model": "Counts coset-state samples, register count, measurement description length, tensor bond dimension, state preparation, classical preprocessing, and verification.",
-    "created_at": "2026-07-19T03:53:03.108891+00:00",
+    "created_at": "2026-07-19T04:34:21.137249+00:00",
     "dequantization_check": "Must pass CFI/WL-hard baselines, code-equivalence canonicalization checks, and tensor-observable invariant overlap tests.",
     "experiment_ids": [
       "EXP-MUT-CODE-COSET-COLLECTIVE-COSET-WL",
@@ -351,6 +362,7 @@
       "symmetric-defies-fourier-2005"
     ],
     "measurement_and_decoding": "Apply candidate collective observables to k-register coset ensembles, decode a hidden permutation or separator, and verify the proposed equivalence/non-equivalence classically.",
+    "natural_access_analysis": "Measurements must accept naturally sampled symmetric-group labels and sectors. Predetermined bounded-tail postselection is forbidden; every conditioned branch needs inverse-polynomial probability or a direct preparation theorem.",
     "no_go_analysis": "Strong Fourier sampling alone is treated as blocked; any observable reducible to WL, spectrum, support splitting, or low-rank classical tensor contraction is rejected.",
     "notes": "Generated from mutation proposal MUTATE-CODE-COSET-COLLECTIVE-WL-HARD-COSET targeting proof debts ['DEBT-CODE-COSET-COLLECTIVE-PO-DEQUANTIZATION', 'DEBT-CODE-COSET-COLLECTIVE-PO-REDUCTION', 'DEBT-CODE-COSET-COLLECTIVE-PO-FALSIFIERS'].",
     "ontology_node_ids": [
@@ -365,13 +377,13 @@
     "status": "mutated-hypothesis",
     "success_statement": "A candidate survives only if a scalable family remains hard for classical invariants while a polynomial-register collective observable has inverse-polynomial distinguishing advantage.",
     "title": "CFI/WL-hard collective coset-state observable candidate",
-    "updated_at": "2026-07-19T03:53:03.108891+00:00"
+    "updated_at": "2026-07-19T04:34:21.137249+00:00"
   },
   {
     "classical_baseline": "Higher-k WL scaling, CFI parity checks, graph spectra, support splitting, code canonicalization heuristics, low-rank tensor contractions, and exact small-instance GI sanity checks.",
     "complexity_accounting": "Reports WL dimension reached, tuple caps, tensor bond dimension, register count, sample complexity, and classical invariant overlap as size grows.",
     "cost_model": "Counts coset-state samples, register count, measurement description length, tensor bond dimension, state preparation, classical preprocessing, and verification.",
-    "created_at": "2026-07-19T03:53:03.114970+00:00",
+    "created_at": "2026-07-19T04:34:21.141953+00:00",
     "dequantization_check": "Must pass CFI/WL-hard baselines, code-equivalence canonicalization checks, and tensor-observable invariant overlap tests.",
     "experiment_ids": [
       "EXP-MUT-HYP-LIT-COSET-OBSERVABLES-COSET-WL",
@@ -390,6 +402,7 @@
       "symmetric-defies-fourier-2005"
     ],
     "measurement_and_decoding": "Apply candidate collective observables to k-register coset ensembles, decode a hidden permutation or separator, and verify the proposed equivalence/non-equivalence classically.",
+    "natural_access_analysis": "Measurements must accept naturally sampled symmetric-group labels and sectors. Predetermined bounded-tail postselection is forbidden; every conditioned branch needs inverse-polynomial probability or a direct preparation theorem.",
     "no_go_analysis": "Strong Fourier sampling alone is treated as blocked; any observable reducible to WL, spectrum, support splitting, or low-rank classical tensor contraction is rejected.",
     "notes": "Generated from mutation proposal MUTATE-HYP-LIT-COSET-OBSERVABLES-WL-HARD-COSET targeting proof debts ['DEBT-HYP-LIT-COSET-OBSERVABLES-PO-DEQUANTIZATION', 'DEBT-HYP-LIT-COSET-OBSERVABLES-PO-REDUCTION', 'DEBT-HYP-LIT-COSET-OBSERVABLES-PO-FALSIFIERS'].",
     "ontology_node_ids": [
@@ -404,6 +417,6 @@
     "status": "mutated-hypothesis",
     "success_statement": "A candidate survives only if a scalable family remains hard for classical invariants while a polynomial-register collective observable has inverse-polynomial distinguishing advantage.",
     "title": "CFI/WL-hard collective coset-state observable candidate",
-    "updated_at": "2026-07-19T03:53:03.114970+00:00"
+    "updated_at": "2026-07-19T04:34:21.141953+00:00"
   }
 ]

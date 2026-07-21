@@ -2677,7 +2677,7 @@
       "coset_recoupling_capability_ledger": "research/representation/coset_recoupling_capability_ledger.json"
     },
     "candidate_id": "CODE-COSET-COLLECTIVE",
-    "created_at": "2026-07-19T03:52:41.458586+00:00",
+    "created_at": "2026-07-19T04:34:42.399751+00:00",
     "experiment_id": "EXP-COSET-RECOUPLING-CAPABILITY-LEDGER",
     "falsifiers_triggered": [
       "The S_n QFT is already polynomial and cannot be presented as the missing breakthrough.",
@@ -2687,13 +2687,16 @@
       "Diagonal YJM tableau labels retain exact Kronecker multiplicity degeneracy.",
       "An encoded stable shape router does not construct a compressed Clebsch channel isometry.",
       "An encoded left/right relabelling isometry does not construct the state-dependent frame filter or decoder.",
-      "A finite well-conditioned stable frame does not prove all-n inverse filtering or outcome decoding.",
+      "An all-n conditioned and inverse-filterable stable frame still does not prove outcome decoding or separation.",
+      "The solved stable W_n^tensor3 branch is factorially rare under natural coset-state preparation.",
+      "Every predetermined fixed bounded-tail Fourier family has factorially small natural mass.",
       "Many restricted multiplicity speedup candidates have polynomial classical algorithms.",
       "Finite growth of dimensions or multiplicities is not a circuit lower bound."
     ],
     "id": "RESULT-EXP-COSET-RECOUPLING-CAPABILITY-LEDGER-LATEST",
     "metrics": {
       "bounded_support_commutant_block_encoding_poly_proof_count": 1,
+      "bounded_tail_natural_access_no_go_theorem_count": 1,
       "capability_count": 16,
       "diagonal_jm_label_transform_poly_proof_count": 1,
       "exact_holevo_copy_budget_theorem_count": 1,
@@ -2709,6 +2712,10 @@
       "maximum_partition_count": 42,
       "proved_polynomial_primitive_count": 10,
       "restricted_multiplicity_classical_match_count": 1,
+      "stable_branch_direct_conditioned_preparation_count": 0,
+      "stable_branch_natural_input_accessible_count": 0,
+      "stable_branch_superpolynomial_rarity_theorem_count": 1,
+      "stable_branch_typical_irrep_transfer_count": 0,
       "stable_channel_gapped_label_transform_poly_proof_count": 1,
       "stable_shape_compressed_channel_routing_isometry_count": 0,
       "stable_shape_compressed_racah_associator_count": 0,
@@ -2716,8 +2723,12 @@
       "stable_shape_encoded_coupling_tree_transition_isometry_count": 1,
       "stable_shape_local_gapped_label_transform_count": 7,
       "stable_shape_transition_filter_count": 0,
-      "stable_three_copy_frame_all_n_conditioning_theorem_count": 0,
+      "stable_three_copy_frame_all_n_conditioning_theorem_count": 2,
       "stable_three_copy_frame_block_encoding_count": 1,
+      "stable_three_copy_frame_inverse_square_root_filter_count": 2,
+      "typical_irrep_frame_conditioning_theorem_count": 0,
+      "typical_irrep_uniform_commutant_gap_theorem_count": 0,
+      "typical_irrep_uniform_encoded_tree_transform_count": 0,
       "unresolved_required_capability_count": 3
     },
     "status": "known-primitives-separated-from-open-recoupling-and-decoder",
@@ -2874,6 +2885,36 @@
     },
     "status": "sparse-stable-gap-probe-survives-symbolic-proof-open",
     "summary": "Extracted the multiplicity-4 critical block through n=11 without dense Hamiltonians; all spectra split and reconstruct integer polynomials, but exact all-n formulas and gap bounds remain open."
+  },
+  {
+    "artifacts": {
+      "coset_stable_branch_accessibility": "research/representation/coset_stable_branch_accessibility.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-07-19T04:23:46.562367+00:00",
+    "experiment_id": "EXP-COSET-STABLE-BRANCH-ACCESSIBILITY",
+    "falsifiers_triggered": [
+      "Polynomial conditioning and inverse filtering inside the stable branch do not make the branch polynomially reachable.",
+      "Low-dimensional stable Fourier labels have factorially small natural mass.",
+      "Generic amplitude amplification only square-roots the inaccessible postselection cost and remains superpolynomial.",
+      "Finite stable-branch spectra cannot be used as direct algorithmic evidence without branch-probability accounting."
+    ],
+    "id": "RESULT-EXP-COSET-STABLE-BRANCH-ACCESSIBILITY-LATEST",
+    "metrics": {
+      "accessibility_record_count": 16,
+      "asymptotic_superpolynomial_rarity_theorem_count": 1,
+      "direct_conditioned_state_preparation_count": 0,
+      "exact_branch_probability_identity_count": 16,
+      "hidden_involution_decoder_count": 0,
+      "maximum_log2_generic_amplitude_amplification_iterations": 154.24656076769259,
+      "maximum_n": 32,
+      "minimum_log2_branch_probability": -308.49312153538517,
+      "natural_input_polynomial_accessible_branch_count": 0,
+      "typical_irrep_transfer_theorem_count": 0,
+      "universal_probability_upper_bound_verified_count": 16
+    },
+    "status": "stable-low-dimensional-branch-inaccessible-pivot-to-typical-irreps",
+    "summary": "Proved exact natural-input probabilities for 16 stable-branch rows and the universal bound p<=(25/3)n^9/(n!)^3. The fixed W_n^tensor3 branch is quarantined as a mechanism control; the next route must transfer its algebra to typical high-dimensional irreps or supply a new direct preparation theorem."
   },
   {
     "artifacts": {
@@ -3536,10 +3577,40 @@
   },
   {
     "artifacts": {
+      "coset_stable_three_copy_frame_conditioning": "research/representation/coset_stable_three_copy_frame_conditioning.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-07-19T04:13:16.262146+00:00",
+    "experiment_id": "EXP-COSET-STABLE-THREE-COPY-FRAME-CONDITIONING",
+    "falsifiers_triggered": [
+      "The finite n=8 conditioning pattern was not a numerical accident: exact character-ratio coercivity proves all-n conditioning.",
+      "No growing Racah matrix is needed for the conditioning proof or inverse filter.",
+      "Conditioning and QSVT implementability alone do not imply useful hidden-involution information.",
+      "The theorem covers one conditioned stable branch and two involution families, not the full coset-state ensemble."
+    ],
+    "id": "RESULT-EXP-COSET-STABLE-THREE-COPY-FRAME-CONDITIONING-LATEST",
+    "metrics": {
+      "all_n_inverse_polynomial_minimum_eigenvalue_theorem_count": 2,
+      "coercivity_residue_certificate_count": 54,
+      "exact_character_ratio_count": 9,
+      "global_minimum_eigenvalue_lower_bound_constant": "71/825",
+      "global_minimum_eigenvalue_lower_bound_exponent": 5,
+      "hidden_involution_decoder_count": 0,
+      "involution_family_count": 2,
+      "polynomial_inverse_square_root_filter_count": 2,
+      "residue_class_count": 6,
+      "stable_intermediate_shape_count": 9,
+      "verified_coercivity_residue_certificate_count": 54
+    },
+    "status": "stable-three-copy-frame-conditioned-and-filterable-decoder-open",
+    "summary": "Proved 54 exact residue/shape coercivity bounds, giving lambda_min(F)>=71/825/n^5 and polynomial inverse-square-root filters for partial and dense matching classes; hidden-involution information and decoding remain open."
+  },
+  {
+    "artifacts": {
       "coset_stable_three_copy_frame": "research/representation/coset_stable_three_copy_frame.json"
     },
     "candidate_id": "CODE-COSET-COLLECTIVE",
-    "created_at": "2026-07-19T03:52:36.497698+00:00",
+    "created_at": "2026-07-19T04:15:04.842427+00:00",
     "experiment_id": "EXP-COSET-STABLE-THREE-COPY-FRAME",
     "falsifiers_triggered": [
       "The multi-copy frame is not a scalar function of one coupling-tree label; all three overlapping pair class sums occur.",
@@ -3563,8 +3634,8 @@
       "polynomial_three_copy_frame_block_encoding_count": 1,
       "stable_multiplicity_dimension": 25
     },
-    "status": "stable-three-copy-frame-block-encoding-proved-conditioning-decoder-open",
-    "summary": "Derived and block-encoded the exact stable three-copy frame and found full support with condition number at most 1.598 on the n=8 frontier controls; the all-n lower eigenvalue and decoder remain open."
+    "status": "stable-three-copy-frame-block-encoding-proved-finite-conditioning-probe-only",
+    "summary": "Derived and block-encoded the exact stable three-copy frame and found full support with condition number at most 1.598 on the n=8 frontier controls; the separate exact coercivity certificate closes the all-n eigenvalue bound, while decoding remains open."
   },
   {
     "artifacts": {
@@ -3898,6 +3969,38 @@
     },
     "status": "finite-transition-algebra-measured-scalable-construction-open",
     "summary": "Verified exact frame spectra and measured transition tables for 3 S_n involution ensembles through n=4; no polynomial transition-algebra construction is known."
+  },
+  {
+    "artifacts": {
+      "coset_typical_irrep_transfer_audit": "research/representation/coset_typical_irrep_transfer_audit.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-07-19T04:30:23.824344+00:00",
+    "experiment_id": "EXP-COSET-TYPICAL-IRREP-TRANSFER-AUDIT",
+    "falsifiers_triggered": [
+      "Every predetermined fixed-tail Fourier family has superpolynomially small natural probability.",
+      "Stable character-polynomial tractability is anti-correlated with natural Plancherel accessibility.",
+      "Finite typical self-Kronecker profiles spread over nearly all target partitions and growing multiplicities.",
+      "A circuit proved only for fixed stable tails cannot be counted as progress toward a natural-input coset algorithm.",
+      "Finite multiplicity growth is search guidance, not a quantum hardness or speedup theorem."
+    ],
+    "id": "RESULT-EXP-COSET-TYPICAL-IRREP-TRANSFER-AUDIT-LATEST",
+    "metrics": {
+      "bounded_tail_natural_access_no_go_theorem_count": 1,
+      "exact_kronecker_weighted_dimension_identity_count": 7,
+      "maximum_kronecker_multiplicity": 6408361,
+      "maximum_kronecker_target_support_fraction": 1.0,
+      "maximum_partition_count": 627,
+      "maximum_targets_for_ninety_percent_coupling_mass": 148,
+      "minimum_bounded_tail_coupling_mass": 2.6036736028506456e-10,
+      "typical_label_frame_conditioning_theorem_count": 0,
+      "typical_label_hidden_involution_decoder_count": 0,
+      "typical_transfer_record_count": 7,
+      "uniform_typical_label_commutant_gap_theorem_count": 0,
+      "uniform_typical_label_encoded_tree_transform_count": 0
+    },
+    "status": "bounded-tail-route-falsified-typical-label-transfer-frontier-open",
+    "summary": "Proved the fixed-bounded-tail natural-access no-go and audited 7 exact high-Plancherel self-Kronecker profiles. At n=20, bounded-tail target coupling mass is 2.604e-10; a label-adaptive typical-sector architecture is now mandatory."
   },
   {
     "artifacts": {

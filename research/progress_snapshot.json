@@ -2,141 +2,85 @@
   "active_conjecture": {
     "facts": [
       {
-        "label": "Pair gap",
-        "value": "Exact inverse-quadratic theorem"
+        "label": "Stable encoded basis",
+        "value": "25/25 labels"
       },
       {
-        "label": "Finite Racah table",
-        "value": "10/10 S_6 sectors"
+        "label": "Inverse filters",
+        "value": "2 proved families"
       },
       {
-        "label": "Stable quartics",
-        "value": "n=7-11, integer reconstructed"
+        "label": "Stable natural access",
+        "value": "0 viable branches"
       },
       {
-        "label": "Stable trace",
-        "value": "1 exact theorem"
+        "label": "Bounded-tail route",
+        "value": "Factorial weak-Fourier mass"
       },
       {
-        "label": "Quartic coefficients",
-        "value": "4/4 proved"
+        "label": "Typical support",
+        "value": "100.0% audited targets"
       },
       {
-        "label": "Normalized root gap",
-        "value": "1 exact theorem"
+        "label": "Typical max multiplicity",
+        "value": "6,408,361"
       },
       {
-        "label": "Scoped coherent label",
-        "value": "1 proved channel"
-      },
-      {
-        "label": "Stable branch leakage",
-        "value": "65.0% minimum"
-      },
-      {
-        "label": "Complement support",
-        "value": "7-8 sectors observed"
-      },
-      {
-        "label": "Exact stable shapes",
-        "value": "9; 6 gapped labels open"
-      },
-      {
-        "label": "Finite shape targets",
-        "value": "6/6 found; exact proofs open"
-      },
-      {
-        "label": "Exact shape traces",
-        "value": "9/9; 7 coefficients open"
-      },
-      {
-        "label": "Exact shape quadratics",
-        "value": "5/5; 1 cubic coefficient open"
-      },
-      {
-        "label": "Exact shape spectra",
-        "value": "9/9; gaps and circuits open"
-      },
-      {
-        "label": "Complementary gaps",
-        "value": "5/6; cubic gap open"
-      },
-      {
-        "label": "Stable spectral gaps",
-        "value": "7/7; circuits open"
-      },
-      {
-        "label": "Coherent shape labels",
-        "value": "7/7; routing and transition open"
-      },
-      {
-        "label": "First-stage labels",
-        "value": "9/9 stable shapes; shape routing open"
-      },
-      {
-        "label": "Shape router",
-        "value": "1 encoded router; compressed Clebsch and transition open"
-      },
-      {
-        "label": "Encoded tree basis",
-        "value": "25/25 labels; 1 left/right isometry; filter open"
-      },
-      {
-        "label": "Three-copy frame",
-        "value": "1 block encoding; n=8 frontier condition <= 1.598; all-n bound open"
+        "label": "Typical uniform transforms",
+        "value": "0 proved"
       },
       {
         "label": "Hidden decoder",
         "value": "Open"
       }
     ],
-    "summary": "For W_n=(n-2,2) and alpha_n=xi_n=(n-3,2,1), sparse multiplicity-four spectra through n=11 reconstruct monic integer quartics. Exact marked-cycle equality patterns now prove their trace is 4n^3-46n^2+149n-118 for every n>=7. Seventeen, 129, and 1,628 relative classes prove the next three moments, completing the quartic. Its discriminant proves a normalized n^-53 gap, and an ordered-triple block encoding plus phase estimation implements that one-channel label. The left/right stable subspaces retain only about one third of their mass through n=10, so the single-channel associator route is cut. Complete finite projector resolution shows nonzero support on every complementary sector. Character-polynomial moments prove that exactly nine stable shapes exhaust the final sector for all n>=9. One common bounded-support Hamiltonian splits all six remaining nontrivial shape families at n=8..10. Exact marked-cycle sums now prove the first characteristic coefficient for all nine shapes, and exact second moments complete five quadratic shape spectra. A 129-class third-moment proof completes the final cubic determinant, so all nine stable-shape spectra are exact. Five complementary quadratic normalized gaps are also proved; one cubic gap and a cubic discriminant/Cauchy argument closes the seventh. Spectral control is complete on the nine-shape family. A common ordered-triple block encoding now supplies all seven shape-local coherent labels, but channel routing, coupling-tree transitions, and decoding remain open."
+    "summary": "The active conjecture is no longer about the fixed stable family. It asks whether bounded-support commutant observables can be synthesized uniformly from arbitrary sampled partition labels, retain inverse-polynomial normalized gaps across broad Kronecker support, and feed a branch-weighted frame whose outcomes decode the hidden involution. Finite typical profiles are only stress tests."
   },
   "execution_model": "Research generation and experiments run interactively during active Codex sessions. A GitHub workflow validates pushed snapshots, and a scheduled backup can commit only validation-passing changes; neither mechanism performs autonomous quantum-algorithm research between sessions.",
   "metrics": {
-    "blocking_findings": 532,
-    "experiments": 179,
-    "negative_results": 493,
+    "blocking_findings": 537,
+    "experiments": 182,
+    "negative_results": 496,
     "proof_debts": 24,
-    "results": 253
+    "results": 256
   },
   "milestones": [
     {
-      "detail": "Candidates now require reductions, complexity accounting, falsifiers, classical baselines, and proof obligations before acceptance.",
-      "title": "Toy circuit search was removed"
+      "detail": "The proof gate requires reductions, classical baselines, falsifiers, and an explicit path from the input model to every conditioned state or sector.",
+      "title": "Candidate admission now prices natural access"
     },
     {
-      "detail": "Diagonal Jucys-Murphy labels are accessible, but exact multiplicity degeneracy proves that labels alone are not the internal Kronecker transform.",
-      "title": "A nonabelian transform was split into precise subproblems"
+      "detail": "Shape, first-stage, and second-stage observables give all 25 encoded labels on both trees and a polynomial left/right relabelling isometry.",
+      "title": "The stable coupling-tree interface is complete"
     },
     {
-      "detail": "Exact Specht polytabloids give raw gap 2(n-2) and LCU-normalized gap 2/[n(n-1)] for one stable multiplicity-two family.",
-      "title": "A restricted all-n commutant gap was proved"
+      "detail": "Fifty-four exact character-ratio inequalities prove lambda_min(F)>=(71/825)n^-5 and polynomial inverse-square-root filters for two involution families.",
+      "title": "The stable three-copy frame is filterable"
     },
     {
-      "detail": "A second bounded-support Hamiltonian splits residual multiplicities up to four and produces unitary left/right matrices in all ten final sectors.",
-      "title": "The complete finite S_6 Racah table was resolved"
+      "detail": "Its exact probability is d_W^3 d_xi Tr(F)/(n!)^3, at most (25/3)n^9/(n!)^3; postselection and generic amplification are superpolynomial.",
+      "title": "Natural access kills the fixed stable branch"
     },
     {
-      "detail": "Exact falling-cycle sums, a normalized n^-53 gap, ordered-triple LCU, and phase estimation give a polynomial four-valued label in one channel; this is not an associator or decoder.",
-      "title": "One stable coherent multiplicity label was proved"
+      "detail": "For fixed K, total weak-Fourier mass is at most 2 P_K n^(2K)/n!. Uniform adaptation to typical high-dimensional partitions is now mandatory.",
+      "title": "Every fixed bounded-tail route is cut"
     }
   ],
   "next_actions": [
     {
-      "detail": "Construct coherent routing into the nine stable channels and synthesize the complete left/right coupling-tree transition.",
-      "title": "Prove the nine-shape transition family"
+      "detail": "Define orbit-sum block encodings uniformly from arbitrary partition descriptions and seek character-only normalized-gap certificates.",
+      "title": "Build typical-label commutant observables"
     },
     {
-      "detail": "Extend bounded-support spectral control beyond the single stable multiplicity-four channel without dense tableau enumeration.",
-      "title": "Cover every required sector"
+      "detail": "Aggregate over naturally sampled labels instead of postselecting sectors, and prove the retained mass remains inverse polynomial.",
+      "title": "Keep natural branch mass in every theorem"
     },
     {
-      "detail": "Turn nested labels into a uniform coherent circuit and show that its outcomes recover a hidden involution beyond legal graph/code baselines.",
-      "title": "Compile and test the actual decoder"
+      "detail": "Specify the hidden-involution-dependent measurement distribution, construct a decoder, and try to reproduce it with classical character and tensor methods.",
+      "title": "Derive and attack an outcome law"
     }
   ],
-  "overview": "The project is now useful primarily as a research filter. It has replaced tiny-circuit search with proof obligations, access-model accounting, classical attacks, exact finite representation theory, and a permanent negative-result memory. The strongest surviving lead is not an algorithm: it is a specific bounded-support operator hierarchy with exact and falsifiable spectral theorem targets in a nonabelian HSP route.",
+  "overview": "The project is a proof and falsification engine, not an algorithm demo. Its strongest constructive result is a polynomially filterable three-copy stable frame. Its strongest negative result is more important: every predetermined bounded-tail Fourier family has factorially small natural mass. The nonabelian route must now work uniformly on naturally sampled high-dimensional partitions.",
   "tracks": [
     {
       "evidence": "The all-target census evaluated millions of legal targets; the remaining question is a source-conditioned reduced-basis theorem, not another target sweep.",
@@ -159,19 +103,19 @@
       "tone": "blocked"
     },
     {
-      "evidence": "YJM spectra were verified on 3 sectors, and bounded-support commutants split 2 finite multiplicity sectors up to multiplicity 5. The stable multiplicity-two family now has 1 exact all-n gap theorem; the hierarchy resolves 10/10 finite S_6 sectors. Sparse stable probes reconstruct 5 integer quartics through n=11.",
-      "next": "Prove exact transition formulas and gapped coherent labels for the nine stable sector shapes.",
+      "evidence": "Encoded labels: 25/25. All-n conditioning families: 2. Naturally accessible fixed branches: 0. At n=20 the typical-source audit reaches multiplicity 6,408,361.",
+      "next": "Transfer bounded-support observables to naturally sampled typical partitions with uniform gaps and no postselection.",
       "short_title": "Cosets",
       "stage": 3,
-      "status": "Active structural lead",
-      "summary": "The project separated efficient Fourier/tableau labels from the genuinely open multiplicity-space, Racah, transition-filter, and hidden-involution decoder operations.",
+      "status": "Stable route cut; typical-label frontier active",
+      "summary": "One fixed stable family now has complete encoded coupling-tree labels, a direct three-copy frame block encoding, an all-n eigenvalue lower bound, and polynomial inverse filters. Exact access accounting proves that branch, and every fixed bounded-tail extension, is naturally inaccessible.",
       "title": "Nonabelian coset states",
       "tone": "active"
     }
   ],
   "updated_at": "2026-07-19",
   "verdict": {
-    "detail": "Every speedup claim remains blocked. One restricted representation-theoretic gap theorem is now proved, a bounded-support hierarchy resolves the complete finite S_6 Racah table, and one stable multiplicity-four channel now has a complete exact quartic, normalized polynomial gap, and a scoped coherent eigenlabel primitive. Overlapping recoupling, all-sector coverage, and decoding remain open.",
+    "detail": "Every speedup claim remains blocked. A complete 25-label stable coupling-tree interface, direct frame block encoding, all-n conditioning bound, and polynomial inverse filter are proved. The same audit then cuts this branch as an algorithmic route: its natural-input probability is factorially small.",
     "title": "No breakthrough yet"
   }
 }
