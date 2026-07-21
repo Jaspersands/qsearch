@@ -378,6 +378,11 @@ def build_hidden_shift_candidate(records: list[LiteratureMechanismRecord]) -> tu
             "Count input coset states, zero labels, physical sum/difference branches, postselection, memory, label arithmetic, "
             "precision, merge depth, every recursive decoder stage, and the lattice parameter map as functions of log N."
         ),
+        natural_access_analysis=(
+            "The reduction supplies independent DCP states directly. Literature-mined operations must consume those random "
+            "labels, charge every physical branch and postselection event, and may not assume chosen labels, an evaluator, "
+            "or free preparation of a favorable phase state."
+        ),
         measurement_and_decoding=(
             "Apply uniform state-only collective measurements, recover all hidden-reflection congruence bits through a proved "
             "recurrence, verify the reflection from the supplied state interface, and compose it with the lattice decoder."
@@ -481,6 +486,11 @@ def build_coset_state_candidate(records: list[LiteratureMechanismRecord]) -> tup
         cost_model=(
             "Count coset-state preparation, number of registers, representation-label manipulation, tensor-network bond dimension, "
             "measurement synthesis, contraction cost, and classical verification."
+        ),
+        natural_access_analysis=(
+            "Collective observables must accept representation labels sampled naturally from the coset states. Every "
+            "conditioned sector needs an inverse-polynomial branch-probability theorem or a direct preparation circuit; "
+            "fixed bounded-tail postselection is rejected."
         ),
         measurement_and_decoding=(
             "Apply collective observables over k coset-state registers, decode candidate permutations or invariant separators, "

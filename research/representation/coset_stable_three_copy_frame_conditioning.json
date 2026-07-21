@@ -1,0 +1,2153 @@
+{
+  "character_ratio_contract": {
+    "exact_from_n": 8,
+    "involution_cycle_counts": "X1=n-2t, X2=t, Xj=0 for j>=3",
+    "maximum_character_polynomial_threshold": 8,
+    "ratio": "r_eta=character_polynomial_eta(n-2t,t,0,...)/dimension_eta(n)",
+    "stable_tail_count": 9
+  },
+  "claim_gate": {
+    "all_n_inverse_polynomial_minimum_eigenvalue_proved": true,
+    "classical_superpolynomial_separation_proved": false,
+    "dense_matching_conditioning_proved": true,
+    "hidden_involution_decoder_proved": false,
+    "partial_matching_conditioning_proved": true,
+    "polynomial_inverse_square_root_filter_proved": true,
+    "reason": "The stable frame can now be inverted in polynomial time on two reduction-relevant involution families, but no theorem shows that the resulting measurement outcome identifies the hidden involution or resists classical character/tensor contraction.",
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-07-19T04:13:16.262146+00:00",
+  "falsifiers_triggered": [
+    "The finite n=8 conditioning pattern was not a numerical accident: exact character-ratio coercivity proves all-n conditioning.",
+    "No growing Racah matrix is needed for the conditioning proof or inverse filter.",
+    "Conditioning and QSVT implementability alone do not imply useful hidden-involution information.",
+    "The theorem covers one conditioned stable branch and two involution families, not the full coset-state ensemble."
+  ],
+  "headline_metrics": {
+    "all_n_inverse_polynomial_minimum_eigenvalue_theorem_count": 2,
+    "coercivity_residue_certificate_count": 54,
+    "exact_character_ratio_count": 9,
+    "global_minimum_eigenvalue_lower_bound_constant": "71/825",
+    "global_minimum_eigenvalue_lower_bound_exponent": 5,
+    "hidden_involution_decoder_count": 0,
+    "involution_family_count": 2,
+    "polynomial_inverse_square_root_filter_count": 2,
+    "residue_class_count": 6,
+    "stable_intermediate_shape_count": 9,
+    "verified_coercivity_residue_certificate_count": 54
+  },
+  "operator_theorem": {
+    "all_n_range": "every integer n>=8",
+    "conditioned_branch": "W_n^tensor3 with final xi_n=(n-3,2,1)",
+    "frame": "F=(1+3*r_W+r_xi)I+A_12+A_13+A_23",
+    "pair_spectrum": "spectrum(A_ij)={r_eta: eta in the nine stable intermediate shapes}",
+    "weyl_bound": "lambda_min(F)>=min_eta(1+3*r_W+r_xi+3*r_eta)"
+  },
+  "positivity_method": {
+    "certificate": "Every shifted numerator and denominator has nonnegative rational coefficients and a positive constant. If denominator degree is d and coefficient sum is D, then B_eta>=c/(D*(u+1)^d)>=c/(D*n^d).",
+    "dense_matching_substitution": "n=2m+s, t=m, s in {0,1}, m>=4",
+    "global_bound": "lambda_min(F)>=71/825/n^5",
+    "operator_norm_bound": "norm(F)<=abs(1+3*r_W+r_xi)+3<=8",
+    "partial_matching_substitution": "n=4m+s, t=m, s in {0,1,2,3}, m>=2",
+    "shift": "u=m-m_min>=0"
+  },
+  "qsvt_filter_contract": {
+    "complexity": "poly(n,log(1/epsilon)) controlled block-encoding uses and gates",
+    "dense_racah_table_required": false,
+    "family_selector": "known n and involution class parameter t",
+    "input": "existing polynomial block encoding of F on the stable branch",
+    "outcome_decoder_supplied": false,
+    "spectral_interval": "[71/825/n^5,8]",
+    "transform": "uniform polynomial approximation to x^(-1/2) on the certified positive interval"
+  },
+  "records": [
+    {
+      "character_polynomial_threshold": 2,
+      "denominator_coefficients_low_to_high": [
+        "420",
+        "856",
+        "576",
+        "128"
+      ],
+      "denominator_coefficients_nonnegative": true,
+      "exact_character_ratio": "-(-n + 2*t + 1)/(n - 1)",
+      "exact_weyl_bound": "-2*(-4*n**5 + 12*n**4*t + 40*n**4 - 12*n**3*t**2 - 105*n**3*t - 140*n**3 + 4*n**2*t**3 + 78*n**2*t**2 + 311*n**2*t + 200*n**2 - 16*n*t**3 - 150*n*t**2 - 356*n*t - 96*n + 12*t**3 + 84*t**2 + 120*t)/(n*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "family": "partial_matching_t_floor_n_over_4",
+      "intermediate_partition": "(n-1,1)",
+      "intermediate_tail": [
+        1
+      ],
+      "lower_bound_constant": "101/165",
+      "lower_bound_exponent": 3,
+      "minimum_m": 2,
+      "minimum_n": 8,
+      "modulus": 4,
+      "n_formula": "n=4*m+0",
+      "numerator_coefficients_low_to_high": [
+        "1212",
+        "2607",
+        "1848",
+        "432"
+      ],
+      "numerator_coefficients_nonnegative": true,
+      "positive_constant_terms": true,
+      "residue": 0,
+      "shifted_denominator": "4*(2*u + 3)*(4*u + 5)*(4*u + 7)",
+      "shifted_numerator": "3*(144*u**3 + 616*u**2 + 869*u + 404)",
+      "shifted_variable": "u=m-2>=0",
+      "theorem_verified": true,
+      "transposition_formula": "t=m"
+    },
+    {
+      "character_polynomial_threshold": 4,
+      "denominator_coefficients_low_to_high": [
+        "60",
+        "88",
+        "32"
+      ],
+      "denominator_coefficients_nonnegative": true,
+      "exact_character_ratio": "(n**2 - 4*n*t - 3*n + 4*t**2 + 8*t)/(n*(n - 3))",
+      "exact_weyl_bound": "-2*(-4*n**4 + 15*n**3*t + 36*n**3 - 18*n**2*t**2 - 117*n**2*t - 104*n**2 + 4*n*t**3 + 102*n*t**2 + 284*n*t + 96*n - 12*t**3 - 132*t**2 - 216*t)/(n*(n - 4)*(n - 3)*(n - 2))",
+      "family": "partial_matching_t_floor_n_over_4",
+      "intermediate_partition": "(n-2,2)",
+      "intermediate_tail": [
+        2
+      ],
+      "lower_bound_constant": "11/15",
+      "lower_bound_exponent": 2,
+      "minimum_m": 2,
+      "minimum_n": 8,
+      "modulus": 4,
+      "n_formula": "n=4*m+0",
+      "numerator_coefficients_low_to_high": [
+        "132",
+        "213",
+        "84"
+      ],
+      "numerator_coefficients_nonnegative": true,
+      "positive_constant_terms": true,
+      "residue": 0,
+      "shifted_denominator": "4*(2*u + 3)*(4*u + 5)",
+      "shifted_numerator": "3*(28*u**2 + 71*u + 44)",
+      "shifted_variable": "u=m-2>=0",
+      "theorem_verified": true,
+      "transposition_formula": "t=m"
+    },
+    {
+      "character_polynomial_threshold": 3,
+      "denominator_coefficients_low_to_high": [
+        "420",
+        "856",
+        "576",
+        "128"
+      ],
+      "denominator_coefficients_nonnegative": true,
+      "exact_character_ratio": "(n**2 - 4*n*t - 3*n + 4*t**2 + 4*t + 2)/((n - 2)*(n - 1))",
+      "exact_weyl_bound": "-2*(-4*n**5 + 15*n**4*t + 40*n**4 - 18*n**3*t**2 - 126*n**3*t - 140*n**3 + 4*n**2*t**3 + 120*n**2*t**2 + 347*n**2*t + 200*n**2 - 16*n*t**3 - 222*n*t**2 - 356*n*t - 96*n + 12*t**3 + 84*t**2 + 120*t)/(n*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "family": "partial_matching_t_floor_n_over_4",
+      "intermediate_partition": "(n-2,1,1)",
+      "intermediate_tail": [
+        1,
+        1
+      ],
+      "lower_bound_constant": "61/165",
+      "lower_bound_exponent": 3,
+      "minimum_m": 2,
+      "minimum_n": 8,
+      "modulus": 4,
+      "n_formula": "n=4*m+0",
+      "numerator_coefficients_low_to_high": [
+        "732",
+        "1743",
+        "1344",
+        "336"
+      ],
+      "numerator_coefficients_nonnegative": true,
+      "positive_constant_terms": true,
+      "residue": 0,
+      "shifted_denominator": "4*(2*u + 3)*(4*u + 5)*(4*u + 7)",
+      "shifted_numerator": "3*(112*u**3 + 448*u**2 + 581*u + 244)",
+      "shifted_variable": "u=m-2>=0",
+      "theorem_verified": true,
+      "transposition_formula": "t=m"
+    },
+    {
+      "character_polynomial_threshold": 6,
+      "denominator_coefficients_low_to_high": [
+        "1260",
+        "4248",
+        "5152",
+        "2688",
+        "512"
+      ],
+      "denominator_coefficients_nonnegative": true,
+      "exact_character_ratio": "-(-n + 2*t + 1)*(n**2 - 4*n*t - 5*n + 4*t**2 + 16*t)/(n*(n - 5)*(n - 1))",
+      "exact_weyl_bound": "-2*(-4*n**6 + 18*n**5*t + 60*n**5 - 30*n**4*t**2 - 249*n**4*t - 340*n**4 + 16*n**3*t**3 + 354*n**3*t**2 + 1286*n**3*t + 900*n**3 - 144*n**2*t**3 - 1494*n**2*t**2 - 3051*n**2*t - 1096*n**2 + 404*n*t**3 + 2670*n*t**2 + 3244*n*t + 480*n - 348*t**3 - 1716*t**2 - 1176*t)/(n*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "family": "partial_matching_t_floor_n_over_4",
+      "intermediate_partition": "(n-3,3)",
+      "intermediate_tail": [
+        3
+      ],
+      "lower_bound_constant": "71/385",
+      "lower_bound_exponent": 4,
+      "minimum_m": 2,
+      "minimum_n": 8,
+      "modulus": 4,
+      "n_formula": "n=4*m+0",
+      "numerator_coefficients_low_to_high": [
+        "2556",
+        "8745",
+        "10884",
+        "5856",
+        "1152"
+      ],
+      "numerator_coefficients_nonnegative": true,
+      "positive_constant_terms": true,
+      "residue": 0,
+      "shifted_denominator": "4*(2*u + 3)*(4*u + 3)*(4*u + 5)*(4*u + 7)",
+      "shifted_numerator": "3*(384*u**4 + 1952*u**3 + 3628*u**2 + 2915*u + 852)",
+      "shifted_variable": "u=m-2>=0",
+      "theorem_verified": true,
+      "transposition_formula": "t=m"
+    },
+    {
+      "character_polynomial_threshold": 5,
+      "denominator_coefficients_low_to_high": [
+        "15",
+        "22",
+        "8"
+      ],
+      "denominator_coefficients_nonnegative": true,
+      "exact_character_ratio": "-(-n + 2*t)*(-n + 2*t + 2)*(-n + 2*t + 4)/(n*(n - 4)*(n - 2))",
+      "exact_weyl_bound": "-4*(-n + t + 2)*(2*n**3 - 7*n**2*t - 14*n**2 + 8*n*t**2 + 38*n*t + 24*n - 24*t**2 - 48*t)/(n*(n - 4)*(n - 3)*(n - 2))",
+      "family": "partial_matching_t_floor_n_over_4",
+      "intermediate_partition": "(n-3,2,1)",
+      "intermediate_tail": [
+        2,
+        1
+      ],
+      "lower_bound_constant": "8/15",
+      "lower_bound_exponent": 2,
+      "minimum_m": 2,
+      "minimum_n": 8,
+      "modulus": 4,
+      "n_formula": "n=4*m+0",
+      "numerator_coefficients_low_to_high": [
+        "24",
+        "42",
+        "18"
+      ],
+      "numerator_coefficients_nonnegative": true,
+      "positive_constant_terms": true,
+      "residue": 0,
+      "shifted_denominator": "(2*u + 3)*(4*u + 5)",
+      "shifted_numerator": "6*(u + 1)*(3*u + 4)",
+      "shifted_variable": "u=m-2>=0",
+      "theorem_verified": true,
+      "transposition_formula": "t=m"
+    },
+    {
+      "character_polynomial_threshold": 4,
+      "denominator_coefficients_low_to_high": [
+        "420",
+        "856",
+        "576",
+        "128"
+      ],
+      "denominator_coefficients_nonnegative": true,
+      "exact_character_ratio": "-(-n + 2*t + 1)*(n**2 - 4*n*t - 5*n + 4*t**2 + 4*t + 6)/((n - 3)*(n - 2)*(n - 1))",
+      "exact_weyl_bound": "-2*(-4*n**5 + 18*n**4*t + 40*n**4 - 30*n**3*t**2 - 141*n**3*t - 140*n**3 + 16*n**2*t**3 + 168*n**2*t**2 + 365*n**2*t + 200*n**2 - 64*n*t**3 - 222*n*t**2 - 380*n*t - 96*n + 12*t**3 + 84*t**2 + 120*t)/(n*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "family": "partial_matching_t_floor_n_over_4",
+      "intermediate_partition": "(n-3,1,1,1)",
+      "intermediate_tail": [
+        1,
+        1,
+        1
+      ],
+      "lower_bound_constant": "41/165",
+      "lower_bound_exponent": 3,
+      "minimum_m": 2,
+      "minimum_n": 8,
+      "modulus": 4,
+      "n_formula": "n=4*m+0",
+      "numerator_coefficients_low_to_high": [
+        "492",
+        "1335",
+        "1104",
+        "288"
+      ],
+      "numerator_coefficients_nonnegative": true,
+      "positive_constant_terms": true,
+      "residue": 0,
+      "shifted_denominator": "4*(2*u + 3)*(4*u + 5)*(4*u + 7)",
+      "shifted_numerator": "3*(96*u**3 + 368*u**2 + 445*u + 164)",
+      "shifted_variable": "u=m-2>=0",
+      "theorem_verified": true,
+      "transposition_formula": "t=m"
+    },
+    {
+      "character_polynomial_threshold": 8,
+      "denominator_coefficients_low_to_high": [
+        "420",
+        "2536",
+        "4000",
+        "2432",
+        "512"
+      ],
+      "denominator_coefficients_nonnegative": true,
+      "exact_character_ratio": "(n**4 - 8*n**3*t - 10*n**3 + 24*n**2*t**2 + 72*n**2*t + 23*n**2 - 32*n*t**3 - 168*n*t**2 - 128*n*t - 14*n + 16*t**4 + 128*t**3 + 176*t**2 + 16*t)/(n*(n - 7)*(n - 2)*(n - 1))",
+      "exact_weyl_bound": "2*(4*n**6 - 21*n**5*t - 68*n**5 + 48*n**4*t**2 + 333*n**4*t + 420*n**4 - 52*n**3*t**3 - 666*n**3*t**2 - 1871*n**3*t - 1180*n**3 + 24*n**2*t**4 + 572*n**2*t**3 + 3156*n**2*t**2 + 4579*n**2*t + 1496*n**2 - 168*n*t**4 - 2044*n*t**3 - 6006*n*t**2 - 4580*n*t - 672*n + 288*t**4 + 2388*t**3 + 3756*t**2 + 1128*t)/(n*(n - 7)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "family": "partial_matching_t_floor_n_over_4",
+      "intermediate_partition": "(n-4,4)",
+      "intermediate_tail": [
+        4
+      ],
+      "lower_bound_constant": "71/825",
+      "lower_bound_exponent": 4,
+      "minimum_m": 2,
+      "minimum_n": 8,
+      "modulus": 4,
+      "n_formula": "n=4*m+0",
+      "numerator_coefficients_low_to_high": [
+        "852",
+        "5007",
+        "7908",
+        "4872",
+        "1056"
+      ],
+      "numerator_coefficients_nonnegative": true,
+      "positive_constant_terms": true,
+      "residue": 0,
+      "shifted_denominator": "4*(2*u + 3)*(4*u + 1)*(4*u + 5)*(4*u + 7)",
+      "shifted_numerator": "3*(352*u**4 + 1624*u**3 + 2636*u**2 + 1669*u + 284)",
+      "shifted_variable": "u=m-2>=0",
+      "theorem_verified": true,
+      "transposition_formula": "t=m"
+    },
+    {
+      "character_polynomial_threshold": 7,
+      "denominator_coefficients_low_to_high": [
+        "420",
+        "1696",
+        "2288",
+        "1280",
+        "256"
+      ],
+      "denominator_coefficients_nonnegative": true,
+      "exact_character_ratio": "(n**4 - 8*n**3*t - 10*n**3 + 24*n**2*t**2 + 64*n**2*t + 27*n**2 - 32*n*t**3 - 136*n*t**2 - 120*n*t - 18*n + 16*t**4 + 96*t**3 + 128*t**2 + 48*t)/(n*(n - 6)*(n - 3)*(n - 1))",
+      "exact_weyl_bound": "2*(4*n**6 - 21*n**5*t - 64*n**5 + 48*n**4*t**2 + 300*n**4*t + 380*n**4 - 52*n**3*t**3 - 570*n**3*t**2 - 1553*n**3*t - 1040*n**3 + 24*n**2*t**4 + 472*n**2*t**3 + 2322*n**2*t**2 + 3602*n**2*t + 1296*n**2 - 144*n*t**4 - 1356*n*t**3 - 3768*n*t**2 - 3696*n*t - 576*n + 192*t**4 + 1224*t**3 + 2040*t**2 + 1296*t)/(n*(n - 6)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "family": "partial_matching_t_floor_n_over_4",
+      "intermediate_partition": "(n-4,3,1)",
+      "intermediate_tail": [
+        3,
+        1
+      ],
+      "lower_bound_constant": "59/495",
+      "lower_bound_exponent": 4,
+      "minimum_m": 2,
+      "minimum_n": 8,
+      "modulus": 4,
+      "n_formula": "n=4*m+0",
+      "numerator_coefficients_low_to_high": [
+        "708",
+        "2895",
+        "4134",
+        "2472",
+        "528"
+      ],
+      "numerator_coefficients_nonnegative": true,
+      "positive_constant_terms": true,
+      "residue": 0,
+      "shifted_denominator": "4*(2*u + 1)*(2*u + 3)*(4*u + 5)*(4*u + 7)",
+      "shifted_numerator": "3*(176*u**4 + 824*u**3 + 1378*u**2 + 965*u + 236)",
+      "shifted_variable": "u=m-2>=0",
+      "theorem_verified": true,
+      "transposition_formula": "t=m"
+    },
+    {
+      "character_polynomial_threshold": 6,
+      "denominator_coefficients_low_to_high": [
+        "1260",
+        "4248",
+        "5152",
+        "2688",
+        "512"
+      ],
+      "denominator_coefficients_nonnegative": true,
+      "exact_character_ratio": "(n**4 - 8*n**3*t - 10*n**3 + 24*n**2*t**2 + 60*n**2*t + 29*n**2 - 32*n*t**3 - 120*n*t**2 - 116*n*t - 20*n + 16*t**4 + 80*t**3 + 128*t**2 + 16*t)/(n*(n - 5)*(n - 4)*(n - 1))",
+      "exact_weyl_bound": "2*(4*n**6 - 21*n**5*t - 60*n**5 + 48*n**4*t**2 + 273*n**4*t + 340*n**4 - 52*n**3*t**3 - 498*n**3*t**2 - 1319*n**3*t - 900*n**3 + 24*n**2*t**4 + 396*n**2*t**3 + 1848*n**2*t**2 + 2883*n**2*t + 1096*n**2 - 120*n*t**4 - 980*n*t**3 - 2874*n*t**2 - 2704*n*t - 480*n + 144*t**4 + 780*t**3 + 1572*t**2 + 744*t)/(n*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "family": "partial_matching_t_floor_n_over_4",
+      "intermediate_partition": "(n-4,2,2)",
+      "intermediate_tail": [
+        2,
+        2
+      ],
+      "lower_bound_constant": "8/55",
+      "lower_bound_exponent": 4,
+      "minimum_m": 2,
+      "minimum_n": 8,
+      "modulus": 4,
+      "n_formula": "n=4*m+0",
+      "numerator_coefficients_low_to_high": [
+        "2016",
+        "7053",
+        "9096",
+        "5112",
+        "1056"
+      ],
+      "numerator_coefficients_nonnegative": true,
+      "positive_constant_terms": true,
+      "residue": 0,
+      "shifted_denominator": "4*(2*u + 3)*(4*u + 3)*(4*u + 5)*(4*u + 7)",
+      "shifted_numerator": "3*(352*u**4 + 1704*u**3 + 3032*u**2 + 2351*u + 672)",
+      "shifted_variable": "u=m-2>=0",
+      "theorem_verified": true,
+      "transposition_formula": "t=m"
+    },
+    {
+      "character_polynomial_threshold": 2,
+      "denominator_coefficients_low_to_high": [
+        "1890",
+        "4692",
+        "4304",
+        "1728",
+        "256"
+      ],
+      "denominator_coefficients_nonnegative": true,
+      "exact_character_ratio": "-(-n + 2*t + 1)/(n - 1)",
+      "exact_weyl_bound": "-2*(-4*n**5 + 12*n**4*t + 40*n**4 - 12*n**3*t**2 - 105*n**3*t - 140*n**3 + 4*n**2*t**3 + 78*n**2*t**2 + 311*n**2*t + 200*n**2 - 16*n*t**3 - 150*n*t**2 - 356*n*t - 96*n + 12*t**3 + 84*t**2 + 120*t)/(n*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "family": "partial_matching_t_floor_n_over_4",
+      "intermediate_partition": "(n-1,1)",
+      "intermediate_tail": [
+        1
+      ],
+      "lower_bound_constant": "419/858",
+      "lower_bound_exponent": 4,
+      "minimum_m": 2,
+      "minimum_n": 9,
+      "modulus": 4,
+      "n_formula": "n=4*m+1",
+      "numerator_coefficients_low_to_high": [
+        "6285",
+        "15762",
+        "14556",
+        "5856",
+        "864"
+      ],
+      "numerator_coefficients_nonnegative": true,
+      "positive_constant_terms": true,
+      "residue": 1,
+      "shifted_denominator": "2*(2*u + 3)*(4*u + 5)*(4*u + 7)*(4*u + 9)",
+      "shifted_numerator": "3*(288*u**4 + 1952*u**3 + 4852*u**2 + 5254*u + 2095)",
+      "shifted_variable": "u=m-2>=0",
+      "theorem_verified": true,
+      "transposition_formula": "t=m"
+    },
+    {
+      "character_polynomial_threshold": 4,
+      "denominator_coefficients_low_to_high": [
+        "945",
+        "2346",
+        "2152",
+        "864",
+        "128"
+      ],
+      "denominator_coefficients_nonnegative": true,
+      "exact_character_ratio": "(n**2 - 4*n*t - 3*n + 4*t**2 + 8*t)/(n*(n - 3))",
+      "exact_weyl_bound": "-2*(-4*n**4 + 15*n**3*t + 36*n**3 - 18*n**2*t**2 - 117*n**2*t - 104*n**2 + 4*n*t**3 + 102*n*t**2 + 284*n*t + 96*n - 12*t**3 - 132*t**2 - 216*t)/(n*(n - 4)*(n - 3)*(n - 2))",
+      "family": "partial_matching_t_floor_n_over_4",
+      "intermediate_partition": "(n-2,2)",
+      "intermediate_tail": [
+        2
+      ],
+      "lower_bound_constant": "164/429",
+      "lower_bound_exponent": 4,
+      "minimum_m": 2,
+      "minimum_n": 9,
+      "modulus": 4,
+      "n_formula": "n=4*m+1",
+      "numerator_coefficients_low_to_high": [
+        "2460",
+        "6210",
+        "5748",
+        "2304",
+        "336"
+      ],
+      "numerator_coefficients_nonnegative": true,
+      "positive_constant_terms": true,
+      "residue": 1,
+      "shifted_denominator": "(2*u + 3)*(4*u + 5)*(4*u + 7)*(4*u + 9)",
+      "shifted_numerator": "6*(56*u**4 + 384*u**3 + 958*u**2 + 1035*u + 410)",
+      "shifted_variable": "u=m-2>=0",
+      "theorem_verified": true,
+      "transposition_formula": "t=m"
+    },
+    {
+      "character_polynomial_threshold": 3,
+      "denominator_coefficients_low_to_high": [
+        "945",
+        "2346",
+        "2152",
+        "864",
+        "128"
+      ],
+      "denominator_coefficients_nonnegative": true,
+      "exact_character_ratio": "(n**2 - 4*n*t - 3*n + 4*t**2 + 4*t + 2)/((n - 2)*(n - 1))",
+      "exact_weyl_bound": "-2*(-4*n**5 + 15*n**4*t + 40*n**4 - 18*n**3*t**2 - 126*n**3*t - 140*n**3 + 4*n**2*t**3 + 120*n**2*t**2 + 347*n**2*t + 200*n**2 - 16*n*t**3 - 222*n*t**2 - 356*n*t - 96*n + 12*t**3 + 84*t**2 + 120*t)/(n*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "family": "partial_matching_t_floor_n_over_4",
+      "intermediate_partition": "(n-2,1,1)",
+      "intermediate_tail": [
+        1,
+        1
+      ],
+      "lower_bound_constant": "142/429",
+      "lower_bound_exponent": 4,
+      "minimum_m": 2,
+      "minimum_n": 9,
+      "modulus": 4,
+      "n_formula": "n=4*m+1",
+      "numerator_coefficients_low_to_high": [
+        "2130",
+        "5541",
+        "5304",
+        "2208",
+        "336"
+      ],
+      "numerator_coefficients_nonnegative": true,
+      "positive_constant_terms": true,
+      "residue": 1,
+      "shifted_denominator": "(2*u + 3)*(4*u + 5)*(4*u + 7)*(4*u + 9)",
+      "shifted_numerator": "3*(112*u**4 + 736*u**3 + 1768*u**2 + 1847*u + 710)",
+      "shifted_variable": "u=m-2>=0",
+      "theorem_verified": true,
+      "transposition_formula": "t=m"
+    },
+    {
+      "character_polynomial_threshold": 6,
+      "denominator_coefficients_low_to_high": [
+        "1890",
+        "4692",
+        "4304",
+        "1728",
+        "256"
+      ],
+      "denominator_coefficients_nonnegative": true,
+      "exact_character_ratio": "-(-n + 2*t + 1)*(n**2 - 4*n*t - 5*n + 4*t**2 + 16*t)/(n*(n - 5)*(n - 1))",
+      "exact_weyl_bound": "-2*(-4*n**6 + 18*n**5*t + 60*n**5 - 30*n**4*t**2 - 249*n**4*t - 340*n**4 + 16*n**3*t**3 + 354*n**3*t**2 + 1286*n**3*t + 900*n**3 - 144*n**2*t**3 - 1494*n**2*t**2 - 3051*n**2*t - 1096*n**2 + 404*n*t**3 + 2670*n*t**2 + 3244*n*t + 480*n - 348*t**3 - 1716*t**2 - 1176*t)/(n*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "family": "partial_matching_t_floor_n_over_4",
+      "intermediate_partition": "(n-3,3)",
+      "intermediate_tail": [
+        3
+      ],
+      "lower_bound_constant": "293/858",
+      "lower_bound_exponent": 4,
+      "minimum_m": 2,
+      "minimum_n": 9,
+      "modulus": 4,
+      "n_formula": "n=4*m+1",
+      "numerator_coefficients_low_to_high": [
+        "4395",
+        "10965",
+        "10038",
+        "3984",
+        "576"
+      ],
+      "numerator_coefficients_nonnegative": true,
+      "positive_constant_terms": true,
+      "residue": 1,
+      "shifted_denominator": "2*(2*u + 3)*(4*u + 5)*(4*u + 7)*(4*u + 9)",
+      "shifted_numerator": "3*(192*u**4 + 1328*u**3 + 3346*u**2 + 3655*u + 1465)",
+      "shifted_variable": "u=m-2>=0",
+      "theorem_verified": true,
+      "transposition_formula": "t=m"
+    },
+    {
+      "character_polynomial_threshold": 5,
+      "denominator_coefficients_low_to_high": [
+        "945",
+        "2346",
+        "2152",
+        "864",
+        "128"
+      ],
+      "denominator_coefficients_nonnegative": true,
+      "exact_character_ratio": "-(-n + 2*t)*(-n + 2*t + 2)*(-n + 2*t + 4)/(n*(n - 4)*(n - 2))",
+      "exact_weyl_bound": "-4*(-n + t + 2)*(2*n**3 - 7*n**2*t - 14*n**2 + 8*n*t**2 + 38*n*t + 24*n - 24*t**2 - 48*t)/(n*(n - 4)*(n - 3)*(n - 2))",
+      "family": "partial_matching_t_floor_n_over_4",
+      "intermediate_partition": "(n-3,2,1)",
+      "intermediate_tail": [
+        2,
+        1
+      ],
+      "lower_bound_constant": "124/429",
+      "lower_bound_exponent": 4,
+      "minimum_m": 2,
+      "minimum_n": 9,
+      "modulus": 4,
+      "n_formula": "n=4*m+1",
+      "numerator_coefficients_low_to_high": [
+        "1860",
+        "4866",
+        "4650",
+        "1920",
+        "288"
+      ],
+      "numerator_coefficients_nonnegative": true,
+      "positive_constant_terms": true,
+      "residue": 1,
+      "shifted_denominator": "(2*u + 3)*(4*u + 5)*(4*u + 7)*(4*u + 9)",
+      "shifted_numerator": "6*(3*u + 5)*(16*u**3 + 80*u**2 + 125*u + 62)",
+      "shifted_variable": "u=m-2>=0",
+      "theorem_verified": true,
+      "transposition_formula": "t=m"
+    },
+    {
+      "character_polynomial_threshold": 4,
+      "denominator_coefficients_low_to_high": [
+        "1890",
+        "4692",
+        "4304",
+        "1728",
+        "256"
+      ],
+      "denominator_coefficients_nonnegative": true,
+      "exact_character_ratio": "-(-n + 2*t + 1)*(n**2 - 4*n*t - 5*n + 4*t**2 + 4*t + 6)/((n - 3)*(n - 2)*(n - 1))",
+      "exact_weyl_bound": "-2*(-4*n**5 + 18*n**4*t + 40*n**4 - 30*n**3*t**2 - 141*n**3*t - 140*n**3 + 16*n**2*t**3 + 168*n**2*t**2 + 365*n**2*t + 200*n**2 - 64*n*t**3 - 222*n*t**2 - 380*n*t - 96*n + 12*t**3 + 84*t**2 + 120*t)/(n*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "family": "partial_matching_t_floor_n_over_4",
+      "intermediate_partition": "(n-3,1,1,1)",
+      "intermediate_tail": [
+        1,
+        1,
+        1
+      ],
+      "lower_bound_constant": "203/858",
+      "lower_bound_exponent": 4,
+      "minimum_m": 2,
+      "minimum_n": 9,
+      "modulus": 4,
+      "n_formula": "n=4*m+1",
+      "numerator_coefficients_low_to_high": [
+        "3045",
+        "8490",
+        "8562",
+        "3696",
+        "576"
+      ],
+      "numerator_coefficients_nonnegative": true,
+      "positive_constant_terms": true,
+      "residue": 1,
+      "shifted_denominator": "2*(2*u + 3)*(4*u + 5)*(4*u + 7)*(4*u + 9)",
+      "shifted_numerator": "3*(192*u**4 + 1232*u**3 + 2854*u**2 + 2830*u + 1015)",
+      "shifted_variable": "u=m-2>=0",
+      "theorem_verified": true,
+      "transposition_formula": "t=m"
+    },
+    {
+      "character_polynomial_threshold": 8,
+      "denominator_coefficients_low_to_high": [
+        "945",
+        "4236",
+        "6844",
+        "5168",
+        "1856",
+        "256"
+      ],
+      "denominator_coefficients_nonnegative": true,
+      "exact_character_ratio": "(n**4 - 8*n**3*t - 10*n**3 + 24*n**2*t**2 + 72*n**2*t + 23*n**2 - 32*n*t**3 - 168*n*t**2 - 128*n*t - 14*n + 16*t**4 + 128*t**3 + 176*t**2 + 16*t)/(n*(n - 7)*(n - 2)*(n - 1))",
+      "exact_weyl_bound": "2*(4*n**6 - 21*n**5*t - 68*n**5 + 48*n**4*t**2 + 333*n**4*t + 420*n**4 - 52*n**3*t**3 - 666*n**3*t**2 - 1871*n**3*t - 1180*n**3 + 24*n**2*t**4 + 572*n**2*t**3 + 3156*n**2*t**2 + 4579*n**2*t + 1496*n**2 - 168*n*t**4 - 2044*n*t**3 - 6006*n*t**2 - 4580*n*t - 672*n + 288*t**4 + 2388*t**3 + 3756*t**2 + 1128*t)/(n*(n - 7)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "family": "partial_matching_t_floor_n_over_4",
+      "intermediate_partition": "(n-4,4)",
+      "intermediate_tail": [
+        4
+      ],
+      "lower_bound_constant": "142/1287",
+      "lower_bound_exponent": 5,
+      "minimum_m": 2,
+      "minimum_n": 9,
+      "modulus": 4,
+      "n_formula": "n=4*m+1",
+      "numerator_coefficients_low_to_high": [
+        "2130",
+        "9396",
+        "14982",
+        "11142",
+        "3924",
+        "528"
+      ],
+      "numerator_coefficients_nonnegative": true,
+      "positive_constant_terms": true,
+      "residue": 1,
+      "shifted_denominator": "(2*u + 1)*(2*u + 3)*(4*u + 5)*(4*u + 7)*(4*u + 9)",
+      "shifted_numerator": "6*(88*u**5 + 654*u**4 + 1857*u**3 + 2497*u**2 + 1566*u + 355)",
+      "shifted_variable": "u=m-2>=0",
+      "theorem_verified": true,
+      "transposition_formula": "t=m"
+    },
+    {
+      "character_polynomial_threshold": 7,
+      "denominator_coefficients_low_to_high": [
+        "2835",
+        "10818",
+        "15840",
+        "11200",
+        "3840",
+        "512"
+      ],
+      "denominator_coefficients_nonnegative": true,
+      "exact_character_ratio": "(n**4 - 8*n**3*t - 10*n**3 + 24*n**2*t**2 + 64*n**2*t + 27*n**2 - 32*n*t**3 - 136*n*t**2 - 120*n*t - 18*n + 16*t**4 + 96*t**3 + 128*t**2 + 48*t)/(n*(n - 6)*(n - 3)*(n - 1))",
+      "exact_weyl_bound": "2*(4*n**6 - 21*n**5*t - 64*n**5 + 48*n**4*t**2 + 300*n**4*t + 380*n**4 - 52*n**3*t**3 - 570*n**3*t**2 - 1553*n**3*t - 1040*n**3 + 24*n**2*t**4 + 472*n**2*t**3 + 2322*n**2*t**2 + 3602*n**2*t + 1296*n**2 - 144*n*t**4 - 1356*n*t**3 - 3768*n*t**2 - 3696*n*t - 576*n + 192*t**4 + 1224*t**3 + 2040*t**2 + 1296*t)/(n*(n - 6)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "family": "partial_matching_t_floor_n_over_4",
+      "intermediate_partition": "(n-4,3,1)",
+      "intermediate_tail": [
+        3,
+        1
+      ],
+      "lower_bound_constant": "122/1001",
+      "lower_bound_exponent": 5,
+      "minimum_m": 2,
+      "minimum_n": 9,
+      "modulus": 4,
+      "n_formula": "n=4*m+1",
+      "numerator_coefficients_low_to_high": [
+        "5490",
+        "21258",
+        "31734",
+        "22842",
+        "7920",
+        "1056"
+      ],
+      "numerator_coefficients_nonnegative": true,
+      "positive_constant_terms": true,
+      "residue": 1,
+      "shifted_denominator": "(2*u + 3)*(4*u + 3)*(4*u + 5)*(4*u + 7)*(4*u + 9)",
+      "shifted_numerator": "6*(176*u**5 + 1320*u**4 + 3807*u**3 + 5289*u**2 + 3543*u + 915)",
+      "shifted_variable": "u=m-2>=0",
+      "theorem_verified": true,
+      "transposition_formula": "t=m"
+    },
+    {
+      "character_polynomial_threshold": 6,
+      "denominator_coefficients_low_to_high": [
+        "945",
+        "2346",
+        "2152",
+        "864",
+        "128"
+      ],
+      "denominator_coefficients_nonnegative": true,
+      "exact_character_ratio": "(n**4 - 8*n**3*t - 10*n**3 + 24*n**2*t**2 + 60*n**2*t + 29*n**2 - 32*n*t**3 - 120*n*t**2 - 116*n*t - 20*n + 16*t**4 + 80*t**3 + 128*t**2 + 16*t)/(n*(n - 5)*(n - 4)*(n - 1))",
+      "exact_weyl_bound": "2*(4*n**6 - 21*n**5*t - 60*n**5 + 48*n**4*t**2 + 273*n**4*t + 340*n**4 - 52*n**3*t**3 - 498*n**3*t**2 - 1319*n**3*t - 900*n**3 + 24*n**2*t**4 + 396*n**2*t**3 + 1848*n**2*t**2 + 2883*n**2*t + 1096*n**2 - 120*n*t**4 - 980*n*t**3 - 2874*n*t**2 - 2704*n*t - 480*n + 144*t**4 + 780*t**3 + 1572*t**2 + 744*t)/(n*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "family": "partial_matching_t_floor_n_over_4",
+      "intermediate_partition": "(n-4,2,2)",
+      "intermediate_tail": [
+        2,
+        2
+      ],
+      "lower_bound_constant": "115/429",
+      "lower_bound_exponent": 4,
+      "minimum_m": 2,
+      "minimum_n": 9,
+      "modulus": 4,
+      "n_formula": "n=4*m+1",
+      "numerator_coefficients_low_to_high": [
+        "1725",
+        "4488",
+        "4269",
+        "1758",
+        "264"
+      ],
+      "numerator_coefficients_nonnegative": true,
+      "positive_constant_terms": true,
+      "residue": 1,
+      "shifted_denominator": "(2*u + 3)*(4*u + 5)*(4*u + 7)*(4*u + 9)",
+      "shifted_numerator": "3*(88*u**4 + 586*u**3 + 1423*u**2 + 1496*u + 575)",
+      "shifted_variable": "u=m-2>=0",
+      "theorem_verified": true,
+      "transposition_formula": "t=m"
+    },
+    {
+      "character_polynomial_threshold": 2,
+      "denominator_coefficients_low_to_high": [
+        "1890",
+        "3936",
+        "3032",
+        "1024",
+        "128"
+      ],
+      "denominator_coefficients_nonnegative": true,
+      "exact_character_ratio": "-(-n + 2*t + 1)/(n - 1)",
+      "exact_weyl_bound": "-2*(-4*n**5 + 12*n**4*t + 40*n**4 - 12*n**3*t**2 - 105*n**3*t - 140*n**3 + 4*n**2*t**3 + 78*n**2*t**2 + 311*n**2*t + 200*n**2 - 16*n*t**3 - 150*n*t**2 - 356*n*t - 96*n + 12*t**3 + 84*t**2 + 120*t)/(n*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "family": "partial_matching_t_floor_n_over_4",
+      "intermediate_partition": "(n-1,1)",
+      "intermediate_tail": [
+        1
+      ],
+      "lower_bound_constant": "7011/10010",
+      "lower_bound_exponent": 4,
+      "minimum_m": 2,
+      "minimum_n": 10,
+      "modulus": 4,
+      "n_formula": "n=4*m+2",
+      "numerator_coefficients_low_to_high": [
+        "7011",
+        "14400",
+        "10875",
+        "3576",
+        "432"
+      ],
+      "numerator_coefficients_nonnegative": true,
+      "positive_constant_terms": true,
+      "residue": 2,
+      "shifted_denominator": "2*(2*u + 3)*(2*u + 5)*(4*u + 7)*(4*u + 9)",
+      "shifted_numerator": "3*(144*u**4 + 1192*u**3 + 3625*u**2 + 4800*u + 2337)",
+      "shifted_variable": "u=m-2>=0",
+      "theorem_verified": true,
+      "transposition_formula": "t=m"
+    },
+    {
+      "character_polynomial_threshold": 4,
+      "denominator_coefficients_low_to_high": [
+        "210",
+        "344",
+        "184",
+        "32"
+      ],
+      "denominator_coefficients_nonnegative": true,
+      "exact_character_ratio": "(n**2 - 4*n*t - 3*n + 4*t**2 + 8*t)/(n*(n - 3))",
+      "exact_weyl_bound": "-2*(-4*n**4 + 15*n**3*t + 36*n**3 - 18*n**2*t**2 - 117*n**2*t - 104*n**2 + 4*n*t**3 + 102*n*t**2 + 284*n*t + 96*n - 12*t**3 - 132*t**2 - 216*t)/(n*(n - 4)*(n - 3)*(n - 2))",
+      "family": "partial_matching_t_floor_n_over_4",
+      "intermediate_partition": "(n-2,2)",
+      "intermediate_tail": [
+        2
+      ],
+      "lower_bound_constant": "57/70",
+      "lower_bound_exponent": 3,
+      "minimum_m": 2,
+      "minimum_n": 10,
+      "modulus": 4,
+      "n_formula": "n=4*m+2",
+      "numerator_coefficients_low_to_high": [
+        "627",
+        "1008",
+        "519",
+        "84"
+      ],
+      "numerator_coefficients_nonnegative": true,
+      "positive_constant_terms": true,
+      "residue": 2,
+      "shifted_denominator": "2*(2*u + 3)*(2*u + 5)*(4*u + 7)",
+      "shifted_numerator": "3*(28*u**3 + 173*u**2 + 336*u + 209)",
+      "shifted_variable": "u=m-2>=0",
+      "theorem_verified": true,
+      "transposition_formula": "t=m"
+    },
+    {
+      "character_polynomial_threshold": 3,
+      "denominator_coefficients_low_to_high": [
+        "1890",
+        "3936",
+        "3032",
+        "1024",
+        "128"
+      ],
+      "denominator_coefficients_nonnegative": true,
+      "exact_character_ratio": "(n**2 - 4*n*t - 3*n + 4*t**2 + 4*t + 2)/((n - 2)*(n - 1))",
+      "exact_weyl_bound": "-2*(-4*n**5 + 15*n**4*t + 40*n**4 - 18*n**3*t**2 - 126*n**3*t - 140*n**3 + 4*n**2*t**3 + 120*n**2*t**2 + 347*n**2*t + 200*n**2 - 16*n*t**3 - 222*n*t**2 - 356*n*t - 96*n + 12*t**3 + 84*t**2 + 120*t)/(n*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "family": "partial_matching_t_floor_n_over_4",
+      "intermediate_partition": "(n-2,1,1)",
+      "intermediate_tail": [
+        1,
+        1
+      ],
+      "lower_bound_constant": "5121/10010",
+      "lower_bound_exponent": 4,
+      "minimum_m": 2,
+      "minimum_n": 10,
+      "modulus": 4,
+      "n_formula": "n=4*m+2",
+      "numerator_coefficients_low_to_high": [
+        "5121",
+        "10674",
+        "8187",
+        "2736",
+        "336"
+      ],
+      "numerator_coefficients_nonnegative": true,
+      "positive_constant_terms": true,
+      "residue": 2,
+      "shifted_denominator": "2*(2*u + 3)*(2*u + 5)*(4*u + 7)*(4*u + 9)",
+      "shifted_numerator": "3*(112*u**4 + 912*u**3 + 2729*u**2 + 3558*u + 1707)",
+      "shifted_variable": "u=m-2>=0",
+      "theorem_verified": true,
+      "transposition_formula": "t=m"
+    },
+    {
+      "character_polynomial_threshold": 6,
+      "denominator_coefficients_low_to_high": [
+        "9450",
+        "27240",
+        "30904",
+        "17248",
+        "4736",
+        "512"
+      ],
+      "denominator_coefficients_nonnegative": true,
+      "exact_character_ratio": "-(-n + 2*t + 1)*(n**2 - 4*n*t - 5*n + 4*t**2 + 16*t)/(n*(n - 5)*(n - 1))",
+      "exact_weyl_bound": "-2*(-4*n**6 + 18*n**5*t + 60*n**5 - 30*n**4*t**2 - 249*n**4*t - 340*n**4 + 16*n**3*t**3 + 354*n**3*t**2 + 1286*n**3*t + 900*n**3 - 144*n**2*t**3 - 1494*n**2*t**2 - 3051*n**2*t - 1096*n**2 + 404*n*t**3 + 2670*n*t**2 + 3244*n*t + 480*n - 348*t**3 - 1716*t**2 - 1176*t)/(n*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "family": "partial_matching_t_floor_n_over_4",
+      "intermediate_partition": "(n-3,3)",
+      "intermediate_tail": [
+        3
+      ],
+      "lower_bound_constant": "555/2002",
+      "lower_bound_exponent": 5,
+      "minimum_m": 2,
+      "minimum_n": 10,
+      "modulus": 4,
+      "n_formula": "n=4*m+2",
+      "numerator_coefficients_low_to_high": [
+        "24975",
+        "70932",
+        "78723",
+        "42612",
+        "11232",
+        "1152"
+      ],
+      "numerator_coefficients_nonnegative": true,
+      "positive_constant_terms": true,
+      "residue": 2,
+      "shifted_denominator": "2*(2*u + 3)*(2*u + 5)*(4*u + 5)*(4*u + 7)*(4*u + 9)",
+      "shifted_numerator": "3*(384*u**5 + 3744*u**4 + 14204*u**3 + 26241*u**2 + 23644*u + 8325)",
+      "shifted_variable": "u=m-2>=0",
+      "theorem_verified": true,
+      "transposition_formula": "t=m"
+    },
+    {
+      "character_polynomial_threshold": 5,
+      "denominator_coefficients_low_to_high": [
+        "105",
+        "172",
+        "92",
+        "16"
+      ],
+      "denominator_coefficients_nonnegative": true,
+      "exact_character_ratio": "-(-n + 2*t)*(-n + 2*t + 2)*(-n + 2*t + 4)/(n*(n - 4)*(n - 2))",
+      "exact_weyl_bound": "-4*(-n + t + 2)*(2*n**3 - 7*n**2*t - 14*n**2 + 8*n*t**2 + 38*n*t + 24*n - 24*t**2 - 48*t)/(n*(n - 4)*(n - 3)*(n - 2))",
+      "family": "partial_matching_t_floor_n_over_4",
+      "intermediate_partition": "(n-3,2,1)",
+      "intermediate_tail": [
+        2,
+        1
+      ],
+      "lower_bound_constant": "246/385",
+      "lower_bound_exponent": 3,
+      "minimum_m": 2,
+      "minimum_n": 10,
+      "modulus": 4,
+      "n_formula": "n=4*m+2",
+      "numerator_coefficients_low_to_high": [
+        "246",
+        "408",
+        "216",
+        "36"
+      ],
+      "numerator_coefficients_nonnegative": true,
+      "positive_constant_terms": true,
+      "residue": 2,
+      "shifted_denominator": "(2*u + 3)*(2*u + 5)*(4*u + 7)",
+      "shifted_numerator": "6*(6*u**3 + 36*u**2 + 68*u + 41)",
+      "shifted_variable": "u=m-2>=0",
+      "theorem_verified": true,
+      "transposition_formula": "t=m"
+    },
+    {
+      "character_polynomial_threshold": 4,
+      "denominator_coefficients_low_to_high": [
+        "1890",
+        "3936",
+        "3032",
+        "1024",
+        "128"
+      ],
+      "denominator_coefficients_nonnegative": true,
+      "exact_character_ratio": "-(-n + 2*t + 1)*(n**2 - 4*n*t - 5*n + 4*t**2 + 4*t + 6)/((n - 3)*(n - 2)*(n - 1))",
+      "exact_weyl_bound": "-2*(-4*n**5 + 18*n**4*t + 40*n**4 - 30*n**3*t**2 - 141*n**3*t - 140*n**3 + 16*n**2*t**3 + 168*n**2*t**2 + 365*n**2*t + 200*n**2 - 64*n*t**3 - 222*n*t**2 - 380*n*t - 96*n + 12*t**3 + 84*t**2 + 120*t)/(n*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "family": "partial_matching_t_floor_n_over_4",
+      "intermediate_partition": "(n-3,1,1,1)",
+      "intermediate_tail": [
+        1,
+        1,
+        1
+      ],
+      "lower_bound_constant": "27/70",
+      "lower_bound_exponent": 4,
+      "minimum_m": 2,
+      "minimum_n": 10,
+      "modulus": 4,
+      "n_formula": "n=4*m+2",
+      "numerator_coefficients_low_to_high": [
+        "3861",
+        "8430",
+        "6711",
+        "2304",
+        "288"
+      ],
+      "numerator_coefficients_nonnegative": true,
+      "positive_constant_terms": true,
+      "residue": 2,
+      "shifted_denominator": "2*(2*u + 3)*(2*u + 5)*(4*u + 7)*(4*u + 9)",
+      "shifted_numerator": "3*(96*u**4 + 768*u**3 + 2237*u**2 + 2810*u + 1287)",
+      "shifted_variable": "u=m-2>=0",
+      "theorem_verified": true,
+      "transposition_formula": "t=m"
+    },
+    {
+      "character_polynomial_threshold": 8,
+      "denominator_coefficients_low_to_high": [
+        "5670",
+        "19368",
+        "24840",
+        "15200",
+        "4480",
+        "512"
+      ],
+      "denominator_coefficients_nonnegative": true,
+      "exact_character_ratio": "(n**4 - 8*n**3*t - 10*n**3 + 24*n**2*t**2 + 72*n**2*t + 23*n**2 - 32*n*t**3 - 168*n*t**2 - 128*n*t - 14*n + 16*t**4 + 128*t**3 + 176*t**2 + 16*t)/(n*(n - 7)*(n - 2)*(n - 1))",
+      "exact_weyl_bound": "2*(4*n**6 - 21*n**5*t - 68*n**5 + 48*n**4*t**2 + 333*n**4*t + 420*n**4 - 52*n**3*t**3 - 666*n**3*t**2 - 1871*n**3*t - 1180*n**3 + 24*n**2*t**4 + 572*n**2*t**3 + 3156*n**2*t**2 + 4579*n**2*t + 1496*n**2 - 168*n*t**4 - 2044*n*t**3 - 6006*n*t**2 - 4580*n*t - 672*n + 288*t**4 + 2388*t**3 + 3756*t**2 + 1128*t)/(n*(n - 7)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "family": "partial_matching_t_floor_n_over_4",
+      "intermediate_partition": "(n-4,4)",
+      "intermediate_tail": [
+        4
+      ],
+      "lower_bound_constant": "14229/70070",
+      "lower_bound_exponent": 5,
+      "minimum_m": 2,
+      "minimum_n": 10,
+      "modulus": 4,
+      "n_formula": "n=4*m+2",
+      "numerator_coefficients_low_to_high": [
+        "14229",
+        "47448",
+        "59025",
+        "34752",
+        "9768",
+        "1056"
+      ],
+      "numerator_coefficients_nonnegative": true,
+      "positive_constant_terms": true,
+      "residue": 2,
+      "shifted_denominator": "2*(2*u + 3)*(2*u + 5)*(4*u + 3)*(4*u + 7)*(4*u + 9)",
+      "shifted_numerator": "3*(352*u**5 + 3256*u**4 + 11584*u**3 + 19675*u**2 + 15816*u + 4743)",
+      "shifted_variable": "u=m-2>=0",
+      "theorem_verified": true,
+      "transposition_formula": "t=m"
+    },
+    {
+      "character_polynomial_threshold": 7,
+      "denominator_coefficients_low_to_high": [
+        "1890",
+        "3936",
+        "3032",
+        "1024",
+        "128"
+      ],
+      "denominator_coefficients_nonnegative": true,
+      "exact_character_ratio": "(n**4 - 8*n**3*t - 10*n**3 + 24*n**2*t**2 + 64*n**2*t + 27*n**2 - 32*n*t**3 - 136*n*t**2 - 120*n*t - 18*n + 16*t**4 + 96*t**3 + 128*t**2 + 48*t)/(n*(n - 6)*(n - 3)*(n - 1))",
+      "exact_weyl_bound": "2*(4*n**6 - 21*n**5*t - 64*n**5 + 48*n**4*t**2 + 300*n**4*t + 380*n**4 - 52*n**3*t**3 - 570*n**3*t**2 - 1553*n**3*t - 1040*n**3 + 24*n**2*t**4 + 472*n**2*t**3 + 2322*n**2*t**2 + 3602*n**2*t + 1296*n**2 - 144*n*t**4 - 1356*n*t**3 - 3768*n*t**2 - 3696*n*t - 576*n + 192*t**4 + 1224*t**3 + 2040*t**2 + 1296*t)/(n*(n - 6)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "family": "partial_matching_t_floor_n_over_4",
+      "intermediate_partition": "(n-4,3,1)",
+      "intermediate_tail": [
+        3,
+        1
+      ],
+      "lower_bound_constant": "4203/10010",
+      "lower_bound_exponent": 4,
+      "minimum_m": 2,
+      "minimum_n": 10,
+      "modulus": 4,
+      "n_formula": "n=4*m+2",
+      "numerator_coefficients_low_to_high": [
+        "4203",
+        "8748",
+        "6663",
+        "2196",
+        "264"
+      ],
+      "numerator_coefficients_nonnegative": true,
+      "positive_constant_terms": true,
+      "residue": 2,
+      "shifted_denominator": "2*(2*u + 3)*(2*u + 5)*(4*u + 7)*(4*u + 9)",
+      "shifted_numerator": "3*(88*u**4 + 732*u**3 + 2221*u**2 + 2916*u + 1401)",
+      "shifted_variable": "u=m-2>=0",
+      "theorem_verified": true,
+      "transposition_formula": "t=m"
+    },
+    {
+      "character_polynomial_threshold": 6,
+      "denominator_coefficients_low_to_high": [
+        "9450",
+        "27240",
+        "30904",
+        "17248",
+        "4736",
+        "512"
+      ],
+      "denominator_coefficients_nonnegative": true,
+      "exact_character_ratio": "(n**4 - 8*n**3*t - 10*n**3 + 24*n**2*t**2 + 60*n**2*t + 29*n**2 - 32*n*t**3 - 120*n*t**2 - 116*n*t - 20*n + 16*t**4 + 80*t**3 + 128*t**2 + 16*t)/(n*(n - 5)*(n - 4)*(n - 1))",
+      "exact_weyl_bound": "2*(4*n**6 - 21*n**5*t - 60*n**5 + 48*n**4*t**2 + 273*n**4*t + 340*n**4 - 52*n**3*t**3 - 498*n**3*t**2 - 1319*n**3*t - 900*n**3 + 24*n**2*t**4 + 396*n**2*t**3 + 1848*n**2*t**2 + 2883*n**2*t + 1096*n**2 - 120*n*t**4 - 980*n*t**3 - 2874*n*t**2 - 2704*n*t - 480*n + 144*t**4 + 780*t**3 + 1572*t**2 + 744*t)/(n*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "family": "partial_matching_t_floor_n_over_4",
+      "intermediate_partition": "(n-4,2,2)",
+      "intermediate_tail": [
+        2,
+        2
+      ],
+      "lower_bound_constant": "443/2002",
+      "lower_bound_exponent": 5,
+      "minimum_m": 2,
+      "minimum_n": 10,
+      "modulus": 4,
+      "n_formula": "n=4*m+2",
+      "numerator_coefficients_low_to_high": [
+        "19935",
+        "58308",
+        "66519",
+        "36972",
+        "10008",
+        "1056"
+      ],
+      "numerator_coefficients_nonnegative": true,
+      "positive_constant_terms": true,
+      "residue": 2,
+      "shifted_denominator": "2*(2*u + 3)*(2*u + 5)*(4*u + 5)*(4*u + 7)*(4*u + 9)",
+      "shifted_numerator": "3*(352*u**5 + 3336*u**4 + 12324*u**3 + 22173*u**2 + 19436*u + 6645)",
+      "shifted_variable": "u=m-2>=0",
+      "theorem_verified": true,
+      "transposition_formula": "t=m"
+    },
+    {
+      "character_polynomial_threshold": 2,
+      "denominator_coefficients_low_to_high": [
+        "3465",
+        "6166",
+        "4072",
+        "1184",
+        "128"
+      ],
+      "denominator_coefficients_nonnegative": true,
+      "exact_character_ratio": "-(-n + 2*t + 1)/(n - 1)",
+      "exact_weyl_bound": "-2*(-4*n**5 + 12*n**4*t + 40*n**4 - 12*n**3*t**2 - 105*n**3*t - 140*n**3 + 4*n**2*t**3 + 78*n**2*t**2 + 311*n**2*t + 200*n**2 - 16*n*t**3 - 150*n*t**2 - 356*n*t - 96*n + 12*t**3 + 84*t**2 + 120*t)/(n*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "family": "partial_matching_t_floor_n_over_4",
+      "intermediate_partition": "(n-1,1)",
+      "intermediate_tail": [
+        1
+      ],
+      "lower_bound_constant": "667/715",
+      "lower_bound_exponent": 4,
+      "minimum_m": 2,
+      "minimum_n": 11,
+      "modulus": 4,
+      "n_formula": "n=4*m+3",
+      "numerator_coefficients_low_to_high": [
+        "14007",
+        "24066",
+        "15246",
+        "4224",
+        "432"
+      ],
+      "numerator_coefficients_nonnegative": true,
+      "positive_constant_terms": true,
+      "residue": 3,
+      "shifted_denominator": "(2*u + 5)*(4*u + 7)*(4*u + 9)*(4*u + 11)",
+      "shifted_numerator": "3*(144*u**4 + 1408*u**3 + 5082*u**2 + 8022*u + 4669)",
+      "shifted_variable": "u=m-2>=0",
+      "theorem_verified": true,
+      "transposition_formula": "t=m"
+    },
+    {
+      "character_polynomial_threshold": 4,
+      "denominator_coefficients_low_to_high": [
+        "693",
+        "956",
+        "432",
+        "64"
+      ],
+      "denominator_coefficients_nonnegative": true,
+      "exact_character_ratio": "(n**2 - 4*n*t - 3*n + 4*t**2 + 8*t)/(n*(n - 3))",
+      "exact_weyl_bound": "-2*(-4*n**4 + 15*n**3*t + 36*n**3 - 18*n**2*t**2 - 117*n**2*t - 104*n**2 + 4*n*t**3 + 102*n*t**2 + 284*n*t + 96*n - 12*t**3 - 132*t**2 - 216*t)/(n*(n - 4)*(n - 3)*(n - 2))",
+      "family": "partial_matching_t_floor_n_over_4",
+      "intermediate_partition": "(n-2,2)",
+      "intermediate_tail": [
+        2
+      ],
+      "lower_bound_constant": "14/13",
+      "lower_bound_exponent": 3,
+      "minimum_m": 2,
+      "minimum_n": 11,
+      "modulus": 4,
+      "n_formula": "n=4*m+3",
+      "numerator_coefficients_low_to_high": [
+        "2310",
+        "3012",
+        "1260",
+        "168"
+      ],
+      "numerator_coefficients_nonnegative": true,
+      "positive_constant_terms": true,
+      "residue": 3,
+      "shifted_denominator": "(4*u + 7)*(4*u + 9)*(4*u + 11)",
+      "shifted_numerator": "6*(2*u + 7)*(14*u**2 + 56*u + 55)",
+      "shifted_variable": "u=m-2>=0",
+      "theorem_verified": true,
+      "transposition_formula": "t=m"
+    },
+    {
+      "character_polynomial_threshold": 3,
+      "denominator_coefficients_low_to_high": [
+        "3465",
+        "6166",
+        "4072",
+        "1184",
+        "128"
+      ],
+      "denominator_coefficients_nonnegative": true,
+      "exact_character_ratio": "(n**2 - 4*n*t - 3*n + 4*t**2 + 4*t + 2)/((n - 2)*(n - 1))",
+      "exact_weyl_bound": "-2*(-4*n**5 + 15*n**4*t + 40*n**4 - 18*n**3*t**2 - 126*n**3*t - 140*n**3 + 4*n**2*t**3 + 120*n**2*t**2 + 347*n**2*t + 200*n**2 - 16*n*t**3 - 222*n*t**2 - 356*n*t - 96*n + 12*t**3 + 84*t**2 + 120*t)/(n*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "family": "partial_matching_t_floor_n_over_4",
+      "intermediate_partition": "(n-2,1,1)",
+      "intermediate_tail": [
+        1,
+        1
+      ],
+      "lower_bound_constant": "513/715",
+      "lower_bound_exponent": 4,
+      "minimum_m": 2,
+      "minimum_n": 11,
+      "modulus": 4,
+      "n_formula": "n=4*m+3",
+      "numerator_coefficients_low_to_high": [
+        "10773",
+        "18501",
+        "11736",
+        "3264",
+        "336"
+      ],
+      "numerator_coefficients_nonnegative": true,
+      "positive_constant_terms": true,
+      "residue": 3,
+      "shifted_denominator": "(2*u + 5)*(4*u + 7)*(4*u + 9)*(4*u + 11)",
+      "shifted_numerator": "3*(112*u**4 + 1088*u**3 + 3912*u**2 + 6167*u + 3591)",
+      "shifted_variable": "u=m-2>=0",
+      "theorem_verified": true,
+      "transposition_formula": "t=m"
+    },
+    {
+      "character_polynomial_threshold": 6,
+      "denominator_coefficients_low_to_high": [
+        "10395",
+        "25428",
+        "24548",
+        "11696",
+        "2752",
+        "256"
+      ],
+      "denominator_coefficients_nonnegative": true,
+      "exact_character_ratio": "-(-n + 2*t + 1)*(n**2 - 4*n*t - 5*n + 4*t**2 + 16*t)/(n*(n - 5)*(n - 1))",
+      "exact_weyl_bound": "-2*(-4*n**6 + 18*n**5*t + 60*n**5 - 30*n**4*t**2 - 249*n**4*t - 340*n**4 + 16*n**3*t**3 + 354*n**3*t**2 + 1286*n**3*t + 900*n**3 - 144*n**2*t**3 - 1494*n**2*t**2 - 3051*n**2*t - 1096*n**2 + 404*n*t**3 + 2670*n*t**2 + 3244*n*t + 480*n - 348*t**3 - 1716*t**2 - 1176*t)/(n*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "family": "partial_matching_t_floor_n_over_4",
+      "intermediate_partition": "(n-3,3)",
+      "intermediate_tail": [
+        3
+      ],
+      "lower_bound_constant": "1461/3575",
+      "lower_bound_exponent": 5,
+      "minimum_m": 2,
+      "minimum_n": 11,
+      "modulus": 4,
+      "n_formula": "n=4*m+3",
+      "numerator_coefficients_low_to_high": [
+        "30681",
+        "72438",
+        "66918",
+        "30222",
+        "6672",
+        "576"
+      ],
+      "numerator_coefficients_nonnegative": true,
+      "positive_constant_terms": true,
+      "residue": 3,
+      "shifted_denominator": "(2*u + 3)*(2*u + 5)*(4*u + 7)*(4*u + 9)*(4*u + 11)",
+      "shifted_numerator": "3*(192*u**5 + 2224*u**4 + 10074*u**3 + 22306*u**2 + 24146*u + 10227)",
+      "shifted_variable": "u=m-2>=0",
+      "theorem_verified": true,
+      "transposition_formula": "t=m"
+    },
+    {
+      "character_polynomial_threshold": 5,
+      "denominator_coefficients_low_to_high": [
+        "693",
+        "956",
+        "432",
+        "64"
+      ],
+      "denominator_coefficients_nonnegative": true,
+      "exact_character_ratio": "-(-n + 2*t)*(-n + 2*t + 2)*(-n + 2*t + 4)/(n*(n - 4)*(n - 2))",
+      "exact_weyl_bound": "-4*(-n + t + 2)*(2*n**3 - 7*n**2*t - 14*n**2 + 8*n*t**2 + 38*n*t + 24*n - 24*t**2 - 48*t)/(n*(n - 4)*(n - 3)*(n - 2))",
+      "family": "partial_matching_t_floor_n_over_4",
+      "intermediate_partition": "(n-3,2,1)",
+      "intermediate_tail": [
+        2,
+        1
+      ],
+      "lower_bound_constant": "623/715",
+      "lower_bound_exponent": 3,
+      "minimum_m": 2,
+      "minimum_n": 11,
+      "modulus": 4,
+      "n_formula": "n=4*m+3",
+      "numerator_coefficients_low_to_high": [
+        "1869",
+        "2481",
+        "1056",
+        "144"
+      ],
+      "numerator_coefficients_nonnegative": true,
+      "positive_constant_terms": true,
+      "residue": 3,
+      "shifted_denominator": "(4*u + 7)*(4*u + 9)*(4*u + 11)",
+      "shifted_numerator": "3*(3*u + 7)*(16*u**2 + 80*u + 89)",
+      "shifted_variable": "u=m-2>=0",
+      "theorem_verified": true,
+      "transposition_formula": "t=m"
+    },
+    {
+      "character_polynomial_threshold": 4,
+      "denominator_coefficients_low_to_high": [
+        "3465",
+        "6166",
+        "4072",
+        "1184",
+        "128"
+      ],
+      "denominator_coefficients_nonnegative": true,
+      "exact_character_ratio": "-(-n + 2*t + 1)*(n**2 - 4*n*t - 5*n + 4*t**2 + 4*t + 6)/((n - 3)*(n - 2)*(n - 1))",
+      "exact_weyl_bound": "-2*(-4*n**5 + 18*n**4*t + 40*n**4 - 30*n**3*t**2 - 141*n**3*t - 140*n**3 + 16*n**2*t**3 + 168*n**2*t**2 + 365*n**2*t + 200*n**2 - 64*n*t**3 - 222*n*t**2 - 380*n*t - 96*n + 12*t**3 + 84*t**2 + 120*t)/(n*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "family": "partial_matching_t_floor_n_over_4",
+      "intermediate_partition": "(n-3,1,1,1)",
+      "intermediate_tail": [
+        1,
+        1,
+        1
+      ],
+      "lower_bound_constant": "31/55",
+      "lower_bound_exponent": 4,
+      "minimum_m": 2,
+      "minimum_n": 11,
+      "modulus": 4,
+      "n_formula": "n=4*m+3",
+      "numerator_coefficients_low_to_high": [
+        "8463",
+        "14955",
+        "9729",
+        "2760",
+        "288"
+      ],
+      "numerator_coefficients_nonnegative": true,
+      "positive_constant_terms": true,
+      "residue": 3,
+      "shifted_denominator": "(2*u + 5)*(4*u + 7)*(4*u + 9)*(4*u + 11)",
+      "shifted_numerator": "3*(96*u**4 + 920*u**3 + 3243*u**2 + 4985*u + 2821)",
+      "shifted_variable": "u=m-2>=0",
+      "theorem_verified": true,
+      "transposition_formula": "t=m"
+    },
+    {
+      "character_polynomial_threshold": 8,
+      "denominator_coefficients_low_to_high": [
+        "3465",
+        "6166",
+        "4072",
+        "1184",
+        "128"
+      ],
+      "denominator_coefficients_nonnegative": true,
+      "exact_character_ratio": "(n**4 - 8*n**3*t - 10*n**3 + 24*n**2*t**2 + 72*n**2*t + 23*n**2 - 32*n*t**3 - 168*n*t**2 - 128*n*t - 14*n + 16*t**4 + 128*t**3 + 176*t**2 + 16*t)/(n*(n - 7)*(n - 2)*(n - 1))",
+      "exact_weyl_bound": "2*(4*n**6 - 21*n**5*t - 68*n**5 + 48*n**4*t**2 + 333*n**4*t + 420*n**4 - 52*n**3*t**3 - 666*n**3*t**2 - 1871*n**3*t - 1180*n**3 + 24*n**2*t**4 + 572*n**2*t**3 + 3156*n**2*t**2 + 4579*n**2*t + 1496*n**2 - 168*n*t**4 - 2044*n*t**3 - 6006*n*t**2 - 4580*n*t - 672*n + 288*t**4 + 2388*t**3 + 3756*t**2 + 1128*t)/(n*(n - 7)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "family": "partial_matching_t_floor_n_over_4",
+      "intermediate_partition": "(n-4,4)",
+      "intermediate_tail": [
+        4
+      ],
+      "lower_bound_constant": "457/715",
+      "lower_bound_exponent": 4,
+      "minimum_m": 2,
+      "minimum_n": 11,
+      "modulus": 4,
+      "n_formula": "n=4*m+3",
+      "numerator_coefficients_low_to_high": [
+        "9597",
+        "16065",
+        "9888",
+        "2658",
+        "264"
+      ],
+      "numerator_coefficients_nonnegative": true,
+      "positive_constant_terms": true,
+      "residue": 3,
+      "shifted_denominator": "(2*u + 5)*(4*u + 7)*(4*u + 9)*(4*u + 11)",
+      "shifted_numerator": "3*(88*u**4 + 886*u**3 + 3296*u**2 + 5355*u + 3199)",
+      "shifted_variable": "u=m-2>=0",
+      "theorem_verified": true,
+      "transposition_formula": "t=m"
+    },
+    {
+      "character_polynomial_threshold": 7,
+      "denominator_coefficients_low_to_high": [
+        "17325",
+        "44690",
+        "45024",
+        "22208",
+        "5376",
+        "512"
+      ],
+      "denominator_coefficients_nonnegative": true,
+      "exact_character_ratio": "(n**4 - 8*n**3*t - 10*n**3 + 24*n**2*t**2 + 64*n**2*t + 27*n**2 - 32*n*t**3 - 136*n*t**2 - 120*n*t - 18*n + 16*t**4 + 96*t**3 + 128*t**2 + 48*t)/(n*(n - 6)*(n - 3)*(n - 1))",
+      "exact_weyl_bound": "2*(4*n**6 - 21*n**5*t - 64*n**5 + 48*n**4*t**2 + 300*n**4*t + 380*n**4 - 52*n**3*t**3 - 570*n**3*t**2 - 1553*n**3*t - 1040*n**3 + 24*n**2*t**4 + 472*n**2*t**3 + 2322*n**2*t**2 + 3602*n**2*t + 1296*n**2 - 144*n*t**4 - 1356*n*t**3 - 3768*n*t**2 - 3696*n*t - 576*n + 192*t**4 + 1224*t**3 + 2040*t**2 + 1296*t)/(n*(n - 6)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "family": "partial_matching_t_floor_n_over_4",
+      "intermediate_partition": "(n-4,3,1)",
+      "intermediate_tail": [
+        3,
+        1
+      ],
+      "lower_bound_constant": "415/1287",
+      "lower_bound_exponent": 5,
+      "minimum_m": 2,
+      "minimum_n": 11,
+      "modulus": 4,
+      "n_formula": "n=4*m+3",
+      "numerator_coefficients_low_to_high": [
+        "43575",
+        "109977",
+        "107502",
+        "50994",
+        "11760",
+        "1056"
+      ],
+      "numerator_coefficients_nonnegative": true,
+      "positive_constant_terms": true,
+      "residue": 3,
+      "shifted_denominator": "(2*u + 5)*(4*u + 5)*(4*u + 7)*(4*u + 9)*(4*u + 11)",
+      "shifted_numerator": "3*(352*u**5 + 3920*u**4 + 16998*u**3 + 35834*u**2 + 36659*u + 14525)",
+      "shifted_variable": "u=m-2>=0",
+      "theorem_verified": true,
+      "transposition_formula": "t=m"
+    },
+    {
+      "character_polynomial_threshold": 6,
+      "denominator_coefficients_low_to_high": [
+        "10395",
+        "25428",
+        "24548",
+        "11696",
+        "2752",
+        "256"
+      ],
+      "denominator_coefficients_nonnegative": true,
+      "exact_character_ratio": "(n**4 - 8*n**3*t - 10*n**3 + 24*n**2*t**2 + 60*n**2*t + 29*n**2 - 32*n*t**3 - 120*n*t**2 - 116*n*t - 20*n + 16*t**4 + 80*t**3 + 128*t**2 + 16*t)/(n*(n - 5)*(n - 4)*(n - 1))",
+      "exact_weyl_bound": "2*(4*n**6 - 21*n**5*t - 60*n**5 + 48*n**4*t**2 + 273*n**4*t + 340*n**4 - 52*n**3*t**3 - 498*n**3*t**2 - 1319*n**3*t - 900*n**3 + 24*n**2*t**4 + 396*n**2*t**3 + 1848*n**2*t**2 + 2883*n**2*t + 1096*n**2 - 120*n*t**4 - 980*n*t**3 - 2874*n*t**2 - 2704*n*t - 480*n + 144*t**4 + 780*t**3 + 1572*t**2 + 744*t)/(n*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "family": "partial_matching_t_floor_n_over_4",
+      "intermediate_partition": "(n-4,2,2)",
+      "intermediate_tail": [
+        2,
+        2
+      ],
+      "lower_bound_constant": "1191/3575",
+      "lower_bound_exponent": 5,
+      "minimum_m": 2,
+      "minimum_n": 11,
+      "modulus": 4,
+      "n_formula": "n=4*m+3",
+      "numerator_coefficients_low_to_high": [
+        "25011",
+        "60495",
+        "57168",
+        "26400",
+        "5964",
+        "528"
+      ],
+      "numerator_coefficients_nonnegative": true,
+      "positive_constant_terms": true,
+      "residue": 3,
+      "shifted_denominator": "(2*u + 3)*(2*u + 5)*(4*u + 7)*(4*u + 9)*(4*u + 11)",
+      "shifted_numerator": "3*(176*u**5 + 1988*u**4 + 8800*u**3 + 19056*u**2 + 20165*u + 8337)",
+      "shifted_variable": "u=m-2>=0",
+      "theorem_verified": true,
+      "transposition_formula": "t=m"
+    },
+    {
+      "character_polynomial_threshold": 2,
+      "denominator_coefficients_low_to_high": [
+        "35",
+        "24",
+        "4"
+      ],
+      "denominator_coefficients_nonnegative": true,
+      "exact_character_ratio": "-(-n + 2*t + 1)/(n - 1)",
+      "exact_weyl_bound": "-2*(-4*n**5 + 12*n**4*t + 40*n**4 - 12*n**3*t**2 - 105*n**3*t - 140*n**3 + 4*n**2*t**3 + 78*n**2*t**2 + 311*n**2*t + 200*n**2 - 16*n*t**3 - 150*n*t**2 - 356*n*t - 96*n + 12*t**3 + 84*t**2 + 120*t)/(n*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "family": "dense_matching_t_floor_n_over_2",
+      "intermediate_partition": "(n-1,1)",
+      "intermediate_tail": [
+        1
+      ],
+      "lower_bound_constant": "41/63",
+      "lower_bound_exponent": 2,
+      "minimum_m": 4,
+      "minimum_n": 8,
+      "modulus": 2,
+      "n_formula": "n=2*m+0",
+      "numerator_coefficients_low_to_high": [
+        "41",
+        "24",
+        "4"
+      ],
+      "numerator_coefficients_nonnegative": true,
+      "positive_constant_terms": true,
+      "residue": 0,
+      "shifted_denominator": "(2*u + 5)*(2*u + 7)",
+      "shifted_numerator": "4*u**2 + 24*u + 41",
+      "shifted_variable": "u=m-4>=0",
+      "theorem_verified": true,
+      "transposition_formula": "t=m"
+    },
+    {
+      "character_polynomial_threshold": 4,
+      "denominator_coefficients_low_to_high": [
+        "5",
+        "2"
+      ],
+      "denominator_coefficients_nonnegative": true,
+      "exact_character_ratio": "(n**2 - 4*n*t - 3*n + 4*t**2 + 8*t)/(n*(n - 3))",
+      "exact_weyl_bound": "-2*(-4*n**4 + 15*n**3*t + 36*n**3 - 18*n**2*t**2 - 117*n**2*t - 104*n**2 + 4*n*t**3 + 102*n*t**2 + 284*n*t + 96*n - 12*t**3 - 132*t**2 - 216*t)/(n*(n - 4)*(n - 3)*(n - 2))",
+      "family": "dense_matching_t_floor_n_over_2",
+      "intermediate_partition": "(n-2,2)",
+      "intermediate_tail": [
+        2
+      ],
+      "lower_bound_constant": "11/7",
+      "lower_bound_exponent": 1,
+      "minimum_m": 4,
+      "minimum_n": 8,
+      "modulus": 2,
+      "n_formula": "n=2*m+0",
+      "numerator_coefficients_low_to_high": [
+        "11",
+        "2"
+      ],
+      "numerator_coefficients_nonnegative": true,
+      "positive_constant_terms": true,
+      "residue": 0,
+      "shifted_denominator": "2*u + 5",
+      "shifted_numerator": "2*u + 11",
+      "shifted_variable": "u=m-4>=0",
+      "theorem_verified": true,
+      "transposition_formula": "t=m"
+    },
+    {
+      "character_polynomial_threshold": 3,
+      "denominator_coefficients_low_to_high": [
+        "35",
+        "24",
+        "4"
+      ],
+      "denominator_coefficients_nonnegative": true,
+      "exact_character_ratio": "(n**2 - 4*n*t - 3*n + 4*t**2 + 4*t + 2)/((n - 2)*(n - 1))",
+      "exact_weyl_bound": "-2*(-4*n**5 + 15*n**4*t + 40*n**4 - 18*n**3*t**2 - 126*n**3*t - 140*n**3 + 4*n**2*t**3 + 120*n**2*t**2 + 347*n**2*t + 200*n**2 - 16*n*t**3 - 222*n*t**2 - 356*n*t - 96*n + 12*t**3 + 84*t**2 + 120*t)/(n*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "family": "dense_matching_t_floor_n_over_2",
+      "intermediate_partition": "(n-2,1,1)",
+      "intermediate_tail": [
+        1,
+        1
+      ],
+      "lower_bound_constant": "41/63",
+      "lower_bound_exponent": 2,
+      "minimum_m": 4,
+      "minimum_n": 8,
+      "modulus": 2,
+      "n_formula": "n=2*m+0",
+      "numerator_coefficients_low_to_high": [
+        "41",
+        "24",
+        "4"
+      ],
+      "numerator_coefficients_nonnegative": true,
+      "positive_constant_terms": true,
+      "residue": 0,
+      "shifted_denominator": "(2*u + 5)*(2*u + 7)",
+      "shifted_numerator": "4*u**2 + 24*u + 41",
+      "shifted_variable": "u=m-4>=0",
+      "theorem_verified": true,
+      "transposition_formula": "t=m"
+    },
+    {
+      "character_polynomial_threshold": 6,
+      "denominator_coefficients_low_to_high": [
+        "105",
+        "142",
+        "60",
+        "8"
+      ],
+      "denominator_coefficients_nonnegative": true,
+      "exact_character_ratio": "-(-n + 2*t + 1)*(n**2 - 4*n*t - 5*n + 4*t**2 + 16*t)/(n*(n - 5)*(n - 1))",
+      "exact_weyl_bound": "-2*(-4*n**6 + 18*n**5*t + 60*n**5 - 30*n**4*t**2 - 249*n**4*t - 340*n**4 + 16*n**3*t**3 + 354*n**3*t**2 + 1286*n**3*t + 900*n**3 - 144*n**2*t**3 - 1494*n**2*t**2 - 3051*n**2*t - 1096*n**2 + 404*n*t**3 + 2670*n*t**2 + 3244*n*t + 480*n - 348*t**3 - 1716*t**2 - 1176*t)/(n*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "family": "dense_matching_t_floor_n_over_2",
+      "intermediate_partition": "(n-3,3)",
+      "intermediate_tail": [
+        3
+      ],
+      "lower_bound_constant": "41/105",
+      "lower_bound_exponent": 3,
+      "minimum_m": 4,
+      "minimum_n": 8,
+      "modulus": 2,
+      "n_formula": "n=2*m+0",
+      "numerator_coefficients_low_to_high": [
+        "123",
+        "184",
+        "72",
+        "8"
+      ],
+      "numerator_coefficients_nonnegative": true,
+      "positive_constant_terms": true,
+      "residue": 0,
+      "shifted_denominator": "(2*u + 3)*(2*u + 5)*(2*u + 7)",
+      "shifted_numerator": "8*u**3 + 72*u**2 + 184*u + 123",
+      "shifted_variable": "u=m-4>=0",
+      "theorem_verified": true,
+      "transposition_formula": "t=m"
+    },
+    {
+      "character_polynomial_threshold": 5,
+      "denominator_coefficients_low_to_high": [
+        "5",
+        "2"
+      ],
+      "denominator_coefficients_nonnegative": true,
+      "exact_character_ratio": "-(-n + 2*t)*(-n + 2*t + 2)*(-n + 2*t + 4)/(n*(n - 4)*(n - 2))",
+      "exact_weyl_bound": "-4*(-n + t + 2)*(2*n**3 - 7*n**2*t - 14*n**2 + 8*n*t**2 + 38*n*t + 24*n - 24*t**2 - 48*t)/(n*(n - 4)*(n - 3)*(n - 2))",
+      "family": "dense_matching_t_floor_n_over_2",
+      "intermediate_partition": "(n-3,2,1)",
+      "intermediate_tail": [
+        2,
+        1
+      ],
+      "lower_bound_constant": "8/7",
+      "lower_bound_exponent": 1,
+      "minimum_m": 4,
+      "minimum_n": 8,
+      "modulus": 2,
+      "n_formula": "n=2*m+0",
+      "numerator_coefficients_low_to_high": [
+        "8",
+        "2"
+      ],
+      "numerator_coefficients_nonnegative": true,
+      "positive_constant_terms": true,
+      "residue": 0,
+      "shifted_denominator": "2*u + 5",
+      "shifted_numerator": "2*(u + 4)",
+      "shifted_variable": "u=m-4>=0",
+      "theorem_verified": true,
+      "transposition_formula": "t=m"
+    },
+    {
+      "character_polynomial_threshold": 4,
+      "denominator_coefficients_low_to_high": [
+        "35",
+        "24",
+        "4"
+      ],
+      "denominator_coefficients_nonnegative": true,
+      "exact_character_ratio": "-(-n + 2*t + 1)*(n**2 - 4*n*t - 5*n + 4*t**2 + 4*t + 6)/((n - 3)*(n - 2)*(n - 1))",
+      "exact_weyl_bound": "-2*(-4*n**5 + 18*n**4*t + 40*n**4 - 30*n**3*t**2 - 141*n**3*t - 140*n**3 + 16*n**2*t**3 + 168*n**2*t**2 + 365*n**2*t + 200*n**2 - 64*n*t**3 - 222*n*t**2 - 380*n*t - 96*n + 12*t**3 + 84*t**2 + 120*t)/(n*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "family": "dense_matching_t_floor_n_over_2",
+      "intermediate_partition": "(n-3,1,1,1)",
+      "intermediate_tail": [
+        1,
+        1,
+        1
+      ],
+      "lower_bound_constant": "65/63",
+      "lower_bound_exponent": 2,
+      "minimum_m": 4,
+      "minimum_n": 8,
+      "modulus": 2,
+      "n_formula": "n=2*m+0",
+      "numerator_coefficients_low_to_high": [
+        "65",
+        "30",
+        "4"
+      ],
+      "numerator_coefficients_nonnegative": true,
+      "positive_constant_terms": true,
+      "residue": 0,
+      "shifted_denominator": "(2*u + 5)*(2*u + 7)",
+      "shifted_numerator": "4*u**2 + 30*u + 65",
+      "shifted_variable": "u=m-4>=0",
+      "theorem_verified": true,
+      "transposition_formula": "t=m"
+    },
+    {
+      "character_polynomial_threshold": 8,
+      "denominator_coefficients_low_to_high": [
+        "35",
+        "94",
+        "52",
+        "8"
+      ],
+      "denominator_coefficients_nonnegative": true,
+      "exact_character_ratio": "(n**4 - 8*n**3*t - 10*n**3 + 24*n**2*t**2 + 72*n**2*t + 23*n**2 - 32*n*t**3 - 168*n*t**2 - 128*n*t - 14*n + 16*t**4 + 128*t**3 + 176*t**2 + 16*t)/(n*(n - 7)*(n - 2)*(n - 1))",
+      "exact_weyl_bound": "2*(4*n**6 - 21*n**5*t - 68*n**5 + 48*n**4*t**2 + 333*n**4*t + 420*n**4 - 52*n**3*t**3 - 666*n**3*t**2 - 1871*n**3*t - 1180*n**3 + 24*n**2*t**4 + 572*n**2*t**3 + 3156*n**2*t**2 + 4579*n**2*t + 1496*n**2 - 168*n*t**4 - 2044*n*t**3 - 6006*n*t**2 - 4580*n*t - 672*n + 288*t**4 + 2388*t**3 + 3756*t**2 + 1128*t)/(n*(n - 7)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "family": "dense_matching_t_floor_n_over_2",
+      "intermediate_partition": "(n-4,4)",
+      "intermediate_tail": [
+        4
+      ],
+      "lower_bound_constant": "101/189",
+      "lower_bound_exponent": 3,
+      "minimum_m": 4,
+      "minimum_n": 8,
+      "modulus": 2,
+      "n_formula": "n=2*m+0",
+      "numerator_coefficients_low_to_high": [
+        "101",
+        "160",
+        "64",
+        "8"
+      ],
+      "numerator_coefficients_nonnegative": true,
+      "positive_constant_terms": true,
+      "residue": 0,
+      "shifted_denominator": "(2*u + 1)*(2*u + 5)*(2*u + 7)",
+      "shifted_numerator": "8*u**3 + 64*u**2 + 160*u + 101",
+      "shifted_variable": "u=m-4>=0",
+      "theorem_verified": true,
+      "transposition_formula": "t=m"
+    },
+    {
+      "character_polynomial_threshold": 7,
+      "denominator_coefficients_low_to_high": [
+        "35",
+        "24",
+        "4"
+      ],
+      "denominator_coefficients_nonnegative": true,
+      "exact_character_ratio": "(n**4 - 8*n**3*t - 10*n**3 + 24*n**2*t**2 + 64*n**2*t + 27*n**2 - 32*n*t**3 - 136*n*t**2 - 120*n*t - 18*n + 16*t**4 + 96*t**3 + 128*t**2 + 48*t)/(n*(n - 6)*(n - 3)*(n - 1))",
+      "exact_weyl_bound": "2*(4*n**6 - 21*n**5*t - 64*n**5 + 48*n**4*t**2 + 300*n**4*t + 380*n**4 - 52*n**3*t**3 - 570*n**3*t**2 - 1553*n**3*t - 1040*n**3 + 24*n**2*t**4 + 472*n**2*t**3 + 2322*n**2*t**2 + 3602*n**2*t + 1296*n**2 - 144*n*t**4 - 1356*n*t**3 - 3768*n*t**2 - 3696*n*t - 576*n + 192*t**4 + 1224*t**3 + 2040*t**2 + 1296*t)/(n*(n - 6)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "family": "dense_matching_t_floor_n_over_2",
+      "intermediate_partition": "(n-4,3,1)",
+      "intermediate_tail": [
+        3,
+        1
+      ],
+      "lower_bound_constant": "53/63",
+      "lower_bound_exponent": 2,
+      "minimum_m": 4,
+      "minimum_n": 8,
+      "modulus": 2,
+      "n_formula": "n=2*m+0",
+      "numerator_coefficients_low_to_high": [
+        "53",
+        "30",
+        "4"
+      ],
+      "numerator_coefficients_nonnegative": true,
+      "positive_constant_terms": true,
+      "residue": 0,
+      "shifted_denominator": "(2*u + 5)*(2*u + 7)",
+      "shifted_numerator": "4*u**2 + 30*u + 53",
+      "shifted_variable": "u=m-4>=0",
+      "theorem_verified": true,
+      "transposition_formula": "t=m"
+    },
+    {
+      "character_polynomial_threshold": 6,
+      "denominator_coefficients_low_to_high": [
+        "105",
+        "142",
+        "60",
+        "8"
+      ],
+      "denominator_coefficients_nonnegative": true,
+      "exact_character_ratio": "(n**4 - 8*n**3*t - 10*n**3 + 24*n**2*t**2 + 60*n**2*t + 29*n**2 - 32*n*t**3 - 120*n*t**2 - 116*n*t - 20*n + 16*t**4 + 80*t**3 + 128*t**2 + 16*t)/(n*(n - 5)*(n - 4)*(n - 1))",
+      "exact_weyl_bound": "2*(4*n**6 - 21*n**5*t - 60*n**5 + 48*n**4*t**2 + 273*n**4*t + 340*n**4 - 52*n**3*t**3 - 498*n**3*t**2 - 1319*n**3*t - 900*n**3 + 24*n**2*t**4 + 396*n**2*t**3 + 1848*n**2*t**2 + 2883*n**2*t + 1096*n**2 - 120*n*t**4 - 980*n*t**3 - 2874*n*t**2 - 2704*n*t - 480*n + 144*t**4 + 780*t**3 + 1572*t**2 + 744*t)/(n*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "family": "dense_matching_t_floor_n_over_2",
+      "intermediate_partition": "(n-4,2,2)",
+      "intermediate_tail": [
+        2,
+        2
+      ],
+      "lower_bound_constant": "71/105",
+      "lower_bound_exponent": 3,
+      "minimum_m": 4,
+      "minimum_n": 8,
+      "modulus": 2,
+      "n_formula": "n=2*m+0",
+      "numerator_coefficients_low_to_high": [
+        "213",
+        "220",
+        "72",
+        "8"
+      ],
+      "numerator_coefficients_nonnegative": true,
+      "positive_constant_terms": true,
+      "residue": 0,
+      "shifted_denominator": "(2*u + 3)*(2*u + 5)*(2*u + 7)",
+      "shifted_numerator": "8*u**3 + 72*u**2 + 220*u + 213",
+      "shifted_variable": "u=m-4>=0",
+      "theorem_verified": true,
+      "transposition_formula": "t=m"
+    },
+    {
+      "character_polynomial_threshold": 2,
+      "denominator_coefficients_low_to_high": [
+        "315",
+        "286",
+        "84",
+        "8"
+      ],
+      "denominator_coefficients_nonnegative": true,
+      "exact_character_ratio": "-(-n + 2*t + 1)/(n - 1)",
+      "exact_weyl_bound": "-2*(-4*n**5 + 12*n**4*t + 40*n**4 - 12*n**3*t**2 - 105*n**3*t - 140*n**3 + 4*n**2*t**3 + 78*n**2*t**2 + 311*n**2*t + 200*n**2 - 16*n*t**3 - 150*n*t**2 - 356*n*t - 96*n + 12*t**3 + 84*t**2 + 120*t)/(n*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "family": "dense_matching_t_floor_n_over_2",
+      "intermediate_partition": "(n-1,1)",
+      "intermediate_tail": [
+        1
+      ],
+      "lower_bound_constant": "47/77",
+      "lower_bound_exponent": 3,
+      "minimum_m": 4,
+      "minimum_n": 9,
+      "modulus": 2,
+      "n_formula": "n=2*m+1",
+      "numerator_coefficients_low_to_high": [
+        "423",
+        "358",
+        "96",
+        "8"
+      ],
+      "numerator_coefficients_nonnegative": true,
+      "positive_constant_terms": true,
+      "residue": 1,
+      "shifted_denominator": "(2*u + 5)*(2*u + 7)*(2*u + 9)",
+      "shifted_numerator": "8*u**3 + 96*u**2 + 358*u + 423",
+      "shifted_variable": "u=m-4>=0",
+      "theorem_verified": true,
+      "transposition_formula": "t=m"
+    },
+    {
+      "character_polynomial_threshold": 4,
+      "denominator_coefficients_low_to_high": [
+        "315",
+        "286",
+        "84",
+        "8"
+      ],
+      "denominator_coefficients_nonnegative": true,
+      "exact_character_ratio": "(n**2 - 4*n*t - 3*n + 4*t**2 + 8*t)/(n*(n - 3))",
+      "exact_weyl_bound": "-2*(-4*n**4 + 15*n**3*t + 36*n**3 - 18*n**2*t**2 - 117*n**2*t - 104*n**2 + 4*n*t**3 + 102*n*t**2 + 284*n*t + 96*n - 12*t**3 - 132*t**2 - 216*t)/(n*(n - 4)*(n - 3)*(n - 2))",
+      "family": "dense_matching_t_floor_n_over_2",
+      "intermediate_partition": "(n-2,2)",
+      "intermediate_tail": [
+        2
+      ],
+      "lower_bound_constant": "16/21",
+      "lower_bound_exponent": 3,
+      "minimum_m": 4,
+      "minimum_n": 9,
+      "modulus": 2,
+      "n_formula": "n=2*m+1",
+      "numerator_coefficients_low_to_high": [
+        "528",
+        "430",
+        "108",
+        "8"
+      ],
+      "numerator_coefficients_nonnegative": true,
+      "positive_constant_terms": true,
+      "residue": 1,
+      "shifted_denominator": "(2*u + 5)*(2*u + 7)*(2*u + 9)",
+      "shifted_numerator": "2*(4*u**3 + 54*u**2 + 215*u + 264)",
+      "shifted_variable": "u=m-4>=0",
+      "theorem_verified": true,
+      "transposition_formula": "t=m"
+    },
+    {
+      "character_polynomial_threshold": 3,
+      "denominator_coefficients_low_to_high": [
+        "315",
+        "286",
+        "84",
+        "8"
+      ],
+      "denominator_coefficients_nonnegative": true,
+      "exact_character_ratio": "(n**2 - 4*n*t - 3*n + 4*t**2 + 4*t + 2)/((n - 2)*(n - 1))",
+      "exact_weyl_bound": "-2*(-4*n**5 + 15*n**4*t + 40*n**4 - 18*n**3*t**2 - 126*n**3*t - 140*n**3 + 4*n**2*t**3 + 120*n**2*t**2 + 347*n**2*t + 200*n**2 - 16*n*t**3 - 222*n*t**2 - 356*n*t - 96*n + 12*t**3 + 84*t**2 + 120*t)/(n*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "family": "dense_matching_t_floor_n_over_2",
+      "intermediate_partition": "(n-2,1,1)",
+      "intermediate_tail": [
+        1,
+        1
+      ],
+      "lower_bound_constant": "32/77",
+      "lower_bound_exponent": 3,
+      "minimum_m": 4,
+      "minimum_n": 9,
+      "modulus": 2,
+      "n_formula": "n=2*m+1",
+      "numerator_coefficients_low_to_high": [
+        "288",
+        "274",
+        "84",
+        "8"
+      ],
+      "numerator_coefficients_nonnegative": true,
+      "positive_constant_terms": true,
+      "residue": 1,
+      "shifted_denominator": "(2*u + 5)*(2*u + 7)*(2*u + 9)",
+      "shifted_numerator": "2*(4*u**3 + 42*u**2 + 137*u + 144)",
+      "shifted_variable": "u=m-4>=0",
+      "theorem_verified": true,
+      "transposition_formula": "t=m"
+    },
+    {
+      "character_polynomial_threshold": 6,
+      "denominator_coefficients_low_to_high": [
+        "315",
+        "286",
+        "84",
+        "8"
+      ],
+      "denominator_coefficients_nonnegative": true,
+      "exact_character_ratio": "-(-n + 2*t + 1)*(n**2 - 4*n*t - 5*n + 4*t**2 + 16*t)/(n*(n - 5)*(n - 1))",
+      "exact_weyl_bound": "-2*(-4*n**6 + 18*n**5*t + 60*n**5 - 30*n**4*t**2 - 249*n**4*t - 340*n**4 + 16*n**3*t**3 + 354*n**3*t**2 + 1286*n**3*t + 900*n**3 - 144*n**2*t**3 - 1494*n**2*t**2 - 3051*n**2*t - 1096*n**2 + 404*n*t**3 + 2670*n*t**2 + 3244*n*t + 480*n - 348*t**3 - 1716*t**2 - 1176*t)/(n*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "family": "dense_matching_t_floor_n_over_2",
+      "intermediate_partition": "(n-3,3)",
+      "intermediate_tail": [
+        3
+      ],
+      "lower_bound_constant": "47/77",
+      "lower_bound_exponent": 3,
+      "minimum_m": 4,
+      "minimum_n": 9,
+      "modulus": 2,
+      "n_formula": "n=2*m+1",
+      "numerator_coefficients_low_to_high": [
+        "423",
+        "358",
+        "96",
+        "8"
+      ],
+      "numerator_coefficients_nonnegative": true,
+      "positive_constant_terms": true,
+      "residue": 1,
+      "shifted_denominator": "(2*u + 5)*(2*u + 7)*(2*u + 9)",
+      "shifted_numerator": "8*u**3 + 96*u**2 + 358*u + 423",
+      "shifted_variable": "u=m-4>=0",
+      "theorem_verified": true,
+      "transposition_formula": "t=m"
+    },
+    {
+      "character_polynomial_threshold": 5,
+      "denominator_coefficients_low_to_high": [
+        "315",
+        "286",
+        "84",
+        "8"
+      ],
+      "denominator_coefficients_nonnegative": true,
+      "exact_character_ratio": "-(-n + 2*t)*(-n + 2*t + 2)*(-n + 2*t + 4)/(n*(n - 4)*(n - 2))",
+      "exact_weyl_bound": "-4*(-n + t + 2)*(2*n**3 - 7*n**2*t - 14*n**2 + 8*n*t**2 + 38*n*t + 24*n - 24*t**2 - 48*t)/(n*(n - 4)*(n - 3)*(n - 2))",
+      "family": "dense_matching_t_floor_n_over_2",
+      "intermediate_partition": "(n-3,2,1)",
+      "intermediate_tail": [
+        2,
+        1
+      ],
+      "lower_bound_constant": "48/77",
+      "lower_bound_exponent": 3,
+      "minimum_m": 4,
+      "minimum_n": 9,
+      "modulus": 2,
+      "n_formula": "n=2*m+1",
+      "numerator_coefficients_low_to_high": [
+        "432",
+        "358",
+        "96",
+        "8"
+      ],
+      "numerator_coefficients_nonnegative": true,
+      "positive_constant_terms": true,
+      "residue": 1,
+      "shifted_denominator": "(2*u + 5)*(2*u + 7)*(2*u + 9)",
+      "shifted_numerator": "2*(4*u**3 + 48*u**2 + 179*u + 216)",
+      "shifted_variable": "u=m-4>=0",
+      "theorem_verified": true,
+      "transposition_formula": "t=m"
+    },
+    {
+      "character_polynomial_threshold": 4,
+      "denominator_coefficients_low_to_high": [
+        "315",
+        "286",
+        "84",
+        "8"
+      ],
+      "denominator_coefficients_nonnegative": true,
+      "exact_character_ratio": "-(-n + 2*t + 1)*(n**2 - 4*n*t - 5*n + 4*t**2 + 4*t + 6)/((n - 3)*(n - 2)*(n - 1))",
+      "exact_weyl_bound": "-2*(-4*n**5 + 18*n**4*t + 40*n**4 - 30*n**3*t**2 - 141*n**3*t - 140*n**3 + 16*n**2*t**3 + 168*n**2*t**2 + 365*n**2*t + 200*n**2 - 64*n*t**3 - 222*n*t**2 - 380*n*t - 96*n + 12*t**3 + 84*t**2 + 120*t)/(n*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "family": "dense_matching_t_floor_n_over_2",
+      "intermediate_partition": "(n-3,1,1,1)",
+      "intermediate_tail": [
+        1,
+        1,
+        1
+      ],
+      "lower_bound_constant": "47/77",
+      "lower_bound_exponent": 3,
+      "minimum_m": 4,
+      "minimum_n": 9,
+      "modulus": 2,
+      "n_formula": "n=2*m+1",
+      "numerator_coefficients_low_to_high": [
+        "423",
+        "358",
+        "96",
+        "8"
+      ],
+      "numerator_coefficients_nonnegative": true,
+      "positive_constant_terms": true,
+      "residue": 1,
+      "shifted_denominator": "(2*u + 5)*(2*u + 7)*(2*u + 9)",
+      "shifted_numerator": "8*u**3 + 96*u**2 + 358*u + 423",
+      "shifted_variable": "u=m-4>=0",
+      "theorem_verified": true,
+      "transposition_formula": "t=m"
+    },
+    {
+      "character_polynomial_threshold": 8,
+      "denominator_coefficients_low_to_high": [
+        "315",
+        "286",
+        "84",
+        "8"
+      ],
+      "denominator_coefficients_nonnegative": true,
+      "exact_character_ratio": "(n**4 - 8*n**3*t - 10*n**3 + 24*n**2*t**2 + 72*n**2*t + 23*n**2 - 32*n*t**3 - 168*n*t**2 - 128*n*t - 14*n + 16*t**4 + 128*t**3 + 176*t**2 + 16*t)/(n*(n - 7)*(n - 2)*(n - 1))",
+      "exact_weyl_bound": "2*(4*n**6 - 21*n**5*t - 68*n**5 + 48*n**4*t**2 + 333*n**4*t + 420*n**4 - 52*n**3*t**3 - 666*n**3*t**2 - 1871*n**3*t - 1180*n**3 + 24*n**2*t**4 + 572*n**2*t**3 + 3156*n**2*t**2 + 4579*n**2*t + 1496*n**2 - 168*n*t**4 - 2044*n*t**3 - 6006*n*t**2 - 4580*n*t - 672*n + 288*t**4 + 2388*t**3 + 3756*t**2 + 1128*t)/(n*(n - 7)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "family": "dense_matching_t_floor_n_over_2",
+      "intermediate_partition": "(n-4,4)",
+      "intermediate_tail": [
+        4
+      ],
+      "lower_bound_constant": "52/77",
+      "lower_bound_exponent": 3,
+      "minimum_m": 4,
+      "minimum_n": 9,
+      "modulus": 2,
+      "n_formula": "n=2*m+1",
+      "numerator_coefficients_low_to_high": [
+        "468",
+        "376",
+        "96",
+        "8"
+      ],
+      "numerator_coefficients_nonnegative": true,
+      "positive_constant_terms": true,
+      "residue": 1,
+      "shifted_denominator": "(2*u + 5)*(2*u + 7)*(2*u + 9)",
+      "shifted_numerator": "4*(2*u**3 + 24*u**2 + 94*u + 117)",
+      "shifted_variable": "u=m-4>=0",
+      "theorem_verified": true,
+      "transposition_formula": "t=m"
+    },
+    {
+      "character_polynomial_threshold": 7,
+      "denominator_coefficients_low_to_high": [
+        "945",
+        "1488",
+        "824",
+        "192",
+        "16"
+      ],
+      "denominator_coefficients_nonnegative": true,
+      "exact_character_ratio": "(n**4 - 8*n**3*t - 10*n**3 + 24*n**2*t**2 + 64*n**2*t + 27*n**2 - 32*n*t**3 - 136*n*t**2 - 120*n*t - 18*n + 16*t**4 + 96*t**3 + 128*t**2 + 48*t)/(n*(n - 6)*(n - 3)*(n - 1))",
+      "exact_weyl_bound": "2*(4*n**6 - 21*n**5*t - 64*n**5 + 48*n**4*t**2 + 300*n**4*t + 380*n**4 - 52*n**3*t**3 - 570*n**3*t**2 - 1553*n**3*t - 1040*n**3 + 24*n**2*t**4 + 472*n**2*t**3 + 2322*n**2*t**2 + 3602*n**2*t + 1296*n**2 - 144*n*t**4 - 1356*n*t**3 - 3768*n*t**2 - 3696*n*t - 576*n + 192*t**4 + 1224*t**3 + 2040*t**2 + 1296*t)/(n*(n - 6)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "family": "dense_matching_t_floor_n_over_2",
+      "intermediate_partition": "(n-4,3,1)",
+      "intermediate_tail": [
+        3,
+        1
+      ],
+      "lower_bound_constant": "388/1155",
+      "lower_bound_exponent": 4,
+      "minimum_m": 4,
+      "minimum_n": 9,
+      "modulus": 2,
+      "n_formula": "n=2*m+1",
+      "numerator_coefficients_low_to_high": [
+        "1164",
+        "1848",
+        "992",
+        "216",
+        "16"
+      ],
+      "numerator_coefficients_nonnegative": true,
+      "positive_constant_terms": true,
+      "residue": 1,
+      "shifted_denominator": "(2*u + 3)*(2*u + 5)*(2*u + 7)*(2*u + 9)",
+      "shifted_numerator": "4*(4*u**4 + 54*u**3 + 248*u**2 + 462*u + 291)",
+      "shifted_variable": "u=m-4>=0",
+      "theorem_verified": true,
+      "transposition_formula": "t=m"
+    },
+    {
+      "character_polynomial_threshold": 6,
+      "denominator_coefficients_low_to_high": [
+        "315",
+        "286",
+        "84",
+        "8"
+      ],
+      "denominator_coefficients_nonnegative": true,
+      "exact_character_ratio": "(n**4 - 8*n**3*t - 10*n**3 + 24*n**2*t**2 + 60*n**2*t + 29*n**2 - 32*n*t**3 - 120*n*t**2 - 116*n*t - 20*n + 16*t**4 + 80*t**3 + 128*t**2 + 16*t)/(n*(n - 5)*(n - 4)*(n - 1))",
+      "exact_weyl_bound": "2*(4*n**6 - 21*n**5*t - 60*n**5 + 48*n**4*t**2 + 273*n**4*t + 340*n**4 - 52*n**3*t**3 - 498*n**3*t**2 - 1319*n**3*t - 900*n**3 + 24*n**2*t**4 + 396*n**2*t**3 + 1848*n**2*t**2 + 2883*n**2*t + 1096*n**2 - 120*n*t**4 - 980*n*t**3 - 2874*n*t**2 - 2704*n*t - 480*n + 144*t**4 + 780*t**3 + 1572*t**2 + 744*t)/(n*(n - 5)*(n - 4)*(n - 3)*(n - 2)*(n - 1))",
+      "family": "dense_matching_t_floor_n_over_2",
+      "intermediate_partition": "(n-4,2,2)",
+      "intermediate_tail": [
+        2,
+        2
+      ],
+      "lower_bound_constant": "54/77",
+      "lower_bound_exponent": 3,
+      "minimum_m": 4,
+      "minimum_n": 9,
+      "modulus": 2,
+      "n_formula": "n=2*m+1",
+      "numerator_coefficients_low_to_high": [
+        "486",
+        "376",
+        "96",
+        "8"
+      ],
+      "numerator_coefficients_nonnegative": true,
+      "positive_constant_terms": true,
+      "residue": 1,
+      "shifted_denominator": "(2*u + 5)*(2*u + 7)*(2*u + 9)",
+      "shifted_numerator": "2*(4*u**3 + 48*u**2 + 188*u + 243)",
+      "shifted_variable": "u=m-4>=0",
+      "theorem_verified": true,
+      "transposition_formula": "t=m"
+    }
+  ],
+  "status": "stable-three-copy-frame-conditioned-and-filterable-decoder-open",
+  "summary": "Proved 54 exact residue/shape coercivity bounds, giving lambda_min(F)>=71/825/n^5 and polynomial inverse-square-root filters for partial and dense matching classes; hidden-involution information and decoding remain open."
+}

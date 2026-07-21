@@ -990,7 +990,7 @@
         "severity": "medium"
       },
       {
-        "evidence": "Triggered falsifiers: The S_n QFT is already polynomial and cannot be presented as the missing breakthrough. | Exact Holevo/Fano accounting charges copies but does not construct a collective measurement or decoder. | #BQP multiplicity counting does not construct a coherent Kronecker basis. | Schur-Weyl Clebsch-Gordan circuits do not automatically solve internal Specht tensor products. | Diagonal YJM tableau labels retain exact Kronecker multiplicity degeneracy. | An encoded stable shape router does not construct a compressed Clebsch channel isometry. | An encoded left/right relabelling isometry does not construct the state-dependent frame filter or decoder. | A finite well-conditioned stable frame does not prove all-n inverse filtering or outcome decoding. | Many restricted multiplicity speedup candidates have polynomial classical algorithms. | Finite growth of dimensions or multiplicities is not a circuit lower bound.",
+        "evidence": "Triggered falsifiers: The S_n QFT is already polynomial and cannot be presented as the missing breakthrough. | Exact Holevo/Fano accounting charges copies but does not construct a collective measurement or decoder. | #BQP multiplicity counting does not construct a coherent Kronecker basis. | Schur-Weyl Clebsch-Gordan circuits do not automatically solve internal Specht tensor products. | Diagonal YJM tableau labels retain exact Kronecker multiplicity degeneracy. | An encoded stable shape router does not construct a compressed Clebsch channel isometry. | An encoded left/right relabelling isometry does not construct the state-dependent frame filter or decoder. | An all-n conditioned and inverse-filterable stable frame still does not prove outcome decoding or separation. | Many restricted multiplicity speedup candidates have polynomial classical algorithms. | Finite growth of dimensions or multiplicities is not a circuit lower bound.",
         "finding_id": "DEQ-RESULT-EXP-COSET-RECOUPLING-CAPABILITY-LEDGER-LATEST-FALSIFIERS",
         "required_action": "Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.",
         "severity": "medium"
@@ -1146,6 +1146,12 @@
         "severity": "medium"
       },
       {
+        "evidence": "Triggered falsifiers: The finite n=8 conditioning pattern was not a numerical accident: exact character-ratio coercivity proves all-n conditioning. | No growing Racah matrix is needed for the conditioning proof or inverse filter. | Conditioning and QSVT implementability alone do not imply useful hidden-involution information. | The theorem covers one conditioned stable branch and two involution families, not the full coset-state ensemble.",
+        "finding_id": "DEQ-RESULT-EXP-COSET-STABLE-THREE-COPY-FRAME-CONDITIONING-LATEST-FALSIFIERS",
+        "required_action": "Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.",
+        "severity": "medium"
+      },
+      {
         "evidence": "Triggered falsifiers: The multi-copy frame is not a scalar function of one coupling-tree label; all three overlapping pair class sums occur. | A dense Racah matrix is unnecessary for block encoding because each pair class sum acts directly on physical registers. | Finite full rank and condition number below two do not prove inverse-polynomial all-n conditioning. | An inverse-frame block encoding would still not identify or decode the hidden involution by itself.",
         "finding_id": "DEQ-RESULT-EXP-COSET-STABLE-THREE-COPY-FRAME-LATEST-FALSIFIERS",
         "required_action": "Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.",
@@ -1261,7 +1267,7 @@
       }
     ],
     "candidate_id": "CODE-COSET-COLLECTIVE",
-    "created_at": "2026-07-19T03:53:01.425351+00:00",
+    "created_at": "2026-07-19T04:14:21.380527+00:00",
     "id": "CONJ-CODE-COSET-COLLECTIVE",
     "next_actions": [
       "Resolve every blocking finding before promotion.",
@@ -2997,8 +3003,9 @@
           "stable_shape_encoded_coupling_tree_transition_isometry_count": 1,
           "stable_shape_local_gapped_label_transform_count": 7,
           "stable_shape_transition_filter_count": 0,
-          "stable_three_copy_frame_all_n_conditioning_theorem_count": 0,
+          "stable_three_copy_frame_all_n_conditioning_theorem_count": 2,
           "stable_three_copy_frame_block_encoding_count": 1,
+          "stable_three_copy_frame_inverse_square_root_filter_count": 2,
           "unresolved_required_capability_count": 3
         },
         "status": "known-primitives-separated-from-open-recoupling-and-decoder",
@@ -3513,6 +3520,24 @@
         "summary": "Reduced Tr(H^3) to 129 exact relative classes and proved its all-n polynomial plus the third quartic coefficient; the determinant and algorithmic obligations remain open."
       },
       {
+        "experiment_result_id": "RESULT-EXP-COSET-STABLE-THREE-COPY-FRAME-CONDITIONING-LATEST",
+        "metrics": {
+          "all_n_inverse_polynomial_minimum_eigenvalue_theorem_count": 2,
+          "coercivity_residue_certificate_count": 54,
+          "exact_character_ratio_count": 9,
+          "global_minimum_eigenvalue_lower_bound_constant": "71/825",
+          "global_minimum_eigenvalue_lower_bound_exponent": 5,
+          "hidden_involution_decoder_count": 0,
+          "involution_family_count": 2,
+          "polynomial_inverse_square_root_filter_count": 2,
+          "residue_class_count": 6,
+          "stable_intermediate_shape_count": 9,
+          "verified_coercivity_residue_certificate_count": 54
+        },
+        "status": "stable-three-copy-frame-conditioned-and-filterable-decoder-open",
+        "summary": "Proved 54 exact residue/shape coercivity bounds, giving lambda_min(F)>=71/825/n^5 and polynomial inverse-square-root filters for partial and dense matching classes; hidden-involution information and decoding remain open."
+      },
+      {
         "experiment_result_id": "RESULT-EXP-COSET-STABLE-THREE-COPY-FRAME-LATEST",
         "metrics": {
           "all_n_inverse_polynomial_minimum_eigenvalue_theorem_count": 0,
@@ -3750,7 +3775,7 @@
         "summary": "Audited 17 weak Fourier involution label distributions over S_n for n=[6, 8, 10, 12, 14, 16]. 4 row(s) are nearly Plancherel and 6 row(s) have only small label signal."
       }
     ],
-    "updated_at": "2026-07-19T03:53:01.425351+00:00"
+    "updated_at": "2026-07-19T04:14:21.380527+00:00"
   },
   {
     "assumptions": [
@@ -4932,7 +4957,7 @@
       }
     ],
     "candidate_id": "DHS-GOWERS-SIEVE",
-    "created_at": "2026-07-19T03:53:01.425351+00:00",
+    "created_at": "2026-07-19T04:14:21.380527+00:00",
     "id": "CONJ-DHS-GOWERS-SIEVE",
     "next_actions": [
       "Resolve every blocking finding before promotion.",
@@ -7002,7 +7027,7 @@
         "summary": "Audited 40 explicit hidden-shift instances across 10 phase families. 0 instances show Fourier/derivative structure; 16 are critical/high dequantization risk; 40 survive at least one restricted query model. Best DHSP sieve strategy aggressive_doubling reaches v2=7 from 2048 phase labels; explicit phase-state trace reaches v2=7 with 44 survivor states."
       }
     ],
-    "updated_at": "2026-07-19T03:53:01.425351+00:00"
+    "updated_at": "2026-07-19T04:14:21.380527+00:00"
   },
   {
     "assumptions": [
@@ -7060,7 +7085,7 @@
       }
     ],
     "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
-    "created_at": "2026-07-19T03:53:01.425351+00:00",
+    "created_at": "2026-07-19T04:14:21.380527+00:00",
     "id": "CONJ-HYP-LIT-COSET-OBSERVABLES",
     "next_actions": [
       "Resolve every blocking finding before promotion.",
@@ -7100,7 +7125,7 @@
         "summary": "Audited 4 hidden-permutation graph pairs. 2 pair survives current classical and low-register tests; 1 control pair is classically distinguished; 2 CFI-style parity benchmark(s) included."
       }
     ],
-    "updated_at": "2026-07-19T03:53:01.425351+00:00"
+    "updated_at": "2026-07-19T04:14:21.380527+00:00"
   },
   {
     "assumptions": [
@@ -7190,7 +7215,7 @@
       }
     ],
     "candidate_id": "HYP-LIT-HIDDEN-SHIFT-SIEVE",
-    "created_at": "2026-07-19T03:53:01.425351+00:00",
+    "created_at": "2026-07-19T04:14:21.380527+00:00",
     "id": "CONJ-HYP-LIT-HIDDEN-SHIFT-SIEVE",
     "next_actions": [
       "Resolve every blocking finding before promotion.",
@@ -7272,7 +7297,7 @@
         "summary": "Audited 40 explicit hidden-shift instances across 10 phase families. 0 instances show Fourier/derivative structure; 16 are critical/high dequantization risk; 40 survive at least one restricted query model. Best DHSP sieve strategy aggressive_doubling reaches v2=7 from 2048 phase labels; explicit phase-state trace reaches v2=7 with 44 survivor states."
       }
     ],
-    "updated_at": "2026-07-19T03:53:01.425351+00:00"
+    "updated_at": "2026-07-19T04:14:21.380527+00:00"
   },
   {
     "assumptions": [
@@ -7372,7 +7397,7 @@
       }
     ],
     "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
-    "created_at": "2026-07-19T03:53:01.425351+00:00",
+    "created_at": "2026-07-19T04:14:21.380527+00:00",
     "id": "CONJ-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
     "next_actions": [
       "Resolve every blocking finding before promotion.",
@@ -7456,7 +7481,7 @@
         "summary": "Audited 10 graphlet tensor observables across 5 graph pairs. 3 signal(s) collapse to small-pattern classical counts; 3 boundary pair(s) remain without graphlet-tensor signal."
       }
     ],
-    "updated_at": "2026-07-19T03:53:01.425351+00:00"
+    "updated_at": "2026-07-19T04:14:21.380527+00:00"
   },
   {
     "assumptions": [
@@ -7532,7 +7557,7 @@
       }
     ],
     "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
-    "created_at": "2026-07-19T03:53:01.425351+00:00",
+    "created_at": "2026-07-19T04:14:21.380527+00:00",
     "id": "CONJ-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
     "next_actions": [
       "Resolve every blocking finding before promotion.",
@@ -7587,7 +7612,7 @@
         "summary": "Audited 10 graphlet tensor observables across 5 graph pairs. 3 signal(s) collapse to small-pattern classical counts; 3 boundary pair(s) remain without graphlet-tensor signal."
       }
     ],
-    "updated_at": "2026-07-19T03:53:01.425351+00:00"
+    "updated_at": "2026-07-19T04:14:21.380527+00:00"
   },
   {
     "assumptions": [
@@ -7663,7 +7688,7 @@
       }
     ],
     "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
-    "created_at": "2026-07-19T03:53:01.425351+00:00",
+    "created_at": "2026-07-19T04:14:21.380527+00:00",
     "id": "CONJ-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
     "next_actions": [
       "Resolve every blocking finding before promotion.",
@@ -7717,7 +7742,7 @@
         "summary": "Audited 4 hidden-permutation graph pairs. 2 pair survives current classical and low-register tests; 1 control pair is classically distinguished; 2 CFI-style parity benchmark(s) included."
       }
     ],
-    "updated_at": "2026-07-19T03:53:01.425351+00:00"
+    "updated_at": "2026-07-19T04:14:21.380527+00:00"
   },
   {
     "assumptions": [
@@ -7781,7 +7806,7 @@
       }
     ],
     "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
-    "created_at": "2026-07-19T03:53:01.425351+00:00",
+    "created_at": "2026-07-19T04:14:21.380527+00:00",
     "id": "CONJ-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
     "next_actions": [
       "Resolve every blocking finding before promotion.",
@@ -7815,6 +7840,6 @@
         "summary": "Audited 3 code-equivalence pairs. 1 equivalent control pair(s) verified; 2 non-equivalent control pair(s) classically distinguished."
       }
     ],
-    "updated_at": "2026-07-19T03:53:01.425351+00:00"
+    "updated_at": "2026-07-19T04:14:21.380527+00:00"
   }
 ]

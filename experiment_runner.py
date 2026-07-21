@@ -114,6 +114,15 @@ from coset_stable_encoded_tree_certificate import (
 from coset_stable_three_copy_frame import (
     write_stable_three_copy_frame_report,
 )
+from coset_stable_three_copy_frame_conditioning import (
+    write_stable_three_copy_frame_conditioning_report,
+)
+from coset_stable_branch_accessibility import (
+    write_stable_branch_accessibility_report,
+)
+from coset_typical_irrep_transfer_audit import (
+    write_typical_irrep_transfer_report,
+)
 from coset_recoupling_capability_ledger import write_recoupling_capability_report
 from coset_recoupling_mechanism_synthesis import write_recoupling_mechanism_synthesis_report
 from coset_state_distinguishability import write_coset_distinguishability_report
@@ -580,6 +589,9 @@ COSET_EXPERIMENTS = {
     "EXP-COSET-STABLE-SHAPE-ROUTER-CERTIFICATE",
     "EXP-COSET-STABLE-ENCODED-TREE-CERTIFICATE",
     "EXP-COSET-STABLE-THREE-COPY-FRAME",
+    "EXP-COSET-STABLE-THREE-COPY-FRAME-CONDITIONING",
+    "EXP-COSET-STABLE-BRANCH-ACCESSIBILITY",
+    "EXP-COSET-TYPICAL-IRREP-TRANSFER-AUDIT",
     "EXP-COSET-RECOUPLING-CAPABILITY-LEDGER",
     "EXP-COSET-RECOUPLING-MECHANISM-SYNTHESIS",
 }
@@ -1414,6 +1426,9 @@ def select_next_experiment() -> NextExperimentSelection:
         "EXP-COSET-STABLE-SHAPE-ROUTER-CERTIFICATE": 53,
         "EXP-COSET-STABLE-ENCODED-TREE-CERTIFICATE": 54,
         "EXP-COSET-STABLE-THREE-COPY-FRAME": 55,
+        "EXP-COSET-STABLE-THREE-COPY-FRAME-CONDITIONING": 56,
+        "EXP-COSET-STABLE-BRANCH-ACCESSIBILITY": 57,
+        "EXP-COSET-TYPICAL-IRREP-TRANSFER-AUDIT": 58,
         "EXP-COSET-RECOUPLING-CAPABILITY-LEDGER": 24,
         "EXP-COSET-RECOUPLING-MECHANISM-SYNTHESIS": 25,
     }
@@ -2965,6 +2980,27 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             )
         elif experiment_id == "EXP-COSET-STABLE-THREE-COPY-FRAME":
             payload = write_stable_three_copy_frame_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif experiment_id == "EXP-COSET-STABLE-THREE-COPY-FRAME-CONDITIONING":
+            payload = write_stable_three_copy_frame_conditioning_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif experiment_id == "EXP-COSET-STABLE-BRANCH-ACCESSIBILITY":
+            payload = write_stable_branch_accessibility_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif experiment_id == "EXP-COSET-TYPICAL-IRREP-TRANSFER-AUDIT":
+            payload = write_typical_irrep_transfer_report(
                 write_registry=True,
                 registry_experiment_id=experiment_id,
                 registry_candidate_id=experiment["candidate_id"],

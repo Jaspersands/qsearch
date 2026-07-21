@@ -21,6 +21,10 @@ REQUIRED_FIELDS = {
     "PO-REDUCTION": ("reduction_or_lower_bound", "reduction, hardness link, or lower-bound target"),
     "PO-MECHANISM": ("quantum_mechanism", "specific quantum mechanism"),
     "PO-STATE-PREP": ("cost_model", "state preparation, encoding, precision, and reversible arithmetic costs"),
+    "PO-NATURAL-ACCESS": (
+        "natural_access_analysis",
+        "natural-input state/sector access, conditioning probability, or direct preparation analysis",
+    ),
     "PO-MEASUREMENT": ("measurement_and_decoding", "measurement and decoding procedure"),
     "PO-SUCCESS-PROOF": ("success_statement", "success theorem or conjecture with parameters"),
     "PO-COMPLEXITY": ("complexity_accounting", "query, gate, space, precision, and postprocessing complexity"),
@@ -83,6 +87,31 @@ def validate_candidate(candidate: Mapping[str, object]) -> list[GateIssue]:
                 obligation_id="PO-FAMILY",
                 field="problem_family",
                 message="Candidate contains low-value toy/circuit/oracle markers; justify natural scalable structure or reject.",
+            )
+        )
+
+    natural_access = str(candidate.get("natural_access_analysis", "")).lower()
+    if natural_access and not any(
+        marker in natural_access
+        for marker in (
+            "natural",
+            "input",
+            "supplied",
+            "oracle",
+            "probability",
+            "postselection",
+            "preparation",
+            "sample",
+        )
+    ):
+        issues.append(
+            GateIssue(
+                obligation_id="PO-NATURAL-ACCESS",
+                field="natural_access_analysis",
+                message=(
+                    "Natural-access analysis must connect every conditioned state or sector to the declared input model "
+                    "and price postselection probability or direct preparation."
+                ),
             )
         )
 

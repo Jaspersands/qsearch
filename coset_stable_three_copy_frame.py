@@ -353,18 +353,19 @@ def build_stable_three_copy_frame_report(
             "speedup_claim_allowed": False,
             "reason": (
                 "The three-copy stable frame is now block-encodable directly and is well conditioned at n=8, but "
-                "finite spectra do not prove all-n conditioning, outcome information, decoding, or separation."
+                "this finite probe does not prove all-n conditioning, outcome information, decoding, or separation; "
+                "the separate coercivity certificate supplies the conditioning theorem."
             ),
         },
         status=(
-            "stable-three-copy-frame-block-encoding-proved-conditioning-decoder-open"
+            "stable-three-copy-frame-block-encoding-proved-finite-conditioning-probe-only"
             if all_controls_pass
             else "stable-three-copy-frame-audit-failed"
         ),
         summary=(
             "Derived and block-encoded the exact stable three-copy frame and found full support with condition number "
             f"at most {metrics['maximum_frontier_finite_condition_number']:.3f} on the n=8 frontier controls; "
-            "the all-n lower eigenvalue and decoder remain open."
+            "the separate exact coercivity certificate closes the all-n eigenvalue bound, while decoding remains open."
         ),
         falsifiers_triggered=[
             "The multi-copy frame is not a scalar function of one coupling-tree label; all three overlapping pair class sums occur.",
@@ -395,12 +396,12 @@ def write_stable_three_copy_frame_report(
                     "Full-rank well-conditioned n=8 stable frame spectra prove a polynomial inverse-frame filter and decoder."
                 ),
                 reason_invalid=(
-                    "The exact block encoding is uniform, but no all-n lower bound on the positive spectrum or "
-                    "hidden-involution outcome theorem has been proved."
+                    "Finite spectra do not supply an all-n lower bound. The separate exact character-ratio coercivity "
+                    "certificate now supplies that bound, but no hidden-involution outcome theorem follows."
                 ),
                 lesson=(
-                    "Derive exact stable frame characteristic data or a representation-theoretic coercivity bound, "
-                    "then separately analyze PGM outcome information and classical simulation."
+                    "Use the proved coercivity bound and inverse filter, then separately analyze PGM outcome "
+                    "information, reconstruction, branch probability, and classical simulation."
                 ),
                 applies_to=[registry_candidate_id, registry_experiment_id],
                 evidence=payload["headline_metrics"],

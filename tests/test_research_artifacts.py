@@ -46,6 +46,16 @@ class ResearchArtifactTests(unittest.TestCase):
             self.assertEqual(validate_candidate(payload), [])
             self.assertTrue(passes_proof_gate(payload))
 
+    def test_proof_gate_rejects_missing_natural_access_analysis(self):
+        candidate = seed_candidate_records()[0][0].__dict__.copy()
+        candidate["natural_access_analysis"] = ""
+        issues = validate_candidate(candidate)
+        self.assertFalse(passes_proof_gate(candidate))
+        self.assertIn(
+            "PO-NATURAL-ACCESS",
+            {issue.obligation_id for issue in issues},
+        )
+
 
 if __name__ == "__main__":
     unittest.main()
