@@ -1,0 +1,2993 @@
+{
+  "claim_gate": {
+    "finite_centered_covariance_rank_is_joint_spectrum_proof": false,
+    "finite_non_scalar_coverage_is_asymptotic_theorem": false,
+    "finite_typical_non_scalar_coverage": true,
+    "hidden_involution_decoder_proved": false,
+    "inverse_polynomial_eigenvalue_gap_proved": false,
+    "label_adaptive_transform_proved": false,
+    "reason": "Exact finite character moments transfer non-scalar bounded-support action to the audited typical blocks, and mixed moments certify independent traceless directions in many blocks, but they do not control noncommutation, all-n eigenvalue collisions, minimum gaps, circuit synthesis, or decoding.",
+    "simple_spectrum_proved": false,
+    "speedup_claim_allowed": false,
+    "uniform_typical_non_scalarity_proved": false
+  },
+  "created_at": "2026-07-22T19:55:13.843491+00:00",
+  "falsifiers_triggered": [
+    "One transposition/3-cycle orbit average is scalar on two audited n=8 multiplicity blocks.",
+    "Adding a second bounded-support observable repairs finite non-scalarity but does not prove simple joint spectrum.",
+    "A positive centered covariance rank proves linear independence, not noncommutation or algebra generation.",
+    "Positive finite variance supplies no lower bound on the minimum eigenvalue gap.",
+    "Factorial exact character enumeration is not an efficient quantum or classical implementation.",
+    "No outcome-information or hidden-involution decoding theorem is implied by multiplicity-space non-scalarity."
+  ],
+  "generator_contract": {
+    "ORB-TC-INTERSECTION-1": {
+      "left": "transposition",
+      "normalized_operator_norm_bound": 1,
+      "orbit_size": "n(n-1)(n-2)(n-3)",
+      "right": "oriented 3-cycle",
+      "support_intersection": 1
+    },
+    "ORB-TC-INTERSECTION-2": {
+      "left": "transposition",
+      "normalized_operator_norm_bound": 1,
+      "orbit_size": "n(n-1)(n-2)",
+      "right": "oriented 3-cycle",
+      "support_intersection": 2
+    },
+    "ORB-TT-DISJOINT": {
+      "left": "transposition",
+      "normalized_operator_norm_bound": 1,
+      "orbit_size": "6*binomial(n,4)",
+      "right": "transposition",
+      "support_intersection": 0
+    }
+  },
+  "headline_metrics": {
+    "bounded_support_generator_count": 3,
+    "finite_centered_covariance_rank_two_count": 29,
+    "finite_covariance_rank_two_or_simple_multiplicity_two_count": 32,
+    "finite_higher_multiplicity_joint_simple_spectrum_count": 0,
+    "finite_multiplicity_two_simple_spectrum_count": 3,
+    "finite_n_count": 2,
+    "finite_non_scalar_covered_count": 32,
+    "finite_uncovered_count": 0,
+    "maximum_kronecker_multiplicity": 17,
+    "minimum_finite_spectral_diameter_lower_bound": 0.05387480237611791,
+    "minimum_positive_variance": 0.0007256235827664399,
+    "nontrivial_multiplicity_block_count": 32,
+    "primary_generator_exact_scalar_block_count": 2,
+    "typical_label_hidden_involution_decoder_count": 0,
+    "uniform_typical_commutant_gap_theorem_count": 0,
+    "uniform_typical_commutant_non_scalar_theorem_count": 0,
+    "uniform_typical_commutant_simple_spectrum_theorem_count": 0
+  },
+  "records": [
+    {
+      "best_generator_id": "ORB-TC-INTERSECTION-2",
+      "centered_covariance_rank": 1,
+      "exact_centered_covariance_matrix": [
+        [
+          "337/176400",
+          "0",
+          "-337/705600"
+        ],
+        [
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "-337/705600",
+          "0",
+          "337/2822400"
+        ]
+      ],
+      "finite_character_moment_only": true,
+      "finite_non_scalar_covered": true,
+      "finite_simple_spectrum_proved": true,
+      "generator_moments": [
+        {
+          "eigenvalue_variance": 0.0019104308390022675,
+          "exact_eigenvalue_variance": "337/176400",
+          "exact_mean_eigenvalue": "47/420",
+          "exact_second_moment": "1273/88200",
+          "first_moment_signature_count": 167,
+          "generator_id": "ORB-TC-INTERSECTION-2",
+          "mean_eigenvalue": 0.11190476190476191,
+          "non_scalar_proved": true,
+          "orbit_size": 210,
+          "second_moment": 0.014433106575963719,
+          "second_moment_signature_count": 541,
+          "spectral_diameter_lower_bound": 0.08741695119374199
+        },
+        {
+          "eigenvalue_variance": 0.0,
+          "exact_eigenvalue_variance": "0",
+          "exact_mean_eigenvalue": "-1/35",
+          "exact_second_moment": "1/1225",
+          "first_moment_signature_count": 183,
+          "generator_id": "ORB-TT-DISJOINT",
+          "mean_eigenvalue": -0.02857142857142857,
+          "non_scalar_proved": false,
+          "orbit_size": 210,
+          "second_moment": 0.0008163265306122449,
+          "second_moment_signature_count": 582,
+          "spectral_diameter_lower_bound": 0.0
+        },
+        {
+          "eigenvalue_variance": 0.00011940192743764172,
+          "exact_eigenvalue_variance": "337/2822400",
+          "exact_mean_eigenvalue": "-1/48",
+          "exact_second_moment": "781/1411200",
+          "first_moment_signature_count": 253,
+          "generator_id": "ORB-TC-INTERSECTION-1",
+          "mean_eigenvalue": -0.020833333333333332,
+          "non_scalar_proved": true,
+          "orbit_size": 840,
+          "second_moment": 0.0005534297052154195,
+          "second_moment_signature_count": 659,
+          "spectral_diameter_lower_bound": 0.021854237798435497
+        }
+      ],
+      "kronecker_multiplicity": 2,
+      "maximum_eigenvalue_variance": 0.0019104308390022675,
+      "maximum_spectral_diameter_lower_bound": 0.08741695119374199,
+      "n": 7,
+      "non_scalar_generator_ids": [
+        "ORB-TC-INTERSECTION-2",
+        "ORB-TC-INTERSECTION-1"
+      ],
+      "source_dimension": 35,
+      "source_partition": [
+        4,
+        2,
+        1
+      ],
+      "status": "finite-non-scalar-witness-gap-open",
+      "target_dimension": 6,
+      "target_partition": [
+        6,
+        1
+      ]
+    },
+    {
+      "best_generator_id": "ORB-TC-INTERSECTION-2",
+      "centered_covariance_rank": 3,
+      "exact_centered_covariance_matrix": [
+        [
+          "39/15680",
+          "-67/141120",
+          "-577/940800"
+        ],
+        [
+          "-67/141120",
+          "1507/705600",
+          "-697/2822400"
+        ],
+        [
+          "-577/940800",
+          "-697/2822400",
+          "419/1254400"
+        ]
+      ],
+      "finite_character_moment_only": true,
+      "finite_non_scalar_covered": true,
+      "finite_simple_spectrum_proved": false,
+      "generator_moments": [
+        {
+          "eigenvalue_variance": 0.0024872448979591836,
+          "exact_eigenvalue_variance": "39/15680",
+          "exact_mean_eigenvalue": "43/840",
+          "exact_second_moment": "901/176400",
+          "first_moment_signature_count": 167,
+          "generator_id": "ORB-TC-INTERSECTION-2",
+          "mean_eigenvalue": 0.05119047619047619,
+          "non_scalar_proved": true,
+          "orbit_size": 210,
+          "second_moment": 0.005107709750566894,
+          "second_moment_signature_count": 541,
+          "spectral_diameter_lower_bound": 0.09974457174120673
+        },
+        {
+          "eigenvalue_variance": 0.0021357709750566894,
+          "exact_eigenvalue_variance": "1507/705600",
+          "exact_mean_eigenvalue": "1/840",
+          "exact_second_moment": "377/176400",
+          "first_moment_signature_count": 183,
+          "generator_id": "ORB-TT-DISJOINT",
+          "mean_eigenvalue": 0.0011904761904761906,
+          "non_scalar_proved": true,
+          "orbit_size": 210,
+          "second_moment": 0.00213718820861678,
+          "second_moment_signature_count": 582,
+          "spectral_diameter_lower_bound": 0.09242880449419844
+        },
+        {
+          "eigenvalue_variance": 0.00033402423469387754,
+          "exact_eigenvalue_variance": "419/1254400",
+          "exact_mean_eigenvalue": "-43/3360",
+          "exact_second_moment": "281/564480",
+          "first_moment_signature_count": 253,
+          "generator_id": "ORB-TC-INTERSECTION-1",
+          "mean_eigenvalue": -0.012797619047619047,
+          "non_scalar_proved": true,
+          "orbit_size": 840,
+          "second_moment": 0.0004978032879818594,
+          "second_moment_signature_count": 659,
+          "spectral_diameter_lower_bound": 0.03655265980439057
+        }
+      ],
+      "kronecker_multiplicity": 4,
+      "maximum_eigenvalue_variance": 0.0024872448979591836,
+      "maximum_spectral_diameter_lower_bound": 0.09974457174120673,
+      "n": 7,
+      "non_scalar_generator_ids": [
+        "ORB-TC-INTERSECTION-2",
+        "ORB-TT-DISJOINT",
+        "ORB-TC-INTERSECTION-1"
+      ],
+      "source_dimension": 35,
+      "source_partition": [
+        4,
+        2,
+        1
+      ],
+      "status": "finite-non-scalar-witness-gap-open",
+      "target_dimension": 14,
+      "target_partition": [
+        5,
+        2
+      ]
+    },
+    {
+      "best_generator_id": "ORB-TC-INTERSECTION-2",
+      "centered_covariance_rank": 3,
+      "exact_centered_covariance_matrix": [
+        [
+          "583/141120",
+          "-71/100800",
+          "-359/403200"
+        ],
+        [
+          "-71/100800",
+          "1163/705600",
+          "-229/2822400"
+        ],
+        [
+          "-359/403200",
+          "-229/2822400",
+          "3083/11289600"
+        ]
+      ],
+      "finite_character_moment_only": true,
+      "finite_non_scalar_covered": true,
+      "finite_simple_spectrum_proved": false,
+      "generator_moments": [
+        {
+          "eigenvalue_variance": 0.004131235827664399,
+          "exact_eigenvalue_variance": "583/141120",
+          "exact_mean_eigenvalue": "19/280",
+          "exact_second_moment": "1541/176400",
+          "first_moment_signature_count": 167,
+          "generator_id": "ORB-TC-INTERSECTION-2",
+          "mean_eigenvalue": 0.06785714285714285,
+          "non_scalar_proved": true,
+          "orbit_size": 210,
+          "second_moment": 0.008735827664399093,
+          "second_moment_signature_count": 541,
+          "spectral_diameter_lower_bound": 0.12854938082564846
+        },
+        {
+          "eigenvalue_variance": 0.0016482426303854876,
+          "exact_eigenvalue_variance": "1163/705600",
+          "exact_mean_eigenvalue": "-1/280",
+          "exact_second_moment": "293/176400",
+          "first_moment_signature_count": 183,
+          "generator_id": "ORB-TT-DISJOINT",
+          "mean_eigenvalue": -0.0035714285714285713,
+          "non_scalar_proved": true,
+          "orbit_size": 210,
+          "second_moment": 0.0016609977324263038,
+          "second_moment_signature_count": 582,
+          "spectral_diameter_lower_bound": 0.08119710907133301
+        },
+        {
+          "eigenvalue_variance": 0.0002730831916099773,
+          "exact_eigenvalue_variance": "3083/11289600",
+          "exact_mean_eigenvalue": "-17/1120",
+          "exact_second_moment": "29/57600",
+          "first_moment_signature_count": 253,
+          "generator_id": "ORB-TC-INTERSECTION-1",
+          "mean_eigenvalue": -0.015178571428571428,
+          "non_scalar_proved": true,
+          "orbit_size": 840,
+          "second_moment": 0.0005034722222222222,
+          "second_moment_signature_count": 659,
+          "spectral_diameter_lower_bound": 0.03305045788548033
+        }
+      ],
+      "kronecker_multiplicity": 4,
+      "maximum_eigenvalue_variance": 0.004131235827664399,
+      "maximum_spectral_diameter_lower_bound": 0.12854938082564846,
+      "n": 7,
+      "non_scalar_generator_ids": [
+        "ORB-TC-INTERSECTION-2",
+        "ORB-TT-DISJOINT",
+        "ORB-TC-INTERSECTION-1"
+      ],
+      "source_dimension": 35,
+      "source_partition": [
+        4,
+        2,
+        1
+      ],
+      "status": "finite-non-scalar-witness-gap-open",
+      "target_dimension": 15,
+      "target_partition": [
+        5,
+        1,
+        1
+      ]
+    },
+    {
+      "best_generator_id": "ORB-TT-DISJOINT",
+      "centered_covariance_rank": 3,
+      "exact_centered_covariance_matrix": [
+        [
+          "137/235200",
+          "-1/1800",
+          "-43/188160"
+        ],
+        [
+          "-1/1800",
+          "179/88200",
+          "-131/352800"
+        ],
+        [
+          "-43/188160",
+          "-131/352800",
+          "461/752640"
+        ]
+      ],
+      "finite_character_moment_only": true,
+      "finite_non_scalar_covered": true,
+      "finite_simple_spectrum_proved": false,
+      "generator_moments": [
+        {
+          "eigenvalue_variance": 0.0005824829931972789,
+          "exact_eigenvalue_variance": "137/235200",
+          "exact_mean_eigenvalue": "5/168",
+          "exact_second_moment": "37/25200",
+          "first_moment_signature_count": 167,
+          "generator_id": "ORB-TC-INTERSECTION-2",
+          "mean_eigenvalue": 0.02976190476190476,
+          "non_scalar_proved": true,
+          "orbit_size": 210,
+          "second_moment": 0.0014682539682539682,
+          "second_moment_signature_count": 541,
+          "spectral_diameter_lower_bound": 0.0482693688874126
+        },
+        {
+          "eigenvalue_variance": 0.0020294784580498866,
+          "exact_eigenvalue_variance": "179/88200",
+          "exact_mean_eigenvalue": "2/105",
+          "exact_second_moment": "211/88200",
+          "first_moment_signature_count": 183,
+          "generator_id": "ORB-TT-DISJOINT",
+          "mean_eigenvalue": 0.01904761904761905,
+          "non_scalar_proved": true,
+          "orbit_size": 210,
+          "second_moment": 0.0023922902494331066,
+          "second_moment_signature_count": 582,
+          "spectral_diameter_lower_bound": 0.09009946632583095
+        },
+        {
+          "eigenvalue_variance": 0.0006125106292517007,
+          "exact_eigenvalue_variance": "461/752640",
+          "exact_mean_eigenvalue": "-31/3360",
+          "exact_second_moment": "1969/2822400",
+          "first_moment_signature_count": 253,
+          "generator_id": "ORB-TC-INTERSECTION-1",
+          "mean_eigenvalue": -0.009226190476190476,
+          "non_scalar_proved": true,
+          "orbit_size": 840,
+          "second_moment": 0.0006976332199546485,
+          "second_moment_signature_count": 659,
+          "spectral_diameter_lower_bound": 0.04949790416782111
+        }
+      ],
+      "kronecker_multiplicity": 4,
+      "maximum_eigenvalue_variance": 0.0020294784580498866,
+      "maximum_spectral_diameter_lower_bound": 0.09009946632583095,
+      "n": 7,
+      "non_scalar_generator_ids": [
+        "ORB-TC-INTERSECTION-2",
+        "ORB-TT-DISJOINT",
+        "ORB-TC-INTERSECTION-1"
+      ],
+      "source_dimension": 35,
+      "source_partition": [
+        4,
+        2,
+        1
+      ],
+      "status": "finite-non-scalar-witness-gap-open",
+      "target_dimension": 14,
+      "target_partition": [
+        4,
+        3
+      ]
+    },
+    {
+      "best_generator_id": "ORB-TC-INTERSECTION-2",
+      "centered_covariance_rank": 3,
+      "exact_centered_covariance_matrix": [
+        [
+          "2159/893025",
+          "-584/893025",
+          "-1987/4762800"
+        ],
+        [
+          "-584/893025",
+          "2159/893025",
+          "-2141/4762800"
+        ],
+        [
+          "-1987/4762800",
+          "-2141/4762800",
+          "1439/3175200"
+        ]
+      ],
+      "finite_character_moment_only": true,
+      "finite_non_scalar_covered": true,
+      "finite_simple_spectrum_proved": false,
+      "generator_moments": [
+        {
+          "eigenvalue_variance": 0.002417625486408555,
+          "exact_eigenvalue_variance": "2159/893025",
+          "exact_mean_eigenvalue": "2/189",
+          "exact_second_moment": "251/99225",
+          "first_moment_signature_count": 167,
+          "generator_id": "ORB-TC-INTERSECTION-2",
+          "mean_eigenvalue": 0.010582010582010581,
+          "non_scalar_proved": true,
+          "orbit_size": 210,
+          "second_moment": 0.0025296044343663393,
+          "second_moment_signature_count": 541,
+          "spectral_diameter_lower_bound": 0.0983387103110175
+        },
+        {
+          "eigenvalue_variance": 0.002417625486408555,
+          "exact_eigenvalue_variance": "2159/893025",
+          "exact_mean_eigenvalue": "17/945",
+          "exact_second_moment": "272/99225",
+          "first_moment_signature_count": 183,
+          "generator_id": "ORB-TT-DISJOINT",
+          "mean_eigenvalue": 0.01798941798941799,
+          "non_scalar_proved": true,
+          "orbit_size": 210,
+          "second_moment": 0.0027412446460065507,
+          "second_moment_signature_count": 582,
+          "spectral_diameter_lower_bound": 0.0983387103110175
+        },
+        {
+          "eigenvalue_variance": 0.00045319979843789365,
+          "exact_eigenvalue_variance": "1439/3175200",
+          "exact_mean_eigenvalue": "-19/2520",
+          "exact_second_moment": "3239/6350400",
+          "first_moment_signature_count": 253,
+          "generator_id": "ORB-TC-INTERSECTION-1",
+          "mean_eigenvalue": -0.00753968253968254,
+          "non_scalar_proved": true,
+          "orbit_size": 840,
+          "second_moment": 0.0005100466112370874,
+          "second_moment_signature_count": 659,
+          "spectral_diameter_lower_bound": 0.042576979622227486
+        }
+      ],
+      "kronecker_multiplicity": 9,
+      "maximum_eigenvalue_variance": 0.002417625486408555,
+      "maximum_spectral_diameter_lower_bound": 0.0983387103110175,
+      "n": 7,
+      "non_scalar_generator_ids": [
+        "ORB-TC-INTERSECTION-2",
+        "ORB-TT-DISJOINT",
+        "ORB-TC-INTERSECTION-1"
+      ],
+      "source_dimension": 35,
+      "source_partition": [
+        4,
+        2,
+        1
+      ],
+      "status": "finite-non-scalar-witness-gap-open",
+      "target_dimension": 35,
+      "target_partition": [
+        4,
+        2,
+        1
+      ]
+    },
+    {
+      "best_generator_id": "ORB-TT-DISJOINT",
+      "centered_covariance_rank": 3,
+      "exact_centered_covariance_matrix": [
+        [
+          "859/275625",
+          "-32/30625",
+          "-937/2205000"
+        ],
+        [
+          "-32/30625",
+          "243/61250",
+          "-219/245000"
+        ],
+        [
+          "-937/2205000",
+          "-219/245000",
+          "4103/8820000"
+        ]
+      ],
+      "finite_character_moment_only": true,
+      "finite_non_scalar_covered": true,
+      "finite_simple_spectrum_proved": false,
+      "generator_moments": [
+        {
+          "eigenvalue_variance": 0.0031165532879818595,
+          "exact_eigenvalue_variance": "859/275625",
+          "exact_mean_eigenvalue": "11/525",
+          "exact_second_moment": "4/1125",
+          "first_moment_signature_count": 167,
+          "generator_id": "ORB-TC-INTERSECTION-2",
+          "mean_eigenvalue": 0.02095238095238095,
+          "non_scalar_proved": true,
+          "orbit_size": 210,
+          "second_moment": 0.0035555555555555557,
+          "second_moment_signature_count": 541,
+          "spectral_diameter_lower_bound": 0.11165219725525977
+        },
+        {
+          "eigenvalue_variance": 0.0039673469387755105,
+          "exact_eigenvalue_variance": "243/61250",
+          "exact_mean_eigenvalue": "1/175",
+          "exact_second_moment": "1/250",
+          "first_moment_signature_count": 183,
+          "generator_id": "ORB-TT-DISJOINT",
+          "mean_eigenvalue": 0.005714285714285714,
+          "non_scalar_proved": true,
+          "orbit_size": 210,
+          "second_moment": 0.004,
+          "second_moment_signature_count": 582,
+          "spectral_diameter_lower_bound": 0.12597375820027773
+        },
+        {
+          "eigenvalue_variance": 0.00046519274376417234,
+          "exact_eigenvalue_variance": "4103/8820000",
+          "exact_mean_eigenvalue": "-19/2100",
+          "exact_second_moment": "193/352800",
+          "first_moment_signature_count": 253,
+          "generator_id": "ORB-TC-INTERSECTION-1",
+          "mean_eigenvalue": -0.009047619047619047,
+          "non_scalar_proved": true,
+          "orbit_size": 840,
+          "second_moment": 0.0005470521541950114,
+          "second_moment_signature_count": 659,
+          "spectral_diameter_lower_bound": 0.04313665465768862
+        }
+      ],
+      "kronecker_multiplicity": 5,
+      "maximum_eigenvalue_variance": 0.0039673469387755105,
+      "maximum_spectral_diameter_lower_bound": 0.12597375820027773,
+      "n": 7,
+      "non_scalar_generator_ids": [
+        "ORB-TC-INTERSECTION-2",
+        "ORB-TT-DISJOINT",
+        "ORB-TC-INTERSECTION-1"
+      ],
+      "source_dimension": 35,
+      "source_partition": [
+        4,
+        2,
+        1
+      ],
+      "status": "finite-non-scalar-witness-gap-open",
+      "target_dimension": 20,
+      "target_partition": [
+        4,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "best_generator_id": "ORB-TT-DISJOINT",
+      "centered_covariance_rank": 3,
+      "exact_centered_covariance_matrix": [
+        [
+          "127/110250",
+          "-23/55125",
+          "-8/55125"
+        ],
+        [
+          "-23/55125",
+          "1223/551250",
+          "-527/1102500"
+        ],
+        [
+          "-8/55125",
+          "-527/1102500",
+          "3917/8820000"
+        ]
+      ],
+      "finite_character_moment_only": true,
+      "finite_non_scalar_covered": true,
+      "finite_simple_spectrum_proved": false,
+      "generator_moments": [
+        {
+          "eigenvalue_variance": 0.0011519274376417233,
+          "exact_eigenvalue_variance": "127/110250",
+          "exact_mean_eigenvalue": "-1/70",
+          "exact_second_moment": "299/220500",
+          "first_moment_signature_count": 167,
+          "generator_id": "ORB-TC-INTERSECTION-2",
+          "mean_eigenvalue": -0.014285714285714285,
+          "non_scalar_proved": true,
+          "orbit_size": 210,
+          "second_moment": 0.0013560090702947846,
+          "second_moment_signature_count": 541,
+          "spectral_diameter_lower_bound": 0.0678801130712589
+        },
+        {
+          "eigenvalue_variance": 0.00221859410430839,
+          "exact_eigenvalue_variance": "1223/551250",
+          "exact_mean_eigenvalue": "9/350",
+          "exact_second_moment": "127/44100",
+          "first_moment_signature_count": 183,
+          "generator_id": "ORB-TT-DISJOINT",
+          "mean_eigenvalue": 0.025714285714285714,
+          "non_scalar_proved": true,
+          "orbit_size": 210,
+          "second_moment": 0.0028798185941043084,
+          "second_moment_signature_count": 582,
+          "spectral_diameter_lower_bound": 0.09420390871526277
+        },
+        {
+          "eigenvalue_variance": 0.0004441043083900227,
+          "exact_eigenvalue_variance": "3917/8820000",
+          "exact_mean_eigenvalue": "-1/700",
+          "exact_second_moment": "787/1764000",
+          "first_moment_signature_count": 253,
+          "generator_id": "ORB-TC-INTERSECTION-1",
+          "mean_eigenvalue": -0.0014285714285714286,
+          "non_scalar_proved": true,
+          "orbit_size": 840,
+          "second_moment": 0.0004461451247165533,
+          "second_moment_signature_count": 659,
+          "spectral_diameter_lower_bound": 0.042147564977826305
+        }
+      ],
+      "kronecker_multiplicity": 5,
+      "maximum_eigenvalue_variance": 0.00221859410430839,
+      "maximum_spectral_diameter_lower_bound": 0.09420390871526277,
+      "n": 7,
+      "non_scalar_generator_ids": [
+        "ORB-TC-INTERSECTION-2",
+        "ORB-TT-DISJOINT",
+        "ORB-TC-INTERSECTION-1"
+      ],
+      "source_dimension": 35,
+      "source_partition": [
+        4,
+        2,
+        1
+      ],
+      "status": "finite-non-scalar-witness-gap-open",
+      "target_dimension": 21,
+      "target_partition": [
+        3,
+        3,
+        1
+      ]
+    },
+    {
+      "best_generator_id": "ORB-TT-DISJOINT",
+      "centered_covariance_rank": 3,
+      "exact_centered_covariance_matrix": [
+        [
+          "37/26250",
+          "-29/39375",
+          "-13/183750"
+        ],
+        [
+          "-29/39375",
+          "1283/551250",
+          "-331/1102500"
+        ],
+        [
+          "-13/183750",
+          "-331/1102500",
+          "267/980000"
+        ]
+      ],
+      "finite_character_moment_only": true,
+      "finite_non_scalar_covered": true,
+      "finite_simple_spectrum_proved": false,
+      "generator_moments": [
+        {
+          "eigenvalue_variance": 0.0014095238095238095,
+          "exact_eigenvalue_variance": "37/26250",
+          "exact_mean_eigenvalue": "-29/1050",
+          "exact_second_moment": "479/220500",
+          "first_moment_signature_count": 167,
+          "generator_id": "ORB-TC-INTERSECTION-2",
+          "mean_eigenvalue": -0.02761904761904762,
+          "non_scalar_proved": true,
+          "orbit_size": 210,
+          "second_moment": 0.0021723356009070295,
+          "second_moment_signature_count": 541,
+          "spectral_diameter_lower_bound": 0.07508725083591247
+        },
+        {
+          "eigenvalue_variance": 0.0023274376417233562,
+          "exact_eigenvalue_variance": "1283/551250",
+          "exact_mean_eigenvalue": "17/1050",
+          "exact_second_moment": "571/220500",
+          "first_moment_signature_count": 183,
+          "generator_id": "ORB-TT-DISJOINT",
+          "mean_eigenvalue": 0.01619047619047619,
+          "non_scalar_proved": true,
+          "orbit_size": 210,
+          "second_moment": 0.0025895691609977324,
+          "second_moment_signature_count": 582,
+          "spectral_diameter_lower_bound": 0.09648704870029669
+        },
+        {
+          "eigenvalue_variance": 0.00027244897959183674,
+          "exact_eigenvalue_variance": "267/980000",
+          "exact_mean_eigenvalue": "1/2100",
+          "exact_second_moment": "481/1764000",
+          "first_moment_signature_count": 253,
+          "generator_id": "ORB-TC-INTERSECTION-1",
+          "mean_eigenvalue": 0.0004761904761904762,
+          "non_scalar_proved": true,
+          "orbit_size": 840,
+          "second_moment": 0.00027267573696145123,
+          "second_moment_signature_count": 659,
+          "spectral_diameter_lower_bound": 0.0330120571665467
+        }
+      ],
+      "kronecker_multiplicity": 5,
+      "maximum_eigenvalue_variance": 0.0023274376417233562,
+      "maximum_spectral_diameter_lower_bound": 0.09648704870029669,
+      "n": 7,
+      "non_scalar_generator_ids": [
+        "ORB-TC-INTERSECTION-2",
+        "ORB-TT-DISJOINT",
+        "ORB-TC-INTERSECTION-1"
+      ],
+      "source_dimension": 35,
+      "source_partition": [
+        4,
+        2,
+        1
+      ],
+      "status": "finite-non-scalar-witness-gap-open",
+      "target_dimension": 21,
+      "target_partition": [
+        3,
+        2,
+        2
+      ]
+    },
+    {
+      "best_generator_id": "ORB-TC-INTERSECTION-2",
+      "centered_covariance_rank": 3,
+      "exact_centered_covariance_matrix": [
+        [
+          "2239/705600",
+          "-173/141120",
+          "-3037/5644800"
+        ],
+        [
+          "-173/141120",
+          "2239/705600",
+          "-2909/5644800"
+        ],
+        [
+          "-3037/5644800",
+          "-2909/5644800",
+          "895/1806336"
+        ]
+      ],
+      "finite_character_moment_only": true,
+      "finite_non_scalar_covered": true,
+      "finite_simple_spectrum_proved": false,
+      "generator_moments": [
+        {
+          "eigenvalue_variance": 0.003173185941043084,
+          "exact_eigenvalue_variance": "2239/705600",
+          "exact_mean_eigenvalue": "-5/168",
+          "exact_second_moment": "179/44100",
+          "first_moment_signature_count": 167,
+          "generator_id": "ORB-TC-INTERSECTION-2",
+          "mean_eigenvalue": -0.02976190476190476,
+          "non_scalar_proved": true,
+          "orbit_size": 210,
+          "second_moment": 0.004058956916099773,
+          "second_moment_signature_count": 541,
+          "spectral_diameter_lower_bound": 0.1126620777554379
+        },
+        {
+          "eigenvalue_variance": 0.003173185941043084,
+          "exact_eigenvalue_variance": "2239/705600",
+          "exact_mean_eigenvalue": "23/840",
+          "exact_second_moment": "173/44100",
+          "first_moment_signature_count": 183,
+          "generator_id": "ORB-TT-DISJOINT",
+          "mean_eigenvalue": 0.02738095238095238,
+          "non_scalar_proved": true,
+          "orbit_size": 210,
+          "second_moment": 0.0039229024943310655,
+          "second_moment_signature_count": 582,
+          "spectral_diameter_lower_bound": 0.1126620777554379
+        },
+        {
+          "eigenvalue_variance": 0.0004954781391723356,
+          "exact_eigenvalue_variance": "895/1806336",
+          "exact_mean_eigenvalue": "1/960",
+          "exact_second_moment": "2803/5644800",
+          "first_moment_signature_count": 253,
+          "generator_id": "ORB-TC-INTERSECTION-1",
+          "mean_eigenvalue": 0.0010416666666666667,
+          "non_scalar_proved": true,
+          "orbit_size": 840,
+          "second_moment": 0.0004965632086167801,
+          "second_moment_signature_count": 659,
+          "spectral_diameter_lower_bound": 0.04451867649301069
+        }
+      ],
+      "kronecker_multiplicity": 8,
+      "maximum_eigenvalue_variance": 0.003173185941043084,
+      "maximum_spectral_diameter_lower_bound": 0.1126620777554379,
+      "n": 7,
+      "non_scalar_generator_ids": [
+        "ORB-TC-INTERSECTION-2",
+        "ORB-TT-DISJOINT",
+        "ORB-TC-INTERSECTION-1"
+      ],
+      "source_dimension": 35,
+      "source_partition": [
+        4,
+        2,
+        1
+      ],
+      "status": "finite-non-scalar-witness-gap-open",
+      "target_dimension": 35,
+      "target_partition": [
+        3,
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "best_generator_id": "ORB-TT-DISJOINT",
+      "centered_covariance_rank": 3,
+      "exact_centered_covariance_matrix": [
+        [
+          "379/198450",
+          "-136/99225",
+          "1/14175"
+        ],
+        [
+          "-136/99225",
+          "19/7938",
+          "-337/793800"
+        ],
+        [
+          "1/14175",
+          "-337/793800",
+          "571/3175200"
+        ]
+      ],
+      "finite_character_moment_only": true,
+      "finite_non_scalar_covered": true,
+      "finite_simple_spectrum_proved": false,
+      "generator_moments": [
+        {
+          "eigenvalue_variance": 0.001909800957420005,
+          "exact_eigenvalue_variance": "379/198450",
+          "exact_mean_eigenvalue": "-19/630",
+          "exact_second_moment": "373/132300",
+          "first_moment_signature_count": 167,
+          "generator_id": "ORB-TC-INTERSECTION-2",
+          "mean_eigenvalue": -0.03015873015873016,
+          "non_scalar_proved": true,
+          "orbit_size": 210,
+          "second_moment": 0.002819349962207105,
+          "second_moment_signature_count": 541,
+          "spectral_diameter_lower_bound": 0.08740253903451559
+        },
+        {
+          "eigenvalue_variance": 0.0023935500125976316,
+          "exact_eigenvalue_variance": "19/7938",
+          "exact_mean_eigenvalue": "23/630",
+          "exact_second_moment": "493/132300",
+          "first_moment_signature_count": 183,
+          "generator_id": "ORB-TT-DISJOINT",
+          "mean_eigenvalue": 0.03650793650793651,
+          "non_scalar_proved": true,
+          "orbit_size": 210,
+          "second_moment": 0.003726379440665155,
+          "second_moment_signature_count": 582,
+          "spectral_diameter_lower_bound": 0.09784784131696787
+        },
+        {
+          "eigenvalue_variance": 0.00017983119173595365,
+          "exact_eigenvalue_variance": "571/3175200",
+          "exact_mean_eigenvalue": "-11/2520",
+          "exact_second_moment": "421/2116800",
+          "first_moment_signature_count": 253,
+          "generator_id": "ORB-TC-INTERSECTION-1",
+          "mean_eigenvalue": -0.004365079365079365,
+          "non_scalar_proved": true,
+          "orbit_size": 840,
+          "second_moment": 0.0001988851095993953,
+          "second_moment_signature_count": 659,
+          "spectral_diameter_lower_bound": 0.026820230553517146
+        }
+      ],
+      "kronecker_multiplicity": 3,
+      "maximum_eigenvalue_variance": 0.0023935500125976316,
+      "maximum_spectral_diameter_lower_bound": 0.09784784131696787,
+      "n": 7,
+      "non_scalar_generator_ids": [
+        "ORB-TC-INTERSECTION-2",
+        "ORB-TT-DISJOINT",
+        "ORB-TC-INTERSECTION-1"
+      ],
+      "source_dimension": 35,
+      "source_partition": [
+        4,
+        2,
+        1
+      ],
+      "status": "finite-non-scalar-witness-gap-open",
+      "target_dimension": 15,
+      "target_partition": [
+        3,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "best_generator_id": "ORB-TC-INTERSECTION-2",
+      "centered_covariance_rank": 3,
+      "exact_centered_covariance_matrix": [
+        [
+          "8/11025",
+          "0",
+          "-1/4410"
+        ],
+        [
+          "0",
+          "121/198450",
+          "-1/66150"
+        ],
+        [
+          "-1/4410",
+          "-1/66150",
+          "83/352800"
+        ]
+      ],
+      "finite_character_moment_only": true,
+      "finite_non_scalar_covered": true,
+      "finite_simple_spectrum_proved": false,
+      "generator_moments": [
+        {
+          "eigenvalue_variance": 0.0007256235827664399,
+          "exact_eigenvalue_variance": "8/11025",
+          "exact_mean_eigenvalue": "-1/14",
+          "exact_second_moment": "257/44100",
+          "first_moment_signature_count": 167,
+          "generator_id": "ORB-TC-INTERSECTION-2",
+          "mean_eigenvalue": -0.07142857142857142,
+          "non_scalar_proved": true,
+          "orbit_size": 210,
+          "second_moment": 0.00582766439909297,
+          "second_moment_signature_count": 541,
+          "spectral_diameter_lower_bound": 0.05387480237611791
+        },
+        {
+          "eigenvalue_variance": 0.0006097253716301335,
+          "exact_eigenvalue_variance": "121/198450",
+          "exact_mean_eigenvalue": "17/315",
+          "exact_second_moment": "233/66150",
+          "first_moment_signature_count": 183,
+          "generator_id": "ORB-TT-DISJOINT",
+          "mean_eigenvalue": 0.05396825396825397,
+          "non_scalar_proved": true,
+          "orbit_size": 210,
+          "second_moment": 0.0035222978080120936,
+          "second_moment_signature_count": 582,
+          "spectral_diameter_lower_bound": 0.04938523551144142
+        },
+        {
+          "eigenvalue_variance": 0.00023526077097505669,
+          "exact_eigenvalue_variance": "83/352800",
+          "exact_mean_eigenvalue": "1/168",
+          "exact_second_moment": "191/705600",
+          "first_moment_signature_count": 253,
+          "generator_id": "ORB-TC-INTERSECTION-1",
+          "mean_eigenvalue": 0.005952380952380952,
+          "non_scalar_proved": true,
+          "orbit_size": 840,
+          "second_moment": 0.0002706916099773243,
+          "second_moment_signature_count": 659,
+          "spectral_diameter_lower_bound": 0.030676425539821726
+        }
+      ],
+      "kronecker_multiplicity": 3,
+      "maximum_eigenvalue_variance": 0.0007256235827664399,
+      "maximum_spectral_diameter_lower_bound": 0.05387480237611791,
+      "n": 7,
+      "non_scalar_generator_ids": [
+        "ORB-TC-INTERSECTION-2",
+        "ORB-TT-DISJOINT",
+        "ORB-TC-INTERSECTION-1"
+      ],
+      "source_dimension": 35,
+      "source_partition": [
+        4,
+        2,
+        1
+      ],
+      "status": "finite-non-scalar-witness-gap-open",
+      "target_dimension": 14,
+      "target_partition": [
+        2,
+        2,
+        2,
+        1
+      ]
+    },
+    {
+      "best_generator_id": "ORB-TC-INTERSECTION-2",
+      "centered_covariance_rank": 3,
+      "exact_centered_covariance_matrix": [
+        [
+          "1/630",
+          "0",
+          "-1/3528"
+        ],
+        [
+          "0",
+          "97/198450",
+          "-17/66150"
+        ],
+        [
+          "-1/3528",
+          "-17/66150",
+          "11/39200"
+        ]
+      ],
+      "finite_character_moment_only": true,
+      "finite_non_scalar_covered": true,
+      "finite_simple_spectrum_proved": false,
+      "generator_moments": [
+        {
+          "eigenvalue_variance": 0.0015873015873015873,
+          "exact_eigenvalue_variance": "1/630",
+          "exact_mean_eigenvalue": "-1/14",
+          "exact_second_moment": "59/8820",
+          "first_moment_signature_count": 167,
+          "generator_id": "ORB-TC-INTERSECTION-2",
+          "mean_eigenvalue": -0.07142857142857142,
+          "non_scalar_proved": true,
+          "orbit_size": 210,
+          "second_moment": 0.006689342403628118,
+          "second_moment_signature_count": 541,
+          "spectral_diameter_lower_bound": 0.07968190728895957
+        },
+        {
+          "eigenvalue_variance": 0.0004887881078357269,
+          "exact_eigenvalue_variance": "97/198450",
+          "exact_mean_eigenvalue": "31/630",
+          "exact_second_moment": "11/3780",
+          "first_moment_signature_count": 183,
+          "generator_id": "ORB-TT-DISJOINT",
+          "mean_eigenvalue": 0.049206349206349205,
+          "non_scalar_proved": true,
+          "orbit_size": 210,
+          "second_moment": 0.00291005291005291,
+          "second_moment_signature_count": 582,
+          "spectral_diameter_lower_bound": 0.04421710564185435
+        },
+        {
+          "eigenvalue_variance": 0.0002806122448979592,
+          "exact_eigenvalue_variance": "11/39200",
+          "exact_mean_eigenvalue": "1/120",
+          "exact_second_moment": "247/705600",
+          "first_moment_signature_count": 253,
+          "generator_id": "ORB-TC-INTERSECTION-1",
+          "mean_eigenvalue": 0.008333333333333333,
+          "non_scalar_proved": true,
+          "orbit_size": 840,
+          "second_moment": 0.00035005668934240365,
+          "second_moment_signature_count": 659,
+          "spectral_diameter_lower_bound": 0.033502969713024494
+        }
+      ],
+      "kronecker_multiplicity": 3,
+      "maximum_eigenvalue_variance": 0.0015873015873015873,
+      "maximum_spectral_diameter_lower_bound": 0.07968190728895957,
+      "n": 7,
+      "non_scalar_generator_ids": [
+        "ORB-TC-INTERSECTION-2",
+        "ORB-TT-DISJOINT",
+        "ORB-TC-INTERSECTION-1"
+      ],
+      "source_dimension": 35,
+      "source_partition": [
+        4,
+        2,
+        1
+      ],
+      "status": "finite-non-scalar-witness-gap-open",
+      "target_dimension": 14,
+      "target_partition": [
+        2,
+        2,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "best_generator_id": "ORB-TC-INTERSECTION-2",
+      "centered_covariance_rank": 1,
+      "exact_centered_covariance_matrix": [
+        [
+          "1/882",
+          "0",
+          "-1/4410"
+        ],
+        [
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "-1/4410",
+          "0",
+          "1/22050"
+        ]
+      ],
+      "finite_character_moment_only": true,
+      "finite_non_scalar_covered": true,
+      "finite_simple_spectrum_proved": true,
+      "generator_moments": [
+        {
+          "eigenvalue_variance": 0.0011337868480725624,
+          "exact_eigenvalue_variance": "1/882",
+          "exact_mean_eigenvalue": "0",
+          "exact_second_moment": "1/882",
+          "first_moment_signature_count": 309,
+          "generator_id": "ORB-TC-INTERSECTION-2",
+          "mean_eigenvalue": 0.0,
+          "non_scalar_proved": true,
+          "orbit_size": 336,
+          "second_moment": 0.0011337868480725624,
+          "second_moment_signature_count": 1304,
+          "spectral_diameter_lower_bound": 0.06734350297014738
+        },
+        {
+          "eigenvalue_variance": 0.0,
+          "exact_eigenvalue_variance": "0",
+          "exact_mean_eigenvalue": "-1/15",
+          "exact_second_moment": "1/225",
+          "first_moment_signature_count": 372,
+          "generator_id": "ORB-TT-DISJOINT",
+          "mean_eigenvalue": -0.06666666666666667,
+          "non_scalar_proved": false,
+          "orbit_size": 420,
+          "second_moment": 0.0044444444444444444,
+          "second_moment_signature_count": 1488,
+          "spectral_diameter_lower_bound": 0.0
+        },
+        {
+          "eigenvalue_variance": 4.5351473922902495e-05,
+          "exact_eigenvalue_variance": "1/22050",
+          "exact_mean_eigenvalue": "0",
+          "exact_second_moment": "1/22050",
+          "first_moment_signature_count": 521,
+          "generator_id": "ORB-TC-INTERSECTION-1",
+          "mean_eigenvalue": 0.0,
+          "non_scalar_proved": true,
+          "orbit_size": 1680,
+          "second_moment": 4.5351473922902495e-05,
+          "second_moment_signature_count": 1753,
+          "spectral_diameter_lower_bound": 0.013468700594029477
+        }
+      ],
+      "kronecker_multiplicity": 2,
+      "maximum_eigenvalue_variance": 0.0011337868480725624,
+      "maximum_spectral_diameter_lower_bound": 0.06734350297014738,
+      "n": 8,
+      "non_scalar_generator_ids": [
+        "ORB-TC-INTERSECTION-2",
+        "ORB-TC-INTERSECTION-1"
+      ],
+      "source_dimension": 90,
+      "source_partition": [
+        4,
+        2,
+        1,
+        1
+      ],
+      "status": "finite-non-scalar-witness-gap-open",
+      "target_dimension": 7,
+      "target_partition": [
+        7,
+        1
+      ]
+    },
+    {
+      "best_generator_id": "ORB-TC-INTERSECTION-2",
+      "centered_covariance_rank": 3,
+      "exact_centered_covariance_matrix": [
+        [
+          "209/70560",
+          "0",
+          "-17/35280"
+        ],
+        [
+          "0",
+          "457/551250",
+          "0"
+        ],
+        [
+          "-17/35280",
+          "0",
+          "53/441000"
+        ]
+      ],
+      "finite_character_moment_only": true,
+      "finite_non_scalar_covered": true,
+      "finite_simple_spectrum_proved": false,
+      "generator_moments": [
+        {
+          "eigenvalue_variance": 0.0029620181405895694,
+          "exact_eigenvalue_variance": "209/70560",
+          "exact_mean_eigenvalue": "0",
+          "exact_second_moment": "209/70560",
+          "first_moment_signature_count": 309,
+          "generator_id": "ORB-TC-INTERSECTION-2",
+          "mean_eigenvalue": 0.0,
+          "non_scalar_proved": true,
+          "orbit_size": 336,
+          "second_moment": 0.0029620181405895694,
+          "second_moment_signature_count": 1304,
+          "spectral_diameter_lower_bound": 0.10884885191107106
+        },
+        {
+          "eigenvalue_variance": 0.0008290249433106576,
+          "exact_eigenvalue_variance": "457/551250",
+          "exact_mean_eigenvalue": "-97/2100",
+          "exact_second_moment": "871/294000",
+          "first_moment_signature_count": 372,
+          "generator_id": "ORB-TT-DISJOINT",
+          "mean_eigenvalue": -0.04619047619047619,
+          "non_scalar_proved": true,
+          "orbit_size": 420,
+          "second_moment": 0.0029625850340136055,
+          "second_moment_signature_count": 1488,
+          "spectral_diameter_lower_bound": 0.05758558650602276
+        },
+        {
+          "eigenvalue_variance": 0.0001201814058956916,
+          "exact_eigenvalue_variance": "53/441000",
+          "exact_mean_eigenvalue": "0",
+          "exact_second_moment": "53/441000",
+          "first_moment_signature_count": 521,
+          "generator_id": "ORB-TC-INTERSECTION-1",
+          "mean_eigenvalue": 0.0,
+          "non_scalar_proved": true,
+          "orbit_size": 1680,
+          "second_moment": 0.0001201814058956916,
+          "second_moment_signature_count": 1753,
+          "spectral_diameter_lower_bound": 0.02192545606327874
+        }
+      ],
+      "kronecker_multiplicity": 5,
+      "maximum_eigenvalue_variance": 0.0029620181405895694,
+      "maximum_spectral_diameter_lower_bound": 0.10884885191107106,
+      "n": 8,
+      "non_scalar_generator_ids": [
+        "ORB-TC-INTERSECTION-2",
+        "ORB-TT-DISJOINT",
+        "ORB-TC-INTERSECTION-1"
+      ],
+      "source_dimension": 90,
+      "source_partition": [
+        4,
+        2,
+        1,
+        1
+      ],
+      "status": "finite-non-scalar-witness-gap-open",
+      "target_dimension": 20,
+      "target_partition": [
+        6,
+        2
+      ]
+    },
+    {
+      "best_generator_id": "ORB-TC-INTERSECTION-2",
+      "centered_covariance_rank": 3,
+      "exact_centered_covariance_matrix": [
+        [
+          "5/1764",
+          "0",
+          "-1/2205"
+        ],
+        [
+          "0",
+          "37/44800",
+          "0"
+        ],
+        [
+          "-1/2205",
+          "0",
+          "1/11025"
+        ]
+      ],
+      "finite_character_moment_only": true,
+      "finite_non_scalar_covered": true,
+      "finite_simple_spectrum_proved": false,
+      "generator_moments": [
+        {
+          "eigenvalue_variance": 0.002834467120181406,
+          "exact_eigenvalue_variance": "5/1764",
+          "exact_mean_eigenvalue": "0",
+          "exact_second_moment": "5/1764",
+          "first_moment_signature_count": 309,
+          "generator_id": "ORB-TC-INTERSECTION-2",
+          "mean_eigenvalue": 0.0,
+          "non_scalar_proved": true,
+          "orbit_size": 336,
+          "second_moment": 0.002834467120181406,
+          "second_moment_signature_count": 1304,
+          "spectral_diameter_lower_bound": 0.10647942749998998
+        },
+        {
+          "eigenvalue_variance": 0.0008258928571428572,
+          "exact_eigenvalue_variance": "37/44800",
+          "exact_mean_eigenvalue": "-11/240",
+          "exact_second_moment": "59/20160",
+          "first_moment_signature_count": 372,
+          "generator_id": "ORB-TT-DISJOINT",
+          "mean_eigenvalue": -0.04583333333333333,
+          "non_scalar_proved": true,
+          "orbit_size": 420,
+          "second_moment": 0.0029265873015873016,
+          "second_moment_signature_count": 1488,
+          "spectral_diameter_lower_bound": 0.05747670335511101
+        },
+        {
+          "eigenvalue_variance": 9.070294784580499e-05,
+          "exact_eigenvalue_variance": "1/11025",
+          "exact_mean_eigenvalue": "0",
+          "exact_second_moment": "1/11025",
+          "first_moment_signature_count": 521,
+          "generator_id": "ORB-TC-INTERSECTION-1",
+          "mean_eigenvalue": 0.0,
+          "non_scalar_proved": true,
+          "orbit_size": 1680,
+          "second_moment": 9.070294784580499e-05,
+          "second_moment_signature_count": 1753,
+          "spectral_diameter_lower_bound": 0.01904761904761905
+        }
+      ],
+      "kronecker_multiplicity": 4,
+      "maximum_eigenvalue_variance": 0.002834467120181406,
+      "maximum_spectral_diameter_lower_bound": 0.10647942749998998,
+      "n": 8,
+      "non_scalar_generator_ids": [
+        "ORB-TC-INTERSECTION-2",
+        "ORB-TT-DISJOINT",
+        "ORB-TC-INTERSECTION-1"
+      ],
+      "source_dimension": 90,
+      "source_partition": [
+        4,
+        2,
+        1,
+        1
+      ],
+      "status": "finite-non-scalar-witness-gap-open",
+      "target_dimension": 21,
+      "target_partition": [
+        6,
+        1,
+        1
+      ]
+    },
+    {
+      "best_generator_id": "ORB-TC-INTERSECTION-2",
+      "centered_covariance_rank": 3,
+      "exact_centered_covariance_matrix": [
+        [
+          "23/21168",
+          "0",
+          "-1/2940"
+        ],
+        [
+          "0",
+          "731/907200",
+          "0"
+        ],
+        [
+          "-1/2940",
+          "0",
+          "41/132300"
+        ]
+      ],
+      "finite_character_moment_only": true,
+      "finite_non_scalar_covered": true,
+      "finite_simple_spectrum_proved": false,
+      "generator_moments": [
+        {
+          "eigenvalue_variance": 0.0010865457294028723,
+          "exact_eigenvalue_variance": "23/21168",
+          "exact_mean_eigenvalue": "0",
+          "exact_second_moment": "23/21168",
+          "first_moment_signature_count": 309,
+          "generator_id": "ORB-TC-INTERSECTION-2",
+          "mean_eigenvalue": 0.0,
+          "non_scalar_proved": true,
+          "orbit_size": 336,
+          "second_moment": 0.0010865457294028723,
+          "second_moment_signature_count": 1304,
+          "spectral_diameter_lower_bound": 0.06592558621363552
+        },
+        {
+          "eigenvalue_variance": 0.0008057760141093474,
+          "exact_eigenvalue_variance": "731/907200",
+          "exact_mean_eigenvalue": "-73/2520",
+          "exact_second_moment": "1741/1058400",
+          "first_moment_signature_count": 372,
+          "generator_id": "ORB-TT-DISJOINT",
+          "mean_eigenvalue": -0.02896825396825397,
+          "non_scalar_proved": true,
+          "orbit_size": 420,
+          "second_moment": 0.0016449357520786092,
+          "second_moment_signature_count": 1488,
+          "spectral_diameter_lower_bound": 0.05677238815161283
+        },
+        {
+          "eigenvalue_variance": 0.00030990173847316707,
+          "exact_eigenvalue_variance": "41/132300",
+          "exact_mean_eigenvalue": "0",
+          "exact_second_moment": "41/132300",
+          "first_moment_signature_count": 521,
+          "generator_id": "ORB-TC-INTERSECTION-1",
+          "mean_eigenvalue": 0.0,
+          "non_scalar_proved": true,
+          "orbit_size": 1680,
+          "second_moment": 0.00030990173847316707,
+          "second_moment_signature_count": 1753,
+          "spectral_diameter_lower_bound": 0.03520805240129974
+        }
+      ],
+      "kronecker_multiplicity": 6,
+      "maximum_eigenvalue_variance": 0.0010865457294028723,
+      "maximum_spectral_diameter_lower_bound": 0.06592558621363552,
+      "n": 8,
+      "non_scalar_generator_ids": [
+        "ORB-TC-INTERSECTION-2",
+        "ORB-TT-DISJOINT",
+        "ORB-TC-INTERSECTION-1"
+      ],
+      "source_dimension": 90,
+      "source_partition": [
+        4,
+        2,
+        1,
+        1
+      ],
+      "status": "finite-non-scalar-witness-gap-open",
+      "target_dimension": 28,
+      "target_partition": [
+        5,
+        3
+      ]
+    },
+    {
+      "best_generator_id": "ORB-TC-INTERSECTION-2",
+      "centered_covariance_rank": 3,
+      "exact_centered_covariance_matrix": [
+        [
+          "79/28224",
+          "0",
+          "-391/917280"
+        ],
+        [
+          "0",
+          "16763/14905800",
+          "0"
+        ],
+        [
+          "-391/917280",
+          "0",
+          "29/143325"
+        ]
+      ],
+      "finite_character_moment_only": true,
+      "finite_non_scalar_covered": true,
+      "finite_simple_spectrum_proved": false,
+      "generator_moments": [
+        {
+          "eigenvalue_variance": 0.0027990362811791385,
+          "exact_eigenvalue_variance": "79/28224",
+          "exact_mean_eigenvalue": "0",
+          "exact_second_moment": "79/28224",
+          "first_moment_signature_count": 309,
+          "generator_id": "ORB-TC-INTERSECTION-2",
+          "mean_eigenvalue": 0.0,
+          "non_scalar_proved": true,
+          "orbit_size": 336,
+          "second_moment": 0.0027990362811791385,
+          "second_moment_signature_count": 1304,
+          "spectral_diameter_lower_bound": 0.10581183830137607
+        },
+        {
+          "eigenvalue_variance": 0.0011245957949254652,
+          "exact_eigenvalue_variance": "16763/14905800",
+          "exact_mean_eigenvalue": "-12/455",
+          "exact_second_moment": "2087/1146600",
+          "first_moment_signature_count": 372,
+          "generator_id": "ORB-TT-DISJOINT",
+          "mean_eigenvalue": -0.026373626373626374,
+          "non_scalar_proved": true,
+          "orbit_size": 420,
+          "second_moment": 0.0018201639630211059,
+          "second_moment_signature_count": 1488,
+          "spectral_diameter_lower_bound": 0.06706998717535184
+        },
+        {
+          "eigenvalue_variance": 0.00020233734519448806,
+          "exact_eigenvalue_variance": "29/143325",
+          "exact_mean_eigenvalue": "0",
+          "exact_second_moment": "29/143325",
+          "first_moment_signature_count": 521,
+          "generator_id": "ORB-TC-INTERSECTION-1",
+          "mean_eigenvalue": 0.0,
+          "non_scalar_proved": true,
+          "orbit_size": 1680,
+          "second_moment": 0.00020233734519448806,
+          "second_moment_signature_count": 1753,
+          "spectral_diameter_lower_bound": 0.028449066430692452
+        }
+      ],
+      "kronecker_multiplicity": 13,
+      "maximum_eigenvalue_variance": 0.0027990362811791385,
+      "maximum_spectral_diameter_lower_bound": 0.10581183830137607,
+      "n": 8,
+      "non_scalar_generator_ids": [
+        "ORB-TC-INTERSECTION-2",
+        "ORB-TT-DISJOINT",
+        "ORB-TC-INTERSECTION-1"
+      ],
+      "source_dimension": 90,
+      "source_partition": [
+        4,
+        2,
+        1,
+        1
+      ],
+      "status": "finite-non-scalar-witness-gap-open",
+      "target_dimension": 64,
+      "target_partition": [
+        5,
+        2,
+        1
+      ]
+    },
+    {
+      "best_generator_id": "ORB-TT-DISJOINT",
+      "centered_covariance_rank": 3,
+      "exact_centered_covariance_matrix": [
+        [
+          "25/14112",
+          "0",
+          "-19/105840"
+        ],
+        [
+          "0",
+          "1787/907200",
+          "0"
+        ],
+        [
+          "-19/105840",
+          "0",
+          "31/264600"
+        ]
+      ],
+      "finite_character_moment_only": true,
+      "finite_non_scalar_covered": true,
+      "finite_simple_spectrum_proved": false,
+      "generator_moments": [
+        {
+          "eigenvalue_variance": 0.0017715419501133788,
+          "exact_eigenvalue_variance": "25/14112",
+          "exact_mean_eigenvalue": "0",
+          "exact_second_moment": "25/14112",
+          "first_moment_signature_count": 309,
+          "generator_id": "ORB-TC-INTERSECTION-2",
+          "mean_eigenvalue": 0.0,
+          "non_scalar_proved": true,
+          "orbit_size": 336,
+          "second_moment": 0.0017715419501133788,
+          "second_moment_signature_count": 1304,
+          "spectral_diameter_lower_bound": 0.08417937871268423
+        },
+        {
+          "eigenvalue_variance": 0.0019697971781305113,
+          "exact_eigenvalue_variance": "1787/907200",
+          "exact_mean_eigenvalue": "-61/2520",
+          "exact_second_moment": "541/211680",
+          "first_moment_signature_count": 372,
+          "generator_id": "ORB-TT-DISJOINT",
+          "mean_eigenvalue": -0.024206349206349207,
+          "non_scalar_proved": true,
+          "orbit_size": 420,
+          "second_moment": 0.002555744520030234,
+          "second_moment_signature_count": 1488,
+          "spectral_diameter_lower_bound": 0.08876479433042159
+        },
+        {
+          "eigenvalue_variance": 0.00011715797430083145,
+          "exact_eigenvalue_variance": "31/264600",
+          "exact_mean_eigenvalue": "0",
+          "exact_second_moment": "31/264600",
+          "first_moment_signature_count": 521,
+          "generator_id": "ORB-TC-INTERSECTION-1",
+          "mean_eigenvalue": 0.0,
+          "non_scalar_proved": true,
+          "orbit_size": 1680,
+          "second_moment": 0.00011715797430083145,
+          "second_moment_signature_count": 1753,
+          "spectral_diameter_lower_bound": 0.021647907455533105
+        }
+      ],
+      "kronecker_multiplicity": 6,
+      "maximum_eigenvalue_variance": 0.0019697971781305113,
+      "maximum_spectral_diameter_lower_bound": 0.08876479433042159,
+      "n": 8,
+      "non_scalar_generator_ids": [
+        "ORB-TC-INTERSECTION-2",
+        "ORB-TT-DISJOINT",
+        "ORB-TC-INTERSECTION-1"
+      ],
+      "source_dimension": 90,
+      "source_partition": [
+        4,
+        2,
+        1,
+        1
+      ],
+      "status": "finite-non-scalar-witness-gap-open",
+      "target_dimension": 35,
+      "target_partition": [
+        5,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "best_generator_id": "ORB-TT-DISJOINT",
+      "centered_covariance_rank": 2,
+      "exact_centered_covariance_matrix": [
+        [
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "17/20160",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "1/2940"
+        ]
+      ],
+      "finite_character_moment_only": true,
+      "finite_non_scalar_covered": true,
+      "finite_simple_spectrum_proved": false,
+      "generator_moments": [
+        {
+          "eigenvalue_variance": 0.0,
+          "exact_eigenvalue_variance": "0",
+          "exact_mean_eigenvalue": "0",
+          "exact_second_moment": "0",
+          "first_moment_signature_count": 309,
+          "generator_id": "ORB-TC-INTERSECTION-2",
+          "mean_eigenvalue": 0.0,
+          "non_scalar_proved": false,
+          "orbit_size": 336,
+          "second_moment": 0.0,
+          "second_moment_signature_count": 1304,
+          "spectral_diameter_lower_bound": 0.0
+        },
+        {
+          "eigenvalue_variance": 0.0008432539682539683,
+          "exact_eigenvalue_variance": "17/20160",
+          "exact_mean_eigenvalue": "-23/840",
+          "exact_second_moment": "281/176400",
+          "first_moment_signature_count": 372,
+          "generator_id": "ORB-TT-DISJOINT",
+          "mean_eigenvalue": -0.02738095238095238,
+          "non_scalar_proved": true,
+          "orbit_size": 420,
+          "second_moment": 0.00159297052154195,
+          "second_moment_signature_count": 1488,
+          "spectral_diameter_lower_bound": 0.0580776710364308
+        },
+        {
+          "eigenvalue_variance": 0.0003401360544217687,
+          "exact_eigenvalue_variance": "1/2940",
+          "exact_mean_eigenvalue": "0",
+          "exact_second_moment": "1/2940",
+          "first_moment_signature_count": 521,
+          "generator_id": "ORB-TC-INTERSECTION-1",
+          "mean_eigenvalue": 0.0,
+          "non_scalar_proved": true,
+          "orbit_size": 1680,
+          "second_moment": 0.0003401360544217687,
+          "second_moment_signature_count": 1753,
+          "spectral_diameter_lower_bound": 0.03688555567816587
+        }
+      ],
+      "kronecker_multiplicity": 4,
+      "maximum_eigenvalue_variance": 0.0008432539682539683,
+      "maximum_spectral_diameter_lower_bound": 0.0580776710364308,
+      "n": 8,
+      "non_scalar_generator_ids": [
+        "ORB-TT-DISJOINT",
+        "ORB-TC-INTERSECTION-1"
+      ],
+      "source_dimension": 90,
+      "source_partition": [
+        4,
+        2,
+        1,
+        1
+      ],
+      "status": "finite-non-scalar-witness-gap-open",
+      "target_dimension": 14,
+      "target_partition": [
+        4,
+        4
+      ]
+    },
+    {
+      "best_generator_id": "ORB-TC-INTERSECTION-2",
+      "centered_covariance_rank": 3,
+      "exact_centered_covariance_matrix": [
+        [
+          "1177/790272",
+          "0",
+          "-17/94080"
+        ],
+        [
+          "0",
+          "1501/1382976",
+          "0"
+        ],
+        [
+          "-17/94080",
+          "0",
+          "59/235200"
+        ]
+      ],
+      "finite_character_moment_only": true,
+      "finite_non_scalar_covered": true,
+      "finite_simple_spectrum_proved": false,
+      "generator_moments": [
+        {
+          "eigenvalue_variance": 0.001489360625202462,
+          "exact_eigenvalue_variance": "1177/790272",
+          "exact_mean_eigenvalue": "0",
+          "exact_second_moment": "1177/790272",
+          "first_moment_signature_count": 309,
+          "generator_id": "ORB-TC-INTERSECTION-2",
+          "mean_eigenvalue": 0.0,
+          "non_scalar_proved": true,
+          "orbit_size": 336,
+          "second_moment": 0.001489360625202462,
+          "second_moment_signature_count": 1304,
+          "spectral_diameter_lower_bound": 0.07718447059357114
+        },
+        {
+          "eigenvalue_variance": 0.001085340598824564,
+          "exact_eigenvalue_variance": "1501/1382976",
+          "exact_mean_eigenvalue": "-29/1960",
+          "exact_second_moment": "3221/2469600",
+          "first_moment_signature_count": 372,
+          "generator_id": "ORB-TT-DISJOINT",
+          "mean_eigenvalue": -0.01479591836734694,
+          "non_scalar_proved": true,
+          "orbit_size": 420,
+          "second_moment": 0.0013042597991577583,
+          "second_moment_signature_count": 1488,
+          "spectral_diameter_lower_bound": 0.0658890157408521
+        },
+        {
+          "eigenvalue_variance": 0.0002508503401360544,
+          "exact_eigenvalue_variance": "59/235200",
+          "exact_mean_eigenvalue": "0",
+          "exact_second_moment": "59/235200",
+          "first_moment_signature_count": 521,
+          "generator_id": "ORB-TC-INTERSECTION-1",
+          "mean_eigenvalue": 0.0,
+          "non_scalar_proved": true,
+          "orbit_size": 1680,
+          "second_moment": 0.0002508503401360544,
+          "second_moment_signature_count": 1753,
+          "spectral_diameter_lower_bound": 0.031676511180119216
+        }
+      ],
+      "kronecker_multiplicity": 14,
+      "maximum_eigenvalue_variance": 0.001489360625202462,
+      "maximum_spectral_diameter_lower_bound": 0.07718447059357114,
+      "n": 8,
+      "non_scalar_generator_ids": [
+        "ORB-TC-INTERSECTION-2",
+        "ORB-TT-DISJOINT",
+        "ORB-TC-INTERSECTION-1"
+      ],
+      "source_dimension": 90,
+      "source_partition": [
+        4,
+        2,
+        1,
+        1
+      ],
+      "status": "finite-non-scalar-witness-gap-open",
+      "target_dimension": 70,
+      "target_partition": [
+        4,
+        3,
+        1
+      ]
+    },
+    {
+      "best_generator_id": "ORB-TT-DISJOINT",
+      "centered_covariance_rank": 3,
+      "exact_centered_covariance_matrix": [
+        [
+          "1349/677376",
+          "0",
+          "-1/3840"
+        ],
+        [
+          "0",
+          "51827/25401600",
+          "0"
+        ],
+        [
+          "-1/3840",
+          "0",
+          "227/846720"
+        ]
+      ],
+      "finite_character_moment_only": true,
+      "finite_non_scalar_covered": true,
+      "finite_simple_spectrum_proved": false,
+      "generator_moments": [
+        {
+          "eigenvalue_variance": 0.0019915084089191233,
+          "exact_eigenvalue_variance": "1349/677376",
+          "exact_mean_eigenvalue": "0",
+          "exact_second_moment": "1349/677376",
+          "first_moment_signature_count": 309,
+          "generator_id": "ORB-TC-INTERSECTION-2",
+          "mean_eigenvalue": 0.0,
+          "non_scalar_proved": true,
+          "orbit_size": 336,
+          "second_moment": 0.0019915084089191233,
+          "second_moment_signature_count": 1304,
+          "spectral_diameter_lower_bound": 0.08925263937652765
+        },
+        {
+          "eigenvalue_variance": 0.002040304547745024,
+          "exact_eigenvalue_variance": "51827/25401600",
+          "exact_mean_eigenvalue": "-29/5040",
+          "exact_second_moment": "209/100800",
+          "first_moment_signature_count": 372,
+          "generator_id": "ORB-TT-DISJOINT",
+          "mean_eigenvalue": -0.005753968253968254,
+          "non_scalar_proved": true,
+          "orbit_size": 420,
+          "second_moment": 0.0020734126984126985,
+          "second_moment_signature_count": 1488,
+          "spectral_diameter_lower_bound": 0.0903394608738623
+        },
+        {
+          "eigenvalue_variance": 0.0002680933484504913,
+          "exact_eigenvalue_variance": "227/846720",
+          "exact_mean_eigenvalue": "0",
+          "exact_second_moment": "227/846720",
+          "first_moment_signature_count": 521,
+          "generator_id": "ORB-TC-INTERSECTION-1",
+          "mean_eigenvalue": 0.0,
+          "non_scalar_proved": true,
+          "orbit_size": 1680,
+          "second_moment": 0.0002680933484504913,
+          "second_moment_signature_count": 1753,
+          "spectral_diameter_lower_bound": 0.03274711275520279
+        }
+      ],
+      "kronecker_multiplicity": 12,
+      "maximum_eigenvalue_variance": 0.002040304547745024,
+      "maximum_spectral_diameter_lower_bound": 0.0903394608738623,
+      "n": 8,
+      "non_scalar_generator_ids": [
+        "ORB-TC-INTERSECTION-2",
+        "ORB-TT-DISJOINT",
+        "ORB-TC-INTERSECTION-1"
+      ],
+      "source_dimension": 90,
+      "source_partition": [
+        4,
+        2,
+        1,
+        1
+      ],
+      "status": "finite-non-scalar-witness-gap-open",
+      "target_dimension": 56,
+      "target_partition": [
+        4,
+        2,
+        2
+      ]
+    },
+    {
+      "best_generator_id": "ORB-TC-INTERSECTION-2",
+      "centered_covariance_rank": 3,
+      "exact_centered_covariance_matrix": [
+        [
+          "407/137088",
+          "0",
+          "-1213/2399040"
+        ],
+        [
+          "0",
+          "407/214200",
+          "0"
+        ],
+        [
+          "-1213/2399040",
+          "0",
+          "299/1199520"
+        ]
+      ],
+      "finite_character_moment_only": true,
+      "finite_non_scalar_covered": true,
+      "finite_simple_spectrum_proved": false,
+      "generator_moments": [
+        {
+          "eigenvalue_variance": 0.002968895891690009,
+          "exact_eigenvalue_variance": "407/137088",
+          "exact_mean_eigenvalue": "0",
+          "exact_second_moment": "407/137088",
+          "first_moment_signature_count": 309,
+          "generator_id": "ORB-TC-INTERSECTION-2",
+          "mean_eigenvalue": 0.0,
+          "non_scalar_proved": true,
+          "orbit_size": 336,
+          "second_moment": 0.002968895891690009,
+          "second_moment_signature_count": 1304,
+          "spectral_diameter_lower_bound": 0.10897515114355216
+        },
+        {
+          "eigenvalue_variance": 0.001900093370681606,
+          "exact_eigenvalue_variance": "407/214200",
+          "exact_mean_eigenvalue": "0",
+          "exact_second_moment": "407/214200",
+          "first_moment_signature_count": 372,
+          "generator_id": "ORB-TT-DISJOINT",
+          "mean_eigenvalue": 0.0,
+          "non_scalar_proved": true,
+          "orbit_size": 420,
+          "second_moment": 0.001900093370681606,
+          "second_moment_signature_count": 1488,
+          "spectral_diameter_lower_bound": 0.08718012091484173
+        },
+        {
+          "eigenvalue_variance": 0.00024926637321595304,
+          "exact_eigenvalue_variance": "299/1199520",
+          "exact_mean_eigenvalue": "0",
+          "exact_second_moment": "299/1199520",
+          "first_moment_signature_count": 521,
+          "generator_id": "ORB-TC-INTERSECTION-1",
+          "mean_eigenvalue": 0.0,
+          "non_scalar_proved": true,
+          "orbit_size": 1680,
+          "second_moment": 0.00024926637321595304,
+          "second_moment_signature_count": 1753,
+          "spectral_diameter_lower_bound": 0.03157634388056686
+        }
+      ],
+      "kronecker_multiplicity": 17,
+      "maximum_eigenvalue_variance": 0.002968895891690009,
+      "maximum_spectral_diameter_lower_bound": 0.10897515114355216,
+      "n": 8,
+      "non_scalar_generator_ids": [
+        "ORB-TC-INTERSECTION-2",
+        "ORB-TT-DISJOINT",
+        "ORB-TC-INTERSECTION-1"
+      ],
+      "source_dimension": 90,
+      "source_partition": [
+        4,
+        2,
+        1,
+        1
+      ],
+      "status": "finite-non-scalar-witness-gap-open",
+      "target_dimension": 90,
+      "target_partition": [
+        4,
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "best_generator_id": "ORB-TT-DISJOINT",
+      "centered_covariance_rank": 3,
+      "exact_centered_covariance_matrix": [
+        [
+          "25/14112",
+          "0",
+          "-19/105840"
+        ],
+        [
+          "0",
+          "1787/907200",
+          "0"
+        ],
+        [
+          "-19/105840",
+          "0",
+          "31/264600"
+        ]
+      ],
+      "finite_character_moment_only": true,
+      "finite_non_scalar_covered": true,
+      "finite_simple_spectrum_proved": false,
+      "generator_moments": [
+        {
+          "eigenvalue_variance": 0.0017715419501133788,
+          "exact_eigenvalue_variance": "25/14112",
+          "exact_mean_eigenvalue": "0",
+          "exact_second_moment": "25/14112",
+          "first_moment_signature_count": 309,
+          "generator_id": "ORB-TC-INTERSECTION-2",
+          "mean_eigenvalue": 0.0,
+          "non_scalar_proved": true,
+          "orbit_size": 336,
+          "second_moment": 0.0017715419501133788,
+          "second_moment_signature_count": 1304,
+          "spectral_diameter_lower_bound": 0.08417937871268423
+        },
+        {
+          "eigenvalue_variance": 0.0019697971781305113,
+          "exact_eigenvalue_variance": "1787/907200",
+          "exact_mean_eigenvalue": "61/2520",
+          "exact_second_moment": "541/211680",
+          "first_moment_signature_count": 372,
+          "generator_id": "ORB-TT-DISJOINT",
+          "mean_eigenvalue": 0.024206349206349207,
+          "non_scalar_proved": true,
+          "orbit_size": 420,
+          "second_moment": 0.002555744520030234,
+          "second_moment_signature_count": 1488,
+          "spectral_diameter_lower_bound": 0.08876479433042159
+        },
+        {
+          "eigenvalue_variance": 0.00011715797430083145,
+          "exact_eigenvalue_variance": "31/264600",
+          "exact_mean_eigenvalue": "0",
+          "exact_second_moment": "31/264600",
+          "first_moment_signature_count": 521,
+          "generator_id": "ORB-TC-INTERSECTION-1",
+          "mean_eigenvalue": 0.0,
+          "non_scalar_proved": true,
+          "orbit_size": 1680,
+          "second_moment": 0.00011715797430083145,
+          "second_moment_signature_count": 1753,
+          "spectral_diameter_lower_bound": 0.021647907455533105
+        }
+      ],
+      "kronecker_multiplicity": 6,
+      "maximum_eigenvalue_variance": 0.0019697971781305113,
+      "maximum_spectral_diameter_lower_bound": 0.08876479433042159,
+      "n": 8,
+      "non_scalar_generator_ids": [
+        "ORB-TC-INTERSECTION-2",
+        "ORB-TT-DISJOINT",
+        "ORB-TC-INTERSECTION-1"
+      ],
+      "source_dimension": 90,
+      "source_partition": [
+        4,
+        2,
+        1,
+        1
+      ],
+      "status": "finite-non-scalar-witness-gap-open",
+      "target_dimension": 35,
+      "target_partition": [
+        4,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "best_generator_id": "ORB-TT-DISJOINT",
+      "centered_covariance_rank": 3,
+      "exact_centered_covariance_matrix": [
+        [
+          "185/451584",
+          "0",
+          "-53/1128960"
+        ],
+        [
+          "0",
+          "103/44100",
+          "0"
+        ],
+        [
+          "-53/1128960",
+          "0",
+          "703/2822400"
+        ]
+      ],
+      "finite_character_moment_only": true,
+      "finite_non_scalar_covered": true,
+      "finite_simple_spectrum_proved": false,
+      "generator_moments": [
+        {
+          "eigenvalue_variance": 0.0004096690759637188,
+          "exact_eigenvalue_variance": "185/451584",
+          "exact_mean_eigenvalue": "0",
+          "exact_second_moment": "185/451584",
+          "first_moment_signature_count": 309,
+          "generator_id": "ORB-TC-INTERSECTION-2",
+          "mean_eigenvalue": 0.0,
+          "non_scalar_proved": true,
+          "orbit_size": 336,
+          "second_moment": 0.0004096690759637188,
+          "second_moment_signature_count": 1304,
+          "spectral_diameter_lower_bound": 0.04048056699028406
+        },
+        {
+          "eigenvalue_variance": 0.0023356009070294786,
+          "exact_eigenvalue_variance": "103/44100",
+          "exact_mean_eigenvalue": "0",
+          "exact_second_moment": "103/44100",
+          "first_moment_signature_count": 372,
+          "generator_id": "ORB-TT-DISJOINT",
+          "mean_eigenvalue": 0.0,
+          "non_scalar_proved": true,
+          "orbit_size": 420,
+          "second_moment": 0.0023356009070294786,
+          "second_moment_signature_count": 1488,
+          "spectral_diameter_lower_bound": 0.09665611014373543
+        },
+        {
+          "eigenvalue_variance": 0.000249078798185941,
+          "exact_eigenvalue_variance": "703/2822400",
+          "exact_mean_eigenvalue": "0",
+          "exact_second_moment": "703/2822400",
+          "first_moment_signature_count": 521,
+          "generator_id": "ORB-TC-INTERSECTION-1",
+          "mean_eigenvalue": 0.0,
+          "non_scalar_proved": true,
+          "orbit_size": 1680,
+          "second_moment": 0.000249078798185941,
+          "second_moment_signature_count": 1753,
+          "spectral_diameter_lower_bound": 0.031564460913244885
+        }
+      ],
+      "kronecker_multiplicity": 8,
+      "maximum_eigenvalue_variance": 0.0023356009070294786,
+      "maximum_spectral_diameter_lower_bound": 0.09665611014373543,
+      "n": 8,
+      "non_scalar_generator_ids": [
+        "ORB-TC-INTERSECTION-2",
+        "ORB-TT-DISJOINT",
+        "ORB-TC-INTERSECTION-1"
+      ],
+      "source_dimension": 90,
+      "source_partition": [
+        4,
+        2,
+        1,
+        1
+      ],
+      "status": "finite-non-scalar-witness-gap-open",
+      "target_dimension": 42,
+      "target_partition": [
+        3,
+        3,
+        2
+      ]
+    },
+    {
+      "best_generator_id": "ORB-TT-DISJOINT",
+      "centered_covariance_rank": 3,
+      "exact_centered_covariance_matrix": [
+        [
+          "1349/677376",
+          "0",
+          "-1/3840"
+        ],
+        [
+          "0",
+          "51827/25401600",
+          "0"
+        ],
+        [
+          "-1/3840",
+          "0",
+          "227/846720"
+        ]
+      ],
+      "finite_character_moment_only": true,
+      "finite_non_scalar_covered": true,
+      "finite_simple_spectrum_proved": false,
+      "generator_moments": [
+        {
+          "eigenvalue_variance": 0.0019915084089191233,
+          "exact_eigenvalue_variance": "1349/677376",
+          "exact_mean_eigenvalue": "0",
+          "exact_second_moment": "1349/677376",
+          "first_moment_signature_count": 309,
+          "generator_id": "ORB-TC-INTERSECTION-2",
+          "mean_eigenvalue": 0.0,
+          "non_scalar_proved": true,
+          "orbit_size": 336,
+          "second_moment": 0.0019915084089191233,
+          "second_moment_signature_count": 1304,
+          "spectral_diameter_lower_bound": 0.08925263937652765
+        },
+        {
+          "eigenvalue_variance": 0.002040304547745024,
+          "exact_eigenvalue_variance": "51827/25401600",
+          "exact_mean_eigenvalue": "29/5040",
+          "exact_second_moment": "209/100800",
+          "first_moment_signature_count": 372,
+          "generator_id": "ORB-TT-DISJOINT",
+          "mean_eigenvalue": 0.005753968253968254,
+          "non_scalar_proved": true,
+          "orbit_size": 420,
+          "second_moment": 0.0020734126984126985,
+          "second_moment_signature_count": 1488,
+          "spectral_diameter_lower_bound": 0.0903394608738623
+        },
+        {
+          "eigenvalue_variance": 0.0002680933484504913,
+          "exact_eigenvalue_variance": "227/846720",
+          "exact_mean_eigenvalue": "0",
+          "exact_second_moment": "227/846720",
+          "first_moment_signature_count": 521,
+          "generator_id": "ORB-TC-INTERSECTION-1",
+          "mean_eigenvalue": 0.0,
+          "non_scalar_proved": true,
+          "orbit_size": 1680,
+          "second_moment": 0.0002680933484504913,
+          "second_moment_signature_count": 1753,
+          "spectral_diameter_lower_bound": 0.03274711275520279
+        }
+      ],
+      "kronecker_multiplicity": 12,
+      "maximum_eigenvalue_variance": 0.002040304547745024,
+      "maximum_spectral_diameter_lower_bound": 0.0903394608738623,
+      "n": 8,
+      "non_scalar_generator_ids": [
+        "ORB-TC-INTERSECTION-2",
+        "ORB-TT-DISJOINT",
+        "ORB-TC-INTERSECTION-1"
+      ],
+      "source_dimension": 90,
+      "source_partition": [
+        4,
+        2,
+        1,
+        1
+      ],
+      "status": "finite-non-scalar-witness-gap-open",
+      "target_dimension": 56,
+      "target_partition": [
+        3,
+        3,
+        1,
+        1
+      ]
+    },
+    {
+      "best_generator_id": "ORB-TC-INTERSECTION-2",
+      "centered_covariance_rank": 3,
+      "exact_centered_covariance_matrix": [
+        [
+          "1177/790272",
+          "0",
+          "-17/94080"
+        ],
+        [
+          "0",
+          "1501/1382976",
+          "0"
+        ],
+        [
+          "-17/94080",
+          "0",
+          "59/235200"
+        ]
+      ],
+      "finite_character_moment_only": true,
+      "finite_non_scalar_covered": true,
+      "finite_simple_spectrum_proved": false,
+      "generator_moments": [
+        {
+          "eigenvalue_variance": 0.001489360625202462,
+          "exact_eigenvalue_variance": "1177/790272",
+          "exact_mean_eigenvalue": "0",
+          "exact_second_moment": "1177/790272",
+          "first_moment_signature_count": 309,
+          "generator_id": "ORB-TC-INTERSECTION-2",
+          "mean_eigenvalue": 0.0,
+          "non_scalar_proved": true,
+          "orbit_size": 336,
+          "second_moment": 0.001489360625202462,
+          "second_moment_signature_count": 1304,
+          "spectral_diameter_lower_bound": 0.07718447059357114
+        },
+        {
+          "eigenvalue_variance": 0.001085340598824564,
+          "exact_eigenvalue_variance": "1501/1382976",
+          "exact_mean_eigenvalue": "29/1960",
+          "exact_second_moment": "3221/2469600",
+          "first_moment_signature_count": 372,
+          "generator_id": "ORB-TT-DISJOINT",
+          "mean_eigenvalue": 0.01479591836734694,
+          "non_scalar_proved": true,
+          "orbit_size": 420,
+          "second_moment": 0.0013042597991577583,
+          "second_moment_signature_count": 1488,
+          "spectral_diameter_lower_bound": 0.0658890157408521
+        },
+        {
+          "eigenvalue_variance": 0.0002508503401360544,
+          "exact_eigenvalue_variance": "59/235200",
+          "exact_mean_eigenvalue": "0",
+          "exact_second_moment": "59/235200",
+          "first_moment_signature_count": 521,
+          "generator_id": "ORB-TC-INTERSECTION-1",
+          "mean_eigenvalue": 0.0,
+          "non_scalar_proved": true,
+          "orbit_size": 1680,
+          "second_moment": 0.0002508503401360544,
+          "second_moment_signature_count": 1753,
+          "spectral_diameter_lower_bound": 0.031676511180119216
+        }
+      ],
+      "kronecker_multiplicity": 14,
+      "maximum_eigenvalue_variance": 0.001489360625202462,
+      "maximum_spectral_diameter_lower_bound": 0.07718447059357114,
+      "n": 8,
+      "non_scalar_generator_ids": [
+        "ORB-TC-INTERSECTION-2",
+        "ORB-TT-DISJOINT",
+        "ORB-TC-INTERSECTION-1"
+      ],
+      "source_dimension": 90,
+      "source_partition": [
+        4,
+        2,
+        1,
+        1
+      ],
+      "status": "finite-non-scalar-witness-gap-open",
+      "target_dimension": 70,
+      "target_partition": [
+        3,
+        2,
+        2,
+        1
+      ]
+    },
+    {
+      "best_generator_id": "ORB-TC-INTERSECTION-2",
+      "centered_covariance_rank": 3,
+      "exact_centered_covariance_matrix": [
+        [
+          "79/28224",
+          "0",
+          "-391/917280"
+        ],
+        [
+          "0",
+          "16763/14905800",
+          "0"
+        ],
+        [
+          "-391/917280",
+          "0",
+          "29/143325"
+        ]
+      ],
+      "finite_character_moment_only": true,
+      "finite_non_scalar_covered": true,
+      "finite_simple_spectrum_proved": false,
+      "generator_moments": [
+        {
+          "eigenvalue_variance": 0.0027990362811791385,
+          "exact_eigenvalue_variance": "79/28224",
+          "exact_mean_eigenvalue": "0",
+          "exact_second_moment": "79/28224",
+          "first_moment_signature_count": 309,
+          "generator_id": "ORB-TC-INTERSECTION-2",
+          "mean_eigenvalue": 0.0,
+          "non_scalar_proved": true,
+          "orbit_size": 336,
+          "second_moment": 0.0027990362811791385,
+          "second_moment_signature_count": 1304,
+          "spectral_diameter_lower_bound": 0.10581183830137607
+        },
+        {
+          "eigenvalue_variance": 0.0011245957949254652,
+          "exact_eigenvalue_variance": "16763/14905800",
+          "exact_mean_eigenvalue": "12/455",
+          "exact_second_moment": "2087/1146600",
+          "first_moment_signature_count": 372,
+          "generator_id": "ORB-TT-DISJOINT",
+          "mean_eigenvalue": 0.026373626373626374,
+          "non_scalar_proved": true,
+          "orbit_size": 420,
+          "second_moment": 0.0018201639630211059,
+          "second_moment_signature_count": 1488,
+          "spectral_diameter_lower_bound": 0.06706998717535184
+        },
+        {
+          "eigenvalue_variance": 0.00020233734519448806,
+          "exact_eigenvalue_variance": "29/143325",
+          "exact_mean_eigenvalue": "0",
+          "exact_second_moment": "29/143325",
+          "first_moment_signature_count": 521,
+          "generator_id": "ORB-TC-INTERSECTION-1",
+          "mean_eigenvalue": 0.0,
+          "non_scalar_proved": true,
+          "orbit_size": 1680,
+          "second_moment": 0.00020233734519448806,
+          "second_moment_signature_count": 1753,
+          "spectral_diameter_lower_bound": 0.028449066430692452
+        }
+      ],
+      "kronecker_multiplicity": 13,
+      "maximum_eigenvalue_variance": 0.0027990362811791385,
+      "maximum_spectral_diameter_lower_bound": 0.10581183830137607,
+      "n": 8,
+      "non_scalar_generator_ids": [
+        "ORB-TC-INTERSECTION-2",
+        "ORB-TT-DISJOINT",
+        "ORB-TC-INTERSECTION-1"
+      ],
+      "source_dimension": 90,
+      "source_partition": [
+        4,
+        2,
+        1,
+        1
+      ],
+      "status": "finite-non-scalar-witness-gap-open",
+      "target_dimension": 64,
+      "target_partition": [
+        3,
+        2,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "best_generator_id": "ORB-TC-INTERSECTION-2",
+      "centered_covariance_rank": 3,
+      "exact_centered_covariance_matrix": [
+        [
+          "5/1764",
+          "0",
+          "-1/2205"
+        ],
+        [
+          "0",
+          "37/44800",
+          "0"
+        ],
+        [
+          "-1/2205",
+          "0",
+          "1/11025"
+        ]
+      ],
+      "finite_character_moment_only": true,
+      "finite_non_scalar_covered": true,
+      "finite_simple_spectrum_proved": false,
+      "generator_moments": [
+        {
+          "eigenvalue_variance": 0.002834467120181406,
+          "exact_eigenvalue_variance": "5/1764",
+          "exact_mean_eigenvalue": "0",
+          "exact_second_moment": "5/1764",
+          "first_moment_signature_count": 309,
+          "generator_id": "ORB-TC-INTERSECTION-2",
+          "mean_eigenvalue": 0.0,
+          "non_scalar_proved": true,
+          "orbit_size": 336,
+          "second_moment": 0.002834467120181406,
+          "second_moment_signature_count": 1304,
+          "spectral_diameter_lower_bound": 0.10647942749998998
+        },
+        {
+          "eigenvalue_variance": 0.0008258928571428572,
+          "exact_eigenvalue_variance": "37/44800",
+          "exact_mean_eigenvalue": "11/240",
+          "exact_second_moment": "59/20160",
+          "first_moment_signature_count": 372,
+          "generator_id": "ORB-TT-DISJOINT",
+          "mean_eigenvalue": 0.04583333333333333,
+          "non_scalar_proved": true,
+          "orbit_size": 420,
+          "second_moment": 0.0029265873015873016,
+          "second_moment_signature_count": 1488,
+          "spectral_diameter_lower_bound": 0.05747670335511101
+        },
+        {
+          "eigenvalue_variance": 9.070294784580499e-05,
+          "exact_eigenvalue_variance": "1/11025",
+          "exact_mean_eigenvalue": "0",
+          "exact_second_moment": "1/11025",
+          "first_moment_signature_count": 521,
+          "generator_id": "ORB-TC-INTERSECTION-1",
+          "mean_eigenvalue": 0.0,
+          "non_scalar_proved": true,
+          "orbit_size": 1680,
+          "second_moment": 9.070294784580499e-05,
+          "second_moment_signature_count": 1753,
+          "spectral_diameter_lower_bound": 0.01904761904761905
+        }
+      ],
+      "kronecker_multiplicity": 4,
+      "maximum_eigenvalue_variance": 0.002834467120181406,
+      "maximum_spectral_diameter_lower_bound": 0.10647942749998998,
+      "n": 8,
+      "non_scalar_generator_ids": [
+        "ORB-TC-INTERSECTION-2",
+        "ORB-TT-DISJOINT",
+        "ORB-TC-INTERSECTION-1"
+      ],
+      "source_dimension": 90,
+      "source_partition": [
+        4,
+        2,
+        1,
+        1
+      ],
+      "status": "finite-non-scalar-witness-gap-open",
+      "target_dimension": 21,
+      "target_partition": [
+        3,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "best_generator_id": "ORB-TT-DISJOINT",
+      "centered_covariance_rank": 2,
+      "exact_centered_covariance_matrix": [
+        [
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "17/20160",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "1/2940"
+        ]
+      ],
+      "finite_character_moment_only": true,
+      "finite_non_scalar_covered": true,
+      "finite_simple_spectrum_proved": false,
+      "generator_moments": [
+        {
+          "eigenvalue_variance": 0.0,
+          "exact_eigenvalue_variance": "0",
+          "exact_mean_eigenvalue": "0",
+          "exact_second_moment": "0",
+          "first_moment_signature_count": 309,
+          "generator_id": "ORB-TC-INTERSECTION-2",
+          "mean_eigenvalue": 0.0,
+          "non_scalar_proved": false,
+          "orbit_size": 336,
+          "second_moment": 0.0,
+          "second_moment_signature_count": 1304,
+          "spectral_diameter_lower_bound": 0.0
+        },
+        {
+          "eigenvalue_variance": 0.0008432539682539683,
+          "exact_eigenvalue_variance": "17/20160",
+          "exact_mean_eigenvalue": "23/840",
+          "exact_second_moment": "281/176400",
+          "first_moment_signature_count": 372,
+          "generator_id": "ORB-TT-DISJOINT",
+          "mean_eigenvalue": 0.02738095238095238,
+          "non_scalar_proved": true,
+          "orbit_size": 420,
+          "second_moment": 0.00159297052154195,
+          "second_moment_signature_count": 1488,
+          "spectral_diameter_lower_bound": 0.0580776710364308
+        },
+        {
+          "eigenvalue_variance": 0.0003401360544217687,
+          "exact_eigenvalue_variance": "1/2940",
+          "exact_mean_eigenvalue": "0",
+          "exact_second_moment": "1/2940",
+          "first_moment_signature_count": 521,
+          "generator_id": "ORB-TC-INTERSECTION-1",
+          "mean_eigenvalue": 0.0,
+          "non_scalar_proved": true,
+          "orbit_size": 1680,
+          "second_moment": 0.0003401360544217687,
+          "second_moment_signature_count": 1753,
+          "spectral_diameter_lower_bound": 0.03688555567816587
+        }
+      ],
+      "kronecker_multiplicity": 4,
+      "maximum_eigenvalue_variance": 0.0008432539682539683,
+      "maximum_spectral_diameter_lower_bound": 0.0580776710364308,
+      "n": 8,
+      "non_scalar_generator_ids": [
+        "ORB-TT-DISJOINT",
+        "ORB-TC-INTERSECTION-1"
+      ],
+      "source_dimension": 90,
+      "source_partition": [
+        4,
+        2,
+        1,
+        1
+      ],
+      "status": "finite-non-scalar-witness-gap-open",
+      "target_dimension": 14,
+      "target_partition": [
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "best_generator_id": "ORB-TC-INTERSECTION-2",
+      "centered_covariance_rank": 3,
+      "exact_centered_covariance_matrix": [
+        [
+          "23/21168",
+          "0",
+          "-1/2940"
+        ],
+        [
+          "0",
+          "731/907200",
+          "0"
+        ],
+        [
+          "-1/2940",
+          "0",
+          "41/132300"
+        ]
+      ],
+      "finite_character_moment_only": true,
+      "finite_non_scalar_covered": true,
+      "finite_simple_spectrum_proved": false,
+      "generator_moments": [
+        {
+          "eigenvalue_variance": 0.0010865457294028723,
+          "exact_eigenvalue_variance": "23/21168",
+          "exact_mean_eigenvalue": "0",
+          "exact_second_moment": "23/21168",
+          "first_moment_signature_count": 309,
+          "generator_id": "ORB-TC-INTERSECTION-2",
+          "mean_eigenvalue": 0.0,
+          "non_scalar_proved": true,
+          "orbit_size": 336,
+          "second_moment": 0.0010865457294028723,
+          "second_moment_signature_count": 1304,
+          "spectral_diameter_lower_bound": 0.06592558621363552
+        },
+        {
+          "eigenvalue_variance": 0.0008057760141093474,
+          "exact_eigenvalue_variance": "731/907200",
+          "exact_mean_eigenvalue": "73/2520",
+          "exact_second_moment": "1741/1058400",
+          "first_moment_signature_count": 372,
+          "generator_id": "ORB-TT-DISJOINT",
+          "mean_eigenvalue": 0.02896825396825397,
+          "non_scalar_proved": true,
+          "orbit_size": 420,
+          "second_moment": 0.0016449357520786092,
+          "second_moment_signature_count": 1488,
+          "spectral_diameter_lower_bound": 0.05677238815161283
+        },
+        {
+          "eigenvalue_variance": 0.00030990173847316707,
+          "exact_eigenvalue_variance": "41/132300",
+          "exact_mean_eigenvalue": "0",
+          "exact_second_moment": "41/132300",
+          "first_moment_signature_count": 521,
+          "generator_id": "ORB-TC-INTERSECTION-1",
+          "mean_eigenvalue": 0.0,
+          "non_scalar_proved": true,
+          "orbit_size": 1680,
+          "second_moment": 0.00030990173847316707,
+          "second_moment_signature_count": 1753,
+          "spectral_diameter_lower_bound": 0.03520805240129974
+        }
+      ],
+      "kronecker_multiplicity": 6,
+      "maximum_eigenvalue_variance": 0.0010865457294028723,
+      "maximum_spectral_diameter_lower_bound": 0.06592558621363552,
+      "n": 8,
+      "non_scalar_generator_ids": [
+        "ORB-TC-INTERSECTION-2",
+        "ORB-TT-DISJOINT",
+        "ORB-TC-INTERSECTION-1"
+      ],
+      "source_dimension": 90,
+      "source_partition": [
+        4,
+        2,
+        1,
+        1
+      ],
+      "status": "finite-non-scalar-witness-gap-open",
+      "target_dimension": 28,
+      "target_partition": [
+        2,
+        2,
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "best_generator_id": "ORB-TC-INTERSECTION-2",
+      "centered_covariance_rank": 3,
+      "exact_centered_covariance_matrix": [
+        [
+          "209/70560",
+          "0",
+          "-17/35280"
+        ],
+        [
+          "0",
+          "457/551250",
+          "0"
+        ],
+        [
+          "-17/35280",
+          "0",
+          "53/441000"
+        ]
+      ],
+      "finite_character_moment_only": true,
+      "finite_non_scalar_covered": true,
+      "finite_simple_spectrum_proved": false,
+      "generator_moments": [
+        {
+          "eigenvalue_variance": 0.0029620181405895694,
+          "exact_eigenvalue_variance": "209/70560",
+          "exact_mean_eigenvalue": "0",
+          "exact_second_moment": "209/70560",
+          "first_moment_signature_count": 309,
+          "generator_id": "ORB-TC-INTERSECTION-2",
+          "mean_eigenvalue": 0.0,
+          "non_scalar_proved": true,
+          "orbit_size": 336,
+          "second_moment": 0.0029620181405895694,
+          "second_moment_signature_count": 1304,
+          "spectral_diameter_lower_bound": 0.10884885191107106
+        },
+        {
+          "eigenvalue_variance": 0.0008290249433106576,
+          "exact_eigenvalue_variance": "457/551250",
+          "exact_mean_eigenvalue": "97/2100",
+          "exact_second_moment": "871/294000",
+          "first_moment_signature_count": 372,
+          "generator_id": "ORB-TT-DISJOINT",
+          "mean_eigenvalue": 0.04619047619047619,
+          "non_scalar_proved": true,
+          "orbit_size": 420,
+          "second_moment": 0.0029625850340136055,
+          "second_moment_signature_count": 1488,
+          "spectral_diameter_lower_bound": 0.05758558650602276
+        },
+        {
+          "eigenvalue_variance": 0.0001201814058956916,
+          "exact_eigenvalue_variance": "53/441000",
+          "exact_mean_eigenvalue": "0",
+          "exact_second_moment": "53/441000",
+          "first_moment_signature_count": 521,
+          "generator_id": "ORB-TC-INTERSECTION-1",
+          "mean_eigenvalue": 0.0,
+          "non_scalar_proved": true,
+          "orbit_size": 1680,
+          "second_moment": 0.0001201814058956916,
+          "second_moment_signature_count": 1753,
+          "spectral_diameter_lower_bound": 0.02192545606327874
+        }
+      ],
+      "kronecker_multiplicity": 5,
+      "maximum_eigenvalue_variance": 0.0029620181405895694,
+      "maximum_spectral_diameter_lower_bound": 0.10884885191107106,
+      "n": 8,
+      "non_scalar_generator_ids": [
+        "ORB-TC-INTERSECTION-2",
+        "ORB-TT-DISJOINT",
+        "ORB-TC-INTERSECTION-1"
+      ],
+      "source_dimension": 90,
+      "source_partition": [
+        4,
+        2,
+        1,
+        1
+      ],
+      "status": "finite-non-scalar-witness-gap-open",
+      "target_dimension": 20,
+      "target_partition": [
+        2,
+        2,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "best_generator_id": "ORB-TC-INTERSECTION-2",
+      "centered_covariance_rank": 1,
+      "exact_centered_covariance_matrix": [
+        [
+          "1/882",
+          "0",
+          "-1/4410"
+        ],
+        [
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "-1/4410",
+          "0",
+          "1/22050"
+        ]
+      ],
+      "finite_character_moment_only": true,
+      "finite_non_scalar_covered": true,
+      "finite_simple_spectrum_proved": true,
+      "generator_moments": [
+        {
+          "eigenvalue_variance": 0.0011337868480725624,
+          "exact_eigenvalue_variance": "1/882",
+          "exact_mean_eigenvalue": "0",
+          "exact_second_moment": "1/882",
+          "first_moment_signature_count": 309,
+          "generator_id": "ORB-TC-INTERSECTION-2",
+          "mean_eigenvalue": 0.0,
+          "non_scalar_proved": true,
+          "orbit_size": 336,
+          "second_moment": 0.0011337868480725624,
+          "second_moment_signature_count": 1304,
+          "spectral_diameter_lower_bound": 0.06734350297014738
+        },
+        {
+          "eigenvalue_variance": 0.0,
+          "exact_eigenvalue_variance": "0",
+          "exact_mean_eigenvalue": "1/15",
+          "exact_second_moment": "1/225",
+          "first_moment_signature_count": 372,
+          "generator_id": "ORB-TT-DISJOINT",
+          "mean_eigenvalue": 0.06666666666666667,
+          "non_scalar_proved": false,
+          "orbit_size": 420,
+          "second_moment": 0.0044444444444444444,
+          "second_moment_signature_count": 1488,
+          "spectral_diameter_lower_bound": 0.0
+        },
+        {
+          "eigenvalue_variance": 4.5351473922902495e-05,
+          "exact_eigenvalue_variance": "1/22050",
+          "exact_mean_eigenvalue": "0",
+          "exact_second_moment": "1/22050",
+          "first_moment_signature_count": 521,
+          "generator_id": "ORB-TC-INTERSECTION-1",
+          "mean_eigenvalue": 0.0,
+          "non_scalar_proved": true,
+          "orbit_size": 1680,
+          "second_moment": 4.5351473922902495e-05,
+          "second_moment_signature_count": 1753,
+          "spectral_diameter_lower_bound": 0.013468700594029477
+        }
+      ],
+      "kronecker_multiplicity": 2,
+      "maximum_eigenvalue_variance": 0.0011337868480725624,
+      "maximum_spectral_diameter_lower_bound": 0.06734350297014738,
+      "n": 8,
+      "non_scalar_generator_ids": [
+        "ORB-TC-INTERSECTION-2",
+        "ORB-TC-INTERSECTION-1"
+      ],
+      "source_dimension": 90,
+      "source_partition": [
+        4,
+        2,
+        1,
+        1
+      ],
+      "status": "finite-non-scalar-witness-gap-open",
+      "target_dimension": 7,
+      "target_partition": [
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    }
+  ],
+  "status": "finite-typical-non-scalar-transfer-signal-gap-and-decoder-open",
+  "summary": "Exact character moments audited 32 nontrivial typical multiplicity blocks at n=(7, 8). The bounded-support portfolio is non-scalar on 32 and scalar on 0; 29 have at least two independent traceless directions and 3 additional two-dimensional blocks have finite simple spectrum. No uniform gap, transform, or decoder follows.",
+  "theorem_contract": {
+    "decomposition": "A_O commutes with diagonal S_n and acts as I_nu tensor M_nu on each nu multiplicity block.",
+    "diameter_consequence": "Popoviciu's inequality gives spectral diameter at least 2*sqrt(variance).",
+    "enumeration_cap": "The current exact permutation contraction is capped at n=8. Extending it requires a class-algebra formula, not factorial enumeration.",
+    "first_moment_identity": "Tr(M_nu)=|S_n|^-1 sum_g chi_nu(g) chi_lambda(ga) chi_mu(gb).",
+    "non_scalar_certificate": "Tr(M_nu^2)/g_nu-(Tr(M_nu)/g_nu)^2>0 exactly iff the finite Hermitian block is non-scalar.",
+    "second_moment_identity": "Tr(M_nu^2)=(|O||S_n|)^-1 sum_y sum_g chi_nu(g) chi_lambda(g a a_y) chi_mu(g b b_y)."
+  }
+}

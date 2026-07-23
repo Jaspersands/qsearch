@@ -1,0 +1,583 @@
+{
+  "claim_gate": {
+    "coherent_label_adaptive_transform_proved": false,
+    "factorial_enumeration_removed_for_primary_moments": true,
+    "finite_low_support_portfolio_non_scalar_coverage": true,
+    "finite_portfolio_non_scalar_coverage_is_joint_spectrum_proof": false,
+    "fixed_portfolio_uniform_joint_spectrum_proved": false,
+    "hidden_involution_decoder_proved": false,
+    "inverse_polynomial_joint_gap_proved": false,
+    "reason": "Class compression extends exact moments to n=10 and finds recurring scalar blocks, falsifying the single-generator route. A two-generator support-three portfolio repairs finite scalar coverage but still lacks all-n joint-spectrum, gap, circuit, and decoder theorems.",
+    "single_primary_generator_uniformly_non_scalar": false,
+    "speedup_claim_allowed": false
+  },
+  "contraction_contract": {
+    "bit_polynomial_circuit_claimed": false,
+    "factorial_enumeration_used_above_n8": false,
+    "finite_evaluator_cost": "O(p(n) n^6) for the primary second moment, excluding character evaluation",
+    "first_moment_method": "Enumerate marked-support injections into one canonical representative of each S_n conjugacy class.",
+    "maximum_marked_support": 6,
+    "next_symbolic_target": "Derive character-polynomial or partition-algebra recurrences for the 17 relative pair types and extend the fixed generator portfolio.",
+    "second_moment_method": "Classify O^-1 O relative products into 17 simultaneous-conjugacy pair types, then reuse the marked-class contraction."
+  },
+  "created_at": "2026-07-22T20:17:33.855285+00:00",
+  "falsifiers_triggered": [
+    "The primary intersection-two orbit average splits all n=7 blocks but has exact scalar targets at n=6, n=8, n=9, and n=10.",
+    "Finite simple spectrum at one size does not extrapolate even to non-scalarity at the next size.",
+    "Removing factorial group enumeration does not construct a coherent multiplicity transform.",
+    "A fixed portfolio needs joint-spectrum and minimum-gap control, not separate nonzero variances.",
+    "The shared-point transposition generator has its own scalar hook targets, so it is not a replacement single generator.",
+    "No hidden-involution information theorem follows from class-compressed character moments."
+  ],
+  "headline_metrics": {
+    "all_n_symbolic_class_contraction_formula_count": 0,
+    "class_compressed_record_count": 5,
+    "factorial_signature_verification_count": 3,
+    "finite_portfolio_block_count": 108,
+    "finite_portfolio_common_scalar_block_count": 0,
+    "finite_portfolio_covariance_rank_two_count": 93,
+    "finite_portfolio_non_scalar_covered_count": 108,
+    "finite_portfolio_rank_one_block_count": 15,
+    "first_scalar_n": 6,
+    "fixed_relative_pair_type_count": 17,
+    "maximum_exact_scalar_block_count_per_n": 2,
+    "maximum_n": 10,
+    "shared_transposition_single_generator_scalar_block_count": 8,
+    "single_primary_generator_uniformity_falsification_count": 1,
+    "total_exact_scalar_block_count": 7,
+    "total_nontrivial_multiplicity_block_count": 108,
+    "typical_label_hidden_involution_decoder_count": 0,
+    "uniform_portfolio_joint_gap_theorem_count": 0,
+    "uniform_primary_generator_non_scalar_theorem_count": 0
+  },
+  "portfolio_records": [
+    {
+      "both_generators_scalar_targets": [],
+      "centered_covariance_rank_one_targets": [
+        [
+          5,
+          1
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          2,
+          2,
+          2
+        ],
+        [
+          2,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "centered_covariance_rank_two_count": 5,
+      "finite_portfolio_non_scalar_covered_count": 9,
+      "finite_two_generator_moment_only": true,
+      "minimum_positive_covariance_determinant": 3.0625e-06,
+      "n": 6,
+      "nontrivial_multiplicity_block_count": 9,
+      "primary_scalar_targets": [
+        [
+          3,
+          3
+        ],
+        [
+          2,
+          2,
+          2
+        ]
+      ],
+      "primary_shared_cross_signature_count": 249,
+      "primary_shared_relative_pair_type_count": 19,
+      "shared_self_relative_pair_type_count": 17,
+      "shared_transposition_scalar_targets": [
+        [
+          5,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "source_dimension": 16,
+      "source_partition": [
+        3,
+        2,
+        1
+      ],
+      "status": "finite-low-support-portfolio-non-scalar-covered-joint-gap-open"
+    },
+    {
+      "both_generators_scalar_targets": [],
+      "centered_covariance_rank_one_targets": [
+        [
+          6,
+          1
+        ]
+      ],
+      "centered_covariance_rank_two_count": 11,
+      "finite_portfolio_non_scalar_covered_count": 12,
+      "finite_two_generator_moment_only": true,
+      "minimum_positive_covariance_determinant": 4.4243110866585654e-07,
+      "n": 7,
+      "nontrivial_multiplicity_block_count": 12,
+      "primary_scalar_targets": [],
+      "primary_shared_cross_signature_count": 577,
+      "primary_shared_relative_pair_type_count": 19,
+      "shared_self_relative_pair_type_count": 17,
+      "shared_transposition_scalar_targets": [
+        [
+          6,
+          1
+        ]
+      ],
+      "source_dimension": 35,
+      "source_partition": [
+        4,
+        2,
+        1
+      ],
+      "status": "finite-low-support-portfolio-non-scalar-covered-joint-gap-open"
+    },
+    {
+      "both_generators_scalar_targets": [],
+      "centered_covariance_rank_one_targets": [
+        [
+          7,
+          1
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          2,
+          2,
+          2,
+          2
+        ],
+        [
+          2,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "centered_covariance_rank_two_count": 16,
+      "finite_portfolio_non_scalar_covered_count": 20,
+      "finite_two_generator_moment_only": true,
+      "minimum_positive_covariance_determinant": 1.3679882609152812e-06,
+      "n": 8,
+      "nontrivial_multiplicity_block_count": 20,
+      "primary_scalar_targets": [
+        [
+          4,
+          4
+        ],
+        [
+          2,
+          2,
+          2,
+          2
+        ]
+      ],
+      "primary_shared_cross_signature_count": 1461,
+      "primary_shared_relative_pair_type_count": 19,
+      "shared_self_relative_pair_type_count": 17,
+      "shared_transposition_scalar_targets": [
+        [
+          7,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "source_dimension": 90,
+      "source_partition": [
+        4,
+        2,
+        1,
+        1
+      ],
+      "status": "finite-low-support-portfolio-non-scalar-covered-joint-gap-open"
+    },
+    {
+      "both_generators_scalar_targets": [],
+      "centered_covariance_rank_one_targets": [
+        [
+          8,
+          1
+        ],
+        [
+          3,
+          3,
+          3
+        ]
+      ],
+      "centered_covariance_rank_two_count": 25,
+      "finite_portfolio_non_scalar_covered_count": 27,
+      "finite_two_generator_moment_only": true,
+      "minimum_positive_covariance_determinant": 7.322928844932708e-08,
+      "n": 9,
+      "nontrivial_multiplicity_block_count": 27,
+      "primary_scalar_targets": [
+        [
+          3,
+          3,
+          3
+        ]
+      ],
+      "primary_shared_cross_signature_count": 3159,
+      "primary_shared_relative_pair_type_count": 19,
+      "shared_self_relative_pair_type_count": 17,
+      "shared_transposition_scalar_targets": [
+        [
+          8,
+          1
+        ]
+      ],
+      "source_dimension": 216,
+      "source_partition": [
+        4,
+        3,
+        1,
+        1
+      ],
+      "status": "finite-low-support-portfolio-non-scalar-covered-joint-gap-open"
+    },
+    {
+      "both_generators_scalar_targets": [],
+      "centered_covariance_rank_one_targets": [
+        [
+          9,
+          1
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        [
+          2,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "centered_covariance_rank_two_count": 36,
+      "finite_portfolio_non_scalar_covered_count": 40,
+      "finite_two_generator_moment_only": true,
+      "minimum_positive_covariance_determinant": 5.556809667806185e-08,
+      "n": 10,
+      "nontrivial_multiplicity_block_count": 40,
+      "primary_scalar_targets": [
+        [
+          5,
+          5
+        ],
+        [
+          2,
+          2,
+          2,
+          2,
+          2
+        ]
+      ],
+      "primary_shared_cross_signature_count": 6840,
+      "primary_shared_relative_pair_type_count": 19,
+      "shared_self_relative_pair_type_count": 17,
+      "shared_transposition_scalar_targets": [
+        [
+          9,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "source_dimension": 768,
+      "source_partition": [
+        4,
+        3,
+        2,
+        1
+      ],
+      "status": "finite-low-support-portfolio-non-scalar-covered-joint-gap-open"
+    }
+  ],
+  "records": [
+    {
+      "exact_scalar_block_count": 2,
+      "exact_scalar_target_multiplicities": [
+        2,
+        2
+      ],
+      "exact_scalar_targets": [
+        [
+          3,
+          3
+        ],
+        [
+          2,
+          2,
+          2
+        ]
+      ],
+      "factorial_first_signature_verified": true,
+      "factorial_second_signature_verified": true,
+      "factorial_signature_verification_performed": true,
+      "finite_exact_character_contraction_only": true,
+      "first_moment_signature_count": 86,
+      "first_signature_total_verified": true,
+      "maximum_kronecker_multiplicity": 5,
+      "maximum_variance": 0.00625,
+      "minimum_positive_variance": 0.001574074074074074,
+      "n": 6,
+      "non_scalar_block_count": 7,
+      "nontrivial_multiplicity_block_count": 9,
+      "orbit_size": 120,
+      "partition_count": 11,
+      "relative_pair_support_profile": {
+        "0": 1,
+        "3": 4,
+        "4": 7,
+        "5": 4,
+        "6": 1
+      },
+      "relative_pair_type_count": 17,
+      "second_moment_signature_count": 245,
+      "second_signature_total_verified": true,
+      "source_dimension": 16,
+      "source_partition": [
+        3,
+        2,
+        1
+      ],
+      "status": "primary-generator-exact-scalar-blocks-found"
+    },
+    {
+      "exact_scalar_block_count": 0,
+      "exact_scalar_target_multiplicities": [],
+      "exact_scalar_targets": [],
+      "factorial_first_signature_verified": true,
+      "factorial_second_signature_verified": true,
+      "factorial_signature_verification_performed": true,
+      "finite_exact_character_contraction_only": true,
+      "first_moment_signature_count": 167,
+      "first_signature_total_verified": true,
+      "maximum_kronecker_multiplicity": 9,
+      "maximum_variance": 0.004131235827664399,
+      "minimum_positive_variance": 0.0005824829931972789,
+      "n": 7,
+      "non_scalar_block_count": 12,
+      "nontrivial_multiplicity_block_count": 12,
+      "orbit_size": 210,
+      "partition_count": 15,
+      "relative_pair_support_profile": {
+        "0": 1,
+        "3": 4,
+        "4": 7,
+        "5": 4,
+        "6": 1
+      },
+      "relative_pair_type_count": 17,
+      "second_moment_signature_count": 541,
+      "second_signature_total_verified": true,
+      "source_dimension": 35,
+      "source_partition": [
+        4,
+        2,
+        1
+      ],
+      "status": "primary-generator-finite-non-scalar-all-blocks"
+    },
+    {
+      "exact_scalar_block_count": 2,
+      "exact_scalar_target_multiplicities": [
+        4,
+        4
+      ],
+      "exact_scalar_targets": [
+        [
+          4,
+          4
+        ],
+        [
+          2,
+          2,
+          2,
+          2
+        ]
+      ],
+      "factorial_first_signature_verified": true,
+      "factorial_second_signature_verified": true,
+      "factorial_signature_verification_performed": true,
+      "finite_exact_character_contraction_only": true,
+      "first_moment_signature_count": 309,
+      "first_signature_total_verified": true,
+      "maximum_kronecker_multiplicity": 17,
+      "maximum_variance": 0.002968895891690009,
+      "minimum_positive_variance": 0.0004096690759637188,
+      "n": 8,
+      "non_scalar_block_count": 18,
+      "nontrivial_multiplicity_block_count": 20,
+      "orbit_size": 336,
+      "partition_count": 22,
+      "relative_pair_support_profile": {
+        "0": 1,
+        "3": 4,
+        "4": 7,
+        "5": 4,
+        "6": 1
+      },
+      "relative_pair_type_count": 17,
+      "second_moment_signature_count": 1304,
+      "second_signature_total_verified": true,
+      "source_dimension": 90,
+      "source_partition": [
+        4,
+        2,
+        1,
+        1
+      ],
+      "status": "primary-generator-exact-scalar-blocks-found"
+    },
+    {
+      "exact_scalar_block_count": 1,
+      "exact_scalar_target_multiplicities": [
+        5
+      ],
+      "exact_scalar_targets": [
+        [
+          3,
+          3,
+          3
+        ]
+      ],
+      "factorial_first_signature_verified": false,
+      "factorial_second_signature_verified": false,
+      "factorial_signature_verification_performed": false,
+      "finite_exact_character_contraction_only": true,
+      "first_moment_signature_count": 536,
+      "first_signature_total_verified": true,
+      "maximum_kronecker_multiplicity": 28,
+      "maximum_variance": 0.002232880999622071,
+      "minimum_positive_variance": 0.00016691861929957167,
+      "n": 9,
+      "non_scalar_block_count": 26,
+      "nontrivial_multiplicity_block_count": 27,
+      "orbit_size": 504,
+      "partition_count": 30,
+      "relative_pair_support_profile": {
+        "0": 1,
+        "3": 4,
+        "4": 7,
+        "5": 4,
+        "6": 1
+      },
+      "relative_pair_type_count": 17,
+      "second_moment_signature_count": 2693,
+      "second_signature_total_verified": true,
+      "source_dimension": 216,
+      "source_partition": [
+        4,
+        3,
+        1,
+        1
+      ],
+      "status": "primary-generator-exact-scalar-blocks-found"
+    },
+    {
+      "exact_scalar_block_count": 2,
+      "exact_scalar_target_multiplicities": [
+        6,
+        6
+      ],
+      "exact_scalar_targets": [
+        [
+          5,
+          5
+        ],
+        [
+          2,
+          2,
+          2,
+          2,
+          2
+        ]
+      ],
+      "factorial_first_signature_verified": false,
+      "factorial_second_signature_verified": false,
+      "factorial_signature_verification_performed": false,
+      "finite_exact_character_contraction_only": true,
+      "first_moment_signature_count": 902,
+      "first_signature_total_verified": true,
+      "maximum_kronecker_multiplicity": 117,
+      "maximum_variance": 0.001541602366255144,
+      "minimum_positive_variance": 0.00013057002314814816,
+      "n": 10,
+      "non_scalar_block_count": 38,
+      "nontrivial_multiplicity_block_count": 40,
+      "orbit_size": 720,
+      "partition_count": 42,
+      "relative_pair_support_profile": {
+        "0": 1,
+        "3": 4,
+        "4": 7,
+        "5": 4,
+        "6": 1
+      },
+      "relative_pair_type_count": 17,
+      "second_moment_signature_count": 5633,
+      "second_signature_total_verified": true,
+      "source_dimension": 768,
+      "source_partition": [
+        4,
+        3,
+        2,
+        1
+      ],
+      "status": "primary-generator-exact-scalar-blocks-found"
+    }
+  ],
+  "status": "single-primary-generator-falsified-portfolio-class-algebra-open",
+  "summary": "Class-compressed exact moments audited 108 typical multiplicity blocks through n=10 and found 7 exact scalar blocks; the single primary generator is not uniform. The low-support portfolio covers 108/108 finite blocks without common scalar action."
+}

@@ -389,6 +389,27 @@ from coset_stable_branch_accessibility import (
 from coset_typical_irrep_transfer_audit import (
     write_typical_irrep_transfer_report,
 )
+from coset_typical_commutant_moment_audit import (
+    write_typical_commutant_moment_report,
+)
+from coset_typical_class_contraction_scaling import (
+    write_class_contraction_scaling_report,
+)
+from coset_typical_portfolio_collision_certificate import (
+    write_portfolio_collision_report,
+)
+from coset_typical_independent_third_generator_certificate import (
+    write_independent_third_generator_report,
+)
+from coset_typical_high_multiplicity_transfer import (
+    write_high_multiplicity_transfer_report,
+)
+from coset_typical_fixed_separator_gap_scaling import (
+    write_fixed_separator_gap_report,
+)
+from coset_typical_n9_low_multiplicity_probe import (
+    write_n9_low_multiplicity_report,
+)
 from coset_recoupling_capability_ledger import write_recoupling_capability_report
 from coset_recoupling_mechanism_synthesis import write_recoupling_mechanism_synthesis_report
 from classical_baseline_suite import write_hidden_shift_baselines
@@ -4752,6 +4773,241 @@ def command_coset_racah_typical_irrep_transfer(args: argparse.Namespace) -> int:
     return 0
 
 
+def command_coset_racah_typical_commutant_moments(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    n_values = tuple(parse_int_csv(args.n_values))
+    payload = write_typical_commutant_moment_report(
+        n_values=n_values,
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Typical-irrep commutant moment audit complete")
+    print(
+        "Artifact: research/representation/"
+        "coset_typical_commutant_moment_audit.json"
+    )
+    print(
+        "Finite non-scalar multiplicity blocks: "
+        f"{metrics['finite_non_scalar_covered_count']}/"
+        f"{metrics['nontrivial_multiplicity_block_count']}"
+    )
+    print(f"Finite uncovered blocks: {metrics['finite_uncovered_count']}")
+    print(
+        "Uniform inverse-polynomial gap theorems: "
+        f"{metrics['uniform_typical_commutant_gap_theorem_count']}"
+    )
+    print(f"Speedup claim allowed: {payload['claim_gate']['speedup_claim_allowed']}")
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_coset_racah_typical_class_contraction(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    n_values = tuple(parse_int_csv(args.n_values))
+    payload = write_class_contraction_scaling_report(
+        n_values=n_values,
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Typical-irrep class-contraction scaling audit complete")
+    print(
+        "Artifact: research/representation/"
+        "coset_typical_class_contraction_scaling.json"
+    )
+    print(f"Maximum exact n: {metrics['maximum_n']}")
+    print(
+        "Exact scalar multiplicity blocks: "
+        f"{metrics['total_exact_scalar_block_count']}"
+    )
+    print(
+        "Single-generator uniformity falsifications: "
+        f"{metrics['single_primary_generator_uniformity_falsification_count']}"
+    )
+    print(
+        "Uniform portfolio joint-gap theorems: "
+        f"{metrics['uniform_portfolio_joint_gap_theorem_count']}"
+    )
+    print(f"Speedup claim allowed: {payload['claim_gate']['speedup_claim_allowed']}")
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_coset_racah_typical_portfolio_collision(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_portfolio_collision_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Typical-irrep portfolio collision certificate complete")
+    print(
+        "Artifact: research/representation/"
+        "coset_typical_portfolio_collision_certificate.json"
+    )
+    print(
+        "Repeated-root collision targets: "
+        f"{metrics['repeated_zero_eigenvalue_target_count']}"
+    )
+    print(
+        "Finite coefficient rules falsified at n=8: "
+        f"{metrics['finite_common_coefficient_rules_falsified_at_n8']}"
+    )
+    print(
+        "Minimum required portfolio generators: "
+        f"{metrics['minimum_required_portfolio_generator_count_on_certified_targets']}"
+    )
+    print(f"Speedup claim allowed: {payload['claim_gate']['speedup_claim_allowed']}")
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_coset_racah_typical_third_generator(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_independent_third_generator_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Typical-irrep independent third-generator certificate complete")
+    print(
+        "Artifact: research/representation/"
+        "coset_typical_independent_third_generator_certificate.json"
+    )
+    print(
+        "Exact n=8 collision targets repaired: "
+        f"{metrics['certified_n8_collision_target_repair_count']}"
+    )
+    print(
+        "Exact n=8 low-multiplicity targets certified: "
+        f"{metrics['certified_n8_low_multiplicity_simple_spectrum_target_count']}/"
+        f"{metrics['n8_nontrivial_multiplicity_target_count']}"
+    )
+    print(
+        "All-n simple-spectrum theorems: "
+        f"{metrics['all_n_simple_spectrum_theorem_count']}"
+    )
+    print(
+        "Inverse-polynomial gap theorems: "
+        f"{metrics['inverse_polynomial_gap_theorem_count']}"
+    )
+    print(f"Speedup claim allowed: {payload['claim_gate']['speedup_claim_allowed']}")
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_coset_racah_typical_high_multiplicity(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_high_multiplicity_transfer_report(
+        recompute=args.recompute,
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Typical-irrep higher-multiplicity transfer audit complete")
+    print(
+        "Artifact: research/representation/"
+        "coset_typical_high_multiplicity_transfer.json"
+    )
+    print(
+        "Exact n=8 targets certified: "
+        f"{metrics['certified_n8_simple_spectrum_target_count']}/"
+        f"{metrics['n8_nontrivial_multiplicity_target_count']}"
+    )
+    print(
+        "Maximum certified multiplicity: "
+        f"{metrics['maximum_certified_kronecker_multiplicity']}"
+    )
+    print(f"Transfer recomputed: {bool(metrics['exact_transfer_recomputed_count'])}")
+    print(f"Speedup claim allowed: {payload['claim_gate']['speedup_claim_allowed']}")
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_coset_racah_typical_separator_gaps(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    n_values = tuple(
+        int(value.strip()) for value in args.n_values.split(",") if value.strip()
+    )
+    payload = write_fixed_separator_gap_report(
+        n_values=n_values,
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Typical-irrep fixed-separator gap audit complete")
+    print(
+        "Artifact: research/representation/"
+        "coset_typical_fixed_separator_gap_scaling.json"
+    )
+    print(
+        "Finite all-block split sizes: "
+        f"{metrics['finite_all_block_simple_spectrum_size_count']}/"
+        f"{metrics['finite_size_count']}"
+    )
+    print(
+        "Certified n=8 normalized minimum gap lower bound: "
+        f"{metrics['n8_certified_minimum_lcu_normalized_gap_lower_bound']:.12g}"
+    )
+    print(
+        "Inverse-polynomial gap theorems: "
+        f"{metrics['inverse_polynomial_normalized_gap_theorem_count']}"
+    )
+    print(f"Speedup claim allowed: {payload['claim_gate']['speedup_claim_allowed']}")
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_coset_racah_typical_n9_probe(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_n9_low_multiplicity_report(
+        recompute=args.recompute,
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Typical-irrep n=9 low-multiplicity probe complete")
+    print(
+        "Artifact: research/representation/"
+        "coset_typical_n9_low_multiplicity_probe.json"
+    )
+    print(
+        "Exact n=9 targets certified: "
+        f"{metrics['low_multiplicity_simple_spectrum_target_count']}/"
+        f"{metrics['n9_nontrivial_multiplicity_target_count']}"
+    )
+    print(
+        "Unaudited higher-multiplicity targets: "
+        f"{metrics['n9_unaudited_higher_multiplicity_target_count']}"
+    )
+    print(f"Transfer recomputed: {bool(metrics['exact_transfer_recomputed_count'])}")
+    print(f"Speedup claim allowed: {payload['claim_gate']['speedup_claim_allowed']}")
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
 def command_coset_recoupling_synthesize(args: argparse.Namespace) -> int:
     initialize_seed_registry(overwrite=False)
     payload = write_recoupling_mechanism_synthesis_report(
@@ -7873,7 +8129,7 @@ def build_parser() -> argparse.ArgumentParser:
         "coset-multiplicity-commutant",
         help="Search bounded-support diagonal-action commutants inside Kronecker multiplicity registers.",
     )
-    coset_multiplicity_commutant.add_argument("--n-values", default="5,6")
+    coset_multiplicity_commutant.add_argument("--n-values", default="5,6,7")
     coset_multiplicity_commutant.add_argument("--coefficient-bound", type=int, default=2)
     coset_multiplicity_commutant.add_argument("--no-registry", action="store_true")
     coset_multiplicity_commutant.set_defaults(func=command_coset_multiplicity_commutant)
@@ -8219,6 +8475,98 @@ def build_parser() -> argparse.ArgumentParser:
     )
     coset_racah_typical_irrep_transfer.set_defaults(
         func=command_coset_racah_typical_irrep_transfer
+    )
+
+    coset_racah_typical_commutant_moments = subparsers.add_parser(
+        "coset-racah-typical-commutant-moments",
+        help="Audit bounded-support commutant non-scalarity on typical irreps using exact character moments.",
+    )
+    coset_racah_typical_commutant_moments.add_argument(
+        "--n-values", default="7,8"
+    )
+    coset_racah_typical_commutant_moments.add_argument(
+        "--no-registry", action="store_true"
+    )
+    coset_racah_typical_commutant_moments.set_defaults(
+        func=command_coset_racah_typical_commutant_moments
+    )
+
+    coset_racah_typical_class_contraction = subparsers.add_parser(
+        "coset-racah-typical-class-contraction",
+        help="Scale exact typical-irrep commutant moments by marked conjugacy-class contraction.",
+    )
+    coset_racah_typical_class_contraction.add_argument(
+        "--n-values", default="6,7,8,9,10"
+    )
+    coset_racah_typical_class_contraction.add_argument(
+        "--no-registry", action="store_true"
+    )
+    coset_racah_typical_class_contraction.set_defaults(
+        func=command_coset_racah_typical_class_contraction
+    )
+
+    coset_racah_typical_portfolio_collision = subparsers.add_parser(
+        "coset-racah-typical-portfolio-collision",
+        help="Prove the exact n=8 repeated-root collision in the support-three commutant portfolio.",
+    )
+    coset_racah_typical_portfolio_collision.add_argument(
+        "--no-registry", action="store_true"
+    )
+    coset_racah_typical_portfolio_collision.set_defaults(
+        func=command_coset_racah_typical_portfolio_collision
+    )
+
+    coset_racah_typical_third_generator = subparsers.add_parser(
+        "coset-racah-typical-third-generator",
+        help="Prove the exact TC-intersection-one repair of the n=8 commutant collisions.",
+    )
+    coset_racah_typical_third_generator.add_argument(
+        "--no-registry", action="store_true"
+    )
+    coset_racah_typical_third_generator.set_defaults(
+        func=command_coset_racah_typical_third_generator
+    )
+
+    coset_racah_typical_high_multiplicity = subparsers.add_parser(
+        "coset-racah-typical-high-multiplicity",
+        help="Run the exact quotient transfer through all n=8 multiplicity targets.",
+    )
+    coset_racah_typical_high_multiplicity.add_argument(
+        "--recompute", action="store_true"
+    )
+    coset_racah_typical_high_multiplicity.add_argument(
+        "--no-registry", action="store_true"
+    )
+    coset_racah_typical_high_multiplicity.set_defaults(
+        func=command_coset_racah_typical_high_multiplicity
+    )
+
+    coset_racah_typical_separator_gaps = subparsers.add_parser(
+        "coset-racah-typical-separator-gaps",
+        help="Audit finite normalized gaps for the fixed TT1+TC1 separator.",
+    )
+    coset_racah_typical_separator_gaps.add_argument(
+        "--n-values", default="5,6,7,8"
+    )
+    coset_racah_typical_separator_gaps.add_argument(
+        "--no-registry", action="store_true"
+    )
+    coset_racah_typical_separator_gaps.set_defaults(
+        func=command_coset_racah_typical_separator_gaps
+    )
+
+    coset_racah_typical_n9_probe = subparsers.add_parser(
+        "coset-racah-typical-n9-probe",
+        help="Run the exact n=9 probe on every target of multiplicity at most seven.",
+    )
+    coset_racah_typical_n9_probe.add_argument(
+        "--recompute", action="store_true"
+    )
+    coset_racah_typical_n9_probe.add_argument(
+        "--no-registry", action="store_true"
+    )
+    coset_racah_typical_n9_probe.set_defaults(
+        func=command_coset_racah_typical_n9_probe
     )
 
     coset_recoupling_synthesize = subparsers.add_parser(

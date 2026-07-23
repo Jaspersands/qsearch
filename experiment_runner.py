@@ -123,6 +123,27 @@ from coset_stable_branch_accessibility import (
 from coset_typical_irrep_transfer_audit import (
     write_typical_irrep_transfer_report,
 )
+from coset_typical_commutant_moment_audit import (
+    write_typical_commutant_moment_report,
+)
+from coset_typical_class_contraction_scaling import (
+    write_class_contraction_scaling_report,
+)
+from coset_typical_portfolio_collision_certificate import (
+    write_portfolio_collision_report,
+)
+from coset_typical_independent_third_generator_certificate import (
+    write_independent_third_generator_report,
+)
+from coset_typical_high_multiplicity_transfer import (
+    write_high_multiplicity_transfer_report,
+)
+from coset_typical_fixed_separator_gap_scaling import (
+    write_fixed_separator_gap_report,
+)
+from coset_typical_n9_low_multiplicity_probe import (
+    write_n9_low_multiplicity_report,
+)
 from coset_recoupling_capability_ledger import write_recoupling_capability_report
 from coset_recoupling_mechanism_synthesis import write_recoupling_mechanism_synthesis_report
 from coset_state_distinguishability import write_coset_distinguishability_report
@@ -592,6 +613,13 @@ COSET_EXPERIMENTS = {
     "EXP-COSET-STABLE-THREE-COPY-FRAME-CONDITIONING",
     "EXP-COSET-STABLE-BRANCH-ACCESSIBILITY",
     "EXP-COSET-TYPICAL-IRREP-TRANSFER-AUDIT",
+    "EXP-COSET-TYPICAL-COMMUTANT-MOMENT-AUDIT",
+    "EXP-COSET-TYPICAL-CLASS-CONTRACTION-SCALING",
+    "EXP-COSET-TYPICAL-PORTFOLIO-COLLISION-CERTIFICATE",
+    "EXP-COSET-TYPICAL-INDEPENDENT-THIRD-GENERATOR-CERTIFICATE",
+    "EXP-COSET-TYPICAL-HIGH-MULTIPLICITY-TRANSFER",
+    "EXP-COSET-TYPICAL-FIXED-SEPARATOR-GAP-SCALING",
+    "EXP-COSET-TYPICAL-N9-LOW-MULTIPLICITY-PROBE",
     "EXP-COSET-RECOUPLING-CAPABILITY-LEDGER",
     "EXP-COSET-RECOUPLING-MECHANISM-SYNTHESIS",
 }
@@ -1429,6 +1457,13 @@ def select_next_experiment() -> NextExperimentSelection:
         "EXP-COSET-STABLE-THREE-COPY-FRAME-CONDITIONING": 56,
         "EXP-COSET-STABLE-BRANCH-ACCESSIBILITY": 57,
         "EXP-COSET-TYPICAL-IRREP-TRANSFER-AUDIT": 58,
+        "EXP-COSET-TYPICAL-COMMUTANT-MOMENT-AUDIT": 59,
+        "EXP-COSET-TYPICAL-CLASS-CONTRACTION-SCALING": 60,
+        "EXP-COSET-TYPICAL-PORTFOLIO-COLLISION-CERTIFICATE": 61,
+        "EXP-COSET-TYPICAL-INDEPENDENT-THIRD-GENERATOR-CERTIFICATE": 62,
+        "EXP-COSET-TYPICAL-HIGH-MULTIPLICITY-TRANSFER": 63,
+        "EXP-COSET-TYPICAL-FIXED-SEPARATOR-GAP-SCALING": 64,
+        "EXP-COSET-TYPICAL-N9-LOW-MULTIPLICITY-PROBE": 65,
         "EXP-COSET-RECOUPLING-CAPABILITY-LEDGER": 24,
         "EXP-COSET-RECOUPLING-MECHANISM-SYNTHESIS": 25,
     }
@@ -3001,6 +3036,57 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             )
         elif experiment_id == "EXP-COSET-TYPICAL-IRREP-TRANSFER-AUDIT":
             payload = write_typical_irrep_transfer_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif experiment_id == "EXP-COSET-TYPICAL-COMMUTANT-MOMENT-AUDIT":
+            payload = write_typical_commutant_moment_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif experiment_id == "EXP-COSET-TYPICAL-CLASS-CONTRACTION-SCALING":
+            payload = write_class_contraction_scaling_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif experiment_id == "EXP-COSET-TYPICAL-PORTFOLIO-COLLISION-CERTIFICATE":
+            payload = write_portfolio_collision_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif experiment_id == "EXP-COSET-TYPICAL-INDEPENDENT-THIRD-GENERATOR-CERTIFICATE":
+            payload = write_independent_third_generator_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif experiment_id == "EXP-COSET-TYPICAL-HIGH-MULTIPLICITY-TRANSFER":
+            payload = write_high_multiplicity_transfer_report(
+                recompute=False,
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif experiment_id == "EXP-COSET-TYPICAL-FIXED-SEPARATOR-GAP-SCALING":
+            payload = write_fixed_separator_gap_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif experiment_id == "EXP-COSET-TYPICAL-N9-LOW-MULTIPLICITY-PROBE":
+            payload = write_n9_low_multiplicity_report(
+                recompute=False,
                 write_registry=True,
                 registry_experiment_id=experiment_id,
                 registry_candidate_id=experiment["candidate_id"],

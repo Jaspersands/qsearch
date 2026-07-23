@@ -1,0 +1,310 @@
+{
+  "claim_gate": {
+    "all_n8_higher_multiplicity_targets_audited": false,
+    "all_n8_low_multiplicity_targets_simple": true,
+    "all_n_simple_spectrum_proved": false,
+    "all_typical_targets_covered": false,
+    "certified_n8_collision_targets_repaired": true,
+    "coherent_transform_proved": false,
+    "hidden_involution_decoder_proved": false,
+    "independent_third_generator_viable_on_certified_targets": true,
+    "inverse_polynomial_joint_gap_proved": false,
+    "reason": "TC1 repairs all six n=8 targets of multiplicity at most four, including the two exact collisions, but 14 higher-multiplicity targets and every larger n remain open; no normalized gap, coherent implementation, or decoder is known.",
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-07-22T21:14:53.296773+00:00",
+  "falsifiers_triggered": [
+    "The earlier inference that any bounded-support third generator would preserve the n=8 collision is false.",
+    "Four exact moments cannot certify the 14 n=8 targets whose multiplicity exceeds four.",
+    "Finite repair does not establish all-n joint separation.",
+    "Simple spectrum does not establish an inverse-polynomial normalized gap.",
+    "No coherent transform or hidden-involution decoder follows from the spectral certificate."
+  ],
+  "headline_metrics": {
+    "all_n_simple_spectrum_theorem_count": 0,
+    "all_typical_target_coverage_theorem_count": 0,
+    "certified_n8_collision_target_repair_count": 2,
+    "certified_n8_low_multiplicity_simple_spectrum_target_count": 6,
+    "certified_n8_low_multiplicity_target_count": 6,
+    "coherent_typical_multiplicity_transform_count": 0,
+    "exact_parameterized_characteristic_polynomial_certificate_count": 6,
+    "exact_parameterized_four_moment_certificate_count": 4,
+    "independent_third_generator_target_count": 6,
+    "inverse_polynomial_gap_theorem_count": 0,
+    "maximum_exactly_audited_kronecker_multiplicity": 4,
+    "n8_exact_target_coverage_fraction": 0.3,
+    "n8_nontrivial_multiplicity_target_count": 20,
+    "n8_unaudited_higher_multiplicity_target_count": 14,
+    "nonzero_coefficient_simple_spectrum_target_count": 6,
+    "typical_label_hidden_involution_decoder_count": 0
+  },
+  "positivity_certificate": {
+    "audited_family_count": 3,
+    "audited_target_count": 6,
+    "discriminant_positive_for_every_nonzero_real_c": true,
+    "negative_quadratic_discriminant_family_count": 1,
+    "positive_coefficient_family_count": 1,
+    "positive_monomial_family_count": 1,
+    "positive_quadratic_leading_coefficient": 14155776,
+    "quadratic_discriminant": -149255648905789440,
+    "quadratic_positive_for_all_real_z": true,
+    "remaining_constant": 17814103125,
+    "remaining_linear_coefficient": 46879054250,
+    "substitution": "z=c^2>=0"
+  },
+  "records": [
+    {
+      "base_generator_id": "ORB-TT-INTERSECTION-1",
+      "discriminant_positivity_proof": "positive-monomial-in-c-squared",
+      "discriminant_zero_coefficient_condition": "c=0",
+      "every_nonzero_real_coefficient_simple_spectrum": true,
+      "exact_contraction_cache_size": 9850,
+      "exact_orbit_word_state_counts": [
+        2,
+        87,
+        1657,
+        8193
+      ],
+      "exact_parameterized_characteristic_polynomial": "(-2*c**2 + 44100*x**2 - 2100*x + 25)/44100",
+      "exact_parameterized_discriminant": "2*c**2/11025",
+      "exact_parameterized_power_traces": [
+        "1/21",
+        "(2*c**2 + 25)/22050"
+      ],
+      "finite_collision_repaired": true,
+      "independent_generator_id": "ORB-TC-INTERSECTION-1",
+      "kronecker_multiplicity": 2,
+      "n": 8,
+      "sign_twist_transfer_used": false,
+      "source_dimension": 90,
+      "source_partition": [
+        4,
+        2,
+        1,
+        1
+      ],
+      "status": "exact-finite-simple-spectrum-for-every-nonzero-real-coefficient",
+      "target_dimension": 7,
+      "target_partition": [
+        7,
+        1
+      ]
+    },
+    {
+      "base_generator_id": "ORB-TT-INTERSECTION-1",
+      "discriminant_positivity_proof": "positive-monomial-in-c-squared",
+      "discriminant_zero_coefficient_condition": "c=0",
+      "every_nonzero_real_coefficient_simple_spectrum": true,
+      "exact_contraction_cache_size": 9850,
+      "exact_orbit_word_state_counts": [
+        2,
+        87,
+        1657,
+        8193
+      ],
+      "exact_parameterized_characteristic_polynomial": "(-2*c**2 + 44100*x**2 + 2100*x + 25)/44100",
+      "exact_parameterized_discriminant": "2*c**2/11025",
+      "exact_parameterized_power_traces": [
+        "-1/21",
+        "(2*c**2 + 25)/22050"
+      ],
+      "finite_collision_repaired": true,
+      "independent_generator_id": "ORB-TC-INTERSECTION-1",
+      "kronecker_multiplicity": 2,
+      "n": 8,
+      "sign_twist_transfer_used": true,
+      "source_dimension": 90,
+      "source_partition": [
+        4,
+        2,
+        1,
+        1
+      ],
+      "status": "exact-finite-simple-spectrum-for-every-nonzero-real-coefficient",
+      "target_dimension": 7,
+      "target_partition": [
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "base_generator_id": "ORB-TT-INTERSECTION-1",
+      "discriminant_positivity_proof": "strictly-positive-coefficients-in-c-squared",
+      "discriminant_zero_coefficient_condition": "c=0",
+      "every_nonzero_real_coefficient_simple_spectrum": true,
+      "exact_contraction_cache_size": 9850,
+      "exact_orbit_word_state_counts": [
+        2,
+        87,
+        1657,
+        8193
+      ],
+      "exact_parameterized_characteristic_polynomial": "(21*x - 1)*(-1344*c**2*x - 20*c**2 + 7408800*x**3 - 286650*x**2 - 12075*x + 425)/155584800",
+      "exact_parameterized_discriminant": "c**4*(8388608*c**6 + 54476800*c**4 + 6529740000*c**2 + 3810515625)/2732831699468451840000000000",
+      "exact_parameterized_power_traces": [
+        "29/336",
+        "(1024*c**2 + 19825)/2822400",
+        "(27648*c**2 + 173525)/948326400",
+        "(524288*c**4 + 21401600*c**2 + 108150625)/7965941760000"
+      ],
+      "finite_collision_repaired": true,
+      "independent_generator_id": "ORB-TC-INTERSECTION-1",
+      "kronecker_multiplicity": 4,
+      "n": 8,
+      "sign_twist_transfer_used": false,
+      "source_dimension": 90,
+      "source_partition": [
+        4,
+        2,
+        1,
+        1
+      ],
+      "status": "exact-finite-simple-spectrum-for-every-nonzero-real-coefficient",
+      "target_dimension": 21,
+      "target_partition": [
+        6,
+        1,
+        1
+      ]
+    },
+    {
+      "base_generator_id": "ORB-TT-INTERSECTION-1",
+      "discriminant_positivity_proof": "strictly-positive-coefficients-in-c-squared",
+      "discriminant_zero_coefficient_condition": "c=0",
+      "every_nonzero_real_coefficient_simple_spectrum": true,
+      "exact_contraction_cache_size": 9850,
+      "exact_orbit_word_state_counts": [
+        2,
+        87,
+        1657,
+        8193
+      ],
+      "exact_parameterized_characteristic_polynomial": "(21*x + 1)*(-1344*c**2*x + 20*c**2 + 7408800*x**3 + 286650*x**2 - 12075*x - 425)/155584800",
+      "exact_parameterized_discriminant": "c**4*(8388608*c**6 + 54476800*c**4 + 6529740000*c**2 + 3810515625)/2732831699468451840000000000",
+      "exact_parameterized_power_traces": [
+        "-29/336",
+        "(1024*c**2 + 19825)/2822400",
+        "-(27648*c**2 + 173525)/948326400",
+        "(524288*c**4 + 21401600*c**2 + 108150625)/7965941760000"
+      ],
+      "finite_collision_repaired": true,
+      "independent_generator_id": "ORB-TC-INTERSECTION-1",
+      "kronecker_multiplicity": 4,
+      "n": 8,
+      "sign_twist_transfer_used": true,
+      "source_dimension": 90,
+      "source_partition": [
+        4,
+        2,
+        1,
+        1
+      ],
+      "status": "exact-finite-simple-spectrum-for-every-nonzero-real-coefficient",
+      "target_dimension": 21,
+      "target_partition": [
+        3,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "base_generator_id": "ORB-TT-INTERSECTION-1",
+      "discriminant_positivity_proof": "negative-quadratic-discriminant-decomposition",
+      "discriminant_zero_coefficient_condition": "c=0",
+      "every_nonzero_real_coefficient_simple_spectrum": true,
+      "exact_contraction_cache_size": 9850,
+      "exact_orbit_word_state_counts": [
+        2,
+        87,
+        1657,
+        8193
+      ],
+      "exact_parameterized_characteristic_polynomial": "(8*c**4 - 88200*c**2*x**2 + 4165*c**2*x + 129654000*x**4 - 5402250*x**3 - 257250*x**2)/129654000",
+      "exact_parameterized_discriminant": "c**4*(14155776*c**8 - 81008640*c**6 + 2751845760*c**4 + 46879054250*c**2 + 17814103125)/307443566190200832000000000",
+      "exact_parameterized_power_traces": [
+        "1/24",
+        "(192*c**2 + 805)/141120",
+        "-(192*c**2 - 5425)/16934400",
+        "(67584*c**4 + 474880*c**2 + 2456125)/99574272000"
+      ],
+      "finite_collision_repaired": true,
+      "independent_generator_id": "ORB-TC-INTERSECTION-1",
+      "kronecker_multiplicity": 4,
+      "n": 8,
+      "sign_twist_transfer_used": false,
+      "source_dimension": 90,
+      "source_partition": [
+        4,
+        2,
+        1,
+        1
+      ],
+      "status": "exact-finite-simple-spectrum-for-every-nonzero-real-coefficient",
+      "target_dimension": 14,
+      "target_partition": [
+        4,
+        4
+      ]
+    },
+    {
+      "base_generator_id": "ORB-TT-INTERSECTION-1",
+      "discriminant_positivity_proof": "negative-quadratic-discriminant-decomposition",
+      "discriminant_zero_coefficient_condition": "c=0",
+      "every_nonzero_real_coefficient_simple_spectrum": true,
+      "exact_contraction_cache_size": 9850,
+      "exact_orbit_word_state_counts": [
+        2,
+        87,
+        1657,
+        8193
+      ],
+      "exact_parameterized_characteristic_polynomial": "(8*c**4 - 88200*c**2*x**2 - 4165*c**2*x + 129654000*x**4 + 5402250*x**3 - 257250*x**2)/129654000",
+      "exact_parameterized_discriminant": "c**4*(14155776*c**8 - 81008640*c**6 + 2751845760*c**4 + 46879054250*c**2 + 17814103125)/307443566190200832000000000",
+      "exact_parameterized_power_traces": [
+        "-1/24",
+        "(192*c**2 + 805)/141120",
+        "(192*c**2 - 5425)/16934400",
+        "(67584*c**4 + 474880*c**2 + 2456125)/99574272000"
+      ],
+      "finite_collision_repaired": true,
+      "independent_generator_id": "ORB-TC-INTERSECTION-1",
+      "kronecker_multiplicity": 4,
+      "n": 8,
+      "sign_twist_transfer_used": true,
+      "source_dimension": 90,
+      "source_partition": [
+        4,
+        2,
+        1,
+        1
+      ],
+      "status": "exact-finite-simple-spectrum-for-every-nonzero-real-coefficient",
+      "target_dimension": 14,
+      "target_partition": [
+        2,
+        2,
+        2,
+        2
+      ]
+    }
+  ],
+  "status": "finite-collision-repair-proved-global-obligations-blocked",
+  "summary": "TT1+c*TC1 has exact simple spectrum on all six n=8 targets of multiplicity at most four for every real c!=0; 14 higher-multiplicity targets and all asymptotic obligations remain open.",
+  "theorem_contract": {
+    "algorithmic_speedup_claimed": false,
+    "asymptotic_lower_bound_claimed": false,
+    "exact_contraction": "An exact orbit-word dynamic program over TT1 and TC1 computed projected power traces through order four on all six n=8 targets of multiplicity at most four.",
+    "newton_recovery": "Newton identities recover the degree-four characteristic polynomial exactly from those traces.",
+    "positivity_argument": "After z=c^2, the residual discriminant factor is z^2 times a positive quadratic plus a positive linear term and constant; the quadratic has positive leading coefficient and negative discriminant.",
+    "scope": "S_8 source lambda=(4,2,1,1), all six targets with Kronecker multiplicity at most four, operator TT1+c*TC1",
+    "sign_twist_transfer": "The self-conjugate source and parity support imply p_k on the conjugate target equals (-1)^k p_k, hence P_conjugate(x,c)=P_primary(-x,c)."
+  }
+}

@@ -29,6 +29,7 @@ class MultiplicityCommutantSearchTests(unittest.TestCase):
         self.assertEqual(len(names), len(operators))
         self.assertEqual(len(names), len(records))
         self.assertGreaterEqual(len(names), 3)
+        self.assertIn("ORB-TT-INTERSECTION-1", names)
         for record in records:
             self.assertGreater(record.term_count, 0)
             self.assertLess(record.hermiticity_residual, 1e-9)
@@ -48,10 +49,43 @@ class MultiplicityCommutantSearchTests(unittest.TestCase):
         self.assertLess(record.target_tableau_spectrum_consistency_residual, 1e-8)
         self.assertFalse(record.inverse_polynomial_gap_proved)
         self.assertFalse(record.coherent_polynomial_multiplicity_transform_proved)
+        self.assertTrue(record.low_support_portfolio_all_blocks_split)
+        self.assertEqual(
+            record.low_support_portfolio_fully_split_label_count,
+            record.nontrivial_multiplicity_label_count,
+        )
+        self.assertGreater(
+            record.low_support_portfolio_minimum_lcu_normalized_gap,
+            0,
+        )
 
     def test_report_charges_gap_and_blocks_speedup(self):
-        report = build_multiplicity_commutant_report(n_values=[5, 6])
-        self.assertEqual(report.headline_metrics["finite_all_block_split_count"], 2)
+        report = build_multiplicity_commutant_report(n_values=[5, 6, 7])
+        self.assertEqual(report.headline_metrics["finite_all_block_split_count"], 3)
+        self.assertEqual(report.headline_metrics["maximum_n"], 7)
+        self.assertEqual(
+            report.headline_metrics["maximum_noncommuting_generator_pair_count"],
+            9,
+        )
+        self.assertEqual(
+            report.headline_metrics[
+                "finite_low_support_portfolio_all_block_split_count"
+            ],
+            3,
+        )
+        self.assertEqual(
+            report.headline_metrics[
+                "finite_common_low_support_coefficient_rule_count"
+            ],
+            4,
+        )
+        self.assertEqual(
+            report.best_finite_common_low_support_coefficients,
+            {
+                "ORB-TC-INTERSECTION-2": 1,
+                "ORB-TT-INTERSECTION-1": -2,
+            },
+        )
         self.assertEqual(report.headline_metrics["inverse_polynomial_gap_theorem_count"], 0)
         self.assertTrue(report.claim_gate["bounded_support_commutant_block_encoding_polynomial"])
         self.assertTrue(report.claim_gate["finite_all_multiplicity_blocks_split"])

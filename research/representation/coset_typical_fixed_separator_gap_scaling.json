@@ -1,0 +1,163 @@
+{
+  "claim_gate": {
+    "adjacent_n9_tested": false,
+    "all_finite_sizes_split": true,
+    "all_n_simple_spectrum_proved": false,
+    "coherent_transform_proved": false,
+    "hidden_involution_decoder_proved": false,
+    "inverse_polynomial_normalized_gap_proved": false,
+    "n8_positive_gap_exactly_certified": true,
+    "reason": "The fixed separator survives n=5 through n=8 and has an exact n=8 gap certificate, but four sizes and a descriptive fit do not prove all-n separation or inverse-polynomial normalized gaps.",
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-07-22T22:03:34.992903+00:00",
+  "falsifiers_triggered": [
+    "No finite repeated-root collision occurs from n=5 through n=8.",
+    "The minimum finite gap decreases by nearly two orders of magnitude between n=5 and n=8.",
+    "A four-point log-log fit is not evidence of an inverse-polynomial theorem.",
+    "No coherent transform, outcome law, decoder, or classical separation follows from finite gaps."
+  ],
+  "headline_metrics": {
+    "all_n_simple_spectrum_theorem_count": 0,
+    "coherent_typical_multiplicity_transform_count": 0,
+    "descriptive_log_log_gap_fit_exponent": 10.076500996817474,
+    "finite_all_block_simple_spectrum_size_count": 4,
+    "finite_size_count": 4,
+    "inverse_polynomial_normalized_gap_theorem_count": 0,
+    "maximum_n": 8,
+    "minimum_n": 5,
+    "n8_certified_minimum_lcu_normalized_gap_lower_bound": 0.0012504172431794165,
+    "n8_certified_minimum_raw_gap_lower_bound": 0.002500834486358833,
+    "n8_exact_target_count": 20,
+    "typical_label_hidden_involution_decoder_count": 0
+  },
+  "records": [
+    {
+      "certified_minimum_raw_gap_lower_bound": 0.0,
+      "certified_minimum_raw_gap_upper_bound": 0.0,
+      "every_finite_block_simple_spectrum": true,
+      "exact_characteristic_polynomial_target_count": 0,
+      "exact_rational_root_isolation_used": false,
+      "finite_only": true,
+      "lcu_normalization": 2,
+      "maximum_kronecker_multiplicity": 2,
+      "minimum_gap_target_multiplicity": 2,
+      "minimum_gap_target_partition": [
+        2,
+        2,
+        1
+      ],
+      "minimum_lcu_normalized_gap_lower_bound": 0.0,
+      "minimum_raw_gap": 0.23333333333333328,
+      "n": 5,
+      "nontrivial_tableau_block_count": 10,
+      "nontrivial_target_count": 2,
+      "source_dimension": 6,
+      "source_partition": [
+        3,
+        1,
+        1
+      ],
+      "status": "finite-dense-simple-spectrum-numerical-gap"
+    },
+    {
+      "certified_minimum_raw_gap_lower_bound": 0.0,
+      "certified_minimum_raw_gap_upper_bound": 0.0,
+      "every_finite_block_simple_spectrum": true,
+      "exact_characteristic_polynomial_target_count": 0,
+      "exact_rational_root_isolation_used": false,
+      "finite_only": true,
+      "lcu_normalization": 2,
+      "maximum_kronecker_multiplicity": 5,
+      "minimum_gap_target_multiplicity": 4,
+      "minimum_gap_target_partition": [
+        3,
+        1,
+        1,
+        1
+      ],
+      "minimum_lcu_normalized_gap_lower_bound": 0.0,
+      "minimum_raw_gap": 0.024068216538026942,
+      "n": 6,
+      "nontrivial_tableau_block_count": 74,
+      "nontrivial_target_count": 9,
+      "source_dimension": 16,
+      "source_partition": [
+        3,
+        2,
+        1
+      ],
+      "status": "finite-dense-simple-spectrum-numerical-gap"
+    },
+    {
+      "certified_minimum_raw_gap_lower_bound": 0.0,
+      "certified_minimum_raw_gap_upper_bound": 0.0,
+      "every_finite_block_simple_spectrum": true,
+      "exact_characteristic_polynomial_target_count": 0,
+      "exact_rational_root_isolation_used": false,
+      "finite_only": true,
+      "lcu_normalization": 2,
+      "maximum_kronecker_multiplicity": 9,
+      "minimum_gap_target_multiplicity": 9,
+      "minimum_gap_target_partition": [
+        4,
+        2,
+        1
+      ],
+      "minimum_lcu_normalized_gap_lower_bound": 0.0,
+      "minimum_raw_gap": 0.003479115675025981,
+      "n": 7,
+      "nontrivial_tableau_block_count": 224,
+      "nontrivial_target_count": 12,
+      "source_dimension": 35,
+      "source_partition": [
+        4,
+        2,
+        1
+      ],
+      "status": "finite-dense-simple-spectrum-numerical-gap"
+    },
+    {
+      "certified_minimum_raw_gap_lower_bound": 0.002500834486358833,
+      "certified_minimum_raw_gap_upper_bound": 0.002500834643001143,
+      "every_finite_block_simple_spectrum": true,
+      "exact_characteristic_polynomial_target_count": 20,
+      "exact_rational_root_isolation_used": true,
+      "finite_only": true,
+      "lcu_normalization": 2,
+      "maximum_kronecker_multiplicity": 17,
+      "minimum_gap_target_multiplicity": 12,
+      "minimum_gap_target_partition": [
+        3,
+        3,
+        1,
+        1
+      ],
+      "minimum_lcu_normalized_gap_lower_bound": 0.0012504172431794165,
+      "minimum_raw_gap": 0.002500834564679988,
+      "n": 8,
+      "nontrivial_tableau_block_count": 0,
+      "nontrivial_target_count": 20,
+      "source_dimension": 90,
+      "source_partition": [
+        4,
+        2,
+        1,
+        1
+      ],
+      "status": "exact-all-target-simple-spectrum-certified-root-gap"
+    }
+  ],
+  "status": "finite-separator-gap-survives-through-n8-n9-and-all-n-open",
+  "summary": "TT1+TC1 splits every audited block from n=5 through n=8; exact n=8 root isolation gives minimum raw gap above 0.002500834486, while n=9 and all asymptotic obligations remain open.",
+  "theorem_contract": {
+    "algorithmic_speedup_claimed": false,
+    "asymptotic_claimed": false,
+    "exact_scope": "all 20 nontrivial target blocks at n=8",
+    "finite_dense_scope": "maximum-dimension sources at n=5,6,7",
+    "fit_status": "descriptive-only-not-a-bound",
+    "lcu_normalization": 2,
+    "operator": "H_n=average(ORB-TT-INTERSECTION-1)+average(ORB-TC-INTERSECTION-1)",
+    "root_isolation": "Exact rational intervals of width at most 1e-10 certify every n=8 root and a positive global minimum gap."
+  }
+}
