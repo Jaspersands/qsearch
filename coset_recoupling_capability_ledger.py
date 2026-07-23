@@ -38,6 +38,28 @@ COSET_RECOUPLING_CAPABILITY_PATH = Path(
 )
 DEFAULT_EXPERIMENT_ID = "EXP-COSET-RECOUPLING-CAPABILITY-LEDGER"
 DEFAULT_CANDIDATE_ID = "CODE-COSET-COLLECTIVE"
+COSET_TYPICAL_COMMUTANT_MOMENT_PATH = Path(
+    "research/representation/coset_typical_commutant_moment_audit.json"
+)
+COSET_TYPICAL_CLASS_CONTRACTION_PATH = Path(
+    "research/representation/coset_typical_class_contraction_scaling.json"
+)
+COSET_TYPICAL_PORTFOLIO_COLLISION_PATH = Path(
+    "research/representation/coset_typical_portfolio_collision_certificate.json"
+)
+COSET_TYPICAL_INDEPENDENT_THIRD_GENERATOR_PATH = Path(
+    "research/representation/"
+    "coset_typical_independent_third_generator_certificate.json"
+)
+COSET_TYPICAL_HIGH_MULTIPLICITY_TRANSFER_PATH = Path(
+    "research/representation/coset_typical_high_multiplicity_transfer.json"
+)
+COSET_TYPICAL_FIXED_SEPARATOR_GAP_PATH = Path(
+    "research/representation/coset_typical_fixed_separator_gap_scaling.json"
+)
+COSET_TYPICAL_N9_LOW_MULTIPLICITY_PATH = Path(
+    "research/representation/coset_typical_n9_low_multiplicity_probe.json"
+)
 
 
 @dataclass(frozen=True)
@@ -421,6 +443,77 @@ def build_recoupling_capability_report(
     n_values: Sequence[int] = (4, 5, 6, 7, 8, 9, 10),
 ) -> RecouplingCapabilityReport:
     growth = [audit_kronecker_growth(n) for n in n_values]
+    try:
+        typical_moment_payload = (
+            json.loads(COSET_TYPICAL_COMMUTANT_MOMENT_PATH.read_text())
+            if COSET_TYPICAL_COMMUTANT_MOMENT_PATH.exists()
+            else {}
+        )
+    except (json.JSONDecodeError, OSError):
+        typical_moment_payload = {}
+    typical_moment_metrics = typical_moment_payload.get("headline_metrics", {})
+    try:
+        typical_class_payload = (
+            json.loads(COSET_TYPICAL_CLASS_CONTRACTION_PATH.read_text())
+            if COSET_TYPICAL_CLASS_CONTRACTION_PATH.exists()
+            else {}
+        )
+    except (json.JSONDecodeError, OSError):
+        typical_class_payload = {}
+    typical_class_metrics = typical_class_payload.get("headline_metrics", {})
+    try:
+        typical_collision_payload = (
+            json.loads(COSET_TYPICAL_PORTFOLIO_COLLISION_PATH.read_text())
+            if COSET_TYPICAL_PORTFOLIO_COLLISION_PATH.exists()
+            else {}
+        )
+    except (json.JSONDecodeError, OSError):
+        typical_collision_payload = {}
+    typical_collision_metrics = typical_collision_payload.get(
+        "headline_metrics", {}
+    )
+    try:
+        typical_third_generator_payload = (
+            json.loads(COSET_TYPICAL_INDEPENDENT_THIRD_GENERATOR_PATH.read_text())
+            if COSET_TYPICAL_INDEPENDENT_THIRD_GENERATOR_PATH.exists()
+            else {}
+        )
+    except (json.JSONDecodeError, OSError):
+        typical_third_generator_payload = {}
+    typical_third_generator_metrics = typical_third_generator_payload.get(
+        "headline_metrics", {}
+    )
+    try:
+        typical_high_multiplicity_payload = (
+            json.loads(COSET_TYPICAL_HIGH_MULTIPLICITY_TRANSFER_PATH.read_text())
+            if COSET_TYPICAL_HIGH_MULTIPLICITY_TRANSFER_PATH.exists()
+            else {}
+        )
+    except (json.JSONDecodeError, OSError):
+        typical_high_multiplicity_payload = {}
+    typical_high_multiplicity_metrics = typical_high_multiplicity_payload.get(
+        "headline_metrics", {}
+    )
+    try:
+        typical_separator_gap_payload = (
+            json.loads(COSET_TYPICAL_FIXED_SEPARATOR_GAP_PATH.read_text())
+            if COSET_TYPICAL_FIXED_SEPARATOR_GAP_PATH.exists()
+            else {}
+        )
+    except (json.JSONDecodeError, OSError):
+        typical_separator_gap_payload = {}
+    typical_separator_gap_metrics = typical_separator_gap_payload.get(
+        "headline_metrics", {}
+    )
+    try:
+        typical_n9_payload = (
+            json.loads(COSET_TYPICAL_N9_LOW_MULTIPLICITY_PATH.read_text())
+            if COSET_TYPICAL_N9_LOW_MULTIPLICITY_PATH.exists()
+            else {}
+        )
+    except (json.JSONDecodeError, OSError):
+        typical_n9_payload = {}
+    typical_n9_metrics = typical_n9_payload.get("headline_metrics", {})
     unresolved = [
         capability
         for capability in CAPABILITIES
@@ -473,6 +566,166 @@ def build_recoupling_capability_report(
         "stable_branch_typical_irrep_transfer_count": 0,
         "bounded_tail_natural_access_no_go_theorem_count": 1,
         "typical_irrep_uniform_commutant_gap_theorem_count": 0,
+        "typical_irrep_finite_non_scalar_block_count": int(
+            typical_moment_metrics.get("finite_non_scalar_covered_count", 0) or 0
+        ),
+        "typical_irrep_primary_generator_scalar_block_count": int(
+            typical_moment_metrics.get(
+                "primary_generator_exact_scalar_block_count", 0
+            )
+            or 0
+        ),
+        "typical_irrep_finite_centered_covariance_rank_two_count": int(
+            typical_moment_metrics.get(
+                "finite_centered_covariance_rank_two_count", 0
+            )
+            or 0
+        ),
+        "typical_irrep_finite_multiplicity_two_simple_spectrum_count": int(
+            typical_moment_metrics.get(
+                "finite_multiplicity_two_simple_spectrum_count", 0
+            )
+            or 0
+        ),
+        "typical_irrep_uniform_commutant_non_scalar_theorem_count": int(
+            typical_moment_metrics.get(
+                "uniform_typical_commutant_non_scalar_theorem_count", 0
+            )
+            or 0
+        ),
+        "typical_irrep_uniform_commutant_simple_spectrum_theorem_count": int(
+            typical_moment_metrics.get(
+                "uniform_typical_commutant_simple_spectrum_theorem_count", 0
+            )
+            or 0
+        ),
+        "typical_irrep_class_compressed_maximum_n": int(
+            typical_class_metrics.get("maximum_n", 0) or 0
+        ),
+        "typical_irrep_primary_generator_exact_scalar_block_count": int(
+            typical_class_metrics.get("total_exact_scalar_block_count", 0) or 0
+        ),
+        "typical_irrep_single_generator_uniformity_falsification_count": int(
+            typical_class_metrics.get(
+                "single_primary_generator_uniformity_falsification_count", 0
+            )
+            or 0
+        ),
+        "typical_irrep_finite_low_support_portfolio_covered_count": int(
+            typical_class_metrics.get(
+                "finite_portfolio_non_scalar_covered_count", 0
+            )
+            or 0
+        ),
+        "typical_irrep_finite_low_support_portfolio_common_scalar_count": int(
+            typical_class_metrics.get(
+                "finite_portfolio_common_scalar_block_count", 0
+            )
+            or 0
+        ),
+        "typical_irrep_two_generator_repeated_root_target_count": int(
+            typical_collision_metrics.get(
+                "repeated_zero_eigenvalue_target_count", 0
+            )
+            or 0
+        ),
+        "typical_irrep_minimum_required_portfolio_generator_count": int(
+            typical_collision_metrics.get(
+                "minimum_required_portfolio_generator_count_on_certified_targets",
+                0,
+            )
+            or 0
+        ),
+        "typical_irrep_disjoint_third_generator_repeated_root_target_count": int(
+            typical_collision_metrics.get(
+                "disjoint_third_generator_repeated_root_target_count", 0
+            )
+            or 0
+        ),
+        "typical_irrep_independent_third_generator_repaired_target_count": int(
+            typical_third_generator_metrics.get(
+                "certified_n8_collision_target_repair_count", 0
+            )
+            or 0
+        ),
+        "typical_irrep_independent_third_generator_low_multiplicity_target_count": int(
+            typical_third_generator_metrics.get(
+                "certified_n8_low_multiplicity_simple_spectrum_target_count", 0
+            )
+            or 0
+        ),
+        "typical_irrep_independent_third_generator_unaudited_n8_target_count": int(
+            typical_third_generator_metrics.get(
+                "n8_unaudited_higher_multiplicity_target_count", 0
+            )
+            or 0
+        ),
+        "typical_irrep_independent_third_generator_all_n_theorem_count": int(
+            typical_third_generator_metrics.get(
+                "all_n_simple_spectrum_theorem_count", 0
+            )
+            or 0
+        ),
+        "typical_irrep_independent_third_generator_gap_theorem_count": int(
+            typical_third_generator_metrics.get(
+                "inverse_polynomial_gap_theorem_count", 0
+            )
+            or 0
+        ),
+        "typical_irrep_fixed_c1_n8_certified_target_count": int(
+            typical_high_multiplicity_metrics.get(
+                "certified_n8_simple_spectrum_target_count", 0
+            )
+            or 0
+        ),
+        "typical_irrep_fixed_c1_n8_unaudited_target_count": int(
+            typical_high_multiplicity_metrics.get(
+                "n8_unaudited_target_count", 0
+            )
+            or 0
+        ),
+        "typical_irrep_maximum_exact_transfer_degree": int(
+            typical_high_multiplicity_metrics.get(
+                "maximum_exact_transfer_degree", 0
+            )
+            or 0
+        ),
+        "typical_irrep_fixed_separator_finite_split_size_count": int(
+            typical_separator_gap_metrics.get(
+                "finite_all_block_simple_spectrum_size_count", 0
+            )
+            or 0
+        ),
+        "typical_irrep_fixed_separator_n8_normalized_gap_lower_bound": float(
+            typical_separator_gap_metrics.get(
+                "n8_certified_minimum_lcu_normalized_gap_lower_bound", 0.0
+            )
+            or 0.0
+        ),
+        "typical_irrep_fixed_separator_inverse_polynomial_gap_theorem_count": int(
+            typical_separator_gap_metrics.get(
+                "inverse_polynomial_normalized_gap_theorem_count", 0
+            )
+            or 0
+        ),
+        "typical_irrep_n9_low_multiplicity_certified_target_count": int(
+            typical_n9_metrics.get(
+                "low_multiplicity_simple_spectrum_target_count", 0
+            )
+            or 0
+        ),
+        "typical_irrep_n9_unaudited_target_count": int(
+            typical_n9_metrics.get(
+                "n9_unaudited_higher_multiplicity_target_count", 0
+            )
+            or 0
+        ),
+        "typical_irrep_n9_all_target_theorem_count": int(
+            typical_n9_metrics.get(
+                "all_n9_target_simple_spectrum_theorem_count", 0
+            )
+            or 0
+        ),
         "typical_irrep_uniform_encoded_tree_transform_count": 0,
         "typical_irrep_frame_conditioning_theorem_count": 0,
         "stable_shape_transition_filter_count": 0,
@@ -634,6 +887,10 @@ def build_recoupling_capability_report(
             "stable_branch_typical_irrep_transfer_proved": False,
             "bounded_tail_natural_access_no_go_proved": True,
             "typical_irrep_uniform_recoupling_transfer_proved": False,
+            "typical_irrep_finite_bounded_support_non_scalarity_observed": bool(
+                typical_moment_metrics.get("finite_non_scalar_covered_count", 0)
+            ),
+            "typical_irrep_uniform_joint_spectral_separation_proved": False,
             "stable_shape_transition_filter_polynomial_proved": False,
             "exact_bounded_stable_sector_family_proved": True,
             "gapped_kronecker_multiplicity_transform_polynomial_proved": False,

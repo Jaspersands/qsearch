@@ -161,6 +161,35 @@ def build_snapshot() -> dict[str, Any]:
         RESEARCH / "representation/coset_typical_irrep_transfer_audit.json",
         {},
     )
+    typical_commutant_moments = read_json(
+        RESEARCH / "representation/coset_typical_commutant_moment_audit.json",
+        {},
+    )
+    typical_class_contraction = read_json(
+        RESEARCH / "representation/coset_typical_class_contraction_scaling.json",
+        {},
+    )
+    typical_portfolio_collision = read_json(
+        RESEARCH / "representation/coset_typical_portfolio_collision_certificate.json",
+        {},
+    )
+    typical_third_generator = read_json(
+        RESEARCH
+        / "representation/coset_typical_independent_third_generator_certificate.json",
+        {},
+    )
+    typical_high_multiplicity = read_json(
+        RESEARCH / "representation/coset_typical_high_multiplicity_transfer.json",
+        {},
+    )
+    typical_separator_gaps = read_json(
+        RESEARCH / "representation/coset_typical_fixed_separator_gap_scaling.json",
+        {},
+    )
+    typical_n9_probe = read_json(
+        RESEARCH / "representation/coset_typical_n9_low_multiplicity_probe.json",
+        {},
+    )
 
     blocking = sum(bool(item.get("blocks_speedup_claim", False)) for item in findings)
     updated = latest_artifact_date(
@@ -204,6 +233,13 @@ def build_snapshot() -> dict[str, Any]:
         stable_frame_conditioning,
         stable_branch_access,
         typical_irrep_transfer,
+        typical_commutant_moments,
+        typical_class_contraction,
+        typical_portfolio_collision,
+        typical_third_generator,
+        typical_high_multiplicity,
+        typical_separator_gaps,
+        typical_n9_probe,
     )
     gap_rows = metric(gap, "critical_gap_formula_finite_verified_count", 0)
     gap_total = metric(gap, "record_count", 0)
@@ -225,7 +261,9 @@ def build_snapshot() -> dict[str, Any]:
             "The project is a proof and falsification engine, not an algorithm demo. Its strongest constructive result "
             "is a polynomially filterable three-copy stable frame. Its strongest negative result is more important: "
             "every predetermined bounded-tail Fourier family has factorially small natural mass. The nonabelian route "
-            "must now work uniformly on naturally sampled high-dimensional partitions."
+            "must now turn a finite generator portfolio into an all-n, jointly gapped, decodable transform; the "
+            "single-generator and first two-generator spans have both been exactly falsified, while fixed-coefficient "
+            "TC1 now has an exact simple-spectrum certificate on all 20 n=8 targets."
         ),
         "metrics": {
             "experiments": len(experiments),
@@ -270,29 +308,56 @@ def build_snapshot() -> dict[str, Any]:
             {
                 "title": "Nonabelian coset states",
                 "short_title": "Cosets",
-                "status": "Stable route cut; typical-label frontier active",
+                "status": "Two-generator span and first extension cut",
                 "tone": "active",
                 "stage": 3,
                 "summary": (
                     "One fixed stable family now has complete encoded coupling-tree labels, a direct three-copy frame "
                     "block encoding, an all-n eigenvalue lower bound, and polynomial inverse filters. Exact access "
-                    "accounting proves that branch, and every fixed bounded-tail extension, is naturally inaccessible."
+                    "accounting cuts every fixed bounded-tail extension. Exact character moments now show non-scalar "
+                    "bounded-support action on typical blocks, but a fourth-moment certificate kills the first two-generator resolver."
                 ),
                 "evidence": (
                     f"Encoded labels: {metric(stable_encoded_tree, 'joint_multiplicity_label_count', 0)}/25. "
                     f"All-n conditioning families: {metric(stable_frame_conditioning, 'all_n_inverse_polynomial_minimum_eigenvalue_theorem_count', 0)}. "
                     f"Naturally accessible fixed branches: {metric(stable_branch_access, 'natural_input_polynomial_accessible_branch_count', 0)}. "
                     f"At n=20 the typical-source audit reaches multiplicity "
-                    f"{metric(typical_irrep_transfer, 'maximum_kronecker_multiplicity', 0):,}."
+                    f"{metric(typical_irrep_transfer, 'maximum_kronecker_multiplicity', 0):,}. "
+                    f"Finite typical non-scalar coverage: "
+                    f"{metric(typical_commutant_moments, 'finite_non_scalar_covered_count', 0)}/"
+                    f"{metric(typical_commutant_moments, 'nontrivial_multiplicity_block_count', 0)} blocks; "
+                    f"covariance-rank>=2: {metric(typical_commutant_moments, 'finite_centered_covariance_rank_two_count', 0)}; "
+                    f"dense n=7 simple tableau blocks: {metric(commutant, 'maximum_nontrivial_multiplicity_label_count', 0)}; "
+                    f"common finite support-three coefficient rules: "
+                    f"{metric(commutant, 'finite_common_low_support_coefficient_rule_count', 0)}; "
+                    f"class-compressed scalar blocks through n={metric(typical_class_contraction, 'maximum_n', 0)}: "
+                    f"{metric(typical_class_contraction, 'total_exact_scalar_block_count', 0)}; "
+                    f"two-generator finite coverage: "
+                    f"{metric(typical_class_contraction, 'finite_portfolio_non_scalar_covered_count', 0)}/"
+                    f"{metric(typical_class_contraction, 'finite_portfolio_block_count', 0)}; "
+                    f"repeated-root collision targets: "
+                    f"{metric(typical_portfolio_collision, 'repeated_zero_eigenvalue_target_count', 0)}; "
+                    f"disjoint-extension repeated-root targets: "
+                    f"{metric(typical_portfolio_collision, 'disjoint_third_generator_repeated_root_target_count', 0)}; "
+                    f"TC1-repaired collision targets: "
+                    f"{metric(typical_third_generator, 'certified_n8_collision_target_repair_count', 0)}; "
+                    f"exact n=8 low-multiplicity coverage: "
+                    f"{metric(typical_third_generator, 'certified_n8_low_multiplicity_simple_spectrum_target_count', 0)}/"
+                    f"{metric(typical_third_generator, 'n8_nontrivial_multiplicity_target_count', 0)}; "
+                    f"fixed-c1 full n=8 coverage: "
+                    f"{metric(typical_high_multiplicity, 'certified_n8_simple_spectrum_target_count', 0)}/"
+                    f"{metric(typical_high_multiplicity, 'n8_nontrivial_multiplicity_target_count', 0)}; "
+                    f"certified n=8 normalized minimum gap: "
+                    f"{metric(typical_separator_gaps, 'n8_certified_minimum_lcu_normalized_gap_lower_bound', 0):.6g}; "
+                    f"n=9 exact low-multiplicity coverage: "
+                    f"{metric(typical_n9_probe, 'low_multiplicity_simple_spectrum_target_count', 0)}/"
+                    f"{metric(typical_n9_probe, 'n9_nontrivial_multiplicity_target_count', 0)}; "
+                    f"uniform gap theorems: {metric(typical_commutant_moments, 'uniform_typical_commutant_gap_theorem_count', 0)}."
                 ),
-                "next": "Transfer bounded-support observables to naturally sampled typical partitions with uniform gaps and no postselection.",
+                "next": "Use the bounded-memory n=9 contraction at multiplicity eight, stopping at the first repeated root or severe gap collapse.",
             },
         ],
         "milestones": [
-            {
-                "title": "Candidate admission now prices natural access",
-                "detail": "The proof gate requires reductions, classical baselines, falsifiers, and an explicit path from the input model to every conditioned state or sector.",
-            },
             {
                 "title": "The stable coupling-tree interface is complete",
                 "detail": "Shape, first-stage, and second-stage observables give all 25 encoded labels on both trees and a polynomial left/right relabelling isometry.",
@@ -309,13 +374,28 @@ def build_snapshot() -> dict[str, Any]:
                 "title": "Every fixed bounded-tail route is cut",
                 "detail": "For fixed K, total weak-Fourier mass is at most 2 P_K n^(2K)/n!. Uniform adaptation to typical high-dimensional partitions is now mandatory.",
             },
+            {
+                "title": "An independent third generator repairs the known finite collisions",
+                "detail": (
+                    "TC2/TT1 and its disjoint extension are exactly degenerate at n=8. Exact parameterized fourth "
+                    f"moments instead prove TT1+c*TC1 has simple spectrum for every c!=0 on "
+                    f"{metric(typical_third_generator, 'certified_n8_low_multiplicity_simple_spectrum_target_count', 0)} "
+                    "n=8 targets of multiplicity at most four, including both known collisions. Exact quotient transfer "
+                    f"at c=1 extends this to {metric(typical_high_multiplicity, 'certified_n8_simple_spectrum_target_count', 0)}/"
+                    f"{metric(typical_high_multiplicity, 'n8_nontrivial_multiplicity_target_count', 0)} targets through "
+                    "multiplicity 17. Exact root isolation gives a positive n=8 normalized minimum gap, but adjacent "
+                    f"n=9 evidence covers only {metric(typical_n9_probe, 'low_multiplicity_simple_spectrum_target_count', 0)}/"
+                    f"{metric(typical_n9_probe, 'n9_nontrivial_multiplicity_target_count', 0)} targets. All-n, transform, "
+                    "and decoder theorems remain open."
+                ),
+            },
         ],
         "active_conjecture": {
             "summary": (
                 "The active conjecture is no longer about the fixed stable family. It asks whether bounded-support "
-                "commutant observables can be synthesized uniformly from arbitrary sampled partition labels, retain "
-                "inverse-polynomial normalized gaps across broad Kronecker support, and feed a branch-weighted frame "
-                "whose outcomes decode the hidden involution. Finite typical profiles are only stress tests."
+                "whether a third bounded-support observable that repairs the certified n=8 repeated-root collisions can extend "
+                "uniformly across sampled partition labels with inverse-polynomial gaps, and feed a branch-weighted "
+                "frame whose outcomes decode the hidden involution. Finite variance and covariance rank are only filters."
             ),
             "facts": [
                 {"label": "Stable encoded basis", "value": f"{metric(stable_encoded_tree, 'joint_multiplicity_label_count', 0)}/25 labels"},
@@ -324,14 +404,29 @@ def build_snapshot() -> dict[str, Any]:
                 {"label": "Bounded-tail route", "value": "Factorial weak-Fourier mass"},
                 {"label": "Typical support", "value": f"{100 * metric(typical_irrep_transfer, 'maximum_kronecker_target_support_fraction', 0.0):.1f}% audited targets"},
                 {"label": "Typical max multiplicity", "value": f"{metric(typical_irrep_transfer, 'maximum_kronecker_multiplicity', 0):,}"},
+                {"label": "Finite non-scalar blocks", "value": f"{metric(typical_commutant_moments, 'finite_non_scalar_covered_count', 0)}/{metric(typical_commutant_moments, 'nontrivial_multiplicity_block_count', 0)}"},
+                {"label": "Finite covariance rank >=2", "value": f"{metric(typical_commutant_moments, 'finite_centered_covariance_rank_two_count', 0)} blocks"},
+                {"label": "Primary scalar blocks", "value": f"{metric(typical_class_contraction, 'total_exact_scalar_block_count', 0)} through n={metric(typical_class_contraction, 'maximum_n', 0)}"},
+                {"label": "Finite portfolio coverage", "value": f"{metric(typical_class_contraction, 'finite_portfolio_non_scalar_covered_count', 0)}/{metric(typical_class_contraction, 'finite_portfolio_block_count', 0)}"},
+                {"label": "Common finite coefficient rules", "value": f"{metric(commutant, 'finite_common_low_support_coefficient_rule_count', 0)} through n=7"},
+                {"label": "Portfolio covariance rank >=2", "value": f"{metric(typical_class_contraction, 'finite_portfolio_covariance_rank_two_count', 0)} blocks"},
+                {"label": "Two-generator collisions", "value": f"{metric(typical_portfolio_collision, 'repeated_zero_eigenvalue_target_count', 0)} exact targets"},
+                {"label": "Disjoint extension collisions", "value": f"{metric(typical_portfolio_collision, 'disjoint_third_generator_repeated_root_target_count', 0)} exact targets"},
+                {"label": "TC1 collision repairs", "value": f"{metric(typical_third_generator, 'certified_n8_collision_target_repair_count', 0)} exact targets"},
+                {"label": "TC1 low-multiplicity coverage", "value": f"{metric(typical_third_generator, 'certified_n8_low_multiplicity_simple_spectrum_target_count', 0)}/{metric(typical_third_generator, 'n8_nontrivial_multiplicity_target_count', 0)} n=8 targets"},
+                {"label": "Fixed-c1 full n=8 coverage", "value": f"{metric(typical_high_multiplicity, 'certified_n8_simple_spectrum_target_count', 0)}/{metric(typical_high_multiplicity, 'n8_nontrivial_multiplicity_target_count', 0)} n=8 targets"},
+                {"label": "n=8 normalized gap lower bound", "value": f"{metric(typical_separator_gaps, 'n8_certified_minimum_lcu_normalized_gap_lower_bound', 0):.6g}"},
+                {"label": "n=9 exact coverage", "value": f"{metric(typical_n9_probe, 'low_multiplicity_simple_spectrum_target_count', 0)}/{metric(typical_n9_probe, 'n9_nontrivial_multiplicity_target_count', 0)} targets"},
+                {"label": "Required portfolio size", "value": f">={metric(typical_portfolio_collision, 'minimum_required_portfolio_generator_count_on_certified_targets', 0)} generators"},
+                {"label": "Uniform typical gaps", "value": f"{metric(typical_commutant_moments, 'uniform_typical_commutant_gap_theorem_count', 0)} proved"},
                 {"label": "Typical uniform transforms", "value": f"{metric(typical_irrep_transfer, 'uniform_typical_label_encoded_tree_transform_count', 0)} proved"},
                 {"label": "Hidden decoder", "value": "Open"},
             ],
         },
         "next_actions": [
             {
-                "title": "Build typical-label commutant observables",
-                "detail": "Define orbit-sum block encodings uniformly from arbitrary partition descriptions and seek character-only normalized-gap certificates.",
+                "title": "Extend the n=9 collision audit",
+                "detail": "The fixed separator survives all 11 n=9 targets of multiplicity at most seven. Character slices are capped near 93 MB, though the 6.98 GB temporary disk table still motivates a class/Fourier contraction.",
             },
             {
                 "title": "Keep natural branch mass in every theorem",

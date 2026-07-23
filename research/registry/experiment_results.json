@@ -2587,7 +2587,7 @@
       "coset_multiplicity_commutant_search": "research/representation/coset_multiplicity_commutant_search.json"
     },
     "candidate_id": "CODE-COSET-COLLECTIVE",
-    "created_at": "2026-07-15T11:12:32.153574+00:00",
+    "created_at": "2026-07-22T20:34:08.125801+00:00",
     "experiment_id": "EXP-COSET-MULTIPLICITY-COMMUTANT-SEARCH",
     "falsifiers_triggered": [
       "Finite simple multiplicity spectra do not prove an inverse-polynomial all-n spectral gap.",
@@ -2597,21 +2597,33 @@
     ],
     "id": "RESULT-EXP-COSET-MULTIPLICITY-COMMUTANT-SEARCH-LATEST",
     "metrics": {
+      "best_finite_common_low_support_minimum_normalized_gap": 0.0026773567837345075,
       "bounded_support_commutant_block_encoding_count": 1,
       "coherent_polynomial_multiplicity_transform_count": 0,
-      "finite_all_block_split_count": 2,
+      "finite_all_block_split_count": 3,
+      "finite_common_low_support_coefficient_rule_count": 4,
+      "finite_low_support_portfolio_all_block_split_count": 3,
+      "finite_low_support_uniform_formula_all_block_split_count": 1,
       "hidden_involution_decoder_count": 0,
       "inverse_polynomial_gap_theorem_count": 0,
       "kcopy_associator_count": 0,
-      "maximum_kronecker_multiplicity": 5,
-      "maximum_n": 6,
-      "maximum_target_tableau_spectrum_consistency_residual": 6.942010710158233e-14,
-      "maximum_tensor_dimension": 256,
-      "minimum_observed_lcu_normalized_gap": 0.020914784743274437,
-      "record_count": 2
+      "maximum_finite_typical_source_dimension": 35,
+      "maximum_kronecker_multiplicity": 9,
+      "maximum_low_support_portfolio_noncommuting_target_count": 11,
+      "maximum_n": 7,
+      "maximum_noncommuting_generator_pair_count": 9,
+      "maximum_nontrivial_multiplicity_label_count": 224,
+      "maximum_target_tableau_spectrum_consistency_residual": 6.225826630762053e-13,
+      "maximum_tensor_dimension": 1225,
+      "minimum_finite_low_support_portfolio_lcu_normalized_gap": 0.0026773567837345075,
+      "minimum_finite_low_support_uniform_formula_lcu_normalized_gap": 1.9985609049628927e-18,
+      "minimum_observed_lcu_normalized_gap": 0.00642975701530053,
+      "minimum_uniform_formula_lcu_normalized_gap": 1.061595756309458e-18,
+      "record_count": 3,
+      "uniform_formula_all_block_split_count": 2
     },
     "status": "finite-multiplicity-basis-witness-gap-and-decoder-open",
-    "summary": "Searched polynomial-description commutant Hamiltonians on 2 sectors through n=6; 2 split every finite multiplicity block."
+    "summary": "Searched polynomial-description commutant Hamiltonians on 3 sectors through n=7; 3 split every finite multiplicity block."
   },
   {
     "artifacts": {
@@ -2677,7 +2689,7 @@
       "coset_recoupling_capability_ledger": "research/representation/coset_recoupling_capability_ledger.json"
     },
     "candidate_id": "CODE-COSET-COLLECTIVE",
-    "created_at": "2026-07-19T04:34:42.399751+00:00",
+    "created_at": "2026-07-23T14:33:38.839575+00:00",
     "experiment_id": "EXP-COSET-RECOUPLING-CAPABILITY-LEDGER",
     "falsifiers_triggered": [
       "The S_n QFT is already polynomial and cannot be presented as the missing breakthrough.",
@@ -2726,8 +2738,36 @@
       "stable_three_copy_frame_all_n_conditioning_theorem_count": 2,
       "stable_three_copy_frame_block_encoding_count": 1,
       "stable_three_copy_frame_inverse_square_root_filter_count": 2,
+      "typical_irrep_class_compressed_maximum_n": 10,
+      "typical_irrep_disjoint_third_generator_repeated_root_target_count": 2,
+      "typical_irrep_finite_centered_covariance_rank_two_count": 29,
+      "typical_irrep_finite_low_support_portfolio_common_scalar_count": 0,
+      "typical_irrep_finite_low_support_portfolio_covered_count": 108,
+      "typical_irrep_finite_multiplicity_two_simple_spectrum_count": 3,
+      "typical_irrep_finite_non_scalar_block_count": 32,
+      "typical_irrep_fixed_c1_n8_certified_target_count": 20,
+      "typical_irrep_fixed_c1_n8_unaudited_target_count": 0,
+      "typical_irrep_fixed_separator_finite_split_size_count": 4,
+      "typical_irrep_fixed_separator_inverse_polynomial_gap_theorem_count": 0,
+      "typical_irrep_fixed_separator_n8_normalized_gap_lower_bound": 0.0012504172431794165,
       "typical_irrep_frame_conditioning_theorem_count": 0,
+      "typical_irrep_independent_third_generator_all_n_theorem_count": 0,
+      "typical_irrep_independent_third_generator_gap_theorem_count": 0,
+      "typical_irrep_independent_third_generator_low_multiplicity_target_count": 6,
+      "typical_irrep_independent_third_generator_repaired_target_count": 2,
+      "typical_irrep_independent_third_generator_unaudited_n8_target_count": 14,
+      "typical_irrep_maximum_exact_transfer_degree": 17,
+      "typical_irrep_minimum_required_portfolio_generator_count": 3,
+      "typical_irrep_n9_all_target_theorem_count": 0,
+      "typical_irrep_n9_low_multiplicity_certified_target_count": 11,
+      "typical_irrep_n9_unaudited_target_count": 16,
+      "typical_irrep_primary_generator_exact_scalar_block_count": 7,
+      "typical_irrep_primary_generator_scalar_block_count": 2,
+      "typical_irrep_single_generator_uniformity_falsification_count": 1,
+      "typical_irrep_two_generator_repeated_root_target_count": 2,
       "typical_irrep_uniform_commutant_gap_theorem_count": 0,
+      "typical_irrep_uniform_commutant_non_scalar_theorem_count": 0,
+      "typical_irrep_uniform_commutant_simple_spectrum_theorem_count": 0,
       "typical_irrep_uniform_encoded_tree_transform_count": 0,
       "unresolved_required_capability_count": 3
     },
@@ -3972,6 +4012,356 @@
   },
   {
     "artifacts": {
+      "coset_typical_class_contraction_scaling": "research/representation/coset_typical_class_contraction_scaling.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-07-22T20:06:13.919547+00:00",
+    "experiment_id": "EXP-COSET-TYPICAL-CLASS-CONTRACTION-SCALING",
+    "falsifiers_triggered": [
+      "The primary intersection-two orbit average splits all n=7 blocks but has exact scalar targets at n=6, n=8, n=9, and n=10.",
+      "Finite simple spectrum at one size does not extrapolate even to non-scalarity at the next size.",
+      "Removing factorial group enumeration does not construct a coherent multiplicity transform.",
+      "A fixed portfolio needs joint-spectrum and minimum-gap control, not separate nonzero variances.",
+      "No hidden-involution information theorem follows from class-compressed character moments."
+    ],
+    "id": "RESULT-EXP-COSET-TYPICAL-CLASS-CONTRACTION-SCALING-COSET",
+    "metrics": {
+      "all_n_symbolic_class_contraction_formula_count": 0,
+      "class_compressed_record_count": 5,
+      "factorial_signature_verification_count": 3,
+      "first_scalar_n": 6,
+      "fixed_relative_pair_type_count": 17,
+      "maximum_exact_scalar_block_count_per_n": 2,
+      "maximum_n": 10,
+      "single_primary_generator_uniformity_falsification_count": 1,
+      "total_exact_scalar_block_count": 7,
+      "total_nontrivial_multiplicity_block_count": 108,
+      "typical_label_hidden_involution_decoder_count": 0,
+      "uniform_portfolio_joint_gap_theorem_count": 0,
+      "uniform_primary_generator_non_scalar_theorem_count": 0
+    },
+    "status": "single-primary-generator-falsified-portfolio-class-algebra-open",
+    "summary": "Class-compressed exact moments audited 108 typical multiplicity blocks through n=10 and found 7 exact scalar blocks; the single primary generator is not uniform."
+  },
+  {
+    "artifacts": {
+      "coset_typical_class_contraction_scaling": "research/representation/coset_typical_class_contraction_scaling.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-07-22T20:17:33.855285+00:00",
+    "experiment_id": "EXP-COSET-TYPICAL-CLASS-CONTRACTION-SCALING",
+    "falsifiers_triggered": [
+      "The primary intersection-two orbit average splits all n=7 blocks but has exact scalar targets at n=6, n=8, n=9, and n=10.",
+      "Finite simple spectrum at one size does not extrapolate even to non-scalarity at the next size.",
+      "Removing factorial group enumeration does not construct a coherent multiplicity transform.",
+      "A fixed portfolio needs joint-spectrum and minimum-gap control, not separate nonzero variances.",
+      "The shared-point transposition generator has its own scalar hook targets, so it is not a replacement single generator.",
+      "No hidden-involution information theorem follows from class-compressed character moments."
+    ],
+    "id": "RESULT-EXP-COSET-TYPICAL-CLASS-CONTRACTION-SCALING-LATEST",
+    "metrics": {
+      "all_n_symbolic_class_contraction_formula_count": 0,
+      "class_compressed_record_count": 5,
+      "factorial_signature_verification_count": 3,
+      "finite_portfolio_block_count": 108,
+      "finite_portfolio_common_scalar_block_count": 0,
+      "finite_portfolio_covariance_rank_two_count": 93,
+      "finite_portfolio_non_scalar_covered_count": 108,
+      "finite_portfolio_rank_one_block_count": 15,
+      "first_scalar_n": 6,
+      "fixed_relative_pair_type_count": 17,
+      "maximum_exact_scalar_block_count_per_n": 2,
+      "maximum_n": 10,
+      "shared_transposition_single_generator_scalar_block_count": 8,
+      "single_primary_generator_uniformity_falsification_count": 1,
+      "total_exact_scalar_block_count": 7,
+      "total_nontrivial_multiplicity_block_count": 108,
+      "typical_label_hidden_involution_decoder_count": 0,
+      "uniform_portfolio_joint_gap_theorem_count": 0,
+      "uniform_primary_generator_non_scalar_theorem_count": 0
+    },
+    "status": "single-primary-generator-falsified-portfolio-class-algebra-open",
+    "summary": "Class-compressed exact moments audited 108 typical multiplicity blocks through n=10 and found 7 exact scalar blocks; the single primary generator is not uniform. The low-support portfolio covers 108/108 finite blocks without common scalar action."
+  },
+  {
+    "artifacts": {
+      "coset_typical_commutant_moment_audit": "research/representation/coset_typical_commutant_moment_audit.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-07-22T19:42:56.496954+00:00",
+    "experiment_id": "EXP-COSET-TYPICAL-COMMUTANT-MOMENT-AUDIT",
+    "falsifiers_triggered": [
+      "One transposition/3-cycle orbit average is scalar on two audited n=8 multiplicity blocks.",
+      "Adding a second bounded-support observable repairs finite non-scalarity but does not prove simple joint spectrum.",
+      "Positive finite variance supplies no lower bound on the minimum eigenvalue gap.",
+      "Factorial exact character enumeration is not an efficient quantum or classical implementation.",
+      "No outcome-information or hidden-involution decoding theorem is implied by multiplicity-space non-scalarity."
+    ],
+    "id": "RESULT-EXP-COSET-TYPICAL-COMMUTANT-MOMENT-AUDIT-COSET",
+    "metrics": {
+      "bounded_support_generator_count": 2,
+      "finite_n_count": 2,
+      "finite_non_scalar_covered_count": 32,
+      "finite_uncovered_count": 0,
+      "maximum_kronecker_multiplicity": 17,
+      "minimum_finite_spectral_diameter_lower_bound": 0.05387480237611791,
+      "minimum_positive_variance": 0.0007256235827664399,
+      "nontrivial_multiplicity_block_count": 32,
+      "primary_generator_exact_scalar_block_count": 2,
+      "typical_label_hidden_involution_decoder_count": 0,
+      "uniform_typical_commutant_gap_theorem_count": 0,
+      "uniform_typical_commutant_non_scalar_theorem_count": 0,
+      "uniform_typical_commutant_simple_spectrum_theorem_count": 0
+    },
+    "status": "finite-typical-non-scalar-transfer-signal-gap-and-decoder-open",
+    "summary": "Exact character moments audited 32 nontrivial typical multiplicity blocks at n=(7, 8). The bounded-support portfolio is non-scalar on 32 and scalar on 0; no uniform gap, transform, or decoder follows."
+  },
+  {
+    "artifacts": {
+      "coset_typical_commutant_moment_audit": "research/representation/coset_typical_commutant_moment_audit.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-07-22T19:55:13.843491+00:00",
+    "experiment_id": "EXP-COSET-TYPICAL-COMMUTANT-MOMENT-AUDIT",
+    "falsifiers_triggered": [
+      "One transposition/3-cycle orbit average is scalar on two audited n=8 multiplicity blocks.",
+      "Adding a second bounded-support observable repairs finite non-scalarity but does not prove simple joint spectrum.",
+      "A positive centered covariance rank proves linear independence, not noncommutation or algebra generation.",
+      "Positive finite variance supplies no lower bound on the minimum eigenvalue gap.",
+      "Factorial exact character enumeration is not an efficient quantum or classical implementation.",
+      "No outcome-information or hidden-involution decoding theorem is implied by multiplicity-space non-scalarity."
+    ],
+    "id": "RESULT-EXP-COSET-TYPICAL-COMMUTANT-MOMENT-AUDIT-LATEST",
+    "metrics": {
+      "bounded_support_generator_count": 3,
+      "finite_centered_covariance_rank_two_count": 29,
+      "finite_covariance_rank_two_or_simple_multiplicity_two_count": 32,
+      "finite_higher_multiplicity_joint_simple_spectrum_count": 0,
+      "finite_multiplicity_two_simple_spectrum_count": 3,
+      "finite_n_count": 2,
+      "finite_non_scalar_covered_count": 32,
+      "finite_uncovered_count": 0,
+      "maximum_kronecker_multiplicity": 17,
+      "minimum_finite_spectral_diameter_lower_bound": 0.05387480237611791,
+      "minimum_positive_variance": 0.0007256235827664399,
+      "nontrivial_multiplicity_block_count": 32,
+      "primary_generator_exact_scalar_block_count": 2,
+      "typical_label_hidden_involution_decoder_count": 0,
+      "uniform_typical_commutant_gap_theorem_count": 0,
+      "uniform_typical_commutant_non_scalar_theorem_count": 0,
+      "uniform_typical_commutant_simple_spectrum_theorem_count": 0
+    },
+    "status": "finite-typical-non-scalar-transfer-signal-gap-and-decoder-open",
+    "summary": "Exact character moments audited 32 nontrivial typical multiplicity blocks at n=(7, 8). The bounded-support portfolio is non-scalar on 32 and scalar on 0; 29 have at least two independent traceless directions and 3 additional two-dimensional blocks have finite simple spectrum. No uniform gap, transform, or decoder follows."
+  },
+  {
+    "artifacts": {
+      "coset_typical_fixed_separator_gap_scaling": "research/representation/coset_typical_fixed_separator_gap_scaling.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-07-22T22:03:34.992903+00:00",
+    "experiment_id": "EXP-COSET-TYPICAL-FIXED-SEPARATOR-GAP-SCALING",
+    "falsifiers_triggered": [
+      "No finite repeated-root collision occurs from n=5 through n=8.",
+      "The minimum finite gap decreases by nearly two orders of magnitude between n=5 and n=8.",
+      "A four-point log-log fit is not evidence of an inverse-polynomial theorem.",
+      "No coherent transform, outcome law, decoder, or classical separation follows from finite gaps."
+    ],
+    "id": "RESULT-EXP-COSET-TYPICAL-FIXED-SEPARATOR-GAP-SCALING-COSET",
+    "metrics": {
+      "all_n_simple_spectrum_theorem_count": 0,
+      "coherent_typical_multiplicity_transform_count": 0,
+      "descriptive_log_log_gap_fit_exponent": 10.076500996817474,
+      "finite_all_block_simple_spectrum_size_count": 4,
+      "finite_size_count": 4,
+      "inverse_polynomial_normalized_gap_theorem_count": 0,
+      "maximum_n": 8,
+      "minimum_n": 5,
+      "n8_certified_minimum_lcu_normalized_gap_lower_bound": 0.0012504172431794165,
+      "n8_certified_minimum_raw_gap_lower_bound": 0.002500834486358833,
+      "n8_exact_target_count": 20,
+      "typical_label_hidden_involution_decoder_count": 0
+    },
+    "status": "finite-separator-gap-survives-through-n8-n9-and-all-n-open",
+    "summary": "TT1+TC1 splits every audited block from n=5 through n=8; exact n=8 root isolation gives minimum raw gap above 0.002500834486, while n=9 and all asymptotic obligations remain open."
+  },
+  {
+    "artifacts": {
+      "coset_typical_fixed_separator_gap_scaling": "research/representation/coset_typical_fixed_separator_gap_scaling.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-07-22T22:03:27.091333+00:00",
+    "experiment_id": "EXP-COSET-TYPICAL-FIXED-SEPARATOR-GAP-SCALING",
+    "falsifiers_triggered": [
+      "No finite repeated-root collision occurs from n=5 through n=8.",
+      "The minimum finite gap decreases by nearly two orders of magnitude between n=5 and n=8.",
+      "A four-point log-log fit is not evidence of an inverse-polynomial theorem.",
+      "No coherent transform, outcome law, decoder, or classical separation follows from finite gaps."
+    ],
+    "id": "RESULT-EXP-COSET-TYPICAL-FIXED-SEPARATOR-GAP-SCALING-LATEST",
+    "metrics": {
+      "all_n_simple_spectrum_theorem_count": 0,
+      "coherent_typical_multiplicity_transform_count": 0,
+      "descriptive_log_log_gap_fit_exponent": 10.076500996817474,
+      "finite_all_block_simple_spectrum_size_count": 4,
+      "finite_size_count": 4,
+      "inverse_polynomial_normalized_gap_theorem_count": 0,
+      "maximum_n": 8,
+      "minimum_n": 5,
+      "n8_certified_minimum_lcu_normalized_gap_lower_bound": 0.0012504172431794165,
+      "n8_certified_minimum_raw_gap_lower_bound": 0.002500834486358833,
+      "n8_exact_target_count": 20,
+      "typical_label_hidden_involution_decoder_count": 0
+    },
+    "status": "finite-separator-gap-survives-through-n8-n9-and-all-n-open",
+    "summary": "TT1+TC1 splits every audited block from n=5 through n=8; exact n=8 root isolation gives minimum raw gap above 0.002500834486, while n=9 and all asymptotic obligations remain open."
+  },
+  {
+    "artifacts": {
+      "coset_typical_high_multiplicity_transfer": "research/representation/coset_typical_high_multiplicity_transfer.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-07-22T21:44:03.738156+00:00",
+    "experiment_id": "EXP-COSET-TYPICAL-HIGH-MULTIPLICITY-TRANSFER",
+    "falsifiers_triggered": [
+      "The tested fixed coefficient does not fail on any n=8 multiplicity block through multiplicity 17.",
+      "Parameterized nonzero-coefficient robustness is not established beyond multiplicity four.",
+      "A complete n=8 finite theorem does not establish adjacent-size or all-n behavior.",
+      "Finite square-freeness does not prove a normalized gap, coherent transform, decoder, or speedup."
+    ],
+    "id": "RESULT-EXP-COSET-TYPICAL-HIGH-MULTIPLICITY-TRANSFER-COSET",
+    "metrics": {
+      "all_n8_fixed_coefficient_simple_spectrum_theorem_count": 1,
+      "all_n_simple_spectrum_theorem_count": 0,
+      "certified_n8_simple_spectrum_target_count": 20,
+      "certified_n8_target_count": 20,
+      "coherent_typical_multiplicity_transform_count": 0,
+      "exact_transfer_recomputed_count": 0,
+      "inverse_polynomial_gap_theorem_count": 0,
+      "maximum_certified_kronecker_multiplicity": 17,
+      "maximum_exact_transfer_degree": 17,
+      "maximum_exact_transfer_state_count": 21614,
+      "n8_exact_target_coverage_fraction": 1.0,
+      "n8_nontrivial_multiplicity_target_count": 20,
+      "n8_unaudited_multiplicity_above_six_target_count": 0,
+      "n8_unaudited_target_count": 0,
+      "parameterized_all_coefficient_theorem_count": 0,
+      "total_simultaneous_conjugacy_pair_state_count": 43206,
+      "typical_label_hidden_involution_decoder_count": 0
+    },
+    "status": "fixed-coefficient-exactly-separates-all-n8-targets-asymptotic-obligations-open",
+    "summary": "Exact orbit-state transfer proves TT1+TC1 has simple spectrum on all 20 nontrivial n=8 targets through multiplicity 17; no asymptotic or algorithmic claim follows."
+  },
+  {
+    "artifacts": {
+      "coset_typical_high_multiplicity_transfer": "research/representation/coset_typical_high_multiplicity_transfer.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-07-22T21:54:14.901616+00:00",
+    "experiment_id": "EXP-COSET-TYPICAL-HIGH-MULTIPLICITY-TRANSFER",
+    "falsifiers_triggered": [
+      "The tested fixed coefficient does not fail on any n=8 multiplicity block through multiplicity 17.",
+      "Parameterized nonzero-coefficient robustness is not established beyond multiplicity four.",
+      "A complete n=8 finite theorem does not establish adjacent-size or all-n behavior.",
+      "Finite square-freeness does not prove a normalized gap, coherent transform, decoder, or speedup."
+    ],
+    "id": "RESULT-EXP-COSET-TYPICAL-HIGH-MULTIPLICITY-TRANSFER-LATEST",
+    "metrics": {
+      "all_n8_fixed_coefficient_simple_spectrum_theorem_count": 1,
+      "all_n_simple_spectrum_theorem_count": 0,
+      "certified_n8_simple_spectrum_target_count": 20,
+      "certified_n8_target_count": 20,
+      "coherent_typical_multiplicity_transform_count": 0,
+      "exact_transfer_recomputed_count": 1,
+      "inverse_polynomial_gap_theorem_count": 0,
+      "maximum_certified_kronecker_multiplicity": 17,
+      "maximum_exact_transfer_degree": 17,
+      "maximum_exact_transfer_state_count": 21614,
+      "n8_exact_target_coverage_fraction": 1.0,
+      "n8_nontrivial_multiplicity_target_count": 20,
+      "n8_unaudited_multiplicity_above_six_target_count": 0,
+      "n8_unaudited_target_count": 0,
+      "parameterized_all_coefficient_theorem_count": 0,
+      "total_simultaneous_conjugacy_pair_state_count": 43206,
+      "typical_label_hidden_involution_decoder_count": 0
+    },
+    "status": "fixed-coefficient-exactly-separates-all-n8-targets-asymptotic-obligations-open",
+    "summary": "Exact orbit-state transfer proves TT1+TC1 has simple spectrum on all 20 nontrivial n=8 targets through multiplicity 17; no asymptotic or algorithmic claim follows."
+  },
+  {
+    "artifacts": {
+      "coset_typical_independent_third_generator_certificate": "research/representation/coset_typical_independent_third_generator_certificate.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-07-22T21:14:53.296773+00:00",
+    "experiment_id": "EXP-COSET-TYPICAL-INDEPENDENT-THIRD-GENERATOR-CERTIFICATE",
+    "falsifiers_triggered": [
+      "The earlier inference that any bounded-support third generator would preserve the n=8 collision is false.",
+      "Four exact moments cannot certify the 14 n=8 targets whose multiplicity exceeds four.",
+      "Finite repair does not establish all-n joint separation.",
+      "Simple spectrum does not establish an inverse-polynomial normalized gap.",
+      "No coherent transform or hidden-involution decoder follows from the spectral certificate."
+    ],
+    "id": "RESULT-EXP-COSET-TYPICAL-INDEPENDENT-THIRD-GENERATOR-CERTIFICATE-COSET",
+    "metrics": {
+      "all_n_simple_spectrum_theorem_count": 0,
+      "all_typical_target_coverage_theorem_count": 0,
+      "certified_n8_collision_target_repair_count": 2,
+      "certified_n8_low_multiplicity_simple_spectrum_target_count": 6,
+      "certified_n8_low_multiplicity_target_count": 6,
+      "coherent_typical_multiplicity_transform_count": 0,
+      "exact_parameterized_characteristic_polynomial_certificate_count": 6,
+      "exact_parameterized_four_moment_certificate_count": 4,
+      "independent_third_generator_target_count": 6,
+      "inverse_polynomial_gap_theorem_count": 0,
+      "maximum_exactly_audited_kronecker_multiplicity": 4,
+      "n8_exact_target_coverage_fraction": 0.3,
+      "n8_nontrivial_multiplicity_target_count": 20,
+      "n8_unaudited_higher_multiplicity_target_count": 14,
+      "nonzero_coefficient_simple_spectrum_target_count": 6,
+      "typical_label_hidden_involution_decoder_count": 0
+    },
+    "status": "finite-collision-repair-proved-global-obligations-blocked",
+    "summary": "TT1+c*TC1 has exact simple spectrum on all six n=8 targets of multiplicity at most four for every real c!=0; 14 higher-multiplicity targets and all asymptotic obligations remain open."
+  },
+  {
+    "artifacts": {
+      "coset_typical_independent_third_generator_certificate": "research/representation/coset_typical_independent_third_generator_certificate.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-07-22T21:14:51.599268+00:00",
+    "experiment_id": "EXP-COSET-TYPICAL-INDEPENDENT-THIRD-GENERATOR-CERTIFICATE",
+    "falsifiers_triggered": [
+      "The earlier inference that any bounded-support third generator would preserve the n=8 collision is false.",
+      "Four exact moments cannot certify the 14 n=8 targets whose multiplicity exceeds four.",
+      "Finite repair does not establish all-n joint separation.",
+      "Simple spectrum does not establish an inverse-polynomial normalized gap.",
+      "No coherent transform or hidden-involution decoder follows from the spectral certificate."
+    ],
+    "id": "RESULT-EXP-COSET-TYPICAL-INDEPENDENT-THIRD-GENERATOR-CERTIFICATE-LATEST",
+    "metrics": {
+      "all_n_simple_spectrum_theorem_count": 0,
+      "all_typical_target_coverage_theorem_count": 0,
+      "certified_n8_collision_target_repair_count": 2,
+      "certified_n8_low_multiplicity_simple_spectrum_target_count": 6,
+      "certified_n8_low_multiplicity_target_count": 6,
+      "coherent_typical_multiplicity_transform_count": 0,
+      "exact_parameterized_characteristic_polynomial_certificate_count": 6,
+      "exact_parameterized_four_moment_certificate_count": 4,
+      "independent_third_generator_target_count": 6,
+      "inverse_polynomial_gap_theorem_count": 0,
+      "maximum_exactly_audited_kronecker_multiplicity": 4,
+      "n8_exact_target_coverage_fraction": 0.3,
+      "n8_nontrivial_multiplicity_target_count": 20,
+      "n8_unaudited_higher_multiplicity_target_count": 14,
+      "nonzero_coefficient_simple_spectrum_target_count": 6,
+      "typical_label_hidden_involution_decoder_count": 0
+    },
+    "status": "finite-collision-repair-proved-global-obligations-blocked",
+    "summary": "TT1+c*TC1 has exact simple spectrum on all six n=8 targets of multiplicity at most four for every real c!=0; 14 higher-multiplicity targets and all asymptotic obligations remain open."
+  },
+  {
+    "artifacts": {
       "coset_typical_irrep_transfer_audit": "research/representation/coset_typical_irrep_transfer_audit.json"
     },
     "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -4001,6 +4391,164 @@
     },
     "status": "bounded-tail-route-falsified-typical-label-transfer-frontier-open",
     "summary": "Proved the fixed-bounded-tail natural-access no-go and audited 7 exact high-Plancherel self-Kronecker profiles. At n=20, bounded-tail target coupling mass is 2.604e-10; a label-adaptive typical-sector architecture is now mandatory."
+  },
+  {
+    "artifacts": {
+      "coset_typical_n9_low_multiplicity_probe": "research/representation/coset_typical_n9_low_multiplicity_probe.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-07-23T14:30:54.065703+00:00",
+    "experiment_id": "EXP-COSET-TYPICAL-N9-LOW-MULTIPLICITY-PROBE",
+    "falsifiers_triggered": [
+      "The first adjacent-size transfer through multiplicity seven does not produce a repeated root.",
+      "Low-multiplicity coverage is only 11 of 27 nontrivial n=9 targets.",
+      "The n=9 source is not self-conjugate, so conjugate-target sign transfer cannot replace direct contraction.",
+      "No all-target, all-n, coherent-transform, decoder, or speedup claim is allowed."
+    ],
+    "id": "RESULT-EXP-COSET-TYPICAL-N9-LOW-MULTIPLICITY-PROBE-COSET",
+    "metrics": {
+      "all_n9_target_simple_spectrum_theorem_count": 0,
+      "all_n_simple_spectrum_theorem_count": 0,
+      "bounded_memory_n9_character_contraction_count": 1,
+      "certified_low_multiplicity_minimum_lcu_normalized_gap_lower_bound": 0.003157357153729224,
+      "certified_low_multiplicity_minimum_raw_gap_lower_bound": 0.006314714307458448,
+      "degree6_temporary_character_table_bytes": 4780581120,
+      "degree6_unique_left_translation_count": 2734,
+      "degree6_unique_right_translation_count": 6587,
+      "degree7_temporary_character_table_bytes": 6975279360,
+      "degree7_unique_left_translation_count": 3559,
+      "degree7_unique_right_translation_count": 9611,
+      "exact_transfer_recomputed_count": 0,
+      "inverse_polynomial_normalized_gap_theorem_count": 0,
+      "low_multiplicity_simple_spectrum_target_count": 11,
+      "low_multiplicity_target_count": 11,
+      "maximum_certified_kronecker_multiplicity": 7,
+      "maximum_exact_transfer_degree": 7,
+      "maximum_exact_transfer_state_count": 189168,
+      "maximum_in_memory_character_chunk_bytes": 92897280,
+      "maximum_in_memory_character_chunk_rows": 128,
+      "maximum_n9_kronecker_multiplicity": 28,
+      "n": 9,
+      "n9_exact_target_coverage_fraction": 0.4074074074074074,
+      "n9_nontrivial_multiplicity_target_count": 27,
+      "n9_unaudited_higher_multiplicity_target_count": 16,
+      "scalable_n9_character_contraction_count": 0
+    },
+    "status": "n9-through-multiplicity-seven-survives-higher-blocks-open",
+    "summary": "Exact n=9 quotient transfer proves TT1+TC1 has simple spectrum on all 11 targets of multiplicity at most seven; 16 higher-multiplicity targets remain open."
+  },
+  {
+    "artifacts": {
+      "coset_typical_n9_low_multiplicity_probe": "research/representation/coset_typical_n9_low_multiplicity_probe.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-07-23T14:30:52.240365+00:00",
+    "experiment_id": "EXP-COSET-TYPICAL-N9-LOW-MULTIPLICITY-PROBE",
+    "falsifiers_triggered": [
+      "The first adjacent-size transfer through multiplicity seven does not produce a repeated root.",
+      "Low-multiplicity coverage is only 11 of 27 nontrivial n=9 targets.",
+      "The n=9 source is not self-conjugate, so conjugate-target sign transfer cannot replace direct contraction.",
+      "No all-target, all-n, coherent-transform, decoder, or speedup claim is allowed."
+    ],
+    "id": "RESULT-EXP-COSET-TYPICAL-N9-LOW-MULTIPLICITY-PROBE-LATEST",
+    "metrics": {
+      "all_n9_target_simple_spectrum_theorem_count": 0,
+      "all_n_simple_spectrum_theorem_count": 0,
+      "bounded_memory_n9_character_contraction_count": 1,
+      "certified_low_multiplicity_minimum_lcu_normalized_gap_lower_bound": 0.003157357153729224,
+      "certified_low_multiplicity_minimum_raw_gap_lower_bound": 0.006314714307458448,
+      "degree6_temporary_character_table_bytes": 4780581120,
+      "degree6_unique_left_translation_count": 2734,
+      "degree6_unique_right_translation_count": 6587,
+      "degree7_temporary_character_table_bytes": 6975279360,
+      "degree7_unique_left_translation_count": 3559,
+      "degree7_unique_right_translation_count": 9611,
+      "exact_transfer_recomputed_count": 0,
+      "inverse_polynomial_normalized_gap_theorem_count": 0,
+      "low_multiplicity_simple_spectrum_target_count": 11,
+      "low_multiplicity_target_count": 11,
+      "maximum_certified_kronecker_multiplicity": 7,
+      "maximum_exact_transfer_degree": 7,
+      "maximum_exact_transfer_state_count": 189168,
+      "maximum_in_memory_character_chunk_bytes": 92897280,
+      "maximum_in_memory_character_chunk_rows": 128,
+      "maximum_n9_kronecker_multiplicity": 28,
+      "n": 9,
+      "n9_exact_target_coverage_fraction": 0.4074074074074074,
+      "n9_nontrivial_multiplicity_target_count": 27,
+      "n9_unaudited_higher_multiplicity_target_count": 16,
+      "scalable_n9_character_contraction_count": 0
+    },
+    "status": "n9-through-multiplicity-seven-survives-higher-blocks-open",
+    "summary": "Exact n=9 quotient transfer proves TT1+TC1 has simple spectrum on all 11 targets of multiplicity at most seven; 16 higher-multiplicity targets remain open."
+  },
+  {
+    "artifacts": {
+      "coset_typical_portfolio_collision_certificate": "research/representation/coset_typical_portfolio_collision_certificate.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-07-23T14:33:27.989913+00:00",
+    "experiment_id": "EXP-COSET-TYPICAL-PORTFOLIO-COLLISION-CERTIFICATE",
+    "falsifiers_triggered": [
+      "Finite common coefficient rules through n=7 do not survive n=8.",
+      "Non-scalar finite variance does not imply simple spectrum.",
+      "No linear combination of the two support-three generators resolves the certified n=8 blocks.",
+      "A third generator is necessary within this orbit-average architecture.",
+      "The disjoint-transposition third generator preserves a squared linear factor for every coefficient.",
+      "A third finite generator would still require all-n gaps, coherent implementation, and decoding."
+    ],
+    "id": "RESULT-EXP-COSET-TYPICAL-PORTFOLIO-COLLISION-CERTIFICATE-COSET",
+    "metrics": {
+      "coherent_typical_multiplicity_transform_count": 0,
+      "disjoint_third_generator_repeated_root_target_count": 2,
+      "exact_collision_target_count": 2,
+      "exact_four_moment_certificate_count": 2,
+      "finite_common_coefficient_rules_falsified_at_n8": 4,
+      "minimum_required_portfolio_generator_count_on_certified_targets": 3,
+      "next_independent_third_generator_test_count": 0,
+      "repeated_zero_eigenvalue_target_count": 2,
+      "tested_third_generator_count": 1,
+      "tested_three_generator_span_simple_spectrum_target_count": 0,
+      "two_generator_linear_span_simple_spectrum_target_count": 0,
+      "typical_label_hidden_involution_decoder_count": 0,
+      "uniform_three_generator_joint_gap_theorem_count": 0
+    },
+    "status": "two-generator-and-disjoint-extension-spans-falsified-independent-third-required",
+    "summary": "Exact fourth moments factor both n=8 TT1 characteristic polynomials with a repeated zero root. Because TC2 is zero on those blocks, all four coefficient rules that split n<=7 fail at n=8."
+  },
+  {
+    "artifacts": {
+      "coset_typical_portfolio_collision_certificate": "research/representation/coset_typical_portfolio_collision_certificate.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-07-23T14:32:21.855901+00:00",
+    "experiment_id": "EXP-COSET-TYPICAL-PORTFOLIO-COLLISION-CERTIFICATE",
+    "falsifiers_triggered": [
+      "Finite common coefficient rules through n=7 do not survive n=8.",
+      "Non-scalar finite variance does not imply simple spectrum.",
+      "No linear combination of the two support-three generators resolves the certified n=8 blocks.",
+      "A third generator is necessary within this orbit-average architecture.",
+      "The disjoint-transposition third generator preserves a squared linear factor for every coefficient.",
+      "A third finite generator would still require all-n gaps, coherent implementation, and decoding."
+    ],
+    "id": "RESULT-EXP-COSET-TYPICAL-PORTFOLIO-COLLISION-CERTIFICATE-LATEST",
+    "metrics": {
+      "coherent_typical_multiplicity_transform_count": 0,
+      "disjoint_third_generator_repeated_root_target_count": 2,
+      "exact_collision_target_count": 2,
+      "exact_four_moment_certificate_count": 2,
+      "finite_common_coefficient_rules_falsified_at_n8": 4,
+      "minimum_required_portfolio_generator_count_on_certified_targets": 3,
+      "next_independent_third_generator_test_count": 0,
+      "repeated_zero_eigenvalue_target_count": 2,
+      "tested_third_generator_count": 1,
+      "tested_three_generator_span_simple_spectrum_target_count": 0,
+      "two_generator_linear_span_simple_spectrum_target_count": 0,
+      "typical_label_hidden_involution_decoder_count": 0,
+      "uniform_three_generator_joint_gap_theorem_count": 0
+    },
+    "status": "two-generator-and-disjoint-extension-spans-falsified-independent-third-required",
+    "summary": "Exact fourth moments factor both n=8 TT1 characteristic polynomials with a repeated zero root. Because TC2 is zero on those blocks, all four coefficient rules that split n<=7 fail at n=8."
   },
   {
     "artifacts": {

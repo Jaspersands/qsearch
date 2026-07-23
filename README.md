@@ -572,8 +572,15 @@ The multiplicity-commutant search then acts inside that residual register. It
 constructs simultaneous-conjugacy orbit sums with at most `O(n^5)` terms and
 searches small-integer Hermitian combinations after charging the full LCU
 normalization. The current combination splits every audited multiplicity block
-through `S_6`, including multiplicity five. Most sectors remain finite structural
-witnesses rather than scalable transforms.
+through `S_7`, including all 224 nontrivial tableau-labeled blocks of the
+maximum-dimension `(4,2,1)` self-product and multiplicity nine. All four
+original generators are pairwise noncommuting there. Adding the support-three
+shared-transposition generator yields four coefficient rules that split every
+audited block at `n=5,6,7`; the best finite rule is `H=TC2-2 TT1`, with minimum
+charged normalized gap about `2.68e-3`. The naive sum `TC2+TT1` fails at `n=6,7`.
+These remain finite structural witnesses rather than scalable transforms: each
+single-generator extrapolation has exact scalar targets, and no all-`n` joint
+gap theorem exists.
 
 One restricted family now goes further. For
 `lambda=mu=(n-2,2)` and `nu=(n-3,2,1)`, an exact 12-term Specht-polytabloid
@@ -838,6 +845,74 @@ hardness theorems; they specify the new architecture requirement: every
 commutant, recoupling, frame, and decoder operation must be uniform in the bit
 description of naturally sampled high-dimensional partitions.
 
+The first character-only transfer test now avoids constructing the enormous
+representation matrices. Exact first and second multiplicity-space moments of
+three normalized bounded-support orbit averages cover all 32 nontrivial blocks
+tested at `n=7,8`. The primary transposition/3-cycle generator is exactly scalar
+on two `n=8` blocks, while the portfolio repairs them. Exact mixed moments show
+at least two independent traceless directions in 29 blocks; the other three
+have multiplicity two, where a non-scalar Hermitian already has simple finite
+spectrum. This remains only a mechanism signal: covariance rank does not prove
+noncommutation, full matrix-algebra generation, an inverse-polynomial minimum
+gap, an efficient uniform transform, or information about the hidden
+involution. The next theorem target is an all-`n` class-algebra contraction and
+joint spectral separation on Plancherel-typical labels.
+
+The first scaling step toward that target removes factorial group enumeration
+for the primary generator. Marked-support injection counts over conjugacy
+classes, plus 17 relative pair types for the second moment, give exact results
+through `n=10` in `O(p(n)n^6)` finite-evaluator work. They find seven scalar
+blocks across `n=6,8,9,10`, despite complete primary-generator splitting at
+`n=7`. The one-generator conjecture is therefore falsified. Extending the same
+contraction to a second support-three generator and their exact mixed moment
+covers every audited block through `n=10` with no common scalar action. The
+second generator has its own scalar hook targets, so neither works alone.
+Finite covariance rank and non-scalar coverage still do not prove
+noncommutation, matrix-algebra generation, simple joint spectrum, or a gap.
+Higher mixed moments or commutator norms and an all-`n` joint-separation theorem
+are now the representation-theory target; the evaluator itself is not a circuit.
+
+The first higher-moment collision test rejects that two-generator span. On the
+two multiplicity-four `n=8` targets where `TC2=0`, exact TT1 traces through
+order four give characteristic polynomials
+`x^2(504x^2-21x-1)/504` and `x^2(504x^2+21x-1)/504`. Every linear combination
+of `TC2` and `TT1` therefore retains a repeated eigenvalue. All four coefficient
+rules that split `n<=7` are dead at `n=8`; any surviving portfolio needs at
+least a third independent generator and must repeat the collision test before
+gap scaling. The first extension also fails symbolically: for
+`TT1+c*TTdisjoint`, both characteristic polynomials contain
+`(105x +/- 2c)^2` for every `c`. Because `TC2=0` on these targets, the whole
+three-generator span remains degenerate. The next admissible test is the
+genuinely different `TC-intersection-one` generator, not another coefficient
+fit inside the rejected span. That test now survives on both known collision
+blocks: exact fourth moments show the discriminant of `TT1+c*TC1` is positive
+for every real `c != 0`. This repairs the two finite collisions but does not
+establish a common coefficient across all targets, an all-`n` theorem, a
+normalized gap, a coherent transform, or a decoder. An exact
+simultaneous-conjugacy transfer kernel now evaluates the fixed coefficient
+`c=1` through degree 17 with arbitrary-precision weights and finds square-free
+characteristic polynomials on all 20 nontrivial `n=8` targets. This closes the
+finite `n=8` collision audit. The next falsification frontier is `n=9`,
+coefficient perturbations, and normalized gap decay.
+
+Exact rational root isolation also certifies that the minimum raw `n=8` block
+gap exceeds `0.002500834486`; after the two-term LCU normalization, the lower
+bound is half that value. Dense maximum-dimension controls at `n=5,6,7` split
+every block as well. The finite gaps decline sharply, so the four-size trend is
+recorded only as a falsification target, not as an inverse-polynomial claim.
+
+The first adjacent-size probe compiles the quotient transfer for `S_9` and
+contracts characters directly because the dimension-216 source is not
+self-conjugate. At `c=1`, all 11 targets of multiplicity at most seven have
+exact square-free characteristic polynomials, with certified raw gap above
+`0.006314714307`. This is only `11/27` target coverage; the remaining 16 targets
+reach multiplicity 28 and remain the immediate collision search space.
+The degree-seven exact contraction required a 6.98 GB temporary translation
+table. An earlier unchunked degree-six run suffered severe memory pressure; the
+implementation now processes fixed 128-row chunks, capping character slices near 93 MB. The disk
+table still grows with the translation set, so a class-algebra or Fourier
+contraction remains necessary for genuine scaling.
+
 ```bash
 python qsearch.py coset-racah-gap-scaling
 python qsearch.py coset-racah-sparse-gap --n-values 7,8,9,10,11
@@ -865,7 +940,34 @@ python qsearch.py coset-racah-stable-three-copy-frame
 python qsearch.py coset-racah-stable-three-copy-frame-conditioning
 python qsearch.py coset-racah-stable-branch-access
 python qsearch.py coset-racah-typical-irrep-transfer
+python qsearch.py coset-racah-typical-commutant-moments
+python qsearch.py coset-racah-typical-class-contraction
+python qsearch.py coset-racah-typical-portfolio-collision
+python qsearch.py coset-racah-typical-third-generator
+python qsearch.py coset-racah-typical-high-multiplicity --recompute
+python qsearch.py coset-racah-typical-separator-gaps
+python qsearch.py coset-racah-typical-n9-probe --recompute
+python qsearch.py run EXP-COSET-TYPICAL-COMMUTANT-MOMENT-AUDIT
+python qsearch.py run EXP-COSET-TYPICAL-CLASS-CONTRACTION-SCALING
+python qsearch.py run EXP-COSET-TYPICAL-PORTFOLIO-COLLISION-CERTIFICATE
+python qsearch.py run EXP-COSET-TYPICAL-INDEPENDENT-THIRD-GENERATOR-CERTIFICATE
+python qsearch.py run EXP-COSET-TYPICAL-HIGH-MULTIPLICITY-TRANSFER
+python qsearch.py run EXP-COSET-TYPICAL-FIXED-SEPARATOR-GAP-SCALING
+python qsearch.py run EXP-COSET-TYPICAL-N9-LOW-MULTIPLICITY-PROBE
 ```
+
+The exact portfolio audit now has both a hard cut and a surviving finite
+direction.  On the maximum-dimension `S_8` source, TC2 is zero on targets
+`(4,4)` and `(2,2,2,2)`; TT1 has a repeated zero root, and adding the
+disjoint-transposition generator preserves a squared linear factor for every
+coefficient.  The independent TC-intersection-one generator behaves
+differently: exact fourth moments give a discriminant that is strictly
+positive for every nonzero real coefficient, repairing both known collisions.
+The same exact word basis certifies all six `n=8` targets of multiplicity at
+most four. Exact quotient transfer at `c=1` extends finite square-freeness to
+all 20 targets through multiplicity 17. Adjacent-size coverage, all-n
+square-freeness, inverse-polynomial normalized gaps, coherent implementation,
+and hidden-involution decoding remain mandatory blockers.
 
 The capability ledger separates the solved `S_n` QFT, Schur-Weyl transforms,
 weak projection, and multiplicity counting from the still-open internal

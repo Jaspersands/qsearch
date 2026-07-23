@@ -1,0 +1,212 @@
+{
+  "claim_gate": {
+    "disjoint_transposition_third_generator_viable": false,
+    "four_finite_coefficient_rules_survive_n8": false,
+    "hidden_involution_decoder_proved": false,
+    "inverse_polynomial_joint_gap_proved": false,
+    "reason": "Exact n=8 characteristic polynomials contain x^2 on both scalar-TC2 targets, so every two-generator linear combination is degenerate. The disjoint-transposition extension is also identically degenerate; a genuinely independent third generator and all-n gap/decoder proofs are mandatory.",
+    "speedup_claim_allowed": false,
+    "support_intersection_one_tc_third_generator_tested": false,
+    "support_three_two_generator_linear_span_viable": false,
+    "third_generator_required_on_certified_targets": true,
+    "three_generator_simple_joint_spectrum_proved": false
+  },
+  "created_at": "2026-07-23T14:33:27.989913+00:00",
+  "falsifiers_triggered": [
+    "Finite common coefficient rules through n=7 do not survive n=8.",
+    "Non-scalar finite variance does not imply simple spectrum.",
+    "No linear combination of the two support-three generators resolves the certified n=8 blocks.",
+    "A third generator is necessary within this orbit-average architecture.",
+    "The disjoint-transposition third generator preserves a squared linear factor for every coefficient.",
+    "A third finite generator would still require all-n gaps, coherent implementation, and decoding."
+  ],
+  "headline_metrics": {
+    "coherent_typical_multiplicity_transform_count": 0,
+    "disjoint_third_generator_repeated_root_target_count": 2,
+    "exact_collision_target_count": 2,
+    "exact_four_moment_certificate_count": 2,
+    "finite_common_coefficient_rules_falsified_at_n8": 4,
+    "minimum_required_portfolio_generator_count_on_certified_targets": 3,
+    "next_independent_third_generator_test_count": 0,
+    "repeated_zero_eigenvalue_target_count": 2,
+    "tested_third_generator_count": 1,
+    "tested_three_generator_span_simple_spectrum_target_count": 0,
+    "two_generator_linear_span_simple_spectrum_target_count": 0,
+    "typical_label_hidden_involution_decoder_count": 0,
+    "uniform_three_generator_joint_gap_theorem_count": 0
+  },
+  "records": [
+    {
+      "characteristic_polynomial_square_free": false,
+      "every_tc2_tt1_linear_combination_simple": false,
+      "finite_exact_collision_certificate": true,
+      "kronecker_multiplicity": 4,
+      "n": 8,
+      "repeated_zero_eigenvalue_multiplicity": 2,
+      "source_dimension": 90,
+      "source_partition": [
+        4,
+        2,
+        1,
+        1
+      ],
+      "status": "exact-repeated-eigenvalue-two-generator-span-falsified",
+      "target_dimension": 14,
+      "target_partition": [
+        4,
+        4
+      ],
+      "tc2_exact_scalar_eigenvalue": "0",
+      "tc2_exact_variance": "0",
+      "tt1_exact_characteristic_polynomial": "x^4 - (1/24)x^3 - (1/504)x^2",
+      "tt1_exact_elementary_symmetric_coefficients": [
+        "1",
+        "1/24",
+        "-1/504",
+        "0",
+        "0"
+      ],
+      "tt1_exact_power_traces": [
+        "1/24",
+        "23/4032",
+        "31/96768",
+        "401/16257024"
+      ],
+      "tt1_factored_characteristic_polynomial": "x^2(504x^2 - 21x - 1)/504",
+      "tt1_orbit_word_counts": [
+        1,
+        336,
+        112896,
+        37933056
+      ],
+      "tt1_orbit_word_state_counts": [
+        1,
+        17,
+        128,
+        1322
+      ]
+    },
+    {
+      "characteristic_polynomial_square_free": false,
+      "every_tc2_tt1_linear_combination_simple": false,
+      "finite_exact_collision_certificate": true,
+      "kronecker_multiplicity": 4,
+      "n": 8,
+      "repeated_zero_eigenvalue_multiplicity": 2,
+      "source_dimension": 90,
+      "source_partition": [
+        4,
+        2,
+        1,
+        1
+      ],
+      "status": "exact-repeated-eigenvalue-two-generator-span-falsified",
+      "target_dimension": 14,
+      "target_partition": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "tc2_exact_scalar_eigenvalue": "0",
+      "tc2_exact_variance": "0",
+      "tt1_exact_characteristic_polynomial": "x^4 + (1/24)x^3 - (1/504)x^2",
+      "tt1_exact_elementary_symmetric_coefficients": [
+        "1",
+        "-1/24",
+        "-1/504",
+        "0",
+        "0"
+      ],
+      "tt1_exact_power_traces": [
+        "-1/24",
+        "23/4032",
+        "-31/96768",
+        "401/16257024"
+      ],
+      "tt1_factored_characteristic_polynomial": "x^2(504x^2 + 21x - 1)/504",
+      "tt1_orbit_word_counts": [
+        1,
+        336,
+        112896,
+        37933056
+      ],
+      "tt1_orbit_word_state_counts": [
+        1,
+        17,
+        128,
+        1322
+      ]
+    }
+  ],
+  "status": "two-generator-and-disjoint-extension-spans-falsified-independent-third-required",
+  "summary": "Exact fourth moments factor both n=8 TT1 characteristic polynomials with a repeated zero root. Because TC2 is zero on those blocks, all four coefficient rules that split n<=7 fail at n=8.",
+  "theorem_contract": {
+    "asymptotic_lower_bound_claimed": false,
+    "disjoint_extension_consequence": "For TT1+c*TTdisjoint, both parameterized characteristic polynomials contain a squared linear factor for every c. Adding scalar TC2 cannot remove it.",
+    "linear_span_consequence": "TC2=0 on both targets, while TT1 has a repeated zero eigenvalue. Therefore alpha*TC2+beta*TT1 is degenerate for every alpha,beta.",
+    "newton_identity": "The first g=4 power traces determine the degree-four characteristic polynomial exactly.",
+    "orbit_word_identity": "Fix the first TT1 orbit term by simultaneous conjugacy; classify products after k-1 further orbit factors and contract each final pair by exact characters.",
+    "scope": "maximum-dimension S_8 source lambda=(4,2,1,1), targets (4,4) and (2,2,2,2)"
+  },
+  "third_generator_collision_records": [
+    {
+      "discriminant_identically_zero": true,
+      "every_three_generator_linear_combination_simple": false,
+      "exact_parameterized_characteristic_polynomial": "(2*c + 105*x)**2*(-24*c**2 + 6300*c*x + 210*c + 88200*x**2 - 3675*x - 175)/972405000",
+      "exact_parameterized_power_traces": [
+        "-(92*c - 35)/840",
+        "(4496*c**2 - 7560*c + 4025)/705600",
+        "-(258752*c**3 - 700560*c**2 + 648900*c - 189875)/592704000",
+        "(3185920*c**4 - 11789568*c**3 + 16500960*c**2 - 10290000*c + 2456125)/99574272000"
+      ],
+      "finite_exact_parameterized_collision_certificate": true,
+      "fourth_word_canonical_state_count": 1686,
+      "n": 8,
+      "repeated_factor_multiplicity": 2,
+      "repeated_linear_factor": "2*c + 105*x",
+      "source_partition": [
+        4,
+        2,
+        1,
+        1
+      ],
+      "status": "disjoint-third-generator-span-exactly-degenerate",
+      "target_partition": [
+        4,
+        4
+      ],
+      "tested_third_generator_id": "ORB-TT-DISJOINT"
+    },
+    {
+      "discriminant_identically_zero": true,
+      "every_three_generator_linear_combination_simple": false,
+      "exact_parameterized_characteristic_polynomial": "(-2*c + 105*x)**2*(-24*c**2 - 6300*c*x + 210*c + 88200*x**2 + 3675*x - 175)/972405000",
+      "exact_parameterized_power_traces": [
+        "(92*c - 35)/840",
+        "(4496*c**2 - 7560*c + 4025)/705600",
+        "(258752*c**3 - 700560*c**2 + 648900*c - 189875)/592704000",
+        "(3185920*c**4 - 11789568*c**3 + 16500960*c**2 - 10290000*c + 2456125)/99574272000"
+      ],
+      "finite_exact_parameterized_collision_certificate": true,
+      "fourth_word_canonical_state_count": 1686,
+      "n": 8,
+      "repeated_factor_multiplicity": 2,
+      "repeated_linear_factor": "-2*c + 105*x",
+      "source_partition": [
+        4,
+        2,
+        1,
+        1
+      ],
+      "status": "disjoint-third-generator-span-exactly-degenerate",
+      "target_partition": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "tested_third_generator_id": "ORB-TT-DISJOINT"
+    }
+  ]
+}

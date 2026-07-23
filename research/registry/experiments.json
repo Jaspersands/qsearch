@@ -1580,16 +1580,21 @@
       "inverse_polynomial_gap_theorem_count",
       "coherent_polynomial_multiplicity_transform_count",
       "minimum_observed_lcu_normalized_gap",
+      "finite_low_support_portfolio_all_block_split_count",
+      "maximum_low_support_portfolio_noncommuting_target_count",
+      "minimum_finite_low_support_portfolio_lcu_normalized_gap",
+      "finite_common_low_support_coefficient_rule_count",
+      "best_finite_common_low_support_minimum_normalized_gap",
       "kcopy_associator_count",
       "hidden_involution_decoder_count"
     ],
     "next_actions": [
-      "Derive exact multiplicity spectra for bounded-support orbit Hamiltonians as functions of partitions.",
+      "Derive exact spectra for the support-three two-generator Hamiltonian as functions of partitions.",
       "Prove or falsify inverse-polynomial normalized gaps on balanced Plancherel-relevant sectors.",
       "Construct coherent Racah matrices between multiplicity bases only after the gap theorem survives."
     ],
     "positive_signal": "A uniform family has a proved inverse-polynomial LCU-normalized gap on every reduction-relevant Kronecker sector and composes with polynomial associators and decoding.",
-    "protocol": "Build disjoint transposition-pair and support-stratified transposition/3-cycle orbit sums, verify diagonal S_n commutation, search small-integer Hermitian combinations, and charge every LCU term, normalization factor, multiplicity eigenvalue gap, and target-tableau consistency check.",
+    "protocol": "Build disjoint/shared-point transposition-pair and support-stratified transposition/3-cycle orbit sums, verify diagonal S_n commutation, search small-integer Hermitian combinations, and charge every LCU term, normalization factor, multiplicity eigenvalue gap, and target-tableau consistency check.",
     "status": "planned",
     "title": "Bounded-support Kronecker multiplicity commutant search"
   },
@@ -2769,6 +2774,222 @@
   {
     "candidate_id": "CODE-COSET-COLLECTIVE",
     "dependencies": [
+      "symmetric_marked_class_contraction.py",
+      "coset_typical_class_contraction_scaling.py",
+      "exact symmetric-group characters",
+      "simultaneous-conjugacy pair classification"
+    ],
+    "falsifiers": [
+      "The primary generator has exactly zero eigenvalue variance in any typical multiplicity block.",
+      "Finite n=7 splitting is extrapolated without checking adjacent sizes.",
+      "Class-compressed finite evaluation is presented as a coherent circuit.",
+      "Separate non-scalarity is substituted for simple joint spectrum.",
+      "No hidden-involution outcome law or decoder is supplied."
+    ],
+    "hypothesis": "A fixed bounded-support commutant generator that splits a maximum-dimension n=7 sector remains non-scalar on every typical Kronecker multiplicity block as n grows.",
+    "id": "EXP-COSET-TYPICAL-CLASS-CONTRACTION-SCALING",
+    "metrics": [
+      "maximum_n",
+      "fixed_relative_pair_type_count",
+      "total_nontrivial_multiplicity_block_count",
+      "total_exact_scalar_block_count",
+      "finite_portfolio_non_scalar_covered_count",
+      "finite_portfolio_common_scalar_block_count",
+      "finite_portfolio_covariance_rank_two_count",
+      "single_primary_generator_uniformity_falsification_count",
+      "all_n_symbolic_class_contraction_formula_count",
+      "uniform_portfolio_joint_gap_theorem_count",
+      "typical_label_hidden_involution_decoder_count"
+    ],
+    "next_actions": [
+      "Derive mixed higher moments or finite commutator norms for the support-three portfolio.",
+      "Derive symbolic recurrences for the 17 primary relative pair types.",
+      "Search exact joint-spectrum collisions rather than separate variance only.",
+      "Prove normalized gaps on a natural-label set before synthesizing phase estimation."
+    ],
+    "positive_signal": "A fixed generator portfolio admits all-n class-algebra formulas, simple joint spectrum, and an inverse-polynomial minimum separation theorem on naturally weighted typical labels.",
+    "protocol": "Replace factorial group enumeration by exact marked-support injections into conjugacy-class representatives. Classify the primary generator's second moment into 17 relative pair types, verify against factorial controls through n=8, and enumerate exact scalar blocks through n=10.",
+    "status": "planned",
+    "title": "Marked-class contraction scaling for typical commutants"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "coset_typical_commutant_moment_audit.py",
+      "exact symmetric-group characters",
+      "Kronecker multiplicities",
+      "simultaneous-conjugacy orbit algebra"
+    ],
+    "falsifiers": [
+      "A searched orbit average has exactly zero variance on a typical multiplicity block.",
+      "Finite nonzero variance is promoted as a minimum-gap theorem.",
+      "The generator portfolio does not have simple joint spectrum.",
+      "Exact factorial enumeration is counted as an efficient implementation.",
+      "No observable-outcome information or hidden-involution decoder is supplied."
+    ],
+    "hypothesis": "Bounded-support simultaneous-conjugacy orbit averages retain non-scalar action on naturally relevant high-dimensional Kronecker multiplicity blocks, rather than being an artifact of fixed stable tails.",
+    "id": "EXP-COSET-TYPICAL-COMMUTANT-MOMENT-AUDIT",
+    "metrics": [
+      "nontrivial_multiplicity_block_count",
+      "finite_non_scalar_covered_count",
+      "finite_uncovered_count",
+      "minimum_positive_variance",
+      "finite_centered_covariance_rank_two_count",
+      "finite_multiplicity_two_simple_spectrum_count",
+      "uniform_typical_commutant_non_scalar_theorem_count",
+      "uniform_typical_commutant_gap_theorem_count",
+      "uniform_typical_commutant_simple_spectrum_theorem_count",
+      "typical_label_hidden_involution_decoder_count"
+    ],
+    "next_actions": [
+      "Derive class-algebra contractions that replace permutation enumeration for arbitrary n.",
+      "Test whether the finite covariance-rank portfolio generates a noncommutative full matrix algebra.",
+      "Prove inverse-polynomial joint spectral separation on Plancherel-typical labels.",
+      "Specify a coherent label-adaptive block encoding and an outcome-information theorem."
+    ],
+    "positive_signal": "An all-n class-algebra formula proves non-scalarity and inverse-polynomial joint spectral separation uniformly for sampled partition descriptions, followed by a coherent transform and decoder.",
+    "protocol": "Use exact character projection to compute first and second multiplicity-space moments of normalized transposition/3-cycle and disjoint-transposition orbit averages on maximum-dimension source partitions. Record exact zero-variance blocks, finite portfolio coverage, and every missing asymptotic obligation.",
+    "status": "planned",
+    "title": "Character-only typical-irrep commutant moment audit"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "coset_typical_fixed_separator_gap_scaling.py",
+      "coset_typical_high_multiplicity_transfer.py",
+      "dense Young--Jucys--Murphy restrictions",
+      "exact rational root isolation"
+    ],
+    "falsifiers": [
+      "Any finite block has a repeated eigenvalue.",
+      "The exact n=8 root-isolation lower bound is nonpositive.",
+      "A four-point fitted exponent is presented as a theorem.",
+      "Orbit-average LCU normalization is omitted.",
+      "No coherent transform or hidden-involution decoder is supplied."
+    ],
+    "hypothesis": "The fixed normalized orbit-average operator TT1+TC1 that separates all n=8 targets retains simple spectrum with inverse-polynomial normalized minimum gaps on maximum-dimension sources as n grows.",
+    "id": "EXP-COSET-TYPICAL-FIXED-SEPARATOR-GAP-SCALING",
+    "metrics": [
+      "minimum_n",
+      "maximum_n",
+      "finite_size_count",
+      "finite_all_block_simple_spectrum_size_count",
+      "n8_exact_target_count",
+      "n8_certified_minimum_raw_gap_lower_bound",
+      "n8_certified_minimum_lcu_normalized_gap_lower_bound",
+      "descriptive_log_log_gap_fit_exponent",
+      "all_n_simple_spectrum_theorem_count",
+      "inverse_polynomial_normalized_gap_theorem_count",
+      "coherent_typical_multiplicity_transform_count",
+      "typical_label_hidden_involution_decoder_count"
+    ],
+    "next_actions": [
+      "Run the same fixed separator on the n=9 maximum-dimension source.",
+      "Record exact normalized gaps and the first repeated-root counterexample.",
+      "Derive a symbolic recurrence only if adjacent sizes survive.",
+      "Keep coherent implementation and decoding blocked."
+    ],
+    "positive_signal": "Adjacent sizes survive exact collision tests and admit a symbolic class-algebra recurrence proving a uniform inverse-polynomial normalized gap on naturally weighted typical labels.",
+    "protocol": "Restrict the two normalized orbit averages to every dense multiplicity block at n=5,6,7, use exact quotient-transfer characteristic polynomials and rational root isolation at n=8, charge LCU normalization two, and separate finite descriptive trends from an all-n theorem.",
+    "status": "planned",
+    "title": "Fixed typical-separator normalized gap scaling"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "tools/pair_orbit_transfer.cpp",
+      "coset_typical_high_multiplicity_transfer.py",
+      "exact symmetric-group characters",
+      "Newton identities and exact discriminants"
+    ],
+    "falsifiers": [
+      "The exact transfer state counts disagree with the Python degree-four word audit.",
+      "Any target characteristic polynomial has a nontrivial gcd with its derivative.",
+      "A coefficient-one n=8 theorem is presented as parameter robustness or an all-n theorem.",
+      "Adjacent sizes and normalized gap scaling are silently treated as audited.",
+      "No all-n gap, coherent transform, or hidden-involution decoder is supplied."
+    ],
+    "hypothesis": "The fixed low-support operator TT1+TC1 that survives every n=8 block through multiplicity four has simple spectrum on every nontrivial n=8 multiplicity target through multiplicity 17.",
+    "id": "EXP-COSET-TYPICAL-HIGH-MULTIPLICITY-TRANSFER",
+    "metrics": [
+      "maximum_exact_transfer_degree",
+      "maximum_exact_transfer_state_count",
+      "total_simultaneous_conjugacy_pair_state_count",
+      "certified_n8_target_count",
+      "certified_n8_simple_spectrum_target_count",
+      "n8_nontrivial_multiplicity_target_count",
+      "n8_unaudited_multiplicity_above_six_target_count",
+      "n8_unaudited_target_count",
+      "maximum_certified_kronecker_multiplicity",
+      "n8_exact_target_coverage_fraction",
+      "exact_transfer_recomputed_count",
+      "all_n8_fixed_coefficient_simple_spectrum_theorem_count",
+      "parameterized_all_coefficient_theorem_count",
+      "all_n_simple_spectrum_theorem_count",
+      "inverse_polynomial_gap_theorem_count",
+      "coherent_typical_multiplicity_transform_count",
+      "typical_label_hidden_involution_decoder_count"
+    ],
+    "next_actions": [
+      "Test the same fixed coefficient on the n=9 maximum-dimension source.",
+      "Search parameter robustness and exact gap decay across n.",
+      "Derive a class-algebra recurrence if adjacent sizes survive.",
+      "Keep all-n gaps, implementation, and decoding blocked."
+    ],
+    "positive_signal": "The same fixed coefficients survive every n=8 target, adjacent sizes, and an all-n square-freeness and inverse-polynomial normalized-gap proof with coherent implementation and decoding.",
+    "protocol": "Propagate exact integer weights on the simultaneous-conjugacy quotient of permutation pairs through degree 17 with arbitrary-precision weights, contract each distribution with symmetric-group characters, and recover each complete characteristic polynomial and discriminant by Newton identities.",
+    "status": "planned",
+    "title": "Exact full n=8 orbit-state transfer"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "coset_typical_independent_third_generator_certificate.py",
+      "exact orbit-word dynamic program",
+      "symmetric-group character projection",
+      "Newton identities and exact discriminants"
+    ],
+    "falsifiers": [
+      "The parameterized discriminant vanishes identically or at a nonzero real coefficient.",
+      "Sign-twist transfer between the conjugate targets fails.",
+      "The repair fails on another target at n=8 or an adjacent size.",
+      "A finite simple-spectrum certificate is presented as an all-n gap theorem.",
+      "No coherent transform or hidden-involution decoder is supplied."
+    ],
+    "hypothesis": "The transposition/3-cycle intersection-one orbit average supplies an independent direction that removes the exact n=8 repeated-root collisions left by TC2, TT1, and the disjoint-transposition extension.",
+    "id": "EXP-COSET-TYPICAL-INDEPENDENT-THIRD-GENERATOR-CERTIFICATE",
+    "metrics": [
+      "independent_third_generator_target_count",
+      "exact_parameterized_characteristic_polynomial_certificate_count",
+      "exact_parameterized_four_moment_certificate_count",
+      "nonzero_coefficient_simple_spectrum_target_count",
+      "certified_n8_collision_target_repair_count",
+      "certified_n8_low_multiplicity_target_count",
+      "certified_n8_low_multiplicity_simple_spectrum_target_count",
+      "n8_nontrivial_multiplicity_target_count",
+      "n8_unaudited_higher_multiplicity_target_count",
+      "maximum_exactly_audited_kronecker_multiplicity",
+      "n8_exact_target_coverage_fraction",
+      "all_n_simple_spectrum_theorem_count",
+      "all_typical_target_coverage_theorem_count",
+      "inverse_polynomial_gap_theorem_count",
+      "coherent_typical_multiplicity_transform_count",
+      "typical_label_hidden_involution_decoder_count"
+    ],
+    "next_actions": [
+      "Develop a higher-multiplicity transfer method for the 14 n=8 targets beyond fourth moments.",
+      "Search adjacent n for exact repeated roots and coefficient incompatibility.",
+      "Derive normalized gap bounds only after all finite collision tests survive.",
+      "Keep coherent implementation and decoder obligations blocked."
+    ],
+    "positive_signal": "A fixed bounded-support portfolio has square-free characteristic polynomials on every naturally weighted typical block for all n, inverse-polynomial normalized gaps, a coherent implementation, and a decoder.",
+    "protocol": "Contract all TT1/TC1 orbit words through degree four on every n=8 target of multiplicity at most four, recover the parameterized characteristic polynomial by Newton identities, factor its discriminant, and prove positivity for every nonzero real coefficient using an exact z=c^2 decomposition.",
+    "status": "planned",
+    "title": "Exact independent third-generator collision repair certificate"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
       "coset_typical_irrep_transfer_audit.py",
       "hook-length dimension formula",
       "exact symmetric-group characters",
@@ -2804,6 +3025,103 @@
     "protocol": "Prove a union weak-Fourier probability bound for every fixed tail budget, then compute exact self-Kronecker profiles of maximum-Plancherel source partitions to measure target support, multiplicity growth, coupling entropy, and bounded-tail coupling mass.",
     "status": "planned",
     "title": "Typical-irrep transfer frontier"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "tools/pair_orbit_transfer.cpp compiled with QSEARCH_N=9",
+      "coset_typical_n9_low_multiplicity_probe.py",
+      "exact vectorized S_9 character translations",
+      "Newton identities and rational root isolation"
+    ],
+    "falsifiers": [
+      "Any n=9 characteristic polynomial through multiplicity seven has a repeated root.",
+      "Exact transfer state counts or total weights disagree with the kernel contract.",
+      "Partial 11-of-27 target coverage is presented as full adjacent-size robustness.",
+      "The non-self-conjugate source is given an invalid sign-twist shortcut.",
+      "No coherent transform or decoder is supplied."
+    ],
+    "hypothesis": "The fixed normalized TT1+TC1 separator that resolves every n=8 target remains square-free on the first adjacent-size n=9 targets.",
+    "id": "EXP-COSET-TYPICAL-N9-LOW-MULTIPLICITY-PROBE",
+    "metrics": [
+      "n",
+      "maximum_exact_transfer_degree",
+      "maximum_exact_transfer_state_count",
+      "low_multiplicity_target_count",
+      "low_multiplicity_simple_spectrum_target_count",
+      "n9_nontrivial_multiplicity_target_count",
+      "n9_unaudited_higher_multiplicity_target_count",
+      "maximum_certified_kronecker_multiplicity",
+      "maximum_n9_kronecker_multiplicity",
+      "n9_exact_target_coverage_fraction",
+      "certified_low_multiplicity_minimum_raw_gap_lower_bound",
+      "certified_low_multiplicity_minimum_lcu_normalized_gap_lower_bound",
+      "degree6_unique_left_translation_count",
+      "degree6_unique_right_translation_count",
+      "degree6_temporary_character_table_bytes",
+      "degree7_unique_left_translation_count",
+      "degree7_unique_right_translation_count",
+      "degree7_temporary_character_table_bytes",
+      "maximum_in_memory_character_chunk_rows",
+      "maximum_in_memory_character_chunk_bytes",
+      "bounded_memory_n9_character_contraction_count",
+      "scalable_n9_character_contraction_count",
+      "exact_transfer_recomputed_count",
+      "all_n9_target_simple_spectrum_theorem_count",
+      "all_n_simple_spectrum_theorem_count",
+      "inverse_polynomial_normalized_gap_theorem_count"
+    ],
+    "next_actions": [
+      "Use bounded 128-row chunks at degree eight, while pursuing a class/Fourier contraction that removes the 6.98 GB disk table.",
+      "Extend to multiplicity eight, stopping on the first collision.",
+      "Track normalized gaps at every extension.",
+      "Keep all-target, all-n, implementation, and decoding obligations blocked."
+    ],
+    "positive_signal": "The same fixed coefficient survives every n=9 target through multiplicity 28 with controlled normalized gaps, then extends to further sizes under an all-n recurrence.",
+    "protocol": "Compile the simultaneous-conjugacy transfer at n=9 through degree seven, reorganize exact S_9 character contraction by unique left/right translations, recover all characteristic polynomials for targets of multiplicity at most seven, and isolate their roots rationally.",
+    "status": "planned",
+    "title": "Exact n=9 low-multiplicity separator probe"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "coset_typical_portfolio_collision_certificate.py",
+      "exact orbit-word dynamic program",
+      "symmetric-group character projection",
+      "Newton identities"
+    ],
+    "falsifiers": [
+      "The TT1 characteristic polynomial has a repeated root on a TC2-scalar block.",
+      "Any coefficient rule that splits n<=7 becomes degenerate at n=8.",
+      "Nonzero variance is substituted for simple spectrum.",
+      "A third finite generator is added without repeating the collision test.",
+      "No all-n gap or hidden-involution decoder is supplied."
+    ],
+    "hypothesis": "A fixed linear combination of the two support-three orbit averages that splits every audited n<=7 multiplicity block retains simple spectrum on the first n=8 scalar-primary targets.",
+    "id": "EXP-COSET-TYPICAL-PORTFOLIO-COLLISION-CERTIFICATE",
+    "metrics": [
+      "exact_collision_target_count",
+      "exact_four_moment_certificate_count",
+      "repeated_zero_eigenvalue_target_count",
+      "two_generator_linear_span_simple_spectrum_target_count",
+      "finite_common_coefficient_rules_falsified_at_n8",
+      "minimum_required_portfolio_generator_count_on_certified_targets",
+      "tested_third_generator_count",
+      "disjoint_third_generator_repeated_root_target_count",
+      "tested_three_generator_span_simple_spectrum_target_count",
+      "uniform_three_generator_joint_gap_theorem_count",
+      "typical_label_hidden_involution_decoder_count"
+    ],
+    "next_actions": [
+      "Reject the TC2/TT1 linear span as a uniform resolver.",
+      "Reject the disjoint-transposition extension and test TC-intersection-one on the certified collision blocks.",
+      "Derive higher-moment recurrences only for portfolios that survive exact collisions.",
+      "Keep all-n gap, natural-access, and decoder obligations blocked."
+    ],
+    "positive_signal": "At least one fixed portfolio has square-free characteristic polynomials and inverse-polynomial minimum gaps on every naturally relevant target, with an all-n proof and coherent decoder.",
+    "protocol": "Compute exact TT1 orbit-word power traces through order four on the n=8 multiplicity-four targets, recover characteristic polynomials by Newton identities, and combine them with the exact TC2 scalar certificate.",
+    "status": "planned",
+    "title": "Exact higher-moment collision certificate for the typical commutant portfolio"
   },
   {
     "candidate_id": "CODE-COSET-COLLECTIVE",

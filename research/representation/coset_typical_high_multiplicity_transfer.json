@@ -1,0 +1,852 @@
+{
+  "claim_gate": {
+    "all_n8_targets_audited": true,
+    "all_n_simple_spectrum_proved": false,
+    "coherent_transform_proved": false,
+    "fixed_coefficient_c1_viable_on_all_n8_targets": true,
+    "fixed_coefficient_c1_viable_through_multiplicity_six": true,
+    "hidden_involution_decoder_proved": false,
+    "inverse_polynomial_gap_proved": false,
+    "parameterized_common_coefficient_proved": false,
+    "reason": "Coefficient c=1 has exact simple spectrum on all 20 n=8 targets, but parameter robustness, adjacent sizes, all-n normalized gaps, implementation, and decoding remain open.",
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-07-22T21:54:14.901616+00:00",
+  "falsifiers_triggered": [
+    "The tested fixed coefficient does not fail on any n=8 multiplicity block through multiplicity 17.",
+    "Parameterized nonzero-coefficient robustness is not established beyond multiplicity four.",
+    "A complete n=8 finite theorem does not establish adjacent-size or all-n behavior.",
+    "Finite square-freeness does not prove a normalized gap, coherent transform, decoder, or speedup."
+  ],
+  "headline_metrics": {
+    "all_n8_fixed_coefficient_simple_spectrum_theorem_count": 1,
+    "all_n_simple_spectrum_theorem_count": 0,
+    "certified_n8_simple_spectrum_target_count": 20,
+    "certified_n8_target_count": 20,
+    "coherent_typical_multiplicity_transform_count": 0,
+    "exact_transfer_recomputed_count": 1,
+    "inverse_polynomial_gap_theorem_count": 0,
+    "maximum_certified_kronecker_multiplicity": 17,
+    "maximum_exact_transfer_degree": 17,
+    "maximum_exact_transfer_state_count": 21614,
+    "n8_exact_target_coverage_fraction": 1.0,
+    "n8_nontrivial_multiplicity_target_count": 20,
+    "n8_unaudited_multiplicity_above_six_target_count": 0,
+    "n8_unaudited_target_count": 0,
+    "parameterized_all_coefficient_theorem_count": 0,
+    "total_simultaneous_conjugacy_pair_state_count": 43206,
+    "typical_label_hidden_involution_decoder_count": 0
+  },
+  "records": [
+    {
+      "characteristic_polynomial_square_free": true,
+      "coefficient_rule": {
+        "ORB-TC-INTERSECTION-1": 1,
+        "ORB-TT-INTERSECTION-1": 1
+      },
+      "exact_characteristic_polynomial": "(44100*x**2 - 2100*x + 23)/44100",
+      "exact_discriminant": "2/11025",
+      "exact_power_traces": [
+        "1/21",
+        "3/2450"
+      ],
+      "exact_square_free_gcd": "1",
+      "exact_transfer_recomputed": true,
+      "kronecker_multiplicity": 2,
+      "n": 8,
+      "sign_twist_transfer_used": false,
+      "source_partition": [
+        4,
+        2,
+        1,
+        1
+      ],
+      "status": "exact-coefficient-one-simple-spectrum",
+      "target_dimension": 7,
+      "target_partition": [
+        7,
+        1
+      ]
+    },
+    {
+      "characteristic_polynomial_square_free": true,
+      "coefficient_rule": {
+        "ORB-TC-INTERSECTION-1": 1,
+        "ORB-TT-INTERSECTION-1": 1
+      },
+      "exact_characteristic_polynomial": "(44100*x**2 + 2100*x + 23)/44100",
+      "exact_discriminant": "2/11025",
+      "exact_power_traces": [
+        "-1/21",
+        "3/2450"
+      ],
+      "exact_square_free_gcd": "1",
+      "exact_transfer_recomputed": true,
+      "kronecker_multiplicity": 2,
+      "n": 8,
+      "sign_twist_transfer_used": true,
+      "source_partition": [
+        4,
+        2,
+        1,
+        1
+      ],
+      "status": "exact-coefficient-one-simple-spectrum",
+      "target_dimension": 7,
+      "target_partition": [
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "characteristic_polynomial_square_free": true,
+      "coefficient_rule": {
+        "ORB-TC-INTERSECTION-1": 1,
+        "ORB-TT-INTERSECTION-1": 1
+      },
+      "exact_characteristic_polynomial": "(2987228160000*x**5 - 240045120000*x**4 - 2855563200*x**3 + 614854800*x**2 - 14567796*x + 85301)/2987228160000",
+      "exact_discriminant": "155073632189276845811613659/2438651133916612792435330431477350400000000000000000000",
+      "exact_power_traces": [
+        "9/112",
+        "23621/2822400",
+        "4631/35123200",
+        "171764657/7965941760000",
+        "206219633/535311286272000"
+      ],
+      "exact_square_free_gcd": "1",
+      "exact_transfer_recomputed": true,
+      "kronecker_multiplicity": 5,
+      "n": 8,
+      "sign_twist_transfer_used": false,
+      "source_partition": [
+        4,
+        2,
+        1,
+        1
+      ],
+      "status": "exact-coefficient-one-simple-spectrum",
+      "target_dimension": 20,
+      "target_partition": [
+        6,
+        2
+      ]
+    },
+    {
+      "characteristic_polynomial_square_free": true,
+      "coefficient_rule": {
+        "ORB-TC-INTERSECTION-1": 1,
+        "ORB-TT-INTERSECTION-1": 1
+      },
+      "exact_characteristic_polynomial": "(2987228160000*x**5 + 240045120000*x**4 - 2855563200*x**3 - 614854800*x**2 - 14567796*x - 85301)/2987228160000",
+      "exact_discriminant": "155073632189276845811613659/2438651133916612792435330431477350400000000000000000000",
+      "exact_power_traces": [
+        "-9/112",
+        "23621/2822400",
+        "-4631/35123200",
+        "171764657/7965941760000",
+        "-206219633/535311286272000"
+      ],
+      "exact_square_free_gcd": "1",
+      "exact_transfer_recomputed": true,
+      "kronecker_multiplicity": 5,
+      "n": 8,
+      "sign_twist_transfer_used": true,
+      "source_partition": [
+        4,
+        2,
+        1,
+        1
+      ],
+      "status": "exact-coefficient-one-simple-spectrum",
+      "target_dimension": 20,
+      "target_partition": [
+        2,
+        2,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "characteristic_polynomial_square_free": true,
+      "coefficient_rule": {
+        "ORB-TC-INTERSECTION-1": 1,
+        "ORB-TT-INTERSECTION-1": 1
+      },
+      "exact_characteristic_polynomial": "(21*x - 1)*(823200*x**3 - 31850*x**2 - 1491*x + 45)/17287200",
+      "exact_discriminant": "128433593/33738662956400640000000000",
+      "exact_power_traces": [
+        "29/336",
+        "20849/2822400",
+        "28739/135475200",
+        "18582359/1137991680000"
+      ],
+      "exact_square_free_gcd": "1",
+      "exact_transfer_recomputed": true,
+      "kronecker_multiplicity": 4,
+      "n": 8,
+      "sign_twist_transfer_used": false,
+      "source_partition": [
+        4,
+        2,
+        1,
+        1
+      ],
+      "status": "exact-coefficient-one-simple-spectrum",
+      "target_dimension": 21,
+      "target_partition": [
+        6,
+        1,
+        1
+      ]
+    },
+    {
+      "characteristic_polynomial_square_free": true,
+      "coefficient_rule": {
+        "ORB-TC-INTERSECTION-1": 1,
+        "ORB-TT-INTERSECTION-1": 1
+      },
+      "exact_characteristic_polynomial": "(21*x + 1)*(823200*x**3 + 31850*x**2 - 1491*x - 45)/17287200",
+      "exact_discriminant": "128433593/33738662956400640000000000",
+      "exact_power_traces": [
+        "-29/336",
+        "20849/2822400",
+        "-28739/135475200",
+        "18582359/1137991680000"
+      ],
+      "exact_square_free_gcd": "1",
+      "exact_transfer_recomputed": true,
+      "kronecker_multiplicity": 4,
+      "n": 8,
+      "sign_twist_transfer_used": true,
+      "source_partition": [
+        4,
+        2,
+        1,
+        1
+      ],
+      "status": "exact-coefficient-one-simple-spectrum",
+      "target_dimension": 21,
+      "target_partition": [
+        3,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "characteristic_polynomial_square_free": true,
+      "coefficient_rule": {
+        "ORB-TC-INTERSECTION-1": 1,
+        "ORB-TT-INTERSECTION-1": 1
+      },
+      "exact_characteristic_polynomial": "(1045529856000000*x**6 - 40452048000000*x**5 - 4268950560000*x**4 + 72782640000*x**3 + 4632247200*x**2 + 1743900*x - 544033)/1045529856000000",
+      "exact_discriminant": "64029839153438635753461870949753/2636434024329519116931068395490385514265680281600000000000000000000000000",
+      "exact_power_traces": [
+        "13/336",
+        "9091/940800",
+        "43759/135475200",
+        "251217329/7965941760000",
+        "902837389/535311286272000",
+        "329198685793/2498119335936000000"
+      ],
+      "exact_square_free_gcd": "1",
+      "exact_transfer_recomputed": true,
+      "kronecker_multiplicity": 6,
+      "n": 8,
+      "sign_twist_transfer_used": false,
+      "source_partition": [
+        4,
+        2,
+        1,
+        1
+      ],
+      "status": "exact-coefficient-one-simple-spectrum",
+      "target_dimension": 28,
+      "target_partition": [
+        5,
+        3
+      ]
+    },
+    {
+      "characteristic_polynomial_square_free": true,
+      "coefficient_rule": {
+        "ORB-TC-INTERSECTION-1": 1,
+        "ORB-TT-INTERSECTION-1": 1
+      },
+      "exact_characteristic_polynomial": "(1045529856000000*x**6 + 40452048000000*x**5 - 4268950560000*x**4 - 72782640000*x**3 + 4632247200*x**2 - 1743900*x - 544033)/1045529856000000",
+      "exact_discriminant": "64029839153438635753461870949753/2636434024329519116931068395490385514265680281600000000000000000000000000",
+      "exact_power_traces": [
+        "-13/336",
+        "9091/940800",
+        "-43759/135475200",
+        "251217329/7965941760000",
+        "-902837389/535311286272000",
+        "329198685793/2498119335936000000"
+      ],
+      "exact_square_free_gcd": "1",
+      "exact_transfer_recomputed": true,
+      "kronecker_multiplicity": 6,
+      "n": 8,
+      "sign_twist_transfer_used": true,
+      "source_partition": [
+        4,
+        2,
+        1,
+        1
+      ],
+      "status": "exact-coefficient-one-simple-spectrum",
+      "target_dimension": 28,
+      "target_partition": [
+        2,
+        2,
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "characteristic_polynomial_square_free": true,
+      "coefficient_rule": {
+        "ORB-TC-INTERSECTION-1": 1,
+        "ORB-TT-INTERSECTION-1": 1
+      },
+      "exact_characteristic_polynomial": "(196036848000000*x**6 - 21587391000000*x**5 - 888500340000*x**4 + 122741325000*x**3 - 100214100*x**2 - 167759700*x + 2730521)/196036848000000",
+      "exact_discriminant": "2220130860398750454703059076386397292733047/22778789970207045170284430937036930843255477633024000000000000000000000000000000",
+      "exact_power_traces": [
+        "37/336",
+        "59809/2822400",
+        "904957/948326400",
+        "152746103/1137991680000",
+        "5445665081/535311286272000",
+        "25913815286497/22483074023424000000"
+      ],
+      "exact_square_free_gcd": "1",
+      "exact_transfer_recomputed": true,
+      "kronecker_multiplicity": 6,
+      "n": 8,
+      "sign_twist_transfer_used": false,
+      "source_partition": [
+        4,
+        2,
+        1,
+        1
+      ],
+      "status": "exact-coefficient-one-simple-spectrum",
+      "target_dimension": 35,
+      "target_partition": [
+        5,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "characteristic_polynomial_square_free": true,
+      "coefficient_rule": {
+        "ORB-TC-INTERSECTION-1": 1,
+        "ORB-TT-INTERSECTION-1": 1
+      },
+      "exact_characteristic_polynomial": "(196036848000000*x**6 + 21587391000000*x**5 - 888500340000*x**4 - 122741325000*x**3 - 100214100*x**2 + 167759700*x + 2730521)/196036848000000",
+      "exact_discriminant": "2220130860398750454703059076386397292733047/22778789970207045170284430937036930843255477633024000000000000000000000000000000",
+      "exact_power_traces": [
+        "-37/336",
+        "59809/2822400",
+        "-904957/948326400",
+        "152746103/1137991680000",
+        "-5445665081/535311286272000",
+        "25913815286497/22483074023424000000"
+      ],
+      "exact_square_free_gcd": "1",
+      "exact_transfer_recomputed": true,
+      "kronecker_multiplicity": 6,
+      "n": 8,
+      "sign_twist_transfer_used": true,
+      "source_partition": [
+        4,
+        2,
+        1,
+        1
+      ],
+      "status": "exact-coefficient-one-simple-spectrum",
+      "target_dimension": 35,
+      "target_partition": [
+        4,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "characteristic_polynomial_square_free": true,
+      "coefficient_rule": {
+        "ORB-TC-INTERSECTION-1": 1,
+        "ORB-TT-INTERSECTION-1": 1
+      },
+      "exact_characteristic_polynomial": "(129654000*x**4 - 5402250*x**3 - 345450*x**2 + 4165*x + 8)/129654000",
+      "exact_discriminant": "67378150271/307443566190200832000000000",
+      "exact_power_traces": [
+        "1/24",
+        "997/141120",
+        "5233/16934400",
+        "2998589/99574272000"
+      ],
+      "exact_square_free_gcd": "1",
+      "exact_transfer_recomputed": true,
+      "kronecker_multiplicity": 4,
+      "n": 8,
+      "sign_twist_transfer_used": false,
+      "source_partition": [
+        4,
+        2,
+        1,
+        1
+      ],
+      "status": "exact-coefficient-one-simple-spectrum",
+      "target_dimension": 14,
+      "target_partition": [
+        4,
+        4
+      ]
+    },
+    {
+      "characteristic_polynomial_square_free": true,
+      "coefficient_rule": {
+        "ORB-TC-INTERSECTION-1": 1,
+        "ORB-TT-INTERSECTION-1": 1
+      },
+      "exact_characteristic_polynomial": "(129654000*x**4 + 5402250*x**3 - 345450*x**2 - 4165*x + 8)/129654000",
+      "exact_discriminant": "67378150271/307443566190200832000000000",
+      "exact_power_traces": [
+        "-1/24",
+        "997/141120",
+        "-5233/16934400",
+        "2998589/99574272000"
+      ],
+      "exact_square_free_gcd": "1",
+      "exact_transfer_recomputed": true,
+      "kronecker_multiplicity": 4,
+      "n": 8,
+      "sign_twist_transfer_used": true,
+      "source_partition": [
+        4,
+        2,
+        1,
+        1
+      ],
+      "status": "exact-coefficient-one-simple-spectrum",
+      "target_dimension": 14,
+      "target_partition": [
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "characteristic_polynomial_square_free": true,
+      "coefficient_rule": {
+        "ORB-TC-INTERSECTION-1": 1,
+        "ORB-TT-INTERSECTION-1": 1
+      },
+      "exact_characteristic_polynomial": "(7522152046767307311022080000000000*x**13 - 1186529935948414546083840000000000*x**12 - 9426676512689897236070400000000*x**11 + 9602426468507032800460800000000*x**10 - 305986457037283365224448000000*x**9 - 22848542844317001842688000000*x**8 + 1227360035237792584826880000*x**7 + 10536924660889147637760000*x**6 - 1403951179120362631987200*x**5 + 11591651719189914624000*x**4 + 447982780091925066240*x**3 - 6935088236048981856*x**2 + 5128060474319576*x + 142416566966371)/7522152046767307311022080000000000",
+      "exact_discriminant": "nonzero-certified-by-exact-gcd",
+      "exact_power_traces": [
+        "53/336",
+        "77299/2822400",
+        "652541/948326400",
+        "830148787/7965941760000",
+        "703525351/178437095424000",
+        "10979172159379/22483074023424000000",
+        "185642516660101/7554312871870464000000",
+        "164218169710111331/63456228123711897600000000",
+        "3357804172238006657/21321292649567197593600000000",
+        "887122340859039803473/59699619418788153262080000000000",
+        "6808990705636387216037/6686357374904273165352960000000000",
+        "45404841009149057261304211/505488617542763051300683776000000000000",
+        "374105461738874744923005139/56614725164789461745676582912000000000000"
+      ],
+      "exact_square_free_gcd": "1",
+      "exact_transfer_recomputed": true,
+      "kronecker_multiplicity": 13,
+      "n": 8,
+      "sign_twist_transfer_used": false,
+      "source_partition": [
+        4,
+        2,
+        1,
+        1
+      ],
+      "status": "exact-coefficient-one-simple-spectrum",
+      "target_dimension": 64,
+      "target_partition": [
+        5,
+        2,
+        1
+      ]
+    },
+    {
+      "characteristic_polynomial_square_free": true,
+      "coefficient_rule": {
+        "ORB-TC-INTERSECTION-1": 1,
+        "ORB-TT-INTERSECTION-1": 1
+      },
+      "exact_characteristic_polynomial": "(7522152046767307311022080000000000*x**13 + 1186529935948414546083840000000000*x**12 - 9426676512689897236070400000000*x**11 - 9602426468507032800460800000000*x**10 - 305986457037283365224448000000*x**9 + 22848542844317001842688000000*x**8 + 1227360035237792584826880000*x**7 - 10536924660889147637760000*x**6 - 1403951179120362631987200*x**5 - 11591651719189914624000*x**4 + 447982780091925066240*x**3 + 6935088236048981856*x**2 + 5128060474319576*x - 142416566966371)/7522152046767307311022080000000000",
+      "exact_discriminant": "nonzero-certified-by-exact-gcd",
+      "exact_power_traces": [
+        "-53/336",
+        "77299/2822400",
+        "-652541/948326400",
+        "830148787/7965941760000",
+        "-703525351/178437095424000",
+        "10979172159379/22483074023424000000",
+        "-185642516660101/7554312871870464000000",
+        "164218169710111331/63456228123711897600000000",
+        "-3357804172238006657/21321292649567197593600000000",
+        "887122340859039803473/59699619418788153262080000000000",
+        "-6808990705636387216037/6686357374904273165352960000000000",
+        "45404841009149057261304211/505488617542763051300683776000000000000",
+        "-374105461738874744923005139/56614725164789461745676582912000000000000"
+      ],
+      "exact_square_free_gcd": "1",
+      "exact_transfer_recomputed": true,
+      "kronecker_multiplicity": 13,
+      "n": 8,
+      "sign_twist_transfer_used": true,
+      "source_partition": [
+        4,
+        2,
+        1,
+        1
+      ],
+      "status": "exact-coefficient-one-simple-spectrum",
+      "target_dimension": 64,
+      "target_partition": [
+        3,
+        2,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "characteristic_polynomial_square_free": true,
+      "coefficient_rule": {
+        "ORB-TC-INTERSECTION-1": 1,
+        "ORB-TT-INTERSECTION-1": 1
+      },
+      "exact_characteristic_polynomial": "(221451600726801659289600000000000000*x**14 - 20431546495627534041600000000000000*x**13 - 2142487744276518604224000000000000*x**12 + 182784140516278710360000000000000*x**11 + 8792310648345202382040000000000*x**10 - 595007409511344136860000000000*x**9 - 18800270680938922721700000000*x**8 + 879230969837906231700000000*x**7 + 20640546619081448157000000*x**6 - 605033394071360184000000*x**5 - 10452001582755154800000*x**4 + 176851327609051830000*x**3 + 1899991329995843700*x**2 - 16049479826885400*x - 49097481596693)/221451600726801659289600000000000000",
+      "exact_discriminant": "nonzero-certified-by-exact-gcd",
+      "exact_power_traces": [
+        "31/336",
+        "78637/2822400",
+        "936013/948326400",
+        "1000958801/7965941760000",
+        "4237852433/535311286272000",
+        "17592479620081/22483074023424000000",
+        "459173394718853/7554312871870464000000",
+        "50405815320776311/9065175446244556800000000",
+        "9971686108313411413/21321292649567197593600000000",
+        "2498740641590611370779/59699619418788153262080000000000",
+        "218980502424147063362981/60177216374138458488176640000000000",
+        "163939945527687991236692321/505488617542763051300683776000000000000",
+        "4863638575468891551064345333/169844175494368385237029748736000000000000",
+        "3645672647874824084900580505201/1426691074152694435991049889382400000000000000"
+      ],
+      "exact_square_free_gcd": "1",
+      "exact_transfer_recomputed": true,
+      "kronecker_multiplicity": 14,
+      "n": 8,
+      "sign_twist_transfer_used": false,
+      "source_partition": [
+        4,
+        2,
+        1,
+        1
+      ],
+      "status": "exact-coefficient-one-simple-spectrum",
+      "target_dimension": 70,
+      "target_partition": [
+        4,
+        3,
+        1
+      ]
+    },
+    {
+      "characteristic_polynomial_square_free": true,
+      "coefficient_rule": {
+        "ORB-TC-INTERSECTION-1": 1,
+        "ORB-TT-INTERSECTION-1": 1
+      },
+      "exact_characteristic_polynomial": "(221451600726801659289600000000000000*x**14 + 20431546495627534041600000000000000*x**13 - 2142487744276518604224000000000000*x**12 - 182784140516278710360000000000000*x**11 + 8792310648345202382040000000000*x**10 + 595007409511344136860000000000*x**9 - 18800270680938922721700000000*x**8 - 879230969837906231700000000*x**7 + 20640546619081448157000000*x**6 + 605033394071360184000000*x**5 - 10452001582755154800000*x**4 - 176851327609051830000*x**3 + 1899991329995843700*x**2 + 16049479826885400*x - 49097481596693)/221451600726801659289600000000000000",
+      "exact_discriminant": "nonzero-certified-by-exact-gcd",
+      "exact_power_traces": [
+        "-31/336",
+        "78637/2822400",
+        "-936013/948326400",
+        "1000958801/7965941760000",
+        "-4237852433/535311286272000",
+        "17592479620081/22483074023424000000",
+        "-459173394718853/7554312871870464000000",
+        "50405815320776311/9065175446244556800000000",
+        "-9971686108313411413/21321292649567197593600000000",
+        "2498740641590611370779/59699619418788153262080000000000",
+        "-218980502424147063362981/60177216374138458488176640000000000",
+        "163939945527687991236692321/505488617542763051300683776000000000000",
+        "-4863638575468891551064345333/169844175494368385237029748736000000000000",
+        "3645672647874824084900580505201/1426691074152694435991049889382400000000000000"
+      ],
+      "exact_square_free_gcd": "1",
+      "exact_transfer_recomputed": true,
+      "kronecker_multiplicity": 14,
+      "n": 8,
+      "sign_twist_transfer_used": true,
+      "source_partition": [
+        4,
+        2,
+        1,
+        1
+      ],
+      "status": "exact-coefficient-one-simple-spectrum",
+      "target_dimension": 70,
+      "target_partition": [
+        3,
+        2,
+        2,
+        1
+      ]
+    },
+    {
+      "characteristic_polynomial_square_free": true,
+      "coefficient_rule": {
+        "ORB-TC-INTERSECTION-1": 1,
+        "ORB-TT-INTERSECTION-1": 1
+      },
+      "exact_characteristic_polynomial": "(3213810078574899363840000000000*x**12 - 47824554740697907200000000000*x**11 - 66316715907101097984000000000*x**10 + 2393328872518117632000000000*x**9 + 308073900380066182656000000*x**8 - 14504057782456040064000000*x**7 - 384736993731926599680000*x**6 + 25699493048616545760000*x**5 - 24104663298831024000*x**4 - 13146794574698433600*x**3 + 136644701394306000*x**2 + 674075959801825*x - 6000823447621)/3213810078574899363840000000000",
+      "exact_discriminant": "nonzero-certified-by-exact-gcd",
+      "exact_power_traces": [
+        "5/336",
+        "7807/188160",
+        "-248387/189665280",
+        "503176327/1137991680000",
+        "-5389467913/178437095424000",
+        "36581802937/5664669696000000",
+        "-1505411636653109/2518104290623488000000",
+        "2188538321406730763/21152076041237299200000000",
+        "-47617392964267363019/4264258529913439518720000000",
+        "8811974289712208598563/5117110235896127422464000000000",
+        "-12179282681851655537490703/60177216374138458488176640000000000",
+        "14777021708363523619544563633/505488617542763051300683776000000000000"
+      ],
+      "exact_square_free_gcd": "1",
+      "exact_transfer_recomputed": true,
+      "kronecker_multiplicity": 12,
+      "n": 8,
+      "sign_twist_transfer_used": false,
+      "source_partition": [
+        4,
+        2,
+        1,
+        1
+      ],
+      "status": "exact-coefficient-one-simple-spectrum",
+      "target_dimension": 56,
+      "target_partition": [
+        4,
+        2,
+        2
+      ]
+    },
+    {
+      "characteristic_polynomial_square_free": true,
+      "coefficient_rule": {
+        "ORB-TC-INTERSECTION-1": 1,
+        "ORB-TT-INTERSECTION-1": 1
+      },
+      "exact_characteristic_polynomial": "(3213810078574899363840000000000*x**12 + 47824554740697907200000000000*x**11 - 66316715907101097984000000000*x**10 - 2393328872518117632000000000*x**9 + 308073900380066182656000000*x**8 + 14504057782456040064000000*x**7 - 384736993731926599680000*x**6 - 25699493048616545760000*x**5 - 24104663298831024000*x**4 + 13146794574698433600*x**3 + 136644701394306000*x**2 - 674075959801825*x - 6000823447621)/3213810078574899363840000000000",
+      "exact_discriminant": "nonzero-certified-by-exact-gcd",
+      "exact_power_traces": [
+        "-5/336",
+        "7807/188160",
+        "248387/189665280",
+        "503176327/1137991680000",
+        "5389467913/178437095424000",
+        "36581802937/5664669696000000",
+        "1505411636653109/2518104290623488000000",
+        "2188538321406730763/21152076041237299200000000",
+        "47617392964267363019/4264258529913439518720000000",
+        "8811974289712208598563/5117110235896127422464000000000",
+        "12179282681851655537490703/60177216374138458488176640000000000",
+        "14777021708363523619544563633/505488617542763051300683776000000000000"
+      ],
+      "exact_square_free_gcd": "1",
+      "exact_transfer_recomputed": true,
+      "kronecker_multiplicity": 12,
+      "n": 8,
+      "sign_twist_transfer_used": true,
+      "source_partition": [
+        4,
+        2,
+        1,
+        1
+      ],
+      "status": "exact-coefficient-one-simple-spectrum",
+      "target_dimension": 56,
+      "target_partition": [
+        3,
+        3,
+        1,
+        1
+      ]
+    },
+    {
+      "characteristic_polynomial_square_free": true,
+      "coefficient_rule": {
+        "ORB-TC-INTERSECTION-1": 1,
+        "ORB-TT-INTERSECTION-1": 1
+      },
+      "exact_characteristic_polynomial": "x*(132870960436080995573760000000000000000*x**16 - 3634602643306275957792000000000000000*x**14 + 32782319889146705237724000000000000*x**12 - 136815959821454845880760000000000*x**10 + 293781725440882260664950000000*x**8 - 333161105499228464710875000*x**6 + 196724339113211482938750*x**4 - 55447515829263839075*x**2 + 5673704032981373)/132870960436080995573760000000000000000",
+      "exact_discriminant": "nonzero-certified-by-exact-gcd",
+      "exact_power_traces": [
+        "0",
+        "5147/94080",
+        "0",
+        "2029850177/3982970880000",
+        "0",
+        "918878628377/138784407552000000",
+        "0",
+        "2983003177994099809/31728114061855948800000000",
+        "0",
+        "4897063092039010267841/3581977165127289195724800000000",
+        "0",
+        "5057671627159827630415730321/252744308771381525650341888000000000000",
+        "0",
+        "4651917016693079627299475507533/15852123046141049288789443215360000000000000",
+        "0",
+        "8669227952639728062499416054620773057/2013346443844282388070569603896442880000000000000000",
+        "0"
+      ],
+      "exact_square_free_gcd": "1",
+      "exact_transfer_recomputed": true,
+      "kronecker_multiplicity": 17,
+      "n": 8,
+      "sign_twist_transfer_used": false,
+      "source_partition": [
+        4,
+        2,
+        1,
+        1
+      ],
+      "status": "exact-coefficient-one-simple-spectrum",
+      "target_dimension": 90,
+      "target_partition": [
+        4,
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "characteristic_polynomial_square_free": true,
+      "coefficient_rule": {
+        "ORB-TC-INTERSECTION-1": 1,
+        "ORB-TT-INTERSECTION-1": 1
+      },
+      "exact_characteristic_polynomial": "(26896255545600000000*x**8 - 419415390828000000*x**6 + 1271004860790000*x**4 - 1114464987825*x**2 + 284225881)/26896255545600000000",
+      "exact_discriminant": "nonzero-certified-by-exact-gcd",
+      "exact_power_traces": [
+        "0",
+        "11003/352800",
+        "0",
+        "74011361/248935680000",
+        "0",
+        "599144691287/175649015808000000",
+        "0",
+        "5000784785569889/123937945554124800000000"
+      ],
+      "exact_square_free_gcd": "1",
+      "exact_transfer_recomputed": true,
+      "kronecker_multiplicity": 8,
+      "n": 8,
+      "sign_twist_transfer_used": false,
+      "source_partition": [
+        4,
+        2,
+        1,
+        1
+      ],
+      "status": "exact-coefficient-one-simple-spectrum",
+      "target_dimension": 42,
+      "target_partition": [
+        3,
+        3,
+        2
+      ]
+    }
+  ],
+  "status": "fixed-coefficient-exactly-separates-all-n8-targets-asymptotic-obligations-open",
+  "summary": "Exact orbit-state transfer proves TT1+TC1 has simple spectrum on all 20 nontrivial n=8 targets through multiplicity 17; no asymptotic or algorithmic claim follows.",
+  "theorem_contract": {
+    "algorithmic_speedup_claimed": false,
+    "asymptotic_claimed": false,
+    "character_contraction": "Contract each exact transfer distribution with the target central character projector and recover the characteristic polynomial by Newton identities.",
+    "parameterized_claimed": false,
+    "scope": "One n=8 source, fixed coefficient c=1, all 20 nontrivial Kronecker multiplicity targets through multiplicity 17.",
+    "state_quotient": "Canonicalize permutation pairs under simultaneous conjugation; S_8 has exactly 43,206 such states.",
+    "transfer_identity": "At coefficient c=1, use integer transition 5*sum(TT1 orbit)+sum(TC1 orbit) with denominator 1680 per additional power."
+  },
+  "transfer_kernel": {
+    "diagnostics": "degree=1 states=2 total_weight=2\ndegree=2 states=87 total_weight=6720\ndegree=3 states=1657 total_weight=22579200\ndegree=4 states=8193 total_weight=75866112000\ndegree=5 states=16492 total_weight=254910136320000\ndegree=6 states=21614 total_weight=856498058035200000\ndegree=7 states=21592 total_weight=2877833474998272000000\ndegree=8 states=21614 total_weight=9669520475994193920000000\ndegree=9 states=21592 total_weight=32489588799340491571200000000\ndegree=10 states=21614 total_weight=109165018365784051679232000000000\ndegree=11 states=21592 total_weight=366794461709034413642219520000000000\ndegree=12 states=21614 total_weight=1232429391342355629837857587200000000000\ndegree=13 states=21592 total_weight=4140962754910314916255201492992000000000000\ndegree=14 states=21614 total_weight=13913634856498658118617477016453120000000000000\ndegree=15 states=21592 total_weight=46749813117835491278554722775282483200000000000000\ndegree=16 states=21614 total_weight=157079372075927250695943868524949143552000000000000000\ndegree=17 states=21592 total_weight=527786690175115562338371398243829122334720000000000000000",
+    "integer_width": "boost::multiprecision::cpp_int through degree 17",
+    "language": "C++17",
+    "recomputed": true,
+    "source": "tools/pair_orbit_transfer.cpp",
+    "state_counts": {
+      "1": 2,
+      "2": 87,
+      "3": 1657,
+      "4": 8193,
+      "5": 16492,
+      "6": 21614,
+      "7": 21592,
+      "8": 21614,
+      "9": 21592,
+      "10": 21614,
+      "11": 21592,
+      "12": 21614,
+      "13": 21592,
+      "14": 21614,
+      "15": 21592,
+      "16": 21614,
+      "17": 21592
+    },
+    "total_weights": {
+      "1": 2,
+      "2": 6720,
+      "3": 22579200,
+      "4": 75866112000,
+      "5": 254910136320000,
+      "6": 856498058035200000,
+      "7": 2877833474998272000000,
+      "8": 9669520475994193920000000,
+      "9": 32489588799340491571200000000,
+      "10": 109165018365784051679232000000000,
+      "11": 366794461709034413642219520000000000,
+      "12": 1232429391342355629837857587200000000000,
+      "13": 4140962754910314916255201492992000000000000,
+      "14": 13913634856498658118617477016453120000000000000,
+      "15": 46749813117835491278554722775282483200000000000000,
+      "16": 157079372075927250695943868524949143552000000000000000,
+      "17": 527786690175115562338371398243829122334720000000000000000
+    }
+  }
+}

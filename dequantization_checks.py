@@ -267,6 +267,28 @@ COSET_STABLE_BRANCH_ACCESSIBILITY_PATH = Path(
 COSET_TYPICAL_IRREP_TRANSFER_PATH = Path(
     "research/representation/coset_typical_irrep_transfer_audit.json"
 )
+COSET_TYPICAL_COMMUTANT_MOMENT_PATH = Path(
+    "research/representation/coset_typical_commutant_moment_audit.json"
+)
+COSET_TYPICAL_CLASS_CONTRACTION_PATH = Path(
+    "research/representation/coset_typical_class_contraction_scaling.json"
+)
+COSET_TYPICAL_PORTFOLIO_COLLISION_PATH = Path(
+    "research/representation/coset_typical_portfolio_collision_certificate.json"
+)
+COSET_TYPICAL_INDEPENDENT_THIRD_GENERATOR_PATH = Path(
+    "research/representation/"
+    "coset_typical_independent_third_generator_certificate.json"
+)
+COSET_TYPICAL_HIGH_MULTIPLICITY_TRANSFER_PATH = Path(
+    "research/representation/coset_typical_high_multiplicity_transfer.json"
+)
+COSET_TYPICAL_FIXED_SEPARATOR_GAP_PATH = Path(
+    "research/representation/coset_typical_fixed_separator_gap_scaling.json"
+)
+COSET_TYPICAL_N9_LOW_MULTIPLICITY_PATH = Path(
+    "research/representation/coset_typical_n9_low_multiplicity_probe.json"
+)
 COSET_RECOUPLING_CAPABILITY_PATH = Path(
     "research/representation/coset_recoupling_capability_ledger.json"
 )
@@ -4657,6 +4679,263 @@ def findings_from_coset_typical_irrep_transfer(
     ]
 
 
+def findings_from_coset_typical_commutant_moments(
+    path: Path = COSET_TYPICAL_COMMUTANT_MOMENT_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    return [
+        DequantizationFinding(
+            id="DEQ-COSET-TYPICAL-FINITE-MOMENTS-NOT-UNIFORM-GAP",
+            created_at=utc_now(),
+            target_type="coset_typical_commutant_moment_audit",
+            target_id=str(path),
+            severity="high",
+            claim_under_test=(
+                "Finite non-scalar bounded-support commutant moments establish an efficient resolving measurement on typical irreps."
+            ),
+            evidence=(
+                f"Finite covered/uncovered blocks={metrics.get('finite_non_scalar_covered_count', 0)}/"
+                f"{metrics.get('finite_uncovered_count', 0)}; primary-generator exact scalar blocks="
+                f"{metrics.get('primary_generator_exact_scalar_block_count', 0)}; finite covariance-rank>=2/multiplicity-two-simple="
+                f"{metrics.get('finite_centered_covariance_rank_two_count', 0)}/"
+                f"{metrics.get('finite_multiplicity_two_simple_spectrum_count', 0)}; uniform non-scalar/gap/simple-spectrum "
+                f"theorems={metrics.get('uniform_typical_commutant_non_scalar_theorem_count', 0)}/"
+                f"{metrics.get('uniform_typical_commutant_gap_theorem_count', 0)}/"
+                f"{metrics.get('uniform_typical_commutant_simple_spectrum_theorem_count', 0)}; decoders="
+                f"{metrics.get('typical_label_hidden_involution_decoder_count', 0)}."
+            ),
+            required_action=(
+                "Derive an all-n class-algebra contraction, prove simple joint spectrum with inverse-polynomial separation "
+                "on naturally sampled labels, synthesize the coherent transform, and show that its outcomes encode the hidden involution."
+            ),
+            blocks_speedup_claim=True,
+        )
+    ]
+
+
+def findings_from_coset_typical_class_contraction(
+    path: Path = COSET_TYPICAL_CLASS_CONTRACTION_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    return [
+        DequantizationFinding(
+            id="DEQ-COSET-TYPICAL-SINGLE-GENERATOR-SCALAR-BLOCKS",
+            created_at=utc_now(),
+            target_type="coset_typical_class_contraction_scaling",
+            target_id=str(path),
+            severity="critical",
+            claim_under_test=(
+                "The primary bounded-support orbit average alone uniformly resolves typical Kronecker multiplicity spaces."
+            ),
+            evidence=(
+                f"Exact class-compressed records through n={metrics.get('maximum_n', 0)} find "
+                f"{metrics.get('total_exact_scalar_block_count', 0)} scalar blocks; single-generator uniformity "
+                f"falsifications={metrics.get('single_primary_generator_uniformity_falsification_count', 0)}. "
+                f"Finite two-generator non-scalar coverage/common scalar blocks/covariance-rank-two blocks="
+                f"{metrics.get('finite_portfolio_non_scalar_covered_count', 0)}/"
+                f"{metrics.get('finite_portfolio_common_scalar_block_count', 0)}/"
+                f"{metrics.get('finite_portfolio_covariance_rank_two_count', 0)}. "
+                f"All-n symbolic formulas/portfolio joint-gap theorems/decoders="
+                f"{metrics.get('all_n_symbolic_class_contraction_formula_count', 0)}/"
+                f"{metrics.get('uniform_portfolio_joint_gap_theorem_count', 0)}/"
+                f"{metrics.get('typical_label_hidden_involution_decoder_count', 0)}."
+            ),
+            required_action=(
+                "Abandon every one-generator extrapolation. Extend exact contractions to a fixed portfolio, test "
+                "joint-spectrum collisions, and require all-n inverse-polynomial separation plus a coherent decoder."
+            ),
+            blocks_speedup_claim=True,
+        )
+    ]
+
+
+def findings_from_coset_typical_portfolio_collision(
+    path: Path = COSET_TYPICAL_PORTFOLIO_COLLISION_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    return [
+        DequantizationFinding(
+            id="DEQ-COSET-TYPICAL-TWO-GENERATOR-REPEATED-ROOT-COLLISION",
+            created_at=utc_now(),
+            target_type="coset_typical_portfolio_collision_certificate",
+            target_id=str(path),
+            severity="critical",
+            claim_under_test=(
+                "A fixed linear combination of TC2 and TT1 resolves typical multiplicity spaces after surviving n<=7 dense controls."
+            ),
+            evidence=(
+                f"Exact repeated-root targets={metrics.get('repeated_zero_eigenvalue_target_count', 0)}; two-generator "
+                f"simple-spectrum targets={metrics.get('two_generator_linear_span_simple_spectrum_target_count', 0)}; "
+                f"finite coefficient rules falsified at n=8={metrics.get('finite_common_coefficient_rules_falsified_at_n8', 0)}; "
+                f"minimum required portfolio size={metrics.get('minimum_required_portfolio_generator_count_on_certified_targets', 0)}; "
+                f"disjoint-third repeated-root/simple-spectrum targets="
+                f"{metrics.get('disjoint_third_generator_repeated_root_target_count', 0)}/"
+                f"{metrics.get('tested_three_generator_span_simple_spectrum_target_count', 0)}."
+            ),
+            required_action=(
+                "Discard the two-generator linear span. Add a genuinely independent third generator only after checking "
+                "its exact characteristic polynomial on both collision targets, then prove all-n gaps and decoding."
+            ),
+            blocks_speedup_claim=True,
+        )
+    ]
+
+
+def findings_from_coset_typical_independent_third_generator(
+    path: Path = COSET_TYPICAL_INDEPENDENT_THIRD_GENERATOR_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    return [
+        DequantizationFinding(
+            id="DEQ-COSET-TYPICAL-FINITE-THIRD-GENERATOR-REPAIR-NOT-SPEEDUP",
+            created_at=utc_now(),
+            target_type="coset_typical_independent_third_generator_certificate",
+            target_id=str(path),
+            severity="critical",
+            claim_under_test=(
+                "Exact simple spectrum on two repaired n=8 blocks implies a useful uniform typical-irrep measurement."
+            ),
+            evidence=(
+                f"Repaired collision targets={metrics.get('certified_n8_collision_target_repair_count', 0)}; "
+                f"exact low-multiplicity target coverage="
+                f"{metrics.get('certified_n8_low_multiplicity_simple_spectrum_target_count', 0)}/"
+                f"{metrics.get('n8_nontrivial_multiplicity_target_count', 0)}; "
+                f"unaudited higher-multiplicity targets="
+                f"{metrics.get('n8_unaudited_higher_multiplicity_target_count', 0)}; "
+                f"all-n simple-spectrum theorems={metrics.get('all_n_simple_spectrum_theorem_count', 0)}; "
+                f"all-target coverage theorems={metrics.get('all_typical_target_coverage_theorem_count', 0)}; "
+                f"inverse-polynomial gap theorems={metrics.get('inverse_polynomial_gap_theorem_count', 0)}; "
+                f"coherent transforms/decoders={metrics.get('coherent_typical_multiplicity_transform_count', 0)}/"
+                f"{metrics.get('typical_label_hidden_involution_decoder_count', 0)}."
+            ),
+            required_action=(
+                "Retain TC1 as a viable independent direction, but develop an exact higher-multiplicity transfer "
+                "method for the remaining n=8 targets, test adjacent sizes and normalized gap decay, and supply a coherent decoder."
+            ),
+            blocks_speedup_claim=True,
+        )
+    ]
+
+
+def findings_from_coset_typical_high_multiplicity_transfer(
+    path: Path = COSET_TYPICAL_HIGH_MULTIPLICITY_TRANSFER_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    return [
+        DequantizationFinding(
+            id="DEQ-COSET-TYPICAL-FULL-N8-SEPARATION-NOT-UNIFORM-RESOLVER",
+            created_at=utc_now(),
+            target_type="coset_typical_high_multiplicity_transfer",
+            target_id=str(path),
+            severity="critical",
+            claim_under_test=(
+                "A fixed coefficient with exact simple spectrum on every n=8 target supplies a uniform typical-irrep resolver."
+            ),
+            evidence=(
+                f"Certified n=8 targets="
+                f"{metrics.get('certified_n8_simple_spectrum_target_count', 0)}/"
+                f"{metrics.get('n8_nontrivial_multiplicity_target_count', 0)}; "
+                f"maximum certified multiplicity={metrics.get('maximum_certified_kronecker_multiplicity', 0)}; "
+                f"unaudited n=8 targets={metrics.get('n8_unaudited_target_count', 0)}; "
+                f"parameterized/all-n/gap theorems="
+                f"{metrics.get('parameterized_all_coefficient_theorem_count', 0)}/"
+                f"{metrics.get('all_n_simple_spectrum_theorem_count', 0)}/"
+                f"{metrics.get('inverse_polynomial_gap_theorem_count', 0)}."
+            ),
+            required_action=(
+                "Move to n=9, vary coefficients, and measure normalized exact gap decay. Reject the mechanism on "
+                "any repeated root or superpolynomial gap trend before circuit or decoder work."
+            ),
+            blocks_speedup_claim=True,
+        )
+    ]
+
+
+def findings_from_coset_typical_fixed_separator_gaps(
+    path: Path = COSET_TYPICAL_FIXED_SEPARATOR_GAP_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    return [
+        DequantizationFinding(
+            id="DEQ-COSET-TYPICAL-FOUR-SIZE-GAP-TREND-NOT-LOWER-BOUND",
+            created_at=utc_now(),
+            target_type="coset_typical_fixed_separator_gap_scaling",
+            target_id=str(path),
+            severity="critical",
+            claim_under_test=(
+                "Finite gap survival through n=8 establishes an efficient all-n eigenlabel transform."
+            ),
+            evidence=(
+                f"Finite all-block split sizes="
+                f"{metrics.get('finite_all_block_simple_spectrum_size_count', 0)}/"
+                f"{metrics.get('finite_size_count', 0)}; exact n=8 normalized gap lower bound="
+                f"{metrics.get('n8_certified_minimum_lcu_normalized_gap_lower_bound', 0)}; "
+                f"descriptive fitted exponent={metrics.get('descriptive_log_log_gap_fit_exponent', 0)}; "
+                f"all-n/inverse-polynomial theorems="
+                f"{metrics.get('all_n_simple_spectrum_theorem_count', 0)}/"
+                f"{metrics.get('inverse_polynomial_normalized_gap_theorem_count', 0)}."
+            ),
+            required_action=(
+                "Test n=9 exactly, then derive a symbolic recurrence and a proved normalized root-separation bound. "
+                "Do not use the finite fitted exponent as complexity evidence."
+            ),
+            blocks_speedup_claim=True,
+        )
+    ]
+
+
+def findings_from_coset_typical_n9_low_multiplicity(
+    path: Path = COSET_TYPICAL_N9_LOW_MULTIPLICITY_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    return [
+        DequantizationFinding(
+            id="DEQ-COSET-TYPICAL-N9-LOW-MULTIPLICITY-NOT-ADJACENT-ROBUSTNESS",
+            created_at=utc_now(),
+            target_type="coset_typical_n9_low_multiplicity_probe",
+            target_id=str(path),
+            severity="critical",
+            claim_under_test=(
+                "Survival on low-multiplicity n=9 targets establishes adjacent-size robustness of the fixed separator."
+            ),
+            evidence=(
+                f"Certified targets={metrics.get('low_multiplicity_simple_spectrum_target_count', 0)}/"
+                f"{metrics.get('n9_nontrivial_multiplicity_target_count', 0)}; "
+                f"unaudited targets={metrics.get('n9_unaudited_higher_multiplicity_target_count', 0)}; "
+                f"certified multiplicity={metrics.get('maximum_certified_kronecker_multiplicity', 0)} versus "
+                f"maximum {metrics.get('maximum_n9_kronecker_multiplicity', 0)}; all-target theorem="
+                f"{metrics.get('all_n9_target_simple_spectrum_theorem_count', 0)}."
+            ),
+            required_action=(
+                "Extend exact n=9 transfer in increasing multiplicity order and reject the fixed coefficient on the "
+                "first repeated root; do not extrapolate from the easiest four blocks."
+            ),
+            blocks_speedup_claim=True,
+        )
+    ]
+
+
 def findings_from_coset_recoupling_capability_ledger(
     path: Path = COSET_RECOUPLING_CAPABILITY_PATH,
 ) -> list[DequantizationFinding]:
@@ -4750,7 +5029,13 @@ def findings_from_coset_multiplicity_commutant_search(
                 f"{metrics.get('record_count', 0)}, maximum multiplicity="
                 f"{metrics.get('maximum_kronecker_multiplicity', 0)}, minimum observed LCU-normalized gap="
                 f"{metrics.get('minimum_observed_lcu_normalized_gap', 0)}, restricted all-n gap theorems="
-                f"{restricted_theorems}, but general gap theorems/polynomial transforms="
+                f"{restricted_theorems}. Finite low-support portfolio all-block splits/noncommuting targets/minimum "
+                f"normalized gap={metrics.get('finite_low_support_portfolio_all_block_split_count', 0)}/"
+                f"{metrics.get('maximum_low_support_portfolio_noncommuting_target_count', 0)}/"
+                f"{metrics.get('minimum_finite_low_support_portfolio_lcu_normalized_gap', 0)}. Finite common coefficient "
+                f"rules={metrics.get('finite_common_low_support_coefficient_rule_count', 0)} with best finite minimum "
+                f"normalized gap={metrics.get('best_finite_common_low_support_minimum_normalized_gap', 0)}, but general "
+                f"gap theorems/polynomial transforms="
                 f"{certificate_metrics.get('general_sector_gap_theorem_count', 0)}/"
                 f"{metrics.get('coherent_polynomial_multiplicity_transform_count', 0)}."
             ),
@@ -7628,6 +7913,13 @@ def build_dequantization_report() -> dict[str, Any]:
         *findings_from_coset_stable_three_copy_frame(),
         *findings_from_coset_stable_branch_accessibility(),
         *findings_from_coset_typical_irrep_transfer(),
+        *findings_from_coset_typical_commutant_moments(),
+        *findings_from_coset_typical_class_contraction(),
+        *findings_from_coset_typical_portfolio_collision(),
+        *findings_from_coset_typical_independent_third_generator(),
+        *findings_from_coset_typical_high_multiplicity_transfer(),
+        *findings_from_coset_typical_fixed_separator_gaps(),
+        *findings_from_coset_typical_n9_low_multiplicity(),
         *findings_from_coset_jucys_murphy_label_transform(),
         *findings_from_coset_multiplicity_commutant_search(),
         *findings_from_coset_recoupling_capability_ledger(),

@@ -80,6 +80,22 @@ class MultiplicityCommutantSectorRecord:
     generators: list[OrbitGeneratorRecord]
     noncommuting_generator_pair_count: int
     maximum_generator_commutator_norm: float
+    low_support_portfolio_noncommuting_label_count: int
+    low_support_portfolio_noncommuting_target_count: int
+    minimum_positive_low_support_portfolio_commutator_norm: float
+    low_support_portfolio_best_coefficients: dict[str, int]
+    low_support_portfolio_lcu_normalization: int
+    low_support_portfolio_fully_split_label_count: int
+    low_support_portfolio_fully_split_target_count: int
+    low_support_portfolio_all_blocks_split: bool
+    low_support_portfolio_minimum_raw_gap: float
+    low_support_portfolio_minimum_lcu_normalized_gap: float
+    low_support_fully_splitting_candidate_normalized_gaps: dict[str, float]
+    low_support_uniform_formula_coefficients: dict[str, int]
+    low_support_uniform_formula_lcu_normalization: int
+    low_support_uniform_formula_fully_split_label_count: int
+    low_support_uniform_formula_all_blocks_split: bool
+    low_support_uniform_formula_minimum_lcu_normalized_gap: float
     coefficient_candidate_count: int
     best_coefficients: dict[str, int]
     best_lcu_normalization: int
@@ -107,6 +123,9 @@ class MultiplicityCommutantReport:
     theorem_contract: dict[str, object]
     circuit_contract: dict[str, object]
     records: list[MultiplicityCommutantSectorRecord]
+    finite_common_low_support_coefficients: list[dict[str, int]]
+    best_finite_common_low_support_coefficients: dict[str, int]
+    best_finite_common_low_support_minimum_normalized_gap: float
     headline_metrics: dict[str, int | float]
     claim_gate: dict[str, bool | str]
     status: str
@@ -146,7 +165,7 @@ def _orbit_sum(
     dimension = hook_length_dimension(left_partition) * hook_length_dimension(right_partition)
     operator = np.zeros((dimension, dimension))
     term_count = 0
-    if generator_id == "ORB-TT-DISJOINT":
+    if generator_id.startswith("ORB-TT-"):
         left_rows = _transpositions(left_partition)
         right_rows = _transpositions(right_partition)
         left_type, right_type, support_bound = "2", "2", 4
@@ -174,6 +193,7 @@ def bounded_support_orbit_generators(
         raise ValueError("partitions must have equal size")
     specifications = [
         ("ORB-TT-DISJOINT", 0),
+        ("ORB-TT-INTERSECTION-1", 1),
         ("ORB-TC-INTERSECTION-0", 0),
         ("ORB-TC-INTERSECTION-1", 1),
         ("ORB-TC-INTERSECTION-2", 2),
@@ -280,6 +300,7 @@ def audit_multiplicity_commutant_sector(
         label: [eigenvectors[:, indices].T @ operator @ eigenvectors[:, indices] for operator in operators]
         for label, indices in nontrivial.items()
     }
+    target_by_label = _encoded_label_targets(n, base)
     term_counts = [record.term_count for record in generator_records]
     candidates = list(_coefficient_candidates(len(operators), coefficient_bound))
     best_score: tuple[int, float, int] | None = None
@@ -350,6 +371,79 @@ def audit_multiplicity_commutant_sector(
         for left in range(len(operators))
         for right in range(left + 1, len(operators))
     ]
+    low_support_names = ("ORB-TC-INTERSECTION-2", "ORB-TT-INTERSECTION-1")
+    low_support_indices = [names.index(name) for name in low_support_names]
+    low_support_commutators = {
+        label: float(
+            np.linalg.norm(
+                blocks[low_support_indices[0]] @ blocks[low_support_indices[1]]
+                - blocks[low_support_indices[1]] @ blocks[low_support_indices[0]]
+            )
+        )
+        for label, blocks in restricted.items()
+    }
+    low_support_noncommuting_labels = {
+        label for label, norm in low_support_commutators.items() if norm > 1e-7
+    }
+    low_support_candidates = list(_coefficient_candidates(2, coefficient_bound))
+    low_support_term_counts = [term_counts[index] for index in low_support_indices]
+    low_support_best_score: tuple[int, float, int] | None = None
+    low_support_best_coefficients = (0, 0)
+    low_support_best_gaps: dict[int, float] = {}
+    low_support_best_alpha = 0
+    low_support_splitting_candidates: dict[str, float] = {}
+    for coefficients in low_support_candidates:
+        alpha = sum(
+            abs(value) * term_count
+            for value, term_count in zip(coefficients, low_support_term_counts)
+        )
+        gaps: dict[int, float] = {}
+        normalized_minimum = math.inf
+        for label, blocks in restricted.items():
+            spectrum = np.linalg.eigvalsh(
+                sum(
+                    value * blocks[index]
+                    for value, index in zip(coefficients, low_support_indices)
+                )
+            )
+            gap = float(min(np.diff(spectrum), default=math.inf))
+            gaps[label] = gap
+            normalized_minimum = min(normalized_minimum, gap / alpha)
+        split_count = sum(gap > 1e-7 for gap in gaps.values())
+        if split_count == len(restricted):
+            low_support_splitting_candidates[
+                f"{coefficients[0]},{coefficients[1]}"
+            ] = normalized_minimum
+        score = (
+            split_count,
+            normalized_minimum,
+            -sum(abs(value) for value in coefficients),
+        )
+        if low_support_best_score is None or score > low_support_best_score:
+            low_support_best_score = score
+            low_support_best_coefficients = coefficients
+            low_support_best_gaps = gaps
+            low_support_best_alpha = alpha
+    low_support_split_targets = {
+        target_by_label[label]
+        for label, gap in low_support_best_gaps.items()
+        if gap > 1e-7
+    }
+    low_support_uniform_coefficients = (1, 1)
+    low_support_uniform_alpha = sum(low_support_term_counts)
+    low_support_uniform_gaps: dict[int, float] = {}
+    for label, blocks in restricted.items():
+        spectrum = np.linalg.eigvalsh(
+            sum(
+                value * blocks[index]
+                for value, index in zip(
+                    low_support_uniform_coefficients, low_support_indices
+                )
+            )
+        )
+        low_support_uniform_gaps[label] = float(
+            min(np.diff(spectrum), default=math.inf)
+        )
     multiplicities = [
         kronecker_coefficient(left_partition, right_partition, target)
         for target in integer_partitions(n)
@@ -368,6 +462,63 @@ def audit_multiplicity_commutant_sector(
         generators=generator_records,
         noncommuting_generator_pair_count=sum(value > 1e-7 for value in pair_commutators),
         maximum_generator_commutator_norm=max(pair_commutators, default=0.0),
+        low_support_portfolio_noncommuting_label_count=len(
+            low_support_noncommuting_labels
+        ),
+        low_support_portfolio_noncommuting_target_count=len(
+            {target_by_label[label] for label in low_support_noncommuting_labels}
+        ),
+        minimum_positive_low_support_portfolio_commutator_norm=min(
+            (
+                norm
+                for norm in low_support_commutators.values()
+                if norm > 1e-7
+            ),
+            default=0.0,
+        ),
+        low_support_portfolio_best_coefficients=dict(
+            zip(low_support_names, low_support_best_coefficients)
+        ),
+        low_support_portfolio_lcu_normalization=low_support_best_alpha,
+        low_support_portfolio_fully_split_label_count=sum(
+            gap > 1e-7 for gap in low_support_best_gaps.values()
+        ),
+        low_support_portfolio_fully_split_target_count=len(
+            low_support_split_targets
+        ),
+        low_support_portfolio_all_blocks_split=(
+            bool(nontrivial)
+            and all(gap > 1e-7 for gap in low_support_best_gaps.values())
+        ),
+        low_support_portfolio_minimum_raw_gap=min(
+            low_support_best_gaps.values(), default=0.0
+        ),
+        low_support_portfolio_minimum_lcu_normalized_gap=(
+            min(low_support_best_gaps.values(), default=0.0)
+            / low_support_best_alpha
+            if low_support_best_alpha
+            else 0.0
+        ),
+        low_support_fully_splitting_candidate_normalized_gaps=(
+            low_support_splitting_candidates
+        ),
+        low_support_uniform_formula_coefficients=dict(
+            zip(low_support_names, low_support_uniform_coefficients)
+        ),
+        low_support_uniform_formula_lcu_normalization=low_support_uniform_alpha,
+        low_support_uniform_formula_fully_split_label_count=sum(
+            gap > 1e-7 for gap in low_support_uniform_gaps.values()
+        ),
+        low_support_uniform_formula_all_blocks_split=(
+            bool(nontrivial)
+            and all(gap > 1e-7 for gap in low_support_uniform_gaps.values())
+        ),
+        low_support_uniform_formula_minimum_lcu_normalized_gap=(
+            min(low_support_uniform_gaps.values(), default=0.0)
+            / low_support_uniform_alpha
+            if low_support_uniform_alpha
+            else 0.0
+        ),
         coefficient_candidate_count=len(candidates),
         best_coefficients=dict(zip(names, best_coefficients)),
         best_lcu_normalization=best_alpha,
@@ -397,7 +548,7 @@ def audit_multiplicity_commutant_sector(
 
 
 def build_multiplicity_commutant_report(
-    n_values: Sequence[int] = (5, 6), coefficient_bound: int = 2
+    n_values: Sequence[int] = (5, 6, 7), coefficient_bound: int = 2
 ) -> MultiplicityCommutantReport:
     records = []
     for n in n_values:
@@ -410,6 +561,39 @@ def build_multiplicity_commutant_report(
                 )
             )
     all_split = all(record.all_finite_multiplicity_blocks_split for record in records)
+    common_low_support_keys = set(
+        records[0].low_support_fully_splitting_candidate_normalized_gaps
+    )
+    for record in records[1:]:
+        common_low_support_keys.intersection_update(
+            record.low_support_fully_splitting_candidate_normalized_gaps
+        )
+    common_low_support_gaps = {
+        key: min(
+            record.low_support_fully_splitting_candidate_normalized_gaps[key]
+            for record in records
+        )
+        for key in common_low_support_keys
+    }
+    best_common_key = max(
+        common_low_support_gaps,
+        key=lambda key: (common_low_support_gaps[key], key),
+        default=None,
+    )
+    common_low_support_coefficients = [
+        dict(zip(("ORB-TC-INTERSECTION-2", "ORB-TT-INTERSECTION-1"), map(int, key.split(","))))
+        for key in sorted(common_low_support_keys)
+    ]
+    best_common_coefficients = (
+        dict(
+            zip(
+                ("ORB-TC-INTERSECTION-2", "ORB-TT-INTERSECTION-1"),
+                map(int, best_common_key.split(",")),
+            )
+        )
+        if best_common_key is not None
+        else {}
+    )
     metrics: dict[str, int | float] = {
         "record_count": len(records),
         "maximum_n": max(n_values),
@@ -437,6 +621,40 @@ def build_multiplicity_commutant_report(
         "maximum_target_tableau_spectrum_consistency_residual": max(
             record.target_tableau_spectrum_consistency_residual for record in records
         ),
+        "maximum_noncommuting_generator_pair_count": max(
+            record.noncommuting_generator_pair_count for record in records
+        ),
+        "maximum_finite_typical_source_dimension": max(
+            hook_length_dimension(record.left_partition) for record in records
+        ),
+        "maximum_nontrivial_multiplicity_label_count": max(
+            record.nontrivial_multiplicity_label_count for record in records
+        ),
+        "finite_low_support_portfolio_all_block_split_count": sum(
+            record.low_support_portfolio_all_blocks_split for record in records
+        ),
+        "maximum_low_support_portfolio_noncommuting_target_count": max(
+            record.low_support_portfolio_noncommuting_target_count
+            for record in records
+        ),
+        "minimum_finite_low_support_portfolio_lcu_normalized_gap": min(
+            record.low_support_portfolio_minimum_lcu_normalized_gap
+            for record in records
+        ),
+        "finite_low_support_uniform_formula_all_block_split_count": sum(
+            record.low_support_uniform_formula_all_blocks_split
+            for record in records
+        ),
+        "minimum_finite_low_support_uniform_formula_lcu_normalized_gap": min(
+            record.low_support_uniform_formula_minimum_lcu_normalized_gap
+            for record in records
+        ),
+        "finite_common_low_support_coefficient_rule_count": len(
+            common_low_support_keys
+        ),
+        "best_finite_common_low_support_minimum_normalized_gap": (
+            common_low_support_gaps.get(best_common_key, 0.0)
+        ),
     }
     return MultiplicityCommutantReport(
         created_at=utc_now(),
@@ -450,7 +668,9 @@ def build_multiplicity_commutant_report(
             "multiplicity_action": (
                 "By Schur's lemma A_O=direct_sum_nu I_(V_nu) tensor M_(O,nu)."
             ),
-            "searched_support": "disjoint (2,2) and support-intersection-stratified (2,3) permutation pairs",
+            "searched_support": (
+                "disjoint and shared-point (2,2), plus support-intersection-stratified (2,3) permutation pairs"
+            ),
             "uniform_formula": "H_n=ORB-TC-INTERSECTION-2 with coefficient one for every n and sector",
             "orbit_term_bound": "O(n^5)",
             "simple_finite_spectrum_is_asymptotic_gap_theorem": False,
@@ -466,6 +686,11 @@ def build_multiplicity_commutant_report(
             "unproved_requirement": "all-n inverse-polynomial normalized gap on every reduction-relevant sector",
         },
         records=records,
+        finite_common_low_support_coefficients=common_low_support_coefficients,
+        best_finite_common_low_support_coefficients=best_common_coefficients,
+        best_finite_common_low_support_minimum_normalized_gap=(
+            common_low_support_gaps.get(best_common_key, 0.0)
+        ),
         headline_metrics=metrics,
         claim_gate={
             "bounded_support_commutant_block_encoding_polynomial": True,
@@ -500,7 +725,7 @@ def build_multiplicity_commutant_report(
 
 def write_multiplicity_commutant_report(
     output_path: Path = COSET_MULTIPLICITY_COMMUTANT_PATH,
-    n_values: Sequence[int] = (5, 6),
+    n_values: Sequence[int] = (5, 6, 7),
     coefficient_bound: int = 2,
     write_registry: bool = True,
     registry_experiment_id: str = DEFAULT_EXPERIMENT_ID,

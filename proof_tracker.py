@@ -195,6 +195,28 @@ COSET_STABLE_BRANCH_ACCESSIBILITY_PATH = Path(
 COSET_TYPICAL_IRREP_TRANSFER_PATH = Path(
     "research/representation/coset_typical_irrep_transfer_audit.json"
 )
+COSET_TYPICAL_COMMUTANT_MOMENT_PATH = Path(
+    "research/representation/coset_typical_commutant_moment_audit.json"
+)
+COSET_TYPICAL_CLASS_CONTRACTION_PATH = Path(
+    "research/representation/coset_typical_class_contraction_scaling.json"
+)
+COSET_TYPICAL_PORTFOLIO_COLLISION_PATH = Path(
+    "research/representation/coset_typical_portfolio_collision_certificate.json"
+)
+COSET_TYPICAL_INDEPENDENT_THIRD_GENERATOR_PATH = Path(
+    "research/representation/"
+    "coset_typical_independent_third_generator_certificate.json"
+)
+COSET_TYPICAL_HIGH_MULTIPLICITY_TRANSFER_PATH = Path(
+    "research/representation/coset_typical_high_multiplicity_transfer.json"
+)
+COSET_TYPICAL_FIXED_SEPARATOR_GAP_PATH = Path(
+    "research/representation/coset_typical_fixed_separator_gap_scaling.json"
+)
+COSET_TYPICAL_N9_LOW_MULTIPLICITY_PATH = Path(
+    "research/representation/coset_typical_n9_low_multiplicity_probe.json"
+)
 COSET_RECOUPLING_CAPABILITY_PATH = Path(
     "research/representation/coset_recoupling_capability_ledger.json"
 )
@@ -919,6 +941,85 @@ def lemma_templates(candidate: dict[str, Any]) -> list[LemmaRecord]:
         except (json.JSONDecodeError, OSError):
             typical_irrep_transfer = {}
         typical_irrep_transfer_metrics = typical_irrep_transfer.get(
+            "headline_metrics", {}
+        )
+        try:
+            typical_commutant_moments = (
+                json.loads(COSET_TYPICAL_COMMUTANT_MOMENT_PATH.read_text())
+                if COSET_TYPICAL_COMMUTANT_MOMENT_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            typical_commutant_moments = {}
+        typical_commutant_moment_metrics = typical_commutant_moments.get(
+            "headline_metrics", {}
+        )
+        try:
+            typical_class_contraction = (
+                json.loads(COSET_TYPICAL_CLASS_CONTRACTION_PATH.read_text())
+                if COSET_TYPICAL_CLASS_CONTRACTION_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            typical_class_contraction = {}
+        typical_class_contraction_metrics = typical_class_contraction.get(
+            "headline_metrics", {}
+        )
+        try:
+            typical_portfolio_collision = (
+                json.loads(COSET_TYPICAL_PORTFOLIO_COLLISION_PATH.read_text())
+                if COSET_TYPICAL_PORTFOLIO_COLLISION_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            typical_portfolio_collision = {}
+        typical_portfolio_collision_metrics = typical_portfolio_collision.get(
+            "headline_metrics", {}
+        )
+        try:
+            typical_independent_third_generator = (
+                json.loads(
+                    COSET_TYPICAL_INDEPENDENT_THIRD_GENERATOR_PATH.read_text()
+                )
+                if COSET_TYPICAL_INDEPENDENT_THIRD_GENERATOR_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            typical_independent_third_generator = {}
+        typical_independent_third_generator_metrics = (
+            typical_independent_third_generator.get("headline_metrics", {})
+        )
+        try:
+            typical_high_multiplicity_transfer = (
+                json.loads(COSET_TYPICAL_HIGH_MULTIPLICITY_TRANSFER_PATH.read_text())
+                if COSET_TYPICAL_HIGH_MULTIPLICITY_TRANSFER_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            typical_high_multiplicity_transfer = {}
+        typical_high_multiplicity_transfer_metrics = (
+            typical_high_multiplicity_transfer.get("headline_metrics", {})
+        )
+        try:
+            typical_fixed_separator_gaps = (
+                json.loads(COSET_TYPICAL_FIXED_SEPARATOR_GAP_PATH.read_text())
+                if COSET_TYPICAL_FIXED_SEPARATOR_GAP_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            typical_fixed_separator_gaps = {}
+        typical_fixed_separator_gap_metrics = typical_fixed_separator_gaps.get(
+            "headline_metrics", {}
+        )
+        try:
+            typical_n9_low_multiplicity = (
+                json.loads(COSET_TYPICAL_N9_LOW_MULTIPLICITY_PATH.read_text())
+                if COSET_TYPICAL_N9_LOW_MULTIPLICITY_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            typical_n9_low_multiplicity = {}
+        typical_n9_low_multiplicity_metrics = typical_n9_low_multiplicity.get(
             "headline_metrics", {}
         )
         try:
@@ -1870,6 +1971,333 @@ def lemma_templates(candidate: dict[str, Any]) -> list[LemmaRecord]:
                     falsification_test=(
                         "Sample natural labels, require partition-description-uniform circuits, certify normalized "
                         "gaps across broad Kronecker support, price branch mass, and reject any proof using fixed tails."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-COSET-TYPICAL-COMMUTANT-JOINT-SEPARATION",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "A constant-size bounded-support orbit portfolio has simple joint spectrum with "
+                        "inverse-polynomial separation on naturally sampled high-dimensional Kronecker multiplicity blocks."
+                    ),
+                    depends_on=["PO-MEASUREMENT", "PO-COMPLEXITY", "PO-NO-GO"],
+                    status=(
+                        "proved-uniform-typical-commutant-joint-separation"
+                        if int(
+                            typical_commutant_moment_metrics.get(
+                                "uniform_typical_commutant_gap_theorem_count", 0
+                            )
+                            or 0
+                        )
+                        and int(
+                            typical_commutant_moment_metrics.get(
+                                "uniform_typical_commutant_simple_spectrum_theorem_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        else (
+                            "blocked-finite-support-three-portfolio-coverage-no-joint-separation"
+                            if int(
+                                typical_class_contraction_metrics.get(
+                                    "finite_portfolio_non_scalar_covered_count", 0
+                                )
+                                or 0
+                            )
+                            and int(
+                                typical_class_contraction_metrics.get(
+                                    "finite_portfolio_common_scalar_block_count", 0
+                                )
+                                or 0
+                            )
+                            == 0
+                            else (
+                                "blocked-finite-character-moments-non-scalar-only"
+                                if int(
+                                    typical_commutant_moment_metrics.get(
+                                        "finite_non_scalar_covered_count", 0
+                                    )
+                                    or 0
+                                )
+                                else "blocked-typical-commutant-moment-audit-missing"
+                            )
+                        )
+                    ),
+                    falsification_test=(
+                        "Replace factorial enumeration by an all-n class-algebra formula; test exact scalar blocks, "
+                        "prove simple joint spectrum and inverse-polynomial minimum separation on a natural-label set, "
+                        "then give a coherent label-adaptive implementation."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-COSET-TYPICAL-PRIMARY-GENERATOR-UNIFORMITY",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "The transposition/3-cycle intersection-two orbit average is non-scalar on every naturally "
+                        "relevant typical Kronecker multiplicity block for all n."
+                    ),
+                    depends_on=["PO-MEASUREMENT", "PO-COMPLEXITY", "PO-NO-GO"],
+                    status=(
+                        "falsified-exact-typical-scalar-blocks"
+                        if int(
+                            typical_class_contraction_metrics.get(
+                                "single_primary_generator_uniformity_falsification_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        else "blocked-class-contraction-scaling-audit-missing"
+                    ),
+                    falsification_test=(
+                        "Verify the marked-class contraction against factorial controls and reproduce exact zero "
+                        "variance targets. Any revival must use a fixed portfolio with joint-spectrum and gap proofs."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-COSET-TYPICAL-SUPPORT3-TWO-GENERATOR-SPAN",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "Some fixed linear combination of TC2 and shared-point TT1 has simple spectrum on every "
+                        "naturally relevant typical Kronecker multiplicity block."
+                    ),
+                    depends_on=["PO-MEASUREMENT", "PO-COMPLEXITY", "PO-NO-GO"],
+                    status=(
+                        "falsified-exact-n8-repeated-root-collision"
+                        if int(
+                            typical_portfolio_collision_metrics.get(
+                                "repeated_zero_eigenvalue_target_count", 0
+                            )
+                            or 0
+                        )
+                        else "blocked-higher-moment-collision-certificate-missing"
+                    ),
+                    falsification_test=(
+                        "Reproduce the four exact TT1 power traces, recover x^2 times a quadratic by Newton "
+                        "identities on both TC2-scalar targets, and require any replacement portfolio to include a third independent generator."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-COSET-TYPICAL-DISJOINT-THIRD-GENERATOR",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "Adding the disjoint-transposition orbit average to TC2 and TT1 removes the certified n=8 repeated-root collisions."
+                    ),
+                    depends_on=["PO-MEASUREMENT", "PO-COMPLEXITY", "PO-NO-GO"],
+                    status=(
+                        "falsified-parameterized-squared-linear-factor"
+                        if int(
+                            typical_portfolio_collision_metrics.get(
+                                "disjoint_third_generator_repeated_root_target_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        else "blocked-disjoint-third-generator-collision-audit-missing"
+                    ),
+                    falsification_test=(
+                        "Recover the symbolic TT1+c*TTdisjoint characteristic polynomial and verify its squared "
+                        "linear factor for both targets; continue only with a generator outside this span."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-COSET-TYPICAL-TC1-N8-LOW-MULTIPLICITY-SEPARATION",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "On every n=8 target of Kronecker multiplicity at most four, TT1+c*TC1 has simple spectrum "
+                        "for every nonzero real coefficient c."
+                    ),
+                    depends_on=["PO-MEASUREMENT", "PO-NO-GO"],
+                    status=(
+                        "proved-exact-parameterized-discriminant-positive"
+                        if int(
+                            typical_independent_third_generator_metrics.get(
+                                "certified_n8_low_multiplicity_simple_spectrum_target_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        == 6
+                        else "blocked-independent-third-generator-certificate-missing"
+                    ),
+                    falsification_test=(
+                        "Recover the exact power traces through each target multiplicity, verify all six Newton "
+                        "characteristic polynomials, and check each discriminant positivity certificate after z=c^2."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-COSET-TYPICAL-TC1-ALL-N-JOINT-SEPARATION",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "A fixed TC2/TT1/TC1 portfolio has simple spectrum with inverse-polynomial normalized gaps "
+                        "on every naturally relevant typical multiplicity block for all n."
+                    ),
+                    depends_on=["PO-MEASUREMENT", "PO-COMPLEXITY", "PO-NO-GO"],
+                    status=(
+                        "proved-all-n-typical-joint-separation"
+                        if int(
+                            typical_independent_third_generator_metrics.get(
+                                "all_n_simple_spectrum_theorem_count", 0
+                            )
+                            or 0
+                        )
+                        and int(
+                            typical_independent_third_generator_metrics.get(
+                                "inverse_polynomial_gap_theorem_count", 0
+                            )
+                            or 0
+                        )
+                        else "blocked-finite-n8-repair-only"
+                    ),
+                    falsification_test=(
+                        "Enumerate every target at n=8 and adjacent sizes using exact higher moments, search for a "
+                        "common coefficient rule, then prove all-n square-freeness and normalized root separation."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-COSET-TYPICAL-TC1-N8-MULTIPLICITY-SIX-SEPARATION",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "For the n=8 maximum-dimension source, TT1+TC1 has simple spectrum on every target of "
+                        "Kronecker multiplicity at most seven."
+                    ),
+                    depends_on=["PO-MEASUREMENT", "PO-NO-GO"],
+                    status=(
+                        "proved-exact-quotient-transfer-and-nonzero-discriminants"
+                        if int(
+                            typical_high_multiplicity_transfer_metrics.get(
+                                "certified_n8_simple_spectrum_target_count", 0
+                            )
+                            or 0
+                        )
+                        >= 12
+                        else "blocked-degree-six-transfer-audit-missing"
+                    ),
+                    falsification_test=(
+                        "Reproduce exact transfer state counts through degree six, contract all 12 target trace "
+                        "sequences, and verify each Newton characteristic polynomial has nonzero discriminant."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-COSET-TYPICAL-TC1-N8-ALL-TARGET-SEPARATION",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "For the n=8 maximum-dimension source, one fixed TC2/TT1/TC1 coefficient rule has simple "
+                        "spectrum on every nontrivial target multiplicity block."
+                    ),
+                    depends_on=["PO-MEASUREMENT", "PO-COMPLEXITY", "PO-NO-GO"],
+                    status=(
+                        "proved-exact-all-n8-target-separation"
+                        if int(
+                            typical_high_multiplicity_transfer_metrics.get(
+                                "certified_n8_simple_spectrum_target_count", 0
+                            )
+                            or 0
+                        )
+                        == int(
+                            typical_high_multiplicity_transfer_metrics.get(
+                                "n8_nontrivial_multiplicity_target_count", 0
+                            )
+                            or -1
+                        )
+                        else "blocked-eight-multiplicity-above-six-targets"
+                    ),
+                    falsification_test=(
+                        "Recompute the arbitrary-precision quotient transfer through degree 17 and verify exact "
+                        "square-free gcd certificates on all 20 targets; then repeat at n=9."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-COSET-TYPICAL-TC1-N8-EXACT-MINIMUM-GAP",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "The fixed normalized TT1+TC1 separator has a strictly positive minimum gap across every "
+                        "n=8 nontrivial target block."
+                    ),
+                    depends_on=["PO-MEASUREMENT", "PO-NO-GO"],
+                    status=(
+                        "proved-exact-rational-root-isolation"
+                        if float(
+                            typical_fixed_separator_gap_metrics.get(
+                                "n8_certified_minimum_raw_gap_lower_bound", 0
+                            )
+                            or 0
+                        )
+                        > 0
+                        else "blocked-exact-gap-scaling-audit-missing"
+                    ),
+                    falsification_test=(
+                        "Recompute all 20 exact characteristic polynomials, isolate every real root by rational "
+                        "intervals, and verify the global adjacent-interval separation lower bound."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-COSET-TYPICAL-TC1-INVERSE-POLYNOMIAL-GAP",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "The fixed normalized TT1+TC1 separator has an inverse-polynomial minimum gap on all "
+                        "naturally relevant typical blocks for every n."
+                    ),
+                    depends_on=["PO-MEASUREMENT", "PO-COMPLEXITY", "PO-NO-GO"],
+                    status=(
+                        "proved-all-n-inverse-polynomial-normalized-gap"
+                        if int(
+                            typical_fixed_separator_gap_metrics.get(
+                                "inverse_polynomial_normalized_gap_theorem_count", 0
+                            )
+                            or 0
+                        )
+                        else "blocked-four-finite-sizes-only"
+                    ),
+                    falsification_test=(
+                        "Test n=9 and further adjacent sizes, derive an exact class-algebra recurrence, and prove a "
+                        "uniform root-separation bound after LCU normalization two."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-COSET-TYPICAL-TC1-N9-LOW-MULTIPLICITY-SEPARATION",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "For the n=9 maximum-dimension source, TT1+TC1 has simple spectrum on every target of "
+                        "Kronecker multiplicity at most six."
+                    ),
+                    depends_on=["PO-MEASUREMENT", "PO-NO-GO"],
+                    status=(
+                        "proved-exact-n9-degree-four-transfer"
+                        if int(
+                            typical_n9_low_multiplicity_metrics.get(
+                                "low_multiplicity_simple_spectrum_target_count", 0
+                            )
+                            or 0
+                        )
+                        == 11
+                        else "blocked-n9-low-multiplicity-probe-missing"
+                    ),
+                    falsification_test=(
+                        "Recompute the n=9 quotient transfer through degree seven, contract all 11 targets directly "
+                        "without sign-twist shortcuts, and verify exact square-free gcd and root-isolation certificates."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-COSET-TYPICAL-TC1-N9-ALL-TARGET-SEPARATION",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "For the n=9 maximum-dimension source, TT1+TC1 has simple spectrum on every nontrivial "
+                        "target through Kronecker multiplicity 28."
+                    ),
+                    depends_on=["PO-MEASUREMENT", "PO-COMPLEXITY", "PO-NO-GO"],
+                    status=(
+                        "proved-exact-all-n9-target-separation"
+                        if int(
+                            typical_n9_low_multiplicity_metrics.get(
+                                "all_n9_target_simple_spectrum_theorem_count", 0
+                            )
+                            or 0
+                        )
+                        else "blocked-twenty-three-higher-multiplicity-targets"
+                    ),
+                    falsification_test=(
+                        "Extend exact transfer through the remaining multiplicities 5 through 28, in increasing "
+                        "degree order, and reject the fixed coefficient on the first nontrivial polynomial gcd."
                     ),
                 ),
                 LemmaRecord(
