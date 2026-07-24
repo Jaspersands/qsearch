@@ -1296,13 +1296,37 @@
         "severity": "medium"
       },
       {
-        "evidence": "Triggered falsifiers: The first adjacent-size transfer through multiplicity seven does not produce a repeated root. | Low-multiplicity coverage is only 11 of 27 nontrivial n=9 targets. | The n=9 source is not self-conjugate, so conjugate-target sign transfer cannot replace direct contraction. | No all-target, all-n, coherent-transform, decoder, or speedup claim is allowed.",
+        "evidence": "Triggered falsifiers: The first n=10 multiplicity-three cubics do not contain a repeated root. | Only 2 of 40 n=10 targets are audited. | The explicit translation table reaches 91.7 GB by degree five. | No scalable S_10 contraction, all-n gap, coherent transform, or decoder is proved.",
+        "finding_id": "DEQ-RESULT-EXP-COSET-TYPICAL-N10-FEASIBILITY-COSET-FALSIFIERS",
+        "required_action": "Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.",
+        "severity": "medium"
+      },
+      {
+        "evidence": "Triggered falsifiers: The first n=10 multiplicity-three cubics do not contain a repeated root. | Only 2 of 40 n=10 targets are audited. | The explicit translation table reaches 91.7 GB by degree five. | No scalable S_10 contraction, all-n gap, coherent transform, or decoder is proved.",
+        "finding_id": "DEQ-RESULT-EXP-COSET-TYPICAL-N10-FEASIBILITY-LATEST-FALSIFIERS",
+        "required_action": "Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.",
+        "severity": "medium"
+      },
+      {
+        "evidence": "Triggered falsifiers: No repeated root occurs on any n=9 target through multiplicity 28. | The minimum certified raw gap falls below 0.00043 on a multiplicity-14 block. | Two complete finite sizes do not establish all-n square-freeness or inverse-polynomial normalized gaps. | No coherent transform, hidden-involution outcome law, decoder, or classical separation is supplied.",
+        "finding_id": "DEQ-RESULT-EXP-COSET-TYPICAL-N9-FULL-TRANSFER-COSET-FALSIFIERS",
+        "required_action": "Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.",
+        "severity": "medium"
+      },
+      {
+        "evidence": "Triggered falsifiers: No repeated root occurs on any n=9 target through multiplicity 28. | The minimum certified raw gap falls below 0.00043 on a multiplicity-14 block. | Two complete finite sizes do not establish all-n square-freeness or inverse-polynomial normalized gaps. | No coherent transform, hidden-involution outcome law, decoder, or classical separation is supplied.",
+        "finding_id": "DEQ-RESULT-EXP-COSET-TYPICAL-N9-FULL-TRANSFER-LATEST-FALSIFIERS",
+        "required_action": "Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.",
+        "severity": "medium"
+      },
+      {
+        "evidence": "Triggered falsifiers: The first adjacent-size transfer through multiplicity nine does not produce a repeated root. | Low-multiplicity coverage is only 13 of 27 nontrivial n=9 targets. | The n=9 source is not self-conjugate, so conjugate-target sign transfer cannot replace direct contraction. | No all-target, all-n, coherent-transform, decoder, or speedup claim is allowed.",
         "finding_id": "DEQ-RESULT-EXP-COSET-TYPICAL-N9-LOW-MULTIPLICITY-PROBE-COSET-FALSIFIERS",
         "required_action": "Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.",
         "severity": "medium"
       },
       {
-        "evidence": "Triggered falsifiers: The first adjacent-size transfer through multiplicity seven does not produce a repeated root. | Low-multiplicity coverage is only 11 of 27 nontrivial n=9 targets. | The n=9 source is not self-conjugate, so conjugate-target sign transfer cannot replace direct contraction. | No all-target, all-n, coherent-transform, decoder, or speedup claim is allowed.",
+        "evidence": "Triggered falsifiers: The first adjacent-size transfer through multiplicity ten does not produce a repeated root. | Low-multiplicity coverage is only 14 of 27 nontrivial n=9 targets. | The n=9 source is not self-conjugate, so conjugate-target sign transfer cannot replace direct contraction. | No all-target, all-n, coherent-transform, decoder, or speedup claim is allowed.",
         "finding_id": "DEQ-RESULT-EXP-COSET-TYPICAL-N9-LOW-MULTIPLICITY-PROBE-LATEST-FALSIFIERS",
         "required_action": "Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.",
         "severity": "medium"
@@ -1363,7 +1387,7 @@
       }
     ],
     "candidate_id": "CODE-COSET-COLLECTIVE",
-    "created_at": "2026-07-23T14:34:33.657348+00:00",
+    "created_at": "2026-07-24T03:21:58.139988+00:00",
     "id": "CONJ-CODE-COSET-COLLECTIVE",
     "next_actions": [
       "Resolve every blocking finding before promotion.",
@@ -3139,9 +3163,10 @@
           "typical_irrep_independent_third_generator_unaudited_n8_target_count": 14,
           "typical_irrep_maximum_exact_transfer_degree": 17,
           "typical_irrep_minimum_required_portfolio_generator_count": 3,
-          "typical_irrep_n9_all_target_theorem_count": 0,
-          "typical_irrep_n9_low_multiplicity_certified_target_count": 11,
-          "typical_irrep_n9_unaudited_target_count": 16,
+          "typical_irrep_n9_all_target_theorem_count": 1,
+          "typical_irrep_n9_certified_target_count": 27,
+          "typical_irrep_n9_normalized_gap_lower_bound": 0.00021458645926304394,
+          "typical_irrep_n9_unaudited_target_count": 0,
           "typical_irrep_primary_generator_exact_scalar_block_count": 7,
           "typical_irrep_primary_generator_scalar_block_count": 2,
           "typical_irrep_single_generator_uniformity_falsification_count": 1,
@@ -4161,37 +4186,181 @@
         "summary": "Proved the fixed-bounded-tail natural-access no-go and audited 7 exact high-Plancherel self-Kronecker profiles. At n=20, bounded-tail target coupling mass is 2.604e-10; a label-adaptive typical-sector architecture is now mandatory."
       },
       {
+        "experiment_result_id": "RESULT-EXP-COSET-TYPICAL-N10-FEASIBILITY-COSET",
+        "metrics": {
+          "all_n10_target_simple_spectrum_theorem_count": 0,
+          "all_n_simple_spectrum_theorem_count": 0,
+          "certified_n10_minimum_raw_gap_lower_bound": 0.004653190237205238,
+          "certified_n10_simple_spectrum_target_count": 2,
+          "coherent_typical_multiplicity_transform_count": 0,
+          "degree3_conjugacy_class_count": 42,
+          "degree3_exact_contraction_target_count": 2,
+          "degree3_maximum_character_chunk_bytes_at_128_rows": 928972800,
+          "degree3_quotient_state_union_count": 2248,
+          "degree3_temporary_character_table_bytes": 2866752000,
+          "degree3_unique_left_translation_count": 268,
+          "degree3_unique_right_translation_count": 395,
+          "degree5_naive_temporary_character_table_bytes": 91663488000,
+          "degree5_transfer_state_count": 310071,
+          "degree5_transfer_state_union_count": 364239,
+          "degree5_unique_left_translation_count": 4132,
+          "degree5_unique_right_translation_count": 12630,
+          "inverse_polynomial_normalized_gap_theorem_count": 0,
+          "maximum_certified_kronecker_multiplicity": 3,
+          "maximum_exact_transfer_degree": 5,
+          "maximum_n10_kronecker_multiplicity": 117,
+          "n": 10,
+          "n10_nontrivial_multiplicity_target_count": 40,
+          "n10_unaudited_target_count": 38,
+          "scalable_s10_character_contraction_count": 0,
+          "source_dimension": 768,
+          "typical_label_hidden_involution_decoder_count": 0
+        },
+        "status": "n10-first-targets-survive-scalable-contraction-blocked",
+        "summary": "The fixed separator has exact simple spectrum on both multiplicity-three n=10 targets, while degree-five transfer exposes a 91.7 GB naive character-contraction barrier and leaves 38 targets unaudited."
+      },
+      {
+        "experiment_result_id": "RESULT-EXP-COSET-TYPICAL-N10-FEASIBILITY-LATEST",
+        "metrics": {
+          "all_n10_target_simple_spectrum_theorem_count": 0,
+          "all_n_simple_spectrum_theorem_count": 0,
+          "certified_n10_minimum_raw_gap_lower_bound": 0.004653190237205238,
+          "certified_n10_simple_spectrum_target_count": 2,
+          "coherent_typical_multiplicity_transform_count": 0,
+          "degree3_conjugacy_class_count": 42,
+          "degree3_exact_contraction_target_count": 2,
+          "degree3_maximum_character_chunk_bytes_at_128_rows": 928972800,
+          "degree3_quotient_state_union_count": 2248,
+          "degree3_temporary_character_table_bytes": 2866752000,
+          "degree3_unique_left_translation_count": 268,
+          "degree3_unique_right_translation_count": 395,
+          "degree5_naive_temporary_character_table_bytes": 91663488000,
+          "degree5_transfer_state_count": 310071,
+          "degree5_transfer_state_union_count": 364239,
+          "degree5_unique_left_translation_count": 4132,
+          "degree5_unique_right_translation_count": 12630,
+          "inverse_polynomial_normalized_gap_theorem_count": 0,
+          "maximum_certified_kronecker_multiplicity": 3,
+          "maximum_exact_transfer_degree": 5,
+          "maximum_n10_kronecker_multiplicity": 117,
+          "n": 10,
+          "n10_nontrivial_multiplicity_target_count": 40,
+          "n10_unaudited_target_count": 38,
+          "scalable_s10_character_contraction_count": 0,
+          "source_dimension": 768,
+          "typical_label_hidden_involution_decoder_count": 0
+        },
+        "status": "n10-first-targets-survive-scalable-contraction-blocked",
+        "summary": "The fixed separator has exact simple spectrum on both multiplicity-three n=10 targets, while degree-five transfer exposes a 91.7 GB naive character-contraction barrier and leaves 38 targets unaudited."
+      },
+      {
+        "experiment_result_id": "RESULT-EXP-COSET-TYPICAL-N9-FULL-TRANSFER-COSET",
+        "metrics": {
+          "all_n9_target_simple_spectrum_theorem_count": 1,
+          "all_n_simple_spectrum_theorem_count": 0,
+          "certified_n9_minimum_lcu_normalized_gap_lower_bound": 0.00021458645926304394,
+          "certified_n9_minimum_raw_gap_lower_bound": 0.0004291729185260879,
+          "certified_n9_simple_spectrum_target_count": 27,
+          "certified_n9_target_count": 27,
+          "class_fourier_amortized_target_count": 27,
+          "coherent_typical_multiplicity_transform_count": 0,
+          "conjugacy_class_count": 30,
+          "exact_transfer_recomputed_count": 0,
+          "inverse_polynomial_normalized_gap_theorem_count": 0,
+          "kernel_hash_gated_transfer_cache_count": 1,
+          "maximum_certified_kronecker_multiplicity": 28,
+          "maximum_exact_transfer_degree": 28,
+          "maximum_exact_transfer_state_count": 189192,
+          "maximum_in_memory_character_chunk_bytes": 92897280,
+          "maximum_in_memory_character_chunk_rows": 128,
+          "minimum_gap_target_multiplicity": 14,
+          "n": 9,
+          "n9_exact_target_coverage_fraction": 1.0,
+          "n9_nontrivial_multiplicity_target_count": 27,
+          "n9_unaudited_target_count": 0,
+          "parallel_exact_transfer_count": 1,
+          "saturated_pair_state_union_count": 378360,
+          "temporary_character_table_bytes": 7805548800,
+          "typical_label_hidden_involution_decoder_count": 0,
+          "unique_left_translation_count": 3909,
+          "unique_right_translation_count": 10755
+        },
+        "status": "fixed-coefficient-exactly-separates-all-n9-targets-asymptotic-obligations-open",
+        "summary": "Exact degree-28 transfer and class-Fourier contraction prove TT1+TC1 has simple spectrum on all 27 nontrivial n=9 targets; the smallest certified raw gap is below 0.00043 and no speedup claim follows."
+      },
+      {
+        "experiment_result_id": "RESULT-EXP-COSET-TYPICAL-N9-FULL-TRANSFER-LATEST",
+        "metrics": {
+          "all_n9_target_simple_spectrum_theorem_count": 1,
+          "all_n_simple_spectrum_theorem_count": 0,
+          "certified_n9_minimum_lcu_normalized_gap_lower_bound": 0.00021458645926304394,
+          "certified_n9_minimum_raw_gap_lower_bound": 0.0004291729185260879,
+          "certified_n9_simple_spectrum_target_count": 27,
+          "certified_n9_target_count": 27,
+          "class_fourier_amortized_target_count": 27,
+          "coherent_typical_multiplicity_transform_count": 0,
+          "conjugacy_class_count": 30,
+          "exact_transfer_recomputed_count": 0,
+          "inverse_polynomial_normalized_gap_theorem_count": 0,
+          "kernel_hash_gated_transfer_cache_count": 1,
+          "maximum_certified_kronecker_multiplicity": 28,
+          "maximum_exact_transfer_degree": 28,
+          "maximum_exact_transfer_state_count": 189192,
+          "maximum_in_memory_character_chunk_bytes": 92897280,
+          "maximum_in_memory_character_chunk_rows": 128,
+          "minimum_gap_target_multiplicity": 14,
+          "n": 9,
+          "n9_exact_target_coverage_fraction": 1.0,
+          "n9_nontrivial_multiplicity_target_count": 27,
+          "n9_unaudited_target_count": 0,
+          "parallel_exact_transfer_count": 1,
+          "saturated_pair_state_union_count": 378360,
+          "temporary_character_table_bytes": 7805548800,
+          "typical_label_hidden_involution_decoder_count": 0,
+          "unique_left_translation_count": 3909,
+          "unique_right_translation_count": 10755
+        },
+        "status": "fixed-coefficient-exactly-separates-all-n9-targets-asymptotic-obligations-open",
+        "summary": "Exact degree-28 transfer and class-Fourier contraction prove TT1+TC1 has simple spectrum on all 27 nontrivial n=9 targets; the smallest certified raw gap is below 0.00043 and no speedup claim follows."
+      },
+      {
         "experiment_result_id": "RESULT-EXP-COSET-TYPICAL-N9-LOW-MULTIPLICITY-PROBE-COSET",
         "metrics": {
           "all_n9_target_simple_spectrum_theorem_count": 0,
           "all_n_simple_spectrum_theorem_count": 0,
           "bounded_memory_n9_character_contraction_count": 1,
-          "certified_low_multiplicity_minimum_lcu_normalized_gap_lower_bound": 0.003157357153729224,
-          "certified_low_multiplicity_minimum_raw_gap_lower_bound": 0.006314714307458448,
+          "certified_low_multiplicity_minimum_lcu_normalized_gap_lower_bound": 0.0010887065195744003,
+          "certified_low_multiplicity_minimum_raw_gap_lower_bound": 0.0021774130391488005,
           "degree6_temporary_character_table_bytes": 4780581120,
           "degree6_unique_left_translation_count": 2734,
           "degree6_unique_right_translation_count": 6587,
           "degree7_temporary_character_table_bytes": 6975279360,
           "degree7_unique_left_translation_count": 3559,
           "degree7_unique_right_translation_count": 9611,
+          "degree8_temporary_character_table_bytes": 7805548800,
+          "degree8_unique_left_translation_count": 3909,
+          "degree8_unique_right_translation_count": 10755,
+          "degree9_temporary_character_table_bytes": 7805548800,
+          "degree9_unique_left_translation_count": 3909,
+          "degree9_unique_right_translation_count": 10755,
           "exact_transfer_recomputed_count": 0,
           "inverse_polynomial_normalized_gap_theorem_count": 0,
-          "low_multiplicity_simple_spectrum_target_count": 11,
-          "low_multiplicity_target_count": 11,
-          "maximum_certified_kronecker_multiplicity": 7,
-          "maximum_exact_transfer_degree": 7,
-          "maximum_exact_transfer_state_count": 189168,
+          "low_multiplicity_simple_spectrum_target_count": 13,
+          "low_multiplicity_target_count": 13,
+          "maximum_certified_kronecker_multiplicity": 9,
+          "maximum_exact_transfer_degree": 9,
+          "maximum_exact_transfer_state_count": 189192,
           "maximum_in_memory_character_chunk_bytes": 92897280,
           "maximum_in_memory_character_chunk_rows": 128,
           "maximum_n9_kronecker_multiplicity": 28,
           "n": 9,
-          "n9_exact_target_coverage_fraction": 0.4074074074074074,
+          "n9_exact_target_coverage_fraction": 0.48148148148148145,
           "n9_nontrivial_multiplicity_target_count": 27,
-          "n9_unaudited_higher_multiplicity_target_count": 16,
+          "n9_unaudited_higher_multiplicity_target_count": 14,
           "scalable_n9_character_contraction_count": 0
         },
-        "status": "n9-through-multiplicity-seven-survives-higher-blocks-open",
-        "summary": "Exact n=9 quotient transfer proves TT1+TC1 has simple spectrum on all 11 targets of multiplicity at most seven; 16 higher-multiplicity targets remain open."
+        "status": "n9-through-multiplicity-nine-survives-higher-blocks-open",
+        "summary": "Exact n=9 quotient transfer proves TT1+TC1 has simple spectrum on all 13 targets of multiplicity at most nine; 14 higher-multiplicity targets remain open."
       },
       {
         "experiment_result_id": "RESULT-EXP-COSET-TYPICAL-N9-LOW-MULTIPLICITY-PROBE-LATEST",
@@ -4199,32 +4368,41 @@
           "all_n9_target_simple_spectrum_theorem_count": 0,
           "all_n_simple_spectrum_theorem_count": 0,
           "bounded_memory_n9_character_contraction_count": 1,
-          "certified_low_multiplicity_minimum_lcu_normalized_gap_lower_bound": 0.003157357153729224,
-          "certified_low_multiplicity_minimum_raw_gap_lower_bound": 0.006314714307458448,
+          "certified_low_multiplicity_minimum_lcu_normalized_gap_lower_bound": 0.0008296526805012216,
+          "certified_low_multiplicity_minimum_raw_gap_lower_bound": 0.0016593053610024432,
+          "degree10_temporary_character_table_bytes": 7805548800,
+          "degree10_unique_left_translation_count": 3909,
+          "degree10_unique_right_translation_count": 10755,
           "degree6_temporary_character_table_bytes": 4780581120,
           "degree6_unique_left_translation_count": 2734,
           "degree6_unique_right_translation_count": 6587,
           "degree7_temporary_character_table_bytes": 6975279360,
           "degree7_unique_left_translation_count": 3559,
           "degree7_unique_right_translation_count": 9611,
+          "degree8_temporary_character_table_bytes": 7805548800,
+          "degree8_unique_left_translation_count": 3909,
+          "degree8_unique_right_translation_count": 10755,
+          "degree9_temporary_character_table_bytes": 7805548800,
+          "degree9_unique_left_translation_count": 3909,
+          "degree9_unique_right_translation_count": 10755,
           "exact_transfer_recomputed_count": 0,
           "inverse_polynomial_normalized_gap_theorem_count": 0,
-          "low_multiplicity_simple_spectrum_target_count": 11,
-          "low_multiplicity_target_count": 11,
-          "maximum_certified_kronecker_multiplicity": 7,
-          "maximum_exact_transfer_degree": 7,
-          "maximum_exact_transfer_state_count": 189168,
+          "low_multiplicity_simple_spectrum_target_count": 14,
+          "low_multiplicity_target_count": 14,
+          "maximum_certified_kronecker_multiplicity": 10,
+          "maximum_exact_transfer_degree": 10,
+          "maximum_exact_transfer_state_count": 189192,
           "maximum_in_memory_character_chunk_bytes": 92897280,
           "maximum_in_memory_character_chunk_rows": 128,
           "maximum_n9_kronecker_multiplicity": 28,
           "n": 9,
-          "n9_exact_target_coverage_fraction": 0.4074074074074074,
+          "n9_exact_target_coverage_fraction": 0.5185185185185185,
           "n9_nontrivial_multiplicity_target_count": 27,
-          "n9_unaudited_higher_multiplicity_target_count": 16,
+          "n9_unaudited_higher_multiplicity_target_count": 13,
           "scalable_n9_character_contraction_count": 0
         },
-        "status": "n9-through-multiplicity-seven-survives-higher-blocks-open",
-        "summary": "Exact n=9 quotient transfer proves TT1+TC1 has simple spectrum on all 11 targets of multiplicity at most seven; 16 higher-multiplicity targets remain open."
+        "status": "n9-through-multiplicity-ten-survives-higher-blocks-open",
+        "summary": "Exact n=9 quotient transfer proves TT1+TC1 has simple spectrum on all 14 targets of multiplicity at most ten; 13 higher-multiplicity targets remain open."
       },
       {
         "experiment_result_id": "RESULT-EXP-COSET-TYPICAL-PORTFOLIO-COLLISION-CERTIFICATE-COSET",
@@ -4284,7 +4462,7 @@
         "summary": "Audited 17 weak Fourier involution label distributions over S_n for n=[6, 8, 10, 12, 14, 16]. 4 row(s) are nearly Plancherel and 6 row(s) have only small label signal."
       }
     ],
-    "updated_at": "2026-07-23T14:34:33.657348+00:00"
+    "updated_at": "2026-07-24T03:21:58.139988+00:00"
   },
   {
     "assumptions": [
@@ -5466,7 +5644,7 @@
       }
     ],
     "candidate_id": "DHS-GOWERS-SIEVE",
-    "created_at": "2026-07-23T14:34:33.657348+00:00",
+    "created_at": "2026-07-24T03:21:58.139988+00:00",
     "id": "CONJ-DHS-GOWERS-SIEVE",
     "next_actions": [
       "Resolve every blocking finding before promotion.",
@@ -7536,7 +7714,7 @@
         "summary": "Audited 40 explicit hidden-shift instances across 10 phase families. 0 instances show Fourier/derivative structure; 16 are critical/high dequantization risk; 40 survive at least one restricted query model. Best DHSP sieve strategy aggressive_doubling reaches v2=7 from 2048 phase labels; explicit phase-state trace reaches v2=7 with 44 survivor states."
       }
     ],
-    "updated_at": "2026-07-23T14:34:33.657348+00:00"
+    "updated_at": "2026-07-24T03:21:58.139988+00:00"
   },
   {
     "assumptions": [
@@ -7594,7 +7772,7 @@
       }
     ],
     "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
-    "created_at": "2026-07-23T14:34:33.657348+00:00",
+    "created_at": "2026-07-24T03:21:58.139988+00:00",
     "id": "CONJ-HYP-LIT-COSET-OBSERVABLES",
     "next_actions": [
       "Resolve every blocking finding before promotion.",
@@ -7634,7 +7812,7 @@
         "summary": "Audited 4 hidden-permutation graph pairs. 2 pair survives current classical and low-register tests; 1 control pair is classically distinguished; 2 CFI-style parity benchmark(s) included."
       }
     ],
-    "updated_at": "2026-07-23T14:34:33.657348+00:00"
+    "updated_at": "2026-07-24T03:21:58.139988+00:00"
   },
   {
     "assumptions": [
@@ -7724,7 +7902,7 @@
       }
     ],
     "candidate_id": "HYP-LIT-HIDDEN-SHIFT-SIEVE",
-    "created_at": "2026-07-23T14:34:33.657348+00:00",
+    "created_at": "2026-07-24T03:21:58.139988+00:00",
     "id": "CONJ-HYP-LIT-HIDDEN-SHIFT-SIEVE",
     "next_actions": [
       "Resolve every blocking finding before promotion.",
@@ -7806,7 +7984,7 @@
         "summary": "Audited 40 explicit hidden-shift instances across 10 phase families. 0 instances show Fourier/derivative structure; 16 are critical/high dequantization risk; 40 survive at least one restricted query model. Best DHSP sieve strategy aggressive_doubling reaches v2=7 from 2048 phase labels; explicit phase-state trace reaches v2=7 with 44 survivor states."
       }
     ],
-    "updated_at": "2026-07-23T14:34:33.657348+00:00"
+    "updated_at": "2026-07-24T03:21:58.139988+00:00"
   },
   {
     "assumptions": [
@@ -7906,7 +8084,7 @@
       }
     ],
     "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
-    "created_at": "2026-07-23T14:34:33.657348+00:00",
+    "created_at": "2026-07-24T03:21:58.139988+00:00",
     "id": "CONJ-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
     "next_actions": [
       "Resolve every blocking finding before promotion.",
@@ -7990,7 +8168,7 @@
         "summary": "Audited 10 graphlet tensor observables across 5 graph pairs. 3 signal(s) collapse to small-pattern classical counts; 3 boundary pair(s) remain without graphlet-tensor signal."
       }
     ],
-    "updated_at": "2026-07-23T14:34:33.657348+00:00"
+    "updated_at": "2026-07-24T03:21:58.139988+00:00"
   },
   {
     "assumptions": [
@@ -8066,7 +8244,7 @@
       }
     ],
     "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
-    "created_at": "2026-07-23T14:34:33.657348+00:00",
+    "created_at": "2026-07-24T03:21:58.139988+00:00",
     "id": "CONJ-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
     "next_actions": [
       "Resolve every blocking finding before promotion.",
@@ -8121,7 +8299,7 @@
         "summary": "Audited 10 graphlet tensor observables across 5 graph pairs. 3 signal(s) collapse to small-pattern classical counts; 3 boundary pair(s) remain without graphlet-tensor signal."
       }
     ],
-    "updated_at": "2026-07-23T14:34:33.657348+00:00"
+    "updated_at": "2026-07-24T03:21:58.139988+00:00"
   },
   {
     "assumptions": [
@@ -8197,7 +8375,7 @@
       }
     ],
     "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
-    "created_at": "2026-07-23T14:34:33.657348+00:00",
+    "created_at": "2026-07-24T03:21:58.139988+00:00",
     "id": "CONJ-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
     "next_actions": [
       "Resolve every blocking finding before promotion.",
@@ -8251,7 +8429,7 @@
         "summary": "Audited 4 hidden-permutation graph pairs. 2 pair survives current classical and low-register tests; 1 control pair is classically distinguished; 2 CFI-style parity benchmark(s) included."
       }
     ],
-    "updated_at": "2026-07-23T14:34:33.657348+00:00"
+    "updated_at": "2026-07-24T03:21:58.139988+00:00"
   },
   {
     "assumptions": [
@@ -8315,7 +8493,7 @@
       }
     ],
     "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
-    "created_at": "2026-07-23T14:34:33.657348+00:00",
+    "created_at": "2026-07-24T03:21:58.139988+00:00",
     "id": "CONJ-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
     "next_actions": [
       "Resolve every blocking finding before promotion.",
@@ -8349,6 +8527,6 @@
         "summary": "Audited 3 code-equivalence pairs. 1 equivalent control pair(s) verified; 2 non-equivalent control pair(s) classically distinguished."
       }
     ],
-    "updated_at": "2026-07-23T14:34:33.657348+00:00"
+    "updated_at": "2026-07-24T03:21:58.139988+00:00"
   }
 ]

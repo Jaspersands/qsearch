@@ -33,6 +33,25 @@ class HighMultiplicityTransferTests(unittest.TestCase):
             {degree: TRANSFER_TOTAL_WEIGHTS[degree] for degree in range(1, 5)},
         )
 
+    def test_exact_kernel_cache_is_hash_gated_and_reusable(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary_directory:
+            cache_path = Path(temporary_directory) / "n8-degree3.tsv"
+            first, _ = run_exact_transfer_kernel(
+                max_degree=3,
+                threads=2,
+                cache_path=cache_path,
+            )
+            second, diagnostics = run_exact_transfer_kernel(
+                max_degree=3,
+                threads=2,
+                cache_path=cache_path,
+            )
+            self.assertEqual(second, first)
+            self.assertIn("loaded exact transfer cache", diagnostics)
+            self.assertTrue(
+                cache_path.with_suffix(".tsv.meta.json").exists()
+            )
+
     def test_all_n8_targets_through_multiplicity_seventeen_have_exact_simple_spectrum(self) -> None:
         self.assertEqual(len(self.report.records), 20)
         self.assertTrue(

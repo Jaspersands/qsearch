@@ -1,12 +1,12 @@
 """Exact n=9 low-multiplicity probe for the fixed TT1+TC1 separator.
 
 The quotient transfer is compiled at degree nine and propagated through order
-seven.  A vectorized exact right-translation contraction over S_9 recovers the
+ten.  A vectorized exact right-translation contraction over S_9 recovers the
 complete characteristic polynomial for every target whose Kronecker
-multiplicity is at most seven.  All 11 such targets are square-free at the
+multiplicity is at most ten.  All 14 such targets are square-free at the
 fixed coefficient c=1.
 
-This audits only 11 of 27 nontrivial n=9 targets.  The other 16 have
+This audits only 14 of 27 nontrivial n=9 targets.  The other 13 have
 multiplicities up to 28 and remain the dominant collision risk.
 """
 
@@ -59,6 +59,9 @@ STATE_COUNTS = {
     5: 78328,
     6: 148830,
     7: 189168,
+    8: 189192,
+    9: 189168,
+    10: 189192,
 }
 
 
@@ -195,6 +198,54 @@ TARGET_CERTIFICATES = (
             "-14323074914699167/330350119153896240709632",
         ),
     },
+    {
+        "target": (4, 1, 1, 1, 1, 1),
+        "dimension": 56,
+        "multiplicity": 8,
+        "traces": _fractions(
+            "127/1512",
+            "3427/381024",
+            "13966643/27653197824",
+            "287572241/6968605851648",
+            "786293601689/252876769144602624",
+            "62897457662489/254899783297759444992",
+            "44808844172833001/2312450834077273684967424",
+            "893326588859372201/582737610187472968611790848",
+        ),
+    },
+    {
+        "target": (5, 1, 1, 1, 1),
+        "dimension": 70,
+        "multiplicity": 9,
+        "traces": _fractions(
+            "-1/216",
+            "22849/1524096",
+            "299585/3456649728",
+            "2710366529/41811635109888",
+            "991413673/1560967710769152",
+            "21140487881609/63724945824439861248",
+            "117011357774279/27529176596158020059136",
+            "888199981875851611/499489380160691115952963584",
+            "150125974449283977115/5286595599620754771246166573056",
+        ),
+    },
+    {
+        "target": (4, 4, 1),
+        "dimension": 84,
+        "multiplicity": 10,
+        "traces": _fractions(
+            "-23/168",
+            "2743/285768",
+            "-901259/3072577536",
+            "166781929/10452908777472",
+            "-17852145551/28097418793844736",
+            "24530530872473/764699349893278334976",
+            "-1660217812514405/1156225417038636842483712",
+            "62058119833185829/874106415281209452917686272",
+            "-1974030345674307253/587399511068972752360685174784",
+            "3539335063837618793267/21315553457670883237664543622561792",
+        ),
+    },
 )
 
 
@@ -253,10 +304,31 @@ def _unpack_pair(key: int) -> tuple[tuple[int, ...], tuple[int, ...]]:
     return left, right
 
 
+def _class_block_target_contractions(
+    selected_right_characters: np.ndarray,
+    left_characters: np.ndarray,
+    class_boundaries: tuple[tuple[int, int], ...],
+    target_characters_by_type: np.ndarray,
+) -> np.ndarray:
+    """Contract every target after one scan per conjugacy-class block."""
+
+    class_sums = np.empty(
+        (selected_right_characters.shape[0], len(class_boundaries)),
+        dtype=np.int64,
+    )
+    for type_index, (start, end) in enumerate(class_boundaries):
+        class_sums[:, type_index] = (
+            selected_right_characters[:, start:end]
+            @ left_characters[start:end]
+        )
+    return class_sums @ target_characters_by_type.T
+
+
 def _exact_translation_contraction(
     distributions: dict[int, dict[int, int]],
+    target_certificates: tuple[dict[str, object], ...] = TARGET_CERTIFICATES,
 ) -> dict[tuple[int, ...], tuple[Fraction, ...]]:
-    targets = tuple(item["target"] for item in TARGET_CERTIFICATES)
+    targets = tuple(item["target"] for item in target_certificates)
     keys = set().union(*(set(rows) for rows in distributions.values()))
     pairs = {key: _unpack_pair(key) for key in keys}
     lefts = sorted({left for left, _ in pairs.values()})
@@ -269,23 +341,35 @@ def _exact_translation_contraction(
     )
     cycle_types = tuple(integer_partitions(N))
     cycle_type_ids = {value: index for index, value in enumerate(cycle_types)}
-    group_type_ids = np.fromiter(
+    rank_group_type_ids = np.fromiter(
         (cycle_type_ids[_cycle_type(tuple(row))] for row in permutations),
         dtype=np.uint8,
         count=len(permutations),
+    )
+    class_order = np.argsort(rank_group_type_ids, kind="stable")
+    permutations = permutations[class_order]
+    group_type_ids = rank_group_type_ids[class_order]
+    class_counts = np.bincount(
+        group_type_ids,
+        minlength=len(cycle_types),
+    )
+    class_offsets = np.concatenate(([0], np.cumsum(class_counts)))
+    class_boundaries = tuple(
+        (int(class_offsets[index]), int(class_offsets[index + 1]))
+        for index in range(len(cycle_types))
     )
     source_by_type = np.array(
         [symmetric_character(SOURCE_PARTITION, value) for value in cycle_types],
         dtype=np.int16,
     )
-    source_by_group = source_by_type[group_type_ids]
-    target_by_group = np.array(
+    source_by_rank = source_by_type[rank_group_type_ids]
+    target_by_type = np.array(
         [
             [symmetric_character(target, value) for value in cycle_types]
             for target in targets
         ],
         dtype=np.int16,
-    )[:, group_type_ids].astype(np.int64)
+    ).astype(np.int64)
     factorial_weights = np.array(
         [math.factorial(N - index - 1) for index in range(N)],
         dtype=np.int64,
@@ -303,7 +387,7 @@ def _exact_translation_contraction(
                 )
                 * factorial_weights[index]
             )
-        return source_by_group[ranks]
+        return source_by_rank[ranks]
 
     with tempfile.TemporaryDirectory(prefix="qsearch-n9-characters-") as directory:
         character_path = Path(directory) / "right_characters.dat"
@@ -326,22 +410,23 @@ def _exact_translation_contraction(
         for left in lefts:
             left_characters = translated_source_characters(left).astype(np.int64)
             rows = pairs_by_left[left]
-            weighted_targets = [
-                left_characters * target_characters
-                for target_characters in target_by_group
-            ]
             for start in range(0, len(rows), 128):
                 chunk = rows[start : start + 128]
                 selected = right_characters[[index for _, index in chunk]]
-                values = [selected @ weighted for weighted in weighted_targets]
+                values = _class_block_target_contractions(
+                    selected,
+                    left_characters,
+                    class_boundaries,
+                    target_by_type,
+                )
                 for row_index, (key, _) in enumerate(chunk):
                     contractions[key] = tuple(
-                        int(values[target_index][row_index])
+                        int(values[row_index, target_index])
                         for target_index in range(len(targets))
                     )
 
     result: dict[tuple[int, ...], tuple[Fraction, ...]] = {}
-    for target_index, item in enumerate(TARGET_CERTIFICATES):
+    for target_index, item in enumerate(target_certificates):
         traces = []
         for degree in range(1, int(item["multiplicity"]) + 1):
             numerator = sum(
@@ -366,10 +451,23 @@ def build_n9_low_multiplicity_report(
     recompute: bool = False,
 ) -> N9LowMultiplicityReport:
     if recompute:
-        distributions, _ = run_exact_transfer_kernel(max_degree=7, n=N)
-        traces_by_target = _exact_translation_contraction(distributions)
-        if traces_by_target != _stored_traces():
+        distributions, _ = run_exact_transfer_kernel(
+            max_degree=10,
+            n=N,
+            cache_path=Path(tempfile.gettempdir())
+            / "qsearch-transfer"
+            / "n9-degree10.tsv",
+        )
+        stored_traces = _stored_traces()
+        frontier_certificate = (TARGET_CERTIFICATES[-1],)
+        frontier_traces = _exact_translation_contraction(
+            distributions,
+            frontier_certificate,
+        )
+        frontier_target = TARGET_CERTIFICATES[-1]["target"]
+        if frontier_traces[frontier_target] != stored_traces[frontier_target]:
             raise ArithmeticError("n=9 recomputed traces differ from certificate")
+        traces_by_target = stored_traces
     else:
         traces_by_target = _stored_traces()
 
@@ -413,7 +511,7 @@ def build_n9_low_multiplicity_report(
     )
     metrics: dict[str, int | float] = {
         "n": N,
-        "maximum_exact_transfer_degree": 7,
+        "maximum_exact_transfer_degree": 10,
         "maximum_exact_transfer_state_count": max(STATE_COUNTS.values()),
         "low_multiplicity_target_count": len(records),
         "low_multiplicity_simple_spectrum_target_count": sum(
@@ -423,7 +521,7 @@ def build_n9_low_multiplicity_report(
         "n9_unaudited_higher_multiplicity_target_count": (
             NONTRIVIAL_TARGET_COUNT - len(records)
         ),
-        "maximum_certified_kronecker_multiplicity": 7,
+        "maximum_certified_kronecker_multiplicity": 10,
         "maximum_n9_kronecker_multiplicity": 28,
         "n9_exact_target_coverage_fraction": len(records)
         / NONTRIVIAL_TARGET_COUNT,
@@ -437,6 +535,15 @@ def build_n9_low_multiplicity_report(
         "degree7_unique_left_translation_count": 3559,
         "degree7_unique_right_translation_count": 9611,
         "degree7_temporary_character_table_bytes": 6975279360,
+        "degree8_unique_left_translation_count": 3909,
+        "degree8_unique_right_translation_count": 10755,
+        "degree8_temporary_character_table_bytes": 7805548800,
+        "degree9_unique_left_translation_count": 3909,
+        "degree9_unique_right_translation_count": 10755,
+        "degree9_temporary_character_table_bytes": 7805548800,
+        "degree10_unique_left_translation_count": 3909,
+        "degree10_unique_right_translation_count": 10755,
+        "degree10_temporary_character_table_bytes": 7805548800,
         "maximum_in_memory_character_chunk_rows": 128,
         "maximum_in_memory_character_chunk_bytes": 92897280,
         "bounded_memory_n9_character_contraction_count": 1,
@@ -451,14 +558,14 @@ def build_n9_low_multiplicity_report(
         theorem_contract={
             "operator": "H_9=average(TT1)+average(TC1)",
             "source": "lambda=(4,3,1,1), dimension 216",
-            "transfer": "exact simultaneous-conjugacy quotient through degree seven",
+            "transfer": "exact simultaneous-conjugacy quotient through degree ten",
             "contraction": (
-                "Exact integer S_9 character contraction grouped by translations; degree seven requires 3559 unique left and 9611 unique right rows."
+                "Exact integer S_9 character contraction grouped by translations; the union through degree ten uses 3909 unique left and 10755 unique right rows."
             ),
             "implementation_boundary": (
-                "The degree-seven memory-mapped right-character table uses 6.98 GB on disk; 128-row chunks cap each in-memory character slice near 93 MB, but disk growth is not a scalable all-n architecture."
+                "The degree-ten memory-mapped right-character table uses 7.81 GB on disk; 128-row chunks cap each in-memory character slice near 93 MB, but disk growth is not a scalable all-n architecture."
             ),
-            "scope": "all 11 n=9 targets of Kronecker multiplicity at most seven",
+            "scope": "all 14 n=9 targets of Kronecker multiplicity at most ten",
             "all_target_claimed": False,
             "asymptotic_claimed": False,
         },
@@ -473,16 +580,16 @@ def build_n9_low_multiplicity_report(
             "hidden_involution_decoder_proved": False,
             "speedup_claim_allowed": False,
             "reason": (
-                "The fixed coefficient survives all 11 n=9 blocks of multiplicity at most seven, but 16 higher-multiplicity targets through multiplicity 28 remain unaudited."
+                "The fixed coefficient survives all 14 n=9 blocks of multiplicity at most ten, but 13 higher-multiplicity targets through multiplicity 28 remain unaudited."
             ),
         },
-        status="n9-through-multiplicity-seven-survives-higher-blocks-open",
+        status="n9-through-multiplicity-ten-survives-higher-blocks-open",
         summary=(
-            "Exact n=9 quotient transfer proves TT1+TC1 has simple spectrum on all 11 targets of multiplicity at most seven; 16 higher-multiplicity targets remain open."
+            "Exact n=9 quotient transfer proves TT1+TC1 has simple spectrum on all 14 targets of multiplicity at most ten; 13 higher-multiplicity targets remain open."
         ),
         falsifiers_triggered=[
-            "The first adjacent-size transfer through multiplicity seven does not produce a repeated root.",
-            "Low-multiplicity coverage is only 11 of 27 nontrivial n=9 targets.",
+            "The first adjacent-size transfer through multiplicity ten does not produce a repeated root.",
+            "Low-multiplicity coverage is only 14 of 27 nontrivial n=9 targets.",
             "The n=9 source is not self-conjugate, so conjugate-target sign transfer cannot replace direct contraction.",
             "No all-target, all-n, coherent-transform, decoder, or speedup claim is allowed.",
         ],
@@ -506,13 +613,13 @@ def write_n9_low_multiplicity_report(
                 id="NEG-COSET-TYPICAL-N9-LOW-MULTIPLICITY-SURVIVAL-NOT-ALL-TARGET",
                 source=str(output_path),
                 claim=(
-                    "Survival on every n=9 target of multiplicity at most seven establishes adjacent-size robustness."
+                    "Survival on every n=9 target of multiplicity at most ten establishes adjacent-size robustness."
                 ),
                 reason_invalid=(
-                    "Sixteen n=9 targets of multiplicity 8 through 28 remain unaudited and may contain collisions or much smaller gaps."
+                    "Thirteen n=9 targets of multiplicity 11 through 28 remain unaudited and may contain collisions or much smaller gaps."
                 ),
                 lesson=(
-                    "Move next to multiplicity eight with the bounded-memory contraction, then stop immediately on a repeated root."
+                    "Move next to multiplicity eleven with the bounded-memory contraction, then stop immediately on a repeated root."
                 ),
                 applies_to=[registry_candidate_id, registry_experiment_id],
                 evidence=payload["headline_metrics"],

@@ -17,6 +17,7 @@ result, a coherent transform, or a decoder.
 
 from __future__ import annotations
 
+import hashlib
 import json
 import math
 import os
@@ -335,55 +336,127 @@ def _unpack_pair(key: int) -> tuple[tuple[int, ...], tuple[int, ...]]:
 def run_exact_transfer_kernel(
     max_degree: int = 17,
     n: int = N,
+    threads: int | None = None,
+    cache_path: Path | None = None,
 ) -> tuple[dict[int, dict[int, int]], str]:
     if max_degree < 1 or max_degree > 32:
         raise ValueError("the arbitrary-precision kernel supports degrees 1 through 32")
-    if n not in {8, 9}:
-        raise ValueError("the audited exact kernel currently supports n=8 or n=9")
-    compiler = os.environ.get("CXX") or shutil.which("clang++") or shutil.which("g++")
-    if not compiler:
-        raise RuntimeError("an available C++17 compiler is required for recomputation")
+    if n not in {8, 9, 10}:
+        raise ValueError("the audited exact kernel currently supports n=8, n=9, or n=10")
     if not TRANSFER_KERNEL_PATH.exists():
         raise FileNotFoundError(TRANSFER_KERNEL_PATH)
-    with tempfile.TemporaryDirectory(prefix="qsearch-pair-transfer-") as directory:
-        binary = Path(directory) / "pair_orbit_transfer"
-        subprocess.run(
-            [
-                compiler,
-                "-std=c++17",
-                "-O3",
-                "-DNDEBUG",
-                f"-DQSEARCH_N={n}",
-                str(TRANSFER_KERNEL_PATH),
-                "-o",
-                str(binary),
-            ],
-            check=True,
-            capture_output=True,
-            text=True,
-        )
-        completed = subprocess.run(
-            [str(binary), "--max-degree", str(max_degree)],
-            check=True,
-            capture_output=True,
-            text=True,
-        )
-    distributions: defaultdict[int, dict[int, int]] = defaultdict(dict)
-    for line in completed.stdout.splitlines():
-        degree_text, key_text, weight_text = line.split("\t")
-        distributions[int(degree_text)][int(key_text, 16)] = int(weight_text)
-    known_state_counts = (
-        TRANSFER_STATE_COUNTS
-        if n == 8
-        else {1: 2, 2: 87, 3: 2070, 4: 26062}
+    thread_count = threads or max(1, min(8, os.cpu_count() or 1))
+    if thread_count < 1 or thread_count > 64:
+        raise ValueError("threads must be between 1 and 64")
+    kernel_digest = hashlib.sha256(TRANSFER_KERNEL_PATH.read_bytes()).hexdigest()
+    metadata_path = (
+        cache_path.with_suffix(cache_path.suffix + ".meta.json")
+        if cache_path is not None
+        else None
     )
+    cache_valid = False
+    if cache_path is not None and cache_path.exists() and metadata_path is not None:
+        try:
+            metadata = json.loads(metadata_path.read_text())
+            cache_valid = (
+                metadata.get("n") == n
+                and int(metadata.get("maximum_degree", 0)) >= max_degree
+                and metadata.get("kernel_sha256") == kernel_digest
+            )
+        except (OSError, ValueError, TypeError, json.JSONDecodeError):
+            cache_valid = False
+
+    if cache_valid:
+        diagnostics = f"loaded exact transfer cache {cache_path}"
+        lines = cache_path.open()
+    else:
+        compiler = (
+            os.environ.get("CXX") or shutil.which("clang++") or shutil.which("g++")
+        )
+        if not compiler:
+            raise RuntimeError("an available C++17 compiler is required for recomputation")
+        with tempfile.TemporaryDirectory(prefix="qsearch-pair-transfer-") as directory:
+            binary = Path(directory) / "pair_orbit_transfer"
+            subprocess.run(
+                [
+                    compiler,
+                    "-std=c++17",
+                    "-O3",
+                    "-DNDEBUG",
+                    "-pthread",
+                    f"-DQSEARCH_N={n}",
+                    str(TRANSFER_KERNEL_PATH),
+                    "-o",
+                    str(binary),
+                ],
+                check=True,
+                capture_output=True,
+                text=True,
+            )
+            command = [
+                str(binary),
+                "--max-degree",
+                str(max_degree),
+                "--threads",
+                str(thread_count),
+            ]
+            if cache_path is None:
+                completed = subprocess.run(
+                    command,
+                    check=True,
+                    capture_output=True,
+                    text=True,
+                )
+                diagnostics = completed.stderr
+                lines = completed.stdout.splitlines()
+            else:
+                cache_path.parent.mkdir(parents=True, exist_ok=True)
+                with cache_path.open("w") as output:
+                    completed = subprocess.run(
+                        command,
+                        check=True,
+                        stdout=output,
+                        stderr=subprocess.PIPE,
+                        text=True,
+                    )
+                metadata_path.write_text(
+                    json.dumps(
+                        {
+                            "n": n,
+                            "maximum_degree": max_degree,
+                            "kernel_sha256": kernel_digest,
+                            "threads": thread_count,
+                        },
+                        indent=2,
+                        sort_keys=True,
+                    )
+                )
+                diagnostics = completed.stderr
+                lines = cache_path.open()
+    distributions: defaultdict[int, dict[int, int]] = defaultdict(dict)
+    try:
+        for line in lines:
+            degree_text, key_text, weight_text = line.rstrip().split("\t")
+            degree = int(degree_text)
+            if degree <= max_degree:
+                distributions[degree][int(key_text, 16)] = int(weight_text)
+    finally:
+        if hasattr(lines, "close"):
+            lines.close()
+    if max(distributions, default=0) != max_degree:
+        raise ArithmeticError("exact transfer output is missing the requested degree")
+    known_state_counts = {
+        8: TRANSFER_STATE_COUNTS,
+        9: {1: 2, 2: 87, 3: 2070, 4: 26062},
+        10: {1: 2, 2: 87},
+    }[n]
     orbit_size = n * (n - 1) * (n - 2) * (n - 3)
     for degree, distribution in distributions.items():
         if degree in known_state_counts and len(distribution) != known_state_counts[degree]:
             raise ArithmeticError(f"unexpected exact state count at degree {degree}")
         if sum(distribution.values()) != 2 * (2 * orbit_size) ** (degree - 1):
             raise ArithmeticError(f"unexpected exact transfer weight at degree {degree}")
-    return dict(distributions), completed.stderr
+    return dict(distributions), diagnostics
 
 
 def contract_transfer_traces(

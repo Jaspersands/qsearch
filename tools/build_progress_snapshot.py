@@ -190,6 +190,14 @@ def build_snapshot() -> dict[str, Any]:
         RESEARCH / "representation/coset_typical_n9_low_multiplicity_probe.json",
         {},
     )
+    typical_n9_full = read_json(
+        RESEARCH / "representation/coset_typical_n9_full_transfer.json",
+        {},
+    )
+    typical_n10_feasibility = read_json(
+        RESEARCH / "representation/coset_typical_n10_feasibility.json",
+        {},
+    )
 
     blocking = sum(bool(item.get("blocks_speedup_claim", False)) for item in findings)
     updated = latest_artifact_date(
@@ -240,6 +248,8 @@ def build_snapshot() -> dict[str, Any]:
         typical_high_multiplicity,
         typical_separator_gaps,
         typical_n9_probe,
+        typical_n9_full,
+        typical_n10_feasibility,
     )
     gap_rows = metric(gap, "critical_gap_formula_finite_verified_count", 0)
     gap_total = metric(gap, "record_count", 0)
@@ -308,7 +318,7 @@ def build_snapshot() -> dict[str, Any]:
             {
                 "title": "Nonabelian coset states",
                 "short_title": "Cosets",
-                "status": "Two-generator span and first extension cut",
+                "status": "Finite n=8 and n=9 separators proved; algorithm blocked",
                 "tone": "active",
                 "stage": 3,
                 "summary": (
@@ -349,12 +359,17 @@ def build_snapshot() -> dict[str, Any]:
                     f"{metric(typical_high_multiplicity, 'n8_nontrivial_multiplicity_target_count', 0)}; "
                     f"certified n=8 normalized minimum gap: "
                     f"{metric(typical_separator_gaps, 'n8_certified_minimum_lcu_normalized_gap_lower_bound', 0):.6g}; "
-                    f"n=9 exact low-multiplicity coverage: "
-                    f"{metric(typical_n9_probe, 'low_multiplicity_simple_spectrum_target_count', 0)}/"
-                    f"{metric(typical_n9_probe, 'n9_nontrivial_multiplicity_target_count', 0)}; "
+                    f"fixed-c1 full n=9 coverage: "
+                    f"{metric(typical_n9_full, 'certified_n9_simple_spectrum_target_count', 0)}/"
+                    f"{metric(typical_n9_full, 'n9_nontrivial_multiplicity_target_count', 0)}; "
+                    f"certified n=9 normalized minimum gap: "
+                    f"{metric(typical_n9_full, 'certified_n9_minimum_lcu_normalized_gap_lower_bound', 0):.6g}; "
+                    f"n=10 first-target coverage: "
+                    f"{metric(typical_n10_feasibility, 'certified_n10_simple_spectrum_target_count', 0)}/"
+                    f"{metric(typical_n10_feasibility, 'n10_nontrivial_multiplicity_target_count', 0)}; "
                     f"uniform gap theorems: {metric(typical_commutant_moments, 'uniform_typical_commutant_gap_theorem_count', 0)}."
                 ),
-                "next": "Use the bounded-memory n=9 contraction at multiplicity eight, stopping at the first repeated root or severe gap collapse.",
+                "next": "Derive an all-n class-algebra recurrence and normalized gap bound, while probing n=10 for the first collision or severe gap collapse.",
             },
         ],
         "milestones": [
@@ -383,9 +398,9 @@ def build_snapshot() -> dict[str, Any]:
                     "n=8 targets of multiplicity at most four, including both known collisions. Exact quotient transfer "
                     f"at c=1 extends this to {metric(typical_high_multiplicity, 'certified_n8_simple_spectrum_target_count', 0)}/"
                     f"{metric(typical_high_multiplicity, 'n8_nontrivial_multiplicity_target_count', 0)} targets through "
-                    "multiplicity 17. Exact root isolation gives a positive n=8 normalized minimum gap, but adjacent "
-                    f"n=9 evidence covers only {metric(typical_n9_probe, 'low_multiplicity_simple_spectrum_target_count', 0)}/"
-                    f"{metric(typical_n9_probe, 'n9_nontrivial_multiplicity_target_count', 0)} targets. All-n, transform, "
+                    "multiplicity 17. Degree-28 transfer and class-Fourier contraction extend fixed-c1 separation to "
+                    f"{metric(typical_n9_full, 'certified_n9_simple_spectrum_target_count', 0)}/"
+                    f"{metric(typical_n9_full, 'n9_nontrivial_multiplicity_target_count', 0)} n=9 targets. All-n, gap, transform, "
                     "and decoder theorems remain open."
                 ),
             },
@@ -416,7 +431,10 @@ def build_snapshot() -> dict[str, Any]:
                 {"label": "TC1 low-multiplicity coverage", "value": f"{metric(typical_third_generator, 'certified_n8_low_multiplicity_simple_spectrum_target_count', 0)}/{metric(typical_third_generator, 'n8_nontrivial_multiplicity_target_count', 0)} n=8 targets"},
                 {"label": "Fixed-c1 full n=8 coverage", "value": f"{metric(typical_high_multiplicity, 'certified_n8_simple_spectrum_target_count', 0)}/{metric(typical_high_multiplicity, 'n8_nontrivial_multiplicity_target_count', 0)} n=8 targets"},
                 {"label": "n=8 normalized gap lower bound", "value": f"{metric(typical_separator_gaps, 'n8_certified_minimum_lcu_normalized_gap_lower_bound', 0):.6g}"},
-                {"label": "n=9 exact coverage", "value": f"{metric(typical_n9_probe, 'low_multiplicity_simple_spectrum_target_count', 0)}/{metric(typical_n9_probe, 'n9_nontrivial_multiplicity_target_count', 0)} targets"},
+                {"label": "Fixed-c1 full n=9 coverage", "value": f"{metric(typical_n9_full, 'certified_n9_simple_spectrum_target_count', 0)}/{metric(typical_n9_full, 'n9_nontrivial_multiplicity_target_count', 0)} targets"},
+                {"label": "n=9 normalized gap lower bound", "value": f"{metric(typical_n9_full, 'certified_n9_minimum_lcu_normalized_gap_lower_bound', 0):.6g}"},
+                {"label": "n=10 first-target coverage", "value": f"{metric(typical_n10_feasibility, 'certified_n10_simple_spectrum_target_count', 0)}/{metric(typical_n10_feasibility, 'n10_nontrivial_multiplicity_target_count', 0)} targets"},
+                {"label": "n=10 degree-five table", "value": f"{metric(typical_n10_feasibility, 'degree5_naive_temporary_character_table_bytes', 0) / 1e9:.1f} GB"},
                 {"label": "Required portfolio size", "value": f">={metric(typical_portfolio_collision, 'minimum_required_portfolio_generator_count_on_certified_targets', 0)} generators"},
                 {"label": "Uniform typical gaps", "value": f"{metric(typical_commutant_moments, 'uniform_typical_commutant_gap_theorem_count', 0)} proved"},
                 {"label": "Typical uniform transforms", "value": f"{metric(typical_irrep_transfer, 'uniform_typical_label_encoded_tree_transform_count', 0)} proved"},
@@ -425,8 +443,8 @@ def build_snapshot() -> dict[str, Any]:
         },
         "next_actions": [
             {
-                "title": "Extend the n=9 collision audit",
-                "detail": "The fixed separator survives all 11 n=9 targets of multiplicity at most seven. Character slices are capped near 93 MB, though the 6.98 GB temporary disk table still motivates a class/Fourier contraction.",
+                "title": "Attack the all-n separator conjecture",
+                "detail": "The fixed separator survives all 27 n=9 targets and the first 2 n=10 targets, but explicit n=10 contraction reaches 91.7 GB by degree five. Derive a recurrence before extending the ladder.",
             },
             {
                 "title": "Keep natural branch mass in every theorem",

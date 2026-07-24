@@ -1,8 +1,8 @@
 {
-  "created_at": "2026-07-23T14:33:28.024784+00:00",
+  "created_at": "2026-07-24T03:21:26.383909+00:00",
   "history_artifact": "research/experiment_run_history.json",
-  "history_count": 175,
-  "trend_count": 140,
+  "history_count": 180,
+  "trend_count": 142,
   "trends": [
     {
       "blocking_run_count": 1,
@@ -6196,26 +6196,23 @@
       ]
     },
     {
-      "blocking_run_count": 4,
-      "experiment_id": "EXP-COSET-TYPICAL-N9-LOW-MULTIPLICITY-PROBE",
+      "blocking_run_count": 1,
+      "experiment_id": "EXP-COSET-TYPICAL-N10-FEASIBILITY",
       "falsifier_count_sequence": [
-        4,
-        4,
-        4,
         4
       ],
       "interpretation": "Repeated runs continue to trigger falsifiers; this is proof debt, not progress.",
-      "latest_result_id": "RESULT-EXP-COSET-TYPICAL-N9-LOW-MULTIPLICITY-PROBE-COSET",
-      "latest_status": "n9-through-multiplicity-seven-survives-higher-blocks-open",
-      "latest_summary": "Exact n=9 quotient transfer proves TT1+TC1 has simple spectrum on all 11 targets of multiplicity at most seven; 16 higher-multiplicity targets remain open.",
+      "latest_result_id": "RESULT-EXP-COSET-TYPICAL-N10-FEASIBILITY-COSET",
+      "latest_status": "n10-first-targets-survive-scalable-contraction-blocked",
+      "latest_summary": "The fixed separator has exact simple spectrum on both multiplicity-three n=10 targets, while degree-five transfer exposes a 91.7 GB naive character-contraction barrier and leaves 38 targets unaudited.",
       "numeric_metric_trends": {
-        "all_n9_target_simple_spectrum_theorem_count": {
+        "all_n10_target_simple_spectrum_theorem_count": {
           "delta": 0.0,
           "first": 0.0,
           "latest": 0.0,
           "max": 0.0,
           "min": 0.0,
-          "observations": 4
+          "observations": 1
         },
         "all_n_simple_spectrum_theorem_count": {
           "delta": 0.0,
@@ -6223,9 +6220,226 @@
           "latest": 0.0,
           "max": 0.0,
           "min": 0.0,
-          "observations": 4
+          "observations": 1
         },
-        "bounded_memory_n9_character_contraction_count": {
+        "certified_n10_minimum_raw_gap_lower_bound": {
+          "delta": 0.0,
+          "first": 0.004653190237205238,
+          "latest": 0.004653190237205238,
+          "max": 0.004653190237205238,
+          "min": 0.004653190237205238,
+          "observations": 1
+        },
+        "certified_n10_simple_spectrum_target_count": {
+          "delta": 0.0,
+          "first": 2.0,
+          "latest": 2.0,
+          "max": 2.0,
+          "min": 2.0,
+          "observations": 1
+        },
+        "coherent_typical_multiplicity_transform_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        },
+        "degree3_conjugacy_class_count": {
+          "delta": 0.0,
+          "first": 42.0,
+          "latest": 42.0,
+          "max": 42.0,
+          "min": 42.0,
+          "observations": 1
+        },
+        "degree3_exact_contraction_target_count": {
+          "delta": 0.0,
+          "first": 2.0,
+          "latest": 2.0,
+          "max": 2.0,
+          "min": 2.0,
+          "observations": 1
+        },
+        "degree3_maximum_character_chunk_bytes_at_128_rows": {
+          "delta": 0.0,
+          "first": 928972800.0,
+          "latest": 928972800.0,
+          "max": 928972800.0,
+          "min": 928972800.0,
+          "observations": 1
+        },
+        "degree3_quotient_state_union_count": {
+          "delta": 0.0,
+          "first": 2248.0,
+          "latest": 2248.0,
+          "max": 2248.0,
+          "min": 2248.0,
+          "observations": 1
+        },
+        "degree3_temporary_character_table_bytes": {
+          "delta": 0.0,
+          "first": 2866752000.0,
+          "latest": 2866752000.0,
+          "max": 2866752000.0,
+          "min": 2866752000.0,
+          "observations": 1
+        },
+        "degree3_unique_left_translation_count": {
+          "delta": 0.0,
+          "first": 268.0,
+          "latest": 268.0,
+          "max": 268.0,
+          "min": 268.0,
+          "observations": 1
+        },
+        "degree3_unique_right_translation_count": {
+          "delta": 0.0,
+          "first": 395.0,
+          "latest": 395.0,
+          "max": 395.0,
+          "min": 395.0,
+          "observations": 1
+        },
+        "degree5_naive_temporary_character_table_bytes": {
+          "delta": 0.0,
+          "first": 91663488000.0,
+          "latest": 91663488000.0,
+          "max": 91663488000.0,
+          "min": 91663488000.0,
+          "observations": 1
+        },
+        "degree5_transfer_state_count": {
+          "delta": 0.0,
+          "first": 310071.0,
+          "latest": 310071.0,
+          "max": 310071.0,
+          "min": 310071.0,
+          "observations": 1
+        },
+        "degree5_transfer_state_union_count": {
+          "delta": 0.0,
+          "first": 364239.0,
+          "latest": 364239.0,
+          "max": 364239.0,
+          "min": 364239.0,
+          "observations": 1
+        },
+        "degree5_unique_left_translation_count": {
+          "delta": 0.0,
+          "first": 4132.0,
+          "latest": 4132.0,
+          "max": 4132.0,
+          "min": 4132.0,
+          "observations": 1
+        },
+        "degree5_unique_right_translation_count": {
+          "delta": 0.0,
+          "first": 12630.0,
+          "latest": 12630.0,
+          "max": 12630.0,
+          "min": 12630.0,
+          "observations": 1
+        },
+        "inverse_polynomial_normalized_gap_theorem_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        },
+        "maximum_certified_kronecker_multiplicity": {
+          "delta": 0.0,
+          "first": 3.0,
+          "latest": 3.0,
+          "max": 3.0,
+          "min": 3.0,
+          "observations": 1
+        },
+        "maximum_exact_transfer_degree": {
+          "delta": 0.0,
+          "first": 5.0,
+          "latest": 5.0,
+          "max": 5.0,
+          "min": 5.0,
+          "observations": 1
+        },
+        "maximum_n10_kronecker_multiplicity": {
+          "delta": 0.0,
+          "first": 117.0,
+          "latest": 117.0,
+          "max": 117.0,
+          "min": 117.0,
+          "observations": 1
+        },
+        "n": {
+          "delta": 0.0,
+          "first": 10.0,
+          "latest": 10.0,
+          "max": 10.0,
+          "min": 10.0,
+          "observations": 1
+        },
+        "n10_nontrivial_multiplicity_target_count": {
+          "delta": 0.0,
+          "first": 40.0,
+          "latest": 40.0,
+          "max": 40.0,
+          "min": 40.0,
+          "observations": 1
+        },
+        "n10_unaudited_target_count": {
+          "delta": 0.0,
+          "first": 38.0,
+          "latest": 38.0,
+          "max": 38.0,
+          "min": 38.0,
+          "observations": 1
+        },
+        "scalable_s10_character_contraction_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        },
+        "source_dimension": {
+          "delta": 0.0,
+          "first": 768.0,
+          "latest": 768.0,
+          "max": 768.0,
+          "min": 768.0,
+          "observations": 1
+        },
+        "typical_label_hidden_involution_decoder_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        }
+      },
+      "run_count": 1,
+      "status_sequence": [
+        "n10-first-targets-survive-scalable-contraction-blocked"
+      ]
+    },
+    {
+      "blocking_run_count": 1,
+      "experiment_id": "EXP-COSET-TYPICAL-N9-FULL-TRANSFER",
+      "falsifier_count_sequence": [
+        4
+      ],
+      "interpretation": "Repeated runs continue to trigger falsifiers; this is proof debt, not progress.",
+      "latest_result_id": "RESULT-EXP-COSET-TYPICAL-N9-FULL-TRANSFER-COSET",
+      "latest_status": "fixed-coefficient-exactly-separates-all-n9-targets-asymptotic-obligations-open",
+      "latest_summary": "Exact degree-28 transfer and class-Fourier contraction prove TT1+TC1 has simple spectrum on all 27 nontrivial n=9 targets; the smallest certified raw gap is below 0.00043 and no speedup claim follows.",
+      "numeric_metric_trends": {
+        "all_n9_target_simple_spectrum_theorem_count": {
           "delta": 0.0,
           "first": 1.0,
           "latest": 1.0,
@@ -6233,68 +6447,68 @@
           "min": 1.0,
           "observations": 1
         },
-        "certified_low_multiplicity_minimum_lcu_normalized_gap_lower_bound": {
-          "delta": -0.00019432229229166334,
-          "first": 0.0033516794460208875,
-          "latest": 0.003157357153729224,
-          "max": 0.0033516794460208875,
-          "min": 0.003157357153729224,
-          "observations": 4
-        },
-        "certified_low_multiplicity_minimum_raw_gap_lower_bound": {
-          "delta": -0.0003886445845833267,
-          "first": 0.006703358892041775,
-          "latest": 0.006314714307458448,
-          "max": 0.006703358892041775,
-          "min": 0.006314714307458448,
-          "observations": 4
-        },
-        "degree6_temporary_character_table_bytes": {
+        "all_n_simple_spectrum_theorem_count": {
           "delta": 0.0,
-          "first": 4780581120.0,
-          "latest": 4780581120.0,
-          "max": 4780581120.0,
-          "min": 4780581120.0,
-          "observations": 2
-        },
-        "degree6_unique_left_translation_count": {
-          "delta": 0.0,
-          "first": 2734.0,
-          "latest": 2734.0,
-          "max": 2734.0,
-          "min": 2734.0,
-          "observations": 2
-        },
-        "degree6_unique_right_translation_count": {
-          "delta": 0.0,
-          "first": 6587.0,
-          "latest": 6587.0,
-          "max": 6587.0,
-          "min": 6587.0,
-          "observations": 2
-        },
-        "degree7_temporary_character_table_bytes": {
-          "delta": 0.0,
-          "first": 6975279360.0,
-          "latest": 6975279360.0,
-          "max": 6975279360.0,
-          "min": 6975279360.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
           "observations": 1
         },
-        "degree7_unique_left_translation_count": {
+        "certified_n9_minimum_lcu_normalized_gap_lower_bound": {
           "delta": 0.0,
-          "first": 3559.0,
-          "latest": 3559.0,
-          "max": 3559.0,
-          "min": 3559.0,
+          "first": 0.00021458645926304394,
+          "latest": 0.00021458645926304394,
+          "max": 0.00021458645926304394,
+          "min": 0.00021458645926304394,
           "observations": 1
         },
-        "degree7_unique_right_translation_count": {
+        "certified_n9_minimum_raw_gap_lower_bound": {
           "delta": 0.0,
-          "first": 9611.0,
-          "latest": 9611.0,
-          "max": 9611.0,
-          "min": 9611.0,
+          "first": 0.0004291729185260879,
+          "latest": 0.0004291729185260879,
+          "max": 0.0004291729185260879,
+          "min": 0.0004291729185260879,
+          "observations": 1
+        },
+        "certified_n9_simple_spectrum_target_count": {
+          "delta": 0.0,
+          "first": 27.0,
+          "latest": 27.0,
+          "max": 27.0,
+          "min": 27.0,
+          "observations": 1
+        },
+        "certified_n9_target_count": {
+          "delta": 0.0,
+          "first": 27.0,
+          "latest": 27.0,
+          "max": 27.0,
+          "min": 27.0,
+          "observations": 1
+        },
+        "class_fourier_amortized_target_count": {
+          "delta": 0.0,
+          "first": 27.0,
+          "latest": 27.0,
+          "max": 27.0,
+          "min": 27.0,
+          "observations": 1
+        },
+        "coherent_typical_multiplicity_transform_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        },
+        "conjugacy_class_count": {
+          "delta": 0.0,
+          "first": 30.0,
+          "latest": 30.0,
+          "max": 30.0,
+          "min": 30.0,
           "observations": 1
         },
         "exact_transfer_recomputed_count": {
@@ -6303,7 +6517,7 @@
           "latest": 0.0,
           "max": 0.0,
           "min": 0.0,
-          "observations": 4
+          "observations": 1
         },
         "inverse_polynomial_normalized_gap_theorem_count": {
           "delta": 0.0,
@@ -6311,47 +6525,39 @@
           "latest": 0.0,
           "max": 0.0,
           "min": 0.0,
-          "observations": 4
+          "observations": 1
         },
-        "low_multiplicity_simple_spectrum_target_count": {
-          "delta": 7.0,
-          "first": 4.0,
-          "latest": 11.0,
-          "max": 11.0,
-          "min": 4.0,
-          "observations": 4
-        },
-        "low_multiplicity_target_count": {
-          "delta": 7.0,
-          "first": 4.0,
-          "latest": 11.0,
-          "max": 11.0,
-          "min": 4.0,
-          "observations": 4
+        "kernel_hash_gated_transfer_cache_count": {
+          "delta": 0.0,
+          "first": 1.0,
+          "latest": 1.0,
+          "max": 1.0,
+          "min": 1.0,
+          "observations": 1
         },
         "maximum_certified_kronecker_multiplicity": {
-          "delta": 3.0,
-          "first": 4.0,
-          "latest": 7.0,
-          "max": 7.0,
-          "min": 4.0,
-          "observations": 4
+          "delta": 0.0,
+          "first": 28.0,
+          "latest": 28.0,
+          "max": 28.0,
+          "min": 28.0,
+          "observations": 1
         },
         "maximum_exact_transfer_degree": {
-          "delta": 3.0,
-          "first": 4.0,
-          "latest": 7.0,
-          "max": 7.0,
-          "min": 4.0,
-          "observations": 4
+          "delta": 0.0,
+          "first": 28.0,
+          "latest": 28.0,
+          "max": 28.0,
+          "min": 28.0,
+          "observations": 1
         },
         "maximum_exact_transfer_state_count": {
-          "delta": 163106.0,
-          "first": 26062.0,
-          "latest": 189168.0,
-          "max": 189168.0,
-          "min": 26062.0,
-          "observations": 4
+          "delta": 0.0,
+          "first": 189192.0,
+          "latest": 189192.0,
+          "max": 189192.0,
+          "min": 189192.0,
+          "observations": 1
         },
         "maximum_in_memory_character_chunk_bytes": {
           "delta": 0.0,
@@ -6369,13 +6575,13 @@
           "min": 128.0,
           "observations": 1
         },
-        "maximum_n9_kronecker_multiplicity": {
+        "minimum_gap_target_multiplicity": {
           "delta": 0.0,
-          "first": 28.0,
-          "latest": 28.0,
-          "max": 28.0,
-          "min": 28.0,
-          "observations": 4
+          "first": 14.0,
+          "latest": 14.0,
+          "max": 14.0,
+          "min": 14.0,
+          "observations": 1
         },
         "n": {
           "delta": 0.0,
@@ -6383,15 +6589,15 @@
           "latest": 9.0,
           "max": 9.0,
           "min": 9.0,
-          "observations": 4
+          "observations": 1
         },
         "n9_exact_target_coverage_fraction": {
-          "delta": 0.25925925925925924,
-          "first": 0.14814814814814814,
-          "latest": 0.4074074074074074,
-          "max": 0.4074074074074074,
-          "min": 0.14814814814814814,
-          "observations": 4
+          "delta": 0.0,
+          "first": 1.0,
+          "latest": 1.0,
+          "max": 1.0,
+          "min": 1.0,
+          "observations": 1
         },
         "n9_nontrivial_multiplicity_target_count": {
           "delta": 0.0,
@@ -6399,15 +6605,334 @@
           "latest": 27.0,
           "max": 27.0,
           "min": 27.0,
+          "observations": 1
+        },
+        "n9_unaudited_target_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        },
+        "parallel_exact_transfer_count": {
+          "delta": 0.0,
+          "first": 1.0,
+          "latest": 1.0,
+          "max": 1.0,
+          "min": 1.0,
+          "observations": 1
+        },
+        "saturated_pair_state_union_count": {
+          "delta": 0.0,
+          "first": 378360.0,
+          "latest": 378360.0,
+          "max": 378360.0,
+          "min": 378360.0,
+          "observations": 1
+        },
+        "temporary_character_table_bytes": {
+          "delta": 0.0,
+          "first": 7805548800.0,
+          "latest": 7805548800.0,
+          "max": 7805548800.0,
+          "min": 7805548800.0,
+          "observations": 1
+        },
+        "typical_label_hidden_involution_decoder_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        },
+        "unique_left_translation_count": {
+          "delta": 0.0,
+          "first": 3909.0,
+          "latest": 3909.0,
+          "max": 3909.0,
+          "min": 3909.0,
+          "observations": 1
+        },
+        "unique_right_translation_count": {
+          "delta": 0.0,
+          "first": 10755.0,
+          "latest": 10755.0,
+          "max": 10755.0,
+          "min": 10755.0,
+          "observations": 1
+        }
+      },
+      "run_count": 1,
+      "status_sequence": [
+        "fixed-coefficient-exactly-separates-all-n9-targets-asymptotic-obligations-open"
+      ]
+    },
+    {
+      "blocking_run_count": 7,
+      "experiment_id": "EXP-COSET-TYPICAL-N9-LOW-MULTIPLICITY-PROBE",
+      "falsifier_count_sequence": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "interpretation": "Repeated runs continue to trigger falsifiers; this is proof debt, not progress.",
+      "latest_result_id": "RESULT-EXP-COSET-TYPICAL-N9-LOW-MULTIPLICITY-PROBE-COSET",
+      "latest_status": "n9-through-multiplicity-nine-survives-higher-blocks-open",
+      "latest_summary": "Exact n=9 quotient transfer proves TT1+TC1 has simple spectrum on all 13 targets of multiplicity at most nine; 14 higher-multiplicity targets remain open.",
+      "numeric_metric_trends": {
+        "all_n9_target_simple_spectrum_theorem_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 7
+        },
+        "all_n_simple_spectrum_theorem_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 7
+        },
+        "bounded_memory_n9_character_contraction_count": {
+          "delta": 0.0,
+          "first": 1.0,
+          "latest": 1.0,
+          "max": 1.0,
+          "min": 1.0,
           "observations": 4
         },
-        "n9_unaudited_higher_multiplicity_target_count": {
-          "delta": -7.0,
-          "first": 23.0,
-          "latest": 16.0,
-          "max": 23.0,
-          "min": 16.0,
+        "certified_low_multiplicity_minimum_lcu_normalized_gap_lower_bound": {
+          "delta": -0.0022629729264464875,
+          "first": 0.0033516794460208875,
+          "latest": 0.0010887065195744003,
+          "max": 0.0033516794460208875,
+          "min": 0.0010887065195744003,
+          "observations": 7
+        },
+        "certified_low_multiplicity_minimum_raw_gap_lower_bound": {
+          "delta": -0.004525945852892975,
+          "first": 0.006703358892041775,
+          "latest": 0.0021774130391488005,
+          "max": 0.006703358892041775,
+          "min": 0.0021774130391488005,
+          "observations": 7
+        },
+        "degree6_temporary_character_table_bytes": {
+          "delta": 0.0,
+          "first": 4780581120.0,
+          "latest": 4780581120.0,
+          "max": 4780581120.0,
+          "min": 4780581120.0,
+          "observations": 5
+        },
+        "degree6_unique_left_translation_count": {
+          "delta": 0.0,
+          "first": 2734.0,
+          "latest": 2734.0,
+          "max": 2734.0,
+          "min": 2734.0,
+          "observations": 5
+        },
+        "degree6_unique_right_translation_count": {
+          "delta": 0.0,
+          "first": 6587.0,
+          "latest": 6587.0,
+          "max": 6587.0,
+          "min": 6587.0,
+          "observations": 5
+        },
+        "degree7_temporary_character_table_bytes": {
+          "delta": 0.0,
+          "first": 6975279360.0,
+          "latest": 6975279360.0,
+          "max": 6975279360.0,
+          "min": 6975279360.0,
           "observations": 4
+        },
+        "degree7_unique_left_translation_count": {
+          "delta": 0.0,
+          "first": 3559.0,
+          "latest": 3559.0,
+          "max": 3559.0,
+          "min": 3559.0,
+          "observations": 4
+        },
+        "degree7_unique_right_translation_count": {
+          "delta": 0.0,
+          "first": 9611.0,
+          "latest": 9611.0,
+          "max": 9611.0,
+          "min": 9611.0,
+          "observations": 4
+        },
+        "degree8_temporary_character_table_bytes": {
+          "delta": 356348160.0,
+          "first": 7449200640.0,
+          "latest": 7805548800.0,
+          "max": 7805548800.0,
+          "min": 7449200640.0,
+          "observations": 3
+        },
+        "degree8_unique_left_translation_count": {
+          "delta": 1939.0,
+          "first": 1970.0,
+          "latest": 3909.0,
+          "max": 3909.0,
+          "min": 1970.0,
+          "observations": 3
+        },
+        "degree8_unique_right_translation_count": {
+          "delta": 491.0,
+          "first": 10264.0,
+          "latest": 10755.0,
+          "max": 10755.0,
+          "min": 10264.0,
+          "observations": 3
+        },
+        "degree9_temporary_character_table_bytes": {
+          "delta": 0.0,
+          "first": 7805548800.0,
+          "latest": 7805548800.0,
+          "max": 7805548800.0,
+          "min": 7805548800.0,
+          "observations": 1
+        },
+        "degree9_unique_left_translation_count": {
+          "delta": 0.0,
+          "first": 3909.0,
+          "latest": 3909.0,
+          "max": 3909.0,
+          "min": 3909.0,
+          "observations": 1
+        },
+        "degree9_unique_right_translation_count": {
+          "delta": 0.0,
+          "first": 10755.0,
+          "latest": 10755.0,
+          "max": 10755.0,
+          "min": 10755.0,
+          "observations": 1
+        },
+        "exact_transfer_recomputed_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 7
+        },
+        "inverse_polynomial_normalized_gap_theorem_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 7
+        },
+        "low_multiplicity_simple_spectrum_target_count": {
+          "delta": 9.0,
+          "first": 4.0,
+          "latest": 13.0,
+          "max": 13.0,
+          "min": 4.0,
+          "observations": 7
+        },
+        "low_multiplicity_target_count": {
+          "delta": 9.0,
+          "first": 4.0,
+          "latest": 13.0,
+          "max": 13.0,
+          "min": 4.0,
+          "observations": 7
+        },
+        "maximum_certified_kronecker_multiplicity": {
+          "delta": 5.0,
+          "first": 4.0,
+          "latest": 9.0,
+          "max": 9.0,
+          "min": 4.0,
+          "observations": 7
+        },
+        "maximum_exact_transfer_degree": {
+          "delta": 5.0,
+          "first": 4.0,
+          "latest": 9.0,
+          "max": 9.0,
+          "min": 4.0,
+          "observations": 7
+        },
+        "maximum_exact_transfer_state_count": {
+          "delta": 163130.0,
+          "first": 26062.0,
+          "latest": 189192.0,
+          "max": 189192.0,
+          "min": 26062.0,
+          "observations": 7
+        },
+        "maximum_in_memory_character_chunk_bytes": {
+          "delta": 0.0,
+          "first": 92897280.0,
+          "latest": 92897280.0,
+          "max": 92897280.0,
+          "min": 92897280.0,
+          "observations": 4
+        },
+        "maximum_in_memory_character_chunk_rows": {
+          "delta": 0.0,
+          "first": 128.0,
+          "latest": 128.0,
+          "max": 128.0,
+          "min": 128.0,
+          "observations": 4
+        },
+        "maximum_n9_kronecker_multiplicity": {
+          "delta": 0.0,
+          "first": 28.0,
+          "latest": 28.0,
+          "max": 28.0,
+          "min": 28.0,
+          "observations": 7
+        },
+        "n": {
+          "delta": 0.0,
+          "first": 9.0,
+          "latest": 9.0,
+          "max": 9.0,
+          "min": 9.0,
+          "observations": 7
+        },
+        "n9_exact_target_coverage_fraction": {
+          "delta": 0.3333333333333333,
+          "first": 0.14814814814814814,
+          "latest": 0.48148148148148145,
+          "max": 0.48148148148148145,
+          "min": 0.14814814814814814,
+          "observations": 7
+        },
+        "n9_nontrivial_multiplicity_target_count": {
+          "delta": 0.0,
+          "first": 27.0,
+          "latest": 27.0,
+          "max": 27.0,
+          "min": 27.0,
+          "observations": 7
+        },
+        "n9_unaudited_higher_multiplicity_target_count": {
+          "delta": -9.0,
+          "first": 23.0,
+          "latest": 14.0,
+          "max": 23.0,
+          "min": 14.0,
+          "observations": 7
         },
         "scalable_n9_character_contraction_count": {
           "delta": 0.0,
@@ -6415,15 +6940,18 @@
           "latest": 0.0,
           "max": 0.0,
           "min": 0.0,
-          "observations": 2
+          "observations": 5
         }
       },
-      "run_count": 4,
+      "run_count": 7,
       "status_sequence": [
         "n9-low-multiplicity-survives-higher-blocks-open",
         "n9-through-multiplicity-five-survives-higher-blocks-open",
         "n9-through-multiplicity-six-survives-higher-blocks-open",
-        "n9-through-multiplicity-seven-survives-higher-blocks-open"
+        "n9-through-multiplicity-seven-survives-higher-blocks-open",
+        "n9-through-multiplicity-eight-survives-higher-blocks-open",
+        "n9-through-multiplicity-eight-survives-higher-blocks-open",
+        "n9-through-multiplicity-nine-survives-higher-blocks-open"
       ]
     },
     {

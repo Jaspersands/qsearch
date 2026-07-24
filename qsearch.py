@@ -410,6 +410,8 @@ from coset_typical_fixed_separator_gap_scaling import (
 from coset_typical_n9_low_multiplicity_probe import (
     write_n9_low_multiplicity_report,
 )
+from coset_typical_n9_full_transfer import write_n9_full_transfer_report
+from coset_typical_n10_feasibility import write_n10_feasibility_report
 from coset_recoupling_capability_ledger import write_recoupling_capability_report
 from coset_recoupling_mechanism_synthesis import write_recoupling_mechanism_synthesis_report
 from classical_baseline_suite import write_hidden_shift_baselines
@@ -5008,6 +5010,66 @@ def command_coset_racah_typical_n9_probe(args: argparse.Namespace) -> int:
     return 0
 
 
+def command_coset_racah_typical_n9_full(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_n9_full_transfer_report(
+        recompute=args.recompute,
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Typical-irrep full n=9 transfer certificate complete")
+    print(
+        "Artifact: research/representation/"
+        "coset_typical_n9_full_transfer.json"
+    )
+    print(
+        "Exact n=9 targets certified: "
+        f"{metrics['certified_n9_simple_spectrum_target_count']}/"
+        f"{metrics['n9_nontrivial_multiplicity_target_count']}"
+    )
+    print(
+        "Certified n=9 normalized minimum gap lower bound: "
+        f"{metrics['certified_n9_minimum_lcu_normalized_gap_lower_bound']:.12g}"
+    )
+    print(f"Transfer recomputed: {bool(metrics['exact_transfer_recomputed_count'])}")
+    print(f"Speedup claim allowed: {payload['claim_gate']['speedup_claim_allowed']}")
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_coset_racah_typical_n10_feasibility(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_n10_feasibility_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Typical-irrep n=10 feasibility boundary complete")
+    print(
+        "Artifact: research/representation/"
+        "coset_typical_n10_feasibility.json"
+    )
+    print(
+        "Exact n=10 targets certified: "
+        f"{metrics['certified_n10_simple_spectrum_target_count']}/"
+        f"{metrics['n10_nontrivial_multiplicity_target_count']}"
+    )
+    print(
+        "Degree-five naive character table bytes: "
+        f"{metrics['degree5_naive_temporary_character_table_bytes']}"
+    )
+    print(f"Speedup claim allowed: {payload['claim_gate']['speedup_claim_allowed']}")
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
 def command_coset_recoupling_synthesize(args: argparse.Namespace) -> int:
     initialize_seed_registry(overwrite=False)
     payload = write_recoupling_mechanism_synthesis_report(
@@ -8557,7 +8619,7 @@ def build_parser() -> argparse.ArgumentParser:
 
     coset_racah_typical_n9_probe = subparsers.add_parser(
         "coset-racah-typical-n9-probe",
-        help="Run the exact n=9 probe on every target of multiplicity at most seven.",
+        help="Run the exact n=9 probe on every target of multiplicity at most ten.",
     )
     coset_racah_typical_n9_probe.add_argument(
         "--recompute", action="store_true"
@@ -8567,6 +8629,31 @@ def build_parser() -> argparse.ArgumentParser:
     )
     coset_racah_typical_n9_probe.set_defaults(
         func=command_coset_racah_typical_n9_probe
+    )
+
+    coset_racah_typical_n9_full = subparsers.add_parser(
+        "coset-racah-typical-n9-full",
+        help="Validate the exact all-target n=9 TT1+TC1 separator certificate.",
+    )
+    coset_racah_typical_n9_full.add_argument(
+        "--recompute", action="store_true"
+    )
+    coset_racah_typical_n9_full.add_argument(
+        "--no-registry", action="store_true"
+    )
+    coset_racah_typical_n9_full.set_defaults(
+        func=command_coset_racah_typical_n9_full
+    )
+
+    coset_racah_typical_n10_feasibility = subparsers.add_parser(
+        "coset-racah-typical-n10-feasibility",
+        help="Validate the first n=10 targets and exact contraction scaling boundary.",
+    )
+    coset_racah_typical_n10_feasibility.add_argument(
+        "--no-registry", action="store_true"
+    )
+    coset_racah_typical_n10_feasibility.set_defaults(
+        func=command_coset_racah_typical_n10_feasibility
     )
 
     coset_recoupling_synthesize = subparsers.add_parser(

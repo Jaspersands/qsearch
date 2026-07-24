@@ -74,8 +74,20 @@
         "value": "0.00125042"
       },
       {
-        "label": "n=9 exact coverage",
-        "value": "11/27 targets"
+        "label": "Fixed-c1 full n=9 coverage",
+        "value": "27/27 targets"
+      },
+      {
+        "label": "n=9 normalized gap lower bound",
+        "value": "0.000214586"
+      },
+      {
+        "label": "n=10 first-target coverage",
+        "value": "2/40 targets"
+      },
+      {
+        "label": "n=10 degree-five table",
+        "value": "91.7 GB"
       },
       {
         "label": "Required portfolio size",
@@ -98,11 +110,11 @@
   },
   "execution_model": "Research generation and experiments run interactively during active Codex sessions. A GitHub workflow validates pushed snapshots, and a scheduled backup can commit only validation-passing changes; neither mechanism performs autonomous quantum-algorithm research between sessions.",
   "metrics": {
-    "blocking_findings": 558,
-    "experiments": 189,
-    "negative_results": 506,
+    "blocking_findings": 564,
+    "experiments": 191,
+    "negative_results": 508,
     "proof_debts": 24,
-    "results": 270
+    "results": 274
   },
   "milestones": [
     {
@@ -122,14 +134,14 @@
       "title": "Every fixed bounded-tail route is cut"
     },
     {
-      "detail": "TC2/TT1 and its disjoint extension are exactly degenerate at n=8. Exact parameterized fourth moments instead prove TT1+c*TC1 has simple spectrum for every c!=0 on 6 n=8 targets of multiplicity at most four, including both known collisions. Exact quotient transfer at c=1 extends this to 20/20 targets through multiplicity 17. Exact root isolation gives a positive n=8 normalized minimum gap, but adjacent n=9 evidence covers only 11/27 targets. All-n, transform, and decoder theorems remain open.",
+      "detail": "TC2/TT1 and its disjoint extension are exactly degenerate at n=8. Exact parameterized fourth moments instead prove TT1+c*TC1 has simple spectrum for every c!=0 on 6 n=8 targets of multiplicity at most four, including both known collisions. Exact quotient transfer at c=1 extends this to 20/20 targets through multiplicity 17. Degree-28 transfer and class-Fourier contraction extend fixed-c1 separation to 27/27 n=9 targets. All-n, gap, transform, and decoder theorems remain open.",
       "title": "An independent third generator repairs the known finite collisions"
     }
   ],
   "next_actions": [
     {
-      "detail": "The fixed separator survives all 11 n=9 targets of multiplicity at most seven. Character slices are capped near 93 MB, though the 6.98 GB temporary disk table still motivates a class/Fourier contraction.",
-      "title": "Extend the n=9 collision audit"
+      "detail": "The fixed separator survives all 27 n=9 targets and the first 2 n=10 targets, but explicit n=10 contraction reaches 91.7 GB by degree five. Derive a recurrence before extending the ladder.",
+      "title": "Attack the all-n separator conjecture"
     },
     {
       "detail": "Aggregate over naturally sampled labels instead of postselecting sectors, and prove the retained mass remains inverse polynomial.",
@@ -163,17 +175,17 @@
       "tone": "blocked"
     },
     {
-      "evidence": "Encoded labels: 25/25. All-n conditioning families: 2. Naturally accessible fixed branches: 0. At n=20 the typical-source audit reaches multiplicity 6,408,361. Finite typical non-scalar coverage: 32/32 blocks; covariance-rank>=2: 29; dense n=7 simple tableau blocks: 224; common finite support-three coefficient rules: 4; class-compressed scalar blocks through n=10: 7; two-generator finite coverage: 108/108; repeated-root collision targets: 2; disjoint-extension repeated-root targets: 2; TC1-repaired collision targets: 2; exact n=8 low-multiplicity coverage: 6/20; fixed-c1 full n=8 coverage: 20/20; certified n=8 normalized minimum gap: 0.00125042; n=9 exact low-multiplicity coverage: 11/27; uniform gap theorems: 0.",
-      "next": "Use the bounded-memory n=9 contraction at multiplicity eight, stopping at the first repeated root or severe gap collapse.",
+      "evidence": "Encoded labels: 25/25. All-n conditioning families: 2. Naturally accessible fixed branches: 0. At n=20 the typical-source audit reaches multiplicity 6,408,361. Finite typical non-scalar coverage: 32/32 blocks; covariance-rank>=2: 29; dense n=7 simple tableau blocks: 224; common finite support-three coefficient rules: 4; class-compressed scalar blocks through n=10: 7; two-generator finite coverage: 108/108; repeated-root collision targets: 2; disjoint-extension repeated-root targets: 2; TC1-repaired collision targets: 2; exact n=8 low-multiplicity coverage: 6/20; fixed-c1 full n=8 coverage: 20/20; certified n=8 normalized minimum gap: 0.00125042; fixed-c1 full n=9 coverage: 27/27; certified n=9 normalized minimum gap: 0.000214586; n=10 first-target coverage: 2/40; uniform gap theorems: 0.",
+      "next": "Derive an all-n class-algebra recurrence and normalized gap bound, while probing n=10 for the first collision or severe gap collapse.",
       "short_title": "Cosets",
       "stage": 3,
-      "status": "Two-generator span and first extension cut",
+      "status": "Finite n=8 and n=9 separators proved; algorithm blocked",
       "summary": "One fixed stable family now has complete encoded coupling-tree labels, a direct three-copy frame block encoding, an all-n eigenvalue lower bound, and polynomial inverse filters. Exact access accounting cuts every fixed bounded-tail extension. Exact character moments now show non-scalar bounded-support action on typical blocks, but a fourth-moment certificate kills the first two-generator resolver.",
       "title": "Nonabelian coset states",
       "tone": "active"
     }
   ],
-  "updated_at": "2026-07-23",
+  "updated_at": "2026-07-24",
   "verdict": {
     "detail": "Every speedup claim remains blocked. A complete 25-label stable coupling-tree interface, direct frame block encoding, all-n conditioning bound, and polynomial inverse filter are proved. The same audit then cuts this branch as an algorithmic route: its natural-input probability is factorially small.",
     "title": "No breakthrough yet"

@@ -7852,18 +7852,18 @@ def seed_candidate_records() -> tuple[list[CandidateRecord], list[ExperimentReco
                 "first adjacent-size n=9 targets."
             ),
             protocol=(
-                "Compile the simultaneous-conjugacy transfer at n=9 through degree seven, reorganize exact S_9 "
+                "Compile the simultaneous-conjugacy transfer at n=9 through degree ten, reorganize exact S_9 "
                 "character contraction by unique left/right translations, recover all characteristic polynomials "
-                "for targets of multiplicity at most seven, and isolate their roots rationally."
+                "for targets of multiplicity at most ten, and isolate their roots rationally."
             ),
             positive_signal=(
                 "The same fixed coefficient survives every n=9 target through multiplicity 28 with controlled "
                 "normalized gaps, then extends to further sizes under an all-n recurrence."
             ),
             falsifiers=[
-                "Any n=9 characteristic polynomial through multiplicity seven has a repeated root.",
+                "Any n=9 characteristic polynomial through multiplicity ten has a repeated root.",
                 "Exact transfer state counts or total weights disagree with the kernel contract.",
-                "Partial 11-of-27 target coverage is presented as full adjacent-size robustness.",
+                "Partial 14-of-27 target coverage is presented as full adjacent-size robustness.",
                 "The non-self-conjugate source is given an invalid sign-twist shortcut.",
                 "No coherent transform or decoder is supplied.",
             ],
@@ -7886,6 +7886,15 @@ def seed_candidate_records() -> tuple[list[CandidateRecord], list[ExperimentReco
                 "degree7_unique_left_translation_count",
                 "degree7_unique_right_translation_count",
                 "degree7_temporary_character_table_bytes",
+                "degree8_unique_left_translation_count",
+                "degree8_unique_right_translation_count",
+                "degree8_temporary_character_table_bytes",
+                "degree9_unique_left_translation_count",
+                "degree9_unique_right_translation_count",
+                "degree9_temporary_character_table_bytes",
+                "degree10_unique_left_translation_count",
+                "degree10_unique_right_translation_count",
+                "degree10_temporary_character_table_bytes",
                 "maximum_in_memory_character_chunk_rows",
                 "maximum_in_memory_character_chunk_bytes",
                 "bounded_memory_n9_character_contraction_count",
@@ -7902,10 +7911,134 @@ def seed_candidate_records() -> tuple[list[CandidateRecord], list[ExperimentReco
                 "Newton identities and rational root isolation",
             ],
             next_actions=[
-                "Use bounded 128-row chunks at degree eight, while pursuing a class/Fourier contraction that removes the 6.98 GB disk table.",
-                "Extend to multiplicity eight, stopping on the first collision.",
+                "Use bounded 128-row chunks at degree eleven, while pursuing a class/Fourier contraction that removes the 7.81 GB disk table.",
+                "Extend to multiplicity eleven, stopping on the first collision.",
                 "Track normalized gaps at every extension.",
                 "Keep all-target, all-n, implementation, and decoding obligations blocked.",
+            ],
+        ),
+        ExperimentRecord(
+            id="EXP-COSET-TYPICAL-N9-FULL-TRANSFER",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Exact all-target n=9 typical separator certificate",
+            status="planned",
+            hypothesis=(
+                "The fixed normalized TT1+TC1 separator has simple spectrum on every nontrivial multiplicity block "
+                "of the n=9 maximum-dimension source, including multiplicity 28."
+            ),
+            protocol=(
+                "Propagate the exact simultaneous-conjugacy transfer through degree 28 with arbitrary-precision "
+                "weights; order S_9 rows by conjugacy class; amortize all 27 target contractions through 30 class "
+                "sums; recover Newton characteristic polynomials; and certify square-free gcds and rational root gaps."
+            ),
+            positive_signal=(
+                "All 27 finite targets are square-free, followed by an all-n class-algebra recurrence, an "
+                "inverse-polynomial normalized gap theorem, a coherent transform, and a reduction-compatible decoder."
+            ),
+            falsifiers=[
+                "Any exact n=9 characteristic polynomial has a nontrivial gcd with its derivative.",
+                "Any transfer state count or total weight violates the exact quotient contract.",
+                "Finite n=8 and n=9 separation is presented as an all-n theorem.",
+                "A small finite raw gap is presented as an efficient phase-estimation guarantee.",
+                "No coherent transform, outcome law, hidden-involution decoder, or classical separation is supplied.",
+            ],
+            metrics=[
+                "maximum_exact_transfer_degree",
+                "maximum_exact_transfer_state_count",
+                "saturated_pair_state_union_count",
+                "certified_n9_target_count",
+                "certified_n9_simple_spectrum_target_count",
+                "n9_nontrivial_multiplicity_target_count",
+                "n9_unaudited_target_count",
+                "maximum_certified_kronecker_multiplicity",
+                "n9_exact_target_coverage_fraction",
+                "certified_n9_minimum_raw_gap_lower_bound",
+                "certified_n9_minimum_lcu_normalized_gap_lower_bound",
+                "minimum_gap_target_multiplicity",
+                "conjugacy_class_count",
+                "class_fourier_amortized_target_count",
+                "unique_left_translation_count",
+                "unique_right_translation_count",
+                "temporary_character_table_bytes",
+                "parallel_exact_transfer_count",
+                "kernel_hash_gated_transfer_cache_count",
+                "all_n9_target_simple_spectrum_theorem_count",
+                "all_n_simple_spectrum_theorem_count",
+                "inverse_polynomial_normalized_gap_theorem_count",
+                "coherent_typical_multiplicity_transform_count",
+                "typical_label_hidden_involution_decoder_count",
+            ],
+            dependencies=[
+                "tools/pair_orbit_transfer.cpp compiled with QSEARCH_N=9",
+                "coset_typical_n9_full_transfer.py",
+                "research/certificates/coset_typical_n9_full_transfer_certificate.json",
+                "class-ordered exact S_9 translation contraction",
+                "Newton identities and rational root isolation",
+            ],
+            next_actions=[
+                "Derive an all-n class-algebra recurrence for the fixed separator.",
+                "Prove or falsify an inverse-polynomial LCU-normalized gap bound.",
+                "Extend the first collision search to n=10 without extrapolating from two sizes.",
+                "Keep implementation, outcome-law, decoder, and speedup obligations blocked.",
+            ],
+        ),
+        ExperimentRecord(
+            id="EXP-COSET-TYPICAL-N10-FEASIBILITY",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Exact n=10 transfer and contraction feasibility boundary",
+            status="planned",
+            hypothesis=(
+                "The fixed TT1+TC1 separator survives the first n=10 multiplicity blocks, and the n=9 exact "
+                "translation-contraction architecture remains usable at the next size."
+            ),
+            protocol=(
+                "Run the exact quotient transfer through degree five for source (4,3,2,1), contract both "
+                "multiplicity-three targets over S_10, certify their cubics, and account for translation-table growth."
+            ),
+            positive_signal=(
+                "The first blocks remain square-free and a representation- or class-algebra recurrence removes "
+                "explicit S_10 group-row storage before higher multiplicities are attempted."
+            ),
+            falsifiers=[
+                "Either multiplicity-three target has a repeated exact root.",
+                "Transfer state counts or total weights violate the exact quotient contract.",
+                "Two of 40 targets are presented as an n=10 theorem.",
+                "A 91.7 GB degree-five table is presented as a scalable contraction.",
+                "No all-n gap, coherent transform, outcome law, or decoder is supplied.",
+            ],
+            metrics=[
+                "maximum_exact_transfer_degree",
+                "degree5_transfer_state_count",
+                "degree5_transfer_state_union_count",
+                "degree5_unique_left_translation_count",
+                "degree5_unique_right_translation_count",
+                "degree5_naive_temporary_character_table_bytes",
+                "degree3_exact_contraction_target_count",
+                "degree3_temporary_character_table_bytes",
+                "certified_n10_simple_spectrum_target_count",
+                "n10_nontrivial_multiplicity_target_count",
+                "n10_unaudited_target_count",
+                "maximum_certified_kronecker_multiplicity",
+                "maximum_n10_kronecker_multiplicity",
+                "certified_n10_minimum_raw_gap_lower_bound",
+                "all_n10_target_simple_spectrum_theorem_count",
+                "scalable_s10_character_contraction_count",
+                "all_n_simple_spectrum_theorem_count",
+                "inverse_polynomial_normalized_gap_theorem_count",
+                "coherent_typical_multiplicity_transform_count",
+                "typical_label_hidden_involution_decoder_count",
+            ],
+            dependencies=[
+                "tools/pair_orbit_transfer.cpp compiled with QSEARCH_N=10",
+                "symmetric_transfer_character_contraction.py",
+                "coset_typical_n10_feasibility.py",
+                "exact S_10 characters and rational root isolation",
+            ],
+            next_actions=[
+                "Derive a contraction recurrence that does not materialize S_10 translation rows.",
+                "Only then extend the collision ladder beyond multiplicity three.",
+                "Track normalized gaps and natural branch mass.",
+                "Keep transform, decoder, and speedup gates blocked.",
             ],
         ),
         ExperimentRecord(

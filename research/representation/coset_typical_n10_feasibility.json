@@ -1,0 +1,104 @@
+{
+  "claim_gate": {
+    "all_n10_targets_audited": false,
+    "all_n_simple_spectrum_proved": false,
+    "coherent_transform_proved": false,
+    "first_n10_targets_simple_spectrum": true,
+    "hidden_involution_decoder_proved": false,
+    "inverse_polynomial_normalized_gap_proved": false,
+    "reason": "Only two of 40 n=10 blocks are certified; explicit S_10 translation storage grows to 91.7 GB by degree five and multiplicities reach 117.",
+    "scalable_s10_character_contraction_proved": false,
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-07-24T03:21:26.364783+00:00",
+  "falsifiers_triggered": [
+    "The first n=10 multiplicity-three cubics do not contain a repeated root.",
+    "Only 2 of 40 n=10 targets are audited.",
+    "The explicit translation table reaches 91.7 GB by degree five.",
+    "No scalable S_10 contraction, all-n gap, coherent transform, or decoder is proved."
+  ],
+  "feasibility_contract": {
+    "algorithmic_speedup_claimed": false,
+    "all_target_claimed": false,
+    "first_target_contraction": "Exact class-Fourier contraction through degree three for both multiplicity-three conjugate targets.",
+    "scaling_boundary": "Extending the same explicit translation table through degree five requires 12630 S_10 character rows, or 91.7 GB before contraction.",
+    "source": "lambda=(4,3,2,1), self-conjugate, dimension 768",
+    "transfer": "Exact parallel quotient transfer through degree five with total weight 2*10080^(degree-1)."
+  },
+  "headline_metrics": {
+    "all_n10_target_simple_spectrum_theorem_count": 0,
+    "all_n_simple_spectrum_theorem_count": 0,
+    "certified_n10_minimum_raw_gap_lower_bound": 0.004653190237205238,
+    "certified_n10_simple_spectrum_target_count": 2,
+    "coherent_typical_multiplicity_transform_count": 0,
+    "degree3_conjugacy_class_count": 42,
+    "degree3_exact_contraction_target_count": 2,
+    "degree3_maximum_character_chunk_bytes_at_128_rows": 928972800,
+    "degree3_quotient_state_union_count": 2248,
+    "degree3_temporary_character_table_bytes": 2866752000,
+    "degree3_unique_left_translation_count": 268,
+    "degree3_unique_right_translation_count": 395,
+    "degree5_naive_temporary_character_table_bytes": 91663488000,
+    "degree5_transfer_state_count": 310071,
+    "degree5_transfer_state_union_count": 364239,
+    "degree5_unique_left_translation_count": 4132,
+    "degree5_unique_right_translation_count": 12630,
+    "inverse_polynomial_normalized_gap_theorem_count": 0,
+    "maximum_certified_kronecker_multiplicity": 3,
+    "maximum_exact_transfer_degree": 5,
+    "maximum_n10_kronecker_multiplicity": 117,
+    "n": 10,
+    "n10_nontrivial_multiplicity_target_count": 40,
+    "n10_unaudited_target_count": 38,
+    "scalable_s10_character_contraction_count": 0,
+    "source_dimension": 768,
+    "typical_label_hidden_involution_decoder_count": 0
+  },
+  "records": [
+    {
+      "certified_minimum_raw_gap_lower_bound": 0.004653190237205238,
+      "characteristic_polynomial_square_free": true,
+      "exact_characteristic_polynomial": "(144*x + 7)*(338688*x**2 + 32928*x + 793)/48771072",
+      "exact_power_traces": [
+        "-7/48",
+        "7247/1016064",
+        "-815/2322432"
+      ],
+      "exact_square_free_gcd": "1",
+      "kronecker_multiplicity": 3,
+      "status": "exact-n10-first-target-simple-spectrum",
+      "target_dimension": 9,
+      "target_partition": [
+        9,
+        1
+      ]
+    },
+    {
+      "certified_minimum_raw_gap_lower_bound": 0.004653190237205238,
+      "characteristic_polynomial_square_free": true,
+      "exact_characteristic_polynomial": "(144*x - 7)*(338688*x**2 - 32928*x + 793)/48771072",
+      "exact_power_traces": [
+        "7/48",
+        "7247/1016064",
+        "815/2322432"
+      ],
+      "exact_square_free_gcd": "1",
+      "kronecker_multiplicity": 3,
+      "status": "exact-n10-first-target-simple-spectrum",
+      "target_dimension": 9,
+      "target_partition": [
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    }
+  ],
+  "status": "n10-first-targets-survive-scalable-contraction-blocked",
+  "summary": "The fixed separator has exact simple spectrum on both multiplicity-three n=10 targets, while degree-five transfer exposes a 91.7 GB naive character-contraction barrier and leaves 38 targets unaudited."
+}

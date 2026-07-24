@@ -217,6 +217,12 @@ COSET_TYPICAL_FIXED_SEPARATOR_GAP_PATH = Path(
 COSET_TYPICAL_N9_LOW_MULTIPLICITY_PATH = Path(
     "research/representation/coset_typical_n9_low_multiplicity_probe.json"
 )
+COSET_TYPICAL_N9_FULL_TRANSFER_PATH = Path(
+    "research/representation/coset_typical_n9_full_transfer.json"
+)
+COSET_TYPICAL_N10_FEASIBILITY_PATH = Path(
+    "research/representation/coset_typical_n10_feasibility.json"
+)
 COSET_RECOUPLING_CAPABILITY_PATH = Path(
     "research/representation/coset_recoupling_capability_ledger.json"
 )
@@ -1020,6 +1026,28 @@ def lemma_templates(candidate: dict[str, Any]) -> list[LemmaRecord]:
         except (json.JSONDecodeError, OSError):
             typical_n9_low_multiplicity = {}
         typical_n9_low_multiplicity_metrics = typical_n9_low_multiplicity.get(
+            "headline_metrics", {}
+        )
+        try:
+            typical_n9_full_transfer = (
+                json.loads(COSET_TYPICAL_N9_FULL_TRANSFER_PATH.read_text())
+                if COSET_TYPICAL_N9_FULL_TRANSFER_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            typical_n9_full_transfer = {}
+        typical_n9_full_transfer_metrics = typical_n9_full_transfer.get(
+            "headline_metrics", {}
+        )
+        try:
+            typical_n10_feasibility = (
+                json.loads(COSET_TYPICAL_N10_FEASIBILITY_PATH.read_text())
+                if COSET_TYPICAL_N10_FEASIBILITY_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            typical_n10_feasibility = {}
+        typical_n10_feasibility_metrics = typical_n10_feasibility.get(
             "headline_metrics", {}
         )
         try:
@@ -2158,7 +2186,7 @@ def lemma_templates(candidate: dict[str, Any]) -> list[LemmaRecord]:
                     candidate_id=candidate_id,
                     statement=(
                         "For the n=8 maximum-dimension source, TT1+TC1 has simple spectrum on every target of "
-                        "Kronecker multiplicity at most seven."
+                        "Kronecker multiplicity at most six."
                     ),
                     depends_on=["PO-MEASUREMENT", "PO-NO-GO"],
                     status=(
@@ -2258,22 +2286,22 @@ def lemma_templates(candidate: dict[str, Any]) -> list[LemmaRecord]:
                     candidate_id=candidate_id,
                     statement=(
                         "For the n=9 maximum-dimension source, TT1+TC1 has simple spectrum on every target of "
-                        "Kronecker multiplicity at most six."
+                        "Kronecker multiplicity at most ten."
                     ),
                     depends_on=["PO-MEASUREMENT", "PO-NO-GO"],
                     status=(
-                        "proved-exact-n9-degree-four-transfer"
+                        "proved-exact-n9-degree-ten-transfer"
                         if int(
                             typical_n9_low_multiplicity_metrics.get(
                                 "low_multiplicity_simple_spectrum_target_count", 0
                             )
                             or 0
                         )
-                        == 11
+                        == 14
                         else "blocked-n9-low-multiplicity-probe-missing"
                     ),
                     falsification_test=(
-                        "Recompute the n=9 quotient transfer through degree seven, contract all 11 targets directly "
+                        "Recompute the n=9 quotient transfer through degree ten, contract all 14 targets directly "
                         "without sign-twist shortcuts, and verify exact square-free gcd and root-isolation certificates."
                     ),
                 ),
@@ -2288,16 +2316,63 @@ def lemma_templates(candidate: dict[str, Any]) -> list[LemmaRecord]:
                     status=(
                         "proved-exact-all-n9-target-separation"
                         if int(
-                            typical_n9_low_multiplicity_metrics.get(
+                            typical_n9_full_transfer_metrics.get(
                                 "all_n9_target_simple_spectrum_theorem_count", 0
                             )
                             or 0
                         )
-                        else "blocked-twenty-three-higher-multiplicity-targets"
+                        else "blocked-thirteen-higher-multiplicity-targets"
                     ),
                     falsification_test=(
-                        "Extend exact transfer through the remaining multiplicities 5 through 28, in increasing "
-                        "degree order, and reject the fixed coefficient on the first nontrivial polynomial gcd."
+                        "Recompute the degree-28 quotient transfer and class-Fourier contraction, verify all 27 "
+                        "square-free gcd certificates, then search n>=10 for the first collision or gap collapse."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-COSET-TYPICAL-TC1-N10-FIRST-TARGET-SEPARATION",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "For the n=10 maximum-dimension source, TT1+TC1 has simple spectrum on both "
+                        "multiplicity-three target blocks."
+                    ),
+                    depends_on=["PO-MEASUREMENT", "PO-NO-GO"],
+                    status=(
+                        "proved-exact-n10-multiplicity-three-separation"
+                        if int(
+                            typical_n10_feasibility_metrics.get(
+                                "certified_n10_simple_spectrum_target_count", 0
+                            )
+                            or 0
+                        )
+                        == 2
+                        else "blocked-n10-first-target-certificate-missing"
+                    ),
+                    falsification_test=(
+                        "Recompute the exact degree-three S_10 class-Fourier contraction and verify both cubic "
+                        "gcd and rational root-gap certificates."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-COSET-TYPICAL-SCALABLE-CHARACTER-CONTRACTION",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "The quotient transfer admits an exact character contraction whose time and memory are "
+                        "polynomial in n and the required multiplicity degree."
+                    ),
+                    depends_on=["PO-MEASUREMENT", "PO-COMPLEXITY", "PO-NO-GO"],
+                    status=(
+                        "proved-scalable-character-contraction"
+                        if int(
+                            typical_n10_feasibility_metrics.get(
+                                "scalable_s10_character_contraction_count", 0
+                            )
+                            or 0
+                        )
+                        else "blocked-explicit-s10-table-is-91gb-at-degree-five"
+                    ),
+                    falsification_test=(
+                        "Derive a representation- or class-algebra recurrence that avoids materializing S_n rows, "
+                        "prove its exactness, and benchmark its scaling beyond n=10."
                     ),
                 ),
                 LemmaRecord(

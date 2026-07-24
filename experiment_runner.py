@@ -144,6 +144,8 @@ from coset_typical_fixed_separator_gap_scaling import (
 from coset_typical_n9_low_multiplicity_probe import (
     write_n9_low_multiplicity_report,
 )
+from coset_typical_n9_full_transfer import write_n9_full_transfer_report
+from coset_typical_n10_feasibility import write_n10_feasibility_report
 from coset_recoupling_capability_ledger import write_recoupling_capability_report
 from coset_recoupling_mechanism_synthesis import write_recoupling_mechanism_synthesis_report
 from coset_state_distinguishability import write_coset_distinguishability_report
@@ -620,6 +622,8 @@ COSET_EXPERIMENTS = {
     "EXP-COSET-TYPICAL-HIGH-MULTIPLICITY-TRANSFER",
     "EXP-COSET-TYPICAL-FIXED-SEPARATOR-GAP-SCALING",
     "EXP-COSET-TYPICAL-N9-LOW-MULTIPLICITY-PROBE",
+    "EXP-COSET-TYPICAL-N9-FULL-TRANSFER",
+    "EXP-COSET-TYPICAL-N10-FEASIBILITY",
     "EXP-COSET-RECOUPLING-CAPABILITY-LEDGER",
     "EXP-COSET-RECOUPLING-MECHANISM-SYNTHESIS",
 }
@@ -1464,6 +1468,8 @@ def select_next_experiment() -> NextExperimentSelection:
         "EXP-COSET-TYPICAL-HIGH-MULTIPLICITY-TRANSFER": 63,
         "EXP-COSET-TYPICAL-FIXED-SEPARATOR-GAP-SCALING": 64,
         "EXP-COSET-TYPICAL-N9-LOW-MULTIPLICITY-PROBE": 65,
+        "EXP-COSET-TYPICAL-N9-FULL-TRANSFER": 66,
+        "EXP-COSET-TYPICAL-N10-FEASIBILITY": 67,
         "EXP-COSET-RECOUPLING-CAPABILITY-LEDGER": 24,
         "EXP-COSET-RECOUPLING-MECHANISM-SYNTHESIS": 25,
     }
@@ -3087,6 +3093,21 @@ def run_experiment(experiment_id: str) -> RunnerResult:
         elif experiment_id == "EXP-COSET-TYPICAL-N9-LOW-MULTIPLICITY-PROBE":
             payload = write_n9_low_multiplicity_report(
                 recompute=False,
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif experiment_id == "EXP-COSET-TYPICAL-N9-FULL-TRANSFER":
+            payload = write_n9_full_transfer_report(
+                recompute=False,
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif experiment_id == "EXP-COSET-TYPICAL-N10-FEASIBILITY":
+            payload = write_n10_feasibility_report(
                 write_registry=True,
                 registry_experiment_id=experiment_id,
                 registry_candidate_id=experiment["candidate_id"],
