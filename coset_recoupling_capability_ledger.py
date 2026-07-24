@@ -57,8 +57,8 @@ COSET_TYPICAL_HIGH_MULTIPLICITY_TRANSFER_PATH = Path(
 COSET_TYPICAL_FIXED_SEPARATOR_GAP_PATH = Path(
     "research/representation/coset_typical_fixed_separator_gap_scaling.json"
 )
-COSET_TYPICAL_N9_LOW_MULTIPLICITY_PATH = Path(
-    "research/representation/coset_typical_n9_low_multiplicity_probe.json"
+COSET_TYPICAL_N9_FULL_TRANSFER_PATH = Path(
+    "research/representation/coset_typical_n9_full_transfer.json"
 )
 
 
@@ -507,8 +507,8 @@ def build_recoupling_capability_report(
     )
     try:
         typical_n9_payload = (
-            json.loads(COSET_TYPICAL_N9_LOW_MULTIPLICITY_PATH.read_text())
-            if COSET_TYPICAL_N9_LOW_MULTIPLICITY_PATH.exists()
+            json.loads(COSET_TYPICAL_N9_FULL_TRANSFER_PATH.read_text())
+            if COSET_TYPICAL_N9_FULL_TRANSFER_PATH.exists()
             else {}
         )
     except (json.JSONDecodeError, OSError):
@@ -708,15 +708,15 @@ def build_recoupling_capability_report(
             )
             or 0
         ),
-        "typical_irrep_n9_low_multiplicity_certified_target_count": int(
+        "typical_irrep_n9_certified_target_count": int(
             typical_n9_metrics.get(
-                "low_multiplicity_simple_spectrum_target_count", 0
+                "certified_n9_simple_spectrum_target_count", 0
             )
             or 0
         ),
         "typical_irrep_n9_unaudited_target_count": int(
             typical_n9_metrics.get(
-                "n9_unaudited_higher_multiplicity_target_count", 0
+                "n9_unaudited_target_count", 0
             )
             or 0
         ),
@@ -725,6 +725,12 @@ def build_recoupling_capability_report(
                 "all_n9_target_simple_spectrum_theorem_count", 0
             )
             or 0
+        ),
+        "typical_irrep_n9_normalized_gap_lower_bound": float(
+            typical_n9_metrics.get(
+                "certified_n9_minimum_lcu_normalized_gap_lower_bound", 0.0
+            )
+            or 0.0
         ),
         "typical_irrep_uniform_encoded_tree_transform_count": 0,
         "typical_irrep_frame_conditioning_theorem_count": 0,

@@ -7,6 +7,7 @@
 #include <map>
 #include <stdexcept>
 #include <string>
+#include <thread>
 #include <unordered_map>
 #include <utility>
 #include <vector>
@@ -266,20 +267,75 @@ void add_transition(
     }
 }
 
-int parse_max_degree(int argc, char** argv) {
+struct Options {
     int max_degree = 4;
+    int threads = 1;
+};
+
+Options parse_options(int argc, char** argv) {
+    Options options;
     for (int index = 1; index < argc; ++index) {
         const std::string argument = argv[index];
         if (argument == "--max-degree" && index + 1 < argc) {
-            max_degree = std::atoi(argv[++index]);
+            options.max_degree = std::atoi(argv[++index]);
+        } else if (argument == "--threads" && index + 1 < argc) {
+            options.threads = std::atoi(argv[++index]);
         } else {
-            throw std::invalid_argument("usage: pair_orbit_transfer [--max-degree 1..32]");
+            throw std::invalid_argument(
+                "usage: pair_orbit_transfer [--max-degree 1..32] [--threads 1..64]"
+            );
         }
     }
-    if (max_degree < 1 || max_degree > 32) {
+    if (options.max_degree < 1 || options.max_degree > 32) {
         throw std::invalid_argument("max degree must be between 1 and 32");
     }
-    return max_degree;
+    if (options.threads < 1 || options.threads > 64) {
+        throw std::invalid_argument("threads must be between 1 and 64");
+    }
+    return options;
+}
+
+Distribution apply_transfer(
+    const Distribution& current,
+    const std::vector<Pair>& tt1_orbit,
+    const std::vector<Pair>& tc1_orbit,
+    int requested_threads
+) {
+    const std::vector<std::pair<Key, Weight>> entries(
+        current.begin(), current.end()
+    );
+    const int thread_count = std::min<int>(
+        requested_threads, static_cast<int>(entries.size())
+    );
+    std::vector<Distribution> partials(thread_count);
+    std::vector<std::thread> workers;
+    workers.reserve(thread_count);
+    for (int thread_index = 0; thread_index < thread_count; ++thread_index) {
+        const std::size_t begin = entries.size() * thread_index / thread_count;
+        const std::size_t end = entries.size() * (thread_index + 1) / thread_count;
+        workers.emplace_back([&, thread_index, begin, end]() {
+            auto& partial = partials[thread_index];
+            partial.reserve(std::max<std::size_t>(43206, current.size()));
+            for (std::size_t index = begin; index < end; ++index) {
+                const auto& [key, weight] = entries[index];
+                const auto state = unpack_pair(key);
+                add_transition(partial, state, weight, tt1_orbit, N - 3);
+                add_transition(partial, state, weight, tc1_orbit, 1);
+            }
+        });
+    }
+    for (auto& worker : workers) {
+        worker.join();
+    }
+
+    Distribution result;
+    result.reserve(std::max<std::size_t>(43206, current.size() + current.size() / 4));
+    for (auto& partial : partials) {
+        for (auto& [key, weight] : partial) {
+            result[key] += weight;
+        }
+    }
+    return result;
 }
 
 void emit_distribution(int degree, const Distribution& distribution) {
@@ -308,7 +364,7 @@ void emit_distribution(int degree, const Distribution& distribution) {
 
 int main(int argc, char** argv) {
     try {
-        const int max_degree = parse_max_degree(argc, argv);
+        const auto options = parse_options(argc, argv);
         const auto tt1_orbit = shared_transposition_orbit();
         const auto tc1_orbit = tc_intersection_one_orbit();
         const std::size_t expected_tt1 = N * (N - 1) * (N - 2);
@@ -321,15 +377,10 @@ int main(int argc, char** argv) {
         current[canonical_pair(transposition(0, 1), transposition(0, 2))] += 1;
         current[canonical_pair(transposition(0, 1), three_cycle(0, 2, 3))] += 1;
         emit_distribution(1, current);
-        for (int degree = 2; degree <= max_degree; ++degree) {
-            Distribution next;
-            next.reserve(43206);
-            for (const auto& [key, weight] : current) {
-                const auto state = unpack_pair(key);
-                add_transition(next, state, weight, tt1_orbit, N - 3);
-                add_transition(next, state, weight, tc1_orbit, 1);
-            }
-            current = std::move(next);
+        for (int degree = 2; degree <= options.max_degree; ++degree) {
+            current = apply_transfer(
+                current, tt1_orbit, tc1_orbit, options.threads
+            );
             emit_distribution(degree, current);
         }
         return 0;

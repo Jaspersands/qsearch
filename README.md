@@ -903,15 +903,27 @@ recorded only as a falsification target, not as an inverse-polynomial claim.
 
 The first adjacent-size probe compiles the quotient transfer for `S_9` and
 contracts characters directly because the dimension-216 source is not
-self-conjugate. At `c=1`, all 11 targets of multiplicity at most seven have
-exact square-free characteristic polynomials, with certified raw gap above
-`0.006314714307`. This is only `11/27` target coverage; the remaining 16 targets
-reach multiplicity 28 and remain the immediate collision search space.
-The degree-seven exact contraction required a 6.98 GB temporary translation
-table. An earlier unchunked degree-six run suffered severe memory pressure; the
-implementation now processes fixed 128-row chunks, capping character slices near 93 MB. The disk
-table still grows with the translation set, so a class-algebra or Fourier
-contraction remains necessary for genuine scaling.
+self-conjugate. At `c=1`, exact transfer through degree 28 proves all 27
+nontrivial targets have square-free characteristic polynomials. The global raw
+gap lower bound is `0.0004291729185`; after two-term LCU normalization it is
+below `0.000215`. This closes the finite `n=9` collision audit, not the
+asymptotic algorithm.
+
+The transfer kernel uses parallel local-map accumulation and a kernel-hash-gated
+exact TSV cache. A class-Fourier contraction orders `S_9` rows by its 30
+conjugacy classes, scans each translation pair once, and amortizes all 27 target
+characters. The exact table still occupies 7.81 GB on disk, while fixed 128-row
+chunks cap character slices near 93 MB. An all-`n` class-algebra recurrence,
+inverse-polynomial normalized gap, coherent transform, outcome law, and decoder
+remain open.
+
+The first `n=10` feasibility probe uses the self-conjugate
+`(4,3,2,1)` source. Both multiplicity-three conjugate targets have exact
+square-free cubics, but this is only `2/40` target coverage. Quotient transfer
+reaches 310,071 states by degree five, and the direct class-ordered `S_10`
+translation table would require 91.7 GB. Higher multiplicities are blocked
+until a representation- or class-algebra contraction removes explicit group
+rows.
 
 ```bash
 python qsearch.py coset-racah-gap-scaling
@@ -947,6 +959,8 @@ python qsearch.py coset-racah-typical-third-generator
 python qsearch.py coset-racah-typical-high-multiplicity --recompute
 python qsearch.py coset-racah-typical-separator-gaps
 python qsearch.py coset-racah-typical-n9-probe --recompute
+python qsearch.py coset-racah-typical-n9-full
+python qsearch.py coset-racah-typical-n10-feasibility
 python qsearch.py run EXP-COSET-TYPICAL-COMMUTANT-MOMENT-AUDIT
 python qsearch.py run EXP-COSET-TYPICAL-CLASS-CONTRACTION-SCALING
 python qsearch.py run EXP-COSET-TYPICAL-PORTFOLIO-COLLISION-CERTIFICATE

@@ -66,8 +66,8 @@
       "target_claim": "The coset observable is not a disguised classical invariant."
     }
   ],
-  "created_at": "2026-07-23T14:34:12.059115+00:00",
-  "lemma_count": 514,
+  "created_at": "2026-07-24T03:21:40.304294+00:00",
+  "lemma_count": 526,
   "lemmas": [
     {
       "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -535,7 +535,7 @@
       ],
       "falsification_test": "Reproduce exact transfer state counts through degree six, contract all 12 target trace sequences, and verify each Newton characteristic polynomial has nonzero discriminant.",
       "id": "LEMMA-CODE-COSET-COLLECTIVE-COSET-TYPICAL-TC1-N8-MULTIPLICITY-SIX-SEPARATION",
-      "statement": "For the n=8 maximum-dimension source, TT1+TC1 has simple spectrum on every target of Kronecker multiplicity at most seven.",
+      "statement": "For the n=8 maximum-dimension source, TT1+TC1 has simple spectrum on every target of Kronecker multiplicity at most six.",
       "status": "proved-exact-quotient-transfer-and-nonzero-discriminants"
     },
     {
@@ -579,10 +579,10 @@
         "PO-MEASUREMENT",
         "PO-NO-GO"
       ],
-      "falsification_test": "Recompute the n=9 quotient transfer through degree seven, contract all 11 targets directly without sign-twist shortcuts, and verify exact square-free gcd and root-isolation certificates.",
+      "falsification_test": "Recompute the n=9 quotient transfer through degree ten, contract all 14 targets directly without sign-twist shortcuts, and verify exact square-free gcd and root-isolation certificates.",
       "id": "LEMMA-CODE-COSET-COLLECTIVE-COSET-TYPICAL-TC1-N9-LOW-MULTIPLICITY-SEPARATION",
-      "statement": "For the n=9 maximum-dimension source, TT1+TC1 has simple spectrum on every target of Kronecker multiplicity at most six.",
-      "status": "proved-exact-n9-degree-four-transfer"
+      "statement": "For the n=9 maximum-dimension source, TT1+TC1 has simple spectrum on every target of Kronecker multiplicity at most ten.",
+      "status": "proved-exact-n9-degree-ten-transfer"
     },
     {
       "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -591,10 +591,33 @@
         "PO-COMPLEXITY",
         "PO-NO-GO"
       ],
-      "falsification_test": "Extend exact transfer through the remaining multiplicities 5 through 28, in increasing degree order, and reject the fixed coefficient on the first nontrivial polynomial gcd.",
+      "falsification_test": "Recompute the degree-28 quotient transfer and class-Fourier contraction, verify all 27 square-free gcd certificates, then search n>=10 for the first collision or gap collapse.",
       "id": "LEMMA-CODE-COSET-COLLECTIVE-COSET-TYPICAL-TC1-N9-ALL-TARGET-SEPARATION",
       "statement": "For the n=9 maximum-dimension source, TT1+TC1 has simple spectrum on every nontrivial target through Kronecker multiplicity 28.",
-      "status": "blocked-twenty-three-higher-multiplicity-targets"
+      "status": "proved-exact-all-n9-target-separation"
+    },
+    {
+      "candidate_id": "CODE-COSET-COLLECTIVE",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Recompute the exact degree-three S_10 class-Fourier contraction and verify both cubic gcd and rational root-gap certificates.",
+      "id": "LEMMA-CODE-COSET-COLLECTIVE-COSET-TYPICAL-TC1-N10-FIRST-TARGET-SEPARATION",
+      "statement": "For the n=10 maximum-dimension source, TT1+TC1 has simple spectrum on both multiplicity-three target blocks.",
+      "status": "proved-exact-n10-multiplicity-three-separation"
+    },
+    {
+      "candidate_id": "CODE-COSET-COLLECTIVE",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Derive a representation- or class-algebra recurrence that avoids materializing S_n rows, prove its exactness, and benchmark its scaling beyond n=10.",
+      "id": "LEMMA-CODE-COSET-COLLECTIVE-COSET-TYPICAL-SCALABLE-CHARACTER-CONTRACTION",
+      "statement": "The quotient transfer admits an exact character contraction whose time and memory are polynomial in n and the required multiplicity degree.",
+      "status": "blocked-explicit-s10-table-is-91gb-at-degree-five"
     },
     {
       "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -2207,7 +2230,7 @@
       ],
       "falsification_test": "Reproduce exact transfer state counts through degree six, contract all 12 target trace sequences, and verify each Newton characteristic polynomial has nonzero discriminant.",
       "id": "LEMMA-HYP-LIT-COSET-OBSERVABLES-COSET-TYPICAL-TC1-N8-MULTIPLICITY-SIX-SEPARATION",
-      "statement": "For the n=8 maximum-dimension source, TT1+TC1 has simple spectrum on every target of Kronecker multiplicity at most seven.",
+      "statement": "For the n=8 maximum-dimension source, TT1+TC1 has simple spectrum on every target of Kronecker multiplicity at most six.",
       "status": "proved-exact-quotient-transfer-and-nonzero-discriminants"
     },
     {
@@ -2251,10 +2274,10 @@
         "PO-MEASUREMENT",
         "PO-NO-GO"
       ],
-      "falsification_test": "Recompute the n=9 quotient transfer through degree seven, contract all 11 targets directly without sign-twist shortcuts, and verify exact square-free gcd and root-isolation certificates.",
+      "falsification_test": "Recompute the n=9 quotient transfer through degree ten, contract all 14 targets directly without sign-twist shortcuts, and verify exact square-free gcd and root-isolation certificates.",
       "id": "LEMMA-HYP-LIT-COSET-OBSERVABLES-COSET-TYPICAL-TC1-N9-LOW-MULTIPLICITY-SEPARATION",
-      "statement": "For the n=9 maximum-dimension source, TT1+TC1 has simple spectrum on every target of Kronecker multiplicity at most six.",
-      "status": "proved-exact-n9-degree-four-transfer"
+      "statement": "For the n=9 maximum-dimension source, TT1+TC1 has simple spectrum on every target of Kronecker multiplicity at most ten.",
+      "status": "proved-exact-n9-degree-ten-transfer"
     },
     {
       "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
@@ -2263,10 +2286,33 @@
         "PO-COMPLEXITY",
         "PO-NO-GO"
       ],
-      "falsification_test": "Extend exact transfer through the remaining multiplicities 5 through 28, in increasing degree order, and reject the fixed coefficient on the first nontrivial polynomial gcd.",
+      "falsification_test": "Recompute the degree-28 quotient transfer and class-Fourier contraction, verify all 27 square-free gcd certificates, then search n>=10 for the first collision or gap collapse.",
       "id": "LEMMA-HYP-LIT-COSET-OBSERVABLES-COSET-TYPICAL-TC1-N9-ALL-TARGET-SEPARATION",
       "statement": "For the n=9 maximum-dimension source, TT1+TC1 has simple spectrum on every nontrivial target through Kronecker multiplicity 28.",
-      "status": "blocked-twenty-three-higher-multiplicity-targets"
+      "status": "proved-exact-all-n9-target-separation"
+    },
+    {
+      "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Recompute the exact degree-three S_10 class-Fourier contraction and verify both cubic gcd and rational root-gap certificates.",
+      "id": "LEMMA-HYP-LIT-COSET-OBSERVABLES-COSET-TYPICAL-TC1-N10-FIRST-TARGET-SEPARATION",
+      "statement": "For the n=10 maximum-dimension source, TT1+TC1 has simple spectrum on both multiplicity-three target blocks.",
+      "status": "proved-exact-n10-multiplicity-three-separation"
+    },
+    {
+      "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Derive a representation- or class-algebra recurrence that avoids materializing S_n rows, prove its exactness, and benchmark its scaling beyond n=10.",
+      "id": "LEMMA-HYP-LIT-COSET-OBSERVABLES-COSET-TYPICAL-SCALABLE-CHARACTER-CONTRACTION",
+      "statement": "The quotient transfer admits an exact character contraction whose time and memory are polynomial in n and the required multiplicity degree.",
+      "status": "blocked-explicit-s10-table-is-91gb-at-degree-five"
     },
     {
       "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
@@ -3879,7 +3925,7 @@
       ],
       "falsification_test": "Reproduce exact transfer state counts through degree six, contract all 12 target trace sequences, and verify each Newton characteristic polynomial has nonzero discriminant.",
       "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-COSET-TYPICAL-TC1-N8-MULTIPLICITY-SIX-SEPARATION",
-      "statement": "For the n=8 maximum-dimension source, TT1+TC1 has simple spectrum on every target of Kronecker multiplicity at most seven.",
+      "statement": "For the n=8 maximum-dimension source, TT1+TC1 has simple spectrum on every target of Kronecker multiplicity at most six.",
       "status": "proved-exact-quotient-transfer-and-nonzero-discriminants"
     },
     {
@@ -3923,10 +3969,10 @@
         "PO-MEASUREMENT",
         "PO-NO-GO"
       ],
-      "falsification_test": "Recompute the n=9 quotient transfer through degree seven, contract all 11 targets directly without sign-twist shortcuts, and verify exact square-free gcd and root-isolation certificates.",
+      "falsification_test": "Recompute the n=9 quotient transfer through degree ten, contract all 14 targets directly without sign-twist shortcuts, and verify exact square-free gcd and root-isolation certificates.",
       "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-COSET-TYPICAL-TC1-N9-LOW-MULTIPLICITY-SEPARATION",
-      "statement": "For the n=9 maximum-dimension source, TT1+TC1 has simple spectrum on every target of Kronecker multiplicity at most six.",
-      "status": "proved-exact-n9-degree-four-transfer"
+      "statement": "For the n=9 maximum-dimension source, TT1+TC1 has simple spectrum on every target of Kronecker multiplicity at most ten.",
+      "status": "proved-exact-n9-degree-ten-transfer"
     },
     {
       "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
@@ -3935,10 +3981,33 @@
         "PO-COMPLEXITY",
         "PO-NO-GO"
       ],
-      "falsification_test": "Extend exact transfer through the remaining multiplicities 5 through 28, in increasing degree order, and reject the fixed coefficient on the first nontrivial polynomial gcd.",
+      "falsification_test": "Recompute the degree-28 quotient transfer and class-Fourier contraction, verify all 27 square-free gcd certificates, then search n>=10 for the first collision or gap collapse.",
       "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-COSET-TYPICAL-TC1-N9-ALL-TARGET-SEPARATION",
       "statement": "For the n=9 maximum-dimension source, TT1+TC1 has simple spectrum on every nontrivial target through Kronecker multiplicity 28.",
-      "status": "blocked-twenty-three-higher-multiplicity-targets"
+      "status": "proved-exact-all-n9-target-separation"
+    },
+    {
+      "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Recompute the exact degree-three S_10 class-Fourier contraction and verify both cubic gcd and rational root-gap certificates.",
+      "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-COSET-TYPICAL-TC1-N10-FIRST-TARGET-SEPARATION",
+      "statement": "For the n=10 maximum-dimension source, TT1+TC1 has simple spectrum on both multiplicity-three target blocks.",
+      "status": "proved-exact-n10-multiplicity-three-separation"
+    },
+    {
+      "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Derive a representation- or class-algebra recurrence that avoids materializing S_n rows, prove its exactness, and benchmark its scaling beyond n=10.",
+      "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-COSET-TYPICAL-SCALABLE-CHARACTER-CONTRACTION",
+      "statement": "The quotient transfer admits an exact character contraction whose time and memory are polynomial in n and the required multiplicity degree.",
+      "status": "blocked-explicit-s10-table-is-91gb-at-degree-five"
     },
     {
       "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
@@ -4590,7 +4659,7 @@
       ],
       "falsification_test": "Reproduce exact transfer state counts through degree six, contract all 12 target trace sequences, and verify each Newton characteristic polynomial has nonzero discriminant.",
       "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-COSET-TYPICAL-TC1-N8-MULTIPLICITY-SIX-SEPARATION",
-      "statement": "For the n=8 maximum-dimension source, TT1+TC1 has simple spectrum on every target of Kronecker multiplicity at most seven.",
+      "statement": "For the n=8 maximum-dimension source, TT1+TC1 has simple spectrum on every target of Kronecker multiplicity at most six.",
       "status": "proved-exact-quotient-transfer-and-nonzero-discriminants"
     },
     {
@@ -4634,10 +4703,10 @@
         "PO-MEASUREMENT",
         "PO-NO-GO"
       ],
-      "falsification_test": "Recompute the n=9 quotient transfer through degree seven, contract all 11 targets directly without sign-twist shortcuts, and verify exact square-free gcd and root-isolation certificates.",
+      "falsification_test": "Recompute the n=9 quotient transfer through degree ten, contract all 14 targets directly without sign-twist shortcuts, and verify exact square-free gcd and root-isolation certificates.",
       "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-COSET-TYPICAL-TC1-N9-LOW-MULTIPLICITY-SEPARATION",
-      "statement": "For the n=9 maximum-dimension source, TT1+TC1 has simple spectrum on every target of Kronecker multiplicity at most six.",
-      "status": "proved-exact-n9-degree-four-transfer"
+      "statement": "For the n=9 maximum-dimension source, TT1+TC1 has simple spectrum on every target of Kronecker multiplicity at most ten.",
+      "status": "proved-exact-n9-degree-ten-transfer"
     },
     {
       "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
@@ -4646,10 +4715,33 @@
         "PO-COMPLEXITY",
         "PO-NO-GO"
       ],
-      "falsification_test": "Extend exact transfer through the remaining multiplicities 5 through 28, in increasing degree order, and reject the fixed coefficient on the first nontrivial polynomial gcd.",
+      "falsification_test": "Recompute the degree-28 quotient transfer and class-Fourier contraction, verify all 27 square-free gcd certificates, then search n>=10 for the first collision or gap collapse.",
       "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-COSET-TYPICAL-TC1-N9-ALL-TARGET-SEPARATION",
       "statement": "For the n=9 maximum-dimension source, TT1+TC1 has simple spectrum on every nontrivial target through Kronecker multiplicity 28.",
-      "status": "blocked-twenty-three-higher-multiplicity-targets"
+      "status": "proved-exact-all-n9-target-separation"
+    },
+    {
+      "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Recompute the exact degree-three S_10 class-Fourier contraction and verify both cubic gcd and rational root-gap certificates.",
+      "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-COSET-TYPICAL-TC1-N10-FIRST-TARGET-SEPARATION",
+      "statement": "For the n=10 maximum-dimension source, TT1+TC1 has simple spectrum on both multiplicity-three target blocks.",
+      "status": "proved-exact-n10-multiplicity-three-separation"
+    },
+    {
+      "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Derive a representation- or class-algebra recurrence that avoids materializing S_n rows, prove its exactness, and benchmark its scaling beyond n=10.",
+      "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-COSET-TYPICAL-SCALABLE-CHARACTER-CONTRACTION",
+      "statement": "The quotient transfer admits an exact character contraction whose time and memory are polynomial in n and the required multiplicity degree.",
+      "status": "blocked-explicit-s10-table-is-91gb-at-degree-five"
     },
     {
       "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
@@ -5301,7 +5393,7 @@
       ],
       "falsification_test": "Reproduce exact transfer state counts through degree six, contract all 12 target trace sequences, and verify each Newton characteristic polynomial has nonzero discriminant.",
       "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-COSET-TYPICAL-TC1-N8-MULTIPLICITY-SIX-SEPARATION",
-      "statement": "For the n=8 maximum-dimension source, TT1+TC1 has simple spectrum on every target of Kronecker multiplicity at most seven.",
+      "statement": "For the n=8 maximum-dimension source, TT1+TC1 has simple spectrum on every target of Kronecker multiplicity at most six.",
       "status": "proved-exact-quotient-transfer-and-nonzero-discriminants"
     },
     {
@@ -5345,10 +5437,10 @@
         "PO-MEASUREMENT",
         "PO-NO-GO"
       ],
-      "falsification_test": "Recompute the n=9 quotient transfer through degree seven, contract all 11 targets directly without sign-twist shortcuts, and verify exact square-free gcd and root-isolation certificates.",
+      "falsification_test": "Recompute the n=9 quotient transfer through degree ten, contract all 14 targets directly without sign-twist shortcuts, and verify exact square-free gcd and root-isolation certificates.",
       "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-COSET-TYPICAL-TC1-N9-LOW-MULTIPLICITY-SEPARATION",
-      "statement": "For the n=9 maximum-dimension source, TT1+TC1 has simple spectrum on every target of Kronecker multiplicity at most six.",
-      "status": "proved-exact-n9-degree-four-transfer"
+      "statement": "For the n=9 maximum-dimension source, TT1+TC1 has simple spectrum on every target of Kronecker multiplicity at most ten.",
+      "status": "proved-exact-n9-degree-ten-transfer"
     },
     {
       "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
@@ -5357,10 +5449,33 @@
         "PO-COMPLEXITY",
         "PO-NO-GO"
       ],
-      "falsification_test": "Extend exact transfer through the remaining multiplicities 5 through 28, in increasing degree order, and reject the fixed coefficient on the first nontrivial polynomial gcd.",
+      "falsification_test": "Recompute the degree-28 quotient transfer and class-Fourier contraction, verify all 27 square-free gcd certificates, then search n>=10 for the first collision or gap collapse.",
       "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-COSET-TYPICAL-TC1-N9-ALL-TARGET-SEPARATION",
       "statement": "For the n=9 maximum-dimension source, TT1+TC1 has simple spectrum on every nontrivial target through Kronecker multiplicity 28.",
-      "status": "blocked-twenty-three-higher-multiplicity-targets"
+      "status": "proved-exact-all-n9-target-separation"
+    },
+    {
+      "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Recompute the exact degree-three S_10 class-Fourier contraction and verify both cubic gcd and rational root-gap certificates.",
+      "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-COSET-TYPICAL-TC1-N10-FIRST-TARGET-SEPARATION",
+      "statement": "For the n=10 maximum-dimension source, TT1+TC1 has simple spectrum on both multiplicity-three target blocks.",
+      "status": "proved-exact-n10-multiplicity-three-separation"
+    },
+    {
+      "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Derive a representation- or class-algebra recurrence that avoids materializing S_n rows, prove its exactness, and benchmark its scaling beyond n=10.",
+      "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-COSET-TYPICAL-SCALABLE-CHARACTER-CONTRACTION",
+      "statement": "The quotient transfer admits an exact character contraction whose time and memory are polynomial in n and the required multiplicity degree.",
+      "status": "blocked-explicit-s10-table-is-91gb-at-degree-five"
     },
     {
       "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
@@ -6012,7 +6127,7 @@
       ],
       "falsification_test": "Reproduce exact transfer state counts through degree six, contract all 12 target trace sequences, and verify each Newton characteristic polynomial has nonzero discriminant.",
       "id": "LEMMA-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-COSET-TYPICAL-TC1-N8-MULTIPLICITY-SIX-SEPARATION",
-      "statement": "For the n=8 maximum-dimension source, TT1+TC1 has simple spectrum on every target of Kronecker multiplicity at most seven.",
+      "statement": "For the n=8 maximum-dimension source, TT1+TC1 has simple spectrum on every target of Kronecker multiplicity at most six.",
       "status": "proved-exact-quotient-transfer-and-nonzero-discriminants"
     },
     {
@@ -6056,10 +6171,10 @@
         "PO-MEASUREMENT",
         "PO-NO-GO"
       ],
-      "falsification_test": "Recompute the n=9 quotient transfer through degree seven, contract all 11 targets directly without sign-twist shortcuts, and verify exact square-free gcd and root-isolation certificates.",
+      "falsification_test": "Recompute the n=9 quotient transfer through degree ten, contract all 14 targets directly without sign-twist shortcuts, and verify exact square-free gcd and root-isolation certificates.",
       "id": "LEMMA-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-COSET-TYPICAL-TC1-N9-LOW-MULTIPLICITY-SEPARATION",
-      "statement": "For the n=9 maximum-dimension source, TT1+TC1 has simple spectrum on every target of Kronecker multiplicity at most six.",
-      "status": "proved-exact-n9-degree-four-transfer"
+      "statement": "For the n=9 maximum-dimension source, TT1+TC1 has simple spectrum on every target of Kronecker multiplicity at most ten.",
+      "status": "proved-exact-n9-degree-ten-transfer"
     },
     {
       "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
@@ -6068,10 +6183,33 @@
         "PO-COMPLEXITY",
         "PO-NO-GO"
       ],
-      "falsification_test": "Extend exact transfer through the remaining multiplicities 5 through 28, in increasing degree order, and reject the fixed coefficient on the first nontrivial polynomial gcd.",
+      "falsification_test": "Recompute the degree-28 quotient transfer and class-Fourier contraction, verify all 27 square-free gcd certificates, then search n>=10 for the first collision or gap collapse.",
       "id": "LEMMA-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-COSET-TYPICAL-TC1-N9-ALL-TARGET-SEPARATION",
       "statement": "For the n=9 maximum-dimension source, TT1+TC1 has simple spectrum on every nontrivial target through Kronecker multiplicity 28.",
-      "status": "blocked-twenty-three-higher-multiplicity-targets"
+      "status": "proved-exact-all-n9-target-separation"
+    },
+    {
+      "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Recompute the exact degree-three S_10 class-Fourier contraction and verify both cubic gcd and rational root-gap certificates.",
+      "id": "LEMMA-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-COSET-TYPICAL-TC1-N10-FIRST-TARGET-SEPARATION",
+      "statement": "For the n=10 maximum-dimension source, TT1+TC1 has simple spectrum on both multiplicity-three target blocks.",
+      "status": "proved-exact-n10-multiplicity-three-separation"
+    },
+    {
+      "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Derive a representation- or class-algebra recurrence that avoids materializing S_n rows, prove its exactness, and benchmark its scaling beyond n=10.",
+      "id": "LEMMA-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-COSET-TYPICAL-SCALABLE-CHARACTER-CONTRACTION",
+      "statement": "The quotient transfer admits an exact character contraction whose time and memory are polynomial in n and the required multiplicity degree.",
+      "status": "blocked-explicit-s10-table-is-91gb-at-degree-five"
     },
     {
       "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",

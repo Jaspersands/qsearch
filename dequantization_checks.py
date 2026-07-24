@@ -289,6 +289,12 @@ COSET_TYPICAL_FIXED_SEPARATOR_GAP_PATH = Path(
 COSET_TYPICAL_N9_LOW_MULTIPLICITY_PATH = Path(
     "research/representation/coset_typical_n9_low_multiplicity_probe.json"
 )
+COSET_TYPICAL_N9_FULL_TRANSFER_PATH = Path(
+    "research/representation/coset_typical_n9_full_transfer.json"
+)
+COSET_TYPICAL_N10_FEASIBILITY_PATH = Path(
+    "research/representation/coset_typical_n10_feasibility.json"
+)
 COSET_RECOUPLING_CAPABILITY_PATH = Path(
     "research/representation/coset_recoupling_capability_ledger.json"
 )
@@ -4936,6 +4942,79 @@ def findings_from_coset_typical_n9_low_multiplicity(
     ]
 
 
+def findings_from_coset_typical_n9_full_transfer(
+    path: Path = COSET_TYPICAL_N9_FULL_TRANSFER_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    return [
+        DequantizationFinding(
+            id="DEQ-COSET-TYPICAL-FULL-N9-SEPARATION-NOT-ALGORITHM",
+            created_at=utc_now(),
+            target_type="coset_typical_n9_full_transfer",
+            target_id=str(path),
+            severity="critical",
+            claim_under_test=(
+                "Exact simple spectrum on every n=8 and n=9 typical multiplicity block supplies an efficient nonabelian HSP measurement."
+            ),
+            evidence=(
+                f"Certified n=9 targets="
+                f"{metrics.get('certified_n9_simple_spectrum_target_count', 0)}/"
+                f"{metrics.get('n9_nontrivial_multiplicity_target_count', 0)} through multiplicity "
+                f"{metrics.get('maximum_certified_kronecker_multiplicity', 0)}; minimum normalized gap lower bound="
+                f"{metrics.get('certified_n9_minimum_lcu_normalized_gap_lower_bound', 0)}; "
+                f"all-n/gap/transform/decoder theorems="
+                f"{metrics.get('all_n_simple_spectrum_theorem_count', 0)}/"
+                f"{metrics.get('inverse_polynomial_normalized_gap_theorem_count', 0)}/"
+                f"{metrics.get('coherent_typical_multiplicity_transform_count', 0)}/"
+                f"{metrics.get('typical_label_hidden_involution_decoder_count', 0)}."
+            ),
+            required_action=(
+                "Derive an all-n class-algebra recurrence and inverse-polynomial normalized gap, then provide a "
+                "coherent transform, hidden-involution outcome law, decoder, and legal classical comparison. "
+                "Reject the route on the first n>=10 collision or superpolynomial gap collapse."
+            ),
+            blocks_speedup_claim=True,
+        )
+    ]
+
+
+def findings_from_coset_typical_n10_feasibility(
+    path: Path = COSET_TYPICAL_N10_FEASIBILITY_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    return [
+        DequantizationFinding(
+            id="DEQ-COSET-TYPICAL-N10-PARTIAL-SURVIVAL-NOT-SCALABLE-RESOLVER",
+            created_at=utc_now(),
+            target_type="coset_typical_n10_feasibility",
+            target_id=str(path),
+            severity="critical",
+            claim_under_test=(
+                "Survival on the first n=10 targets extends the finite separator into a scalable all-n resolver."
+            ),
+            evidence=(
+                f"Certified targets={metrics.get('certified_n10_simple_spectrum_target_count', 0)}/"
+                f"{metrics.get('n10_nontrivial_multiplicity_target_count', 0)}; maximum certified/full multiplicity="
+                f"{metrics.get('maximum_certified_kronecker_multiplicity', 0)}/"
+                f"{metrics.get('maximum_n10_kronecker_multiplicity', 0)}; degree-five naive table bytes="
+                f"{metrics.get('degree5_naive_temporary_character_table_bytes', 0)}; scalable contractions="
+                f"{metrics.get('scalable_s10_character_contraction_count', 0)}."
+            ),
+            required_action=(
+                "Replace explicit S_10 translation storage with a proved representation- or class-algebra recurrence "
+                "before extending higher multiplicities; retain all-n, transform, decoder, and speedup blocks."
+            ),
+            blocks_speedup_claim=True,
+        )
+    ]
+
+
 def findings_from_coset_recoupling_capability_ledger(
     path: Path = COSET_RECOUPLING_CAPABILITY_PATH,
 ) -> list[DequantizationFinding]:
@@ -7920,6 +7999,8 @@ def build_dequantization_report() -> dict[str, Any]:
         *findings_from_coset_typical_high_multiplicity_transfer(),
         *findings_from_coset_typical_fixed_separator_gaps(),
         *findings_from_coset_typical_n9_low_multiplicity(),
+        *findings_from_coset_typical_n9_full_transfer(),
+        *findings_from_coset_typical_n10_feasibility(),
         *findings_from_coset_jucys_murphy_label_transform(),
         *findings_from_coset_multiplicity_commutant_search(),
         *findings_from_coset_recoupling_capability_ledger(),
