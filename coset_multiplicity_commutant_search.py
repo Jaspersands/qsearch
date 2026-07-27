@@ -575,11 +575,19 @@ def build_multiplicity_commutant_report(
         )
         for key in common_low_support_keys
     }
-    best_common_key = max(
-        common_low_support_gaps,
-        key=lambda key: (common_low_support_gaps[key], key),
-        default=None,
-    )
+    if common_low_support_gaps:
+        maximum_common_gap = max(common_low_support_gaps.values())
+        numerically_tied = [
+            key
+            for key, gap in common_low_support_gaps.items()
+            if gap >= maximum_common_gap - 1e-12
+        ]
+        best_common_key = min(
+            numerically_tied,
+            key=lambda key: tuple(map(int, key.split(","))),
+        )
+    else:
+        best_common_key = None
     common_low_support_coefficients = [
         dict(zip(("ORB-TC-INTERSECTION-2", "ORB-TT-INTERSECTION-1"), map(int, key.split(","))))
         for key in sorted(common_low_support_keys)

@@ -1,0 +1,271 @@
+{
+  "claim_gate": {
+    "all_n_simple_spectrum_proved": false,
+    "coherent_transform_proved": false,
+    "declared_error_budget_is_machine_verified": false,
+    "exact_control_reproduced": true,
+    "explicit_s10_character_rows_required": false,
+    "hidden_involution_decoder_proved": false,
+    "interval_arithmetic_verified": false,
+    "multiplicity6_exactly_certified": false,
+    "multiplicity6_numerically_simple": true,
+    "multiplicity6_robust_under_declared_error_budget": true,
+    "polynomial_scaling_proved": false,
+    "reason": "YJM-fiber contraction removes factorial row storage and the target-dimension factor, but the solve is numerical and still uses exponentially large V_lambda tensor V_lambda; no exact n=10, all-n, transform, or decoder theorem follows.",
+    "speedup_claim_allowed": false
+  },
+  "contraction_contract": {
+    "control": "The multiplicity-three (9,1) block reproduces all exact class-Fourier power traces.",
+    "fiber_factorization": "A diagonal Jucys-Murphy content penalty isolates one target tableau fiber of dimension g(lambda,lambda,nu) inside V_lambda tensor V_lambda. Diagonal adjacent transpositions propagate that fiber through a depth-first tableau spanning tree; fibers are contracted and released rather than all stored.",
+    "identity": "On diagonal-S_n invariant tensors, a simultaneous-conjugacy orbit average has the same matrix elements as one representative.",
+    "new_probe": "The previously inaccessible multiplicity-six (5,5) block is contracted without group-row or orbit-term materialization.",
+    "operator": "H_10=average(TT1)+average(TC1)",
+    "remaining_cost": "The YJM eigensolve uses dim(lambda)^2 amplitudes independent of dim(nu), reducing the n=10 multiplicity-six vector dimension 42-fold. dim(lambda)^2 is still exponential for typical lambda, so this finite numerical method is not a polynomial transform."
+  },
+  "created_at": "2026-07-27T14:31:47.347129+00:00",
+  "falsifiers_triggered": [
+    "The 91.7 GB explicit S_10 character table is not necessary for finite block contraction.",
+    "The YJM fiber solve still acts on the exponentially large tensor square of a typical irrep.",
+    "A numerical minimum gap is not an exact square-free certificate.",
+    "Four covered conjugate blocks out of 40 are not an n=10 theorem.",
+    "No coherent transform, hidden-involution outcome law, decoder, or classical separation is supplied."
+  ],
+  "headline_metrics": {
+    "all_n_simple_spectrum_theorem_count": 0,
+    "all_tableau_fibers_materialized_count": 0,
+    "coherent_typical_multiplicity_transform_count": 0,
+    "conjugate_target_coverage_count": 4,
+    "direct_coxeter_multiplicity6_converged_count": 0,
+    "direct_coxeter_multiplicity6_timeout_seconds": 4100,
+    "exact_multiplicity6_certificate_count": 0,
+    "explicit_s10_character_table_bytes_avoided": 91663488000,
+    "factorial_group_row_storage_removed_count": 1,
+    "interval_verified_multiplicity6_certificate_count": 0,
+    "machine_verified_roundoff_certificate_count": 0,
+    "maximum_estimated_arpack_basis_bytes": 75497472,
+    "maximum_exact_control_trace_residual": 1.5265566588595902e-15,
+    "maximum_invariant_residual": 8.111675501396993e-12,
+    "maximum_invariant_vector_dimension": 24772608,
+    "maximum_numerical_kronecker_multiplicity": 6,
+    "maximum_single_tableau_fiber_bytes": 28311552,
+    "maximum_vector_dimension_reduction_factor": 42,
+    "n": 10,
+    "n10_multiplicity6_declared_budget_gap_lower_bound": 0.005251965196300334,
+    "n10_multiplicity6_declared_budget_margin_ratio": 8.13209902991408,
+    "n10_multiplicity6_minimum_numerical_raw_gap": 0.005988349418430745,
+    "n10_multiplicity6_numerically_simple_spectrum_count": 1,
+    "n10_multiplicity6_robust_under_declared_budget_count": 1,
+    "next_multiplicity15_estimated_arpack_basis_bytes": 160432128,
+    "next_multiplicity15_single_tableau_fiber_bytes": 70778880,
+    "numerically_contracted_primary_target_count": 2,
+    "polynomial_invariant_contraction_theorem_count": 0,
+    "typical_label_hidden_involution_decoder_count": 0,
+    "yjm_fiber_vector_dimension": 589824
+  },
+  "records": [
+    {
+      "arpack_subspace_dimension": 12,
+      "direct_invariant_vector_dimension": 5308416,
+      "estimated_arpack_basis_bytes": 56623104,
+      "exact_control_power_traces": [
+        "-7/48",
+        "7247/1016064",
+        "-815/2322432"
+      ],
+      "explicit_group_rows_materialized": false,
+      "fiber_vector_dimension": 589824,
+      "finite_numerical_probe_only": true,
+      "kronecker_multiplicity": 3,
+      "maximum_exact_control_trace_residual": 1.5265566588595902e-15,
+      "maximum_fiber_orthogonality_residual": 2.96180291251459e-14,
+      "maximum_penalty_residual": 8.111675501396993e-12,
+      "maximum_tableau_propagation_residual": 3.963172292279496e-16,
+      "minimum_numerical_raw_gap": 0.004653190237916544,
+      "n": 10,
+      "numerical_power_traces": [
+        -0.14583333333333182,
+        0.007132424729150758,
+        -0.0003509252369929323
+      ],
+      "orbit_terms_materialized": false,
+      "penalty_eigenvalues": [
+        -3.1975610311997534e-13,
+        6.130761809559332e-13,
+        6.519347205698635e-13,
+        7.9999999999992655,
+        8.000000000001489
+      ],
+      "penalty_gap": 7.9999999999992655,
+      "restricted_separator_matrix": [
+        [
+          -0.04642962073403809,
+          -0.0035614878342169597,
+          0.001391931656551809
+        ],
+        [
+          -0.0035614878342169597,
+          -0.05140839428733987,
+          -0.0007409878258767327
+        ],
+        [
+          0.001391931656551809,
+          -0.0007409878258767327,
+          -0.04799531831195385
+        ]
+      ],
+      "restricted_symmetry_residual": 0.0,
+      "separator_eigenvalues": [
+        -0.053264301349029035,
+        -0.04861111111111249,
+        -0.04395792087319027
+      ],
+      "source_dimension": 768,
+      "source_partition": [
+        4,
+        3,
+        2,
+        1
+      ],
+      "status": "exact-control-reproduced-by-yjm-fiber-contraction",
+      "tableau_fiber_count": 9,
+      "target_dimension": 9,
+      "target_partition": [
+        9,
+        1
+      ],
+      "vector_dimension_reduction_factor": 9
+    },
+    {
+      "arpack_subspace_dimension": 16,
+      "direct_invariant_vector_dimension": 24772608,
+      "estimated_arpack_basis_bytes": 75497472,
+      "exact_control_power_traces": [],
+      "explicit_group_rows_materialized": false,
+      "fiber_vector_dimension": 589824,
+      "finite_numerical_probe_only": true,
+      "kronecker_multiplicity": 6,
+      "maximum_exact_control_trace_residual": 0.0,
+      "maximum_fiber_orthogonality_residual": 6.896132465707426e-14,
+      "maximum_penalty_residual": 6.991167368863387e-12,
+      "maximum_tableau_propagation_residual": 1.9277427457657453e-15,
+      "minimum_numerical_raw_gap": 0.005988349418430745,
+      "n": 10,
+      "numerical_power_traces": [
+        -0.1847222222222232,
+        0.00819755448475689,
+        -0.0003959196686647925,
+        2.0168094439602078e-05,
+        -1.0677400669296562e-06,
+        5.819475281177973e-08
+      ],
+      "orbit_terms_materialized": false,
+      "penalty_eigenvalues": [
+        -2.566785796179955e-12,
+        -7.759148682725525e-13,
+        -1.0662345206127199e-14,
+        1.1368638954141281e-13,
+        6.750696968268198e-13,
+        1.6402155369260377e-12,
+        3.9999999999997544,
+        4.000000000000024
+      ],
+      "penalty_gap": 3.9999999999997544,
+      "restricted_separator_matrix": [
+        [
+          -0.04350745103341336,
+          -0.002919988431108864,
+          -0.012856631539770479,
+          -0.0064791714998817425,
+          -0.000964927885457081,
+          0.004033588316107216
+        ],
+        [
+          -0.002919988431108864,
+          -0.054068551965748106,
+          -0.005414068259324707,
+          -0.00022016858373189517,
+          -0.002953889902526058,
+          0.004009359334971312
+        ],
+        [
+          -0.012856631539770479,
+          -0.005414068259324707,
+          -0.013282580669398318,
+          0.007124294810084358,
+          -0.009701285213489539,
+          -0.002254271076898685
+        ],
+        [
+          -0.0064791714998817425,
+          -0.00022016858373189517,
+          0.007124294810084358,
+          -0.011098620542454222,
+          0.0016211703956758462,
+          0.007552365898860405
+        ],
+        [
+          -0.000964927885457081,
+          -0.002953889902526058,
+          -0.009701285213489539,
+          0.0016211703956758462,
+          -0.03470200552875312,
+          0.006939758284227417
+        ],
+        [
+          0.004033588316107216,
+          0.004009359334971312,
+          -0.002254271076898685,
+          0.007552365898860405,
+          0.006939758284227417,
+          -0.02806301248245603
+        ]
+      ],
+      "restricted_symmetry_residual": 0.0,
+      "separator_eigenvalues": [
+        -0.059472822749908616,
+        -0.046607170166949784,
+        -0.03739469918468561,
+        -0.031406349766254865,
+        -0.010172388907466936,
+        0.0003312085530426249
+      ],
+      "source_dimension": 768,
+      "source_partition": [
+        4,
+        3,
+        2,
+        1
+      ],
+      "status": "numerically-simple-spectrum-exact-certificate-required",
+      "tableau_fiber_count": 42,
+      "target_dimension": 42,
+      "target_partition": [
+        5,
+        5
+      ],
+      "vector_dimension_reduction_factor": 42
+    }
+  ],
+  "robustness_audit": {
+    "collision_operator_perturbation_radius": 0.0029941747092153727,
+    "conditional_weyl_gap_lower_bound": 0.005251965196300334,
+    "cumulative_tableau_propagation_error_upper_bound": 4.100000007903745e-05,
+    "declared_budget_margin_ratio": 8.13209902991408,
+    "exact_algebraic_certificate": false,
+    "exact_yjm_penalty_gap_lower_bound": 1.0,
+    "floating_point_error_budget_machine_verified": false,
+    "interval_arithmetic_verified": false,
+    "normwise_roundoff_budget_assumption": 1e-06,
+    "observed_minimum_raw_gap": 0.005988349418430745,
+    "root_subspace_distance_upper_bound": 2.449506867575938e-06,
+    "separation_survives_declared_error_budget": true,
+    "separator_block_operator_error_upper_bound": 0.00036819211106520525,
+    "status": "robust-under-declared-error-budget-not-proof",
+    "target_partition": [
+      5,
+      5
+    ]
+  },
+  "status": "factorial-row-barrier-removed-multiplicity6-numerically-simple-exact-proof-open",
+  "summary": "Sparse YJM-fiber contraction reproduces the exact n=10 cubic without S_10 rows and reaches the multiplicity-six block with a 42-fold eigensolve-dimension reduction; the new spectrum remains numerical and the representation solve is not scalable."
+}

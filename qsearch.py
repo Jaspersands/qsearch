@@ -412,6 +412,19 @@ from coset_typical_n9_low_multiplicity_probe import (
 )
 from coset_typical_n9_full_transfer import write_n9_full_transfer_report
 from coset_typical_n10_feasibility import write_n10_feasibility_report
+from coset_transfer_support_growth import write_transfer_support_growth_report
+from coset_typical_invariant_contraction import (
+    write_invariant_contraction_report,
+)
+from coset_typical_yjm_projector_certificate import (
+    write_yjm_projector_certificate_report,
+)
+from coset_typical_modular_yjm_contraction import (
+    write_n10_target_prime_certificate,
+    write_modular_yjm_contraction_report,
+)
+from coset_typical_modular_gap_bound import write_modular_gap_bound_report
+from coset_typical_n10_gap_trend import write_n10_gap_trend_report
 from coset_recoupling_capability_ledger import write_recoupling_capability_report
 from coset_recoupling_mechanism_synthesis import write_recoupling_mechanism_synthesis_report
 from classical_baseline_suite import write_hidden_shift_baselines
@@ -5070,6 +5083,215 @@ def command_coset_racah_typical_n10_feasibility(args: argparse.Namespace) -> int
     return 0
 
 
+def command_coset_racah_typical_support_growth(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_transfer_support_growth_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Typical-irrep transfer support-growth audit complete")
+    print(
+        "Artifact: research/representation/"
+        "coset_transfer_support_growth.json"
+    )
+    print(
+        "n=9 degree-28 full-support weight: "
+        f"{metrics['n9_degree28_full_support_weight_fraction']:.6f}"
+    )
+    print(
+        "n=10 degree-five support 9 or 10 weight: "
+        f"{metrics['n10_degree5_support9_or_10_weight_fraction']:.6f}"
+    )
+    print(
+        "Scalable full-support contractions: "
+        f"{metrics['scalable_full_support_character_contraction_count']}"
+    )
+    print(f"Speedup claim allowed: {payload['claim_gate']['speedup_claim_allowed']}")
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_coset_racah_typical_invariant_contraction(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_invariant_contraction_report(
+        recompute=args.recompute,
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Typical-irrep sparse invariant contraction complete")
+    print(
+        "Artifact: research/representation/"
+        "coset_typical_invariant_contraction.json"
+    )
+    print(
+        "Exact-control trace residual: "
+        f"{metrics['maximum_exact_control_trace_residual']:.3g}"
+    )
+    print(
+        "Multiplicity-six numerical minimum gap: "
+        f"{metrics['n10_multiplicity6_minimum_numerical_raw_gap']:.12g}"
+    )
+    print(
+        "Explicit S_10 character bytes avoided: "
+        f"{metrics['explicit_s10_character_table_bytes_avoided']}"
+    )
+    print(f"Speedup claim allowed: {payload['claim_gate']['speedup_claim_allowed']}")
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_coset_racah_typical_yjm_projector(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_yjm_projector_certificate_report(
+        recompute=args.recompute,
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Typical-irrep exact YJM projector certificate complete")
+    print(
+        "Artifact: research/representation/"
+        "coset_typical_yjm_projector_certificate.json"
+    )
+    print(f"Exact projector power traces: {metrics['exact_power_trace_count']}")
+    print(
+        "n=6 degree-two pair-state saturation: "
+        f"{metrics['n6_degree2_pair_state_saturation_fraction']:.6f}"
+    )
+    print(
+        "Young-tower exact evaluators: "
+        f"{metrics['young_tower_compressed_exact_trace_evaluator_count']}"
+    )
+    print(f"Speedup claim allowed: {payload['claim_gate']['speedup_claim_allowed']}")
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_coset_racah_typical_modular_yjm(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    if args.compute_n10:
+        target = tuple(int(value) for value in args.target.split(","))
+        write_n10_target_prime_certificate(
+            target,
+            workers=args.workers,
+        )
+    payload = write_modular_yjm_contraction_report(
+        recompute=args.recompute,
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Typical-irrep exact modular YJM contraction complete")
+    print(
+        "Artifact: research/representation/"
+        "coset_typical_modular_yjm_contraction.json"
+    )
+    print(
+        "Exact modular control traces: "
+        f"{metrics['exact_modular_power_trace_count']}"
+    )
+    print(
+        "n=10 pair/tensor reduction: "
+        f"{metrics['n10_pair_group_to_tensor_dimension_reduction_factor']:.0f}x"
+    )
+    print(
+        "n=10 modular residues: "
+        f"{metrics['n10_modular_prime_residue_count']}"
+    )
+    print(
+        "n=10 exact square-free targets: "
+        f"{metrics['n10_exact_square_free_target_count']}/"
+        f"{metrics['n10_nontrivial_multiplicity_target_count']}"
+    )
+    print(f"Speedup claim allowed: {payload['claim_gate']['speedup_claim_allowed']}")
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_coset_racah_typical_modular_gaps(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_modular_gap_bound_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Typical-irrep exact denominator gap audit complete")
+    print(
+        "Artifact: research/representation/"
+        "coset_typical_modular_gap_bounds.json"
+    )
+    print(
+        "Certified target bounds: "
+        f"{metrics['square_free_target_bound_count']}"
+    )
+    print(
+        "Strongest normalized log10 lower bound: "
+        f"{metrics['strongest_lcu_normalized_gap_lower_bound_log10']:.1f}"
+    )
+    print(
+        "Inverse-polynomial gap theorems: "
+        f"{metrics['inverse_polynomial_normalized_gap_theorem_count']}"
+    )
+    print(f"Speedup claim allowed: {payload['claim_gate']['speedup_claim_allowed']}")
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_coset_racah_typical_n10_gap_trend(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_n10_gap_trend_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Typical-irrep n=10 numerical gap trend complete")
+    print(
+        "Artifact: research/representation/"
+        "coset_typical_n10_gap_trend.json"
+    )
+    print(
+        "Multiplicity-6 to multiplicity-8 gap drop: "
+        f"{metrics['multiplicity6_to_multiplicity8_gap_drop_factor']:.2f}x"
+    )
+    print(
+        "Machine-verified roundoff bounds: "
+        f"{metrics['machine_verified_roundoff_bound_count']}"
+    )
+    print(f"Speedup claim allowed: {payload['claim_gate']['speedup_claim_allowed']}")
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
 def command_coset_recoupling_synthesize(args: argparse.Namespace) -> int:
     initialize_seed_registry(overwrite=False)
     payload = write_recoupling_mechanism_synthesis_report(
@@ -8654,6 +8876,90 @@ def build_parser() -> argparse.ArgumentParser:
     )
     coset_racah_typical_n10_feasibility.set_defaults(
         func=command_coset_racah_typical_n10_feasibility
+    )
+
+    coset_racah_typical_support_growth = subparsers.add_parser(
+        "coset-racah-typical-support-growth",
+        help="Certify the full-support barrier for direct marked-class transfer contraction.",
+    )
+    coset_racah_typical_support_growth.add_argument(
+        "--no-registry", action="store_true"
+    )
+    coset_racah_typical_support_growth.set_defaults(
+        func=command_coset_racah_typical_support_growth
+    )
+
+    coset_racah_typical_invariant_contraction = subparsers.add_parser(
+        "coset-racah-typical-invariant-contraction",
+        help="Contract n=10 typical blocks through sparse diagonal-S_n invariants.",
+    )
+    coset_racah_typical_invariant_contraction.add_argument(
+        "--recompute", action="store_true"
+    )
+    coset_racah_typical_invariant_contraction.add_argument(
+        "--no-registry", action="store_true"
+    )
+    coset_racah_typical_invariant_contraction.set_defaults(
+        func=command_coset_racah_typical_invariant_contraction
+    )
+
+    coset_racah_typical_yjm_projector = subparsers.add_parser(
+        "coset-racah-typical-yjm-projector",
+        help="Certify exact YJM projector traces and audit pair-algebra scaling.",
+    )
+    coset_racah_typical_yjm_projector.add_argument(
+        "--recompute", action="store_true"
+    )
+    coset_racah_typical_yjm_projector.add_argument(
+        "--no-registry", action="store_true"
+    )
+    coset_racah_typical_yjm_projector.set_defaults(
+        func=command_coset_racah_typical_yjm_projector
+    )
+
+    coset_racah_typical_modular_yjm = subparsers.add_parser(
+        "coset-racah-typical-modular-yjm",
+        help="Run exact finite-field YJM controls and the n=10 CRT cost gate.",
+    )
+    coset_racah_typical_modular_yjm.add_argument(
+        "--recompute", action="store_true"
+    )
+    coset_racah_typical_modular_yjm.add_argument(
+        "--compute-n10", action="store_true"
+    )
+    coset_racah_typical_modular_yjm.add_argument(
+        "--workers", type=int, default=6
+    )
+    coset_racah_typical_modular_yjm.add_argument(
+        "--target", default="5,5"
+    )
+    coset_racah_typical_modular_yjm.add_argument(
+        "--no-registry", action="store_true"
+    )
+    coset_racah_typical_modular_yjm.set_defaults(
+        func=command_coset_racah_typical_modular_yjm
+    )
+
+    coset_racah_typical_modular_gaps = subparsers.add_parser(
+        "coset-racah-typical-modular-gaps",
+        help="Prove denominator-based gap bounds and audit phase-estimation precision.",
+    )
+    coset_racah_typical_modular_gaps.add_argument(
+        "--no-registry", action="store_true"
+    )
+    coset_racah_typical_modular_gaps.set_defaults(
+        func=command_coset_racah_typical_modular_gaps
+    )
+
+    coset_racah_typical_n10_gap_trend = subparsers.add_parser(
+        "coset-racah-typical-n10-gap-trend",
+        help="Compare numerical real gaps on exactly square-free n=10 blocks.",
+    )
+    coset_racah_typical_n10_gap_trend.add_argument(
+        "--no-registry", action="store_true"
+    )
+    coset_racah_typical_n10_gap_trend.set_defaults(
+        func=command_coset_racah_typical_n10_gap_trend
     )
 
     coset_recoupling_synthesize = subparsers.add_parser(

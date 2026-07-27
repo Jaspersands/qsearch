@@ -37574,6 +37574,144 @@
   {
     "applies_to": [
       "CODE-COSET-COLLECTIVE",
+      "EXP-COSET-TYPICAL-INVARIANT-CONTRACTION"
+    ],
+    "claim": "A direct Coxeter nullspace in nu tensor lambda tensor lambda is the right finite architecture for the n=10 multiplicity ladder.",
+    "evidence": {
+      "all_n_simple_spectrum_theorem_count": 0,
+      "all_tableau_fibers_materialized_count": 0,
+      "coherent_typical_multiplicity_transform_count": 0,
+      "conjugate_target_coverage_count": 4,
+      "direct_coxeter_multiplicity6_converged_count": 0,
+      "direct_coxeter_multiplicity6_timeout_seconds": 4100,
+      "exact_multiplicity6_certificate_count": 0,
+      "explicit_s10_character_table_bytes_avoided": 91663488000,
+      "factorial_group_row_storage_removed_count": 1,
+      "interval_verified_multiplicity6_certificate_count": 0,
+      "machine_verified_roundoff_certificate_count": 0,
+      "maximum_estimated_arpack_basis_bytes": 75497472,
+      "maximum_exact_control_trace_residual": 1.5265566588595902e-15,
+      "maximum_invariant_residual": 8.111675501396993e-12,
+      "maximum_invariant_vector_dimension": 24772608,
+      "maximum_numerical_kronecker_multiplicity": 6,
+      "maximum_single_tableau_fiber_bytes": 28311552,
+      "maximum_vector_dimension_reduction_factor": 42,
+      "n": 10,
+      "n10_multiplicity6_declared_budget_gap_lower_bound": 0.005251965196300334,
+      "n10_multiplicity6_declared_budget_margin_ratio": 8.13209902991408,
+      "n10_multiplicity6_minimum_numerical_raw_gap": 0.005988349418430745,
+      "n10_multiplicity6_numerically_simple_spectrum_count": 1,
+      "n10_multiplicity6_robust_under_declared_budget_count": 1,
+      "next_multiplicity15_estimated_arpack_basis_bytes": 160432128,
+      "next_multiplicity15_single_tableau_fiber_bytes": 70778880,
+      "numerically_contracted_primary_target_count": 2,
+      "polynomial_invariant_contraction_theorem_count": 0,
+      "typical_label_hidden_involution_decoder_count": 0,
+      "yjm_fiber_vector_dimension": 589824
+    },
+    "id": "NEG-COSET-TYPICAL-DIRECT-COXETER-MULTIPLICITY6-SCALING",
+    "lesson": "Isolate one YJM tableau fiber in lambda tensor lambda and propagate it through target tableaux, removing the dim(nu) factor before searching higher blocks.",
+    "reason_invalid": "The (5,5) multiplicity-six solve uses 24,772,608 amplitudes, held about 4.3 GB resident, and did not converge after more than 4,100 seconds.",
+    "source": "research/representation/coset_typical_invariant_contraction.json"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "EXP-COSET-TYPICAL-TRANSFER-SUPPORT-GROWTH"
+    ],
+    "claim": "The fixed-support marked-class contraction can be applied termwise to finish high-degree typical-irrep transfer traces.",
+    "evidence": {
+      "all_n_support_concentration_theorem_count": 0,
+      "audited_size_count": 3,
+      "direct_fixed_support_termwise_extension_falsification_count": 1,
+      "exact_support_checkpoint_count": 12,
+      "maximum_audited_degree": 28,
+      "n10_degree5_full_support_weight_fraction": 0.20523965863631505,
+      "n10_degree5_support9_or_10_weight_fraction": 0.6198103184040714,
+      "n10_full_support_marked_injection_count": 3628800,
+      "n8_degree17_full_support_weight_fraction": 0.8804686486028457,
+      "n9_degree28_at_most_support7_weight_fraction": 0.006355805994930264,
+      "n9_degree28_full_support_weight_fraction": 0.8952433780998212,
+      "scalable_full_support_character_contraction_count": 0
+    },
+    "id": "NEG-COSET-TYPICAL-DIRECT-FIXED-SUPPORT-TRANSFER-CONTRACTION",
+    "lesson": "Stop extending fixed-support injection enumeration. Search for a collective representation, centralizer, branching, or tensor-network recurrence over full-support pair orbits.",
+    "reason_invalid": "Full-support pairs carry 89.5% of n=9 degree-28 weight and 20.5% of n=10 degree-five weight; support nine or ten carries 62.0% at n=10 degree five. Marked injection costs n! there.",
+    "source": "research/representation/coset_transfer_support_growth.json"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "EXP-COSET-TYPICAL-N10-GAP-TREND"
+    ],
+    "claim": "The existing exactly square-free n=10 blocks provide evidence of stable phase-estimation precision.",
+    "evidence": {
+      "all_n_gap_trend_sample_count": 0,
+      "coherent_typical_multiplicity_transform_count": 0,
+      "declared_budget_survival_count": 2,
+      "exact_square_free_numerical_gap_target_count": 2,
+      "inverse_polynomial_normalized_gap_theorem_count": 0,
+      "machine_verified_roundoff_bound_count": 0,
+      "maximum_audited_multiplicity": 8,
+      "minimum_audited_multiplicity": 6,
+      "multiplicity6_lcu_normalized_gap": 0.0029941747092153727,
+      "multiplicity6_to_multiplicity8_gap_drop_factor": 7.169952264676452,
+      "multiplicity8_lcu_normalized_gap": 0.0004176003686895517,
+      "multiplicity8_to_multiplicity6_gap_ratio": 0.13947094249519743,
+      "numerical_gap_target_count": 2,
+      "typical_label_hidden_involution_decoder_count": 0
+    },
+    "id": "NEG-COSET-TYPICAL-EXISTING-FINITE-GAPS-DO-NOT-ESTABLISH-STABLE-PRECISION",
+    "lesson": "Measure higher exact-ladder gaps and derive a separator-specific all-n bound; treat current numerics only as a kill signal against unsupported precision claims.",
+    "reason_invalid": "The numerical LCU-normalized gap drops by 7.17x from multiplicity six to eight, and neither magnitude has a machine-verified interval certificate.",
+    "source": "research/representation/coset_typical_n10_gap_trend.json"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "EXP-COSET-TYPICAL-INVARIANT-CONTRACTION"
+    ],
+    "claim": "Exact translated S_10 character-row storage is intrinsically required to contract finite typical multiplicity blocks.",
+    "evidence": {
+      "all_n_simple_spectrum_theorem_count": 0,
+      "all_tableau_fibers_materialized_count": 0,
+      "coherent_typical_multiplicity_transform_count": 0,
+      "conjugate_target_coverage_count": 4,
+      "direct_coxeter_multiplicity6_converged_count": 0,
+      "direct_coxeter_multiplicity6_timeout_seconds": 4100,
+      "exact_multiplicity6_certificate_count": 0,
+      "explicit_s10_character_table_bytes_avoided": 91663488000,
+      "factorial_group_row_storage_removed_count": 1,
+      "interval_verified_multiplicity6_certificate_count": 0,
+      "machine_verified_roundoff_certificate_count": 0,
+      "maximum_estimated_arpack_basis_bytes": 75497472,
+      "maximum_exact_control_trace_residual": 1.5265566588595902e-15,
+      "maximum_invariant_residual": 8.111675501396993e-12,
+      "maximum_invariant_vector_dimension": 24772608,
+      "maximum_numerical_kronecker_multiplicity": 6,
+      "maximum_single_tableau_fiber_bytes": 28311552,
+      "maximum_vector_dimension_reduction_factor": 42,
+      "n": 10,
+      "n10_multiplicity6_declared_budget_gap_lower_bound": 0.005251965196300334,
+      "n10_multiplicity6_declared_budget_margin_ratio": 8.13209902991408,
+      "n10_multiplicity6_minimum_numerical_raw_gap": 0.005988349418430745,
+      "n10_multiplicity6_numerically_simple_spectrum_count": 1,
+      "n10_multiplicity6_robust_under_declared_budget_count": 1,
+      "next_multiplicity15_estimated_arpack_basis_bytes": 160432128,
+      "next_multiplicity15_single_tableau_fiber_bytes": 70778880,
+      "numerically_contracted_primary_target_count": 2,
+      "polynomial_invariant_contraction_theorem_count": 0,
+      "typical_label_hidden_involution_decoder_count": 0,
+      "yjm_fiber_vector_dimension": 589824
+    },
+    "id": "NEG-COSET-TYPICAL-EXPLICIT-S10-ROWS-ARE-NOT-A-FINITE-BLOCK-REQUIREMENT",
+    "lesson": "Use invariant-space contraction as a finite collision finder, then attack its exponential dim(nu)*dim(lambda)^2 nullspace with branching or centralizer recurrences.",
+    "reason_invalid": "Diagonal-S_10 invariance reduces each orbit average to one representative on the Kronecker invariant space; the exact multiplicity-three traces are reproduced without group rows.",
+    "source": "research/representation/coset_typical_invariant_contraction.json"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
       "EXP-COSET-TYPICAL-COMMUTANT-MOMENT-AUDIT"
     ],
     "claim": "Finite nonzero multiplicity-space variance of a bounded-support orbit average establishes an efficient typical-irrep resolving measurement.",
@@ -37600,6 +37738,31 @@
     "lesson": "Use exact moments as a cheap transfer filter, then require all-n class-algebra formulas, joint-spectrum separation, gap bounds, and outcome information.",
     "reason_invalid": "Variance proves only non-scalarity. It does not prove simple spectrum, a minimum inverse-polynomial gap, a uniform circuit, or a decoder.",
     "source": "research/representation/coset_typical_commutant_moment_audit.json"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "EXP-COSET-TYPICAL-MODULAR-GAP-BOUND"
+    ],
+    "claim": "Exact square-freeness of the audited n=10 multiplicity blocks is enough to justify efficient phase estimation.",
+    "evidence": {
+      "all_n_simple_spectrum_theorem_count": 0,
+      "coherent_typical_multiplicity_transform_count": 0,
+      "exact_denominator_root_separation_theorem_count": 1,
+      "inverse_polynomial_normalized_gap_theorem_count": 0,
+      "maximum_bounded_multiplicity": 15,
+      "maximum_characteristic_clearing_denominator_digits": 1624,
+      "maximum_gap_bound_denominator_digits": 22799,
+      "polynomial_phase_estimation_precision_certificate_count": 0,
+      "square_free_target_bound_count": 10,
+      "strongest_lcu_normalized_gap_lower_bound_log10": -2057.648015082988,
+      "typical_label_hidden_involution_decoder_count": 0,
+      "weakest_lcu_normalized_gap_lower_bound_log10": -22798.894248588425
+    },
+    "id": "NEG-COSET-TYPICAL-FINITE-SQUARE-FREE-DOES-NOT-CERTIFY-EFFICIENT-PRECISION",
+    "lesson": "Prove an inverse-polynomial normalized gap from separator structure or reject phase-estimation implementations; do not substitute finite square-freeness for precision analysis.",
+    "reason_invalid": "Safe denominator clearing and the integer discriminant give only astronomically weak normalized gap lower bounds; the best certified log10 bound is -2057.6.",
+    "source": "research/representation/coset_typical_modular_gap_bounds.json"
   },
   {
     "applies_to": [
@@ -37845,6 +38008,50 @@
   {
     "applies_to": [
       "CODE-COSET-COLLECTIVE",
+      "EXP-COSET-TYPICAL-MODULAR-YJM-CONTRACTION"
+    ],
+    "claim": "The exact modular YJM projector is ready for an n=10 multi-prime run in the current pure-Python kernel.",
+    "evidence": {
+      "coherent_typical_multiplicity_transform_count": 0,
+      "compiled_modular_projector_kernel_count": 0,
+      "conjugate_sign_duality_validation_pair_count": 1,
+      "crt_rational_reconstruction_count": 0,
+      "exact_conjugate_sign_duality_theorem_count": 1,
+      "exact_modular_control_count": 2,
+      "exact_modular_power_trace_count": 4,
+      "exact_modular_trace_disagreement_count": 0,
+      "exact_n10_multiplicity6_characteristic_polynomial_count": 0,
+      "exact_n10_multiplicity6_power_trace_count": 0,
+      "exact_n10_multiplicity6_square_free_certificate_count": 1,
+      "maximum_control_projected_rank": 2,
+      "n10_direct_exact_square_free_target_count": 6,
+      "n10_exact_collision_target_count": 0,
+      "n10_exact_square_free_target_count": 10,
+      "n10_inferred_by_conjugate_sign_duality_count": 4,
+      "n10_ladder_declared_target_count": 5,
+      "n10_ladder_remaining_declared_target_count": 0,
+      "n10_maximum_exact_certified_multiplicity": 15,
+      "n10_modular_power_trace_residue_count": 59,
+      "n10_modular_prime_residue_count": 6,
+      "n10_nontrivial_multiplicity_target_count": 40,
+      "n10_pair_group_state_space_size": 13168189440000,
+      "n10_pair_group_to_tensor_dimension_reduction_factor": 22325625.0,
+      "n10_projector_polynomial_degree": 281,
+      "n10_sparse_axis_actions_for_all_trials": 819396,
+      "n10_tensor_dimension": 589824,
+      "n10_unaudited_target_count": 30,
+      "pair_group_states_materialized_count": 0,
+      "polynomial_in_n_state_dimension_theorem_count": 0,
+      "typical_label_hidden_involution_decoder_count": 0
+    },
+    "id": "NEG-COSET-TYPICAL-PURE-PYTHON-MODULAR-YJM-N10-KERNEL",
+    "lesson": "Compile and parallelize the modular penalty/projector kernel, stream independent projected vectors, then reconstruct the sextic across independently validated good primes.",
+    "reason_invalid": "Nine projected trials require 819396 full sparse-axis passes over 589,824 coordinates before CRT repetition.",
+    "source": "research/representation/coset_typical_modular_yjm_contraction.json"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
       "EXP-COSET-TYPICAL-CLASS-CONTRACTION-SCALING"
     ],
     "claim": "The normalized transposition/3-cycle intersection-two orbit average alone resolves every typical Kronecker multiplicity block uniformly.",
@@ -37957,6 +38164,35 @@
     "lesson": "Reject the entire tested three-generator span. Test a genuinely different generator such as TC-intersection-one by exact higher moments.",
     "reason_invalid": "The exact parameterized characteristic polynomial of TT1+c*TTdisjoint contains a squared linear factor on both collision targets for every c; TC2 is scalar zero there.",
     "source": "research/representation/coset_typical_portfolio_collision_certificate.json"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "EXP-COSET-TYPICAL-YJM-PROJECTOR-TRACE"
+    ],
+    "claim": "Exact YJM-projector power traces can be evaluated at typical n by literal rational pair-group expansion.",
+    "evidence": {
+      "coherent_typical_multiplicity_transform_count": 0,
+      "exact_control_count": 2,
+      "exact_n10_multiplicity6_characteristic_polynomial_count": 0,
+      "exact_n10_multiplicity6_power_trace_count": 0,
+      "exact_power_trace_count": 4,
+      "exact_projector_trace_count": 2,
+      "exact_square_free_control_count": 2,
+      "exact_yjm_projector_trace_identity_theorem_count": 1,
+      "explicit_pair_algebra_scaling_falsification_count": 1,
+      "n10_explicit_pair_state_space_size": 13168189440000,
+      "n6_degree2_pair_state_count": 484912,
+      "n6_degree2_pair_state_saturation_fraction": 0.9354012345679013,
+      "n6_explicit_pair_state_space_size": 518400,
+      "polynomial_exact_trace_evaluator_count": 0,
+      "typical_label_hidden_involution_decoder_count": 0,
+      "young_tower_compressed_exact_trace_evaluator_count": 0
+    },
+    "id": "NEG-COSET-TYPICAL-YJM-PROJECTOR-PAIR-ALGEBRA-SATURATION",
+    "lesson": "Preserve the exact projector identity but replace pair expansion with a Young-tower, centralizer, or tensor-network recurrence before attempting the n=10 multiplicity-six block.",
+    "reason_invalid": "The degree-two n=6 control reaches 484,912 of 518,400 possible pair states; the ambient state space is (n!)^2.",
+    "source": "research/representation/coset_typical_yjm_projector_certificate.json"
   },
   {
     "applies_to": [

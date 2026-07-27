@@ -1,0 +1,191 @@
+{
+  "certificate_contract": {
+    "arithmetic": "exact Young rational-seminormal contraction over F_1009",
+    "dependency_sha256": {
+      "coset_jucys_murphy_label_transform.py": "09647e1212cb94b122d020ef7d7fa9f2a01b40a7ecb774af0e8ccb50c62c8810",
+      "symmetric_character.py": "2e385c2f2eba685eddaf2b11c08483cbf0bf11f6904e9529befeb632e79bd2da",
+      "symmetric_modular_yjm_contraction.py": "570feb30798f2792ae07d3649bda72cb8e5fc1476bac8d5a47189b430e21370c"
+    },
+    "elapsed_seconds": 1715.654373665995,
+    "scope": "One good-prime square-free reduction proves the rational multiplicity-9 characteristic polynomial is square-free; it does not reconstruct its rational coefficients.",
+    "trial_seeds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "workers": 6
+  },
+  "record": {
+    "characteristic_polynomial_mod_prime": [
+      1,
+      27,
+      844,
+      123,
+      188,
+      850,
+      437,
+      289,
+      264,
+      410
+    ],
+    "characteristic_polynomial_square_free_mod_prime": true,
+    "good_reduction_checks": {
+      "prime_coprime_to_axial_denominators": true,
+      "prime_coprime_to_newton_orders": true,
+      "prime_coprime_to_target_dimension": true,
+      "prime_exceeds_maximum_penalty": true
+    },
+    "maximum_penalty_eigenvalue": 812,
+    "multiplicity": 9,
+    "n": 10,
+    "power_traces_mod_prime": [
+      982,
+      50,
+      889,
+      942,
+      901,
+      396,
+      844,
+      905,
+      152
+    ],
+    "prime": 1009,
+    "projected_basis_pivots": [
+      32,
+      200,
+      282,
+      1539,
+      1553,
+      1587,
+      1721,
+      1755,
+      1957
+    ],
+    "projected_rank": 9,
+    "projected_trial_count": 9,
+    "projector_polynomial_degree": 487,
+    "rational_characteristic_polynomial_square_free_consequence": true,
+    "separator_block_mod_prime": [
+      [
+        119,
+        709,
+        278,
+        684,
+        365,
+        596,
+        476,
+        523,
+        615
+      ],
+      [
+        425,
+        805,
+        129,
+        277,
+        887,
+        383,
+        505,
+        403,
+        266
+      ],
+      [
+        73,
+        696,
+        23,
+        493,
+        882,
+        257,
+        314,
+        752,
+        727
+      ],
+      [
+        697,
+        608,
+        131,
+        911,
+        887,
+        586,
+        890,
+        449,
+        754
+      ],
+      [
+        544,
+        199,
+        67,
+        45,
+        569,
+        334,
+        262,
+        402,
+        880
+      ],
+      [
+        184,
+        79,
+        776,
+        191,
+        749,
+        844,
+        63,
+        153,
+        671
+      ],
+      [
+        290,
+        838,
+        900,
+        717,
+        559,
+        548,
+        769,
+        995,
+        20
+      ],
+      [
+        971,
+        975,
+        932,
+        546,
+        101,
+        654,
+        807,
+        250,
+        519
+      ],
+      [
+        530,
+        148,
+        40,
+        937,
+        672,
+        438,
+        733,
+        627,
+        728
+      ]
+    ],
+    "source_dimension": 768,
+    "source_partition": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "tableau_fiber_count": 36,
+    "target_dimension": 36,
+    "target_partition": [
+      8,
+      1,
+      1
+    ],
+    "tensor_dimension": 589824
+  }
+}
