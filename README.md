@@ -922,8 +922,75 @@ The first `n=10` feasibility probe uses the self-conjugate
 square-free cubics, but this is only `2/40` target coverage. Quotient transfer
 reaches 310,071 states by degree five, and the direct class-ordered `S_10`
 translation table would require 91.7 GB. Higher multiplicities are blocked
-until a representation- or class-algebra contraction removes explicit group
-rows.
+until a scalable representation- or class-algebra contraction is proved.
+
+Exact support profiles close one tempting shortcut: full-support pair orbits
+carry 89.5% of the `n=9` degree-28 transfer weight, and support 9 or 10 carries
+62.0% at `n=10` degree five. Termwise marked-support injection therefore
+degenerates to factorial work on the dominant sector. A separate sparse
+invariant-space contraction removes explicit group rows for finite blocks:
+on diagonal-`S_n` invariant tensors an orbit average restricts exactly like one
+representative. A diagonal Jucys-Murphy content penalty then isolates one target
+tableau fiber directly in `V_lambda tensor V_lambda`, removing the
+`dim(nu)` factor from the eigensolve. It reproduces the exact `n=10` cubic
+traces, but `dim(lambda)^2` is still exponential for typical partitions; this
+is a finite collision finder, not a scalable multiplicity transform.
+
+An exact follow-up replaces numerical multiplicity moments with a diagonal
+YJM tableau projector. The identity
+`Tr(P_T H^d) = Tr(M_nu^d)` follows from the diagonal isotypic decomposition and
+the simple joint content spectrum. Rational `n=5,6` controls recover exact
+square-free quadratics. The literal evaluator is decisively non-scalable:
+degree two at `n=6` reaches 484,912 of 518,400 pair-group states, while the
+`n=10` pair space has 13,168,189,440,000 states. The live target is therefore
+a Young-tower or centralizer recurrence for these exact traces, not further
+explicit group-algebra expansion.
+
+The first exact compressed evaluator now uses Young's rational seminormal form
+over finite fields. An explicit polynomial in the integer-valued YJM content
+penalty projects onto one multiplicity fiber, rational Gram weights propagate
+it through the target tableaux, and modular traces match both exact controls.
+For the `n=10` multiplicity-six target this replaces 13.17 trillion pair-group
+states with 589,824 tensor coordinates, a 22,325,625-fold finite reduction.
+An exact `F_1009` run projects rank six on six independent trials and produces
+the residue polynomial
+`x^6 + 621x^5 + 659x^4 + 130x^3 + 549x^2 + 650x + 558`, whose gcd with its
+derivative is one. Because 1009 is a good reduction prime, this proves the
+rational `n=10` multiplicity-six polynomial is square-free. It is still
+exponential in `n`; rational coefficient reconstruction, asymptotic
+compression, a coherent transform, and a decoder remain open.
+
+The conjugate target `(2,2,2,2,2)` was computed independently and gives the
+same polynomial with every odd coefficient negated. This validates an all-`n`
+sign-duality theorem for this separator: the source is self-conjugate, twisting
+one source factor maps `nu` to `nu'`, and every separator term has an odd left
+transposition, so the conjugate block is similar to the negative block.
+Square-freeness and absolute gaps therefore transfer exactly to conjugate
+targets, cutting the remaining finite ladder in half.
+
+The next primary target `(8,2)` has multiplicity eight. Its exact
+`F_1009` polynomial is also square-free, so sign duality certifies the
+conjugate target as well. The multiplicity-nine `(8,1,1)` block and both
+multiplicity-fifteen primaries `(6,4)` and `(7,3)` also have exact square-free
+good reductions. Sign duality raises modular coverage to ten of 40 targets
+through multiplicity fifteen; including the older exact cubic pair gives
+twelve total. This remains a collision search, not evidence for polynomial
+scaling.
+
+Exact denominator clearing makes that distinction quantitative. Combining the
+YJM projector denominator, orbit-average denominators, Newton identities, and
+the nonzero integer discriminant gives rigorous normalized gap lower bounds.
+They are unusably weak: the strongest audited bound is below `10^-2057`, and
+the multiplicity-fifteen bounds fall below `10^-21000`. These are safe
+existence bounds, not observed gaps, but they prove that finite
+square-freeness alone cannot justify efficient phase estimation.
+
+A direct sparse YJM eigensolve supplies the first real-gap trend on exact
+blocks. The multiplicity-six LCU-normalized gap is about `0.00299417`; at
+multiplicity eight it is about `0.000417600`, a 7.17-fold drop. Both blocks are
+exactly square-free, and both numerical gaps survive a declared error budget,
+but neither magnitude has a machine-verified interval certificate. This is a
+finite warning against stable precision, not an asymptotic gap-collapse proof.
 
 ```bash
 python qsearch.py coset-racah-gap-scaling
@@ -961,6 +1028,12 @@ python qsearch.py coset-racah-typical-separator-gaps
 python qsearch.py coset-racah-typical-n9-probe --recompute
 python qsearch.py coset-racah-typical-n9-full
 python qsearch.py coset-racah-typical-n10-feasibility
+python qsearch.py coset-racah-typical-support-growth
+python qsearch.py coset-racah-typical-invariant-contraction
+python qsearch.py coset-racah-typical-yjm-projector
+python qsearch.py coset-racah-typical-modular-yjm
+python qsearch.py coset-racah-typical-modular-gaps
+python qsearch.py coset-racah-typical-n10-gap-trend
 python qsearch.py run EXP-COSET-TYPICAL-COMMUTANT-MOMENT-AUDIT
 python qsearch.py run EXP-COSET-TYPICAL-CLASS-CONTRACTION-SCALING
 python qsearch.py run EXP-COSET-TYPICAL-PORTFOLIO-COLLISION-CERTIFICATE
@@ -968,6 +1041,12 @@ python qsearch.py run EXP-COSET-TYPICAL-INDEPENDENT-THIRD-GENERATOR-CERTIFICATE
 python qsearch.py run EXP-COSET-TYPICAL-HIGH-MULTIPLICITY-TRANSFER
 python qsearch.py run EXP-COSET-TYPICAL-FIXED-SEPARATOR-GAP-SCALING
 python qsearch.py run EXP-COSET-TYPICAL-N9-LOW-MULTIPLICITY-PROBE
+python qsearch.py run EXP-COSET-TYPICAL-TRANSFER-SUPPORT-GROWTH
+python qsearch.py run EXP-COSET-TYPICAL-INVARIANT-CONTRACTION
+python qsearch.py run EXP-COSET-TYPICAL-YJM-PROJECTOR-TRACE
+python qsearch.py run EXP-COSET-TYPICAL-MODULAR-YJM-CONTRACTION
+python qsearch.py run EXP-COSET-TYPICAL-MODULAR-GAP-BOUND
+python qsearch.py run EXP-COSET-TYPICAL-N10-GAP-TREND
 ```
 
 The exact portfolio audit now has both a hard cut and a surviving finite

@@ -66,8 +66,8 @@
       "target_claim": "The coset observable is not a disguised classical invariant."
     }
   ],
-  "created_at": "2026-07-24T03:21:40.304294+00:00",
-  "lemma_count": 526,
+  "created_at": "2026-07-27T19:11:45.109752+00:00",
+  "lemma_count": 610,
   "lemmas": [
     {
       "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -614,10 +614,170 @@
         "PO-COMPLEXITY",
         "PO-NO-GO"
       ],
+      "falsification_test": "Recompute the kernel-hash-gated support profiles, verify that full-support states have positive dominant weight, and restrict the conclusion to direct termwise marked injection rather than every possible class recurrence.",
+      "id": "LEMMA-CODE-COSET-COLLECTIVE-COSET-TYPICAL-FIXED-SUPPORT-TRANSFER-NO-GO",
+      "statement": "Direct termwise marked-class contraction with a fixed active-support bound cannot recover the high-degree TT1+TC1 transfer traces.",
+      "status": "proved-direct-fixed-support-transfer-contraction-no-go"
+    },
+    {
+      "candidate_id": "CODE-COSET-COLLECTIVE",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY"
+      ],
+      "falsification_test": "Check the diagonal invariance algebra, reproduce all exact n=10 cubic traces, and verify nullspace and Hermiticity residuals independently.",
+      "id": "LEMMA-CODE-COSET-COLLECTIVE-COSET-TYPICAL-ORBIT-REPRESENTATIVE-CONTRACTION",
+      "statement": "On diagonal-S_n invariant tensors, the restriction of a simultaneous-conjugacy orbit average equals the restriction of any one orbit representative.",
+      "status": "proved-orbit-average-representative-restriction-identity"
+    },
+    {
+      "candidate_id": "CODE-COSET-COLLECTIVE",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY"
+      ],
+      "falsification_test": "Compare YJM and direct invariant spectra on exact controls, verify content-penalty nullity, every tableau propagation edge, and the full target-tableau trace.",
+      "id": "LEMMA-CODE-COSET-COLLECTIVE-COSET-TYPICAL-YJM-FIBER-FACTORIZATION",
+      "statement": "A diagonal Jucys-Murphy content penalty isolates one nu-tableau multiplicity fiber in V_lambda tensor V_lambda, and diagonal adjacent transpositions propagate it through all tableaux without another eigensolve.",
+      "status": "proved-finite-yjm-fiber-factorization"
+    },
+    {
+      "candidate_id": "CODE-COSET-COLLECTIVE",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Recover exact algebraic matrix entries or power traces, or machine-verify interval bounds for every sparse operation; certify a square-free sextic or disjoint root intervals and reject a declared floating-point budget as proof.",
+      "id": "LEMMA-CODE-COSET-COLLECTIVE-COSET-TYPICAL-N10-MULTIPLICITY6-SEPARATION",
+      "statement": "For source (4,3,2,1), TT1+TC1 has exact simple spectrum on the multiplicity-six (5,5) and conjugate target blocks.",
+      "status": "proved-exact-n10-multiplicity6-separation"
+    },
+    {
+      "candidate_id": "CODE-COSET-COLLECTIVE",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Check the global joint-content spectrum, verify the isotypic decomposition and commutant action algebraically, and reproduce exact rational traces on independent controls.",
+      "id": "LEMMA-CODE-COSET-COLLECTIVE-COSET-TYPICAL-YJM-PROJECTOR-TRACE-IDENTITY",
+      "statement": "For a diagonal-S_n-commuting separator H and a standard target tableau T, the exact joint-content projector satisfies Tr(P_T H^d)=Tr(M_nu^d) on the corresponding Kronecker multiplicity block.",
+      "status": "proved-exact-yjm-tableau-projector-trace-identity"
+    },
+    {
+      "candidate_id": "CODE-COSET-COLLECTIVE",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Construct a branching, centralizer, or tensor-network recurrence that reproduces every exact control trace without enumerating a constant fraction of (n!)^2 states, then certify bit complexity and reach the n=10 sextic.",
+      "id": "LEMMA-CODE-COSET-COLLECTIVE-COSET-TYPICAL-YOUNG-TOWER-EXACT-TRACE-EVALUATOR",
+      "statement": "YJM-projector multiplicity traces admit an exact evaluator with polynomial time and memory in n and the partition descriptions.",
+      "status": "blocked-explicit-pair-algebra-saturates-young-tower-recurrence-required"
+    },
+    {
+      "candidate_id": "CODE-COSET-COLLECTIVE",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Verify Coxeter relations and the invariant Gram form modulo each prime, match independent exact rational traces, and reject primes with rank or denominator failures.",
+      "id": "LEMMA-CODE-COSET-COLLECTIVE-COSET-TYPICAL-MODULAR-YJM-FINITE-CONTRACTION",
+      "statement": "Young rational seminormal form plus finite-field content projection exactly contracts a fixed typical multiplicity block without pair-group expansion.",
+      "status": "proved-exact-modular-yjm-control-contraction"
+    },
+    {
+      "candidate_id": "CODE-COSET-COLLECTIVE",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Verify the source sign intertwiner, the parity of every separator pair term, and the coefficient sign transform on independently computed conjugate modular blocks.",
+      "id": "LEMMA-CODE-COSET-COLLECTIVE-COSET-TYPICAL-CONJUGATE-SIGN-DUALITY",
+      "statement": "For a self-conjugate source partition and a separator whose pair terms all have odd left parity, conjugate target multiplicity blocks are similar to negatives of one another, so square-freeness and gap magnitudes agree.",
+      "status": "proved-all-n-conjugate-target-sign-duality"
+    },
+    {
+      "candidate_id": "CODE-COSET-COLLECTIVE",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Validate every stored good-prime block and conjugate sign-duality closure; stop the separator route on the first repeated modular factor at a good prime.",
+      "id": "LEMMA-CODE-COSET-COLLECTIVE-COSET-TYPICAL-N10-MODULAR-COLLISION-LADDER",
+      "statement": "The fixed TT1+TC1 separator remains square-free on the audited n=10 typical-target ladder through Kronecker multiplicity fifteen.",
+      "status": "proved-exact-n10-ladder-through-multiplicity15"
+    },
+    {
+      "candidate_id": "CODE-COSET-COLLECTIVE",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Check every denominator-divisibility step, Newton's identity clearing factor, discriminant exponent, root range, and the final LCU normalization.",
+      "id": "LEMMA-CODE-COSET-COLLECTIVE-COSET-TYPICAL-EXACT-DENOMINATOR-GAP-BOUND",
+      "statement": "YJM-projector and separator denominators, Newton identities, and a nonzero integer discriminant give an exact positive root-separation bound on every certified block.",
+      "status": "proved-exact-denominator-discriminant-gap-bound"
+    },
+    {
+      "candidate_id": "CODE-COSET-COLLECTIVE",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Recompute both sparse YJM blocks, retain exact modular square-free gates, verify residuals, and treat the two-point drop only as finite evidence rather than an all-n law.",
+      "id": "LEMMA-CODE-COSET-COLLECTIVE-COSET-TYPICAL-N10-STABLE-FINITE-GAP-EVIDENCE",
+      "statement": "The existing exactly square-free n=10 blocks provide stable numerical normalized-gap evidence as multiplicity grows.",
+      "status": "falsified-multiplicity6-to8-normalized-gap-drops-over-sevenfold"
+    },
+    {
+      "candidate_id": "CODE-COSET-COLLECTIVE",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Derive separator-specific coefficient-height cancellation or a direct spectral recurrence with an inverse-polynomial bound; finite nonzero discriminants do not satisfy this lemma.",
+      "id": "LEMMA-CODE-COSET-COLLECTIVE-COSET-TYPICAL-INVERSE-POLYNOMIAL-NORMALIZED-GAP",
+      "statement": "The typical TT1+TC1 separator has inverse-polynomial LCU-normalized minimum gap on the promised all-n family.",
+      "status": "blocked-square-free-discriminant-bound-is-astronomically-weak"
+    },
+    {
+      "candidate_id": "CODE-COSET-COLLECTIVE",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Compute independently checked residues over enough good primes, CRT-reconstruct every rational coefficient under proved denominator and height bounds, and verify a square-free gcd.",
+      "id": "LEMMA-CODE-COSET-COLLECTIVE-COSET-TYPICAL-N10-MODULAR-SEXTIC",
+      "statement": "The n=10 source (4,3,2,1) and target (5,5) separator block has an exact square-free multiplicity-six characteristic polynomial.",
+      "status": "proved-exact-n10-modular-sextic-square-free-by-good-reduction"
+    },
+    {
+      "candidate_id": "CODE-COSET-COLLECTIVE",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Derive a Young-branching, centralizer, or tensor-network recurrence that never stores the full V_lambda tensor V_lambda fiber and prove polynomial bit complexity.",
+      "id": "LEMMA-CODE-COSET-COLLECTIVE-COSET-TYPICAL-POLYNOMIAL-INVARIANT-CONTRACTION",
+      "statement": "The invariant-space contraction can be implemented in time and memory polynomial in n and the partition descriptions.",
+      "status": "blocked-yjm-fiber-still-uses-dimlambda-squared-amplitudes"
+    },
+    {
+      "candidate_id": "CODE-COSET-COLLECTIVE",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
       "falsification_test": "Derive a representation- or class-algebra recurrence that avoids materializing S_n rows, prove its exactness, and benchmark its scaling beyond n=10.",
       "id": "LEMMA-CODE-COSET-COLLECTIVE-COSET-TYPICAL-SCALABLE-CHARACTER-CONTRACTION",
       "statement": "The quotient transfer admits an exact character contraction whose time and memory are polynomial in n and the required multiplicity degree.",
-      "status": "blocked-explicit-s10-table-is-91gb-at-degree-five"
+      "status": "blocked-full-support-recurrence-missing"
     },
     {
       "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -2309,10 +2469,170 @@
         "PO-COMPLEXITY",
         "PO-NO-GO"
       ],
+      "falsification_test": "Recompute the kernel-hash-gated support profiles, verify that full-support states have positive dominant weight, and restrict the conclusion to direct termwise marked injection rather than every possible class recurrence.",
+      "id": "LEMMA-HYP-LIT-COSET-OBSERVABLES-COSET-TYPICAL-FIXED-SUPPORT-TRANSFER-NO-GO",
+      "statement": "Direct termwise marked-class contraction with a fixed active-support bound cannot recover the high-degree TT1+TC1 transfer traces.",
+      "status": "proved-direct-fixed-support-transfer-contraction-no-go"
+    },
+    {
+      "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY"
+      ],
+      "falsification_test": "Check the diagonal invariance algebra, reproduce all exact n=10 cubic traces, and verify nullspace and Hermiticity residuals independently.",
+      "id": "LEMMA-HYP-LIT-COSET-OBSERVABLES-COSET-TYPICAL-ORBIT-REPRESENTATIVE-CONTRACTION",
+      "statement": "On diagonal-S_n invariant tensors, the restriction of a simultaneous-conjugacy orbit average equals the restriction of any one orbit representative.",
+      "status": "proved-orbit-average-representative-restriction-identity"
+    },
+    {
+      "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY"
+      ],
+      "falsification_test": "Compare YJM and direct invariant spectra on exact controls, verify content-penalty nullity, every tableau propagation edge, and the full target-tableau trace.",
+      "id": "LEMMA-HYP-LIT-COSET-OBSERVABLES-COSET-TYPICAL-YJM-FIBER-FACTORIZATION",
+      "statement": "A diagonal Jucys-Murphy content penalty isolates one nu-tableau multiplicity fiber in V_lambda tensor V_lambda, and diagonal adjacent transpositions propagate it through all tableaux without another eigensolve.",
+      "status": "proved-finite-yjm-fiber-factorization"
+    },
+    {
+      "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Recover exact algebraic matrix entries or power traces, or machine-verify interval bounds for every sparse operation; certify a square-free sextic or disjoint root intervals and reject a declared floating-point budget as proof.",
+      "id": "LEMMA-HYP-LIT-COSET-OBSERVABLES-COSET-TYPICAL-N10-MULTIPLICITY6-SEPARATION",
+      "statement": "For source (4,3,2,1), TT1+TC1 has exact simple spectrum on the multiplicity-six (5,5) and conjugate target blocks.",
+      "status": "proved-exact-n10-multiplicity6-separation"
+    },
+    {
+      "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Check the global joint-content spectrum, verify the isotypic decomposition and commutant action algebraically, and reproduce exact rational traces on independent controls.",
+      "id": "LEMMA-HYP-LIT-COSET-OBSERVABLES-COSET-TYPICAL-YJM-PROJECTOR-TRACE-IDENTITY",
+      "statement": "For a diagonal-S_n-commuting separator H and a standard target tableau T, the exact joint-content projector satisfies Tr(P_T H^d)=Tr(M_nu^d) on the corresponding Kronecker multiplicity block.",
+      "status": "proved-exact-yjm-tableau-projector-trace-identity"
+    },
+    {
+      "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Construct a branching, centralizer, or tensor-network recurrence that reproduces every exact control trace without enumerating a constant fraction of (n!)^2 states, then certify bit complexity and reach the n=10 sextic.",
+      "id": "LEMMA-HYP-LIT-COSET-OBSERVABLES-COSET-TYPICAL-YOUNG-TOWER-EXACT-TRACE-EVALUATOR",
+      "statement": "YJM-projector multiplicity traces admit an exact evaluator with polynomial time and memory in n and the partition descriptions.",
+      "status": "blocked-explicit-pair-algebra-saturates-young-tower-recurrence-required"
+    },
+    {
+      "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Verify Coxeter relations and the invariant Gram form modulo each prime, match independent exact rational traces, and reject primes with rank or denominator failures.",
+      "id": "LEMMA-HYP-LIT-COSET-OBSERVABLES-COSET-TYPICAL-MODULAR-YJM-FINITE-CONTRACTION",
+      "statement": "Young rational seminormal form plus finite-field content projection exactly contracts a fixed typical multiplicity block without pair-group expansion.",
+      "status": "proved-exact-modular-yjm-control-contraction"
+    },
+    {
+      "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Verify the source sign intertwiner, the parity of every separator pair term, and the coefficient sign transform on independently computed conjugate modular blocks.",
+      "id": "LEMMA-HYP-LIT-COSET-OBSERVABLES-COSET-TYPICAL-CONJUGATE-SIGN-DUALITY",
+      "statement": "For a self-conjugate source partition and a separator whose pair terms all have odd left parity, conjugate target multiplicity blocks are similar to negatives of one another, so square-freeness and gap magnitudes agree.",
+      "status": "proved-all-n-conjugate-target-sign-duality"
+    },
+    {
+      "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Validate every stored good-prime block and conjugate sign-duality closure; stop the separator route on the first repeated modular factor at a good prime.",
+      "id": "LEMMA-HYP-LIT-COSET-OBSERVABLES-COSET-TYPICAL-N10-MODULAR-COLLISION-LADDER",
+      "statement": "The fixed TT1+TC1 separator remains square-free on the audited n=10 typical-target ladder through Kronecker multiplicity fifteen.",
+      "status": "proved-exact-n10-ladder-through-multiplicity15"
+    },
+    {
+      "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Check every denominator-divisibility step, Newton's identity clearing factor, discriminant exponent, root range, and the final LCU normalization.",
+      "id": "LEMMA-HYP-LIT-COSET-OBSERVABLES-COSET-TYPICAL-EXACT-DENOMINATOR-GAP-BOUND",
+      "statement": "YJM-projector and separator denominators, Newton identities, and a nonzero integer discriminant give an exact positive root-separation bound on every certified block.",
+      "status": "proved-exact-denominator-discriminant-gap-bound"
+    },
+    {
+      "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Recompute both sparse YJM blocks, retain exact modular square-free gates, verify residuals, and treat the two-point drop only as finite evidence rather than an all-n law.",
+      "id": "LEMMA-HYP-LIT-COSET-OBSERVABLES-COSET-TYPICAL-N10-STABLE-FINITE-GAP-EVIDENCE",
+      "statement": "The existing exactly square-free n=10 blocks provide stable numerical normalized-gap evidence as multiplicity grows.",
+      "status": "falsified-multiplicity6-to8-normalized-gap-drops-over-sevenfold"
+    },
+    {
+      "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Derive separator-specific coefficient-height cancellation or a direct spectral recurrence with an inverse-polynomial bound; finite nonzero discriminants do not satisfy this lemma.",
+      "id": "LEMMA-HYP-LIT-COSET-OBSERVABLES-COSET-TYPICAL-INVERSE-POLYNOMIAL-NORMALIZED-GAP",
+      "statement": "The typical TT1+TC1 separator has inverse-polynomial LCU-normalized minimum gap on the promised all-n family.",
+      "status": "blocked-square-free-discriminant-bound-is-astronomically-weak"
+    },
+    {
+      "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Compute independently checked residues over enough good primes, CRT-reconstruct every rational coefficient under proved denominator and height bounds, and verify a square-free gcd.",
+      "id": "LEMMA-HYP-LIT-COSET-OBSERVABLES-COSET-TYPICAL-N10-MODULAR-SEXTIC",
+      "statement": "The n=10 source (4,3,2,1) and target (5,5) separator block has an exact square-free multiplicity-six characteristic polynomial.",
+      "status": "proved-exact-n10-modular-sextic-square-free-by-good-reduction"
+    },
+    {
+      "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Derive a Young-branching, centralizer, or tensor-network recurrence that never stores the full V_lambda tensor V_lambda fiber and prove polynomial bit complexity.",
+      "id": "LEMMA-HYP-LIT-COSET-OBSERVABLES-COSET-TYPICAL-POLYNOMIAL-INVARIANT-CONTRACTION",
+      "statement": "The invariant-space contraction can be implemented in time and memory polynomial in n and the partition descriptions.",
+      "status": "blocked-yjm-fiber-still-uses-dimlambda-squared-amplitudes"
+    },
+    {
+      "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
       "falsification_test": "Derive a representation- or class-algebra recurrence that avoids materializing S_n rows, prove its exactness, and benchmark its scaling beyond n=10.",
       "id": "LEMMA-HYP-LIT-COSET-OBSERVABLES-COSET-TYPICAL-SCALABLE-CHARACTER-CONTRACTION",
       "statement": "The quotient transfer admits an exact character contraction whose time and memory are polynomial in n and the required multiplicity degree.",
-      "status": "blocked-explicit-s10-table-is-91gb-at-degree-five"
+      "status": "blocked-full-support-recurrence-missing"
     },
     {
       "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
@@ -4004,10 +4324,170 @@
         "PO-COMPLEXITY",
         "PO-NO-GO"
       ],
+      "falsification_test": "Recompute the kernel-hash-gated support profiles, verify that full-support states have positive dominant weight, and restrict the conclusion to direct termwise marked injection rather than every possible class recurrence.",
+      "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-COSET-TYPICAL-FIXED-SUPPORT-TRANSFER-NO-GO",
+      "statement": "Direct termwise marked-class contraction with a fixed active-support bound cannot recover the high-degree TT1+TC1 transfer traces.",
+      "status": "proved-direct-fixed-support-transfer-contraction-no-go"
+    },
+    {
+      "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY"
+      ],
+      "falsification_test": "Check the diagonal invariance algebra, reproduce all exact n=10 cubic traces, and verify nullspace and Hermiticity residuals independently.",
+      "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-COSET-TYPICAL-ORBIT-REPRESENTATIVE-CONTRACTION",
+      "statement": "On diagonal-S_n invariant tensors, the restriction of a simultaneous-conjugacy orbit average equals the restriction of any one orbit representative.",
+      "status": "proved-orbit-average-representative-restriction-identity"
+    },
+    {
+      "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY"
+      ],
+      "falsification_test": "Compare YJM and direct invariant spectra on exact controls, verify content-penalty nullity, every tableau propagation edge, and the full target-tableau trace.",
+      "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-COSET-TYPICAL-YJM-FIBER-FACTORIZATION",
+      "statement": "A diagonal Jucys-Murphy content penalty isolates one nu-tableau multiplicity fiber in V_lambda tensor V_lambda, and diagonal adjacent transpositions propagate it through all tableaux without another eigensolve.",
+      "status": "proved-finite-yjm-fiber-factorization"
+    },
+    {
+      "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Recover exact algebraic matrix entries or power traces, or machine-verify interval bounds for every sparse operation; certify a square-free sextic or disjoint root intervals and reject a declared floating-point budget as proof.",
+      "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-COSET-TYPICAL-N10-MULTIPLICITY6-SEPARATION",
+      "statement": "For source (4,3,2,1), TT1+TC1 has exact simple spectrum on the multiplicity-six (5,5) and conjugate target blocks.",
+      "status": "proved-exact-n10-multiplicity6-separation"
+    },
+    {
+      "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Check the global joint-content spectrum, verify the isotypic decomposition and commutant action algebraically, and reproduce exact rational traces on independent controls.",
+      "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-COSET-TYPICAL-YJM-PROJECTOR-TRACE-IDENTITY",
+      "statement": "For a diagonal-S_n-commuting separator H and a standard target tableau T, the exact joint-content projector satisfies Tr(P_T H^d)=Tr(M_nu^d) on the corresponding Kronecker multiplicity block.",
+      "status": "proved-exact-yjm-tableau-projector-trace-identity"
+    },
+    {
+      "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Construct a branching, centralizer, or tensor-network recurrence that reproduces every exact control trace without enumerating a constant fraction of (n!)^2 states, then certify bit complexity and reach the n=10 sextic.",
+      "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-COSET-TYPICAL-YOUNG-TOWER-EXACT-TRACE-EVALUATOR",
+      "statement": "YJM-projector multiplicity traces admit an exact evaluator with polynomial time and memory in n and the partition descriptions.",
+      "status": "blocked-explicit-pair-algebra-saturates-young-tower-recurrence-required"
+    },
+    {
+      "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Verify Coxeter relations and the invariant Gram form modulo each prime, match independent exact rational traces, and reject primes with rank or denominator failures.",
+      "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-COSET-TYPICAL-MODULAR-YJM-FINITE-CONTRACTION",
+      "statement": "Young rational seminormal form plus finite-field content projection exactly contracts a fixed typical multiplicity block without pair-group expansion.",
+      "status": "proved-exact-modular-yjm-control-contraction"
+    },
+    {
+      "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Verify the source sign intertwiner, the parity of every separator pair term, and the coefficient sign transform on independently computed conjugate modular blocks.",
+      "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-COSET-TYPICAL-CONJUGATE-SIGN-DUALITY",
+      "statement": "For a self-conjugate source partition and a separator whose pair terms all have odd left parity, conjugate target multiplicity blocks are similar to negatives of one another, so square-freeness and gap magnitudes agree.",
+      "status": "proved-all-n-conjugate-target-sign-duality"
+    },
+    {
+      "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Validate every stored good-prime block and conjugate sign-duality closure; stop the separator route on the first repeated modular factor at a good prime.",
+      "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-COSET-TYPICAL-N10-MODULAR-COLLISION-LADDER",
+      "statement": "The fixed TT1+TC1 separator remains square-free on the audited n=10 typical-target ladder through Kronecker multiplicity fifteen.",
+      "status": "proved-exact-n10-ladder-through-multiplicity15"
+    },
+    {
+      "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Check every denominator-divisibility step, Newton's identity clearing factor, discriminant exponent, root range, and the final LCU normalization.",
+      "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-COSET-TYPICAL-EXACT-DENOMINATOR-GAP-BOUND",
+      "statement": "YJM-projector and separator denominators, Newton identities, and a nonzero integer discriminant give an exact positive root-separation bound on every certified block.",
+      "status": "proved-exact-denominator-discriminant-gap-bound"
+    },
+    {
+      "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Recompute both sparse YJM blocks, retain exact modular square-free gates, verify residuals, and treat the two-point drop only as finite evidence rather than an all-n law.",
+      "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-COSET-TYPICAL-N10-STABLE-FINITE-GAP-EVIDENCE",
+      "statement": "The existing exactly square-free n=10 blocks provide stable numerical normalized-gap evidence as multiplicity grows.",
+      "status": "falsified-multiplicity6-to8-normalized-gap-drops-over-sevenfold"
+    },
+    {
+      "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Derive separator-specific coefficient-height cancellation or a direct spectral recurrence with an inverse-polynomial bound; finite nonzero discriminants do not satisfy this lemma.",
+      "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-COSET-TYPICAL-INVERSE-POLYNOMIAL-NORMALIZED-GAP",
+      "statement": "The typical TT1+TC1 separator has inverse-polynomial LCU-normalized minimum gap on the promised all-n family.",
+      "status": "blocked-square-free-discriminant-bound-is-astronomically-weak"
+    },
+    {
+      "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Compute independently checked residues over enough good primes, CRT-reconstruct every rational coefficient under proved denominator and height bounds, and verify a square-free gcd.",
+      "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-COSET-TYPICAL-N10-MODULAR-SEXTIC",
+      "statement": "The n=10 source (4,3,2,1) and target (5,5) separator block has an exact square-free multiplicity-six characteristic polynomial.",
+      "status": "proved-exact-n10-modular-sextic-square-free-by-good-reduction"
+    },
+    {
+      "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Derive a Young-branching, centralizer, or tensor-network recurrence that never stores the full V_lambda tensor V_lambda fiber and prove polynomial bit complexity.",
+      "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-COSET-TYPICAL-POLYNOMIAL-INVARIANT-CONTRACTION",
+      "statement": "The invariant-space contraction can be implemented in time and memory polynomial in n and the partition descriptions.",
+      "status": "blocked-yjm-fiber-still-uses-dimlambda-squared-amplitudes"
+    },
+    {
+      "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
       "falsification_test": "Derive a representation- or class-algebra recurrence that avoids materializing S_n rows, prove its exactness, and benchmark its scaling beyond n=10.",
       "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-COSET-TYPICAL-SCALABLE-CHARACTER-CONTRACTION",
       "statement": "The quotient transfer admits an exact character contraction whose time and memory are polynomial in n and the required multiplicity degree.",
-      "status": "blocked-explicit-s10-table-is-91gb-at-degree-five"
+      "status": "blocked-full-support-recurrence-missing"
     },
     {
       "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
@@ -4738,10 +5218,170 @@
         "PO-COMPLEXITY",
         "PO-NO-GO"
       ],
+      "falsification_test": "Recompute the kernel-hash-gated support profiles, verify that full-support states have positive dominant weight, and restrict the conclusion to direct termwise marked injection rather than every possible class recurrence.",
+      "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-COSET-TYPICAL-FIXED-SUPPORT-TRANSFER-NO-GO",
+      "statement": "Direct termwise marked-class contraction with a fixed active-support bound cannot recover the high-degree TT1+TC1 transfer traces.",
+      "status": "proved-direct-fixed-support-transfer-contraction-no-go"
+    },
+    {
+      "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY"
+      ],
+      "falsification_test": "Check the diagonal invariance algebra, reproduce all exact n=10 cubic traces, and verify nullspace and Hermiticity residuals independently.",
+      "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-COSET-TYPICAL-ORBIT-REPRESENTATIVE-CONTRACTION",
+      "statement": "On diagonal-S_n invariant tensors, the restriction of a simultaneous-conjugacy orbit average equals the restriction of any one orbit representative.",
+      "status": "proved-orbit-average-representative-restriction-identity"
+    },
+    {
+      "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY"
+      ],
+      "falsification_test": "Compare YJM and direct invariant spectra on exact controls, verify content-penalty nullity, every tableau propagation edge, and the full target-tableau trace.",
+      "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-COSET-TYPICAL-YJM-FIBER-FACTORIZATION",
+      "statement": "A diagonal Jucys-Murphy content penalty isolates one nu-tableau multiplicity fiber in V_lambda tensor V_lambda, and diagonal adjacent transpositions propagate it through all tableaux without another eigensolve.",
+      "status": "proved-finite-yjm-fiber-factorization"
+    },
+    {
+      "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Recover exact algebraic matrix entries or power traces, or machine-verify interval bounds for every sparse operation; certify a square-free sextic or disjoint root intervals and reject a declared floating-point budget as proof.",
+      "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-COSET-TYPICAL-N10-MULTIPLICITY6-SEPARATION",
+      "statement": "For source (4,3,2,1), TT1+TC1 has exact simple spectrum on the multiplicity-six (5,5) and conjugate target blocks.",
+      "status": "proved-exact-n10-multiplicity6-separation"
+    },
+    {
+      "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Check the global joint-content spectrum, verify the isotypic decomposition and commutant action algebraically, and reproduce exact rational traces on independent controls.",
+      "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-COSET-TYPICAL-YJM-PROJECTOR-TRACE-IDENTITY",
+      "statement": "For a diagonal-S_n-commuting separator H and a standard target tableau T, the exact joint-content projector satisfies Tr(P_T H^d)=Tr(M_nu^d) on the corresponding Kronecker multiplicity block.",
+      "status": "proved-exact-yjm-tableau-projector-trace-identity"
+    },
+    {
+      "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Construct a branching, centralizer, or tensor-network recurrence that reproduces every exact control trace without enumerating a constant fraction of (n!)^2 states, then certify bit complexity and reach the n=10 sextic.",
+      "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-COSET-TYPICAL-YOUNG-TOWER-EXACT-TRACE-EVALUATOR",
+      "statement": "YJM-projector multiplicity traces admit an exact evaluator with polynomial time and memory in n and the partition descriptions.",
+      "status": "blocked-explicit-pair-algebra-saturates-young-tower-recurrence-required"
+    },
+    {
+      "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Verify Coxeter relations and the invariant Gram form modulo each prime, match independent exact rational traces, and reject primes with rank or denominator failures.",
+      "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-COSET-TYPICAL-MODULAR-YJM-FINITE-CONTRACTION",
+      "statement": "Young rational seminormal form plus finite-field content projection exactly contracts a fixed typical multiplicity block without pair-group expansion.",
+      "status": "proved-exact-modular-yjm-control-contraction"
+    },
+    {
+      "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Verify the source sign intertwiner, the parity of every separator pair term, and the coefficient sign transform on independently computed conjugate modular blocks.",
+      "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-COSET-TYPICAL-CONJUGATE-SIGN-DUALITY",
+      "statement": "For a self-conjugate source partition and a separator whose pair terms all have odd left parity, conjugate target multiplicity blocks are similar to negatives of one another, so square-freeness and gap magnitudes agree.",
+      "status": "proved-all-n-conjugate-target-sign-duality"
+    },
+    {
+      "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Validate every stored good-prime block and conjugate sign-duality closure; stop the separator route on the first repeated modular factor at a good prime.",
+      "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-COSET-TYPICAL-N10-MODULAR-COLLISION-LADDER",
+      "statement": "The fixed TT1+TC1 separator remains square-free on the audited n=10 typical-target ladder through Kronecker multiplicity fifteen.",
+      "status": "proved-exact-n10-ladder-through-multiplicity15"
+    },
+    {
+      "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Check every denominator-divisibility step, Newton's identity clearing factor, discriminant exponent, root range, and the final LCU normalization.",
+      "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-COSET-TYPICAL-EXACT-DENOMINATOR-GAP-BOUND",
+      "statement": "YJM-projector and separator denominators, Newton identities, and a nonzero integer discriminant give an exact positive root-separation bound on every certified block.",
+      "status": "proved-exact-denominator-discriminant-gap-bound"
+    },
+    {
+      "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Recompute both sparse YJM blocks, retain exact modular square-free gates, verify residuals, and treat the two-point drop only as finite evidence rather than an all-n law.",
+      "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-COSET-TYPICAL-N10-STABLE-FINITE-GAP-EVIDENCE",
+      "statement": "The existing exactly square-free n=10 blocks provide stable numerical normalized-gap evidence as multiplicity grows.",
+      "status": "falsified-multiplicity6-to8-normalized-gap-drops-over-sevenfold"
+    },
+    {
+      "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Derive separator-specific coefficient-height cancellation or a direct spectral recurrence with an inverse-polynomial bound; finite nonzero discriminants do not satisfy this lemma.",
+      "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-COSET-TYPICAL-INVERSE-POLYNOMIAL-NORMALIZED-GAP",
+      "statement": "The typical TT1+TC1 separator has inverse-polynomial LCU-normalized minimum gap on the promised all-n family.",
+      "status": "blocked-square-free-discriminant-bound-is-astronomically-weak"
+    },
+    {
+      "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Compute independently checked residues over enough good primes, CRT-reconstruct every rational coefficient under proved denominator and height bounds, and verify a square-free gcd.",
+      "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-COSET-TYPICAL-N10-MODULAR-SEXTIC",
+      "statement": "The n=10 source (4,3,2,1) and target (5,5) separator block has an exact square-free multiplicity-six characteristic polynomial.",
+      "status": "proved-exact-n10-modular-sextic-square-free-by-good-reduction"
+    },
+    {
+      "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Derive a Young-branching, centralizer, or tensor-network recurrence that never stores the full V_lambda tensor V_lambda fiber and prove polynomial bit complexity.",
+      "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-COSET-TYPICAL-POLYNOMIAL-INVARIANT-CONTRACTION",
+      "statement": "The invariant-space contraction can be implemented in time and memory polynomial in n and the partition descriptions.",
+      "status": "blocked-yjm-fiber-still-uses-dimlambda-squared-amplitudes"
+    },
+    {
+      "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
       "falsification_test": "Derive a representation- or class-algebra recurrence that avoids materializing S_n rows, prove its exactness, and benchmark its scaling beyond n=10.",
       "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-COSET-TYPICAL-SCALABLE-CHARACTER-CONTRACTION",
       "statement": "The quotient transfer admits an exact character contraction whose time and memory are polynomial in n and the required multiplicity degree.",
-      "status": "blocked-explicit-s10-table-is-91gb-at-degree-five"
+      "status": "blocked-full-support-recurrence-missing"
     },
     {
       "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
@@ -5472,10 +6112,170 @@
         "PO-COMPLEXITY",
         "PO-NO-GO"
       ],
+      "falsification_test": "Recompute the kernel-hash-gated support profiles, verify that full-support states have positive dominant weight, and restrict the conclusion to direct termwise marked injection rather than every possible class recurrence.",
+      "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-COSET-TYPICAL-FIXED-SUPPORT-TRANSFER-NO-GO",
+      "statement": "Direct termwise marked-class contraction with a fixed active-support bound cannot recover the high-degree TT1+TC1 transfer traces.",
+      "status": "proved-direct-fixed-support-transfer-contraction-no-go"
+    },
+    {
+      "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY"
+      ],
+      "falsification_test": "Check the diagonal invariance algebra, reproduce all exact n=10 cubic traces, and verify nullspace and Hermiticity residuals independently.",
+      "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-COSET-TYPICAL-ORBIT-REPRESENTATIVE-CONTRACTION",
+      "statement": "On diagonal-S_n invariant tensors, the restriction of a simultaneous-conjugacy orbit average equals the restriction of any one orbit representative.",
+      "status": "proved-orbit-average-representative-restriction-identity"
+    },
+    {
+      "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY"
+      ],
+      "falsification_test": "Compare YJM and direct invariant spectra on exact controls, verify content-penalty nullity, every tableau propagation edge, and the full target-tableau trace.",
+      "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-COSET-TYPICAL-YJM-FIBER-FACTORIZATION",
+      "statement": "A diagonal Jucys-Murphy content penalty isolates one nu-tableau multiplicity fiber in V_lambda tensor V_lambda, and diagonal adjacent transpositions propagate it through all tableaux without another eigensolve.",
+      "status": "proved-finite-yjm-fiber-factorization"
+    },
+    {
+      "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Recover exact algebraic matrix entries or power traces, or machine-verify interval bounds for every sparse operation; certify a square-free sextic or disjoint root intervals and reject a declared floating-point budget as proof.",
+      "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-COSET-TYPICAL-N10-MULTIPLICITY6-SEPARATION",
+      "statement": "For source (4,3,2,1), TT1+TC1 has exact simple spectrum on the multiplicity-six (5,5) and conjugate target blocks.",
+      "status": "proved-exact-n10-multiplicity6-separation"
+    },
+    {
+      "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Check the global joint-content spectrum, verify the isotypic decomposition and commutant action algebraically, and reproduce exact rational traces on independent controls.",
+      "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-COSET-TYPICAL-YJM-PROJECTOR-TRACE-IDENTITY",
+      "statement": "For a diagonal-S_n-commuting separator H and a standard target tableau T, the exact joint-content projector satisfies Tr(P_T H^d)=Tr(M_nu^d) on the corresponding Kronecker multiplicity block.",
+      "status": "proved-exact-yjm-tableau-projector-trace-identity"
+    },
+    {
+      "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Construct a branching, centralizer, or tensor-network recurrence that reproduces every exact control trace without enumerating a constant fraction of (n!)^2 states, then certify bit complexity and reach the n=10 sextic.",
+      "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-COSET-TYPICAL-YOUNG-TOWER-EXACT-TRACE-EVALUATOR",
+      "statement": "YJM-projector multiplicity traces admit an exact evaluator with polynomial time and memory in n and the partition descriptions.",
+      "status": "blocked-explicit-pair-algebra-saturates-young-tower-recurrence-required"
+    },
+    {
+      "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Verify Coxeter relations and the invariant Gram form modulo each prime, match independent exact rational traces, and reject primes with rank or denominator failures.",
+      "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-COSET-TYPICAL-MODULAR-YJM-FINITE-CONTRACTION",
+      "statement": "Young rational seminormal form plus finite-field content projection exactly contracts a fixed typical multiplicity block without pair-group expansion.",
+      "status": "proved-exact-modular-yjm-control-contraction"
+    },
+    {
+      "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Verify the source sign intertwiner, the parity of every separator pair term, and the coefficient sign transform on independently computed conjugate modular blocks.",
+      "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-COSET-TYPICAL-CONJUGATE-SIGN-DUALITY",
+      "statement": "For a self-conjugate source partition and a separator whose pair terms all have odd left parity, conjugate target multiplicity blocks are similar to negatives of one another, so square-freeness and gap magnitudes agree.",
+      "status": "proved-all-n-conjugate-target-sign-duality"
+    },
+    {
+      "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Validate every stored good-prime block and conjugate sign-duality closure; stop the separator route on the first repeated modular factor at a good prime.",
+      "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-COSET-TYPICAL-N10-MODULAR-COLLISION-LADDER",
+      "statement": "The fixed TT1+TC1 separator remains square-free on the audited n=10 typical-target ladder through Kronecker multiplicity fifteen.",
+      "status": "proved-exact-n10-ladder-through-multiplicity15"
+    },
+    {
+      "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Check every denominator-divisibility step, Newton's identity clearing factor, discriminant exponent, root range, and the final LCU normalization.",
+      "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-COSET-TYPICAL-EXACT-DENOMINATOR-GAP-BOUND",
+      "statement": "YJM-projector and separator denominators, Newton identities, and a nonzero integer discriminant give an exact positive root-separation bound on every certified block.",
+      "status": "proved-exact-denominator-discriminant-gap-bound"
+    },
+    {
+      "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Recompute both sparse YJM blocks, retain exact modular square-free gates, verify residuals, and treat the two-point drop only as finite evidence rather than an all-n law.",
+      "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-COSET-TYPICAL-N10-STABLE-FINITE-GAP-EVIDENCE",
+      "statement": "The existing exactly square-free n=10 blocks provide stable numerical normalized-gap evidence as multiplicity grows.",
+      "status": "falsified-multiplicity6-to8-normalized-gap-drops-over-sevenfold"
+    },
+    {
+      "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Derive separator-specific coefficient-height cancellation or a direct spectral recurrence with an inverse-polynomial bound; finite nonzero discriminants do not satisfy this lemma.",
+      "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-COSET-TYPICAL-INVERSE-POLYNOMIAL-NORMALIZED-GAP",
+      "statement": "The typical TT1+TC1 separator has inverse-polynomial LCU-normalized minimum gap on the promised all-n family.",
+      "status": "blocked-square-free-discriminant-bound-is-astronomically-weak"
+    },
+    {
+      "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Compute independently checked residues over enough good primes, CRT-reconstruct every rational coefficient under proved denominator and height bounds, and verify a square-free gcd.",
+      "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-COSET-TYPICAL-N10-MODULAR-SEXTIC",
+      "statement": "The n=10 source (4,3,2,1) and target (5,5) separator block has an exact square-free multiplicity-six characteristic polynomial.",
+      "status": "proved-exact-n10-modular-sextic-square-free-by-good-reduction"
+    },
+    {
+      "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Derive a Young-branching, centralizer, or tensor-network recurrence that never stores the full V_lambda tensor V_lambda fiber and prove polynomial bit complexity.",
+      "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-COSET-TYPICAL-POLYNOMIAL-INVARIANT-CONTRACTION",
+      "statement": "The invariant-space contraction can be implemented in time and memory polynomial in n and the partition descriptions.",
+      "status": "blocked-yjm-fiber-still-uses-dimlambda-squared-amplitudes"
+    },
+    {
+      "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
       "falsification_test": "Derive a representation- or class-algebra recurrence that avoids materializing S_n rows, prove its exactness, and benchmark its scaling beyond n=10.",
       "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-COSET-TYPICAL-SCALABLE-CHARACTER-CONTRACTION",
       "statement": "The quotient transfer admits an exact character contraction whose time and memory are polynomial in n and the required multiplicity degree.",
-      "status": "blocked-explicit-s10-table-is-91gb-at-degree-five"
+      "status": "blocked-full-support-recurrence-missing"
     },
     {
       "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
@@ -6206,10 +7006,170 @@
         "PO-COMPLEXITY",
         "PO-NO-GO"
       ],
+      "falsification_test": "Recompute the kernel-hash-gated support profiles, verify that full-support states have positive dominant weight, and restrict the conclusion to direct termwise marked injection rather than every possible class recurrence.",
+      "id": "LEMMA-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-COSET-TYPICAL-FIXED-SUPPORT-TRANSFER-NO-GO",
+      "statement": "Direct termwise marked-class contraction with a fixed active-support bound cannot recover the high-degree TT1+TC1 transfer traces.",
+      "status": "proved-direct-fixed-support-transfer-contraction-no-go"
+    },
+    {
+      "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY"
+      ],
+      "falsification_test": "Check the diagonal invariance algebra, reproduce all exact n=10 cubic traces, and verify nullspace and Hermiticity residuals independently.",
+      "id": "LEMMA-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-COSET-TYPICAL-ORBIT-REPRESENTATIVE-CONTRACTION",
+      "statement": "On diagonal-S_n invariant tensors, the restriction of a simultaneous-conjugacy orbit average equals the restriction of any one orbit representative.",
+      "status": "proved-orbit-average-representative-restriction-identity"
+    },
+    {
+      "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY"
+      ],
+      "falsification_test": "Compare YJM and direct invariant spectra on exact controls, verify content-penalty nullity, every tableau propagation edge, and the full target-tableau trace.",
+      "id": "LEMMA-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-COSET-TYPICAL-YJM-FIBER-FACTORIZATION",
+      "statement": "A diagonal Jucys-Murphy content penalty isolates one nu-tableau multiplicity fiber in V_lambda tensor V_lambda, and diagonal adjacent transpositions propagate it through all tableaux without another eigensolve.",
+      "status": "proved-finite-yjm-fiber-factorization"
+    },
+    {
+      "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Recover exact algebraic matrix entries or power traces, or machine-verify interval bounds for every sparse operation; certify a square-free sextic or disjoint root intervals and reject a declared floating-point budget as proof.",
+      "id": "LEMMA-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-COSET-TYPICAL-N10-MULTIPLICITY6-SEPARATION",
+      "statement": "For source (4,3,2,1), TT1+TC1 has exact simple spectrum on the multiplicity-six (5,5) and conjugate target blocks.",
+      "status": "proved-exact-n10-multiplicity6-separation"
+    },
+    {
+      "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Check the global joint-content spectrum, verify the isotypic decomposition and commutant action algebraically, and reproduce exact rational traces on independent controls.",
+      "id": "LEMMA-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-COSET-TYPICAL-YJM-PROJECTOR-TRACE-IDENTITY",
+      "statement": "For a diagonal-S_n-commuting separator H and a standard target tableau T, the exact joint-content projector satisfies Tr(P_T H^d)=Tr(M_nu^d) on the corresponding Kronecker multiplicity block.",
+      "status": "proved-exact-yjm-tableau-projector-trace-identity"
+    },
+    {
+      "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Construct a branching, centralizer, or tensor-network recurrence that reproduces every exact control trace without enumerating a constant fraction of (n!)^2 states, then certify bit complexity and reach the n=10 sextic.",
+      "id": "LEMMA-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-COSET-TYPICAL-YOUNG-TOWER-EXACT-TRACE-EVALUATOR",
+      "statement": "YJM-projector multiplicity traces admit an exact evaluator with polynomial time and memory in n and the partition descriptions.",
+      "status": "blocked-explicit-pair-algebra-saturates-young-tower-recurrence-required"
+    },
+    {
+      "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Verify Coxeter relations and the invariant Gram form modulo each prime, match independent exact rational traces, and reject primes with rank or denominator failures.",
+      "id": "LEMMA-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-COSET-TYPICAL-MODULAR-YJM-FINITE-CONTRACTION",
+      "statement": "Young rational seminormal form plus finite-field content projection exactly contracts a fixed typical multiplicity block without pair-group expansion.",
+      "status": "proved-exact-modular-yjm-control-contraction"
+    },
+    {
+      "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Verify the source sign intertwiner, the parity of every separator pair term, and the coefficient sign transform on independently computed conjugate modular blocks.",
+      "id": "LEMMA-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-COSET-TYPICAL-CONJUGATE-SIGN-DUALITY",
+      "statement": "For a self-conjugate source partition and a separator whose pair terms all have odd left parity, conjugate target multiplicity blocks are similar to negatives of one another, so square-freeness and gap magnitudes agree.",
+      "status": "proved-all-n-conjugate-target-sign-duality"
+    },
+    {
+      "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Validate every stored good-prime block and conjugate sign-duality closure; stop the separator route on the first repeated modular factor at a good prime.",
+      "id": "LEMMA-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-COSET-TYPICAL-N10-MODULAR-COLLISION-LADDER",
+      "statement": "The fixed TT1+TC1 separator remains square-free on the audited n=10 typical-target ladder through Kronecker multiplicity fifteen.",
+      "status": "proved-exact-n10-ladder-through-multiplicity15"
+    },
+    {
+      "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Check every denominator-divisibility step, Newton's identity clearing factor, discriminant exponent, root range, and the final LCU normalization.",
+      "id": "LEMMA-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-COSET-TYPICAL-EXACT-DENOMINATOR-GAP-BOUND",
+      "statement": "YJM-projector and separator denominators, Newton identities, and a nonzero integer discriminant give an exact positive root-separation bound on every certified block.",
+      "status": "proved-exact-denominator-discriminant-gap-bound"
+    },
+    {
+      "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Recompute both sparse YJM blocks, retain exact modular square-free gates, verify residuals, and treat the two-point drop only as finite evidence rather than an all-n law.",
+      "id": "LEMMA-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-COSET-TYPICAL-N10-STABLE-FINITE-GAP-EVIDENCE",
+      "statement": "The existing exactly square-free n=10 blocks provide stable numerical normalized-gap evidence as multiplicity grows.",
+      "status": "falsified-multiplicity6-to8-normalized-gap-drops-over-sevenfold"
+    },
+    {
+      "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Derive separator-specific coefficient-height cancellation or a direct spectral recurrence with an inverse-polynomial bound; finite nonzero discriminants do not satisfy this lemma.",
+      "id": "LEMMA-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-COSET-TYPICAL-INVERSE-POLYNOMIAL-NORMALIZED-GAP",
+      "statement": "The typical TT1+TC1 separator has inverse-polynomial LCU-normalized minimum gap on the promised all-n family.",
+      "status": "blocked-square-free-discriminant-bound-is-astronomically-weak"
+    },
+    {
+      "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Compute independently checked residues over enough good primes, CRT-reconstruct every rational coefficient under proved denominator and height bounds, and verify a square-free gcd.",
+      "id": "LEMMA-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-COSET-TYPICAL-N10-MODULAR-SEXTIC",
+      "statement": "The n=10 source (4,3,2,1) and target (5,5) separator block has an exact square-free multiplicity-six characteristic polynomial.",
+      "status": "proved-exact-n10-modular-sextic-square-free-by-good-reduction"
+    },
+    {
+      "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Derive a Young-branching, centralizer, or tensor-network recurrence that never stores the full V_lambda tensor V_lambda fiber and prove polynomial bit complexity.",
+      "id": "LEMMA-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-COSET-TYPICAL-POLYNOMIAL-INVARIANT-CONTRACTION",
+      "statement": "The invariant-space contraction can be implemented in time and memory polynomial in n and the partition descriptions.",
+      "status": "blocked-yjm-fiber-still-uses-dimlambda-squared-amplitudes"
+    },
+    {
+      "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
+      "depends_on": [
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
       "falsification_test": "Derive a representation- or class-algebra recurrence that avoids materializing S_n rows, prove its exactness, and benchmark its scaling beyond n=10.",
       "id": "LEMMA-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-COSET-TYPICAL-SCALABLE-CHARACTER-CONTRACTION",
       "statement": "The quotient transfer admits an exact character contraction whose time and memory are polynomial in n and the required multiplicity degree.",
-      "status": "blocked-explicit-s10-table-is-91gb-at-degree-five"
+      "status": "blocked-full-support-recurrence-missing"
     },
     {
       "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",

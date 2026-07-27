@@ -2990,6 +2990,56 @@
   {
     "candidate_id": "CODE-COSET-COLLECTIVE",
     "dependencies": [
+      "coset_typical_invariant_contraction.py",
+      "coset_stable_subspace_transition_probe.py",
+      "coset_jucys_murphy_label_transform.py",
+      "symmetric_yjm_multiplicity_contraction.py",
+      "research/certificates/coset_typical_invariant_contraction_certificate.json"
+    ],
+    "falsifiers": [
+      "The sparse restriction disagrees with exact class-Fourier traces.",
+      "The Coxeter nullspace residual or block symmetry residual is large.",
+      "The multiplicity-six block has a repeated numerical eigenvalue.",
+      "The numerical solve is promoted as an exact square-free certificate.",
+      "Exponential invariant-vector dimension is presented as polynomial scaling."
+    ],
+    "hypothesis": "Diagonal-S_n invariant tensors allow finite typical multiplicity blocks to be contracted without materializing factorial character rows or every orbit term.",
+    "id": "EXP-COSET-TYPICAL-INVARIANT-CONTRACTION",
+    "metrics": [
+      "numerically_contracted_primary_target_count",
+      "conjugate_target_coverage_count",
+      "maximum_numerical_kronecker_multiplicity",
+      "maximum_invariant_vector_dimension",
+      "yjm_fiber_vector_dimension",
+      "maximum_vector_dimension_reduction_factor",
+      "maximum_estimated_arpack_basis_bytes",
+      "maximum_single_tableau_fiber_bytes",
+      "all_tableau_fibers_materialized_count",
+      "direct_coxeter_multiplicity6_timeout_seconds",
+      "next_multiplicity15_estimated_arpack_basis_bytes",
+      "maximum_exact_control_trace_residual",
+      "maximum_invariant_residual",
+      "n10_multiplicity6_minimum_numerical_raw_gap",
+      "n10_multiplicity6_numerically_simple_spectrum_count",
+      "explicit_s10_character_table_bytes_avoided",
+      "factorial_group_row_storage_removed_count",
+      "exact_multiplicity6_certificate_count",
+      "polynomial_invariant_contraction_theorem_count"
+    ],
+    "next_actions": [
+      "Convert the multiplicity-six numerical block to an exact certificate.",
+      "Derive a Young-branching recurrence for the invariant nullspace.",
+      "Extend the first-collision search only under exact residual and scaling gates.",
+      "Keep all-n, coherent-transform, decoder, and speedup gates blocked."
+    ],
+    "positive_signal": "Exact control traces are reproduced, a previously inaccessible block is reached without S_10 rows, and the invariant solve exposes a branching or centralizer recurrence with polynomial complexity.",
+    "protocol": "Use a direct Coxeter invariant solve as a control. Then isolate one target-tableau multiplicity fiber in V_lambda tensor V_lambda with a diagonal Jucys-Murphy content penalty, propagate it through all target tableaux, trace one TT1 and TC1 representative, reproduce the exact n=10 cubic, then probe the multiplicity-six block.",
+    "status": "planned",
+    "title": "Sparse invariant-space contraction beyond explicit S_n rows"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
       "coset_typical_irrep_transfer_audit.py",
       "hook-length dimension formula",
       "exact symmetric-group characters",
@@ -3025,6 +3075,109 @@
     "protocol": "Prove a union weak-Fourier probability bound for every fixed tail budget, then compute exact self-Kronecker profiles of maximum-Plancherel source partitions to measure target support, multiplicity growth, coupling entropy, and bounded-tail coupling mass.",
     "status": "planned",
     "title": "Typical-irrep transfer frontier"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "coset_typical_modular_gap_bound.py",
+      "coset_typical_modular_yjm_contraction.py",
+      "symmetric_yjm_projector_trace.py",
+      "exact YJM Lagrange denominators",
+      "integer polynomial discriminant identity"
+    ],
+    "falsifiers": [
+      "The safest exact lower bound is astronomically smaller than inverse polynomial.",
+      "Finite square-freeness is presented without quantitative real-root separation.",
+      "An existence bound is presented as the observed gap.",
+      "LCU normalization is omitted.",
+      "No all-n separator structure controls coefficient height."
+    ],
+    "hypothesis": "Finite square-freeness plus exact YJM and orbit-average denominators yields a normalized gap bound strong enough for efficient phase estimation.",
+    "id": "EXP-COSET-TYPICAL-MODULAR-GAP-BOUND",
+    "metrics": [
+      "exact_denominator_root_separation_theorem_count",
+      "square_free_target_bound_count",
+      "maximum_bounded_multiplicity",
+      "maximum_characteristic_clearing_denominator_digits",
+      "maximum_gap_bound_denominator_digits",
+      "strongest_lcu_normalized_gap_lower_bound_log10",
+      "weakest_lcu_normalized_gap_lower_bound_log10",
+      "inverse_polynomial_normalized_gap_theorem_count",
+      "polynomial_phase_estimation_precision_certificate_count",
+      "all_n_simple_spectrum_theorem_count",
+      "coherent_typical_multiplicity_transform_count",
+      "typical_label_hidden_involution_decoder_count"
+    ],
+    "next_actions": [
+      "Search for separator-specific coefficient-height cancellation.",
+      "Measure real normalized gaps on the exact modular ladder.",
+      "Prove an inverse-polynomial bound or reject phase estimation as the implementation route.",
+      "Keep transform, decoder, and speedup claims blocked."
+    ],
+    "positive_signal": "The resulting all-n formula simplifies to an inverse-polynomial normalized gap on a natural typical family, or a stronger separator-specific recurrence supplies such a bound.",
+    "protocol": "Clear all power-trace denominators with the YJM Lagrange projector and separator orbit denominators, propagate through Newton identities, and combine the nonzero integer discriminant with the operator norm bound.",
+    "status": "planned",
+    "title": "Exact denominator and discriminant gap bound"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "symmetric_modular_yjm_contraction.py",
+      "coset_typical_modular_yjm_contraction.py",
+      "research/certificates/coset_typical_modular_yjm_contraction_certificate.json",
+      "Young rational seminormal form",
+      "finite-field spectral projection and CRT"
+    ],
+    "falsifiers": [
+      "The modular projected rank differs from the Kronecker multiplicity.",
+      "Modular traces disagree with exact rational controls.",
+      "A selected prime divides a denominator or nonzero penalty.",
+      "The pure-Python projector cost is presented as operationally ready for multi-prime n=10.",
+      "Finite exact certification is presented as polynomial all-n scaling."
+    ],
+    "hypothesis": "Young rational seminormal form and a finite-field content projector can certify typical multiplicity blocks exactly without factorial pair-group expansion.",
+    "id": "EXP-COSET-TYPICAL-MODULAR-YJM-CONTRACTION",
+    "metrics": [
+      "exact_modular_control_count",
+      "exact_modular_power_trace_count",
+      "exact_modular_trace_disagreement_count",
+      "maximum_control_projected_rank",
+      "pair_group_states_materialized_count",
+      "n10_tensor_dimension",
+      "n10_pair_group_state_space_size",
+      "n10_pair_group_to_tensor_dimension_reduction_factor",
+      "n10_projector_polynomial_degree",
+      "n10_sparse_axis_actions_for_all_trials",
+      "compiled_modular_projector_kernel_count",
+      "n10_modular_prime_residue_count",
+      "n10_modular_power_trace_residue_count",
+      "n10_direct_exact_square_free_target_count",
+      "n10_exact_square_free_target_count",
+      "n10_inferred_by_conjugate_sign_duality_count",
+      "exact_conjugate_sign_duality_theorem_count",
+      "conjugate_sign_duality_validation_pair_count",
+      "n10_exact_collision_target_count",
+      "n10_maximum_exact_certified_multiplicity",
+      "n10_nontrivial_multiplicity_target_count",
+      "n10_unaudited_target_count",
+      "n10_ladder_declared_target_count",
+      "n10_ladder_remaining_declared_target_count",
+      "exact_n10_multiplicity6_square_free_certificate_count",
+      "exact_n10_multiplicity6_power_trace_count",
+      "exact_n10_multiplicity6_characteristic_polynomial_count",
+      "crt_rational_reconstruction_count",
+      "polynomial_in_n_state_dimension_theorem_count"
+    ],
+    "next_actions": [
+      "Compile and parallelize the modular content-penalty projector.",
+      "Compute the n=10 multiplicity-six block over independently checked good primes.",
+      "CRT-reconstruct exact power traces and certify a square-free sextic.",
+      "Keep the exponential state-dimension, transform, decoder, and speedup gates blocked."
+    ],
+    "positive_signal": "Independent controls reproduce exact rational traces and a compiled multi-prime implementation reaches the n=10 multiplicity-six sextic with CRT reconstruction.",
+    "protocol": "Represent adjacent transpositions over a good prime, project random vectors with the exact content-penalty spectral polynomial, propagate the target-tableau fiber with rational Gram weights, and contract TT1+TC1 modulo the prime.",
+    "status": "planned",
+    "title": "Exact finite-field YJM multiplicity contraction"
   },
   {
     "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -3075,6 +3228,50 @@
     "protocol": "Run the exact quotient transfer through degree five for source (4,3,2,1), contract both multiplicity-three targets over S_10, certify their cubics, and account for translation-table growth.",
     "status": "planned",
     "title": "Exact n=10 transfer and contraction feasibility boundary"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "coset_typical_n10_gap_trend.py",
+      "symmetric_yjm_multiplicity_contraction.py",
+      "research/certificates/coset_typical_n10_m8_numerical_gap_certificate.json",
+      "exact modular square-free certificates"
+    ],
+    "falsifiers": [
+      "Normalized gaps drop sharply with multiplicity.",
+      "Floating-point magnitudes are presented as exact.",
+      "A declared error budget is presented as machine-verified.",
+      "Two blocks at one n are fitted as an asymptotic law.",
+      "No inverse-polynomial all-n gap theorem is supplied."
+    ],
+    "hypothesis": "The exactly square-free typical separator blocks retain stable LCU-normalized real gaps as Kronecker multiplicity increases.",
+    "id": "EXP-COSET-TYPICAL-N10-GAP-TREND",
+    "metrics": [
+      "numerical_gap_target_count",
+      "exact_square_free_numerical_gap_target_count",
+      "minimum_audited_multiplicity",
+      "maximum_audited_multiplicity",
+      "multiplicity6_lcu_normalized_gap",
+      "multiplicity8_lcu_normalized_gap",
+      "multiplicity8_to_multiplicity6_gap_ratio",
+      "multiplicity6_to_multiplicity8_gap_drop_factor",
+      "declared_budget_survival_count",
+      "machine_verified_roundoff_bound_count",
+      "inverse_polynomial_normalized_gap_theorem_count",
+      "all_n_gap_trend_sample_count",
+      "coherent_typical_multiplicity_transform_count",
+      "typical_label_hidden_involution_decoder_count"
+    ],
+    "next_actions": [
+      "Add multiplicity-nine and multiplicity-fifteen numerical gaps only if the eigensolve cost is justified.",
+      "Machine-verify interval bounds for any gap used algorithmically.",
+      "Search for a separator-specific inverse-polynomial recurrence.",
+      "Reject phase estimation if gap collapse persists."
+    ],
+    "positive_signal": "Observed gaps remain stable across a growing exact ladder and lead to a machine-verified interval or separator-specific inverse-polynomial all-n theorem.",
+    "protocol": "Use sparse YJM eigensolves for modularly certified multiplicity-six and multiplicity-eight targets, stream all target tableaux, record residuals and normalized gaps, and audit a declared floating-point budget without promoting it.",
+    "status": "planned",
+    "title": "Real-gap trend on exactly square-free n=10 blocks"
   },
   {
     "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -3236,6 +3433,92 @@
     "protocol": "Compute exact TT1 orbit-word power traces through order four on the n=8 multiplicity-four targets, recover characteristic polynomials by Newton identities, and combine them with the exact TC2 scalar certificate.",
     "status": "planned",
     "title": "Exact higher-moment collision certificate for the typical commutant portfolio"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "tools/pair_orbit_transfer.cpp",
+      "coset_transfer_support_growth.py",
+      "research/certificates/coset_transfer_support_growth_certificate.json",
+      "symmetric_marked_class_contraction.py"
+    ],
+    "falsifiers": [
+      "Full-support pair states have positive high-degree weight.",
+      "Most exact transfer weight moves to support n or n-1.",
+      "Marked-support injection enumeration degenerates to n!.",
+      "A finite support profile is presented as an all-n concentration theorem.",
+      "No collective full-support contraction recurrence is supplied."
+    ],
+    "hypothesis": "The bounded-support marked-class evaluator can be extended termwise to the transfer degrees needed for typical Kronecker multiplicity blocks.",
+    "id": "EXP-COSET-TYPICAL-TRANSFER-SUPPORT-GROWTH",
+    "metrics": [
+      "audited_size_count",
+      "exact_support_checkpoint_count",
+      "n8_degree17_full_support_weight_fraction",
+      "n9_degree28_full_support_weight_fraction",
+      "n9_degree28_at_most_support7_weight_fraction",
+      "n10_degree5_full_support_weight_fraction",
+      "n10_degree5_support9_or_10_weight_fraction",
+      "n10_full_support_marked_injection_count",
+      "direct_fixed_support_termwise_extension_falsification_count",
+      "scalable_full_support_character_contraction_count",
+      "all_n_support_concentration_theorem_count"
+    ],
+    "next_actions": [
+      "Replace termwise marked injection with a full-support representation recurrence.",
+      "Validate any recurrence against the exact n=8 and n=9 traces.",
+      "Use it on the n=10 multiplicity-six target before extending the finite ladder.",
+      "Keep all algorithmic speedup gates blocked."
+    ],
+    "positive_signal": "A fixed support bound captures every nonzero weighted transfer state needed for high-multiplicity traces, or a new collective recurrence handles the full-support sector without n! work.",
+    "protocol": "Aggregate exact arbitrary-precision TT1+TC1 quotient-transfer weights by the active support of each simultaneous-conjugacy pair at selected degrees for n=8,9,10. Hash-gate the certificate to the transfer kernel and account for the marked-injection cost.",
+    "status": "planned",
+    "title": "Exact support-growth barrier for typical transfer contraction"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "symmetric_yjm_projector_trace.py",
+      "coset_typical_yjm_projector_certificate.py",
+      "research/certificates/coset_typical_yjm_projector_certificate.json",
+      "exact symmetric-group characters",
+      "diagonal Jucys-Murphy joint-content spectrum"
+    ],
+    "falsifiers": [
+      "The projector trace differs from the Kronecker multiplicity.",
+      "Exact power traces disagree with independent invariant contractions.",
+      "The control characteristic polynomial is not square-free.",
+      "Literal pair-group expansion saturates factorial state space.",
+      "An exact identity is presented as an efficient evaluator without a scaling theorem."
+    ],
+    "hypothesis": "A joint-content tableau projector converts exact typical Kronecker multiplicity-block moments into ordinary rational representation traces without constructing the numerical block.",
+    "id": "EXP-COSET-TYPICAL-YJM-PROJECTOR-TRACE",
+    "metrics": [
+      "exact_yjm_projector_trace_identity_theorem_count",
+      "exact_control_count",
+      "exact_projector_trace_count",
+      "exact_power_trace_count",
+      "exact_square_free_control_count",
+      "n6_degree2_pair_state_count",
+      "n6_explicit_pair_state_space_size",
+      "n6_degree2_pair_state_saturation_fraction",
+      "n10_explicit_pair_state_space_size",
+      "explicit_pair_algebra_scaling_falsification_count",
+      "young_tower_compressed_exact_trace_evaluator_count",
+      "exact_n10_multiplicity6_power_trace_count",
+      "exact_n10_multiplicity6_characteristic_polynomial_count",
+      "polynomial_exact_trace_evaluator_count"
+    ],
+    "next_actions": [
+      "Derive a Young-tower recurrence for Tr(P_T H^d).",
+      "Avoid explicit pair-group distributions at every recurrence layer.",
+      "Use the recurrence to certify the n=10 multiplicity-six sextic.",
+      "Keep all-n, coherent-transform, decoder, and speedup gates blocked."
+    ],
+    "positive_signal": "The projector identity is exact and a Young-tower, centralizer, or tensor-network recurrence evaluates its traces without enumerating a constant fraction of the (n!)^2 pair state space.",
+    "protocol": "Construct the exact diagonal Jucys-Murphy Lagrange projector, evaluate Tr(P_T H^d) in rational pair-group algebra on n=5 and n=6 controls, recover exact characteristic polynomials, and measure pair-state saturation to test evaluator scalability.",
+    "status": "planned",
+    "title": "Exact YJM-projector multiplicity trace identity"
   },
   {
     "candidate_id": "CODE-COSET-COLLECTIVE",

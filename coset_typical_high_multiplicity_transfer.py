@@ -23,6 +23,7 @@ import math
 import os
 import shutil
 import subprocess
+import sys
 import tempfile
 from collections import defaultdict
 from dataclasses import asdict, dataclass
@@ -72,6 +73,39 @@ TRANSFER_STATE_COUNTS = {
 TRANSFER_TOTAL_WEIGHTS = {
     degree: 2 * 3360 ** (degree - 1) for degree in range(1, 18)
 }
+
+
+def _darwin_cxx_sdk_flags() -> list[str]:
+    """Supply libc++ headers when Command Line Tools omits the default path."""
+
+    if sys.platform != "darwin":
+        return []
+    try:
+        completed = subprocess.run(
+            ["xcrun", "--show-sdk-path"],
+            check=True,
+            capture_output=True,
+            text=True,
+        )
+    except (OSError, subprocess.CalledProcessError):
+        return []
+    sdk = Path(completed.stdout.strip())
+    libcxx = sdk / "usr/include/c++/v1"
+    if not libcxx.exists():
+        return []
+    return ["-isysroot", str(sdk), "-I", str(libcxx)]
+
+
+def _boost_include_flags() -> list[str]:
+    candidates = (
+        Path(sys.prefix) / "include",
+        Path("/usr/local/include"),
+        Path("/opt/homebrew/include"),
+    )
+    for include in candidates:
+        if (include / "boost/multiprecision/cpp_int.hpp").exists():
+            return ["-I", str(include)]
+    return []
 
 
 def _fractions(*values: str) -> tuple[Fraction, ...]:
@@ -385,6 +419,8 @@ def run_exact_transfer_kernel(
                     "-DNDEBUG",
                     "-pthread",
                     f"-DQSEARCH_N={n}",
+                    *_darwin_cxx_sdk_flags(),
+                    *_boost_include_flags(),
                     str(TRANSFER_KERNEL_PATH),
                     "-o",
                     str(binary),

@@ -223,6 +223,24 @@ COSET_TYPICAL_N9_FULL_TRANSFER_PATH = Path(
 COSET_TYPICAL_N10_FEASIBILITY_PATH = Path(
     "research/representation/coset_typical_n10_feasibility.json"
 )
+COSET_TRANSFER_SUPPORT_GROWTH_PATH = Path(
+    "research/representation/coset_transfer_support_growth.json"
+)
+COSET_TYPICAL_INVARIANT_CONTRACTION_PATH = Path(
+    "research/representation/coset_typical_invariant_contraction.json"
+)
+COSET_TYPICAL_YJM_PROJECTOR_PATH = Path(
+    "research/representation/coset_typical_yjm_projector_certificate.json"
+)
+COSET_TYPICAL_MODULAR_YJM_PATH = Path(
+    "research/representation/coset_typical_modular_yjm_contraction.json"
+)
+COSET_TYPICAL_MODULAR_GAP_BOUND_PATH = Path(
+    "research/representation/coset_typical_modular_gap_bounds.json"
+)
+COSET_TYPICAL_N10_GAP_TREND_PATH = Path(
+    "research/representation/coset_typical_n10_gap_trend.json"
+)
 COSET_RECOUPLING_CAPABILITY_PATH = Path(
     "research/representation/coset_recoupling_capability_ledger.json"
 )
@@ -1050,6 +1068,64 @@ def lemma_templates(candidate: dict[str, Any]) -> list[LemmaRecord]:
         typical_n10_feasibility_metrics = typical_n10_feasibility.get(
             "headline_metrics", {}
         )
+        try:
+            transfer_support_growth = (
+                json.loads(COSET_TRANSFER_SUPPORT_GROWTH_PATH.read_text())
+                if COSET_TRANSFER_SUPPORT_GROWTH_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            transfer_support_growth = {}
+        transfer_support_growth_metrics = transfer_support_growth.get(
+            "headline_metrics", {}
+        )
+        try:
+            invariant_contraction = (
+                json.loads(COSET_TYPICAL_INVARIANT_CONTRACTION_PATH.read_text())
+                if COSET_TYPICAL_INVARIANT_CONTRACTION_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            invariant_contraction = {}
+        invariant_contraction_metrics = invariant_contraction.get(
+            "headline_metrics", {}
+        )
+        try:
+            yjm_projector = (
+                json.loads(COSET_TYPICAL_YJM_PROJECTOR_PATH.read_text())
+                if COSET_TYPICAL_YJM_PROJECTOR_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            yjm_projector = {}
+        yjm_projector_metrics = yjm_projector.get("headline_metrics", {})
+        try:
+            modular_yjm = (
+                json.loads(COSET_TYPICAL_MODULAR_YJM_PATH.read_text())
+                if COSET_TYPICAL_MODULAR_YJM_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            modular_yjm = {}
+        modular_yjm_metrics = modular_yjm.get("headline_metrics", {})
+        try:
+            modular_gap_bound = (
+                json.loads(COSET_TYPICAL_MODULAR_GAP_BOUND_PATH.read_text())
+                if COSET_TYPICAL_MODULAR_GAP_BOUND_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            modular_gap_bound = {}
+        modular_gap_metrics = modular_gap_bound.get("headline_metrics", {})
+        try:
+            n10_gap_trend = (
+                json.loads(COSET_TYPICAL_N10_GAP_TREND_PATH.read_text())
+                if COSET_TYPICAL_N10_GAP_TREND_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            n10_gap_trend = {}
+        n10_gap_trend_metrics = n10_gap_trend.get("headline_metrics", {})
         try:
             recoupling_capabilities = (
                 json.loads(COSET_RECOUPLING_CAPABILITY_PATH.read_text())
@@ -2353,6 +2429,401 @@ def lemma_templates(candidate: dict[str, Any]) -> list[LemmaRecord]:
                     ),
                 ),
                 LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-COSET-TYPICAL-FIXED-SUPPORT-TRANSFER-NO-GO",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "Direct termwise marked-class contraction with a fixed "
+                        "active-support bound cannot recover the high-degree "
+                        "TT1+TC1 transfer traces."
+                    ),
+                    depends_on=["PO-MEASUREMENT", "PO-COMPLEXITY", "PO-NO-GO"],
+                    status=(
+                        "proved-direct-fixed-support-transfer-contraction-no-go"
+                        if int(
+                            transfer_support_growth_metrics.get(
+                                "direct_fixed_support_termwise_extension_falsification_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        else "blocked-support-growth-certificate-missing"
+                    ),
+                    falsification_test=(
+                        "Recompute the kernel-hash-gated support profiles, verify "
+                        "that full-support states have positive dominant weight, "
+                        "and restrict the conclusion to direct termwise marked "
+                        "injection rather than every possible class recurrence."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-COSET-TYPICAL-ORBIT-REPRESENTATIVE-CONTRACTION",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "On diagonal-S_n invariant tensors, the restriction of a "
+                        "simultaneous-conjugacy orbit average equals the restriction "
+                        "of any one orbit representative."
+                    ),
+                    depends_on=["PO-MEASUREMENT", "PO-COMPLEXITY"],
+                    status=(
+                        "proved-orbit-average-representative-restriction-identity"
+                        if int(
+                            invariant_contraction_metrics.get(
+                                "factorial_group_row_storage_removed_count", 0
+                            )
+                            or 0
+                        )
+                        else "blocked-invariant-contraction-control-missing"
+                    ),
+                    falsification_test=(
+                        "Check the diagonal invariance algebra, reproduce all exact "
+                        "n=10 cubic traces, and verify nullspace and Hermiticity "
+                        "residuals independently."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-COSET-TYPICAL-YJM-FIBER-FACTORIZATION",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "A diagonal Jucys-Murphy content penalty isolates one "
+                        "nu-tableau multiplicity fiber in V_lambda tensor V_lambda, "
+                        "and diagonal adjacent transpositions propagate it through "
+                        "all tableaux without another eigensolve."
+                    ),
+                    depends_on=["PO-MEASUREMENT", "PO-COMPLEXITY"],
+                    status=(
+                        "proved-finite-yjm-fiber-factorization"
+                        if int(
+                            invariant_contraction_metrics.get(
+                                "maximum_vector_dimension_reduction_factor", 0
+                            )
+                            or 0
+                        )
+                        else "blocked-yjm-fiber-certificate-missing"
+                    ),
+                    falsification_test=(
+                        "Compare YJM and direct invariant spectra on exact controls, "
+                        "verify content-penalty nullity, every tableau propagation "
+                        "edge, and the full target-tableau trace."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-COSET-TYPICAL-N10-MULTIPLICITY6-SEPARATION",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "For source (4,3,2,1), TT1+TC1 has exact simple spectrum "
+                        "on the multiplicity-six (5,5) and conjugate target blocks."
+                    ),
+                    depends_on=["PO-MEASUREMENT", "PO-NO-GO"],
+                    status=(
+                        "proved-exact-n10-multiplicity6-separation"
+                        if (
+                            int(
+                                invariant_contraction_metrics.get(
+                                    "exact_multiplicity6_certificate_count", 0
+                                )
+                                or 0
+                            )
+                            or int(
+                                modular_yjm_metrics.get(
+                                    "exact_n10_multiplicity6_square_free_certificate_count",
+                                    0,
+                                )
+                                or 0
+                            )
+                        )
+                        else (
+                            "blocked-robust-under-declared-budget-interval-or-exact-certificate-required"
+                            if int(
+                                invariant_contraction_metrics.get(
+                                    "n10_multiplicity6_robust_under_declared_budget_count",
+                                    0,
+                                )
+                                or 0
+                            )
+                            else (
+                                "blocked-numerically-simple-exact-certificate-required"
+                                if int(
+                                    invariant_contraction_metrics.get(
+                                        "n10_multiplicity6_numerically_simple_spectrum_count",
+                                        0,
+                                    )
+                                    or 0
+                                )
+                                else "blocked-multiplicity6-invariant-probe-missing-or-colliding"
+                            )
+                        )
+                    ),
+                    falsification_test=(
+                        "Recover exact algebraic matrix entries or power traces, "
+                        "or machine-verify interval bounds for every sparse operation; "
+                        "certify a square-free sextic or disjoint root intervals and "
+                        "reject a declared floating-point budget as proof."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-COSET-TYPICAL-YJM-PROJECTOR-TRACE-IDENTITY",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "For a diagonal-S_n-commuting separator H and a standard "
+                        "target tableau T, the exact joint-content projector "
+                        "satisfies Tr(P_T H^d)=Tr(M_nu^d) on the corresponding "
+                        "Kronecker multiplicity block."
+                    ),
+                    depends_on=["PO-MEASUREMENT", "PO-NO-GO"],
+                    status=(
+                        "proved-exact-yjm-tableau-projector-trace-identity"
+                        if int(
+                            yjm_projector_metrics.get(
+                                "exact_yjm_projector_trace_identity_theorem_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        else "blocked-exact-yjm-projector-certificate-missing"
+                    ),
+                    falsification_test=(
+                        "Check the global joint-content spectrum, verify the "
+                        "isotypic decomposition and commutant action algebraically, "
+                        "and reproduce exact rational traces on independent controls."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-COSET-TYPICAL-YOUNG-TOWER-EXACT-TRACE-EVALUATOR",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "YJM-projector multiplicity traces admit an exact evaluator "
+                        "with polynomial time and memory in n and the partition descriptions."
+                    ),
+                    depends_on=["PO-MEASUREMENT", "PO-COMPLEXITY", "PO-NO-GO"],
+                    status=(
+                        "proved-polynomial-young-tower-exact-trace-evaluator"
+                        if int(
+                            yjm_projector_metrics.get(
+                                "polynomial_exact_trace_evaluator_count", 0
+                            )
+                            or 0
+                        )
+                        else "blocked-explicit-pair-algebra-saturates-young-tower-recurrence-required"
+                    ),
+                    falsification_test=(
+                        "Construct a branching, centralizer, or tensor-network "
+                        "recurrence that reproduces every exact control trace "
+                        "without enumerating a constant fraction of (n!)^2 states, "
+                        "then certify bit complexity and reach the n=10 sextic."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-COSET-TYPICAL-MODULAR-YJM-FINITE-CONTRACTION",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "Young rational seminormal form plus finite-field content "
+                        "projection exactly contracts a fixed typical multiplicity "
+                        "block without pair-group expansion."
+                    ),
+                    depends_on=["PO-MEASUREMENT", "PO-NO-GO"],
+                    status=(
+                        "proved-exact-modular-yjm-control-contraction"
+                        if int(
+                            modular_yjm_metrics.get(
+                                "exact_modular_power_trace_count", 0
+                            )
+                            or 0
+                        )
+                        == 4
+                        and int(
+                            modular_yjm_metrics.get(
+                                "exact_modular_trace_disagreement_count", 1
+                            )
+                            or 0
+                        )
+                        == 0
+                        else "blocked-modular-yjm-control-certificate-missing"
+                    ),
+                    falsification_test=(
+                        "Verify Coxeter relations and the invariant Gram form "
+                        "modulo each prime, match independent exact rational traces, "
+                        "and reject primes with rank or denominator failures."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-COSET-TYPICAL-CONJUGATE-SIGN-DUALITY",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "For a self-conjugate source partition and a separator "
+                        "whose pair terms all have odd left parity, conjugate "
+                        "target multiplicity blocks are similar to negatives of "
+                        "one another, so square-freeness and gap magnitudes agree."
+                    ),
+                    depends_on=["PO-MEASUREMENT", "PO-NO-GO"],
+                    status=(
+                        "proved-all-n-conjugate-target-sign-duality"
+                        if int(
+                            modular_yjm_metrics.get(
+                                "exact_conjugate_sign_duality_theorem_count", 0
+                            )
+                            or 0
+                        )
+                        else "blocked-conjugate-sign-duality-proof-missing"
+                    ),
+                    falsification_test=(
+                        "Verify the source sign intertwiner, the parity of every "
+                        "separator pair term, and the coefficient sign transform "
+                        "on independently computed conjugate modular blocks."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-COSET-TYPICAL-N10-MODULAR-COLLISION-LADDER",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "The fixed TT1+TC1 separator remains square-free on the "
+                        "audited n=10 typical-target ladder through Kronecker "
+                        "multiplicity fifteen."
+                    ),
+                    depends_on=["PO-MEASUREMENT", "PO-NO-GO"],
+                    status=(
+                        "proved-exact-n10-ladder-through-multiplicity15"
+                        if int(
+                            modular_yjm_metrics.get(
+                                "n10_maximum_exact_certified_multiplicity", 0
+                            )
+                            or 0
+                        )
+                        >= 15
+                        else "blocked-next-n10-good-reduction-certificate-required"
+                    ),
+                    falsification_test=(
+                        "Validate every stored good-prime block and conjugate "
+                        "sign-duality closure; stop the separator route on the "
+                        "first repeated modular factor at a good prime."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-COSET-TYPICAL-EXACT-DENOMINATOR-GAP-BOUND",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "YJM-projector and separator denominators, Newton "
+                        "identities, and a nonzero integer discriminant give an "
+                        "exact positive root-separation bound on every certified block."
+                    ),
+                    depends_on=["PO-MEASUREMENT", "PO-COMPLEXITY", "PO-NO-GO"],
+                    status=(
+                        "proved-exact-denominator-discriminant-gap-bound"
+                        if int(
+                            modular_gap_metrics.get(
+                                "exact_denominator_root_separation_theorem_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        else "blocked-denominator-gap-certificate-missing"
+                    ),
+                    falsification_test=(
+                        "Check every denominator-divisibility step, Newton's "
+                        "identity clearing factor, discriminant exponent, root "
+                        "range, and the final LCU normalization."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-COSET-TYPICAL-N10-STABLE-FINITE-GAP-EVIDENCE",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "The existing exactly square-free n=10 blocks provide "
+                        "stable numerical normalized-gap evidence as multiplicity grows."
+                    ),
+                    depends_on=["PO-MEASUREMENT", "PO-COMPLEXITY", "PO-NO-GO"],
+                    status=(
+                        "falsified-multiplicity6-to8-normalized-gap-drops-over-sevenfold"
+                        if float(
+                            n10_gap_trend_metrics.get(
+                                "multiplicity6_to_multiplicity8_gap_drop_factor",
+                                0,
+                            )
+                            or 0
+                        )
+                        > 7
+                        else "blocked-higher-multiplicity-real-gap-evidence-missing"
+                    ),
+                    falsification_test=(
+                        "Recompute both sparse YJM blocks, retain exact modular "
+                        "square-free gates, verify residuals, and treat the "
+                        "two-point drop only as finite evidence rather than an all-n law."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-COSET-TYPICAL-INVERSE-POLYNOMIAL-NORMALIZED-GAP",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "The typical TT1+TC1 separator has inverse-polynomial "
+                        "LCU-normalized minimum gap on the promised all-n family."
+                    ),
+                    depends_on=["PO-MEASUREMENT", "PO-COMPLEXITY", "PO-NO-GO"],
+                    status=(
+                        "proved-inverse-polynomial-normalized-gap"
+                        if int(
+                            modular_gap_metrics.get(
+                                "inverse_polynomial_normalized_gap_theorem_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        else "blocked-square-free-discriminant-bound-is-astronomically-weak"
+                    ),
+                    falsification_test=(
+                        "Derive separator-specific coefficient-height cancellation "
+                        "or a direct spectral recurrence with an inverse-polynomial "
+                        "bound; finite nonzero discriminants do not satisfy this lemma."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-COSET-TYPICAL-N10-MODULAR-SEXTIC",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "The n=10 source (4,3,2,1) and target (5,5) separator "
+                        "block has an exact square-free multiplicity-six characteristic polynomial."
+                    ),
+                    depends_on=["PO-MEASUREMENT", "PO-NO-GO"],
+                    status=(
+                        "proved-exact-n10-modular-sextic-square-free-by-good-reduction"
+                        if int(
+                            modular_yjm_metrics.get(
+                                "exact_n10_multiplicity6_square_free_certificate_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        else "blocked-compiled-multi-prime-projector-and-crt-required"
+                    ),
+                    falsification_test=(
+                        "Compute independently checked residues over enough good "
+                        "primes, CRT-reconstruct every rational coefficient under "
+                        "proved denominator and height bounds, and verify a square-free gcd."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-COSET-TYPICAL-POLYNOMIAL-INVARIANT-CONTRACTION",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "The invariant-space contraction can be implemented in "
+                        "time and memory polynomial in n and the partition descriptions."
+                    ),
+                    depends_on=["PO-MEASUREMENT", "PO-COMPLEXITY", "PO-NO-GO"],
+                    status=(
+                        "proved-polynomial-invariant-contraction"
+                        if int(
+                            invariant_contraction_metrics.get(
+                                "polynomial_invariant_contraction_theorem_count", 0
+                            )
+                            or 0
+                        )
+                        else "blocked-yjm-fiber-still-uses-dimlambda-squared-amplitudes"
+                    ),
+                    falsification_test=(
+                        "Derive a Young-branching, centralizer, or tensor-network "
+                        "recurrence that never stores the full V_lambda tensor "
+                        "V_lambda fiber and prove polynomial bit complexity."
+                    ),
+                ),
+                LemmaRecord(
                     id=f"LEMMA-{candidate_id}-COSET-TYPICAL-SCALABLE-CHARACTER-CONTRACTION",
                     candidate_id=candidate_id,
                     statement=(
@@ -2368,7 +2839,17 @@ def lemma_templates(candidate: dict[str, Any]) -> list[LemmaRecord]:
                             )
                             or 0
                         )
-                        else "blocked-explicit-s10-table-is-91gb-at-degree-five"
+                        else (
+                            "blocked-full-support-recurrence-missing"
+                            if int(
+                                transfer_support_growth_metrics.get(
+                                    "direct_fixed_support_termwise_extension_falsification_count",
+                                    0,
+                                )
+                                or 0
+                            )
+                            else "blocked-explicit-s10-table-is-91gb-at-degree-five"
+                        )
                     ),
                     falsification_test=(
                         "Derive a representation- or class-algebra recurrence that avoids materializing S_n rows, "

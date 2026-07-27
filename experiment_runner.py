@@ -146,6 +146,18 @@ from coset_typical_n9_low_multiplicity_probe import (
 )
 from coset_typical_n9_full_transfer import write_n9_full_transfer_report
 from coset_typical_n10_feasibility import write_n10_feasibility_report
+from coset_transfer_support_growth import write_transfer_support_growth_report
+from coset_typical_invariant_contraction import (
+    write_invariant_contraction_report,
+)
+from coset_typical_yjm_projector_certificate import (
+    write_yjm_projector_certificate_report,
+)
+from coset_typical_modular_yjm_contraction import (
+    write_modular_yjm_contraction_report,
+)
+from coset_typical_modular_gap_bound import write_modular_gap_bound_report
+from coset_typical_n10_gap_trend import write_n10_gap_trend_report
 from coset_recoupling_capability_ledger import write_recoupling_capability_report
 from coset_recoupling_mechanism_synthesis import write_recoupling_mechanism_synthesis_report
 from coset_state_distinguishability import write_coset_distinguishability_report
@@ -624,6 +636,12 @@ COSET_EXPERIMENTS = {
     "EXP-COSET-TYPICAL-N9-LOW-MULTIPLICITY-PROBE",
     "EXP-COSET-TYPICAL-N9-FULL-TRANSFER",
     "EXP-COSET-TYPICAL-N10-FEASIBILITY",
+    "EXP-COSET-TYPICAL-TRANSFER-SUPPORT-GROWTH",
+    "EXP-COSET-TYPICAL-INVARIANT-CONTRACTION",
+    "EXP-COSET-TYPICAL-YJM-PROJECTOR-TRACE",
+    "EXP-COSET-TYPICAL-MODULAR-YJM-CONTRACTION",
+    "EXP-COSET-TYPICAL-MODULAR-GAP-BOUND",
+    "EXP-COSET-TYPICAL-N10-GAP-TREND",
     "EXP-COSET-RECOUPLING-CAPABILITY-LEDGER",
     "EXP-COSET-RECOUPLING-MECHANISM-SYNTHESIS",
 }
@@ -1470,6 +1488,12 @@ def select_next_experiment() -> NextExperimentSelection:
         "EXP-COSET-TYPICAL-N9-LOW-MULTIPLICITY-PROBE": 65,
         "EXP-COSET-TYPICAL-N9-FULL-TRANSFER": 66,
         "EXP-COSET-TYPICAL-N10-FEASIBILITY": 67,
+        "EXP-COSET-TYPICAL-TRANSFER-SUPPORT-GROWTH": 68,
+        "EXP-COSET-TYPICAL-INVARIANT-CONTRACTION": 69,
+        "EXP-COSET-TYPICAL-YJM-PROJECTOR-TRACE": 70,
+        "EXP-COSET-TYPICAL-MODULAR-YJM-CONTRACTION": 71,
+        "EXP-COSET-TYPICAL-MODULAR-GAP-BOUND": 72,
+        "EXP-COSET-TYPICAL-N10-GAP-TREND": 73,
         "EXP-COSET-RECOUPLING-CAPABILITY-LEDGER": 24,
         "EXP-COSET-RECOUPLING-MECHANISM-SYNTHESIS": 25,
     }
@@ -3108,6 +3132,51 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             )
         elif experiment_id == "EXP-COSET-TYPICAL-N10-FEASIBILITY":
             payload = write_n10_feasibility_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif experiment_id == "EXP-COSET-TYPICAL-TRANSFER-SUPPORT-GROWTH":
+            payload = write_transfer_support_growth_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif experiment_id == "EXP-COSET-TYPICAL-INVARIANT-CONTRACTION":
+            payload = write_invariant_contraction_report(
+                recompute=False,
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif experiment_id == "EXP-COSET-TYPICAL-YJM-PROJECTOR-TRACE":
+            payload = write_yjm_projector_certificate_report(
+                recompute=False,
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif experiment_id == "EXP-COSET-TYPICAL-MODULAR-YJM-CONTRACTION":
+            payload = write_modular_yjm_contraction_report(
+                recompute=False,
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif experiment_id == "EXP-COSET-TYPICAL-MODULAR-GAP-BOUND":
+            payload = write_modular_gap_bound_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif experiment_id == "EXP-COSET-TYPICAL-N10-GAP-TREND":
+            payload = write_n10_gap_trend_report(
                 write_registry=True,
                 registry_experiment_id=experiment_id,
                 registry_candidate_id=experiment["candidate_id"],

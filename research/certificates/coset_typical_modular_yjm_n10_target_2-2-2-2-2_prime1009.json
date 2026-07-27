@@ -1,0 +1,130 @@
+{
+  "certificate_contract": {
+    "arithmetic": "exact Young rational-seminormal contraction over F_1009",
+    "dependency_sha256": {
+      "coset_jucys_murphy_label_transform.py": "09647e1212cb94b122d020ef7d7fa9f2a01b40a7ecb774af0e8ccb50c62c8810",
+      "symmetric_character.py": "2e385c2f2eba685eddaf2b11c08483cbf0bf11f6904e9529befeb632e79bd2da",
+      "symmetric_modular_yjm_contraction.py": "570feb30798f2792ae07d3649bda72cb8e5fc1476bac8d5a47189b430e21370c"
+    },
+    "elapsed_seconds": 530.187736250009,
+    "scope": "One good-prime square-free reduction proves the rational multiplicity-6 characteristic polynomial is square-free; it does not reconstruct its rational coefficients.",
+    "trial_seeds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "workers": 6
+  },
+  "record": {
+    "characteristic_polynomial_mod_prime": [
+      1,
+      388,
+      659,
+      879,
+      549,
+      359,
+      558
+    ],
+    "characteristic_polynomial_square_free_mod_prime": true,
+    "good_reduction_checks": {
+      "prime_coprime_to_axial_denominators": true,
+      "prime_coprime_to_newton_orders": true,
+      "prime_coprime_to_target_dimension": true,
+      "prime_exceeds_maximum_penalty": true
+    },
+    "maximum_penalty_eigenvalue": 480,
+    "multiplicity": 6,
+    "n": 10,
+    "power_traces_mod_prime": [
+      621,
+      903,
+      564,
+      186,
+      798,
+      736
+    ],
+    "prime": 1009,
+    "projected_basis_pivots": [
+      318,
+      520,
+      3120,
+      3141,
+      3192,
+      3288
+    ],
+    "projected_rank": 6,
+    "projected_trial_count": 6,
+    "projector_polynomial_degree": 281,
+    "rational_characteristic_polynomial_square_free_consequence": true,
+    "separator_block_mod_prime": [
+      [
+        800,
+        875,
+        359,
+        599,
+        314,
+        934
+      ],
+      [
+        880,
+        449,
+        570,
+        431,
+        252,
+        422
+      ],
+      [
+        49,
+        757,
+        178,
+        55,
+        676,
+        437
+      ],
+      [
+        544,
+        258,
+        333,
+        954,
+        603,
+        972
+      ],
+      [
+        204,
+        575,
+        506,
+        189,
+        394,
+        934
+      ],
+      [
+        391,
+        628,
+        571,
+        144,
+        169,
+        873
+      ]
+    ],
+    "source_dimension": 768,
+    "source_partition": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "tableau_fiber_count": 42,
+    "target_dimension": 42,
+    "target_partition": [
+      2,
+      2,
+      2,
+      2,
+      2
+    ],
+    "tensor_dimension": 589824
+  }
+}

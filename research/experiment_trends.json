@@ -1,8 +1,8 @@
 {
-  "created_at": "2026-07-24T03:21:26.383909+00:00",
+  "created_at": "2026-07-27T19:11:23.377889+00:00",
   "history_artifact": "research/experiment_run_history.json",
-  "history_count": 180,
-  "trend_count": 142,
+  "history_count": 189,
+  "trend_count": 148,
   "trends": [
     {
       "blocking_run_count": 1,
@@ -6197,6 +6197,647 @@
     },
     {
       "blocking_run_count": 1,
+      "experiment_id": "EXP-COSET-TYPICAL-INVARIANT-CONTRACTION",
+      "falsifier_count_sequence": [
+        5
+      ],
+      "interpretation": "Repeated runs continue to trigger falsifiers; this is proof debt, not progress.",
+      "latest_result_id": "RESULT-EXP-COSET-TYPICAL-INVARIANT-CONTRACTION-COSET",
+      "latest_status": "factorial-row-barrier-removed-multiplicity6-numerically-simple-exact-proof-open",
+      "latest_summary": "Sparse YJM-fiber contraction reproduces the exact n=10 cubic without S_10 rows and reaches the multiplicity-six block with a 42-fold eigensolve-dimension reduction; the new spectrum remains numerical and the representation solve is not scalable.",
+      "numeric_metric_trends": {
+        "all_n_simple_spectrum_theorem_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        },
+        "all_tableau_fibers_materialized_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        },
+        "coherent_typical_multiplicity_transform_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        },
+        "conjugate_target_coverage_count": {
+          "delta": 0.0,
+          "first": 4.0,
+          "latest": 4.0,
+          "max": 4.0,
+          "min": 4.0,
+          "observations": 1
+        },
+        "direct_coxeter_multiplicity6_converged_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        },
+        "direct_coxeter_multiplicity6_timeout_seconds": {
+          "delta": 0.0,
+          "first": 4100.0,
+          "latest": 4100.0,
+          "max": 4100.0,
+          "min": 4100.0,
+          "observations": 1
+        },
+        "exact_multiplicity6_certificate_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        },
+        "explicit_s10_character_table_bytes_avoided": {
+          "delta": 0.0,
+          "first": 91663488000.0,
+          "latest": 91663488000.0,
+          "max": 91663488000.0,
+          "min": 91663488000.0,
+          "observations": 1
+        },
+        "factorial_group_row_storage_removed_count": {
+          "delta": 0.0,
+          "first": 1.0,
+          "latest": 1.0,
+          "max": 1.0,
+          "min": 1.0,
+          "observations": 1
+        },
+        "interval_verified_multiplicity6_certificate_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        },
+        "machine_verified_roundoff_certificate_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        },
+        "maximum_estimated_arpack_basis_bytes": {
+          "delta": 0.0,
+          "first": 75497472.0,
+          "latest": 75497472.0,
+          "max": 75497472.0,
+          "min": 75497472.0,
+          "observations": 1
+        },
+        "maximum_exact_control_trace_residual": {
+          "delta": 0.0,
+          "first": 1.5265566588595902e-15,
+          "latest": 1.5265566588595902e-15,
+          "max": 1.5265566588595902e-15,
+          "min": 1.5265566588595902e-15,
+          "observations": 1
+        },
+        "maximum_invariant_residual": {
+          "delta": 0.0,
+          "first": 8.111675501396993e-12,
+          "latest": 8.111675501396993e-12,
+          "max": 8.111675501396993e-12,
+          "min": 8.111675501396993e-12,
+          "observations": 1
+        },
+        "maximum_invariant_vector_dimension": {
+          "delta": 0.0,
+          "first": 24772608.0,
+          "latest": 24772608.0,
+          "max": 24772608.0,
+          "min": 24772608.0,
+          "observations": 1
+        },
+        "maximum_numerical_kronecker_multiplicity": {
+          "delta": 0.0,
+          "first": 6.0,
+          "latest": 6.0,
+          "max": 6.0,
+          "min": 6.0,
+          "observations": 1
+        },
+        "maximum_single_tableau_fiber_bytes": {
+          "delta": 0.0,
+          "first": 28311552.0,
+          "latest": 28311552.0,
+          "max": 28311552.0,
+          "min": 28311552.0,
+          "observations": 1
+        },
+        "maximum_vector_dimension_reduction_factor": {
+          "delta": 0.0,
+          "first": 42.0,
+          "latest": 42.0,
+          "max": 42.0,
+          "min": 42.0,
+          "observations": 1
+        },
+        "n": {
+          "delta": 0.0,
+          "first": 10.0,
+          "latest": 10.0,
+          "max": 10.0,
+          "min": 10.0,
+          "observations": 1
+        },
+        "n10_multiplicity6_declared_budget_gap_lower_bound": {
+          "delta": 0.0,
+          "first": 0.005251965196300334,
+          "latest": 0.005251965196300334,
+          "max": 0.005251965196300334,
+          "min": 0.005251965196300334,
+          "observations": 1
+        },
+        "n10_multiplicity6_declared_budget_margin_ratio": {
+          "delta": 0.0,
+          "first": 8.13209902991408,
+          "latest": 8.13209902991408,
+          "max": 8.13209902991408,
+          "min": 8.13209902991408,
+          "observations": 1
+        },
+        "n10_multiplicity6_minimum_numerical_raw_gap": {
+          "delta": 0.0,
+          "first": 0.005988349418430745,
+          "latest": 0.005988349418430745,
+          "max": 0.005988349418430745,
+          "min": 0.005988349418430745,
+          "observations": 1
+        },
+        "n10_multiplicity6_numerically_simple_spectrum_count": {
+          "delta": 0.0,
+          "first": 1.0,
+          "latest": 1.0,
+          "max": 1.0,
+          "min": 1.0,
+          "observations": 1
+        },
+        "n10_multiplicity6_robust_under_declared_budget_count": {
+          "delta": 0.0,
+          "first": 1.0,
+          "latest": 1.0,
+          "max": 1.0,
+          "min": 1.0,
+          "observations": 1
+        },
+        "next_multiplicity15_estimated_arpack_basis_bytes": {
+          "delta": 0.0,
+          "first": 160432128.0,
+          "latest": 160432128.0,
+          "max": 160432128.0,
+          "min": 160432128.0,
+          "observations": 1
+        },
+        "next_multiplicity15_single_tableau_fiber_bytes": {
+          "delta": 0.0,
+          "first": 70778880.0,
+          "latest": 70778880.0,
+          "max": 70778880.0,
+          "min": 70778880.0,
+          "observations": 1
+        },
+        "numerically_contracted_primary_target_count": {
+          "delta": 0.0,
+          "first": 2.0,
+          "latest": 2.0,
+          "max": 2.0,
+          "min": 2.0,
+          "observations": 1
+        },
+        "polynomial_invariant_contraction_theorem_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        },
+        "typical_label_hidden_involution_decoder_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        },
+        "yjm_fiber_vector_dimension": {
+          "delta": 0.0,
+          "first": 589824.0,
+          "latest": 589824.0,
+          "max": 589824.0,
+          "min": 589824.0,
+          "observations": 1
+        }
+      },
+      "run_count": 1,
+      "status_sequence": [
+        "factorial-row-barrier-removed-multiplicity6-numerically-simple-exact-proof-open"
+      ]
+    },
+    {
+      "blocking_run_count": 1,
+      "experiment_id": "EXP-COSET-TYPICAL-MODULAR-GAP-BOUND",
+      "falsifier_count_sequence": [
+        4
+      ],
+      "interpretation": "Repeated runs continue to trigger falsifiers; this is proof debt, not progress.",
+      "latest_result_id": "RESULT-EXP-COSET-TYPICAL-MODULAR-GAP-BOUND-COSET",
+      "latest_status": "exact-nonzero-gap-bounds-proved-efficient-precision-still-blocked",
+      "latest_summary": "Exact denominator clearing yields rigorous normalized gap bounds for 10 n=10 targets, but even the strongest has log10 lower bound -2057.6; square-freeness alone is far too weak to justify efficient phase estimation.",
+      "numeric_metric_trends": {
+        "all_n_simple_spectrum_theorem_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        },
+        "coherent_typical_multiplicity_transform_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        },
+        "exact_denominator_root_separation_theorem_count": {
+          "delta": 0.0,
+          "first": 1.0,
+          "latest": 1.0,
+          "max": 1.0,
+          "min": 1.0,
+          "observations": 1
+        },
+        "inverse_polynomial_normalized_gap_theorem_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        },
+        "maximum_bounded_multiplicity": {
+          "delta": 0.0,
+          "first": 15.0,
+          "latest": 15.0,
+          "max": 15.0,
+          "min": 15.0,
+          "observations": 1
+        },
+        "maximum_characteristic_clearing_denominator_digits": {
+          "delta": 0.0,
+          "first": 1624.0,
+          "latest": 1624.0,
+          "max": 1624.0,
+          "min": 1624.0,
+          "observations": 1
+        },
+        "maximum_gap_bound_denominator_digits": {
+          "delta": 0.0,
+          "first": 22799.0,
+          "latest": 22799.0,
+          "max": 22799.0,
+          "min": 22799.0,
+          "observations": 1
+        },
+        "polynomial_phase_estimation_precision_certificate_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        },
+        "square_free_target_bound_count": {
+          "delta": 0.0,
+          "first": 10.0,
+          "latest": 10.0,
+          "max": 10.0,
+          "min": 10.0,
+          "observations": 1
+        },
+        "strongest_lcu_normalized_gap_lower_bound_log10": {
+          "delta": 0.0,
+          "first": -2057.648015082988,
+          "latest": -2057.648015082988,
+          "max": -2057.648015082988,
+          "min": -2057.648015082988,
+          "observations": 1
+        },
+        "typical_label_hidden_involution_decoder_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        },
+        "weakest_lcu_normalized_gap_lower_bound_log10": {
+          "delta": 0.0,
+          "first": -22798.894248588425,
+          "latest": -22798.894248588425,
+          "max": -22798.894248588425,
+          "min": -22798.894248588425,
+          "observations": 1
+        }
+      },
+      "run_count": 1,
+      "status_sequence": [
+        "exact-nonzero-gap-bounds-proved-efficient-precision-still-blocked"
+      ]
+    },
+    {
+      "blocking_run_count": 4,
+      "experiment_id": "EXP-COSET-TYPICAL-MODULAR-YJM-CONTRACTION",
+      "falsifier_count_sequence": [
+        4,
+        4,
+        4,
+        4
+      ],
+      "interpretation": "Repeated runs continue to trigger falsifiers; this is proof debt, not progress.",
+      "latest_result_id": "RESULT-EXP-COSET-TYPICAL-MODULAR-YJM-CONTRACTION-COSET",
+      "latest_status": "exact-n10-ladder-advancing-by-good-reduction-coefficients-and-scaling-open",
+      "latest_summary": "6 exact good-prime reduction(s) prove the corresponding n=10 separator polynomials are square-free; rational coefficients, full target coverage, asymptotic compression, and a decoder remain open.",
+      "numeric_metric_trends": {
+        "coherent_typical_multiplicity_transform_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 4
+        },
+        "compiled_modular_projector_kernel_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 4
+        },
+        "conjugate_sign_duality_validation_pair_count": {
+          "delta": 0.0,
+          "first": 1.0,
+          "latest": 1.0,
+          "max": 1.0,
+          "min": 1.0,
+          "observations": 2
+        },
+        "crt_rational_reconstruction_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 4
+        },
+        "exact_conjugate_sign_duality_theorem_count": {
+          "delta": 0.0,
+          "first": 1.0,
+          "latest": 1.0,
+          "max": 1.0,
+          "min": 1.0,
+          "observations": 2
+        },
+        "exact_modular_control_count": {
+          "delta": 0.0,
+          "first": 2.0,
+          "latest": 2.0,
+          "max": 2.0,
+          "min": 2.0,
+          "observations": 4
+        },
+        "exact_modular_power_trace_count": {
+          "delta": 0.0,
+          "first": 4.0,
+          "latest": 4.0,
+          "max": 4.0,
+          "min": 4.0,
+          "observations": 4
+        },
+        "exact_modular_trace_disagreement_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 4
+        },
+        "exact_n10_multiplicity6_characteristic_polynomial_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 4
+        },
+        "exact_n10_multiplicity6_power_trace_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 4
+        },
+        "exact_n10_multiplicity6_square_free_certificate_count": {
+          "delta": 0.0,
+          "first": 1.0,
+          "latest": 1.0,
+          "max": 1.0,
+          "min": 1.0,
+          "observations": 3
+        },
+        "maximum_control_projected_rank": {
+          "delta": 0.0,
+          "first": 2.0,
+          "latest": 2.0,
+          "max": 2.0,
+          "min": 2.0,
+          "observations": 4
+        },
+        "n10_direct_exact_square_free_target_count": {
+          "delta": 4.0,
+          "first": 2.0,
+          "latest": 6.0,
+          "max": 6.0,
+          "min": 2.0,
+          "observations": 2
+        },
+        "n10_exact_collision_target_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 2
+        },
+        "n10_exact_square_free_target_count": {
+          "delta": 8.0,
+          "first": 2.0,
+          "latest": 10.0,
+          "max": 10.0,
+          "min": 2.0,
+          "observations": 2
+        },
+        "n10_inferred_by_conjugate_sign_duality_count": {
+          "delta": 4.0,
+          "first": 0.0,
+          "latest": 4.0,
+          "max": 4.0,
+          "min": 0.0,
+          "observations": 2
+        },
+        "n10_ladder_declared_target_count": {
+          "delta": 2.0,
+          "first": 3.0,
+          "latest": 5.0,
+          "max": 5.0,
+          "min": 3.0,
+          "observations": 2
+        },
+        "n10_ladder_remaining_declared_target_count": {
+          "delta": -2.0,
+          "first": 2.0,
+          "latest": 0.0,
+          "max": 2.0,
+          "min": 0.0,
+          "observations": 2
+        },
+        "n10_maximum_exact_certified_multiplicity": {
+          "delta": 9.0,
+          "first": 6.0,
+          "latest": 15.0,
+          "max": 15.0,
+          "min": 6.0,
+          "observations": 2
+        },
+        "n10_modular_power_trace_residue_count": {
+          "delta": 53.0,
+          "first": 6.0,
+          "latest": 59.0,
+          "max": 59.0,
+          "min": 6.0,
+          "observations": 3
+        },
+        "n10_modular_prime_residue_count": {
+          "delta": 6.0,
+          "first": 0.0,
+          "latest": 6.0,
+          "max": 6.0,
+          "min": 0.0,
+          "observations": 4
+        },
+        "n10_nontrivial_multiplicity_target_count": {
+          "delta": 0.0,
+          "first": 40.0,
+          "latest": 40.0,
+          "max": 40.0,
+          "min": 40.0,
+          "observations": 2
+        },
+        "n10_pair_group_state_space_size": {
+          "delta": 0.0,
+          "first": 13168189440000.0,
+          "latest": 13168189440000.0,
+          "max": 13168189440000.0,
+          "min": 13168189440000.0,
+          "observations": 4
+        },
+        "n10_pair_group_to_tensor_dimension_reduction_factor": {
+          "delta": 0.0,
+          "first": 22325625.0,
+          "latest": 22325625.0,
+          "max": 22325625.0,
+          "min": 22325625.0,
+          "observations": 4
+        },
+        "n10_projector_polynomial_degree": {
+          "delta": 0.0,
+          "first": 281.0,
+          "latest": 281.0,
+          "max": 281.0,
+          "min": 281.0,
+          "observations": 4
+        },
+        "n10_sparse_axis_actions_for_all_trials": {
+          "delta": -2063664.0,
+          "first": 2883060.0,
+          "latest": 819396.0,
+          "max": 2883060.0,
+          "min": 819396.0,
+          "observations": 4
+        },
+        "n10_tensor_dimension": {
+          "delta": 0.0,
+          "first": 589824.0,
+          "latest": 589824.0,
+          "max": 589824.0,
+          "min": 589824.0,
+          "observations": 4
+        },
+        "n10_unaudited_target_count": {
+          "delta": -8.0,
+          "first": 38.0,
+          "latest": 30.0,
+          "max": 38.0,
+          "min": 30.0,
+          "observations": 2
+        },
+        "pair_group_states_materialized_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 4
+        },
+        "polynomial_in_n_state_dimension_theorem_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 4
+        },
+        "typical_label_hidden_involution_decoder_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 4
+        }
+      },
+      "run_count": 4,
+      "status_sequence": [
+        "exact-modular-controls-pass-n10-compiled-kernel-and-crt-required",
+        "exact-n10-multiplicity6-square-free-by-good-reduction-coefficients-and-scaling-open",
+        "exact-n10-ladder-advancing-by-good-reduction-coefficients-and-scaling-open",
+        "exact-n10-ladder-advancing-by-good-reduction-coefficients-and-scaling-open"
+      ]
+    },
+    {
+      "blocking_run_count": 1,
       "experiment_id": "EXP-COSET-TYPICAL-N10-FEASIBILITY",
       "falsifier_count_sequence": [
         4
@@ -6426,6 +7067,135 @@
       "run_count": 1,
       "status_sequence": [
         "n10-first-targets-survive-scalable-contraction-blocked"
+      ]
+    },
+    {
+      "blocking_run_count": 1,
+      "experiment_id": "EXP-COSET-TYPICAL-N10-GAP-TREND",
+      "falsifier_count_sequence": [
+        4
+      ],
+      "interpretation": "Repeated runs continue to trigger falsifiers; this is proof debt, not progress.",
+      "latest_result_id": "RESULT-EXP-COSET-TYPICAL-N10-GAP-TREND-COSET",
+      "latest_status": "exact-square-free-ladder-numerical-normalized-gap-shrinks-precision-proof-open",
+      "latest_summary": "The exactly square-free multiplicity-eight block has numerical LCU-normalized gap 0.0004176, a 7.17-fold drop from multiplicity six; this strengthens the precision blocker and does not establish a trend theorem.",
+      "numeric_metric_trends": {
+        "all_n_gap_trend_sample_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        },
+        "coherent_typical_multiplicity_transform_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        },
+        "declared_budget_survival_count": {
+          "delta": 0.0,
+          "first": 2.0,
+          "latest": 2.0,
+          "max": 2.0,
+          "min": 2.0,
+          "observations": 1
+        },
+        "exact_square_free_numerical_gap_target_count": {
+          "delta": 0.0,
+          "first": 2.0,
+          "latest": 2.0,
+          "max": 2.0,
+          "min": 2.0,
+          "observations": 1
+        },
+        "inverse_polynomial_normalized_gap_theorem_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        },
+        "machine_verified_roundoff_bound_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        },
+        "maximum_audited_multiplicity": {
+          "delta": 0.0,
+          "first": 8.0,
+          "latest": 8.0,
+          "max": 8.0,
+          "min": 8.0,
+          "observations": 1
+        },
+        "minimum_audited_multiplicity": {
+          "delta": 0.0,
+          "first": 6.0,
+          "latest": 6.0,
+          "max": 6.0,
+          "min": 6.0,
+          "observations": 1
+        },
+        "multiplicity6_lcu_normalized_gap": {
+          "delta": 0.0,
+          "first": 0.0029941747092153727,
+          "latest": 0.0029941747092153727,
+          "max": 0.0029941747092153727,
+          "min": 0.0029941747092153727,
+          "observations": 1
+        },
+        "multiplicity6_to_multiplicity8_gap_drop_factor": {
+          "delta": 0.0,
+          "first": 7.169952264676452,
+          "latest": 7.169952264676452,
+          "max": 7.169952264676452,
+          "min": 7.169952264676452,
+          "observations": 1
+        },
+        "multiplicity8_lcu_normalized_gap": {
+          "delta": 0.0,
+          "first": 0.0004176003686895517,
+          "latest": 0.0004176003686895517,
+          "max": 0.0004176003686895517,
+          "min": 0.0004176003686895517,
+          "observations": 1
+        },
+        "multiplicity8_to_multiplicity6_gap_ratio": {
+          "delta": 0.0,
+          "first": 0.13947094249519743,
+          "latest": 0.13947094249519743,
+          "max": 0.13947094249519743,
+          "min": 0.13947094249519743,
+          "observations": 1
+        },
+        "numerical_gap_target_count": {
+          "delta": 0.0,
+          "first": 2.0,
+          "latest": 2.0,
+          "max": 2.0,
+          "min": 2.0,
+          "observations": 1
+        },
+        "typical_label_hidden_involution_decoder_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        }
+      },
+      "run_count": 1,
+      "status_sequence": [
+        "exact-square-free-ladder-numerical-normalized-gap-shrinks-precision-proof-open"
       ]
     },
     {
@@ -7075,6 +7845,264 @@
       "status_sequence": [
         "support-three-two-generator-span-falsified-third-generator-required",
         "two-generator-and-disjoint-extension-spans-falsified-independent-third-required"
+      ]
+    },
+    {
+      "blocking_run_count": 1,
+      "experiment_id": "EXP-COSET-TYPICAL-TRANSFER-SUPPORT-GROWTH",
+      "falsifier_count_sequence": [
+        4
+      ],
+      "interpretation": "Repeated runs continue to trigger falsifiers; this is proof debt, not progress.",
+      "latest_result_id": "RESULT-EXP-COSET-TYPICAL-TRANSFER-SUPPORT-GROWTH-COSET",
+      "latest_status": "direct-fixed-support-extension-falsified-full-support-recurrence-open",
+      "latest_summary": "Exact transfer support concentrates on full-support pair orbits: 89.5% at n=9 degree 28. Bounded-support class contraction remains useful for low moments but cannot directly finish the n=10 collision ladder.",
+      "numeric_metric_trends": {
+        "all_n_support_concentration_theorem_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        },
+        "audited_size_count": {
+          "delta": 0.0,
+          "first": 3.0,
+          "latest": 3.0,
+          "max": 3.0,
+          "min": 3.0,
+          "observations": 1
+        },
+        "direct_fixed_support_termwise_extension_falsification_count": {
+          "delta": 0.0,
+          "first": 1.0,
+          "latest": 1.0,
+          "max": 1.0,
+          "min": 1.0,
+          "observations": 1
+        },
+        "exact_support_checkpoint_count": {
+          "delta": 0.0,
+          "first": 12.0,
+          "latest": 12.0,
+          "max": 12.0,
+          "min": 12.0,
+          "observations": 1
+        },
+        "maximum_audited_degree": {
+          "delta": 0.0,
+          "first": 28.0,
+          "latest": 28.0,
+          "max": 28.0,
+          "min": 28.0,
+          "observations": 1
+        },
+        "n10_degree5_full_support_weight_fraction": {
+          "delta": 0.0,
+          "first": 0.20523965863631505,
+          "latest": 0.20523965863631505,
+          "max": 0.20523965863631505,
+          "min": 0.20523965863631505,
+          "observations": 1
+        },
+        "n10_degree5_support9_or_10_weight_fraction": {
+          "delta": 0.0,
+          "first": 0.6198103184040714,
+          "latest": 0.6198103184040714,
+          "max": 0.6198103184040714,
+          "min": 0.6198103184040714,
+          "observations": 1
+        },
+        "n10_full_support_marked_injection_count": {
+          "delta": 0.0,
+          "first": 3628800.0,
+          "latest": 3628800.0,
+          "max": 3628800.0,
+          "min": 3628800.0,
+          "observations": 1
+        },
+        "n8_degree17_full_support_weight_fraction": {
+          "delta": 0.0,
+          "first": 0.8804686486028457,
+          "latest": 0.8804686486028457,
+          "max": 0.8804686486028457,
+          "min": 0.8804686486028457,
+          "observations": 1
+        },
+        "n9_degree28_at_most_support7_weight_fraction": {
+          "delta": 0.0,
+          "first": 0.006355805994930264,
+          "latest": 0.006355805994930264,
+          "max": 0.006355805994930264,
+          "min": 0.006355805994930264,
+          "observations": 1
+        },
+        "n9_degree28_full_support_weight_fraction": {
+          "delta": 0.0,
+          "first": 0.8952433780998212,
+          "latest": 0.8952433780998212,
+          "max": 0.8952433780998212,
+          "min": 0.8952433780998212,
+          "observations": 1
+        },
+        "scalable_full_support_character_contraction_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        }
+      },
+      "run_count": 1,
+      "status_sequence": [
+        "direct-fixed-support-extension-falsified-full-support-recurrence-open"
+      ]
+    },
+    {
+      "blocking_run_count": 1,
+      "experiment_id": "EXP-COSET-TYPICAL-YJM-PROJECTOR-TRACE",
+      "falsifier_count_sequence": [
+        4
+      ],
+      "interpretation": "Repeated runs continue to trigger falsifiers; this is proof debt, not progress.",
+      "latest_result_id": "RESULT-EXP-COSET-TYPICAL-YJM-PROJECTOR-TRACE-COSET",
+      "latest_status": "exact-projector-trace-identity-proved-explicit-evaluator-falsified",
+      "latest_summary": "An exact YJM tableau projector reduces multiplicity-block moments to ordinary representation traces. Rational n=5 and n=6 controls verify the construction, while 93.5% pair-state saturation at n=6 kills literal group-algebra expansion as the scalable route.",
+      "numeric_metric_trends": {
+        "coherent_typical_multiplicity_transform_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        },
+        "exact_control_count": {
+          "delta": 0.0,
+          "first": 2.0,
+          "latest": 2.0,
+          "max": 2.0,
+          "min": 2.0,
+          "observations": 1
+        },
+        "exact_n10_multiplicity6_characteristic_polynomial_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        },
+        "exact_n10_multiplicity6_power_trace_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        },
+        "exact_power_trace_count": {
+          "delta": 0.0,
+          "first": 4.0,
+          "latest": 4.0,
+          "max": 4.0,
+          "min": 4.0,
+          "observations": 1
+        },
+        "exact_projector_trace_count": {
+          "delta": 0.0,
+          "first": 2.0,
+          "latest": 2.0,
+          "max": 2.0,
+          "min": 2.0,
+          "observations": 1
+        },
+        "exact_square_free_control_count": {
+          "delta": 0.0,
+          "first": 2.0,
+          "latest": 2.0,
+          "max": 2.0,
+          "min": 2.0,
+          "observations": 1
+        },
+        "exact_yjm_projector_trace_identity_theorem_count": {
+          "delta": 0.0,
+          "first": 1.0,
+          "latest": 1.0,
+          "max": 1.0,
+          "min": 1.0,
+          "observations": 1
+        },
+        "explicit_pair_algebra_scaling_falsification_count": {
+          "delta": 0.0,
+          "first": 1.0,
+          "latest": 1.0,
+          "max": 1.0,
+          "min": 1.0,
+          "observations": 1
+        },
+        "n10_explicit_pair_state_space_size": {
+          "delta": 0.0,
+          "first": 13168189440000.0,
+          "latest": 13168189440000.0,
+          "max": 13168189440000.0,
+          "min": 13168189440000.0,
+          "observations": 1
+        },
+        "n6_degree2_pair_state_count": {
+          "delta": 0.0,
+          "first": 484912.0,
+          "latest": 484912.0,
+          "max": 484912.0,
+          "min": 484912.0,
+          "observations": 1
+        },
+        "n6_degree2_pair_state_saturation_fraction": {
+          "delta": 0.0,
+          "first": 0.9354012345679013,
+          "latest": 0.9354012345679013,
+          "max": 0.9354012345679013,
+          "min": 0.9354012345679013,
+          "observations": 1
+        },
+        "n6_explicit_pair_state_space_size": {
+          "delta": 0.0,
+          "first": 518400.0,
+          "latest": 518400.0,
+          "max": 518400.0,
+          "min": 518400.0,
+          "observations": 1
+        },
+        "polynomial_exact_trace_evaluator_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        },
+        "typical_label_hidden_involution_decoder_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        },
+        "young_tower_compressed_exact_trace_evaluator_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        }
+      },
+      "run_count": 1,
+      "status_sequence": [
+        "exact-projector-trace-identity-proved-explicit-evaluator-falsified"
       ]
     },
     {

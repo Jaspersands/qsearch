@@ -295,6 +295,24 @@ COSET_TYPICAL_N9_FULL_TRANSFER_PATH = Path(
 COSET_TYPICAL_N10_FEASIBILITY_PATH = Path(
     "research/representation/coset_typical_n10_feasibility.json"
 )
+COSET_TRANSFER_SUPPORT_GROWTH_PATH = Path(
+    "research/representation/coset_transfer_support_growth.json"
+)
+COSET_TYPICAL_INVARIANT_CONTRACTION_PATH = Path(
+    "research/representation/coset_typical_invariant_contraction.json"
+)
+COSET_TYPICAL_YJM_PROJECTOR_PATH = Path(
+    "research/representation/coset_typical_yjm_projector_certificate.json"
+)
+COSET_TYPICAL_MODULAR_YJM_PATH = Path(
+    "research/representation/coset_typical_modular_yjm_contraction.json"
+)
+COSET_TYPICAL_MODULAR_GAP_BOUND_PATH = Path(
+    "research/representation/coset_typical_modular_gap_bounds.json"
+)
+COSET_TYPICAL_N10_GAP_TREND_PATH = Path(
+    "research/representation/coset_typical_n10_gap_trend.json"
+)
 COSET_RECOUPLING_CAPABILITY_PATH = Path(
     "research/representation/coset_recoupling_capability_ledger.json"
 )
@@ -5015,6 +5033,256 @@ def findings_from_coset_typical_n10_feasibility(
     ]
 
 
+def findings_from_coset_transfer_support_growth(
+    path: Path = COSET_TRANSFER_SUPPORT_GROWTH_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    return [
+        DequantizationFinding(
+            id="DEQ-COSET-TYPICAL-FIXED-SUPPORT-CONTRACTION-FAILS-ON-DOMINANT-SECTOR",
+            created_at=utc_now(),
+            target_type="coset_transfer_support_growth",
+            target_id=str(path),
+            severity="critical",
+            claim_under_test=(
+                "Fixed-support marked-class contraction directly scales to the "
+                "high-degree transfer states needed for typical multiplicities."
+            ),
+            evidence=(
+                f"n=9 degree-28 full-support weight="
+                f"{metrics.get('n9_degree28_full_support_weight_fraction', 0)}; "
+                f"n=10 degree-five support-9-or-10 weight="
+                f"{metrics.get('n10_degree5_support9_or_10_weight_fraction', 0)}; "
+                f"n=10 full-support injection count="
+                f"{metrics.get('n10_full_support_marked_injection_count', 0)}; "
+                f"scalable full-support contractions="
+                f"{metrics.get('scalable_full_support_character_contraction_count', 0)}."
+            ),
+            required_action=(
+                "Do not extend marked injection termwise. Derive and validate a "
+                "collective full-support representation, branching, centralizer, "
+                "or tensor-network contraction before auditing higher n=10 blocks."
+            ),
+            blocks_speedup_claim=True,
+        )
+    ]
+
+
+def findings_from_coset_typical_invariant_contraction(
+    path: Path = COSET_TYPICAL_INVARIANT_CONTRACTION_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    return [
+        DequantizationFinding(
+            id="DEQ-COSET-TYPICAL-INVARIANT-CONTRACTION-FINITE-NUMERICAL-ONLY",
+            created_at=utc_now(),
+            target_type="coset_typical_invariant_contraction",
+            target_id=str(path),
+            severity="critical",
+            claim_under_test=(
+                "Removing explicit S_10 character rows yields a scalable exact "
+                "typical-irrep resolver."
+            ),
+            evidence=(
+                f"Exact-control residual="
+                f"{metrics.get('maximum_exact_control_trace_residual', 0)}; "
+                f"maximum invariant-vector dimension="
+                f"{metrics.get('maximum_invariant_vector_dimension', 0)}; "
+                f"YJM fiber dimension="
+                f"{metrics.get('yjm_fiber_vector_dimension', 0)}; "
+                f"maximum target-dimension reduction="
+                f"{metrics.get('maximum_vector_dimension_reduction_factor', 0)}; "
+                f"multiplicity-six numerical gap="
+                f"{metrics.get('n10_multiplicity6_minimum_numerical_raw_gap', 0)}; "
+                f"declared-budget gap lower bound="
+                f"{metrics.get('n10_multiplicity6_declared_budget_gap_lower_bound', 0)}; "
+                f"machine-verified roundoff certificates="
+                f"{metrics.get('machine_verified_roundoff_certificate_count', 0)}; "
+                f"exact multiplicity-six certificates="
+                f"{metrics.get('exact_multiplicity6_certificate_count', 0)}; "
+                f"polynomial contraction theorems="
+                f"{metrics.get('polynomial_invariant_contraction_theorem_count', 0)}."
+            ),
+            required_action=(
+                "Machine-verify interval bounds or convert numerical blocks to "
+                "exact certificates, then replace the "
+                "remaining dim(lambda)^2 YJM fiber with a proved polynomial "
+                "branching or centralizer recurrence before any scaling claim."
+            ),
+            blocks_speedup_claim=True,
+        )
+    ]
+
+
+def findings_from_coset_typical_yjm_projector(
+    path: Path = COSET_TYPICAL_YJM_PROJECTOR_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    return [
+        DequantizationFinding(
+            id="DEQ-COSET-TYPICAL-EXACT-YJM-PROJECTOR-IS-NOT-EFFICIENT-EVALUATOR",
+            created_at=utc_now(),
+            target_type="coset_typical_yjm_projector_certificate",
+            target_id=str(path),
+            severity="critical",
+            claim_under_test=(
+                "An exact YJM tableau-projector identity by itself supplies an "
+                "efficient multiplicity-block spectral algorithm."
+            ),
+            evidence=(
+                f"Exact identity theorems="
+                f"{metrics.get('exact_yjm_projector_trace_identity_theorem_count', 0)}; "
+                f"n=6 degree-two pair-state saturation="
+                f"{metrics.get('n6_degree2_pair_state_saturation_fraction', 0)}; "
+                f"n=10 pair state space="
+                f"{metrics.get('n10_explicit_pair_state_space_size', 0)}; "
+                f"Young-tower exact evaluators="
+                f"{metrics.get('young_tower_compressed_exact_trace_evaluator_count', 0)}; "
+                f"exact n=10 multiplicity-six traces="
+                f"{metrics.get('exact_n10_multiplicity6_power_trace_count', 0)}."
+            ),
+            required_action=(
+                "Retain the exact projector identity, but require a proved "
+                "Young-tower, centralizer, or tensor-network trace recurrence "
+                "that avoids pair-group saturation and certifies the n=10 sextic."
+            ),
+            blocks_speedup_claim=True,
+        )
+    ]
+
+
+def findings_from_coset_typical_modular_yjm(
+    path: Path = COSET_TYPICAL_MODULAR_YJM_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    return [
+        DequantizationFinding(
+            id="DEQ-COSET-TYPICAL-MODULAR-YJM-IS-FINITE-CERTIFIER-NOT-SCALABLE-ALGORITHM",
+            created_at=utc_now(),
+            target_type="coset_typical_modular_yjm_contraction",
+            target_id=str(path),
+            severity="critical",
+            claim_under_test=(
+                "Replacing factorial pair-group expansion with exact modular "
+                "YJM contraction establishes a scalable nonabelian HSP algorithm."
+            ),
+            evidence=(
+                f"Exact modular control traces="
+                f"{metrics.get('exact_modular_power_trace_count', 0)}; "
+                f"n=10 tensor dimension={metrics.get('n10_tensor_dimension', 0)}; "
+                f"projector degree={metrics.get('n10_projector_polynomial_degree', 0)}; "
+                f"full sparse-axis passes="
+                f"{metrics.get('n10_sparse_axis_actions_for_all_trials', 0)}; "
+                f"compiled kernels/residues/exact sextics="
+                f"{metrics.get('compiled_modular_projector_kernel_count', 0)}/"
+                f"{metrics.get('n10_modular_prime_residue_count', 0)}/"
+                f"{metrics.get('exact_n10_multiplicity6_square_free_certificate_count', 0)}; "
+                f"exact square-free ladder targets/max multiplicity="
+                f"{metrics.get('n10_exact_square_free_target_count', 0)}/"
+                f"{metrics.get('n10_maximum_exact_certified_multiplicity', 0)}; "
+                f"rational coefficient reconstructions="
+                f"{metrics.get('crt_rational_reconstruction_count', 0)}."
+            ),
+            required_action=(
+                "Use the modular method only as an exact finite-block certifier. "
+                "Compile the kernel and reconstruct the n=10 sextic, while keeping "
+                "the exponential state dimension, all-n gap, transform, decoder, "
+                "and classical-separation obligations blocked."
+            ),
+            blocks_speedup_claim=True,
+        )
+    ]
+
+
+def findings_from_coset_typical_modular_gap_bound(
+    path: Path = COSET_TYPICAL_MODULAR_GAP_BOUND_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    return [
+        DequantizationFinding(
+            id="DEQ-COSET-TYPICAL-SQUARE-FREE-GAP-BOUND-DOES-NOT-GIVE-EFFICIENT-PRECISION",
+            created_at=utc_now(),
+            target_type="coset_typical_modular_gap_bound",
+            target_id=str(path),
+            severity="critical",
+            claim_under_test=(
+                "Exact square-freeness of finite typical blocks establishes "
+                "efficient phase-estimation precision."
+            ),
+            evidence=(
+                f"Bounded targets/max multiplicity="
+                f"{metrics.get('square_free_target_bound_count', 0)}/"
+                f"{metrics.get('maximum_bounded_multiplicity', 0)}; "
+                f"strongest/weakest normalized log10 lower bounds="
+                f"{metrics.get('strongest_lcu_normalized_gap_lower_bound_log10', 0)}/"
+                f"{metrics.get('weakest_lcu_normalized_gap_lower_bound_log10', 0)}; "
+                f"inverse-polynomial gap theorems="
+                f"{metrics.get('inverse_polynomial_normalized_gap_theorem_count', 0)}."
+            ),
+            required_action=(
+                "Require separator-specific all-n coefficient control or a "
+                "direct spectral recurrence proving inverse-polynomial normalized "
+                "gaps; do not promote nonzero discriminants as efficient precision."
+            ),
+            blocks_speedup_claim=True,
+        )
+    ]
+
+
+def findings_from_coset_typical_n10_gap_trend(
+    path: Path = COSET_TYPICAL_N10_GAP_TREND_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    return [
+        DequantizationFinding(
+            id="DEQ-COSET-TYPICAL-N10-REAL-GAP-DROP-BLOCKS-STABLE-PRECISION-INFERENCE",
+            created_at=utc_now(),
+            target_type="coset_typical_n10_gap_trend",
+            target_id=str(path),
+            severity="critical",
+            claim_under_test=(
+                "Existing finite typical-block gaps support stable precision "
+                "as multiplicity increases."
+            ),
+            evidence=(
+                f"Multiplicity-6/8 normalized gaps="
+                f"{metrics.get('multiplicity6_lcu_normalized_gap', 0)}/"
+                f"{metrics.get('multiplicity8_lcu_normalized_gap', 0)}; "
+                f"drop factor="
+                f"{metrics.get('multiplicity6_to_multiplicity8_gap_drop_factor', 0)}; "
+                f"machine-verified bounds="
+                f"{metrics.get('machine_verified_roundoff_bound_count', 0)}; "
+                f"inverse-polynomial theorems="
+                f"{metrics.get('inverse_polynomial_normalized_gap_theorem_count', 0)}."
+            ),
+            required_action=(
+                "Treat the drop as a kill signal, not an asymptotic fit. Require "
+                "higher-block evidence plus machine-verified intervals and an "
+                "all-n inverse-polynomial theorem before phase-estimation claims."
+            ),
+            blocks_speedup_claim=True,
+        )
+    ]
+
+
 def findings_from_coset_recoupling_capability_ledger(
     path: Path = COSET_RECOUPLING_CAPABILITY_PATH,
 ) -> list[DequantizationFinding]:
@@ -8001,6 +8269,12 @@ def build_dequantization_report() -> dict[str, Any]:
         *findings_from_coset_typical_n9_low_multiplicity(),
         *findings_from_coset_typical_n9_full_transfer(),
         *findings_from_coset_typical_n10_feasibility(),
+        *findings_from_coset_transfer_support_growth(),
+        *findings_from_coset_typical_invariant_contraction(),
+        *findings_from_coset_typical_yjm_projector(),
+        *findings_from_coset_typical_modular_yjm(),
+        *findings_from_coset_typical_modular_gap_bound(),
+        *findings_from_coset_typical_n10_gap_trend(),
         *findings_from_coset_jucys_murphy_label_transform(),
         *findings_from_coset_multiplicity_commutant_search(),
         *findings_from_coset_recoupling_capability_ledger(),

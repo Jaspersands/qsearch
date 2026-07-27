@@ -1,0 +1,150 @@
+{
+  "claim_gate": {
+    "all_n_simple_spectrum_proved": false,
+    "coherent_transform_proved": false,
+    "control_spectra_square_free": true,
+    "exact_controls_reproduced": true,
+    "exact_yjm_projector_trace_identity_proved": true,
+    "explicit_pair_algebra_scales_polynomially": false,
+    "hidden_involution_decoder_proved": false,
+    "n10_multiplicity6_exactly_certified": false,
+    "reason": "The projector identity turns the exact-certificate target into a trace-evaluation problem, but the implemented exact evaluator is factorial and has not reached the n=10 multiplicity-six block.",
+    "speedup_claim_allowed": false,
+    "young_tower_compressed_evaluator_constructed": false
+  },
+  "created_at": "2026-07-27T14:31:30.650493+00:00",
+  "falsifiers_triggered": [
+    "The exact projector identity does not make its literal pair-group expansion efficient.",
+    "At n=6 and degree two, the evaluator already occupies more than 93% of the full pair state space.",
+    "The n=10 multiplicity-six numerical spectrum remains uncertified.",
+    "No Young-tower recurrence, all-n gap theorem, coherent transform, or decoder is supplied."
+  ],
+  "headline_metrics": {
+    "coherent_typical_multiplicity_transform_count": 0,
+    "exact_control_count": 2,
+    "exact_n10_multiplicity6_characteristic_polynomial_count": 0,
+    "exact_n10_multiplicity6_power_trace_count": 0,
+    "exact_power_trace_count": 4,
+    "exact_projector_trace_count": 2,
+    "exact_square_free_control_count": 2,
+    "exact_yjm_projector_trace_identity_theorem_count": 1,
+    "explicit_pair_algebra_scaling_falsification_count": 1,
+    "n10_explicit_pair_state_space_size": 13168189440000,
+    "n6_degree2_pair_state_count": 484912,
+    "n6_degree2_pair_state_saturation_fraction": 0.9354012345679013,
+    "n6_explicit_pair_state_space_size": 518400,
+    "polynomial_exact_trace_evaluator_count": 0,
+    "typical_label_hidden_involution_decoder_count": 0,
+    "young_tower_compressed_exact_trace_evaluator_count": 0
+  },
+  "records": [
+    {
+      "characteristic_polynomial_coefficients": [
+        "1",
+        "-1/30",
+        "-1/75"
+      ],
+      "discriminant": "49/900",
+      "exact_minimum_gap": "7/30",
+      "explicit_pair_state_space_size": 14400,
+      "kronecker_multiplicity": 2,
+      "n": 5,
+      "power_state_counts": [
+        3984,
+        12728
+      ],
+      "power_traces": [
+        "1/30",
+        "1/36"
+      ],
+      "projector_state_count": 120,
+      "projector_state_counts_by_label": [
+        1,
+        2,
+        6,
+        24,
+        120
+      ],
+      "projector_trace": "2",
+      "separator_term_count": 180,
+      "source_partition": [
+        3,
+        1,
+        1
+      ],
+      "square_free": true,
+      "tableau_content_vector": [
+        0,
+        -1,
+        1,
+        0,
+        2
+      ],
+      "tableau_index": 0,
+      "target_partition": [
+        3,
+        2
+      ]
+    },
+    {
+      "characteristic_polynomial_coefficients": [
+        "1",
+        "-4/45",
+        "-1/324"
+      ],
+      "discriminant": "41/2025",
+      "exact_minimum_gap": "sqrt(41)/45",
+      "explicit_pair_state_space_size": 518400,
+      "kronecker_multiplicity": 2,
+      "n": 6,
+      "power_state_counts": [
+        58080,
+        484912
+      ],
+      "power_traces": [
+        "4/45",
+        "19/1350"
+      ],
+      "projector_state_count": 560,
+      "projector_state_counts_by_label": [
+        1,
+        2,
+        6,
+        24,
+        120,
+        560
+      ],
+      "projector_trace": "2",
+      "separator_term_count": 480,
+      "source_partition": [
+        4,
+        2
+      ],
+      "square_free": true,
+      "tableau_content_vector": [
+        0,
+        -1,
+        1,
+        0,
+        2,
+        3
+      ],
+      "tableau_index": 0,
+      "target_partition": [
+        4,
+        2
+      ]
+    }
+  ],
+  "status": "exact-projector-trace-identity-proved-explicit-evaluator-falsified",
+  "summary": "An exact YJM tableau projector reduces multiplicity-block moments to ordinary representation traces. Rational n=5 and n=6 controls verify the construction, while 93.5% pair-state saturation at n=6 kills literal group-algebra expansion as the scalable route.",
+  "theorem_contract": {
+    "commutant": "A diagonal-S_n-commuting separator H restricts to identity on V_nu tensor a multiplicity operator M_nu.",
+    "control_arithmetic": "The n=5 and n=6 controls expand P_T and H over rational pair-group algebra and recover exact square-free quadratics.",
+    "decomposition": "Under the diagonal S_n action, V_lambda tensor V_lambda decomposes as a direct sum of V_nu tensor M_nu.",
+    "joint_spectrum": "Diagonal Jucys-Murphy elements have simple joint content spectrum indexed by standard tableaux across all irreps.",
+    "projector": "The product of univariate Lagrange projectors for one content vector is |T><T| tensor identity on M_nu and vanishes on every other tableau line.",
+    "scaling_boundary": "The identity is exact, but literal pair-group expansion has (n!)^2 states and nearly saturates that space by degree two at n=6. A Young-tower or centralizer recurrence is still required.",
+    "trace_identity": "Therefore Tr(P_T H^d)=Tr(M_nu^d) exactly for every d>=0."
+  }
+}
