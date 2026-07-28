@@ -1,8 +1,8 @@
 {
-  "created_at": "2026-07-27T19:11:23.377889+00:00",
+  "created_at": "2026-07-28T06:54:33.339477+00:00",
   "history_artifact": "research/experiment_run_history.json",
-  "history_count": 189,
-  "trend_count": 148,
+  "history_count": 203,
+  "trend_count": 160,
   "trends": [
     {
       "blocking_run_count": 1,
@@ -2767,6 +2767,127 @@
     },
     {
       "blocking_run_count": 1,
+      "experiment_id": "EXP-COSET-CARRIER-INFORMATION-AUDIT",
+      "falsifier_count_sequence": [
+        4
+      ],
+      "interpretation": "Repeated runs continue to trigger falsifiers; this is proof debt, not progress.",
+      "latest_result_id": "RESULT-EXP-COSET-CARRIER-INFORMATION-AUDIT-COSET",
+      "latest_status": "carrier-refinement-finite-signal-dominated-by-simple-strong-fourier-baseline",
+      "latest_summary": "Searched 1744 parity-complete separator rules on 2 carrier-sensitive controls. All improve on YJM-only information to some extent, but the simple product Young-basis baseline dominates the best searched joint measurement on every control.",
+      "numeric_metric_trends": {
+        "all_n_information_advantage_theorem_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        },
+        "classical_separation_theorem_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        },
+        "coefficient_vector_count": {
+          "delta": 0.0,
+          "first": 1744.0,
+          "latest": 1744.0,
+          "max": 1744.0,
+          "min": 1744.0,
+          "observations": 1
+        },
+        "finite_control_count": {
+          "delta": 0.0,
+          "first": 2.0,
+          "latest": 2.0,
+          "max": 2.0,
+          "min": 2.0,
+          "observations": 1
+        },
+        "hidden_involution_decoder_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        },
+        "joint_separator_information_gain_control_count": {
+          "delta": 0.0,
+          "first": 2.0,
+          "latest": 2.0,
+          "max": 2.0,
+          "min": 2.0,
+          "observations": 1
+        },
+        "maximum_best_joint_bayes_success_probability": {
+          "delta": 0.0,
+          "first": 0.122228268750858,
+          "latest": 0.122228268750858,
+          "max": 0.122228268750858,
+          "min": 0.122228268750858,
+          "observations": 1
+        },
+        "maximum_best_joint_information_fraction_of_product_baseline": {
+          "delta": 0.0,
+          "first": 0.5677644010801868,
+          "latest": 0.5677644010801868,
+          "max": 0.5677644010801868,
+          "min": 0.5677644010801868,
+          "observations": 1
+        },
+        "maximum_best_joint_mutual_information_bits": {
+          "delta": 0.0,
+          "first": 0.2534002216100799,
+          "latest": 0.2534002216100799,
+          "max": 0.2534002216100799,
+          "min": 0.2534002216100799,
+          "observations": 1
+        },
+        "maximum_measurement_normalization_residual": {
+          "delta": 0.0,
+          "first": 6.661338147750939e-16,
+          "latest": 6.661338147750939e-16,
+          "max": 6.661338147750939e-16,
+          "min": 6.661338147750939e-16,
+          "observations": 1
+        },
+        "maximum_product_young_basis_mutual_information_bits": {
+          "delta": 0.0,
+          "first": 0.7482565559602771,
+          "latest": 0.7482565559602771,
+          "max": 0.7482565559602771,
+          "min": 0.7482565559602771,
+          "observations": 1
+        },
+        "product_strong_fourier_dominates_all_searched_rules_count": {
+          "delta": 0.0,
+          "first": 2.0,
+          "latest": 2.0,
+          "max": 2.0,
+          "min": 2.0,
+          "observations": 1
+        },
+        "separator_only_zero_information_verified_count": {
+          "delta": 0.0,
+          "first": 2.0,
+          "latest": 2.0,
+          "max": 2.0,
+          "min": 2.0,
+          "observations": 1
+        }
+      },
+      "run_count": 1,
+      "status_sequence": [
+        "carrier-refinement-finite-signal-dominated-by-simple-strong-fourier-baseline"
+      ]
+    },
+    {
+      "blocking_run_count": 1,
       "experiment_id": "EXP-COSET-CFI-BASE-FAMILY-SEARCH",
       "falsifier_count_sequence": [
         2
@@ -3366,6 +3487,103 @@
     },
     {
       "blocking_run_count": 1,
+      "experiment_id": "EXP-COSET-COMMUTANT-INFORMATION-OBSTRUCTION",
+      "falsifier_count_sequence": [
+        4
+      ],
+      "interpretation": "Repeated runs continue to trigger falsifiers; this is proof debt, not progress.",
+      "latest_result_id": "RESULT-EXP-COSET-COMMUTANT-INFORMATION-OBSTRUCTION-COSET",
+      "latest_status": "commutant-only-decoder-route-falsified-carrier-sensitive-covariant-route-required",
+      "latest_summary": "Proved for all copy counts that diagonal-action commutant POVM outcomes have exactly zero information about the individual hidden involution, and verified the boundary on a nontrivial S_5 multiplicity control.",
+      "numeric_metric_trends": {
+        "carrier_sensitive_covariant_decoder_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        },
+        "commutant_only_hidden_involution_decoder_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        },
+        "exact_commutant_only_mutual_information_bits": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        },
+        "finite_commutant_distribution_invariance_verified_count": {
+          "delta": 0.0,
+          "first": 1.0,
+          "latest": 1.0,
+          "max": 1.0,
+          "min": 1.0,
+          "observations": 1
+        },
+        "finite_control_count": {
+          "delta": 0.0,
+          "first": 1.0,
+          "latest": 1.0,
+          "max": 1.0,
+          "min": 1.0,
+          "observations": 1
+        },
+        "finite_noncommutant_escape_witness_count": {
+          "delta": 0.0,
+          "first": 1.0,
+          "latest": 1.0,
+          "max": 1.0,
+          "min": 1.0,
+          "observations": 1
+        },
+        "general_all_k_commutant_zero_information_theorem_count": {
+          "delta": 0.0,
+          "first": 1.0,
+          "latest": 1.0,
+          "max": 1.0,
+          "min": 1.0,
+          "observations": 1
+        },
+        "maximum_finite_commutant_expectation_range": {
+          "delta": 0.0,
+          "first": 2.220446049250313e-15,
+          "latest": 2.220446049250313e-15,
+          "max": 2.220446049250313e-15,
+          "min": 2.220446049250313e-15,
+          "observations": 1
+        },
+        "maximum_finite_commutant_outcome_total_variation": {
+          "delta": 0.0,
+          "first": 1.0130785099704553e-15,
+          "latest": 1.0130785099704553e-15,
+          "max": 1.0130785099704553e-15,
+          "min": 1.0130785099704553e-15,
+          "observations": 1
+        },
+        "maximum_noncommutant_basis_effect_probability_range": {
+          "delta": 0.0,
+          "first": 0.109375,
+          "latest": 0.109375,
+          "max": 0.109375,
+          "min": 0.109375,
+          "observations": 1
+        }
+      },
+      "run_count": 1,
+      "status_sequence": [
+        "commutant-only-decoder-route-falsified-carrier-sensitive-covariant-route-required"
+      ]
+    },
+    {
+      "blocking_run_count": 1,
       "experiment_id": "EXP-COSET-COVARIANT-FRAME",
       "falsifier_count_sequence": [
         4
@@ -3475,6 +3693,103 @@
       "run_count": 1,
       "status_sequence": [
         "one-copy-frame-solved-multi-copy-covariant-decoder-open"
+      ]
+    },
+    {
+      "blocking_run_count": 1,
+      "experiment_id": "EXP-COSET-ENTANGLEMENT-WIDTH-GATE",
+      "falsifier_count_sequence": [
+        4
+      ],
+      "interpretation": "Repeated runs continue to trigger falsifiers; this is proof debt, not progress.",
+      "latest_result_id": "RESULT-EXP-COSET-ENTANGLEMENT-WIDTH-GATE-COSET",
+      "latest_status": "bounded-copy-coset-route-quarantined-growing-entanglement-width-architecture-missing",
+      "latest_summary": "Applied two primary Fourier-sampling no-go theorems to 11 current bounded-register mechanisms. Their maximum joint width is 3; all remain local primitives pending an Omega(n log n)-width measurement architecture.",
+      "numeric_metric_trends": {
+        "bounded_mechanism_end_to_end_information_eligible_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        },
+        "bounded_register_mechanism_count": {
+          "delta": 0.0,
+          "first": 11.0,
+          "latest": 11.0,
+          "max": 11.0,
+          "min": 11.0,
+          "observations": 1
+        },
+        "compressed_covariant_outcome_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        },
+        "growing_entanglement_width_architecture_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        },
+        "growing_width_hidden_involution_decoder_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        },
+        "maximum_current_joint_register_count": {
+          "delta": 0.0,
+          "first": 3.0,
+          "latest": 3.0,
+          "max": 3.0,
+          "min": 3.0,
+          "observations": 1
+        },
+        "omega_n_log_n_entanglement_width_theorem_count": {
+          "delta": 0.0,
+          "first": 1.0,
+          "latest": 1.0,
+          "max": 1.0,
+          "min": 1.0,
+          "observations": 1
+        },
+        "polynomial_growing_associator_circuit_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        },
+        "primary_literature_theorem_count": {
+          "delta": 0.0,
+          "first": 2.0,
+          "latest": 2.0,
+          "max": 2.0,
+          "min": 2.0,
+          "observations": 1
+        },
+        "single_register_arbitrary_povm_no_go_theorem_count": {
+          "delta": 0.0,
+          "first": 1.0,
+          "latest": 1.0,
+          "max": 1.0,
+          "min": 1.0,
+          "observations": 1
+        }
+      },
+      "run_count": 1,
+      "status_sequence": [
+        "bounded-copy-coset-route-quarantined-growing-entanglement-width-architecture-missing"
       ]
     },
     {
@@ -3681,6 +3996,127 @@
       "run_count": 1,
       "status_sequence": [
         "gm-search-dequantized-current-rows"
+      ]
+    },
+    {
+      "blocking_run_count": 1,
+      "experiment_id": "EXP-COSET-GROWING-WIDTH-ARCHITECTURE",
+      "falsifier_count_sequence": [
+        4
+      ],
+      "interpretation": "Repeated runs continue to trigger falsifiers; this is proof debt, not progress.",
+      "latest_result_id": "RESULT-EXP-COSET-GROWING-WIDTH-ARCHITECTURE-COSET",
+      "latest_status": "growing-width-skeleton-typed-associator-outcome-information-decoder-open",
+      "latest_summary": "Type-checked 3 multiregister architectures. 1 survives structural no-go gates, but zero has proved growing associators, outcomes, information, decoding, and classical separation.",
+      "numeric_metric_trends": {
+        "architecture_count": {
+          "delta": 0.0,
+          "first": 3.0,
+          "latest": 3.0,
+          "max": 3.0,
+          "min": 3.0,
+          "observations": 1
+        },
+        "blocking_proof_issue_count": {
+          "delta": 0.0,
+          "first": 18.0,
+          "latest": 18.0,
+          "max": 18.0,
+          "min": 18.0,
+          "observations": 1
+        },
+        "compressed_covariant_outcome_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        },
+        "fatal_validation_issue_count": {
+          "delta": 0.0,
+          "first": 6.0,
+          "latest": 6.0,
+          "max": 6.0,
+          "min": 6.0,
+          "observations": 1
+        },
+        "growing_width_hidden_involution_decoder_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        },
+        "growing_width_information_theorem_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        },
+        "maximum_compliant_joint_register_width_at_n64": {
+          "delta": 0.0,
+          "first": 384.0,
+          "latest": 384.0,
+          "max": 384.0,
+          "min": 384.0,
+          "observations": 1
+        },
+        "minimum_compliant_merge_depth_at_n64": {
+          "delta": 0.0,
+          "first": 9.0,
+          "latest": 9.0,
+          "max": 9.0,
+          "min": 9.0,
+          "observations": 1
+        },
+        "polynomial_growing_associator_circuit_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        },
+        "proof_complete_architecture_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        },
+        "scaling_row_count": {
+          "delta": 0.0,
+          "first": 12.0,
+          "latest": 12.0,
+          "max": 12.0,
+          "min": 12.0,
+          "observations": 1
+        },
+        "structurally_compliant_architecture_count": {
+          "delta": 0.0,
+          "first": 1.0,
+          "latest": 1.0,
+          "max": 1.0,
+          "min": 1.0,
+          "observations": 1
+        },
+        "structurally_rejected_architecture_count": {
+          "delta": 0.0,
+          "first": 2.0,
+          "latest": 2.0,
+          "max": 2.0,
+          "min": 2.0,
+          "observations": 1
+        }
+      },
+      "run_count": 1,
+      "status_sequence": [
+        "growing-width-skeleton-typed-associator-outcome-information-decoder-open"
       ]
     },
     {
@@ -4662,6 +5098,143 @@
     },
     {
       "blocking_run_count": 1,
+      "experiment_id": "EXP-COSET-SAME-HIDDEN-TARGET-LAW",
+      "falsifier_count_sequence": [
+        4
+      ],
+      "interpretation": "Repeated runs continue to trigger falsifiers; this is proof debt, not progress.",
+      "latest_result_id": "RESULT-EXP-COSET-SAME-HIDDEN-TARGET-LAW-COSET",
+      "latest_status": "same-hidden-target-law-proved-operational-measurement-and-decoder-open",
+      "latest_summary": "Derived and exactly normalized the shared-hidden target law on 8 finite ensemble controls through n=10. The prior dimension-weighted coupling reference differs from the operational law; no decoder or speedup is promoted.",
+      "numeric_metric_trends": {
+        "coherent_kronecker_target_measurement_theorem_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        },
+        "dimension_coupling_reference_mismatch_record_count": {
+          "delta": 0.0,
+          "first": 8.0,
+          "latest": 8.0,
+          "max": 8.0,
+          "min": 8.0,
+          "observations": 1
+        },
+        "exact_normalization_verified_record_count": {
+          "delta": 0.0,
+          "first": 8.0,
+          "latest": 8.0,
+          "max": 8.0,
+          "min": 8.0,
+          "observations": 1
+        },
+        "fixed_source_coverage_correction_count": {
+          "delta": 0.0,
+          "first": 6.0,
+          "latest": 6.0,
+          "max": 6.0,
+          "min": 6.0,
+          "observations": 1
+        },
+        "frame_scalar_identity_verified_record_count": {
+          "delta": 0.0,
+          "first": 8.0,
+          "latest": 8.0,
+          "max": 8.0,
+          "min": 8.0,
+          "observations": 1
+        },
+        "general_exact_character_formula_theorem_count": {
+          "delta": 0.0,
+          "first": 1.0,
+          "latest": 1.0,
+          "max": 1.0,
+          "min": 1.0,
+          "observations": 1
+        },
+        "hidden_involution_decoder_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        },
+        "maximum_expected_conditional_tv_from_dimension_coupling": {
+          "delta": 0.0,
+          "first": 0.09777777777777778,
+          "latest": 0.09777777777777778,
+          "max": 0.09777777777777778,
+          "min": 0.09777777777777778,
+          "observations": 1
+        },
+        "maximum_n10_same_hidden_certified_conditional_probability": {
+          "delta": 0.0,
+          "first": 0.013583713107638888,
+          "latest": 0.013583713107638888,
+          "max": 0.013583713107638888,
+          "min": 0.013583713107638888,
+          "observations": 1
+        },
+        "maximum_natural_nontrivial_multiplicity_mass": {
+          "delta": 0.0,
+          "first": 0.9965084673204702,
+          "latest": 0.9965084673204702,
+          "max": 0.9965084673204702,
+          "min": 0.9965084673204702,
+          "observations": 1
+        },
+        "maximum_scalar_collision_source_pair_mass": {
+          "delta": 0.0,
+          "first": 0.024691358024691357,
+          "latest": 0.024691358024691357,
+          "max": 0.024691358024691357,
+          "min": 0.024691358024691357,
+          "observations": 1
+        },
+        "maximum_scalar_collision_target_joint_mass": {
+          "delta": 0.0,
+          "first": 0.009876543209876543,
+          "latest": 0.009876543209876543,
+          "max": 0.009876543209876543,
+          "min": 0.009876543209876543,
+          "observations": 1
+        },
+        "maximum_source_pair_conditional_tv_from_dimension_coupling": {
+          "delta": 0.0,
+          "first": 0.46,
+          "latest": 0.46,
+          "max": 0.46,
+          "min": 0.46,
+          "observations": 1
+        },
+        "minimum_n10_same_hidden_certified_conditional_probability": {
+          "delta": 0.0,
+          "first": 0.011389838324652778,
+          "latest": 0.011389838324652778,
+          "max": 0.011389838324652778,
+          "min": 0.011389838324652778,
+          "observations": 1
+        },
+        "same_hidden_target_law_record_count": {
+          "delta": 0.0,
+          "first": 8.0,
+          "latest": 8.0,
+          "max": 8.0,
+          "min": 8.0,
+          "observations": 1
+        }
+      },
+      "run_count": 1,
+      "status_sequence": [
+        "same-hidden-target-law-proved-operational-measurement-and-decoder-open"
+      ]
+    },
+    {
+      "blocking_run_count": 1,
       "experiment_id": "EXP-COSET-STABLE-SECOND-MOMENT-CERTIFICATE",
       "falsifier_count_sequence": [
         4
@@ -5183,6 +5756,151 @@
       "run_count": 1,
       "status_sequence": [
         "collective-measurement-distinguishability-debt"
+      ]
+    },
+    {
+      "blocking_run_count": 1,
+      "experiment_id": "EXP-COSET-STRONG-FOURIER-INFORMATION-SCALING",
+      "falsifier_count_sequence": [
+        4
+      ],
+      "interpretation": "Repeated runs continue to trigger falsifiers; this is proof debt, not progress.",
+      "latest_result_id": "RESULT-EXP-COSET-STRONG-FOURIER-INFORMATION-SCALING-COSET",
+      "latest_status": "natural-strong-fourier-baseline-small-collective-carrier-advantage-required",
+      "latest_summary": "Computed complete natural one- and two-copy Young-basis strong Fourier channels through n=8. At the largest n, one copy carries 0.02441 bits, far below the near-one-bit Holevo bound.",
+      "numeric_metric_trends": {
+        "collective_carrier_advantage_theorem_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        },
+        "hidden_involution_decoder_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        },
+        "largest_n_one_copy_carrier_mutual_information_bits": {
+          "delta": 0.0,
+          "first": 0.024410249825322694,
+          "latest": 0.024410249825322694,
+          "max": 0.024410249825322694,
+          "min": 0.024410249825322694,
+          "observations": 1
+        },
+        "largest_n_two_copy_carrier_mutual_information_bits": {
+          "delta": 0.0,
+          "first": 0.04878977060845102,
+          "latest": 0.04878977060845102,
+          "max": 0.04878977060845102,
+          "min": 0.04878977060845102,
+          "observations": 1
+        },
+        "maximum_n": {
+          "delta": 0.0,
+          "first": 8.0,
+          "latest": 8.0,
+          "max": 8.0,
+          "min": 8.0,
+          "observations": 1
+        },
+        "maximum_tail_one_copy_bayes_advantage_over_guess": {
+          "delta": 0.0,
+          "first": 1.6561908895502642,
+          "latest": 1.6561908895502642,
+          "max": 1.6561908895502642,
+          "min": 1.6561908895502642,
+          "observations": 1
+        },
+        "maximum_tail_one_copy_carrier_fraction_of_holevo": {
+          "delta": 0.0,
+          "first": 0.08270467984029975,
+          "latest": 0.08270467984029975,
+          "max": 0.08270467984029975,
+          "min": 0.08270467984029975,
+          "observations": 1
+        },
+        "maximum_tail_two_copy_bayes_advantage_over_guess": {
+          "delta": 0.0,
+          "first": 2.205892199634375,
+          "latest": 2.205892199634375,
+          "max": 2.205892199634375,
+          "min": 2.205892199634375,
+          "observations": 1
+        },
+        "minimum_tail_one_copy_carrier_fraction_of_holevo": {
+          "delta": 0.0,
+          "first": 0.02457393473963597,
+          "latest": 0.02457393473963597,
+          "max": 0.02457393473963597,
+          "min": 0.02457393473963597,
+          "observations": 1
+        },
+        "minimum_tail_one_copy_carrier_mutual_information_bits": {
+          "delta": 0.0,
+          "first": 0.024410249825322694,
+          "latest": 0.024410249825322694,
+          "max": 0.024410249825322694,
+          "min": 0.024410249825322694,
+          "observations": 1
+        },
+        "minimum_tail_separate_strong_fourier_bounded_error_copy_lower_bound": {
+          "delta": 0.0,
+          "first": 22.0,
+          "latest": 22.0,
+          "max": 22.0,
+          "min": 22.0,
+          "observations": 1
+        },
+        "natural_strong_fourier_asymptotic_decay_theorem_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        },
+        "one_copy_n8_carrier_mutual_information_bits": {
+          "delta": 0.0,
+          "first": 0.024410249825322694,
+          "latest": 0.024410249825322694,
+          "max": 0.024410249825322694,
+          "min": 0.024410249825322694,
+          "observations": 1
+        },
+        "record_count": {
+          "delta": 0.0,
+          "first": 6.0,
+          "latest": 6.0,
+          "max": 6.0,
+          "min": 6.0,
+          "observations": 1
+        },
+        "two_copy_n8_carrier_mutual_information_bits": {
+          "delta": 0.0,
+          "first": 0.04878977060845102,
+          "latest": 0.04878977060845102,
+          "max": 0.04878977060845102,
+          "min": 0.04878977060845102,
+          "observations": 1
+        },
+        "weak_label_zero_information_verified_count": {
+          "delta": 0.0,
+          "first": 6.0,
+          "latest": 6.0,
+          "max": 6.0,
+          "min": 6.0,
+          "observations": 1
+        }
+      },
+      "run_count": 1,
+      "status_sequence": [
+        "natural-strong-fourier-baseline-small-collective-carrier-advantage-required"
       ]
     },
     {
@@ -7725,6 +8443,143 @@
       ]
     },
     {
+      "blocking_run_count": 1,
+      "experiment_id": "EXP-COSET-TYPICAL-PARITY-COMPLETE-SEPARATOR",
+      "falsifier_count_sequence": [
+        5
+      ],
+      "interpretation": "Repeated runs continue to trigger falsifiers; this is proof debt, not progress.",
+      "latest_result_id": "RESULT-EXP-COSET-TYPICAL-PARITY-COMPLETE-SEPARATOR-COSET",
+      "latest_status": "parity-complete-all-source-finite-candidate-survives-n5-through-n7-awaits-n8-and-all-n-proof",
+      "latest_summary": "Searched 1744 primitive rules over 663 all-source blocks through n=7. The best parity-complete rule has zero finite collisions and minimum numerical raw gap 0.00948018; the former scalar blocks are exactly repaired.",
+      "numeric_metric_trends": {
+        "all_n_square_free_theorem_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        },
+        "all_source_nontrivial_block_count": {
+          "delta": 0.0,
+          "first": 663.0,
+          "latest": 663.0,
+          "max": 663.0,
+          "min": 663.0,
+          "observations": 1
+        },
+        "best_candidate_collision_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        },
+        "best_candidate_minimum_numerical_raw_gap": {
+          "delta": 0.0,
+          "first": 0.009480178272655695,
+          "latest": 0.009480178272655695,
+          "max": 0.009480178272655695,
+          "min": 0.009480178272655695,
+          "observations": 1
+        },
+        "coefficient_vector_count": {
+          "delta": 0.0,
+          "first": 1744.0,
+          "latest": 1744.0,
+          "max": 1744.0,
+          "min": 1744.0,
+          "observations": 1
+        },
+        "coherent_partition_adaptive_separator_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        },
+        "collision_free_finite_candidate_count": {
+          "delta": 0.0,
+          "first": 216.0,
+          "latest": 216.0,
+          "max": 216.0,
+          "min": 216.0,
+          "observations": 1
+        },
+        "finite_n_count": {
+          "delta": 0.0,
+          "first": 3.0,
+          "latest": 3.0,
+          "max": 3.0,
+          "min": 3.0,
+          "observations": 1
+        },
+        "former_scalar_block_exact_repair_count": {
+          "delta": 0.0,
+          "first": 2.0,
+          "latest": 2.0,
+          "max": 2.0,
+          "min": 2.0,
+          "observations": 1
+        },
+        "hidden_involution_decoder_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        },
+        "inverse_polynomial_normalized_gap_theorem_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        },
+        "maximum_n": {
+          "delta": 0.0,
+          "first": 7.0,
+          "latest": 7.0,
+          "max": 7.0,
+          "min": 7.0,
+          "observations": 1
+        },
+        "minimum_n": {
+          "delta": 0.0,
+          "first": 5.0,
+          "latest": 5.0,
+          "max": 5.0,
+          "min": 5.0,
+          "observations": 1
+        },
+        "parity_complete_orientation_count": {
+          "delta": 0.0,
+          "first": 1.0,
+          "latest": 1.0,
+          "max": 1.0,
+          "min": 1.0,
+          "observations": 1
+        },
+        "same_hidden_involution_target_outcome_law_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        }
+      },
+      "run_count": 1,
+      "status_sequence": [
+        "parity-complete-all-source-finite-candidate-survives-n5-through-n7-awaits-n8-and-all-n-proof"
+      ]
+    },
+    {
       "blocking_run_count": 2,
       "experiment_id": "EXP-COSET-TYPICAL-PORTFOLIO-COLLISION-CERTIFICATE",
       "falsifier_count_sequence": [
@@ -7849,6 +8704,151 @@
     },
     {
       "blocking_run_count": 1,
+      "experiment_id": "EXP-COSET-TYPICAL-SOURCE-COVERAGE",
+      "falsifier_count_sequence": [
+        5
+      ],
+      "interpretation": "Repeated runs continue to trigger falsifiers; this is proof debt, not progress.",
+      "latest_result_id": "RESULT-EXP-COSET-TYPICAL-SOURCE-COVERAGE-COSET",
+      "latest_status": "fixed-source-typical-ladder-falsified-as-natural-input-route-uniform-label-adaptation-required",
+      "latest_summary": "Combined exact finite source/target probability accounting with the 2026 maximal-irrep-dimension theorem. The fixed-source n=10 ladder resolves 1.139% of conditional coupling mass, while any polynomial source catalog is asymptotically stretched-exponentially rare.",
+      "numeric_metric_trends": {
+        "literature_linked_maximal_dimension_theorem_count": {
+          "delta": 0.0,
+          "first": 1.0,
+          "latest": 1.0,
+          "max": 1.0,
+          "min": 1.0,
+          "observations": 1
+        },
+        "maximum_finite_two_copy_pipeline_coverage": {
+          "delta": 0.0,
+          "first": 0.03515625,
+          "latest": 0.03515625,
+          "max": 0.03515625,
+          "min": 0.03515625,
+          "observations": 1
+        },
+        "minimum_finite_two_copy_pipeline_coverage": {
+          "delta": 0.0,
+          "first": 0.000300909828952157,
+          "latest": 0.000300909828952157,
+          "max": 0.000300909828952157,
+          "min": 0.000300909828952157,
+          "observations": 1
+        },
+        "n10_certified_target_coupling_mass": {
+          "delta": 0.0,
+          "first": 0.011389838324652778,
+          "latest": 0.011389838324652778,
+          "max": 0.011389838324652778,
+          "min": 0.011389838324652778,
+          "observations": 1
+        },
+        "n10_exactly_certified_nontrivial_target_count": {
+          "delta": 0.0,
+          "first": 12.0,
+          "latest": 12.0,
+          "max": 12.0,
+          "min": 12.0,
+          "observations": 1
+        },
+        "n10_largest_unresolved_target_coupling_mass": {
+          "delta": 0.0,
+          "first": 0.15234375,
+          "latest": 0.15234375,
+          "max": 0.15234375,
+          "min": 0.15234375,
+          "observations": 1
+        },
+        "n10_nontrivial_multiplicity_target_count": {
+          "delta": 0.0,
+          "first": 40.0,
+          "latest": 40.0,
+          "max": 40.0,
+          "min": 40.0,
+          "observations": 1
+        },
+        "n8_exact_target_coupling_mass": {
+          "delta": 0.0,
+          "first": 1.0,
+          "latest": 1.0,
+          "max": 1.0,
+          "min": 1.0,
+          "observations": 1
+        },
+        "n9_exact_target_coupling_mass": {
+          "delta": 0.0,
+          "first": 1.0,
+          "latest": 1.0,
+          "max": 1.0,
+          "min": 1.0,
+          "observations": 1
+        },
+        "natural_input_inverse_polynomial_coverage_theorem_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        },
+        "polynomial_precertified_source_catalog_no_go_theorem_count": {
+          "delta": 0.0,
+          "first": 1.0,
+          "latest": 1.0,
+          "max": 1.0,
+          "min": 1.0,
+          "observations": 1
+        },
+        "source_coverage_record_count": {
+          "delta": 0.0,
+          "first": 6.0,
+          "latest": 6.0,
+          "max": 6.0,
+          "min": 6.0,
+          "observations": 1
+        },
+        "typical_label_hidden_involution_decoder_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        },
+        "uniform_arbitrary_source_partition_coherent_transform_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        },
+        "uniform_arbitrary_source_partition_gap_theorem_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        },
+        "uniform_arbitrary_source_partition_separator_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        }
+      },
+      "run_count": 1,
+      "status_sequence": [
+        "fixed-source-typical-ladder-falsified-as-natural-input-route-uniform-label-adaptation-required"
+      ]
+    },
+    {
+      "blocking_run_count": 1,
       "experiment_id": "EXP-COSET-TYPICAL-TRANSFER-SUPPORT-GROWTH",
       "falsifier_count_sequence": [
         4
@@ -7958,6 +8958,143 @@
       "run_count": 1,
       "status_sequence": [
         "direct-fixed-support-extension-falsified-full-support-recurrence-open"
+      ]
+    },
+    {
+      "blocking_run_count": 1,
+      "experiment_id": "EXP-COSET-TYPICAL-UNIFORM-SOURCE-PROBE",
+      "falsifier_count_sequence": [
+        5
+      ],
+      "interpretation": "Repeated runs continue to trigger falsifiers; this is proof debt, not progress.",
+      "latest_result_id": "RESULT-EXP-COSET-TYPICAL-UNIFORM-SOURCE-PROBE-COSET",
+      "latest_status": "fixed-typical-separator-falsified-on-all-source-probe-label-adaptive-repair-required",
+      "latest_summary": "Audited 95 nontrivial blocks over every ordered source pair at n=(5, 6); found 2 exact scalar collisions and 3 numerical repeated-root blocks.",
+      "numeric_metric_trends": {
+        "exact_character_moment_block_count": {
+          "delta": 0.0,
+          "first": 95.0,
+          "latest": 95.0,
+          "max": 95.0,
+          "min": 95.0,
+          "observations": 1
+        },
+        "exact_multiplicity_two_simple_spectrum_count": {
+          "delta": 0.0,
+          "first": 80.0,
+          "latest": 80.0,
+          "max": 80.0,
+          "min": 80.0,
+          "observations": 1
+        },
+        "exact_scalar_collision_count": {
+          "delta": 0.0,
+          "first": 2.0,
+          "latest": 2.0,
+          "max": 2.0,
+          "min": 2.0,
+          "observations": 1
+        },
+        "finite_n_count": {
+          "delta": 0.0,
+          "first": 2.0,
+          "latest": 2.0,
+          "max": 2.0,
+          "min": 2.0,
+          "observations": 1
+        },
+        "fixed_separator_uniform_all_source_finite_theorem_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        },
+        "hidden_involution_decoder_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        },
+        "maximum_exact_moment_residual": {
+          "delta": 0.0,
+          "first": 1.8041124150158794e-16,
+          "latest": 1.8041124150158794e-16,
+          "max": 1.8041124150158794e-16,
+          "min": 1.8041124150158794e-16,
+          "observations": 1
+        },
+        "maximum_natural_source_pair_mass_with_exact_scalar_collision": {
+          "delta": 0.0,
+          "first": 0.024691358024691357,
+          "latest": 0.024691358024691357,
+          "max": 0.024691358024691357,
+          "min": 0.024691358024691357,
+          "observations": 1
+        },
+        "minimum_positive_numerical_gap": {
+          "delta": 0.0,
+          "first": 0.02406821653802705,
+          "latest": 0.02406821653802705,
+          "max": 0.02406821653802705,
+          "min": 0.02406821653802705,
+          "observations": 1
+        },
+        "nontrivial_multiplicity_block_count": {
+          "delta": 0.0,
+          "first": 95.0,
+          "latest": 95.0,
+          "max": 95.0,
+          "min": 95.0,
+          "observations": 1
+        },
+        "numerical_repeated_eigenvalue_block_count": {
+          "delta": 0.0,
+          "first": 3.0,
+          "latest": 3.0,
+          "max": 3.0,
+          "min": 3.0,
+          "observations": 1
+        },
+        "ordered_source_pair_count": {
+          "delta": 0.0,
+          "first": 170.0,
+          "latest": 170.0,
+          "max": 170.0,
+          "min": 170.0,
+          "observations": 1
+        },
+        "same_hidden_involution_target_outcome_law_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        },
+        "uniform_arbitrary_source_gap_theorem_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        },
+        "uniform_separator_repair_rule_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        }
+      },
+      "run_count": 1,
+      "status_sequence": [
+        "fixed-typical-separator-falsified-on-all-source-probe-label-adaptive-repair-required"
       ]
     },
     {
@@ -11243,6 +12380,436 @@
       ]
     },
     {
+      "blocking_run_count": 3,
+      "experiment_id": "EXP-DHS-DCP-MARKER-TARGET-ADAPTIVE-BEAM",
+      "falsifier_count_sequence": [
+        4,
+        4,
+        4
+      ],
+      "interpretation": "Repeated runs continue to trigger falsifiers; this is proof debt, not progress.",
+      "latest_result_id": "RESULT-EXP-DHS-DCP-MARKER-TARGET-ADAPTIVE-BEAM-TARGET-ADAPTIVE-BEAM",
+      "latest_status": "target-adaptive-polynomial-beam-finite-tail-collapse",
+      "latest_summary": "Ran 63 source-native target-adaptive beam trials through n=56. Maximum-power tail success was 0 standard and 0 carry-sliced; no inverse-polynomial source theorem follows.",
+      "numeric_metric_trends": {
+        "exact_legality_source_instance_count": {
+          "delta": 0.0,
+          "first": 3.0,
+          "latest": 3.0,
+          "max": 3.0,
+          "min": 3.0,
+          "observations": 2
+        },
+        "exact_legality_trial_count": {
+          "delta": 3.0,
+          "first": 6.0,
+          "latest": 9.0,
+          "max": 15.0,
+          "min": 6.0,
+          "observations": 3
+        },
+        "exact_rounding_failure_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 3
+        },
+        "independent_uniform_target_trial_count": {
+          "delta": 57.0,
+          "first": 6.0,
+          "latest": 63.0,
+          "max": 90.0,
+          "min": 6.0,
+          "observations": 3
+        },
+        "invalid_marker_candidate_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 3
+        },
+        "largest_n_with_carry_success": {
+          "delta": 30.0,
+          "first": 10.0,
+          "latest": 40.0,
+          "max": 40.0,
+          "min": 10.0,
+          "observations": 3
+        },
+        "largest_n_with_standard_success": {
+          "delta": 38.0,
+          "first": 10.0,
+          "latest": 48.0,
+          "max": 48.0,
+          "min": 10.0,
+          "observations": 3
+        },
+        "maximum_beam_width": {
+          "delta": 175516.0,
+          "first": 100.0,
+          "latest": 175616.0,
+          "max": 175616.0,
+          "min": 100.0,
+          "observations": 3
+        },
+        "maximum_carry_width_power": {
+          "delta": 1.0,
+          "first": 1.0,
+          "latest": 2.0,
+          "max": 2.0,
+          "min": 1.0,
+          "observations": 3
+        },
+        "maximum_n_bits": {
+          "delta": 46.0,
+          "first": 10.0,
+          "latest": 56.0,
+          "max": 56.0,
+          "min": 10.0,
+          "observations": 3
+        },
+        "maximum_standard_width_power": {
+          "delta": 1.0,
+          "first": 2.0,
+          "latest": 3.0,
+          "max": 3.0,
+          "min": 2.0,
+          "observations": 3
+        },
+        "polynomial_state_bound_theorem_count": {
+          "delta": 0.0,
+          "first": 1.0,
+          "latest": 1.0,
+          "max": 1.0,
+          "min": 1.0,
+          "observations": 3
+        },
+        "polynomial_verified_decoder_family_count": {
+          "delta": 0.0,
+          "first": 1.0,
+          "latest": 1.0,
+          "max": 1.0,
+          "min": 1.0,
+          "observations": 2
+        },
+        "polynomial_witness_decoder_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 3
+        },
+        "proved_inverse_polynomial_uniform_source_success_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 3
+        },
+        "row_count": {
+          "delta": 15.0,
+          "first": 6.0,
+          "latest": 21.0,
+          "max": 30.0,
+          "min": 6.0,
+          "observations": 3
+        },
+        "source_contract_satisfying_row_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 3
+        },
+        "source_instance_count": {
+          "delta": 3.0,
+          "first": 18.0,
+          "latest": 21.0,
+          "max": 21.0,
+          "min": 18.0,
+          "observations": 2
+        },
+        "state_bound_failure_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 3
+        },
+        "tail_carry_max_power_source_success_rate": {
+          "delta": -1.0,
+          "first": 1.0,
+          "latest": 0.0,
+          "max": 1.0,
+          "min": 0.0,
+          "observations": 3
+        },
+        "tail_carry_max_power_wilson_95_lower": {
+          "delta": 0.0,
+          "first": 5.551115123125783e-17,
+          "latest": 5.551115123125783e-17,
+          "max": 5.551115123125783e-17,
+          "min": 5.551115123125783e-17,
+          "observations": 1
+        },
+        "tail_carry_max_power_wilson_95_upper": {
+          "delta": 0.0,
+          "first": 0.5614970317550454,
+          "latest": 0.5614970317550454,
+          "max": 0.5614970317550454,
+          "min": 0.5614970317550454,
+          "observations": 1
+        },
+        "tail_standard_max_power_source_success_rate": {
+          "delta": -1.0,
+          "first": 1.0,
+          "latest": 0.0,
+          "max": 1.0,
+          "min": 0.0,
+          "observations": 3
+        },
+        "tail_standard_max_power_wilson_95_lower": {
+          "delta": 0.0,
+          "first": 5.551115123125783e-17,
+          "latest": 5.551115123125783e-17,
+          "max": 5.551115123125783e-17,
+          "min": 5.551115123125783e-17,
+          "observations": 1
+        },
+        "tail_standard_max_power_wilson_95_upper": {
+          "delta": 0.0,
+          "first": 0.5614970317550454,
+          "latest": 0.5614970317550454,
+          "max": 0.5614970317550454,
+          "min": 0.5614970317550454,
+          "observations": 1
+        },
+        "total_expanded_state_count": {
+          "delta": 269453580.0,
+          "first": 5589.0,
+          "latest": 269459169.0,
+          "max": 269459169.0,
+          "min": 5589.0,
+          "observations": 3
+        },
+        "trial_count": {
+          "delta": 57.0,
+          "first": 6.0,
+          "latest": 63.0,
+          "max": 90.0,
+          "min": 6.0,
+          "observations": 3
+        }
+      },
+      "run_count": 3,
+      "status_sequence": [
+        "target-adaptive-polynomial-beam-finite-survivor-proof-debt",
+        "target-adaptive-polynomial-beam-finite-survivor-proof-debt",
+        "target-adaptive-polynomial-beam-finite-tail-collapse"
+      ]
+    },
+    {
+      "blocking_run_count": 1,
+      "experiment_id": "EXP-DHS-DCP-MARKER-VULNERABLE-COORDINATE-DECODER",
+      "falsifier_count_sequence": [
+        1
+      ],
+      "interpretation": "Repeated runs continue to trigger falsifiers; this is proof debt, not progress.",
+      "latest_result_id": "RESULT-EXP-DHS-DCP-MARKER-VULNERABLE-COORDINATE-DECODER-DCP-MARKER-VULNERABLE-COORDINATES",
+      "latest_status": "polynomial-log-coordinate-decoder-finite-tail-collapse-source-law-open",
+      "latest_summary": "Tested 27 public-risk-selected logarithmic-coordinate decoders through n=56; tail witness coverage standard/carry=4.06901e-05/8.13802e-05, carry log2 slope=-0.305721. The list-size and source-transfer theorems are proved; asymptotic coverage is open.",
+      "numeric_metric_trends": {
+        "assignment_sample_count": {
+          "delta": 0.0,
+          "first": 221184.0,
+          "latest": 221184.0,
+          "max": 221184.0,
+          "min": 221184.0,
+          "observations": 1
+        },
+        "carry_log2_coverage_slope_per_n": {
+          "delta": 0.0,
+          "first": -0.3057207258159632,
+          "latest": -0.3057207258159632,
+          "max": -0.3057207258159632,
+          "min": -0.3057207258159632,
+          "observations": 1
+        },
+        "exact_assignment_count": {
+          "delta": 0.0,
+          "first": 1114112.0,
+          "latest": 1114112.0,
+          "max": 1114112.0,
+          "min": 1114112.0,
+          "observations": 1
+        },
+        "exact_full_cube_trial_count": {
+          "delta": 0.0,
+          "first": 2.0,
+          "latest": 2.0,
+          "max": 2.0,
+          "min": 2.0,
+          "observations": 1
+        },
+        "exact_legal_target_count": {
+          "delta": 0.0,
+          "first": 273562.0,
+          "latest": 273562.0,
+          "max": 273562.0,
+          "min": 273562.0,
+          "observations": 1
+        },
+        "finite_tail_collapse_observed_count": {
+          "delta": 0.0,
+          "first": 1.0,
+          "latest": 1.0,
+          "max": 1.0,
+          "min": 1.0,
+          "observations": 1
+        },
+        "maximum_n_bits": {
+          "delta": 0.0,
+          "first": 56.0,
+          "latest": 56.0,
+          "max": 56.0,
+          "min": 56.0,
+          "observations": 1
+        },
+        "maximum_offset": {
+          "delta": 0.0,
+          "first": 1.0,
+          "latest": 1.0,
+          "max": 1.0,
+          "min": 1.0,
+          "observations": 1
+        },
+        "maximum_total_candidate_count_upper_bound": {
+          "delta": 0.0,
+          "first": 31355019.0,
+          "latest": 31355019.0,
+          "max": 31355019.0,
+          "min": 31355019.0,
+          "observations": 1
+        },
+        "polynomial_marker_aware_decoder_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        },
+        "polynomial_selected_coordinate_list_theorem_count": {
+          "delta": 0.0,
+          "first": 1.0,
+          "latest": 1.0,
+          "max": 1.0,
+          "min": 1.0,
+          "observations": 1
+        },
+        "proved_exponential_assignment_decay_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        },
+        "proved_inverse_polynomial_uniform_legal_coverage_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        },
+        "row_count": {
+          "delta": 0.0,
+          "first": 9.0,
+          "latest": 9.0,
+          "max": 9.0,
+          "min": 9.0,
+          "observations": 1
+        },
+        "selector_multiplier": {
+          "delta": 0.0,
+          "first": 2.0,
+          "latest": 2.0,
+          "max": 2.0,
+          "min": 2.0,
+          "observations": 1
+        },
+        "standard_log2_coverage_slope_per_n": {
+          "delta": 0.0,
+          "first": -0.3230668246638623,
+          "latest": -0.3230668246638623,
+          "max": -0.3230668246638623,
+          "min": -0.3230668246638623,
+          "observations": 1
+        },
+        "tail_carry_sampled_assignment_coverage": {
+          "delta": 0.0,
+          "first": 8.138020833333333e-05,
+          "latest": 8.138020833333333e-05,
+          "max": 8.138020833333333e-05,
+          "min": 8.138020833333333e-05,
+          "observations": 1
+        },
+        "tail_maximum_carry_sampled_assignment_coverage": {
+          "delta": 0.0,
+          "first": 0.0001220703125,
+          "latest": 0.0001220703125,
+          "max": 0.0001220703125,
+          "min": 0.0001220703125,
+          "observations": 1
+        },
+        "tail_standard_sampled_assignment_coverage": {
+          "delta": 0.0,
+          "first": 4.0690104166666664e-05,
+          "latest": 4.0690104166666664e-05,
+          "max": 4.0690104166666664e-05,
+          "min": 4.0690104166666664e-05,
+          "observations": 1
+        },
+        "transfer_sandwich_failure_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        },
+        "transfer_sandwich_theorem_count": {
+          "delta": 0.0,
+          "first": 1.0,
+          "latest": 1.0,
+          "max": 1.0,
+          "min": 1.0,
+          "observations": 1
+        },
+        "trial_count": {
+          "delta": 0.0,
+          "first": 27.0,
+          "latest": 27.0,
+          "max": 27.0,
+          "min": 27.0,
+          "observations": 1
+        }
+      },
+      "run_count": 1,
+      "status_sequence": [
+        "polynomial-log-coordinate-decoder-finite-tail-collapse-source-law-open"
+      ]
+    },
+    {
       "blocking_run_count": 1,
       "experiment_id": "EXP-DHS-DCP-MULTISCALE-ALIASING",
       "falsifier_count_sequence": [
@@ -13274,6 +14841,135 @@
       "run_count": 1,
       "status_sequence": [
         "standard-and-log-sliced-volume-only-lattice-gap-obstructed"
+      ]
+    },
+    {
+      "blocking_run_count": 1,
+      "experiment_id": "EXP-DHS-DCP-SUBSET-SUM-GROWING-ORDER-CHAIN-THEOREM",
+      "falsifier_count_sequence": [
+        4
+      ],
+      "interpretation": "Repeated runs continue to trigger falsifiers; this is proof debt, not progress.",
+      "latest_result_id": "RESULT-EXP-DHS-DCP-SUBSET-SUM-GROWING-ORDER-CHAIN-THEOREM-DCP-SUBSET-SUM-GROWING-ORDER-CHAIN",
+      "latest_status": "near-log-growing-order-nonnegative-moments-asymptotically-obstructed",
+      "latest_summary": "Proved an O(k^2 log k) non-self lattice-chain bound, replacing the previous 2^k bound and closing every fixed-fraction logarithmic moment schedule plus a conservative near-log deficit schedule.",
+      "numeric_metric_trends": {
+        "exact_chain_bound_failure_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        },
+        "exact_control_count": {
+          "delta": 0.0,
+          "first": 4.0,
+          "latest": 4.0,
+          "max": 4.0,
+          "min": 4.0,
+          "observations": 1
+        },
+        "finite_bound_below_one_row_count": {
+          "delta": 0.0,
+          "first": 5.0,
+          "latest": 5.0,
+          "max": 5.0,
+          "min": 5.0,
+          "observations": 1
+        },
+        "maximum_asymptotic_condition_ratio": {
+          "delta": 0.0,
+          "first": 186.16598629223296,
+          "latest": 186.16598629223296,
+          "max": 186.16598629223296,
+          "min": 186.16598629223296,
+          "observations": 1
+        },
+        "maximum_exact_control_order": {
+          "delta": 0.0,
+          "first": 5.0,
+          "latest": 5.0,
+          "max": 5.0,
+          "min": 5.0,
+          "observations": 1
+        },
+        "maximum_exact_longest_nonself_path": {
+          "delta": 0.0,
+          "first": 5.0,
+          "latest": 5.0,
+          "max": 5.0,
+          "min": 5.0,
+          "observations": 1
+        },
+        "maximum_instantiated_moment_order": {
+          "delta": 0.0,
+          "first": 48.0,
+          "latest": 48.0,
+          "max": 48.0,
+          "min": 48.0,
+          "observations": 1
+        },
+        "polynomial_chain_length_theorem_count": {
+          "delta": 0.0,
+          "first": 1.0,
+          "latest": 1.0,
+          "max": 1.0,
+          "min": 1.0,
+          "observations": 1
+        },
+        "polynomial_witness_decoder_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        },
+        "proved_final_near_log_window_obstruction_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        },
+        "proved_fixed_fraction_log_obstruction_count": {
+          "delta": 0.0,
+          "first": 1.0,
+          "latest": 1.0,
+          "max": 1.0,
+          "min": 1.0,
+          "observations": 1
+        },
+        "proved_near_log_deficit_obstruction_count": {
+          "delta": 0.0,
+          "first": 1.0,
+          "latest": 1.0,
+          "max": 1.0,
+          "min": 1.0,
+          "observations": 1
+        },
+        "proved_signed_statistic_obstruction_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        },
+        "row_count": {
+          "delta": 0.0,
+          "first": 10.0,
+          "latest": 10.0,
+          "max": 10.0,
+          "min": 10.0,
+          "observations": 1
+        }
+      },
+      "run_count": 1,
+      "status_sequence": [
+        "near-log-growing-order-nonnegative-moments-asymptotically-obstructed"
       ]
     },
     {

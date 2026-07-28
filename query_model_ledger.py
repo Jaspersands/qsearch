@@ -68,12 +68,24 @@ DCP_MARKER_DEVIATION_GEOMETRY_PATH = Path(
 DCP_MARKER_ALL_TARGET_COVERAGE_PATH = Path(
     "research/classical_baselines/dcp_marker_all_target_coverage.json"
 )
+DCP_MARKER_VULNERABLE_COORDINATE_PATH = Path(
+    "research/classical_baselines/dcp_marker_vulnerable_coordinate_decoder.json"
+)
+DCP_MARKER_CHART_UNION_PATH = Path(
+    "research/classical_baselines/dcp_marker_chart_union_decoder.json"
+)
+DCP_MARKER_TARGET_ADAPTIVE_BEAM_PATH = Path(
+    "research/classical_baselines/dcp_marker_target_adaptive_beam.json"
+)
 DCP_SUBSET_SUM_FOURTH_MOMENT_PATH = Path("research/classical_baselines/dcp_subset_sum_fourth_moment_obstruction.json")
 DCP_SUBSET_SUM_SMITH_MOMENT_PATH = Path("research/classical_baselines/dcp_subset_sum_smith_moment_spectrum.json")
 DCP_SUBSET_SUM_SMITH_TRANSFER_PATH = Path("research/classical_baselines/dcp_subset_sum_smith_transfer_order_six.json")
 DCP_SUBSET_SUM_FIXED_ORDER_MOMENT_PATH = Path("research/classical_baselines/dcp_subset_sum_fixed_order_moment_theorem.json")
 DCP_SUBSET_SUM_CONDITIONED_TAIL_PATH = Path("research/classical_baselines/dcp_subset_sum_conditioned_tail_theorem.json")
 DCP_SUBSET_SUM_GROWING_ORDER_PATH = Path("research/classical_baselines/dcp_subset_sum_growing_order_theorem.json")
+DCP_SUBSET_SUM_GROWING_ORDER_CHAIN_PATH = Path(
+    "research/classical_baselines/dcp_subset_sum_growing_order_chain_theorem.json"
+)
 DCP_SUBSET_SUM_EMBEDDING_VOLUME_PATH = Path("research/classical_baselines/dcp_subset_sum_embedding_volume_theorem.json")
 DCP_SUBSET_SUM_SHORT_RELATION_PATH = Path("research/classical_baselines/dcp_subset_sum_short_relation_theorem.json")
 DCP_SUBSET_SUM_CARRY_RELATION_PATH = Path("research/classical_baselines/dcp_subset_sum_carry_relation_theorem.json")
@@ -397,6 +409,15 @@ def build_query_model_ledger() -> dict[str, Any]:
     marker_all_target_metrics = _read_json(
         DCP_MARKER_ALL_TARGET_COVERAGE_PATH, {}
     ).get("headline_metrics", {})
+    marker_vulnerable_metrics = _read_json(
+        DCP_MARKER_VULNERABLE_COORDINATE_PATH, {}
+    ).get("headline_metrics", {})
+    marker_chart_union_metrics = _read_json(
+        DCP_MARKER_CHART_UNION_PATH, {}
+    ).get("headline_metrics", {})
+    marker_target_beam_metrics = _read_json(
+        DCP_MARKER_TARGET_ADAPTIVE_BEAM_PATH, {}
+    ).get("headline_metrics", {})
     subset_sum_fourth_moment_metrics = _read_json(
         DCP_SUBSET_SUM_FOURTH_MOMENT_PATH, {}
     ).get("headline_metrics", {})
@@ -414,6 +435,9 @@ def build_query_model_ledger() -> dict[str, Any]:
     ).get("headline_metrics", {})
     subset_sum_growing_order_metrics = _read_json(
         DCP_SUBSET_SUM_GROWING_ORDER_PATH, {}
+    ).get("headline_metrics", {})
+    subset_sum_growing_order_chain_metrics = _read_json(
+        DCP_SUBSET_SUM_GROWING_ORDER_CHAIN_PATH, {}
     ).get("headline_metrics", {})
     subset_sum_embedding_volume_metrics = _read_json(
         DCP_SUBSET_SUM_EMBEDDING_VOLUME_PATH, {}
@@ -1027,6 +1051,50 @@ def build_query_model_ledger() -> dict[str, Any]:
                         f"{marker_all_target_metrics.get('tail_mean_carry_max_depth_coverage', 0)}, random-label laws="
                         f"{marker_all_target_metrics.get('proved_asymptotic_fixed_depth_coverage_bound_count', 0)}."
                     )
+                if marker_vulnerable_metrics:
+                    blocking.append(
+                        "Vulnerable-coordinate marker list has polynomial/transfer theorems/failures="
+                        f"{marker_vulnerable_metrics.get('polynomial_selected_coordinate_list_theorem_count', 0)}/"
+                        f"{marker_vulnerable_metrics.get('transfer_sandwich_theorem_count', 0)}/"
+                        f"{marker_vulnerable_metrics.get('transfer_sandwich_failure_count', 0)}, "
+                        "tail assignment coverage standard/carry="
+                        f"{marker_vulnerable_metrics.get('tail_standard_sampled_assignment_coverage', 0)}/"
+                        f"{marker_vulnerable_metrics.get('tail_carry_sampled_assignment_coverage', 0)}, "
+                        "log2 slopes="
+                        f"{marker_vulnerable_metrics.get('standard_log2_coverage_slope_per_n', 0)}/"
+                        f"{marker_vulnerable_metrics.get('carry_log2_coverage_slope_per_n', 0)}, "
+                        "uniform-legal coverage laws="
+                        f"{marker_vulnerable_metrics.get('proved_inverse_polynomial_uniform_legal_coverage_count', 0)}."
+                    )
+                if marker_chart_union_metrics:
+                    blocking.append(
+                        "Learned marker chart union has polynomial/target-selector/train-test failures="
+                        f"{marker_chart_union_metrics.get('polynomial_chart_union_theorem_count', 0)}/"
+                        f"{marker_chart_union_metrics.get('target_independent_selector_failure_count', 0)}/"
+                        f"{marker_chart_union_metrics.get('disjoint_train_test_failure_count', 0)}, "
+                        "tail carry held-out/max-row="
+                        f"{marker_chart_union_metrics.get('tail_carry_heldout_coverage', 0)}/"
+                        f"{marker_chart_union_metrics.get('tail_maximum_carry_heldout_coverage', 0)}, "
+                        "carry log2 slope="
+                        f"{marker_chart_union_metrics.get('carry_log2_heldout_coverage_slope_per_n', 0)}, "
+                        "uniform-legal laws="
+                        f"{marker_chart_union_metrics.get('proved_inverse_polynomial_uniform_legal_coverage_count', 0)}."
+                    )
+                if marker_target_beam_metrics:
+                    blocking.append(
+                        "Target-adaptive marker beam has polynomial/exact-rounding/state-bound failures="
+                        f"{marker_target_beam_metrics.get('polynomial_state_bound_theorem_count', 0)}/"
+                        f"{marker_target_beam_metrics.get('exact_rounding_failure_count', 0)}/"
+                        f"{marker_target_beam_metrics.get('state_bound_failure_count', 0)}, "
+                        "max width powers standard/carry="
+                        f"{marker_target_beam_metrics.get('maximum_standard_width_power', 0)}/"
+                        f"{marker_target_beam_metrics.get('maximum_carry_width_power', 0)}, "
+                        "tail uniform-source success standard/carry="
+                        f"{marker_target_beam_metrics.get('tail_standard_max_power_source_success_rate', 0)}/"
+                        f"{marker_target_beam_metrics.get('tail_carry_max_power_source_success_rate', 0)}, "
+                        "inverse-polynomial source laws="
+                        f"{marker_target_beam_metrics.get('proved_inverse_polynomial_uniform_source_success_count', 0)}."
+                    )
                 if subset_sum_fourth_moment_metrics:
                     blocking.append(
                         "Low-fiber fourth-moment theorem has triplewise/fourth-localization certificates="
@@ -1097,6 +1165,19 @@ def build_query_model_ledger() -> dict[str, Any]:
                         "finite below-one rows="
                         f"{subset_sum_growing_order_metrics.get('finite_bound_below_one_row_count', 0)}/"
                         f"{subset_sum_growing_order_metrics.get('row_count', 0)}."
+                    )
+                if subset_sum_growing_order_chain_metrics:
+                    blocking.append(
+                        "Near-log lattice-chain moment theorem has exact controls/failures="
+                        f"{subset_sum_growing_order_chain_metrics.get('exact_control_count', 0)}/"
+                        f"{subset_sum_growing_order_chain_metrics.get('exact_chain_bound_failure_count', 0)}, "
+                        "polynomial/fixed-fraction/near-log obstructions="
+                        f"{subset_sum_growing_order_chain_metrics.get('polynomial_chain_length_theorem_count', 0)}/"
+                        f"{subset_sum_growing_order_chain_metrics.get('proved_fixed_fraction_log_obstruction_count', 0)}/"
+                        f"{subset_sum_growing_order_chain_metrics.get('proved_near_log_deficit_obstruction_count', 0)}, "
+                        "final-window/signed proofs="
+                        f"{subset_sum_growing_order_chain_metrics.get('proved_final_near_log_window_obstruction_count', 0)}/"
+                        f"{subset_sum_growing_order_chain_metrics.get('proved_signed_statistic_obstruction_count', 0)}."
                     )
                 if subset_sum_embedding_volume_metrics:
                     blocking.append(

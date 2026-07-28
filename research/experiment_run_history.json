@@ -6018,5 +6018,529 @@
     "run_id": "RUN-EXP-COSET-TYPICAL-N10-GAP-TREND-00189",
     "status": "exact-square-free-ladder-numerical-normalized-gap-shrinks-precision-proof-open",
     "summary": "The exactly square-free multiplicity-eight block has numerical LCU-normalized gap 0.0004176, a 7.17-fold drop from multiplicity six; this strengthens the precision blocker and does not establish a trend theorem."
+  },
+  {
+    "artifacts": {
+      "coset_typical_source_coverage": "research/representation/coset_typical_source_coverage.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "experiment_id": "EXP-COSET-TYPICAL-SOURCE-COVERAGE",
+    "falsifier_count": 5,
+    "falsifiers_triggered": [
+      "Choosing the maximum-dimension source does not make a fixed source label naturally accessible asymptotically.",
+      "A polynomial catalog of finite source certificates cannot cover inverse-polynomial weak-Fourier mass.",
+      "The current n=10 low-multiplicity ladder covers less than two percent of the fixed source's target coupling mass.",
+      "The largest unresolved n=10 target is the source-shaped multiplicity-117 block and alone carries over fifteen percent of coupling mass.",
+      "Finite simple spectra do not provide a natural-input decoder without uniform sampled-label adaptation."
+    ],
+    "metrics": {
+      "literature_linked_maximal_dimension_theorem_count": 1,
+      "maximum_finite_two_copy_pipeline_coverage": 0.03515625,
+      "minimum_finite_two_copy_pipeline_coverage": 0.000300909828952157,
+      "n10_certified_target_coupling_mass": 0.011389838324652778,
+      "n10_exactly_certified_nontrivial_target_count": 12,
+      "n10_largest_unresolved_target_coupling_mass": 0.15234375,
+      "n10_nontrivial_multiplicity_target_count": 40,
+      "n8_exact_target_coupling_mass": 1.0,
+      "n9_exact_target_coupling_mass": 1.0,
+      "natural_input_inverse_polynomial_coverage_theorem_count": 0,
+      "polynomial_precertified_source_catalog_no_go_theorem_count": 1,
+      "source_coverage_record_count": 6,
+      "typical_label_hidden_involution_decoder_count": 0,
+      "uniform_arbitrary_source_partition_coherent_transform_count": 0,
+      "uniform_arbitrary_source_partition_gap_theorem_count": 0,
+      "uniform_arbitrary_source_partition_separator_count": 0
+    },
+    "recorded_at": "2026-07-27T20:11:46.440456+00:00",
+    "result_id": "RESULT-EXP-COSET-TYPICAL-SOURCE-COVERAGE-COSET",
+    "run_id": "RUN-EXP-COSET-TYPICAL-SOURCE-COVERAGE-00190",
+    "status": "fixed-source-typical-ladder-falsified-as-natural-input-route-uniform-label-adaptation-required",
+    "summary": "Combined exact finite source/target probability accounting with the 2026 maximal-irrep-dimension theorem. The fixed-source n=10 ladder resolves 1.139% of conditional coupling mass, while any polynomial source catalog is asymptotically stretched-exponentially rare."
+  },
+  {
+    "artifacts": {
+      "coset_typical_uniform_source_probe": "research/representation/coset_typical_uniform_source_probe.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "experiment_id": "EXP-COSET-TYPICAL-UNIFORM-SOURCE-PROBE",
+    "falsifier_count": 5,
+    "falsifiers_triggered": [
+      "The maximum-dimension self-pair is not representative of all naturally sampled source pairs.",
+      "At n=6, H is exactly scalar on the multiplicity-two (3,2,1)x(3,3)->(3,2,1) block.",
+      "At n=6, H is exactly scalar on the multiplicity-two (3,2,1)x(2,2,2)->(3,2,1) block.",
+      "A multiplicity-four n=6 block has a numerical repeated zero root; exact higher-moment certification remains open.",
+      "Finite all-source separation cannot be inferred from one source self-pair or from nonzero variance alone."
+    ],
+    "metrics": {
+      "exact_character_moment_block_count": 95,
+      "exact_multiplicity_two_simple_spectrum_count": 80,
+      "exact_scalar_collision_count": 2,
+      "finite_n_count": 2,
+      "fixed_separator_uniform_all_source_finite_theorem_count": 0,
+      "hidden_involution_decoder_count": 0,
+      "maximum_exact_moment_residual": 1.8041124150158794e-16,
+      "maximum_natural_source_pair_mass_with_exact_scalar_collision": 0.024691358024691357,
+      "minimum_positive_numerical_gap": 0.02406821653802705,
+      "nontrivial_multiplicity_block_count": 95,
+      "numerical_repeated_eigenvalue_block_count": 3,
+      "ordered_source_pair_count": 170,
+      "same_hidden_involution_target_outcome_law_count": 0,
+      "uniform_arbitrary_source_gap_theorem_count": 0,
+      "uniform_separator_repair_rule_count": 0
+    },
+    "recorded_at": "2026-07-27T20:20:37.097034+00:00",
+    "result_id": "RESULT-EXP-COSET-TYPICAL-UNIFORM-SOURCE-PROBE-COSET",
+    "run_id": "RUN-EXP-COSET-TYPICAL-UNIFORM-SOURCE-PROBE-00191",
+    "status": "fixed-typical-separator-falsified-on-all-source-probe-label-adaptive-repair-required",
+    "summary": "Audited 95 nontrivial blocks over every ordered source pair at n=(5, 6); found 2 exact scalar collisions and 3 numerical repeated-root blocks."
+  },
+  {
+    "artifacts": {
+      "coset_typical_parity_complete_separator": "research/representation/coset_typical_parity_complete_separator.json",
+      "n7_search_certificate": "research/certificates/coset_typical_parity_complete_separator_n7.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "experiment_id": "EXP-COSET-TYPICAL-PARITY-COMPLETE-SEPARATOR",
+    "falsifier_count": 5,
+    "falsifiers_triggered": [
+      "Coefficient tuning inside the one-sided portfolio cannot repair the exact n=6 scalar blocks.",
+      "The first parity-complete rule selected on n=5,6 fails on two n=7 blocks, so adjacent-size validation is mandatory.",
+      "A different three-term parity-complete rule survives the finite n=5,6,7 discovery set but has no independent n=8 holdout.",
+      "Finite floating-point simple spectra are not an all-n square-free or inverse-gap theorem.",
+      "A separator spectrum alone supplies neither the correlated target outcome law nor a hidden-involution decoder."
+    ],
+    "metrics": {
+      "all_n_square_free_theorem_count": 0,
+      "all_source_nontrivial_block_count": 663,
+      "best_candidate_collision_count": 0,
+      "best_candidate_minimum_numerical_raw_gap": 0.009480178272655695,
+      "coefficient_vector_count": 1744,
+      "coherent_partition_adaptive_separator_count": 0,
+      "collision_free_finite_candidate_count": 216,
+      "finite_n_count": 3,
+      "former_scalar_block_exact_repair_count": 2,
+      "hidden_involution_decoder_count": 0,
+      "inverse_polynomial_normalized_gap_theorem_count": 0,
+      "maximum_n": 7,
+      "minimum_n": 5,
+      "parity_complete_orientation_count": 1,
+      "same_hidden_involution_target_outcome_law_count": 0
+    },
+    "recorded_at": "2026-07-27T20:43:26.893212+00:00",
+    "result_id": "RESULT-EXP-COSET-TYPICAL-PARITY-COMPLETE-SEPARATOR-COSET",
+    "run_id": "RUN-EXP-COSET-TYPICAL-PARITY-COMPLETE-SEPARATOR-00192",
+    "status": "parity-complete-all-source-finite-candidate-survives-n5-through-n7-awaits-n8-and-all-n-proof",
+    "summary": "Searched 1744 primitive rules over 663 all-source blocks through n=7. The best parity-complete rule has zero finite collisions and minimum numerical raw gap 0.00948018; the former scalar blocks are exactly repaired."
+  },
+  {
+    "artifacts": {
+      "coset_same_hidden_target_law": "research/representation/coset_same_hidden_target_law.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "experiment_id": "EXP-COSET-SAME-HIDDEN-TARGET-LAW",
+    "falsifier_count": 4,
+    "falsifiers_triggered": [
+      "Dimension-weighted Kronecker coupling is not the target law for two states carrying the same hidden involution.",
+      "A source-pair collision mass is only an upper envelope; the actual collision target mass must include the coupled target.",
+      "An exact target-frequency formula does not implement the coherent internal Kronecker transform.",
+      "Target labels alone are conjugacy-class invariant and do not identify the individual hidden involution."
+    ],
+    "metrics": {
+      "coherent_kronecker_target_measurement_theorem_count": 0,
+      "dimension_coupling_reference_mismatch_record_count": 8,
+      "exact_normalization_verified_record_count": 8,
+      "fixed_source_coverage_correction_count": 6,
+      "frame_scalar_identity_verified_record_count": 8,
+      "general_exact_character_formula_theorem_count": 1,
+      "hidden_involution_decoder_count": 0,
+      "maximum_expected_conditional_tv_from_dimension_coupling": 0.09777777777777778,
+      "maximum_n10_same_hidden_certified_conditional_probability": 0.013583713107638888,
+      "maximum_natural_nontrivial_multiplicity_mass": 0.9965084673204702,
+      "maximum_scalar_collision_source_pair_mass": 0.024691358024691357,
+      "maximum_scalar_collision_target_joint_mass": 0.009876543209876543,
+      "maximum_source_pair_conditional_tv_from_dimension_coupling": 0.46,
+      "minimum_n10_same_hidden_certified_conditional_probability": 0.011389838324652778,
+      "same_hidden_target_law_record_count": 8
+    },
+    "recorded_at": "2026-07-27T20:50:55.404190+00:00",
+    "result_id": "RESULT-EXP-COSET-SAME-HIDDEN-TARGET-LAW-COSET",
+    "run_id": "RUN-EXP-COSET-SAME-HIDDEN-TARGET-LAW-00193",
+    "status": "same-hidden-target-law-proved-operational-measurement-and-decoder-open",
+    "summary": "Derived and exactly normalized the shared-hidden target law on 8 finite ensemble controls through n=10. The prior dimension-weighted coupling reference differs from the operational law; no decoder or speedup is promoted."
+  },
+  {
+    "artifacts": {
+      "coset_commutant_information_obstruction": "research/representation/coset_commutant_information_obstruction.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "experiment_id": "EXP-COSET-COMMUTANT-INFORMATION-OBSTRUCTION",
+    "falsifier_count": 4,
+    "falsifiers_triggered": [
+      "A simple-spectrum multiplicity separator is not an information-bearing hidden-involution measurement.",
+      "Changing coupling trees and reading only invariant Racah labels cannot break conjugacy covariance.",
+      "Exact target and multiplicity branch probabilities do not imply a decoder when every effect lies in the commutant.",
+      "Carrier-sensitive effects can vary across conjugates, so the theorem redirects rather than rules out collective algorithms."
+    ],
+    "metrics": {
+      "carrier_sensitive_covariant_decoder_count": 0,
+      "commutant_only_hidden_involution_decoder_count": 0,
+      "exact_commutant_only_mutual_information_bits": 0,
+      "finite_commutant_distribution_invariance_verified_count": 1,
+      "finite_control_count": 1,
+      "finite_noncommutant_escape_witness_count": 1,
+      "general_all_k_commutant_zero_information_theorem_count": 1,
+      "maximum_finite_commutant_expectation_range": 2.220446049250313e-15,
+      "maximum_finite_commutant_outcome_total_variation": 1.0130785099704553e-15,
+      "maximum_noncommutant_basis_effect_probability_range": 0.109375
+    },
+    "recorded_at": "2026-07-27T20:55:30.936914+00:00",
+    "result_id": "RESULT-EXP-COSET-COMMUTANT-INFORMATION-OBSTRUCTION-COSET",
+    "run_id": "RUN-EXP-COSET-COMMUTANT-INFORMATION-OBSTRUCTION-00194",
+    "status": "commutant-only-decoder-route-falsified-carrier-sensitive-covariant-route-required",
+    "summary": "Proved for all copy counts that diagonal-action commutant POVM outcomes have exactly zero information about the individual hidden involution, and verified the boundary on a nontrivial S_5 multiplicity control."
+  },
+  {
+    "artifacts": {
+      "coset_carrier_information_audit": "research/representation/coset_carrier_information_audit.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "experiment_id": "EXP-COSET-CARRIER-INFORMATION-AUDIT",
+    "falsifier_count": 4,
+    "falsifiers_triggered": [
+      "Spectral separation is not an information objective: the gap-optimized rule is not information-optimal.",
+      "Commutant separator outcomes alone have zero hidden-element information, exactly as the covariance theorem predicts.",
+      "Adding multiplicity labels to target tableaux gives finite signal but does not beat separate strong Fourier outcomes.",
+      "Finite mutual information does not supply scaling, a polynomial decoder, or a quantum-classical separation."
+    ],
+    "metrics": {
+      "all_n_information_advantage_theorem_count": 0,
+      "classical_separation_theorem_count": 0,
+      "coefficient_vector_count": 1744,
+      "finite_control_count": 2,
+      "hidden_involution_decoder_count": 0,
+      "joint_separator_information_gain_control_count": 2,
+      "maximum_best_joint_bayes_success_probability": 0.122228268750858,
+      "maximum_best_joint_information_fraction_of_product_baseline": 0.5677644010801868,
+      "maximum_best_joint_mutual_information_bits": 0.2534002216100799,
+      "maximum_measurement_normalization_residual": 6.661338147750939e-16,
+      "maximum_product_young_basis_mutual_information_bits": 0.7482565559602771,
+      "product_strong_fourier_dominates_all_searched_rules_count": 2,
+      "separator_only_zero_information_verified_count": 2
+    },
+    "recorded_at": "2026-07-27T21:01:10.078807+00:00",
+    "result_id": "RESULT-EXP-COSET-CARRIER-INFORMATION-AUDIT-COSET",
+    "run_id": "RUN-EXP-COSET-CARRIER-INFORMATION-AUDIT-00195",
+    "status": "carrier-refinement-finite-signal-dominated-by-simple-strong-fourier-baseline",
+    "summary": "Searched 1744 parity-complete separator rules on 2 carrier-sensitive controls. All improve on YJM-only information to some extent, but the simple product Young-basis baseline dominates the best searched joint measurement on every control."
+  },
+  {
+    "artifacts": {
+      "coset_strong_fourier_information_scaling": "research/representation/coset_strong_fourier_information_scaling.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "experiment_id": "EXP-COSET-STRONG-FOURIER-INFORMATION-SCALING",
+    "falsifier_count": 4,
+    "falsifiers_triggered": [
+      "Fixed-source carrier information substantially overstates the naturally weighted strong Fourier channel.",
+      "Weak Fourier source labels have exactly zero information about the individual element inside one conjugacy class.",
+      "Two separate strong Fourier samples provide nearly additive, not qualitatively collective, information on these controls.",
+      "A near-one-bit Holevo bound does not mean a fixed strong Fourier basis extracts near one bit."
+    ],
+    "metrics": {
+      "collective_carrier_advantage_theorem_count": 0,
+      "hidden_involution_decoder_count": 0,
+      "largest_n_one_copy_carrier_mutual_information_bits": 0.024410249825322694,
+      "largest_n_two_copy_carrier_mutual_information_bits": 0.04878977060845102,
+      "maximum_n": 8,
+      "maximum_tail_one_copy_bayes_advantage_over_guess": 1.6561908895502642,
+      "maximum_tail_one_copy_carrier_fraction_of_holevo": 0.08270467984029975,
+      "maximum_tail_two_copy_bayes_advantage_over_guess": 2.205892199634375,
+      "minimum_tail_one_copy_carrier_fraction_of_holevo": 0.02457393473963597,
+      "minimum_tail_one_copy_carrier_mutual_information_bits": 0.024410249825322694,
+      "minimum_tail_separate_strong_fourier_bounded_error_copy_lower_bound": 22,
+      "natural_strong_fourier_asymptotic_decay_theorem_count": 0,
+      "one_copy_n8_carrier_mutual_information_bits": 0.024410249825322694,
+      "record_count": 6,
+      "two_copy_n8_carrier_mutual_information_bits": 0.04878977060845102,
+      "weak_label_zero_information_verified_count": 6
+    },
+    "recorded_at": "2026-07-27T21:05:59.167727+00:00",
+    "result_id": "RESULT-EXP-COSET-STRONG-FOURIER-INFORMATION-SCALING-COSET",
+    "run_id": "RUN-EXP-COSET-STRONG-FOURIER-INFORMATION-SCALING-00196",
+    "status": "natural-strong-fourier-baseline-small-collective-carrier-advantage-required",
+    "summary": "Computed complete natural one- and two-copy Young-basis strong Fourier channels through n=8. At the largest n, one copy carries 0.02441 bits, far below the near-one-bit Holevo bound."
+  },
+  {
+    "artifacts": {
+      "coset_entanglement_width_gate": "research/representation/coset_entanglement_width_gate.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "experiment_id": "EXP-COSET-ENTANGLEMENT-WIDTH-GATE",
+    "falsifier_count": 4,
+    "falsifiers_triggered": [
+      "An arbitrary one-register POVM is not a loophole in the strong Fourier no-go.",
+      "Using polynomially many samples separately is not the same as an Omega(n log n)-register entangled measurement.",
+      "Exact two- or three-copy spectra, gaps, and information cannot be promoted to nonnegligible full-ensemble information.",
+      "A serious architecture must specify growing-copy associators, outcomes, and decoding rather than extrapolate bounded controls."
+    ],
+    "metrics": {
+      "bounded_mechanism_end_to_end_information_eligible_count": 0,
+      "bounded_register_mechanism_count": 11,
+      "compressed_covariant_outcome_count": 0,
+      "growing_entanglement_width_architecture_count": 0,
+      "growing_width_hidden_involution_decoder_count": 0,
+      "maximum_current_joint_register_count": 3,
+      "omega_n_log_n_entanglement_width_theorem_count": 1,
+      "polynomial_growing_associator_circuit_count": 0,
+      "primary_literature_theorem_count": 2,
+      "single_register_arbitrary_povm_no_go_theorem_count": 1
+    },
+    "recorded_at": "2026-07-27T21:09:57.378074+00:00",
+    "result_id": "RESULT-EXP-COSET-ENTANGLEMENT-WIDTH-GATE-COSET",
+    "run_id": "RUN-EXP-COSET-ENTANGLEMENT-WIDTH-GATE-00197",
+    "status": "bounded-copy-coset-route-quarantined-growing-entanglement-width-architecture-missing",
+    "summary": "Applied two primary Fourier-sampling no-go theorems to 11 current bounded-register mechanisms. Their maximum joint width is 3; all remain local primitives pending an Omega(n log n)-width measurement architecture."
+  },
+  {
+    "artifacts": {
+      "coset_growing_width_architecture": "research/representation/coset_growing_width_architecture.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "experiment_id": "EXP-COSET-GROWING-WIDTH-ARCHITECTURE",
+    "falsifier_count": 4,
+    "falsifiers_triggered": [
+      "Polynomial sample count with separate measurements fails the entanglement-width contract.",
+      "A bounded Racah-label architecture fails both width and commutant-information gates.",
+      "A balanced tree and polynomial merge count do not prove that the required associators or POVM are implementable.",
+      "Naming a covariant sketch and decoder does not satisfy their information or complexity obligations."
+    ],
+    "metrics": {
+      "architecture_count": 3,
+      "blocking_proof_issue_count": 18,
+      "compressed_covariant_outcome_count": 0,
+      "fatal_validation_issue_count": 6,
+      "growing_width_hidden_involution_decoder_count": 0,
+      "growing_width_information_theorem_count": 0,
+      "maximum_compliant_joint_register_width_at_n64": 384,
+      "minimum_compliant_merge_depth_at_n64": 9,
+      "polynomial_growing_associator_circuit_count": 0,
+      "proof_complete_architecture_count": 0,
+      "scaling_row_count": 12,
+      "structurally_compliant_architecture_count": 1,
+      "structurally_rejected_architecture_count": 2
+    },
+    "recorded_at": "2026-07-27T21:13:21.802699+00:00",
+    "result_id": "RESULT-EXP-COSET-GROWING-WIDTH-ARCHITECTURE-COSET",
+    "run_id": "RUN-EXP-COSET-GROWING-WIDTH-ARCHITECTURE-00198",
+    "status": "growing-width-skeleton-typed-associator-outcome-information-decoder-open",
+    "summary": "Type-checked 3 multiregister architectures. 1 survives structural no-go gates, but zero has proved growing associators, outcomes, information, decoding, and classical separation."
+  },
+  {
+    "artifacts": {
+      "dcp_marker_vulnerable_coordinate_decoder": "research/classical_baselines/dcp_marker_vulnerable_coordinate_decoder.json"
+    },
+    "candidate_id": "DHS-GOWERS-SIEVE",
+    "experiment_id": "EXP-DHS-DCP-MARKER-VULNERABLE-COORDINATE-DECODER",
+    "falsifier_count": 1,
+    "falsifiers_triggered": [
+      "The preregistered carry-sliced logarithmic-coordinate cell union has held-out witness coverage 8.13802e-05 at n=56 and log2 slope -0.305721 per n; this is finite decay, not an asymptotic theorem."
+    ],
+    "metrics": {
+      "assignment_sample_count": 221184,
+      "carry_log2_coverage_slope_per_n": -0.3057207258159632,
+      "exact_assignment_count": 1114112,
+      "exact_full_cube_trial_count": 2,
+      "exact_legal_target_count": 273562,
+      "finite_tail_collapse_observed_count": 1,
+      "maximum_n_bits": 56,
+      "maximum_offset": 1,
+      "maximum_total_candidate_count_upper_bound": 31355019,
+      "polynomial_marker_aware_decoder_count": 0,
+      "polynomial_selected_coordinate_list_theorem_count": 1,
+      "proved_exponential_assignment_decay_count": 0,
+      "proved_inverse_polynomial_uniform_legal_coverage_count": 0,
+      "row_count": 9,
+      "selector_multiplier": 2,
+      "standard_log2_coverage_slope_per_n": -0.3230668246638623,
+      "tail_carry_sampled_assignment_coverage": 8.138020833333333e-05,
+      "tail_maximum_carry_sampled_assignment_coverage": 0.0001220703125,
+      "tail_standard_sampled_assignment_coverage": 4.0690104166666664e-05,
+      "transfer_sandwich_failure_count": 0,
+      "transfer_sandwich_theorem_count": 1,
+      "trial_count": 27
+    },
+    "recorded_at": "2026-07-28T04:00:53.541650+00:00",
+    "result_id": "RESULT-EXP-DHS-DCP-MARKER-VULNERABLE-COORDINATE-DECODER-DCP-MARKER-VULNERABLE-COORDINATES",
+    "run_id": "RUN-EXP-DHS-DCP-MARKER-VULNERABLE-COORDINATE-DECODER-00199",
+    "status": "polynomial-log-coordinate-decoder-finite-tail-collapse-source-law-open",
+    "summary": "Tested 27 public-risk-selected logarithmic-coordinate decoders through n=56; tail witness coverage standard/carry=4.06901e-05/8.13802e-05, carry log2 slope=-0.305721. The list-size and source-transfer theorems are proved; asymptotic coverage is open."
+  },
+  {
+    "artifacts": {
+      "dcp_subset_sum_growing_order_chain_theorem": "research/classical_baselines/dcp_subset_sum_growing_order_chain_theorem.json"
+    },
+    "candidate_id": "DHS-GOWERS-SIEVE",
+    "experiment_id": "EXP-DHS-DCP-SUBSET-SUM-GROWING-ORDER-CHAIN-THEOREM",
+    "falsifier_count": 4,
+    "falsifiers_triggered": [
+      "The 2^k Boolean-pattern count is not a valid worst-case chain-length prefactor.",
+      "Every k<=(1-epsilon)log_2 n nonnegative bad-tuple moment schedule is asymptotically obstructed.",
+      "The conservative log n-(4+epsilon)log log n schedule is also obstructed.",
+      "The theorem cannot be transferred to signed observables, reduced-basis events, or decoder lower bounds."
+    ],
+    "metrics": {
+      "exact_chain_bound_failure_count": 0,
+      "exact_control_count": 4,
+      "finite_bound_below_one_row_count": 5,
+      "maximum_asymptotic_condition_ratio": 186.16598629223296,
+      "maximum_exact_control_order": 5,
+      "maximum_exact_longest_nonself_path": 5,
+      "maximum_instantiated_moment_order": 48,
+      "polynomial_chain_length_theorem_count": 1,
+      "polynomial_witness_decoder_count": 0,
+      "proved_final_near_log_window_obstruction_count": 0,
+      "proved_fixed_fraction_log_obstruction_count": 1,
+      "proved_near_log_deficit_obstruction_count": 1,
+      "proved_signed_statistic_obstruction_count": 0,
+      "row_count": 10
+    },
+    "recorded_at": "2026-07-28T04:39:50.374349+00:00",
+    "result_id": "RESULT-EXP-DHS-DCP-SUBSET-SUM-GROWING-ORDER-CHAIN-THEOREM-DCP-SUBSET-SUM-GROWING-ORDER-CHAIN",
+    "run_id": "RUN-EXP-DHS-DCP-SUBSET-SUM-GROWING-ORDER-CHAIN-THEOREM-00200",
+    "status": "near-log-growing-order-nonnegative-moments-asymptotically-obstructed",
+    "summary": "Proved an O(k^2 log k) non-self lattice-chain bound, replacing the previous 2^k bound and closing every fixed-fraction logarithmic moment schedule plus a conservative near-log deficit schedule."
+  },
+  {
+    "artifacts": {
+      "dcp_marker_target_adaptive_beam": "research/classical_baselines/dcp_marker_target_adaptive_beam.json"
+    },
+    "candidate_id": "DHS-GOWERS-SIEVE",
+    "experiment_id": "EXP-DHS-DCP-MARKER-TARGET-ADAPTIVE-BEAM",
+    "falsifier_count": 4,
+    "falsifiers_triggered": [
+      "Public, target-independent coordinate charts are not the strongest legal classical nearest-plane baseline.",
+      "A finite width-power improvement is not an inverse-polynomial source-coverage theorem.",
+      "A finite tail collapse is not a lower bound against larger fixed polynomial powers or non-beam affine-CVP algorithms.",
+      "Floating priorities cannot be cited as exact ordering certificates, although all rounding and output checks are exact."
+    ],
+    "metrics": {
+      "exact_legality_trial_count": 6,
+      "exact_rounding_failure_count": 0,
+      "independent_uniform_target_trial_count": 6,
+      "invalid_marker_candidate_count": 0,
+      "largest_n_with_carry_success": 10,
+      "largest_n_with_standard_success": 10,
+      "maximum_beam_width": 100,
+      "maximum_carry_width_power": 1,
+      "maximum_n_bits": 10,
+      "maximum_standard_width_power": 2,
+      "polynomial_state_bound_theorem_count": 1,
+      "polynomial_witness_decoder_count": 0,
+      "proved_inverse_polynomial_uniform_source_success_count": 0,
+      "row_count": 6,
+      "source_contract_satisfying_row_count": 0,
+      "state_bound_failure_count": 0,
+      "tail_carry_max_power_source_success_rate": 1.0,
+      "tail_standard_max_power_source_success_rate": 1.0,
+      "total_expanded_state_count": 5589,
+      "trial_count": 6
+    },
+    "recorded_at": "2026-07-28T06:09:31.344966+00:00",
+    "result_id": "RESULT-EXP-DHS-DCP-MARKER-TARGET-ADAPTIVE-BEAM-TARGET-ADAPTIVE-BEAM",
+    "run_id": "RUN-EXP-DHS-DCP-MARKER-TARGET-ADAPTIVE-BEAM-00201",
+    "status": "target-adaptive-polynomial-beam-finite-survivor-proof-debt",
+    "summary": "Ran 6 source-native target-adaptive beam trials through n=10. Maximum-power tail success was 1 standard and 1 carry-sliced; no inverse-polynomial source theorem follows."
+  },
+  {
+    "artifacts": {
+      "dcp_marker_target_adaptive_beam": "research/classical_baselines/dcp_marker_target_adaptive_beam.json"
+    },
+    "candidate_id": "DHS-GOWERS-SIEVE",
+    "experiment_id": "EXP-DHS-DCP-MARKER-TARGET-ADAPTIVE-BEAM",
+    "falsifier_count": 4,
+    "falsifiers_triggered": [
+      "Public, target-independent coordinate charts are not the strongest legal classical nearest-plane baseline.",
+      "A finite width-power improvement is not an inverse-polynomial source-coverage theorem.",
+      "A finite tail collapse is not a lower bound against larger fixed polynomial powers or non-beam affine-CVP algorithms.",
+      "Floating priorities cannot be cited as exact ordering certificates, although all rounding and output checks are exact."
+    ],
+    "metrics": {
+      "exact_legality_source_instance_count": 3,
+      "exact_legality_trial_count": 15,
+      "exact_rounding_failure_count": 0,
+      "independent_uniform_target_trial_count": 90,
+      "invalid_marker_candidate_count": 0,
+      "largest_n_with_carry_success": 40,
+      "largest_n_with_standard_success": 48,
+      "maximum_beam_width": 110592,
+      "maximum_carry_width_power": 2,
+      "maximum_n_bits": 48,
+      "maximum_standard_width_power": 3,
+      "polynomial_state_bound_theorem_count": 1,
+      "polynomial_verified_decoder_family_count": 1,
+      "polynomial_witness_decoder_count": 0,
+      "proved_inverse_polynomial_uniform_source_success_count": 0,
+      "row_count": 30,
+      "source_contract_satisfying_row_count": 0,
+      "source_instance_count": 18,
+      "state_bound_failure_count": 0,
+      "tail_carry_max_power_source_success_rate": 0.0,
+      "tail_standard_max_power_source_success_rate": 0.3333333333333333,
+      "total_expanded_state_count": 152542914,
+      "trial_count": 90
+    },
+    "recorded_at": "2026-07-28T06:25:23.855367+00:00",
+    "result_id": "RESULT-EXP-DHS-DCP-MARKER-TARGET-ADAPTIVE-BEAM-TARGET-ADAPTIVE-BEAM",
+    "run_id": "RUN-EXP-DHS-DCP-MARKER-TARGET-ADAPTIVE-BEAM-00202",
+    "status": "target-adaptive-polynomial-beam-finite-survivor-proof-debt",
+    "summary": "Ran 90 source-native target-adaptive beam trials through n=48. Maximum-power tail success was 0.333333 standard and 0 carry-sliced; no inverse-polynomial source theorem follows."
+  },
+  {
+    "artifacts": {
+      "dcp_marker_target_adaptive_beam": "research/classical_baselines/dcp_marker_target_adaptive_beam.json"
+    },
+    "candidate_id": "DHS-GOWERS-SIEVE",
+    "experiment_id": "EXP-DHS-DCP-MARKER-TARGET-ADAPTIVE-BEAM",
+    "falsifier_count": 4,
+    "falsifiers_triggered": [
+      "Public, target-independent coordinate charts are not the strongest legal classical nearest-plane baseline.",
+      "A finite width-power improvement is not an inverse-polynomial source-coverage theorem.",
+      "A finite tail collapse is not a lower bound against larger fixed polynomial powers or non-beam affine-CVP algorithms.",
+      "Floating priorities cannot be cited as exact ordering certificates, although all rounding and output checks are exact."
+    ],
+    "metrics": {
+      "exact_legality_source_instance_count": 3,
+      "exact_legality_trial_count": 9,
+      "exact_rounding_failure_count": 0,
+      "independent_uniform_target_trial_count": 63,
+      "invalid_marker_candidate_count": 0,
+      "largest_n_with_carry_success": 40,
+      "largest_n_with_standard_success": 48,
+      "maximum_beam_width": 175616,
+      "maximum_carry_width_power": 2,
+      "maximum_n_bits": 56,
+      "maximum_standard_width_power": 3,
+      "polynomial_state_bound_theorem_count": 1,
+      "polynomial_verified_decoder_family_count": 1,
+      "polynomial_witness_decoder_count": 0,
+      "proved_inverse_polynomial_uniform_source_success_count": 0,
+      "row_count": 21,
+      "source_contract_satisfying_row_count": 0,
+      "source_instance_count": 21,
+      "state_bound_failure_count": 0,
+      "tail_carry_max_power_source_success_rate": 0.0,
+      "tail_carry_max_power_wilson_95_lower": 5.551115123125783e-17,
+      "tail_carry_max_power_wilson_95_upper": 0.5614970317550454,
+      "tail_standard_max_power_source_success_rate": 0.0,
+      "tail_standard_max_power_wilson_95_lower": 5.551115123125783e-17,
+      "tail_standard_max_power_wilson_95_upper": 0.5614970317550454,
+      "total_expanded_state_count": 269459169,
+      "trial_count": 63
+    },
+    "recorded_at": "2026-07-28T06:54:33.335716+00:00",
+    "result_id": "RESULT-EXP-DHS-DCP-MARKER-TARGET-ADAPTIVE-BEAM-TARGET-ADAPTIVE-BEAM",
+    "run_id": "RUN-EXP-DHS-DCP-MARKER-TARGET-ADAPTIVE-BEAM-00203",
+    "status": "target-adaptive-polynomial-beam-finite-tail-collapse",
+    "summary": "Ran 63 source-native target-adaptive beam trials through n=56. Maximum-power tail success was 0 standard and 0 carry-sliced; no inverse-polynomial source theorem follows."
   }
 ]

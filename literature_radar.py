@@ -53,6 +53,30 @@ DEFAULT_LITERATURE = [
         why_it_matters="Prevents the project from rediscovering a known-dead GI strategy.",
     ),
     PaperSeed(
+        id="moore-russell-multiregister-2005",
+        title=(
+            "Tight Results on Multiregister Fourier Sampling: Quantum "
+            "Measurements for Graph Isomorphism Require Entanglement"
+        ),
+        url="https://arxiv.org/abs/quant-ph/0511149",
+        year=2005,
+        tags=[
+            "graph-isomorphism",
+            "nonabelian-hsp",
+            "multiregister",
+            "entanglement-width",
+            "coset-state",
+            "information-lower-bound",
+            "no-go",
+        ],
+        why_it_matters=(
+            "Proves that nonnegligible information about the GI-relevant "
+            "hidden involution requires a measurement entangled across "
+            "Omega(n log n) coset states, so bounded-copy recoupling controls "
+            "cannot be promoted to decoders."
+        ),
+    ),
+    PaperSeed(
         id="beals-symmetric-qft-1997",
         title="Quantum computation of Fourier transforms over symmetric groups",
         url="https://doi.org/10.1145/258533.258548",
@@ -105,6 +129,24 @@ DEFAULT_LITERATURE = [
         why_it_matters=(
             "Classically resolves many restricted Kronecker and plethysm instances previously proposed as quantum "
             "speedups, sharply limiting multiplicity estimation as an independent breakthrough direction."
+        ),
+    ),
+    PaperSeed(
+        id="aggarwal-elboim-maximal-dimension-2026",
+        title="On the maximal dimension of an irreducible representation of the symmetric group",
+        url="https://arxiv.org/abs/2605.25995",
+        year=2026,
+        tags=[
+            "maximal-irrep-dimension",
+            "plancherel-measure",
+            "source-coverage",
+            "representation-theory",
+            "asymptotic-no-go",
+        ],
+        why_it_matters=(
+            "Proves that the largest S_n Plancherel atom is stretched-exponentially small, "
+            "so no polynomial catalog of pre-certified source irreps can have inverse-polynomial "
+            "natural weak-Fourier coverage."
         ),
     ),
     PaperSeed(

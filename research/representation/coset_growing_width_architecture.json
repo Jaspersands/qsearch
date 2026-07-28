@@ -1,0 +1,414 @@
+{
+  "architectures": [
+    {
+      "associator_circuit_proved": false,
+      "carrier_register_policy": "preserve-through-final-covariant-povm",
+      "classical_baseline": "natural strong Fourier, character/tensor contractions, and graph/code canonicalization",
+      "classical_separation_proved": false,
+      "compressed_outcome_proved": false,
+      "decoder_contract": "proposed polynomial map from covariant sketch to hidden involution; theorem missing",
+      "decoder_proved": false,
+      "final_povm_effect_class": "carrier-sensitive-covariant",
+      "id": "ARCH-BALANCED-CARRIER-COVARIANT",
+      "information_lower_bound_proved": false,
+      "intermediate_effect_algebra": "diagonal-action commutant routing plus carrier-preserving associators",
+      "joint_quantum_measurement": true,
+      "natural_source_access": "all source labels arise from natural coset-state QFT outcomes",
+      "outcome_representation": "proposed polynomial covariant sketch register; theorem missing",
+      "proof_complete": false,
+      "scaling_rows": [
+        {
+          "architecture_joint_register_width": 24,
+          "level_merge_counts": [
+            12,
+            6,
+            3,
+            1,
+            1
+          ],
+          "merge_count": 23,
+          "merge_depth": 5,
+          "n": 8,
+          "required_joint_register_width": 24,
+          "width_lower_bound_satisfied": true
+        },
+        {
+          "architecture_joint_register_width": 64,
+          "level_merge_counts": [
+            32,
+            16,
+            8,
+            4,
+            2,
+            1
+          ],
+          "merge_count": 63,
+          "merge_depth": 6,
+          "n": 16,
+          "required_joint_register_width": 64,
+          "width_lower_bound_satisfied": true
+        },
+        {
+          "architecture_joint_register_width": 160,
+          "level_merge_counts": [
+            80,
+            40,
+            20,
+            10,
+            5,
+            2,
+            1,
+            1
+          ],
+          "merge_count": 159,
+          "merge_depth": 8,
+          "n": 32,
+          "required_joint_register_width": 160,
+          "width_lower_bound_satisfied": true
+        },
+        {
+          "architecture_joint_register_width": 384,
+          "level_merge_counts": [
+            192,
+            96,
+            48,
+            24,
+            12,
+            6,
+            3,
+            1,
+            1
+          ],
+          "merge_count": 383,
+          "merge_depth": 9,
+          "n": 64,
+          "required_joint_register_width": 384,
+          "width_lower_bound_satisfied": true
+        }
+      ],
+      "state_dependent_measurement_proved": false,
+      "status": "structurally-compliant-proof-obligations-open",
+      "structurally_compliant_with_entanglement_width_gate": true,
+      "topology": "balanced binary recoupling tree",
+      "validation_issues": [
+        {
+          "message": "No uniform polynomial growing-copy associator circuit is proved.",
+          "obligation": "growing-associator",
+          "severity": "blocking"
+        },
+        {
+          "message": "No state-dependent growing-width POVM implementation is proved.",
+          "obligation": "measurement-synthesis",
+          "severity": "blocking"
+        },
+        {
+          "message": "No polynomial-size covariant outcome representation is proved.",
+          "obligation": "outcome-compression",
+          "severity": "blocking"
+        },
+        {
+          "message": "No inverse-polynomial information or recovery theorem is proved.",
+          "obligation": "information",
+          "severity": "blocking"
+        },
+        {
+          "message": "No polynomial hidden-involution decoder is proved.",
+          "obligation": "decoder",
+          "severity": "blocking"
+        },
+        {
+          "message": "No separation from legal classical representation baselines is proved.",
+          "obligation": "dequantization",
+          "severity": "blocking"
+        }
+      ],
+      "width_formula": "ceil(n log2 n)"
+    },
+    {
+      "associator_circuit_proved": false,
+      "carrier_register_policy": "measure-and-discard-per-register",
+      "classical_baseline": "natural strong Fourier information scaling",
+      "classical_separation_proved": false,
+      "compressed_outcome_proved": false,
+      "decoder_contract": "classical postprocessing of separate outcomes",
+      "decoder_proved": false,
+      "final_povm_effect_class": "product-strong-fourier",
+      "id": "ARCH-SEPARATE-STRONG-FOURIER",
+      "information_lower_bound_proved": false,
+      "intermediate_effect_algebra": "none",
+      "joint_quantum_measurement": false,
+      "natural_source_access": "natural coset-state QFT outcomes",
+      "outcome_representation": "classical list of separate outcomes",
+      "proof_complete": false,
+      "scaling_rows": [
+        {
+          "architecture_joint_register_width": 1,
+          "level_merge_counts": [],
+          "merge_count": 0,
+          "merge_depth": 0,
+          "n": 8,
+          "required_joint_register_width": 24,
+          "width_lower_bound_satisfied": false
+        },
+        {
+          "architecture_joint_register_width": 1,
+          "level_merge_counts": [],
+          "merge_count": 0,
+          "merge_depth": 0,
+          "n": 16,
+          "required_joint_register_width": 64,
+          "width_lower_bound_satisfied": false
+        },
+        {
+          "architecture_joint_register_width": 1,
+          "level_merge_counts": [],
+          "merge_count": 0,
+          "merge_depth": 0,
+          "n": 32,
+          "required_joint_register_width": 160,
+          "width_lower_bound_satisfied": false
+        },
+        {
+          "architecture_joint_register_width": 1,
+          "level_merge_counts": [],
+          "merge_count": 0,
+          "merge_depth": 0,
+          "n": 64,
+          "required_joint_register_width": 384,
+          "width_lower_bound_satisfied": false
+        }
+      ],
+      "state_dependent_measurement_proved": false,
+      "status": "structurally-rejected",
+      "structurally_compliant_with_entanglement_width_gate": false,
+      "topology": "independent per-register measurement",
+      "validation_issues": [
+        {
+          "message": "Registers are measured separately; sample count does not satisfy the joint entanglement-width lower bound.",
+          "obligation": "entanglement-width",
+          "severity": "fatal"
+        },
+        {
+          "message": "Joint width is below ceil(n log2 n).",
+          "obligation": "entanglement-width",
+          "severity": "fatal"
+        },
+        {
+          "message": "Carrier registers are discarded before an information-bearing covariant POVM.",
+          "obligation": "carrier-information",
+          "severity": "fatal"
+        },
+        {
+          "message": "No uniform polynomial growing-copy associator circuit is proved.",
+          "obligation": "growing-associator",
+          "severity": "blocking"
+        },
+        {
+          "message": "No state-dependent growing-width POVM implementation is proved.",
+          "obligation": "measurement-synthesis",
+          "severity": "blocking"
+        },
+        {
+          "message": "No polynomial-size covariant outcome representation is proved.",
+          "obligation": "outcome-compression",
+          "severity": "blocking"
+        },
+        {
+          "message": "No inverse-polynomial information or recovery theorem is proved.",
+          "obligation": "information",
+          "severity": "blocking"
+        },
+        {
+          "message": "No polynomial hidden-involution decoder is proved.",
+          "obligation": "decoder",
+          "severity": "blocking"
+        },
+        {
+          "message": "No separation from legal classical representation baselines is proved.",
+          "obligation": "dequantization",
+          "severity": "blocking"
+        }
+      ],
+      "width_formula": "1 joint register despite polynomial samples"
+    },
+    {
+      "associator_circuit_proved": false,
+      "carrier_register_policy": "discard-after-invariant-labels",
+      "classical_baseline": "finite tensor and character contractions",
+      "classical_separation_proved": false,
+      "compressed_outcome_proved": false,
+      "decoder_contract": "unspecified label-to-involution map",
+      "decoder_proved": false,
+      "final_povm_effect_class": "diagonal-action-commutant",
+      "id": "ARCH-BOUNDED-RACAH-LABELS",
+      "information_lower_bound_proved": false,
+      "intermediate_effect_algebra": "diagonal-action commutant",
+      "joint_quantum_measurement": true,
+      "natural_source_access": "selected rather than natural source branch",
+      "outcome_representation": "target and multiplicity/Racah labels",
+      "proof_complete": false,
+      "scaling_rows": [
+        {
+          "architecture_joint_register_width": 3,
+          "level_merge_counts": [
+            1,
+            1
+          ],
+          "merge_count": 2,
+          "merge_depth": 2,
+          "n": 8,
+          "required_joint_register_width": 24,
+          "width_lower_bound_satisfied": false
+        },
+        {
+          "architecture_joint_register_width": 3,
+          "level_merge_counts": [
+            1,
+            1
+          ],
+          "merge_count": 2,
+          "merge_depth": 2,
+          "n": 16,
+          "required_joint_register_width": 64,
+          "width_lower_bound_satisfied": false
+        },
+        {
+          "architecture_joint_register_width": 3,
+          "level_merge_counts": [
+            1,
+            1
+          ],
+          "merge_count": 2,
+          "merge_depth": 2,
+          "n": 32,
+          "required_joint_register_width": 160,
+          "width_lower_bound_satisfied": false
+        },
+        {
+          "architecture_joint_register_width": 3,
+          "level_merge_counts": [
+            1,
+            1
+          ],
+          "merge_count": 2,
+          "merge_depth": 2,
+          "n": 64,
+          "required_joint_register_width": 384,
+          "width_lower_bound_satisfied": false
+        }
+      ],
+      "state_dependent_measurement_proved": false,
+      "status": "structurally-rejected",
+      "structurally_compliant_with_entanglement_width_gate": false,
+      "topology": "fixed three-register Racah control",
+      "validation_issues": [
+        {
+          "message": "Joint width is below ceil(n log2 n).",
+          "obligation": "entanglement-width",
+          "severity": "fatal"
+        },
+        {
+          "message": "Carrier registers are discarded before an information-bearing covariant POVM.",
+          "obligation": "carrier-information",
+          "severity": "fatal"
+        },
+        {
+          "message": "Every final effect is in the diagonal-action commutant and therefore has zero hidden-element information.",
+          "obligation": "commutant-zero-information",
+          "severity": "fatal"
+        },
+        {
+          "message": "No uniform polynomial growing-copy associator circuit is proved.",
+          "obligation": "growing-associator",
+          "severity": "blocking"
+        },
+        {
+          "message": "No state-dependent growing-width POVM implementation is proved.",
+          "obligation": "measurement-synthesis",
+          "severity": "blocking"
+        },
+        {
+          "message": "No polynomial-size covariant outcome representation is proved.",
+          "obligation": "outcome-compression",
+          "severity": "blocking"
+        },
+        {
+          "message": "No inverse-polynomial information or recovery theorem is proved.",
+          "obligation": "information",
+          "severity": "blocking"
+        },
+        {
+          "message": "No polynomial hidden-involution decoder is proved.",
+          "obligation": "decoder",
+          "severity": "blocking"
+        },
+        {
+          "message": "No separation from legal classical representation baselines is proved.",
+          "obligation": "dequantization",
+          "severity": "blocking"
+        }
+      ],
+      "width_formula": "3"
+    }
+  ],
+  "claim_gate": {
+    "bounded_commutant_architecture_rejected": true,
+    "growing_width_structural_skeleton_exists": true,
+    "proof_complete_growing_width_architecture_exists": false,
+    "reason": "A balanced carrier-preserving skeleton satisfies the known width and symmetry constraints, but every mathematical and algorithmic component that could create a speedup remains an explicit proof obligation.",
+    "separate_measurement_architecture_rejected": true,
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-07-27T21:13:21.780127+00:00",
+  "falsifiers_triggered": [
+    "Polynomial sample count with separate measurements fails the entanglement-width contract.",
+    "A bounded Racah-label architecture fails both width and commutant-information gates.",
+    "A balanced tree and polynomial merge count do not prove that the required associators or POVM are implementable.",
+    "Naming a covariant sketch and decoder does not satisfy their information or complexity obligations."
+  ],
+  "headline_metrics": {
+    "architecture_count": 3,
+    "blocking_proof_issue_count": 18,
+    "compressed_covariant_outcome_count": 0,
+    "fatal_validation_issue_count": 6,
+    "growing_width_hidden_involution_decoder_count": 0,
+    "growing_width_information_theorem_count": 0,
+    "maximum_compliant_joint_register_width_at_n64": 384,
+    "minimum_compliant_merge_depth_at_n64": 9,
+    "polynomial_growing_associator_circuit_count": 0,
+    "proof_complete_architecture_count": 0,
+    "scaling_row_count": 12,
+    "structurally_compliant_architecture_count": 1,
+    "structurally_rejected_architecture_count": 2
+  },
+  "schema_contract": {
+    "fatal_rejections": [
+      "separate measurements",
+      "joint width below ceil(n log2 n)",
+      "carrier discarded before final covariant POVM",
+      "commutant-only final effects",
+      "selected/non-natural source access"
+    ],
+    "proof_blockers": [
+      "growing associator circuit",
+      "state-dependent measurement synthesis",
+      "outcome compression",
+      "information lower bound",
+      "decoder",
+      "classical separation"
+    ],
+    "required_fields": [
+      "joint quantum width",
+      "topology and merge schedule",
+      "carrier preservation",
+      "intermediate and final effect algebras",
+      "natural source access",
+      "compressed outcome representation",
+      "decoder",
+      "information theorem",
+      "classical baseline"
+    ]
+  },
+  "status": "growing-width-skeleton-typed-associator-outcome-information-decoder-open",
+  "summary": "Type-checked 3 multiregister architectures. 1 survives structural no-go gates, but zero has proved growing associators, outcomes, information, decoding, and classical separation."
+}

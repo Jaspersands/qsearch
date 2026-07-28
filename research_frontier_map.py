@@ -69,12 +69,24 @@ DCP_MARKER_DEVIATION_GEOMETRY_PATH = Path(
 DCP_MARKER_ALL_TARGET_COVERAGE_PATH = Path(
     "research/classical_baselines/dcp_marker_all_target_coverage.json"
 )
+DCP_MARKER_VULNERABLE_COORDINATE_PATH = Path(
+    "research/classical_baselines/dcp_marker_vulnerable_coordinate_decoder.json"
+)
+DCP_MARKER_CHART_UNION_PATH = Path(
+    "research/classical_baselines/dcp_marker_chart_union_decoder.json"
+)
+DCP_MARKER_TARGET_ADAPTIVE_BEAM_PATH = Path(
+    "research/classical_baselines/dcp_marker_target_adaptive_beam.json"
+)
 DCP_SUBSET_SUM_FOURTH_MOMENT_PATH = Path("research/classical_baselines/dcp_subset_sum_fourth_moment_obstruction.json")
 DCP_SUBSET_SUM_SMITH_MOMENT_PATH = Path("research/classical_baselines/dcp_subset_sum_smith_moment_spectrum.json")
 DCP_SUBSET_SUM_SMITH_TRANSFER_PATH = Path("research/classical_baselines/dcp_subset_sum_smith_transfer_order_six.json")
 DCP_SUBSET_SUM_FIXED_ORDER_MOMENT_PATH = Path("research/classical_baselines/dcp_subset_sum_fixed_order_moment_theorem.json")
 DCP_SUBSET_SUM_CONDITIONED_TAIL_PATH = Path("research/classical_baselines/dcp_subset_sum_conditioned_tail_theorem.json")
 DCP_SUBSET_SUM_GROWING_ORDER_PATH = Path("research/classical_baselines/dcp_subset_sum_growing_order_theorem.json")
+DCP_SUBSET_SUM_GROWING_ORDER_CHAIN_PATH = Path(
+    "research/classical_baselines/dcp_subset_sum_growing_order_chain_theorem.json"
+)
 DCP_SUBSET_SUM_EMBEDDING_VOLUME_PATH = Path("research/classical_baselines/dcp_subset_sum_embedding_volume_theorem.json")
 DCP_SUBSET_SUM_SHORT_RELATION_PATH = Path("research/classical_baselines/dcp_subset_sum_short_relation_theorem.json")
 DCP_SUBSET_SUM_CARRY_RELATION_PATH = Path("research/classical_baselines/dcp_subset_sum_carry_relation_theorem.json")
@@ -247,12 +259,22 @@ def build_frontier_map() -> dict[str, Any]:
     dcp_marker_aware_list = _read_json(DCP_MARKER_AWARE_LIST_DECODER_PATH, {})
     dcp_marker_deviation_geometry = _read_json(DCP_MARKER_DEVIATION_GEOMETRY_PATH, {})
     dcp_marker_all_target_coverage = _read_json(DCP_MARKER_ALL_TARGET_COVERAGE_PATH, {})
+    dcp_marker_vulnerable_coordinate = _read_json(
+        DCP_MARKER_VULNERABLE_COORDINATE_PATH, {}
+    )
+    dcp_marker_chart_union = _read_json(DCP_MARKER_CHART_UNION_PATH, {})
+    dcp_marker_target_beam = _read_json(
+        DCP_MARKER_TARGET_ADAPTIVE_BEAM_PATH, {}
+    )
     dcp_subset_sum_fourth_moment = _read_json(DCP_SUBSET_SUM_FOURTH_MOMENT_PATH, {})
     dcp_subset_sum_smith_moments = _read_json(DCP_SUBSET_SUM_SMITH_MOMENT_PATH, {})
     dcp_subset_sum_smith_transfer = _read_json(DCP_SUBSET_SUM_SMITH_TRANSFER_PATH, {})
     dcp_subset_sum_fixed_order_moments = _read_json(DCP_SUBSET_SUM_FIXED_ORDER_MOMENT_PATH, {})
     dcp_subset_sum_conditioned_tail = _read_json(DCP_SUBSET_SUM_CONDITIONED_TAIL_PATH, {})
     dcp_subset_sum_growing_order = _read_json(DCP_SUBSET_SUM_GROWING_ORDER_PATH, {})
+    dcp_subset_sum_growing_order_chain = _read_json(
+        DCP_SUBSET_SUM_GROWING_ORDER_CHAIN_PATH, {}
+    )
     dcp_subset_sum_embedding_volume = _read_json(DCP_SUBSET_SUM_EMBEDDING_VOLUME_PATH, {})
     dcp_subset_sum_short_relations = _read_json(DCP_SUBSET_SUM_SHORT_RELATION_PATH, {})
     dcp_subset_sum_carry_relations = _read_json(DCP_SUBSET_SUM_CARRY_RELATION_PATH, {})
@@ -375,12 +397,24 @@ def build_frontier_map() -> dict[str, Any]:
     dcp_marker_aware_list_metrics = dcp_marker_aware_list.get("headline_metrics", {})
     dcp_marker_deviation_metrics = dcp_marker_deviation_geometry.get("headline_metrics", {})
     dcp_marker_all_target_metrics = dcp_marker_all_target_coverage.get("headline_metrics", {})
+    dcp_marker_vulnerable_metrics = dcp_marker_vulnerable_coordinate.get(
+        "headline_metrics", {}
+    )
+    dcp_marker_chart_union_metrics = dcp_marker_chart_union.get(
+        "headline_metrics", {}
+    )
+    dcp_marker_target_beam_metrics = dcp_marker_target_beam.get(
+        "headline_metrics", {}
+    )
     dcp_subset_sum_fourth_moment_metrics = dcp_subset_sum_fourth_moment.get("headline_metrics", {})
     dcp_subset_sum_smith_moment_metrics = dcp_subset_sum_smith_moments.get("headline_metrics", {})
     dcp_subset_sum_smith_transfer_metrics = dcp_subset_sum_smith_transfer.get("headline_metrics", {})
     dcp_subset_sum_fixed_order_moment_metrics = dcp_subset_sum_fixed_order_moments.get("headline_metrics", {})
     dcp_subset_sum_conditioned_tail_metrics = dcp_subset_sum_conditioned_tail.get("headline_metrics", {})
     dcp_subset_sum_growing_order_metrics = dcp_subset_sum_growing_order.get("headline_metrics", {})
+    dcp_subset_sum_growing_order_chain_metrics = (
+        dcp_subset_sum_growing_order_chain.get("headline_metrics", {})
+    )
     dcp_subset_sum_embedding_volume_metrics = dcp_subset_sum_embedding_volume.get("headline_metrics", {})
     dcp_subset_sum_short_relation_metrics = dcp_subset_sum_short_relations.get("headline_metrics", {})
     dcp_subset_sum_carry_relation_metrics = dcp_subset_sum_carry_relations.get("headline_metrics", {})
@@ -1079,6 +1113,39 @@ def build_frontier_map() -> dict[str, Any]:
                 f"{dcp_marker_all_target_metrics.get('tail_mean_standard_max_depth_coverage', 'unknown')}/"
                 f"{dcp_marker_all_target_metrics.get('tail_mean_carry_max_depth_coverage', 'unknown')}, label laws="
                 f"{dcp_marker_all_target_metrics.get('proved_asymptotic_fixed_depth_coverage_bound_count', 'unknown')}."
+                f" Vulnerable-coordinate marker list: polynomial/transfer theorems/failures="
+                f"{dcp_marker_vulnerable_metrics.get('polynomial_selected_coordinate_list_theorem_count', 'unknown')}/"
+                f"{dcp_marker_vulnerable_metrics.get('transfer_sandwich_theorem_count', 'unknown')}/"
+                f"{dcp_marker_vulnerable_metrics.get('transfer_sandwich_failure_count', 'unknown')}, "
+                f"tail assignment coverage standard/carry="
+                f"{dcp_marker_vulnerable_metrics.get('tail_standard_sampled_assignment_coverage', 'unknown')}/"
+                f"{dcp_marker_vulnerable_metrics.get('tail_carry_sampled_assignment_coverage', 'unknown')}, "
+                f"log2 slopes={dcp_marker_vulnerable_metrics.get('standard_log2_coverage_slope_per_n', 'unknown')}/"
+                f"{dcp_marker_vulnerable_metrics.get('carry_log2_coverage_slope_per_n', 'unknown')}, "
+                f"uniform-legal laws="
+                f"{dcp_marker_vulnerable_metrics.get('proved_inverse_polynomial_uniform_legal_coverage_count', 'unknown')}."
+                f" Learned marker chart union: polynomial/selector/train-test failures="
+                f"{dcp_marker_chart_union_metrics.get('polynomial_chart_union_theorem_count', 'unknown')}/"
+                f"{dcp_marker_chart_union_metrics.get('target_independent_selector_failure_count', 'unknown')}/"
+                f"{dcp_marker_chart_union_metrics.get('disjoint_train_test_failure_count', 'unknown')}, "
+                f"tail carry held-out/max-row="
+                f"{dcp_marker_chart_union_metrics.get('tail_carry_heldout_coverage', 'unknown')}/"
+                f"{dcp_marker_chart_union_metrics.get('tail_maximum_carry_heldout_coverage', 'unknown')}, "
+                f"log2 slope={dcp_marker_chart_union_metrics.get('carry_log2_heldout_coverage_slope_per_n', 'unknown')}, "
+                f"uniform-legal laws="
+                f"{dcp_marker_chart_union_metrics.get('proved_inverse_polynomial_uniform_legal_coverage_count', 'unknown')}."
+                f" Target-adaptive marker beam: polynomial/rounding/state failures="
+                f"{dcp_marker_target_beam_metrics.get('polynomial_state_bound_theorem_count', 'unknown')}/"
+                f"{dcp_marker_target_beam_metrics.get('exact_rounding_failure_count', 'unknown')}/"
+                f"{dcp_marker_target_beam_metrics.get('state_bound_failure_count', 'unknown')}, "
+                f"max width powers standard/carry="
+                f"{dcp_marker_target_beam_metrics.get('maximum_standard_width_power', 'unknown')}/"
+                f"{dcp_marker_target_beam_metrics.get('maximum_carry_width_power', 'unknown')}, "
+                f"tail source success standard/carry="
+                f"{dcp_marker_target_beam_metrics.get('tail_standard_max_power_source_success_rate', 'unknown')}/"
+                f"{dcp_marker_target_beam_metrics.get('tail_carry_max_power_source_success_rate', 'unknown')}, "
+                f"source laws="
+                f"{dcp_marker_target_beam_metrics.get('proved_inverse_polynomial_uniform_source_success_count', 'unknown')}."
                 f" Fourth-moment obstruction: triplewise/localization certificates="
                 f"{dcp_subset_sum_fourth_moment_metrics.get('triplewise_independence_certificate_count', 'unknown')}/"
                 f"{dcp_subset_sum_fourth_moment_metrics.get('fourth_order_localization_certificate_count', 'unknown')}, "
@@ -1108,6 +1175,16 @@ def build_frontier_map() -> dict[str, Any]:
                 f"{dcp_subset_sum_growing_order_metrics.get('proved_sub_half_log_growing_order_obstruction_count', 'unknown')}/"
                 f"{dcp_subset_sum_growing_order_metrics.get('proved_half_log_boundary_obstruction_count', 'unknown')}/"
                 f"{dcp_subset_sum_growing_order_metrics.get('proved_signed_statistic_obstruction_count', 'unknown')}."
+                f" Near-log lattice chain: exact controls/failures="
+                f"{dcp_subset_sum_growing_order_chain_metrics.get('exact_control_count', 'unknown')}/"
+                f"{dcp_subset_sum_growing_order_chain_metrics.get('exact_chain_bound_failure_count', 'unknown')}, "
+                f"polynomial/fixed-fraction/near-log theorems="
+                f"{dcp_subset_sum_growing_order_chain_metrics.get('polynomial_chain_length_theorem_count', 'unknown')}/"
+                f"{dcp_subset_sum_growing_order_chain_metrics.get('proved_fixed_fraction_log_obstruction_count', 'unknown')}/"
+                f"{dcp_subset_sum_growing_order_chain_metrics.get('proved_near_log_deficit_obstruction_count', 'unknown')}, "
+                f"final-window/signed proofs="
+                f"{dcp_subset_sum_growing_order_chain_metrics.get('proved_final_near_log_window_obstruction_count', 'unknown')}/"
+                f"{dcp_subset_sum_growing_order_chain_metrics.get('proved_signed_statistic_obstruction_count', 'unknown')}."
                 f" Embedding volume obstructions/local basis gaps="
                 f"{dcp_subset_sum_embedding_volume_metrics.get('volume_only_asymptotic_separation_ruled_out_count', 'unknown')}/"
                 f"{dcp_subset_sum_embedding_volume_metrics.get('proved_local_reduced_basis_separation_count', 'unknown')}; "

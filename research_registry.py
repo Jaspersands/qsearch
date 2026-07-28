@@ -407,6 +407,10 @@ def seed_candidate_records() -> tuple[list[CandidateRecord], list[ExperimentReco
                 "EXP-DHS-DCP-MARKER-AWARE-LIST-DECODER",
                 "EXP-DHS-DCP-MARKER-DEVIATION-GEOMETRY",
                 "EXP-DHS-DCP-MARKER-ALL-TARGET-COVERAGE",
+                "EXP-DHS-DCP-MARKER-VULNERABLE-COORDINATE-DECODER",
+                "EXP-DHS-DCP-MARKER-CHART-UNION-DECODER",
+                "EXP-DHS-DCP-MARKER-TARGET-ADAPTIVE-BEAM",
+                "EXP-DHS-DCP-SUBSET-SUM-GROWING-ORDER-CHAIN-THEOREM",
             ],
             notes=(
                 "Primary high-upside candidate. The authoritative algorithmic interface is independent DCP state input; "
@@ -2443,6 +2447,159 @@ def seed_candidate_records() -> tuple[list[CandidateRecord], list[ExperimentReco
             ],
         ),
         ExperimentRecord(
+            id="EXP-DHS-DCP-MARKER-VULNERABLE-COORDINATE-DECODER",
+            candidate_id="DHS-GOWERS-SIEVE",
+            title="Growing-depth vulnerable-coordinate marker decoder",
+            status="planned",
+            hypothesis=(
+                "Nearest-plane deviations may concentrate on a publicly identifiable "
+                "O(log n)-dimensional unstable Gram-Schmidt subspace, allowing a "
+                "polynomial list to absorb growing deviation depth."
+            ),
+            protocol=(
+                "Rank target-independent reduced-basis coordinates by exact Rademacher "
+                "variance divided by squared rounding margin; branch by bounded offsets "
+                "on c ceil(log2 n) coordinates; compare against fixed-depth lists on "
+                "held-out random assignments and exact uniform-legal target censuses."
+            ),
+            positive_signal=(
+                "A proved inverse-polynomial accepted-assignment law, transferred by the "
+                "fiber-count sandwich to uniform legal targets, would supply a new "
+                "polynomial classical subset-sum decoder that the DCP route must survive."
+            ),
+            falsifiers=[
+                "The selector depends on the hidden target, witness, or tuned test rows.",
+                "The selected-coordinate list grows superpolynomially.",
+                "Assignment-weighted witness success is reported as uniform-target coverage.",
+                "The deterministic assignment-to-target coverage sandwich fails.",
+                "Held-out accepted-assignment mass decays without a compensating source theorem.",
+                "Finite decay is promoted to a lower bound against general affine-CVP.",
+            ],
+            metrics=[
+                "polynomial_selected_coordinate_list_theorem_count",
+                "transfer_sandwich_theorem_count",
+                "transfer_sandwich_failure_count",
+                "tail_standard_sampled_assignment_coverage",
+                "tail_carry_sampled_assignment_coverage",
+                "standard_log2_coverage_slope_per_n",
+                "carry_log2_coverage_slope_per_n",
+                "finite_tail_collapse_observed_count",
+                "proved_inverse_polynomial_uniform_legal_coverage_count",
+            ],
+            dependencies=[
+                "dcp_marker_vulnerable_coordinate_decoder.py",
+                "dcp_marker_all_target_coverage.py",
+                "dcp_marker_deviation_geometry.py",
+                "dcp_marker_aware_list_decoder.py",
+            ],
+            next_actions=[
+                "Run qsearch.py dcp-marker-vulnerable-coordinates.",
+                "Prove or refute concentration of deviations outside the selected public subspace.",
+                "If every fixed selector multiplier decays, formalize the random-label source law before closing this decoder class.",
+            ],
+        ),
+        ExperimentRecord(
+            id="EXP-DHS-DCP-MARKER-CHART-UNION-DECODER",
+            candidate_id="DHS-GOWERS-SIEVE",
+            title="Polynomial learned marker-chart union decoder",
+            status="planned",
+            hypothesis=(
+                "Although no single logarithmic coordinate subspace captures the "
+                "nearest-plane deviations, polynomially many target-independent "
+                "learned charts may cover an inverse-polynomial source fraction."
+            ),
+            protocol=(
+                "Draw public random-sign training probes, learn at most n^a padded "
+                "active-coordinate charts of size c ceil(log2 n), freeze them, and "
+                "measure their union on disjoint held-out probes and complete small-n "
+                "uniform-legal target censuses."
+            ),
+            positive_signal=(
+                "Held-out inverse-polynomial coverage with a random-label theorem would "
+                "give a new polynomial classical subset-sum decoder and substantially "
+                "tighten the DCP frontier."
+            ),
+            falsifiers=[
+                "Training uses the target, a planted witness, or held-out assignments.",
+                "The chart count or per-chart branch family is superpolynomial.",
+                "Training coverage is reported without held-out evaluation.",
+                "Assignment-weighted coverage is substituted for uniform-legal target coverage.",
+                "Held-out chart-union coverage decays at the preregistered scale.",
+                "Finite failure is promoted to a lower bound against other affine decoders.",
+            ],
+            metrics=[
+                "polynomial_chart_union_theorem_count",
+                "target_independent_selector_failure_count",
+                "disjoint_train_test_failure_count",
+                "tail_carry_heldout_coverage",
+                "tail_maximum_carry_heldout_coverage",
+                "carry_log2_heldout_coverage_slope_per_n",
+                "finite_tail_collapse_observed_count",
+                "proved_inverse_polynomial_uniform_legal_coverage_count",
+            ],
+            dependencies=[
+                "dcp_marker_chart_union_decoder.py",
+                "dcp_marker_vulnerable_coordinate_decoder.py",
+                "dcp_marker_all_target_coverage.py",
+            ],
+            next_actions=[
+                "Run qsearch.py dcp-marker-chart-union.",
+                "Compare chart-union coverage with the oracle representable active-mask mass.",
+                "Prove chart-support entropy or find a different polynomial public atlas.",
+            ],
+        ),
+        ExperimentRecord(
+            id="EXP-DHS-DCP-MARKER-TARGET-ADAPTIVE-BEAM",
+            candidate_id="DHS-GOWERS-SIEVE",
+            title="Target-adaptive polynomial marker beam baseline",
+            status="planned",
+            hypothesis=(
+                "A polynomial K-best nearest-plane beam that uses the observed "
+                "uniform target may recover a nonnegligible random-source "
+                "fraction missed by target-independent coordinate charts."
+            ),
+            protocol=(
+                "Sample independent uniform labels and targets, retain n^a "
+                "partial nearest-plane paths by accumulated orthogonal residual "
+                "energy, charge every branch and carry, and exactly verify every "
+                "returned Boolean subset."
+            ),
+            positive_signal=(
+                "A uniform inverse-polynomial source-success theorem for a fixed "
+                "width power would give a classical density-one subset-sum "
+                "solver and dequantize the current DCP route."
+            ),
+            falsifiers=[
+                "Targets are planted from known witnesses instead of sampled independently uniform.",
+                "Beam width, offset radius, or carry enumeration is not charged.",
+                "Approximate priorities alter exact nearest-integer decisions or output verification.",
+                "Finite width-power success is promoted without an asymptotic source law.",
+                "Finite collapse is promoted to a lower bound against larger polynomial powers or non-beam affine-CVP.",
+            ],
+            metrics=[
+                "polynomial_state_bound_theorem_count",
+                "independent_uniform_target_trial_count",
+                "exact_rounding_failure_count",
+                "state_bound_failure_count",
+                "invalid_marker_candidate_count",
+                "tail_standard_max_power_source_success_rate",
+                "tail_carry_max_power_source_success_rate",
+                "proved_inverse_polynomial_uniform_source_success_count",
+                "source_contract_satisfying_row_count",
+            ],
+            dependencies=[
+                "dcp_marker_target_adaptive_beam.py",
+                "dcp_marker_chart_union_decoder.py",
+                "dcp_marker_all_target_coverage.py",
+                "dcp_subset_sum_target_distribution.py",
+            ],
+            next_actions=[
+                "Run qsearch.py dcp-marker-target-beam.",
+                "Sweep fixed polynomial width powers on independent uniform targets.",
+                "Derive a source law for required beam width or abandon K-best marker decoding.",
+            ],
+        ),
+        ExperimentRecord(
             id="EXP-DHS-DCP-SUBSET-SUM-PRECONDITIONED-GEOMETRY",
             candidate_id="DHS-GOWERS-SIEVE",
             title="Exact low-bit-conditioned residual geometry theorem",
@@ -2759,6 +2916,55 @@ def seed_candidate_records() -> tuple[list[CandidateRecord], list[ExperimentReco
                 "Analyze the k approximately (1/2)log_2 n boundary with symmetry-reduced transfer or sharper entropy bounds.",
                 "Demand explicit estimation and decoder costs for every boundary-order statistic.",
                 "Compare boundary-order moments against signed contractions and reduced-basis events.",
+            ],
+        ),
+        ExperimentRecord(
+            id="EXP-DHS-DCP-SUBSET-SUM-GROWING-ORDER-CHAIN-THEOREM",
+            candidate_id="DHS-GOWERS-SIEVE",
+            title="Near-logarithmic lattice-chain moment obstruction",
+            status="planned",
+            hypothesis=(
+                "The previous 2^k bound on proper Boolean-lattice transitions "
+                "is loose; saturation index and Hadamard determinant bounds reduce "
+                "every transfer chain to O(k^2 log k)."
+            ),
+            protocol=(
+                "Prove rank and same-span index-drop lemmas for integer lattices "
+                "generated by Boolean columns, substitute the polynomial chain "
+                "length into the complete Smith-transfer path count, and verify "
+                "the bound against exact low-order transfer DAGs."
+            ),
+            positive_signal=(
+                "A valid polynomial chain theorem closes nonnegative moment "
+                "schedules almost to logarithmic order and sharply narrows the "
+                "two-adic preconditioning search space."
+            ),
+            falsifiers=[
+                "A same-rank proper extension need not reduce the saturation index by an integer factor.",
+                "The lattice at rank r need not contain r independent Boolean generators.",
+                "A low-order exact transfer path exceeds the proposed chain bound.",
+                "Path positions, Boolean identities, Smith numerators, or register-offset factors are omitted.",
+                "The result is transferred to signed statistics or reduced-basis geometry without domination.",
+            ],
+            metrics=[
+                "exact_control_count",
+                "exact_chain_bound_failure_count",
+                "polynomial_chain_length_theorem_count",
+                "proved_fixed_fraction_log_obstruction_count",
+                "proved_near_log_deficit_obstruction_count",
+                "proved_final_near_log_window_obstruction_count",
+                "proved_signed_statistic_obstruction_count",
+            ],
+            dependencies=[
+                "dcp_subset_sum_growing_order_chain_theorem.py",
+                "dcp_subset_sum_growing_order_theorem.py",
+                "dcp_subset_sum_fixed_order_moment_theorem.py",
+                "dcp_subset_sum_smith_transfer.py",
+            ],
+            next_actions=[
+                "Run qsearch.py dcp-subset-sum-growing-chain.",
+                "Tighten the remaining log n-O(log log n) window or prove it requires superpolynomial observable resources.",
+                "Search signed statistics and explicit reduced-basis events separately.",
             ],
         ),
         ExperimentRecord(
@@ -5916,6 +6122,326 @@ def seed_candidate_records() -> tuple[list[CandidateRecord], list[ExperimentReco
             ],
         ),
         ExperimentRecord(
+            id="EXP-COSET-SAME-HIDDEN-TARGET-LAW",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Exact shared-hidden coupled-irrep target law",
+            status="planned",
+            hypothesis=(
+                "The true target distribution for two source labels carrying "
+                "the same hidden involution can be reduced to exact character "
+                "ratios and Kronecker multiplicities."
+            ),
+            protocol=(
+                "Derive the conditional target law from isotypic-projector "
+                "partial traces, verify exact source/conditional/joint "
+                "normalization, match the two-copy frame scalar, reweight "
+                "known separator collisions, and correct fixed-source "
+                "certificate coverage."
+            ),
+            positive_signal=(
+                "The law identifies nonnegligible naturally sampled "
+                "multiplicity sectors and supports an h-dependent coherent "
+                "multiplicity measurement with a polynomial decoder."
+            ),
+            falsifiers=[
+                "Dimension-weighted Kronecker coupling differs from the operational target law.",
+                "A source-pair collision probability overstates the actual collision-target mass.",
+                "Target labels are invariant over the involution conjugacy class.",
+                "No coherent internal Kronecker transform or hidden-involution decoder follows.",
+            ],
+            metrics=[
+                "same_hidden_target_law_record_count",
+                "general_exact_character_formula_theorem_count",
+                "exact_normalization_verified_record_count",
+                "frame_scalar_identity_verified_record_count",
+                "dimension_coupling_reference_mismatch_record_count",
+                "maximum_expected_conditional_tv_from_dimension_coupling",
+                "maximum_scalar_collision_target_joint_mass",
+                "fixed_source_coverage_correction_count",
+                "coherent_kronecker_target_measurement_theorem_count",
+                "hidden_involution_decoder_count",
+            ],
+            dependencies=[
+                "coset_same_hidden_target_law.py",
+                "coset_two_copy_frame.py",
+                "symmetric_character.py",
+                "weak_fourier_signal.py",
+                "exact Schur partial-trace identities",
+            ],
+            next_actions=[
+                "Use the true target law in every natural-coverage and collision calculation.",
+                "Derive h-dependent multiplicity-space outcome moments conditioned on each target.",
+                "Prove or falsify a polynomial coherent internal Kronecker measurement.",
+                "Require mutual information about the individual involution before decoder work.",
+            ],
+        ),
+        ExperimentRecord(
+            id="EXP-COSET-COMMUTANT-INFORMATION-OBSTRUCTION",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Commutant-only hidden-involution information obstruction",
+            status="planned",
+            hypothesis=(
+                "The current target, multiplicity, and Racah observables may "
+                "organize recoupling while carrying no information about the "
+                "individual hidden involution."
+            ),
+            protocol=(
+                "Prove covariance of conditioned coset states and invariance "
+                "of every diagonal-action commutant POVM effect for arbitrary "
+                "copy count; verify full spectral distributions on a "
+                "nontrivial S_5 multiplicity control and exhibit a "
+                "noncommutant carrier-sensitive escape witness."
+            ),
+            positive_signal=(
+                "A carrier-sensitive covariant measurement composed with "
+                "commutant preprocessing has inverse-polynomial mutual "
+                "information about h and a polynomial decoder."
+            ),
+            falsifiers=[
+                "Every commutant-only outcome probability is constant over the hidden conjugacy class.",
+                "A simple multiplicity spectrum is mistaken for hidden-element information.",
+                "Racah labels remain invariant when measured without carrier-sensitive effects.",
+                "The proposed escape keeps no carrier register or covariant outcome.",
+            ],
+            metrics=[
+                "general_all_k_commutant_zero_information_theorem_count",
+                "exact_commutant_only_mutual_information_bits",
+                "finite_commutant_distribution_invariance_verified_count",
+                "maximum_finite_commutant_outcome_total_variation",
+                "finite_noncommutant_escape_witness_count",
+                "commutant_only_hidden_involution_decoder_count",
+                "carrier_sensitive_covariant_decoder_count",
+            ],
+            dependencies=[
+                "coset_commutant_information_obstruction.py",
+                "coset_multiplicity_commutant_search.py",
+                "coset_jucys_murphy_label_transform.py",
+                "finite-group covariance and Schur-Weyl commutant identities",
+            ],
+            next_actions=[
+                "Reclassify every commutant separator and Racah label as preprocessing only.",
+                "Search carrier/tableau-sensitive covariant POVM effects after recoupling.",
+                "Compute h-conditioned outcome mutual information, not only spectra or branch mass.",
+                "Reject any decoder whose recorded outcomes all commute with the diagonal action.",
+            ],
+        ),
+        ExperimentRecord(
+            id="EXP-COSET-CARRIER-INFORMATION-AUDIT",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Carrier-sensitive recoupling information search",
+            status="planned",
+            hypothesis=(
+                "Retaining target-tableau carrier outcomes while refining "
+                "multiplicity spaces may turn commutant preprocessing into an "
+                "information-bearing measurement."
+            ),
+            protocol=(
+                "On nontrivial S_5 and S_6 source-pair controls, compute "
+                "hidden-involution mutual information and Bayes recovery for "
+                "separator-only, YJM-only, the gap rule, every one of 1,744 "
+                "parity-complete coefficient rules, and direct product "
+                "Young-basis strong Fourier measurement."
+            ),
+            positive_signal=(
+                "One frozen carrier-sensitive rule beats simple strong "
+                "Fourier on independent sizes, has scalable information per "
+                "copy, a coherent implementation, and a decoder unavailable "
+                "to legal classical baselines."
+            ),
+            falsifiers=[
+                "Separator-only outcomes have zero information.",
+                "Gap optimization selects a rule that is not information-optimal.",
+                "Every searched carrier refinement is dominated by product strong Fourier outcomes.",
+                "Finite mutual information has no scaling or polynomial decoder.",
+            ],
+            metrics=[
+                "finite_control_count",
+                "coefficient_vector_count",
+                "separator_only_zero_information_verified_count",
+                "joint_separator_information_gain_control_count",
+                "product_strong_fourier_dominates_all_searched_rules_count",
+                "maximum_best_joint_mutual_information_bits",
+                "maximum_product_young_basis_mutual_information_bits",
+                "all_n_information_advantage_theorem_count",
+                "classical_separation_theorem_count",
+                "hidden_involution_decoder_count",
+            ],
+            dependencies=[
+                "coset_carrier_information_audit.py",
+                "coset_commutant_information_obstruction.py",
+                "coset_typical_parity_complete_separator.py",
+                "diagonal Young-Jucys-Murphy carrier labels",
+            ],
+            next_actions=[
+                "Freeze information-optimized rules before adjacent-size holdouts.",
+                "Search covariant carrier effects outside the commutant, not additional invariant spectra.",
+                "Compare every collective outcome with separate strong Fourier and classical representation baselines.",
+                "Require information scaling and a polynomial hidden-involution decoder.",
+            ],
+        ),
+        ExperimentRecord(
+            id="EXP-COSET-STRONG-FOURIER-INFORMATION-SCALING",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Natural strong Fourier information scaling",
+            status="planned",
+            hypothesis=(
+                "Conditioned carrier signals may disappear after weighting "
+                "all naturally sampled source partitions, making separate "
+                "strong Fourier sampling an information-poor baseline."
+            ),
+            protocol=(
+                "Enumerate complete near/fixed-point-free involution classes "
+                "through S_8, construct all natural Young-basis strong Fourier "
+                "outcome distributions, and compute weak-label, one-copy, and "
+                "two-copy mutual information, Bayes recovery, Holevo fraction, "
+                "and repeated-measurement copy lower bounds."
+            ),
+            positive_signal=(
+                "A collective carrier-sensitive measurement extracts an "
+                "asymptotically larger fraction of Holevo information than "
+                "separate strong Fourier outcomes and supports a polynomial "
+                "hidden-involution decoder."
+            ),
+            falsifiers=[
+                "Weak labels have zero information within a conjugacy class.",
+                "Natural source weighting sharply reduces fixed-source carrier information.",
+                "Two separate copies are nearly additive rather than collectively enhanced.",
+                "A near-one-bit Holevo bound is mistaken for accessible information in a fixed basis.",
+            ],
+            metrics=[
+                "record_count",
+                "maximum_n",
+                "weak_label_zero_information_verified_count",
+                "largest_n_one_copy_carrier_mutual_information_bits",
+                "largest_n_two_copy_carrier_mutual_information_bits",
+                "minimum_tail_one_copy_carrier_fraction_of_holevo",
+                "minimum_tail_separate_strong_fourier_bounded_error_copy_lower_bound",
+                "natural_strong_fourier_asymptotic_decay_theorem_count",
+                "collective_carrier_advantage_theorem_count",
+                "hidden_involution_decoder_count",
+            ],
+            dependencies=[
+                "coset_strong_fourier_information_scaling.py",
+                "coset_holevo_information.py",
+                "Young orthogonal seminormal representations",
+                "complete involution conjugacy classes",
+            ],
+            next_actions=[
+                "Extend one-copy natural information to larger n without dense two-copy marginals.",
+                "Search covariant collective carrier POVMs that beat the separate strong Fourier channel.",
+                "Prove an asymptotic information bound or find a nonvanishing collective gap.",
+                "Integrate natural source weighting into every decoder experiment.",
+            ],
+        ),
+        ExperimentRecord(
+            id="EXP-COSET-ENTANGLEMENT-WIDTH-GATE",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Literature-backed coset-state entanglement-width gate",
+            status="planned",
+            hypothesis=(
+                "The implemented bounded-copy representation mechanisms are "
+                "local controls rather than end-to-end hidden-involution "
+                "measurements because the target ensemble requires growing "
+                "entanglement width."
+            ),
+            protocol=(
+                "Link the single-register and multiregister symmetric-group "
+                "Fourier no-go theorems to an inventory of every current one-, "
+                "two-, and three-register mechanism; require an explicit "
+                "Omega(n log n)-width associator/POVM network before promotion."
+            ),
+            positive_signal=(
+                "A uniform polynomial circuit entangles Theta(n log n) natural "
+                "coset states, produces a compressed covariant outcome, and "
+                "supports a polynomial hidden-involution decoder."
+            ),
+            falsifiers=[
+                "An arbitrary one-register POVM is treated as a loophole.",
+                "Separate measurements on many copies are relabeled as a joint entangled measurement.",
+                "Bounded-copy frame or separator controls are extrapolated to nonnegligible full-ensemble information.",
+                "No growing-copy associator network or compressed outcome is specified.",
+            ],
+            metrics=[
+                "primary_literature_theorem_count",
+                "single_register_arbitrary_povm_no_go_theorem_count",
+                "omega_n_log_n_entanglement_width_theorem_count",
+                "bounded_register_mechanism_count",
+                "maximum_current_joint_register_count",
+                "bounded_mechanism_end_to_end_information_eligible_count",
+                "growing_entanglement_width_architecture_count",
+                "polynomial_growing_associator_circuit_count",
+                "compressed_covariant_outcome_count",
+                "growing_width_hidden_involution_decoder_count",
+            ],
+            dependencies=[
+                "coset_entanglement_width_gate.py",
+                "symmetric-defies-fourier-2005",
+                "moore-russell-multiregister-2005",
+                "current coset representation workbenches",
+            ],
+            next_actions=[
+                "Design typed interfaces for a Theta(n log n)-leaf recoupling network.",
+                "Prove polynomial associator synthesis uniformly over natural source labels.",
+                "Define compressed covariant outcomes before optimizing local spectra.",
+                "Reject every architecture whose joint quantum width remains O(1).",
+            ],
+        ),
+        ExperimentRecord(
+            id="EXP-COSET-GROWING-WIDTH-ARCHITECTURE",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Typed growing-width covariant measurement architecture",
+            status="planned",
+            hypothesis=(
+                "A balanced carrier-preserving recoupling DAG can satisfy the "
+                "known entanglement-width and commutant-information constraints "
+                "while exposing the exact remaining theorem obligations."
+            ),
+            protocol=(
+                "Compile candidate measurement DAGs at width ceil(n log2 n), "
+                "validate merge counts and depths, carrier retention, "
+                "intermediate/final effect algebras, natural source access, "
+                "outcome compression, information, decoder, and classical "
+                "baseline contracts; reject separate and bounded-copy designs."
+            ),
+            positive_signal=(
+                "The structurally compliant DAG gains proved polynomial "
+                "associators, state-dependent covariant measurement synthesis, "
+                "compressed outcomes, information, decoding, and classical "
+                "separation."
+            ),
+            falsifiers=[
+                "Many separate measurements are relabeled as a joint DAG.",
+                "Carrier registers are discarded before the final POVM.",
+                "All final effects remain in the diagonal-action commutant.",
+                "A balanced tree is treated as proof of associator or decoder implementability.",
+            ],
+            metrics=[
+                "architecture_count",
+                "structurally_compliant_architecture_count",
+                "structurally_rejected_architecture_count",
+                "proof_complete_architecture_count",
+                "scaling_row_count",
+                "fatal_validation_issue_count",
+                "blocking_proof_issue_count",
+                "polynomial_growing_associator_circuit_count",
+                "compressed_covariant_outcome_count",
+                "growing_width_information_theorem_count",
+                "growing_width_hidden_involution_decoder_count",
+            ],
+            dependencies=[
+                "coset_growing_width_architecture.py",
+                "coset_entanglement_width_gate.py",
+                "coset_commutant_information_obstruction.py",
+                "coset_strong_fourier_information_scaling.py",
+            ],
+            next_actions=[
+                "Specify a uniform local associator interface for every internal tree edge.",
+                "Search compressed covariant sketches that retain carrier information.",
+                "Attach information and decoder theorems to the typed final outcome.",
+                "Reject mutations that fail any fatal architecture validator.",
+            ],
+        ),
+        ExperimentRecord(
             id="EXP-COSET-TWO-COPY-TRANSITION-ALGEBRA",
             candidate_id="CODE-COSET-COLLECTIVE",
             title="Two-copy cross-sector transition algebra audit",
@@ -8400,6 +8926,186 @@ def seed_candidate_records() -> tuple[list[CandidateRecord], list[ExperimentReco
                 "Machine-verify interval bounds for any gap used algorithmically.",
                 "Search for a separator-specific inverse-polynomial recurrence.",
                 "Reject phase estimation if gap collapse persists.",
+            ],
+        ),
+        ExperimentRecord(
+            id="EXP-COSET-TYPICAL-SOURCE-COVERAGE",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Natural source and target mass coverage of typical separators",
+            status="planned",
+            hypothesis=(
+                "A polynomial catalog of fixed-source typical-irrep separator "
+                "certificates covers inverse-polynomial natural weak-Fourier "
+                "mass and a substantial fraction of conditional target mass."
+            ),
+            protocol=(
+                "Combine exact involution weak-Fourier source probabilities "
+                "with dimension-weighted Kronecker target coupling references "
+                "for every exactly "
+                "certified n=8,9,10 block, then apply the 2026 maximal "
+                "S_n-irrep-dimension theorem to polynomial source catalogs."
+            ),
+            positive_signal=(
+                "A uniform partition-adaptive separator, gap theorem, and "
+                "coherent transform cover inverse-polynomial natural mass "
+                "without source or target postselection."
+            ),
+            falsifiers=[
+                "The maximal Plancherel atom is stretched-exponentially small.",
+                "A polynomial pre-certified source catalog has superpolynomially small natural mass.",
+                "The n=10 exact ladder captures only a small fraction of target coupling mass.",
+                "High-mass growing-multiplicity targets remain unaudited.",
+                "Finite coverage is presented as decoder success.",
+            ],
+            metrics=[
+                "source_coverage_record_count",
+                "literature_linked_maximal_dimension_theorem_count",
+                "polynomial_precertified_source_catalog_no_go_theorem_count",
+                "uniform_arbitrary_source_partition_separator_count",
+                "uniform_arbitrary_source_partition_gap_theorem_count",
+                "uniform_arbitrary_source_partition_coherent_transform_count",
+                "n8_exact_target_coupling_mass",
+                "n9_exact_target_coupling_mass",
+                "n10_exactly_certified_nontrivial_target_count",
+                "n10_nontrivial_multiplicity_target_count",
+                "n10_certified_target_coupling_mass",
+                "n10_largest_unresolved_target_coupling_mass",
+                "maximum_finite_dimension_weighted_coverage_reference",
+                "minimum_finite_dimension_weighted_coverage_reference",
+                "same_hidden_involution_target_outcome_law_count",
+                "natural_input_inverse_polynomial_coverage_theorem_count",
+                "typical_label_hidden_involution_decoder_count",
+            ],
+            dependencies=[
+                "coset_typical_source_coverage.py",
+                "coset_typical_irrep_transfer_audit.py",
+                "coset_typical_n9_full_transfer.py",
+                "coset_typical_modular_yjm_contraction.py",
+                "Aggarwal-Elboim arXiv:2605.25995",
+            ],
+            next_actions=[
+                "Stop extending one fixed source merely to increase finite target count.",
+                "Design separator recurrences uniform in arbitrary sampled partitions.",
+                "Prioritize source-shaped and other high-coupling-mass targets.",
+                "Prove natural-input coverage before any decoder or speedup claim.",
+            ],
+        ),
+        ExperimentRecord(
+            id="EXP-COSET-TYPICAL-UNIFORM-SOURCE-PROBE",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="All-source fixed typical-separator collision probe",
+            status="planned",
+            hypothesis=(
+                "The fixed TT1+TC1 separator that splits maximum-dimension "
+                "self-pairs also separates every nontrivial multiplicity block "
+                "for arbitrary sampled source partitions."
+            ),
+            protocol=(
+                "Enumerate every ordered source pair and nontrivial Kronecker "
+                "target at n=5,6, compute dense Young-basis spectra, and "
+                "independently certify first and second moments by exact "
+                "unequal-source character contractions."
+            ),
+            positive_signal=(
+                "One partition-description-uniform coefficient rule has no "
+                "finite collisions, admits an all-source inverse-gap theorem, "
+                "and compiles coherently from sampled labels."
+            ),
+            falsifiers=[
+                "An exact zero-variance nontrivial block is found.",
+                "A collision source pair has nonzero natural weak-Fourier mass.",
+                "Maximum-dimension self-pair behavior fails on unequal sources.",
+                "Higher-multiplicity numerical splitting is promoted without exact certification.",
+                "A finite repair lacks a uniform reversible coefficient-selection rule.",
+            ],
+            metrics=[
+                "finite_n_count",
+                "ordered_source_pair_count",
+                "nontrivial_multiplicity_block_count",
+                "exact_character_moment_block_count",
+                "exact_scalar_collision_count",
+                "exact_multiplicity_two_simple_spectrum_count",
+                "numerical_repeated_eigenvalue_block_count",
+                "maximum_exact_moment_residual",
+                "minimum_positive_numerical_gap",
+                "maximum_natural_source_pair_mass_with_exact_scalar_collision",
+                "fixed_separator_uniform_all_source_finite_theorem_count",
+                "uniform_separator_repair_rule_count",
+                "uniform_arbitrary_source_gap_theorem_count",
+                "same_hidden_involution_target_outcome_law_count",
+                "hidden_involution_decoder_count",
+            ],
+            dependencies=[
+                "coset_typical_uniform_source_probe.py",
+                "coset_typical_commutant_moment_audit.py",
+                "coset_multiplicity_commutant_search.py",
+                "Young-Jucys-Murphy target labels",
+                "exact symmetric-group characters",
+            ],
+            next_actions=[
+                "Search partition-dependent coefficients over a bounded-support portfolio.",
+                "Require one reversible coefficient-selection formula from partition descriptions.",
+                "Reprobe every source pair and certify all multiplicity-two repairs exactly.",
+                "Do not extend the fixed coefficient after an exact scalar collision.",
+            ],
+        ),
+        ExperimentRecord(
+            id="EXP-COSET-TYPICAL-PARITY-COMPLETE-SEPARATOR",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Parity-complete all-source separator search",
+            status="planned",
+            hypothesis=(
+                "Adding cycle-left/transposition-right orientations repairs "
+                "the one-sided portfolio and yields one low-support integer "
+                "separator for every sampled source pair."
+            ),
+            protocol=(
+                "Search every primitive support-three coefficient vector of "
+                "magnitude at most two over TT0,TT1,TC0,TC1,TC2,CT0,CT1,CT2 "
+                "on every ordered-source nontrivial block through n=7; certify "
+                "the former multiplicity-two scalar blocks by exact moments."
+            ),
+            positive_signal=(
+                "A frozen parity-complete rule survives an independent n=8 "
+                "holdout and admits exact all-n square-free, inverse-gap, and "
+                "coherent implementation theorems."
+            ),
+            falsifiers=[
+                "The one-sided portfolio is jointly scalar on a nontrivial block.",
+                "The first repaired rule fails at the adjacent size.",
+                "The final rule is selected and evaluated on the same finite sizes only.",
+                "Higher-multiplicity finite spectra remain numerical.",
+                "No all-n normalized gap or same-hidden target law is proved.",
+            ],
+            metrics=[
+                "finite_n_count",
+                "minimum_n",
+                "maximum_n",
+                "all_source_nontrivial_block_count",
+                "coefficient_vector_count",
+                "collision_free_finite_candidate_count",
+                "best_candidate_collision_count",
+                "best_candidate_minimum_numerical_raw_gap",
+                "former_scalar_block_exact_repair_count",
+                "parity_complete_orientation_count",
+                "all_n_square_free_theorem_count",
+                "inverse_polynomial_normalized_gap_theorem_count",
+                "coherent_partition_adaptive_separator_count",
+                "same_hidden_involution_target_outcome_law_count",
+                "hidden_involution_decoder_count",
+            ],
+            dependencies=[
+                "coset_typical_parity_complete_separator.py",
+                "research/certificates/coset_typical_parity_complete_separator_n7.json",
+                "coset_typical_uniform_source_probe.py",
+                "exact unequal-source character moments",
+                "Young-basis finite blocks",
+            ],
+            next_actions=[
+                "Freeze the best coefficient rule and test an independent n=8 source-pair sample.",
+                "Machine-certify selected higher-multiplicity finite blocks.",
+                "Search for an all-n oriented-orbit spectral recurrence.",
+                "Derive the same-hidden-involution target outcome law before decoder claims.",
             ],
         ),
         ExperimentRecord(

@@ -43,6 +43,24 @@ from coset_pgm_capacity import write_coset_pgm_capacity_report
 from coset_holevo_information import write_coset_holevo_report
 from coset_covariant_frame import write_covariant_frame_report
 from coset_two_copy_frame import write_two_copy_frame_report
+from coset_same_hidden_target_law import (
+    write_same_hidden_target_law_report,
+)
+from coset_commutant_information_obstruction import (
+    write_commutant_information_obstruction_report,
+)
+from coset_carrier_information_audit import (
+    write_carrier_information_audit_report,
+)
+from coset_strong_fourier_information_scaling import (
+    write_strong_fourier_information_scaling_report,
+)
+from coset_entanglement_width_gate import (
+    write_entanglement_width_gate_report,
+)
+from coset_growing_width_architecture import (
+    write_growing_width_architecture_report,
+)
 from coset_two_copy_transition_audit import write_two_copy_transition_report
 from coset_three_copy_recoupling_obstruction import write_three_copy_recoupling_report
 from coset_jucys_murphy_label_transform import write_jucys_murphy_label_transform_report
@@ -158,6 +176,15 @@ from coset_typical_modular_yjm_contraction import (
 )
 from coset_typical_modular_gap_bound import write_modular_gap_bound_report
 from coset_typical_n10_gap_trend import write_n10_gap_trend_report
+from coset_typical_source_coverage import (
+    write_typical_source_coverage_report,
+)
+from coset_typical_uniform_source_probe import (
+    write_uniform_source_probe_report,
+)
+from coset_typical_parity_complete_separator import (
+    write_parity_complete_separator_report,
+)
 from coset_recoupling_capability_ledger import write_recoupling_capability_report
 from coset_recoupling_mechanism_synthesis import write_recoupling_mechanism_synthesis_report
 from coset_state_distinguishability import write_coset_distinguishability_report
@@ -201,6 +228,15 @@ from dcp_subset_sum_boolean_coset_separation import write_boolean_coset_separati
 from dcp_marker_aware_list_decoder import write_marker_aware_list_decoder
 from dcp_marker_deviation_geometry import write_marker_deviation_geometry
 from dcp_marker_all_target_coverage import write_marker_all_target_coverage
+from dcp_marker_vulnerable_coordinate_decoder import (
+    write_marker_vulnerable_coordinate_decoder,
+)
+from dcp_marker_chart_union_decoder import write_marker_chart_union_decoder
+from dcp_marker_target_adaptive_beam import (
+    DCP_MARKER_TARGET_ADAPTIVE_BEAM_PATH,
+    load_and_register_target_adaptive_beam_audit,
+    write_target_adaptive_beam_audit,
+)
 from dcp_subset_sum_preconditioned_geometry import write_preconditioned_geometry_audit
 from dcp_subset_sum_fourth_moment_obstruction import write_fourth_moment_obstruction
 from dcp_subset_sum_smith_moment_spectrum import write_smith_moment_spectrum
@@ -208,6 +244,9 @@ from dcp_subset_sum_smith_transfer import write_smith_transfer_order_six
 from dcp_subset_sum_fixed_order_moment_theorem import write_fixed_order_moment_theorem
 from dcp_subset_sum_conditioned_tail_theorem import write_conditioned_tail_theorem
 from dcp_subset_sum_growing_order_theorem import write_growing_order_theorem
+from dcp_subset_sum_growing_order_chain_theorem import (
+    write_growing_order_chain_theorem,
+)
 from dcp_subset_sum_embedding_volume_theorem import write_embedding_volume_theorem
 from dcp_subset_sum_short_relation_theorem import write_short_relation_theorem
 from dcp_subset_sum_carry_relation_theorem import write_carry_relation_theorem
@@ -442,6 +481,18 @@ DCP_MARKER_ALL_TARGET_COVERAGE_EXPERIMENTS = {
     "EXP-DHS-DCP-MARKER-ALL-TARGET-COVERAGE",
 }
 
+DCP_MARKER_VULNERABLE_COORDINATE_EXPERIMENTS = {
+    "EXP-DHS-DCP-MARKER-VULNERABLE-COORDINATE-DECODER",
+}
+
+DCP_MARKER_CHART_UNION_EXPERIMENTS = {
+    "EXP-DHS-DCP-MARKER-CHART-UNION-DECODER",
+}
+
+DCP_MARKER_TARGET_ADAPTIVE_BEAM_EXPERIMENTS = {
+    "EXP-DHS-DCP-MARKER-TARGET-ADAPTIVE-BEAM",
+}
+
 DCP_SUBSET_SUM_PRECONDITIONED_GEOMETRY_EXPERIMENTS = {
     "EXP-DHS-DCP-SUBSET-SUM-PRECONDITIONED-GEOMETRY",
 }
@@ -468,6 +519,10 @@ DCP_SUBSET_SUM_CONDITIONED_TAIL_EXPERIMENTS = {
 
 DCP_SUBSET_SUM_GROWING_ORDER_EXPERIMENTS = {
     "EXP-DHS-DCP-SUBSET-SUM-GROWING-ORDER-MOMENT-THEOREM",
+}
+
+DCP_SUBSET_SUM_GROWING_ORDER_CHAIN_EXPERIMENTS = {
+    "EXP-DHS-DCP-SUBSET-SUM-GROWING-ORDER-CHAIN-THEOREM",
 }
 
 DCP_SUBSET_SUM_EMBEDDING_VOLUME_EXPERIMENTS = {
@@ -592,6 +647,12 @@ COSET_EXPERIMENTS = {
     "EXP-COSET-HOLEVO-INFORMATION",
     "EXP-COSET-COVARIANT-FRAME",
     "EXP-COSET-TWO-COPY-FRAME",
+    "EXP-COSET-SAME-HIDDEN-TARGET-LAW",
+    "EXP-COSET-COMMUTANT-INFORMATION-OBSTRUCTION",
+    "EXP-COSET-CARRIER-INFORMATION-AUDIT",
+    "EXP-COSET-STRONG-FOURIER-INFORMATION-SCALING",
+    "EXP-COSET-ENTANGLEMENT-WIDTH-GATE",
+    "EXP-COSET-GROWING-WIDTH-ARCHITECTURE",
     "EXP-COSET-TWO-COPY-TRANSITION-ALGEBRA",
     "EXP-COSET-THREE-COPY-RECOUPLING-OBSTRUCTION",
     "EXP-COSET-JUCYS-MURPHY-LABEL-TRANSFORM",
@@ -642,6 +703,9 @@ COSET_EXPERIMENTS = {
     "EXP-COSET-TYPICAL-MODULAR-YJM-CONTRACTION",
     "EXP-COSET-TYPICAL-MODULAR-GAP-BOUND",
     "EXP-COSET-TYPICAL-N10-GAP-TREND",
+    "EXP-COSET-TYPICAL-SOURCE-COVERAGE",
+    "EXP-COSET-TYPICAL-UNIFORM-SOURCE-PROBE",
+    "EXP-COSET-TYPICAL-PARITY-COMPLETE-SEPARATOR",
     "EXP-COSET-RECOUPLING-CAPABILITY-LEDGER",
     "EXP-COSET-RECOUPLING-MECHANISM-SYNTHESIS",
 }
@@ -766,6 +830,9 @@ def supported_experiment_ids() -> list[str]:
         | DCP_MARKER_AWARE_LIST_DECODER_EXPERIMENTS
         | DCP_MARKER_DEVIATION_GEOMETRY_EXPERIMENTS
         | DCP_MARKER_ALL_TARGET_COVERAGE_EXPERIMENTS
+        | DCP_MARKER_VULNERABLE_COORDINATE_EXPERIMENTS
+        | DCP_MARKER_CHART_UNION_EXPERIMENTS
+        | DCP_MARKER_TARGET_ADAPTIVE_BEAM_EXPERIMENTS
         | DCP_SUBSET_SUM_PRECONDITIONED_GEOMETRY_EXPERIMENTS
         | DCP_SUBSET_SUM_FOURTH_MOMENT_EXPERIMENTS
         | DCP_SUBSET_SUM_SMITH_MOMENT_EXPERIMENTS
@@ -773,6 +840,7 @@ def supported_experiment_ids() -> list[str]:
         | DCP_SUBSET_SUM_FIXED_ORDER_MOMENT_EXPERIMENTS
         | DCP_SUBSET_SUM_CONDITIONED_TAIL_EXPERIMENTS
         | DCP_SUBSET_SUM_GROWING_ORDER_EXPERIMENTS
+        | DCP_SUBSET_SUM_GROWING_ORDER_CHAIN_EXPERIMENTS
         | DCP_SUBSET_SUM_EMBEDDING_VOLUME_EXPERIMENTS
         | DCP_SUBSET_SUM_SHORT_RELATION_EXPERIMENTS
         | DCP_SUBSET_SUM_CARRY_RELATION_EXPERIMENTS
@@ -889,6 +957,12 @@ def _latest_result_id_for_experiment(experiment_id: str) -> str:
         return f"RESULT-{experiment_id}-DCP-MARKER-DEVIATION-GEOMETRY"
     if experiment_id in DCP_MARKER_ALL_TARGET_COVERAGE_EXPERIMENTS:
         return f"RESULT-{experiment_id}-DCP-MARKER-ALL-TARGET-COVERAGE"
+    if experiment_id in DCP_MARKER_VULNERABLE_COORDINATE_EXPERIMENTS:
+        return f"RESULT-{experiment_id}-DCP-MARKER-VULNERABLE-COORDINATES"
+    if experiment_id in DCP_MARKER_CHART_UNION_EXPERIMENTS:
+        return f"RESULT-{experiment_id}-DCP-MARKER-CHART-UNION"
+    if experiment_id in DCP_MARKER_TARGET_ADAPTIVE_BEAM_EXPERIMENTS:
+        return f"RESULT-{experiment_id}-TARGET-ADAPTIVE-BEAM"
     if experiment_id in DCP_SUBSET_SUM_PRECONDITIONED_GEOMETRY_EXPERIMENTS:
         return f"RESULT-{experiment_id}-DCP-SUBSET-SUM-PRECONDITIONED-GEOMETRY"
     if experiment_id in DCP_SUBSET_SUM_FOURTH_MOMENT_EXPERIMENTS:
@@ -903,6 +977,8 @@ def _latest_result_id_for_experiment(experiment_id: str) -> str:
         return f"RESULT-{experiment_id}-DCP-SUBSET-SUM-CONDITIONED-TAIL"
     if experiment_id in DCP_SUBSET_SUM_GROWING_ORDER_EXPERIMENTS:
         return f"RESULT-{experiment_id}-DCP-SUBSET-SUM-GROWING-ORDER"
+    if experiment_id in DCP_SUBSET_SUM_GROWING_ORDER_CHAIN_EXPERIMENTS:
+        return f"RESULT-{experiment_id}-DCP-SUBSET-SUM-GROWING-ORDER-CHAIN"
     if experiment_id in DCP_SUBSET_SUM_EMBEDDING_VOLUME_EXPERIMENTS:
         return f"RESULT-{experiment_id}-DCP-SUBSET-SUM-EMBEDDING-VOLUME"
     if experiment_id in DCP_SUBSET_SUM_SHORT_RELATION_EXPERIMENTS:
@@ -1222,6 +1298,9 @@ def _frontier_bonus(experiment_id: str, experiment: dict[str, Any]) -> tuple[int
         | DCP_MARKER_AWARE_LIST_DECODER_EXPERIMENTS
         | DCP_MARKER_DEVIATION_GEOMETRY_EXPERIMENTS
         | DCP_MARKER_ALL_TARGET_COVERAGE_EXPERIMENTS
+        | DCP_MARKER_VULNERABLE_COORDINATE_EXPERIMENTS
+        | DCP_MARKER_CHART_UNION_EXPERIMENTS
+        | DCP_MARKER_TARGET_ADAPTIVE_BEAM_EXPERIMENTS
         | DCP_SUBSET_SUM_PRECONDITIONED_GEOMETRY_EXPERIMENTS
         | DCP_SUBSET_SUM_FOURTH_MOMENT_EXPERIMENTS
         | DCP_SUBSET_SUM_SMITH_MOMENT_EXPERIMENTS
@@ -1229,6 +1308,7 @@ def _frontier_bonus(experiment_id: str, experiment: dict[str, Any]) -> tuple[int
         | DCP_SUBSET_SUM_FIXED_ORDER_MOMENT_EXPERIMENTS
         | DCP_SUBSET_SUM_CONDITIONED_TAIL_EXPERIMENTS
         | DCP_SUBSET_SUM_GROWING_ORDER_EXPERIMENTS
+        | DCP_SUBSET_SUM_GROWING_ORDER_CHAIN_EXPERIMENTS
         | DCP_SUBSET_SUM_EMBEDDING_VOLUME_EXPERIMENTS
         | DCP_SUBSET_SUM_SHORT_RELATION_EXPERIMENTS
         | DCP_SUBSET_SUM_CARRY_RELATION_EXPERIMENTS
@@ -1351,6 +1431,9 @@ def select_next_experiment() -> NextExperimentSelection:
         "EXP-DHS-DCP-MARKER-AWARE-LIST-DECODER": 98,
         "EXP-DHS-DCP-MARKER-DEVIATION-GEOMETRY": 99,
         "EXP-DHS-DCP-MARKER-ALL-TARGET-COVERAGE": 100,
+        "EXP-DHS-DCP-MARKER-VULNERABLE-COORDINATE-DECODER": 101,
+        "EXP-DHS-DCP-MARKER-CHART-UNION-DECODER": 102,
+        "EXP-DHS-DCP-MARKER-TARGET-ADAPTIVE-BEAM": 103,
         "EXP-DHS-DCP-SUBSET-SUM-TARGET-DISTRIBUTION": 79,
         "EXP-DHS-DCP-SUBSET-SUM-PRECONDITIONED-GEOMETRY": 83,
         "EXP-DHS-DCP-SUBSET-SUM-FOURTH-MOMENT-OBSTRUCTION": 84,
@@ -1359,6 +1442,7 @@ def select_next_experiment() -> NextExperimentSelection:
         "EXP-DHS-DCP-SUBSET-SUM-ALL-FIXED-MOMENT-THEOREM": 87,
         "EXP-DHS-DCP-SUBSET-SUM-CONDITIONED-FIXED-MOMENT-TAIL": 88,
         "EXP-DHS-DCP-SUBSET-SUM-GROWING-ORDER-MOMENT-THEOREM": 89,
+        "EXP-DHS-DCP-SUBSET-SUM-GROWING-ORDER-CHAIN-THEOREM": 90,
         # Establish the volume baseline before spending scheduler budget on
         # later affine-CVP/BDD variants of the density-one route.
         "EXP-DHS-DCP-SUBSET-SUM-EMBEDDING-VOLUME-THEOREM": 110,
@@ -1444,6 +1528,12 @@ def select_next_experiment() -> NextExperimentSelection:
         "EXP-COSET-HOLEVO-INFORMATION": 23,
         "EXP-COSET-COVARIANT-FRAME": 20,
         "EXP-COSET-TWO-COPY-FRAME": 21,
+        "EXP-COSET-SAME-HIDDEN-TARGET-LAW": 77,
+        "EXP-COSET-COMMUTANT-INFORMATION-OBSTRUCTION": 78,
+        "EXP-COSET-CARRIER-INFORMATION-AUDIT": 79,
+        "EXP-COSET-STRONG-FOURIER-INFORMATION-SCALING": 80,
+        "EXP-COSET-ENTANGLEMENT-WIDTH-GATE": 81,
+        "EXP-COSET-GROWING-WIDTH-ARCHITECTURE": 82,
         "EXP-COSET-TWO-COPY-TRANSITION-ALGEBRA": 22,
         "EXP-COSET-THREE-COPY-RECOUPLING-OBSTRUCTION": 23,
         "EXP-COSET-JUCYS-MURPHY-LABEL-TRANSFORM": 26,
@@ -1494,6 +1584,9 @@ def select_next_experiment() -> NextExperimentSelection:
         "EXP-COSET-TYPICAL-MODULAR-YJM-CONTRACTION": 71,
         "EXP-COSET-TYPICAL-MODULAR-GAP-BOUND": 72,
         "EXP-COSET-TYPICAL-N10-GAP-TREND": 73,
+        "EXP-COSET-TYPICAL-SOURCE-COVERAGE": 74,
+        "EXP-COSET-TYPICAL-UNIFORM-SOURCE-PROBE": 75,
+        "EXP-COSET-TYPICAL-PARITY-COMPLETE-SEPARATOR": 76,
         "EXP-COSET-RECOUPLING-CAPABILITY-LEDGER": 24,
         "EXP-COSET-RECOUPLING-MECHANISM-SYNTHESIS": 25,
     }
@@ -1684,6 +1777,21 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             registry_result_id=result_id,
         )
         runner_result = RunnerResult(experiment_id, "completed", result_id, payload["summary"])
+        append_run_history(result_id)
+        write_experiment_trends()
+        return runner_result
+
+    if experiment_id in DCP_SUBSET_SUM_GROWING_ORDER_CHAIN_EXPERIMENTS:
+        result_id = _latest_result_id_for_experiment(experiment_id)
+        payload = write_growing_order_chain_theorem(
+            write_registry=True,
+            registry_experiment_id=experiment_id,
+            registry_candidate_id=experiment["candidate_id"],
+            registry_result_id=result_id,
+        )
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload["summary"]
+        )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -2245,6 +2353,64 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             registry_result_id=result_id,
         )
         runner_result = RunnerResult(experiment_id, "completed", result_id, payload["summary"])
+        append_run_history(result_id)
+        write_experiment_trends()
+        return runner_result
+
+    if experiment_id in DCP_MARKER_VULNERABLE_COORDINATE_EXPERIMENTS:
+        result_id = _latest_result_id_for_experiment(experiment_id)
+        payload = write_marker_vulnerable_coordinate_decoder(
+            write_registry=True,
+            registry_experiment_id=experiment_id,
+            registry_candidate_id=experiment["candidate_id"],
+            registry_result_id=result_id,
+        )
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload["summary"]
+        )
+        append_run_history(result_id)
+        write_experiment_trends()
+        return runner_result
+
+    if experiment_id in DCP_MARKER_CHART_UNION_EXPERIMENTS:
+        result_id = _latest_result_id_for_experiment(experiment_id)
+        payload = write_marker_chart_union_decoder(
+            write_registry=True,
+            registry_experiment_id=experiment_id,
+            registry_candidate_id=experiment["candidate_id"],
+            registry_result_id=result_id,
+        )
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload["summary"]
+        )
+        append_run_history(result_id)
+        write_experiment_trends()
+        return runner_result
+
+    if experiment_id in DCP_MARKER_TARGET_ADAPTIVE_BEAM_EXPERIMENTS:
+        result_id = _latest_result_id_for_experiment(experiment_id)
+        registry_kwargs = {
+            "registry_experiment_id": experiment_id,
+            "registry_candidate_id": experiment["candidate_id"],
+            "registry_result_id": result_id,
+        }
+        if DCP_MARKER_TARGET_ADAPTIVE_BEAM_PATH.exists():
+            payload = load_and_register_target_adaptive_beam_audit(
+                **registry_kwargs
+            )
+        else:
+            payload = write_target_adaptive_beam_audit(
+                n_values=(8, 10),
+                trials_per_row=1,
+                standard_width_powers=(1, 2),
+                carry_width_powers=(1,),
+                exact_legality_max_n=10,
+                write_registry=True,
+                **registry_kwargs,
+            )
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload["summary"]
+        )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -2825,6 +2991,54 @@ def run_experiment(experiment_id: str) -> RunnerResult:
                 registry_candidate_id=experiment["candidate_id"],
                 registry_result_id=result_id,
             )
+        elif experiment_id == "EXP-COSET-SAME-HIDDEN-TARGET-LAW":
+            payload = write_same_hidden_target_law_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-COSET-COMMUTANT-INFORMATION-OBSTRUCTION"
+        ):
+            payload = write_commutant_information_obstruction_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif experiment_id == "EXP-COSET-CARRIER-INFORMATION-AUDIT":
+            payload = write_carrier_information_audit_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-COSET-STRONG-FOURIER-INFORMATION-SCALING"
+        ):
+            payload = write_strong_fourier_information_scaling_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif experiment_id == "EXP-COSET-ENTANGLEMENT-WIDTH-GATE":
+            payload = write_entanglement_width_gate_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif experiment_id == "EXP-COSET-GROWING-WIDTH-ARCHITECTURE":
+            payload = write_growing_width_architecture_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
         elif experiment_id == "EXP-COSET-TWO-COPY-TRANSITION-ALGEBRA":
             payload = write_two_copy_transition_report(
                 write_registry=True,
@@ -3177,6 +3391,31 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             )
         elif experiment_id == "EXP-COSET-TYPICAL-N10-GAP-TREND":
             payload = write_n10_gap_trend_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif experiment_id == "EXP-COSET-TYPICAL-SOURCE-COVERAGE":
+            payload = write_typical_source_coverage_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif experiment_id == "EXP-COSET-TYPICAL-UNIFORM-SOURCE-PROBE":
+            payload = write_uniform_source_probe_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-COSET-TYPICAL-PARITY-COMPLETE-SEPARATOR"
+        ):
+            payload = write_parity_complete_separator_report(
+                recompute_n7=False,
                 write_registry=True,
                 registry_experiment_id=experiment_id,
                 registry_candidate_id=experiment["candidate_id"],

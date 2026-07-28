@@ -2,8 +2,8 @@
   "blocking_status_count": 24,
   "candidate_count": 8,
   "counterexample_search_count": 8,
-  "created_at": "2026-07-27T19:11:45.110891+00:00",
-  "lemma_count": 610,
+  "created_at": "2026-07-28T06:55:19.965822+00:00",
+  "lemma_count": 716,
   "needs_evidence_count": 0,
   "proof_debt": {
     "counterexample_search_count": 8,
@@ -73,8 +73,8 @@
         "target_claim": "The coset observable is not a disguised classical invariant."
       }
     ],
-    "created_at": "2026-07-27T19:11:45.109752+00:00",
-    "lemma_count": 610,
+    "created_at": "2026-07-28T06:55:19.964437+00:00",
+    "lemma_count": 716,
     "lemmas": [
       {
         "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -738,6 +738,193 @@
         "id": "LEMMA-CODE-COSET-COLLECTIVE-COSET-TYPICAL-N10-STABLE-FINITE-GAP-EVIDENCE",
         "statement": "The existing exactly square-free n=10 blocks provide stable numerical normalized-gap evidence as multiplicity grows.",
         "status": "falsified-multiplicity6-to8-normalized-gap-drops-over-sevenfold"
+      },
+      {
+        "candidate_id": "CODE-COSET-COLLECTIVE",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Verify the cited maximal-dimension theorem, square it to obtain the maximal Plancherel atom, apply the involution character-ratio factor at most two, and include the polynomial catalog cardinality.",
+        "id": "LEMMA-CODE-COSET-COLLECTIVE-COSET-TYPICAL-PRECERTIFIED-SOURCE-CATALOG-NO-GO",
+        "statement": "Every polynomial-size catalog of pre-certified S_n source partitions has superpolynomially small natural involution weak-Fourier mass.",
+        "status": "proved-from-2026-maximal-dimension-theorem"
+      },
+      {
+        "candidate_id": "CODE-COSET-COLLECTIVE",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-SUCCESS",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Require a circuit whose input is the bit description of sampled partitions, prove uniform normalization and inverse gaps, and integrate source and target mass without postselection.",
+        "id": "LEMMA-CODE-COSET-COLLECTIVE-COSET-TYPICAL-UNIFORM-NATURAL-SOURCE-COVERAGE",
+        "statement": "One uniform separator, inverse-gap theorem, and coherent multiplicity transform accept arbitrary sampled typical source partitions and cover inverse-polynomial natural Fourier mass.",
+        "status": "blocked-fixed-source-catalog-asymptotically-negligible"
+      },
+      {
+        "candidate_id": "CODE-COSET-COLLECTIVE",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Enumerate all ordered source pairs at finite controls and use exact unequal-source character moments to stop on the first zero-variance nontrivial block.",
+        "id": "LEMMA-CODE-COSET-COLLECTIVE-COSET-TYPICAL-FIXED-SEPARATOR-ALL-SOURCE-UNIFORMITY",
+        "statement": "The fixed TT1+TC1 separator has simple spectrum on every nontrivial multiplicity block for arbitrary sampled source partitions.",
+        "status": "falsified-exact-unequal-source-scalar-collisions-at-n6"
+      },
+      {
+        "candidate_id": "CODE-COSET-COLLECTIVE",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-SUCCESS",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Require deterministic coefficient synthesis from partition descriptions, exact finite collision tests, an all-n normalized-gap theorem, and a coherent controlled implementation.",
+        "id": "LEMMA-CODE-COSET-COLLECTIVE-COSET-TYPICAL-LABEL-ADAPTIVE-SEPARATOR-REPAIR",
+        "statement": "A reversible polynomial rule selects bounded-support separator coefficients from arbitrary partition descriptions and has inverse-polynomial gaps on every naturally relevant multiplicity block.",
+        "status": "blocked-fixed-coefficient-collides-adaptive-repair-missing"
+      },
+      {
+        "candidate_id": "CODE-COSET-COLLECTIVE",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Validate the hash-gated exhaustive coefficient search, all 663 finite blocks, and exact rational variances on the two former scalar blocks.",
+        "id": "LEMMA-CODE-COSET-COLLECTIVE-COSET-TYPICAL-PARITY-COMPLETE-FINITE-SEPARATOR",
+        "statement": "A parity-complete oriented bounded-support portfolio contains one coefficient rule with no collision on every ordered-source nontrivial block through n=7.",
+        "status": "finite-n5-through-n7-numerical-separation-with-two-exact-repairs"
+      },
+      {
+        "candidate_id": "CODE-COSET-COLLECTIVE",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-SUCCESS",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Freeze coefficients before an n=8 holdout, certify collisions exactly, then derive an oriented-orbit recurrence with a uniform normalized gap bound.",
+        "id": "LEMMA-CODE-COSET-COLLECTIVE-COSET-TYPICAL-PARITY-COMPLETE-ALL-N-GAP",
+        "statement": "The parity-complete TC2+CT1-2CT2 separator has simple spectrum and inverse-polynomial LCU-normalized gaps uniformly over naturally relevant source and target partitions for every n.",
+        "status": "blocked-finite-discovery-set-no-n8-holdout-or-all-n-theorem"
+      },
+      {
+        "candidate_id": "CODE-COSET-COLLECTIVE",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-SUCCESS",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Check Schur partial traces, the diagonal nu action, exact normalization, nonnegativity, and equality with the two-copy frame scalar on every finite control.",
+        "id": "LEMMA-CODE-COSET-COLLECTIVE-COSET-SAME-HIDDEN-TARGET-LAW",
+        "statement": "For every accessible source pair lambda,mu, the shared-hidden coupled target law is the dimension-weighted Kronecker mass times (1+r_lambda+r_mu+r_nu)/((1+r_lambda)(1+r_mu)).",
+        "status": "proved-exact-character-ratio-target-law"
+      },
+      {
+        "candidate_id": "CODE-COSET-COLLECTIVE",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-SUCCESS",
+          "PO-DEQUANTIZATION"
+        ],
+        "falsification_test": "Compute h-conditioned multiplicity outcomes, bound mutual information after legal measurements, and compare a polynomial decoder with classical character/tensor baselines.",
+        "id": "LEMMA-CODE-COSET-COLLECTIVE-COSET-TARGET-LAW-TO-DECODER",
+        "statement": "A coherent target and multiplicity measurement has inverse-polynomial mutual information about the individual hidden involution and a polynomial decoder.",
+        "status": "blocked-target-label-is-class-invariant-multiplicity-decoder-missing"
+      },
+      {
+        "candidate_id": "CODE-COSET-COLLECTIVE",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-SUCCESS",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Verify ensemble covariance, effect commutation, the trace-cyclicity identity, and a nontrivial finite full-distribution control.",
+        "id": "LEMMA-CODE-COSET-COLLECTIVE-COSET-COMMUTANT-ZERO-INFORMATION",
+        "statement": "For every copy count, a POVM whose effects commute with the diagonal group action has zero mutual information about an individual hidden element drawn uniformly from one conjugacy class.",
+        "status": "proved-all-k-commutant-outcomes-zero-information"
+      },
+      {
+        "candidate_id": "CODE-COSET-COLLECTIVE",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-SUCCESS",
+          "PO-DEQUANTIZATION"
+        ],
+        "falsification_test": "Retain carrier registers, specify noncommuting POVM effects, compute mutual information across conjugates, and demonstrate polynomial decoding against classical covariant baselines.",
+        "id": "LEMMA-CODE-COSET-COLLECTIVE-COSET-CARRIER-SENSITIVE-COVARIANT-DECODER",
+        "statement": "Commutant preprocessing preserves a polynomial-size carrier-sensitive covariant outcome with inverse-polynomial information about h and a polynomial classical decoder.",
+        "status": "blocked-commutant-route-information-free-carrier-covariant-decoder-missing"
+      },
+      {
+        "candidate_id": "CODE-COSET-COLLECTIVE",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-SUCCESS",
+          "PO-DEQUANTIZATION",
+          "PO-COMPLEXITY"
+        ],
+        "falsification_test": "Optimize by I(H;Y), freeze coefficients, test adjacent sizes, and compare with product Young-basis outcomes under identical source conditioning.",
+        "id": "LEMMA-CODE-COSET-COLLECTIVE-COSET-CARRIER-REFINEMENT-INFORMATION-ADVANTAGE",
+        "statement": "A frozen carrier-sensitive recoupling measurement has asymptotically more hidden-element information than separate strong Fourier carrier outcomes.",
+        "status": "falsified-on-finite-controls-by-product-strong-fourier"
+      },
+      {
+        "candidate_id": "CODE-COSET-COLLECTIVE",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-SUCCESS",
+          "PO-NATURAL-ACCESS",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Derive the Young-basis diagonal-matrix-element second moments over the involution class and bound the full natural mutual information as n grows.",
+        "id": "LEMMA-CODE-COSET-COLLECTIVE-COSET-NATURAL-STRONG-FOURIER-INFORMATION-DECAY",
+        "statement": "Naturally weighted Young-basis strong Fourier information per coset state vanishes asymptotically for near/fixed-point-free involutions.",
+        "status": "blocked-finite-n3-through-n8-information-trend-no-asymptotic-theorem"
+      },
+      {
+        "candidate_id": "CODE-COSET-COLLECTIVE",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-SUCCESS",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Verify the cited theorem's group, hidden-subgroup promise, information notion, and distinction between sample count and joint entanglement width.",
+        "id": "LEMMA-CODE-COSET-COLLECTIVE-COSET-ENTANGLEMENT-WIDTH-LOWER-BOUND",
+        "statement": "Nonnegligible information about the GI-relevant hidden involution requires a measurement entangled across Omega(n log n) coset-state registers.",
+        "status": "proved-external-primary-multiregister-lower-bound"
+      },
+      {
+        "candidate_id": "CODE-COSET-COLLECTIVE",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-SUCCESS",
+          "PO-NATURAL-ACCESS"
+        ],
+        "falsification_test": "Type every leaf, associator, frame operation, outcome register, and decoder cost for k=Theta(n log n), then verify natural branch mass and end-to-end information.",
+        "id": "LEMMA-CODE-COSET-COLLECTIVE-COSET-GROWING-WIDTH-MEASUREMENT-ARCHITECTURE",
+        "statement": "A uniform polynomial circuit implements a Theta(n log n)-register recoupling/measurement network with compressed covariant outcomes and decoding.",
+        "status": "blocked-all-current-mechanisms-have-at-most-three-register-width"
+      },
+      {
+        "candidate_id": "CODE-COSET-COLLECTIVE",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-NATURAL-ACCESS",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Check width at every scaling row, leaves-1 merges, carrier retention, final effect algebra, natural source access, and all fatal validator outcomes.",
+        "id": "LEMMA-CODE-COSET-COLLECTIVE-COSET-GROWING-WIDTH-TYPED-SKELETON",
+        "statement": "A balanced carrier-preserving covariant measurement DAG satisfies the structural width, source-access, and noncommutant final-effect contracts.",
+        "status": "proved-typed-structural-skeleton-only"
       },
       {
         "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -1717,6 +1904,78 @@
       {
         "candidate_id": "DHS-GOWERS-SIEVE",
         "depends_on": [
+          "PO-COMPLEXITY",
+          "PO-INPUT-MODEL",
+          "PO-DEQUANTIZATION"
+        ],
+        "falsification_test": "Verify the selector uses public target-independent projections, enumerate exactly (2q+1)^r paths on small bases, charge every carry, and check both sides of the assignment-to-target sandwich on complete cubes.",
+        "id": "LEMMA-DHS-GOWERS-SIEVE-DCP-MARKER-LOG-COORDINATE-LIST",
+        "statement": "Branching by a fixed offset radius on c ceil(log2 n) public Gram-Schmidt coordinates has polynomial list size, and its assignment-weighted coverage deterministically sandwiches uniform-legal target coverage after charging mean fiber multiplicity.",
+        "status": "proved-polynomial-log-coordinate-list-and-source-transfer"
+      },
+      {
+        "candidate_id": "DHS-GOWERS-SIEVE",
+        "depends_on": [
+          "PO-SUCCESS",
+          "PO-COMPLEXITY",
+          "PO-DEQUANTIZATION"
+        ],
+        "falsification_test": "Hold the selector and multiplier fixed before drawing label rows, prove concentration for LLL-dependent projections, then apply the fiber-count transfer theorem; finite fitted slopes do not suffice.",
+        "id": "LEMMA-DHS-GOWERS-SIEVE-DCP-MARKER-LOG-COORDINATE-SOURCE-LAW",
+        "statement": "For the public risk-ranked c ceil(log2 n)-coordinate selector, accepted assignment mass is inverse-polynomial or has a proved exponential decay rate under random density-one labels.",
+        "status": "blocked-finite-log-coordinate-scaling-no-random-label-law"
+      },
+      {
+        "candidate_id": "DHS-GOWERS-SIEVE",
+        "depends_on": [
+          "PO-COMPLEXITY",
+          "PO-INPUT-MODEL",
+          "PO-DEQUANTIZATION"
+        ],
+        "falsification_test": "Charge chart learning, every chart path, and every carry; keep training target-independent and test on disjoint probes; verify the source-transfer sandwich on complete small cubes.",
+        "id": "LEMMA-DHS-GOWERS-SIEVE-DCP-MARKER-CHART-UNION-POLYNOMIALITY",
+        "statement": "For fixed a,c,q, a target-independent union of at most n^a charts, each branching on c ceil(log2 n) coordinates with offset radius q, is a polynomial-size verified decoder family.",
+        "status": "proved-polynomial-target-independent-marker-chart-union"
+      },
+      {
+        "candidate_id": "DHS-GOWERS-SIEVE",
+        "depends_on": [
+          "PO-SUCCESS",
+          "PO-COMPLEXITY",
+          "PO-DEQUANTIZATION"
+        ],
+        "falsification_test": "Bound the entropy and concentration of LLL-dependent active coordinate masks over random labels; held-out finite decay alone is not an asymptotic theorem.",
+        "id": "LEMMA-DHS-GOWERS-SIEVE-DCP-MARKER-CHART-UNION-SOURCE-LAW",
+        "statement": "The preregistered polynomial learned chart union has either inverse-polynomial uniform-legal coverage or a proved negligible random-label coverage bound.",
+        "status": "blocked-finite-chart-union-decay-no-random-label-theorem"
+      },
+      {
+        "candidate_id": "DHS-GOWERS-SIEVE",
+        "depends_on": [
+          "PO-COMPLEXITY",
+          "PO-INPUT-MODEL",
+          "PO-DEQUANTIZATION"
+        ],
+        "falsification_test": "Sample targets independently, charge every retained path and carry, keep nearest-integer decisions exact, and verify every marker candidate against the original congruence.",
+        "id": "LEMMA-DHS-GOWERS-SIEVE-DCP-MARKER-TARGET-BEAM-POLYNOMIALITY",
+        "statement": "For fixed width power a and offset radius q, K-best nearest-plane search expands polynomially many states; logarithmic carry slicing adds only its charged reachable-carry factor.",
+        "status": "proved-polynomial-target-adaptive-marker-beam-contract"
+      },
+      {
+        "candidate_id": "DHS-GOWERS-SIEVE",
+        "depends_on": [
+          "PO-SUCCESS",
+          "PO-COMPLEXITY",
+          "PO-DEQUANTIZATION"
+        ],
+        "falsification_test": "Hold the width power fixed while n grows and prove the uniform-source success law. Neither a finite survivor nor finite collapse supplies this theorem.",
+        "id": "LEMMA-DHS-GOWERS-SIEVE-DCP-MARKER-TARGET-BEAM-SOURCE-LAW",
+        "statement": "For one fixed polynomial width power, the target-adaptive beam has inverse-polynomial success on Regev's independent uniform source, or every fixed power has a proved negligible bound.",
+        "status": "blocked-finite-target-beam-frontier-no-source-law"
+      },
+      {
+        "candidate_id": "DHS-GOWERS-SIEVE",
+        "depends_on": [
           "PO-FAMILY",
           "PO-DEQUANTIZATION",
           "PO-COMPLEXITY"
@@ -1809,6 +2068,30 @@
         "id": "LEMMA-DHS-GOWERS-SIEVE-DCP-SUB-HALF-LOG-GROWING-ORDER-OBSTRUCTION",
         "statement": "For every k(n) with 4^k log n=o(n), the nonnegative bad-tuple source contribution vanishes.",
         "status": "proved-uniform-lattice-path-count-obstruction"
+      },
+      {
+        "candidate_id": "DHS-GOWERS-SIEVE",
+        "depends_on": [
+          "PO-FAMILY",
+          "PO-DEQUANTIZATION",
+          "PO-COMPLEXITY"
+        ],
+        "falsification_test": "Check rank increases, determinantal-divisor equality with saturation index, Hadamard bounds for independent Boolean minors, integer index drops, and exact transfer DAG controls.",
+        "id": "LEMMA-DHS-GOWERS-SIEVE-DCP-BOOLEAN-LATTICE-CHAIN-LENGTH",
+        "statement": "Every monotone integer-lattice transfer path generated by Boolean columns in dimension k has at most O(k^2 log k) proper transitions.",
+        "status": "proved-hadamard-saturation-index-chain-bound"
+      },
+      {
+        "candidate_id": "DHS-GOWERS-SIEVE",
+        "depends_on": [
+          "LEMMA-DHS-GOWERS-SIEVE-DCP-BOOLEAN-LATTICE-CHAIN-LENGTH",
+          "PO-FAMILY",
+          "PO-DEQUANTIZATION"
+        ],
+        "falsification_test": "Charge path positions, Boolean identities, Smith numerator, fixed register offset, and terminal contraction uniformly in k; do not transfer the nonnegative bound to signed observables.",
+        "id": "LEMMA-DHS-GOWERS-SIEVE-DCP-NEAR-LOG-GROWING-ORDER-OBSTRUCTION",
+        "statement": "Every nonnegative source bad-tuple moment schedule satisfying 2^k O(k^2 log k)(log n+k)=o(n), including every fixed fraction below log_2 n, has vanishing source contribution.",
+        "status": "proved-near-log-growing-order-moment-obstruction"
       },
       {
         "candidate_id": "DHS-GOWERS-SIEVE",
@@ -2593,6 +2876,193 @@
         "id": "LEMMA-HYP-LIT-COSET-OBSERVABLES-COSET-TYPICAL-N10-STABLE-FINITE-GAP-EVIDENCE",
         "statement": "The existing exactly square-free n=10 blocks provide stable numerical normalized-gap evidence as multiplicity grows.",
         "status": "falsified-multiplicity6-to8-normalized-gap-drops-over-sevenfold"
+      },
+      {
+        "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Verify the cited maximal-dimension theorem, square it to obtain the maximal Plancherel atom, apply the involution character-ratio factor at most two, and include the polynomial catalog cardinality.",
+        "id": "LEMMA-HYP-LIT-COSET-OBSERVABLES-COSET-TYPICAL-PRECERTIFIED-SOURCE-CATALOG-NO-GO",
+        "statement": "Every polynomial-size catalog of pre-certified S_n source partitions has superpolynomially small natural involution weak-Fourier mass.",
+        "status": "proved-from-2026-maximal-dimension-theorem"
+      },
+      {
+        "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-SUCCESS",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Require a circuit whose input is the bit description of sampled partitions, prove uniform normalization and inverse gaps, and integrate source and target mass without postselection.",
+        "id": "LEMMA-HYP-LIT-COSET-OBSERVABLES-COSET-TYPICAL-UNIFORM-NATURAL-SOURCE-COVERAGE",
+        "statement": "One uniform separator, inverse-gap theorem, and coherent multiplicity transform accept arbitrary sampled typical source partitions and cover inverse-polynomial natural Fourier mass.",
+        "status": "blocked-fixed-source-catalog-asymptotically-negligible"
+      },
+      {
+        "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Enumerate all ordered source pairs at finite controls and use exact unequal-source character moments to stop on the first zero-variance nontrivial block.",
+        "id": "LEMMA-HYP-LIT-COSET-OBSERVABLES-COSET-TYPICAL-FIXED-SEPARATOR-ALL-SOURCE-UNIFORMITY",
+        "statement": "The fixed TT1+TC1 separator has simple spectrum on every nontrivial multiplicity block for arbitrary sampled source partitions.",
+        "status": "falsified-exact-unequal-source-scalar-collisions-at-n6"
+      },
+      {
+        "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-SUCCESS",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Require deterministic coefficient synthesis from partition descriptions, exact finite collision tests, an all-n normalized-gap theorem, and a coherent controlled implementation.",
+        "id": "LEMMA-HYP-LIT-COSET-OBSERVABLES-COSET-TYPICAL-LABEL-ADAPTIVE-SEPARATOR-REPAIR",
+        "statement": "A reversible polynomial rule selects bounded-support separator coefficients from arbitrary partition descriptions and has inverse-polynomial gaps on every naturally relevant multiplicity block.",
+        "status": "blocked-fixed-coefficient-collides-adaptive-repair-missing"
+      },
+      {
+        "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Validate the hash-gated exhaustive coefficient search, all 663 finite blocks, and exact rational variances on the two former scalar blocks.",
+        "id": "LEMMA-HYP-LIT-COSET-OBSERVABLES-COSET-TYPICAL-PARITY-COMPLETE-FINITE-SEPARATOR",
+        "statement": "A parity-complete oriented bounded-support portfolio contains one coefficient rule with no collision on every ordered-source nontrivial block through n=7.",
+        "status": "finite-n5-through-n7-numerical-separation-with-two-exact-repairs"
+      },
+      {
+        "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-SUCCESS",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Freeze coefficients before an n=8 holdout, certify collisions exactly, then derive an oriented-orbit recurrence with a uniform normalized gap bound.",
+        "id": "LEMMA-HYP-LIT-COSET-OBSERVABLES-COSET-TYPICAL-PARITY-COMPLETE-ALL-N-GAP",
+        "statement": "The parity-complete TC2+CT1-2CT2 separator has simple spectrum and inverse-polynomial LCU-normalized gaps uniformly over naturally relevant source and target partitions for every n.",
+        "status": "blocked-finite-discovery-set-no-n8-holdout-or-all-n-theorem"
+      },
+      {
+        "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-SUCCESS",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Check Schur partial traces, the diagonal nu action, exact normalization, nonnegativity, and equality with the two-copy frame scalar on every finite control.",
+        "id": "LEMMA-HYP-LIT-COSET-OBSERVABLES-COSET-SAME-HIDDEN-TARGET-LAW",
+        "statement": "For every accessible source pair lambda,mu, the shared-hidden coupled target law is the dimension-weighted Kronecker mass times (1+r_lambda+r_mu+r_nu)/((1+r_lambda)(1+r_mu)).",
+        "status": "proved-exact-character-ratio-target-law"
+      },
+      {
+        "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-SUCCESS",
+          "PO-DEQUANTIZATION"
+        ],
+        "falsification_test": "Compute h-conditioned multiplicity outcomes, bound mutual information after legal measurements, and compare a polynomial decoder with classical character/tensor baselines.",
+        "id": "LEMMA-HYP-LIT-COSET-OBSERVABLES-COSET-TARGET-LAW-TO-DECODER",
+        "statement": "A coherent target and multiplicity measurement has inverse-polynomial mutual information about the individual hidden involution and a polynomial decoder.",
+        "status": "blocked-target-label-is-class-invariant-multiplicity-decoder-missing"
+      },
+      {
+        "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-SUCCESS",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Verify ensemble covariance, effect commutation, the trace-cyclicity identity, and a nontrivial finite full-distribution control.",
+        "id": "LEMMA-HYP-LIT-COSET-OBSERVABLES-COSET-COMMUTANT-ZERO-INFORMATION",
+        "statement": "For every copy count, a POVM whose effects commute with the diagonal group action has zero mutual information about an individual hidden element drawn uniformly from one conjugacy class.",
+        "status": "proved-all-k-commutant-outcomes-zero-information"
+      },
+      {
+        "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-SUCCESS",
+          "PO-DEQUANTIZATION"
+        ],
+        "falsification_test": "Retain carrier registers, specify noncommuting POVM effects, compute mutual information across conjugates, and demonstrate polynomial decoding against classical covariant baselines.",
+        "id": "LEMMA-HYP-LIT-COSET-OBSERVABLES-COSET-CARRIER-SENSITIVE-COVARIANT-DECODER",
+        "statement": "Commutant preprocessing preserves a polynomial-size carrier-sensitive covariant outcome with inverse-polynomial information about h and a polynomial classical decoder.",
+        "status": "blocked-commutant-route-information-free-carrier-covariant-decoder-missing"
+      },
+      {
+        "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-SUCCESS",
+          "PO-DEQUANTIZATION",
+          "PO-COMPLEXITY"
+        ],
+        "falsification_test": "Optimize by I(H;Y), freeze coefficients, test adjacent sizes, and compare with product Young-basis outcomes under identical source conditioning.",
+        "id": "LEMMA-HYP-LIT-COSET-OBSERVABLES-COSET-CARRIER-REFINEMENT-INFORMATION-ADVANTAGE",
+        "statement": "A frozen carrier-sensitive recoupling measurement has asymptotically more hidden-element information than separate strong Fourier carrier outcomes.",
+        "status": "falsified-on-finite-controls-by-product-strong-fourier"
+      },
+      {
+        "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-SUCCESS",
+          "PO-NATURAL-ACCESS",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Derive the Young-basis diagonal-matrix-element second moments over the involution class and bound the full natural mutual information as n grows.",
+        "id": "LEMMA-HYP-LIT-COSET-OBSERVABLES-COSET-NATURAL-STRONG-FOURIER-INFORMATION-DECAY",
+        "statement": "Naturally weighted Young-basis strong Fourier information per coset state vanishes asymptotically for near/fixed-point-free involutions.",
+        "status": "blocked-finite-n3-through-n8-information-trend-no-asymptotic-theorem"
+      },
+      {
+        "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-SUCCESS",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Verify the cited theorem's group, hidden-subgroup promise, information notion, and distinction between sample count and joint entanglement width.",
+        "id": "LEMMA-HYP-LIT-COSET-OBSERVABLES-COSET-ENTANGLEMENT-WIDTH-LOWER-BOUND",
+        "statement": "Nonnegligible information about the GI-relevant hidden involution requires a measurement entangled across Omega(n log n) coset-state registers.",
+        "status": "proved-external-primary-multiregister-lower-bound"
+      },
+      {
+        "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-SUCCESS",
+          "PO-NATURAL-ACCESS"
+        ],
+        "falsification_test": "Type every leaf, associator, frame operation, outcome register, and decoder cost for k=Theta(n log n), then verify natural branch mass and end-to-end information.",
+        "id": "LEMMA-HYP-LIT-COSET-OBSERVABLES-COSET-GROWING-WIDTH-MEASUREMENT-ARCHITECTURE",
+        "statement": "A uniform polynomial circuit implements a Theta(n log n)-register recoupling/measurement network with compressed covariant outcomes and decoding.",
+        "status": "blocked-all-current-mechanisms-have-at-most-three-register-width"
+      },
+      {
+        "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-NATURAL-ACCESS",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Check width at every scaling row, leaves-1 merges, carrier retention, final effect algebra, natural source access, and all fatal validator outcomes.",
+        "id": "LEMMA-HYP-LIT-COSET-OBSERVABLES-COSET-GROWING-WIDTH-TYPED-SKELETON",
+        "statement": "A balanced carrier-preserving covariant measurement DAG satisfies the structural width, source-access, and noncommutant final-effect contracts.",
+        "status": "proved-typed-structural-skeleton-only"
       },
       {
         "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
@@ -3572,6 +4042,78 @@
       {
         "candidate_id": "HYP-LIT-HIDDEN-SHIFT-SIEVE",
         "depends_on": [
+          "PO-COMPLEXITY",
+          "PO-INPUT-MODEL",
+          "PO-DEQUANTIZATION"
+        ],
+        "falsification_test": "Verify the selector uses public target-independent projections, enumerate exactly (2q+1)^r paths on small bases, charge every carry, and check both sides of the assignment-to-target sandwich on complete cubes.",
+        "id": "LEMMA-HYP-LIT-HIDDEN-SHIFT-SIEVE-DCP-MARKER-LOG-COORDINATE-LIST",
+        "statement": "Branching by a fixed offset radius on c ceil(log2 n) public Gram-Schmidt coordinates has polynomial list size, and its assignment-weighted coverage deterministically sandwiches uniform-legal target coverage after charging mean fiber multiplicity.",
+        "status": "proved-polynomial-log-coordinate-list-and-source-transfer"
+      },
+      {
+        "candidate_id": "HYP-LIT-HIDDEN-SHIFT-SIEVE",
+        "depends_on": [
+          "PO-SUCCESS",
+          "PO-COMPLEXITY",
+          "PO-DEQUANTIZATION"
+        ],
+        "falsification_test": "Hold the selector and multiplier fixed before drawing label rows, prove concentration for LLL-dependent projections, then apply the fiber-count transfer theorem; finite fitted slopes do not suffice.",
+        "id": "LEMMA-HYP-LIT-HIDDEN-SHIFT-SIEVE-DCP-MARKER-LOG-COORDINATE-SOURCE-LAW",
+        "statement": "For the public risk-ranked c ceil(log2 n)-coordinate selector, accepted assignment mass is inverse-polynomial or has a proved exponential decay rate under random density-one labels.",
+        "status": "blocked-finite-log-coordinate-scaling-no-random-label-law"
+      },
+      {
+        "candidate_id": "HYP-LIT-HIDDEN-SHIFT-SIEVE",
+        "depends_on": [
+          "PO-COMPLEXITY",
+          "PO-INPUT-MODEL",
+          "PO-DEQUANTIZATION"
+        ],
+        "falsification_test": "Charge chart learning, every chart path, and every carry; keep training target-independent and test on disjoint probes; verify the source-transfer sandwich on complete small cubes.",
+        "id": "LEMMA-HYP-LIT-HIDDEN-SHIFT-SIEVE-DCP-MARKER-CHART-UNION-POLYNOMIALITY",
+        "statement": "For fixed a,c,q, a target-independent union of at most n^a charts, each branching on c ceil(log2 n) coordinates with offset radius q, is a polynomial-size verified decoder family.",
+        "status": "proved-polynomial-target-independent-marker-chart-union"
+      },
+      {
+        "candidate_id": "HYP-LIT-HIDDEN-SHIFT-SIEVE",
+        "depends_on": [
+          "PO-SUCCESS",
+          "PO-COMPLEXITY",
+          "PO-DEQUANTIZATION"
+        ],
+        "falsification_test": "Bound the entropy and concentration of LLL-dependent active coordinate masks over random labels; held-out finite decay alone is not an asymptotic theorem.",
+        "id": "LEMMA-HYP-LIT-HIDDEN-SHIFT-SIEVE-DCP-MARKER-CHART-UNION-SOURCE-LAW",
+        "statement": "The preregistered polynomial learned chart union has either inverse-polynomial uniform-legal coverage or a proved negligible random-label coverage bound.",
+        "status": "blocked-finite-chart-union-decay-no-random-label-theorem"
+      },
+      {
+        "candidate_id": "HYP-LIT-HIDDEN-SHIFT-SIEVE",
+        "depends_on": [
+          "PO-COMPLEXITY",
+          "PO-INPUT-MODEL",
+          "PO-DEQUANTIZATION"
+        ],
+        "falsification_test": "Sample targets independently, charge every retained path and carry, keep nearest-integer decisions exact, and verify every marker candidate against the original congruence.",
+        "id": "LEMMA-HYP-LIT-HIDDEN-SHIFT-SIEVE-DCP-MARKER-TARGET-BEAM-POLYNOMIALITY",
+        "statement": "For fixed width power a and offset radius q, K-best nearest-plane search expands polynomially many states; logarithmic carry slicing adds only its charged reachable-carry factor.",
+        "status": "proved-polynomial-target-adaptive-marker-beam-contract"
+      },
+      {
+        "candidate_id": "HYP-LIT-HIDDEN-SHIFT-SIEVE",
+        "depends_on": [
+          "PO-SUCCESS",
+          "PO-COMPLEXITY",
+          "PO-DEQUANTIZATION"
+        ],
+        "falsification_test": "Hold the width power fixed while n grows and prove the uniform-source success law. Neither a finite survivor nor finite collapse supplies this theorem.",
+        "id": "LEMMA-HYP-LIT-HIDDEN-SHIFT-SIEVE-DCP-MARKER-TARGET-BEAM-SOURCE-LAW",
+        "statement": "For one fixed polynomial width power, the target-adaptive beam has inverse-polynomial success on Regev's independent uniform source, or every fixed power has a proved negligible bound.",
+        "status": "blocked-finite-target-beam-frontier-no-source-law"
+      },
+      {
+        "candidate_id": "HYP-LIT-HIDDEN-SHIFT-SIEVE",
+        "depends_on": [
           "PO-FAMILY",
           "PO-DEQUANTIZATION",
           "PO-COMPLEXITY"
@@ -3664,6 +4206,30 @@
         "id": "LEMMA-HYP-LIT-HIDDEN-SHIFT-SIEVE-DCP-SUB-HALF-LOG-GROWING-ORDER-OBSTRUCTION",
         "statement": "For every k(n) with 4^k log n=o(n), the nonnegative bad-tuple source contribution vanishes.",
         "status": "proved-uniform-lattice-path-count-obstruction"
+      },
+      {
+        "candidate_id": "HYP-LIT-HIDDEN-SHIFT-SIEVE",
+        "depends_on": [
+          "PO-FAMILY",
+          "PO-DEQUANTIZATION",
+          "PO-COMPLEXITY"
+        ],
+        "falsification_test": "Check rank increases, determinantal-divisor equality with saturation index, Hadamard bounds for independent Boolean minors, integer index drops, and exact transfer DAG controls.",
+        "id": "LEMMA-HYP-LIT-HIDDEN-SHIFT-SIEVE-DCP-BOOLEAN-LATTICE-CHAIN-LENGTH",
+        "statement": "Every monotone integer-lattice transfer path generated by Boolean columns in dimension k has at most O(k^2 log k) proper transitions.",
+        "status": "proved-hadamard-saturation-index-chain-bound"
+      },
+      {
+        "candidate_id": "HYP-LIT-HIDDEN-SHIFT-SIEVE",
+        "depends_on": [
+          "LEMMA-HYP-LIT-HIDDEN-SHIFT-SIEVE-DCP-BOOLEAN-LATTICE-CHAIN-LENGTH",
+          "PO-FAMILY",
+          "PO-DEQUANTIZATION"
+        ],
+        "falsification_test": "Charge path positions, Boolean identities, Smith numerator, fixed register offset, and terminal contraction uniformly in k; do not transfer the nonnegative bound to signed observables.",
+        "id": "LEMMA-HYP-LIT-HIDDEN-SHIFT-SIEVE-DCP-NEAR-LOG-GROWING-ORDER-OBSTRUCTION",
+        "statement": "Every nonnegative source bad-tuple moment schedule satisfying 2^k O(k^2 log k)(log n+k)=o(n), including every fixed fraction below log_2 n, has vanishing source contribution.",
+        "status": "proved-near-log-growing-order-moment-obstruction"
       },
       {
         "candidate_id": "HYP-LIT-HIDDEN-SHIFT-SIEVE",
@@ -4448,6 +5014,193 @@
         "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-COSET-TYPICAL-N10-STABLE-FINITE-GAP-EVIDENCE",
         "statement": "The existing exactly square-free n=10 blocks provide stable numerical normalized-gap evidence as multiplicity grows.",
         "status": "falsified-multiplicity6-to8-normalized-gap-drops-over-sevenfold"
+      },
+      {
+        "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Verify the cited maximal-dimension theorem, square it to obtain the maximal Plancherel atom, apply the involution character-ratio factor at most two, and include the polynomial catalog cardinality.",
+        "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-COSET-TYPICAL-PRECERTIFIED-SOURCE-CATALOG-NO-GO",
+        "statement": "Every polynomial-size catalog of pre-certified S_n source partitions has superpolynomially small natural involution weak-Fourier mass.",
+        "status": "proved-from-2026-maximal-dimension-theorem"
+      },
+      {
+        "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-SUCCESS",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Require a circuit whose input is the bit description of sampled partitions, prove uniform normalization and inverse gaps, and integrate source and target mass without postselection.",
+        "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-COSET-TYPICAL-UNIFORM-NATURAL-SOURCE-COVERAGE",
+        "statement": "One uniform separator, inverse-gap theorem, and coherent multiplicity transform accept arbitrary sampled typical source partitions and cover inverse-polynomial natural Fourier mass.",
+        "status": "blocked-fixed-source-catalog-asymptotically-negligible"
+      },
+      {
+        "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Enumerate all ordered source pairs at finite controls and use exact unequal-source character moments to stop on the first zero-variance nontrivial block.",
+        "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-COSET-TYPICAL-FIXED-SEPARATOR-ALL-SOURCE-UNIFORMITY",
+        "statement": "The fixed TT1+TC1 separator has simple spectrum on every nontrivial multiplicity block for arbitrary sampled source partitions.",
+        "status": "falsified-exact-unequal-source-scalar-collisions-at-n6"
+      },
+      {
+        "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-SUCCESS",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Require deterministic coefficient synthesis from partition descriptions, exact finite collision tests, an all-n normalized-gap theorem, and a coherent controlled implementation.",
+        "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-COSET-TYPICAL-LABEL-ADAPTIVE-SEPARATOR-REPAIR",
+        "statement": "A reversible polynomial rule selects bounded-support separator coefficients from arbitrary partition descriptions and has inverse-polynomial gaps on every naturally relevant multiplicity block.",
+        "status": "blocked-fixed-coefficient-collides-adaptive-repair-missing"
+      },
+      {
+        "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Validate the hash-gated exhaustive coefficient search, all 663 finite blocks, and exact rational variances on the two former scalar blocks.",
+        "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-COSET-TYPICAL-PARITY-COMPLETE-FINITE-SEPARATOR",
+        "statement": "A parity-complete oriented bounded-support portfolio contains one coefficient rule with no collision on every ordered-source nontrivial block through n=7.",
+        "status": "finite-n5-through-n7-numerical-separation-with-two-exact-repairs"
+      },
+      {
+        "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-SUCCESS",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Freeze coefficients before an n=8 holdout, certify collisions exactly, then derive an oriented-orbit recurrence with a uniform normalized gap bound.",
+        "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-COSET-TYPICAL-PARITY-COMPLETE-ALL-N-GAP",
+        "statement": "The parity-complete TC2+CT1-2CT2 separator has simple spectrum and inverse-polynomial LCU-normalized gaps uniformly over naturally relevant source and target partitions for every n.",
+        "status": "blocked-finite-discovery-set-no-n8-holdout-or-all-n-theorem"
+      },
+      {
+        "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-SUCCESS",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Check Schur partial traces, the diagonal nu action, exact normalization, nonnegativity, and equality with the two-copy frame scalar on every finite control.",
+        "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-COSET-SAME-HIDDEN-TARGET-LAW",
+        "statement": "For every accessible source pair lambda,mu, the shared-hidden coupled target law is the dimension-weighted Kronecker mass times (1+r_lambda+r_mu+r_nu)/((1+r_lambda)(1+r_mu)).",
+        "status": "proved-exact-character-ratio-target-law"
+      },
+      {
+        "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-SUCCESS",
+          "PO-DEQUANTIZATION"
+        ],
+        "falsification_test": "Compute h-conditioned multiplicity outcomes, bound mutual information after legal measurements, and compare a polynomial decoder with classical character/tensor baselines.",
+        "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-COSET-TARGET-LAW-TO-DECODER",
+        "statement": "A coherent target and multiplicity measurement has inverse-polynomial mutual information about the individual hidden involution and a polynomial decoder.",
+        "status": "blocked-target-label-is-class-invariant-multiplicity-decoder-missing"
+      },
+      {
+        "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-SUCCESS",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Verify ensemble covariance, effect commutation, the trace-cyclicity identity, and a nontrivial finite full-distribution control.",
+        "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-COSET-COMMUTANT-ZERO-INFORMATION",
+        "statement": "For every copy count, a POVM whose effects commute with the diagonal group action has zero mutual information about an individual hidden element drawn uniformly from one conjugacy class.",
+        "status": "proved-all-k-commutant-outcomes-zero-information"
+      },
+      {
+        "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-SUCCESS",
+          "PO-DEQUANTIZATION"
+        ],
+        "falsification_test": "Retain carrier registers, specify noncommuting POVM effects, compute mutual information across conjugates, and demonstrate polynomial decoding against classical covariant baselines.",
+        "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-COSET-CARRIER-SENSITIVE-COVARIANT-DECODER",
+        "statement": "Commutant preprocessing preserves a polynomial-size carrier-sensitive covariant outcome with inverse-polynomial information about h and a polynomial classical decoder.",
+        "status": "blocked-commutant-route-information-free-carrier-covariant-decoder-missing"
+      },
+      {
+        "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-SUCCESS",
+          "PO-DEQUANTIZATION",
+          "PO-COMPLEXITY"
+        ],
+        "falsification_test": "Optimize by I(H;Y), freeze coefficients, test adjacent sizes, and compare with product Young-basis outcomes under identical source conditioning.",
+        "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-COSET-CARRIER-REFINEMENT-INFORMATION-ADVANTAGE",
+        "statement": "A frozen carrier-sensitive recoupling measurement has asymptotically more hidden-element information than separate strong Fourier carrier outcomes.",
+        "status": "falsified-on-finite-controls-by-product-strong-fourier"
+      },
+      {
+        "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-SUCCESS",
+          "PO-NATURAL-ACCESS",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Derive the Young-basis diagonal-matrix-element second moments over the involution class and bound the full natural mutual information as n grows.",
+        "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-COSET-NATURAL-STRONG-FOURIER-INFORMATION-DECAY",
+        "statement": "Naturally weighted Young-basis strong Fourier information per coset state vanishes asymptotically for near/fixed-point-free involutions.",
+        "status": "blocked-finite-n3-through-n8-information-trend-no-asymptotic-theorem"
+      },
+      {
+        "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-SUCCESS",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Verify the cited theorem's group, hidden-subgroup promise, information notion, and distinction between sample count and joint entanglement width.",
+        "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-COSET-ENTANGLEMENT-WIDTH-LOWER-BOUND",
+        "statement": "Nonnegligible information about the GI-relevant hidden involution requires a measurement entangled across Omega(n log n) coset-state registers.",
+        "status": "proved-external-primary-multiregister-lower-bound"
+      },
+      {
+        "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-SUCCESS",
+          "PO-NATURAL-ACCESS"
+        ],
+        "falsification_test": "Type every leaf, associator, frame operation, outcome register, and decoder cost for k=Theta(n log n), then verify natural branch mass and end-to-end information.",
+        "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-COSET-GROWING-WIDTH-MEASUREMENT-ARCHITECTURE",
+        "statement": "A uniform polynomial circuit implements a Theta(n log n)-register recoupling/measurement network with compressed covariant outcomes and decoding.",
+        "status": "blocked-all-current-mechanisms-have-at-most-three-register-width"
+      },
+      {
+        "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-NATURAL-ACCESS",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Check width at every scaling row, leaves-1 merges, carrier retention, final effect algebra, natural source access, and all fatal validator outcomes.",
+        "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-COSET-GROWING-WIDTH-TYPED-SKELETON",
+        "statement": "A balanced carrier-preserving covariant measurement DAG satisfies the structural width, source-access, and noncommutant final-effect contracts.",
+        "status": "proved-typed-structural-skeleton-only"
       },
       {
         "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
@@ -5350,6 +6103,193 @@
           "PO-COMPLEXITY",
           "PO-NO-GO"
         ],
+        "falsification_test": "Verify the cited maximal-dimension theorem, square it to obtain the maximal Plancherel atom, apply the involution character-ratio factor at most two, and include the polynomial catalog cardinality.",
+        "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-COSET-TYPICAL-PRECERTIFIED-SOURCE-CATALOG-NO-GO",
+        "statement": "Every polynomial-size catalog of pre-certified S_n source partitions has superpolynomially small natural involution weak-Fourier mass.",
+        "status": "proved-from-2026-maximal-dimension-theorem"
+      },
+      {
+        "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-SUCCESS",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Require a circuit whose input is the bit description of sampled partitions, prove uniform normalization and inverse gaps, and integrate source and target mass without postselection.",
+        "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-COSET-TYPICAL-UNIFORM-NATURAL-SOURCE-COVERAGE",
+        "statement": "One uniform separator, inverse-gap theorem, and coherent multiplicity transform accept arbitrary sampled typical source partitions and cover inverse-polynomial natural Fourier mass.",
+        "status": "blocked-fixed-source-catalog-asymptotically-negligible"
+      },
+      {
+        "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Enumerate all ordered source pairs at finite controls and use exact unequal-source character moments to stop on the first zero-variance nontrivial block.",
+        "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-COSET-TYPICAL-FIXED-SEPARATOR-ALL-SOURCE-UNIFORMITY",
+        "statement": "The fixed TT1+TC1 separator has simple spectrum on every nontrivial multiplicity block for arbitrary sampled source partitions.",
+        "status": "falsified-exact-unequal-source-scalar-collisions-at-n6"
+      },
+      {
+        "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-SUCCESS",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Require deterministic coefficient synthesis from partition descriptions, exact finite collision tests, an all-n normalized-gap theorem, and a coherent controlled implementation.",
+        "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-COSET-TYPICAL-LABEL-ADAPTIVE-SEPARATOR-REPAIR",
+        "statement": "A reversible polynomial rule selects bounded-support separator coefficients from arbitrary partition descriptions and has inverse-polynomial gaps on every naturally relevant multiplicity block.",
+        "status": "blocked-fixed-coefficient-collides-adaptive-repair-missing"
+      },
+      {
+        "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Validate the hash-gated exhaustive coefficient search, all 663 finite blocks, and exact rational variances on the two former scalar blocks.",
+        "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-COSET-TYPICAL-PARITY-COMPLETE-FINITE-SEPARATOR",
+        "statement": "A parity-complete oriented bounded-support portfolio contains one coefficient rule with no collision on every ordered-source nontrivial block through n=7.",
+        "status": "finite-n5-through-n7-numerical-separation-with-two-exact-repairs"
+      },
+      {
+        "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-SUCCESS",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Freeze coefficients before an n=8 holdout, certify collisions exactly, then derive an oriented-orbit recurrence with a uniform normalized gap bound.",
+        "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-COSET-TYPICAL-PARITY-COMPLETE-ALL-N-GAP",
+        "statement": "The parity-complete TC2+CT1-2CT2 separator has simple spectrum and inverse-polynomial LCU-normalized gaps uniformly over naturally relevant source and target partitions for every n.",
+        "status": "blocked-finite-discovery-set-no-n8-holdout-or-all-n-theorem"
+      },
+      {
+        "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-SUCCESS",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Check Schur partial traces, the diagonal nu action, exact normalization, nonnegativity, and equality with the two-copy frame scalar on every finite control.",
+        "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-COSET-SAME-HIDDEN-TARGET-LAW",
+        "statement": "For every accessible source pair lambda,mu, the shared-hidden coupled target law is the dimension-weighted Kronecker mass times (1+r_lambda+r_mu+r_nu)/((1+r_lambda)(1+r_mu)).",
+        "status": "proved-exact-character-ratio-target-law"
+      },
+      {
+        "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-SUCCESS",
+          "PO-DEQUANTIZATION"
+        ],
+        "falsification_test": "Compute h-conditioned multiplicity outcomes, bound mutual information after legal measurements, and compare a polynomial decoder with classical character/tensor baselines.",
+        "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-COSET-TARGET-LAW-TO-DECODER",
+        "statement": "A coherent target and multiplicity measurement has inverse-polynomial mutual information about the individual hidden involution and a polynomial decoder.",
+        "status": "blocked-target-label-is-class-invariant-multiplicity-decoder-missing"
+      },
+      {
+        "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-SUCCESS",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Verify ensemble covariance, effect commutation, the trace-cyclicity identity, and a nontrivial finite full-distribution control.",
+        "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-COSET-COMMUTANT-ZERO-INFORMATION",
+        "statement": "For every copy count, a POVM whose effects commute with the diagonal group action has zero mutual information about an individual hidden element drawn uniformly from one conjugacy class.",
+        "status": "proved-all-k-commutant-outcomes-zero-information"
+      },
+      {
+        "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-SUCCESS",
+          "PO-DEQUANTIZATION"
+        ],
+        "falsification_test": "Retain carrier registers, specify noncommuting POVM effects, compute mutual information across conjugates, and demonstrate polynomial decoding against classical covariant baselines.",
+        "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-COSET-CARRIER-SENSITIVE-COVARIANT-DECODER",
+        "statement": "Commutant preprocessing preserves a polynomial-size carrier-sensitive covariant outcome with inverse-polynomial information about h and a polynomial classical decoder.",
+        "status": "blocked-commutant-route-information-free-carrier-covariant-decoder-missing"
+      },
+      {
+        "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-SUCCESS",
+          "PO-DEQUANTIZATION",
+          "PO-COMPLEXITY"
+        ],
+        "falsification_test": "Optimize by I(H;Y), freeze coefficients, test adjacent sizes, and compare with product Young-basis outcomes under identical source conditioning.",
+        "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-COSET-CARRIER-REFINEMENT-INFORMATION-ADVANTAGE",
+        "statement": "A frozen carrier-sensitive recoupling measurement has asymptotically more hidden-element information than separate strong Fourier carrier outcomes.",
+        "status": "falsified-on-finite-controls-by-product-strong-fourier"
+      },
+      {
+        "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-SUCCESS",
+          "PO-NATURAL-ACCESS",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Derive the Young-basis diagonal-matrix-element second moments over the involution class and bound the full natural mutual information as n grows.",
+        "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-COSET-NATURAL-STRONG-FOURIER-INFORMATION-DECAY",
+        "statement": "Naturally weighted Young-basis strong Fourier information per coset state vanishes asymptotically for near/fixed-point-free involutions.",
+        "status": "blocked-finite-n3-through-n8-information-trend-no-asymptotic-theorem"
+      },
+      {
+        "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-SUCCESS",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Verify the cited theorem's group, hidden-subgroup promise, information notion, and distinction between sample count and joint entanglement width.",
+        "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-COSET-ENTANGLEMENT-WIDTH-LOWER-BOUND",
+        "statement": "Nonnegligible information about the GI-relevant hidden involution requires a measurement entangled across Omega(n log n) coset-state registers.",
+        "status": "proved-external-primary-multiregister-lower-bound"
+      },
+      {
+        "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-SUCCESS",
+          "PO-NATURAL-ACCESS"
+        ],
+        "falsification_test": "Type every leaf, associator, frame operation, outcome register, and decoder cost for k=Theta(n log n), then verify natural branch mass and end-to-end information.",
+        "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-COSET-GROWING-WIDTH-MEASUREMENT-ARCHITECTURE",
+        "statement": "A uniform polynomial circuit implements a Theta(n log n)-register recoupling/measurement network with compressed covariant outcomes and decoding.",
+        "status": "blocked-all-current-mechanisms-have-at-most-three-register-width"
+      },
+      {
+        "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-NATURAL-ACCESS",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Check width at every scaling row, leaves-1 merges, carrier retention, final effect algebra, natural source access, and all fatal validator outcomes.",
+        "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-COSET-GROWING-WIDTH-TYPED-SKELETON",
+        "statement": "A balanced carrier-preserving covariant measurement DAG satisfies the structural width, source-access, and noncommutant final-effect contracts.",
+        "status": "proved-typed-structural-skeleton-only"
+      },
+      {
+        "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-NO-GO"
+        ],
         "falsification_test": "Derive separator-specific coefficient-height cancellation or a direct spectral recurrence with an inverse-polynomial bound; finite nonzero discriminants do not satisfy this lemma.",
         "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-COSET-TYPICAL-INVERSE-POLYNOMIAL-NORMALIZED-GAP",
         "statement": "The typical TT1+TC1 separator has inverse-polynomial LCU-normalized minimum gap on the promised all-n family.",
@@ -6244,6 +7184,193 @@
           "PO-COMPLEXITY",
           "PO-NO-GO"
         ],
+        "falsification_test": "Verify the cited maximal-dimension theorem, square it to obtain the maximal Plancherel atom, apply the involution character-ratio factor at most two, and include the polynomial catalog cardinality.",
+        "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-COSET-TYPICAL-PRECERTIFIED-SOURCE-CATALOG-NO-GO",
+        "statement": "Every polynomial-size catalog of pre-certified S_n source partitions has superpolynomially small natural involution weak-Fourier mass.",
+        "status": "proved-from-2026-maximal-dimension-theorem"
+      },
+      {
+        "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-SUCCESS",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Require a circuit whose input is the bit description of sampled partitions, prove uniform normalization and inverse gaps, and integrate source and target mass without postselection.",
+        "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-COSET-TYPICAL-UNIFORM-NATURAL-SOURCE-COVERAGE",
+        "statement": "One uniform separator, inverse-gap theorem, and coherent multiplicity transform accept arbitrary sampled typical source partitions and cover inverse-polynomial natural Fourier mass.",
+        "status": "blocked-fixed-source-catalog-asymptotically-negligible"
+      },
+      {
+        "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Enumerate all ordered source pairs at finite controls and use exact unequal-source character moments to stop on the first zero-variance nontrivial block.",
+        "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-COSET-TYPICAL-FIXED-SEPARATOR-ALL-SOURCE-UNIFORMITY",
+        "statement": "The fixed TT1+TC1 separator has simple spectrum on every nontrivial multiplicity block for arbitrary sampled source partitions.",
+        "status": "falsified-exact-unequal-source-scalar-collisions-at-n6"
+      },
+      {
+        "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-SUCCESS",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Require deterministic coefficient synthesis from partition descriptions, exact finite collision tests, an all-n normalized-gap theorem, and a coherent controlled implementation.",
+        "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-COSET-TYPICAL-LABEL-ADAPTIVE-SEPARATOR-REPAIR",
+        "statement": "A reversible polynomial rule selects bounded-support separator coefficients from arbitrary partition descriptions and has inverse-polynomial gaps on every naturally relevant multiplicity block.",
+        "status": "blocked-fixed-coefficient-collides-adaptive-repair-missing"
+      },
+      {
+        "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Validate the hash-gated exhaustive coefficient search, all 663 finite blocks, and exact rational variances on the two former scalar blocks.",
+        "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-COSET-TYPICAL-PARITY-COMPLETE-FINITE-SEPARATOR",
+        "statement": "A parity-complete oriented bounded-support portfolio contains one coefficient rule with no collision on every ordered-source nontrivial block through n=7.",
+        "status": "finite-n5-through-n7-numerical-separation-with-two-exact-repairs"
+      },
+      {
+        "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-SUCCESS",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Freeze coefficients before an n=8 holdout, certify collisions exactly, then derive an oriented-orbit recurrence with a uniform normalized gap bound.",
+        "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-COSET-TYPICAL-PARITY-COMPLETE-ALL-N-GAP",
+        "statement": "The parity-complete TC2+CT1-2CT2 separator has simple spectrum and inverse-polynomial LCU-normalized gaps uniformly over naturally relevant source and target partitions for every n.",
+        "status": "blocked-finite-discovery-set-no-n8-holdout-or-all-n-theorem"
+      },
+      {
+        "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-SUCCESS",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Check Schur partial traces, the diagonal nu action, exact normalization, nonnegativity, and equality with the two-copy frame scalar on every finite control.",
+        "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-COSET-SAME-HIDDEN-TARGET-LAW",
+        "statement": "For every accessible source pair lambda,mu, the shared-hidden coupled target law is the dimension-weighted Kronecker mass times (1+r_lambda+r_mu+r_nu)/((1+r_lambda)(1+r_mu)).",
+        "status": "proved-exact-character-ratio-target-law"
+      },
+      {
+        "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-SUCCESS",
+          "PO-DEQUANTIZATION"
+        ],
+        "falsification_test": "Compute h-conditioned multiplicity outcomes, bound mutual information after legal measurements, and compare a polynomial decoder with classical character/tensor baselines.",
+        "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-COSET-TARGET-LAW-TO-DECODER",
+        "statement": "A coherent target and multiplicity measurement has inverse-polynomial mutual information about the individual hidden involution and a polynomial decoder.",
+        "status": "blocked-target-label-is-class-invariant-multiplicity-decoder-missing"
+      },
+      {
+        "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-SUCCESS",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Verify ensemble covariance, effect commutation, the trace-cyclicity identity, and a nontrivial finite full-distribution control.",
+        "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-COSET-COMMUTANT-ZERO-INFORMATION",
+        "statement": "For every copy count, a POVM whose effects commute with the diagonal group action has zero mutual information about an individual hidden element drawn uniformly from one conjugacy class.",
+        "status": "proved-all-k-commutant-outcomes-zero-information"
+      },
+      {
+        "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-SUCCESS",
+          "PO-DEQUANTIZATION"
+        ],
+        "falsification_test": "Retain carrier registers, specify noncommuting POVM effects, compute mutual information across conjugates, and demonstrate polynomial decoding against classical covariant baselines.",
+        "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-COSET-CARRIER-SENSITIVE-COVARIANT-DECODER",
+        "statement": "Commutant preprocessing preserves a polynomial-size carrier-sensitive covariant outcome with inverse-polynomial information about h and a polynomial classical decoder.",
+        "status": "blocked-commutant-route-information-free-carrier-covariant-decoder-missing"
+      },
+      {
+        "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-SUCCESS",
+          "PO-DEQUANTIZATION",
+          "PO-COMPLEXITY"
+        ],
+        "falsification_test": "Optimize by I(H;Y), freeze coefficients, test adjacent sizes, and compare with product Young-basis outcomes under identical source conditioning.",
+        "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-COSET-CARRIER-REFINEMENT-INFORMATION-ADVANTAGE",
+        "statement": "A frozen carrier-sensitive recoupling measurement has asymptotically more hidden-element information than separate strong Fourier carrier outcomes.",
+        "status": "falsified-on-finite-controls-by-product-strong-fourier"
+      },
+      {
+        "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-SUCCESS",
+          "PO-NATURAL-ACCESS",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Derive the Young-basis diagonal-matrix-element second moments over the involution class and bound the full natural mutual information as n grows.",
+        "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-COSET-NATURAL-STRONG-FOURIER-INFORMATION-DECAY",
+        "statement": "Naturally weighted Young-basis strong Fourier information per coset state vanishes asymptotically for near/fixed-point-free involutions.",
+        "status": "blocked-finite-n3-through-n8-information-trend-no-asymptotic-theorem"
+      },
+      {
+        "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-SUCCESS",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Verify the cited theorem's group, hidden-subgroup promise, information notion, and distinction between sample count and joint entanglement width.",
+        "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-COSET-ENTANGLEMENT-WIDTH-LOWER-BOUND",
+        "statement": "Nonnegligible information about the GI-relevant hidden involution requires a measurement entangled across Omega(n log n) coset-state registers.",
+        "status": "proved-external-primary-multiregister-lower-bound"
+      },
+      {
+        "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-SUCCESS",
+          "PO-NATURAL-ACCESS"
+        ],
+        "falsification_test": "Type every leaf, associator, frame operation, outcome register, and decoder cost for k=Theta(n log n), then verify natural branch mass and end-to-end information.",
+        "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-COSET-GROWING-WIDTH-MEASUREMENT-ARCHITECTURE",
+        "statement": "A uniform polynomial circuit implements a Theta(n log n)-register recoupling/measurement network with compressed covariant outcomes and decoding.",
+        "status": "blocked-all-current-mechanisms-have-at-most-three-register-width"
+      },
+      {
+        "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-NATURAL-ACCESS",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Check width at every scaling row, leaves-1 merges, carrier retention, final effect algebra, natural source access, and all fatal validator outcomes.",
+        "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-COSET-GROWING-WIDTH-TYPED-SKELETON",
+        "statement": "A balanced carrier-preserving covariant measurement DAG satisfies the structural width, source-access, and noncommutant final-effect contracts.",
+        "status": "proved-typed-structural-skeleton-only"
+      },
+      {
+        "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-NO-GO"
+        ],
         "falsification_test": "Derive separator-specific coefficient-height cancellation or a direct spectral recurrence with an inverse-polynomial bound; finite nonzero discriminants do not satisfy this lemma.",
         "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-COSET-TYPICAL-INVERSE-POLYNOMIAL-NORMALIZED-GAP",
         "statement": "The typical TT1+TC1 separator has inverse-polynomial LCU-normalized minimum gap on the promised all-n family.",
@@ -7130,6 +8257,193 @@
         "id": "LEMMA-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-COSET-TYPICAL-N10-STABLE-FINITE-GAP-EVIDENCE",
         "statement": "The existing exactly square-free n=10 blocks provide stable numerical normalized-gap evidence as multiplicity grows.",
         "status": "falsified-multiplicity6-to8-normalized-gap-drops-over-sevenfold"
+      },
+      {
+        "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Verify the cited maximal-dimension theorem, square it to obtain the maximal Plancherel atom, apply the involution character-ratio factor at most two, and include the polynomial catalog cardinality.",
+        "id": "LEMMA-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-COSET-TYPICAL-PRECERTIFIED-SOURCE-CATALOG-NO-GO",
+        "statement": "Every polynomial-size catalog of pre-certified S_n source partitions has superpolynomially small natural involution weak-Fourier mass.",
+        "status": "proved-from-2026-maximal-dimension-theorem"
+      },
+      {
+        "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-SUCCESS",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Require a circuit whose input is the bit description of sampled partitions, prove uniform normalization and inverse gaps, and integrate source and target mass without postselection.",
+        "id": "LEMMA-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-COSET-TYPICAL-UNIFORM-NATURAL-SOURCE-COVERAGE",
+        "statement": "One uniform separator, inverse-gap theorem, and coherent multiplicity transform accept arbitrary sampled typical source partitions and cover inverse-polynomial natural Fourier mass.",
+        "status": "blocked-fixed-source-catalog-asymptotically-negligible"
+      },
+      {
+        "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Enumerate all ordered source pairs at finite controls and use exact unequal-source character moments to stop on the first zero-variance nontrivial block.",
+        "id": "LEMMA-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-COSET-TYPICAL-FIXED-SEPARATOR-ALL-SOURCE-UNIFORMITY",
+        "statement": "The fixed TT1+TC1 separator has simple spectrum on every nontrivial multiplicity block for arbitrary sampled source partitions.",
+        "status": "falsified-exact-unequal-source-scalar-collisions-at-n6"
+      },
+      {
+        "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-SUCCESS",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Require deterministic coefficient synthesis from partition descriptions, exact finite collision tests, an all-n normalized-gap theorem, and a coherent controlled implementation.",
+        "id": "LEMMA-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-COSET-TYPICAL-LABEL-ADAPTIVE-SEPARATOR-REPAIR",
+        "statement": "A reversible polynomial rule selects bounded-support separator coefficients from arbitrary partition descriptions and has inverse-polynomial gaps on every naturally relevant multiplicity block.",
+        "status": "blocked-fixed-coefficient-collides-adaptive-repair-missing"
+      },
+      {
+        "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Validate the hash-gated exhaustive coefficient search, all 663 finite blocks, and exact rational variances on the two former scalar blocks.",
+        "id": "LEMMA-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-COSET-TYPICAL-PARITY-COMPLETE-FINITE-SEPARATOR",
+        "statement": "A parity-complete oriented bounded-support portfolio contains one coefficient rule with no collision on every ordered-source nontrivial block through n=7.",
+        "status": "finite-n5-through-n7-numerical-separation-with-two-exact-repairs"
+      },
+      {
+        "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-SUCCESS",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Freeze coefficients before an n=8 holdout, certify collisions exactly, then derive an oriented-orbit recurrence with a uniform normalized gap bound.",
+        "id": "LEMMA-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-COSET-TYPICAL-PARITY-COMPLETE-ALL-N-GAP",
+        "statement": "The parity-complete TC2+CT1-2CT2 separator has simple spectrum and inverse-polynomial LCU-normalized gaps uniformly over naturally relevant source and target partitions for every n.",
+        "status": "blocked-finite-discovery-set-no-n8-holdout-or-all-n-theorem"
+      },
+      {
+        "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-SUCCESS",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Check Schur partial traces, the diagonal nu action, exact normalization, nonnegativity, and equality with the two-copy frame scalar on every finite control.",
+        "id": "LEMMA-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-COSET-SAME-HIDDEN-TARGET-LAW",
+        "statement": "For every accessible source pair lambda,mu, the shared-hidden coupled target law is the dimension-weighted Kronecker mass times (1+r_lambda+r_mu+r_nu)/((1+r_lambda)(1+r_mu)).",
+        "status": "proved-exact-character-ratio-target-law"
+      },
+      {
+        "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-SUCCESS",
+          "PO-DEQUANTIZATION"
+        ],
+        "falsification_test": "Compute h-conditioned multiplicity outcomes, bound mutual information after legal measurements, and compare a polynomial decoder with classical character/tensor baselines.",
+        "id": "LEMMA-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-COSET-TARGET-LAW-TO-DECODER",
+        "statement": "A coherent target and multiplicity measurement has inverse-polynomial mutual information about the individual hidden involution and a polynomial decoder.",
+        "status": "blocked-target-label-is-class-invariant-multiplicity-decoder-missing"
+      },
+      {
+        "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-SUCCESS",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Verify ensemble covariance, effect commutation, the trace-cyclicity identity, and a nontrivial finite full-distribution control.",
+        "id": "LEMMA-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-COSET-COMMUTANT-ZERO-INFORMATION",
+        "statement": "For every copy count, a POVM whose effects commute with the diagonal group action has zero mutual information about an individual hidden element drawn uniformly from one conjugacy class.",
+        "status": "proved-all-k-commutant-outcomes-zero-information"
+      },
+      {
+        "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-SUCCESS",
+          "PO-DEQUANTIZATION"
+        ],
+        "falsification_test": "Retain carrier registers, specify noncommuting POVM effects, compute mutual information across conjugates, and demonstrate polynomial decoding against classical covariant baselines.",
+        "id": "LEMMA-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-COSET-CARRIER-SENSITIVE-COVARIANT-DECODER",
+        "statement": "Commutant preprocessing preserves a polynomial-size carrier-sensitive covariant outcome with inverse-polynomial information about h and a polynomial classical decoder.",
+        "status": "blocked-commutant-route-information-free-carrier-covariant-decoder-missing"
+      },
+      {
+        "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-SUCCESS",
+          "PO-DEQUANTIZATION",
+          "PO-COMPLEXITY"
+        ],
+        "falsification_test": "Optimize by I(H;Y), freeze coefficients, test adjacent sizes, and compare with product Young-basis outcomes under identical source conditioning.",
+        "id": "LEMMA-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-COSET-CARRIER-REFINEMENT-INFORMATION-ADVANTAGE",
+        "statement": "A frozen carrier-sensitive recoupling measurement has asymptotically more hidden-element information than separate strong Fourier carrier outcomes.",
+        "status": "falsified-on-finite-controls-by-product-strong-fourier"
+      },
+      {
+        "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-SUCCESS",
+          "PO-NATURAL-ACCESS",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Derive the Young-basis diagonal-matrix-element second moments over the involution class and bound the full natural mutual information as n grows.",
+        "id": "LEMMA-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-COSET-NATURAL-STRONG-FOURIER-INFORMATION-DECAY",
+        "statement": "Naturally weighted Young-basis strong Fourier information per coset state vanishes asymptotically for near/fixed-point-free involutions.",
+        "status": "blocked-finite-n3-through-n8-information-trend-no-asymptotic-theorem"
+      },
+      {
+        "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-SUCCESS",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Verify the cited theorem's group, hidden-subgroup promise, information notion, and distinction between sample count and joint entanglement width.",
+        "id": "LEMMA-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-COSET-ENTANGLEMENT-WIDTH-LOWER-BOUND",
+        "statement": "Nonnegligible information about the GI-relevant hidden involution requires a measurement entangled across Omega(n log n) coset-state registers.",
+        "status": "proved-external-primary-multiregister-lower-bound"
+      },
+      {
+        "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-SUCCESS",
+          "PO-NATURAL-ACCESS"
+        ],
+        "falsification_test": "Type every leaf, associator, frame operation, outcome register, and decoder cost for k=Theta(n log n), then verify natural branch mass and end-to-end information.",
+        "id": "LEMMA-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-COSET-GROWING-WIDTH-MEASUREMENT-ARCHITECTURE",
+        "statement": "A uniform polynomial circuit implements a Theta(n log n)-register recoupling/measurement network with compressed covariant outcomes and decoding.",
+        "status": "blocked-all-current-mechanisms-have-at-most-three-register-width"
+      },
+      {
+        "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-NATURAL-ACCESS",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Check width at every scaling row, leaves-1 merges, carrier retention, final effect algebra, natural source access, and all fatal validator outcomes.",
+        "id": "LEMMA-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-COSET-GROWING-WIDTH-TYPED-SKELETON",
+        "statement": "A balanced carrier-preserving covariant measurement DAG satisfies the structural width, source-access, and noncommutant final-effect contracts.",
+        "status": "proved-typed-structural-skeleton-only"
       },
       {
         "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
