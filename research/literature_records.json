@@ -63,6 +63,30 @@
     "year": 2005
   },
   {
+    "abstract": "Proves that nonnegligible information about the GI-relevant hidden involution requires a measurement entangled across Omega(n log n) coset states, so bounded-copy recoupling controls cannot be promoted to decoders.",
+    "id": "moore-russell-multiregister-2005",
+    "mechanism": "Entangled multiregister measurement over a growing number of symmetric-group coset states.",
+    "no_go_barrier": "Any measurement entangled across o(n log n) coset states has negligible information about the hidden involution; nonnegligible information requires Omega(n log n) jointly measured registers.",
+    "open_question": "Can an explicit polynomial circuit implement the required Theta(n log n)-register entangled measurement through a uniform associator network and decode a compressed covariant outcome?",
+    "problem_family": "GI-relevant hidden involutions in symmetric groups and related nonabelian hidden-subgroup ensembles.",
+    "proof_technique": "Multiregister Fourier analysis, representation dimension bounds, tensor-product concentration, and accessible-information estimates.",
+    "reduction": "Graph isomorphism reduces to distinguishing hidden involution subgroups; information extracted from k coset states is bounded through representation concentration.",
+    "reusable_abstraction": "Entanglement-width ledger: register count, associator network, outcome description, information bound, decoder, and classical comparison.",
+    "source": "seed",
+    "tags": [
+      "graph-isomorphism",
+      "nonabelian-hsp",
+      "multiregister",
+      "entanglement-width",
+      "coset-state",
+      "information-lower-bound",
+      "no-go"
+    ],
+    "title": "Tight Results on Multiregister Fourier Sampling: Quantum Measurements for Graph Isomorphism Require Entanglement",
+    "url": "https://arxiv.org/abs/quant-ph/0511149",
+    "year": 2005
+  },
+  {
     "abstract": "Makes the S_n quantum Fourier transform a solved polynomial-time primitive; a new coset-state route must identify the additional recoupling and decoding operations rather than relabel QFT as the obstacle.",
     "id": "beals-symmetric-qft-1997",
     "mechanism": "Separate the efficient S_n QFT and weak irrep projectors from the internal Kronecker transform, overlapping Racah/associator moves, state-dependent transition weights, and outcome decoding.",
@@ -166,6 +190,28 @@
     "title": "Polynomial time classical versus quantum algorithms for representation theoretic multiplicities",
     "url": "https://arxiv.org/abs/2502.20253",
     "year": 2025
+  },
+  {
+    "abstract": "Proves that the largest S_n Plancherel atom is stretched-exponentially small, so no polynomial catalog of pre-certified source irreps can have inverse-polynomial natural weak-Fourier coverage.",
+    "id": "aggarwal-elboim-maximal-dimension-2026",
+    "mechanism": "Natural-input source-coverage accounting for symmetric-group Fourier algorithms using maximal-dimension and Plancherel asymptotics.",
+    "no_go_barrier": "The maximal Plancherel atom is exp(-Theta(sqrt(n))); any polynomial-size catalog of pre-certified source partitions therefore has superpolynomially small natural mass.",
+    "open_question": "Can commutant separation, coherent multiplicity resolution, frame conditioning, and decoding be made uniform in arbitrary sampled partition labels?",
+    "problem_family": "Multi-copy symmetric-group involution coset states whose weak Fourier labels range over Plancherel-typical partitions.",
+    "proof_technique": "Asymptotic representation theory, maximal irreducible dimension estimates, Plancherel measure, and character-ratio probability bounds.",
+    "reduction": "Weak-Fourier involution probabilities are at most twice Plancherel mass, transferring maximal-atom asymptotics into a source-postselection obstruction.",
+    "reusable_abstraction": "Source-coverage ledger: sampled label law, pre-certified catalog size, target coupling mass, postselection cost, and uniform label-adaptive circuit obligations.",
+    "source": "seed",
+    "tags": [
+      "maximal-irrep-dimension",
+      "plancherel-measure",
+      "source-coverage",
+      "representation-theory",
+      "asymptotic-no-go"
+    ],
+    "title": "On the maximal dimension of an irreducible representation of the symmetric group",
+    "url": "https://arxiv.org/abs/2605.25995",
+    "year": 2026
   },
   {
     "abstract": "Corrects a multiplicity-space step that had been treated as a classical permutation and makes the required quantum isometry/F-moves explicit, a direct warning against hand-waving recoupling registers.",

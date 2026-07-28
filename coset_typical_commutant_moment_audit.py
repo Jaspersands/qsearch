@@ -50,6 +50,7 @@ DEFAULT_CANDIDATE_ID = "CODE-COSET-COLLECTIVE"
 
 TC_INTERSECTION_TWO = "ORB-TC-INTERSECTION-2"
 TC_INTERSECTION_ONE = "ORB-TC-INTERSECTION-1"
+TT_INTERSECTION_ONE = "ORB-TT-INTERSECTION-1"
 TT_DISJOINT = "ORB-TT-DISJOINT"
 DEFAULT_GENERATORS = (TC_INTERSECTION_TWO, TT_DISJOINT, TC_INTERSECTION_ONE)
 
@@ -219,6 +220,21 @@ def _generator_orbit(
                                 (_transposition(n, shared, outside), cycle)
                             )
         return base_left, base_right, tuple(rows)
+    if generator_id == TT_INTERSECTION_ONE:
+        base_left = _transposition(n, 0, 1)
+        base_right = _transposition(n, 0, 2)
+        orbit = tuple(
+            (
+                _transposition(n, common, left),
+                _transposition(n, common, right),
+            )
+            for common in range(n)
+            for left in range(n)
+            if left != common
+            for right in range(n)
+            if right != common and right != left
+        )
+        return base_left, base_right, orbit
     if generator_id == TT_DISJOINT:
         if n < 4:
             raise ValueError("disjoint transpositions require n>=4")

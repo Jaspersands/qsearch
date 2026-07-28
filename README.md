@@ -123,6 +123,9 @@ python qsearch.py dcp-boolean-coset-separation
 python qsearch.py dcp-marker-list-decoder
 python qsearch.py dcp-marker-deviations
 python qsearch.py dcp-marker-all-targets
+python qsearch.py dcp-marker-vulnerable-coordinates
+python qsearch.py dcp-marker-chart-union
+python qsearch.py dcp-marker-target-beam
 python qsearch.py dcp-subset-sum-preconditioned-geometry
 python qsearch.py dcp-subset-sum-fourth-moment
 python qsearch.py dcp-subset-sum-smith-moments
@@ -130,6 +133,7 @@ python qsearch.py dcp-subset-sum-smith-transfer
 python qsearch.py dcp-subset-sum-fixed-moments
 python qsearch.py dcp-subset-sum-conditioned-tail
 python qsearch.py dcp-subset-sum-growing-moments
+python qsearch.py dcp-subset-sum-growing-chain
 python qsearch.py dcp-subset-sum-embedding-volume
 python qsearch.py dcp-subset-sum-short-relations
 python qsearch.py dcp-subset-sum-carry-relations
@@ -157,6 +161,10 @@ python qsearch.py run EXP-DHS-DCP-BOOLEAN-COSET-SEPARATION
 python qsearch.py run EXP-DHS-DCP-MARKER-AWARE-LIST-DECODER
 python qsearch.py run EXP-DHS-DCP-MARKER-DEVIATION-GEOMETRY
 python qsearch.py run EXP-DHS-DCP-MARKER-ALL-TARGET-COVERAGE
+python qsearch.py run EXP-DHS-DCP-MARKER-VULNERABLE-COORDINATE-DECODER
+python qsearch.py run EXP-DHS-DCP-MARKER-CHART-UNION-DECODER
+python qsearch.py run EXP-DHS-DCP-MARKER-TARGET-ADAPTIVE-BEAM
+python qsearch.py run EXP-DHS-DCP-SUBSET-SUM-GROWING-ORDER-CHAIN-THEOREM
 python qsearch.py run EXP-DHS-DCP-SAMPLE-NATIVE-SIEVE
 python qsearch.py run EXP-DHS-DCP-RECURSIVE-DECODER
 python qsearch.py run EXP-DHS-DCP-RECURRENCE-SCALING
@@ -303,12 +311,19 @@ conditional signal at least `n^-d` by `poly(n)*(1-2^-k)^n`. Growing order,
 signed observables not dominated by this contribution, and explicit
 reduced-basis events remain open and must carry decoder implications.
 
-Growing order is partially closed as well. A k-tuple transfer path can enlarge
-its Boolean-generated lattice at most `2^k` times. Counting those transition
-positions and patterns shows the bad source contribution vanishes whenever
-`4^k log n=o(n)`, including every `k <= (1/2-epsilon) log_2 n`. Moment proposals
-must now operate at the half-logarithmic boundary or above and charge
-`q=2^k` patterns, estimation variance, memory, and decoding.
+Growing order is now closed almost to logarithmic order. The original transfer
+bound allowed `2^k` proper lattice enlargements and proved decay only when
+`4^k log n=o(n)`. Saturation index gives a sharper chain theorem: at rank `r`,
+the lattice index is at most an `r x r` Boolean determinant, hence
+`r^(r/2)`, and each proper same-span extension drops that integer index by at
+least two. Rank increases at most `k-1` times, so every non-self path has
+`O(k^2 log k)` transitions. The bad contribution therefore vanishes when
+`2^k O(k^2 log k)(log n+k)=o(n)`, including every
+`k <= (1-epsilon) log_2 n` and a conservative
+`log_2 n-(4+epsilon)log_2 log_2 n` schedule. Exact transfer DAGs through order
+five satisfy the bound. The final near-log window, signed observables,
+reduced-basis events, estimation resources, and decoder implications remain
+open.
 
 The lattice route now has an exact volume gate. The standard embedding has
 covolume `2^m(2s2^n)`. Cauchy-Binet gives an exact carry-sliced covolume, and
@@ -370,6 +385,46 @@ the exact fraction of all legal targets covered at each fixed depth for each
 label row. This is exhaustive over targets and witnesses for that row. It is
 still finite over random labels, so the remaining proof obligation is a
 random-label concentration theorem, not another target Monte Carlo sweep.
+
+A growing-depth polynomial attack now tests the most direct escape from that
+fixed-depth grammar. It ranks target-independent Gram-Schmidt coordinates by a
+public Rademacher rounding-risk score and branches on bounded offsets at
+`c ceil(log2 n)` selected coordinates, giving `(2q+1)^(c ceil(log2 n))`
+paths and only a linear carry factor. The executable decoder and complete
+small-`n` censuses agree exactly. A deterministic fiber-count theorem separates
+assignment-weighted witness coverage from uniform-legal target coverage. In the
+preregistered `c=2`, `q=1` sweep, carry assignment coverage falls from about
+`22%` at `n=36` to `2.3%` at `n=42`, `0.33%` at `n=48`, and below `0.013%`
+on every `n=56` label row tested. This is a serious finite negative result for
+that selector, not an asymptotic lower bound; the open task is to prove its
+random-label decay or find a different public polynomial coordinate geometry.
+
+The next stronger baseline learns a polynomial atlas instead of one coordinate
+subspace. From target-independent random-sign probes it freezes up to `n^2`
+charts, each with `2 ceil(log2 n)` coordinates, and evaluates the union on
+disjoint held-out probes. Training and held-out budgets scale as `16n^2` and
+`8n^2`, so the legal chart budget is populated at the tail. Carry held-out
+coverage is about `44.5%` at `n=42`, `20.9%` at `n=48`, `1.78%` at `n=56`,
+and `0.053%` at `n=64`, despite 4,096 charts at the tail. Exact small-size
+target censuses and the assignment-to-target transfer theorem remain valid.
+This falsifies the current learned chart family at finite scale; proving
+active-mask entropy or designing a non-coordinate decoder remains open.
+
+Target independence is not a legal restriction on the decoder, because Regev's
+subset-sum target is part of the observed instance. The stronger K-best beam
+baseline therefore uses the actual independent uniform target to rank partial
+nearest-plane paths by accumulated orthogonal residual energy. At each level it
+retains `n^a` paths, branches by a fixed offset radius, charges every reachable
+carry, and verifies every marker candidate against the original congruence.
+Exact nearest-integer decisions are separated from floating-point path
+priorities. This is a source-native polynomial classical attack. A finite
+survivor is dequantization pressure and a finite collapse is not a lower bound;
+the research obligation is a uniform source law for the required beam width.
+In the live independent-target sweep, standard `n^3` beam success is `3/3` at
+`n=40`, `0/3` at `n=44`, `1/3` at `n=48`, and `0/3` at `n=56`; standard and
+carry-sliced `n^2` are also `0/3` at `n=56`. Wilson intervals are stored with
+every row. These sparse finite counts reject a stable finite survivor but do
+not prove negligible success for every fixed polynomial degree.
 
 Marker awareness is now formalized as an exact reduction. The relation vectors
 form the marker-zero kernel and witnesses live in its marker-one affine coset.
@@ -529,6 +584,12 @@ python qsearch.py coset-pgm --verbose
 python qsearch.py coset-holevo --verbose
 python qsearch.py coset-covariant-frame
 python qsearch.py coset-two-copy-frame
+python qsearch.py coset-same-hidden-target-law
+python qsearch.py coset-commutant-information-no-go
+python qsearch.py coset-carrier-information
+python qsearch.py coset-strong-fourier-information
+python qsearch.py coset-entanglement-width
+python qsearch.py coset-growing-width-architecture
 python qsearch.py coset-two-copy-transitions
 python qsearch.py coset-three-copy-recoupling
 python qsearch.py coset-jm-labels
@@ -547,6 +608,70 @@ The two-copy audit computes exact Murnaghan-Nakayama characters and Kronecker-se
 rejects the false shortcut from frame support rank to mixed-state PGM success. Its `S_3` regular-representation control
 records the nonzero state/frame commutator; cross-sector transition coefficients, a coherent recoupling transform, and
 a compressed hidden-involution decoder remain proof obligations.
+
+The shared-hidden target-law audit converts that frame scalar into the exact
+operational distribution
+`p(nu|lambda,mu)=[g d_nu/(d_lambda d_mu)]`
+`[1+r_lambda+r_mu+r_nu]/[(1+r_lambda)(1+r_mu)]`.
+All eight finite controls through `n=10` normalize exactly and match the
+two-copy frame identity.  The correction from dimension-weighted coupling has
+expected total variation as high as `0.0978`; the known `n=6` scalar blocks
+carry `0.9877%` true joint target mass, versus `2.469%` source-pair mass.  This
+closes target-frequency accounting, not coherent recoupling or decoding:
+coupled target labels are conjugacy-class invariant and cannot identify the
+individual hidden involution.
+
+The commutant-information theorem makes that limitation exact for every copy
+count.  If every final POVM effect commutes with the diagonal group action,
+its outcome distribution is identical for all hidden involutions in the
+conjugacy class, hence `I(H;Y)=0`.  This covers target shapes, intermediate
+coupling shapes, multiplicity commutant observables, and Racah labels when
+measured alone.  A nontrivial `S_5` multiplicity control verifies invariance of
+the full separator spectra across all 15 hidden involutions.  The route is not
+discarded, but its role changes: commutant/Racah machinery may preprocess the
+state only if carrier registers survive to a carrier-sensitive covariant
+measurement with a proved decoder.
+
+The first carrier-sensitive search changes the optimization metric from
+spectral gap to `I(H;Y)` and one-shot Bayes recovery.  It exhausts all 1,744
+parity-complete coefficient rules on nontrivial `S_5` and `S_6` controls.
+Joint YJM-plus-separator outcomes do add information over YJM alone, but the
+best values are only about `0.253` and `0.109` bits; direct product Young-basis
+strong Fourier outcomes give about `0.446` and `0.748` bits.  Every searched
+refinement is therefore dominated by a simpler quantum baseline.  Future
+observable search must beat strong Fourier on frozen holdouts before gap or
+circuit work receives priority.
+
+The natural strong-Fourier baseline removes the selected-source conditioning.
+It enumerates every near/fixed-point-free hidden involution and every natural
+source/tableau outcome through `S_8`.  Weak labels have exactly zero
+hidden-element information within one conjugacy class.  Young-basis carrier
+information drops to about `0.0785` bits at `n=6` and `0.0244` bits at `n=8`,
+although the one-copy Holevo bound stays near one bit; two separate samples
+are nearly additive.  This finite trend is not an asymptotic theorem, but it
+sets the correct target: a collective covariant carrier measurement must
+extract substantially more of the available Holevo information under natural
+source weighting.
+
+The literature-backed width gate then applies the known architecture lower
+bound: single-register strong Fourier sampling fails even with an arbitrary
+POVM, and nonnegligible information for the GI-relevant hidden involution
+requires a measurement entangled across `Omega(n log n)` coset states.  The
+current 11 frame, transition, separator, carrier, and Racah mechanisms have
+joint width at most three.  They are now explicitly classified as local
+primitives.  Progress requires a uniform growing-copy associator/measurement
+network, compressed covariant outcomes, and a decoder; collecting many copies
+and measuring them separately does not meet this gate.
+
+The growing-width architecture compiler makes the replacement machine
+checkable.  It verifies balanced merge schedules for
+`k=ceil(n log2 n)`, carrier preservation, natural source access, intermediate
+and final effect algebras, outcome compression, information, decoding, and
+classical comparison.  Separate strong Fourier and bounded Racah-label designs
+are structurally rejected.  One balanced carrier-preserving covariant skeleton
+survives, but it has no proved growing associator circuit, state-dependent
+POVM, compressed outcome, information theorem, decoder, or classical
+separation.  It is a typed research target, not an algorithm.
 
 The transition audit verifies the character-theoretic spectrum against explicit regular `S_3`/`S_4` matrices and
 reconstructs mixed-state PGM success from cross-eigenspace transition weights. It records the commuting Klein-four
@@ -992,6 +1117,31 @@ exactly square-free, and both numerical gaps survive a declared error budget,
 but neither magnitude has a machine-verified interval certificate. This is a
 finite warning against stable precision, not an asymptotic gap-collapse proof.
 
+Natural-input coverage is an even stronger blocker than the finite gap trend.
+Aggarwal and Elboim's 2026 maximal-dimension theorem
+([arXiv:2605.25995](https://arxiv.org/abs/2605.25995)) implies that the largest
+`S_n` Plancherel atom is `exp(-Theta(sqrt(n)))`. Involution weak-Fourier atoms
+are at most twice as large, so any polynomial catalog of pre-certified source
+partitions has superpolynomially small natural mass. Exact coupling accounting
+also shows that the current 12-target `n=10` ladder covers only about `1.14%`
+of the selected source's dimension-weighted Kronecker target mass; the
+unresolved source-shaped
+multiplicity-117 block alone carries about `15.23%`. Further one-source finite
+ladder work is therefore mechanism control, not algorithmic coverage. The next
+valid target is a partition-description-uniform separator, gap theorem, and
+coherent transform on arbitrary sampled typical labels.
+
+The first all-source test falsifies the fixed-coefficient version of that
+idea. Exact unequal-source character moments audit every ordered source pair
+at `n=5,6`. At `n=6`, `TT1+TC1` is exactly scalar on the nontrivial
+`(3,2,1) tensor (3,3) -> (3,2,1)` and
+`(3,2,1) tensor (2,2,2) -> (3,2,1)` multiplicity-two blocks. A third
+multiplicity-four block has a numerical repeated zero root. These source pairs
+have nonzero natural fixed-point-free-involution label mass. The fixed
+separator is therefore retired as a uniform resolver; the next admissible
+search is a reversible partition-dependent coefficient rule over a larger
+bounded-support commutant portfolio.
+
 ```bash
 python qsearch.py coset-racah-gap-scaling
 python qsearch.py coset-racah-sparse-gap --n-values 7,8,9,10,11
@@ -1034,6 +1184,9 @@ python qsearch.py coset-racah-typical-yjm-projector
 python qsearch.py coset-racah-typical-modular-yjm
 python qsearch.py coset-racah-typical-modular-gaps
 python qsearch.py coset-racah-typical-n10-gap-trend
+python qsearch.py coset-racah-typical-source-coverage
+python qsearch.py coset-racah-typical-uniform-sources
+python qsearch.py coset-racah-typical-parity-separator
 python qsearch.py run EXP-COSET-TYPICAL-COMMUTANT-MOMENT-AUDIT
 python qsearch.py run EXP-COSET-TYPICAL-CLASS-CONTRACTION-SCALING
 python qsearch.py run EXP-COSET-TYPICAL-PORTFOLIO-COLLISION-CERTIFICATE
@@ -1047,7 +1200,36 @@ python qsearch.py run EXP-COSET-TYPICAL-YJM-PROJECTOR-TRACE
 python qsearch.py run EXP-COSET-TYPICAL-MODULAR-YJM-CONTRACTION
 python qsearch.py run EXP-COSET-TYPICAL-MODULAR-GAP-BOUND
 python qsearch.py run EXP-COSET-TYPICAL-N10-GAP-TREND
+python qsearch.py run EXP-COSET-TYPICAL-SOURCE-COVERAGE
+python qsearch.py run EXP-COSET-TYPICAL-UNIFORM-SOURCE-PROBE
+python qsearch.py run EXP-COSET-TYPICAL-PARITY-COMPLETE-SEPARATOR
+python qsearch.py run EXP-COSET-SAME-HIDDEN-TARGET-LAW
+python qsearch.py run EXP-COSET-COMMUTANT-INFORMATION-OBSTRUCTION
+python qsearch.py run EXP-COSET-CARRIER-INFORMATION-AUDIT
+python qsearch.py run EXP-COSET-STRONG-FOURIER-INFORMATION-SCALING
+python qsearch.py run EXP-COSET-ENTANGLEMENT-WIDTH-GATE
+python qsearch.py run EXP-COSET-GROWING-WIDTH-ARCHITECTURE
 ```
+
+The natural-source audit is a hard correction to the earlier
+maximum-dimension self-pair studies.  At `n=10`, the exact targets already in
+the registry cover only about `1.14%` of the dimension-weighted Kronecker
+coupling reference; this reference is not the same-hidden-involution outcome
+law.  An exact all-source audit at `n=5,6` then finds two multiplicity-two
+blocks on which the fixed `TT1+TC1` separator is scalar.  Their source pairs
+carry about `2.47%` of the fixed-point-free-involution weak-Fourier source-pair
+mass, so the old fixed rule is not a uniform typical-sector resolver.
+
+The parity-complete search adds the tensor-swapped `CT0,CT1,CT2` orientations.
+It exhausts 1,744 primitive support-at-most-three integer rules over all 663
+ordered-source nontrivial blocks at `n=5,6,7`.  The frozen rule
+`TC2+CT1-2CT2` has no numerical collision there and a minimum raw gap of about
+`0.00948`; exact rational character moments prove that it repairs the two
+former scalar blocks.  This is finite discovery evidence only.  The remaining
+gates are an independent `n=8` holdout, exact higher-multiplicity certificates,
+an all-`n` normalized-gap theorem, a coherent implementation, informative
+hidden-dependent multiplicity outcomes, and a decoder.  The exact
+same-hidden target law is now supplied by the separate character-ratio audit.
 
 The exact portfolio audit now has both a hard cut and a surviving finite
 direction.  On the maximum-dimension `S_8` source, TC2 is zero on targets

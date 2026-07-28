@@ -56,12 +56,24 @@ DCP_MARKER_DEVIATION_GEOMETRY_PATH = Path(
 DCP_MARKER_ALL_TARGET_COVERAGE_PATH = Path(
     "research/classical_baselines/dcp_marker_all_target_coverage.json"
 )
+DCP_MARKER_VULNERABLE_COORDINATE_PATH = Path(
+    "research/classical_baselines/dcp_marker_vulnerable_coordinate_decoder.json"
+)
+DCP_MARKER_CHART_UNION_PATH = Path(
+    "research/classical_baselines/dcp_marker_chart_union_decoder.json"
+)
+DCP_MARKER_TARGET_ADAPTIVE_BEAM_PATH = Path(
+    "research/classical_baselines/dcp_marker_target_adaptive_beam.json"
+)
 DCP_SUBSET_SUM_FOURTH_MOMENT_PATH = Path("research/classical_baselines/dcp_subset_sum_fourth_moment_obstruction.json")
 DCP_SUBSET_SUM_SMITH_MOMENT_PATH = Path("research/classical_baselines/dcp_subset_sum_smith_moment_spectrum.json")
 DCP_SUBSET_SUM_SMITH_TRANSFER_PATH = Path("research/classical_baselines/dcp_subset_sum_smith_transfer_order_six.json")
 DCP_SUBSET_SUM_FIXED_ORDER_MOMENT_PATH = Path("research/classical_baselines/dcp_subset_sum_fixed_order_moment_theorem.json")
 DCP_SUBSET_SUM_CONDITIONED_TAIL_PATH = Path("research/classical_baselines/dcp_subset_sum_conditioned_tail_theorem.json")
 DCP_SUBSET_SUM_GROWING_ORDER_PATH = Path("research/classical_baselines/dcp_subset_sum_growing_order_theorem.json")
+DCP_SUBSET_SUM_GROWING_ORDER_CHAIN_PATH = Path(
+    "research/classical_baselines/dcp_subset_sum_growing_order_chain_theorem.json"
+)
 DCP_SUBSET_SUM_EMBEDDING_VOLUME_PATH = Path("research/classical_baselines/dcp_subset_sum_embedding_volume_theorem.json")
 DCP_SUBSET_SUM_SHORT_RELATION_PATH = Path("research/classical_baselines/dcp_subset_sum_short_relation_theorem.json")
 DCP_SUBSET_SUM_CARRY_RELATION_PATH = Path("research/classical_baselines/dcp_subset_sum_carry_relation_theorem.json")
@@ -240,6 +252,36 @@ COSET_TYPICAL_MODULAR_GAP_BOUND_PATH = Path(
 )
 COSET_TYPICAL_N10_GAP_TREND_PATH = Path(
     "research/representation/coset_typical_n10_gap_trend.json"
+)
+COSET_TYPICAL_SOURCE_COVERAGE_PATH = Path(
+    "research/representation/coset_typical_source_coverage.json"
+)
+COSET_TYPICAL_UNIFORM_SOURCE_PROBE_PATH = Path(
+    "research/representation/coset_typical_uniform_source_probe.json"
+)
+COSET_TYPICAL_PARITY_COMPLETE_SEPARATOR_PATH = Path(
+    "research/representation/"
+    "coset_typical_parity_complete_separator.json"
+)
+COSET_SAME_HIDDEN_TARGET_LAW_PATH = Path(
+    "research/representation/coset_same_hidden_target_law.json"
+)
+COSET_COMMUTANT_INFORMATION_OBSTRUCTION_PATH = Path(
+    "research/representation/"
+    "coset_commutant_information_obstruction.json"
+)
+COSET_CARRIER_INFORMATION_AUDIT_PATH = Path(
+    "research/representation/coset_carrier_information_audit.json"
+)
+COSET_STRONG_FOURIER_INFORMATION_PATH = Path(
+    "research/representation/"
+    "coset_strong_fourier_information_scaling.json"
+)
+COSET_ENTANGLEMENT_WIDTH_GATE_PATH = Path(
+    "research/representation/coset_entanglement_width_gate.json"
+)
+COSET_GROWING_WIDTH_ARCHITECTURE_PATH = Path(
+    "research/representation/coset_growing_width_architecture.json"
 )
 COSET_RECOUPLING_CAPABILITY_PATH = Path(
     "research/representation/coset_recoupling_capability_ledger.json"
@@ -1126,6 +1168,107 @@ def lemma_templates(candidate: dict[str, Any]) -> list[LemmaRecord]:
         except (json.JSONDecodeError, OSError):
             n10_gap_trend = {}
         n10_gap_trend_metrics = n10_gap_trend.get("headline_metrics", {})
+        try:
+            typical_source_coverage = (
+                json.loads(COSET_TYPICAL_SOURCE_COVERAGE_PATH.read_text())
+                if COSET_TYPICAL_SOURCE_COVERAGE_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            typical_source_coverage = {}
+        typical_source_coverage_metrics = typical_source_coverage.get(
+            "headline_metrics", {}
+        )
+        try:
+            typical_uniform_source_probe = (
+                json.loads(
+                    COSET_TYPICAL_UNIFORM_SOURCE_PROBE_PATH.read_text()
+                )
+                if COSET_TYPICAL_UNIFORM_SOURCE_PROBE_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            typical_uniform_source_probe = {}
+        typical_uniform_source_metrics = typical_uniform_source_probe.get(
+            "headline_metrics", {}
+        )
+        try:
+            typical_parity_separator = (
+                json.loads(
+                    COSET_TYPICAL_PARITY_COMPLETE_SEPARATOR_PATH.read_text()
+                )
+                if COSET_TYPICAL_PARITY_COMPLETE_SEPARATOR_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            typical_parity_separator = {}
+        typical_parity_separator_metrics = typical_parity_separator.get(
+            "headline_metrics", {}
+        )
+        try:
+            same_hidden_target_law = (
+                json.loads(COSET_SAME_HIDDEN_TARGET_LAW_PATH.read_text())
+                if COSET_SAME_HIDDEN_TARGET_LAW_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            same_hidden_target_law = {}
+        same_hidden_target_law_metrics = same_hidden_target_law.get(
+            "headline_metrics", {}
+        )
+        try:
+            commutant_information_obstruction = json.loads(
+                COSET_COMMUTANT_INFORMATION_OBSTRUCTION_PATH.read_text()
+            ) if COSET_COMMUTANT_INFORMATION_OBSTRUCTION_PATH.exists() else {}
+        except (json.JSONDecodeError, OSError):
+            commutant_information_obstruction = {}
+        commutant_information_metrics = (
+            commutant_information_obstruction.get("headline_metrics", {})
+        )
+        try:
+            carrier_information_audit = (
+                json.loads(COSET_CARRIER_INFORMATION_AUDIT_PATH.read_text())
+                if COSET_CARRIER_INFORMATION_AUDIT_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            carrier_information_audit = {}
+        carrier_information_metrics = carrier_information_audit.get(
+            "headline_metrics", {}
+        )
+        try:
+            strong_fourier_information = (
+                json.loads(COSET_STRONG_FOURIER_INFORMATION_PATH.read_text())
+                if COSET_STRONG_FOURIER_INFORMATION_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            strong_fourier_information = {}
+        strong_fourier_information_metrics = strong_fourier_information.get(
+            "headline_metrics", {}
+        )
+        try:
+            entanglement_width_gate = (
+                json.loads(COSET_ENTANGLEMENT_WIDTH_GATE_PATH.read_text())
+                if COSET_ENTANGLEMENT_WIDTH_GATE_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            entanglement_width_gate = {}
+        entanglement_width_metrics = entanglement_width_gate.get(
+            "headline_metrics", {}
+        )
+        try:
+            growing_width_architecture = (
+                json.loads(COSET_GROWING_WIDTH_ARCHITECTURE_PATH.read_text())
+                if COSET_GROWING_WIDTH_ARCHITECTURE_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            growing_width_architecture = {}
+        growing_width_metrics = growing_width_architecture.get(
+            "headline_metrics", {}
+        )
         try:
             recoupling_capabilities = (
                 json.loads(COSET_RECOUPLING_CAPABILITY_PATH.read_text())
@@ -2747,6 +2890,508 @@ def lemma_templates(candidate: dict[str, Any]) -> list[LemmaRecord]:
                         "Recompute both sparse YJM blocks, retain exact modular "
                         "square-free gates, verify residuals, and treat the "
                         "two-point drop only as finite evidence rather than an all-n law."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-COSET-TYPICAL-PRECERTIFIED-SOURCE-CATALOG-NO-GO",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "Every polynomial-size catalog of pre-certified S_n "
+                        "source partitions has superpolynomially small natural "
+                        "involution weak-Fourier mass."
+                    ),
+                    depends_on=["PO-MEASUREMENT", "PO-COMPLEXITY", "PO-NO-GO"],
+                    status=(
+                        "proved-from-2026-maximal-dimension-theorem"
+                        if int(
+                            typical_source_coverage_metrics.get(
+                                "polynomial_precertified_source_catalog_no_go_theorem_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        else "blocked-source-coverage-certificate-missing"
+                    ),
+                    falsification_test=(
+                        "Verify the cited maximal-dimension theorem, square it "
+                        "to obtain the maximal Plancherel atom, apply the "
+                        "involution character-ratio factor at most two, and "
+                        "include the polynomial catalog cardinality."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-COSET-TYPICAL-UNIFORM-NATURAL-SOURCE-COVERAGE",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "One uniform separator, inverse-gap theorem, and "
+                        "coherent multiplicity transform accept arbitrary "
+                        "sampled typical source partitions and cover "
+                        "inverse-polynomial natural Fourier mass."
+                    ),
+                    depends_on=[
+                        "PO-MEASUREMENT",
+                        "PO-COMPLEXITY",
+                        "PO-SUCCESS",
+                        "PO-NO-GO",
+                    ],
+                    status=(
+                        "proved-uniform-natural-source-coverage"
+                        if int(
+                            typical_source_coverage_metrics.get(
+                                "natural_input_inverse_polynomial_coverage_theorem_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        else "blocked-fixed-source-catalog-asymptotically-negligible"
+                    ),
+                    falsification_test=(
+                        "Require a circuit whose input is the bit description "
+                        "of sampled partitions, prove uniform normalization "
+                        "and inverse gaps, and integrate source and target mass "
+                        "without postselection."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-COSET-TYPICAL-FIXED-SEPARATOR-ALL-SOURCE-UNIFORMITY",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "The fixed TT1+TC1 separator has simple spectrum on "
+                        "every nontrivial multiplicity block for arbitrary "
+                        "sampled source partitions."
+                    ),
+                    depends_on=[
+                        "PO-MEASUREMENT",
+                        "PO-COMPLEXITY",
+                        "PO-NO-GO",
+                    ],
+                    status=(
+                        "falsified-exact-unequal-source-scalar-collisions-at-n6"
+                        if int(
+                            typical_uniform_source_metrics.get(
+                                "exact_scalar_collision_count", 0
+                            )
+                            or 0
+                        )
+                        else "blocked-all-source-collision-probe-missing"
+                    ),
+                    falsification_test=(
+                        "Enumerate all ordered source pairs at finite controls "
+                        "and use exact unequal-source character moments to stop "
+                        "on the first zero-variance nontrivial block."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-COSET-TYPICAL-LABEL-ADAPTIVE-SEPARATOR-REPAIR",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "A reversible polynomial rule selects bounded-support "
+                        "separator coefficients from arbitrary partition "
+                        "descriptions and has inverse-polynomial gaps on every "
+                        "naturally relevant multiplicity block."
+                    ),
+                    depends_on=[
+                        "PO-MEASUREMENT",
+                        "PO-COMPLEXITY",
+                        "PO-SUCCESS",
+                        "PO-NO-GO",
+                    ],
+                    status=(
+                        "proved-label-adaptive-uniform-separator-repair"
+                        if int(
+                            typical_uniform_source_metrics.get(
+                                "uniform_separator_repair_rule_count", 0
+                            )
+                            or 0
+                        )
+                        else "blocked-fixed-coefficient-collides-adaptive-repair-missing"
+                    ),
+                    falsification_test=(
+                        "Require deterministic coefficient synthesis from "
+                        "partition descriptions, exact finite collision tests, "
+                        "an all-n normalized-gap theorem, and a coherent "
+                        "controlled implementation."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-COSET-TYPICAL-PARITY-COMPLETE-FINITE-SEPARATOR",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "A parity-complete oriented bounded-support portfolio "
+                        "contains one coefficient rule with no collision on "
+                        "every ordered-source nontrivial block through n=7."
+                    ),
+                    depends_on=["PO-MEASUREMENT", "PO-NO-GO"],
+                    status=(
+                        "finite-n5-through-n7-numerical-separation-with-two-exact-repairs"
+                        if int(
+                            typical_parity_separator_metrics.get(
+                                "best_candidate_collision_count", 1
+                            )
+                        )
+                        == 0
+                        and int(
+                            typical_parity_separator_metrics.get(
+                                "former_scalar_block_exact_repair_count", 0
+                            )
+                            or 0
+                        )
+                        == 2
+                        else "blocked-parity-complete-certificate-missing"
+                    ),
+                    falsification_test=(
+                        "Validate the hash-gated exhaustive coefficient search, "
+                        "all 663 finite blocks, and exact rational variances on "
+                        "the two former scalar blocks."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-COSET-TYPICAL-PARITY-COMPLETE-ALL-N-GAP",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "The parity-complete TC2+CT1-2CT2 separator has simple "
+                        "spectrum and inverse-polynomial LCU-normalized gaps "
+                        "uniformly over naturally relevant source and target "
+                        "partitions for every n."
+                    ),
+                    depends_on=[
+                        "PO-MEASUREMENT",
+                        "PO-COMPLEXITY",
+                        "PO-SUCCESS",
+                        "PO-NO-GO",
+                    ],
+                    status=(
+                        "proved-parity-complete-all-n-inverse-gap"
+                        if int(
+                            typical_parity_separator_metrics.get(
+                                "inverse_polynomial_normalized_gap_theorem_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        else "blocked-finite-discovery-set-no-n8-holdout-or-all-n-theorem"
+                    ),
+                    falsification_test=(
+                        "Freeze coefficients before an n=8 holdout, certify "
+                        "collisions exactly, then derive an oriented-orbit "
+                        "recurrence with a uniform normalized gap bound."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-COSET-SAME-HIDDEN-TARGET-LAW",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "For every accessible source pair lambda,mu, the "
+                        "shared-hidden coupled target law is the "
+                        "dimension-weighted Kronecker mass times "
+                        "(1+r_lambda+r_mu+r_nu)/"
+                        "((1+r_lambda)(1+r_mu))."
+                    ),
+                    depends_on=[
+                        "PO-MEASUREMENT",
+                        "PO-SUCCESS",
+                        "PO-NO-GO",
+                    ],
+                    status=(
+                        "proved-exact-character-ratio-target-law"
+                        if int(
+                            same_hidden_target_law_metrics.get(
+                                "general_exact_character_formula_theorem_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        and int(
+                            same_hidden_target_law_metrics.get(
+                                "exact_normalization_verified_record_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        == int(
+                            same_hidden_target_law_metrics.get(
+                                "same_hidden_target_law_record_count",
+                                -1,
+                            )
+                        )
+                        else "blocked-exact-shared-hidden-target-law-missing"
+                    ),
+                    falsification_test=(
+                        "Check Schur partial traces, the diagonal nu action, "
+                        "exact normalization, nonnegativity, and equality with "
+                        "the two-copy frame scalar on every finite control."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-COSET-TARGET-LAW-TO-DECODER",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "A coherent target and multiplicity measurement has "
+                        "inverse-polynomial mutual information about the "
+                        "individual hidden involution and a polynomial decoder."
+                    ),
+                    depends_on=[
+                        "PO-MEASUREMENT",
+                        "PO-COMPLEXITY",
+                        "PO-SUCCESS",
+                        "PO-DEQUANTIZATION",
+                    ],
+                    status=(
+                        "proved-target-law-to-hidden-involution-decoder"
+                        if int(
+                            same_hidden_target_law_metrics.get(
+                                "hidden_involution_decoder_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        else "blocked-target-label-is-class-invariant-multiplicity-decoder-missing"
+                    ),
+                    falsification_test=(
+                        "Compute h-conditioned multiplicity outcomes, bound "
+                        "mutual information after legal measurements, and "
+                        "compare a polynomial decoder with classical "
+                        "character/tensor baselines."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-COSET-COMMUTANT-ZERO-INFORMATION",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "For every copy count, a POVM whose effects commute "
+                        "with the diagonal group action has zero mutual "
+                        "information about an individual hidden element drawn "
+                        "uniformly from one conjugacy class."
+                    ),
+                    depends_on=[
+                        "PO-MEASUREMENT",
+                        "PO-SUCCESS",
+                        "PO-NO-GO",
+                    ],
+                    status=(
+                        "proved-all-k-commutant-outcomes-zero-information"
+                        if int(
+                            commutant_information_metrics.get(
+                                "general_all_k_commutant_zero_information_theorem_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        and int(
+                            commutant_information_metrics.get(
+                                "exact_commutant_only_mutual_information_bits",
+                                -1,
+                            )
+                        )
+                        == 0
+                        else "blocked-commutant-information-theorem-missing"
+                    ),
+                    falsification_test=(
+                        "Verify ensemble covariance, effect commutation, the "
+                        "trace-cyclicity identity, and a nontrivial finite "
+                        "full-distribution control."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-COSET-CARRIER-SENSITIVE-COVARIANT-DECODER",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "Commutant preprocessing preserves a polynomial-size "
+                        "carrier-sensitive covariant outcome with "
+                        "inverse-polynomial information about h and a "
+                        "polynomial classical decoder."
+                    ),
+                    depends_on=[
+                        "PO-MEASUREMENT",
+                        "PO-COMPLEXITY",
+                        "PO-SUCCESS",
+                        "PO-DEQUANTIZATION",
+                    ],
+                    status=(
+                        "proved-carrier-sensitive-covariant-decoder"
+                        if int(
+                            commutant_information_metrics.get(
+                                "carrier_sensitive_covariant_decoder_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        else "blocked-commutant-route-information-free-carrier-covariant-decoder-missing"
+                    ),
+                    falsification_test=(
+                        "Retain carrier registers, specify noncommuting POVM "
+                        "effects, compute mutual information across conjugates, "
+                        "and demonstrate polynomial decoding against classical "
+                        "covariant baselines."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-COSET-CARRIER-REFINEMENT-INFORMATION-ADVANTAGE",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "A frozen carrier-sensitive recoupling measurement "
+                        "has asymptotically more hidden-element information "
+                        "than separate strong Fourier carrier outcomes."
+                    ),
+                    depends_on=[
+                        "PO-MEASUREMENT",
+                        "PO-SUCCESS",
+                        "PO-DEQUANTIZATION",
+                        "PO-COMPLEXITY",
+                    ],
+                    status=(
+                        "proved-carrier-refinement-information-advantage"
+                        if int(
+                            carrier_information_metrics.get(
+                                "all_n_information_advantage_theorem_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        else (
+                            "falsified-on-finite-controls-by-product-strong-fourier"
+                            if int(
+                                carrier_information_metrics.get(
+                                    "product_strong_fourier_dominates_all_searched_rules_count",
+                                    0,
+                                )
+                                or 0
+                            )
+                            == int(
+                                carrier_information_metrics.get(
+                                    "finite_control_count",
+                                    -1,
+                                )
+                            )
+                            else "blocked-carrier-information-audit-missing"
+                        )
+                    ),
+                    falsification_test=(
+                        "Optimize by I(H;Y), freeze coefficients, test "
+                        "adjacent sizes, and compare with product Young-basis "
+                        "outcomes under identical source conditioning."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-COSET-NATURAL-STRONG-FOURIER-INFORMATION-DECAY",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "Naturally weighted Young-basis strong Fourier "
+                        "information per coset state vanishes asymptotically "
+                        "for near/fixed-point-free involutions."
+                    ),
+                    depends_on=[
+                        "PO-MEASUREMENT",
+                        "PO-SUCCESS",
+                        "PO-NATURAL-ACCESS",
+                        "PO-NO-GO",
+                    ],
+                    status=(
+                        "proved-natural-strong-fourier-information-decay"
+                        if int(
+                            strong_fourier_information_metrics.get(
+                                "natural_strong_fourier_asymptotic_decay_theorem_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        else "blocked-finite-n3-through-n8-information-trend-no-asymptotic-theorem"
+                    ),
+                    falsification_test=(
+                        "Derive the Young-basis diagonal-matrix-element "
+                        "second moments over the involution class and bound "
+                        "the full natural mutual information as n grows."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-COSET-ENTANGLEMENT-WIDTH-LOWER-BOUND",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "Nonnegligible information about the GI-relevant "
+                        "hidden involution requires a measurement entangled "
+                        "across Omega(n log n) coset-state registers."
+                    ),
+                    depends_on=[
+                        "PO-MEASUREMENT",
+                        "PO-SUCCESS",
+                        "PO-NO-GO",
+                    ],
+                    status=(
+                        "proved-external-primary-multiregister-lower-bound"
+                        if int(
+                            entanglement_width_metrics.get(
+                                "omega_n_log_n_entanglement_width_theorem_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        else "blocked-multiregister-lower-bound-provenance-missing"
+                    ),
+                    falsification_test=(
+                        "Verify the cited theorem's group, hidden-subgroup "
+                        "promise, information notion, and distinction between "
+                        "sample count and joint entanglement width."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-COSET-GROWING-WIDTH-MEASUREMENT-ARCHITECTURE",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "A uniform polynomial circuit implements a "
+                        "Theta(n log n)-register recoupling/measurement network "
+                        "with compressed covariant outcomes and decoding."
+                    ),
+                    depends_on=[
+                        "PO-MEASUREMENT",
+                        "PO-COMPLEXITY",
+                        "PO-SUCCESS",
+                        "PO-NATURAL-ACCESS",
+                    ],
+                    status=(
+                        "proved-growing-entanglement-width-architecture"
+                        if int(
+                            entanglement_width_metrics.get(
+                                "growing_entanglement_width_architecture_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        else "blocked-all-current-mechanisms-have-at-most-three-register-width"
+                    ),
+                    falsification_test=(
+                        "Type every leaf, associator, frame operation, outcome "
+                        "register, and decoder cost for k=Theta(n log n), then "
+                        "verify natural branch mass and end-to-end information."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-COSET-GROWING-WIDTH-TYPED-SKELETON",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "A balanced carrier-preserving covariant measurement "
+                        "DAG satisfies the structural width, source-access, "
+                        "and noncommutant final-effect contracts."
+                    ),
+                    depends_on=[
+                        "PO-MEASUREMENT",
+                        "PO-NATURAL-ACCESS",
+                        "PO-NO-GO",
+                    ],
+                    status=(
+                        "proved-typed-structural-skeleton-only"
+                        if int(
+                            growing_width_metrics.get(
+                                "structurally_compliant_architecture_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        else "blocked-no-structurally-compliant-growing-width-dag"
+                    ),
+                    falsification_test=(
+                        "Check width at every scaling row, leaves-1 merges, "
+                        "carrier retention, final effect algebra, natural "
+                        "source access, and all fatal validator outcomes."
                     ),
                 ),
                 LemmaRecord(
@@ -4695,6 +5340,37 @@ def lemma_templates(candidate: dict[str, Any]) -> list[LemmaRecord]:
         except (json.JSONDecodeError, OSError):
             marker_all_target_coverage = {}
         marker_all_target_metrics = marker_all_target_coverage.get("headline_metrics", {})
+        try:
+            marker_vulnerable_coordinate = (
+                json.loads(DCP_MARKER_VULNERABLE_COORDINATE_PATH.read_text())
+                if DCP_MARKER_VULNERABLE_COORDINATE_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            marker_vulnerable_coordinate = {}
+        marker_vulnerable_metrics = marker_vulnerable_coordinate.get(
+            "headline_metrics", {}
+        )
+        try:
+            marker_chart_union = (
+                json.loads(DCP_MARKER_CHART_UNION_PATH.read_text())
+                if DCP_MARKER_CHART_UNION_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            marker_chart_union = {}
+        marker_chart_metrics = marker_chart_union.get("headline_metrics", {})
+        try:
+            marker_target_beam = (
+                json.loads(DCP_MARKER_TARGET_ADAPTIVE_BEAM_PATH.read_text())
+                if DCP_MARKER_TARGET_ADAPTIVE_BEAM_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            marker_target_beam = {}
+        marker_target_beam_metrics = marker_target_beam.get(
+            "headline_metrics", {}
+        )
         boolean_coset_separation_proved = (
             int(boolean_coset_metrics.get("uniform_legal_source_theorem_count", 0) or 0) > 0
             and int(
@@ -4707,14 +5383,41 @@ def lemma_templates(candidate: dict[str, Any]) -> list[LemmaRecord]:
             and int(boolean_coset_metrics.get("exact_pair_formula_failure_count", 0) or 0) == 0
         )
         marker_aware_decoder_proved = (
-            int(
-                marker_list_metrics.get(
+            (
+                int(
+                    marker_list_metrics.get(
+                        "proved_inverse_polynomial_uniform_legal_coverage_count",
+                        0,
+                    )
+                    or 0
+                )
+                > 0
+                and int(
+                    marker_list_metrics.get("invalid_witness_count", 0) or 0
+                )
+                == 0
+            )
+            or int(
+                marker_vulnerable_metrics.get(
                     "proved_inverse_polynomial_uniform_legal_coverage_count", 0
                 )
                 or 0
             )
             > 0
-            and int(marker_list_metrics.get("invalid_witness_count", 0) or 0) == 0
+            or int(
+                marker_chart_metrics.get(
+                    "proved_inverse_polynomial_uniform_legal_coverage_count", 0
+                )
+                or 0
+            )
+            > 0
+            or int(
+                marker_target_beam_metrics.get(
+                    "proved_inverse_polynomial_uniform_source_success_count", 0
+                )
+                or 0
+            )
+            > 0
         )
         fixed_depth_list_proved = (
             int(marker_list_metrics.get("fixed_depth_polynomial_list_theorem_count", 0) or 0)
@@ -4758,6 +5461,89 @@ def lemma_templates(candidate: dict[str, Any]) -> list[LemmaRecord]:
             == 0
             and int(
                 marker_all_target_metrics.get("full_boolean_cube_failure_count", 0)
+                or 0
+            )
+            == 0
+        )
+        vulnerable_coordinate_list_proved = (
+            int(
+                marker_vulnerable_metrics.get(
+                    "polynomial_selected_coordinate_list_theorem_count", 0
+                )
+                or 0
+            )
+            > 0
+            and int(
+                marker_vulnerable_metrics.get(
+                    "transfer_sandwich_theorem_count", 0
+                )
+                or 0
+            )
+            > 0
+            and int(
+                marker_vulnerable_metrics.get(
+                    "transfer_sandwich_failure_count", 0
+                )
+                or 0
+            )
+            == 0
+        )
+        marker_chart_union_proved = (
+            int(
+                marker_chart_metrics.get(
+                    "polynomial_chart_union_theorem_count", 0
+                )
+                or 0
+            )
+            > 0
+            and int(
+                marker_chart_metrics.get(
+                    "target_independent_selector_failure_count", 0
+                )
+                or 0
+            )
+            == 0
+            and int(
+                marker_chart_metrics.get(
+                    "disjoint_train_test_failure_count", 0
+                )
+                or 0
+            )
+            == 0
+            and int(
+                marker_chart_metrics.get(
+                    "transfer_sandwich_failure_count", 0
+                )
+                or 0
+            )
+            == 0
+        )
+        marker_target_beam_contract_proved = (
+            int(
+                marker_target_beam_metrics.get(
+                    "polynomial_state_bound_theorem_count", 0
+                )
+                or 0
+            )
+            > 0
+            and int(
+                marker_target_beam_metrics.get(
+                    "exact_rounding_failure_count", 0
+                )
+                or 0
+            )
+            == 0
+            and int(
+                marker_target_beam_metrics.get(
+                    "state_bound_failure_count", 0
+                )
+                or 0
+            )
+            == 0
+            and int(
+                marker_target_beam_metrics.get(
+                    "invalid_marker_candidate_count", 0
+                )
                 or 0
             )
             == 0
@@ -4913,6 +5699,189 @@ def lemma_templates(candidate: dict[str, Any]) -> list[LemmaRecord]:
                         "derive coverage bounds; finite exact target rows remove target noise but not label uncertainty."
                     ),
                 ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-DCP-MARKER-LOG-COORDINATE-LIST",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "Branching by a fixed offset radius on c ceil(log2 n) public "
+                        "Gram-Schmidt coordinates has polynomial list size, and its "
+                        "assignment-weighted coverage deterministically sandwiches "
+                        "uniform-legal target coverage after charging mean fiber multiplicity."
+                    ),
+                    depends_on=[
+                        "PO-COMPLEXITY",
+                        "PO-INPUT-MODEL",
+                        "PO-DEQUANTIZATION",
+                    ],
+                    status=(
+                        "proved-polynomial-log-coordinate-list-and-source-transfer"
+                        if vulnerable_coordinate_list_proved
+                        else "blocked-log-coordinate-list-or-transfer-certificate-missing"
+                    ),
+                    falsification_test=(
+                        "Verify the selector uses public target-independent projections, "
+                        "enumerate exactly (2q+1)^r paths on small bases, charge every carry, "
+                        "and check both sides of the assignment-to-target sandwich on complete cubes."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-DCP-MARKER-LOG-COORDINATE-SOURCE-LAW",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "For the public risk-ranked c ceil(log2 n)-coordinate selector, "
+                        "accepted assignment mass is inverse-polynomial or has a proved "
+                        "exponential decay rate under random density-one labels."
+                    ),
+                    depends_on=["PO-SUCCESS", "PO-COMPLEXITY", "PO-DEQUANTIZATION"],
+                    status=(
+                        "proved-log-coordinate-uniform-legal-coverage"
+                        if int(
+                            marker_vulnerable_metrics.get(
+                                "proved_inverse_polynomial_uniform_legal_coverage_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        > 0
+                        else "proved-log-coordinate-assignment-decay"
+                        if int(
+                            marker_vulnerable_metrics.get(
+                                "proved_exponential_assignment_decay_count", 0
+                            )
+                            or 0
+                        )
+                        > 0
+                        else "blocked-finite-log-coordinate-scaling-no-random-label-law"
+                    ),
+                    falsification_test=(
+                        "Hold the selector and multiplier fixed before drawing label rows, "
+                        "prove concentration for LLL-dependent projections, then apply the "
+                        "fiber-count transfer theorem; finite fitted slopes do not suffice."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-DCP-MARKER-CHART-UNION-POLYNOMIALITY",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "For fixed a,c,q, a target-independent union of at most n^a "
+                        "charts, each branching on c ceil(log2 n) coordinates with "
+                        "offset radius q, is a polynomial-size verified decoder family."
+                    ),
+                    depends_on=[
+                        "PO-COMPLEXITY",
+                        "PO-INPUT-MODEL",
+                        "PO-DEQUANTIZATION",
+                    ],
+                    status=(
+                        "proved-polynomial-target-independent-marker-chart-union"
+                        if marker_chart_union_proved
+                        else "blocked-chart-union-contract-certificate-missing"
+                    ),
+                    falsification_test=(
+                        "Charge chart learning, every chart path, and every carry; "
+                        "keep training target-independent and test on disjoint probes; "
+                        "verify the source-transfer sandwich on complete small cubes."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-DCP-MARKER-CHART-UNION-SOURCE-LAW",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "The preregistered polynomial learned chart union has either "
+                        "inverse-polynomial uniform-legal coverage or a proved negligible "
+                        "random-label coverage bound."
+                    ),
+                    depends_on=["PO-SUCCESS", "PO-COMPLEXITY", "PO-DEQUANTIZATION"],
+                    status=(
+                        "proved-chart-union-uniform-legal-coverage"
+                        if int(
+                            marker_chart_metrics.get(
+                                "proved_inverse_polynomial_uniform_legal_coverage_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        > 0
+                        else "proved-chart-union-decay"
+                        if int(
+                            marker_chart_metrics.get(
+                                "proved_exponential_chart_union_decay_count", 0
+                            )
+                            or 0
+                        )
+                        > 0
+                        else "blocked-finite-chart-union-decay-no-random-label-theorem"
+                    ),
+                    falsification_test=(
+                        "Bound the entropy and concentration of LLL-dependent active "
+                        "coordinate masks over random labels; held-out finite decay alone "
+                        "is not an asymptotic theorem."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-DCP-MARKER-TARGET-BEAM-POLYNOMIALITY",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "For fixed width power a and offset radius q, K-best "
+                        "nearest-plane search expands polynomially many states; "
+                        "logarithmic carry slicing adds only its charged reachable-carry factor."
+                    ),
+                    depends_on=[
+                        "PO-COMPLEXITY",
+                        "PO-INPUT-MODEL",
+                        "PO-DEQUANTIZATION",
+                    ],
+                    status=(
+                        "proved-polynomial-target-adaptive-marker-beam-contract"
+                        if marker_target_beam_contract_proved
+                        else "blocked-target-beam-contract-certificate-missing"
+                    ),
+                    falsification_test=(
+                        "Sample targets independently, charge every retained "
+                        "path and carry, keep nearest-integer decisions exact, "
+                        "and verify every marker candidate against the original congruence."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-DCP-MARKER-TARGET-BEAM-SOURCE-LAW",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "For one fixed polynomial width power, the target-adaptive "
+                        "beam has inverse-polynomial success on Regev's independent "
+                        "uniform source, or every fixed power has a proved negligible bound."
+                    ),
+                    depends_on=[
+                        "PO-SUCCESS",
+                        "PO-COMPLEXITY",
+                        "PO-DEQUANTIZATION",
+                    ],
+                    status=(
+                        "proved-target-beam-inverse-polynomial-source-success"
+                        if int(
+                            marker_target_beam_metrics.get(
+                                "proved_inverse_polynomial_uniform_source_success_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        > 0
+                        else "proved-all-fixed-target-beam-powers-negligible"
+                        if int(
+                            marker_target_beam_metrics.get(
+                                "proved_all_fixed_width_powers_negligible_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        > 0
+                        else "blocked-finite-target-beam-frontier-no-source-law"
+                    ),
+                    falsification_test=(
+                        "Hold the width power fixed while n grows and prove the "
+                        "uniform-source success law. Neither a finite survivor "
+                        "nor finite collapse supplies this theorem."
+                    ),
+                ),
             ]
         )
         try:
@@ -5042,6 +6011,17 @@ def lemma_templates(candidate: dict[str, Any]) -> list[LemmaRecord]:
         except (json.JSONDecodeError, OSError):
             growing_order = {}
         growing_order_metrics = growing_order.get("headline_metrics", {})
+        try:
+            growing_order_chain = (
+                json.loads(DCP_SUBSET_SUM_GROWING_ORDER_CHAIN_PATH.read_text())
+                if DCP_SUBSET_SUM_GROWING_ORDER_CHAIN_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            growing_order_chain = {}
+        growing_order_chain_metrics = growing_order_chain.get(
+            "headline_metrics", {}
+        )
         try:
             embedding_volume = (
                 json.loads(DCP_SUBSET_SUM_EMBEDDING_VOLUME_PATH.read_text())
@@ -5220,6 +6200,80 @@ def lemma_templates(candidate: dict[str, Any]) -> list[LemmaRecord]:
                     falsification_test=(
                         "Verify at most 2^k non-self transitions, count their positions and patterns, apply the Smith "
                         "Hadamard bound, and compare path overhead with n/2^k contraction."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-DCP-BOOLEAN-LATTICE-CHAIN-LENGTH",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "Every monotone integer-lattice transfer path generated by "
+                        "Boolean columns in dimension k has at most O(k^2 log k) "
+                        "proper transitions."
+                    ),
+                    depends_on=[
+                        "PO-FAMILY",
+                        "PO-DEQUANTIZATION",
+                        "PO-COMPLEXITY",
+                    ],
+                    status=(
+                        "proved-hadamard-saturation-index-chain-bound"
+                        if int(
+                            growing_order_chain_metrics.get(
+                                "polynomial_chain_length_theorem_count", 0
+                            )
+                            or 0
+                        )
+                        > 0
+                        and int(
+                            growing_order_chain_metrics.get(
+                                "exact_chain_bound_failure_count", 0
+                            )
+                            or 0
+                        )
+                        == 0
+                        else "blocked-lattice-chain-certificate-missing"
+                    ),
+                    falsification_test=(
+                        "Check rank increases, determinantal-divisor equality with "
+                        "saturation index, Hadamard bounds for independent Boolean "
+                        "minors, integer index drops, and exact transfer DAG controls."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-DCP-NEAR-LOG-GROWING-ORDER-OBSTRUCTION",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "Every nonnegative source bad-tuple moment schedule satisfying "
+                        "2^k O(k^2 log k)(log n+k)=o(n), including every fixed "
+                        "fraction below log_2 n, has vanishing source contribution."
+                    ),
+                    depends_on=[
+                        f"LEMMA-{candidate_id}-DCP-BOOLEAN-LATTICE-CHAIN-LENGTH",
+                        "PO-FAMILY",
+                        "PO-DEQUANTIZATION",
+                    ],
+                    status=(
+                        "proved-near-log-growing-order-moment-obstruction"
+                        if int(
+                            growing_order_chain_metrics.get(
+                                "proved_fixed_fraction_log_obstruction_count", 0
+                            )
+                            or 0
+                        )
+                        > 0
+                        and int(
+                            growing_order_chain_metrics.get(
+                                "proved_near_log_deficit_obstruction_count", 0
+                            )
+                            or 0
+                        )
+                        > 0
+                        else "blocked-near-log-chain-transfer-certificate-missing"
+                    ),
+                    falsification_test=(
+                        "Charge path positions, Boolean identities, Smith numerator, "
+                        "fixed register offset, and terminal contraction uniformly in k; "
+                        "do not transfer the nonnegative bound to signed observables."
                     ),
                 ),
                 LemmaRecord(

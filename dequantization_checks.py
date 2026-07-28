@@ -75,12 +75,24 @@ DCP_MARKER_DEVIATION_GEOMETRY_PATH = Path(
 DCP_MARKER_ALL_TARGET_COVERAGE_PATH = Path(
     "research/classical_baselines/dcp_marker_all_target_coverage.json"
 )
+DCP_MARKER_VULNERABLE_COORDINATE_PATH = Path(
+    "research/classical_baselines/dcp_marker_vulnerable_coordinate_decoder.json"
+)
+DCP_MARKER_CHART_UNION_PATH = Path(
+    "research/classical_baselines/dcp_marker_chart_union_decoder.json"
+)
+DCP_MARKER_TARGET_ADAPTIVE_BEAM_PATH = Path(
+    "research/classical_baselines/dcp_marker_target_adaptive_beam.json"
+)
 DCP_SUBSET_SUM_FOURTH_MOMENT_PATH = Path("research/classical_baselines/dcp_subset_sum_fourth_moment_obstruction.json")
 DCP_SUBSET_SUM_SMITH_MOMENT_PATH = Path("research/classical_baselines/dcp_subset_sum_smith_moment_spectrum.json")
 DCP_SUBSET_SUM_SMITH_TRANSFER_PATH = Path("research/classical_baselines/dcp_subset_sum_smith_transfer_order_six.json")
 DCP_SUBSET_SUM_FIXED_ORDER_MOMENT_PATH = Path("research/classical_baselines/dcp_subset_sum_fixed_order_moment_theorem.json")
 DCP_SUBSET_SUM_CONDITIONED_TAIL_PATH = Path("research/classical_baselines/dcp_subset_sum_conditioned_tail_theorem.json")
 DCP_SUBSET_SUM_GROWING_ORDER_PATH = Path("research/classical_baselines/dcp_subset_sum_growing_order_theorem.json")
+DCP_SUBSET_SUM_GROWING_ORDER_CHAIN_PATH = Path(
+    "research/classical_baselines/dcp_subset_sum_growing_order_chain_theorem.json"
+)
 DCP_SUBSET_SUM_EMBEDDING_VOLUME_PATH = Path("research/classical_baselines/dcp_subset_sum_embedding_volume_theorem.json")
 DCP_SUBSET_SUM_SHORT_RELATION_PATH = Path("research/classical_baselines/dcp_subset_sum_short_relation_theorem.json")
 DCP_SUBSET_SUM_CARRY_RELATION_PATH = Path("research/classical_baselines/dcp_subset_sum_carry_relation_theorem.json")
@@ -312,6 +324,36 @@ COSET_TYPICAL_MODULAR_GAP_BOUND_PATH = Path(
 )
 COSET_TYPICAL_N10_GAP_TREND_PATH = Path(
     "research/representation/coset_typical_n10_gap_trend.json"
+)
+COSET_TYPICAL_SOURCE_COVERAGE_PATH = Path(
+    "research/representation/coset_typical_source_coverage.json"
+)
+COSET_TYPICAL_UNIFORM_SOURCE_PROBE_PATH = Path(
+    "research/representation/coset_typical_uniform_source_probe.json"
+)
+COSET_TYPICAL_PARITY_COMPLETE_SEPARATOR_PATH = Path(
+    "research/representation/"
+    "coset_typical_parity_complete_separator.json"
+)
+COSET_SAME_HIDDEN_TARGET_LAW_PATH = Path(
+    "research/representation/coset_same_hidden_target_law.json"
+)
+COSET_COMMUTANT_INFORMATION_OBSTRUCTION_PATH = Path(
+    "research/representation/"
+    "coset_commutant_information_obstruction.json"
+)
+COSET_CARRIER_INFORMATION_AUDIT_PATH = Path(
+    "research/representation/coset_carrier_information_audit.json"
+)
+COSET_STRONG_FOURIER_INFORMATION_PATH = Path(
+    "research/representation/"
+    "coset_strong_fourier_information_scaling.json"
+)
+COSET_ENTANGLEMENT_WIDTH_GATE_PATH = Path(
+    "research/representation/coset_entanglement_width_gate.json"
+)
+COSET_GROWING_WIDTH_ARCHITECTURE_PATH = Path(
+    "research/representation/coset_growing_width_architecture.json"
 )
 COSET_RECOUPLING_CAPABILITY_PATH = Path(
     "research/representation/coset_recoupling_capability_ledger.json"
@@ -5283,6 +5325,376 @@ def findings_from_coset_typical_n10_gap_trend(
     ]
 
 
+def findings_from_coset_typical_source_coverage(
+    path: Path = COSET_TYPICAL_SOURCE_COVERAGE_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    return [
+        DequantizationFinding(
+            id="DEQ-COSET-TYPICAL-FIXED-SOURCE-CATALOG-HAS-NEGLIGIBLE-NATURAL-MASS",
+            created_at=utc_now(),
+            target_type="coset_typical_source_coverage",
+            target_id=str(path),
+            severity="critical",
+            claim_under_test=(
+                "A polynomial catalog of fixed-source separator certificates "
+                "provides inverse-polynomial natural weak-Fourier coverage."
+            ),
+            evidence=(
+                "Aggarwal-Elboim arXiv:2605.25995 gives a stretched-"
+                "exponentially small maximal Plancherel atom; "
+                "literature-linked catalog no-go theorems="
+                f"{metrics.get('polynomial_precertified_source_catalog_no_go_theorem_count', 0)}; "
+                "uniform arbitrary-source separators/transforms="
+                f"{metrics.get('uniform_arbitrary_source_partition_separator_count', 0)}/"
+                f"{metrics.get('uniform_arbitrary_source_partition_coherent_transform_count', 0)}."
+            ),
+            required_action=(
+                "Require one partition-description-uniform separator, gap "
+                "bound, and coherent transform on naturally sampled typical "
+                "labels; do not count additional fixed-source certificates as "
+                "algorithmic coverage."
+            ),
+            blocks_speedup_claim=True,
+        ),
+        DequantizationFinding(
+            id="DEQ-COSET-TYPICAL-N10-CERTIFICATES-MISS-HIGH-COUPLING-MASS",
+            created_at=utc_now(),
+            target_type="coset_typical_source_coverage",
+            target_id=str(path),
+            severity="critical",
+            claim_under_test=(
+                "The exact n=10 low-multiplicity ladder covers a substantial "
+                "fraction of conditional target coupling mass."
+            ),
+            evidence=(
+                "Certified/nontrivial targets="
+                f"{metrics.get('n10_exactly_certified_nontrivial_target_count', 0)}/"
+                f"{metrics.get('n10_nontrivial_multiplicity_target_count', 0)}; "
+                "certified target mass="
+                f"{metrics.get('n10_certified_target_coupling_mass', 0)}; "
+                "largest unresolved target mass="
+                f"{metrics.get('n10_largest_unresolved_target_coupling_mass', 0)}."
+            ),
+            required_action=(
+                "Prioritize source-shaped and other high-coupling-mass "
+                "growing-multiplicity blocks, or prove a collective structural "
+                "resolver that covers them without enumerating targets."
+            ),
+            blocks_speedup_claim=True,
+        ),
+    ]
+
+
+def findings_from_coset_typical_uniform_source_probe(
+    path: Path = COSET_TYPICAL_UNIFORM_SOURCE_PROBE_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    return [
+        DequantizationFinding(
+            id="DEQ-COSET-TYPICAL-FIXED-SEPARATOR-COLLIDES-ON-UNEQUAL-SOURCES",
+            created_at=utc_now(),
+            target_type="coset_typical_uniform_source_probe",
+            target_id=str(path),
+            severity="critical",
+            claim_under_test=(
+                "The fixed TT1+TC1 separator from maximum-dimension self-pair "
+                "experiments is uniform over naturally sampled source labels."
+            ),
+            evidence=(
+                "All-source nontrivial blocks="
+                f"{metrics.get('nontrivial_multiplicity_block_count', 0)}; "
+                "exact scalar collisions="
+                f"{metrics.get('exact_scalar_collision_count', 0)}; "
+                "numerical repeated-root blocks="
+                f"{metrics.get('numerical_repeated_eigenvalue_block_count', 0)}; "
+                "maximum natural collision-source-pair mass="
+                f"{metrics.get('maximum_natural_source_pair_mass_with_exact_scalar_collision', 0)}."
+            ),
+            required_action=(
+                "Retire the fixed coefficient as a uniform resolver. Search a "
+                "partition-description-dependent bounded-support portfolio and "
+                "require a reversible coefficient rule plus all-source gap theorem."
+            ),
+            blocks_speedup_claim=True,
+        )
+    ]
+
+
+def findings_from_coset_typical_parity_complete_separator(
+    path: Path = COSET_TYPICAL_PARITY_COMPLETE_SEPARATOR_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    return [
+        DequantizationFinding(
+            id="DEQ-COSET-TYPICAL-PARITY-SEPARATOR-FINITE-DISCOVERY-NOT-ALL-N",
+            created_at=utc_now(),
+            target_type="coset_typical_parity_complete_separator",
+            target_id=str(path),
+            severity="critical",
+            claim_under_test=(
+                "A collision-free parity-complete rule on the n=5,6,7 "
+                "discovery set establishes a uniform typical-sector resolver."
+            ),
+            evidence=(
+                "Finite blocks/coefficient vectors/collision-free rules="
+                f"{metrics.get('all_source_nontrivial_block_count', 0)}/"
+                f"{metrics.get('coefficient_vector_count', 0)}/"
+                f"{metrics.get('collision_free_finite_candidate_count', 0)}; "
+                "minimum numerical gap="
+                f"{metrics.get('best_candidate_minimum_numerical_raw_gap', 0)}; "
+                "all-n/inverse-gap theorems="
+                f"{metrics.get('all_n_square_free_theorem_count', 0)}/"
+                f"{metrics.get('inverse_polynomial_normalized_gap_theorem_count', 0)}."
+            ),
+            required_action=(
+                "Freeze the rule, run an independent n=8 source-pair holdout, "
+                "obtain exact collision certificates, and prove an all-n "
+                "oriented-orbit normalized-gap recurrence before promotion."
+            ),
+            blocks_speedup_claim=True,
+        )
+    ]
+
+
+def findings_from_coset_same_hidden_target_law(
+    path: Path = COSET_SAME_HIDDEN_TARGET_LAW_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    return [
+        DequantizationFinding(
+            id="DEQ-COSET-EXACT-TARGET-LAW-STILL-CLASS-INVARIANT",
+            created_at=utc_now(),
+            target_type="coset_same_hidden_target_law",
+            target_id=str(path),
+            severity="critical",
+            claim_under_test=(
+                "The exact shared-hidden coupled-irrep target law supplies "
+                "information about the individual hidden involution."
+            ),
+            evidence=(
+                "Exact law/normalization/frame records="
+                f"{metrics.get('general_exact_character_formula_theorem_count', 0)}/"
+                f"{metrics.get('exact_normalization_verified_record_count', 0)}/"
+                f"{metrics.get('frame_scalar_identity_verified_record_count', 0)}; "
+                "coherent measurements/decoders="
+                f"{metrics.get('coherent_kronecker_target_measurement_theorem_count', 0)}/"
+                f"{metrics.get('hidden_involution_decoder_count', 0)}."
+            ),
+            required_action=(
+                "Derive h-dependent multiplicity-space outcome statistics, "
+                "prove mutual information about the individual involution, "
+                "implement the coherent measurement, and beat legal classical "
+                "character/tensor baselines."
+            ),
+            blocks_speedup_claim=True,
+        )
+    ]
+
+
+def findings_from_coset_commutant_information_obstruction(
+    path: Path = COSET_COMMUTANT_INFORMATION_OBSTRUCTION_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    return [
+        DequantizationFinding(
+            id="DEQ-COSET-COMMUTANT-ONLY-OUTCOMES-ZERO-HIDDEN-INFORMATION",
+            created_at=utc_now(),
+            target_type="coset_commutant_information_obstruction",
+            target_id=str(path),
+            severity="critical",
+            claim_under_test=(
+                "Target, multiplicity, or Racah labels measured entirely in "
+                "the diagonal-action commutant can decode the hidden involution."
+            ),
+            evidence=(
+                "All-k theorem/mutual information bits="
+                f"{metrics.get('general_all_k_commutant_zero_information_theorem_count', 0)}/"
+                f"{metrics.get('exact_commutant_only_mutual_information_bits', 'missing')}; "
+                "finite invariant controls/commutant decoders="
+                f"{metrics.get('finite_commutant_distribution_invariance_verified_count', 0)}/"
+                f"{metrics.get('commutant_only_hidden_involution_decoder_count', 0)}."
+            ),
+            required_action=(
+                "Treat commutant transforms as preprocessing only. Preserve "
+                "carrier registers, specify a covariant noncommutant final "
+                "POVM, prove h-dependent mutual information, and compare its "
+                "decoder with legal classical baselines."
+            ),
+            blocks_speedup_claim=True,
+        )
+    ]
+
+
+def findings_from_coset_carrier_information_audit(
+    path: Path = COSET_CARRIER_INFORMATION_AUDIT_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    return [
+        DequantizationFinding(
+            id="DEQ-COSET-CARRIER-REFINEMENT-DOMINATED-BY-STRONG-FOURIER",
+            created_at=utc_now(),
+            target_type="coset_carrier_information_audit",
+            target_id=str(path),
+            severity="critical",
+            claim_under_test=(
+                "The parity-complete multiplicity refinement produces more "
+                "hidden-involution information than simpler strong Fourier "
+                "carrier measurements."
+            ),
+            evidence=(
+                "Searched rules/controls/product-dominated controls="
+                f"{metrics.get('coefficient_vector_count', 0)}/"
+                f"{metrics.get('finite_control_count', 0)}/"
+                f"{metrics.get('product_strong_fourier_dominates_all_searched_rules_count', 0)}; "
+                "best joint/product information maxima="
+                f"{metrics.get('maximum_best_joint_mutual_information_bits', 0)}/"
+                f"{metrics.get('maximum_product_young_basis_mutual_information_bits', 0)} bits."
+            ),
+            required_action=(
+                "Stop ranking separators by spectral gap. Search "
+                "carrier-sensitive covariant effects by I(H;Y), freeze before "
+                "holdouts, and require advantage over strong Fourier plus "
+                "legal classical representation baselines."
+            ),
+            blocks_speedup_claim=True,
+        )
+    ]
+
+
+def findings_from_coset_strong_fourier_information(
+    path: Path = COSET_STRONG_FOURIER_INFORMATION_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    return [
+        DequantizationFinding(
+            id="DEQ-COSET-FIXED-SOURCE-CARRIER-SIGNAL-FAILS-NATURAL-WEIGHTING",
+            created_at=utc_now(),
+            target_type="coset_strong_fourier_information_scaling",
+            target_id=str(path),
+            severity="critical",
+            claim_under_test=(
+                "Carrier information on selected source labels reflects "
+                "naturally accessible strong Fourier information."
+            ),
+            evidence=(
+                "Largest n/one-copy/two-copy information="
+                f"{metrics.get('maximum_n', 0)}/"
+                f"{metrics.get('largest_n_one_copy_carrier_mutual_information_bits', 0)}/"
+                f"{metrics.get('largest_n_two_copy_carrier_mutual_information_bits', 0)} bits; "
+                "asymptotic decay/collective advantage theorems="
+                f"{metrics.get('natural_strong_fourier_asymptotic_decay_theorem_count', 0)}/"
+                f"{metrics.get('collective_carrier_advantage_theorem_count', 0)}."
+            ),
+            required_action=(
+                "Weight every carrier outcome by natural source probability, "
+                "prove an asymptotic baseline, and require a collective POVM "
+                "to beat repeated strong Fourier information and Bayes "
+                "recovery on frozen holdouts."
+            ),
+            blocks_speedup_claim=True,
+        )
+    ]
+
+
+def findings_from_coset_entanglement_width_gate(
+    path: Path = COSET_ENTANGLEMENT_WIDTH_GATE_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    return [
+        DequantizationFinding(
+            id="DEQ-COSET-BOUNDED-ENTANGLEMENT-WIDTH-BELOW-KNOWN-LOWER-BOUND",
+            created_at=utc_now(),
+            target_type="coset_entanglement_width_gate",
+            target_id=str(path),
+            severity="critical",
+            claim_under_test=(
+                "A current one-, two-, or three-register mechanism can be "
+                "promoted to a GI-relevant hidden-involution decoder."
+            ),
+            evidence=(
+                "Known Omega(n log n) theorem/current maximum width/"
+                "growing architectures="
+                f"{metrics.get('omega_n_log_n_entanglement_width_theorem_count', 0)}/"
+                f"{metrics.get('maximum_current_joint_register_count', 0)}/"
+                f"{metrics.get('growing_entanglement_width_architecture_count', 0)}; "
+                "bounded mechanisms="
+                f"{metrics.get('bounded_register_mechanism_count', 0)}."
+            ),
+            required_action=(
+                "Keep bounded-copy results as local primitives. Construct a "
+                "uniform Theta(n log n)-register entangled measurement with "
+                "growing associators, compressed covariant outcomes, natural "
+                "access accounting, and a decoder."
+            ),
+            blocks_speedup_claim=True,
+        )
+    ]
+
+
+def findings_from_coset_growing_width_architecture(
+    path: Path = COSET_GROWING_WIDTH_ARCHITECTURE_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    return [
+        DequantizationFinding(
+            id="DEQ-COSET-GROWING-WIDTH-SKELETON-HAS-NO-MEASUREMENT-THEOREM",
+            created_at=utc_now(),
+            target_type="coset_growing_width_architecture",
+            target_id=str(path),
+            severity="critical",
+            claim_under_test=(
+                "A type-correct balanced recoupling tree constitutes a "
+                "growing-width hidden-involution algorithm."
+            ),
+            evidence=(
+                "Structural/proof-complete architectures="
+                f"{metrics.get('structurally_compliant_architecture_count', 0)}/"
+                f"{metrics.get('proof_complete_architecture_count', 0)}; "
+                "associator/outcome/information/decoder counts="
+                f"{metrics.get('polynomial_growing_associator_circuit_count', 0)}/"
+                f"{metrics.get('compressed_covariant_outcome_count', 0)}/"
+                f"{metrics.get('growing_width_information_theorem_count', 0)}/"
+                f"{metrics.get('growing_width_hidden_involution_decoder_count', 0)}."
+            ),
+            required_action=(
+                "Fill the typed DAG with proved uniform associators, a "
+                "state-dependent covariant POVM, compressed outcomes, "
+                "natural information bounds, decoding, and classical "
+                "separation before any algorithm claim."
+            ),
+            blocks_speedup_claim=True,
+        )
+    ]
+
+
 def findings_from_coset_recoupling_capability_ledger(
     path: Path = COSET_RECOUPLING_CAPABILITY_PATH,
 ) -> list[DequantizationFinding]:
@@ -6906,6 +7318,143 @@ def findings_from_dcp_marker_all_target_coverage(
     ]
 
 
+def findings_from_dcp_marker_vulnerable_coordinates(
+    path: Path = DCP_MARKER_VULNERABLE_COORDINATE_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    return [
+        DequantizationFinding(
+            id="DEQ-DCP-MARKER-LOG-COORDINATE-POLYNOMIAL-LIST",
+            created_at=utc_now(),
+            target_type="candidate",
+            target_id="DHS-GOWERS-SIEVE",
+            severity="critical",
+            claim_under_test=(
+                "A DCP subset-sum mechanism has evidence of quantum advantage before "
+                "surviving polynomial lists that branch on a public O(log n) unstable "
+                "Gram-Schmidt coordinate set."
+            ),
+            evidence=(
+                f"Polynomial-list/transfer theorems/failures="
+                f"{metrics.get('polynomial_selected_coordinate_list_theorem_count', 0)}/"
+                f"{metrics.get('transfer_sandwich_theorem_count', 0)}/"
+                f"{metrics.get('transfer_sandwich_failure_count', 'unknown')}; "
+                f"tail assignment coverage standard/carry="
+                f"{metrics.get('tail_standard_sampled_assignment_coverage', 'unknown')}/"
+                f"{metrics.get('tail_carry_sampled_assignment_coverage', 'unknown')}; "
+                f"log2 slopes="
+                f"{metrics.get('standard_log2_coverage_slope_per_n', 'unknown')}/"
+                f"{metrics.get('carry_log2_coverage_slope_per_n', 'unknown')}; "
+                f"exact target cubes={metrics.get('exact_full_cube_trial_count', 0)}; "
+                f"uniform-legal coverage theorems="
+                f"{metrics.get('proved_inverse_polynomial_uniform_legal_coverage_count', 0)}."
+            ),
+            required_action=(
+                "Treat every success of the explicit growing-depth polynomial list as a "
+                "classical attack. Prove concentration of accepted assignment mass under "
+                "random labels and transfer it to independent uniform legal targets, or "
+                "prove decay for this fixed selector without claiming a general affine-CVP lower bound."
+            ),
+            blocks_speedup_claim=True,
+        )
+    ]
+
+
+def findings_from_dcp_marker_chart_union(
+    path: Path = DCP_MARKER_CHART_UNION_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    return [
+        DequantizationFinding(
+            id="DEQ-DCP-MARKER-POLYNOMIAL-CHART-UNION-ATTACK",
+            created_at=utc_now(),
+            target_type="candidate",
+            target_id="DHS-GOWERS-SIEVE",
+            severity="critical",
+            claim_under_test=(
+                "A DCP subset-sum mechanism has evidence of quantum advantage "
+                "before surviving polynomially many target-independent learned "
+                "nearest-plane coordinate charts."
+            ),
+            evidence=(
+                f"Polynomial theorem/target-selector/train-test failures="
+                f"{metrics.get('polynomial_chart_union_theorem_count', 0)}/"
+                f"{metrics.get('target_independent_selector_failure_count', 'unknown')}/"
+                f"{metrics.get('disjoint_train_test_failure_count', 'unknown')}; "
+                f"max charts/candidate bound="
+                f"{metrics.get('maximum_chart_count', 'unknown')}/"
+                f"{metrics.get('maximum_candidate_count_upper_bound', 'unknown')}; "
+                f"tail carry held-out/max-row coverage="
+                f"{metrics.get('tail_carry_heldout_coverage', 'unknown')}/"
+                f"{metrics.get('tail_maximum_carry_heldout_coverage', 'unknown')}; "
+                f"carry log2 slope="
+                f"{metrics.get('carry_log2_heldout_coverage_slope_per_n', 'unknown')}; "
+                f"uniform-legal laws="
+                f"{metrics.get('proved_inverse_polynomial_uniform_legal_coverage_count', 0)}."
+            ),
+            required_action=(
+                "Count every learned chart and branch path as a legal classical "
+                "attack. Prove inverse-polynomial random-label coverage or prove "
+                "decay for the fixed learner; finite failure does not lower-bound "
+                "other affine-CVP, representation, or quantum subset-sum methods."
+            ),
+            blocks_speedup_claim=True,
+        )
+    ]
+
+
+def findings_from_dcp_marker_target_adaptive_beam(
+    path: Path = DCP_MARKER_TARGET_ADAPTIVE_BEAM_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    return [
+        DequantizationFinding(
+            id="DEQ-DCP-MARKER-TARGET-ADAPTIVE-POLYNOMIAL-BEAM",
+            created_at=utc_now(),
+            target_type="candidate",
+            target_id="DHS-GOWERS-SIEVE",
+            severity="critical",
+            claim_under_test=(
+                "A DCP subset-sum signal is quantum-specific before surviving "
+                "a target-adaptive polynomial K-best nearest-plane baseline on "
+                "the independent uniform source."
+            ),
+            evidence=(
+                f"Polynomial bound/exact-rounding/state-bound failures="
+                f"{metrics.get('polynomial_state_bound_theorem_count', 0)}/"
+                f"{metrics.get('exact_rounding_failure_count', 'unknown')}/"
+                f"{metrics.get('state_bound_failure_count', 'unknown')}; "
+                f"maximum width powers standard/carry="
+                f"{metrics.get('maximum_standard_width_power', 'unknown')}/"
+                f"{metrics.get('maximum_carry_width_power', 'unknown')}; "
+                f"tail source success standard/carry="
+                f"{metrics.get('tail_standard_max_power_source_success_rate', 'unknown')}/"
+                f"{metrics.get('tail_carry_max_power_source_success_rate', 'unknown')}; "
+                f"invalid outputs={metrics.get('invalid_marker_candidate_count', 'unknown')}; "
+                f"source theorems="
+                f"{metrics.get('proved_inverse_polynomial_uniform_source_success_count', 0)}."
+            ),
+            required_action=(
+                "Use target-adaptive K-best search as the minimum classical "
+                "marker baseline. Prove a uniform inverse-polynomial source law "
+                "for any finite survivor or an all-fixed-powers failure theorem "
+                "before interpreting finite collapse; neither finite outcome "
+                "establishes quantum advantage."
+            ),
+            blocks_speedup_claim=True,
+        )
+    ]
+
+
 def findings_from_dcp_subset_sum_fourth_moment(
     path: Path = DCP_SUBSET_SUM_FOURTH_MOMENT_PATH,
 ) -> list[DequantizationFinding]:
@@ -7113,6 +7662,48 @@ def findings_from_dcp_subset_sum_growing_order(
             required_action=(
                 "Reject every schedule with 4^k log n=o(n). A moment survivor must reach the half-log boundary or "
                 "higher and charge q=2^k patterns, samples, memory, estimation variance, and decoder complexity."
+            ),
+            blocks_speedup_claim=True,
+        )
+    ]
+
+
+def findings_from_dcp_subset_sum_growing_order_chain(
+    path: Path = DCP_SUBSET_SUM_GROWING_ORDER_CHAIN_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    return [
+        DequantizationFinding(
+            id="DEQ-DCP-NEAR-LOG-GROWING-MOMENT-CHAIN-OBSTRUCTION",
+            created_at=utc_now(),
+            target_type="candidate",
+            target_id="DHS-GOWERS-SIEVE",
+            severity="critical",
+            claim_under_test=(
+                "A nonnegative source bad-tuple moment at any fixed fraction "
+                "below logarithmic order can evade the transfer obstruction."
+            ),
+            evidence=(
+                f"Exact controls/chain failures/max path="
+                f"{metrics.get('exact_control_count', 0)}/"
+                f"{metrics.get('exact_chain_bound_failure_count', 'unknown')}/"
+                f"{metrics.get('maximum_exact_longest_nonself_path', 'unknown')}; "
+                f"polynomial/fixed-fraction/near-log theorems="
+                f"{metrics.get('polynomial_chain_length_theorem_count', 0)}/"
+                f"{metrics.get('proved_fixed_fraction_log_obstruction_count', 0)}/"
+                f"{metrics.get('proved_near_log_deficit_obstruction_count', 0)}; "
+                f"final-window/signed proofs="
+                f"{metrics.get('proved_final_near_log_window_obstruction_count', 0)}/"
+                f"{metrics.get('proved_signed_statistic_obstruction_count', 0)}."
+            ),
+            required_action=(
+                "Reject nonnegative moment schedules satisfying "
+                "2^k L(k)(log n+k)=o(n), with L(k)=O(k^2 log k). Search only "
+                "the final near-log window with full resources, signed observables, "
+                "or explicit non-moment basis geometry."
             ),
             blocks_speedup_claim=True,
         )
@@ -8148,12 +8739,16 @@ def build_dequantization_report() -> dict[str, Any]:
         *findings_from_dcp_marker_aware_list_decoder(),
         *findings_from_dcp_marker_deviation_geometry(),
         *findings_from_dcp_marker_all_target_coverage(),
+        *findings_from_dcp_marker_vulnerable_coordinates(),
+        *findings_from_dcp_marker_chart_union(),
+        *findings_from_dcp_marker_target_adaptive_beam(),
         *findings_from_dcp_subset_sum_fourth_moment(),
         *findings_from_dcp_subset_sum_smith_moments(),
         *findings_from_dcp_subset_sum_smith_transfer(),
         *findings_from_dcp_subset_sum_fixed_order_moments(),
         *findings_from_dcp_subset_sum_conditioned_tail(),
         *findings_from_dcp_subset_sum_growing_order(),
+        *findings_from_dcp_subset_sum_growing_order_chain(),
         *findings_from_dcp_subset_sum_embedding_volume(),
         *findings_from_dcp_subset_sum_short_relations(),
         *findings_from_dcp_subset_sum_carry_relations(),
@@ -8275,6 +8870,15 @@ def build_dequantization_report() -> dict[str, Any]:
         *findings_from_coset_typical_modular_yjm(),
         *findings_from_coset_typical_modular_gap_bound(),
         *findings_from_coset_typical_n10_gap_trend(),
+        *findings_from_coset_typical_source_coverage(),
+        *findings_from_coset_typical_uniform_source_probe(),
+        *findings_from_coset_typical_parity_complete_separator(),
+        *findings_from_coset_same_hidden_target_law(),
+        *findings_from_coset_commutant_information_obstruction(),
+        *findings_from_coset_carrier_information_audit(),
+        *findings_from_coset_strong_fourier_information(),
+        *findings_from_coset_entanglement_width_gate(),
+        *findings_from_coset_growing_width_architecture(),
         *findings_from_coset_jucys_murphy_label_transform(),
         *findings_from_coset_multiplicity_commutant_search(),
         *findings_from_coset_recoupling_capability_ledger(),

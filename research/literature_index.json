@@ -41,6 +41,22 @@
       "year": 2005
     },
     {
+      "id": "moore-russell-multiregister-2005",
+      "tags": [
+        "graph-isomorphism",
+        "nonabelian-hsp",
+        "multiregister",
+        "entanglement-width",
+        "coset-state",
+        "information-lower-bound",
+        "no-go"
+      ],
+      "title": "Tight Results on Multiregister Fourier Sampling: Quantum Measurements for Graph Isomorphism Require Entanglement",
+      "url": "https://arxiv.org/abs/quant-ph/0511149",
+      "why_it_matters": "Proves that nonnegligible information about the GI-relevant hidden involution requires a measurement entangled across Omega(n log n) coset states, so bounded-copy recoupling controls cannot be promoted to decoders.",
+      "year": 2005
+    },
+    {
       "id": "beals-symmetric-qft-1997",
       "tags": [
         "symmetric-qft",
@@ -104,6 +120,20 @@
       "url": "https://arxiv.org/abs/2502.20253",
       "why_it_matters": "Classically resolves many restricted Kronecker and plethysm instances previously proposed as quantum speedups, sharply limiting multiplicity estimation as an independent breakthrough direction.",
       "year": 2025
+    },
+    {
+      "id": "aggarwal-elboim-maximal-dimension-2026",
+      "tags": [
+        "maximal-irrep-dimension",
+        "plancherel-measure",
+        "source-coverage",
+        "representation-theory",
+        "asymptotic-no-go"
+      ],
+      "title": "On the maximal dimension of an irreducible representation of the symmetric group",
+      "url": "https://arxiv.org/abs/2605.25995",
+      "why_it_matters": "Proves that the largest S_n Plancherel atom is stretched-exponentially small, so no polynomial catalog of pre-certified source irreps can have inverse-polynomial natural weak-Fourier coverage.",
+      "year": 2026
     },
     {
       "id": "burchardt-high-dimensional-schur-2025",
@@ -524,6 +554,9 @@
       "bardet-high-rate-alternant-2023",
       "randriambololona-syzygy-distinguisher-2024"
     ],
+    "asymptotic-no-go": [
+      "aggarwal-elboim-maximal-dimension-2026"
+    ],
     "automated-discovery": [
       "automated-algorithm-synthesis-2025",
       "near-term-ai-discovery-2026"
@@ -594,6 +627,9 @@
     "correlated-samples": [
       "kapralov-sparse-fourier-2016"
     ],
+    "coset-state": [
+      "moore-russell-multiregister-2005"
+    ],
     "deconvolution": [
       "ip-shift-deconvolution-2002"
     ],
@@ -609,6 +645,9 @@
     ],
     "early-fault-tolerant": [
       "randomized-qsvt-2025"
+    ],
+    "entanglement-width": [
+      "moore-russell-multiregister-2005"
     ],
     "exposition": [
       "cs-guide-qsvt-2023"
@@ -645,6 +684,7 @@
     ],
     "graph-isomorphism": [
       "symmetric-defies-fourier-2005",
+      "moore-russell-multiregister-2005",
       "bardet-otmani-saeed-trivial-hull-2019"
     ],
     "group-actions": [
@@ -688,6 +728,9 @@
     "hull": [
       "bardet-otmani-saeed-trivial-hull-2019"
     ],
+    "information-lower-bound": [
+      "moore-russell-multiregister-2005"
+    ],
     "infrastructure": [
       "hallgren-pell-2002"
     ],
@@ -723,6 +766,9 @@
     "linear-systems": [
       "randomized-qsvt-2025"
     ],
+    "maximal-irrep-dimension": [
+      "aggarwal-elboim-maximal-dimension-2026"
+    ],
     "multiplicative-character": [
       "van-dam-hallgren-shifted-character-2000",
       "ip-shift-deconvolution-2002",
@@ -735,8 +781,12 @@
       "burchardt-high-dimensional-schur-2025",
       "yoshida-random-dilation-2025"
     ],
+    "multiregister": [
+      "moore-russell-multiregister-2005"
+    ],
     "no-go": [
-      "symmetric-defies-fourier-2005"
+      "symmetric-defies-fourier-2005",
+      "moore-russell-multiregister-2005"
     ],
     "noisy-fourier": [
       "galbraith-shani-multivariate-hnp-2015"
@@ -744,6 +794,7 @@
     "nonabelian-hsp": [
       "hsp-survey-2010",
       "symmetric-defies-fourier-2005",
+      "moore-russell-multiregister-2005",
       "code-equivalence-fourier-2011"
     ],
     "number-theory": [
@@ -755,6 +806,9 @@
     ],
     "periodicity": [
       "hallgren-pell-2002"
+    ],
+    "plancherel-measure": [
+      "aggarwal-elboim-maximal-dimension-2026"
     ],
     "principal-ideal": [
       "hallgren-pell-2002"
@@ -821,6 +875,7 @@
       "ikenmeyer-subramanian-kronecker-2023",
       "larocca-havlicek-multiplicities-2024",
       "panova-classical-multiplicities-2025",
+      "aggarwal-elboim-maximal-dimension-2026",
       "burchardt-high-dimensional-schur-2025",
       "yoshida-random-dilation-2025"
     ],
@@ -848,6 +903,9 @@
     ],
     "significant-fourier": [
       "galbraith-laity-shani-fourier-limitations-2016"
+    ],
+    "source-coverage": [
+      "aggarwal-elboim-maximal-dimension-2026"
     ],
     "span-programs": [
       "span-programs-adversary-2009"

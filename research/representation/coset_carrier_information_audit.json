@@ -1,0 +1,157 @@
+{
+  "claim_gate": {
+    "carrier_refinement_adds_information_over_yjm_finitely": true,
+    "carrier_refinement_beats_product_strong_fourier": false,
+    "classical_separation_proved": false,
+    "commutant_separator_alone_informative": false,
+    "finite_information_search_is_asymptotic_algorithm": false,
+    "hidden_involution_decoder_proved": false,
+    "reason": "Carrier-sensitive refinement adds finite information over YJM labels, but every searched rule is dominated by the simpler product Young-basis measurement and no scaling, decoder, or classical separation is known.",
+    "speedup_claim_allowed": false
+  },
+  "controls": [
+    {
+      "best_bayes_coefficients": {
+        "CT0": -2,
+        "CT1": -1,
+        "CT2": 0,
+        "TC0": 0,
+        "TC1": 0,
+        "TC2": 0,
+        "TT0": 2,
+        "TT1": 0
+      },
+      "best_bayes_lcu_normalization": 5,
+      "best_bayes_success_probability": 0.122228268750858,
+      "best_information_coefficients": {
+        "CT0": -2,
+        "CT1": -1,
+        "CT2": 0,
+        "TC0": 0,
+        "TC1": 0,
+        "TC2": 0,
+        "TT0": 2,
+        "TT1": 0
+      },
+      "best_information_lcu_normalization": 5,
+      "best_joint_information_fraction_of_product_baseline": 0.5677644010801868,
+      "best_joint_information_gain_over_yjm_bits": 0.048183309624476506,
+      "best_searched_joint_bayes_success_probability": 0.122228268750858,
+      "best_searched_joint_mutual_information_bits": 0.2534002216100799,
+      "coefficient_vector_count": 1744,
+      "gap_rule_joint_bayes_success_probability": 0.12054292929293019,
+      "gap_rule_joint_mutual_information_bits": 0.2429300052138169,
+      "hidden_involution_count": 15,
+      "left_source_partition": [
+        3,
+        2
+      ],
+      "maximum_measurement_normalization_residual": 4.440892098500626e-16,
+      "n": 5,
+      "product_basis_information_dominates_all_searched_rules": true,
+      "product_young_basis_bayes_success_probability": 0.16410108024691356,
+      "product_young_basis_mutual_information_bits": 0.4463122751760753,
+      "random_guess_success_probability": 0.06666666666666667,
+      "right_source_partition": [
+        3,
+        1,
+        1
+      ],
+      "separator_only_bayes_success_probability": 0.06666666666666674,
+      "separator_only_mutual_information_bits": -7.700088151762493e-17,
+      "status": "finite-separator-refinement-informative-but-dominated-by-product-strong-fourier",
+      "tensor_dimension": 30,
+      "transposition_count": 2,
+      "yjm_only_bayes_success_probability": 0.11032407407407469,
+      "yjm_only_mutual_information_bits": 0.2052169119856034
+    },
+    {
+      "best_bayes_coefficients": {
+        "CT0": 0,
+        "CT1": 1,
+        "CT2": -1,
+        "TC0": 0,
+        "TC1": 1,
+        "TC2": 0,
+        "TT0": 0,
+        "TT1": 0
+      },
+      "best_bayes_lcu_normalization": 3,
+      "best_bayes_success_probability": 0.10298321759260526,
+      "best_information_coefficients": {
+        "CT0": 1,
+        "CT1": 0,
+        "CT2": 0,
+        "TC0": 0,
+        "TC1": -2,
+        "TC2": 0,
+        "TT0": 2,
+        "TT1": 0
+      },
+      "best_information_lcu_normalization": 5,
+      "best_joint_information_fraction_of_product_baseline": 0.14612717440867604,
+      "best_joint_information_gain_over_yjm_bits": 0.059495286843829494,
+      "best_searched_joint_bayes_success_probability": 0.10298321759260523,
+      "best_searched_joint_mutual_information_bits": 0.10934061625524266,
+      "coefficient_vector_count": 1744,
+      "gap_rule_joint_bayes_success_probability": 0.10298321759260526,
+      "gap_rule_joint_mutual_information_bits": 0.1093406162552426,
+      "hidden_involution_count": 15,
+      "left_source_partition": [
+        3,
+        2,
+        1
+      ],
+      "maximum_measurement_normalization_residual": 6.661338147750939e-16,
+      "n": 6,
+      "product_basis_information_dominates_all_searched_rules": true,
+      "product_young_basis_bayes_success_probability": 0.17899305555555553,
+      "product_young_basis_mutual_information_bits": 0.7482565559602771,
+      "random_guess_success_probability": 0.06666666666666667,
+      "right_source_partition": [
+        3,
+        3
+      ],
+      "separator_only_bayes_success_probability": 0.06666666666666672,
+      "separator_only_mutual_information_bits": -1.8019274083957685e-18,
+      "status": "finite-separator-refinement-informative-but-dominated-by-product-strong-fourier",
+      "tensor_dimension": 80,
+      "transposition_count": 3,
+      "yjm_only_bayes_success_probability": 0.08808738425927133,
+      "yjm_only_mutual_information_bits": 0.04984532941141317
+    }
+  ],
+  "created_at": "2026-07-27T21:01:10.059100+00:00",
+  "falsifiers_triggered": [
+    "Spectral separation is not an information objective: the gap-optimized rule is not information-optimal.",
+    "Commutant separator outcomes alone have zero hidden-element information, exactly as the covariance theorem predicts.",
+    "Adding multiplicity labels to target tableaux gives finite signal but does not beat separate strong Fourier outcomes.",
+    "Finite mutual information does not supply scaling, a polynomial decoder, or a quantum-classical separation."
+  ],
+  "headline_metrics": {
+    "all_n_information_advantage_theorem_count": 0,
+    "classical_separation_theorem_count": 0,
+    "coefficient_vector_count": 1744,
+    "finite_control_count": 2,
+    "hidden_involution_decoder_count": 0,
+    "joint_separator_information_gain_control_count": 2,
+    "maximum_best_joint_bayes_success_probability": 0.122228268750858,
+    "maximum_best_joint_information_fraction_of_product_baseline": 0.5677644010801868,
+    "maximum_best_joint_mutual_information_bits": 0.2534002216100799,
+    "maximum_measurement_normalization_residual": 6.661338147750939e-16,
+    "maximum_product_young_basis_mutual_information_bits": 0.7482565559602771,
+    "product_strong_fourier_dominates_all_searched_rules_count": 2,
+    "separator_only_zero_information_verified_count": 2
+  },
+  "measurement_contract": {
+    "input": "two independently prepared coset states conditioned on fixed weak Fourier source labels",
+    "joint_search": "YJM fibers refined by every primitive support<=3, |coefficient|<=2 rule over the parity-complete portfolio",
+    "metrics": "mutual information I(H;Y) and optimal one-shot Bayes success under the known finite prior",
+    "prior": "uniform over one involution conjugacy class",
+    "separator_only": "spectral projectors of one diagonal-action commutant observable; theorem predicts zero information",
+    "simple_quantum_baseline": "direct product Young-basis measurement on the two conditioned source registers, equivalent to separate strong Fourier column outcomes",
+    "yjm_only": "encoded diagonal YJM target-tableau projectors, retaining carrier-sensitive labels"
+  },
+  "status": "carrier-refinement-finite-signal-dominated-by-simple-strong-fourier-baseline",
+  "summary": "Searched 1744 parity-complete separator rules on 2 carrier-sensitive controls. All improve on YJM-only information to some extent, but the simple product Young-basis baseline dominates the best searched joint measurement on every control."
+}

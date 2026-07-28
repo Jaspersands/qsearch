@@ -46,6 +46,9 @@ Commands:
   python qsearch.py dcp-marker-list-decoder
   python qsearch.py dcp-marker-deviations
   python qsearch.py dcp-marker-all-targets
+  python qsearch.py dcp-marker-vulnerable-coordinates
+  python qsearch.py dcp-marker-chart-union
+  python qsearch.py dcp-marker-target-beam
   python qsearch.py dcp-subset-sum-target-distribution
   python qsearch.py dcp-coherent-matching
   python qsearch.py dcp-quantum-relation-fidelity
@@ -259,6 +262,9 @@ from dcp_subset_sum_smith_transfer import write_smith_transfer_order_six
 from dcp_subset_sum_fixed_order_moment_theorem import write_fixed_order_moment_theorem
 from dcp_subset_sum_conditioned_tail_theorem import write_conditioned_tail_theorem
 from dcp_subset_sum_growing_order_theorem import write_growing_order_theorem
+from dcp_subset_sum_growing_order_chain_theorem import (
+    write_growing_order_chain_theorem,
+)
 from dcp_subset_sum_embedding_volume_theorem import write_embedding_volume_theorem
 from dcp_subset_sum_short_relation_theorem import write_short_relation_theorem
 from dcp_subset_sum_carry_relation_theorem import write_carry_relation_theorem
@@ -275,6 +281,15 @@ from dcp_marker_aware_list_decoder import (
 )
 from dcp_marker_deviation_geometry import write_marker_deviation_geometry
 from dcp_marker_all_target_coverage import write_marker_all_target_coverage
+from dcp_marker_vulnerable_coordinate_decoder import (
+    load_and_register_marker_vulnerable_coordinate_decoder,
+    write_marker_vulnerable_coordinate_decoder,
+)
+from dcp_marker_chart_union_decoder import write_marker_chart_union_decoder
+from dcp_marker_target_adaptive_beam import (
+    load_and_register_target_adaptive_beam_audit,
+    write_target_adaptive_beam_audit,
+)
 from dcp_subset_sum_target_distribution import write_target_distribution_audit
 from dcp_coherent_matching_interface import write_coherent_matching_interface_audit
 from dcp_quantum_relation_fidelity import write_quantum_relation_fidelity_audit
@@ -312,6 +327,24 @@ from coset_pgm_capacity import write_coset_pgm_capacity_report
 from coset_holevo_information import write_coset_holevo_report
 from coset_covariant_frame import write_covariant_frame_report
 from coset_two_copy_frame import write_two_copy_frame_report
+from coset_same_hidden_target_law import (
+    write_same_hidden_target_law_report,
+)
+from coset_commutant_information_obstruction import (
+    write_commutant_information_obstruction_report,
+)
+from coset_carrier_information_audit import (
+    write_carrier_information_audit_report,
+)
+from coset_strong_fourier_information_scaling import (
+    write_strong_fourier_information_scaling_report,
+)
+from coset_entanglement_width_gate import (
+    write_entanglement_width_gate_report,
+)
+from coset_growing_width_architecture import (
+    write_growing_width_architecture_report,
+)
 from coset_two_copy_transition_audit import write_two_copy_transition_report
 from coset_three_copy_recoupling_obstruction import write_three_copy_recoupling_report
 from coset_jucys_murphy_label_transform import write_jucys_murphy_label_transform_report
@@ -425,6 +458,15 @@ from coset_typical_modular_yjm_contraction import (
 )
 from coset_typical_modular_gap_bound import write_modular_gap_bound_report
 from coset_typical_n10_gap_trend import write_n10_gap_trend_report
+from coset_typical_source_coverage import (
+    write_typical_source_coverage_report,
+)
+from coset_typical_uniform_source_probe import (
+    write_uniform_source_probe_report,
+)
+from coset_typical_parity_complete_separator import (
+    write_parity_complete_separator_report,
+)
 from coset_recoupling_capability_ledger import write_recoupling_capability_report
 from coset_recoupling_mechanism_synthesis import write_recoupling_mechanism_synthesis_report
 from classical_baseline_suite import write_hidden_shift_baselines
@@ -1921,6 +1963,68 @@ def command_dcp_subset_sum_growing_moments(args: argparse.Namespace) -> int:
     return 0
 
 
+def command_dcp_subset_sum_growing_chain(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    n_values = [
+        int(value.strip()) for value in args.n_values.split(",") if value.strip()
+    ]
+    epsilons = [
+        float(value.strip())
+        for value in args.epsilons.split(",")
+        if value.strip()
+    ]
+    deficits = [
+        float(value.strip())
+        for value in args.near_log_deficits.split(",")
+        if value.strip()
+    ]
+    controls = [
+        int(value.strip())
+        for value in args.exact_control_orders.split(",")
+        if value.strip()
+    ]
+    payload = write_growing_order_chain_theorem(
+        n_values=n_values,
+        fixed_fraction_epsilons=epsilons,
+        near_log_deficit_multipliers=deficits,
+        register_offset=args.register_offset,
+        exact_control_orders=controls,
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("DCP near-log growing-order lattice-chain theorem complete")
+    print(
+        "Artifact: "
+        "research/classical_baselines/dcp_subset_sum_growing_order_chain_theorem.json"
+    )
+    print(
+        "Exact controls/failures/max path: "
+        f"{metrics['exact_control_count']}/"
+        f"{metrics['exact_chain_bound_failure_count']}/"
+        f"{metrics['maximum_exact_longest_nonself_path']}"
+    )
+    print(
+        "Polynomial/fixed-fraction/near-log theorem counts: "
+        f"{metrics['polynomial_chain_length_theorem_count']}/"
+        f"{metrics['proved_fixed_fraction_log_obstruction_count']}/"
+        f"{metrics['proved_near_log_deficit_obstruction_count']}"
+    )
+    print(f"Scaling rows: {metrics['row_count']}")
+    print(f"Finite bounds below one: {metrics['finite_bound_below_one_row_count']}")
+    print(
+        "Final near-log/signed obstructions: "
+        f"{metrics['proved_final_near_log_window_obstruction_count']}/"
+        f"{metrics['proved_signed_statistic_obstruction_count']}"
+    )
+    print(f"Speedup claim allowed: {payload['claim_gate']['speedup_claim_allowed']}")
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
 def command_dcp_subset_sum_embedding_volume(args: argparse.Namespace) -> int:
     initialize_seed_registry(overwrite=False)
     n_values = [int(value.strip()) for value in args.n_values.split(",") if value.strip()]
@@ -2379,6 +2483,236 @@ def command_dcp_marker_all_targets(args: argparse.Namespace) -> int:
         f"{metrics['tail_mean_carry_no_one_step_target_fraction']:.6g}"
     )
     print(f"Asymptotic coverage bounds: {metrics['proved_asymptotic_fixed_depth_coverage_bound_count']}")
+    print(f"Speedup claim allowed: {payload['claim_gate']['speedup_claim_allowed']}")
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_dcp_marker_vulnerable_coordinates(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    if args.register_existing:
+        payload = load_and_register_marker_vulnerable_coordinate_decoder()
+    else:
+        n_values = [
+            int(value.strip())
+            for value in args.n_values.split(",")
+            if value.strip()
+        ]
+        register_offsets = [
+            int(value.strip())
+            for value in args.register_offsets.split(",")
+            if value.strip()
+        ]
+        payload = write_marker_vulnerable_coordinate_decoder(
+            n_values=n_values,
+            register_offsets=register_offsets,
+            trials_per_row=args.trials_per_row,
+            selector_multiplier=args.selector_multiplier,
+            maximum_offset=args.maximum_offset,
+            assignment_sample_count=args.assignment_samples,
+            fixed_depth=args.fixed_depth,
+            exact_target_max_n=args.exact_target_max_n,
+            exact_trials_per_row=args.exact_trials_per_row,
+            log_multiplier=args.log_multiplier,
+            embedding_scale=args.embedding_scale,
+            low_constraint_scale=args.low_constraint_scale,
+            lll_delta=args.lll_delta,
+            seed=args.seed,
+            write_registry=not args.no_registry,
+        )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("DCP vulnerable-coordinate marker decoder audit complete")
+    print(
+        "Artifact: "
+        "research/classical_baselines/dcp_marker_vulnerable_coordinate_decoder.json"
+    )
+    print(
+        f"Trials/rows/max n: {metrics['trial_count']}/"
+        f"{metrics['row_count']}/{metrics['maximum_n_bits']}"
+    )
+    print(
+        "Exact cubes/assignments/legal targets: "
+        f"{metrics['exact_full_cube_trial_count']}/"
+        f"{metrics['exact_assignment_count']}/"
+        f"{metrics['exact_legal_target_count']}"
+    )
+    print(
+        "Tail sampled assignment coverage standard/carry: "
+        f"{metrics['tail_standard_sampled_assignment_coverage']:.6g}/"
+        f"{metrics['tail_carry_sampled_assignment_coverage']:.6g}"
+    )
+    print(
+        "Coverage slopes standard/carry: "
+        f"{metrics['standard_log2_coverage_slope_per_n']:.6g}/"
+        f"{metrics['carry_log2_coverage_slope_per_n']:.6g}"
+    )
+    print(
+        "List/transfer theorem failures: "
+        f"{metrics['polynomial_selected_coordinate_list_theorem_count']}/"
+        f"{metrics['transfer_sandwich_failure_count']}"
+    )
+    print(
+        "Inverse-polynomial uniform-legal coverage theorems: "
+        f"{metrics['proved_inverse_polynomial_uniform_legal_coverage_count']}"
+    )
+    print(f"Speedup claim allowed: {payload['claim_gate']['speedup_claim_allowed']}")
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_dcp_marker_chart_union(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    n_values = [
+        int(value.strip()) for value in args.n_values.split(",") if value.strip()
+    ]
+    register_offsets = [
+        int(value.strip())
+        for value in args.register_offsets.split(",")
+        if value.strip()
+    ]
+    payload = write_marker_chart_union_decoder(
+        n_values=n_values,
+        register_offsets=register_offsets,
+        trials_per_row=args.trials_per_row,
+        selector_multiplier=args.selector_multiplier,
+        chart_budget_power=args.chart_budget_power,
+        maximum_offset=args.maximum_offset,
+        training_sample_count=args.training_samples,
+        heldout_sample_count=args.heldout_samples,
+        training_samples_per_n_squared=args.training_samples_per_n_squared,
+        heldout_samples_per_n_squared=args.heldout_samples_per_n_squared,
+        exact_target_max_n=args.exact_target_max_n,
+        exact_trials_per_row=args.exact_trials_per_row,
+        log_multiplier=args.log_multiplier,
+        embedding_scale=args.embedding_scale,
+        low_constraint_scale=args.low_constraint_scale,
+        lll_delta=args.lll_delta,
+        seed=args.seed,
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("DCP learned marker chart-union decoder audit complete")
+    print(
+        "Artifact: "
+        "research/classical_baselines/dcp_marker_chart_union_decoder.json"
+    )
+    print(
+        f"Trials/rows/max n: {metrics['trial_count']}/"
+        f"{metrics['row_count']}/{metrics['maximum_n_bits']}"
+    )
+    print(
+        "Train/held-out samples: "
+        f"{metrics['training_sample_count']}/{metrics['heldout_sample_count']}"
+    )
+    print(
+        "Maximum charts/candidate upper bound: "
+        f"{metrics['maximum_chart_count']}/"
+        f"{metrics['maximum_candidate_count_upper_bound']}"
+    )
+    print(
+        "Tail carry held-out/max-row coverage: "
+        f"{metrics['tail_carry_heldout_coverage']:.6g}/"
+        f"{metrics['tail_maximum_carry_heldout_coverage']:.6g}"
+    )
+    print(
+        "Held-out slopes standard/carry: "
+        f"{metrics['standard_log2_heldout_coverage_slope_per_n']:.6g}/"
+        f"{metrics['carry_log2_heldout_coverage_slope_per_n']:.6g}"
+    )
+    print(
+        "Polynomial/target/train-test/transfer failures: "
+        f"{metrics['polynomial_chart_union_theorem_count']}/"
+        f"{metrics['target_independent_selector_failure_count']}/"
+        f"{metrics['disjoint_train_test_failure_count']}/"
+        f"{metrics['transfer_sandwich_failure_count']}"
+    )
+    print(f"Speedup claim allowed: {payload['claim_gate']['speedup_claim_allowed']}")
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_dcp_marker_target_beam(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    if args.register_existing:
+        payload = load_and_register_target_adaptive_beam_audit()
+    else:
+        n_values = [
+            int(value.strip())
+            for value in args.n_values.split(",")
+            if value.strip()
+        ]
+        register_offsets = [
+            int(value.strip())
+            for value in args.register_offsets.split(",")
+            if value.strip()
+        ]
+        standard_powers = [
+            int(value.strip())
+            for value in args.standard_width_powers.split(",")
+            if value.strip()
+        ]
+        carry_powers = [
+            int(value.strip())
+            for value in args.carry_width_powers.split(",")
+            if value.strip()
+        ]
+        payload = write_target_adaptive_beam_audit(
+            n_values=n_values,
+            register_offsets=register_offsets,
+            trials_per_row=args.trials_per_row,
+            standard_width_powers=standard_powers,
+            carry_width_powers=carry_powers,
+            maximum_offset=args.maximum_offset,
+            exact_legality_max_n=args.exact_legality_max_n,
+            log_multiplier=args.log_multiplier,
+            embedding_scale=args.embedding_scale,
+            low_constraint_scale=args.low_constraint_scale,
+            lll_delta=args.lll_delta,
+            seed=args.seed,
+            write_registry=not args.no_registry,
+        )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("DCP target-adaptive marker beam audit complete")
+    print(
+        "Artifact: research/classical_baselines/"
+        "dcp_marker_target_adaptive_beam.json"
+    )
+    print(
+        f"Trials/rows/max n: {metrics['trial_count']}/"
+        f"{metrics['row_count']}/{metrics['maximum_n_bits']}"
+    )
+    print(
+        "Maximum standard/carry width powers: "
+        f"{metrics['maximum_standard_width_power']}/"
+        f"{metrics['maximum_carry_width_power']}"
+    )
+    print(
+        "Tail max-power source success standard/carry: "
+        f"{metrics['tail_standard_max_power_source_success_rate']:.6g}/"
+        f"{metrics['tail_carry_max_power_source_success_rate']:.6g}"
+    )
+    print(
+        "Exact-rounding/state-bound/invalid-output failures: "
+        f"{metrics['exact_rounding_failure_count']}/"
+        f"{metrics['state_bound_failure_count']}/"
+        f"{metrics['invalid_marker_candidate_count']}"
+    )
+    print(
+        "Inverse-polynomial uniform-source theorems: "
+        f"{metrics['proved_inverse_polynomial_uniform_source_success_count']}"
+    )
     print(f"Speedup claim allowed: {payload['claim_gate']['speedup_claim_allowed']}")
     print(f"Registry valid: {validation['valid']}")
     if validation["issues"]:
@@ -3660,6 +3994,261 @@ def command_coset_two_copy_frame(args: argparse.Namespace) -> int:
     print(f"Rank formula falsified: {control['rank_formula_falsified']}")
     print(f"Transition/transform proof-debt rows: {metrics['coherent_kronecker_transform_proof_debt_count']}")
     print(f"Speedup claim allowed: {payload['claim_gate']['speedup_claim_allowed']}")
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_coset_same_hidden_target_law(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    n_values = tuple(
+        int(value.strip())
+        for value in args.n_values.split(",")
+        if value.strip()
+    )
+    payload = write_same_hidden_target_law_report(
+        n_values=n_values,
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Same-hidden-involution target law complete")
+    print(
+        "Artifact: research/representation/"
+        "coset_same_hidden_target_law.json"
+    )
+    print(
+        "Exact normalized controls: "
+        f"{metrics['exact_normalization_verified_record_count']}/"
+        f"{metrics['same_hidden_target_law_record_count']}"
+    )
+    print(
+        "Maximum expected TV from dimension coupling: "
+        f"{metrics['maximum_expected_conditional_tv_from_dimension_coupling']:.6g}"
+    )
+    print(
+        "Maximum exact-collision target mass: "
+        f"{metrics['maximum_scalar_collision_target_joint_mass']:.6g}"
+    )
+    print(
+        "Coherent target measurements: "
+        f"{metrics['coherent_kronecker_target_measurement_theorem_count']}"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_coset_commutant_information_obstruction(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_commutant_information_obstruction_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Commutant-only information obstruction complete")
+    print(
+        "Artifact: research/representation/"
+        "coset_commutant_information_obstruction.json"
+    )
+    print(
+        "All-k zero-information theorems: "
+        f"{metrics['general_all_k_commutant_zero_information_theorem_count']}"
+    )
+    print(
+        "Finite invariant controls: "
+        f"{metrics['finite_commutant_distribution_invariance_verified_count']}/"
+        f"{metrics['finite_control_count']}"
+    )
+    print(
+        "Maximum commutant outcome TV: "
+        f"{metrics['maximum_finite_commutant_outcome_total_variation']:.6g}"
+    )
+    print(
+        "Carrier-sensitive escape witnesses: "
+        f"{metrics['finite_noncommutant_escape_witness_count']}"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_coset_carrier_information_audit(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_carrier_information_audit_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Carrier-sensitive information audit complete")
+    print(
+        "Artifact: research/representation/"
+        "coset_carrier_information_audit.json"
+    )
+    print(
+        "Searched separator rules: "
+        f"{metrics['coefficient_vector_count']}"
+    )
+    print(
+        "Controls dominated by product strong Fourier: "
+        f"{metrics['product_strong_fourier_dominates_all_searched_rules_count']}/"
+        f"{metrics['finite_control_count']}"
+    )
+    print(
+        "Maximum searched joint information: "
+        f"{metrics['maximum_best_joint_mutual_information_bits']:.6g} bits"
+    )
+    print(
+        "Maximum product-basis information: "
+        f"{metrics['maximum_product_young_basis_mutual_information_bits']:.6g} bits"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_coset_strong_fourier_information(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    n_values = tuple(
+        int(value.strip())
+        for value in args.n_values.split(",")
+        if value.strip()
+    )
+    payload = write_strong_fourier_information_scaling_report(
+        n_values=n_values,
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Natural strong Fourier information scaling complete")
+    print(
+        "Artifact: research/representation/"
+        "coset_strong_fourier_information_scaling.json"
+    )
+    print(
+        "Weak-label zero-information controls: "
+        f"{metrics['weak_label_zero_information_verified_count']}/"
+        f"{metrics['record_count']}"
+    )
+    print(
+        "Largest-n one-copy carrier information: "
+        f"{metrics['largest_n_one_copy_carrier_mutual_information_bits']:.6g} bits"
+    )
+    print(
+        "Largest-n two-copy carrier information: "
+        f"{metrics['largest_n_two_copy_carrier_mutual_information_bits']:.6g} bits"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_coset_entanglement_width_gate(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_entanglement_width_gate_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Coset-state entanglement-width gate complete")
+    print(
+        "Artifact: research/representation/"
+        "coset_entanglement_width_gate.json"
+    )
+    print(
+        "Primary no-go theorems: "
+        f"{metrics['primary_literature_theorem_count']}"
+    )
+    print(
+        "Bounded-register mechanisms quarantined: "
+        f"{metrics['bounded_register_mechanism_count']}"
+    )
+    print(
+        "Maximum current joint register width: "
+        f"{metrics['maximum_current_joint_register_count']}"
+    )
+    print(
+        "Growing-width architectures: "
+        f"{metrics['growing_entanglement_width_architecture_count']}"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_coset_growing_width_architecture(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_growing_width_architecture_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Growing-width coset architecture compiler complete")
+    print(
+        "Artifact: research/representation/"
+        "coset_growing_width_architecture.json"
+    )
+    print(
+        "Structurally compliant architectures: "
+        f"{metrics['structurally_compliant_architecture_count']}/"
+        f"{metrics['architecture_count']}"
+    )
+    print(
+        "Proof-complete architectures: "
+        f"{metrics['proof_complete_architecture_count']}"
+    )
+    print(
+        "Blocking proof issues: "
+        f"{metrics['blocking_proof_issue_count']}"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
     print(f"Registry valid: {validation['valid']}")
     if validation["issues"]:
         print(json.dumps(validation["issues"], indent=2))
@@ -5283,6 +5872,110 @@ def command_coset_racah_typical_n10_gap_trend(
     print(
         "Machine-verified roundoff bounds: "
         f"{metrics['machine_verified_roundoff_bound_count']}"
+    )
+    print(f"Speedup claim allowed: {payload['claim_gate']['speedup_claim_allowed']}")
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_coset_racah_typical_source_coverage(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_typical_source_coverage_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Typical-irrep natural source/target coverage audit complete")
+    print(
+        "Artifact: research/representation/"
+        "coset_typical_source_coverage.json"
+    )
+    print(
+        "n=10 certified target coupling mass: "
+        f"{metrics['n10_certified_target_coupling_mass']:.3%}"
+    )
+    print(
+        "Polynomial pre-certified source catalog no-go theorems: "
+        f"{metrics['polynomial_precertified_source_catalog_no_go_theorem_count']}"
+    )
+    print(
+        "Uniform arbitrary-source separators: "
+        f"{metrics['uniform_arbitrary_source_partition_separator_count']}"
+    )
+    print(f"Speedup claim allowed: {payload['claim_gate']['speedup_claim_allowed']}")
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_coset_racah_typical_uniform_sources(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_uniform_source_probe_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Typical-irrep all-source fixed-separator probe complete")
+    print(
+        "Artifact: research/representation/"
+        "coset_typical_uniform_source_probe.json"
+    )
+    print(
+        "Exact scalar collisions: "
+        f"{metrics['exact_scalar_collision_count']}"
+    )
+    print(
+        "Numerical repeated-root blocks: "
+        f"{metrics['numerical_repeated_eigenvalue_block_count']}"
+    )
+    print(
+        "Maximum natural source-pair mass with exact scalar collision: "
+        f"{metrics['maximum_natural_source_pair_mass_with_exact_scalar_collision']:.3%}"
+    )
+    print(f"Speedup claim allowed: {payload['claim_gate']['speedup_claim_allowed']}")
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_coset_racah_typical_parity_separator(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_parity_complete_separator_report(
+        recompute_n7=args.recompute_n7,
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Typical-irrep parity-complete separator search complete")
+    print(
+        "Artifact: research/representation/"
+        "coset_typical_parity_complete_separator.json"
+    )
+    print(
+        "Finite collision-free candidates: "
+        f"{metrics['collision_free_finite_candidate_count']}/"
+        f"{metrics['coefficient_vector_count']}"
+    )
+    print(
+        "Best minimum numerical raw gap: "
+        f"{metrics['best_candidate_minimum_numerical_raw_gap']:.12g}"
+    )
+    print(
+        "Former scalar blocks exactly repaired: "
+        f"{metrics['former_scalar_block_exact_repair_count']}"
     )
     print(f"Speedup claim allowed: {payload['claim_gate']['speedup_claim_allowed']}")
     print(f"Registry valid: {validation['valid']}")
@@ -7805,6 +8498,135 @@ def build_parser() -> argparse.ArgumentParser:
     dcp_marker_all_targets.add_argument("--no-registry", action="store_true")
     dcp_marker_all_targets.set_defaults(func=command_dcp_marker_all_targets)
 
+    dcp_marker_vulnerable = subparsers.add_parser(
+        "dcp-marker-vulnerable-coordinates",
+        help=(
+            "Test polynomial lists that branch on public risk-ranked "
+            "O(log n) nearest-plane coordinates."
+        ),
+    )
+    dcp_marker_vulnerable.add_argument(
+        "--n-values", default="14,18,22,26,30,36,42,48,56"
+    )
+    dcp_marker_vulnerable.add_argument("--register-offsets", default="2")
+    dcp_marker_vulnerable.add_argument("--trials-per-row", type=int, default=3)
+    dcp_marker_vulnerable.add_argument(
+        "--selector-multiplier", type=int, default=2
+    )
+    dcp_marker_vulnerable.add_argument("--maximum-offset", type=int, default=1)
+    dcp_marker_vulnerable.add_argument(
+        "--assignment-samples", type=int, default=8192
+    )
+    dcp_marker_vulnerable.add_argument("--fixed-depth", type=int, default=2)
+    dcp_marker_vulnerable.add_argument(
+        "--exact-target-max-n", type=int, default=18
+    )
+    dcp_marker_vulnerable.add_argument(
+        "--exact-trials-per-row", type=int, default=1
+    )
+    dcp_marker_vulnerable.add_argument("--log-multiplier", type=int, default=1)
+    dcp_marker_vulnerable.add_argument("--embedding-scale", type=int, default=4)
+    dcp_marker_vulnerable.add_argument(
+        "--low-constraint-scale", type=int, default=4
+    )
+    dcp_marker_vulnerable.add_argument("--lll-delta", type=float, default=0.75)
+    dcp_marker_vulnerable.add_argument("--seed", type=int, default=0)
+    dcp_marker_vulnerable.add_argument("--no-registry", action="store_true")
+    dcp_marker_vulnerable.add_argument(
+        "--register-existing",
+        action="store_true",
+        help="Register the current expensive sweep artifact without recomputing it.",
+    )
+    dcp_marker_vulnerable.set_defaults(
+        func=command_dcp_marker_vulnerable_coordinates
+    )
+
+    dcp_marker_chart_union = subparsers.add_parser(
+        "dcp-marker-chart-union",
+        help=(
+            "Learn a polynomial union of target-independent logarithmic "
+            "nearest-plane coordinate charts."
+        ),
+    )
+    dcp_marker_chart_union.add_argument(
+        "--n-values", default="14,24,30,36,42,48,56,64"
+    )
+    dcp_marker_chart_union.add_argument("--register-offsets", default="2")
+    dcp_marker_chart_union.add_argument("--trials-per-row", type=int, default=2)
+    dcp_marker_chart_union.add_argument(
+        "--selector-multiplier", type=int, default=2
+    )
+    dcp_marker_chart_union.add_argument(
+        "--chart-budget-power", type=int, default=2
+    )
+    dcp_marker_chart_union.add_argument("--maximum-offset", type=int, default=1)
+    dcp_marker_chart_union.add_argument(
+        "--training-samples", type=int, default=0
+    )
+    dcp_marker_chart_union.add_argument(
+        "--heldout-samples", type=int, default=0
+    )
+    dcp_marker_chart_union.add_argument(
+        "--training-samples-per-n-squared", type=int, default=16
+    )
+    dcp_marker_chart_union.add_argument(
+        "--heldout-samples-per-n-squared", type=int, default=8
+    )
+    dcp_marker_chart_union.add_argument(
+        "--exact-target-max-n", type=int, default=14
+    )
+    dcp_marker_chart_union.add_argument(
+        "--exact-trials-per-row", type=int, default=1
+    )
+    dcp_marker_chart_union.add_argument("--log-multiplier", type=int, default=1)
+    dcp_marker_chart_union.add_argument("--embedding-scale", type=int, default=4)
+    dcp_marker_chart_union.add_argument(
+        "--low-constraint-scale", type=int, default=4
+    )
+    dcp_marker_chart_union.add_argument("--lll-delta", type=float, default=0.75)
+    dcp_marker_chart_union.add_argument("--seed", type=int, default=0)
+    dcp_marker_chart_union.add_argument("--no-registry", action="store_true")
+    dcp_marker_chart_union.set_defaults(func=command_dcp_marker_chart_union)
+
+    dcp_marker_target_beam = subparsers.add_parser(
+        "dcp-marker-target-beam",
+        help=(
+            "Run a source-native target-adaptive polynomial K-best "
+            "nearest-plane baseline."
+        ),
+    )
+    dcp_marker_target_beam.add_argument(
+        "--n-values", default="12,16,20,24,32,40,48"
+    )
+    dcp_marker_target_beam.add_argument("--register-offsets", default="2")
+    dcp_marker_target_beam.add_argument("--trials-per-row", type=int, default=2)
+    dcp_marker_target_beam.add_argument(
+        "--standard-width-powers", default="1,2"
+    )
+    dcp_marker_target_beam.add_argument(
+        "--carry-width-powers", default="1,2"
+    )
+    dcp_marker_target_beam.add_argument("--maximum-offset", type=int, default=1)
+    dcp_marker_target_beam.add_argument(
+        "--exact-legality-max-n", type=int, default=20
+    )
+    dcp_marker_target_beam.add_argument("--log-multiplier", type=int, default=1)
+    dcp_marker_target_beam.add_argument("--embedding-scale", type=int, default=4)
+    dcp_marker_target_beam.add_argument(
+        "--low-constraint-scale", type=int, default=4
+    )
+    dcp_marker_target_beam.add_argument("--lll-delta", type=float, default=0.75)
+    dcp_marker_target_beam.add_argument("--seed", type=int, default=0)
+    dcp_marker_target_beam.add_argument("--no-registry", action="store_true")
+    dcp_marker_target_beam.add_argument(
+        "--register-existing",
+        action="store_true",
+        help="Register the current expensive sweep artifact without recomputing it.",
+    )
+    dcp_marker_target_beam.set_defaults(
+        func=command_dcp_marker_target_beam
+    )
+
     dcp_subset_sum_preconditioned_geometry = subparsers.add_parser(
         "dcp-subset-sum-preconditioned-geometry",
         help="Prove exact residual moments after logarithmic low-bit conditioning and audit count-only geometry claims.",
@@ -7884,6 +8706,37 @@ def build_parser() -> argparse.ArgumentParser:
     dcp_subset_sum_growing_moments.add_argument("--register-offset", type=int, default=2)
     dcp_subset_sum_growing_moments.add_argument("--no-registry", action="store_true")
     dcp_subset_sum_growing_moments.set_defaults(func=command_dcp_subset_sum_growing_moments)
+
+    dcp_subset_sum_growing_chain = subparsers.add_parser(
+        "dcp-subset-sum-growing-chain",
+        help=(
+            "Prove a polynomial lattice-chain bound and obstruct "
+            "near-logarithmic nonnegative subset-sum moments."
+        ),
+    )
+    dcp_subset_sum_growing_chain.add_argument(
+        "--n-values",
+        default=(
+            "65536,16777216,4294967296,"
+            "281474976710656,18446744073709551616"
+        ),
+    )
+    dcp_subset_sum_growing_chain.add_argument("--epsilons", default="0.25")
+    dcp_subset_sum_growing_chain.add_argument(
+        "--near-log-deficits", default="5.0"
+    )
+    dcp_subset_sum_growing_chain.add_argument(
+        "--exact-control-orders", default="2,3,4,5"
+    )
+    dcp_subset_sum_growing_chain.add_argument(
+        "--register-offset", type=int, default=2
+    )
+    dcp_subset_sum_growing_chain.add_argument(
+        "--no-registry", action="store_true"
+    )
+    dcp_subset_sum_growing_chain.set_defaults(
+        func=command_dcp_subset_sum_growing_chain
+    )
 
     dcp_subset_sum_embedding_volume = subparsers.add_parser(
         "dcp-subset-sum-embedding-volume",
@@ -8376,6 +9229,104 @@ def build_parser() -> argparse.ArgumentParser:
     coset_two_copy_frame.add_argument("--n-values", default="4,5,6,7,8")
     coset_two_copy_frame.add_argument("--no-registry", action="store_true")
     coset_two_copy_frame.set_defaults(func=command_coset_two_copy_frame)
+
+    coset_same_hidden_target_law = subparsers.add_parser(
+        "coset-same-hidden-target-law",
+        help=(
+            "Derive the exact coupled-irrep target law for two states "
+            "carrying the same hidden involution."
+        ),
+    )
+    coset_same_hidden_target_law.add_argument(
+        "--n-values",
+        default="5,6,8,9,10",
+    )
+    coset_same_hidden_target_law.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    coset_same_hidden_target_law.set_defaults(
+        func=command_coset_same_hidden_target_law
+    )
+
+    coset_commutant_information = subparsers.add_parser(
+        "coset-commutant-information-no-go",
+        help=(
+            "Prove that diagonal-action commutant outcomes carry zero "
+            "information about the individual hidden involution."
+        ),
+    )
+    coset_commutant_information.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    coset_commutant_information.set_defaults(
+        func=command_coset_commutant_information_obstruction
+    )
+
+    coset_carrier_information = subparsers.add_parser(
+        "coset-carrier-information",
+        help=(
+            "Search carrier-sensitive YJM-plus-separator measurements by "
+            "hidden-involution information and compare strong Fourier."
+        ),
+    )
+    coset_carrier_information.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    coset_carrier_information.set_defaults(
+        func=command_coset_carrier_information_audit
+    )
+
+    coset_strong_fourier_information = subparsers.add_parser(
+        "coset-strong-fourier-information",
+        help=(
+            "Measure naturally weighted one- and two-copy Young-basis strong "
+            "Fourier information across complete involution classes."
+        ),
+    )
+    coset_strong_fourier_information.add_argument(
+        "--n-values",
+        default="3,4,5,6,7,8",
+    )
+    coset_strong_fourier_information.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    coset_strong_fourier_information.set_defaults(
+        func=command_coset_strong_fourier_information
+    )
+
+    coset_entanglement_width = subparsers.add_parser(
+        "coset-entanglement-width",
+        help=(
+            "Apply primary multiregister lower bounds and quarantine "
+            "bounded-copy coset mechanisms."
+        ),
+    )
+    coset_entanglement_width.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    coset_entanglement_width.set_defaults(
+        func=command_coset_entanglement_width_gate
+    )
+
+    coset_growing_width = subparsers.add_parser(
+        "coset-growing-width-architecture",
+        help=(
+            "Type-check growing-copy measurement DAGs against width, "
+            "carrier, covariance, information, and decoder obligations."
+        ),
+    )
+    coset_growing_width.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    coset_growing_width.set_defaults(
+        func=command_coset_growing_width_architecture
+    )
 
     coset_two_copy_transitions = subparsers.add_parser(
         "coset-two-copy-transitions",
@@ -8960,6 +9911,51 @@ def build_parser() -> argparse.ArgumentParser:
     )
     coset_racah_typical_n10_gap_trend.set_defaults(
         func=command_coset_racah_typical_n10_gap_trend
+    )
+
+    coset_racah_typical_source_coverage = subparsers.add_parser(
+        "coset-racah-typical-source-coverage",
+        help=(
+            "Audit natural Fourier source mass and exact target coupling "
+            "coverage of the fixed-source typical separator ladder."
+        ),
+    )
+    coset_racah_typical_source_coverage.add_argument(
+        "--no-registry", action="store_true"
+    )
+    coset_racah_typical_source_coverage.set_defaults(
+        func=command_coset_racah_typical_source_coverage
+    )
+
+    coset_racah_typical_uniform_sources = subparsers.add_parser(
+        "coset-racah-typical-uniform-sources",
+        help=(
+            "Probe the fixed typical separator on every ordered source pair "
+            "and certify unequal-source scalar collisions."
+        ),
+    )
+    coset_racah_typical_uniform_sources.add_argument(
+        "--no-registry", action="store_true"
+    )
+    coset_racah_typical_uniform_sources.set_defaults(
+        func=command_coset_racah_typical_uniform_sources
+    )
+
+    coset_racah_typical_parity_separator = subparsers.add_parser(
+        "coset-racah-typical-parity-separator",
+        help=(
+            "Search parity-complete TT/TC/CT coefficients across every "
+            "small-n ordered source pair."
+        ),
+    )
+    coset_racah_typical_parity_separator.add_argument(
+        "--recompute-n7", action="store_true"
+    )
+    coset_racah_typical_parity_separator.add_argument(
+        "--no-registry", action="store_true"
+    )
+    coset_racah_typical_parity_separator.set_defaults(
+        func=command_coset_racah_typical_parity_separator
     )
 
     coset_recoupling_synthesize = subparsers.add_parser(

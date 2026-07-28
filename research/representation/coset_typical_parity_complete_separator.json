@@ -1,0 +1,192 @@
+{
+  "architecture_contract": {
+    "best_coefficient_map": {
+      "CT0": 0,
+      "CT1": 1,
+      "CT2": -2,
+      "TC0": 0,
+      "TC1": 0,
+      "TC2": 1,
+      "TT0": 0,
+      "TT1": 0
+    },
+    "best_coefficients": [
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      1,
+      -2
+    ],
+    "generator_order": [
+      "TT0",
+      "TT1",
+      "TC0",
+      "TC1",
+      "TC2",
+      "CT0",
+      "CT1",
+      "CT2"
+    ],
+    "lcu_normalization": 4,
+    "orientation_completion": "CTk is obtained from TCk by swapping tensor factors, adding the cycle-left/transposition-right parity missing from the original portfolio.",
+    "partition_dependent_coefficients_used": false,
+    "uniform_finite_coefficient_rule": true
+  },
+  "best_candidate": {
+    "coefficient_map": {
+      "CT0": 0,
+      "CT1": 1,
+      "CT2": -2,
+      "TC0": 0,
+      "TC1": 0,
+      "TC2": 1,
+      "TT0": 0,
+      "TT1": 0
+    },
+    "coefficients": [
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      1,
+      -2
+    ],
+    "collision_count": 0,
+    "minimum_gap_left_source": [
+      4,
+      3
+    ],
+    "minimum_gap_multiplicity": 4,
+    "minimum_gap_n": 7,
+    "minimum_gap_right_source": [
+      4,
+      2,
+      1
+    ],
+    "minimum_gap_target": [
+      4,
+      2,
+      1
+    ],
+    "minimum_numerical_raw_gap": 0.009480178272655695
+  },
+  "claim_gate": {
+    "adjacent_n8_all_source_tested": false,
+    "all_finite_simple_spectra_exactly_certified": false,
+    "all_n_square_free_proved": false,
+    "coherent_uniform_implementation_proved": false,
+    "former_exact_scalar_blocks_repaired": true,
+    "hidden_involution_decoder_proved": false,
+    "inverse_polynomial_normalized_gap_proved": false,
+    "one_sided_fixed_separator_uniform": false,
+    "parity_complete_finite_all_source_candidate_found": true,
+    "reason": "Parity completion repairs the known exact collisions and a single finite coefficient vector numerically splits all blocks through n=7. No n=8 holdout, exact all-block certificate, all-n gap, coherent transform, target outcome law, or decoder follows.",
+    "same_hidden_involution_target_outcome_law_proved": false,
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-07-27T20:43:26.875833+00:00",
+  "exact_repair_records": [
+    {
+      "exact_multiplicity_two_repair_proved": true,
+      "left_source": [
+        3,
+        2,
+        1
+      ],
+      "multiplicity": 2,
+      "n": 6,
+      "old_separator_exact_variance": "0",
+      "parity_complete_exact_mean": "7/120",
+      "parity_complete_exact_variance": "1/36",
+      "right_source": [
+        3,
+        3
+      ],
+      "target": [
+        3,
+        2,
+        1
+      ]
+    },
+    {
+      "exact_multiplicity_two_repair_proved": true,
+      "left_source": [
+        3,
+        2,
+        1
+      ],
+      "multiplicity": 2,
+      "n": 6,
+      "old_separator_exact_variance": "0",
+      "parity_complete_exact_mean": "-7/120",
+      "parity_complete_exact_variance": "1/36",
+      "right_source": [
+        2,
+        2,
+        2
+      ],
+      "target": [
+        3,
+        2,
+        1
+      ]
+    }
+  ],
+  "falsifiers_triggered": [
+    "Coefficient tuning inside the one-sided portfolio cannot repair the exact n=6 scalar blocks.",
+    "The first parity-complete rule selected on n=5,6 fails on two n=7 blocks, so adjacent-size validation is mandatory.",
+    "A different three-term parity-complete rule survives the finite n=5,6,7 discovery set but has no independent n=8 holdout.",
+    "Finite floating-point simple spectra are not an all-n square-free or inverse-gap theorem.",
+    "A separator spectrum alone supplies neither the correlated target outcome law nor a hidden-involution decoder."
+  ],
+  "headline_metrics": {
+    "all_n_square_free_theorem_count": 0,
+    "all_source_nontrivial_block_count": 663,
+    "best_candidate_collision_count": 0,
+    "best_candidate_minimum_numerical_raw_gap": 0.009480178272655695,
+    "coefficient_vector_count": 1744,
+    "coherent_partition_adaptive_separator_count": 0,
+    "collision_free_finite_candidate_count": 216,
+    "finite_n_count": 3,
+    "former_scalar_block_exact_repair_count": 2,
+    "hidden_involution_decoder_count": 0,
+    "inverse_polynomial_normalized_gap_theorem_count": 0,
+    "maximum_n": 7,
+    "minimum_n": 5,
+    "parity_complete_orientation_count": 1,
+    "same_hidden_involution_target_outcome_law_count": 0
+  },
+  "n7_certificate_contract": {
+    "dependency_sha256": {
+      "coset_jucys_murphy_label_transform.py": "09647e1212cb94b122d020ef7d7fa9f2a01b40a7ecb774af0e8ccb50c62c8810",
+      "coset_multiplicity_commutant_search.py": "d41044a0c04eccf72a2f014aabdbc50f219f0fea1b4fd7b6f80a99ca28333be0",
+      "coset_typical_commutant_moment_audit.py": "89df750e9d05f522de976b29c335463acedb470833df8b1654b3c7ee482b55a7",
+      "coset_typical_parity_complete_separator.py": "b9ec51db09f386d413143e4c03556969d109fe1e4a29f119f516addd84e51c6d",
+      "coset_typical_uniform_source_probe.py": "14534ef7c152e49d233b01b0778f978138de624c2d164ba7f80193e47a191cc8"
+    },
+    "finite_scope_only": true,
+    "numerical_tolerance": 1e-09,
+    "search_space": "all primitive coefficient vectors over eight oriented generators with support<=3 and |coefficient|<=2"
+  },
+  "search_contract": {
+    "all_nontrivial_kronecker_targets": true,
+    "coefficient_vector_count": 1744,
+    "dense_spectra": "floating-point Young-basis controls",
+    "exact_scope": "The two former multiplicity-two scalar blocks are repaired by exact character-moment variance. Other simple spectra remain finite numerical evidence.",
+    "finite_sizes": [
+      5,
+      6,
+      7
+    ],
+    "n7_certificate_hash_gated": true,
+    "ordered_source_pairs": true,
+    "search_space": "all primitive coefficient vectors over eight oriented generators with support<=3 and |coefficient|<=2"
+  },
+  "status": "parity-complete-all-source-finite-candidate-survives-n5-through-n7-awaits-n8-and-all-n-proof",
+  "summary": "Searched 1744 primitive rules over 663 all-source blocks through n=7. The best parity-complete rule has zero finite collisions and minimum numerical raw gap 0.00948018; the former scalar blocks are exactly repaired."
+}

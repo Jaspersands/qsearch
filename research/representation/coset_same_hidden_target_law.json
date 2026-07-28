@@ -1,0 +1,3308 @@
+{
+  "claim_gate": {
+    "coherent_kronecker_target_measurement_proved": false,
+    "dimension_weighted_coupling_is_target_law": false,
+    "finite_exact_normalization_verified": true,
+    "hidden_involution_decoder_proved": false,
+    "multiplicity_separator_implemented_coherently": false,
+    "reason": "The exact law closes probability accounting but not the coherent recoupling, multiplicity measurement, information, decoder, or classical-separation obligations.",
+    "same_hidden_involution_target_outcome_law_proved": true,
+    "speedup_claim_allowed": false,
+    "target_label_reveals_hidden_involution": false
+  },
+  "created_at": "2026-07-27T20:50:55.377790+00:00",
+  "falsifiers_triggered": [
+    "Dimension-weighted Kronecker coupling is not the target law for two states carrying the same hidden involution.",
+    "A source-pair collision mass is only an upper envelope; the actual collision target mass must include the coupled target.",
+    "An exact target-frequency formula does not implement the coherent internal Kronecker transform.",
+    "Target labels alone are conjugacy-class invariant and do not identify the individual hidden involution."
+  ],
+  "headline_metrics": {
+    "coherent_kronecker_target_measurement_theorem_count": 0,
+    "dimension_coupling_reference_mismatch_record_count": 8,
+    "exact_normalization_verified_record_count": 8,
+    "fixed_source_coverage_correction_count": 6,
+    "frame_scalar_identity_verified_record_count": 8,
+    "general_exact_character_formula_theorem_count": 1,
+    "hidden_involution_decoder_count": 0,
+    "maximum_expected_conditional_tv_from_dimension_coupling": 0.09777777777777778,
+    "maximum_n10_same_hidden_certified_conditional_probability": 0.013583713107638888,
+    "maximum_natural_nontrivial_multiplicity_mass": 0.9965084673204702,
+    "maximum_scalar_collision_source_pair_mass": 0.024691358024691357,
+    "maximum_scalar_collision_target_joint_mass": 0.009876543209876543,
+    "maximum_source_pair_conditional_tv_from_dimension_coupling": 0.46,
+    "minimum_n10_same_hidden_certified_conditional_probability": 0.011389838324652778,
+    "same_hidden_target_law_record_count": 8
+  },
+  "records": [
+    {
+      "accessible_ordered_source_pair_count": 49,
+      "accessible_source_label_count": 7,
+      "conditional_normalization_failure_count": 0,
+      "exact_expected_conditional_tv_from_dimension_coupling": "22/225",
+      "exact_maximum_source_pair_tv_from_dimension_coupling": "2/9",
+      "exact_natural_joint_probability_sum": "1",
+      "exact_natural_nontrivial_multiplicity_mass": "2/25",
+      "exact_scalar_collision_source_pair_mass": "0",
+      "exact_scalar_collision_target_joint_mass": "0",
+      "exact_source_label_probability_sum": "1",
+      "expected_conditional_tv_from_dimension_coupling": 0.09777777777777778,
+      "fixed_source_coverage_correction": null,
+      "frame_identity_failure_count": 0,
+      "involution_type": "near_fixed_point_free_involution",
+      "maximum_source_pair_tv_from_dimension_coupling": 0.2222222222222222,
+      "maximum_tv_left_source_partition": [
+        3,
+        1,
+        1
+      ],
+      "maximum_tv_right_source_partition": [
+        3,
+        1,
+        1
+      ],
+      "n": 5,
+      "natural_nontrivial_multiplicity_mass": 0.08,
+      "negative_probability_count": 0,
+      "partition_count": 7,
+      "scalar_collision_source_pair_mass": 0.0,
+      "scalar_collision_target_joint_mass": 0.0,
+      "status": "exact-target-law-normalized-collision-target-mass-audited",
+      "supported_target_sector_count": 143,
+      "top_natural_target_sectors": [
+        {
+          "conditional_target_probability": 0.2222222222222222,
+          "dimension_weighted_coupling_mass": 0.2,
+          "exact_conditional_target_probability": "2/9",
+          "exact_dimension_weighted_coupling_mass": "1/5",
+          "exact_natural_joint_probability": "1/72",
+          "exact_source_pair_probability": "1/16",
+          "frame_scalar": "8/5",
+          "kronecker_multiplicity": 1,
+          "left_source_partition": [
+            2,
+            2,
+            1
+          ],
+          "natural_joint_probability": 0.013888888888888888,
+          "right_source_partition": [
+            2,
+            2,
+            1
+          ],
+          "source_pair_probability": 0.0625,
+          "target_partition": [
+            2,
+            2,
+            1
+          ]
+        },
+        {
+          "conditional_target_probability": 0.2222222222222222,
+          "dimension_weighted_coupling_mass": 0.2,
+          "exact_conditional_target_probability": "2/9",
+          "exact_dimension_weighted_coupling_mass": "1/5",
+          "exact_natural_joint_probability": "1/72",
+          "exact_source_pair_probability": "1/16",
+          "frame_scalar": "8/5",
+          "kronecker_multiplicity": 1,
+          "left_source_partition": [
+            2,
+            2,
+            1
+          ],
+          "natural_joint_probability": 0.013888888888888888,
+          "right_source_partition": [
+            2,
+            2,
+            1
+          ],
+          "source_pair_probability": 0.0625,
+          "target_partition": [
+            3,
+            2
+          ]
+        },
+        {
+          "conditional_target_probability": 0.2222222222222222,
+          "dimension_weighted_coupling_mass": 0.2,
+          "exact_conditional_target_probability": "2/9",
+          "exact_dimension_weighted_coupling_mass": "1/5",
+          "exact_natural_joint_probability": "1/72",
+          "exact_source_pair_probability": "1/16",
+          "frame_scalar": "8/5",
+          "kronecker_multiplicity": 1,
+          "left_source_partition": [
+            2,
+            2,
+            1
+          ],
+          "natural_joint_probability": 0.013888888888888888,
+          "right_source_partition": [
+            3,
+            2
+          ],
+          "source_pair_probability": 0.0625,
+          "target_partition": [
+            2,
+            2,
+            1
+          ]
+        },
+        {
+          "conditional_target_probability": 0.2222222222222222,
+          "dimension_weighted_coupling_mass": 0.2,
+          "exact_conditional_target_probability": "2/9",
+          "exact_dimension_weighted_coupling_mass": "1/5",
+          "exact_natural_joint_probability": "1/72",
+          "exact_source_pair_probability": "1/16",
+          "frame_scalar": "8/5",
+          "kronecker_multiplicity": 1,
+          "left_source_partition": [
+            2,
+            2,
+            1
+          ],
+          "natural_joint_probability": 0.013888888888888888,
+          "right_source_partition": [
+            3,
+            2
+          ],
+          "source_pair_probability": 0.0625,
+          "target_partition": [
+            3,
+            2
+          ]
+        },
+        {
+          "conditional_target_probability": 0.2222222222222222,
+          "dimension_weighted_coupling_mass": 0.2,
+          "exact_conditional_target_probability": "2/9",
+          "exact_dimension_weighted_coupling_mass": "1/5",
+          "exact_natural_joint_probability": "1/72",
+          "exact_source_pair_probability": "1/16",
+          "frame_scalar": "8/5",
+          "kronecker_multiplicity": 1,
+          "left_source_partition": [
+            3,
+            2
+          ],
+          "natural_joint_probability": 0.013888888888888888,
+          "right_source_partition": [
+            2,
+            2,
+            1
+          ],
+          "source_pair_probability": 0.0625,
+          "target_partition": [
+            2,
+            2,
+            1
+          ]
+        },
+        {
+          "conditional_target_probability": 0.2222222222222222,
+          "dimension_weighted_coupling_mass": 0.2,
+          "exact_conditional_target_probability": "2/9",
+          "exact_dimension_weighted_coupling_mass": "1/5",
+          "exact_natural_joint_probability": "1/72",
+          "exact_source_pair_probability": "1/16",
+          "frame_scalar": "8/5",
+          "kronecker_multiplicity": 1,
+          "left_source_partition": [
+            3,
+            2
+          ],
+          "natural_joint_probability": 0.013888888888888888,
+          "right_source_partition": [
+            2,
+            2,
+            1
+          ],
+          "source_pair_probability": 0.0625,
+          "target_partition": [
+            3,
+            2
+          ]
+        },
+        {
+          "conditional_target_probability": 0.2222222222222222,
+          "dimension_weighted_coupling_mass": 0.2,
+          "exact_conditional_target_probability": "2/9",
+          "exact_dimension_weighted_coupling_mass": "1/5",
+          "exact_natural_joint_probability": "1/72",
+          "exact_source_pair_probability": "1/16",
+          "frame_scalar": "8/5",
+          "kronecker_multiplicity": 1,
+          "left_source_partition": [
+            3,
+            2
+          ],
+          "natural_joint_probability": 0.013888888888888888,
+          "right_source_partition": [
+            3,
+            2
+          ],
+          "source_pair_probability": 0.0625,
+          "target_partition": [
+            2,
+            2,
+            1
+          ]
+        },
+        {
+          "conditional_target_probability": 0.2222222222222222,
+          "dimension_weighted_coupling_mass": 0.2,
+          "exact_conditional_target_probability": "2/9",
+          "exact_dimension_weighted_coupling_mass": "1/5",
+          "exact_natural_joint_probability": "1/72",
+          "exact_source_pair_probability": "1/16",
+          "frame_scalar": "8/5",
+          "kronecker_multiplicity": 1,
+          "left_source_partition": [
+            3,
+            2
+          ],
+          "natural_joint_probability": 0.013888888888888888,
+          "right_source_partition": [
+            3,
+            2
+          ],
+          "source_pair_probability": 0.0625,
+          "target_partition": [
+            3,
+            2
+          ]
+        },
+        {
+          "conditional_target_probability": 0.26666666666666666,
+          "dimension_weighted_coupling_mass": 0.4,
+          "exact_conditional_target_probability": "4/15",
+          "exact_dimension_weighted_coupling_mass": "2/5",
+          "exact_natural_joint_probability": "1/75",
+          "exact_source_pair_probability": "1/20",
+          "frame_scalar": "8/15",
+          "kronecker_multiplicity": 2,
+          "left_source_partition": [
+            2,
+            2,
+            1
+          ],
+          "natural_joint_probability": 0.013333333333333334,
+          "right_source_partition": [
+            3,
+            1,
+            1
+          ],
+          "source_pair_probability": 0.05,
+          "target_partition": [
+            3,
+            1,
+            1
+          ]
+        },
+        {
+          "conditional_target_probability": 0.26666666666666666,
+          "dimension_weighted_coupling_mass": 0.4,
+          "exact_conditional_target_probability": "4/15",
+          "exact_dimension_weighted_coupling_mass": "2/5",
+          "exact_natural_joint_probability": "1/75",
+          "exact_source_pair_probability": "1/20",
+          "frame_scalar": "8/15",
+          "kronecker_multiplicity": 2,
+          "left_source_partition": [
+            3,
+            1,
+            1
+          ],
+          "natural_joint_probability": 0.013333333333333334,
+          "right_source_partition": [
+            2,
+            2,
+            1
+          ],
+          "source_pair_probability": 0.05,
+          "target_partition": [
+            3,
+            1,
+            1
+          ]
+        },
+        {
+          "conditional_target_probability": 0.3333333333333333,
+          "dimension_weighted_coupling_mass": 0.2777777777777778,
+          "exact_conditional_target_probability": "1/3",
+          "exact_dimension_weighted_coupling_mass": "5/18",
+          "exact_natural_joint_probability": "1/75",
+          "exact_source_pair_probability": "1/25",
+          "frame_scalar": "8/15",
+          "kronecker_multiplicity": 2,
+          "left_source_partition": [
+            3,
+            1,
+            1
+          ],
+          "natural_joint_probability": 0.013333333333333334,
+          "right_source_partition": [
+            3,
+            1,
+            1
+          ],
+          "source_pair_probability": 0.04,
+          "target_partition": [
+            2,
+            2,
+            1
+          ]
+        },
+        {
+          "conditional_target_probability": 0.3333333333333333,
+          "dimension_weighted_coupling_mass": 0.2777777777777778,
+          "exact_conditional_target_probability": "1/3",
+          "exact_dimension_weighted_coupling_mass": "5/18",
+          "exact_natural_joint_probability": "1/75",
+          "exact_source_pair_probability": "1/25",
+          "frame_scalar": "8/15",
+          "kronecker_multiplicity": 2,
+          "left_source_partition": [
+            3,
+            1,
+            1
+          ],
+          "natural_joint_probability": 0.013333333333333334,
+          "right_source_partition": [
+            3,
+            1,
+            1
+          ],
+          "source_pair_probability": 0.04,
+          "target_partition": [
+            3,
+            2
+          ]
+        }
+      ],
+      "transposition_count": 2,
+      "zero_probability_supported_sector_count": 1
+    },
+    {
+      "accessible_ordered_source_pair_count": 100,
+      "accessible_source_label_count": 10,
+      "conditional_normalization_failure_count": 0,
+      "exact_expected_conditional_tv_from_dimension_coupling": "6119/64800",
+      "exact_maximum_source_pair_tv_from_dimension_coupling": "23/50",
+      "exact_natural_joint_probability_sum": "1",
+      "exact_natural_nontrivial_multiplicity_mass": "40021/64800",
+      "exact_scalar_collision_source_pair_mass": "2/81",
+      "exact_scalar_collision_target_joint_mass": "4/405",
+      "exact_source_label_probability_sum": "1",
+      "expected_conditional_tv_from_dimension_coupling": 0.094429012345679,
+      "fixed_source_coverage_correction": null,
+      "frame_identity_failure_count": 0,
+      "involution_type": "fixed_point_free_involution",
+      "maximum_source_pair_tv_from_dimension_coupling": 0.46,
+      "maximum_tv_left_source_partition": [
+        3,
+        3
+      ],
+      "maximum_tv_right_source_partition": [
+        3,
+        3
+      ],
+      "n": 6,
+      "natural_nontrivial_multiplicity_mass": 0.617608024691358,
+      "negative_probability_count": 0,
+      "partition_count": 11,
+      "scalar_collision_source_pair_mass": 0.024691358024691357,
+      "scalar_collision_target_joint_mass": 0.009876543209876543,
+      "status": "exact-target-law-normalized-collision-target-mass-audited",
+      "supported_target_sector_count": 490,
+      "top_natural_target_sectors": [
+        {
+          "conditional_target_probability": 0.3125,
+          "dimension_weighted_coupling_mass": 0.3125,
+          "exact_conditional_target_probability": "5/16",
+          "exact_dimension_weighted_coupling_mass": "5/16",
+          "exact_natural_joint_probability": "16/405",
+          "exact_source_pair_probability": "256/2025",
+          "frame_scalar": "1",
+          "kronecker_multiplicity": 5,
+          "left_source_partition": [
+            3,
+            2,
+            1
+          ],
+          "natural_joint_probability": 0.03950617283950617,
+          "right_source_partition": [
+            3,
+            2,
+            1
+          ],
+          "source_pair_probability": 0.12641975308641976,
+          "target_partition": [
+            3,
+            2,
+            1
+          ]
+        },
+        {
+          "conditional_target_probability": 0.4,
+          "dimension_weighted_coupling_mass": 0.4,
+          "exact_conditional_target_probability": "2/5",
+          "exact_dimension_weighted_coupling_mass": "2/5",
+          "exact_natural_joint_probability": "16/675",
+          "exact_source_pair_probability": "8/135",
+          "frame_scalar": "6/5",
+          "kronecker_multiplicity": 4,
+          "left_source_partition": [
+            3,
+            1,
+            1,
+            1
+          ],
+          "natural_joint_probability": 0.023703703703703703,
+          "right_source_partition": [
+            3,
+            2,
+            1
+          ],
+          "source_pair_probability": 0.05925925925925926,
+          "target_partition": [
+            3,
+            2,
+            1
+          ]
+        },
+        {
+          "conditional_target_probability": 0.4,
+          "dimension_weighted_coupling_mass": 0.4,
+          "exact_conditional_target_probability": "2/5",
+          "exact_dimension_weighted_coupling_mass": "2/5",
+          "exact_natural_joint_probability": "16/675",
+          "exact_source_pair_probability": "8/135",
+          "frame_scalar": "6/5",
+          "kronecker_multiplicity": 4,
+          "left_source_partition": [
+            3,
+            2,
+            1
+          ],
+          "natural_joint_probability": 0.023703703703703703,
+          "right_source_partition": [
+            3,
+            1,
+            1,
+            1
+          ],
+          "source_pair_probability": 0.05925925925925926,
+          "target_partition": [
+            3,
+            2,
+            1
+          ]
+        },
+        {
+          "conditional_target_probability": 0.1875,
+          "dimension_weighted_coupling_mass": 0.15625,
+          "exact_conditional_target_probability": "3/16",
+          "exact_dimension_weighted_coupling_mass": "5/32",
+          "exact_natural_joint_probability": "16/675",
+          "exact_source_pair_probability": "256/2025",
+          "frame_scalar": "6/5",
+          "kronecker_multiplicity": 4,
+          "left_source_partition": [
+            3,
+            2,
+            1
+          ],
+          "natural_joint_probability": 0.023703703703703703,
+          "right_source_partition": [
+            3,
+            2,
+            1
+          ],
+          "source_pair_probability": 0.12641975308641976,
+          "target_partition": [
+            3,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "conditional_target_probability": 0.140625,
+          "dimension_weighted_coupling_mass": 0.10546875,
+          "exact_conditional_target_probability": "9/64",
+          "exact_dimension_weighted_coupling_mass": "27/256",
+          "exact_natural_joint_probability": "4/225",
+          "exact_source_pair_probability": "256/2025",
+          "frame_scalar": "4/3",
+          "kronecker_multiplicity": 3,
+          "left_source_partition": [
+            3,
+            2,
+            1
+          ],
+          "natural_joint_probability": 0.017777777777777778,
+          "right_source_partition": [
+            3,
+            2,
+            1
+          ],
+          "source_pair_probability": 0.12641975308641976,
+          "target_partition": [
+            4,
+            2
+          ]
+        },
+        {
+          "conditional_target_probability": 0.3333333333333333,
+          "dimension_weighted_coupling_mass": 0.3333333333333333,
+          "exact_conditional_target_probability": "1/3",
+          "exact_dimension_weighted_coupling_mass": "1/3",
+          "exact_natural_joint_probability": "4/225",
+          "exact_source_pair_probability": "4/75",
+          "frame_scalar": "4/3",
+          "kronecker_multiplicity": 3,
+          "left_source_partition": [
+            3,
+            2,
+            1
+          ],
+          "natural_joint_probability": 0.017777777777777778,
+          "right_source_partition": [
+            4,
+            2
+          ],
+          "source_pair_probability": 0.05333333333333334,
+          "target_partition": [
+            3,
+            2,
+            1
+          ]
+        },
+        {
+          "conditional_target_probability": 0.3333333333333333,
+          "dimension_weighted_coupling_mass": 0.3333333333333333,
+          "exact_conditional_target_probability": "1/3",
+          "exact_dimension_weighted_coupling_mass": "1/3",
+          "exact_natural_joint_probability": "4/225",
+          "exact_source_pair_probability": "4/75",
+          "frame_scalar": "4/3",
+          "kronecker_multiplicity": 3,
+          "left_source_partition": [
+            4,
+            2
+          ],
+          "natural_joint_probability": 0.017777777777777778,
+          "right_source_partition": [
+            3,
+            2,
+            1
+          ],
+          "source_pair_probability": 0.05333333333333334,
+          "target_partition": [
+            3,
+            2,
+            1
+          ]
+        },
+        {
+          "conditional_target_probability": 0.125,
+          "dimension_weighted_coupling_mass": 0.15625,
+          "exact_conditional_target_probability": "1/8",
+          "exact_dimension_weighted_coupling_mass": "5/32",
+          "exact_natural_joint_probability": "32/2025",
+          "exact_source_pair_probability": "256/2025",
+          "frame_scalar": "4/5",
+          "kronecker_multiplicity": 4,
+          "left_source_partition": [
+            3,
+            2,
+            1
+          ],
+          "natural_joint_probability": 0.01580246913580247,
+          "right_source_partition": [
+            3,
+            2,
+            1
+          ],
+          "source_pair_probability": 0.12641975308641976,
+          "target_partition": [
+            4,
+            1,
+            1
+          ]
+        },
+        {
+          "conditional_target_probability": 0.4,
+          "dimension_weighted_coupling_mass": 0.4,
+          "exact_conditional_target_probability": "2/5",
+          "exact_dimension_weighted_coupling_mass": "2/5",
+          "exact_natural_joint_probability": "32/2025",
+          "exact_source_pair_probability": "16/405",
+          "frame_scalar": "4/5",
+          "kronecker_multiplicity": 4,
+          "left_source_partition": [
+            3,
+            2,
+            1
+          ],
+          "natural_joint_probability": 0.01580246913580247,
+          "right_source_partition": [
+            4,
+            1,
+            1
+          ],
+          "source_pair_probability": 0.03950617283950617,
+          "target_partition": [
+            3,
+            2,
+            1
+          ]
+        },
+        {
+          "conditional_target_probability": 0.4,
+          "dimension_weighted_coupling_mass": 0.4,
+          "exact_conditional_target_probability": "2/5",
+          "exact_dimension_weighted_coupling_mass": "2/5",
+          "exact_natural_joint_probability": "32/2025",
+          "exact_source_pair_probability": "16/405",
+          "frame_scalar": "4/5",
+          "kronecker_multiplicity": 4,
+          "left_source_partition": [
+            4,
+            1,
+            1
+          ],
+          "natural_joint_probability": 0.01580246913580247,
+          "right_source_partition": [
+            3,
+            2,
+            1
+          ],
+          "source_pair_probability": 0.03950617283950617,
+          "target_partition": [
+            3,
+            2,
+            1
+          ]
+        },
+        {
+          "conditional_target_probability": 0.3333333333333333,
+          "dimension_weighted_coupling_mass": 0.3333333333333333,
+          "exact_conditional_target_probability": "1/3",
+          "exact_dimension_weighted_coupling_mass": "1/3",
+          "exact_natural_joint_probability": "2/225",
+          "exact_source_pair_probability": "2/75",
+          "frame_scalar": "2/3",
+          "kronecker_multiplicity": 3,
+          "left_source_partition": [
+            2,
+            2,
+            1,
+            1
+          ],
+          "natural_joint_probability": 0.008888888888888889,
+          "right_source_partition": [
+            3,
+            2,
+            1
+          ],
+          "source_pair_probability": 0.02666666666666667,
+          "target_partition": [
+            3,
+            2,
+            1
+          ]
+        },
+        {
+          "conditional_target_probability": 0.3333333333333333,
+          "dimension_weighted_coupling_mass": 0.3333333333333333,
+          "exact_conditional_target_probability": "1/3",
+          "exact_dimension_weighted_coupling_mass": "1/3",
+          "exact_natural_joint_probability": "2/225",
+          "exact_source_pair_probability": "2/75",
+          "frame_scalar": "2/3",
+          "kronecker_multiplicity": 3,
+          "left_source_partition": [
+            3,
+            2,
+            1
+          ],
+          "natural_joint_probability": 0.008888888888888889,
+          "right_source_partition": [
+            2,
+            2,
+            1,
+            1
+          ],
+          "source_pair_probability": 0.02666666666666667,
+          "target_partition": [
+            3,
+            2,
+            1
+          ]
+        }
+      ],
+      "transposition_count": 3,
+      "zero_probability_supported_sector_count": 15
+    },
+    {
+      "accessible_ordered_source_pair_count": 484,
+      "accessible_source_label_count": 22,
+      "conditional_normalization_failure_count": 0,
+      "exact_expected_conditional_tv_from_dimension_coupling": "323969/14515200",
+      "exact_maximum_source_pair_tv_from_dimension_coupling": "146/3675",
+      "exact_natural_joint_probability_sum": "1",
+      "exact_natural_nontrivial_multiplicity_mass": "47876891/50803200",
+      "exact_scalar_collision_source_pair_mass": "0",
+      "exact_scalar_collision_target_joint_mass": "0",
+      "exact_source_label_probability_sum": "1",
+      "expected_conditional_tv_from_dimension_coupling": 0.022319292879188712,
+      "fixed_source_coverage_correction": {
+        "all_supported_targets_certified": true,
+        "dimension_weighted_certified_conditional_mass": 1.0,
+        "exact_dimension_weighted_certified_conditional_mass": "1",
+        "exact_same_hidden_certified_conditional_probability": "1",
+        "exact_same_hidden_natural_joint_certified_probability": "9/256",
+        "exact_source_pair_conditional_total_variation": "2588/99225",
+        "exact_source_pair_probability": "9/256",
+        "largest_unresolved_same_hidden_conditional_probability": 0.0,
+        "largest_unresolved_target_partition": null,
+        "same_hidden_certified_conditional_probability": 1.0,
+        "same_hidden_natural_joint_certified_probability": 0.03515625,
+        "source_dimension": 90,
+        "source_pair_conditional_total_variation": 0.026082136558327036,
+        "source_pair_probability": 0.03515625,
+        "source_partition": [
+          4,
+          2,
+          1,
+          1
+        ]
+      },
+      "frame_identity_failure_count": 0,
+      "involution_type": "partial_matching",
+      "maximum_source_pair_tv_from_dimension_coupling": 0.03972789115646259,
+      "maximum_tv_left_source_partition": [
+        5,
+        1,
+        1,
+        1
+      ],
+      "maximum_tv_right_source_partition": [
+        5,
+        1,
+        1,
+        1
+      ],
+      "n": 8,
+      "natural_nontrivial_multiplicity_mass": 0.9423991205278408,
+      "negative_probability_count": 0,
+      "partition_count": 22,
+      "scalar_collision_source_pair_mass": 0.0,
+      "scalar_collision_target_joint_mass": 0.0,
+      "status": "exact-target-law-normalized-collision-target-mass-audited",
+      "supported_target_sector_count": 5048,
+      "top_natural_target_sectors": [
+        {
+          "conditional_target_probability": 0.17346938775510204,
+          "dimension_weighted_coupling_mass": 0.18888888888888888,
+          "exact_conditional_target_probability": "17/98",
+          "exact_dimension_weighted_coupling_mass": "17/90",
+          "exact_natural_joint_probability": "153/25088",
+          "exact_source_pair_probability": "9/256",
+          "frame_scalar": "4/5",
+          "kronecker_multiplicity": 17,
+          "left_source_partition": [
+            4,
+            2,
+            1,
+            1
+          ],
+          "natural_joint_probability": 0.006098533163265306,
+          "right_source_partition": [
+            4,
+            2,
+            1,
+            1
+          ],
+          "source_pair_probability": 0.03515625,
+          "target_partition": [
+            4,
+            2,
+            1,
+            1
+          ]
+        },
+        {
+          "conditional_target_probability": 0.1865079365079365,
+          "dimension_weighted_coupling_mass": 0.2,
+          "exact_conditional_target_probability": "47/252",
+          "exact_dimension_weighted_coupling_mass": "1/5",
+          "exact_natural_joint_probability": "47/10752",
+          "exact_source_pair_probability": "3/128",
+          "frame_scalar": "94/105",
+          "kronecker_multiplicity": 14,
+          "left_source_partition": [
+            3,
+            2,
+            2,
+            1
+          ],
+          "natural_joint_probability": 0.004371279761904762,
+          "right_source_partition": [
+            4,
+            2,
+            1,
+            1
+          ],
+          "source_pair_probability": 0.0234375,
+          "target_partition": [
+            4,
+            2,
+            1,
+            1
+          ]
+        },
+        {
+          "conditional_target_probability": 0.1865079365079365,
+          "dimension_weighted_coupling_mass": 0.2,
+          "exact_conditional_target_probability": "47/252",
+          "exact_dimension_weighted_coupling_mass": "1/5",
+          "exact_natural_joint_probability": "47/10752",
+          "exact_source_pair_probability": "3/128",
+          "frame_scalar": "94/105",
+          "kronecker_multiplicity": 14,
+          "left_source_partition": [
+            4,
+            2,
+            1,
+            1
+          ],
+          "natural_joint_probability": 0.004371279761904762,
+          "right_source_partition": [
+            3,
+            2,
+            2,
+            1
+          ],
+          "source_pair_probability": 0.0234375,
+          "target_partition": [
+            4,
+            2,
+            1,
+            1
+          ]
+        },
+        {
+          "conditional_target_probability": 0.12433862433862433,
+          "dimension_weighted_coupling_mass": 0.12098765432098765,
+          "exact_conditional_target_probability": "47/378",
+          "exact_dimension_weighted_coupling_mass": "49/405",
+          "exact_natural_joint_probability": "47/10752",
+          "exact_source_pair_probability": "9/256",
+          "frame_scalar": "94/105",
+          "kronecker_multiplicity": 14,
+          "left_source_partition": [
+            4,
+            2,
+            1,
+            1
+          ],
+          "natural_joint_probability": 0.004371279761904762,
+          "right_source_partition": [
+            4,
+            2,
+            1,
+            1
+          ],
+          "source_pair_probability": 0.03515625,
+          "target_partition": [
+            3,
+            2,
+            2,
+            1
+          ]
+        },
+        {
+          "conditional_target_probability": 0.12433862433862433,
+          "dimension_weighted_coupling_mass": 0.12098765432098765,
+          "exact_conditional_target_probability": "47/378",
+          "exact_dimension_weighted_coupling_mass": "49/405",
+          "exact_natural_joint_probability": "47/10752",
+          "exact_source_pair_probability": "9/256",
+          "frame_scalar": "94/105",
+          "kronecker_multiplicity": 14,
+          "left_source_partition": [
+            4,
+            2,
+            1,
+            1
+          ],
+          "natural_joint_probability": 0.004371279761904762,
+          "right_source_partition": [
+            4,
+            2,
+            1,
+            1
+          ],
+          "source_pair_probability": 0.03515625,
+          "target_partition": [
+            4,
+            3,
+            1
+          ]
+        },
+        {
+          "conditional_target_probability": 0.1865079365079365,
+          "dimension_weighted_coupling_mass": 0.2,
+          "exact_conditional_target_probability": "47/252",
+          "exact_dimension_weighted_coupling_mass": "1/5",
+          "exact_natural_joint_probability": "47/10752",
+          "exact_source_pair_probability": "3/128",
+          "frame_scalar": "94/105",
+          "kronecker_multiplicity": 14,
+          "left_source_partition": [
+            4,
+            2,
+            1,
+            1
+          ],
+          "natural_joint_probability": 0.004371279761904762,
+          "right_source_partition": [
+            4,
+            3,
+            1
+          ],
+          "source_pair_probability": 0.0234375,
+          "target_partition": [
+            4,
+            2,
+            1,
+            1
+          ]
+        },
+        {
+          "conditional_target_probability": 0.1865079365079365,
+          "dimension_weighted_coupling_mass": 0.2,
+          "exact_conditional_target_probability": "47/252",
+          "exact_dimension_weighted_coupling_mass": "1/5",
+          "exact_natural_joint_probability": "47/10752",
+          "exact_source_pair_probability": "3/128",
+          "frame_scalar": "94/105",
+          "kronecker_multiplicity": 14,
+          "left_source_partition": [
+            4,
+            3,
+            1
+          ],
+          "natural_joint_probability": 0.004371279761904762,
+          "right_source_partition": [
+            4,
+            2,
+            1,
+            1
+          ],
+          "source_pair_probability": 0.0234375,
+          "target_partition": [
+            4,
+            2,
+            1,
+            1
+          ]
+        },
+        {
+          "conditional_target_probability": 0.18861607142857142,
+          "dimension_weighted_coupling_mass": 0.203125,
+          "exact_conditional_target_probability": "169/896",
+          "exact_dimension_weighted_coupling_mass": "13/64",
+          "exact_natural_joint_probability": "169/47040",
+          "exact_source_pair_probability": "2/105",
+          "frame_scalar": "13/15",
+          "kronecker_multiplicity": 13,
+          "left_source_partition": [
+            3,
+            2,
+            1,
+            1,
+            1
+          ],
+          "natural_joint_probability": 0.003592687074829932,
+          "right_source_partition": [
+            4,
+            2,
+            1,
+            1
+          ],
+          "source_pair_probability": 0.01904761904761905,
+          "target_partition": [
+            4,
+            2,
+            1,
+            1
+          ]
+        },
+        {
+          "conditional_target_probability": 0.18861607142857142,
+          "dimension_weighted_coupling_mass": 0.203125,
+          "exact_conditional_target_probability": "169/896",
+          "exact_dimension_weighted_coupling_mass": "13/64",
+          "exact_natural_joint_probability": "169/47040",
+          "exact_source_pair_probability": "2/105",
+          "frame_scalar": "13/15",
+          "kronecker_multiplicity": 13,
+          "left_source_partition": [
+            4,
+            2,
+            1,
+            1
+          ],
+          "natural_joint_probability": 0.003592687074829932,
+          "right_source_partition": [
+            3,
+            2,
+            1,
+            1,
+            1
+          ],
+          "source_pair_probability": 0.01904761904761905,
+          "target_partition": [
+            4,
+            2,
+            1,
+            1
+          ]
+        },
+        {
+          "conditional_target_probability": 0.10219198790627362,
+          "dimension_weighted_coupling_mass": 0.10271604938271604,
+          "exact_conditional_target_probability": "676/6615",
+          "exact_dimension_weighted_coupling_mass": "208/2025",
+          "exact_natural_joint_probability": "169/47040",
+          "exact_source_pair_probability": "9/256",
+          "frame_scalar": "13/15",
+          "kronecker_multiplicity": 13,
+          "left_source_partition": [
+            4,
+            2,
+            1,
+            1
+          ],
+          "natural_joint_probability": 0.003592687074829932,
+          "right_source_partition": [
+            4,
+            2,
+            1,
+            1
+          ],
+          "source_pair_probability": 0.03515625,
+          "target_partition": [
+            3,
+            2,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "conditional_target_probability": 0.10219198790627362,
+          "dimension_weighted_coupling_mass": 0.10271604938271604,
+          "exact_conditional_target_probability": "676/6615",
+          "exact_dimension_weighted_coupling_mass": "208/2025",
+          "exact_natural_joint_probability": "169/47040",
+          "exact_source_pair_probability": "9/256",
+          "frame_scalar": "13/15",
+          "kronecker_multiplicity": 13,
+          "left_source_partition": [
+            4,
+            2,
+            1,
+            1
+          ],
+          "natural_joint_probability": 0.003592687074829932,
+          "right_source_partition": [
+            4,
+            2,
+            1,
+            1
+          ],
+          "source_pair_probability": 0.03515625,
+          "target_partition": [
+            5,
+            2,
+            1
+          ]
+        },
+        {
+          "conditional_target_probability": 0.18861607142857142,
+          "dimension_weighted_coupling_mass": 0.203125,
+          "exact_conditional_target_probability": "169/896",
+          "exact_dimension_weighted_coupling_mass": "13/64",
+          "exact_natural_joint_probability": "169/47040",
+          "exact_source_pair_probability": "2/105",
+          "frame_scalar": "13/15",
+          "kronecker_multiplicity": 13,
+          "left_source_partition": [
+            4,
+            2,
+            1,
+            1
+          ],
+          "natural_joint_probability": 0.003592687074829932,
+          "right_source_partition": [
+            5,
+            2,
+            1
+          ],
+          "source_pair_probability": 0.01904761904761905,
+          "target_partition": [
+            4,
+            2,
+            1,
+            1
+          ]
+        }
+      ],
+      "transposition_count": 2,
+      "zero_probability_supported_sector_count": 0
+    },
+    {
+      "accessible_ordered_source_pair_count": 484,
+      "accessible_source_label_count": 22,
+      "conditional_normalization_failure_count": 0,
+      "exact_expected_conditional_tv_from_dimension_coupling": "454861/12700800",
+      "exact_maximum_source_pair_tv_from_dimension_coupling": "8/63",
+      "exact_natural_joint_probability_sum": "1",
+      "exact_natural_nontrivial_multiplicity_mass": "9597187/10160640",
+      "exact_scalar_collision_source_pair_mass": "0",
+      "exact_scalar_collision_target_joint_mass": "0",
+      "exact_source_label_probability_sum": "1",
+      "expected_conditional_tv_from_dimension_coupling": 0.035813570798689846,
+      "fixed_source_coverage_correction": {
+        "all_supported_targets_certified": true,
+        "dimension_weighted_certified_conditional_mass": 1.0,
+        "exact_dimension_weighted_certified_conditional_mass": "1",
+        "exact_same_hidden_certified_conditional_probability": "1",
+        "exact_same_hidden_natural_joint_certified_probability": "9/256",
+        "exact_source_pair_conditional_total_variation": "4342/99225",
+        "exact_source_pair_probability": "9/256",
+        "largest_unresolved_same_hidden_conditional_probability": 0.0,
+        "largest_unresolved_target_partition": null,
+        "same_hidden_certified_conditional_probability": 1.0,
+        "same_hidden_natural_joint_certified_probability": 0.03515625,
+        "source_dimension": 90,
+        "source_pair_conditional_total_variation": 0.04375913328294281,
+        "source_pair_probability": 0.03515625,
+        "source_partition": [
+          4,
+          2,
+          1,
+          1
+        ]
+      },
+      "frame_identity_failure_count": 0,
+      "involution_type": "fixed_point_free_involution",
+      "maximum_source_pair_tv_from_dimension_coupling": 0.12698412698412698,
+      "maximum_tv_left_source_partition": [
+        7,
+        1
+      ],
+      "maximum_tv_right_source_partition": [
+        7,
+        1
+      ],
+      "n": 8,
+      "natural_nontrivial_multiplicity_mass": 0.9445455207545982,
+      "negative_probability_count": 0,
+      "partition_count": 22,
+      "scalar_collision_source_pair_mass": 0.0,
+      "scalar_collision_target_joint_mass": 0.0,
+      "status": "exact-target-law-normalized-collision-target-mass-audited",
+      "supported_target_sector_count": 5048,
+      "top_natural_target_sectors": [
+        {
+          "conditional_target_probability": 0.17346938775510204,
+          "dimension_weighted_coupling_mass": 0.18888888888888888,
+          "exact_conditional_target_probability": "17/98",
+          "exact_dimension_weighted_coupling_mass": "17/90",
+          "exact_natural_joint_probability": "153/25088",
+          "exact_source_pair_probability": "9/256",
+          "frame_scalar": "4/5",
+          "kronecker_multiplicity": 17,
+          "left_source_partition": [
+            4,
+            2,
+            1,
+            1
+          ],
+          "natural_joint_probability": 0.006098533163265306,
+          "right_source_partition": [
+            4,
+            2,
+            1,
+            1
+          ],
+          "source_pair_probability": 0.03515625,
+          "target_partition": [
+            4,
+            2,
+            1,
+            1
+          ]
+        },
+        {
+          "conditional_target_probability": 0.18487394957983194,
+          "dimension_weighted_coupling_mass": 0.2,
+          "exact_conditional_target_probability": "22/119",
+          "exact_dimension_weighted_coupling_mass": "1/5",
+          "exact_natural_joint_probability": "11/2688",
+          "exact_source_pair_probability": "17/768",
+          "frame_scalar": "88/105",
+          "kronecker_multiplicity": 14,
+          "left_source_partition": [
+            3,
+            2,
+            2,
+            1
+          ],
+          "natural_joint_probability": 0.004092261904761905,
+          "right_source_partition": [
+            4,
+            2,
+            1,
+            1
+          ],
+          "source_pair_probability": 0.022135416666666668,
+          "target_partition": [
+            4,
+            2,
+            1,
+            1
+          ]
+        },
+        {
+          "conditional_target_probability": 0.18487394957983194,
+          "dimension_weighted_coupling_mass": 0.2,
+          "exact_conditional_target_probability": "22/119",
+          "exact_dimension_weighted_coupling_mass": "1/5",
+          "exact_natural_joint_probability": "11/2688",
+          "exact_source_pair_probability": "17/768",
+          "frame_scalar": "88/105",
+          "kronecker_multiplicity": 14,
+          "left_source_partition": [
+            4,
+            2,
+            1,
+            1
+          ],
+          "natural_joint_probability": 0.004092261904761905,
+          "right_source_partition": [
+            3,
+            2,
+            2,
+            1
+          ],
+          "source_pair_probability": 0.022135416666666668,
+          "target_partition": [
+            4,
+            2,
+            1,
+            1
+          ]
+        },
+        {
+          "conditional_target_probability": 0.1164021164021164,
+          "dimension_weighted_coupling_mass": 0.12098765432098765,
+          "exact_conditional_target_probability": "22/189",
+          "exact_dimension_weighted_coupling_mass": "49/405",
+          "exact_natural_joint_probability": "11/2688",
+          "exact_source_pair_probability": "9/256",
+          "frame_scalar": "88/105",
+          "kronecker_multiplicity": 14,
+          "left_source_partition": [
+            4,
+            2,
+            1,
+            1
+          ],
+          "natural_joint_probability": 0.004092261904761905,
+          "right_source_partition": [
+            4,
+            2,
+            1,
+            1
+          ],
+          "source_pair_probability": 0.03515625,
+          "target_partition": [
+            3,
+            2,
+            2,
+            1
+          ]
+        },
+        {
+          "conditional_target_probability": 0.1164021164021164,
+          "dimension_weighted_coupling_mass": 0.12098765432098765,
+          "exact_conditional_target_probability": "22/189",
+          "exact_dimension_weighted_coupling_mass": "49/405",
+          "exact_natural_joint_probability": "11/2688",
+          "exact_source_pair_probability": "9/256",
+          "frame_scalar": "88/105",
+          "kronecker_multiplicity": 14,
+          "left_source_partition": [
+            4,
+            2,
+            1,
+            1
+          ],
+          "natural_joint_probability": 0.004092261904761905,
+          "right_source_partition": [
+            4,
+            2,
+            1,
+            1
+          ],
+          "source_pair_probability": 0.03515625,
+          "target_partition": [
+            4,
+            3,
+            1
+          ]
+        },
+        {
+          "conditional_target_probability": 0.18487394957983194,
+          "dimension_weighted_coupling_mass": 0.2,
+          "exact_conditional_target_probability": "22/119",
+          "exact_dimension_weighted_coupling_mass": "1/5",
+          "exact_natural_joint_probability": "11/2688",
+          "exact_source_pair_probability": "17/768",
+          "frame_scalar": "88/105",
+          "kronecker_multiplicity": 14,
+          "left_source_partition": [
+            4,
+            2,
+            1,
+            1
+          ],
+          "natural_joint_probability": 0.004092261904761905,
+          "right_source_partition": [
+            4,
+            3,
+            1
+          ],
+          "source_pair_probability": 0.022135416666666668,
+          "target_partition": [
+            4,
+            2,
+            1,
+            1
+          ]
+        },
+        {
+          "conditional_target_probability": 0.18487394957983194,
+          "dimension_weighted_coupling_mass": 0.2,
+          "exact_conditional_target_probability": "22/119",
+          "exact_dimension_weighted_coupling_mass": "1/5",
+          "exact_natural_joint_probability": "11/2688",
+          "exact_source_pair_probability": "17/768",
+          "frame_scalar": "88/105",
+          "kronecker_multiplicity": 14,
+          "left_source_partition": [
+            4,
+            3,
+            1
+          ],
+          "natural_joint_probability": 0.004092261904761905,
+          "right_source_partition": [
+            4,
+            2,
+            1,
+            1
+          ],
+          "source_pair_probability": 0.022135416666666668,
+          "target_partition": [
+            4,
+            2,
+            1,
+            1
+          ]
+        },
+        {
+          "conditional_target_probability": 0.18861607142857142,
+          "dimension_weighted_coupling_mass": 0.203125,
+          "exact_conditional_target_probability": "169/896",
+          "exact_dimension_weighted_coupling_mass": "13/64",
+          "exact_natural_joint_probability": "169/47040",
+          "exact_source_pair_probability": "2/105",
+          "frame_scalar": "13/15",
+          "kronecker_multiplicity": 13,
+          "left_source_partition": [
+            3,
+            2,
+            1,
+            1,
+            1
+          ],
+          "natural_joint_probability": 0.003592687074829932,
+          "right_source_partition": [
+            4,
+            2,
+            1,
+            1
+          ],
+          "source_pair_probability": 0.01904761904761905,
+          "target_partition": [
+            4,
+            2,
+            1,
+            1
+          ]
+        },
+        {
+          "conditional_target_probability": 0.18861607142857142,
+          "dimension_weighted_coupling_mass": 0.203125,
+          "exact_conditional_target_probability": "169/896",
+          "exact_dimension_weighted_coupling_mass": "13/64",
+          "exact_natural_joint_probability": "169/47040",
+          "exact_source_pair_probability": "2/105",
+          "frame_scalar": "13/15",
+          "kronecker_multiplicity": 13,
+          "left_source_partition": [
+            4,
+            2,
+            1,
+            1
+          ],
+          "natural_joint_probability": 0.003592687074829932,
+          "right_source_partition": [
+            3,
+            2,
+            1,
+            1,
+            1
+          ],
+          "source_pair_probability": 0.01904761904761905,
+          "target_partition": [
+            4,
+            2,
+            1,
+            1
+          ]
+        },
+        {
+          "conditional_target_probability": 0.10219198790627362,
+          "dimension_weighted_coupling_mass": 0.10271604938271604,
+          "exact_conditional_target_probability": "676/6615",
+          "exact_dimension_weighted_coupling_mass": "208/2025",
+          "exact_natural_joint_probability": "169/47040",
+          "exact_source_pair_probability": "9/256",
+          "frame_scalar": "13/15",
+          "kronecker_multiplicity": 13,
+          "left_source_partition": [
+            4,
+            2,
+            1,
+            1
+          ],
+          "natural_joint_probability": 0.003592687074829932,
+          "right_source_partition": [
+            4,
+            2,
+            1,
+            1
+          ],
+          "source_pair_probability": 0.03515625,
+          "target_partition": [
+            3,
+            2,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "conditional_target_probability": 0.10219198790627362,
+          "dimension_weighted_coupling_mass": 0.10271604938271604,
+          "exact_conditional_target_probability": "676/6615",
+          "exact_dimension_weighted_coupling_mass": "208/2025",
+          "exact_natural_joint_probability": "169/47040",
+          "exact_source_pair_probability": "9/256",
+          "frame_scalar": "13/15",
+          "kronecker_multiplicity": 13,
+          "left_source_partition": [
+            4,
+            2,
+            1,
+            1
+          ],
+          "natural_joint_probability": 0.003592687074829932,
+          "right_source_partition": [
+            4,
+            2,
+            1,
+            1
+          ],
+          "source_pair_probability": 0.03515625,
+          "target_partition": [
+            5,
+            2,
+            1
+          ]
+        },
+        {
+          "conditional_target_probability": 0.18861607142857142,
+          "dimension_weighted_coupling_mass": 0.203125,
+          "exact_conditional_target_probability": "169/896",
+          "exact_dimension_weighted_coupling_mass": "13/64",
+          "exact_natural_joint_probability": "169/47040",
+          "exact_source_pair_probability": "2/105",
+          "frame_scalar": "13/15",
+          "kronecker_multiplicity": 13,
+          "left_source_partition": [
+            4,
+            2,
+            1,
+            1
+          ],
+          "natural_joint_probability": 0.003592687074829932,
+          "right_source_partition": [
+            5,
+            2,
+            1
+          ],
+          "source_pair_probability": 0.01904761904761905,
+          "target_partition": [
+            4,
+            2,
+            1,
+            1
+          ]
+        }
+      ],
+      "transposition_count": 4,
+      "zero_probability_supported_sector_count": 0
+    },
+    {
+      "accessible_ordered_source_pair_count": 900,
+      "accessible_source_label_count": 30,
+      "conditional_normalization_failure_count": 0,
+      "exact_expected_conditional_tv_from_dimension_coupling": "5911949/304819200",
+      "exact_maximum_source_pair_tv_from_dimension_coupling": "109/3150",
+      "exact_natural_joint_probability_sum": "1",
+      "exact_natural_nontrivial_multiplicity_mass": "899965433/914457600",
+      "exact_scalar_collision_source_pair_mass": "0",
+      "exact_scalar_collision_target_joint_mass": "0",
+      "exact_source_label_probability_sum": "1",
+      "expected_conditional_tv_from_dimension_coupling": 0.019394936408205256,
+      "fixed_source_coverage_correction": {
+        "all_supported_targets_certified": true,
+        "dimension_weighted_certified_conditional_mass": 1.0,
+        "exact_dimension_weighted_certified_conditional_mass": "1",
+        "exact_same_hidden_certified_conditional_probability": "1",
+        "exact_same_hidden_natural_joint_certified_probability": "2809/176400",
+        "exact_source_pair_conditional_total_variation": "892325/43685568",
+        "exact_source_pair_probability": "2809/176400",
+        "largest_unresolved_same_hidden_conditional_probability": 0.0,
+        "largest_unresolved_target_partition": null,
+        "same_hidden_certified_conditional_probability": 1.0,
+        "same_hidden_natural_joint_certified_probability": 0.015924036281179138,
+        "source_dimension": 216,
+        "source_pair_conditional_total_variation": 0.020426082133120027,
+        "source_pair_probability": 0.015924036281179138,
+        "source_partition": [
+          4,
+          3,
+          1,
+          1
+        ]
+      },
+      "frame_identity_failure_count": 0,
+      "involution_type": "partial_matching",
+      "maximum_source_pair_tv_from_dimension_coupling": 0.0346031746031746,
+      "maximum_tv_left_source_partition": [
+        5,
+        1,
+        1,
+        1,
+        1
+      ],
+      "maximum_tv_right_source_partition": [
+        5,
+        1,
+        1,
+        1,
+        1
+      ],
+      "n": 9,
+      "natural_nontrivial_multiplicity_mass": 0.9841521717354638,
+      "negative_probability_count": 0,
+      "partition_count": 30,
+      "scalar_collision_source_pair_mass": 0.0,
+      "scalar_collision_target_joint_mass": 0.0,
+      "status": "exact-target-law-normalized-collision-target-mass-audited",
+      "supported_target_sector_count": 14294,
+      "top_natural_target_sectors": [
+        {
+          "conditional_target_probability": 0.12709149163403347,
+          "dimension_weighted_coupling_mass": 0.12962962962962962,
+          "exact_conditional_target_probability": "357/2809",
+          "exact_dimension_weighted_coupling_mass": "7/54",
+          "exact_natural_joint_probability": "17/8400",
+          "exact_source_pair_probability": "2809/176400",
+          "frame_scalar": "17/18",
+          "kronecker_multiplicity": 28,
+          "left_source_partition": [
+            4,
+            2,
+            2,
+            1
+          ],
+          "natural_joint_probability": 0.0020238095238095236,
+          "right_source_partition": [
+            4,
+            2,
+            2,
+            1
+          ],
+          "source_pair_probability": 0.015924036281179138,
+          "target_partition": [
+            4,
+            2,
+            2,
+            1
+          ]
+        },
+        {
+          "conditional_target_probability": 0.12709149163403347,
+          "dimension_weighted_coupling_mass": 0.12962962962962962,
+          "exact_conditional_target_probability": "357/2809",
+          "exact_dimension_weighted_coupling_mass": "7/54",
+          "exact_natural_joint_probability": "17/8400",
+          "exact_source_pair_probability": "2809/176400",
+          "frame_scalar": "17/18",
+          "kronecker_multiplicity": 28,
+          "left_source_partition": [
+            4,
+            2,
+            2,
+            1
+          ],
+          "natural_joint_probability": 0.0020238095238095236,
+          "right_source_partition": [
+            4,
+            3,
+            1,
+            1
+          ],
+          "source_pair_probability": 0.015924036281179138,
+          "target_partition": [
+            4,
+            3,
+            1,
+            1
+          ]
+        },
+        {
+          "conditional_target_probability": 0.12709149163403347,
+          "dimension_weighted_coupling_mass": 0.12962962962962962,
+          "exact_conditional_target_probability": "357/2809",
+          "exact_dimension_weighted_coupling_mass": "7/54",
+          "exact_natural_joint_probability": "17/8400",
+          "exact_source_pair_probability": "2809/176400",
+          "frame_scalar": "17/18",
+          "kronecker_multiplicity": 28,
+          "left_source_partition": [
+            4,
+            3,
+            1,
+            1
+          ],
+          "natural_joint_probability": 0.0020238095238095236,
+          "right_source_partition": [
+            4,
+            2,
+            2,
+            1
+          ],
+          "source_pair_probability": 0.015924036281179138,
+          "target_partition": [
+            4,
+            3,
+            1,
+            1
+          ]
+        },
+        {
+          "conditional_target_probability": 0.12709149163403347,
+          "dimension_weighted_coupling_mass": 0.12962962962962962,
+          "exact_conditional_target_probability": "357/2809",
+          "exact_dimension_weighted_coupling_mass": "7/54",
+          "exact_natural_joint_probability": "17/8400",
+          "exact_source_pair_probability": "2809/176400",
+          "frame_scalar": "17/18",
+          "kronecker_multiplicity": 28,
+          "left_source_partition": [
+            4,
+            3,
+            1,
+            1
+          ],
+          "natural_joint_probability": 0.0020238095238095236,
+          "right_source_partition": [
+            4,
+            3,
+            1,
+            1
+          ],
+          "source_pair_probability": 0.015924036281179138,
+          "target_partition": [
+            4,
+            2,
+            2,
+            1
+          ]
+        },
+        {
+          "conditional_target_probability": 0.12255250978996084,
+          "dimension_weighted_coupling_mass": 0.125,
+          "exact_conditional_target_probability": "1377/11236",
+          "exact_dimension_weighted_coupling_mass": "1/8",
+          "exact_natural_joint_probability": "153/78400",
+          "exact_source_pair_probability": "2809/176400",
+          "frame_scalar": "17/18",
+          "kronecker_multiplicity": 27,
+          "left_source_partition": [
+            4,
+            2,
+            2,
+            1
+          ],
+          "natural_joint_probability": 0.001951530612244898,
+          "right_source_partition": [
+            4,
+            2,
+            2,
+            1
+          ],
+          "source_pair_probability": 0.015924036281179138,
+          "target_partition": [
+            4,
+            3,
+            1,
+            1
+          ]
+        },
+        {
+          "conditional_target_probability": 0.12255250978996084,
+          "dimension_weighted_coupling_mass": 0.125,
+          "exact_conditional_target_probability": "1377/11236",
+          "exact_dimension_weighted_coupling_mass": "1/8",
+          "exact_natural_joint_probability": "153/78400",
+          "exact_source_pair_probability": "2809/176400",
+          "frame_scalar": "17/18",
+          "kronecker_multiplicity": 27,
+          "left_source_partition": [
+            4,
+            2,
+            2,
+            1
+          ],
+          "natural_joint_probability": 0.001951530612244898,
+          "right_source_partition": [
+            4,
+            3,
+            1,
+            1
+          ],
+          "source_pair_probability": 0.015924036281179138,
+          "target_partition": [
+            4,
+            2,
+            2,
+            1
+          ]
+        },
+        {
+          "conditional_target_probability": 0.12255250978996084,
+          "dimension_weighted_coupling_mass": 0.125,
+          "exact_conditional_target_probability": "1377/11236",
+          "exact_dimension_weighted_coupling_mass": "1/8",
+          "exact_natural_joint_probability": "153/78400",
+          "exact_source_pair_probability": "2809/176400",
+          "frame_scalar": "17/18",
+          "kronecker_multiplicity": 27,
+          "left_source_partition": [
+            4,
+            3,
+            1,
+            1
+          ],
+          "natural_joint_probability": 0.001951530612244898,
+          "right_source_partition": [
+            4,
+            2,
+            2,
+            1
+          ],
+          "source_pair_probability": 0.015924036281179138,
+          "target_partition": [
+            4,
+            2,
+            2,
+            1
+          ]
+        },
+        {
+          "conditional_target_probability": 0.12255250978996084,
+          "dimension_weighted_coupling_mass": 0.125,
+          "exact_conditional_target_probability": "1377/11236",
+          "exact_dimension_weighted_coupling_mass": "1/8",
+          "exact_natural_joint_probability": "153/78400",
+          "exact_source_pair_probability": "2809/176400",
+          "frame_scalar": "17/18",
+          "kronecker_multiplicity": 27,
+          "left_source_partition": [
+            4,
+            3,
+            1,
+            1
+          ],
+          "natural_joint_probability": 0.001951530612244898,
+          "right_source_partition": [
+            4,
+            3,
+            1,
+            1
+          ],
+          "source_pair_probability": 0.015924036281179138,
+          "target_partition": [
+            4,
+            3,
+            1,
+            1
+          ]
+        },
+        {
+          "conditional_target_probability": 0.12947091068778582,
+          "dimension_weighted_coupling_mass": 0.13227513227513227,
+          "exact_conditional_target_probability": "4275/33019",
+          "exact_dimension_weighted_coupling_mass": "25/189",
+          "exact_natural_joint_probability": "19/12544",
+          "exact_source_pair_probability": "4717/403200",
+          "frame_scalar": "19/21",
+          "kronecker_multiplicity": 25,
+          "left_source_partition": [
+            4,
+            2,
+            1,
+            1,
+            1
+          ],
+          "natural_joint_probability": 0.0015146683673469387,
+          "right_source_partition": [
+            4,
+            2,
+            2,
+            1
+          ],
+          "source_pair_probability": 0.01169890873015873,
+          "target_partition": [
+            4,
+            2,
+            2,
+            1
+          ]
+        },
+        {
+          "conditional_target_probability": 0.12947091068778582,
+          "dimension_weighted_coupling_mass": 0.13227513227513227,
+          "exact_conditional_target_probability": "4275/33019",
+          "exact_dimension_weighted_coupling_mass": "25/189",
+          "exact_natural_joint_probability": "19/12544",
+          "exact_source_pair_probability": "4717/403200",
+          "frame_scalar": "19/21",
+          "kronecker_multiplicity": 25,
+          "left_source_partition": [
+            4,
+            2,
+            1,
+            1,
+            1
+          ],
+          "natural_joint_probability": 0.0015146683673469387,
+          "right_source_partition": [
+            4,
+            3,
+            1,
+            1
+          ],
+          "source_pair_probability": 0.01169890873015873,
+          "target_partition": [
+            4,
+            3,
+            1,
+            1
+          ]
+        },
+        {
+          "conditional_target_probability": 0.12947091068778582,
+          "dimension_weighted_coupling_mass": 0.13227513227513227,
+          "exact_conditional_target_probability": "4275/33019",
+          "exact_dimension_weighted_coupling_mass": "25/189",
+          "exact_natural_joint_probability": "19/12544",
+          "exact_source_pair_probability": "4717/403200",
+          "frame_scalar": "19/21",
+          "kronecker_multiplicity": 25,
+          "left_source_partition": [
+            4,
+            2,
+            2,
+            1
+          ],
+          "natural_joint_probability": 0.0015146683673469387,
+          "right_source_partition": [
+            4,
+            2,
+            1,
+            1,
+            1
+          ],
+          "source_pair_probability": 0.01169890873015873,
+          "target_partition": [
+            4,
+            2,
+            2,
+            1
+          ]
+        },
+        {
+          "conditional_target_probability": 0.09511836952652189,
+          "dimension_weighted_coupling_mass": 0.10127314814814815,
+          "exact_conditional_target_probability": "4275/44944",
+          "exact_dimension_weighted_coupling_mass": "175/1728",
+          "exact_natural_joint_probability": "19/12544",
+          "exact_source_pair_probability": "2809/176400",
+          "frame_scalar": "19/21",
+          "kronecker_multiplicity": 25,
+          "left_source_partition": [
+            4,
+            2,
+            2,
+            1
+          ],
+          "natural_joint_probability": 0.0015146683673469387,
+          "right_source_partition": [
+            4,
+            2,
+            2,
+            1
+          ],
+          "source_pair_probability": 0.015924036281179138,
+          "target_partition": [
+            4,
+            2,
+            1,
+            1,
+            1
+          ]
+        }
+      ],
+      "transposition_count": 2,
+      "zero_probability_supported_sector_count": 0
+    },
+    {
+      "accessible_ordered_source_pair_count": 900,
+      "accessible_source_label_count": 30,
+      "conditional_normalization_failure_count": 0,
+      "exact_expected_conditional_tv_from_dimension_coupling": "1353581/137168640",
+      "exact_maximum_source_pair_tv_from_dimension_coupling": "1/16",
+      "exact_natural_joint_probability_sum": "1",
+      "exact_natural_nontrivial_multiplicity_mass": "8351299/8467200",
+      "exact_scalar_collision_source_pair_mass": "0",
+      "exact_scalar_collision_target_joint_mass": "0",
+      "exact_source_label_probability_sum": "1",
+      "expected_conditional_tv_from_dimension_coupling": 0.00986800627315398,
+      "fixed_source_coverage_correction": {
+        "all_supported_targets_certified": true,
+        "dimension_weighted_certified_conditional_mass": 1.0,
+        "exact_dimension_weighted_certified_conditional_mass": "1",
+        "exact_same_hidden_certified_conditional_probability": "1",
+        "exact_same_hidden_natural_joint_certified_probability": "81/4900",
+        "exact_source_pair_conditional_total_variation": "461/46656",
+        "exact_source_pair_probability": "81/4900",
+        "largest_unresolved_same_hidden_conditional_probability": 0.0,
+        "largest_unresolved_target_partition": null,
+        "same_hidden_certified_conditional_probability": 1.0,
+        "same_hidden_natural_joint_certified_probability": 0.01653061224489796,
+        "source_dimension": 216,
+        "source_pair_conditional_total_variation": 0.009880829903978053,
+        "source_pair_probability": 0.01653061224489796,
+        "source_partition": [
+          4,
+          3,
+          1,
+          1
+        ]
+      },
+      "frame_identity_failure_count": 0,
+      "involution_type": "near_fixed_point_free_involution",
+      "maximum_source_pair_tv_from_dimension_coupling": 0.0625,
+      "maximum_tv_left_source_partition": [
+        8,
+        1
+      ],
+      "maximum_tv_right_source_partition": [
+        8,
+        1
+      ],
+      "n": 9,
+      "natural_nontrivial_multiplicity_mass": 0.9863117677626606,
+      "negative_probability_count": 0,
+      "partition_count": 30,
+      "scalar_collision_source_pair_mass": 0.0,
+      "scalar_collision_target_joint_mass": 0.0,
+      "status": "exact-target-law-normalized-collision-target-mass-audited",
+      "supported_target_sector_count": 14294,
+      "top_natural_target_sectors": [
+        {
+          "conditional_target_probability": 0.12962962962962962,
+          "dimension_weighted_coupling_mass": 0.12962962962962962,
+          "exact_conditional_target_probability": "7/54",
+          "exact_dimension_weighted_coupling_mass": "7/54",
+          "exact_natural_joint_probability": "3/1400",
+          "exact_source_pair_probability": "81/4900",
+          "frame_scalar": "1",
+          "kronecker_multiplicity": 28,
+          "left_source_partition": [
+            4,
+            2,
+            2,
+            1
+          ],
+          "natural_joint_probability": 0.002142857142857143,
+          "right_source_partition": [
+            4,
+            2,
+            2,
+            1
+          ],
+          "source_pair_probability": 0.01653061224489796,
+          "target_partition": [
+            4,
+            2,
+            2,
+            1
+          ]
+        },
+        {
+          "conditional_target_probability": 0.12962962962962962,
+          "dimension_weighted_coupling_mass": 0.12962962962962962,
+          "exact_conditional_target_probability": "7/54",
+          "exact_dimension_weighted_coupling_mass": "7/54",
+          "exact_natural_joint_probability": "3/1400",
+          "exact_source_pair_probability": "81/4900",
+          "frame_scalar": "1",
+          "kronecker_multiplicity": 28,
+          "left_source_partition": [
+            4,
+            2,
+            2,
+            1
+          ],
+          "natural_joint_probability": 0.002142857142857143,
+          "right_source_partition": [
+            4,
+            3,
+            1,
+            1
+          ],
+          "source_pair_probability": 0.01653061224489796,
+          "target_partition": [
+            4,
+            3,
+            1,
+            1
+          ]
+        },
+        {
+          "conditional_target_probability": 0.12962962962962962,
+          "dimension_weighted_coupling_mass": 0.12962962962962962,
+          "exact_conditional_target_probability": "7/54",
+          "exact_dimension_weighted_coupling_mass": "7/54",
+          "exact_natural_joint_probability": "3/1400",
+          "exact_source_pair_probability": "81/4900",
+          "frame_scalar": "1",
+          "kronecker_multiplicity": 28,
+          "left_source_partition": [
+            4,
+            3,
+            1,
+            1
+          ],
+          "natural_joint_probability": 0.002142857142857143,
+          "right_source_partition": [
+            4,
+            2,
+            2,
+            1
+          ],
+          "source_pair_probability": 0.01653061224489796,
+          "target_partition": [
+            4,
+            3,
+            1,
+            1
+          ]
+        },
+        {
+          "conditional_target_probability": 0.12962962962962962,
+          "dimension_weighted_coupling_mass": 0.12962962962962962,
+          "exact_conditional_target_probability": "7/54",
+          "exact_dimension_weighted_coupling_mass": "7/54",
+          "exact_natural_joint_probability": "3/1400",
+          "exact_source_pair_probability": "81/4900",
+          "frame_scalar": "1",
+          "kronecker_multiplicity": 28,
+          "left_source_partition": [
+            4,
+            3,
+            1,
+            1
+          ],
+          "natural_joint_probability": 0.002142857142857143,
+          "right_source_partition": [
+            4,
+            3,
+            1,
+            1
+          ],
+          "source_pair_probability": 0.01653061224489796,
+          "target_partition": [
+            4,
+            2,
+            2,
+            1
+          ]
+        },
+        {
+          "conditional_target_probability": 0.125,
+          "dimension_weighted_coupling_mass": 0.125,
+          "exact_conditional_target_probability": "1/8",
+          "exact_dimension_weighted_coupling_mass": "1/8",
+          "exact_natural_joint_probability": "81/39200",
+          "exact_source_pair_probability": "81/4900",
+          "frame_scalar": "1",
+          "kronecker_multiplicity": 27,
+          "left_source_partition": [
+            4,
+            2,
+            2,
+            1
+          ],
+          "natural_joint_probability": 0.002066326530612245,
+          "right_source_partition": [
+            4,
+            2,
+            2,
+            1
+          ],
+          "source_pair_probability": 0.01653061224489796,
+          "target_partition": [
+            4,
+            3,
+            1,
+            1
+          ]
+        },
+        {
+          "conditional_target_probability": 0.125,
+          "dimension_weighted_coupling_mass": 0.125,
+          "exact_conditional_target_probability": "1/8",
+          "exact_dimension_weighted_coupling_mass": "1/8",
+          "exact_natural_joint_probability": "81/39200",
+          "exact_source_pair_probability": "81/4900",
+          "frame_scalar": "1",
+          "kronecker_multiplicity": 27,
+          "left_source_partition": [
+            4,
+            2,
+            2,
+            1
+          ],
+          "natural_joint_probability": 0.002066326530612245,
+          "right_source_partition": [
+            4,
+            3,
+            1,
+            1
+          ],
+          "source_pair_probability": 0.01653061224489796,
+          "target_partition": [
+            4,
+            2,
+            2,
+            1
+          ]
+        },
+        {
+          "conditional_target_probability": 0.125,
+          "dimension_weighted_coupling_mass": 0.125,
+          "exact_conditional_target_probability": "1/8",
+          "exact_dimension_weighted_coupling_mass": "1/8",
+          "exact_natural_joint_probability": "81/39200",
+          "exact_source_pair_probability": "81/4900",
+          "frame_scalar": "1",
+          "kronecker_multiplicity": 27,
+          "left_source_partition": [
+            4,
+            3,
+            1,
+            1
+          ],
+          "natural_joint_probability": 0.002066326530612245,
+          "right_source_partition": [
+            4,
+            2,
+            2,
+            1
+          ],
+          "source_pair_probability": 0.01653061224489796,
+          "target_partition": [
+            4,
+            2,
+            2,
+            1
+          ]
+        },
+        {
+          "conditional_target_probability": 0.125,
+          "dimension_weighted_coupling_mass": 0.125,
+          "exact_conditional_target_probability": "1/8",
+          "exact_dimension_weighted_coupling_mass": "1/8",
+          "exact_natural_joint_probability": "81/39200",
+          "exact_source_pair_probability": "81/4900",
+          "frame_scalar": "1",
+          "kronecker_multiplicity": 27,
+          "left_source_partition": [
+            4,
+            3,
+            1,
+            1
+          ],
+          "natural_joint_probability": 0.002066326530612245,
+          "right_source_partition": [
+            4,
+            3,
+            1,
+            1
+          ],
+          "source_pair_probability": 0.01653061224489796,
+          "target_partition": [
+            4,
+            3,
+            1,
+            1
+          ]
+        },
+        {
+          "conditional_target_probability": 0.13227513227513227,
+          "dimension_weighted_coupling_mass": 0.13227513227513227,
+          "exact_conditional_target_probability": "25/189",
+          "exact_dimension_weighted_coupling_mass": "25/189",
+          "exact_natural_joint_probability": "31/18816",
+          "exact_source_pair_probability": "279/22400",
+          "frame_scalar": "62/63",
+          "kronecker_multiplicity": 25,
+          "left_source_partition": [
+            4,
+            2,
+            1,
+            1,
+            1
+          ],
+          "natural_joint_probability": 0.0016475340136054423,
+          "right_source_partition": [
+            4,
+            2,
+            2,
+            1
+          ],
+          "source_pair_probability": 0.012455357142857143,
+          "target_partition": [
+            4,
+            2,
+            2,
+            1
+          ]
+        },
+        {
+          "conditional_target_probability": 0.13227513227513227,
+          "dimension_weighted_coupling_mass": 0.13227513227513227,
+          "exact_conditional_target_probability": "25/189",
+          "exact_dimension_weighted_coupling_mass": "25/189",
+          "exact_natural_joint_probability": "31/18816",
+          "exact_source_pair_probability": "279/22400",
+          "frame_scalar": "62/63",
+          "kronecker_multiplicity": 25,
+          "left_source_partition": [
+            4,
+            2,
+            1,
+            1,
+            1
+          ],
+          "natural_joint_probability": 0.0016475340136054423,
+          "right_source_partition": [
+            4,
+            3,
+            1,
+            1
+          ],
+          "source_pair_probability": 0.012455357142857143,
+          "target_partition": [
+            4,
+            3,
+            1,
+            1
+          ]
+        },
+        {
+          "conditional_target_probability": 0.13227513227513227,
+          "dimension_weighted_coupling_mass": 0.13227513227513227,
+          "exact_conditional_target_probability": "25/189",
+          "exact_dimension_weighted_coupling_mass": "25/189",
+          "exact_natural_joint_probability": "31/18816",
+          "exact_source_pair_probability": "279/22400",
+          "frame_scalar": "62/63",
+          "kronecker_multiplicity": 25,
+          "left_source_partition": [
+            4,
+            2,
+            2,
+            1
+          ],
+          "natural_joint_probability": 0.0016475340136054423,
+          "right_source_partition": [
+            4,
+            2,
+            1,
+            1,
+            1
+          ],
+          "source_pair_probability": 0.012455357142857143,
+          "target_partition": [
+            4,
+            2,
+            2,
+            1
+          ]
+        },
+        {
+          "conditional_target_probability": 0.0996656378600823,
+          "dimension_weighted_coupling_mass": 0.10127314814814815,
+          "exact_conditional_target_probability": "775/7776",
+          "exact_dimension_weighted_coupling_mass": "175/1728",
+          "exact_natural_joint_probability": "31/18816",
+          "exact_source_pair_probability": "81/4900",
+          "frame_scalar": "62/63",
+          "kronecker_multiplicity": 25,
+          "left_source_partition": [
+            4,
+            2,
+            2,
+            1
+          ],
+          "natural_joint_probability": 0.0016475340136054423,
+          "right_source_partition": [
+            4,
+            2,
+            2,
+            1
+          ],
+          "source_pair_probability": 0.01653061224489796,
+          "target_partition": [
+            4,
+            2,
+            1,
+            1,
+            1
+          ]
+        }
+      ],
+      "transposition_count": 4,
+      "zero_probability_supported_sector_count": 0
+    },
+    {
+      "accessible_ordered_source_pair_count": 1764,
+      "accessible_source_label_count": 42,
+      "conditional_normalization_failure_count": 0,
+      "exact_expected_conditional_tv_from_dimension_coupling": "5788164041/411505920000",
+      "exact_maximum_source_pair_tv_from_dimension_coupling": "4679/156816",
+      "exact_natural_joint_probability_sum": "1",
+      "exact_natural_nontrivial_multiplicity_mass": "81961967237/82301184000",
+      "exact_scalar_collision_source_pair_mass": "0",
+      "exact_scalar_collision_target_joint_mass": "0",
+      "exact_source_label_probability_sum": "1",
+      "expected_conditional_tv_from_dimension_coupling": 0.014065809894059362,
+      "fixed_source_coverage_correction": {
+        "all_supported_targets_certified": false,
+        "dimension_weighted_certified_conditional_mass": 0.011389838324652778,
+        "exact_dimension_weighted_certified_conditional_mass": "3359/294912",
+        "exact_same_hidden_certified_conditional_probability": "2003/147456",
+        "exact_same_hidden_natural_joint_certified_probability": "8012/22325625",
+        "exact_source_pair_conditional_total_variation": "715/49152",
+        "exact_source_pair_probability": "65536/2480625",
+        "largest_unresolved_same_hidden_conditional_probability": 0.15234375,
+        "largest_unresolved_target_partition": [
+          4,
+          3,
+          2,
+          1
+        ],
+        "same_hidden_certified_conditional_probability": 0.013583713107638888,
+        "same_hidden_natural_joint_certified_probability": 0.00035887013241510596,
+        "source_dimension": 768,
+        "source_pair_conditional_total_variation": 0.014546712239583334,
+        "source_pair_probability": 0.026419148400100782,
+        "source_partition": [
+          4,
+          3,
+          2,
+          1
+        ]
+      },
+      "frame_identity_failure_count": 0,
+      "involution_type": "partial_matching",
+      "maximum_source_pair_tv_from_dimension_coupling": 0.029837516579940822,
+      "maximum_tv_left_source_partition": [
+        8,
+        1,
+        1
+      ],
+      "maximum_tv_right_source_partition": [
+        8,
+        1,
+        1
+      ],
+      "n": 10,
+      "natural_nontrivial_multiplicity_mass": 0.9958783489311648,
+      "negative_probability_count": 0,
+      "partition_count": 42,
+      "scalar_collision_source_pair_mass": 0.0,
+      "scalar_collision_target_joint_mass": 0.0,
+      "status": "exact-target-law-normalized-collision-target-mass-audited",
+      "supported_target_sector_count": 40860,
+      "top_natural_target_sectors": [
+        {
+          "conditional_target_probability": 0.15234375,
+          "dimension_weighted_coupling_mass": 0.15234375,
+          "exact_conditional_target_probability": "39/256",
+          "exact_dimension_weighted_coupling_mass": "39/256",
+          "exact_natural_joint_probability": "3328/826875",
+          "exact_source_pair_probability": "65536/2480625",
+          "frame_scalar": "1",
+          "kronecker_multiplicity": 117,
+          "left_source_partition": [
+            4,
+            3,
+            2,
+            1
+          ],
+          "natural_joint_probability": 0.0040247921390778535,
+          "right_source_partition": [
+            4,
+            3,
+            2,
+            1
+          ],
+          "source_pair_probability": 0.026419148400100782,
+          "target_partition": [
+            4,
+            3,
+            2,
+            1
+          ]
+        },
+        {
+          "conditional_target_probability": 0.16225749559082892,
+          "dimension_weighted_coupling_mass": 0.16225749559082892,
+          "exact_conditional_target_probability": "92/567",
+          "exact_dimension_weighted_coupling_mass": "92/567",
+          "exact_natural_joint_probability": "5704/2480625",
+          "exact_source_pair_probability": "62/4375",
+          "frame_scalar": "62/63",
+          "kronecker_multiplicity": 92,
+          "left_source_partition": [
+            4,
+            2,
+            2,
+            1,
+            1
+          ],
+          "natural_joint_probability": 0.0022994205089443185,
+          "right_source_partition": [
+            4,
+            3,
+            2,
+            1
+          ],
+          "source_pair_probability": 0.014171428571428571,
+          "target_partition": [
+            4,
+            3,
+            2,
+            1
+          ]
+        },
+        {
+          "conditional_target_probability": 0.16225749559082892,
+          "dimension_weighted_coupling_mass": 0.16225749559082892,
+          "exact_conditional_target_probability": "92/567",
+          "exact_dimension_weighted_coupling_mass": "92/567",
+          "exact_natural_joint_probability": "5704/2480625",
+          "exact_source_pair_probability": "62/4375",
+          "frame_scalar": "62/63",
+          "kronecker_multiplicity": 92,
+          "left_source_partition": [
+            4,
+            3,
+            2,
+            1
+          ],
+          "natural_joint_probability": 0.0022994205089443185,
+          "right_source_partition": [
+            4,
+            2,
+            2,
+            1,
+            1
+          ],
+          "source_pair_probability": 0.014171428571428571,
+          "target_partition": [
+            4,
+            3,
+            2,
+            1
+          ]
+        },
+        {
+          "conditional_target_probability": 0.0870361328125,
+          "dimension_weighted_coupling_mass": 0.08843994140625,
+          "exact_conditional_target_probability": "713/8192",
+          "exact_dimension_weighted_coupling_mass": "1449/16384",
+          "exact_natural_joint_probability": "5704/2480625",
+          "exact_source_pair_probability": "65536/2480625",
+          "frame_scalar": "62/63",
+          "kronecker_multiplicity": 92,
+          "left_source_partition": [
+            4,
+            3,
+            2,
+            1
+          ],
+          "natural_joint_probability": 0.0022994205089443185,
+          "right_source_partition": [
+            4,
+            3,
+            2,
+            1
+          ],
+          "source_pair_probability": 0.026419148400100782,
+          "target_partition": [
+            4,
+            2,
+            2,
+            1,
+            1
+          ]
+        },
+        {
+          "conditional_target_probability": 0.0870361328125,
+          "dimension_weighted_coupling_mass": 0.08843994140625,
+          "exact_conditional_target_probability": "713/8192",
+          "exact_dimension_weighted_coupling_mass": "1449/16384",
+          "exact_natural_joint_probability": "5704/2480625",
+          "exact_source_pair_probability": "65536/2480625",
+          "frame_scalar": "62/63",
+          "kronecker_multiplicity": 92,
+          "left_source_partition": [
+            4,
+            3,
+            2,
+            1
+          ],
+          "natural_joint_probability": 0.0022994205089443185,
+          "right_source_partition": [
+            4,
+            3,
+            2,
+            1
+          ],
+          "source_pair_probability": 0.026419148400100782,
+          "target_partition": [
+            5,
+            3,
+            1,
+            1
+          ]
+        },
+        {
+          "conditional_target_probability": 0.16225749559082892,
+          "dimension_weighted_coupling_mass": 0.16225749559082892,
+          "exact_conditional_target_probability": "92/567",
+          "exact_dimension_weighted_coupling_mass": "92/567",
+          "exact_natural_joint_probability": "5704/2480625",
+          "exact_source_pair_probability": "62/4375",
+          "frame_scalar": "62/63",
+          "kronecker_multiplicity": 92,
+          "left_source_partition": [
+            4,
+            3,
+            2,
+            1
+          ],
+          "natural_joint_probability": 0.0022994205089443185,
+          "right_source_partition": [
+            5,
+            3,
+            1,
+            1
+          ],
+          "source_pair_probability": 0.014171428571428571,
+          "target_partition": [
+            4,
+            3,
+            2,
+            1
+          ]
+        },
+        {
+          "conditional_target_probability": 0.16225749559082892,
+          "dimension_weighted_coupling_mass": 0.16225749559082892,
+          "exact_conditional_target_probability": "92/567",
+          "exact_dimension_weighted_coupling_mass": "92/567",
+          "exact_natural_joint_probability": "5704/2480625",
+          "exact_source_pair_probability": "62/4375",
+          "frame_scalar": "62/63",
+          "kronecker_multiplicity": 92,
+          "left_source_partition": [
+            5,
+            3,
+            1,
+            1
+          ],
+          "natural_joint_probability": 0.0022994205089443185,
+          "right_source_partition": [
+            4,
+            3,
+            2,
+            1
+          ],
+          "source_pair_probability": 0.014171428571428571,
+          "target_partition": [
+            4,
+            3,
+            2,
+            1
+          ]
+        },
+        {
+          "conditional_target_probability": 0.16380952380952382,
+          "dimension_weighted_coupling_mass": 0.16380952380952382,
+          "exact_conditional_target_probability": "86/525",
+          "exact_dimension_weighted_coupling_mass": "86/525",
+          "exact_natural_joint_probability": "2924/1488375",
+          "exact_source_pair_probability": "34/2835",
+          "frame_scalar": "34/35",
+          "kronecker_multiplicity": 86,
+          "left_source_partition": [
+            4,
+            3,
+            1,
+            1,
+            1
+          ],
+          "natural_joint_probability": 0.0019645586629713613,
+          "right_source_partition": [
+            4,
+            3,
+            2,
+            1
+          ],
+          "source_pair_probability": 0.01199294532627866,
+          "target_partition": [
+            4,
+            3,
+            2,
+            1
+          ]
+        },
+        {
+          "conditional_target_probability": 0.16380952380952382,
+          "dimension_weighted_coupling_mass": 0.16380952380952382,
+          "exact_conditional_target_probability": "86/525",
+          "exact_dimension_weighted_coupling_mass": "86/525",
+          "exact_natural_joint_probability": "2924/1488375",
+          "exact_source_pair_probability": "34/2835",
+          "frame_scalar": "34/35",
+          "kronecker_multiplicity": 86,
+          "left_source_partition": [
+            4,
+            3,
+            2,
+            1
+          ],
+          "natural_joint_probability": 0.0019645586629713613,
+          "right_source_partition": [
+            4,
+            3,
+            1,
+            1,
+            1
+          ],
+          "source_pair_probability": 0.01199294532627866,
+          "target_partition": [
+            4,
+            3,
+            2,
+            1
+          ]
+        },
+        {
+          "conditional_target_probability": 0.07436116536458333,
+          "dimension_weighted_coupling_mass": 0.07654825846354167,
+          "exact_conditional_target_probability": "3655/49152",
+          "exact_dimension_weighted_coupling_mass": "7525/98304",
+          "exact_natural_joint_probability": "2924/1488375",
+          "exact_source_pair_probability": "65536/2480625",
+          "frame_scalar": "34/35",
+          "kronecker_multiplicity": 86,
+          "left_source_partition": [
+            4,
+            3,
+            2,
+            1
+          ],
+          "natural_joint_probability": 0.0019645586629713613,
+          "right_source_partition": [
+            4,
+            3,
+            2,
+            1
+          ],
+          "source_pair_probability": 0.026419148400100782,
+          "target_partition": [
+            4,
+            3,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "conditional_target_probability": 0.07436116536458333,
+          "dimension_weighted_coupling_mass": 0.07654825846354167,
+          "exact_conditional_target_probability": "3655/49152",
+          "exact_dimension_weighted_coupling_mass": "7525/98304",
+          "exact_natural_joint_probability": "2924/1488375",
+          "exact_source_pair_probability": "65536/2480625",
+          "frame_scalar": "34/35",
+          "kronecker_multiplicity": 86,
+          "left_source_partition": [
+            4,
+            3,
+            2,
+            1
+          ],
+          "natural_joint_probability": 0.0019645586629713613,
+          "right_source_partition": [
+            4,
+            3,
+            2,
+            1
+          ],
+          "source_pair_probability": 0.026419148400100782,
+          "target_partition": [
+            5,
+            2,
+            2,
+            1
+          ]
+        },
+        {
+          "conditional_target_probability": 0.16380952380952382,
+          "dimension_weighted_coupling_mass": 0.16380952380952382,
+          "exact_conditional_target_probability": "86/525",
+          "exact_dimension_weighted_coupling_mass": "86/525",
+          "exact_natural_joint_probability": "2924/1488375",
+          "exact_source_pair_probability": "34/2835",
+          "frame_scalar": "34/35",
+          "kronecker_multiplicity": 86,
+          "left_source_partition": [
+            4,
+            3,
+            2,
+            1
+          ],
+          "natural_joint_probability": 0.0019645586629713613,
+          "right_source_partition": [
+            5,
+            2,
+            2,
+            1
+          ],
+          "source_pair_probability": 0.01199294532627866,
+          "target_partition": [
+            4,
+            3,
+            2,
+            1
+          ]
+        }
+      ],
+      "transposition_count": 2,
+      "zero_probability_supported_sector_count": 0
+    },
+    {
+      "accessible_ordered_source_pair_count": 1681,
+      "accessible_source_label_count": 41,
+      "conditional_normalization_failure_count": 0,
+      "exact_expected_conditional_tv_from_dimension_coupling": "2298770209/205752960000",
+      "exact_maximum_source_pair_tv_from_dimension_coupling": "25/288",
+      "exact_natural_joint_probability_sum": "1",
+      "exact_natural_nontrivial_multiplicity_mass": "164027653453/164602368000",
+      "exact_scalar_collision_source_pair_mass": "0",
+      "exact_scalar_collision_target_joint_mass": "0",
+      "exact_source_label_probability_sum": "1",
+      "expected_conditional_tv_from_dimension_coupling": 0.011172476979189024,
+      "fixed_source_coverage_correction": {
+        "all_supported_targets_certified": false,
+        "dimension_weighted_certified_conditional_mass": 0.011389838324652778,
+        "exact_dimension_weighted_certified_conditional_mass": "3359/294912",
+        "exact_same_hidden_certified_conditional_probability": "3359/294912",
+        "exact_same_hidden_natural_joint_certified_probability": "6718/22325625",
+        "exact_source_pair_conditional_total_variation": "1649/147456",
+        "exact_source_pair_probability": "65536/2480625",
+        "largest_unresolved_same_hidden_conditional_probability": 0.15234375,
+        "largest_unresolved_target_partition": [
+          4,
+          3,
+          2,
+          1
+        ],
+        "same_hidden_certified_conditional_probability": 0.011389838324652778,
+        "same_hidden_natural_joint_certified_probability": 0.000300909828952157,
+        "source_dimension": 768,
+        "source_pair_conditional_total_variation": 0.011182996961805556,
+        "source_pair_probability": 0.026419148400100782,
+        "source_partition": [
+          4,
+          3,
+          2,
+          1
+        ]
+      },
+      "frame_identity_failure_count": 0,
+      "involution_type": "fixed_point_free_involution",
+      "maximum_source_pair_tv_from_dimension_coupling": 0.08680555555555555,
+      "maximum_tv_left_source_partition": [
+        9,
+        1
+      ],
+      "maximum_tv_right_source_partition": [
+        9,
+        1
+      ],
+      "n": 10,
+      "natural_nontrivial_multiplicity_mass": 0.9965084673204702,
+      "negative_probability_count": 0,
+      "partition_count": 42,
+      "scalar_collision_source_pair_mass": 0.0,
+      "scalar_collision_target_joint_mass": 0.0,
+      "status": "exact-target-law-normalized-collision-target-mass-audited",
+      "supported_target_sector_count": 40777,
+      "top_natural_target_sectors": [
+        {
+          "conditional_target_probability": 0.15234375,
+          "dimension_weighted_coupling_mass": 0.15234375,
+          "exact_conditional_target_probability": "39/256",
+          "exact_dimension_weighted_coupling_mass": "39/256",
+          "exact_natural_joint_probability": "3328/826875",
+          "exact_source_pair_probability": "65536/2480625",
+          "frame_scalar": "1",
+          "kronecker_multiplicity": 117,
+          "left_source_partition": [
+            4,
+            3,
+            2,
+            1
+          ],
+          "natural_joint_probability": 0.0040247921390778535,
+          "right_source_partition": [
+            4,
+            3,
+            2,
+            1
+          ],
+          "source_pair_probability": 0.026419148400100782,
+          "target_partition": [
+            4,
+            3,
+            2,
+            1
+          ]
+        },
+        {
+          "conditional_target_probability": 0.09077962239583333,
+          "dimension_weighted_coupling_mass": 0.08843994140625,
+          "exact_conditional_target_probability": "2231/24576",
+          "exact_dimension_weighted_coupling_mass": "1449/16384",
+          "exact_natural_joint_probability": "17848/7441875",
+          "exact_source_pair_probability": "65536/2480625",
+          "frame_scalar": "194/189",
+          "kronecker_multiplicity": 92,
+          "left_source_partition": [
+            4,
+            3,
+            2,
+            1
+          ],
+          "natural_joint_probability": 0.002398320315780633,
+          "right_source_partition": [
+            4,
+            3,
+            2,
+            1
+          ],
+          "source_pair_probability": 0.026419148400100782,
+          "target_partition": [
+            5,
+            3,
+            1,
+            1
+          ]
+        },
+        {
+          "conditional_target_probability": 0.16225749559082892,
+          "dimension_weighted_coupling_mass": 0.16225749559082892,
+          "exact_conditional_target_probability": "92/567",
+          "exact_dimension_weighted_coupling_mass": "92/567",
+          "exact_natural_joint_probability": "17848/7441875",
+          "exact_source_pair_probability": "194/13125",
+          "frame_scalar": "194/189",
+          "kronecker_multiplicity": 92,
+          "left_source_partition": [
+            4,
+            3,
+            2,
+            1
+          ],
+          "natural_joint_probability": 0.002398320315780633,
+          "right_source_partition": [
+            5,
+            3,
+            1,
+            1
+          ],
+          "source_pair_probability": 0.01478095238095238,
+          "target_partition": [
+            4,
+            3,
+            2,
+            1
+          ]
+        },
+        {
+          "conditional_target_probability": 0.16225749559082892,
+          "dimension_weighted_coupling_mass": 0.16225749559082892,
+          "exact_conditional_target_probability": "92/567",
+          "exact_dimension_weighted_coupling_mass": "92/567",
+          "exact_natural_joint_probability": "17848/7441875",
+          "exact_source_pair_probability": "194/13125",
+          "frame_scalar": "194/189",
+          "kronecker_multiplicity": 92,
+          "left_source_partition": [
+            5,
+            3,
+            1,
+            1
+          ],
+          "natural_joint_probability": 0.002398320315780633,
+          "right_source_partition": [
+            4,
+            3,
+            2,
+            1
+          ],
+          "source_pair_probability": 0.01478095238095238,
+          "target_partition": [
+            4,
+            3,
+            2,
+            1
+          ]
+        },
+        {
+          "conditional_target_probability": 0.16225749559082892,
+          "dimension_weighted_coupling_mass": 0.16225749559082892,
+          "exact_conditional_target_probability": "92/567",
+          "exact_dimension_weighted_coupling_mass": "92/567",
+          "exact_natural_joint_probability": "16928/7441875",
+          "exact_source_pair_probability": "184/13125",
+          "frame_scalar": "184/189",
+          "kronecker_multiplicity": 92,
+          "left_source_partition": [
+            4,
+            2,
+            2,
+            1,
+            1
+          ],
+          "natural_joint_probability": 0.00227469555723524,
+          "right_source_partition": [
+            4,
+            3,
+            2,
+            1
+          ],
+          "source_pair_probability": 0.014019047619047618,
+          "target_partition": [
+            4,
+            3,
+            2,
+            1
+          ]
+        },
+        {
+          "conditional_target_probability": 0.16225749559082892,
+          "dimension_weighted_coupling_mass": 0.16225749559082892,
+          "exact_conditional_target_probability": "92/567",
+          "exact_dimension_weighted_coupling_mass": "92/567",
+          "exact_natural_joint_probability": "16928/7441875",
+          "exact_source_pair_probability": "184/13125",
+          "frame_scalar": "184/189",
+          "kronecker_multiplicity": 92,
+          "left_source_partition": [
+            4,
+            3,
+            2,
+            1
+          ],
+          "natural_joint_probability": 0.00227469555723524,
+          "right_source_partition": [
+            4,
+            2,
+            2,
+            1,
+            1
+          ],
+          "source_pair_probability": 0.014019047619047618,
+          "target_partition": [
+            4,
+            3,
+            2,
+            1
+          ]
+        },
+        {
+          "conditional_target_probability": 0.08610026041666667,
+          "dimension_weighted_coupling_mass": 0.08843994140625,
+          "exact_conditional_target_probability": "529/6144",
+          "exact_dimension_weighted_coupling_mass": "1449/16384",
+          "exact_natural_joint_probability": "16928/7441875",
+          "exact_source_pair_probability": "65536/2480625",
+          "frame_scalar": "184/189",
+          "kronecker_multiplicity": 92,
+          "left_source_partition": [
+            4,
+            3,
+            2,
+            1
+          ],
+          "natural_joint_probability": 0.00227469555723524,
+          "right_source_partition": [
+            4,
+            3,
+            2,
+            1
+          ],
+          "source_pair_probability": 0.026419148400100782,
+          "target_partition": [
+            4,
+            2,
+            2,
+            1,
+            1
+          ]
+        },
+        {
+          "conditional_target_probability": 0.16380952380952382,
+          "dimension_weighted_coupling_mass": 0.16380952380952382,
+          "exact_conditional_target_probability": "86/525",
+          "exact_dimension_weighted_coupling_mass": "86/525",
+          "exact_natural_joint_probability": "9116/4465125",
+          "exact_source_pair_probability": "106/8505",
+          "frame_scalar": "106/105",
+          "kronecker_multiplicity": 86,
+          "left_source_partition": [
+            4,
+            3,
+            1,
+            1,
+            1
+          ],
+          "natural_joint_probability": 0.0020416001791663165,
+          "right_source_partition": [
+            4,
+            3,
+            2,
+            1
+          ],
+          "source_pair_probability": 0.012463256907701352,
+          "target_partition": [
+            4,
+            3,
+            2,
+            1
+          ]
+        },
+        {
+          "conditional_target_probability": 0.16380952380952382,
+          "dimension_weighted_coupling_mass": 0.16380952380952382,
+          "exact_conditional_target_probability": "86/525",
+          "exact_dimension_weighted_coupling_mass": "86/525",
+          "exact_natural_joint_probability": "9116/4465125",
+          "exact_source_pair_probability": "106/8505",
+          "frame_scalar": "106/105",
+          "kronecker_multiplicity": 86,
+          "left_source_partition": [
+            4,
+            3,
+            2,
+            1
+          ],
+          "natural_joint_probability": 0.0020416001791663165,
+          "right_source_partition": [
+            4,
+            3,
+            1,
+            1,
+            1
+          ],
+          "source_pair_probability": 0.012463256907701352,
+          "target_partition": [
+            4,
+            3,
+            2,
+            1
+          ]
+        },
+        {
+          "conditional_target_probability": 0.07727728949652778,
+          "dimension_weighted_coupling_mass": 0.07654825846354167,
+          "exact_conditional_target_probability": "11395/147456",
+          "exact_dimension_weighted_coupling_mass": "7525/98304",
+          "exact_natural_joint_probability": "9116/4465125",
+          "exact_source_pair_probability": "65536/2480625",
+          "frame_scalar": "106/105",
+          "kronecker_multiplicity": 86,
+          "left_source_partition": [
+            4,
+            3,
+            2,
+            1
+          ],
+          "natural_joint_probability": 0.0020416001791663165,
+          "right_source_partition": [
+            4,
+            3,
+            2,
+            1
+          ],
+          "source_pair_probability": 0.026419148400100782,
+          "target_partition": [
+            4,
+            3,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "conditional_target_probability": 0.07581922743055555,
+          "dimension_weighted_coupling_mass": 0.07654825846354167,
+          "exact_conditional_target_probability": "2795/36864",
+          "exact_dimension_weighted_coupling_mass": "7525/98304",
+          "exact_natural_joint_probability": "8944/4465125",
+          "exact_source_pair_probability": "65536/2480625",
+          "frame_scalar": "104/105",
+          "kronecker_multiplicity": 86,
+          "left_source_partition": [
+            4,
+            3,
+            2,
+            1
+          ],
+          "natural_joint_probability": 0.002003079421068839,
+          "right_source_partition": [
+            4,
+            3,
+            2,
+            1
+          ],
+          "source_pair_probability": 0.026419148400100782,
+          "target_partition": [
+            5,
+            2,
+            2,
+            1
+          ]
+        },
+        {
+          "conditional_target_probability": 0.16380952380952382,
+          "dimension_weighted_coupling_mass": 0.16380952380952382,
+          "exact_conditional_target_probability": "86/525",
+          "exact_dimension_weighted_coupling_mass": "86/525",
+          "exact_natural_joint_probability": "8944/4465125",
+          "exact_source_pair_probability": "104/8505",
+          "frame_scalar": "104/105",
+          "kronecker_multiplicity": 86,
+          "left_source_partition": [
+            4,
+            3,
+            2,
+            1
+          ],
+          "natural_joint_probability": 0.002003079421068839,
+          "right_source_partition": [
+            5,
+            2,
+            2,
+            1
+          ],
+          "source_pair_probability": 0.012228101116990006,
+          "target_partition": [
+            4,
+            3,
+            2,
+            1
+          ]
+        }
+      ],
+      "transposition_count": 5,
+      "zero_probability_supported_sector_count": 40
+    }
+  ],
+  "status": "same-hidden-target-law-proved-operational-measurement-and-decoder-open",
+  "summary": "Derived and exactly normalized the shared-hidden target law on 8 finite ensemble controls through n=10. The prior dimension-weighted coupling reference differs from the operational law; no decoder or speedup is promoted.",
+  "theorem_contract": {
+    "conditional_target_probability": "p_h(nu|lambda,mu)=[g(lambda,mu,nu)d_nu/(d_lambda d_mu)] [1+r_lambda+r_mu+r_nu]/[(1+r_lambda)(1+r_mu)]",
+    "frame_link": "The natural joint law equals the regular-tensor sector mass times the exact two-copy frame scalar 1+r_lambda+r_mu+r_nu.",
+    "natural_joint_probability": "p_h(lambda,mu,nu)=d_lambda d_mu g(lambda,mu,nu)d_nu/|S_n|^2 * [1+r_lambda+r_mu+r_nu]",
+    "normalization_identity": "sum_nu g d_nu=d_lambda d_mu and sum_nu g chi_nu(h)=chi_lambda(h)chi_mu(h)",
+    "proof": "Expand the two conditioned column states. Schur partial traces give the left and right character-ratio terms; the diagonal action on the nu isotypic component gives r_nu.",
+    "source_probability": "q_h(lambda)=d_lambda^2/|S_n|*(1+r_lambda)"
+  }
+}

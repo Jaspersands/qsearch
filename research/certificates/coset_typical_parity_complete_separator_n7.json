@@ -1,0 +1,1414 @@
+{
+  "certificate_contract": {
+    "dependency_sha256": {
+      "coset_jucys_murphy_label_transform.py": "09647e1212cb94b122d020ef7d7fa9f2a01b40a7ecb774af0e8ccb50c62c8810",
+      "coset_multiplicity_commutant_search.py": "d41044a0c04eccf72a2f014aabdbc50f219f0fea1b4fd7b6f80a99ca28333be0",
+      "coset_typical_commutant_moment_audit.py": "89df750e9d05f522de976b29c335463acedb470833df8b1654b3c7ee482b55a7",
+      "coset_typical_parity_complete_separator.py": "b9ec51db09f386d413143e4c03556969d109fe1e4a29f119f516addd84e51c6d",
+      "coset_typical_uniform_source_probe.py": "14534ef7c152e49d233b01b0778f978138de624c2d164ba7f80193e47a191cc8"
+    },
+    "finite_scope_only": true,
+    "numerical_tolerance": 1e-09,
+    "search_space": "all primitive coefficient vectors over eight oriented generators with support<=3 and |coefficient|<=2"
+  },
+  "exact_repair_records": [
+    {
+      "exact_multiplicity_two_repair_proved": true,
+      "left_source": [
+        3,
+        2,
+        1
+      ],
+      "multiplicity": 2,
+      "n": 6,
+      "old_separator_exact_variance": "0",
+      "parity_complete_exact_mean": "7/120",
+      "parity_complete_exact_variance": "1/36",
+      "right_source": [
+        3,
+        3
+      ],
+      "target": [
+        3,
+        2,
+        1
+      ]
+    },
+    {
+      "exact_multiplicity_two_repair_proved": true,
+      "left_source": [
+        3,
+        2,
+        1
+      ],
+      "multiplicity": 2,
+      "n": 6,
+      "old_separator_exact_variance": "0",
+      "parity_complete_exact_mean": "-7/120",
+      "parity_complete_exact_variance": "1/36",
+      "right_source": [
+        2,
+        2,
+        2
+      ],
+      "target": [
+        3,
+        2,
+        1
+      ]
+    }
+  ],
+  "search": {
+    "best_candidate": {
+      "coefficient_map": {
+        "CT0": 0,
+        "CT1": 1,
+        "CT2": -2,
+        "TC0": 0,
+        "TC1": 0,
+        "TC2": 1,
+        "TT0": 0,
+        "TT1": 0
+      },
+      "coefficients": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        -2
+      ],
+      "collision_count": 0,
+      "minimum_gap_left_source": [
+        4,
+        3
+      ],
+      "minimum_gap_multiplicity": 4,
+      "minimum_gap_n": 7,
+      "minimum_gap_right_source": [
+        4,
+        2,
+        1
+      ],
+      "minimum_gap_target": [
+        4,
+        2,
+        1
+      ],
+      "minimum_numerical_raw_gap": 0.009480178272655695
+    },
+    "block_count_by_n": {
+      "5": 6,
+      "6": 89,
+      "7": 568
+    },
+    "coefficient_vector_count": 1744,
+    "collision_free_candidate_count": 216,
+    "discovery_candidate": {
+      "coefficient_map": {
+        "CT0": 0,
+        "CT1": 1,
+        "CT2": -2,
+        "TC0": 0,
+        "TC1": 0,
+        "TC2": 1,
+        "TT0": 0,
+        "TT1": 0
+      },
+      "coefficients": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        -2
+      ],
+      "collision_count": 0,
+      "minimum_gap_left_source": [
+        4,
+        3
+      ],
+      "minimum_gap_multiplicity": 4,
+      "minimum_gap_n": 7,
+      "minimum_gap_right_source": [
+        4,
+        2,
+        1
+      ],
+      "minimum_gap_target": [
+        4,
+        2,
+        1
+      ],
+      "minimum_numerical_raw_gap": 0.009480178272655695
+    },
+    "top_candidates": [
+      {
+        "coefficient_map": {
+          "CT0": 0,
+          "CT1": 1,
+          "CT2": -2,
+          "TC0": 0,
+          "TC1": 0,
+          "TC2": 1,
+          "TT0": 0,
+          "TT1": 0
+        },
+        "coefficients": [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          -2
+        ],
+        "collision_count": 0,
+        "minimum_gap_left_source": [
+          4,
+          3
+        ],
+        "minimum_gap_multiplicity": 4,
+        "minimum_gap_n": 7,
+        "minimum_gap_right_source": [
+          4,
+          2,
+          1
+        ],
+        "minimum_gap_target": [
+          4,
+          2,
+          1
+        ],
+        "minimum_numerical_raw_gap": 0.009480178272655695
+      },
+      {
+        "coefficient_map": {
+          "CT0": 0,
+          "CT1": -1,
+          "CT2": 2,
+          "TC0": 0,
+          "TC1": 0,
+          "TC2": 1,
+          "TT0": 0,
+          "TT1": 0
+        },
+        "coefficients": [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          -1,
+          2
+        ],
+        "collision_count": 0,
+        "minimum_gap_left_source": [
+          4,
+          3
+        ],
+        "minimum_gap_multiplicity": 4,
+        "minimum_gap_n": 7,
+        "minimum_gap_right_source": [
+          3,
+          2,
+          1,
+          1
+        ],
+        "minimum_gap_target": [
+          3,
+          2,
+          1,
+          1
+        ],
+        "minimum_numerical_raw_gap": 0.009480178272655598
+      },
+      {
+        "coefficient_map": {
+          "CT0": 0,
+          "CT1": 0,
+          "CT2": -1,
+          "TC0": 0,
+          "TC1": 1,
+          "TC2": -2,
+          "TT0": 0,
+          "TT1": 0
+        },
+        "coefficients": [
+          0,
+          0,
+          0,
+          1,
+          -2,
+          0,
+          0,
+          -1
+        ],
+        "collision_count": 0,
+        "minimum_gap_left_source": [
+          3,
+          2,
+          1,
+          1
+        ],
+        "minimum_gap_multiplicity": 4,
+        "minimum_gap_n": 7,
+        "minimum_gap_right_source": [
+          4,
+          3
+        ],
+        "minimum_gap_target": [
+          3,
+          2,
+          1,
+          1
+        ],
+        "minimum_numerical_raw_gap": 0.009480178272655543
+      },
+      {
+        "coefficient_map": {
+          "CT0": 0,
+          "CT1": 0,
+          "CT2": 1,
+          "TC0": 0,
+          "TC1": 1,
+          "TC2": -2,
+          "TT0": 0,
+          "TT1": 0
+        },
+        "coefficients": [
+          0,
+          0,
+          0,
+          1,
+          -2,
+          0,
+          0,
+          1
+        ],
+        "collision_count": 0,
+        "minimum_gap_left_source": [
+          4,
+          2,
+          1
+        ],
+        "minimum_gap_multiplicity": 4,
+        "minimum_gap_n": 7,
+        "minimum_gap_right_source": [
+          4,
+          3
+        ],
+        "minimum_gap_target": [
+          4,
+          2,
+          1
+        ],
+        "minimum_numerical_raw_gap": 0.009480178272655543
+      },
+      {
+        "coefficient_map": {
+          "CT0": 1,
+          "CT1": 0,
+          "CT2": 0,
+          "TC0": 2,
+          "TC1": 0,
+          "TC2": 1,
+          "TT0": 0,
+          "TT1": 0
+        },
+        "coefficients": [
+          0,
+          0,
+          2,
+          0,
+          1,
+          1,
+          0,
+          0
+        ],
+        "collision_count": 0,
+        "minimum_gap_left_source": [
+          3,
+          2,
+          2
+        ],
+        "minimum_gap_multiplicity": 3,
+        "minimum_gap_n": 7,
+        "minimum_gap_right_source": [
+          3,
+          2,
+          2
+        ],
+        "minimum_gap_target": [
+          3,
+          2,
+          1,
+          1
+        ],
+        "minimum_numerical_raw_gap": 0.007825902038547192
+      },
+      {
+        "coefficient_map": {
+          "CT0": -2,
+          "CT1": 0,
+          "CT2": -1,
+          "TC0": 1,
+          "TC1": 0,
+          "TC2": 0,
+          "TT0": 0,
+          "TT1": 0
+        },
+        "coefficients": [
+          0,
+          0,
+          1,
+          0,
+          0,
+          -2,
+          0,
+          -1
+        ],
+        "collision_count": 0,
+        "minimum_gap_left_source": [
+          3,
+          2,
+          2
+        ],
+        "minimum_gap_multiplicity": 3,
+        "minimum_gap_n": 7,
+        "minimum_gap_right_source": [
+          3,
+          3,
+          1
+        ],
+        "minimum_gap_target": [
+          4,
+          2,
+          1
+        ],
+        "minimum_numerical_raw_gap": 0.007825902038547189
+      },
+      {
+        "coefficient_map": {
+          "CT0": 2,
+          "CT1": 0,
+          "CT2": 1,
+          "TC0": 1,
+          "TC1": 0,
+          "TC2": 0,
+          "TT0": 0,
+          "TT1": 0
+        },
+        "coefficients": [
+          0,
+          0,
+          1,
+          0,
+          0,
+          2,
+          0,
+          1
+        ],
+        "collision_count": 0,
+        "minimum_gap_left_source": [
+          3,
+          3,
+          1
+        ],
+        "minimum_gap_multiplicity": 3,
+        "minimum_gap_n": 7,
+        "minimum_gap_right_source": [
+          3,
+          3,
+          1
+        ],
+        "minimum_gap_target": [
+          3,
+          2,
+          1,
+          1
+        ],
+        "minimum_numerical_raw_gap": 0.007825902038547187
+      },
+      {
+        "coefficient_map": {
+          "CT0": -1,
+          "CT1": 0,
+          "CT2": 0,
+          "TC0": 2,
+          "TC1": 0,
+          "TC2": 1,
+          "TT0": 0,
+          "TT1": 0
+        },
+        "coefficients": [
+          0,
+          0,
+          2,
+          0,
+          1,
+          -1,
+          0,
+          0
+        ],
+        "collision_count": 0,
+        "minimum_gap_left_source": [
+          3,
+          2,
+          2
+        ],
+        "minimum_gap_multiplicity": 3,
+        "minimum_gap_n": 7,
+        "minimum_gap_right_source": [
+          3,
+          3,
+          1
+        ],
+        "minimum_gap_target": [
+          4,
+          2,
+          1
+        ],
+        "minimum_numerical_raw_gap": 0.007825902038547184
+      },
+      {
+        "coefficient_map": {
+          "CT0": -2,
+          "CT1": -1,
+          "CT2": 0,
+          "TC0": 0,
+          "TC1": 0,
+          "TC2": 2,
+          "TT0": 0,
+          "TT1": 0
+        },
+        "coefficients": [
+          0,
+          0,
+          0,
+          0,
+          2,
+          -2,
+          -1,
+          0
+        ],
+        "collision_count": 0,
+        "minimum_gap_left_source": [
+          3,
+          2,
+          1
+        ],
+        "minimum_gap_multiplicity": 5,
+        "minimum_gap_n": 6,
+        "minimum_gap_right_source": [
+          3,
+          2,
+          1
+        ],
+        "minimum_gap_target": [
+          3,
+          2,
+          1
+        ],
+        "minimum_numerical_raw_gap": 0.007726276286683348
+      },
+      {
+        "coefficient_map": {
+          "CT0": 0,
+          "CT1": 0,
+          "CT2": -2,
+          "TC0": 2,
+          "TC1": 1,
+          "TC2": 0,
+          "TT0": 0,
+          "TT1": 0
+        },
+        "coefficients": [
+          0,
+          0,
+          2,
+          1,
+          0,
+          0,
+          0,
+          -2
+        ],
+        "collision_count": 0,
+        "minimum_gap_left_source": [
+          3,
+          2,
+          1
+        ],
+        "minimum_gap_multiplicity": 5,
+        "minimum_gap_n": 6,
+        "minimum_gap_right_source": [
+          3,
+          2,
+          1
+        ],
+        "minimum_gap_target": [
+          3,
+          2,
+          1
+        ],
+        "minimum_numerical_raw_gap": 0.007726276286683209
+      },
+      {
+        "coefficient_map": {
+          "CT0": 0,
+          "CT1": 0,
+          "CT2": 2,
+          "TC0": 2,
+          "TC1": 1,
+          "TC2": 0,
+          "TT0": 0,
+          "TT1": 0
+        },
+        "coefficients": [
+          0,
+          0,
+          2,
+          1,
+          0,
+          0,
+          0,
+          2
+        ],
+        "collision_count": 0,
+        "minimum_gap_left_source": [
+          3,
+          2,
+          1
+        ],
+        "minimum_gap_multiplicity": 5,
+        "minimum_gap_n": 6,
+        "minimum_gap_right_source": [
+          3,
+          2,
+          1
+        ],
+        "minimum_gap_target": [
+          3,
+          2,
+          1
+        ],
+        "minimum_numerical_raw_gap": 0.007726276286683181
+      },
+      {
+        "coefficient_map": {
+          "CT0": 2,
+          "CT1": 1,
+          "CT2": 0,
+          "TC0": 0,
+          "TC1": 0,
+          "TC2": 2,
+          "TT0": 0,
+          "TT1": 0
+        },
+        "coefficients": [
+          0,
+          0,
+          0,
+          0,
+          2,
+          2,
+          1,
+          0
+        ],
+        "collision_count": 0,
+        "minimum_gap_left_source": [
+          3,
+          2,
+          1
+        ],
+        "minimum_gap_multiplicity": 5,
+        "minimum_gap_n": 6,
+        "minimum_gap_right_source": [
+          3,
+          2,
+          1
+        ],
+        "minimum_gap_target": [
+          3,
+          2,
+          1
+        ],
+        "minimum_numerical_raw_gap": 0.007726276286683015
+      },
+      {
+        "coefficient_map": {
+          "CT0": -1,
+          "CT1": -2,
+          "CT2": 0,
+          "TC0": 0,
+          "TC1": 0,
+          "TC2": 2,
+          "TT0": 0,
+          "TT1": 0
+        },
+        "coefficients": [
+          0,
+          0,
+          0,
+          0,
+          2,
+          -1,
+          -2,
+          0
+        ],
+        "collision_count": 0,
+        "minimum_gap_left_source": [
+          3,
+          2,
+          1,
+          1
+        ],
+        "minimum_gap_multiplicity": 9,
+        "minimum_gap_n": 7,
+        "minimum_gap_right_source": [
+          3,
+          2,
+          1,
+          1
+        ],
+        "minimum_gap_target": [
+          4,
+          2,
+          1
+        ],
+        "minimum_numerical_raw_gap": 0.007649232561903689
+      },
+      {
+        "coefficient_map": {
+          "CT0": 1,
+          "CT1": 2,
+          "CT2": 0,
+          "TC0": 0,
+          "TC1": 0,
+          "TC2": 2,
+          "TT0": 0,
+          "TT1": 0
+        },
+        "coefficients": [
+          0,
+          0,
+          0,
+          0,
+          2,
+          1,
+          2,
+          0
+        ],
+        "collision_count": 0,
+        "minimum_gap_left_source": [
+          4,
+          2,
+          1
+        ],
+        "minimum_gap_multiplicity": 9,
+        "minimum_gap_n": 7,
+        "minimum_gap_right_source": [
+          3,
+          2,
+          1,
+          1
+        ],
+        "minimum_gap_target": [
+          3,
+          2,
+          1,
+          1
+        ],
+        "minimum_numerical_raw_gap": 0.007649232561903661
+      },
+      {
+        "coefficient_map": {
+          "CT0": 0,
+          "CT1": 0,
+          "CT2": -2,
+          "TC0": 1,
+          "TC1": 2,
+          "TC2": 0,
+          "TT0": 0,
+          "TT1": 0
+        },
+        "coefficients": [
+          0,
+          0,
+          1,
+          2,
+          0,
+          0,
+          0,
+          -2
+        ],
+        "collision_count": 0,
+        "minimum_gap_left_source": [
+          3,
+          2,
+          1,
+          1
+        ],
+        "minimum_gap_multiplicity": 9,
+        "minimum_gap_n": 7,
+        "minimum_gap_right_source": [
+          3,
+          2,
+          1,
+          1
+        ],
+        "minimum_gap_target": [
+          4,
+          2,
+          1
+        ],
+        "minimum_numerical_raw_gap": 0.007649232561903627
+      },
+      {
+        "coefficient_map": {
+          "CT0": 0,
+          "CT1": 0,
+          "CT2": 2,
+          "TC0": 1,
+          "TC1": 2,
+          "TC2": 0,
+          "TT0": 0,
+          "TT1": 0
+        },
+        "coefficients": [
+          0,
+          0,
+          1,
+          2,
+          0,
+          0,
+          0,
+          2
+        ],
+        "collision_count": 0,
+        "minimum_gap_left_source": [
+          3,
+          2,
+          1,
+          1
+        ],
+        "minimum_gap_multiplicity": 9,
+        "minimum_gap_n": 7,
+        "minimum_gap_right_source": [
+          4,
+          2,
+          1
+        ],
+        "minimum_gap_target": [
+          3,
+          2,
+          1,
+          1
+        ],
+        "minimum_numerical_raw_gap": 0.007649232561903599
+      },
+      {
+        "coefficient_map": {
+          "CT0": 1,
+          "CT1": -2,
+          "CT2": 0,
+          "TC0": 2,
+          "TC1": 0,
+          "TC2": 0,
+          "TT0": 0,
+          "TT1": 0
+        },
+        "coefficients": [
+          0,
+          0,
+          2,
+          0,
+          0,
+          1,
+          -2,
+          0
+        ],
+        "collision_count": 0,
+        "minimum_gap_left_source": [
+          3,
+          2,
+          1,
+          1
+        ],
+        "minimum_gap_multiplicity": 5,
+        "minimum_gap_n": 7,
+        "minimum_gap_right_source": [
+          4,
+          2,
+          1
+        ],
+        "minimum_gap_target": [
+          4,
+          1,
+          1,
+          1
+        ],
+        "minimum_numerical_raw_gap": 0.007047269253754668
+      },
+      {
+        "coefficient_map": {
+          "CT0": -2,
+          "CT1": 0,
+          "CT2": 0,
+          "TC0": 1,
+          "TC1": -2,
+          "TC2": 0,
+          "TT0": 0,
+          "TT1": 0
+        },
+        "coefficients": [
+          0,
+          0,
+          1,
+          -2,
+          0,
+          -2,
+          0,
+          0
+        ],
+        "collision_count": 0,
+        "minimum_gap_left_source": [
+          3,
+          2,
+          1,
+          1
+        ],
+        "minimum_gap_multiplicity": 5,
+        "minimum_gap_n": 7,
+        "minimum_gap_right_source": [
+          3,
+          2,
+          1,
+          1
+        ],
+        "minimum_gap_target": [
+          4,
+          1,
+          1,
+          1
+        ],
+        "minimum_numerical_raw_gap": 0.007047269253754666
+      },
+      {
+        "coefficient_map": {
+          "CT0": 2,
+          "CT1": 0,
+          "CT2": 0,
+          "TC0": 1,
+          "TC1": -2,
+          "TC2": 0,
+          "TT0": 0,
+          "TT1": 0
+        },
+        "coefficients": [
+          0,
+          0,
+          1,
+          -2,
+          0,
+          2,
+          0,
+          0
+        ],
+        "collision_count": 0,
+        "minimum_gap_left_source": [
+          4,
+          2,
+          1
+        ],
+        "minimum_gap_multiplicity": 5,
+        "minimum_gap_n": 7,
+        "minimum_gap_right_source": [
+          3,
+          2,
+          1,
+          1
+        ],
+        "minimum_gap_target": [
+          4,
+          1,
+          1,
+          1
+        ],
+        "minimum_numerical_raw_gap": 0.007047269253754654
+      },
+      {
+        "coefficient_map": {
+          "CT0": -1,
+          "CT1": 2,
+          "CT2": 0,
+          "TC0": 2,
+          "TC1": 0,
+          "TC2": 0,
+          "TT0": 0,
+          "TT1": 0
+        },
+        "coefficients": [
+          0,
+          0,
+          2,
+          0,
+          0,
+          -1,
+          2,
+          0
+        ],
+        "collision_count": 0,
+        "minimum_gap_left_source": [
+          4,
+          2,
+          1
+        ],
+        "minimum_gap_multiplicity": 5,
+        "minimum_gap_n": 7,
+        "minimum_gap_right_source": [
+          4,
+          2,
+          1
+        ],
+        "minimum_gap_target": [
+          4,
+          1,
+          1,
+          1
+        ],
+        "minimum_numerical_raw_gap": 0.007047269253754628
+      },
+      {
+        "coefficient_map": {
+          "CT0": 1,
+          "CT1": 0,
+          "CT2": 1,
+          "TC0": 0,
+          "TC1": 0,
+          "TC2": 2,
+          "TT0": 0,
+          "TT1": 0
+        },
+        "coefficients": [
+          0,
+          0,
+          0,
+          0,
+          2,
+          1,
+          0,
+          1
+        ],
+        "collision_count": 0,
+        "minimum_gap_left_source": [
+          3,
+          2,
+          1,
+          1
+        ],
+        "minimum_gap_multiplicity": 9,
+        "minimum_gap_n": 7,
+        "minimum_gap_right_source": [
+          4,
+          2,
+          1
+        ],
+        "minimum_gap_target": [
+          3,
+          2,
+          1,
+          1
+        ],
+        "minimum_numerical_raw_gap": 0.006241433134626181
+      },
+      {
+        "coefficient_map": {
+          "CT0": -1,
+          "CT1": 0,
+          "CT2": -1,
+          "TC0": 0,
+          "TC1": 0,
+          "TC2": 2,
+          "TT0": 0,
+          "TT1": 0
+        },
+        "coefficients": [
+          0,
+          0,
+          0,
+          0,
+          2,
+          -1,
+          0,
+          -1
+        ],
+        "collision_count": 0,
+        "minimum_gap_left_source": [
+          3,
+          2,
+          1,
+          1
+        ],
+        "minimum_gap_multiplicity": 9,
+        "minimum_gap_n": 7,
+        "minimum_gap_right_source": [
+          3,
+          2,
+          1,
+          1
+        ],
+        "minimum_gap_target": [
+          4,
+          2,
+          1
+        ],
+        "minimum_numerical_raw_gap": 0.006241433134626164
+      },
+      {
+        "coefficient_map": {
+          "CT0": 0,
+          "CT1": 0,
+          "CT2": -2,
+          "TC0": 1,
+          "TC1": 0,
+          "TC2": 1,
+          "TT0": 0,
+          "TT1": 0
+        },
+        "coefficients": [
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          0,
+          -2
+        ],
+        "collision_count": 0,
+        "minimum_gap_left_source": [
+          3,
+          2,
+          1,
+          1
+        ],
+        "minimum_gap_multiplicity": 9,
+        "minimum_gap_n": 7,
+        "minimum_gap_right_source": [
+          3,
+          2,
+          1,
+          1
+        ],
+        "minimum_gap_target": [
+          4,
+          2,
+          1
+        ],
+        "minimum_numerical_raw_gap": 0.006241433134626127
+      },
+      {
+        "coefficient_map": {
+          "CT0": 0,
+          "CT1": 0,
+          "CT2": 2,
+          "TC0": 1,
+          "TC1": 0,
+          "TC2": 1,
+          "TT0": 0,
+          "TT1": 0
+        },
+        "coefficients": [
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          0,
+          2
+        ],
+        "collision_count": 0,
+        "minimum_gap_left_source": [
+          4,
+          2,
+          1
+        ],
+        "minimum_gap_multiplicity": 9,
+        "minimum_gap_n": 7,
+        "minimum_gap_right_source": [
+          3,
+          2,
+          1,
+          1
+        ],
+        "minimum_gap_target": [
+          3,
+          2,
+          1,
+          1
+        ],
+        "minimum_numerical_raw_gap": 0.006241433134626126
+      },
+      {
+        "coefficient_map": {
+          "CT0": 0,
+          "CT1": 0,
+          "CT2": 2,
+          "TC0": 1,
+          "TC1": -2,
+          "TC2": 0,
+          "TT0": 0,
+          "TT1": 0
+        },
+        "coefficients": [
+          0,
+          0,
+          1,
+          -2,
+          0,
+          0,
+          0,
+          2
+        ],
+        "collision_count": 0,
+        "minimum_gap_left_source": [
+          3,
+          3,
+          1
+        ],
+        "minimum_gap_multiplicity": 5,
+        "minimum_gap_n": 7,
+        "minimum_gap_right_source": [
+          3,
+          2,
+          1,
+          1
+        ],
+        "minimum_gap_target": [
+          3,
+          2,
+          1,
+          1
+        ],
+        "minimum_numerical_raw_gap": 0.005950984424732353
+      },
+      {
+        "coefficient_map": {
+          "CT0": 0,
+          "CT1": 0,
+          "CT2": -2,
+          "TC0": 1,
+          "TC1": -2,
+          "TC2": 0,
+          "TT0": 0,
+          "TT1": 0
+        },
+        "coefficients": [
+          0,
+          0,
+          1,
+          -2,
+          0,
+          0,
+          0,
+          -2
+        ],
+        "collision_count": 0,
+        "minimum_gap_left_source": [
+          3,
+          3,
+          1
+        ],
+        "minimum_gap_multiplicity": 5,
+        "minimum_gap_n": 7,
+        "minimum_gap_right_source": [
+          4,
+          2,
+          1
+        ],
+        "minimum_gap_target": [
+          4,
+          2,
+          1
+        ],
+        "minimum_numerical_raw_gap": 0.0059509844247322835
+      },
+      {
+        "coefficient_map": {
+          "CT0": -1,
+          "CT1": 2,
+          "CT2": 0,
+          "TC0": 0,
+          "TC1": 0,
+          "TC2": 2,
+          "TT0": 0,
+          "TT1": 0
+        },
+        "coefficients": [
+          0,
+          0,
+          0,
+          0,
+          2,
+          -1,
+          2,
+          0
+        ],
+        "collision_count": 0,
+        "minimum_gap_left_source": [
+          4,
+          2,
+          1
+        ],
+        "minimum_gap_multiplicity": 5,
+        "minimum_gap_n": 7,
+        "minimum_gap_right_source": [
+          3,
+          3,
+          1
+        ],
+        "minimum_gap_target": [
+          4,
+          2,
+          1
+        ],
+        "minimum_numerical_raw_gap": 0.005950984424732256
+      },
+      {
+        "coefficient_map": {
+          "CT0": 1,
+          "CT1": -2,
+          "CT2": 0,
+          "TC0": 0,
+          "TC1": 0,
+          "TC2": 2,
+          "TT0": 0,
+          "TT1": 0
+        },
+        "coefficients": [
+          0,
+          0,
+          0,
+          0,
+          2,
+          1,
+          -2,
+          0
+        ],
+        "collision_count": 0,
+        "minimum_gap_left_source": [
+          3,
+          2,
+          1,
+          1
+        ],
+        "minimum_gap_multiplicity": 5,
+        "minimum_gap_n": 7,
+        "minimum_gap_right_source": [
+          3,
+          3,
+          1
+        ],
+        "minimum_gap_target": [
+          3,
+          2,
+          1,
+          1
+        ],
+        "minimum_numerical_raw_gap": 0.0059509844247322
+      },
+      {
+        "coefficient_map": {
+          "CT0": -1,
+          "CT1": 0,
+          "CT2": 0,
+          "TC0": 0,
+          "TC1": 1,
+          "TC2": 2,
+          "TT0": 0,
+          "TT1": 0
+        },
+        "coefficients": [
+          0,
+          0,
+          0,
+          1,
+          2,
+          -1,
+          0,
+          0
+        ],
+        "collision_count": 0,
+        "minimum_gap_left_source": [
+          4,
+          2,
+          1
+        ],
+        "minimum_gap_multiplicity": 5,
+        "minimum_gap_n": 7,
+        "minimum_gap_right_source": [
+          3,
+          3,
+          1
+        ],
+        "minimum_gap_target": [
+          4,
+          2,
+          1
+        ],
+        "minimum_numerical_raw_gap": 0.005720346476944596
+      },
+      {
+        "coefficient_map": {
+          "CT0": 0,
+          "CT1": 1,
+          "CT2": 2,
+          "TC0": 1,
+          "TC1": 0,
+          "TC2": 0,
+          "TT0": 0,
+          "TT1": 0
+        },
+        "coefficients": [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1,
+          2
+        ],
+        "collision_count": 0,
+        "minimum_gap_left_source": [
+          3,
+          3,
+          1
+        ],
+        "minimum_gap_multiplicity": 5,
+        "minimum_gap_n": 7,
+        "minimum_gap_right_source": [
+          3,
+          2,
+          1,
+          1
+        ],
+        "minimum_gap_target": [
+          3,
+          2,
+          1,
+          1
+        ],
+        "minimum_numerical_raw_gap": 0.0057203464769445544
+      }
+    ]
+  }
+}

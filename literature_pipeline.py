@@ -62,6 +62,93 @@ class HypothesisFactoryResult:
 
 MECHANISM_RULES: list[tuple[set[str], dict[str, str]]] = [
     (
+        {
+            "multiregister",
+            "entanglement-width",
+            "information-lower-bound",
+        },
+        {
+            "mechanism": (
+                "Entangled multiregister measurement over a growing number "
+                "of symmetric-group coset states."
+            ),
+            "problem_family": (
+                "GI-relevant hidden involutions in symmetric groups and "
+                "related nonabelian hidden-subgroup ensembles."
+            ),
+            "reduction": (
+                "Graph isomorphism reduces to distinguishing hidden "
+                "involution subgroups; information extracted from k coset "
+                "states is bounded through representation concentration."
+            ),
+            "no_go_barrier": (
+                "Any measurement entangled across o(n log n) coset states has "
+                "negligible information about the hidden involution; "
+                "nonnegligible information requires Omega(n log n) jointly "
+                "measured registers."
+            ),
+            "proof_technique": (
+                "Multiregister Fourier analysis, representation dimension "
+                "bounds, tensor-product concentration, and accessible-"
+                "information estimates."
+            ),
+            "open_question": (
+                "Can an explicit polynomial circuit implement the required "
+                "Theta(n log n)-register entangled measurement through a "
+                "uniform associator network and decode a compressed covariant "
+                "outcome?"
+            ),
+            "reusable_abstraction": (
+                "Entanglement-width ledger: register count, associator "
+                "network, outcome description, information bound, decoder, "
+                "and classical comparison."
+            ),
+        },
+    ),
+    (
+        {
+            "maximal-irrep-dimension",
+            "plancherel-measure",
+            "source-coverage",
+        },
+        {
+            "mechanism": (
+                "Natural-input source-coverage accounting for symmetric-group "
+                "Fourier algorithms using maximal-dimension and Plancherel "
+                "asymptotics."
+            ),
+            "problem_family": (
+                "Multi-copy symmetric-group involution coset states whose weak "
+                "Fourier labels range over Plancherel-typical partitions."
+            ),
+            "reduction": (
+                "Weak-Fourier involution probabilities are at most twice "
+                "Plancherel mass, transferring maximal-atom asymptotics into "
+                "a source-postselection obstruction."
+            ),
+            "no_go_barrier": (
+                "The maximal Plancherel atom is exp(-Theta(sqrt(n))); any "
+                "polynomial-size catalog of pre-certified source partitions "
+                "therefore has superpolynomially small natural mass."
+            ),
+            "proof_technique": (
+                "Asymptotic representation theory, maximal irreducible "
+                "dimension estimates, Plancherel measure, and character-ratio "
+                "probability bounds."
+            ),
+            "open_question": (
+                "Can commutant separation, coherent multiplicity resolution, "
+                "frame conditioning, and decoding be made uniform in arbitrary "
+                "sampled partition labels?"
+            ),
+            "reusable_abstraction": (
+                "Source-coverage ledger: sampled label law, pre-certified "
+                "catalog size, target coupling mass, postselection cost, and "
+                "uniform label-adaptive circuit obligations."
+            ),
+        },
+    ),
+    (
         {"hull", "projector", "classical-reduction"},
         {
             "mechanism": "Basis-independent hull projectors reduce permutation code equivalence to weighted graph isomorphism; shortening extends the upper bound by hull dimension.",

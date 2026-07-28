@@ -30,12 +30,24 @@ BOOLEAN_COSET_SEPARATION_PATH = Path("research/classical_baselines/dcp_subset_su
 MARKER_AWARE_LIST_DECODER_PATH = Path("research/classical_baselines/dcp_marker_aware_list_decoder.json")
 MARKER_DEVIATION_GEOMETRY_PATH = Path("research/classical_baselines/dcp_marker_deviation_geometry.json")
 MARKER_ALL_TARGET_COVERAGE_PATH = Path("research/classical_baselines/dcp_marker_all_target_coverage.json")
+MARKER_VULNERABLE_COORDINATE_PATH = Path(
+    "research/classical_baselines/dcp_marker_vulnerable_coordinate_decoder.json"
+)
+MARKER_CHART_UNION_PATH = Path(
+    "research/classical_baselines/dcp_marker_chart_union_decoder.json"
+)
+MARKER_TARGET_ADAPTIVE_BEAM_PATH = Path(
+    "research/classical_baselines/dcp_marker_target_adaptive_beam.json"
+)
 SUBSET_SUM_FOURTH_MOMENT_PATH = Path("research/classical_baselines/dcp_subset_sum_fourth_moment_obstruction.json")
 SUBSET_SUM_SMITH_MOMENT_PATH = Path("research/classical_baselines/dcp_subset_sum_smith_moment_spectrum.json")
 SUBSET_SUM_SMITH_TRANSFER_PATH = Path("research/classical_baselines/dcp_subset_sum_smith_transfer_order_six.json")
 SUBSET_SUM_FIXED_ORDER_MOMENT_PATH = Path("research/classical_baselines/dcp_subset_sum_fixed_order_moment_theorem.json")
 SUBSET_SUM_CONDITIONED_TAIL_PATH = Path("research/classical_baselines/dcp_subset_sum_conditioned_tail_theorem.json")
 SUBSET_SUM_GROWING_ORDER_PATH = Path("research/classical_baselines/dcp_subset_sum_growing_order_theorem.json")
+SUBSET_SUM_GROWING_ORDER_CHAIN_PATH = Path(
+    "research/classical_baselines/dcp_subset_sum_growing_order_chain_theorem.json"
+)
 SUBSET_SUM_EMBEDDING_VOLUME_PATH = Path("research/classical_baselines/dcp_subset_sum_embedding_volume_theorem.json")
 SUBSET_SUM_SHORT_RELATION_PATH = Path("research/classical_baselines/dcp_subset_sum_short_relation_theorem.json")
 SUBSET_SUM_CARRY_RELATION_PATH = Path("research/classical_baselines/dcp_subset_sum_carry_relation_theorem.json")
@@ -129,12 +141,16 @@ def build_solver_primitives() -> list[SolverPrimitive]:
     marker_list = _metrics(MARKER_AWARE_LIST_DECODER_PATH)
     marker_deviations = _metrics(MARKER_DEVIATION_GEOMETRY_PATH)
     marker_all_targets = _metrics(MARKER_ALL_TARGET_COVERAGE_PATH)
+    marker_vulnerable = _metrics(MARKER_VULNERABLE_COORDINATE_PATH)
+    marker_chart_union = _metrics(MARKER_CHART_UNION_PATH)
+    marker_target_beam = _metrics(MARKER_TARGET_ADAPTIVE_BEAM_PATH)
     fourth_moment = _metrics(SUBSET_SUM_FOURTH_MOMENT_PATH)
     smith_moments = _metrics(SUBSET_SUM_SMITH_MOMENT_PATH)
     smith_transfer = _metrics(SUBSET_SUM_SMITH_TRANSFER_PATH)
     fixed_order_moments = _metrics(SUBSET_SUM_FIXED_ORDER_MOMENT_PATH)
     conditioned_tail = _metrics(SUBSET_SUM_CONDITIONED_TAIL_PATH)
     growing_order = _metrics(SUBSET_SUM_GROWING_ORDER_PATH)
+    growing_order_chain = _metrics(SUBSET_SUM_GROWING_ORDER_CHAIN_PATH)
     embedding_volume = _metrics(SUBSET_SUM_EMBEDDING_VOLUME_PATH)
     short_relations = _metrics(SUBSET_SUM_SHORT_RELATION_PATH)
     carry_relations = _metrics(SUBSET_SUM_CARRY_RELATION_PATH)
@@ -613,6 +629,34 @@ def build_solver_primitives() -> list[SolverPrimitive]:
             ),
         ),
         SolverPrimitive(
+            primitive_id="subset-sum-near-log-lattice-chain-obstruction",
+            role=(
+                "uniform no-go gate for nonnegative growing-order moments "
+                "almost to logarithmic order"
+            ),
+            current_evidence=(
+                f"exact controls/failures/max path="
+                f"{growing_order_chain.get('exact_control_count', 0)}/"
+                f"{growing_order_chain.get('exact_chain_bound_failure_count', 0)}/"
+                f"{growing_order_chain.get('maximum_exact_longest_nonself_path', 0)}; "
+                f"polynomial/fixed-fraction/near-log theorems="
+                f"{growing_order_chain.get('polynomial_chain_length_theorem_count', 0)}/"
+                f"{growing_order_chain.get('proved_fixed_fraction_log_obstruction_count', 0)}/"
+                f"{growing_order_chain.get('proved_near_log_deficit_obstruction_count', 0)}; "
+                f"final-window/signed proofs="
+                f"{growing_order_chain.get('proved_final_near_log_window_obstruction_count', 0)}/"
+                f"{growing_order_chain.get('proved_signed_statistic_obstruction_count', 0)}"
+            ),
+            resource_status=(
+                "analytic O(k^2 log k) monotone lattice-chain theorem with "
+                "exact low-order transfer-DAG controls"
+            ),
+            interface_status=(
+                "fixed-fraction logarithmic nonnegative moments closed; only "
+                "the final near-log window, signed observables, and basis geometry remain"
+            ),
+        ),
+        SolverPrimitive(
             primitive_id="subset-sum-embedding-volume-obstruction",
             role="no-go gate for determinant-only standard and logarithmic carry-sliced lattice gaps",
             current_evidence=(
@@ -756,6 +800,90 @@ def build_solver_primitives() -> list[SolverPrimitive]:
             interface_status="target sampling resolved exactly; random-label concentration and scalable decoder remain open",
         ),
         SolverPrimitive(
+            primitive_id="vulnerable-log-coordinate-marker-list",
+            role=(
+                "growing-depth polynomial nearest-plane list on a public "
+                "risk-ranked logarithmic coordinate subspace"
+            ),
+            current_evidence=(
+                f"polynomial/transfer theorems/failures="
+                f"{marker_vulnerable.get('polynomial_selected_coordinate_list_theorem_count', 0)}/"
+                f"{marker_vulnerable.get('transfer_sandwich_theorem_count', 0)}/"
+                f"{marker_vulnerable.get('transfer_sandwich_failure_count', 0)}; "
+                f"tail assignment coverage standard/carry="
+                f"{marker_vulnerable.get('tail_standard_sampled_assignment_coverage', 0)}/"
+                f"{marker_vulnerable.get('tail_carry_sampled_assignment_coverage', 0)}; "
+                f"log2 slopes={marker_vulnerable.get('standard_log2_coverage_slope_per_n', 0)}/"
+                f"{marker_vulnerable.get('carry_log2_coverage_slope_per_n', 0)}; "
+                f"uniform-legal laws="
+                f"{marker_vulnerable.get('proved_inverse_polynomial_uniform_legal_coverage_count', 0)}"
+            ),
+            resource_status=(
+                "(2q+1)^(c ceil(log2 n)) paths and at most a linear carry factor "
+                "for fixed c and q"
+            ),
+            interface_status=(
+                "explicit legal growing-depth classical attack; random-label "
+                "coverage or decay theorem remains open"
+            ),
+        ),
+        SolverPrimitive(
+            primitive_id="learned-polynomial-marker-chart-union",
+            role=(
+                "target-independent polynomial atlas of logarithmic "
+                "nearest-plane coordinate cells"
+            ),
+            current_evidence=(
+                f"polynomial/target-selector/train-test failures="
+                f"{marker_chart_union.get('polynomial_chart_union_theorem_count', 0)}/"
+                f"{marker_chart_union.get('target_independent_selector_failure_count', 0)}/"
+                f"{marker_chart_union.get('disjoint_train_test_failure_count', 0)}; "
+                f"max charts={marker_chart_union.get('maximum_chart_count', 0)}; "
+                f"tail carry held-out/max-row="
+                f"{marker_chart_union.get('tail_carry_heldout_coverage', 0)}/"
+                f"{marker_chart_union.get('tail_maximum_carry_heldout_coverage', 0)}; "
+                f"uniform-legal laws="
+                f"{marker_chart_union.get('proved_inverse_polynomial_uniform_legal_coverage_count', 0)}"
+            ),
+            resource_status=(
+                "n^a(2q+1)^(c ceil(log2 n)) paths plus a linear carry factor "
+                "for fixed a,c,q"
+            ),
+            interface_status=(
+                "legal learned classical attack with disjoint held-out audit; "
+                "random-label coverage/decay theorem absent"
+            ),
+        ),
+        SolverPrimitive(
+            primitive_id="target-adaptive-polynomial-marker-beam",
+            role=(
+                "source-native K-best nearest-plane attack whose retained "
+                "partial paths may depend on the observed target"
+            ),
+            current_evidence=(
+                f"polynomial bound/exact-rounding/state failures="
+                f"{marker_target_beam.get('polynomial_state_bound_theorem_count', 0)}/"
+                f"{marker_target_beam.get('exact_rounding_failure_count', 0)}/"
+                f"{marker_target_beam.get('state_bound_failure_count', 0)}; "
+                f"max width powers standard/carry="
+                f"{marker_target_beam.get('maximum_standard_width_power', 0)}/"
+                f"{marker_target_beam.get('maximum_carry_width_power', 0)}; "
+                f"tail source success standard/carry="
+                f"{marker_target_beam.get('tail_standard_max_power_source_success_rate', 0)}/"
+                f"{marker_target_beam.get('tail_carry_max_power_source_success_rate', 0)}; "
+                f"source theorems="
+                f"{marker_target_beam.get('proved_inverse_polynomial_uniform_source_success_count', 0)}"
+            ),
+            resource_status=(
+                "rank*(2q+1)*n^a retained-path expansions, with every "
+                "reachable logarithmic carry explicitly charged"
+            ),
+            interface_status=(
+                "legal independent-uniform-target classical baseline; finite "
+                "width frontier has no asymptotic source law"
+            ),
+        ),
+        SolverPrimitive(
             primitive_id="source-native-affine-cvp-scaling",
             role="larger-n classical attack with exact meet-in-the-middle legality for failed and successful runs",
             current_evidence=(
@@ -871,6 +999,8 @@ def synthesize_solver_hypotheses() -> list[SolverHypothesis]:
                     "fixed-depth-marker-aware-cell-list",
                     "exact-marker-witness-deviation-geometry",
                     "exact-all-target-marker-list-coverage",
+                    "vulnerable-log-coordinate-marker-list",
+                    "learned-polynomial-marker-chart-union",
                     "source-native-affine-cvp-scaling",
                     "exact-affine-babai-cell-geometry",
                     "standard-embedding-short-relation-obstruction",
@@ -898,7 +1028,7 @@ def synthesize_solver_hypotheses() -> list[SolverHypothesis]:
                     "Return and verify an explicit binary witness with polynomial time, memory, and precision.",
                 ],
                 first_experiments=[
-                    "Derive a source-average law for the fixed-depth nearest-plane cell union already implemented, stratified by marker-zero relation projections.",
+                    "Prove concentration or decay of accepted assignment mass for the preregistered vulnerable-log-coordinate marker list and transfer it to uniform legal targets.",
                     "Search held-out marker-weighted basis objectives and require a preregistered inverse-polynomial positive-margin tail.",
                     "Reject any gain that appears only under planted targets, postselected easy instances, or exponential witness enumeration.",
                 ],
@@ -1008,6 +1138,7 @@ def synthesize_solver_hypotheses() -> list[SolverHypothesis]:
                     "subset-sum-all-fixed-moment-obstruction",
                     "subset-sum-conditioned-fixed-moment-tail",
                     "subset-sum-sub-half-log-moment-obstruction",
+                    "subset-sum-near-log-lattice-chain-obstruction",
                     "subset-sum-embedding-volume-obstruction",
                     "standard-embedding-short-relation-obstruction",
                     "carry-sliced-relation-source-obstruction",
@@ -1045,11 +1176,11 @@ def synthesize_solver_hypotheses() -> list[SolverHypothesis]:
                     "Retain a genuinely joint low/high constraint or prove a concrete generic high event already has inverse-polynomial probability; low-only carry selection gives an exactly generic quotient.",
                     "Define a higher-order residual or reduced-basis statistic not determined by exact pairwise moments.",
                     "At fixed order four, prove an inverse-polynomial atypical-fiber tail and an implicit estimator/decoder despite the vanishing source average; otherwise use growing order or basis geometry explicitly.",
-                    "No larger fixed order is admissible as a generic source mechanism; specify k(n) with full resource accounting or prove an atypical conditioned-fiber tail.",
+                    "No fixed order or nonnegative growing order satisfying 2^k O(k^2 log k)(log n+k)=o(n) is admissible; enter the final near-log window with full resources, prove a signed observable, or use basis geometry.",
                     "Prove a short-vector separation or decoding theorem after preconditioning.",
                 ],
                 first_experiments=[
-                    "Preregister an atypical-fiber fourth-order statistic, a growing-order correlation, or an explicit LLL basis event, not a generic source-average order-four statistic, count window, or degree<=3 moment.",
+                    "Preregister a signed final-window correlation or an explicit LLL basis event; generic nonnegative moments below the final near-log window are now analytically obstructed.",
                     "Feed compact fibers into alternate embeddings and compare held-out tail recovery, not training constants.",
                     "Search for analytic anti-concentration bounds on competing short vectors.",
                 ],

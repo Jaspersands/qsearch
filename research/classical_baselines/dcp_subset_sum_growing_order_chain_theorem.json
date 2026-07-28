@@ -1,0 +1,234 @@
+{
+  "claim_gate": {
+    "final_near_log_window_closed": false,
+    "fixed_fraction_log_orders_closed": true,
+    "near_log_deficit_orders_closed": true,
+    "polynomial_lattice_chain_bound_proved": true,
+    "polynomial_witness_decoder_constructed": false,
+    "reason": "Nonnegative growing-order moments are now obstructed almost up to logarithmic order. Survivors must enter the final near-log window, use signed cancellation, or leave moment geometry.",
+    "reduced_basis_geometry_closed": false,
+    "signed_statistics_closed": false,
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-07-28T04:39:50.358582+00:00",
+  "exact_controls": [
+    {
+      "boolean_pattern_count": 4,
+      "bound_verified": true,
+      "chain_length_upper_bound": 2,
+      "exact_longest_nonself_path": 1,
+      "moment_order": 2,
+      "reachable_state_count": 2
+    },
+    {
+      "boolean_pattern_count": 8,
+      "bound_verified": true,
+      "chain_length_upper_bound": 6,
+      "exact_longest_nonself_path": 2,
+      "moment_order": 3,
+      "reachable_state_count": 5
+    },
+    {
+      "boolean_pattern_count": 16,
+      "bound_verified": true,
+      "chain_length_upper_bound": 11,
+      "exact_longest_nonself_path": 4,
+      "moment_order": 4,
+      "reachable_state_count": 19
+    },
+    {
+      "boolean_pattern_count": 32,
+      "bound_verified": true,
+      "chain_length_upper_bound": 18,
+      "exact_longest_nonself_path": 5,
+      "moment_order": 5,
+      "reachable_state_count": 137
+    }
+  ],
+  "falsifiers_triggered": [
+    "The 2^k Boolean-pattern count is not a valid worst-case chain-length prefactor.",
+    "Every k<=(1-epsilon)log_2 n nonnegative bad-tuple moment schedule is asymptotically obstructed.",
+    "The conservative log n-(4+epsilon)log log n schedule is also obstructed.",
+    "The theorem cannot be transferred to signed observables, reduced-basis events, or decoder lower bounds."
+  ],
+  "headline_metrics": {
+    "exact_chain_bound_failure_count": 0,
+    "exact_control_count": 4,
+    "finite_bound_below_one_row_count": 5,
+    "maximum_asymptotic_condition_ratio": 186.16598629223296,
+    "maximum_exact_control_order": 5,
+    "maximum_exact_longest_nonself_path": 5,
+    "maximum_instantiated_moment_order": 48,
+    "polynomial_chain_length_theorem_count": 1,
+    "polynomial_witness_decoder_count": 0,
+    "proved_final_near_log_window_obstruction_count": 0,
+    "proved_fixed_fraction_log_obstruction_count": 1,
+    "proved_near_log_deficit_obstruction_count": 1,
+    "proved_signed_statistic_obstruction_count": 0,
+    "row_count": 10
+  },
+  "rows": [
+    {
+      "asymptotic_condition_ratio": 186.16598629223296,
+      "boolean_pattern_count": 4096,
+      "chain_length_upper_bound": 129,
+      "finite_row_is_asymptotic_theorem": false,
+      "finite_upper_bound_below_one": false,
+      "log2_bad_contribution_upper_bound": 3634.477786160214,
+      "moment_order": 12,
+      "n_bits": 65536,
+      "register_offset": 2,
+      "schedule": "fixed-fraction-log",
+      "schedule_parameter": 0.25
+    },
+    {
+      "asymptotic_condition_ratio": 0.0015979437120311431,
+      "boolean_pattern_count": 4,
+      "chain_length_upper_bound": 2,
+      "finite_row_is_asymptotic_theorem": false,
+      "finite_upper_bound_below_one": true,
+      "log2_bad_contribution_upper_bound": -27158.25356446888,
+      "moment_order": 2,
+      "n_bits": 65536,
+      "register_offset": 2,
+      "schedule": "near-log-deficit",
+      "schedule_parameter": 5.0
+    },
+    {
+      "asymptotic_condition_ratio": 174.2600220526134,
+      "boolean_pattern_count": 262144,
+      "chain_length_upper_bound": 322,
+      "finite_row_is_asymptotic_theorem": false,
+      "finite_upper_bound_below_one": false,
+      "log2_bad_contribution_upper_bound": 13505.198521458875,
+      "moment_order": 18,
+      "n_bits": 16777216,
+      "register_offset": 2,
+      "schedule": "fixed-fraction-log",
+      "schedule_parameter": 0.25
+    },
+    {
+      "asymptotic_condition_ratio": 8.886114279479354e-06,
+      "boolean_pattern_count": 4,
+      "chain_length_upper_bound": 2,
+      "finite_row_is_asymptotic_theorem": false,
+      "finite_upper_bound_below_one": true,
+      "log2_bad_contribution_upper_bound": -6963116.129644301,
+      "moment_order": 2,
+      "n_bits": 16777216,
+      "register_offset": 2,
+      "schedule": "near-log-deficit",
+      "schedule_parameter": 5.0
+    },
+    {
+      "asymptotic_condition_ratio": 111.66351309582578,
+      "boolean_pattern_count": 16777216,
+      "chain_length_upper_bound": 619,
+      "finite_row_is_asymptotic_theorem": false,
+      "finite_upper_bound_below_one": false,
+      "log2_bad_contribution_upper_bound": 34397.6896623866,
+      "moment_order": 24,
+      "n_bits": 4294967296,
+      "register_offset": 2,
+      "schedule": "fixed-fraction-log",
+      "schedule_parameter": 0.25
+    },
+    {
+      "asymptotic_condition_ratio": 3.304681097152512e-05,
+      "boolean_pattern_count": 128,
+      "chain_length_upper_bound": 38,
+      "finite_row_is_asymptotic_theorem": false,
+      "finite_upper_bound_below_one": true,
+      "log2_bad_contribution_upper_bound": -48597394.00516588,
+      "moment_order": 7,
+      "n_bits": 4294967296,
+      "register_offset": 2,
+      "schedule": "near-log-deficit",
+      "schedule_parameter": 5.0
+    },
+    {
+      "asymptotic_condition_ratio": 26.07812053621214,
+      "boolean_pattern_count": 68719476736,
+      "chain_length_upper_bound": 1542,
+      "finite_row_is_asymptotic_theorem": false,
+      "finite_upper_bound_below_one": false,
+      "log2_bad_contribution_upper_bound": 123783.77976253419,
+      "moment_order": 36,
+      "n_bits": 281474976710656,
+      "register_offset": 2,
+      "schedule": "fixed-fraction-log",
+      "schedule_parameter": 0.25
+    },
+    {
+      "asymptotic_condition_ratio": 8.11661237804325e-05,
+      "boolean_pattern_count": 1048576,
+      "chain_length_upper_bound": 409,
+      "finite_row_is_asymptotic_theorem": false,
+      "finite_upper_bound_below_one": true,
+      "log2_bad_contribution_upper_bound": -387242790.6152065,
+      "moment_order": 20,
+      "n_bits": 281474976710656,
+      "register_offset": 2,
+      "schedule": "near-log-deficit",
+      "schedule_parameter": 5.0
+    },
+    {
+      "asymptotic_condition_ratio": 4.146229497272812,
+      "boolean_pattern_count": 281474976710656,
+      "chain_length_upper_bound": 2942,
+      "finite_row_is_asymptotic_theorem": false,
+      "finite_upper_bound_below_one": false,
+      "log2_bad_contribution_upper_bound": 235185.57690031803,
+      "moment_order": 48,
+      "n_bits": 18446744073709551616,
+      "register_offset": 2,
+      "schedule": "fixed-fraction-log",
+      "schedule_parameter": 0.25
+    },
+    {
+      "asymptotic_condition_ratio": 9.896055321927582e-05,
+      "boolean_pattern_count": 17179869184,
+      "chain_length_upper_bound": 1356,
+      "finite_row_is_asymptotic_theorem": false,
+      "finite_upper_bound_below_one": true,
+      "log2_bad_contribution_upper_bound": -1548948962.238086,
+      "moment_order": 34,
+      "n_bits": 18446744073709551616,
+      "register_offset": 2,
+      "schedule": "near-log-deficit",
+      "schedule_parameter": 5.0
+    }
+  ],
+  "status": "near-log-growing-order-nonnegative-moments-asymptotically-obstructed",
+  "summary": "Proved an O(k^2 log k) non-self lattice-chain bound, replacing the previous 2^k bound and closing every fixed-fraction logarithmic moment schedule plus a conservative near-log deficit schedule.",
+  "theorem_certificate": {
+    "bad_contribution_condition": "2^k L(k)(log n+k)/n -> 0",
+    "fixed_fraction_log_schedule_obstructed": true,
+    "hadamard_index_lemma_proved": true,
+    "limitations": [
+      "The theorem controls the nonnegative source bad-tuple contribution.",
+      "It does not cover arbitrary signed statistics or cancellation mechanisms.",
+      "The window k=log_2 n-O(log log n) not satisfying the condition remains open.",
+      "Orders at or above log_2 n are not closed.",
+      "Reduced-basis events and non-moment geometry are not controlled.",
+      "No computational lower bound or witness decoder follows."
+    ],
+    "moment_order_symbol": "k",
+    "near_log_schedule_obstructed": true,
+    "polynomial_chain_length_proved": true,
+    "proof": "At every rank r, choose r independent Boolean generators already contained in L and r coordinate rows with nonzero determinant. The determinantal divisor [Sat(span L):L] divides every full-rank minor, so it is at most the chosen Boolean determinant and hence r^(r/2). A proper same-span extension has integer index at least two and therefore reduces this saturation index by at least two. There are at most k-1 rank increases, yielding L(k). Choose the positions and Boolean identities of the non-self columns with (m+1)^L(2^k+1)^L possibilities. Every self-loop pattern on a path to a bad terminal lattice is contained in that terminal lattice, whose relative Boolean base is at most 1-2^-k. The Smith numerator and fixed register-offset factors are bounded by k^(k/2)2^(kc). Taking logarithms gives the stated condition.",
+    "proper_extension_index_drop_proved": true,
+    "rank_increase_upper_bound": "k-1",
+    "same_rank_index_upper_bound": "[Sat(span L):L] <= |det B| <= r^(r/2) for some independent r x r Boolean minor B",
+    "same_rank_transition_upper_bound": "ceil((r/2)log_2 r) proper extensions while rank equals r",
+    "total_nonself_transition_upper_bound": "L(k)=(k-1)+sum_{r=2}^k ceil((r/2)log_2 r)=O(k^2 log k)"
+  },
+  "theorem_contract": {
+    "closed_schedules": "k<=(1-epsilon)log_2 n for fixed epsilon>0, and k<=log_2 n-(4+epsilon)log_2 log_2 n",
+    "condition": "2^k L(k)(log n+k)=o(n)",
+    "excluded": "final near-log window, k>=log n, signed observables, basis geometry, and decoder complexity",
+    "moment": "nonnegative source-nongeneric ordered distinct k-tuple contribution",
+    "register_regime": "m=n+c for fixed c",
+    "source": "uniform independent density-one modular subset-sum labels and target"
+  }
+}

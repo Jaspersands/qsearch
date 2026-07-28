@@ -1,0 +1,87 @@
+{
+  "architecture_boundary": {
+    "information_free_when_measured_alone": [
+      "coupled target irrep labels",
+      "intermediate coupling-tree shape labels",
+      "Kronecker multiplicity commutant observables",
+      "Racah/associator labels with commutant POVM effects",
+      "class-sum frame eigenvalues"
+    ],
+    "not_ruled_out": [
+      "carrier/tableau-sensitive POVM effects",
+      "covariant outcomes transformed with the hidden conjugacy class",
+      "commutant preprocessing followed by noncommutant measurement",
+      "pretty-good or other covariant measurements with compressed outcomes"
+    ],
+    "required_architecture_change": [
+      "preserve carrier registers rather than output only invariant labels",
+      "specify the symmetry-breaking/covariant final POVM",
+      "prove mutual information about the individual h",
+      "supply a polynomial decoder and classical comparison"
+    ]
+  },
+  "claim_gate": {
+    "carrier_sensitive_covariant_decoder_proved": false,
+    "carrier_sensitive_escape_exists_finitely": true,
+    "commutant_only_outcomes_can_identify_hidden_involution": false,
+    "commutant_only_zero_information_proved": true,
+    "current_multiplicity_separator_is_decoder": false,
+    "reason": "The current commutant and Racah labels are invariant over the hidden conjugacy class. They can organize a measurement but cannot be its information-bearing final outcomes.",
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-07-27T20:55:30.920000+00:00",
+  "falsifiers_triggered": [
+    "A simple-spectrum multiplicity separator is not an information-bearing hidden-involution measurement.",
+    "Changing coupling trees and reading only invariant Racah labels cannot break conjugacy covariance.",
+    "Exact target and multiplicity branch probabilities do not imply a decoder when every effect lies in the commutant.",
+    "Carrier-sensitive effects can vary across conjugates, so the theorem redirects rather than rules out collective algorithms."
+  ],
+  "finite_controls": [
+    {
+      "commutant_distribution_invariance_verified": true,
+      "commutant_generator_count": 5,
+      "conditioned_tensor_dimension": 30,
+      "hidden_involution_count": 15,
+      "left_source_partition": [
+        3,
+        2
+      ],
+      "maximum_commutant_expectation_range": 2.220446049250313e-15,
+      "maximum_commutant_outcome_total_variation": 1.0130785099704553e-15,
+      "maximum_diagonal_action_commutator_residual": 2.6110301939678244e-14,
+      "maximum_noncommutant_basis_effect_probability_range": 0.109375,
+      "maximum_state_trace_residual": 2.220446049250313e-16,
+      "n": 5,
+      "noncommutant_escape_witness_verified": true,
+      "right_source_partition": [
+        3,
+        1,
+        1
+      ],
+      "status": "commutant-zero-information-verified-carrier-sensitive-escape-open",
+      "transposition_count": 2
+    }
+  ],
+  "headline_metrics": {
+    "carrier_sensitive_covariant_decoder_count": 0,
+    "commutant_only_hidden_involution_decoder_count": 0,
+    "exact_commutant_only_mutual_information_bits": 0,
+    "finite_commutant_distribution_invariance_verified_count": 1,
+    "finite_control_count": 1,
+    "finite_noncommutant_escape_witness_count": 1,
+    "general_all_k_commutant_zero_information_theorem_count": 1,
+    "maximum_finite_commutant_expectation_range": 2.220446049250313e-15,
+    "maximum_finite_commutant_outcome_total_variation": 1.0130785099704553e-15,
+    "maximum_noncommutant_basis_effect_probability_range": 0.109375
+  },
+  "status": "commutant-only-decoder-route-falsified-carrier-sensitive-covariant-route-required",
+  "summary": "Proved for all copy counts that diagonal-action commutant POVM outcomes have exactly zero information about the individual hidden involution, and verified the boundary on a nontrivial S_5 multiplicity control.",
+  "theorem_contract": {
+    "commutant_effect": "[E_y,U_x]=0 for every outcome y and group element x",
+    "copy_scope": "All k and all conditioned source-label tuples; U_x is the diagonal action on the k Fourier column registers.",
+    "does_not_assume": "Any complexity conjecture, finite-size trend, or classical simulation algorithm.",
+    "ensemble_covariance": "sigma_(x h x^-1)=U_x sigma_h U_x^dagger",
+    "information_consequence": "For a uniform conjugacy-class prior, Y is independent of H and I(H;Y)=0 exactly.",
+    "probability_identity": "Tr(E_y sigma_(x h x^-1))=Tr(E_y sigma_h)"
+  }
+}

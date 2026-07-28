@@ -7,7 +7,7 @@
     "source_interface_attached_to_every_survivor": true,
     "speedup_claim_allowed": false
   },
-  "created_at": "2026-07-15T10:51:05.191275+00:00",
+  "created_at": "2026-07-28T06:55:16.496551+00:00",
   "falsifiers_triggered": [
     "LLL constant retuning is rejected after tail collapse.",
     "Bounded-degree carry solving is rejected by full-domain ANF growth.",
@@ -20,7 +20,7 @@
     "hypothesis_count": 11,
     "maximum_survivor_priority_score": 104,
     "negative_match_rejection_count": 5,
-    "primitive_count": 44,
+    "primitive_count": 48,
     "proposal_only_survivor_count": 6,
     "source_contract_satisfying_hypothesis_count": 0
   },
@@ -34,7 +34,7 @@
         "The apparent effect disappears when targets are sampled uniformly conditioned legal."
       ],
       "first_experiments": [
-        "Derive a source-average law for the fixed-depth nearest-plane cell union already implemented, stratified by marker-zero relation projections.",
+        "Prove concentration or decay of accepted assignment mass for the preregistered vulnerable-log-coordinate marker list and transfer it to uniform legal targets.",
         "Search held-out marker-weighted basis objectives and require a preregistered inverse-polynomial positive-margin tail.",
         "Reject any gain that appears only under planted targets, postselected easy instances, or exponential witness enumeration."
       ],
@@ -50,6 +50,8 @@
         "fixed-depth-marker-aware-cell-list",
         "exact-marker-witness-deviation-geometry",
         "exact-all-target-marker-list-coverage",
+        "vulnerable-log-coordinate-marker-list",
+        "learned-polynomial-marker-chart-union",
         "source-native-affine-cvp-scaling",
         "exact-affine-babai-cell-geometry",
         "standard-embedding-short-relation-obstruction",
@@ -81,7 +83,7 @@
         "Tail recovery remains exponentially decaying after preregistered scaling."
       ],
       "first_experiments": [
-        "Preregister an atypical-fiber fourth-order statistic, a growing-order correlation, or an explicit LLL basis event, not a generic source-average order-four statistic, count window, or degree<=3 moment.",
+        "Preregister a signed final-window correlation or an explicit LLL basis event; generic nonnegative moments below the final near-log window are now analytically obstructed.",
         "Feed compact fibers into alternate embeddings and compare held-out tail recovery, not training constants.",
         "Search for analytic anti-concentration bounds on competing short vectors."
       ],
@@ -100,6 +102,7 @@
         "subset-sum-all-fixed-moment-obstruction",
         "subset-sum-conditioned-fixed-moment-tail",
         "subset-sum-sub-half-log-moment-obstruction",
+        "subset-sum-near-log-lattice-chain-obstruction",
         "subset-sum-embedding-volume-obstruction",
         "standard-embedding-short-relation-obstruction",
         "carry-sliced-relation-source-obstruction",
@@ -133,7 +136,7 @@
         "Retain a genuinely joint low/high constraint or prove a concrete generic high event already has inverse-polynomial probability; low-only carry selection gives an exactly generic quotient.",
         "Define a higher-order residual or reduced-basis statistic not determined by exact pairwise moments.",
         "At fixed order four, prove an inverse-polynomial atypical-fiber tail and an implicit estimator/decoder despite the vanishing source average; otherwise use growing order or basis geometry explicitly.",
-        "No larger fixed order is admissible as a generic source mechanism; specify k(n) with full resource accounting or prove an atypical conditioned-fiber tail.",
+        "No fixed order or nonnegative growing order satisfying 2^k O(k^2 log k)(log n+k)=o(n) is admissible; enter the final near-log window with full resources, prove a signed observable, or use basis geometry.",
         "Prove a short-vector separation or decoding theorem after preconditioning."
       ],
       "rejection_reason": null,
@@ -622,6 +625,13 @@
       "role": "uniform no-go gate for growing nonnegative moment schedules below half-logarithmic order"
     },
     {
+      "current_evidence": "exact controls/failures/max path=4/0/5; polynomial/fixed-fraction/near-log theorems=1/1/1; final-window/signed proofs=0/0",
+      "interface_status": "fixed-fraction logarithmic nonnegative moments closed; only the final near-log window, signed observables, and basis geometry remain",
+      "primitive_id": "subset-sum-near-log-lattice-chain-obstruction",
+      "resource_status": "analytic O(k^2 log k) monotone lattice-chain theorem with exact low-order transfer-DAG controls",
+      "role": "uniform no-go gate for nonnegative growing-order moments almost to logarithmic order"
+    },
+    {
       "current_evidence": "standard/sliced volume theorems=1/1; volume obstructions=2; local gaps=0",
       "interface_status": "volume-only gaps closed; explicit local basis events, short-vector counts, and decoders remain",
       "primitive_id": "subset-sum-embedding-volume-obstruction",
@@ -683,6 +693,27 @@
       "primitive_id": "exact-all-target-marker-list-coverage",
       "resource_status": "full Boolean-cube and target census per finite label row; exponential diagnostic",
       "role": "target-noise-free legal-coverage census for fixed-depth standard and carry-sliced branch grammars"
+    },
+    {
+      "current_evidence": "polynomial/transfer theorems/failures=1/1/0; tail assignment coverage standard/carry=4.0690104166666664e-05/8.138020833333333e-05; log2 slopes=-0.3230668246638623/-0.3057207258159632; uniform-legal laws=0",
+      "interface_status": "explicit legal growing-depth classical attack; random-label coverage or decay theorem remains open",
+      "primitive_id": "vulnerable-log-coordinate-marker-list",
+      "resource_status": "(2q+1)^(c ceil(log2 n)) paths and at most a linear carry factor for fixed c and q",
+      "role": "growing-depth polynomial nearest-plane list on a public risk-ranked logarithmic coordinate subspace"
+    },
+    {
+      "current_evidence": "polynomial/target-selector/train-test failures=1/0/0; max charts=4096; tail carry held-out/max-row=0.0005340576171875/0.0006103515625; uniform-legal laws=0",
+      "interface_status": "legal learned classical attack with disjoint held-out audit; random-label coverage/decay theorem absent",
+      "primitive_id": "learned-polynomial-marker-chart-union",
+      "resource_status": "n^a(2q+1)^(c ceil(log2 n)) paths plus a linear carry factor for fixed a,c,q",
+      "role": "target-independent polynomial atlas of logarithmic nearest-plane coordinate cells"
+    },
+    {
+      "current_evidence": "polynomial bound/exact-rounding/state failures=1/0/0; max width powers standard/carry=3/2; tail source success standard/carry=0.0/0.0; source theorems=0",
+      "interface_status": "legal independent-uniform-target classical baseline; finite width frontier has no asymptotic source law",
+      "primitive_id": "target-adaptive-polynomial-marker-beam",
+      "resource_status": "rank*(2q+1)*n^a retained-path expansions, with every reachable logarithmic carry explicitly charged",
+      "role": "source-native K-best nearest-plane attack whose retained partial paths may depend on the observed target"
     },
     {
       "current_evidence": "trials/max-n/tail standard/carry=10/32/0/0; coverage/asymptotic theorems=0/0",
@@ -749,5 +780,5 @@
     "time": "poly(n)"
   },
   "status": "typed-solver-hypotheses-generated-all-proof-gated",
-  "summary": "Generated 11 typed partial-solver hypotheses from 44 primitives; 6 survive only as proof-debt proposals, 5 match existing negative/resource gates, and zero enter the candidate registry."
+  "summary": "Generated 11 typed partial-solver hypotheses from 48 primitives; 6 survive only as proof-debt proposals, 5 match existing negative/resource gates, and zero enter the candidate registry."
 }
