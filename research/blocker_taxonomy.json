@@ -130,14 +130,14 @@
         "CLOSURE-REJECT-CLOSURE_BCH_CODE_SEARCH_BCH_M5_D3_11_S3_D4__BCH_M5_D3_11_S5_D4"
       ],
       "blocker_class": "low-complexity-classical-reconstruction",
-      "evidence_count": 129,
-      "priority_score": 9704,
+      "evidence_count": 139,
+      "priority_score": 10489,
       "representative_evidence": [
         "Carry rows=144, tail bounded-degree rows=0/48, maximum ANF degree=16, final-bit degree slope=1.075, polynomial algebraic solvers=0.",
+        "Exact Fourier targets/control failures=8/0; low/high/adaptive theorem counts=1/1/1; finite conclusive source rows=3/5; dense/general closures=0/0.",
+        "Exact controls/pairs/failures=1/21/0; unit-minor/pair-independence/signed-variance theorems=1/1/1; polynomial-support negligible-deviation theorems=1; high-label/dense/nonlinear obstructions=0/0/0.",
         "Exact identities=3, observed single/swap/block linear-depth rows=0/0/0, local-dictionary no-go rows=2, open implicit architectures=2, and polynomial relation solvers=0.",
-        "Fourier compressibility baseline found 114 evaluator-sparse recovery row(s), including 114 derivative-sparse row(s).",
-        "Fourier compressibility baseline found 81 sample-budget sparse recovery row(s).",
-        "Baseline sweep found 48 low-complexity evaluator recovery row(s)."
+        "Fourier compressibility baseline found 114 evaluator-sparse recovery row(s), including 114 derivative-sparse row(s)."
       ],
       "required_action": "Strengthen or abandon families until no polynomial-query classical reconstruction attack applies."
     },
@@ -200,8 +200,8 @@
         "RESULT-EXP-DHS-DCP-ADAPTIVE-LAYOUT-AUDIT-DCP-ADAPTIVE-LAYOUT"
       ],
       "blocker_class": "proof-formalization-debt",
-      "evidence_count": 51,
-      "priority_score": 3139,
+      "evidence_count": 53,
+      "priority_score": 3259,
       "representative_evidence": [
         "Paired baseline/sliced successes=30/31, sliced-only/baseline-only=2/1, tail baseline/sliced=8/7, and uniform coverage proofs=0.",
         "Exact controls/chain failures/max path=4/0/5; polynomial/fixed-fraction/near-log theorems=1/1/1; final-window/signed proofs=0/0.",
@@ -282,8 +282,8 @@
       "required_action": "Keep legacy toy-oracle patterns quarantined as negative results."
     }
   ],
-  "created_at": "2026-07-28T06:55:27.148563+00:00",
-  "evidence_count": 1165,
+  "created_at": "2026-07-28T09:29:10.234051+00:00",
+  "evidence_count": 1177,
   "evidence_rows": [
     {
       "blocker_class": "unclassified-research-debt",
@@ -457,6 +457,15 @@
       "target": "DHS-GOWERS-SIEVE"
     },
     {
+      "blocker_class": "low-complexity-classical-reconstruction",
+      "evidence": "Exact Fourier targets/control failures=8/0; low/high/adaptive theorem counts=1/1/1; finite conclusive source rows=3/5; dense/general closures=0/0.",
+      "priority": 95,
+      "required_action": "Strengthen or abandon families until no polynomial-query classical reconstruction attack applies.",
+      "severity": "critical",
+      "source": "dequantization",
+      "target": "DHS-GOWERS-SIEVE"
+    },
+    {
       "blocker_class": "code-equivalence-invariant-collapse",
       "evidence": "The signed-relation second-moment bound places 12 rows below alpha=1.7095112913514547; supercritical finite rows give 0 worst-reflection proofs and 0 robust decoders.",
       "priority": 90,
@@ -551,6 +560,15 @@
       "evidence": "Triplewise independence/fourth-localization certificates=8/8; tail maximum additive-energy inflation=2.5837260924233405; tail relative fourth-excess upper bound=0.039362420761545086; asymptotic fourth-order obstructions=8; witness solvers=0.",
       "priority": 90,
       "required_action": "Formalize the input model and prove classical lower bounds for every allowed access mode.",
+      "severity": "critical",
+      "source": "dequantization",
+      "target": "DHS-GOWERS-SIEVE"
+    },
+    {
+      "blocker_class": "low-complexity-classical-reconstruction",
+      "evidence": "Exact controls/pairs/failures=1/21/0; unit-minor/pair-independence/signed-variance theorems=1/1/1; polynomial-support negligible-deviation theorems=1; high-label/dense/nonlinear obstructions=0/0/0.",
+      "priority": 95,
+      "required_action": "Strengthen or abandon families until no polynomial-query classical reconstruction attack applies.",
       "severity": "critical",
       "source": "dequantization",
       "target": "DHS-GOWERS-SIEVE"
@@ -1244,6 +1262,15 @@
       "evidence": "Tail minimum normalized Shannon entropy=0.9851110745339363, tail minimum collision-support fraction=0.8001859623446304, maximum target mass=0.00021114864864864866, maximum top-polynomial-list mass=0.8725574010747436, and polynomial high-bit decoders=0.",
       "priority": 80,
       "required_action": "Formalize the input model and prove classical lower bounds for every allowed access mode.",
+      "severity": "high",
+      "source": "dequantization",
+      "target": "DHS-GOWERS-SIEVE"
+    },
+    {
+      "blocker_class": "low-complexity-classical-reconstruction",
+      "evidence": "Instances/unfoldings/max n=12/192/18; registered bond power=1; tail survivors/source/control required ranks=0/218/299; fitted log-rank slope=0.5191601657011986; tail raw/zero-baseline-excess/control-excess coverage=0.24521756021756022/0.0485755406350272/0.04727883899424051; tail inverse-polynomial nontrivial excess instances=0; asymptotic/dense/witness theorems=0/0/0.",
+      "priority": 85,
+      "required_action": "Strengthen or abandon families until no polynomial-query classical reconstruction attack applies.",
       "severity": "high",
       "source": "dequantization",
       "target": "DHS-GOWERS-SIEVE"
@@ -4957,6 +4984,24 @@
       "target": "RESULT-EXP-DHS-DCP-SPARSE-FOURIER-TRANSFER-AUDIT-DCP-SPARSE-FOURIER-TRANSFER"
     },
     {
+      "blocker_class": "low-complexity-classical-reconstruction",
+      "evidence": "Triggered falsifiers: Choosing sparse frequencies after seeing all public labels does not evade the simultaneous character-product bound. | Low-order characters are usually annihilated exactly, not merely small on average. | Polynomially many high-order characters cannot approximate the target-dependent fiber fluctuation. | The zero-frequency term supplies only the target-independent mean fiber count. | The theorem cannot be cited against a polynomial-size circuit that contracts exponentially many frequencies implicitly.",
+      "priority": 75,
+      "required_action": "Strengthen or abandon families until no polynomial-query classical reconstruction attack applies.",
+      "severity": "medium",
+      "source": "dequantization",
+      "target": "RESULT-EXP-DHS-DCP-SUBSET-SUM-ADAPTIVE-SPARSE-CHARACTER-OBSTRUCTION-DCP-SUBSET-SUM-SPARSE-CHARACTERS"
+    },
+    {
+      "blocker_class": "low-complexity-classical-reconstruction",
+      "evidence": "Triggered falsifiers: Choosing sparse frequencies after seeing all public labels does not evade the simultaneous character-product bound. | Low-order characters are usually annihilated exactly, not merely small on average. | Polynomially many high-order characters cannot approximate the target-dependent fiber fluctuation. | The zero-frequency term supplies only the target-independent mean fiber count. | The theorem cannot be cited against a polynomial-size circuit that contracts exponentially many frequencies implicitly.",
+      "priority": 75,
+      "required_action": "Strengthen or abandon families until no polynomial-query classical reconstruction attack applies.",
+      "severity": "medium",
+      "source": "dequantization",
+      "target": "RESULT-EXP-DHS-DCP-SUBSET-SUM-ADAPTIVE-SPARSE-CHARACTER-OBSTRUCTION-SPARSE-CHARACTER-OBSTRUCTION"
+    },
+    {
       "blocker_class": "proof-formalization-debt",
       "evidence": "Triggered falsifiers: Positive Babai-cell membership is checked against every materialized legal witness, not inferred from output. | The strong global Gram-Schmidt BDD condition is recorded separately from witness-specific cells. | Tail cell disappearance falsifies small-n nearest-plane geometry. | Finite cell frequencies are not promoted to source-coverage theorems.",
       "priority": 60,
@@ -5209,6 +5254,24 @@
       "target": "RESULT-EXP-DHS-DCP-SUBSET-SUM-PRECONDITIONED-GEOMETRY-DCP-SUBSET-SUM-PRECONDITIONED-GEOMETRY"
     },
     {
+      "blocker_class": "low-complexity-classical-reconstruction",
+      "evidence": "Triggered falsifiers: A low Frobenius reconstruction error is insufficient unless it is below the additive-half integer-count threshold. | The best searched target-bit ordering is charged; one convenient ordering is not treated as canonical. | Histogram-preserving random controls test whether compression comes only from the count histogram. | Raw partial legal-target accuracy is compared with the zero-frequency constant-count baseline before it is treated as structure. | The finite TT-SVD materializes the full count vector and is not a polynomial construction. | Finite exponential-looking rank growth is not promoted to an asymptotic tensor-rank lower bound. | Even a count oracle must remain accurate on fixed-variable subinstances before self-reduction yields a witness.",
+      "priority": 75,
+      "required_action": "Strengthen or abandon families until no polynomial-query classical reconstruction attack applies.",
+      "severity": "medium",
+      "source": "dequantization",
+      "target": "RESULT-EXP-DHS-DCP-SUBSET-SUM-QTT-DENSE-CONTRACTION-DCP-SUBSET-SUM-QTT"
+    },
+    {
+      "blocker_class": "low-complexity-classical-reconstruction",
+      "evidence": "Triggered falsifiers: A low Frobenius reconstruction error is insufficient unless it is below the additive-half integer-count threshold. | The best searched target-bit ordering is charged; one convenient ordering is not treated as canonical. | Histogram-preserving random controls test whether compression comes only from the count histogram. | Raw partial legal-target accuracy is compared with the zero-frequency constant-count baseline before it is treated as structure. | The finite TT-SVD materializes the full count vector and is not a polynomial construction. | Finite exponential-looking rank growth is not promoted to an asymptotic tensor-rank lower bound. | Even a count oracle must remain accurate on fixed-variable subinstances before self-reduction yields a witness.",
+      "priority": 75,
+      "required_action": "Strengthen or abandon families until no polynomial-query classical reconstruction attack applies.",
+      "severity": "medium",
+      "source": "dequantization",
+      "target": "RESULT-EXP-DHS-DCP-SUBSET-SUM-QTT-DENSE-CONTRACTION-QTT-DENSE-CONTRACTION"
+    },
+    {
       "blocker_class": "query-model-lower-bound-debt",
       "evidence": "Triggered falsifiers: Coordinate complements and sign flips are exact isometries of the centered modular embedding and cannot create an isometry-invariant short-vector gap. | Odd-unit multiplication is a legitimate source-preserving randomization, but finite LLL rescues are not an asymptotic coverage theorem. | Polynomially many seeds preserve polynomial runtime but do not imply inverse-polynomial success on legal random inputs. | The experiment samples targets independently uniformly; planted-witness target sampling is not accepted as source evidence. | A valid random self-reduction plus the shared-seed interface theorem still does not construct a solver unless one transformed class has proved coverage.",
       "priority": 70,
@@ -5243,6 +5306,24 @@
       "severity": "medium",
       "source": "dequantization",
       "target": "RESULT-EXP-DHS-DCP-SUBSET-SUM-SHORT-RELATION-THEOREM-SHORT-RELATION-THEOREM"
+    },
+    {
+      "blocker_class": "proof-formalization-debt",
+      "evidence": "Triggered falsifiers: Changing signs cannot increase the probability that a polynomially supported low-only exact-hit score departs from its no-hit baseline. | A finite signed exact-hit score selected from low data is governed by an exact conditional variance identity, not unexplained structure. | Low-bit conditioning does not create covariance between distinct nonzero Boolean high-equation hits. | The theorem cannot be cited against coefficients computed from full high labels, dense implicit contractions, or reduced-basis events.",
+      "priority": 60,
+      "required_action": "Convert prose claims into lemmas, reductions, counterexample searches, and explicit falsifiers.",
+      "severity": "medium",
+      "source": "dequantization",
+      "target": "RESULT-EXP-DHS-DCP-SUBSET-SUM-SIGNED-L2-OBSTRUCTION-DCP-SUBSET-SUM-SIGNED-L2"
+    },
+    {
+      "blocker_class": "proof-formalization-debt",
+      "evidence": "Triggered falsifiers: Changing signs cannot increase the probability that a polynomially supported low-only exact-hit score departs from its no-hit baseline. | A finite signed exact-hit score selected from low data is governed by an exact conditional variance identity, not unexplained structure. | Low-bit conditioning does not create covariance between distinct nonzero Boolean high-equation hits. | The theorem cannot be cited against coefficients computed from full high labels, dense implicit contractions, or reduced-basis events.",
+      "priority": 60,
+      "required_action": "Convert prose claims into lemmas, reductions, counterexample searches, and explicit falsifiers.",
+      "severity": "medium",
+      "source": "dequantization",
+      "target": "RESULT-EXP-DHS-DCP-SUBSET-SUM-SIGNED-L2-OBSTRUCTION-SIGNED-L2-OBSTRUCTION"
     },
     {
       "blocker_class": "query-model-lower-bound-debt",
@@ -9988,6 +10069,24 @@
       "target": "NEG-DCP-SUBSET-SUM-FIXED-MOMENT-CONDITIONED-TAIL"
     },
     {
+      "blocker_class": "low-complexity-classical-reconstruction",
+      "evidence": "Low-order characters are annihilated by random antipodal labels, while an exact growing-moment bound controls every high-order character simultaneously. Any polynomial sparse selection contributes only a superpolynomially small nonzero-frequency correction with high source probability.",
+      "priority": 70,
+      "required_action": "Strengthen or abandon families until no polynomial-query classical reconstruction attack applies.",
+      "severity": "negative-result",
+      "source": "negative-result",
+      "target": "NEG-DCP-SUBSET-SUM-FULL-LABEL-ADAPTIVE-SPARSE-CHARACTERS"
+    },
+    {
+      "blocker_class": "low-complexity-classical-reconstruction",
+      "evidence": "Distinct nonzero Boolean high equations are conditionally pairwise independent. A support M departs from its no-hit baseline only when an equation hits, with probability at most M/2^(n-b), negligible for fixed-polynomial M and b=O(log n).",
+      "priority": 70,
+      "required_action": "Strengthen or abandon families until no polynomial-query classical reconstruction attack applies.",
+      "severity": "negative-result",
+      "source": "negative-result",
+      "target": "NEG-DCP-SUBSET-SUM-LOW-ONLY-SPARSE-SIGNED-OBSERVABLE"
+    },
+    {
       "blocker_class": "code-equivalence-invariant-collapse",
       "evidence": "Marker-one normalization is easy without a norm bound, while finding one at witness radius is exactly equivalent to the original binary subset-sum search.",
       "priority": 65,
@@ -10004,6 +10103,15 @@
       "severity": "negative-result",
       "source": "negative-result",
       "target": "NEG-DCP-SUBSET-SUM-NEAR-LOG-GROWING-MOMENT-CHAIN"
+    },
+    {
+      "blocker_class": "low-complexity-classical-reconstruction",
+      "evidence": "Every tail source unfolding in the finite audit has best rank-cap Frobenius error above the necessary additive-half threshold and tracks histogram-preserving random controls.",
+      "priority": 70,
+      "required_action": "Strengthen or abandon families until no polynomial-query classical reconstruction attack applies.",
+      "severity": "negative-result",
+      "source": "negative-result",
+      "target": "NEG-DCP-SUBSET-SUM-QTT-FINITE-DENSE-CONTRACTION"
     },
     {
       "blocker_class": "query-model-lower-bound-debt",

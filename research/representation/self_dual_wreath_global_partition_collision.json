@@ -1,0 +1,175 @@
+{
+  "claim_gate": {
+    "asymptotic_global_all_distinct_dominance_proved": true,
+    "collision_free_growing_moment_contraction_proved": false,
+    "collision_free_tuple_norm_bound_proved": false,
+    "global_collision_union_bound_proved": true,
+    "global_source_draws_are_iid_plancherel": true,
+    "known_repeated_source_half_norm_counterexample_excluded": true,
+    "natural_average_inverse_polynomial_conclusive_proved": false,
+    "polynomial_hidden_permutation_decoder_proved": false,
+    "reason": "Global source collisions vanish asymptotically and remove known repeated-label counterexamples, but no norm theorem exists for arbitrary collision-free representation tuples.",
+    "speedup_claim_allowed": false,
+    "structured_maximal_effect_dilation_proved": false
+  },
+  "counterexample_exclusions": [
+    {
+      "distinct_source_partition_count": 2,
+      "excluded_by_global_distinct_event": true,
+      "globally_distinct": false,
+      "label_ids": [
+        "UNEQ-3__1-1-1",
+        "UNEQ-3__1-1-1",
+        "UNEQ-3__1-1-1"
+      ],
+      "maximum_frame_eigenvalue": 0.5,
+      "source_partition_occurrence_count": 6,
+      "status": "repeated-source-half-norm-counterexample-excluded"
+    }
+  ],
+  "created_at": "2026-07-30T06:23:08.166520+00:00",
+  "falsifiers_triggered": [
+    "Within-label inequality is weaker than global distinctness across all 2k source partitions.",
+    "The information-threshold copy count is polynomial and cannot overcome exponential collision decay.",
+    "Known W3 half-norm unequal counterexamples reuse source partitions and are asymptotically negligible.",
+    "Finite n controls remain preasymptotic and are not evidence of early global-distinct dominance.",
+    "Global distinctness alone does not prove frame-norm decay.",
+    "No collision-free contraction, measurement circuit, decoder, or classical separation is claimed."
+  ],
+  "headline_metrics": {
+    "asymptotic_global_all_distinct_dominance_theorem_count": 1,
+    "collision_free_growing_moment_contraction_count": 0,
+    "collision_free_tuple_norm_theorem_count": 0,
+    "finite_ninety_percent_global_distinct_row_count": 0,
+    "global_collision_control_count": 7,
+    "global_collision_union_bound_theorem_count": 1,
+    "global_source_draw_as_iid_plancherel_theorem_count": 1,
+    "maximum_exact_occupancy_n": 32,
+    "natural_average_inverse_polynomial_conclusive_theorem_count": 0,
+    "polynomial_hidden_permutation_decoder_count": 0,
+    "repeated_source_counterexample_exclusion_count": 1,
+    "repeated_source_half_norm_counterexample_count": 1,
+    "structured_maximal_effect_dilation_count": 0
+  },
+  "literature_linked_theorem": {
+    "derived_consequence": "the maximal Plancherel atom and therefore C_n decay as exp(-Theta(sqrt(n)))",
+    "literature_id": "aggarwal-elboim-maximal-dimension-2026",
+    "result_used": "max_lambda d_lambda=sqrt(n!) exp(-(constant+o(1))sqrt(n))",
+    "url": "https://arxiv.org/abs/2605.25995"
+  },
+  "records": [
+    {
+      "all_distinct_probability_lower_bound": 0.0,
+      "collision_pair_union_coefficient": 496,
+      "copy_count": 16,
+      "exact_all_distinct_probability": 0.0,
+      "exact_occupancy_computed": true,
+      "exact_pair_collision_probability": "69439/645120",
+      "finite_all_distinct_dominance_verified": false,
+      "n": 8,
+      "pair_collision_probability": 0.10763733878968254,
+      "partition_count": 22,
+      "source_partition_draw_count": 32,
+      "status": "finite-collision-bound-not-yet-conclusive",
+      "union_bound_any_global_collision": 1.0
+    },
+    {
+      "all_distinct_probability_lower_bound": 0.0,
+      "collision_pair_union_coefficient": 1653,
+      "copy_count": 29,
+      "exact_all_distinct_probability": 2.765748953793903e-44,
+      "exact_occupancy_computed": true,
+      "exact_pair_collision_probability": "3642732727/76640256000",
+      "finite_all_distinct_dominance_verified": false,
+      "n": 12,
+      "pair_collision_probability": 0.047530278695833164,
+      "partition_count": 77,
+      "source_partition_draw_count": 58,
+      "status": "finite-collision-bound-not-yet-conclusive",
+      "union_bound_any_global_collision": 1.0
+    },
+    {
+      "all_distinct_probability_lower_bound": 0.0,
+      "collision_pair_union_coefficient": 4005,
+      "copy_count": 45,
+      "exact_all_distinct_probability": 2.8314987745312115e-38,
+      "exact_occupancy_computed": true,
+      "exact_pair_collision_probability": "7706087568809453/357082280755200000",
+      "finite_all_distinct_dominance_verified": false,
+      "n": 16,
+      "pair_collision_probability": 0.021580705579990426,
+      "partition_count": 231,
+      "source_partition_draw_count": 90,
+      "status": "finite-collision-bound-not-yet-conclusive",
+      "union_bound_any_global_collision": 1.0
+    },
+    {
+      "all_distinct_probability_lower_bound": 0.0,
+      "collision_pair_union_coefficient": 7626,
+      "copy_count": 62,
+      "exact_all_distinct_probability": 2.854327067536636e-33,
+      "exact_occupancy_computed": true,
+      "exact_pair_collision_probability": "619774212190128335253919/60538387249860968448000000",
+      "finite_all_distinct_dominance_verified": false,
+      "n": 20,
+      "pair_collision_probability": 0.010237706029929823,
+      "partition_count": 627,
+      "source_partition_draw_count": 124,
+      "status": "finite-collision-bound-not-yet-conclusive",
+      "union_bound_any_global_collision": 1.0
+    },
+    {
+      "all_distinct_probability_lower_bound": 0.0,
+      "collision_pair_union_coefficient": 12720,
+      "copy_count": 80,
+      "exact_all_distinct_probability": 3.8166641088344836e-28,
+      "exact_occupancy_computed": true,
+      "exact_pair_collision_probability": "1693230492334108679201826863741/295874907027008178127047229440000",
+      "finite_all_distinct_dominance_verified": false,
+      "n": 24,
+      "pair_collision_probability": 0.005722791801940631,
+      "partition_count": 1575,
+      "source_partition_draw_count": 160,
+      "status": "finite-collision-bound-not-yet-conclusive",
+      "union_bound_any_global_collision": 1.0
+    },
+    {
+      "all_distinct_probability_lower_bound": 0.0,
+      "collision_pair_union_coefficient": 19110,
+      "copy_count": 98,
+      "exact_all_distinct_probability": 2.0723803976301927e-23,
+      "exact_occupancy_computed": true,
+      "exact_pair_collision_probability": "35898265893665867656960894991168679283175567/12056526922124839228547086844984033280000000000",
+      "finite_all_distinct_dominance_verified": false,
+      "n": 28,
+      "pair_collision_probability": 0.0029774964320603173,
+      "partition_count": 3718,
+      "source_partition_draw_count": 196,
+      "status": "finite-collision-bound-not-yet-conclusive",
+      "union_bound_any_global_collision": 1.0
+    },
+    {
+      "all_distinct_probability_lower_bound": 0.0,
+      "collision_pair_union_coefficient": 27730,
+      "copy_count": 118,
+      "exact_all_distinct_probability": 1.4038963429645325e-19,
+      "exact_occupancy_computed": true,
+      "exact_pair_collision_probability": "371947901988252474367668635741868321989344141461127/208921399112696395250051068600621579685068800000000000",
+      "finite_all_distinct_dominance_verified": false,
+      "n": 32,
+      "pair_collision_probability": 0.0017803245793295511,
+      "partition_count": 8349,
+      "source_partition_draw_count": 236,
+      "status": "finite-collision-bound-not-yet-conclusive",
+      "union_bound_any_global_collision": 1.0
+    }
+  ],
+  "source_law_contract": {
+    "asymptotic_decay": "C_n<=max p_lambda=exp(-Theta(sqrt(n))) while k=Theta(n log n), hence k^2 C_n=o(1)",
+    "critical_path": "prove the frame norm or growing moment for arbitrary tuples whose 2k source partitions are globally distinct",
+    "global_collision_bound": "Pr(any repeat)<=binom(2k,2) C_n, C_n=sum_lambda p_lambda^2",
+    "unpackaged_source": "k natural physical labels are 2k iid Plancherel partitions before unordered pair packaging"
+  },
+  "status": "global-plancherel-collisions-asymptotically-vanish-collision-free-norm-open",
+  "summary": "Proved that natural threshold tuples have globally distinct source partitions with probability 1-o(1), excluding the known repeated-source 1/2-norm block; finite controls through n=32 remain preasymptotic."
+}

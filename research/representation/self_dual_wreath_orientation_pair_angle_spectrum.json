@@ -1,0 +1,708 @@
+{
+  "claim_gate": {
+    "collision_free_polynomial_factor_norm_bound_proved": false,
+    "common_range_incidence_resolved": false,
+    "exact_pair_principal_angle_spectrum_proved": true,
+    "noncommon_inverse_n_minus_one_contraction_proved": true,
+    "reason": "Every non-common pair direction contracts by at least the inverse minimum nontrivial irrep dimension, but pairwise trivial/sign common ranges are nearly universal and require higher-family incidence or quotient-Gram control.",
+    "speedup_claim_allowed": false,
+    "uniform_projector_sum_norm_bound_proved": false
+  },
+  "created_at": "2026-08-05T21:55:11.577306+00:00",
+  "falsifiers_triggered": [
+    "Non-common orientation-projector overlaps are not arbitrary: their singular values are reciprocal irrep dimensions.",
+    "Hilbert--Schmidt pair overlap loses the exact principal-angle spectrum and the inverse-dimension contraction mechanism.",
+    "Pairwise inverse-dimension contraction does not control trivial/sign common-range directions across many projectors."
+  ],
+  "finite_validations": [
+    {
+      "active_distinct_pair_count": 5,
+      "common_range_singular_value_count": 0,
+      "exact_pair_angle_spectrum_validation": true,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_noncommon_principal_correlation": 0.5000000000000001,
+      "maximum_spectrum_residual": 1.6653345369377348e-16,
+      "n": 4,
+      "spectrum_mismatch_count": 0,
+      "spectrum_validation_count": 5,
+      "status": "exact-pair-angle-spectrum-validation",
+      "target_count": 5,
+      "theoretical_noncommon_upper_bound": 0.5
+    },
+    {
+      "active_distinct_pair_count": 6,
+      "common_range_singular_value_count": 0,
+      "exact_pair_angle_spectrum_validation": true,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_noncommon_principal_correlation": 0.3333333333333335,
+      "maximum_spectrum_residual": 1.6653345369377348e-16,
+      "n": 4,
+      "spectrum_mismatch_count": 0,
+      "spectrum_validation_count": 6,
+      "status": "exact-pair-angle-spectrum-validation",
+      "target_count": 5,
+      "theoretical_noncommon_upper_bound": 0.5
+    },
+    {
+      "active_distinct_pair_count": 5,
+      "common_range_singular_value_count": 0,
+      "exact_pair_angle_spectrum_validation": true,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      ],
+      "maximum_noncommon_principal_correlation": 0.5,
+      "maximum_spectrum_residual": 2.7755575615628914e-16,
+      "n": 4,
+      "spectrum_mismatch_count": 0,
+      "spectrum_validation_count": 5,
+      "status": "exact-pair-angle-spectrum-validation",
+      "target_count": 5,
+      "theoretical_noncommon_upper_bound": 0.5
+    },
+    {
+      "active_distinct_pair_count": 1,
+      "common_range_singular_value_count": 0,
+      "exact_pair_angle_spectrum_validation": true,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_noncommon_principal_correlation": 0.0,
+      "maximum_spectrum_residual": 0.0,
+      "n": 4,
+      "spectrum_mismatch_count": 0,
+      "spectrum_validation_count": 1,
+      "status": "exact-pair-angle-spectrum-validation",
+      "target_count": 5,
+      "theoretical_noncommon_upper_bound": 0.5
+    },
+    {
+      "active_distinct_pair_count": 1,
+      "common_range_singular_value_count": 0,
+      "exact_pair_angle_spectrum_validation": true,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_noncommon_principal_correlation": 0.0,
+      "maximum_spectrum_residual": 0.0,
+      "n": 4,
+      "spectrum_mismatch_count": 0,
+      "spectrum_validation_count": 1,
+      "status": "exact-pair-angle-spectrum-validation",
+      "target_count": 5,
+      "theoretical_noncommon_upper_bound": 0.5
+    },
+    {
+      "active_distinct_pair_count": 1,
+      "common_range_singular_value_count": 0,
+      "exact_pair_angle_spectrum_validation": true,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      ],
+      "maximum_noncommon_principal_correlation": 0.0,
+      "maximum_spectrum_residual": 0.0,
+      "n": 4,
+      "spectrum_mismatch_count": 0,
+      "spectrum_validation_count": 1,
+      "status": "exact-pair-angle-spectrum-validation",
+      "target_count": 5,
+      "theoretical_noncommon_upper_bound": 0.5
+    },
+    {
+      "active_distinct_pair_count": 4,
+      "common_range_singular_value_count": 1,
+      "exact_pair_angle_spectrum_validation": true,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_noncommon_principal_correlation": 0.33333333333333354,
+      "maximum_spectrum_residual": 2.220446049250313e-16,
+      "n": 4,
+      "spectrum_mismatch_count": 0,
+      "spectrum_validation_count": 4,
+      "status": "exact-pair-angle-spectrum-validation",
+      "target_count": 5,
+      "theoretical_noncommon_upper_bound": 0.5
+    },
+    {
+      "active_distinct_pair_count": 4,
+      "common_range_singular_value_count": 1,
+      "exact_pair_angle_spectrum_validation": true,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_noncommon_principal_correlation": 0.33333333333333354,
+      "maximum_spectrum_residual": 4.440892098500626e-16,
+      "n": 4,
+      "spectrum_mismatch_count": 0,
+      "spectrum_validation_count": 4,
+      "status": "exact-pair-angle-spectrum-validation",
+      "target_count": 5,
+      "theoretical_noncommon_upper_bound": 0.5
+    },
+    {
+      "active_distinct_pair_count": 2,
+      "common_range_singular_value_count": 0,
+      "exact_pair_angle_spectrum_validation": true,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_noncommon_principal_correlation": 0.33333333333333354,
+      "maximum_spectrum_residual": 2.220446049250313e-16,
+      "n": 4,
+      "spectrum_mismatch_count": 0,
+      "spectrum_validation_count": 2,
+      "status": "exact-pair-angle-spectrum-validation",
+      "target_count": 5,
+      "theoretical_noncommon_upper_bound": 0.5
+    },
+    {
+      "active_distinct_pair_count": 1,
+      "common_range_singular_value_count": 0,
+      "exact_pair_angle_spectrum_validation": true,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_noncommon_principal_correlation": 0.0,
+      "maximum_spectrum_residual": 0.0,
+      "n": 4,
+      "spectrum_mismatch_count": 0,
+      "spectrum_validation_count": 1,
+      "status": "exact-pair-angle-spectrum-validation",
+      "target_count": 5,
+      "theoretical_noncommon_upper_bound": 0.5
+    },
+    {
+      "active_distinct_pair_count": 1,
+      "common_range_singular_value_count": 0,
+      "exact_pair_angle_spectrum_validation": true,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_noncommon_principal_correlation": 0.0,
+      "maximum_spectrum_residual": 0.0,
+      "n": 4,
+      "spectrum_mismatch_count": 0,
+      "spectrum_validation_count": 1,
+      "status": "exact-pair-angle-spectrum-validation",
+      "target_count": 5,
+      "theoretical_noncommon_upper_bound": 0.5
+    },
+    {
+      "active_distinct_pair_count": 1,
+      "common_range_singular_value_count": 0,
+      "exact_pair_angle_spectrum_validation": true,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_noncommon_principal_correlation": 0.0,
+      "maximum_spectrum_residual": 0.0,
+      "n": 4,
+      "spectrum_mismatch_count": 0,
+      "spectrum_validation_count": 1,
+      "status": "exact-pair-angle-spectrum-validation",
+      "target_count": 5,
+      "theoretical_noncommon_upper_bound": 0.5
+    },
+    {
+      "active_distinct_pair_count": 5,
+      "common_range_singular_value_count": 0,
+      "exact_pair_angle_spectrum_validation": true,
+      "labels": [
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_noncommon_principal_correlation": 0.4999999999999999,
+      "maximum_spectrum_residual": 3.3306690738754696e-16,
+      "n": 4,
+      "spectrum_mismatch_count": 0,
+      "spectrum_validation_count": 5,
+      "status": "exact-pair-angle-spectrum-validation",
+      "target_count": 5,
+      "theoretical_noncommon_upper_bound": 0.5
+    },
+    {
+      "active_distinct_pair_count": 6,
+      "common_range_singular_value_count": 0,
+      "exact_pair_angle_spectrum_validation": true,
+      "labels": [
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_noncommon_principal_correlation": 0.3333333333333334,
+      "maximum_spectrum_residual": 1.1102230246251565e-16,
+      "n": 4,
+      "spectrum_mismatch_count": 0,
+      "spectrum_validation_count": 6,
+      "status": "exact-pair-angle-spectrum-validation",
+      "target_count": 5,
+      "theoretical_noncommon_upper_bound": 0.5
+    },
+    {
+      "active_distinct_pair_count": 5,
+      "common_range_singular_value_count": 0,
+      "exact_pair_angle_spectrum_validation": true,
+      "labels": [
+        [
+          [
+            3,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_noncommon_principal_correlation": 0.4999999999999999,
+      "maximum_spectrum_residual": 3.3306690738754696e-16,
+      "n": 4,
+      "spectrum_mismatch_count": 0,
+      "spectrum_validation_count": 5,
+      "status": "exact-pair-angle-spectrum-validation",
+      "target_count": 5,
+      "theoretical_noncommon_upper_bound": 0.5
+    },
+    {
+      "active_distinct_pair_count": 4,
+      "common_range_singular_value_count": 1,
+      "exact_pair_angle_spectrum_validation": true,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            4,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_noncommon_principal_correlation": 0.25000000000000017,
+      "maximum_spectrum_residual": 3.3306690738754696e-16,
+      "n": 5,
+      "spectrum_mismatch_count": 0,
+      "spectrum_validation_count": 4,
+      "status": "exact-pair-angle-spectrum-validation",
+      "target_count": 7,
+      "theoretical_noncommon_upper_bound": 0.25
+    },
+    {
+      "active_distinct_pair_count": 2,
+      "common_range_singular_value_count": 0,
+      "exact_pair_angle_spectrum_validation": true,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            3,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            4,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_noncommon_principal_correlation": 0.0,
+      "maximum_spectrum_residual": 0.0,
+      "n": 5,
+      "spectrum_mismatch_count": 0,
+      "spectrum_validation_count": 2,
+      "status": "exact-pair-angle-spectrum-validation",
+      "target_count": 7,
+      "theoretical_noncommon_upper_bound": 0.25
+    },
+    {
+      "active_distinct_pair_count": 2,
+      "common_range_singular_value_count": 0,
+      "exact_pair_angle_spectrum_validation": true,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_noncommon_principal_correlation": 0.0,
+      "maximum_spectrum_residual": 0.0,
+      "n": 5,
+      "spectrum_mismatch_count": 0,
+      "spectrum_validation_count": 2,
+      "status": "exact-pair-angle-spectrum-validation",
+      "target_count": 7,
+      "theoretical_noncommon_upper_bound": 0.25
+    }
+  ],
+  "headline_metrics": {
+    "collision_free_polynomial_factor_norm_theorem_count": 0,
+    "common_range_incidence_resolution_theorem_count": 0,
+    "complete_w4_pair_angle_validation_count": 15,
+    "exact_pair_principal_angle_spectrum_theorem_count": 1,
+    "finite_pair_angle_validation_failure_count": 0,
+    "maximum_pair_angle_spectrum_residual": 4.440892098500626e-16,
+    "maximum_w4_noncommon_principal_correlation": 0.5000000000000001,
+    "maximum_w5_noncommon_principal_correlation": 0.25000000000000017,
+    "noncommon_inverse_minimum_irrep_dimension_bound_theorem_count": 1,
+    "noncommon_inverse_n_minus_one_bound_theorem_count": 1,
+    "pair_angle_spectrum_validation_count": 56,
+    "pair_angle_spectrum_validation_record_count": 18,
+    "uniform_projector_sum_norm_theorem_count": 0,
+    "w5_noncommon_dimension_bound": 0.25,
+    "w5_pair_angle_control_count": 3
+  },
+  "status": "pair-angle-spectrum-proved-common-range-quotient-open",
+  "summary": "Proved the complete pair principal-angle spectrum and validated 56 active finite pair sectors across all collision-free W4 tuples and curated W5 controls.",
+  "theorem_contract": {
+    "common_ranges": "the singular value one sectors are exactly alpha=trivial or sign",
+    "noncommon_bound": "for n>=5 every non-common singular value is at most 1/(n-1)",
+    "principal_spectrum": "nonzero singular values of the pair cross-Gram are 1/d_alpha with multiplicity dim(H_c)d_alpha m_0(alpha)m_a(alpha)m_b(alpha)",
+    "remaining_boundary": "resolve how pairwise trivial/sign common ranges overlap across larger orientation families; pairwise contraction alone does not bound the full projector Gram"
+  }
+}

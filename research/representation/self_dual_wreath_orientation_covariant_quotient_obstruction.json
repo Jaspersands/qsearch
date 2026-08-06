@@ -1,0 +1,248 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "The norm-one mixed commutator is a basis artifact; the common vector may still have a small covariant orbit.",
+      "resolution": "The explicit common vector's orbit under adjacent mixed-orientation generators spans all 400 carrier dimensions.",
+      "resolved": true
+    },
+    {
+      "objection": "Schur's lemma applies automatically to every natural source tuple.",
+      "resolution": "Self-conjugate partitions split on A_n. Finite controls show noticeable tuple incidence, and no asymptotic absence theorem is registered.",
+      "resolved": false
+    },
+    {
+      "objection": "The scalar branchwise commutant rules out a physical measurement that mixes orientation summands coherently.",
+      "resolution": "Such a transform acts outside the compressed branchwise commutant and is the remaining structured bypass.",
+      "resolved": false
+    }
+  ],
+  "claim_gate": {
+    "all_orientation_independent_alternating_actions_proved": true,
+    "coherent_orientation_branch_mixing_transform_ruled_out": false,
+    "general_physical_quotient_ruled_out": false,
+    "non_self_conjugate_branchwise_scalar_commutant_proved": true,
+    "nontrivial_branchwise_covariant_local_quotient_exists": false,
+    "polynomial_hidden_permutation_decoder_proved": false,
+    "reason": "The simple branchwise-covariant quotient is impossible when all source A_n restrictions are irreducible, and the finite common-vector orbit fills its carrier. Natural self-conjugate incidence and coherent branch-mixing transforms remain open.",
+    "residual_polynomial_frame_norm_proved": false,
+    "speedup_claim_allowed": false,
+    "typical_natural_tuple_satisfies_non_self_conjugate_condition": false
+  },
+  "created_at": "2026-08-05T22:41:35.817048+00:00",
+  "falsifiers_triggered": [
+    "The algebraic common-core quotient cannot be lifted by a simple branchwise-covariant projector in the irreducible A_n-restriction regime.",
+    "A finite common vector that is one-dimensional before orbit closure generates the entire carrier under mixed branches.",
+    "No typical-natural or all-physical-transform no-go is claimed because self-conjugate restrictions and coherent branch mixing remain unresolved."
+  ],
+  "finite_controls": [
+    {
+      "adjacent_generator_count": 16,
+      "algebraic_scalar_commutant_condition_holds": true,
+      "carrier_dimension": 400,
+      "closure_sweep_count": 2,
+      "every_source_partition_non_self_conjugate": true,
+      "exact_finite_orbit_closure_validation": true,
+      "initial_common_range_dimension": 1,
+      "labels": [
+        [
+          [
+            4,
+            1
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        [
+          [
+            4,
+            1
+          ],
+          [
+            3,
+            2
+          ]
+        ]
+      ],
+      "n": 5,
+      "orbit_closure_dimension": 400,
+      "orbit_closure_is_full": true,
+      "orientation_count": 4,
+      "source_factor_count": 4,
+      "status": "exact-full-orientation-orbit-closure-validation"
+    }
+  ],
+  "headline_metrics": {
+    "asymptotic_natural_tuple_non_self_conjugate_theorem_count": 0,
+    "branchwise_covariant_nontrivial_projector_no_go_theorem_count": 1,
+    "finite_orbit_closure_control_count": 1,
+    "finite_orbit_closure_validation_failure_count": 0,
+    "independent_alternating_factor_action_theorem_count": 1,
+    "maximum_finite_closure_sweep_count": 2,
+    "maximum_finite_orbit_closure_fraction": 1.0,
+    "new_quantum_algorithm_count": 0,
+    "non_self_conjugate_scalar_commutant_theorem_count": 1,
+    "orientation_branch_mixing_physical_transform_count": 0,
+    "polynomial_hidden_permutation_decoder_count": 0,
+    "residual_polynomial_frame_norm_theorem_count": 0,
+    "self_conjugate_mass_record_count": 13,
+    "tail_n": 48,
+    "tail_probability_no_self_conjugate_source_draw": 0.08073249064394256,
+    "tail_self_conjugate_plancherel_mass": 0.006179385657338149
+  },
+  "self_conjugate_mass_records": [
+    {
+      "asymptotic_tuple_absence_proved": false,
+      "information_threshold_copy_count": 7,
+      "n": 5,
+      "partition_count": 7,
+      "probability_no_self_conjugate_source_draw": 0.0067822307284900055,
+      "self_conjugate_partition_count": 1,
+      "self_conjugate_plancherel_mass": 0.3,
+      "source_draw_count": 14,
+      "status": "finite-self-conjugate-plancherel-mass-control"
+    },
+    {
+      "asymptotic_tuple_absence_proved": false,
+      "information_threshold_copy_count": 10,
+      "n": 6,
+      "partition_count": 11,
+      "probability_no_self_conjugate_source_draw": 0.0001526545250872715,
+      "self_conjugate_partition_count": 1,
+      "self_conjugate_plancherel_mass": 0.35555555555555557,
+      "source_draw_count": 20,
+      "status": "finite-self-conjugate-plancherel-mass-control"
+    },
+    {
+      "asymptotic_tuple_absence_proved": false,
+      "information_threshold_copy_count": 16,
+      "n": 8,
+      "partition_count": 22,
+      "probability_no_self_conjugate_source_draw": 0.0001261464089420739,
+      "self_conjugate_partition_count": 2,
+      "self_conjugate_plancherel_mass": 0.24464285714285716,
+      "source_draw_count": 32,
+      "status": "finite-self-conjugate-plancherel-mass-control"
+    },
+    {
+      "asymptotic_tuple_absence_proved": false,
+      "information_threshold_copy_count": 22,
+      "n": 10,
+      "partition_count": 42,
+      "probability_no_self_conjugate_source_draw": 2.017451571643338e-05,
+      "self_conjugate_partition_count": 2,
+      "self_conjugate_plancherel_mass": 0.2178483245149912,
+      "source_draw_count": 44,
+      "status": "finite-self-conjugate-plancherel-mass-control"
+    },
+    {
+      "asymptotic_tuple_absence_proved": false,
+      "information_threshold_copy_count": 29,
+      "n": 12,
+      "partition_count": 77,
+      "probability_no_self_conjugate_source_draw": 9.533101211965519e-05,
+      "self_conjugate_partition_count": 3,
+      "self_conjugate_plancherel_mass": 0.14753520656298436,
+      "source_draw_count": 58,
+      "status": "finite-self-conjugate-plancherel-mass-control"
+    },
+    {
+      "asymptotic_tuple_absence_proved": false,
+      "information_threshold_copy_count": 45,
+      "n": 16,
+      "partition_count": 231,
+      "probability_no_self_conjugate_source_draw": 0.008070372070862449,
+      "self_conjugate_partition_count": 5,
+      "self_conjugate_plancherel_mass": 0.0521420396465246,
+      "source_draw_count": 90,
+      "status": "finite-self-conjugate-plancherel-mass-control"
+    },
+    {
+      "asymptotic_tuple_absence_proved": false,
+      "information_threshold_copy_count": 62,
+      "n": 20,
+      "partition_count": 627,
+      "probability_no_self_conjugate_source_draw": 0.2318290366104911,
+      "self_conjugate_partition_count": 7,
+      "self_conjugate_plancherel_mass": 0.011719137158121626,
+      "source_draw_count": 124,
+      "status": "finite-self-conjugate-plancherel-mass-control"
+    },
+    {
+      "asymptotic_tuple_absence_proved": false,
+      "information_threshold_copy_count": 80,
+      "n": 24,
+      "partition_count": 1575,
+      "probability_no_self_conjugate_source_draw": 0.1575677893392041,
+      "self_conjugate_partition_count": 11,
+      "self_conjugate_plancherel_mass": 0.011482933927659696,
+      "source_draw_count": 160,
+      "status": "finite-self-conjugate-plancherel-mass-control"
+    },
+    {
+      "asymptotic_tuple_absence_proved": false,
+      "information_threshold_copy_count": 98,
+      "n": 28,
+      "partition_count": 3718,
+      "probability_no_self_conjugate_source_draw": 0.024114588337117184,
+      "self_conjugate_partition_count": 16,
+      "self_conjugate_plancherel_mass": 0.01882533487397198,
+      "source_draw_count": 196,
+      "status": "finite-self-conjugate-plancherel-mass-control"
+    },
+    {
+      "asymptotic_tuple_absence_proved": false,
+      "information_threshold_copy_count": 118,
+      "n": 32,
+      "partition_count": 8349,
+      "probability_no_self_conjugate_source_draw": 0.005461251462492557,
+      "self_conjugate_partition_count": 23,
+      "self_conjugate_plancherel_mass": 0.021834694078546633,
+      "source_draw_count": 236,
+      "status": "finite-self-conjugate-plancherel-mass-control"
+    },
+    {
+      "asymptotic_tuple_absence_proved": false,
+      "information_threshold_copy_count": 139,
+      "n": 36,
+      "partition_count": 17977,
+      "probability_no_self_conjugate_source_draw": 0.005670711545225011,
+      "self_conjugate_partition_count": 33,
+      "self_conjugate_plancherel_mass": 0.0184338804458103,
+      "source_draw_count": 278,
+      "status": "finite-self-conjugate-plancherel-mass-control"
+    },
+    {
+      "asymptotic_tuple_absence_proved": false,
+      "information_threshold_copy_count": 160,
+      "n": 40,
+      "partition_count": 37338,
+      "probability_no_self_conjugate_source_draw": 0.009208283879280525,
+      "self_conjugate_partition_count": 46,
+      "self_conjugate_plancherel_mass": 0.014542138505667506,
+      "source_draw_count": 320,
+      "status": "finite-self-conjugate-plancherel-mass-control"
+    },
+    {
+      "asymptotic_tuple_absence_proved": false,
+      "information_threshold_copy_count": 203,
+      "n": 48,
+      "partition_count": 147273,
+      "probability_no_self_conjugate_source_draw": 0.08073249064394256,
+      "self_conjugate_partition_count": 87,
+      "self_conjugate_plancherel_mass": 0.006179385657338149,
+      "source_draw_count": 406,
+      "status": "finite-self-conjugate-plancherel-mass-control"
+    }
+  ],
+  "status": "branchwise-covariant-quotient-falsified-branch-mixing-open",
+  "summary": "Proved a scalar-commutant obstruction to nontrivial local quotients commuting with every orientation action in the non-self-conjugate sector. The physical critical path now requires coherent mixing of induced orientation branches.",
+  "theorem_contract": {
+    "orientation_generated_subgroup": "For n>=5, distinct all-orientation membership signatures generate independent A_n actions on every source factor.",
+    "projector_no_go": "A branchwise projector commuting with every orientation action is zero or identity, so it cannot both remove a nonzero common core and retain a nonzero carrier.",
+    "restriction_condition": "A non-self-conjugate S_n irrep restricts irreducibly to A_n.",
+    "scalar_commutant": "When every source is non-self-conjugate, the outer tensor representation of A_n^(2C) is irreducible; its commutant is scalar by Schur's lemma.",
+    "scope_boundary": "Self-conjugate source factors and coherent transforms mixing the induced orientation branches are outside the theorem."
+  }
+}

@@ -1,0 +1,3234 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Affine structure must live in reducing carrier cores.",
+      "resolution": "It instead appears in the canonical coefficient effects, which remain affine when the carrier intersection is emergent.",
+      "resolved": true
+    },
+    {
+      "objection": "Any balanced merge has a coefficient-affine certificate.",
+      "resolution": "A repeated-label balanced node has a uniform six-mask support, which is nonaffine; nine other repeated-label nodes are unbalanced.",
+      "resolved": true
+    },
+    {
+      "objection": "The partial coefficient transfer is already efficient.",
+      "resolution": "Its present formula contains pseudoinverses of child frames and is a structural target, not a compiled operation.",
+      "resolved": false
+    },
+    {
+      "objection": "Collision-free labels prevent all recoupling collisions.",
+      "resolution": "Distinct external irreps do not imply multiplicity-free internal Kronecker paths at growing n and k.",
+      "resolved": false
+    }
+  ],
+  "claim_gate": {
+    "all_n_collision_free_coefficient_affine_theorem_proved": false,
+    "canonical_minimum_norm_identities_proved": true,
+    "coherent_minimum_norm_synthesis_compiled": false,
+    "finite_label_simple_coefficient_affine_signal": true,
+    "hierarchical_orientation_polar_proved": false,
+    "multiplicity_free_recoupling_formula_proved": false,
+    "reason": "The finite coefficient-space normal form is exact, but no growing-depth recoupling theorem or coherent synthesis exists.",
+    "repeated_labels_falsify_universal_coefficient_affinity": true,
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-06T03:20:19.142943+00:00",
+  "falsifiers_triggered": [
+    "Affine carrier-core exhaustion is the wrong necessary condition; canonical coefficient affinity survives emergent intersections.",
+    "Balanced shorted metrics do not force affine coefficient support.",
+    "External label distinctness does not by itself prove internal multiplicity-free recoupling at growing scale."
+  ],
+  "finite_controls": [
+    {
+      "carrier_dimension": 8,
+      "coefficient_affine_certificate_count": 9,
+      "coefficient_affine_certificate_failure_count": 0,
+      "control_id": "W3-DISTINCT-LABEL-TRIANGLE",
+      "every_fractional_merge_has_coefficient_affine_certificate": true,
+      "exact_canonical_coefficient_audit_verified": true,
+      "exact_decomposition_identity_failure_count": 0,
+      "fractional_merge_count": 9,
+      "globally_distinct_source_partitions": false,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "n": 3,
+      "node_records": [
+        {
+          "active_component_weights": [
+            [
+              0,
+              0.5
+            ],
+            [
+              2,
+              0.5
+            ],
+            [
+              5,
+              0.5
+            ],
+            [
+              7,
+              0.5
+            ]
+          ],
+          "active_left_mask_count": 2,
+          "active_orientation_masks": [
+            0,
+            2,
+            5,
+            7
+          ],
+          "active_right_mask_count": 2,
+          "active_support_is_affine": true,
+          "canonical_coefficient_affine_certificate": true,
+          "child_metric_equality_residual": 2.220446049250313e-16,
+          "child_width": 2,
+          "coefficient_transfer_final_projection_residual": 6.475487882288056e-16,
+          "coefficient_transfer_initial_projection_residual": 1.0051817403246963e-15,
+          "exact_minimum_norm_decomposition_identities_verified": true,
+          "intersection_dimension": 2,
+          "left_metric_scalar_residual": 5.843303080440111e-16,
+          "left_metric_scale": 1.0,
+          "left_orientation_masks": [
+            0,
+            2
+          ],
+          "maximum_active_weight_uniformity_residual": 2.220446049250313e-16,
+          "maximum_coefficient_gram_identity_residual": 3.696737140769224e-16,
+          "maximum_component_scalar_residual": 4.450264117959056e-16,
+          "maximum_synthesis_identity_residual": 5.663182156978197e-16,
+          "node_id": "W3-DISTINCT-LABEL-TRIANGLE-W2-0-2-5-7",
+          "right_metric_scalar_residual": 6.386568216252606e-16,
+          "right_metric_scale": 1.0000000000000002,
+          "right_orientation_masks": [
+            5,
+            7
+          ],
+          "status": "exact-canonical-coefficient-affine-certificate"
+        },
+        {
+          "active_component_weights": [
+            [
+              0,
+              1.0
+            ],
+            [
+              2,
+              1.0
+            ],
+            [
+              5,
+              1.0
+            ],
+            [
+              7,
+              1.0
+            ]
+          ],
+          "active_left_mask_count": 2,
+          "active_orientation_masks": [
+            0,
+            2,
+            5,
+            7
+          ],
+          "active_right_mask_count": 2,
+          "active_support_is_affine": true,
+          "canonical_coefficient_affine_certificate": true,
+          "child_metric_equality_residual": 4.440892098500626e-16,
+          "child_width": 2,
+          "coefficient_transfer_final_projection_residual": 2.8247739538800625e-15,
+          "coefficient_transfer_initial_projection_residual": 1.393503407843175e-15,
+          "exact_minimum_norm_decomposition_identities_verified": true,
+          "intersection_dimension": 2,
+          "left_metric_scalar_residual": 2.222244707523648e-15,
+          "left_metric_scale": 1.9999999999999978,
+          "left_orientation_masks": [
+            0,
+            5
+          ],
+          "maximum_active_weight_uniformity_residual": 8.881784197001252e-16,
+          "maximum_coefficient_gram_identity_residual": 3.3307153924972073e-15,
+          "maximum_component_scalar_residual": 2.2276782121828435e-15,
+          "maximum_synthesis_identity_residual": 1.6799540624837344e-15,
+          "node_id": "W3-DISTINCT-LABEL-TRIANGLE-W2-0-5-2-7",
+          "right_metric_scalar_residual": 1.124639307096404e-15,
+          "right_metric_scale": 1.9999999999999982,
+          "right_orientation_masks": [
+            2,
+            7
+          ],
+          "status": "exact-canonical-coefficient-affine-certificate"
+        },
+        {
+          "active_component_weights": [
+            [
+              0,
+              1.0
+            ],
+            [
+              2,
+              1.0
+            ],
+            [
+              5,
+              1.0
+            ],
+            [
+              7,
+              1.0
+            ]
+          ],
+          "active_left_mask_count": 2,
+          "active_orientation_masks": [
+            0,
+            2,
+            5,
+            7
+          ],
+          "active_right_mask_count": 2,
+          "active_support_is_affine": true,
+          "canonical_coefficient_affine_certificate": true,
+          "child_metric_equality_residual": 8.881784197001252e-16,
+          "child_width": 2,
+          "coefficient_transfer_final_projection_residual": 9.393364252217469e-16,
+          "coefficient_transfer_initial_projection_residual": 4.0254827656448965e-15,
+          "exact_minimum_norm_decomposition_identities_verified": true,
+          "intersection_dimension": 2,
+          "left_metric_scalar_residual": 1.4180293728676857e-15,
+          "left_metric_scale": 2.0,
+          "left_orientation_masks": [
+            0,
+            7
+          ],
+          "maximum_active_weight_uniformity_residual": 1.3322676295501878e-15,
+          "maximum_coefficient_gram_identity_residual": 4.374349187971228e-15,
+          "maximum_component_scalar_residual": 3.827397166129809e-15,
+          "maximum_synthesis_identity_residual": 2.242820178081918e-15,
+          "node_id": "W3-DISTINCT-LABEL-TRIANGLE-W2-0-7-2-5",
+          "right_metric_scalar_residual": 3.627996134467745e-15,
+          "right_metric_scale": 2.000000000000001,
+          "right_orientation_masks": [
+            2,
+            5
+          ],
+          "status": "exact-canonical-coefficient-affine-certificate"
+        },
+        {
+          "active_component_weights": [
+            [
+              0,
+              0.5
+            ],
+            [
+              2,
+              0.5
+            ],
+            [
+              5,
+              0.5
+            ],
+            [
+              7,
+              0.5
+            ]
+          ],
+          "active_left_mask_count": 2,
+          "active_orientation_masks": [
+            0,
+            2,
+            5,
+            7
+          ],
+          "active_right_mask_count": 2,
+          "active_support_is_affine": true,
+          "canonical_coefficient_affine_certificate": true,
+          "child_metric_equality_residual": 0.0,
+          "child_width": 4,
+          "coefficient_transfer_final_projection_residual": 1.7221367205144677e-15,
+          "coefficient_transfer_initial_projection_residual": 6.946182305208949e-16,
+          "exact_minimum_norm_decomposition_identities_verified": true,
+          "intersection_dimension": 2,
+          "left_metric_scalar_residual": 8.191732506321725e-16,
+          "left_metric_scale": 1.0,
+          "left_orientation_masks": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "maximum_active_weight_uniformity_residual": 8.881784197001252e-16,
+          "maximum_coefficient_gram_identity_residual": 7.053262784122403e-16,
+          "maximum_component_scalar_residual": 7.668197608238432e-16,
+          "maximum_synthesis_identity_residual": 8.70121833730883e-16,
+          "node_id": "W3-DISTINCT-LABEL-TRIANGLE-W4-0-1-2-3-4-5-6-7",
+          "right_metric_scalar_residual": 3.8109887097874863e-16,
+          "right_metric_scale": 1.0,
+          "right_orientation_masks": [
+            4,
+            5,
+            6,
+            7
+          ],
+          "status": "exact-canonical-coefficient-affine-certificate"
+        },
+        {
+          "active_component_weights": [
+            [
+              0,
+              1.0
+            ],
+            [
+              2,
+              1.0
+            ],
+            [
+              5,
+              1.0
+            ],
+            [
+              7,
+              1.0
+            ]
+          ],
+          "active_left_mask_count": 2,
+          "active_orientation_masks": [
+            0,
+            2,
+            5,
+            7
+          ],
+          "active_right_mask_count": 2,
+          "active_support_is_affine": true,
+          "canonical_coefficient_affine_certificate": true,
+          "child_metric_equality_residual": 2.220446049250313e-16,
+          "child_width": 4,
+          "coefficient_transfer_final_projection_residual": 7.063783720471476e-16,
+          "coefficient_transfer_initial_projection_residual": 1.2130946596476595e-15,
+          "exact_minimum_norm_decomposition_identities_verified": true,
+          "intersection_dimension": 2,
+          "left_metric_scalar_residual": 2.568201776667591e-16,
+          "left_metric_scale": 1.9999999999999998,
+          "left_orientation_masks": [
+            0,
+            1,
+            4,
+            5
+          ],
+          "maximum_active_weight_uniformity_residual": 4.440892098500626e-16,
+          "maximum_coefficient_gram_identity_residual": 1.3384767944654947e-15,
+          "maximum_component_scalar_residual": 1.0149383326418644e-15,
+          "maximum_synthesis_identity_residual": 1.2383607155239225e-15,
+          "node_id": "W3-DISTINCT-LABEL-TRIANGLE-W4-0-1-4-5-2-3-6-7",
+          "right_metric_scalar_residual": 9.119950931282998e-16,
+          "right_metric_scale": 1.9999999999999996,
+          "right_orientation_masks": [
+            2,
+            3,
+            6,
+            7
+          ],
+          "status": "exact-canonical-coefficient-affine-certificate"
+        },
+        {
+          "active_component_weights": [
+            [
+              0,
+              1.0
+            ],
+            [
+              2,
+              1.0
+            ],
+            [
+              5,
+              1.0
+            ],
+            [
+              7,
+              1.0
+            ]
+          ],
+          "active_left_mask_count": 2,
+          "active_orientation_masks": [
+            0,
+            2,
+            5,
+            7
+          ],
+          "active_right_mask_count": 2,
+          "active_support_is_affine": true,
+          "canonical_coefficient_affine_certificate": true,
+          "child_metric_equality_residual": 4.440892098500626e-16,
+          "child_width": 4,
+          "coefficient_transfer_final_projection_residual": 8.447014415442723e-16,
+          "coefficient_transfer_initial_projection_residual": 1.250854890453012e-15,
+          "exact_minimum_norm_decomposition_identities_verified": true,
+          "intersection_dimension": 2,
+          "left_metric_scalar_residual": 1.165724970190974e-15,
+          "left_metric_scale": 2.000000000000001,
+          "left_orientation_masks": [
+            0,
+            1,
+            6,
+            7
+          ],
+          "maximum_active_weight_uniformity_residual": 9.992007221626409e-16,
+          "maximum_coefficient_gram_identity_residual": 2.24496773929379e-15,
+          "maximum_component_scalar_residual": 1.149350919013461e-15,
+          "maximum_synthesis_identity_residual": 1.095241615051784e-15,
+          "node_id": "W3-DISTINCT-LABEL-TRIANGLE-W4-0-1-6-7-2-3-4-5",
+          "right_metric_scalar_residual": 7.478260332042044e-16,
+          "right_metric_scale": 2.0000000000000004,
+          "right_orientation_masks": [
+            2,
+            3,
+            4,
+            5
+          ],
+          "status": "exact-canonical-coefficient-affine-certificate"
+        },
+        {
+          "active_component_weights": [
+            [
+              0,
+              0.5
+            ],
+            [
+              2,
+              0.5
+            ],
+            [
+              5,
+              0.5
+            ],
+            [
+              7,
+              0.5
+            ]
+          ],
+          "active_left_mask_count": 2,
+          "active_orientation_masks": [
+            0,
+            2,
+            5,
+            7
+          ],
+          "active_right_mask_count": 2,
+          "active_support_is_affine": true,
+          "canonical_coefficient_affine_certificate": true,
+          "child_metric_equality_residual": 2.220446049250313e-16,
+          "child_width": 4,
+          "coefficient_transfer_final_projection_residual": 7.802548149770411e-16,
+          "coefficient_transfer_initial_projection_residual": 8.791698461097051e-16,
+          "exact_minimum_norm_decomposition_identities_verified": true,
+          "intersection_dimension": 2,
+          "left_metric_scalar_residual": 7.341342804517225e-16,
+          "left_metric_scale": 1.0,
+          "left_orientation_masks": [
+            0,
+            2,
+            4,
+            6
+          ],
+          "maximum_active_weight_uniformity_residual": 2.7755575615628914e-16,
+          "maximum_coefficient_gram_identity_residual": 2.4744992908818725e-16,
+          "maximum_component_scalar_residual": 4.699547483256419e-16,
+          "maximum_synthesis_identity_residual": 5.685446479059571e-16,
+          "node_id": "W3-DISTINCT-LABEL-TRIANGLE-W4-0-2-4-6-1-3-5-7",
+          "right_metric_scalar_residual": 7.008910064532832e-16,
+          "right_metric_scale": 1.0000000000000002,
+          "right_orientation_masks": [
+            1,
+            3,
+            5,
+            7
+          ],
+          "status": "exact-canonical-coefficient-affine-certificate"
+        },
+        {
+          "active_component_weights": [
+            [
+              0,
+              1.0
+            ],
+            [
+              2,
+              1.0
+            ],
+            [
+              5,
+              1.0
+            ],
+            [
+              7,
+              1.0
+            ]
+          ],
+          "active_left_mask_count": 2,
+          "active_orientation_masks": [
+            0,
+            2,
+            5,
+            7
+          ],
+          "active_right_mask_count": 2,
+          "active_support_is_affine": true,
+          "canonical_coefficient_affine_certificate": true,
+          "child_metric_equality_residual": 4.440892098500626e-16,
+          "child_width": 4,
+          "coefficient_transfer_final_projection_residual": 1.1962198804133053e-15,
+          "coefficient_transfer_initial_projection_residual": 4.753972218319317e-16,
+          "exact_minimum_norm_decomposition_identities_verified": true,
+          "intersection_dimension": 2,
+          "left_metric_scalar_residual": 1.0279830769661485e-15,
+          "left_metric_scale": 1.9999999999999987,
+          "left_orientation_masks": [
+            0,
+            3,
+            4,
+            7
+          ],
+          "maximum_active_weight_uniformity_residual": 8.881784197001252e-16,
+          "maximum_coefficient_gram_identity_residual": 1.468937423568394e-15,
+          "maximum_component_scalar_residual": 2.1021726892240073e-15,
+          "maximum_synthesis_identity_residual": 1.6227066577186106e-15,
+          "node_id": "W3-DISTINCT-LABEL-TRIANGLE-W4-0-3-4-7-1-2-5-6",
+          "right_metric_scalar_residual": 1.1044008340359852e-17,
+          "right_metric_scale": 1.9999999999999991,
+          "right_orientation_masks": [
+            1,
+            2,
+            5,
+            6
+          ],
+          "status": "exact-canonical-coefficient-affine-certificate"
+        },
+        {
+          "active_component_weights": [
+            [
+              0,
+              1.0
+            ],
+            [
+              2,
+              1.0
+            ],
+            [
+              5,
+              1.0
+            ],
+            [
+              7,
+              1.0
+            ]
+          ],
+          "active_left_mask_count": 2,
+          "active_orientation_masks": [
+            0,
+            2,
+            5,
+            7
+          ],
+          "active_right_mask_count": 2,
+          "active_support_is_affine": true,
+          "canonical_coefficient_affine_certificate": true,
+          "child_metric_equality_residual": 0.0,
+          "child_width": 4,
+          "coefficient_transfer_final_projection_residual": 8.423112371190784e-16,
+          "coefficient_transfer_initial_projection_residual": 9.321256857499464e-16,
+          "exact_minimum_norm_decomposition_identities_verified": true,
+          "intersection_dimension": 2,
+          "left_metric_scalar_residual": 4.459844260790914e-16,
+          "left_metric_scale": 2.0,
+          "left_orientation_masks": [
+            0,
+            3,
+            5,
+            6
+          ],
+          "maximum_active_weight_uniformity_residual": 1.5543122344752192e-15,
+          "maximum_coefficient_gram_identity_residual": 1.400033643849034e-15,
+          "maximum_component_scalar_residual": 1.1261758914757951e-15,
+          "maximum_synthesis_identity_residual": 1.3541991384260574e-15,
+          "node_id": "W3-DISTINCT-LABEL-TRIANGLE-W4-0-3-5-6-1-2-4-7",
+          "right_metric_scalar_residual": 8.933506751295863e-16,
+          "right_metric_scale": 2.0,
+          "right_orientation_masks": [
+            1,
+            2,
+            4,
+            7
+          ],
+          "status": "exact-canonical-coefficient-affine-certificate"
+        }
+      ],
+      "nonaffine_active_support_count": 0,
+      "nonscalar_component_effect_count": 0,
+      "nonscalar_or_unequal_metric_count": 0,
+      "observed_active_supports": [
+        [
+          0,
+          2,
+          5,
+          7
+        ]
+      ],
+      "pairwise_distinct_physical_labels": true,
+      "reduced_support_dimension": 8,
+      "status": "all-fractional-merges-canonical-coefficient-affine",
+      "target_partition": [
+        2,
+        1
+      ]
+    },
+    {
+      "carrier_dimension": 16,
+      "coefficient_affine_certificate_count": 24,
+      "coefficient_affine_certificate_failure_count": 10,
+      "control_id": "W3-REPEATED-LABEL-FALSIFIER",
+      "every_fractional_merge_has_coefficient_affine_certificate": false,
+      "exact_canonical_coefficient_audit_verified": true,
+      "exact_decomposition_identity_failure_count": 0,
+      "fractional_merge_count": 34,
+      "globally_distinct_source_partitions": false,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ]
+      ],
+      "n": 3,
+      "node_records": [
+        {
+          "active_component_weights": [
+            [
+              1,
+              1.0
+            ],
+            [
+              7,
+              1.0
+            ]
+          ],
+          "active_left_mask_count": 1,
+          "active_orientation_masks": [
+            1,
+            7
+          ],
+          "active_right_mask_count": 1,
+          "active_support_is_affine": true,
+          "canonical_coefficient_affine_certificate": true,
+          "child_metric_equality_residual": 8.881784197001252e-16,
+          "child_width": 1,
+          "coefficient_transfer_final_projection_residual": 6.829758155986835e-16,
+          "coefficient_transfer_initial_projection_residual": 9.90248377538304e-17,
+          "exact_minimum_norm_decomposition_identities_verified": true,
+          "intersection_dimension": 1,
+          "left_metric_scalar_residual": 0.0,
+          "left_metric_scale": 1.0000000000000009,
+          "left_orientation_masks": [
+            1
+          ],
+          "maximum_active_weight_uniformity_residual": 1.3322676295501878e-15,
+          "maximum_coefficient_gram_identity_residual": 6.661338147750939e-16,
+          "maximum_component_scalar_residual": 0.0,
+          "maximum_synthesis_identity_residual": 9.480719849838065e-16,
+          "node_id": "W3-REPEATED-LABEL-FALSIFIER-W1-1-7",
+          "right_metric_scalar_residual": 0.0,
+          "right_metric_scale": 1.0,
+          "right_orientation_masks": [
+            7
+          ],
+          "status": "exact-canonical-coefficient-affine-certificate"
+        },
+        {
+          "active_component_weights": [
+            [
+              2,
+              1.0
+            ],
+            [
+              7,
+              1.0
+            ]
+          ],
+          "active_left_mask_count": 1,
+          "active_orientation_masks": [
+            2,
+            7
+          ],
+          "active_right_mask_count": 1,
+          "active_support_is_affine": true,
+          "canonical_coefficient_affine_certificate": true,
+          "child_metric_equality_residual": 4.440892098500626e-16,
+          "child_width": 1,
+          "coefficient_transfer_final_projection_residual": 1.389147030259587e-16,
+          "coefficient_transfer_initial_projection_residual": 2.1399785227932052e-16,
+          "exact_minimum_norm_decomposition_identities_verified": true,
+          "intersection_dimension": 1,
+          "left_metric_scalar_residual": 0.0,
+          "left_metric_scale": 1.0,
+          "left_orientation_masks": [
+            2
+          ],
+          "maximum_active_weight_uniformity_residual": 7.771561172376096e-16,
+          "maximum_coefficient_gram_identity_residual": 2.220446049250313e-16,
+          "maximum_component_scalar_residual": 0.0,
+          "maximum_synthesis_identity_residual": 6.699102878459991e-16,
+          "node_id": "W3-REPEATED-LABEL-FALSIFIER-W1-2-7",
+          "right_metric_scalar_residual": 0.0,
+          "right_metric_scale": 1.0000000000000004,
+          "right_orientation_masks": [
+            7
+          ],
+          "status": "exact-canonical-coefficient-affine-certificate"
+        },
+        {
+          "active_component_weights": [
+            [
+              4,
+              1.0
+            ],
+            [
+              7,
+              1.0
+            ]
+          ],
+          "active_left_mask_count": 1,
+          "active_orientation_masks": [
+            4,
+            7
+          ],
+          "active_right_mask_count": 1,
+          "active_support_is_affine": true,
+          "canonical_coefficient_affine_certificate": true,
+          "child_metric_equality_residual": 0.0,
+          "child_width": 1,
+          "coefficient_transfer_final_projection_residual": 6.330089872716855e-16,
+          "coefficient_transfer_initial_projection_residual": 1.7397836593816619e-16,
+          "exact_minimum_norm_decomposition_identities_verified": true,
+          "intersection_dimension": 1,
+          "left_metric_scalar_residual": 0.0,
+          "left_metric_scale": 0.9999999999999996,
+          "left_orientation_masks": [
+            4
+          ],
+          "maximum_active_weight_uniformity_residual": 4.440892098500626e-16,
+          "maximum_coefficient_gram_identity_residual": 4.440892098500626e-16,
+          "maximum_component_scalar_residual": 0.0,
+          "maximum_synthesis_identity_residual": 4.2398282439561414e-16,
+          "node_id": "W3-REPEATED-LABEL-FALSIFIER-W1-4-7",
+          "right_metric_scalar_residual": 0.0,
+          "right_metric_scale": 0.9999999999999996,
+          "right_orientation_masks": [
+            7
+          ],
+          "status": "exact-canonical-coefficient-affine-certificate"
+        },
+        {
+          "active_component_weights": [
+            [
+              1,
+              1.0
+            ],
+            [
+              7,
+              1.0
+            ]
+          ],
+          "active_left_mask_count": 1,
+          "active_orientation_masks": [
+            1,
+            7
+          ],
+          "active_right_mask_count": 1,
+          "active_support_is_affine": true,
+          "canonical_coefficient_affine_certificate": true,
+          "child_metric_equality_residual": 0.0,
+          "child_width": 2,
+          "coefficient_transfer_final_projection_residual": 8.531523304376124e-16,
+          "coefficient_transfer_initial_projection_residual": 3.4884590841995133e-16,
+          "exact_minimum_norm_decomposition_identities_verified": true,
+          "intersection_dimension": 1,
+          "left_metric_scalar_residual": 0.0,
+          "left_metric_scale": 1.000000000000001,
+          "left_orientation_masks": [
+            0,
+            1
+          ],
+          "maximum_active_weight_uniformity_residual": 4.440892098500626e-16,
+          "maximum_coefficient_gram_identity_residual": 6.661338147750939e-16,
+          "maximum_component_scalar_residual": 0.0,
+          "maximum_synthesis_identity_residual": 9.49399847209557e-16,
+          "node_id": "W3-REPEATED-LABEL-FALSIFIER-W2-0-1-6-7",
+          "right_metric_scalar_residual": 0.0,
+          "right_metric_scale": 1.000000000000001,
+          "right_orientation_masks": [
+            6,
+            7
+          ],
+          "status": "exact-canonical-coefficient-affine-certificate"
+        },
+        {
+          "active_component_weights": [
+            [
+              2,
+              1.0
+            ],
+            [
+              7,
+              1.0
+            ]
+          ],
+          "active_left_mask_count": 1,
+          "active_orientation_masks": [
+            2,
+            7
+          ],
+          "active_right_mask_count": 1,
+          "active_support_is_affine": true,
+          "canonical_coefficient_affine_certificate": true,
+          "child_metric_equality_residual": 4.440892098500626e-16,
+          "child_width": 2,
+          "coefficient_transfer_final_projection_residual": 4.942704387350332e-16,
+          "coefficient_transfer_initial_projection_residual": 4.301489938960182e-16,
+          "exact_minimum_norm_decomposition_identities_verified": true,
+          "intersection_dimension": 1,
+          "left_metric_scalar_residual": 0.0,
+          "left_metric_scale": 0.9999999999999994,
+          "left_orientation_masks": [
+            0,
+            2
+          ],
+          "maximum_active_weight_uniformity_residual": 2.220446049250313e-16,
+          "maximum_coefficient_gram_identity_residual": 1.1102230246251565e-16,
+          "maximum_component_scalar_residual": 0.0,
+          "maximum_synthesis_identity_residual": 6.653968649143385e-16,
+          "node_id": "W3-REPEATED-LABEL-FALSIFIER-W2-0-2-5-7",
+          "right_metric_scalar_residual": 0.0,
+          "right_metric_scale": 0.9999999999999999,
+          "right_orientation_masks": [
+            5,
+            7
+          ],
+          "status": "exact-canonical-coefficient-affine-certificate"
+        },
+        {
+          "active_component_weights": [
+            [
+              4,
+              1.0
+            ],
+            [
+              7,
+              1.0
+            ]
+          ],
+          "active_left_mask_count": 1,
+          "active_orientation_masks": [
+            4,
+            7
+          ],
+          "active_right_mask_count": 1,
+          "active_support_is_affine": true,
+          "canonical_coefficient_affine_certificate": true,
+          "child_metric_equality_residual": 2.220446049250313e-16,
+          "child_width": 2,
+          "coefficient_transfer_final_projection_residual": 3.4261397959927457e-16,
+          "coefficient_transfer_initial_projection_residual": 4.349512704613473e-16,
+          "exact_minimum_norm_decomposition_identities_verified": true,
+          "intersection_dimension": 1,
+          "left_metric_scalar_residual": 0.0,
+          "left_metric_scale": 1.0000000000000007,
+          "left_orientation_masks": [
+            0,
+            4
+          ],
+          "maximum_active_weight_uniformity_residual": 4.440892098500626e-16,
+          "maximum_coefficient_gram_identity_residual": 4.440892098500626e-16,
+          "maximum_component_scalar_residual": 0.0,
+          "maximum_synthesis_identity_residual": 6.042354558544056e-16,
+          "node_id": "W3-REPEATED-LABEL-FALSIFIER-W2-0-4-3-7",
+          "right_metric_scalar_residual": 0.0,
+          "right_metric_scale": 1.0000000000000009,
+          "right_orientation_masks": [
+            3,
+            7
+          ],
+          "status": "exact-canonical-coefficient-affine-certificate"
+        },
+        {
+          "active_component_weights": [
+            [
+              1,
+              1.0
+            ],
+            [
+              7,
+              1.0
+            ]
+          ],
+          "active_left_mask_count": 1,
+          "active_orientation_masks": [
+            1,
+            7
+          ],
+          "active_right_mask_count": 1,
+          "active_support_is_affine": true,
+          "canonical_coefficient_affine_certificate": true,
+          "child_metric_equality_residual": 2.220446049250313e-16,
+          "child_width": 2,
+          "coefficient_transfer_final_projection_residual": 5.020366018036329e-17,
+          "coefficient_transfer_initial_projection_residual": 2.3177656076065614e-16,
+          "exact_minimum_norm_decomposition_identities_verified": true,
+          "intersection_dimension": 1,
+          "left_metric_scalar_residual": 0.0,
+          "left_metric_scale": 1.0000000000000007,
+          "left_orientation_masks": [
+            0,
+            7
+          ],
+          "maximum_active_weight_uniformity_residual": 4.440892098500626e-16,
+          "maximum_coefficient_gram_identity_residual": 2.220446049250313e-16,
+          "maximum_component_scalar_residual": 0.0,
+          "maximum_synthesis_identity_residual": 7.90119125607764e-16,
+          "node_id": "W3-REPEATED-LABEL-FALSIFIER-W2-0-7-1-6",
+          "right_metric_scalar_residual": 0.0,
+          "right_metric_scale": 1.0000000000000009,
+          "right_orientation_masks": [
+            1,
+            6
+          ],
+          "status": "exact-canonical-coefficient-affine-certificate"
+        },
+        {
+          "active_component_weights": [
+            [
+              2,
+              1.0
+            ],
+            [
+              7,
+              1.0
+            ]
+          ],
+          "active_left_mask_count": 1,
+          "active_orientation_masks": [
+            2,
+            7
+          ],
+          "active_right_mask_count": 1,
+          "active_support_is_affine": true,
+          "canonical_coefficient_affine_certificate": true,
+          "child_metric_equality_residual": 2.220446049250313e-16,
+          "child_width": 2,
+          "coefficient_transfer_final_projection_residual": 2.2801876776098924e-16,
+          "coefficient_transfer_initial_projection_residual": 6.937830652459569e-16,
+          "exact_minimum_norm_decomposition_identities_verified": true,
+          "intersection_dimension": 1,
+          "left_metric_scalar_residual": 0.0,
+          "left_metric_scale": 1.0000000000000004,
+          "left_orientation_masks": [
+            0,
+            7
+          ],
+          "maximum_active_weight_uniformity_residual": 0.0,
+          "maximum_coefficient_gram_identity_residual": 4.440892098500626e-16,
+          "maximum_component_scalar_residual": 0.0,
+          "maximum_synthesis_identity_residual": 4.439337680985639e-16,
+          "node_id": "W3-REPEATED-LABEL-FALSIFIER-W2-0-7-2-5",
+          "right_metric_scalar_residual": 0.0,
+          "right_metric_scale": 1.0000000000000002,
+          "right_orientation_masks": [
+            2,
+            5
+          ],
+          "status": "exact-canonical-coefficient-affine-certificate"
+        },
+        {
+          "active_component_weights": [
+            [
+              4,
+              1.0
+            ],
+            [
+              7,
+              1.0
+            ]
+          ],
+          "active_left_mask_count": 1,
+          "active_orientation_masks": [
+            4,
+            7
+          ],
+          "active_right_mask_count": 1,
+          "active_support_is_affine": true,
+          "canonical_coefficient_affine_certificate": true,
+          "child_metric_equality_residual": 3.3306690738754696e-16,
+          "child_width": 2,
+          "coefficient_transfer_final_projection_residual": 4.2947790407663127e-16,
+          "coefficient_transfer_initial_projection_residual": 4.1391543774530385e-16,
+          "exact_minimum_norm_decomposition_identities_verified": true,
+          "intersection_dimension": 1,
+          "left_metric_scalar_residual": 0.0,
+          "left_metric_scale": 1.0000000000000002,
+          "left_orientation_masks": [
+            0,
+            7
+          ],
+          "maximum_active_weight_uniformity_residual": 6.661338147750939e-16,
+          "maximum_coefficient_gram_identity_residual": 2.220446049250313e-16,
+          "maximum_component_scalar_residual": 0.0,
+          "maximum_synthesis_identity_residual": 4.3686854783200153e-16,
+          "node_id": "W3-REPEATED-LABEL-FALSIFIER-W2-0-7-3-4",
+          "right_metric_scalar_residual": 0.0,
+          "right_metric_scale": 0.9999999999999999,
+          "right_orientation_masks": [
+            3,
+            4
+          ],
+          "status": "exact-canonical-coefficient-affine-certificate"
+        },
+        {
+          "active_component_weights": [
+            [
+              1,
+              0.7777777778
+            ],
+            [
+              2,
+              0.7777777778
+            ],
+            [
+              4,
+              0.3611111111
+            ],
+            [
+              7,
+              0.5833333333
+            ]
+          ],
+          "active_left_mask_count": 2,
+          "active_orientation_masks": [
+            1,
+            2,
+            4,
+            7
+          ],
+          "active_right_mask_count": 2,
+          "active_support_is_affine": true,
+          "canonical_coefficient_affine_certificate": false,
+          "child_metric_equality_residual": 0.6111111111111107,
+          "child_width": 2,
+          "coefficient_transfer_final_projection_residual": 0.5042016806722692,
+          "coefficient_transfer_initial_projection_residual": 0.07563025210084082,
+          "exact_minimum_norm_decomposition_identities_verified": true,
+          "intersection_dimension": 3,
+          "left_metric_scalar_residual": 0.8888888888888884,
+          "left_metric_scale": 1.5555555555555554,
+          "left_orientation_masks": [
+            1,
+            2
+          ],
+          "maximum_active_weight_uniformity_residual": 0.416666666666667,
+          "maximum_coefficient_gram_identity_residual": 1.8996800194000844e-15,
+          "maximum_component_scalar_residual": 0.777777777777778,
+          "maximum_synthesis_identity_residual": 1.333881091717254e-15,
+          "node_id": "W3-REPEATED-LABEL-FALSIFIER-W2-1-2-4-7",
+          "right_metric_scalar_residual": 0.11111111111111027,
+          "right_metric_scale": 0.9444444444444446,
+          "right_orientation_masks": [
+            4,
+            7
+          ],
+          "status": "minimum-norm-identities-verified-certificate-fails"
+        },
+        {
+          "active_component_weights": [
+            [
+              1,
+              1.0
+            ],
+            [
+              2,
+              1.0
+            ],
+            [
+              5,
+              1.0
+            ],
+            [
+              6,
+              1.0
+            ]
+          ],
+          "active_left_mask_count": 2,
+          "active_orientation_masks": [
+            1,
+            2,
+            5,
+            6
+          ],
+          "active_right_mask_count": 2,
+          "active_support_is_affine": true,
+          "canonical_coefficient_affine_certificate": true,
+          "child_metric_equality_residual": 0.0,
+          "child_width": 2,
+          "coefficient_transfer_final_projection_residual": 8.042194336545817e-16,
+          "coefficient_transfer_initial_projection_residual": 1.0151295702163586e-15,
+          "exact_minimum_norm_decomposition_identities_verified": true,
+          "intersection_dimension": 2,
+          "left_metric_scalar_residual": 1.0000732948437662e-15,
+          "left_metric_scale": 2.0000000000000018,
+          "left_orientation_masks": [
+            1,
+            2
+          ],
+          "maximum_active_weight_uniformity_residual": 6.661338147750939e-16,
+          "maximum_coefficient_gram_identity_residual": 1.4637250109583941e-15,
+          "maximum_component_scalar_residual": 7.408269898451039e-16,
+          "maximum_synthesis_identity_residual": 4.579633258099491e-16,
+          "node_id": "W3-REPEATED-LABEL-FALSIFIER-W2-1-2-5-6",
+          "right_metric_scalar_residual": 9.425185712191591e-16,
+          "right_metric_scale": 2.0000000000000018,
+          "right_orientation_masks": [
+            5,
+            6
+          ],
+          "status": "exact-canonical-coefficient-affine-certificate"
+        },
+        {
+          "active_component_weights": [
+            [
+              1,
+              0.5
+            ],
+            [
+              3,
+              0.5
+            ],
+            [
+              4,
+              0.5
+            ],
+            [
+              6,
+              0.5
+            ]
+          ],
+          "active_left_mask_count": 2,
+          "active_orientation_masks": [
+            1,
+            3,
+            4,
+            6
+          ],
+          "active_right_mask_count": 2,
+          "active_support_is_affine": true,
+          "canonical_coefficient_affine_certificate": true,
+          "child_metric_equality_residual": 2.220446049250313e-16,
+          "child_width": 2,
+          "coefficient_transfer_final_projection_residual": 7.674903960476269e-16,
+          "coefficient_transfer_initial_projection_residual": 1.0681431491246877e-15,
+          "exact_minimum_norm_decomposition_identities_verified": true,
+          "intersection_dimension": 2,
+          "left_metric_scalar_residual": 3.8049103194652114e-16,
+          "left_metric_scale": 1.0,
+          "left_orientation_masks": [
+            1,
+            3
+          ],
+          "maximum_active_weight_uniformity_residual": 4.440892098500626e-16,
+          "maximum_coefficient_gram_identity_residual": 8.148600465140052e-16,
+          "maximum_component_scalar_residual": 5.216557991920311e-16,
+          "maximum_synthesis_identity_residual": 2.0438413555651674e-15,
+          "node_id": "W3-REPEATED-LABEL-FALSIFIER-W2-1-3-4-6",
+          "right_metric_scalar_residual": 4.4324229615590937e-16,
+          "right_metric_scale": 0.9999999999999998,
+          "right_orientation_masks": [
+            4,
+            6
+          ],
+          "status": "exact-canonical-coefficient-affine-certificate"
+        },
+        {
+          "active_component_weights": [
+            [
+              1,
+              1.0
+            ],
+            [
+              7,
+              1.0
+            ]
+          ],
+          "active_left_mask_count": 1,
+          "active_orientation_masks": [
+            1,
+            7
+          ],
+          "active_right_mask_count": 1,
+          "active_support_is_affine": true,
+          "canonical_coefficient_affine_certificate": true,
+          "child_metric_equality_residual": 0.0,
+          "child_width": 2,
+          "coefficient_transfer_final_projection_residual": 4.565332809872531e-16,
+          "coefficient_transfer_initial_projection_residual": 1.2031034074137248e-16,
+          "exact_minimum_norm_decomposition_identities_verified": true,
+          "intersection_dimension": 1,
+          "left_metric_scalar_residual": 0.0,
+          "left_metric_scale": 1.0,
+          "left_orientation_masks": [
+            1,
+            3
+          ],
+          "maximum_active_weight_uniformity_residual": 4.440892098500626e-16,
+          "maximum_coefficient_gram_identity_residual": 4.440892098500626e-16,
+          "maximum_component_scalar_residual": 0.0,
+          "maximum_synthesis_identity_residual": 5.586941529157774e-16,
+          "node_id": "W3-REPEATED-LABEL-FALSIFIER-W2-1-3-5-7",
+          "right_metric_scalar_residual": 0.0,
+          "right_metric_scale": 1.0,
+          "right_orientation_masks": [
+            5,
+            7
+          ],
+          "status": "exact-canonical-coefficient-affine-certificate"
+        },
+        {
+          "active_component_weights": [
+            [
+              1,
+              0.7777777778
+            ],
+            [
+              2,
+              0.3611111111
+            ],
+            [
+              4,
+              0.7777777778
+            ],
+            [
+              7,
+              0.5833333333
+            ]
+          ],
+          "active_left_mask_count": 2,
+          "active_orientation_masks": [
+            1,
+            2,
+            4,
+            7
+          ],
+          "active_right_mask_count": 2,
+          "active_support_is_affine": true,
+          "canonical_coefficient_affine_certificate": false,
+          "child_metric_equality_residual": 0.6111111111111114,
+          "child_width": 2,
+          "coefficient_transfer_final_projection_residual": 0.5042016806722682,
+          "coefficient_transfer_initial_projection_residual": 0.075630252100841,
+          "exact_minimum_norm_decomposition_identities_verified": true,
+          "intersection_dimension": 3,
+          "left_metric_scalar_residual": 0.8888888888888883,
+          "left_metric_scale": 1.5555555555555556,
+          "left_orientation_masks": [
+            1,
+            4
+          ],
+          "maximum_active_weight_uniformity_residual": 0.41666666666666724,
+          "maximum_coefficient_gram_identity_residual": 1.3194183231860289e-15,
+          "maximum_component_scalar_residual": 0.7777777777777781,
+          "maximum_synthesis_identity_residual": 3.327286727973358e-15,
+          "node_id": "W3-REPEATED-LABEL-FALSIFIER-W2-1-4-2-7",
+          "right_metric_scalar_residual": 0.11111111111111077,
+          "right_metric_scale": 0.9444444444444442,
+          "right_orientation_masks": [
+            2,
+            7
+          ],
+          "status": "minimum-norm-identities-verified-certificate-fails"
+        },
+        {
+          "active_component_weights": [
+            [
+              1,
+              1.0
+            ],
+            [
+              3,
+              1.0
+            ],
+            [
+              4,
+              1.0
+            ],
+            [
+              6,
+              1.0
+            ]
+          ],
+          "active_left_mask_count": 2,
+          "active_orientation_masks": [
+            1,
+            3,
+            4,
+            6
+          ],
+          "active_right_mask_count": 2,
+          "active_support_is_affine": true,
+          "canonical_coefficient_affine_certificate": true,
+          "child_metric_equality_residual": 8.881784197001252e-16,
+          "child_width": 2,
+          "coefficient_transfer_final_projection_residual": 2.6132526180817778e-15,
+          "coefficient_transfer_initial_projection_residual": 1.8088516581283738e-15,
+          "exact_minimum_norm_decomposition_identities_verified": true,
+          "intersection_dimension": 2,
+          "left_metric_scalar_residual": 3.811743154781114e-15,
+          "left_metric_scale": 1.999999999999999,
+          "left_orientation_masks": [
+            1,
+            4
+          ],
+          "maximum_active_weight_uniformity_residual": 1.5543122344752192e-15,
+          "maximum_coefficient_gram_identity_residual": 1.9680582917252836e-15,
+          "maximum_component_scalar_residual": 3.0692020545124057e-15,
+          "maximum_synthesis_identity_residual": 1.1596943451175317e-15,
+          "node_id": "W3-REPEATED-LABEL-FALSIFIER-W2-1-4-3-6",
+          "right_metric_scalar_residual": 2.4678063778611824e-15,
+          "right_metric_scale": 1.9999999999999998,
+          "right_orientation_masks": [
+            3,
+            6
+          ],
+          "status": "exact-canonical-coefficient-affine-certificate"
+        },
+        {
+          "active_component_weights": [
+            [
+              1,
+              0.5
+            ],
+            [
+              2,
+              0.5
+            ],
+            [
+              5,
+              0.5
+            ],
+            [
+              6,
+              0.5
+            ]
+          ],
+          "active_left_mask_count": 2,
+          "active_orientation_masks": [
+            1,
+            2,
+            5,
+            6
+          ],
+          "active_right_mask_count": 2,
+          "active_support_is_affine": true,
+          "canonical_coefficient_affine_certificate": true,
+          "child_metric_equality_residual": 3.3306690738754696e-16,
+          "child_width": 2,
+          "coefficient_transfer_final_projection_residual": 1.6888190771399497e-15,
+          "coefficient_transfer_initial_projection_residual": 9.459196769822e-16,
+          "exact_minimum_norm_decomposition_identities_verified": true,
+          "intersection_dimension": 2,
+          "left_metric_scalar_residual": 7.218550209665545e-16,
+          "left_metric_scale": 0.9999999999999989,
+          "left_orientation_masks": [
+            1,
+            5
+          ],
+          "maximum_active_weight_uniformity_residual": 8.326672684688674e-16,
+          "maximum_coefficient_gram_identity_residual": 8.446475100764872e-16,
+          "maximum_component_scalar_residual": 9.46282616806856e-16,
+          "maximum_synthesis_identity_residual": 9.77659495162724e-16,
+          "node_id": "W3-REPEATED-LABEL-FALSIFIER-W2-1-5-2-6",
+          "right_metric_scalar_residual": 4.785631406027713e-16,
+          "right_metric_scale": 0.9999999999999992,
+          "right_orientation_masks": [
+            2,
+            6
+          ],
+          "status": "exact-canonical-coefficient-affine-certificate"
+        },
+        {
+          "active_component_weights": [
+            [
+              1,
+              1.0
+            ],
+            [
+              7,
+              1.0
+            ]
+          ],
+          "active_left_mask_count": 1,
+          "active_orientation_masks": [
+            1,
+            7
+          ],
+          "active_right_mask_count": 1,
+          "active_support_is_affine": true,
+          "canonical_coefficient_affine_certificate": true,
+          "child_metric_equality_residual": 3.3306690738754696e-16,
+          "child_width": 2,
+          "coefficient_transfer_final_projection_residual": 7.192388993960677e-16,
+          "coefficient_transfer_initial_projection_residual": 2.903023671056259e-16,
+          "exact_minimum_norm_decomposition_identities_verified": true,
+          "intersection_dimension": 1,
+          "left_metric_scalar_residual": 0.0,
+          "left_metric_scale": 0.9999999999999994,
+          "left_orientation_masks": [
+            1,
+            5
+          ],
+          "maximum_active_weight_uniformity_residual": 1.1102230246251565e-15,
+          "maximum_coefficient_gram_identity_residual": 4.440892098500626e-16,
+          "maximum_component_scalar_residual": 0.0,
+          "maximum_synthesis_identity_residual": 5.514625898645233e-16,
+          "node_id": "W3-REPEATED-LABEL-FALSIFIER-W2-1-5-3-7",
+          "right_metric_scalar_residual": 0.0,
+          "right_metric_scale": 0.9999999999999991,
+          "right_orientation_masks": [
+            3,
+            7
+          ],
+          "status": "exact-canonical-coefficient-affine-certificate"
+        },
+        {
+          "active_component_weights": [
+            [
+              1,
+              1.0
+            ],
+            [
+              2,
+              1.0
+            ],
+            [
+              5,
+              1.0
+            ],
+            [
+              6,
+              1.0
+            ]
+          ],
+          "active_left_mask_count": 2,
+          "active_orientation_masks": [
+            1,
+            2,
+            5,
+            6
+          ],
+          "active_right_mask_count": 2,
+          "active_support_is_affine": true,
+          "canonical_coefficient_affine_certificate": true,
+          "child_metric_equality_residual": 6.661338147750939e-16,
+          "child_width": 2,
+          "coefficient_transfer_final_projection_residual": 7.471092339894368e-16,
+          "coefficient_transfer_initial_projection_residual": 1.7047140618677433e-15,
+          "exact_minimum_norm_decomposition_identities_verified": true,
+          "intersection_dimension": 2,
+          "left_metric_scalar_residual": 8.727496840806409e-16,
+          "left_metric_scale": 1.9999999999999993,
+          "left_orientation_masks": [
+            1,
+            6
+          ],
+          "maximum_active_weight_uniformity_residual": 1.1102230246251565e-15,
+          "maximum_coefficient_gram_identity_residual": 2.3867584036664615e-15,
+          "maximum_component_scalar_residual": 1.4391979985899286e-15,
+          "maximum_synthesis_identity_residual": 8.8045873586310765e-16,
+          "node_id": "W3-REPEATED-LABEL-FALSIFIER-W2-1-6-2-5",
+          "right_metric_scalar_residual": 1.5872614984844509e-15,
+          "right_metric_scale": 2.0,
+          "right_orientation_masks": [
+            2,
+            5
+          ],
+          "status": "exact-canonical-coefficient-affine-certificate"
+        },
+        {
+          "active_component_weights": [
+            [
+              1,
+              1.0
+            ],
+            [
+              3,
+              1.0
+            ],
+            [
+              4,
+              1.0
+            ],
+            [
+              6,
+              1.0
+            ]
+          ],
+          "active_left_mask_count": 2,
+          "active_orientation_masks": [
+            1,
+            3,
+            4,
+            6
+          ],
+          "active_right_mask_count": 2,
+          "active_support_is_affine": true,
+          "canonical_coefficient_affine_certificate": true,
+          "child_metric_equality_residual": 1.7763568394002505e-15,
+          "child_width": 2,
+          "coefficient_transfer_final_projection_residual": 8.948882995543651e-16,
+          "coefficient_transfer_initial_projection_residual": 1.4863828321231138e-15,
+          "exact_minimum_norm_decomposition_identities_verified": true,
+          "intersection_dimension": 2,
+          "left_metric_scalar_residual": 8.213849862614543e-16,
+          "left_metric_scale": 2.0,
+          "left_orientation_masks": [
+            1,
+            6
+          ],
+          "maximum_active_weight_uniformity_residual": 1.5543122344752192e-15,
+          "maximum_coefficient_gram_identity_residual": 2.247087615265678e-15,
+          "maximum_component_scalar_residual": 7.443275385116618e-16,
+          "maximum_synthesis_identity_residual": 1.1851036592809669e-15,
+          "node_id": "W3-REPEATED-LABEL-FALSIFIER-W2-1-6-3-4",
+          "right_metric_scalar_residual": 4.522126880985181e-16,
+          "right_metric_scale": 2.0000000000000018,
+          "right_orientation_masks": [
+            3,
+            4
+          ],
+          "status": "exact-canonical-coefficient-affine-certificate"
+        },
+        {
+          "active_component_weights": [
+            [
+              1,
+              0.3611111111
+            ],
+            [
+              2,
+              0.7777777778
+            ],
+            [
+              4,
+              0.7777777778
+            ],
+            [
+              7,
+              0.5833333333
+            ]
+          ],
+          "active_left_mask_count": 2,
+          "active_orientation_masks": [
+            1,
+            2,
+            4,
+            7
+          ],
+          "active_right_mask_count": 2,
+          "active_support_is_affine": true,
+          "canonical_coefficient_affine_certificate": false,
+          "child_metric_equality_residual": 0.6111111111111119,
+          "child_width": 2,
+          "coefficient_transfer_final_projection_residual": 0.0756302521008435,
+          "coefficient_transfer_initial_projection_residual": 0.5042016806722671,
+          "exact_minimum_norm_decomposition_identities_verified": true,
+          "intersection_dimension": 3,
+          "left_metric_scalar_residual": 0.11111111111111399,
+          "left_metric_scale": 0.9444444444444432,
+          "left_orientation_masks": [
+            1,
+            7
+          ],
+          "maximum_active_weight_uniformity_residual": 0.41666666666666574,
+          "maximum_coefficient_gram_identity_residual": 1.5185643193385202e-15,
+          "maximum_component_scalar_residual": 0.7777777777777777,
+          "maximum_synthesis_identity_residual": 7.964393374547918e-15,
+          "node_id": "W3-REPEATED-LABEL-FALSIFIER-W2-1-7-2-4",
+          "right_metric_scalar_residual": 0.8888888888888885,
+          "right_metric_scale": 1.5555555555555551,
+          "right_orientation_masks": [
+            2,
+            4
+          ],
+          "status": "minimum-norm-identities-verified-certificate-fails"
+        },
+        {
+          "active_component_weights": [
+            [
+              2,
+              0.5
+            ],
+            [
+              3,
+              0.5
+            ],
+            [
+              4,
+              0.5
+            ],
+            [
+              5,
+              0.5
+            ]
+          ],
+          "active_left_mask_count": 2,
+          "active_orientation_masks": [
+            2,
+            3,
+            4,
+            5
+          ],
+          "active_right_mask_count": 2,
+          "active_support_is_affine": true,
+          "canonical_coefficient_affine_certificate": true,
+          "child_metric_equality_residual": 2.220446049250313e-16,
+          "child_width": 2,
+          "coefficient_transfer_final_projection_residual": 1.70233153561077e-15,
+          "coefficient_transfer_initial_projection_residual": 9.00222897295727e-16,
+          "exact_minimum_norm_decomposition_identities_verified": true,
+          "intersection_dimension": 2,
+          "left_metric_scalar_residual": 8.895917334167891e-16,
+          "left_metric_scale": 0.9999999999999998,
+          "left_orientation_masks": [
+            2,
+            3
+          ],
+          "maximum_active_weight_uniformity_residual": 4.996003610813204e-16,
+          "maximum_coefficient_gram_identity_residual": 6.686721471069121e-16,
+          "maximum_component_scalar_residual": 6.747944421786525e-16,
+          "maximum_synthesis_identity_residual": 1.2075770081309889e-15,
+          "node_id": "W3-REPEATED-LABEL-FALSIFIER-W2-2-3-4-5",
+          "right_metric_scalar_residual": 6.994420476195939e-16,
+          "right_metric_scale": 0.9999999999999996,
+          "right_orientation_masks": [
+            4,
+            5
+          ],
+          "status": "exact-canonical-coefficient-affine-certificate"
+        },
+        {
+          "active_component_weights": [
+            [
+              2,
+              1.0
+            ],
+            [
+              7,
+              1.0
+            ]
+          ],
+          "active_left_mask_count": 1,
+          "active_orientation_masks": [
+            2,
+            7
+          ],
+          "active_right_mask_count": 1,
+          "active_support_is_affine": true,
+          "canonical_coefficient_affine_certificate": true,
+          "child_metric_equality_residual": 1.1102230246251565e-16,
+          "child_width": 2,
+          "coefficient_transfer_final_projection_residual": 7.337892071419753e-16,
+          "coefficient_transfer_initial_projection_residual": 1.3853651947883886e-16,
+          "exact_minimum_norm_decomposition_identities_verified": true,
+          "intersection_dimension": 1,
+          "left_metric_scalar_residual": 0.0,
+          "left_metric_scale": 0.9999999999999999,
+          "left_orientation_masks": [
+            2,
+            3
+          ],
+          "maximum_active_weight_uniformity_residual": 3.3306690738754696e-16,
+          "maximum_coefficient_gram_identity_residual": 3.3306690738754696e-16,
+          "maximum_component_scalar_residual": 0.0,
+          "maximum_synthesis_identity_residual": 8.458526347535927e-16,
+          "node_id": "W3-REPEATED-LABEL-FALSIFIER-W2-2-3-6-7",
+          "right_metric_scalar_residual": 0.0,
+          "right_metric_scale": 1.0,
+          "right_orientation_masks": [
+            6,
+            7
+          ],
+          "status": "exact-canonical-coefficient-affine-certificate"
+        },
+        {
+          "active_component_weights": [
+            [
+              2,
+              1.0
+            ],
+            [
+              3,
+              1.0
+            ],
+            [
+              4,
+              1.0
+            ],
+            [
+              5,
+              1.0
+            ]
+          ],
+          "active_left_mask_count": 2,
+          "active_orientation_masks": [
+            2,
+            3,
+            4,
+            5
+          ],
+          "active_right_mask_count": 2,
+          "active_support_is_affine": true,
+          "canonical_coefficient_affine_certificate": true,
+          "child_metric_equality_residual": 2.220446049250313e-16,
+          "child_width": 2,
+          "coefficient_transfer_final_projection_residual": 1.7557988063147657e-15,
+          "coefficient_transfer_initial_projection_residual": 2.211618802310586e-15,
+          "exact_minimum_norm_decomposition_identities_verified": true,
+          "intersection_dimension": 2,
+          "left_metric_scalar_residual": 2.5581606938631035e-15,
+          "left_metric_scale": 1.999999999999999,
+          "left_orientation_masks": [
+            2,
+            4
+          ],
+          "maximum_active_weight_uniformity_residual": 1.1102230246251565e-15,
+          "maximum_coefficient_gram_identity_residual": 1.6131001472221035e-15,
+          "maximum_component_scalar_residual": 2.2865385330812356e-15,
+          "maximum_synthesis_identity_residual": 1.0889561402484641e-15,
+          "node_id": "W3-REPEATED-LABEL-FALSIFIER-W2-2-4-3-5",
+          "right_metric_scalar_residual": 2.7111554446111922e-15,
+          "right_metric_scale": 1.9999999999999987,
+          "right_orientation_masks": [
+            3,
+            5
+          ],
+          "status": "exact-canonical-coefficient-affine-certificate"
+        },
+        {
+          "active_component_weights": [
+            [
+              2,
+              1.0
+            ],
+            [
+              3,
+              1.0
+            ],
+            [
+              4,
+              1.0
+            ],
+            [
+              5,
+              1.0
+            ]
+          ],
+          "active_left_mask_count": 2,
+          "active_orientation_masks": [
+            2,
+            3,
+            4,
+            5
+          ],
+          "active_right_mask_count": 2,
+          "active_support_is_affine": true,
+          "canonical_coefficient_affine_certificate": true,
+          "child_metric_equality_residual": 4.440892098500626e-16,
+          "child_width": 2,
+          "coefficient_transfer_final_projection_residual": 1.811097478846604e-15,
+          "coefficient_transfer_initial_projection_residual": 1.2022729771522541e-15,
+          "exact_minimum_norm_decomposition_identities_verified": true,
+          "intersection_dimension": 2,
+          "left_metric_scalar_residual": 1.6654816195748889e-15,
+          "left_metric_scale": 2.0000000000000018,
+          "left_orientation_masks": [
+            2,
+            5
+          ],
+          "maximum_active_weight_uniformity_residual": 4.440892098500626e-16,
+          "maximum_coefficient_gram_identity_residual": 2.34603901675289e-15,
+          "maximum_component_scalar_residual": 1.4843453095891173e-15,
+          "maximum_synthesis_identity_residual": 1.1428903175757297e-15,
+          "node_id": "W3-REPEATED-LABEL-FALSIFIER-W2-2-5-3-4",
+          "right_metric_scalar_residual": 6.539231277029581e-16,
+          "right_metric_scale": 2.000000000000002,
+          "right_orientation_masks": [
+            3,
+            4
+          ],
+          "status": "exact-canonical-coefficient-affine-certificate"
+        },
+        {
+          "active_component_weights": [
+            [
+              2,
+              1.0
+            ],
+            [
+              7,
+              1.0
+            ]
+          ],
+          "active_left_mask_count": 1,
+          "active_orientation_masks": [
+            2,
+            7
+          ],
+          "active_right_mask_count": 1,
+          "active_support_is_affine": true,
+          "canonical_coefficient_affine_certificate": true,
+          "child_metric_equality_residual": 2.220446049250313e-16,
+          "child_width": 2,
+          "coefficient_transfer_final_projection_residual": 6.562016216014982e-16,
+          "coefficient_transfer_initial_projection_residual": 7.986722874544289e-16,
+          "exact_minimum_norm_decomposition_identities_verified": true,
+          "intersection_dimension": 1,
+          "left_metric_scalar_residual": 0.0,
+          "left_metric_scale": 1.0000000000000004,
+          "left_orientation_masks": [
+            2,
+            6
+          ],
+          "maximum_active_weight_uniformity_residual": 2.220446049250313e-16,
+          "maximum_coefficient_gram_identity_residual": 6.661338147750939e-16,
+          "maximum_component_scalar_residual": 0.0,
+          "maximum_synthesis_identity_residual": 7.22345438701416e-16,
+          "node_id": "W3-REPEATED-LABEL-FALSIFIER-W2-2-6-3-7",
+          "right_metric_scalar_residual": 0.0,
+          "right_metric_scale": 1.0000000000000002,
+          "right_orientation_masks": [
+            3,
+            7
+          ],
+          "status": "exact-canonical-coefficient-affine-certificate"
+        },
+        {
+          "active_component_weights": [
+            [
+              4,
+              1.0
+            ],
+            [
+              7,
+              1.0
+            ]
+          ],
+          "active_left_mask_count": 1,
+          "active_orientation_masks": [
+            4,
+            7
+          ],
+          "active_right_mask_count": 1,
+          "active_support_is_affine": true,
+          "canonical_coefficient_affine_certificate": true,
+          "child_metric_equality_residual": 2.220446049250313e-16,
+          "child_width": 2,
+          "coefficient_transfer_final_projection_residual": 1.388830456129258e-16,
+          "coefficient_transfer_initial_projection_residual": 5.69129037479729e-17,
+          "exact_minimum_norm_decomposition_identities_verified": true,
+          "intersection_dimension": 1,
+          "left_metric_scalar_residual": 0.0,
+          "left_metric_scale": 1.0000000000000004,
+          "left_orientation_masks": [
+            4,
+            5
+          ],
+          "maximum_active_weight_uniformity_residual": 2.220446049250313e-16,
+          "maximum_coefficient_gram_identity_residual": 2.220446049250313e-16,
+          "maximum_component_scalar_residual": 0.0,
+          "maximum_synthesis_identity_residual": 1.1665272879284548e-15,
+          "node_id": "W3-REPEATED-LABEL-FALSIFIER-W2-4-5-6-7",
+          "right_metric_scalar_residual": 0.0,
+          "right_metric_scale": 1.0000000000000007,
+          "right_orientation_masks": [
+            6,
+            7
+          ],
+          "status": "exact-canonical-coefficient-affine-certificate"
+        },
+        {
+          "active_component_weights": [
+            [
+              4,
+              1.0
+            ],
+            [
+              7,
+              1.0
+            ]
+          ],
+          "active_left_mask_count": 1,
+          "active_orientation_masks": [
+            4,
+            7
+          ],
+          "active_right_mask_count": 1,
+          "active_support_is_affine": true,
+          "canonical_coefficient_affine_certificate": true,
+          "child_metric_equality_residual": 6.661338147750939e-16,
+          "child_width": 2,
+          "coefficient_transfer_final_projection_residual": 3.247940032952133e-16,
+          "coefficient_transfer_initial_projection_residual": 1.569632926743121e-17,
+          "exact_minimum_norm_decomposition_identities_verified": true,
+          "intersection_dimension": 1,
+          "left_metric_scalar_residual": 0.0,
+          "left_metric_scale": 0.9999999999999986,
+          "left_orientation_masks": [
+            4,
+            6
+          ],
+          "maximum_active_weight_uniformity_residual": 7.771561172376096e-16,
+          "maximum_coefficient_gram_identity_residual": 1.1102230246251565e-16,
+          "maximum_component_scalar_residual": 0.0,
+          "maximum_synthesis_identity_residual": 7.680361011388854e-16,
+          "node_id": "W3-REPEATED-LABEL-FALSIFIER-W2-4-6-5-7",
+          "right_metric_scalar_residual": 0.0,
+          "right_metric_scale": 0.9999999999999992,
+          "right_orientation_masks": [
+            5,
+            7
+          ],
+          "status": "exact-canonical-coefficient-affine-certificate"
+        },
+        {
+          "active_component_weights": [
+            [
+              1,
+              0.6598639456
+            ],
+            [
+              2,
+              0.6598639456
+            ],
+            [
+              3,
+              0.1632653061
+            ],
+            [
+              4,
+              0.3180272109
+            ],
+            [
+              5,
+              0.3265306122
+            ],
+            [
+              6,
+              0.3265306122
+            ],
+            [
+              7,
+              0.25
+            ]
+          ],
+          "active_left_mask_count": 3,
+          "active_orientation_masks": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "active_right_mask_count": 4,
+          "active_support_is_affine": false,
+          "canonical_coefficient_affine_certificate": false,
+          "child_metric_equality_residual": 0.26190476190476186,
+          "child_width": 4,
+          "coefficient_transfer_final_projection_residual": 0.5710050854821062,
+          "coefficient_transfer_initial_projection_residual": 0.860264240627642,
+          "exact_minimum_norm_decomposition_identities_verified": true,
+          "intersection_dimension": 7,
+          "left_metric_scalar_residual": 0.8163265306122445,
+          "left_metric_scale": 1.4829931972789112,
+          "left_orientation_masks": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "maximum_active_weight_uniformity_residual": 0.49659863945578225,
+          "maximum_coefficient_gram_identity_residual": 3.1188037503646113e-15,
+          "maximum_component_scalar_residual": 0.8163265306122471,
+          "maximum_synthesis_identity_residual": 2.4385688606601436e-15,
+          "node_id": "W3-REPEATED-LABEL-FALSIFIER-W4-0-1-2-3-4-5-6-7",
+          "right_metric_scalar_residual": 0.778911564625853,
+          "right_metric_scale": 1.2210884353741494,
+          "right_orientation_masks": [
+            4,
+            5,
+            6,
+            7
+          ],
+          "status": "minimum-norm-identities-verified-certificate-fails"
+        },
+        {
+          "active_component_weights": [
+            [
+              1,
+              0.6598639456
+            ],
+            [
+              2,
+              0.3180272109
+            ],
+            [
+              3,
+              0.3265306122
+            ],
+            [
+              4,
+              0.6598639456
+            ],
+            [
+              5,
+              0.1632653061
+            ],
+            [
+              6,
+              0.3265306122
+            ],
+            [
+              7,
+              0.25
+            ]
+          ],
+          "active_left_mask_count": 3,
+          "active_orientation_masks": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "active_right_mask_count": 4,
+          "active_support_is_affine": false,
+          "canonical_coefficient_affine_certificate": false,
+          "child_metric_equality_residual": 0.26190476190476186,
+          "child_width": 4,
+          "coefficient_transfer_final_projection_residual": 0.5710050854820979,
+          "coefficient_transfer_initial_projection_residual": 0.8602642406276317,
+          "exact_minimum_norm_decomposition_identities_verified": true,
+          "intersection_dimension": 7,
+          "left_metric_scalar_residual": 0.8163265306122445,
+          "left_metric_scale": 1.4829931972789108,
+          "left_orientation_masks": [
+            0,
+            1,
+            4,
+            5
+          ],
+          "maximum_active_weight_uniformity_residual": 0.4965986394557817,
+          "maximum_coefficient_gram_identity_residual": 3.552280035731112e-15,
+          "maximum_component_scalar_residual": 0.8163265306122442,
+          "maximum_synthesis_identity_residual": 1.9456192840968213e-15,
+          "node_id": "W3-REPEATED-LABEL-FALSIFIER-W4-0-1-4-5-2-3-6-7",
+          "right_metric_scalar_residual": 0.7789115646258481,
+          "right_metric_scale": 1.221088435374149,
+          "right_orientation_masks": [
+            2,
+            3,
+            6,
+            7
+          ],
+          "status": "minimum-norm-identities-verified-certificate-fails"
+        },
+        {
+          "active_component_weights": [
+            [
+              1,
+              0.6166666667
+            ],
+            [
+              2,
+              0.5666666667
+            ],
+            [
+              3,
+              0.1
+            ],
+            [
+              4,
+              0.5666666667
+            ],
+            [
+              5,
+              0.1
+            ],
+            [
+              6,
+              0.4
+            ],
+            [
+              7,
+              0.35
+            ]
+          ],
+          "active_left_mask_count": 3,
+          "active_orientation_masks": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "active_right_mask_count": 4,
+          "active_support_is_affine": false,
+          "canonical_coefficient_affine_certificate": false,
+          "child_metric_equality_residual": 0.0333333333333341,
+          "child_width": 4,
+          "coefficient_transfer_final_projection_residual": 0.40243902439024415,
+          "coefficient_transfer_initial_projection_residual": 0.36585365853658675,
+          "exact_minimum_norm_decomposition_identities_verified": true,
+          "intersection_dimension": 5,
+          "left_metric_scalar_residual": 0.633333333333336,
+          "left_metric_scale": 1.366666666666669,
+          "left_orientation_masks": [
+            0,
+            1,
+            6,
+            7
+          ],
+          "maximum_active_weight_uniformity_residual": 0.5166666666666685,
+          "maximum_coefficient_gram_identity_residual": 4.33386227070188e-15,
+          "maximum_component_scalar_residual": 0.7666666666666696,
+          "maximum_synthesis_identity_residual": 4.7959586817406e-15,
+          "node_id": "W3-REPEATED-LABEL-FALSIFIER-W4-0-1-6-7-2-3-4-5",
+          "right_metric_scalar_residual": 0.666666666666668,
+          "right_metric_scale": 1.3333333333333348,
+          "right_orientation_masks": [
+            2,
+            3,
+            4,
+            5
+          ],
+          "status": "minimum-norm-identities-verified-certificate-fails"
+        },
+        {
+          "active_component_weights": [
+            [
+              1,
+              0.3180272109
+            ],
+            [
+              2,
+              0.6598639456
+            ],
+            [
+              3,
+              0.3265306122
+            ],
+            [
+              4,
+              0.6598639456
+            ],
+            [
+              5,
+              0.3265306122
+            ],
+            [
+              6,
+              0.1632653061
+            ],
+            [
+              7,
+              0.25
+            ]
+          ],
+          "active_left_mask_count": 3,
+          "active_orientation_masks": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "active_right_mask_count": 4,
+          "active_support_is_affine": false,
+          "canonical_coefficient_affine_certificate": false,
+          "child_metric_equality_residual": 0.2619047619047612,
+          "child_width": 4,
+          "coefficient_transfer_final_projection_residual": 0.5710050854820994,
+          "coefficient_transfer_initial_projection_residual": 0.860264240627633,
+          "exact_minimum_norm_decomposition_identities_verified": true,
+          "intersection_dimension": 7,
+          "left_metric_scalar_residual": 0.8163265306122441,
+          "left_metric_scale": 1.4829931972789097,
+          "left_orientation_masks": [
+            0,
+            2,
+            4,
+            6
+          ],
+          "maximum_active_weight_uniformity_residual": 0.4965986394557821,
+          "maximum_coefficient_gram_identity_residual": 2.1275457158005617e-15,
+          "maximum_component_scalar_residual": 0.8163265306122444,
+          "maximum_synthesis_identity_residual": 7.824865584910247e-15,
+          "node_id": "W3-REPEATED-LABEL-FALSIFIER-W4-0-2-4-6-1-3-5-7",
+          "right_metric_scalar_residual": 0.7789115646258493,
+          "right_metric_scale": 1.2210884353741485,
+          "right_orientation_masks": [
+            1,
+            3,
+            5,
+            7
+          ],
+          "status": "minimum-norm-identities-verified-certificate-fails"
+        },
+        {
+          "active_component_weights": [
+            [
+              1,
+              0.5666666667
+            ],
+            [
+              2,
+              0.6166666667
+            ],
+            [
+              3,
+              0.1
+            ],
+            [
+              4,
+              0.5666666667
+            ],
+            [
+              5,
+              0.4
+            ],
+            [
+              6,
+              0.1
+            ],
+            [
+              7,
+              0.35
+            ]
+          ],
+          "active_left_mask_count": 3,
+          "active_orientation_masks": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "active_right_mask_count": 4,
+          "active_support_is_affine": false,
+          "canonical_coefficient_affine_certificate": false,
+          "child_metric_equality_residual": 0.03333333333333344,
+          "child_width": 4,
+          "coefficient_transfer_final_projection_residual": 0.40243902439024515,
+          "coefficient_transfer_initial_projection_residual": 0.36585365853658663,
+          "exact_minimum_norm_decomposition_identities_verified": true,
+          "intersection_dimension": 5,
+          "left_metric_scalar_residual": 0.6333333333333339,
+          "left_metric_scale": 1.3666666666666667,
+          "left_orientation_masks": [
+            0,
+            2,
+            5,
+            7
+          ],
+          "maximum_active_weight_uniformity_residual": 0.5166666666666665,
+          "maximum_coefficient_gram_identity_residual": 1.800720983369666e-15,
+          "maximum_component_scalar_residual": 0.7666666666666664,
+          "maximum_synthesis_identity_residual": 8.987802788664977e-15,
+          "node_id": "W3-REPEATED-LABEL-FALSIFIER-W4-0-2-5-7-1-3-4-6",
+          "right_metric_scalar_residual": 0.6666666666666674,
+          "right_metric_scale": 1.3333333333333333,
+          "right_orientation_masks": [
+            1,
+            3,
+            4,
+            6
+          ],
+          "status": "minimum-norm-identities-verified-certificate-fails"
+        },
+        {
+          "active_component_weights": [
+            [
+              1,
+              0.5666666667
+            ],
+            [
+              2,
+              0.5666666667
+            ],
+            [
+              3,
+              0.4
+            ],
+            [
+              4,
+              0.6166666667
+            ],
+            [
+              5,
+              0.1
+            ],
+            [
+              6,
+              0.1
+            ],
+            [
+              7,
+              0.35
+            ]
+          ],
+          "active_left_mask_count": 3,
+          "active_orientation_masks": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "active_right_mask_count": 4,
+          "active_support_is_affine": false,
+          "canonical_coefficient_affine_certificate": false,
+          "child_metric_equality_residual": 0.03333333333333344,
+          "child_width": 4,
+          "coefficient_transfer_final_projection_residual": 0.4024390243902452,
+          "coefficient_transfer_initial_projection_residual": 0.36585365853658713,
+          "exact_minimum_norm_decomposition_identities_verified": true,
+          "intersection_dimension": 5,
+          "left_metric_scalar_residual": 0.633333333333334,
+          "left_metric_scale": 1.3666666666666674,
+          "left_orientation_masks": [
+            0,
+            3,
+            4,
+            7
+          ],
+          "maximum_active_weight_uniformity_residual": 0.516666666666666,
+          "maximum_coefficient_gram_identity_residual": 2.2986146836326757e-15,
+          "maximum_component_scalar_residual": 0.7666666666666674,
+          "maximum_synthesis_identity_residual": 6.697688409294982e-15,
+          "node_id": "W3-REPEATED-LABEL-FALSIFIER-W4-0-3-4-7-1-2-5-6",
+          "right_metric_scalar_residual": 0.6666666666666681,
+          "right_metric_scale": 1.333333333333334,
+          "right_orientation_masks": [
+            1,
+            2,
+            5,
+            6
+          ],
+          "status": "minimum-norm-identities-verified-certificate-fails"
+        },
+        {
+          "active_component_weights": [
+            [
+              1,
+              0.6666666667
+            ],
+            [
+              2,
+              0.6666666667
+            ],
+            [
+              3,
+              0.6666666667
+            ],
+            [
+              4,
+              0.6666666667
+            ],
+            [
+              5,
+              0.6666666667
+            ],
+            [
+              6,
+              0.6666666667
+            ]
+          ],
+          "active_left_mask_count": 3,
+          "active_orientation_masks": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "active_right_mask_count": 3,
+          "active_support_is_affine": false,
+          "canonical_coefficient_affine_certificate": false,
+          "child_metric_equality_residual": 2.220446049250313e-15,
+          "child_width": 4,
+          "coefficient_transfer_final_projection_residual": 3.4699555281441772e-15,
+          "coefficient_transfer_initial_projection_residual": 3.5224851767400736e-15,
+          "exact_minimum_norm_decomposition_identities_verified": true,
+          "intersection_dimension": 4,
+          "left_metric_scalar_residual": 4.292249694997278e-15,
+          "left_metric_scale": 1.9999999999999978,
+          "left_orientation_masks": [
+            0,
+            3,
+            5,
+            6
+          ],
+          "maximum_active_weight_uniformity_residual": 2.3314683517128287e-15,
+          "maximum_coefficient_gram_identity_residual": 3.835008325828359e-15,
+          "maximum_component_scalar_residual": 0.6666666666666687,
+          "maximum_synthesis_identity_residual": 2.2695206044970607e-15,
+          "node_id": "W3-REPEATED-LABEL-FALSIFIER-W4-0-3-5-6-1-2-4-7",
+          "right_metric_scalar_residual": 3.861091490008569e-15,
+          "right_metric_scale": 2.0,
+          "right_orientation_masks": [
+            1,
+            2,
+            4,
+            7
+          ],
+          "status": "minimum-norm-identities-verified-certificate-fails"
+        }
+      ],
+      "nonaffine_active_support_count": 7,
+      "nonscalar_component_effect_count": 10,
+      "nonscalar_or_unequal_metric_count": 9,
+      "observed_active_supports": [
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        [
+          1,
+          2,
+          4,
+          7
+        ],
+        [
+          1,
+          2,
+          5,
+          6
+        ],
+        [
+          1,
+          3,
+          4,
+          6
+        ],
+        [
+          1,
+          7
+        ],
+        [
+          2,
+          3,
+          4,
+          5
+        ],
+        [
+          2,
+          7
+        ],
+        [
+          4,
+          7
+        ]
+      ],
+      "pairwise_distinct_physical_labels": false,
+      "reduced_support_dimension": 13,
+      "status": "canonical-coefficient-counterexample-present",
+      "target_partition": [
+        2,
+        1
+      ]
+    },
+    {
+      "carrier_dimension": 2000,
+      "coefficient_affine_certificate_count": 11,
+      "coefficient_affine_certificate_failure_count": 0,
+      "control_id": "W5-COLLISION-FREE-3-2",
+      "every_fractional_merge_has_coefficient_affine_certificate": true,
+      "exact_canonical_coefficient_audit_verified": true,
+      "exact_decomposition_identity_failure_count": 0,
+      "fractional_merge_count": 11,
+      "globally_distinct_source_partitions": true,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            4,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            2
+          ],
+          [
+            2,
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "n": 5,
+      "node_records": [
+        {
+          "active_component_weights": [
+            [
+              3,
+              1.0
+            ],
+            [
+              6,
+              1.0
+            ]
+          ],
+          "active_left_mask_count": 1,
+          "active_orientation_masks": [
+            3,
+            6
+          ],
+          "active_right_mask_count": 1,
+          "active_support_is_affine": true,
+          "canonical_coefficient_affine_certificate": true,
+          "child_metric_equality_residual": 5.551115123125783e-16,
+          "child_width": 1,
+          "coefficient_transfer_final_projection_residual": 2.0189125833305753e-15,
+          "coefficient_transfer_initial_projection_residual": 2.6723566092233196e-15,
+          "exact_minimum_norm_decomposition_identities_verified": true,
+          "intersection_dimension": 5,
+          "left_metric_scalar_residual": 2.710910193211969e-15,
+          "left_metric_scale": 0.9999999999999997,
+          "left_orientation_masks": [
+            3
+          ],
+          "maximum_active_weight_uniformity_residual": 5.551115123125783e-16,
+          "maximum_coefficient_gram_identity_residual": 2.3685777370214446e-15,
+          "maximum_component_scalar_residual": 1.9493678000971115e-15,
+          "maximum_synthesis_identity_residual": 1.5745010169134794e-15,
+          "node_id": "W5-COLLISION-FREE-3-2-W1-3-6",
+          "right_metric_scalar_residual": 1.9687454439487453e-15,
+          "right_metric_scale": 0.9999999999999991,
+          "right_orientation_masks": [
+            6
+          ],
+          "status": "exact-canonical-coefficient-affine-certificate"
+        },
+        {
+          "active_component_weights": [
+            [
+              3,
+              1.0
+            ],
+            [
+              6,
+              1.0
+            ]
+          ],
+          "active_left_mask_count": 1,
+          "active_orientation_masks": [
+            3,
+            6
+          ],
+          "active_right_mask_count": 1,
+          "active_support_is_affine": true,
+          "canonical_coefficient_affine_certificate": true,
+          "child_metric_equality_residual": 2.220446049250313e-16,
+          "child_width": 2,
+          "coefficient_transfer_final_projection_residual": 1.5249464736415582e-15,
+          "coefficient_transfer_initial_projection_residual": 2.2810265904702934e-15,
+          "exact_minimum_norm_decomposition_identities_verified": true,
+          "intersection_dimension": 5,
+          "left_metric_scalar_residual": 2.5133549941376863e-15,
+          "left_metric_scale": 1.0000000000000009,
+          "left_orientation_masks": [
+            0,
+            3
+          ],
+          "maximum_active_weight_uniformity_residual": 0.0,
+          "maximum_coefficient_gram_identity_residual": 2.694080974905474e-15,
+          "maximum_component_scalar_residual": 1.3824734952039816e-15,
+          "maximum_synthesis_identity_residual": 2.1321397291055517e-15,
+          "node_id": "W5-COLLISION-FREE-3-2-W2-0-3-5-6",
+          "right_metric_scalar_residual": 2.4922336141774776e-15,
+          "right_metric_scale": 1.0000000000000007,
+          "right_orientation_masks": [
+            5,
+            6
+          ],
+          "status": "exact-canonical-coefficient-affine-certificate"
+        },
+        {
+          "active_component_weights": [
+            [
+              3,
+              1.0
+            ],
+            [
+              6,
+              1.0
+            ]
+          ],
+          "active_left_mask_count": 1,
+          "active_orientation_masks": [
+            3,
+            6
+          ],
+          "active_right_mask_count": 1,
+          "active_support_is_affine": true,
+          "canonical_coefficient_affine_certificate": true,
+          "child_metric_equality_residual": 0.0,
+          "child_width": 2,
+          "coefficient_transfer_final_projection_residual": 2.494049982509871e-15,
+          "coefficient_transfer_initial_projection_residual": 2.1764624344823603e-15,
+          "exact_minimum_norm_decomposition_identities_verified": true,
+          "intersection_dimension": 5,
+          "left_metric_scalar_residual": 2.702658673621062e-15,
+          "left_metric_scale": 0.9999999999999997,
+          "left_orientation_masks": [
+            0,
+            6
+          ],
+          "maximum_active_weight_uniformity_residual": 7.771561172376096e-16,
+          "maximum_coefficient_gram_identity_residual": 2.9443392220224384e-15,
+          "maximum_component_scalar_residual": 2.1961934188060958e-15,
+          "maximum_synthesis_identity_residual": 2.286489350752073e-15,
+          "node_id": "W5-COLLISION-FREE-3-2-W2-0-6-3-5",
+          "right_metric_scalar_residual": 2.4667258203668027e-15,
+          "right_metric_scale": 0.9999999999999997,
+          "right_orientation_masks": [
+            3,
+            5
+          ],
+          "status": "exact-canonical-coefficient-affine-certificate"
+        },
+        {
+          "active_component_weights": [
+            [
+              3,
+              1.0
+            ],
+            [
+              6,
+              1.0
+            ]
+          ],
+          "active_left_mask_count": 1,
+          "active_orientation_masks": [
+            3,
+            6
+          ],
+          "active_right_mask_count": 1,
+          "active_support_is_affine": true,
+          "canonical_coefficient_affine_certificate": true,
+          "child_metric_equality_residual": 3.3306690738754696e-16,
+          "child_width": 2,
+          "coefficient_transfer_final_projection_residual": 2.6828085769373463e-15,
+          "coefficient_transfer_initial_projection_residual": 2.179422161944603e-15,
+          "exact_minimum_norm_decomposition_identities_verified": true,
+          "intersection_dimension": 5,
+          "left_metric_scalar_residual": 2.8273481799357047e-15,
+          "left_metric_scale": 0.9999999999999997,
+          "left_orientation_masks": [
+            1,
+            3
+          ],
+          "maximum_active_weight_uniformity_residual": 2.220446049250313e-16,
+          "maximum_coefficient_gram_identity_residual": 2.9406693404004927e-15,
+          "maximum_component_scalar_residual": 2.3472154777159695e-15,
+          "maximum_synthesis_identity_residual": 1.4594064927232678e-15,
+          "node_id": "W5-COLLISION-FREE-3-2-W2-1-3-4-6",
+          "right_metric_scalar_residual": 2.2581250503778032e-15,
+          "right_metric_scale": 0.9999999999999993,
+          "right_orientation_masks": [
+            4,
+            6
+          ],
+          "status": "exact-canonical-coefficient-affine-certificate"
+        },
+        {
+          "active_component_weights": [
+            [
+              3,
+              1.0
+            ],
+            [
+              6,
+              1.0
+            ]
+          ],
+          "active_left_mask_count": 1,
+          "active_orientation_masks": [
+            3,
+            6
+          ],
+          "active_right_mask_count": 1,
+          "active_support_is_affine": true,
+          "canonical_coefficient_affine_certificate": true,
+          "child_metric_equality_residual": 3.3306690738754696e-16,
+          "child_width": 2,
+          "coefficient_transfer_final_projection_residual": 2.835758576598402e-15,
+          "coefficient_transfer_initial_projection_residual": 1.7919974174287173e-15,
+          "exact_minimum_norm_decomposition_identities_verified": true,
+          "intersection_dimension": 5,
+          "left_metric_scalar_residual": 2.694293507246675e-15,
+          "left_metric_scale": 0.9999999999999997,
+          "left_orientation_masks": [
+            1,
+            6
+          ],
+          "maximum_active_weight_uniformity_residual": 4.440892098500626e-16,
+          "maximum_coefficient_gram_identity_residual": 2.7658816391943612e-15,
+          "maximum_component_scalar_residual": 1.810186617087748e-15,
+          "maximum_synthesis_identity_residual": 1.9496646391957892e-15,
+          "node_id": "W5-COLLISION-FREE-3-2-W2-1-6-3-4",
+          "right_metric_scalar_residual": 2.336189385648034e-15,
+          "right_metric_scale": 1.0,
+          "right_orientation_masks": [
+            3,
+            4
+          ],
+          "status": "exact-canonical-coefficient-affine-certificate"
+        },
+        {
+          "active_component_weights": [
+            [
+              3,
+              1.0
+            ],
+            [
+              6,
+              1.0
+            ]
+          ],
+          "active_left_mask_count": 1,
+          "active_orientation_masks": [
+            3,
+            6
+          ],
+          "active_right_mask_count": 1,
+          "active_support_is_affine": true,
+          "canonical_coefficient_affine_certificate": true,
+          "child_metric_equality_residual": 5.551115123125783e-16,
+          "child_width": 2,
+          "coefficient_transfer_final_projection_residual": 3.2839843908393056e-15,
+          "coefficient_transfer_initial_projection_residual": 2.1812704434138523e-15,
+          "exact_minimum_norm_decomposition_identities_verified": true,
+          "intersection_dimension": 5,
+          "left_metric_scalar_residual": 1.4703559437594255e-15,
+          "left_metric_scale": 1.0000000000000002,
+          "left_orientation_masks": [
+            2,
+            3
+          ],
+          "maximum_active_weight_uniformity_residual": 8.881784197001252e-16,
+          "maximum_coefficient_gram_identity_residual": 2.525135799088782e-15,
+          "maximum_component_scalar_residual": 2.434870162880153e-15,
+          "maximum_synthesis_identity_residual": 1.7399856553241722e-15,
+          "node_id": "W5-COLLISION-FREE-3-2-W2-2-3-6-7",
+          "right_metric_scalar_residual": 2.1868679918215997e-15,
+          "right_metric_scale": 0.9999999999999997,
+          "right_orientation_masks": [
+            6,
+            7
+          ],
+          "status": "exact-canonical-coefficient-affine-certificate"
+        },
+        {
+          "active_component_weights": [
+            [
+              3,
+              1.0
+            ],
+            [
+              6,
+              1.0
+            ]
+          ],
+          "active_left_mask_count": 1,
+          "active_orientation_masks": [
+            3,
+            6
+          ],
+          "active_right_mask_count": 1,
+          "active_support_is_affine": true,
+          "canonical_coefficient_affine_certificate": true,
+          "child_metric_equality_residual": 2.220446049250313e-16,
+          "child_width": 2,
+          "coefficient_transfer_final_projection_residual": 2.929988387217912e-15,
+          "coefficient_transfer_initial_projection_residual": 1.3270239281760016e-15,
+          "exact_minimum_norm_decomposition_identities_verified": true,
+          "intersection_dimension": 5,
+          "left_metric_scalar_residual": 2.2032771778061422e-15,
+          "left_metric_scale": 0.9999999999999997,
+          "left_orientation_masks": [
+            2,
+            6
+          ],
+          "maximum_active_weight_uniformity_residual": 9.992007221626409e-16,
+          "maximum_coefficient_gram_identity_residual": 3.0109068863751242e-15,
+          "maximum_component_scalar_residual": 1.954648899768235e-15,
+          "maximum_synthesis_identity_residual": 1.9569352404599586e-15,
+          "node_id": "W5-COLLISION-FREE-3-2-W2-2-6-3-7",
+          "right_metric_scalar_residual": 2.136502524155245e-15,
+          "right_metric_scale": 0.9999999999999994,
+          "right_orientation_masks": [
+            3,
+            7
+          ],
+          "status": "exact-canonical-coefficient-affine-certificate"
+        },
+        {
+          "active_component_weights": [
+            [
+              3,
+              1.0
+            ],
+            [
+              6,
+              1.0
+            ]
+          ],
+          "active_left_mask_count": 1,
+          "active_orientation_masks": [
+            3,
+            6
+          ],
+          "active_right_mask_count": 1,
+          "active_support_is_affine": true,
+          "canonical_coefficient_affine_certificate": true,
+          "child_metric_equality_residual": 3.3306690738754696e-16,
+          "child_width": 4,
+          "coefficient_transfer_final_projection_residual": 2.824430471111175e-15,
+          "coefficient_transfer_initial_projection_residual": 2.906067705527341e-15,
+          "exact_minimum_norm_decomposition_identities_verified": true,
+          "intersection_dimension": 5,
+          "left_metric_scalar_residual": 2.0035151495028425e-15,
+          "left_metric_scale": 1.0,
+          "left_orientation_masks": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "maximum_active_weight_uniformity_residual": 2.220446049250313e-16,
+          "maximum_coefficient_gram_identity_residual": 3.0412771600400103e-15,
+          "maximum_component_scalar_residual": 2.2613311886677845e-15,
+          "maximum_synthesis_identity_residual": 4.451860774498484e-15,
+          "node_id": "W5-COLLISION-FREE-3-2-W4-0-1-2-3-4-5-6-7",
+          "right_metric_scalar_residual": 2.3490404055744875e-15,
+          "right_metric_scale": 0.9999999999999997,
+          "right_orientation_masks": [
+            4,
+            5,
+            6,
+            7
+          ],
+          "status": "exact-canonical-coefficient-affine-certificate"
+        },
+        {
+          "active_component_weights": [
+            [
+              3,
+              1.0
+            ],
+            [
+              6,
+              1.0
+            ]
+          ],
+          "active_left_mask_count": 1,
+          "active_orientation_masks": [
+            3,
+            6
+          ],
+          "active_right_mask_count": 1,
+          "active_support_is_affine": true,
+          "canonical_coefficient_affine_certificate": true,
+          "child_metric_equality_residual": 2.220446049250313e-16,
+          "child_width": 4,
+          "coefficient_transfer_final_projection_residual": 2.9395998609256315e-15,
+          "coefficient_transfer_initial_projection_residual": 2.4860091603716506e-15,
+          "exact_minimum_norm_decomposition_identities_verified": true,
+          "intersection_dimension": 5,
+          "left_metric_scalar_residual": 2.4581432837439334e-15,
+          "left_metric_scale": 1.0000000000000004,
+          "left_orientation_masks": [
+            0,
+            1,
+            6,
+            7
+          ],
+          "maximum_active_weight_uniformity_residual": 2.220446049250313e-16,
+          "maximum_coefficient_gram_identity_residual": 3.299913335130129e-15,
+          "maximum_component_scalar_residual": 2.1709777973905184e-15,
+          "maximum_synthesis_identity_residual": 3.2273995850053177e-15,
+          "node_id": "W5-COLLISION-FREE-3-2-W4-0-1-6-7-2-3-4-5",
+          "right_metric_scalar_residual": 2.4170676801597878e-15,
+          "right_metric_scale": 1.0000000000000007,
+          "right_orientation_masks": [
+            2,
+            3,
+            4,
+            5
+          ],
+          "status": "exact-canonical-coefficient-affine-certificate"
+        },
+        {
+          "active_component_weights": [
+            [
+              3,
+              1.0
+            ],
+            [
+              6,
+              1.0
+            ]
+          ],
+          "active_left_mask_count": 1,
+          "active_orientation_masks": [
+            3,
+            6
+          ],
+          "active_right_mask_count": 1,
+          "active_support_is_affine": true,
+          "canonical_coefficient_affine_certificate": true,
+          "child_metric_equality_residual": 2.220446049250313e-16,
+          "child_width": 4,
+          "coefficient_transfer_final_projection_residual": 3.929855624359687e-15,
+          "coefficient_transfer_initial_projection_residual": 2.5399806194744626e-15,
+          "exact_minimum_norm_decomposition_identities_verified": true,
+          "intersection_dimension": 5,
+          "left_metric_scalar_residual": 2.5565139770003587e-15,
+          "left_metric_scale": 0.9999999999999989,
+          "left_orientation_masks": [
+            0,
+            2,
+            4,
+            6
+          ],
+          "maximum_active_weight_uniformity_residual": 6.661338147750939e-16,
+          "maximum_coefficient_gram_identity_residual": 3.1579784203749696e-15,
+          "maximum_component_scalar_residual": 2.6719557534621517e-15,
+          "maximum_synthesis_identity_residual": 4.253618736731076e-15,
+          "node_id": "W5-COLLISION-FREE-3-2-W4-0-2-4-6-1-3-5-7",
+          "right_metric_scalar_residual": 2.261020298799614e-15,
+          "right_metric_scale": 0.9999999999999991,
+          "right_orientation_masks": [
+            1,
+            3,
+            5,
+            7
+          ],
+          "status": "exact-canonical-coefficient-affine-certificate"
+        },
+        {
+          "active_component_weights": [
+            [
+              3,
+              1.0
+            ],
+            [
+              6,
+              1.0
+            ]
+          ],
+          "active_left_mask_count": 1,
+          "active_orientation_masks": [
+            3,
+            6
+          ],
+          "active_right_mask_count": 1,
+          "active_support_is_affine": true,
+          "canonical_coefficient_affine_certificate": true,
+          "child_metric_equality_residual": 0.0,
+          "child_width": 4,
+          "coefficient_transfer_final_projection_residual": 1.8193206144049678e-15,
+          "coefficient_transfer_initial_projection_residual": 2.3734598184444193e-15,
+          "exact_minimum_norm_decomposition_identities_verified": true,
+          "intersection_dimension": 5,
+          "left_metric_scalar_residual": 1.8200822635812745e-15,
+          "left_metric_scale": 0.9999999999999986,
+          "left_orientation_masks": [
+            0,
+            3,
+            4,
+            7
+          ],
+          "maximum_active_weight_uniformity_residual": 3.3306690738754696e-16,
+          "maximum_coefficient_gram_identity_residual": 2.7358997506569316e-15,
+          "maximum_component_scalar_residual": 1.8131216353796905e-15,
+          "maximum_synthesis_identity_residual": 3.878013019046472e-15,
+          "node_id": "W5-COLLISION-FREE-3-2-W4-0-3-4-7-1-2-5-6",
+          "right_metric_scalar_residual": 1.8953697784900756e-15,
+          "right_metric_scale": 0.9999999999999986,
+          "right_orientation_masks": [
+            1,
+            2,
+            5,
+            6
+          ],
+          "status": "exact-canonical-coefficient-affine-certificate"
+        }
+      ],
+      "nonaffine_active_support_count": 0,
+      "nonscalar_component_effect_count": 0,
+      "nonscalar_or_unequal_metric_count": 0,
+      "observed_active_supports": [
+        [
+          3,
+          6
+        ]
+      ],
+      "pairwise_distinct_physical_labels": true,
+      "reduced_support_dimension": 190,
+      "status": "all-fractional-merges-canonical-coefficient-affine",
+      "target_partition": [
+        3,
+        2
+      ]
+    }
+  ],
+  "headline_metrics": {
+    "all_n_coefficient_affine_theorem_count": 0,
+    "canonical_minimum_norm_identity_theorem_count": 1,
+    "coherent_coefficient_transfer_count": 0,
+    "explicit_recoupling_synthesis_map_count": 0,
+    "finite_control_count": 3,
+    "finite_validation_failure_count": 0,
+    "hierarchical_orientation_polar_sampler_count": 0,
+    "label_simple_coefficient_affine_certificate_failure_count": 0,
+    "label_simple_control_count": 2,
+    "label_simple_fractional_merge_count": 20,
+    "new_quantum_algorithm_count": 0,
+    "repeated_label_coefficient_affine_failure_count": 10,
+    "repeated_label_nonscalar_or_unequal_metric_count": 9
+  },
+  "proof_obligations": [
+    {
+      "obligation": "canonical_minimum_norm_decomposition_identities",
+      "resolution": "Moore-Penrose identities prove both equations and every finite node validates them numerically.",
+      "resolved": true
+    },
+    {
+      "obligation": "correct_location_of_affine_balance",
+      "resolution": "All label-simple finite overlaps have affine uniform scalar effects in coefficient space despite nonreducing carriers.",
+      "resolved": true
+    },
+    {
+      "obligation": "all_n_collision_free_coefficient_affine_theorem",
+      "resolution": "Only W3/W5 controls are accessible. Growing-depth fusion multiplicities may destroy scalarity or affine support.",
+      "resolved": false
+    },
+    {
+      "obligation": "explicit_recoupling_synthesis_maps",
+      "resolution": "The current certificate defines D_(A,e) using A^+; no multiplicity-basis or Racah circuit constructs it directly.",
+      "resolved": false
+    }
+  ],
+  "scaling_records": [
+    {
+      "all_n_collision_free_coefficient_affine_theorem_proved": false,
+      "coherent_minimum_norm_synthesis_compiled": false,
+      "finite_coefficient_affine_signal_only": true,
+      "hierarchical_orientation_polar_proved": false,
+      "information_threshold_copy_count": 7,
+      "multiplicity_free_recoupling_formula_proved": false,
+      "n": 5,
+      "orientation_tree_depth": 7,
+      "status": "finite-coefficient-affine-signal-all-n-recoupling-proof-open"
+    },
+    {
+      "all_n_collision_free_coefficient_affine_theorem_proved": false,
+      "coherent_minimum_norm_synthesis_compiled": false,
+      "finite_coefficient_affine_signal_only": true,
+      "hierarchical_orientation_polar_proved": false,
+      "information_threshold_copy_count": 16,
+      "multiplicity_free_recoupling_formula_proved": false,
+      "n": 8,
+      "orientation_tree_depth": 16,
+      "status": "finite-coefficient-affine-signal-all-n-recoupling-proof-open"
+    },
+    {
+      "all_n_collision_free_coefficient_affine_theorem_proved": false,
+      "coherent_minimum_norm_synthesis_compiled": false,
+      "finite_coefficient_affine_signal_only": true,
+      "hierarchical_orientation_polar_proved": false,
+      "information_threshold_copy_count": 45,
+      "multiplicity_free_recoupling_formula_proved": false,
+      "n": 16,
+      "orientation_tree_depth": 45,
+      "status": "finite-coefficient-affine-signal-all-n-recoupling-proof-open"
+    },
+    {
+      "all_n_collision_free_coefficient_affine_theorem_proved": false,
+      "coherent_minimum_norm_synthesis_compiled": false,
+      "finite_coefficient_affine_signal_only": true,
+      "hierarchical_orientation_polar_proved": false,
+      "information_threshold_copy_count": 118,
+      "multiplicity_free_recoupling_formula_proved": false,
+      "n": 32,
+      "orientation_tree_depth": 118,
+      "status": "finite-coefficient-affine-signal-all-n-recoupling-proof-open"
+    },
+    {
+      "all_n_collision_free_coefficient_affine_theorem_proved": false,
+      "coherent_minimum_norm_synthesis_compiled": false,
+      "finite_coefficient_affine_signal_only": true,
+      "hierarchical_orientation_polar_proved": false,
+      "information_threshold_copy_count": 296,
+      "multiplicity_free_recoupling_formula_proved": false,
+      "n": 64,
+      "orientation_tree_depth": 296,
+      "status": "finite-coefficient-affine-signal-all-n-recoupling-proof-open"
+    },
+    {
+      "all_n_collision_free_coefficient_affine_theorem_proved": false,
+      "coherent_minimum_norm_synthesis_compiled": false,
+      "finite_coefficient_affine_signal_only": true,
+      "hierarchical_orientation_polar_proved": false,
+      "information_threshold_copy_count": 717,
+      "multiplicity_free_recoupling_formula_proved": false,
+      "n": 128,
+      "orientation_tree_depth": 717,
+      "status": "finite-coefficient-affine-signal-all-n-recoupling-proof-open"
+    },
+    {
+      "all_n_collision_free_coefficient_affine_theorem_proved": false,
+      "coherent_minimum_norm_synthesis_compiled": false,
+      "finite_coefficient_affine_signal_only": true,
+      "hierarchical_orientation_polar_proved": false,
+      "information_threshold_copy_count": 1684,
+      "multiplicity_free_recoupling_formula_proved": false,
+      "n": 256,
+      "orientation_tree_depth": 1684,
+      "status": "finite-coefficient-affine-signal-all-n-recoupling-proof-open"
+    },
+    {
+      "all_n_collision_free_coefficient_affine_theorem_proved": false,
+      "coherent_minimum_norm_synthesis_compiled": false,
+      "finite_coefficient_affine_signal_only": true,
+      "hierarchical_orientation_polar_proved": false,
+      "information_threshold_copy_count": 3876,
+      "multiplicity_free_recoupling_formula_proved": false,
+      "n": 512,
+      "orientation_tree_depth": 3876,
+      "status": "finite-coefficient-affine-signal-all-n-recoupling-proof-open"
+    }
+  ],
+  "status": "finite-coefficient-affine-normal-form-all-n-recoupling-proof-open",
+  "summary": "Moved the affine mechanism into minimum-norm coefficient space, where every label-simple finite overlap has an affine uniform scalar certificate and repeated labels supply explicit countercontrols.",
+  "theorem_contract": {
+    "coefficient_affine_normal_form": "Finite label-simple controls have scalar equal component weights supported on an affine mask set.",
+    "coefficient_transfer": "For isometric child decompositions, D_B D_A^* is a partial isometry between their coefficient images.",
+    "isometric_balance": "If G_A=G_B=gI, the two stacked coefficient maps become isometries after common normalization and every fractional relative channel is 1/2.",
+    "minimum_norm_synthesis": "D_(A,e)=E_e A^+U sums to U and its component Gram operators sum to G_A=U^*A^+U.",
+    "scope": "The canonical maps use child pseudoinverses. A useful all-n theorem must derive them from explicit recoupling data rather than assume the polar transform being constructed."
+  }
+}

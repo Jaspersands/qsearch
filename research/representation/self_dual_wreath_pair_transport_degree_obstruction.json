@@ -1,0 +1,267 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Constant conditioning of E+F contradicts the degree bound.",
+      "resolution": "E+F has eigenvalues 1+/-c, while cross-overlap polar transport must distinguish +/-c in a Hermitian dilation.",
+      "resolved": true
+    },
+    {
+      "objection": "The theorem is a lower bound for arbitrary quantum circuits.",
+      "resolution": "It is deliberately limited to bounded-polynomial transforms of the normalized cross-overlap access model.",
+      "resolved": false
+    },
+    {
+      "objection": "Existence of a large irrep means every path is expensive.",
+      "resolution": "A candidate may route entirely through common, hook, or other polynomial-dimensional carriers.",
+      "resolved": false
+    },
+    {
+      "objection": "Small finite W3 correlations establish scalable transport.",
+      "resolution": "W3 uses d_alpha=2. Its finite degree says nothing about growing carrier dimensions.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "candidate_fiber_uses_high_dimension_carriers_proved": false,
+    "explicit_recoupling_bypass_ruled_out": false,
+    "general_pair_transport_circuit_lower_bound_proved": false,
+    "hierarchical_orientation_polar_proved": false,
+    "pair_overlap_polar_qsvt_degree_lower_bound_proved": true,
+    "reason": "High-dimensional cross-overlap QSVT is expensive, but candidate fiber alignment and direct representation transforms remain open.",
+    "speedup_claim_allowed": false,
+    "superpolynomial_dimension_carriers_exist": true,
+    "worst_available_carrier_qsvt_cost_superpolynomial_at_tail": true
+  },
+  "created_at": "2026-08-06T03:48:12.379126+00:00",
+  "falsifiers_triggered": [
+    "The constant-conditioned stacked pair sampler does not make cross-overlap polar transport constant-conditioned.",
+    "Finite low-dimensional transport paths do not scale without a carrier-dimension theorem.",
+    "The access-model degree bound is not a general circuit lower bound."
+  ],
+  "finite_controls": [
+    {
+      "approximation_error": 0.01,
+      "bernstein_degree_lower_bound": 0.0,
+      "carrier_dimension": 1,
+      "control_id": "common-range",
+      "exact_analytic_control": true,
+      "expected_linear_dimension_scale": 0.0,
+      "lower_bound_to_dimension_ratio": 0.0,
+      "principal_correlation": 1.0,
+      "status": "exact-linear-carrier-dimension-degree-bound"
+    },
+    {
+      "approximation_error": 0.01,
+      "bernstein_degree_lower_bound": 1.7147302994931883,
+      "carrier_dimension": 2,
+      "control_id": "W3-standard-carrier",
+      "exact_analytic_control": true,
+      "expected_linear_dimension_scale": 1.7147302994931883,
+      "lower_bound_to_dimension_ratio": 0.8573651497465942,
+      "principal_correlation": 0.5,
+      "status": "exact-linear-carrier-dimension-degree-bound"
+    },
+    {
+      "approximation_error": 0.01,
+      "bernstein_degree_lower_bound": 126.7161327534896,
+      "carrier_dimension": 128,
+      "control_id": "standard-S129-carrier",
+      "exact_analytic_control": true,
+      "expected_linear_dimension_scale": 126.7161327534896,
+      "lower_bound_to_dimension_ratio": 0.9899697871366375,
+      "principal_correlation": 0.0078125,
+      "status": "exact-linear-carrier-dimension-degree-bound"
+    },
+    {
+      "approximation_error": 0.01,
+      "bernstein_degree_lower_bound": 989999.999999505,
+      "carrier_dimension": 1000000,
+      "control_id": "high-dimension-control",
+      "exact_analytic_control": true,
+      "expected_linear_dimension_scale": 989999.999999505,
+      "lower_bound_to_dimension_ratio": 0.989999999999505,
+      "principal_correlation": 1e-06,
+      "status": "exact-linear-carrier-dimension-degree-bound"
+    }
+  ],
+  "headline_metrics": {
+    "candidate_high_dimension_fiber_alignment_theorem_count": 0,
+    "explicit_recoupling_bypass_lower_bound_count": 0,
+    "finite_analytic_control_failure_count": 0,
+    "finite_control_count": 4,
+    "general_quantum_circuit_lower_bound_count": 0,
+    "hierarchical_orientation_polar_sampler_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "pair_overlap_polar_bernstein_theorem_count": 1,
+    "scaling_record_count": 11,
+    "superpolynomial_worst_carrier_row_count": 8,
+    "tail_log2_maximum_irrep_dimension_lower_bound": 1895.7149114044294,
+    "tail_log2_pair_transport_degree_lower_bound": 1895.2004118347343,
+    "tail_n": 512
+  },
+  "proof_obligations": [
+    {
+      "obligation": "pair_overlap_polar_qsvt_degree_bound",
+      "resolution": "The mean-value and Bernstein inequalities give the exact Omega(1/c) bounded-polynomial degree bound.",
+      "resolved": true
+    },
+    {
+      "obligation": "exponential_dimension_carriers_exist",
+      "resolution": "The regular-representation dimension identity and partition upper bound give a superpolynomial maximum irrep dimension.",
+      "resolved": true
+    },
+    {
+      "obligation": "candidate_fiber_requires_high_dimension_transport",
+      "resolution": "The transport carrier-mass audit is not a candidate-specific fiber decomposition. Exceptional low-dimensional alignment remains possible.",
+      "resolved": false
+    },
+    {
+      "obligation": "explicit_recoupling_bypass_lower_bound",
+      "resolution": "An algebraic Racah transform need not approximate sign through the normalized E_fE_e block encoding.",
+      "resolved": false
+    }
+  ],
+  "scaling_records": [
+    {
+      "candidate_fiber_uses_worst_carrier_proved": false,
+      "explicit_recoupling_bypass_ruled_out": false,
+      "hardy_ramanujan_log2_partition_upper_bound": 14.802626237340029,
+      "log2_hidden_group_order": 44.25014046988262,
+      "log2_maximum_irrep_dimension_lower_bound": 14.723757116271297,
+      "log2_worst_available_pair_transport_degree_lower_bound": 14.209257546576183,
+      "n": 16,
+      "polynomial_degree_benchmark_log2": 48.0,
+      "status": "finite-n-polynomial-benchmark-not-yet-crossed",
+      "worst_available_transport_degree_superpolynomial": false
+    },
+    {
+      "candidate_fiber_uses_worst_carrier_proved": false,
+      "explicit_recoupling_bypass_ruled_out": false,
+      "hardy_ramanujan_log2_partition_upper_bound": 18.129440567308777,
+      "log2_hidden_group_order": 79.03765741910046,
+      "log2_maximum_irrep_dimension_lower_bound": 30.45410842589584,
+      "log2_worst_available_pair_transport_degree_lower_bound": 29.939608856200724,
+      "n": 24,
+      "polynomial_degree_benchmark_log2": 55.01955000865387,
+      "status": "finite-n-polynomial-benchmark-not-yet-crossed",
+      "worst_available_transport_degree_superpolynomial": false
+    },
+    {
+      "candidate_fiber_uses_worst_carrier_proved": false,
+      "explicit_recoupling_bypass_ruled_out": false,
+      "hardy_ramanujan_log2_partition_upper_bound": 20.934074783586084,
+      "log2_hidden_group_order": 117.6632636523603,
+      "log2_maximum_irrep_dimension_lower_bound": 48.36459443438711,
+      "log2_worst_available_pair_transport_degree_lower_bound": 47.85009486469199,
+      "n": 32,
+      "polynomial_degree_benchmark_log2": 60.0,
+      "status": "finite-n-polynomial-benchmark-not-yet-crossed",
+      "worst_available_transport_degree_superpolynomial": false
+    },
+    {
+      "candidate_fiber_uses_worst_carrier_proved": false,
+      "explicit_recoupling_bypass_ruled_out": false,
+      "hardy_ramanujan_log2_partition_upper_bound": 25.638900728525048,
+      "log2_hidden_group_order": 202.94957202970025,
+      "log2_maximum_irrep_dimension_lower_bound": 88.6553356505876,
+      "log2_worst_available_pair_transport_degree_lower_bound": 88.14083608089248,
+      "n": 48,
+      "polynomial_degree_benchmark_log2": 67.01955000865388,
+      "status": "worst-available-carrier-qsvt-degree-superpolynomial",
+      "worst_available_transport_degree_superpolynomial": true
+    },
+    {
+      "candidate_fiber_uses_worst_carrier_proved": false,
+      "explicit_recoupling_bypass_ruled_out": false,
+      "hardy_ramanujan_log2_partition_upper_bound": 29.605252474680057,
+      "log2_hidden_group_order": 295.9951439417241,
+      "log2_maximum_irrep_dimension_lower_bound": 133.19494573352202,
+      "log2_worst_available_pair_transport_degree_lower_bound": 132.6804461638269,
+      "n": 64,
+      "polynomial_degree_benchmark_log2": 72.0,
+      "status": "worst-available-carrier-qsvt-degree-superpolynomial",
+      "worst_available_transport_degree_superpolynomial": true
+    },
+    {
+      "candidate_fiber_uses_worst_carrier_proved": false,
+      "explicit_recoupling_bypass_ruled_out": false,
+      "hardy_ramanujan_log2_partition_upper_bound": 36.25888113461755,
+      "log2_hidden_group_order": 498.27715779390303,
+      "log2_maximum_irrep_dimension_lower_bound": 231.00913832964272,
+      "log2_worst_available_pair_transport_degree_lower_bound": 230.4946387599476,
+      "n": 96,
+      "polynomial_degree_benchmark_log2": 79.01955000865388,
+      "status": "worst-available-carrier-qsvt-degree-superpolynomial",
+      "worst_available_transport_degree_superpolynomial": true
+    },
+    {
+      "candidate_fiber_uses_worst_carrier_proved": false,
+      "explicit_recoupling_bypass_ruled_out": false,
+      "hardy_ramanujan_log2_partition_upper_bound": 41.86814956717217,
+      "log2_hidden_group_order": 716.161722083622,
+      "log2_maximum_irrep_dimension_lower_bound": 337.1467862582249,
+      "log2_worst_available_pair_transport_degree_lower_bound": 336.6322866885298,
+      "n": 128,
+      "polynomial_degree_benchmark_log2": 84.0,
+      "status": "worst-available-carrier-qsvt-degree-superpolynomial",
+      "worst_available_transport_degree_superpolynomial": true
+    },
+    {
+      "candidate_fiber_uses_worst_carrier_proved": false,
+      "explicit_recoupling_bypass_ruled_out": false,
+      "hardy_ramanujan_log2_partition_upper_bound": 51.277801457050096,
+      "log2_hidden_group_order": 1184.4342077720341,
+      "log2_maximum_irrep_dimension_lower_bound": 566.578203157492,
+      "log2_worst_available_pair_transport_degree_lower_bound": 566.0637035877969,
+      "n": 192,
+      "polynomial_degree_benchmark_log2": 91.01955000865388,
+      "status": "worst-available-carrier-qsvt-degree-superpolynomial",
+      "worst_available_transport_degree_superpolynomial": true
+    },
+    {
+      "candidate_fiber_uses_worst_carrier_proved": false,
+      "explicit_recoupling_bypass_ruled_out": false,
+      "hardy_ramanujan_log2_partition_upper_bound": 59.210504949360114,
+      "log2_hidden_group_order": 1683.9962872242147,
+      "log2_maximum_irrep_dimension_lower_bound": 812.3928911374273,
+      "log2_worst_available_pair_transport_degree_lower_bound": 811.8783915677323,
+      "n": 256,
+      "polynomial_degree_benchmark_log2": 96.0,
+      "status": "worst-available-carrier-qsvt-degree-superpolynomial",
+      "worst_available_transport_degree_superpolynomial": true
+    },
+    {
+      "candidate_fiber_uses_worst_carrier_proved": false,
+      "explicit_recoupling_bypass_ruled_out": false,
+      "hardy_ramanujan_log2_partition_upper_bound": 72.5177622692351,
+      "log2_hidden_group_order": 2748.2492469754493,
+      "log2_maximum_irrep_dimension_lower_bound": 1337.8657423531072,
+      "log2_worst_available_pair_transport_degree_lower_bound": 1337.351242783412,
+      "n": 384,
+      "polynomial_degree_benchmark_log2": 103.01955000865388,
+      "status": "worst-available-carrier-qsvt-degree-superpolynomial",
+      "worst_available_transport_degree_superpolynomial": true
+    },
+    {
+      "candidate_fiber_uses_worst_carrier_proved": false,
+      "explicit_recoupling_bypass_ruled_out": false,
+      "hardy_ramanujan_log2_partition_upper_bound": 83.73629913434434,
+      "log2_hidden_group_order": 3875.166121943203,
+      "log2_maximum_irrep_dimension_lower_bound": 1895.7149114044294,
+      "log2_worst_available_pair_transport_degree_lower_bound": 1895.2004118347343,
+      "n": 512,
+      "polynomial_degree_benchmark_log2": 108.0,
+      "status": "worst-available-carrier-qsvt-degree-superpolynomial",
+      "worst_available_transport_degree_superpolynomial": true
+    }
+  ],
+  "status": "pair-transport-qsvt-degree-obstruction-structured-bypass-open",
+  "summary": "Proved an Omega(d_alpha) QSVT degree obstruction for pair-overlap polar transport and isolated low-dimensional fiber alignment or direct recoupling as the only viable bypasses.",
+  "theorem_contract": {
+    "bernstein_lower_bound": "A degree-d polynomial bounded by one and epsilon-close to sign outside (-c,c) has d>=(1-epsilon)sqrt(1-c^2)/c.",
+    "hermitian_dilation": "Polar transport of M=E_fE_e is the sign transform of its Hermitian dilation on nonzero singular sectors.",
+    "scope": "The lower bound covers normalized cross-overlap QSVT. It does not prove that a candidate fiber uses a high-dimensional carrier or rule out an explicit representation-basis recoupling circuit.",
+    "worst_available_carrier": "sum d_lambda^2=n! and the Hardy-Ramanujan partition bound imply some S_n carrier has superpolynomial d_lambda.",
+    "wreath_specialization": "Since c=1/d_alpha, bounded-polynomial pair transport needs Omega(d_alpha) degree."
+  }
+}

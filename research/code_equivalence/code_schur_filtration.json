@@ -1,5 +1,5 @@
 {
-  "created_at": "2026-07-14T06:11:18.222285+00:00",
+  "created_at": "2026-08-06T06:38:25.781130+00:00",
   "falsifiers_triggered": [
     "A polynomial-time Schur/star-product invariant separates a proposed hard code-equivalence row."
   ],
@@ -125,16 +125,6 @@
       "triage_row_id": "goppa-family-goppa-m4-t2"
     },
     {
-      "equivalent_control_count": 5,
-      "interpretation": "All 5 evaluated pair(s) are known equivalent controls.",
-      "proof_debt_count": 0,
-      "record_count": 5,
-      "rejection_count": 0,
-      "row_family": "goppa-code-family",
-      "status": "equivalent-controls-under-schur-filtration",
-      "triage_row_id": "goppa-family-goppa-m4-t3"
-    },
-    {
       "equivalent_control_count": 0,
       "interpretation": "Schur filtrations classically separate 1 pair(s) in this family.",
       "proof_debt_count": 0,
@@ -155,10 +145,10 @@
       "triage_row_id": "hamming-7-4-permuted"
     },
     {
-      "equivalent_control_count": 3,
-      "interpretation": "All 3 evaluated pair(s) are known equivalent controls.",
+      "equivalent_control_count": 4,
+      "interpretation": "All 4 evaluated pair(s) are known equivalent controls.",
       "proof_debt_count": 0,
-      "record_count": 3,
+      "record_count": 4,
       "rejection_count": 0,
       "row_family": "projective-geometry-code-family",
       "status": "equivalent-controls-under-schur-filtration",
@@ -296,9 +286,9 @@
     }
   ],
   "headline_metrics": {
-    "equivalent_control_count": 95,
-    "family_count": 29,
-    "input_pair_count": 111,
+    "equivalent_control_count": 91,
+    "family_count": 28,
+    "input_pair_count": 107,
     "positive_evidence_count": 0,
     "schur_proof_debt_count": 8,
     "schur_rejection_count": 8
@@ -5026,496 +5016,6 @@
     },
     {
       "distinguishing_invariants": [],
-      "id": "SCHUR-goppa_code_search-goppa-m4-t3-collision-1-prior-0",
-      "interpretation": "The Schur filtration is preserved on a known equivalent control.",
-      "known_equivalent": true,
-      "row_family": "goppa-code-family",
-      "row_id": "goppa-family-goppa-m4-t3",
-      "signature_a": {
-        "coordinate_filtration_digest": "55c04376be3e42d48c08cf55",
-        "dimension": 4,
-        "dual_dimension": 12,
-        "dual_power_dimensions": [
-          12,
-          16,
-          16
-        ],
-        "dual_puncture_square_dimension_histogram": [
-          [
-            15,
-            16
-          ]
-        ],
-        "dual_shortening_square_dimension_histogram": [
-          [
-            15,
-            16
-          ]
-        ],
-        "length": 16,
-        "primal_power_dimensions": [
-          4,
-          10,
-          11
-        ],
-        "puncture_square_dimension_histogram": [
-          [
-            9,
-            3
-          ],
-          [
-            10,
-            13
-          ]
-        ],
-        "shortening_square_dimension_histogram": [
-          [
-            6,
-            16
-          ]
-        ]
-      },
-      "signature_b": {
-        "coordinate_filtration_digest": "55c04376be3e42d48c08cf55",
-        "dimension": 4,
-        "dual_dimension": 12,
-        "dual_power_dimensions": [
-          12,
-          16,
-          16
-        ],
-        "dual_puncture_square_dimension_histogram": [
-          [
-            15,
-            16
-          ]
-        ],
-        "dual_shortening_square_dimension_histogram": [
-          [
-            15,
-            16
-          ]
-        ],
-        "length": 16,
-        "primal_power_dimensions": [
-          4,
-          10,
-          11
-        ],
-        "puncture_square_dimension_histogram": [
-          [
-            9,
-            3
-          ],
-          [
-            10,
-            13
-          ]
-        ],
-        "shortening_square_dimension_histogram": [
-          [
-            6,
-            16
-          ]
-        ]
-      },
-      "source": "goppa_code_search",
-      "status": "equivalent-control-schur-preserved"
-    },
-    {
-      "distinguishing_invariants": [],
-      "id": "SCHUR-goppa_code_search-goppa-m4-t3-collision-2-prior-0",
-      "interpretation": "The Schur filtration is preserved on a known equivalent control.",
-      "known_equivalent": true,
-      "row_family": "goppa-code-family",
-      "row_id": "goppa-family-goppa-m4-t3",
-      "signature_a": {
-        "coordinate_filtration_digest": "55c04376be3e42d48c08cf55",
-        "dimension": 4,
-        "dual_dimension": 12,
-        "dual_power_dimensions": [
-          12,
-          16,
-          16
-        ],
-        "dual_puncture_square_dimension_histogram": [
-          [
-            15,
-            16
-          ]
-        ],
-        "dual_shortening_square_dimension_histogram": [
-          [
-            15,
-            16
-          ]
-        ],
-        "length": 16,
-        "primal_power_dimensions": [
-          4,
-          10,
-          11
-        ],
-        "puncture_square_dimension_histogram": [
-          [
-            9,
-            3
-          ],
-          [
-            10,
-            13
-          ]
-        ],
-        "shortening_square_dimension_histogram": [
-          [
-            6,
-            16
-          ]
-        ]
-      },
-      "signature_b": {
-        "coordinate_filtration_digest": "55c04376be3e42d48c08cf55",
-        "dimension": 4,
-        "dual_dimension": 12,
-        "dual_power_dimensions": [
-          12,
-          16,
-          16
-        ],
-        "dual_puncture_square_dimension_histogram": [
-          [
-            15,
-            16
-          ]
-        ],
-        "dual_shortening_square_dimension_histogram": [
-          [
-            15,
-            16
-          ]
-        ],
-        "length": 16,
-        "primal_power_dimensions": [
-          4,
-          10,
-          11
-        ],
-        "puncture_square_dimension_histogram": [
-          [
-            9,
-            3
-          ],
-          [
-            10,
-            13
-          ]
-        ],
-        "shortening_square_dimension_histogram": [
-          [
-            6,
-            16
-          ]
-        ]
-      },
-      "source": "goppa_code_search",
-      "status": "equivalent-control-schur-preserved"
-    },
-    {
-      "distinguishing_invariants": [],
-      "id": "SCHUR-goppa_code_search-goppa-m4-t3-collision-3-prior-1",
-      "interpretation": "The Schur filtration is preserved on a known equivalent control.",
-      "known_equivalent": true,
-      "row_family": "goppa-code-family",
-      "row_id": "goppa-family-goppa-m4-t3",
-      "signature_a": {
-        "coordinate_filtration_digest": "55c04376be3e42d48c08cf55",
-        "dimension": 4,
-        "dual_dimension": 12,
-        "dual_power_dimensions": [
-          12,
-          16,
-          16
-        ],
-        "dual_puncture_square_dimension_histogram": [
-          [
-            15,
-            16
-          ]
-        ],
-        "dual_shortening_square_dimension_histogram": [
-          [
-            15,
-            16
-          ]
-        ],
-        "length": 16,
-        "primal_power_dimensions": [
-          4,
-          10,
-          11
-        ],
-        "puncture_square_dimension_histogram": [
-          [
-            9,
-            3
-          ],
-          [
-            10,
-            13
-          ]
-        ],
-        "shortening_square_dimension_histogram": [
-          [
-            6,
-            16
-          ]
-        ]
-      },
-      "signature_b": {
-        "coordinate_filtration_digest": "55c04376be3e42d48c08cf55",
-        "dimension": 4,
-        "dual_dimension": 12,
-        "dual_power_dimensions": [
-          12,
-          16,
-          16
-        ],
-        "dual_puncture_square_dimension_histogram": [
-          [
-            15,
-            16
-          ]
-        ],
-        "dual_shortening_square_dimension_histogram": [
-          [
-            15,
-            16
-          ]
-        ],
-        "length": 16,
-        "primal_power_dimensions": [
-          4,
-          10,
-          11
-        ],
-        "puncture_square_dimension_histogram": [
-          [
-            9,
-            3
-          ],
-          [
-            10,
-            13
-          ]
-        ],
-        "shortening_square_dimension_histogram": [
-          [
-            6,
-            16
-          ]
-        ]
-      },
-      "source": "goppa_code_search",
-      "status": "equivalent-control-schur-preserved"
-    },
-    {
-      "distinguishing_invariants": [],
-      "id": "SCHUR-goppa_code_search-goppa-m4-t3-collision-4-prior-0",
-      "interpretation": "The Schur filtration is preserved on a known equivalent control.",
-      "known_equivalent": true,
-      "row_family": "goppa-code-family",
-      "row_id": "goppa-family-goppa-m4-t3",
-      "signature_a": {
-        "coordinate_filtration_digest": "55c04376be3e42d48c08cf55",
-        "dimension": 4,
-        "dual_dimension": 12,
-        "dual_power_dimensions": [
-          12,
-          16,
-          16
-        ],
-        "dual_puncture_square_dimension_histogram": [
-          [
-            15,
-            16
-          ]
-        ],
-        "dual_shortening_square_dimension_histogram": [
-          [
-            15,
-            16
-          ]
-        ],
-        "length": 16,
-        "primal_power_dimensions": [
-          4,
-          10,
-          11
-        ],
-        "puncture_square_dimension_histogram": [
-          [
-            9,
-            3
-          ],
-          [
-            10,
-            13
-          ]
-        ],
-        "shortening_square_dimension_histogram": [
-          [
-            6,
-            16
-          ]
-        ]
-      },
-      "signature_b": {
-        "coordinate_filtration_digest": "55c04376be3e42d48c08cf55",
-        "dimension": 4,
-        "dual_dimension": 12,
-        "dual_power_dimensions": [
-          12,
-          16,
-          16
-        ],
-        "dual_puncture_square_dimension_histogram": [
-          [
-            15,
-            16
-          ]
-        ],
-        "dual_shortening_square_dimension_histogram": [
-          [
-            15,
-            16
-          ]
-        ],
-        "length": 16,
-        "primal_power_dimensions": [
-          4,
-          10,
-          11
-        ],
-        "puncture_square_dimension_histogram": [
-          [
-            9,
-            3
-          ],
-          [
-            10,
-            13
-          ]
-        ],
-        "shortening_square_dimension_histogram": [
-          [
-            6,
-            16
-          ]
-        ]
-      },
-      "source": "goppa_code_search",
-      "status": "equivalent-control-schur-preserved"
-    },
-    {
-      "distinguishing_invariants": [],
-      "id": "SCHUR-goppa_code_search-goppa-m4-t3-semilinear-control",
-      "interpretation": "The Schur filtration is preserved on a known equivalent control.",
-      "known_equivalent": true,
-      "row_family": "goppa-code-family",
-      "row_id": "goppa-family-goppa-m4-t3",
-      "signature_a": {
-        "coordinate_filtration_digest": "55c04376be3e42d48c08cf55",
-        "dimension": 4,
-        "dual_dimension": 12,
-        "dual_power_dimensions": [
-          12,
-          16,
-          16
-        ],
-        "dual_puncture_square_dimension_histogram": [
-          [
-            15,
-            16
-          ]
-        ],
-        "dual_shortening_square_dimension_histogram": [
-          [
-            15,
-            16
-          ]
-        ],
-        "length": 16,
-        "primal_power_dimensions": [
-          4,
-          10,
-          11
-        ],
-        "puncture_square_dimension_histogram": [
-          [
-            9,
-            3
-          ],
-          [
-            10,
-            13
-          ]
-        ],
-        "shortening_square_dimension_histogram": [
-          [
-            6,
-            16
-          ]
-        ]
-      },
-      "signature_b": {
-        "coordinate_filtration_digest": "55c04376be3e42d48c08cf55",
-        "dimension": 4,
-        "dual_dimension": 12,
-        "dual_power_dimensions": [
-          12,
-          16,
-          16
-        ],
-        "dual_puncture_square_dimension_histogram": [
-          [
-            15,
-            16
-          ]
-        ],
-        "dual_shortening_square_dimension_histogram": [
-          [
-            15,
-            16
-          ]
-        ],
-        "length": 16,
-        "primal_power_dimensions": [
-          4,
-          10,
-          11
-        ],
-        "puncture_square_dimension_histogram": [
-          [
-            9,
-            3
-          ],
-          [
-            10,
-            13
-          ]
-        ],
-        "shortening_square_dimension_histogram": [
-          [
-            6,
-            16
-          ]
-        ]
-      },
-      "source": "goppa_code_search",
-      "status": "equivalent-control-schur-preserved"
-    },
-    {
-      "distinguishing_invariants": [],
       "id": "SCHUR-tanner_code_search-tanner-10-5-dv2-dc4-collision-1-prior-0",
       "interpretation": "The Schur filtration is preserved on a known equivalent control.",
       "known_equivalent": true,
@@ -5628,32 +5128,36 @@
       "row_family": "tanner-ldpc-family",
       "row_id": "tanner-family-tanner-10-5-dv2-dc4",
       "signature_a": {
-        "coordinate_filtration_digest": "195f5127f67065c4e6e98c61",
+        "coordinate_filtration_digest": "d4705a95b91e1832517b620a",
         "dimension": 6,
         "dual_dimension": 4,
         "dual_power_dimensions": [
           4,
-          8,
-          8
+          7,
+          7
         ],
         "dual_puncture_square_dimension_histogram": [
           [
-            7,
-            6
+            6,
+            4
           ],
           [
-            8,
-            4
+            7,
+            6
           ]
         ],
         "dual_shortening_square_dimension_histogram": [
+          [
+            4,
+            2
+          ],
           [
             5,
             4
           ],
           [
             6,
-            6
+            4
           ]
         ],
         "length": 10,
@@ -5676,32 +5180,36 @@
         ]
       },
       "signature_b": {
-        "coordinate_filtration_digest": "195f5127f67065c4e6e98c61",
+        "coordinate_filtration_digest": "d4705a95b91e1832517b620a",
         "dimension": 6,
         "dual_dimension": 4,
         "dual_power_dimensions": [
           4,
-          8,
-          8
+          7,
+          7
         ],
         "dual_puncture_square_dimension_histogram": [
           [
-            7,
-            6
+            6,
+            4
           ],
           [
-            8,
-            4
+            7,
+            6
           ]
         ],
         "dual_shortening_square_dimension_histogram": [
+          [
+            4,
+            2
+          ],
           [
             5,
             4
           ],
           [
             6,
-            6
+            4
           ]
         ],
         "length": 10,
@@ -5728,7 +5236,7 @@
     },
     {
       "distinguishing_invariants": [],
-      "id": "SCHUR-tanner_code_search-tanner-10-5-dv2-dc4-collision-3-prior-1",
+      "id": "SCHUR-tanner_code_search-tanner-10-5-dv2-dc4-collision-3-prior-0",
       "interpretation": "The Schur filtration is preserved on a known equivalent control.",
       "known_equivalent": true,
       "row_family": "tanner-ldpc-family",
@@ -5834,7 +5342,7 @@
     },
     {
       "distinguishing_invariants": [],
-      "id": "SCHUR-tanner_code_search-tanner-10-5-dv2-dc4-collision-4-prior-0",
+      "id": "SCHUR-tanner_code_search-tanner-10-5-dv2-dc4-collision-4-prior-1",
       "interpretation": "The Schur filtration is preserved on a known equivalent control.",
       "known_equivalent": true,
       "row_family": "tanner-ldpc-family",
@@ -6394,36 +5902,40 @@
       "row_family": "tanner-ldpc-family",
       "row_id": "tanner-family-tanner-12-6-dv2-dc4",
       "signature_a": {
-        "coordinate_filtration_digest": "7d0e0af75662053b4d71894e",
+        "coordinate_filtration_digest": "8fca4332fa0caeb574ec047b",
         "dimension": 7,
         "dual_dimension": 5,
         "dual_power_dimensions": [
           5,
-          10,
-          10
+          11,
+          11
         ],
         "dual_puncture_square_dimension_histogram": [
           [
-            9,
-            8
+            10,
+            10
           ],
           [
-            10,
-            4
+            11,
+            2
           ]
         ],
         "dual_shortening_square_dimension_histogram": [
           [
             7,
-            3
+            2
           ],
           [
             8,
-            8
+            4
           ],
           [
             9,
-            1
+            4
+          ],
+          [
+            10,
+            2
           ]
         ],
         "length": 12,
@@ -6446,36 +5958,40 @@
         ]
       },
       "signature_b": {
-        "coordinate_filtration_digest": "7d0e0af75662053b4d71894e",
+        "coordinate_filtration_digest": "8fca4332fa0caeb574ec047b",
         "dimension": 7,
         "dual_dimension": 5,
         "dual_power_dimensions": [
           5,
-          10,
-          10
+          11,
+          11
         ],
         "dual_puncture_square_dimension_histogram": [
           [
-            9,
-            8
+            10,
+            10
           ],
           [
-            10,
-            4
+            11,
+            2
           ]
         ],
         "dual_shortening_square_dimension_histogram": [
           [
             7,
-            3
+            2
           ],
           [
             8,
-            8
+            4
           ],
           [
             9,
-            1
+            4
+          ],
+          [
+            10,
+            2
           ]
         ],
         "length": 12,
@@ -6508,36 +6024,40 @@
       "row_family": "tanner-ldpc-family",
       "row_id": "tanner-family-tanner-12-6-dv2-dc4",
       "signature_a": {
-        "coordinate_filtration_digest": "7d0e0af75662053b4d71894e",
+        "coordinate_filtration_digest": "8fca4332fa0caeb574ec047b",
         "dimension": 7,
         "dual_dimension": 5,
         "dual_power_dimensions": [
           5,
-          10,
-          10
+          11,
+          11
         ],
         "dual_puncture_square_dimension_histogram": [
           [
-            9,
-            8
+            10,
+            10
           ],
           [
-            10,
-            4
+            11,
+            2
           ]
         ],
         "dual_shortening_square_dimension_histogram": [
           [
             7,
-            3
+            2
           ],
           [
             8,
-            8
+            4
           ],
           [
             9,
-            1
+            4
+          ],
+          [
+            10,
+            2
           ]
         ],
         "length": 12,
@@ -6560,36 +6080,40 @@
         ]
       },
       "signature_b": {
-        "coordinate_filtration_digest": "7d0e0af75662053b4d71894e",
+        "coordinate_filtration_digest": "8fca4332fa0caeb574ec047b",
         "dimension": 7,
         "dual_dimension": 5,
         "dual_power_dimensions": [
           5,
-          10,
-          10
+          11,
+          11
         ],
         "dual_puncture_square_dimension_histogram": [
           [
-            9,
-            8
+            10,
+            10
           ],
           [
-            10,
-            4
+            11,
+            2
           ]
         ],
         "dual_shortening_square_dimension_histogram": [
           [
             7,
-            3
+            2
           ],
           [
             8,
-            8
+            4
           ],
           [
             9,
-            1
+            4
+          ],
+          [
+            10,
+            2
           ]
         ],
         "length": 12,
@@ -6622,27 +6146,23 @@
       "row_family": "tanner-ldpc-family",
       "row_id": "tanner-family-tanner-12-9-dv3-dc4",
       "signature_a": {
-        "coordinate_filtration_digest": "b409a1f1215180bc58750684",
+        "coordinate_filtration_digest": "af5d79ead04317a31b032de4",
         "dimension": 3,
         "dual_dimension": 9,
         "dual_power_dimensions": [
           9,
-          11,
-          11
+          12,
+          12
         ],
         "dual_puncture_square_dimension_histogram": [
           [
-            10,
-            10
-          ],
-          [
             11,
-            2
+            12
           ]
         ],
         "dual_shortening_square_dimension_histogram": [
           [
-            10,
+            11,
             12
           ]
         ],
@@ -6655,11 +6175,11 @@
         "puncture_square_dimension_histogram": [
           [
             3,
-            2
+            1
           ],
           [
             4,
-            10
+            11
           ]
         ],
         "shortening_square_dimension_histogram": [
@@ -6670,27 +6190,23 @@
         ]
       },
       "signature_b": {
-        "coordinate_filtration_digest": "b409a1f1215180bc58750684",
+        "coordinate_filtration_digest": "af5d79ead04317a31b032de4",
         "dimension": 3,
         "dual_dimension": 9,
         "dual_power_dimensions": [
           9,
-          11,
-          11
+          12,
+          12
         ],
         "dual_puncture_square_dimension_histogram": [
           [
-            10,
-            10
-          ],
-          [
             11,
-            2
+            12
           ]
         ],
         "dual_shortening_square_dimension_histogram": [
           [
-            10,
+            11,
             12
           ]
         ],
@@ -6703,11 +6219,11 @@
         "puncture_square_dimension_histogram": [
           [
             3,
-            2
+            1
           ],
           [
             4,
-            10
+            11
           ]
         ],
         "shortening_square_dimension_histogram": [
@@ -6728,6 +6244,202 @@
       "row_family": "tanner-ldpc-family",
       "row_id": "tanner-family-tanner-12-9-dv3-dc4",
       "signature_a": {
+        "coordinate_filtration_digest": "af5d79ead04317a31b032de4",
+        "dimension": 3,
+        "dual_dimension": 9,
+        "dual_power_dimensions": [
+          9,
+          12,
+          12
+        ],
+        "dual_puncture_square_dimension_histogram": [
+          [
+            11,
+            12
+          ]
+        ],
+        "dual_shortening_square_dimension_histogram": [
+          [
+            11,
+            12
+          ]
+        ],
+        "length": 12,
+        "primal_power_dimensions": [
+          3,
+          4,
+          4
+        ],
+        "puncture_square_dimension_histogram": [
+          [
+            3,
+            1
+          ],
+          [
+            4,
+            11
+          ]
+        ],
+        "shortening_square_dimension_histogram": [
+          [
+            3,
+            12
+          ]
+        ]
+      },
+      "signature_b": {
+        "coordinate_filtration_digest": "af5d79ead04317a31b032de4",
+        "dimension": 3,
+        "dual_dimension": 9,
+        "dual_power_dimensions": [
+          9,
+          12,
+          12
+        ],
+        "dual_puncture_square_dimension_histogram": [
+          [
+            11,
+            12
+          ]
+        ],
+        "dual_shortening_square_dimension_histogram": [
+          [
+            11,
+            12
+          ]
+        ],
+        "length": 12,
+        "primal_power_dimensions": [
+          3,
+          4,
+          4
+        ],
+        "puncture_square_dimension_histogram": [
+          [
+            3,
+            1
+          ],
+          [
+            4,
+            11
+          ]
+        ],
+        "shortening_square_dimension_histogram": [
+          [
+            3,
+            12
+          ]
+        ]
+      },
+      "source": "tanner_code_search",
+      "status": "equivalent-control-schur-preserved"
+    },
+    {
+      "distinguishing_invariants": [],
+      "id": "SCHUR-tanner_code_search-tanner-12-9-dv3-dc4-collision-3-prior-1",
+      "interpretation": "The Schur filtration is preserved on a known equivalent control.",
+      "known_equivalent": true,
+      "row_family": "tanner-ldpc-family",
+      "row_id": "tanner-family-tanner-12-9-dv3-dc4",
+      "signature_a": {
+        "coordinate_filtration_digest": "af5d79ead04317a31b032de4",
+        "dimension": 3,
+        "dual_dimension": 9,
+        "dual_power_dimensions": [
+          9,
+          12,
+          12
+        ],
+        "dual_puncture_square_dimension_histogram": [
+          [
+            11,
+            12
+          ]
+        ],
+        "dual_shortening_square_dimension_histogram": [
+          [
+            11,
+            12
+          ]
+        ],
+        "length": 12,
+        "primal_power_dimensions": [
+          3,
+          4,
+          4
+        ],
+        "puncture_square_dimension_histogram": [
+          [
+            3,
+            1
+          ],
+          [
+            4,
+            11
+          ]
+        ],
+        "shortening_square_dimension_histogram": [
+          [
+            3,
+            12
+          ]
+        ]
+      },
+      "signature_b": {
+        "coordinate_filtration_digest": "af5d79ead04317a31b032de4",
+        "dimension": 3,
+        "dual_dimension": 9,
+        "dual_power_dimensions": [
+          9,
+          12,
+          12
+        ],
+        "dual_puncture_square_dimension_histogram": [
+          [
+            11,
+            12
+          ]
+        ],
+        "dual_shortening_square_dimension_histogram": [
+          [
+            11,
+            12
+          ]
+        ],
+        "length": 12,
+        "primal_power_dimensions": [
+          3,
+          4,
+          4
+        ],
+        "puncture_square_dimension_histogram": [
+          [
+            3,
+            1
+          ],
+          [
+            4,
+            11
+          ]
+        ],
+        "shortening_square_dimension_histogram": [
+          [
+            3,
+            12
+          ]
+        ]
+      },
+      "source": "tanner_code_search",
+      "status": "equivalent-control-schur-preserved"
+    },
+    {
+      "distinguishing_invariants": [],
+      "id": "SCHUR-tanner_code_search-tanner-12-9-dv3-dc4-collision-4-prior-0",
+      "interpretation": "The Schur filtration is preserved on a known equivalent control.",
+      "known_equivalent": true,
+      "row_family": "tanner-ldpc-family",
+      "row_id": "tanner-family-tanner-12-9-dv3-dc4",
+      "signature_a": {
         "coordinate_filtration_digest": "587118eadf6963776e017018",
         "dimension": 3,
         "dual_dimension": 9,
@@ -6798,218 +6510,6 @@
           [
             4,
             12
-          ]
-        ],
-        "shortening_square_dimension_histogram": [
-          [
-            3,
-            12
-          ]
-        ]
-      },
-      "source": "tanner_code_search",
-      "status": "equivalent-control-schur-preserved"
-    },
-    {
-      "distinguishing_invariants": [],
-      "id": "SCHUR-tanner_code_search-tanner-12-9-dv3-dc4-collision-3-prior-0",
-      "interpretation": "The Schur filtration is preserved on a known equivalent control.",
-      "known_equivalent": true,
-      "row_family": "tanner-ldpc-family",
-      "row_id": "tanner-family-tanner-12-9-dv3-dc4",
-      "signature_a": {
-        "coordinate_filtration_digest": "b409a1f1215180bc58750684",
-        "dimension": 3,
-        "dual_dimension": 9,
-        "dual_power_dimensions": [
-          9,
-          11,
-          11
-        ],
-        "dual_puncture_square_dimension_histogram": [
-          [
-            10,
-            10
-          ],
-          [
-            11,
-            2
-          ]
-        ],
-        "dual_shortening_square_dimension_histogram": [
-          [
-            10,
-            12
-          ]
-        ],
-        "length": 12,
-        "primal_power_dimensions": [
-          3,
-          4,
-          4
-        ],
-        "puncture_square_dimension_histogram": [
-          [
-            3,
-            2
-          ],
-          [
-            4,
-            10
-          ]
-        ],
-        "shortening_square_dimension_histogram": [
-          [
-            3,
-            12
-          ]
-        ]
-      },
-      "signature_b": {
-        "coordinate_filtration_digest": "b409a1f1215180bc58750684",
-        "dimension": 3,
-        "dual_dimension": 9,
-        "dual_power_dimensions": [
-          9,
-          11,
-          11
-        ],
-        "dual_puncture_square_dimension_histogram": [
-          [
-            10,
-            10
-          ],
-          [
-            11,
-            2
-          ]
-        ],
-        "dual_shortening_square_dimension_histogram": [
-          [
-            10,
-            12
-          ]
-        ],
-        "length": 12,
-        "primal_power_dimensions": [
-          3,
-          4,
-          4
-        ],
-        "puncture_square_dimension_histogram": [
-          [
-            3,
-            2
-          ],
-          [
-            4,
-            10
-          ]
-        ],
-        "shortening_square_dimension_histogram": [
-          [
-            3,
-            12
-          ]
-        ]
-      },
-      "source": "tanner_code_search",
-      "status": "equivalent-control-schur-preserved"
-    },
-    {
-      "distinguishing_invariants": [],
-      "id": "SCHUR-tanner_code_search-tanner-12-9-dv3-dc4-collision-4-prior-1",
-      "interpretation": "The Schur filtration is preserved on a known equivalent control.",
-      "known_equivalent": true,
-      "row_family": "tanner-ldpc-family",
-      "row_id": "tanner-family-tanner-12-9-dv3-dc4",
-      "signature_a": {
-        "coordinate_filtration_digest": "b409a1f1215180bc58750684",
-        "dimension": 3,
-        "dual_dimension": 9,
-        "dual_power_dimensions": [
-          9,
-          11,
-          11
-        ],
-        "dual_puncture_square_dimension_histogram": [
-          [
-            10,
-            10
-          ],
-          [
-            11,
-            2
-          ]
-        ],
-        "dual_shortening_square_dimension_histogram": [
-          [
-            10,
-            12
-          ]
-        ],
-        "length": 12,
-        "primal_power_dimensions": [
-          3,
-          4,
-          4
-        ],
-        "puncture_square_dimension_histogram": [
-          [
-            3,
-            2
-          ],
-          [
-            4,
-            10
-          ]
-        ],
-        "shortening_square_dimension_histogram": [
-          [
-            3,
-            12
-          ]
-        ]
-      },
-      "signature_b": {
-        "coordinate_filtration_digest": "b409a1f1215180bc58750684",
-        "dimension": 3,
-        "dual_dimension": 9,
-        "dual_power_dimensions": [
-          9,
-          11,
-          11
-        ],
-        "dual_puncture_square_dimension_histogram": [
-          [
-            10,
-            10
-          ],
-          [
-            11,
-            2
-          ]
-        ],
-        "dual_shortening_square_dimension_histogram": [
-          [
-            10,
-            12
-          ]
-        ],
-        "length": 12,
-        "primal_power_dimensions": [
-          3,
-          4,
-          4
-        ],
-        "puncture_square_dimension_histogram": [
-          [
-            3,
-            2
-          ],
-          [
-            4,
-            10
           ]
         ],
         "shortening_square_dimension_histogram": [
@@ -7030,97 +6530,81 @@
       "row_family": "tanner-ldpc-family",
       "row_id": "tanner-family-tanner-12-9-dv3-dc4",
       "signature_a": {
-        "coordinate_filtration_digest": "35b0fbfb32e3a39ba4cb942a",
-        "dimension": 4,
-        "dual_dimension": 8,
+        "coordinate_filtration_digest": "587118eadf6963776e017018",
+        "dimension": 3,
+        "dual_dimension": 9,
         "dual_power_dimensions": [
-          8,
-          10,
-          10
+          9,
+          12,
+          12
         ],
         "dual_puncture_square_dimension_histogram": [
           [
-            9,
-            8
-          ],
-          [
-            10,
-            4
+            11,
+            12
           ]
         ],
         "dual_shortening_square_dimension_histogram": [
           [
-            9,
+            11,
             12
           ]
         ],
         "length": 12,
         "primal_power_dimensions": [
+          3,
           4,
-          6,
-          6
+          4
         ],
         "puncture_square_dimension_histogram": [
           [
-            5,
-            4
-          ],
-          [
-            6,
-            8
+            4,
+            12
           ]
         ],
         "shortening_square_dimension_histogram": [
           [
-            5,
+            3,
             12
           ]
         ]
       },
       "signature_b": {
-        "coordinate_filtration_digest": "35b0fbfb32e3a39ba4cb942a",
-        "dimension": 4,
-        "dual_dimension": 8,
+        "coordinate_filtration_digest": "587118eadf6963776e017018",
+        "dimension": 3,
+        "dual_dimension": 9,
         "dual_power_dimensions": [
-          8,
-          10,
-          10
+          9,
+          12,
+          12
         ],
         "dual_puncture_square_dimension_histogram": [
           [
-            9,
-            8
-          ],
-          [
-            10,
-            4
+            11,
+            12
           ]
         ],
         "dual_shortening_square_dimension_histogram": [
           [
-            9,
+            11,
             12
           ]
         ],
         "length": 12,
         "primal_power_dimensions": [
+          3,
           4,
-          6,
-          6
+          4
         ],
         "puncture_square_dimension_histogram": [
           [
-            5,
-            4
-          ],
-          [
-            6,
-            8
+            4,
+            12
           ]
         ],
         "shortening_square_dimension_histogram": [
           [
-            5,
+            3,
             12
           ]
         ]
@@ -10326,7 +9810,7 @@
     },
     {
       "distinguishing_invariants": [],
-      "id": "SCHUR-projective_geometry_code_search-pg2-f2-k6-trial-1-0,1,2,3,5,6-0,1,2,4,5,6",
+      "id": "SCHUR-projective_geometry_code_search-pg2-f2-k6-trial-1-1,2,3,4,5,6-0,1,2,3,5,6",
       "interpretation": "The Schur filtration is preserved on a known equivalent control.",
       "known_equivalent": true,
       "row_family": "projective-geometry-code-family",
@@ -10416,7 +9900,7 @@
     },
     {
       "distinguishing_invariants": [],
-      "id": "SCHUR-projective_geometry_code_search-pg2-f2-k6-trial-2-0,1,2,3,4,6-0,1,2,3,5,6",
+      "id": "SCHUR-projective_geometry_code_search-pg2-f2-k6-trial-2-0,2,3,4,5,6-0,1,2,4,5,6",
       "interpretation": "The Schur filtration is preserved on a known equivalent control.",
       "known_equivalent": true,
       "row_family": "projective-geometry-code-family",
@@ -10506,7 +9990,7 @@
     },
     {
       "distinguishing_invariants": [],
-      "id": "SCHUR-projective_geometry_code_search-pg2-f2-k6-trial-3-0,2,3,4,5,6-1,2,3,4,5,6",
+      "id": "SCHUR-projective_geometry_code_search-pg2-f2-k6-trial-4-0,1,2,3,4,6-0,1,2,4,5,6",
       "interpretation": "The Schur filtration is preserved on a known equivalent control.",
       "known_equivalent": true,
       "row_family": "projective-geometry-code-family",
@@ -10596,7 +10080,97 @@
     },
     {
       "distinguishing_invariants": [],
-      "id": "SCHUR-projective_geometry_code_search-pg2-f3-k10-trial-1-0,1,2,4,6,7,9,10,11,12-0,1,2,3,4,5,8,9,11,12",
+      "id": "SCHUR-projective_geometry_code_search-pg2-f2-k6-trial-5-0,1,3,4,5,6-1,2,3,4,5,6",
+      "interpretation": "The Schur filtration is preserved on a known equivalent control.",
+      "known_equivalent": true,
+      "row_family": "projective-geometry-code-family",
+      "row_id": "pg-family-pg2-f2-k6",
+      "signature_a": {
+        "coordinate_filtration_digest": "13169773340919c41a53e773",
+        "dimension": 4,
+        "dual_dimension": 2,
+        "dual_power_dimensions": [
+          2,
+          3,
+          3
+        ],
+        "dual_puncture_square_dimension_histogram": [
+          [
+            3,
+            6
+          ]
+        ],
+        "dual_shortening_square_dimension_histogram": [
+          [
+            1,
+            6
+          ]
+        ],
+        "length": 6,
+        "primal_power_dimensions": [
+          4,
+          6,
+          6
+        ],
+        "puncture_square_dimension_histogram": [
+          [
+            5,
+            6
+          ]
+        ],
+        "shortening_square_dimension_histogram": [
+          [
+            5,
+            6
+          ]
+        ]
+      },
+      "signature_b": {
+        "coordinate_filtration_digest": "13169773340919c41a53e773",
+        "dimension": 4,
+        "dual_dimension": 2,
+        "dual_power_dimensions": [
+          2,
+          3,
+          3
+        ],
+        "dual_puncture_square_dimension_histogram": [
+          [
+            3,
+            6
+          ]
+        ],
+        "dual_shortening_square_dimension_histogram": [
+          [
+            1,
+            6
+          ]
+        ],
+        "length": 6,
+        "primal_power_dimensions": [
+          4,
+          6,
+          6
+        ],
+        "puncture_square_dimension_histogram": [
+          [
+            5,
+            6
+          ]
+        ],
+        "shortening_square_dimension_histogram": [
+          [
+            5,
+            6
+          ]
+        ]
+      },
+      "source": "projective_geometry_code_search",
+      "status": "equivalent-control-schur-preserved"
+    },
+    {
+      "distinguishing_invariants": [],
+      "id": "SCHUR-projective_geometry_code_search-pg2-f3-k10-trial-1-0,2,3,5,6,7,8,10,11,12-1,3,4,5,6,7,8,9,10,12",
       "interpretation": "The Schur filtration is preserved on a known equivalent control.",
       "known_equivalent": true,
       "row_family": "projective-geometry-code-family",
@@ -10686,7 +10260,7 @@
     },
     {
       "distinguishing_invariants": [],
-      "id": "SCHUR-projective_geometry_code_search-pg2-f3-k10-trial-2-0,1,2,3,4,5,6,7,9,10-0,1,2,4,5,6,7,8,10,11",
+      "id": "SCHUR-projective_geometry_code_search-pg2-f3-k10-trial-2-1,3,4,5,6,7,9,10,11,12-0,1,2,3,4,5,6,8,11,12",
       "interpretation": "The Schur filtration is preserved on a known equivalent control.",
       "known_equivalent": true,
       "row_family": "projective-geometry-code-family",
@@ -10776,7 +10350,7 @@
     },
     {
       "distinguishing_invariants": [],
-      "id": "SCHUR-projective_geometry_code_search-pg2-f3-k10-trial-3-0,1,2,3,5,6,7,8,9,12-0,1,2,4,6,7,9,10,11,12",
+      "id": "SCHUR-projective_geometry_code_search-pg2-f3-k10-trial-3-1,2,3,4,5,6,7,9,10,12-0,1,3,5,6,7,8,9,10,12",
       "interpretation": "The Schur filtration is preserved on a known equivalent control.",
       "known_equivalent": true,
       "row_family": "projective-geometry-code-family",
@@ -10866,7 +10440,7 @@
     },
     {
       "distinguishing_invariants": [],
-      "id": "SCHUR-projective_geometry_code_search-pg2-f3-k10-trial-4-0,2,3,4,5,6,8,10,11,12-1,3,4,5,6,7,9,10,11,12",
+      "id": "SCHUR-projective_geometry_code_search-pg2-f3-k10-trial-4-1,3,4,5,7,8,9,10,11,12-0,1,2,3,4,5,6,8,9,10",
       "interpretation": "The Schur filtration is preserved on a known equivalent control.",
       "known_equivalent": true,
       "row_family": "projective-geometry-code-family",
@@ -10956,5 +10530,5 @@
     }
   ],
   "status": "schur-filtration-proof-debt",
-  "summary": "Audited 111 code pair(s) with primal/dual Schur powers and coordinate puncture/shortening filtrations: 8 rejected, 95 controls, 8 proof-debt."
+  "summary": "Audited 107 code pair(s) with primal/dual Schur powers and coordinate puncture/shortening filtrations: 8 rejected, 91 controls, 8 proof-debt."
 }

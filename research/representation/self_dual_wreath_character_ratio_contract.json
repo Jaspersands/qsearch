@@ -1,0 +1,1496 @@
+{
+  "claim_gate": {
+    "character_bound_literature_linked": true,
+    "collision_free_growing_moment_contraction_proved": false,
+    "collision_free_polynomial_factor_norm_bound_proved": false,
+    "exact_unequal_character_factorization_proved": true,
+    "joint_short_word_anticoncentration_proved": false,
+    "natural_average_inverse_polynomial_conclusive_proved": false,
+    "polynomial_hidden_permutation_decoder_proved": false,
+    "reason": "The exact reduction to ordinary character ratios is proved and linked to sharp literature, but no joint short-word anti-concentration or all-n frame-norm theorem exists.",
+    "simultaneous_typical_shape_tail_proved": false,
+    "speedup_claim_allowed": false,
+    "structured_maximal_effect_dilation_proved": false
+  },
+  "created_at": "2026-07-30T06:40:22.064085+00:00",
+  "factorization_validations": [
+    {
+      "exact_factorization_verified": true,
+      "failed_element_count": 0,
+      "maximum_absolute_residual": 0.0,
+      "n": 2,
+      "unequal_irrep_count": 1,
+      "wreath_element_count": 8
+    },
+    {
+      "exact_factorization_verified": true,
+      "failed_element_count": 0,
+      "maximum_absolute_residual": 0.0,
+      "n": 3,
+      "unequal_irrep_count": 3,
+      "wreath_element_count": 72
+    },
+    {
+      "exact_factorization_verified": true,
+      "failed_element_count": 0,
+      "maximum_absolute_residual": 0.0,
+      "n": 4,
+      "unequal_irrep_count": 10,
+      "wreath_element_count": 1152
+    }
+  ],
+  "falsifiers_triggered": [
+    "Unequal physical characters reduce exactly to ordinary S_n character ratios.",
+    "Pointwise character decay does not count correlated short subset words.",
+    "Typical-shape concentration must hold simultaneously over 2k source draws.",
+    "Finite character constants and frame spectra are not an all-n norm theorem.",
+    "A norm theorem would still not implement a maximal-effect circuit or hidden-permutation decoder."
+  ],
+  "headline_metrics": {
+    "character_factorization_failure_count": 0,
+    "character_factorization_validation_count": 3,
+    "character_ratio_stress_record_count": 55,
+    "collision_free_growing_moment_contraction_count": 0,
+    "collision_free_polynomial_factor_norm_theorem_count": 0,
+    "exact_unequal_character_factorization_theorem_count": 1,
+    "joint_short_word_anticoncentration_theorem_count": 0,
+    "literature_linked_character_bound_count": 3,
+    "maximum_character_ratio_stress_n": 8,
+    "maximum_finite_feray_sniady_constant_proxy": 1.6868653306034984,
+    "natural_average_inverse_polynomial_conclusive_theorem_count": 0,
+    "polynomial_hidden_permutation_decoder_count": 0,
+    "simultaneous_typical_shape_tail_theorem_count": 0,
+    "structured_maximal_effect_dilation_count": 0
+  },
+  "literature": [
+    {
+      "id": "feray-sniady-character-bounds-2007",
+      "role": "pointwise normalized-character decay from diagram geometry and transposition length",
+      "url": "https://arxiv.org/abs/math/0701051"
+    },
+    {
+      "id": "lifshitz-marmor-hypercontractive-characters-2023",
+      "role": "character Lp bounds, Fourier coefficients, and product mixing",
+      "url": "https://arxiv.org/abs/2308.08694"
+    },
+    {
+      "id": "olesker-taylor-teyssier-thevenin-character-cutoff-2025",
+      "role": "sharp uniform character bounds and class-walk cutoff",
+      "url": "https://arxiv.org/abs/2503.12735"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "dependencies": [
+        "physical wreath induction formula"
+      ],
+      "falsifier": "Any complete small-group element has nonzero residual.",
+      "id": "CR-UNEQUAL-FACTORIZATION",
+      "statement": "Every unequal physical normalized character factors into two products of S_n normalized characters.",
+      "status": "proved"
+    },
+    {
+      "dependencies": [
+        "Plancherel limit-shape concentration",
+        "global source collision theorem"
+      ],
+      "falsifier": "The exceptional shape probability is not o(1/k).",
+      "id": "CR-SIMULTANEOUS-TYPICAL-SHAPE",
+      "statement": "All 2k collision-free Plancherel source diagrams satisfy a uniform row/column bound strong enough for character decay.",
+      "status": "blocked-tail-not-quantified-in-registry"
+    },
+    {
+      "dependencies": [
+        "feray-sniady-character-bounds-2007",
+        "lifshitz-marmor-hypercontractive-characters-2023",
+        "olesker-taylor-teyssier-thevenin-character-cutoff-2025"
+      ],
+      "falsifier": "A collision-free source family has a superpolynomial excess of low-length subset words with aligned character signs.",
+      "id": "CR-SHORT-WORD-ANTICONCENTRATION",
+      "statement": "Correlated bridge subset words with insufficient transposition length have total weighted contribution at most poly(n) times the mixed frame scale.",
+      "status": "open-critical"
+    },
+    {
+      "dependencies": [
+        "CR-SIMULTANEOUS-TYPICAL-SHAPE",
+        "CR-SHORT-WORD-ANTICONCENTRATION",
+        "trace-moment certificate"
+      ],
+      "falsifier": "Verified growing-n collision-free spectra have superpolynomial top-to-2^-k ratio.",
+      "id": "CR-COLLISION-FREE-NORM",
+      "statement": "Every collision-free typical tuple obeys ||B||<=poly(n)2^-k.",
+      "status": "open-critical"
+    }
+  ],
+  "scaling_requirements": [
+    {
+      "collision_free_polynomial_factor_norm_proved": false,
+      "copy_count": 3,
+      "joint_short_word_anticoncentration_proved": false,
+      "log2_exact_frame_scale_target": -2,
+      "log2_quadratic_polynomial_slack_target": 1.1699250014423122,
+      "n": 3,
+      "required_joint_short_word_tail_bound": "sum of collision-free subset-word terms not controlled by typical character decay <=poly(n) times the fully mixed term",
+      "required_moment_order": 19,
+      "simultaneous_typical_shape_tail_proved": false,
+      "source_partition_draw_count": 6,
+      "status": "character-bound-imported-short-word-anticoncentration-open"
+    },
+    {
+      "collision_free_polynomial_factor_norm_proved": false,
+      "copy_count": 5,
+      "joint_short_word_anticoncentration_proved": false,
+      "log2_exact_frame_scale_target": -4,
+      "log2_quadratic_polynomial_slack_target": 0.0,
+      "n": 4,
+      "required_joint_short_word_tail_bound": "sum of collision-free subset-word terms not controlled by typical character decay <=poly(n) times the fully mixed term",
+      "required_moment_order": 51,
+      "simultaneous_typical_shape_tail_proved": false,
+      "source_partition_draw_count": 10,
+      "status": "character-bound-imported-short-word-anticoncentration-open"
+    },
+    {
+      "collision_free_polynomial_factor_norm_proved": false,
+      "copy_count": 7,
+      "joint_short_word_anticoncentration_proved": false,
+      "log2_exact_frame_scale_target": -6,
+      "log2_quadratic_polynomial_slack_target": -1.3561438102252756,
+      "n": 5,
+      "required_joint_short_word_tail_bound": "sum of collision-free subset-word terms not controlled by typical character decay <=poly(n) times the fully mixed term",
+      "required_moment_order": 104,
+      "simultaneous_typical_shape_tail_proved": false,
+      "source_partition_draw_count": 14,
+      "status": "character-bound-imported-short-word-anticoncentration-open"
+    },
+    {
+      "collision_free_polynomial_factor_norm_proved": false,
+      "copy_count": 10,
+      "joint_short_word_anticoncentration_proved": false,
+      "log2_exact_frame_scale_target": -9,
+      "log2_quadratic_polynomial_slack_target": -3.830074998557688,
+      "n": 6,
+      "required_joint_short_word_tail_bound": "sum of collision-free subset-word terms not controlled by typical character decay <=poly(n) times the fully mixed term",
+      "required_moment_order": 200,
+      "simultaneous_typical_shape_tail_proved": false,
+      "source_partition_draw_count": 20,
+      "status": "character-bound-imported-short-word-anticoncentration-open"
+    },
+    {
+      "collision_free_polynomial_factor_norm_proved": false,
+      "copy_count": 16,
+      "joint_short_word_anticoncentration_proved": false,
+      "log2_exact_frame_scale_target": -15,
+      "log2_quadratic_polynomial_slack_target": -9.0,
+      "n": 8,
+      "required_joint_short_word_tail_bound": "sum of collision-free subset-word terms not controlled by typical character decay <=poly(n) times the fully mixed term",
+      "required_moment_order": 506,
+      "simultaneous_typical_shape_tail_proved": false,
+      "source_partition_draw_count": 32,
+      "status": "character-bound-imported-short-word-anticoncentration-open"
+    },
+    {
+      "collision_free_polynomial_factor_norm_proved": false,
+      "copy_count": 22,
+      "joint_short_word_anticoncentration_proved": false,
+      "log2_exact_frame_scale_target": -21,
+      "log2_quadratic_polynomial_slack_target": -14.356143810225277,
+      "n": 10,
+      "required_joint_short_word_tail_bound": "sum of collision-free subset-word terms not controlled by typical character decay <=poly(n) times the fully mixed term",
+      "required_moment_order": 981,
+      "simultaneous_typical_shape_tail_proved": false,
+      "source_partition_draw_count": 44,
+      "status": "character-bound-imported-short-word-anticoncentration-open"
+    },
+    {
+      "collision_free_polynomial_factor_norm_proved": false,
+      "copy_count": 45,
+      "joint_short_word_anticoncentration_proved": false,
+      "log2_exact_frame_scale_target": -44,
+      "log2_quadratic_polynomial_slack_target": -36.0,
+      "n": 16,
+      "required_joint_short_word_tail_bound": "sum of collision-free subset-word terms not controlled by typical character decay <=poly(n) times the fully mixed term",
+      "required_moment_order": 4028,
+      "simultaneous_typical_shape_tail_proved": false,
+      "source_partition_draw_count": 90,
+      "status": "character-bound-imported-short-word-anticoncentration-open"
+    },
+    {
+      "collision_free_polynomial_factor_norm_proved": false,
+      "copy_count": 80,
+      "joint_short_word_anticoncentration_proved": false,
+      "log2_exact_frame_scale_target": -79,
+      "log2_quadratic_polynomial_slack_target": -69.83007499855769,
+      "n": 24,
+      "required_joint_short_word_tail_bound": "sum of collision-free subset-word terms not controlled by typical character decay <=poly(n) times the fully mixed term",
+      "required_moment_order": 12727,
+      "simultaneous_typical_shape_tail_proved": false,
+      "source_partition_draw_count": 160,
+      "status": "character-bound-imported-short-word-anticoncentration-open"
+    },
+    {
+      "collision_free_polynomial_factor_norm_proved": false,
+      "copy_count": 118,
+      "joint_short_word_anticoncentration_proved": false,
+      "log2_exact_frame_scale_target": -117,
+      "log2_quadratic_polynomial_slack_target": -107.0,
+      "n": 32,
+      "required_joint_short_word_tail_bound": "sum of collision-free subset-word terms not controlled by typical character decay <=poly(n) times the fully mixed term",
+      "required_moment_order": 27887,
+      "simultaneous_typical_shape_tail_proved": false,
+      "source_partition_draw_count": 236,
+      "status": "character-bound-imported-short-word-anticoncentration-open"
+    },
+    {
+      "collision_free_polynomial_factor_norm_proved": false,
+      "copy_count": 203,
+      "joint_short_word_anticoncentration_proved": false,
+      "log2_exact_frame_scale_target": -202,
+      "log2_quadratic_polynomial_slack_target": -190.83007499855768,
+      "n": 48,
+      "required_joint_short_word_tail_bound": "sum of collision-free subset-word terms not controlled by typical character decay <=poly(n) times the fully mixed term",
+      "required_moment_order": 82601,
+      "simultaneous_typical_shape_tail_proved": false,
+      "source_partition_draw_count": 406,
+      "status": "character-bound-imported-short-word-anticoncentration-open"
+    },
+    {
+      "collision_free_polynomial_factor_norm_proved": false,
+      "copy_count": 296,
+      "joint_short_word_anticoncentration_proved": false,
+      "log2_exact_frame_scale_target": -295,
+      "log2_quadratic_polynomial_slack_target": -283.0,
+      "n": 64,
+      "required_joint_short_word_tail_bound": "sum of collision-free subset-word terms not controlled by typical character decay <=poly(n) times the fully mixed term",
+      "required_moment_order": 175526,
+      "simultaneous_typical_shape_tail_proved": false,
+      "source_partition_draw_count": 592,
+      "status": "character-bound-imported-short-word-anticoncentration-open"
+    }
+  ],
+  "status": "character-ratio-contract-formalized-short-word-anticoncentration-open",
+  "stress_records": [
+    {
+      "column_count": 5,
+      "dimension": 1,
+      "finite_constant_probe_only": true,
+      "maximizing_cycle_type": [
+        5
+      ],
+      "maximum_nonidentity_character_ratio": 1.0,
+      "maximum_required_feray_sniady_constant_proxy": 1.0,
+      "n": 5,
+      "partition": [
+        5
+      ],
+      "row_count": 1,
+      "status": "finite-character-ratio-constant-stress"
+    },
+    {
+      "column_count": 4,
+      "dimension": 4,
+      "finite_constant_probe_only": true,
+      "maximizing_cycle_type": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "maximum_nonidentity_character_ratio": 0.5,
+      "maximum_required_feray_sniady_constant_proxy": 0.8838834764831844,
+      "n": 5,
+      "partition": [
+        4,
+        1
+      ],
+      "row_count": 2,
+      "status": "finite-character-ratio-constant-stress"
+    },
+    {
+      "column_count": 3,
+      "dimension": 5,
+      "finite_constant_probe_only": true,
+      "maximizing_cycle_type": [
+        4,
+        1
+      ],
+      "maximum_nonidentity_character_ratio": 0.2,
+      "maximum_required_feray_sniady_constant_proxy": 0.9746725794042888,
+      "n": 5,
+      "partition": [
+        3,
+        2
+      ],
+      "row_count": 2,
+      "status": "finite-character-ratio-constant-stress"
+    },
+    {
+      "column_count": 3,
+      "dimension": 6,
+      "finite_constant_probe_only": true,
+      "maximizing_cycle_type": [
+        2,
+        2,
+        1
+      ],
+      "maximum_nonidentity_character_ratio": 0.3333333333333333,
+      "maximum_required_feray_sniady_constant_proxy": 0.9622504486493763,
+      "n": 5,
+      "partition": [
+        3,
+        1,
+        1
+      ],
+      "row_count": 3,
+      "status": "finite-character-ratio-constant-stress"
+    },
+    {
+      "column_count": 2,
+      "dimension": 5,
+      "finite_constant_probe_only": true,
+      "maximizing_cycle_type": [
+        4,
+        1
+      ],
+      "maximum_nonidentity_character_ratio": 0.2,
+      "maximum_required_feray_sniady_constant_proxy": 0.9746725794042888,
+      "n": 5,
+      "partition": [
+        2,
+        2,
+        1
+      ],
+      "row_count": 3,
+      "status": "finite-character-ratio-constant-stress"
+    },
+    {
+      "column_count": 2,
+      "dimension": 4,
+      "finite_constant_probe_only": true,
+      "maximizing_cycle_type": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "maximum_nonidentity_character_ratio": 0.5,
+      "maximum_required_feray_sniady_constant_proxy": 0.8838834764831844,
+      "n": 5,
+      "partition": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "row_count": 4,
+      "status": "finite-character-ratio-constant-stress"
+    },
+    {
+      "column_count": 1,
+      "dimension": 1,
+      "finite_constant_probe_only": true,
+      "maximizing_cycle_type": [
+        5
+      ],
+      "maximum_nonidentity_character_ratio": 1.0,
+      "maximum_required_feray_sniady_constant_proxy": 1.0,
+      "n": 5,
+      "partition": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "row_count": 5,
+      "status": "finite-character-ratio-constant-stress"
+    },
+    {
+      "column_count": 6,
+      "dimension": 1,
+      "finite_constant_probe_only": true,
+      "maximizing_cycle_type": [
+        6
+      ],
+      "maximum_nonidentity_character_ratio": 1.0,
+      "maximum_required_feray_sniady_constant_proxy": 1.0,
+      "n": 6,
+      "partition": [
+        6
+      ],
+      "row_count": 1,
+      "status": "finite-character-ratio-constant-stress"
+    },
+    {
+      "column_count": 5,
+      "dimension": 5,
+      "finite_constant_probe_only": true,
+      "maximizing_cycle_type": [
+        2,
+        1,
+        1,
+        1,
+        1
+      ],
+      "maximum_nonidentity_character_ratio": 0.6,
+      "maximum_required_feray_sniady_constant_proxy": 0.8697355964132346,
+      "n": 6,
+      "partition": [
+        5,
+        1
+      ],
+      "row_count": 2,
+      "status": "finite-character-ratio-constant-stress"
+    },
+    {
+      "column_count": 4,
+      "dimension": 9,
+      "finite_constant_probe_only": true,
+      "maximizing_cycle_type": [
+        2,
+        2,
+        2
+      ],
+      "maximum_nonidentity_character_ratio": 0.3333333333333333,
+      "maximum_required_feray_sniady_constant_proxy": 1.040041911525952,
+      "n": 6,
+      "partition": [
+        4,
+        2
+      ],
+      "row_count": 2,
+      "status": "finite-character-ratio-constant-stress"
+    },
+    {
+      "column_count": 4,
+      "dimension": 10,
+      "finite_constant_probe_only": true,
+      "maximizing_cycle_type": [
+        2,
+        2,
+        2
+      ],
+      "maximum_nonidentity_character_ratio": 0.2,
+      "maximum_required_feray_sniady_constant_proxy": 0.8772053214638599,
+      "n": 6,
+      "partition": [
+        4,
+        1,
+        1
+      ],
+      "row_count": 3,
+      "status": "finite-character-ratio-constant-stress"
+    },
+    {
+      "column_count": 3,
+      "dimension": 5,
+      "finite_constant_probe_only": true,
+      "maximizing_cycle_type": [
+        2,
+        2,
+        2
+      ],
+      "maximum_nonidentity_character_ratio": 0.6,
+      "maximum_required_feray_sniady_constant_proxy": 1.6868653306034984,
+      "n": 6,
+      "partition": [
+        3,
+        3
+      ],
+      "row_count": 2,
+      "status": "finite-character-ratio-constant-stress"
+    },
+    {
+      "column_count": 3,
+      "dimension": 16,
+      "finite_constant_probe_only": true,
+      "maximizing_cycle_type": [
+        3,
+        3
+      ],
+      "maximum_nonidentity_character_ratio": 0.125,
+      "maximum_required_feray_sniady_constant_proxy": 0.8919053362520408,
+      "n": 6,
+      "partition": [
+        3,
+        2,
+        1
+      ],
+      "row_count": 3,
+      "status": "finite-character-ratio-constant-stress"
+    },
+    {
+      "column_count": 3,
+      "dimension": 10,
+      "finite_constant_probe_only": true,
+      "maximizing_cycle_type": [
+        2,
+        2,
+        2
+      ],
+      "maximum_nonidentity_character_ratio": 0.2,
+      "maximum_required_feray_sniady_constant_proxy": 0.8772053214638599,
+      "n": 6,
+      "partition": [
+        3,
+        1,
+        1,
+        1
+      ],
+      "row_count": 4,
+      "status": "finite-character-ratio-constant-stress"
+    },
+    {
+      "column_count": 2,
+      "dimension": 5,
+      "finite_constant_probe_only": true,
+      "maximizing_cycle_type": [
+        2,
+        2,
+        2
+      ],
+      "maximum_nonidentity_character_ratio": 0.6,
+      "maximum_required_feray_sniady_constant_proxy": 1.6868653306034984,
+      "n": 6,
+      "partition": [
+        2,
+        2,
+        2
+      ],
+      "row_count": 3,
+      "status": "finite-character-ratio-constant-stress"
+    },
+    {
+      "column_count": 2,
+      "dimension": 9,
+      "finite_constant_probe_only": true,
+      "maximizing_cycle_type": [
+        2,
+        2,
+        2
+      ],
+      "maximum_nonidentity_character_ratio": 0.3333333333333333,
+      "maximum_required_feray_sniady_constant_proxy": 1.040041911525952,
+      "n": 6,
+      "partition": [
+        2,
+        2,
+        1,
+        1
+      ],
+      "row_count": 4,
+      "status": "finite-character-ratio-constant-stress"
+    },
+    {
+      "column_count": 2,
+      "dimension": 5,
+      "finite_constant_probe_only": true,
+      "maximizing_cycle_type": [
+        2,
+        1,
+        1,
+        1,
+        1
+      ],
+      "maximum_nonidentity_character_ratio": 0.6,
+      "maximum_required_feray_sniady_constant_proxy": 0.8697355964132346,
+      "n": 6,
+      "partition": [
+        2,
+        1,
+        1,
+        1,
+        1
+      ],
+      "row_count": 5,
+      "status": "finite-character-ratio-constant-stress"
+    },
+    {
+      "column_count": 1,
+      "dimension": 1,
+      "finite_constant_probe_only": true,
+      "maximizing_cycle_type": [
+        6
+      ],
+      "maximum_nonidentity_character_ratio": 1.0,
+      "maximum_required_feray_sniady_constant_proxy": 1.0,
+      "n": 6,
+      "partition": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "row_count": 6,
+      "status": "finite-character-ratio-constant-stress"
+    },
+    {
+      "column_count": 7,
+      "dimension": 1,
+      "finite_constant_probe_only": true,
+      "maximizing_cycle_type": [
+        7
+      ],
+      "maximum_nonidentity_character_ratio": 1.0,
+      "maximum_required_feray_sniady_constant_proxy": 1.0,
+      "n": 7,
+      "partition": [
+        7
+      ],
+      "row_count": 1,
+      "status": "finite-character-ratio-constant-stress"
+    },
+    {
+      "column_count": 6,
+      "dimension": 6,
+      "finite_constant_probe_only": true,
+      "maximizing_cycle_type": [
+        2,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "maximum_nonidentity_character_ratio": 0.6666666666666666,
+      "maximum_required_feray_sniady_constant_proxy": 0.8654757715221361,
+      "n": 7,
+      "partition": [
+        6,
+        1
+      ],
+      "row_count": 2,
+      "status": "finite-character-ratio-constant-stress"
+    },
+    {
+      "column_count": 5,
+      "dimension": 14,
+      "finite_constant_probe_only": true,
+      "maximizing_cycle_type": [
+        2,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "maximum_nonidentity_character_ratio": 0.42857142857142855,
+      "maximum_required_feray_sniady_constant_proxy": 0.86070341413177,
+      "n": 7,
+      "partition": [
+        5,
+        2
+      ],
+      "row_count": 2,
+      "status": "finite-character-ratio-constant-stress"
+    },
+    {
+      "column_count": 5,
+      "dimension": 15,
+      "finite_constant_probe_only": true,
+      "maximizing_cycle_type": [
+        2,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "maximum_nonidentity_character_ratio": 0.3333333333333333,
+      "maximum_required_feray_sniady_constant_proxy": 0.8187249666996025,
+      "n": 7,
+      "partition": [
+        5,
+        1,
+        1
+      ],
+      "row_count": 3,
+      "status": "finite-character-ratio-constant-stress"
+    },
+    {
+      "column_count": 4,
+      "dimension": 14,
+      "finite_constant_probe_only": true,
+      "maximizing_cycle_type": [
+        2,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "maximum_nonidentity_character_ratio": 0.2857142857142857,
+      "maximum_required_feray_sniady_constant_proxy": 1.0758792676647126,
+      "n": 7,
+      "partition": [
+        4,
+        3
+      ],
+      "row_count": 2,
+      "status": "finite-character-ratio-constant-stress"
+    },
+    {
+      "column_count": 4,
+      "dimension": 35,
+      "finite_constant_probe_only": true,
+      "maximizing_cycle_type": [
+        2,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "maximum_nonidentity_character_ratio": 0.14285714285714285,
+      "maximum_required_feray_sniady_constant_proxy": 0.7194838295759095,
+      "n": 7,
+      "partition": [
+        4,
+        2,
+        1
+      ],
+      "row_count": 3,
+      "status": "finite-character-ratio-constant-stress"
+    },
+    {
+      "column_count": 4,
+      "dimension": 20,
+      "finite_constant_probe_only": true,
+      "maximizing_cycle_type": [
+        2,
+        2,
+        1,
+        1,
+        1
+      ],
+      "maximum_nonidentity_character_ratio": 0.2,
+      "maximum_required_feray_sniady_constant_proxy": 0.9840973190831109,
+      "n": 7,
+      "partition": [
+        4,
+        1,
+        1,
+        1
+      ],
+      "row_count": 4,
+      "status": "finite-character-ratio-constant-stress"
+    },
+    {
+      "column_count": 3,
+      "dimension": 21,
+      "finite_constant_probe_only": true,
+      "maximizing_cycle_type": [
+        3,
+        1,
+        1,
+        1,
+        1
+      ],
+      "maximum_nonidentity_character_ratio": 0.14285714285714285,
+      "maximum_required_feray_sniady_constant_proxy": 1.2197685700076573,
+      "n": 7,
+      "partition": [
+        3,
+        3,
+        1
+      ],
+      "row_count": 3,
+      "status": "finite-character-ratio-constant-stress"
+    },
+    {
+      "column_count": 3,
+      "dimension": 21,
+      "finite_constant_probe_only": true,
+      "maximizing_cycle_type": [
+        3,
+        1,
+        1,
+        1,
+        1
+      ],
+      "maximum_nonidentity_character_ratio": 0.14285714285714285,
+      "maximum_required_feray_sniady_constant_proxy": 1.2197685700076573,
+      "n": 7,
+      "partition": [
+        3,
+        2,
+        2
+      ],
+      "row_count": 3,
+      "status": "finite-character-ratio-constant-stress"
+    },
+    {
+      "column_count": 3,
+      "dimension": 35,
+      "finite_constant_probe_only": true,
+      "maximizing_cycle_type": [
+        2,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "maximum_nonidentity_character_ratio": 0.14285714285714285,
+      "maximum_required_feray_sniady_constant_proxy": 0.7194838295759095,
+      "n": 7,
+      "partition": [
+        3,
+        2,
+        1,
+        1
+      ],
+      "row_count": 4,
+      "status": "finite-character-ratio-constant-stress"
+    },
+    {
+      "column_count": 3,
+      "dimension": 15,
+      "finite_constant_probe_only": true,
+      "maximizing_cycle_type": [
+        2,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "maximum_nonidentity_character_ratio": 0.3333333333333333,
+      "maximum_required_feray_sniady_constant_proxy": 0.8187249666996025,
+      "n": 7,
+      "partition": [
+        3,
+        1,
+        1,
+        1,
+        1
+      ],
+      "row_count": 5,
+      "status": "finite-character-ratio-constant-stress"
+    },
+    {
+      "column_count": 2,
+      "dimension": 14,
+      "finite_constant_probe_only": true,
+      "maximizing_cycle_type": [
+        2,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "maximum_nonidentity_character_ratio": 0.2857142857142857,
+      "maximum_required_feray_sniady_constant_proxy": 1.0758792676647126,
+      "n": 7,
+      "partition": [
+        2,
+        2,
+        2,
+        1
+      ],
+      "row_count": 4,
+      "status": "finite-character-ratio-constant-stress"
+    },
+    {
+      "column_count": 2,
+      "dimension": 14,
+      "finite_constant_probe_only": true,
+      "maximizing_cycle_type": [
+        2,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "maximum_nonidentity_character_ratio": 0.42857142857142855,
+      "maximum_required_feray_sniady_constant_proxy": 0.86070341413177,
+      "n": 7,
+      "partition": [
+        2,
+        2,
+        1,
+        1,
+        1
+      ],
+      "row_count": 5,
+      "status": "finite-character-ratio-constant-stress"
+    },
+    {
+      "column_count": 2,
+      "dimension": 6,
+      "finite_constant_probe_only": true,
+      "maximizing_cycle_type": [
+        2,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "maximum_nonidentity_character_ratio": 0.6666666666666666,
+      "maximum_required_feray_sniady_constant_proxy": 0.8654757715221361,
+      "n": 7,
+      "partition": [
+        2,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "row_count": 6,
+      "status": "finite-character-ratio-constant-stress"
+    },
+    {
+      "column_count": 1,
+      "dimension": 1,
+      "finite_constant_probe_only": true,
+      "maximizing_cycle_type": [
+        7
+      ],
+      "maximum_nonidentity_character_ratio": 1.0,
+      "maximum_required_feray_sniady_constant_proxy": 1.0,
+      "n": 7,
+      "partition": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "row_count": 7,
+      "status": "finite-character-ratio-constant-stress"
+    },
+    {
+      "column_count": 8,
+      "dimension": 1,
+      "finite_constant_probe_only": true,
+      "maximizing_cycle_type": [
+        8
+      ],
+      "maximum_nonidentity_character_ratio": 1.0,
+      "maximum_required_feray_sniady_constant_proxy": 1.0,
+      "n": 8,
+      "partition": [
+        8
+      ],
+      "row_count": 1,
+      "status": "finite-character-ratio-constant-stress"
+    },
+    {
+      "column_count": 7,
+      "dimension": 7,
+      "finite_constant_probe_only": true,
+      "maximizing_cycle_type": [
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "maximum_nonidentity_character_ratio": 0.7142857142857143,
+      "maximum_required_feray_sniady_constant_proxy": 0.8654931909994893,
+      "n": 8,
+      "partition": [
+        7,
+        1
+      ],
+      "row_count": 2,
+      "status": "finite-character-ratio-constant-stress"
+    },
+    {
+      "column_count": 6,
+      "dimension": 20,
+      "finite_constant_probe_only": true,
+      "maximizing_cycle_type": [
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "maximum_nonidentity_character_ratio": 0.5,
+      "maximum_required_feray_sniady_constant_proxy": 0.8916537399685627,
+      "n": 8,
+      "partition": [
+        6,
+        2
+      ],
+      "row_count": 2,
+      "status": "finite-character-ratio-constant-stress"
+    },
+    {
+      "column_count": 6,
+      "dimension": 21,
+      "finite_constant_probe_only": true,
+      "maximizing_cycle_type": [
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "maximum_nonidentity_character_ratio": 0.42857142857142855,
+      "maximum_required_feray_sniady_constant_proxy": 0.8197175372683524,
+      "n": 8,
+      "partition": [
+        6,
+        1,
+        1
+      ],
+      "row_count": 3,
+      "status": "finite-character-ratio-constant-stress"
+    },
+    {
+      "column_count": 5,
+      "dimension": 28,
+      "finite_constant_probe_only": true,
+      "maximizing_cycle_type": [
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "maximum_nonidentity_character_ratio": 0.35714285714285715,
+      "maximum_required_feray_sniady_constant_proxy": 0.9836610447220229,
+      "n": 8,
+      "partition": [
+        5,
+        3
+      ],
+      "row_count": 2,
+      "status": "finite-character-ratio-constant-stress"
+    },
+    {
+      "column_count": 5,
+      "dimension": 64,
+      "finite_constant_probe_only": true,
+      "maximizing_cycle_type": [
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "maximum_nonidentity_character_ratio": 0.25,
+      "maximum_required_feray_sniady_constant_proxy": 0.8,
+      "n": 8,
+      "partition": [
+        5,
+        2,
+        1
+      ],
+      "row_count": 3,
+      "status": "finite-character-ratio-constant-stress"
+    },
+    {
+      "column_count": 5,
+      "dimension": 35,
+      "finite_constant_probe_only": true,
+      "maximizing_cycle_type": [
+        3,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "maximum_nonidentity_character_ratio": 0.14285714285714285,
+      "maximum_required_feray_sniady_constant_proxy": 0.9026354229153333,
+      "n": 8,
+      "partition": [
+        5,
+        1,
+        1,
+        1
+      ],
+      "row_count": 4,
+      "status": "finite-character-ratio-constant-stress"
+    },
+    {
+      "column_count": 4,
+      "dimension": 14,
+      "finite_constant_probe_only": true,
+      "maximizing_cycle_type": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "maximum_nonidentity_character_ratio": 0.42857142857142855,
+      "maximum_required_feray_sniady_constant_proxy": 1.6182134231404424,
+      "n": 8,
+      "partition": [
+        4,
+        4
+      ],
+      "row_count": 2,
+      "status": "finite-character-ratio-constant-stress"
+    },
+    {
+      "column_count": 4,
+      "dimension": 70,
+      "finite_constant_probe_only": true,
+      "maximizing_cycle_type": [
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "maximum_nonidentity_character_ratio": 0.14285714285714285,
+      "maximum_required_feray_sniady_constant_proxy": 0.8222672338010394,
+      "n": 8,
+      "partition": [
+        4,
+        3,
+        1
+      ],
+      "row_count": 3,
+      "status": "finite-character-ratio-constant-stress"
+    },
+    {
+      "column_count": 4,
+      "dimension": 56,
+      "finite_constant_probe_only": true,
+      "maximizing_cycle_type": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "maximum_nonidentity_character_ratio": 0.14285714285714285,
+      "maximum_required_feray_sniady_constant_proxy": 1.2295763059025286,
+      "n": 8,
+      "partition": [
+        4,
+        2,
+        2
+      ],
+      "row_count": 3,
+      "status": "finite-character-ratio-constant-stress"
+    },
+    {
+      "column_count": 4,
+      "dimension": 90,
+      "finite_constant_probe_only": true,
+      "maximizing_cycle_type": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "maximum_nonidentity_character_ratio": 0.06666666666666667,
+      "maximum_required_feray_sniady_constant_proxy": 1.0162654963092295,
+      "n": 8,
+      "partition": [
+        4,
+        2,
+        1,
+        1
+      ],
+      "row_count": 4,
+      "status": "finite-character-ratio-constant-stress"
+    },
+    {
+      "column_count": 4,
+      "dimension": 35,
+      "finite_constant_probe_only": true,
+      "maximizing_cycle_type": [
+        3,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "maximum_nonidentity_character_ratio": 0.14285714285714285,
+      "maximum_required_feray_sniady_constant_proxy": 0.9026354229153333,
+      "n": 8,
+      "partition": [
+        4,
+        1,
+        1,
+        1,
+        1
+      ],
+      "row_count": 5,
+      "status": "finite-character-ratio-constant-stress"
+    },
+    {
+      "column_count": 3,
+      "dimension": 42,
+      "finite_constant_probe_only": true,
+      "maximizing_cycle_type": [
+        3,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "maximum_nonidentity_character_ratio": 0.14285714285714285,
+      "maximum_required_feray_sniady_constant_proxy": 1.2295763059025286,
+      "n": 8,
+      "partition": [
+        3,
+        3,
+        2
+      ],
+      "row_count": 3,
+      "status": "finite-character-ratio-constant-stress"
+    },
+    {
+      "column_count": 3,
+      "dimension": 56,
+      "finite_constant_probe_only": true,
+      "maximizing_cycle_type": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "maximum_nonidentity_character_ratio": 0.14285714285714285,
+      "maximum_required_feray_sniady_constant_proxy": 1.2295763059025286,
+      "n": 8,
+      "partition": [
+        3,
+        3,
+        1,
+        1
+      ],
+      "row_count": 4,
+      "status": "finite-character-ratio-constant-stress"
+    },
+    {
+      "column_count": 3,
+      "dimension": 70,
+      "finite_constant_probe_only": true,
+      "maximizing_cycle_type": [
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "maximum_nonidentity_character_ratio": 0.14285714285714285,
+      "maximum_required_feray_sniady_constant_proxy": 0.8222672338010394,
+      "n": 8,
+      "partition": [
+        3,
+        2,
+        2,
+        1
+      ],
+      "row_count": 4,
+      "status": "finite-character-ratio-constant-stress"
+    },
+    {
+      "column_count": 3,
+      "dimension": 64,
+      "finite_constant_probe_only": true,
+      "maximizing_cycle_type": [
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "maximum_nonidentity_character_ratio": 0.25,
+      "maximum_required_feray_sniady_constant_proxy": 0.8,
+      "n": 8,
+      "partition": [
+        3,
+        2,
+        1,
+        1,
+        1
+      ],
+      "row_count": 5,
+      "status": "finite-character-ratio-constant-stress"
+    },
+    {
+      "column_count": 3,
+      "dimension": 21,
+      "finite_constant_probe_only": true,
+      "maximizing_cycle_type": [
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "maximum_nonidentity_character_ratio": 0.42857142857142855,
+      "maximum_required_feray_sniady_constant_proxy": 0.8197175372683524,
+      "n": 8,
+      "partition": [
+        3,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "row_count": 6,
+      "status": "finite-character-ratio-constant-stress"
+    },
+    {
+      "column_count": 2,
+      "dimension": 14,
+      "finite_constant_probe_only": true,
+      "maximizing_cycle_type": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "maximum_nonidentity_character_ratio": 0.42857142857142855,
+      "maximum_required_feray_sniady_constant_proxy": 1.6182134231404424,
+      "n": 8,
+      "partition": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "row_count": 4,
+      "status": "finite-character-ratio-constant-stress"
+    },
+    {
+      "column_count": 2,
+      "dimension": 28,
+      "finite_constant_probe_only": true,
+      "maximizing_cycle_type": [
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "maximum_nonidentity_character_ratio": 0.35714285714285715,
+      "maximum_required_feray_sniady_constant_proxy": 0.9836610447220229,
+      "n": 8,
+      "partition": [
+        2,
+        2,
+        2,
+        1,
+        1
+      ],
+      "row_count": 5,
+      "status": "finite-character-ratio-constant-stress"
+    },
+    {
+      "column_count": 2,
+      "dimension": 20,
+      "finite_constant_probe_only": true,
+      "maximizing_cycle_type": [
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "maximum_nonidentity_character_ratio": 0.5,
+      "maximum_required_feray_sniady_constant_proxy": 0.8916537399685627,
+      "n": 8,
+      "partition": [
+        2,
+        2,
+        1,
+        1,
+        1,
+        1
+      ],
+      "row_count": 6,
+      "status": "finite-character-ratio-constant-stress"
+    },
+    {
+      "column_count": 2,
+      "dimension": 7,
+      "finite_constant_probe_only": true,
+      "maximizing_cycle_type": [
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "maximum_nonidentity_character_ratio": 0.7142857142857143,
+      "maximum_required_feray_sniady_constant_proxy": 0.8654931909994893,
+      "n": 8,
+      "partition": [
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "row_count": 7,
+      "status": "finite-character-ratio-constant-stress"
+    },
+    {
+      "column_count": 1,
+      "dimension": 1,
+      "finite_constant_probe_only": true,
+      "maximizing_cycle_type": [
+        8
+      ],
+      "maximum_nonidentity_character_ratio": 1.0,
+      "maximum_required_feray_sniady_constant_proxy": 1.0,
+      "n": 8,
+      "partition": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "row_count": 8,
+      "status": "finite-character-ratio-constant-stress"
+    }
+  ],
+  "summary": "Validated the unequal character-ratio factorization and linked 3 primary proof tools; the critical short-word anti-concentration and collision-free poly(n)2^-k norm theorems remain open.",
+  "theorem_contract": {
+    "feray_sniady_input": "|r_lambda(sigma)|<=[A max(rows/n,columns/n,|sigma|/n)]^|sigma|",
+    "moment_route": "expand Tr(B^m), factor every unequal character, split subset words by transposition length, and control the short-word exception jointly across k distinct source partitions",
+    "success_route": "combine the norm upper bound with a typical second-moment lower bound and the projector-sub-POVM moment certificate",
+    "sufficient_norm_target": "||B||<=poly(n)2^-k",
+    "unequal_character_factorization": "r_lam,mu(a,b,0)=(r_lam(a)r_mu(b)+r_mu(a)r_lam(b))/2"
+  }
+}

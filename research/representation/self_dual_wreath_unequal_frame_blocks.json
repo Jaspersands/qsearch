@@ -1,0 +1,1959 @@
+{
+  "claim_gate": {
+    "all_partition_tuple_blocks_constructed": false,
+    "all_s3_unequal_threshold_blocks_constructed": true,
+    "collective_spectra_can_be_nontrivial": true,
+    "mixed_physical_irrep_tuple_blocks_constructed": false,
+    "one_copy_zero_character_controls_verified": true,
+    "polynomial_frame_inverse_proved": false,
+    "polynomial_hidden_permutation_decoder_proved": false,
+    "polynomial_structured_frame_preconditioner_proved": false,
+    "reason": "Unequal-pair sectors have zero one-copy signal but explicit nontrivial collective spectra. The audit is finite and omits mixed irrep tuples, growing recurrences, and frame inversion.",
+    "speedup_claim_allowed": false,
+    "unequal_pair_induced_bridge_formula_constructed": true,
+    "uniform_all_n_spectral_recurrence_proved": false
+  },
+  "created_at": "2026-07-29T22:38:16.784672+00:00",
+  "falsifiers_triggered": [
+    "Zero one-copy bridge character does not imply a scalar correlated multi-copy frame block.",
+    "Every unequal-pair W_3 irrep has an explicit information-threshold block.",
+    "Finite unequal-pair spectra can have kernels and multiple eigenvalues.",
+    "Repeated copies of one physical irrep do not cover mixed physical-irrep tuples.",
+    "Finite dense diagonalization does not provide an all-n recurrence or coherent inverse."
+  ],
+  "headline_metrics": {
+    "all_partition_tuple_block_count": 0,
+    "all_s3_unequal_information_threshold_block_count": 3,
+    "collective_nontrivial_spectrum_count": 19,
+    "finite_bridge_involution_verification_count": 35,
+    "finite_kernel_block_count": 19,
+    "information_threshold_unequal_block_count": 3,
+    "maximum_block_dimension": 1024,
+    "maximum_copy_count": 3,
+    "maximum_distinct_eigenvalue_count": 9,
+    "maximum_n": 5,
+    "maximum_support_condition_number": 4.000000000000011,
+    "minimum_positive_eigenvalue": 0.1249999999999997,
+    "mixed_physical_irrep_tuple_block_count": 0,
+    "one_copy_zero_character_control_count": 16,
+    "polynomial_frame_inverse_count": 0,
+    "polynomial_hidden_permutation_decoder_count": 0,
+    "polynomial_structured_frame_preconditioner_count": 0,
+    "record_count": 35,
+    "uniform_all_n_spectral_recurrence_count": 0
+  },
+  "induced_representation_contract": {
+    "base_action": "(a,b;0) acts by rho_lambda(a) tensor rho_mu(b) and rho_mu(a) tensor rho_lambda(b) on the two summands",
+    "bridge_character": "Tr pi_(lambda,mu)(h_s)=0 for every s",
+    "collective_frame": "B_pi^(k)=(1/n!) sum_s [(I+pi(h_s))/2]^tensor k",
+    "one_copy_frame": "B_pi^(1)=I/2 exactly",
+    "space": "(V_lambda tensor V_mu) direct_sum (V_mu tensor V_lambda), lambda != mu",
+    "swap_action": "The nontrivial wreath swap exchanges the summands."
+  },
+  "records": [
+    {
+      "block_dimension": 4,
+      "bridge_count": 6,
+      "collective_spectrum_nontrivial": false,
+      "copy_count": 1,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.5,
+          "multiplicity": 4
+        }
+      ],
+      "finite_dense_diagonalization_only": true,
+      "induced_wreath_dimension": 4,
+      "information_threshold_copy_count": 3,
+      "kernel_dimension": 0,
+      "left_dimension": 1,
+      "left_partition": [
+        3
+      ],
+      "maximum_bridge_hermiticity_residual": 0.0,
+      "maximum_bridge_involution_residual": 2.220446049250313e-16,
+      "maximum_eigenvalue": 0.5,
+      "minimum_positive_eigenvalue": 0.5,
+      "mixed_physical_irrep_tuple": false,
+      "n": 3,
+      "one_copy_bridge_character_zero": true,
+      "one_copy_zero_character_average_residual": 0.0,
+      "reaches_information_threshold": false,
+      "right_dimension": 2,
+      "right_partition": [
+        2,
+        1
+      ],
+      "status": "one-copy-zero-character-control",
+      "support_condition_number": 1.0,
+      "support_rank": 4
+    },
+    {
+      "block_dimension": 16,
+      "bridge_count": 6,
+      "collective_spectrum_nontrivial": true,
+      "copy_count": 2,
+      "distinct_eigenvalue_count": 5,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 1
+        },
+        {
+          "eigenvalue": 0.125,
+          "multiplicity": 4
+        },
+        {
+          "eigenvalue": 0.25,
+          "multiplicity": 6
+        },
+        {
+          "eigenvalue": 0.375,
+          "multiplicity": 4
+        },
+        {
+          "eigenvalue": 0.5,
+          "multiplicity": 1
+        }
+      ],
+      "finite_dense_diagonalization_only": true,
+      "induced_wreath_dimension": 4,
+      "information_threshold_copy_count": 3,
+      "kernel_dimension": 1,
+      "left_dimension": 1,
+      "left_partition": [
+        3
+      ],
+      "maximum_bridge_hermiticity_residual": 0.0,
+      "maximum_bridge_involution_residual": 2.220446049250313e-16,
+      "maximum_eigenvalue": 0.5,
+      "minimum_positive_eigenvalue": 0.125,
+      "mixed_physical_irrep_tuple": false,
+      "n": 3,
+      "one_copy_bridge_character_zero": true,
+      "one_copy_zero_character_average_residual": 0.0,
+      "reaches_information_threshold": false,
+      "right_dimension": 2,
+      "right_partition": [
+        2,
+        1
+      ],
+      "status": "finite-unequal-collective-spectrum",
+      "support_condition_number": 4.0,
+      "support_rank": 15
+    },
+    {
+      "block_dimension": 64,
+      "bridge_count": 6,
+      "collective_spectrum_nontrivial": true,
+      "copy_count": 3,
+      "distinct_eigenvalue_count": 6,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": -0.0,
+          "multiplicity": 25
+        },
+        {
+          "eigenvalue": 0.125,
+          "multiplicity": 10
+        },
+        {
+          "eigenvalue": 0.1875,
+          "multiplicity": 20
+        },
+        {
+          "eigenvalue": 0.25,
+          "multiplicity": 1
+        },
+        {
+          "eigenvalue": 0.3125,
+          "multiplicity": 4
+        },
+        {
+          "eigenvalue": 0.375,
+          "multiplicity": 4
+        }
+      ],
+      "finite_dense_diagonalization_only": true,
+      "induced_wreath_dimension": 4,
+      "information_threshold_copy_count": 3,
+      "kernel_dimension": 25,
+      "left_dimension": 1,
+      "left_partition": [
+        3
+      ],
+      "maximum_bridge_hermiticity_residual": 0.0,
+      "maximum_bridge_involution_residual": 2.220446049250313e-16,
+      "maximum_eigenvalue": 0.37500000000000006,
+      "minimum_positive_eigenvalue": 0.1249999999999999,
+      "mixed_physical_irrep_tuple": false,
+      "n": 3,
+      "one_copy_bridge_character_zero": true,
+      "one_copy_zero_character_average_residual": 0.0,
+      "reaches_information_threshold": true,
+      "right_dimension": 2,
+      "right_partition": [
+        2,
+        1
+      ],
+      "status": "finite-unequal-information-threshold-collective-block",
+      "support_condition_number": 3.0000000000000027,
+      "support_rank": 39
+    },
+    {
+      "block_dimension": 2,
+      "bridge_count": 6,
+      "collective_spectrum_nontrivial": false,
+      "copy_count": 1,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.5,
+          "multiplicity": 2
+        }
+      ],
+      "finite_dense_diagonalization_only": true,
+      "induced_wreath_dimension": 2,
+      "information_threshold_copy_count": 3,
+      "kernel_dimension": 0,
+      "left_dimension": 1,
+      "left_partition": [
+        3
+      ],
+      "maximum_bridge_hermiticity_residual": 0.0,
+      "maximum_bridge_involution_residual": 0.0,
+      "maximum_eigenvalue": 0.5,
+      "minimum_positive_eigenvalue": 0.5,
+      "mixed_physical_irrep_tuple": false,
+      "n": 3,
+      "one_copy_bridge_character_zero": true,
+      "one_copy_zero_character_average_residual": 0.0,
+      "reaches_information_threshold": false,
+      "right_dimension": 1,
+      "right_partition": [
+        1,
+        1,
+        1
+      ],
+      "status": "one-copy-zero-character-control",
+      "support_condition_number": 1.0,
+      "support_rank": 2
+    },
+    {
+      "block_dimension": 4,
+      "bridge_count": 6,
+      "collective_spectrum_nontrivial": true,
+      "copy_count": 2,
+      "distinct_eigenvalue_count": 2,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 2
+        },
+        {
+          "eigenvalue": 0.5,
+          "multiplicity": 2
+        }
+      ],
+      "finite_dense_diagonalization_only": true,
+      "induced_wreath_dimension": 2,
+      "information_threshold_copy_count": 3,
+      "kernel_dimension": 2,
+      "left_dimension": 1,
+      "left_partition": [
+        3
+      ],
+      "maximum_bridge_hermiticity_residual": 0.0,
+      "maximum_bridge_involution_residual": 0.0,
+      "maximum_eigenvalue": 0.5,
+      "minimum_positive_eigenvalue": 0.5,
+      "mixed_physical_irrep_tuple": false,
+      "n": 3,
+      "one_copy_bridge_character_zero": true,
+      "one_copy_zero_character_average_residual": 0.0,
+      "reaches_information_threshold": false,
+      "right_dimension": 1,
+      "right_partition": [
+        1,
+        1,
+        1
+      ],
+      "status": "finite-unequal-collective-spectrum",
+      "support_condition_number": 1.0,
+      "support_rank": 2
+    },
+    {
+      "block_dimension": 8,
+      "bridge_count": 6,
+      "collective_spectrum_nontrivial": true,
+      "copy_count": 3,
+      "distinct_eigenvalue_count": 2,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": -0.0,
+          "multiplicity": 6
+        },
+        {
+          "eigenvalue": 0.5,
+          "multiplicity": 2
+        }
+      ],
+      "finite_dense_diagonalization_only": true,
+      "induced_wreath_dimension": 2,
+      "information_threshold_copy_count": 3,
+      "kernel_dimension": 6,
+      "left_dimension": 1,
+      "left_partition": [
+        3
+      ],
+      "maximum_bridge_hermiticity_residual": 0.0,
+      "maximum_bridge_involution_residual": 0.0,
+      "maximum_eigenvalue": 0.5000000000000001,
+      "minimum_positive_eigenvalue": 0.5,
+      "mixed_physical_irrep_tuple": false,
+      "n": 3,
+      "one_copy_bridge_character_zero": true,
+      "one_copy_zero_character_average_residual": 0.0,
+      "reaches_information_threshold": true,
+      "right_dimension": 1,
+      "right_partition": [
+        1,
+        1,
+        1
+      ],
+      "status": "finite-unequal-information-threshold-collective-block",
+      "support_condition_number": 1.0000000000000002,
+      "support_rank": 2
+    },
+    {
+      "block_dimension": 4,
+      "bridge_count": 6,
+      "collective_spectrum_nontrivial": false,
+      "copy_count": 1,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.5,
+          "multiplicity": 4
+        }
+      ],
+      "finite_dense_diagonalization_only": true,
+      "induced_wreath_dimension": 4,
+      "information_threshold_copy_count": 3,
+      "kernel_dimension": 0,
+      "left_dimension": 2,
+      "left_partition": [
+        2,
+        1
+      ],
+      "maximum_bridge_hermiticity_residual": 0.0,
+      "maximum_bridge_involution_residual": 2.220446049250313e-16,
+      "maximum_eigenvalue": 0.5,
+      "minimum_positive_eigenvalue": 0.5,
+      "mixed_physical_irrep_tuple": false,
+      "n": 3,
+      "one_copy_bridge_character_zero": true,
+      "one_copy_zero_character_average_residual": 0.0,
+      "reaches_information_threshold": false,
+      "right_dimension": 1,
+      "right_partition": [
+        1,
+        1,
+        1
+      ],
+      "status": "one-copy-zero-character-control",
+      "support_condition_number": 1.0,
+      "support_rank": 4
+    },
+    {
+      "block_dimension": 16,
+      "bridge_count": 6,
+      "collective_spectrum_nontrivial": true,
+      "copy_count": 2,
+      "distinct_eigenvalue_count": 5,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 1
+        },
+        {
+          "eigenvalue": 0.125,
+          "multiplicity": 4
+        },
+        {
+          "eigenvalue": 0.25,
+          "multiplicity": 6
+        },
+        {
+          "eigenvalue": 0.375,
+          "multiplicity": 4
+        },
+        {
+          "eigenvalue": 0.5,
+          "multiplicity": 1
+        }
+      ],
+      "finite_dense_diagonalization_only": true,
+      "induced_wreath_dimension": 4,
+      "information_threshold_copy_count": 3,
+      "kernel_dimension": 1,
+      "left_dimension": 2,
+      "left_partition": [
+        2,
+        1
+      ],
+      "maximum_bridge_hermiticity_residual": 0.0,
+      "maximum_bridge_involution_residual": 2.220446049250313e-16,
+      "maximum_eigenvalue": 0.5,
+      "minimum_positive_eigenvalue": 0.125,
+      "mixed_physical_irrep_tuple": false,
+      "n": 3,
+      "one_copy_bridge_character_zero": true,
+      "one_copy_zero_character_average_residual": 0.0,
+      "reaches_information_threshold": false,
+      "right_dimension": 1,
+      "right_partition": [
+        1,
+        1,
+        1
+      ],
+      "status": "finite-unequal-collective-spectrum",
+      "support_condition_number": 4.0,
+      "support_rank": 15
+    },
+    {
+      "block_dimension": 64,
+      "bridge_count": 6,
+      "collective_spectrum_nontrivial": true,
+      "copy_count": 3,
+      "distinct_eigenvalue_count": 6,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 25
+        },
+        {
+          "eigenvalue": 0.125,
+          "multiplicity": 10
+        },
+        {
+          "eigenvalue": 0.1875,
+          "multiplicity": 20
+        },
+        {
+          "eigenvalue": 0.25,
+          "multiplicity": 1
+        },
+        {
+          "eigenvalue": 0.3125,
+          "multiplicity": 4
+        },
+        {
+          "eigenvalue": 0.375,
+          "multiplicity": 4
+        }
+      ],
+      "finite_dense_diagonalization_only": true,
+      "induced_wreath_dimension": 4,
+      "information_threshold_copy_count": 3,
+      "kernel_dimension": 25,
+      "left_dimension": 2,
+      "left_partition": [
+        2,
+        1
+      ],
+      "maximum_bridge_hermiticity_residual": 0.0,
+      "maximum_bridge_involution_residual": 2.220446049250313e-16,
+      "maximum_eigenvalue": 0.37500000000000006,
+      "minimum_positive_eigenvalue": 0.12499999999999979,
+      "mixed_physical_irrep_tuple": false,
+      "n": 3,
+      "one_copy_bridge_character_zero": true,
+      "one_copy_zero_character_average_residual": 0.0,
+      "reaches_information_threshold": true,
+      "right_dimension": 1,
+      "right_partition": [
+        1,
+        1,
+        1
+      ],
+      "status": "finite-unequal-information-threshold-collective-block",
+      "support_condition_number": 3.0000000000000053,
+      "support_rank": 39
+    },
+    {
+      "block_dimension": 6,
+      "bridge_count": 24,
+      "collective_spectrum_nontrivial": false,
+      "copy_count": 1,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.5,
+          "multiplicity": 6
+        }
+      ],
+      "finite_dense_diagonalization_only": true,
+      "induced_wreath_dimension": 6,
+      "information_threshold_copy_count": 5,
+      "kernel_dimension": 0,
+      "left_dimension": 1,
+      "left_partition": [
+        4
+      ],
+      "maximum_bridge_hermiticity_residual": 0.0,
+      "maximum_bridge_involution_residual": 5.60815172204527e-16,
+      "maximum_eigenvalue": 0.5,
+      "minimum_positive_eigenvalue": 0.4999999999999997,
+      "mixed_physical_irrep_tuple": false,
+      "n": 4,
+      "one_copy_bridge_character_zero": true,
+      "one_copy_zero_character_average_residual": 5.82389613942588e-17,
+      "reaches_information_threshold": false,
+      "right_dimension": 3,
+      "right_partition": [
+        3,
+        1
+      ],
+      "status": "one-copy-zero-character-control",
+      "support_condition_number": 1.0000000000000007,
+      "support_rank": 6
+    },
+    {
+      "block_dimension": 36,
+      "bridge_count": 24,
+      "collective_spectrum_nontrivial": true,
+      "copy_count": 2,
+      "distinct_eigenvalue_count": 5,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 1
+        },
+        {
+          "eigenvalue": 0.166666666667,
+          "multiplicity": 9
+        },
+        {
+          "eigenvalue": 0.25,
+          "multiplicity": 16
+        },
+        {
+          "eigenvalue": 0.333333333333,
+          "multiplicity": 9
+        },
+        {
+          "eigenvalue": 0.5,
+          "multiplicity": 1
+        }
+      ],
+      "finite_dense_diagonalization_only": true,
+      "induced_wreath_dimension": 6,
+      "information_threshold_copy_count": 5,
+      "kernel_dimension": 1,
+      "left_dimension": 1,
+      "left_partition": [
+        4
+      ],
+      "maximum_bridge_hermiticity_residual": 0.0,
+      "maximum_bridge_involution_residual": 5.60815172204527e-16,
+      "maximum_eigenvalue": 0.4999999999999999,
+      "minimum_positive_eigenvalue": 0.1666666666666664,
+      "mixed_physical_irrep_tuple": false,
+      "n": 4,
+      "one_copy_bridge_character_zero": true,
+      "one_copy_zero_character_average_residual": 5.82389613942588e-17,
+      "reaches_information_threshold": false,
+      "right_dimension": 3,
+      "right_partition": [
+        3,
+        1
+      ],
+      "status": "finite-unequal-collective-spectrum",
+      "support_condition_number": 3.000000000000004,
+      "support_rank": 35
+    },
+    {
+      "block_dimension": 4,
+      "bridge_count": 24,
+      "collective_spectrum_nontrivial": false,
+      "copy_count": 1,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.5,
+          "multiplicity": 4
+        }
+      ],
+      "finite_dense_diagonalization_only": true,
+      "induced_wreath_dimension": 4,
+      "information_threshold_copy_count": 5,
+      "kernel_dimension": 0,
+      "left_dimension": 1,
+      "left_partition": [
+        4
+      ],
+      "maximum_bridge_hermiticity_residual": 0.0,
+      "maximum_bridge_involution_residual": 4.440892098500626e-16,
+      "maximum_eigenvalue": 0.5,
+      "minimum_positive_eigenvalue": 0.5,
+      "mixed_physical_irrep_tuple": false,
+      "n": 4,
+      "one_copy_bridge_character_zero": true,
+      "one_copy_zero_character_average_residual": 9.25185853854297e-18,
+      "reaches_information_threshold": false,
+      "right_dimension": 2,
+      "right_partition": [
+        2,
+        2
+      ],
+      "status": "one-copy-zero-character-control",
+      "support_condition_number": 1.0,
+      "support_rank": 4
+    },
+    {
+      "block_dimension": 16,
+      "bridge_count": 24,
+      "collective_spectrum_nontrivial": true,
+      "copy_count": 2,
+      "distinct_eigenvalue_count": 5,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 1
+        },
+        {
+          "eigenvalue": 0.125,
+          "multiplicity": 4
+        },
+        {
+          "eigenvalue": 0.25,
+          "multiplicity": 6
+        },
+        {
+          "eigenvalue": 0.375,
+          "multiplicity": 4
+        },
+        {
+          "eigenvalue": 0.5,
+          "multiplicity": 1
+        }
+      ],
+      "finite_dense_diagonalization_only": true,
+      "induced_wreath_dimension": 4,
+      "information_threshold_copy_count": 5,
+      "kernel_dimension": 1,
+      "left_dimension": 1,
+      "left_partition": [
+        4
+      ],
+      "maximum_bridge_hermiticity_residual": 0.0,
+      "maximum_bridge_involution_residual": 4.440892098500626e-16,
+      "maximum_eigenvalue": 0.5,
+      "minimum_positive_eigenvalue": 0.12499999999999997,
+      "mixed_physical_irrep_tuple": false,
+      "n": 4,
+      "one_copy_bridge_character_zero": true,
+      "one_copy_zero_character_average_residual": 9.25185853854297e-18,
+      "reaches_information_threshold": false,
+      "right_dimension": 2,
+      "right_partition": [
+        2,
+        2
+      ],
+      "status": "finite-unequal-collective-spectrum",
+      "support_condition_number": 4.000000000000001,
+      "support_rank": 15
+    },
+    {
+      "block_dimension": 6,
+      "bridge_count": 24,
+      "collective_spectrum_nontrivial": false,
+      "copy_count": 1,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.5,
+          "multiplicity": 6
+        }
+      ],
+      "finite_dense_diagonalization_only": true,
+      "induced_wreath_dimension": 6,
+      "information_threshold_copy_count": 5,
+      "kernel_dimension": 0,
+      "left_dimension": 1,
+      "left_partition": [
+        4
+      ],
+      "maximum_bridge_hermiticity_residual": 0.0,
+      "maximum_bridge_involution_residual": 4.982207735301566e-16,
+      "maximum_eigenvalue": 0.5000000000000007,
+      "minimum_positive_eigenvalue": 0.49999999999999983,
+      "mixed_physical_irrep_tuple": false,
+      "n": 4,
+      "one_copy_bridge_character_zero": true,
+      "one_copy_zero_character_average_residual": 9.813077866773595e-18,
+      "reaches_information_threshold": false,
+      "right_dimension": 3,
+      "right_partition": [
+        2,
+        1,
+        1
+      ],
+      "status": "one-copy-zero-character-control",
+      "support_condition_number": 1.0000000000000018,
+      "support_rank": 6
+    },
+    {
+      "block_dimension": 36,
+      "bridge_count": 24,
+      "collective_spectrum_nontrivial": true,
+      "copy_count": 2,
+      "distinct_eigenvalue_count": 5,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 1
+        },
+        {
+          "eigenvalue": 0.166666666667,
+          "multiplicity": 9
+        },
+        {
+          "eigenvalue": 0.25,
+          "multiplicity": 16
+        },
+        {
+          "eigenvalue": 0.333333333333,
+          "multiplicity": 9
+        },
+        {
+          "eigenvalue": 0.5,
+          "multiplicity": 1
+        }
+      ],
+      "finite_dense_diagonalization_only": true,
+      "induced_wreath_dimension": 6,
+      "information_threshold_copy_count": 5,
+      "kernel_dimension": 1,
+      "left_dimension": 1,
+      "left_partition": [
+        4
+      ],
+      "maximum_bridge_hermiticity_residual": 0.0,
+      "maximum_bridge_involution_residual": 4.982207735301566e-16,
+      "maximum_eigenvalue": 0.4999999999999999,
+      "minimum_positive_eigenvalue": 0.16666666666666652,
+      "mixed_physical_irrep_tuple": false,
+      "n": 4,
+      "one_copy_bridge_character_zero": true,
+      "one_copy_zero_character_average_residual": 9.813077866773595e-18,
+      "reaches_information_threshold": false,
+      "right_dimension": 3,
+      "right_partition": [
+        2,
+        1,
+        1
+      ],
+      "status": "finite-unequal-collective-spectrum",
+      "support_condition_number": 3.000000000000002,
+      "support_rank": 35
+    },
+    {
+      "block_dimension": 2,
+      "bridge_count": 24,
+      "collective_spectrum_nontrivial": false,
+      "copy_count": 1,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.5,
+          "multiplicity": 2
+        }
+      ],
+      "finite_dense_diagonalization_only": true,
+      "induced_wreath_dimension": 2,
+      "information_threshold_copy_count": 5,
+      "kernel_dimension": 0,
+      "left_dimension": 1,
+      "left_partition": [
+        4
+      ],
+      "maximum_bridge_hermiticity_residual": 0.0,
+      "maximum_bridge_involution_residual": 0.0,
+      "maximum_eigenvalue": 0.5,
+      "minimum_positive_eigenvalue": 0.5,
+      "mixed_physical_irrep_tuple": false,
+      "n": 4,
+      "one_copy_bridge_character_zero": true,
+      "one_copy_zero_character_average_residual": 0.0,
+      "reaches_information_threshold": false,
+      "right_dimension": 1,
+      "right_partition": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "status": "one-copy-zero-character-control",
+      "support_condition_number": 1.0,
+      "support_rank": 2
+    },
+    {
+      "block_dimension": 4,
+      "bridge_count": 24,
+      "collective_spectrum_nontrivial": true,
+      "copy_count": 2,
+      "distinct_eigenvalue_count": 2,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 2
+        },
+        {
+          "eigenvalue": 0.5,
+          "multiplicity": 2
+        }
+      ],
+      "finite_dense_diagonalization_only": true,
+      "induced_wreath_dimension": 2,
+      "information_threshold_copy_count": 5,
+      "kernel_dimension": 2,
+      "left_dimension": 1,
+      "left_partition": [
+        4
+      ],
+      "maximum_bridge_hermiticity_residual": 0.0,
+      "maximum_bridge_involution_residual": 0.0,
+      "maximum_eigenvalue": 0.5,
+      "minimum_positive_eigenvalue": 0.5,
+      "mixed_physical_irrep_tuple": false,
+      "n": 4,
+      "one_copy_bridge_character_zero": true,
+      "one_copy_zero_character_average_residual": 0.0,
+      "reaches_information_threshold": false,
+      "right_dimension": 1,
+      "right_partition": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "status": "finite-unequal-collective-spectrum",
+      "support_condition_number": 1.0,
+      "support_rank": 2
+    },
+    {
+      "block_dimension": 12,
+      "bridge_count": 24,
+      "collective_spectrum_nontrivial": false,
+      "copy_count": 1,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.5,
+          "multiplicity": 12
+        }
+      ],
+      "finite_dense_diagonalization_only": true,
+      "induced_wreath_dimension": 12,
+      "information_threshold_copy_count": 5,
+      "kernel_dimension": 0,
+      "left_dimension": 3,
+      "left_partition": [
+        3,
+        1
+      ],
+      "maximum_bridge_hermiticity_residual": 0.0,
+      "maximum_bridge_involution_residual": 1.8214935546897036e-15,
+      "maximum_eigenvalue": 0.5000000000000006,
+      "minimum_positive_eigenvalue": 0.49999999999999944,
+      "mixed_physical_irrep_tuple": false,
+      "n": 4,
+      "one_copy_bridge_character_zero": true,
+      "one_copy_zero_character_average_residual": 1.280616058375789e-16,
+      "reaches_information_threshold": false,
+      "right_dimension": 2,
+      "right_partition": [
+        2,
+        2
+      ],
+      "status": "one-copy-zero-character-control",
+      "support_condition_number": 1.0000000000000022,
+      "support_rank": 12
+    },
+    {
+      "block_dimension": 144,
+      "bridge_count": 24,
+      "collective_spectrum_nontrivial": true,
+      "copy_count": 2,
+      "distinct_eigenvalue_count": 7,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 1
+        },
+        {
+          "eigenvalue": 0.125,
+          "multiplicity": 4
+        },
+        {
+          "eigenvalue": 0.166666666667,
+          "multiplicity": 18
+        },
+        {
+          "eigenvalue": 0.25,
+          "multiplicity": 98
+        },
+        {
+          "eigenvalue": 0.333333333333,
+          "multiplicity": 18
+        },
+        {
+          "eigenvalue": 0.375,
+          "multiplicity": 4
+        },
+        {
+          "eigenvalue": 0.5,
+          "multiplicity": 1
+        }
+      ],
+      "finite_dense_diagonalization_only": true,
+      "induced_wreath_dimension": 12,
+      "information_threshold_copy_count": 5,
+      "kernel_dimension": 1,
+      "left_dimension": 3,
+      "left_partition": [
+        3,
+        1
+      ],
+      "maximum_bridge_hermiticity_residual": 0.0,
+      "maximum_bridge_involution_residual": 1.8214935546897036e-15,
+      "maximum_eigenvalue": 0.49999999999999994,
+      "minimum_positive_eigenvalue": 0.125,
+      "mixed_physical_irrep_tuple": false,
+      "n": 4,
+      "one_copy_bridge_character_zero": true,
+      "one_copy_zero_character_average_residual": 1.280616058375789e-16,
+      "reaches_information_threshold": false,
+      "right_dimension": 2,
+      "right_partition": [
+        2,
+        2
+      ],
+      "status": "finite-unequal-collective-spectrum",
+      "support_condition_number": 3.9999999999999996,
+      "support_rank": 143
+    },
+    {
+      "block_dimension": 18,
+      "bridge_count": 24,
+      "collective_spectrum_nontrivial": false,
+      "copy_count": 1,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.5,
+          "multiplicity": 18
+        }
+      ],
+      "finite_dense_diagonalization_only": true,
+      "induced_wreath_dimension": 18,
+      "information_threshold_copy_count": 5,
+      "kernel_dimension": 0,
+      "left_dimension": 3,
+      "left_partition": [
+        3,
+        1
+      ],
+      "maximum_bridge_hermiticity_residual": 0.0,
+      "maximum_bridge_involution_residual": 1.792437735150416e-15,
+      "maximum_eigenvalue": 0.5000000000000004,
+      "minimum_positive_eigenvalue": 0.49999999999999944,
+      "mixed_physical_irrep_tuple": false,
+      "n": 4,
+      "one_copy_bridge_character_zero": true,
+      "one_copy_zero_character_average_residual": 1.0362750685343391e-16,
+      "reaches_information_threshold": false,
+      "right_dimension": 3,
+      "right_partition": [
+        2,
+        1,
+        1
+      ],
+      "status": "one-copy-zero-character-control",
+      "support_condition_number": 1.000000000000002,
+      "support_rank": 18
+    },
+    {
+      "block_dimension": 324,
+      "bridge_count": 24,
+      "collective_spectrum_nontrivial": true,
+      "copy_count": 2,
+      "distinct_eigenvalue_count": 7,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 2
+        },
+        {
+          "eigenvalue": 0.125,
+          "multiplicity": 8
+        },
+        {
+          "eigenvalue": 0.166666666667,
+          "multiplicity": 36
+        },
+        {
+          "eigenvalue": 0.25,
+          "multiplicity": 232
+        },
+        {
+          "eigenvalue": 0.333333333333,
+          "multiplicity": 36
+        },
+        {
+          "eigenvalue": 0.375,
+          "multiplicity": 8
+        },
+        {
+          "eigenvalue": 0.5,
+          "multiplicity": 2
+        }
+      ],
+      "finite_dense_diagonalization_only": true,
+      "induced_wreath_dimension": 18,
+      "information_threshold_copy_count": 5,
+      "kernel_dimension": 2,
+      "left_dimension": 3,
+      "left_partition": [
+        3,
+        1
+      ],
+      "maximum_bridge_hermiticity_residual": 0.0,
+      "maximum_bridge_involution_residual": 1.792437735150416e-15,
+      "maximum_eigenvalue": 0.5000000000000001,
+      "minimum_positive_eigenvalue": 0.1249999999999997,
+      "mixed_physical_irrep_tuple": false,
+      "n": 4,
+      "one_copy_bridge_character_zero": true,
+      "one_copy_zero_character_average_residual": 1.0362750685343391e-16,
+      "reaches_information_threshold": false,
+      "right_dimension": 3,
+      "right_partition": [
+        2,
+        1,
+        1
+      ],
+      "status": "finite-unequal-collective-spectrum",
+      "support_condition_number": 4.000000000000011,
+      "support_rank": 322
+    },
+    {
+      "block_dimension": 6,
+      "bridge_count": 24,
+      "collective_spectrum_nontrivial": false,
+      "copy_count": 1,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.5,
+          "multiplicity": 6
+        }
+      ],
+      "finite_dense_diagonalization_only": true,
+      "induced_wreath_dimension": 6,
+      "information_threshold_copy_count": 5,
+      "kernel_dimension": 0,
+      "left_dimension": 3,
+      "left_partition": [
+        3,
+        1
+      ],
+      "maximum_bridge_hermiticity_residual": 0.0,
+      "maximum_bridge_involution_residual": 5.60815172204527e-16,
+      "maximum_eigenvalue": 0.5,
+      "minimum_positive_eigenvalue": 0.5,
+      "mixed_physical_irrep_tuple": false,
+      "n": 4,
+      "one_copy_bridge_character_zero": true,
+      "one_copy_zero_character_average_residual": 7.315633739649965e-18,
+      "reaches_information_threshold": false,
+      "right_dimension": 1,
+      "right_partition": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "status": "one-copy-zero-character-control",
+      "support_condition_number": 1.0,
+      "support_rank": 6
+    },
+    {
+      "block_dimension": 36,
+      "bridge_count": 24,
+      "collective_spectrum_nontrivial": true,
+      "copy_count": 2,
+      "distinct_eigenvalue_count": 5,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 1
+        },
+        {
+          "eigenvalue": 0.166666666667,
+          "multiplicity": 9
+        },
+        {
+          "eigenvalue": 0.25,
+          "multiplicity": 16
+        },
+        {
+          "eigenvalue": 0.333333333333,
+          "multiplicity": 9
+        },
+        {
+          "eigenvalue": 0.5,
+          "multiplicity": 1
+        }
+      ],
+      "finite_dense_diagonalization_only": true,
+      "induced_wreath_dimension": 6,
+      "information_threshold_copy_count": 5,
+      "kernel_dimension": 1,
+      "left_dimension": 3,
+      "left_partition": [
+        3,
+        1
+      ],
+      "maximum_bridge_hermiticity_residual": 0.0,
+      "maximum_bridge_involution_residual": 5.60815172204527e-16,
+      "maximum_eigenvalue": 0.4999999999999999,
+      "minimum_positive_eigenvalue": 0.16666666666666635,
+      "mixed_physical_irrep_tuple": false,
+      "n": 4,
+      "one_copy_bridge_character_zero": true,
+      "one_copy_zero_character_average_residual": 7.315633739649965e-18,
+      "reaches_information_threshold": false,
+      "right_dimension": 1,
+      "right_partition": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "status": "finite-unequal-collective-spectrum",
+      "support_condition_number": 3.000000000000005,
+      "support_rank": 35
+    },
+    {
+      "block_dimension": 12,
+      "bridge_count": 24,
+      "collective_spectrum_nontrivial": false,
+      "copy_count": 1,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.5,
+          "multiplicity": 12
+        }
+      ],
+      "finite_dense_diagonalization_only": true,
+      "induced_wreath_dimension": 12,
+      "information_threshold_copy_count": 5,
+      "kernel_dimension": 0,
+      "left_dimension": 2,
+      "left_partition": [
+        2,
+        2
+      ],
+      "maximum_bridge_hermiticity_residual": 0.0,
+      "maximum_bridge_involution_residual": 1.6907019556104082e-15,
+      "maximum_eigenvalue": 0.5000000000000004,
+      "minimum_positive_eigenvalue": 0.4999999999999992,
+      "mixed_physical_irrep_tuple": false,
+      "n": 4,
+      "one_copy_bridge_character_zero": true,
+      "one_copy_zero_character_average_residual": 1.1418176633079983e-16,
+      "reaches_information_threshold": false,
+      "right_dimension": 3,
+      "right_partition": [
+        2,
+        1,
+        1
+      ],
+      "status": "one-copy-zero-character-control",
+      "support_condition_number": 1.0000000000000024,
+      "support_rank": 12
+    },
+    {
+      "block_dimension": 144,
+      "bridge_count": 24,
+      "collective_spectrum_nontrivial": true,
+      "copy_count": 2,
+      "distinct_eigenvalue_count": 7,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": -0.0,
+          "multiplicity": 1
+        },
+        {
+          "eigenvalue": 0.125,
+          "multiplicity": 4
+        },
+        {
+          "eigenvalue": 0.166666666667,
+          "multiplicity": 18
+        },
+        {
+          "eigenvalue": 0.25,
+          "multiplicity": 98
+        },
+        {
+          "eigenvalue": 0.333333333333,
+          "multiplicity": 18
+        },
+        {
+          "eigenvalue": 0.375,
+          "multiplicity": 4
+        },
+        {
+          "eigenvalue": 0.5,
+          "multiplicity": 1
+        }
+      ],
+      "finite_dense_diagonalization_only": true,
+      "induced_wreath_dimension": 12,
+      "information_threshold_copy_count": 5,
+      "kernel_dimension": 1,
+      "left_dimension": 2,
+      "left_partition": [
+        2,
+        2
+      ],
+      "maximum_bridge_hermiticity_residual": 0.0,
+      "maximum_bridge_involution_residual": 1.6907019556104082e-15,
+      "maximum_eigenvalue": 0.49999999999999994,
+      "minimum_positive_eigenvalue": 0.12499999999999996,
+      "mixed_physical_irrep_tuple": false,
+      "n": 4,
+      "one_copy_bridge_character_zero": true,
+      "one_copy_zero_character_average_residual": 1.1418176633079983e-16,
+      "reaches_information_threshold": false,
+      "right_dimension": 3,
+      "right_partition": [
+        2,
+        1,
+        1
+      ],
+      "status": "finite-unequal-collective-spectrum",
+      "support_condition_number": 4.000000000000001,
+      "support_rank": 143
+    },
+    {
+      "block_dimension": 4,
+      "bridge_count": 24,
+      "collective_spectrum_nontrivial": false,
+      "copy_count": 1,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.5,
+          "multiplicity": 4
+        }
+      ],
+      "finite_dense_diagonalization_only": true,
+      "induced_wreath_dimension": 4,
+      "information_threshold_copy_count": 5,
+      "kernel_dimension": 0,
+      "left_dimension": 2,
+      "left_partition": [
+        2,
+        2
+      ],
+      "maximum_bridge_hermiticity_residual": 0.0,
+      "maximum_bridge_involution_residual": 4.440892098500626e-16,
+      "maximum_eigenvalue": 0.5,
+      "minimum_positive_eigenvalue": 0.5,
+      "mixed_physical_irrep_tuple": false,
+      "n": 4,
+      "one_copy_bridge_character_zero": true,
+      "one_copy_zero_character_average_residual": 9.25185853854297e-18,
+      "reaches_information_threshold": false,
+      "right_dimension": 1,
+      "right_partition": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "status": "one-copy-zero-character-control",
+      "support_condition_number": 1.0,
+      "support_rank": 4
+    },
+    {
+      "block_dimension": 16,
+      "bridge_count": 24,
+      "collective_spectrum_nontrivial": true,
+      "copy_count": 2,
+      "distinct_eigenvalue_count": 5,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 1
+        },
+        {
+          "eigenvalue": 0.125,
+          "multiplicity": 4
+        },
+        {
+          "eigenvalue": 0.25,
+          "multiplicity": 6
+        },
+        {
+          "eigenvalue": 0.375,
+          "multiplicity": 4
+        },
+        {
+          "eigenvalue": 0.5,
+          "multiplicity": 1
+        }
+      ],
+      "finite_dense_diagonalization_only": true,
+      "induced_wreath_dimension": 4,
+      "information_threshold_copy_count": 5,
+      "kernel_dimension": 1,
+      "left_dimension": 2,
+      "left_partition": [
+        2,
+        2
+      ],
+      "maximum_bridge_hermiticity_residual": 0.0,
+      "maximum_bridge_involution_residual": 4.440892098500626e-16,
+      "maximum_eigenvalue": 0.5,
+      "minimum_positive_eigenvalue": 0.12499999999999996,
+      "mixed_physical_irrep_tuple": false,
+      "n": 4,
+      "one_copy_bridge_character_zero": true,
+      "one_copy_zero_character_average_residual": 9.25185853854297e-18,
+      "reaches_information_threshold": false,
+      "right_dimension": 1,
+      "right_partition": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "status": "finite-unequal-collective-spectrum",
+      "support_condition_number": 4.000000000000002,
+      "support_rank": 15
+    },
+    {
+      "block_dimension": 6,
+      "bridge_count": 24,
+      "collective_spectrum_nontrivial": false,
+      "copy_count": 1,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.5,
+          "multiplicity": 6
+        }
+      ],
+      "finite_dense_diagonalization_only": true,
+      "induced_wreath_dimension": 6,
+      "information_threshold_copy_count": 5,
+      "kernel_dimension": 0,
+      "left_dimension": 3,
+      "left_partition": [
+        2,
+        1,
+        1
+      ],
+      "maximum_bridge_hermiticity_residual": 0.0,
+      "maximum_bridge_involution_residual": 4.982207735301566e-16,
+      "maximum_eigenvalue": 0.5000000000000001,
+      "minimum_positive_eigenvalue": 0.4999999999999998,
+      "mixed_physical_irrep_tuple": false,
+      "n": 4,
+      "one_copy_bridge_character_zero": true,
+      "one_copy_zero_character_average_residual": 6.892479376940624e-17,
+      "reaches_information_threshold": false,
+      "right_dimension": 1,
+      "right_partition": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "status": "one-copy-zero-character-control",
+      "support_condition_number": 1.0000000000000007,
+      "support_rank": 6
+    },
+    {
+      "block_dimension": 36,
+      "bridge_count": 24,
+      "collective_spectrum_nontrivial": true,
+      "copy_count": 2,
+      "distinct_eigenvalue_count": 5,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 1
+        },
+        {
+          "eigenvalue": 0.166666666667,
+          "multiplicity": 9
+        },
+        {
+          "eigenvalue": 0.25,
+          "multiplicity": 16
+        },
+        {
+          "eigenvalue": 0.333333333333,
+          "multiplicity": 9
+        },
+        {
+          "eigenvalue": 0.5,
+          "multiplicity": 1
+        }
+      ],
+      "finite_dense_diagonalization_only": true,
+      "induced_wreath_dimension": 6,
+      "information_threshold_copy_count": 5,
+      "kernel_dimension": 1,
+      "left_dimension": 3,
+      "left_partition": [
+        2,
+        1,
+        1
+      ],
+      "maximum_bridge_hermiticity_residual": 0.0,
+      "maximum_bridge_involution_residual": 4.982207735301566e-16,
+      "maximum_eigenvalue": 0.49999999999999983,
+      "minimum_positive_eigenvalue": 0.16666666666666652,
+      "mixed_physical_irrep_tuple": false,
+      "n": 4,
+      "one_copy_bridge_character_zero": true,
+      "one_copy_zero_character_average_residual": 6.892479376940624e-17,
+      "reaches_information_threshold": false,
+      "right_dimension": 1,
+      "right_partition": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "status": "finite-unequal-collective-spectrum",
+      "support_condition_number": 3.0000000000000018,
+      "support_rank": 35
+    },
+    {
+      "block_dimension": 8,
+      "bridge_count": 120,
+      "collective_spectrum_nontrivial": false,
+      "copy_count": 1,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.5,
+          "multiplicity": 8
+        }
+      ],
+      "finite_dense_diagonalization_only": true,
+      "induced_wreath_dimension": 8,
+      "information_threshold_copy_count": 7,
+      "kernel_dimension": 0,
+      "left_dimension": 1,
+      "left_partition": [
+        5
+      ],
+      "maximum_bridge_hermiticity_residual": 3.188872858294072e-16,
+      "maximum_bridge_involution_residual": 7.840643074699968e-16,
+      "maximum_eigenvalue": 0.5000000000000001,
+      "minimum_positive_eigenvalue": 0.49999999999999967,
+      "mixed_physical_irrep_tuple": false,
+      "n": 5,
+      "one_copy_bridge_character_zero": true,
+      "one_copy_zero_character_average_residual": 2.2324075166072237e-16,
+      "reaches_information_threshold": false,
+      "right_dimension": 4,
+      "right_partition": [
+        4,
+        1
+      ],
+      "status": "one-copy-zero-character-control",
+      "support_condition_number": 1.0000000000000009,
+      "support_rank": 8
+    },
+    {
+      "block_dimension": 64,
+      "bridge_count": 120,
+      "collective_spectrum_nontrivial": true,
+      "copy_count": 2,
+      "distinct_eigenvalue_count": 5,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 1
+        },
+        {
+          "eigenvalue": 0.1875,
+          "multiplicity": 16
+        },
+        {
+          "eigenvalue": 0.25,
+          "multiplicity": 30
+        },
+        {
+          "eigenvalue": 0.3125,
+          "multiplicity": 16
+        },
+        {
+          "eigenvalue": 0.5,
+          "multiplicity": 1
+        }
+      ],
+      "finite_dense_diagonalization_only": true,
+      "induced_wreath_dimension": 8,
+      "information_threshold_copy_count": 7,
+      "kernel_dimension": 1,
+      "left_dimension": 1,
+      "left_partition": [
+        5
+      ],
+      "maximum_bridge_hermiticity_residual": 3.188872858294072e-16,
+      "maximum_bridge_involution_residual": 7.840643074699968e-16,
+      "maximum_eigenvalue": 0.5,
+      "minimum_positive_eigenvalue": 0.18749999999999983,
+      "mixed_physical_irrep_tuple": false,
+      "n": 5,
+      "one_copy_bridge_character_zero": true,
+      "one_copy_zero_character_average_residual": 2.2324075166072237e-16,
+      "reaches_information_threshold": false,
+      "right_dimension": 4,
+      "right_partition": [
+        4,
+        1
+      ],
+      "status": "finite-unequal-collective-spectrum",
+      "support_condition_number": 2.666666666666669,
+      "support_rank": 63
+    },
+    {
+      "block_dimension": 10,
+      "bridge_count": 120,
+      "collective_spectrum_nontrivial": false,
+      "copy_count": 1,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.5,
+          "multiplicity": 10
+        }
+      ],
+      "finite_dense_diagonalization_only": true,
+      "induced_wreath_dimension": 10,
+      "information_threshold_copy_count": 7,
+      "kernel_dimension": 0,
+      "left_dimension": 1,
+      "left_partition": [
+        5
+      ],
+      "maximum_bridge_hermiticity_residual": 3.990105802953231e-16,
+      "maximum_bridge_involution_residual": 1.5019049507759852e-15,
+      "maximum_eigenvalue": 0.5000000000000002,
+      "minimum_positive_eigenvalue": 0.4999999999999993,
+      "mixed_physical_irrep_tuple": false,
+      "n": 5,
+      "one_copy_bridge_character_zero": true,
+      "one_copy_zero_character_average_residual": 5.652292284719595e-17,
+      "reaches_information_threshold": false,
+      "right_dimension": 5,
+      "right_partition": [
+        3,
+        2
+      ],
+      "status": "one-copy-zero-character-control",
+      "support_condition_number": 1.000000000000002,
+      "support_rank": 10
+    },
+    {
+      "block_dimension": 100,
+      "bridge_count": 120,
+      "collective_spectrum_nontrivial": true,
+      "copy_count": 2,
+      "distinct_eigenvalue_count": 5,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": -0.0,
+          "multiplicity": 1
+        },
+        {
+          "eigenvalue": 0.2,
+          "multiplicity": 25
+        },
+        {
+          "eigenvalue": 0.25,
+          "multiplicity": 48
+        },
+        {
+          "eigenvalue": 0.3,
+          "multiplicity": 25
+        },
+        {
+          "eigenvalue": 0.5,
+          "multiplicity": 1
+        }
+      ],
+      "finite_dense_diagonalization_only": true,
+      "induced_wreath_dimension": 10,
+      "information_threshold_copy_count": 7,
+      "kernel_dimension": 1,
+      "left_dimension": 1,
+      "left_partition": [
+        5
+      ],
+      "maximum_bridge_hermiticity_residual": 3.990105802953231e-16,
+      "maximum_bridge_involution_residual": 1.5019049507759852e-15,
+      "maximum_eigenvalue": 0.4999999999999999,
+      "minimum_positive_eigenvalue": 0.19999999999999982,
+      "mixed_physical_irrep_tuple": false,
+      "n": 5,
+      "one_copy_bridge_character_zero": true,
+      "one_copy_zero_character_average_residual": 5.652292284719595e-17,
+      "reaches_information_threshold": false,
+      "right_dimension": 5,
+      "right_partition": [
+        3,
+        2
+      ],
+      "status": "finite-unequal-collective-spectrum",
+      "support_condition_number": 2.5000000000000018,
+      "support_rank": 99
+    },
+    {
+      "block_dimension": 32,
+      "bridge_count": 120,
+      "collective_spectrum_nontrivial": false,
+      "copy_count": 1,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.5,
+          "multiplicity": 32
+        }
+      ],
+      "finite_dense_diagonalization_only": true,
+      "induced_wreath_dimension": 32,
+      "information_threshold_copy_count": 7,
+      "kernel_dimension": 0,
+      "left_dimension": 4,
+      "left_partition": [
+        4,
+        1
+      ],
+      "maximum_bridge_hermiticity_residual": 8.516653479740447e-16,
+      "maximum_bridge_involution_residual": 2.8523879366674687e-15,
+      "maximum_eigenvalue": 0.5000000000000007,
+      "minimum_positive_eigenvalue": 0.49999999999999917,
+      "mixed_physical_irrep_tuple": false,
+      "n": 5,
+      "one_copy_bridge_character_zero": true,
+      "one_copy_zero_character_average_residual": 2.8138398553788856e-17,
+      "reaches_information_threshold": false,
+      "right_dimension": 4,
+      "right_partition": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "status": "one-copy-zero-character-control",
+      "support_condition_number": 1.000000000000003,
+      "support_rank": 32
+    },
+    {
+      "block_dimension": 1024,
+      "bridge_count": 120,
+      "collective_spectrum_nontrivial": true,
+      "copy_count": 2,
+      "distinct_eigenvalue_count": 9,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": -0.0,
+          "multiplicity": 2
+        },
+        {
+          "eigenvalue": 0.1875,
+          "multiplicity": 32
+        },
+        {
+          "eigenvalue": 0.2,
+          "multiplicity": 50
+        },
+        {
+          "eigenvalue": 0.208333333333,
+          "multiplicity": 72
+        },
+        {
+          "eigenvalue": 0.25,
+          "multiplicity": 712
+        },
+        {
+          "eigenvalue": 0.291666666667,
+          "multiplicity": 72
+        },
+        {
+          "eigenvalue": 0.3,
+          "multiplicity": 50
+        },
+        {
+          "eigenvalue": 0.3125,
+          "multiplicity": 32
+        },
+        {
+          "eigenvalue": 0.5,
+          "multiplicity": 2
+        }
+      ],
+      "finite_dense_diagonalization_only": true,
+      "induced_wreath_dimension": 32,
+      "information_threshold_copy_count": 7,
+      "kernel_dimension": 2,
+      "left_dimension": 4,
+      "left_partition": [
+        4,
+        1
+      ],
+      "maximum_bridge_hermiticity_residual": 8.516653479740447e-16,
+      "maximum_bridge_involution_residual": 2.8523879366674687e-15,
+      "maximum_eigenvalue": 0.5000000000000001,
+      "minimum_positive_eigenvalue": 0.1874999999999996,
+      "mixed_physical_irrep_tuple": false,
+      "n": 5,
+      "one_copy_bridge_character_zero": true,
+      "one_copy_zero_character_average_residual": 2.8138398553788856e-17,
+      "reaches_information_threshold": false,
+      "right_dimension": 4,
+      "right_partition": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "status": "finite-unequal-collective-spectrum",
+      "support_condition_number": 2.6666666666666727,
+      "support_rank": 1022
+    }
+  ],
+  "spec": {
+    "cases": [
+      [
+        3,
+        [
+          3
+        ],
+        [
+          2,
+          1
+        ],
+        3
+      ],
+      [
+        3,
+        [
+          3
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        3
+      ],
+      [
+        3,
+        [
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        3
+      ],
+      [
+        4,
+        [
+          4
+        ],
+        [
+          3,
+          1
+        ],
+        2
+      ],
+      [
+        4,
+        [
+          4
+        ],
+        [
+          2,
+          2
+        ],
+        2
+      ],
+      [
+        4,
+        [
+          4
+        ],
+        [
+          2,
+          1,
+          1
+        ],
+        2
+      ],
+      [
+        4,
+        [
+          4
+        ],
+        [
+          1,
+          1,
+          1,
+          1
+        ],
+        2
+      ],
+      [
+        4,
+        [
+          3,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        2
+      ],
+      [
+        4,
+        [
+          3,
+          1
+        ],
+        [
+          2,
+          1,
+          1
+        ],
+        2
+      ],
+      [
+        4,
+        [
+          3,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1
+        ],
+        2
+      ],
+      [
+        4,
+        [
+          2,
+          2
+        ],
+        [
+          2,
+          1,
+          1
+        ],
+        2
+      ],
+      [
+        4,
+        [
+          2,
+          2
+        ],
+        [
+          1,
+          1,
+          1,
+          1
+        ],
+        2
+      ],
+      [
+        4,
+        [
+          2,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1
+        ],
+        2
+      ],
+      [
+        5,
+        [
+          5
+        ],
+        [
+          4,
+          1
+        ],
+        2
+      ],
+      [
+        5,
+        [
+          5
+        ],
+        [
+          3,
+          2
+        ],
+        2
+      ],
+      [
+        5,
+        [
+          4,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ],
+        2
+      ]
+    ],
+    "eigenvalue_tolerance": 1e-08
+  },
+  "status": "unequal-pair-collective-blocks-nontrivial-all-n-recurrence-open",
+  "summary": "Diagonalized 35 unequal-pair physical frame blocks; 19 have nontrivial collective spectra and 3 reach the S_3 information threshold, while mixed tuples and all-n recurrences remain zero."
+}

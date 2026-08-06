@@ -1,0 +1,5642 @@
+{
+  "claim_gate": {
+    "all_naturally_occupied_blocks_condition_at_most_four": true,
+    "all_naturally_occupied_positive_eigenvalues_at_least_one_eighth": true,
+    "all_unordered_threshold_tuples_diagonalized": true,
+    "all_w3_physical_irreps_constructed": true,
+    "coherent_blockwise_frame_inverse_proved": false,
+    "hidden_label_harmonic_transform_proved": false,
+    "natural_tuple_mass_complete": true,
+    "polynomial_hidden_permutation_decoder_proved": false,
+    "reason": "The complete W_3 threshold tuple distribution is mildly conditioned on support, but this finite theorem supplies no all-n recurrence, coherent inverse, harmonic transform, or decoder.",
+    "speedup_claim_allowed": false,
+    "uniform_all_n_character_moment_recurrence_proved": false
+  },
+  "created_at": "2026-07-29T22:45:16.509604+00:00",
+  "falsifiers_triggered": [
+    "The repeated-irrep probes did not miss a worse naturally occupied W_3 threshold tuple.",
+    "Two one-dimensional minus irreps and every tuple containing them have zero natural coset-state mass.",
+    "All naturally occupied W_3 threshold blocks have support condition number at most four.",
+    "Kernel support occurs on positive-mass blocks and must be handled by a pseudoinverse, not a full inverse.",
+    "A complete finite W_3 conditioning theorem does not imply an all-n recurrence or decoder."
+  ],
+  "group_contract": {
+    "bridge_ensemble_size": 6,
+    "group": "W_3=(S_3 x S_3) semidirect C_2",
+    "group_order": 72,
+    "information_threshold_copy_count": 3,
+    "irrep_count": 9,
+    "natural_label_probability": "p_pi=d_pi[d_pi+chi_pi(h)]/|W_3|",
+    "tuple_count": 165,
+    "unordered_tuple_mass": "multinomial orbit size times product of one-copy label probabilities"
+  },
+  "headline_metrics": {
+    "coherent_blockwise_frame_inverse_count": 0,
+    "complete_finite_physical_tuple_spectrum_count": 1,
+    "hidden_label_harmonic_transform_count": 0,
+    "maximum_block_dimension": 64,
+    "maximum_naturally_occupied_support_condition_number": 4.000000000000007,
+    "minimum_naturally_occupied_positive_eigenvalue": 0.12499999999999976,
+    "natural_mass_in_kernel_blocks": 0.8717421124828532,
+    "natural_mass_with_condition_number_at_most_four": 0.9999999999999999,
+    "natural_tuple_mass_sum": 0.9999999999999999,
+    "naturally_occupied_irrep_count": 7,
+    "naturally_occupied_kernel_block_count": 52,
+    "naturally_occupied_threshold_tuple_count": 84,
+    "physical_irrep_count": 9,
+    "polynomial_hidden_permutation_decoder_count": 0,
+    "uniform_all_n_character_moment_recurrence_count": 0,
+    "unordered_threshold_tuple_count": 165,
+    "worst_block_aggregate_natural_probability": 0.018518518518518517,
+    "zero_natural_mass_irrep_count": 2,
+    "zero_natural_mass_threshold_tuple_count": 81
+  },
+  "irrep_records": [
+    {
+      "bridge_character": 1,
+      "dimension": 1,
+      "id": "EQ-3-PLUS",
+      "kind": "equal-pair-extension",
+      "left_partition": [
+        3
+      ],
+      "natural_label_probability": 0.027777777777777776,
+      "naturally_occupied": true,
+      "right_partition": [
+        3
+      ],
+      "sign": 1
+    },
+    {
+      "bridge_character": -1,
+      "dimension": 1,
+      "id": "EQ-3-MINUS",
+      "kind": "equal-pair-extension",
+      "left_partition": [
+        3
+      ],
+      "natural_label_probability": 0.0,
+      "naturally_occupied": false,
+      "right_partition": [
+        3
+      ],
+      "sign": -1
+    },
+    {
+      "bridge_character": 2,
+      "dimension": 4,
+      "id": "EQ-2-1-PLUS",
+      "kind": "equal-pair-extension",
+      "left_partition": [
+        2,
+        1
+      ],
+      "natural_label_probability": 0.3333333333333333,
+      "naturally_occupied": true,
+      "right_partition": [
+        2,
+        1
+      ],
+      "sign": 1
+    },
+    {
+      "bridge_character": -2,
+      "dimension": 4,
+      "id": "EQ-2-1-MINUS",
+      "kind": "equal-pair-extension",
+      "left_partition": [
+        2,
+        1
+      ],
+      "natural_label_probability": 0.1111111111111111,
+      "naturally_occupied": true,
+      "right_partition": [
+        2,
+        1
+      ],
+      "sign": -1
+    },
+    {
+      "bridge_character": 1,
+      "dimension": 1,
+      "id": "EQ-1-1-1-PLUS",
+      "kind": "equal-pair-extension",
+      "left_partition": [
+        1,
+        1,
+        1
+      ],
+      "natural_label_probability": 0.027777777777777776,
+      "naturally_occupied": true,
+      "right_partition": [
+        1,
+        1,
+        1
+      ],
+      "sign": 1
+    },
+    {
+      "bridge_character": -1,
+      "dimension": 1,
+      "id": "EQ-1-1-1-MINUS",
+      "kind": "equal-pair-extension",
+      "left_partition": [
+        1,
+        1,
+        1
+      ],
+      "natural_label_probability": 0.0,
+      "naturally_occupied": false,
+      "right_partition": [
+        1,
+        1,
+        1
+      ],
+      "sign": -1
+    },
+    {
+      "bridge_character": 0,
+      "dimension": 4,
+      "id": "UNEQ-3__2-1",
+      "kind": "unequal-pair-induced",
+      "left_partition": [
+        3
+      ],
+      "natural_label_probability": 0.2222222222222222,
+      "naturally_occupied": true,
+      "right_partition": [
+        2,
+        1
+      ],
+      "sign": null
+    },
+    {
+      "bridge_character": 0,
+      "dimension": 2,
+      "id": "UNEQ-3__1-1-1",
+      "kind": "unequal-pair-induced",
+      "left_partition": [
+        3
+      ],
+      "natural_label_probability": 0.05555555555555555,
+      "naturally_occupied": true,
+      "right_partition": [
+        1,
+        1,
+        1
+      ],
+      "sign": null
+    },
+    {
+      "bridge_character": 0,
+      "dimension": 4,
+      "id": "UNEQ-2-1__1-1-1",
+      "kind": "unequal-pair-induced",
+      "left_partition": [
+        2,
+        1
+      ],
+      "natural_label_probability": 0.2222222222222222,
+      "naturally_occupied": true,
+      "right_partition": [
+        1,
+        1,
+        1
+      ],
+      "sign": null
+    }
+  ],
+  "status": "complete-w3-threshold-blocks-conditioned-all-n-open",
+  "summary": "Diagonalized all 165 unordered W_3 threshold tuples; 84 occupied blocks carry natural mass 1.000000000000, have minimum positive eigenvalue 0.125, and condition number at most 4.",
+  "tuple_records": [
+    {
+      "aggregate_natural_probability": 2.143347050754458e-05,
+      "block_dimension": 1,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 1.0,
+          "multiplicity": 1
+        }
+      ],
+      "kernel_dimension": 0,
+      "label_ids": [
+        "EQ-3-PLUS",
+        "EQ-3-PLUS",
+        "EQ-3-PLUS"
+      ],
+      "label_indices": [
+        0,
+        0,
+        0
+      ],
+      "maximum_eigenvalue": 1.0,
+      "minimum_positive_eigenvalue": 1.0,
+      "naturally_occupied": true,
+      "status": "naturally-occupied-threshold-block",
+      "support_condition_number": 1.0,
+      "support_rank": 1,
+      "tuple_orbit_multiplicity": 1
+    },
+    {
+      "aggregate_natural_probability": 0.0,
+      "block_dimension": 1,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 1
+        }
+      ],
+      "kernel_dimension": 1,
+      "label_ids": [
+        "EQ-3-PLUS",
+        "EQ-3-PLUS",
+        "EQ-3-MINUS"
+      ],
+      "label_indices": [
+        0,
+        0,
+        1
+      ],
+      "maximum_eigenvalue": null,
+      "minimum_positive_eigenvalue": null,
+      "naturally_occupied": false,
+      "status": "zero-natural-mass-threshold-block",
+      "support_condition_number": null,
+      "support_rank": 0,
+      "tuple_orbit_multiplicity": 3
+    },
+    {
+      "aggregate_natural_probability": 0.0007716049382716049,
+      "block_dimension": 4,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.75,
+          "multiplicity": 4
+        }
+      ],
+      "kernel_dimension": 0,
+      "label_ids": [
+        "EQ-3-PLUS",
+        "EQ-3-PLUS",
+        "EQ-2-1-PLUS"
+      ],
+      "label_indices": [
+        0,
+        0,
+        2
+      ],
+      "maximum_eigenvalue": 0.75,
+      "minimum_positive_eigenvalue": 0.75,
+      "naturally_occupied": true,
+      "status": "naturally-occupied-threshold-block",
+      "support_condition_number": 1.0,
+      "support_rank": 4,
+      "tuple_orbit_multiplicity": 3
+    },
+    {
+      "aggregate_natural_probability": 0.00025720164609053495,
+      "block_dimension": 4,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.25,
+          "multiplicity": 4
+        }
+      ],
+      "kernel_dimension": 0,
+      "label_ids": [
+        "EQ-3-PLUS",
+        "EQ-3-PLUS",
+        "EQ-2-1-MINUS"
+      ],
+      "label_indices": [
+        0,
+        0,
+        3
+      ],
+      "maximum_eigenvalue": 0.25,
+      "minimum_positive_eigenvalue": 0.25,
+      "naturally_occupied": true,
+      "status": "naturally-occupied-threshold-block",
+      "support_condition_number": 1.0,
+      "support_rank": 4,
+      "tuple_orbit_multiplicity": 3
+    },
+    {
+      "aggregate_natural_probability": 6.430041152263374e-05,
+      "block_dimension": 1,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 1.0,
+          "multiplicity": 1
+        }
+      ],
+      "kernel_dimension": 0,
+      "label_ids": [
+        "EQ-3-PLUS",
+        "EQ-3-PLUS",
+        "EQ-1-1-1-PLUS"
+      ],
+      "label_indices": [
+        0,
+        0,
+        4
+      ],
+      "maximum_eigenvalue": 1.0,
+      "minimum_positive_eigenvalue": 1.0,
+      "naturally_occupied": true,
+      "status": "naturally-occupied-threshold-block",
+      "support_condition_number": 1.0,
+      "support_rank": 1,
+      "tuple_orbit_multiplicity": 3
+    },
+    {
+      "aggregate_natural_probability": 0.0,
+      "block_dimension": 1,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 1
+        }
+      ],
+      "kernel_dimension": 1,
+      "label_ids": [
+        "EQ-3-PLUS",
+        "EQ-3-PLUS",
+        "EQ-1-1-1-MINUS"
+      ],
+      "label_indices": [
+        0,
+        0,
+        5
+      ],
+      "maximum_eigenvalue": null,
+      "minimum_positive_eigenvalue": null,
+      "naturally_occupied": false,
+      "status": "zero-natural-mass-threshold-block",
+      "support_condition_number": null,
+      "support_rank": 0,
+      "tuple_orbit_multiplicity": 3
+    },
+    {
+      "aggregate_natural_probability": 0.0005144032921810699,
+      "block_dimension": 4,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.5,
+          "multiplicity": 4
+        }
+      ],
+      "kernel_dimension": 0,
+      "label_ids": [
+        "EQ-3-PLUS",
+        "EQ-3-PLUS",
+        "UNEQ-3__2-1"
+      ],
+      "label_indices": [
+        0,
+        0,
+        6
+      ],
+      "maximum_eigenvalue": 0.5,
+      "minimum_positive_eigenvalue": 0.5,
+      "naturally_occupied": true,
+      "status": "naturally-occupied-threshold-block",
+      "support_condition_number": 1.0,
+      "support_rank": 4,
+      "tuple_orbit_multiplicity": 3
+    },
+    {
+      "aggregate_natural_probability": 0.00012860082304526747,
+      "block_dimension": 2,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.5,
+          "multiplicity": 2
+        }
+      ],
+      "kernel_dimension": 0,
+      "label_ids": [
+        "EQ-3-PLUS",
+        "EQ-3-PLUS",
+        "UNEQ-3__1-1-1"
+      ],
+      "label_indices": [
+        0,
+        0,
+        7
+      ],
+      "maximum_eigenvalue": 0.5,
+      "minimum_positive_eigenvalue": 0.5,
+      "naturally_occupied": true,
+      "status": "naturally-occupied-threshold-block",
+      "support_condition_number": 1.0,
+      "support_rank": 2,
+      "tuple_orbit_multiplicity": 3
+    },
+    {
+      "aggregate_natural_probability": 0.0005144032921810699,
+      "block_dimension": 4,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.5,
+          "multiplicity": 4
+        }
+      ],
+      "kernel_dimension": 0,
+      "label_ids": [
+        "EQ-3-PLUS",
+        "EQ-3-PLUS",
+        "UNEQ-2-1__1-1-1"
+      ],
+      "label_indices": [
+        0,
+        0,
+        8
+      ],
+      "maximum_eigenvalue": 0.5,
+      "minimum_positive_eigenvalue": 0.5,
+      "naturally_occupied": true,
+      "status": "naturally-occupied-threshold-block",
+      "support_condition_number": 1.0,
+      "support_rank": 4,
+      "tuple_orbit_multiplicity": 3
+    },
+    {
+      "aggregate_natural_probability": 0.0,
+      "block_dimension": 1,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 1
+        }
+      ],
+      "kernel_dimension": 1,
+      "label_ids": [
+        "EQ-3-PLUS",
+        "EQ-3-MINUS",
+        "EQ-3-MINUS"
+      ],
+      "label_indices": [
+        0,
+        1,
+        1
+      ],
+      "maximum_eigenvalue": null,
+      "minimum_positive_eigenvalue": null,
+      "naturally_occupied": false,
+      "status": "zero-natural-mass-threshold-block",
+      "support_condition_number": null,
+      "support_rank": 0,
+      "tuple_orbit_multiplicity": 3
+    },
+    {
+      "aggregate_natural_probability": 0.0,
+      "block_dimension": 4,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 4
+        }
+      ],
+      "kernel_dimension": 4,
+      "label_ids": [
+        "EQ-3-PLUS",
+        "EQ-3-MINUS",
+        "EQ-2-1-PLUS"
+      ],
+      "label_indices": [
+        0,
+        1,
+        2
+      ],
+      "maximum_eigenvalue": null,
+      "minimum_positive_eigenvalue": null,
+      "naturally_occupied": false,
+      "status": "zero-natural-mass-threshold-block",
+      "support_condition_number": null,
+      "support_rank": 0,
+      "tuple_orbit_multiplicity": 6
+    },
+    {
+      "aggregate_natural_probability": 0.0,
+      "block_dimension": 4,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 4
+        }
+      ],
+      "kernel_dimension": 4,
+      "label_ids": [
+        "EQ-3-PLUS",
+        "EQ-3-MINUS",
+        "EQ-2-1-MINUS"
+      ],
+      "label_indices": [
+        0,
+        1,
+        3
+      ],
+      "maximum_eigenvalue": null,
+      "minimum_positive_eigenvalue": null,
+      "naturally_occupied": false,
+      "status": "zero-natural-mass-threshold-block",
+      "support_condition_number": null,
+      "support_rank": 0,
+      "tuple_orbit_multiplicity": 6
+    },
+    {
+      "aggregate_natural_probability": 0.0,
+      "block_dimension": 1,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 1
+        }
+      ],
+      "kernel_dimension": 1,
+      "label_ids": [
+        "EQ-3-PLUS",
+        "EQ-3-MINUS",
+        "EQ-1-1-1-PLUS"
+      ],
+      "label_indices": [
+        0,
+        1,
+        4
+      ],
+      "maximum_eigenvalue": null,
+      "minimum_positive_eigenvalue": null,
+      "naturally_occupied": false,
+      "status": "zero-natural-mass-threshold-block",
+      "support_condition_number": null,
+      "support_rank": 0,
+      "tuple_orbit_multiplicity": 6
+    },
+    {
+      "aggregate_natural_probability": 0.0,
+      "block_dimension": 1,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 1
+        }
+      ],
+      "kernel_dimension": 1,
+      "label_ids": [
+        "EQ-3-PLUS",
+        "EQ-3-MINUS",
+        "EQ-1-1-1-MINUS"
+      ],
+      "label_indices": [
+        0,
+        1,
+        5
+      ],
+      "maximum_eigenvalue": null,
+      "minimum_positive_eigenvalue": null,
+      "naturally_occupied": false,
+      "status": "zero-natural-mass-threshold-block",
+      "support_condition_number": null,
+      "support_rank": 0,
+      "tuple_orbit_multiplicity": 6
+    },
+    {
+      "aggregate_natural_probability": 0.0,
+      "block_dimension": 4,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 4
+        }
+      ],
+      "kernel_dimension": 4,
+      "label_ids": [
+        "EQ-3-PLUS",
+        "EQ-3-MINUS",
+        "UNEQ-3__2-1"
+      ],
+      "label_indices": [
+        0,
+        1,
+        6
+      ],
+      "maximum_eigenvalue": null,
+      "minimum_positive_eigenvalue": null,
+      "naturally_occupied": false,
+      "status": "zero-natural-mass-threshold-block",
+      "support_condition_number": null,
+      "support_rank": 0,
+      "tuple_orbit_multiplicity": 6
+    },
+    {
+      "aggregate_natural_probability": 0.0,
+      "block_dimension": 2,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 2
+        }
+      ],
+      "kernel_dimension": 2,
+      "label_ids": [
+        "EQ-3-PLUS",
+        "EQ-3-MINUS",
+        "UNEQ-3__1-1-1"
+      ],
+      "label_indices": [
+        0,
+        1,
+        7
+      ],
+      "maximum_eigenvalue": null,
+      "minimum_positive_eigenvalue": null,
+      "naturally_occupied": false,
+      "status": "zero-natural-mass-threshold-block",
+      "support_condition_number": null,
+      "support_rank": 0,
+      "tuple_orbit_multiplicity": 6
+    },
+    {
+      "aggregate_natural_probability": 0.0,
+      "block_dimension": 4,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 4
+        }
+      ],
+      "kernel_dimension": 4,
+      "label_ids": [
+        "EQ-3-PLUS",
+        "EQ-3-MINUS",
+        "UNEQ-2-1__1-1-1"
+      ],
+      "label_indices": [
+        0,
+        1,
+        8
+      ],
+      "maximum_eigenvalue": null,
+      "minimum_positive_eigenvalue": null,
+      "naturally_occupied": false,
+      "status": "zero-natural-mass-threshold-block",
+      "support_condition_number": null,
+      "support_rank": 0,
+      "tuple_orbit_multiplicity": 6
+    },
+    {
+      "aggregate_natural_probability": 0.009259259259259259,
+      "block_dimension": 16,
+      "distinct_eigenvalue_count": 3,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.5,
+          "multiplicity": 10
+        },
+        {
+          "eigenvalue": 0.625,
+          "multiplicity": 4
+        },
+        {
+          "eigenvalue": 0.75,
+          "multiplicity": 2
+        }
+      ],
+      "kernel_dimension": 0,
+      "label_ids": [
+        "EQ-3-PLUS",
+        "EQ-2-1-PLUS",
+        "EQ-2-1-PLUS"
+      ],
+      "label_indices": [
+        0,
+        2,
+        2
+      ],
+      "maximum_eigenvalue": 0.7500000000000001,
+      "minimum_positive_eigenvalue": 0.49999999999999956,
+      "naturally_occupied": true,
+      "status": "naturally-occupied-threshold-block",
+      "support_condition_number": 1.5000000000000016,
+      "support_rank": 16,
+      "tuple_orbit_multiplicity": 3
+    },
+    {
+      "aggregate_natural_probability": 0.006172839506172839,
+      "block_dimension": 16,
+      "distinct_eigenvalue_count": 3,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": -0.0,
+          "multiplicity": 2
+        },
+        {
+          "eigenvalue": 0.125,
+          "multiplicity": 4
+        },
+        {
+          "eigenvalue": 0.25,
+          "multiplicity": 10
+        }
+      ],
+      "kernel_dimension": 2,
+      "label_ids": [
+        "EQ-3-PLUS",
+        "EQ-2-1-PLUS",
+        "EQ-2-1-MINUS"
+      ],
+      "label_indices": [
+        0,
+        2,
+        3
+      ],
+      "maximum_eigenvalue": 0.2500000000000003,
+      "minimum_positive_eigenvalue": 0.12499999999999999,
+      "naturally_occupied": true,
+      "status": "naturally-occupied-threshold-block",
+      "support_condition_number": 2.0000000000000027,
+      "support_rank": 14,
+      "tuple_orbit_multiplicity": 6
+    },
+    {
+      "aggregate_natural_probability": 0.0015432098765432098,
+      "block_dimension": 4,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.75,
+          "multiplicity": 4
+        }
+      ],
+      "kernel_dimension": 0,
+      "label_ids": [
+        "EQ-3-PLUS",
+        "EQ-2-1-PLUS",
+        "EQ-1-1-1-PLUS"
+      ],
+      "label_indices": [
+        0,
+        2,
+        4
+      ],
+      "maximum_eigenvalue": 0.75,
+      "minimum_positive_eigenvalue": 0.75,
+      "naturally_occupied": true,
+      "status": "naturally-occupied-threshold-block",
+      "support_condition_number": 1.0,
+      "support_rank": 4,
+      "tuple_orbit_multiplicity": 6
+    },
+    {
+      "aggregate_natural_probability": 0.0,
+      "block_dimension": 4,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 4
+        }
+      ],
+      "kernel_dimension": 4,
+      "label_ids": [
+        "EQ-3-PLUS",
+        "EQ-2-1-PLUS",
+        "EQ-1-1-1-MINUS"
+      ],
+      "label_indices": [
+        0,
+        2,
+        5
+      ],
+      "maximum_eigenvalue": null,
+      "minimum_positive_eigenvalue": null,
+      "naturally_occupied": false,
+      "status": "zero-natural-mass-threshold-block",
+      "support_condition_number": null,
+      "support_rank": 0,
+      "tuple_orbit_multiplicity": 6
+    },
+    {
+      "aggregate_natural_probability": 0.012345679012345678,
+      "block_dimension": 16,
+      "distinct_eigenvalue_count": 3,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.25,
+          "multiplicity": 4
+        },
+        {
+          "eigenvalue": 0.375,
+          "multiplicity": 8
+        },
+        {
+          "eigenvalue": 0.5,
+          "multiplicity": 4
+        }
+      ],
+      "kernel_dimension": 0,
+      "label_ids": [
+        "EQ-3-PLUS",
+        "EQ-2-1-PLUS",
+        "UNEQ-3__2-1"
+      ],
+      "label_indices": [
+        0,
+        2,
+        6
+      ],
+      "maximum_eigenvalue": 0.5,
+      "minimum_positive_eigenvalue": 0.2499999999999999,
+      "naturally_occupied": true,
+      "status": "naturally-occupied-threshold-block",
+      "support_condition_number": 2.000000000000001,
+      "support_rank": 16,
+      "tuple_orbit_multiplicity": 6
+    },
+    {
+      "aggregate_natural_probability": 0.0030864197530864196,
+      "block_dimension": 8,
+      "distinct_eigenvalue_count": 2,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.25,
+          "multiplicity": 4
+        },
+        {
+          "eigenvalue": 0.5,
+          "multiplicity": 4
+        }
+      ],
+      "kernel_dimension": 0,
+      "label_ids": [
+        "EQ-3-PLUS",
+        "EQ-2-1-PLUS",
+        "UNEQ-3__1-1-1"
+      ],
+      "label_indices": [
+        0,
+        2,
+        7
+      ],
+      "maximum_eigenvalue": 0.5,
+      "minimum_positive_eigenvalue": 0.25,
+      "naturally_occupied": true,
+      "status": "naturally-occupied-threshold-block",
+      "support_condition_number": 2.0,
+      "support_rank": 8,
+      "tuple_orbit_multiplicity": 6
+    },
+    {
+      "aggregate_natural_probability": 0.012345679012345678,
+      "block_dimension": 16,
+      "distinct_eigenvalue_count": 3,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.25,
+          "multiplicity": 4
+        },
+        {
+          "eigenvalue": 0.375,
+          "multiplicity": 8
+        },
+        {
+          "eigenvalue": 0.5,
+          "multiplicity": 4
+        }
+      ],
+      "kernel_dimension": 0,
+      "label_ids": [
+        "EQ-3-PLUS",
+        "EQ-2-1-PLUS",
+        "UNEQ-2-1__1-1-1"
+      ],
+      "label_indices": [
+        0,
+        2,
+        8
+      ],
+      "maximum_eigenvalue": 0.5000000000000002,
+      "minimum_positive_eigenvalue": 0.24999999999999983,
+      "naturally_occupied": true,
+      "status": "naturally-occupied-threshold-block",
+      "support_condition_number": 2.000000000000002,
+      "support_rank": 16,
+      "tuple_orbit_multiplicity": 6
+    },
+    {
+      "aggregate_natural_probability": 0.0010288065843621398,
+      "block_dimension": 16,
+      "distinct_eigenvalue_count": 3,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 10
+        },
+        {
+          "eigenvalue": 0.125,
+          "multiplicity": 4
+        },
+        {
+          "eigenvalue": 0.25,
+          "multiplicity": 2
+        }
+      ],
+      "kernel_dimension": 10,
+      "label_ids": [
+        "EQ-3-PLUS",
+        "EQ-2-1-MINUS",
+        "EQ-2-1-MINUS"
+      ],
+      "label_indices": [
+        0,
+        3,
+        3
+      ],
+      "maximum_eigenvalue": 0.24999999999999997,
+      "minimum_positive_eigenvalue": 0.12499999999999997,
+      "naturally_occupied": true,
+      "status": "naturally-occupied-threshold-block",
+      "support_condition_number": 2.0000000000000004,
+      "support_rank": 6,
+      "tuple_orbit_multiplicity": 3
+    },
+    {
+      "aggregate_natural_probability": 0.0005144032921810699,
+      "block_dimension": 4,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.25,
+          "multiplicity": 4
+        }
+      ],
+      "kernel_dimension": 0,
+      "label_ids": [
+        "EQ-3-PLUS",
+        "EQ-2-1-MINUS",
+        "EQ-1-1-1-PLUS"
+      ],
+      "label_indices": [
+        0,
+        3,
+        4
+      ],
+      "maximum_eigenvalue": 0.25,
+      "minimum_positive_eigenvalue": 0.25,
+      "naturally_occupied": true,
+      "status": "naturally-occupied-threshold-block",
+      "support_condition_number": 1.0,
+      "support_rank": 4,
+      "tuple_orbit_multiplicity": 6
+    },
+    {
+      "aggregate_natural_probability": 0.0,
+      "block_dimension": 4,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 4
+        }
+      ],
+      "kernel_dimension": 4,
+      "label_ids": [
+        "EQ-3-PLUS",
+        "EQ-2-1-MINUS",
+        "EQ-1-1-1-MINUS"
+      ],
+      "label_indices": [
+        0,
+        3,
+        5
+      ],
+      "maximum_eigenvalue": null,
+      "minimum_positive_eigenvalue": null,
+      "naturally_occupied": false,
+      "status": "zero-natural-mass-threshold-block",
+      "support_condition_number": null,
+      "support_rank": 0,
+      "tuple_orbit_multiplicity": 6
+    },
+    {
+      "aggregate_natural_probability": 0.004115226337448559,
+      "block_dimension": 16,
+      "distinct_eigenvalue_count": 3,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 4
+        },
+        {
+          "eigenvalue": 0.125,
+          "multiplicity": 8
+        },
+        {
+          "eigenvalue": 0.25,
+          "multiplicity": 4
+        }
+      ],
+      "kernel_dimension": 4,
+      "label_ids": [
+        "EQ-3-PLUS",
+        "EQ-2-1-MINUS",
+        "UNEQ-3__2-1"
+      ],
+      "label_indices": [
+        0,
+        3,
+        6
+      ],
+      "maximum_eigenvalue": 0.2500000000000001,
+      "minimum_positive_eigenvalue": 0.12499999999999988,
+      "naturally_occupied": true,
+      "status": "naturally-occupied-threshold-block",
+      "support_condition_number": 2.000000000000003,
+      "support_rank": 12,
+      "tuple_orbit_multiplicity": 6
+    },
+    {
+      "aggregate_natural_probability": 0.0010288065843621398,
+      "block_dimension": 8,
+      "distinct_eigenvalue_count": 2,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 4
+        },
+        {
+          "eigenvalue": 0.25,
+          "multiplicity": 4
+        }
+      ],
+      "kernel_dimension": 4,
+      "label_ids": [
+        "EQ-3-PLUS",
+        "EQ-2-1-MINUS",
+        "UNEQ-3__1-1-1"
+      ],
+      "label_indices": [
+        0,
+        3,
+        7
+      ],
+      "maximum_eigenvalue": 0.25,
+      "minimum_positive_eigenvalue": 0.25,
+      "naturally_occupied": true,
+      "status": "naturally-occupied-threshold-block",
+      "support_condition_number": 1.0,
+      "support_rank": 4,
+      "tuple_orbit_multiplicity": 6
+    },
+    {
+      "aggregate_natural_probability": 0.004115226337448559,
+      "block_dimension": 16,
+      "distinct_eigenvalue_count": 3,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": -0.0,
+          "multiplicity": 4
+        },
+        {
+          "eigenvalue": 0.125,
+          "multiplicity": 8
+        },
+        {
+          "eigenvalue": 0.25,
+          "multiplicity": 4
+        }
+      ],
+      "kernel_dimension": 4,
+      "label_ids": [
+        "EQ-3-PLUS",
+        "EQ-2-1-MINUS",
+        "UNEQ-2-1__1-1-1"
+      ],
+      "label_indices": [
+        0,
+        3,
+        8
+      ],
+      "maximum_eigenvalue": 0.2500000000000001,
+      "minimum_positive_eigenvalue": 0.12499999999999985,
+      "naturally_occupied": true,
+      "status": "naturally-occupied-threshold-block",
+      "support_condition_number": 2.0000000000000036,
+      "support_rank": 12,
+      "tuple_orbit_multiplicity": 6
+    },
+    {
+      "aggregate_natural_probability": 6.430041152263374e-05,
+      "block_dimension": 1,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 1.0,
+          "multiplicity": 1
+        }
+      ],
+      "kernel_dimension": 0,
+      "label_ids": [
+        "EQ-3-PLUS",
+        "EQ-1-1-1-PLUS",
+        "EQ-1-1-1-PLUS"
+      ],
+      "label_indices": [
+        0,
+        4,
+        4
+      ],
+      "maximum_eigenvalue": 1.0,
+      "minimum_positive_eigenvalue": 1.0,
+      "naturally_occupied": true,
+      "status": "naturally-occupied-threshold-block",
+      "support_condition_number": 1.0,
+      "support_rank": 1,
+      "tuple_orbit_multiplicity": 3
+    },
+    {
+      "aggregate_natural_probability": 0.0,
+      "block_dimension": 1,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 1
+        }
+      ],
+      "kernel_dimension": 1,
+      "label_ids": [
+        "EQ-3-PLUS",
+        "EQ-1-1-1-PLUS",
+        "EQ-1-1-1-MINUS"
+      ],
+      "label_indices": [
+        0,
+        4,
+        5
+      ],
+      "maximum_eigenvalue": null,
+      "minimum_positive_eigenvalue": null,
+      "naturally_occupied": false,
+      "status": "zero-natural-mass-threshold-block",
+      "support_condition_number": null,
+      "support_rank": 0,
+      "tuple_orbit_multiplicity": 6
+    },
+    {
+      "aggregate_natural_probability": 0.0010288065843621398,
+      "block_dimension": 4,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.5,
+          "multiplicity": 4
+        }
+      ],
+      "kernel_dimension": 0,
+      "label_ids": [
+        "EQ-3-PLUS",
+        "EQ-1-1-1-PLUS",
+        "UNEQ-3__2-1"
+      ],
+      "label_indices": [
+        0,
+        4,
+        6
+      ],
+      "maximum_eigenvalue": 0.5,
+      "minimum_positive_eigenvalue": 0.5,
+      "naturally_occupied": true,
+      "status": "naturally-occupied-threshold-block",
+      "support_condition_number": 1.0,
+      "support_rank": 4,
+      "tuple_orbit_multiplicity": 6
+    },
+    {
+      "aggregate_natural_probability": 0.00025720164609053495,
+      "block_dimension": 2,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.5,
+          "multiplicity": 2
+        }
+      ],
+      "kernel_dimension": 0,
+      "label_ids": [
+        "EQ-3-PLUS",
+        "EQ-1-1-1-PLUS",
+        "UNEQ-3__1-1-1"
+      ],
+      "label_indices": [
+        0,
+        4,
+        7
+      ],
+      "maximum_eigenvalue": 0.5,
+      "minimum_positive_eigenvalue": 0.5,
+      "naturally_occupied": true,
+      "status": "naturally-occupied-threshold-block",
+      "support_condition_number": 1.0,
+      "support_rank": 2,
+      "tuple_orbit_multiplicity": 6
+    },
+    {
+      "aggregate_natural_probability": 0.0010288065843621398,
+      "block_dimension": 4,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.5,
+          "multiplicity": 4
+        }
+      ],
+      "kernel_dimension": 0,
+      "label_ids": [
+        "EQ-3-PLUS",
+        "EQ-1-1-1-PLUS",
+        "UNEQ-2-1__1-1-1"
+      ],
+      "label_indices": [
+        0,
+        4,
+        8
+      ],
+      "maximum_eigenvalue": 0.5,
+      "minimum_positive_eigenvalue": 0.5,
+      "naturally_occupied": true,
+      "status": "naturally-occupied-threshold-block",
+      "support_condition_number": 1.0,
+      "support_rank": 4,
+      "tuple_orbit_multiplicity": 6
+    },
+    {
+      "aggregate_natural_probability": 0.0,
+      "block_dimension": 1,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 1
+        }
+      ],
+      "kernel_dimension": 1,
+      "label_ids": [
+        "EQ-3-PLUS",
+        "EQ-1-1-1-MINUS",
+        "EQ-1-1-1-MINUS"
+      ],
+      "label_indices": [
+        0,
+        5,
+        5
+      ],
+      "maximum_eigenvalue": null,
+      "minimum_positive_eigenvalue": null,
+      "naturally_occupied": false,
+      "status": "zero-natural-mass-threshold-block",
+      "support_condition_number": null,
+      "support_rank": 0,
+      "tuple_orbit_multiplicity": 3
+    },
+    {
+      "aggregate_natural_probability": 0.0,
+      "block_dimension": 4,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 4
+        }
+      ],
+      "kernel_dimension": 4,
+      "label_ids": [
+        "EQ-3-PLUS",
+        "EQ-1-1-1-MINUS",
+        "UNEQ-3__2-1"
+      ],
+      "label_indices": [
+        0,
+        5,
+        6
+      ],
+      "maximum_eigenvalue": null,
+      "minimum_positive_eigenvalue": null,
+      "naturally_occupied": false,
+      "status": "zero-natural-mass-threshold-block",
+      "support_condition_number": null,
+      "support_rank": 0,
+      "tuple_orbit_multiplicity": 6
+    },
+    {
+      "aggregate_natural_probability": 0.0,
+      "block_dimension": 2,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 2
+        }
+      ],
+      "kernel_dimension": 2,
+      "label_ids": [
+        "EQ-3-PLUS",
+        "EQ-1-1-1-MINUS",
+        "UNEQ-3__1-1-1"
+      ],
+      "label_indices": [
+        0,
+        5,
+        7
+      ],
+      "maximum_eigenvalue": null,
+      "minimum_positive_eigenvalue": null,
+      "naturally_occupied": false,
+      "status": "zero-natural-mass-threshold-block",
+      "support_condition_number": null,
+      "support_rank": 0,
+      "tuple_orbit_multiplicity": 6
+    },
+    {
+      "aggregate_natural_probability": 0.0,
+      "block_dimension": 4,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 4
+        }
+      ],
+      "kernel_dimension": 4,
+      "label_ids": [
+        "EQ-3-PLUS",
+        "EQ-1-1-1-MINUS",
+        "UNEQ-2-1__1-1-1"
+      ],
+      "label_indices": [
+        0,
+        5,
+        8
+      ],
+      "maximum_eigenvalue": null,
+      "minimum_positive_eigenvalue": null,
+      "naturally_occupied": false,
+      "status": "zero-natural-mass-threshold-block",
+      "support_condition_number": null,
+      "support_rank": 0,
+      "tuple_orbit_multiplicity": 6
+    },
+    {
+      "aggregate_natural_probability": 0.004115226337448559,
+      "block_dimension": 16,
+      "distinct_eigenvalue_count": 5,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 1
+        },
+        {
+          "eigenvalue": 0.125,
+          "multiplicity": 4
+        },
+        {
+          "eigenvalue": 0.25,
+          "multiplicity": 6
+        },
+        {
+          "eigenvalue": 0.375,
+          "multiplicity": 4
+        },
+        {
+          "eigenvalue": 0.5,
+          "multiplicity": 1
+        }
+      ],
+      "kernel_dimension": 1,
+      "label_ids": [
+        "EQ-3-PLUS",
+        "UNEQ-3__2-1",
+        "UNEQ-3__2-1"
+      ],
+      "label_indices": [
+        0,
+        6,
+        6
+      ],
+      "maximum_eigenvalue": 0.5,
+      "minimum_positive_eigenvalue": 0.125,
+      "naturally_occupied": true,
+      "status": "naturally-occupied-threshold-block",
+      "support_condition_number": 4.0,
+      "support_rank": 15,
+      "tuple_orbit_multiplicity": 3
+    },
+    {
+      "aggregate_natural_probability": 0.0020576131687242796,
+      "block_dimension": 8,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.25,
+          "multiplicity": 8
+        }
+      ],
+      "kernel_dimension": 0,
+      "label_ids": [
+        "EQ-3-PLUS",
+        "UNEQ-3__2-1",
+        "UNEQ-3__1-1-1"
+      ],
+      "label_indices": [
+        0,
+        6,
+        7
+      ],
+      "maximum_eigenvalue": 0.25,
+      "minimum_positive_eigenvalue": 0.25,
+      "naturally_occupied": true,
+      "status": "naturally-occupied-threshold-block",
+      "support_condition_number": 1.0,
+      "support_rank": 8,
+      "tuple_orbit_multiplicity": 6
+    },
+    {
+      "aggregate_natural_probability": 0.008230452674897118,
+      "block_dimension": 16,
+      "distinct_eigenvalue_count": 5,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 1
+        },
+        {
+          "eigenvalue": 0.125,
+          "multiplicity": 4
+        },
+        {
+          "eigenvalue": 0.25,
+          "multiplicity": 6
+        },
+        {
+          "eigenvalue": 0.375,
+          "multiplicity": 4
+        },
+        {
+          "eigenvalue": 0.5,
+          "multiplicity": 1
+        }
+      ],
+      "kernel_dimension": 1,
+      "label_ids": [
+        "EQ-3-PLUS",
+        "UNEQ-3__2-1",
+        "UNEQ-2-1__1-1-1"
+      ],
+      "label_indices": [
+        0,
+        6,
+        8
+      ],
+      "maximum_eigenvalue": 0.5,
+      "minimum_positive_eigenvalue": 0.125,
+      "naturally_occupied": true,
+      "status": "naturally-occupied-threshold-block",
+      "support_condition_number": 4.0,
+      "support_rank": 15,
+      "tuple_orbit_multiplicity": 6
+    },
+    {
+      "aggregate_natural_probability": 0.00025720164609053495,
+      "block_dimension": 4,
+      "distinct_eigenvalue_count": 2,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 2
+        },
+        {
+          "eigenvalue": 0.5,
+          "multiplicity": 2
+        }
+      ],
+      "kernel_dimension": 2,
+      "label_ids": [
+        "EQ-3-PLUS",
+        "UNEQ-3__1-1-1",
+        "UNEQ-3__1-1-1"
+      ],
+      "label_indices": [
+        0,
+        7,
+        7
+      ],
+      "maximum_eigenvalue": 0.5,
+      "minimum_positive_eigenvalue": 0.5,
+      "naturally_occupied": true,
+      "status": "naturally-occupied-threshold-block",
+      "support_condition_number": 1.0,
+      "support_rank": 2,
+      "tuple_orbit_multiplicity": 3
+    },
+    {
+      "aggregate_natural_probability": 0.0020576131687242796,
+      "block_dimension": 8,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.25,
+          "multiplicity": 8
+        }
+      ],
+      "kernel_dimension": 0,
+      "label_ids": [
+        "EQ-3-PLUS",
+        "UNEQ-3__1-1-1",
+        "UNEQ-2-1__1-1-1"
+      ],
+      "label_indices": [
+        0,
+        7,
+        8
+      ],
+      "maximum_eigenvalue": 0.25,
+      "minimum_positive_eigenvalue": 0.25,
+      "naturally_occupied": true,
+      "status": "naturally-occupied-threshold-block",
+      "support_condition_number": 1.0,
+      "support_rank": 8,
+      "tuple_orbit_multiplicity": 6
+    },
+    {
+      "aggregate_natural_probability": 0.004115226337448559,
+      "block_dimension": 16,
+      "distinct_eigenvalue_count": 5,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 1
+        },
+        {
+          "eigenvalue": 0.125,
+          "multiplicity": 4
+        },
+        {
+          "eigenvalue": 0.25,
+          "multiplicity": 6
+        },
+        {
+          "eigenvalue": 0.375,
+          "multiplicity": 4
+        },
+        {
+          "eigenvalue": 0.5,
+          "multiplicity": 1
+        }
+      ],
+      "kernel_dimension": 1,
+      "label_ids": [
+        "EQ-3-PLUS",
+        "UNEQ-2-1__1-1-1",
+        "UNEQ-2-1__1-1-1"
+      ],
+      "label_indices": [
+        0,
+        8,
+        8
+      ],
+      "maximum_eigenvalue": 0.5,
+      "minimum_positive_eigenvalue": 0.125,
+      "naturally_occupied": true,
+      "status": "naturally-occupied-threshold-block",
+      "support_condition_number": 4.0,
+      "support_rank": 15,
+      "tuple_orbit_multiplicity": 3
+    },
+    {
+      "aggregate_natural_probability": 0.0,
+      "block_dimension": 1,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 1
+        }
+      ],
+      "kernel_dimension": 1,
+      "label_ids": [
+        "EQ-3-MINUS",
+        "EQ-3-MINUS",
+        "EQ-3-MINUS"
+      ],
+      "label_indices": [
+        1,
+        1,
+        1
+      ],
+      "maximum_eigenvalue": null,
+      "minimum_positive_eigenvalue": null,
+      "naturally_occupied": false,
+      "status": "zero-natural-mass-threshold-block",
+      "support_condition_number": null,
+      "support_rank": 0,
+      "tuple_orbit_multiplicity": 1
+    },
+    {
+      "aggregate_natural_probability": 0.0,
+      "block_dimension": 4,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 4
+        }
+      ],
+      "kernel_dimension": 4,
+      "label_ids": [
+        "EQ-3-MINUS",
+        "EQ-3-MINUS",
+        "EQ-2-1-PLUS"
+      ],
+      "label_indices": [
+        1,
+        1,
+        2
+      ],
+      "maximum_eigenvalue": null,
+      "minimum_positive_eigenvalue": null,
+      "naturally_occupied": false,
+      "status": "zero-natural-mass-threshold-block",
+      "support_condition_number": null,
+      "support_rank": 0,
+      "tuple_orbit_multiplicity": 3
+    },
+    {
+      "aggregate_natural_probability": 0.0,
+      "block_dimension": 4,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 4
+        }
+      ],
+      "kernel_dimension": 4,
+      "label_ids": [
+        "EQ-3-MINUS",
+        "EQ-3-MINUS",
+        "EQ-2-1-MINUS"
+      ],
+      "label_indices": [
+        1,
+        1,
+        3
+      ],
+      "maximum_eigenvalue": null,
+      "minimum_positive_eigenvalue": null,
+      "naturally_occupied": false,
+      "status": "zero-natural-mass-threshold-block",
+      "support_condition_number": null,
+      "support_rank": 0,
+      "tuple_orbit_multiplicity": 3
+    },
+    {
+      "aggregate_natural_probability": 0.0,
+      "block_dimension": 1,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 1
+        }
+      ],
+      "kernel_dimension": 1,
+      "label_ids": [
+        "EQ-3-MINUS",
+        "EQ-3-MINUS",
+        "EQ-1-1-1-PLUS"
+      ],
+      "label_indices": [
+        1,
+        1,
+        4
+      ],
+      "maximum_eigenvalue": null,
+      "minimum_positive_eigenvalue": null,
+      "naturally_occupied": false,
+      "status": "zero-natural-mass-threshold-block",
+      "support_condition_number": null,
+      "support_rank": 0,
+      "tuple_orbit_multiplicity": 3
+    },
+    {
+      "aggregate_natural_probability": 0.0,
+      "block_dimension": 1,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 1
+        }
+      ],
+      "kernel_dimension": 1,
+      "label_ids": [
+        "EQ-3-MINUS",
+        "EQ-3-MINUS",
+        "EQ-1-1-1-MINUS"
+      ],
+      "label_indices": [
+        1,
+        1,
+        5
+      ],
+      "maximum_eigenvalue": null,
+      "minimum_positive_eigenvalue": null,
+      "naturally_occupied": false,
+      "status": "zero-natural-mass-threshold-block",
+      "support_condition_number": null,
+      "support_rank": 0,
+      "tuple_orbit_multiplicity": 3
+    },
+    {
+      "aggregate_natural_probability": 0.0,
+      "block_dimension": 4,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 4
+        }
+      ],
+      "kernel_dimension": 4,
+      "label_ids": [
+        "EQ-3-MINUS",
+        "EQ-3-MINUS",
+        "UNEQ-3__2-1"
+      ],
+      "label_indices": [
+        1,
+        1,
+        6
+      ],
+      "maximum_eigenvalue": null,
+      "minimum_positive_eigenvalue": null,
+      "naturally_occupied": false,
+      "status": "zero-natural-mass-threshold-block",
+      "support_condition_number": null,
+      "support_rank": 0,
+      "tuple_orbit_multiplicity": 3
+    },
+    {
+      "aggregate_natural_probability": 0.0,
+      "block_dimension": 2,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 2
+        }
+      ],
+      "kernel_dimension": 2,
+      "label_ids": [
+        "EQ-3-MINUS",
+        "EQ-3-MINUS",
+        "UNEQ-3__1-1-1"
+      ],
+      "label_indices": [
+        1,
+        1,
+        7
+      ],
+      "maximum_eigenvalue": null,
+      "minimum_positive_eigenvalue": null,
+      "naturally_occupied": false,
+      "status": "zero-natural-mass-threshold-block",
+      "support_condition_number": null,
+      "support_rank": 0,
+      "tuple_orbit_multiplicity": 3
+    },
+    {
+      "aggregate_natural_probability": 0.0,
+      "block_dimension": 4,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 4
+        }
+      ],
+      "kernel_dimension": 4,
+      "label_ids": [
+        "EQ-3-MINUS",
+        "EQ-3-MINUS",
+        "UNEQ-2-1__1-1-1"
+      ],
+      "label_indices": [
+        1,
+        1,
+        8
+      ],
+      "maximum_eigenvalue": null,
+      "minimum_positive_eigenvalue": null,
+      "naturally_occupied": false,
+      "status": "zero-natural-mass-threshold-block",
+      "support_condition_number": null,
+      "support_rank": 0,
+      "tuple_orbit_multiplicity": 3
+    },
+    {
+      "aggregate_natural_probability": 0.0,
+      "block_dimension": 16,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 16
+        }
+      ],
+      "kernel_dimension": 16,
+      "label_ids": [
+        "EQ-3-MINUS",
+        "EQ-2-1-PLUS",
+        "EQ-2-1-PLUS"
+      ],
+      "label_indices": [
+        1,
+        2,
+        2
+      ],
+      "maximum_eigenvalue": null,
+      "minimum_positive_eigenvalue": null,
+      "naturally_occupied": false,
+      "status": "zero-natural-mass-threshold-block",
+      "support_condition_number": null,
+      "support_rank": 0,
+      "tuple_orbit_multiplicity": 3
+    },
+    {
+      "aggregate_natural_probability": 0.0,
+      "block_dimension": 16,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 16
+        }
+      ],
+      "kernel_dimension": 16,
+      "label_ids": [
+        "EQ-3-MINUS",
+        "EQ-2-1-PLUS",
+        "EQ-2-1-MINUS"
+      ],
+      "label_indices": [
+        1,
+        2,
+        3
+      ],
+      "maximum_eigenvalue": null,
+      "minimum_positive_eigenvalue": null,
+      "naturally_occupied": false,
+      "status": "zero-natural-mass-threshold-block",
+      "support_condition_number": null,
+      "support_rank": 0,
+      "tuple_orbit_multiplicity": 6
+    },
+    {
+      "aggregate_natural_probability": 0.0,
+      "block_dimension": 4,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 4
+        }
+      ],
+      "kernel_dimension": 4,
+      "label_ids": [
+        "EQ-3-MINUS",
+        "EQ-2-1-PLUS",
+        "EQ-1-1-1-PLUS"
+      ],
+      "label_indices": [
+        1,
+        2,
+        4
+      ],
+      "maximum_eigenvalue": null,
+      "minimum_positive_eigenvalue": null,
+      "naturally_occupied": false,
+      "status": "zero-natural-mass-threshold-block",
+      "support_condition_number": null,
+      "support_rank": 0,
+      "tuple_orbit_multiplicity": 6
+    },
+    {
+      "aggregate_natural_probability": 0.0,
+      "block_dimension": 4,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 4
+        }
+      ],
+      "kernel_dimension": 4,
+      "label_ids": [
+        "EQ-3-MINUS",
+        "EQ-2-1-PLUS",
+        "EQ-1-1-1-MINUS"
+      ],
+      "label_indices": [
+        1,
+        2,
+        5
+      ],
+      "maximum_eigenvalue": null,
+      "minimum_positive_eigenvalue": null,
+      "naturally_occupied": false,
+      "status": "zero-natural-mass-threshold-block",
+      "support_condition_number": null,
+      "support_rank": 0,
+      "tuple_orbit_multiplicity": 6
+    },
+    {
+      "aggregate_natural_probability": 0.0,
+      "block_dimension": 16,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 16
+        }
+      ],
+      "kernel_dimension": 16,
+      "label_ids": [
+        "EQ-3-MINUS",
+        "EQ-2-1-PLUS",
+        "UNEQ-3__2-1"
+      ],
+      "label_indices": [
+        1,
+        2,
+        6
+      ],
+      "maximum_eigenvalue": null,
+      "minimum_positive_eigenvalue": null,
+      "naturally_occupied": false,
+      "status": "zero-natural-mass-threshold-block",
+      "support_condition_number": null,
+      "support_rank": 0,
+      "tuple_orbit_multiplicity": 6
+    },
+    {
+      "aggregate_natural_probability": 0.0,
+      "block_dimension": 8,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 8
+        }
+      ],
+      "kernel_dimension": 8,
+      "label_ids": [
+        "EQ-3-MINUS",
+        "EQ-2-1-PLUS",
+        "UNEQ-3__1-1-1"
+      ],
+      "label_indices": [
+        1,
+        2,
+        7
+      ],
+      "maximum_eigenvalue": null,
+      "minimum_positive_eigenvalue": null,
+      "naturally_occupied": false,
+      "status": "zero-natural-mass-threshold-block",
+      "support_condition_number": null,
+      "support_rank": 0,
+      "tuple_orbit_multiplicity": 6
+    },
+    {
+      "aggregate_natural_probability": 0.0,
+      "block_dimension": 16,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 16
+        }
+      ],
+      "kernel_dimension": 16,
+      "label_ids": [
+        "EQ-3-MINUS",
+        "EQ-2-1-PLUS",
+        "UNEQ-2-1__1-1-1"
+      ],
+      "label_indices": [
+        1,
+        2,
+        8
+      ],
+      "maximum_eigenvalue": null,
+      "minimum_positive_eigenvalue": null,
+      "naturally_occupied": false,
+      "status": "zero-natural-mass-threshold-block",
+      "support_condition_number": null,
+      "support_rank": 0,
+      "tuple_orbit_multiplicity": 6
+    },
+    {
+      "aggregate_natural_probability": 0.0,
+      "block_dimension": 16,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 16
+        }
+      ],
+      "kernel_dimension": 16,
+      "label_ids": [
+        "EQ-3-MINUS",
+        "EQ-2-1-MINUS",
+        "EQ-2-1-MINUS"
+      ],
+      "label_indices": [
+        1,
+        3,
+        3
+      ],
+      "maximum_eigenvalue": null,
+      "minimum_positive_eigenvalue": null,
+      "naturally_occupied": false,
+      "status": "zero-natural-mass-threshold-block",
+      "support_condition_number": null,
+      "support_rank": 0,
+      "tuple_orbit_multiplicity": 3
+    },
+    {
+      "aggregate_natural_probability": 0.0,
+      "block_dimension": 4,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 4
+        }
+      ],
+      "kernel_dimension": 4,
+      "label_ids": [
+        "EQ-3-MINUS",
+        "EQ-2-1-MINUS",
+        "EQ-1-1-1-PLUS"
+      ],
+      "label_indices": [
+        1,
+        3,
+        4
+      ],
+      "maximum_eigenvalue": null,
+      "minimum_positive_eigenvalue": null,
+      "naturally_occupied": false,
+      "status": "zero-natural-mass-threshold-block",
+      "support_condition_number": null,
+      "support_rank": 0,
+      "tuple_orbit_multiplicity": 6
+    },
+    {
+      "aggregate_natural_probability": 0.0,
+      "block_dimension": 4,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 4
+        }
+      ],
+      "kernel_dimension": 4,
+      "label_ids": [
+        "EQ-3-MINUS",
+        "EQ-2-1-MINUS",
+        "EQ-1-1-1-MINUS"
+      ],
+      "label_indices": [
+        1,
+        3,
+        5
+      ],
+      "maximum_eigenvalue": null,
+      "minimum_positive_eigenvalue": null,
+      "naturally_occupied": false,
+      "status": "zero-natural-mass-threshold-block",
+      "support_condition_number": null,
+      "support_rank": 0,
+      "tuple_orbit_multiplicity": 6
+    },
+    {
+      "aggregate_natural_probability": 0.0,
+      "block_dimension": 16,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 16
+        }
+      ],
+      "kernel_dimension": 16,
+      "label_ids": [
+        "EQ-3-MINUS",
+        "EQ-2-1-MINUS",
+        "UNEQ-3__2-1"
+      ],
+      "label_indices": [
+        1,
+        3,
+        6
+      ],
+      "maximum_eigenvalue": null,
+      "minimum_positive_eigenvalue": null,
+      "naturally_occupied": false,
+      "status": "zero-natural-mass-threshold-block",
+      "support_condition_number": null,
+      "support_rank": 0,
+      "tuple_orbit_multiplicity": 6
+    },
+    {
+      "aggregate_natural_probability": 0.0,
+      "block_dimension": 8,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 8
+        }
+      ],
+      "kernel_dimension": 8,
+      "label_ids": [
+        "EQ-3-MINUS",
+        "EQ-2-1-MINUS",
+        "UNEQ-3__1-1-1"
+      ],
+      "label_indices": [
+        1,
+        3,
+        7
+      ],
+      "maximum_eigenvalue": null,
+      "minimum_positive_eigenvalue": null,
+      "naturally_occupied": false,
+      "status": "zero-natural-mass-threshold-block",
+      "support_condition_number": null,
+      "support_rank": 0,
+      "tuple_orbit_multiplicity": 6
+    },
+    {
+      "aggregate_natural_probability": 0.0,
+      "block_dimension": 16,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 16
+        }
+      ],
+      "kernel_dimension": 16,
+      "label_ids": [
+        "EQ-3-MINUS",
+        "EQ-2-1-MINUS",
+        "UNEQ-2-1__1-1-1"
+      ],
+      "label_indices": [
+        1,
+        3,
+        8
+      ],
+      "maximum_eigenvalue": null,
+      "minimum_positive_eigenvalue": null,
+      "naturally_occupied": false,
+      "status": "zero-natural-mass-threshold-block",
+      "support_condition_number": null,
+      "support_rank": 0,
+      "tuple_orbit_multiplicity": 6
+    },
+    {
+      "aggregate_natural_probability": 0.0,
+      "block_dimension": 1,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 1
+        }
+      ],
+      "kernel_dimension": 1,
+      "label_ids": [
+        "EQ-3-MINUS",
+        "EQ-1-1-1-PLUS",
+        "EQ-1-1-1-PLUS"
+      ],
+      "label_indices": [
+        1,
+        4,
+        4
+      ],
+      "maximum_eigenvalue": null,
+      "minimum_positive_eigenvalue": null,
+      "naturally_occupied": false,
+      "status": "zero-natural-mass-threshold-block",
+      "support_condition_number": null,
+      "support_rank": 0,
+      "tuple_orbit_multiplicity": 3
+    },
+    {
+      "aggregate_natural_probability": 0.0,
+      "block_dimension": 1,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 1
+        }
+      ],
+      "kernel_dimension": 1,
+      "label_ids": [
+        "EQ-3-MINUS",
+        "EQ-1-1-1-PLUS",
+        "EQ-1-1-1-MINUS"
+      ],
+      "label_indices": [
+        1,
+        4,
+        5
+      ],
+      "maximum_eigenvalue": null,
+      "minimum_positive_eigenvalue": null,
+      "naturally_occupied": false,
+      "status": "zero-natural-mass-threshold-block",
+      "support_condition_number": null,
+      "support_rank": 0,
+      "tuple_orbit_multiplicity": 6
+    },
+    {
+      "aggregate_natural_probability": 0.0,
+      "block_dimension": 4,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 4
+        }
+      ],
+      "kernel_dimension": 4,
+      "label_ids": [
+        "EQ-3-MINUS",
+        "EQ-1-1-1-PLUS",
+        "UNEQ-3__2-1"
+      ],
+      "label_indices": [
+        1,
+        4,
+        6
+      ],
+      "maximum_eigenvalue": null,
+      "minimum_positive_eigenvalue": null,
+      "naturally_occupied": false,
+      "status": "zero-natural-mass-threshold-block",
+      "support_condition_number": null,
+      "support_rank": 0,
+      "tuple_orbit_multiplicity": 6
+    },
+    {
+      "aggregate_natural_probability": 0.0,
+      "block_dimension": 2,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 2
+        }
+      ],
+      "kernel_dimension": 2,
+      "label_ids": [
+        "EQ-3-MINUS",
+        "EQ-1-1-1-PLUS",
+        "UNEQ-3__1-1-1"
+      ],
+      "label_indices": [
+        1,
+        4,
+        7
+      ],
+      "maximum_eigenvalue": null,
+      "minimum_positive_eigenvalue": null,
+      "naturally_occupied": false,
+      "status": "zero-natural-mass-threshold-block",
+      "support_condition_number": null,
+      "support_rank": 0,
+      "tuple_orbit_multiplicity": 6
+    },
+    {
+      "aggregate_natural_probability": 0.0,
+      "block_dimension": 4,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 4
+        }
+      ],
+      "kernel_dimension": 4,
+      "label_ids": [
+        "EQ-3-MINUS",
+        "EQ-1-1-1-PLUS",
+        "UNEQ-2-1__1-1-1"
+      ],
+      "label_indices": [
+        1,
+        4,
+        8
+      ],
+      "maximum_eigenvalue": null,
+      "minimum_positive_eigenvalue": null,
+      "naturally_occupied": false,
+      "status": "zero-natural-mass-threshold-block",
+      "support_condition_number": null,
+      "support_rank": 0,
+      "tuple_orbit_multiplicity": 6
+    },
+    {
+      "aggregate_natural_probability": 0.0,
+      "block_dimension": 1,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 1
+        }
+      ],
+      "kernel_dimension": 1,
+      "label_ids": [
+        "EQ-3-MINUS",
+        "EQ-1-1-1-MINUS",
+        "EQ-1-1-1-MINUS"
+      ],
+      "label_indices": [
+        1,
+        5,
+        5
+      ],
+      "maximum_eigenvalue": null,
+      "minimum_positive_eigenvalue": null,
+      "naturally_occupied": false,
+      "status": "zero-natural-mass-threshold-block",
+      "support_condition_number": null,
+      "support_rank": 0,
+      "tuple_orbit_multiplicity": 3
+    },
+    {
+      "aggregate_natural_probability": 0.0,
+      "block_dimension": 4,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 4
+        }
+      ],
+      "kernel_dimension": 4,
+      "label_ids": [
+        "EQ-3-MINUS",
+        "EQ-1-1-1-MINUS",
+        "UNEQ-3__2-1"
+      ],
+      "label_indices": [
+        1,
+        5,
+        6
+      ],
+      "maximum_eigenvalue": null,
+      "minimum_positive_eigenvalue": null,
+      "naturally_occupied": false,
+      "status": "zero-natural-mass-threshold-block",
+      "support_condition_number": null,
+      "support_rank": 0,
+      "tuple_orbit_multiplicity": 6
+    },
+    {
+      "aggregate_natural_probability": 0.0,
+      "block_dimension": 2,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 2
+        }
+      ],
+      "kernel_dimension": 2,
+      "label_ids": [
+        "EQ-3-MINUS",
+        "EQ-1-1-1-MINUS",
+        "UNEQ-3__1-1-1"
+      ],
+      "label_indices": [
+        1,
+        5,
+        7
+      ],
+      "maximum_eigenvalue": null,
+      "minimum_positive_eigenvalue": null,
+      "naturally_occupied": false,
+      "status": "zero-natural-mass-threshold-block",
+      "support_condition_number": null,
+      "support_rank": 0,
+      "tuple_orbit_multiplicity": 6
+    },
+    {
+      "aggregate_natural_probability": 0.0,
+      "block_dimension": 4,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 4
+        }
+      ],
+      "kernel_dimension": 4,
+      "label_ids": [
+        "EQ-3-MINUS",
+        "EQ-1-1-1-MINUS",
+        "UNEQ-2-1__1-1-1"
+      ],
+      "label_indices": [
+        1,
+        5,
+        8
+      ],
+      "maximum_eigenvalue": null,
+      "minimum_positive_eigenvalue": null,
+      "naturally_occupied": false,
+      "status": "zero-natural-mass-threshold-block",
+      "support_condition_number": null,
+      "support_rank": 0,
+      "tuple_orbit_multiplicity": 6
+    },
+    {
+      "aggregate_natural_probability": 0.0,
+      "block_dimension": 16,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 16
+        }
+      ],
+      "kernel_dimension": 16,
+      "label_ids": [
+        "EQ-3-MINUS",
+        "UNEQ-3__2-1",
+        "UNEQ-3__2-1"
+      ],
+      "label_indices": [
+        1,
+        6,
+        6
+      ],
+      "maximum_eigenvalue": null,
+      "minimum_positive_eigenvalue": null,
+      "naturally_occupied": false,
+      "status": "zero-natural-mass-threshold-block",
+      "support_condition_number": null,
+      "support_rank": 0,
+      "tuple_orbit_multiplicity": 3
+    },
+    {
+      "aggregate_natural_probability": 0.0,
+      "block_dimension": 8,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 8
+        }
+      ],
+      "kernel_dimension": 8,
+      "label_ids": [
+        "EQ-3-MINUS",
+        "UNEQ-3__2-1",
+        "UNEQ-3__1-1-1"
+      ],
+      "label_indices": [
+        1,
+        6,
+        7
+      ],
+      "maximum_eigenvalue": null,
+      "minimum_positive_eigenvalue": null,
+      "naturally_occupied": false,
+      "status": "zero-natural-mass-threshold-block",
+      "support_condition_number": null,
+      "support_rank": 0,
+      "tuple_orbit_multiplicity": 6
+    },
+    {
+      "aggregate_natural_probability": 0.0,
+      "block_dimension": 16,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 16
+        }
+      ],
+      "kernel_dimension": 16,
+      "label_ids": [
+        "EQ-3-MINUS",
+        "UNEQ-3__2-1",
+        "UNEQ-2-1__1-1-1"
+      ],
+      "label_indices": [
+        1,
+        6,
+        8
+      ],
+      "maximum_eigenvalue": null,
+      "minimum_positive_eigenvalue": null,
+      "naturally_occupied": false,
+      "status": "zero-natural-mass-threshold-block",
+      "support_condition_number": null,
+      "support_rank": 0,
+      "tuple_orbit_multiplicity": 6
+    },
+    {
+      "aggregate_natural_probability": 0.0,
+      "block_dimension": 4,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 4
+        }
+      ],
+      "kernel_dimension": 4,
+      "label_ids": [
+        "EQ-3-MINUS",
+        "UNEQ-3__1-1-1",
+        "UNEQ-3__1-1-1"
+      ],
+      "label_indices": [
+        1,
+        7,
+        7
+      ],
+      "maximum_eigenvalue": null,
+      "minimum_positive_eigenvalue": null,
+      "naturally_occupied": false,
+      "status": "zero-natural-mass-threshold-block",
+      "support_condition_number": null,
+      "support_rank": 0,
+      "tuple_orbit_multiplicity": 3
+    },
+    {
+      "aggregate_natural_probability": 0.0,
+      "block_dimension": 8,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 8
+        }
+      ],
+      "kernel_dimension": 8,
+      "label_ids": [
+        "EQ-3-MINUS",
+        "UNEQ-3__1-1-1",
+        "UNEQ-2-1__1-1-1"
+      ],
+      "label_indices": [
+        1,
+        7,
+        8
+      ],
+      "maximum_eigenvalue": null,
+      "minimum_positive_eigenvalue": null,
+      "naturally_occupied": false,
+      "status": "zero-natural-mass-threshold-block",
+      "support_condition_number": null,
+      "support_rank": 0,
+      "tuple_orbit_multiplicity": 6
+    },
+    {
+      "aggregate_natural_probability": 0.0,
+      "block_dimension": 16,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 16
+        }
+      ],
+      "kernel_dimension": 16,
+      "label_ids": [
+        "EQ-3-MINUS",
+        "UNEQ-2-1__1-1-1",
+        "UNEQ-2-1__1-1-1"
+      ],
+      "label_indices": [
+        1,
+        8,
+        8
+      ],
+      "maximum_eigenvalue": null,
+      "minimum_positive_eigenvalue": null,
+      "naturally_occupied": false,
+      "status": "zero-natural-mass-threshold-block",
+      "support_condition_number": null,
+      "support_rank": 0,
+      "tuple_orbit_multiplicity": 3
+    },
+    {
+      "aggregate_natural_probability": 0.037037037037037035,
+      "block_dimension": 64,
+      "distinct_eigenvalue_count": 5,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.25,
+          "multiplicity": 12
+        },
+        {
+          "eigenvalue": 0.375,
+          "multiplicity": 24
+        },
+        {
+          "eigenvalue": 0.5,
+          "multiplicity": 22
+        },
+        {
+          "eigenvalue": 0.625,
+          "multiplicity": 2
+        },
+        {
+          "eigenvalue": 0.6875,
+          "multiplicity": 4
+        }
+      ],
+      "kernel_dimension": 0,
+      "label_ids": [
+        "EQ-2-1-PLUS",
+        "EQ-2-1-PLUS",
+        "EQ-2-1-PLUS"
+      ],
+      "label_indices": [
+        2,
+        2,
+        2
+      ],
+      "maximum_eigenvalue": 0.6875000000000004,
+      "minimum_positive_eigenvalue": 0.2499999999999997,
+      "naturally_occupied": true,
+      "status": "naturally-occupied-threshold-block",
+      "support_condition_number": 2.7500000000000053,
+      "support_rank": 64,
+      "tuple_orbit_multiplicity": 1
+    },
+    {
+      "aggregate_natural_probability": 0.037037037037037035,
+      "block_dimension": 64,
+      "distinct_eigenvalue_count": 4,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 18
+        },
+        {
+          "eigenvalue": 0.125,
+          "multiplicity": 18
+        },
+        {
+          "eigenvalue": 0.1875,
+          "multiplicity": 4
+        },
+        {
+          "eigenvalue": 0.25,
+          "multiplicity": 24
+        }
+      ],
+      "kernel_dimension": 18,
+      "label_ids": [
+        "EQ-2-1-PLUS",
+        "EQ-2-1-PLUS",
+        "EQ-2-1-MINUS"
+      ],
+      "label_indices": [
+        2,
+        2,
+        3
+      ],
+      "maximum_eigenvalue": 0.25000000000000033,
+      "minimum_positive_eigenvalue": 0.12499999999999982,
+      "naturally_occupied": true,
+      "status": "naturally-occupied-threshold-block",
+      "support_condition_number": 2.0000000000000058,
+      "support_rank": 46,
+      "tuple_orbit_multiplicity": 3
+    },
+    {
+      "aggregate_natural_probability": 0.009259259259259259,
+      "block_dimension": 16,
+      "distinct_eigenvalue_count": 3,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.5,
+          "multiplicity": 10
+        },
+        {
+          "eigenvalue": 0.625,
+          "multiplicity": 4
+        },
+        {
+          "eigenvalue": 0.75,
+          "multiplicity": 2
+        }
+      ],
+      "kernel_dimension": 0,
+      "label_ids": [
+        "EQ-2-1-PLUS",
+        "EQ-2-1-PLUS",
+        "EQ-1-1-1-PLUS"
+      ],
+      "label_indices": [
+        2,
+        2,
+        4
+      ],
+      "maximum_eigenvalue": 0.7500000000000001,
+      "minimum_positive_eigenvalue": 0.49999999999999956,
+      "naturally_occupied": true,
+      "status": "naturally-occupied-threshold-block",
+      "support_condition_number": 1.5000000000000016,
+      "support_rank": 16,
+      "tuple_orbit_multiplicity": 3
+    },
+    {
+      "aggregate_natural_probability": 0.0,
+      "block_dimension": 16,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 16
+        }
+      ],
+      "kernel_dimension": 16,
+      "label_ids": [
+        "EQ-2-1-PLUS",
+        "EQ-2-1-PLUS",
+        "EQ-1-1-1-MINUS"
+      ],
+      "label_indices": [
+        2,
+        2,
+        5
+      ],
+      "maximum_eigenvalue": null,
+      "minimum_positive_eigenvalue": null,
+      "naturally_occupied": false,
+      "status": "zero-natural-mass-threshold-block",
+      "support_condition_number": null,
+      "support_rank": 0,
+      "tuple_orbit_multiplicity": 3
+    },
+    {
+      "aggregate_natural_probability": 0.07407407407407407,
+      "block_dimension": 64,
+      "distinct_eigenvalue_count": 6,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": -0.0,
+          "multiplicity": 2
+        },
+        {
+          "eigenvalue": 0.125,
+          "multiplicity": 8
+        },
+        {
+          "eigenvalue": 0.25,
+          "multiplicity": 32
+        },
+        {
+          "eigenvalue": 0.375,
+          "multiplicity": 12
+        },
+        {
+          "eigenvalue": 0.4375,
+          "multiplicity": 8
+        },
+        {
+          "eigenvalue": 0.5,
+          "multiplicity": 2
+        }
+      ],
+      "kernel_dimension": 2,
+      "label_ids": [
+        "EQ-2-1-PLUS",
+        "EQ-2-1-PLUS",
+        "UNEQ-3__2-1"
+      ],
+      "label_indices": [
+        2,
+        2,
+        6
+      ],
+      "maximum_eigenvalue": 0.5000000000000001,
+      "minimum_positive_eigenvalue": 0.12499999999999989,
+      "naturally_occupied": true,
+      "status": "naturally-occupied-threshold-block",
+      "support_condition_number": 4.000000000000004,
+      "support_rank": 62,
+      "tuple_orbit_multiplicity": 3
+    },
+    {
+      "aggregate_natural_probability": 0.018518518518518517,
+      "block_dimension": 32,
+      "distinct_eigenvalue_count": 4,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 2
+        },
+        {
+          "eigenvalue": 0.125,
+          "multiplicity": 4
+        },
+        {
+          "eigenvalue": 0.25,
+          "multiplicity": 18
+        },
+        {
+          "eigenvalue": 0.5,
+          "multiplicity": 8
+        }
+      ],
+      "kernel_dimension": 2,
+      "label_ids": [
+        "EQ-2-1-PLUS",
+        "EQ-2-1-PLUS",
+        "UNEQ-3__1-1-1"
+      ],
+      "label_indices": [
+        2,
+        2,
+        7
+      ],
+      "maximum_eigenvalue": 0.5000000000000001,
+      "minimum_positive_eigenvalue": 0.12499999999999982,
+      "naturally_occupied": true,
+      "status": "naturally-occupied-threshold-block",
+      "support_condition_number": 4.000000000000007,
+      "support_rank": 30,
+      "tuple_orbit_multiplicity": 3
+    },
+    {
+      "aggregate_natural_probability": 0.07407407407407407,
+      "block_dimension": 64,
+      "distinct_eigenvalue_count": 6,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 2
+        },
+        {
+          "eigenvalue": 0.125,
+          "multiplicity": 8
+        },
+        {
+          "eigenvalue": 0.25,
+          "multiplicity": 32
+        },
+        {
+          "eigenvalue": 0.375,
+          "multiplicity": 12
+        },
+        {
+          "eigenvalue": 0.4375,
+          "multiplicity": 8
+        },
+        {
+          "eigenvalue": 0.5,
+          "multiplicity": 2
+        }
+      ],
+      "kernel_dimension": 2,
+      "label_ids": [
+        "EQ-2-1-PLUS",
+        "EQ-2-1-PLUS",
+        "UNEQ-2-1__1-1-1"
+      ],
+      "label_indices": [
+        2,
+        2,
+        8
+      ],
+      "maximum_eigenvalue": 0.5000000000000001,
+      "minimum_positive_eigenvalue": 0.12499999999999996,
+      "naturally_occupied": true,
+      "status": "naturally-occupied-threshold-block",
+      "support_condition_number": 4.000000000000003,
+      "support_rank": 62,
+      "tuple_orbit_multiplicity": 3
+    },
+    {
+      "aggregate_natural_probability": 0.012345679012345678,
+      "block_dimension": 64,
+      "distinct_eigenvalue_count": 4,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 46
+        },
+        {
+          "eigenvalue": 0.125,
+          "multiplicity": 10
+        },
+        {
+          "eigenvalue": 0.1875,
+          "multiplicity": 4
+        },
+        {
+          "eigenvalue": 0.25,
+          "multiplicity": 4
+        }
+      ],
+      "kernel_dimension": 46,
+      "label_ids": [
+        "EQ-2-1-PLUS",
+        "EQ-2-1-MINUS",
+        "EQ-2-1-MINUS"
+      ],
+      "label_indices": [
+        2,
+        3,
+        3
+      ],
+      "maximum_eigenvalue": 0.2500000000000001,
+      "minimum_positive_eigenvalue": 0.12499999999999993,
+      "naturally_occupied": true,
+      "status": "naturally-occupied-threshold-block",
+      "support_condition_number": 2.000000000000002,
+      "support_rank": 18,
+      "tuple_orbit_multiplicity": 3
+    },
+    {
+      "aggregate_natural_probability": 0.006172839506172839,
+      "block_dimension": 16,
+      "distinct_eigenvalue_count": 3,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": -0.0,
+          "multiplicity": 2
+        },
+        {
+          "eigenvalue": 0.125,
+          "multiplicity": 4
+        },
+        {
+          "eigenvalue": 0.25,
+          "multiplicity": 10
+        }
+      ],
+      "kernel_dimension": 2,
+      "label_ids": [
+        "EQ-2-1-PLUS",
+        "EQ-2-1-MINUS",
+        "EQ-1-1-1-PLUS"
+      ],
+      "label_indices": [
+        2,
+        3,
+        4
+      ],
+      "maximum_eigenvalue": 0.2500000000000003,
+      "minimum_positive_eigenvalue": 0.12499999999999999,
+      "naturally_occupied": true,
+      "status": "naturally-occupied-threshold-block",
+      "support_condition_number": 2.0000000000000027,
+      "support_rank": 14,
+      "tuple_orbit_multiplicity": 6
+    },
+    {
+      "aggregate_natural_probability": 0.0,
+      "block_dimension": 16,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 16
+        }
+      ],
+      "kernel_dimension": 16,
+      "label_ids": [
+        "EQ-2-1-PLUS",
+        "EQ-2-1-MINUS",
+        "EQ-1-1-1-MINUS"
+      ],
+      "label_indices": [
+        2,
+        3,
+        5
+      ],
+      "maximum_eigenvalue": null,
+      "minimum_positive_eigenvalue": null,
+      "naturally_occupied": false,
+      "status": "zero-natural-mass-threshold-block",
+      "support_condition_number": null,
+      "support_rank": 0,
+      "tuple_orbit_multiplicity": 6
+    },
+    {
+      "aggregate_natural_probability": 0.04938271604938271,
+      "block_dimension": 64,
+      "distinct_eigenvalue_count": 4,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 28
+        },
+        {
+          "eigenvalue": 0.125,
+          "multiplicity": 20
+        },
+        {
+          "eigenvalue": 0.1875,
+          "multiplicity": 8
+        },
+        {
+          "eigenvalue": 0.25,
+          "multiplicity": 8
+        }
+      ],
+      "kernel_dimension": 28,
+      "label_ids": [
+        "EQ-2-1-PLUS",
+        "EQ-2-1-MINUS",
+        "UNEQ-3__2-1"
+      ],
+      "label_indices": [
+        2,
+        3,
+        6
+      ],
+      "maximum_eigenvalue": 0.2500000000000002,
+      "minimum_positive_eigenvalue": 0.12499999999999985,
+      "naturally_occupied": true,
+      "status": "naturally-occupied-threshold-block",
+      "support_condition_number": 2.0000000000000044,
+      "support_rank": 36,
+      "tuple_orbit_multiplicity": 6
+    },
+    {
+      "aggregate_natural_probability": 0.012345679012345678,
+      "block_dimension": 32,
+      "distinct_eigenvalue_count": 3,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 18
+        },
+        {
+          "eigenvalue": 0.125,
+          "multiplicity": 4
+        },
+        {
+          "eigenvalue": 0.25,
+          "multiplicity": 10
+        }
+      ],
+      "kernel_dimension": 18,
+      "label_ids": [
+        "EQ-2-1-PLUS",
+        "EQ-2-1-MINUS",
+        "UNEQ-3__1-1-1"
+      ],
+      "label_indices": [
+        2,
+        3,
+        7
+      ],
+      "maximum_eigenvalue": 0.2500000000000001,
+      "minimum_positive_eigenvalue": 0.125,
+      "naturally_occupied": true,
+      "status": "naturally-occupied-threshold-block",
+      "support_condition_number": 2.000000000000001,
+      "support_rank": 14,
+      "tuple_orbit_multiplicity": 6
+    },
+    {
+      "aggregate_natural_probability": 0.04938271604938271,
+      "block_dimension": 64,
+      "distinct_eigenvalue_count": 4,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 28
+        },
+        {
+          "eigenvalue": 0.125,
+          "multiplicity": 20
+        },
+        {
+          "eigenvalue": 0.1875,
+          "multiplicity": 8
+        },
+        {
+          "eigenvalue": 0.25,
+          "multiplicity": 8
+        }
+      ],
+      "kernel_dimension": 28,
+      "label_ids": [
+        "EQ-2-1-PLUS",
+        "EQ-2-1-MINUS",
+        "UNEQ-2-1__1-1-1"
+      ],
+      "label_indices": [
+        2,
+        3,
+        8
+      ],
+      "maximum_eigenvalue": 0.25000000000000017,
+      "minimum_positive_eigenvalue": 0.1249999999999999,
+      "naturally_occupied": true,
+      "status": "naturally-occupied-threshold-block",
+      "support_condition_number": 2.000000000000003,
+      "support_rank": 36,
+      "tuple_orbit_multiplicity": 6
+    },
+    {
+      "aggregate_natural_probability": 0.0007716049382716049,
+      "block_dimension": 4,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.75,
+          "multiplicity": 4
+        }
+      ],
+      "kernel_dimension": 0,
+      "label_ids": [
+        "EQ-2-1-PLUS",
+        "EQ-1-1-1-PLUS",
+        "EQ-1-1-1-PLUS"
+      ],
+      "label_indices": [
+        2,
+        4,
+        4
+      ],
+      "maximum_eigenvalue": 0.75,
+      "minimum_positive_eigenvalue": 0.75,
+      "naturally_occupied": true,
+      "status": "naturally-occupied-threshold-block",
+      "support_condition_number": 1.0,
+      "support_rank": 4,
+      "tuple_orbit_multiplicity": 3
+    },
+    {
+      "aggregate_natural_probability": 0.0,
+      "block_dimension": 4,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 4
+        }
+      ],
+      "kernel_dimension": 4,
+      "label_ids": [
+        "EQ-2-1-PLUS",
+        "EQ-1-1-1-PLUS",
+        "EQ-1-1-1-MINUS"
+      ],
+      "label_indices": [
+        2,
+        4,
+        5
+      ],
+      "maximum_eigenvalue": null,
+      "minimum_positive_eigenvalue": null,
+      "naturally_occupied": false,
+      "status": "zero-natural-mass-threshold-block",
+      "support_condition_number": null,
+      "support_rank": 0,
+      "tuple_orbit_multiplicity": 6
+    },
+    {
+      "aggregate_natural_probability": 0.012345679012345678,
+      "block_dimension": 16,
+      "distinct_eigenvalue_count": 3,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.25,
+          "multiplicity": 4
+        },
+        {
+          "eigenvalue": 0.375,
+          "multiplicity": 8
+        },
+        {
+          "eigenvalue": 0.5,
+          "multiplicity": 4
+        }
+      ],
+      "kernel_dimension": 0,
+      "label_ids": [
+        "EQ-2-1-PLUS",
+        "EQ-1-1-1-PLUS",
+        "UNEQ-3__2-1"
+      ],
+      "label_indices": [
+        2,
+        4,
+        6
+      ],
+      "maximum_eigenvalue": 0.5,
+      "minimum_positive_eigenvalue": 0.2499999999999999,
+      "naturally_occupied": true,
+      "status": "naturally-occupied-threshold-block",
+      "support_condition_number": 2.000000000000001,
+      "support_rank": 16,
+      "tuple_orbit_multiplicity": 6
+    },
+    {
+      "aggregate_natural_probability": 0.0030864197530864196,
+      "block_dimension": 8,
+      "distinct_eigenvalue_count": 2,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.25,
+          "multiplicity": 4
+        },
+        {
+          "eigenvalue": 0.5,
+          "multiplicity": 4
+        }
+      ],
+      "kernel_dimension": 0,
+      "label_ids": [
+        "EQ-2-1-PLUS",
+        "EQ-1-1-1-PLUS",
+        "UNEQ-3__1-1-1"
+      ],
+      "label_indices": [
+        2,
+        4,
+        7
+      ],
+      "maximum_eigenvalue": 0.5,
+      "minimum_positive_eigenvalue": 0.25,
+      "naturally_occupied": true,
+      "status": "naturally-occupied-threshold-block",
+      "support_condition_number": 2.0,
+      "support_rank": 8,
+      "tuple_orbit_multiplicity": 6
+    },
+    {
+      "aggregate_natural_probability": 0.012345679012345678,
+      "block_dimension": 16,
+      "distinct_eigenvalue_count": 3,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.25,
+          "multiplicity": 4
+        },
+        {
+          "eigenvalue": 0.375,
+          "multiplicity": 8
+        },
+        {
+          "eigenvalue": 0.5,
+          "multiplicity": 4
+        }
+      ],
+      "kernel_dimension": 0,
+      "label_ids": [
+        "EQ-2-1-PLUS",
+        "EQ-1-1-1-PLUS",
+        "UNEQ-2-1__1-1-1"
+      ],
+      "label_indices": [
+        2,
+        4,
+        8
+      ],
+      "maximum_eigenvalue": 0.5000000000000002,
+      "minimum_positive_eigenvalue": 0.24999999999999983,
+      "naturally_occupied": true,
+      "status": "naturally-occupied-threshold-block",
+      "support_condition_number": 2.000000000000002,
+      "support_rank": 16,
+      "tuple_orbit_multiplicity": 6
+    },
+    {
+      "aggregate_natural_probability": 0.0,
+      "block_dimension": 4,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 4
+        }
+      ],
+      "kernel_dimension": 4,
+      "label_ids": [
+        "EQ-2-1-PLUS",
+        "EQ-1-1-1-MINUS",
+        "EQ-1-1-1-MINUS"
+      ],
+      "label_indices": [
+        2,
+        5,
+        5
+      ],
+      "maximum_eigenvalue": null,
+      "minimum_positive_eigenvalue": null,
+      "naturally_occupied": false,
+      "status": "zero-natural-mass-threshold-block",
+      "support_condition_number": null,
+      "support_rank": 0,
+      "tuple_orbit_multiplicity": 3
+    },
+    {
+      "aggregate_natural_probability": 0.0,
+      "block_dimension": 16,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 16
+        }
+      ],
+      "kernel_dimension": 16,
+      "label_ids": [
+        "EQ-2-1-PLUS",
+        "EQ-1-1-1-MINUS",
+        "UNEQ-3__2-1"
+      ],
+      "label_indices": [
+        2,
+        5,
+        6
+      ],
+      "maximum_eigenvalue": null,
+      "minimum_positive_eigenvalue": null,
+      "naturally_occupied": false,
+      "status": "zero-natural-mass-threshold-block",
+      "support_condition_number": null,
+      "support_rank": 0,
+      "tuple_orbit_multiplicity": 6
+    },
+    {
+      "aggregate_natural_probability": 0.0,
+      "block_dimension": 8,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 8
+        }
+      ],
+      "kernel_dimension": 8,
+      "label_ids": [
+        "EQ-2-1-PLUS",
+        "EQ-1-1-1-MINUS",
+        "UNEQ-3__1-1-1"
+      ],
+      "label_indices": [
+        2,
+        5,
+        7
+      ],
+      "maximum_eigenvalue": null,
+      "minimum_positive_eigenvalue": null,
+      "naturally_occupied": false,
+      "status": "zero-natural-mass-threshold-block",
+      "support_condition_number": null,
+      "support_rank": 0,
+      "tuple_orbit_multiplicity": 6
+    },
+    {
+      "aggregate_natural_probability": 0.0,
+      "block_dimension": 16,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 16
+        }
+      ],
+      "kernel_dimension": 16,
+      "label_ids": [
+        "EQ-2-1-PLUS",
+        "EQ-1-1-1-MINUS",
+        "UNEQ-2-1__1-1-1"
+      ],
+      "label_indices": [
+        2,
+        5,
+        8
+      ],
+      "maximum_eigenvalue": null,
+      "minimum_positive_eigenvalue": null,
+      "naturally_occupied": false,
+      "status": "zero-natural-mass-threshold-block",
+      "support_condition_number": null,
+      "support_rank": 0,
+      "tuple_orbit_multiplicity": 6
+    },
+    {
+      "aggregate_natural_probability": 0.04938271604938271,
+      "block_dimension": 64,
+      "distinct_eigenvalue_count": 7,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 10
+        },
+        {
+          "eigenvalue": 0.125,
+          "multiplicity": 22
+        },
+        {
+          "eigenvalue": 0.1875,
+          "multiplicity": 4
+        },
+        {
+          "eigenvalue": 0.25,
+          "multiplicity": 14
+        },
+        {
+          "eigenvalue": 0.3125,
+          "multiplicity": 8
+        },
+        {
+          "eigenvalue": 0.375,
+          "multiplicity": 2
+        },
+        {
+          "eigenvalue": 0.4375,
+          "multiplicity": 4
+        }
+      ],
+      "kernel_dimension": 10,
+      "label_ids": [
+        "EQ-2-1-PLUS",
+        "UNEQ-3__2-1",
+        "UNEQ-3__2-1"
+      ],
+      "label_indices": [
+        2,
+        6,
+        6
+      ],
+      "maximum_eigenvalue": 0.4375000000000003,
+      "minimum_positive_eigenvalue": 0.12499999999999983,
+      "naturally_occupied": true,
+      "status": "naturally-occupied-threshold-block",
+      "support_condition_number": 3.500000000000007,
+      "support_rank": 54,
+      "tuple_orbit_multiplicity": 3
+    },
+    {
+      "aggregate_natural_probability": 0.024691358024691357,
+      "block_dimension": 32,
+      "distinct_eigenvalue_count": 3,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": -0.0,
+          "multiplicity": 4
+        },
+        {
+          "eigenvalue": 0.125,
+          "multiplicity": 8
+        },
+        {
+          "eigenvalue": 0.25,
+          "multiplicity": 20
+        }
+      ],
+      "kernel_dimension": 4,
+      "label_ids": [
+        "EQ-2-1-PLUS",
+        "UNEQ-3__2-1",
+        "UNEQ-3__1-1-1"
+      ],
+      "label_indices": [
+        2,
+        6,
+        7
+      ],
+      "maximum_eigenvalue": 0.2500000000000003,
+      "minimum_positive_eigenvalue": 0.12499999999999996,
+      "naturally_occupied": true,
+      "status": "naturally-occupied-threshold-block",
+      "support_condition_number": 2.000000000000003,
+      "support_rank": 28,
+      "tuple_orbit_multiplicity": 6
+    },
+    {
+      "aggregate_natural_probability": 0.09876543209876543,
+      "block_dimension": 64,
+      "distinct_eigenvalue_count": 7,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": -0.0,
+          "multiplicity": 10
+        },
+        {
+          "eigenvalue": 0.125,
+          "multiplicity": 22
+        },
+        {
+          "eigenvalue": 0.1875,
+          "multiplicity": 4
+        },
+        {
+          "eigenvalue": 0.25,
+          "multiplicity": 14
+        },
+        {
+          "eigenvalue": 0.3125,
+          "multiplicity": 8
+        },
+        {
+          "eigenvalue": 0.375,
+          "multiplicity": 2
+        },
+        {
+          "eigenvalue": 0.4375,
+          "multiplicity": 4
+        }
+      ],
+      "kernel_dimension": 10,
+      "label_ids": [
+        "EQ-2-1-PLUS",
+        "UNEQ-3__2-1",
+        "UNEQ-2-1__1-1-1"
+      ],
+      "label_indices": [
+        2,
+        6,
+        8
+      ],
+      "maximum_eigenvalue": 0.43750000000000017,
+      "minimum_positive_eigenvalue": 0.12499999999999986,
+      "naturally_occupied": true,
+      "status": "naturally-occupied-threshold-block",
+      "support_condition_number": 3.5000000000000053,
+      "support_rank": 54,
+      "tuple_orbit_multiplicity": 6
+    },
+    {
+      "aggregate_natural_probability": 0.0030864197530864196,
+      "block_dimension": 16,
+      "distinct_eigenvalue_count": 3,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": -0.0,
+          "multiplicity": 8
+        },
+        {
+          "eigenvalue": 0.25,
+          "multiplicity": 4
+        },
+        {
+          "eigenvalue": 0.5,
+          "multiplicity": 4
+        }
+      ],
+      "kernel_dimension": 8,
+      "label_ids": [
+        "EQ-2-1-PLUS",
+        "UNEQ-3__1-1-1",
+        "UNEQ-3__1-1-1"
+      ],
+      "label_indices": [
+        2,
+        7,
+        7
+      ],
+      "maximum_eigenvalue": 0.5,
+      "minimum_positive_eigenvalue": 0.2499999999999999,
+      "naturally_occupied": true,
+      "status": "naturally-occupied-threshold-block",
+      "support_condition_number": 2.000000000000001,
+      "support_rank": 8,
+      "tuple_orbit_multiplicity": 3
+    },
+    {
+      "aggregate_natural_probability": 0.024691358024691357,
+      "block_dimension": 32,
+      "distinct_eigenvalue_count": 3,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 4
+        },
+        {
+          "eigenvalue": 0.125,
+          "multiplicity": 8
+        },
+        {
+          "eigenvalue": 0.25,
+          "multiplicity": 20
+        }
+      ],
+      "kernel_dimension": 4,
+      "label_ids": [
+        "EQ-2-1-PLUS",
+        "UNEQ-3__1-1-1",
+        "UNEQ-2-1__1-1-1"
+      ],
+      "label_indices": [
+        2,
+        7,
+        8
+      ],
+      "maximum_eigenvalue": 0.2500000000000004,
+      "minimum_positive_eigenvalue": 0.12499999999999996,
+      "naturally_occupied": true,
+      "status": "naturally-occupied-threshold-block",
+      "support_condition_number": 2.000000000000004,
+      "support_rank": 28,
+      "tuple_orbit_multiplicity": 6
+    },
+    {
+      "aggregate_natural_probability": 0.04938271604938271,
+      "block_dimension": 64,
+      "distinct_eigenvalue_count": 7,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 10
+        },
+        {
+          "eigenvalue": 0.125,
+          "multiplicity": 22
+        },
+        {
+          "eigenvalue": 0.1875,
+          "multiplicity": 4
+        },
+        {
+          "eigenvalue": 0.25,
+          "multiplicity": 14
+        },
+        {
+          "eigenvalue": 0.3125,
+          "multiplicity": 8
+        },
+        {
+          "eigenvalue": 0.375,
+          "multiplicity": 2
+        },
+        {
+          "eigenvalue": 0.4375,
+          "multiplicity": 4
+        }
+      ],
+      "kernel_dimension": 10,
+      "label_ids": [
+        "EQ-2-1-PLUS",
+        "UNEQ-2-1__1-1-1",
+        "UNEQ-2-1__1-1-1"
+      ],
+      "label_indices": [
+        2,
+        8,
+        8
+      ],
+      "maximum_eigenvalue": 0.4375000000000002,
+      "minimum_positive_eigenvalue": 0.12499999999999976,
+      "naturally_occupied": true,
+      "status": "naturally-occupied-threshold-block",
+      "support_condition_number": 3.5000000000000084,
+      "support_rank": 54,
+      "tuple_orbit_multiplicity": 3
+    },
+    {
+      "aggregate_natural_probability": 0.0013717421124828531,
+      "block_dimension": 64,
+      "distinct_eigenvalue_count": 3,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 58
+        },
+        {
+          "eigenvalue": 0.125,
+          "multiplicity": 2
+        },
+        {
+          "eigenvalue": 0.1875,
+          "multiplicity": 4
+        }
+      ],
+      "kernel_dimension": 58,
+      "label_ids": [
+        "EQ-2-1-MINUS",
+        "EQ-2-1-MINUS",
+        "EQ-2-1-MINUS"
+      ],
+      "label_indices": [
+        3,
+        3,
+        3
+      ],
+      "maximum_eigenvalue": 0.18750000000000003,
+      "minimum_positive_eigenvalue": 0.12499999999999997,
+      "naturally_occupied": true,
+      "status": "naturally-occupied-threshold-block",
+      "support_condition_number": 1.5000000000000007,
+      "support_rank": 6,
+      "tuple_orbit_multiplicity": 1
+    },
+    {
+      "aggregate_natural_probability": 0.0010288065843621398,
+      "block_dimension": 16,
+      "distinct_eigenvalue_count": 3,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 10
+        },
+        {
+          "eigenvalue": 0.125,
+          "multiplicity": 4
+        },
+        {
+          "eigenvalue": 0.25,
+          "multiplicity": 2
+        }
+      ],
+      "kernel_dimension": 10,
+      "label_ids": [
+        "EQ-2-1-MINUS",
+        "EQ-2-1-MINUS",
+        "EQ-1-1-1-PLUS"
+      ],
+      "label_indices": [
+        3,
+        3,
+        4
+      ],
+      "maximum_eigenvalue": 0.24999999999999997,
+      "minimum_positive_eigenvalue": 0.12499999999999997,
+      "naturally_occupied": true,
+      "status": "naturally-occupied-threshold-block",
+      "support_condition_number": 2.0000000000000004,
+      "support_rank": 6,
+      "tuple_orbit_multiplicity": 3
+    },
+    {
+      "aggregate_natural_probability": 0.0,
+      "block_dimension": 16,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 16
+        }
+      ],
+      "kernel_dimension": 16,
+      "label_ids": [
+        "EQ-2-1-MINUS",
+        "EQ-2-1-MINUS",
+        "EQ-1-1-1-MINUS"
+      ],
+      "label_indices": [
+        3,
+        3,
+        5
+      ],
+      "maximum_eigenvalue": null,
+      "minimum_positive_eigenvalue": null,
+      "naturally_occupied": false,
+      "status": "zero-natural-mass-threshold-block",
+      "support_condition_number": null,
+      "support_rank": 0,
+      "tuple_orbit_multiplicity": 3
+    },
+    {
+      "aggregate_natural_probability": 0.008230452674897118,
+      "block_dimension": 64,
+      "distinct_eigenvalue_count": 3,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 52
+        },
+        {
+          "eigenvalue": 0.125,
+          "multiplicity": 4
+        },
+        {
+          "eigenvalue": 0.1875,
+          "multiplicity": 8
+        }
+      ],
+      "kernel_dimension": 52,
+      "label_ids": [
+        "EQ-2-1-MINUS",
+        "EQ-2-1-MINUS",
+        "UNEQ-3__2-1"
+      ],
+      "label_indices": [
+        3,
+        3,
+        6
+      ],
+      "maximum_eigenvalue": 0.18750000000000006,
+      "minimum_positive_eigenvalue": 0.12499999999999989,
+      "naturally_occupied": true,
+      "status": "naturally-occupied-threshold-block",
+      "support_condition_number": 1.5000000000000018,
+      "support_rank": 12,
+      "tuple_orbit_multiplicity": 3
+    },
+    {
+      "aggregate_natural_probability": 0.0020576131687242796,
+      "block_dimension": 32,
+      "distinct_eigenvalue_count": 3,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 26
+        },
+        {
+          "eigenvalue": 0.125,
+          "multiplicity": 4
+        },
+        {
+          "eigenvalue": 0.25,
+          "multiplicity": 2
+        }
+      ],
+      "kernel_dimension": 26,
+      "label_ids": [
+        "EQ-2-1-MINUS",
+        "EQ-2-1-MINUS",
+        "UNEQ-3__1-1-1"
+      ],
+      "label_indices": [
+        3,
+        3,
+        7
+      ],
+      "maximum_eigenvalue": 0.24999999999999997,
+      "minimum_positive_eigenvalue": 0.125,
+      "naturally_occupied": true,
+      "status": "naturally-occupied-threshold-block",
+      "support_condition_number": 1.9999999999999998,
+      "support_rank": 6,
+      "tuple_orbit_multiplicity": 3
+    },
+    {
+      "aggregate_natural_probability": 0.008230452674897118,
+      "block_dimension": 64,
+      "distinct_eigenvalue_count": 3,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 52
+        },
+        {
+          "eigenvalue": 0.125,
+          "multiplicity": 4
+        },
+        {
+          "eigenvalue": 0.1875,
+          "multiplicity": 8
+        }
+      ],
+      "kernel_dimension": 52,
+      "label_ids": [
+        "EQ-2-1-MINUS",
+        "EQ-2-1-MINUS",
+        "UNEQ-2-1__1-1-1"
+      ],
+      "label_indices": [
+        3,
+        3,
+        8
+      ],
+      "maximum_eigenvalue": 0.18750000000000008,
+      "minimum_positive_eigenvalue": 0.12499999999999992,
+      "naturally_occupied": true,
+      "status": "naturally-occupied-threshold-block",
+      "support_condition_number": 1.5000000000000018,
+      "support_rank": 12,
+      "tuple_orbit_multiplicity": 3
+    },
+    {
+      "aggregate_natural_probability": 0.00025720164609053495,
+      "block_dimension": 4,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.25,
+          "multiplicity": 4
+        }
+      ],
+      "kernel_dimension": 0,
+      "label_ids": [
+        "EQ-2-1-MINUS",
+        "EQ-1-1-1-PLUS",
+        "EQ-1-1-1-PLUS"
+      ],
+      "label_indices": [
+        3,
+        4,
+        4
+      ],
+      "maximum_eigenvalue": 0.25,
+      "minimum_positive_eigenvalue": 0.25,
+      "naturally_occupied": true,
+      "status": "naturally-occupied-threshold-block",
+      "support_condition_number": 1.0,
+      "support_rank": 4,
+      "tuple_orbit_multiplicity": 3
+    },
+    {
+      "aggregate_natural_probability": 0.0,
+      "block_dimension": 4,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 4
+        }
+      ],
+      "kernel_dimension": 4,
+      "label_ids": [
+        "EQ-2-1-MINUS",
+        "EQ-1-1-1-PLUS",
+        "EQ-1-1-1-MINUS"
+      ],
+      "label_indices": [
+        3,
+        4,
+        5
+      ],
+      "maximum_eigenvalue": null,
+      "minimum_positive_eigenvalue": null,
+      "naturally_occupied": false,
+      "status": "zero-natural-mass-threshold-block",
+      "support_condition_number": null,
+      "support_rank": 0,
+      "tuple_orbit_multiplicity": 6
+    },
+    {
+      "aggregate_natural_probability": 0.004115226337448559,
+      "block_dimension": 16,
+      "distinct_eigenvalue_count": 3,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 4
+        },
+        {
+          "eigenvalue": 0.125,
+          "multiplicity": 8
+        },
+        {
+          "eigenvalue": 0.25,
+          "multiplicity": 4
+        }
+      ],
+      "kernel_dimension": 4,
+      "label_ids": [
+        "EQ-2-1-MINUS",
+        "EQ-1-1-1-PLUS",
+        "UNEQ-3__2-1"
+      ],
+      "label_indices": [
+        3,
+        4,
+        6
+      ],
+      "maximum_eigenvalue": 0.2500000000000001,
+      "minimum_positive_eigenvalue": 0.12499999999999988,
+      "naturally_occupied": true,
+      "status": "naturally-occupied-threshold-block",
+      "support_condition_number": 2.000000000000003,
+      "support_rank": 12,
+      "tuple_orbit_multiplicity": 6
+    },
+    {
+      "aggregate_natural_probability": 0.0010288065843621398,
+      "block_dimension": 8,
+      "distinct_eigenvalue_count": 2,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 4
+        },
+        {
+          "eigenvalue": 0.25,
+          "multiplicity": 4
+        }
+      ],
+      "kernel_dimension": 4,
+      "label_ids": [
+        "EQ-2-1-MINUS",
+        "EQ-1-1-1-PLUS",
+        "UNEQ-3__1-1-1"
+      ],
+      "label_indices": [
+        3,
+        4,
+        7
+      ],
+      "maximum_eigenvalue": 0.25,
+      "minimum_positive_eigenvalue": 0.25,
+      "naturally_occupied": true,
+      "status": "naturally-occupied-threshold-block",
+      "support_condition_number": 1.0,
+      "support_rank": 4,
+      "tuple_orbit_multiplicity": 6
+    },
+    {
+      "aggregate_natural_probability": 0.004115226337448559,
+      "block_dimension": 16,
+      "distinct_eigenvalue_count": 3,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": -0.0,
+          "multiplicity": 4
+        },
+        {
+          "eigenvalue": 0.125,
+          "multiplicity": 8
+        },
+        {
+          "eigenvalue": 0.25,
+          "multiplicity": 4
+        }
+      ],
+      "kernel_dimension": 4,
+      "label_ids": [
+        "EQ-2-1-MINUS",
+        "EQ-1-1-1-PLUS",
+        "UNEQ-2-1__1-1-1"
+      ],
+      "label_indices": [
+        3,
+        4,
+        8
+      ],
+      "maximum_eigenvalue": 0.2500000000000001,
+      "minimum_positive_eigenvalue": 0.12499999999999985,
+      "naturally_occupied": true,
+      "status": "naturally-occupied-threshold-block",
+      "support_condition_number": 2.0000000000000036,
+      "support_rank": 12,
+      "tuple_orbit_multiplicity": 6
+    },
+    {
+      "aggregate_natural_probability": 0.0,
+      "block_dimension": 4,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 4
+        }
+      ],
+      "kernel_dimension": 4,
+      "label_ids": [
+        "EQ-2-1-MINUS",
+        "EQ-1-1-1-MINUS",
+        "EQ-1-1-1-MINUS"
+      ],
+      "label_indices": [
+        3,
+        5,
+        5
+      ],
+      "maximum_eigenvalue": null,
+      "minimum_positive_eigenvalue": null,
+      "naturally_occupied": false,
+      "status": "zero-natural-mass-threshold-block",
+      "support_condition_number": null,
+      "support_rank": 0,
+      "tuple_orbit_multiplicity": 3
+    },
+    {
+      "aggregate_natural_probability": 0.0,
+      "block_dimension": 16,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 16
+        }
+      ],
+      "kernel_dimension": 16,
+      "label_ids": [
+        "EQ-2-1-MINUS",
+        "EQ-1-1-1-MINUS",
+        "UNEQ-3__2-1"
+      ],
+      "label_indices": [
+        3,
+        5,
+        6
+      ],
+      "maximum_eigenvalue": null,
+      "minimum_positive_eigenvalue": null,
+      "naturally_occupied": false,
+      "status": "zero-natural-mass-threshold-block",
+      "support_condition_number": null,
+      "support_rank": 0,
+      "tuple_orbit_multiplicity": 6
+    },
+    {
+      "aggregate_natural_probability": 0.0,
+      "block_dimension": 8,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 8
+        }
+      ],
+      "kernel_dimension": 8,
+      "label_ids": [
+        "EQ-2-1-MINUS",
+        "EQ-1-1-1-MINUS",
+        "UNEQ-3__1-1-1"
+      ],
+      "label_indices": [
+        3,
+        5,
+        7
+      ],
+      "maximum_eigenvalue": null,
+      "minimum_positive_eigenvalue": null,
+      "naturally_occupied": false,
+      "status": "zero-natural-mass-threshold-block",
+      "support_condition_number": null,
+      "support_rank": 0,
+      "tuple_orbit_multiplicity": 6
+    },
+    {
+      "aggregate_natural_probability": 0.0,
+      "block_dimension": 16,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 16
+        }
+      ],
+      "kernel_dimension": 16,
+      "label_ids": [
+        "EQ-2-1-MINUS",
+        "EQ-1-1-1-MINUS",
+        "UNEQ-2-1__1-1-1"
+      ],
+      "label_indices": [
+        3,
+        5,
+        8
+      ],
+      "maximum_eigenvalue": null,
+      "minimum_positive_eigenvalue": null,
+      "naturally_occupied": false,
+      "status": "zero-natural-mass-threshold-block",
+      "support_condition_number": null,
+      "support_rank": 0,
+      "tuple_orbit_multiplicity": 6
+    },
+    {
+      "aggregate_natural_probability": 0.016460905349794237,
+      "block_dimension": 64,
+      "distinct_eigenvalue_count": 3,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 40
+        },
+        {
+          "eigenvalue": 0.125,
+          "multiplicity": 8
+        },
+        {
+          "eigenvalue": 0.1875,
+          "multiplicity": 16
+        }
+      ],
+      "kernel_dimension": 40,
+      "label_ids": [
+        "EQ-2-1-MINUS",
+        "UNEQ-3__2-1",
+        "UNEQ-3__2-1"
+      ],
+      "label_indices": [
+        3,
+        6,
+        6
+      ],
+      "maximum_eigenvalue": 0.18750000000000017,
+      "minimum_positive_eigenvalue": 0.12499999999999992,
+      "naturally_occupied": true,
+      "status": "naturally-occupied-threshold-block",
+      "support_condition_number": 1.5000000000000024,
+      "support_rank": 24,
+      "tuple_orbit_multiplicity": 3
+    },
+    {
+      "aggregate_natural_probability": 0.008230452674897118,
+      "block_dimension": 32,
+      "distinct_eigenvalue_count": 3,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 20
+        },
+        {
+          "eigenvalue": 0.125,
+          "multiplicity": 8
+        },
+        {
+          "eigenvalue": 0.25,
+          "multiplicity": 4
+        }
+      ],
+      "kernel_dimension": 20,
+      "label_ids": [
+        "EQ-2-1-MINUS",
+        "UNEQ-3__2-1",
+        "UNEQ-3__1-1-1"
+      ],
+      "label_indices": [
+        3,
+        6,
+        7
+      ],
+      "maximum_eigenvalue": 0.25,
+      "minimum_positive_eigenvalue": 0.12499999999999994,
+      "naturally_occupied": true,
+      "status": "naturally-occupied-threshold-block",
+      "support_condition_number": 2.000000000000001,
+      "support_rank": 12,
+      "tuple_orbit_multiplicity": 6
+    },
+    {
+      "aggregate_natural_probability": 0.03292181069958847,
+      "block_dimension": 64,
+      "distinct_eigenvalue_count": 3,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 40
+        },
+        {
+          "eigenvalue": 0.125,
+          "multiplicity": 8
+        },
+        {
+          "eigenvalue": 0.1875,
+          "multiplicity": 16
+        }
+      ],
+      "kernel_dimension": 40,
+      "label_ids": [
+        "EQ-2-1-MINUS",
+        "UNEQ-3__2-1",
+        "UNEQ-2-1__1-1-1"
+      ],
+      "label_indices": [
+        3,
+        6,
+        8
+      ],
+      "maximum_eigenvalue": 0.18750000000000006,
+      "minimum_positive_eigenvalue": 0.12499999999999986,
+      "naturally_occupied": true,
+      "status": "naturally-occupied-threshold-block",
+      "support_condition_number": 1.5000000000000022,
+      "support_rank": 24,
+      "tuple_orbit_multiplicity": 6
+    },
+    {
+      "aggregate_natural_probability": 0.0010288065843621398,
+      "block_dimension": 16,
+      "distinct_eigenvalue_count": 2,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 12
+        },
+        {
+          "eigenvalue": 0.25,
+          "multiplicity": 4
+        }
+      ],
+      "kernel_dimension": 12,
+      "label_ids": [
+        "EQ-2-1-MINUS",
+        "UNEQ-3__1-1-1",
+        "UNEQ-3__1-1-1"
+      ],
+      "label_indices": [
+        3,
+        7,
+        7
+      ],
+      "maximum_eigenvalue": 0.25000000000000017,
+      "minimum_positive_eigenvalue": 0.2499999999999999,
+      "naturally_occupied": true,
+      "status": "naturally-occupied-threshold-block",
+      "support_condition_number": 1.000000000000001,
+      "support_rank": 4,
+      "tuple_orbit_multiplicity": 3
+    },
+    {
+      "aggregate_natural_probability": 0.008230452674897118,
+      "block_dimension": 32,
+      "distinct_eigenvalue_count": 3,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 20
+        },
+        {
+          "eigenvalue": 0.125,
+          "multiplicity": 8
+        },
+        {
+          "eigenvalue": 0.25,
+          "multiplicity": 4
+        }
+      ],
+      "kernel_dimension": 20,
+      "label_ids": [
+        "EQ-2-1-MINUS",
+        "UNEQ-3__1-1-1",
+        "UNEQ-2-1__1-1-1"
+      ],
+      "label_indices": [
+        3,
+        7,
+        8
+      ],
+      "maximum_eigenvalue": 0.2500000000000001,
+      "minimum_positive_eigenvalue": 0.12499999999999992,
+      "naturally_occupied": true,
+      "status": "naturally-occupied-threshold-block",
+      "support_condition_number": 2.000000000000002,
+      "support_rank": 12,
+      "tuple_orbit_multiplicity": 6
+    },
+    {
+      "aggregate_natural_probability": 0.016460905349794237,
+      "block_dimension": 64,
+      "distinct_eigenvalue_count": 3,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 40
+        },
+        {
+          "eigenvalue": 0.125,
+          "multiplicity": 8
+        },
+        {
+          "eigenvalue": 0.1875,
+          "multiplicity": 16
+        }
+      ],
+      "kernel_dimension": 40,
+      "label_ids": [
+        "EQ-2-1-MINUS",
+        "UNEQ-2-1__1-1-1",
+        "UNEQ-2-1__1-1-1"
+      ],
+      "label_indices": [
+        3,
+        8,
+        8
+      ],
+      "maximum_eigenvalue": 0.18750000000000014,
+      "minimum_positive_eigenvalue": 0.12499999999999992,
+      "naturally_occupied": true,
+      "status": "naturally-occupied-threshold-block",
+      "support_condition_number": 1.5000000000000022,
+      "support_rank": 24,
+      "tuple_orbit_multiplicity": 3
+    },
+    {
+      "aggregate_natural_probability": 2.143347050754458e-05,
+      "block_dimension": 1,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 1.0,
+          "multiplicity": 1
+        }
+      ],
+      "kernel_dimension": 0,
+      "label_ids": [
+        "EQ-1-1-1-PLUS",
+        "EQ-1-1-1-PLUS",
+        "EQ-1-1-1-PLUS"
+      ],
+      "label_indices": [
+        4,
+        4,
+        4
+      ],
+      "maximum_eigenvalue": 1.0,
+      "minimum_positive_eigenvalue": 1.0,
+      "naturally_occupied": true,
+      "status": "naturally-occupied-threshold-block",
+      "support_condition_number": 1.0,
+      "support_rank": 1,
+      "tuple_orbit_multiplicity": 1
+    },
+    {
+      "aggregate_natural_probability": 0.0,
+      "block_dimension": 1,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 1
+        }
+      ],
+      "kernel_dimension": 1,
+      "label_ids": [
+        "EQ-1-1-1-PLUS",
+        "EQ-1-1-1-PLUS",
+        "EQ-1-1-1-MINUS"
+      ],
+      "label_indices": [
+        4,
+        4,
+        5
+      ],
+      "maximum_eigenvalue": null,
+      "minimum_positive_eigenvalue": null,
+      "naturally_occupied": false,
+      "status": "zero-natural-mass-threshold-block",
+      "support_condition_number": null,
+      "support_rank": 0,
+      "tuple_orbit_multiplicity": 3
+    },
+    {
+      "aggregate_natural_probability": 0.0005144032921810699,
+      "block_dimension": 4,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.5,
+          "multiplicity": 4
+        }
+      ],
+      "kernel_dimension": 0,
+      "label_ids": [
+        "EQ-1-1-1-PLUS",
+        "EQ-1-1-1-PLUS",
+        "UNEQ-3__2-1"
+      ],
+      "label_indices": [
+        4,
+        4,
+        6
+      ],
+      "maximum_eigenvalue": 0.5,
+      "minimum_positive_eigenvalue": 0.5,
+      "naturally_occupied": true,
+      "status": "naturally-occupied-threshold-block",
+      "support_condition_number": 1.0,
+      "support_rank": 4,
+      "tuple_orbit_multiplicity": 3
+    },
+    {
+      "aggregate_natural_probability": 0.00012860082304526747,
+      "block_dimension": 2,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.5,
+          "multiplicity": 2
+        }
+      ],
+      "kernel_dimension": 0,
+      "label_ids": [
+        "EQ-1-1-1-PLUS",
+        "EQ-1-1-1-PLUS",
+        "UNEQ-3__1-1-1"
+      ],
+      "label_indices": [
+        4,
+        4,
+        7
+      ],
+      "maximum_eigenvalue": 0.5,
+      "minimum_positive_eigenvalue": 0.5,
+      "naturally_occupied": true,
+      "status": "naturally-occupied-threshold-block",
+      "support_condition_number": 1.0,
+      "support_rank": 2,
+      "tuple_orbit_multiplicity": 3
+    },
+    {
+      "aggregate_natural_probability": 0.0005144032921810699,
+      "block_dimension": 4,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.5,
+          "multiplicity": 4
+        }
+      ],
+      "kernel_dimension": 0,
+      "label_ids": [
+        "EQ-1-1-1-PLUS",
+        "EQ-1-1-1-PLUS",
+        "UNEQ-2-1__1-1-1"
+      ],
+      "label_indices": [
+        4,
+        4,
+        8
+      ],
+      "maximum_eigenvalue": 0.5,
+      "minimum_positive_eigenvalue": 0.5,
+      "naturally_occupied": true,
+      "status": "naturally-occupied-threshold-block",
+      "support_condition_number": 1.0,
+      "support_rank": 4,
+      "tuple_orbit_multiplicity": 3
+    },
+    {
+      "aggregate_natural_probability": 0.0,
+      "block_dimension": 1,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 1
+        }
+      ],
+      "kernel_dimension": 1,
+      "label_ids": [
+        "EQ-1-1-1-PLUS",
+        "EQ-1-1-1-MINUS",
+        "EQ-1-1-1-MINUS"
+      ],
+      "label_indices": [
+        4,
+        5,
+        5
+      ],
+      "maximum_eigenvalue": null,
+      "minimum_positive_eigenvalue": null,
+      "naturally_occupied": false,
+      "status": "zero-natural-mass-threshold-block",
+      "support_condition_number": null,
+      "support_rank": 0,
+      "tuple_orbit_multiplicity": 3
+    },
+    {
+      "aggregate_natural_probability": 0.0,
+      "block_dimension": 4,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 4
+        }
+      ],
+      "kernel_dimension": 4,
+      "label_ids": [
+        "EQ-1-1-1-PLUS",
+        "EQ-1-1-1-MINUS",
+        "UNEQ-3__2-1"
+      ],
+      "label_indices": [
+        4,
+        5,
+        6
+      ],
+      "maximum_eigenvalue": null,
+      "minimum_positive_eigenvalue": null,
+      "naturally_occupied": false,
+      "status": "zero-natural-mass-threshold-block",
+      "support_condition_number": null,
+      "support_rank": 0,
+      "tuple_orbit_multiplicity": 6
+    },
+    {
+      "aggregate_natural_probability": 0.0,
+      "block_dimension": 2,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 2
+        }
+      ],
+      "kernel_dimension": 2,
+      "label_ids": [
+        "EQ-1-1-1-PLUS",
+        "EQ-1-1-1-MINUS",
+        "UNEQ-3__1-1-1"
+      ],
+      "label_indices": [
+        4,
+        5,
+        7
+      ],
+      "maximum_eigenvalue": null,
+      "minimum_positive_eigenvalue": null,
+      "naturally_occupied": false,
+      "status": "zero-natural-mass-threshold-block",
+      "support_condition_number": null,
+      "support_rank": 0,
+      "tuple_orbit_multiplicity": 6
+    },
+    {
+      "aggregate_natural_probability": 0.0,
+      "block_dimension": 4,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 4
+        }
+      ],
+      "kernel_dimension": 4,
+      "label_ids": [
+        "EQ-1-1-1-PLUS",
+        "EQ-1-1-1-MINUS",
+        "UNEQ-2-1__1-1-1"
+      ],
+      "label_indices": [
+        4,
+        5,
+        8
+      ],
+      "maximum_eigenvalue": null,
+      "minimum_positive_eigenvalue": null,
+      "naturally_occupied": false,
+      "status": "zero-natural-mass-threshold-block",
+      "support_condition_number": null,
+      "support_rank": 0,
+      "tuple_orbit_multiplicity": 6
+    },
+    {
+      "aggregate_natural_probability": 0.004115226337448559,
+      "block_dimension": 16,
+      "distinct_eigenvalue_count": 5,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 1
+        },
+        {
+          "eigenvalue": 0.125,
+          "multiplicity": 4
+        },
+        {
+          "eigenvalue": 0.25,
+          "multiplicity": 6
+        },
+        {
+          "eigenvalue": 0.375,
+          "multiplicity": 4
+        },
+        {
+          "eigenvalue": 0.5,
+          "multiplicity": 1
+        }
+      ],
+      "kernel_dimension": 1,
+      "label_ids": [
+        "EQ-1-1-1-PLUS",
+        "UNEQ-3__2-1",
+        "UNEQ-3__2-1"
+      ],
+      "label_indices": [
+        4,
+        6,
+        6
+      ],
+      "maximum_eigenvalue": 0.5,
+      "minimum_positive_eigenvalue": 0.125,
+      "naturally_occupied": true,
+      "status": "naturally-occupied-threshold-block",
+      "support_condition_number": 4.0,
+      "support_rank": 15,
+      "tuple_orbit_multiplicity": 3
+    },
+    {
+      "aggregate_natural_probability": 0.0020576131687242796,
+      "block_dimension": 8,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.25,
+          "multiplicity": 8
+        }
+      ],
+      "kernel_dimension": 0,
+      "label_ids": [
+        "EQ-1-1-1-PLUS",
+        "UNEQ-3__2-1",
+        "UNEQ-3__1-1-1"
+      ],
+      "label_indices": [
+        4,
+        6,
+        7
+      ],
+      "maximum_eigenvalue": 0.25,
+      "minimum_positive_eigenvalue": 0.25,
+      "naturally_occupied": true,
+      "status": "naturally-occupied-threshold-block",
+      "support_condition_number": 1.0,
+      "support_rank": 8,
+      "tuple_orbit_multiplicity": 6
+    },
+    {
+      "aggregate_natural_probability": 0.008230452674897118,
+      "block_dimension": 16,
+      "distinct_eigenvalue_count": 5,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 1
+        },
+        {
+          "eigenvalue": 0.125,
+          "multiplicity": 4
+        },
+        {
+          "eigenvalue": 0.25,
+          "multiplicity": 6
+        },
+        {
+          "eigenvalue": 0.375,
+          "multiplicity": 4
+        },
+        {
+          "eigenvalue": 0.5,
+          "multiplicity": 1
+        }
+      ],
+      "kernel_dimension": 1,
+      "label_ids": [
+        "EQ-1-1-1-PLUS",
+        "UNEQ-3__2-1",
+        "UNEQ-2-1__1-1-1"
+      ],
+      "label_indices": [
+        4,
+        6,
+        8
+      ],
+      "maximum_eigenvalue": 0.5,
+      "minimum_positive_eigenvalue": 0.125,
+      "naturally_occupied": true,
+      "status": "naturally-occupied-threshold-block",
+      "support_condition_number": 4.0,
+      "support_rank": 15,
+      "tuple_orbit_multiplicity": 6
+    },
+    {
+      "aggregate_natural_probability": 0.00025720164609053495,
+      "block_dimension": 4,
+      "distinct_eigenvalue_count": 2,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 2
+        },
+        {
+          "eigenvalue": 0.5,
+          "multiplicity": 2
+        }
+      ],
+      "kernel_dimension": 2,
+      "label_ids": [
+        "EQ-1-1-1-PLUS",
+        "UNEQ-3__1-1-1",
+        "UNEQ-3__1-1-1"
+      ],
+      "label_indices": [
+        4,
+        7,
+        7
+      ],
+      "maximum_eigenvalue": 0.5,
+      "minimum_positive_eigenvalue": 0.5,
+      "naturally_occupied": true,
+      "status": "naturally-occupied-threshold-block",
+      "support_condition_number": 1.0,
+      "support_rank": 2,
+      "tuple_orbit_multiplicity": 3
+    },
+    {
+      "aggregate_natural_probability": 0.0020576131687242796,
+      "block_dimension": 8,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.25,
+          "multiplicity": 8
+        }
+      ],
+      "kernel_dimension": 0,
+      "label_ids": [
+        "EQ-1-1-1-PLUS",
+        "UNEQ-3__1-1-1",
+        "UNEQ-2-1__1-1-1"
+      ],
+      "label_indices": [
+        4,
+        7,
+        8
+      ],
+      "maximum_eigenvalue": 0.25,
+      "minimum_positive_eigenvalue": 0.25,
+      "naturally_occupied": true,
+      "status": "naturally-occupied-threshold-block",
+      "support_condition_number": 1.0,
+      "support_rank": 8,
+      "tuple_orbit_multiplicity": 6
+    },
+    {
+      "aggregate_natural_probability": 0.004115226337448559,
+      "block_dimension": 16,
+      "distinct_eigenvalue_count": 5,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 1
+        },
+        {
+          "eigenvalue": 0.125,
+          "multiplicity": 4
+        },
+        {
+          "eigenvalue": 0.25,
+          "multiplicity": 6
+        },
+        {
+          "eigenvalue": 0.375,
+          "multiplicity": 4
+        },
+        {
+          "eigenvalue": 0.5,
+          "multiplicity": 1
+        }
+      ],
+      "kernel_dimension": 1,
+      "label_ids": [
+        "EQ-1-1-1-PLUS",
+        "UNEQ-2-1__1-1-1",
+        "UNEQ-2-1__1-1-1"
+      ],
+      "label_indices": [
+        4,
+        8,
+        8
+      ],
+      "maximum_eigenvalue": 0.5,
+      "minimum_positive_eigenvalue": 0.125,
+      "naturally_occupied": true,
+      "status": "naturally-occupied-threshold-block",
+      "support_condition_number": 4.0,
+      "support_rank": 15,
+      "tuple_orbit_multiplicity": 3
+    },
+    {
+      "aggregate_natural_probability": 0.0,
+      "block_dimension": 1,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 1
+        }
+      ],
+      "kernel_dimension": 1,
+      "label_ids": [
+        "EQ-1-1-1-MINUS",
+        "EQ-1-1-1-MINUS",
+        "EQ-1-1-1-MINUS"
+      ],
+      "label_indices": [
+        5,
+        5,
+        5
+      ],
+      "maximum_eigenvalue": null,
+      "minimum_positive_eigenvalue": null,
+      "naturally_occupied": false,
+      "status": "zero-natural-mass-threshold-block",
+      "support_condition_number": null,
+      "support_rank": 0,
+      "tuple_orbit_multiplicity": 1
+    },
+    {
+      "aggregate_natural_probability": 0.0,
+      "block_dimension": 4,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 4
+        }
+      ],
+      "kernel_dimension": 4,
+      "label_ids": [
+        "EQ-1-1-1-MINUS",
+        "EQ-1-1-1-MINUS",
+        "UNEQ-3__2-1"
+      ],
+      "label_indices": [
+        5,
+        5,
+        6
+      ],
+      "maximum_eigenvalue": null,
+      "minimum_positive_eigenvalue": null,
+      "naturally_occupied": false,
+      "status": "zero-natural-mass-threshold-block",
+      "support_condition_number": null,
+      "support_rank": 0,
+      "tuple_orbit_multiplicity": 3
+    },
+    {
+      "aggregate_natural_probability": 0.0,
+      "block_dimension": 2,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 2
+        }
+      ],
+      "kernel_dimension": 2,
+      "label_ids": [
+        "EQ-1-1-1-MINUS",
+        "EQ-1-1-1-MINUS",
+        "UNEQ-3__1-1-1"
+      ],
+      "label_indices": [
+        5,
+        5,
+        7
+      ],
+      "maximum_eigenvalue": null,
+      "minimum_positive_eigenvalue": null,
+      "naturally_occupied": false,
+      "status": "zero-natural-mass-threshold-block",
+      "support_condition_number": null,
+      "support_rank": 0,
+      "tuple_orbit_multiplicity": 3
+    },
+    {
+      "aggregate_natural_probability": 0.0,
+      "block_dimension": 4,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 4
+        }
+      ],
+      "kernel_dimension": 4,
+      "label_ids": [
+        "EQ-1-1-1-MINUS",
+        "EQ-1-1-1-MINUS",
+        "UNEQ-2-1__1-1-1"
+      ],
+      "label_indices": [
+        5,
+        5,
+        8
+      ],
+      "maximum_eigenvalue": null,
+      "minimum_positive_eigenvalue": null,
+      "naturally_occupied": false,
+      "status": "zero-natural-mass-threshold-block",
+      "support_condition_number": null,
+      "support_rank": 0,
+      "tuple_orbit_multiplicity": 3
+    },
+    {
+      "aggregate_natural_probability": 0.0,
+      "block_dimension": 16,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 16
+        }
+      ],
+      "kernel_dimension": 16,
+      "label_ids": [
+        "EQ-1-1-1-MINUS",
+        "UNEQ-3__2-1",
+        "UNEQ-3__2-1"
+      ],
+      "label_indices": [
+        5,
+        6,
+        6
+      ],
+      "maximum_eigenvalue": null,
+      "minimum_positive_eigenvalue": null,
+      "naturally_occupied": false,
+      "status": "zero-natural-mass-threshold-block",
+      "support_condition_number": null,
+      "support_rank": 0,
+      "tuple_orbit_multiplicity": 3
+    },
+    {
+      "aggregate_natural_probability": 0.0,
+      "block_dimension": 8,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 8
+        }
+      ],
+      "kernel_dimension": 8,
+      "label_ids": [
+        "EQ-1-1-1-MINUS",
+        "UNEQ-3__2-1",
+        "UNEQ-3__1-1-1"
+      ],
+      "label_indices": [
+        5,
+        6,
+        7
+      ],
+      "maximum_eigenvalue": null,
+      "minimum_positive_eigenvalue": null,
+      "naturally_occupied": false,
+      "status": "zero-natural-mass-threshold-block",
+      "support_condition_number": null,
+      "support_rank": 0,
+      "tuple_orbit_multiplicity": 6
+    },
+    {
+      "aggregate_natural_probability": 0.0,
+      "block_dimension": 16,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 16
+        }
+      ],
+      "kernel_dimension": 16,
+      "label_ids": [
+        "EQ-1-1-1-MINUS",
+        "UNEQ-3__2-1",
+        "UNEQ-2-1__1-1-1"
+      ],
+      "label_indices": [
+        5,
+        6,
+        8
+      ],
+      "maximum_eigenvalue": null,
+      "minimum_positive_eigenvalue": null,
+      "naturally_occupied": false,
+      "status": "zero-natural-mass-threshold-block",
+      "support_condition_number": null,
+      "support_rank": 0,
+      "tuple_orbit_multiplicity": 6
+    },
+    {
+      "aggregate_natural_probability": 0.0,
+      "block_dimension": 4,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 4
+        }
+      ],
+      "kernel_dimension": 4,
+      "label_ids": [
+        "EQ-1-1-1-MINUS",
+        "UNEQ-3__1-1-1",
+        "UNEQ-3__1-1-1"
+      ],
+      "label_indices": [
+        5,
+        7,
+        7
+      ],
+      "maximum_eigenvalue": null,
+      "minimum_positive_eigenvalue": null,
+      "naturally_occupied": false,
+      "status": "zero-natural-mass-threshold-block",
+      "support_condition_number": null,
+      "support_rank": 0,
+      "tuple_orbit_multiplicity": 3
+    },
+    {
+      "aggregate_natural_probability": 0.0,
+      "block_dimension": 8,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 8
+        }
+      ],
+      "kernel_dimension": 8,
+      "label_ids": [
+        "EQ-1-1-1-MINUS",
+        "UNEQ-3__1-1-1",
+        "UNEQ-2-1__1-1-1"
+      ],
+      "label_indices": [
+        5,
+        7,
+        8
+      ],
+      "maximum_eigenvalue": null,
+      "minimum_positive_eigenvalue": null,
+      "naturally_occupied": false,
+      "status": "zero-natural-mass-threshold-block",
+      "support_condition_number": null,
+      "support_rank": 0,
+      "tuple_orbit_multiplicity": 6
+    },
+    {
+      "aggregate_natural_probability": 0.0,
+      "block_dimension": 16,
+      "distinct_eigenvalue_count": 1,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 16
+        }
+      ],
+      "kernel_dimension": 16,
+      "label_ids": [
+        "EQ-1-1-1-MINUS",
+        "UNEQ-2-1__1-1-1",
+        "UNEQ-2-1__1-1-1"
+      ],
+      "label_indices": [
+        5,
+        8,
+        8
+      ],
+      "maximum_eigenvalue": null,
+      "minimum_positive_eigenvalue": null,
+      "naturally_occupied": false,
+      "status": "zero-natural-mass-threshold-block",
+      "support_condition_number": null,
+      "support_rank": 0,
+      "tuple_orbit_multiplicity": 3
+    },
+    {
+      "aggregate_natural_probability": 0.010973936899862825,
+      "block_dimension": 64,
+      "distinct_eigenvalue_count": 6,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": -0.0,
+          "multiplicity": 25
+        },
+        {
+          "eigenvalue": 0.125,
+          "multiplicity": 10
+        },
+        {
+          "eigenvalue": 0.1875,
+          "multiplicity": 20
+        },
+        {
+          "eigenvalue": 0.25,
+          "multiplicity": 1
+        },
+        {
+          "eigenvalue": 0.3125,
+          "multiplicity": 4
+        },
+        {
+          "eigenvalue": 0.375,
+          "multiplicity": 4
+        }
+      ],
+      "kernel_dimension": 25,
+      "label_ids": [
+        "UNEQ-3__2-1",
+        "UNEQ-3__2-1",
+        "UNEQ-3__2-1"
+      ],
+      "label_indices": [
+        6,
+        6,
+        6
+      ],
+      "maximum_eigenvalue": 0.37500000000000006,
+      "minimum_positive_eigenvalue": 0.1249999999999999,
+      "naturally_occupied": true,
+      "status": "naturally-occupied-threshold-block",
+      "support_condition_number": 3.0000000000000027,
+      "support_rank": 39,
+      "tuple_orbit_multiplicity": 1
+    },
+    {
+      "aggregate_natural_probability": 0.008230452674897118,
+      "block_dimension": 32,
+      "distinct_eigenvalue_count": 3,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 8
+        },
+        {
+          "eigenvalue": 0.125,
+          "multiplicity": 16
+        },
+        {
+          "eigenvalue": 0.25,
+          "multiplicity": 8
+        }
+      ],
+      "kernel_dimension": 8,
+      "label_ids": [
+        "UNEQ-3__2-1",
+        "UNEQ-3__2-1",
+        "UNEQ-3__1-1-1"
+      ],
+      "label_indices": [
+        6,
+        6,
+        7
+      ],
+      "maximum_eigenvalue": 0.25,
+      "minimum_positive_eigenvalue": 0.1249999999999999,
+      "naturally_occupied": true,
+      "status": "naturally-occupied-threshold-block",
+      "support_condition_number": 2.0000000000000018,
+      "support_rank": 24,
+      "tuple_orbit_multiplicity": 3
+    },
+    {
+      "aggregate_natural_probability": 0.03292181069958847,
+      "block_dimension": 64,
+      "distinct_eigenvalue_count": 6,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 25
+        },
+        {
+          "eigenvalue": 0.125,
+          "multiplicity": 10
+        },
+        {
+          "eigenvalue": 0.1875,
+          "multiplicity": 20
+        },
+        {
+          "eigenvalue": 0.25,
+          "multiplicity": 1
+        },
+        {
+          "eigenvalue": 0.3125,
+          "multiplicity": 4
+        },
+        {
+          "eigenvalue": 0.375,
+          "multiplicity": 4
+        }
+      ],
+      "kernel_dimension": 25,
+      "label_ids": [
+        "UNEQ-3__2-1",
+        "UNEQ-3__2-1",
+        "UNEQ-2-1__1-1-1"
+      ],
+      "label_indices": [
+        6,
+        6,
+        8
+      ],
+      "maximum_eigenvalue": 0.3750000000000002,
+      "minimum_positive_eigenvalue": 0.1249999999999999,
+      "naturally_occupied": true,
+      "status": "naturally-occupied-threshold-block",
+      "support_condition_number": 3.000000000000004,
+      "support_rank": 39,
+      "tuple_orbit_multiplicity": 3
+    },
+    {
+      "aggregate_natural_probability": 0.0020576131687242796,
+      "block_dimension": 16,
+      "distinct_eigenvalue_count": 2,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 8
+        },
+        {
+          "eigenvalue": 0.25,
+          "multiplicity": 8
+        }
+      ],
+      "kernel_dimension": 8,
+      "label_ids": [
+        "UNEQ-3__2-1",
+        "UNEQ-3__1-1-1",
+        "UNEQ-3__1-1-1"
+      ],
+      "label_indices": [
+        6,
+        7,
+        7
+      ],
+      "maximum_eigenvalue": 0.25,
+      "minimum_positive_eigenvalue": 0.25,
+      "naturally_occupied": true,
+      "status": "naturally-occupied-threshold-block",
+      "support_condition_number": 1.0,
+      "support_rank": 8,
+      "tuple_orbit_multiplicity": 3
+    },
+    {
+      "aggregate_natural_probability": 0.016460905349794237,
+      "block_dimension": 32,
+      "distinct_eigenvalue_count": 3,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 8
+        },
+        {
+          "eigenvalue": 0.125,
+          "multiplicity": 16
+        },
+        {
+          "eigenvalue": 0.25,
+          "multiplicity": 8
+        }
+      ],
+      "kernel_dimension": 8,
+      "label_ids": [
+        "UNEQ-3__2-1",
+        "UNEQ-3__1-1-1",
+        "UNEQ-2-1__1-1-1"
+      ],
+      "label_indices": [
+        6,
+        7,
+        8
+      ],
+      "maximum_eigenvalue": 0.25000000000000006,
+      "minimum_positive_eigenvalue": 0.1249999999999999,
+      "naturally_occupied": true,
+      "status": "naturally-occupied-threshold-block",
+      "support_condition_number": 2.000000000000002,
+      "support_rank": 24,
+      "tuple_orbit_multiplicity": 6
+    },
+    {
+      "aggregate_natural_probability": 0.03292181069958847,
+      "block_dimension": 64,
+      "distinct_eigenvalue_count": 6,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 25
+        },
+        {
+          "eigenvalue": 0.125,
+          "multiplicity": 10
+        },
+        {
+          "eigenvalue": 0.1875,
+          "multiplicity": 20
+        },
+        {
+          "eigenvalue": 0.25,
+          "multiplicity": 1
+        },
+        {
+          "eigenvalue": 0.3125,
+          "multiplicity": 4
+        },
+        {
+          "eigenvalue": 0.375,
+          "multiplicity": 4
+        }
+      ],
+      "kernel_dimension": 25,
+      "label_ids": [
+        "UNEQ-3__2-1",
+        "UNEQ-2-1__1-1-1",
+        "UNEQ-2-1__1-1-1"
+      ],
+      "label_indices": [
+        6,
+        8,
+        8
+      ],
+      "maximum_eigenvalue": 0.3750000000000002,
+      "minimum_positive_eigenvalue": 0.12499999999999978,
+      "naturally_occupied": true,
+      "status": "naturally-occupied-threshold-block",
+      "support_condition_number": 3.000000000000007,
+      "support_rank": 39,
+      "tuple_orbit_multiplicity": 3
+    },
+    {
+      "aggregate_natural_probability": 0.00017146776406035664,
+      "block_dimension": 8,
+      "distinct_eigenvalue_count": 2,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": -0.0,
+          "multiplicity": 6
+        },
+        {
+          "eigenvalue": 0.5,
+          "multiplicity": 2
+        }
+      ],
+      "kernel_dimension": 6,
+      "label_ids": [
+        "UNEQ-3__1-1-1",
+        "UNEQ-3__1-1-1",
+        "UNEQ-3__1-1-1"
+      ],
+      "label_indices": [
+        7,
+        7,
+        7
+      ],
+      "maximum_eigenvalue": 0.5000000000000001,
+      "minimum_positive_eigenvalue": 0.5,
+      "naturally_occupied": true,
+      "status": "naturally-occupied-threshold-block",
+      "support_condition_number": 1.0000000000000002,
+      "support_rank": 2,
+      "tuple_orbit_multiplicity": 1
+    },
+    {
+      "aggregate_natural_probability": 0.0020576131687242796,
+      "block_dimension": 16,
+      "distinct_eigenvalue_count": 2,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 8
+        },
+        {
+          "eigenvalue": 0.25,
+          "multiplicity": 8
+        }
+      ],
+      "kernel_dimension": 8,
+      "label_ids": [
+        "UNEQ-3__1-1-1",
+        "UNEQ-3__1-1-1",
+        "UNEQ-2-1__1-1-1"
+      ],
+      "label_indices": [
+        7,
+        7,
+        8
+      ],
+      "maximum_eigenvalue": 0.25,
+      "minimum_positive_eigenvalue": 0.25,
+      "naturally_occupied": true,
+      "status": "naturally-occupied-threshold-block",
+      "support_condition_number": 1.0,
+      "support_rank": 8,
+      "tuple_orbit_multiplicity": 3
+    },
+    {
+      "aggregate_natural_probability": 0.008230452674897118,
+      "block_dimension": 32,
+      "distinct_eigenvalue_count": 3,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": -0.0,
+          "multiplicity": 8
+        },
+        {
+          "eigenvalue": 0.125,
+          "multiplicity": 16
+        },
+        {
+          "eigenvalue": 0.25,
+          "multiplicity": 8
+        }
+      ],
+      "kernel_dimension": 8,
+      "label_ids": [
+        "UNEQ-3__1-1-1",
+        "UNEQ-2-1__1-1-1",
+        "UNEQ-2-1__1-1-1"
+      ],
+      "label_indices": [
+        7,
+        8,
+        8
+      ],
+      "maximum_eigenvalue": 0.2500000000000001,
+      "minimum_positive_eigenvalue": 0.12499999999999989,
+      "naturally_occupied": true,
+      "status": "naturally-occupied-threshold-block",
+      "support_condition_number": 2.0000000000000027,
+      "support_rank": 24,
+      "tuple_orbit_multiplicity": 3
+    },
+    {
+      "aggregate_natural_probability": 0.010973936899862825,
+      "block_dimension": 64,
+      "distinct_eigenvalue_count": 6,
+      "eigenvalue_multiplicities": [
+        {
+          "eigenvalue": 0.0,
+          "multiplicity": 25
+        },
+        {
+          "eigenvalue": 0.125,
+          "multiplicity": 10
+        },
+        {
+          "eigenvalue": 0.1875,
+          "multiplicity": 20
+        },
+        {
+          "eigenvalue": 0.25,
+          "multiplicity": 1
+        },
+        {
+          "eigenvalue": 0.3125,
+          "multiplicity": 4
+        },
+        {
+          "eigenvalue": 0.375,
+          "multiplicity": 4
+        }
+      ],
+      "kernel_dimension": 25,
+      "label_ids": [
+        "UNEQ-2-1__1-1-1",
+        "UNEQ-2-1__1-1-1",
+        "UNEQ-2-1__1-1-1"
+      ],
+      "label_indices": [
+        8,
+        8,
+        8
+      ],
+      "maximum_eigenvalue": 0.37500000000000006,
+      "minimum_positive_eigenvalue": 0.12499999999999979,
+      "naturally_occupied": true,
+      "status": "naturally-occupied-threshold-block",
+      "support_condition_number": 3.0000000000000053,
+      "support_rank": 39,
+      "tuple_orbit_multiplicity": 1
+    }
+  ]
+}

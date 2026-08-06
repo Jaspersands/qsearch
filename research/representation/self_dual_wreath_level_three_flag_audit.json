@@ -1,0 +1,437 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Balanced trees force half-integral relative spectra for any projector family.",
+      "resolution": "The repeated-label control has exact 1/3, 4/9, 5/9, and 2/3 channels.",
+      "resolved": true
+    },
+    {
+      "objection": "One convenient W5 tree ordering explains the observation.",
+      "resolution": "All 168 ordered linear bases, all affine cosets in their trees, and all seven merges per tree are included.",
+      "resolved": true
+    },
+    {
+      "objection": "Half-integrality supplies a polynomial merge circuit.",
+      "resolution": "A constant spectrum is useful only with efficient coherent access to its eigenspaces.  That is still open.",
+      "resolved": false
+    },
+    {
+      "objection": "The finite pattern is asymptotic evidence strong enough for a decoder claim.",
+      "resolution": "Depth three is far below k=Theta(n log n), and only selected W5 target sectors were diagonalized.",
+      "resolved": false
+    }
+  ],
+  "claim_gate": {
+    "collision_free_half_integrality_proved_all_n": false,
+    "complete_three_bit_linear_flag_audit_passed": true,
+    "extended_sieve_lower_bound_escape_proved": false,
+    "finite_label_simple_half_integral_pattern_observed": true,
+    "formal_mrs_sieve_theorem_directly_applies": false,
+    "hierarchical_orientation_polar_proved": false,
+    "polynomial_relative_eigenspace_projectors_proved": false,
+    "reason": "The exhaustive depth-three pattern is structurally selective and promising, but neither its all-n persistence nor a circuit for the relative eigenspaces is proved.",
+    "speedup_claim_allowed": false,
+    "universal_balanced_tree_half_integrality_falsified": true
+  },
+  "conjecture_contract": {
+    "all_n_conjecture": "A natural collision-free portfolio admits nested affine flags with half-integral relative effects and polynomial coherent projectors onto their endpoint/balanced subspaces.",
+    "constructive_boundary": "Half-integral eigenvalues do not expose the eigenprojectors; constructing them via S_T^-1/2 is circular.",
+    "finite_positive_pattern": "Selected collision-free and pairwise-distinct-label controls have relative spectra contained in {0,1/2,1}.",
+    "flag_family": "Every ordered basis of F_2^3 defines a nested affine flag; all 168 bases and all seven merges are audited.",
+    "generic_falsifier": "A fully repeated physical unequal label produces nonhalf relative eigenvalues at the same depth."
+  },
+  "created_at": "2026-08-06T02:43:16.140666+00:00",
+  "falsifiers_triggered": [
+    "Balanced binary trees do not generically force relative effects into {0,1/2,1}.",
+    "The W4 half-integral pattern survives a genuine third level and every linear flag in the selected W5 controls.",
+    "Spectral half-integrality alone is not an implementation of the relative merge isometry.",
+    "The formal MRS theorem does not cover this coherent global projector family, but that noncoverage is not a speedup proof."
+  ],
+  "finite_controls": [
+    {
+      "carrier_dimension": 2000,
+      "control_id": "W5-COLLISION-FREE-3-2",
+      "exact_finite_flag_audit_verified": true,
+      "fractional_eigenvalue_occurrence_count": 840,
+      "globally_distinct_source_partitions": true,
+      "half_integral_on_every_linear_flag": true,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            4,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            2
+          ],
+          [
+            2,
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_half_integral_spectrum_residual": 9.325873406851315e-15,
+      "merge_occurrence_count": 1176,
+      "minimum_fractional_endpoint_gap": 0.4999999999999962,
+      "n": 5,
+      "nonhalf_fractional_eigenvalue_occurrence_count": 0,
+      "observed_fractional_eigenvalues": [
+        0.5
+      ],
+      "ordered_linear_flag_count": 168,
+      "orientation_count": 8,
+      "pairwise_distinct_physical_labels": true,
+      "status": "all-linear-flags-half-integral",
+      "target_partition": [
+        3,
+        2
+      ],
+      "union_support_rank": 190,
+      "unique_merge_count": 77
+    },
+    {
+      "carrier_dimension": 2400,
+      "control_id": "W5-COLLISION-FREE-3-1-1",
+      "exact_finite_flag_audit_verified": true,
+      "fractional_eigenvalue_occurrence_count": 0,
+      "globally_distinct_source_partitions": true,
+      "half_integral_on_every_linear_flag": true,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            4,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            2
+          ],
+          [
+            2,
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_half_integral_spectrum_residual": 9.103828801926284e-15,
+      "merge_occurrence_count": 1176,
+      "minimum_fractional_endpoint_gap": 0.5,
+      "n": 5,
+      "nonhalf_fractional_eigenvalue_occurrence_count": 0,
+      "observed_fractional_eigenvalues": [],
+      "ordered_linear_flag_count": 168,
+      "orientation_count": 8,
+      "pairwise_distinct_physical_labels": true,
+      "status": "all-linear-flags-half-integral",
+      "target_partition": [
+        3,
+        1,
+        1
+      ],
+      "union_support_rank": 120,
+      "unique_merge_count": 77
+    },
+    {
+      "carrier_dimension": 8,
+      "control_id": "W3-DISTINCT-LABEL-TRIANGLE-STANDARD",
+      "exact_finite_flag_audit_verified": true,
+      "fractional_eigenvalue_occurrence_count": 336,
+      "globally_distinct_source_partitions": false,
+      "half_integral_on_every_linear_flag": true,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_half_integral_spectrum_residual": 3.774758283725532e-15,
+      "merge_occurrence_count": 1176,
+      "minimum_fractional_endpoint_gap": 0.4999999999999988,
+      "n": 3,
+      "nonhalf_fractional_eigenvalue_occurrence_count": 0,
+      "observed_fractional_eigenvalues": [
+        0.5
+      ],
+      "ordered_linear_flag_count": 168,
+      "orientation_count": 8,
+      "pairwise_distinct_physical_labels": true,
+      "status": "all-linear-flags-half-integral",
+      "target_partition": [
+        2,
+        1
+      ],
+      "union_support_rank": 8,
+      "unique_merge_count": 77
+    },
+    {
+      "carrier_dimension": 16,
+      "control_id": "W3-REPEATED-LABEL-STANDARD",
+      "exact_finite_flag_audit_verified": true,
+      "fractional_eigenvalue_occurrence_count": 1344,
+      "globally_distinct_source_partitions": false,
+      "half_integral_on_every_linear_flag": false,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ]
+      ],
+      "maximum_half_integral_spectrum_residual": 0.16666666666666807,
+      "merge_occurrence_count": 1176,
+      "minimum_fractional_endpoint_gap": 0.3333333333333319,
+      "n": 3,
+      "nonhalf_fractional_eigenvalue_occurrence_count": 648,
+      "observed_fractional_eigenvalues": [
+        0.3333333333,
+        0.4444444444,
+        0.5,
+        0.5555555556,
+        0.6666666667
+      ],
+      "ordered_linear_flag_count": 168,
+      "orientation_count": 8,
+      "pairwise_distinct_physical_labels": false,
+      "status": "all-linear-flags-nonhalf-counterexample",
+      "target_partition": [
+        2,
+        1
+      ],
+      "union_support_rank": 13,
+      "unique_merge_count": 77
+    }
+  ],
+  "headline_metrics": {
+    "collision_free_control_count": 2,
+    "collision_free_half_integral_failure_count": 0,
+    "collision_free_half_integrality_all_n_theorem_count": 0,
+    "finite_control_count": 4,
+    "finite_validation_failure_count": 0,
+    "fractional_eigenvalue_occurrence_count": 2520,
+    "hierarchical_orientation_polar_sampler_count": 0,
+    "merge_occurrence_count": 4704,
+    "new_quantum_algorithm_count": 0,
+    "nonhalf_fractional_eigenvalue_occurrence_count": 648,
+    "ordered_f2_three_basis_count": 168,
+    "pairwise_distinct_label_control_count": 3,
+    "pairwise_distinct_label_half_integral_failure_count": 0,
+    "polynomial_physical_pgm_circuit_count": 0,
+    "polynomial_relative_eigenspace_projector_count": 0,
+    "repeated_label_counterexample_count": 1
+  },
+  "literature_links": [
+    {
+      "id": "MRS-2007-SIEVE-NO-GO",
+      "note": "Formal sieve model uses adaptive pairwise tensor-product isotypic measurements and classical irrep transcripts.",
+      "relevant": true,
+      "url": "https://arxiv.org/abs/quant-ph/0612089"
+    },
+    {
+      "id": "QUEK-REBENTROST-2021-POLAR",
+      "note": "Generic QSVT polar implementation pays inverse singular scale; the flag route must exploit additional structure.",
+      "relevant": true,
+      "url": "https://arxiv.org/abs/2106.07634"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "all_n_collision_free_half_integrality",
+      "resolution": "The complete three-bit flag audit is finite.  A proof must classify child-span intersections for growing affine orientation families.",
+      "resolved": false
+    },
+    {
+      "obligation": "relative_eigenspace_projectors",
+      "resolution": "Even under half-integrality, no circuit recognizes the left-only, right-only, and balanced intersection channels.",
+      "resolved": false
+    },
+    {
+      "obligation": "repeated_label_exclusion",
+      "resolution": "The repeated-label countercontrol proves that any theorem must use collision-free or stronger label structure.",
+      "resolved": true
+    },
+    {
+      "obligation": "formal_sieve_scope",
+      "resolution": "MRS sieves measure one irrep after combining two states and retain only a classical transcript.  These noncommuting global orientation projectors act on all source registers and preserve every internal branch coherently.",
+      "resolved": true
+    },
+    {
+      "obligation": "extended_sieve_lower_bound_escape",
+      "resolution": "Formal noncoverage does not rule out a simulation by a broader sieve or another lower-bound framework.",
+      "resolved": false
+    }
+  ],
+  "scaling_records": [
+    {
+      "collision_free_half_integrality_proved_all_n": false,
+      "extended_sieve_lower_bound_applies": false,
+      "information_threshold_copy_count": 7,
+      "level_three_is_below_information_threshold": true,
+      "n": 5,
+      "orientation_tree_depth": 7,
+      "polynomial_relative_eigenspace_projectors_proved": false,
+      "status": "finite-level-three-pattern-all-n-constructive-theorem-open"
+    },
+    {
+      "collision_free_half_integrality_proved_all_n": false,
+      "extended_sieve_lower_bound_applies": false,
+      "information_threshold_copy_count": 16,
+      "level_three_is_below_information_threshold": true,
+      "n": 8,
+      "orientation_tree_depth": 16,
+      "polynomial_relative_eigenspace_projectors_proved": false,
+      "status": "finite-level-three-pattern-all-n-constructive-theorem-open"
+    },
+    {
+      "collision_free_half_integrality_proved_all_n": false,
+      "extended_sieve_lower_bound_applies": false,
+      "information_threshold_copy_count": 45,
+      "level_three_is_below_information_threshold": true,
+      "n": 16,
+      "orientation_tree_depth": 45,
+      "polynomial_relative_eigenspace_projectors_proved": false,
+      "status": "finite-level-three-pattern-all-n-constructive-theorem-open"
+    },
+    {
+      "collision_free_half_integrality_proved_all_n": false,
+      "extended_sieve_lower_bound_applies": false,
+      "information_threshold_copy_count": 118,
+      "level_three_is_below_information_threshold": true,
+      "n": 32,
+      "orientation_tree_depth": 118,
+      "polynomial_relative_eigenspace_projectors_proved": false,
+      "status": "finite-level-three-pattern-all-n-constructive-theorem-open"
+    },
+    {
+      "collision_free_half_integrality_proved_all_n": false,
+      "extended_sieve_lower_bound_applies": false,
+      "information_threshold_copy_count": 296,
+      "level_three_is_below_information_threshold": true,
+      "n": 64,
+      "orientation_tree_depth": 296,
+      "polynomial_relative_eigenspace_projectors_proved": false,
+      "status": "finite-level-three-pattern-all-n-constructive-theorem-open"
+    },
+    {
+      "collision_free_half_integrality_proved_all_n": false,
+      "extended_sieve_lower_bound_applies": false,
+      "information_threshold_copy_count": 717,
+      "level_three_is_below_information_threshold": true,
+      "n": 128,
+      "orientation_tree_depth": 717,
+      "polynomial_relative_eigenspace_projectors_proved": false,
+      "status": "finite-level-three-pattern-all-n-constructive-theorem-open"
+    },
+    {
+      "collision_free_half_integrality_proved_all_n": false,
+      "extended_sieve_lower_bound_applies": false,
+      "information_threshold_copy_count": 1684,
+      "level_three_is_below_information_threshold": true,
+      "n": 256,
+      "orientation_tree_depth": 1684,
+      "polynomial_relative_eigenspace_projectors_proved": false,
+      "status": "finite-level-three-pattern-all-n-constructive-theorem-open"
+    },
+    {
+      "collision_free_half_integrality_proved_all_n": false,
+      "extended_sieve_lower_bound_applies": false,
+      "information_threshold_copy_count": 3876,
+      "level_three_is_below_information_threshold": true,
+      "n": 512,
+      "orientation_tree_depth": 3876,
+      "polynomial_relative_eigenspace_projectors_proved": false,
+      "status": "finite-level-three-pattern-all-n-constructive-theorem-open"
+    }
+  ],
+  "status": "level-three-half-integral-pattern-repeated-label-falsifier-all-n-open",
+  "summary": "Audited every three-bit linear flag, found only endpoint/half relative channels on selected label-simple sectors, and proved by countercontrol that repeated labels generate genuinely nonhalf conditional weights."
+}

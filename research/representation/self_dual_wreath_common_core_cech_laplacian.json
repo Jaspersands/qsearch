@@ -1,0 +1,710 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "A sign-blind weighted graph is sufficient after exact common cores are listed.",
+      "resolution": "The dense S6 control has no scalar endpoint certificate, while its exact Cech-quotiented pair Laplacian is in [2,4] and its relative defect is numerically zero.",
+      "resolved": true
+    },
+    {
+      "objection": "Higher common cores merely add redundant bookkeeping.",
+      "resolution": "Four triple cells span the three-dimensional pair-cycle kernel, and the quadruple cell supplies their one boundary relation.",
+      "resolved": true
+    },
+    {
+      "objection": "Finite Cech exactness proves a polynomial coherent transform.",
+      "resolution": "Explicit ambient intertwiners and exponential subset enumeration are not a circuit; a representation-ring sparse boundary oracle is still missing.",
+      "resolved": false
+    },
+    {
+      "objection": "Vanishing pair-cycle homology proves that all leaf dependencies are pair-generated.",
+      "resolution": "This complex begins at pair cores and does not contain the augmented H0 gate; that quotient is audited separately by the augmented common-core Cech module.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "all_depth_phase_sensitive_laplacian_gap_proved": false,
+    "all_n_relative_cech_exactness_proved": false,
+    "coherent_sparse_cech_transform_compiled": false,
+    "finite_pair_cycle_homology_vanishes": true,
+    "finite_relative_cech_complex_verified": true,
+    "hierarchical_orientation_polar_proved": false,
+    "reason": "The finite phase-sensitive Cech quotient removes exact common-core cycles and restores a constant pair-Laplacian gap, but no all-depth exactness or efficient coherent boundary transform is known.",
+    "sign_blind_pair_graph_sufficient": false,
+    "speedup_claim_allowed": false
+  },
+  "controls": [
+    {
+      "cech_complex_exact_in_positive_degrees": true,
+      "chain_groups": [
+        {
+          "boundary_kernel_dimension": 3,
+          "chain_degree": 1,
+          "coefficient_dimension": 139,
+          "common_family_size": 2,
+          "homology_dimension": 0,
+          "incoming_boundary_rank": 3,
+          "nonzero_cell_count": 6,
+          "outgoing_boundary_rank": 136
+        },
+        {
+          "boundary_kernel_dimension": 1,
+          "chain_degree": 2,
+          "coefficient_dimension": 4,
+          "common_family_size": 3,
+          "homology_dimension": 0,
+          "incoming_boundary_rank": 1,
+          "nonzero_cell_count": 4,
+          "outgoing_boundary_rank": 3
+        },
+        {
+          "boundary_kernel_dimension": 0,
+          "chain_degree": 3,
+          "coefficient_dimension": 1,
+          "common_family_size": 4,
+          "homology_dimension": 0,
+          "incoming_boundary_rank": 0,
+          "nonzero_cell_count": 1,
+          "outgoing_boundary_rank": 1
+        }
+      ],
+      "control_id": "W6-COMMUTING-FOUR-WAY-CORE",
+      "emergent_pair_cycle_homology_dimension": 0,
+      "exact_finite_cech_laplacian_audit": true,
+      "exact_relative_grading_defect_norm": 7.06560723582586e-16,
+      "exact_relative_pair_class_dimension": 30,
+      "higher_common_core_count": 5,
+      "labels": [
+        [
+          [
+            6
+          ],
+          [
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            5,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            4,
+            2
+          ],
+          [
+            2,
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        5,
+        6
+      ],
+      "maximum_boundary_composition_residual": 1.5700924586837752e-16,
+      "maximum_pair_boundary_annihilation_residual": 1.4141630524909111e-14,
+      "maximum_pair_core_projector_commutator_norm": 4.2146848510893995e-08,
+      "maximum_pair_laplacian_eigenvalue": 4.0000000000000036,
+      "minimum_positive_pair_laplacian_eigenvalue": 1.9999999999999885,
+      "n": 6,
+      "orientation_masks": [
+        5,
+        6,
+        9,
+        10
+      ],
+      "pair_core_coefficient_dimension": 139,
+      "pair_core_count": 6,
+      "pair_laplacian_condition_number": 2.0000000000000133,
+      "pair_relation_kernel_dimension": 3,
+      "physical_ambient_dimension": 50625,
+      "right_orientation_masks": [
+        9,
+        10
+      ],
+      "sign_blind_comparison_defect_bound": Infinity,
+      "sign_blind_endpoint_gap_certified": false,
+      "status": "exact-cech-cycle-quotient-sign-blind-bound-inconclusive",
+      "target_partition": [
+        6
+      ],
+      "triple_boundary_rank": 3
+    },
+    {
+      "cech_complex_exact_in_positive_degrees": true,
+      "chain_groups": [
+        {
+          "boundary_kernel_dimension": 0,
+          "chain_degree": 1,
+          "coefficient_dimension": 43,
+          "common_family_size": 2,
+          "homology_dimension": 0,
+          "incoming_boundary_rank": 0,
+          "nonzero_cell_count": 3,
+          "outgoing_boundary_rank": 43
+        },
+        {
+          "boundary_kernel_dimension": 0,
+          "chain_degree": 2,
+          "coefficient_dimension": 0,
+          "common_family_size": 3,
+          "homology_dimension": 0,
+          "incoming_boundary_rank": 0,
+          "nonzero_cell_count": 0,
+          "outgoing_boundary_rank": 0
+        },
+        {
+          "boundary_kernel_dimension": 0,
+          "chain_degree": 3,
+          "coefficient_dimension": 0,
+          "common_family_size": 4,
+          "homology_dimension": 0,
+          "incoming_boundary_rank": 0,
+          "nonzero_cell_count": 0,
+          "outgoing_boundary_rank": 0
+        }
+      ],
+      "control_id": "W6-NONCOMMUTING-SCALAR-STAR",
+      "emergent_pair_cycle_homology_dimension": 0,
+      "exact_finite_cech_laplacian_audit": true,
+      "exact_relative_grading_defect_norm": 0.058823529411764795,
+      "exact_relative_pair_class_dimension": 34,
+      "higher_common_core_count": 0,
+      "labels": [
+        [
+          [
+            6
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        [
+          [
+            5,
+            1
+          ],
+          [
+            2,
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        2,
+        5
+      ],
+      "maximum_boundary_composition_residual": 0.0,
+      "maximum_pair_boundary_annihilation_residual": 0.0,
+      "maximum_pair_core_projector_commutator_norm": 0.11042310999998978,
+      "maximum_pair_laplacian_eigenvalue": 2.2222222222222268,
+      "minimum_positive_pair_laplacian_eigenvalue": 1.8888888888888862,
+      "n": 6,
+      "orientation_masks": [
+        2,
+        5,
+        11,
+        12
+      ],
+      "pair_core_coefficient_dimension": 43,
+      "pair_core_count": 3,
+      "pair_laplacian_condition_number": 1.1764705882352982,
+      "pair_relation_kernel_dimension": 0,
+      "physical_ambient_dimension": 50625,
+      "right_orientation_masks": [
+        11,
+        12
+      ],
+      "sign_blind_comparison_defect_bound": 0.07894736842105277,
+      "sign_blind_endpoint_gap_certified": true,
+      "status": "exact-cech-cycle-quotient-noncommuting",
+      "target_partition": [
+        6
+      ],
+      "triple_boundary_rank": 0
+    },
+    {
+      "cech_complex_exact_in_positive_degrees": true,
+      "chain_groups": [
+        {
+          "boundary_kernel_dimension": 3,
+          "chain_degree": 1,
+          "coefficient_dimension": 142,
+          "common_family_size": 2,
+          "homology_dimension": 0,
+          "incoming_boundary_rank": 3,
+          "nonzero_cell_count": 6,
+          "outgoing_boundary_rank": 139
+        },
+        {
+          "boundary_kernel_dimension": 1,
+          "chain_degree": 2,
+          "coefficient_dimension": 4,
+          "common_family_size": 3,
+          "homology_dimension": 0,
+          "incoming_boundary_rank": 1,
+          "nonzero_cell_count": 4,
+          "outgoing_boundary_rank": 3
+        },
+        {
+          "boundary_kernel_dimension": 0,
+          "chain_degree": 3,
+          "coefficient_dimension": 1,
+          "common_family_size": 4,
+          "homology_dimension": 0,
+          "incoming_boundary_rank": 0,
+          "nonzero_cell_count": 1,
+          "outgoing_boundary_rank": 1
+        }
+      ],
+      "control_id": "W6-DENSE-SIGN-BLIND-INCONCLUSIVE",
+      "emergent_pair_cycle_homology_dimension": 0,
+      "exact_finite_cech_laplacian_audit": true,
+      "exact_relative_grading_defect_norm": 5.206137462055658e-16,
+      "exact_relative_pair_class_dimension": 57,
+      "higher_common_core_count": 5,
+      "labels": [
+        [
+          [
+            6
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        [
+          [
+            5,
+            1
+          ],
+          [
+            3,
+            3
+          ]
+        ],
+        [
+          [
+            2,
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        3,
+        5
+      ],
+      "maximum_boundary_composition_residual": 1.6782945342419286e-16,
+      "maximum_pair_boundary_annihilation_residual": 7.352789614843298e-15,
+      "maximum_pair_core_projector_commutator_norm": 2.1073424255447014e-08,
+      "maximum_pair_laplacian_eigenvalue": 4.000000000000003,
+      "minimum_positive_pair_laplacian_eigenvalue": 1.9999999999999938,
+      "n": 6,
+      "orientation_masks": [
+        3,
+        5,
+        10,
+        12
+      ],
+      "pair_core_coefficient_dimension": 142,
+      "pair_core_count": 6,
+      "pair_laplacian_condition_number": 2.0000000000000075,
+      "pair_relation_kernel_dimension": 3,
+      "physical_ambient_dimension": 50625,
+      "right_orientation_masks": [
+        10,
+        12
+      ],
+      "sign_blind_comparison_defect_bound": Infinity,
+      "sign_blind_endpoint_gap_certified": false,
+      "status": "exact-cech-cycle-quotient-sign-blind-bound-inconclusive",
+      "target_partition": [
+        6
+      ],
+      "triple_boundary_rank": 3
+    },
+    {
+      "cech_complex_exact_in_positive_degrees": true,
+      "chain_groups": [
+        {
+          "boundary_kernel_dimension": 3,
+          "chain_degree": 1,
+          "coefficient_dimension": 180,
+          "common_family_size": 2,
+          "homology_dimension": 0,
+          "incoming_boundary_rank": 3,
+          "nonzero_cell_count": 12,
+          "outgoing_boundary_rank": 177
+        },
+        {
+          "boundary_kernel_dimension": 1,
+          "chain_degree": 2,
+          "coefficient_dimension": 4,
+          "common_family_size": 3,
+          "homology_dimension": 0,
+          "incoming_boundary_rank": 1,
+          "nonzero_cell_count": 4,
+          "outgoing_boundary_rank": 3
+        },
+        {
+          "boundary_kernel_dimension": 0,
+          "chain_degree": 3,
+          "coefficient_dimension": 1,
+          "common_family_size": 4,
+          "homology_dimension": 0,
+          "incoming_boundary_rank": 0,
+          "nonzero_cell_count": 1,
+          "outgoing_boundary_rank": 1
+        },
+        {
+          "boundary_kernel_dimension": 0,
+          "chain_degree": 4,
+          "coefficient_dimension": 0,
+          "common_family_size": 5,
+          "homology_dimension": 0,
+          "incoming_boundary_rank": 0,
+          "nonzero_cell_count": 0,
+          "outgoing_boundary_rank": 0
+        },
+        {
+          "boundary_kernel_dimension": 0,
+          "chain_degree": 5,
+          "coefficient_dimension": 0,
+          "common_family_size": 6,
+          "homology_dimension": 0,
+          "incoming_boundary_rank": 0,
+          "nonzero_cell_count": 0,
+          "outgoing_boundary_rank": 0
+        },
+        {
+          "boundary_kernel_dimension": 0,
+          "chain_degree": 6,
+          "coefficient_dimension": 0,
+          "common_family_size": 7,
+          "homology_dimension": 0,
+          "incoming_boundary_rank": 0,
+          "nonzero_cell_count": 0,
+          "outgoing_boundary_rank": 0
+        },
+        {
+          "boundary_kernel_dimension": 0,
+          "chain_degree": 7,
+          "coefficient_dimension": 0,
+          "common_family_size": 8,
+          "homology_dimension": 0,
+          "incoming_boundary_rank": 0,
+          "nonzero_cell_count": 0,
+          "outgoing_boundary_rank": 0
+        }
+      ],
+      "control_id": "W6-EIGHT-ORIENTATION-AFFINE-CUBE",
+      "emergent_pair_cycle_homology_dimension": 0,
+      "exact_finite_cech_laplacian_audit": true,
+      "exact_relative_grading_defect_norm": 0.05882352941176475,
+      "exact_relative_pair_class_dimension": 127,
+      "higher_common_core_count": 5,
+      "labels": [
+        [
+          [
+            6
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        [
+          [
+            5,
+            1
+          ],
+          [
+            3,
+            3
+          ]
+        ],
+        [
+          [
+            2,
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        4,
+        5,
+        12,
+        13
+      ],
+      "maximum_boundary_composition_residual": 1.6782945342419286e-16,
+      "maximum_pair_boundary_annihilation_residual": 7.358507279133037e-15,
+      "maximum_pair_core_projector_commutator_norm": 0.1104231099999898,
+      "maximum_pair_laplacian_eigenvalue": 4.000000000000004,
+      "minimum_positive_pair_laplacian_eigenvalue": 1.8888888888888855,
+      "n": 6,
+      "orientation_masks": [
+        2,
+        3,
+        4,
+        5,
+        10,
+        11,
+        12,
+        13
+      ],
+      "pair_core_coefficient_dimension": 180,
+      "pair_core_count": 12,
+      "pair_laplacian_condition_number": 2.1176470588235357,
+      "pair_relation_kernel_dimension": 3,
+      "physical_ambient_dimension": 50625,
+      "right_orientation_masks": [
+        2,
+        3,
+        10,
+        11
+      ],
+      "sign_blind_comparison_defect_bound": Infinity,
+      "sign_blind_endpoint_gap_certified": false,
+      "status": "exact-cech-cycle-quotient-sign-blind-bound-inconclusive",
+      "target_partition": [
+        6
+      ],
+      "triple_boundary_rank": 3
+    }
+  ],
+  "created_at": "2026-08-06T05:44:59.767568+00:00",
+  "falsifiers_triggered": [
+    "Absolute-value recoupling graphs can be inconclusive even when the exact phase-sensitive quotient is perfectly conditioned.",
+    "Higher common cores are required to identify pair-relation cycle kernels before spectral comparison.",
+    "Finite exactness of a four-leaf Cech complex is not an all-depth theorem or circuit construction.",
+    "Pair-cycle exactness does not test emergent leaf-dependency H0."
+  ],
+  "headline_metrics": {
+    "all_depth_phase_sensitive_laplacian_gap_count": 0,
+    "all_n_cech_exactness_count": 0,
+    "coherent_cech_transform_count": 0,
+    "dense_control_exact_grading_defect_norm": 5.206137462055658e-16,
+    "dense_control_maximum_pair_laplacian_eigenvalue": 4.000000000000003,
+    "dense_control_minimum_positive_pair_laplacian_eigenvalue": 1.9999999999999938,
+    "dense_control_sign_blind_endpoint_gap_certificate_count": 0,
+    "finite_cech_laplacian_audit_failure_count": 0,
+    "finite_control_count": 4,
+    "finite_emergent_pair_cycle_homology_dimension": 0,
+    "finite_higher_common_core_count": 15,
+    "finite_pair_core_count": 27,
+    "finite_pair_relation_kernel_dimension": 9,
+    "finite_triple_boundary_rank": 9,
+    "maximum_pair_laplacian_condition_number": 2.1176470588235357,
+    "minimum_positive_pair_laplacian_eigenvalue": 1.8888888888888855,
+    "new_quantum_algorithm_count": 0,
+    "pair_relation_laplacian_identity_count": 1,
+    "relative_common_core_cech_complex_theorem_count": 1
+  },
+  "proof_obligations": [
+    {
+      "obligation": "finite_relative_cech_boundary",
+      "resolution": "All boundary compositions and pair-boundary annihilation identities pass on the selected controls.",
+      "resolved": true
+    },
+    {
+      "obligation": "finite_pair_cycle_exactness",
+      "resolution": "Every pair-relation kernel vector is generated by triple common cores; quadruple cells generate the observed triple-boundary relations.",
+      "resolved": true
+    },
+    {
+      "obligation": "all_depth_cech_exactness_and_laplacian_gap",
+      "resolution": "Noncommuting multiplicity sheaves may acquire homology or small positive Laplacian eigenvalues beyond four orientations.",
+      "resolved": false
+    }
+  ],
+  "scaling_records": [
+    {
+      "all_depth_cech_exactness_proved": false,
+      "coherent_sparse_boundary_transform_compiled": false,
+      "fixed_family_chain_dimensions_representation_computable": true,
+      "information_threshold_copy_count": 10,
+      "n": 6,
+      "phase_sensitive_pair_laplacian_gap_proved": false,
+      "status": "finite-cech-exactness-all-depth-laplacian-open"
+    },
+    {
+      "all_depth_cech_exactness_proved": false,
+      "coherent_sparse_boundary_transform_compiled": false,
+      "fixed_family_chain_dimensions_representation_computable": true,
+      "information_threshold_copy_count": 16,
+      "n": 8,
+      "phase_sensitive_pair_laplacian_gap_proved": false,
+      "status": "finite-cech-exactness-all-depth-laplacian-open"
+    },
+    {
+      "all_depth_cech_exactness_proved": false,
+      "coherent_sparse_boundary_transform_compiled": false,
+      "fixed_family_chain_dimensions_representation_computable": true,
+      "information_threshold_copy_count": 45,
+      "n": 16,
+      "phase_sensitive_pair_laplacian_gap_proved": false,
+      "status": "finite-cech-exactness-all-depth-laplacian-open"
+    },
+    {
+      "all_depth_cech_exactness_proved": false,
+      "coherent_sparse_boundary_transform_compiled": false,
+      "fixed_family_chain_dimensions_representation_computable": true,
+      "information_threshold_copy_count": 118,
+      "n": 32,
+      "phase_sensitive_pair_laplacian_gap_proved": false,
+      "status": "finite-cech-exactness-all-depth-laplacian-open"
+    },
+    {
+      "all_depth_cech_exactness_proved": false,
+      "coherent_sparse_boundary_transform_compiled": false,
+      "fixed_family_chain_dimensions_representation_computable": true,
+      "information_threshold_copy_count": 296,
+      "n": 64,
+      "phase_sensitive_pair_laplacian_gap_proved": false,
+      "status": "finite-cech-exactness-all-depth-laplacian-open"
+    },
+    {
+      "all_depth_cech_exactness_proved": false,
+      "coherent_sparse_boundary_transform_compiled": false,
+      "fixed_family_chain_dimensions_representation_computable": true,
+      "information_threshold_copy_count": 717,
+      "n": 128,
+      "phase_sensitive_pair_laplacian_gap_proved": false,
+      "status": "finite-cech-exactness-all-depth-laplacian-open"
+    },
+    {
+      "all_depth_cech_exactness_proved": false,
+      "coherent_sparse_boundary_transform_compiled": false,
+      "fixed_family_chain_dimensions_representation_computable": true,
+      "information_threshold_copy_count": 1684,
+      "n": 256,
+      "phase_sensitive_pair_laplacian_gap_proved": false,
+      "status": "finite-cech-exactness-all-depth-laplacian-open"
+    },
+    {
+      "all_depth_cech_exactness_proved": false,
+      "coherent_sparse_boundary_transform_compiled": false,
+      "fixed_family_chain_dimensions_representation_computable": true,
+      "information_threshold_copy_count": 3876,
+      "n": 512,
+      "phase_sensitive_pair_laplacian_gap_proved": false,
+      "status": "finite-cech-exactness-all-depth-laplacian-open"
+    }
+  ],
+  "status": "finite-cech-cycle-quotient-all-depth-phase-gap-open",
+  "summary": "Built the relative common-core Cech complex and verified exact pair-cycle resolution on commuting, noncommuting, and dense S6 affine controls through eight orientations; sign-blind failures remain constant-conditioned only in the exact phase-sensitive quotient.",
+  "theorem_contract": {
+    "boundary": "D_p is the alternating sum of exact common-range inclusion intertwiners.",
+    "chain_groups": "C_p is the direct sum of fixed-family common ranges over orientation subsets of size p+1.",
+    "homology": "H_1=ker D_1/im D_2 records pair cycles not explained by higher common cores.",
+    "pair_laplacian": "The pair-relation Gram is D_1^*D_1, so G_1 D_2=0 and higher common cores generate exact pair-cycle null vectors.",
+    "phase_sensitivity": "Quotienting im D_2 before comparison preserves recoupling phases and cancellations discarded by scalar absolute weights.",
+    "scope": "Finite four- and eight-orientation complexes use explicit intertwiners; no augmented H0 exactness, all-depth exactness, sparse harmonic transform, or asymptotic Laplacian gap is proved."
+  }
+}

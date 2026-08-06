@@ -1,0 +1,379 @@
+{
+  "claim_gate": {
+    "all_multiplicity_two_blocks_exactly_split": false,
+    "all_n_square_free_proved": false,
+    "coherent_internal_eigenbasis_transform_proved": false,
+    "factorial_group_enumeration_removed": true,
+    "finite_all_source_scalar_obstruction_absent": false,
+    "hidden_involution_decoder_proved": false,
+    "higher_multiplicity_square_free_proved": false,
+    "inverse_polynomial_normalized_gap_proved": false,
+    "reason": "Exact class contractions can kill the finite separator if any scalar block appears. Surviving second moments still cannot certify square-free spectra in higher-multiplicity blocks or any asymptotic decoder.",
+    "speedup_claim_allowed": false
+  },
+  "contraction_contract": {
+    "exact_certificate": "Zero variance proves scalar action. Positive variance proves simple spectrum only at multiplicity two.",
+    "group_enumeration": "Removed: bounded-support products are compressed by conjugacy class and marked injections.",
+    "operator": "TC2+CT1-2*CT2",
+    "remaining_cost": "Partition enumeration, Kronecker coefficients, and marked injections; no polynomial bit-complexity claim.",
+    "source_scope": "Every ordered source-partition pair.",
+    "target_scope": "Every target with Kronecker multiplicity above one."
+  },
+  "created_at": "2026-07-29T23:59:23.395070+00:00",
+  "falsifiers_triggered": [
+    "The parity-complete separator has an exact scalar block in the audited range.",
+    "Positive second-moment variance does not prove a square-free spectrum above multiplicity two.",
+    "Finite exact non-scalarity does not prove an all-n normalized gap, coherent transform, or decoder."
+  ],
+  "headline_metrics": {
+    "all_n_square_free_theorem_count": 0,
+    "all_source_exact_block_count": 3146,
+    "coherent_internal_eigenbasis_transform_count": 0,
+    "even_sign_twist_closure_verified_count": 1,
+    "exact_multiplicity_two_simple_spectrum_count": 1608,
+    "exact_non_scalar_block_count": 3136,
+    "exact_scalar_obstruction_count": 10,
+    "exact_scalar_obstruction_symmetry_orbit_count": 3,
+    "factorial_control_count": 30,
+    "finite_n_count": 4,
+    "hidden_involution_decoder_count": 0,
+    "higher_multiplicity_square_free_theorem_count": 0,
+    "inverse_polynomial_normalized_gap_theorem_count": 0,
+    "maximum_kronecker_multiplicity": 17,
+    "maximum_n": 8,
+    "maximum_relative_pair_support": 8,
+    "multiplicity_two_block_count": 1618,
+    "source_swap_closure_verified_count": 0
+  },
+  "obstruction_symmetry": {
+    "closed_under_even_sign_twists": true,
+    "closed_under_source_swap": false,
+    "even_sign_twist_action": "Conjugate any two of (left source, right source, target); the Kronecker multiplicity is unchanged.",
+    "interpretation": "The exact obstructions form representation-theoretic families rather than isolated numerical failures. Source swap fails because the frozen TC/CT coefficients are orientation-asymmetric.",
+    "orbit_count": 3,
+    "orbit_sizes": [
+      4,
+      4,
+      2
+    ]
+  },
+  "records": [
+    {
+      "class_signature_nonzero_count": 593,
+      "exact_multiplicity_two_simple_spectrum_count": 6,
+      "exact_non_scalar_block_count": 6,
+      "exact_scalar_block_count": 0,
+      "factorial_control_count": 6,
+      "higher_multiplicity_non_scalar_but_square_free_open_count": 0,
+      "maximum_kronecker_multiplicity": 2,
+      "maximum_relative_pair_support": 5,
+      "minimum_multiplicity_two_raw_gap_lower_bound": 0.32659863237109044,
+      "minimum_positive_exact_variance": "2/75",
+      "multiplicity_two_block_count": 6,
+      "n": 5,
+      "nontrivial_kronecker_block_count": 6,
+      "ordered_source_pair_count": 49,
+      "partition_count": 7,
+      "relative_pair_type_count": 127,
+      "scalar_obstructions": [],
+      "status": "all-blocks-exactly-non-scalar-square-free-open"
+    },
+    {
+      "class_signature_nonzero_count": 1858,
+      "exact_multiplicity_two_simple_spectrum_count": 76,
+      "exact_non_scalar_block_count": 89,
+      "exact_scalar_block_count": 0,
+      "factorial_control_count": 12,
+      "higher_multiplicity_non_scalar_but_square_free_open_count": 13,
+      "maximum_kronecker_multiplicity": 5,
+      "maximum_relative_pair_support": 6,
+      "minimum_multiplicity_two_raw_gap_lower_bound": 0.040824829046386304,
+      "minimum_positive_exact_variance": "1/2400",
+      "multiplicity_two_block_count": 76,
+      "n": 6,
+      "nontrivial_kronecker_block_count": 89,
+      "ordered_source_pair_count": 121,
+      "partition_count": 11,
+      "relative_pair_type_count": 171,
+      "scalar_obstructions": [],
+      "status": "all-blocks-exactly-non-scalar-square-free-open"
+    },
+    {
+      "class_signature_nonzero_count": 4201,
+      "exact_multiplicity_two_simple_spectrum_count": 380,
+      "exact_non_scalar_block_count": 568,
+      "exact_scalar_block_count": 0,
+      "factorial_control_count": 12,
+      "higher_multiplicity_non_scalar_but_square_free_open_count": 188,
+      "maximum_kronecker_multiplicity": 9,
+      "maximum_relative_pair_support": 7,
+      "minimum_multiplicity_two_raw_gap_lower_bound": 0.023809523809523808,
+      "minimum_positive_exact_variance": "1/7056",
+      "multiplicity_two_block_count": 380,
+      "n": 7,
+      "nontrivial_kronecker_block_count": 568,
+      "ordered_source_pair_count": 225,
+      "partition_count": 15,
+      "relative_pair_type_count": 179,
+      "scalar_obstructions": [],
+      "status": "all-blocks-exactly-non-scalar-square-free-open"
+    },
+    {
+      "class_signature_nonzero_count": 10436,
+      "exact_multiplicity_two_simple_spectrum_count": 1146,
+      "exact_non_scalar_block_count": 2473,
+      "exact_scalar_block_count": 10,
+      "factorial_control_count": 0,
+      "higher_multiplicity_non_scalar_but_square_free_open_count": 1327,
+      "maximum_kronecker_multiplicity": 17,
+      "maximum_relative_pair_support": 8,
+      "minimum_multiplicity_two_raw_gap_lower_bound": 0.01130952380952381,
+      "minimum_positive_exact_variance": "361/11289600",
+      "multiplicity_two_block_count": 1156,
+      "n": 8,
+      "nontrivial_kronecker_block_count": 2483,
+      "ordered_source_pair_count": 484,
+      "partition_count": 22,
+      "relative_pair_type_count": 180,
+      "scalar_obstructions": [
+        {
+          "exact_mean": "-1/210",
+          "exact_variance": "0",
+          "kronecker_multiplicity": 2,
+          "left_source": [
+            5,
+            3
+          ],
+          "n": 8,
+          "right_source": [
+            5,
+            3
+          ],
+          "status": "exact-scalar-obstruction",
+          "target": [
+            4,
+            3,
+            1
+          ]
+        },
+        {
+          "exact_mean": "-107/420",
+          "exact_variance": "0",
+          "kronecker_multiplicity": 2,
+          "left_source": [
+            5,
+            3
+          ],
+          "n": 8,
+          "right_source": [
+            4,
+            3,
+            1
+          ],
+          "status": "exact-scalar-obstruction",
+          "target": [
+            5,
+            3
+          ]
+        },
+        {
+          "exact_mean": "39/140",
+          "exact_variance": "0",
+          "kronecker_multiplicity": 2,
+          "left_source": [
+            5,
+            3
+          ],
+          "n": 8,
+          "right_source": [
+            3,
+            2,
+            2,
+            1
+          ],
+          "status": "exact-scalar-obstruction",
+          "target": [
+            2,
+            2,
+            2,
+            1,
+            1
+          ]
+        },
+        {
+          "exact_mean": "1/35",
+          "exact_variance": "0",
+          "kronecker_multiplicity": 2,
+          "left_source": [
+            5,
+            3
+          ],
+          "n": 8,
+          "right_source": [
+            2,
+            2,
+            2,
+            1,
+            1
+          ],
+          "status": "exact-scalar-obstruction",
+          "target": [
+            3,
+            2,
+            2,
+            1
+          ]
+        },
+        {
+          "exact_mean": "0",
+          "exact_variance": "0",
+          "kronecker_multiplicity": 2,
+          "left_source": [
+            3,
+            3,
+            2
+          ],
+          "n": 8,
+          "right_source": [
+            4,
+            2,
+            1,
+            1
+          ],
+          "status": "exact-scalar-obstruction",
+          "target": [
+            4,
+            4
+          ]
+        },
+        {
+          "exact_mean": "0",
+          "exact_variance": "0",
+          "kronecker_multiplicity": 2,
+          "left_source": [
+            3,
+            3,
+            2
+          ],
+          "n": 8,
+          "right_source": [
+            4,
+            2,
+            1,
+            1
+          ],
+          "status": "exact-scalar-obstruction",
+          "target": [
+            2,
+            2,
+            2,
+            2
+          ]
+        },
+        {
+          "exact_mean": "-1/35",
+          "exact_variance": "0",
+          "kronecker_multiplicity": 2,
+          "left_source": [
+            2,
+            2,
+            2,
+            1,
+            1
+          ],
+          "n": 8,
+          "right_source": [
+            5,
+            3
+          ],
+          "status": "exact-scalar-obstruction",
+          "target": [
+            3,
+            2,
+            2,
+            1
+          ]
+        },
+        {
+          "exact_mean": "-39/140",
+          "exact_variance": "0",
+          "kronecker_multiplicity": 2,
+          "left_source": [
+            2,
+            2,
+            2,
+            1,
+            1
+          ],
+          "n": 8,
+          "right_source": [
+            4,
+            3,
+            1
+          ],
+          "status": "exact-scalar-obstruction",
+          "target": [
+            2,
+            2,
+            2,
+            1,
+            1
+          ]
+        },
+        {
+          "exact_mean": "107/420",
+          "exact_variance": "0",
+          "kronecker_multiplicity": 2,
+          "left_source": [
+            2,
+            2,
+            2,
+            1,
+            1
+          ],
+          "n": 8,
+          "right_source": [
+            3,
+            2,
+            2,
+            1
+          ],
+          "status": "exact-scalar-obstruction",
+          "target": [
+            5,
+            3
+          ]
+        },
+        {
+          "exact_mean": "1/210",
+          "exact_variance": "0",
+          "kronecker_multiplicity": 2,
+          "left_source": [
+            2,
+            2,
+            2,
+            1,
+            1
+          ],
+          "n": 8,
+          "right_source": [
+            2,
+            2,
+            2,
+            1,
+            1
+          ],
+          "status": "exact-scalar-obstruction",
+          "target": [
+            4,
+            3,
+            1
+          ]
+        }
+      ],
+      "status": "exact-scalar-obstruction-found"
+    }
+  ],
+  "status": "parity-complete-exact-scalar-obstruction-found",
+  "summary": "Audited 3146 all-source nontrivial blocks through n=8 by exact class contraction; found 10 exact scalar obstructions and proved 1608/1618 multiplicity-two spectra simple."
+}

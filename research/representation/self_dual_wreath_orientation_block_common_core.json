@@ -1,0 +1,602 @@
+{
+  "claim_gate": {
+    "asymptotic_linear_block_rate_proved": false,
+    "block_common_core_construction_proved": true,
+    "collision_free_polynomial_factor_norm_bound_proved": false,
+    "natural_constant_mass_persistence_proved": false,
+    "reason": "Finite threshold portfolios contain exponentially large structured common-core orientation families, but neither linear-rate persistence nor constant natural mass is proved asymptotically. The mechanism is a high-priority potential counterexample to the uniform frame-norm route.",
+    "speedup_claim_allowed": false,
+    "tail_exact_finite_exponential_common_family_found": true,
+    "uniform_polynomial_factor_norm_counterexample_proved": false
+  },
+  "created_at": "2026-08-05T22:11:18.727004+00:00",
+  "falsifiers_triggered": [
+    "Random-family disappearance at depth five does not preclude exponentially large structured orientation families with an exact common core.",
+    "Pairwise 1/(n-1) contraction off common ranges cannot bound a structured family that remains entirely in common ranges.",
+    "Finite linear-looking block rates do not prove asymptotic or natural-mass persistence."
+  ],
+  "headline_metrics": {
+    "asymptotic_linear_block_rate_theorem_count": 0,
+    "block_common_core_construction_theorem_count": 1,
+    "collision_free_polynomial_factor_norm_theorem_count": 0,
+    "exact_finite_block_common_core_witness_count": 6,
+    "finite_exact_target_violation_count": 6,
+    "information_threshold_witness_count": 2,
+    "maximum_observed_block_rate": 0.3103448275862069,
+    "minimum_observed_block_rate": 0.26666666666666666,
+    "natural_constant_mass_block_packing_theorem_count": 0,
+    "scaling_record_count": 6,
+    "tail_averaged_fourier_norm_lower_bound": 9.5367431640625e-07,
+    "tail_block_count": 9,
+    "tail_common_orientation_family_size": 512,
+    "tail_copy_count": 29,
+    "tail_log2_common_core_dimension_lower_bound": 107.7938607954299,
+    "tail_n": 12,
+    "tail_norm_lower_bound_to_target_ratio": 256.0,
+    "tail_projector_sum_norm_lower_bound": 512,
+    "uniform_polynomial_factor_norm_counterexample_theorem_count": 0
+  },
+  "scaling_records": [
+    {
+      "all_labels_covered": true,
+      "asymptotic_linear_rate_persistence_proved": false,
+      "averaged_fourier_norm_lower_bound": 0.03125,
+      "block_count": 2,
+      "block_rate": 0.2857142857142857,
+      "block_sizes": [
+        3,
+        4
+      ],
+      "blocks": [
+        {
+          "block_size": 3,
+          "label_indices": [
+            0,
+            1,
+            2
+          ],
+          "left_multiplicity": 3,
+          "one_dimensional_character": "sign",
+          "right_multiplicity": 2
+        },
+        {
+          "block_size": 4,
+          "label_indices": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "left_multiplicity": 5,
+          "one_dimensional_character": "sign",
+          "right_multiplicity": 1
+        }
+      ],
+      "common_core_dimension_lower_bound": 30,
+      "common_orientation_family_size": 4,
+      "copy_count": 7,
+      "covered_label_count": 7,
+      "exact_finite_block_common_core_witness": true,
+      "information_threshold_copy_count": 13,
+      "log2_common_core_dimension_lower_bound": 4.906890595608519,
+      "n": 7,
+      "natural_constant_mass_persistence_proved": false,
+      "norm_lower_bound_to_target_ratio": 2.0,
+      "partition_count": 15,
+      "projector_sum_norm_lower_bound": 4,
+      "reaches_information_threshold": false,
+      "status": "exact-finite-exponential-block-common-core",
+      "target_two_to_one_minus_k": 0.015625
+    },
+    {
+      "all_labels_covered": true,
+      "asymptotic_linear_rate_persistence_proved": false,
+      "averaged_fourier_norm_lower_bound": 0.00390625,
+      "block_count": 3,
+      "block_rate": 0.2727272727272727,
+      "block_sizes": [
+        3,
+        4,
+        4
+      ],
+      "blocks": [
+        {
+          "block_size": 3,
+          "label_indices": [
+            0,
+            1,
+            2
+          ],
+          "left_multiplicity": 10,
+          "one_dimensional_character": "trivial",
+          "right_multiplicity": 7
+        },
+        {
+          "block_size": 4,
+          "label_indices": [
+            3,
+            4,
+            5,
+            8
+          ],
+          "left_multiplicity": 17,
+          "one_dimensional_character": "trivial",
+          "right_multiplicity": 15
+        },
+        {
+          "block_size": 4,
+          "label_indices": [
+            6,
+            7,
+            9,
+            10
+          ],
+          "left_multiplicity": 1,
+          "one_dimensional_character": "trivial",
+          "right_multiplicity": 1
+        }
+      ],
+      "common_core_dimension_lower_bound": 17850,
+      "common_orientation_family_size": 8,
+      "copy_count": 11,
+      "covered_label_count": 11,
+      "exact_finite_block_common_core_witness": true,
+      "information_threshold_copy_count": 16,
+      "log2_common_core_dimension_lower_bound": 14.123636453803824,
+      "n": 8,
+      "natural_constant_mass_persistence_proved": false,
+      "norm_lower_bound_to_target_ratio": 4.0,
+      "partition_count": 22,
+      "projector_sum_norm_lower_bound": 8,
+      "reaches_information_threshold": false,
+      "status": "exact-finite-exponential-block-common-core",
+      "target_two_to_one_minus_k": 0.0009765625
+    },
+    {
+      "all_labels_covered": true,
+      "asymptotic_linear_rate_persistence_proved": false,
+      "averaged_fourier_norm_lower_bound": 0.00048828125,
+      "block_count": 4,
+      "block_rate": 0.26666666666666666,
+      "block_sizes": [
+        3,
+        4,
+        4,
+        4
+      ],
+      "blocks": [
+        {
+          "block_size": 3,
+          "label_indices": [
+            0,
+            1,
+            2
+          ],
+          "left_multiplicity": 20,
+          "one_dimensional_character": "trivial",
+          "right_multiplicity": 19
+        },
+        {
+          "block_size": 4,
+          "label_indices": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "left_multiplicity": 507,
+          "one_dimensional_character": "trivial",
+          "right_multiplicity": 507
+        },
+        {
+          "block_size": 4,
+          "label_indices": [
+            7,
+            8,
+            9,
+            10
+          ],
+          "left_multiplicity": 20,
+          "one_dimensional_character": "trivial",
+          "right_multiplicity": 7
+        },
+        {
+          "block_size": 4,
+          "label_indices": [
+            11,
+            12,
+            13,
+            14
+          ],
+          "left_multiplicity": 1,
+          "one_dimensional_character": "trivial",
+          "right_multiplicity": 1
+        }
+      ],
+      "common_core_dimension_lower_bound": 13675006800,
+      "common_orientation_family_size": 16,
+      "copy_count": 15,
+      "covered_label_count": 15,
+      "exact_finite_block_common_core_witness": true,
+      "information_threshold_copy_count": 19,
+      "log2_common_core_dimension_lower_bound": 33.67082249928259,
+      "n": 9,
+      "natural_constant_mass_persistence_proved": false,
+      "norm_lower_bound_to_target_ratio": 8.0,
+      "partition_count": 30,
+      "projector_sum_norm_lower_bound": 16,
+      "reaches_information_threshold": false,
+      "status": "exact-finite-exponential-block-common-core",
+      "target_two_to_one_minus_k": 6.103515625e-05
+    },
+    {
+      "all_labels_covered": true,
+      "asymptotic_linear_rate_persistence_proved": false,
+      "averaged_fourier_norm_lower_bound": 3.0517578125e-05,
+      "block_count": 6,
+      "block_rate": 0.2857142857142857,
+      "block_sizes": [
+        3,
+        3,
+        3,
+        4,
+        4,
+        4
+      ],
+      "blocks": [
+        {
+          "block_size": 3,
+          "label_indices": [
+            0,
+            1,
+            2
+          ],
+          "left_multiplicity": 63,
+          "one_dimensional_character": "trivial",
+          "right_multiplicity": 39
+        },
+        {
+          "block_size": 3,
+          "label_indices": [
+            3,
+            4,
+            5
+          ],
+          "left_multiplicity": 7,
+          "one_dimensional_character": "trivial",
+          "right_multiplicity": 16
+        },
+        {
+          "block_size": 3,
+          "label_indices": [
+            6,
+            7,
+            8
+          ],
+          "left_multiplicity": 6,
+          "one_dimensional_character": "trivial",
+          "right_multiplicity": 6
+        },
+        {
+          "block_size": 4,
+          "label_indices": [
+            9,
+            10,
+            11,
+            12
+          ],
+          "left_multiplicity": 255,
+          "one_dimensional_character": "trivial",
+          "right_multiplicity": 255
+        },
+        {
+          "block_size": 4,
+          "label_indices": [
+            13,
+            14,
+            15,
+            16
+          ],
+          "left_multiplicity": 13,
+          "one_dimensional_character": "trivial",
+          "right_multiplicity": 13
+        },
+        {
+          "block_size": 4,
+          "label_indices": [
+            17,
+            18,
+            19,
+            20
+          ],
+          "left_multiplicity": 1,
+          "one_dimensional_character": "trivial",
+          "right_multiplicity": 1
+        }
+      ],
+      "common_core_dimension_lower_bound": 108866120126400,
+      "common_orientation_family_size": 64,
+      "copy_count": 21,
+      "covered_label_count": 21,
+      "exact_finite_block_common_core_witness": true,
+      "information_threshold_copy_count": 22,
+      "log2_common_core_dimension_lower_bound": 46.62954837586198,
+      "n": 10,
+      "natural_constant_mass_persistence_proved": false,
+      "norm_lower_bound_to_target_ratio": 32.0,
+      "partition_count": 42,
+      "projector_sum_norm_lower_bound": 64,
+      "reaches_information_threshold": false,
+      "status": "exact-finite-exponential-block-common-core",
+      "target_two_to_one_minus_k": 9.5367431640625e-07
+    },
+    {
+      "all_labels_covered": true,
+      "asymptotic_linear_rate_persistence_proved": false,
+      "averaged_fourier_norm_lower_bound": 3.814697265625e-06,
+      "block_count": 8,
+      "block_rate": 0.3076923076923077,
+      "block_sizes": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        4,
+        4
+      ],
+      "blocks": [
+        {
+          "block_size": 3,
+          "label_indices": [
+            0,
+            1,
+            2
+          ],
+          "left_multiplicity": 119,
+          "one_dimensional_character": "trivial",
+          "right_multiplicity": 119
+        },
+        {
+          "block_size": 3,
+          "label_indices": [
+            3,
+            4,
+            5
+          ],
+          "left_multiplicity": 43,
+          "one_dimensional_character": "trivial",
+          "right_multiplicity": 32
+        },
+        {
+          "block_size": 3,
+          "label_indices": [
+            6,
+            7,
+            8
+          ],
+          "left_multiplicity": 35,
+          "one_dimensional_character": "trivial",
+          "right_multiplicity": 16
+        },
+        {
+          "block_size": 3,
+          "label_indices": [
+            9,
+            10,
+            11
+          ],
+          "left_multiplicity": 14,
+          "one_dimensional_character": "trivial",
+          "right_multiplicity": 10
+        },
+        {
+          "block_size": 3,
+          "label_indices": [
+            12,
+            13,
+            14
+          ],
+          "left_multiplicity": 1,
+          "one_dimensional_character": "trivial",
+          "right_multiplicity": 3
+        },
+        {
+          "block_size": 3,
+          "label_indices": [
+            15,
+            17,
+            18
+          ],
+          "left_multiplicity": 2,
+          "one_dimensional_character": "trivial",
+          "right_multiplicity": 1
+        },
+        {
+          "block_size": 4,
+          "label_indices": [
+            16,
+            19,
+            20,
+            21
+          ],
+          "left_multiplicity": 20,
+          "one_dimensional_character": "trivial",
+          "right_multiplicity": 19
+        },
+        {
+          "block_size": 4,
+          "label_indices": [
+            22,
+            23,
+            24,
+            25
+          ],
+          "left_multiplicity": 14,
+          "one_dimensional_character": "trivial",
+          "right_multiplicity": 14
+        }
+      ],
+      "common_core_dimension_lower_bound": 682683392090112000,
+      "common_orientation_family_size": 256,
+      "copy_count": 26,
+      "covered_label_count": 26,
+      "exact_finite_block_common_core_witness": true,
+      "information_threshold_copy_count": 26,
+      "log2_common_core_dimension_lower_bound": 59.24399426837523,
+      "n": 11,
+      "natural_constant_mass_persistence_proved": false,
+      "norm_lower_bound_to_target_ratio": 128.0,
+      "partition_count": 56,
+      "projector_sum_norm_lower_bound": 256,
+      "reaches_information_threshold": true,
+      "status": "exact-finite-exponential-block-common-core",
+      "target_two_to_one_minus_k": 2.9802322387695312e-08
+    },
+    {
+      "all_labels_covered": true,
+      "asymptotic_linear_rate_persistence_proved": false,
+      "averaged_fourier_norm_lower_bound": 9.5367431640625e-07,
+      "block_count": 9,
+      "block_rate": 0.3103448275862069,
+      "block_sizes": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        4,
+        4
+      ],
+      "blocks": [
+        {
+          "block_size": 3,
+          "label_indices": [
+            0,
+            1,
+            2
+          ],
+          "left_multiplicity": 524,
+          "one_dimensional_character": "trivial",
+          "right_multiplicity": 312
+        },
+        {
+          "block_size": 3,
+          "label_indices": [
+            3,
+            4,
+            5
+          ],
+          "left_multiplicity": 147,
+          "one_dimensional_character": "trivial",
+          "right_multiplicity": 114
+        },
+        {
+          "block_size": 3,
+          "label_indices": [
+            6,
+            7,
+            8
+          ],
+          "left_multiplicity": 79,
+          "one_dimensional_character": "trivial",
+          "right_multiplicity": 68
+        },
+        {
+          "block_size": 3,
+          "label_indices": [
+            9,
+            10,
+            11
+          ],
+          "left_multiplicity": 44,
+          "one_dimensional_character": "trivial",
+          "right_multiplicity": 37
+        },
+        {
+          "block_size": 3,
+          "label_indices": [
+            12,
+            13,
+            14
+          ],
+          "left_multiplicity": 14,
+          "one_dimensional_character": "trivial",
+          "right_multiplicity": 7
+        },
+        {
+          "block_size": 3,
+          "label_indices": [
+            15,
+            16,
+            17
+          ],
+          "left_multiplicity": 19,
+          "one_dimensional_character": "trivial",
+          "right_multiplicity": 11
+        },
+        {
+          "block_size": 3,
+          "label_indices": [
+            18,
+            19,
+            20
+          ],
+          "left_multiplicity": 4,
+          "one_dimensional_character": "trivial",
+          "right_multiplicity": 10
+        },
+        {
+          "block_size": 4,
+          "label_indices": [
+            21,
+            22,
+            23,
+            24
+          ],
+          "left_multiplicity": 4012,
+          "one_dimensional_character": "trivial",
+          "right_multiplicity": 2353
+        },
+        {
+          "block_size": 4,
+          "label_indices": [
+            25,
+            26,
+            27,
+            28
+          ],
+          "left_multiplicity": 66,
+          "one_dimensional_character": "trivial",
+          "right_multiplicity": 23
+        }
+      ],
+      "common_core_dimension_lower_bound": 281310179504654431956148768604160,
+      "common_orientation_family_size": 512,
+      "copy_count": 29,
+      "covered_label_count": 29,
+      "exact_finite_block_common_core_witness": true,
+      "information_threshold_copy_count": 29,
+      "log2_common_core_dimension_lower_bound": 107.7938607954299,
+      "n": 12,
+      "natural_constant_mass_persistence_proved": false,
+      "norm_lower_bound_to_target_ratio": 256.0,
+      "partition_count": 77,
+      "projector_sum_norm_lower_bound": 512,
+      "reaches_information_threshold": true,
+      "status": "exact-finite-exponential-block-common-core",
+      "target_two_to_one_minus_k": 3.725290298461914e-09
+    }
+  ],
+  "status": "finite-exponential-common-core-asymptotic-persistence-open",
+  "summary": "Constructed exact block common-core witnesses on 6/6 portfolios; the tail n=12, k=29 witness contains 512 orientation projectors sharing a nonzero vector.",
+  "theorem_contract": {
+    "asymptotic_falsifier": "a natural or worst-sector family with r=Omega(k) falsifies every poly(n)2^-k upper bound",
+    "block_construction": "r disjoint label blocks with matched left/right one-dimensional characters and global even sign parity produce 2^r orientations with an exact common core",
+    "norm_lower_bound": "the projector sum norm is at least 2^r and the averaged Fourier block norm is at least 2^(r-k)",
+    "remaining_boundary": "prove linear-rate block packings on an asymptotic portfolio family and determine their natural mass, or prove that the finite top-dimension witnesses disappear asymptotically"
+  }
+}

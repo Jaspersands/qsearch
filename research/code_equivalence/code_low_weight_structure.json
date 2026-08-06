@@ -1,5 +1,5 @@
 {
-  "created_at": "2026-07-14T00:04:35.008204+00:00",
+  "created_at": "2026-08-06T06:38:17.224683+00:00",
   "falsifiers_triggered": [
     "Low-weight codeword support hypergraphs separate current code-equivalence rows.",
     "Rows matching low-weight support structure remain proof debt, not positive evidence."
@@ -7,16 +7,16 @@
   "headline_metrics": {
     "cap_proof_debt_count": 10,
     "coordinate_profile_rejection_count": 5,
-    "equivalent_control_count": 93,
+    "equivalent_control_count": 89,
     "incidence_isomorphism_cap_count": 11,
-    "incidence_isomorphism_match_count": 95,
+    "incidence_isomorphism_match_count": 91,
     "incidence_isomorphism_rejection_count": 0,
     "incidence_wl_rejection_count": 5,
     "low_weight_rejection_count": 5,
     "minimum_weight_rejection_count": 1,
     "pair_profile_rejection_count": 5,
     "proof_debt_count": 13,
-    "record_count": 111,
+    "record_count": 107,
     "spectrum_rejection_count": 1,
     "survivor_proof_debt_count": 3
   },
@@ -3625,306 +3625,6 @@
       "weight_radius": 2
     },
     {
-      "dimension_a": 4,
-      "dimension_b": 4,
-      "distinguishing_signatures": [],
-      "evaluated": true,
-      "id": "goppa-m4-t3-collision-1-prior-0",
-      "incidence_certificate": {
-        "cost_model": "Ran exact colored incidence-graph isomorphism on 16/16 nodes.",
-        "evaluated": true,
-        "interpretation": "Low-weight support incidence hypergraphs are isomorphic; this is still proof debt unless an external automorphism/canonicalization certificate proves code equivalence.",
-        "isomorphic": true,
-        "node_count_a": 16,
-        "node_count_b": 16,
-        "support_count_a": 0,
-        "support_count_b": 0
-      },
-      "interpretation": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
-      "known_equivalent": true,
-      "length": 16,
-      "max_weight": 6,
-      "row_family": "goppa-code-family",
-      "row_id": "goppa-family-goppa-m4-t3",
-      "signature_a": {
-        "coordinate_profile_bucket_sizes": [
-          16
-        ],
-        "coordinate_profile_digest": "ab3ff42f5d46b617afeece2b",
-        "dimension": 4,
-        "evaluated": true,
-        "incidence_wl_digest": "aabdf21d3727a96a9d9c4de7",
-        "length": 16,
-        "low_weight_spectrum": [],
-        "low_weight_spectrum_digest": "2e38e77b22c314a449e91faf",
-        "max_weight_evaluated": 6,
-        "minimum_weight": 7,
-        "pair_profile_digest": "f23124c55154f72f6690f13a",
-        "reason": "Enumerated 16 codeword(s) and retained 0 support(s) up to weight 6.",
-        "support_count": 0
-      },
-      "signature_b": {
-        "coordinate_profile_bucket_sizes": [
-          16
-        ],
-        "coordinate_profile_digest": "ab3ff42f5d46b617afeece2b",
-        "dimension": 4,
-        "evaluated": true,
-        "incidence_wl_digest": "aabdf21d3727a96a9d9c4de7",
-        "length": 16,
-        "low_weight_spectrum": [],
-        "low_weight_spectrum_digest": "2e38e77b22c314a449e91faf",
-        "max_weight_evaluated": 6,
-        "minimum_weight": 7,
-        "pair_profile_digest": "f23124c55154f72f6690f13a",
-        "reason": "Enumerated 16 codeword(s) and retained 0 support(s) up to weight 6.",
-        "support_count": 0
-      },
-      "source": "goppa_code_search",
-      "status": "low-weight-matroid-equivalent-control",
-      "weight_radius": 2
-    },
-    {
-      "dimension_a": 4,
-      "dimension_b": 4,
-      "distinguishing_signatures": [],
-      "evaluated": true,
-      "id": "goppa-m4-t3-collision-2-prior-0",
-      "incidence_certificate": {
-        "cost_model": "Ran exact colored incidence-graph isomorphism on 16/16 nodes.",
-        "evaluated": true,
-        "interpretation": "Low-weight support incidence hypergraphs are isomorphic; this is still proof debt unless an external automorphism/canonicalization certificate proves code equivalence.",
-        "isomorphic": true,
-        "node_count_a": 16,
-        "node_count_b": 16,
-        "support_count_a": 0,
-        "support_count_b": 0
-      },
-      "interpretation": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
-      "known_equivalent": true,
-      "length": 16,
-      "max_weight": 6,
-      "row_family": "goppa-code-family",
-      "row_id": "goppa-family-goppa-m4-t3",
-      "signature_a": {
-        "coordinate_profile_bucket_sizes": [
-          16
-        ],
-        "coordinate_profile_digest": "ab3ff42f5d46b617afeece2b",
-        "dimension": 4,
-        "evaluated": true,
-        "incidence_wl_digest": "aabdf21d3727a96a9d9c4de7",
-        "length": 16,
-        "low_weight_spectrum": [],
-        "low_weight_spectrum_digest": "2e38e77b22c314a449e91faf",
-        "max_weight_evaluated": 6,
-        "minimum_weight": 7,
-        "pair_profile_digest": "f23124c55154f72f6690f13a",
-        "reason": "Enumerated 16 codeword(s) and retained 0 support(s) up to weight 6.",
-        "support_count": 0
-      },
-      "signature_b": {
-        "coordinate_profile_bucket_sizes": [
-          16
-        ],
-        "coordinate_profile_digest": "ab3ff42f5d46b617afeece2b",
-        "dimension": 4,
-        "evaluated": true,
-        "incidence_wl_digest": "aabdf21d3727a96a9d9c4de7",
-        "length": 16,
-        "low_weight_spectrum": [],
-        "low_weight_spectrum_digest": "2e38e77b22c314a449e91faf",
-        "max_weight_evaluated": 6,
-        "minimum_weight": 7,
-        "pair_profile_digest": "f23124c55154f72f6690f13a",
-        "reason": "Enumerated 16 codeword(s) and retained 0 support(s) up to weight 6.",
-        "support_count": 0
-      },
-      "source": "goppa_code_search",
-      "status": "low-weight-matroid-equivalent-control",
-      "weight_radius": 2
-    },
-    {
-      "dimension_a": 4,
-      "dimension_b": 4,
-      "distinguishing_signatures": [],
-      "evaluated": true,
-      "id": "goppa-m4-t3-collision-3-prior-1",
-      "incidence_certificate": {
-        "cost_model": "Ran exact colored incidence-graph isomorphism on 16/16 nodes.",
-        "evaluated": true,
-        "interpretation": "Low-weight support incidence hypergraphs are isomorphic; this is still proof debt unless an external automorphism/canonicalization certificate proves code equivalence.",
-        "isomorphic": true,
-        "node_count_a": 16,
-        "node_count_b": 16,
-        "support_count_a": 0,
-        "support_count_b": 0
-      },
-      "interpretation": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
-      "known_equivalent": true,
-      "length": 16,
-      "max_weight": 6,
-      "row_family": "goppa-code-family",
-      "row_id": "goppa-family-goppa-m4-t3",
-      "signature_a": {
-        "coordinate_profile_bucket_sizes": [
-          16
-        ],
-        "coordinate_profile_digest": "ab3ff42f5d46b617afeece2b",
-        "dimension": 4,
-        "evaluated": true,
-        "incidence_wl_digest": "aabdf21d3727a96a9d9c4de7",
-        "length": 16,
-        "low_weight_spectrum": [],
-        "low_weight_spectrum_digest": "2e38e77b22c314a449e91faf",
-        "max_weight_evaluated": 6,
-        "minimum_weight": 7,
-        "pair_profile_digest": "f23124c55154f72f6690f13a",
-        "reason": "Enumerated 16 codeword(s) and retained 0 support(s) up to weight 6.",
-        "support_count": 0
-      },
-      "signature_b": {
-        "coordinate_profile_bucket_sizes": [
-          16
-        ],
-        "coordinate_profile_digest": "ab3ff42f5d46b617afeece2b",
-        "dimension": 4,
-        "evaluated": true,
-        "incidence_wl_digest": "aabdf21d3727a96a9d9c4de7",
-        "length": 16,
-        "low_weight_spectrum": [],
-        "low_weight_spectrum_digest": "2e38e77b22c314a449e91faf",
-        "max_weight_evaluated": 6,
-        "minimum_weight": 7,
-        "pair_profile_digest": "f23124c55154f72f6690f13a",
-        "reason": "Enumerated 16 codeword(s) and retained 0 support(s) up to weight 6.",
-        "support_count": 0
-      },
-      "source": "goppa_code_search",
-      "status": "low-weight-matroid-equivalent-control",
-      "weight_radius": 2
-    },
-    {
-      "dimension_a": 4,
-      "dimension_b": 4,
-      "distinguishing_signatures": [],
-      "evaluated": true,
-      "id": "goppa-m4-t3-collision-4-prior-0",
-      "incidence_certificate": {
-        "cost_model": "Ran exact colored incidence-graph isomorphism on 16/16 nodes.",
-        "evaluated": true,
-        "interpretation": "Low-weight support incidence hypergraphs are isomorphic; this is still proof debt unless an external automorphism/canonicalization certificate proves code equivalence.",
-        "isomorphic": true,
-        "node_count_a": 16,
-        "node_count_b": 16,
-        "support_count_a": 0,
-        "support_count_b": 0
-      },
-      "interpretation": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
-      "known_equivalent": true,
-      "length": 16,
-      "max_weight": 6,
-      "row_family": "goppa-code-family",
-      "row_id": "goppa-family-goppa-m4-t3",
-      "signature_a": {
-        "coordinate_profile_bucket_sizes": [
-          16
-        ],
-        "coordinate_profile_digest": "ab3ff42f5d46b617afeece2b",
-        "dimension": 4,
-        "evaluated": true,
-        "incidence_wl_digest": "aabdf21d3727a96a9d9c4de7",
-        "length": 16,
-        "low_weight_spectrum": [],
-        "low_weight_spectrum_digest": "2e38e77b22c314a449e91faf",
-        "max_weight_evaluated": 6,
-        "minimum_weight": 7,
-        "pair_profile_digest": "f23124c55154f72f6690f13a",
-        "reason": "Enumerated 16 codeword(s) and retained 0 support(s) up to weight 6.",
-        "support_count": 0
-      },
-      "signature_b": {
-        "coordinate_profile_bucket_sizes": [
-          16
-        ],
-        "coordinate_profile_digest": "ab3ff42f5d46b617afeece2b",
-        "dimension": 4,
-        "evaluated": true,
-        "incidence_wl_digest": "aabdf21d3727a96a9d9c4de7",
-        "length": 16,
-        "low_weight_spectrum": [],
-        "low_weight_spectrum_digest": "2e38e77b22c314a449e91faf",
-        "max_weight_evaluated": 6,
-        "minimum_weight": 7,
-        "pair_profile_digest": "f23124c55154f72f6690f13a",
-        "reason": "Enumerated 16 codeword(s) and retained 0 support(s) up to weight 6.",
-        "support_count": 0
-      },
-      "source": "goppa_code_search",
-      "status": "low-weight-matroid-equivalent-control",
-      "weight_radius": 2
-    },
-    {
-      "dimension_a": 4,
-      "dimension_b": 4,
-      "distinguishing_signatures": [],
-      "evaluated": true,
-      "id": "goppa-m4-t3-semilinear-control",
-      "incidence_certificate": {
-        "cost_model": "Ran exact colored incidence-graph isomorphism on 16/16 nodes.",
-        "evaluated": true,
-        "interpretation": "Low-weight support incidence hypergraphs are isomorphic; this is still proof debt unless an external automorphism/canonicalization certificate proves code equivalence.",
-        "isomorphic": true,
-        "node_count_a": 16,
-        "node_count_b": 16,
-        "support_count_a": 0,
-        "support_count_b": 0
-      },
-      "interpretation": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
-      "known_equivalent": true,
-      "length": 16,
-      "max_weight": 6,
-      "row_family": "goppa-code-family",
-      "row_id": "goppa-family-goppa-m4-t3",
-      "signature_a": {
-        "coordinate_profile_bucket_sizes": [
-          16
-        ],
-        "coordinate_profile_digest": "ab3ff42f5d46b617afeece2b",
-        "dimension": 4,
-        "evaluated": true,
-        "incidence_wl_digest": "aabdf21d3727a96a9d9c4de7",
-        "length": 16,
-        "low_weight_spectrum": [],
-        "low_weight_spectrum_digest": "2e38e77b22c314a449e91faf",
-        "max_weight_evaluated": 6,
-        "minimum_weight": 7,
-        "pair_profile_digest": "f23124c55154f72f6690f13a",
-        "reason": "Enumerated 16 codeword(s) and retained 0 support(s) up to weight 6.",
-        "support_count": 0
-      },
-      "signature_b": {
-        "coordinate_profile_bucket_sizes": [
-          16
-        ],
-        "coordinate_profile_digest": "ab3ff42f5d46b617afeece2b",
-        "dimension": 4,
-        "evaluated": true,
-        "incidence_wl_digest": "aabdf21d3727a96a9d9c4de7",
-        "length": 16,
-        "low_weight_spectrum": [],
-        "low_weight_spectrum_digest": "2e38e77b22c314a449e91faf",
-        "max_weight_evaluated": 6,
-        "minimum_weight": 7,
-        "pair_profile_digest": "f23124c55154f72f6690f13a",
-        "reason": "Enumerated 16 codeword(s) and retained 0 support(s) up to weight 6.",
-        "support_count": 0
-      },
-      "source": "goppa_code_search",
-      "status": "low-weight-matroid-equivalent-control",
-      "weight_radius": 2
-    },
-    {
       "dimension_a": 6,
       "dimension_b": 6,
       "distinguishing_signatures": [],
@@ -4021,14 +3721,14 @@
       "evaluated": true,
       "id": "tanner-10-5-dv2-dc4-collision-2-prior-0",
       "incidence_certificate": {
-        "cost_model": "Ran exact colored incidence-graph isomorphism on 31/31 nodes.",
+        "cost_model": "Ran exact colored incidence-graph isomorphism on 29/29 nodes.",
         "evaluated": true,
         "interpretation": "Low-weight support incidence hypergraphs are isomorphic; this is still proof debt unless an external automorphism/canonicalization certificate proves code equivalence.",
         "isomorphic": true,
-        "node_count_a": 31,
-        "node_count_b": 31,
-        "support_count_a": 21,
-        "support_count_b": 21
+        "node_count_a": 29,
+        "node_count_b": 29,
+        "support_count_a": 19,
+        "support_count_b": 19
       },
       "interpretation": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
       "known_equivalent": true,
@@ -4042,31 +3742,31 @@
           4,
           4
         ],
-        "coordinate_profile_digest": "bfc3e4519ba418146b593788",
+        "coordinate_profile_digest": "cb1e4b2d692dd141e88b37af",
         "dimension": 6,
         "evaluated": true,
-        "incidence_wl_digest": "6252f79938e3d547bf959bfe",
+        "incidence_wl_digest": "626e8b5a4737482663004aad",
         "length": 10,
         "low_weight_spectrum": [
           [
             2,
-            2
+            3
           ],
           [
             3,
-            6
+            4
           ],
           [
             4,
-            13
+            12
           ]
         ],
-        "low_weight_spectrum_digest": "4a948ccf78e5e7c6adc552cd",
+        "low_weight_spectrum_digest": "0dedd80e80b108ac39ce8392",
         "max_weight_evaluated": 4,
         "minimum_weight": 2,
-        "pair_profile_digest": "26b2b1bab4e24eaa1cbae759",
-        "reason": "Enumerated 64 codeword(s) and retained 21 support(s) up to weight 4.",
-        "support_count": 21
+        "pair_profile_digest": "a3c3280d3055f9e2e865ae4b",
+        "reason": "Enumerated 64 codeword(s) and retained 19 support(s) up to weight 4.",
+        "support_count": 19
       },
       "signature_b": {
         "coordinate_profile_bucket_sizes": [
@@ -4074,31 +3774,31 @@
           4,
           4
         ],
-        "coordinate_profile_digest": "bfc3e4519ba418146b593788",
+        "coordinate_profile_digest": "cb1e4b2d692dd141e88b37af",
         "dimension": 6,
         "evaluated": true,
-        "incidence_wl_digest": "6252f79938e3d547bf959bfe",
+        "incidence_wl_digest": "626e8b5a4737482663004aad",
         "length": 10,
         "low_weight_spectrum": [
           [
             2,
-            2
+            3
           ],
           [
             3,
-            6
+            4
           ],
           [
             4,
-            13
+            12
           ]
         ],
-        "low_weight_spectrum_digest": "4a948ccf78e5e7c6adc552cd",
+        "low_weight_spectrum_digest": "0dedd80e80b108ac39ce8392",
         "max_weight_evaluated": 4,
         "minimum_weight": 2,
-        "pair_profile_digest": "26b2b1bab4e24eaa1cbae759",
-        "reason": "Enumerated 64 codeword(s) and retained 21 support(s) up to weight 4.",
-        "support_count": 21
+        "pair_profile_digest": "a3c3280d3055f9e2e865ae4b",
+        "reason": "Enumerated 64 codeword(s) and retained 19 support(s) up to weight 4.",
+        "support_count": 19
       },
       "source": "tanner_code_search",
       "status": "low-weight-matroid-equivalent-control",
@@ -4109,7 +3809,7 @@
       "dimension_b": 6,
       "distinguishing_signatures": [],
       "evaluated": true,
-      "id": "tanner-10-5-dv2-dc4-collision-3-prior-1",
+      "id": "tanner-10-5-dv2-dc4-collision-3-prior-0",
       "incidence_certificate": {
         "cost_model": "Ran exact colored incidence-graph isomorphism on 31/31 nodes.",
         "evaluated": true,
@@ -4199,7 +3899,7 @@
       "dimension_b": 6,
       "distinguishing_signatures": [],
       "evaluated": true,
-      "id": "tanner-10-5-dv2-dc4-collision-4-prior-0",
+      "id": "tanner-10-5-dv2-dc4-collision-4-prior-1",
       "incidence_certificate": {
         "cost_model": "Ran exact colored incidence-graph isomorphism on 31/31 nodes.",
         "evaluated": true,
@@ -4663,14 +4363,14 @@
       "evaluated": true,
       "id": "tanner-12-6-dv2-dc4-collision-4-prior-0",
       "incidence_certificate": {
-        "cost_model": "Ran exact colored incidence-graph isomorphism on 31/31 nodes.",
+        "cost_model": "Ran exact colored incidence-graph isomorphism on 34/34 nodes.",
         "evaluated": true,
         "interpretation": "Low-weight support incidence hypergraphs are isomorphic; this is still proof debt unless an external automorphism/canonicalization certificate proves code equivalence.",
         "isomorphic": true,
-        "node_count_a": 31,
-        "node_count_b": 31,
-        "support_count_a": 19,
-        "support_count_b": 19
+        "node_count_a": 34,
+        "node_count_b": 34,
+        "support_count_a": 22,
+        "support_count_b": 22
       },
       "interpretation": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
       "known_equivalent": true,
@@ -4680,21 +4380,20 @@
       "row_id": "tanner-family-tanner-12-6-dv2-dc4",
       "signature_a": {
         "coordinate_profile_bucket_sizes": [
-          1,
           2,
           2,
-          3,
+          4,
           4
         ],
-        "coordinate_profile_digest": "c7b767625e97fa84739de019",
+        "coordinate_profile_digest": "47f5de8a306122746cd8d4d3",
         "dimension": 7,
         "evaluated": true,
-        "incidence_wl_digest": "93471f5834bd1736ade98ab0",
+        "incidence_wl_digest": "8d9ca64dcc8f567ffd80b4d9",
         "length": 12,
         "low_weight_spectrum": [
           [
             2,
-            2
+            1
           ],
           [
             3,
@@ -4702,33 +4401,32 @@
           ],
           [
             4,
-            11
+            15
           ]
         ],
-        "low_weight_spectrum_digest": "dec16a6a2e335e46a5a449b2",
+        "low_weight_spectrum_digest": "94aceab503a37b87e84961a4",
         "max_weight_evaluated": 4,
         "minimum_weight": 2,
-        "pair_profile_digest": "4ad51b2b0d5a1f28e558eef1",
-        "reason": "Enumerated 128 codeword(s) and retained 19 support(s) up to weight 4.",
-        "support_count": 19
+        "pair_profile_digest": "f68f6885e8d66f9d271e1844",
+        "reason": "Enumerated 128 codeword(s) and retained 22 support(s) up to weight 4.",
+        "support_count": 22
       },
       "signature_b": {
         "coordinate_profile_bucket_sizes": [
-          1,
           2,
           2,
-          3,
+          4,
           4
         ],
-        "coordinate_profile_digest": "c7b767625e97fa84739de019",
+        "coordinate_profile_digest": "47f5de8a306122746cd8d4d3",
         "dimension": 7,
         "evaluated": true,
-        "incidence_wl_digest": "93471f5834bd1736ade98ab0",
+        "incidence_wl_digest": "8d9ca64dcc8f567ffd80b4d9",
         "length": 12,
         "low_weight_spectrum": [
           [
             2,
-            2
+            1
           ],
           [
             3,
@@ -4736,15 +4434,15 @@
           ],
           [
             4,
-            11
+            15
           ]
         ],
-        "low_weight_spectrum_digest": "dec16a6a2e335e46a5a449b2",
+        "low_weight_spectrum_digest": "94aceab503a37b87e84961a4",
         "max_weight_evaluated": 4,
         "minimum_weight": 2,
-        "pair_profile_digest": "4ad51b2b0d5a1f28e558eef1",
-        "reason": "Enumerated 128 codeword(s) and retained 19 support(s) up to weight 4.",
-        "support_count": 19
+        "pair_profile_digest": "f68f6885e8d66f9d271e1844",
+        "reason": "Enumerated 128 codeword(s) and retained 22 support(s) up to weight 4.",
+        "support_count": 22
       },
       "source": "tanner_code_search",
       "status": "low-weight-matroid-equivalent-control",
@@ -4757,14 +4455,14 @@
       "evaluated": true,
       "id": "tanner-12-6-dv2-dc4-permuted-control",
       "incidence_certificate": {
-        "cost_model": "Ran exact colored incidence-graph isomorphism on 31/31 nodes.",
+        "cost_model": "Ran exact colored incidence-graph isomorphism on 34/34 nodes.",
         "evaluated": true,
         "interpretation": "Low-weight support incidence hypergraphs are isomorphic; this is still proof debt unless an external automorphism/canonicalization certificate proves code equivalence.",
         "isomorphic": true,
-        "node_count_a": 31,
-        "node_count_b": 31,
-        "support_count_a": 19,
-        "support_count_b": 19
+        "node_count_a": 34,
+        "node_count_b": 34,
+        "support_count_a": 22,
+        "support_count_b": 22
       },
       "interpretation": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
       "known_equivalent": true,
@@ -4774,21 +4472,20 @@
       "row_id": "tanner-family-tanner-12-6-dv2-dc4",
       "signature_a": {
         "coordinate_profile_bucket_sizes": [
-          1,
           2,
           2,
-          3,
+          4,
           4
         ],
-        "coordinate_profile_digest": "c7b767625e97fa84739de019",
+        "coordinate_profile_digest": "47f5de8a306122746cd8d4d3",
         "dimension": 7,
         "evaluated": true,
-        "incidence_wl_digest": "93471f5834bd1736ade98ab0",
+        "incidence_wl_digest": "8d9ca64dcc8f567ffd80b4d9",
         "length": 12,
         "low_weight_spectrum": [
           [
             2,
-            2
+            1
           ],
           [
             3,
@@ -4796,33 +4493,32 @@
           ],
           [
             4,
-            11
+            15
           ]
         ],
-        "low_weight_spectrum_digest": "dec16a6a2e335e46a5a449b2",
+        "low_weight_spectrum_digest": "94aceab503a37b87e84961a4",
         "max_weight_evaluated": 4,
         "minimum_weight": 2,
-        "pair_profile_digest": "4ad51b2b0d5a1f28e558eef1",
-        "reason": "Enumerated 128 codeword(s) and retained 19 support(s) up to weight 4.",
-        "support_count": 19
+        "pair_profile_digest": "f68f6885e8d66f9d271e1844",
+        "reason": "Enumerated 128 codeword(s) and retained 22 support(s) up to weight 4.",
+        "support_count": 22
       },
       "signature_b": {
         "coordinate_profile_bucket_sizes": [
-          1,
           2,
           2,
-          3,
+          4,
           4
         ],
-        "coordinate_profile_digest": "c7b767625e97fa84739de019",
+        "coordinate_profile_digest": "47f5de8a306122746cd8d4d3",
         "dimension": 7,
         "evaluated": true,
-        "incidence_wl_digest": "93471f5834bd1736ade98ab0",
+        "incidence_wl_digest": "8d9ca64dcc8f567ffd80b4d9",
         "length": 12,
         "low_weight_spectrum": [
           [
             2,
-            2
+            1
           ],
           [
             3,
@@ -4830,15 +4526,15 @@
           ],
           [
             4,
-            11
+            15
           ]
         ],
-        "low_weight_spectrum_digest": "dec16a6a2e335e46a5a449b2",
+        "low_weight_spectrum_digest": "94aceab503a37b87e84961a4",
         "max_weight_evaluated": 4,
         "minimum_weight": 2,
-        "pair_profile_digest": "4ad51b2b0d5a1f28e558eef1",
-        "reason": "Enumerated 128 codeword(s) and retained 19 support(s) up to weight 4.",
-        "support_count": 19
+        "pair_profile_digest": "f68f6885e8d66f9d271e1844",
+        "reason": "Enumerated 128 codeword(s) and retained 22 support(s) up to weight 4.",
+        "support_count": 22
       },
       "source": "tanner_code_search",
       "status": "low-weight-matroid-equivalent-control",
@@ -4851,14 +4547,14 @@
       "evaluated": true,
       "id": "tanner-12-9-dv3-dc4-collision-1-prior-0",
       "incidence_certificate": {
-        "cost_model": "Ran exact colored incidence-graph isomorphism on 13/13 nodes.",
+        "cost_model": "Ran exact colored incidence-graph isomorphism on 16/16 nodes.",
         "evaluated": true,
         "interpretation": "Low-weight support incidence hypergraphs are isomorphic; this is still proof debt unless an external automorphism/canonicalization certificate proves code equivalence.",
         "isomorphic": true,
-        "node_count_a": 13,
-        "node_count_b": 13,
-        "support_count_a": 1,
-        "support_count_b": 1
+        "node_count_a": 16,
+        "node_count_b": 16,
+        "support_count_a": 4,
+        "support_count_b": 4
       },
       "interpretation": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
       "known_equivalent": true,
@@ -4868,49 +4564,59 @@
       "row_id": "tanner-family-tanner-12-9-dv3-dc4",
       "signature_a": {
         "coordinate_profile_bucket_sizes": [
-          2,
-          10
+          1,
+          5,
+          6
         ],
-        "coordinate_profile_digest": "c30ca4ef041978a753d8d59b",
+        "coordinate_profile_digest": "abd03b8e7e25292e0f2b8bbc",
         "dimension": 3,
         "evaluated": true,
-        "incidence_wl_digest": "0cadba36b993d5856fe238f9",
+        "incidence_wl_digest": "c5a2de27afb7cc8874d60eb3",
         "length": 12,
         "low_weight_spectrum": [
           [
-            2,
-            1
+            4,
+            2
+          ],
+          [
+            6,
+            2
           ]
         ],
-        "low_weight_spectrum_digest": "5cf73989f419131f5605e79b",
-        "max_weight_evaluated": 4,
-        "minimum_weight": 2,
-        "pair_profile_digest": "0c5e824be235b61ae5e9ea99",
-        "reason": "Enumerated 8 codeword(s) and retained 1 support(s) up to weight 4.",
-        "support_count": 1
+        "low_weight_spectrum_digest": "5ff4c64747aa97bac689a5ef",
+        "max_weight_evaluated": 6,
+        "minimum_weight": 4,
+        "pair_profile_digest": "c0a99e4c86e2c83bd6f24dc6",
+        "reason": "Enumerated 8 codeword(s) and retained 4 support(s) up to weight 6.",
+        "support_count": 4
       },
       "signature_b": {
         "coordinate_profile_bucket_sizes": [
-          2,
-          10
+          1,
+          5,
+          6
         ],
-        "coordinate_profile_digest": "c30ca4ef041978a753d8d59b",
+        "coordinate_profile_digest": "abd03b8e7e25292e0f2b8bbc",
         "dimension": 3,
         "evaluated": true,
-        "incidence_wl_digest": "0cadba36b993d5856fe238f9",
+        "incidence_wl_digest": "c5a2de27afb7cc8874d60eb3",
         "length": 12,
         "low_weight_spectrum": [
           [
-            2,
-            1
+            4,
+            2
+          ],
+          [
+            6,
+            2
           ]
         ],
-        "low_weight_spectrum_digest": "5cf73989f419131f5605e79b",
-        "max_weight_evaluated": 4,
-        "minimum_weight": 2,
-        "pair_profile_digest": "0c5e824be235b61ae5e9ea99",
-        "reason": "Enumerated 8 codeword(s) and retained 1 support(s) up to weight 4.",
-        "support_count": 1
+        "low_weight_spectrum_digest": "5ff4c64747aa97bac689a5ef",
+        "max_weight_evaluated": 6,
+        "minimum_weight": 4,
+        "pair_profile_digest": "c0a99e4c86e2c83bd6f24dc6",
+        "reason": "Enumerated 8 codeword(s) and retained 4 support(s) up to weight 6.",
+        "support_count": 4
       },
       "source": "tanner_code_search",
       "status": "low-weight-matroid-equivalent-control",
@@ -4922,6 +4628,170 @@
       "distinguishing_signatures": [],
       "evaluated": true,
       "id": "tanner-12-9-dv3-dc4-collision-2-prior-0",
+      "incidence_certificate": {
+        "cost_model": "Ran exact colored incidence-graph isomorphism on 16/16 nodes.",
+        "evaluated": true,
+        "interpretation": "Low-weight support incidence hypergraphs are isomorphic; this is still proof debt unless an external automorphism/canonicalization certificate proves code equivalence.",
+        "isomorphic": true,
+        "node_count_a": 16,
+        "node_count_b": 16,
+        "support_count_a": 4,
+        "support_count_b": 4
+      },
+      "interpretation": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+      "known_equivalent": true,
+      "length": 12,
+      "max_weight": 6,
+      "row_family": "tanner-ldpc-family",
+      "row_id": "tanner-family-tanner-12-9-dv3-dc4",
+      "signature_a": {
+        "coordinate_profile_bucket_sizes": [
+          1,
+          5,
+          6
+        ],
+        "coordinate_profile_digest": "abd03b8e7e25292e0f2b8bbc",
+        "dimension": 3,
+        "evaluated": true,
+        "incidence_wl_digest": "c5a2de27afb7cc8874d60eb3",
+        "length": 12,
+        "low_weight_spectrum": [
+          [
+            4,
+            2
+          ],
+          [
+            6,
+            2
+          ]
+        ],
+        "low_weight_spectrum_digest": "5ff4c64747aa97bac689a5ef",
+        "max_weight_evaluated": 6,
+        "minimum_weight": 4,
+        "pair_profile_digest": "c0a99e4c86e2c83bd6f24dc6",
+        "reason": "Enumerated 8 codeword(s) and retained 4 support(s) up to weight 6.",
+        "support_count": 4
+      },
+      "signature_b": {
+        "coordinate_profile_bucket_sizes": [
+          1,
+          5,
+          6
+        ],
+        "coordinate_profile_digest": "abd03b8e7e25292e0f2b8bbc",
+        "dimension": 3,
+        "evaluated": true,
+        "incidence_wl_digest": "c5a2de27afb7cc8874d60eb3",
+        "length": 12,
+        "low_weight_spectrum": [
+          [
+            4,
+            2
+          ],
+          [
+            6,
+            2
+          ]
+        ],
+        "low_weight_spectrum_digest": "5ff4c64747aa97bac689a5ef",
+        "max_weight_evaluated": 6,
+        "minimum_weight": 4,
+        "pair_profile_digest": "c0a99e4c86e2c83bd6f24dc6",
+        "reason": "Enumerated 8 codeword(s) and retained 4 support(s) up to weight 6.",
+        "support_count": 4
+      },
+      "source": "tanner_code_search",
+      "status": "low-weight-matroid-equivalent-control",
+      "weight_radius": 2
+    },
+    {
+      "dimension_a": 3,
+      "dimension_b": 3,
+      "distinguishing_signatures": [],
+      "evaluated": true,
+      "id": "tanner-12-9-dv3-dc4-collision-3-prior-1",
+      "incidence_certificate": {
+        "cost_model": "Ran exact colored incidence-graph isomorphism on 16/16 nodes.",
+        "evaluated": true,
+        "interpretation": "Low-weight support incidence hypergraphs are isomorphic; this is still proof debt unless an external automorphism/canonicalization certificate proves code equivalence.",
+        "isomorphic": true,
+        "node_count_a": 16,
+        "node_count_b": 16,
+        "support_count_a": 4,
+        "support_count_b": 4
+      },
+      "interpretation": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+      "known_equivalent": true,
+      "length": 12,
+      "max_weight": 6,
+      "row_family": "tanner-ldpc-family",
+      "row_id": "tanner-family-tanner-12-9-dv3-dc4",
+      "signature_a": {
+        "coordinate_profile_bucket_sizes": [
+          1,
+          5,
+          6
+        ],
+        "coordinate_profile_digest": "abd03b8e7e25292e0f2b8bbc",
+        "dimension": 3,
+        "evaluated": true,
+        "incidence_wl_digest": "c5a2de27afb7cc8874d60eb3",
+        "length": 12,
+        "low_weight_spectrum": [
+          [
+            4,
+            2
+          ],
+          [
+            6,
+            2
+          ]
+        ],
+        "low_weight_spectrum_digest": "5ff4c64747aa97bac689a5ef",
+        "max_weight_evaluated": 6,
+        "minimum_weight": 4,
+        "pair_profile_digest": "c0a99e4c86e2c83bd6f24dc6",
+        "reason": "Enumerated 8 codeword(s) and retained 4 support(s) up to weight 6.",
+        "support_count": 4
+      },
+      "signature_b": {
+        "coordinate_profile_bucket_sizes": [
+          1,
+          5,
+          6
+        ],
+        "coordinate_profile_digest": "abd03b8e7e25292e0f2b8bbc",
+        "dimension": 3,
+        "evaluated": true,
+        "incidence_wl_digest": "c5a2de27afb7cc8874d60eb3",
+        "length": 12,
+        "low_weight_spectrum": [
+          [
+            4,
+            2
+          ],
+          [
+            6,
+            2
+          ]
+        ],
+        "low_weight_spectrum_digest": "5ff4c64747aa97bac689a5ef",
+        "max_weight_evaluated": 6,
+        "minimum_weight": 4,
+        "pair_profile_digest": "c0a99e4c86e2c83bd6f24dc6",
+        "reason": "Enumerated 8 codeword(s) and retained 4 support(s) up to weight 6.",
+        "support_count": 4
+      },
+      "source": "tanner_code_search",
+      "status": "low-weight-matroid-equivalent-control",
+      "weight_radius": 2
+    },
+    {
+      "dimension_a": 3,
+      "dimension_b": 3,
+      "distinguishing_signatures": [],
+      "evaluated": true,
+      "id": "tanner-12-9-dv3-dc4-collision-4-prior-0",
       "incidence_certificate": {
         "cost_model": "Ran exact colored incidence-graph isomorphism on 17/17 nodes.",
         "evaluated": true,
@@ -5001,160 +4871,16 @@
       "dimension_b": 3,
       "distinguishing_signatures": [],
       "evaluated": true,
-      "id": "tanner-12-9-dv3-dc4-collision-3-prior-0",
-      "incidence_certificate": {
-        "cost_model": "Ran exact colored incidence-graph isomorphism on 13/13 nodes.",
-        "evaluated": true,
-        "interpretation": "Low-weight support incidence hypergraphs are isomorphic; this is still proof debt unless an external automorphism/canonicalization certificate proves code equivalence.",
-        "isomorphic": true,
-        "node_count_a": 13,
-        "node_count_b": 13,
-        "support_count_a": 1,
-        "support_count_b": 1
-      },
-      "interpretation": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
-      "known_equivalent": true,
-      "length": 12,
-      "max_weight": 6,
-      "row_family": "tanner-ldpc-family",
-      "row_id": "tanner-family-tanner-12-9-dv3-dc4",
-      "signature_a": {
-        "coordinate_profile_bucket_sizes": [
-          2,
-          10
-        ],
-        "coordinate_profile_digest": "c30ca4ef041978a753d8d59b",
-        "dimension": 3,
-        "evaluated": true,
-        "incidence_wl_digest": "0cadba36b993d5856fe238f9",
-        "length": 12,
-        "low_weight_spectrum": [
-          [
-            2,
-            1
-          ]
-        ],
-        "low_weight_spectrum_digest": "5cf73989f419131f5605e79b",
-        "max_weight_evaluated": 4,
-        "minimum_weight": 2,
-        "pair_profile_digest": "0c5e824be235b61ae5e9ea99",
-        "reason": "Enumerated 8 codeword(s) and retained 1 support(s) up to weight 4.",
-        "support_count": 1
-      },
-      "signature_b": {
-        "coordinate_profile_bucket_sizes": [
-          2,
-          10
-        ],
-        "coordinate_profile_digest": "c30ca4ef041978a753d8d59b",
-        "dimension": 3,
-        "evaluated": true,
-        "incidence_wl_digest": "0cadba36b993d5856fe238f9",
-        "length": 12,
-        "low_weight_spectrum": [
-          [
-            2,
-            1
-          ]
-        ],
-        "low_weight_spectrum_digest": "5cf73989f419131f5605e79b",
-        "max_weight_evaluated": 4,
-        "minimum_weight": 2,
-        "pair_profile_digest": "0c5e824be235b61ae5e9ea99",
-        "reason": "Enumerated 8 codeword(s) and retained 1 support(s) up to weight 4.",
-        "support_count": 1
-      },
-      "source": "tanner_code_search",
-      "status": "low-weight-matroid-equivalent-control",
-      "weight_radius": 2
-    },
-    {
-      "dimension_a": 3,
-      "dimension_b": 3,
-      "distinguishing_signatures": [],
-      "evaluated": true,
-      "id": "tanner-12-9-dv3-dc4-collision-4-prior-1",
-      "incidence_certificate": {
-        "cost_model": "Ran exact colored incidence-graph isomorphism on 13/13 nodes.",
-        "evaluated": true,
-        "interpretation": "Low-weight support incidence hypergraphs are isomorphic; this is still proof debt unless an external automorphism/canonicalization certificate proves code equivalence.",
-        "isomorphic": true,
-        "node_count_a": 13,
-        "node_count_b": 13,
-        "support_count_a": 1,
-        "support_count_b": 1
-      },
-      "interpretation": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
-      "known_equivalent": true,
-      "length": 12,
-      "max_weight": 6,
-      "row_family": "tanner-ldpc-family",
-      "row_id": "tanner-family-tanner-12-9-dv3-dc4",
-      "signature_a": {
-        "coordinate_profile_bucket_sizes": [
-          2,
-          10
-        ],
-        "coordinate_profile_digest": "c30ca4ef041978a753d8d59b",
-        "dimension": 3,
-        "evaluated": true,
-        "incidence_wl_digest": "0cadba36b993d5856fe238f9",
-        "length": 12,
-        "low_weight_spectrum": [
-          [
-            2,
-            1
-          ]
-        ],
-        "low_weight_spectrum_digest": "5cf73989f419131f5605e79b",
-        "max_weight_evaluated": 4,
-        "minimum_weight": 2,
-        "pair_profile_digest": "0c5e824be235b61ae5e9ea99",
-        "reason": "Enumerated 8 codeword(s) and retained 1 support(s) up to weight 4.",
-        "support_count": 1
-      },
-      "signature_b": {
-        "coordinate_profile_bucket_sizes": [
-          2,
-          10
-        ],
-        "coordinate_profile_digest": "c30ca4ef041978a753d8d59b",
-        "dimension": 3,
-        "evaluated": true,
-        "incidence_wl_digest": "0cadba36b993d5856fe238f9",
-        "length": 12,
-        "low_weight_spectrum": [
-          [
-            2,
-            1
-          ]
-        ],
-        "low_weight_spectrum_digest": "5cf73989f419131f5605e79b",
-        "max_weight_evaluated": 4,
-        "minimum_weight": 2,
-        "pair_profile_digest": "0c5e824be235b61ae5e9ea99",
-        "reason": "Enumerated 8 codeword(s) and retained 1 support(s) up to weight 4.",
-        "support_count": 1
-      },
-      "source": "tanner_code_search",
-      "status": "low-weight-matroid-equivalent-control",
-      "weight_radius": 2
-    },
-    {
-      "dimension_a": 4,
-      "dimension_b": 4,
-      "distinguishing_signatures": [],
-      "evaluated": true,
       "id": "tanner-12-9-dv3-dc4-permuted-control",
       "incidence_certificate": {
-        "cost_model": "Ran exact colored incidence-graph isomorphism on 15/15 nodes.",
+        "cost_model": "Ran exact colored incidence-graph isomorphism on 17/17 nodes.",
         "evaluated": true,
         "interpretation": "Low-weight support incidence hypergraphs are isomorphic; this is still proof debt unless an external automorphism/canonicalization certificate proves code equivalence.",
         "isomorphic": true,
-        "node_count_a": 15,
-        "node_count_b": 15,
-        "support_count_a": 3,
-        "support_count_b": 3
+        "node_count_a": 17,
+        "node_count_b": 17,
+        "support_count_a": 5,
+        "support_count_b": 5
       },
       "interpretation": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
       "known_equivalent": true,
@@ -5167,54 +4893,54 @@
           4,
           8
         ],
-        "coordinate_profile_digest": "37de259dbb0ad60ae236e8d4",
-        "dimension": 4,
+        "coordinate_profile_digest": "27cb25e732c5dce5e8d66e31",
+        "dimension": 3,
         "evaluated": true,
-        "incidence_wl_digest": "08749149af0aaeb2e1f35937",
+        "incidence_wl_digest": "757f67616c70b769e888067d",
         "length": 12,
         "low_weight_spectrum": [
           [
-            2,
-            2
-          ],
-          [
             4,
             1
+          ],
+          [
+            6,
+            4
           ]
         ],
-        "low_weight_spectrum_digest": "cc271412138bfb091147e77b",
-        "max_weight_evaluated": 4,
-        "minimum_weight": 2,
-        "pair_profile_digest": "12c2f64345cf405d1041d890",
-        "reason": "Enumerated 16 codeword(s) and retained 3 support(s) up to weight 4.",
-        "support_count": 3
+        "low_weight_spectrum_digest": "3c897471af1622d7dd70ed51",
+        "max_weight_evaluated": 6,
+        "minimum_weight": 4,
+        "pair_profile_digest": "655bcad470870926c3ebfe3e",
+        "reason": "Enumerated 8 codeword(s) and retained 5 support(s) up to weight 6.",
+        "support_count": 5
       },
       "signature_b": {
         "coordinate_profile_bucket_sizes": [
           4,
           8
         ],
-        "coordinate_profile_digest": "37de259dbb0ad60ae236e8d4",
-        "dimension": 4,
+        "coordinate_profile_digest": "27cb25e732c5dce5e8d66e31",
+        "dimension": 3,
         "evaluated": true,
-        "incidence_wl_digest": "08749149af0aaeb2e1f35937",
+        "incidence_wl_digest": "757f67616c70b769e888067d",
         "length": 12,
         "low_weight_spectrum": [
           [
-            2,
-            2
-          ],
-          [
             4,
             1
+          ],
+          [
+            6,
+            4
           ]
         ],
-        "low_weight_spectrum_digest": "cc271412138bfb091147e77b",
-        "max_weight_evaluated": 4,
-        "minimum_weight": 2,
-        "pair_profile_digest": "12c2f64345cf405d1041d890",
-        "reason": "Enumerated 16 codeword(s) and retained 3 support(s) up to weight 4.",
-        "support_count": 3
+        "low_weight_spectrum_digest": "3c897471af1622d7dd70ed51",
+        "max_weight_evaluated": 6,
+        "minimum_weight": 4,
+        "pair_profile_digest": "655bcad470870926c3ebfe3e",
+        "reason": "Enumerated 8 codeword(s) and retained 5 support(s) up to weight 6.",
+        "support_count": 5
       },
       "source": "tanner_code_search",
       "status": "low-weight-matroid-equivalent-control",
@@ -8251,7 +7977,7 @@
       "dimension_b": 4,
       "distinguishing_signatures": [],
       "evaluated": true,
-      "id": "pg2-f2-k6-trial-1-0,1,2,3,5,6-0,1,2,4,5,6",
+      "id": "pg2-f2-k6-trial-1-1,2,3,4,5,6-0,1,2,3,5,6",
       "incidence_certificate": {
         "cost_model": "Ran exact colored incidence-graph isomorphism on 20/20 nodes.",
         "evaluated": true,
@@ -8337,7 +8063,7 @@
       "dimension_b": 4,
       "distinguishing_signatures": [],
       "evaluated": true,
-      "id": "pg2-f2-k6-trial-2-0,1,2,3,4,6-0,1,2,3,5,6",
+      "id": "pg2-f2-k6-trial-2-0,2,3,4,5,6-0,1,2,4,5,6",
       "incidence_certificate": {
         "cost_model": "Ran exact colored incidence-graph isomorphism on 20/20 nodes.",
         "evaluated": true,
@@ -8423,7 +8149,93 @@
       "dimension_b": 4,
       "distinguishing_signatures": [],
       "evaluated": true,
-      "id": "pg2-f2-k6-trial-3-0,2,3,4,5,6-1,2,3,4,5,6",
+      "id": "pg2-f2-k6-trial-4-0,1,2,3,4,6-0,1,2,4,5,6",
+      "incidence_certificate": {
+        "cost_model": "Ran exact colored incidence-graph isomorphism on 20/20 nodes.",
+        "evaluated": true,
+        "interpretation": "Low-weight support incidence hypergraphs are isomorphic; this is still proof debt unless an external automorphism/canonicalization certificate proves code equivalence.",
+        "isomorphic": true,
+        "node_count_a": 20,
+        "node_count_b": 20,
+        "support_count_a": 14,
+        "support_count_b": 14
+      },
+      "interpretation": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+      "known_equivalent": true,
+      "length": 6,
+      "max_weight": 6,
+      "row_family": "projective-geometry-code-family",
+      "row_id": "pg-family-pg2-f2-k6",
+      "signature_a": {
+        "coordinate_profile_bucket_sizes": [
+          6
+        ],
+        "coordinate_profile_digest": "cc62ea741d9f29ebcbcec020",
+        "dimension": 4,
+        "evaluated": true,
+        "incidence_wl_digest": "bb1df08ff33ae6f4050240b7",
+        "length": 6,
+        "low_weight_spectrum": [
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            8
+          ],
+          [
+            4,
+            3
+          ]
+        ],
+        "low_weight_spectrum_digest": "6f966d0584f87e66ef9d447f",
+        "max_weight_evaluated": 4,
+        "minimum_weight": 2,
+        "pair_profile_digest": "3e78e5061ce0894739e77b31",
+        "reason": "Enumerated 16 codeword(s) and retained 14 support(s) up to weight 4.",
+        "support_count": 14
+      },
+      "signature_b": {
+        "coordinate_profile_bucket_sizes": [
+          6
+        ],
+        "coordinate_profile_digest": "cc62ea741d9f29ebcbcec020",
+        "dimension": 4,
+        "evaluated": true,
+        "incidence_wl_digest": "bb1df08ff33ae6f4050240b7",
+        "length": 6,
+        "low_weight_spectrum": [
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            8
+          ],
+          [
+            4,
+            3
+          ]
+        ],
+        "low_weight_spectrum_digest": "6f966d0584f87e66ef9d447f",
+        "max_weight_evaluated": 4,
+        "minimum_weight": 2,
+        "pair_profile_digest": "3e78e5061ce0894739e77b31",
+        "reason": "Enumerated 16 codeword(s) and retained 14 support(s) up to weight 4.",
+        "support_count": 14
+      },
+      "source": "projective_geometry_code_search",
+      "status": "low-weight-matroid-equivalent-control",
+      "weight_radius": 2
+    },
+    {
+      "dimension_a": 4,
+      "dimension_b": 4,
+      "distinguishing_signatures": [],
+      "evaluated": true,
+      "id": "pg2-f2-k6-trial-5-0,1,3,4,5,6-1,2,3,4,5,6",
       "incidence_certificate": {
         "cost_model": "Ran exact colored incidence-graph isomorphism on 20/20 nodes.",
         "evaluated": true,
@@ -8509,7 +8321,7 @@
       "dimension_b": 10,
       "distinguishing_signatures": [],
       "evaluated": true,
-      "id": "pg2-f3-k10-trial-1-0,1,2,4,6,7,9,10,11,12-0,1,2,3,4,5,8,9,11,12",
+      "id": "pg2-f3-k10-trial-1-0,2,3,5,6,7,8,10,11,12-1,3,4,5,6,7,8,9,10,12",
       "incidence_certificate": {
         "cost_model": "Ran exact colored incidence-graph isomorphism on 185/185 nodes.",
         "evaluated": true,
@@ -8595,7 +8407,7 @@
       "dimension_b": 10,
       "distinguishing_signatures": [],
       "evaluated": true,
-      "id": "pg2-f3-k10-trial-2-0,1,2,3,4,5,6,7,9,10-0,1,2,4,5,6,7,8,10,11",
+      "id": "pg2-f3-k10-trial-2-1,3,4,5,6,7,9,10,11,12-0,1,2,3,4,5,6,8,11,12",
       "incidence_certificate": {
         "cost_model": "Ran exact colored incidence-graph isomorphism on 185/185 nodes.",
         "evaluated": true,
@@ -8681,7 +8493,7 @@
       "dimension_b": 10,
       "distinguishing_signatures": [],
       "evaluated": true,
-      "id": "pg2-f3-k10-trial-3-0,1,2,3,5,6,7,8,9,12-0,1,2,4,6,7,9,10,11,12",
+      "id": "pg2-f3-k10-trial-3-1,2,3,4,5,6,7,9,10,12-0,1,3,5,6,7,8,9,10,12",
       "incidence_certificate": {
         "cost_model": "Ran exact colored incidence-graph isomorphism on 185/185 nodes.",
         "evaluated": true,
@@ -8767,7 +8579,7 @@
       "dimension_b": 10,
       "distinguishing_signatures": [],
       "evaluated": true,
-      "id": "pg2-f3-k10-trial-4-0,2,3,4,5,6,8,10,11,12-1,3,4,5,6,7,9,10,11,12",
+      "id": "pg2-f3-k10-trial-4-1,3,4,5,7,8,9,10,11,12-0,1,2,3,4,5,6,8,9,10",
       "incidence_certificate": {
         "cost_model": "Ran exact colored incidence-graph isomorphism on 185/185 nodes.",
         "evaluated": true,
@@ -8850,6 +8662,6 @@
     }
   ],
   "status": "low-weight-matroid-proof-debt",
-  "summary": "Audited 111 code-equivalence row(s) with low-weight support hypergraph invariants. 5 row(s) were separated, 93 were controls, and 13 remain proof debt.",
+  "summary": "Audited 107 code-equivalence row(s) with low-weight support hypergraph invariants. 5 row(s) were separated, 89 were controls, and 13 remain proof debt.",
   "weight_radius": 2
 }

@@ -1,0 +1,517 @@
+{
+  "claim_gate": {
+    "cross_source_carrier_mixing_controlled": false,
+    "general_equal_source_gap_theorem_proved": false,
+    "polynomial_frame_inverse_proved": false,
+    "polynomial_hidden_permutation_decoder_proved": false,
+    "polynomial_structured_frame_preconditioner_proved": false,
+    "reason": "One multiplicity-two equal-source block has a genuine inverse-polynomial label gap, but it covers at most 4/n! carrier coordinates and lacks carrier invariance or cross-source matrix elements.",
+    "restricted_equal_source_gap_transfers": true,
+    "restricted_internal_multiplicity_label_is_polynomial": true,
+    "restricted_sector_has_nonnegligible_carrier_coverage": false,
+    "restricted_sector_invariant_under_carrier_frame_proved": false,
+    "speedup_claim_allowed": false,
+    "uniform_coherent_harmonic_transform_proved": false
+  },
+  "created_at": "2026-07-28T23:11:14.170227+00:00",
+  "falsifiers_triggered": [
+    "The existing all-n commutant gap does apply to one equal-source wreath harmonic sector.",
+    "That sector resolves only four invariant matrix coordinates.",
+    "Restricted coordinate coverage is at most 4/n! and is factorially small.",
+    "A source/target multiplicity label does not prove invariance under the actual wreath frame.",
+    "No matrix elements controlling carrier-induced mixing between source partitions are supplied."
+  ],
+  "headline_metrics": {
+    "carrier_frame_invariant_subspace_count": 0,
+    "cross_source_carrier_mixing_rule_count": 0,
+    "exact_record_count": 7,
+    "general_equal_source_gap_theorem_count": 0,
+    "maximum_exact_equal_source_nonzero_sector_count": 4109,
+    "maximum_exact_nontrivial_multiplicity_sector_count": 3503,
+    "maximum_exact_unresolved_internal_multiplicity_state_count": 144765,
+    "maximum_inverse_gap_query_bound": 2016,
+    "maximum_n": 64,
+    "maximum_negative_log2_restricted_coordinate_coverage_upper_bound": 293.995143941724,
+    "polynomial_frame_inverse_count": 0,
+    "polynomial_hidden_permutation_decoder_count": 0,
+    "polynomial_structured_frame_preconditioner_count": 0,
+    "record_count": 13,
+    "restricted_all_n_inverse_polynomial_gap_theorem_count": 1,
+    "restricted_equal_source_family_count": 1,
+    "restricted_invariant_matrix_coordinate_count": 4,
+    "restricted_multiplicity_basis_state_count": 2,
+    "uniform_coherent_harmonic_transform_count": 0
+  },
+  "interface_contract": {
+    "cost": "O(n^2 log(1/error)) block-encoding queries",
+    "does_not_produce": [
+      "matrix elements of the actual wreath carrier generators",
+      "control of mixing between different source lambda sectors",
+      "a proof that the restricted sector is invariant under B_k",
+      "a complete internal Kronecker transform",
+      "a frame preconditioner or hidden-permutation decoder"
+    ],
+    "input": "A state routed to source lambda_n=(n-2,2) and target nu_n=(n-3,2,1) inside V_lambda tensor V_lambda.",
+    "normalized_gap": "2/[n(n-1)]",
+    "operation": "Block encode the transposition/3-cycle same-support orbit sum and phase-estimate its two multiplicity eigenvalues.",
+    "produces": "A coherent parity/multiplicity label for this one multiplicity-two equal-source sector."
+  },
+  "records": [
+    {
+      "carrier_frame_invariant_subspace_proved": false,
+      "cross_source_carrier_mixing_controlled": false,
+      "equal_source_internal_multiplicity_state_count": 43,
+      "equal_source_nontrivial_multiplicity_sector_count": 17,
+      "equal_source_nonzero_sector_count": 63,
+      "exact": true,
+      "exact_total_invariant_coordinate_count_decimal": "901",
+      "internal_multiplicity_label_proved": true,
+      "inverse_gap_query_bound": 15,
+      "kronecker_multiplicity": 2,
+      "n": 6,
+      "negative_log2_restricted_coordinate_coverage_upper_bound": 7.815383295814,
+      "normalized_gap": 0.06666666666666667,
+      "normalized_gap_exact": "2/(6*5)",
+      "resolved_invariant_matrix_coordinate_count": 4,
+      "resolved_multiplicity_basis_state_count": 2,
+      "restricted_coordinate_coverage_upper_bound": 0.004439511653718091,
+      "source_partition": [
+        4,
+        2
+      ],
+      "source_target_routing_proved": true,
+      "status": "exact-restricted-gap-transfer-factorial-coverage",
+      "target_partition": [
+        3,
+        2,
+        1
+      ],
+      "unresolved_internal_multiplicity_state_count": 41
+    },
+    {
+      "carrier_frame_invariant_subspace_proved": false,
+      "cross_source_carrier_mixing_controlled": false,
+      "equal_source_internal_multiplicity_state_count": 170,
+      "equal_source_nontrivial_multiplicity_sector_count": 52,
+      "equal_source_nonzero_sector_count": 141,
+      "exact": true,
+      "exact_total_invariant_coordinate_count_decimal": "5579",
+      "internal_multiplicity_label_proved": true,
+      "inverse_gap_query_bound": 21,
+      "kronecker_multiplicity": 2,
+      "n": 7,
+      "negative_log2_restricted_coordinate_coverage_upper_bound": 10.445790836048,
+      "normalized_gap": 0.047619047619047616,
+      "normalized_gap_exact": "2/(7*6)",
+      "resolved_invariant_matrix_coordinate_count": 4,
+      "resolved_multiplicity_basis_state_count": 2,
+      "restricted_coordinate_coverage_upper_bound": 0.000716974368166338,
+      "source_partition": [
+        5,
+        2
+      ],
+      "source_target_routing_proved": true,
+      "status": "exact-restricted-gap-transfer-factorial-coverage",
+      "target_partition": [
+        4,
+        2,
+        1
+      ],
+      "unresolved_internal_multiplicity_state_count": 168
+    },
+    {
+      "carrier_frame_invariant_subspace_proved": false,
+      "cross_source_carrier_mixing_controlled": false,
+      "equal_source_internal_multiplicity_state_count": 709,
+      "equal_source_nontrivial_multiplicity_sector_count": 163,
+      "equal_source_nonzero_sector_count": 296,
+      "exact": true,
+      "exact_total_invariant_coordinate_count_decimal": "43206",
+      "internal_multiplicity_label_proved": true,
+      "inverse_gap_query_bound": 28,
+      "kronecker_multiplicity": 2,
+      "n": 8,
+      "negative_log2_restricted_coordinate_coverage_upper_bound": 13.398944052336,
+      "normalized_gap": 0.03571428571428571,
+      "normalized_gap_exact": "2/(8*7)",
+      "resolved_invariant_matrix_coordinate_count": 4,
+      "resolved_multiplicity_basis_state_count": 2,
+      "restricted_coordinate_coverage_upper_bound": 9.257973429616257e-05,
+      "source_partition": [
+        6,
+        2
+      ],
+      "source_target_routing_proved": true,
+      "status": "exact-restricted-gap-transfer-factorial-coverage",
+      "target_partition": [
+        5,
+        2,
+        1
+      ],
+      "unresolved_internal_multiplicity_state_count": 707
+    },
+    {
+      "carrier_frame_invariant_subspace_proved": false,
+      "cross_source_carrier_mixing_controlled": false,
+      "equal_source_internal_multiplicity_state_count": 2604,
+      "equal_source_nontrivial_multiplicity_sector_count": 376,
+      "equal_source_nonzero_sector_count": 582,
+      "exact": true,
+      "exact_total_invariant_coordinate_count_decimal": "378360",
+      "internal_multiplicity_label_proved": true,
+      "inverse_gap_query_bound": 36,
+      "kronecker_multiplicity": 2,
+      "n": 9,
+      "negative_log2_restricted_coordinate_coverage_upper_bound": 16.529400050292,
+      "normalized_gap": 0.027777777777777776,
+      "normalized_gap_exact": "2/(9*8)",
+      "resolved_invariant_matrix_coordinate_count": 4,
+      "resolved_multiplicity_basis_state_count": 2,
+      "restricted_coordinate_coverage_upper_bound": 1.057194206575748e-05,
+      "source_partition": [
+        7,
+        2
+      ],
+      "source_target_routing_proved": true,
+      "status": "exact-restricted-gap-transfer-factorial-coverage",
+      "target_partition": [
+        6,
+        2,
+        1
+      ],
+      "unresolved_internal_multiplicity_state_count": 2602
+    },
+    {
+      "carrier_frame_invariant_subspace_proved": false,
+      "cross_source_carrier_mixing_controlled": false,
+      "equal_source_internal_multiplicity_state_count": 9752,
+      "equal_source_nontrivial_multiplicity_sector_count": 882,
+      "equal_source_nonzero_sector_count": 1150,
+      "exact": true,
+      "exact_total_invariant_coordinate_count_decimal": "3742738",
+      "internal_multiplicity_label_proved": true,
+      "inverse_gap_query_bound": 45,
+      "kronecker_multiplicity": 2,
+      "n": 10,
+      "negative_log2_restricted_coordinate_coverage_upper_bound": 19.835662629229,
+      "normalized_gap": 0.022222222222222223,
+      "normalized_gap_exact": "2/(10*9)",
+      "resolved_invariant_matrix_coordinate_count": 4,
+      "resolved_multiplicity_basis_state_count": 2,
+      "restricted_coordinate_coverage_upper_bound": 1.0687363101558272e-06,
+      "source_partition": [
+        8,
+        2
+      ],
+      "source_target_routing_proved": true,
+      "status": "exact-restricted-gap-transfer-factorial-coverage",
+      "target_partition": [
+        7,
+        2,
+        1
+      ],
+      "unresolved_internal_multiplicity_state_count": 9750
+    },
+    {
+      "carrier_frame_invariant_subspace_proved": false,
+      "cross_source_carrier_mixing_controlled": false,
+      "equal_source_internal_multiplicity_state_count": 36861,
+      "equal_source_nontrivial_multiplicity_sector_count": 1762,
+      "equal_source_nonzero_sector_count": 2167,
+      "exact": true,
+      "exact_total_invariant_coordinate_count_decimal": "40853520",
+      "internal_multiplicity_label_proved": true,
+      "inverse_gap_query_bound": 55,
+      "kronecker_multiplicity": 2,
+      "n": 11,
+      "negative_log2_restricted_coordinate_coverage_upper_bound": 23.283957052687,
+      "normalized_gap": 0.01818181818181818,
+      "normalized_gap_exact": "2/(11*10)",
+      "resolved_invariant_matrix_coordinate_count": 4,
+      "resolved_multiplicity_basis_state_count": 2,
+      "restricted_coordinate_coverage_upper_bound": 9.791077978103233e-08,
+      "source_partition": [
+        9,
+        2
+      ],
+      "source_target_routing_proved": true,
+      "status": "exact-restricted-gap-transfer-factorial-coverage",
+      "target_partition": [
+        8,
+        2,
+        1
+      ],
+      "unresolved_internal_multiplicity_state_count": 36859
+    },
+    {
+      "carrier_frame_invariant_subspace_proved": false,
+      "cross_source_carrier_mixing_controlled": false,
+      "equal_source_internal_multiplicity_state_count": 144767,
+      "equal_source_nontrivial_multiplicity_sector_count": 3503,
+      "equal_source_nonzero_sector_count": 4109,
+      "exact": true,
+      "exact_total_invariant_coordinate_count_decimal": "488029621",
+      "internal_multiplicity_label_proved": true,
+      "inverse_gap_query_bound": 66,
+      "kronecker_multiplicity": 2,
+      "n": 12,
+      "negative_log2_restricted_coordinate_coverage_upper_bound": 26.862393474045,
+      "normalized_gap": 0.015151515151515152,
+      "normalized_gap_exact": "2/(12*11)",
+      "resolved_invariant_matrix_coordinate_count": 4,
+      "resolved_multiplicity_basis_state_count": 2,
+      "restricted_coordinate_coverage_upper_bound": 8.196223810767421e-09,
+      "source_partition": [
+        10,
+        2
+      ],
+      "source_target_routing_proved": true,
+      "status": "exact-restricted-gap-transfer-factorial-coverage",
+      "target_partition": [
+        9,
+        2,
+        1
+      ],
+      "unresolved_internal_multiplicity_state_count": 144765
+    },
+    {
+      "carrier_frame_invariant_subspace_proved": false,
+      "cross_source_carrier_mixing_controlled": false,
+      "equal_source_internal_multiplicity_state_count": null,
+      "equal_source_nontrivial_multiplicity_sector_count": null,
+      "equal_source_nonzero_sector_count": null,
+      "exact": false,
+      "exact_total_invariant_coordinate_count_decimal": null,
+      "internal_multiplicity_label_proved": true,
+      "inverse_gap_query_bound": 120,
+      "kronecker_multiplicity": 2,
+      "n": 16,
+      "negative_log2_restricted_coordinate_coverage_upper_bound": 42.250140469883,
+      "normalized_gap": 0.008333333333333333,
+      "normalized_gap_exact": "2/(16*15)",
+      "resolved_invariant_matrix_coordinate_count": 4,
+      "resolved_multiplicity_basis_state_count": 2,
+      "restricted_coordinate_coverage_upper_bound": 1.911790932954954e-13,
+      "source_partition": [
+        14,
+        2
+      ],
+      "source_target_routing_proved": true,
+      "status": "theorem-tail-restricted-gap-factorial-coverage-upper-bound",
+      "target_partition": [
+        13,
+        2,
+        1
+      ],
+      "unresolved_internal_multiplicity_state_count": null
+    },
+    {
+      "carrier_frame_invariant_subspace_proved": false,
+      "cross_source_carrier_mixing_controlled": false,
+      "equal_source_internal_multiplicity_state_count": null,
+      "equal_source_nontrivial_multiplicity_sector_count": null,
+      "equal_source_nonzero_sector_count": null,
+      "exact": false,
+      "exact_total_invariant_coordinate_count_decimal": null,
+      "internal_multiplicity_label_proved": true,
+      "inverse_gap_query_bound": 190,
+      "kronecker_multiplicity": 2,
+      "n": 20,
+      "negative_log2_restricted_coordinate_coverage_upper_bound": 59.077383920906,
+      "normalized_gap": 0.005263157894736842,
+      "normalized_gap_exact": "2/(20*19)",
+      "resolved_invariant_matrix_coordinate_count": 4,
+      "resolved_multiplicity_basis_state_count": 2,
+      "restricted_coordinate_coverage_upper_bound": 1.644127049324866e-18,
+      "source_partition": [
+        18,
+        2
+      ],
+      "source_target_routing_proved": true,
+      "status": "theorem-tail-restricted-gap-factorial-coverage-upper-bound",
+      "target_partition": [
+        17,
+        2,
+        1
+      ],
+      "unresolved_internal_multiplicity_state_count": null
+    },
+    {
+      "carrier_frame_invariant_subspace_proved": false,
+      "cross_source_carrier_mixing_controlled": false,
+      "equal_source_internal_multiplicity_state_count": null,
+      "equal_source_nontrivial_multiplicity_sector_count": null,
+      "equal_source_nonzero_sector_count": null,
+      "exact": false,
+      "exact_total_invariant_coordinate_count_decimal": null,
+      "internal_multiplicity_label_proved": true,
+      "inverse_gap_query_bound": 276,
+      "kronecker_multiplicity": 2,
+      "n": 24,
+      "negative_log2_restricted_coordinate_coverage_upper_bound": 77.0376574191,
+      "normalized_gap": 0.0036231884057971015,
+      "normalized_gap_exact": "2/(24*23)",
+      "resolved_invariant_matrix_coordinate_count": 4,
+      "resolved_multiplicity_basis_state_count": 2,
+      "restricted_coordinate_coverage_upper_bound": 6.4469502843844735e-24,
+      "source_partition": [
+        22,
+        2
+      ],
+      "source_target_routing_proved": true,
+      "status": "theorem-tail-restricted-gap-factorial-coverage-upper-bound",
+      "target_partition": [
+        21,
+        2,
+        1
+      ],
+      "unresolved_internal_multiplicity_state_count": null
+    },
+    {
+      "carrier_frame_invariant_subspace_proved": false,
+      "cross_source_carrier_mixing_controlled": false,
+      "equal_source_internal_multiplicity_state_count": null,
+      "equal_source_nontrivial_multiplicity_sector_count": null,
+      "equal_source_nonzero_sector_count": null,
+      "exact": false,
+      "exact_total_invariant_coordinate_count_decimal": null,
+      "internal_multiplicity_label_proved": true,
+      "inverse_gap_query_bound": 496,
+      "kronecker_multiplicity": 2,
+      "n": 32,
+      "negative_log2_restricted_coordinate_coverage_upper_bound": 115.66326365236,
+      "normalized_gap": 0.0020161290322580645,
+      "normalized_gap_exact": "2/(32*31)",
+      "resolved_invariant_matrix_coordinate_count": 4,
+      "resolved_multiplicity_basis_state_count": 2,
+      "restricted_coordinate_coverage_upper_bound": 1.5201563019418976e-35,
+      "source_partition": [
+        30,
+        2
+      ],
+      "source_target_routing_proved": true,
+      "status": "theorem-tail-restricted-gap-factorial-coverage-upper-bound",
+      "target_partition": [
+        29,
+        2,
+        1
+      ],
+      "unresolved_internal_multiplicity_state_count": null
+    },
+    {
+      "carrier_frame_invariant_subspace_proved": false,
+      "cross_source_carrier_mixing_controlled": false,
+      "equal_source_internal_multiplicity_state_count": null,
+      "equal_source_nontrivial_multiplicity_sector_count": null,
+      "equal_source_nonzero_sector_count": null,
+      "exact": false,
+      "exact_total_invariant_coordinate_count_decimal": null,
+      "internal_multiplicity_label_proved": true,
+      "inverse_gap_query_bound": 1128,
+      "kronecker_multiplicity": 2,
+      "n": 48,
+      "negative_log2_restricted_coordinate_coverage_upper_bound": 200.9495720297,
+      "normalized_gap": 0.0008865248226950354,
+      "normalized_gap_exact": "2/(48*47)",
+      "resolved_invariant_matrix_coordinate_count": 4,
+      "resolved_multiplicity_basis_state_count": 2,
+      "restricted_coordinate_coverage_upper_bound": 3.222190428300495e-61,
+      "source_partition": [
+        46,
+        2
+      ],
+      "source_target_routing_proved": true,
+      "status": "theorem-tail-restricted-gap-factorial-coverage-upper-bound",
+      "target_partition": [
+        45,
+        2,
+        1
+      ],
+      "unresolved_internal_multiplicity_state_count": null
+    },
+    {
+      "carrier_frame_invariant_subspace_proved": false,
+      "cross_source_carrier_mixing_controlled": false,
+      "equal_source_internal_multiplicity_state_count": null,
+      "equal_source_nontrivial_multiplicity_sector_count": null,
+      "equal_source_nonzero_sector_count": null,
+      "exact": false,
+      "exact_total_invariant_coordinate_count_decimal": null,
+      "internal_multiplicity_label_proved": true,
+      "inverse_gap_query_bound": 2016,
+      "kronecker_multiplicity": 2,
+      "n": 64,
+      "negative_log2_restricted_coordinate_coverage_upper_bound": 293.995143941724,
+      "normalized_gap": 0.000496031746031746,
+      "normalized_gap_exact": "2/(64*63)",
+      "resolved_invariant_matrix_coordinate_count": 4,
+      "resolved_multiplicity_basis_state_count": 2,
+      "restricted_coordinate_coverage_upper_bound": 3.152412885308129e-89,
+      "source_partition": [
+        62,
+        2
+      ],
+      "source_target_routing_proved": true,
+      "status": "theorem-tail-restricted-gap-factorial-coverage-upper-bound",
+      "target_partition": [
+        61,
+        2,
+        1
+      ],
+      "unresolved_internal_multiplicity_state_count": null
+    }
+  ],
+  "source_certificate": {
+    "exact_gap_certificate": {
+      "antisymmetric_eigenvalue": "(n - 1)*(n**2 - 10*n + 22)",
+      "lcu_normalization": "n*(n - 2)*(n - 1)",
+      "lcu_normalized_gap": "2/(n*(n - 1))",
+      "phase_estimation_inverse_gap_scaling": "n(n-1)/2",
+      "raw_gap": "2*(n - 2)",
+      "symbolic_identities_verified": true,
+      "symmetric_eigenvalue": "n**3 - 11*n**2 + 34*n - 26"
+    },
+    "headline_metrics": {
+      "all_n_critical_gap_theorem_count": 1,
+      "general_sector_gap_theorem_count": 0,
+      "hidden_involution_decoder_count": 0,
+      "kcopy_associator_count": 0,
+      "lcu_normalized_gap_exponent": 2,
+      "minimum_proved_n": 6,
+      "restricted_family_inverse_polynomial_gap_count": 1,
+      "stable_kronecker_multiplicity": 2,
+      "symbolic_parity_eigenvalue_count": 2
+    },
+    "module": "coset_commutant_gap_certificate.py",
+    "status": "all-n-restricted-commutant-gap-proved-associator-decoder-open",
+    "theorem": {
+      "hamiltonian": "H_n=sum rho_lambda(tau) tensor rho_lambda(c) over oriented 3-cycles c and transpositions tau on supp(c)",
+      "proof_method": "Explicit symmetric/antisymmetric Specht polytabloids in the projected 2-subset module, with exact support-orbit aggregation.",
+      "range": "every integer n>=6",
+      "source_partition": "lambda_n=(n-2,2)",
+      "statement": "The two target multiplicity eigenvalues differ by exactly 2(n-2), hence the LCU-normalized gap is 2/[n(n-1)].",
+      "target_partition": "nu_n=(n-3,2,1)"
+    }
+  },
+  "spec": {
+    "exact_n_values": [
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "tail_n_values": [
+      16,
+      20,
+      24,
+      32,
+      48,
+      64
+    ]
+  },
+  "status": "restricted-commutant-gap-transfers-factorial-coverage-fails",
+  "summary": "Transferred one all-n multiplicity-two commutant gap into the wreath harmonic schema, but its carrier-coordinate coverage is at most 2^-293.995 through n=64; general and cross-source transforms remain zero."
+}

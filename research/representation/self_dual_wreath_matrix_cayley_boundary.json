@@ -1,0 +1,288 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "XOR translation covariance alone proves half balance.",
+      "resolution": "The noncommuting matrix-Cayley control has exact covariance but nonorthogonal opposite kernels and nonhalf channels.",
+      "resolved": true
+    },
+    {
+      "objection": "Equal diagonal child Gram blocks force neutral cross relations.",
+      "resolution": "Plus and minus relation sectors can have nonzero ordinary overlap even though they are orthogonal in a C-weighted metric.",
+      "resolved": true
+    },
+    {
+      "objection": "A matrix-valued kernel necessarily destroys balance.",
+      "resolution": "The commuting matrix-valued control has orthogonal saturation spaces and only one-half channels.",
+      "resolved": true
+    },
+    {
+      "objection": "Half balance gives an efficient internal transform.",
+      "resolution": "Projecting onto kernels of matrix-valued Fourier symbols may be as hard as the original recoupling problem.",
+      "resolved": false
+    }
+  ],
+  "claim_gate": {
+    "coherent_internal_saturation_projectors_compiled": false,
+    "commuting_matrix_cayley_sufficient_condition_verified": true,
+    "hierarchical_orientation_polar_proved": false,
+    "matrix_cayley_covariance_alone_suffices_for_balance": false,
+    "matrix_cayley_saturation_boundary_proved": true,
+    "natural_collision_free_saturation_orthogonality_proved": false,
+    "noncommuting_matrix_cayley_counterexample_verified": true,
+    "reason": "The exact multiplicity-space failure mode is known, but it has not been excluded or found in the natural all-n wreath portfolio.",
+    "speedup_claim_allowed": false
+  },
+  "controls": [
+    {
+      "actual_common_range_dimension": 2,
+      "actual_fractional_eigenvalues": [
+        0.4999999999999999,
+        0.5000000000000009
+      ],
+      "all_character_operators_commute": true,
+      "all_fractional_channels_half": true,
+      "character_records": [
+        {
+          "character_signs": [
+            1,
+            1
+          ],
+          "child_cross_commutator_residual": 1.387778780781452e-17,
+          "commuting_character_operators": true,
+          "maximum_opposite_saturation_overlap": 0.0,
+          "minus_saturation_dimension": 1,
+          "opposite_saturation_overlap_singular_values": [],
+          "opposite_saturation_spaces_orthogonal": true,
+          "plus_saturation_dimension": 1,
+          "predicted_fractional_eigenvalues": [
+            0.5,
+            0.5
+          ],
+          "restricted_internal_dimension": 2
+        },
+        {
+          "character_signs": [
+            1,
+            -1
+          ],
+          "child_cross_commutator_residual": 3.697785493223493e-32,
+          "commuting_character_operators": true,
+          "maximum_opposite_saturation_overlap": 0.0,
+          "minus_saturation_dimension": 0,
+          "opposite_saturation_overlap_singular_values": [],
+          "opposite_saturation_spaces_orthogonal": true,
+          "plus_saturation_dimension": 0,
+          "predicted_fractional_eigenvalues": [],
+          "restricted_internal_dimension": 2
+        }
+      ],
+      "child_size": 2,
+      "grading_neutrality_residual": 8.695696870265698e-16,
+      "group_size": 4,
+      "internal_fiber_dimension": 2,
+      "matrix_cayley_boundary_theorem_verified": true,
+      "maximum_fractional_spectrum_residual": 8.881784197001252e-16,
+      "maximum_leaf_isometry_residual": 5.832198838705219e-16,
+      "maximum_matrix_cayley_translation_residual": 5.90213981029088e-16,
+      "maximum_opposite_saturation_overlap": 0.0,
+      "maximum_scalar_kernel_residual": 0.2500000000000003,
+      "minimum_full_gram_eigenvalue": -2.6278420131524953e-16,
+      "opposite_saturation_spaces_orthogonal": true,
+      "predicted_common_range_dimension": 2,
+      "predicted_fractional_eigenvalues": [
+        0.5,
+        0.5
+      ],
+      "record_id": "COMMUTING-ORTHOGONAL-SATURATION",
+      "scalar_cayley_kernel": false,
+      "status": "matrix-cayley-neutral-saturation"
+    },
+    {
+      "actual_common_range_dimension": 2,
+      "actual_fractional_eigenvalues": [
+        0.14644660940672674,
+        0.8535533905932735
+      ],
+      "all_character_operators_commute": false,
+      "all_fractional_channels_half": false,
+      "character_records": [
+        {
+          "character_signs": [
+            1,
+            1
+          ],
+          "child_cross_commutator_residual": 0.2500000000000004,
+          "commuting_character_operators": false,
+          "maximum_opposite_saturation_overlap": 0.7071067811865472,
+          "minus_saturation_dimension": 1,
+          "opposite_saturation_overlap_singular_values": [
+            0.7071067811865472
+          ],
+          "opposite_saturation_spaces_orthogonal": false,
+          "plus_saturation_dimension": 1,
+          "predicted_fractional_eigenvalues": [
+            0.14644660940672638,
+            0.8535533905932736
+          ],
+          "restricted_internal_dimension": 2
+        },
+        {
+          "character_signs": [
+            1,
+            -1
+          ],
+          "child_cross_commutator_residual": 6.938893903907242e-18,
+          "commuting_character_operators": true,
+          "maximum_opposite_saturation_overlap": 0.0,
+          "minus_saturation_dimension": 0,
+          "opposite_saturation_overlap_singular_values": [],
+          "opposite_saturation_spaces_orthogonal": true,
+          "plus_saturation_dimension": 0,
+          "predicted_fractional_eigenvalues": [],
+          "restricted_internal_dimension": 2
+        }
+      ],
+      "child_size": 2,
+      "grading_neutrality_residual": 0.7071067811865472,
+      "group_size": 4,
+      "internal_fiber_dimension": 2,
+      "matrix_cayley_boundary_theorem_verified": true,
+      "maximum_fractional_spectrum_residual": 3.608224830031759e-16,
+      "maximum_leaf_isometry_residual": 1.776357163895219e-15,
+      "maximum_matrix_cayley_translation_residual": 1.8007818063801186e-15,
+      "maximum_opposite_saturation_overlap": 0.7071067811865472,
+      "maximum_scalar_kernel_residual": 0.3535533905932743,
+      "minimum_full_gram_eigenvalue": -1.1583832359008543e-16,
+      "opposite_saturation_spaces_orthogonal": false,
+      "predicted_common_range_dimension": 2,
+      "predicted_fractional_eigenvalues": [
+        0.14644660940672638,
+        0.8535533905932736
+      ],
+      "record_id": "NONCOMMUTING-NONORTHOGONAL-SATURATION",
+      "scalar_cayley_kernel": false,
+      "status": "matrix-cayley-nonorthogonal-saturation-counterexample"
+    }
+  ],
+  "created_at": "2026-08-06T04:10:55.564850+00:00",
+  "falsifiers_triggered": [
+    "Matrix-valued XOR covariance does not by itself force half-integral affine merges.",
+    "Equal child Gram blocks do not make the cross-dependency quotient neutral when opposite saturation kernels overlap.",
+    "Matrix-valued multiplicity sectors are not automatically fatal; commuting or saturation-orthogonal sectors remain balanced.",
+    "A spectral balance theorem does not implement the multiplicity-space kernel projectors."
+  ],
+  "headline_metrics": {
+    "all_n_saturation_orthogonality_theorem_count": 0,
+    "coherent_internal_saturation_projector_count": 0,
+    "commuting_neutral_control_count": 1,
+    "counterexample_maximum_half_residual": 0.3535533905932735,
+    "counterexample_maximum_opposite_saturation_overlap": 0.7071067811865472,
+    "exact_control_count": 2,
+    "finite_wreath_matrix_valued_cayley_counterexample_count": 0,
+    "matrix_cayley_boundary_theorem_count": 1,
+    "new_quantum_algorithm_count": 0,
+    "noncommuting_nonneutral_counterexample_count": 1,
+    "theorem_validation_failure_count": 0
+  },
+  "proof_obligations": [
+    {
+      "obligation": "matrix_cayley_saturation_boundary",
+      "resolution": "Exact kernel decomposition and two positive-definite controls reproduce both common dimension and every fractional eigenvalue.",
+      "resolved": true
+    },
+    {
+      "obligation": "natural_wreath_saturation_orthogonality",
+      "resolution": "Finite label-simple fibers are scalar, but growing Kronecker multiplicities can create the matrix-valued countermechanism.",
+      "resolved": false
+    },
+    {
+      "obligation": "coherent_internal_saturation_projectors",
+      "resolution": "Even neutral matrix-valued sectors require coherent kernels of C_chi +/- D_chi in multiplicity space.",
+      "resolved": false
+    }
+  ],
+  "scaling_records": [
+    {
+      "coherent_internal_saturation_projectors_proved": false,
+      "collision_free_matrix_cayley_counterexample_found": false,
+      "collision_free_saturation_orthogonality_proved": false,
+      "information_threshold_copy_count": 10,
+      "kronecker_multiplicity_spaces_can_be_matrix_valued": true,
+      "n": 6,
+      "status": "matrix-valued-saturation-boundary-open-on-natural-wreath-fibers"
+    },
+    {
+      "coherent_internal_saturation_projectors_proved": false,
+      "collision_free_matrix_cayley_counterexample_found": false,
+      "collision_free_saturation_orthogonality_proved": false,
+      "information_threshold_copy_count": 16,
+      "kronecker_multiplicity_spaces_can_be_matrix_valued": true,
+      "n": 8,
+      "status": "matrix-valued-saturation-boundary-open-on-natural-wreath-fibers"
+    },
+    {
+      "coherent_internal_saturation_projectors_proved": false,
+      "collision_free_matrix_cayley_counterexample_found": false,
+      "collision_free_saturation_orthogonality_proved": false,
+      "information_threshold_copy_count": 45,
+      "kronecker_multiplicity_spaces_can_be_matrix_valued": true,
+      "n": 16,
+      "status": "matrix-valued-saturation-boundary-open-on-natural-wreath-fibers"
+    },
+    {
+      "coherent_internal_saturation_projectors_proved": false,
+      "collision_free_matrix_cayley_counterexample_found": false,
+      "collision_free_saturation_orthogonality_proved": false,
+      "information_threshold_copy_count": 118,
+      "kronecker_multiplicity_spaces_can_be_matrix_valued": true,
+      "n": 32,
+      "status": "matrix-valued-saturation-boundary-open-on-natural-wreath-fibers"
+    },
+    {
+      "coherent_internal_saturation_projectors_proved": false,
+      "collision_free_matrix_cayley_counterexample_found": false,
+      "collision_free_saturation_orthogonality_proved": false,
+      "information_threshold_copy_count": 296,
+      "kronecker_multiplicity_spaces_can_be_matrix_valued": true,
+      "n": 64,
+      "status": "matrix-valued-saturation-boundary-open-on-natural-wreath-fibers"
+    },
+    {
+      "coherent_internal_saturation_projectors_proved": false,
+      "collision_free_matrix_cayley_counterexample_found": false,
+      "collision_free_saturation_orthogonality_proved": false,
+      "information_threshold_copy_count": 717,
+      "kronecker_multiplicity_spaces_can_be_matrix_valued": true,
+      "n": 128,
+      "status": "matrix-valued-saturation-boundary-open-on-natural-wreath-fibers"
+    },
+    {
+      "coherent_internal_saturation_projectors_proved": false,
+      "collision_free_matrix_cayley_counterexample_found": false,
+      "collision_free_saturation_orthogonality_proved": false,
+      "information_threshold_copy_count": 1684,
+      "kronecker_multiplicity_spaces_can_be_matrix_valued": true,
+      "n": 256,
+      "status": "matrix-valued-saturation-boundary-open-on-natural-wreath-fibers"
+    },
+    {
+      "coherent_internal_saturation_projectors_proved": false,
+      "collision_free_matrix_cayley_counterexample_found": false,
+      "collision_free_saturation_orthogonality_proved": false,
+      "information_threshold_copy_count": 3876,
+      "kronecker_multiplicity_spaces_can_be_matrix_valued": true,
+      "n": 512,
+      "status": "matrix-valued-saturation-boundary-open-on-natural-wreath-fibers"
+    }
+  ],
+  "status": "matrix-cayley-saturation-boundary-natural-wreath-case-open",
+  "summary": "Proved the exact matrix-valued Cayley boundary: opposite saturation-space overlap produces nonhalf channels. An explicit positive-definite XOR-covariant counterfamily kills covariance-only proofs, while commuting sectors remain balanced.",
+  "theorem_contract": {
+    "balance_boundary": "All channels are one half iff X_+ is orthogonal to X_- for every Walsh character.",
+    "grading_defects": "Nonzero dependency-grading eigenvalues are +/- singular values of Q_+^*Q_-.",
+    "operator_cayley_reduction": "Walsh transform reduces an End(X)-valued XOR kernel to child/cross operators C_chi,D_chi.",
+    "opposite_saturation_spaces": "X_+=ker(C_chi-D_chi) and X_-=ker(C_chi+D_chi) after removing ker(C_chi).",
+    "relative_channels": "Fractional channels are (1 +/- s_j)/2, with extra one-half channels for unmatched saturation dimensions.",
+    "sufficient_conditions": "Scalar kernels or pairwise commuting C_chi,D_chi imply saturation orthogonality."
+  }
+}

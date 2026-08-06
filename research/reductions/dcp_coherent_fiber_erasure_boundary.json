@@ -1,0 +1,174 @@
+{
+  "access_boundaries": [
+    {
+      "access_model": "arbitrary-injective-black-box",
+      "applicable_lower_bound": "Theta(sqrt(D)) quantum queries",
+      "function_access": "coherent queries to an otherwise unstructured injective oracle f:[D]->[R]",
+      "reason": "The theorem applies in its native black-box model, but the DCP function family is structured, many-to-one, and publicly specified by n arithmetic labels.",
+      "required_resource_charges": [
+        "oracle queries",
+        "ancillary garbage dependence",
+        "coherent versus non-coherent output"
+      ],
+      "target_interface": "generate the uniform image state",
+      "transfer_to_dcp_valid": false
+    },
+    {
+      "access_model": "public-subset-sum-evaluator",
+      "applicable_lower_bound": "no transferred black-box index-erasure lower bound",
+      "function_access": "public labels a_i and a reversible poly(n)-gate circuit for f_a(x)=sum_i a_i x_i mod 2^n",
+      "reason": "Arithmetic structure may defeat black-box adversary bounds; the actual blockers are normalization, spectral spacing, state preparation, and average-source complexity.",
+      "required_resource_charges": [
+        "reversible arithmetic gates",
+        "state preparations and reflections",
+        "postselection or amplification",
+        "normalization and condition number",
+        "precision",
+        "advice or QRAM"
+      ],
+      "target_interface": "target-addressable normalized-fiber state and a legal/illegal success flag",
+      "transfer_to_dcp_valid": false
+    },
+    {
+      "access_model": "independent-dcp-state-input",
+      "applicable_lower_bound": "neither black-box index erasure nor target-addressable support-decision reduction applies automatically",
+      "function_access": "independent phase states with measured public labels; no rewind, hidden-state reflection, or chosen-label oracle",
+      "reason": "A full measurement must be audited as a channel on the available independent states, including every preparation and reflection it assumes.",
+      "required_resource_charges": [
+        "DCP state copies",
+        "collective width",
+        "public-label classical work",
+        "measurement outcomes",
+        "complete hidden-shift decoder"
+      ],
+      "target_interface": "global collective measurement may avoid a separately target-addressable fiber primitive",
+      "transfer_to_dcp_valid": false
+    }
+  ],
+  "claim_gate": {
+    "black_box_index_erasure_lower_bound_known": true,
+    "black_box_lower_bound_transfers_to_subset_sum": false,
+    "fixed_variable_stability_implies_witness_search": true,
+    "global_collective_measurement_reduced_to_support_decision": false,
+    "polynomial_global_collective_pgm_channel_constructed": false,
+    "polynomial_source_aware_fiber_preparer_constructed": false,
+    "reason": "Black-box index erasure supplies a generic square-root barrier but cannot be transferred to public arithmetic subset sum. Target-addressable primitives inherit support decision and, with fixed-variable stability, witness-search obligations. A genuinely global collective channel remains open and must be explicitly constructed.",
+    "speedup_claim_allowed": false,
+    "target_addressable_preparer_implies_support_decision": true
+  },
+  "created_at": "2026-07-30T07:56:30.875794+00:00",
+  "falsifiers_triggered": [
+    "A black-box index-erasure lower bound cannot be cited as a lower bound for public arithmetic subset-sum maps.",
+    "A target-addressable normalized-fiber primitive with a success flag is already an average-case support-decision algorithm.",
+    "Witness self-reduction additionally requires guarantees on every fixed-variable subinstance.",
+    "A global collective channel need not expose the target-addressable interface and is not ruled out by these reductions.",
+    "Any use of DCP state reflection, rewinding, chosen labels, QRAM, or advice must be charged separately."
+  ],
+  "headline_metrics": {
+    "access_model_count": 3,
+    "black_box_index_erasure_lower_bound_count": 1,
+    "black_box_superpolynomial_row_count": 4,
+    "maximum_n_bits": 1024,
+    "polynomial_global_collective_pgm_channel_count": 0,
+    "polynomial_source_aware_fiber_preparer_count": 0,
+    "proved_fixed_variable_witness_self_reduction_count": 1,
+    "proved_global_collective_measurement_reduction_count": 0,
+    "proved_target_addressable_support_decision_reduction_count": 1,
+    "reduction_certificate_count": 3,
+    "scaling_row_count": 5,
+    "tail_black_box_query_lower_bound_log2": 512.0,
+    "valid_black_box_lower_bound_transfer_to_structured_subset_sum_count": 0
+  },
+  "literature_links": [
+    "lindzey-rosmanis-index-erasure-2019"
+  ],
+  "reduction_certificates": [
+    {
+      "assumptions": [
+        "input is public (a,s)",
+        "good-flag probability is at least gamma(n)>=1/poly(n) when c_s>0",
+        "good-flag probability is zero when c_s=0",
+        "one call uses poly(n) gates and no hidden advice"
+      ],
+      "consequence": "one-sided-error decision of whether the modular subset-sum fiber is nonempty",
+      "primitive": "target-addressable-flagged-normalized-fiber-preparer",
+      "proved": true,
+      "query_or_call_cost": "O(gamma(n)^-1 log(1/delta)) repetitions, or the charged amplitude-amplification equivalent",
+      "scope_limit": "Does not recover a witness and does not cover a global measurement with no target-addressable success flag."
+    },
+    {
+      "assumptions": [
+        "all support-decision assumptions hold",
+        "the guarantee holds on every subinstance obtained by fixing a prefix of Boolean variables",
+        "errors compose below 1/poly(n)",
+        "the final witness is verified against the original equation"
+      ],
+      "consequence": "recover a Boolean subset-sum witness by testing the zero and one branches at each variable",
+      "primitive": "fixed-variable-stable-target-addressable-preparer",
+      "proved": true,
+      "query_or_call_cost": "O(n gamma_min(n)^-1 log(n/delta)) primitive calls",
+      "scope_limit": "Average density-one success on the original source does not imply the required guarantees on lower-density conditioned subinstances."
+    },
+    {
+      "assumptions": [
+        "acts only on legal independent DCP state input",
+        "does not expose a target-addressable support flag"
+      ],
+      "consequence": "no support-decision or witness-search reduction established",
+      "primitive": "global-full-rank-collective-pgm-channel",
+      "proved": false,
+      "query_or_call_cost": "must be audited from its explicit circuit",
+      "scope_limit": "This is the principal open escape from the target-addressable fiber-preparation reduction."
+    }
+  ],
+  "scaling_rows": [
+    {
+      "black_box_bound_superpolynomial": false,
+      "black_box_query_lower_bound_log2": 32.0,
+      "domain_size_log2": 64,
+      "n_bits": 64,
+      "polynomial_query_threshold_log2": 48.0,
+      "structured_subset_sum_transfer_valid": false
+    },
+    {
+      "black_box_bound_superpolynomial": true,
+      "black_box_query_lower_bound_log2": 64.0,
+      "domain_size_log2": 128,
+      "n_bits": 128,
+      "polynomial_query_threshold_log2": 56.0,
+      "structured_subset_sum_transfer_valid": false
+    },
+    {
+      "black_box_bound_superpolynomial": true,
+      "black_box_query_lower_bound_log2": 128.0,
+      "domain_size_log2": 256,
+      "n_bits": 256,
+      "polynomial_query_threshold_log2": 64.0,
+      "structured_subset_sum_transfer_valid": false
+    },
+    {
+      "black_box_bound_superpolynomial": true,
+      "black_box_query_lower_bound_log2": 256.0,
+      "domain_size_log2": 512,
+      "n_bits": 512,
+      "polynomial_query_threshold_log2": 72.0,
+      "structured_subset_sum_transfer_valid": false
+    },
+    {
+      "black_box_bound_superpolynomial": true,
+      "black_box_query_lower_bound_log2": 512.0,
+      "domain_size_log2": 1024,
+      "n_bits": 1024,
+      "polynomial_query_threshold_log2": 80.0,
+      "structured_subset_sum_transfer_valid": false
+    }
+  ],
+  "state_generation_contract": {
+    "fiber_state": "|u_s>=c_s^-1/2 sum_{x:f_a(x)=s}|x> for c_s>0",
+    "global_interface": "A collective channel on DCP registers need not expose U_a or a reusable success flag.",
+    "input_model": "Public labels permit reversible subset-sum arithmetic; hidden DCP states remain independent, nonrewindable inputs.",
+    "target_addressable_interface": "U_a|s,0,0>=sqrt(p_s)|s,u_s,good>+sqrt(1-p_s)|garbage,bad>"
+  },
+  "status": "index-erasure-transfer-invalid-target-addressable-reductions-proved-global-channel-open",
+  "summary": "Separated 3 state-generation access models and proved 2 conditional reductions. The black-box square-root lower bound has zero valid transfers to structured subset sum; target-addressable support decision and fixed-variable witness obligations are explicit."
+}

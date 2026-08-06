@@ -214,6 +214,72 @@
     "year": 2026
   },
   {
+    "abstract": "Provides a uniform normalized-character bound in terms of Young diagram rows, columns, and transposition length. This is the main available route from collision-free typical partitions to quantitative wreath-frame moment contraction.",
+    "id": "feray-sniady-character-bounds-2007",
+    "mechanism": "Uniform normalized-character decay and product-mixing bounds for symmetric-group representations, parameterized by Young diagram geometry and permutation support or transposition length.",
+    "no_go_barrier": "Pointwise character bounds alone do not count the correlated low-support subset words, and finite collision-free spectra do not prove the required growing-order contraction.",
+    "open_question": "Can these bounds control the joint short-word contribution for k globally distinct Plancherel source partitions at moment order Theta(log block dimension)?",
+    "problem_family": "Collision-free multiregister symmetric-group coset-state frames and bridge subset-word moments.",
+    "proof_technique": "Stanley character formulas, Young diagram geometry, hypercontractivity, Murnaghan-Nakayama estimates, normal-set product mixing, and class-walk cutoff.",
+    "reduction": "Unequal physical wreath characters factor into products of symmetric-group character ratios, so character decay plus short-word anti-concentration can imply a poly(n)2^-k frame-norm bound.",
+    "reusable_abstraction": "Character-ratio contraction contract: diagram-shape tail, word transposition-length profile, normalized-character product bound, moment target, and residual exceptional mass.",
+    "source": "seed",
+    "tags": [
+      "symmetric-character",
+      "character-ratio",
+      "plancherel-typical",
+      "representation-theory",
+      "proof-tool"
+    ],
+    "title": "Asymptotics of characters of symmetric groups related to Stanley character formula",
+    "url": "https://arxiv.org/abs/math/0701051",
+    "year": 2007
+  },
+  {
+    "abstract": "Connects character norm bounds to product mixing and Fourier coefficients of normal sets, suggesting analytic tools for the shared bridge-word contraction beyond pointwise estimates.",
+    "id": "lifshitz-marmor-hypercontractive-characters-2023",
+    "mechanism": "Uniform normalized-character decay and product-mixing bounds for symmetric-group representations, parameterized by Young diagram geometry and permutation support or transposition length.",
+    "no_go_barrier": "Pointwise character bounds alone do not count the correlated low-support subset words, and finite collision-free spectra do not prove the required growing-order contraction.",
+    "open_question": "Can these bounds control the joint short-word contribution for k globally distinct Plancherel source partitions at moment order Theta(log block dimension)?",
+    "problem_family": "Collision-free multiregister symmetric-group coset-state frames and bridge subset-word moments.",
+    "proof_technique": "Stanley character formulas, Young diagram geometry, hypercontractivity, Murnaghan-Nakayama estimates, normal-set product mixing, and class-walk cutoff.",
+    "reduction": "Unequal physical wreath characters factor into products of symmetric-group character ratios, so character decay plus short-word anti-concentration can imply a poly(n)2^-k frame-norm bound.",
+    "reusable_abstraction": "Character-ratio contraction contract: diagram-shape tail, word transposition-length profile, normalized-character product bound, moment target, and residual exceptional mass.",
+    "source": "seed",
+    "tags": [
+      "symmetric-character",
+      "character-ratio",
+      "hypercontractivity",
+      "product-mixing",
+      "proof-tool"
+    ],
+    "title": "Bounds for Characters of the Symmetric Group: A Hypercontractive Approach",
+    "url": "https://arxiv.org/abs/2308.08694",
+    "year": 2023
+  },
+  {
+    "abstract": "Develops sharp uniform character bounds and class-walk cutoff tools that may control the low-support word classes left by the conditioned collision-free wreath moment expansion.",
+    "id": "olesker-taylor-teyssier-thevenin-character-cutoff-2025",
+    "mechanism": "Uniform normalized-character decay and product-mixing bounds for symmetric-group representations, parameterized by Young diagram geometry and permutation support or transposition length.",
+    "no_go_barrier": "Pointwise character bounds alone do not count the correlated low-support subset words, and finite collision-free spectra do not prove the required growing-order contraction.",
+    "open_question": "Can these bounds control the joint short-word contribution for k globally distinct Plancherel source partitions at moment order Theta(log block dimension)?",
+    "problem_family": "Collision-free multiregister symmetric-group coset-state frames and bridge subset-word moments.",
+    "proof_technique": "Stanley character formulas, Young diagram geometry, hypercontractivity, Murnaghan-Nakayama estimates, normal-set product mixing, and class-walk cutoff.",
+    "reduction": "Unequal physical wreath characters factor into products of symmetric-group character ratios, so character decay plus short-word anti-concentration can imply a poly(n)2^-k frame-norm bound.",
+    "reusable_abstraction": "Character-ratio contraction contract: diagram-shape tail, word transposition-length profile, normalized-character product bound, moment target, and residual exceptional mass.",
+    "source": "seed",
+    "tags": [
+      "symmetric-character",
+      "character-ratio",
+      "random-walk",
+      "cutoff",
+      "proof-tool"
+    ],
+    "title": "Sharp character bounds and cutoff profiles for symmetric groups",
+    "url": "https://arxiv.org/abs/2503.12735",
+    "year": 2025
+  },
+  {
     "abstract": "Corrects a multiplicity-space step that had been treated as a classical permutation and makes the required quantum isometry/F-moves explicit, a direct warning against hand-waving recoupling registers.",
     "id": "burchardt-high-dimensional-schur-2025",
     "mechanism": "Separate the efficient S_n QFT and weak irrep projectors from the internal Kronecker transform, overlapping Racah/associator moves, state-dependent transition weights, and outcome decoding.",
@@ -341,6 +407,28 @@
     "title": "Quantum Computation and Lattice Problems",
     "url": "https://arxiv.org/abs/cs/0304005",
     "year": 2003
+  },
+  {
+    "abstract": "Proves a tight square-root quantum query lower bound for black-box non-coherent image-state generation. It is the correct generic warning for DCP fiber erasure, but it does not transfer automatically to public arithmetic subset-sum maps.",
+    "id": "lindzey-rosmanis-index-erasure-2019",
+    "mechanism": "Coherent or non-coherent state generation that erases a function preimage register while retaining a superposition over image or fiber labels.",
+    "no_go_barrier": "Generic black-box non-coherent index erasure requires square-root quantum queries. Any DCP improvement must identify and charge the exact arithmetic structure that bypasses this generic state-generation barrier.",
+    "open_question": "Can density-one subset-sum structure support a polynomial source-aware fiber erasure or collision walk without target-addressable support decision, rare postselection, QRAM, or hidden-source reflections?",
+    "problem_family": "Black-box index erasure and structured many-to-one fiber erasure, including normalized modular subset-sum fibers.",
+    "proof_technique": "General adversary bounds, symmetric state generation, association schemes, and representation-theoretic automorphism principles.",
+    "reduction": "DCP normalized-fiber preparation is a structured many-to-one state-generation analogue, but public subset-sum labels give an arithmetic circuit and therefore invalidate a direct black-box lower-bound transfer.",
+    "reusable_abstraction": "State-generation access ledger separating black-box queries, public arithmetic circuits, target-addressable fiber preparation, global collective measurements, success flags, and fixed-variable witness self-reduction.",
+    "source": "seed",
+    "tags": [
+      "state-generation",
+      "index-erasure",
+      "query-lower-bound",
+      "black-box",
+      "noncoherent"
+    ],
+    "title": "A Tight Lower Bound for Non-coherent Index Erasure",
+    "url": "https://arxiv.org/abs/1902.07336",
+    "year": 2019
   },
   {
     "abstract": "Separates uniform random-multiplier hidden-number access from chosen-multiplier Fourier methods and warns that the latter do not automatically solve the uniform distribution model.",
@@ -836,6 +924,27 @@
     ],
     "title": "Proving Quantum Programs Correct",
     "url": "https://arxiv.org/abs/2010.01240",
+    "year": 2020
+  },
+  {
+    "abstract": "Theorem 1.2 shows that a fixed absolute number C of arbitrarily coupled Plancherel-distributed irreducible representations of S_n has a tensor product containing every irreducible representation with probability 1-o(1).",
+    "id": "sellke-2020",
+    "mechanism": "Plancherel-typical tensor products cover the whole dual of S_n after a bounded number of factors.",
+    "no_go_barrier": "None on its own. The covering statement bounds no operator norm and supplies no convergence rate.",
+    "open_question": "What quantitative rate does the covering event have, and does it survive conditioning on a fixed target constituent?",
+    "problem_family": "Symmetric-group representation theory used inside hidden-subgroup and graph-isomorphism reductions.",
+    "proof_technique": "Plancherel measure concentration plus character estimates on tensor product multiplicities.",
+    "reduction": "Divide the natural k=ceil(log2 n!) labels into C-sized blocks so that both the left and right block products cover every irrep on all but an o(1) fraction of blocks; Markov applied to the expected bad-block fraction needs no convergence rate.",
+    "reusable_abstraction": "Bounded-depth tensor covering of Irrep(S_n), used by EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-BLOCK-OBSTRUCTION and EXP-CODE-SELF-DUAL-WREATH-MULTISTAR-DEGREE-OBSTRUCTION.",
+    "source": "seed",
+    "tags": [
+      "symmetric-group",
+      "representation-theory",
+      "plancherel",
+      "tensor-covering"
+    ],
+    "title": "Covering Irrep(S_n) With Tensor Products and Powers",
+    "url": "https://arxiv.org/abs/2004.05283",
     "year": 2020
   }
 ]

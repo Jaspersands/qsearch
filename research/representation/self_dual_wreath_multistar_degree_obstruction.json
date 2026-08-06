@@ -1,0 +1,624 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "The 33 of 6,766 uncertified planes were a finite artifact.",
+      "resolution": "They were the leading edge of the asymptotic regime. The certificate is vacuous for every sampled natural portfolio from the first failing degree upward.",
+      "resolved": true
+    },
+    {
+      "objection": "Small per-block correlations imply a conditioned hierarchy.",
+      "resolution": "False. Per-block correlations shrink only until Sellke covering saturates them, and the adjacency count grows far faster in every regime measured.",
+      "resolved": true
+    },
+    {
+      "objection": "Sampling cannot establish an asymptotic statement.",
+      "resolution": "Correct. The measurement is exact per star and deterministic per seed, but the covering-saturation step is a structural argument and the extrapolation table is conservative, not proved.",
+      "resolved": false
+    },
+    {
+      "objection": "The Laplacian reformulation supplies a gap.",
+      "resolution": "It does not. It identifies the object whose positive spectrum must be bounded and shows absolute weights cannot bound it.",
+      "resolved": false
+    },
+    {
+      "objection": "A vacuous certificate means the hierarchy is dead.",
+      "resolution": "No. Only the sign-blind proof technique is dead; the exact residual quotient may still have a gap through cancellation.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "all_depth_multistar_conditioning_proved": false,
+    "exact_absolute_weight_law_available": true,
+    "hierarchical_orientation_polar_proved": false,
+    "phase_sensitive_quotient_gap_proved": false,
+    "reason": "Absolute-weight comparison is asymptotically vacuous and the surviving Laplacian gap is unproved, so no conditioning claim is available.",
+    "sign_blind_multistar_certificate_dead_at_natural_depth": true,
+    "speedup_claim_allowed": false,
+    "subspace_graph_laplacian_equivalence_verified": true,
+    "weighted_degree_growth_is_monotone_in_sampled_range": true
+  },
+  "created_at": "2026-08-06T19:21:52.074035+00:00",
+  "falsifiers_triggered": [
+    "The absolute-weight comparison bound used by the pair-core recoupling boundary cannot be extended to all depth; its finite successes do not generalize.",
+    "Shrinking per-block correlations are not evidence of conditioning once adjacency growth is counted.",
+    "Any future conditioning proof must exhibit cancellation in the signed Laplacian; a bound that only uses overlap magnitudes is provably insufficient."
+  ],
+  "finite_merge_degrees": [
+    {
+      "child_size": 8,
+      "control_id": "W6-D5-ROOT-SPLIT-3",
+      "crossing_pair_count": 64,
+      "gershgorin_budget": 2,
+      "labels": [
+        [
+          [
+            6
+          ],
+          [
+            2,
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            5,
+            1
+          ],
+          [
+            4,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            4,
+            2
+          ],
+          [
+            3,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            3
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "live_crossing_edge_count": 5,
+      "live_edge_fraction": 0.078125,
+      "maximum_weighted_degree": 0.2,
+      "maximum_weighted_degree_denominator": 5,
+      "maximum_weighted_degree_numerator": 1,
+      "n": 6,
+      "sign_blind_certificate_available": true,
+      "split_bit": 3,
+      "status": "sign-blind-degree-within-budget",
+      "target_partition": [
+        6
+      ]
+    },
+    {
+      "child_size": 8,
+      "control_id": "W6-D5-ROOT-SPLIT-0",
+      "crossing_pair_count": 64,
+      "gershgorin_budget": 2,
+      "labels": [
+        [
+          [
+            6
+          ],
+          [
+            2,
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            5,
+            1
+          ],
+          [
+            4,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            4,
+            2
+          ],
+          [
+            3,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            3
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "live_crossing_edge_count": 5,
+      "live_edge_fraction": 0.078125,
+      "maximum_weighted_degree": 0.2,
+      "maximum_weighted_degree_denominator": 5,
+      "maximum_weighted_degree_numerator": 1,
+      "n": 6,
+      "sign_blind_certificate_available": true,
+      "split_bit": 0,
+      "status": "sign-blind-degree-within-budget",
+      "target_partition": [
+        6
+      ]
+    },
+    {
+      "child_size": 8,
+      "control_id": "W6-D9-ROOT-SPLIT-3",
+      "crossing_pair_count": 64,
+      "gershgorin_budget": 2,
+      "labels": [
+        [
+          [
+            6
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        [
+          [
+            5,
+            1
+          ],
+          [
+            2,
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "live_crossing_edge_count": 8,
+      "live_edge_fraction": 0.125,
+      "maximum_weighted_degree": 0.1111111111111111,
+      "maximum_weighted_degree_denominator": 9,
+      "maximum_weighted_degree_numerator": 1,
+      "n": 6,
+      "sign_blind_certificate_available": true,
+      "split_bit": 3,
+      "status": "sign-blind-degree-within-budget",
+      "target_partition": [
+        6
+      ]
+    }
+  ],
+  "headline_metrics": {
+    "all_depth_multistar_conditioning_bound_count": 0,
+    "exact_off_common_weight_law_count": 1,
+    "finite_merge_certificate_available_count": 3,
+    "finite_merge_control_count": 3,
+    "first_vacuous_degree": 8,
+    "laplacian_equivalence_control_count": 2,
+    "laplacian_equivalence_failure_count": 0,
+    "maximum_laplacian_spectrum_residual": 4.1522341120980855e-14,
+    "maximum_projected_weighted_degree_log2": 25.504042872774175,
+    "maximum_saturation_ratio": 0.9750002519526328,
+    "natural_sample_count": 6,
+    "natural_sample_vacuous_count": 5,
+    "new_quantum_algorithm_count": 0,
+    "phase_sensitive_quotient_gap_theorem_count": 0,
+    "sign_blind_route_asymptotic_kill_count": 1,
+    "subspace_graph_laplacian_equivalence_theorem_count": 1,
+    "weighted_degree_is_monotone_in_n": 1
+  },
+  "laplacian_equivalence_controls": [
+    {
+      "control_id": "W6-D5-LAPLACIAN-SPLIT-3",
+      "incidence_reconstruction_residual": 1.8881363176463917e-14,
+      "laplacian_dimension": 108,
+      "live_edge_count": 5,
+      "maximum_positive_spectrum_residual": 1.6209256159527285e-14,
+      "minimum_positive_eigenvalue": 1.8000000000000005,
+      "n": 6,
+      "positive_spectrum_size": 54,
+      "relation_gram_dimension": 54,
+      "status": "relation-gram-equals-subspace-graph-laplacian",
+      "target_partition": [
+        6
+      ],
+      "verified": true,
+      "vertex_count": 7
+    },
+    {
+      "control_id": "W6-D5-LAPLACIAN-SPLIT-0",
+      "incidence_reconstruction_residual": 4.640818196340908e-14,
+      "laplacian_dimension": 108,
+      "live_edge_count": 5,
+      "maximum_positive_spectrum_residual": 4.1522341120980855e-14,
+      "minimum_positive_eigenvalue": 1.8000000000000016,
+      "n": 6,
+      "positive_spectrum_size": 54,
+      "relation_gram_dimension": 54,
+      "status": "relation-gram-equals-subspace-graph-laplacian",
+      "target_partition": [
+        6
+      ],
+      "verified": true,
+      "vertex_count": 7
+    }
+  ],
+  "natural_degree_samples": [
+    {
+      "adjacent_crossing_edge_count": 126,
+      "conservative_weighted_degree_lower_bound": 0.05164586288172695,
+      "information_threshold_copy_count": 13,
+      "label_count": 7,
+      "live_star_count": 13,
+      "live_star_fraction": 0.325,
+      "live_star_wilson_lower_bound": 0.200845022317827,
+      "mean_off_common_weight": 0.0006105442176870748,
+      "mean_off_common_weight_log2": -10.6776165956754,
+      "n": 7,
+      "one_dimensional_carrier_star_count": 0,
+      "partition_count": 15,
+      "projected_weighted_degree": 0.07692857142857143,
+      "projected_weighted_degree_log2": -3.700336672175484,
+      "reaches_information_threshold": false,
+      "sample_count": 40,
+      "saturation_ratio_against_inverse_n_minus_one": 0.003663265306122449,
+      "sign_blind_certificate_available": true,
+      "status": "sign-blind-degree-within-budget",
+      "target_partition": [
+        4,
+        2,
+        1
+      ],
+      "two_nontrivial_carrier_star_count": 5
+    },
+    {
+      "adjacent_crossing_edge_count": 2046,
+      "conservative_weighted_degree_lower_bound": 0.2029661334368789,
+      "information_threshold_copy_count": 16,
+      "label_count": 11,
+      "live_star_count": 31,
+      "live_star_fraction": 0.775,
+      "live_star_wilson_lower_bound": 0.6249690325768998,
+      "mean_off_common_weight": 0.0035574599631519274,
+      "mean_off_common_weight_log2": -8.134936764393027,
+      "n": 8,
+      "one_dimensional_carrier_star_count": 0,
+      "partition_count": 22,
+      "projected_weighted_degree": 7.278563084608844,
+      "projected_weighted_degree_log2": 2.863653665352302,
+      "reaches_information_threshold": false,
+      "sample_count": 40,
+      "saturation_ratio_against_inverse_n_minus_one": 0.02490221974206349,
+      "sign_blind_certificate_available": false,
+      "status": "sign-blind-certificate-vacuous-at-natural-depth",
+      "target_partition": [
+        4,
+        2,
+        1,
+        1
+      ],
+      "two_nontrivial_carrier_star_count": 27
+    },
+    {
+      "adjacent_crossing_edge_count": 32766,
+      "conservative_weighted_degree_lower_bound": 0.799117903906052,
+      "information_threshold_copy_count": 19,
+      "label_count": 15,
+      "live_star_count": 39,
+      "live_star_fraction": 0.975,
+      "live_star_wilson_lower_bound": 0.8711863103652591,
+      "mean_off_common_weight": 0.022651091313583047,
+      "mean_off_common_weight_log2": -5.464275629800513,
+      "n": 9,
+      "one_dimensional_carrier_star_count": 7,
+      "partition_count": 30,
+      "projected_weighted_degree": 742.1856579808621,
+      "projected_weighted_degree_log2": 9.535636312394907,
+      "reaches_information_threshold": false,
+      "sample_count": 40,
+      "saturation_ratio_against_inverse_n_minus_one": 0.18120873050866437,
+      "sign_blind_certificate_available": false,
+      "status": "sign-blind-certificate-vacuous-at-natural-depth",
+      "target_partition": [
+        4,
+        3,
+        1,
+        1
+      ],
+      "two_nontrivial_carrier_star_count": 29
+    },
+    {
+      "adjacent_crossing_edge_count": 2097150,
+      "conservative_weighted_degree_lower_bound": 15.619545788156003,
+      "information_threshold_copy_count": 22,
+      "label_count": 21,
+      "live_star_count": 40,
+      "live_star_fraction": 1.0,
+      "live_star_wilson_lower_bound": 0.9123783988027135,
+      "mean_off_common_weight": 0.08194848934712774,
+      "mean_off_common_weight_log2": -3.609138835099106,
+      "n": 10,
+      "one_dimensional_carrier_star_count": 31,
+      "partition_count": 42,
+      "projected_weighted_degree": 171858.27443432895,
+      "projected_weighted_degree_log2": 17.39085978903903,
+      "reaches_information_threshold": false,
+      "sample_count": 40,
+      "saturation_ratio_against_inverse_n_minus_one": 0.7375364041241497,
+      "sign_blind_certificate_available": false,
+      "status": "sign-blind-certificate-vacuous-at-natural-depth",
+      "target_partition": [
+        4,
+        3,
+        2,
+        1
+      ],
+      "two_nontrivial_carrier_star_count": 8
+    },
+    {
+      "adjacent_crossing_edge_count": 67108862,
+      "conservative_weighted_degree_lower_bound": 30236.383238040627,
+      "information_threshold_copy_count": 26,
+      "label_count": 26,
+      "live_star_count": 40,
+      "live_star_fraction": 1.0,
+      "live_star_wilson_lower_bound": 0.9123783988027135,
+      "mean_off_common_weight": 0.09258207708397102,
+      "mean_off_common_weight_log2": -3.433123259839565,
+      "n": 11,
+      "one_dimensional_carrier_star_count": 37,
+      "partition_count": 56,
+      "projected_weighted_degree": 6213077.8347015735,
+      "projected_weighted_degree_log2": 22.566876697164773,
+      "reaches_information_threshold": true,
+      "sample_count": 40,
+      "saturation_ratio_against_inverse_n_minus_one": 0.9258207708397103,
+      "sign_blind_certificate_available": false,
+      "status": "sign-blind-certificate-vacuous-at-natural-depth",
+      "target_partition": [
+        5,
+        3,
+        2,
+        1
+      ],
+      "two_nontrivial_carrier_star_count": 3
+    },
+    {
+      "adjacent_crossing_edge_count": 536870910,
+      "conservative_weighted_degree_lower_bound": 448.7774994659115,
+      "information_threshold_copy_count": 29,
+      "label_count": 29,
+      "live_star_count": 40,
+      "live_star_fraction": 1.0,
+      "live_star_wilson_lower_bound": 0.9123783988027135,
+      "mean_off_common_weight": 0.08863638654114844,
+      "mean_off_common_weight_log2": -3.4959571218513683,
+      "n": 12,
+      "one_dimensional_carrier_star_count": 39,
+      "partition_count": 77,
+      "projected_weighted_degree": 47586297.501458116,
+      "projected_weighted_degree_log2": 25.504042872774175,
+      "reaches_information_threshold": true,
+      "sample_count": 40,
+      "saturation_ratio_against_inverse_n_minus_one": 0.9750002519526328,
+      "sign_blind_certificate_available": false,
+      "status": "sign-blind-certificate-vacuous-at-natural-depth",
+      "target_partition": [
+        5,
+        3,
+        2,
+        1,
+        1
+      ],
+      "two_nontrivial_carrier_star_count": 1
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "exact_absolute_weight_law",
+      "resolution": "Off-diagonal norms come from the closed-form carrier factorization, so degrees are exact rationals rather than measured matrix norms.",
+      "resolved": true
+    },
+    {
+      "obligation": "sign_blind_certificate_dies_at_natural_depth",
+      "resolution": "Deterministic sampling on the natural threshold portfolios shows the projected degree first exceeds the Gershgorin budget at n=8 and then grows monotonically; the mean weight saturates at 1/(n-1).",
+      "resolved": true
+    },
+    {
+      "obligation": "relation_gram_laplacian_equivalence",
+      "resolution": "The signed subspace incidence map reproduces the existing relation Gram exactly and its dual has the same positive spectrum.",
+      "resolved": true
+    },
+    {
+      "obligation": "phase_sensitive_quotient_gap",
+      "resolution": "No lower bound on the positive Laplacian spectrum is proved. This is now the only surviving route to all-depth conditioning.",
+      "resolved": false
+    },
+    {
+      "obligation": "residual_pair_quotient_gap",
+      "resolution": "The exact criterion is still an all-n bound below one on the residual child-span overlap; this module removes a proof technique rather than supplying one.",
+      "resolved": false
+    }
+  ],
+  "scaling_records": [
+    {
+      "gershgorin_budget_log2": 1.0,
+      "information_threshold_copy_count": 16,
+      "measured_saturation_ratio": 0.02490221974206349,
+      "measured_weighted_degree_log2": 2.863653665352302,
+      "n": 8,
+      "phase_sensitive_bound_required": true,
+      "saturated_off_common_weight": 0.14285714285714285,
+      "saturated_weighted_degree_log2": 13.192645077942396,
+      "sign_blind_certificate_possible": false,
+      "status": "sign-blind-route-dead-phase-sensitive-route-open"
+    },
+    {
+      "gershgorin_budget_log2": 1.0,
+      "information_threshold_copy_count": 22,
+      "measured_saturation_ratio": 0.7375364041241497,
+      "measured_weighted_degree_log2": 17.39085978903903,
+      "n": 10,
+      "phase_sensitive_bound_required": true,
+      "saturated_off_common_weight": 0.1111111111111111,
+      "saturated_weighted_degree_log2": 18.830074998557688,
+      "sign_blind_certificate_possible": false,
+      "status": "sign-blind-route-dead-phase-sensitive-route-open"
+    },
+    {
+      "gershgorin_budget_log2": 1.0,
+      "information_threshold_copy_count": 29,
+      "measured_saturation_ratio": 0.9750002519526328,
+      "measured_weighted_degree_log2": 25.504042872774175,
+      "n": 12,
+      "phase_sensitive_bound_required": true,
+      "saturated_off_common_weight": 0.09090909090909091,
+      "saturated_weighted_degree_log2": 25.540568381362704,
+      "sign_blind_certificate_possible": false,
+      "status": "sign-blind-route-dead-phase-sensitive-route-open"
+    },
+    {
+      "gershgorin_budget_log2": 1.0,
+      "information_threshold_copy_count": 45,
+      "measured_saturation_ratio": null,
+      "measured_weighted_degree_log2": null,
+      "n": 16,
+      "phase_sensitive_bound_required": true,
+      "saturated_off_common_weight": 0.06666666666666667,
+      "saturated_weighted_degree_log2": 41.093109404391484,
+      "sign_blind_certificate_possible": false,
+      "status": "sign-blind-route-dead-phase-sensitive-route-open"
+    },
+    {
+      "gershgorin_budget_log2": 1.0,
+      "information_threshold_copy_count": 118,
+      "measured_saturation_ratio": null,
+      "measured_weighted_degree_log2": null,
+      "n": 32,
+      "phase_sensitive_bound_required": true,
+      "saturated_off_common_weight": 0.03225806451612903,
+      "saturated_weighted_degree_log2": 113.04580368961312,
+      "sign_blind_certificate_possible": false,
+      "status": "sign-blind-route-dead-phase-sensitive-route-open"
+    },
+    {
+      "gershgorin_budget_log2": 1.0,
+      "information_threshold_copy_count": 296,
+      "measured_saturation_ratio": null,
+      "measured_weighted_degree_log2": null,
+      "n": 64,
+      "phase_sensitive_bound_required": true,
+      "saturated_off_common_weight": 0.015873015873015872,
+      "saturated_weighted_degree_log2": 290.0227200765001,
+      "sign_blind_certificate_possible": false,
+      "status": "sign-blind-route-dead-phase-sensitive-route-open"
+    },
+    {
+      "gershgorin_budget_log2": 1.0,
+      "information_threshold_copy_count": 717,
+      "measured_saturation_ratio": null,
+      "measured_weighted_degree_log2": null,
+      "n": 128,
+      "phase_sensitive_bound_required": true,
+      "saturated_off_common_weight": 0.007874015748031496,
+      "saturated_weighted_degree_log2": 710.0113153132278,
+      "sign_blind_certificate_possible": false,
+      "status": "sign-blind-route-dead-phase-sensitive-route-open"
+    },
+    {
+      "gershgorin_budget_log2": 1.0,
+      "information_threshold_copy_count": 1684,
+      "measured_saturation_ratio": null,
+      "measured_weighted_degree_log2": null,
+      "n": 256,
+      "phase_sensitive_bound_required": true,
+      "saturated_off_common_weight": 0.00392156862745098,
+      "saturated_weighted_degree_log2": 1676.0056465631412,
+      "sign_blind_certificate_possible": false,
+      "status": "sign-blind-route-dead-phase-sensitive-route-open"
+    },
+    {
+      "gershgorin_budget_log2": 1.0,
+      "information_threshold_copy_count": 3876,
+      "measured_saturation_ratio": null,
+      "measured_weighted_degree_log2": null,
+      "n": 512,
+      "phase_sensitive_bound_required": true,
+      "saturated_off_common_weight": 0.0019569471624266144,
+      "saturated_weighted_degree_log2": 3867.0028205190624,
+      "sign_blind_certificate_possible": false,
+      "status": "sign-blind-route-dead-phase-sensitive-route-open"
+    }
+  ],
+  "status": "sign-blind-multistar-route-killed-phase-sensitive-gap-open",
+  "summary": "Exact off-common weights plus the complete bipartite crossing graph make the sign-blind Gershgorin certificate vacuous from n=8 onward on natural threshold portfolios, with projected weighted degree reaching log2 25.50 at the largest sampled degree. The relation Gram is identified with a projector-weighted orientation Laplacian whose positive spectral gap is now the sole surviving conditioning route.",
+  "theorem_contract": {
+    "certificate_requirement": "Block Gershgorin on the crossing relation Gram needs the absolute weighted degree of every live edge to stay below two.",
+    "crossing_graph": "A sibling merge has a complete bipartite crossing graph, so each edge has exactly 2(2^(j-1)-1) adjacent crossing edges at merge depth j.",
+    "exact_weights": "Every shared-vertex off-diagonal norm is the exact two-carrier reciprocal supplied by the carrier factorization theorem, so the degree is a representation-ring quantity and needs no ambient linear algebra.",
+    "kill": "Weighted degree therefore grows like 2^(j-1)/(n-1), which is Theta(n!/n) at natural depth. No absolute-weight comparison can certify the residual quotient.",
+    "saturation": "As the label count grows every membership block acquires enough factors for Sellke covering, a one-dimensional carrier becomes live in one cluster, and the off-common weight rises to 1/(n-1).",
+    "scope": "This is a negative result about one proof technique plus a reformulation. It does not prove the quotient gap fails, and it does not prove a Laplacian gap.",
+    "surviving_object": "With C the signed subspace incidence map, C^*C is the existing relation Gram and CC^* is the projector-weighted orientation Laplacian Delta = D - A. Their positive spectra coincide, so all-depth conditioning is a subspace connectivity problem."
+  }
+}

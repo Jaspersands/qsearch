@@ -1,0 +1,556 @@
+{
+  "claim_gate": {
+    "all_triple_incidence_count_proved": false,
+    "collision_free_polynomial_factor_norm_bound_proved": false,
+    "fixed_family_common_range_formula_proved": true,
+    "reason": "The exact fixed-family formula is proved and threshold sampling rejects a triple-rarity heuristic but finds a sharp drop by family sizes four and five. Exact all-family counting hits a rapidly growing state space, and exact-intersection incidence does not control near-common directions or upper-bound the projector-sum norm.",
+    "speedup_claim_allowed": false,
+    "tail_sampled_exact_common_ranges_dispersed_by_five": true,
+    "tail_sampled_triple_common_ranges_prevalent": true,
+    "triple_incidence_norm_bound_proved": false,
+    "uniform_projector_sum_norm_bound_proved": false
+  },
+  "created_at": "2026-08-05T21:49:18.267225+00:00",
+  "dynamic_program_complexity_records": [
+    {
+      "completed_step_count": 5,
+      "copy_count": 5,
+      "exact_common_range_fraction": 0.0057373046875,
+      "exact_dynamic_program_completed": true,
+      "n": 6,
+      "peak_merged_state_count": 18784,
+      "state_cap": 600000,
+      "status": "exact-triple-support-dynamic-program",
+      "target_partition": [
+        3,
+        2,
+        1
+      ]
+    },
+    {
+      "completed_step_count": 7,
+      "copy_count": 7,
+      "exact_common_range_fraction": 0.01175689697265625,
+      "exact_dynamic_program_completed": true,
+      "n": 7,
+      "peak_merged_state_count": 508186,
+      "state_cap": 600000,
+      "status": "exact-triple-support-dynamic-program",
+      "target_partition": [
+        3,
+        3,
+        1
+      ]
+    },
+    {
+      "completed_step_count": 7,
+      "copy_count": 11,
+      "exact_common_range_fraction": null,
+      "exact_dynamic_program_completed": false,
+      "n": 8,
+      "peak_merged_state_count": 600001,
+      "state_cap": 600000,
+      "status": "triple-support-state-cap-reached",
+      "target_partition": [
+        4,
+        1,
+        1,
+        1,
+        1
+      ]
+    }
+  ],
+  "falsifiers_triggered": [
+    "Pairwise common ranges are not merely isolated accidents: triple common ranges are statistically prevalent on the declared n=12 threshold targets.",
+    "The naive exact seven-support dynamic program is not a scalable counting architecture.",
+    "Prevalent triple intersections do not form a persistent exact core: sampled four-way incidence is rare and five-way incidence is absent on the declared controls.",
+    "Absence of exact five-way intersections does not bound near-common angles or the projector-sum norm."
+  ],
+  "finite_validations": [
+    {
+      "distinct_orientation_triple_count": 28,
+      "distinct_orientation_triple_with_common_range_count": 0,
+      "exact_fixed_family_formula_validation": true,
+      "formula_mismatch_count": 0,
+      "formula_validation_count": 140,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            4,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_common_range_dimension_residual": 0.0,
+      "n": 5,
+      "orientation_multiset_count_per_target": 20,
+      "status": "exact-fixed-family-common-range-validation",
+      "target_count": 7
+    }
+  ],
+  "headline_metrics": {
+    "all_triple_incidence_exact_count_theorem_count": 0,
+    "collision_free_polynomial_factor_norm_theorem_count": 0,
+    "exact_support_dynamic_program_record_count": 2,
+    "finite_formula_validation_count": 140,
+    "finite_formula_validation_failure_count": 0,
+    "fixed_family_common_range_multiplicity_theorem_count": 1,
+    "maximum_common_range_dimension_residual": 0.0,
+    "maximum_triple_support_merged_state_count": 600001,
+    "sample_count_per_target": 2048,
+    "sampled_prevalent_family_range_record_count": 6,
+    "sampling_record_count": 18,
+    "support_dynamic_program_state_cap_record_count": 1,
+    "tail_copy_count": 29,
+    "tail_first_family_size_with_zero_observed_common_ranges": 5,
+    "tail_maximum_estimated_five_common_range_fraction": 0.0,
+    "tail_maximum_estimated_four_common_range_fraction": 0.05078125,
+    "tail_maximum_estimated_six_common_range_fraction": 0.0,
+    "tail_maximum_five_wilson_95_upper_bound": 0.0018722006050613785,
+    "tail_maximum_four_wilson_95_upper_bound": 0.06115915889511432,
+    "tail_maximum_wilson_95_upper_bound": 0.9579146036640045,
+    "tail_minimum_estimated_triple_common_range_fraction": 0.9306640625,
+    "tail_minimum_wilson_95_lower_bound": 0.9188368685490544,
+    "tail_n": 12,
+    "triple_incidence_norm_theorem_count": 0,
+    "uniform_projector_sum_norm_theorem_count": 0
+  },
+  "sampling_records": [
+    {
+      "all_orientation_triples_counted_exactly": false,
+      "common_range_sample_count": 27,
+      "copy_count": 11,
+      "estimated_common_range_fraction": 0.01318359375,
+      "information_threshold_copy_count": 16,
+      "n": 8,
+      "orientation_family_size": 3,
+      "partition_count": 22,
+      "reaches_information_threshold": false,
+      "sample_count": 2048,
+      "status": "sampled-family-common-range-incidence-low-or-unresolved",
+      "target_partition": [
+        8
+      ],
+      "wilson_95_lower_bound": 0.009076285480360087,
+      "wilson_95_upper_bound": 0.019113737960310025
+    },
+    {
+      "all_orientation_triples_counted_exactly": false,
+      "common_range_sample_count": 68,
+      "copy_count": 11,
+      "estimated_common_range_fraction": 0.033203125,
+      "information_threshold_copy_count": 16,
+      "n": 8,
+      "orientation_family_size": 3,
+      "partition_count": 22,
+      "reaches_information_threshold": false,
+      "sample_count": 2048,
+      "status": "sampled-family-common-range-incidence-low-or-unresolved",
+      "target_partition": [
+        4,
+        1,
+        1,
+        1,
+        1
+      ],
+      "wilson_95_lower_bound": 0.026275609041002804,
+      "wilson_95_upper_bound": 0.041878515742628714
+    },
+    {
+      "all_orientation_triples_counted_exactly": false,
+      "common_range_sample_count": 34,
+      "copy_count": 11,
+      "estimated_common_range_fraction": 0.0166015625,
+      "information_threshold_copy_count": 16,
+      "n": 8,
+      "orientation_family_size": 3,
+      "partition_count": 22,
+      "reaches_information_threshold": false,
+      "sample_count": 2048,
+      "status": "sampled-family-common-range-incidence-low-or-unresolved",
+      "target_partition": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "wilson_95_lower_bound": 0.01190439304727691,
+      "wilson_95_upper_bound": 0.023108769647069538
+    },
+    {
+      "all_orientation_triples_counted_exactly": false,
+      "common_range_sample_count": 1126,
+      "copy_count": 21,
+      "estimated_common_range_fraction": 0.5498046875,
+      "information_threshold_copy_count": 22,
+      "n": 10,
+      "orientation_family_size": 3,
+      "partition_count": 42,
+      "reaches_information_threshold": false,
+      "sample_count": 2048,
+      "status": "sampled-family-common-ranges-prevalent",
+      "target_partition": [
+        10
+      ],
+      "wilson_95_lower_bound": 0.5281843708930544,
+      "wilson_95_upper_bound": 0.5712385153748009
+    },
+    {
+      "all_orientation_triples_counted_exactly": false,
+      "common_range_sample_count": 1269,
+      "copy_count": 21,
+      "estimated_common_range_fraction": 0.61962890625,
+      "information_threshold_copy_count": 22,
+      "n": 10,
+      "orientation_family_size": 3,
+      "partition_count": 42,
+      "reaches_information_threshold": false,
+      "sample_count": 2048,
+      "status": "sampled-family-common-ranges-prevalent",
+      "target_partition": [
+        4,
+        3,
+        3
+      ],
+      "wilson_95_lower_bound": 0.5983976260726602,
+      "wilson_95_upper_bound": 0.6404122478060117
+    },
+    {
+      "all_orientation_triples_counted_exactly": false,
+      "common_range_sample_count": 1099,
+      "copy_count": 21,
+      "estimated_common_range_fraction": 0.53662109375,
+      "information_threshold_copy_count": 22,
+      "n": 10,
+      "orientation_family_size": 3,
+      "partition_count": 42,
+      "reaches_information_threshold": false,
+      "sample_count": 2048,
+      "status": "sampled-family-common-ranges-prevalent",
+      "target_partition": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "wilson_95_lower_bound": 0.5149760622331995,
+      "wilson_95_upper_bound": 0.5581290011990471
+    },
+    {
+      "all_orientation_triples_counted_exactly": false,
+      "common_range_sample_count": 1930,
+      "copy_count": 29,
+      "estimated_common_range_fraction": 0.9423828125,
+      "information_threshold_copy_count": 29,
+      "n": 12,
+      "orientation_family_size": 3,
+      "partition_count": 77,
+      "reaches_information_threshold": true,
+      "sample_count": 2048,
+      "status": "sampled-family-common-ranges-prevalent",
+      "target_partition": [
+        12
+      ],
+      "wilson_95_lower_bound": 0.9314381767827724,
+      "wilson_95_upper_bound": 0.9516709894787649
+    },
+    {
+      "all_orientation_triples_counted_exactly": false,
+      "common_range_sample_count": 1944,
+      "copy_count": 29,
+      "estimated_common_range_fraction": 0.94921875,
+      "information_threshold_copy_count": 29,
+      "n": 12,
+      "orientation_family_size": 3,
+      "partition_count": 77,
+      "reaches_information_threshold": true,
+      "sample_count": 2048,
+      "status": "sampled-family-common-ranges-prevalent",
+      "target_partition": [
+        5,
+        3,
+        1,
+        1,
+        1,
+        1
+      ],
+      "wilson_95_lower_bound": 0.9388408411048856,
+      "wilson_95_upper_bound": 0.9579146036640045
+    },
+    {
+      "all_orientation_triples_counted_exactly": false,
+      "common_range_sample_count": 1906,
+      "copy_count": 29,
+      "estimated_common_range_fraction": 0.9306640625,
+      "information_threshold_copy_count": 29,
+      "n": 12,
+      "orientation_family_size": 3,
+      "partition_count": 77,
+      "reaches_information_threshold": true,
+      "sample_count": 2048,
+      "status": "sampled-family-common-ranges-prevalent",
+      "target_partition": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "wilson_95_lower_bound": 0.9188368685490544,
+      "wilson_95_upper_bound": 0.9408786774141642
+    },
+    {
+      "all_orientation_triples_counted_exactly": false,
+      "common_range_sample_count": 77,
+      "copy_count": 29,
+      "estimated_common_range_fraction": 0.03759765625,
+      "information_threshold_copy_count": 29,
+      "n": 12,
+      "orientation_family_size": 4,
+      "partition_count": 77,
+      "reaches_information_threshold": true,
+      "sample_count": 2048,
+      "status": "sampled-family-common-range-incidence-low-or-unresolved",
+      "target_partition": [
+        12
+      ],
+      "wilson_95_lower_bound": 0.030187298524547608,
+      "wilson_95_upper_bound": 0.046739433870953494
+    },
+    {
+      "all_orientation_triples_counted_exactly": false,
+      "common_range_sample_count": 104,
+      "copy_count": 29,
+      "estimated_common_range_fraction": 0.05078125,
+      "information_threshold_copy_count": 29,
+      "n": 12,
+      "orientation_family_size": 4,
+      "partition_count": 77,
+      "reaches_information_threshold": true,
+      "sample_count": 2048,
+      "status": "sampled-family-common-range-incidence-low-or-unresolved",
+      "target_partition": [
+        5,
+        3,
+        1,
+        1,
+        1,
+        1
+      ],
+      "wilson_95_lower_bound": 0.042085396335995506,
+      "wilson_95_upper_bound": 0.06115915889511432
+    },
+    {
+      "all_orientation_triples_counted_exactly": false,
+      "common_range_sample_count": 80,
+      "copy_count": 29,
+      "estimated_common_range_fraction": 0.0390625,
+      "information_threshold_copy_count": 29,
+      "n": 12,
+      "orientation_family_size": 4,
+      "partition_count": 77,
+      "reaches_information_threshold": true,
+      "sample_count": 2048,
+      "status": "sampled-family-common-range-incidence-low-or-unresolved",
+      "target_partition": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "wilson_95_lower_bound": 0.03149808367474723,
+      "wilson_95_upper_bound": 0.04835285125804372
+    },
+    {
+      "all_orientation_triples_counted_exactly": false,
+      "common_range_sample_count": 0,
+      "copy_count": 29,
+      "estimated_common_range_fraction": 0.0,
+      "information_threshold_copy_count": 29,
+      "n": 12,
+      "orientation_family_size": 5,
+      "partition_count": 77,
+      "reaches_information_threshold": true,
+      "sample_count": 2048,
+      "status": "sampled-family-common-range-incidence-low-or-unresolved",
+      "target_partition": [
+        12
+      ],
+      "wilson_95_lower_bound": 0.0,
+      "wilson_95_upper_bound": 0.0018722006050613785
+    },
+    {
+      "all_orientation_triples_counted_exactly": false,
+      "common_range_sample_count": 0,
+      "copy_count": 29,
+      "estimated_common_range_fraction": 0.0,
+      "information_threshold_copy_count": 29,
+      "n": 12,
+      "orientation_family_size": 5,
+      "partition_count": 77,
+      "reaches_information_threshold": true,
+      "sample_count": 2048,
+      "status": "sampled-family-common-range-incidence-low-or-unresolved",
+      "target_partition": [
+        5,
+        3,
+        1,
+        1,
+        1,
+        1
+      ],
+      "wilson_95_lower_bound": 0.0,
+      "wilson_95_upper_bound": 0.0018722006050613785
+    },
+    {
+      "all_orientation_triples_counted_exactly": false,
+      "common_range_sample_count": 0,
+      "copy_count": 29,
+      "estimated_common_range_fraction": 0.0,
+      "information_threshold_copy_count": 29,
+      "n": 12,
+      "orientation_family_size": 5,
+      "partition_count": 77,
+      "reaches_information_threshold": true,
+      "sample_count": 2048,
+      "status": "sampled-family-common-range-incidence-low-or-unresolved",
+      "target_partition": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "wilson_95_lower_bound": 0.0,
+      "wilson_95_upper_bound": 0.0018722006050613785
+    },
+    {
+      "all_orientation_triples_counted_exactly": false,
+      "common_range_sample_count": 0,
+      "copy_count": 29,
+      "estimated_common_range_fraction": 0.0,
+      "information_threshold_copy_count": 29,
+      "n": 12,
+      "orientation_family_size": 6,
+      "partition_count": 77,
+      "reaches_information_threshold": true,
+      "sample_count": 2048,
+      "status": "sampled-family-common-range-incidence-low-or-unresolved",
+      "target_partition": [
+        12
+      ],
+      "wilson_95_lower_bound": 0.0,
+      "wilson_95_upper_bound": 0.0018722006050613785
+    },
+    {
+      "all_orientation_triples_counted_exactly": false,
+      "common_range_sample_count": 0,
+      "copy_count": 29,
+      "estimated_common_range_fraction": 0.0,
+      "information_threshold_copy_count": 29,
+      "n": 12,
+      "orientation_family_size": 6,
+      "partition_count": 77,
+      "reaches_information_threshold": true,
+      "sample_count": 2048,
+      "status": "sampled-family-common-range-incidence-low-or-unresolved",
+      "target_partition": [
+        5,
+        3,
+        1,
+        1,
+        1,
+        1
+      ],
+      "wilson_95_lower_bound": 0.0,
+      "wilson_95_upper_bound": 0.0018722006050613785
+    },
+    {
+      "all_orientation_triples_counted_exactly": false,
+      "common_range_sample_count": 0,
+      "copy_count": 29,
+      "estimated_common_range_fraction": 0.0,
+      "information_threshold_copy_count": 29,
+      "n": 12,
+      "orientation_family_size": 6,
+      "partition_count": 77,
+      "reaches_information_threshold": true,
+      "sample_count": 2048,
+      "status": "sampled-family-common-range-incidence-low-or-unresolved",
+      "target_partition": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "wilson_95_lower_bound": 0.0,
+      "wilson_95_upper_bound": 0.0018722006050613785
+    }
+  ],
+  "status": "fixed-family-range-theorem-proved-incidence-depth-sampled-localized",
+  "summary": "Proved the fixed-family trivial/sign parity-kernel formula, validated 140 finite triple intersections, and sampled 36864 threshold-family orientation families with explicit confidence intervals across incidence depths three through six.",
+  "theorem_contract": {
+    "alternating_group_mechanism": "distinct membership-pattern coordinates carry independent A_n actions; the residual S_n/A_n action is an F_2 parity constraint",
+    "fixed_family_intersection": "dim(intersection Ran E_j)=d_companion sum over parity-kernel trivial/sign assignments of product pattern multiplicities",
+    "remaining_boundary": "compress exact all-triple support counting or characterize the multiplicity directions shared by many orientation families; incidence alone does not bound the Gram norm",
+    "sampling_scope": "uniform distinct-orientation families of sizes three through six on fixed deterministic source portfolios and three declared target sectors only"
+  }
+}

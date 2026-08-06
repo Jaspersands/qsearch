@@ -31,6 +31,23 @@ Commands:
   python qsearch.py dcp-hashed-fiber-measurement
   python qsearch.py dcp-reference-projection
   python qsearch.py dcp-covariant-pgm
+  python qsearch.py dcp-pgm-gram
+  python qsearch.py dcp-pgm-qsvt
+  python qsearch.py dcp-quenched-occupancy
+  python qsearch.py dcp-fiber-erasure-boundary
+  python qsearch.py dcp-erasure-inversion
+  python qsearch.py dcp-erasure-coherence
+  python qsearch.py dcp-erasure-perturbation
+  python qsearch.py coset-natural-multicopy-pgm
+  python qsearch.py coset-pgm-gain-localization
+  python qsearch.py coset-pgm-average-frame
+  python qsearch.py coset-character-ratios
+  python qsearch.py coset-projector-subpovm
+  python qsearch.py code-wreath-projector-subpovm
+  python qsearch.py code-wreath-subpovm-moments
+  python qsearch.py code-wreath-natural-unequal
+  python qsearch.py code-wreath-moment-word-map
+  python qsearch.py code-wreath-word-map-mixing
   python qsearch.py dcp-contaminated-pgm
   python qsearch.py dcp-subset-sum-bridge
   python qsearch.py dcp-subset-sum-lattice
@@ -141,6 +158,31 @@ Commands:
   python qsearch.py code-rm-search
   python qsearch.py code-rank-metric-search
   python qsearch.py code-incidence-resolve
+  python qsearch.py code-self-dual-search
+  python qsearch.py code-self-dual-local-obstruction
+  python qsearch.py code-self-dual-global-orbit
+  python qsearch.py code-self-dual-hsp
+  python qsearch.py code-self-dual-rowspace-hsp
+  python qsearch.py code-self-dual-automorphisms
+  python qsearch.py code-self-dual-high-order
+  python qsearch.py code-self-dual-sparsity
+  python qsearch.py code-self-dual-wreath
+  python qsearch.py code-self-dual-wreath-hecke
+  python qsearch.py code-self-dual-wreath-pgm
+  python qsearch.py code-self-dual-wreath-carrier
+  python qsearch.py code-self-dual-wreath-orbits
+  python qsearch.py code-self-dual-wreath-harmonics
+  python qsearch.py code-self-dual-wreath-commutant
+  python qsearch.py code-self-dual-wreath-frame-blocks
+  python qsearch.py code-self-dual-wreath-unequal-blocks
+  python qsearch.py code-self-dual-wreath-w3-tuples
+  python qsearch.py code-self-dual-wreath-moments
+  python qsearch.py code-self-dual-wreath-third-moment
+  python qsearch.py code-self-dual-wreath-all-unequal
+  python qsearch.py code-self-dual-wreath-commutators
+  python qsearch.py code-self-dual-wreath-stable-rank
+  python qsearch.py code-self-dual-wreath-typical-portfolio
+  python qsearch.py code-self-dual-wreath-recoupling-transfer
   python qsearch.py code-ag-search
   python qsearch.py code-pg-search
   python qsearch.py code-schur-filtration
@@ -179,6 +221,10 @@ Commands:
   python qsearch.py dcp-subset-sum-fixed-moments
   python qsearch.py dcp-subset-sum-conditioned-tail
   python qsearch.py dcp-subset-sum-growing-moments
+  python qsearch.py dcp-subset-sum-growing-chain
+  python qsearch.py dcp-subset-sum-signed-l2
+  python qsearch.py dcp-subset-sum-sparse-characters
+  python qsearch.py dcp-subset-sum-qtt
   python qsearch.py dcp-subset-sum-embedding-volume
   python qsearch.py dcp-subset-sum-short-relations
   python qsearch.py dcp-subset-sum-carry-relations
@@ -196,6 +242,7 @@ from __future__ import annotations
 
 import argparse
 import json
+from collections import Counter
 from pathlib import Path
 
 from blocker_taxonomy import write_blocker_taxonomy
@@ -223,6 +270,65 @@ from code_low_weight_structure import write_code_low_weight_structure
 from code_profile_collision_search import write_profile_collision_search
 from code_schur_filtration import write_code_schur_filtration_report
 from code_tuple_profile_baseline import write_code_tuple_profile_baseline
+from self_dual_code_boundary_search import write_self_dual_code_boundary
+from self_dual_local_profile_obstruction import write_self_dual_local_obstruction
+from self_dual_global_orbit_audit import write_self_dual_global_orbit_audit
+from self_dual_hsp_applicability import write_self_dual_hsp_applicability
+from self_dual_rowspace_hsp_reduction import write_self_dual_rowspace_hsp_reduction
+from self_dual_automorphism_workbench import write_self_dual_automorphism_workbench
+from self_dual_high_order_automorphism_resolver import (
+    write_self_dual_high_order_automorphism_resolver,
+)
+from self_dual_fixed_order_sparsity_obstruction import (
+    write_self_dual_fixed_order_sparsity_obstruction,
+)
+from self_dual_wreath_spectrum import write_self_dual_wreath_spectrum
+from self_dual_wreath_hecke_audit import write_self_dual_wreath_hecke_audit
+from self_dual_wreath_pgm_polar_audit import (
+    write_self_dual_wreath_pgm_polar_audit,
+)
+from self_dual_wreath_subset_carrier_algebra import (
+    write_self_dual_wreath_subset_carrier_algebra,
+)
+from self_dual_wreath_carrier_orbit_growth import (
+    write_self_dual_wreath_carrier_orbit_growth,
+)
+from self_dual_wreath_harmonic_carrier_schema import (
+    write_self_dual_wreath_harmonic_carrier_schema,
+)
+from self_dual_wreath_commutant_transfer_audit import (
+    write_self_dual_wreath_commutant_transfer_audit,
+)
+from self_dual_wreath_physical_frame_blocks import (
+    write_self_dual_wreath_physical_frame_blocks,
+)
+from self_dual_wreath_unequal_frame_blocks import (
+    write_self_dual_wreath_unequal_frame_blocks,
+)
+from self_dual_wreath_complete_w3_tuple_audit import (
+    write_complete_w3_tuple_audit,
+)
+from self_dual_wreath_character_moments import (
+    write_self_dual_wreath_character_moments,
+)
+from self_dual_wreath_third_moment_contraction import (
+    write_self_dual_wreath_third_moment_contraction,
+)
+from self_dual_wreath_all_unequal_third_moment import (
+    write_self_dual_wreath_all_unequal_third_moment,
+)
+from self_dual_wreath_equal_commutator_audit import (
+    write_self_dual_wreath_equal_commutator_audit,
+)
+from self_dual_wreath_stable_commutator_rank import (
+    write_self_dual_wreath_stable_commutator_rank,
+)
+from self_dual_wreath_typical_partition_portfolio import (
+    write_self_dual_wreath_typical_partition_portfolio,
+)
+from self_dual_wreath_typical_recoupling_transfer import (
+    write_self_dual_wreath_typical_recoupling_transfer,
+)
 from cyclic_code_search import CyclicCodeSearchSpec, write_cyclic_code_search
 from dcp_recurrence_analysis import write_dcp_recurrence_report
 from dcp_bad_register_audit import write_dcp_bad_register_report
@@ -246,6 +352,25 @@ from dcp_subset_sum_measurement_audit import write_subset_sum_measurement_audit
 from dcp_hashed_fiber_measurement_audit import write_hashed_fiber_measurement_audit
 from dcp_reference_projection_audit import write_reference_projection_audit
 from dcp_covariant_pgm_audit import write_covariant_pgm_audit
+from dcp_pgm_gram_block_encoding import write_gram_block_encoding_report
+from dcp_pgm_qsvt_degree_obstruction import (
+    write_qsvt_degree_obstruction_report,
+)
+from dcp_subset_sum_quenched_occupancy_theorem import (
+    write_quenched_occupancy_report,
+)
+from dcp_coherent_fiber_erasure_boundary import (
+    write_coherent_fiber_erasure_boundary_report,
+)
+from dcp_global_erasure_inversion_reduction import (
+    write_global_erasure_inversion_report,
+)
+from dcp_approximate_erasure_coherence_reduction import (
+    write_approximate_erasure_coherence_report,
+)
+from dcp_erasure_perturbation_reduction import (
+    write_erasure_perturbation_report,
+)
 from dcp_contaminated_pgm_audit import write_contaminated_pgm_audit
 from dcp_subset_sum_bridge import write_subset_sum_bridge_audit
 from dcp_subset_sum_lattice_search import write_subset_sum_lattice_search
@@ -264,6 +389,15 @@ from dcp_subset_sum_conditioned_tail_theorem import write_conditioned_tail_theor
 from dcp_subset_sum_growing_order_theorem import write_growing_order_theorem
 from dcp_subset_sum_growing_order_chain_theorem import (
     write_growing_order_chain_theorem,
+)
+from dcp_subset_sum_signed_l2_obstruction import (
+    write_signed_l2_obstruction,
+)
+from dcp_subset_sum_sparse_character_obstruction import (
+    write_sparse_character_obstruction,
+)
+from dcp_subset_sum_qtt_contraction_search import (
+    write_qtt_contraction_search,
 )
 from dcp_subset_sum_embedding_volume_theorem import write_embedding_volume_theorem
 from dcp_subset_sum_short_relation_theorem import write_short_relation_theorem
@@ -335,6 +469,72 @@ from coset_commutant_information_obstruction import (
 )
 from coset_carrier_information_audit import (
     write_carrier_information_audit_report,
+)
+from coset_natural_multicopy_pgm_benchmark import (
+    write_natural_multicopy_pgm_report,
+)
+from coset_pgm_gain_localization import (
+    write_pgm_gain_localization_report,
+)
+from coset_pgm_average_frame_block_encoding import (
+    write_average_frame_block_encoding_report,
+)
+from coset_natural_character_ratio_concentration import (
+    write_natural_character_ratio_concentration_report,
+)
+from coset_covariant_projector_subpovm import (
+    write_covariant_projector_subpovm_report,
+)
+from self_dual_wreath_projector_subpovm_transfer import (
+    write_wreath_projector_subpovm_transfer_report,
+)
+from self_dual_wreath_subpovm_moment_certificate import (
+    write_wreath_subpovm_moment_certificate_report,
+)
+from self_dual_wreath_natural_unequal_dominance import (
+    write_natural_unequal_dominance_report,
+)
+from self_dual_wreath_natural_moment_word_map import (
+    write_natural_moment_word_map_report,
+)
+from self_dual_wreath_word_map_mixing import (
+    write_wreath_word_map_mixing_report,
+)
+from self_dual_wreath_coupled_word_walk_gap import (
+    write_wreath_coupled_word_walk_gap_report,
+)
+from self_dual_wreath_all_unequal_conditioned_kernel import (
+    write_all_unequal_conditioned_kernel_report,
+)
+from self_dual_wreath_global_partition_collision import (
+    write_global_partition_collision_report,
+)
+from self_dual_wreath_collision_free_frame_probe import (
+    write_collision_free_frame_probe_report,
+)
+from self_dual_wreath_character_ratio_contract import (
+    write_character_ratio_contract_report,
+)
+from self_dual_wreath_short_word_profile import (
+    write_short_word_profile_report,
+)
+from self_dual_wreath_mask_hypergraph_reduction import (
+    write_mask_hypergraph_reduction_report,
+)
+from self_dual_wreath_subgroup_twirl_reduction import (
+    write_subgroup_twirl_reduction_report,
+)
+from self_dual_wreath_orientation_fourier_reduction import (
+    write_orientation_fourier_reduction_report,
+)
+from self_dual_wreath_orientation_fusion_moment import (
+    write_orientation_fusion_moment_report,
+)
+from self_dual_wreath_pair_core_carrier_factorization import (
+    write_pair_core_carrier_factorization_report,
+)
+from self_dual_wreath_multistar_degree_obstruction import (
+    write_multistar_degree_obstruction_report,
 )
 from coset_strong_fourier_information_scaling import (
     write_strong_fourier_information_scaling_report,
@@ -466,6 +666,9 @@ from coset_typical_uniform_source_probe import (
 )
 from coset_typical_parity_complete_separator import (
     write_parity_complete_separator_report,
+)
+from coset_typical_parity_class_contraction import (
+    write_parity_class_contraction_report,
 )
 from coset_recoupling_capability_ledger import write_recoupling_capability_report
 from coset_recoupling_mechanism_synthesis import write_recoupling_mechanism_synthesis_report
@@ -1471,6 +1674,332 @@ def command_dcp_covariant_pgm(args: argparse.Namespace) -> int:
     return 0
 
 
+def command_dcp_pgm_gram(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    control_n_values = tuple(
+        int(value.strip())
+        for value in args.control_n_values.split(",")
+        if value.strip()
+    )
+    scaling_n_values = tuple(
+        int(value.strip())
+        for value in args.scaling_n_values.split(",")
+        if value.strip()
+    )
+    register_offsets = tuple(
+        int(value.strip())
+        for value in args.register_offsets.split(",")
+        if value.strip()
+    )
+    payload = write_gram_block_encoding_report(
+        output_path=Path(args.output),
+        write_registry=not args.no_registry,
+        control_n_values=control_n_values,
+        control_trials=args.control_trials,
+        scaling_n_values=scaling_n_values,
+        register_offsets=register_offsets,
+        seed=args.seed,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("DCP PGM Gram block-encoding audit complete")
+    print(f"Artifact: {args.output}")
+    print(
+        "Exact projected Gram controls: "
+        f"{metrics['finite_control_count'] - metrics['finite_control_failure_count']}/"
+        f"{metrics['finite_control_count']}"
+    )
+    print(
+        "Block-encoding normalization log2 slope: "
+        f"{metrics['gram_block_encoding_normalization_log2_slope']}"
+    )
+    print(
+        "Tail generic amplification log2 queries: "
+        f"{metrics['minimum_tail_generic_amplification_log2_queries']:.6g}"
+    )
+    print(
+        "Structured polynomial preconditioners: "
+        f"{metrics['uniform_polynomial_structured_preconditioner_count']}"
+    )
+    print(
+        f"Speedup claim allowed: {payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_dcp_pgm_qsvt(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    exact_n_values = tuple(
+        int(value.strip())
+        for value in args.exact_n_values.split(",")
+        if value.strip()
+    )
+    random_n_values = tuple(
+        int(value.strip())
+        for value in args.random_n_values.split(",")
+        if value.strip()
+    )
+    scaling_n_values = tuple(
+        int(value.strip())
+        for value in args.scaling_n_values.split(",")
+        if value.strip()
+    )
+    payload = write_qsvt_degree_obstruction_report(
+        output_path=Path(args.output),
+        write_registry=not args.no_registry,
+        exact_n_values=exact_n_values,
+        random_n_values=random_n_values,
+        random_trials=args.random_trials,
+        scaling_n_values=scaling_n_values,
+        approximation_error=args.approximation_error,
+        seed=args.seed,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("DCP PGM QSVT degree obstruction complete")
+    print(f"Artifact: {args.output}")
+    print(
+        "Exact lifted sources/failures: "
+        f"{metrics['exact_lifted_source_count']}/"
+        f"{metrics['exact_lifted_source_failure_count']}"
+    )
+    print(
+        "Random singleton-doubleton controls: "
+        f"{metrics['random_source_singleton_doubleton_count']}/"
+        f"{metrics['random_source_control_count']}"
+    )
+    print(
+        "Tail count/amplitude degree lower bounds log2: "
+        f"{metrics['tail_count_encoding_degree_lower_bound_log2']:.6g}/"
+        f"{metrics['tail_amplitude_encoding_degree_lower_bound_log2']:.6g}"
+    )
+    print(
+        "Average-source prevalence theorems: "
+        f"{metrics['average_case_random_source_prevalence_theorem_count']}"
+    )
+    print(
+        f"Speedup claim allowed: {payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_dcp_quenched_occupancy(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    exact_n_values = tuple(
+        int(value.strip())
+        for value in args.exact_n_values.split(",")
+        if value.strip()
+    )
+    scaling_n_values = tuple(
+        int(value.strip())
+        for value in args.scaling_n_values.split(",")
+        if value.strip()
+    )
+    payload = write_quenched_occupancy_report(
+        output_path=Path(args.output),
+        write_registry=not args.no_registry,
+        exact_n_values=exact_n_values,
+        scaling_n_values=scaling_n_values,
+        trials_per_size=args.trials_per_size,
+        seed=args.seed,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("DCP quenched occupancy theorem complete")
+    print(f"Artifact: {args.output}")
+    print(
+        "Mixed-moment certificates/failures: "
+        f"{metrics['mixed_moment_certificate_count']}/"
+        f"{metrics['two_target_transfer_failure_count']}"
+    )
+    print(
+        "Exact source ensembles/failures: "
+        f"{metrics['exact_source_ensemble_control_count']}/"
+        f"{metrics['exact_source_ensemble_control_failure_count']}"
+    )
+    print(
+        "Tail singleton/doubleton fractions: "
+        f"{metrics['tail_mean_singleton_fraction']:.6g}/"
+        f"{metrics['tail_mean_doubleton_fraction']:.6g}"
+    )
+    print(
+        "Quenched Poisson theorems: "
+        f"{metrics['quenched_poisson_occupancy_theorem_count']}"
+    )
+    print(
+        f"Speedup claim allowed: {payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_dcp_fiber_erasure_boundary(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    n_values = tuple(
+        int(value.strip())
+        for value in args.n_values.split(",")
+        if value.strip()
+    )
+    payload = write_coherent_fiber_erasure_boundary_report(
+        output_path=Path(args.output),
+        write_registry=not args.no_registry,
+        n_values=n_values,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("DCP coherent fiber-erasure boundary complete")
+    print(f"Artifact: {args.output}")
+    print(
+        "Access models/reduction certificates: "
+        f"{metrics['access_model_count']}/"
+        f"{metrics['reduction_certificate_count']}"
+    )
+    print(
+        "Black-box lower-bound transfers to subset sum: "
+        f"{metrics['valid_black_box_lower_bound_transfer_to_structured_subset_sum_count']}"
+    )
+    print(
+        "Support-decision/fixed-variable witness reductions: "
+        f"{metrics['proved_target_addressable_support_decision_reduction_count']}/"
+        f"{metrics['proved_fixed_variable_witness_self_reduction_count']}"
+    )
+    print(
+        "Polynomial global collective PGM channels: "
+        f"{metrics['polynomial_global_collective_pgm_channel_count']}"
+    )
+    print(
+        f"Speedup claim allowed: {payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_dcp_erasure_inversion(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    n_values = tuple(
+        int(value.strip())
+        for value in args.n_values.split(",")
+        if value.strip()
+    )
+    payload = write_global_erasure_inversion_report(
+        output_path=Path(args.output),
+        write_registry=not args.no_registry,
+        n_values=n_values,
+        trials_per_size=args.trials_per_size,
+        seed=args.seed,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("DCP global erasure inversion reduction complete")
+    print(f"Artifact: {args.output}")
+    print(
+        "Target-law controls/failures: "
+        f"{metrics['target_law_transfer_control_count']}/"
+        f"{metrics['target_law_transfer_failure_count']}"
+    )
+    print(
+        "Coherent erasure-to-witness reductions: "
+        f"{metrics['proved_coherent_erasure_to_witness_reduction_count']}"
+    )
+    print(
+        "Arbitrary PGM-to-witness reductions: "
+        f"{metrics['proved_arbitrary_pgm_to_witness_reduction_count']}"
+    )
+    print(
+        "Poisson asymptotic domination constant: "
+        f"{metrics['poisson_asymptotic_domination_constant']:.6g}"
+    )
+    print(
+        f"Speedup claim allowed: {payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_dcp_erasure_coherence(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_approximate_erasure_coherence_report(
+        output_path=Path(args.output),
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("DCP target-dependent erasure coherence reduction complete")
+    print(f"Artifact: {args.output}")
+    print(
+        "Finite controls/failures: "
+        f"{metrics['finite_control_count']}/"
+        f"{metrics['finite_control_failure_count']}"
+    )
+    print(
+        "Erasure-to-witness reductions: "
+        f"{metrics['inverse_polynomial_erasure_to_witness_reduction_count']}"
+    )
+    print(
+        "Approximate-isometry/arbitrary-PGM reductions: "
+        f"{metrics['proved_approximate_isometry_perturbation_bound_count']}/"
+        f"{metrics['proved_arbitrary_full_rank_pgm_reduction_count']}"
+    )
+    print(
+        f"Speedup claim allowed: {payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_dcp_erasure_perturbation(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_erasure_perturbation_report(
+        output_path=Path(args.output),
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("DCP erasure perturbation reduction complete")
+    print(f"Artifact: {args.output}")
+    print(
+        "Scaling/polynomial-precision rows: "
+        f"{metrics['scaling_row_count']}/"
+        f"{metrics['polynomial_precision_sufficient_row_count']}"
+    )
+    print(
+        "Operator/average-only/arbitrary-PGM reductions: "
+        f"{metrics['operator_norm_perturbation_theorem_count']}/"
+        f"{metrics['proved_average_only_channel_perturbation_count']}/"
+        f"{metrics['proved_arbitrary_full_rank_pgm_reduction_count']}"
+    )
+    print(
+        f"Speedup claim allowed: {payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
 def command_dcp_contaminated_pgm(args: argparse.Namespace) -> int:
     initialize_seed_registry(overwrite=False)
     n_values = [int(value.strip()) for value in args.n_values.split(",") if value.strip()]
@@ -2016,6 +2545,177 @@ def command_dcp_subset_sum_growing_chain(args: argparse.Namespace) -> int:
         "Final near-log/signed obstructions: "
         f"{metrics['proved_final_near_log_window_obstruction_count']}/"
         f"{metrics['proved_signed_statistic_obstruction_count']}"
+    )
+    print(f"Speedup claim allowed: {payload['claim_gate']['speedup_claim_allowed']}")
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_dcp_subset_sum_signed_l2(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    n_values = [
+        int(value.strip())
+        for value in args.n_values.split(",")
+        if value.strip()
+    ]
+    support_powers = [
+        int(value.strip())
+        for value in args.support_powers.split(",")
+        if value.strip()
+    ]
+    payload = write_signed_l2_obstruction(
+        n_values=n_values,
+        support_powers=support_powers,
+        log_multiplier=args.log_multiplier,
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("DCP conditional signed-L2 obstruction complete")
+    print(
+        "Artifact: research/classical_baselines/"
+        "dcp_subset_sum_signed_l2_obstruction.json"
+    )
+    print(
+        "Exact controls/pairs/failures: "
+        f"{metrics['exact_control_count']}/"
+        f"{metrics['exact_assignment_pair_count']}/"
+        f"{metrics['exact_control_failure_count']}"
+    )
+    print(
+        "Unit-minor/pair-independence/variance theorems: "
+        f"{metrics['unit_minor_theorem_count']}/"
+        f"{metrics['conditional_pairwise_independence_theorem_count']}/"
+        f"{metrics['conditional_signed_variance_identity_theorem_count']}"
+    )
+    print(
+        "Polynomial-support negligible-deviation theorems: "
+        f"{metrics['polynomial_support_negligible_deviation_theorem_count']}"
+    )
+    print(
+        "High-label-adaptive/dense/nonlinear obstructions: "
+        f"{metrics['proved_high_label_adaptive_signed_obstruction_count']}/"
+        f"{metrics['proved_dense_implicit_signed_obstruction_count']}/"
+        f"{metrics['proved_nonlinear_signed_obstruction_count']}"
+    )
+    print(f"Speedup claim allowed: {payload['claim_gate']['speedup_claim_allowed']}")
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_dcp_subset_sum_sparse_characters(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    n_values = [
+        int(value.strip())
+        for value in args.n_values.split(",")
+        if value.strip()
+    ]
+    payload = write_sparse_character_obstruction(
+        n_values=n_values,
+        register_offset=args.register_offset,
+        amplitude_gap_power=args.amplitude_gap_power,
+        selected_frequency_power=args.selected_frequency_power,
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("DCP adaptive sparse-character obstruction complete")
+    print(
+        "Artifact: research/classical_baselines/"
+        "dcp_subset_sum_sparse_character_obstruction.json"
+    )
+    print(
+        "Exact targets/failures/root-moment identities: "
+        f"{metrics['exact_fourier_target_count']}/"
+        f"{metrics['exact_control_failure_count']}/"
+        f"{metrics['exact_root_moment_identity_count']}"
+    )
+    print(
+        "Low/high/adaptive theorem counts: "
+        f"{metrics['low_order_annihilation_theorem_count']}/"
+        f"{metrics['high_order_simultaneous_moment_theorem_count']}/"
+        f"{metrics['adaptive_sparse_selection_theorem_count']}"
+    )
+    print(
+        "Finite conclusive source rows: "
+        f"{metrics['finite_source_failure_bound_below_one_row_count']}/"
+        f"{metrics['scaling_row_count']}"
+    )
+    print(
+        "Dense/general lower-bound closures: "
+        f"{metrics['proved_dense_implicit_character_obstruction_count']}/"
+        f"{metrics['proved_general_computational_lower_bound_count']}"
+    )
+    print(f"Speedup claim allowed: {payload['claim_gate']['speedup_claim_allowed']}")
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_dcp_subset_sum_qtt(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    n_values = [
+        int(value.strip())
+        for value in args.n_values.split(",")
+        if value.strip()
+    ]
+    payload = write_qtt_contraction_search(
+        n_values=n_values,
+        register_offset=args.register_offset,
+        trials_per_size=args.trials_per_size,
+        random_order_count=args.random_order_count,
+        registered_bond_power=args.registered_bond_power,
+        seed=args.seed,
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("DCP subset-sum QTT dense-contraction search complete")
+    print(
+        "Artifact: research/classical_baselines/"
+        "dcp_subset_sum_qtt_contraction_search.json"
+    )
+    print(
+        "Instances/unfoldings/max n: "
+        f"{metrics['instance_count']}/"
+        f"{metrics['unfolding_row_count']}/"
+        f"{metrics['maximum_n_bits']}"
+    )
+    print(
+        "Tail registered-cap survivors/best source/control ranks: "
+        f"{metrics['tail_source_registered_cap_survivor_count']}/"
+        f"{metrics['tail_best_source_required_rank']}/"
+        f"{metrics['tail_best_permuted_required_rank']}"
+    )
+    print(
+        "Fitted log2 required-rank slope: "
+        f"{metrics['fitted_log2_required_rank_slope_per_n']:.6g}"
+    )
+    print(
+        "Tail raw/source-excess-over-zero/control coverage: "
+        f"{metrics['tail_best_source_qtt_legal_coverage']:.6g}/"
+        f"{metrics['tail_mean_source_qtt_coverage_excess_over_zero_frequency_constant']:.6g}/"
+        f"{metrics['tail_mean_source_qtt_coverage_excess_over_permuted']:.6g}"
+    )
+    print(
+        "Tail inverse-polynomial nontrivial excess instances: "
+        f"{metrics['tail_inverse_polynomial_nontrivial_coverage_excess_instance_count']}"
+    )
+    print(
+        "Asymptotic bond theorems/dense contractions/witness decoders: "
+        f"{metrics['proved_asymptotic_qtt_bond_lower_bound_count']}/"
+        f"{metrics['proved_polynomial_dense_character_contraction_count']}/"
+        f"{metrics['polynomial_witness_decoder_count']}"
     )
     print(f"Speedup claim allowed: {payload['claim_gate']['speedup_claim_allowed']}")
     print(f"Registry valid: {validation['valid']}")
@@ -3449,6 +4149,1198 @@ def command_code_family_search(args: argparse.Namespace) -> int:
     return 0
 
 
+def command_code_self_dual_search(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_self_dual_code_boundary(write_registry=not args.no_registry)
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Self-dual code boundary search complete")
+    print("Artifact: research/code_equivalence/self_dual_code_boundary_search.json")
+    print(f"Families: {metrics['family_count']}")
+    print(f"Maximum dimension/length: {metrics['maximum_dimension']}/{metrics['maximum_length']}")
+    print(f"Growing-hull families: {metrics['growing_hull_family_count']}")
+    print(f"Scalable collision pairs: {metrics['scalable_collision_pair_count']}")
+    print(f"Exact non-equivalent finite boundaries: {metrics['exact_nonequivalent_boundary_count']}")
+    print(
+        "Incidence cap/timeout debt: "
+        f"{metrics['incidence_cap_count']}/{metrics['incidence_timeout_count']}"
+    )
+    print(f"Status: {payload['status']}")
+    print(f"Summary: {payload['summary']}")
+    print(f"Registry valid: {validation['valid']}")
+    if args.verbose:
+        for record in payload["family_records"]:
+            statuses = Counter(audit["status"] for audit in record["collision_audits"])
+            print(
+                f"- {record['spec']['id']} | {record['status']} | "
+                f"signature_classes={record['scalable_signature_class_count']} | {dict(statuses)}"
+            )
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_self_dual_local_obstruction(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_self_dual_local_obstruction(write_registry=not args.no_registry)
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Self-dual local-profile obstruction complete")
+    print("Artifact: research/code_equivalence/self_dual_local_profile_obstruction.json")
+    print(f"Instances: {metrics['instance_count']}")
+    print(f"Full order-collapse instances: {metrics['full_order_collapse_instance_count']}")
+    print(f"Full order-collapse families: {metrics['full_order_collapse_family_count']}")
+    print(f"Theorem-covered subsets: {metrics['theorem_covered_subset_count']}")
+    print(f"Control failures: {metrics['theorem_control_failure_count']}")
+    print(f"Status: {payload['status']}")
+    print(f"Summary: {payload['summary']}")
+    print(f"Registry valid: {validation['valid']}")
+    if args.verbose:
+        for record in payload["family_records"]:
+            print(
+                f"- {record['family_id']} | {record['status']} | "
+                f"common_order={record['maximum_certified_common_collapse_order']} "
+                f"full_order_instances={record['full_order_collapse_instance_count']}"
+            )
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_self_dual_global_orbit(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_self_dual_global_orbit_audit(write_registry=not args.no_registry)
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Self-dual global orbit and Construction-A audit complete")
+    print("Artifact: research/code_equivalence/self_dual_global_orbit_audit.json")
+    print(f"Instances: {metrics['instance_count']}")
+    print(
+        "Largest estimated information-set count: "
+        f"2^{metrics['maximum_estimated_log2_information_set_count']:.2f}"
+    )
+    print(f"Sampled exact equivalence witnesses: {metrics['sampled_equivalence_witness_count']}")
+    print(f"Sampled misses retained as debt: {metrics['no_intersection_proof_debt_count']}")
+    print(
+        "Construction-A single-class families: "
+        f"{metrics['construction_a_single_invariant_class_family_count']}"
+    )
+    print(f"Frame-preserving reverse reductions: {metrics['frame_preserving_reverse_reduction_count']}")
+    print(f"Status: {payload['status']}")
+    print(f"Summary: {payload['summary']}")
+    print(f"Registry valid: {validation['valid']}")
+    if args.verbose:
+        for record in payload["family_records"]:
+            print(
+                f"- {record['family_id']} | {record['status']} | "
+                f"log2_info_sets={record['maximum_estimated_log2_information_sets']} "
+                f"lattice_classes={record['construction_a_invariant_class_count']} "
+                f"witnesses/misses={record['sampled_equivalence_witness_count']}/"
+                f"{record['no_intersection_proof_debt_count']}"
+            )
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_self_dual_hsp(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_self_dual_hsp_applicability(write_registry=not args.no_registry)
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Self-dual code-equivalence HSP applicability audit complete")
+    print("Artifact: research/representation/self_dual_code_hsp_applicability.json")
+    print(f"Families: {metrics['family_count']}")
+    print(f"Published dimension-gate failures: {metrics['dimension_condition_fail_family_count']}")
+    print(f"Certified single-coset no-go families: {metrics['single_coset_no_go_certified_family_count']}")
+    print(f"Largest dimension-condition log2 gap: {metrics['maximum_dimension_condition_log2_gap']}")
+    print(f"Largest wreath-HSP group log2 size: {metrics['maximum_log2_wreath_hsp_group_size']}")
+    print(f"Explicit measurements: {metrics['explicit_single_coset_measurement_count'] + metrics['explicit_multicoset_measurement_count']}")
+    print(f"Status: {payload['status']}")
+    print(f"Summary: {payload['summary']}")
+    print(f"Registry valid: {validation['valid']}")
+    if args.verbose:
+        for record in payload["family_records"]:
+            print(
+                f"- {record['family_id']} | {record['status']} | "
+                f"condition_gap={record['dimension_condition_log2_gap']} "
+                f"group_qubits={record['minimum_group_register_qubits']} "
+                f"obvious_transposition_instances={record['obvious_transposition_instance_count']}"
+            )
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_self_dual_rowspace_hsp(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_self_dual_rowspace_hsp_reduction(write_registry=not args.no_registry)
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Self-dual rowspace-canonical HSP reduction complete")
+    print("Artifact: research/representation/self_dual_rowspace_hsp_reduction.json")
+    print(f"Families with GL factor eliminated: {metrics['gl_factor_eliminated_family_count']}")
+    print(f"Maximum eliminated log2 group size: {metrics['maximum_eliminated_group_log2_size']}")
+    print(f"Hidden-shift control failures: {metrics['hidden_shift_control_failure_count']}")
+    print(f"Obvious nonrigid instances: {metrics['obvious_nonrigid_instance_count']}")
+    print(f"Rigidity-certified instances: {metrics['rigidity_certified_instance_count']}")
+    print(f"GI-type no-go-certified instances: {metrics['gi_type_order_two_no_go_certified_instance_count']}")
+    print(f"Status: {payload['status']}")
+    print(f"Summary: {payload['summary']}")
+    print(f"Registry valid: {validation['valid']}")
+    if args.verbose:
+        for record in payload["family_records"]:
+            print(
+                f"- {record['family_id']} | {record['status']} | "
+                f"GL-eliminated={record['eliminated_group_log2_size']} "
+                f"rowspace_group={record['rowspace_wreath_log2_size']} "
+                f"nonrigid={record['obvious_nonrigid_instance_count']}"
+            )
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_self_dual_automorphisms(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_self_dual_automorphism_workbench(
+        write_registry=not args.no_registry
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Self-dual automorphism workbench complete")
+    print("Artifact: research/code_equivalence/self_dual_automorphism_workbench.json")
+    print(f"Tail instances: {metrics['instance_count']}")
+    print(f"Rigidity-certified instances: {metrics['rigidity_certified_instance_count']}")
+    print(f"Explicit automorphism instances: {metrics['explicit_automorphism_instance_count']}")
+    print(f"Unresolved instances: {metrics['unresolved_instance_count']}")
+    print(
+        "GI-type single-register no-go instances: "
+        f"{metrics['gi_type_single_register_no_go_certified_instance_count']}"
+    )
+    print(f"Status: {payload['status']}")
+    print(f"Summary: {payload['summary']}")
+    print(f"Registry valid: {validation['valid']}")
+    if args.verbose:
+        for record in payload["family_records"]:
+            print(
+                f"- {record['family_id']} | {record['status']} | "
+                f"rigid={record['rigidity_certified_instance_count']} "
+                f"nonrigid={record['explicit_automorphism_instance_count']} "
+                f"unresolved={record['unresolved_instance_count']}"
+            )
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_self_dual_high_order(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_self_dual_high_order_automorphism_resolver(
+        write_registry=not args.no_registry
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    strata = payload["combined_tail_strata"]
+    print("Self-dual high-order automorphism resolver complete")
+    print(
+        "Artifact: "
+        "research/code_equivalence/self_dual_high_order_automorphism_resolver.json"
+    )
+    print(f"Target instances: {metrics['target_instance_count']}")
+    print(
+        "Resolved rigidity instances: "
+        f"{metrics['resolved_rigidity_instance_count']}"
+    )
+    print(
+        "Remaining unresolved instances: "
+        f"{metrics['remaining_unresolved_instance_count']}"
+    )
+    print(
+        "Combined rigid/nonrigid/unresolved: "
+        f"{strata['rigidity_certified_instance_count']}/"
+        f"{strata['explicit_nonrigid_instance_count']}/"
+        f"{strata['unresolved_instance_count']}"
+    )
+    print(f"Status: {payload['status']}")
+    print(f"Summary: {payload['summary']}")
+    print(f"Registry valid: {validation['valid']}")
+    if args.verbose:
+        for record in payload["family_records"]:
+            print(
+                f"- {record['family_id']} | {record['status']} | "
+                f"resolved={record['resolved_rigidity_instance_count']} "
+                f"remaining={record['remaining_unresolved_instance_count']} "
+                f"weight={record['maximum_required_support_weight']}"
+            )
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_self_dual_sparsity(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_self_dual_fixed_order_sparsity_obstruction(
+        write_registry=not args.no_registry
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Self-dual fixed-order sparsity obstruction complete")
+    print(
+        "Artifact: "
+        "research/code_equivalence/self_dual_fixed_order_sparsity_obstruction.json"
+    )
+    print(f"Scaling lengths: {metrics['scaling_length_count']}")
+    print(
+        "Weight-ten expected-below-one rows: "
+        f"{metrics['weight_10_expected_below_one_length_count']}"
+    )
+    print(
+        "Entropy-half relative-weight threshold: "
+        f"{metrics['entropy_half_relative_weight_threshold']}"
+    )
+    print(
+        "Asymptotic fixed-order rigidity certificates: "
+        f"{metrics['asymptotic_fixed_order_rigidity_certificate_count']}"
+    )
+    print(f"Status: {payload['status']}")
+    print(f"Summary: {payload['summary']}")
+    print(f"Registry valid: {validation['valid']}")
+    if args.verbose:
+        for record in payload["observed_comparisons"]:
+            print(
+                f"- {record['family_id']} weight<={record['maximum_weight']} | "
+                f"observed={record['mean_observed_support_count']} "
+                f"expected={record['ensemble_expected_support_count']} "
+                f"ratio={record['observed_to_expected_ratio']}"
+            )
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_self_dual_wreath(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_self_dual_wreath_spectrum(
+        write_registry=not args.no_registry
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Self-dual wreath-product spectrum complete")
+    print("Artifact: research/representation/self_dual_wreath_spectrum.json")
+    print(f"Exact spectrum rows: {metrics['exact_record_count']}")
+    print(f"Maximum n: {metrics['maximum_n']}")
+    print(
+        "Weak-Fourier zero-information rows: "
+        f"{metrics['weak_fourier_zero_information_record_count']}"
+    )
+    print(
+        "Maximum coarse zero-error copy lower bound: "
+        f"{metrics['maximum_coarse_zero_error_copy_lower_bound']}"
+    )
+    print(
+        "Growing-copy transforms/POVMs/decoders: "
+        f"{metrics['growing_copy_diagonal_action_transform_count']}/"
+        f"{metrics['carrier_sensitive_covariant_povm_count']}/"
+        f"{metrics['polynomial_hidden_permutation_decoder_count']}"
+    )
+    print(f"Status: {payload['status']}")
+    print(f"Summary: {payload['summary']}")
+    print(f"Registry valid: {validation['valid']}")
+    if args.verbose:
+        for record in payload["records"]:
+            print(
+                f"- n={record['n']} | {record['status']} | "
+                f"log2|hidden|={record['log2_bridge_ensemble_size']} "
+                f"holevo={record['exact_one_copy_holevo_bits']} "
+                f"copies>={record['coarse_zero_error_copy_lower_bound']}"
+            )
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_self_dual_wreath_hecke(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_self_dual_wreath_hecke_audit(
+        write_registry=not args.no_registry
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Self-dual wreath Hecke/Gelfand audit complete")
+    print("Artifact: research/representation/self_dual_wreath_hecke_audit.json")
+    print(
+        "Centralizer Gelfand proofs: "
+        f"{metrics['centralizer_gelfand_pair_proof_count']}/"
+        f"{metrics['record_count']}"
+    )
+    print(
+        "Actual hidden-subgroup non-Gelfand rows: "
+        f"{metrics['actual_hidden_subgroup_non_gelfand_count']}"
+    )
+    print(
+        "Pairwise scalar-kernel collapses: "
+        f"{metrics['pairwise_hs_kernel_collapse_count']}/"
+        f"{metrics['record_count']}"
+    )
+    print(
+        "Maximum copy threshold/subset orbits: "
+        f"{metrics['maximum_information_threshold_copy_count']}/"
+        f"{metrics['maximum_register_subset_orbit_count']}"
+    )
+    print(
+        "Operator reductions/POVMs/decoders: "
+        f"{metrics['operator_valued_kcopy_frame_reduction_count']}/"
+        f"{metrics['carrier_sensitive_covariant_povm_count']}/"
+        f"{metrics['polynomial_hidden_permutation_decoder_count']}"
+    )
+    print(f"Status: {payload['status']}")
+    print(f"Summary: {payload['summary']}")
+    print(f"Registry valid: {validation['valid']}")
+    if args.verbose:
+        for record in payload["records"]:
+            print(
+                f"- n={record['n']} | {record['status']} | "
+                f"p(n)={record['partition_count']} "
+                f"H-multiplicity>={record['actual_hidden_subgroup_multiplicity_lower_bound']} "
+                f"copies={record['information_threshold_copy_count']}"
+            )
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_self_dual_wreath_pgm(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_self_dual_wreath_pgm_polar_audit(
+        write_registry=not args.no_registry
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Self-dual wreath PGM polar audit complete")
+    print(
+        "Artifact: "
+        "research/representation/self_dual_wreath_pgm_polar_audit.json"
+    )
+    print(
+        "Operator polar reductions/LCU contracts: "
+        f"{metrics['operator_frame_polar_reduction_count']}/"
+        f"{metrics['average_frame_lcu_contract_count']}"
+    )
+    print(f"Maximum copy count: {metrics['maximum_copy_count']}")
+    print(
+        "Maximum generic polar/Grover log2 charges: "
+        f"{metrics['maximum_generic_polar_resolution_log2_charge']}/"
+        f"{metrics['maximum_optimistic_grover_log2_candidate_queries']}"
+    )
+    print(
+        "Preconditioners/frame inverses/POVM circuits/decoders: "
+        f"{metrics['uniform_polynomial_structured_preconditioner_count']}/"
+        f"{metrics['polynomial_frame_inverse_count']}/"
+        f"{metrics['carrier_sensitive_povm_circuit_count']}/"
+        f"{metrics['polynomial_hidden_permutation_decoder_count']}"
+    )
+    print(f"Status: {payload['status']}")
+    print(f"Summary: {payload['summary']}")
+    print(f"Registry valid: {validation['valid']}")
+    if args.verbose:
+        for record in payload["records"]:
+            print(
+                f"- n={record['n']} | copies={record['copy_count']} "
+                f"effective-rank={record['average_frame_effective_rank_fraction']} "
+                f"polar-charge={record['generic_polar_resolution_log2_charge']} "
+                f"grover-charge={record['optimistic_grover_log2_candidate_queries']}"
+            )
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_self_dual_wreath_carrier(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_self_dual_wreath_subset_carrier_algebra(
+        write_registry=not args.no_registry
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Self-dual wreath subset-carrier algebra audit complete")
+    print(
+        "Artifact: "
+        "research/representation/self_dual_wreath_subset_carrier_algebra.json"
+    )
+    print(
+        "Commuting controls/symmetrized noncommuting rows: "
+        f"{metrics['commuting_control_count']}/"
+        f"{metrics['symmetrized_orbit_noncommutation_count']}"
+    )
+    print(
+        "First noncommuting copy count: "
+        f"{metrics['first_symmetrized_noncommuting_copy_count']}"
+    )
+    print(
+        "Maximum truncated depth/rank/support: "
+        f"{metrics['maximum_truncated_word_depth']}/"
+        f"{metrics['maximum_truncated_algebra_rank_lower_bound']}/"
+        f"{metrics['maximum_truncated_word_support_size']}"
+    )
+    print(
+        "Carrier transforms/preconditioners/frame inverses/decoders: "
+        f"{metrics['uniform_noncommutative_carrier_block_transform_count']}/"
+        f"{metrics['polynomial_structured_frame_preconditioner_count']}/"
+        f"{metrics['polynomial_frame_inverse_count']}/"
+        f"{metrics['polynomial_hidden_permutation_decoder_count']}"
+    )
+    print(f"Status: {payload['status']}")
+    print(f"Summary: {payload['summary']}")
+    print(f"Registry valid: {validation['valid']}")
+    if args.verbose:
+        for record in payload["commutator_records"]:
+            print(
+                f"- {record['id']} | commutes={record['commutes']} "
+                f"support={record['commutator_support_size']} "
+                f"norm2={record['commutator_l2_squared_exact']}"
+            )
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_self_dual_wreath_orbits(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_self_dual_wreath_carrier_orbit_growth(
+        write_registry=not args.no_registry
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Self-dual wreath carrier-orbit growth audit complete")
+    print(
+        "Artifact: "
+        "research/representation/self_dual_wreath_carrier_orbit_growth.json"
+    )
+    print(
+        "Exact/total scaling rows: "
+        f"{metrics['exact_record_count']}/{metrics['record_count']}"
+    )
+    print(
+        "Factorial hidden-label orbit lower bounds: "
+        f"{metrics['factorial_hidden_label_orbit_lower_bound_count']}"
+    )
+    print(
+        "Maximum carrier/subset-profile log2 counts: "
+        f"{metrics['maximum_log2_full_wreath_orbit_lower_bound']}/"
+        f"{metrics['maximum_log2_subset_profile_upper_bound']}"
+    )
+    print(
+        "Harmonic transforms/preconditioners/frame inverses/decoders: "
+        f"{metrics['compressed_harmonic_block_transform_count']}/"
+        f"{metrics['polynomial_structured_frame_preconditioner_count']}/"
+        f"{metrics['polynomial_frame_inverse_count']}/"
+        f"{metrics['polynomial_hidden_permutation_decoder_count']}"
+    )
+    print(f"Status: {payload['status']}")
+    print(f"Summary: {payload['summary']}")
+    print(f"Registry valid: {validation['valid']}")
+    if args.verbose:
+        for record in payload["records"]:
+            print(
+                f"- n={record['n']} depth={record['word_depth']} | "
+                f"log2-orbits>={record['log2_full_wreath_orbit_lower_bound']} "
+                f"log2-subsets<={record['log2_subset_intersection_profile_upper_bound']} "
+                f"factorial={record['factorial_lower_bound']}"
+            )
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_self_dual_wreath_harmonics(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_self_dual_wreath_harmonic_carrier_schema(
+        write_registry=not args.no_registry
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Self-dual wreath harmonic carrier schema audit complete")
+    print(
+        "Artifact: "
+        "research/representation/self_dual_wreath_harmonic_carrier_schema.json"
+    )
+    print(
+        "Harmonic/Burnside identity verifications: "
+        f"{metrics['harmonic_burnside_identity_verification_count']}/"
+        f"{metrics['exact_scaling_record_count']}"
+    )
+    print(
+        "Exact blocks/non-multiplicity-free blocks: "
+        f"{metrics['exact_block_record_count']}/"
+        f"{metrics['non_multiplicity_free_block_count']}"
+    )
+    print(
+        "Maximum certified block/multiplicity log2 lower bounds: "
+        f"{metrics['maximum_log2_certified_block_coordinate_lower_bound']}/"
+        f"{metrics['maximum_log2_certified_multiplicity_lower_bound']}"
+    )
+    print(
+        "Internal transforms/sparse products/preconditioners/decoders: "
+        f"{metrics['internal_kronecker_basis_transform_count']}/"
+        f"{metrics['sparse_carrier_product_rule_count']}/"
+        f"{metrics['polynomial_structured_frame_preconditioner_count']}/"
+        f"{metrics['polynomial_hidden_permutation_decoder_count']}"
+    )
+    print(f"Status: {payload['status']}")
+    print(f"Summary: {payload['summary']}")
+    print(f"Registry valid: {validation['valid']}")
+    if args.verbose:
+        for record in payload["scaling_records"]:
+            print(
+                f"- n={record['n']} exact={record['exact']} | "
+                f"p(n)={record['partition_count']} "
+                f"log2-block>="
+                f"{record['log2_certified_maximum_block_coordinate_lower_bound']} "
+                f"identity={record['harmonic_burnside_identity_verified']}"
+            )
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_self_dual_wreath_commutant(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_self_dual_wreath_commutant_transfer_audit(
+        write_registry=not args.no_registry
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Self-dual wreath commutant transfer audit complete")
+    print(
+        "Artifact: "
+        "research/representation/self_dual_wreath_commutant_transfer_audit.json"
+    )
+    print(
+        "Restricted all-n gap theorems/coordinates: "
+        f"{metrics['restricted_all_n_inverse_polynomial_gap_theorem_count']}/"
+        f"{metrics['restricted_invariant_matrix_coordinate_count']}"
+    )
+    print(
+        "Maximum exact nontrivial sectors/unresolved states: "
+        f"{metrics['maximum_exact_nontrivial_multiplicity_sector_count']}/"
+        f"{metrics['maximum_exact_unresolved_internal_multiplicity_state_count']}"
+    )
+    print(
+        "Maximum -log2 restricted coordinate coverage: "
+        f"{metrics['maximum_negative_log2_restricted_coordinate_coverage_upper_bound']}"
+    )
+    print(
+        "General gaps/cross-source rules/frame sectors/decoders: "
+        f"{metrics['general_equal_source_gap_theorem_count']}/"
+        f"{metrics['cross_source_carrier_mixing_rule_count']}/"
+        f"{metrics['carrier_frame_invariant_subspace_count']}/"
+        f"{metrics['polynomial_hidden_permutation_decoder_count']}"
+    )
+    print(f"Status: {payload['status']}")
+    print(f"Summary: {payload['summary']}")
+    print(f"Registry valid: {validation['valid']}")
+    if args.verbose:
+        for record in payload["records"]:
+            print(
+                f"- n={record['n']} exact={record['exact']} | "
+                f"gap={record['normalized_gap']} "
+                f"-log2-coverage="
+                f"{record['negative_log2_restricted_coordinate_coverage_upper_bound']} "
+                f"unresolved="
+                f"{record['unresolved_internal_multiplicity_state_count']}"
+            )
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_self_dual_wreath_frame_blocks(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_self_dual_wreath_physical_frame_blocks(
+        write_registry=not args.no_registry
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Self-dual wreath physical frame-block probe complete")
+    print(
+        "Artifact: "
+        "research/representation/self_dual_wreath_physical_frame_blocks.json"
+    )
+    print(
+        "Blocks/information-threshold blocks: "
+        f"{metrics['record_count']}/"
+        f"{metrics['information_threshold_block_count']}"
+    )
+    print(
+        "Maximum dimension/distinct eigenvalues/condition number: "
+        f"{metrics['maximum_block_dimension']}/"
+        f"{metrics['maximum_distinct_eigenvalue_count']}/"
+        f"{metrics['maximum_support_condition_number']}"
+    )
+    print(
+        "Unequal blocks/all-n recurrences/preconditioners/decoders: "
+        f"{metrics['unequal_pair_physical_block_count']}/"
+        f"{metrics['uniform_all_n_spectral_recurrence_count']}/"
+        f"{metrics['polynomial_structured_frame_preconditioner_count']}/"
+        f"{metrics['polynomial_hidden_permutation_decoder_count']}"
+    )
+    print(f"Status: {payload['status']}")
+    print(f"Summary: {payload['summary']}")
+    print(f"Registry valid: {validation['valid']}")
+    if args.verbose:
+        for record in payload["records"]:
+            print(
+                f"- n={record['n']} lambda={record['partition']} "
+                f"k={record['copy_count']} minus={record['minus_sign_count']} | "
+                f"rank={record['support_rank']}/{record['block_dimension']} "
+                f"min={record['minimum_positive_eigenvalue']} "
+                f"kappa={record['support_condition_number']}"
+            )
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_self_dual_wreath_unequal_blocks(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_self_dual_wreath_unequal_frame_blocks(
+        write_registry=not args.no_registry
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Self-dual wreath unequal-pair frame-block probe complete")
+    print(
+        "Artifact: "
+        "research/representation/self_dual_wreath_unequal_frame_blocks.json"
+    )
+    print(
+        "Blocks/collective spectra/information-threshold blocks: "
+        f"{metrics['record_count']}/"
+        f"{metrics['collective_nontrivial_spectrum_count']}/"
+        f"{metrics['information_threshold_unequal_block_count']}"
+    )
+    print(
+        "Maximum dimension/distinct eigenvalues/condition number: "
+        f"{metrics['maximum_block_dimension']}/"
+        f"{metrics['maximum_distinct_eigenvalue_count']}/"
+        f"{metrics['maximum_support_condition_number']}"
+    )
+    print(
+        "Mixed tuples/all-n recurrences/preconditioners/decoders: "
+        f"{metrics['mixed_physical_irrep_tuple_block_count']}/"
+        f"{metrics['uniform_all_n_spectral_recurrence_count']}/"
+        f"{metrics['polynomial_structured_frame_preconditioner_count']}/"
+        f"{metrics['polynomial_hidden_permutation_decoder_count']}"
+    )
+    print(f"Status: {payload['status']}")
+    print(f"Summary: {payload['summary']}")
+    print(f"Registry valid: {validation['valid']}")
+    if args.verbose:
+        for record in payload["records"]:
+            print(
+                f"- n={record['n']} lambda={record['left_partition']} "
+                f"mu={record['right_partition']} k={record['copy_count']} | "
+                f"rank={record['support_rank']}/{record['block_dimension']} "
+                f"distinct={record['distinct_eigenvalue_count']} "
+                f"kappa={record['support_condition_number']}"
+            )
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_self_dual_wreath_w3_tuples(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_complete_w3_tuple_audit(
+        write_registry=not args.no_registry
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Complete W_3 physical tuple audit complete")
+    print(
+        "Artifact: "
+        "research/representation/self_dual_wreath_complete_w3_tuple_audit.json"
+    )
+    print(
+        "Irreps/tuples/naturally occupied tuples: "
+        f"{metrics['physical_irrep_count']}/"
+        f"{metrics['unordered_threshold_tuple_count']}/"
+        f"{metrics['naturally_occupied_threshold_tuple_count']}"
+    )
+    print(
+        "Natural mass/kernel mass/well-conditioned mass: "
+        f"{metrics['natural_tuple_mass_sum']}/"
+        f"{metrics['natural_mass_in_kernel_blocks']}/"
+        f"{metrics['natural_mass_with_condition_number_at_most_four']}"
+    )
+    print(
+        "Minimum positive eigenvalue/maximum condition number: "
+        f"{metrics['minimum_naturally_occupied_positive_eigenvalue']}/"
+        f"{metrics['maximum_naturally_occupied_support_condition_number']}"
+    )
+    print(
+        "All-n recurrences/coherent inverses/harmonic transforms/decoders: "
+        f"{metrics['uniform_all_n_character_moment_recurrence_count']}/"
+        f"{metrics['coherent_blockwise_frame_inverse_count']}/"
+        f"{metrics['hidden_label_harmonic_transform_count']}/"
+        f"{metrics['polynomial_hidden_permutation_decoder_count']}"
+    )
+    print(f"Status: {payload['status']}")
+    print(f"Summary: {payload['summary']}")
+    print(f"Registry valid: {validation['valid']}")
+    if args.verbose:
+        worst = sorted(
+            (
+                record
+                for record in payload["tuple_records"]
+                if record["naturally_occupied"]
+            ),
+            key=lambda record: (
+                record["support_condition_number"] or 0,
+                record["aggregate_natural_probability"],
+            ),
+            reverse=True,
+        )[:10]
+        for record in worst:
+            print(
+                f"- labels={record['label_ids']} "
+                f"mass={record['aggregate_natural_probability']} "
+                f"rank={record['support_rank']}/{record['block_dimension']} "
+                f"kappa={record['support_condition_number']}"
+            )
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_self_dual_wreath_moments(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_self_dual_wreath_character_moments(
+        write_registry=not args.no_registry
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Self-dual wreath character-moment audit complete")
+    print(
+        "Artifact: "
+        "research/representation/self_dual_wreath_character_moments.json"
+    )
+    print(
+        "Validated W_3 moments/failures: "
+        f"{metrics['w3_validated_tuple_moment_count']}/"
+        f"{metrics['w3_failed_tuple_moment_count']}"
+    )
+    print(
+        "Second-moment rows/max n/class terms: "
+        f"{metrics['second_moment_scaling_record_count']}/"
+        f"{metrics['maximum_second_moment_n']}/"
+        f"{metrics['maximum_partition_class_term_count']}"
+    )
+    print(
+        "Third-moment barriers/polynomial contractions/all-moment recurrences: "
+        f"{metrics['third_moment_factorial_orbit_barrier_count']}/"
+        f"{metrics['polynomial_third_moment_contraction_count']}/"
+        f"{metrics['all_moment_spectral_recurrence_count']}"
+    )
+    print(
+        "Support projectors/pseudoinverses/decoders: "
+        f"{metrics['coherent_support_projector_count']}/"
+        f"{metrics['coherent_blockwise_frame_pseudoinverse_count']}/"
+        f"{metrics['polynomial_hidden_permutation_decoder_count']}"
+    )
+    print(f"Status: {payload['status']}")
+    print(f"Summary: {payload['summary']}")
+    print(f"Registry valid: {validation['valid']}")
+    if args.verbose:
+        for record in payload["w3_validation_records"]:
+            print(
+                f"- moment={record['moment_power']} "
+                f"tuples={record['tuple_count']} "
+                f"residual={record['maximum_absolute_residual']}"
+            )
+        for record in payload["scaling_records"]:
+            print(
+                f"- n={record['n']} portfolio={record['portfolio_id']} "
+                f"k={record['copy_count']} "
+                f"log2-effective-rank="
+                f"{record['log2_effective_rank_fraction']}"
+            )
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_self_dual_wreath_third_moment(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_self_dual_wreath_third_moment_contraction(
+        write_registry=not args.no_registry
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Self-dual wreath third-moment contraction complete")
+    print(
+        "Artifact: research/representation/"
+        "self_dual_wreath_third_moment_contraction.json"
+    )
+    print(
+        "Distribution/moment validations failed: "
+        f"{metrics['failed_distribution_validation_count']}/"
+        f"{metrics['failed_moment_validation_count']}"
+    )
+    print(
+        "Scaling max n/k/states: "
+        f"{metrics['maximum_scaling_n']}/"
+        f"{metrics['maximum_scaling_copy_count']}/"
+        f"{metrics['maximum_bivariate_state_count']}"
+    )
+    print(
+        "Polynomial special/all-sector contractions: "
+        f"{metrics['exact_polynomial_third_moment_contraction_count']}/"
+        f"{metrics['all_physical_irrep_sector_contraction_count']}"
+    )
+    print(
+        "Support gaps/pseudoinverses/decoders: "
+        f"{metrics['support_gap_theorem_count']}/"
+        f"{metrics['coherent_blockwise_frame_pseudoinverse_count']}/"
+        f"{metrics['polynomial_hidden_permutation_decoder_count']}"
+    )
+    print(f"Status: {payload['status']}")
+    print(f"Summary: {payload['summary']}")
+    print(f"Registry valid: {validation['valid']}")
+    if args.verbose:
+        for record in payload["scaling_records"]:
+            print(
+                f"- n={record['n']} k={record['copy_count']} "
+                f"support={record['distribution_support_size']} "
+                f"states={record['bivariate_state_count']} "
+                f"log2-normalized-m3="
+                f"{record['log2_normalized_third_moment']}"
+            )
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_self_dual_wreath_all_unequal(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_self_dual_wreath_all_unequal_third_moment(
+        write_registry=not args.no_registry
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Self-dual wreath all-unequal third-moment audit complete")
+    print(
+        "Artifact: research/representation/"
+        "self_dual_wreath_all_unequal_third_moment.json"
+    )
+    print(
+        "Kernel/moment validation failures: "
+        f"{metrics['failed_class_kernel_validation_count']}/"
+        f"{metrics['failed_unequal_moment_validation_count']}"
+    )
+    print(
+        "Max n/partitions/class triples/kernel terms: "
+        f"{metrics['maximum_class_contraction_n']}/"
+        f"{metrics['maximum_partition_count']}/"
+        f"{metrics['maximum_class_triple_count']}/"
+        f"{metrics['maximum_character_kernel_term_bound']}"
+    )
+    print(
+        "Unequal/equal/all-sector contractions: "
+        f"{metrics['arbitrary_mixed_unequal_tuple_contraction_count']}/"
+        f"{metrics['equal_pair_commutator_contraction_count']}/"
+        f"{metrics['all_physical_irrep_sector_contraction_count']}"
+    )
+    print(
+        "Commutator counterexamples/min n: "
+        f"{metrics['commutator_class_counterexample_count']}/"
+        f"{metrics['minimum_commutator_counterexample_n']}"
+    )
+    print(f"Status: {payload['status']}")
+    print(f"Summary: {payload['summary']}")
+    print(f"Registry valid: {validation['valid']}")
+    if args.verbose:
+        witness = payload["commutator_counterexample"]
+        print(
+            "- equal class triple "
+            f"{witness['left_cycle_type']}/"
+            f"{witness['right_cycle_type']}/"
+            f"{witness['relative_cycle_type']} has commutators "
+            f"{witness['first_commutator_cycle_type']} and "
+            f"{witness['second_commutator_cycle_type']}"
+        )
+        for record in payload["scaling_records"]:
+            print(
+                f"- n={record['n']} k={record['copy_count']} "
+                f"p(n)={record['partition_count']} "
+                f"nonzero-triples={record['nonzero_class_triple_count']}"
+            )
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_self_dual_wreath_commutators(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_self_dual_wreath_equal_commutator_audit(
+        write_registry=not args.no_registry
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Self-dual wreath equal-commutator audit complete")
+    print(
+        "Artifact: research/representation/"
+        "self_dual_wreath_equal_commutator_audit.json"
+    )
+    print(
+        "Pure validations/failures/max n: "
+        f"{metrics['pure_commutator_validation_count']}/"
+        f"{metrics['failed_pure_commutator_validation_count']}/"
+        f"{metrics['maximum_pure_commutator_scaling_n']}"
+    )
+    print(
+        "Refined kernels/max n/pairs/quadruples: "
+        f"{metrics['finite_refined_kernel_count']}/"
+        f"{metrics['maximum_refined_kernel_n']}/"
+        f"{metrics['maximum_refined_kernel_explicit_pair_count']}/"
+        f"{metrics['maximum_refined_class_quadruple_support_count']}"
+    )
+    print(
+        "Pure/mixed/polynomial-kernel contractions: "
+        f"{metrics['exact_pure_commutator_frobenius_contraction_count']}/"
+        f"{metrics['mixed_class_commutator_contraction_count']}/"
+        f"{metrics['polynomial_refined_kernel_construction_count']}"
+    )
+    print(f"Status: {payload['status']}")
+    print(f"Summary: {payload['summary']}")
+    print(f"Registry valid: {validation['valid']}")
+    if args.verbose:
+        for record in payload["refined_kernel_records"]:
+            print(
+                f"- n={record['n']} pairs={record['explicit_pair_count']} "
+                f"triples={record['class_triple_support_count']} "
+                f"quadruples={record['class_quadruple_support_count']} "
+                f"split={record['split_class_triple_count']}"
+            )
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_self_dual_wreath_stable_rank(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_self_dual_wreath_stable_commutator_rank(
+        write_registry=not args.no_registry
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Self-dual wreath stable-partition rank audit complete")
+    print(
+        "Artifact: research/representation/"
+        "self_dual_wreath_stable_commutator_rank.json"
+    )
+    print(
+        "Rank controls/max n/rank/support: "
+        f"{metrics['finite_rank_record_count']}/"
+        f"{metrics['maximum_rank_control_n']}/"
+        f"{metrics['maximum_stable_feature_algebra_rank']}/"
+        f"{metrics['maximum_refined_kernel_support_count']}"
+    )
+    print(
+        "Mass records/max n/min one-copy log2 mass: "
+        f"{metrics['mass_scaling_record_count']}/"
+        f"{metrics['maximum_mass_scaling_n']}/"
+        f"{metrics['minimum_log2_one_copy_physical_stable_mass']}"
+    )
+    print(
+        "Vanishing theorem/typical coverage/typical contraction: "
+        f"{metrics['fixed_tail_vanishing_mass_theorem_count']}/"
+        f"{metrics['typical_sector_coverage_count']}/"
+        f"{metrics['polynomial_typical_four_class_contraction_count']}"
+    )
+    print(f"Status: {payload['status']}")
+    print(f"Summary: {payload['summary']}")
+    print(f"Registry valid: {validation['valid']}")
+    if args.verbose:
+        for record in payload["rank_records"]:
+            print(
+                f"- n={record['n']} descriptors="
+                f"{record['physical_descriptor_count']} "
+                f"ranks={record['modular_rank_by_degree']} "
+                f"support={record['refined_kernel_support_count']}"
+            )
+        for record in payload["mass_records"]:
+            if record["tail_budget"] == 2:
+                print(
+                    f"- n={record['n']} b=2 "
+                    f"log2-physical-mass="
+                    f"{record['log2_one_copy_physical_label_mass']} "
+                    f"log2-all-k="
+                    f"{record['log2_all_threshold_labels_stable_mass']}"
+                )
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_self_dual_wreath_typical_portfolio(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_self_dual_wreath_typical_partition_portfolio(
+        write_registry=not args.no_registry
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Self-dual wreath typical-partition portfolio audit complete")
+    print(
+        "Artifact: research/representation/"
+        "self_dual_wreath_typical_partition_portfolio.json"
+    )
+    print(
+        "Catalog records/max n/partitions: "
+        f"{metrics['catalog_record_count']}/"
+        f"{metrics['maximum_catalog_n']}/"
+        f"{metrics['maximum_partition_count']}"
+    )
+    print(
+        "90% catalog/max-atom lower bound: "
+        f"{metrics['maximum_ninety_percent_catalog_count']}/"
+        f"{metrics['maximum_ninety_percent_atom_lower_bound']}"
+    )
+    print(
+        "Typical rank controls/max rank/support: "
+        f"{metrics['finite_typical_rank_record_count']}/"
+        f"{metrics['maximum_typical_feature_algebra_rank']}/"
+        f"{metrics['maximum_typical_refined_kernel_support_count']}"
+    )
+    print(
+        "Catalog no-go/uniform rules/typical contractions: "
+        f"{metrics['constant_mass_polynomial_catalog_no_go_theorem_count']}/"
+        f"{metrics['uniform_partition_description_recoupling_rule_count']}/"
+        f"{metrics['polynomial_typical_four_class_contraction_count']}"
+    )
+    print(f"Status: {payload['status']}")
+    print(f"Summary: {payload['summary']}")
+    print(f"Registry valid: {validation['valid']}")
+    if args.verbose:
+        for record in payload["catalog_records"]:
+            if record["target_source_mass"] == "9/10":
+                print(
+                    f"- n={record['n']} p(n)={record['partition_count']} "
+                    f"catalog={record['catalog_partition_count']} "
+                    f"physical-mass="
+                    f"{record['exact_physical_pair_label_mass']}"
+                )
+        for record in payload["rank_records"]:
+            print(
+                f"- rank n={record['n']} selected="
+                f"{record['selected_partition_count']} "
+                f"ranks={record['modular_rank_by_degree']} "
+                f"support={record['refined_kernel_support_count']}"
+            )
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_self_dual_wreath_recoupling_transfer(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_self_dual_wreath_typical_recoupling_transfer(
+        write_registry=not args.no_registry
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Self-dual wreath typical recoupling transfer audit complete")
+    print(
+        "Artifact: research/representation/"
+        "self_dual_wreath_typical_recoupling_transfer.json"
+    )
+    print(
+        "Transfers/valid partial/missing blockers: "
+        f"{metrics['capability_transfer_record_count']}/"
+        f"{metrics['valid_partial_primitive_transfer_count']}/"
+        f"{metrics['decoder_blocking_missing_primitive_count']}"
+    )
+    print(
+        "Internal transforms/associators/four-class contractions: "
+        f"{metrics['internal_kronecker_transform_count']}/"
+        f"{metrics['kcopy_associator_count']}/"
+        f"{metrics['mixed_four_class_contraction_count']}"
+    )
+    print(
+        "Fixed collisions/max natural mass/end-to-end algorithms: "
+        f"{metrics['fixed_separator_exact_collision_count']}/"
+        f"{metrics['maximum_exact_collision_natural_source_pair_mass']}/"
+        f"{metrics['new_end_to_end_quantum_algorithm_count']}"
+    )
+    print(
+        "Parity-complete n=8 exact scalar obstructions: "
+        f"{metrics['parity_complete_n8_exact_scalar_obstruction_count']}"
+    )
+    print(f"Status: {payload['status']}")
+    print(f"Summary: {payload['summary']}")
+    print(f"Registry valid: {validation['valid']}")
+    if args.verbose:
+        for record in payload["capability_records"]:
+            print(
+                f"- {record['id']} count={record['source_count']} "
+                f"status={record['transfer_status']} "
+                f"blocks={record['blocks_decoder']}"
+            )
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
 def command_tensor_observables(args: argparse.Namespace) -> int:
     initialize_seed_registry(overwrite=False)
     pair_ids = [item.strip() for item in args.pairs.split(",") if item.strip()]
@@ -4121,6 +6013,1011 @@ def command_coset_carrier_information_audit(
     print(
         "Maximum product-basis information: "
         f"{metrics['maximum_product_young_basis_mutual_information_bits']:.6g} bits"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_coset_natural_multicopy_pgm(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    copy_counts = tuple(
+        int(value.strip())
+        for value in args.copy_counts.split(",")
+        if value.strip()
+    )
+    payload = write_natural_multicopy_pgm_report(
+        n=args.n,
+        transposition_count=args.transposition_count,
+        copy_counts=copy_counts,
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Natural-input multi-copy carrier PGM benchmark complete")
+    print(
+        "Artifact: research/representation/"
+        "coset_natural_multicopy_pgm_benchmark.json"
+    )
+    print(
+        "Finite collective information-gain rows: "
+        f"{metrics['finite_collective_information_gain_row_count']}"
+    )
+    print(
+        "Maximum gain over product PGM: "
+        f"{metrics['maximum_global_information_gain_over_product_pgm_bits']:.6g} bits"
+    )
+    print(
+        "Maximum gain over separate Young basis: "
+        f"{metrics['maximum_global_information_gain_over_separate_young_bits']:.6g} bits"
+    )
+    print(
+        "Scalable PGM circuits/decoders: "
+        f"{metrics['uniform_polynomial_global_pgm_circuit_count']}/"
+        f"{metrics['polynomial_hidden_involution_decoder_count']}"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_coset_pgm_gain_localization(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_pgm_gain_localization_report(
+        n=args.n,
+        transposition_count=args.transposition_count,
+        copy_count=args.copy_count,
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Natural PGM gain localization complete")
+    print(
+        "Artifact: research/representation/"
+        "coset_pgm_gain_localization.json"
+    )
+    print(
+        "Positive branches/source mass: "
+        f"{metrics['positive_information_gain_branch_count']}/"
+        f"{metrics['positive_gain_natural_source_probability']:.6g}"
+    )
+    print(
+        "80% gain branch count/source mass: "
+        f"{metrics['gain_80_percent_branch_count']}/"
+        f"{metrics['gain_80_percent_natural_source_probability']:.6g}"
+    )
+    print(
+        "Maximum frame condition/interpolation degree: "
+        f"{metrics['maximum_frame_condition_number']:.6g}/"
+        f"{metrics['maximum_exact_inverse_root_interpolation_degree_upper_bound']}"
+    )
+    print(
+        "Uniform harmonic frame encodings: "
+        f"{metrics['uniform_harmonic_average_frame_block_encoding_count']}"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_coset_pgm_average_frame(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    scaling_n_values = tuple(
+        int(value.strip())
+        for value in args.scaling_n_values.split(",")
+        if value.strip()
+    )
+    payload = write_average_frame_block_encoding_report(
+        n=args.n,
+        transposition_count=args.transposition_count,
+        copy_count=args.copy_count,
+        scaling_n_values=scaling_n_values,
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Coset PGM average-frame block-encoding audit complete")
+    print(
+        "Artifact: research/representation/"
+        "coset_pgm_average_frame_block_encoding.json"
+    )
+    print(
+        "Subset/LCU finite failures: "
+        f"{metrics['finite_subset_expansion_failure_count']}/"
+        f"{metrics['finite_projected_lcu_failure_count']}"
+    )
+    print(
+        "Conditional superpolynomial amplification rows: "
+        f"{metrics['conditional_superpolynomial_generic_amplification_row_count']}/"
+        f"{metrics['scaling_record_count']}"
+    )
+    print(
+        "Tail generic sqrt-amplification log2 bound: "
+        f"{metrics['tail_log2_generic_sqrt_amplification_lower_bound']:.6g}"
+    )
+    print(
+        "Structured amplifiers/decoders: "
+        f"{metrics['polynomial_structured_spectral_amplification_count']}/"
+        f"{metrics['polynomial_hidden_involution_decoder_count']}"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_coset_character_ratios(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    finite_n_values = tuple(
+        int(value.strip())
+        for value in args.finite_n_values.split(",")
+        if value.strip()
+    )
+    scaling_n_values = tuple(
+        int(value.strip())
+        for value in args.scaling_n_values.split(",")
+        if value.strip()
+    )
+    payload = write_natural_character_ratio_concentration_report(
+        finite_n_values=finite_n_values,
+        scaling_n_values=scaling_n_values,
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Natural-source character-ratio concentration complete")
+    print(
+        "Artifact: research/representation/"
+        "coset_natural_character_ratio_concentration.json"
+    )
+    print(
+        "Moment/source-mass failures: "
+        f"{metrics['finite_column_orthogonality_failure_count']}/"
+        f"{metrics['finite_natural_source_mass_failure_count']}"
+    )
+    print(
+        "Inverse-polynomial tuple-envelope rows: "
+        f"{metrics['inverse_polynomial_tuple_envelope_row_count']}/"
+        f"{metrics['scaling_record_count']}"
+    )
+    print(
+        "Tail tuple failure log2 upper bound: "
+        f"{metrics['tail_tuple_failure_log2_upper_bound']:.6g}"
+    )
+    print(
+        "PGM circuits/decoders: "
+        f"{metrics['pgm_measurement_circuit_count']}/"
+        f"{metrics['polynomial_hidden_involution_decoder_count']}"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_coset_projector_subpovm(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    copy_counts = tuple(
+        int(value.strip())
+        for value in args.copy_counts.split(",")
+        if value.strip()
+    )
+    payload = write_covariant_projector_subpovm_report(
+        n=args.n,
+        transposition_count=args.transposition_count,
+        copy_counts=copy_counts,
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Whitening-free covariant projector sub-POVM audit complete")
+    print(
+        "Artifact: research/representation/"
+        "coset_covariant_projector_subpovm.json"
+    )
+    print(
+        "Tail information/conclusive probability: "
+        f"{metrics['tail_subpovm_mutual_information_bits']:.6g}/"
+        f"{metrics['tail_subpovm_conclusive_probability']:.6g}"
+    )
+    print(
+        "Tail gain over product PGM: "
+        f"{metrics['tail_subpovm_information_gain_over_product_pgm_bits']:.6g} bits"
+    )
+    print(
+        "Uniform circuits/compressed outcomes/decoders: "
+        f"{metrics['uniform_covariant_natural_subpovm_circuit_count']}/"
+        f"{metrics['compressed_hidden_label_outcome_count']}/"
+        f"{metrics['polynomial_hidden_involution_decoder_count']}"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_wreath_projector_subpovm(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_wreath_projector_subpovm_transfer_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Physical wreath projector sub-POVM transfer complete")
+    print(
+        "Artifact: research/representation/"
+        "self_dual_wreath_projector_subpovm_transfer.json"
+    )
+    print(
+        "Transfer theorem/tail moment-only log2 bound: "
+        f"{metrics['wreath_projector_subpovm_transfer_theorem_count']}/"
+        f"{metrics['tail_moment_only_conclusive_log2_lower_bound']:.6g}"
+    )
+    print(
+        "Direct dilation tail conclusive log2/structured maximal dilations: "
+        f"{metrics['tail_direct_uniform_projector_conclusive_log2_probability']:.6g}/"
+        f"{metrics['structured_maximal_effect_dilation_count']}"
+    )
+    print(
+        "Selected threshold blocks/inverse-condition floor: "
+        f"{metrics['selected_information_threshold_block_count']}/"
+        f"{metrics['minimum_selected_inverse_condition_conclusive_floor']:.6g}"
+    )
+    print(
+        "All-sector conditions/circuits/outcomes/decoders: "
+        f"{metrics['natural_all_sector_polynomial_condition_theorem_count']}/"
+        f"{metrics['uniform_wreath_covariant_subpovm_circuit_count']}/"
+        f"{metrics['compressed_permutation_outcome_transform_count']}/"
+        f"{metrics['polynomial_hidden_permutation_decoder_count']}"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_wreath_subpovm_moments(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    moment_orders = tuple(
+        int(value.strip())
+        for value in args.moment_orders.split(",")
+        if value.strip()
+    )
+    payload = write_wreath_subpovm_moment_certificate_report(
+        moment_orders=moment_orders,
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Wreath sub-POVM moment certificate complete")
+    print(
+        "Artifact: research/representation/"
+        "self_dual_wreath_subpovm_moment_certificate.json"
+    )
+    print(
+        "Exact/order-4/order-16 natural conclusive: "
+        f"{metrics['exact_w3_natural_average_conclusive_probability']:.6g}/"
+        f"{metrics['order_four_certified_natural_average_conclusive_lower_bound']:.6g}/"
+        f"{metrics['order_sixteen_certified_natural_average_conclusive_lower_bound']:.6g}"
+    )
+    print(
+        "Tail factor-two moment order: "
+        f"{metrics['tail_factor_two_moment_order_upper_bound']}"
+    )
+    print(
+        "Equal-sector bypass/growing all-unequal contractions/"
+        "all-order word reduction/growing word contraction/concentration/"
+        "maximal dilations/decoders: "
+        f"{metrics['natural_source_equal_sector_bypass_theorem_count']}/"
+        f"{metrics['growing_order_all_unequal_contraction_count']}/"
+        f"{metrics['all_order_natural_word_map_reduction_count']}/"
+        f"{metrics['growing_order_word_map_contraction_count']}/"
+        f"{metrics['natural_tuple_moment_concentration_theorem_count']}/"
+        f"{metrics['structured_maximal_effect_dilation_count']}/"
+        f"{metrics['polynomial_hidden_permutation_decoder_count']}"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_wreath_natural_unequal(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_natural_unequal_dominance_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Natural all-unequal wreath-sector reduction complete")
+    print(
+        "Artifact: research/representation/"
+        "self_dual_wreath_natural_unequal_dominance.json"
+    )
+    print(
+        "Exact controls/max n/source-law failures: "
+        f"{metrics['exact_collision_control_count']}/"
+        f"{metrics['maximum_exact_control_n']}/"
+        f"{metrics['failed_source_law_identity_count']}"
+    )
+    print(
+        "Tail equal/any-equal/all-unequal probabilities: "
+        f"{metrics['tail_equal_label_probability']:.6g}/"
+        f"{metrics['tail_any_equal_label_probability']:.6g}/"
+        f"{metrics['tail_all_unequal_tuple_probability']:.6g}"
+    )
+    print(
+        "Natural bypass/growing unequal contraction/decoder: "
+        f"{metrics['equal_commutator_natural_critical_path_bypass_count']}/"
+        f"{metrics['growing_order_all_unequal_contraction_count']}/"
+        f"{metrics['polynomial_hidden_permutation_decoder_count']}"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_wreath_moment_word_map(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_natural_moment_word_map_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Natural wreath moment word-map reduction complete")
+    print(
+        "Artifact: research/representation/"
+        "self_dual_wreath_natural_moment_word_map.json"
+    )
+    print(
+        "Character/W3 validation failures: "
+        f"{metrics['failed_character_sequence_count']}/"
+        f"{metrics['failed_w3_spectrum_validation_count']}"
+    )
+    print(
+        "All-order reductions/irrep sums removed: "
+        f"{metrics['all_order_source_averaged_word_map_reduction_count']}/"
+        f"{metrics['physical_irrep_sum_eliminated_count']}"
+    )
+    print(
+        "Tail order/log2 explicit sequences/growing contractions/"
+        "concentration: "
+        f"{metrics['tail_required_moment_order']}/"
+        f"{metrics['tail_log2_explicit_bridge_sequence_count']:.6g}/"
+        f"{metrics['growing_order_word_map_contraction_count']}/"
+        f"{metrics['natural_tuple_moment_concentration_theorem_count']}"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_wreath_word_map_mixing(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_wreath_word_map_mixing_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Natural wreath word-map lazy-walk mixing complete")
+    print(
+        "Artifact: research/representation/"
+        "self_dual_wreath_word_map_mixing.json"
+    )
+    print(
+        "Lazy-walk controls/failures/mean-mixing theorems: "
+        f"{metrics['lazy_walk_validation_count']}/"
+        f"{metrics['failed_lazy_walk_validation_count']}/"
+        f"{metrics['single_walk_mean_mixing_theorem_count']}"
+    )
+    print(
+        "Tail log2 error ratio/kth-moment interval width: "
+        f"{metrics['tail_log2_error_to_stationary_ratio_upper_bound']:.6g}/"
+        f"{metrics['tail_log2_unresolved_kth_moment_interval_width']:.6g}"
+    )
+    print(
+        "Coupled contractions/concentration/conclusive theorems: "
+        f"{metrics['coupled_k_walk_contraction_count']}/"
+        f"{metrics['word_map_concentration_theorem_count']}/"
+        f"{metrics['natural_average_inverse_polynomial_conclusive_theorem_count']}"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_wreath_coupled_word_gap(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_wreath_coupled_word_walk_gap_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Coupled wreath word-walk gap audit complete")
+    print(
+        "Artifact: research/representation/"
+        "self_dual_wreath_coupled_word_walk_gap.json"
+    )
+    print(
+        "Subgroup/moment validation failures: "
+        f"{metrics['bridge_subgroup_validation_failure_count']}/"
+        f"{metrics['exact_coupled_moment_validation_failure_count']}"
+    )
+    print(
+        "Coupled gap/transient-to-stationary log2 ratio: "
+        f"{metrics['tail_coupled_spectral_gap_lower_bound']:.6g}/"
+        f"{metrics['tail_log2_transient_to_stationary_ratio_upper_bound']:.6g}"
+    )
+    print(
+        "Moment-root/second-moment scale/gap in bits: "
+        f"{metrics['tail_log2_normalized_moment_root_upper_bound']:.6g}/"
+        f"{metrics['tail_log2_second_moment_eigenvalue_scale']:.6g}/"
+        f"{metrics['tail_log2_root_to_second_moment_scale_gap']:.6g}"
+    )
+    print(
+        "Coupled contractions/conditioned kernels/conclusive theorems: "
+        f"{metrics['coupled_k_walk_contraction_count']}/"
+        f"{metrics['typical_all_unequal_conditioned_kernel_count']}/"
+        f"{metrics['natural_average_inverse_polynomial_conclusive_theorem_count']}"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_wreath_conditioned_kernel(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_all_unequal_conditioned_kernel_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("All-unequal conditioned wreath kernel audit complete")
+    print(
+        "Artifact: research/representation/"
+        "self_dual_wreath_all_unequal_conditioned_kernel.json"
+    )
+    print(
+        "Kernel/word/annealed validation failures: "
+        f"{metrics['conditioned_kernel_validation_failure_count']}/"
+        f"{metrics['conditioned_word_validation_failure_count']}/"
+        f"{metrics['conditioned_annealed_half_power_failure_count']}"
+    )
+    print(
+        "Conditioned kernel/word reduction/half-norm bounds: "
+        f"{metrics['typical_all_unequal_conditioned_kernel_count']}/"
+        f"{metrics['all_order_conditioned_word_map_reduction_count']}/"
+        f"{metrics['all_unequal_frame_half_norm_bound_count']}"
+    )
+    print(
+        "Tail moment root/second-scale gap/simultaneous contractions: "
+        f"{metrics['tail_log2_conditioned_normalized_moment_root_upper_bound']:.6g}/"
+        f"{metrics['tail_log2_root_to_second_moment_scale_gap']:.6g}/"
+        f"{metrics['simultaneous_k_coordinate_contraction_count']}"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_wreath_global_collision(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_global_partition_collision_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Global Plancherel collision audit complete")
+    print(
+        "Artifact: research/representation/"
+        "self_dual_wreath_global_partition_collision.json"
+    )
+    print(
+        "Controls/global-source/union-bound/asymptotic theorems: "
+        f"{metrics['global_collision_control_count']}/"
+        f"{metrics['global_source_draw_as_iid_plancherel_theorem_count']}/"
+        f"{metrics['global_collision_union_bound_theorem_count']}/"
+        f"{metrics['asymptotic_global_all_distinct_dominance_theorem_count']}"
+    )
+    print(
+        "Counterexamples/excluded/collision-free norm/contraction: "
+        f"{metrics['repeated_source_half_norm_counterexample_count']}/"
+        f"{metrics['repeated_source_counterexample_exclusion_count']}/"
+        f"{metrics['collision_free_tuple_norm_theorem_count']}/"
+        f"{metrics['collision_free_growing_moment_contraction_count']}"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_wreath_collision_free_frame(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_collision_free_frame_probe_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Collision-free mixed wreath frame probe complete")
+    print(
+        "Artifact: research/representation/"
+        "self_dual_wreath_collision_free_frame_probe.json"
+    )
+    print(
+        "Probes/W4 complete/W5 three-copy/max dimension: "
+        f"{metrics['collision_free_probe_count']}/"
+        f"{metrics['complete_w4_collision_free_pairing_count']}/"
+        f"{metrics['w5_collision_free_three_copy_probe_count']}/"
+        f"{metrics['maximum_probe_block_dimension']}"
+    )
+    print(
+        "W5 exact-target violations/factor-two successes/max ratio: "
+        f"{metrics['w5_exact_two_to_one_minus_k_violation_count']}/"
+        f"{metrics['w5_factor_two_target_bound_success_count']}/"
+        f"{metrics['maximum_w5_top_to_target_ratio']:.6g}"
+    )
+    print(
+        "Polynomial-factor norm/growing contractions: "
+        f"{metrics['collision_free_polynomial_factor_norm_theorem_count']}/"
+        f"{metrics['collision_free_growing_moment_contraction_count']}"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_wreath_character_ratios(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_character_ratio_contract_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Collision-free character-ratio contract complete")
+    print(
+        "Artifact: research/representation/"
+        "self_dual_wreath_character_ratio_contract.json"
+    )
+    print(
+        "Factorization controls/failures/literature bounds: "
+        f"{metrics['character_factorization_validation_count']}/"
+        f"{metrics['character_factorization_failure_count']}/"
+        f"{metrics['literature_linked_character_bound_count']}"
+    )
+    print(
+        "Typical-shape/short-word/norm/contraction theorems: "
+        f"{metrics['simultaneous_typical_shape_tail_theorem_count']}/"
+        f"{metrics['joint_short_word_anticoncentration_theorem_count']}/"
+        f"{metrics['collision_free_polynomial_factor_norm_theorem_count']}/"
+        f"{metrics['collision_free_growing_moment_contraction_count']}"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_wreath_short_words(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_short_word_profile_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Bridge subset short-word profile complete")
+    print(
+        "Artifact: research/representation/"
+        "self_dual_wreath_short_word_profile.json"
+    )
+    print(
+        "Uniformity controls/failures/Stirling formulas: "
+        f"{metrics['fixed_mask_uniformity_validation_count']}/"
+        f"{metrics['fixed_mask_uniformity_failure_count']}/"
+        f"{metrics['unsigned_stirling_short_length_formula_count']}"
+    )
+    print(
+        "Tail half-n short log2 probability/mask collision log2 bound: "
+        f"{metrics['tail_half_n_log2_short_probability']:.6g}/"
+        f"{metrics['tail_log2_pairwise_mask_collision_union_bound']:.6g}"
+    )
+    print(
+        "Non-diagonal correlation/joint tail/norm theorems: "
+        f"{metrics['non_diagonal_shared_generator_correlation_theorem_count']}/"
+        f"{metrics['joint_short_word_anticoncentration_theorem_count']}/"
+        f"{metrics['collision_free_polynomial_factor_norm_theorem_count']}"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_wreath_mask_hypergraph(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_mask_hypergraph_reduction_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Mask-incidence hypergraph reduction complete")
+    print(
+        "Artifact: research/representation/"
+        "self_dual_wreath_mask_hypergraph_reduction.json"
+    )
+    print(
+        "Private-column controls/failures/two-core reductions: "
+        f"{metrics['private_column_validation_count']}/"
+        f"{metrics['private_column_validation_failure_count']}/"
+        f"{metrics['mask_hypergraph_two_core_reduction_count']}"
+    )
+    print(
+        "W5 triangles/nonzero/max correlation: "
+        f"{metrics['w5_collision_free_triangle_record_count']}/"
+        f"{metrics['w5_nonzero_collision_free_triangle_count']}/"
+        f"{metrics['maximum_w5_collision_free_triangle_correlation']:.6g}"
+    )
+    print(
+        "Two-core/joint-tail/norm theorems: "
+        f"{metrics['joint_two_core_anticoncentration_theorem_count']}/"
+        f"{metrics['joint_short_word_anticoncentration_theorem_count']}/"
+        f"{metrics['collision_free_polynomial_factor_norm_theorem_count']}"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_wreath_subgroup_twirl(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_subgroup_twirl_reduction_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Subgroup-twirl isotypic reduction complete")
+    print(
+        "Artifact: research/representation/"
+        "self_dual_wreath_subgroup_twirl_reduction.json"
+    )
+    print(
+        "W4 validations/failures/max residual: "
+        f"{metrics['complete_w4_collision_free_twirl_validation_count']}/"
+        f"{metrics['finite_twirl_validation_failure_count']}/"
+        f"{metrics['maximum_finite_twirl_validation_residual']:.6g}"
+    )
+    print(
+        "Conjugacy/twirl/isotypic reduction theorems: "
+        f"{metrics['bridge_subgroup_conjugacy_identity_theorem_count']}/"
+        f"{metrics['subgroup_twirl_identity_theorem_count']}/"
+        f"{metrics['isotypic_partial_trace_reduction_theorem_count']}"
+    )
+    print(
+        "Tail n/k/max multiplicity log2/partial-trace theorem: "
+        f"{metrics['tail_n']}/"
+        f"{metrics['tail_copy_count']}/"
+        f"{metrics['tail_maximum_restriction_multiplicity_log2']:.6g}/"
+        f"{metrics['uniform_partial_trace_delocalization_theorem_count']}"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_wreath_orientation_fourier(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_orientation_fourier_reduction_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Orientation-projector Fourier reduction complete")
+    print(
+        "Artifact: research/representation/"
+        "self_dual_wreath_orientation_fourier_reduction.json"
+    )
+    print(
+        "W4 validations/failures/orbit-spectrum residual: "
+        f"{metrics['complete_w4_orientation_fourier_validation_count']}/"
+        f"{metrics['finite_orientation_fourier_validation_failure_count']}/"
+        f"{metrics['maximum_orbit_gram_spectral_residual']:.6g}"
+    )
+    print(
+        "Overlap/orbit/projector theorems: "
+        f"{metrics['compressed_overlap_formula_theorem_count']}/"
+        f"{metrics['operator_valued_orbit_gram_fourier_theorem_count']}/"
+        f"{metrics['orientation_invariant_projector_decomposition_theorem_count']}"
+    )
+    print(
+        "Tail n/k/log2 active/min fraction/full-support step: "
+        f"{metrics['tail_n']}/"
+        f"{metrics['tail_copy_count']}/"
+        f"{metrics['tail_log2_maximum_active_orientation_count']:.6g}/"
+        f"{metrics['tail_minimum_active_orientation_fraction']:.6g}/"
+        f"{metrics['tail_first_full_support_saturation_step']}"
+    )
+    print(
+        "Uniform projector-sum norm theorem: "
+        f"{metrics['uniform_projector_sum_norm_theorem_count']}"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_wreath_orientation_moments(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_orientation_fusion_moment_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Orientation fusion-frame moment reduction complete")
+    print(
+        "Artifact: research/representation/"
+        "self_dual_wreath_orientation_fusion_moment.json"
+    )
+    print(
+        "W4 tuples/pair validations/failures/max residual: "
+        f"{metrics['complete_w4_fusion_tuple_validation_count']}/"
+        f"{metrics['pair_overlap_formula_validation_count']}/"
+        f"{metrics['finite_pair_overlap_validation_failure_count']}/"
+        f"{metrics['maximum_pair_overlap_formula_residual']:.6g}"
+    )
+    print(
+        "Pair/class-second-moment theorems/common-range pairs: "
+        f"{metrics['pairwise_character_convolution_theorem_count']}/"
+        f"{metrics['orientation_average_class_algebra_second_moment_theorem_count']}/"
+        f"{metrics['w4_common_range_pair_count']}"
+    )
+    print(
+        "Tail n/k/collision-to-target/effective-rank log2: "
+        f"{metrics['tail_n']}/"
+        f"{metrics['tail_copy_count']}/"
+        f"{metrics['tail_collision_lower_bound_to_target_ratio']:.6g}/"
+        f"{metrics['tail_maximum_log2_effective_rank']:.6g}"
+    )
+    print(
+        "Higher-moment/projector-sum norm theorems: "
+        f"{metrics['higher_orientation_moment_norm_theorem_count']}/"
+        f"{metrics['uniform_projector_sum_norm_theorem_count']}"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_wreath_pair_core_carrier_factorization(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_pair_core_carrier_factorization_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Pair-core carrier factorization complete")
+    print(
+        "Artifact: research/representation/"
+        "self_dual_wreath_pair_core_carrier_factorization.json"
+    )
+    print(
+        "Selected/screened star controls and failures: "
+        f"{metrics['selected_star_control_count']}/"
+        f"{metrics['screened_star_control_count']}/"
+        f"{metrics['selected_star_failure_count']}/"
+        f"{metrics['screened_star_failure_count']}"
+    )
+    print(
+        "Max spectrum residual / off-common violations: "
+        f"{metrics['maximum_spectrum_residual']:.6g}/"
+        f"{metrics['screened_off_common_violation_count']}"
+    )
+    print(
+        "Disjoint waist controls/violations/tight: "
+        f"{metrics['disjoint_waist_control_count']}/"
+        f"{metrics['disjoint_waist_violation_count']}/"
+        f"{metrics['disjoint_waist_tight_count']}"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_wreath_multistar_degree(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_multistar_degree_obstruction_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Multistar degree obstruction complete")
+    print(
+        "Artifact: research/representation/"
+        "self_dual_wreath_multistar_degree_obstruction.json"
+    )
+    print(
+        "Natural samples/vacuous/first vacuous degree: "
+        f"{metrics['natural_sample_count']}/"
+        f"{metrics['natural_sample_vacuous_count']}/"
+        f"{metrics['first_vacuous_degree']}"
+    )
+    print(
+        "Max projected weighted degree log2 / saturation ratio: "
+        f"{metrics['maximum_projected_weighted_degree_log2']:.6g}/"
+        f"{metrics['maximum_saturation_ratio']:.6g}"
+    )
+    print(
+        "Laplacian controls/failures/max residual: "
+        f"{metrics['laplacian_equivalence_control_count']}/"
+        f"{metrics['laplacian_equivalence_failure_count']}/"
+        f"{metrics['maximum_laplacian_spectrum_residual']:.6g}"
     )
     print(
         f"Speedup claim allowed: "
@@ -5978,6 +8875,47 @@ def command_coset_racah_typical_parity_separator(
         f"{metrics['former_scalar_block_exact_repair_count']}"
     )
     print(f"Speedup claim allowed: {payload['claim_gate']['speedup_claim_allowed']}")
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_coset_racah_typical_parity_holdout(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    n_values = tuple(
+        int(value.strip())
+        for value in args.n_values.split(",")
+        if value.strip()
+    )
+    payload = write_parity_class_contraction_report(
+        n_values=n_values,
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Exact parity-complete class-contraction holdout complete")
+    print(
+        "Artifact: research/representation/"
+        "coset_typical_parity_class_contraction.json"
+    )
+    print(
+        "Exact scalar obstructions: "
+        f"{metrics['exact_scalar_obstruction_count']}/"
+        f"{metrics['all_source_exact_block_count']}"
+    )
+    print(
+        "Multiplicity-two simple spectra: "
+        f"{metrics['exact_multiplicity_two_simple_spectrum_count']}/"
+        f"{metrics['multiplicity_two_block_count']}"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
     print(f"Registry valid: {validation['valid']}")
     if validation["issues"]:
         print(json.dumps(validation["issues"], indent=2))
@@ -8303,6 +11241,165 @@ def build_parser() -> argparse.ArgumentParser:
     dcp_covariant_pgm.add_argument("--no-registry", action="store_true")
     dcp_covariant_pgm.set_defaults(func=command_dcp_covariant_pgm)
 
+    dcp_pgm_gram = subparsers.add_parser(
+        "dcp-pgm-gram",
+        help="Construct the exact DCP Gram block encoding and audit its normalization cost.",
+    )
+    dcp_pgm_gram.add_argument("--control-n-values", default="3,4")
+    dcp_pgm_gram.add_argument("--control-trials", type=int, default=2)
+    dcp_pgm_gram.add_argument(
+        "--scaling-n-values",
+        default="64,128,256,512,1024",
+    )
+    dcp_pgm_gram.add_argument("--register-offsets", default="0,2")
+    dcp_pgm_gram.add_argument("--seed", type=int, default=0)
+    dcp_pgm_gram.add_argument(
+        "--output",
+        default="research/phase_workbench/dcp_pgm_gram_block_encoding.json",
+    )
+    dcp_pgm_gram.add_argument("--no-registry", action="store_true")
+    dcp_pgm_gram.set_defaults(func=command_dcp_pgm_gram)
+
+    dcp_pgm_qsvt = subparsers.add_parser(
+        "dcp-pgm-qsvt",
+        help="Prove Markov-degree obstructions for generic QSVT rescaling of direct DCP Gram encodings.",
+    )
+    dcp_pgm_qsvt.add_argument(
+        "--exact-n-values",
+        default="2,3,4,5,6,7,8,9,10,11,12,13,14",
+    )
+    dcp_pgm_qsvt.add_argument(
+        "--random-n-values",
+        default="8,10,12,14,16,18",
+    )
+    dcp_pgm_qsvt.add_argument("--random-trials", type=int, default=4)
+    dcp_pgm_qsvt.add_argument(
+        "--scaling-n-values",
+        default="64,128,256,512,1024",
+    )
+    dcp_pgm_qsvt.add_argument(
+        "--approximation-error",
+        type=float,
+        default=1 / 32,
+    )
+    dcp_pgm_qsvt.add_argument("--seed", type=int, default=0)
+    dcp_pgm_qsvt.add_argument(
+        "--output",
+        default="research/phase_workbench/dcp_pgm_qsvt_degree_obstruction.json",
+    )
+    dcp_pgm_qsvt.add_argument("--no-registry", action="store_true")
+    dcp_pgm_qsvt.set_defaults(func=command_dcp_pgm_qsvt)
+
+    dcp_quenched_occupancy = subparsers.add_parser(
+        "dcp-quenched-occupancy",
+        help="Prove the quenched Poisson fiber law for random density-one modular subset sum.",
+    )
+    dcp_quenched_occupancy.add_argument(
+        "--exact-n-values", default="2,3,4"
+    )
+    dcp_quenched_occupancy.add_argument(
+        "--scaling-n-values", default="8,10,12,14,16,18"
+    )
+    dcp_quenched_occupancy.add_argument(
+        "--trials-per-size", type=int, default=8
+    )
+    dcp_quenched_occupancy.add_argument("--seed", type=int, default=0)
+    dcp_quenched_occupancy.add_argument(
+        "--output",
+        default=(
+            "research/classical_baselines/"
+            "dcp_subset_sum_quenched_occupancy_theorem.json"
+        ),
+    )
+    dcp_quenched_occupancy.add_argument(
+        "--no-registry", action="store_true"
+    )
+    dcp_quenched_occupancy.set_defaults(
+        func=command_dcp_quenched_occupancy
+    )
+
+    dcp_fiber_erasure_boundary = subparsers.add_parser(
+        "dcp-fiber-erasure-boundary",
+        help="Separate black-box index erasure from structured DCP fiber-preparation and global-channel interfaces.",
+    )
+    dcp_fiber_erasure_boundary.add_argument(
+        "--n-values", default="64,128,256,512,1024"
+    )
+    dcp_fiber_erasure_boundary.add_argument(
+        "--output",
+        default=(
+            "research/reductions/"
+            "dcp_coherent_fiber_erasure_boundary.json"
+        ),
+    )
+    dcp_fiber_erasure_boundary.add_argument(
+        "--no-registry", action="store_true"
+    )
+    dcp_fiber_erasure_boundary.set_defaults(
+        func=command_dcp_fiber_erasure_boundary
+    )
+
+    dcp_erasure_inversion = subparsers.add_parser(
+        "dcp-erasure-inversion",
+        help="Reduce coherent erasure-plus-QFT implementations to average subset-sum witness preparation.",
+    )
+    dcp_erasure_inversion.add_argument(
+        "--n-values", default="8,10,12,14,16,18"
+    )
+    dcp_erasure_inversion.add_argument(
+        "--trials-per-size", type=int, default=4
+    )
+    dcp_erasure_inversion.add_argument("--seed", type=int, default=0)
+    dcp_erasure_inversion.add_argument(
+        "--output",
+        default=(
+            "research/reductions/"
+            "dcp_global_erasure_inversion_reduction.json"
+        ),
+    )
+    dcp_erasure_inversion.add_argument(
+        "--no-registry", action="store_true"
+    )
+    dcp_erasure_inversion.set_defaults(
+        func=command_dcp_erasure_inversion
+    )
+
+    dcp_erasure_coherence = subparsers.add_parser(
+        "dcp-erasure-coherence",
+        help="Reduce target-dependent-garbage erasure-plus-QFT success to average witness preparation.",
+    )
+    dcp_erasure_coherence.add_argument(
+        "--output",
+        default=(
+            "research/reductions/"
+            "dcp_approximate_erasure_coherence_reduction.json"
+        ),
+    )
+    dcp_erasure_coherence.add_argument(
+        "--no-registry", action="store_true"
+    )
+    dcp_erasure_coherence.set_defaults(
+        func=command_dcp_erasure_coherence
+    )
+
+    dcp_erasure_perturbation = subparsers.add_parser(
+        "dcp-erasure-perturbation",
+        help="Prove operator-norm robustness of the erasure-plus-QFT witness reduction.",
+    )
+    dcp_erasure_perturbation.add_argument(
+        "--output",
+        default=(
+            "research/reductions/"
+            "dcp_erasure_perturbation_reduction.json"
+        ),
+    )
+    dcp_erasure_perturbation.add_argument(
+        "--no-registry", action="store_true"
+    )
+    dcp_erasure_perturbation.set_defaults(
+        func=command_dcp_erasure_perturbation
+    )
+
     dcp_contaminated_pgm = subparsers.add_parser(
         "dcp-contaminated-pgm",
         help="Prove exact f=1 information robustness of the clean global PGM and preserve its circuit blocker.",
@@ -8738,6 +11835,103 @@ def build_parser() -> argparse.ArgumentParser:
         func=command_dcp_subset_sum_growing_chain
     )
 
+    dcp_subset_sum_signed_l2 = subparsers.add_parser(
+        "dcp-subset-sum-signed-l2",
+        help=(
+            "Prove the conditional L2 identity and sparse-support obstruction "
+            "for signed exact-hit observables chosen from exposed low bits."
+        ),
+    )
+    dcp_subset_sum_signed_l2.add_argument(
+        "--n-values",
+        default="32,64,128,256,512",
+    )
+    dcp_subset_sum_signed_l2.add_argument(
+        "--support-powers",
+        default="1,2,4,8",
+    )
+    dcp_subset_sum_signed_l2.add_argument(
+        "--log-multiplier",
+        type=int,
+        default=1,
+    )
+    dcp_subset_sum_signed_l2.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    dcp_subset_sum_signed_l2.set_defaults(
+        func=command_dcp_subset_sum_signed_l2
+    )
+
+    dcp_subset_sum_sparse_characters = subparsers.add_parser(
+        "dcp-subset-sum-sparse-characters",
+        help=(
+            "Obstruct every polynomially sparse subset-sum character "
+            "truncation, including full-label adaptive frequency selection."
+        ),
+    )
+    dcp_subset_sum_sparse_characters.add_argument(
+        "--n-values",
+        default="512,1024,4096,16384,65536",
+    )
+    dcp_subset_sum_sparse_characters.add_argument(
+        "--register-offset",
+        type=int,
+        default=2,
+    )
+    dcp_subset_sum_sparse_characters.add_argument(
+        "--amplitude-gap-power",
+        type=int,
+        default=12,
+    )
+    dcp_subset_sum_sparse_characters.add_argument(
+        "--selected-frequency-power",
+        type=int,
+        default=4,
+    )
+    dcp_subset_sum_sparse_characters.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    dcp_subset_sum_sparse_characters.set_defaults(
+        func=command_dcp_subset_sum_sparse_characters
+    )
+
+    dcp_subset_sum_qtt = subparsers.add_parser(
+        "dcp-subset-sum-qtt",
+        help=(
+            "Search quantized tensor-train compression of the exact density-one "
+            "subset-sum count vector under additive-half accuracy."
+        ),
+    )
+    dcp_subset_sum_qtt.add_argument(
+        "--n-values",
+        default="8,10,12,14,16,18",
+    )
+    dcp_subset_sum_qtt.add_argument(
+        "--register-offset",
+        type=int,
+        default=2,
+    )
+    dcp_subset_sum_qtt.add_argument(
+        "--trials-per-size",
+        type=int,
+        default=2,
+    )
+    dcp_subset_sum_qtt.add_argument(
+        "--random-order-count",
+        type=int,
+        default=3,
+    )
+    dcp_subset_sum_qtt.add_argument(
+        "--registered-bond-power",
+        type=int,
+        default=1,
+    )
+    dcp_subset_sum_qtt.add_argument("--seed", type=int, default=0)
+    dcp_subset_sum_qtt.add_argument("--no-registry", action="store_true")
+    dcp_subset_sum_qtt.set_defaults(func=command_dcp_subset_sum_qtt)
+
     dcp_subset_sum_embedding_volume = subparsers.add_parser(
         "dcp-subset-sum-embedding-volume",
         help="Prove exact standard and carry-sliced covolumes and audit volume-only gaps.",
@@ -9047,6 +12241,292 @@ def build_parser() -> argparse.ArgumentParser:
     code_family_search.add_argument("--verbose", action="store_true")
     code_family_search.set_defaults(func=command_code_family_search)
 
+    code_self_dual_search = subparsers.add_parser(
+        "code-self-dual-search",
+        help="Search growing-hull self-dual code families and attack collisions with scalable and exact controls.",
+    )
+    code_self_dual_search.add_argument("--no-registry", action="store_true")
+    code_self_dual_search.add_argument("--verbose", action="store_true")
+    code_self_dual_search.set_defaults(func=command_code_self_dual_search)
+
+    code_self_dual_local = subparsers.add_parser(
+        "code-self-dual-local-obstruction",
+        help="Certify why bounded puncture/shorten rank-hull profiles collapse below self-dual code distance.",
+    )
+    code_self_dual_local.add_argument("--no-registry", action="store_true")
+    code_self_dual_local.add_argument("--verbose", action="store_true")
+    code_self_dual_local.set_defaults(func=command_code_self_dual_local_obstruction)
+
+    code_self_dual_global = subparsers.add_parser(
+        "code-self-dual-global-orbit",
+        help="Audit global information-set orbits and Construction-A lattice invariants for self-dual codes.",
+    )
+    code_self_dual_global.add_argument("--no-registry", action="store_true")
+    code_self_dual_global.add_argument("--verbose", action="store_true")
+    code_self_dual_global.set_defaults(func=command_code_self_dual_global_orbit)
+
+    code_self_dual_hsp = subparsers.add_parser(
+        "code-self-dual-hsp",
+        help="Audit the exact wreath-product HSP reduction and published no-go applicability for self-dual codes.",
+    )
+    code_self_dual_hsp.add_argument("--no-registry", action="store_true")
+    code_self_dual_hsp.add_argument("--verbose", action="store_true")
+    code_self_dual_hsp.set_defaults(func=command_code_self_dual_hsp)
+
+    code_self_dual_rowspace_hsp = subparsers.add_parser(
+        "code-self-dual-rowspace-hsp",
+        help="Eliminate the GL row-scrambler gauge and certify the exact S_n rowspace hidden-shift reduction.",
+    )
+    code_self_dual_rowspace_hsp.add_argument("--no-registry", action="store_true")
+    code_self_dual_rowspace_hsp.add_argument("--verbose", action="store_true")
+    code_self_dual_rowspace_hsp.set_defaults(func=command_code_self_dual_rowspace_hsp)
+
+    code_self_dual_automorphisms = subparsers.add_parser(
+        "code-self-dual-automorphisms",
+        help="Certify self-dual tail rigidity or explicit automorphisms from exact bounded-weight supports.",
+    )
+    code_self_dual_automorphisms.add_argument("--no-registry", action="store_true")
+    code_self_dual_automorphisms.add_argument("--verbose", action="store_true")
+    code_self_dual_automorphisms.set_defaults(
+        func=command_code_self_dual_automorphisms
+    )
+
+    code_self_dual_high_order = subparsers.add_parser(
+        "code-self-dual-high-order",
+        help="Resolve sparse weight-eight self-dual automorphism debt with packed exact weight-ten supports.",
+    )
+    code_self_dual_high_order.add_argument("--no-registry", action="store_true")
+    code_self_dual_high_order.add_argument("--verbose", action="store_true")
+    code_self_dual_high_order.set_defaults(func=command_code_self_dual_high_order)
+
+    code_self_dual_sparsity = subparsers.add_parser(
+        "code-self-dual-sparsity",
+        help="Prove why explicit fixed-order support rigidity certificates fail on growing random self-dual codes.",
+    )
+    code_self_dual_sparsity.add_argument("--no-registry", action="store_true")
+    code_self_dual_sparsity.add_argument("--verbose", action="store_true")
+    code_self_dual_sparsity.set_defaults(func=command_code_self_dual_sparsity)
+
+    code_self_dual_wreath = subparsers.add_parser(
+        "code-self-dual-wreath",
+        help="Derive the exact one-copy representation spectrum for the rigid code-equivalence wreath HSP.",
+    )
+    code_self_dual_wreath.add_argument("--no-registry", action="store_true")
+    code_self_dual_wreath.add_argument("--verbose", action="store_true")
+    code_self_dual_wreath.set_defaults(func=command_code_self_dual_wreath)
+
+    code_self_dual_wreath_hecke = subparsers.add_parser(
+        "code-self-dual-wreath-hecke",
+        help="Audit the centralizer Hecke algebra without confusing it with the actual hidden-subgroup PGM.",
+    )
+    code_self_dual_wreath_hecke.add_argument("--no-registry", action="store_true")
+    code_self_dual_wreath_hecke.add_argument("--verbose", action="store_true")
+    code_self_dual_wreath_hecke.set_defaults(
+        func=command_code_self_dual_wreath_hecke
+    )
+
+    code_self_dual_wreath_pgm = subparsers.add_parser(
+        "code-self-dual-wreath-pgm",
+        help="Reduce the k-copy mixed-state PGM to a polar isometry and audit its factorial normalization barrier.",
+    )
+    code_self_dual_wreath_pgm.add_argument("--no-registry", action="store_true")
+    code_self_dual_wreath_pgm.add_argument("--verbose", action="store_true")
+    code_self_dual_wreath_pgm.set_defaults(
+        func=command_code_self_dual_wreath_pgm
+    )
+
+    code_self_dual_wreath_carrier = subparsers.add_parser(
+        "code-self-dual-wreath-carrier",
+        help="Compute exact subset-orbit carrier commutators and truncated noncommutative algebra growth.",
+    )
+    code_self_dual_wreath_carrier.add_argument(
+        "--no-registry", action="store_true"
+    )
+    code_self_dual_wreath_carrier.add_argument("--verbose", action="store_true")
+    code_self_dual_wreath_carrier.set_defaults(
+        func=command_code_self_dual_wreath_carrier
+    )
+
+    code_self_dual_wreath_orbits = subparsers.add_parser(
+        "code-self-dual-wreath-orbits",
+        help="Prove factorial hidden-label carrier-orbit growth at word depth three and cut explicit orbit tables.",
+    )
+    code_self_dual_wreath_orbits.add_argument(
+        "--no-registry", action="store_true"
+    )
+    code_self_dual_wreath_orbits.add_argument("--verbose", action="store_true")
+    code_self_dual_wreath_orbits.set_defaults(
+        func=command_code_self_dual_wreath_orbits
+    )
+
+    code_self_dual_wreath_harmonics = subparsers.add_parser(
+        "code-self-dual-wreath-harmonics",
+        help="Derive exact simultaneous-conjugacy harmonic blocks and audit factorial Kronecker multiplicities.",
+    )
+    code_self_dual_wreath_harmonics.add_argument(
+        "--no-registry", action="store_true"
+    )
+    code_self_dual_wreath_harmonics.add_argument(
+        "--verbose", action="store_true"
+    )
+    code_self_dual_wreath_harmonics.set_defaults(
+        func=command_code_self_dual_wreath_harmonics
+    )
+
+    code_self_dual_wreath_commutant = subparsers.add_parser(
+        "code-self-dual-wreath-commutant",
+        help="Transfer the proved equal-source Kronecker gap and audit its factorially small carrier coverage.",
+    )
+    code_self_dual_wreath_commutant.add_argument(
+        "--no-registry", action="store_true"
+    )
+    code_self_dual_wreath_commutant.add_argument(
+        "--verbose", action="store_true"
+    )
+    code_self_dual_wreath_commutant.set_defaults(
+        func=command_code_self_dual_wreath_commutant
+    )
+
+    code_self_dual_wreath_frame_blocks = subparsers.add_parser(
+        "code-self-dual-wreath-frame-blocks",
+        help="Construct actual equal-pair wreath Fourier frame blocks and audit finite spectra and conditioning.",
+    )
+    code_self_dual_wreath_frame_blocks.add_argument(
+        "--no-registry", action="store_true"
+    )
+    code_self_dual_wreath_frame_blocks.add_argument(
+        "--verbose", action="store_true"
+    )
+    code_self_dual_wreath_frame_blocks.set_defaults(
+        func=command_code_self_dual_wreath_frame_blocks
+    )
+
+    code_self_dual_wreath_unequal_blocks = subparsers.add_parser(
+        "code-self-dual-wreath-unequal-blocks",
+        help="Construct unequal-pair induced wreath blocks and expose collective spectra hidden at one copy.",
+    )
+    code_self_dual_wreath_unequal_blocks.add_argument(
+        "--no-registry", action="store_true"
+    )
+    code_self_dual_wreath_unequal_blocks.add_argument(
+        "--verbose", action="store_true"
+    )
+    code_self_dual_wreath_unequal_blocks.set_defaults(
+        func=command_code_self_dual_wreath_unequal_blocks
+    )
+
+    code_self_dual_wreath_w3_tuples = subparsers.add_parser(
+        "code-self-dual-wreath-w3-tuples",
+        help="Diagonalize every physical W_3 irrep tuple at the exact three-copy information threshold.",
+    )
+    code_self_dual_wreath_w3_tuples.add_argument(
+        "--no-registry", action="store_true"
+    )
+    code_self_dual_wreath_w3_tuples.add_argument(
+        "--verbose", action="store_true"
+    )
+    code_self_dual_wreath_w3_tuples.set_defaults(
+        func=command_code_self_dual_wreath_w3_tuples
+    )
+
+    code_self_dual_wreath_moments = subparsers.add_parser(
+        "code-self-dual-wreath-moments",
+        help="Derive exact mixed-block character moments and the all-n second-moment class recurrence.",
+    )
+    code_self_dual_wreath_moments.add_argument(
+        "--no-registry", action="store_true"
+    )
+    code_self_dual_wreath_moments.add_argument(
+        "--verbose", action="store_true"
+    )
+    code_self_dual_wreath_moments.set_defaults(
+        func=command_code_self_dual_wreath_moments
+    )
+
+    code_self_dual_wreath_third_moment = subparsers.add_parser(
+        "code-self-dual-wreath-third-moment",
+        help="Contract the repeated trivial-standard unequal-sector third moment by a cycle-index rook recurrence.",
+    )
+    code_self_dual_wreath_third_moment.add_argument(
+        "--no-registry", action="store_true"
+    )
+    code_self_dual_wreath_third_moment.add_argument(
+        "--verbose", action="store_true"
+    )
+    code_self_dual_wreath_third_moment.set_defaults(
+        func=command_code_self_dual_wreath_third_moment
+    )
+
+    code_self_dual_wreath_all_unequal = subparsers.add_parser(
+        "code-self-dual-wreath-all-unequal",
+        help="Contract arbitrary unequal-only third moments by symmetric-group class algebra.",
+    )
+    code_self_dual_wreath_all_unequal.add_argument(
+        "--no-registry", action="store_true"
+    )
+    code_self_dual_wreath_all_unequal.add_argument(
+        "--verbose", action="store_true"
+    )
+    code_self_dual_wreath_all_unequal.set_defaults(
+        func=command_code_self_dual_wreath_all_unequal
+    )
+
+    code_self_dual_wreath_commutators = subparsers.add_parser(
+        "code-self-dual-wreath-commutators",
+        help="Contract pure commutator products and audit the mixed four-class recoupling kernel.",
+    )
+    code_self_dual_wreath_commutators.add_argument(
+        "--no-registry", action="store_true"
+    )
+    code_self_dual_wreath_commutators.add_argument(
+        "--verbose", action="store_true"
+    )
+    code_self_dual_wreath_commutators.set_defaults(
+        func=command_code_self_dual_wreath_commutators
+    )
+
+    code_self_dual_wreath_stable_rank = subparsers.add_parser(
+        "code-self-dual-wreath-stable-rank",
+        help="Measure stable-partition four-class feature rank and Plancherel mass coverage.",
+    )
+    code_self_dual_wreath_stable_rank.add_argument(
+        "--no-registry", action="store_true"
+    )
+    code_self_dual_wreath_stable_rank.add_argument(
+        "--verbose", action="store_true"
+    )
+    code_self_dual_wreath_stable_rank.set_defaults(
+        func=command_code_self_dual_wreath_stable_rank
+    )
+
+    code_self_dual_wreath_typical_portfolio = subparsers.add_parser(
+        "code-self-dual-wreath-typical-portfolio",
+        help="Measure constant-mass Plancherel catalogs and finite typical four-class feature rank.",
+    )
+    code_self_dual_wreath_typical_portfolio.add_argument(
+        "--no-registry", action="store_true"
+    )
+    code_self_dual_wreath_typical_portfolio.add_argument(
+        "--verbose", action="store_true"
+    )
+    code_self_dual_wreath_typical_portfolio.set_defaults(
+        func=command_code_self_dual_wreath_typical_portfolio
+    )
+
+    code_self_dual_wreath_recoupling_transfer = subparsers.add_parser(
+        "code-self-dual-wreath-recoupling-transfer",
+        help="Map known symmetric-group recoupling capabilities onto the physical four-class decoder contract.",
+    )
+    code_self_dual_wreath_recoupling_transfer.add_argument(
+        "--no-registry", action="store_true"
+    )
+    code_self_dual_wreath_recoupling_transfer.add_argument(
+        "--verbose", action="store_true"
+    )
+    code_self_dual_wreath_recoupling_transfer.set_defaults(
+        func=command_code_self_dual_wreath_recoupling_transfer
+    )
+
     tensor_observables = subparsers.add_parser(
         "tensor-observables",
         help="Audit graphlet/homomorphism tensor observables against classical small-pattern-count shadows.",
@@ -9277,6 +12757,394 @@ def build_parser() -> argparse.ArgumentParser:
     )
     coset_carrier_information.set_defaults(
         func=command_coset_carrier_information_audit
+    )
+
+    coset_natural_multicopy_pgm = subparsers.add_parser(
+        "coset-natural-multicopy-pgm",
+        help=(
+            "Benchmark exact natural-source global carrier PGMs against "
+            "product PGMs and separate strong Fourier measurements."
+        ),
+    )
+    coset_natural_multicopy_pgm.add_argument("--n", type=int, default=5)
+    coset_natural_multicopy_pgm.add_argument(
+        "--transposition-count",
+        type=int,
+        default=2,
+    )
+    coset_natural_multicopy_pgm.add_argument(
+        "--copy-counts",
+        default="1,2,3",
+    )
+    coset_natural_multicopy_pgm.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    coset_natural_multicopy_pgm.set_defaults(
+        func=command_coset_natural_multicopy_pgm
+    )
+
+    coset_pgm_gain_localization = subparsers.add_parser(
+        "coset-pgm-gain-localization",
+        help=(
+            "Localize natural collective-PGM gain across source branches and "
+            "audit average-frame condition and inverse-root spectra."
+        ),
+    )
+    coset_pgm_gain_localization.add_argument("--n", type=int, default=5)
+    coset_pgm_gain_localization.add_argument(
+        "--transposition-count",
+        type=int,
+        default=2,
+    )
+    coset_pgm_gain_localization.add_argument(
+        "--copy-count",
+        type=int,
+        default=3,
+    )
+    coset_pgm_gain_localization.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    coset_pgm_gain_localization.set_defaults(
+        func=command_coset_pgm_gain_localization
+    )
+
+    coset_pgm_average_frame = subparsers.add_parser(
+        "coset-pgm-average-frame",
+        help=(
+            "Prove the all-k average-frame subset identity and audit direct "
+            "projected-LCU normalization at growing entanglement width."
+        ),
+    )
+    coset_pgm_average_frame.add_argument("--n", type=int, default=5)
+    coset_pgm_average_frame.add_argument(
+        "--transposition-count",
+        type=int,
+        default=2,
+    )
+    coset_pgm_average_frame.add_argument(
+        "--copy-count",
+        type=int,
+        default=3,
+    )
+    coset_pgm_average_frame.add_argument(
+        "--scaling-n-values",
+        default="8,16,32,64",
+    )
+    coset_pgm_average_frame.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    coset_pgm_average_frame.set_defaults(
+        func=command_coset_pgm_average_frame
+    )
+
+    coset_character_ratios = subparsers.add_parser(
+        "coset-character-ratios",
+        help=(
+            "Prove natural weak-Fourier character-ratio concentration across "
+            "growing-width involution source tuples."
+        ),
+    )
+    coset_character_ratios.add_argument(
+        "--finite-n-values",
+        default="6,8,10,12,14,16",
+    )
+    coset_character_ratios.add_argument(
+        "--scaling-n-values",
+        default="8,16,32,64,128",
+    )
+    coset_character_ratios.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    coset_character_ratios.set_defaults(
+        func=command_coset_character_ratios
+    )
+
+    coset_projector_subpovm = subparsers.add_parser(
+        "coset-projector-subpovm",
+        help=(
+            "Audit a whitening-free covariant projector sub-POVM whose "
+            "conclusive rate depends on frame condition, not absolute scale."
+        ),
+    )
+    coset_projector_subpovm.add_argument("--n", type=int, default=5)
+    coset_projector_subpovm.add_argument(
+        "--transposition-count",
+        type=int,
+        default=2,
+    )
+    coset_projector_subpovm.add_argument(
+        "--copy-counts",
+        default="1,2,3",
+    )
+    coset_projector_subpovm.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    coset_projector_subpovm.set_defaults(
+        func=command_coset_projector_subpovm
+    )
+
+    code_wreath_projector_subpovm = subparsers.add_parser(
+        "code-wreath-projector-subpovm",
+        help=(
+            "Transfer the whitening-free projector sub-POVM theorem to the "
+            "physical code-equivalence wreath HSP and audit condition debt."
+        ),
+    )
+    code_wreath_projector_subpovm.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    code_wreath_projector_subpovm.set_defaults(
+        func=command_code_wreath_projector_subpovm
+    )
+
+    code_wreath_subpovm_moments = subparsers.add_parser(
+        "code-wreath-subpovm-moments",
+        help=(
+            "Convert physical wreath frame moments into rigorous projector-"
+            "sub-POVM conclusive-probability certificates."
+        ),
+    )
+    code_wreath_subpovm_moments.add_argument(
+        "--moment-orders",
+        default="2,3,4,8,16",
+    )
+    code_wreath_subpovm_moments.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    code_wreath_subpovm_moments.set_defaults(
+        func=command_code_wreath_subpovm_moments
+    )
+
+    code_wreath_natural_unequal = subparsers.add_parser(
+        "code-wreath-natural-unequal",
+        help=(
+            "Prove that natural information-threshold wreath tuples are "
+            "asymptotically all unequal Plancherel-pair sectors."
+        ),
+    )
+    code_wreath_natural_unequal.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    code_wreath_natural_unequal.set_defaults(
+        func=command_code_wreath_natural_unequal
+    )
+
+    code_wreath_moment_word_map = subparsers.add_parser(
+        "code-wreath-moment-word-map",
+        help=(
+            "Reduce all-order natural wreath-frame moments to identity and "
+            "bridge-class subset word-map counts."
+        ),
+    )
+    code_wreath_moment_word_map.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    code_wreath_moment_word_map.set_defaults(
+        func=command_code_wreath_moment_word_map
+    )
+
+    code_wreath_word_map_mixing = subparsers.add_parser(
+        "code-wreath-word-map-mixing",
+        help=(
+            "Prove lazy bridge-walk mean mixing and quantify the unresolved "
+            "shared-generator kth-moment concentration gap."
+        ),
+    )
+    code_wreath_word_map_mixing.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    code_wreath_word_map_mixing.set_defaults(
+        func=command_code_wreath_word_map_mixing
+    )
+
+    code_wreath_coupled_word_gap = subparsers.add_parser(
+        "code-wreath-coupled-word-gap",
+        help=(
+            "Prove a constant shared-generator coupled-walk gap and expose "
+            "the remaining all-unequal conditioned-moment obstruction."
+        ),
+    )
+    code_wreath_coupled_word_gap.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    code_wreath_coupled_word_gap.set_defaults(
+        func=command_code_wreath_coupled_word_gap
+    )
+
+    code_wreath_conditioned_kernel = subparsers.add_parser(
+        "code-wreath-conditioned-kernel",
+        help=(
+            "Derive the all-unequal conditioned character kernel and quantify "
+            "the remaining simultaneous k-coordinate contraction gap."
+        ),
+    )
+    code_wreath_conditioned_kernel.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    code_wreath_conditioned_kernel.set_defaults(
+        func=command_code_wreath_conditioned_kernel
+    )
+
+    code_wreath_global_collision = subparsers.add_parser(
+        "code-wreath-global-collision",
+        help=(
+            "Prove asymptotic global distinctness of all source Plancherel "
+            "partitions and isolate the collision-free tuple frontier."
+        ),
+    )
+    code_wreath_global_collision.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    code_wreath_global_collision.set_defaults(
+        func=command_code_wreath_global_collision
+    )
+
+    code_wreath_collision_free_frame = subparsers.add_parser(
+        "code-wreath-collision-free-frame",
+        help=(
+            "Probe mixed collision-free wreath frame norms and test the "
+            "poly(n)2^-k contraction target."
+        ),
+    )
+    code_wreath_collision_free_frame.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    code_wreath_collision_free_frame.set_defaults(
+        func=command_code_wreath_collision_free_frame
+    )
+
+    code_wreath_character_ratios = subparsers.add_parser(
+        "code-wreath-character-ratios",
+        help=(
+            "Formalize the character-ratio and short-word proof contract for "
+            "collision-free poly(n)2^-k frame contraction."
+        ),
+    )
+    code_wreath_character_ratios.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    code_wreath_character_ratios.set_defaults(
+        func=command_code_wreath_character_ratios
+    )
+
+    code_wreath_short_words = subparsers.add_parser(
+        "code-wreath-short-words",
+        help=(
+            "Compute exact fixed-mask bridge-word marginals, short-length "
+            "tails, and target-order mask-collision bounds."
+        ),
+    )
+    code_wreath_short_words.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    code_wreath_short_words.set_defaults(
+        func=command_code_wreath_short_words
+    )
+
+    code_wreath_mask_hypergraph = subparsers.add_parser(
+        "code-wreath-mask-hypergraph",
+        help=(
+            "Reduce nonzero joint unequal-character products to dense "
+            "mask-incidence two-cores and audit exact triangle residuals."
+        ),
+    )
+    code_wreath_mask_hypergraph.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    code_wreath_mask_hypergraph.set_defaults(
+        func=command_code_wreath_mask_hypergraph
+    )
+
+    code_wreath_subgroup_twirl = subparsers.add_parser(
+        "code-wreath-subgroup-twirl",
+        help=(
+            "Resum dense mask correlations as a subgroup twirl and reduce "
+            "the collision-free norm theorem to isotypic partial traces."
+        ),
+    )
+    code_wreath_subgroup_twirl.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    code_wreath_subgroup_twirl.set_defaults(
+        func=command_code_wreath_subgroup_twirl
+    )
+
+    code_wreath_orientation_fourier = subparsers.add_parser(
+        "code-wreath-orientation-fourier",
+        help=(
+            "Reduce the collision-free orbit Gram Fourier blocks to "
+            "orientation-projector averages and audit support saturation."
+        ),
+    )
+    code_wreath_orientation_fourier.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    code_wreath_orientation_fourier.set_defaults(
+        func=command_code_wreath_orientation_fourier
+    )
+
+    code_wreath_orientation_moments = subparsers.add_parser(
+        "code-wreath-orientation-moments",
+        help=(
+            "Compute exact pairwise orientation-projector overlaps and "
+            "class-algebra second moments through the copy threshold."
+        ),
+    )
+    code_wreath_orientation_moments.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    code_wreath_orientation_moments.set_defaults(
+        func=command_code_wreath_orientation_moments
+    )
+
+    code_wreath_pair_core_carrier_factorization = subparsers.add_parser(
+        "code-wreath-pair-core-carrier-factorization",
+        help=(
+            "Derive and validate the exact two-carrier reciprocal spectrum "
+            "of shared-vertex pair-core overlaps."
+        ),
+    )
+    code_wreath_pair_core_carrier_factorization.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    code_wreath_pair_core_carrier_factorization.set_defaults(
+        func=command_code_wreath_pair_core_carrier_factorization
+    )
+
+    code_wreath_multistar_degree = subparsers.add_parser(
+        "code-wreath-multistar-degree",
+        help=(
+            "Measure the exact sign-blind weighted degree of the crossing "
+            "pair-core graph on natural threshold portfolios."
+        ),
+    )
+    code_wreath_multistar_degree.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    code_wreath_multistar_degree.set_defaults(
+        func=command_code_wreath_multistar_degree
     )
 
     coset_strong_fourier_information = subparsers.add_parser(
@@ -9956,6 +13824,23 @@ def build_parser() -> argparse.ArgumentParser:
     )
     coset_racah_typical_parity_separator.set_defaults(
         func=command_coset_racah_typical_parity_separator
+    )
+
+    coset_racah_typical_parity_holdout = subparsers.add_parser(
+        "coset-racah-typical-parity-holdout",
+        help=(
+            "Run exact class-compressed all-source holdouts for the frozen "
+            "parity-complete separator."
+        ),
+    )
+    coset_racah_typical_parity_holdout.add_argument(
+        "--n-values", default="5,6,7,8"
+    )
+    coset_racah_typical_parity_holdout.add_argument(
+        "--no-registry", action="store_true"
+    )
+    coset_racah_typical_parity_holdout.set_defaults(
+        func=command_coset_racah_typical_parity_holdout
     )
 
     coset_recoupling_synthesize = subparsers.add_parser(

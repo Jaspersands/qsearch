@@ -5,7 +5,7 @@
   "blocked_route_count": 11,
   "candidate_count": 8,
   "complete_route_count": 0,
-  "created_at": "2026-07-14T18:47:27.587895+00:00",
+  "created_at": "2026-08-06T06:33:16.896179+00:00",
   "edge_count": 22,
   "edges": [
     {
@@ -348,9 +348,12 @@
         "hardness_scope": "worst-case",
         "id": "EDGE-HYP-LIT-COSET-OBSERVABLES-ROUTE-HYP-LIT-COSET-OBSERVABLES-CODE-EQUIVALENCE-VIA-SYMMETRIC-HSP-SPECIALIZATION",
         "literature_ids": [
+          "bardet-otmani-saeed-trivial-hull-2019",
+          "beals-symmetric-qft-1997",
+          "burchardt-high-dimensional-schur-2025",
           "code-equivalence-fourier-2011",
           "hsp-survey-2010",
-          "symmetric-defies-fourier-2005"
+          "ikenmeyer-subramanian-kronecker-2023"
         ],
         "mapping_description": "No construction currently maps arbitrary upstream target instances into the candidate's restricted family.",
         "mapping_runtime_polynomial": null,
@@ -488,9 +491,12 @@
         "hardness_scope": "worst-case",
         "id": "EDGE-HYP-LIT-COSET-OBSERVABLES-ROUTE-HYP-LIT-COSET-OBSERVABLES-GRAPH-ISOMORPHISM-VIA-SYMMETRIC-HSP-SPECIALIZATION",
         "literature_ids": [
+          "bardet-otmani-saeed-trivial-hull-2019",
+          "beals-symmetric-qft-1997",
+          "burchardt-high-dimensional-schur-2025",
           "code-equivalence-fourier-2011",
           "hsp-survey-2010",
-          "symmetric-defies-fourier-2005"
+          "ikenmeyer-subramanian-kronecker-2023"
         ],
         "mapping_description": "No construction currently maps arbitrary upstream target instances into the candidate's restricted family.",
         "mapping_runtime_polynomial": null,
@@ -655,7 +661,7 @@
         "source_problem": "dihedral-coset-problem",
         "success_preserved": null,
         "success_statement": "Target theorem: a literature-composed uniform algorithm recovers the complete reflection on every promised DCP state instance with bounded error and proves an asymptotic resource improvement over a named generic sieve baseline.",
-        "target_input_model": "Independent coset-state samples transformed into known random Fourier labels and one-qubit DCP phase states. No coherent evaluator, chosen-label access, phase truth table, or literature-specific nonuniform advice is supplied.",
+        "target_input_model": "Independent coset-state samples under the f=1 DCP promise, including arbitrary bad basis-state registers at per-register probability up to 1/log N; good registers transform into known random Fourier labels and one-qubit phase states. No coherent evaluator, chosen-label access, or nonuniform advice is supplied.",
         "target_problem": "candidate-specific-hidden-shift-family",
         "theorem_contract_id": "",
         "uniform": null

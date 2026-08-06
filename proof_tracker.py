@@ -33,6 +33,29 @@ DCP_SUBSET_SUM_MEASUREMENT_PATH = Path("research/phase_workbench/dcp_subset_sum_
 DCP_HASHED_FIBER_MEASUREMENT_PATH = Path("research/phase_workbench/dcp_hashed_fiber_measurement_audit.json")
 DCP_REFERENCE_PROJECTION_PATH = Path("research/phase_workbench/dcp_reference_projection_audit.json")
 DCP_COVARIANT_PGM_PATH = Path("research/phase_workbench/dcp_covariant_pgm_audit.json")
+DCP_PGM_GRAM_BLOCK_ENCODING_PATH = Path(
+    "research/phase_workbench/dcp_pgm_gram_block_encoding.json"
+)
+DCP_PGM_QSVT_DEGREE_PATH = Path(
+    "research/phase_workbench/dcp_pgm_qsvt_degree_obstruction.json"
+)
+DCP_QUENCHED_OCCUPANCY_PATH = Path(
+    "research/classical_baselines/"
+    "dcp_subset_sum_quenched_occupancy_theorem.json"
+)
+DCP_COHERENT_FIBER_ERASURE_BOUNDARY_PATH = Path(
+    "research/reductions/dcp_coherent_fiber_erasure_boundary.json"
+)
+DCP_GLOBAL_ERASURE_INVERSION_PATH = Path(
+    "research/reductions/dcp_global_erasure_inversion_reduction.json"
+)
+DCP_APPROXIMATE_ERASURE_COHERENCE_PATH = Path(
+    "research/reductions/"
+    "dcp_approximate_erasure_coherence_reduction.json"
+)
+DCP_ERASURE_PERTURBATION_PATH = Path(
+    "research/reductions/dcp_erasure_perturbation_reduction.json"
+)
 DCP_CONTAMINATED_PGM_PATH = Path("research/phase_workbench/dcp_contaminated_pgm_audit.json")
 DCP_SUBSET_SUM_BRIDGE_PATH = Path("research/reductions/dcp_subset_sum_bridge.json")
 DCP_SUBSET_SUM_LATTICE_PATH = Path("research/classical_baselines/dcp_subset_sum_lattice_search.json")
@@ -74,6 +97,16 @@ DCP_SUBSET_SUM_GROWING_ORDER_PATH = Path("research/classical_baselines/dcp_subse
 DCP_SUBSET_SUM_GROWING_ORDER_CHAIN_PATH = Path(
     "research/classical_baselines/dcp_subset_sum_growing_order_chain_theorem.json"
 )
+DCP_SUBSET_SUM_SIGNED_L2_PATH = Path(
+    "research/classical_baselines/dcp_subset_sum_signed_l2_obstruction.json"
+)
+DCP_SUBSET_SUM_SPARSE_CHARACTER_PATH = Path(
+    "research/classical_baselines/"
+    "dcp_subset_sum_sparse_character_obstruction.json"
+)
+DCP_SUBSET_SUM_QTT_PATH = Path(
+    "research/classical_baselines/dcp_subset_sum_qtt_contraction_search.json"
+)
 DCP_SUBSET_SUM_EMBEDDING_VOLUME_PATH = Path("research/classical_baselines/dcp_subset_sum_embedding_volume_theorem.json")
 DCP_SUBSET_SUM_SHORT_RELATION_PATH = Path("research/classical_baselines/dcp_subset_sum_short_relation_theorem.json")
 DCP_SUBSET_SUM_CARRY_RELATION_PATH = Path("research/classical_baselines/dcp_subset_sum_carry_relation_theorem.json")
@@ -102,6 +135,75 @@ HULL_PROJECTOR_REDUCTION_PATH = Path("research/code_equivalence/code_hull_projec
 GOPPA_SCALING_FRONTIER_PATH = Path("research/code_equivalence/goppa_scaling_frontier.json")
 GOPPA_SYZYGY_FRONTIER_PATH = Path("research/code_equivalence/goppa_syzygy_frontier.json")
 GOPPA_HULL_PROJECTOR_PATH = Path("research/code_equivalence/goppa_hull_projector_frontier.json")
+SELF_DUAL_CODE_BOUNDARY_PATH = Path("research/code_equivalence/self_dual_code_boundary_search.json")
+SELF_DUAL_LOCAL_OBSTRUCTION_PATH = Path("research/code_equivalence/self_dual_local_profile_obstruction.json")
+SELF_DUAL_GLOBAL_ORBIT_PATH = Path("research/code_equivalence/self_dual_global_orbit_audit.json")
+SELF_DUAL_HSP_APPLICABILITY_PATH = Path("research/representation/self_dual_code_hsp_applicability.json")
+SELF_DUAL_ROWSPACE_HSP_PATH = Path("research/representation/self_dual_rowspace_hsp_reduction.json")
+SELF_DUAL_AUTOMORPHISM_PATH = Path("research/code_equivalence/self_dual_automorphism_workbench.json")
+SELF_DUAL_HIGH_ORDER_AUTOMORPHISM_PATH = Path(
+    "research/code_equivalence/self_dual_high_order_automorphism_resolver.json"
+)
+SELF_DUAL_FIXED_ORDER_SPARSITY_PATH = Path(
+    "research/code_equivalence/self_dual_fixed_order_sparsity_obstruction.json"
+)
+SELF_DUAL_WREATH_SPECTRUM_PATH = Path(
+    "research/representation/self_dual_wreath_spectrum.json"
+)
+SELF_DUAL_WREATH_HECKE_PATH = Path(
+    "research/representation/self_dual_wreath_hecke_audit.json"
+)
+SELF_DUAL_WREATH_PGM_POLAR_PATH = Path(
+    "research/representation/self_dual_wreath_pgm_polar_audit.json"
+)
+SELF_DUAL_WREATH_SUBSET_CARRIER_PATH = Path(
+    "research/representation/self_dual_wreath_subset_carrier_algebra.json"
+)
+SELF_DUAL_WREATH_CARRIER_ORBIT_GROWTH_PATH = Path(
+    "research/representation/self_dual_wreath_carrier_orbit_growth.json"
+)
+SELF_DUAL_WREATH_HARMONIC_CARRIER_SCHEMA_PATH = Path(
+    "research/representation/self_dual_wreath_harmonic_carrier_schema.json"
+)
+SELF_DUAL_WREATH_COMMUTANT_TRANSFER_PATH = Path(
+    "research/representation/self_dual_wreath_commutant_transfer_audit.json"
+)
+SELF_DUAL_WREATH_PHYSICAL_FRAME_BLOCKS_PATH = Path(
+    "research/representation/self_dual_wreath_physical_frame_blocks.json"
+)
+SELF_DUAL_WREATH_UNEQUAL_FRAME_BLOCKS_PATH = Path(
+    "research/representation/self_dual_wreath_unequal_frame_blocks.json"
+)
+SELF_DUAL_WREATH_COMPLETE_W3_TUPLE_PATH = Path(
+    "research/representation/self_dual_wreath_complete_w3_tuple_audit.json"
+)
+SELF_DUAL_WREATH_CHARACTER_MOMENTS_PATH = Path(
+    "research/representation/self_dual_wreath_character_moments.json"
+)
+SELF_DUAL_WREATH_THIRD_MOMENT_CONTRACTION_PATH = Path(
+    "research/representation/"
+    "self_dual_wreath_third_moment_contraction.json"
+)
+SELF_DUAL_WREATH_ALL_UNEQUAL_THIRD_MOMENT_PATH = Path(
+    "research/representation/"
+    "self_dual_wreath_all_unequal_third_moment.json"
+)
+SELF_DUAL_WREATH_EQUAL_COMMUTATOR_AUDIT_PATH = Path(
+    "research/representation/"
+    "self_dual_wreath_equal_commutator_audit.json"
+)
+SELF_DUAL_WREATH_STABLE_COMMUTATOR_RANK_PATH = Path(
+    "research/representation/"
+    "self_dual_wreath_stable_commutator_rank.json"
+)
+SELF_DUAL_WREATH_TYPICAL_PARTITION_PORTFOLIO_PATH = Path(
+    "research/representation/"
+    "self_dual_wreath_typical_partition_portfolio.json"
+)
+SELF_DUAL_WREATH_TYPICAL_RECOUPLING_TRANSFER_PATH = Path(
+    "research/representation/"
+    "self_dual_wreath_typical_recoupling_transfer.json"
+)
 COSET_COVARIANT_FRAME_PATH = Path("research/representation/coset_covariant_frame.json")
 COSET_HOLEVO_INFORMATION_PATH = Path("research/representation/coset_holevo_information.json")
 COSET_TWO_COPY_FRAME_PATH = Path("research/representation/coset_two_copy_frame.json")
@@ -263,6 +365,10 @@ COSET_TYPICAL_PARITY_COMPLETE_SEPARATOR_PATH = Path(
     "research/representation/"
     "coset_typical_parity_complete_separator.json"
 )
+COSET_TYPICAL_PARITY_CLASS_CONTRACTION_PATH = Path(
+    "research/representation/"
+    "coset_typical_parity_class_contraction.json"
+)
 COSET_SAME_HIDDEN_TARGET_LAW_PATH = Path(
     "research/representation/coset_same_hidden_target_law.json"
 )
@@ -272,6 +378,80 @@ COSET_COMMUTANT_INFORMATION_OBSTRUCTION_PATH = Path(
 )
 COSET_CARRIER_INFORMATION_AUDIT_PATH = Path(
     "research/representation/coset_carrier_information_audit.json"
+)
+COSET_NATURAL_MULTICOPY_PGM_PATH = Path(
+    "research/representation/coset_natural_multicopy_pgm_benchmark.json"
+)
+COSET_PGM_GAIN_LOCALIZATION_PATH = Path(
+    "research/representation/coset_pgm_gain_localization.json"
+)
+COSET_PGM_AVERAGE_FRAME_BLOCK_ENCODING_PATH = Path(
+    "research/representation/coset_pgm_average_frame_block_encoding.json"
+)
+COSET_NATURAL_CHARACTER_RATIO_PATH = Path(
+    "research/representation/coset_natural_character_ratio_concentration.json"
+)
+COSET_COVARIANT_PROJECTOR_SUBPOVM_PATH = Path(
+    "research/representation/coset_covariant_projector_subpovm.json"
+)
+SELF_DUAL_WREATH_PROJECTOR_SUBPOVM_PATH = Path(
+    "research/representation/"
+    "self_dual_wreath_projector_subpovm_transfer.json"
+)
+SELF_DUAL_WREATH_SUBPOVM_MOMENT_PATH = Path(
+    "research/representation/"
+    "self_dual_wreath_subpovm_moment_certificate.json"
+)
+SELF_DUAL_WREATH_NATURAL_UNEQUAL_PATH = Path(
+    "research/representation/"
+    "self_dual_wreath_natural_unequal_dominance.json"
+)
+SELF_DUAL_WREATH_NATURAL_WORD_MAP_PATH = Path(
+    "research/representation/"
+    "self_dual_wreath_natural_moment_word_map.json"
+)
+SELF_DUAL_WREATH_WORD_MAP_MIXING_PATH = Path(
+    "research/representation/self_dual_wreath_word_map_mixing.json"
+)
+SELF_DUAL_WREATH_COUPLED_WORD_WALK_GAP_PATH = Path(
+    "research/representation/"
+    "self_dual_wreath_coupled_word_walk_gap.json"
+)
+SELF_DUAL_WREATH_ALL_UNEQUAL_CONDITIONED_KERNEL_PATH = Path(
+    "research/representation/"
+    "self_dual_wreath_all_unequal_conditioned_kernel.json"
+)
+SELF_DUAL_WREATH_GLOBAL_PARTITION_COLLISION_PATH = Path(
+    "research/representation/"
+    "self_dual_wreath_global_partition_collision.json"
+)
+SELF_DUAL_WREATH_COLLISION_FREE_FRAME_PROBE_PATH = Path(
+    "research/representation/"
+    "self_dual_wreath_collision_free_frame_probe.json"
+)
+SELF_DUAL_WREATH_CHARACTER_RATIO_CONTRACT_PATH = Path(
+    "research/representation/"
+    "self_dual_wreath_character_ratio_contract.json"
+)
+SELF_DUAL_WREATH_SHORT_WORD_PROFILE_PATH = Path(
+    "research/representation/"
+    "self_dual_wreath_short_word_profile.json"
+)
+SELF_DUAL_WREATH_MASK_HYPERGRAPH_REDUCTION_PATH = Path(
+    "research/representation/"
+    "self_dual_wreath_mask_hypergraph_reduction.json"
+)
+SELF_DUAL_WREATH_SUBGROUP_TWIRL_REDUCTION_PATH = Path(
+    "research/representation/"
+    "self_dual_wreath_subgroup_twirl_reduction.json"
+)
+SELF_DUAL_WREATH_ORIENTATION_FOURIER_REDUCTION_PATH = Path(
+    "research/representation/"
+    "self_dual_wreath_orientation_fourier_reduction.json"
+)
+SELF_DUAL_WREATH_ORIENTATION_FUSION_MOMENT_PATH = Path(
+    "research/representation/"
+    "self_dual_wreath_orientation_fusion_moment.json"
 )
 COSET_STRONG_FOURIER_INFORMATION_PATH = Path(
     "research/representation/"
@@ -1205,6 +1385,16 @@ def lemma_templates(candidate: dict[str, Any]) -> list[LemmaRecord]:
         typical_parity_separator_metrics = typical_parity_separator.get(
             "headline_metrics", {}
         )
+        typical_parity_holdout = (
+            json.loads(
+                COSET_TYPICAL_PARITY_CLASS_CONTRACTION_PATH.read_text()
+            )
+            if COSET_TYPICAL_PARITY_CLASS_CONTRACTION_PATH.exists()
+            else {}
+        )
+        typical_parity_holdout_metrics = typical_parity_holdout.get(
+            "headline_metrics", {}
+        )
         try:
             same_hidden_target_law = (
                 json.loads(COSET_SAME_HIDDEN_TARGET_LAW_PATH.read_text())
@@ -1235,6 +1425,250 @@ def lemma_templates(candidate: dict[str, Any]) -> list[LemmaRecord]:
             carrier_information_audit = {}
         carrier_information_metrics = carrier_information_audit.get(
             "headline_metrics", {}
+        )
+        try:
+            natural_multicopy_pgm = (
+                json.loads(COSET_NATURAL_MULTICOPY_PGM_PATH.read_text())
+                if COSET_NATURAL_MULTICOPY_PGM_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            natural_multicopy_pgm = {}
+        natural_multicopy_pgm_metrics = natural_multicopy_pgm.get(
+            "headline_metrics", {}
+        )
+        try:
+            pgm_gain_localization = (
+                json.loads(COSET_PGM_GAIN_LOCALIZATION_PATH.read_text())
+                if COSET_PGM_GAIN_LOCALIZATION_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            pgm_gain_localization = {}
+        pgm_gain_localization_metrics = pgm_gain_localization.get(
+            "headline_metrics", {}
+        )
+        try:
+            pgm_average_frame = (
+                json.loads(
+                    COSET_PGM_AVERAGE_FRAME_BLOCK_ENCODING_PATH.read_text()
+                )
+                if COSET_PGM_AVERAGE_FRAME_BLOCK_ENCODING_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            pgm_average_frame = {}
+        pgm_average_frame_metrics = pgm_average_frame.get(
+            "headline_metrics", {}
+        )
+        try:
+            natural_character_ratios = (
+                json.loads(COSET_NATURAL_CHARACTER_RATIO_PATH.read_text())
+                if COSET_NATURAL_CHARACTER_RATIO_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            natural_character_ratios = {}
+        natural_character_ratio_metrics = natural_character_ratios.get(
+            "headline_metrics", {}
+        )
+        try:
+            covariant_projector_subpovm = (
+                json.loads(COSET_COVARIANT_PROJECTOR_SUBPOVM_PATH.read_text())
+                if COSET_COVARIANT_PROJECTOR_SUBPOVM_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            covariant_projector_subpovm = {}
+        covariant_projector_subpovm_metrics = (
+            covariant_projector_subpovm.get("headline_metrics", {})
+        )
+        try:
+            wreath_projector_subpovm = (
+                json.loads(SELF_DUAL_WREATH_PROJECTOR_SUBPOVM_PATH.read_text())
+                if SELF_DUAL_WREATH_PROJECTOR_SUBPOVM_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            wreath_projector_subpovm = {}
+        wreath_projector_subpovm_metrics = wreath_projector_subpovm.get(
+            "headline_metrics", {}
+        )
+        try:
+            wreath_subpovm_moments = (
+                json.loads(SELF_DUAL_WREATH_SUBPOVM_MOMENT_PATH.read_text())
+                if SELF_DUAL_WREATH_SUBPOVM_MOMENT_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            wreath_subpovm_moments = {}
+        wreath_subpovm_moment_metrics = wreath_subpovm_moments.get(
+            "headline_metrics", {}
+        )
+        try:
+            wreath_natural_unequal = (
+                json.loads(SELF_DUAL_WREATH_NATURAL_UNEQUAL_PATH.read_text())
+                if SELF_DUAL_WREATH_NATURAL_UNEQUAL_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            wreath_natural_unequal = {}
+        wreath_natural_unequal_metrics = wreath_natural_unequal.get(
+            "headline_metrics", {}
+        )
+        try:
+            wreath_natural_word_map = (
+                json.loads(SELF_DUAL_WREATH_NATURAL_WORD_MAP_PATH.read_text())
+                if SELF_DUAL_WREATH_NATURAL_WORD_MAP_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            wreath_natural_word_map = {}
+        wreath_natural_word_map_metrics = wreath_natural_word_map.get(
+            "headline_metrics", {}
+        )
+        try:
+            wreath_word_map_mixing = (
+                json.loads(SELF_DUAL_WREATH_WORD_MAP_MIXING_PATH.read_text())
+                if SELF_DUAL_WREATH_WORD_MAP_MIXING_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            wreath_word_map_mixing = {}
+        wreath_word_map_mixing_metrics = wreath_word_map_mixing.get(
+            "headline_metrics", {}
+        )
+        try:
+            wreath_coupled_word_walk_gap = (
+                json.loads(
+                    SELF_DUAL_WREATH_COUPLED_WORD_WALK_GAP_PATH.read_text()
+                )
+                if SELF_DUAL_WREATH_COUPLED_WORD_WALK_GAP_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            wreath_coupled_word_walk_gap = {}
+        wreath_coupled_word_walk_gap_metrics = (
+            wreath_coupled_word_walk_gap.get("headline_metrics", {})
+        )
+        try:
+            wreath_all_unequal_conditioned_kernel = (
+                json.loads(
+                    SELF_DUAL_WREATH_ALL_UNEQUAL_CONDITIONED_KERNEL_PATH.read_text()
+                )
+                if SELF_DUAL_WREATH_ALL_UNEQUAL_CONDITIONED_KERNEL_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            wreath_all_unequal_conditioned_kernel = {}
+        wreath_all_unequal_conditioned_kernel_metrics = (
+            wreath_all_unequal_conditioned_kernel.get(
+                "headline_metrics", {}
+            )
+        )
+        try:
+            wreath_global_partition_collision = (
+                json.loads(
+                    SELF_DUAL_WREATH_GLOBAL_PARTITION_COLLISION_PATH.read_text()
+                )
+                if SELF_DUAL_WREATH_GLOBAL_PARTITION_COLLISION_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            wreath_global_partition_collision = {}
+        wreath_global_partition_collision_metrics = (
+            wreath_global_partition_collision.get("headline_metrics", {})
+        )
+        try:
+            wreath_collision_free_frame_probe = (
+                json.loads(
+                    SELF_DUAL_WREATH_COLLISION_FREE_FRAME_PROBE_PATH.read_text()
+                )
+                if SELF_DUAL_WREATH_COLLISION_FREE_FRAME_PROBE_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            wreath_collision_free_frame_probe = {}
+        wreath_collision_free_frame_probe_metrics = (
+            wreath_collision_free_frame_probe.get("headline_metrics", {})
+        )
+        try:
+            wreath_character_ratio_contract = (
+                json.loads(
+                    SELF_DUAL_WREATH_CHARACTER_RATIO_CONTRACT_PATH.read_text()
+                )
+                if SELF_DUAL_WREATH_CHARACTER_RATIO_CONTRACT_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            wreath_character_ratio_contract = {}
+        wreath_character_ratio_contract_metrics = (
+            wreath_character_ratio_contract.get("headline_metrics", {})
+        )
+        try:
+            wreath_short_word_profile = (
+                json.loads(
+                    SELF_DUAL_WREATH_SHORT_WORD_PROFILE_PATH.read_text()
+                )
+                if SELF_DUAL_WREATH_SHORT_WORD_PROFILE_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            wreath_short_word_profile = {}
+        wreath_short_word_profile_metrics = (
+            wreath_short_word_profile.get("headline_metrics", {})
+        )
+        try:
+            wreath_mask_hypergraph_reduction = (
+                json.loads(
+                    SELF_DUAL_WREATH_MASK_HYPERGRAPH_REDUCTION_PATH.read_text()
+                )
+                if SELF_DUAL_WREATH_MASK_HYPERGRAPH_REDUCTION_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            wreath_mask_hypergraph_reduction = {}
+        wreath_mask_hypergraph_reduction_metrics = (
+            wreath_mask_hypergraph_reduction.get("headline_metrics", {})
+        )
+        try:
+            wreath_subgroup_twirl_reduction = (
+                json.loads(
+                    SELF_DUAL_WREATH_SUBGROUP_TWIRL_REDUCTION_PATH.read_text()
+                )
+                if SELF_DUAL_WREATH_SUBGROUP_TWIRL_REDUCTION_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            wreath_subgroup_twirl_reduction = {}
+        wreath_subgroup_twirl_reduction_metrics = (
+            wreath_subgroup_twirl_reduction.get("headline_metrics", {})
+        )
+        try:
+            wreath_orientation_fourier_reduction = (
+                json.loads(
+                    SELF_DUAL_WREATH_ORIENTATION_FOURIER_REDUCTION_PATH.read_text()
+                )
+                if SELF_DUAL_WREATH_ORIENTATION_FOURIER_REDUCTION_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            wreath_orientation_fourier_reduction = {}
+        wreath_orientation_fourier_reduction_metrics = (
+            wreath_orientation_fourier_reduction.get("headline_metrics", {})
+        )
+        try:
+            wreath_orientation_fusion_moment = (
+                json.loads(
+                    SELF_DUAL_WREATH_ORIENTATION_FUSION_MOMENT_PATH.read_text()
+                )
+                if SELF_DUAL_WREATH_ORIENTATION_FUSION_MOMENT_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            wreath_orientation_fusion_moment = {}
+        wreath_orientation_fusion_moment_metrics = (
+            wreath_orientation_fusion_moment.get("headline_metrics", {})
         )
         try:
             strong_fourier_information = (
@@ -1400,6 +1834,1783 @@ def lemma_templates(candidate: dict[str, Any]) -> list[LemmaRecord]:
                     "separations; resolve every cap with a polynomial signature or prove a model-specific lower bound."
                 ),
             )
+        )
+        try:
+            self_dual = (
+                json.loads(SELF_DUAL_CODE_BOUNDARY_PATH.read_text())
+                if SELF_DUAL_CODE_BOUNDARY_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            self_dual = {}
+        self_dual_metrics = self_dual.get("headline_metrics", {})
+        self_dual_instances = int(self_dual_metrics.get("instance_count", 0) or 0)
+        self_dual_construction_failures = int(self_dual_metrics.get("construction_failure_count", 0) or 0)
+        self_dual_control_failures = int(self_dual_metrics.get("permutation_control_failure_count", 0) or 0)
+        self_dual_debt = sum(
+            int(self_dual_metrics.get(key, 0) or 0)
+            for key in (
+                "exact_nonequivalent_boundary_count",
+                "incidence_timeout_count",
+                "incidence_cap_count",
+                "scalable_proof_debt_pair_count",
+            )
+        )
+        records.append(
+            LemmaRecord(
+                id=f"LEMMA-{candidate_id}-SELF-DUAL-GROWING-HULL-CLASSICAL-FRONTIER",
+                candidate_id=candidate_id,
+                statement=(
+                    "A natural growing-hull self-dual code family contains asymptotic code-equivalence rows that "
+                    "survive polynomial Schur, column-matroid, puncture/shorten, automorphism, and canonical-label baselines."
+                ),
+                depends_on=["PO-FAMILY", "PO-CLASSICAL-BASELINE", "PO-DEQUANTIZATION", "PO-REDUCTION"],
+                status=(
+                    "blocked-self-dual-construction-or-control-failure"
+                    if self_dual_construction_failures or self_dual_control_failures
+                    else (
+                        "blocked-self-dual-polynomial-canonicalization-and-lower-bound-debt"
+                        if self_dual_instances and self_dual_debt
+                        else (
+                            "blocked-self-dual-signature-collisions-not-hardness"
+                            if self_dual_instances
+                            else "blocked-no-self-dual-boundary-artifact"
+                        )
+                    )
+                ),
+                falsification_test=(
+                    "Certify full hull at growing dimension, reject every scalable invariant separation, replace "
+                    "exponential incidence checks with polynomial canonicalization, and prove that any surviving "
+                    "family is not reduced to an already open graph-isomorphism instance."
+                ),
+            )
+        )
+        try:
+            self_dual_local = (
+                json.loads(SELF_DUAL_LOCAL_OBSTRUCTION_PATH.read_text())
+                if SELF_DUAL_LOCAL_OBSTRUCTION_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            self_dual_local = {}
+        self_dual_local_metrics = self_dual_local.get("headline_metrics", {})
+        local_instances = int(self_dual_local_metrics.get("instance_count", 0) or 0)
+        local_failures = int(self_dual_local_metrics.get("theorem_control_failure_count", 0) or 0)
+        records.append(
+            LemmaRecord(
+                id=f"LEMMA-{candidate_id}-SELF-DUAL-BOUNDED-LOCAL-PROFILE-NOGO",
+                candidate_id=candidate_id,
+                statement=(
+                    "For a binary self-dual [2k,k,d] code and every coordinate set S with |S|<d, puncturing has "
+                    "dimension k while shortening and both hulls have dimension k-|S|; bounded local rank-hull "
+                    "profiles therefore carry no distinguishing information below distance."
+                ),
+                depends_on=["PO-CLASSICAL-BASELINE", "PO-DEQUANTIZATION"],
+                status=(
+                    "proved-self-dual-local-profile-no-go-through-registered-order"
+                    if local_instances and local_failures == 0
+                    else (
+                        "blocked-self-dual-local-profile-control-failure"
+                        if local_failures
+                        else "blocked-no-self-dual-local-profile-artifact"
+                    )
+                ),
+                falsification_test=(
+                    "Check self-duality and the distinct-column zero-sum distance certificate, then compare every "
+                    "feasible puncture/shorten rank-hull profile to the duality formula."
+                ),
+            )
+        )
+        try:
+            self_dual_global = (
+                json.loads(SELF_DUAL_GLOBAL_ORBIT_PATH.read_text())
+                if SELF_DUAL_GLOBAL_ORBIT_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            self_dual_global = {}
+        self_dual_global_metrics = self_dual_global.get("headline_metrics", {})
+        global_instances = int(self_dual_global_metrics.get("instance_count", 0) or 0)
+        global_control_failures = int(
+            self_dual_global_metrics.get("mapped_permutation_control_failure_count", 0) or 0
+        )
+        reverse_reductions = int(
+            self_dual_global_metrics.get("frame_preserving_reverse_reduction_count", 0) or 0
+        )
+        polynomial_global = int(
+            self_dual_global_metrics.get("proved_polynomial_global_canonicalization_count", 0) or 0
+        )
+        records.extend(
+            [
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-SELF-DUAL-POLYNOMIAL-GLOBAL-CANONICALIZATION",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "The growing-hull self-dual family admits a polynomial-time canonical label under "
+                        "GL(k,2) row operations and coordinate permutations."
+                    ),
+                    depends_on=["PO-CLASSICAL-BASELINE", "PO-DEQUANTIZATION", "PO-COMPLEXITY"],
+                    status=(
+                        "blocked-self-dual-global-orbit-control-failure"
+                        if global_control_failures
+                        else (
+                            "proved-polynomial-self-dual-global-canonicalization"
+                            if polynomial_global
+                            else (
+                                "blocked-exhaustive-information-set-architecture-not-general-lower-bound"
+                                if global_instances
+                                else "blocked-no-self-dual-global-orbit-artifact"
+                            )
+                        )
+                    ),
+                    falsification_test=(
+                        "Normalize full column multisets under mapped information sets, search for polynomial orbit "
+                        "invariants or canonical labels, and reject sampled misses as non-certificates."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-SELF-DUAL-CONSTRUCTION-A-IFF-REDUCTION",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "The scaled Construction-A map reduces self-dual code equivalence to lattice isomorphism in "
+                        "both directions by recovering the coordinate frame from every lattice isometry."
+                    ),
+                    depends_on=["PO-REDUCTION", "PO-DEQUANTIZATION", "PO-COMPLEXITY"],
+                    status=(
+                        "proved-construction-a-frame-preserving-iff-reduction"
+                        if reverse_reductions
+                        else (
+                            "blocked-construction-a-reverse-frame-preservation"
+                            if global_instances
+                            else "blocked-no-self-dual-global-orbit-artifact"
+                        )
+                    ),
+                    falsification_test=(
+                        "Verify that every isometry of the constructed lattice preserves or canonically recovers the "
+                        "coordinate frame, or add and prove a frame-forcing gadget."
+                    ),
+                ),
+            ]
+        )
+        try:
+            self_dual_hsp = (
+                json.loads(SELF_DUAL_HSP_APPLICABILITY_PATH.read_text())
+                if SELF_DUAL_HSP_APPLICABILITY_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            self_dual_hsp = {}
+        self_dual_hsp_metrics = self_dual_hsp.get("headline_metrics", {})
+        hsp_families = int(self_dual_hsp_metrics.get("family_count", 0) or 0)
+        hsp_dimension_failures = int(
+            self_dual_hsp_metrics.get("dimension_condition_fail_family_count", 0) or 0
+        )
+        hsp_measurements = int(
+            self_dual_hsp_metrics.get("explicit_single_coset_measurement_count", 0) or 0
+        ) + int(self_dual_hsp_metrics.get("explicit_multicoset_measurement_count", 0) or 0)
+        hsp_decoders = int(
+            self_dual_hsp_metrics.get("polynomial_hidden_permutation_decoder_count", 0) or 0
+        )
+        records.extend(
+            [
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-SELF-DUAL-DMR-SINGLE-COSET-APPLICABILITY",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "The Dinh-Moore-Russell sufficient one-coset indistinguishability theorem applies to the "
+                        "registered rate-one-half self-dual family."
+                    ),
+                    depends_on=["PO-NO-GO", "PO-INPUT-MODEL", "PO-COMPLEXITY"],
+                    status=(
+                        "falsified-current-self-dual-family-dimension-hypothesis"
+                        if hsp_families and hsp_dimension_failures == hsp_families
+                        else (
+                            "blocked-partial-self-dual-hsp-applicability"
+                            if hsp_families
+                            else "blocked-no-self-dual-hsp-applicability-artifact"
+                        )
+                    ),
+                    falsification_test=(
+                        "Compare k^2 log_2 q to 0.2 n log_2 n and separately certify automorphism size and minimal degree."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-SELF-DUAL-HIGH-RATE-HSP-MEASUREMENT-DECODER",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "A polynomial-size measurement on one or polynomially many coset states over "
+                        "(GL_k(2) x S_n) wr Z_2 yields an inverse-polynomial signal and a polynomial hidden-permutation decoder."
+                    ),
+                    depends_on=["PO-MECHANISM", "PO-MEASUREMENT", "PO-COMPLEXITY", "PO-DEQUANTIZATION"],
+                    status=(
+                        "proved-high-rate-self-dual-hsp-measurement-and-decoder"
+                        if hsp_measurements and hsp_decoders
+                        else (
+                            "blocked-no-high-rate-self-dual-hsp-measurement-or-decoder"
+                            if hsp_families
+                            else "blocked-no-self-dual-hsp-applicability-artifact"
+                        )
+                    ),
+                    falsification_test=(
+                        "Derive natural sector mass, synthesize the measurement, decode P with full cost accounting, "
+                        "and compare the statistic against public-generator classical invariants."
+                    ),
+                ),
+            ]
+        )
+        try:
+            self_dual_rowspace_hsp = (
+                json.loads(SELF_DUAL_ROWSPACE_HSP_PATH.read_text())
+                if SELF_DUAL_ROWSPACE_HSP_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            self_dual_rowspace_hsp = {}
+        rowspace_metrics = self_dual_rowspace_hsp.get("headline_metrics", {})
+        rowspace_families = int(rowspace_metrics.get("family_count", 0) or 0)
+        rowspace_controls = int(
+            rowspace_metrics.get("hidden_shift_control_failure_count", 0) or 0
+        )
+        gl_eliminated = int(
+            rowspace_metrics.get("gl_factor_eliminated_family_count", 0) or 0
+        )
+        rowspace_rigidity = int(
+            rowspace_metrics.get("rigidity_certified_instance_count", 0) or 0
+        )
+        rowspace_no_go = int(
+            rowspace_metrics.get("gi_type_order_two_no_go_certified_instance_count", 0)
+            or 0
+        )
+        records.extend(
+            [
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-SELF-DUAL-GL-FACTOR-ESSENTIAL-HSP",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "The GL_k factor in the raw scrambler-permutation HSP is essential quantum structure for "
+                        "explicit generator-matrix code equivalence."
+                    ),
+                    depends_on=["PO-INPUT-MODEL", "PO-REDUCTION", "PO-NO-GO"],
+                    status=(
+                        "falsified-rowspace-canonicalization-removes-gl-factor"
+                        if rowspace_families
+                        and rowspace_controls == 0
+                        and gl_eliminated == rowspace_families
+                        else (
+                            "blocked-partial-rowspace-reduction"
+                            if rowspace_families
+                            else "blocked-no-rowspace-hsp-reduction-artifact"
+                        )
+                    ),
+                    falsification_test=(
+                        "Verify f_C(P)=RREF(MP), row-operation invariance, and the hidden-shift identity on mapped "
+                        "coordinate permutations."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-SELF-DUAL-ROWSPACE-HSP-AUTOMORPHISM-NOGO",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "The permutation automorphism subgroup of every scalable self-dual tail instance satisfies "
+                        "the hypotheses needed to import the corresponding S_n coset-state no-go theorem."
+                    ),
+                    depends_on=["PO-NO-GO", "PO-REDUCTION", "PO-COMPLEXITY"],
+                    status=(
+                        "proved-rowspace-hsp-automorphism-no-go"
+                        if rowspace_families and rowspace_no_go > 0
+                        else (
+                            "blocked-no-rigidity-or-minimal-degree-certificate"
+                            if rowspace_families and not rowspace_rigidity
+                            else "blocked-no-rowspace-hsp-reduction-artifact"
+                        )
+                    ),
+                    falsification_test=(
+                        "Compute or prove PAut(C), its size, and minimal degree on the scalable family; distinguish "
+                        "rigid order-two bridge subgroups from nontrivial stabilizer cases."
+                    ),
+                ),
+            ]
+        )
+        try:
+            self_dual_automorphisms = (
+                json.loads(SELF_DUAL_AUTOMORPHISM_PATH.read_text())
+                if SELF_DUAL_AUTOMORPHISM_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            self_dual_automorphisms = {}
+        automorphism_metrics = self_dual_automorphisms.get("headline_metrics", {})
+        automorphism_instances = int(
+            automorphism_metrics.get("instance_count", 0) or 0
+        )
+        complete_supports = int(
+            automorphism_metrics.get(
+                "complete_bounded_support_enumeration_count", 0
+            )
+            or 0
+        )
+        rigidity_count = int(
+            automorphism_metrics.get("rigidity_certified_instance_count", 0) or 0
+        )
+        nonrigid_count = int(
+            automorphism_metrics.get("explicit_automorphism_instance_count", 0)
+            or 0
+        )
+        unresolved_automorphisms = int(
+            automorphism_metrics.get("unresolved_instance_count", 0) or 0
+        )
+        family_rigidity_theorems = int(
+            automorphism_metrics.get("infinite_family_rigidity_theorem_count", 0)
+            or 0
+        )
+        try:
+            self_dual_high_order = (
+                json.loads(SELF_DUAL_HIGH_ORDER_AUTOMORPHISM_PATH.read_text())
+                if SELF_DUAL_HIGH_ORDER_AUTOMORPHISM_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            self_dual_high_order = {}
+        high_order_metrics = self_dual_high_order.get("headline_metrics", {})
+        high_order_targets = int(
+            high_order_metrics.get("target_instance_count", 0) or 0
+        )
+        high_order_resolved = int(
+            high_order_metrics.get("resolved_rigidity_instance_count", 0) or 0
+        )
+        high_order_remaining = int(
+            high_order_metrics.get("remaining_unresolved_instance_count", 0) or 0
+        )
+        high_order_collective = int(
+            high_order_metrics.get("collective_measurement_count", 0) or 0
+        )
+        high_order_decoders = int(
+            high_order_metrics.get("polynomial_hidden_permutation_decoder_count", 0)
+            or 0
+        )
+        try:
+            self_dual_sparsity = (
+                json.loads(SELF_DUAL_FIXED_ORDER_SPARSITY_PATH.read_text())
+                if SELF_DUAL_FIXED_ORDER_SPARSITY_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            self_dual_sparsity = {}
+        sparsity_metrics = self_dual_sparsity.get("headline_metrics", {})
+        sparsity_rows = int(
+            sparsity_metrics.get("scaling_length_count", 0) or 0
+        )
+        fixed_order_asymptotic = int(
+            sparsity_metrics.get(
+                "asymptotic_fixed_order_rigidity_certificate_count", 0
+            )
+            or 0
+        )
+        try:
+            self_dual_wreath = (
+                json.loads(SELF_DUAL_WREATH_SPECTRUM_PATH.read_text())
+                if SELF_DUAL_WREATH_SPECTRUM_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            self_dual_wreath = {}
+        wreath_metrics = self_dual_wreath.get("headline_metrics", {})
+        wreath_rows = int(wreath_metrics.get("record_count", 0) or 0)
+        wreath_exact = int(wreath_metrics.get("exact_record_count", 0) or 0)
+        wreath_weak_zero = int(
+            wreath_metrics.get("weak_fourier_zero_information_record_count", 0)
+            or 0
+        )
+        wreath_transforms = int(
+            wreath_metrics.get("growing_copy_diagonal_action_transform_count", 0)
+            or 0
+        )
+        wreath_povms = int(
+            wreath_metrics.get("carrier_sensitive_covariant_povm_count", 0)
+            or 0
+        )
+        wreath_decoders = int(
+            wreath_metrics.get("polynomial_hidden_permutation_decoder_count", 0)
+            or 0
+        )
+        try:
+            self_dual_wreath_hecke = (
+                json.loads(SELF_DUAL_WREATH_HECKE_PATH.read_text())
+                if SELF_DUAL_WREATH_HECKE_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            self_dual_wreath_hecke = {}
+        hecke_metrics = self_dual_wreath_hecke.get("headline_metrics", {})
+        hecke_rows = int(hecke_metrics.get("record_count", 0) or 0)
+        hecke_gelfand = int(
+            hecke_metrics.get("centralizer_gelfand_pair_proof_count", 0) or 0
+        )
+        hecke_hidden_non_gelfand = int(
+            hecke_metrics.get("actual_hidden_subgroup_non_gelfand_count", 0)
+            or 0
+        )
+        hecke_scalar_collapses = int(
+            hecke_metrics.get("pairwise_hs_kernel_collapse_count", 0) or 0
+        )
+        hecke_operator_reductions = int(
+            hecke_metrics.get("operator_valued_kcopy_frame_reduction_count", 0)
+            or 0
+        )
+        hecke_povms = int(
+            hecke_metrics.get("carrier_sensitive_covariant_povm_count", 0) or 0
+        )
+        hecke_decoders = int(
+            hecke_metrics.get("polynomial_hidden_permutation_decoder_count", 0)
+            or 0
+        )
+        try:
+            self_dual_wreath_pgm = (
+                json.loads(SELF_DUAL_WREATH_PGM_POLAR_PATH.read_text())
+                if SELF_DUAL_WREATH_PGM_POLAR_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            self_dual_wreath_pgm = {}
+        pgm_metrics = self_dual_wreath_pgm.get("headline_metrics", {})
+        pgm_rows = int(pgm_metrics.get("record_count", 0) or 0)
+        pgm_polar_reductions = int(
+            pgm_metrics.get("operator_frame_polar_reduction_count", 0) or 0
+        )
+        pgm_preconditioners = int(
+            pgm_metrics.get(
+                "uniform_polynomial_structured_preconditioner_count", 0
+            )
+            or 0
+        )
+        pgm_frame_inverses = int(
+            pgm_metrics.get("polynomial_frame_inverse_count", 0) or 0
+        )
+        pgm_povms = int(
+            pgm_metrics.get("carrier_sensitive_povm_circuit_count", 0) or 0
+        )
+        pgm_decoders = int(
+            pgm_metrics.get("polynomial_hidden_permutation_decoder_count", 0)
+            or 0
+        )
+        try:
+            self_dual_wreath_carrier = (
+                json.loads(SELF_DUAL_WREATH_SUBSET_CARRIER_PATH.read_text())
+                if SELF_DUAL_WREATH_SUBSET_CARRIER_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            self_dual_wreath_carrier = {}
+        carrier_metrics = self_dual_wreath_carrier.get("headline_metrics", {})
+        carrier_rows = int(
+            carrier_metrics.get("commutator_record_count", 0) or 0
+        )
+        carrier_noncommuting = int(
+            carrier_metrics.get("symmetrized_orbit_noncommutation_count", 0)
+            or 0
+        )
+        carrier_rank = int(
+            carrier_metrics.get(
+                "maximum_truncated_algebra_rank_lower_bound", 0
+            )
+            or 0
+        )
+        carrier_transforms = int(
+            carrier_metrics.get(
+                "uniform_noncommutative_carrier_block_transform_count", 0
+            )
+            or 0
+        )
+        carrier_preconditioners = int(
+            carrier_metrics.get(
+                "polynomial_structured_frame_preconditioner_count", 0
+            )
+            or 0
+        )
+        try:
+            self_dual_wreath_orbits = (
+                json.loads(
+                    SELF_DUAL_WREATH_CARRIER_ORBIT_GROWTH_PATH.read_text()
+                )
+                if SELF_DUAL_WREATH_CARRIER_ORBIT_GROWTH_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            self_dual_wreath_orbits = {}
+        orbit_metrics = self_dual_wreath_orbits.get("headline_metrics", {})
+        orbit_rows = int(orbit_metrics.get("record_count", 0) or 0)
+        orbit_factorial_rows = int(
+            orbit_metrics.get(
+                "factorial_hidden_label_orbit_lower_bound_count", 0
+            )
+            or 0
+        )
+        orbit_harmonic_transforms = int(
+            orbit_metrics.get("compressed_harmonic_block_transform_count", 0)
+            or 0
+        )
+        try:
+            self_dual_wreath_harmonics = (
+                json.loads(
+                    SELF_DUAL_WREATH_HARMONIC_CARRIER_SCHEMA_PATH.read_text()
+                )
+                if SELF_DUAL_WREATH_HARMONIC_CARRIER_SCHEMA_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            self_dual_wreath_harmonics = {}
+        harmonic_metrics = self_dual_wreath_harmonics.get(
+            "headline_metrics", {}
+        )
+        harmonic_identity_count = int(
+            harmonic_metrics.get(
+                "harmonic_burnside_identity_verification_count", 0
+            )
+            or 0
+        )
+        harmonic_exact_count = int(
+            harmonic_metrics.get("exact_scaling_record_count", 0) or 0
+        )
+        harmonic_dense_log2 = float(
+            harmonic_metrics.get(
+                "maximum_log2_certified_block_coordinate_lower_bound",
+                0,
+            )
+            or 0
+        )
+        harmonic_sparse_transforms = int(
+            harmonic_metrics.get(
+                "uniform_coherent_harmonic_transform_count", 0
+            )
+            or 0
+        )
+        try:
+            self_dual_wreath_commutant_transfer = (
+                json.loads(
+                    SELF_DUAL_WREATH_COMMUTANT_TRANSFER_PATH.read_text()
+                )
+                if SELF_DUAL_WREATH_COMMUTANT_TRANSFER_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            self_dual_wreath_commutant_transfer = {}
+        commutant_transfer_metrics = (
+            self_dual_wreath_commutant_transfer.get(
+                "headline_metrics", {}
+            )
+        )
+        restricted_gap_theorems = int(
+            commutant_transfer_metrics.get(
+                "restricted_all_n_inverse_polynomial_gap_theorem_count",
+                0,
+            )
+            or 0
+        )
+        restricted_coverage_bits = float(
+            commutant_transfer_metrics.get(
+                "maximum_negative_log2_restricted_coordinate_coverage_upper_bound",
+                0,
+            )
+            or 0
+        )
+        general_gap_theorems = int(
+            commutant_transfer_metrics.get(
+                "general_equal_source_gap_theorem_count", 0
+            )
+            or 0
+        )
+        cross_source_rules = int(
+            commutant_transfer_metrics.get(
+                "cross_source_carrier_mixing_rule_count", 0
+            )
+            or 0
+        )
+        try:
+            self_dual_wreath_physical_blocks = (
+                json.loads(
+                    SELF_DUAL_WREATH_PHYSICAL_FRAME_BLOCKS_PATH.read_text()
+                )
+                if SELF_DUAL_WREATH_PHYSICAL_FRAME_BLOCKS_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            self_dual_wreath_physical_blocks = {}
+        physical_block_metrics = self_dual_wreath_physical_blocks.get(
+            "headline_metrics", {}
+        )
+        physical_block_rows = int(
+            physical_block_metrics.get("record_count", 0) or 0
+        )
+        physical_block_formula = int(
+            physical_block_metrics.get(
+                "physical_wreath_irrep_tuple_conservation_proof_count",
+                0,
+            )
+            or 0
+        )
+        physical_recurrences = int(
+            physical_block_metrics.get(
+                "uniform_all_n_spectral_recurrence_count", 0
+            )
+            or 0
+        )
+        physical_preconditioners = int(
+            physical_block_metrics.get(
+                "polynomial_structured_frame_preconditioner_count", 0
+            )
+            or 0
+        )
+        try:
+            self_dual_wreath_unequal_blocks = (
+                json.loads(
+                    SELF_DUAL_WREATH_UNEQUAL_FRAME_BLOCKS_PATH.read_text()
+                )
+                if SELF_DUAL_WREATH_UNEQUAL_FRAME_BLOCKS_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            self_dual_wreath_unequal_blocks = {}
+        unequal_block_metrics = self_dual_wreath_unequal_blocks.get(
+            "headline_metrics", {}
+        )
+        unequal_block_rows = int(
+            unequal_block_metrics.get("record_count", 0) or 0
+        )
+        unequal_collective_rows = int(
+            unequal_block_metrics.get(
+                "collective_nontrivial_spectrum_count", 0
+            )
+            or 0
+        )
+        mixed_tuple_rows = int(
+            unequal_block_metrics.get(
+                "mixed_physical_irrep_tuple_block_count", 0
+            )
+            or 0
+        )
+        unequal_recurrences = int(
+            unequal_block_metrics.get(
+                "uniform_all_n_spectral_recurrence_count", 0
+            )
+            or 0
+        )
+        try:
+            self_dual_wreath_w3_tuples = (
+                json.loads(
+                    SELF_DUAL_WREATH_COMPLETE_W3_TUPLE_PATH.read_text()
+                )
+                if SELF_DUAL_WREATH_COMPLETE_W3_TUPLE_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            self_dual_wreath_w3_tuples = {}
+        w3_tuple_metrics = self_dual_wreath_w3_tuples.get(
+            "headline_metrics", {}
+        )
+        w3_tuple_count = int(
+            w3_tuple_metrics.get("unordered_threshold_tuple_count", 0)
+            or 0
+        )
+        w3_occupied_count = int(
+            w3_tuple_metrics.get(
+                "naturally_occupied_threshold_tuple_count", 0
+            )
+            or 0
+        )
+        w3_max_condition = float(
+            w3_tuple_metrics.get(
+                "maximum_naturally_occupied_support_condition_number",
+                0,
+            )
+            or 0
+        )
+        tuple_moment_recurrences = int(
+            w3_tuple_metrics.get(
+                "uniform_all_n_character_moment_recurrence_count", 0
+            )
+            or 0
+        )
+        try:
+            self_dual_wreath_character_moments = (
+                json.loads(SELF_DUAL_WREATH_CHARACTER_MOMENTS_PATH.read_text())
+                if SELF_DUAL_WREATH_CHARACTER_MOMENTS_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            self_dual_wreath_character_moments = {}
+        character_moment_metrics = self_dual_wreath_character_moments.get(
+            "headline_metrics", {}
+        )
+        second_moment_recurrences = int(
+            character_moment_metrics.get(
+                "exact_second_moment_class_recurrence_count", 0
+            )
+            or 0
+        )
+        third_moment_contractions = int(
+            character_moment_metrics.get(
+                "polynomial_third_moment_contraction_count", 0
+            )
+            or 0
+        )
+        third_moment_barriers = int(
+            character_moment_metrics.get(
+                "third_moment_factorial_orbit_barrier_count", 0
+            )
+            or 0
+        )
+        try:
+            self_dual_wreath_third_moment = (
+                json.loads(
+                    SELF_DUAL_WREATH_THIRD_MOMENT_CONTRACTION_PATH.read_text()
+                )
+                if SELF_DUAL_WREATH_THIRD_MOMENT_CONTRACTION_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            self_dual_wreath_third_moment = {}
+        third_moment_metrics = self_dual_wreath_third_moment.get(
+            "headline_metrics", {}
+        )
+        special_third_contractions = int(
+            third_moment_metrics.get(
+                "exact_polynomial_third_moment_contraction_count", 0
+            )
+            or 0
+        )
+        all_sector_third_contractions = int(
+            third_moment_metrics.get(
+                "all_physical_irrep_sector_contraction_count", 0
+            )
+            or 0
+        )
+        try:
+            self_dual_wreath_all_unequal = (
+                json.loads(
+                    SELF_DUAL_WREATH_ALL_UNEQUAL_THIRD_MOMENT_PATH.read_text()
+                )
+                if SELF_DUAL_WREATH_ALL_UNEQUAL_THIRD_MOMENT_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            self_dual_wreath_all_unequal = {}
+        all_unequal_metrics = self_dual_wreath_all_unequal.get(
+            "headline_metrics", {}
+        )
+        all_unequal_contractions = int(
+            all_unequal_metrics.get(
+                "arbitrary_mixed_unequal_tuple_contraction_count", 0
+            )
+            or 0
+        )
+        equal_commutator_contractions = int(
+            all_unequal_metrics.get(
+                "equal_pair_commutator_contraction_count", 0
+            )
+            or 0
+        )
+        commutator_counterexamples = int(
+            all_unequal_metrics.get(
+                "commutator_class_counterexample_count", 0
+            )
+            or 0
+        )
+        try:
+            self_dual_wreath_commutator_audit = (
+                json.loads(
+                    SELF_DUAL_WREATH_EQUAL_COMMUTATOR_AUDIT_PATH.read_text()
+                )
+                if SELF_DUAL_WREATH_EQUAL_COMMUTATOR_AUDIT_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            self_dual_wreath_commutator_audit = {}
+        commutator_audit_metrics = (
+            self_dual_wreath_commutator_audit.get("headline_metrics", {})
+        )
+        pure_commutator_contractions = int(
+            commutator_audit_metrics.get(
+                "exact_pure_commutator_frobenius_contraction_count", 0
+            )
+            or 0
+        )
+        mixed_commutator_contractions = int(
+            commutator_audit_metrics.get(
+                "mixed_class_commutator_contraction_count", 0
+            )
+            or 0
+        )
+        polynomial_refined_kernels = int(
+            commutator_audit_metrics.get(
+                "polynomial_refined_kernel_construction_count", 0
+            )
+            or 0
+        )
+        try:
+            self_dual_wreath_stable_rank = (
+                json.loads(
+                    SELF_DUAL_WREATH_STABLE_COMMUTATOR_RANK_PATH.read_text()
+                )
+                if SELF_DUAL_WREATH_STABLE_COMMUTATOR_RANK_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            self_dual_wreath_stable_rank = {}
+        stable_rank_metrics = self_dual_wreath_stable_rank.get(
+            "headline_metrics", {}
+        )
+        stable_mass_vanishing = int(
+            stable_rank_metrics.get(
+                "fixed_tail_vanishing_mass_theorem_count", 0
+            )
+            or 0
+        )
+        typical_sector_coverage = int(
+            stable_rank_metrics.get(
+                "typical_sector_coverage_count", 0
+            )
+            or 0
+        )
+        try:
+            self_dual_wreath_typical_portfolio = (
+                json.loads(
+                    SELF_DUAL_WREATH_TYPICAL_PARTITION_PORTFOLIO_PATH.read_text()
+                )
+                if SELF_DUAL_WREATH_TYPICAL_PARTITION_PORTFOLIO_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            self_dual_wreath_typical_portfolio = {}
+        typical_portfolio_metrics = (
+            self_dual_wreath_typical_portfolio.get(
+                "headline_metrics", {}
+            )
+        )
+        typical_catalog_no_go = int(
+            typical_portfolio_metrics.get(
+                "constant_mass_polynomial_catalog_no_go_theorem_count", 0
+            )
+            or 0
+        )
+        uniform_typical_recoupling = int(
+            typical_portfolio_metrics.get(
+                "uniform_partition_description_recoupling_rule_count", 0
+            )
+            or 0
+        )
+        try:
+            self_dual_wreath_recoupling_transfer = (
+                json.loads(
+                    SELF_DUAL_WREATH_TYPICAL_RECOUPLING_TRANSFER_PATH.read_text()
+                )
+                if SELF_DUAL_WREATH_TYPICAL_RECOUPLING_TRANSFER_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            self_dual_wreath_recoupling_transfer = {}
+        recoupling_transfer_metrics = (
+            self_dual_wreath_recoupling_transfer.get(
+                "headline_metrics", {}
+            )
+        )
+        transfer_missing_primitives = int(
+            recoupling_transfer_metrics.get(
+                "decoder_blocking_missing_primitive_count", 0
+            )
+            or 0
+        )
+        transferred_end_to_end_algorithms = int(
+            recoupling_transfer_metrics.get(
+                "new_end_to_end_quantum_algorithm_count", 0
+            )
+            or 0
+        )
+        records.extend(
+            [
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-SELF-DUAL-BOUNDED-SUPPORT-COMPLETENESS",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "Equal-syndrome meet-in-the-middle enumeration contains every self-dual codeword support "
+                        "through the registered fixed weight."
+                    ),
+                    depends_on=["PO-REDUCTION", "PO-CLASSICAL-BASELINE"],
+                    status=(
+                        "proved-current-self-dual-tail-fixed-weight"
+                        if automorphism_instances
+                        and complete_supports == automorphism_instances
+                        else (
+                            "blocked-incomplete-bounded-support-enumeration"
+                            if automorphism_instances
+                            else "blocked-no-self-dual-automorphism-artifact"
+                        )
+                    ),
+                    falsification_test=(
+                        "Enumerate all size-at-most-t half supports, pair equal syndromes, and verify every emitted "
+                        "support has zero public parity-check syndrome."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-SELF-DUAL-AUTOMORPHISM-STRATA",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "Each audited tail instance is assigned a sound rigidity certificate, a verified nontrivial "
+                        "full-code automorphism, or explicit unresolved status."
+                    ),
+                    depends_on=["PO-NO-GO", "PO-REDUCTION", "PO-DEQUANTIZATION"],
+                    status=(
+                        "proved-finite-self-dual-automorphism-stratification"
+                        if automorphism_instances
+                        and rigidity_count + nonrigid_count + unresolved_automorphisms
+                        == automorphism_instances
+                        else "blocked-no-self-dual-automorphism-artifact"
+                    ),
+                    falsification_test=(
+                        "Require singleton invariant colors for rigidity and full rowspace verification for every "
+                        "nonidentity incidence-graph automorphism."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-SELF-DUAL-INFINITE-FAMILY-AUTOMORPHISM-THEOREM",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "The growing self-dual family has certified automorphism size and minimal degree sufficient "
+                        "for the corresponding symmetric-group coset-state theorem."
+                    ),
+                    depends_on=["PO-NO-GO", "PO-COMPLEXITY", "PO-SCALING"],
+                    status=(
+                        "proved-growing-family-automorphism-theorem"
+                        if family_rigidity_theorems
+                        else (
+                            "blocked-finite-fixed-order-no-uniform-family-theorem"
+                            if high_order_targets and high_order_remaining == 0
+                            else (
+                                "blocked-finite-strata-and-unresolved-tail"
+                                if automorphism_instances
+                                else "blocked-no-self-dual-automorphism-artifact"
+                            )
+                        )
+                    ),
+                    falsification_test=(
+                        "Prove the automorphism statement uniformly in n or extend exact support/stabilizer "
+                        "certificates across growing dimensions without extrapolating samples."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-SELF-DUAL-HIGH-ORDER-AUTOMORPHISM-RESOLUTION",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "Every automorphism-debt instance from the weight-eight audit is resolved by complete "
+                        "weight-ten supports and singleton invariant coordinate colors."
+                    ),
+                    depends_on=["PO-NO-GO", "PO-CLASSICAL-BASELINE", "PO-SCALING"],
+                    status=(
+                        "proved-current-finite-tail-weight-ten"
+                        if high_order_targets
+                        and high_order_resolved == high_order_targets
+                        and high_order_remaining == 0
+                        else (
+                            "blocked-high-order-automorphism-debt"
+                            if high_order_targets
+                            else "blocked-no-high-order-automorphism-artifact"
+                        )
+                    ),
+                    falsification_test=(
+                        "Verify packed subset count, zero syndrome for every emitted support, and singleton stable "
+                        "colors for every target instance."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-SELF-DUAL-RIGID-COLLECTIVE-MEASUREMENT-DECODER",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "A polynomial-size collective measurement on rigid self-dual rowspace coset states yields "
+                        "an inverse-polynomial signal and a polynomial hidden-permutation decoder."
+                    ),
+                    depends_on=["PO-MEASUREMENT", "PO-COMPLEXITY", "PO-DEQUANTIZATION"],
+                    status=(
+                        "proved-rigid-collective-measurement-and-decoder"
+                        if high_order_collective and high_order_decoders
+                        else (
+                            "blocked-no-rigid-collective-measurement-or-decoder"
+                            if high_order_targets and high_order_remaining == 0
+                            else "blocked-no-high-order-automorphism-artifact"
+                        )
+                    ),
+                    falsification_test=(
+                        "Specify the joint POVM or circuit, bound copy and gate complexity, recover the hidden "
+                        "permutation, and compare every statistic with public-generator classical baselines."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-SELF-DUAL-FIXED-ORDER-SPARSITY-OBSTRUCTION",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "For the uniform binary self-dual ensemble, every fixed support-weight incidence graph "
+                        "becomes empty with high probability, so explicit fixed-order rigidity certification fails."
+                    ),
+                    depends_on=["PO-SCALING", "PO-CLASSICAL-BASELINE", "PO-DEQUANTIZATION"],
+                    status=(
+                        "proved-uniform-self-dual-fixed-order-sparsity"
+                        if sparsity_rows and not fixed_order_asymptotic
+                        else (
+                            "blocked-no-fixed-order-sparsity-artifact"
+                            if not sparsity_rows
+                            else "falsified-fixed-order-certificate-survives"
+                        )
+                    ),
+                    falsification_test=(
+                        "Check the Lagrangian membership count, exact expected low-weight enumerator, entropy-half "
+                        "threshold, and Markov bound for fixed weight."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-SELF-DUAL-IMPLICIT-GROWING-WEIGHT-AUTOMORPHISM-INVARIANT",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "A polynomial-time implicit invariant of growing-weight self-dual codewords certifies the "
+                        "automorphism behavior of the scalable rigid tail without explicit support enumeration."
+                    ),
+                    depends_on=["PO-CLASSICAL-BASELINE", "PO-COMPLEXITY", "PO-SCALING"],
+                    status=(
+                        "blocked-no-implicit-growing-weight-invariant"
+                        if sparsity_rows
+                        else "blocked-no-fixed-order-sparsity-artifact"
+                    ),
+                    falsification_test=(
+                        "Give a compact algebraic representation, prove automorphism invariance and completeness "
+                        "for the target family, and bound construction/canonicalization cost polynomially."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-SELF-DUAL-WREATH-BRIDGE-SPECTRUM",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "The rigid code-equivalence bridge class in (S_n x S_n) semidirect Z_2 has the registered "
+                        "unequal-pair/equal-plus-minus one-copy irrep spectrum and exact frame scalars."
+                    ),
+                    depends_on=["PO-REDUCTION", "PO-MECHANISM", "PO-NO-GO"],
+                    status=(
+                        "proved-exact-one-copy-wreath-bridge-spectrum"
+                        if wreath_exact and wreath_weak_zero == wreath_rows
+                        else (
+                            "blocked-incomplete-wreath-spectrum"
+                            if wreath_rows
+                            else "blocked-no-self-dual-wreath-spectrum-artifact"
+                        )
+                    ),
+                    falsification_test=(
+                        "Verify the bridge conjugacy action, wreath irrep character formulas, regular dimension sum, "
+                        "frame trace, weak-label zero information, and PGM success."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-SELF-DUAL-WREATH-CENTRALIZER-HECKE",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "The bridge label stabilizer C_W(h_e) gives a multiplicity-free homogeneous space whose "
+                        "scalar Hecke kernels are exactly symmetric-group class functions, while the actual "
+                        "order-two hidden subgroup is non-Gelfand for n>=3."
+                    ),
+                    depends_on=["PO-REDUCTION", "PO-MECHANISM", "PO-NO-GO"],
+                    status=(
+                        "proved-centralizer-hecke-and-hidden-subgroup-separation"
+                        if hecke_rows
+                        and hecke_gelfand == hecke_rows
+                        and hecke_hidden_non_gelfand >= hecke_rows - 1
+                        else (
+                            "blocked-incomplete-wreath-hecke-audit"
+                            if hecke_rows
+                            else "blocked-no-wreath-hecke-artifact"
+                        )
+                    ),
+                    falsification_test=(
+                        "Verify C_W(h_e), W/C, double cosets, the multiplicity-free Ind_C^W decomposition, "
+                        "symmetric-character orthogonality, and H-fixed irrep multiplicities without replacing H by C."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-SELF-DUAL-WREATH-SCALAR-KERNEL-NOT-OPERATOR-FRAME",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "The normalized k-copy scalar Hilbert-Schmidt kernel has only diagonal/off-diagonal values "
+                        "and therefore does not supply the operator-valued carrier transform required by the PGM."
+                    ),
+                    depends_on=["PO-MEASUREMENT", "PO-NO-GO", "PO-DEQUANTIZATION"],
+                    status=(
+                        "proved-scalar-kernel-collapse-operator-frame-still-blocked"
+                        if hecke_rows
+                        and hecke_scalar_collapses == hecke_rows
+                        and not hecke_operator_reductions
+                        else (
+                            "proved-operator-frame-reduction"
+                            if hecke_operator_reductions
+                            else "blocked-no-wreath-hecke-artifact"
+                        )
+                    ),
+                    falsification_test=(
+                        "Derive Tr(rho_s^k rho_t^k) exactly, diagonalize the resulting label Gram matrix, then "
+                        "separately exhibit a coherent operator-valued frame inverse and carrier-sensitive POVM."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-SELF-DUAL-WREATH-PGM-POLAR-REDUCTION",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "The k-copy mixed-state PGM is exactly the polar isometry A_k B_k^{-1/2}, with B_k the "
+                        "average bridge-support projector and a compact subset-mask LCU contract."
+                    ),
+                    depends_on=["PO-MEASUREMENT", "PO-MECHANISM", "PO-REDUCTION"],
+                    status=(
+                        "proved-wreath-pgm-polar-and-lcu-reduction"
+                        if pgm_rows and pgm_polar_reductions == pgm_rows
+                        else (
+                            "blocked-incomplete-wreath-pgm-polar-reduction"
+                            if pgm_rows
+                            else "blocked-no-wreath-pgm-polar-artifact"
+                        )
+                    ),
+                    falsification_test=(
+                        "Verify projector ranks and overlaps, A_k^*A_k=B_k, the PGM effect normalization, and the "
+                        "uniform permutation/subset LCU expansion under the registered access model."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-SELF-DUAL-WREATH-SUBSET-CARRIER-NONCOMMUTATIVITY",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "The register-symmetrized subset-orbit carrier sums do not form a scalar commutative algebra; "
+                        "U_2 and U_3 have a nonzero exact commutator from four copies onward in the finite controls."
+                    ),
+                    depends_on=["PO-MECHANISM", "PO-NO-GO", "PO-MEASUREMENT"],
+                    status=(
+                        "proved-finite-wreath-subset-carrier-noncommutativity"
+                        if carrier_rows and carrier_noncommuting and carrier_rank > 5
+                        else (
+                            "blocked-no-carrier-noncommutativity-witness"
+                            if carrier_rows
+                            else "blocked-no-wreath-subset-carrier-artifact"
+                        )
+                    ),
+                    falsification_test=(
+                        "Verify disjoint commuting controls, overlapping and symmetrized commutators with exact group "
+                        "multiplication, and modular word-rank lower bounds over independent primes."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-SELF-DUAL-WREATH-CARRIER-ORBIT-GROWTH",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "At carrier word depth three, relative hidden labels have at least n!/2 full-wreath orbits, "
+                        "so explicit carrier-orbit tables are factorial even though fixed-depth subset profiles are polynomial."
+                    ),
+                    depends_on=["PO-SCALING", "PO-MECHANISM", "PO-NO-GO"],
+                    status=(
+                        "proved-factorial-wreath-carrier-orbit-growth"
+                        if orbit_rows and orbit_factorial_rows >= 2 * orbit_rows // 3
+                        else (
+                            "blocked-incomplete-carrier-orbit-growth"
+                            if orbit_rows
+                            else "blocked-no-wreath-carrier-orbit-artifact"
+                        )
+                    ),
+                    falsification_test=(
+                        "Verify the left-right relative-label reduction, Burnside sum over z_lambda, identity-class "
+                        "factorial contribution, swap quotient factor-two bound, and subset-profile comparison."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-SELF-DUAL-WREATH-COMPRESSED-HARMONIC-CARRIER-TRANSFORM",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "A polynomial coherent harmonic transform represents the factorial simultaneous-conjugacy "
+                        "carrier sectors using irreducible and multiplicity labels without orbit enumeration."
+                    ),
+                    depends_on=["PO-MEASUREMENT", "PO-COMPLEXITY", "PO-SCALING"],
+                    status=(
+                        "proved-compressed-wreath-harmonic-carrier-transform"
+                        if orbit_harmonic_transforms
+                        else (
+                            "blocked-factorial-orbits-no-harmonic-transform"
+                            if orbit_rows
+                            else "blocked-no-wreath-carrier-orbit-artifact"
+                        )
+                    ),
+                    falsification_test=(
+                        "Specify harmonic block labels and dimensions, coherent basis changes, sparse product/recoupling "
+                        "rules, gate precision, and polynomial complexity at growing n and k."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-SELF-DUAL-WREATH-HARMONIC-CARRIER-SCHEMA",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "The depth-three simultaneous-conjugacy carrier space decomposes into exact Kronecker "
+                        "multiplicity blocks with dimension identity sum_nu m_nu^2=sum_alpha z_alpha."
+                    ),
+                    depends_on=["PO-MECHANISM", "PO-SCALING", "PO-NO-GO"],
+                    status=(
+                        "proved-harmonic-carrier-schema"
+                        if harmonic_exact_count
+                        and harmonic_identity_count == harmonic_exact_count
+                        else (
+                            "blocked-harmonic-burnside-identity-failed"
+                            if harmonic_exact_count
+                            else "blocked-no-wreath-harmonic-carrier-artifact"
+                        )
+                    ),
+                    falsification_test=(
+                        "Compute m_nu=sum_lambda g(lambda,lambda,nu), verify sum m_nu^2 against the Burnside "
+                        "simultaneous-conjugacy count, and check the n!/p(n) maximum block lower bound."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-SELF-DUAL-WREATH-SPARSE-HARMONIC-CARRIER-TRANSFORM",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "The exact harmonic carrier schema has a uniform sparse internal Kronecker transform and "
+                        "carrier-product recurrence that avoids dense multiplicity-block enumeration."
+                    ),
+                    depends_on=["PO-MEASUREMENT", "PO-COMPLEXITY", "PO-SCALING"],
+                    status=(
+                        "proved-sparse-wreath-harmonic-carrier-transform"
+                        if harmonic_sparse_transforms
+                        else (
+                            "blocked-dense-multiplicity-blocks-no-sparse-transform"
+                            if harmonic_identity_count and harmonic_dense_log2 > 0
+                            else "blocked-no-wreath-harmonic-carrier-artifact"
+                        )
+                    ),
+                    falsification_test=(
+                        "Give all-n internal multiplicity labels, sparse generator matrix elements, recoupling "
+                        "rules, coherent basis changes, precision bounds, and polynomial gate complexity."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-SELF-DUAL-WREATH-RESTRICTED-COMMUTANT-GAP-TRANSFER",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "The all-n bounded-support commutant gap for lambda=(n-2,2), nu=(n-3,2,1) "
+                        "transfers to a genuine multiplicity-two equal-source wreath harmonic sector."
+                    ),
+                    depends_on=["PO-MECHANISM", "PO-MEASUREMENT", "PO-COMPLEXITY"],
+                    status=(
+                        "proved-restricted-wreath-commutant-gap-transfer"
+                        if restricted_gap_theorems
+                        else "blocked-no-wreath-commutant-transfer-artifact"
+                    ),
+                    falsification_test=(
+                        "Verify g(lambda,lambda,nu)=2, the symbolic normalized gap 2/[n(n-1)], source/target "
+                        "routing assumptions, and the bounded-support LCU normalization."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-SELF-DUAL-WREATH-GENERAL-CARRIER-COMMUTANT-TRANSFORM",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "Bounded-support commutant Hamiltonians resolve the general equal-source carrier "
+                        "multiplicity burden and actual cross-source frame action on nonnegligible sectors."
+                    ),
+                    depends_on=["PO-MEASUREMENT", "PO-COMPLEXITY", "PO-SCALING"],
+                    status=(
+                        "proved-general-wreath-carrier-commutant-transform"
+                        if general_gap_theorems and cross_source_rules
+                        else (
+                            "blocked-restricted-gap-factorial-coverage-no-cross-source-action"
+                            if restricted_gap_theorems
+                            and restricted_coverage_bits > 0
+                            else "blocked-no-wreath-commutant-transfer-artifact"
+                        )
+                    ),
+                    falsification_test=(
+                        "Give uniform separators and inverse-polynomial gaps across equal-source sectors, derive "
+                        "actual carrier matrix elements between source partitions, and prove frame-invariant coverage."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-SELF-DUAL-WREATH-PHYSICAL-FRAME-BLOCK-FORMULA",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "The correlated frame is exactly block diagonal in tuples of physical W_n irreps, with "
+                        "equal-pair bridge blocks pi(h_s)=+/-[rho(s) tensor rho(s^-1)]Swap."
+                    ),
+                    depends_on=["PO-MECHANISM", "PO-MEASUREMENT"],
+                    status=(
+                        "proved-physical-wreath-frame-block-formula"
+                        if physical_block_rows and physical_block_formula
+                        else "blocked-no-physical-wreath-frame-block-artifact"
+                    ),
+                    falsification_test=(
+                        "Verify the wreath irrep action, bridge involutions, one-copy class scalar, right-convolution "
+                        "Fourier block conservation, and finite correlated block spectra."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-SELF-DUAL-WREATH-ALL-N-PHYSICAL-FRAME-PRECONDITIONER",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "All physical wreath-irrep tuple blocks admit a uniform all-n spectral recurrence and "
+                        "inverse-polynomially conditioned coherent frame inverse."
+                    ),
+                    depends_on=["PO-MEASUREMENT", "PO-COMPLEXITY", "PO-SCALING"],
+                    status=(
+                        "proved-all-n-physical-wreath-frame-preconditioner"
+                        if physical_recurrences and physical_preconditioners
+                        else (
+                            "blocked-finite-equal-pair-blocks-no-all-n-preconditioner"
+                            if physical_block_rows
+                            else "blocked-no-physical-wreath-frame-block-artifact"
+                        )
+                    ),
+                    falsification_test=(
+                        "Construct unequal and mixed irrep tuple blocks, prove all-n spectral recurrences and "
+                        "worst-sector support conditioning, then give a coherent blockwise inverse."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-SELF-DUAL-WREATH-UNEQUAL-COLLECTIVE-FRAME-BLOCKS",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "Unequal-pair wreath irreps have zero one-copy bridge character but can have nontrivial "
+                        "correlated multi-copy frame spectra and kernels."
+                    ),
+                    depends_on=["PO-MECHANISM", "PO-MEASUREMENT", "PO-NO-GO"],
+                    status=(
+                        "proved-finite-unequal-collective-frame-blocks"
+                        if unequal_block_rows and unequal_collective_rows
+                        else "blocked-no-unequal-wreath-frame-block-artifact"
+                    ),
+                    falsification_test=(
+                        "Verify induced bridge involutions, zero one-copy class average, correlated block spectra, "
+                        "and all unequal W_3 information-threshold controls."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-SELF-DUAL-WREATH-MIXED-PHYSICAL-TUPLE-RECURRENCE",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "Mixed tuples of equal- and unequal-pair physical wreath irreps admit a uniform all-n "
+                        "spectral recurrence and inverse-polynomially conditioned frame inverse."
+                    ),
+                    depends_on=["PO-MEASUREMENT", "PO-COMPLEXITY", "PO-SCALING"],
+                    status=(
+                        "proved-mixed-physical-tuple-frame-recurrence"
+                        if mixed_tuple_rows and unequal_recurrences
+                        else (
+                            "blocked-repeated-unequal-blocks-no-mixed-tuple-recurrence"
+                            if unequal_block_rows
+                            else "blocked-no-unequal-wreath-frame-block-artifact"
+                        )
+                    ),
+                    falsification_test=(
+                        "Construct mixed physical-irrep tuple matrices or moments, prove recurrence closure at "
+                        "growing n,k, and bound the minimum positive eigenvalue on all naturally occupied sectors."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-SELF-DUAL-WREATH-COMPLETE-W3-TUPLE-CONDITIONING",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "Every naturally occupied physical-irrep tuple of W_3 at the three-copy information "
+                        "threshold has minimum positive frame eigenvalue at least 1/8 and condition number at most 4."
+                    ),
+                    depends_on=["PO-MEASUREMENT", "PO-SCALING", "PO-NO-GO"],
+                    status=(
+                        "proved-complete-w3-threshold-support-conditioning"
+                        if w3_tuple_count == 165
+                        and w3_occupied_count == 84
+                        and w3_max_condition <= 4.0 + 1e-8
+                        else (
+                            "blocked-incomplete-w3-tuple-audit"
+                            if w3_tuple_count
+                            else "blocked-no-complete-w3-tuple-artifact"
+                        )
+                    ),
+                    falsification_test=(
+                        "Verify all nine W_3 irreps, natural label probabilities, all 165 unordered tuples, "
+                        "support-restricted eigenvalues, and total occupied tuple mass one."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-SELF-DUAL-WREATH-ALL-N-TUPLE-MOMENT-RECURRENCE",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "A uniform character-moment or transfer recurrence gives spectra and support conditioning "
+                        "for every naturally occupied W_n physical-irrep tuple at k=Theta(log n!)."
+                    ),
+                    depends_on=["PO-MEASUREMENT", "PO-COMPLEXITY", "PO-SCALING"],
+                    status=(
+                        "proved-all-n-wreath-tuple-moment-recurrence"
+                        if tuple_moment_recurrences
+                        else (
+                            "blocked-complete-w3-no-all-n-moment-recurrence"
+                            if w3_tuple_count
+                            else "blocked-no-complete-w3-tuple-artifact"
+                        )
+                    ),
+                    falsification_test=(
+                        "Derive exact trace moments from wreath characters and bridge-product conjugacy classes, "
+                        "validate finite tables, and prove growing-n recurrence closure and spectral bounds."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-SELF-DUAL-WREATH-SECOND-MOMENT-CHARACTER-RECURRENCE",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "The mixed physical-irrep frame second moment has an exact all-n partition-class "
+                        "contraction derived solely from symmetric-group characters."
+                    ),
+                    depends_on=["PO-MEASUREMENT", "PO-SCALING", "PO-NO-GO"],
+                    status=(
+                        "proved-wreath-second-moment-character-recurrence"
+                        if second_moment_recurrences
+                        else "blocked-no-wreath-second-moment-character-artifact"
+                    ),
+                    falsification_test=(
+                        "Compare the class formula with raw wreath-character sums and complete W_3 block spectra, "
+                        "including unequal-pair irreps and mixed tuples."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-SELF-DUAL-WREATH-HIGHER-MOMENT-SYMBOLIC-CONTRACTION",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "Third and higher mixed-frame moments admit a polynomial symbolic contraction that avoids "
+                        "factorial simultaneous-conjugacy orbit tables."
+                    ),
+                    depends_on=["PO-MEASUREMENT", "PO-COMPLEXITY", "PO-SCALING"],
+                    status=(
+                        "proved-polynomial-wreath-higher-moment-contraction"
+                        if third_moment_contractions
+                        or all_sector_third_contractions
+                        else (
+                            "partial-special-unequal-sector-third-moment-only"
+                            if special_third_contractions
+                            and not all_unequal_contractions
+                            else (
+                                "partial-all-unequal-sectors-equal-commutator-open"
+                                if all_unequal_contractions
+                                else (
+                                    "blocked-third-moment-factorial-orbits-no-symbolic-contraction"
+                                    if third_moment_barriers
+                                    else "blocked-no-wreath-character-moment-artifact"
+                                )
+                            )
+                        )
+                    ),
+                    falsification_test=(
+                        "Derive an explicit class-algebra, character, or representation-ring contraction; validate "
+                        "it against all W_3 tuple moments and report its growing-n operation count."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-SELF-DUAL-WREATH-SPECIAL-UNEQUAL-THIRD-MOMENT-CONTRACTION",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "The repeated trivial-standard unequal physical-irrep sector has an exact polynomial "
+                        "cycle-index/rook recurrence for its third frame moment."
+                    ),
+                    depends_on=["PO-MEASUREMENT", "PO-COMPLEXITY", "PO-SCALING"],
+                    status=(
+                        "proved-special-unequal-third-moment-contraction"
+                        if special_third_contractions
+                        else "blocked-no-special-third-moment-contraction-artifact"
+                    ),
+                    falsification_test=(
+                        "Match direct pair-agreement distributions and the general wreath-character third moment, "
+                        "then verify polynomial coefficient-state support at growing n."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-SELF-DUAL-WREATH-ALL-SECTOR-THIRD-MOMENT-CONTRACTION",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "Polynomial symbolic contractions cover equal-pair commutator terms and every mixed "
+                        "naturally occupied physical-irrep tuple."
+                    ),
+                    depends_on=["PO-MEASUREMENT", "PO-COMPLEXITY", "PO-SCALING"],
+                    status=(
+                        "proved-all-sector-third-moment-contraction"
+                        if all_sector_third_contractions
+                        else (
+                            "blocked-special-unequal-sector-only"
+                            if special_third_contractions
+                            and not all_unequal_contractions
+                            else (
+                                "blocked-all-unequal-equal-commutator-open"
+                                if all_unequal_contractions
+                                else "blocked-no-third-moment-contraction"
+                            )
+                        )
+                    ),
+                    falsification_test=(
+                        "Enumerate the character term types for equal and unequal irreps, provide exact contractions "
+                        "for each mixed product, and verify natural-sector coverage."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-SELF-DUAL-WREATH-ALL-UNEQUAL-THIRD-MOMENT-CLASS-CONTRACTION",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "Every arbitrary mixed tuple of unequal-pair physical irreps has an exact subfactorial "
+                        "third-moment contraction over symmetric-group class connection coefficients."
+                    ),
+                    depends_on=["PO-MEASUREMENT", "PO-COMPLEXITY", "PO-SCALING"],
+                    status=(
+                        "proved-all-unequal-third-moment-class-contraction"
+                        if all_unequal_contractions
+                        else "blocked-no-all-unequal-class-contraction"
+                    ),
+                    falsification_test=(
+                        "Match direct class-triple pair counts and all unequal W_3 threshold tuple moments, while "
+                        "reporting p(n)^3/p(n)^4 operation growth."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-SELF-DUAL-WREATH-EQUAL-COMMUTATOR-CHARACTER-CONTRACTION",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "Equal-pair commutator-character insertions admit a polynomial recoupling contraction that "
+                        "extends the all-unequal class formula to every physical sector."
+                    ),
+                    depends_on=["PO-MEASUREMENT", "PO-COMPLEXITY", "PO-SCALING"],
+                    status=(
+                        "proved-equal-commutator-character-contraction"
+                        if equal_commutator_contractions
+                        or mixed_commutator_contractions
+                        else (
+                            "partial-pure-commutator-frobenius-mixed-open"
+                            if pure_commutator_contractions
+                            else (
+                                "blocked-class-triple-insufficient-s4-counterexample"
+                                if commutator_counterexamples
+                                else "blocked-no-equal-commutator-audit"
+                            )
+                        )
+                    ),
+                    falsification_test=(
+                        "Use richer recoupling data than the classes of r, q, and r^-1 q; reproduce equal and mixed "
+                        "finite frame moments and prove polynomial state support."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-SELF-DUAL-WREATH-PURE-COMMUTATOR-FROBENIUS-CONTRACTION",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "Products of equal-pair pure commutator characters contract exactly as the sum of tensor-"
+                        "product multiplicities divided by target dimensions."
+                    ),
+                    depends_on=["PO-MEASUREMENT", "PO-COMPLEXITY", "PO-SCALING"],
+                    status=(
+                        "proved-pure-commutator-frobenius-contraction"
+                        if pure_commutator_contractions
+                        else "blocked-no-pure-commutator-contraction"
+                    ),
+                    falsification_test=(
+                        "Compare tensor-product character decompositions with direct pair averages across nontrivial "
+                        "partitions and growing-copy portfolios."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-SELF-DUAL-WREATH-MIXED-FOUR-CLASS-RECOUPLING-KERNEL",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "The joint class kernel of r, q, r^-1q, and [r,q] has a polynomial recoupling construction "
+                        "sufficient for all mixed physical third moments."
+                    ),
+                    depends_on=["PO-MEASUREMENT", "PO-COMPLEXITY", "PO-SCALING"],
+                    status=(
+                        "proved-polynomial-mixed-four-class-kernel"
+                        if mixed_commutator_contractions
+                        and polynomial_refined_kernels
+                        else (
+                            "blocked-finite-four-class-kernel-factorial"
+                            if pure_commutator_contractions
+                            else "blocked-no-four-class-kernel-audit"
+                        )
+                    ),
+                    falsification_test=(
+                        "Construct the kernel or its contracted action without enumerating (n!)^2 pairs, validate "
+                        "finite class fibers, and prove polynomial state support."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-SELF-DUAL-WREATH-STABLE-SECTOR-NATURAL-MASS",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "Bounded-tail stable source partitions carry asymptotically nonvanishing Plancherel mass and "
+                        "therefore suffice for a typical physical-label recoupling algorithm."
+                    ),
+                    depends_on=["PO-MEASUREMENT", "PO-SCALING", "PO-NO-GO"],
+                    status=(
+                        "refuted-fixed-tail-plancherel-mass-vanishes"
+                        if stable_mass_vanishing
+                        and not typical_sector_coverage
+                        else (
+                            "proved-stable-sector-typical-mass"
+                            if typical_sector_coverage
+                            else "blocked-no-stable-sector-mass-audit"
+                        )
+                    ),
+                    falsification_test=(
+                        "Compute exact hook-length Plancherel mass, square it for physical pair labels, and compound "
+                        "it across the information-threshold copy count."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-SELF-DUAL-WREATH-CONSTANT-MASS-TYPICAL-CATALOG",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "A polynomial precertified catalog of typical source partitions can cover constant natural "
+                        "physical-label mass."
+                    ),
+                    depends_on=["PO-MEASUREMENT", "PO-SCALING", "PO-NO-GO"],
+                    status=(
+                        "refuted-maximal-plancherel-atom-stretched-exponential"
+                        if typical_catalog_no_go
+                        else "blocked-no-typical-catalog-audit"
+                    ),
+                    falsification_test=(
+                        "Use the maximal-dimension theorem and exact finite top-atom catalogs; square source mass for "
+                        "physical pair labels."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-SELF-DUAL-WREATH-UNIFORM-TYPICAL-PARTITION-RECOUPLING",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "One polynomial reversible rule, parameterized by arbitrary sampled typical partition "
+                        "descriptions, contracts the mixed four-class kernel on nonvanishing natural mass."
+                    ),
+                    depends_on=["PO-MEASUREMENT", "PO-COMPLEXITY", "PO-SCALING"],
+                    status=(
+                        "proved-uniform-typical-partition-recoupling"
+                        if uniform_typical_recoupling
+                        else (
+                            "blocked-precertified-catalog-superpolynomial"
+                            if typical_catalog_no_go
+                            else "blocked-no-typical-portfolio-audit"
+                        )
+                    ),
+                    falsification_test=(
+                        "Provide a uniform gate or symbolic contraction whose resource bounds depend polynomially on "
+                        "n and partition descriptions, not the number of typical labels."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-SELF-DUAL-WREATH-KNOWN-PRIMITIVE-END-TO-END-TRANSFER",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "Known symmetric-group QFT, label, and block-encoding primitives compose into an end-to-end "
+                        "typical physical wreath decoder without a new internal recoupling primitive."
+                    ),
+                    depends_on=["PO-MEASUREMENT", "PO-COMPLEXITY", "PO-NO-GO"],
+                    status=(
+                        "proved-known-primitives-end-to-end-transfer"
+                        if transferred_end_to_end_algorithms
+                        else (
+                            "refuted-scope-mismatch-missing-recoupling-stack"
+                            if transfer_missing_primitives
+                            else "blocked-no-capability-transfer-audit"
+                        )
+                    ),
+                    falsification_test=(
+                        "Type-check each primitive against internal multiplicity basis, overlapping associator, "
+                        "mixed kernel, support gap, and decoder outputs."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-SELF-DUAL-WREATH-NONCOMMUTATIVE-CARRIER-BLOCK-TRANSFORM",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "The growing-k subset-carrier algebra has a uniform polynomial multiplicity-block transform "
+                        "and a conditioned block representation suitable for frame inversion."
+                    ),
+                    depends_on=["PO-MEASUREMENT", "PO-COMPLEXITY", "PO-SCALING"],
+                    status=(
+                        "proved-polynomial-wreath-carrier-block-transform"
+                        if carrier_transforms and carrier_preconditioners
+                        else (
+                            "blocked-dense-harmonic-multiplicity-no-sparse-transform"
+                            if harmonic_identity_count and not harmonic_sparse_transforms
+                            else (
+                                "blocked-factorial-orbits-no-harmonic-block-transform"
+                                if orbit_rows and not orbit_harmonic_transforms
+                                else (
+                                    "blocked-noncommutative-carrier-block-transform-missing"
+                                    if carrier_rows
+                                    else "blocked-no-wreath-subset-carrier-artifact"
+                                )
+                            )
+                        )
+                    ),
+                    falsification_test=(
+                        "Give all-n carrier block labels, matrix elements, block-size and conditioning bounds, a "
+                        "coherent transform circuit, and a proof that finite word-rank growth is uniformly controlled."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-SELF-DUAL-WREATH-STRUCTURED-FRAME-PRECONDITIONER",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "A uniform representation-specific preconditioner or direct polar transform implements "
+                        "B_k^{-1/2} on the relevant carrier support in polynomial time despite factorial generic scale."
+                    ),
+                    depends_on=["PO-MEASUREMENT", "PO-COMPLEXITY", "PO-SCALING"],
+                    status=(
+                        "proved-polynomial-wreath-frame-preconditioner"
+                        if pgm_preconditioners and pgm_frame_inverses
+                        else (
+                            "blocked-noncommutative-carrier-block-transform-missing"
+                            if carrier_rows and not carrier_transforms
+                            else (
+                                "blocked-factorial-polar-scale-no-structured-preconditioner"
+                                if pgm_rows
+                                else "blocked-no-wreath-pgm-polar-artifact"
+                            )
+                        )
+                    ),
+                    falsification_test=(
+                        "Specify the carrier block basis and preconditioner, bound every relevant singular value after "
+                        "preconditioning, synthesize the transform, and charge precision, copies, gates, and access."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-SELF-DUAL-WREATH-GROWING-COPY-COVARIANT-DECODER",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "At k=Theta(log n!) copies, a polynomial wreath diagonal-action transform followed by a "
+                        "carrier-sensitive covariant POVM and polynomial classical decoder recovers the hidden permutation."
+                    ),
+                    depends_on=["PO-MEASUREMENT", "PO-COMPLEXITY", "PO-SUCCESS", "PO-DEQUANTIZATION"],
+                    status=(
+                        "proved-wreath-growing-copy-covariant-decoder"
+                        if (
+                            pgm_preconditioners
+                            and pgm_frame_inverses
+                            and pgm_povms
+                            and pgm_decoders
+                        )
+                        else (
+                            "blocked-polar-reduction-needs-structured-frame-inverse"
+                            if pgm_rows and not pgm_frame_inverses
+                            else (
+                                "blocked-scalar-hecke-does-not-reduce-operator-frame"
+                                if hecke_rows and not hecke_operator_reductions
+                                else (
+                                    "blocked-one-copy-spectrum-growing-copy-decoder-open"
+                                    if wreath_rows
+                                    else "blocked-no-self-dual-wreath-spectrum-artifact"
+                                )
+                            )
+                        )
+                    ),
+                    falsification_test=(
+                        "Specify the k-copy multiplicity decomposition, synthesize the final noncommutant covariant "
+                        "effects, bound outcome size, and decode s without enumerating n! candidates."
+                    ),
+                ),
+            ]
         )
         try:
             goppa_projector = (
@@ -3063,18 +5274,27 @@ def lemma_templates(candidate: dict[str, Any]) -> list[LemmaRecord]:
                     status=(
                         "proved-parity-complete-all-n-inverse-gap"
                         if int(
-                            typical_parity_separator_metrics.get(
+                            typical_parity_holdout_metrics.get(
                                 "inverse_polynomial_normalized_gap_theorem_count",
                                 0,
                             )
                             or 0
                         )
-                        else "blocked-finite-discovery-set-no-n8-holdout-or-all-n-theorem"
+                        else (
+                            "falsified-exact-n8-scalar-holdout-blocks"
+                            if int(
+                                typical_parity_holdout_metrics.get(
+                                    "exact_scalar_obstruction_count", 0
+                                )
+                                or 0
+                            )
+                            else "blocked-finite-discovery-set-no-all-n-theorem"
+                        )
                     ),
                     falsification_test=(
-                        "Freeze coefficients before an n=8 holdout, certify "
-                        "collisions exactly, then derive an oriented-orbit "
-                        "recurrence with a uniform normalized gap bound."
+                        "The frozen n=7 rule already fails exact n=8 scalar "
+                        "holdouts. Any replacement must be derived from an "
+                        "all-n algebraic family before further finite tests."
                     ),
                 ),
                 LemmaRecord(
@@ -3270,6 +5490,1071 @@ def lemma_templates(candidate: dict[str, Any]) -> list[LemmaRecord]:
                         "Optimize by I(H;Y), freeze coefficients, test "
                         "adjacent sizes, and compare with product Young-basis "
                         "outcomes under identical source conditioning."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-COSET-NATURAL-GLOBAL-PGM-TO-SCALABLE-DECODER",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "The finite natural-source global-PGM information gain "
+                        "extends asymptotically and is realized by a uniform "
+                        "polynomial growing-width carrier circuit with a "
+                        "polynomial hidden-involution decoder."
+                    ),
+                    depends_on=[
+                        "PO-MEASUREMENT",
+                        "PO-COMPLEXITY",
+                        "PO-SUCCESS",
+                        "PO-NATURAL-ACCESS",
+                        "PO-DEQUANTIZATION",
+                    ],
+                    status=(
+                        "proved-natural-global-pgm-scalable-decoder"
+                        if int(
+                            natural_multicopy_pgm_metrics.get(
+                                "uniform_polynomial_global_pgm_circuit_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        and int(
+                            natural_multicopy_pgm_metrics.get(
+                                "polynomial_hidden_involution_decoder_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        and int(
+                            natural_multicopy_pgm_metrics.get(
+                                "asymptotic_collective_information_advantage_theorem_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        else (
+                            "blocked-finite-natural-pgm-gain-dense-circuit-and-decoder-missing"
+                            if int(
+                                natural_multicopy_pgm_metrics.get(
+                                    "finite_collective_information_gain_row_count",
+                                    0,
+                                )
+                                or 0
+                            )
+                            else "blocked-natural-multicopy-pgm-benchmark-missing"
+                        )
+                    ),
+                    falsification_test=(
+                        "Retain exact natural source weighting, identify a "
+                        "compact observable responsible for gain over product "
+                        "PGM, synthesize it at k=Theta(n log n), and decode h "
+                        "against matched classical baselines."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-COSET-HARMONIC-AVERAGE-FRAME-INVERSE",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "For naturally sampled growing-width source tuples, "
+                        "the conditioned hidden-orbit average frame has a "
+                        "uniform polynomial harmonic block encoding, "
+                        "polynomial condition number, and polynomial-degree "
+                        "inverse-root transform."
+                    ),
+                    depends_on=[
+                        "PO-MEASUREMENT",
+                        "PO-COMPLEXITY",
+                        "PO-NATURAL-ACCESS",
+                        "PO-SUCCESS",
+                    ],
+                    status=(
+                        "proved-uniform-harmonic-average-frame-inverse"
+                        if int(
+                            pgm_gain_localization_metrics.get(
+                                "uniform_harmonic_average_frame_block_encoding_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        and int(
+                            pgm_gain_localization_metrics.get(
+                                "all_n_polynomial_frame_condition_theorem_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        and int(
+                            pgm_gain_localization_metrics.get(
+                                "all_n_polynomial_inverse_root_degree_theorem_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        else (
+                            "blocked-finite-frames-favorable-uniform-harmonic-access-missing"
+                            if int(
+                                pgm_gain_localization_metrics.get(
+                                    "positive_information_gain_branch_count",
+                                    0,
+                                )
+                                or 0
+                            )
+                            else "blocked-pgm-gain-localization-missing"
+                        )
+                    ),
+                    falsification_test=(
+                        "Derive source-tuple frame blocks symbolically, charge "
+                        "their coherent construction, and prove condition and "
+                        "inverse-root degree bounds on natural all-n sectors; "
+                        "finite dense eigendecomposition is not evidence."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-COSET-AVERAGE-FRAME-SUBSET-IDENTITY",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "The conditioned k-copy hidden-class average frame is "
+                        "the exactly normalized sum of all subset diagonal-"
+                        "action class-average operators."
+                    ),
+                    depends_on=[
+                        "PO-MEASUREMENT",
+                        "PO-NATURAL-ACCESS",
+                        "PO-NO-GO",
+                    ],
+                    status=(
+                        "proved-all-k-average-frame-subset-identity"
+                        if int(
+                            pgm_average_frame_metrics.get(
+                                "all_k_subset_expansion_identity_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        and int(
+                            pgm_average_frame_metrics.get(
+                                "finite_subset_expansion_failure_count",
+                                1,
+                            )
+                            or 0
+                        )
+                        == 0
+                        else "blocked-average-frame-subset-identity-missing"
+                    ),
+                    falsification_test=(
+                        "Expand every tensor product, average each subset "
+                        "representation over the conjugacy class, verify source "
+                        "normalization, and compare exact finite frames."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-COSET-DIRECT-FRAME-LCU-NORMALIZATION",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "The direct projected-LCU average-frame encoding can be "
+                        "spectrally amplified and inverse-root transformed in "
+                        "polynomial resources at k=Theta(n log n)."
+                    ),
+                    depends_on=[
+                        "PO-MEASUREMENT",
+                        "PO-COMPLEXITY",
+                        "PO-SUCCESS",
+                    ],
+                    status=(
+                        "proved-polynomial-direct-frame-lcu-normalization"
+                        if int(
+                            pgm_average_frame_metrics.get(
+                                "polynomial_structured_spectral_amplification_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        else (
+                            "blocked-conditional-generic-normalization-superpolynomial"
+                            if int(
+                                pgm_average_frame_metrics.get(
+                                    "conditional_superpolynomial_generic_amplification_row_count",
+                                    0,
+                                )
+                                or 0
+                            )
+                            else "blocked-frame-lcu-scaling-audit-missing"
+                        )
+                    ),
+                    falsification_test=(
+                        "Prove natural character-ratio bounds, charge absolute "
+                        "block-encoding scale, and exhibit a structured "
+                        "amplifier or alternate factorization; relative frame "
+                        "condition number is insufficient."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-COSET-NATURAL-CHARACTER-RATIO-ENVELOPE",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "For fixed-point-free involution coset states, all "
+                        "k=ceil(n log2 n) naturally sampled weak source labels "
+                        "satisfy |chi_lambda(C)|/d_lambda<=1/sqrt(n) except "
+                        "with probability at most 2kn/|C|."
+                    ),
+                    depends_on=[
+                        "PO-NATURAL-ACCESS",
+                        "PO-MEASUREMENT",
+                        "PO-NO-GO",
+                    ],
+                    status=(
+                        "proved-natural-growing-width-character-ratio-envelope"
+                        if int(
+                            natural_character_ratio_metrics.get(
+                                "uniform_natural_source_character_ratio_theorem_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        and int(
+                            natural_character_ratio_metrics.get(
+                                "finite_column_orthogonality_failure_count",
+                                1,
+                            )
+                            or 0
+                        )
+                        == 0
+                        else "blocked-natural-character-ratio-theorem-missing"
+                    ),
+                    falsification_test=(
+                        "Verify the natural source law, character column "
+                        "orthogonality, |r|<=1 reweighting bound, iid source "
+                        "labels, conjugacy-class size, and growing-width union "
+                        "bound."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-COSET-WHITENING-FREE-PROJECTOR-SUBPOVM",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "Normalized involution carrier projectors define a "
+                        "valid covariant sub-POVM with conclusive probability "
+                        "Tr(F^2)/||F||>=1/kappa(F), avoiding absolute frame "
+                        "normalization."
+                    ),
+                    depends_on=[
+                        "PO-MEASUREMENT",
+                        "PO-SUCCESS",
+                        "PO-NO-GO",
+                    ],
+                    status=(
+                        "proved-whitening-free-projector-subpovm-theorem"
+                        if int(
+                            covariant_projector_subpovm_metrics.get(
+                                "covariant_subpovm_validity_theorem_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        and int(
+                            covariant_projector_subpovm_metrics.get(
+                                "inverse_condition_conclusive_lower_bound_theorem_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        else "blocked-projector-subpovm-theorem-missing"
+                    ),
+                    falsification_test=(
+                        "Verify normalized projector structure, positivity and "
+                        "completeness of the failure effect, the exact frame "
+                        "purity formula, and the support-condition inequality."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-COSET-PROJECTOR-SUBPOVM-NAIMARK-DECODER",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "A uniform harmonic Naimark dilation implements the "
+                        "full covariant projector orbit with compressed outcomes "
+                        "and a polynomial hidden-involution decoder."
+                    ),
+                    depends_on=[
+                        "PO-MEASUREMENT",
+                        "PO-COMPLEXITY",
+                        "PO-SUCCESS",
+                        "PO-DEQUANTIZATION",
+                    ],
+                    status=(
+                        "proved-projector-subpovm-naimark-decoder"
+                        if int(
+                            covariant_projector_subpovm_metrics.get(
+                                "uniform_covariant_natural_subpovm_circuit_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        and int(
+                            covariant_projector_subpovm_metrics.get(
+                                "polynomial_hidden_involution_decoder_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        else "blocked-exponential-orbit-naimark-dilation-and-decoder-missing"
+                    ),
+                    falsification_test=(
+                        "Transfer to the physical wreath-group source law, "
+                        "type every harmonic transform and outcome register, "
+                        "prove all-n condition, and benchmark decoded outcomes "
+                        "against separate strong Fourier and classical attacks."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-CODE-WREATH-PROJECTOR-SUBPOVM-TRANSFER",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "The whitening-free normalized-projector sub-POVM "
+                        "applies exactly to code-equivalence bridge involutions "
+                        "in (S_n x S_n) semidirect Z_2."
+                    ),
+                    depends_on=[
+                        "PO-REDUCTION",
+                        "PO-MEASUREMENT",
+                        "PO-NO-GO",
+                    ],
+                    status=(
+                        "proved-projector-subpovm-transfer-to-physical-wreath"
+                        if int(
+                            wreath_projector_subpovm_metrics.get(
+                                "wreath_projector_subpovm_transfer_theorem_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        else "blocked-physical-wreath-subpovm-transfer-missing"
+                    ),
+                    falsification_test=(
+                        "Verify bridge elements square to identity, every "
+                        "conditioned irrep state is a normalized support "
+                        "projector, and no S_n finite performance metric is "
+                        "imported without wreath analysis."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-CODE-WREATH-SUBPOVM-CONDITION-NAIMARK-DECODER",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "The complete natural information-threshold wreath "
+                        "frame has polynomial condition and its projector "
+                        "sub-POVM has a uniform compressed Naimark dilation and "
+                        "polynomial hidden-permutation decoder."
+                    ),
+                    depends_on=[
+                        "PO-MEASUREMENT",
+                        "PO-COMPLEXITY",
+                        "PO-SUCCESS",
+                        "PO-DEQUANTIZATION",
+                    ],
+                    status=(
+                        "proved-wreath-subpovm-condition-naimark-decoder"
+                        if int(
+                            wreath_projector_subpovm_metrics.get(
+                                "natural_all_sector_polynomial_condition_theorem_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        and int(
+                            wreath_projector_subpovm_metrics.get(
+                                "uniform_wreath_covariant_subpovm_circuit_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        and int(
+                            wreath_projector_subpovm_metrics.get(
+                                "polynomial_hidden_permutation_decoder_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        else "blocked-natural-wreath-condition-orbit-circuit-and-decoder"
+                    ),
+                    falsification_test=(
+                        "Audit every naturally occupied physical block at "
+                        "k=Theta(log n!), prove global operator norm and "
+                        "condition, synthesize compressed permutation outcomes, "
+                        "and run legal classical code-equivalence baselines."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-CODE-WREATH-SUBPOVM-MOMENT-CERTIFICATE",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "For every PSD physical frame block B and p>=2, "
+                        "Tr(B^2)/(Tr(B)Tr(B^p)^(1/p)) lower-bounds maximal "
+                        "projector-sub-POVM conclusive probability."
+                    ),
+                    depends_on=[
+                        "PO-MEASUREMENT",
+                        "PO-SUCCESS",
+                        "PO-NO-GO",
+                    ],
+                    status=(
+                        "proved-subpovm-trace-moment-success-certificate"
+                        if int(
+                            wreath_subpovm_moment_metrics.get(
+                                "moment_to_conclusive_lower_bound_theorem_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        and int(
+                            wreath_subpovm_moment_metrics.get(
+                                "finite_certificate_violation_count",
+                                1,
+                            )
+                            or 0
+                        )
+                        == 0
+                        else "blocked-subpovm-moment-certificate-missing"
+                    ),
+                    falsification_test=(
+                        "Check PSD Schatten-norm monotonicity, projector-rank "
+                        "normalization, every occupied W3 spectrum, and the "
+                        "factor-two rank-to-moment-order bound."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-CODE-WREATH-NATURAL-PLANCHEREL-PAIR-LAW",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "One natural physical wreath weak-Fourier label is "
+                        "distributed as an unordered pair of independent "
+                        "Plancherel partitions, with equal-pair mass equal to "
+                        "the Plancherel collision probability."
+                    ),
+                    depends_on=[
+                        "PO-NATURAL-ACCESS",
+                        "PO-MEASUREMENT",
+                    ],
+                    status=(
+                        "proved-natural-wreath-plancherel-pair-law"
+                        if int(
+                            wreath_natural_unequal_metrics.get(
+                                "physical_label_as_two_plancherel_draws_theorem_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        and int(
+                            wreath_natural_unequal_metrics.get(
+                                "failed_source_law_identity_count",
+                                1,
+                            )
+                            or 0
+                        )
+                        == 0
+                        else "blocked-natural-wreath-source-pair-law"
+                    ),
+                    falsification_test=(
+                        "Sum the +/- equal extensions and every unordered "
+                        "unequal induced-label mass from the exact wreath "
+                        "character formula, then compare with two iid "
+                        "Plancherel draws."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-CODE-WREATH-NATURAL-ALL-UNEQUAL-DOMINANCE",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "At k=ceil(log2(n!)) natural copies, the probability "
+                        "of observing any equal-pair physical irrep is o(1), "
+                        "so all-unequal tuples carry probability 1-o(1)."
+                    ),
+                    depends_on=[
+                        f"LEMMA-{candidate_id}-CODE-WREATH-NATURAL-PLANCHEREL-PAIR-LAW",
+                        "PO-NATURAL-ACCESS",
+                        "PO-COMPLEXITY",
+                    ],
+                    status=(
+                        "proved-natural-threshold-all-unequal-dominance"
+                        if int(
+                            wreath_natural_unequal_metrics.get(
+                                "threshold_tuple_all_unequal_dominance_theorem_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        else "blocked-natural-equal-sector-tail-bound"
+                    ),
+                    falsification_test=(
+                        "Combine the exact collision identity with the "
+                        "maximal Plancherel atom asymptotic and verify that "
+                        "ceil(log2(n!)) times the collision bound tends to zero."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-CODE-WREATH-NATURAL-MOMENT-WORD-MAP",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "At every order m, the natural source-averaged "
+                        "dimension-normalized physical wreath-frame moment "
+                        "equals an average of the kth power of an identity/"
+                        "bridge-class subset word-count statistic."
+                    ),
+                    depends_on=[
+                        f"LEMMA-{candidate_id}-CODE-WREATH-NATURAL-PLANCHEREL-PAIR-LAW",
+                        "PO-NATURAL-ACCESS",
+                        "PO-MEASUREMENT",
+                    ],
+                    status=(
+                        "proved-all-order-natural-moment-word-map-reduction"
+                        if int(
+                            wreath_natural_word_map_metrics.get(
+                                "all_order_source_averaged_word_map_reduction_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        and int(
+                            wreath_natural_word_map_metrics.get(
+                                "failed_character_sequence_count",
+                                1,
+                            )
+                            or 0
+                        )
+                        == 0
+                        and int(
+                            wreath_natural_word_map_metrics.get(
+                                "failed_w3_spectrum_validation_count",
+                                1,
+                            )
+                            or 0
+                        )
+                        == 0
+                        else "blocked-natural-moment-word-map-identity"
+                    ),
+                    falsification_test=(
+                        "Apply character column orthogonality to every subset "
+                        "projector word and compare the resulting identity/"
+                        "bridge statistic with direct irrep sums and complete "
+                        "W3 spectra."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-CODE-WREATH-WORD-MAP-MEAN-MIXING",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "The natural identity/bridge subset-word statistic has "
+                        "mean converging to 2/(n!)^2 with every nonstationary "
+                        "lazy bridge-walk eigenvalue at most 3/4."
+                    ),
+                    depends_on=[
+                        f"LEMMA-{candidate_id}-CODE-WREATH-NATURAL-MOMENT-WORD-MAP",
+                        "PO-COMPLEXITY",
+                    ],
+                    status=(
+                        "proved-uniform-lazy-bridge-word-mean-mixing"
+                        if int(
+                            wreath_word_map_mixing_metrics.get(
+                                "single_walk_mean_mixing_theorem_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        and int(
+                            wreath_word_map_mixing_metrics.get(
+                                "failed_lazy_walk_validation_count",
+                                1,
+                            )
+                            or 0
+                        )
+                        == 0
+                        else "blocked-lazy-bridge-word-mean-mixing"
+                    ),
+                    falsification_test=(
+                        "Diagonalize the lazy class walk in every physical "
+                        "sector, identify all stationary representations, and "
+                        "compare spectral means with direct subset-word counts."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-CODE-WREATH-COUPLED-WORD-WALK-GAP",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "The shared-generator k-copy bridge word walk has "
+                        "nonconstant spectral radius at most 3/4, independently "
+                        "of k, and therefore contracts every unconditional "
+                        "natural source moment at all orders."
+                    ),
+                    depends_on=[
+                        f"LEMMA-{candidate_id}-CODE-WREATH-NATURAL-MOMENT-WORD-MAP",
+                        f"LEMMA-{candidate_id}-CODE-WREATH-WORD-MAP-MEAN-MIXING",
+                        "PO-COMPLEXITY",
+                    ],
+                    status=(
+                        "proved-constant-gap-coupled-word-walk-contraction"
+                        if int(
+                            wreath_coupled_word_walk_gap_metrics.get(
+                                "coupled_k_walk_contraction_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        and int(
+                            wreath_coupled_word_walk_gap_metrics.get(
+                                "exact_coupled_moment_validation_failure_count",
+                                1,
+                            )
+                            or 0
+                        )
+                        == 0
+                        else "blocked-coupled-word-walk-contraction"
+                    ),
+                    falsification_test=(
+                        "Express the kth statistic as the endpoint of "
+                        "E_c tensor_i(I+R_c)/2, prove tensor projection "
+                        "domination on every nonconstant sector, and compare "
+                        "against exact shared-sequence word moments."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-CODE-WREATH-ALL-UNEQUAL-CONDITIONED-KERNEL",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "Conditioning the natural source on unequal "
+                        "Plancherel partition pairs yields an exact signed "
+                        "base-coset character kernel, annihilates the swap "
+                        "coset, and gives an all-order conditioned word map."
+                    ),
+                    depends_on=[
+                        f"LEMMA-{candidate_id}-CODE-WREATH-NATURAL-ALL-UNEQUAL-DOMINANCE",
+                        f"LEMMA-{candidate_id}-CODE-WREATH-COUPLED-WORD-WALK-GAP",
+                        "PO-NATURAL-ACCESS",
+                        "PO-MEASUREMENT",
+                    ],
+                    status=(
+                        "proved-all-unequal-conditioned-character-kernel"
+                        if int(
+                            wreath_all_unequal_conditioned_kernel_metrics.get(
+                                "typical_all_unequal_conditioned_kernel_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        and int(
+                            wreath_all_unequal_conditioned_kernel_metrics.get(
+                                "conditioned_kernel_validation_failure_count",
+                                1,
+                            )
+                            or 0
+                        )
+                        == 0
+                        else "blocked-all-unequal-conditioned-character-kernel"
+                    ),
+                    falsification_test=(
+                        "Subtract diagonal partition pairs from independent "
+                        "Plancherel draws and compare the closed signed kernel "
+                        "with every direct unequal-irrep character average on "
+                        "complete small wreath groups."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-CODE-WREATH-GLOBAL-PARTITION-DISTINCTNESS",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "At k=ceil(log2(n!)) natural copies, all 2k underlying "
+                        "Plancherel source partitions are globally distinct "
+                        "with probability 1-o(1)."
+                    ),
+                    depends_on=[
+                        f"LEMMA-{candidate_id}-CODE-WREATH-NATURAL-ALL-UNEQUAL-DOMINANCE",
+                        f"LEMMA-{candidate_id}-CODE-WREATH-ALL-UNEQUAL-CONDITIONED-KERNEL",
+                        "PO-NATURAL-ACCESS",
+                        "PO-COMPLEXITY",
+                    ],
+                    status=(
+                        "proved-global-plancherel-partition-distinctness"
+                        if int(
+                            wreath_global_partition_collision_metrics.get(
+                                "asymptotic_global_all_distinct_dominance_theorem_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        else "blocked-global-plancherel-collision-bound"
+                    ),
+                    falsification_test=(
+                        "Unpack all physical labels into iid Plancherel draws, "
+                        "apply a pair union bound, and combine k=Theta(n log n) "
+                        "with exponential maximal-atom decay."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-CODE-WREATH-COLLISION-FREE-FRAME-SCALE",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "For globally distinct unequal source tuples at "
+                        "k=ceil(log2(n!)), the mixed frame obeys "
+                        "||B||<=poly(n)2^-k."
+                    ),
+                    depends_on=[
+                        f"LEMMA-{candidate_id}-CODE-WREATH-GLOBAL-PARTITION-DISTINCTNESS",
+                        f"LEMMA-{candidate_id}-CODE-WREATH-ALL-UNEQUAL-CONDITIONED-KERNEL",
+                        f"LEMMA-{candidate_id}-CODE-WREATH-CHARACTER-RATIO-REDUCTION",
+                        "PO-MEASUREMENT",
+                        "PO-COMPLEXITY",
+                        "PO-SUCCESS",
+                    ],
+                    status=(
+                        "proved-collision-free-polynomial-factor-frame-scale"
+                        if int(
+                            wreath_collision_free_frame_probe_metrics.get(
+                                "collision_free_polynomial_factor_norm_theorem_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        else (
+                            "blocked-finite-collision-free-spectra-"
+                            "no-all-n-norm-theorem"
+                        )
+                    ),
+                    falsification_test=(
+                        "Construct adversarial globally distinct mixed tuples, "
+                        "verify frame eigenpairs, then derive an all-n "
+                        "character-ratio or overlap-graph bound rather than "
+                        "extrapolating finite spectra."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-CODE-WREATH-CHARACTER-RATIO-REDUCTION",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "Every collision-free unequal wreath-frame moment "
+                        "reduces to products of ordinary S_n normalized "
+                        "characters on correlated subset bridge words."
+                    ),
+                    depends_on=[
+                        f"LEMMA-{candidate_id}-CODE-WREATH-ALL-UNEQUAL-CONDITIONED-KERNEL",
+                        "PO-COMPLEXITY",
+                    ],
+                    status=(
+                        "proved-unequal-character-ratio-reduction"
+                        if int(
+                            wreath_character_ratio_contract_metrics.get(
+                                "exact_unequal_character_factorization_theorem_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        and int(
+                            wreath_character_ratio_contract_metrics.get(
+                                "character_factorization_failure_count",
+                                1,
+                            )
+                            or 0
+                        )
+                        == 0
+                        else "blocked-unequal-character-ratio-reduction"
+                    ),
+                    falsification_test=(
+                        "Compare the induced unequal physical character with "
+                        "its two normalized S_n character products on every "
+                        "element of complete small wreath groups."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-CODE-WREATH-SHORT-WORD-ANTICONCENTRATION",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "Low-transposition-length subset bridge words have "
+                        "only polynomially inflated total character weight "
+                        "across k globally distinct typical source partitions."
+                    ),
+                    depends_on=[
+                        f"LEMMA-{candidate_id}-CODE-WREATH-CHARACTER-RATIO-REDUCTION",
+                        f"LEMMA-{candidate_id}-CODE-WREATH-GLOBAL-PARTITION-DISTINCTNESS",
+                        "PO-COMPLEXITY",
+                        "PO-SUCCESS",
+                    ],
+                    status=(
+                        "proved-joint-short-word-anticoncentration"
+                        if int(
+                            wreath_short_word_profile_metrics.get(
+                                "joint_short_word_anticoncentration_theorem_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        else "blocked-joint-short-word-anticoncentration"
+                    ),
+                    falsification_test=(
+                        "Enumerate and then bound the total weighted mass of "
+                        "short subset words, including sign alignment, under "
+                        "the shared bridge sequence."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-CODE-WREATH-MASK-TWO-CORE-REDUCTION",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "A joint unequal-character subset-word contribution "
+                        "vanishes whenever its mask-incidence matrix has a "
+                        "column of weight one; only the active two-core can "
+                        "contribute."
+                    ),
+                    depends_on=[
+                        f"LEMMA-{candidate_id}-CODE-WREATH-CHARACTER-RATIO-REDUCTION",
+                        "PO-COMPLEXITY",
+                    ],
+                    status=(
+                        "proved-mask-incidence-two-core-reduction"
+                        if int(
+                            wreath_mask_hypergraph_reduction_metrics.get(
+                                "mask_hypergraph_two_core_reduction_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        and int(
+                            wreath_mask_hypergraph_reduction_metrics.get(
+                                "private_column_validation_failure_count",
+                                1,
+                            )
+                            or 0
+                        )
+                        == 0
+                        else "blocked-mask-incidence-two-core-reduction"
+                    ),
+                    falsification_test=(
+                        "Condition on every generator except a private column "
+                        "and apply the zero unequal bridge class-sum operator; "
+                        "compare with exact finite joint products."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-CODE-WREATH-SUBGROUP-TWIRL-REDUCTION",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "The collision-free unequal frame is the subgroup "
+                        "twirl of one tensor projector, and its norm is the "
+                        "maximum normalized partial-trace norm over diagonal-"
+                        "S_n isotypic multiplicity spaces."
+                    ),
+                    depends_on=[
+                        f"LEMMA-{candidate_id}-CODE-WREATH-MASK-TWO-CORE-REDUCTION",
+                        f"LEMMA-{candidate_id}-CODE-WREATH-COLLISION-FREE-FRAME-SCALE",
+                        "PO-COMPLEXITY",
+                        "PO-SUCCESS",
+                    ],
+                    status=(
+                        "proved-subgroup-twirl-isotypic-reduction"
+                        if int(
+                            wreath_subgroup_twirl_reduction_metrics.get(
+                                "subgroup_twirl_identity_theorem_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        and int(
+                            wreath_subgroup_twirl_reduction_metrics.get(
+                                "isotypic_partial_trace_reduction_theorem_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        and int(
+                            wreath_subgroup_twirl_reduction_metrics.get(
+                                "finite_twirl_validation_failure_count",
+                                1,
+                            )
+                            or 0
+                        )
+                        == 0
+                        else "blocked-subgroup-twirl-isotypic-reduction"
+                    ),
+                    falsification_test=(
+                        "Compare direct frame matrices with subgroup twirls, "
+                        "resolve central isotypic projectors, and verify that "
+                        "their largest sector eigenvalue equals the global "
+                        "frame norm on every complete collision-free W4 tuple."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-CODE-WREATH-ORIENTATION-FOURIER-REDUCTION",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "Each collision-free orbit-Gram Fourier block is the "
+                        "uniform average of explicit orientation invariant-"
+                        "subspace projectors and has the same nonzero spectrum "
+                        "as the physical frame."
+                    ),
+                    depends_on=[
+                        f"LEMMA-{candidate_id}-CODE-WREATH-SUBGROUP-TWIRL-REDUCTION",
+                        f"LEMMA-{candidate_id}-CODE-WREATH-COLLISION-FREE-FRAME-SCALE",
+                        "PO-COMPLEXITY",
+                        "PO-SUCCESS",
+                    ],
+                    status=(
+                        "proved-orientation-projector-fourier-reduction"
+                        if int(
+                            wreath_orientation_fourier_reduction_metrics.get(
+                                "operator_valued_orbit_gram_fourier_theorem_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        and int(
+                            wreath_orientation_fourier_reduction_metrics.get(
+                                "orientation_invariant_projector_decomposition_theorem_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        and int(
+                            wreath_orientation_fourier_reduction_metrics.get(
+                                "finite_orientation_fourier_validation_failure_count",
+                                1,
+                            )
+                            or 0
+                        )
+                        == 0
+                        else "blocked-orientation-projector-fourier-reduction"
+                    ),
+                    falsification_test=(
+                        "Compare the physical compressed overlap, orbit-Gram "
+                        "spectrum, and orientation-projector Fourier sum on "
+                        "every collision-free W4 tuple."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-CODE-WREATH-ORIENTATION-FUSION-SECOND-MOMENT",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "Pairwise orientation-projector overlaps are exact "
+                        "character-convolution sums, and every target block's "
+                        "averaged second spectral moment is an exact symmetric-"
+                        "group class-algebra contraction."
+                    ),
+                    depends_on=[
+                        f"LEMMA-{candidate_id}-CODE-WREATH-ORIENTATION-FOURIER-REDUCTION",
+                        "PO-COMPLEXITY",
+                        "PO-SUCCESS",
+                    ],
+                    status=(
+                        "proved-orientation-fusion-second-moment-reduction"
+                        if int(
+                            wreath_orientation_fusion_moment_metrics.get(
+                                "pairwise_character_convolution_theorem_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        and int(
+                            wreath_orientation_fusion_moment_metrics.get(
+                                "orientation_average_class_algebra_second_moment_theorem_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        and int(
+                            wreath_orientation_fusion_moment_metrics.get(
+                                "finite_pair_overlap_validation_failure_count",
+                                1,
+                            )
+                            or 0
+                        )
+                        == 0
+                        else "blocked-orientation-fusion-second-moment-reduction"
+                    ),
+                    falsification_test=(
+                        "Compare character-convolution ranks and pair overlaps "
+                        "with exact W4 projectors, and compare class-algebra "
+                        "first and second moments with direct Fourier blocks."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-CODE-WREATH-ORIENTATION-PROJECTOR-SUM-NORM",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "For every naturally occupied collision-free source "
+                        "portfolio and target irrep, the sum of all active "
+                        "orientation projectors has operator norm poly(n), "
+                        "yielding the required poly(n) 2^-k frame bound."
+                    ),
+                    depends_on=[
+                        f"LEMMA-{candidate_id}-CODE-WREATH-ORIENTATION-FOURIER-REDUCTION",
+                        f"LEMMA-{candidate_id}-CODE-WREATH-ORIENTATION-FUSION-SECOND-MOMENT",
+                        f"LEMMA-{candidate_id}-CODE-WREATH-NATURAL-ALL-UNEQUAL-DOMINANCE",
+                        f"LEMMA-{candidate_id}-CODE-WREATH-GLOBAL-PARTITION-DISTINCTNESS",
+                        "PO-MEASUREMENT",
+                        "PO-COMPLEXITY",
+                        "PO-SUCCESS",
+                    ],
+                    status=(
+                        "proved-uniform-orientation-projector-sum-norm"
+                        if int(
+                            wreath_orientation_fourier_reduction_metrics.get(
+                                "uniform_projector_sum_norm_theorem_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        else "blocked-uniform-orientation-projector-sum-norm"
+                    ),
+                    falsification_test=(
+                        "Derive canonical-angle or recoupling formulas for "
+                        "the fully supported projector family and either "
+                        "prove a polynomial norm bound or exhibit a natural "
+                        "threshold portfolio with superpolynomial norm."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-CODE-WREATH-GROWING-MOMENT-CONTRACTION",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "Arbitrary all-unequal physical wreath tuples admit a "
+                        "polynomial contraction of frame moments at the "
+                        "growing order needed to certify inverse-polynomial "
+                        "natural projector-sub-POVM conclusive probability."
+                    ),
+                    depends_on=[
+                        f"LEMMA-{candidate_id}-CODE-WREATH-NATURAL-ALL-UNEQUAL-DOMINANCE",
+                        f"LEMMA-{candidate_id}-CODE-WREATH-NATURAL-MOMENT-WORD-MAP",
+                        f"LEMMA-{candidate_id}-CODE-WREATH-WORD-MAP-MEAN-MIXING",
+                        f"LEMMA-{candidate_id}-CODE-WREATH-COUPLED-WORD-WALK-GAP",
+                        f"LEMMA-{candidate_id}-CODE-WREATH-ALL-UNEQUAL-CONDITIONED-KERNEL",
+                        f"LEMMA-{candidate_id}-CODE-WREATH-GLOBAL-PARTITION-DISTINCTNESS",
+                        f"LEMMA-{candidate_id}-CODE-WREATH-COLLISION-FREE-FRAME-SCALE",
+                        f"LEMMA-{candidate_id}-CODE-WREATH-SUBGROUP-TWIRL-REDUCTION",
+                        f"LEMMA-{candidate_id}-CODE-WREATH-ORIENTATION-PROJECTOR-SUM-NORM",
+                        "PO-MEASUREMENT",
+                        "PO-COMPLEXITY",
+                        "PO-SUCCESS",
+                    ],
+                    status=(
+                        "proved-all-sector-growing-moment-contraction"
+                        if int(
+                            wreath_subpovm_moment_metrics.get(
+                                "growing_order_word_map_contraction_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        and int(
+                            wreath_subpovm_moment_metrics.get(
+                                "natural_tuple_moment_concentration_theorem_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        else (
+                            "blocked-collision-free-simultaneous-contraction-"
+                            "and-natural-tuple-concentration"
+                        )
+                    ),
+                    falsification_test=(
+                        "Exploit all k nontrivial, globally distinct source "
+                        "pairs to contract the conditioned growing-order "
+                        "moment at the 2^-k frame scale, then prove "
+                        "concentration to per-tuple conclusive probability."
                     ),
                 ),
                 LemmaRecord(
@@ -4190,6 +7475,452 @@ def lemma_templates(candidate: dict[str, Any]) -> list[LemmaRecord]:
                 falsification_test=(
                     "Diagonalize the circulant Gram matrix, verify lambda_s=Nc_s/2^m, and derive the support upper bound; "
                     "do not infer circuit complexity from the formula."
+                ),
+            )
+        )
+        try:
+            gram_block_encoding = (
+                json.loads(DCP_PGM_GRAM_BLOCK_ENCODING_PATH.read_text())
+                if DCP_PGM_GRAM_BLOCK_ENCODING_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            gram_block_encoding = {}
+        gram_metrics = gram_block_encoding.get("headline_metrics", {})
+        gram_identity_proved = bool(
+            gram_block_encoding.get("claim_gate", {}).get(
+                "exact_gram_block_encoding_constructed", False
+            )
+            and int(gram_metrics.get("finite_control_failure_count", 1) or 0)
+            == 0
+        )
+        records.append(
+            LemmaRecord(
+                id=f"LEMMA-{candidate_id}-DCP-PGM-PROJECTED-GRAM-IDENTITY",
+                candidate_id=candidate_id,
+                statement=(
+                    "The reversible subset-sum equality circuit gives the "
+                    "exact projected block encoding diag(c_s/2^m)=G/N without "
+                    "materializing an N-entry multiplicity table."
+                ),
+                depends_on=["PO-INPUT-MODEL", "PO-MEASUREMENT", "PO-COMPLEXITY"],
+                status=(
+                    "proved-exact-projected-gram-identity"
+                    if gram_identity_proved
+                    else "blocked-unproved"
+                ),
+                falsification_test=(
+                    "Verify the projected isometry entrywise, diagonalize the "
+                    "phase-state Gram matrix by QFT, and retain the factor-N "
+                    "normalization in every complexity claim."
+                ),
+            )
+        )
+        generic_rescaling_blocked = bool(
+            gram_identity_proved
+            and int(
+                gram_metrics.get(
+                    "generic_superpolynomial_fiber_amplification_row_count",
+                    0,
+                )
+                or 0
+            )
+            > 0
+            and int(
+                gram_metrics.get(
+                    "uniform_polynomial_structured_preconditioner_count", 0
+                )
+                or 0
+            )
+            == 0
+        )
+        records.append(
+            LemmaRecord(
+                id=f"LEMMA-{candidate_id}-DCP-PGM-DIRECT-RESCALING-OBSTRUCTION",
+                candidate_id=candidate_id,
+                statement=(
+                    "For the direct projected equality encoding, generic "
+                    "fiber amplification or inverse-square-root resolution "
+                    "costs sqrt(2^m/c_s); conditioned moment bounds put almost "
+                    "all legal density-one sources at polynomial c_s."
+                ),
+                depends_on=[
+                    f"LEMMA-{candidate_id}-DCP-PGM-PROJECTED-GRAM-IDENTITY",
+                    "PO-COMPLEXITY",
+                    "PO-SUCCESS",
+                ],
+                status=(
+                    "proved-restricted-direct-rescaling-obstruction"
+                    if generic_rescaling_blocked
+                    else "blocked-unproved"
+                ),
+                falsification_test=(
+                    "Check first/second fiber moments and conditioned Markov "
+                    "slack. Exclude structured preconditioners, collision walks, "
+                    "and arbitrary full-rank measurements from this lemma."
+                ),
+            )
+        )
+        try:
+            qsvt_degree = (
+                json.loads(DCP_PGM_QSVT_DEGREE_PATH.read_text())
+                if DCP_PGM_QSVT_DEGREE_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            qsvt_degree = {}
+        qsvt_metrics = qsvt_degree.get("headline_metrics", {})
+        qsvt_worst_case_proved = bool(
+            qsvt_degree.get("claim_gate", {}).get(
+                "uniform_worst_case_obstruction_proved", False
+            )
+            and int(
+                qsvt_metrics.get("exact_lifted_source_failure_count", 1)
+                or 0
+            )
+            == 0
+        )
+        records.append(
+            LemmaRecord(
+                id=f"LEMMA-{candidate_id}-DCP-PGM-GENERIC-QSVT-DEGREE-OBSTRUCTION",
+                candidate_id=candidate_id,
+                statement=(
+                    "On every direct count encoding containing singleton and "
+                    "doubleton fibers, Markov's inequality forces "
+                    "Omega(2^(m/2)) bounded-polynomial degree; the direct "
+                    "square-root amplitude encoding still requires "
+                    "Omega(2^(m/4))."
+                ),
+                depends_on=[
+                    f"LEMMA-{candidate_id}-DCP-PGM-PROJECTED-GRAM-IDENTITY",
+                    "PO-COMPLEXITY",
+                    "PO-SUCCESS",
+                ],
+                status=(
+                    "proved-restricted-uniform-worst-case-qsvt-obstruction"
+                    if qsvt_worst_case_proved
+                    else "blocked-unproved"
+                ),
+                falsification_test=(
+                    "Verify Markov's inequality on the bounded transform "
+                    "domain and the exact all-n singleton/doubleton source. "
+                    "Do not infer random-source prevalence or cover source-"
+                    "aware encodings and collision walks."
+                ),
+            )
+        )
+        records.append(
+            LemmaRecord(
+                id=f"LEMMA-{candidate_id}-DCP-PGM-RANDOM-SOURCE-MULTIPLICITY-PREVALENCE",
+                candidate_id=candidate_id,
+                statement=(
+                    "Random density-one subset-sum sources contain both "
+                    "singleton and doubleton fibers with probability "
+                    "1-o(1), transferring the generic QSVT degree obstruction "
+                    "to the average-source contract."
+                ),
+                depends_on=[
+                    f"LEMMA-{candidate_id}-DCP-PGM-GENERIC-QSVT-DEGREE-OBSTRUCTION",
+                    "PO-INPUT-MODEL",
+                    "PO-SUCCESS",
+                ],
+                status=(
+                    "proved"
+                    if int(
+                        qsvt_metrics.get(
+                            "average_case_random_source_prevalence_theorem_count",
+                            0,
+                        )
+                        or 0
+                    )
+                    > 0
+                    else "blocked-finite-prevalence-only"
+                ),
+                falsification_test=(
+                    "Prove concentration or a limiting occupancy law under "
+                    "the actual dependent subset-sum source; finite random "
+                    "controls and independent-ball heuristics do not suffice."
+                ),
+            )
+        )
+        try:
+            quenched_occupancy = (
+                json.loads(DCP_QUENCHED_OCCUPANCY_PATH.read_text())
+                if DCP_QUENCHED_OCCUPANCY_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            quenched_occupancy = {}
+        quenched_metrics = quenched_occupancy.get("headline_metrics", {})
+        quenched_poisson_proved = bool(
+            quenched_occupancy.get("claim_gate", {}).get(
+                "quenched_poisson_limit_proved", False
+            )
+            and int(
+                quenched_metrics.get(
+                    "two_target_transfer_failure_count", 1
+                )
+                or 0
+            )
+            == 0
+        )
+        records.append(
+            LemmaRecord(
+                id=f"LEMMA-{candidate_id}-DCP-QUENCHED-POISSON-OCCUPANCY",
+                candidate_id=candidate_id,
+                statement=(
+                    "For n uniform labels in Z_(2^n), the empirical "
+                    "subset-sum fiber-count law converges in probability to "
+                    "Poisson(1); singleton and doubleton residues therefore "
+                    "both have asymptotically positive source-quenched mass."
+                ),
+                depends_on=[
+                    f"LEMMA-{candidate_id}-DCP-SUBSET-SUM-ALL-FIXED-MOMENT-THEOREM",
+                    "PO-INPUT-MODEL",
+                    "PO-SUCCESS",
+                ],
+                status=(
+                    "proved-two-target-mixed-moment-quenched-limit"
+                    if quenched_poisson_proved
+                    else "blocked-two-target-covariance-proof"
+                ),
+                falsification_test=(
+                    "Expand two empirical factorial moments, isolate cross-"
+                    "group assignment overlaps, verify strict contraction for "
+                    "every globally distinct nongeneric terminal lattice, and "
+                    "apply tight moment determinacy. Independent-ball "
+                    "occupancy may not be assumed."
+                ),
+            )
+        )
+        try:
+            fiber_boundary = (
+                json.loads(
+                    DCP_COHERENT_FIBER_ERASURE_BOUNDARY_PATH.read_text()
+                )
+                if DCP_COHERENT_FIBER_ERASURE_BOUNDARY_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            fiber_boundary = {}
+        fiber_boundary_metrics = fiber_boundary.get(
+            "headline_metrics", {}
+        )
+        records.append(
+            LemmaRecord(
+                id=f"LEMMA-{candidate_id}-DCP-TARGET-FIBER-PREPARER-SUPPORT-REDUCTION",
+                candidate_id=candidate_id,
+                statement=(
+                    "A target-addressable flagged normalized-fiber preparer "
+                    "with inverse-polynomial legal success decides subset-sum "
+                    "support; if its guarantee is stable under every variable "
+                    "fixing, polynomially many calls recover a verified witness."
+                ),
+                depends_on=[
+                    "PO-INPUT-MODEL",
+                    "PO-REDUCTION",
+                    "PO-COMPLEXITY",
+                ],
+                status=(
+                    "proved-conditional-target-support-and-witness-reduction"
+                    if int(
+                        fiber_boundary_metrics.get(
+                            "proved_target_addressable_support_decision_reduction_count",
+                            0,
+                        )
+                        or 0
+                    )
+                    > 0
+                    and int(
+                        fiber_boundary_metrics.get(
+                            "proved_fixed_variable_witness_self_reduction_count",
+                            0,
+                        )
+                        or 0
+                    )
+                    > 0
+                    else "blocked-unproved"
+                ),
+                falsification_test=(
+                    "Check legal/illegal flag separation, repetition cost, "
+                    "fixed-variable source drift, error composition, and final "
+                    "witness verification. Exclude global channels that expose "
+                    "no target-addressable flag."
+                ),
+            )
+        )
+        records.append(
+            LemmaRecord(
+                id=f"LEMMA-{candidate_id}-DCP-INDEX-ERASURE-LOWER-BOUND-TRANSFER",
+                candidate_id=candidate_id,
+                statement=(
+                    "The arbitrary injective black-box index-erasure query "
+                    "lower bound transfers to the public arithmetic, many-to-"
+                    "one density-one subset-sum family."
+                ),
+                depends_on=["PO-INPUT-MODEL", "PO-COMPLEXITY"],
+                status="falsified-access-model-mismatch",
+                falsification_test=(
+                    "Require a structure-preserving reduction from arbitrary "
+                    "black-box functions to public subset-sum labels. Without "
+                    "one, retain the theorem only as a generic baseline."
+                ),
+            )
+        )
+        try:
+            erasure_inversion = (
+                json.loads(DCP_GLOBAL_ERASURE_INVERSION_PATH.read_text())
+                if DCP_GLOBAL_ERASURE_INVERSION_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            erasure_inversion = {}
+        erasure_metrics = erasure_inversion.get("headline_metrics", {})
+        erasure_reduction_proved = bool(
+            erasure_inversion.get("claim_gate", {}).get(
+                "coherent_erasure_implies_average_witness_solver", False
+            )
+            and int(
+                erasure_metrics.get(
+                    "target_law_transfer_failure_count", 1
+                )
+                or 0
+            )
+            == 0
+        )
+        records.append(
+            LemmaRecord(
+                id=f"LEMMA-{candidate_id}-DCP-COHERENT-ERASURE-INVERSION",
+                candidate_id=candidate_id,
+                statement=(
+                    "A PGM-compatible coherent fiber erasure with common "
+                    "efficiently preparable garbage is invertible into "
+                    "normalized-fiber preparation; quenched support domination "
+                    "then yields an average density-one subset-sum witness "
+                    "solver with constant law-change loss."
+                ),
+                depends_on=[
+                    f"LEMMA-{candidate_id}-DCP-QUENCHED-POISSON-OCCUPANCY",
+                    f"LEMMA-{candidate_id}-DCP-TARGET-FIBER-PREPARER-SUPPORT-REDUCTION",
+                    "PO-REDUCTION",
+                    "PO-COMPLEXITY",
+                ],
+                status=(
+                    "proved-conditional-coherent-erasure-to-witness-reduction"
+                    if erasure_reduction_proved
+                    else "blocked-common-garbage-or-support-law"
+                ),
+                falsification_test=(
+                    "Derive garbage-Gram dephasing, require common preparable "
+                    "garbage, apply the inverse circuit, transfer pi-average "
+                    "error to uniform-legal q using q<=D/L*pi, and verify the "
+                    "measured witness. Exclude arbitrary non-erasure POVMs."
+                ),
+            )
+        )
+        try:
+            garbage_coherence = (
+                json.loads(
+                    DCP_APPROXIMATE_ERASURE_COHERENCE_PATH.read_text()
+                )
+                if DCP_APPROXIMATE_ERASURE_COHERENCE_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            garbage_coherence = {}
+        garbage_metrics = garbage_coherence.get("headline_metrics", {})
+        target_garbage_reduction_proved = bool(
+            garbage_coherence.get("claim_gate", {}).get(
+                "target_dependent_garbage_erasure_reduced_to_witness_solver",
+                False,
+            )
+            and int(
+                garbage_metrics.get("finite_control_failure_count", 1)
+                or 0
+            )
+            == 0
+        )
+        records.append(
+            LemmaRecord(
+                id=f"LEMMA-{candidate_id}-DCP-TARGET-GARBAGE-COHERENCE-REDUCTION",
+                candidate_id=candidate_id,
+                statement=(
+                    "For exact fiber erasure with arbitrary target-dependent "
+                    "garbage, relative erasure-plus-QFT success R prepares a "
+                    "weighted mean garbage reference and yields uniform-legal "
+                    "witness fidelity at least (L/D)R^2/4."
+                ),
+                depends_on=[
+                    f"LEMMA-{candidate_id}-DCP-COHERENT-ERASURE-INVERSION",
+                    "PO-REDUCTION",
+                    "PO-SUCCESS",
+                    "PO-COMPLEXITY",
+                ],
+                status=(
+                    "proved-exact-target-garbage-erasure-to-witness-reduction"
+                    if target_garbage_reduction_proved
+                    else "blocked-weighted-garbage-transfer"
+                ),
+                falsification_test=(
+                    "Verify the garbage-Gram QFT formula, public zero-frequency "
+                    "reference preparation, weighted Jensen bound, high-"
+                    "multiplicity truncation, uniform-legal law transfer, and "
+                    "witness verification. Exclude approximate isometries and "
+                    "arbitrary POVMs."
+                ),
+            )
+        )
+        try:
+            perturbation = (
+                json.loads(DCP_ERASURE_PERTURBATION_PATH.read_text())
+                if DCP_ERASURE_PERTURBATION_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            perturbation = {}
+        perturbation_metrics = perturbation.get("headline_metrics", {})
+        operator_robustness_proved = bool(
+            perturbation.get("claim_gate", {}).get(
+                "operator_norm_approximate_erasure_reduced_to_witness_solver",
+                False,
+            )
+            and int(
+                perturbation_metrics.get(
+                    "polynomial_precision_sufficient_row_count", 0
+                )
+                or 0
+            )
+            == int(
+                perturbation_metrics.get("scaling_row_count", -1)
+                or -1
+            )
+        )
+        records.append(
+            LemmaRecord(
+                id=f"LEMMA-{candidate_id}-DCP-ERASURE-OPERATOR-PERTURBATION",
+                candidate_id=candidate_id,
+                statement=(
+                    "The exact erasure-to-witness reduction remains valid for "
+                    "uniform fiber-subspace operator error "
+                    "delta<=rho^2 R^(5/2)/128; inverse-polynomial relative "
+                    "success therefore requires only inverse-polynomial "
+                    "implementation precision."
+                ),
+                depends_on=[
+                    f"LEMMA-{candidate_id}-DCP-TARGET-GARBAGE-COHERENCE-REDUCTION",
+                    "PO-COMPLEXITY",
+                    "PO-SUCCESS",
+                ],
+                status=(
+                    "proved-operator-norm-robust-erasure-reduction"
+                    if operator_robustness_proved
+                    else "blocked-perturbation-accounting"
+                ),
+                falsification_test=(
+                    "Propagate error through postselection normalization and "
+                    "inverse preparation; verify precision relative to R and "
+                    "rho. Exclude average-only guarantees, inaccessible "
+                    "environments, and arbitrary POVMs."
                 ),
             )
         )
@@ -6023,6 +9754,35 @@ def lemma_templates(candidate: dict[str, Any]) -> list[LemmaRecord]:
             "headline_metrics", {}
         )
         try:
+            signed_l2 = (
+                json.loads(DCP_SUBSET_SUM_SIGNED_L2_PATH.read_text())
+                if DCP_SUBSET_SUM_SIGNED_L2_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            signed_l2 = {}
+        signed_l2_metrics = signed_l2.get("headline_metrics", {})
+        try:
+            sparse_characters = (
+                json.loads(DCP_SUBSET_SUM_SPARSE_CHARACTER_PATH.read_text())
+                if DCP_SUBSET_SUM_SPARSE_CHARACTER_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            sparse_characters = {}
+        sparse_character_metrics = sparse_characters.get(
+            "headline_metrics", {}
+        )
+        try:
+            qtt_contraction = (
+                json.loads(DCP_SUBSET_SUM_QTT_PATH.read_text())
+                if DCP_SUBSET_SUM_QTT_PATH.exists()
+                else {}
+            )
+        except (json.JSONDecodeError, OSError):
+            qtt_contraction = {}
+        qtt_metrics = qtt_contraction.get("headline_metrics", {})
+        try:
             embedding_volume = (
                 json.loads(DCP_SUBSET_SUM_EMBEDDING_VOLUME_PATH.read_text())
                 if DCP_SUBSET_SUM_EMBEDDING_VOLUME_PATH.exists()
@@ -6274,6 +10034,236 @@ def lemma_templates(candidate: dict[str, Any]) -> list[LemmaRecord]:
                         "Charge path positions, Boolean identities, Smith numerator, "
                         "fixed register offset, and terminal contraction uniformly in k; "
                         "do not transfer the nonnegative bound to signed observables."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-DCP-LOW-ONLY-SPARSE-SIGNED-L2",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "After conditioning on exposed low labels, distinct "
+                        "nonzero Boolean high-equation hit indicators are "
+                        "pairwise independent; every low-measurable signed "
+                        "exact-hit score has the exact conditional L2 identity, "
+                        "and fixed-polynomial support departs from its no-hit "
+                        "baseline only with negligible probability."
+                    ),
+                    depends_on=[
+                        "PO-FAMILY",
+                        "PO-DEQUANTIZATION",
+                        "PO-COMPLEXITY",
+                    ],
+                    status=(
+                        "proved-conditional-pairwise-independence-and-signed-l2"
+                        if int(
+                            signed_l2_metrics.get(
+                                "conditional_signed_variance_identity_theorem_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        > 0
+                        and int(
+                            signed_l2_metrics.get(
+                                "polynomial_support_negligible_deviation_theorem_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        > 0
+                        and int(
+                            signed_l2_metrics.get(
+                                "exact_control_failure_count",
+                                1,
+                            )
+                            or 0
+                        )
+                        == 0
+                        else "blocked-conditional-signed-l2-certificate-missing"
+                    ),
+                    falsification_test=(
+                        "Check the unit minor for every distinct nonzero Boolean "
+                        "pair, retain assignment-specific carries and right-hand "
+                        "sides, enumerate exact marginals and pairs, and distinguish "
+                        "the centered score from its deterministic no-hit baseline."
+                    ),
+                ),
+                LemmaRecord(
+                    id=(
+                        f"LEMMA-{candidate_id}-DCP-FULL-LABEL-DENSE-SIGNED-OBSERVABLE"
+                    ),
+                    candidate_id=candidate_id,
+                    statement=(
+                        "A polynomial-time coefficient rule that inspects full "
+                        "high labels, or a polynomial-size dense implicit "
+                        "contraction, yields inverse-polynomial source signal "
+                        "and a verified subset-sum witness decoder."
+                    ),
+                    depends_on=[
+                        f"LEMMA-{candidate_id}-DCP-LOW-ONLY-SPARSE-SIGNED-L2",
+                        "PO-COMPLEXITY",
+                        "PO-DEQUANTIZATION",
+                        "PO-REDUCTION",
+                    ],
+                    status=(
+                        "proved-full-label-or-dense-signed-decoder"
+                        if int(
+                            signed_l2_metrics.get(
+                                "proved_high_label_adaptive_signed_obstruction_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        > 0
+                        or int(
+                            signed_l2_metrics.get(
+                                "proved_dense_implicit_signed_obstruction_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        > 0
+                        else "blocked-high-label-adaptive-or-dense-mechanism-missing"
+                    ),
+                    falsification_test=(
+                        "Require an executable full-label or implicit dense "
+                        "coefficient circuit, charge its runtime and sample "
+                        "variance, prove inverse-polynomial source coverage, and "
+                        "verify exact witness extraction rather than a score alone."
+                    ),
+                ),
+                LemmaRecord(
+                    id=(
+                        f"LEMMA-{candidate_id}-"
+                        "DCP-ADAPTIVE-SPARSE-CHARACTER-OBSTRUCTION"
+                    ),
+                    candidate_id=candidate_id,
+                    statement=(
+                        "For m=n+O(1) uniform labels, with "
+                        "superpolynomially high source probability every "
+                        "full-label-and-target-adaptive set of polynomially many "
+                        "nonzero subset-sum characters has superpolynomially "
+                        "small total Fourier contribution."
+                    ),
+                    depends_on=[
+                        "PO-FAMILY",
+                        "PO-DEQUANTIZATION",
+                        "PO-COMPLEXITY",
+                    ],
+                    status=(
+                        "proved-simultaneous-growing-moment-character-bound"
+                        if int(
+                            sparse_character_metrics.get(
+                                "adaptive_sparse_selection_theorem_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        > 0
+                        and int(
+                            sparse_character_metrics.get(
+                                "exact_control_failure_count",
+                                1,
+                            )
+                            or 0
+                        )
+                        == 0
+                        else "blocked-adaptive-character-certificate-missing"
+                    ),
+                    falsification_test=(
+                        "Verify exact Fourier inversion, antipodal annihilation "
+                        "for every low order, the alias-free root moment when "
+                        "q>s, the simultaneous all-frequency union bound, and "
+                        "the m/log^2(m) asymptotic schedule."
+                    ),
+                ),
+                LemmaRecord(
+                    id=(
+                        f"LEMMA-{candidate_id}-"
+                        "DCP-DENSE-CHARACTER-CONTRACTION"
+                    ),
+                    candidate_id=candidate_id,
+                    statement=(
+                        "A polynomial-size arithmetic, tensor, or quantum "
+                        "circuit implicitly contracts exponentially many "
+                        "subset-sum characters with controlled norm and "
+                        "precision, then extracts a verified Boolean witness on "
+                        "inverse-polynomial source mass."
+                    ),
+                    depends_on=[
+                        f"LEMMA-{candidate_id}-"
+                        "DCP-ADAPTIVE-SPARSE-CHARACTER-OBSTRUCTION",
+                        "PO-COMPLEXITY",
+                        "PO-REDUCTION",
+                    ],
+                    status=(
+                        "proved-polynomial-dense-character-contraction"
+                        if int(
+                            sparse_character_metrics.get(
+                                "proved_dense_implicit_character_obstruction_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        > 0
+                        else "blocked-polynomial-dense-contraction-missing"
+                    ),
+                    falsification_test=(
+                        "Reject any construction that materializes 2^n "
+                        "frequencies, hides exponential bond dimension or "
+                        "coefficient norm, needs exponential precision, "
+                        "approximates only counts, or lacks exact witness "
+                        "verification and source coverage."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-DCP-QTT-DENSE-CONTRACTION",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "A public-label-derived QTT or related tensor network "
+                        "has uniformly polynomial bond dimension, entrywise "
+                        "additive count error below one half on the source and "
+                        "all fixed-variable subinstances, and yields a verified "
+                        "Boolean witness by self-reduction."
+                    ),
+                    depends_on=[
+                        f"LEMMA-{candidate_id}-DCP-DENSE-CHARACTER-CONTRACTION",
+                        "PO-COMPLEXITY",
+                        "PO-REDUCTION",
+                    ],
+                    status=(
+                        "proved-uniform-polynomial-bond-count-self-reduction"
+                        if int(
+                            qtt_metrics.get(
+                                "proved_polynomial_dense_character_contraction_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        > 0
+                        and int(
+                            qtt_metrics.get(
+                                "proved_uniform_additive_half_count_oracle_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        > 0
+                        and int(
+                            qtt_metrics.get(
+                                "polynomial_witness_decoder_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        > 0
+                        else "blocked-uniform-polynomial-bond-construction-missing"
+                    ),
+                    falsification_test=(
+                        "Use matricization singular tails as necessary bond "
+                        "bounds, search label-derived bit orderings on held-out "
+                        "instances, distinguish registered finite caps from all "
+                        "polynomials, and require subinstance-stable additive-half "
+                        "accuracy plus exact witness verification."
                     ),
                 ),
                 LemmaRecord(

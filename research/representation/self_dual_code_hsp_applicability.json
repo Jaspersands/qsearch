@@ -1,0 +1,883 @@
+{
+  "claim_gate": {
+    "classical_superpolynomial_lower_bound_proved": false,
+    "code_equivalence_to_wreath_hsp_reduction_formalized": true,
+    "efficient_wreath_product_qft_known": false,
+    "explicit_measurement_constructed": false,
+    "failure_of_sufficient_no_go_hypothesis_is_quantum_evidence": false,
+    "polynomial_hidden_permutation_decoder_constructed": false,
+    "published_single_coset_no_go_applies_to_registered_self_dual_families": false,
+    "reason": "The standard single-coset code-equivalence no-go does not cover rate-one-half self-dual codes, but no informative sector, efficient measurement, or decoder has been constructed.",
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-07-28T10:13:13.263731+00:00",
+  "falsifiers_triggered": [
+    "The HSP group includes both GL_k(F_2) and S_n; omitting the scrambler factor changes the problem.",
+    "Every sufficient hypothesis of a literature no-go is checked separately before applying its conclusion.",
+    "Failure of q^(k^2)<=n^(0.2n) is an applicability gap, not evidence that a coset state is informative.",
+    "Duplicate-column transpositions disprove large minimal degree only on the instances where they occur.",
+    "Absence of duplicate columns does not certify trivial automorphism group or linear minimal degree.",
+    "Polynomial group-register qubits do not imply an efficient QFT, measurement, or decoder.",
+    "Any proposed quantum statistic must survive the public-generator classical baselines."
+  ],
+  "family_records": [
+    {
+      "automorphism_minimal_degree_condition_certified": false,
+      "automorphism_size_condition_certified": false,
+      "block_length": 12,
+      "code_dimension": 6,
+      "dimension_condition_log2_gap": 27.39609,
+      "dimension_condition_passes": false,
+      "family_id": "self-dual-k6",
+      "interpretation": "The Dinh-Moore-Russell sufficient theorem does not apply because the GL_k dimension term violates q^(k^2) <= n^(0.2n). This is an applicability gap, not evidence that one coset state is informative.",
+      "log2_dimension_condition_left": 36.0,
+      "log2_dimension_condition_right": 8.60391,
+      "log2_general_linear_group_size": 34.230684,
+      "log2_hidden_shift_group_size": 63.066139,
+      "log2_symmetric_group_size": 28.835455,
+      "log2_wreath_hsp_group_size": 127.132279,
+      "minimum_group_register_qubits": 128,
+      "obvious_transposition_instance_count": 8,
+      "rate": 0.5,
+      "single_coset_indistinguishability_theorem_applies": false,
+      "status": "published-no-go-dimension-gate-fails-open-measurement-proof-debt"
+    },
+    {
+      "automorphism_minimal_degree_condition_certified": false,
+      "automorphism_size_condition_certified": false,
+      "block_length": 16,
+      "code_dimension": 8,
+      "dimension_condition_log2_gap": 51.2,
+      "dimension_condition_passes": false,
+      "family_id": "self-dual-k8",
+      "interpretation": "The Dinh-Moore-Russell sufficient theorem does not apply because the GL_k dimension term violates q^(k^2) <= n^(0.2n). This is an applicability gap, not evidence that one coset state is informative.",
+      "log2_dimension_condition_left": 64.0,
+      "log2_dimension_condition_right": 12.8,
+      "log2_general_linear_group_size": 62.213722,
+      "log2_hidden_shift_group_size": 106.463863,
+      "log2_symmetric_group_size": 44.25014,
+      "log2_wreath_hsp_group_size": 213.927726,
+      "minimum_group_register_qubits": 214,
+      "obvious_transposition_instance_count": 2,
+      "rate": 0.5,
+      "single_coset_indistinguishability_theorem_applies": false,
+      "status": "published-no-go-dimension-gate-fails-open-measurement-proof-debt"
+    },
+    {
+      "automorphism_minimal_degree_condition_certified": false,
+      "automorphism_size_condition_certified": false,
+      "block_length": 20,
+      "code_dimension": 10,
+      "dimension_condition_log2_gap": 82.712288,
+      "dimension_condition_passes": false,
+      "family_id": "self-dual-k10",
+      "interpretation": "The Dinh-Moore-Russell sufficient theorem does not apply because the GL_k dimension term violates q^(k^2) <= n^(0.2n). This is an applicability gap, not evidence that one coset state is informative.",
+      "log2_dimension_condition_left": 100.0,
+      "log2_dimension_condition_right": 17.287712,
+      "log2_general_linear_group_size": 98.209492,
+      "log2_hidden_shift_group_size": 159.286876,
+      "log2_symmetric_group_size": 61.077384,
+      "log2_wreath_hsp_group_size": 319.573752,
+      "minimum_group_register_qubits": 320,
+      "obvious_transposition_instance_count": 3,
+      "rate": 0.5,
+      "single_coset_indistinguishability_theorem_applies": false,
+      "status": "published-no-go-dimension-gate-fails-open-measurement-proof-debt"
+    },
+    {
+      "automorphism_minimal_degree_condition_certified": false,
+      "automorphism_size_condition_certified": false,
+      "block_length": 24,
+      "code_dimension": 12,
+      "dimension_condition_log2_gap": 121.99218,
+      "dimension_condition_passes": false,
+      "family_id": "self-dual-k12",
+      "interpretation": "The Dinh-Moore-Russell sufficient theorem does not apply because the GL_k dimension term violates q^(k^2) <= n^(0.2n). This is an applicability gap, not evidence that one coset state is informative.",
+      "log2_dimension_condition_left": 144.0,
+      "log2_dimension_condition_right": 22.00782,
+      "log2_general_linear_group_size": 142.208435,
+      "log2_hidden_shift_group_size": 221.246093,
+      "log2_symmetric_group_size": 79.037657,
+      "log2_wreath_hsp_group_size": 443.492186,
+      "minimum_group_register_qubits": 444,
+      "obvious_transposition_instance_count": 1,
+      "rate": 0.5,
+      "single_coset_indistinguishability_theorem_applies": false,
+      "status": "published-no-go-dimension-gate-fails-open-measurement-proof-debt"
+    },
+    {
+      "automorphism_minimal_degree_condition_certified": false,
+      "automorphism_size_condition_certified": false,
+      "block_length": 32,
+      "code_dimension": 16,
+      "dimension_condition_log2_gap": 224.0,
+      "dimension_condition_passes": false,
+      "family_id": "self-dual-k16",
+      "interpretation": "The Dinh-Moore-Russell sufficient theorem does not apply because the GL_k dimension term violates q^(k^2) <= n^(0.2n). This is an applicability gap, not evidence that one coset state is informative.",
+      "log2_dimension_condition_left": 256.0,
+      "log2_dimension_condition_right": 32.0,
+      "log2_general_linear_group_size": 254.208105,
+      "log2_hidden_shift_group_size": 371.871369,
+      "log2_symmetric_group_size": 117.663264,
+      "log2_wreath_hsp_group_size": 744.742738,
+      "minimum_group_register_qubits": 745,
+      "obvious_transposition_instance_count": 0,
+      "rate": 0.5,
+      "single_coset_indistinguishability_theorem_applies": false,
+      "status": "published-no-go-dimension-gate-fails-open-measurement-proof-debt"
+    },
+    {
+      "automorphism_minimal_degree_condition_certified": false,
+      "automorphism_size_condition_certified": false,
+      "block_length": 48,
+      "code_dimension": 24,
+      "dimension_condition_log2_gap": 522.38436,
+      "dimension_condition_passes": false,
+      "family_id": "self-dual-k24",
+      "interpretation": "The Dinh-Moore-Russell sufficient theorem does not apply because the GL_k dimension term violates q^(k^2) <= n^(0.2n). This is an applicability gap, not evidence that one coset state is informative.",
+      "log2_dimension_condition_left": 576.0,
+      "log2_dimension_condition_right": 53.61564,
+      "log2_general_linear_group_size": 574.208083,
+      "log2_hidden_shift_group_size": 777.157655,
+      "log2_symmetric_group_size": 202.949572,
+      "log2_wreath_hsp_group_size": 1555.315311,
+      "minimum_group_register_qubits": 1556,
+      "obvious_transposition_instance_count": 0,
+      "rate": 0.5,
+      "single_coset_indistinguishability_theorem_applies": false,
+      "status": "published-no-go-dimension-gate-fails-open-measurement-proof-debt"
+    },
+    {
+      "automorphism_minimal_degree_condition_certified": false,
+      "automorphism_size_condition_certified": false,
+      "block_length": 64,
+      "code_dimension": 32,
+      "dimension_condition_log2_gap": 947.2,
+      "dimension_condition_passes": false,
+      "family_id": "self-dual-k32",
+      "interpretation": "The Dinh-Moore-Russell sufficient theorem does not apply because the GL_k dimension term violates q^(k^2) <= n^(0.2n). This is an applicability gap, not evidence that one coset state is informative.",
+      "log2_dimension_condition_left": 1024.0,
+      "log2_dimension_condition_right": 76.8,
+      "log2_general_linear_group_size": 1022.208083,
+      "log2_hidden_shift_group_size": 1318.203227,
+      "log2_symmetric_group_size": 295.995144,
+      "log2_wreath_hsp_group_size": 2637.406454,
+      "minimum_group_register_qubits": 2638,
+      "obvious_transposition_instance_count": 0,
+      "rate": 0.5,
+      "single_coset_indistinguishability_theorem_applies": false,
+      "status": "published-no-go-dimension-gate-fails-open-measurement-proof-debt"
+    }
+  ],
+  "headline_metrics": {
+    "automorphism_minimal_degree_certified_family_count": 0,
+    "automorphism_size_condition_certified_family_count": 0,
+    "classical_superpolynomial_lower_bound_count": 0,
+    "dimension_condition_fail_family_count": 7,
+    "dimension_condition_pass_family_count": 0,
+    "efficient_wreath_product_qft_count": 0,
+    "explicit_multicoset_measurement_count": 0,
+    "explicit_single_coset_measurement_count": 0,
+    "family_count": 7,
+    "instance_count": 62,
+    "maximum_block_length": 64,
+    "maximum_code_dimension": 32,
+    "maximum_dimension_condition_log2_gap": 947.2,
+    "maximum_group_register_qubits": 2638,
+    "maximum_log2_wreath_hsp_group_size": 2637.406454,
+    "obvious_transposition_instance_count": 14,
+    "polynomial_hidden_permutation_decoder_count": 0,
+    "single_coset_no_go_certified_family_count": 0
+  },
+  "literature_no_go_contract": {
+    "conclusion": "Conjugate hidden subgroups are indistinguishable by strong Fourier sampling; equivalently, no measurement of one coset state yields useful hidden-permutation information under the paper's definition.",
+    "hypotheses": [
+      "q^(k^2) <= n^(0.2 n)",
+      "|PAut(C)| <= exp(o(n))",
+      "minimal_degree(PAut(C)) = Omega(n)"
+    ],
+    "id": "Dinh-Moore-Russell-2015-single-coset-code-equivalence",
+    "literature_ids": [
+      "Dinh-Moore-Russell-2015-Code-Equivalence-Coset-States",
+      "Moore-Russell-Schulman-2008-Symmetric-Group-Fourier",
+      "Hallgren-Roetteler-Sen-2010-Coset-State-Limits"
+    ],
+    "scope_warning": "Failure of any sufficient hypothesis neither refutes the theorem nor proves distinguishability. The high-rate self-dual family requires a new character/trace-distance analysis.",
+    "theorem_type": "sufficient condition for single-coset-state indistinguishability"
+  },
+  "obvious_automorphism_certificates": [
+    {
+      "automorphism_group_size_lower_bound": 1,
+      "certificate_scope": "Swapping equal generator columns fixes the generator matrix exactly. Absence of duplicate columns does not certify a trivial automorphism group or a linear minimal degree.",
+      "duplicate_column_class_count": 0,
+      "duplicated_coordinate_count": 0,
+      "family_id": "self-dual-k6",
+      "generated_transposition_count": 0,
+      "instance_id": "self-dual-k6-instance-00",
+      "minimal_degree_upper_bound": null
+    },
+    {
+      "automorphism_group_size_lower_bound": 1,
+      "certificate_scope": "Swapping equal generator columns fixes the generator matrix exactly. Absence of duplicate columns does not certify a trivial automorphism group or a linear minimal degree.",
+      "duplicate_column_class_count": 0,
+      "duplicated_coordinate_count": 0,
+      "family_id": "self-dual-k6",
+      "generated_transposition_count": 0,
+      "instance_id": "self-dual-k6-instance-01",
+      "minimal_degree_upper_bound": null
+    },
+    {
+      "automorphism_group_size_lower_bound": 4,
+      "certificate_scope": "Swapping equal generator columns fixes the generator matrix exactly. Absence of duplicate columns does not certify a trivial automorphism group or a linear minimal degree.",
+      "duplicate_column_class_count": 2,
+      "duplicated_coordinate_count": 4,
+      "family_id": "self-dual-k6",
+      "generated_transposition_count": 2,
+      "instance_id": "self-dual-k6-instance-02",
+      "minimal_degree_upper_bound": 2
+    },
+    {
+      "automorphism_group_size_lower_bound": 4,
+      "certificate_scope": "Swapping equal generator columns fixes the generator matrix exactly. Absence of duplicate columns does not certify a trivial automorphism group or a linear minimal degree.",
+      "duplicate_column_class_count": 2,
+      "duplicated_coordinate_count": 4,
+      "family_id": "self-dual-k6",
+      "generated_transposition_count": 2,
+      "instance_id": "self-dual-k6-instance-03",
+      "minimal_degree_upper_bound": 2
+    },
+    {
+      "automorphism_group_size_lower_bound": 4,
+      "certificate_scope": "Swapping equal generator columns fixes the generator matrix exactly. Absence of duplicate columns does not certify a trivial automorphism group or a linear minimal degree.",
+      "duplicate_column_class_count": 2,
+      "duplicated_coordinate_count": 4,
+      "family_id": "self-dual-k6",
+      "generated_transposition_count": 2,
+      "instance_id": "self-dual-k6-instance-04",
+      "minimal_degree_upper_bound": 2
+    },
+    {
+      "automorphism_group_size_lower_bound": 1,
+      "certificate_scope": "Swapping equal generator columns fixes the generator matrix exactly. Absence of duplicate columns does not certify a trivial automorphism group or a linear minimal degree.",
+      "duplicate_column_class_count": 0,
+      "duplicated_coordinate_count": 0,
+      "family_id": "self-dual-k6",
+      "generated_transposition_count": 0,
+      "instance_id": "self-dual-k6-instance-05",
+      "minimal_degree_upper_bound": null
+    },
+    {
+      "automorphism_group_size_lower_bound": 4,
+      "certificate_scope": "Swapping equal generator columns fixes the generator matrix exactly. Absence of duplicate columns does not certify a trivial automorphism group or a linear minimal degree.",
+      "duplicate_column_class_count": 2,
+      "duplicated_coordinate_count": 4,
+      "family_id": "self-dual-k6",
+      "generated_transposition_count": 2,
+      "instance_id": "self-dual-k6-instance-06",
+      "minimal_degree_upper_bound": 2
+    },
+    {
+      "automorphism_group_size_lower_bound": 4,
+      "certificate_scope": "Swapping equal generator columns fixes the generator matrix exactly. Absence of duplicate columns does not certify a trivial automorphism group or a linear minimal degree.",
+      "duplicate_column_class_count": 2,
+      "duplicated_coordinate_count": 4,
+      "family_id": "self-dual-k6",
+      "generated_transposition_count": 2,
+      "instance_id": "self-dual-k6-instance-07",
+      "minimal_degree_upper_bound": 2
+    },
+    {
+      "automorphism_group_size_lower_bound": 1,
+      "certificate_scope": "Swapping equal generator columns fixes the generator matrix exactly. Absence of duplicate columns does not certify a trivial automorphism group or a linear minimal degree.",
+      "duplicate_column_class_count": 0,
+      "duplicated_coordinate_count": 0,
+      "family_id": "self-dual-k6",
+      "generated_transposition_count": 0,
+      "instance_id": "self-dual-k6-instance-08",
+      "minimal_degree_upper_bound": null
+    },
+    {
+      "automorphism_group_size_lower_bound": 4,
+      "certificate_scope": "Swapping equal generator columns fixes the generator matrix exactly. Absence of duplicate columns does not certify a trivial automorphism group or a linear minimal degree.",
+      "duplicate_column_class_count": 2,
+      "duplicated_coordinate_count": 4,
+      "family_id": "self-dual-k6",
+      "generated_transposition_count": 2,
+      "instance_id": "self-dual-k6-instance-09",
+      "minimal_degree_upper_bound": 2
+    },
+    {
+      "automorphism_group_size_lower_bound": 4,
+      "certificate_scope": "Swapping equal generator columns fixes the generator matrix exactly. Absence of duplicate columns does not certify a trivial automorphism group or a linear minimal degree.",
+      "duplicate_column_class_count": 2,
+      "duplicated_coordinate_count": 4,
+      "family_id": "self-dual-k6",
+      "generated_transposition_count": 2,
+      "instance_id": "self-dual-k6-instance-10",
+      "minimal_degree_upper_bound": 2
+    },
+    {
+      "automorphism_group_size_lower_bound": 4,
+      "certificate_scope": "Swapping equal generator columns fixes the generator matrix exactly. Absence of duplicate columns does not certify a trivial automorphism group or a linear minimal degree.",
+      "duplicate_column_class_count": 2,
+      "duplicated_coordinate_count": 4,
+      "family_id": "self-dual-k6",
+      "generated_transposition_count": 2,
+      "instance_id": "self-dual-k6-instance-11",
+      "minimal_degree_upper_bound": 2
+    },
+    {
+      "automorphism_group_size_lower_bound": 1,
+      "certificate_scope": "Swapping equal generator columns fixes the generator matrix exactly. Absence of duplicate columns does not certify a trivial automorphism group or a linear minimal degree.",
+      "duplicate_column_class_count": 0,
+      "duplicated_coordinate_count": 0,
+      "family_id": "self-dual-k8",
+      "generated_transposition_count": 0,
+      "instance_id": "self-dual-k8-instance-00",
+      "minimal_degree_upper_bound": null
+    },
+    {
+      "automorphism_group_size_lower_bound": 1,
+      "certificate_scope": "Swapping equal generator columns fixes the generator matrix exactly. Absence of duplicate columns does not certify a trivial automorphism group or a linear minimal degree.",
+      "duplicate_column_class_count": 0,
+      "duplicated_coordinate_count": 0,
+      "family_id": "self-dual-k8",
+      "generated_transposition_count": 0,
+      "instance_id": "self-dual-k8-instance-01",
+      "minimal_degree_upper_bound": null
+    },
+    {
+      "automorphism_group_size_lower_bound": 1,
+      "certificate_scope": "Swapping equal generator columns fixes the generator matrix exactly. Absence of duplicate columns does not certify a trivial automorphism group or a linear minimal degree.",
+      "duplicate_column_class_count": 0,
+      "duplicated_coordinate_count": 0,
+      "family_id": "self-dual-k8",
+      "generated_transposition_count": 0,
+      "instance_id": "self-dual-k8-instance-02",
+      "minimal_degree_upper_bound": null
+    },
+    {
+      "automorphism_group_size_lower_bound": 1,
+      "certificate_scope": "Swapping equal generator columns fixes the generator matrix exactly. Absence of duplicate columns does not certify a trivial automorphism group or a linear minimal degree.",
+      "duplicate_column_class_count": 0,
+      "duplicated_coordinate_count": 0,
+      "family_id": "self-dual-k8",
+      "generated_transposition_count": 0,
+      "instance_id": "self-dual-k8-instance-03",
+      "minimal_degree_upper_bound": null
+    },
+    {
+      "automorphism_group_size_lower_bound": 4,
+      "certificate_scope": "Swapping equal generator columns fixes the generator matrix exactly. Absence of duplicate columns does not certify a trivial automorphism group or a linear minimal degree.",
+      "duplicate_column_class_count": 2,
+      "duplicated_coordinate_count": 4,
+      "family_id": "self-dual-k8",
+      "generated_transposition_count": 2,
+      "instance_id": "self-dual-k8-instance-04",
+      "minimal_degree_upper_bound": 2
+    },
+    {
+      "automorphism_group_size_lower_bound": 1,
+      "certificate_scope": "Swapping equal generator columns fixes the generator matrix exactly. Absence of duplicate columns does not certify a trivial automorphism group or a linear minimal degree.",
+      "duplicate_column_class_count": 0,
+      "duplicated_coordinate_count": 0,
+      "family_id": "self-dual-k8",
+      "generated_transposition_count": 0,
+      "instance_id": "self-dual-k8-instance-05",
+      "minimal_degree_upper_bound": null
+    },
+    {
+      "automorphism_group_size_lower_bound": 1,
+      "certificate_scope": "Swapping equal generator columns fixes the generator matrix exactly. Absence of duplicate columns does not certify a trivial automorphism group or a linear minimal degree.",
+      "duplicate_column_class_count": 0,
+      "duplicated_coordinate_count": 0,
+      "family_id": "self-dual-k8",
+      "generated_transposition_count": 0,
+      "instance_id": "self-dual-k8-instance-06",
+      "minimal_degree_upper_bound": null
+    },
+    {
+      "automorphism_group_size_lower_bound": 1,
+      "certificate_scope": "Swapping equal generator columns fixes the generator matrix exactly. Absence of duplicate columns does not certify a trivial automorphism group or a linear minimal degree.",
+      "duplicate_column_class_count": 0,
+      "duplicated_coordinate_count": 0,
+      "family_id": "self-dual-k8",
+      "generated_transposition_count": 0,
+      "instance_id": "self-dual-k8-instance-07",
+      "minimal_degree_upper_bound": null
+    },
+    {
+      "automorphism_group_size_lower_bound": 1,
+      "certificate_scope": "Swapping equal generator columns fixes the generator matrix exactly. Absence of duplicate columns does not certify a trivial automorphism group or a linear minimal degree.",
+      "duplicate_column_class_count": 0,
+      "duplicated_coordinate_count": 0,
+      "family_id": "self-dual-k8",
+      "generated_transposition_count": 0,
+      "instance_id": "self-dual-k8-instance-08",
+      "minimal_degree_upper_bound": null
+    },
+    {
+      "automorphism_group_size_lower_bound": 1,
+      "certificate_scope": "Swapping equal generator columns fixes the generator matrix exactly. Absence of duplicate columns does not certify a trivial automorphism group or a linear minimal degree.",
+      "duplicate_column_class_count": 0,
+      "duplicated_coordinate_count": 0,
+      "family_id": "self-dual-k8",
+      "generated_transposition_count": 0,
+      "instance_id": "self-dual-k8-instance-09",
+      "minimal_degree_upper_bound": null
+    },
+    {
+      "automorphism_group_size_lower_bound": 2,
+      "certificate_scope": "Swapping equal generator columns fixes the generator matrix exactly. Absence of duplicate columns does not certify a trivial automorphism group or a linear minimal degree.",
+      "duplicate_column_class_count": 1,
+      "duplicated_coordinate_count": 2,
+      "family_id": "self-dual-k8",
+      "generated_transposition_count": 1,
+      "instance_id": "self-dual-k8-instance-10",
+      "minimal_degree_upper_bound": 2
+    },
+    {
+      "automorphism_group_size_lower_bound": 1,
+      "certificate_scope": "Swapping equal generator columns fixes the generator matrix exactly. Absence of duplicate columns does not certify a trivial automorphism group or a linear minimal degree.",
+      "duplicate_column_class_count": 0,
+      "duplicated_coordinate_count": 0,
+      "family_id": "self-dual-k8",
+      "generated_transposition_count": 0,
+      "instance_id": "self-dual-k8-instance-11",
+      "minimal_degree_upper_bound": null
+    },
+    {
+      "automorphism_group_size_lower_bound": 2,
+      "certificate_scope": "Swapping equal generator columns fixes the generator matrix exactly. Absence of duplicate columns does not certify a trivial automorphism group or a linear minimal degree.",
+      "duplicate_column_class_count": 1,
+      "duplicated_coordinate_count": 2,
+      "family_id": "self-dual-k10",
+      "generated_transposition_count": 1,
+      "instance_id": "self-dual-k10-instance-00",
+      "minimal_degree_upper_bound": 2
+    },
+    {
+      "automorphism_group_size_lower_bound": 1,
+      "certificate_scope": "Swapping equal generator columns fixes the generator matrix exactly. Absence of duplicate columns does not certify a trivial automorphism group or a linear minimal degree.",
+      "duplicate_column_class_count": 0,
+      "duplicated_coordinate_count": 0,
+      "family_id": "self-dual-k10",
+      "generated_transposition_count": 0,
+      "instance_id": "self-dual-k10-instance-01",
+      "minimal_degree_upper_bound": null
+    },
+    {
+      "automorphism_group_size_lower_bound": 1,
+      "certificate_scope": "Swapping equal generator columns fixes the generator matrix exactly. Absence of duplicate columns does not certify a trivial automorphism group or a linear minimal degree.",
+      "duplicate_column_class_count": 0,
+      "duplicated_coordinate_count": 0,
+      "family_id": "self-dual-k10",
+      "generated_transposition_count": 0,
+      "instance_id": "self-dual-k10-instance-02",
+      "minimal_degree_upper_bound": null
+    },
+    {
+      "automorphism_group_size_lower_bound": 1,
+      "certificate_scope": "Swapping equal generator columns fixes the generator matrix exactly. Absence of duplicate columns does not certify a trivial automorphism group or a linear minimal degree.",
+      "duplicate_column_class_count": 0,
+      "duplicated_coordinate_count": 0,
+      "family_id": "self-dual-k10",
+      "generated_transposition_count": 0,
+      "instance_id": "self-dual-k10-instance-03",
+      "minimal_degree_upper_bound": null
+    },
+    {
+      "automorphism_group_size_lower_bound": 2,
+      "certificate_scope": "Swapping equal generator columns fixes the generator matrix exactly. Absence of duplicate columns does not certify a trivial automorphism group or a linear minimal degree.",
+      "duplicate_column_class_count": 1,
+      "duplicated_coordinate_count": 2,
+      "family_id": "self-dual-k10",
+      "generated_transposition_count": 1,
+      "instance_id": "self-dual-k10-instance-04",
+      "minimal_degree_upper_bound": 2
+    },
+    {
+      "automorphism_group_size_lower_bound": 1,
+      "certificate_scope": "Swapping equal generator columns fixes the generator matrix exactly. Absence of duplicate columns does not certify a trivial automorphism group or a linear minimal degree.",
+      "duplicate_column_class_count": 0,
+      "duplicated_coordinate_count": 0,
+      "family_id": "self-dual-k10",
+      "generated_transposition_count": 0,
+      "instance_id": "self-dual-k10-instance-05",
+      "minimal_degree_upper_bound": null
+    },
+    {
+      "automorphism_group_size_lower_bound": 2,
+      "certificate_scope": "Swapping equal generator columns fixes the generator matrix exactly. Absence of duplicate columns does not certify a trivial automorphism group or a linear minimal degree.",
+      "duplicate_column_class_count": 1,
+      "duplicated_coordinate_count": 2,
+      "family_id": "self-dual-k10",
+      "generated_transposition_count": 1,
+      "instance_id": "self-dual-k10-instance-06",
+      "minimal_degree_upper_bound": 2
+    },
+    {
+      "automorphism_group_size_lower_bound": 1,
+      "certificate_scope": "Swapping equal generator columns fixes the generator matrix exactly. Absence of duplicate columns does not certify a trivial automorphism group or a linear minimal degree.",
+      "duplicate_column_class_count": 0,
+      "duplicated_coordinate_count": 0,
+      "family_id": "self-dual-k10",
+      "generated_transposition_count": 0,
+      "instance_id": "self-dual-k10-instance-07",
+      "minimal_degree_upper_bound": null
+    },
+    {
+      "automorphism_group_size_lower_bound": 1,
+      "certificate_scope": "Swapping equal generator columns fixes the generator matrix exactly. Absence of duplicate columns does not certify a trivial automorphism group or a linear minimal degree.",
+      "duplicate_column_class_count": 0,
+      "duplicated_coordinate_count": 0,
+      "family_id": "self-dual-k10",
+      "generated_transposition_count": 0,
+      "instance_id": "self-dual-k10-instance-08",
+      "minimal_degree_upper_bound": null
+    },
+    {
+      "automorphism_group_size_lower_bound": 1,
+      "certificate_scope": "Swapping equal generator columns fixes the generator matrix exactly. Absence of duplicate columns does not certify a trivial automorphism group or a linear minimal degree.",
+      "duplicate_column_class_count": 0,
+      "duplicated_coordinate_count": 0,
+      "family_id": "self-dual-k10",
+      "generated_transposition_count": 0,
+      "instance_id": "self-dual-k10-instance-09",
+      "minimal_degree_upper_bound": null
+    },
+    {
+      "automorphism_group_size_lower_bound": 2,
+      "certificate_scope": "Swapping equal generator columns fixes the generator matrix exactly. Absence of duplicate columns does not certify a trivial automorphism group or a linear minimal degree.",
+      "duplicate_column_class_count": 1,
+      "duplicated_coordinate_count": 2,
+      "family_id": "self-dual-k12",
+      "generated_transposition_count": 1,
+      "instance_id": "self-dual-k12-instance-00",
+      "minimal_degree_upper_bound": 2
+    },
+    {
+      "automorphism_group_size_lower_bound": 1,
+      "certificate_scope": "Swapping equal generator columns fixes the generator matrix exactly. Absence of duplicate columns does not certify a trivial automorphism group or a linear minimal degree.",
+      "duplicate_column_class_count": 0,
+      "duplicated_coordinate_count": 0,
+      "family_id": "self-dual-k12",
+      "generated_transposition_count": 0,
+      "instance_id": "self-dual-k12-instance-01",
+      "minimal_degree_upper_bound": null
+    },
+    {
+      "automorphism_group_size_lower_bound": 1,
+      "certificate_scope": "Swapping equal generator columns fixes the generator matrix exactly. Absence of duplicate columns does not certify a trivial automorphism group or a linear minimal degree.",
+      "duplicate_column_class_count": 0,
+      "duplicated_coordinate_count": 0,
+      "family_id": "self-dual-k12",
+      "generated_transposition_count": 0,
+      "instance_id": "self-dual-k12-instance-02",
+      "minimal_degree_upper_bound": null
+    },
+    {
+      "automorphism_group_size_lower_bound": 1,
+      "certificate_scope": "Swapping equal generator columns fixes the generator matrix exactly. Absence of duplicate columns does not certify a trivial automorphism group or a linear minimal degree.",
+      "duplicate_column_class_count": 0,
+      "duplicated_coordinate_count": 0,
+      "family_id": "self-dual-k12",
+      "generated_transposition_count": 0,
+      "instance_id": "self-dual-k12-instance-03",
+      "minimal_degree_upper_bound": null
+    },
+    {
+      "automorphism_group_size_lower_bound": 1,
+      "certificate_scope": "Swapping equal generator columns fixes the generator matrix exactly. Absence of duplicate columns does not certify a trivial automorphism group or a linear minimal degree.",
+      "duplicate_column_class_count": 0,
+      "duplicated_coordinate_count": 0,
+      "family_id": "self-dual-k12",
+      "generated_transposition_count": 0,
+      "instance_id": "self-dual-k12-instance-04",
+      "minimal_degree_upper_bound": null
+    },
+    {
+      "automorphism_group_size_lower_bound": 1,
+      "certificate_scope": "Swapping equal generator columns fixes the generator matrix exactly. Absence of duplicate columns does not certify a trivial automorphism group or a linear minimal degree.",
+      "duplicate_column_class_count": 0,
+      "duplicated_coordinate_count": 0,
+      "family_id": "self-dual-k12",
+      "generated_transposition_count": 0,
+      "instance_id": "self-dual-k12-instance-05",
+      "minimal_degree_upper_bound": null
+    },
+    {
+      "automorphism_group_size_lower_bound": 1,
+      "certificate_scope": "Swapping equal generator columns fixes the generator matrix exactly. Absence of duplicate columns does not certify a trivial automorphism group or a linear minimal degree.",
+      "duplicate_column_class_count": 0,
+      "duplicated_coordinate_count": 0,
+      "family_id": "self-dual-k12",
+      "generated_transposition_count": 0,
+      "instance_id": "self-dual-k12-instance-06",
+      "minimal_degree_upper_bound": null
+    },
+    {
+      "automorphism_group_size_lower_bound": 1,
+      "certificate_scope": "Swapping equal generator columns fixes the generator matrix exactly. Absence of duplicate columns does not certify a trivial automorphism group or a linear minimal degree.",
+      "duplicate_column_class_count": 0,
+      "duplicated_coordinate_count": 0,
+      "family_id": "self-dual-k12",
+      "generated_transposition_count": 0,
+      "instance_id": "self-dual-k12-instance-07",
+      "minimal_degree_upper_bound": null
+    },
+    {
+      "automorphism_group_size_lower_bound": 1,
+      "certificate_scope": "Swapping equal generator columns fixes the generator matrix exactly. Absence of duplicate columns does not certify a trivial automorphism group or a linear minimal degree.",
+      "duplicate_column_class_count": 0,
+      "duplicated_coordinate_count": 0,
+      "family_id": "self-dual-k16",
+      "generated_transposition_count": 0,
+      "instance_id": "self-dual-k16-instance-00",
+      "minimal_degree_upper_bound": null
+    },
+    {
+      "automorphism_group_size_lower_bound": 1,
+      "certificate_scope": "Swapping equal generator columns fixes the generator matrix exactly. Absence of duplicate columns does not certify a trivial automorphism group or a linear minimal degree.",
+      "duplicate_column_class_count": 0,
+      "duplicated_coordinate_count": 0,
+      "family_id": "self-dual-k16",
+      "generated_transposition_count": 0,
+      "instance_id": "self-dual-k16-instance-01",
+      "minimal_degree_upper_bound": null
+    },
+    {
+      "automorphism_group_size_lower_bound": 1,
+      "certificate_scope": "Swapping equal generator columns fixes the generator matrix exactly. Absence of duplicate columns does not certify a trivial automorphism group or a linear minimal degree.",
+      "duplicate_column_class_count": 0,
+      "duplicated_coordinate_count": 0,
+      "family_id": "self-dual-k16",
+      "generated_transposition_count": 0,
+      "instance_id": "self-dual-k16-instance-02",
+      "minimal_degree_upper_bound": null
+    },
+    {
+      "automorphism_group_size_lower_bound": 1,
+      "certificate_scope": "Swapping equal generator columns fixes the generator matrix exactly. Absence of duplicate columns does not certify a trivial automorphism group or a linear minimal degree.",
+      "duplicate_column_class_count": 0,
+      "duplicated_coordinate_count": 0,
+      "family_id": "self-dual-k16",
+      "generated_transposition_count": 0,
+      "instance_id": "self-dual-k16-instance-03",
+      "minimal_degree_upper_bound": null
+    },
+    {
+      "automorphism_group_size_lower_bound": 1,
+      "certificate_scope": "Swapping equal generator columns fixes the generator matrix exactly. Absence of duplicate columns does not certify a trivial automorphism group or a linear minimal degree.",
+      "duplicate_column_class_count": 0,
+      "duplicated_coordinate_count": 0,
+      "family_id": "self-dual-k16",
+      "generated_transposition_count": 0,
+      "instance_id": "self-dual-k16-instance-04",
+      "minimal_degree_upper_bound": null
+    },
+    {
+      "automorphism_group_size_lower_bound": 1,
+      "certificate_scope": "Swapping equal generator columns fixes the generator matrix exactly. Absence of duplicate columns does not certify a trivial automorphism group or a linear minimal degree.",
+      "duplicate_column_class_count": 0,
+      "duplicated_coordinate_count": 0,
+      "family_id": "self-dual-k16",
+      "generated_transposition_count": 0,
+      "instance_id": "self-dual-k16-instance-05",
+      "minimal_degree_upper_bound": null
+    },
+    {
+      "automorphism_group_size_lower_bound": 1,
+      "certificate_scope": "Swapping equal generator columns fixes the generator matrix exactly. Absence of duplicate columns does not certify a trivial automorphism group or a linear minimal degree.",
+      "duplicate_column_class_count": 0,
+      "duplicated_coordinate_count": 0,
+      "family_id": "self-dual-k16",
+      "generated_transposition_count": 0,
+      "instance_id": "self-dual-k16-instance-06",
+      "minimal_degree_upper_bound": null
+    },
+    {
+      "automorphism_group_size_lower_bound": 1,
+      "certificate_scope": "Swapping equal generator columns fixes the generator matrix exactly. Absence of duplicate columns does not certify a trivial automorphism group or a linear minimal degree.",
+      "duplicate_column_class_count": 0,
+      "duplicated_coordinate_count": 0,
+      "family_id": "self-dual-k16",
+      "generated_transposition_count": 0,
+      "instance_id": "self-dual-k16-instance-07",
+      "minimal_degree_upper_bound": null
+    },
+    {
+      "automorphism_group_size_lower_bound": 1,
+      "certificate_scope": "Swapping equal generator columns fixes the generator matrix exactly. Absence of duplicate columns does not certify a trivial automorphism group or a linear minimal degree.",
+      "duplicate_column_class_count": 0,
+      "duplicated_coordinate_count": 0,
+      "family_id": "self-dual-k24",
+      "generated_transposition_count": 0,
+      "instance_id": "self-dual-k24-instance-00",
+      "minimal_degree_upper_bound": null
+    },
+    {
+      "automorphism_group_size_lower_bound": 1,
+      "certificate_scope": "Swapping equal generator columns fixes the generator matrix exactly. Absence of duplicate columns does not certify a trivial automorphism group or a linear minimal degree.",
+      "duplicate_column_class_count": 0,
+      "duplicated_coordinate_count": 0,
+      "family_id": "self-dual-k24",
+      "generated_transposition_count": 0,
+      "instance_id": "self-dual-k24-instance-01",
+      "minimal_degree_upper_bound": null
+    },
+    {
+      "automorphism_group_size_lower_bound": 1,
+      "certificate_scope": "Swapping equal generator columns fixes the generator matrix exactly. Absence of duplicate columns does not certify a trivial automorphism group or a linear minimal degree.",
+      "duplicate_column_class_count": 0,
+      "duplicated_coordinate_count": 0,
+      "family_id": "self-dual-k24",
+      "generated_transposition_count": 0,
+      "instance_id": "self-dual-k24-instance-02",
+      "minimal_degree_upper_bound": null
+    },
+    {
+      "automorphism_group_size_lower_bound": 1,
+      "certificate_scope": "Swapping equal generator columns fixes the generator matrix exactly. Absence of duplicate columns does not certify a trivial automorphism group or a linear minimal degree.",
+      "duplicate_column_class_count": 0,
+      "duplicated_coordinate_count": 0,
+      "family_id": "self-dual-k24",
+      "generated_transposition_count": 0,
+      "instance_id": "self-dual-k24-instance-03",
+      "minimal_degree_upper_bound": null
+    },
+    {
+      "automorphism_group_size_lower_bound": 1,
+      "certificate_scope": "Swapping equal generator columns fixes the generator matrix exactly. Absence of duplicate columns does not certify a trivial automorphism group or a linear minimal degree.",
+      "duplicate_column_class_count": 0,
+      "duplicated_coordinate_count": 0,
+      "family_id": "self-dual-k24",
+      "generated_transposition_count": 0,
+      "instance_id": "self-dual-k24-instance-04",
+      "minimal_degree_upper_bound": null
+    },
+    {
+      "automorphism_group_size_lower_bound": 1,
+      "certificate_scope": "Swapping equal generator columns fixes the generator matrix exactly. Absence of duplicate columns does not certify a trivial automorphism group or a linear minimal degree.",
+      "duplicate_column_class_count": 0,
+      "duplicated_coordinate_count": 0,
+      "family_id": "self-dual-k24",
+      "generated_transposition_count": 0,
+      "instance_id": "self-dual-k24-instance-05",
+      "minimal_degree_upper_bound": null
+    },
+    {
+      "automorphism_group_size_lower_bound": 1,
+      "certificate_scope": "Swapping equal generator columns fixes the generator matrix exactly. Absence of duplicate columns does not certify a trivial automorphism group or a linear minimal degree.",
+      "duplicate_column_class_count": 0,
+      "duplicated_coordinate_count": 0,
+      "family_id": "self-dual-k32",
+      "generated_transposition_count": 0,
+      "instance_id": "self-dual-k32-instance-00",
+      "minimal_degree_upper_bound": null
+    },
+    {
+      "automorphism_group_size_lower_bound": 1,
+      "certificate_scope": "Swapping equal generator columns fixes the generator matrix exactly. Absence of duplicate columns does not certify a trivial automorphism group or a linear minimal degree.",
+      "duplicate_column_class_count": 0,
+      "duplicated_coordinate_count": 0,
+      "family_id": "self-dual-k32",
+      "generated_transposition_count": 0,
+      "instance_id": "self-dual-k32-instance-01",
+      "minimal_degree_upper_bound": null
+    },
+    {
+      "automorphism_group_size_lower_bound": 1,
+      "certificate_scope": "Swapping equal generator columns fixes the generator matrix exactly. Absence of duplicate columns does not certify a trivial automorphism group or a linear minimal degree.",
+      "duplicate_column_class_count": 0,
+      "duplicated_coordinate_count": 0,
+      "family_id": "self-dual-k32",
+      "generated_transposition_count": 0,
+      "instance_id": "self-dual-k32-instance-02",
+      "minimal_degree_upper_bound": null
+    },
+    {
+      "automorphism_group_size_lower_bound": 1,
+      "certificate_scope": "Swapping equal generator columns fixes the generator matrix exactly. Absence of duplicate columns does not certify a trivial automorphism group or a linear minimal degree.",
+      "duplicate_column_class_count": 0,
+      "duplicated_coordinate_count": 0,
+      "family_id": "self-dual-k32",
+      "generated_transposition_count": 0,
+      "instance_id": "self-dual-k32-instance-03",
+      "minimal_degree_upper_bound": null
+    },
+    {
+      "automorphism_group_size_lower_bound": 1,
+      "certificate_scope": "Swapping equal generator columns fixes the generator matrix exactly. Absence of duplicate columns does not certify a trivial automorphism group or a linear minimal degree.",
+      "duplicate_column_class_count": 0,
+      "duplicated_coordinate_count": 0,
+      "family_id": "self-dual-k32",
+      "generated_transposition_count": 0,
+      "instance_id": "self-dual-k32-instance-04",
+      "minimal_degree_upper_bound": null
+    },
+    {
+      "automorphism_group_size_lower_bound": 1,
+      "certificate_scope": "Swapping equal generator columns fixes the generator matrix exactly. Absence of duplicate columns does not certify a trivial automorphism group or a linear minimal degree.",
+      "duplicate_column_class_count": 0,
+      "duplicated_coordinate_count": 0,
+      "family_id": "self-dual-k32",
+      "generated_transposition_count": 0,
+      "instance_id": "self-dual-k32-instance-05",
+      "minimal_degree_upper_bound": null
+    }
+  ],
+  "open_measurement_program": [
+    {
+      "falsifiers": [
+        "A strengthened character bound extends single-coset indistinguishability to k=Theta(n).",
+        "All signal lies in exponentially rare or exponentially large-description sectors.",
+        "The measurement statistic is computable classically from M and M'.",
+        "Decoding still requires exhaustive S_n or GL_k orbit search."
+      ],
+      "hypothesis": "The high-rate GL_k(F_2) factor creates a measurable one- or few-coset representation sector not covered by the low-rate Dinh-Moore-Russell bound.",
+      "priority": 1,
+      "proof_obligations": [
+        "Derive the one-coset conjugate-state trace distance or accessible information at k=n/2.",
+        "Identify which irreducible sectors of (GL_k(2) x S_n) wr Z_2 carry the signal.",
+        "Prove inverse-polynomial sector mass under natural coset-state preparation.",
+        "Construct a polynomial-size measurement and hidden-permutation decoder.",
+        "Show the same statistic is not a public-generator classical invariant."
+      ]
+    },
+    {
+      "falsifiers": [
+        "The representation breaks coordinate equivariance.",
+        "The reduced object is classically canonicalizable.",
+        "Recovering the original permutation is exponential or ambiguous."
+      ],
+      "hypothesis": "An equivariant low-rate representation of a self-dual code preserves the hidden transporter and moves the instance into the proven no-go or a more tractable HSP.",
+      "priority": 2,
+      "proof_obligations": [
+        "Define the representation without choosing a noncanonical coordinate subset.",
+        "Prove transporter preservation in both directions.",
+        "Charge dimension, oracle preparation, and decoder recovery."
+      ]
+    }
+  ],
+  "reduction_contract": {
+    "base_stabilizer": "H0(M) = {(A,P): A^(-1) M P = M}; for full-row-rank M, projection to PAut(C) has one A per P.",
+    "hidden_shift_group": "G0 = GL_k(F_2) x S_n",
+    "hidden_subgroup": "K = ((H0, s^(-1)H0s),0) union ((H0s, s^(-1)H0),1), with |K|=2|H0|^2.",
+    "hiding_functions": [
+      "f0(A,P) = A^(-1) M P",
+      "f1(A,P) = A^(-1) M' P"
+    ],
+    "hsp_group": "G0 wr Z_2 = G0^2 semidirect Z_2",
+    "input_promise": "M' = S M P for full-rank k x n generators",
+    "oracle_access": "Explicit generators make finite-field inversion, matrix multiplication, and coordinate permutation classically polynomial and reversibly implementable with polynomial overhead.",
+    "problem": "binary permutation code equivalence search",
+    "shift": "(S^(-1), P) under the source convention"
+  },
+  "spec": {
+    "dimension_condition_constant": 0.2,
+    "field_size": 2
+  },
+  "status": "high-rate-self-dual-hsp-no-go-applicability-gap-open",
+  "summary": "The Dinh-Moore-Russell dimension gate fails on 7/7 family rows; certified single-coset no-go rows=0, explicit measurements=0."
+}

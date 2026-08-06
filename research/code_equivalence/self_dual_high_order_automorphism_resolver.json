@@ -1,0 +1,305 @@
+{
+  "claim_gate": {
+    "all_prior_unresolved_instances_resolved": true,
+    "explicit_collective_measurement_constructed": false,
+    "finite_high_order_certificates_are_sound": true,
+    "fixed_order_success_proves_infinite_family_rigidity": false,
+    "polynomial_hidden_permutation_decoder_constructed": false,
+    "reason": "The current automorphism debt is resolved, but family scaling and the collective-measurement/decoder barrier remain.",
+    "rigid_single_register_no_go_closes_collective_route": false,
+    "speedup_claim_allowed": false
+  },
+  "combined_tail_strata": {
+    "explicit_nonrigid_instance_count": 8,
+    "rigidity_certified_instance_count": 12,
+    "unresolved_instance_count": 0
+  },
+  "created_at": "2026-07-28T10:50:29.955736+00:00",
+  "falsifiers_triggered": [
+    "The order-eight unresolved status is retained as a scaling data point.",
+    "Every high-order support must pass the public zero-syndrome condition.",
+    "Only singleton automorphism-invariant coordinate colors certify rigidity.",
+    "Fixed order-ten success is not an infinite-family rigidity theorem.",
+    "The rigid single-register obstruction does not close collective measurements."
+  ],
+  "family_records": [
+    {
+      "dimension": 32,
+      "family_id": "self-dual-k32",
+      "interpretation": "The fixed-order resolver certifies the current finite rows. It does not prove that the same order distinguishes all larger family members.",
+      "length": 64,
+      "maximum_required_support_weight": 10,
+      "remaining_unresolved_instance_count": 0,
+      "resolved_rigidity_instance_count": 6,
+      "status": "all-prior-automorphism-debt-resolved-rigid-collective-proof-debt",
+      "target_instance_count": 6
+    }
+  ],
+  "headline_metrics": {
+    "collective_measurement_count": 0,
+    "complete_high_order_enumeration_count": 6,
+    "gi_type_single_register_no_go_certified_instance_count": 6,
+    "infinite_family_rigidity_theorem_count": 0,
+    "maximum_enumerated_half_subset_count": 8303633,
+    "maximum_packed_array_bytes": 99643596,
+    "maximum_support_weight": 10,
+    "polynomial_hidden_permutation_decoder_count": 0,
+    "remaining_unresolved_instance_count": 0,
+    "resolved_rigidity_instance_count": 6,
+    "singleton_refinement_certificate_count": 6,
+    "target_instance_count": 6
+  },
+  "records": [
+    {
+      "dimension": 32,
+      "family_id": "self-dual-k32",
+      "gi_type_single_register_no_go_applicable": true,
+      "high_order_supports": {
+        "cap_reason": null,
+        "complete": true,
+        "enumerated_half_subsets": 8303633,
+        "equal_syndrome_pair_count": 10619,
+        "maximum_weight": 10,
+        "self_dual_check_passed": true,
+        "support_count": 69,
+        "weight_spectrum": [
+          [
+            8,
+            1
+          ],
+          [
+            10,
+            68
+          ]
+        ]
+      },
+      "instance_id": "self-dual-k32-instance-00",
+      "interpretation": "Complete weight<=10 supports produce singleton automorphism-invariant coordinate colors; the instance is rigid and enters the GI-type single-register obstruction stratum.",
+      "length": 64,
+      "packed_array_bytes": 99643596,
+      "prior_maximum_weight": 8,
+      "prior_status": "automorphism-proof-debt",
+      "prior_support_count": 1,
+      "refinement": {
+        "all_coordinates_singleton": true,
+        "coordinate_color_class_count": 64,
+        "evaluated": true,
+        "iteration_count": 4,
+        "maximum_coordinate_color_class_size": 1,
+        "singleton_coordinate_count": 64
+      },
+      "rigidity_certified": true,
+      "status": "resolved-rigidity-at-higher-fixed-support-order"
+    },
+    {
+      "dimension": 32,
+      "family_id": "self-dual-k32",
+      "gi_type_single_register_no_go_applicable": true,
+      "high_order_supports": {
+        "cap_reason": null,
+        "complete": true,
+        "enumerated_half_subsets": 8303633,
+        "equal_syndrome_pair_count": 16107,
+        "maximum_weight": 10,
+        "self_dual_check_passed": true,
+        "support_count": 82,
+        "weight_spectrum": [
+          [
+            8,
+            3
+          ],
+          [
+            10,
+            79
+          ]
+        ]
+      },
+      "instance_id": "self-dual-k32-instance-01",
+      "interpretation": "Complete weight<=10 supports produce singleton automorphism-invariant coordinate colors; the instance is rigid and enters the GI-type single-register obstruction stratum.",
+      "length": 64,
+      "packed_array_bytes": 99643596,
+      "prior_maximum_weight": 8,
+      "prior_status": "automorphism-proof-debt",
+      "prior_support_count": 3,
+      "refinement": {
+        "all_coordinates_singleton": true,
+        "coordinate_color_class_count": 64,
+        "evaluated": true,
+        "iteration_count": 4,
+        "maximum_coordinate_color_class_size": 1,
+        "singleton_coordinate_count": 64
+      },
+      "rigidity_certified": true,
+      "status": "resolved-rigidity-at-higher-fixed-support-order"
+    },
+    {
+      "dimension": 32,
+      "family_id": "self-dual-k32",
+      "gi_type_single_register_no_go_applicable": true,
+      "high_order_supports": {
+        "cap_reason": null,
+        "complete": true,
+        "enumerated_half_subsets": 8303633,
+        "equal_syndrome_pair_count": 7686,
+        "maximum_weight": 10,
+        "self_dual_check_passed": true,
+        "support_count": 61,
+        "weight_spectrum": [
+          [
+            10,
+            61
+          ]
+        ]
+      },
+      "instance_id": "self-dual-k32-instance-02",
+      "interpretation": "Complete weight<=10 supports produce singleton automorphism-invariant coordinate colors; the instance is rigid and enters the GI-type single-register obstruction stratum.",
+      "length": 64,
+      "packed_array_bytes": 99643596,
+      "prior_maximum_weight": 8,
+      "prior_status": "automorphism-proof-debt",
+      "prior_support_count": 0,
+      "refinement": {
+        "all_coordinates_singleton": true,
+        "coordinate_color_class_count": 64,
+        "evaluated": true,
+        "iteration_count": 4,
+        "maximum_coordinate_color_class_size": 1,
+        "singleton_coordinate_count": 64
+      },
+      "rigidity_certified": true,
+      "status": "resolved-rigidity-at-higher-fixed-support-order"
+    },
+    {
+      "dimension": 32,
+      "family_id": "self-dual-k32",
+      "gi_type_single_register_no_go_applicable": true,
+      "high_order_supports": {
+        "cap_reason": null,
+        "complete": true,
+        "enumerated_half_subsets": 8303633,
+        "equal_syndrome_pair_count": 13391,
+        "maximum_weight": 10,
+        "self_dual_check_passed": true,
+        "support_count": 91,
+        "weight_spectrum": [
+          [
+            8,
+            1
+          ],
+          [
+            10,
+            90
+          ]
+        ]
+      },
+      "instance_id": "self-dual-k32-instance-03",
+      "interpretation": "Complete weight<=10 supports produce singleton automorphism-invariant coordinate colors; the instance is rigid and enters the GI-type single-register obstruction stratum.",
+      "length": 64,
+      "packed_array_bytes": 99643596,
+      "prior_maximum_weight": 8,
+      "prior_status": "automorphism-proof-debt",
+      "prior_support_count": 1,
+      "refinement": {
+        "all_coordinates_singleton": true,
+        "coordinate_color_class_count": 64,
+        "evaluated": true,
+        "iteration_count": 4,
+        "maximum_coordinate_color_class_size": 1,
+        "singleton_coordinate_count": 64
+      },
+      "rigidity_certified": true,
+      "status": "resolved-rigidity-at-higher-fixed-support-order"
+    },
+    {
+      "dimension": 32,
+      "family_id": "self-dual-k32",
+      "gi_type_single_register_no_go_applicable": true,
+      "high_order_supports": {
+        "cap_reason": null,
+        "complete": true,
+        "enumerated_half_subsets": 8303633,
+        "equal_syndrome_pair_count": 11123,
+        "maximum_weight": 10,
+        "self_dual_check_passed": true,
+        "support_count": 73,
+        "weight_spectrum": [
+          [
+            8,
+            1
+          ],
+          [
+            10,
+            72
+          ]
+        ]
+      },
+      "instance_id": "self-dual-k32-instance-04",
+      "interpretation": "Complete weight<=10 supports produce singleton automorphism-invariant coordinate colors; the instance is rigid and enters the GI-type single-register obstruction stratum.",
+      "length": 64,
+      "packed_array_bytes": 99643596,
+      "prior_maximum_weight": 8,
+      "prior_status": "automorphism-proof-debt",
+      "prior_support_count": 1,
+      "refinement": {
+        "all_coordinates_singleton": true,
+        "coordinate_color_class_count": 64,
+        "evaluated": true,
+        "iteration_count": 4,
+        "maximum_coordinate_color_class_size": 1,
+        "singleton_coordinate_count": 64
+      },
+      "rigidity_certified": true,
+      "status": "resolved-rigidity-at-higher-fixed-support-order"
+    },
+    {
+      "dimension": 32,
+      "family_id": "self-dual-k32",
+      "gi_type_single_register_no_go_applicable": true,
+      "high_order_supports": {
+        "cap_reason": null,
+        "complete": true,
+        "enumerated_half_subsets": 8303633,
+        "equal_syndrome_pair_count": 7686,
+        "maximum_weight": 10,
+        "self_dual_check_passed": true,
+        "support_count": 61,
+        "weight_spectrum": [
+          [
+            10,
+            61
+          ]
+        ]
+      },
+      "instance_id": "self-dual-k32-instance-05",
+      "interpretation": "Complete weight<=10 supports produce singleton automorphism-invariant coordinate colors; the instance is rigid and enters the GI-type single-register obstruction stratum.",
+      "length": 64,
+      "packed_array_bytes": 99643596,
+      "prior_maximum_weight": 8,
+      "prior_status": "automorphism-proof-debt",
+      "prior_support_count": 0,
+      "refinement": {
+        "all_coordinates_singleton": true,
+        "coordinate_color_class_count": 64,
+        "evaluated": true,
+        "iteration_count": 5,
+        "maximum_coordinate_color_class_size": 1,
+        "singleton_coordinate_count": 64
+      },
+      "rigidity_certified": true,
+      "status": "resolved-rigidity-at-higher-fixed-support-order"
+    }
+  ],
+  "spec": {
+    "half_support_order": 5,
+    "maximum_bucket_pairs": 2000000
+  },
+  "status": "current-self-dual-tail-automorphisms-resolved-collective-barrier-open",
+  "summary": "Resolved 6/6 prior automorphism-debt instance(s) at support weight 10; combined tail rigid/nonrigid/unresolved=12/8/0.",
+  "theorem": {
+    "complexity_scope": "O(n^5) fixed-order preprocessing plus polynomial color refinement. This is not a uniform theorem if the required order grows with n.",
+    "current_maximum_weight": 10,
+    "current_order": 5,
+    "name": "packed fixed-order self-dual support resolver",
+    "statement": "Sorting all size-at-most-t coordinate subsets by public column XOR enumerates every zero-sum support through weight 2t. If the resulting incidence graph has singleton stable coordinate colors, PAut(C) is trivial."
+  }
+}

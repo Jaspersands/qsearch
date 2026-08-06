@@ -1,0 +1,4933 @@
+{
+  "claim_gate": {
+    "collision_free_polynomial_factor_norm_bound_proved": false,
+    "common_range_incidence_norm_bound_proved": false,
+    "commutator_common_range_multiplicity_formula_proved": true,
+    "pairwise_transversality_proved": false,
+    "reason": "The exact common-range theorem shows that pairwise transversality fails almost universally at threshold. The shared directions may nevertheless be dispersed, so higher incidence geometry or an operator-Gram bound is required.",
+    "speedup_claim_allowed": false,
+    "tail_pairwise_common_ranges_nearly_universal": true,
+    "uniform_projector_sum_norm_bound_proved": false
+  },
+  "created_at": "2026-08-05T21:38:14.122497+00:00",
+  "falsifiers_triggered": [
+    "Global source distinctness does not make orientation projector ranges pairwise transverse.",
+    "A bounded averaged second moment does not imply that most projector pairs have zero intersection.",
+    "Near-universal pairwise intersections do not by themselves prove a large norm; the intersecting directions may vary."
+  ],
+  "finite_validations": [
+    {
+      "copy_count": 2,
+      "distinct_active_pair_count": 5,
+      "distinct_common_range_pair_count": 0,
+      "exact_common_range_multiplicity_validation": true,
+      "formula_mismatch_count": 0,
+      "formula_validation_count": 50,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_common_range_dimension_residual": 0.0,
+      "n": 4,
+      "sign_mediated_common_range_pair_count": 0,
+      "status": "exact-common-range-multiplicity-validation",
+      "trivial_mediated_common_range_pair_count": 0
+    },
+    {
+      "copy_count": 2,
+      "distinct_active_pair_count": 6,
+      "distinct_common_range_pair_count": 0,
+      "exact_common_range_multiplicity_validation": true,
+      "formula_mismatch_count": 0,
+      "formula_validation_count": 50,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_common_range_dimension_residual": 0.0,
+      "n": 4,
+      "sign_mediated_common_range_pair_count": 0,
+      "status": "exact-common-range-multiplicity-validation",
+      "trivial_mediated_common_range_pair_count": 0
+    },
+    {
+      "copy_count": 2,
+      "distinct_active_pair_count": 5,
+      "distinct_common_range_pair_count": 0,
+      "exact_common_range_multiplicity_validation": true,
+      "formula_mismatch_count": 0,
+      "formula_validation_count": 50,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      ],
+      "maximum_common_range_dimension_residual": 0.0,
+      "n": 4,
+      "sign_mediated_common_range_pair_count": 0,
+      "status": "exact-common-range-multiplicity-validation",
+      "trivial_mediated_common_range_pair_count": 0
+    },
+    {
+      "copy_count": 2,
+      "distinct_active_pair_count": 1,
+      "distinct_common_range_pair_count": 0,
+      "exact_common_range_multiplicity_validation": true,
+      "formula_mismatch_count": 0,
+      "formula_validation_count": 50,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_common_range_dimension_residual": 0.0,
+      "n": 4,
+      "sign_mediated_common_range_pair_count": 0,
+      "status": "exact-common-range-multiplicity-validation",
+      "trivial_mediated_common_range_pair_count": 0
+    },
+    {
+      "copy_count": 2,
+      "distinct_active_pair_count": 1,
+      "distinct_common_range_pair_count": 0,
+      "exact_common_range_multiplicity_validation": true,
+      "formula_mismatch_count": 0,
+      "formula_validation_count": 50,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_common_range_dimension_residual": 0.0,
+      "n": 4,
+      "sign_mediated_common_range_pair_count": 0,
+      "status": "exact-common-range-multiplicity-validation",
+      "trivial_mediated_common_range_pair_count": 0
+    },
+    {
+      "copy_count": 2,
+      "distinct_active_pair_count": 1,
+      "distinct_common_range_pair_count": 0,
+      "exact_common_range_multiplicity_validation": true,
+      "formula_mismatch_count": 0,
+      "formula_validation_count": 50,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      ],
+      "maximum_common_range_dimension_residual": 0.0,
+      "n": 4,
+      "sign_mediated_common_range_pair_count": 0,
+      "status": "exact-common-range-multiplicity-validation",
+      "trivial_mediated_common_range_pair_count": 0
+    },
+    {
+      "copy_count": 2,
+      "distinct_active_pair_count": 4,
+      "distinct_common_range_pair_count": 1,
+      "exact_common_range_multiplicity_validation": true,
+      "formula_mismatch_count": 0,
+      "formula_validation_count": 50,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_common_range_dimension_residual": 0.0,
+      "n": 4,
+      "sign_mediated_common_range_pair_count": 1,
+      "status": "exact-common-range-multiplicity-validation",
+      "trivial_mediated_common_range_pair_count": 0
+    },
+    {
+      "copy_count": 2,
+      "distinct_active_pair_count": 4,
+      "distinct_common_range_pair_count": 1,
+      "exact_common_range_multiplicity_validation": true,
+      "formula_mismatch_count": 0,
+      "formula_validation_count": 50,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_common_range_dimension_residual": 0.0,
+      "n": 4,
+      "sign_mediated_common_range_pair_count": 1,
+      "status": "exact-common-range-multiplicity-validation",
+      "trivial_mediated_common_range_pair_count": 0
+    },
+    {
+      "copy_count": 2,
+      "distinct_active_pair_count": 2,
+      "distinct_common_range_pair_count": 0,
+      "exact_common_range_multiplicity_validation": true,
+      "formula_mismatch_count": 0,
+      "formula_validation_count": 50,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_common_range_dimension_residual": 0.0,
+      "n": 4,
+      "sign_mediated_common_range_pair_count": 0,
+      "status": "exact-common-range-multiplicity-validation",
+      "trivial_mediated_common_range_pair_count": 0
+    },
+    {
+      "copy_count": 2,
+      "distinct_active_pair_count": 1,
+      "distinct_common_range_pair_count": 0,
+      "exact_common_range_multiplicity_validation": true,
+      "formula_mismatch_count": 0,
+      "formula_validation_count": 50,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_common_range_dimension_residual": 0.0,
+      "n": 4,
+      "sign_mediated_common_range_pair_count": 0,
+      "status": "exact-common-range-multiplicity-validation",
+      "trivial_mediated_common_range_pair_count": 0
+    },
+    {
+      "copy_count": 2,
+      "distinct_active_pair_count": 1,
+      "distinct_common_range_pair_count": 0,
+      "exact_common_range_multiplicity_validation": true,
+      "formula_mismatch_count": 0,
+      "formula_validation_count": 50,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_common_range_dimension_residual": 0.0,
+      "n": 4,
+      "sign_mediated_common_range_pair_count": 0,
+      "status": "exact-common-range-multiplicity-validation",
+      "trivial_mediated_common_range_pair_count": 0
+    },
+    {
+      "copy_count": 2,
+      "distinct_active_pair_count": 1,
+      "distinct_common_range_pair_count": 0,
+      "exact_common_range_multiplicity_validation": true,
+      "formula_mismatch_count": 0,
+      "formula_validation_count": 50,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_common_range_dimension_residual": 0.0,
+      "n": 4,
+      "sign_mediated_common_range_pair_count": 0,
+      "status": "exact-common-range-multiplicity-validation",
+      "trivial_mediated_common_range_pair_count": 0
+    },
+    {
+      "copy_count": 2,
+      "distinct_active_pair_count": 5,
+      "distinct_common_range_pair_count": 0,
+      "exact_common_range_multiplicity_validation": true,
+      "formula_mismatch_count": 0,
+      "formula_validation_count": 50,
+      "labels": [
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_common_range_dimension_residual": 0.0,
+      "n": 4,
+      "sign_mediated_common_range_pair_count": 0,
+      "status": "exact-common-range-multiplicity-validation",
+      "trivial_mediated_common_range_pair_count": 0
+    },
+    {
+      "copy_count": 2,
+      "distinct_active_pair_count": 6,
+      "distinct_common_range_pair_count": 0,
+      "exact_common_range_multiplicity_validation": true,
+      "formula_mismatch_count": 0,
+      "formula_validation_count": 50,
+      "labels": [
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_common_range_dimension_residual": 0.0,
+      "n": 4,
+      "sign_mediated_common_range_pair_count": 0,
+      "status": "exact-common-range-multiplicity-validation",
+      "trivial_mediated_common_range_pair_count": 0
+    },
+    {
+      "copy_count": 2,
+      "distinct_active_pair_count": 5,
+      "distinct_common_range_pair_count": 0,
+      "exact_common_range_multiplicity_validation": true,
+      "formula_mismatch_count": 0,
+      "formula_validation_count": 50,
+      "labels": [
+        [
+          [
+            3,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_common_range_dimension_residual": 0.0,
+      "n": 4,
+      "sign_mediated_common_range_pair_count": 0,
+      "status": "exact-common-range-multiplicity-validation",
+      "trivial_mediated_common_range_pair_count": 0
+    }
+  ],
+  "headline_metrics": {
+    "collision_free_polynomial_factor_norm_theorem_count": 0,
+    "common_range_above_99_percent_all_target_record_count": 3,
+    "common_range_above_half_all_target_record_count": 5,
+    "common_range_formula_validation_count": 750,
+    "common_range_incidence_norm_theorem_count": 0,
+    "commutator_common_range_multiplicity_theorem_count": 1,
+    "complete_w4_common_range_tuple_validation_count": 15,
+    "finite_common_range_validation_failure_count": 0,
+    "information_threshold_scaling_record_count": 2,
+    "maximum_common_range_dimension_residual": 0.0,
+    "pairwise_transversality_theorem_count": 0,
+    "scaling_record_count": 7,
+    "tail_copy_count": 29,
+    "tail_maximum_distinct_common_range_pair_fraction": 0.9999986789189255,
+    "tail_maximum_merged_support_state_count": 2194,
+    "tail_minimum_distinct_common_range_pair_fraction": 0.9999977811239619,
+    "tail_n": 12,
+    "uniform_projector_sum_norm_theorem_count": 0,
+    "w4_distinct_common_range_pair_count": 2,
+    "w4_sign_mediated_common_range_pair_count": 2,
+    "w4_trivial_mediated_common_range_pair_count": 0
+  },
+  "scaling_records": [
+    {
+      "common_range_incidence_norm_bound_proved": false,
+      "copy_count": 5,
+      "every_target_common_range_fraction_above_99_percent": false,
+      "every_target_common_range_fraction_above_half": false,
+      "information_threshold_copy_count": 10,
+      "maximum_distinct_common_range_pair_count": 66,
+      "maximum_distinct_common_range_pair_fraction": 0.06653225806451613,
+      "maximum_merged_support_state_count": 481,
+      "minimum_distinct_common_range_pair_count": 38,
+      "minimum_distinct_common_range_pair_fraction": 0.038306451612903226,
+      "n": 6,
+      "partition_count": 11,
+      "reaches_information_threshold": false,
+      "sector_records": [
+        {
+          "active_diagonal_orientation_count": 32,
+          "distinct_common_range_pair_fraction": 0.05443548387096774,
+          "merged_support_state_count": 481,
+          "ordered_distinct_common_range_pair_count": 54,
+          "ordered_distinct_orientation_pair_count": 992,
+          "ordered_orientation_pair_count": 1024,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 481,
+          "target_partition": [
+            6
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 32,
+          "distinct_common_range_pair_fraction": 0.05443548387096774,
+          "merged_support_state_count": 325,
+          "ordered_distinct_common_range_pair_count": 54,
+          "ordered_distinct_orientation_pair_count": 992,
+          "ordered_orientation_pair_count": 1024,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 325,
+          "target_partition": [
+            5,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 32,
+          "distinct_common_range_pair_fraction": 0.06653225806451613,
+          "merged_support_state_count": 252,
+          "ordered_distinct_common_range_pair_count": 66,
+          "ordered_distinct_orientation_pair_count": 992,
+          "ordered_orientation_pair_count": 1024,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 252,
+          "target_partition": [
+            4,
+            2
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 32,
+          "distinct_common_range_pair_fraction": 0.038306451612903226,
+          "merged_support_state_count": 199,
+          "ordered_distinct_common_range_pair_count": 38,
+          "ordered_distinct_orientation_pair_count": 992,
+          "ordered_orientation_pair_count": 1024,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 199,
+          "target_partition": [
+            4,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 32,
+          "distinct_common_range_pair_fraction": 0.05443548387096774,
+          "merged_support_state_count": 337,
+          "ordered_distinct_common_range_pair_count": 54,
+          "ordered_distinct_orientation_pair_count": 992,
+          "ordered_orientation_pair_count": 1024,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 337,
+          "target_partition": [
+            3,
+            3
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 32,
+          "distinct_common_range_pair_fraction": 0.05241935483870968,
+          "merged_support_state_count": 122,
+          "ordered_distinct_common_range_pair_count": 52,
+          "ordered_distinct_orientation_pair_count": 992,
+          "ordered_orientation_pair_count": 1024,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 122,
+          "target_partition": [
+            3,
+            2,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 32,
+          "distinct_common_range_pair_fraction": 0.038306451612903226,
+          "merged_support_state_count": 199,
+          "ordered_distinct_common_range_pair_count": 38,
+          "ordered_distinct_orientation_pair_count": 992,
+          "ordered_orientation_pair_count": 1024,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 199,
+          "target_partition": [
+            3,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 32,
+          "distinct_common_range_pair_fraction": 0.05443548387096774,
+          "merged_support_state_count": 337,
+          "ordered_distinct_common_range_pair_count": 54,
+          "ordered_distinct_orientation_pair_count": 992,
+          "ordered_orientation_pair_count": 1024,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 337,
+          "target_partition": [
+            2,
+            2,
+            2
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 32,
+          "distinct_common_range_pair_fraction": 0.06653225806451613,
+          "merged_support_state_count": 252,
+          "ordered_distinct_common_range_pair_count": 66,
+          "ordered_distinct_orientation_pair_count": 992,
+          "ordered_orientation_pair_count": 1024,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 252,
+          "target_partition": [
+            2,
+            2,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 32,
+          "distinct_common_range_pair_fraction": 0.05443548387096774,
+          "merged_support_state_count": 325,
+          "ordered_distinct_common_range_pair_count": 54,
+          "ordered_distinct_orientation_pair_count": 992,
+          "ordered_orientation_pair_count": 1024,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 325,
+          "target_partition": [
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 32,
+          "distinct_common_range_pair_fraction": 0.05443548387096774,
+          "merged_support_state_count": 481,
+          "ordered_distinct_common_range_pair_count": 54,
+          "ordered_distinct_orientation_pair_count": 992,
+          "ordered_orientation_pair_count": 1024,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 481,
+          "target_partition": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ],
+      "status": "common-range-incidence-proliferating"
+    },
+    {
+      "common_range_incidence_norm_bound_proved": false,
+      "copy_count": 7,
+      "every_target_common_range_fraction_above_99_percent": false,
+      "every_target_common_range_fraction_above_half": false,
+      "information_threshold_copy_count": 13,
+      "maximum_distinct_common_range_pair_count": 8528,
+      "maximum_distinct_common_range_pair_fraction": 0.5246062992125984,
+      "maximum_merged_support_state_count": 261,
+      "minimum_distinct_common_range_pair_count": 4504,
+      "minimum_distinct_common_range_pair_fraction": 0.2770669291338583,
+      "n": 7,
+      "partition_count": 15,
+      "reaches_information_threshold": false,
+      "sector_records": [
+        {
+          "active_diagonal_orientation_count": 128,
+          "distinct_common_range_pair_fraction": 0.2770669291338583,
+          "merged_support_state_count": 261,
+          "ordered_distinct_common_range_pair_count": 4504,
+          "ordered_distinct_orientation_pair_count": 16256,
+          "ordered_orientation_pair_count": 16384,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 261,
+          "target_partition": [
+            7
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 128,
+          "distinct_common_range_pair_fraction": 0.43503937007874016,
+          "merged_support_state_count": 229,
+          "ordered_distinct_common_range_pair_count": 7072,
+          "ordered_distinct_orientation_pair_count": 16256,
+          "ordered_orientation_pair_count": 16384,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 229,
+          "target_partition": [
+            6,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 128,
+          "distinct_common_range_pair_fraction": 0.5059055118110236,
+          "merged_support_state_count": 221,
+          "ordered_distinct_common_range_pair_count": 8224,
+          "ordered_distinct_orientation_pair_count": 16256,
+          "ordered_orientation_pair_count": 16384,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 221,
+          "target_partition": [
+            5,
+            2
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 128,
+          "distinct_common_range_pair_fraction": 0.5068897637795275,
+          "merged_support_state_count": 218,
+          "ordered_distinct_common_range_pair_count": 8240,
+          "ordered_distinct_orientation_pair_count": 16256,
+          "ordered_orientation_pair_count": 16384,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 218,
+          "target_partition": [
+            5,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 128,
+          "distinct_common_range_pair_fraction": 0.5039370078740157,
+          "merged_support_state_count": 217,
+          "ordered_distinct_common_range_pair_count": 8192,
+          "ordered_distinct_orientation_pair_count": 16256,
+          "ordered_orientation_pair_count": 16384,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 217,
+          "target_partition": [
+            4,
+            3
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 128,
+          "distinct_common_range_pair_fraction": 0.5246062992125984,
+          "merged_support_state_count": 209,
+          "ordered_distinct_common_range_pair_count": 8528,
+          "ordered_distinct_orientation_pair_count": 16256,
+          "ordered_orientation_pair_count": 16384,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 209,
+          "target_partition": [
+            4,
+            2,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 128,
+          "distinct_common_range_pair_fraction": 0.48031496062992124,
+          "merged_support_state_count": 205,
+          "ordered_distinct_common_range_pair_count": 7808,
+          "ordered_distinct_orientation_pair_count": 16256,
+          "ordered_orientation_pair_count": 16384,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 205,
+          "target_partition": [
+            4,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 128,
+          "distinct_common_range_pair_fraction": 0.5029527559055118,
+          "merged_support_state_count": 212,
+          "ordered_distinct_common_range_pair_count": 8176,
+          "ordered_distinct_orientation_pair_count": 16256,
+          "ordered_orientation_pair_count": 16384,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 212,
+          "target_partition": [
+            3,
+            3,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 128,
+          "distinct_common_range_pair_fraction": 0.5029527559055118,
+          "merged_support_state_count": 212,
+          "ordered_distinct_common_range_pair_count": 8176,
+          "ordered_distinct_orientation_pair_count": 16256,
+          "ordered_orientation_pair_count": 16384,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 212,
+          "target_partition": [
+            3,
+            2,
+            2
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 128,
+          "distinct_common_range_pair_fraction": 0.5246062992125984,
+          "merged_support_state_count": 209,
+          "ordered_distinct_common_range_pair_count": 8528,
+          "ordered_distinct_orientation_pair_count": 16256,
+          "ordered_orientation_pair_count": 16384,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 209,
+          "target_partition": [
+            3,
+            2,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 128,
+          "distinct_common_range_pair_fraction": 0.5068897637795275,
+          "merged_support_state_count": 218,
+          "ordered_distinct_common_range_pair_count": 8240,
+          "ordered_distinct_orientation_pair_count": 16256,
+          "ordered_orientation_pair_count": 16384,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 218,
+          "target_partition": [
+            3,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 128,
+          "distinct_common_range_pair_fraction": 0.5039370078740157,
+          "merged_support_state_count": 217,
+          "ordered_distinct_common_range_pair_count": 8192,
+          "ordered_distinct_orientation_pair_count": 16256,
+          "ordered_orientation_pair_count": 16384,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 217,
+          "target_partition": [
+            2,
+            2,
+            2,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 128,
+          "distinct_common_range_pair_fraction": 0.5059055118110236,
+          "merged_support_state_count": 221,
+          "ordered_distinct_common_range_pair_count": 8224,
+          "ordered_distinct_orientation_pair_count": 16256,
+          "ordered_orientation_pair_count": 16384,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 221,
+          "target_partition": [
+            2,
+            2,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 128,
+          "distinct_common_range_pair_fraction": 0.43503937007874016,
+          "merged_support_state_count": 229,
+          "ordered_distinct_common_range_pair_count": 7072,
+          "ordered_distinct_orientation_pair_count": 16256,
+          "ordered_orientation_pair_count": 16384,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 229,
+          "target_partition": [
+            2,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 128,
+          "distinct_common_range_pair_fraction": 0.2770669291338583,
+          "merged_support_state_count": 261,
+          "ordered_distinct_common_range_pair_count": 4504,
+          "ordered_distinct_orientation_pair_count": 16256,
+          "ordered_orientation_pair_count": 16384,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 261,
+          "target_partition": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ],
+      "status": "common-range-incidence-proliferating"
+    },
+    {
+      "common_range_incidence_norm_bound_proved": false,
+      "copy_count": 11,
+      "every_target_common_range_fraction_above_99_percent": false,
+      "every_target_common_range_fraction_above_half": true,
+      "information_threshold_copy_count": 16,
+      "maximum_distinct_common_range_pair_count": 3691520,
+      "maximum_distinct_common_range_pair_fraction": 0.8805569125549585,
+      "maximum_merged_support_state_count": 457,
+      "minimum_distinct_common_range_pair_count": 3381248,
+      "minimum_distinct_common_range_pair_fraction": 0.8065461651196874,
+      "n": 8,
+      "partition_count": 22,
+      "reaches_information_threshold": false,
+      "sector_records": [
+        {
+          "active_diagonal_orientation_count": 2048,
+          "distinct_common_range_pair_fraction": 0.8065461651196874,
+          "merged_support_state_count": 457,
+          "ordered_distinct_common_range_pair_count": 3381248,
+          "ordered_distinct_orientation_pair_count": 4192256,
+          "ordered_orientation_pair_count": 4194304,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 457,
+          "target_partition": [
+            8
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 2048,
+          "distinct_common_range_pair_fraction": 0.8519785051294577,
+          "merged_support_state_count": 402,
+          "ordered_distinct_common_range_pair_count": 3571712,
+          "ordered_distinct_orientation_pair_count": 4192256,
+          "ordered_orientation_pair_count": 4194304,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 402,
+          "target_partition": [
+            7,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 2048,
+          "distinct_common_range_pair_fraction": 0.8693209574987787,
+          "merged_support_state_count": 389,
+          "ordered_distinct_common_range_pair_count": 3644416,
+          "ordered_distinct_orientation_pair_count": 4192256,
+          "ordered_orientation_pair_count": 4194304,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 389,
+          "target_partition": [
+            6,
+            2
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 2048,
+          "distinct_common_range_pair_fraction": 0.8693209574987787,
+          "merged_support_state_count": 380,
+          "ordered_distinct_common_range_pair_count": 3644416,
+          "ordered_distinct_orientation_pair_count": 4192256,
+          "ordered_orientation_pair_count": 4194304,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 380,
+          "target_partition": [
+            6,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 2048,
+          "distinct_common_range_pair_fraction": 0.8737176355642403,
+          "merged_support_state_count": 376,
+          "ordered_distinct_common_range_pair_count": 3662848,
+          "ordered_distinct_orientation_pair_count": 4192256,
+          "ordered_orientation_pair_count": 4194304,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 376,
+          "target_partition": [
+            5,
+            3
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 2048,
+          "distinct_common_range_pair_fraction": 0.8805569125549585,
+          "merged_support_state_count": 365,
+          "ordered_distinct_common_range_pair_count": 3691520,
+          "ordered_distinct_orientation_pair_count": 4192256,
+          "ordered_orientation_pair_count": 4194304,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 365,
+          "target_partition": [
+            5,
+            2,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 2048,
+          "distinct_common_range_pair_fraction": 0.8712750366389839,
+          "merged_support_state_count": 368,
+          "ordered_distinct_common_range_pair_count": 3652608,
+          "ordered_distinct_orientation_pair_count": 4192256,
+          "ordered_orientation_pair_count": 4194304,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 368,
+          "target_partition": [
+            5,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 2048,
+          "distinct_common_range_pair_fraction": 0.8617489008304836,
+          "merged_support_state_count": 386,
+          "ordered_distinct_common_range_pair_count": 3612672,
+          "ordered_distinct_orientation_pair_count": 4192256,
+          "ordered_orientation_pair_count": 4194304,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 386,
+          "target_partition": [
+            4,
+            4
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 2048,
+          "distinct_common_range_pair_fraction": 0.8790913531998046,
+          "merged_support_state_count": 364,
+          "ordered_distinct_common_range_pair_count": 3685376,
+          "ordered_distinct_orientation_pair_count": 4192256,
+          "ordered_orientation_pair_count": 4194304,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 364,
+          "target_partition": [
+            4,
+            3,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 2048,
+          "distinct_common_range_pair_fraction": 0.8737176355642403,
+          "merged_support_state_count": 364,
+          "ordered_distinct_common_range_pair_count": 3662848,
+          "ordered_distinct_orientation_pair_count": 4192256,
+          "ordered_orientation_pair_count": 4194304,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 364,
+          "target_partition": [
+            4,
+            2,
+            2
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 2048,
+          "distinct_common_range_pair_fraction": 0.8761602344894969,
+          "merged_support_state_count": 348,
+          "ordered_distinct_common_range_pair_count": 3673088,
+          "ordered_distinct_orientation_pair_count": 4192256,
+          "ordered_orientation_pair_count": 4194304,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 348,
+          "target_partition": [
+            4,
+            2,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 2048,
+          "distinct_common_range_pair_fraction": 0.8712750366389839,
+          "merged_support_state_count": 368,
+          "ordered_distinct_common_range_pair_count": 3652608,
+          "ordered_distinct_orientation_pair_count": 4192256,
+          "ordered_orientation_pair_count": 4194304,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 368,
+          "target_partition": [
+            4,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 2048,
+          "distinct_common_range_pair_fraction": 0.8683439179286762,
+          "merged_support_state_count": 353,
+          "ordered_distinct_common_range_pair_count": 3640320,
+          "ordered_distinct_orientation_pair_count": 4192256,
+          "ordered_orientation_pair_count": 4194304,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 353,
+          "target_partition": [
+            3,
+            3,
+            2
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 2048,
+          "distinct_common_range_pair_fraction": 0.8737176355642403,
+          "merged_support_state_count": 364,
+          "ordered_distinct_common_range_pair_count": 3662848,
+          "ordered_distinct_orientation_pair_count": 4192256,
+          "ordered_orientation_pair_count": 4194304,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 364,
+          "target_partition": [
+            3,
+            3,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 2048,
+          "distinct_common_range_pair_fraction": 0.8790913531998046,
+          "merged_support_state_count": 364,
+          "ordered_distinct_common_range_pair_count": 3685376,
+          "ordered_distinct_orientation_pair_count": 4192256,
+          "ordered_orientation_pair_count": 4194304,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 364,
+          "target_partition": [
+            3,
+            2,
+            2,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 2048,
+          "distinct_common_range_pair_fraction": 0.8805569125549585,
+          "merged_support_state_count": 365,
+          "ordered_distinct_common_range_pair_count": 3691520,
+          "ordered_distinct_orientation_pair_count": 4192256,
+          "ordered_orientation_pair_count": 4194304,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 365,
+          "target_partition": [
+            3,
+            2,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 2048,
+          "distinct_common_range_pair_fraction": 0.8693209574987787,
+          "merged_support_state_count": 380,
+          "ordered_distinct_common_range_pair_count": 3644416,
+          "ordered_distinct_orientation_pair_count": 4192256,
+          "ordered_orientation_pair_count": 4194304,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 380,
+          "target_partition": [
+            3,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 2048,
+          "distinct_common_range_pair_fraction": 0.8617489008304836,
+          "merged_support_state_count": 386,
+          "ordered_distinct_common_range_pair_count": 3612672,
+          "ordered_distinct_orientation_pair_count": 4192256,
+          "ordered_orientation_pair_count": 4194304,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 386,
+          "target_partition": [
+            2,
+            2,
+            2,
+            2
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 2048,
+          "distinct_common_range_pair_fraction": 0.8737176355642403,
+          "merged_support_state_count": 376,
+          "ordered_distinct_common_range_pair_count": 3662848,
+          "ordered_distinct_orientation_pair_count": 4192256,
+          "ordered_orientation_pair_count": 4194304,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 376,
+          "target_partition": [
+            2,
+            2,
+            2,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 2048,
+          "distinct_common_range_pair_fraction": 0.8693209574987787,
+          "merged_support_state_count": 389,
+          "ordered_distinct_common_range_pair_count": 3644416,
+          "ordered_distinct_orientation_pair_count": 4192256,
+          "ordered_orientation_pair_count": 4194304,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 389,
+          "target_partition": [
+            2,
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 2048,
+          "distinct_common_range_pair_fraction": 0.8519785051294577,
+          "merged_support_state_count": 402,
+          "ordered_distinct_common_range_pair_count": 3571712,
+          "ordered_distinct_orientation_pair_count": 4192256,
+          "ordered_orientation_pair_count": 4194304,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 402,
+          "target_partition": [
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 2048,
+          "distinct_common_range_pair_fraction": 0.8065461651196874,
+          "merged_support_state_count": 457,
+          "ordered_distinct_common_range_pair_count": 3381248,
+          "ordered_distinct_orientation_pair_count": 4192256,
+          "ordered_orientation_pair_count": 4194304,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 457,
+          "target_partition": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ],
+      "status": "common-range-incidence-proliferating"
+    },
+    {
+      "common_range_incidence_norm_bound_proved": false,
+      "copy_count": 15,
+      "every_target_common_range_fraction_above_99_percent": false,
+      "every_target_common_range_fraction_above_half": true,
+      "information_threshold_copy_count": 19,
+      "maximum_distinct_common_range_pair_count": 1055621120,
+      "maximum_distinct_common_range_pair_fraction": 0.9831537827692496,
+      "maximum_merged_support_state_count": 995,
+      "minimum_distinct_common_range_pair_count": 1044316160,
+      "minimum_distinct_common_range_pair_fraction": 0.9726248970000305,
+      "n": 9,
+      "partition_count": 30,
+      "reaches_information_threshold": false,
+      "sector_records": [
+        {
+          "active_diagonal_orientation_count": 32768,
+          "distinct_common_range_pair_fraction": 0.9726248970000305,
+          "merged_support_state_count": 995,
+          "ordered_distinct_common_range_pair_count": 1044316160,
+          "ordered_distinct_orientation_pair_count": 1073709056,
+          "ordered_orientation_pair_count": 1073741824,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 995,
+          "target_partition": [
+            9
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 32768,
+          "distinct_common_range_pair_fraction": 0.978621784112064,
+          "merged_support_state_count": 891,
+          "ordered_distinct_common_range_pair_count": 1050755072,
+          "ordered_distinct_orientation_pair_count": 1073709056,
+          "ordered_orientation_pair_count": 1073741824,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 891,
+          "target_partition": [
+            8,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 32768,
+          "distinct_common_range_pair_fraction": 0.9813837092196417,
+          "merged_support_state_count": 857,
+          "ordered_distinct_common_range_pair_count": 1053720576,
+          "ordered_distinct_orientation_pair_count": 1073709056,
+          "ordered_orientation_pair_count": 1073741824,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 857,
+          "target_partition": [
+            7,
+            2
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 32768,
+          "distinct_common_range_pair_fraction": 0.9812768944364757,
+          "merged_support_state_count": 848,
+          "ordered_distinct_common_range_pair_count": 1053605888,
+          "ordered_distinct_orientation_pair_count": 1073709056,
+          "ordered_orientation_pair_count": 1073741824,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 848,
+          "target_partition": [
+            7,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 32768,
+          "distinct_common_range_pair_fraction": 0.9823908200323496,
+          "merged_support_state_count": 837,
+          "ordered_distinct_common_range_pair_count": 1054801920,
+          "ordered_distinct_orientation_pair_count": 1073709056,
+          "ordered_orientation_pair_count": 1073741824,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 837,
+          "target_partition": [
+            6,
+            3
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 32768,
+          "distinct_common_range_pair_fraction": 0.9829248939481796,
+          "merged_support_state_count": 818,
+          "ordered_distinct_common_range_pair_count": 1055375360,
+          "ordered_distinct_orientation_pair_count": 1073709056,
+          "ordered_orientation_pair_count": 1073741824,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 818,
+          "target_partition": [
+            6,
+            2,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 32768,
+          "distinct_common_range_pair_fraction": 0.9822229682302316,
+          "merged_support_state_count": 823,
+          "ordered_distinct_common_range_pair_count": 1054621696,
+          "ordered_distinct_orientation_pair_count": 1073709056,
+          "ordered_orientation_pair_count": 1073741824,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 823,
+          "target_partition": [
+            6,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 32768,
+          "distinct_common_range_pair_fraction": 0.9821771904660176,
+          "merged_support_state_count": 831,
+          "ordered_distinct_common_range_pair_count": 1054572544,
+          "ordered_distinct_orientation_pair_count": 1073709056,
+          "ordered_orientation_pair_count": 1073741824,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 831,
+          "target_partition": [
+            5,
+            4
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 32768,
+          "distinct_common_range_pair_fraction": 0.9831537827692496,
+          "merged_support_state_count": 807,
+          "ordered_distinct_common_range_pair_count": 1055621120,
+          "ordered_distinct_orientation_pair_count": 1073709056,
+          "ordered_orientation_pair_count": 1073741824,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 807,
+          "target_partition": [
+            5,
+            3,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 32768,
+          "distinct_common_range_pair_fraction": 0.9828180791650136,
+          "merged_support_state_count": 811,
+          "ordered_distinct_common_range_pair_count": 1055260672,
+          "ordered_distinct_orientation_pair_count": 1073709056,
+          "ordered_orientation_pair_count": 1073741824,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 811,
+          "target_partition": [
+            5,
+            2,
+            2
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 32768,
+          "distinct_common_range_pair_fraction": 0.9829401532029176,
+          "merged_support_state_count": 801,
+          "ordered_distinct_common_range_pair_count": 1055391744,
+          "ordered_distinct_orientation_pair_count": 1073709056,
+          "ordered_orientation_pair_count": 1073741824,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 801,
+          "target_partition": [
+            5,
+            2,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 32768,
+          "distinct_common_range_pair_fraction": 0.9815515610217597,
+          "merged_support_state_count": 794,
+          "ordered_distinct_common_range_pair_count": 1053900800,
+          "ordered_distinct_orientation_pair_count": 1073709056,
+          "ordered_orientation_pair_count": 1073741824,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 794,
+          "target_partition": [
+            5,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 32768,
+          "distinct_common_range_pair_fraction": 0.9825739310892057,
+          "merged_support_state_count": 818,
+          "ordered_distinct_common_range_pair_count": 1054998528,
+          "ordered_distinct_orientation_pair_count": 1073709056,
+          "ordered_orientation_pair_count": 1073741824,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 818,
+          "target_partition": [
+            4,
+            4,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 32768,
+          "distinct_common_range_pair_fraction": 0.9826960051271096,
+          "merged_support_state_count": 800,
+          "ordered_distinct_common_range_pair_count": 1055129600,
+          "ordered_distinct_orientation_pair_count": 1073709056,
+          "ordered_orientation_pair_count": 1073741824,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 800,
+          "target_partition": [
+            4,
+            3,
+            2
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 32768,
+          "distinct_common_range_pair_fraction": 0.9829096346934416,
+          "merged_support_state_count": 798,
+          "ordered_distinct_common_range_pair_count": 1055358976,
+          "ordered_distinct_orientation_pair_count": 1073709056,
+          "ordered_orientation_pair_count": 1073741824,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 798,
+          "target_partition": [
+            4,
+            3,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 32768,
+          "distinct_common_range_pair_fraction": 0.9829096346934416,
+          "merged_support_state_count": 798,
+          "ordered_distinct_common_range_pair_count": 1055358976,
+          "ordered_distinct_orientation_pair_count": 1073709056,
+          "ordered_orientation_pair_count": 1073741824,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 798,
+          "target_partition": [
+            4,
+            2,
+            2,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 32768,
+          "distinct_common_range_pair_fraction": 0.9829401532029176,
+          "merged_support_state_count": 801,
+          "ordered_distinct_common_range_pair_count": 1055391744,
+          "ordered_distinct_orientation_pair_count": 1073709056,
+          "ordered_orientation_pair_count": 1073741824,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 801,
+          "target_partition": [
+            4,
+            2,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 32768,
+          "distinct_common_range_pair_fraction": 0.9822229682302316,
+          "merged_support_state_count": 823,
+          "ordered_distinct_common_range_pair_count": 1054621696,
+          "ordered_distinct_orientation_pair_count": 1073709056,
+          "ordered_orientation_pair_count": 1073741824,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 823,
+          "target_partition": [
+            4,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 32768,
+          "distinct_common_range_pair_fraction": 0.9807428205206458,
+          "merged_support_state_count": 797,
+          "ordered_distinct_common_range_pair_count": 1053032448,
+          "ordered_distinct_orientation_pair_count": 1073709056,
+          "ordered_orientation_pair_count": 1073741824,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 797,
+          "target_partition": [
+            3,
+            3,
+            3
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 32768,
+          "distinct_common_range_pair_fraction": 0.9826960051271096,
+          "merged_support_state_count": 800,
+          "ordered_distinct_common_range_pair_count": 1055129600,
+          "ordered_distinct_orientation_pair_count": 1073709056,
+          "ordered_orientation_pair_count": 1073741824,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 800,
+          "target_partition": [
+            3,
+            3,
+            2,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 32768,
+          "distinct_common_range_pair_fraction": 0.9828180791650136,
+          "merged_support_state_count": 811,
+          "ordered_distinct_common_range_pair_count": 1055260672,
+          "ordered_distinct_orientation_pair_count": 1073709056,
+          "ordered_orientation_pair_count": 1073741824,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 811,
+          "target_partition": [
+            3,
+            3,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 32768,
+          "distinct_common_range_pair_fraction": 0.9825739310892057,
+          "merged_support_state_count": 818,
+          "ordered_distinct_common_range_pair_count": 1054998528,
+          "ordered_distinct_orientation_pair_count": 1073709056,
+          "ordered_orientation_pair_count": 1073741824,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 818,
+          "target_partition": [
+            3,
+            2,
+            2,
+            2
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 32768,
+          "distinct_common_range_pair_fraction": 0.9831537827692496,
+          "merged_support_state_count": 807,
+          "ordered_distinct_common_range_pair_count": 1055621120,
+          "ordered_distinct_orientation_pair_count": 1073709056,
+          "ordered_orientation_pair_count": 1073741824,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 807,
+          "target_partition": [
+            3,
+            2,
+            2,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 32768,
+          "distinct_common_range_pair_fraction": 0.9829248939481796,
+          "merged_support_state_count": 818,
+          "ordered_distinct_common_range_pair_count": 1055375360,
+          "ordered_distinct_orientation_pair_count": 1073709056,
+          "ordered_orientation_pair_count": 1073741824,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 818,
+          "target_partition": [
+            3,
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 32768,
+          "distinct_common_range_pair_fraction": 0.9812768944364757,
+          "merged_support_state_count": 848,
+          "ordered_distinct_common_range_pair_count": 1053605888,
+          "ordered_distinct_orientation_pair_count": 1073709056,
+          "ordered_orientation_pair_count": 1073741824,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 848,
+          "target_partition": [
+            3,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 32768,
+          "distinct_common_range_pair_fraction": 0.9821771904660176,
+          "merged_support_state_count": 831,
+          "ordered_distinct_common_range_pair_count": 1054572544,
+          "ordered_distinct_orientation_pair_count": 1073709056,
+          "ordered_orientation_pair_count": 1073741824,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 831,
+          "target_partition": [
+            2,
+            2,
+            2,
+            2,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 32768,
+          "distinct_common_range_pair_fraction": 0.9823908200323496,
+          "merged_support_state_count": 837,
+          "ordered_distinct_common_range_pair_count": 1054801920,
+          "ordered_distinct_orientation_pair_count": 1073709056,
+          "ordered_orientation_pair_count": 1073741824,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 837,
+          "target_partition": [
+            2,
+            2,
+            2,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 32768,
+          "distinct_common_range_pair_fraction": 0.9813837092196417,
+          "merged_support_state_count": 857,
+          "ordered_distinct_common_range_pair_count": 1053720576,
+          "ordered_distinct_orientation_pair_count": 1073709056,
+          "ordered_orientation_pair_count": 1073741824,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 857,
+          "target_partition": [
+            2,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 32768,
+          "distinct_common_range_pair_fraction": 0.978621784112064,
+          "merged_support_state_count": 891,
+          "ordered_distinct_common_range_pair_count": 1050755072,
+          "ordered_distinct_orientation_pair_count": 1073709056,
+          "ordered_orientation_pair_count": 1073741824,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 891,
+          "target_partition": [
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 32768,
+          "distinct_common_range_pair_fraction": 0.9726248970000305,
+          "merged_support_state_count": 995,
+          "ordered_distinct_common_range_pair_count": 1044316160,
+          "ordered_distinct_orientation_pair_count": 1073709056,
+          "ordered_orientation_pair_count": 1073741824,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 995,
+          "target_partition": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ],
+      "status": "common-range-incidence-proliferating"
+    },
+    {
+      "common_range_incidence_norm_bound_proved": false,
+      "copy_count": 21,
+      "every_target_common_range_fraction_above_99_percent": true,
+      "every_target_common_range_fraction_above_half": true,
+      "information_threshold_copy_count": 22,
+      "maximum_distinct_common_range_pair_count": 4394757128192,
+      "maximum_distinct_common_range_pair_fraction": 0.9992525573981081,
+      "maximum_merged_support_state_count": 1631,
+      "minimum_distinct_common_range_pair_count": 4392791048192,
+      "minimum_distinct_common_range_pair_fraction": 0.9988055223491299,
+      "n": 10,
+      "partition_count": 42,
+      "reaches_information_threshold": false,
+      "sector_records": [
+        {
+          "active_diagonal_orientation_count": 2097152,
+          "distinct_common_range_pair_fraction": 0.9988055223491299,
+          "merged_support_state_count": 1631,
+          "ordered_distinct_common_range_pair_count": 4392791048192,
+          "ordered_distinct_orientation_pair_count": 4398044413952,
+          "ordered_orientation_pair_count": 4398046511104,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1631,
+          "target_partition": [
+            10
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 2097152,
+          "distinct_common_range_pair_fraction": 0.9990575309074072,
+          "merged_support_state_count": 1398,
+          "ordered_distinct_common_range_pair_count": 4393899393024,
+          "ordered_distinct_orientation_pair_count": 4398044413952,
+          "ordered_orientation_pair_count": 4398046511104,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1398,
+          "target_partition": [
+            9,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 2097152,
+          "distinct_common_range_pair_fraction": 0.9991672035060899,
+          "merged_support_state_count": 1351,
+          "ordered_distinct_common_range_pair_count": 4394381737984,
+          "ordered_distinct_orientation_pair_count": 4398044413952,
+          "ordered_orientation_pair_count": 4398046511104,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1351,
+          "target_partition": [
+            8,
+            2
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 2097152,
+          "distinct_common_range_pair_fraction": 0.9991652961565476,
+          "merged_support_state_count": 1320,
+          "ordered_distinct_common_range_pair_count": 4394373349376,
+          "ordered_distinct_orientation_pair_count": 4398044413952,
+          "ordered_orientation_pair_count": 4398046511104,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1320,
+          "target_partition": [
+            8,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 2097152,
+          "distinct_common_range_pair_fraction": 0.9992158409194187,
+          "merged_support_state_count": 1301,
+          "ordered_distinct_common_range_pair_count": 4394595647488,
+          "ordered_distinct_orientation_pair_count": 4398044413952,
+          "ordered_orientation_pair_count": 4398046511104,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1301,
+          "target_partition": [
+            7,
+            3
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 2097152,
+          "distinct_common_range_pair_fraction": 0.9992353912522274,
+          "merged_support_state_count": 1269,
+          "ordered_distinct_common_range_pair_count": 4394681630720,
+          "ordered_distinct_orientation_pair_count": 4398044413952,
+          "ordered_orientation_pair_count": 4398046511104,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1269,
+          "target_partition": [
+            7,
+            2,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 2097152,
+          "distinct_common_range_pair_fraction": 0.9992077346838639,
+          "merged_support_state_count": 1280,
+          "ordered_distinct_common_range_pair_count": 4394559995904,
+          "ordered_distinct_orientation_pair_count": 4398044413952,
+          "ordered_orientation_pair_count": 4398046511104,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1280,
+          "target_partition": [
+            7,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 2097152,
+          "distinct_common_range_pair_fraction": 0.999223470317588,
+          "merged_support_state_count": 1277,
+          "ordered_distinct_common_range_pair_count": 4394629201920,
+          "ordered_distinct_orientation_pair_count": 4398044413952,
+          "ordered_orientation_pair_count": 4398046511104,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1277,
+          "target_partition": [
+            6,
+            4
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 2097152,
+          "distinct_common_range_pair_fraction": 0.9992525573981081,
+          "merged_support_state_count": 1245,
+          "ordered_distinct_common_range_pair_count": 4394757128192,
+          "ordered_distinct_orientation_pair_count": 4398044413952,
+          "ordered_orientation_pair_count": 4398046511104,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1245,
+          "target_partition": [
+            6,
+            3,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 2097152,
+          "distinct_common_range_pair_fraction": 0.9992420669756255,
+          "merged_support_state_count": 1249,
+          "ordered_distinct_common_range_pair_count": 4394710990848,
+          "ordered_distinct_orientation_pair_count": 4398044413952,
+          "ordered_orientation_pair_count": 4398046511104,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1249,
+          "target_partition": [
+            6,
+            2,
+            2
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 2097152,
+          "distinct_common_range_pair_fraction": 0.9992473121868668,
+          "merged_support_state_count": 1233,
+          "ordered_distinct_common_range_pair_count": 4394734059520,
+          "ordered_distinct_orientation_pair_count": 4398044413952,
+          "ordered_orientation_pair_count": 4398046511104,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1233,
+          "target_partition": [
+            6,
+            2,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 2097152,
+          "distinct_common_range_pair_fraction": 0.9992063041717072,
+          "merged_support_state_count": 1242,
+          "ordered_distinct_common_range_pair_count": 4394553704448,
+          "ordered_distinct_orientation_pair_count": 4398044413952,
+          "ordered_orientation_pair_count": 4398046511104,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1242,
+          "target_partition": [
+            6,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 2097152,
+          "distinct_common_range_pair_fraction": 0.9991905685379832,
+          "merged_support_state_count": 1302,
+          "ordered_distinct_common_range_pair_count": 4394484498432,
+          "ordered_distinct_orientation_pair_count": 4398044413952,
+          "ordered_orientation_pair_count": 4398046511104,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1302,
+          "target_partition": [
+            5,
+            5
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 2097152,
+          "distinct_common_range_pair_fraction": 0.9992473121868668,
+          "merged_support_state_count": 1240,
+          "ordered_distinct_common_range_pair_count": 4394734059520,
+          "ordered_distinct_orientation_pair_count": 4398044413952,
+          "ordered_orientation_pair_count": 4398046511104,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1240,
+          "target_partition": [
+            5,
+            4,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 2097152,
+          "distinct_common_range_pair_fraction": 0.999248265861638,
+          "merged_support_state_count": 1225,
+          "ordered_distinct_common_range_pair_count": 4394738253824,
+          "ordered_distinct_orientation_pair_count": 4398044413952,
+          "ordered_orientation_pair_count": 4398046511104,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1225,
+          "target_partition": [
+            5,
+            3,
+            2
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 2097152,
+          "distinct_common_range_pair_fraction": 0.9992496963737947,
+          "merged_support_state_count": 1218,
+          "ordered_distinct_common_range_pair_count": 4394744545280,
+          "ordered_distinct_orientation_pair_count": 4398044413952,
+          "ordered_orientation_pair_count": 4398046511104,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1218,
+          "target_partition": [
+            5,
+            3,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 2097152,
+          "distinct_common_range_pair_fraction": 0.9992439743251678,
+          "merged_support_state_count": 1221,
+          "ordered_distinct_common_range_pair_count": 4394719379456,
+          "ordered_distinct_orientation_pair_count": 4398044413952,
+          "ordered_orientation_pair_count": 4398046511104,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1221,
+          "target_partition": [
+            5,
+            2,
+            2,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 2097152,
+          "distinct_common_range_pair_fraction": 0.9992334839026851,
+          "merged_support_state_count": 1198,
+          "ordered_distinct_common_range_pair_count": 4394673242112,
+          "ordered_distinct_orientation_pair_count": 4398044413952,
+          "ordered_orientation_pair_count": 4398046511104,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1198,
+          "target_partition": [
+            5,
+            2,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 2097152,
+          "distinct_common_range_pair_fraction": 0.9992063041717072,
+          "merged_support_state_count": 1242,
+          "ordered_distinct_common_range_pair_count": 4394553704448,
+          "ordered_distinct_orientation_pair_count": 4398044413952,
+          "ordered_orientation_pair_count": 4398046511104,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1242,
+          "target_partition": [
+            5,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 2097152,
+          "distinct_common_range_pair_fraction": 0.9992272850166726,
+          "merged_support_state_count": 1246,
+          "ordered_distinct_common_range_pair_count": 4394645979136,
+          "ordered_distinct_orientation_pair_count": 4398044413952,
+          "ordered_orientation_pair_count": 4398046511104,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1246,
+          "target_partition": [
+            4,
+            4,
+            2
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 2097152,
+          "distinct_common_range_pair_fraction": 0.9992377754391553,
+          "merged_support_state_count": 1235,
+          "ordered_distinct_common_range_pair_count": 4394692116480,
+          "ordered_distinct_orientation_pair_count": 4398044413952,
+          "ordered_orientation_pair_count": 4398046511104,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1235,
+          "target_partition": [
+            4,
+            4,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 2097152,
+          "distinct_common_range_pair_fraction": 0.9992167945941899,
+          "merged_support_state_count": 1234,
+          "ordered_distinct_common_range_pair_count": 4394599841792,
+          "ordered_distinct_orientation_pair_count": 4398044413952,
+          "ordered_orientation_pair_count": 4398046511104,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1234,
+          "target_partition": [
+            4,
+            3,
+            3
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 2097152,
+          "distinct_common_range_pair_fraction": 0.9992382522765408,
+          "merged_support_state_count": 1195,
+          "ordered_distinct_common_range_pair_count": 4394694213632,
+          "ordered_distinct_orientation_pair_count": 4398044413952,
+          "ordered_orientation_pair_count": 4398046511104,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1195,
+          "target_partition": [
+            4,
+            3,
+            2,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 2097152,
+          "distinct_common_range_pair_fraction": 0.9992439743251678,
+          "merged_support_state_count": 1221,
+          "ordered_distinct_common_range_pair_count": 4394719379456,
+          "ordered_distinct_orientation_pair_count": 4398044413952,
+          "ordered_orientation_pair_count": 4398046511104,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1221,
+          "target_partition": [
+            4,
+            3,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 2097152,
+          "distinct_common_range_pair_fraction": 0.9992377754391553,
+          "merged_support_state_count": 1235,
+          "ordered_distinct_common_range_pair_count": 4394692116480,
+          "ordered_distinct_orientation_pair_count": 4398044413952,
+          "ordered_orientation_pair_count": 4398046511104,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1235,
+          "target_partition": [
+            4,
+            2,
+            2,
+            2
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 2097152,
+          "distinct_common_range_pair_fraction": 0.9992496963737947,
+          "merged_support_state_count": 1218,
+          "ordered_distinct_common_range_pair_count": 4394744545280,
+          "ordered_distinct_orientation_pair_count": 4398044413952,
+          "ordered_orientation_pair_count": 4398046511104,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1218,
+          "target_partition": [
+            4,
+            2,
+            2,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 2097152,
+          "distinct_common_range_pair_fraction": 0.9992473121868668,
+          "merged_support_state_count": 1233,
+          "ordered_distinct_common_range_pair_count": 4394734059520,
+          "ordered_distinct_orientation_pair_count": 4398044413952,
+          "ordered_orientation_pair_count": 4398046511104,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1233,
+          "target_partition": [
+            4,
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 2097152,
+          "distinct_common_range_pair_fraction": 0.9992077346838639,
+          "merged_support_state_count": 1280,
+          "ordered_distinct_common_range_pair_count": 4394559995904,
+          "ordered_distinct_orientation_pair_count": 4398044413952,
+          "ordered_orientation_pair_count": 4398046511104,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1280,
+          "target_partition": [
+            4,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 2097152,
+          "distinct_common_range_pair_fraction": 0.9992167945941899,
+          "merged_support_state_count": 1234,
+          "ordered_distinct_common_range_pair_count": 4394599841792,
+          "ordered_distinct_orientation_pair_count": 4398044413952,
+          "ordered_orientation_pair_count": 4398046511104,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1234,
+          "target_partition": [
+            3,
+            3,
+            3,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 2097152,
+          "distinct_common_range_pair_fraction": 0.9992272850166726,
+          "merged_support_state_count": 1246,
+          "ordered_distinct_common_range_pair_count": 4394645979136,
+          "ordered_distinct_orientation_pair_count": 4398044413952,
+          "ordered_orientation_pair_count": 4398046511104,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1246,
+          "target_partition": [
+            3,
+            3,
+            2,
+            2
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 2097152,
+          "distinct_common_range_pair_fraction": 0.999248265861638,
+          "merged_support_state_count": 1225,
+          "ordered_distinct_common_range_pair_count": 4394738253824,
+          "ordered_distinct_orientation_pair_count": 4398044413952,
+          "ordered_orientation_pair_count": 4398046511104,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1225,
+          "target_partition": [
+            3,
+            3,
+            2,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 2097152,
+          "distinct_common_range_pair_fraction": 0.9992420669756255,
+          "merged_support_state_count": 1249,
+          "ordered_distinct_common_range_pair_count": 4394710990848,
+          "ordered_distinct_orientation_pair_count": 4398044413952,
+          "ordered_orientation_pair_count": 4398046511104,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1249,
+          "target_partition": [
+            3,
+            3,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 2097152,
+          "distinct_common_range_pair_fraction": 0.9992473121868668,
+          "merged_support_state_count": 1240,
+          "ordered_distinct_common_range_pair_count": 4394734059520,
+          "ordered_distinct_orientation_pair_count": 4398044413952,
+          "ordered_orientation_pair_count": 4398046511104,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1240,
+          "target_partition": [
+            3,
+            2,
+            2,
+            2,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 2097152,
+          "distinct_common_range_pair_fraction": 0.9992525573981081,
+          "merged_support_state_count": 1245,
+          "ordered_distinct_common_range_pair_count": 4394757128192,
+          "ordered_distinct_orientation_pair_count": 4398044413952,
+          "ordered_orientation_pair_count": 4398046511104,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1245,
+          "target_partition": [
+            3,
+            2,
+            2,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 2097152,
+          "distinct_common_range_pair_fraction": 0.9992353912522274,
+          "merged_support_state_count": 1269,
+          "ordered_distinct_common_range_pair_count": 4394681630720,
+          "ordered_distinct_orientation_pair_count": 4398044413952,
+          "ordered_orientation_pair_count": 4398046511104,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1269,
+          "target_partition": [
+            3,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 2097152,
+          "distinct_common_range_pair_fraction": 0.9991652961565476,
+          "merged_support_state_count": 1320,
+          "ordered_distinct_common_range_pair_count": 4394373349376,
+          "ordered_distinct_orientation_pair_count": 4398044413952,
+          "ordered_orientation_pair_count": 4398046511104,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1320,
+          "target_partition": [
+            3,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 2097152,
+          "distinct_common_range_pair_fraction": 0.9991905685379832,
+          "merged_support_state_count": 1302,
+          "ordered_distinct_common_range_pair_count": 4394484498432,
+          "ordered_distinct_orientation_pair_count": 4398044413952,
+          "ordered_orientation_pair_count": 4398046511104,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1302,
+          "target_partition": [
+            2,
+            2,
+            2,
+            2,
+            2
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 2097152,
+          "distinct_common_range_pair_fraction": 0.999223470317588,
+          "merged_support_state_count": 1277,
+          "ordered_distinct_common_range_pair_count": 4394629201920,
+          "ordered_distinct_orientation_pair_count": 4398044413952,
+          "ordered_orientation_pair_count": 4398046511104,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1277,
+          "target_partition": [
+            2,
+            2,
+            2,
+            2,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 2097152,
+          "distinct_common_range_pair_fraction": 0.9992158409194187,
+          "merged_support_state_count": 1301,
+          "ordered_distinct_common_range_pair_count": 4394595647488,
+          "ordered_distinct_orientation_pair_count": 4398044413952,
+          "ordered_orientation_pair_count": 4398046511104,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1301,
+          "target_partition": [
+            2,
+            2,
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 2097152,
+          "distinct_common_range_pair_fraction": 0.9991672035060899,
+          "merged_support_state_count": 1351,
+          "ordered_distinct_common_range_pair_count": 4394381737984,
+          "ordered_distinct_orientation_pair_count": 4398044413952,
+          "ordered_orientation_pair_count": 4398046511104,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1351,
+          "target_partition": [
+            2,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 2097152,
+          "distinct_common_range_pair_fraction": 0.9990575309074072,
+          "merged_support_state_count": 1398,
+          "ordered_distinct_common_range_pair_count": 4393899393024,
+          "ordered_distinct_orientation_pair_count": 4398044413952,
+          "ordered_orientation_pair_count": 4398046511104,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1398,
+          "target_partition": [
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 2097152,
+          "distinct_common_range_pair_fraction": 0.9988055223491299,
+          "merged_support_state_count": 1631,
+          "ordered_distinct_common_range_pair_count": 4392791048192,
+          "ordered_distinct_orientation_pair_count": 4398044413952,
+          "ordered_orientation_pair_count": 4398046511104,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1631,
+          "target_partition": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ],
+      "status": "common-range-incidence-nearly-universal"
+    },
+    {
+      "common_range_incidence_norm_bound_proved": false,
+      "copy_count": 26,
+      "every_target_common_range_fraction_above_99_percent": true,
+      "every_target_common_range_fraction_above_half": true,
+      "information_threshold_copy_count": 26,
+      "maximum_distinct_common_range_pair_count": 4503513493143552,
+      "maximum_distinct_common_range_pair_fraction": 0.9999808892604841,
+      "maximum_merged_support_state_count": 2368,
+      "minimum_distinct_common_range_pair_count": 4503466575659008,
+      "minimum_distinct_common_range_pair_fraction": 0.9999704714860093,
+      "n": 11,
+      "partition_count": 56,
+      "reaches_information_threshold": true,
+      "sector_records": [
+        {
+          "active_diagonal_orientation_count": 67108864,
+          "distinct_common_range_pair_fraction": 0.9999704714860093,
+          "merged_support_state_count": 2368,
+          "ordered_distinct_common_range_pair_count": 4503466575659008,
+          "ordered_distinct_orientation_pair_count": 4503599560261632,
+          "ordered_orientation_pair_count": 4503599627370496,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 2368,
+          "target_partition": [
+            11
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 67108864,
+          "distinct_common_range_pair_fraction": 0.9999760426577335,
+          "merged_support_state_count": 2095,
+          "ordered_distinct_common_range_pair_count": 4503491665985536,
+          "ordered_distinct_orientation_pair_count": 4503599560261632,
+          "ordered_orientation_pair_count": 4503599627370496,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 2095,
+          "target_partition": [
+            10,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 67108864,
+          "distinct_common_range_pair_fraction": 0.9999784976240769,
+          "merged_support_state_count": 2000,
+          "ordered_distinct_common_range_pair_count": 4503502722170880,
+          "ordered_distinct_orientation_pair_count": 4503599560261632,
+          "ordered_orientation_pair_count": 4503599627370496,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 2000,
+          "target_partition": [
+            9,
+            2
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 67108864,
+          "distinct_common_range_pair_fraction": 0.999978519975819,
+          "merged_support_state_count": 1965,
+          "ordered_distinct_common_range_pair_count": 4503502822834176,
+          "ordered_distinct_orientation_pair_count": 4503599560261632,
+          "ordered_orientation_pair_count": 4503599627370496,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1965,
+          "target_partition": [
+            9,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 67108864,
+          "distinct_common_range_pair_fraction": 0.9999797232446033,
+          "merged_support_state_count": 1929,
+          "ordered_distinct_common_range_pair_count": 4503508241874944,
+          "ordered_distinct_orientation_pair_count": 4503599560261632,
+          "ordered_orientation_pair_count": 4503599627370496,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1929,
+          "target_partition": [
+            8,
+            3
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 67108864,
+          "distinct_common_range_pair_fraction": 0.9999801069495098,
+          "merged_support_state_count": 1894,
+          "ordered_distinct_common_range_pair_count": 4503509969928192,
+          "ordered_distinct_orientation_pair_count": 4503599560261632,
+          "ordered_orientation_pair_count": 4503599627370496,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1894,
+          "target_partition": [
+            8,
+            2,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 67108864,
+          "distinct_common_range_pair_fraction": 0.9999796710905383,
+          "merged_support_state_count": 1908,
+          "ordered_distinct_common_range_pair_count": 4503508006993920,
+          "ordered_distinct_orientation_pair_count": 4503599560261632,
+          "ordered_orientation_pair_count": 4503599627370496,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1908,
+          "target_partition": [
+            8,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 67108864,
+          "distinct_common_range_pair_fraction": 0.9999801293012519,
+          "merged_support_state_count": 1903,
+          "ordered_distinct_common_range_pair_count": 4503510070591488,
+          "ordered_distinct_orientation_pair_count": 4503599560261632,
+          "ordered_orientation_pair_count": 4503599627370496,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1903,
+          "target_partition": [
+            7,
+            4
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 67108864,
+          "distinct_common_range_pair_fraction": 0.9999807290729988,
+          "merged_support_state_count": 1865,
+          "ordered_distinct_common_range_pair_count": 4503512771723264,
+          "ordered_distinct_orientation_pair_count": 4503599560261632,
+          "ordered_orientation_pair_count": 4503599627370496,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1865,
+          "target_partition": [
+            7,
+            3,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 67108864,
+          "distinct_common_range_pair_fraction": 0.9999805465337716,
+          "merged_support_state_count": 1868,
+          "ordered_distinct_common_range_pair_count": 4503511949639680,
+          "ordered_distinct_orientation_pair_count": 4503599560261632,
+          "ordered_orientation_pair_count": 4503599627370496,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1868,
+          "target_partition": [
+            7,
+            2,
+            2
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 67108864,
+          "distinct_common_range_pair_fraction": 0.99998063594074,
+          "merged_support_state_count": 1856,
+          "ordered_distinct_common_range_pair_count": 4503512352292864,
+          "ordered_distinct_orientation_pair_count": 4503599560261632,
+          "ordered_orientation_pair_count": 4503599627370496,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1856,
+          "target_partition": [
+            7,
+            2,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 67108864,
+          "distinct_common_range_pair_fraction": 0.9999799579378956,
+          "merged_support_state_count": 1865,
+          "ordered_distinct_common_range_pair_count": 4503509298839552,
+          "ordered_distinct_orientation_pair_count": 4503599560261632,
+          "ordered_orientation_pair_count": 4503599627370496,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1865,
+          "target_partition": [
+            7,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 67108864,
+          "distinct_common_range_pair_fraction": 0.9999799430367342,
+          "merged_support_state_count": 1892,
+          "ordered_distinct_common_range_pair_count": 4503509231730688,
+          "ordered_distinct_orientation_pair_count": 4503599560261632,
+          "ordered_orientation_pair_count": 4503599627370496,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1892,
+          "target_partition": [
+            6,
+            5
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 67108864,
+          "distinct_common_range_pair_fraction": 0.9999807849523542,
+          "merged_support_state_count": 1860,
+          "ordered_distinct_common_range_pair_count": 4503513023381504,
+          "ordered_distinct_orientation_pair_count": 4503599560261632,
+          "ordered_orientation_pair_count": 4503599627370496,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1860,
+          "target_partition": [
+            6,
+            4,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 67108864,
+          "distinct_common_range_pair_fraction": 0.9999808520075806,
+          "merged_support_state_count": 1841,
+          "ordered_distinct_common_range_pair_count": 4503513325371392,
+          "ordered_distinct_orientation_pair_count": 4503599560261632,
+          "ordered_orientation_pair_count": 4503599627370496,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1841,
+          "target_partition": [
+            6,
+            3,
+            2
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 67108864,
+          "distinct_common_range_pair_fraction": 0.9999808892604841,
+          "merged_support_state_count": 1840,
+          "ordered_distinct_common_range_pair_count": 4503513493143552,
+          "ordered_distinct_orientation_pair_count": 4503599560261632,
+          "ordered_orientation_pair_count": 4503599627370496,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1840,
+          "target_partition": [
+            6,
+            3,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 67108864,
+          "distinct_common_range_pair_fraction": 0.9999807700511928,
+          "merged_support_state_count": 1840,
+          "ordered_distinct_common_range_pair_count": 4503512956272640,
+          "ordered_distinct_orientation_pair_count": 4503599560261632,
+          "ordered_orientation_pair_count": 4503599627370496,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1840,
+          "target_partition": [
+            6,
+            2,
+            2,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 67108864,
+          "distinct_common_range_pair_fraction": 0.9999805763360944,
+          "merged_support_state_count": 1831,
+          "ordered_distinct_common_range_pair_count": 4503512083857408,
+          "ordered_distinct_orientation_pair_count": 4503599560261632,
+          "ordered_orientation_pair_count": 4503599627370496,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1831,
+          "target_partition": [
+            6,
+            2,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 67108864,
+          "distinct_common_range_pair_fraction": 0.9999795258042146,
+          "merged_support_state_count": 1816,
+          "ordered_distinct_common_range_pair_count": 4503507352682496,
+          "ordered_distinct_orientation_pair_count": 4503599560261632,
+          "ordered_orientation_pair_count": 4503599627370496,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1816,
+          "target_partition": [
+            6,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 67108864,
+          "distinct_common_range_pair_fraction": 0.9999804347750609,
+          "merged_support_state_count": 1879,
+          "ordered_distinct_common_range_pair_count": 4503511446323200,
+          "ordered_distinct_orientation_pair_count": 4503599560261632,
+          "ordered_orientation_pair_count": 4503599627370496,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1879,
+          "target_partition": [
+            5,
+            5,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 67108864,
+          "distinct_common_range_pair_fraction": 0.9999806508419015,
+          "merged_support_state_count": 1845,
+          "ordered_distinct_common_range_pair_count": 4503512419401728,
+          "ordered_distinct_orientation_pair_count": 4503599560261632,
+          "ordered_orientation_pair_count": 4503599627370496,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1845,
+          "target_partition": [
+            5,
+            4,
+            2
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 67108864,
+          "distinct_common_range_pair_fraction": 0.9999807626006121,
+          "merged_support_state_count": 1835,
+          "ordered_distinct_common_range_pair_count": 4503512922718208,
+          "ordered_distinct_orientation_pair_count": 4503599560261632,
+          "ordered_orientation_pair_count": 4503599627370496,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1835,
+          "target_partition": [
+            5,
+            4,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 67108864,
+          "distinct_common_range_pair_fraction": 0.9999804720279645,
+          "merged_support_state_count": 1849,
+          "ordered_distinct_common_range_pair_count": 4503511614095360,
+          "ordered_distinct_orientation_pair_count": 4503599560261632,
+          "ordered_orientation_pair_count": 4503599627370496,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1849,
+          "target_partition": [
+            5,
+            3,
+            3
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 67108864,
+          "distinct_common_range_pair_fraction": 0.9999807700511928,
+          "merged_support_state_count": 1813,
+          "ordered_distinct_common_range_pair_count": 4503512956272640,
+          "ordered_distinct_orientation_pair_count": 4503599560261632,
+          "ordered_orientation_pair_count": 4503599627370496,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1813,
+          "target_partition": [
+            5,
+            3,
+            2,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 67108864,
+          "distinct_common_range_pair_fraction": 0.9999806955453857,
+          "merged_support_state_count": 1817,
+          "ordered_distinct_common_range_pair_count": 4503512620728320,
+          "ordered_distinct_orientation_pair_count": 4503599560261632,
+          "ordered_orientation_pair_count": 4503599627370496,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1817,
+          "target_partition": [
+            5,
+            3,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 67108864,
+          "distinct_common_range_pair_fraction": 0.9999805390831908,
+          "merged_support_state_count": 1837,
+          "ordered_distinct_common_range_pair_count": 4503511916085248,
+          "ordered_distinct_orientation_pair_count": 4503599560261632,
+          "ordered_orientation_pair_count": 4503599627370496,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1837,
+          "target_partition": [
+            5,
+            2,
+            2,
+            2
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 67108864,
+          "distinct_common_range_pair_fraction": 0.9999806955453857,
+          "merged_support_state_count": 1817,
+          "ordered_distinct_common_range_pair_count": 4503512620728320,
+          "ordered_distinct_orientation_pair_count": 4503599560261632,
+          "ordered_orientation_pair_count": 4503599627370496,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1817,
+          "target_partition": [
+            5,
+            2,
+            2,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 67108864,
+          "distinct_common_range_pair_fraction": 0.9999805763360944,
+          "merged_support_state_count": 1831,
+          "ordered_distinct_common_range_pair_count": 4503512083857408,
+          "ordered_distinct_orientation_pair_count": 4503599560261632,
+          "ordered_orientation_pair_count": 4503599627370496,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1831,
+          "target_partition": [
+            5,
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 67108864,
+          "distinct_common_range_pair_fraction": 0.9999799579378956,
+          "merged_support_state_count": 1865,
+          "ordered_distinct_common_range_pair_count": 4503509298839552,
+          "ordered_distinct_orientation_pair_count": 4503599560261632,
+          "ordered_orientation_pair_count": 4503599627370496,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1865,
+          "target_partition": [
+            5,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 67108864,
+          "distinct_common_range_pair_fraction": 0.9999800696966062,
+          "merged_support_state_count": 1846,
+          "ordered_distinct_common_range_pair_count": 4503509802156032,
+          "ordered_distinct_orientation_pair_count": 4503599560261632,
+          "ordered_orientation_pair_count": 4503599627370496,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1846,
+          "target_partition": [
+            4,
+            4,
+            3
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 67108864,
+          "distinct_common_range_pair_fraction": 0.999980509280868,
+          "merged_support_state_count": 1825,
+          "ordered_distinct_common_range_pair_count": 4503511781867520,
+          "ordered_distinct_orientation_pair_count": 4503599560261632,
+          "ordered_orientation_pair_count": 4503599627370496,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1825,
+          "target_partition": [
+            4,
+            4,
+            2,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 67108864,
+          "distinct_common_range_pair_fraction": 0.9999805390831908,
+          "merged_support_state_count": 1837,
+          "ordered_distinct_common_range_pair_count": 4503511916085248,
+          "ordered_distinct_orientation_pair_count": 4503599560261632,
+          "ordered_orientation_pair_count": 4503599627370496,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1837,
+          "target_partition": [
+            4,
+            4,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 67108864,
+          "distinct_common_range_pair_fraction": 0.9999802336093818,
+          "merged_support_state_count": 1803,
+          "ordered_distinct_common_range_pair_count": 4503510540353536,
+          "ordered_distinct_orientation_pair_count": 4503599560261632,
+          "ordered_orientation_pair_count": 4503599627370496,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1803,
+          "target_partition": [
+            4,
+            3,
+            3,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 67108864,
+          "distinct_common_range_pair_fraction": 0.999980509280868,
+          "merged_support_state_count": 1825,
+          "ordered_distinct_common_range_pair_count": 4503511781867520,
+          "ordered_distinct_orientation_pair_count": 4503599560261632,
+          "ordered_orientation_pair_count": 4503599627370496,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1825,
+          "target_partition": [
+            4,
+            3,
+            2,
+            2
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 67108864,
+          "distinct_common_range_pair_fraction": 0.9999807700511928,
+          "merged_support_state_count": 1813,
+          "ordered_distinct_common_range_pair_count": 4503512956272640,
+          "ordered_distinct_orientation_pair_count": 4503599560261632,
+          "ordered_orientation_pair_count": 4503599627370496,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1813,
+          "target_partition": [
+            4,
+            3,
+            2,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 67108864,
+          "distinct_common_range_pair_fraction": 0.9999807700511928,
+          "merged_support_state_count": 1840,
+          "ordered_distinct_common_range_pair_count": 4503512956272640,
+          "ordered_distinct_orientation_pair_count": 4503599560261632,
+          "ordered_orientation_pair_count": 4503599627370496,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1840,
+          "target_partition": [
+            4,
+            3,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 67108864,
+          "distinct_common_range_pair_fraction": 0.9999807626006121,
+          "merged_support_state_count": 1835,
+          "ordered_distinct_common_range_pair_count": 4503512922718208,
+          "ordered_distinct_orientation_pair_count": 4503599560261632,
+          "ordered_orientation_pair_count": 4503599627370496,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1835,
+          "target_partition": [
+            4,
+            2,
+            2,
+            2,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 67108864,
+          "distinct_common_range_pair_fraction": 0.9999808892604841,
+          "merged_support_state_count": 1840,
+          "ordered_distinct_common_range_pair_count": 4503513493143552,
+          "ordered_distinct_orientation_pair_count": 4503599560261632,
+          "ordered_orientation_pair_count": 4503599627370496,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1840,
+          "target_partition": [
+            4,
+            2,
+            2,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 67108864,
+          "distinct_common_range_pair_fraction": 0.99998063594074,
+          "merged_support_state_count": 1856,
+          "ordered_distinct_common_range_pair_count": 4503512352292864,
+          "ordered_distinct_orientation_pair_count": 4503599560261632,
+          "ordered_orientation_pair_count": 4503599627370496,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1856,
+          "target_partition": [
+            4,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 67108864,
+          "distinct_common_range_pair_fraction": 0.9999796710905383,
+          "merged_support_state_count": 1908,
+          "ordered_distinct_common_range_pair_count": 4503508006993920,
+          "ordered_distinct_orientation_pair_count": 4503599560261632,
+          "ordered_orientation_pair_count": 4503599627370496,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1908,
+          "target_partition": [
+            4,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 67108864,
+          "distinct_common_range_pair_fraction": 0.9999800696966062,
+          "merged_support_state_count": 1846,
+          "ordered_distinct_common_range_pair_count": 4503509802156032,
+          "ordered_distinct_orientation_pair_count": 4503599560261632,
+          "ordered_orientation_pair_count": 4503599627370496,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1846,
+          "target_partition": [
+            3,
+            3,
+            3,
+            2
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 67108864,
+          "distinct_common_range_pair_fraction": 0.9999804720279645,
+          "merged_support_state_count": 1849,
+          "ordered_distinct_common_range_pair_count": 4503511614095360,
+          "ordered_distinct_orientation_pair_count": 4503599560261632,
+          "ordered_orientation_pair_count": 4503599627370496,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1849,
+          "target_partition": [
+            3,
+            3,
+            3,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 67108864,
+          "distinct_common_range_pair_fraction": 0.9999806508419015,
+          "merged_support_state_count": 1845,
+          "ordered_distinct_common_range_pair_count": 4503512419401728,
+          "ordered_distinct_orientation_pair_count": 4503599560261632,
+          "ordered_orientation_pair_count": 4503599627370496,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1845,
+          "target_partition": [
+            3,
+            3,
+            2,
+            2,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 67108864,
+          "distinct_common_range_pair_fraction": 0.9999808520075806,
+          "merged_support_state_count": 1841,
+          "ordered_distinct_common_range_pair_count": 4503513325371392,
+          "ordered_distinct_orientation_pair_count": 4503599560261632,
+          "ordered_orientation_pair_count": 4503599627370496,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1841,
+          "target_partition": [
+            3,
+            3,
+            2,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 67108864,
+          "distinct_common_range_pair_fraction": 0.9999805465337716,
+          "merged_support_state_count": 1868,
+          "ordered_distinct_common_range_pair_count": 4503511949639680,
+          "ordered_distinct_orientation_pair_count": 4503599560261632,
+          "ordered_orientation_pair_count": 4503599627370496,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1868,
+          "target_partition": [
+            3,
+            3,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 67108864,
+          "distinct_common_range_pair_fraction": 0.9999804347750609,
+          "merged_support_state_count": 1879,
+          "ordered_distinct_common_range_pair_count": 4503511446323200,
+          "ordered_distinct_orientation_pair_count": 4503599560261632,
+          "ordered_orientation_pair_count": 4503599627370496,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1879,
+          "target_partition": [
+            3,
+            2,
+            2,
+            2,
+            2
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 67108864,
+          "distinct_common_range_pair_fraction": 0.9999807849523542,
+          "merged_support_state_count": 1860,
+          "ordered_distinct_common_range_pair_count": 4503513023381504,
+          "ordered_distinct_orientation_pair_count": 4503599560261632,
+          "ordered_orientation_pair_count": 4503599627370496,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1860,
+          "target_partition": [
+            3,
+            2,
+            2,
+            2,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 67108864,
+          "distinct_common_range_pair_fraction": 0.9999807290729988,
+          "merged_support_state_count": 1865,
+          "ordered_distinct_common_range_pair_count": 4503512771723264,
+          "ordered_distinct_orientation_pair_count": 4503599560261632,
+          "ordered_orientation_pair_count": 4503599627370496,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1865,
+          "target_partition": [
+            3,
+            2,
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 67108864,
+          "distinct_common_range_pair_fraction": 0.9999801069495098,
+          "merged_support_state_count": 1894,
+          "ordered_distinct_common_range_pair_count": 4503509969928192,
+          "ordered_distinct_orientation_pair_count": 4503599560261632,
+          "ordered_orientation_pair_count": 4503599627370496,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1894,
+          "target_partition": [
+            3,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 67108864,
+          "distinct_common_range_pair_fraction": 0.999978519975819,
+          "merged_support_state_count": 1965,
+          "ordered_distinct_common_range_pair_count": 4503502822834176,
+          "ordered_distinct_orientation_pair_count": 4503599560261632,
+          "ordered_orientation_pair_count": 4503599627370496,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1965,
+          "target_partition": [
+            3,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 67108864,
+          "distinct_common_range_pair_fraction": 0.9999799430367342,
+          "merged_support_state_count": 1892,
+          "ordered_distinct_common_range_pair_count": 4503509231730688,
+          "ordered_distinct_orientation_pair_count": 4503599560261632,
+          "ordered_orientation_pair_count": 4503599627370496,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1892,
+          "target_partition": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 67108864,
+          "distinct_common_range_pair_fraction": 0.9999801293012519,
+          "merged_support_state_count": 1903,
+          "ordered_distinct_common_range_pair_count": 4503510070591488,
+          "ordered_distinct_orientation_pair_count": 4503599560261632,
+          "ordered_orientation_pair_count": 4503599627370496,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1903,
+          "target_partition": [
+            2,
+            2,
+            2,
+            2,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 67108864,
+          "distinct_common_range_pair_fraction": 0.9999797232446033,
+          "merged_support_state_count": 1929,
+          "ordered_distinct_common_range_pair_count": 4503508241874944,
+          "ordered_distinct_orientation_pair_count": 4503599560261632,
+          "ordered_orientation_pair_count": 4503599627370496,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1929,
+          "target_partition": [
+            2,
+            2,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 67108864,
+          "distinct_common_range_pair_fraction": 0.9999784976240769,
+          "merged_support_state_count": 2000,
+          "ordered_distinct_common_range_pair_count": 4503502722170880,
+          "ordered_distinct_orientation_pair_count": 4503599560261632,
+          "ordered_orientation_pair_count": 4503599627370496,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 2000,
+          "target_partition": [
+            2,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 67108864,
+          "distinct_common_range_pair_fraction": 0.9999760426577335,
+          "merged_support_state_count": 2095,
+          "ordered_distinct_common_range_pair_count": 4503491665985536,
+          "ordered_distinct_orientation_pair_count": 4503599560261632,
+          "ordered_orientation_pair_count": 4503599627370496,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 2095,
+          "target_partition": [
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 67108864,
+          "distinct_common_range_pair_fraction": 0.9999704714860093,
+          "merged_support_state_count": 2368,
+          "ordered_distinct_common_range_pair_count": 4503466575659008,
+          "ordered_distinct_orientation_pair_count": 4503599560261632,
+          "ordered_orientation_pair_count": 4503599627370496,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 2368,
+          "target_partition": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ],
+      "status": "common-range-incidence-nearly-universal"
+    },
+    {
+      "common_range_incidence_norm_bound_proved": false,
+      "copy_count": 29,
+      "every_target_common_range_fraction_above_99_percent": true,
+      "every_target_common_range_fraction_above_half": true,
+      "information_threshold_copy_count": 29,
+      "maximum_distinct_common_range_pair_count": 288229994839146496,
+      "maximum_distinct_common_range_pair_fraction": 0.9999986789189255,
+      "maximum_merged_support_state_count": 2194,
+      "minimum_distinct_common_range_pair_count": 288229736067366912,
+      "minimum_distinct_common_range_pair_fraction": 0.9999977811239619,
+      "n": 12,
+      "partition_count": 77,
+      "reaches_information_threshold": true,
+      "sector_records": [
+        {
+          "active_diagonal_orientation_count": 536870912,
+          "distinct_common_range_pair_fraction": 0.9999977811239619,
+          "merged_support_state_count": 2194,
+          "ordered_distinct_common_range_pair_count": 288229736067366912,
+          "ordered_distinct_orientation_pair_count": 288230375614840832,
+          "ordered_orientation_pair_count": 288230376151711744,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 2194,
+          "target_partition": [
+            12
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 536870912,
+          "distinct_common_range_pair_fraction": 0.9999980812426621,
+          "merged_support_state_count": 1869,
+          "ordered_distinct_common_range_pair_count": 288229822570692608,
+          "ordered_distinct_orientation_pair_count": 288230375614840832,
+          "ordered_orientation_pair_count": 288230376151711744,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1869,
+          "target_partition": [
+            11,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 536870912,
+          "distinct_common_range_pair_fraction": 0.9999983436427979,
+          "merged_support_state_count": 1771,
+          "ordered_distinct_common_range_pair_count": 288229898202382336,
+          "ordered_distinct_orientation_pair_count": 288230375614840832,
+          "ordered_orientation_pair_count": 288230376151711744,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1771,
+          "target_partition": [
+            10,
+            2
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 536870912,
+          "distinct_common_range_pair_fraction": 0.999998346902427,
+          "merged_support_state_count": 1743,
+          "ordered_distinct_common_range_pair_count": 288229899141906432,
+          "ordered_distinct_orientation_pair_count": 288230375614840832,
+          "ordered_orientation_pair_count": 288230376151711744,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1743,
+          "target_partition": [
+            10,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 536870912,
+          "distinct_common_range_pair_fraction": 0.9999985261820229,
+          "merged_support_state_count": 1716,
+          "ordered_distinct_common_range_pair_count": 288229950815731712,
+          "ordered_distinct_orientation_pair_count": 288230375614840832,
+          "ordered_orientation_pair_count": 288230376151711744,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1716,
+          "target_partition": [
+            9,
+            3
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 536870912,
+          "distinct_common_range_pair_fraction": 0.999998573213813,
+          "merged_support_state_count": 1696,
+          "ordered_distinct_common_range_pair_count": 288229964371722240,
+          "ordered_distinct_orientation_pair_count": 288230375614840832,
+          "ordered_orientation_pair_count": 288230376151711744,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1696,
+          "target_partition": [
+            9,
+            2,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 536870912,
+          "distinct_common_range_pair_fraction": 0.9999985238537165,
+          "merged_support_state_count": 1699,
+          "ordered_distinct_common_range_pair_count": 288229950144643072,
+          "ordered_distinct_orientation_pair_count": 288230375614840832,
+          "ordered_orientation_pair_count": 288230376151711744,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1699,
+          "target_partition": [
+            9,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 536870912,
+          "distinct_common_range_pair_fraction": 0.9999986030161355,
+          "merged_support_state_count": 1696,
+          "ordered_distinct_common_range_pair_count": 288229972961656832,
+          "ordered_distinct_orientation_pair_count": 288230375614840832,
+          "ordered_orientation_pair_count": 288230376151711744,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1696,
+          "target_partition": [
+            8,
+            4
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 536870912,
+          "distinct_common_range_pair_fraction": 0.999998652376232,
+          "merged_support_state_count": 1678,
+          "ordered_distinct_common_range_pair_count": 288229987188736000,
+          "ordered_distinct_orientation_pair_count": 288230375614840832,
+          "ordered_orientation_pair_count": 288230376151711744,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1678,
+          "target_partition": [
+            8,
+            3,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 536870912,
+          "distinct_common_range_pair_fraction": 0.9999986421316837,
+          "merged_support_state_count": 1676,
+          "ordered_distinct_common_range_pair_count": 288229984235945984,
+          "ordered_distinct_orientation_pair_count": 288230375614840832,
+          "ordered_orientation_pair_count": 288230376151711744,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1676,
+          "target_partition": [
+            8,
+            2,
+            2
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 536870912,
+          "distinct_common_range_pair_fraction": 0.9999986467882965,
+          "merged_support_state_count": 1674,
+          "ordered_distinct_common_range_pair_count": 288229985578123264,
+          "ordered_distinct_orientation_pair_count": 288230375614840832,
+          "ordered_orientation_pair_count": 288230376151711744,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1674,
+          "target_partition": [
+            8,
+            2,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 536870912,
+          "distinct_common_range_pair_fraction": 0.9999985913746032,
+          "merged_support_state_count": 1679,
+          "ordered_distinct_common_range_pair_count": 288229969606213632,
+          "ordered_distinct_orientation_pair_count": 288230375614840832,
+          "ordered_orientation_pair_count": 288230376151711744,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1679,
+          "target_partition": [
+            8,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 536870912,
+          "distinct_common_range_pair_fraction": 0.9999986146576677,
+          "merged_support_state_count": 1689,
+          "ordered_distinct_common_range_pair_count": 288229976317100032,
+          "ordered_distinct_orientation_pair_count": 288230375614840832,
+          "ordered_orientation_pair_count": 288230376151711744,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1689,
+          "target_partition": [
+            7,
+            5
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 536870912,
+          "distinct_common_range_pair_fraction": 0.9999986742623126,
+          "merged_support_state_count": 1671,
+          "ordered_distinct_common_range_pair_count": 288229993496969216,
+          "ordered_distinct_orientation_pair_count": 288230375614840832,
+          "ordered_orientation_pair_count": 288230376151711744,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1671,
+          "target_partition": [
+            7,
+            4,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 536870912,
+          "distinct_common_range_pair_fraction": 0.9999986761249577,
+          "merged_support_state_count": 1662,
+          "ordered_distinct_common_range_pair_count": 288229994033840128,
+          "ordered_distinct_orientation_pair_count": 288230375614840832,
+          "ordered_orientation_pair_count": 288230376151711744,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1662,
+          "target_partition": [
+            7,
+            3,
+            2
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 536870912,
+          "distinct_common_range_pair_fraction": 0.9999986751936352,
+          "merged_support_state_count": 1666,
+          "ordered_distinct_common_range_pair_count": 288229993765404672,
+          "ordered_distinct_orientation_pair_count": 288230375614840832,
+          "ordered_orientation_pair_count": 288230376151711744,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1666,
+          "target_partition": [
+            7,
+            3,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 536870912,
+          "distinct_common_range_pair_fraction": 0.9999986751936352,
+          "merged_support_state_count": 1666,
+          "ordered_distinct_common_range_pair_count": 288229993765404672,
+          "ordered_distinct_orientation_pair_count": 288230375614840832,
+          "ordered_orientation_pair_count": 288230376151711744,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1666,
+          "target_partition": [
+            7,
+            2,
+            2,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 536870912,
+          "distinct_common_range_pair_fraction": 0.9999986663460707,
+          "merged_support_state_count": 1664,
+          "ordered_distinct_common_range_pair_count": 288229991215267840,
+          "ordered_distinct_orientation_pair_count": 288230375614840832,
+          "ordered_orientation_pair_count": 288230376151711744,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1664,
+          "target_partition": [
+            7,
+            2,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 536870912,
+          "distinct_common_range_pair_fraction": 0.9999986039474581,
+          "merged_support_state_count": 1669,
+          "ordered_distinct_common_range_pair_count": 288229973230092288,
+          "ordered_distinct_orientation_pair_count": 288230375614840832,
+          "ordered_orientation_pair_count": 288230376151711744,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1669,
+          "target_partition": [
+            7,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 536870912,
+          "distinct_common_range_pair_fraction": 0.9999985415488455,
+          "merged_support_state_count": 1701,
+          "ordered_distinct_common_range_pair_count": 288229955244916736,
+          "ordered_distinct_orientation_pair_count": 288230375614840832,
+          "ordered_orientation_pair_count": 288230376151711744,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1701,
+          "target_partition": [
+            6,
+            6
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 536870912,
+          "distinct_common_range_pair_fraction": 0.9999986682087159,
+          "merged_support_state_count": 1663,
+          "ordered_distinct_common_range_pair_count": 288229991752138752,
+          "ordered_distinct_orientation_pair_count": 288230375614840832,
+          "ordered_orientation_pair_count": 288230376151711744,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1663,
+          "target_partition": [
+            6,
+            5,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 536870912,
+          "distinct_common_range_pair_fraction": 0.9999986775219416,
+          "merged_support_state_count": 1664,
+          "ordered_distinct_common_range_pair_count": 288229994436493312,
+          "ordered_distinct_orientation_pair_count": 288230375614840832,
+          "ordered_orientation_pair_count": 288230376151711744,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1664,
+          "target_partition": [
+            6,
+            4,
+            2
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 536870912,
+          "distinct_common_range_pair_fraction": 0.9999986789189255,
+          "merged_support_state_count": 1649,
+          "ordered_distinct_common_range_pair_count": 288229994839146496,
+          "ordered_distinct_orientation_pair_count": 288230375614840832,
+          "ordered_orientation_pair_count": 288230376151711744,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1649,
+          "target_partition": [
+            6,
+            4,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 536870912,
+          "distinct_common_range_pair_fraction": 0.9999986714683449,
+          "merged_support_state_count": 1668,
+          "ordered_distinct_common_range_pair_count": 288229992691662848,
+          "ordered_distinct_orientation_pair_count": 288230375614840832,
+          "ordered_orientation_pair_count": 288230376151711744,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1668,
+          "target_partition": [
+            6,
+            3,
+            3
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 536870912,
+          "distinct_common_range_pair_fraction": 0.9999986789189255,
+          "merged_support_state_count": 1633,
+          "ordered_distinct_common_range_pair_count": 288229994839146496,
+          "ordered_distinct_orientation_pair_count": 288230375614840832,
+          "ordered_orientation_pair_count": 288230376151711744,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1633,
+          "target_partition": [
+            6,
+            3,
+            2,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 536870912,
+          "distinct_common_range_pair_fraction": 0.9999986779876029,
+          "merged_support_state_count": 1644,
+          "ordered_distinct_common_range_pair_count": 288229994570711040,
+          "ordered_distinct_orientation_pair_count": 288230375614840832,
+          "ordered_orientation_pair_count": 288230376151711744,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1644,
+          "target_partition": [
+            6,
+            3,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 536870912,
+          "distinct_common_range_pair_fraction": 0.9999986779876029,
+          "merged_support_state_count": 1658,
+          "ordered_distinct_common_range_pair_count": 288229994570711040,
+          "ordered_distinct_orientation_pair_count": 288230375614840832,
+          "ordered_orientation_pair_count": 288230376151711744,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1658,
+          "target_partition": [
+            6,
+            2,
+            2,
+            2
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 536870912,
+          "distinct_common_range_pair_fraction": 0.9999986779876029,
+          "merged_support_state_count": 1646,
+          "ordered_distinct_common_range_pair_count": 288229994570711040,
+          "ordered_distinct_orientation_pair_count": 288230375614840832,
+          "ordered_orientation_pair_count": 288230376151711744,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1646,
+          "target_partition": [
+            6,
+            2,
+            2,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 536870912,
+          "distinct_common_range_pair_fraction": 0.9999986644834256,
+          "merged_support_state_count": 1626,
+          "ordered_distinct_common_range_pair_count": 288229990678396928,
+          "ordered_distinct_orientation_pair_count": 288230375614840832,
+          "ordered_orientation_pair_count": 288230376151711744,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1626,
+          "target_partition": [
+            6,
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 536870912,
+          "distinct_common_range_pair_fraction": 0.9999986039474581,
+          "merged_support_state_count": 1669,
+          "ordered_distinct_common_range_pair_count": 288229973230092288,
+          "ordered_distinct_orientation_pair_count": 288230375614840832,
+          "ordered_orientation_pair_count": 288230376151711744,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1669,
+          "target_partition": [
+            6,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 536870912,
+          "distinct_common_range_pair_fraction": 0.9999986593611514,
+          "merged_support_state_count": 1670,
+          "ordered_distinct_common_range_pair_count": 288229989202001920,
+          "ordered_distinct_orientation_pair_count": 288230375614840832,
+          "ordered_orientation_pair_count": 288230376151711744,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1670,
+          "target_partition": [
+            5,
+            5,
+            2
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 536870912,
+          "distinct_common_range_pair_fraction": 0.9999986705370223,
+          "merged_support_state_count": 1668,
+          "ordered_distinct_common_range_pair_count": 288229992423227392,
+          "ordered_distinct_orientation_pair_count": 288230375614840832,
+          "ordered_orientation_pair_count": 288230376151711744,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1668,
+          "target_partition": [
+            5,
+            5,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 536870912,
+          "distinct_common_range_pair_fraction": 0.9999986612237965,
+          "merged_support_state_count": 1660,
+          "ordered_distinct_common_range_pair_count": 288229989738872832,
+          "ordered_distinct_orientation_pair_count": 288230375614840832,
+          "ordered_orientation_pair_count": 288230376151711744,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1660,
+          "target_partition": [
+            5,
+            4,
+            3
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 536870912,
+          "distinct_common_range_pair_fraction": 0.9999986770562803,
+          "merged_support_state_count": 1644,
+          "ordered_distinct_common_range_pair_count": 288229994302275584,
+          "ordered_distinct_orientation_pair_count": 288230375614840832,
+          "ordered_orientation_pair_count": 288230376151711744,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1644,
+          "target_partition": [
+            5,
+            4,
+            2,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 536870912,
+          "distinct_common_range_pair_fraction": 0.9999986784532642,
+          "merged_support_state_count": 1644,
+          "ordered_distinct_common_range_pair_count": 288229994704928768,
+          "ordered_distinct_orientation_pair_count": 288230375614840832,
+          "ordered_orientation_pair_count": 288230376151711744,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1644,
+          "target_partition": [
+            5,
+            4,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 536870912,
+          "distinct_common_range_pair_fraction": 0.9999986747279739,
+          "merged_support_state_count": 1644,
+          "ordered_distinct_common_range_pair_count": 288229993631186944,
+          "ordered_distinct_orientation_pair_count": 288230375614840832,
+          "ordered_orientation_pair_count": 288230376151711744,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1644,
+          "target_partition": [
+            5,
+            3,
+            3,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 536870912,
+          "distinct_common_range_pair_fraction": 0.9999986775219416,
+          "merged_support_state_count": 1647,
+          "ordered_distinct_common_range_pair_count": 288229994436493312,
+          "ordered_distinct_orientation_pair_count": 288230375614840832,
+          "ordered_orientation_pair_count": 288230376151711744,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1647,
+          "target_partition": [
+            5,
+            3,
+            2,
+            2
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 536870912,
+          "distinct_common_range_pair_fraction": 0.9999986779876029,
+          "merged_support_state_count": 1613,
+          "ordered_distinct_common_range_pair_count": 288229994570711040,
+          "ordered_distinct_orientation_pair_count": 288230375614840832,
+          "ordered_orientation_pair_count": 288230376151711744,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1613,
+          "target_partition": [
+            5,
+            3,
+            2,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 536870912,
+          "distinct_common_range_pair_fraction": 0.9999986779876029,
+          "merged_support_state_count": 1646,
+          "ordered_distinct_common_range_pair_count": 288229994570711040,
+          "ordered_distinct_orientation_pair_count": 288230375614840832,
+          "ordered_orientation_pair_count": 288230376151711744,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1646,
+          "target_partition": [
+            5,
+            3,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 536870912,
+          "distinct_common_range_pair_fraction": 0.9999986784532642,
+          "merged_support_state_count": 1644,
+          "ordered_distinct_common_range_pair_count": 288229994704928768,
+          "ordered_distinct_orientation_pair_count": 288230375614840832,
+          "ordered_orientation_pair_count": 288230376151711744,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1644,
+          "target_partition": [
+            5,
+            2,
+            2,
+            2,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 536870912,
+          "distinct_common_range_pair_fraction": 0.9999986779876029,
+          "merged_support_state_count": 1644,
+          "ordered_distinct_common_range_pair_count": 288229994570711040,
+          "ordered_distinct_orientation_pair_count": 288230375614840832,
+          "ordered_orientation_pair_count": 288230376151711744,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1644,
+          "target_partition": [
+            5,
+            2,
+            2,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 536870912,
+          "distinct_common_range_pair_fraction": 0.9999986663460707,
+          "merged_support_state_count": 1664,
+          "ordered_distinct_common_range_pair_count": 288229991215267840,
+          "ordered_distinct_orientation_pair_count": 288230375614840832,
+          "ordered_orientation_pair_count": 288230376151711744,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1664,
+          "target_partition": [
+            5,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 536870912,
+          "distinct_common_range_pair_fraction": 0.9999985913746032,
+          "merged_support_state_count": 1679,
+          "ordered_distinct_common_range_pair_count": 288229969606213632,
+          "ordered_distinct_orientation_pair_count": 288230375614840832,
+          "ordered_orientation_pair_count": 288230376151711744,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1679,
+          "target_partition": [
+            5,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 536870912,
+          "distinct_common_range_pair_fraction": 0.9999986048787807,
+          "merged_support_state_count": 1674,
+          "ordered_distinct_common_range_pair_count": 288229973498527744,
+          "ordered_distinct_orientation_pair_count": 288230375614840832,
+          "ordered_orientation_pair_count": 288230376151711744,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1674,
+          "target_partition": [
+            4,
+            4,
+            4
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 536870912,
+          "distinct_common_range_pair_fraction": 0.9999986598268127,
+          "merged_support_state_count": 1646,
+          "ordered_distinct_common_range_pair_count": 288229989336219648,
+          "ordered_distinct_orientation_pair_count": 288230375614840832,
+          "ordered_orientation_pair_count": 288230376151711744,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1646,
+          "target_partition": [
+            4,
+            4,
+            3,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 536870912,
+          "distinct_common_range_pair_fraction": 0.9999986574985061,
+          "merged_support_state_count": 1624,
+          "ordered_distinct_common_range_pair_count": 288229988665131008,
+          "ordered_distinct_orientation_pair_count": 288230375614840832,
+          "ordered_orientation_pair_count": 288230376151711744,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1624,
+          "target_partition": [
+            4,
+            4,
+            2,
+            2
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 536870912,
+          "distinct_common_range_pair_fraction": 0.9999986775219416,
+          "merged_support_state_count": 1647,
+          "ordered_distinct_common_range_pair_count": 288229994436493312,
+          "ordered_distinct_orientation_pair_count": 288230375614840832,
+          "ordered_orientation_pair_count": 288230376151711744,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1647,
+          "target_partition": [
+            4,
+            4,
+            2,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 536870912,
+          "distinct_common_range_pair_fraction": 0.9999986779876029,
+          "merged_support_state_count": 1658,
+          "ordered_distinct_common_range_pair_count": 288229994570711040,
+          "ordered_distinct_orientation_pair_count": 288230375614840832,
+          "ordered_orientation_pair_count": 288230376151711744,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1658,
+          "target_partition": [
+            4,
+            4,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 536870912,
+          "distinct_common_range_pair_fraction": 0.9999986598268127,
+          "merged_support_state_count": 1646,
+          "ordered_distinct_common_range_pair_count": 288229989336219648,
+          "ordered_distinct_orientation_pair_count": 288230375614840832,
+          "ordered_orientation_pair_count": 288230376151711744,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1646,
+          "target_partition": [
+            4,
+            3,
+            3,
+            2
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 536870912,
+          "distinct_common_range_pair_fraction": 0.9999986747279739,
+          "merged_support_state_count": 1644,
+          "ordered_distinct_common_range_pair_count": 288229993631186944,
+          "ordered_distinct_orientation_pair_count": 288230375614840832,
+          "ordered_orientation_pair_count": 288230376151711744,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1644,
+          "target_partition": [
+            4,
+            3,
+            3,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 536870912,
+          "distinct_common_range_pair_fraction": 0.9999986770562803,
+          "merged_support_state_count": 1644,
+          "ordered_distinct_common_range_pair_count": 288229994302275584,
+          "ordered_distinct_orientation_pair_count": 288230375614840832,
+          "ordered_orientation_pair_count": 288230376151711744,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1644,
+          "target_partition": [
+            4,
+            3,
+            2,
+            2,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 536870912,
+          "distinct_common_range_pair_fraction": 0.9999986789189255,
+          "merged_support_state_count": 1633,
+          "ordered_distinct_common_range_pair_count": 288229994839146496,
+          "ordered_distinct_orientation_pair_count": 288230375614840832,
+          "ordered_orientation_pair_count": 288230376151711744,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1633,
+          "target_partition": [
+            4,
+            3,
+            2,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 536870912,
+          "distinct_common_range_pair_fraction": 0.9999986751936352,
+          "merged_support_state_count": 1666,
+          "ordered_distinct_common_range_pair_count": 288229993765404672,
+          "ordered_distinct_orientation_pair_count": 288230375614840832,
+          "ordered_orientation_pair_count": 288230376151711744,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1666,
+          "target_partition": [
+            4,
+            3,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 536870912,
+          "distinct_common_range_pair_fraction": 0.9999986705370223,
+          "merged_support_state_count": 1668,
+          "ordered_distinct_common_range_pair_count": 288229992423227392,
+          "ordered_distinct_orientation_pair_count": 288230375614840832,
+          "ordered_orientation_pair_count": 288230376151711744,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1668,
+          "target_partition": [
+            4,
+            2,
+            2,
+            2,
+            2
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 536870912,
+          "distinct_common_range_pair_fraction": 0.9999986789189255,
+          "merged_support_state_count": 1649,
+          "ordered_distinct_common_range_pair_count": 288229994839146496,
+          "ordered_distinct_orientation_pair_count": 288230375614840832,
+          "ordered_orientation_pair_count": 288230376151711744,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1649,
+          "target_partition": [
+            4,
+            2,
+            2,
+            2,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 536870912,
+          "distinct_common_range_pair_fraction": 0.9999986751936352,
+          "merged_support_state_count": 1666,
+          "ordered_distinct_common_range_pair_count": 288229993765404672,
+          "ordered_distinct_orientation_pair_count": 288230375614840832,
+          "ordered_orientation_pair_count": 288230376151711744,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1666,
+          "target_partition": [
+            4,
+            2,
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 536870912,
+          "distinct_common_range_pair_fraction": 0.9999986467882965,
+          "merged_support_state_count": 1674,
+          "ordered_distinct_common_range_pair_count": 288229985578123264,
+          "ordered_distinct_orientation_pair_count": 288230375614840832,
+          "ordered_orientation_pair_count": 288230376151711744,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1674,
+          "target_partition": [
+            4,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 536870912,
+          "distinct_common_range_pair_fraction": 0.9999985238537165,
+          "merged_support_state_count": 1699,
+          "ordered_distinct_common_range_pair_count": 288229950144643072,
+          "ordered_distinct_orientation_pair_count": 288230375614840832,
+          "ordered_orientation_pair_count": 288230376151711744,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1699,
+          "target_partition": [
+            4,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 536870912,
+          "distinct_common_range_pair_fraction": 0.9999986048787807,
+          "merged_support_state_count": 1674,
+          "ordered_distinct_common_range_pair_count": 288229973498527744,
+          "ordered_distinct_orientation_pair_count": 288230375614840832,
+          "ordered_orientation_pair_count": 288230376151711744,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1674,
+          "target_partition": [
+            3,
+            3,
+            3,
+            3
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 536870912,
+          "distinct_common_range_pair_fraction": 0.9999986612237965,
+          "merged_support_state_count": 1660,
+          "ordered_distinct_common_range_pair_count": 288229989738872832,
+          "ordered_distinct_orientation_pair_count": 288230375614840832,
+          "ordered_orientation_pair_count": 288230376151711744,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1660,
+          "target_partition": [
+            3,
+            3,
+            3,
+            2,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 536870912,
+          "distinct_common_range_pair_fraction": 0.9999986714683449,
+          "merged_support_state_count": 1668,
+          "ordered_distinct_common_range_pair_count": 288229992691662848,
+          "ordered_distinct_orientation_pair_count": 288230375614840832,
+          "ordered_orientation_pair_count": 288230376151711744,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1668,
+          "target_partition": [
+            3,
+            3,
+            3,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 536870912,
+          "distinct_common_range_pair_fraction": 0.9999986593611514,
+          "merged_support_state_count": 1670,
+          "ordered_distinct_common_range_pair_count": 288229989202001920,
+          "ordered_distinct_orientation_pair_count": 288230375614840832,
+          "ordered_orientation_pair_count": 288230376151711744,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1670,
+          "target_partition": [
+            3,
+            3,
+            2,
+            2,
+            2
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 536870912,
+          "distinct_common_range_pair_fraction": 0.9999986775219416,
+          "merged_support_state_count": 1664,
+          "ordered_distinct_common_range_pair_count": 288229994436493312,
+          "ordered_distinct_orientation_pair_count": 288230375614840832,
+          "ordered_orientation_pair_count": 288230376151711744,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1664,
+          "target_partition": [
+            3,
+            3,
+            2,
+            2,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 536870912,
+          "distinct_common_range_pair_fraction": 0.9999986761249577,
+          "merged_support_state_count": 1662,
+          "ordered_distinct_common_range_pair_count": 288229994033840128,
+          "ordered_distinct_orientation_pair_count": 288230375614840832,
+          "ordered_orientation_pair_count": 288230376151711744,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1662,
+          "target_partition": [
+            3,
+            3,
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 536870912,
+          "distinct_common_range_pair_fraction": 0.9999986421316837,
+          "merged_support_state_count": 1676,
+          "ordered_distinct_common_range_pair_count": 288229984235945984,
+          "ordered_distinct_orientation_pair_count": 288230375614840832,
+          "ordered_orientation_pair_count": 288230376151711744,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1676,
+          "target_partition": [
+            3,
+            3,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 536870912,
+          "distinct_common_range_pair_fraction": 0.9999986682087159,
+          "merged_support_state_count": 1663,
+          "ordered_distinct_common_range_pair_count": 288229991752138752,
+          "ordered_distinct_orientation_pair_count": 288230375614840832,
+          "ordered_orientation_pair_count": 288230376151711744,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1663,
+          "target_partition": [
+            3,
+            2,
+            2,
+            2,
+            2,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 536870912,
+          "distinct_common_range_pair_fraction": 0.9999986742623126,
+          "merged_support_state_count": 1671,
+          "ordered_distinct_common_range_pair_count": 288229993496969216,
+          "ordered_distinct_orientation_pair_count": 288230375614840832,
+          "ordered_orientation_pair_count": 288230376151711744,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1671,
+          "target_partition": [
+            3,
+            2,
+            2,
+            2,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 536870912,
+          "distinct_common_range_pair_fraction": 0.999998652376232,
+          "merged_support_state_count": 1678,
+          "ordered_distinct_common_range_pair_count": 288229987188736000,
+          "ordered_distinct_orientation_pair_count": 288230375614840832,
+          "ordered_orientation_pair_count": 288230376151711744,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1678,
+          "target_partition": [
+            3,
+            2,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 536870912,
+          "distinct_common_range_pair_fraction": 0.999998573213813,
+          "merged_support_state_count": 1696,
+          "ordered_distinct_common_range_pair_count": 288229964371722240,
+          "ordered_distinct_orientation_pair_count": 288230375614840832,
+          "ordered_orientation_pair_count": 288230376151711744,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1696,
+          "target_partition": [
+            3,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 536870912,
+          "distinct_common_range_pair_fraction": 0.999998346902427,
+          "merged_support_state_count": 1743,
+          "ordered_distinct_common_range_pair_count": 288229899141906432,
+          "ordered_distinct_orientation_pair_count": 288230375614840832,
+          "ordered_orientation_pair_count": 288230376151711744,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1743,
+          "target_partition": [
+            3,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 536870912,
+          "distinct_common_range_pair_fraction": 0.9999985415488455,
+          "merged_support_state_count": 1701,
+          "ordered_distinct_common_range_pair_count": 288229955244916736,
+          "ordered_distinct_orientation_pair_count": 288230375614840832,
+          "ordered_orientation_pair_count": 288230376151711744,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1701,
+          "target_partition": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 536870912,
+          "distinct_common_range_pair_fraction": 0.9999986146576677,
+          "merged_support_state_count": 1689,
+          "ordered_distinct_common_range_pair_count": 288229976317100032,
+          "ordered_distinct_orientation_pair_count": 288230375614840832,
+          "ordered_orientation_pair_count": 288230376151711744,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1689,
+          "target_partition": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 536870912,
+          "distinct_common_range_pair_fraction": 0.9999986030161355,
+          "merged_support_state_count": 1696,
+          "ordered_distinct_common_range_pair_count": 288229972961656832,
+          "ordered_distinct_orientation_pair_count": 288230375614840832,
+          "ordered_orientation_pair_count": 288230376151711744,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1696,
+          "target_partition": [
+            2,
+            2,
+            2,
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 536870912,
+          "distinct_common_range_pair_fraction": 0.9999985261820229,
+          "merged_support_state_count": 1716,
+          "ordered_distinct_common_range_pair_count": 288229950815731712,
+          "ordered_distinct_orientation_pair_count": 288230375614840832,
+          "ordered_orientation_pair_count": 288230376151711744,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1716,
+          "target_partition": [
+            2,
+            2,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 536870912,
+          "distinct_common_range_pair_fraction": 0.9999983436427979,
+          "merged_support_state_count": 1771,
+          "ordered_distinct_common_range_pair_count": 288229898202382336,
+          "ordered_distinct_orientation_pair_count": 288230375614840832,
+          "ordered_orientation_pair_count": 288230376151711744,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1771,
+          "target_partition": [
+            2,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 536870912,
+          "distinct_common_range_pair_fraction": 0.9999980812426621,
+          "merged_support_state_count": 1869,
+          "ordered_distinct_common_range_pair_count": 288229822570692608,
+          "ordered_distinct_orientation_pair_count": 288230375614840832,
+          "ordered_orientation_pair_count": 288230376151711744,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 1869,
+          "target_partition": [
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "active_diagonal_orientation_count": 536870912,
+          "distinct_common_range_pair_fraction": 0.9999977811239619,
+          "merged_support_state_count": 2194,
+          "ordered_distinct_common_range_pair_count": 288229736067366912,
+          "ordered_distinct_orientation_pair_count": 288230375614840832,
+          "ordered_orientation_pair_count": 288230376151711744,
+          "pairwise_transversality_holds": false,
+          "peak_merged_support_state_count": 2194,
+          "target_partition": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ],
+      "status": "common-range-incidence-nearly-universal"
+    }
+  ],
+  "status": "common-range-theorem-proved-pairwise-transversality-falsified",
+  "summary": "Proved and validated the trivial/sign common-range multiplicity formula on 15 W4 tuples, then counted exact common-range support across 7 scalable portfolios.",
+  "theorem_contract": {
+    "common_range_dimension": "dim(Ran E_a intersect Ran E_b)=dim(H_c) sum over trivial/sign delta of m_0(delta)m_a(delta)m_b(delta)",
+    "commutator_mechanism": "the commutator of the two diagonal actions acts only on the shared tensor product, forcing its state into the A_n-invariant trivial/sign sectors",
+    "remaining_boundary": "common-range incidence does not measure whether the same directions recur across many projectors; quantify triple and higher incidence or directly bound the projector Gram norm",
+    "support_dynamic_program": "Kronecker-support triples count all orientation pairs with nonzero common range without enumerating 4^k pairs"
+  }
+}

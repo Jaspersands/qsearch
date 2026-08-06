@@ -1,0 +1,509 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Flat transport itself supplies an efficient circuit.",
+      "resolution": "Flatness is tautological from the implicit fiber maps; circuit value begins only after explicit generator formulas are found.",
+      "resolved": false
+    },
+    {
+      "objection": "Mask translation implements every affine bundle.",
+      "resolution": "W3 generator fiber maps differ by constant norm, requiring nontrivial internal transport.",
+      "resolved": true
+    },
+    {
+      "objection": "Half-balance implies affine support.",
+      "resolution": "The repeated-label six-mask control has equal child metrics, but its component effects are nonscalar and its support is not affine.",
+      "resolved": true
+    },
+    {
+      "objection": "External label distinctness guarantees easy Racah maps.",
+      "resolution": "Internal Kronecker multiplicities can grow despite distinct external partitions.",
+      "resolved": false
+    }
+  ],
+  "claim_gate": {
+    "all_n_collision_free_affine_bundle_decomposition_proved": false,
+    "balanced_nonaffine_support_falsifier_present": true,
+    "finite_label_simple_affine_bundle_signal": true,
+    "flat_affine_fiber_transport_proved": true,
+    "generator_transports_identified_as_racah_maps": false,
+    "hierarchical_orientation_polar_proved": false,
+    "polynomial_controlled_generator_transport_circuit_proved": false,
+    "reason": "The affine-bundle normal form is circuit-shaped but its internal generator transports remain implicit pseudoinverse objects.",
+    "simple_mask_relabeling_falsified_for_w3": true,
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-06T03:35:25.314524+00:00",
+  "falsifiers_triggered": [
+    "Affine mask relabeling alone cannot move the W3 internal fibers.",
+    "Balanced coefficient metrics do not force affine leaf support.",
+    "Formal flatness of implicit fiber maps is not evidence of an efficient recoupling circuit."
+  ],
+  "finite_controls": [
+    {
+      "active_left_mask_count": 2,
+      "active_orientation_masks": [
+        0,
+        2,
+        5,
+        7
+      ],
+      "active_right_mask_count": 2,
+      "active_support_affine_dimension": 2,
+      "affine_generator_masks": [
+        2,
+        5
+      ],
+      "affine_origin_mask": 0,
+      "affine_recoupling_bundle_certificate": true,
+      "child_metric_equality_residual": 2.6205349548581757e-16,
+      "coefficient_support_is_affine": true,
+      "common_component_weight": 0.5000000000000001,
+      "control_id": "W3-DISTINCT-AFFINE-PLANE",
+      "equal_affine_child_halves": true,
+      "exact_flat_fiber_transport_verified": true,
+      "generator_edge_transport_count": 4,
+      "intersection_dimension": 2,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_metric_scale": 1.0,
+      "left_orientation_masks": [
+        0,
+        2
+      ],
+      "maximum_component_scalar_residual": 4.450264117959056e-16,
+      "maximum_component_weight_uniformity_residual": 2.220446049250313e-16,
+      "maximum_fiber_isometry_residual": 9.995541112085792e-16,
+      "maximum_generator_fiber_map_difference": 1.4142135623730958,
+      "maximum_transport_cocycle_residual": 1.0545381165923699e-15,
+      "maximum_transport_final_projection_residual": 1.0242605988095684e-15,
+      "maximum_transport_initial_projection_residual": 1.0242605988095684e-15,
+      "n": 3,
+      "right_metric_scale": 1.0000000000000002,
+      "right_orientation_masks": [
+        5,
+        7
+      ],
+      "simple_mask_relabeling_suffices": false,
+      "status": "exact-flat-affine-recoupling-bundle",
+      "target_partition": [
+        2,
+        1
+      ]
+    },
+    {
+      "active_left_mask_count": 2,
+      "active_orientation_masks": [
+        0,
+        2,
+        5,
+        7
+      ],
+      "active_right_mask_count": 2,
+      "active_support_affine_dimension": 2,
+      "affine_generator_masks": [
+        2,
+        5
+      ],
+      "affine_origin_mask": 0,
+      "affine_recoupling_bundle_certificate": true,
+      "child_metric_equality_residual": 1.334585659160174e-15,
+      "coefficient_support_is_affine": true,
+      "common_component_weight": 0.9999999999999982,
+      "control_id": "W3-DISTINCT-SCALED-AFFINE-PLANE",
+      "equal_affine_child_halves": true,
+      "exact_flat_fiber_transport_verified": true,
+      "generator_edge_transport_count": 4,
+      "intersection_dimension": 2,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_metric_scale": 1.9999999999999978,
+      "left_orientation_masks": [
+        0,
+        5
+      ],
+      "maximum_component_scalar_residual": 2.2276782121828435e-15,
+      "maximum_component_weight_uniformity_residual": 8.881784197001252e-16,
+      "maximum_fiber_isometry_residual": 2.2277237614671037e-15,
+      "maximum_generator_fiber_map_difference": 1.7320508075688787,
+      "maximum_transport_cocycle_residual": 2.255741190278603e-15,
+      "maximum_transport_final_projection_residual": 2.255741190278603e-15,
+      "maximum_transport_initial_projection_residual": 2.255741190278603e-15,
+      "n": 3,
+      "right_metric_scale": 1.9999999999999982,
+      "right_orientation_masks": [
+        2,
+        7
+      ],
+      "simple_mask_relabeling_suffices": false,
+      "status": "exact-flat-affine-recoupling-bundle",
+      "target_partition": [
+        2,
+        1
+      ]
+    },
+    {
+      "active_left_mask_count": 1,
+      "active_orientation_masks": [
+        3,
+        6
+      ],
+      "active_right_mask_count": 1,
+      "active_support_affine_dimension": 1,
+      "affine_generator_masks": [
+        5
+      ],
+      "affine_origin_mask": 3,
+      "affine_recoupling_bundle_certificate": true,
+      "child_metric_equality_residual": 1.282608335120876e-15,
+      "coefficient_support_is_affine": true,
+      "common_component_weight": 1.0000000000000004,
+      "control_id": "W5-ISOLATED-AFFINE-LINE",
+      "equal_affine_child_halves": true,
+      "exact_flat_fiber_transport_verified": true,
+      "generator_edge_transport_count": 1,
+      "intersection_dimension": 5,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            4,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            2
+          ],
+          [
+            2,
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_metric_scale": 1.0,
+      "left_orientation_masks": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "maximum_component_scalar_residual": 2.2613311886677845e-15,
+      "maximum_component_weight_uniformity_residual": 2.220446049250313e-16,
+      "maximum_fiber_isometry_residual": 2.2780695983772418e-15,
+      "maximum_generator_fiber_map_difference": 1.9475982362184768e-15,
+      "maximum_transport_cocycle_residual": 2.3263123070028947e-15,
+      "maximum_transport_final_projection_residual": 2.3263123070028947e-15,
+      "maximum_transport_initial_projection_residual": 2.3263123070028947e-15,
+      "n": 5,
+      "right_metric_scale": 0.9999999999999997,
+      "right_orientation_masks": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "simple_mask_relabeling_suffices": true,
+      "status": "exact-flat-affine-recoupling-bundle",
+      "target_partition": [
+        3,
+        2
+      ]
+    },
+    {
+      "active_left_mask_count": 3,
+      "active_orientation_masks": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "active_right_mask_count": 3,
+      "active_support_affine_dimension": null,
+      "affine_generator_masks": [],
+      "affine_origin_mask": null,
+      "affine_recoupling_bundle_certificate": false,
+      "child_metric_equality_residual": 6.329212096705372e-15,
+      "coefficient_support_is_affine": false,
+      "common_component_weight": 0.6666666666666666,
+      "control_id": "W3-REPEATED-BALANCED-NONAFFINE-FALSIFIER",
+      "equal_affine_child_halves": false,
+      "exact_flat_fiber_transport_verified": false,
+      "generator_edge_transport_count": 0,
+      "intersection_dimension": 4,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ]
+      ],
+      "left_metric_scale": 1.9999999999999978,
+      "left_orientation_masks": [
+        0,
+        3,
+        5,
+        6
+      ],
+      "maximum_component_scalar_residual": 0.6666666666666687,
+      "maximum_component_weight_uniformity_residual": 2.3314683517128287e-15,
+      "maximum_fiber_isometry_residual": 1.0000000000000018,
+      "maximum_generator_fiber_map_difference": 0.0,
+      "maximum_transport_cocycle_residual": 2.00000000000001,
+      "maximum_transport_final_projection_residual": 2.00000000000001,
+      "maximum_transport_initial_projection_residual": 2.00000000000001,
+      "n": 3,
+      "right_metric_scale": 2.0,
+      "right_orientation_masks": [
+        1,
+        2,
+        4,
+        7
+      ],
+      "simple_mask_relabeling_suffices": false,
+      "status": "affine-recoupling-bundle-validation-failure",
+      "target_partition": [
+        2,
+        1
+      ]
+    }
+  ],
+  "headline_metrics": {
+    "all_n_affine_bundle_decomposition_theorem_count": 0,
+    "balanced_nonaffine_bundle_falsifier_count": 1,
+    "explicit_generator_racah_formula_count": 0,
+    "finite_control_count": 4,
+    "finite_flat_transport_validation_failure_count": 0,
+    "flat_fiber_transport_theorem_count": 1,
+    "hierarchical_orientation_polar_sampler_count": 0,
+    "label_simple_affine_bundle_control_count": 3,
+    "maximum_w3_generator_fiber_difference": 1.7320508075688787,
+    "new_quantum_algorithm_count": 0,
+    "nontrivial_internal_transport_control_count": 1,
+    "polynomial_controlled_generator_transport_count": 0
+  },
+  "proof_obligations": [
+    {
+      "obligation": "flat_affine_fiber_transport_theorem",
+      "resolution": "Isometric fibers make the partial-isometry and cocycle identities algebraic; all finite controls validate them.",
+      "resolved": true
+    },
+    {
+      "obligation": "finite_label_simple_affine_bundle_signal",
+      "resolution": "Both W3 affine-plane controls and the W5 anchor-line control satisfy the complete bundle certificate.",
+      "resolved": true
+    },
+    {
+      "obligation": "all_n_affine_bundle_decomposition",
+      "resolution": "Repeated labels already give balanced nonaffine support; no growing collision-free exclusion theorem is known.",
+      "resolved": false
+    },
+    {
+      "obligation": "explicit_generator_recoupling_circuit",
+      "resolution": "The W3 transports are nonidentity and have not been expressed as polynomial coherent Racah or Kronecker basis operations.",
+      "resolved": false
+    }
+  ],
+  "scaling_records": [
+    {
+      "all_n_collision_free_affine_bundle_decomposition_proved": false,
+      "flat_transport_given_fiber_maps": true,
+      "generator_transports_identified_as_racah_maps": false,
+      "hierarchical_orientation_polar_proved": false,
+      "information_threshold_copy_count": 7,
+      "maximum_affine_bundle_dimension": 7,
+      "n": 5,
+      "polynomial_controlled_generator_transport_circuit_proved": false,
+      "status": "flat-bundle-identity-explicit-generator-recoupling-open"
+    },
+    {
+      "all_n_collision_free_affine_bundle_decomposition_proved": false,
+      "flat_transport_given_fiber_maps": true,
+      "generator_transports_identified_as_racah_maps": false,
+      "hierarchical_orientation_polar_proved": false,
+      "information_threshold_copy_count": 16,
+      "maximum_affine_bundle_dimension": 16,
+      "n": 8,
+      "polynomial_controlled_generator_transport_circuit_proved": false,
+      "status": "flat-bundle-identity-explicit-generator-recoupling-open"
+    },
+    {
+      "all_n_collision_free_affine_bundle_decomposition_proved": false,
+      "flat_transport_given_fiber_maps": true,
+      "generator_transports_identified_as_racah_maps": false,
+      "hierarchical_orientation_polar_proved": false,
+      "information_threshold_copy_count": 45,
+      "maximum_affine_bundle_dimension": 45,
+      "n": 16,
+      "polynomial_controlled_generator_transport_circuit_proved": false,
+      "status": "flat-bundle-identity-explicit-generator-recoupling-open"
+    },
+    {
+      "all_n_collision_free_affine_bundle_decomposition_proved": false,
+      "flat_transport_given_fiber_maps": true,
+      "generator_transports_identified_as_racah_maps": false,
+      "hierarchical_orientation_polar_proved": false,
+      "information_threshold_copy_count": 118,
+      "maximum_affine_bundle_dimension": 118,
+      "n": 32,
+      "polynomial_controlled_generator_transport_circuit_proved": false,
+      "status": "flat-bundle-identity-explicit-generator-recoupling-open"
+    },
+    {
+      "all_n_collision_free_affine_bundle_decomposition_proved": false,
+      "flat_transport_given_fiber_maps": true,
+      "generator_transports_identified_as_racah_maps": false,
+      "hierarchical_orientation_polar_proved": false,
+      "information_threshold_copy_count": 296,
+      "maximum_affine_bundle_dimension": 296,
+      "n": 64,
+      "polynomial_controlled_generator_transport_circuit_proved": false,
+      "status": "flat-bundle-identity-explicit-generator-recoupling-open"
+    },
+    {
+      "all_n_collision_free_affine_bundle_decomposition_proved": false,
+      "flat_transport_given_fiber_maps": true,
+      "generator_transports_identified_as_racah_maps": false,
+      "hierarchical_orientation_polar_proved": false,
+      "information_threshold_copy_count": 717,
+      "maximum_affine_bundle_dimension": 717,
+      "n": 128,
+      "polynomial_controlled_generator_transport_circuit_proved": false,
+      "status": "flat-bundle-identity-explicit-generator-recoupling-open"
+    },
+    {
+      "all_n_collision_free_affine_bundle_decomposition_proved": false,
+      "flat_transport_given_fiber_maps": true,
+      "generator_transports_identified_as_racah_maps": false,
+      "hierarchical_orientation_polar_proved": false,
+      "information_threshold_copy_count": 1684,
+      "maximum_affine_bundle_dimension": 1684,
+      "n": 256,
+      "polynomial_controlled_generator_transport_circuit_proved": false,
+      "status": "flat-bundle-identity-explicit-generator-recoupling-open"
+    },
+    {
+      "all_n_collision_free_affine_bundle_decomposition_proved": false,
+      "flat_transport_given_fiber_maps": true,
+      "generator_transports_identified_as_racah_maps": false,
+      "hierarchical_orientation_polar_proved": false,
+      "information_threshold_copy_count": 3876,
+      "maximum_affine_bundle_dimension": 3876,
+      "n": 512,
+      "polynomial_controlled_generator_transport_circuit_proved": false,
+      "status": "flat-bundle-identity-explicit-generator-recoupling-open"
+    }
+  ],
+  "status": "flat-affine-bundle-proved-explicit-recoupling-transports-open",
+  "summary": "Converted uniform affine coefficient support into a flat transport bundle and isolated explicit generator recoupling as the constructive algorithmic obligation.",
+  "theorem_contract": {
+    "affine_compilation_normal_form": "An affine active support reduces leaf preparation to Hadamards on affine coordinates plus controlled generator transports.",
+    "fiber_isometries": "Uniform scalar component effects define normalized isometries V_e from one common overlap fiber.",
+    "flat_transport": "T_(f,e)=V_f V_e^* is a partial isometry and obeys the exact transport cocycle on fiber images.",
+    "nontrivial_internal_transport": "W3 generator fibers differ by constant operator norm, so mask XOR without internal recoupling cannot implement the transfer.",
+    "scope": "The canonical V_e still contain child pseudoinverses. Efficient Racah formulas for their generator transports are not proved."
+  }
+}

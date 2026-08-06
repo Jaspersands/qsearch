@@ -1,0 +1,733 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "The 1/n! eigenvalue scale alone proves the PGM hard.",
+      "resolution": "False. A known singleton fiber has the same normalized scale and a trivial direct polar isometry. Hardness must be attached to absence of a structured sampler.",
+      "resolved": true
+    },
+    {
+      "objection": "The Bacon-Childs-van Dam fiber sampler transfers directly.",
+      "resolution": "It does not: their fibers are orthogonal computational preimages, while the wreath orientation projectors already fail to commute in exact S4 controls.",
+      "resolved": true
+    },
+    {
+      "objection": "Noncommutation proves that no efficient sampler exists.",
+      "resolution": "No. It only kills the ordinary joint-membership sampler. A representation-specific recoupling or polar transform may exist.",
+      "resolved": false
+    },
+    {
+      "objection": "An efficient invariant-projector measurement is enough.",
+      "resolution": "It supplies normalized analysis access, not the polar normalization. Generic conversion retains the factorial-root cost.",
+      "resolved": true
+    }
+  ],
+  "carrier_polar_controls": [
+    {
+      "analysis_gram_residual": 1.1102230246251565e-16,
+      "carrier_support_rank": 2,
+      "control_id": "bell-rank-one",
+      "exact_carrier_polar_identity_verified": true,
+      "maximum_carrier_eigenvalue": 0.4999999999999999,
+      "minimum_positive_carrier_eigenvalue": 0.4999999999999999,
+      "multiplicity_dimension": 2,
+      "physical_dimension": 4,
+      "polar_support_isometry_residual": 2.220446049250313e-16,
+      "projector_rank": 1,
+      "row_dimension": 2,
+      "status": "exact-carrier-polar-identity"
+    },
+    {
+      "analysis_gram_residual": 0.0,
+      "carrier_support_rank": 2,
+      "control_id": "product-rank-two",
+      "exact_carrier_polar_identity_verified": true,
+      "maximum_carrier_eigenvalue": 1.0,
+      "minimum_positive_carrier_eigenvalue": 1.0,
+      "multiplicity_dimension": 2,
+      "physical_dimension": 4,
+      "polar_support_isometry_residual": 0.0,
+      "projector_rank": 2,
+      "row_dimension": 2,
+      "status": "exact-carrier-polar-identity"
+    },
+    {
+      "analysis_gram_residual": 2.2844822915329017e-16,
+      "carrier_support_rank": 3,
+      "control_id": "generic-rank-two",
+      "exact_carrier_polar_identity_verified": true,
+      "maximum_carrier_eigenvalue": 0.9999999999999998,
+      "minimum_positive_carrier_eigenvalue": 0.19186648587230867,
+      "multiplicity_dimension": 3,
+      "physical_dimension": 6,
+      "polar_support_isometry_residual": 1.234571890906357e-15,
+      "projector_rank": 2,
+      "row_dimension": 2,
+      "status": "exact-carrier-polar-identity"
+    }
+  ],
+  "claim_gate": {
+    "factorial_spectral_scale_is_standalone_hardness_proof": false,
+    "ordinary_commuting_fiber_sampler_applies_generically": false,
+    "orientation_frame_reduced_to_nonorthogonal_sampling": true,
+    "pgm_reduced_to_controlled_carrier_polar": true,
+    "polynomial_pgm_circuit_proved": false,
+    "reason": "The algorithmic target is now a concrete average-case nonorthogonal quantum-sampling problem. Exact W4 controls falsify the ordinary commuting-fiber mechanism, while no representation-specific polar sampler is known.",
+    "speedup_claim_allowed": false,
+    "structured_nonorthogonal_sampler_proved": false
+  },
+  "created_at": "2026-08-06T01:27:56.540753+00:00",
+  "explicit_fiber_controls": [
+    {
+      "carrier_dimension": 3,
+      "commuting_membership_sampler_residual": 0.0,
+      "control_id": "single-known-small-fiber",
+      "direct_fiber_sampler_available": true,
+      "factorial_scale_alone_implies_hardness": false,
+      "inverse_singular_value_cost": 4.0,
+      "maximum_pair_commutator_norm": 0.0,
+      "normalized_analysis_minimum_positive_singular_value": 0.25,
+      "orientation_count": 16,
+      "status": "direct-known-fiber-polar-sampler"
+    },
+    {
+      "carrier_dimension": 4,
+      "commuting_membership_sampler_residual": 1.5700924586837752e-16,
+      "control_id": "overlapping-diagonal-fibers",
+      "direct_fiber_sampler_available": true,
+      "factorial_scale_alone_implies_hardness": false,
+      "inverse_singular_value_cost": 2.0,
+      "maximum_pair_commutator_norm": 0.0,
+      "normalized_analysis_minimum_positive_singular_value": 0.5,
+      "orientation_count": 4,
+      "status": "direct-known-fiber-polar-sampler"
+    }
+  ],
+  "falsifiers_triggered": [
+    "Do not cite factorial eigenvalue scale alone as evidence that the PGM is computationally hard.",
+    "Do not mutate classical matrix-sum or subset-sum fiber samplers without handling noncommuting invariant subspaces.",
+    "The next positive mechanism must directly synthesize the polar of an overlapping projector frame, ideally from recoupling or an efficiently navigable average-case witness structure."
+  ],
+  "headline_metrics": {
+    "carrier_control_count": 3,
+    "carrier_validation_failure_count": 0,
+    "commuting_fiber_sampler_special_case_theorem_count": 1,
+    "covariant_carrier_polar_reduction_theorem_count": 1,
+    "explicit_fiber_control_count": 2,
+    "explicit_fiber_validation_failure_count": 0,
+    "maximum_wreath_pair_commutator_norm": 0.4330127018922193,
+    "new_quantum_algorithm_count": 0,
+    "noncommuting_wreath_sector_count": 6,
+    "orientation_nonorthogonal_sampling_reduction_theorem_count": 1,
+    "polynomial_hidden_permutation_decoder_count": 0,
+    "structured_nonorthogonal_sampler_count": 0,
+    "tail_black_box_polar_query_cost_log2_lower": 1944.6438561897746,
+    "tail_n": 512,
+    "wreath_orientation_control_count": 10,
+    "wreath_orientation_validation_failure_count": 0
+  },
+  "literature_links": [
+    {
+      "external_theorem_not_reproved_here": true,
+      "paper_id": "bacon-childs-van-dam-2005",
+      "title": "From optimal measurement to efficient quantum algorithms for the hidden subgroup problem over semidirect product groups",
+      "url": "https://arxiv.org/abs/quant-ph/0504083",
+      "use": "Successful PGM implementations reduce to coherent uniform sampling over solutions of an average-case algebraic problem."
+    },
+    {
+      "external_theorem_not_reproved_here": true,
+      "paper_id": "bravyi-et-al-2023-kronecker",
+      "title": "Quantum complexity of the Kronecker coefficients",
+      "url": "https://arxiv.org/abs/2302.11454",
+      "use": "Invariant-sector projectors are efficiently measurable, while resolving their multiplicity structure remains a nontrivial quantum counting problem."
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "covariant_carrier_polar_identity",
+      "resolution": "Projector idempotence gives A_nu^*A_nu=D_nu exactly; polar normalization gives an isometry on supp(D_nu).",
+      "resolved": true
+    },
+    {
+      "obligation": "orientation_projector_analysis_identity",
+      "resolution": "Vertical projector analysis has Gram sum E_epsilon, and the exact W4 Fourier controls equal its 2^-k normalization.",
+      "resolved": true
+    },
+    {
+      "obligation": "factorial_scale_not_intrinsic_hardness",
+      "resolution": "A known singleton fiber has normalized singular value 2^(-k/2) but an explicit one-step polar sampler.",
+      "resolved": true
+    },
+    {
+      "obligation": "ordinary_commuting_fiber_reduction_for_wreath",
+      "resolution": "Resolved negatively: exact S4 sectors have nonzero pair commutators, so no joint membership basis exists generically.",
+      "resolved": true
+    },
+    {
+      "obligation": "structured_nonorthogonal_quantum_sampler",
+      "resolution": "No polynomial circuit constructs the controlled polar of the overlapping invariant-subspace frame.",
+      "resolved": false
+    }
+  ],
+  "scaling_records": [
+    {
+      "black_box_polar_query_cost_log2_lower": 29.143856189774723,
+      "direct_structured_nonorthogonal_sampler_proved": false,
+      "hidden_label_count_decimal": "20922789888000",
+      "information_threshold_copy_count": 45,
+      "n": 16,
+      "normalized_analysis_minimum_singular_value_upper": 1.6858739404357615e-09,
+      "orientation_count_log2": 45,
+      "polynomial_black_box_polar": true,
+      "retained_projector_sum_eigenvalue_lower": 0.0001,
+      "retained_projector_sum_eigenvalue_upper": 400.0,
+      "status": "black-box-polar-factorial-structured-sampler-open"
+    },
+    {
+      "black_box_polar_query_cost_log2_lower": 46.64385618977472,
+      "direct_structured_nonorthogonal_sampler_proved": false,
+      "hidden_label_count_decimal": "620448401733239439360000",
+      "information_threshold_copy_count": 80,
+      "n": 24,
+      "normalized_analysis_minimum_singular_value_upper": 9.094947017729283e-15,
+      "orientation_count_log2": 80,
+      "polynomial_black_box_polar": false,
+      "retained_projector_sum_eigenvalue_lower": 0.0001,
+      "retained_projector_sum_eigenvalue_upper": 400.0,
+      "status": "black-box-polar-factorial-structured-sampler-open"
+    },
+    {
+      "black_box_polar_query_cost_log2_lower": 65.64385618977472,
+      "direct_structured_nonorthogonal_sampler_proved": false,
+      "hidden_label_count_decimal": "263130836933693530167218012160000000",
+      "information_threshold_copy_count": 118,
+      "n": 32,
+      "normalized_analysis_minimum_singular_value_upper": 1.734723475976807e-20,
+      "orientation_count_log2": 118,
+      "polynomial_black_box_polar": false,
+      "retained_projector_sum_eigenvalue_lower": 0.0001,
+      "retained_projector_sum_eigenvalue_upper": 400.0,
+      "status": "black-box-polar-factorial-structured-sampler-open"
+    },
+    {
+      "black_box_polar_query_cost_log2_lower": 154.64385618977474,
+      "direct_structured_nonorthogonal_sampler_proved": false,
+      "hidden_label_count_decimal": "126886932185884164103433389335161480802865516174545192198801894375214704230400000000000000",
+      "information_threshold_copy_count": 296,
+      "n": 64,
+      "normalized_analysis_minimum_singular_value_upper": 2.802596928649634e-47,
+      "orientation_count_log2": 296,
+      "polynomial_black_box_polar": false,
+      "retained_projector_sum_eigenvalue_lower": 0.0001,
+      "retained_projector_sum_eigenvalue_upper": 400.0,
+      "status": "black-box-polar-factorial-structured-sampler-open"
+    },
+    {
+      "black_box_polar_query_cost_log2_lower": 365.14385618977474,
+      "direct_structured_nonorthogonal_sampler_proved": false,
+      "hidden_label_count_decimal": "385620482362580421735677065923463640617493109590223590278828403276373402575165543560686168588507361534030051833058916347592172932262498857766114955245039357760034644709279247692495585280000000000000000000000000000000",
+      "information_threshold_copy_count": 717,
+      "n": 128,
+      "normalized_analysis_minimum_singular_value_upper": 1.2043329107559003e-110,
+      "orientation_count_log2": 717,
+      "polynomial_black_box_polar": false,
+      "retained_projector_sum_eigenvalue_lower": 0.0001,
+      "retained_projector_sum_eigenvalue_upper": 400.0,
+      "status": "black-box-polar-factorial-structured-sampler-open"
+    },
+    {
+      "black_box_polar_query_cost_log2_lower": 848.6438561897747,
+      "direct_structured_nonorthogonal_sampler_proved": false,
+      "hidden_label_count_decimal": "857817775342842654119082271681232625157781520279485619859655650377269452553147589377440291360451408450375885342336584306157196834693696475322289288497426025679637332563368786442675207626794560187968867971521143307702077526646451464709187326100832876325702818980773671781454170250523018608495319068138257481070252817559459476987034665712738139286205234756808218860701203611083152093501947437109101726968262861606263662435022840944191408424615936000000000000000000000000000000000000000000000000000000000000000",
+      "information_threshold_copy_count": 1684,
+      "n": 256,
+      "normalized_analysis_minimum_singular_value_upper": 3.409915766259544e-256,
+      "orientation_count_log2": 1684,
+      "polynomial_black_box_polar": false,
+      "retained_projector_sum_eigenvalue_lower": 0.0001,
+      "retained_projector_sum_eigenvalue_upper": 400.0,
+      "status": "black-box-polar-factorial-structured-sampler-open"
+    },
+    {
+      "black_box_polar_query_cost_log2_lower": 1944.6438561897746,
+      "direct_structured_nonorthogonal_sampler_proved": false,
+      "hidden_label_count_decimal": "347728979313260536328304591754560471199225065564351457034247483155161041206635254347320985033950225364432243311021394545295001702070069013264153113260937941358711864044716186861040899557497361427588282356254968425012480396855239725120562512065555822121708786443620799246550959187232026838081415178588172535280020786313470076859739980965720873849904291373826841584712798618430387338042329771801724767691095019545758986942732515033551529595009876999279553931070378592917099002397061907147143424113252117585950817850896618433994140232823316432187410356341262386332496954319973130407342567282027398579382543048456876800862349928140411905431276197435674603281842530744177527365885721629512253872386613118821540847897493107398381956081763695236422795880296204301770808809477147632428639299038833046264585834888158847387737841843413664892833586209196366979775748895821826924040057845140287522238675082137570315954526727437094904914796782641000740777897919134093393530422760955140211387173650047358347353379234387609261306673773281412893026941927424000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "information_threshold_copy_count": 3876,
+      "n": 512,
+      "normalized_analysis_minimum_singular_value_upper": 0.0,
+      "orientation_count_log2": 3876,
+      "polynomial_black_box_polar": false,
+      "retained_projector_sum_eigenvalue_lower": 0.0001,
+      "retained_projector_sum_eigenvalue_upper": 400.0,
+      "status": "black-box-polar-factorial-structured-sampler-open"
+    }
+  ],
+  "status": "pgm-reduced-to-nonorthogonal-quantum-sampling-open",
+  "summary": "Reduced the remaining wreath PGM operation to a controlled polar isometry and its orientation form to nonorthogonal quantum sampling. Known-fiber controls show that tiny singular scale is not inherently hard, while exact S4 sectors rule out the direct commuting-fiber strategy used by successful semidirect HSP PGMs.",
+  "theorem_contract": {
+    "black_box_boundary": "PREPARE/SELECT exposes R/sqrt(2^k). On a constant-eigenvalue window of sum E_epsilon, generic polar transformation costs Theta(2^(k/2)); only a direct structured sampler can bypass it.",
+    "carrier_analysis": "A_nu|m>=sum_j |j> tensor P|nu,j,m>, with A_nu^*A_nu=D_nu=Tr_V(Pi_nu P Pi_nu).",
+    "commuting_fiber_special_case": "In a coherently accessible joint eigenbasis, Q maps a basis state to the uniform superposition of projector indices that contain it. This is ordinary quantum sampling over fibers.",
+    "noncommuting_generalization": "For actual orientation sectors the E_epsilon need not commute; the target is a polar isometry for overlapping subspaces, not a classical preimage sampler.",
+    "orientation_analysis": "R=sum_epsilon |epsilon> tensor E_epsilon and R^*R=sum_epsilon E_epsilon=2^k F_nu.",
+    "pgm_carrier_map": "The covariance-compressed PGM uses the polar isometry Q_nu=A_nu D_nu^(-1/2), coherently controlled by nu."
+  },
+  "wreath_orientation_controls": [
+    {
+      "analysis_gram_residual": 2.2934552195828413e-16,
+      "carrier_dimension": 54,
+      "common_range_dimension": 0,
+      "commuting_fiber_normal_form_applicable": true,
+      "control_id": "W4-0-3-1",
+      "exact_nonorthogonal_sampling_identity_verified": true,
+      "frame_support_rank": 5,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_pair_commutator_norm": 5.033259464500407e-17,
+      "maximum_projector_sum_eigenvalue": 1.0000000000000002,
+      "minimum_positive_projector_sum_eigenvalue": 0.9999999999999993,
+      "n": 4,
+      "nonzero_projector_count": 2,
+      "normalized_fourier_frame_residual": 7.850602764804869e-17,
+      "orientation_count": 4,
+      "polar_support_isometry_residual": 5.42918927007725e-16,
+      "projector_rank_sum": 5,
+      "status": "exact-commuting-orientation-sampling-frame",
+      "target_partition": [
+        3,
+        1
+      ]
+    },
+    {
+      "analysis_gram_residual": 4.691830280233436e-16,
+      "carrier_dimension": 36,
+      "common_range_dimension": 0,
+      "commuting_fiber_normal_form_applicable": false,
+      "control_id": "W4-0-2-2",
+      "exact_nonorthogonal_sampling_identity_verified": true,
+      "frame_support_rank": 11,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_pair_commutator_norm": 0.4330127018922192,
+      "maximum_projector_sum_eigenvalue": 1.5000000000000002,
+      "minimum_positive_projector_sum_eigenvalue": 0.4999999999999992,
+      "n": 4,
+      "nonzero_projector_count": 2,
+      "normalized_fourier_frame_residual": 1.1484119802802778e-16,
+      "orientation_count": 4,
+      "polar_support_isometry_residual": 2.5875738056924594e-15,
+      "projector_rank_sum": 11,
+      "status": "exact-noncommuting-orientation-sampling-frame",
+      "target_partition": [
+        2,
+        2
+      ]
+    },
+    {
+      "analysis_gram_residual": 5.341982496636283e-16,
+      "carrier_dimension": 54,
+      "common_range_dimension": 0,
+      "commuting_fiber_normal_form_applicable": false,
+      "control_id": "W4-0-2-1-1",
+      "exact_nonorthogonal_sampling_identity_verified": true,
+      "frame_support_rank": 11,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_pair_commutator_norm": 0.31426968052735443,
+      "maximum_projector_sum_eigenvalue": 1.3333333333333337,
+      "minimum_positive_projector_sum_eigenvalue": 0.6666666666666664,
+      "n": 4,
+      "nonzero_projector_count": 3,
+      "normalized_fourier_frame_residual": 1.07417260630296e-16,
+      "orientation_count": 4,
+      "polar_support_isometry_residual": 2.325764974857775e-15,
+      "projector_rank_sum": 11,
+      "status": "exact-noncommuting-orientation-sampling-frame",
+      "target_partition": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "analysis_gram_residual": 2.97997565015812e-16,
+      "carrier_dimension": 18,
+      "common_range_dimension": 0,
+      "commuting_fiber_normal_form_applicable": true,
+      "control_id": "W4-0-1-1-1-1",
+      "exact_nonorthogonal_sampling_identity_verified": true,
+      "frame_support_rank": 2,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_pair_commutator_norm": 4.1067964198678437e-17,
+      "maximum_projector_sum_eigenvalue": 1.0,
+      "minimum_positive_projector_sum_eigenvalue": 0.9999999999999988,
+      "n": 4,
+      "nonzero_projector_count": 1,
+      "normalized_fourier_frame_residual": 9.86309189341443e-17,
+      "orientation_count": 4,
+      "polar_support_isometry_residual": 8.326673093220934e-16,
+      "projector_rank_sum": 2,
+      "status": "exact-commuting-orientation-sampling-frame",
+      "target_partition": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "analysis_gram_residual": 4.23912262150801e-16,
+      "carrier_dimension": 54,
+      "common_range_dimension": 0,
+      "commuting_fiber_normal_form_applicable": false,
+      "control_id": "W4-1-3-1",
+      "exact_nonorthogonal_sampling_identity_verified": true,
+      "frame_support_rank": 12,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_pair_commutator_norm": 0.31426968052735443,
+      "maximum_projector_sum_eigenvalue": 1.333333333333334,
+      "minimum_positive_projector_sum_eigenvalue": 0.6666666666666663,
+      "n": 4,
+      "nonzero_projector_count": 3,
+      "normalized_fourier_frame_residual": 9.538555040240371e-17,
+      "orientation_count": 4,
+      "polar_support_isometry_residual": 1.3939285411479725e-15,
+      "projector_rank_sum": 12,
+      "status": "exact-noncommuting-orientation-sampling-frame",
+      "target_partition": [
+        3,
+        1
+      ]
+    },
+    {
+      "analysis_gram_residual": 5.736587956099695e-16,
+      "carrier_dimension": 54,
+      "common_range_dimension": 0,
+      "commuting_fiber_normal_form_applicable": false,
+      "control_id": "W4-1-2-1-1",
+      "exact_nonorthogonal_sampling_identity_verified": true,
+      "frame_support_rank": 12,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_pair_commutator_norm": 0.3142696805273544,
+      "maximum_projector_sum_eigenvalue": 1.3333333333333333,
+      "minimum_positive_projector_sum_eigenvalue": 0.6666666666666662,
+      "n": 4,
+      "nonzero_projector_count": 3,
+      "normalized_fourier_frame_residual": 9.391796626869141e-17,
+      "orientation_count": 4,
+      "polar_support_isometry_residual": 1.1777590242697911e-15,
+      "projector_rank_sum": 12,
+      "status": "exact-noncommuting-orientation-sampling-frame",
+      "target_partition": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "analysis_gram_residual": 3.4663964263618945e-16,
+      "carrier_dimension": 54,
+      "common_range_dimension": 0,
+      "commuting_fiber_normal_form_applicable": false,
+      "control_id": "W4-2-3-1",
+      "exact_nonorthogonal_sampling_identity_verified": true,
+      "frame_support_rank": 11,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      ],
+      "maximum_pair_commutator_norm": 0.3142696805273544,
+      "maximum_projector_sum_eigenvalue": 1.3333333333333335,
+      "minimum_positive_projector_sum_eigenvalue": 0.6666666666666664,
+      "n": 4,
+      "nonzero_projector_count": 3,
+      "normalized_fourier_frame_residual": 1.0953557280163635e-16,
+      "orientation_count": 4,
+      "polar_support_isometry_residual": 1.7098045593039189e-15,
+      "projector_rank_sum": 11,
+      "status": "exact-noncommuting-orientation-sampling-frame",
+      "target_partition": [
+        3,
+        1
+      ]
+    },
+    {
+      "analysis_gram_residual": 2.1207887953743715e-16,
+      "carrier_dimension": 36,
+      "common_range_dimension": 0,
+      "commuting_fiber_normal_form_applicable": false,
+      "control_id": "W4-2-2-2",
+      "exact_nonorthogonal_sampling_identity_verified": true,
+      "frame_support_rank": 11,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      ],
+      "maximum_pair_commutator_norm": 0.4330127018922193,
+      "maximum_projector_sum_eigenvalue": 1.5000000000000007,
+      "minimum_positive_projector_sum_eigenvalue": 0.49999999999999967,
+      "n": 4,
+      "nonzero_projector_count": 2,
+      "normalized_fourier_frame_residual": 8.801960326394982e-17,
+      "orientation_count": 4,
+      "polar_support_isometry_residual": 1.3307479951673743e-15,
+      "projector_rank_sum": 11,
+      "status": "exact-noncommuting-orientation-sampling-frame",
+      "target_partition": [
+        2,
+        2
+      ]
+    },
+    {
+      "analysis_gram_residual": 2.791728558064762e-16,
+      "carrier_dimension": 54,
+      "common_range_dimension": 0,
+      "commuting_fiber_normal_form_applicable": true,
+      "control_id": "W4-2-2-1-1",
+      "exact_nonorthogonal_sampling_identity_verified": true,
+      "frame_support_rank": 5,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      ],
+      "maximum_pair_commutator_norm": 8.088721957514561e-17,
+      "maximum_projector_sum_eigenvalue": 1.0000000000000002,
+      "minimum_positive_projector_sum_eigenvalue": 0.9999999999999992,
+      "n": 4,
+      "nonzero_projector_count": 2,
+      "normalized_fourier_frame_residual": 7.011874063713807e-17,
+      "orientation_count": 4,
+      "polar_support_isometry_residual": 6.412123868209997e-16,
+      "projector_rank_sum": 5,
+      "status": "exact-commuting-orientation-sampling-frame",
+      "target_partition": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "analysis_gram_residual": 2.314224746908695e-16,
+      "carrier_dimension": 18,
+      "common_range_dimension": 0,
+      "commuting_fiber_normal_form_applicable": true,
+      "control_id": "W4-2-1-1-1-1",
+      "exact_nonorthogonal_sampling_identity_verified": true,
+      "frame_support_rank": 2,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      ],
+      "maximum_pair_commutator_norm": 3.651278561232278e-17,
+      "maximum_projector_sum_eigenvalue": 1.0000000000000004,
+      "minimum_positive_projector_sum_eigenvalue": 0.9999999999999999,
+      "n": 4,
+      "nonzero_projector_count": 1,
+      "normalized_fourier_frame_residual": 5.890221669615484e-17,
+      "orientation_count": 4,
+      "polar_support_isometry_residual": 6.138294419078476e-16,
+      "projector_rank_sum": 2,
+      "status": "exact-commuting-orientation-sampling-frame",
+      "target_partition": [
+        1,
+        1,
+        1,
+        1
+      ]
+    }
+  ]
+}

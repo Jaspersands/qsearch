@@ -1,0 +1,301 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "The scalar branchwise commutant theorem rules out this orientation-controlled filter.",
+      "resolution": "That theorem requires one compressed operator to commute with every orientation action. Here orthogonal physical branches use different central projectors.",
+      "resolved": true
+    },
+    {
+      "objection": "Branch control breaks hidden-conjugation covariance.",
+      "resolution": "Every branch filter is central for the action on its selected factors; the finite physical commutator residual is below 4e-16.",
+      "resolved": true
+    },
+    {
+      "objection": "Removing one-dimensional sectors proves all high frame eigenvalues are gone.",
+      "resolution": "The finite top eigenvalue decreases, but higher-dimensional and near-common channels can still dominate asymptotically. No residual norm theorem exists.",
+      "resolved": false
+    },
+    {
+      "objection": "The group-average projector schema is already a complete polynomial fault-tolerant circuit and decoder.",
+      "resolution": "Controlled Young actions, coherent character rejection, error budgets, global outcome synthesis, and decoding are still unproved.",
+      "resolved": false
+    }
+  ],
+  "claim_gate": {
+    "all_high_frame_spikes_removed": false,
+    "branch_controlled_physical_filter_projector_proved": true,
+    "classical_separation_proved": false,
+    "compressed_covariant_outcome_transform_proved": false,
+    "expected_natural_state_retention_one_minus_o_one_proved": true,
+    "fault_tolerant_polynomial_filter_circuit_proved": false,
+    "finite_frame_spike_reduction_observed": true,
+    "hidden_conjugation_covariance_proved": true,
+    "polynomial_hidden_permutation_decoder_proved": false,
+    "reason": "An exact physical covariant filter removes the thin selected trivial/sign sectors on every orientation branch and has negligible expected natural loss. Only finite spectral improvement is known; the all-n residual spectrum, circuit, outcome transform, and decoder remain open.",
+    "residual_polynomial_frame_norm_proved": false,
+    "selected_one_dimensional_sectors_removed_on_every_branch": true,
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-05T22:47:02.519913+00:00",
+  "falsifiers_triggered": [
+    "The scalar compressed-commutant obstruction does not block orientation-controlled physical direct sums.",
+    "A covariant physical filter can remove the known thin invariant channels without factorial postselection onto them.",
+    "Finite spectral reduction is not an asymptotic norm theorem or a hidden-permutation algorithm."
+  ],
+  "finite_controls": [
+    {
+      "branch_filter_ranks": [
+        32,
+        36,
+        36,
+        18
+      ],
+      "compressed_branch_dimension": 36,
+      "copy_count": 2,
+      "exact_physical_filter_validation": true,
+      "filtered_frame_second_moment_per_trace": 0.26229508196721313,
+      "filtered_frame_top_eigenvalue": 0.37500000000000017,
+      "filtered_frame_trace": 30.5,
+      "filtered_frame_trace_retention": 0.8472222222222222,
+      "finite_validation_only": true,
+      "frame_top_eigenvalue_reduction": 0.12499999999999978,
+      "hidden_conjugation_commutator_residual": 3.680083885147336e-16,
+      "labels": [
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      ],
+      "maximum_branch_projector_idempotence_residual": 2.654975586510122e-16,
+      "maximum_branch_trivial_sign_orthogonality_residual": 4.61049657913119e-18,
+      "maximum_selected_sector_annihilation_residual": 2.966475428671817e-16,
+      "n": 4,
+      "orientation_branch_count": 4,
+      "physical_carrier_dimension": 144,
+      "physical_filter_idempotence_residual": 2.6549755865101237e-16,
+      "physical_filter_rank": 122,
+      "physical_filter_retained_dimension_fraction": 0.8472222222222222,
+      "status": "exact-branch-controlled-physical-filter-validation",
+      "unfiltered_frame_second_moment_per_trace": 0.26388888888888895,
+      "unfiltered_frame_top_eigenvalue": 0.49999999999999994,
+      "unfiltered_frame_trace": 36.0
+    }
+  ],
+  "headline_metrics": {
+    "branch_controlled_physical_filter_theorem_count": 1,
+    "compressed_covariant_outcome_transform_count": 0,
+    "controlled_group_average_filter_schema_count": 1,
+    "fault_tolerant_filter_circuit_count": 0,
+    "finite_physical_filter_control_count": 1,
+    "finite_physical_filter_validation_failure_count": 0,
+    "hidden_conjugation_covariance_theorem_count": 1,
+    "maximum_hidden_conjugation_commutator_residual": 3.680083885147336e-16,
+    "maximum_physical_filter_idempotence_residual": 2.6549755865101237e-16,
+    "minimum_finite_filtered_trace_retention": 0.8472222222222222,
+    "minimum_finite_frame_top_eigenvalue_reduction": 0.12499999999999978,
+    "new_quantum_algorithm_count": 0,
+    "orientation_selected_one_dimensional_projector_theorem_count": 1,
+    "plancherel_expected_retention_one_minus_o_one_theorem_count": 1,
+    "polynomial_hidden_permutation_decoder_count": 0,
+    "residual_polynomial_frame_norm_theorem_count": 0,
+    "scaling_record_count": 12,
+    "tail_expected_removed_state_fraction_upper_bound": 4.615937382512663e-214,
+    "tail_n": 128
+  },
+  "scaling_records": [
+    {
+      "complete_block_count": 0,
+      "expected_removed_fraction_per_block": 0.08333333333333333,
+      "expected_removed_state_fraction_upper_bound": 0.0,
+      "expected_retained_fraction_tends_to_one": true,
+      "expected_retained_state_fraction": 1.0,
+      "hidden_label_count_decimal": "24",
+      "illustrative_fixed_block_size": 8,
+      "information_threshold_copy_count": 5,
+      "n": 4,
+      "polynomial_filter_circuit_proved": false,
+      "residual_polynomial_frame_norm_proved": false,
+      "status": "covariant-filter-negligible-expected-loss-residual-spectrum-open"
+    },
+    {
+      "complete_block_count": 0,
+      "expected_removed_fraction_per_block": 0.016666666666666666,
+      "expected_removed_state_fraction_upper_bound": 0.0,
+      "expected_retained_fraction_tends_to_one": true,
+      "expected_retained_state_fraction": 1.0,
+      "hidden_label_count_decimal": "120",
+      "illustrative_fixed_block_size": 8,
+      "information_threshold_copy_count": 7,
+      "n": 5,
+      "polynomial_filter_circuit_proved": false,
+      "residual_polynomial_frame_norm_proved": false,
+      "status": "covariant-filter-negligible-expected-loss-residual-spectrum-open"
+    },
+    {
+      "complete_block_count": 1,
+      "expected_removed_fraction_per_block": 0.002777777777777778,
+      "expected_removed_state_fraction_upper_bound": 0.002777777777777778,
+      "expected_retained_fraction_tends_to_one": true,
+      "expected_retained_state_fraction": 0.9972222222222222,
+      "hidden_label_count_decimal": "720",
+      "illustrative_fixed_block_size": 8,
+      "information_threshold_copy_count": 10,
+      "n": 6,
+      "polynomial_filter_circuit_proved": false,
+      "residual_polynomial_frame_norm_proved": false,
+      "status": "covariant-filter-negligible-expected-loss-residual-spectrum-open"
+    },
+    {
+      "complete_block_count": 2,
+      "expected_removed_fraction_per_block": 4.96031746031746e-05,
+      "expected_removed_state_fraction_upper_bound": 9.92063492063492e-05,
+      "expected_retained_fraction_tends_to_one": true,
+      "expected_retained_state_fraction": 0.9999007961112685,
+      "hidden_label_count_decimal": "40320",
+      "illustrative_fixed_block_size": 8,
+      "information_threshold_copy_count": 16,
+      "n": 8,
+      "polynomial_filter_circuit_proved": false,
+      "residual_polynomial_frame_norm_proved": false,
+      "status": "covariant-filter-negligible-expected-loss-residual-spectrum-open"
+    },
+    {
+      "complete_block_count": 2,
+      "expected_removed_fraction_per_block": 5.511463844797178e-07,
+      "expected_removed_state_fraction_upper_bound": 1.1022927689594355e-06,
+      "expected_retained_fraction_tends_to_one": true,
+      "expected_retained_state_fraction": 0.9999988977075347,
+      "hidden_label_count_decimal": "3628800",
+      "illustrative_fixed_block_size": 8,
+      "information_threshold_copy_count": 22,
+      "n": 10,
+      "polynomial_filter_circuit_proved": false,
+      "residual_polynomial_frame_norm_proved": false,
+      "status": "covariant-filter-negligible-expected-loss-residual-spectrum-open"
+    },
+    {
+      "complete_block_count": 5,
+      "expected_removed_fraction_per_block": 9.55895466477477e-14,
+      "expected_removed_state_fraction_upper_bound": 4.779477332387385e-13,
+      "expected_retained_fraction_tends_to_one": true,
+      "expected_retained_state_fraction": 0.999999999999522,
+      "hidden_label_count_decimal": "20922789888000",
+      "illustrative_fixed_block_size": 8,
+      "information_threshold_copy_count": 45,
+      "n": 16,
+      "polynomial_filter_circuit_proved": false,
+      "residual_polynomial_frame_norm_proved": false,
+      "status": "covariant-filter-negligible-expected-loss-residual-spectrum-open"
+    },
+    {
+      "complete_block_count": 10,
+      "expected_removed_fraction_per_block": 3.2234751421922368e-24,
+      "expected_removed_state_fraction_upper_bound": 3.223475142192237e-23,
+      "expected_retained_fraction_tends_to_one": true,
+      "expected_retained_state_fraction": 1.0,
+      "hidden_label_count_decimal": "620448401733239439360000",
+      "illustrative_fixed_block_size": 8,
+      "information_threshold_copy_count": 80,
+      "n": 24,
+      "polynomial_filter_circuit_proved": false,
+      "residual_polynomial_frame_norm_proved": false,
+      "status": "covariant-filter-negligible-expected-loss-residual-spectrum-open"
+    },
+    {
+      "complete_block_count": 14,
+      "expected_removed_fraction_per_block": 7.600781509709487e-36,
+      "expected_removed_state_fraction_upper_bound": 1.0641094113593283e-34,
+      "expected_retained_fraction_tends_to_one": true,
+      "expected_retained_state_fraction": 1.0,
+      "hidden_label_count_decimal": "263130836933693530167218012160000000",
+      "illustrative_fixed_block_size": 8,
+      "information_threshold_copy_count": 118,
+      "n": 32,
+      "polynomial_filter_circuit_proved": false,
+      "residual_polynomial_frame_norm_proved": false,
+      "status": "covariant-filter-negligible-expected-loss-residual-spectrum-open"
+    },
+    {
+      "complete_block_count": 25,
+      "expected_removed_fraction_per_block": 1.6110952141502473e-61,
+      "expected_removed_state_fraction_upper_bound": 4.0277380353756186e-60,
+      "expected_retained_fraction_tends_to_one": true,
+      "expected_retained_state_fraction": 1.0,
+      "hidden_label_count_decimal": "12413915592536072670862289047373375038521486354677760000000000",
+      "illustrative_fixed_block_size": 8,
+      "information_threshold_copy_count": 203,
+      "n": 48,
+      "polynomial_filter_circuit_proved": false,
+      "residual_polynomial_frame_norm_proved": false,
+      "status": "covariant-filter-negligible-expected-loss-residual-spectrum-open"
+    },
+    {
+      "complete_block_count": 37,
+      "expected_removed_fraction_per_block": 1.5762064426540646e-89,
+      "expected_removed_state_fraction_upper_bound": 5.831963837820039e-88,
+      "expected_retained_fraction_tends_to_one": true,
+      "expected_retained_state_fraction": 1.0,
+      "hidden_label_count_decimal": "126886932185884164103433389335161480802865516174545192198801894375214704230400000000000000",
+      "illustrative_fixed_block_size": 8,
+      "information_threshold_copy_count": 296,
+      "n": 64,
+      "polynomial_filter_circuit_proved": false,
+      "residual_polynomial_frame_norm_proved": false,
+      "status": "covariant-filter-negligible-expected-loss-residual-spectrum-open"
+    },
+    {
+      "complete_block_count": 62,
+      "expected_removed_fraction_per_block": 2.0167838061862965e-150,
+      "expected_removed_state_fraction_upper_bound": 1.2504059598355037e-148,
+      "expected_retained_fraction_tends_to_one": true,
+      "expected_retained_state_fraction": 1.0,
+      "hidden_label_count_decimal": "991677934870949689209571401541893801158183648651267795444376054838492222809091499987689476037000748982075094738965754305639874560000000000000000000000",
+      "illustrative_fixed_block_size": 8,
+      "information_threshold_copy_count": 499,
+      "n": 96,
+      "polynomial_filter_circuit_proved": false,
+      "residual_polynomial_frame_norm_proved": false,
+      "status": "covariant-filter-negligible-expected-loss-residual-spectrum-open"
+    },
+    {
+      "complete_block_count": 89,
+      "expected_removed_fraction_per_block": 5.186446497205239e-216,
+      "expected_removed_state_fraction_upper_bound": 4.615937382512663e-214,
+      "expected_retained_fraction_tends_to_one": true,
+      "expected_retained_state_fraction": 1.0,
+      "hidden_label_count_decimal": "385620482362580421735677065923463640617493109590223590278828403276373402575165543560686168588507361534030051833058916347592172932262498857766114955245039357760034644709279247692495585280000000000000000000000000000000",
+      "illustrative_fixed_block_size": 8,
+      "information_threshold_copy_count": 717,
+      "n": 128,
+      "polynomial_filter_circuit_proved": false,
+      "residual_polynomial_frame_norm_proved": false,
+      "status": "covariant-filter-negligible-expected-loss-residual-spectrum-open"
+    }
+  ],
+  "status": "physical-covariant-thin-sector-filter-residual-spectrum-open",
+  "summary": "Constructed an exact orientation-controlled projector on the physical induced carrier. It commutes with hidden conjugation, removes selected one-dimensional sectors at expected 1-o(1) retention, and lowers the finite frame spike; an all-n residual bound and implementation remain open.",
+  "theorem_contract": {
+    "branch_filter": "On physical orientation branch epsilon, remove the trivial and sign sectors of the source factors selected by epsilon.",
+    "conditional_circuit_schema": "Prepare a uniform permutation ancilla, apply the selected Young representation controlled by the physical branch, and project the ancilla onto trivial/sign characters to reject those sectors. Efficient uniform controlled representation and error analysis are not registered.",
+    "covariance": "Each branch isotypic complement commutes with its branch S_n action, so the direct sum commutes with R(s) for every hidden-conjugation parameter s.",
+    "natural_retention": "A Plancherel branch loses expected fraction 2/n! per block; b polynomial disjoint blocks retain expected fraction (1-2/n!)^b=1-o(1).",
+    "physical_projector": "The orthogonal direct sum over epsilon is an exact projector on the full induced wreath carrier.",
+    "remaining_boundary": "Prove a residual all-n frame norm or direct success bound, then implement compressed permutation outcomes and decoding."
+  }
+}

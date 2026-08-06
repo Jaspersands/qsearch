@@ -1,0 +1,1669 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Balanced child dimensions force half channels.",
+      "resolution": "The generic unequal-metric control has equal dimensions but grading defects +/-1/3 and channels 1/3,2/3.",
+      "resolved": true
+    },
+    {
+      "objection": "Removing internal kernels is cosmetic.",
+      "resolution": "Without quotienting internal syzygies, ker[R_L,-R_R] contains unrelated child redundancies and its grading is not the common-range metric.",
+      "resolved": true
+    },
+    {
+      "objection": "The dependency theorem itself supplies an efficient transform.",
+      "resolution": "It changes the mathematical target from inversion to structured kernel decomposition but does not yet compute that decomposition coherently.",
+      "resolved": false
+    }
+  ],
+  "claim_gate": {
+    "all_n_collision_free_neutrality_proved": false,
+    "coherent_dependency_transform_compiled": false,
+    "cross_dependency_quotient_theorem_proved": true,
+    "finite_label_simple_dependencies_neutral": true,
+    "hierarchical_orientation_polar_proved": false,
+    "reason": "The exact obstruction is now a graded cross-syzygy space, but its all-n representation decomposition and coherent transform remain open.",
+    "repeated_labels_falsify_universal_neutrality": true,
+    "speedup_claim_allowed": false,
+    "symbolic_wreath_dependency_decomposition_proved": false
+  },
+  "created_at": "2026-08-06T04:03:34.102162+00:00",
+  "falsifiers_triggered": [
+    "Equal child dimensions do not imply equal shorted metrics.",
+    "A child-range intersection is not characterized by the raw cross-kernel until internal synthesis kernels are quotiented out.",
+    "The kernel formulation is not a circuit without a sparse representation-theoretic dependency decomposition."
+  ],
+  "generic_controls": [
+    {
+      "actual_fractional_eigenvalues": [
+        0.5000000000000001,
+        0.5000000000000001
+      ],
+      "common_range_dimension": 2,
+      "cross_dependency_dimension": 2,
+      "dependency_predicted_fractional_eigenvalues": [
+        0.49999999999999994,
+        0.5000000000000001
+      ],
+      "dependency_to_common_range_dimension_residual": 0,
+      "exact_dependency_quotient_theorem_verified": true,
+      "grading_neutral": true,
+      "grading_neutrality_residual": 1.5256538717282455e-16,
+      "left_coefficient_dimension": 2,
+      "left_synthesis_rank": 2,
+      "maximum_dependency_subspace_residual": 3.384598242815151e-16,
+      "maximum_fractional_spectrum_residual": 1.6653345369377348e-16,
+      "record_id": "GENERIC-EQUAL-METRIC",
+      "right_coefficient_dimension": 2,
+      "right_synthesis_rank": 2,
+      "status": "exact-neutral-cross-dependency"
+    },
+    {
+      "actual_fractional_eigenvalues": [
+        0.3333333333333333,
+        0.6666666666666667
+      ],
+      "common_range_dimension": 2,
+      "cross_dependency_dimension": 2,
+      "dependency_predicted_fractional_eigenvalues": [
+        0.33333333333333315,
+        0.6666666666666667
+      ],
+      "dependency_to_common_range_dimension_residual": 0,
+      "exact_dependency_quotient_theorem_verified": true,
+      "grading_neutral": false,
+      "grading_neutrality_residual": 0.3333333333333337,
+      "left_coefficient_dimension": 2,
+      "left_synthesis_rank": 2,
+      "maximum_dependency_subspace_residual": 3.5555585353471297e-16,
+      "maximum_fractional_spectrum_residual": 1.6653345369377348e-16,
+      "record_id": "GENERIC-UNEQUAL-METRIC",
+      "right_coefficient_dimension": 2,
+      "right_synthesis_rank": 2,
+      "status": "exact-nonneutral-cross-dependency"
+    }
+  ],
+  "headline_metrics": {
+    "all_n_neutrality_theorem_count": 0,
+    "coherent_dependency_transform_count": 0,
+    "exact_cross_dependency_theorem_count": 1,
+    "finite_cross_dependency_record_count": 54,
+    "finite_theorem_validation_failure_count": 0,
+    "generic_control_count": 2,
+    "label_simple_nonneutral_dependency_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "repeated_label_nonneutral_dependency_count": 9,
+    "symbolic_representation_dependency_decomposition_count": 0,
+    "wreath_control_count": 3
+  },
+  "proof_obligations": [
+    {
+      "obligation": "cross_dependency_quotient_theorem",
+      "resolution": "Linear-algebra proof and finite controls identify W with the common range and recover its full fractional spectrum.",
+      "resolved": true
+    },
+    {
+      "obligation": "symbolic_wreath_dependency_decomposition",
+      "resolution": "The current finite construction still forms leaf bases; an all-n Kronecker/Racah decomposition of W is open.",
+      "resolved": false
+    },
+    {
+      "obligation": "all_n_collision_free_neutrality",
+      "resolution": "Label-simple W3/W5 controls are neutral, but no growing-depth theorem excludes nonneutral cross syzygies.",
+      "resolved": false
+    }
+  ],
+  "status": "cross-dependency-neutrality-theorem-symbolic-wreath-decomposition-open",
+  "summary": "Replaced compressed frame inversion by an exact cross-synthesis dependency quotient; all label-simple finite dependencies are neutral, while repeated labels and a generic equal-dimension control exhibit nonneutral defects.",
+  "theorem_contract": {
+    "balance_criterion": "Every fractional channel is one half iff W is totally neutral for the coefficient grading.",
+    "common_range_isomorphism": "y maps to (R_L^+y,R_R^+y), an isomorphism from the child-range intersection onto W",
+    "cross_dependency_space": "W=ker[R_L,-R_R] intersect (ker R_L direct_sum ker R_R)^perp",
+    "grading_pencil": "The grading compression P_W diag(I,-I) P_W has eigenvalues delta=1-2 lambda, where lambda are the fractional relative-effect eigenvalues.",
+    "research_use": "Decompose cross-child syzygies modulo internal syzygies in representation labels; do not invert the full frame."
+  },
+  "wreath_controls": [
+    {
+      "control_id": "W3-DISTINCT-LABEL-TRIANGLE",
+      "exact_dependency_theorem_failure_count": 0,
+      "fractional_merge_count": 9,
+      "globally_distinct_source_partitions": false,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_dependency_subspace_residual": 1.742563786915079e-15,
+      "maximum_fractional_spectrum_residual": 1.5543122344752192e-15,
+      "n": 3,
+      "neutral_fractional_merge_count": 9,
+      "nonneutral_fractional_merge_count": 0,
+      "records": [
+        {
+          "actual_fractional_eigenvalues": [
+            0.4999999999999998,
+            0.5000000000000008
+          ],
+          "common_range_dimension": 2,
+          "cross_dependency_dimension": 2,
+          "dependency_predicted_fractional_eigenvalues": [
+            0.4999999999999999,
+            0.4999999999999999
+          ],
+          "dependency_to_common_range_dimension_residual": 0,
+          "exact_dependency_quotient_theorem_verified": true,
+          "grading_neutral": true,
+          "grading_neutrality_residual": 2.3440682586214404e-16,
+          "left_coefficient_dimension": 4,
+          "left_synthesis_rank": 4,
+          "maximum_dependency_subspace_residual": 1.742563786915079e-15,
+          "maximum_fractional_spectrum_residual": 8.881784197001252e-16,
+          "record_id": "W3-DISTINCT-LABEL-TRIANGLE-W2-0-2-5-7",
+          "right_coefficient_dimension": 4,
+          "right_synthesis_rank": 4,
+          "status": "exact-neutral-cross-dependency"
+        },
+        {
+          "actual_fractional_eigenvalues": [
+            0.49999999999999967,
+            0.5
+          ],
+          "common_range_dimension": 2,
+          "cross_dependency_dimension": 2,
+          "dependency_predicted_fractional_eigenvalues": [
+            0.49999999999999994,
+            0.5000000000000004
+          ],
+          "dependency_to_common_range_dimension_residual": 0,
+          "exact_dependency_quotient_theorem_verified": true,
+          "grading_neutral": true,
+          "grading_neutrality_residual": 9.597717075677938e-16,
+          "left_coefficient_dimension": 4,
+          "left_synthesis_rank": 4,
+          "maximum_dependency_subspace_residual": 1.5432142928306766e-15,
+          "maximum_fractional_spectrum_residual": 4.440892098500626e-16,
+          "record_id": "W3-DISTINCT-LABEL-TRIANGLE-W2-0-5-2-7",
+          "right_coefficient_dimension": 4,
+          "right_synthesis_rank": 4,
+          "status": "exact-neutral-cross-dependency"
+        },
+        {
+          "actual_fractional_eigenvalues": [
+            0.49999999999999967,
+            0.5000000000000011
+          ],
+          "common_range_dimension": 2,
+          "cross_dependency_dimension": 2,
+          "dependency_predicted_fractional_eigenvalues": [
+            0.4999999999999998,
+            0.5000000000000002
+          ],
+          "dependency_to_common_range_dimension_residual": 0,
+          "exact_dependency_quotient_theorem_verified": true,
+          "grading_neutral": true,
+          "grading_neutrality_residual": 3.963304861720548e-16,
+          "left_coefficient_dimension": 4,
+          "left_synthesis_rank": 4,
+          "maximum_dependency_subspace_residual": 1.5295877418354757e-15,
+          "maximum_fractional_spectrum_residual": 8.881784197001252e-16,
+          "record_id": "W3-DISTINCT-LABEL-TRIANGLE-W2-0-7-2-5",
+          "right_coefficient_dimension": 4,
+          "right_synthesis_rank": 4,
+          "status": "exact-neutral-cross-dependency"
+        },
+        {
+          "actual_fractional_eigenvalues": [
+            0.4999999999999995,
+            0.4999999999999998
+          ],
+          "common_range_dimension": 2,
+          "cross_dependency_dimension": 2,
+          "dependency_predicted_fractional_eigenvalues": [
+            0.5,
+            0.5000000000000001
+          ],
+          "dependency_to_common_range_dimension_residual": 0,
+          "exact_dependency_quotient_theorem_verified": true,
+          "grading_neutral": true,
+          "grading_neutrality_residual": 2.907109751000743e-16,
+          "left_coefficient_dimension": 6,
+          "left_synthesis_rank": 6,
+          "maximum_dependency_subspace_residual": 1.4589419720647295e-15,
+          "maximum_fractional_spectrum_residual": 4.996003610813204e-16,
+          "record_id": "W3-DISTINCT-LABEL-TRIANGLE-W4-0-1-2-3-4-5-6-7",
+          "right_coefficient_dimension": 4,
+          "right_synthesis_rank": 4,
+          "status": "exact-neutral-cross-dependency"
+        },
+        {
+          "actual_fractional_eigenvalues": [
+            0.49999999999999906,
+            0.49999999999999994
+          ],
+          "common_range_dimension": 2,
+          "cross_dependency_dimension": 2,
+          "dependency_predicted_fractional_eigenvalues": [
+            0.4999999999999999,
+            0.5000000000000001
+          ],
+          "dependency_to_common_range_dimension_residual": 0,
+          "exact_dependency_quotient_theorem_verified": true,
+          "grading_neutral": true,
+          "grading_neutrality_residual": 2.669405688749787e-16,
+          "left_coefficient_dimension": 5,
+          "left_synthesis_rank": 5,
+          "maximum_dependency_subspace_residual": 5.674196848649106e-16,
+          "maximum_fractional_spectrum_residual": 8.326672684688674e-16,
+          "record_id": "W3-DISTINCT-LABEL-TRIANGLE-W4-0-1-4-5-2-3-6-7",
+          "right_coefficient_dimension": 5,
+          "right_synthesis_rank": 5,
+          "status": "exact-neutral-cross-dependency"
+        },
+        {
+          "actual_fractional_eigenvalues": [
+            0.5000000000000003,
+            0.5000000000000007
+          ],
+          "common_range_dimension": 2,
+          "cross_dependency_dimension": 2,
+          "dependency_predicted_fractional_eigenvalues": [
+            0.49999999999999983,
+            0.5000000000000003
+          ],
+          "dependency_to_common_range_dimension_residual": 0,
+          "exact_dependency_quotient_theorem_verified": true,
+          "grading_neutral": true,
+          "grading_neutrality_residual": 5.806973217231958e-16,
+          "left_coefficient_dimension": 5,
+          "left_synthesis_rank": 5,
+          "maximum_dependency_subspace_residual": 1.0490643223384335e-15,
+          "maximum_fractional_spectrum_residual": 4.996003610813204e-16,
+          "record_id": "W3-DISTINCT-LABEL-TRIANGLE-W4-0-1-6-7-2-3-4-5",
+          "right_coefficient_dimension": 5,
+          "right_synthesis_rank": 5,
+          "status": "exact-neutral-cross-dependency"
+        },
+        {
+          "actual_fractional_eigenvalues": [
+            0.5000000000000004,
+            0.5000000000000016
+          ],
+          "common_range_dimension": 2,
+          "cross_dependency_dimension": 2,
+          "dependency_predicted_fractional_eigenvalues": [
+            0.49999999999999967,
+            0.5
+          ],
+          "dependency_to_common_range_dimension_residual": 0,
+          "exact_dependency_quotient_theorem_verified": true,
+          "grading_neutral": true,
+          "grading_neutrality_residual": 6.515651024806041e-16,
+          "left_coefficient_dimension": 4,
+          "left_synthesis_rank": 4,
+          "maximum_dependency_subspace_residual": 9.770233003320813e-16,
+          "maximum_fractional_spectrum_residual": 1.5543122344752192e-15,
+          "record_id": "W3-DISTINCT-LABEL-TRIANGLE-W4-0-2-4-6-1-3-5-7",
+          "right_coefficient_dimension": 6,
+          "right_synthesis_rank": 6,
+          "status": "exact-neutral-cross-dependency"
+        },
+        {
+          "actual_fractional_eigenvalues": [
+            0.5000000000000002,
+            0.5000000000000007
+          ],
+          "common_range_dimension": 2,
+          "cross_dependency_dimension": 2,
+          "dependency_predicted_fractional_eigenvalues": [
+            0.49999999999999994,
+            0.5000000000000001
+          ],
+          "dependency_to_common_range_dimension_residual": 0,
+          "exact_dependency_quotient_theorem_verified": true,
+          "grading_neutral": true,
+          "grading_neutrality_residual": 2.5040624572235993e-16,
+          "left_coefficient_dimension": 5,
+          "left_synthesis_rank": 5,
+          "maximum_dependency_subspace_residual": 5.568010246483577e-16,
+          "maximum_fractional_spectrum_residual": 5.551115123125783e-16,
+          "record_id": "W3-DISTINCT-LABEL-TRIANGLE-W4-0-3-4-7-1-2-5-6",
+          "right_coefficient_dimension": 5,
+          "right_synthesis_rank": 5,
+          "status": "exact-neutral-cross-dependency"
+        },
+        {
+          "actual_fractional_eigenvalues": [
+            0.4999999999999992,
+            0.49999999999999967
+          ],
+          "common_range_dimension": 2,
+          "cross_dependency_dimension": 2,
+          "dependency_predicted_fractional_eigenvalues": [
+            0.5,
+            0.5000000000000001
+          ],
+          "dependency_to_common_range_dimension_residual": 0,
+          "exact_dependency_quotient_theorem_verified": true,
+          "grading_neutral": true,
+          "grading_neutrality_residual": 1.1452203667038347e-16,
+          "left_coefficient_dimension": 5,
+          "left_synthesis_rank": 5,
+          "maximum_dependency_subspace_residual": 1.0999331800850805e-15,
+          "maximum_fractional_spectrum_residual": 7.771561172376096e-16,
+          "record_id": "W3-DISTINCT-LABEL-TRIANGLE-W4-0-3-5-6-1-2-4-7",
+          "right_coefficient_dimension": 5,
+          "right_synthesis_rank": 5,
+          "status": "exact-neutral-cross-dependency"
+        }
+      ],
+      "status": "all-cross-dependencies-neutral",
+      "target_partition": [
+        2,
+        1
+      ]
+    },
+    {
+      "control_id": "W3-REPEATED-LABEL-FALSIFIER",
+      "exact_dependency_theorem_failure_count": 0,
+      "fractional_merge_count": 34,
+      "globally_distinct_source_partitions": false,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ]
+      ],
+      "maximum_dependency_subspace_residual": 9.296438055105274e-15,
+      "maximum_fractional_spectrum_residual": 3.4416913763379853e-15,
+      "n": 3,
+      "neutral_fractional_merge_count": 25,
+      "nonneutral_fractional_merge_count": 9,
+      "records": [
+        {
+          "actual_fractional_eigenvalues": [
+            0.5
+          ],
+          "common_range_dimension": 1,
+          "cross_dependency_dimension": 1,
+          "dependency_predicted_fractional_eigenvalues": [
+            0.5000000000000003
+          ],
+          "dependency_to_common_range_dimension_residual": 0,
+          "exact_dependency_quotient_theorem_verified": true,
+          "grading_neutral": true,
+          "grading_neutrality_residual": 5.756670224122382e-16,
+          "left_coefficient_dimension": 4,
+          "left_synthesis_rank": 4,
+          "maximum_dependency_subspace_residual": 1.0503330556636674e-15,
+          "maximum_fractional_spectrum_residual": 3.3306690738754696e-16,
+          "record_id": "W3-REPEATED-LABEL-FALSIFIER-W1-1-7",
+          "right_coefficient_dimension": 3,
+          "right_synthesis_rank": 3,
+          "status": "exact-neutral-cross-dependency"
+        },
+        {
+          "actual_fractional_eigenvalues": [
+            0.5000000000000008
+          ],
+          "common_range_dimension": 1,
+          "cross_dependency_dimension": 1,
+          "dependency_predicted_fractional_eigenvalues": [
+            0.5000000000000001
+          ],
+          "dependency_to_common_range_dimension_residual": 0,
+          "exact_dependency_quotient_theorem_verified": true,
+          "grading_neutral": true,
+          "grading_neutrality_residual": 1.6764935665706156e-16,
+          "left_coefficient_dimension": 4,
+          "left_synthesis_rank": 4,
+          "maximum_dependency_subspace_residual": 4.880511731225978e-16,
+          "maximum_fractional_spectrum_residual": 6.661338147750939e-16,
+          "record_id": "W3-REPEATED-LABEL-FALSIFIER-W1-2-7",
+          "right_coefficient_dimension": 3,
+          "right_synthesis_rank": 3,
+          "status": "exact-neutral-cross-dependency"
+        },
+        {
+          "actual_fractional_eigenvalues": [
+            0.49999999999999956
+          ],
+          "common_range_dimension": 1,
+          "cross_dependency_dimension": 1,
+          "dependency_predicted_fractional_eigenvalues": [
+            0.5000000000000002
+          ],
+          "dependency_to_common_range_dimension_residual": 0,
+          "exact_dependency_quotient_theorem_verified": true,
+          "grading_neutral": true,
+          "grading_neutrality_residual": 3.7637943519302013e-16,
+          "left_coefficient_dimension": 4,
+          "left_synthesis_rank": 4,
+          "maximum_dependency_subspace_residual": 5.660909354936625e-16,
+          "maximum_fractional_spectrum_residual": 6.661338147750939e-16,
+          "record_id": "W3-REPEATED-LABEL-FALSIFIER-W1-4-7",
+          "right_coefficient_dimension": 3,
+          "right_synthesis_rank": 3,
+          "status": "exact-neutral-cross-dependency"
+        },
+        {
+          "actual_fractional_eigenvalues": [
+            0.5000000000000006
+          ],
+          "common_range_dimension": 1,
+          "cross_dependency_dimension": 1,
+          "dependency_predicted_fractional_eigenvalues": [
+            0.5000000000000002
+          ],
+          "dependency_to_common_range_dimension_residual": 0,
+          "exact_dependency_quotient_theorem_verified": true,
+          "grading_neutral": true,
+          "grading_neutrality_residual": 5.487921097503103e-16,
+          "left_coefficient_dimension": 4,
+          "left_synthesis_rank": 4,
+          "maximum_dependency_subspace_residual": 3.1695329491882538e-15,
+          "maximum_fractional_spectrum_residual": 3.3306690738754696e-16,
+          "record_id": "W3-REPEATED-LABEL-FALSIFIER-W2-0-1-6-7",
+          "right_coefficient_dimension": 5,
+          "right_synthesis_rank": 5,
+          "status": "exact-neutral-cross-dependency"
+        },
+        {
+          "actual_fractional_eigenvalues": [
+            0.5000000000000001
+          ],
+          "common_range_dimension": 1,
+          "cross_dependency_dimension": 1,
+          "dependency_predicted_fractional_eigenvalues": [
+            0.5000000000000002
+          ],
+          "dependency_to_common_range_dimension_residual": 0,
+          "exact_dependency_quotient_theorem_verified": true,
+          "grading_neutral": true,
+          "grading_neutrality_residual": 3.6614685428597056e-16,
+          "left_coefficient_dimension": 4,
+          "left_synthesis_rank": 4,
+          "maximum_dependency_subspace_residual": 4.963410855812179e-15,
+          "maximum_fractional_spectrum_residual": 1.1102230246251565e-16,
+          "record_id": "W3-REPEATED-LABEL-FALSIFIER-W2-0-2-5-7",
+          "right_coefficient_dimension": 5,
+          "right_synthesis_rank": 5,
+          "status": "exact-neutral-cross-dependency"
+        },
+        {
+          "actual_fractional_eigenvalues": [
+            0.5000000000000007
+          ],
+          "common_range_dimension": 1,
+          "cross_dependency_dimension": 1,
+          "dependency_predicted_fractional_eigenvalues": [
+            0.5000000000000001
+          ],
+          "dependency_to_common_range_dimension_residual": 0,
+          "exact_dependency_quotient_theorem_verified": true,
+          "grading_neutral": true,
+          "grading_neutrality_residual": 2.2821203754274417e-16,
+          "left_coefficient_dimension": 4,
+          "left_synthesis_rank": 4,
+          "maximum_dependency_subspace_residual": 1.2335550603099034e-15,
+          "maximum_fractional_spectrum_residual": 5.551115123125783e-16,
+          "record_id": "W3-REPEATED-LABEL-FALSIFIER-W2-0-4-3-7",
+          "right_coefficient_dimension": 5,
+          "right_synthesis_rank": 5,
+          "status": "exact-neutral-cross-dependency"
+        },
+        {
+          "actual_fractional_eigenvalues": [
+            0.4999999999999998
+          ],
+          "common_range_dimension": 1,
+          "cross_dependency_dimension": 1,
+          "dependency_predicted_fractional_eigenvalues": [
+            0.49999999999999956
+          ],
+          "dependency_to_common_range_dimension_residual": 0,
+          "exact_dependency_quotient_theorem_verified": true,
+          "grading_neutral": true,
+          "grading_neutrality_residual": 8.881784197001251e-16,
+          "left_coefficient_dimension": 3,
+          "left_synthesis_rank": 3,
+          "maximum_dependency_subspace_residual": 2.951714158010055e-15,
+          "maximum_fractional_spectrum_residual": 2.220446049250313e-16,
+          "record_id": "W3-REPEATED-LABEL-FALSIFIER-W2-0-7-1-6",
+          "right_coefficient_dimension": 6,
+          "right_synthesis_rank": 6,
+          "status": "exact-neutral-cross-dependency"
+        },
+        {
+          "actual_fractional_eigenvalues": [
+            0.5000000000000006
+          ],
+          "common_range_dimension": 1,
+          "cross_dependency_dimension": 1,
+          "dependency_predicted_fractional_eigenvalues": [
+            0.49999999999999983
+          ],
+          "dependency_to_common_range_dimension_residual": 0,
+          "exact_dependency_quotient_theorem_verified": true,
+          "grading_neutral": true,
+          "grading_neutrality_residual": 3.8857805861880395e-16,
+          "left_coefficient_dimension": 3,
+          "left_synthesis_rank": 3,
+          "maximum_dependency_subspace_residual": 1.8149691572876976e-15,
+          "maximum_fractional_spectrum_residual": 7.216449660063518e-16,
+          "record_id": "W3-REPEATED-LABEL-FALSIFIER-W2-0-7-2-5",
+          "right_coefficient_dimension": 6,
+          "right_synthesis_rank": 6,
+          "status": "exact-neutral-cross-dependency"
+        },
+        {
+          "actual_fractional_eigenvalues": [
+            0.49999999999999933
+          ],
+          "common_range_dimension": 1,
+          "cross_dependency_dimension": 1,
+          "dependency_predicted_fractional_eigenvalues": [
+            0.4999999999999998
+          ],
+          "dependency_to_common_range_dimension_residual": 0,
+          "exact_dependency_quotient_theorem_verified": true,
+          "grading_neutral": true,
+          "grading_neutrality_residual": 4.902041656350924e-16,
+          "left_coefficient_dimension": 3,
+          "left_synthesis_rank": 3,
+          "maximum_dependency_subspace_residual": 2.19483745024645e-15,
+          "maximum_fractional_spectrum_residual": 4.440892098500626e-16,
+          "record_id": "W3-REPEATED-LABEL-FALSIFIER-W2-0-7-3-4",
+          "right_coefficient_dimension": 6,
+          "right_synthesis_rank": 6,
+          "status": "exact-neutral-cross-dependency"
+        },
+        {
+          "actual_fractional_eigenvalues": [
+            0.3333333333333329,
+            0.3333333333333336,
+            0.5555555555555538
+          ],
+          "common_range_dimension": 3,
+          "cross_dependency_dimension": 3,
+          "dependency_predicted_fractional_eigenvalues": [
+            0.33333333333333326,
+            0.3333333333333335,
+            0.5555555555555558
+          ],
+          "dependency_to_common_range_dimension_residual": 0,
+          "exact_dependency_quotient_theorem_verified": true,
+          "grading_neutral": false,
+          "grading_neutrality_residual": 0.3333333333333332,
+          "left_coefficient_dimension": 8,
+          "left_synthesis_rank": 8,
+          "maximum_dependency_subspace_residual": 7.411921802938065e-15,
+          "maximum_fractional_spectrum_residual": 1.9984014443252818e-15,
+          "record_id": "W3-REPEATED-LABEL-FALSIFIER-W2-1-2-4-7",
+          "right_coefficient_dimension": 7,
+          "right_synthesis_rank": 6,
+          "status": "exact-nonneutral-cross-dependency"
+        },
+        {
+          "actual_fractional_eigenvalues": [
+            0.4999999999999986,
+            0.4999999999999999
+          ],
+          "common_range_dimension": 2,
+          "cross_dependency_dimension": 2,
+          "dependency_predicted_fractional_eigenvalues": [
+            0.49999999999999517,
+            0.5
+          ],
+          "dependency_to_common_range_dimension_residual": 0,
+          "exact_dependency_quotient_theorem_verified": true,
+          "grading_neutral": true,
+          "grading_neutrality_residual": 9.624218083570831e-15,
+          "left_coefficient_dimension": 8,
+          "left_synthesis_rank": 8,
+          "maximum_dependency_subspace_residual": 6.991042973177579e-15,
+          "maximum_fractional_spectrum_residual": 3.4416913763379853e-15,
+          "record_id": "W3-REPEATED-LABEL-FALSIFIER-W2-1-2-5-6",
+          "right_coefficient_dimension": 4,
+          "right_synthesis_rank": 4,
+          "status": "exact-neutral-cross-dependency"
+        },
+        {
+          "actual_fractional_eigenvalues": [
+            0.4999999999999999,
+            0.5000000000000006
+          ],
+          "common_range_dimension": 2,
+          "cross_dependency_dimension": 2,
+          "dependency_predicted_fractional_eigenvalues": [
+            0.4999999999999994,
+            0.5000000000000001
+          ],
+          "dependency_to_common_range_dimension_residual": 0,
+          "exact_dependency_quotient_theorem_verified": true,
+          "grading_neutral": true,
+          "grading_neutrality_residual": 1.1993414256873083e-15,
+          "left_coefficient_dimension": 6,
+          "left_synthesis_rank": 6,
+          "maximum_dependency_subspace_residual": 4.59125649687823e-15,
+          "maximum_fractional_spectrum_residual": 4.996003610813204e-16,
+          "record_id": "W3-REPEATED-LABEL-FALSIFIER-W2-1-3-4-6",
+          "right_coefficient_dimension": 6,
+          "right_synthesis_rank": 6,
+          "status": "exact-neutral-cross-dependency"
+        },
+        {
+          "actual_fractional_eigenvalues": [
+            0.5000000000000016
+          ],
+          "common_range_dimension": 1,
+          "cross_dependency_dimension": 1,
+          "dependency_predicted_fractional_eigenvalues": [
+            0.5
+          ],
+          "dependency_to_common_range_dimension_residual": 0,
+          "exact_dependency_quotient_theorem_verified": true,
+          "grading_neutral": true,
+          "grading_neutrality_residual": 9.325428150213622e-17,
+          "left_coefficient_dimension": 6,
+          "left_synthesis_rank": 6,
+          "maximum_dependency_subspace_residual": 3.3753104107787185e-15,
+          "maximum_fractional_spectrum_residual": 1.5543122344752192e-15,
+          "record_id": "W3-REPEATED-LABEL-FALSIFIER-W2-1-3-5-7",
+          "right_coefficient_dimension": 5,
+          "right_synthesis_rank": 5,
+          "status": "exact-neutral-cross-dependency"
+        },
+        {
+          "actual_fractional_eigenvalues": [
+            0.3333333333333336,
+            0.33333333333333404,
+            0.5555555555555557
+          ],
+          "common_range_dimension": 3,
+          "cross_dependency_dimension": 3,
+          "dependency_predicted_fractional_eigenvalues": [
+            0.3333333333333335,
+            0.3333333333333336,
+            0.5555555555555558
+          ],
+          "dependency_to_common_range_dimension_residual": 0,
+          "exact_dependency_quotient_theorem_verified": true,
+          "grading_neutral": false,
+          "grading_neutrality_residual": 0.333333333333333,
+          "left_coefficient_dimension": 8,
+          "left_synthesis_rank": 8,
+          "maximum_dependency_subspace_residual": 4.147049683225825e-15,
+          "maximum_fractional_spectrum_residual": 4.440892098500626e-16,
+          "record_id": "W3-REPEATED-LABEL-FALSIFIER-W2-1-4-2-7",
+          "right_coefficient_dimension": 7,
+          "right_synthesis_rank": 6,
+          "status": "exact-nonneutral-cross-dependency"
+        },
+        {
+          "actual_fractional_eigenvalues": [
+            0.5000000000000002,
+            0.5000000000000014
+          ],
+          "common_range_dimension": 2,
+          "cross_dependency_dimension": 2,
+          "dependency_predicted_fractional_eigenvalues": [
+            0.49999999999999994,
+            0.5000000000000001
+          ],
+          "dependency_to_common_range_dimension_residual": 0,
+          "exact_dependency_quotient_theorem_verified": true,
+          "grading_neutral": true,
+          "grading_neutrality_residual": 3.1391358221826735e-16,
+          "left_coefficient_dimension": 8,
+          "left_synthesis_rank": 8,
+          "maximum_dependency_subspace_residual": 1.0048050664518426e-15,
+          "maximum_fractional_spectrum_residual": 1.3322676295501878e-15,
+          "record_id": "W3-REPEATED-LABEL-FALSIFIER-W2-1-4-3-6",
+          "right_coefficient_dimension": 4,
+          "right_synthesis_rank": 4,
+          "status": "exact-neutral-cross-dependency"
+        },
+        {
+          "actual_fractional_eigenvalues": [
+            0.4999999999999999,
+            0.5000000000000002
+          ],
+          "common_range_dimension": 2,
+          "cross_dependency_dimension": 2,
+          "dependency_predicted_fractional_eigenvalues": [
+            0.4999999999999999,
+            0.5000000000000001
+          ],
+          "dependency_to_common_range_dimension_residual": 0,
+          "exact_dependency_quotient_theorem_verified": true,
+          "grading_neutral": true,
+          "grading_neutrality_residual": 2.8183017893495973e-16,
+          "left_coefficient_dimension": 6,
+          "left_synthesis_rank": 6,
+          "maximum_dependency_subspace_residual": 1.8184554830410864e-15,
+          "maximum_fractional_spectrum_residual": 1.1102230246251565e-16,
+          "record_id": "W3-REPEATED-LABEL-FALSIFIER-W2-1-5-2-6",
+          "right_coefficient_dimension": 6,
+          "right_synthesis_rank": 6,
+          "status": "exact-neutral-cross-dependency"
+        },
+        {
+          "actual_fractional_eigenvalues": [
+            0.4999999999999998
+          ],
+          "common_range_dimension": 1,
+          "cross_dependency_dimension": 1,
+          "dependency_predicted_fractional_eigenvalues": [
+            0.5000000000000003
+          ],
+          "dependency_to_common_range_dimension_residual": 0,
+          "exact_dependency_quotient_theorem_verified": true,
+          "grading_neutral": true,
+          "grading_neutrality_residual": 5.648715549423774e-16,
+          "left_coefficient_dimension": 6,
+          "left_synthesis_rank": 6,
+          "maximum_dependency_subspace_residual": 4.425803295534978e-15,
+          "maximum_fractional_spectrum_residual": 5.551115123125783e-16,
+          "record_id": "W3-REPEATED-LABEL-FALSIFIER-W2-1-5-3-7",
+          "right_coefficient_dimension": 5,
+          "right_synthesis_rank": 5,
+          "status": "exact-neutral-cross-dependency"
+        },
+        {
+          "actual_fractional_eigenvalues": [
+            0.5000000000000001,
+            0.5000000000000007
+          ],
+          "common_range_dimension": 2,
+          "cross_dependency_dimension": 2,
+          "dependency_predicted_fractional_eigenvalues": [
+            0.49999999999999967,
+            0.5000000000000006
+          ],
+          "dependency_to_common_range_dimension_residual": 0,
+          "exact_dependency_quotient_theorem_verified": true,
+          "grading_neutral": true,
+          "grading_neutrality_residual": 1.1195708771628243e-15,
+          "left_coefficient_dimension": 6,
+          "left_synthesis_rank": 6,
+          "maximum_dependency_subspace_residual": 1.7691817370161689e-15,
+          "maximum_fractional_spectrum_residual": 4.440892098500626e-16,
+          "record_id": "W3-REPEATED-LABEL-FALSIFIER-W2-1-6-2-5",
+          "right_coefficient_dimension": 6,
+          "right_synthesis_rank": 6,
+          "status": "exact-neutral-cross-dependency"
+        },
+        {
+          "actual_fractional_eigenvalues": [
+            0.4999999999999998,
+            0.5000000000000014
+          ],
+          "common_range_dimension": 2,
+          "cross_dependency_dimension": 2,
+          "dependency_predicted_fractional_eigenvalues": [
+            0.5,
+            0.5
+          ],
+          "dependency_to_common_range_dimension_residual": 0,
+          "exact_dependency_quotient_theorem_verified": true,
+          "grading_neutral": true,
+          "grading_neutrality_residual": 9.117834208088288e-17,
+          "left_coefficient_dimension": 6,
+          "left_synthesis_rank": 6,
+          "maximum_dependency_subspace_residual": 1.2417240931198842e-15,
+          "maximum_fractional_spectrum_residual": 1.4432899320127035e-15,
+          "record_id": "W3-REPEATED-LABEL-FALSIFIER-W2-1-6-3-4",
+          "right_coefficient_dimension": 6,
+          "right_synthesis_rank": 6,
+          "status": "exact-neutral-cross-dependency"
+        },
+        {
+          "actual_fractional_eigenvalues": [
+            0.4444444444444433,
+            0.666666666666666,
+            0.6666666666666672
+          ],
+          "common_range_dimension": 3,
+          "cross_dependency_dimension": 3,
+          "dependency_predicted_fractional_eigenvalues": [
+            0.4444444444444443,
+            0.6666666666666665,
+            0.6666666666666667
+          ],
+          "dependency_to_common_range_dimension_residual": 0,
+          "exact_dependency_quotient_theorem_verified": true,
+          "grading_neutral": false,
+          "grading_neutrality_residual": 0.33333333333333337,
+          "left_coefficient_dimension": 7,
+          "left_synthesis_rank": 6,
+          "maximum_dependency_subspace_residual": 9.296438055105274e-15,
+          "maximum_fractional_spectrum_residual": 9.992007221626409e-16,
+          "record_id": "W3-REPEATED-LABEL-FALSIFIER-W2-1-7-2-4",
+          "right_coefficient_dimension": 8,
+          "right_synthesis_rank": 8,
+          "status": "exact-nonneutral-cross-dependency"
+        },
+        {
+          "actual_fractional_eigenvalues": [
+            0.49999999999999856,
+            0.5000000000000001
+          ],
+          "common_range_dimension": 2,
+          "cross_dependency_dimension": 2,
+          "dependency_predicted_fractional_eigenvalues": [
+            0.4999999999999997,
+            0.5
+          ],
+          "dependency_to_common_range_dimension_residual": 0,
+          "exact_dependency_quotient_theorem_verified": true,
+          "grading_neutral": true,
+          "grading_neutrality_residual": 5.742493383897063e-16,
+          "left_coefficient_dimension": 6,
+          "left_synthesis_rank": 6,
+          "maximum_dependency_subspace_residual": 8.391165738966696e-15,
+          "maximum_fractional_spectrum_residual": 1.1657341758564144e-15,
+          "record_id": "W3-REPEATED-LABEL-FALSIFIER-W2-2-3-4-5",
+          "right_coefficient_dimension": 6,
+          "right_synthesis_rank": 6,
+          "status": "exact-neutral-cross-dependency"
+        },
+        {
+          "actual_fractional_eigenvalues": [
+            0.5000000000000011
+          ],
+          "common_range_dimension": 1,
+          "cross_dependency_dimension": 1,
+          "dependency_predicted_fractional_eigenvalues": [
+            0.5000000000000003
+          ],
+          "dependency_to_common_range_dimension_residual": 0,
+          "exact_dependency_quotient_theorem_verified": true,
+          "grading_neutral": true,
+          "grading_neutrality_residual": 6.6102170985397655e-16,
+          "left_coefficient_dimension": 6,
+          "left_synthesis_rank": 6,
+          "maximum_dependency_subspace_residual": 7.866315612214244e-16,
+          "maximum_fractional_spectrum_residual": 7.771561172376096e-16,
+          "record_id": "W3-REPEATED-LABEL-FALSIFIER-W2-2-3-6-7",
+          "right_coefficient_dimension": 5,
+          "right_synthesis_rank": 5,
+          "status": "exact-neutral-cross-dependency"
+        },
+        {
+          "actual_fractional_eigenvalues": [
+            0.49999999999999994,
+            0.5000000000000003
+          ],
+          "common_range_dimension": 2,
+          "cross_dependency_dimension": 2,
+          "dependency_predicted_fractional_eigenvalues": [
+            0.5000000000000003,
+            0.5000000000000008
+          ],
+          "dependency_to_common_range_dimension_residual": 0,
+          "exact_dependency_quotient_theorem_verified": true,
+          "grading_neutral": true,
+          "grading_neutrality_residual": 1.455224385020778e-15,
+          "left_coefficient_dimension": 8,
+          "left_synthesis_rank": 8,
+          "maximum_dependency_subspace_residual": 6.684234996729076e-15,
+          "maximum_fractional_spectrum_residual": 4.440892098500626e-16,
+          "record_id": "W3-REPEATED-LABEL-FALSIFIER-W2-2-4-3-5",
+          "right_coefficient_dimension": 4,
+          "right_synthesis_rank": 4,
+          "status": "exact-neutral-cross-dependency"
+        },
+        {
+          "actual_fractional_eigenvalues": [
+            0.4999999999999992,
+            0.5000000000000002
+          ],
+          "common_range_dimension": 2,
+          "cross_dependency_dimension": 2,
+          "dependency_predicted_fractional_eigenvalues": [
+            0.49999999999999856,
+            0.5000000000000002
+          ],
+          "dependency_to_common_range_dimension_residual": 0,
+          "exact_dependency_quotient_theorem_verified": true,
+          "grading_neutral": true,
+          "grading_neutrality_residual": 2.8480990360455815e-15,
+          "left_coefficient_dimension": 6,
+          "left_synthesis_rank": 6,
+          "maximum_dependency_subspace_residual": 3.617315653517648e-15,
+          "maximum_fractional_spectrum_residual": 6.661338147750939e-16,
+          "record_id": "W3-REPEATED-LABEL-FALSIFIER-W2-2-5-3-4",
+          "right_coefficient_dimension": 6,
+          "right_synthesis_rank": 6,
+          "status": "exact-neutral-cross-dependency"
+        },
+        {
+          "actual_fractional_eigenvalues": [
+            0.49999999999999967
+          ],
+          "common_range_dimension": 1,
+          "cross_dependency_dimension": 1,
+          "dependency_predicted_fractional_eigenvalues": [
+            0.5000000000000007
+          ],
+          "dependency_to_common_range_dimension_residual": 0,
+          "exact_dependency_quotient_theorem_verified": true,
+          "grading_neutral": true,
+          "grading_neutrality_residual": 1.2333667613313148e-15,
+          "left_coefficient_dimension": 6,
+          "left_synthesis_rank": 6,
+          "maximum_dependency_subspace_residual": 8.554137905735726e-16,
+          "maximum_fractional_spectrum_residual": 9.992007221626409e-16,
+          "record_id": "W3-REPEATED-LABEL-FALSIFIER-W2-2-6-3-7",
+          "right_coefficient_dimension": 5,
+          "right_synthesis_rank": 5,
+          "status": "exact-neutral-cross-dependency"
+        },
+        {
+          "actual_fractional_eigenvalues": [
+            0.5000000000000009
+          ],
+          "common_range_dimension": 1,
+          "cross_dependency_dimension": 1,
+          "dependency_predicted_fractional_eigenvalues": [
+            0.5000000000000003
+          ],
+          "dependency_to_common_range_dimension_residual": 0,
+          "exact_dependency_quotient_theorem_verified": true,
+          "grading_neutral": true,
+          "grading_neutrality_residual": 7.710795124929908e-16,
+          "left_coefficient_dimension": 6,
+          "left_synthesis_rank": 6,
+          "maximum_dependency_subspace_residual": 1.11693283234111e-15,
+          "maximum_fractional_spectrum_residual": 5.551115123125783e-16,
+          "record_id": "W3-REPEATED-LABEL-FALSIFIER-W2-4-5-6-7",
+          "right_coefficient_dimension": 5,
+          "right_synthesis_rank": 5,
+          "status": "exact-neutral-cross-dependency"
+        },
+        {
+          "actual_fractional_eigenvalues": [
+            0.4999999999999991
+          ],
+          "common_range_dimension": 1,
+          "cross_dependency_dimension": 1,
+          "dependency_predicted_fractional_eigenvalues": [
+            0.5000000000000001
+          ],
+          "dependency_to_common_range_dimension_residual": 0,
+          "exact_dependency_quotient_theorem_verified": true,
+          "grading_neutral": true,
+          "grading_neutrality_residual": 2.2209001886157833e-16,
+          "left_coefficient_dimension": 6,
+          "left_synthesis_rank": 6,
+          "maximum_dependency_subspace_residual": 6.902030787586408e-16,
+          "maximum_fractional_spectrum_residual": 9.992007221626409e-16,
+          "record_id": "W3-REPEATED-LABEL-FALSIFIER-W2-4-6-5-7",
+          "right_coefficient_dimension": 5,
+          "right_synthesis_rank": 5,
+          "status": "exact-neutral-cross-dependency"
+        },
+        {
+          "actual_fractional_eigenvalues": [
+            0.33333333333333337,
+            0.33333333333333365,
+            0.49999999999999845,
+            0.4999999999999999,
+            0.5000000000000001,
+            0.5000000000000008,
+            0.5555555555555556
+          ],
+          "common_range_dimension": 7,
+          "cross_dependency_dimension": 7,
+          "dependency_predicted_fractional_eigenvalues": [
+            0.3333333333333333,
+            0.3333333333333337,
+            0.49999999999999967,
+            0.4999999999999999,
+            0.5000000000000001,
+            0.5000000000000001,
+            0.5555555555555556
+          ],
+          "dependency_to_common_range_dimension_residual": 0,
+          "exact_dependency_quotient_theorem_verified": true,
+          "grading_neutral": false,
+          "grading_neutrality_residual": 0.3333333333333332,
+          "left_coefficient_dimension": 10,
+          "left_synthesis_rank": 10,
+          "maximum_dependency_subspace_residual": 2.3273255066558777e-15,
+          "maximum_fractional_spectrum_residual": 1.2212453270876722e-15,
+          "record_id": "W3-REPEATED-LABEL-FALSIFIER-W4-0-1-2-3-4-5-6-7",
+          "right_coefficient_dimension": 11,
+          "right_synthesis_rank": 10,
+          "status": "exact-nonneutral-cross-dependency"
+        },
+        {
+          "actual_fractional_eigenvalues": [
+            0.33333333333333204,
+            0.3333333333333328,
+            0.49999999999999883,
+            0.4999999999999993,
+            0.49999999999999994,
+            0.5000000000000002,
+            0.5555555555555551
+          ],
+          "common_range_dimension": 7,
+          "cross_dependency_dimension": 7,
+          "dependency_predicted_fractional_eigenvalues": [
+            0.33333333333333326,
+            0.33333333333333387,
+            0.4999999999999998,
+            0.49999999999999994,
+            0.5000000000000001,
+            0.5000000000000001,
+            0.5555555555555556
+          ],
+          "dependency_to_common_range_dimension_residual": 0,
+          "exact_dependency_quotient_theorem_verified": true,
+          "grading_neutral": false,
+          "grading_neutrality_residual": 0.33333333333333337,
+          "left_coefficient_dimension": 10,
+          "left_synthesis_rank": 10,
+          "maximum_dependency_subspace_residual": 6.8520582822592975e-15,
+          "maximum_fractional_spectrum_residual": 1.2212453270876722e-15,
+          "record_id": "W3-REPEATED-LABEL-FALSIFIER-W4-0-1-4-5-2-3-6-7",
+          "right_coefficient_dimension": 11,
+          "right_synthesis_rank": 10,
+          "status": "exact-nonneutral-cross-dependency"
+        },
+        {
+          "actual_fractional_eigenvalues": [
+            0.3333333333333331,
+            0.3333333333333333,
+            0.44444444444444414,
+            0.6666666666666661,
+            0.6666666666666666
+          ],
+          "common_range_dimension": 5,
+          "cross_dependency_dimension": 5,
+          "dependency_predicted_fractional_eigenvalues": [
+            0.33333333333333326,
+            0.3333333333333336,
+            0.4444444444444442,
+            0.6666666666666666,
+            0.666666666666667
+          ],
+          "dependency_to_common_range_dimension_residual": 0,
+          "exact_dependency_quotient_theorem_verified": true,
+          "grading_neutral": false,
+          "grading_neutrality_residual": 0.3333333333333337,
+          "left_coefficient_dimension": 9,
+          "left_synthesis_rank": 8,
+          "maximum_dependency_subspace_residual": 2.42201209415776e-15,
+          "maximum_fractional_spectrum_residual": 5.551115123125783e-16,
+          "record_id": "W3-REPEATED-LABEL-FALSIFIER-W4-0-1-6-7-2-3-4-5",
+          "right_coefficient_dimension": 12,
+          "right_synthesis_rank": 10,
+          "status": "exact-nonneutral-cross-dependency"
+        },
+        {
+          "actual_fractional_eigenvalues": [
+            0.33333333333333354,
+            0.33333333333333376,
+            0.5000000000000001,
+            0.5000000000000002,
+            0.5000000000000008,
+            0.5000000000000012,
+            0.5555555555555577
+          ],
+          "common_range_dimension": 7,
+          "cross_dependency_dimension": 7,
+          "dependency_predicted_fractional_eigenvalues": [
+            0.33333333333333337,
+            0.3333333333333337,
+            0.49999999999999983,
+            0.5,
+            0.5000000000000001,
+            0.5000000000000006,
+            0.5555555555555557
+          ],
+          "dependency_to_common_range_dimension_residual": 0,
+          "exact_dependency_quotient_theorem_verified": true,
+          "grading_neutral": false,
+          "grading_neutrality_residual": 0.3333333333333331,
+          "left_coefficient_dimension": 10,
+          "left_synthesis_rank": 10,
+          "maximum_dependency_subspace_residual": 7.592172425270092e-15,
+          "maximum_fractional_spectrum_residual": 1.9984014443252818e-15,
+          "record_id": "W3-REPEATED-LABEL-FALSIFIER-W4-0-2-4-6-1-3-5-7",
+          "right_coefficient_dimension": 11,
+          "right_synthesis_rank": 10,
+          "status": "exact-nonneutral-cross-dependency"
+        },
+        {
+          "actual_fractional_eigenvalues": [
+            0.3333333333333323,
+            0.333333333333333,
+            0.4444444444444442,
+            0.6666666666666653,
+            0.6666666666666674
+          ],
+          "common_range_dimension": 5,
+          "cross_dependency_dimension": 5,
+          "dependency_predicted_fractional_eigenvalues": [
+            0.3333333333333329,
+            0.3333333333333333,
+            0.4444444444444443,
+            0.6666666666666665,
+            0.6666666666666669
+          ],
+          "dependency_to_common_range_dimension_residual": 0,
+          "exact_dependency_quotient_theorem_verified": true,
+          "grading_neutral": false,
+          "grading_neutrality_residual": 0.3333333333333338,
+          "left_coefficient_dimension": 9,
+          "left_synthesis_rank": 8,
+          "maximum_dependency_subspace_residual": 3.262075265230266e-15,
+          "maximum_fractional_spectrum_residual": 1.2212453270876722e-15,
+          "record_id": "W3-REPEATED-LABEL-FALSIFIER-W4-0-2-5-7-1-3-4-6",
+          "right_coefficient_dimension": 12,
+          "right_synthesis_rank": 10,
+          "status": "exact-nonneutral-cross-dependency"
+        },
+        {
+          "actual_fractional_eigenvalues": [
+            0.33333333333333337,
+            0.3333333333333339,
+            0.44444444444444486,
+            0.6666666666666666,
+            0.6666666666666681
+          ],
+          "common_range_dimension": 5,
+          "cross_dependency_dimension": 5,
+          "dependency_predicted_fractional_eigenvalues": [
+            0.33333333333333337,
+            0.33333333333333354,
+            0.44444444444444425,
+            0.6666666666666665,
+            0.6666666666666666
+          ],
+          "dependency_to_common_range_dimension_residual": 0,
+          "exact_dependency_quotient_theorem_verified": true,
+          "grading_neutral": false,
+          "grading_neutrality_residual": 0.33333333333333326,
+          "left_coefficient_dimension": 9,
+          "left_synthesis_rank": 8,
+          "maximum_dependency_subspace_residual": 7.031573585815978e-15,
+          "maximum_fractional_spectrum_residual": 1.4432899320127035e-15,
+          "record_id": "W3-REPEATED-LABEL-FALSIFIER-W4-0-3-4-7-1-2-5-6",
+          "right_coefficient_dimension": 12,
+          "right_synthesis_rank": 10,
+          "status": "exact-nonneutral-cross-dependency"
+        },
+        {
+          "actual_fractional_eigenvalues": [
+            0.5,
+            0.5000000000000001,
+            0.5000000000000018,
+            0.5000000000000032
+          ],
+          "common_range_dimension": 4,
+          "cross_dependency_dimension": 4,
+          "dependency_predicted_fractional_eigenvalues": [
+            0.4999999999999997,
+            0.4999999999999999,
+            0.5000000000000002,
+            0.5000000000000003
+          ],
+          "dependency_to_common_range_dimension_residual": 0,
+          "exact_dependency_quotient_theorem_verified": true,
+          "grading_neutral": true,
+          "grading_neutrality_residual": 6.533316326522211e-16,
+          "left_coefficient_dimension": 6,
+          "left_synthesis_rank": 6,
+          "maximum_dependency_subspace_residual": 1.621724275380124e-15,
+          "maximum_fractional_spectrum_residual": 2.886579864025407e-15,
+          "record_id": "W3-REPEATED-LABEL-FALSIFIER-W4-0-3-5-6-1-2-4-7",
+          "right_coefficient_dimension": 15,
+          "right_synthesis_rank": 11,
+          "status": "exact-neutral-cross-dependency"
+        }
+      ],
+      "status": "exact-nonneutral-cross-dependencies-present",
+      "target_partition": [
+        2,
+        1
+      ]
+    },
+    {
+      "control_id": "W5-COLLISION-FREE-3-2",
+      "exact_dependency_theorem_failure_count": 0,
+      "fractional_merge_count": 11,
+      "globally_distinct_source_partitions": true,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            4,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            2
+          ],
+          [
+            2,
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_dependency_subspace_residual": 5.148591881727714e-15,
+      "maximum_fractional_spectrum_residual": 3.885780586188048e-15,
+      "n": 5,
+      "neutral_fractional_merge_count": 11,
+      "nonneutral_fractional_merge_count": 0,
+      "records": [
+        {
+          "actual_fractional_eigenvalues": [
+            0.4999999999999989,
+            0.49999999999999956,
+            0.5000000000000002,
+            0.5000000000000011,
+            0.5000000000000022
+          ],
+          "common_range_dimension": 5,
+          "cross_dependency_dimension": 5,
+          "dependency_predicted_fractional_eigenvalues": [
+            0.49999999999999956,
+            0.4999999999999996,
+            0.4999999999999999,
+            0.5000000000000002,
+            0.5000000000000003
+          ],
+          "dependency_to_common_range_dimension_residual": 0,
+          "exact_dependency_quotient_theorem_verified": true,
+          "grading_neutral": true,
+          "grading_neutrality_residual": 8.696527235834729e-16,
+          "left_coefficient_dimension": 20,
+          "left_synthesis_rank": 20,
+          "maximum_dependency_subspace_residual": 2.421321497550569e-15,
+          "maximum_fractional_spectrum_residual": 1.887379141862766e-15,
+          "record_id": "W5-COLLISION-FREE-3-2-W1-3-6",
+          "right_coefficient_dimension": 80,
+          "right_synthesis_rank": 80,
+          "status": "exact-neutral-cross-dependency"
+        },
+        {
+          "actual_fractional_eigenvalues": [
+            0.4999999999999998,
+            0.5000000000000007,
+            0.5000000000000013,
+            0.5000000000000028,
+            0.5000000000000034
+          ],
+          "common_range_dimension": 5,
+          "cross_dependency_dimension": 5,
+          "dependency_predicted_fractional_eigenvalues": [
+            0.4999999999999998,
+            0.4999999999999999,
+            0.5,
+            0.5000000000000002,
+            0.5000000000000004
+          ],
+          "dependency_to_common_range_dimension_residual": 0,
+          "exact_dependency_quotient_theorem_verified": true,
+          "grading_neutral": true,
+          "grading_neutrality_residual": 8.699985568525599e-16,
+          "left_coefficient_dimension": 40,
+          "left_synthesis_rank": 40,
+          "maximum_dependency_subspace_residual": 3.693151713593279e-15,
+          "maximum_fractional_spectrum_residual": 2.9976021664879227e-15,
+          "record_id": "W5-COLLISION-FREE-3-2-W2-0-3-5-6",
+          "right_coefficient_dimension": 100,
+          "right_synthesis_rank": 100,
+          "status": "exact-neutral-cross-dependency"
+        },
+        {
+          "actual_fractional_eigenvalues": [
+            0.4999999999999983,
+            0.49999999999999895,
+            0.49999999999999956,
+            0.5000000000000003,
+            0.5000000000000014
+          ],
+          "common_range_dimension": 5,
+          "cross_dependency_dimension": 5,
+          "dependency_predicted_fractional_eigenvalues": [
+            0.4999999999999998,
+            0.49999999999999983,
+            0.5,
+            0.5000000000000001,
+            0.5000000000000002
+          ],
+          "dependency_to_common_range_dimension_residual": 0,
+          "exact_dependency_quotient_theorem_verified": true,
+          "grading_neutral": true,
+          "grading_neutrality_residual": 5.088264431600363e-16,
+          "left_coefficient_dimension": 100,
+          "left_synthesis_rank": 100,
+          "maximum_dependency_subspace_residual": 3.61630282465732e-15,
+          "maximum_fractional_spectrum_residual": 1.4988010832439613e-15,
+          "record_id": "W5-COLLISION-FREE-3-2-W2-0-6-3-5",
+          "right_coefficient_dimension": 40,
+          "right_synthesis_rank": 40,
+          "status": "exact-neutral-cross-dependency"
+        },
+        {
+          "actual_fractional_eigenvalues": [
+            0.4999999999999975,
+            0.4999999999999988,
+            0.49999999999999983,
+            0.5000000000000006,
+            0.5000000000000008
+          ],
+          "common_range_dimension": 5,
+          "cross_dependency_dimension": 5,
+          "dependency_predicted_fractional_eigenvalues": [
+            0.49999999999999906,
+            0.4999999999999996,
+            0.4999999999999998,
+            0.5000000000000001,
+            0.5000000000000002
+          ],
+          "dependency_to_common_range_dimension_residual": 0,
+          "exact_dependency_quotient_theorem_verified": true,
+          "grading_neutral": true,
+          "grading_neutrality_residual": 1.897343741269802e-15,
+          "left_coefficient_dimension": 35,
+          "left_synthesis_rank": 35,
+          "maximum_dependency_subspace_residual": 2.3979982197855437e-15,
+          "maximum_fractional_spectrum_residual": 1.5543122344752192e-15,
+          "record_id": "W5-COLLISION-FREE-3-2-W2-1-3-4-6",
+          "right_coefficient_dimension": 80,
+          "right_synthesis_rank": 80,
+          "status": "exact-neutral-cross-dependency"
+        },
+        {
+          "actual_fractional_eigenvalues": [
+            0.49999999999999817,
+            0.49999999999999867,
+            0.4999999999999994,
+            0.5000000000000004,
+            0.5000000000000007
+          ],
+          "common_range_dimension": 5,
+          "cross_dependency_dimension": 5,
+          "dependency_predicted_fractional_eigenvalues": [
+            0.49999999999999956,
+            0.49999999999999967,
+            0.4999999999999998,
+            0.5,
+            0.5000000000000002
+          ],
+          "dependency_to_common_range_dimension_residual": 0,
+          "exact_dependency_quotient_theorem_verified": true,
+          "grading_neutral": true,
+          "grading_neutrality_residual": 8.783195075570759e-16,
+          "left_coefficient_dimension": 95,
+          "left_synthesis_rank": 95,
+          "maximum_dependency_subspace_residual": 2.6516458182863436e-15,
+          "maximum_fractional_spectrum_residual": 1.3877787807814457e-15,
+          "record_id": "W5-COLLISION-FREE-3-2-W2-1-6-3-4",
+          "right_coefficient_dimension": 20,
+          "right_synthesis_rank": 20,
+          "status": "exact-neutral-cross-dependency"
+        },
+        {
+          "actual_fractional_eigenvalues": [
+            0.49999999999999856,
+            0.4999999999999989,
+            0.5000000000000003,
+            0.5000000000000009,
+            0.5000000000000018
+          ],
+          "common_range_dimension": 5,
+          "cross_dependency_dimension": 5,
+          "dependency_predicted_fractional_eigenvalues": [
+            0.4999999999999996,
+            0.49999999999999983,
+            0.5000000000000002,
+            0.5000000000000004,
+            0.5000000000000006
+          ],
+          "dependency_to_common_range_dimension_residual": 0,
+          "exact_dependency_quotient_theorem_verified": true,
+          "grading_neutral": true,
+          "grading_neutrality_residual": 1.0420986465998819e-15,
+          "left_coefficient_dimension": 40,
+          "left_synthesis_rank": 40,
+          "maximum_dependency_subspace_residual": 3.3062253310379892e-15,
+          "maximum_fractional_spectrum_residual": 1.2212453270876722e-15,
+          "record_id": "W5-COLLISION-FREE-3-2-W2-2-3-6-7",
+          "right_coefficient_dimension": 100,
+          "right_synthesis_rank": 100,
+          "status": "exact-neutral-cross-dependency"
+        },
+        {
+          "actual_fractional_eigenvalues": [
+            0.49999999999999784,
+            0.4999999999999993,
+            0.5,
+            0.5000000000000009,
+            0.5000000000000027
+          ],
+          "common_range_dimension": 5,
+          "cross_dependency_dimension": 5,
+          "dependency_predicted_fractional_eigenvalues": [
+            0.49999999999999956,
+            0.4999999999999996,
+            0.49999999999999983,
+            0.5,
+            0.5000000000000001
+          ],
+          "dependency_to_common_range_dimension_residual": 0,
+          "exact_dependency_quotient_theorem_verified": true,
+          "grading_neutral": true,
+          "grading_neutrality_residual": 8.840221924349601e-16,
+          "left_coefficient_dimension": 100,
+          "left_synthesis_rank": 100,
+          "maximum_dependency_subspace_residual": 3.407786391397549e-15,
+          "maximum_fractional_spectrum_residual": 2.55351295663786e-15,
+          "record_id": "W5-COLLISION-FREE-3-2-W2-2-6-3-7",
+          "right_coefficient_dimension": 40,
+          "right_synthesis_rank": 40,
+          "status": "exact-neutral-cross-dependency"
+        },
+        {
+          "actual_fractional_eigenvalues": [
+            0.49999999999999734,
+            0.5000000000000008,
+            0.500000000000002,
+            0.5000000000000021,
+            0.500000000000003
+          ],
+          "common_range_dimension": 5,
+          "cross_dependency_dimension": 5,
+          "dependency_predicted_fractional_eigenvalues": [
+            0.4999999999999997,
+            0.49999999999999994,
+            0.5,
+            0.5,
+            0.5000000000000003
+          ],
+          "dependency_to_common_range_dimension_residual": 0,
+          "exact_dependency_quotient_theorem_verified": true,
+          "grading_neutral": true,
+          "grading_neutrality_residual": 6.740767242443753e-16,
+          "left_coefficient_dimension": 75,
+          "left_synthesis_rank": 75,
+          "maximum_dependency_subspace_residual": 4.11698099046333e-15,
+          "maximum_fractional_spectrum_residual": 2.6645352591003757e-15,
+          "record_id": "W5-COLLISION-FREE-3-2-W4-0-1-2-3-4-5-6-7",
+          "right_coefficient_dimension": 120,
+          "right_synthesis_rank": 120,
+          "status": "exact-neutral-cross-dependency"
+        },
+        {
+          "actual_fractional_eigenvalues": [
+            0.5000000000000007,
+            0.5000000000000009,
+            0.500000000000002,
+            0.5000000000000031,
+            0.5000000000000041
+          ],
+          "common_range_dimension": 5,
+          "cross_dependency_dimension": 5,
+          "dependency_predicted_fractional_eigenvalues": [
+            0.49999999999999967,
+            0.49999999999999983,
+            0.4999999999999999,
+            0.5,
+            0.5000000000000002
+          ],
+          "dependency_to_common_range_dimension_residual": 0,
+          "exact_dependency_quotient_theorem_verified": true,
+          "grading_neutral": true,
+          "grading_neutrality_residual": 6.492017282314498e-16,
+          "left_coefficient_dimension": 135,
+          "left_synthesis_rank": 135,
+          "maximum_dependency_subspace_residual": 4.230496860204331e-15,
+          "maximum_fractional_spectrum_residual": 3.885780586188048e-15,
+          "record_id": "W5-COLLISION-FREE-3-2-W4-0-1-6-7-2-3-4-5",
+          "right_coefficient_dimension": 60,
+          "right_synthesis_rank": 60,
+          "status": "exact-neutral-cross-dependency"
+        },
+        {
+          "actual_fractional_eigenvalues": [
+            0.49999999999999917,
+            0.5,
+            0.5000000000000013,
+            0.500000000000002,
+            0.5000000000000023
+          ],
+          "common_range_dimension": 5,
+          "cross_dependency_dimension": 5,
+          "dependency_predicted_fractional_eigenvalues": [
+            0.4999999999999997,
+            0.5,
+            0.5000000000000002,
+            0.5000000000000002,
+            0.5000000000000003
+          ],
+          "dependency_to_common_range_dimension_residual": 0,
+          "exact_dependency_quotient_theorem_verified": true,
+          "grading_neutral": true,
+          "grading_neutrality_residual": 5.66441191998343e-16,
+          "left_coefficient_dimension": 120,
+          "left_synthesis_rank": 120,
+          "maximum_dependency_subspace_residual": 5.148591881727714e-15,
+          "maximum_fractional_spectrum_residual": 1.9984014443252818e-15,
+          "record_id": "W5-COLLISION-FREE-3-2-W4-0-2-4-6-1-3-5-7",
+          "right_coefficient_dimension": 75,
+          "right_synthesis_rank": 75,
+          "status": "exact-neutral-cross-dependency"
+        },
+        {
+          "actual_fractional_eigenvalues": [
+            0.49999999999999867,
+            0.49999999999999944,
+            0.4999999999999999,
+            0.5000000000000008,
+            0.5000000000000013
+          ],
+          "common_range_dimension": 5,
+          "cross_dependency_dimension": 5,
+          "dependency_predicted_fractional_eigenvalues": [
+            0.4999999999999997,
+            0.4999999999999999,
+            0.49999999999999994,
+            0.5000000000000001,
+            0.5000000000000003
+          ],
+          "dependency_to_common_range_dimension_residual": 0,
+          "exact_dependency_quotient_theorem_verified": true,
+          "grading_neutral": true,
+          "grading_neutrality_residual": 6.654208816236683e-16,
+          "left_coefficient_dimension": 60,
+          "left_synthesis_rank": 60,
+          "maximum_dependency_subspace_residual": 4.042359167424619e-15,
+          "maximum_fractional_spectrum_residual": 1.0547118733938987e-15,
+          "record_id": "W5-COLLISION-FREE-3-2-W4-0-3-4-7-1-2-5-6",
+          "right_coefficient_dimension": 135,
+          "right_synthesis_rank": 135,
+          "status": "exact-neutral-cross-dependency"
+        }
+      ],
+      "status": "all-cross-dependencies-neutral",
+      "target_partition": [
+        3,
+        2
+      ]
+    }
+  ]
+}

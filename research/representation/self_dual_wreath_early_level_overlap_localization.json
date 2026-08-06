@@ -1,0 +1,2673 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Many small pairwise angles can create an early intersection anyway.",
+      "resolution": "Not before m reaches n/2 under the exact 1/(n-1) pairwise bound and the no-common-range premise.",
+      "resolved": true
+    },
+    {
+      "objection": "The theorem handles the natural portfolio directly.",
+      "resolution": "No. Exact common ranges proliferate in the natural scaling records, so a common-core resolver is a prerequisite.",
+      "resolved": false
+    },
+    {
+      "objection": "Logarithmic certified depth covers the full k=Theta(n log n) tree.",
+      "resolution": "It covers only the first O(log n) levels. The majority of the tree has linear or larger child width.",
+      "resolved": false
+    },
+    {
+      "objection": "Pairwise common generation of every intersection is now proved.",
+      "resolution": "The theorem says emergent intersections require exact common ranges at early width; it does not prove those ranges span the full child intersection after quotienting.",
+      "resolved": false
+    }
+  ],
+  "claim_gate": {
+    "all_tree_levels_controlled": false,
+    "coherent_exact_common_range_resolver_proved": false,
+    "common_free_emergent_intersections_excluded_below_half_n_width": true,
+    "early_fractional_channels_require_exact_common_ranges": true,
+    "hierarchical_polar_sampler_polynomial": false,
+    "linear_and_larger_child_width_controlled": false,
+    "reason": "Noncommon correlations cannot create early fractional channels, but exact common ranges are prevalent and widths from Theta(n) through n! remain uncontrolled.",
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-06T01:58:49.275382+00:00",
+  "falsifiers_triggered": [
+    "Do not search for emergent noncommon intersections at constant or sublinear child width before resolving exact common ranges.",
+    "Do not extrapolate the coherence bound beyond m<n/2.",
+    "Do not call early-level localization a full sampler without a coherent common-range decomposition and large-width theorem."
+  ],
+  "headline_metrics": {
+    "block_gram_span_correlation_bound_theorem_count": 1,
+    "common_free_early_overlap_exclusion_theorem_count": 1,
+    "exact_common_range_resolver_count": 0,
+    "global_nonorthogonal_sampler_count": 0,
+    "linear_width_overlap_theorem_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "polynomial_hidden_permutation_decoder_count": 0,
+    "synthetic_control_count": 3,
+    "synthetic_validation_failure_count": 0,
+    "tail_certified_common_free_merge_level_count": 8,
+    "tail_maximum_certified_child_leaf_count": 255,
+    "tail_n": 512,
+    "tail_total_orientation_tree_depth": 3876,
+    "w5_applicable_common_free_control_count": 45,
+    "w5_applicable_validation_failure_count": 0,
+    "w5_control_count": 48,
+    "w5_exact_common_range_control_count": 3
+  },
+  "proof_obligations": [
+    {
+      "obligation": "block_gram_coherence_bound",
+      "resolution": "Block row-sum bounds control child conditioning and the cross Gram; orthonormalization yields equation (1).",
+      "resolved": true
+    },
+    {
+      "obligation": "wreath_pair_angle_substitution",
+      "resolution": "The exact pair-angle theorem supplies c<=1/(n-1) whenever the pair has no exact trivial/sign common range.",
+      "resolved": true
+    },
+    {
+      "obligation": "finite_w5_common_free_controls",
+      "resolution": "Every applicable curated W5 four-leaf control has zero child-span intersection.",
+      "resolved": true
+    },
+    {
+      "obligation": "coherent_exact_common_range_resolver",
+      "resolution": "Natural families have many exact common ranges; no circuit yet decomposes all of them before applying the bound.",
+      "resolved": false
+    },
+    {
+      "obligation": "linear_width_overlap_theorem",
+      "resolution": "At m=Theta(n), accumulated noncommon correlations can make the coherence bound reach one.",
+      "resolved": false
+    }
+  ],
+  "scaling_records": [
+    {
+      "certified_common_free_merge_level_count": 2,
+      "certified_level_fraction": 0.2857142857142857,
+      "common_free_emergent_intersection_excluded": true,
+      "exact_common_range_resolver_proved": false,
+      "information_threshold_copy_count": 7,
+      "linear_width_and_larger_overlap_controlled": false,
+      "maximum_certified_child_leaf_count": 2,
+      "maximum_certified_power_of_two_child_leaf_count": 2,
+      "n": 5,
+      "status": "common-free-overlap-excluded-through-logarithmic-depth",
+      "total_orientation_tree_depth": 7
+    },
+    {
+      "certified_common_free_merge_level_count": 2,
+      "certified_level_fraction": 0.125,
+      "common_free_emergent_intersection_excluded": true,
+      "exact_common_range_resolver_proved": false,
+      "information_threshold_copy_count": 16,
+      "linear_width_and_larger_overlap_controlled": false,
+      "maximum_certified_child_leaf_count": 3,
+      "maximum_certified_power_of_two_child_leaf_count": 2,
+      "n": 8,
+      "status": "common-free-overlap-excluded-through-logarithmic-depth",
+      "total_orientation_tree_depth": 16
+    },
+    {
+      "certified_common_free_merge_level_count": 3,
+      "certified_level_fraction": 0.06666666666666667,
+      "common_free_emergent_intersection_excluded": true,
+      "exact_common_range_resolver_proved": false,
+      "information_threshold_copy_count": 45,
+      "linear_width_and_larger_overlap_controlled": false,
+      "maximum_certified_child_leaf_count": 7,
+      "maximum_certified_power_of_two_child_leaf_count": 4,
+      "n": 16,
+      "status": "common-free-overlap-excluded-through-logarithmic-depth",
+      "total_orientation_tree_depth": 45
+    },
+    {
+      "certified_common_free_merge_level_count": 4,
+      "certified_level_fraction": 0.03389830508474576,
+      "common_free_emergent_intersection_excluded": true,
+      "exact_common_range_resolver_proved": false,
+      "information_threshold_copy_count": 118,
+      "linear_width_and_larger_overlap_controlled": false,
+      "maximum_certified_child_leaf_count": 15,
+      "maximum_certified_power_of_two_child_leaf_count": 8,
+      "n": 32,
+      "status": "common-free-overlap-excluded-through-logarithmic-depth",
+      "total_orientation_tree_depth": 118
+    },
+    {
+      "certified_common_free_merge_level_count": 5,
+      "certified_level_fraction": 0.016891891891891893,
+      "common_free_emergent_intersection_excluded": true,
+      "exact_common_range_resolver_proved": false,
+      "information_threshold_copy_count": 296,
+      "linear_width_and_larger_overlap_controlled": false,
+      "maximum_certified_child_leaf_count": 31,
+      "maximum_certified_power_of_two_child_leaf_count": 16,
+      "n": 64,
+      "status": "common-free-overlap-excluded-through-logarithmic-depth",
+      "total_orientation_tree_depth": 296
+    },
+    {
+      "certified_common_free_merge_level_count": 6,
+      "certified_level_fraction": 0.008368200836820083,
+      "common_free_emergent_intersection_excluded": true,
+      "exact_common_range_resolver_proved": false,
+      "information_threshold_copy_count": 717,
+      "linear_width_and_larger_overlap_controlled": false,
+      "maximum_certified_child_leaf_count": 63,
+      "maximum_certified_power_of_two_child_leaf_count": 32,
+      "n": 128,
+      "status": "common-free-overlap-excluded-through-logarithmic-depth",
+      "total_orientation_tree_depth": 717
+    },
+    {
+      "certified_common_free_merge_level_count": 7,
+      "certified_level_fraction": 0.004156769596199525,
+      "common_free_emergent_intersection_excluded": true,
+      "exact_common_range_resolver_proved": false,
+      "information_threshold_copy_count": 1684,
+      "linear_width_and_larger_overlap_controlled": false,
+      "maximum_certified_child_leaf_count": 127,
+      "maximum_certified_power_of_two_child_leaf_count": 64,
+      "n": 256,
+      "status": "common-free-overlap-excluded-through-logarithmic-depth",
+      "total_orientation_tree_depth": 1684
+    },
+    {
+      "certified_common_free_merge_level_count": 8,
+      "certified_level_fraction": 0.0020639834881320948,
+      "common_free_emergent_intersection_excluded": true,
+      "exact_common_range_resolver_proved": false,
+      "information_threshold_copy_count": 3876,
+      "linear_width_and_larger_overlap_controlled": false,
+      "maximum_certified_child_leaf_count": 255,
+      "maximum_certified_power_of_two_child_leaf_count": 128,
+      "n": 512,
+      "status": "common-free-overlap-excluded-through-logarithmic-depth",
+      "total_orientation_tree_depth": 3876
+    }
+  ],
+  "status": "common-free-overlap-excluded-early-common-resolver-open",
+  "summary": "Proved that common-free orientation families cannot develop child-span intersections while each child has fewer than n/2 leaves. This localizes early fractional channels to exact common ranges; linear-width overlap and a coherent common-range resolver remain open.",
+  "synthetic_controls": [
+    {
+      "child_gram_minimum_eigenvalue_lower_bound": 1.0,
+      "child_range_intersection_dimension": 0,
+      "child_span_correlation_upper_bound": 0.6081471067386487,
+      "coherence_bound_verified": true,
+      "control_id": "gaussian-subspaces-m-1",
+      "cross_child_gram_norm_upper_bound": 0.6081471067386487,
+      "exact_child_span_correlation": 0.6081471067386489,
+      "leaves_per_child": 1,
+      "pairwise_correlation_upper_bound": 0.6081471067386487,
+      "status": "coherence-bound-excludes-child-intersection",
+      "strict_below_one": true
+    },
+    {
+      "child_gram_minimum_eigenvalue_lower_bound": 0.5447174383647136,
+      "child_range_intersection_dimension": 0,
+      "child_span_correlation_upper_bound": 1.6716283693875558,
+      "coherence_bound_verified": true,
+      "control_id": "gaussian-subspaces-m-2",
+      "cross_child_gram_norm_upper_bound": 0.9105651232705727,
+      "exact_child_span_correlation": 0.6227971558056404,
+      "leaves_per_child": 2,
+      "pairwise_correlation_upper_bound": 0.45528256163528635,
+      "status": "coherence-bound-verified-vacuous",
+      "strict_below_one": false
+    },
+    {
+      "child_gram_minimum_eigenvalue_lower_bound": 0.008813311654931377,
+      "child_range_intersection_dimension": 0,
+      "child_span_correlation_upper_bound": 149.952969198279,
+      "coherence_bound_verified": true,
+      "control_id": "gaussian-subspaces-m-4",
+      "cross_child_gram_norm_upper_bound": 1.321582251126758,
+      "exact_child_span_correlation": 0.5640708938481972,
+      "leaves_per_child": 4,
+      "pairwise_correlation_upper_bound": 0.3303955627816895,
+      "status": "coherence-bound-verified-vacuous",
+      "strict_below_one": false
+    }
+  ],
+  "theorem_contract": {
+    "child_gram_bound": "lambda_min(G_child)>=1-(m-1)c.",
+    "cross_gram_bound": "||G_LR||<=m c by the block Schur test.",
+    "pairwise_premise": "Every distinct leaf pair has zero common range and principal correlation at most c.",
+    "polar_consequence": "At common-free early nodes the relative effect has only exact endpoint channels; no fractional intersection can emerge.",
+    "scope": "The theorem is conditional on removing/resolving all exact pairwise common ranges and becomes vacuous at linear child width.",
+    "span_correlation_bound": "||Pi_L Pi_R||<=m c/[1-(m-1)c].",
+    "wreath_substitution": "With c=1/(n-1), the bound is m/(n-m), strictly below one for m<n/2."
+  },
+  "wreath_controls": [
+    {
+      "active_leaf_count": 1,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W5-0-3-1-1-PAIRING-0",
+      "exact_common_free_overlap_exclusion_verified": true,
+      "exact_pairwise_common_range_count": 0,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            4,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        1
+      ],
+      "maximum_noncommon_pair_correlation": 0.0,
+      "n": 5,
+      "right_orientation_masks": [
+        2,
+        3
+      ],
+      "status": "common-free-child-intersection-excluded",
+      "target_partition": [
+        3,
+        1,
+        1
+      ],
+      "theorem_predicted_zero_intersection": true,
+      "theorem_premise_common_free": true
+    },
+    {
+      "active_leaf_count": 1,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W5-0-3-1-1-PAIRING-1",
+      "exact_common_free_overlap_exclusion_verified": true,
+      "exact_pairwise_common_range_count": 0,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            4,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        2
+      ],
+      "maximum_noncommon_pair_correlation": 0.0,
+      "n": 5,
+      "right_orientation_masks": [
+        1,
+        3
+      ],
+      "status": "common-free-child-intersection-excluded",
+      "target_partition": [
+        3,
+        1,
+        1
+      ],
+      "theorem_predicted_zero_intersection": true,
+      "theorem_premise_common_free": true
+    },
+    {
+      "active_leaf_count": 1,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W5-0-3-1-1-PAIRING-2",
+      "exact_common_free_overlap_exclusion_verified": true,
+      "exact_pairwise_common_range_count": 0,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            4,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        3
+      ],
+      "maximum_noncommon_pair_correlation": 0.0,
+      "n": 5,
+      "right_orientation_masks": [
+        1,
+        2
+      ],
+      "status": "common-free-child-intersection-excluded",
+      "target_partition": [
+        3,
+        1,
+        1
+      ],
+      "theorem_predicted_zero_intersection": true,
+      "theorem_premise_common_free": true
+    },
+    {
+      "active_leaf_count": 1,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W5-0-2-2-1-PAIRING-0",
+      "exact_common_free_overlap_exclusion_verified": true,
+      "exact_pairwise_common_range_count": 0,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            4,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        1
+      ],
+      "maximum_noncommon_pair_correlation": 0.0,
+      "n": 5,
+      "right_orientation_masks": [
+        2,
+        3
+      ],
+      "status": "common-free-child-intersection-excluded",
+      "target_partition": [
+        2,
+        2,
+        1
+      ],
+      "theorem_predicted_zero_intersection": true,
+      "theorem_premise_common_free": true
+    },
+    {
+      "active_leaf_count": 1,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W5-0-2-2-1-PAIRING-1",
+      "exact_common_free_overlap_exclusion_verified": true,
+      "exact_pairwise_common_range_count": 0,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            4,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        2
+      ],
+      "maximum_noncommon_pair_correlation": 0.0,
+      "n": 5,
+      "right_orientation_masks": [
+        1,
+        3
+      ],
+      "status": "common-free-child-intersection-excluded",
+      "target_partition": [
+        2,
+        2,
+        1
+      ],
+      "theorem_predicted_zero_intersection": true,
+      "theorem_premise_common_free": true
+    },
+    {
+      "active_leaf_count": 1,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W5-0-2-2-1-PAIRING-2",
+      "exact_common_free_overlap_exclusion_verified": true,
+      "exact_pairwise_common_range_count": 0,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            4,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        3
+      ],
+      "maximum_noncommon_pair_correlation": 0.0,
+      "n": 5,
+      "right_orientation_masks": [
+        1,
+        2
+      ],
+      "status": "common-free-child-intersection-excluded",
+      "target_partition": [
+        2,
+        2,
+        1
+      ],
+      "theorem_predicted_zero_intersection": true,
+      "theorem_premise_common_free": true
+    },
+    {
+      "active_leaf_count": 3,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W5-0-2-1-1-1-PAIRING-0",
+      "exact_common_free_overlap_exclusion_verified": true,
+      "exact_pairwise_common_range_count": 0,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            4,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        1
+      ],
+      "maximum_noncommon_pair_correlation": 0.25000000000000017,
+      "n": 5,
+      "right_orientation_masks": [
+        2,
+        3
+      ],
+      "status": "common-free-child-intersection-excluded",
+      "target_partition": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "theorem_predicted_zero_intersection": true,
+      "theorem_premise_common_free": true
+    },
+    {
+      "active_leaf_count": 3,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W5-0-2-1-1-1-PAIRING-1",
+      "exact_common_free_overlap_exclusion_verified": true,
+      "exact_pairwise_common_range_count": 0,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            4,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        2
+      ],
+      "maximum_noncommon_pair_correlation": 0.25000000000000017,
+      "n": 5,
+      "right_orientation_masks": [
+        1,
+        3
+      ],
+      "status": "common-free-child-intersection-excluded",
+      "target_partition": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "theorem_predicted_zero_intersection": true,
+      "theorem_premise_common_free": true
+    },
+    {
+      "active_leaf_count": 3,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W5-0-2-1-1-1-PAIRING-2",
+      "exact_common_free_overlap_exclusion_verified": true,
+      "exact_pairwise_common_range_count": 0,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            4,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        3
+      ],
+      "maximum_noncommon_pair_correlation": 0.25000000000000017,
+      "n": 5,
+      "right_orientation_masks": [
+        1,
+        2
+      ],
+      "status": "common-free-child-intersection-excluded",
+      "target_partition": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "theorem_predicted_zero_intersection": true,
+      "theorem_premise_common_free": true
+    },
+    {
+      "active_leaf_count": 2,
+      "child_range_intersection_dimension": 1,
+      "control_id": "W5-0-1-1-1-1-1-PAIRING-0",
+      "exact_common_free_overlap_exclusion_verified": true,
+      "exact_pairwise_common_range_count": 1,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            4,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        1
+      ],
+      "maximum_noncommon_pair_correlation": 0.0,
+      "n": 5,
+      "right_orientation_masks": [
+        2,
+        3
+      ],
+      "status": "exact-common-range-premise-fails",
+      "target_partition": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "theorem_predicted_zero_intersection": false,
+      "theorem_premise_common_free": false
+    },
+    {
+      "active_leaf_count": 2,
+      "child_range_intersection_dimension": 1,
+      "control_id": "W5-0-1-1-1-1-1-PAIRING-1",
+      "exact_common_free_overlap_exclusion_verified": true,
+      "exact_pairwise_common_range_count": 1,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            4,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        2
+      ],
+      "maximum_noncommon_pair_correlation": 0.0,
+      "n": 5,
+      "right_orientation_masks": [
+        1,
+        3
+      ],
+      "status": "exact-common-range-premise-fails",
+      "target_partition": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "theorem_predicted_zero_intersection": false,
+      "theorem_premise_common_free": false
+    },
+    {
+      "active_leaf_count": 2,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W5-0-1-1-1-1-1-PAIRING-2",
+      "exact_common_free_overlap_exclusion_verified": true,
+      "exact_pairwise_common_range_count": 1,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            4,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        3
+      ],
+      "maximum_noncommon_pair_correlation": 0.0,
+      "n": 5,
+      "right_orientation_masks": [
+        1,
+        2
+      ],
+      "status": "exact-common-range-premise-fails",
+      "target_partition": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "theorem_predicted_zero_intersection": false,
+      "theorem_premise_common_free": false
+    },
+    {
+      "active_leaf_count": 2,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W5-1-4-1-PAIRING-0",
+      "exact_common_free_overlap_exclusion_verified": true,
+      "exact_pairwise_common_range_count": 0,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            3,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            4,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        1
+      ],
+      "maximum_noncommon_pair_correlation": 8.239828648994561e-17,
+      "n": 5,
+      "right_orientation_masks": [
+        2,
+        3
+      ],
+      "status": "common-free-child-intersection-excluded",
+      "target_partition": [
+        4,
+        1
+      ],
+      "theorem_predicted_zero_intersection": true,
+      "theorem_premise_common_free": true
+    },
+    {
+      "active_leaf_count": 2,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W5-1-4-1-PAIRING-1",
+      "exact_common_free_overlap_exclusion_verified": true,
+      "exact_pairwise_common_range_count": 0,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            3,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            4,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        2
+      ],
+      "maximum_noncommon_pair_correlation": 8.239828648994561e-17,
+      "n": 5,
+      "right_orientation_masks": [
+        1,
+        3
+      ],
+      "status": "common-free-child-intersection-excluded",
+      "target_partition": [
+        4,
+        1
+      ],
+      "theorem_predicted_zero_intersection": true,
+      "theorem_premise_common_free": true
+    },
+    {
+      "active_leaf_count": 2,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W5-1-4-1-PAIRING-2",
+      "exact_common_free_overlap_exclusion_verified": true,
+      "exact_pairwise_common_range_count": 0,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            3,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            4,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        3
+      ],
+      "maximum_noncommon_pair_correlation": 8.239828648994561e-17,
+      "n": 5,
+      "right_orientation_masks": [
+        1,
+        2
+      ],
+      "status": "common-free-child-intersection-excluded",
+      "target_partition": [
+        4,
+        1
+      ],
+      "theorem_predicted_zero_intersection": true,
+      "theorem_premise_common_free": true
+    },
+    {
+      "active_leaf_count": 1,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W5-1-3-2-PAIRING-0",
+      "exact_common_free_overlap_exclusion_verified": true,
+      "exact_pairwise_common_range_count": 0,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            3,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            4,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        1
+      ],
+      "maximum_noncommon_pair_correlation": 0.0,
+      "n": 5,
+      "right_orientation_masks": [
+        2,
+        3
+      ],
+      "status": "common-free-child-intersection-excluded",
+      "target_partition": [
+        3,
+        2
+      ],
+      "theorem_predicted_zero_intersection": true,
+      "theorem_premise_common_free": true
+    },
+    {
+      "active_leaf_count": 1,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W5-1-3-2-PAIRING-1",
+      "exact_common_free_overlap_exclusion_verified": true,
+      "exact_pairwise_common_range_count": 0,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            3,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            4,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        2
+      ],
+      "maximum_noncommon_pair_correlation": 0.0,
+      "n": 5,
+      "right_orientation_masks": [
+        1,
+        3
+      ],
+      "status": "common-free-child-intersection-excluded",
+      "target_partition": [
+        3,
+        2
+      ],
+      "theorem_predicted_zero_intersection": true,
+      "theorem_premise_common_free": true
+    },
+    {
+      "active_leaf_count": 1,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W5-1-3-2-PAIRING-2",
+      "exact_common_free_overlap_exclusion_verified": true,
+      "exact_pairwise_common_range_count": 0,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            3,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            4,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        3
+      ],
+      "maximum_noncommon_pair_correlation": 0.0,
+      "n": 5,
+      "right_orientation_masks": [
+        1,
+        2
+      ],
+      "status": "common-free-child-intersection-excluded",
+      "target_partition": [
+        3,
+        2
+      ],
+      "theorem_predicted_zero_intersection": true,
+      "theorem_premise_common_free": true
+    },
+    {
+      "active_leaf_count": 2,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W5-1-3-1-1-PAIRING-0",
+      "exact_common_free_overlap_exclusion_verified": true,
+      "exact_pairwise_common_range_count": 0,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            3,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            4,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        1
+      ],
+      "maximum_noncommon_pair_correlation": 1.2923278511227394e-16,
+      "n": 5,
+      "right_orientation_masks": [
+        2,
+        3
+      ],
+      "status": "common-free-child-intersection-excluded",
+      "target_partition": [
+        3,
+        1,
+        1
+      ],
+      "theorem_predicted_zero_intersection": true,
+      "theorem_premise_common_free": true
+    },
+    {
+      "active_leaf_count": 2,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W5-1-3-1-1-PAIRING-1",
+      "exact_common_free_overlap_exclusion_verified": true,
+      "exact_pairwise_common_range_count": 0,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            3,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            4,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        2
+      ],
+      "maximum_noncommon_pair_correlation": 1.2923278511227394e-16,
+      "n": 5,
+      "right_orientation_masks": [
+        1,
+        3
+      ],
+      "status": "common-free-child-intersection-excluded",
+      "target_partition": [
+        3,
+        1,
+        1
+      ],
+      "theorem_predicted_zero_intersection": true,
+      "theorem_premise_common_free": true
+    },
+    {
+      "active_leaf_count": 2,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W5-1-3-1-1-PAIRING-2",
+      "exact_common_free_overlap_exclusion_verified": true,
+      "exact_pairwise_common_range_count": 0,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            3,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            4,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        3
+      ],
+      "maximum_noncommon_pair_correlation": 1.2923278511227394e-16,
+      "n": 5,
+      "right_orientation_masks": [
+        1,
+        2
+      ],
+      "status": "common-free-child-intersection-excluded",
+      "target_partition": [
+        3,
+        1,
+        1
+      ],
+      "theorem_predicted_zero_intersection": true,
+      "theorem_premise_common_free": true
+    },
+    {
+      "active_leaf_count": 1,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W5-1-2-2-1-PAIRING-0",
+      "exact_common_free_overlap_exclusion_verified": true,
+      "exact_pairwise_common_range_count": 0,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            3,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            4,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        1
+      ],
+      "maximum_noncommon_pair_correlation": 0.0,
+      "n": 5,
+      "right_orientation_masks": [
+        2,
+        3
+      ],
+      "status": "common-free-child-intersection-excluded",
+      "target_partition": [
+        2,
+        2,
+        1
+      ],
+      "theorem_predicted_zero_intersection": true,
+      "theorem_premise_common_free": true
+    },
+    {
+      "active_leaf_count": 1,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W5-1-2-2-1-PAIRING-1",
+      "exact_common_free_overlap_exclusion_verified": true,
+      "exact_pairwise_common_range_count": 0,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            3,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            4,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        2
+      ],
+      "maximum_noncommon_pair_correlation": 0.0,
+      "n": 5,
+      "right_orientation_masks": [
+        1,
+        3
+      ],
+      "status": "common-free-child-intersection-excluded",
+      "target_partition": [
+        2,
+        2,
+        1
+      ],
+      "theorem_predicted_zero_intersection": true,
+      "theorem_premise_common_free": true
+    },
+    {
+      "active_leaf_count": 1,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W5-1-2-2-1-PAIRING-2",
+      "exact_common_free_overlap_exclusion_verified": true,
+      "exact_pairwise_common_range_count": 0,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            3,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            4,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        3
+      ],
+      "maximum_noncommon_pair_correlation": 0.0,
+      "n": 5,
+      "right_orientation_masks": [
+        1,
+        2
+      ],
+      "status": "common-free-child-intersection-excluded",
+      "target_partition": [
+        2,
+        2,
+        1
+      ],
+      "theorem_predicted_zero_intersection": true,
+      "theorem_premise_common_free": true
+    },
+    {
+      "active_leaf_count": 1,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W5-1-2-1-1-1-PAIRING-0",
+      "exact_common_free_overlap_exclusion_verified": true,
+      "exact_pairwise_common_range_count": 0,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            3,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            4,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        1
+      ],
+      "maximum_noncommon_pair_correlation": 0.0,
+      "n": 5,
+      "right_orientation_masks": [
+        2,
+        3
+      ],
+      "status": "common-free-child-intersection-excluded",
+      "target_partition": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "theorem_predicted_zero_intersection": true,
+      "theorem_premise_common_free": true
+    },
+    {
+      "active_leaf_count": 1,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W5-1-2-1-1-1-PAIRING-1",
+      "exact_common_free_overlap_exclusion_verified": true,
+      "exact_pairwise_common_range_count": 0,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            3,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            4,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        2
+      ],
+      "maximum_noncommon_pair_correlation": 0.0,
+      "n": 5,
+      "right_orientation_masks": [
+        1,
+        3
+      ],
+      "status": "common-free-child-intersection-excluded",
+      "target_partition": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "theorem_predicted_zero_intersection": true,
+      "theorem_premise_common_free": true
+    },
+    {
+      "active_leaf_count": 1,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W5-1-2-1-1-1-PAIRING-2",
+      "exact_common_free_overlap_exclusion_verified": true,
+      "exact_pairwise_common_range_count": 0,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            3,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            4,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        3
+      ],
+      "maximum_noncommon_pair_correlation": 0.0,
+      "n": 5,
+      "right_orientation_masks": [
+        1,
+        2
+      ],
+      "status": "common-free-child-intersection-excluded",
+      "target_partition": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "theorem_predicted_zero_intersection": true,
+      "theorem_premise_common_free": true
+    },
+    {
+      "active_leaf_count": 1,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W5-1-1-1-1-1-1-PAIRING-0",
+      "exact_common_free_overlap_exclusion_verified": true,
+      "exact_pairwise_common_range_count": 0,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            3,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            4,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        1
+      ],
+      "maximum_noncommon_pair_correlation": 0.0,
+      "n": 5,
+      "right_orientation_masks": [
+        2,
+        3
+      ],
+      "status": "common-free-child-intersection-excluded",
+      "target_partition": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "theorem_predicted_zero_intersection": true,
+      "theorem_premise_common_free": true
+    },
+    {
+      "active_leaf_count": 1,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W5-1-1-1-1-1-1-PAIRING-1",
+      "exact_common_free_overlap_exclusion_verified": true,
+      "exact_pairwise_common_range_count": 0,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            3,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            4,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        2
+      ],
+      "maximum_noncommon_pair_correlation": 0.0,
+      "n": 5,
+      "right_orientation_masks": [
+        1,
+        3
+      ],
+      "status": "common-free-child-intersection-excluded",
+      "target_partition": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "theorem_predicted_zero_intersection": true,
+      "theorem_premise_common_free": true
+    },
+    {
+      "active_leaf_count": 1,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W5-1-1-1-1-1-1-PAIRING-2",
+      "exact_common_free_overlap_exclusion_verified": true,
+      "exact_pairwise_common_range_count": 0,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            3,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            4,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        3
+      ],
+      "maximum_noncommon_pair_correlation": 0.0,
+      "n": 5,
+      "right_orientation_masks": [
+        1,
+        2
+      ],
+      "status": "common-free-child-intersection-excluded",
+      "target_partition": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "theorem_predicted_zero_intersection": true,
+      "theorem_premise_common_free": true
+    },
+    {
+      "active_leaf_count": 1,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W5-2-4-1-PAIRING-0",
+      "exact_common_free_overlap_exclusion_verified": true,
+      "exact_pairwise_common_range_count": 0,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        1
+      ],
+      "maximum_noncommon_pair_correlation": 0.0,
+      "n": 5,
+      "right_orientation_masks": [
+        2,
+        3
+      ],
+      "status": "common-free-child-intersection-excluded",
+      "target_partition": [
+        4,
+        1
+      ],
+      "theorem_predicted_zero_intersection": true,
+      "theorem_premise_common_free": true
+    },
+    {
+      "active_leaf_count": 1,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W5-2-4-1-PAIRING-1",
+      "exact_common_free_overlap_exclusion_verified": true,
+      "exact_pairwise_common_range_count": 0,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        2
+      ],
+      "maximum_noncommon_pair_correlation": 0.0,
+      "n": 5,
+      "right_orientation_masks": [
+        1,
+        3
+      ],
+      "status": "common-free-child-intersection-excluded",
+      "target_partition": [
+        4,
+        1
+      ],
+      "theorem_predicted_zero_intersection": true,
+      "theorem_premise_common_free": true
+    },
+    {
+      "active_leaf_count": 1,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W5-2-4-1-PAIRING-2",
+      "exact_common_free_overlap_exclusion_verified": true,
+      "exact_pairwise_common_range_count": 0,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        3
+      ],
+      "maximum_noncommon_pair_correlation": 0.0,
+      "n": 5,
+      "right_orientation_masks": [
+        1,
+        2
+      ],
+      "status": "common-free-child-intersection-excluded",
+      "target_partition": [
+        4,
+        1
+      ],
+      "theorem_predicted_zero_intersection": true,
+      "theorem_premise_common_free": true
+    },
+    {
+      "active_leaf_count": 1,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W5-2-3-2-PAIRING-0",
+      "exact_common_free_overlap_exclusion_verified": true,
+      "exact_pairwise_common_range_count": 0,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        1
+      ],
+      "maximum_noncommon_pair_correlation": 0.0,
+      "n": 5,
+      "right_orientation_masks": [
+        2,
+        3
+      ],
+      "status": "common-free-child-intersection-excluded",
+      "target_partition": [
+        3,
+        2
+      ],
+      "theorem_predicted_zero_intersection": true,
+      "theorem_premise_common_free": true
+    },
+    {
+      "active_leaf_count": 1,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W5-2-3-2-PAIRING-1",
+      "exact_common_free_overlap_exclusion_verified": true,
+      "exact_pairwise_common_range_count": 0,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        2
+      ],
+      "maximum_noncommon_pair_correlation": 0.0,
+      "n": 5,
+      "right_orientation_masks": [
+        1,
+        3
+      ],
+      "status": "common-free-child-intersection-excluded",
+      "target_partition": [
+        3,
+        2
+      ],
+      "theorem_predicted_zero_intersection": true,
+      "theorem_premise_common_free": true
+    },
+    {
+      "active_leaf_count": 1,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W5-2-3-2-PAIRING-2",
+      "exact_common_free_overlap_exclusion_verified": true,
+      "exact_pairwise_common_range_count": 0,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        3
+      ],
+      "maximum_noncommon_pair_correlation": 0.0,
+      "n": 5,
+      "right_orientation_masks": [
+        1,
+        2
+      ],
+      "status": "common-free-child-intersection-excluded",
+      "target_partition": [
+        3,
+        2
+      ],
+      "theorem_predicted_zero_intersection": true,
+      "theorem_premise_common_free": true
+    },
+    {
+      "active_leaf_count": 2,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W5-2-3-1-1-PAIRING-0",
+      "exact_common_free_overlap_exclusion_verified": true,
+      "exact_pairwise_common_range_count": 0,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        1
+      ],
+      "maximum_noncommon_pair_correlation": 1.308596075859142e-16,
+      "n": 5,
+      "right_orientation_masks": [
+        2,
+        3
+      ],
+      "status": "common-free-child-intersection-excluded",
+      "target_partition": [
+        3,
+        1,
+        1
+      ],
+      "theorem_predicted_zero_intersection": true,
+      "theorem_premise_common_free": true
+    },
+    {
+      "active_leaf_count": 2,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W5-2-3-1-1-PAIRING-1",
+      "exact_common_free_overlap_exclusion_verified": true,
+      "exact_pairwise_common_range_count": 0,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        2
+      ],
+      "maximum_noncommon_pair_correlation": 1.308596075859142e-16,
+      "n": 5,
+      "right_orientation_masks": [
+        1,
+        3
+      ],
+      "status": "common-free-child-intersection-excluded",
+      "target_partition": [
+        3,
+        1,
+        1
+      ],
+      "theorem_predicted_zero_intersection": true,
+      "theorem_premise_common_free": true
+    },
+    {
+      "active_leaf_count": 2,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W5-2-3-1-1-PAIRING-2",
+      "exact_common_free_overlap_exclusion_verified": true,
+      "exact_pairwise_common_range_count": 0,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        3
+      ],
+      "maximum_noncommon_pair_correlation": 1.308596075859142e-16,
+      "n": 5,
+      "right_orientation_masks": [
+        1,
+        2
+      ],
+      "status": "common-free-child-intersection-excluded",
+      "target_partition": [
+        3,
+        1,
+        1
+      ],
+      "theorem_predicted_zero_intersection": true,
+      "theorem_premise_common_free": true
+    },
+    {
+      "active_leaf_count": 2,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W5-2-2-2-1-PAIRING-0",
+      "exact_common_free_overlap_exclusion_verified": true,
+      "exact_pairwise_common_range_count": 0,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        1
+      ],
+      "maximum_noncommon_pair_correlation": 2.4600773223332117e-17,
+      "n": 5,
+      "right_orientation_masks": [
+        2,
+        3
+      ],
+      "status": "common-free-child-intersection-excluded",
+      "target_partition": [
+        2,
+        2,
+        1
+      ],
+      "theorem_predicted_zero_intersection": true,
+      "theorem_premise_common_free": true
+    },
+    {
+      "active_leaf_count": 2,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W5-2-2-2-1-PAIRING-1",
+      "exact_common_free_overlap_exclusion_verified": true,
+      "exact_pairwise_common_range_count": 0,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        2
+      ],
+      "maximum_noncommon_pair_correlation": 2.4600773223332117e-17,
+      "n": 5,
+      "right_orientation_masks": [
+        1,
+        3
+      ],
+      "status": "common-free-child-intersection-excluded",
+      "target_partition": [
+        2,
+        2,
+        1
+      ],
+      "theorem_predicted_zero_intersection": true,
+      "theorem_premise_common_free": true
+    },
+    {
+      "active_leaf_count": 2,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W5-2-2-2-1-PAIRING-2",
+      "exact_common_free_overlap_exclusion_verified": true,
+      "exact_pairwise_common_range_count": 0,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        3
+      ],
+      "maximum_noncommon_pair_correlation": 2.4600773223332117e-17,
+      "n": 5,
+      "right_orientation_masks": [
+        1,
+        2
+      ],
+      "status": "common-free-child-intersection-excluded",
+      "target_partition": [
+        2,
+        2,
+        1
+      ],
+      "theorem_predicted_zero_intersection": true,
+      "theorem_premise_common_free": true
+    },
+    {
+      "active_leaf_count": 1,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W5-2-2-1-1-1-PAIRING-0",
+      "exact_common_free_overlap_exclusion_verified": true,
+      "exact_pairwise_common_range_count": 0,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        1
+      ],
+      "maximum_noncommon_pair_correlation": 0.0,
+      "n": 5,
+      "right_orientation_masks": [
+        2,
+        3
+      ],
+      "status": "common-free-child-intersection-excluded",
+      "target_partition": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "theorem_predicted_zero_intersection": true,
+      "theorem_premise_common_free": true
+    },
+    {
+      "active_leaf_count": 1,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W5-2-2-1-1-1-PAIRING-1",
+      "exact_common_free_overlap_exclusion_verified": true,
+      "exact_pairwise_common_range_count": 0,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        2
+      ],
+      "maximum_noncommon_pair_correlation": 0.0,
+      "n": 5,
+      "right_orientation_masks": [
+        1,
+        3
+      ],
+      "status": "common-free-child-intersection-excluded",
+      "target_partition": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "theorem_predicted_zero_intersection": true,
+      "theorem_premise_common_free": true
+    },
+    {
+      "active_leaf_count": 1,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W5-2-2-1-1-1-PAIRING-2",
+      "exact_common_free_overlap_exclusion_verified": true,
+      "exact_pairwise_common_range_count": 0,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        3
+      ],
+      "maximum_noncommon_pair_correlation": 0.0,
+      "n": 5,
+      "right_orientation_masks": [
+        1,
+        2
+      ],
+      "status": "common-free-child-intersection-excluded",
+      "target_partition": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "theorem_predicted_zero_intersection": true,
+      "theorem_premise_common_free": true
+    },
+    {
+      "active_leaf_count": 1,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W5-2-1-1-1-1-1-PAIRING-0",
+      "exact_common_free_overlap_exclusion_verified": true,
+      "exact_pairwise_common_range_count": 0,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        1
+      ],
+      "maximum_noncommon_pair_correlation": 0.0,
+      "n": 5,
+      "right_orientation_masks": [
+        2,
+        3
+      ],
+      "status": "common-free-child-intersection-excluded",
+      "target_partition": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "theorem_predicted_zero_intersection": true,
+      "theorem_premise_common_free": true
+    },
+    {
+      "active_leaf_count": 1,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W5-2-1-1-1-1-1-PAIRING-1",
+      "exact_common_free_overlap_exclusion_verified": true,
+      "exact_pairwise_common_range_count": 0,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        2
+      ],
+      "maximum_noncommon_pair_correlation": 0.0,
+      "n": 5,
+      "right_orientation_masks": [
+        1,
+        3
+      ],
+      "status": "common-free-child-intersection-excluded",
+      "target_partition": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "theorem_predicted_zero_intersection": true,
+      "theorem_premise_common_free": true
+    },
+    {
+      "active_leaf_count": 1,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W5-2-1-1-1-1-1-PAIRING-2",
+      "exact_common_free_overlap_exclusion_verified": true,
+      "exact_pairwise_common_range_count": 0,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        3
+      ],
+      "maximum_noncommon_pair_correlation": 0.0,
+      "n": 5,
+      "right_orientation_masks": [
+        1,
+        2
+      ],
+      "status": "common-free-child-intersection-excluded",
+      "target_partition": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "theorem_predicted_zero_intersection": true,
+      "theorem_premise_common_free": true
+    }
+  ]
+}

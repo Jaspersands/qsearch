@@ -1,0 +1,259 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "An eigenvalue 2^r in a projector sum forces 2^(r/2) amplification.",
+      "resolution": "Not with a relative tree aligned to the r common directions. Each level applies a known one-half conditional normalization.",
+      "resolved": true
+    },
+    {
+      "objection": "The common-core bypass also normalizes every quotient direction.",
+      "resolution": "It normalizes the H-subtree only. Quotient-coset intersections can introduce new relative effects.",
+      "resolved": false
+    },
+    {
+      "objection": "The old block incidence no-go still rules out any overlapping transform.",
+      "resolution": "False for this transform. The no-go concerns rejection of recurring cores; the polar tree retains and balances them.",
+      "resolved": true
+    },
+    {
+      "objection": "Balanced core weights provide the complete hidden-permutation decoder.",
+      "resolution": "They remove one normalization obstruction only. The full relative sampler, carrier transfer, and output decoder remain open.",
+      "resolved": false
+    }
+  ],
+  "claim_gate": {
+    "all_fractional_channels_resolved": false,
+    "block_common_core_balanced_by_aligned_relative_tree": true,
+    "exponential_common_core_spike_requires_exponential_amplification": false,
+    "hierarchical_polar_sampler_polynomial": false,
+    "quotient_coset_interactions_classified": false,
+    "reason": "The strongest existing common-core obstruction is exactly balanced by an aligned relative tree, but overlap channels outside the witnessed H-cosets remain unclassified.",
+    "recurring_block_incidence_is_hierarchical_polar_no_go": false,
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-06T01:53:31.353675+00:00",
+  "falsifiers_triggered": [
+    "Do not use the exponential block-common-core eigenvalue as a lower bound on aligned hierarchical-polar cost.",
+    "Do not carry local rejection-filter incidence no-gos over to a sampler that retains common cores and normalizes relative counts.",
+    "Do not claim a full bypass until quotient-coset intersections and all non-block overlap channels are classified."
+  ],
+  "finite_controls": [
+    {
+      "carrier_dimension": 4,
+      "common_core_dimension": 1,
+      "control_id": "synthetic-noncommuting-common-core-2",
+      "exact_balanced_common_core_tree_verified": true,
+      "internal_merge_count": 1,
+      "maximum_common_core_half_balance_residual": 1.1102230246251565e-16,
+      "maximum_relative_merge_isometry_residual": 2.220446049250313e-16,
+      "noncommuting_leaf_pair_count": 1,
+      "orientation_count": 2,
+      "status": "exact-balanced-common-core-polar-tree",
+      "tree_depth": 1
+    },
+    {
+      "carrier_dimension": 6,
+      "common_core_dimension": 1,
+      "control_id": "synthetic-noncommuting-common-core-4",
+      "exact_balanced_common_core_tree_verified": true,
+      "internal_merge_count": 3,
+      "maximum_common_core_half_balance_residual": 1.1102230246251565e-16,
+      "maximum_relative_merge_isometry_residual": 1.2991859481479331e-15,
+      "noncommuting_leaf_pair_count": 4,
+      "orientation_count": 4,
+      "status": "exact-balanced-common-core-polar-tree",
+      "tree_depth": 2
+    },
+    {
+      "carrier_dimension": 10,
+      "common_core_dimension": 1,
+      "control_id": "synthetic-noncommuting-common-core-8",
+      "exact_balanced_common_core_tree_verified": true,
+      "internal_merge_count": 7,
+      "maximum_common_core_half_balance_residual": 1.1102230246251565e-16,
+      "maximum_relative_merge_isometry_residual": 3.623874244806892e-15,
+      "noncommuting_leaf_pair_count": 8,
+      "orientation_count": 8,
+      "status": "exact-balanced-common-core-polar-tree",
+      "tree_depth": 3
+    },
+    {
+      "carrier_dimension": 18,
+      "common_core_dimension": 1,
+      "control_id": "synthetic-noncommuting-common-core-16",
+      "exact_balanced_common_core_tree_verified": true,
+      "internal_merge_count": 15,
+      "maximum_common_core_half_balance_residual": 1.1102230246251565e-16,
+      "maximum_relative_merge_isometry_residual": 4.26106930828568e-15,
+      "noncommuting_leaf_pair_count": 16,
+      "orientation_count": 16,
+      "status": "exact-balanced-common-core-polar-tree",
+      "tree_depth": 4
+    }
+  ],
+  "headline_metrics": {
+    "balanced_common_core_polar_bypass_theorem_count": 1,
+    "block_core_scaling_record_count": 6,
+    "block_core_witness_bypassed_count": 6,
+    "finite_noncommuting_common_core_control_count": 4,
+    "finite_validation_failure_count": 0,
+    "global_nonorthogonal_sampler_count": 0,
+    "maximum_common_core_half_balance_residual": 1.1102230246251565e-16,
+    "maximum_finite_tree_depth": 4,
+    "new_quantum_algorithm_count": 0,
+    "polynomial_hidden_permutation_decoder_count": 0,
+    "quotient_coset_classification_theorem_count": 0,
+    "tail_balanced_polar_tree_depth": 9,
+    "tail_block_count": 9,
+    "tail_common_orientation_family_size": 512,
+    "tail_n": 12,
+    "tail_projector_sum_spike_lower_bound": 512
+  },
+  "proof_obligations": [
+    {
+      "obligation": "balanced_common_core_relative_effect",
+      "resolution": "Counting the projectors in equal child families gives the exact scalar one-half effect on the shared core.",
+      "resolved": true
+    },
+    {
+      "obligation": "noncommuting_complement_robustness",
+      "resolution": "Synthetic controls have noncommuting leaf complements, yet the common core remains exactly balanced at every tree node.",
+      "resolved": true
+    },
+    {
+      "obligation": "block_common_core_reinterpretation",
+      "resolution": "Every existing 2^r block witness is an affine family and therefore has r exact half-balanced relative levels.",
+      "resolved": true
+    },
+    {
+      "obligation": "quotient_coset_merge_classification",
+      "resolution": "After the H directions are normalized, no theorem describes how their cores intersect across quotient cosets.",
+      "resolved": false
+    },
+    {
+      "obligation": "all_overlap_channels_exhausted_by_block_cores",
+      "resolution": "The block witness certifies some intersections but does not prove that every fractional relative channel has this form.",
+      "resolved": false
+    }
+  ],
+  "scaling_records": [
+    {
+      "averaged_frame_spike_lower_bound": 0.03125,
+      "balanced_polar_tree_depth": 2,
+      "block_common_core_is_hierarchical_polar_obstruction": false,
+      "block_count": 2,
+      "common_core_dimension_lower_bound": 30,
+      "common_orientation_family_size": 4,
+      "copy_count": 7,
+      "exponential_absolute_spike_present": true,
+      "factorial_or_exponential_amplification_on_witness_core_required": false,
+      "maximum_conditional_branch_probability_on_core": 0.5,
+      "minimum_conditional_branch_probability_on_core": 0.5,
+      "n": 7,
+      "projector_sum_spike_lower_bound": 4,
+      "quotient_coset_interactions_resolved": false,
+      "relative_effect_on_witness_core": 0.5,
+      "status": "exponential-spike-balanced-by-aligned-polar-tree"
+    },
+    {
+      "averaged_frame_spike_lower_bound": 0.00390625,
+      "balanced_polar_tree_depth": 3,
+      "block_common_core_is_hierarchical_polar_obstruction": false,
+      "block_count": 3,
+      "common_core_dimension_lower_bound": 17850,
+      "common_orientation_family_size": 8,
+      "copy_count": 11,
+      "exponential_absolute_spike_present": true,
+      "factorial_or_exponential_amplification_on_witness_core_required": false,
+      "maximum_conditional_branch_probability_on_core": 0.5,
+      "minimum_conditional_branch_probability_on_core": 0.5,
+      "n": 8,
+      "projector_sum_spike_lower_bound": 8,
+      "quotient_coset_interactions_resolved": false,
+      "relative_effect_on_witness_core": 0.5,
+      "status": "exponential-spike-balanced-by-aligned-polar-tree"
+    },
+    {
+      "averaged_frame_spike_lower_bound": 0.00048828125,
+      "balanced_polar_tree_depth": 4,
+      "block_common_core_is_hierarchical_polar_obstruction": false,
+      "block_count": 4,
+      "common_core_dimension_lower_bound": 13675006800,
+      "common_orientation_family_size": 16,
+      "copy_count": 15,
+      "exponential_absolute_spike_present": true,
+      "factorial_or_exponential_amplification_on_witness_core_required": false,
+      "maximum_conditional_branch_probability_on_core": 0.5,
+      "minimum_conditional_branch_probability_on_core": 0.5,
+      "n": 9,
+      "projector_sum_spike_lower_bound": 16,
+      "quotient_coset_interactions_resolved": false,
+      "relative_effect_on_witness_core": 0.5,
+      "status": "exponential-spike-balanced-by-aligned-polar-tree"
+    },
+    {
+      "averaged_frame_spike_lower_bound": 3.0517578125e-05,
+      "balanced_polar_tree_depth": 6,
+      "block_common_core_is_hierarchical_polar_obstruction": false,
+      "block_count": 6,
+      "common_core_dimension_lower_bound": 108866120126400,
+      "common_orientation_family_size": 64,
+      "copy_count": 21,
+      "exponential_absolute_spike_present": true,
+      "factorial_or_exponential_amplification_on_witness_core_required": false,
+      "maximum_conditional_branch_probability_on_core": 0.5,
+      "minimum_conditional_branch_probability_on_core": 0.5,
+      "n": 10,
+      "projector_sum_spike_lower_bound": 64,
+      "quotient_coset_interactions_resolved": false,
+      "relative_effect_on_witness_core": 0.5,
+      "status": "exponential-spike-balanced-by-aligned-polar-tree"
+    },
+    {
+      "averaged_frame_spike_lower_bound": 3.814697265625e-06,
+      "balanced_polar_tree_depth": 8,
+      "block_common_core_is_hierarchical_polar_obstruction": false,
+      "block_count": 8,
+      "common_core_dimension_lower_bound": 682683392090112000,
+      "common_orientation_family_size": 256,
+      "copy_count": 26,
+      "exponential_absolute_spike_present": true,
+      "factorial_or_exponential_amplification_on_witness_core_required": false,
+      "maximum_conditional_branch_probability_on_core": 0.5,
+      "minimum_conditional_branch_probability_on_core": 0.5,
+      "n": 11,
+      "projector_sum_spike_lower_bound": 256,
+      "quotient_coset_interactions_resolved": false,
+      "relative_effect_on_witness_core": 0.5,
+      "status": "exponential-spike-balanced-by-aligned-polar-tree"
+    },
+    {
+      "averaged_frame_spike_lower_bound": 9.5367431640625e-07,
+      "balanced_polar_tree_depth": 9,
+      "block_common_core_is_hierarchical_polar_obstruction": false,
+      "block_count": 9,
+      "common_core_dimension_lower_bound": 281310179504654431956148768604160,
+      "common_orientation_family_size": 512,
+      "copy_count": 29,
+      "exponential_absolute_spike_present": true,
+      "factorial_or_exponential_amplification_on_witness_core_required": false,
+      "maximum_conditional_branch_probability_on_core": 0.5,
+      "minimum_conditional_branch_probability_on_core": 0.5,
+      "n": 12,
+      "projector_sum_spike_lower_bound": 512,
+      "quotient_coset_interactions_resolved": false,
+      "relative_effect_on_witness_core": 0.5,
+      "status": "exponential-spike-balanced-by-aligned-polar-tree"
+    }
+  ],
+  "status": "block-common-core-obstruction-bypassed-quotient-overlaps-open",
+  "summary": "Proved that every exponential block-common-core witness is half-balanced at each aligned polar-tree level. This defeats the recurring-core argument as a no-go for hierarchical sampling; quotient-coset intersections are now the next obstruction target.",
+  "theorem_contract": {
+    "aligned_tree": "Choose a basis of H and merge along its nested balanced flag.",
+    "common_core": "E_h K=K for every h in one affine orientation family q+H.",
+    "interpretation": "The exponential common-core spike is hard for rejection and absolute normalization but easy for aligned relative sampling.",
+    "node_frames_on_core": "S_L|K=|L|I, S_R|K=|R|I, and S_T|K=(|L|+|R|)I.",
+    "relative_effect": "C_(L|T)|K=|L|/(|L|+|R|)I=I/2 at every balanced split.",
+    "scope": "The theorem handles the witnessed affine family inside each H-coset. Later merges across quotient cosets and all additional intersection channels remain unclassified."
+  }
+}

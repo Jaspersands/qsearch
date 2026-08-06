@@ -1,0 +1,309 @@
+{
+  "claim_gate": {
+    "dense_implicit_signed_observables_closed": false,
+    "exact_controls_pass": true,
+    "high_label_adaptive_signed_observables_closed": false,
+    "low_only_sparse_signed_exact_hit_observables_closed": true,
+    "nonlinear_signed_observables_closed": false,
+    "polynomial_witness_decoder_constructed": false,
+    "reason": "Signed weights chosen only from low data cannot rescue a polynomial support: their exact-hit indicators are conditionally pairwise independent and the support departs from its no-hit baseline with negligible probability. Full-label adaptive or dense implicit observables remain open.",
+    "reduced_basis_geometry_closed": false,
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-07-28T08:17:53.766388+00:00",
+  "exact_controls": [
+    {
+      "assignment_pair_count": 21,
+      "centered_mean": "0",
+      "centered_variance": "87/16",
+      "compatible_nonzero_assignment_count": 7,
+      "expected_centered_mean": "0",
+      "expected_centered_variance": "87/16",
+      "expected_joint_probability": "1/16",
+      "high_label_tuple_count": 256,
+      "high_modulus": 4,
+      "low_bits": 1,
+      "marginal_probability": "1/4",
+      "marginal_uniformity_failure_count": 0,
+      "mean_identity_verified": true,
+      "modulus_bits": 3,
+      "pairwise_independence_failure_count": 0,
+      "register_count": 4,
+      "variance_identity_verified": true
+    }
+  ],
+  "falsifiers_triggered": [
+    "Changing signs cannot increase the probability that a polynomially supported low-only exact-hit score departs from its no-hit baseline.",
+    "A finite signed exact-hit score selected from low data is governed by an exact conditional variance identity, not unexplained structure.",
+    "Low-bit conditioning does not create covariance between distinct nonzero Boolean high-equation hits.",
+    "The theorem cannot be cited against coefficients computed from full high labels, dense implicit contractions, or reduced-basis events."
+  ],
+  "headline_metrics": {
+    "conditional_pairwise_independence_theorem_count": 1,
+    "conditional_signed_variance_identity_theorem_count": 1,
+    "exact_assignment_pair_count": 21,
+    "exact_control_count": 1,
+    "exact_control_failure_count": 0,
+    "exact_high_label_tuple_count": 256,
+    "maximum_n_bits": 512,
+    "maximum_support_power": 8,
+    "maximum_tail_nonbaseline_deviation_probability_upper_bound": 1.8033161362862765e-130,
+    "polynomial_support_negligible_deviation_theorem_count": 1,
+    "polynomial_witness_decoder_count": 0,
+    "proved_dense_implicit_signed_obstruction_count": 0,
+    "proved_high_label_adaptive_signed_obstruction_count": 0,
+    "proved_nonlinear_signed_obstruction_count": 0,
+    "scaling_row_count": 20,
+    "unit_minor_theorem_count": 1
+  },
+  "rows": [
+    {
+      "exposed_low_bits": 5,
+      "finite_row_is_computational_lower_bound": false,
+      "high_modulus_bits": 27,
+      "inverse_polynomial_coverage_ruled_out_asymptotically": true,
+      "log2_nonbaseline_deviation_probability_upper_bound": -22.0,
+      "log2_support_upper_bound": 5.0,
+      "n_bits": 32,
+      "nonbaseline_deviation_probability_upper_bound": 2.384185791015625e-07,
+      "support_power": 1
+    },
+    {
+      "exposed_low_bits": 5,
+      "finite_row_is_computational_lower_bound": false,
+      "high_modulus_bits": 27,
+      "inverse_polynomial_coverage_ruled_out_asymptotically": true,
+      "log2_nonbaseline_deviation_probability_upper_bound": -17.0,
+      "log2_support_upper_bound": 10.0,
+      "n_bits": 32,
+      "nonbaseline_deviation_probability_upper_bound": 7.62939453125e-06,
+      "support_power": 2
+    },
+    {
+      "exposed_low_bits": 5,
+      "finite_row_is_computational_lower_bound": false,
+      "high_modulus_bits": 27,
+      "inverse_polynomial_coverage_ruled_out_asymptotically": true,
+      "log2_nonbaseline_deviation_probability_upper_bound": -7.0,
+      "log2_support_upper_bound": 20.0,
+      "n_bits": 32,
+      "nonbaseline_deviation_probability_upper_bound": 0.0078125,
+      "support_power": 4
+    },
+    {
+      "exposed_low_bits": 5,
+      "finite_row_is_computational_lower_bound": false,
+      "high_modulus_bits": 27,
+      "inverse_polynomial_coverage_ruled_out_asymptotically": true,
+      "log2_nonbaseline_deviation_probability_upper_bound": 0.0,
+      "log2_support_upper_bound": 40.0,
+      "n_bits": 32,
+      "nonbaseline_deviation_probability_upper_bound": 1.0,
+      "support_power": 8
+    },
+    {
+      "exposed_low_bits": 6,
+      "finite_row_is_computational_lower_bound": false,
+      "high_modulus_bits": 58,
+      "inverse_polynomial_coverage_ruled_out_asymptotically": true,
+      "log2_nonbaseline_deviation_probability_upper_bound": -52.0,
+      "log2_support_upper_bound": 6.0,
+      "n_bits": 64,
+      "nonbaseline_deviation_probability_upper_bound": 2.220446049250313e-16,
+      "support_power": 1
+    },
+    {
+      "exposed_low_bits": 6,
+      "finite_row_is_computational_lower_bound": false,
+      "high_modulus_bits": 58,
+      "inverse_polynomial_coverage_ruled_out_asymptotically": true,
+      "log2_nonbaseline_deviation_probability_upper_bound": -46.0,
+      "log2_support_upper_bound": 12.0,
+      "n_bits": 64,
+      "nonbaseline_deviation_probability_upper_bound": 1.4210854715202004e-14,
+      "support_power": 2
+    },
+    {
+      "exposed_low_bits": 6,
+      "finite_row_is_computational_lower_bound": false,
+      "high_modulus_bits": 58,
+      "inverse_polynomial_coverage_ruled_out_asymptotically": true,
+      "log2_nonbaseline_deviation_probability_upper_bound": -34.0,
+      "log2_support_upper_bound": 24.0,
+      "n_bits": 64,
+      "nonbaseline_deviation_probability_upper_bound": 5.820766091346741e-11,
+      "support_power": 4
+    },
+    {
+      "exposed_low_bits": 6,
+      "finite_row_is_computational_lower_bound": false,
+      "high_modulus_bits": 58,
+      "inverse_polynomial_coverage_ruled_out_asymptotically": true,
+      "log2_nonbaseline_deviation_probability_upper_bound": -10.0,
+      "log2_support_upper_bound": 48.0,
+      "n_bits": 64,
+      "nonbaseline_deviation_probability_upper_bound": 0.0009765625,
+      "support_power": 8
+    },
+    {
+      "exposed_low_bits": 7,
+      "finite_row_is_computational_lower_bound": false,
+      "high_modulus_bits": 121,
+      "inverse_polynomial_coverage_ruled_out_asymptotically": true,
+      "log2_nonbaseline_deviation_probability_upper_bound": -114.0,
+      "log2_support_upper_bound": 7.0,
+      "n_bits": 128,
+      "nonbaseline_deviation_probability_upper_bound": 4.81482486096809e-35,
+      "support_power": 1
+    },
+    {
+      "exposed_low_bits": 7,
+      "finite_row_is_computational_lower_bound": false,
+      "high_modulus_bits": 121,
+      "inverse_polynomial_coverage_ruled_out_asymptotically": true,
+      "log2_nonbaseline_deviation_probability_upper_bound": -107.0,
+      "log2_support_upper_bound": 14.0,
+      "n_bits": 128,
+      "nonbaseline_deviation_probability_upper_bound": 6.162975822039155e-33,
+      "support_power": 2
+    },
+    {
+      "exposed_low_bits": 7,
+      "finite_row_is_computational_lower_bound": false,
+      "high_modulus_bits": 121,
+      "inverse_polynomial_coverage_ruled_out_asymptotically": true,
+      "log2_nonbaseline_deviation_probability_upper_bound": -93.0,
+      "log2_support_upper_bound": 28.0,
+      "n_bits": 128,
+      "nonbaseline_deviation_probability_upper_bound": 1.0097419586828951e-28,
+      "support_power": 4
+    },
+    {
+      "exposed_low_bits": 7,
+      "finite_row_is_computational_lower_bound": false,
+      "high_modulus_bits": 121,
+      "inverse_polynomial_coverage_ruled_out_asymptotically": true,
+      "log2_nonbaseline_deviation_probability_upper_bound": -65.0,
+      "log2_support_upper_bound": 56.0,
+      "n_bits": 128,
+      "nonbaseline_deviation_probability_upper_bound": 2.710505431213761e-20,
+      "support_power": 8
+    },
+    {
+      "exposed_low_bits": 8,
+      "finite_row_is_computational_lower_bound": false,
+      "high_modulus_bits": 248,
+      "inverse_polynomial_coverage_ruled_out_asymptotically": true,
+      "log2_nonbaseline_deviation_probability_upper_bound": -240.0,
+      "log2_support_upper_bound": 8.0,
+      "n_bits": 256,
+      "nonbaseline_deviation_probability_upper_bound": 5.659799424266695e-73,
+      "support_power": 1
+    },
+    {
+      "exposed_low_bits": 8,
+      "finite_row_is_computational_lower_bound": false,
+      "high_modulus_bits": 248,
+      "inverse_polynomial_coverage_ruled_out_asymptotically": true,
+      "log2_nonbaseline_deviation_probability_upper_bound": -232.0,
+      "log2_support_upper_bound": 16.0,
+      "n_bits": 256,
+      "nonbaseline_deviation_probability_upper_bound": 1.448908652612274e-70,
+      "support_power": 2
+    },
+    {
+      "exposed_low_bits": 8,
+      "finite_row_is_computational_lower_bound": false,
+      "high_modulus_bits": 248,
+      "inverse_polynomial_coverage_ruled_out_asymptotically": true,
+      "log2_nonbaseline_deviation_probability_upper_bound": -216.0,
+      "log2_support_upper_bound": 32.0,
+      "n_bits": 256,
+      "nonbaseline_deviation_probability_upper_bound": 9.495567745759799e-66,
+      "support_power": 4
+    },
+    {
+      "exposed_low_bits": 8,
+      "finite_row_is_computational_lower_bound": false,
+      "high_modulus_bits": 248,
+      "inverse_polynomial_coverage_ruled_out_asymptotically": true,
+      "log2_nonbaseline_deviation_probability_upper_bound": -184.0,
+      "log2_support_upper_bound": 64.0,
+      "n_bits": 256,
+      "nonbaseline_deviation_probability_upper_bound": 4.078315292499078e-56,
+      "support_power": 8
+    },
+    {
+      "exposed_low_bits": 9,
+      "finite_row_is_computational_lower_bound": false,
+      "high_modulus_bits": 503,
+      "inverse_polynomial_coverage_ruled_out_asymptotically": true,
+      "log2_nonbaseline_deviation_probability_upper_bound": -494.0,
+      "log2_support_upper_bound": 9.0,
+      "n_bits": 512,
+      "nonbaseline_deviation_probability_upper_bound": 1.955159272639747e-149,
+      "support_power": 1
+    },
+    {
+      "exposed_low_bits": 9,
+      "finite_row_is_computational_lower_bound": false,
+      "high_modulus_bits": 503,
+      "inverse_polynomial_coverage_ruled_out_asymptotically": true,
+      "log2_nonbaseline_deviation_probability_upper_bound": -485.0,
+      "log2_support_upper_bound": 18.0,
+      "n_bits": 512,
+      "nonbaseline_deviation_probability_upper_bound": 1.0010415475915505e-146,
+      "support_power": 2
+    },
+    {
+      "exposed_low_bits": 9,
+      "finite_row_is_computational_lower_bound": false,
+      "high_modulus_bits": 503,
+      "inverse_polynomial_coverage_ruled_out_asymptotically": true,
+      "log2_nonbaseline_deviation_probability_upper_bound": -467.0,
+      "log2_support_upper_bound": 36.0,
+      "n_bits": 512,
+      "nonbaseline_deviation_probability_upper_bound": 2.624170354518394e-141,
+      "support_power": 4
+    },
+    {
+      "exposed_low_bits": 9,
+      "finite_row_is_computational_lower_bound": false,
+      "high_modulus_bits": 503,
+      "inverse_polynomial_coverage_ruled_out_asymptotically": true,
+      "log2_nonbaseline_deviation_probability_upper_bound": -431.0,
+      "log2_support_upper_bound": 72.0,
+      "n_bits": 512,
+      "nonbaseline_deviation_probability_upper_bound": 1.8033161362862765e-130,
+      "support_power": 8
+    }
+  ],
+  "status": "low-only-polynomial-support-signed-exact-hit-observables-asymptotically-obstructed",
+  "summary": "Proved the conditional signed-L2 identity and polynomial-support nonbaseline-deviation obstruction, verified 21 assignment pairs exactly, and instantiated 20 scaling rows. Full-label adaptive and dense implicit signed observables remain open.",
+  "theorem_certificate": {
+    "coefficient_access": "c_x may depend arbitrarily on exposed low labels and the target but not on unseen high labels",
+    "compatible_assignment_family": "all nonzero Boolean x whose low sum matches the target low residue; each x keeps its own exact carry-adjusted high right-hand side",
+    "conditional_centered_mean_formula": "E[S | low,target]=0",
+    "conditional_pairwise_independence_proved": true,
+    "conditional_variance_formula": "Var(S | low,target)=Q^-1(1-Q^-1) sum_x c_x^2",
+    "decomposition": "a_i=ell_i+2^b h_i with h_i independent uniform in Z_(2^(n-b)) after conditioning on all low labels",
+    "fixed_polynomial_support_negligible_deviation_proved": true,
+    "limitations": [
+      "The zero assignment is excluded; its target-zero event is deterministic and handled separately.",
+      "Coefficients may not inspect the unseen high labels.",
+      "The theorem does not cover LLL/reduced-basis coefficients computed from full labels.",
+      "Dense implicitly contractible coefficient vectors are not ruled out.",
+      "Nonlinear, higher-order, and adaptive statistics are not ruled out.",
+      "No computational lower bound or witness decoder follows."
+    ],
+    "polynomial_support_nonbaseline_deviation_bound": "Pr[T != 0 | low,target] = Pr[S != -E[T|low,target] | low,target] <= |supp(c)|/Q",
+    "proof": "For distinct nonzero Boolean x,y, choose a coordinate where they differ and a coordinate in the support of the row having zero at the first coordinate. The resulting 2x2 minor has determinant +/-1, a unit modulo every power of two. Hence the pair of high linear forms is exactly uniform on Z_Q^2 for arbitrary right-hand sides. Centered hit indicators have zero covariance. Expanding the square of the centered score S gives the variance identity. The uncentered score T can differ from its no-hit baseline zero only if at least one supported equation hits, so the union bound gives M/Q; equivalently S differs from its deterministic centered no-hit baseline only on that event. For M<=n^a and b=O(log n), this is exp(-Omega(n)) for every fixed a.",
+    "unit_minor_lemma_proved": true
+  },
+  "theorem_contract": {
+    "coefficient_measurability": "coefficients are measurable before unseen high labels are revealed",
+    "conclusion": "exact conditional L2 identity and negligible probability of departing from the no-hit baseline for fixed-polynomial support",
+    "observable": "signed linear combination of exact high-equation hits over low-compatible nonzero Boolean assignments",
+    "source": "uniform labels in Z_(2^n)^(n+c), independent uniform target, conditioned on arbitrary exposed low-label data"
+  }
+}

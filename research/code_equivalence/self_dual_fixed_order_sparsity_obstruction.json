@@ -1,0 +1,225 @@
+{
+  "claim_gate": {
+    "classical_certificate_obstruction_is_quantum_advantage": false,
+    "explicit_collective_measurement_constructed": false,
+    "fixed_order_support_rigidity_is_asymptotically_scalable": false,
+    "implicit_growing_weight_invariants_ruled_out": false,
+    "reason": "The explicit fixed-order certificate architecture fails asymptotically, while implicit classical invariants, family theorems, and collective quantum measurements all remain open.",
+    "speedup_claim_allowed": false,
+    "weight_ten_finite_success_proves_family_rigidity": false
+  },
+  "created_at": "2026-07-28T10:56:24.174052+00:00",
+  "falsifiers_triggered": [
+    "Finite weight-ten success is never extrapolated to a growing family.",
+    "The exact ensemble expectation is separated from worst-case code behavior.",
+    "An obstruction to one classical certificate is not quantum evidence.",
+    "Implicit algebraic growing-weight invariants are not ruled out.",
+    "The collective-measurement and decoder obligations remain open."
+  ],
+  "headline_metrics": {
+    "asymptotic_fixed_order_rigidity_certificate_count": 0,
+    "collective_measurement_count": 0,
+    "entropy_half_relative_weight_threshold": 0.110027864,
+    "exponential_enumeration_length_count": 6,
+    "infinite_family_automorphism_theorem_count": 0,
+    "linear_required_weight_length_count": 11,
+    "maximum_length": 512,
+    "observed_comparison_count": 4,
+    "scaling_length_count": 11,
+    "weight_10_expected_below_one_length_count": 7
+  },
+  "observed_comparisons": [
+    {
+      "ensemble_expected_support_count": 349.749702,
+      "family_id": "self-dual-k16",
+      "instance_count": 8,
+      "interpretation": "Observed fixed-weight support density is compared with the uniform self-dual ensemble expectation as a calibration, not as an independence test or family proof.",
+      "length": 32,
+      "maximum_weight": 8,
+      "mean_observed_support_count": 341.625,
+      "observed_to_expected_ratio": 0.97677
+    },
+    {
+      "ensemble_expected_support_count": 46.469708,
+      "family_id": "self-dual-k24",
+      "instance_count": 6,
+      "interpretation": "Observed fixed-weight support density is compared with the uniform self-dual ensemble expectation as a calibration, not as an independence test or family proof.",
+      "length": 48,
+      "maximum_weight": 8,
+      "mean_observed_support_count": 46.5,
+      "observed_to_expected_ratio": 1.000652
+    },
+    {
+      "ensemble_expected_support_count": 2.096303,
+      "family_id": "self-dual-k32",
+      "instance_count": 6,
+      "interpretation": "Observed fixed-weight support density is compared with the uniform self-dual ensemble expectation as a calibration, not as an independence test or family proof.",
+      "length": 64,
+      "maximum_weight": 8,
+      "mean_observed_support_count": 1.0,
+      "observed_to_expected_ratio": 0.47703
+    },
+    {
+      "ensemble_expected_support_count": 72.631516,
+      "family_id": "self-dual-k32",
+      "instance_count": 6,
+      "interpretation": "Observed fixed-weight support density is compared with the uniform self-dual ensemble expectation as a calibration, not as an independence test or family proof.",
+      "length": 64,
+      "maximum_weight": 10,
+      "mean_observed_support_count": 72.833333,
+      "observed_to_expected_ratio": 1.002779
+    }
+  ],
+  "scaling_records": [
+    {
+      "dimension": 16,
+      "expected_supports_weight_10": 2318.446946809484,
+      "expected_supports_weight_8": 349.749702462693,
+      "explicit_enumeration_exponential_scale": false,
+      "half_order_subset_log2_count": 15.33905,
+      "length": 32,
+      "minimum_even_weight_expected_length": 8,
+      "minimum_even_weight_expected_one": 4,
+      "required_weight_fraction_for_length_expectation": 0.25
+    },
+    {
+      "dimension": 24,
+      "expected_supports_weight_10": 826.183710553204,
+      "expected_supports_weight_8": 46.469708386694,
+      "explicit_enumeration_exponential_scale": false,
+      "half_order_subset_log2_count": 20.876695,
+      "length": 48,
+      "minimum_even_weight_expected_length": 10,
+      "minimum_even_weight_expected_one": 6,
+      "required_weight_fraction_for_length_expectation": 0.208333333
+    },
+    {
+      "dimension": 32,
+      "expected_supports_weight_10": 72.631515502636,
+      "expected_supports_weight_8": 2.096303331621,
+      "explicit_enumeration_exponential_scale": false,
+      "half_order_subset_log2_count": 22.985311,
+      "length": 64,
+      "minimum_even_weight_expected_length": 10,
+      "minimum_even_weight_expected_one": 8,
+      "required_weight_fraction_for_length_expectation": 0.15625
+    },
+    {
+      "dimension": 40,
+      "expected_supports_weight_10": 3.04822921354,
+      "expected_supports_weight_8": 0.053277512215,
+      "explicit_enumeration_exponential_scale": false,
+      "half_order_subset_log2_count": 28.281213,
+      "length": 80,
+      "minimum_even_weight_expected_length": 12,
+      "minimum_even_weight_expected_one": 10,
+      "required_weight_fraction_for_length_expectation": 0.15
+    },
+    {
+      "dimension": 48,
+      "expected_supports_weight_10": 0.081097495637,
+      "expected_supports_weight_8": 0.0009487976,
+      "explicit_enumeration_exponential_scale": false,
+      "half_order_subset_log2_count": 33.587863,
+      "length": 96,
+      "minimum_even_weight_expected_length": 14,
+      "minimum_even_weight_expected_one": 12,
+      "required_weight_fraction_for_length_expectation": 0.145833333
+    },
+    {
+      "dimension": 64,
+      "expected_supports_weight_10": 2.4750307e-05,
+      "expected_supports_weight_8": 1.55598e-07,
+      "explicit_enumeration_exponential_scale": true,
+      "half_order_subset_log2_count": 44.227193,
+      "length": 128,
+      "minimum_even_weight_expected_length": 18,
+      "minimum_even_weight_expected_one": 16,
+      "required_weight_fraction_for_length_expectation": 0.140625
+    },
+    {
+      "dimension": 80,
+      "expected_supports_weight_10": 3.777e-09,
+      "expected_supports_weight_8": 1.5e-11,
+      "explicit_enumeration_exponential_scale": true,
+      "half_order_subset_log2_count": 54.892589,
+      "length": 160,
+      "minimum_even_weight_expected_length": 22,
+      "minimum_even_weight_expected_one": 20,
+      "required_weight_fraction_for_length_expectation": 0.1375
+    },
+    {
+      "dimension": 96,
+      "expected_supports_weight_10": 0.0,
+      "expected_supports_weight_8": 0.0,
+      "explicit_enumeration_exponential_scale": true,
+      "half_order_subset_log2_count": 65.576816,
+      "length": 192,
+      "minimum_even_weight_expected_length": 26,
+      "minimum_even_weight_expected_one": 22,
+      "required_weight_fraction_for_length_expectation": 0.135416667
+    },
+    {
+      "dimension": 128,
+      "expected_supports_weight_10": 0.0,
+      "expected_supports_weight_8": 0.0,
+      "explicit_enumeration_exponential_scale": true,
+      "half_order_subset_log2_count": 83.158148,
+      "length": 256,
+      "minimum_even_weight_expected_length": 32,
+      "minimum_even_weight_expected_one": 30,
+      "required_weight_fraction_for_length_expectation": 0.125
+    },
+    {
+      "dimension": 192,
+      "expected_supports_weight_10": 0.0,
+      "expected_supports_weight_8": 0.0,
+      "explicit_enumeration_exponential_scale": true,
+      "half_order_subset_log2_count": 126.041609,
+      "length": 384,
+      "minimum_even_weight_expected_length": 48,
+      "minimum_even_weight_expected_one": 44,
+      "required_weight_fraction_for_length_expectation": 0.125
+    },
+    {
+      "dimension": 256,
+      "expected_supports_weight_10": 0.0,
+      "expected_supports_weight_8": 0.0,
+      "explicit_enumeration_exponential_scale": true,
+      "half_order_subset_log2_count": 165.095329,
+      "length": 512,
+      "minimum_even_weight_expected_length": 62,
+      "minimum_even_weight_expected_one": 58,
+      "required_weight_fraction_for_length_expectation": 0.12109375
+    }
+  ],
+  "spec": {
+    "fixed_weights": [
+      8,
+      10
+    ],
+    "lengths": [
+      32,
+      48,
+      64,
+      80,
+      96,
+      128,
+      160,
+      192,
+      256,
+      384,
+      512
+    ]
+  },
+  "status": "fixed-order-self-dual-rigidity-architecture-obstructed",
+  "summary": "Weight-ten expected support count drops below one on 7/11 scaling rows; the entropy threshold for nonvanishing mass is relative weight 0.1100, forcing growing-order explicit enumeration.",
+  "theorem": {
+    "expected_count": "E[A_{<=w}] = sum_{2<=j<=w, j even} binom(n,j) / (2^(n/2-1)+1).",
+    "fixed_order_consequence": "For fixed w, E[A_{<=w}] = n^O(w) 2^(-n/2) -> 0. The explicit bounded-support incidence graph is eventually empty with high probability by Markov's inequality.",
+    "linear_order_consequence": "The entropy threshold H_2(delta)=1/2 is delta=0.110027864. Nonvanishing low-weight mass occurs at linear relative weight, so meet-in-the-middle half-order enumeration is exponential.",
+    "membership_probability": "For nontrivial even v, Pr[v in C] = 1/(2^(n/2-1)+1) under the uniform binary self-dual ensemble.",
+    "name": "uniform self-dual fixed-weight sparsity obstruction",
+    "scope": "This theorem is exact for the uniform self-dual ensemble and calibrates the sampled construction. It is not a worst-case code-equivalence lower bound."
+  }
+}

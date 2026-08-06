@@ -1,0 +1,268 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Typical multiplicity conditioning must diverge with n.",
+      "resolution": "A fixed rescaled window with condition beta/alpha retains constant average decoding success for every n.",
+      "resolved": true
+    },
+    {
+      "objection": "Existence of the window makes it measurable efficiently.",
+      "resolution": "Its raw endpoints remain Theta(1/n!), where generic polynomial and indexed-projector query methods are superpolynomial.",
+      "resolved": false
+    },
+    {
+      "objection": "The window must retain every source branch.",
+      "resolution": "The theorem is natural-average. Rare or adversarial branches may be almost entirely discarded.",
+      "resolved": false
+    },
+    {
+      "objection": "A constant 4,000,000 condition number is practical.",
+      "resolution": "Only asymptotic polynomiality matters here; constants can be optimized after a structured window circuit exists.",
+      "resolved": false
+    }
+  ],
+  "claim_gate": {
+    "constant_condition_constant_success_subspace_proved": true,
+    "minimum_eigenvalue_or_growing_condition_number_is_core_barrier": false,
+    "normalization_one_generic_filter_polynomial": false,
+    "polynomial_covariant_pgm_circuit_proved": false,
+    "reason": "A fixed-condition rescaled spectral window retains constant PGM success. The sole unresolved step is exposing that window through efficient representation/multiplicity structure.",
+    "speedup_claim_allowed": false,
+    "structured_window_projector_circuit_proved": false
+  },
+  "created_at": "2026-08-06T01:08:05.276980+00:00",
+  "falsifiers_triggered": [
+    "Neither the minimum frame eigenvalue nor an asymptotically growing condition number is necessary for constant average success.",
+    "The unresolved algorithmic content is now exactly a structured multiplicity-window projector or equivalently rescaled frame access.",
+    "Raw spectral filtering remains closed despite the well-conditioned retained subspace."
+  ],
+  "finite_controls": [
+    {
+      "control_id": "W3-THREE-UNEQUAL-TYPES",
+      "exact_spectral_window_validation": true,
+      "frame_support_rank": 24,
+      "gentle_window_success_lower_bound": 0.9714044963982016,
+      "hidden_label_count": 6,
+      "high_tail_mass_upper_bound": 0.05625,
+      "ideal_pgm_success_probability": 0.9714045207910316,
+      "low_tail_mass_upper_bound": 0.01,
+      "lower_rescaled_cutoff": 0.01,
+      "maximum_effect_completeness_violation": 4.0835409455589426e-15,
+      "n": 3,
+      "observed_discarded_average_mass": 1.487525380650112e-16,
+      "projector_rank": 4,
+      "retained_condition_number_upper_bound": 2000.0,
+      "status": "exact-constant-condition-pgm-window-control",
+      "total_discarded_mass_upper_bound": 0.06625,
+      "upper_rescaled_cutoff": 20.0,
+      "windowed_pgm_success_probability": 0.9714045207910317
+    },
+    {
+      "control_id": "W3-REPEATED-STANDARD-UNEQUAL",
+      "exact_spectral_window_validation": true,
+      "frame_support_rank": 39,
+      "gentle_window_success_lower_bound": 0.8068745777174258,
+      "hidden_label_count": 6,
+      "high_tail_mass_upper_bound": 0.0703125,
+      "ideal_pgm_success_probability": 0.8068745777174258,
+      "low_tail_mass_upper_bound": 0.01,
+      "lower_rescaled_cutoff": 0.01,
+      "maximum_effect_completeness_violation": 6.1497079846054385e-15,
+      "n": 3,
+      "observed_discarded_average_mass": -1.9222904518167994e-16,
+      "projector_rank": 8,
+      "retained_condition_number_upper_bound": 2000.0,
+      "status": "exact-constant-condition-pgm-window-control",
+      "total_discarded_mass_upper_bound": 0.0803125,
+      "upper_rescaled_cutoff": 20.0,
+      "windowed_pgm_success_probability": 0.806874577717426
+    }
+  ],
+  "headline_metrics": {
+    "constant_condition_constant_success_theorem_count": 1,
+    "finite_control_count": 2,
+    "finite_control_failure_count": 0,
+    "maximum_discarded_mass_upper_bound": 0.005093574521361912,
+    "minimum_windowed_pgm_success_lower_bound": 0.3579048091462505,
+    "new_quantum_algorithm_count": 0,
+    "polynomial_covariant_pgm_circuit_count": 0,
+    "retained_condition_number_upper_bound": 4000000.0,
+    "scaling_record_count": 9,
+    "structured_window_projector_circuit_count": 0,
+    "two_sided_spectral_window_theorem_count": 1
+  },
+  "proof_obligations": [
+    {
+      "obligation": "constant_mass_two_sided_spectral_window",
+      "resolution": "Rank controls the low tail and the exact frame second moment controls the high tail.",
+      "resolved": true
+    },
+    {
+      "obligation": "constant_condition_constant_success_subspace",
+      "resolution": "Fixed alpha,beta retain bounded correct probability and make the rescaled frame condition number beta/alpha.",
+      "resolved": true
+    },
+    {
+      "obligation": "structured_spectral_window_projector_circuit",
+      "resolution": "No coherent predicate on multiplicity labels identifies the window without factorial raw-frame resolution.",
+      "resolved": false
+    }
+  ],
+  "scaling_records": [
+    {
+      "constant_condition_and_success_certified": true,
+      "discarded_mass_upper_bound": 0.004138047790527344,
+      "hidden_label_count_decimal": "40320",
+      "ideal_pgm_success_lower_bound": 0.6191110481318786,
+      "information_threshold_copy_count": 16,
+      "lower_rescaled_cutoff": 0.0001,
+      "n": 8,
+      "raw_lower_cutoff_log2": -28.58692039793673,
+      "raw_upper_cutoff_log2": -6.655351828612554,
+      "retained_condition_number_upper_bound": 4000000.0,
+      "status": "constant-condition-window-exists-structured-projector-open",
+      "structured_window_projector_circuit_proved": false,
+      "upper_rescaled_cutoff": 400.0,
+      "windowed_pgm_success_lower_bound": 0.4904557289176721
+    },
+    {
+      "constant_condition_and_success_certified": true,
+      "discarded_mass_upper_bound": 0.004830525012128055,
+      "hidden_label_count_decimal": "479001600",
+      "ideal_pgm_success_lower_bound": 0.5284825666475781,
+      "information_threshold_copy_count": 29,
+      "lower_rescaled_cutoff": 0.0001,
+      "n": 12,
+      "raw_lower_cutoff_log2": -42.12316761362486,
+      "raw_upper_cutoff_log2": -20.19159904430068,
+      "retained_condition_number_upper_bound": 4000000.0,
+      "status": "constant-condition-window-exists-structured-projector-open",
+      "structured_window_projector_circuit_proved": false,
+      "upper_rescaled_cutoff": 400.0,
+      "windowed_pgm_success_lower_bound": 0.38947860969486314
+    },
+    {
+      "constant_condition_and_success_certified": true,
+      "discarded_mass_upper_bound": 0.004086653636675258,
+      "hidden_label_count_decimal": "20922789888000",
+      "ideal_pgm_success_lower_bound": 0.6270923505872762,
+      "information_threshold_copy_count": 45,
+      "lower_rescaled_cutoff": 0.0001,
+      "n": 16,
+      "raw_lower_cutoff_log2": -57.53785284943207,
+      "raw_upper_cutoff_log2": -35.6062842801079,
+      "retained_condition_number_upper_bound": 4000000.0,
+      "status": "constant-condition-window-exists-structured-projector-open",
+      "structured_window_projector_circuit_proved": false,
+      "upper_rescaled_cutoff": 400.0,
+      "windowed_pgm_success_lower_bound": 0.4992384709171581
+    },
+    {
+      "constant_condition_and_success_certified": true,
+      "discarded_mass_upper_bound": 0.0038830572225081197,
+      "hidden_label_count_decimal": "620448401733239439360000",
+      "ideal_pgm_success_lower_bound": 0.660841180282896,
+      "information_threshold_copy_count": 80,
+      "lower_rescaled_cutoff": 0.0001,
+      "n": 24,
+      "raw_lower_cutoff_log2": -92.3253697986499,
+      "raw_upper_cutoff_log2": -70.39380122932573,
+      "retained_condition_number_upper_bound": 4000000.0,
+      "status": "constant-condition-window-exists-structured-projector-open",
+      "structured_window_projector_circuit_proved": false,
+      "upper_rescaled_cutoff": 400.0,
+      "windowed_pgm_success_lower_bound": 0.5362128171786953
+    },
+    {
+      "constant_condition_and_success_certified": true,
+      "discarded_mass_upper_bound": 0.004579576398993263,
+      "hidden_label_count_decimal": "263130836933693530167218012160000000",
+      "ideal_pgm_success_lower_bound": 0.5580884836704312,
+      "information_threshold_copy_count": 118,
+      "lower_rescaled_cutoff": 0.0001,
+      "n": 32,
+      "raw_lower_cutoff_log2": -130.95097603190976,
+      "raw_upper_cutoff_log2": -109.01940746258558,
+      "retained_condition_number_upper_bound": 4000000.0,
+      "status": "constant-condition-window-exists-structured-projector-open",
+      "structured_window_projector_circuit_proved": false,
+      "upper_rescaled_cutoff": 400.0,
+      "windowed_pgm_success_lower_bound": 0.42274334856771295
+    },
+    {
+      "constant_condition_and_success_certified": true,
+      "discarded_mass_upper_bound": 0.005091599238501599,
+      "hidden_label_count_decimal": "126886932185884164103433389335161480802865516174545192198801894375214704230400000000000000",
+      "ideal_pgm_success_lower_bound": 0.5008414899811672,
+      "information_threshold_copy_count": 296,
+      "lower_rescaled_cutoff": 0.0001,
+      "n": 64,
+      "raw_lower_cutoff_log2": -309.2828563212736,
+      "raw_upper_cutoff_log2": -287.35128775194937,
+      "retained_condition_number_upper_bound": 4000000.0,
+      "status": "constant-condition-window-exists-structured-projector-open",
+      "structured_window_projector_circuit_proved": false,
+      "upper_rescaled_cutoff": 400.0,
+      "windowed_pgm_success_lower_bound": 0.3581306040824159
+    },
+    {
+      "constant_condition_and_success_certified": true,
+      "discarded_mass_upper_bound": 0.0039982769905284364,
+      "hidden_label_count_decimal": "385620482362580421735677065923463640617493109590223590278828403276373402575165543560686168588507361534030051833058916347592172932262498857766114955245039357760034644709279247692495585280000000000000000000000000000000",
+      "ideal_pgm_success_lower_bound": 0.6413089695971319,
+      "information_threshold_copy_count": 717,
+      "lower_rescaled_cutoff": 0.0001,
+      "n": 128,
+      "raw_lower_cutoff_log2": -729.4494344631714,
+      "raw_upper_cutoff_log2": -707.5178658938472,
+      "retained_condition_number_upper_bound": 4000000.0,
+      "status": "constant-condition-window-exists-structured-projector-open",
+      "structured_window_projector_circuit_proved": false,
+      "upper_rescaled_cutoff": 400.0,
+      "windowed_pgm_success_lower_bound": 0.5148451092965949
+    },
+    {
+      "constant_condition_and_success_certified": true,
+      "discarded_mass_upper_bound": 0.005093574521361912,
+      "hidden_label_count_decimal": "857817775342842654119082271681232625157781520279485619859655650377269452553147589377440291360451408450375885342336584306157196834693696475322289288497426025679637332563368786442675207626794560187968867971521143307702077526646451464709187326100832876325702818980773671781454170250523018608495319068138257481070252817559459476987034665712738139286205234756808218860701203611083152093501947437109101726968262861606263662435022840944191408424615936000000000000000000000000000000000000000000000000000000000000000",
+      "ideal_pgm_success_lower_bound": 0.500643374661838,
+      "information_threshold_copy_count": 1684,
+      "lower_rescaled_cutoff": 0.0001,
+      "n": 256,
+      "raw_lower_cutoff_log2": -1697.2839996037642,
+      "raw_upper_cutoff_log2": -1675.35243103444,
+      "retained_condition_number_upper_bound": 4000000.0,
+      "status": "constant-condition-window-exists-structured-projector-open",
+      "structured_window_projector_circuit_proved": false,
+      "upper_rescaled_cutoff": 400.0,
+      "windowed_pgm_success_lower_bound": 0.3579048091462505
+    },
+    {
+      "constant_condition_and_success_certified": true,
+      "discarded_mass_upper_bound": 0.004002547895435173,
+      "hidden_label_count_decimal": "347728979313260536328304591754560471199225065564351457034247483155161041206635254347320985033950225364432243311021394545295001702070069013264153113260937941358711864044716186861040899557497361427588282356254968425012480396855239725120562512065555822121708786443620799246550959187232026838081415178588172535280020786313470076859739980965720873849904291373826841584712798618430387338042329771801724767691095019545758986942732515033551529595009876999279553931070378592917099002397061907147143424113252117585950817850896618433994140232823316432187410356341262386332496954319973130407342567282027398579382543048456876800862349928140411905431276197435674603281842530744177527365885721629512253872386613118821540847897493107398381956081763695236422795880296204301770808809477147632428639299038833046264585834888158847387737841843413664892833586209196366979775748895821826924040057845140287522238675082137570315954526727437094904914796782641000740777897919134093393530422760955140211387173650047358347353379234387609261306673773281412893026941927424000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "ideal_pgm_success_lower_bound": 0.6406071282108442,
+      "information_threshold_copy_count": 3876,
+      "lower_rescaled_cutoff": 0.0001,
+      "n": 512,
+      "raw_lower_cutoff_log2": -3888.4538343227523,
+      "raw_upper_cutoff_log2": -3866.522265753428,
+      "retained_condition_number_upper_bound": 4000000.0,
+      "status": "constant-condition-window-exists-structured-projector-open",
+      "structured_window_projector_circuit_proved": false,
+      "upper_rescaled_cutoff": 400.0,
+      "windowed_pgm_success_lower_bound": 0.5140757424532358
+    }
+  ],
+  "status": "constant-condition-pgm-window-proved-structured-projector-open",
+  "summary": "Proved an all-n constant-condition spectral subspace retaining constant PGM correct probability.",
+  "theorem_contract": {
+    "condition_number": "On the retained support, kappa(NB)<=beta/alpha, independent of n.",
+    "high_tail": "delta_high<=[1+(N-1)2^-k]/beta from Tr(B^2).",
+    "implementation_boundary": "Construct R from representation/multiplicity structure; generic raw spectral filtering at 1/n! scale is already ruled out.",
+    "low_tail": "delta_low<=alpha from rank(B)<=Nr.",
+    "window": "R=1[alpha/N<=B<=beta/N].",
+    "window_mass": "delta_window<=alpha+[1+(N-1)2^-k]/beta.",
+    "window_success": "p_window>=p_PGM-2sqrt(delta_window)."
+  }
+}

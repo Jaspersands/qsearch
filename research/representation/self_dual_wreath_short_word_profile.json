@@ -1,0 +1,372 @@
+{
+  "claim_gate": {
+    "collision_free_growing_moment_contraction_proved": false,
+    "collision_free_polynomial_factor_norm_bound_proved": false,
+    "exact_short_length_distribution_computed": true,
+    "fixed_even_mask_uniform_marginal_proved": true,
+    "joint_short_word_anticoncentration_proved": false,
+    "natural_average_inverse_polynomial_conclusive_proved": false,
+    "non_diagonal_shared_generator_correlation_bound_proved": false,
+    "pairwise_mask_collisions_negligible_at_target_order": true,
+    "reason": "Fixed-mask marginals are uniform and mask diagonals vanish, but distinct masks remain correlated through shared bridge generators; no joint character-product tail is proved.",
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-07-30T06:47:02.301924+00:00",
+  "falsifiers_triggered": [
+    "Every fixed nonempty even subset word has uniform base-component marginals.",
+    "Short transposition-length probabilities are exact Stirling tails, not fitted trends.",
+    "Repeated subset masks are negligible at the certificate moment order.",
+    "Distinct masks can remain correlated through shared bridge generators.",
+    "Marginal anti-concentration does not imply a joint character-product moment bound.",
+    "No frame-norm theorem, coherent measurement, decoder, or classical separation is claimed."
+  ],
+  "headline_metrics": {
+    "collision_free_growing_moment_contraction_count": 0,
+    "collision_free_polynomial_factor_norm_theorem_count": 0,
+    "fixed_even_mask_uniform_marginal_theorem_count": 1,
+    "fixed_mask_uniformity_failure_count": 0,
+    "fixed_mask_uniformity_validation_count": 5,
+    "joint_short_word_anticoncentration_theorem_count": 0,
+    "mask_collision_scaling_record_count": 11,
+    "natural_average_inverse_polynomial_conclusive_theorem_count": 0,
+    "non_diagonal_shared_generator_correlation_theorem_count": 0,
+    "pairwise_mask_distinct_scaling_row_count": 10,
+    "short_length_scaling_record_count": 12,
+    "tail_half_n_log2_short_probability": -80.76640059070687,
+    "tail_log2_pairwise_mask_collision_union_bound": -175509.58597549013,
+    "unsigned_stirling_short_length_formula_count": 1
+  },
+  "mask_collision_scaling": [
+    {
+      "copy_count": 3,
+      "log2_nonempty_even_mask_count": 17.999994496544677,
+      "log2_pairwise_mask_collision_union_bound": -16.41503199582352,
+      "n": 3,
+      "non_diagonal_shared_generator_correlation_proved_small": false,
+      "pairwise_mask_distinct_with_overwhelming_probability": false,
+      "required_moment_order": 19,
+      "status": "mask-diagonal-negligible-non-diagonal-word-correlation-open"
+    },
+    {
+      "copy_count": 5,
+      "log2_nonempty_even_mask_count": 50.0,
+      "log2_pairwise_mask_collision_union_bound": -46.67807190511264,
+      "n": 4,
+      "non_diagonal_shared_generator_correlation_proved_small": false,
+      "pairwise_mask_distinct_with_overwhelming_probability": true,
+      "required_moment_order": 51,
+      "status": "mask-diagonal-negligible-non-diagonal-word-correlation-open"
+    },
+    {
+      "copy_count": 7,
+      "log2_nonempty_even_mask_count": 103.0,
+      "log2_pairwise_mask_collision_union_bound": -98.60768257722124,
+      "n": 5,
+      "non_diagonal_shared_generator_correlation_proved_small": false,
+      "pairwise_mask_distinct_with_overwhelming_probability": true,
+      "required_moment_order": 104,
+      "status": "mask-diagonal-negligible-non-diagonal-word-correlation-open"
+    },
+    {
+      "copy_count": 10,
+      "log2_nonempty_even_mask_count": 199.0,
+      "log2_pairwise_mask_collision_union_bound": -193.50814690367034,
+      "n": 6,
+      "non_diagonal_shared_generator_correlation_proved_small": false,
+      "pairwise_mask_distinct_with_overwhelming_probability": true,
+      "required_moment_order": 200,
+      "status": "mask-diagonal-negligible-non-diagonal-word-correlation-open"
+    },
+    {
+      "copy_count": 16,
+      "log2_nonempty_even_mask_count": 505.0,
+      "log2_pairwise_mask_collision_union_bound": -498.0931094043915,
+      "n": 8,
+      "non_diagonal_shared_generator_correlation_proved_small": false,
+      "pairwise_mask_distinct_with_overwhelming_probability": true,
+      "required_moment_order": 506,
+      "status": "mask-diagonal-negligible-non-diagonal-word-correlation-open"
+    },
+    {
+      "copy_count": 22,
+      "log2_nonempty_even_mask_count": 980.0,
+      "log2_pairwise_mask_collision_union_bound": -972.148250958584,
+      "n": 10,
+      "non_diagonal_shared_generator_correlation_proved_small": false,
+      "pairwise_mask_distinct_with_overwhelming_probability": true,
+      "required_moment_order": 981,
+      "status": "mask-diagonal-negligible-non-diagonal-word-correlation-open"
+    },
+    {
+      "copy_count": 45,
+      "log2_nonempty_even_mask_count": 4027.0,
+      "log2_pairwise_mask_collision_union_bound": -4017.048715285033,
+      "n": 16,
+      "non_diagonal_shared_generator_correlation_proved_small": false,
+      "pairwise_mask_distinct_with_overwhelming_probability": true,
+      "required_moment_order": 4028,
+      "status": "mask-diagonal-negligible-non-diagonal-word-correlation-open"
+    },
+    {
+      "copy_count": 80,
+      "log2_nonempty_even_mask_count": 12726.0,
+      "log2_pairwise_mask_collision_union_bound": -12714.374291156935,
+      "n": 24,
+      "non_diagonal_shared_generator_correlation_proved_small": false,
+      "pairwise_mask_distinct_with_overwhelming_probability": true,
+      "required_moment_order": 12727,
+      "status": "mask-diagonal-negligible-non-diagonal-word-correlation-open"
+    },
+    {
+      "copy_count": 118,
+      "log2_nonempty_even_mask_count": 27886.0,
+      "log2_pairwise_mask_collision_union_bound": -27873.246992231056,
+      "n": 32,
+      "non_diagonal_shared_generator_correlation_proved_small": false,
+      "pairwise_mask_distinct_with_overwhelming_probability": true,
+      "required_moment_order": 27887,
+      "status": "mask-diagonal-negligible-non-diagonal-word-correlation-open"
+    },
+    {
+      "copy_count": 203,
+      "log2_nonempty_even_mask_count": 82600.0,
+      "log2_pairwise_mask_collision_union_bound": -82585.67645260006,
+      "n": 48,
+      "non_diagonal_shared_generator_correlation_proved_small": false,
+      "pairwise_mask_distinct_with_overwhelming_probability": true,
+      "required_moment_order": 82601,
+      "status": "mask-diagonal-negligible-non-diagonal-word-correlation-open"
+    },
+    {
+      "copy_count": 296,
+      "log2_nonempty_even_mask_count": 175525.0,
+      "log2_pairwise_mask_collision_union_bound": -175509.58597549013,
+      "n": 64,
+      "non_diagonal_shared_generator_correlation_proved_small": false,
+      "pairwise_mask_distinct_with_overwhelming_probability": true,
+      "required_moment_order": 175526,
+      "status": "mask-diagonal-negligible-non-diagonal-word-correlation-open"
+    }
+  ],
+  "short_length_records": [
+    {
+      "exact_long_probability": "4441/4480",
+      "exact_short_probability": "39/4480",
+      "joint_distinct_mask_theorem_applies": true,
+      "joint_word_anticoncentration_proved": false,
+      "log2_short_probability": -6.8438807980827185,
+      "maximum_transposition_length": 2,
+      "n": 8,
+      "status": "exact-marginal-short-length-joint-correlation-open",
+      "threshold_fraction": 0.25,
+      "uniform_permutation_marginal_theorem_applies": true
+    },
+    {
+      "exact_long_probability": "781/1008",
+      "exact_short_probability": "227/1008",
+      "joint_distinct_mask_theorem_applies": true,
+      "joint_word_anticoncentration_proved": false,
+      "log2_short_probability": -2.150731436209001,
+      "maximum_transposition_length": 4,
+      "n": 8,
+      "status": "exact-marginal-short-length-joint-correlation-open",
+      "threshold_fraction": 0.5,
+      "uniform_permutation_marginal_theorem_applies": true
+    },
+    {
+      "exact_long_probability": "1/8",
+      "exact_short_probability": "7/8",
+      "joint_distinct_mask_theorem_applies": true,
+      "joint_word_anticoncentration_proved": false,
+      "log2_short_probability": -0.19264507794239583,
+      "maximum_transposition_length": 6,
+      "n": 8,
+      "status": "exact-marginal-short-length-joint-correlation-open",
+      "threshold_fraction": 0.75,
+      "uniform_permutation_marginal_theorem_applies": true
+    },
+    {
+      "exact_long_probability": "6974261587759/6974263296000",
+      "exact_short_probability": "1708241/6974263296000",
+      "joint_distinct_mask_theorem_applies": true,
+      "joint_word_anticoncentration_proved": false,
+      "log2_short_probability": -21.961097873955264,
+      "maximum_transposition_length": 4,
+      "n": 16,
+      "status": "exact-marginal-short-length-joint-correlation-open",
+      "threshold_fraction": 0.25,
+      "uniform_permutation_marginal_theorem_applies": true
+    },
+    {
+      "exact_long_probability": "1303683709469/1307674368000",
+      "exact_short_probability": "3990658531/1307674368000",
+      "joint_distinct_mask_theorem_applies": true,
+      "joint_word_anticoncentration_proved": false,
+      "log2_short_probability": -8.356160778968754,
+      "maximum_transposition_length": 8,
+      "n": 16,
+      "status": "exact-marginal-short-length-joint-correlation-open",
+      "threshold_fraction": 0.5,
+      "uniform_permutation_marginal_theorem_applies": true
+    },
+    {
+      "exact_long_probability": "227867573/403603200",
+      "exact_short_probability": "175735627/403603200",
+      "joint_distinct_mask_theorem_applies": true,
+      "joint_word_anticoncentration_proved": false,
+      "log2_short_probability": -1.1995309134935432,
+      "maximum_transposition_length": 12,
+      "n": 16,
+      "status": "exact-marginal-short-length-joint-correlation-open",
+      "threshold_fraction": 0.75,
+      "uniform_permutation_marginal_theorem_applies": true
+    },
+    {
+      "exact_long_probability": "1949117310619952075125060607583643/1949117310619952075312726016000000",
+      "exact_short_probability": "187665408416357/1949117310619952075312726016000000",
+      "joint_distinct_mask_theorem_applies": true,
+      "joint_word_anticoncentration_proved": false,
+      "log2_short_probability": -63.17129197818429,
+      "maximum_transposition_length": 8,
+      "n": 32,
+      "status": "exact-marginal-short-length-joint-correlation-open",
+      "threshold_fraction": 0.25,
+      "uniform_permutation_marginal_theorem_applies": true
+    },
+    {
+      "exact_long_probability": "32246425929356314068368340626479/32246426094815383598923776000000",
+      "exact_short_probability": "165459069530555435373521/32246426094815383598923776000000",
+      "joint_distinct_mask_theorem_applies": true,
+      "joint_word_anticoncentration_proved": false,
+      "log2_short_probability": -27.5380896588902,
+      "maximum_transposition_length": 16,
+      "n": 32,
+      "status": "exact-marginal-short-length-joint-correlation-open",
+      "threshold_fraction": 0.5,
+      "uniform_permutation_marginal_theorem_applies": true
+    },
+    {
+      "exact_long_probability": "258743800580512597230745994947/264365954673930131742720000000",
+      "exact_short_probability": "5622154093417534511974005053/264365954673930131742720000000",
+      "joint_distinct_mask_theorem_applies": true,
+      "joint_word_anticoncentration_proved": false,
+      "log2_short_probability": -5.555269590785997,
+      "maximum_transposition_length": 24,
+      "n": 32,
+      "status": "exact-marginal-short-length-joint-correlation-open",
+      "threshold_fraction": 0.75,
+      "uniform_permutation_marginal_theorem_applies": true
+    },
+    {
+      "exact_long_probability": "71085116070523341234416464613535843587039504859689055859224042436811887384627492455109/71085116070523341234416464613535843587039504859689183304650921218607677440000000000000",
+      "exact_short_probability": "127445426878781795790055372507544891/71085116070523341234416464613535843587039504859689183304650921218607677440000000000000",
+      "joint_distinct_mask_theorem_applies": true,
+      "joint_word_anticoncentration_proved": false,
+      "log2_short_probability": -168.5760726556528,
+      "maximum_transposition_length": 16,
+      "n": 64,
+      "status": "exact-marginal-short-length-joint-correlation-open",
+      "threshold_fraction": 0.25,
+      "uniform_permutation_marginal_theorem_applies": true
+    },
+    {
+      "exact_long_probability": "3776396791246552503078372846189371712921637695320224953616111499105677414796288584877/3776396791246552503078374682594091690561473695670987863059580189738532864000000000000",
+      "exact_short_probability": "1836404719977639836000350762909443468690632855449203711415123/3776396791246552503078374682594091690561473695670987863059580189738532864000000000000",
+      "joint_distinct_mask_theorem_applies": true,
+      "joint_word_anticoncentration_proved": false,
+      "log2_short_probability": -80.76640059070687,
+      "maximum_transposition_length": 32,
+      "n": 64,
+      "status": "exact-marginal-short-length-joint-correlation-open",
+      "threshold_fraction": 0.5,
+      "uniform_permutation_marginal_theorem_applies": true
+    },
+    {
+      "exact_long_probability": "9221821264856608057337702503172359386071935447869417421224192286618658667118009/9221826574703496514029037684254811337572721654771409749061874483200000000000000",
+      "exact_short_probability": "5309846888456691335181082451951500786206901992327837682196581341332881991/9221826574703496514029037684254811337572721654771409749061874483200000000000000",
+      "joint_distinct_mask_theorem_applies": true,
+      "joint_word_anticoncentration_proved": false,
+      "log2_short_probability": -20.727950843119856,
+      "maximum_transposition_length": 48,
+      "n": 64,
+      "status": "exact-marginal-short-length-joint-correlation-open",
+      "threshold_fraction": 0.75,
+      "uniform_permutation_marginal_theorem_applies": true
+    }
+  ],
+  "status": "short-word-marginals-and-mask-diagonal-closed-non-diagonal-correlation-open",
+  "summary": "Proved exact uniform fixed-mask marginals and negligible mask collisions; at n=64 the probability that a uniform permutation has transposition length at most n/2 has log2 -80.7664, while joint distinct-mask word correlations remain open.",
+  "theorem_contract": {
+    "fixed_mask_marginal": "Every nonempty even fixed subset bridge word has each base permutation component exactly uniform on S_n",
+    "mask_collision_bound": "Pr(any repeated nonempty even mask)<=binom(k,2)/(2^{m-1}-1)",
+    "remaining_boundary": "Distinct masks share bridge generators; prove joint non-diagonal word-map anti-concentration and character-sign cancellation",
+    "short_length_distribution": "Pr(L<=t)=n!^-1 sum_{cycles>=n-t} unsigned_stirling_first_kind(n,cycles)"
+  },
+  "uniformity_validations": [
+    {
+      "bridge_sequence_count": 4,
+      "distinct_left_output_count": 2,
+      "distinct_right_output_count": 2,
+      "exact_uniform_marginals_verified": true,
+      "expected_permutation_count": 2,
+      "maximum_left_multiplicity_deviation": 0,
+      "maximum_right_multiplicity_deviation": 0,
+      "moment_order": 2,
+      "n": 2,
+      "selected_bridge_count": 2,
+      "subset_mask": 3
+    },
+    {
+      "bridge_sequence_count": 8,
+      "distinct_left_output_count": 2,
+      "distinct_right_output_count": 2,
+      "exact_uniform_marginals_verified": true,
+      "expected_permutation_count": 2,
+      "maximum_left_multiplicity_deviation": 0,
+      "maximum_right_multiplicity_deviation": 0,
+      "moment_order": 3,
+      "n": 2,
+      "selected_bridge_count": 2,
+      "subset_mask": 5
+    },
+    {
+      "bridge_sequence_count": 36,
+      "distinct_left_output_count": 6,
+      "distinct_right_output_count": 6,
+      "exact_uniform_marginals_verified": true,
+      "expected_permutation_count": 6,
+      "maximum_left_multiplicity_deviation": 0,
+      "maximum_right_multiplicity_deviation": 0,
+      "moment_order": 2,
+      "n": 3,
+      "selected_bridge_count": 2,
+      "subset_mask": 3
+    },
+    {
+      "bridge_sequence_count": 216,
+      "distinct_left_output_count": 6,
+      "distinct_right_output_count": 6,
+      "exact_uniform_marginals_verified": true,
+      "expected_permutation_count": 6,
+      "maximum_left_multiplicity_deviation": 0,
+      "maximum_right_multiplicity_deviation": 0,
+      "moment_order": 3,
+      "n": 3,
+      "selected_bridge_count": 2,
+      "subset_mask": 5
+    },
+    {
+      "bridge_sequence_count": 1296,
+      "distinct_left_output_count": 6,
+      "distinct_right_output_count": 6,
+      "exact_uniform_marginals_verified": true,
+      "expected_permutation_count": 6,
+      "maximum_left_multiplicity_deviation": 0,
+      "maximum_right_multiplicity_deviation": 0,
+      "moment_order": 4,
+      "n": 3,
+      "selected_bridge_count": 4,
+      "subset_mask": 15
+    }
+  ]
+}

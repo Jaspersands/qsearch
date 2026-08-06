@@ -4,6 +4,17 @@ This project is being reshaped around one goal: increase the chance of finding
 or clarifying a genuinely major quantum algorithmic idea. It should not optimize
 for demos, toy circuits, small benchmark wins, or unsupported speedup claims.
 
+Model usage is part of that objective. Spend high-capability Codex time on the
+work whose bottleneck is research judgment: theorem derivation, structural
+falsification, asymptotic analysis, representation-theoretic reductions, and
+the design of decisive experiments. Batch routine plumbing, registry/CLI
+wiring, formatting, artifact refreshes, and repetitive validation for Gemini
+3.6 Flash through Antigravity after Codex usage is exhausted. Before any Codex
+session ends, maintain `research/AGENT_HANDOFF.md` as an executable continuation
+queue that preserves theorem scope, unresolved assumptions, falsifiers,
+negative results, and exact mechanical tasks. The successor must not restore
+toy circuit search or promote a finite experiment into a speedup claim.
+
 ## Blunt Diagnosis
 
 The original project was not a credible path to a Shor-level discovery.
@@ -134,6 +145,9 @@ python qsearch.py dcp-subset-sum-fixed-moments
 python qsearch.py dcp-subset-sum-conditioned-tail
 python qsearch.py dcp-subset-sum-growing-moments
 python qsearch.py dcp-subset-sum-growing-chain
+python qsearch.py dcp-subset-sum-signed-l2
+python qsearch.py dcp-subset-sum-sparse-characters
+python qsearch.py dcp-subset-sum-qtt
 python qsearch.py dcp-subset-sum-embedding-volume
 python qsearch.py dcp-subset-sum-short-relations
 python qsearch.py dcp-subset-sum-carry-relations
@@ -165,6 +179,23 @@ python qsearch.py run EXP-DHS-DCP-MARKER-VULNERABLE-COORDINATE-DECODER
 python qsearch.py run EXP-DHS-DCP-MARKER-CHART-UNION-DECODER
 python qsearch.py run EXP-DHS-DCP-MARKER-TARGET-ADAPTIVE-BEAM
 python qsearch.py run EXP-DHS-DCP-SUBSET-SUM-GROWING-ORDER-CHAIN-THEOREM
+python qsearch.py run EXP-DHS-DCP-SUBSET-SUM-SIGNED-L2-OBSTRUCTION
+python qsearch.py run EXP-DHS-DCP-SUBSET-SUM-ADAPTIVE-SPARSE-CHARACTER-OBSTRUCTION
+python qsearch.py run EXP-DHS-DCP-SUBSET-SUM-QTT-DENSE-CONTRACTION
+python qsearch.py dcp-pgm-gram
+python qsearch.py run EXP-DHS-DCP-PGM-GRAM-BLOCK-ENCODING
+python qsearch.py dcp-pgm-qsvt
+python qsearch.py run EXP-DHS-DCP-PGM-QSVT-DEGREE-OBSTRUCTION
+python qsearch.py dcp-quenched-occupancy
+python qsearch.py run EXP-DHS-DCP-SUBSET-SUM-QUENCHED-OCCUPANCY-THEOREM
+python qsearch.py dcp-fiber-erasure-boundary
+python qsearch.py run EXP-DHS-DCP-COHERENT-FIBER-ERASURE-BOUNDARY
+python qsearch.py dcp-erasure-inversion
+python qsearch.py run EXP-DHS-DCP-GLOBAL-ERASURE-INVERSION-REDUCTION
+python qsearch.py dcp-erasure-coherence
+python qsearch.py run EXP-DHS-DCP-APPROXIMATE-ERASURE-COHERENCE-REDUCTION
+python qsearch.py dcp-erasure-perturbation
+python qsearch.py run EXP-DHS-DCP-ERASURE-PERTURBATION-REDUCTION
 python qsearch.py run EXP-DHS-DCP-SAMPLE-NATIVE-SIEVE
 python qsearch.py run EXP-DHS-DCP-RECURSIVE-DECODER
 python qsearch.py run EXP-DHS-DCP-RECURRENCE-SCALING
@@ -425,6 +456,103 @@ In the live independent-target sweep, standard `n^3` beam success is `3/3` at
 carry-sliced `n^2` are also `0/3` at `n=56`. Wilson intervals are stored with
 every row. These sparse finite counts reject a stable finite survivor but do
 not prove negligible success for every fixed polynomial degree.
+
+Sparse signed exact-hit statistics chosen from exposed low labels are now
+closed analytically. After conditioning on those low labels, every pair of
+distinct nonzero Boolean high equations is exactly independent because its
+coefficient matrix has a unit `2x2` minor. Thus a signed score has exact
+conditional variance `Q^-1(1-Q^-1) sum c_x^2`, and a support of size `M`
+departs from its deterministic no-hit baseline with probability at most
+`M/Q`. The exhaustive control verifies all 21 assignment pairs and the exact
+variance identity with zero failures. This does not cover coefficients computed
+from full high labels, dense implicit contractions, nonlinear statistics, or
+reduced-basis geometry; those are the remaining signed-observable directions.
+
+Full-label adaptation does not rescue a polynomially sparse Fourier route.
+For the exact subset-sum generating product
+`P(r)=prod_i(1+exp(2 pi i r a_i/2^n))`, low-order characters are annihilated
+by random antipodal labels. An alias-free growing root moment controls every
+remaining character simultaneously. Consequently, after all labels and the
+target are visible, any adaptive set of at most `m^B` nonzero characters has
+total contribution at most `2^(m-n)m^(B-A)` for every fixed `A`, outside
+superpolynomially small source mass. Exact Fourier and root-moment controls pass
+with zero failures; three of five finite scaling rows are already conclusive.
+This closes sparse dictionaries, not polynomial-size circuits that implicitly
+contract exponentially many characters. Dense contraction is now the explicit
+Fourier frontier.
+
+The first dense architecture audit tensorizes the exact target count vector
+into binary target axes and tests quantized tensor trains. Central-cut singular
+tails give necessary bond ranks for entrywise additive count error below
+`1/2`, the threshold needed to recover integer counts. Across `n=8–18`, the
+best required ranks are `5–6`, `13–14`, `23–28`, `46–47`, and `100–106`;
+at `n=18` they reach `218–224`, and the fitted `log2(rank)` slope is `0.519`.
+True capped TT-SVD still rounds about `24.5%` of legal counts correctly at the
+tail, but the mean excess is only `4.86%` over the zero-frequency constant and
+`4.73%` over histogram-permuted controls, below `1/n`, with a fitted excess
+slope of `-0.407`. The registered linear bond cap has no uniform survivor after
+`n=8`, and TT-SVD itself materializes the full vector. This is finite negative
+evidence against direct target-bit QTT, not a lower bound against every
+polynomial bond degree or a different algebraic tensorization.
+
+The clean PGM Gram operator now has an exact projected implementation audit.
+Uniform subset preparation, reversible modular subset-sum evaluation, and an
+equality flag block-encode `diag(c_s/2^m)=G/N` without an exponential table.
+That construction does not implement the PGM: at density one, conditioned
+first/second-moment bounds put all but inverse-polynomial legal-source mass in
+polynomial-size fibers, so generic equality amplification or inverse-square-root
+resolution still costs `sqrt(2^m/c_s)=2^Omega(n)`. The generic block-encoding
+task is retired. The open implementation frontier is a source-structured
+preconditioner, collision walk, or different full-rank measurement with
+polynomial normalization, precision, and complete resource accounting.
+Generic QSVT does not repair the normalization. Markov's inequality forces
+degree `Omega(2^(m/2))` on the direct count encoding and
+`Omega(2^(m/4))` on the square-root amplitude encoding whenever singleton and
+doubleton fibers coexist. An explicit source family proves this uniformly in
+the worst case. A two-target extension of the fixed-order lattice-transfer
+argument resolves the average-source prevalence question: products of
+empirical factorial moments concentrate, yielding a
+quenched Poisson(1) fiber law. Thus singleton and doubleton residues occupy
+asymptotically positive fractions with high probability over random public
+labels. Generic direct QSVT is now blocked on the average-source contract; this
+still does not cover source-aware encodings, preconditioners, or collision
+walks.
+
+Coherent fiber erasure now has an explicit access boundary. The tight
+square-root black-box lower bound for non-coherent index erasure is retained as
+a generic state-generation baseline, but it is not transferred to public
+arithmetic subset-sum maps. Conversely, a target-addressable flagged
+normalized-fiber preparer would decide support, and fixed-variable stability
+would yield witness search. A global collective PGM channel that never exposes
+that interface remains open and must be audited directly on independent DCP
+state input.
+
+The apparent global coherent-erasure escape is also conditional on solving the
+hard primitive. Erasure before a cyclic QFT must leave target-independent
+garbage or it dephases the target register. With common preparable garbage the
+erasure circuit is invertible into normalized-fiber preparation. The quenched
+support law gives `q_s <= (D/L) pi_s` with
+`D/L -> 1/(1-e^-1)`, so source-weighted average fidelity transfers to
+uniform-legal targets at constant loss. Measuring and verifying then yields an
+average subset-sum witness solver. Arbitrary full-rank POVMs without an
+erasure-plus-QFT factorization remain open.
+
+Target-dependent garbage does not rescue an exact erasure factorization. Its
+relative QFT success is
+`R = ||sum_s sqrt(c_s)/Z |g_s>||^2`. The same weighted mean garbage state is
+preparable from the public zero-frequency input. Jensen plus a multiplicity
+truncation gives uniform-legal inverse fidelity at least `(L/D)R^2/4`.
+Therefore every inverse-polynomial-success exact erasure-plus-QFT decoder is
+already an inverse-polynomial average witness solver. Approximate-isometry
+perturbation bounds and arbitrary non-erasure POVMs remain open.
+
+Uniform operator-norm approximation does not reopen erasure. If relative
+decoding success is `R` and legal support fraction is at least `rho`, error
+`delta <= rho^2 R^(5/2)/128` preserves polynomial reference preparation and
+`Omega(rho R^2)` witness success. For `R=1/poly(n)`, this is still only
+inverse-polynomial circuit precision. The remaining approximation loophole is
+strictly average-state channel control, not ordinary uniform circuit
+approximation.
 
 Marker awareness is now formalized as an exact reduction. The relation vectors
 form the marker-zero kernel and witnesses live in its marker-one affine coset.
@@ -1187,6 +1315,7 @@ python qsearch.py coset-racah-typical-n10-gap-trend
 python qsearch.py coset-racah-typical-source-coverage
 python qsearch.py coset-racah-typical-uniform-sources
 python qsearch.py coset-racah-typical-parity-separator
+python qsearch.py coset-racah-typical-parity-holdout
 python qsearch.py run EXP-COSET-TYPICAL-COMMUTANT-MOMENT-AUDIT
 python qsearch.py run EXP-COSET-TYPICAL-CLASS-CONTRACTION-SCALING
 python qsearch.py run EXP-COSET-TYPICAL-PORTFOLIO-COLLISION-CERTIFICATE
@@ -1203,9 +1332,24 @@ python qsearch.py run EXP-COSET-TYPICAL-N10-GAP-TREND
 python qsearch.py run EXP-COSET-TYPICAL-SOURCE-COVERAGE
 python qsearch.py run EXP-COSET-TYPICAL-UNIFORM-SOURCE-PROBE
 python qsearch.py run EXP-COSET-TYPICAL-PARITY-COMPLETE-SEPARATOR
+python qsearch.py run EXP-COSET-TYPICAL-PARITY-CLASS-CONTRACTION
 python qsearch.py run EXP-COSET-SAME-HIDDEN-TARGET-LAW
 python qsearch.py run EXP-COSET-COMMUTANT-INFORMATION-OBSTRUCTION
 python qsearch.py run EXP-COSET-CARRIER-INFORMATION-AUDIT
+python qsearch.py coset-natural-multicopy-pgm
+python qsearch.py run EXP-COSET-NATURAL-MULTICOPY-PGM
+python qsearch.py coset-pgm-gain-localization
+python qsearch.py run EXP-COSET-PGM-GAIN-LOCALIZATION
+python qsearch.py coset-pgm-average-frame
+python qsearch.py run EXP-COSET-PGM-AVERAGE-FRAME-BLOCK-ENCODING
+python qsearch.py coset-character-ratios
+python qsearch.py run EXP-COSET-NATURAL-CHARACTER-RATIO-CONCENTRATION
+python qsearch.py coset-projector-subpovm
+python qsearch.py run EXP-COSET-COVARIANT-PROJECTOR-SUBPOVM
+python qsearch.py code-wreath-projector-subpovm
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-PROJECTOR-SUBPOVM
+python qsearch.py code-wreath-subpovm-moments
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-SUBPOVM-MOMENTS
 python qsearch.py run EXP-COSET-STRONG-FOURIER-INFORMATION-SCALING
 python qsearch.py run EXP-COSET-ENTANGLEMENT-WIDTH-GATE
 python qsearch.py run EXP-COSET-GROWING-WIDTH-ARCHITECTURE
@@ -1225,11 +1369,111 @@ It exhausts 1,744 primitive support-at-most-three integer rules over all 663
 ordered-source nontrivial blocks at `n=5,6,7`.  The frozen rule
 `TC2+CT1-2CT2` has no numerical collision there and a minimum raw gap of about
 `0.00948`; exact rational character moments prove that it repairs the two
-former scalar blocks.  This is finite discovery evidence only.  The remaining
-gates are an independent `n=8` holdout, exact higher-multiplicity certificates,
-an all-`n` normalized-gap theorem, a coherent implementation, informative
-hidden-dependent multiplicity outcomes, and a decoder.  The exact
-same-hidden target law is now supplied by the separate character-ratio audit.
+former scalar blocks.  The independent holdout falsifies that rule:
+class-compressed exact character contractions audit all 2,483 nontrivial
+ordered-source blocks at `n=8` and find 10 multiplicity-two scalar
+obstructions, arranged in source-swap and sign-conjugate families.  Across
+`n=5..8`, 1,608 of 1,618 multiplicity-two blocks split.  The frozen rule is
+retired; fitting another small-size coefficient vector is not progress without
+an all-`n` algebraic construction.  The higher-value route is a growing-width,
+carrier-sensitive covariant measurement with an explicit decoder, while
+bounded-support commutants remain preprocessing primitives.
+
+The natural multi-copy PGM benchmark supplies a stricter measurement objective
+than the fixed-source separator searches. It averages over the complete
+weak-Fourier source-label law on the exact `S_5` fixed-point-free ensemble and
+compares the global conditioned PGM with both independent one-copy PGMs and
+separate Young-basis measurements. At three copies, the global PGM gains about
+`0.717` bits over product PGMs and `0.452` bits over separate Young outcomes,
+with normalization/completeness residuals below `1.2e-14`. This is finite
+architecture-design evidence only: the PGM is still materialized as dense
+branch matrices, and there is no uniform circuit, compressed outcome,
+polynomial hidden-involution decoder, asymptotic theorem, or classical
+separation.
+
+The gain-localization audit removes two easy explanations for that finite
+signal. On all 84 natural three-copy source multisets, 65 branches contribute
+positive gain and none contribute negative gain; those branches carry about
+`99.67%` of natural source mass. The largest branch supplies only `8.4%` of
+aggregate gain, while 80% of gain spans about `69.2%` of source mass. All
+finite average frames have condition number below `20`, at most 17 distinct
+nonzero eigenvalues, and finite exact inverse-root interpolation degree at most
+16. The new bottleneck is an all-`n` harmonic block encoding and spectral
+theorem for the average frame, followed by a covariant outcome circuit and
+decoder. Dense finite inversion remains non-algorithmic.
+
+The average-frame audit gives the compact operator identity behind the signal:
+for any copy count, the frame is the sum of subset diagonal-action class
+averages divided by the source normalization. A conditional projected-LCU
+schema coherently averages the product of `I+rho_lambda(h)` without storing the
+hidden orbit. Exact reconstruction and LCU proportionality pass on all 84
+natural `S_5` branches with residuals below `6e-17` and `2.3e-16`. This still
+does not solve the measurement problem. At `k=ceil(n log2 n)`, the normalized
+operator has roughly `2^-k` average spectral scale when hard-sector character
+ratios are small; the conditional generic square-root amplification exponent
+is about 159 bits by the `n=64` row. The character-ratio envelope itself still
+needs a natural-source theorem. Future work must find a structured harmonic
+amplifier, a better frame factorization, or a direct covariant measurement
+that avoids this normalization.
+
+The natural character-ratio theorem removes the remaining distributional
+assumption from that barrier. For
+`r_lambda=chi_lambda(C)/d_lambda`, column orthogonality gives
+`E_Plancherel[r_lambda^2]=1/|C|`. The exact coset source law is the Plancherel
+law reweighted by `1+r_lambda`, so
+`Pr(|r_lambda|>epsilon)<=2/(|C|epsilon^2)`. Across
+`k=ceil(n log2 n)` iid source labels, the `epsilon=1/sqrt(n)` failure bound is
+`2kn/|C|`; for fixed-point-free involutions its log2 value is below `-338` by
+`n=128`. Complete partition-table controls through `n=16` verify source mass,
+column orthogonality, and the natural second-moment bound. This makes the
+direct projected-LCU normalization obstruction a natural-input result, while
+leaving non-LCU collective measurements open.
+
+The whitening-free projector sub-POVM is the first concrete non-LCU
+alternative. Each conditioned source state is a normalized projector
+`rho_h=P_h/rank(P_h)`. Setting
+`E_h=rho_h/||sum_y rho_y||` and adding a failure effect gives a valid covariant
+measurement with conclusive probability
+`q=Tr(F^2)/||F||>=1/kappa(F)`, so absolute frame normalization disappears.
+All 119 natural `S_5` source-branch controls pass the projector, completeness,
+and conclusive-formula identities to about `1e-15`. At three copies the
+sub-POVM retains about `0.456` bits with conclusive probability `0.598`, beating
+product one-copy PGM by `0.161` bits but not separate Young-basis information.
+The obvious uniform-label controlled-projector dilation realizes weaker
+`P_h/M` effects and retains only about `0.120` bits with conclusive probability
+`0.183` on the same control. The stronger condition-normalized effects are a
+mathematical POVM, not an implemented circuit. This is now the main measurement
+architecture, but it still needs a structured maximal-scale harmonic Naimark
+dilation for the exponentially large covariant orbit,
+compressed outcomes, an all-`n` frame-condition theorem, a polynomial decoder,
+and classical separation.
+
+The projector theorem transfers algebraically to the physical code-equivalence
+wreath group because every bridge hidden element is an involution and every
+conditioned state is again a normalized support projector. The finite
+`S_5` information and condition values do not transfer. Existing exact wreath
+moments provide only a moment-based conclusive lower bound with log2 value
+about `-295` at `n=64`; this is also the exact conclusive probability of the
+direct uniform-label projector dilation. Reaching the maximal condition-
+normalized effects requires a new structured dilation or amplification. Four
+selected finite information-threshold physical
+blocks have inverse-condition floor about `0.364`, but they do not cover the
+complete natural source law. The top physical target is therefore an all-sector
+wreath frame-condition theorem plus a harmonic covariant Naimark dilation and
+compressed permutation decoder.
+
+The moment-certificate bridge replaces an unsupported all-sector condition fit
+with a precise proof target. For a physical frame block `B`, the maximal
+projector sub-POVM has
+`q=Tr(B^2)/(Tr(B)||B||)` and order-`p` moments certify
+`q>=Tr(B^2)/(Tr(B)Tr(B^p)^(1/p))`. Across all 84 naturally occupied complete
+`W_3` threshold blocks, exact aggregate conclusive probability is `0.725`;
+order 4 certifies `0.411` and order 16 certifies `0.650`. A factor-two norm
+certificate may require moment order up to `175526` on the `n=64` Hilbert-
+dimension bound. That order remains polynomial in `n`. The natural source-law
+reduction below removes equal-pair sectors from the asymptotic critical path,
+but no growing-order contraction for arbitrary all-unequal tuples, structured
+maximal-effect dilation, or decoder is known.
 
 The exact portfolio audit now has both a hard cut and a surviving finite
 direction.  On the maximum-dimension `S_8` source, TC2 is zero on targets
@@ -1401,6 +1645,684 @@ python qsearch.py code-incidence-resolve --verbose
 This resolver is a finite-instance falsifier, not a scalable algorithm: its
 incidence graph contains `2^k` codeword vertices, and caps/timeouts remain proof
 debt.
+
+Generate certified self-dual `[I|A]` codes whose hull grows with dimension,
+then attack their collisions with Schur-square/cube, column-matroid,
+puncture/shorten, full-codeword, and exact finite incidence checks:
+
+```bash
+python qsearch.py code-self-dual-search --verbose
+python qsearch.py run EXP-CODE-SELF-DUAL-BOUNDARY-SEARCH
+```
+
+This family evades the trivial-hull projector shortcut, but that removes only
+one obstruction. Polynomial-signature collisions, finite exact
+non-equivalence, solver caps, and timeouts remain classical proof debt until a
+scalable canonicalization lower bound and a nonabelian measurement necessity
+are established.
+
+Certify why the bounded local puncture/shorten profiles collapse:
+
+```bash
+python qsearch.py code-self-dual-local-obstruction --verbose
+python qsearch.py run EXP-CODE-SELF-DUAL-LOCAL-PROFILE-OBSTRUCTION
+```
+
+For a self-dual `[2k,k,d]` code and `|S|<d`, puncturing on `S` has dimension
+`k`, while shortening and both resulting hulls have dimension `k-|S|`.
+Therefore fixed-order local rank-hull collisions are forced on a
+growing-distance family. They are a no-go for that baseline, not hardness
+evidence.
+
+Audit the remaining global orbit and the Construction-A lattice bridge:
+
+```bash
+python qsearch.py code-self-dual-global-orbit --verbose
+python qsearch.py run EXP-CODE-SELF-DUAL-GLOBAL-ORBIT-AUDIT
+```
+
+Full basis-normalized column-multiset matches are exact equivalence witnesses.
+Independent sampled misses are not non-equivalence certificates. The audit also
+charges Construction-A determinant, parity, minimum norm, and root counts while
+leaving the coordinate-frame reverse implication explicit; a forward
+code-to-lattice map is not silently treated as an iff reduction.
+
+Audit the exact code-equivalence HSP and published no-go hypotheses:
+
+```bash
+python qsearch.py code-self-dual-hsp --verbose
+python qsearch.py run EXP-CODE-SELF-DUAL-HSP-APPLICABILITY
+```
+
+The raw scrambler-permutation hidden shift is over `GL_k(F_2) x S_n`, and the
+corresponding HSP is over its wreath product with `Z_2`. The
+Dinh-Moore-Russell criterion does not cover `k=n/2`, but that apparent opening
+does not survive canonicalization of the public generator rowspace:
+
+```bash
+python qsearch.py code-self-dual-rowspace-hsp --verbose
+python qsearch.py run EXP-CODE-SELF-DUAL-ROWSPACE-HSP-REDUCTION
+```
+
+The exact hiding function `f_C(P)=RREF(MP)` removes the `GL_k` row-scrambler
+gauge and gives hidden shift over `S_n`, with stabilizer `PAut(C)`. Therefore
+the raw high-rate dimension-gate failure is not evidence for a quantum signal.
+The real open obligations are to certify the tail automorphism groups and
+minimal degrees, apply the appropriate symmetric-group coset-state no-go, and
+only then search for a collective measurement and polynomial decoder.
+
+Stratify that automorphism debt with exact bounded-weight supports:
+
+```bash
+python qsearch.py code-self-dual-automorphisms --verbose
+python qsearch.py run EXP-CODE-SELF-DUAL-AUTOMORPHISM-WORKBENCH
+```
+
+Self-duality makes the public generator a parity check, so every codeword
+support through weight eight is enumerated exactly by matching size-at-most-four
+column subsets with equal XOR. On the current tail, all sampled `k=16`
+instances have verified nontrivial full-code automorphisms, all sampled `k=24`
+instances have singleton color-refinement rigidity certificates, and `k=32`
+remains unresolved because the fixed-weight support hypergraph is too sparse.
+These are finite strata, not an infinite-family theorem. Rigid rows inherit the
+GI-type single-register/strong-Fourier obstruction, but collective measurements
+and polynomial decoding remain open.
+
+Resolve the sparse weight-eight tail without erasing that scaling failure:
+
+```bash
+python qsearch.py code-self-dual-high-order --verbose
+python qsearch.py run EXP-CODE-SELF-DUAL-HIGH-ORDER-AUTOMORPHISM-RESOLVER
+```
+
+The packed order-five meet-in-the-middle pass exactly enumerates supports
+through weight ten on the length-64 rows. It resolves all six prior `k=32`
+automorphism-debt instances as rigid by singleton coordinate refinement. The
+combined current tail is therefore 12 rigid, 8 explicitly nonrigid, and 0
+unresolved instances. This still does not prove a growing-family theorem.
+For the rigid `k>=24` stratum, single-register Fourier search is now
+deprioritized; the relevant quantum target is a genuinely collective
+measurement with a polynomial hidden-permutation decoder.
+
+Prove the asymptotic limit of that finite certificate:
+
+```bash
+python qsearch.py code-self-dual-sparsity --verbose
+python qsearch.py run EXP-CODE-SELF-DUAL-FIXED-ORDER-SPARSITY-OBSTRUCTION
+```
+
+For a uniform binary self-dual length-`n` code, a fixed nontrivial even vector
+belongs with probability `1/(2^(n/2-1)+1)`. Thus every fixed-weight support
+count vanishes asymptotically. The observed weight-eight/ten counts closely
+track this exact ensemble expectation. Nonvanishing support density moves to
+linear relative weight at the binary-entropy threshold
+`H_2(delta)=1/2`, `delta approximately 0.110028`, making explicit
+meet-in-the-middle enumeration exponential. This cuts fixed-order support
+enumeration as the family-scale automorphism method. It does not rule out an
+implicit growing-weight invariant and is not quantum speedup evidence.
+
+Use the exact group for the surviving rigid HSP:
+
+```bash
+python qsearch.py code-self-dual-wreath --verbose
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-SPECTRUM
+```
+
+Rigid code equivalence gives bridge involutions `h_s=(s,s^-1;swap)` in
+`(S_n x S_n) semidirect Z_2`, indexed by `n!` hidden permutations. Unequal
+irrep pairs have bridge character zero; equal pairs split into `+/-` extensions
+with character ratios `+/-1/d_lambda`. This yields an exact one-copy frame,
+PGM, Holevo bound, and weak-label zero-information theorem in the correct
+group. One-copy PGM success remains below twice uniform guessing. The open
+mechanism is now precise: a `Theta(log n!)`-copy diagonal-action transform,
+carrier-sensitive covariant POVM, and polynomial hidden-permutation decoder.
+
+Audit the scalar homogeneous-space shortcut before using it:
+
+```bash
+python qsearch.py code-self-dual-wreath-hecke --verbose
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-HECKE-AUDIT
+```
+
+The bridge-label stabilizer `C_W(h_e)` does form a Gelfand pair with the
+wreath group, and scalar covariant kernels reduce to symmetric-group class
+functions. The actual hidden subgroup is instead `H=<h_e>`; its equal-pair
+irreps have multiplicity `(d_lambda^2 +/- d_lambda)/2`, so `(W_n,H)` is
+non-Gelfand from `n=3` onward. The all-register Gelfand-pair PGM theorem
+therefore does not transfer. Moreover, the normalized `k`-copy
+Hilbert-Schmidt kernel is `1` for equal hidden permutations and `2^-k`
+otherwise, with no cycle-type signal. This removes a factorial scalar table
+but leaves the operator-valued subset/carrier algebra, frame inverse, POVM,
+and decoder fully open.
+
+Reduce that operator frame to its exact PGM polar problem:
+
+```bash
+python qsearch.py code-self-dual-wreath-pgm --verbose
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-PGM-POLAR-AUDIT
+```
+
+For `k` copies, the support projectors `P_s` define
+`B_k=(1/n!) sum_s P_s` and
+`A_k=(1/sqrt(n!)) sum_s |s> tensor P_s`. The PGM is exactly the polar
+isometry `A_k B_k^-1/2`, and `B_k` has a compact LCU expansion over a
+permutation label and a `k`-bit subset mask. This is a real operator-valued
+reduction, but not yet an algorithm. At `k=ceil(log2(n!))`, exact first and
+second moments put the relevant polar singular scale at
+`Theta((n!)^-1/2)`. Generic frame inversion and even an optimistic reusable
+candidate-verifier search are factorial. The new target is a
+representation-specific carrier preconditioner or direct polar transform
+that is legal under ordinary mixed coset-state access.
+
+Audit the subset-orbit carrier algebra before proposing that preconditioner:
+
+```bash
+python qsearch.py code-self-dual-wreath-carrier --verbose
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-SUBSET-CARRIER-ALGEBRA
+```
+
+Writing the average frame as `2^-k sum_A T_A` and grouping by subset size
+does reduce formal labels to `U_0,...,U_k`. It does not produce a scalar
+algebra. Exact sparse wreath-group calculations show that overlapping
+`T_A` operators fail to commute for nonabelian `S_n`, and the fully
+register-symmetrized `U_2,U_3` pair first fails to commute at `k=4`. For the
+`S_3`, `k=4` control, words through depths `1,2,3` have modular rank lower
+bounds `5,16,42`, already exceeding the `k+1` scalar orbit dimension. The
+next target is therefore a noncommutative multiplicity-block transform and
+conditioned recurrence, not a Hamming-weight/Krawtchouk diagonalization.
+
+Cut explicit carrier-orbit enumeration at scaling:
+
+```bash
+python qsearch.py code-self-dual-wreath-orbits --verbose
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-CARRIER-ORBIT-GROWTH
+```
+
+A depth-`d` carrier word has `d-1` relative permutations modulo simultaneous
+conjugation. Burnside's lemma gives
+`sum_{lambda partition n} z_lambda^(d-2)` orbits before the final wreath
+swap, which can reduce the count by at most two. At depth three, the identity
+cycle type alone contributes `n!`; at depth four it contributes `(n!)^2`.
+Thus explicit hidden-label carrier tables are factorial even though
+fixed-depth subset-intersection profiles are polynomial in the copy count.
+The only viable next architecture is a compressed harmonic transform using
+irreducible and multiplicity labels with sparse recoupling rules.
+
+Derive that harmonic schema without mistaking labels for an algorithm:
+
+```bash
+python qsearch.py code-self-dual-wreath-harmonics --verbose
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-HARMONIC-CARRIER-SCHEMA
+```
+
+Under conjugation,
+`C[S_n]=direct_sum_nu V_nu tensor C^(m_nu)` with
+`m_nu=sum_lambda g(lambda,lambda,nu)`. The depth-three invariant carrier
+space therefore has dimension `sum_nu m_nu^2`, exactly matching the Burnside
+pair-orbit count. This replaces factorial orbit names by partition and
+multiplicity labels, but it does not make dense block operations efficient:
+some block has at least `n!/p(n)` matrix coordinates. The audit verifies the
+identity exactly through `n=12` and records the theorem tail through `n=64`.
+The remaining target is a sparse internal Kronecker transform and
+carrier-product recurrence; an `S_n` group QFT or compact coordinate address
+alone is insufficient.
+
+Transfer the one existing all-`n` equal-source multiplicity gap without
+overstating its coverage:
+
+```bash
+python qsearch.py code-self-dual-wreath-commutant --verbose
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-COMMUTANT-TRANSFER-AUDIT
+```
+
+The bounded-support commutant Hamiltonian for
+`lambda=(n-2,2)`, `nu=(n-3,2,1)` genuinely resolves a multiplicity-two
+carrier sector with normalized gap `2/[n(n-1)]`. It therefore transfers as a
+polynomial conditional label primitive. It resolves only four invariant
+matrix coordinates, however, in a carrier space with at least `n!`
+coordinates. The audit charges the resulting `4/n!` coverage upper bound and
+keeps cross-source carrier action, frame invariance, general multiplicity
+gaps, and decoding open.
+
+Construct the actual physical Fourier blocks of the correlated frame:
+
+```bash
+python qsearch.py code-self-dual-wreath-frame-blocks --verbose
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-PHYSICAL-FRAME-BLOCKS
+```
+
+For equal-pair wreath irreps, the bridge action is
+`+/-[rho_lambda(s) tensor rho_lambda(s^-1)]Swap`, and a physical `k`-tuple
+block is the exact average of the corresponding correlated projectors.
+Right convolution preserves physical wreath-irrep tuple labels. This is
+distinct from, and does not solve, hidden-label harmonic multiplicities. The
+probe diagonalizes every sign sector for selected `S_3`, `S_4`, and `S_5`
+equal-pair blocks, including all `S_3` information-threshold controls.
+Finite conditioning remains only a control until unequal-pair tuples,
+growing-`n,k` spectral recurrences, and a coherent blockwise inverse exist.
+
+Retain unequal-pair physical irreps in collective analyses:
+
+```bash
+python qsearch.py code-self-dual-wreath-unequal-blocks --verbose
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-UNEQUAL-FRAME-BLOCKS
+```
+
+These induced irreps have exactly zero bridge character, so their one-copy
+frame is `I/2` and weak Fourier labels reveal nothing. Their correlated
+multi-copy blocks are nevertheless non-scalar and can have kernels. The probe
+constructs every unequal `W_3` block through the information threshold, every
+unequal `W_4` block through two copies, and representative `W_5` controls.
+Discarding zero-character sectors is therefore invalid. Mixed tuples of
+different physical irreps, growing spectral recurrences, worst-sector
+conditioning, and a coherent inverse remain open.
+
+Close the finite mixed-tuple loophole completely for `W_3`:
+
+```bash
+python qsearch.py code-self-dual-wreath-w3-tuples --verbose
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-COMPLETE-W3-TUPLES
+```
+
+`W_3` has nine physical irreps and 165 unordered three-copy tuples at the
+information threshold. Exactly 84 tuples carry all natural coset-state mass;
+the remaining tuples contain one of two zero-mass one-dimensional minus
+extensions. Every occupied block has minimum positive eigenvalue at least
+`1/8` and support condition number at most `4`. More than 80% of the natural
+mass lies in blocks with kernels, so a support pseudoinverse is mandatory.
+This complete finite theorem is now a regression target for an all-`n`
+character-moment recurrence, not evidence that such a recurrence or coherent
+inverse already exists.
+
+Derive exact character moments without treating a second moment as an inverse:
+
+```bash
+python qsearch.py code-self-dual-wreath-moments --verbose
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-CHARACTER-MOMENTS
+```
+
+The general wreath-character expansion reproduces all 165 complete `W_3`
+tuple blocks through moments one to four. Its second moment contracts exactly
+to a partition-class sum for arbitrary mixed physical irreps and scales
+through the registered all-`n` portfolios. This does not control the smallest
+positive eigenvalue. A naive third moment requires factorially many
+simultaneous-conjugacy pair orbits, so the active frontier is a symbolic
+class-algebra or representation-ring contraction, followed by a genuine
+support-gap theorem.
+
+Remove that factorial third-moment sum in one exact physical sector:
+
+```bash
+python qsearch.py code-self-dual-wreath-third-moment --verbose
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-THIRD-MOMENT-CONTRACTION
+```
+
+For repeated copies of the unequal irrep induced from the trivial and standard
+`S_n` representations, the third moment depends only on
+`fix(r)+fix(q)+fix(r^-1 q)`. A weighted-rook reduction and the permutation
+cycle index compute its complete distribution with polynomially many
+bivariate coefficient states, eliminating `(n!)^2` pair enumeration. The
+recurrence is exact and validated against direct character sums. It covers one
+irrep family only: equal-pair commutator terms, arbitrary mixed tuples,
+support gaps, coherent pseudoinversion, and decoding all remain open.
+
+Extend exact third moments to every unequal-only mixed tuple:
+
+```bash
+python qsearch.py code-self-dual-wreath-all-unequal --verbose
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-ALL-UNEQUAL-THIRD-MOMENT
+```
+
+For unequal physical irreps, the third projector-word character depends only
+on the conjugacy classes of `r`, `q`, and `r^-1 q`. Symmetric-group class
+connection coefficients therefore give an exact contraction over `p(n)^3`
+class triples with at most `p(n)^4` character-kernel terms. This is
+subfactorial but still `exp(O(sqrt(n)))`, not polynomial. Equal-pair irreps add
+commutator characters. An explicit `S_4` counterexample holds all three class
+labels fixed while changing the commutator class. That proves class triples do
+not solve worst-sector moments, but the natural source-law reduction below
+shows equal sectors need not remain on the average-case critical path.
+
+Reduce the natural asymptotic problem to all-unequal physical sectors:
+
+```bash
+python qsearch.py code-wreath-natural-unequal
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-NATURAL-UNEQUAL-DOMINANCE
+```
+
+A physical weak-Fourier label is exactly two independent Plancherel partitions
+packaged as an equal or unequal pair. Equal-label probability is therefore the
+Plancherel collision probability
+`C_n=sum_lambda (d_lambda^2/n!)^2`, bounded by the largest Plancherel atom.
+The literature theorem
+`max_lambda d_lambda=sqrt(n!) exp(-Theta(sqrt(n)))` gives
+`C_n=exp(-Theta(sqrt(n)))`; even across
+`k=ceil(log2(n!))` labels, `Pr(any equal)<=k C_n=o(1)`. Exact controls through
+`n=48` already give all-unequal tuple probability above `0.95`. Thus mixed
+equal-pair commutator recoupling is no longer the natural asymptotic
+bottleneck. The live target is a growing-order contraction for arbitrary
+all-unequal tuples, followed separately by maximal-effect dilation and
+hidden-permutation decoding.
+
+Remove the physical-irrep sum from every natural moment order:
+
+```bash
+python qsearch.py code-wreath-moment-word-map
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-NATURAL-MOMENT-WORD-MAP
+```
+
+For the exact natural irrep law, character column orthogonality gives
+`E_pi[chi_pi(g)/d_pi]=1[g=e]+1[g in C]/|C|`, where `C` is the bridge
+conjugacy class. Expanding every projector word therefore reduces the
+source-averaged dimension-normalized order-`m` frame moment to
+`E[(2^-m(N_e+N_C/|C|))^k]`, where `N_e` and `N_C` count subset products that
+are the identity or another bridge. This identity is exact at every order,
+removes all physical-irrep enumeration, and reproduces every complete natural
+`W_3` spectral moment through order four. It is not yet a scalable
+contraction: direct evaluation costs `(n!)^m 2^m`, and the `n=64` target has
+moment order `175526`. The next mathematical target is a compressed
+surface-word or cycle-index recurrence for these two subset-word counts,
+followed by a concentration theorem from source-averaged moments to
+individual natural tuple success.
+
+Prove one-word mixing and expose the multi-copy concentration gap:
+
+```bash
+python qsearch.py code-wreath-word-map-mixing
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-WORD-MAP-MIXING
+```
+
+The one-label word statistic is a central lazy walk with sector eigenvalue
+`(1+chi_pi(h)/d_pi)/2`. Exactly two one-dimensional plus sectors are
+stationary, with total natural mass `2/(n!)^2`; every other eigenvalue is at
+most `3/4`. Thus the mean word statistic mixes uniformly to `2/(n!)^2`.
+At the `n=64` target the nonstationary error is more than 72,000 bits below
+that floor. This still does not bound the required `k`th moment: the bridge
+sequence is shared across copies, and Jensen plus boundedness leave an
+interval about 174,000 bits wide. The coupled-chain theorem below closes the
+spectral-gap part of this obstruction but not the typical-source moment scale.
+
+Prove constant-gap shared-generator contraction and isolate rare-sector
+contamination:
+
+```bash
+python qsearch.py code-wreath-coupled-word-gap
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-COUPLED-WORD-WALK-GAP
+```
+
+The exact `k`th word statistic is an endpoint observable of
+`M_k=E_c tensor_i (I+R_c)/2` on the bridge-generated index-two subgroup.
+Because every factor is a projection, on any sector with a nonconstant
+coordinate `j` the tensor product is bounded by its `j`th factor. The
+one-coordinate `3/4` spectral-radius bound therefore tensorizes without a
+`1/k` loss: the coupled chain has gap at least `1/4`. Exact dynamic-programming
+controls match direct subset-word moments.
+
+This is not yet a typical-source success theorem. At `n=64`, order `175526`,
+the transient bound is still far above the stationary `k`th-moment scale, and
+the stationary floor is generated by exponentially rare equal
+one-dimensional labels. The conditioned-kernel theorem below removes that
+contamination exactly.
+
+Condition the source on the asymptotically dominant all-unequal sectors:
+
+```bash
+python qsearch.py code-wreath-conditioned-kernel
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-ALL-UNEQUAL-CONDITIONED-KERNEL
+```
+
+Subtracting diagonal partition pairs from two independent Plancherel draws
+gives an exact signed normalized-character kernel. It vanishes on the swap
+coset and, on `(a,b,0)`, equals the regular delta kernel minus
+`(n!)^-2 sum_lambda d_lambda^2 chi_lambda(a)chi_lambda(b)`, normalized by the
+unequal-pair probability. Complete `W_2`, `W_3`, and `W_4` checks and direct
+bridge-word expansions agree exactly. Every conditioned one-label annealed
+moment is `2^-m`, and projection domination proves `B<=I/2` for every fixed
+all-unequal tuple.
+
+That bound is still about `k-1` operator-norm bits too weak: the frame scale
+indicated by the second moment is approximately `2^{1-k}`. The active theorem
+can be narrowed once more using global source collisions.
+
+Remove repeated source partitions across different physical labels:
+
+```bash
+python qsearch.py code-wreath-global-collision
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-GLOBAL-PARTITION-COLLISION
+```
+
+Before pair packaging, `k` physical labels are exactly `2k` iid Plancherel
+draws. If `C_n` is the Plancherel collision probability, a union bound gives
+`Pr(any source repeat) <= binom(2k,2) C_n`. The maximal-atom theorem and
+`k=Theta(n log n)` make this `o(1)`. Thus natural threshold tuples have all
+`2k` source partitions globally distinct with probability `1-o(1)`. This
+excludes the known repeated trivial-sign `W_3` block whose frame norm remains
+`1/2`.
+
+Global distinctness is not a norm theorem. The active target is a simultaneous
+`k`-coordinate contraction for arbitrary globally distinct source-partition
+tuples, at the `2^{1-k}` frame scale, followed separately by a coherent
+maximal-effect dilation and hidden-permutation decoder.
+
+Probe the collision-free mixed-frame scale directly:
+
+```bash
+python qsearch.py code-wreath-collision-free-frame
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-COLLISION-FREE-FRAME-PROBE
+```
+
+The probe uses matrix-free Hermitian Lanczos, not dense Kronecker frame
+construction. It covers every collision-free `W_4`, `k=2` pairing and an
+adversarial `W_5`, `k=3` portfolio. The `W_5` target is `2^{1-k}=1/4`;
+observed top eigenvalues range from `0.175` to about `0.25842`. Exact
+projector independence is therefore false, but every probe remains within
+roughly `1.034` of the target with explicit eigenpair residual checks. The
+research target is now the sufficient bound
+`||B|| <= poly(n) 2^-k`, not exact equality.
+
+Reduce that norm target to character decay and short-word counting:
+
+```bash
+python qsearch.py code-wreath-character-ratios
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-CHARACTER-RATIO-CONTRACT
+```
+
+For unequal physical labels, every base-coset normalized character factors
+exactly into two products of ordinary `S_n` normalized characters, while the
+swap coset vanishes. The contract links Féray-Sniady pointwise bounds,
+hypercontractive character bounds, and sharp class-walk cutoff estimates.
+Those tools reduce the missing theorem to a precise combinatorial statement:
+correlated subset bridge words with short transposition length must have only
+polynomially inflated total character weight across all `k` globally distinct
+source partitions. Pointwise character decay alone does not prove this joint
+anti-concentration statement.
+
+Close the exact marginal part of the short-word problem:
+
+```bash
+python qsearch.py code-wreath-short-words
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-SHORT-WORD-PROFILE
+```
+
+For every fixed nonempty even subset mask, each base component of the bridge
+word is exactly uniform on `S_n`. Its transposition-length tail is therefore
+an exact unsigned-Stirling distribution. Independently chosen masks across
+the `k` source coordinates are also pairwise distinct with overwhelming
+probability at the certificate order; at `n=64` the collision union bound is
+below `2^-175509`. These facts remove marginal and diagonal explanations.
+Distinct masks still reuse the same bridge generators, so the remaining
+theorem is explicitly non-diagonal joint word-map anti-concentration.
+
+Reduce joint character products to mask-incidence two-cores:
+
+```bash
+python qsearch.py code-wreath-mask-hypergraph
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-MASK-HYPERGRAPH-REDUCTION
+```
+
+If any bridge generator is selected by exactly one character word, averaging
+that generator applies the zero bridge class-sum operator in its unequal
+physical irrep, so the complete joint character product vanishes. Only mask
+incidence matrices whose active columns all have weight at least two can
+contribute. This exact two-core reduction also proves every distinct two-mask
+unequal character covariance is zero. Higher correlations remain: exact
+collision-free `W_5` triangle patterns can have nonzero value, including
+`1/1600`. The active theorem is now aggregate character decay on dense
+incidence two-cores.
+
+Resum the dense two-cores and localize the actual norm theorem:
+
+```bash
+python qsearch.py code-wreath-subgroup-twirl
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-SUBGROUP-TWIRL-REDUCTION
+```
+
+The bridge identity `h_s=x_s h_e x_s^-1` makes the entire collision-free
+frame a subgroup twirl of one tensor projector. Schur averaging then reduces
+its norm exactly to normalized partial traces on diagonal-`S_n` isotypic
+multiplicity spaces. All 15 collision-free `W_4` pairings satisfy the direct
+frame, twirl, central-projector, multiplicity, and top-sector identities.
+This is a reduction, not a bound: at the `n=12`, `k=29` information threshold,
+the largest restriction multiplicity is already about `2^640.99`. The next
+proof target is uniform partial-trace delocalization, or an asymptotic natural
+counterexample.
+
+Resolve the partial-trace block into explicit orientation projectors:
+
+```bash
+python qsearch.py code-wreath-orientation-fourier
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-FOURIER-REDUCTION
+```
+
+The orbit-Gram Fourier transform writes every target block exactly as
+`2^-k` times a sum of invariant-subspace projectors, with the same nonzero
+spectrum as the physical frame. All 15 collision-free `W_4` controls pass.
+The support-counting route fails decisively: every tested information-
+threshold portfolio from `n=6` through `n=12` has full orientation support,
+and the `n=12`, `k=29` case is fully saturated after the third label. The live
+target is the norm geometry of a fully supported, highly overlapping
+projector family via canonical angles, fusion-frame estimates, or recoupling
+identities, not orientation sparsity.
+
+Compute pairwise fusion geometry and the complete averaged second moment:
+
+```bash
+python qsearch.py code-wreath-orientation-moments
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-FUSION-MOMENT
+```
+
+An exact character-convolution formula now evaluates every pair overlap
+`Tr(E_a E_b)`, and symmetric-group class-product constants evaluate
+`Tr(F_nu)` and `Tr(F_nu^2)` without enumerating `4^k` orientation pairs. The
+formula passes 48 active pair controls and 300 rank controls across all 15
+collision-free `W_4` tuples. Through `n=12`, `k=29`, the largest collision
+lower bound is only about `1.06` times the `2^(1-k)` target and the effective
+rank reaches roughly `2^639.91`; no second-moment obstruction appears. This
+is evidence that the fully supported frame may be delocalized, but it is not
+an upper bound on its top eigenvalue. Growing orientation moments or a direct
+operator-valued Gram contraction remain necessary.
+
+Factor the pair-core overlap operator exactly:
+
+```bash
+python qsearch.py code-wreath-pair-core-carrier-factorization
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-PAIR-CORE-CARRIER-FACTORIZATION
+```
+
+For two pair cores sharing an orientation, the overlap is exactly a direct
+sum of `1/(d_beta d_p)` times partial isometries, with one carrier per
+membership cluster and exact representation-ring multiplicities. The
+conjectured single-reciprocal `1/d_alpha` law is therefore false in general;
+finite screens saw single reciprocals only because their membership blocks
+were singletons. Because a correlation equals one exactly when both carriers
+are one dimensional, every off-common correlation is at most `1/(n-1)` for
+`n>=5`. There is no nontrivial multiplicity-space 6j block at a shared
+vertex; genuine Kronecker content first appears for vertex-disjoint cores,
+where a waist bound applies. All 168 screened controls, three named
+`d=5,9,10` controls, 40 repeated-label controls, and 40 disjoint controls
+agree with the closed form to `5.83e-16`.
+
+Measure the crossing-graph weighted degree:
+
+```bash
+python qsearch.py code-wreath-multistar-degree
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-MULTISTAR-DEGREE-OBSTRUCTION
+```
+
+Block Gershgorin on the crossing relation Gram needs the absolute weighted
+degree to stay below two. A sibling merge has a complete bipartite crossing
+graph, and Sellke covering saturates the off-common weight at `1/(n-1)` as
+the label count grows, so the degree grows like `2^(j-1)/(n-1)`. On natural
+threshold portfolios the certificate is already vacuous at `n=8` and reaches
+about `2^25.5` at `n=12`. No absolute-weight comparison can certify the
+residual quotient at natural depth. The surviving object is the
+projector-weighted orientation Laplacian `Delta = D - A`, whose positive
+spectrum equals that of the relation Gram; no gap is proved for it.
+
+Isolate the solvable and unresolved equal-pair commutator terms:
+
+```bash
+python qsearch.py code-self-dual-wreath-commutators --verbose
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-EQUAL-COMMUTATOR-AUDIT
+```
+
+Frobenius' commutator formula contracts a pure product
+`product_i chi_lambda_i([r,q])` exactly from tensor-product multiplicities,
+with no permutation-pair sum. Complete third moments also couple that
+commutator to class functions of `r`, `q`, and `r^-1q`. The sufficient finite
+object is therefore a four-class kernel. Controls through `S_6` construct it
+exactly and expose splitting of class-triple fibers, but still enumerate
+`(n!)^2` pairs. A polynomial recoupling or spin-network contraction remains a
+worst-sector and finite-size obligation, not the first natural-source
+asymptotic target.
+
+Kill the bounded-tail stable-partition shortcut before investing in it:
+
+```bash
+python qsearch.py code-self-dual-wreath-stable-rank --verbose
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-STABLE-COMMUTATOR-RANK
+```
+
+The audit measures exact modular ranks of the physical third-moment feature
+algebra on finite four-class kernels, then computes the natural mass of
+partitions with a fixed number of boxes below the first row. After equal signs
+are aggregated, a physical wreath label is an unordered pair of independent
+Plancherel source partitions. Fixed-tail source mass is `poly_b(n)/n!`, so
+physical pair mass is its square and vanishes rapidly; at `n=64`, the
+registered bounded-tail controls are already hundreds of bits below unit
+mass. Stable character-polynomial recoupling cannot by itself yield a typical
+decoder. The search must move to Plancherel-typical, growing-shape sectors.
+
+Price constant-mass typical portfolios and reject explicit catalogs:
+
+```bash
+python qsearch.py code-self-dual-wreath-typical-portfolio --verbose
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-TYPICAL-PARTITION-PORTFOLIO
+```
+
+The audit computes exact smallest top-Plancherel prefixes reaching 50%, 80%,
+and 90% source mass through `n=32`, squares their mass for physical pair-label
+coverage, and measures their finite four-class feature rank through `S_6`.
+Aggarwal and Elboim's maximal-dimension theorem implies that every fixed-mass
+catalog needs `exp(Omega(sqrt(n)))` labels. Precertifying typical partitions is
+therefore not a polynomial algorithm. The required object is one reversible
+recoupling rule uniform in the sampled partition descriptions.
+
+Type-check known recoupling capabilities before proposing another decoder:
+
+```bash
+python qsearch.py code-self-dual-wreath-recoupling-transfer --verbose
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-TYPICAL-RECOUPLING-TRANSFER
+```
+
+The transfer audit recognizes three useful partial primitives: the `S_n` QFT,
+diagonal YJM target labels, and bounded-support block encodings. It rejects
+their substitution for an arbitrary-source internal Kronecker basis,
+overlapping `k`-copy associators, the mixed four-class contraction, a uniform
+support gap, or a hidden-permutation decoder. The existing fixed typical
+separator also has exact scalar collisions on nonzero natural source-pair
+mass. The next search target is a partition-description-dependent generator
+rule that repairs those collisions and remains coherently implementable.
 
 Apply polynomial-time primal/dual Schur powers and coordinate
 puncture/shortening filtrations to every available binary code pair:
@@ -1795,6 +2717,18 @@ Generated outputs:
   support-colored codeword-coordinate incidence-isomorphism certificates for
   tractable rank-metric and quasi-cyclic proof-debt rows, including verified
   coordinate permutations and explicit expansion/time caps.
+- `research/code_equivalence/self_dual_code_boundary_search.json` - certified
+  growing-hull self-dual families, polynomial invariant collisions, exact
+  finite controls, and explicit cap/timeout proof debt.
+- `research/code_equivalence/self_dual_local_profile_obstruction.json` -
+  minimum-distance certificates and the self-dual puncture/shorten theorem
+  showing when bounded local rank-hull signatures are forced to collapse.
+- `research/code_equivalence/self_dual_global_orbit_audit.json` -
+  information-set orbit measurements, exact normalized-key controls,
+  Construction-A unimodular lattice invariants, and reverse-reduction debt.
+- `research/representation/self_dual_code_hsp_applicability.json` - exact
+  `GL_k(F_2) x S_n` wreath-product HSP contract, group-size accounting,
+  per-hypothesis literature no-go checks, and the high-rate applicability gap.
 - `research/code_equivalence/code_schur_filtration.json` - primal and dual
   Schur-power dimensions plus coordinate puncture/shortening square profiles
   for every available binary code-equivalence pair.
@@ -2049,6 +2983,45 @@ Generated outputs:
   independence, localizes the first possible fixed-order signal to xor-zero
   affine quadruples, and computes their exact low-fiber additive energy by
   Walsh transform without promoting finite energy trends to a decoder theorem.
+- `dcp_subset_sum_signed_l2_obstruction.py` - proves conditional pairwise
+  independence and the exact signed variance identity for sparse exact-hit
+  scores chosen from exposed low bits, while preserving full-label adaptive,
+  dense implicit, nonlinear, and reduced-basis routes as explicit open cases.
+- `dcp_subset_sum_sparse_character_obstruction.py` - proves a simultaneous
+  growing-moment bound over all nonzero subset-sum Fourier characters, closing
+  every polynomially sparse dictionary even under full-label and target
+  adaptation while leaving dense implicit contraction explicitly open.
+- `dcp_subset_sum_qtt_contraction_search.py` - tests direct target-bit
+  quantized tensor trains using exact count vectors, multiple bit orderings,
+  additive-half singular-tail rank requirements, and histogram-preserving
+  controls without promoting finite rank growth to a lower bound.
+- `dcp_pgm_gram_block_encoding.py` - constructs and finite-checks the exact
+  projected DCP Gram encoding, proves its factor-`N` normalization and
+  source-conditioned generic fiber-amplification obstruction, while leaving
+  structured preconditioners and collision walks open.
+- `dcp_pgm_qsvt_degree_obstruction.py` - applies Markov's inequality to prove
+  exponential bounded-polynomial degree for generic transforms of the direct
+  count and amplitude encodings, with an exact all-`n` source certificate and
+  a quenched random-source transfer gate.
+- `dcp_subset_sum_quenched_occupancy_theorem.py` - extends fixed-order
+  lattice transfer to two target groups, proves concentration of empirical
+  factorial moments and the Poisson(1) quenched fiber law, and validates the
+  theorem against exact small source ensembles.
+- `dcp_coherent_fiber_erasure_boundary.py` - separates black-box index
+  erasure from public arithmetic and independent-state DCP access, proves
+  target-addressable support-decision and fixed-variable witness reductions,
+  and preserves global collective channels as an explicit open interface.
+- `dcp_global_erasure_inversion_reduction.py` - proves that PGM-compatible
+  common-garbage coherent erasure is invertible into normalized fibers and,
+  using the quenched target-law bound, conditionally equivalent to an average
+  density-one subset-sum witness solver.
+- `dcp_approximate_erasure_coherence_reduction.py` - extends the conditional
+  reduction to exact erasure isometries with arbitrary target-dependent
+  garbage by preparing their weighted mean and proving a polynomial
+  uniform-legal fidelity transfer.
+- `dcp_erasure_perturbation_reduction.py` - propagates operator-norm circuit
+  error through reference postselection and inverse witness preparation,
+  proving that inverse-polynomial precision preserves the solver reduction.
 - `dcp_subset_sum_target_distribution.py` - separates independent uniform,
   uniform-legal, and planted target multiplicity laws so size-biased planted
   experiments cannot masquerade as evidence under Regev's source contract.
@@ -2232,6 +3205,114 @@ Generated outputs:
   equivalence to colored bipartite graph isomorphism, verifies recovered
   coordinate permutations on full codeword sets, and preserves `2^k` caps or
   timeouts as proof debt.
+- `self_dual_code_boundary_search.py` - generates certified `[I|A]` self-dual
+  codes from orthogonal transvections and separates scalable invariant
+  collisions from exact finite controls and unresolved canonicalization debt.
+- `self_dual_local_profile_obstruction.py` - proves and audits the bounded
+  puncture/shorten rank-hull no-go below self-dual code minimum distance.
+- `self_dual_global_orbit_audit.py` - audits exponential information-set
+  canonization, exact normalized-key witnesses, and the forward-only
+  Construction-A lattice route without turning architecture failures into
+  lower bounds.
+- `self_dual_hsp_applicability.py` - formalizes the code-equivalence hidden
+  shift/HSP and checks whether published single-coset no-go hypotheses actually
+  apply before routing the family into representation-theoretic experiments.
+- `self_dual_rowspace_hsp_reduction.py` - removes the public-generator
+  `GL_k` row-scrambler gauge, certifies the exact `S_n` rowspace hidden shift,
+  and exposes automorphism-group certification as the remaining no-go debt.
+- `self_dual_automorphism_workbench.py` - exactly enumerates fixed-weight
+  self-dual supports, certifies rigidity from automorphism-invariant singleton
+  colors, verifies explicit nontrivial automorphisms on the full rowspace, and
+  preserves sparse-support rows as unresolved debt.
+- `self_dual_high_order_automorphism_resolver.py` - preserves the weight-eight
+  failure, then uses packed exact weight-ten support enumeration to resolve the
+  current length-64 automorphism debt and expose the collective-measurement
+  barrier.
+- `self_dual_fixed_order_sparsity_obstruction.py` - derives the exact uniform
+  self-dual low-weight expectation, calibrates the finite artifacts, and proves
+  that explicit fixed-order support rigidity cannot scale.
+- `self_dual_wreath_spectrum.py` - models the rigid code-equivalence HSP in
+  its actual wreath product, derives the exact one-copy irrep/frame spectrum,
+  and isolates the growing-copy covariant-decoder obligation.
+- `self_dual_wreath_hecke_audit.py` - proves the centralizer homogeneous
+  space is scalar-multiplicity-free, rejects its substitution for the actual
+  non-Gelfand hidden subgroup, and shows the natural scalar overlap kernel has
+  no hidden-permutation cycle geometry.
+- `self_dual_wreath_pgm_polar_audit.py` - derives the exact mixed-state PGM
+  polar isometry and average-frame LCU, computes its threshold spectral
+  moments, and charges the factorial generic inversion/search baseline while
+  isolating the structured-preconditioner target.
+- `self_dual_wreath_subset_carrier_algebra.py` - computes exact sparse
+  overlapping and symmetrized subset-operator commutators, certifies
+  noncommutative word-algebra growth, and rejects scalar subset-weight
+  preconditioning.
+- `self_dual_wreath_carrier_orbit_growth.py` - reduces carrier words to
+  simultaneous-conjugacy tuples, proves factorial orbit growth from depth
+  three, and cuts explicit orbit tables in favor of compressed harmonic
+  blocks.
+- `self_dual_wreath_character_moments.py` - derives the exact mixed physical
+  frame trace-character expansion, validates every `W_3` threshold tuple
+  through fourth order, proves the all-`n` second-moment class sum, and records
+  the unresolved factorial third-moment contraction barrier.
+- `self_dual_wreath_third_moment_contraction.py` - removes the factorial
+  permutation-pair sum for repeated trivial-standard unequal irreps using a
+  weighted-rook and cycle-index recurrence, while keeping all-sector and
+  support-gap obligations explicit.
+- `self_dual_wreath_all_unequal_third_moment.py` - contracts arbitrary mixed
+  unequal-only tuples through exact class connection coefficients and records
+  the `S_4` obstruction showing why equal-pair commutator terms need richer
+  recoupling data.
+- `self_dual_wreath_natural_unequal_dominance.py` - proves that physical
+  labels are pairs of iid Plancherel draws and that information-threshold
+  natural tuples are all unequal with probability `1-o(1)`, retargeting the
+  moment frontier away from equal-sector recoupling.
+- `self_dual_wreath_natural_moment_word_map.py` - uses exact character column
+  orthogonality to reduce all-order natural normalized frame moments to
+  identity and bridge-class subset word counts, while keeping the growing-
+  order contraction and concentration gaps explicit.
+- `self_dual_wreath_word_map_mixing.py` - proves uniform lazy bridge-walk
+  mixing of the one-word statistic to `2/(n!)^2` and quantifies why the
+  shared-generator `k`th moment still needs a coupled-walk or concentration
+  theorem.
+- `self_dual_wreath_coupled_word_walk_gap.py` - identifies the shared-sequence
+  `k`th moment with a coupled bridge walk, proves its `k`-independent `1/4`
+  spectral gap, and shows that rare equal sectors still prevent a typical
+  all-unequal moment conclusion.
+- `self_dual_wreath_all_unequal_conditioned_kernel.py` - subtracts diagonal
+  Plancherel pairs to derive the exact signed all-unequal character kernel,
+  validates its all-order word expansion, and isolates the missing
+  simultaneous `k`-coordinate contraction.
+- `self_dual_wreath_global_partition_collision.py` - proves that all `2k`
+  source Plancherel partitions are globally distinct with probability
+  `1-o(1)`, excludes known repeated-source half-norm blocks, and retargets the
+  contraction problem to collision-free tuples.
+- `self_dual_wreath_collision_free_frame_probe.py` - constructs mixed
+  collision-free frame operators matrix-free, finds finite norms within a
+  small constant factor of `2^{1-k}`, and keeps the all-`n` polynomial-factor
+  theorem explicitly open.
+- `self_dual_wreath_character_ratio_contract.py` - reduces unequal frame
+  moments to ordinary symmetric-group character ratios, links sharp primary
+  bounds, and formalizes the critical short-subset-word anti-concentration
+  obligation.
+- `self_dual_wreath_short_word_profile.py` - proves exact uniform fixed-mask
+  bridge-word marginals, computes unsigned-Stirling short-length tails, and
+  removes mask diagonals while retaining non-diagonal shared-generator
+  correlations as the active blocker.
+- `self_dual_wreath_mask_hypergraph_reduction.py` - proves private-column
+  joint character vanishing, reduces all surviving terms to incidence
+  two-cores, and records exact nonzero collision-free triangle residuals.
+- `self_dual_wreath_equal_commutator_audit.py` - proves the pure commutator
+  Frobenius contraction, constructs finite four-class mixed kernels, and
+  records their unresolved factorial construction cost.
+- `self_dual_wreath_stable_commutator_rank.py` - measures bounded-tail
+  physical feature-algebra rank and proves those stable sectors have vanishing
+  Plancherel and natural physical-label mass.
+- `self_dual_wreath_typical_partition_portfolio.py` - computes exact
+  constant-mass Plancherel catalogs and finite typical feature ranks, then uses
+  the maximal-atom theorem to rule out polynomial precertified catalogs.
+- `self_dual_wreath_typical_recoupling_transfer.py` - maps known
+  symmetric-group primitives onto the physical four-class decoder contract and
+  rejects scope-mismatched transfers.
 - `code_schur_filtration.py` - applies componentwise-product dimensions and
   local shortening/puncturing filtrations as polynomial-time algebraic-code
   invariants; matches remain proof debt rather than quantum evidence.

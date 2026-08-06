@@ -12,7 +12,7 @@
       "subcode_dimension": 4
     }
   ],
-  "created_at": "2026-07-14T07:37:00.754694+00:00",
+  "created_at": "2026-08-06T06:38:44.519616+00:00",
   "falsifiers_triggered": [
     "A polynomial-time conductor/t-closure invariant separates a proposed hard code-equivalence row."
   ],
@@ -138,16 +138,6 @@
       "triage_row_id": "goppa-family-goppa-m4-t2"
     },
     {
-      "equivalent_control_count": 5,
-      "interpretation": "All 5 evaluated pair(s) are known equivalent controls.",
-      "proof_debt_count": 0,
-      "record_count": 5,
-      "rejection_count": 0,
-      "row_family": "goppa-code-family",
-      "status": "equivalent-controls-under-closure",
-      "triage_row_id": "goppa-family-goppa-m4-t3"
-    },
-    {
       "equivalent_control_count": 0,
       "interpretation": "Conductor/t-closure attacks classically separate 1 pair(s) in this family.",
       "proof_debt_count": 0,
@@ -168,10 +158,10 @@
       "triage_row_id": "hamming-7-4-permuted"
     },
     {
-      "equivalent_control_count": 3,
-      "interpretation": "All 3 evaluated pair(s) are known equivalent controls.",
+      "equivalent_control_count": 4,
+      "interpretation": "All 4 evaluated pair(s) are known equivalent controls.",
       "proof_debt_count": 0,
-      "record_count": 3,
+      "record_count": 4,
       "rejection_count": 0,
       "row_family": "projective-geometry-code-family",
       "status": "equivalent-controls-under-closure",
@@ -312,9 +302,9 @@
     "ambient_recovery_calibration_count": 1,
     "closure_proof_debt_count": 8,
     "closure_rejection_count": 8,
-    "equivalent_control_count": 95,
-    "family_count": 29,
-    "input_pair_count": 111,
+    "equivalent_control_count": 91,
+    "family_count": 28,
+    "input_pair_count": 107,
     "positive_evidence_count": 0
   },
   "kind": "prime-field-conductor-t-closure-support-recovery-attack",
@@ -5185,616 +5175,6 @@
     },
     {
       "distinguishing_invariants": [],
-      "id": "CLOSURE-goppa_code_search-goppa-m4-t3-collision-1-prior-0",
-      "interpretation": "Conductor and local t-closure signatures are preserved on a known equivalent control.",
-      "known_equivalent": true,
-      "row_family": "goppa-code-family",
-      "row_id": "goppa-family-goppa-m4-t3",
-      "signature_a": {
-        "closure_square_dimension": 10,
-        "coordinate_closure_digest": "abc3fbce7385cb9663f410a0",
-        "dimension": 4,
-        "dual_dimension": 12,
-        "dual_puncture_closure_histogram": [
-          [
-            15,
-            16
-          ]
-        ],
-        "dual_shortening_closure_histogram": [
-          [
-            15,
-            16
-          ]
-        ],
-        "dual_square_dimension": 16,
-        "dual_t_closure_dimension": 16,
-        "dual_t_closure_gain": 4,
-        "dual_t_closure_stabilized": false,
-        "field_prime": 2,
-        "length": 16,
-        "puncture_closure_histogram": [
-          [
-            6,
-            3
-          ],
-          [
-            7,
-            10
-          ],
-          [
-            10,
-            3
-          ]
-        ],
-        "shortening_closure_histogram": [
-          [
-            4,
-            3
-          ],
-          [
-            5,
-            10
-          ],
-          [
-            6,
-            3
-          ]
-        ],
-        "square_dimension": 10,
-        "t_closure_dimension": 7,
-        "t_closure_gain": 3,
-        "t_closure_stabilized": false
-      },
-      "signature_b": {
-        "closure_square_dimension": 10,
-        "coordinate_closure_digest": "abc3fbce7385cb9663f410a0",
-        "dimension": 4,
-        "dual_dimension": 12,
-        "dual_puncture_closure_histogram": [
-          [
-            15,
-            16
-          ]
-        ],
-        "dual_shortening_closure_histogram": [
-          [
-            15,
-            16
-          ]
-        ],
-        "dual_square_dimension": 16,
-        "dual_t_closure_dimension": 16,
-        "dual_t_closure_gain": 4,
-        "dual_t_closure_stabilized": false,
-        "field_prime": 2,
-        "length": 16,
-        "puncture_closure_histogram": [
-          [
-            6,
-            3
-          ],
-          [
-            7,
-            10
-          ],
-          [
-            10,
-            3
-          ]
-        ],
-        "shortening_closure_histogram": [
-          [
-            4,
-            3
-          ],
-          [
-            5,
-            10
-          ],
-          [
-            6,
-            3
-          ]
-        ],
-        "square_dimension": 10,
-        "t_closure_dimension": 7,
-        "t_closure_gain": 3,
-        "t_closure_stabilized": false
-      },
-      "source": "goppa_code_search",
-      "status": "equivalent-control-closure-preserved"
-    },
-    {
-      "distinguishing_invariants": [],
-      "id": "CLOSURE-goppa_code_search-goppa-m4-t3-collision-2-prior-0",
-      "interpretation": "Conductor and local t-closure signatures are preserved on a known equivalent control.",
-      "known_equivalent": true,
-      "row_family": "goppa-code-family",
-      "row_id": "goppa-family-goppa-m4-t3",
-      "signature_a": {
-        "closure_square_dimension": 10,
-        "coordinate_closure_digest": "abc3fbce7385cb9663f410a0",
-        "dimension": 4,
-        "dual_dimension": 12,
-        "dual_puncture_closure_histogram": [
-          [
-            15,
-            16
-          ]
-        ],
-        "dual_shortening_closure_histogram": [
-          [
-            15,
-            16
-          ]
-        ],
-        "dual_square_dimension": 16,
-        "dual_t_closure_dimension": 16,
-        "dual_t_closure_gain": 4,
-        "dual_t_closure_stabilized": false,
-        "field_prime": 2,
-        "length": 16,
-        "puncture_closure_histogram": [
-          [
-            6,
-            3
-          ],
-          [
-            7,
-            10
-          ],
-          [
-            10,
-            3
-          ]
-        ],
-        "shortening_closure_histogram": [
-          [
-            4,
-            3
-          ],
-          [
-            5,
-            10
-          ],
-          [
-            6,
-            3
-          ]
-        ],
-        "square_dimension": 10,
-        "t_closure_dimension": 7,
-        "t_closure_gain": 3,
-        "t_closure_stabilized": false
-      },
-      "signature_b": {
-        "closure_square_dimension": 10,
-        "coordinate_closure_digest": "abc3fbce7385cb9663f410a0",
-        "dimension": 4,
-        "dual_dimension": 12,
-        "dual_puncture_closure_histogram": [
-          [
-            15,
-            16
-          ]
-        ],
-        "dual_shortening_closure_histogram": [
-          [
-            15,
-            16
-          ]
-        ],
-        "dual_square_dimension": 16,
-        "dual_t_closure_dimension": 16,
-        "dual_t_closure_gain": 4,
-        "dual_t_closure_stabilized": false,
-        "field_prime": 2,
-        "length": 16,
-        "puncture_closure_histogram": [
-          [
-            6,
-            3
-          ],
-          [
-            7,
-            10
-          ],
-          [
-            10,
-            3
-          ]
-        ],
-        "shortening_closure_histogram": [
-          [
-            4,
-            3
-          ],
-          [
-            5,
-            10
-          ],
-          [
-            6,
-            3
-          ]
-        ],
-        "square_dimension": 10,
-        "t_closure_dimension": 7,
-        "t_closure_gain": 3,
-        "t_closure_stabilized": false
-      },
-      "source": "goppa_code_search",
-      "status": "equivalent-control-closure-preserved"
-    },
-    {
-      "distinguishing_invariants": [],
-      "id": "CLOSURE-goppa_code_search-goppa-m4-t3-collision-3-prior-1",
-      "interpretation": "Conductor and local t-closure signatures are preserved on a known equivalent control.",
-      "known_equivalent": true,
-      "row_family": "goppa-code-family",
-      "row_id": "goppa-family-goppa-m4-t3",
-      "signature_a": {
-        "closure_square_dimension": 10,
-        "coordinate_closure_digest": "abc3fbce7385cb9663f410a0",
-        "dimension": 4,
-        "dual_dimension": 12,
-        "dual_puncture_closure_histogram": [
-          [
-            15,
-            16
-          ]
-        ],
-        "dual_shortening_closure_histogram": [
-          [
-            15,
-            16
-          ]
-        ],
-        "dual_square_dimension": 16,
-        "dual_t_closure_dimension": 16,
-        "dual_t_closure_gain": 4,
-        "dual_t_closure_stabilized": false,
-        "field_prime": 2,
-        "length": 16,
-        "puncture_closure_histogram": [
-          [
-            6,
-            3
-          ],
-          [
-            7,
-            10
-          ],
-          [
-            10,
-            3
-          ]
-        ],
-        "shortening_closure_histogram": [
-          [
-            4,
-            3
-          ],
-          [
-            5,
-            10
-          ],
-          [
-            6,
-            3
-          ]
-        ],
-        "square_dimension": 10,
-        "t_closure_dimension": 7,
-        "t_closure_gain": 3,
-        "t_closure_stabilized": false
-      },
-      "signature_b": {
-        "closure_square_dimension": 10,
-        "coordinate_closure_digest": "abc3fbce7385cb9663f410a0",
-        "dimension": 4,
-        "dual_dimension": 12,
-        "dual_puncture_closure_histogram": [
-          [
-            15,
-            16
-          ]
-        ],
-        "dual_shortening_closure_histogram": [
-          [
-            15,
-            16
-          ]
-        ],
-        "dual_square_dimension": 16,
-        "dual_t_closure_dimension": 16,
-        "dual_t_closure_gain": 4,
-        "dual_t_closure_stabilized": false,
-        "field_prime": 2,
-        "length": 16,
-        "puncture_closure_histogram": [
-          [
-            6,
-            3
-          ],
-          [
-            7,
-            10
-          ],
-          [
-            10,
-            3
-          ]
-        ],
-        "shortening_closure_histogram": [
-          [
-            4,
-            3
-          ],
-          [
-            5,
-            10
-          ],
-          [
-            6,
-            3
-          ]
-        ],
-        "square_dimension": 10,
-        "t_closure_dimension": 7,
-        "t_closure_gain": 3,
-        "t_closure_stabilized": false
-      },
-      "source": "goppa_code_search",
-      "status": "equivalent-control-closure-preserved"
-    },
-    {
-      "distinguishing_invariants": [],
-      "id": "CLOSURE-goppa_code_search-goppa-m4-t3-collision-4-prior-0",
-      "interpretation": "Conductor and local t-closure signatures are preserved on a known equivalent control.",
-      "known_equivalent": true,
-      "row_family": "goppa-code-family",
-      "row_id": "goppa-family-goppa-m4-t3",
-      "signature_a": {
-        "closure_square_dimension": 10,
-        "coordinate_closure_digest": "abc3fbce7385cb9663f410a0",
-        "dimension": 4,
-        "dual_dimension": 12,
-        "dual_puncture_closure_histogram": [
-          [
-            15,
-            16
-          ]
-        ],
-        "dual_shortening_closure_histogram": [
-          [
-            15,
-            16
-          ]
-        ],
-        "dual_square_dimension": 16,
-        "dual_t_closure_dimension": 16,
-        "dual_t_closure_gain": 4,
-        "dual_t_closure_stabilized": false,
-        "field_prime": 2,
-        "length": 16,
-        "puncture_closure_histogram": [
-          [
-            6,
-            3
-          ],
-          [
-            7,
-            10
-          ],
-          [
-            10,
-            3
-          ]
-        ],
-        "shortening_closure_histogram": [
-          [
-            4,
-            3
-          ],
-          [
-            5,
-            10
-          ],
-          [
-            6,
-            3
-          ]
-        ],
-        "square_dimension": 10,
-        "t_closure_dimension": 7,
-        "t_closure_gain": 3,
-        "t_closure_stabilized": false
-      },
-      "signature_b": {
-        "closure_square_dimension": 10,
-        "coordinate_closure_digest": "abc3fbce7385cb9663f410a0",
-        "dimension": 4,
-        "dual_dimension": 12,
-        "dual_puncture_closure_histogram": [
-          [
-            15,
-            16
-          ]
-        ],
-        "dual_shortening_closure_histogram": [
-          [
-            15,
-            16
-          ]
-        ],
-        "dual_square_dimension": 16,
-        "dual_t_closure_dimension": 16,
-        "dual_t_closure_gain": 4,
-        "dual_t_closure_stabilized": false,
-        "field_prime": 2,
-        "length": 16,
-        "puncture_closure_histogram": [
-          [
-            6,
-            3
-          ],
-          [
-            7,
-            10
-          ],
-          [
-            10,
-            3
-          ]
-        ],
-        "shortening_closure_histogram": [
-          [
-            4,
-            3
-          ],
-          [
-            5,
-            10
-          ],
-          [
-            6,
-            3
-          ]
-        ],
-        "square_dimension": 10,
-        "t_closure_dimension": 7,
-        "t_closure_gain": 3,
-        "t_closure_stabilized": false
-      },
-      "source": "goppa_code_search",
-      "status": "equivalent-control-closure-preserved"
-    },
-    {
-      "distinguishing_invariants": [],
-      "id": "CLOSURE-goppa_code_search-goppa-m4-t3-semilinear-control",
-      "interpretation": "Conductor and local t-closure signatures are preserved on a known equivalent control.",
-      "known_equivalent": true,
-      "row_family": "goppa-code-family",
-      "row_id": "goppa-family-goppa-m4-t3",
-      "signature_a": {
-        "closure_square_dimension": 10,
-        "coordinate_closure_digest": "abc3fbce7385cb9663f410a0",
-        "dimension": 4,
-        "dual_dimension": 12,
-        "dual_puncture_closure_histogram": [
-          [
-            15,
-            16
-          ]
-        ],
-        "dual_shortening_closure_histogram": [
-          [
-            15,
-            16
-          ]
-        ],
-        "dual_square_dimension": 16,
-        "dual_t_closure_dimension": 16,
-        "dual_t_closure_gain": 4,
-        "dual_t_closure_stabilized": false,
-        "field_prime": 2,
-        "length": 16,
-        "puncture_closure_histogram": [
-          [
-            6,
-            3
-          ],
-          [
-            7,
-            10
-          ],
-          [
-            10,
-            3
-          ]
-        ],
-        "shortening_closure_histogram": [
-          [
-            4,
-            3
-          ],
-          [
-            5,
-            10
-          ],
-          [
-            6,
-            3
-          ]
-        ],
-        "square_dimension": 10,
-        "t_closure_dimension": 7,
-        "t_closure_gain": 3,
-        "t_closure_stabilized": false
-      },
-      "signature_b": {
-        "closure_square_dimension": 10,
-        "coordinate_closure_digest": "abc3fbce7385cb9663f410a0",
-        "dimension": 4,
-        "dual_dimension": 12,
-        "dual_puncture_closure_histogram": [
-          [
-            15,
-            16
-          ]
-        ],
-        "dual_shortening_closure_histogram": [
-          [
-            15,
-            16
-          ]
-        ],
-        "dual_square_dimension": 16,
-        "dual_t_closure_dimension": 16,
-        "dual_t_closure_gain": 4,
-        "dual_t_closure_stabilized": false,
-        "field_prime": 2,
-        "length": 16,
-        "puncture_closure_histogram": [
-          [
-            6,
-            3
-          ],
-          [
-            7,
-            10
-          ],
-          [
-            10,
-            3
-          ]
-        ],
-        "shortening_closure_histogram": [
-          [
-            4,
-            3
-          ],
-          [
-            5,
-            10
-          ],
-          [
-            6,
-            3
-          ]
-        ],
-        "square_dimension": 10,
-        "t_closure_dimension": 7,
-        "t_closure_gain": 3,
-        "t_closure_stabilized": false
-      },
-      "source": "goppa_code_search",
-      "status": "equivalent-control-closure-preserved"
-    },
-    {
-      "distinguishing_invariants": [],
       "id": "CLOSURE-tanner_code_search-tanner-10-5-dv2-dc4-collision-1-prior-0",
       "interpretation": "Conductor and local t-closure signatures are preserved on a known equivalent control.",
       "known_equivalent": true,
@@ -5916,36 +5296,32 @@
       "row_id": "tanner-family-tanner-10-5-dv2-dc4",
       "signature_a": {
         "closure_square_dimension": 10,
-        "coordinate_closure_digest": "b7dc37d70d74bb95070cefb0",
+        "coordinate_closure_digest": "f79a2710930d48c417b41d06",
         "dimension": 6,
         "dual_dimension": 4,
         "dual_puncture_closure_histogram": [
           [
-            7,
-            6
+            6,
+            4
           ],
           [
-            8,
-            4
+            7,
+            6
           ]
         ],
         "dual_shortening_closure_histogram": [
           [
             5,
-            4
-          ],
-          [
-            6,
-            2
+            6
           ],
           [
             7,
             4
           ]
         ],
-        "dual_square_dimension": 8,
-        "dual_t_closure_dimension": 8,
-        "dual_t_closure_gain": 4,
+        "dual_square_dimension": 7,
+        "dual_t_closure_dimension": 7,
+        "dual_t_closure_gain": 3,
         "dual_t_closure_stabilized": false,
         "field_prime": 2,
         "length": 10,
@@ -5968,36 +5344,32 @@
       },
       "signature_b": {
         "closure_square_dimension": 10,
-        "coordinate_closure_digest": "b7dc37d70d74bb95070cefb0",
+        "coordinate_closure_digest": "f79a2710930d48c417b41d06",
         "dimension": 6,
         "dual_dimension": 4,
         "dual_puncture_closure_histogram": [
           [
-            7,
-            6
+            6,
+            4
           ],
           [
-            8,
-            4
+            7,
+            6
           ]
         ],
         "dual_shortening_closure_histogram": [
           [
             5,
-            4
-          ],
-          [
-            6,
-            2
+            6
           ],
           [
             7,
             4
           ]
         ],
-        "dual_square_dimension": 8,
-        "dual_t_closure_dimension": 8,
-        "dual_t_closure_gain": 4,
+        "dual_square_dimension": 7,
+        "dual_t_closure_dimension": 7,
+        "dual_t_closure_gain": 3,
         "dual_t_closure_stabilized": false,
         "field_prime": 2,
         "length": 10,
@@ -6023,7 +5395,7 @@
     },
     {
       "distinguishing_invariants": [],
-      "id": "CLOSURE-tanner_code_search-tanner-10-5-dv2-dc4-collision-3-prior-1",
+      "id": "CLOSURE-tanner_code_search-tanner-10-5-dv2-dc4-collision-3-prior-0",
       "interpretation": "Conductor and local t-closure signatures are preserved on a known equivalent control.",
       "known_equivalent": true,
       "row_family": "tanner-ldpc-family",
@@ -6137,7 +5509,7 @@
     },
     {
       "distinguishing_invariants": [],
-      "id": "CLOSURE-tanner_code_search-tanner-10-5-dv2-dc4-collision-4-prior-0",
+      "id": "CLOSURE-tanner_code_search-tanner-10-5-dv2-dc4-collision-4-prior-1",
       "interpretation": "Conductor and local t-closure signatures are preserved on a known equivalent control.",
       "known_equivalent": true,
       "row_family": "tanner-ldpc-family",
@@ -6714,23 +6086,23 @@
       "row_id": "tanner-family-tanner-12-6-dv2-dc4",
       "signature_a": {
         "closure_square_dimension": 12,
-        "coordinate_closure_digest": "7166f77adabc8633505c60a1",
+        "coordinate_closure_digest": "16e2ab9ede8ce6b9fc08d955",
         "dimension": 7,
         "dual_dimension": 5,
         "dual_puncture_closure_histogram": [
           [
-            9,
-            8
+            10,
+            10
           ],
           [
-            10,
-            4
+            11,
+            2
           ]
         ],
         "dual_shortening_closure_histogram": [
           [
             7,
-            3
+            2
           ],
           [
             8,
@@ -6738,12 +6110,16 @@
           ],
           [
             9,
-            5
+            4
+          ],
+          [
+            11,
+            2
           ]
         ],
-        "dual_square_dimension": 10,
-        "dual_t_closure_dimension": 10,
-        "dual_t_closure_gain": 5,
+        "dual_square_dimension": 11,
+        "dual_t_closure_dimension": 11,
+        "dual_t_closure_gain": 6,
         "dual_t_closure_stabilized": false,
         "field_prime": 2,
         "length": 12,
@@ -6766,23 +6142,23 @@
       },
       "signature_b": {
         "closure_square_dimension": 12,
-        "coordinate_closure_digest": "7166f77adabc8633505c60a1",
+        "coordinate_closure_digest": "16e2ab9ede8ce6b9fc08d955",
         "dimension": 7,
         "dual_dimension": 5,
         "dual_puncture_closure_histogram": [
           [
-            9,
-            8
+            10,
+            10
           ],
           [
-            10,
-            4
+            11,
+            2
           ]
         ],
         "dual_shortening_closure_histogram": [
           [
             7,
-            3
+            2
           ],
           [
             8,
@@ -6790,12 +6166,16 @@
           ],
           [
             9,
-            5
+            4
+          ],
+          [
+            11,
+            2
           ]
         ],
-        "dual_square_dimension": 10,
-        "dual_t_closure_dimension": 10,
-        "dual_t_closure_gain": 5,
+        "dual_square_dimension": 11,
+        "dual_t_closure_dimension": 11,
+        "dual_t_closure_gain": 6,
         "dual_t_closure_stabilized": false,
         "field_prime": 2,
         "length": 12,
@@ -6828,23 +6208,23 @@
       "row_id": "tanner-family-tanner-12-6-dv2-dc4",
       "signature_a": {
         "closure_square_dimension": 12,
-        "coordinate_closure_digest": "7166f77adabc8633505c60a1",
+        "coordinate_closure_digest": "16e2ab9ede8ce6b9fc08d955",
         "dimension": 7,
         "dual_dimension": 5,
         "dual_puncture_closure_histogram": [
           [
-            9,
-            8
+            10,
+            10
           ],
           [
-            10,
-            4
+            11,
+            2
           ]
         ],
         "dual_shortening_closure_histogram": [
           [
             7,
-            3
+            2
           ],
           [
             8,
@@ -6852,12 +6232,16 @@
           ],
           [
             9,
-            5
+            4
+          ],
+          [
+            11,
+            2
           ]
         ],
-        "dual_square_dimension": 10,
-        "dual_t_closure_dimension": 10,
-        "dual_t_closure_gain": 5,
+        "dual_square_dimension": 11,
+        "dual_t_closure_dimension": 11,
+        "dual_t_closure_gain": 6,
         "dual_t_closure_stabilized": false,
         "field_prime": 2,
         "length": 12,
@@ -6880,23 +6264,23 @@
       },
       "signature_b": {
         "closure_square_dimension": 12,
-        "coordinate_closure_digest": "7166f77adabc8633505c60a1",
+        "coordinate_closure_digest": "16e2ab9ede8ce6b9fc08d955",
         "dimension": 7,
         "dual_dimension": 5,
         "dual_puncture_closure_histogram": [
           [
-            9,
-            8
+            10,
+            10
           ],
           [
-            10,
-            4
+            11,
+            2
           ]
         ],
         "dual_shortening_closure_histogram": [
           [
             7,
-            3
+            2
           ],
           [
             8,
@@ -6904,12 +6288,16 @@
           ],
           [
             9,
-            5
+            4
+          ],
+          [
+            11,
+            2
           ]
         ],
-        "dual_square_dimension": 10,
-        "dual_t_closure_dimension": 10,
-        "dual_t_closure_gain": 5,
+        "dual_square_dimension": 11,
+        "dual_t_closure_dimension": 11,
+        "dual_t_closure_gain": 6,
         "dual_t_closure_stabilized": false,
         "field_prime": 2,
         "length": 12,
@@ -6942,53 +6330,49 @@
       "row_id": "tanner-family-tanner-12-9-dv3-dc4",
       "signature_a": {
         "closure_square_dimension": 4,
-        "coordinate_closure_digest": "ce611dd37601728604232068",
+        "coordinate_closure_digest": "ac81d1148a56743e7f12ad89",
         "dimension": 3,
         "dual_dimension": 9,
         "dual_puncture_closure_histogram": [
           [
-            10,
-            10
-          ],
-          [
             11,
-            2
+            12
           ]
         ],
         "dual_shortening_closure_histogram": [
           [
-            10,
-            10
-          ],
-          [
             11,
-            2
+            12
           ]
         ],
-        "dual_square_dimension": 11,
-        "dual_t_closure_dimension": 11,
-        "dual_t_closure_gain": 2,
+        "dual_square_dimension": 12,
+        "dual_t_closure_dimension": 12,
+        "dual_t_closure_gain": 3,
         "dual_t_closure_stabilized": false,
         "field_prime": 2,
         "length": 12,
         "puncture_closure_histogram": [
           [
             3,
-            2
+            1
           ],
           [
             4,
-            10
+            11
           ]
         ],
         "shortening_closure_histogram": [
           [
             3,
-            2
+            1
+          ],
+          [
+            5,
+            6
           ],
           [
             7,
-            10
+            5
           ]
         ],
         "square_dimension": 4,
@@ -6998,53 +6382,49 @@
       },
       "signature_b": {
         "closure_square_dimension": 4,
-        "coordinate_closure_digest": "ce611dd37601728604232068",
+        "coordinate_closure_digest": "ac81d1148a56743e7f12ad89",
         "dimension": 3,
         "dual_dimension": 9,
         "dual_puncture_closure_histogram": [
           [
-            10,
-            10
-          ],
-          [
             11,
-            2
+            12
           ]
         ],
         "dual_shortening_closure_histogram": [
           [
-            10,
-            10
-          ],
-          [
             11,
-            2
+            12
           ]
         ],
-        "dual_square_dimension": 11,
-        "dual_t_closure_dimension": 11,
-        "dual_t_closure_gain": 2,
+        "dual_square_dimension": 12,
+        "dual_t_closure_dimension": 12,
+        "dual_t_closure_gain": 3,
         "dual_t_closure_stabilized": false,
         "field_prime": 2,
         "length": 12,
         "puncture_closure_histogram": [
           [
             3,
-            2
+            1
           ],
           [
             4,
-            10
+            11
           ]
         ],
         "shortening_closure_histogram": [
           [
             3,
-            2
+            1
+          ],
+          [
+            5,
+            6
           ],
           [
             7,
-            10
+            5
           ]
         ],
         "square_dimension": 4,
@@ -7064,6 +6444,234 @@
       "row_id": "tanner-family-tanner-12-9-dv3-dc4",
       "signature_a": {
         "closure_square_dimension": 4,
+        "coordinate_closure_digest": "ac81d1148a56743e7f12ad89",
+        "dimension": 3,
+        "dual_dimension": 9,
+        "dual_puncture_closure_histogram": [
+          [
+            11,
+            12
+          ]
+        ],
+        "dual_shortening_closure_histogram": [
+          [
+            11,
+            12
+          ]
+        ],
+        "dual_square_dimension": 12,
+        "dual_t_closure_dimension": 12,
+        "dual_t_closure_gain": 3,
+        "dual_t_closure_stabilized": false,
+        "field_prime": 2,
+        "length": 12,
+        "puncture_closure_histogram": [
+          [
+            3,
+            1
+          ],
+          [
+            4,
+            11
+          ]
+        ],
+        "shortening_closure_histogram": [
+          [
+            3,
+            1
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            7,
+            5
+          ]
+        ],
+        "square_dimension": 4,
+        "t_closure_dimension": 4,
+        "t_closure_gain": 1,
+        "t_closure_stabilized": false
+      },
+      "signature_b": {
+        "closure_square_dimension": 4,
+        "coordinate_closure_digest": "ac81d1148a56743e7f12ad89",
+        "dimension": 3,
+        "dual_dimension": 9,
+        "dual_puncture_closure_histogram": [
+          [
+            11,
+            12
+          ]
+        ],
+        "dual_shortening_closure_histogram": [
+          [
+            11,
+            12
+          ]
+        ],
+        "dual_square_dimension": 12,
+        "dual_t_closure_dimension": 12,
+        "dual_t_closure_gain": 3,
+        "dual_t_closure_stabilized": false,
+        "field_prime": 2,
+        "length": 12,
+        "puncture_closure_histogram": [
+          [
+            3,
+            1
+          ],
+          [
+            4,
+            11
+          ]
+        ],
+        "shortening_closure_histogram": [
+          [
+            3,
+            1
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            7,
+            5
+          ]
+        ],
+        "square_dimension": 4,
+        "t_closure_dimension": 4,
+        "t_closure_gain": 1,
+        "t_closure_stabilized": false
+      },
+      "source": "tanner_code_search",
+      "status": "equivalent-control-closure-preserved"
+    },
+    {
+      "distinguishing_invariants": [],
+      "id": "CLOSURE-tanner_code_search-tanner-12-9-dv3-dc4-collision-3-prior-1",
+      "interpretation": "Conductor and local t-closure signatures are preserved on a known equivalent control.",
+      "known_equivalent": true,
+      "row_family": "tanner-ldpc-family",
+      "row_id": "tanner-family-tanner-12-9-dv3-dc4",
+      "signature_a": {
+        "closure_square_dimension": 4,
+        "coordinate_closure_digest": "ac81d1148a56743e7f12ad89",
+        "dimension": 3,
+        "dual_dimension": 9,
+        "dual_puncture_closure_histogram": [
+          [
+            11,
+            12
+          ]
+        ],
+        "dual_shortening_closure_histogram": [
+          [
+            11,
+            12
+          ]
+        ],
+        "dual_square_dimension": 12,
+        "dual_t_closure_dimension": 12,
+        "dual_t_closure_gain": 3,
+        "dual_t_closure_stabilized": false,
+        "field_prime": 2,
+        "length": 12,
+        "puncture_closure_histogram": [
+          [
+            3,
+            1
+          ],
+          [
+            4,
+            11
+          ]
+        ],
+        "shortening_closure_histogram": [
+          [
+            3,
+            1
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            7,
+            5
+          ]
+        ],
+        "square_dimension": 4,
+        "t_closure_dimension": 4,
+        "t_closure_gain": 1,
+        "t_closure_stabilized": false
+      },
+      "signature_b": {
+        "closure_square_dimension": 4,
+        "coordinate_closure_digest": "ac81d1148a56743e7f12ad89",
+        "dimension": 3,
+        "dual_dimension": 9,
+        "dual_puncture_closure_histogram": [
+          [
+            11,
+            12
+          ]
+        ],
+        "dual_shortening_closure_histogram": [
+          [
+            11,
+            12
+          ]
+        ],
+        "dual_square_dimension": 12,
+        "dual_t_closure_dimension": 12,
+        "dual_t_closure_gain": 3,
+        "dual_t_closure_stabilized": false,
+        "field_prime": 2,
+        "length": 12,
+        "puncture_closure_histogram": [
+          [
+            3,
+            1
+          ],
+          [
+            4,
+            11
+          ]
+        ],
+        "shortening_closure_histogram": [
+          [
+            3,
+            1
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            7,
+            5
+          ]
+        ],
+        "square_dimension": 4,
+        "t_closure_dimension": 4,
+        "t_closure_gain": 1,
+        "t_closure_stabilized": false
+      },
+      "source": "tanner_code_search",
+      "status": "equivalent-control-closure-preserved"
+    },
+    {
+      "distinguishing_invariants": [],
+      "id": "CLOSURE-tanner_code_search-tanner-12-9-dv3-dc4-collision-4-prior-0",
+      "interpretation": "Conductor and local t-closure signatures are preserved on a known equivalent control.",
+      "known_equivalent": true,
+      "row_family": "tanner-ldpc-family",
+      "row_id": "tanner-family-tanner-12-9-dv3-dc4",
+      "signature_a": {
+        "closure_square_dimension": 4,
         "coordinate_closure_digest": "c33015e2972d08ba2f8a0959",
         "dimension": 3,
         "dual_dimension": 9,
@@ -7143,250 +6751,6 @@
           [
             6,
             8
-          ]
-        ],
-        "square_dimension": 4,
-        "t_closure_dimension": 4,
-        "t_closure_gain": 1,
-        "t_closure_stabilized": false
-      },
-      "source": "tanner_code_search",
-      "status": "equivalent-control-closure-preserved"
-    },
-    {
-      "distinguishing_invariants": [],
-      "id": "CLOSURE-tanner_code_search-tanner-12-9-dv3-dc4-collision-3-prior-0",
-      "interpretation": "Conductor and local t-closure signatures are preserved on a known equivalent control.",
-      "known_equivalent": true,
-      "row_family": "tanner-ldpc-family",
-      "row_id": "tanner-family-tanner-12-9-dv3-dc4",
-      "signature_a": {
-        "closure_square_dimension": 4,
-        "coordinate_closure_digest": "ce611dd37601728604232068",
-        "dimension": 3,
-        "dual_dimension": 9,
-        "dual_puncture_closure_histogram": [
-          [
-            10,
-            10
-          ],
-          [
-            11,
-            2
-          ]
-        ],
-        "dual_shortening_closure_histogram": [
-          [
-            10,
-            10
-          ],
-          [
-            11,
-            2
-          ]
-        ],
-        "dual_square_dimension": 11,
-        "dual_t_closure_dimension": 11,
-        "dual_t_closure_gain": 2,
-        "dual_t_closure_stabilized": false,
-        "field_prime": 2,
-        "length": 12,
-        "puncture_closure_histogram": [
-          [
-            3,
-            2
-          ],
-          [
-            4,
-            10
-          ]
-        ],
-        "shortening_closure_histogram": [
-          [
-            3,
-            2
-          ],
-          [
-            7,
-            10
-          ]
-        ],
-        "square_dimension": 4,
-        "t_closure_dimension": 4,
-        "t_closure_gain": 1,
-        "t_closure_stabilized": false
-      },
-      "signature_b": {
-        "closure_square_dimension": 4,
-        "coordinate_closure_digest": "ce611dd37601728604232068",
-        "dimension": 3,
-        "dual_dimension": 9,
-        "dual_puncture_closure_histogram": [
-          [
-            10,
-            10
-          ],
-          [
-            11,
-            2
-          ]
-        ],
-        "dual_shortening_closure_histogram": [
-          [
-            10,
-            10
-          ],
-          [
-            11,
-            2
-          ]
-        ],
-        "dual_square_dimension": 11,
-        "dual_t_closure_dimension": 11,
-        "dual_t_closure_gain": 2,
-        "dual_t_closure_stabilized": false,
-        "field_prime": 2,
-        "length": 12,
-        "puncture_closure_histogram": [
-          [
-            3,
-            2
-          ],
-          [
-            4,
-            10
-          ]
-        ],
-        "shortening_closure_histogram": [
-          [
-            3,
-            2
-          ],
-          [
-            7,
-            10
-          ]
-        ],
-        "square_dimension": 4,
-        "t_closure_dimension": 4,
-        "t_closure_gain": 1,
-        "t_closure_stabilized": false
-      },
-      "source": "tanner_code_search",
-      "status": "equivalent-control-closure-preserved"
-    },
-    {
-      "distinguishing_invariants": [],
-      "id": "CLOSURE-tanner_code_search-tanner-12-9-dv3-dc4-collision-4-prior-1",
-      "interpretation": "Conductor and local t-closure signatures are preserved on a known equivalent control.",
-      "known_equivalent": true,
-      "row_family": "tanner-ldpc-family",
-      "row_id": "tanner-family-tanner-12-9-dv3-dc4",
-      "signature_a": {
-        "closure_square_dimension": 4,
-        "coordinate_closure_digest": "ce611dd37601728604232068",
-        "dimension": 3,
-        "dual_dimension": 9,
-        "dual_puncture_closure_histogram": [
-          [
-            10,
-            10
-          ],
-          [
-            11,
-            2
-          ]
-        ],
-        "dual_shortening_closure_histogram": [
-          [
-            10,
-            10
-          ],
-          [
-            11,
-            2
-          ]
-        ],
-        "dual_square_dimension": 11,
-        "dual_t_closure_dimension": 11,
-        "dual_t_closure_gain": 2,
-        "dual_t_closure_stabilized": false,
-        "field_prime": 2,
-        "length": 12,
-        "puncture_closure_histogram": [
-          [
-            3,
-            2
-          ],
-          [
-            4,
-            10
-          ]
-        ],
-        "shortening_closure_histogram": [
-          [
-            3,
-            2
-          ],
-          [
-            7,
-            10
-          ]
-        ],
-        "square_dimension": 4,
-        "t_closure_dimension": 4,
-        "t_closure_gain": 1,
-        "t_closure_stabilized": false
-      },
-      "signature_b": {
-        "closure_square_dimension": 4,
-        "coordinate_closure_digest": "ce611dd37601728604232068",
-        "dimension": 3,
-        "dual_dimension": 9,
-        "dual_puncture_closure_histogram": [
-          [
-            10,
-            10
-          ],
-          [
-            11,
-            2
-          ]
-        ],
-        "dual_shortening_closure_histogram": [
-          [
-            10,
-            10
-          ],
-          [
-            11,
-            2
-          ]
-        ],
-        "dual_square_dimension": 11,
-        "dual_t_closure_dimension": 11,
-        "dual_t_closure_gain": 2,
-        "dual_t_closure_stabilized": false,
-        "field_prime": 2,
-        "length": 12,
-        "puncture_closure_histogram": [
-          [
-            3,
-            2
-          ],
-          [
-            4,
-            10
-          ]
-        ],
-        "shortening_closure_histogram": [
-          [
-            3,
-            2
-          ],
-          [
-            7,
-            10
           ]
         ],
         "square_dimension": 4,
@@ -7405,39 +6769,37 @@
       "row_family": "tanner-ldpc-family",
       "row_id": "tanner-family-tanner-12-9-dv3-dc4",
       "signature_a": {
-        "closure_square_dimension": 6,
-        "coordinate_closure_digest": "08ccdd812cb198b0ace7f939",
-        "dimension": 4,
-        "dual_dimension": 8,
+        "closure_square_dimension": 4,
+        "coordinate_closure_digest": "c33015e2972d08ba2f8a0959",
+        "dimension": 3,
+        "dual_dimension": 9,
         "dual_puncture_closure_histogram": [
           [
-            9,
-            8
-          ],
-          [
-            10,
-            4
+            11,
+            12
           ]
         ],
         "dual_shortening_closure_histogram": [
           [
-            9,
-            8
-          ],
-          [
-            10,
-            4
+            11,
+            12
           ]
         ],
-        "dual_square_dimension": 10,
-        "dual_t_closure_dimension": 10,
-        "dual_t_closure_gain": 2,
+        "dual_square_dimension": 12,
+        "dual_t_closure_dimension": 12,
+        "dual_t_closure_gain": 3,
         "dual_t_closure_stabilized": false,
         "field_prime": 2,
         "length": 12,
         "puncture_closure_histogram": [
           [
-            5,
+            4,
+            12
+          ]
+        ],
+        "shortening_closure_histogram": [
+          [
+            4,
             4
           ],
           [
@@ -7445,55 +6807,43 @@
             8
           ]
         ],
-        "shortening_closure_histogram": [
-          [
-            5,
-            4
-          ],
-          [
-            8,
-            8
-          ]
-        ],
-        "square_dimension": 6,
-        "t_closure_dimension": 6,
-        "t_closure_gain": 2,
+        "square_dimension": 4,
+        "t_closure_dimension": 4,
+        "t_closure_gain": 1,
         "t_closure_stabilized": false
       },
       "signature_b": {
-        "closure_square_dimension": 6,
-        "coordinate_closure_digest": "08ccdd812cb198b0ace7f939",
-        "dimension": 4,
-        "dual_dimension": 8,
+        "closure_square_dimension": 4,
+        "coordinate_closure_digest": "c33015e2972d08ba2f8a0959",
+        "dimension": 3,
+        "dual_dimension": 9,
         "dual_puncture_closure_histogram": [
           [
-            9,
-            8
-          ],
-          [
-            10,
-            4
+            11,
+            12
           ]
         ],
         "dual_shortening_closure_histogram": [
           [
-            9,
-            8
-          ],
-          [
-            10,
-            4
+            11,
+            12
           ]
         ],
-        "dual_square_dimension": 10,
-        "dual_t_closure_dimension": 10,
-        "dual_t_closure_gain": 2,
+        "dual_square_dimension": 12,
+        "dual_t_closure_dimension": 12,
+        "dual_t_closure_gain": 3,
         "dual_t_closure_stabilized": false,
         "field_prime": 2,
         "length": 12,
         "puncture_closure_histogram": [
           [
-            5,
+            4,
+            12
+          ]
+        ],
+        "shortening_closure_histogram": [
+          [
+            4,
             4
           ],
           [
@@ -7501,19 +6851,9 @@
             8
           ]
         ],
-        "shortening_closure_histogram": [
-          [
-            5,
-            4
-          ],
-          [
-            8,
-            8
-          ]
-        ],
-        "square_dimension": 6,
-        "t_closure_dimension": 6,
-        "t_closure_gain": 2,
+        "square_dimension": 4,
+        "t_closure_dimension": 4,
+        "t_closure_gain": 1,
         "t_closure_stabilized": false
       },
       "source": "tanner_code_search",
@@ -11005,7 +10345,7 @@
     },
     {
       "distinguishing_invariants": [],
-      "id": "CLOSURE-projective_geometry_code_search-pg2-f2-k6-trial-1-0,1,2,3,5,6-0,1,2,4,5,6",
+      "id": "CLOSURE-projective_geometry_code_search-pg2-f2-k6-trial-1-1,2,3,4,5,6-0,1,2,3,5,6",
       "interpretation": "Conductor and local t-closure signatures are preserved on a known equivalent control.",
       "known_equivalent": true,
       "row_family": "projective-geometry-code-family",
@@ -11095,7 +10435,7 @@
     },
     {
       "distinguishing_invariants": [],
-      "id": "CLOSURE-projective_geometry_code_search-pg2-f2-k6-trial-2-0,1,2,3,4,6-0,1,2,3,5,6",
+      "id": "CLOSURE-projective_geometry_code_search-pg2-f2-k6-trial-2-0,2,3,4,5,6-0,1,2,4,5,6",
       "interpretation": "Conductor and local t-closure signatures are preserved on a known equivalent control.",
       "known_equivalent": true,
       "row_family": "projective-geometry-code-family",
@@ -11185,7 +10525,7 @@
     },
     {
       "distinguishing_invariants": [],
-      "id": "CLOSURE-projective_geometry_code_search-pg2-f2-k6-trial-3-0,2,3,4,5,6-1,2,3,4,5,6",
+      "id": "CLOSURE-projective_geometry_code_search-pg2-f2-k6-trial-4-0,1,2,3,4,6-0,1,2,4,5,6",
       "interpretation": "Conductor and local t-closure signatures are preserved on a known equivalent control.",
       "known_equivalent": true,
       "row_family": "projective-geometry-code-family",
@@ -11275,7 +10615,97 @@
     },
     {
       "distinguishing_invariants": [],
-      "id": "CLOSURE-projective_geometry_code_search-pg2-f3-k10-trial-1-0,1,2,4,6,7,9,10,11,12-0,1,2,3,4,5,8,9,11,12",
+      "id": "CLOSURE-projective_geometry_code_search-pg2-f2-k6-trial-5-0,1,3,4,5,6-1,2,3,4,5,6",
+      "interpretation": "Conductor and local t-closure signatures are preserved on a known equivalent control.",
+      "known_equivalent": true,
+      "row_family": "projective-geometry-code-family",
+      "row_id": "pg-family-pg2-f2-k6",
+      "signature_a": {
+        "closure_square_dimension": 6,
+        "coordinate_closure_digest": "973c5ba9336f2572aba87a76",
+        "dimension": 4,
+        "dual_dimension": 2,
+        "dual_puncture_closure_histogram": [
+          [
+            3,
+            6
+          ]
+        ],
+        "dual_shortening_closure_histogram": [
+          [
+            2,
+            6
+          ]
+        ],
+        "dual_square_dimension": 3,
+        "dual_t_closure_dimension": 3,
+        "dual_t_closure_gain": 1,
+        "dual_t_closure_stabilized": false,
+        "field_prime": 2,
+        "length": 6,
+        "puncture_closure_histogram": [
+          [
+            5,
+            6
+          ]
+        ],
+        "shortening_closure_histogram": [
+          [
+            5,
+            6
+          ]
+        ],
+        "square_dimension": 6,
+        "t_closure_dimension": 6,
+        "t_closure_gain": 2,
+        "t_closure_stabilized": false
+      },
+      "signature_b": {
+        "closure_square_dimension": 6,
+        "coordinate_closure_digest": "973c5ba9336f2572aba87a76",
+        "dimension": 4,
+        "dual_dimension": 2,
+        "dual_puncture_closure_histogram": [
+          [
+            3,
+            6
+          ]
+        ],
+        "dual_shortening_closure_histogram": [
+          [
+            2,
+            6
+          ]
+        ],
+        "dual_square_dimension": 3,
+        "dual_t_closure_dimension": 3,
+        "dual_t_closure_gain": 1,
+        "dual_t_closure_stabilized": false,
+        "field_prime": 2,
+        "length": 6,
+        "puncture_closure_histogram": [
+          [
+            5,
+            6
+          ]
+        ],
+        "shortening_closure_histogram": [
+          [
+            5,
+            6
+          ]
+        ],
+        "square_dimension": 6,
+        "t_closure_dimension": 6,
+        "t_closure_gain": 2,
+        "t_closure_stabilized": false
+      },
+      "source": "projective_geometry_code_search",
+      "status": "equivalent-control-closure-preserved"
+    },
+    {
+      "distinguishing_invariants": [],
+      "id": "CLOSURE-projective_geometry_code_search-pg2-f3-k10-trial-1-0,2,3,5,6,7,8,10,11,12-1,3,4,5,6,7,8,9,10,12",
       "interpretation": "Conductor and local t-closure signatures are preserved on a known equivalent control.",
       "known_equivalent": true,
       "row_family": "projective-geometry-code-family",
@@ -11365,7 +10795,7 @@
     },
     {
       "distinguishing_invariants": [],
-      "id": "CLOSURE-projective_geometry_code_search-pg2-f3-k10-trial-2-0,1,2,3,4,5,6,7,9,10-0,1,2,4,5,6,7,8,10,11",
+      "id": "CLOSURE-projective_geometry_code_search-pg2-f3-k10-trial-2-1,3,4,5,6,7,9,10,11,12-0,1,2,3,4,5,6,8,11,12",
       "interpretation": "Conductor and local t-closure signatures are preserved on a known equivalent control.",
       "known_equivalent": true,
       "row_family": "projective-geometry-code-family",
@@ -11455,7 +10885,7 @@
     },
     {
       "distinguishing_invariants": [],
-      "id": "CLOSURE-projective_geometry_code_search-pg2-f3-k10-trial-3-0,1,2,3,5,6,7,8,9,12-0,1,2,4,6,7,9,10,11,12",
+      "id": "CLOSURE-projective_geometry_code_search-pg2-f3-k10-trial-3-1,2,3,4,5,6,7,9,10,12-0,1,3,5,6,7,8,9,10,12",
       "interpretation": "Conductor and local t-closure signatures are preserved on a known equivalent control.",
       "known_equivalent": true,
       "row_family": "projective-geometry-code-family",
@@ -11545,7 +10975,7 @@
     },
     {
       "distinguishing_invariants": [],
-      "id": "CLOSURE-projective_geometry_code_search-pg2-f3-k10-trial-4-0,2,3,4,5,6,8,10,11,12-1,3,4,5,6,7,9,10,11,12",
+      "id": "CLOSURE-projective_geometry_code_search-pg2-f3-k10-trial-4-1,3,4,5,7,8,9,10,11,12-0,1,2,3,4,5,6,8,9,10",
       "interpretation": "Conductor and local t-closure signatures are preserved on a known equivalent control.",
       "known_equivalent": true,
       "row_family": "projective-geometry-code-family",
@@ -11635,6 +11065,6 @@
     }
   ],
   "status": "closure-proof-debt",
-  "summary": "Audited 111 code pair(s) with conductor and local 2-closure signatures: 8 rejected, 95 controls, 8 proof-debt; 1/1 ambient-code recovery calibration(s) passed.",
+  "summary": "Audited 107 code pair(s) with conductor and local 2-closure signatures: 8 rejected, 91 controls, 8 proof-debt; 1/1 ambient-code recovery calibration(s) passed.",
   "t": 2
 }

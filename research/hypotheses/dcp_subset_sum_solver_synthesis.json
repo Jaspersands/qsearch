@@ -7,7 +7,7 @@
     "source_interface_attached_to_every_survivor": true,
     "speedup_claim_allowed": false
   },
-  "created_at": "2026-07-28T06:55:16.496551+00:00",
+  "created_at": "2026-07-28T09:28:59.727357+00:00",
   "falsifiers_triggered": [
     "LLL constant retuning is rejected after tail collapse.",
     "Bounded-degree carry solving is rejected by full-domain ANF growth.",
@@ -20,7 +20,7 @@
     "hypothesis_count": 11,
     "maximum_survivor_priority_score": 104,
     "negative_match_rejection_count": 5,
-    "primitive_count": 48,
+    "primitive_count": 51,
     "proposal_only_survivor_count": 6,
     "source_contract_satisfying_hypothesis_count": 0
   },
@@ -103,6 +103,9 @@
         "subset-sum-conditioned-fixed-moment-tail",
         "subset-sum-sub-half-log-moment-obstruction",
         "subset-sum-near-log-lattice-chain-obstruction",
+        "subset-sum-low-only-signed-l2-obstruction",
+        "subset-sum-adaptive-sparse-character-obstruction",
+        "subset-sum-qtt-dense-contraction-search",
         "subset-sum-embedding-volume-obstruction",
         "standard-embedding-short-relation-obstruction",
         "carry-sliced-relation-source-obstruction",
@@ -632,6 +635,27 @@
       "role": "uniform no-go gate for nonnegative growing-order moments almost to logarithmic order"
     },
     {
+      "current_evidence": "exact controls/pairs/failures=1/21/0; unit-minor/pair-independence/variance theorems=1/1/1; high-label/dense/nonlinear closures=0/0/0",
+      "interface_status": "low-only polynomial support closed; full-label adaptive, dense implicit, nonlinear, and reduced-basis routes remain open",
+      "primitive_id": "subset-sum-low-only-signed-l2-obstruction",
+      "resource_status": "analytic conditional second-moment theorem with exhaustive finite controls; not a computational lower bound",
+      "role": "no-go gate for polynomially sparse signed exact-hit observables selected from exposed low-label data"
+    },
+    {
+      "current_evidence": "exact targets/failures=8/0; low/high/adaptive theorems=1/1/1; dense/general closures=0/0",
+      "interface_status": "all polynomial sparse character dictionaries closed; only dense implicit Fourier contraction or non-Fourier routes remain",
+      "primitive_id": "subset-sum-adaptive-sparse-character-obstruction",
+      "resource_status": "analytic growing-moment theorem uniform over all frequencies; does not bound dense implicit circuit complexity",
+      "role": "source-uniform no-go gate for polynomially sparse subset-sum Fourier truncations selected after all labels"
+    },
+    {
+      "current_evidence": "instances/unfoldings/max n=12/192/18; registered cap power/tail survivors=1/0; tail source/control ranks=218/299; fitted log-rank slope=0.5191601657011986; tail raw/zero-excess/control-excess coverage=0.24521756021756022/0.0485755406350272/0.04727883899424051; nontrivial tail excess instances=0; uniform dense/witness constructions=0/0",
+      "interface_status": "direct R=n target-bit QTT is finite-negative; alternative tensorizations remain open only with uniform bond and self-reduction proofs",
+      "primitive_id": "subset-sum-qtt-dense-contraction-search",
+      "resource_status": "exact finite count vectors and SVDs are exponential audit infrastructure, not an algorithm",
+      "role": "finite architecture test for direct target-bit tensor-network contraction of exponentially many subset-sum characters"
+    },
+    {
       "current_evidence": "standard/sliced volume theorems=1/1; volume obstructions=2; local gaps=0",
       "interface_status": "volume-only gaps closed; explicit local basis events, short-vector counts, and decoders remain",
       "primitive_id": "subset-sum-embedding-volume-obstruction",
@@ -780,5 +804,5 @@
     "time": "poly(n)"
   },
   "status": "typed-solver-hypotheses-generated-all-proof-gated",
-  "summary": "Generated 11 typed partial-solver hypotheses from 48 primitives; 6 survive only as proof-debt proposals, 5 match existing negative/resource gates, and zero enter the candidate registry."
+  "summary": "Generated 11 typed partial-solver hypotheses from 51 primitives; 6 survive only as proof-debt proposals, 5 match existing negative/resource gates, and zero enter the candidate registry."
 }

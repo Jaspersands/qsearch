@@ -136,6 +136,48 @@
       "year": 2026
     },
     {
+      "id": "feray-sniady-character-bounds-2007",
+      "tags": [
+        "symmetric-character",
+        "character-ratio",
+        "plancherel-typical",
+        "representation-theory",
+        "proof-tool"
+      ],
+      "title": "Asymptotics of characters of symmetric groups related to Stanley character formula",
+      "url": "https://arxiv.org/abs/math/0701051",
+      "why_it_matters": "Provides a uniform normalized-character bound in terms of Young diagram rows, columns, and transposition length. This is the main available route from collision-free typical partitions to quantitative wreath-frame moment contraction.",
+      "year": 2007
+    },
+    {
+      "id": "lifshitz-marmor-hypercontractive-characters-2023",
+      "tags": [
+        "symmetric-character",
+        "character-ratio",
+        "hypercontractivity",
+        "product-mixing",
+        "proof-tool"
+      ],
+      "title": "Bounds for Characters of the Symmetric Group: A Hypercontractive Approach",
+      "url": "https://arxiv.org/abs/2308.08694",
+      "why_it_matters": "Connects character norm bounds to product mixing and Fourier coefficients of normal sets, suggesting analytic tools for the shared bridge-word contraction beyond pointwise estimates.",
+      "year": 2023
+    },
+    {
+      "id": "olesker-taylor-teyssier-thevenin-character-cutoff-2025",
+      "tags": [
+        "symmetric-character",
+        "character-ratio",
+        "random-walk",
+        "cutoff",
+        "proof-tool"
+      ],
+      "title": "Sharp character bounds and cutoff profiles for symmetric groups",
+      "url": "https://arxiv.org/abs/2503.12735",
+      "why_it_matters": "Develops sharp uniform character bounds and class-walk cutoff tools that may control the low-support word classes left by the conditioned collision-free wreath moment expansion.",
+      "year": 2025
+    },
+    {
       "id": "burchardt-high-dimensional-schur-2025",
       "tags": [
         "schur-transform",
@@ -215,6 +257,20 @@
       "url": "https://arxiv.org/abs/cs/0304005",
       "why_it_matters": "Connects efficient dihedral HSP progress to lattice breakthroughs.",
       "year": 2003
+    },
+    {
+      "id": "lindzey-rosmanis-index-erasure-2019",
+      "tags": [
+        "state-generation",
+        "index-erasure",
+        "query-lower-bound",
+        "black-box",
+        "noncoherent"
+      ],
+      "title": "A Tight Lower Bound for Non-coherent Index Erasure",
+      "url": "https://arxiv.org/abs/1902.07336",
+      "why_it_matters": "Proves a tight square-root quantum query lower bound for black-box non-coherent image-state generation. It is the correct generic warning for DCP fiber erasure, but it does not transfer automatically to public arithmetic subset-sum maps.",
+      "year": 2019
     },
     {
       "id": "galbraith-shani-multivariate-hnp-2015",
@@ -527,6 +583,19 @@
       "url": "https://arxiv.org/abs/2010.01240",
       "why_it_matters": "Points toward proof-checking candidate algorithms rather than trusting generated explanations.",
       "year": 2020
+    },
+    {
+      "id": "sellke-2020",
+      "tags": [
+        "symmetric-group",
+        "representation-theory",
+        "plancherel",
+        "tensor-covering"
+      ],
+      "title": "Covering Irrep(S_n) With Tensor Products and Powers",
+      "url": "https://arxiv.org/abs/2004.05283",
+      "why_it_matters": "A fixed absolute number C of arbitrarily coupled Plancherel irreps of S_n tensor together to cover every irrep with probability 1-o(1), which supplies the block-covering step used by the Plancherel block obstruction and the multistar degree obstruction.",
+      "year": 2020
     }
   ],
   "tag_index": {
@@ -568,12 +637,20 @@
       "mora-tillich-dual-goppa-square-2021",
       "randriambololona-syzygy-distinguisher-2024"
     ],
+    "black-box": [
+      "lindzey-rosmanis-index-erasure-2019"
+    ],
     "block-encoding": [
       "qsvt-2018",
       "cs-guide-qsvt-2023"
     ],
     "breakthrough-template": [
       "shor-1994"
+    ],
+    "character-ratio": [
+      "feray-sniady-character-bounds-2007",
+      "lifshitz-marmor-hypercontractive-characters-2023",
+      "olesker-taylor-teyssier-thevenin-character-cutoff-2025"
     ],
     "chosen-query": [
       "galbraith-laity-shani-fourier-limitations-2016"
@@ -629,6 +706,9 @@
     ],
     "coset-state": [
       "moore-russell-multiregister-2005"
+    ],
+    "cutoff": [
+      "olesker-taylor-teyssier-thevenin-character-cutoff-2025"
     ],
     "deconvolution": [
       "ip-shift-deconvolution-2002"
@@ -728,6 +808,12 @@
     "hull": [
       "bardet-otmani-saeed-trivial-hull-2019"
     ],
+    "hypercontractivity": [
+      "lifshitz-marmor-hypercontractive-characters-2023"
+    ],
+    "index-erasure": [
+      "lindzey-rosmanis-index-erasure-2019"
+    ],
     "information-lower-bound": [
       "moore-russell-multiregister-2005"
     ],
@@ -797,6 +883,9 @@
       "moore-russell-multiregister-2005",
       "code-equivalence-fourier-2011"
     ],
+    "noncoherent": [
+      "lindzey-rosmanis-index-erasure-2019"
+    ],
     "number-theory": [
       "shor-1994",
       "hallgren-pell-2002"
@@ -810,8 +899,14 @@
     "plancherel-measure": [
       "aggarwal-elboim-maximal-dimension-2026"
     ],
+    "plancherel-typical": [
+      "feray-sniady-character-bounds-2007"
+    ],
     "principal-ideal": [
       "hallgren-pell-2002"
+    ],
+    "product-mixing": [
+      "lifshitz-marmor-hypercontractive-characters-2023"
     ],
     "program-synthesis": [
       "program-synthesis-components-2023"
@@ -821,6 +916,11 @@
     ],
     "proof-assistant": [
       "proof-quantum-programs-2020"
+    ],
+    "proof-tool": [
+      "feray-sniady-character-bounds-2007",
+      "lifshitz-marmor-hypercontractive-characters-2023",
+      "olesker-taylor-teyssier-thevenin-character-cutoff-2025"
     ],
     "property-testing": [
       "gowers-norm-algorithms-2025"
@@ -853,8 +953,14 @@
     "query-complexity": [
       "span-programs-adversary-2009"
     ],
+    "query-lower-bound": [
+      "lindzey-rosmanis-index-erasure-2019"
+    ],
     "random-multiplier": [
       "galbraith-shani-multivariate-hnp-2015"
+    ],
+    "random-walk": [
+      "olesker-taylor-teyssier-thevenin-character-cutoff-2025"
     ],
     "randomization": [
       "randomized-qsvt-2025"
@@ -876,6 +982,7 @@
       "larocca-havlicek-multiplicities-2024",
       "panova-classical-multiplicities-2025",
       "aggarwal-elboim-maximal-dimension-2026",
+      "feray-sniady-character-bounds-2007",
       "burchardt-high-dimensional-schur-2025",
       "yoshida-random-dilation-2025"
     ],
@@ -913,6 +1020,9 @@
     "sparse-fourier": [
       "kapralov-sparse-fourier-2016"
     ],
+    "state-generation": [
+      "lindzey-rosmanis-index-erasure-2019"
+    ],
     "state-isomorphism": [
       "state-isomorphism-2026"
     ],
@@ -922,6 +1032,11 @@
     ],
     "survey": [
       "hsp-survey-2010"
+    ],
+    "symmetric-character": [
+      "feray-sniady-character-bounds-2007",
+      "lifshitz-marmor-hypercontractive-characters-2023",
+      "olesker-taylor-teyssier-thevenin-character-cutoff-2025"
     ],
     "symmetric-qft": [
       "beals-symmetric-qft-1997"

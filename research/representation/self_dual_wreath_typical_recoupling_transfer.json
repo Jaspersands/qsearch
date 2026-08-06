@@ -1,0 +1,164 @@
+{
+  "capability_records": [
+    {
+      "blocks_decoder": false,
+      "id": "TRANSFER-SN-QFT",
+      "missing_scope": "Does not decompose internal V_lambda tensor V_mu multiplicity spaces or mixed four-class kernels.",
+      "required_primitive": "Coherent S_n Fourier/Young labels",
+      "source_artifact": "research/representation/coset_recoupling_capability_ledger.json",
+      "source_count": 10,
+      "source_metric": "proved_polynomial_primitive_count",
+      "transfer_status": "available-label-transform-only",
+      "valid_scope": "Permutation-basis to Young/Fourier labels and matrix indices."
+    },
+    {
+      "blocks_decoder": false,
+      "id": "TRANSFER-DIAGONAL-YJM-LABELS",
+      "missing_scope": "Acts as identity on Kronecker multiplicity registers.",
+      "required_primitive": "Target tableau/Gelfand-Tsetlin labels",
+      "source_artifact": "research/representation/coset_recoupling_capability_ledger.json",
+      "source_count": 1,
+      "source_metric": "diagonal_jm_label_transform_poly_proof_count",
+      "transfer_status": "available-target-label-only",
+      "valid_scope": "Coherently appends target tableau labels at integer spectral gap."
+    },
+    {
+      "blocks_decoder": false,
+      "id": "TRANSFER-BOUNDED-SUPPORT-BLOCK-ENCODING",
+      "missing_scope": "No uniform typical-sector gap, eigenbasis, associator, or four-class contraction.",
+      "required_primitive": "Sparse commutant operator access",
+      "source_artifact": "research/representation/coset_recoupling_capability_ledger.json",
+      "source_count": 1,
+      "source_metric": "bounded_support_commutant_block_encoding_poly_proof_count",
+      "transfer_status": "available-operator-access-only",
+      "valid_scope": "Polynomial LCU access to declared bounded-support orbit sums."
+    },
+    {
+      "blocks_decoder": true,
+      "id": "TRANSFER-INTERNAL-KRONECKER-BASIS",
+      "missing_scope": "Uniform basis inside every typical g(lambda,mu,nu) multiplicity register.",
+      "required_primitive": "Arbitrary-source internal Kronecker multiplicity transform",
+      "source_artifact": "research/representation/coset_recoupling_capability_ledger.json",
+      "source_count": 0,
+      "source_metric": "internal_kronecker_transform_poly_proof_count",
+      "transfer_status": "missing-critical",
+      "valid_scope": "No general primitive is proved."
+    },
+    {
+      "blocks_decoder": true,
+      "id": "TRANSFER-KCOPY-ASSOCIATOR",
+      "missing_scope": "Consistent coupling-tree changes across k=Theta(log n!) physical copies.",
+      "required_primitive": "Overlapping k-copy Racah/associator transform",
+      "source_artifact": "research/representation/coset_recoupling_capability_ledger.json",
+      "source_count": 0,
+      "source_metric": "kcopy_associator_poly_proof_count",
+      "transfer_status": "missing-critical",
+      "valid_scope": "No uniform overlapping associator is proved."
+    },
+    {
+      "blocks_decoder": true,
+      "id": "TRANSFER-UNIFORM-TYPICAL-SEPARATOR",
+      "missing_scope": "Exact class contraction finds 10 scalar n=8 holdout blocks; no all-n rule, gap, or coherent internal eigenbasis exists.",
+      "required_primitive": "Uniform typical multiplicity separator",
+      "source_artifact": "research/representation/coset_typical_parity_complete_separator.json",
+      "source_count": 0,
+      "source_metric": "all_n_square_free_theorem_count",
+      "transfer_status": "missing-n8-holdout-falsified",
+      "valid_scope": "The partition-independent TC2+CT1-2CT2 rule repairs the two known exact scalar blocks and is collision-free numerically on all 663 audited blocks through n=7."
+    },
+    {
+      "blocks_decoder": true,
+      "id": "TRANSFER-MIXED-FOUR-CLASS-KERNEL",
+      "missing_scope": "Polynomial contracted action on arbitrary typical physical character portfolios.",
+      "required_primitive": "Mixed (r,q,r^-1q,[r,q]) recoupling contraction",
+      "source_artifact": "research/representation/self_dual_wreath_equal_commutator_audit.json",
+      "source_count": 0,
+      "source_metric": "mixed_class_commutator_contraction_count",
+      "transfer_status": "missing-critical",
+      "valid_scope": "Pure commutator products and finite factorial kernels exist."
+    },
+    {
+      "blocks_decoder": true,
+      "id": "TRANSFER-TYPICAL-SUPPORT-GAP",
+      "missing_scope": "All-n minimum positive frame eigenvalue and error budget.",
+      "required_primitive": "Uniform typical-sector support conditioning",
+      "source_artifact": "research/representation/coset_typical_invariant_contraction.json",
+      "source_count": 0,
+      "source_metric": "all_n_simple_spectrum_theorem_count",
+      "transfer_status": "missing-finite-numerical-only",
+      "valid_scope": "Finite numerical typical multiplicity blocks and exact low-order traces."
+    },
+    {
+      "blocks_decoder": true,
+      "id": "TRANSFER-NATURAL-TYPICAL-COVERAGE",
+      "missing_scope": "One uniform partition-description rule; stable branches have typical coverage count 0.",
+      "required_primitive": "Nonvanishing natural source-label coverage",
+      "source_artifact": "research/representation/self_dual_wreath_typical_partition_portfolio.json",
+      "source_count": 1,
+      "source_metric": "constant_mass_polynomial_catalog_no_go_theorem_count",
+      "transfer_status": "requires-uniform-rule-not-catalog",
+      "valid_scope": "Constant-mass portfolios and catalog no-go are quantified."
+    },
+    {
+      "blocks_decoder": true,
+      "id": "TRANSFER-HIDDEN-PERMUTATION-DECODER",
+      "missing_scope": "Outcome law, coherent processing, and recovery of the hidden bridge permutation.",
+      "required_primitive": "End-to-end hidden permutation decoder",
+      "source_artifact": "research/representation/coset_recoupling_capability_ledger.json",
+      "source_count": 0,
+      "source_metric": "hidden_involution_decoder_count",
+      "transfer_status": "missing-critical",
+      "valid_scope": "No decoder transfer is available."
+    }
+  ],
+  "claim_gate": {
+    "finite_uniform_separator_candidate_available": false,
+    "hidden_permutation_decoder_proved": false,
+    "internal_kronecker_basis_transform_available": false,
+    "known_label_and_operator_primitives_transferred": true,
+    "mixed_four_class_contraction_available": false,
+    "new_end_to_end_quantum_algorithm_proved": false,
+    "overlapping_kcopy_associator_available": false,
+    "reason": "Known QFT, YJM-label, and block-encoding primitives transfer only partially. Every capability that touches typical multiplicity recoupling, conditioning, or decoding remains missing. The parity-complete discovery-set separator is falsified by 10 exact scalar blocks at n=8.",
+    "speedup_claim_allowed": false,
+    "uniform_typical_support_gap_proved": false
+  },
+  "created_at": "2026-07-30T00:17:38.753687+00:00",
+  "falsifiers_triggered": [
+    "An efficient S_n QFT does not resolve internal Kronecker multiplicity spaces.",
+    "YJM target-tableau labels are identity on multiplicity registers.",
+    "Block encoding a bounded-support separator does not prove a typical-sector spectral gap.",
+    "The old one-sided typical separator has exact scalar collisions on nonzero natural source-pair mass.",
+    "Parity completion repairs the discovery-set collisions but has 10 exact scalar obstructions on the n=8 holdout.",
+    "Stable-sector transforms and explicit typical catalogs do not provide constant-mass uniform coverage.",
+    "No overlapping associator, mixed four-class contraction, support theorem, or hidden-permutation decoder exists."
+  ],
+  "headline_metrics": {
+    "capability_transfer_record_count": 10,
+    "constant_mass_catalog_no_go_theorem_count": 1,
+    "decoder_blocking_missing_primitive_count": 6,
+    "fixed_separator_exact_collision_count": 2,
+    "internal_kronecker_transform_count": 0,
+    "kcopy_associator_count": 0,
+    "maximum_exact_collision_natural_source_pair_mass": 0.024691358024691357,
+    "mixed_four_class_contraction_count": 0,
+    "new_end_to_end_quantum_algorithm_count": 0,
+    "parity_complete_all_n_theorem_count": 0,
+    "parity_complete_finite_block_count": 663,
+    "parity_complete_finite_collision_count": 0,
+    "parity_complete_n8_exact_scalar_obstruction_count": 10,
+    "typical_hidden_permutation_decoder_count": 0,
+    "uniform_typical_gap_theorem_count": 0,
+    "uniform_typical_separator_rule_count": 0,
+    "valid_partial_primitive_transfer_count": 3
+  },
+  "physical_recoupling_contract": {
+    "input": "k=Theta(log n!) naturally sampled physical wreath irrep labels with Plancherel-typical source partitions",
+    "required_operator": "mixed four-class recoupling contraction or equivalent coherent frame block encoding",
+    "required_output": "coherent measurement outcome law and polynomial hidden permutation decoder",
+    "required_spectral_theorem": "uniform support projector and inverse-polynomial positive gap",
+    "required_transform": "partition-description-uniform internal Kronecker and overlapping associator network"
+  },
+  "status": "known-primitives-scope-separated-parity-holdout-falsified-growing-width-stack-missing",
+  "summary": "Transferred 3 valid partial primitives and identified 6 decoder-blocking missing capabilities. The old fixed separator has 2 exact collision blocks, and the parity-complete replacement has 10 exact n=8 holdout obstructions; no end-to-end algorithm is present."
+}

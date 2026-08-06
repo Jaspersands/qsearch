@@ -1,0 +1,416 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "The constant-conditioned pair sampler compiles pair polar transport.",
+      "resolution": "The stacked sampler inverts singular values near one, while transport polarizes E_jE_i and must resolve correlation 1/d_alpha. Their conditioning is different.",
+      "resolved": true
+    },
+    {
+      "objection": "Orthogonal affine-generator fibers make W3 transport impossible.",
+      "resolution": "Each orthogonal generator pair has an exact two-edge path through the opposite bipartition.",
+      "resolved": true
+    },
+    {
+      "objection": "Finite diameter two suggests constant asymptotic diameter.",
+      "resolution": "The W3 graph is a fixed low-dimensional control and gives no growing representation-graph expansion theorem.",
+      "resolved": false
+    },
+    {
+      "objection": "Endpoint gauges are always scalar signs.",
+      "resolution": "Higher multiplicity fibers can carry nonabelian holonomy; no all-n scalar-gauge theorem exists.",
+      "resolved": false
+    }
+  ],
+  "claim_gate": {
+    "all_n_inverse_polynomial_used_edge_correlation_proved": false,
+    "all_n_polynomial_transport_graph_diameter_proved": false,
+    "efficient_internal_gauge_correction_proved": false,
+    "finite_affine_fiber_pair_transport_compiled": true,
+    "hierarchical_orientation_polar_proved": false,
+    "polynomial_coherent_path_finder_proved": false,
+    "reason": "Finite fibers have short pair-polar paths, but asymptotic edge correlations may be exponentially small and no coherent path or gauge compiler is known.",
+    "speedup_claim_allowed": false,
+    "w3_orthogonal_generator_transport_resolved_by_two_edges": true,
+    "w5_anchor_transport_is_direct_common_range": true
+  },
+  "created_at": "2026-08-06T03:41:01.072277+00:00",
+  "falsifiers_triggered": [
+    "Direct affine-generator overlap is not necessary; a short pair-overlap path can transport the fiber.",
+    "The stacked pair sampler's constant condition number does not bound the cost of pair-overlap polar transport.",
+    "Fixed W3 diameter and sign gauges do not imply polynomial diameter or abelian gauges at growing multiplicity."
+  ],
+  "finite_controls": [
+    {
+      "active_orientation_masks": [
+        0,
+        2,
+        5,
+        7
+      ],
+      "control_id": "W3-DISTINCT-AFFINE-PLANE",
+      "direct_pair_transport_count": 8,
+      "exact_pair_polar_transport_network_verified": true,
+      "finite_inverse_polynomial_correlation_control": true,
+      "intersection_dimension": 2,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        2
+      ],
+      "maximum_endpoint_scalar_sign_gauge_residual": 1.380386353386183e-15,
+      "maximum_path_fiber_isometry_residual": 1.3958757222098105e-15,
+      "maximum_path_fiber_range_leakage": 1.1477774343306215e-15,
+      "maximum_used_edge_principal_correlation": 0.5000000000000002,
+      "minimum_used_edge_principal_correlation": 0.49999999999999983,
+      "n": 3,
+      "negative_sign_path_count": 0,
+      "positive_sign_path_count": 12,
+      "right_orientation_masks": [
+        5,
+        7
+      ],
+      "status": "finite-pair-polar-transport-network-compiled",
+      "target_partition": [
+        2,
+        1
+      ],
+      "transport_graph_connected": true,
+      "transport_graph_diameter": 2,
+      "transport_graph_edge_count": 4,
+      "two_edge_pair_transport_count": 4,
+      "unreachable_ordered_fiber_pair_count": 0
+    },
+    {
+      "active_orientation_masks": [
+        0,
+        2,
+        5,
+        7
+      ],
+      "control_id": "W3-DISTINCT-SCALED-AFFINE-PLANE",
+      "direct_pair_transport_count": 8,
+      "exact_pair_polar_transport_network_verified": true,
+      "finite_inverse_polynomial_correlation_control": true,
+      "intersection_dimension": 2,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        5
+      ],
+      "maximum_endpoint_scalar_sign_gauge_residual": 2.0142655948328336e-15,
+      "maximum_path_fiber_isometry_residual": 2.6710342851819022e-15,
+      "maximum_path_fiber_range_leakage": 2.2304392220487863e-15,
+      "maximum_used_edge_principal_correlation": 0.5000000000000001,
+      "minimum_used_edge_principal_correlation": 0.4999999999999994,
+      "n": 3,
+      "negative_sign_path_count": 8,
+      "positive_sign_path_count": 4,
+      "right_orientation_masks": [
+        2,
+        7
+      ],
+      "status": "finite-pair-polar-transport-network-compiled",
+      "target_partition": [
+        2,
+        1
+      ],
+      "transport_graph_connected": true,
+      "transport_graph_diameter": 2,
+      "transport_graph_edge_count": 4,
+      "two_edge_pair_transport_count": 4,
+      "unreachable_ordered_fiber_pair_count": 0
+    },
+    {
+      "active_orientation_masks": [
+        3,
+        6
+      ],
+      "control_id": "W5-ISOLATED-ANCHOR-LINE",
+      "direct_pair_transport_count": 2,
+      "exact_pair_polar_transport_network_verified": true,
+      "finite_inverse_polynomial_correlation_control": true,
+      "intersection_dimension": 5,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            4,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            2
+          ],
+          [
+            2,
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "maximum_endpoint_scalar_sign_gauge_residual": 3.559705313076785e-15,
+      "maximum_path_fiber_isometry_residual": 2.278404729462698e-15,
+      "maximum_path_fiber_range_leakage": 2.4980638771788605e-15,
+      "maximum_used_edge_principal_correlation": 0.9999999999999997,
+      "minimum_used_edge_principal_correlation": 0.9999999999999997,
+      "n": 5,
+      "negative_sign_path_count": 0,
+      "positive_sign_path_count": 2,
+      "right_orientation_masks": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "status": "finite-pair-polar-transport-network-compiled",
+      "target_partition": [
+        3,
+        2
+      ],
+      "transport_graph_connected": true,
+      "transport_graph_diameter": 1,
+      "transport_graph_edge_count": 1,
+      "two_edge_pair_transport_count": 0,
+      "unreachable_ordered_fiber_pair_count": 0
+    }
+  ],
+  "headline_metrics": {
+    "all_n_inverse_polynomial_transport_correlation_theorem_count": 0,
+    "all_n_polynomial_transport_diameter_theorem_count": 0,
+    "coherent_transport_path_compiler_count": 0,
+    "finite_correlation_gate_failure_count": 0,
+    "finite_pair_polar_transport_network_count": 3,
+    "finite_transport_validation_failure_count": 0,
+    "hierarchical_orientation_polar_sampler_count": 0,
+    "maximum_finite_transport_graph_diameter": 2,
+    "minimum_finite_used_edge_correlation": 0.4999999999999994,
+    "new_quantum_algorithm_count": 0,
+    "w3_negative_sign_gauge_path_count": 8,
+    "w3_two_edge_transport_count": 8,
+    "w5_common_range_direct_transport_count": 2
+  },
+  "proof_obligations": [
+    {
+      "obligation": "finite_affine_fiber_pair_transport",
+      "resolution": "Every active-fiber pair in the finite controls has an exact path of length at most two with correlation at least 1/2.",
+      "resolved": true
+    },
+    {
+      "obligation": "all_n_polynomial_transport_diameter",
+      "resolution": "No representation theorem controls connectivity or diameter of the active pair-overlap graph at growing copy count.",
+      "resolved": false
+    },
+    {
+      "obligation": "all_n_inverse_polynomial_edge_correlation",
+      "resolution": "Pair correlations are 1/d_alpha and natural S_n dimensions can be exponential.",
+      "resolved": false
+    },
+    {
+      "obligation": "coherent_transport_path_and_gauge_compiler",
+      "resolution": "The finite BFS and sign gauges are classical witnesses, not a uniform coherent path finder for exponentially many masks.",
+      "resolved": false
+    }
+  ],
+  "scaling_records": [
+    {
+      "efficiently_correctable_internal_gauge_proved": false,
+      "hierarchical_orientation_polar_proved": false,
+      "information_threshold_copy_count": 7,
+      "inverse_polynomial_used_edge_correlation_proved": false,
+      "n": 5,
+      "noncommon_pair_correlation_form": "1/d_alpha",
+      "polynomial_coherent_path_finder_proved": false,
+      "polynomial_transport_graph_diameter_proved": false,
+      "smallest_possible_nonzero_pair_correlation_can_be_exponential": true,
+      "smallest_possible_nonzero_pair_correlation_log2_lower_bound": -3.45344529780426,
+      "status": "finite-transport-network-edge-correlation-lower-bound-open"
+    },
+    {
+      "efficiently_correctable_internal_gauge_proved": false,
+      "hierarchical_orientation_polar_proved": false,
+      "information_threshold_copy_count": 16,
+      "inverse_polynomial_used_edge_correlation_proved": false,
+      "n": 8,
+      "noncommon_pair_correlation_form": "1/d_alpha",
+      "polynomial_coherent_path_finder_proved": false,
+      "polynomial_transport_graph_diameter_proved": false,
+      "smallest_possible_nonzero_pair_correlation_can_be_exponential": true,
+      "smallest_possible_nonzero_pair_correlation_log2_lower_bound": -7.64960400919364,
+      "status": "finite-transport-network-edge-correlation-lower-bound-open"
+    },
+    {
+      "efficiently_correctable_internal_gauge_proved": false,
+      "hierarchical_orientation_polar_proved": false,
+      "information_threshold_copy_count": 45,
+      "inverse_polynomial_used_edge_correlation_proved": false,
+      "n": 16,
+      "noncommon_pair_correlation_form": "1/d_alpha",
+      "polynomial_coherent_path_finder_proved": false,
+      "polynomial_transport_graph_diameter_proved": false,
+      "smallest_possible_nonzero_pair_correlation_can_be_exponential": true,
+      "smallest_possible_nonzero_pair_correlation_log2_lower_bound": -22.12507023494131,
+      "status": "finite-transport-network-edge-correlation-lower-bound-open"
+    },
+    {
+      "efficiently_correctable_internal_gauge_proved": false,
+      "hierarchical_orientation_polar_proved": false,
+      "information_threshold_copy_count": 118,
+      "inverse_polynomial_used_edge_correlation_proved": false,
+      "n": 32,
+      "noncommon_pair_correlation_form": "1/d_alpha",
+      "polynomial_coherent_path_finder_proved": false,
+      "polynomial_transport_graph_diameter_proved": false,
+      "smallest_possible_nonzero_pair_correlation_can_be_exponential": true,
+      "smallest_possible_nonzero_pair_correlation_log2_lower_bound": -58.83163182618015,
+      "status": "finite-transport-network-edge-correlation-lower-bound-open"
+    },
+    {
+      "efficiently_correctable_internal_gauge_proved": false,
+      "hierarchical_orientation_polar_proved": false,
+      "information_threshold_copy_count": 296,
+      "inverse_polynomial_used_edge_correlation_proved": false,
+      "n": 64,
+      "noncommon_pair_correlation_form": "1/d_alpha",
+      "polynomial_coherent_path_finder_proved": false,
+      "polynomial_transport_graph_diameter_proved": false,
+      "smallest_possible_nonzero_pair_correlation_can_be_exponential": true,
+      "smallest_possible_nonzero_pair_correlation_log2_lower_bound": -147.99757197086205,
+      "status": "finite-transport-network-edge-correlation-lower-bound-open"
+    },
+    {
+      "efficiently_correctable_internal_gauge_proved": false,
+      "hierarchical_orientation_polar_proved": false,
+      "information_threshold_copy_count": 717,
+      "inverse_polynomial_used_edge_correlation_proved": false,
+      "n": 128,
+      "noncommon_pair_correlation_form": "1/d_alpha",
+      "polynomial_coherent_path_finder_proved": false,
+      "polynomial_transport_graph_diameter_proved": false,
+      "smallest_possible_nonzero_pair_correlation_can_be_exponential": true,
+      "smallest_possible_nonzero_pair_correlation_log2_lower_bound": -358.080861041811,
+      "status": "finite-transport-network-edge-correlation-lower-bound-open"
+    },
+    {
+      "efficiently_correctable_internal_gauge_proved": false,
+      "hierarchical_orientation_polar_proved": false,
+      "information_threshold_copy_count": 1684,
+      "inverse_polynomial_used_edge_correlation_proved": false,
+      "n": 256,
+      "noncommon_pair_correlation_form": "1/d_alpha",
+      "polynomial_coherent_path_finder_proved": false,
+      "polynomial_transport_graph_diameter_proved": false,
+      "smallest_possible_nonzero_pair_correlation_can_be_exponential": true,
+      "smallest_possible_nonzero_pair_correlation_log2_lower_bound": -841.9981436121074,
+      "status": "finite-transport-network-edge-correlation-lower-bound-open"
+    },
+    {
+      "efficiently_correctable_internal_gauge_proved": false,
+      "hierarchical_orientation_polar_proved": false,
+      "information_threshold_copy_count": 3876,
+      "inverse_polynomial_used_edge_correlation_proved": false,
+      "n": 512,
+      "noncommon_pair_correlation_form": "1/d_alpha",
+      "polynomial_coherent_path_finder_proved": false,
+      "polynomial_transport_graph_diameter_proved": false,
+      "smallest_possible_nonzero_pair_correlation_can_be_exponential": true,
+      "smallest_possible_nonzero_pair_correlation_log2_lower_bound": -1937.5830609716015,
+      "status": "finite-transport-network-edge-correlation-lower-bound-open"
+    }
+  ],
+  "status": "finite-pair-polar-transports-compiled-asymptotic-correlation-gate-open",
+  "summary": "Compiled all finite affine fiber transports through paths of at most two pair polars and exposed inverse edge correlation as the decisive asymptotic conditioning gate.",
+  "theorem_contract": {
+    "all_n_target": "Find a polynomial-diameter transport graph using only inverse-polynomial correlations and efficiently correctable gauges.",
+    "conditioning_boundary": "Polarizing E_jE_i costs inverse in its used correlation 1/d_alpha, which may be exponential even though the stacked pair sampler remains constant-conditioned.",
+    "edge_transport": "The polar factor of E_jE_i transports the relevant fiber when that fiber occupies a nonzero principal-angle block.",
+    "finite_network": "The W3 active graph is K_(2,2) with diameter two and sign-only gauges; the W5 anchor line is one common-range edge.",
+    "path_transport": "Products of edge polars transport along graph paths; endpoint gauges must be computed and corrected coherently."
+  }
+}

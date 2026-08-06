@@ -1,0 +1,1671 @@
+{
+  "claim_gate": {
+    "bridge_subgroup_conjugacy_identity_proved": true,
+    "collision_free_polynomial_factor_norm_bound_proved": false,
+    "complete_w4_collision_free_validation_passed": true,
+    "dense_mask_two_cores_resummed_exactly": true,
+    "isotypic_partial_trace_reduction_proved": true,
+    "natural_average_inverse_polynomial_conclusive_proved": false,
+    "polynomial_hidden_permutation_decoder_proved": false,
+    "reason": "The norm question now has an exact isotypic partial-trace form, but no uniform delocalization bound is known and the multiplicity operators have exponential dimension.",
+    "speedup_claim_allowed": false,
+    "structured_coherent_measurement_proved": false,
+    "subgroup_twirl_identity_proved": true,
+    "uniform_partial_trace_delocalization_proved": false
+  },
+  "created_at": "2026-07-30T09:55:16.076294+00:00",
+  "falsifiers_triggered": [
+    "Dense mask-incidence two-cores need not be enumerated individually; the subgroup twirl resums them exactly.",
+    "The twirl reduction does not make the norm bound automatic: multiplicity spaces remain exponentially large.",
+    "Finite W4 isotypic localization is not evidence for a uniform all-n partial-trace delocalization theorem.",
+    "No inverse-polynomial conclusive probability, coherent measurement, decoder, or classical separation is claimed."
+  ],
+  "finite_validations": [
+    {
+      "all_source_partitions_distinct": true,
+      "copy_count": 2,
+      "direct_frame_top_eigenvalue": 0.3750000000000001,
+      "direct_frame_twirl_residual": 1.538801991785422e-16,
+      "exact_finite_twirl_validation": true,
+      "finite_validation_only": true,
+      "isotypic_projector_resolution_residual": 1.142981516490383e-15,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "localized_sector_top_eigenvalue": 0.3750000000000001,
+      "maximizing_isotypic_partition": [
+        2,
+        2
+      ],
+      "maximum_bridge_conjugacy_residual": 0.0,
+      "maximum_frame_subgroup_commutator_residual": 2.4114487608390383e-16,
+      "maximum_isotypic_projector_idempotence_residual": 1.255238103223545e-15,
+      "maximum_isotypic_projector_orthogonality_residual": 5.557439778490001e-16,
+      "n": 4,
+      "restriction_multiplicity_mismatch_count": 0,
+      "sector_records": [
+        {
+          "irrep_dimension": 3,
+          "isotypic_dimension": 15,
+          "multiplicity_block_nontrivial": false,
+          "normalized_hilbert_mass": 0.20833333333333334,
+          "partition": [
+            3,
+            1
+          ],
+          "restriction_multiplicity": 5,
+          "sector_distinct_positive_eigenvalue_count": 1,
+          "sector_top_eigenvalue": 0.25000000000000006,
+          "sector_top_to_frame_target_ratio": 0.5000000000000001
+        },
+        {
+          "irrep_dimension": 2,
+          "isotypic_dimension": 22,
+          "multiplicity_block_nontrivial": true,
+          "normalized_hilbert_mass": 0.3055555555555556,
+          "partition": [
+            2,
+            2
+          ],
+          "restriction_multiplicity": 11,
+          "sector_distinct_positive_eigenvalue_count": 3,
+          "sector_top_eigenvalue": 0.3750000000000001,
+          "sector_top_to_frame_target_ratio": 0.7500000000000002
+        },
+        {
+          "irrep_dimension": 3,
+          "isotypic_dimension": 33,
+          "multiplicity_block_nontrivial": true,
+          "normalized_hilbert_mass": 0.4583333333333333,
+          "partition": [
+            2,
+            1,
+            1
+          ],
+          "restriction_multiplicity": 11,
+          "sector_distinct_positive_eigenvalue_count": 3,
+          "sector_top_eigenvalue": 0.3333333333333334,
+          "sector_top_to_frame_target_ratio": 0.6666666666666669
+        },
+        {
+          "irrep_dimension": 1,
+          "isotypic_dimension": 2,
+          "multiplicity_block_nontrivial": false,
+          "normalized_hilbert_mass": 0.027777777777777776,
+          "partition": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "restriction_multiplicity": 2,
+          "sector_distinct_positive_eigenvalue_count": 1,
+          "sector_top_eigenvalue": 0.24999999999999983,
+          "sector_top_to_frame_target_ratio": 0.49999999999999967
+        }
+      ],
+      "status": "exact-finite-subgroup-twirl-isotypic-validation",
+      "target_two_to_one_minus_k": 0.5,
+      "top_eigenvalue_localization_residual": 0.0,
+      "top_to_target_ratio": 0.7500000000000002,
+      "total_block_dimension": 72
+    },
+    {
+      "all_source_partitions_distinct": true,
+      "copy_count": 2,
+      "direct_frame_top_eigenvalue": 0.33333333333333354,
+      "direct_frame_twirl_residual": 9.931006956184153e-17,
+      "exact_finite_twirl_validation": true,
+      "finite_validation_only": true,
+      "isotypic_projector_resolution_residual": 1.52099541393061e-15,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "localized_sector_top_eigenvalue": 0.33333333333333354,
+      "maximizing_isotypic_partition": [
+        2,
+        1,
+        1
+      ],
+      "maximum_bridge_conjugacy_residual": 0.0,
+      "maximum_frame_subgroup_commutator_residual": 2.0734540714269072e-16,
+      "maximum_isotypic_projector_idempotence_residual": 1.261926059588446e-15,
+      "maximum_isotypic_projector_orthogonality_residual": 6.743624438925481e-16,
+      "n": 4,
+      "restriction_multiplicity_mismatch_count": 0,
+      "sector_records": [
+        {
+          "irrep_dimension": 3,
+          "isotypic_dimension": 36,
+          "multiplicity_block_nontrivial": true,
+          "normalized_hilbert_mass": 0.5,
+          "partition": [
+            3,
+            1
+          ],
+          "restriction_multiplicity": 12,
+          "sector_distinct_positive_eigenvalue_count": 3,
+          "sector_top_eigenvalue": 0.3333333333333335,
+          "sector_top_to_frame_target_ratio": 0.666666666666667
+        },
+        {
+          "irrep_dimension": 3,
+          "isotypic_dimension": 36,
+          "multiplicity_block_nontrivial": true,
+          "normalized_hilbert_mass": 0.5,
+          "partition": [
+            2,
+            1,
+            1
+          ],
+          "restriction_multiplicity": 12,
+          "sector_distinct_positive_eigenvalue_count": 3,
+          "sector_top_eigenvalue": 0.33333333333333354,
+          "sector_top_to_frame_target_ratio": 0.6666666666666671
+        }
+      ],
+      "status": "exact-finite-subgroup-twirl-isotypic-validation",
+      "target_two_to_one_minus_k": 0.5,
+      "top_eigenvalue_localization_residual": 0.0,
+      "top_to_target_ratio": 0.6666666666666671,
+      "total_block_dimension": 72
+    },
+    {
+      "all_source_partitions_distinct": true,
+      "copy_count": 2,
+      "direct_frame_top_eigenvalue": 0.375,
+      "direct_frame_twirl_residual": 1.0124257823756393e-16,
+      "exact_finite_twirl_validation": true,
+      "finite_validation_only": true,
+      "isotypic_projector_resolution_residual": 1.0936228041170133e-15,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      ],
+      "localized_sector_top_eigenvalue": 0.375,
+      "maximizing_isotypic_partition": [
+        2,
+        2
+      ],
+      "maximum_bridge_conjugacy_residual": 0.0,
+      "maximum_frame_subgroup_commutator_residual": 2.278946583042584e-16,
+      "maximum_isotypic_projector_idempotence_residual": 1.0781892522645635e-15,
+      "maximum_isotypic_projector_orthogonality_residual": 5.970892575501466e-16,
+      "n": 4,
+      "restriction_multiplicity_mismatch_count": 0,
+      "sector_records": [
+        {
+          "irrep_dimension": 3,
+          "isotypic_dimension": 33,
+          "multiplicity_block_nontrivial": true,
+          "normalized_hilbert_mass": 0.4583333333333333,
+          "partition": [
+            3,
+            1
+          ],
+          "restriction_multiplicity": 11,
+          "sector_distinct_positive_eigenvalue_count": 3,
+          "sector_top_eigenvalue": 0.33333333333333365,
+          "sector_top_to_frame_target_ratio": 0.6666666666666673
+        },
+        {
+          "irrep_dimension": 2,
+          "isotypic_dimension": 22,
+          "multiplicity_block_nontrivial": true,
+          "normalized_hilbert_mass": 0.3055555555555556,
+          "partition": [
+            2,
+            2
+          ],
+          "restriction_multiplicity": 11,
+          "sector_distinct_positive_eigenvalue_count": 3,
+          "sector_top_eigenvalue": 0.375,
+          "sector_top_to_frame_target_ratio": 0.75
+        },
+        {
+          "irrep_dimension": 3,
+          "isotypic_dimension": 15,
+          "multiplicity_block_nontrivial": false,
+          "normalized_hilbert_mass": 0.20833333333333334,
+          "partition": [
+            2,
+            1,
+            1
+          ],
+          "restriction_multiplicity": 5,
+          "sector_distinct_positive_eigenvalue_count": 1,
+          "sector_top_eigenvalue": 0.2500000000000002,
+          "sector_top_to_frame_target_ratio": 0.5000000000000004
+        },
+        {
+          "irrep_dimension": 1,
+          "isotypic_dimension": 2,
+          "multiplicity_block_nontrivial": false,
+          "normalized_hilbert_mass": 0.027777777777777776,
+          "partition": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "restriction_multiplicity": 2,
+          "sector_distinct_positive_eigenvalue_count": 1,
+          "sector_top_eigenvalue": 0.24999999999999975,
+          "sector_top_to_frame_target_ratio": 0.4999999999999995
+        }
+      ],
+      "status": "exact-finite-subgroup-twirl-isotypic-validation",
+      "target_two_to_one_minus_k": 0.5,
+      "top_eigenvalue_localization_residual": 0.0,
+      "top_to_target_ratio": 0.75,
+      "total_block_dimension": 72
+    },
+    {
+      "all_source_partitions_distinct": true,
+      "copy_count": 2,
+      "direct_frame_top_eigenvalue": 0.25000000000000033,
+      "direct_frame_twirl_residual": 6.729413934117306e-17,
+      "exact_finite_twirl_validation": true,
+      "finite_validation_only": true,
+      "isotypic_projector_resolution_residual": 4.3675699620590437e-16,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "localized_sector_top_eigenvalue": 0.2500000000000001,
+      "maximizing_isotypic_partition": [
+        2,
+        2
+      ],
+      "maximum_bridge_conjugacy_residual": 0.0,
+      "maximum_frame_subgroup_commutator_residual": 1.0076635719118208e-16,
+      "maximum_isotypic_projector_idempotence_residual": 5.743025418468391e-16,
+      "maximum_isotypic_projector_orthogonality_residual": 2.6661019271766967e-16,
+      "n": 4,
+      "restriction_multiplicity_mismatch_count": 0,
+      "sector_records": [
+        {
+          "irrep_dimension": 3,
+          "isotypic_dimension": 3,
+          "multiplicity_block_nontrivial": false,
+          "normalized_hilbert_mass": 0.125,
+          "partition": [
+            3,
+            1
+          ],
+          "restriction_multiplicity": 1,
+          "sector_distinct_positive_eigenvalue_count": 1,
+          "sector_top_eigenvalue": 0.24999999999999997,
+          "sector_top_to_frame_target_ratio": 0.49999999999999994
+        },
+        {
+          "irrep_dimension": 2,
+          "isotypic_dimension": 6,
+          "multiplicity_block_nontrivial": false,
+          "normalized_hilbert_mass": 0.25,
+          "partition": [
+            2,
+            2
+          ],
+          "restriction_multiplicity": 3,
+          "sector_distinct_positive_eigenvalue_count": 1,
+          "sector_top_eigenvalue": 0.2500000000000001,
+          "sector_top_to_frame_target_ratio": 0.5000000000000002
+        },
+        {
+          "irrep_dimension": 3,
+          "isotypic_dimension": 9,
+          "multiplicity_block_nontrivial": false,
+          "normalized_hilbert_mass": 0.375,
+          "partition": [
+            2,
+            1,
+            1
+          ],
+          "restriction_multiplicity": 3,
+          "sector_distinct_positive_eigenvalue_count": 1,
+          "sector_top_eigenvalue": 0.2500000000000001,
+          "sector_top_to_frame_target_ratio": 0.5000000000000002
+        },
+        {
+          "irrep_dimension": 1,
+          "isotypic_dimension": 6,
+          "multiplicity_block_nontrivial": false,
+          "normalized_hilbert_mass": 0.25,
+          "partition": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "restriction_multiplicity": 6,
+          "sector_distinct_positive_eigenvalue_count": 1,
+          "sector_top_eigenvalue": 0.2500000000000001,
+          "sector_top_to_frame_target_ratio": 0.5000000000000002
+        }
+      ],
+      "status": "exact-finite-subgroup-twirl-isotypic-validation",
+      "target_two_to_one_minus_k": 0.5,
+      "top_eigenvalue_localization_residual": 2.220446049250313e-16,
+      "top_to_target_ratio": 0.5000000000000007,
+      "total_block_dimension": 24
+    },
+    {
+      "all_source_partitions_distinct": true,
+      "copy_count": 2,
+      "direct_frame_top_eigenvalue": 0.2500000000000003,
+      "direct_frame_twirl_residual": 3.7736373650069304e-17,
+      "exact_finite_twirl_validation": true,
+      "finite_validation_only": true,
+      "isotypic_projector_resolution_residual": 4.370263895606897e-16,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "localized_sector_top_eigenvalue": 0.2500000000000003,
+      "maximizing_isotypic_partition": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "maximum_bridge_conjugacy_residual": 0.0,
+      "maximum_frame_subgroup_commutator_residual": 8.538486179135776e-17,
+      "maximum_isotypic_projector_idempotence_residual": 5.743025418468391e-16,
+      "maximum_isotypic_projector_orthogonality_residual": 2.565587968142219e-16,
+      "n": 4,
+      "restriction_multiplicity_mismatch_count": 0,
+      "sector_records": [
+        {
+          "irrep_dimension": 3,
+          "isotypic_dimension": 9,
+          "multiplicity_block_nontrivial": false,
+          "normalized_hilbert_mass": 0.375,
+          "partition": [
+            3,
+            1
+          ],
+          "restriction_multiplicity": 3,
+          "sector_distinct_positive_eigenvalue_count": 1,
+          "sector_top_eigenvalue": 0.25,
+          "sector_top_to_frame_target_ratio": 0.5
+        },
+        {
+          "irrep_dimension": 2,
+          "isotypic_dimension": 6,
+          "multiplicity_block_nontrivial": false,
+          "normalized_hilbert_mass": 0.25,
+          "partition": [
+            2,
+            2
+          ],
+          "restriction_multiplicity": 3,
+          "sector_distinct_positive_eigenvalue_count": 1,
+          "sector_top_eigenvalue": 0.25000000000000006,
+          "sector_top_to_frame_target_ratio": 0.5000000000000001
+        },
+        {
+          "irrep_dimension": 3,
+          "isotypic_dimension": 3,
+          "multiplicity_block_nontrivial": false,
+          "normalized_hilbert_mass": 0.125,
+          "partition": [
+            2,
+            1,
+            1
+          ],
+          "restriction_multiplicity": 1,
+          "sector_distinct_positive_eigenvalue_count": 1,
+          "sector_top_eigenvalue": 0.24999999999999994,
+          "sector_top_to_frame_target_ratio": 0.4999999999999999
+        },
+        {
+          "irrep_dimension": 1,
+          "isotypic_dimension": 6,
+          "multiplicity_block_nontrivial": false,
+          "normalized_hilbert_mass": 0.25,
+          "partition": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "restriction_multiplicity": 6,
+          "sector_distinct_positive_eigenvalue_count": 1,
+          "sector_top_eigenvalue": 0.2500000000000003,
+          "sector_top_to_frame_target_ratio": 0.5000000000000006
+        }
+      ],
+      "status": "exact-finite-subgroup-twirl-isotypic-validation",
+      "target_two_to_one_minus_k": 0.5,
+      "top_eigenvalue_localization_residual": 0.0,
+      "top_to_target_ratio": 0.5000000000000006,
+      "total_block_dimension": 24
+    },
+    {
+      "all_source_partitions_distinct": true,
+      "copy_count": 2,
+      "direct_frame_top_eigenvalue": 0.2500000000000002,
+      "direct_frame_twirl_residual": 6.5420519111823945e-18,
+      "exact_finite_twirl_validation": true,
+      "finite_validation_only": true,
+      "isotypic_projector_resolution_residual": 4.489296927908891e-16,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      ],
+      "localized_sector_top_eigenvalue": 0.2500000000000001,
+      "maximizing_isotypic_partition": [
+        3,
+        1
+      ],
+      "maximum_bridge_conjugacy_residual": 0.0,
+      "maximum_frame_subgroup_commutator_residual": 1.204811491331766e-16,
+      "maximum_isotypic_projector_idempotence_residual": 4.920431025512993e-16,
+      "maximum_isotypic_projector_orthogonality_residual": 1.8420208614150104e-16,
+      "n": 4,
+      "restriction_multiplicity_mismatch_count": 0,
+      "sector_records": [
+        {
+          "irrep_dimension": 3,
+          "isotypic_dimension": 6,
+          "multiplicity_block_nontrivial": false,
+          "normalized_hilbert_mass": 0.25,
+          "partition": [
+            3,
+            1
+          ],
+          "restriction_multiplicity": 2,
+          "sector_distinct_positive_eigenvalue_count": 1,
+          "sector_top_eigenvalue": 0.2500000000000001,
+          "sector_top_to_frame_target_ratio": 0.5000000000000002
+        },
+        {
+          "irrep_dimension": 2,
+          "isotypic_dimension": 12,
+          "multiplicity_block_nontrivial": false,
+          "normalized_hilbert_mass": 0.5,
+          "partition": [
+            2,
+            2
+          ],
+          "restriction_multiplicity": 6,
+          "sector_distinct_positive_eigenvalue_count": 1,
+          "sector_top_eigenvalue": 0.2500000000000001,
+          "sector_top_to_frame_target_ratio": 0.5000000000000002
+        },
+        {
+          "irrep_dimension": 3,
+          "isotypic_dimension": 6,
+          "multiplicity_block_nontrivial": false,
+          "normalized_hilbert_mass": 0.25,
+          "partition": [
+            2,
+            1,
+            1
+          ],
+          "restriction_multiplicity": 2,
+          "sector_distinct_positive_eigenvalue_count": 1,
+          "sector_top_eigenvalue": 0.25000000000000006,
+          "sector_top_to_frame_target_ratio": 0.5000000000000001
+        }
+      ],
+      "status": "exact-finite-subgroup-twirl-isotypic-validation",
+      "target_two_to_one_minus_k": 0.5,
+      "top_eigenvalue_localization_residual": 1.1102230246251565e-16,
+      "top_to_target_ratio": 0.5000000000000004,
+      "total_block_dimension": 24
+    },
+    {
+      "all_source_partitions_distinct": true,
+      "copy_count": 2,
+      "direct_frame_top_eigenvalue": 0.49999999999999983,
+      "direct_frame_twirl_residual": 7.585329419870586e-17,
+      "exact_finite_twirl_validation": true,
+      "finite_validation_only": true,
+      "isotypic_projector_resolution_residual": 8.184673162928424e-16,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "localized_sector_top_eigenvalue": 0.4999999999999998,
+      "maximizing_isotypic_partition": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "maximum_bridge_conjugacy_residual": 0.0,
+      "maximum_frame_subgroup_commutator_residual": 2.4578439490456387e-16,
+      "maximum_isotypic_projector_idempotence_residual": 9.80594981239105e-16,
+      "maximum_isotypic_projector_orthogonality_residual": 3.1416525106161395e-16,
+      "n": 4,
+      "restriction_multiplicity_mismatch_count": 0,
+      "sector_records": [
+        {
+          "irrep_dimension": 3,
+          "isotypic_dimension": 3,
+          "multiplicity_block_nontrivial": false,
+          "normalized_hilbert_mass": 0.08333333333333333,
+          "partition": [
+            3,
+            1
+          ],
+          "restriction_multiplicity": 1,
+          "sector_distinct_positive_eigenvalue_count": 1,
+          "sector_top_eigenvalue": 0.25,
+          "sector_top_to_frame_target_ratio": 0.5
+        },
+        {
+          "irrep_dimension": 2,
+          "isotypic_dimension": 2,
+          "multiplicity_block_nontrivial": false,
+          "normalized_hilbert_mass": 0.05555555555555555,
+          "partition": [
+            2,
+            2
+          ],
+          "restriction_multiplicity": 1,
+          "sector_distinct_positive_eigenvalue_count": 1,
+          "sector_top_eigenvalue": 0.24999999999999994,
+          "sector_top_to_frame_target_ratio": 0.4999999999999999
+        },
+        {
+          "irrep_dimension": 3,
+          "isotypic_dimension": 21,
+          "multiplicity_block_nontrivial": true,
+          "normalized_hilbert_mass": 0.5833333333333334,
+          "partition": [
+            2,
+            1,
+            1
+          ],
+          "restriction_multiplicity": 7,
+          "sector_distinct_positive_eigenvalue_count": 3,
+          "sector_top_eigenvalue": 0.3333333333333336,
+          "sector_top_to_frame_target_ratio": 0.6666666666666672
+        },
+        {
+          "irrep_dimension": 1,
+          "isotypic_dimension": 10,
+          "multiplicity_block_nontrivial": true,
+          "normalized_hilbert_mass": 0.2777777777777778,
+          "partition": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "restriction_multiplicity": 10,
+          "sector_distinct_positive_eigenvalue_count": 2,
+          "sector_top_eigenvalue": 0.4999999999999998,
+          "sector_top_to_frame_target_ratio": 0.9999999999999996
+        }
+      ],
+      "status": "exact-finite-subgroup-twirl-isotypic-validation",
+      "target_two_to_one_minus_k": 0.5,
+      "top_eigenvalue_localization_residual": 5.551115123125783e-17,
+      "top_to_target_ratio": 0.9999999999999997,
+      "total_block_dimension": 36
+    },
+    {
+      "all_source_partitions_distinct": true,
+      "copy_count": 2,
+      "direct_frame_top_eigenvalue": 0.5000000000000002,
+      "direct_frame_twirl_residual": 5.224785171762887e-17,
+      "exact_finite_twirl_validation": true,
+      "finite_validation_only": true,
+      "isotypic_projector_resolution_residual": 8.188986030959815e-16,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "localized_sector_top_eigenvalue": 0.49999999999999967,
+      "maximizing_isotypic_partition": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "maximum_bridge_conjugacy_residual": 0.0,
+      "maximum_frame_subgroup_commutator_residual": 2.160643040645349e-16,
+      "maximum_isotypic_projector_idempotence_residual": 9.617006926708344e-16,
+      "maximum_isotypic_projector_orthogonality_residual": 3.1416525106161395e-16,
+      "n": 4,
+      "restriction_multiplicity_mismatch_count": 0,
+      "sector_records": [
+        {
+          "irrep_dimension": 3,
+          "isotypic_dimension": 21,
+          "multiplicity_block_nontrivial": true,
+          "normalized_hilbert_mass": 0.5833333333333334,
+          "partition": [
+            3,
+            1
+          ],
+          "restriction_multiplicity": 7,
+          "sector_distinct_positive_eigenvalue_count": 3,
+          "sector_top_eigenvalue": 0.3333333333333336,
+          "sector_top_to_frame_target_ratio": 0.6666666666666672
+        },
+        {
+          "irrep_dimension": 2,
+          "isotypic_dimension": 2,
+          "multiplicity_block_nontrivial": false,
+          "normalized_hilbert_mass": 0.05555555555555555,
+          "partition": [
+            2,
+            2
+          ],
+          "restriction_multiplicity": 1,
+          "sector_distinct_positive_eigenvalue_count": 1,
+          "sector_top_eigenvalue": 0.2499999999999999,
+          "sector_top_to_frame_target_ratio": 0.4999999999999998
+        },
+        {
+          "irrep_dimension": 3,
+          "isotypic_dimension": 3,
+          "multiplicity_block_nontrivial": false,
+          "normalized_hilbert_mass": 0.08333333333333333,
+          "partition": [
+            2,
+            1,
+            1
+          ],
+          "restriction_multiplicity": 1,
+          "sector_distinct_positive_eigenvalue_count": 1,
+          "sector_top_eigenvalue": 0.25000000000000006,
+          "sector_top_to_frame_target_ratio": 0.5000000000000001
+        },
+        {
+          "irrep_dimension": 1,
+          "isotypic_dimension": 10,
+          "multiplicity_block_nontrivial": true,
+          "normalized_hilbert_mass": 0.2777777777777778,
+          "partition": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "restriction_multiplicity": 10,
+          "sector_distinct_positive_eigenvalue_count": 2,
+          "sector_top_eigenvalue": 0.49999999999999967,
+          "sector_top_to_frame_target_ratio": 0.9999999999999993
+        }
+      ],
+      "status": "exact-finite-subgroup-twirl-isotypic-validation",
+      "target_two_to_one_minus_k": 0.5,
+      "top_eigenvalue_localization_residual": 5.551115123125783e-16,
+      "top_to_target_ratio": 1.0000000000000004,
+      "total_block_dimension": 36
+    },
+    {
+      "all_source_partitions_distinct": true,
+      "copy_count": 2,
+      "direct_frame_top_eigenvalue": 0.33333333333333354,
+      "direct_frame_twirl_residual": 1.1331166295920985e-17,
+      "exact_finite_twirl_validation": true,
+      "finite_validation_only": true,
+      "isotypic_projector_resolution_residual": 9.49995143113826e-16,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "localized_sector_top_eigenvalue": 0.3333333333333337,
+      "maximizing_isotypic_partition": [
+        3,
+        1
+      ],
+      "maximum_bridge_conjugacy_residual": 0.0,
+      "maximum_frame_subgroup_commutator_residual": 2.222510016553479e-16,
+      "maximum_isotypic_projector_idempotence_residual": 9.307312565262964e-16,
+      "maximum_isotypic_projector_orthogonality_residual": 3.157814701633677e-16,
+      "n": 4,
+      "restriction_multiplicity_mismatch_count": 0,
+      "sector_records": [
+        {
+          "irrep_dimension": 3,
+          "isotypic_dimension": 18,
+          "multiplicity_block_nontrivial": true,
+          "normalized_hilbert_mass": 0.5,
+          "partition": [
+            3,
+            1
+          ],
+          "restriction_multiplicity": 6,
+          "sector_distinct_positive_eigenvalue_count": 2,
+          "sector_top_eigenvalue": 0.3333333333333337,
+          "sector_top_to_frame_target_ratio": 0.6666666666666674
+        },
+        {
+          "irrep_dimension": 3,
+          "isotypic_dimension": 18,
+          "multiplicity_block_nontrivial": true,
+          "normalized_hilbert_mass": 0.5,
+          "partition": [
+            2,
+            1,
+            1
+          ],
+          "restriction_multiplicity": 6,
+          "sector_distinct_positive_eigenvalue_count": 2,
+          "sector_top_eigenvalue": 0.3333333333333335,
+          "sector_top_to_frame_target_ratio": 0.666666666666667
+        }
+      ],
+      "status": "exact-finite-subgroup-twirl-isotypic-validation",
+      "target_two_to_one_minus_k": 0.5,
+      "top_eigenvalue_localization_residual": 1.6653345369377348e-16,
+      "top_to_target_ratio": 0.6666666666666671,
+      "total_block_dimension": 36
+    },
+    {
+      "all_source_partitions_distinct": true,
+      "copy_count": 2,
+      "direct_frame_top_eigenvalue": 0.2500000000000004,
+      "direct_frame_twirl_residual": 5.0285933719099e-17,
+      "exact_finite_twirl_validation": true,
+      "finite_validation_only": true,
+      "isotypic_projector_resolution_residual": 5.924000946582565e-16,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "localized_sector_top_eigenvalue": 0.2500000000000001,
+      "maximizing_isotypic_partition": [
+        2,
+        1,
+        1
+      ],
+      "maximum_bridge_conjugacy_residual": 0.0,
+      "maximum_frame_subgroup_commutator_residual": 1.0186976737234134e-16,
+      "maximum_isotypic_projector_idempotence_residual": 6.574822298839272e-16,
+      "maximum_isotypic_projector_orthogonality_residual": 2.928580185371098e-16,
+      "n": 4,
+      "restriction_multiplicity_mismatch_count": 0,
+      "sector_records": [
+        {
+          "irrep_dimension": 3,
+          "isotypic_dimension": 3,
+          "multiplicity_block_nontrivial": false,
+          "normalized_hilbert_mass": 0.125,
+          "partition": [
+            3,
+            1
+          ],
+          "restriction_multiplicity": 1,
+          "sector_distinct_positive_eigenvalue_count": 1,
+          "sector_top_eigenvalue": 0.24999999999999997,
+          "sector_top_to_frame_target_ratio": 0.49999999999999994
+        },
+        {
+          "irrep_dimension": 2,
+          "isotypic_dimension": 6,
+          "multiplicity_block_nontrivial": false,
+          "normalized_hilbert_mass": 0.25,
+          "partition": [
+            2,
+            2
+          ],
+          "restriction_multiplicity": 3,
+          "sector_distinct_positive_eigenvalue_count": 1,
+          "sector_top_eigenvalue": 0.25000000000000006,
+          "sector_top_to_frame_target_ratio": 0.5000000000000001
+        },
+        {
+          "irrep_dimension": 3,
+          "isotypic_dimension": 9,
+          "multiplicity_block_nontrivial": false,
+          "normalized_hilbert_mass": 0.375,
+          "partition": [
+            2,
+            1,
+            1
+          ],
+          "restriction_multiplicity": 3,
+          "sector_distinct_positive_eigenvalue_count": 1,
+          "sector_top_eigenvalue": 0.2500000000000001,
+          "sector_top_to_frame_target_ratio": 0.5000000000000002
+        },
+        {
+          "irrep_dimension": 1,
+          "isotypic_dimension": 6,
+          "multiplicity_block_nontrivial": false,
+          "normalized_hilbert_mass": 0.25,
+          "partition": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "restriction_multiplicity": 6,
+          "sector_distinct_positive_eigenvalue_count": 1,
+          "sector_top_eigenvalue": 0.25000000000000006,
+          "sector_top_to_frame_target_ratio": 0.5000000000000001
+        }
+      ],
+      "status": "exact-finite-subgroup-twirl-isotypic-validation",
+      "target_two_to_one_minus_k": 0.5,
+      "top_eigenvalue_localization_residual": 2.7755575615628914e-16,
+      "top_to_target_ratio": 0.5000000000000008,
+      "total_block_dimension": 24
+    },
+    {
+      "all_source_partitions_distinct": true,
+      "copy_count": 2,
+      "direct_frame_top_eigenvalue": 0.2500000000000001,
+      "direct_frame_twirl_residual": 1.4158209021746867e-17,
+      "exact_finite_twirl_validation": true,
+      "finite_validation_only": true,
+      "isotypic_projector_resolution_residual": 5.925987374174522e-16,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "localized_sector_top_eigenvalue": 0.2500000000000001,
+      "maximizing_isotypic_partition": [
+        2,
+        2
+      ],
+      "maximum_bridge_conjugacy_residual": 0.0,
+      "maximum_frame_subgroup_commutator_residual": 7.718108890687657e-17,
+      "maximum_isotypic_projector_idempotence_residual": 6.432681829120914e-16,
+      "maximum_isotypic_projector_orthogonality_residual": 2.9255234273146423e-16,
+      "n": 4,
+      "restriction_multiplicity_mismatch_count": 0,
+      "sector_records": [
+        {
+          "irrep_dimension": 3,
+          "isotypic_dimension": 9,
+          "multiplicity_block_nontrivial": false,
+          "normalized_hilbert_mass": 0.375,
+          "partition": [
+            3,
+            1
+          ],
+          "restriction_multiplicity": 3,
+          "sector_distinct_positive_eigenvalue_count": 1,
+          "sector_top_eigenvalue": 0.25000000000000006,
+          "sector_top_to_frame_target_ratio": 0.5000000000000001
+        },
+        {
+          "irrep_dimension": 2,
+          "isotypic_dimension": 6,
+          "multiplicity_block_nontrivial": false,
+          "normalized_hilbert_mass": 0.25,
+          "partition": [
+            2,
+            2
+          ],
+          "restriction_multiplicity": 3,
+          "sector_distinct_positive_eigenvalue_count": 1,
+          "sector_top_eigenvalue": 0.2500000000000001,
+          "sector_top_to_frame_target_ratio": 0.5000000000000002
+        },
+        {
+          "irrep_dimension": 3,
+          "isotypic_dimension": 3,
+          "multiplicity_block_nontrivial": false,
+          "normalized_hilbert_mass": 0.125,
+          "partition": [
+            2,
+            1,
+            1
+          ],
+          "restriction_multiplicity": 1,
+          "sector_distinct_positive_eigenvalue_count": 1,
+          "sector_top_eigenvalue": 0.25,
+          "sector_top_to_frame_target_ratio": 0.5
+        },
+        {
+          "irrep_dimension": 1,
+          "isotypic_dimension": 6,
+          "multiplicity_block_nontrivial": false,
+          "normalized_hilbert_mass": 0.25,
+          "partition": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "restriction_multiplicity": 6,
+          "sector_distinct_positive_eigenvalue_count": 1,
+          "sector_top_eigenvalue": 0.25000000000000006,
+          "sector_top_to_frame_target_ratio": 0.5000000000000001
+        }
+      ],
+      "status": "exact-finite-subgroup-twirl-isotypic-validation",
+      "target_two_to_one_minus_k": 0.5,
+      "top_eigenvalue_localization_residual": 0.0,
+      "top_to_target_ratio": 0.5000000000000002,
+      "total_block_dimension": 24
+    },
+    {
+      "all_source_partitions_distinct": true,
+      "copy_count": 2,
+      "direct_frame_top_eigenvalue": 0.2500000000000002,
+      "direct_frame_twirl_residual": 6.542051911182396e-18,
+      "exact_finite_twirl_validation": true,
+      "finite_validation_only": true,
+      "isotypic_projector_resolution_residual": 6.31468997952057e-16,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "localized_sector_top_eigenvalue": 0.25000000000000017,
+      "maximizing_isotypic_partition": [
+        3,
+        1
+      ],
+      "maximum_bridge_conjugacy_residual": 0.0,
+      "maximum_frame_subgroup_commutator_residual": 1.0865367467181177e-16,
+      "maximum_isotypic_projector_idempotence_residual": 5.831148529076981e-16,
+      "maximum_isotypic_projector_orthogonality_residual": 1.804112415015879e-16,
+      "n": 4,
+      "restriction_multiplicity_mismatch_count": 0,
+      "sector_records": [
+        {
+          "irrep_dimension": 3,
+          "isotypic_dimension": 6,
+          "multiplicity_block_nontrivial": false,
+          "normalized_hilbert_mass": 0.25,
+          "partition": [
+            3,
+            1
+          ],
+          "restriction_multiplicity": 2,
+          "sector_distinct_positive_eigenvalue_count": 1,
+          "sector_top_eigenvalue": 0.25000000000000017,
+          "sector_top_to_frame_target_ratio": 0.5000000000000003
+        },
+        {
+          "irrep_dimension": 2,
+          "isotypic_dimension": 12,
+          "multiplicity_block_nontrivial": false,
+          "normalized_hilbert_mass": 0.5,
+          "partition": [
+            2,
+            2
+          ],
+          "restriction_multiplicity": 6,
+          "sector_distinct_positive_eigenvalue_count": 1,
+          "sector_top_eigenvalue": 0.2500000000000001,
+          "sector_top_to_frame_target_ratio": 0.5000000000000002
+        },
+        {
+          "irrep_dimension": 3,
+          "isotypic_dimension": 6,
+          "multiplicity_block_nontrivial": false,
+          "normalized_hilbert_mass": 0.25,
+          "partition": [
+            2,
+            1,
+            1
+          ],
+          "restriction_multiplicity": 2,
+          "sector_distinct_positive_eigenvalue_count": 1,
+          "sector_top_eigenvalue": 0.2500000000000001,
+          "sector_top_to_frame_target_ratio": 0.5000000000000002
+        }
+      ],
+      "status": "exact-finite-subgroup-twirl-isotypic-validation",
+      "target_two_to_one_minus_k": 0.5,
+      "top_eigenvalue_localization_residual": 5.551115123125783e-17,
+      "top_to_target_ratio": 0.5000000000000004,
+      "total_block_dimension": 24
+    },
+    {
+      "all_source_partitions_distinct": true,
+      "copy_count": 2,
+      "direct_frame_top_eigenvalue": 0.3750000000000001,
+      "direct_frame_twirl_residual": 1.4308225114733132e-16,
+      "exact_finite_twirl_validation": true,
+      "finite_validation_only": true,
+      "isotypic_projector_resolution_residual": 1.093299896355898e-15,
+      "labels": [
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "localized_sector_top_eigenvalue": 0.37500000000000017,
+      "maximizing_isotypic_partition": [
+        2,
+        2
+      ],
+      "maximum_bridge_conjugacy_residual": 0.0,
+      "maximum_frame_subgroup_commutator_residual": 2.545351013931966e-16,
+      "maximum_isotypic_projector_idempotence_residual": 1.1363782099251494e-15,
+      "maximum_isotypic_projector_orthogonality_residual": 5.975386337578747e-16,
+      "n": 4,
+      "restriction_multiplicity_mismatch_count": 0,
+      "sector_records": [
+        {
+          "irrep_dimension": 3,
+          "isotypic_dimension": 15,
+          "multiplicity_block_nontrivial": false,
+          "normalized_hilbert_mass": 0.20833333333333334,
+          "partition": [
+            3,
+            1
+          ],
+          "restriction_multiplicity": 5,
+          "sector_distinct_positive_eigenvalue_count": 1,
+          "sector_top_eigenvalue": 0.25000000000000006,
+          "sector_top_to_frame_target_ratio": 0.5000000000000001
+        },
+        {
+          "irrep_dimension": 2,
+          "isotypic_dimension": 22,
+          "multiplicity_block_nontrivial": true,
+          "normalized_hilbert_mass": 0.3055555555555556,
+          "partition": [
+            2,
+            2
+          ],
+          "restriction_multiplicity": 11,
+          "sector_distinct_positive_eigenvalue_count": 3,
+          "sector_top_eigenvalue": 0.37500000000000017,
+          "sector_top_to_frame_target_ratio": 0.7500000000000003
+        },
+        {
+          "irrep_dimension": 3,
+          "isotypic_dimension": 33,
+          "multiplicity_block_nontrivial": true,
+          "normalized_hilbert_mass": 0.4583333333333333,
+          "partition": [
+            2,
+            1,
+            1
+          ],
+          "restriction_multiplicity": 11,
+          "sector_distinct_positive_eigenvalue_count": 3,
+          "sector_top_eigenvalue": 0.3333333333333334,
+          "sector_top_to_frame_target_ratio": 0.6666666666666669
+        },
+        {
+          "irrep_dimension": 1,
+          "isotypic_dimension": 2,
+          "multiplicity_block_nontrivial": false,
+          "normalized_hilbert_mass": 0.027777777777777776,
+          "partition": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "restriction_multiplicity": 2,
+          "sector_distinct_positive_eigenvalue_count": 1,
+          "sector_top_eigenvalue": 0.24999999999999994,
+          "sector_top_to_frame_target_ratio": 0.4999999999999999
+        }
+      ],
+      "status": "exact-finite-subgroup-twirl-isotypic-validation",
+      "target_two_to_one_minus_k": 0.5,
+      "top_eigenvalue_localization_residual": 5.551115123125783e-17,
+      "top_to_target_ratio": 0.7500000000000002,
+      "total_block_dimension": 72
+    },
+    {
+      "all_source_partitions_distinct": true,
+      "copy_count": 2,
+      "direct_frame_top_eigenvalue": 0.3333333333333336,
+      "direct_frame_twirl_residual": 1.1039573678664988e-16,
+      "exact_finite_twirl_validation": true,
+      "finite_validation_only": true,
+      "isotypic_projector_resolution_residual": 1.52099541393061e-15,
+      "labels": [
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "localized_sector_top_eigenvalue": 0.33333333333333337,
+      "maximizing_isotypic_partition": [
+        3,
+        1
+      ],
+      "maximum_bridge_conjugacy_residual": 0.0,
+      "maximum_frame_subgroup_commutator_residual": 2.0671461786262845e-16,
+      "maximum_isotypic_projector_idempotence_residual": 1.2674084091041886e-15,
+      "maximum_isotypic_projector_orthogonality_residual": 6.855680887379919e-16,
+      "n": 4,
+      "restriction_multiplicity_mismatch_count": 0,
+      "sector_records": [
+        {
+          "irrep_dimension": 3,
+          "isotypic_dimension": 36,
+          "multiplicity_block_nontrivial": true,
+          "normalized_hilbert_mass": 0.5,
+          "partition": [
+            3,
+            1
+          ],
+          "restriction_multiplicity": 12,
+          "sector_distinct_positive_eigenvalue_count": 3,
+          "sector_top_eigenvalue": 0.33333333333333337,
+          "sector_top_to_frame_target_ratio": 0.6666666666666667
+        },
+        {
+          "irrep_dimension": 3,
+          "isotypic_dimension": 36,
+          "multiplicity_block_nontrivial": true,
+          "normalized_hilbert_mass": 0.5,
+          "partition": [
+            2,
+            1,
+            1
+          ],
+          "restriction_multiplicity": 12,
+          "sector_distinct_positive_eigenvalue_count": 3,
+          "sector_top_eigenvalue": 0.33333333333333337,
+          "sector_top_to_frame_target_ratio": 0.6666666666666667
+        }
+      ],
+      "status": "exact-finite-subgroup-twirl-isotypic-validation",
+      "target_two_to_one_minus_k": 0.5,
+      "top_eigenvalue_localization_residual": 2.220446049250313e-16,
+      "top_to_target_ratio": 0.6666666666666672,
+      "total_block_dimension": 72
+    },
+    {
+      "all_source_partitions_distinct": true,
+      "copy_count": 2,
+      "direct_frame_top_eigenvalue": 0.3750000000000001,
+      "direct_frame_twirl_residual": 1.175902890547945e-16,
+      "exact_finite_twirl_validation": true,
+      "finite_validation_only": true,
+      "isotypic_projector_resolution_residual": 1.1432903923988856e-15,
+      "labels": [
+        [
+          [
+            3,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "localized_sector_top_eigenvalue": 0.375,
+      "maximizing_isotypic_partition": [
+        2,
+        2
+      ],
+      "maximum_bridge_conjugacy_residual": 0.0,
+      "maximum_frame_subgroup_commutator_residual": 2.226229972535777e-16,
+      "maximum_isotypic_projector_idempotence_residual": 1.2256533383827283e-15,
+      "maximum_isotypic_projector_orthogonality_residual": 5.557439778490001e-16,
+      "n": 4,
+      "restriction_multiplicity_mismatch_count": 0,
+      "sector_records": [
+        {
+          "irrep_dimension": 3,
+          "isotypic_dimension": 33,
+          "multiplicity_block_nontrivial": true,
+          "normalized_hilbert_mass": 0.4583333333333333,
+          "partition": [
+            3,
+            1
+          ],
+          "restriction_multiplicity": 11,
+          "sector_distinct_positive_eigenvalue_count": 3,
+          "sector_top_eigenvalue": 0.3333333333333337,
+          "sector_top_to_frame_target_ratio": 0.6666666666666674
+        },
+        {
+          "irrep_dimension": 2,
+          "isotypic_dimension": 22,
+          "multiplicity_block_nontrivial": true,
+          "normalized_hilbert_mass": 0.3055555555555556,
+          "partition": [
+            2,
+            2
+          ],
+          "restriction_multiplicity": 11,
+          "sector_distinct_positive_eigenvalue_count": 3,
+          "sector_top_eigenvalue": 0.375,
+          "sector_top_to_frame_target_ratio": 0.75
+        },
+        {
+          "irrep_dimension": 3,
+          "isotypic_dimension": 15,
+          "multiplicity_block_nontrivial": false,
+          "normalized_hilbert_mass": 0.20833333333333334,
+          "partition": [
+            2,
+            1,
+            1
+          ],
+          "restriction_multiplicity": 5,
+          "sector_distinct_positive_eigenvalue_count": 1,
+          "sector_top_eigenvalue": 0.25000000000000017,
+          "sector_top_to_frame_target_ratio": 0.5000000000000003
+        },
+        {
+          "irrep_dimension": 1,
+          "isotypic_dimension": 2,
+          "multiplicity_block_nontrivial": false,
+          "normalized_hilbert_mass": 0.027777777777777776,
+          "partition": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "restriction_multiplicity": 2,
+          "sector_distinct_positive_eigenvalue_count": 1,
+          "sector_top_eigenvalue": 0.24999999999999983,
+          "sector_top_to_frame_target_ratio": 0.49999999999999967
+        }
+      ],
+      "status": "exact-finite-subgroup-twirl-isotypic-validation",
+      "target_two_to_one_minus_k": 0.5,
+      "top_eigenvalue_localization_residual": 1.1102230246251565e-16,
+      "top_to_target_ratio": 0.7500000000000002,
+      "total_block_dimension": 72
+    }
+  ],
+  "headline_metrics": {
+    "bridge_subgroup_conjugacy_identity_theorem_count": 1,
+    "collision_free_polynomial_factor_norm_theorem_count": 0,
+    "complete_w4_collision_free_twirl_validation_count": 15,
+    "finite_twirl_validation_failure_count": 0,
+    "information_threshold_scaling_record_count": 2,
+    "isotypic_partial_trace_reduction_theorem_count": 1,
+    "maximum_finite_twirl_validation_residual": 1.52099541393061e-15,
+    "natural_average_inverse_polynomial_conclusive_theorem_count": 0,
+    "polynomial_hidden_permutation_decoder_count": 0,
+    "restriction_dimension_identity_validation_count": 5,
+    "structured_maximal_effect_dilation_count": 0,
+    "subgroup_twirl_identity_theorem_count": 1,
+    "tail_copy_count": 29,
+    "tail_maximum_isotypic_hilbert_mass": 0.12377829218106996,
+    "tail_maximum_restriction_multiplicity_log2": 640.9903835037569,
+    "tail_n": 12,
+    "uniform_partial_trace_delocalization_theorem_count": 0
+  },
+  "scaling_records": [
+    {
+      "copy_count": 11,
+      "globally_distinct_source_partition_count": 22,
+      "information_threshold_copy_count": 16,
+      "log2_total_block_dimension": 109.28863299868138,
+      "maximum_isotypic_dimension_log2": 106.97313117295344,
+      "maximum_isotypic_hilbert_mass": 0.20089285714285715,
+      "maximum_restriction_multiplicity_log2": 100.48127807662378,
+      "n": 8,
+      "nonzero_isotypic_sector_count": 22,
+      "partial_trace_operator_dimension_log2_upper_bound": 100.48127807662378,
+      "partition_count": 22,
+      "reaches_information_threshold": false,
+      "restriction_dimension_identity_verified": true,
+      "status": "below-threshold-distinct-partition-capacity-stress",
+      "uniform_partial_trace_delocalization_proved": false
+    },
+    {
+      "copy_count": 15,
+      "globally_distinct_source_partition_count": 30,
+      "information_threshold_copy_count": 19,
+      "log2_total_block_dimension": 185.34085675548357,
+      "maximum_isotypic_dimension_log2": 182.3814987399809,
+      "maximum_isotypic_hilbert_mass": 0.12857142857142856,
+      "maximum_restriction_multiplicity_log2": 174.62661123781746,
+      "n": 9,
+      "nonzero_isotypic_sector_count": 30,
+      "partial_trace_operator_dimension_log2_upper_bound": 174.62661123781746,
+      "partition_count": 30,
+      "reaches_information_threshold": false,
+      "restriction_dimension_identity_verified": true,
+      "status": "below-threshold-distinct-partition-capacity-stress",
+      "uniform_partial_trace_delocalization_proved": false
+    },
+    {
+      "copy_count": 21,
+      "globally_distinct_source_partition_count": 42,
+      "information_threshold_copy_count": 22,
+      "log2_total_block_dimension": 311.2428711304859,
+      "maximum_isotypic_dimension_log2": 308.6217350172113,
+      "maximum_isotypic_hilbert_mass": 0.16253968253968254,
+      "maximum_restriction_multiplicity_log2": 299.0367725164901,
+      "n": 10,
+      "nonzero_isotypic_sector_count": 42,
+      "partial_trace_operator_dimension_log2_upper_bound": 299.0367725164901,
+      "partition_count": 42,
+      "reaches_information_threshold": false,
+      "restriction_dimension_identity_verified": true,
+      "status": "below-threshold-distinct-partition-capacity-stress",
+      "uniform_partial_trace_delocalization_proved": false
+    },
+    {
+      "copy_count": 26,
+      "globally_distinct_source_partition_count": 52,
+      "information_threshold_copy_count": 26,
+      "log2_total_block_dimension": 483.50901253560386,
+      "maximum_isotypic_dimension_log2": 480.60587407485644,
+      "maximum_isotypic_hilbert_mass": 0.13368055555555555,
+      "maximum_restriction_multiplicity_log2": 469.432196938553,
+      "n": 11,
+      "nonzero_isotypic_sector_count": 56,
+      "partial_trace_operator_dimension_log2_upper_bound": 469.432196938553,
+      "partition_count": 56,
+      "reaches_information_threshold": true,
+      "restriction_dimension_identity_verified": true,
+      "status": "information-threshold-multiplicity-space-stress",
+      "uniform_partial_trace_delocalization_proved": false
+    },
+    {
+      "copy_count": 29,
+      "globally_distinct_source_partition_count": 58,
+      "information_threshold_copy_count": 29,
+      "log2_total_block_dimension": 656.9151960073626,
+      "maximum_isotypic_dimension_log2": 653.9010262342265,
+      "maximum_isotypic_hilbert_mass": 0.12377829218106996,
+      "maximum_restriction_multiplicity_log2": 640.9903835037569,
+      "n": 12,
+      "nonzero_isotypic_sector_count": 77,
+      "partial_trace_operator_dimension_log2_upper_bound": 640.9903835037569,
+      "partition_count": 77,
+      "reaches_information_threshold": true,
+      "restriction_dimension_identity_verified": true,
+      "status": "information-threshold-multiplicity-space-stress",
+      "uniform_partial_trace_delocalization_proved": false
+    }
+  ],
+  "status": "subgroup-twirl-and-isotypic-reduction-proved-partial-trace-delocalization-open",
+  "summary": "Resummed dense mask correlations into an exact subgroup twirl, validated all 15 collision-free W4 pairings, and localized the remaining norm theorem to exponentially large diagonal-S_n multiplicity-space partial traces.",
+  "theorem_contract": {
+    "bridge_conjugacy": "h_s=x_s h_e x_s^-1 for x_s=(s,e;0)",
+    "frame_twirl": "B=E_s R(s) Q R(s)^* with Q=tensor_i(I+pi_i(h_e))/2",
+    "isotypic_reduction": "on H=sum_nu V_nu tensor M_nu, B_nu=I_Vnu/d_nu tensor Tr_Vnu(Pi_nu Q Pi_nu)",
+    "mask_interpretation": "the twirl formula exactly resums every mask-incidence two-core contribution in every trace moment",
+    "norm_equivalence": "||B||=max_nu ||Tr_Vnu(Pi_nu Q Pi_nu)||/d_nu",
+    "remaining_boundary": "prove ||Tr_Vnu(Pi_nu Q Pi_nu)|| <= poly(n) d_nu 2^-k uniformly for natural collision-free source tuples, or construct an asymptotic counterexample"
+  }
+}

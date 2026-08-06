@@ -63,6 +63,101 @@ class HypothesisFactoryResult:
 MECHANISM_RULES: list[tuple[set[str], dict[str, str]]] = [
     (
         {
+            "symmetric-character",
+            "character-ratio",
+            "hypercontractivity",
+            "product-mixing",
+            "cutoff",
+        },
+        {
+            "mechanism": (
+                "Uniform normalized-character decay and product-mixing bounds "
+                "for symmetric-group representations, parameterized by Young "
+                "diagram geometry and permutation support or transposition "
+                "length."
+            ),
+            "problem_family": (
+                "Collision-free multiregister symmetric-group coset-state "
+                "frames and bridge subset-word moments."
+            ),
+            "reduction": (
+                "Unequal physical wreath characters factor into products of "
+                "symmetric-group character ratios, so character decay plus "
+                "short-word anti-concentration can imply a "
+                "poly(n)2^-k frame-norm bound."
+            ),
+            "no_go_barrier": (
+                "Pointwise character bounds alone do not count the correlated "
+                "low-support subset words, and finite collision-free spectra "
+                "do not prove the required growing-order contraction."
+            ),
+            "proof_technique": (
+                "Stanley character formulas, Young diagram geometry, "
+                "hypercontractivity, Murnaghan-Nakayama estimates, normal-set "
+                "product mixing, and class-walk cutoff."
+            ),
+            "open_question": (
+                "Can these bounds control the joint short-word contribution "
+                "for k globally distinct Plancherel source partitions at "
+                "moment order Theta(log block dimension)?"
+            ),
+            "reusable_abstraction": (
+                "Character-ratio contraction contract: diagram-shape tail, "
+                "word transposition-length profile, normalized-character "
+                "product bound, moment target, and residual exceptional mass."
+            ),
+        },
+    ),
+    (
+        {
+            "state-generation",
+            "index-erasure",
+            "query-lower-bound",
+            "black-box",
+        },
+        {
+            "mechanism": (
+                "Coherent or non-coherent state generation that erases a "
+                "function preimage register while retaining a superposition "
+                "over image or fiber labels."
+            ),
+            "problem_family": (
+                "Black-box index erasure and structured many-to-one fiber "
+                "erasure, including normalized modular subset-sum fibers."
+            ),
+            "reduction": (
+                "DCP normalized-fiber preparation is a structured many-to-one "
+                "state-generation analogue, but public subset-sum labels give "
+                "an arithmetic circuit and therefore invalidate a direct "
+                "black-box lower-bound transfer."
+            ),
+            "no_go_barrier": (
+                "Generic black-box non-coherent index erasure requires "
+                "square-root quantum queries. Any DCP improvement must identify "
+                "and charge the exact arithmetic structure that bypasses this "
+                "generic state-generation barrier."
+            ),
+            "proof_technique": (
+                "General adversary bounds, symmetric state generation, "
+                "association schemes, and representation-theoretic "
+                "automorphism principles."
+            ),
+            "open_question": (
+                "Can density-one subset-sum structure support a polynomial "
+                "source-aware fiber erasure or collision walk without "
+                "target-addressable support decision, rare postselection, "
+                "QRAM, or hidden-source reflections?"
+            ),
+            "reusable_abstraction": (
+                "State-generation access ledger separating black-box queries, "
+                "public arithmetic circuits, target-addressable fiber "
+                "preparation, global collective measurements, success flags, "
+                "and fixed-variable witness self-reduction."
+            ),
+        },
+    ),
+    (
+        {
             "multiregister",
             "entanglement-width",
             "information-lower-bound",

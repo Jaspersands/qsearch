@@ -37,6 +37,65 @@ from code_schur_filtration import write_code_schur_filtration_report
 from code_structural_invariants import write_code_structural_invariants
 from code_tuple_profile_baseline import write_code_tuple_profile_baseline
 from code_equivalence_workbench import write_code_equivalence_workbench
+from self_dual_code_boundary_search import write_self_dual_code_boundary
+from self_dual_local_profile_obstruction import write_self_dual_local_obstruction
+from self_dual_global_orbit_audit import write_self_dual_global_orbit_audit
+from self_dual_hsp_applicability import write_self_dual_hsp_applicability
+from self_dual_rowspace_hsp_reduction import write_self_dual_rowspace_hsp_reduction
+from self_dual_automorphism_workbench import write_self_dual_automorphism_workbench
+from self_dual_high_order_automorphism_resolver import (
+    write_self_dual_high_order_automorphism_resolver,
+)
+from self_dual_fixed_order_sparsity_obstruction import (
+    write_self_dual_fixed_order_sparsity_obstruction,
+)
+from self_dual_wreath_spectrum import write_self_dual_wreath_spectrum
+from self_dual_wreath_hecke_audit import write_self_dual_wreath_hecke_audit
+from self_dual_wreath_pgm_polar_audit import (
+    write_self_dual_wreath_pgm_polar_audit,
+)
+from self_dual_wreath_subset_carrier_algebra import (
+    write_self_dual_wreath_subset_carrier_algebra,
+)
+from self_dual_wreath_carrier_orbit_growth import (
+    write_self_dual_wreath_carrier_orbit_growth,
+)
+from self_dual_wreath_harmonic_carrier_schema import (
+    write_self_dual_wreath_harmonic_carrier_schema,
+)
+from self_dual_wreath_commutant_transfer_audit import (
+    write_self_dual_wreath_commutant_transfer_audit,
+)
+from self_dual_wreath_physical_frame_blocks import (
+    write_self_dual_wreath_physical_frame_blocks,
+)
+from self_dual_wreath_unequal_frame_blocks import (
+    write_self_dual_wreath_unequal_frame_blocks,
+)
+from self_dual_wreath_complete_w3_tuple_audit import (
+    write_complete_w3_tuple_audit,
+)
+from self_dual_wreath_character_moments import (
+    write_self_dual_wreath_character_moments,
+)
+from self_dual_wreath_third_moment_contraction import (
+    write_self_dual_wreath_third_moment_contraction,
+)
+from self_dual_wreath_all_unequal_third_moment import (
+    write_self_dual_wreath_all_unequal_third_moment,
+)
+from self_dual_wreath_equal_commutator_audit import (
+    write_self_dual_wreath_equal_commutator_audit,
+)
+from self_dual_wreath_stable_commutator_rank import (
+    write_self_dual_wreath_stable_commutator_rank,
+)
+from self_dual_wreath_typical_partition_portfolio import (
+    write_self_dual_wreath_typical_partition_portfolio,
+)
+from self_dual_wreath_typical_recoupling_transfer import (
+    write_self_dual_wreath_typical_recoupling_transfer,
+)
 from collective_observable_search import write_collective_observable_search
 from coset_frontier_triage import write_coset_frontier_triage
 from coset_pgm_capacity import write_coset_pgm_capacity_report
@@ -51,6 +110,72 @@ from coset_commutant_information_obstruction import (
 )
 from coset_carrier_information_audit import (
     write_carrier_information_audit_report,
+)
+from coset_natural_multicopy_pgm_benchmark import (
+    write_natural_multicopy_pgm_report,
+)
+from coset_pgm_gain_localization import (
+    write_pgm_gain_localization_report,
+)
+from coset_pgm_average_frame_block_encoding import (
+    write_average_frame_block_encoding_report,
+)
+from coset_natural_character_ratio_concentration import (
+    write_natural_character_ratio_concentration_report,
+)
+from coset_covariant_projector_subpovm import (
+    write_covariant_projector_subpovm_report,
+)
+from self_dual_wreath_projector_subpovm_transfer import (
+    write_wreath_projector_subpovm_transfer_report,
+)
+from self_dual_wreath_subpovm_moment_certificate import (
+    write_wreath_subpovm_moment_certificate_report,
+)
+from self_dual_wreath_natural_unequal_dominance import (
+    write_natural_unequal_dominance_report,
+)
+from self_dual_wreath_natural_moment_word_map import (
+    write_natural_moment_word_map_report,
+)
+from self_dual_wreath_word_map_mixing import (
+    write_wreath_word_map_mixing_report,
+)
+from self_dual_wreath_coupled_word_walk_gap import (
+    write_wreath_coupled_word_walk_gap_report,
+)
+from self_dual_wreath_all_unequal_conditioned_kernel import (
+    write_all_unequal_conditioned_kernel_report,
+)
+from self_dual_wreath_global_partition_collision import (
+    write_global_partition_collision_report,
+)
+from self_dual_wreath_collision_free_frame_probe import (
+    write_collision_free_frame_probe_report,
+)
+from self_dual_wreath_character_ratio_contract import (
+    write_character_ratio_contract_report,
+)
+from self_dual_wreath_short_word_profile import (
+    write_short_word_profile_report,
+)
+from self_dual_wreath_mask_hypergraph_reduction import (
+    write_mask_hypergraph_reduction_report,
+)
+from self_dual_wreath_subgroup_twirl_reduction import (
+    write_subgroup_twirl_reduction_report,
+)
+from self_dual_wreath_orientation_fourier_reduction import (
+    write_orientation_fourier_reduction_report,
+)
+from self_dual_wreath_orientation_fusion_moment import (
+    write_orientation_fusion_moment_report,
+)
+from self_dual_wreath_pair_core_carrier_factorization import (
+    write_pair_core_carrier_factorization_report,
+)
+from self_dual_wreath_multistar_degree_obstruction import (
+    write_multistar_degree_obstruction_report,
 )
 from coset_strong_fourier_information_scaling import (
     write_strong_fourier_information_scaling_report,
@@ -185,6 +310,9 @@ from coset_typical_uniform_source_probe import (
 from coset_typical_parity_complete_separator import (
     write_parity_complete_separator_report,
 )
+from coset_typical_parity_class_contraction import (
+    write_parity_class_contraction_report,
+)
 from coset_recoupling_capability_ledger import write_recoupling_capability_report
 from coset_recoupling_mechanism_synthesis import write_recoupling_mechanism_synthesis_report
 from coset_state_distinguishability import write_coset_distinguishability_report
@@ -213,6 +341,25 @@ from dcp_subset_sum_measurement_audit import write_subset_sum_measurement_audit
 from dcp_hashed_fiber_measurement_audit import write_hashed_fiber_measurement_audit
 from dcp_reference_projection_audit import write_reference_projection_audit
 from dcp_covariant_pgm_audit import write_covariant_pgm_audit
+from dcp_pgm_gram_block_encoding import write_gram_block_encoding_report
+from dcp_pgm_qsvt_degree_obstruction import (
+    write_qsvt_degree_obstruction_report,
+)
+from dcp_subset_sum_quenched_occupancy_theorem import (
+    write_quenched_occupancy_report,
+)
+from dcp_coherent_fiber_erasure_boundary import (
+    write_coherent_fiber_erasure_boundary_report,
+)
+from dcp_global_erasure_inversion_reduction import (
+    write_global_erasure_inversion_report,
+)
+from dcp_approximate_erasure_coherence_reduction import (
+    write_approximate_erasure_coherence_report,
+)
+from dcp_erasure_perturbation_reduction import (
+    write_erasure_perturbation_report,
+)
 from dcp_contaminated_pgm_audit import write_contaminated_pgm_audit
 from dcp_subset_sum_bridge import write_subset_sum_bridge_audit
 from dcp_subset_sum_lattice_search import write_subset_sum_lattice_search
@@ -246,6 +393,15 @@ from dcp_subset_sum_conditioned_tail_theorem import write_conditioned_tail_theor
 from dcp_subset_sum_growing_order_theorem import write_growing_order_theorem
 from dcp_subset_sum_growing_order_chain_theorem import (
     write_growing_order_chain_theorem,
+)
+from dcp_subset_sum_signed_l2_obstruction import (
+    write_signed_l2_obstruction,
+)
+from dcp_subset_sum_sparse_character_obstruction import (
+    write_sparse_character_obstruction,
+)
+from dcp_subset_sum_qtt_contraction_search import (
+    write_qtt_contraction_search,
 )
 from dcp_subset_sum_embedding_volume_theorem import write_embedding_volume_theorem
 from dcp_subset_sum_short_relation_theorem import write_short_relation_theorem
@@ -421,6 +577,34 @@ DCP_COVARIANT_PGM_EXPERIMENTS = {
     "EXP-DHS-DCP-COVARIANT-PGM-AUDIT",
 }
 
+DCP_PGM_GRAM_BLOCK_ENCODING_EXPERIMENTS = {
+    "EXP-DHS-DCP-PGM-GRAM-BLOCK-ENCODING",
+}
+
+DCP_PGM_QSVT_DEGREE_EXPERIMENTS = {
+    "EXP-DHS-DCP-PGM-QSVT-DEGREE-OBSTRUCTION",
+}
+
+DCP_QUENCHED_OCCUPANCY_EXPERIMENTS = {
+    "EXP-DHS-DCP-SUBSET-SUM-QUENCHED-OCCUPANCY-THEOREM",
+}
+
+DCP_COHERENT_FIBER_ERASURE_BOUNDARY_EXPERIMENTS = {
+    "EXP-DHS-DCP-COHERENT-FIBER-ERASURE-BOUNDARY",
+}
+
+DCP_GLOBAL_ERASURE_INVERSION_EXPERIMENTS = {
+    "EXP-DHS-DCP-GLOBAL-ERASURE-INVERSION-REDUCTION",
+}
+
+DCP_APPROXIMATE_ERASURE_COHERENCE_EXPERIMENTS = {
+    "EXP-DHS-DCP-APPROXIMATE-ERASURE-COHERENCE-REDUCTION",
+}
+
+DCP_ERASURE_PERTURBATION_EXPERIMENTS = {
+    "EXP-DHS-DCP-ERASURE-PERTURBATION-REDUCTION",
+}
+
 DCP_CONTAMINATED_PGM_EXPERIMENTS = {
     "EXP-DHS-DCP-CONTAMINATED-PGM-AUDIT",
 }
@@ -523,6 +707,18 @@ DCP_SUBSET_SUM_GROWING_ORDER_EXPERIMENTS = {
 
 DCP_SUBSET_SUM_GROWING_ORDER_CHAIN_EXPERIMENTS = {
     "EXP-DHS-DCP-SUBSET-SUM-GROWING-ORDER-CHAIN-THEOREM",
+}
+
+DCP_SUBSET_SUM_SIGNED_L2_EXPERIMENTS = {
+    "EXP-DHS-DCP-SUBSET-SUM-SIGNED-L2-OBSTRUCTION",
+}
+
+DCP_SUBSET_SUM_SPARSE_CHARACTER_EXPERIMENTS = {
+    "EXP-DHS-DCP-SUBSET-SUM-ADAPTIVE-SPARSE-CHARACTER-OBSTRUCTION",
+}
+
+DCP_SUBSET_SUM_QTT_EXPERIMENTS = {
+    "EXP-DHS-DCP-SUBSET-SUM-QTT-DENSE-CONTRACTION",
 }
 
 DCP_SUBSET_SUM_EMBEDDING_VOLUME_EXPERIMENTS = {
@@ -650,6 +846,28 @@ COSET_EXPERIMENTS = {
     "EXP-COSET-SAME-HIDDEN-TARGET-LAW",
     "EXP-COSET-COMMUTANT-INFORMATION-OBSTRUCTION",
     "EXP-COSET-CARRIER-INFORMATION-AUDIT",
+    "EXP-COSET-NATURAL-MULTICOPY-PGM",
+    "EXP-COSET-PGM-GAIN-LOCALIZATION",
+    "EXP-COSET-PGM-AVERAGE-FRAME-BLOCK-ENCODING",
+    "EXP-COSET-NATURAL-CHARACTER-RATIO-CONCENTRATION",
+    "EXP-COSET-COVARIANT-PROJECTOR-SUBPOVM",
+    "EXP-CODE-SELF-DUAL-WREATH-PROJECTOR-SUBPOVM",
+    "EXP-CODE-SELF-DUAL-WREATH-SUBPOVM-MOMENTS",
+    "EXP-CODE-SELF-DUAL-WREATH-NATURAL-UNEQUAL-DOMINANCE",
+    "EXP-CODE-SELF-DUAL-WREATH-NATURAL-MOMENT-WORD-MAP",
+    "EXP-CODE-SELF-DUAL-WREATH-WORD-MAP-MIXING",
+    "EXP-CODE-SELF-DUAL-WREATH-COUPLED-WORD-WALK-GAP",
+    "EXP-CODE-SELF-DUAL-WREATH-ALL-UNEQUAL-CONDITIONED-KERNEL",
+    "EXP-CODE-SELF-DUAL-WREATH-GLOBAL-PARTITION-COLLISION",
+    "EXP-CODE-SELF-DUAL-WREATH-COLLISION-FREE-FRAME-PROBE",
+    "EXP-CODE-SELF-DUAL-WREATH-CHARACTER-RATIO-CONTRACT",
+    "EXP-CODE-SELF-DUAL-WREATH-SHORT-WORD-PROFILE",
+    "EXP-CODE-SELF-DUAL-WREATH-MASK-HYPERGRAPH-REDUCTION",
+    "EXP-CODE-SELF-DUAL-WREATH-SUBGROUP-TWIRL-REDUCTION",
+    "EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-FOURIER-REDUCTION",
+    "EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-FUSION-MOMENT",
+    "EXP-CODE-SELF-DUAL-WREATH-PAIR-CORE-CARRIER-FACTORIZATION",
+    "EXP-CODE-SELF-DUAL-WREATH-MULTISTAR-DEGREE-OBSTRUCTION",
     "EXP-COSET-STRONG-FOURIER-INFORMATION-SCALING",
     "EXP-COSET-ENTANGLEMENT-WIDTH-GATE",
     "EXP-COSET-GROWING-WIDTH-ARCHITECTURE",
@@ -706,6 +924,7 @@ COSET_EXPERIMENTS = {
     "EXP-COSET-TYPICAL-SOURCE-COVERAGE",
     "EXP-COSET-TYPICAL-UNIFORM-SOURCE-PROBE",
     "EXP-COSET-TYPICAL-PARITY-COMPLETE-SEPARATOR",
+    "EXP-COSET-TYPICAL-PARITY-CLASS-CONTRACTION",
     "EXP-COSET-RECOUPLING-CAPABILITY-LEDGER",
     "EXP-COSET-RECOUPLING-MECHANISM-SYNTHESIS",
 }
@@ -735,6 +954,31 @@ CODE_FAMILY_SEARCH_EXPERIMENTS = {
     "EXP-CODE-REED-MULLER-PUNCTURE-SEARCH",
     "EXP-CODE-RANK-METRIC-SEARCH",
     "EXP-CODE-INCIDENCE-ISOMORPHISM-RESOLVER",
+    "EXP-CODE-SELF-DUAL-BOUNDARY-SEARCH",
+    "EXP-CODE-SELF-DUAL-LOCAL-PROFILE-OBSTRUCTION",
+    "EXP-CODE-SELF-DUAL-GLOBAL-ORBIT-AUDIT",
+    "EXP-CODE-SELF-DUAL-HSP-APPLICABILITY",
+    "EXP-CODE-SELF-DUAL-ROWSPACE-HSP-REDUCTION",
+    "EXP-CODE-SELF-DUAL-AUTOMORPHISM-WORKBENCH",
+    "EXP-CODE-SELF-DUAL-HIGH-ORDER-AUTOMORPHISM-RESOLVER",
+    "EXP-CODE-SELF-DUAL-FIXED-ORDER-SPARSITY-OBSTRUCTION",
+    "EXP-CODE-SELF-DUAL-WREATH-SPECTRUM",
+    "EXP-CODE-SELF-DUAL-WREATH-HECKE-AUDIT",
+    "EXP-CODE-SELF-DUAL-WREATH-PGM-POLAR-AUDIT",
+    "EXP-CODE-SELF-DUAL-WREATH-SUBSET-CARRIER-ALGEBRA",
+    "EXP-CODE-SELF-DUAL-WREATH-CARRIER-ORBIT-GROWTH",
+    "EXP-CODE-SELF-DUAL-WREATH-HARMONIC-CARRIER-SCHEMA",
+    "EXP-CODE-SELF-DUAL-WREATH-COMMUTANT-TRANSFER-AUDIT",
+    "EXP-CODE-SELF-DUAL-WREATH-PHYSICAL-FRAME-BLOCKS",
+    "EXP-CODE-SELF-DUAL-WREATH-UNEQUAL-FRAME-BLOCKS",
+    "EXP-CODE-SELF-DUAL-WREATH-COMPLETE-W3-TUPLES",
+    "EXP-CODE-SELF-DUAL-WREATH-CHARACTER-MOMENTS",
+    "EXP-CODE-SELF-DUAL-WREATH-THIRD-MOMENT-CONTRACTION",
+    "EXP-CODE-SELF-DUAL-WREATH-ALL-UNEQUAL-THIRD-MOMENT",
+    "EXP-CODE-SELF-DUAL-WREATH-EQUAL-COMMUTATOR-AUDIT",
+    "EXP-CODE-SELF-DUAL-WREATH-STABLE-COMMUTATOR-RANK",
+    "EXP-CODE-SELF-DUAL-WREATH-TYPICAL-PARTITION-PORTFOLIO",
+    "EXP-CODE-SELF-DUAL-WREATH-TYPICAL-RECOUPLING-TRANSFER",
     "EXP-CODE-AFFINE-GEOMETRY-SEARCH",
     "EXP-CODE-PROJECTIVE-GEOMETRY-SEARCH",
     "EXP-CODE-SCHUR-FILTRATION",
@@ -815,6 +1059,13 @@ def supported_experiment_ids() -> list[str]:
         | DCP_HASHED_FIBER_MEASUREMENT_EXPERIMENTS
         | DCP_REFERENCE_PROJECTION_EXPERIMENTS
         | DCP_COVARIANT_PGM_EXPERIMENTS
+        | DCP_PGM_GRAM_BLOCK_ENCODING_EXPERIMENTS
+        | DCP_PGM_QSVT_DEGREE_EXPERIMENTS
+        | DCP_QUENCHED_OCCUPANCY_EXPERIMENTS
+        | DCP_COHERENT_FIBER_ERASURE_BOUNDARY_EXPERIMENTS
+        | DCP_GLOBAL_ERASURE_INVERSION_EXPERIMENTS
+        | DCP_APPROXIMATE_ERASURE_COHERENCE_EXPERIMENTS
+        | DCP_ERASURE_PERTURBATION_EXPERIMENTS
         | DCP_CONTAMINATED_PGM_EXPERIMENTS
         | DCP_SUBSET_SUM_BRIDGE_EXPERIMENTS
         | DCP_SUBSET_SUM_LATTICE_EXPERIMENTS
@@ -841,6 +1092,9 @@ def supported_experiment_ids() -> list[str]:
         | DCP_SUBSET_SUM_CONDITIONED_TAIL_EXPERIMENTS
         | DCP_SUBSET_SUM_GROWING_ORDER_EXPERIMENTS
         | DCP_SUBSET_SUM_GROWING_ORDER_CHAIN_EXPERIMENTS
+        | DCP_SUBSET_SUM_SIGNED_L2_EXPERIMENTS
+        | DCP_SUBSET_SUM_SPARSE_CHARACTER_EXPERIMENTS
+        | DCP_SUBSET_SUM_QTT_EXPERIMENTS
         | DCP_SUBSET_SUM_EMBEDDING_VOLUME_EXPERIMENTS
         | DCP_SUBSET_SUM_SHORT_RELATION_EXPERIMENTS
         | DCP_SUBSET_SUM_CARRY_RELATION_EXPERIMENTS
@@ -927,6 +1181,20 @@ def _latest_result_id_for_experiment(experiment_id: str) -> str:
         return f"RESULT-{experiment_id}-DCP-REFERENCE-PROJECTION"
     if experiment_id in DCP_COVARIANT_PGM_EXPERIMENTS:
         return f"RESULT-{experiment_id}-DCP-COVARIANT-PGM"
+    if experiment_id in DCP_PGM_GRAM_BLOCK_ENCODING_EXPERIMENTS:
+        return f"RESULT-{experiment_id}-DCP-PGM-GRAM-BLOCK-ENCODING"
+    if experiment_id in DCP_PGM_QSVT_DEGREE_EXPERIMENTS:
+        return f"RESULT-{experiment_id}-DCP-PGM-QSVT-DEGREE"
+    if experiment_id in DCP_QUENCHED_OCCUPANCY_EXPERIMENTS:
+        return f"RESULT-{experiment_id}-DCP-QUENCHED-OCCUPANCY"
+    if experiment_id in DCP_COHERENT_FIBER_ERASURE_BOUNDARY_EXPERIMENTS:
+        return f"RESULT-{experiment_id}-DCP-FIBER-ERASURE-BOUNDARY"
+    if experiment_id in DCP_GLOBAL_ERASURE_INVERSION_EXPERIMENTS:
+        return f"RESULT-{experiment_id}-DCP-ERASURE-INVERSION"
+    if experiment_id in DCP_APPROXIMATE_ERASURE_COHERENCE_EXPERIMENTS:
+        return f"RESULT-{experiment_id}-DCP-ERASURE-COHERENCE"
+    if experiment_id in DCP_ERASURE_PERTURBATION_EXPERIMENTS:
+        return f"RESULT-{experiment_id}-DCP-ERASURE-PERTURBATION"
     if experiment_id in DCP_CONTAMINATED_PGM_EXPERIMENTS:
         return f"RESULT-{experiment_id}-DCP-CONTAMINATED-PGM"
     if experiment_id in DCP_SUBSET_SUM_BRIDGE_EXPERIMENTS:
@@ -979,6 +1247,12 @@ def _latest_result_id_for_experiment(experiment_id: str) -> str:
         return f"RESULT-{experiment_id}-DCP-SUBSET-SUM-GROWING-ORDER"
     if experiment_id in DCP_SUBSET_SUM_GROWING_ORDER_CHAIN_EXPERIMENTS:
         return f"RESULT-{experiment_id}-DCP-SUBSET-SUM-GROWING-ORDER-CHAIN"
+    if experiment_id in DCP_SUBSET_SUM_SIGNED_L2_EXPERIMENTS:
+        return f"RESULT-{experiment_id}-DCP-SUBSET-SUM-SIGNED-L2"
+    if experiment_id in DCP_SUBSET_SUM_SPARSE_CHARACTER_EXPERIMENTS:
+        return f"RESULT-{experiment_id}-DCP-SUBSET-SUM-SPARSE-CHARACTERS"
+    if experiment_id in DCP_SUBSET_SUM_QTT_EXPERIMENTS:
+        return f"RESULT-{experiment_id}-DCP-SUBSET-SUM-QTT"
     if experiment_id in DCP_SUBSET_SUM_EMBEDDING_VOLUME_EXPERIMENTS:
         return f"RESULT-{experiment_id}-DCP-SUBSET-SUM-EMBEDDING-VOLUME"
     if experiment_id in DCP_SUBSET_SUM_SHORT_RELATION_EXPERIMENTS:
@@ -1092,6 +1366,56 @@ def _latest_result_id_for_experiment(experiment_id: str) -> str:
             return f"RESULT-{experiment_id}-RANK-METRIC"
         if experiment_id == "EXP-CODE-INCIDENCE-ISOMORPHISM-RESOLVER":
             return f"RESULT-{experiment_id}-INCIDENCE"
+        if experiment_id == "EXP-CODE-SELF-DUAL-BOUNDARY-SEARCH":
+            return f"RESULT-{experiment_id}-SELF-DUAL"
+        if experiment_id == "EXP-CODE-SELF-DUAL-LOCAL-PROFILE-OBSTRUCTION":
+            return f"RESULT-{experiment_id}-SELF-DUAL-LOCAL-NOGO"
+        if experiment_id == "EXP-CODE-SELF-DUAL-GLOBAL-ORBIT-AUDIT":
+            return f"RESULT-{experiment_id}-SELF-DUAL-GLOBAL-ORBIT"
+        if experiment_id == "EXP-CODE-SELF-DUAL-HSP-APPLICABILITY":
+            return f"RESULT-{experiment_id}-SELF-DUAL-HSP"
+        if experiment_id == "EXP-CODE-SELF-DUAL-ROWSPACE-HSP-REDUCTION":
+            return f"RESULT-{experiment_id}-SELF-DUAL-ROWSPACE-HSP"
+        if experiment_id == "EXP-CODE-SELF-DUAL-AUTOMORPHISM-WORKBENCH":
+            return f"RESULT-{experiment_id}-SELF-DUAL-AUTOMORPHISMS"
+        if experiment_id == "EXP-CODE-SELF-DUAL-HIGH-ORDER-AUTOMORPHISM-RESOLVER":
+            return f"RESULT-{experiment_id}-SELF-DUAL-HIGH-ORDER-AUTOMORPHISMS"
+        if experiment_id == "EXP-CODE-SELF-DUAL-FIXED-ORDER-SPARSITY-OBSTRUCTION":
+            return f"RESULT-{experiment_id}-SELF-DUAL-FIXED-ORDER-SPARSITY"
+        if experiment_id == "EXP-CODE-SELF-DUAL-WREATH-SPECTRUM":
+            return f"RESULT-{experiment_id}-SELF-DUAL-WREATH-SPECTRUM"
+        if experiment_id == "EXP-CODE-SELF-DUAL-WREATH-HECKE-AUDIT":
+            return f"RESULT-{experiment_id}-SELF-DUAL-WREATH-HECKE"
+        if experiment_id == "EXP-CODE-SELF-DUAL-WREATH-PGM-POLAR-AUDIT":
+            return f"RESULT-{experiment_id}-SELF-DUAL-WREATH-PGM-POLAR"
+        if experiment_id == "EXP-CODE-SELF-DUAL-WREATH-SUBSET-CARRIER-ALGEBRA":
+            return f"RESULT-{experiment_id}-SELF-DUAL-WREATH-CARRIER"
+        if experiment_id == "EXP-CODE-SELF-DUAL-WREATH-CARRIER-ORBIT-GROWTH":
+            return f"RESULT-{experiment_id}-SELF-DUAL-WREATH-CARRIER-ORBITS"
+        if experiment_id == "EXP-CODE-SELF-DUAL-WREATH-HARMONIC-CARRIER-SCHEMA":
+            return f"RESULT-{experiment_id}-SELF-DUAL-WREATH-HARMONICS"
+        if experiment_id == "EXP-CODE-SELF-DUAL-WREATH-COMMUTANT-TRANSFER-AUDIT":
+            return f"RESULT-{experiment_id}-SELF-DUAL-WREATH-COMMUTANT"
+        if experiment_id == "EXP-CODE-SELF-DUAL-WREATH-PHYSICAL-FRAME-BLOCKS":
+            return f"RESULT-{experiment_id}-SELF-DUAL-WREATH-PHYSICAL-BLOCKS"
+        if experiment_id == "EXP-CODE-SELF-DUAL-WREATH-UNEQUAL-FRAME-BLOCKS":
+            return f"RESULT-{experiment_id}-SELF-DUAL-WREATH-UNEQUAL-BLOCKS"
+        if experiment_id == "EXP-CODE-SELF-DUAL-WREATH-COMPLETE-W3-TUPLES":
+            return f"RESULT-{experiment_id}-SELF-DUAL-WREATH-W3-TUPLES"
+        if experiment_id == "EXP-CODE-SELF-DUAL-WREATH-CHARACTER-MOMENTS":
+            return f"RESULT-{experiment_id}-SELF-DUAL-WREATH-MOMENTS"
+        if experiment_id == "EXP-CODE-SELF-DUAL-WREATH-THIRD-MOMENT-CONTRACTION":
+            return f"RESULT-{experiment_id}-SELF-DUAL-WREATH-THIRD-MOMENT"
+        if experiment_id == "EXP-CODE-SELF-DUAL-WREATH-ALL-UNEQUAL-THIRD-MOMENT":
+            return f"RESULT-{experiment_id}-SELF-DUAL-WREATH-ALL-UNEQUAL"
+        if experiment_id == "EXP-CODE-SELF-DUAL-WREATH-EQUAL-COMMUTATOR-AUDIT":
+            return f"RESULT-{experiment_id}-SELF-DUAL-WREATH-COMMUTATORS"
+        if experiment_id == "EXP-CODE-SELF-DUAL-WREATH-STABLE-COMMUTATOR-RANK":
+            return f"RESULT-{experiment_id}-SELF-DUAL-WREATH-STABLE-RANK"
+        if experiment_id == "EXP-CODE-SELF-DUAL-WREATH-TYPICAL-PARTITION-PORTFOLIO":
+            return f"RESULT-{experiment_id}-SELF-DUAL-WREATH-TYPICAL-PORTFOLIO"
+        if experiment_id == "EXP-CODE-SELF-DUAL-WREATH-TYPICAL-RECOUPLING-TRANSFER":
+            return f"RESULT-{experiment_id}-SELF-DUAL-WREATH-RECOUPLING-TRANSFER"
         if experiment_id == "EXP-CODE-AFFINE-GEOMETRY-SEARCH":
             return f"RESULT-{experiment_id}-AFFINE-GEOMETRY"
         if experiment_id == "EXP-CODE-PROJECTIVE-GEOMETRY-SEARCH":
@@ -1258,6 +1582,16 @@ def _frontier_bonus(experiment_id: str, experiment: dict[str, Any]) -> tuple[int
     frontier_map = _read_json(FRONTIER_MAP_PATH, {})
     blocker_taxonomy = _read_json(BLOCKER_TAXONOMY_PATH, {})
     top_frontier = str(frontier_map.get("top_frontier", ""))
+    top_frontier_status = str(frontier_map.get("top_frontier_status", ""))
+    if not top_frontier_status:
+        top_frontier_status = next(
+            (
+                str(record.get("status", ""))
+                for record in frontier_map.get("frontiers", [])
+                if record.get("frontier_id") == top_frontier
+            ),
+            "",
+        )
     top_blocker = str(blocker_taxonomy.get("top_actionable_blocker_class", ""))
     text = " ".join(
         [
@@ -1309,6 +1643,9 @@ def _frontier_bonus(experiment_id: str, experiment: dict[str, Any]) -> tuple[int
         | DCP_SUBSET_SUM_CONDITIONED_TAIL_EXPERIMENTS
         | DCP_SUBSET_SUM_GROWING_ORDER_EXPERIMENTS
         | DCP_SUBSET_SUM_GROWING_ORDER_CHAIN_EXPERIMENTS
+        | DCP_SUBSET_SUM_SIGNED_L2_EXPERIMENTS
+        | DCP_SUBSET_SUM_SPARSE_CHARACTER_EXPERIMENTS
+        | DCP_SUBSET_SUM_QTT_EXPERIMENTS
         | DCP_SUBSET_SUM_EMBEDDING_VOLUME_EXPERIMENTS
         | DCP_SUBSET_SUM_SHORT_RELATION_EXPERIMENTS
         | DCP_SUBSET_SUM_CARRY_RELATION_EXPERIMENTS
@@ -1334,8 +1671,138 @@ def _frontier_bonus(experiment_id: str, experiment: dict[str, Any]) -> tuple[int
         if is_code_experiment:
             bonus += 70
             reasons.append("top frontier is code-equivalence")
-        if experiment_id == "EXP-CODE-CLOSURE-CONDUCTOR-ATTACK":
-            bonus += 10
+        if top_frontier_status == "self-dual-wreath-growing-copy-covariant-decoder":
+            if experiment_id == "EXP-CODE-SELF-DUAL-WREATH-HECKE-AUDIT":
+                bonus += 70
+                reasons.append("top code frontier needs the wreath Hecke audit")
+            elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-SPECTRUM":
+                bonus += 50
+                reasons.append("top code frontier is the self-dual wreath measurement")
+        elif top_frontier_status == "self-dual-wreath-growing-width-carrier-decoder":
+            if experiment_id == "EXP-COSET-GROWING-WIDTH-ARCHITECTURE":
+                bonus += 70
+                reasons.append(
+                    "top code frontier needs a growing-width carrier decoder"
+                )
+            elif (
+                experiment_id
+                == "EXP-CODE-SELF-DUAL-WREATH-TYPICAL-RECOUPLING-TRANSFER"
+            ):
+                bonus += 35
+                reasons.append(
+                    "typed recoupling transfer constrains the carrier decoder"
+                )
+        elif top_frontier_status == "self-dual-wreath-operator-valued-kcopy-frame":
+            if experiment_id == "EXP-CODE-SELF-DUAL-WREATH-PGM-POLAR-AUDIT":
+                bonus += 70
+                reasons.append("top code frontier needs the operator PGM polar audit")
+            elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-HECKE-AUDIT":
+                bonus += 50
+                reasons.append("top code frontier is the self-dual wreath measurement")
+        elif top_frontier_status == "self-dual-wreath-structured-frame-preconditioner":
+            if experiment_id == "EXP-CODE-SELF-DUAL-WREATH-SUBSET-CARRIER-ALGEBRA":
+                bonus += 70
+                reasons.append("top code frontier needs the subset-carrier algebra")
+            elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-PGM-POLAR-AUDIT":
+                bonus += 50
+                reasons.append("top code frontier is the self-dual wreath measurement")
+        elif top_frontier_status == "self-dual-wreath-noncommutative-carrier-block-transform":
+            if experiment_id == "EXP-CODE-SELF-DUAL-WREATH-CARRIER-ORBIT-GROWTH":
+                bonus += 70
+                reasons.append("top code frontier needs carrier-orbit scaling")
+            elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-SUBSET-CARRIER-ALGEBRA":
+                bonus += 50
+                reasons.append("top code frontier is the self-dual wreath measurement")
+        elif top_frontier_status == "self-dual-wreath-compressed-harmonic-carrier-transform":
+            if experiment_id == "EXP-CODE-SELF-DUAL-WREATH-HARMONIC-CARRIER-SCHEMA":
+                bonus += 70
+                reasons.append("top code frontier needs the harmonic carrier schema")
+            elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-CARRIER-ORBIT-GROWTH":
+                bonus += 50
+                reasons.append("top code frontier is the self-dual wreath measurement")
+        elif top_frontier_status == "self-dual-wreath-sparse-harmonic-carrier-transform":
+            if experiment_id == "EXP-CODE-SELF-DUAL-WREATH-COMMUTANT-TRANSFER-AUDIT":
+                bonus += 70
+                reasons.append("top code frontier needs the commutant capability transfer")
+            elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-HARMONIC-CARRIER-SCHEMA":
+                bonus += 50
+                reasons.append("top code frontier is the self-dual wreath measurement")
+        elif top_frontier_status == "self-dual-wreath-general-carrier-commutant-action":
+            if experiment_id == "EXP-CODE-SELF-DUAL-WREATH-PHYSICAL-FRAME-BLOCKS":
+                bonus += 70
+                reasons.append("top code frontier needs actual physical frame blocks")
+            elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-COMMUTANT-TRANSFER-AUDIT":
+                bonus += 50
+                reasons.append("top code frontier is the self-dual wreath measurement")
+        elif top_frontier_status == "self-dual-wreath-all-sector-physical-frame-recurrence":
+            if experiment_id == "EXP-CODE-SELF-DUAL-WREATH-UNEQUAL-FRAME-BLOCKS":
+                bonus += 70
+                reasons.append("top code frontier needs unequal-pair physical frame blocks")
+            elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-PHYSICAL-FRAME-BLOCKS":
+                bonus += 50
+                reasons.append("top code frontier is the self-dual wreath measurement")
+        elif top_frontier_status == "self-dual-wreath-mixed-physical-tuple-recurrence":
+            if experiment_id == "EXP-CODE-SELF-DUAL-WREATH-COMPLETE-W3-TUPLES":
+                bonus += 70
+                reasons.append("top code frontier needs the complete W3 tuple control")
+            elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-UNEQUAL-FRAME-BLOCKS":
+                bonus += 50
+                reasons.append("top code frontier is the self-dual wreath measurement")
+        elif top_frontier_status == "self-dual-wreath-character-moment-recurrence":
+            if experiment_id == "EXP-CODE-SELF-DUAL-WREATH-CHARACTER-MOMENTS":
+                bonus += 70
+                reasons.append("top code frontier needs the character-moment recurrence")
+            elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-COMPLETE-W3-TUPLES":
+                bonus += 50
+                reasons.append("top code frontier is the self-dual wreath measurement")
+        elif top_frontier_status == "self-dual-wreath-higher-moment-symbolic-contraction":
+            if experiment_id == "EXP-CODE-SELF-DUAL-WREATH-THIRD-MOMENT-CONTRACTION":
+                bonus += 70
+                reasons.append("top code frontier needs the symbolic third-moment contraction")
+            elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-CHARACTER-MOMENTS":
+                bonus += 50
+                reasons.append("top code frontier is the self-dual wreath measurement")
+        elif top_frontier_status == "self-dual-wreath-all-sector-third-moment-contraction":
+            if experiment_id == "EXP-CODE-SELF-DUAL-WREATH-ALL-UNEQUAL-THIRD-MOMENT":
+                bonus += 70
+                reasons.append("top code frontier needs mixed unequal-sector class contraction")
+            elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-THIRD-MOMENT-CONTRACTION":
+                bonus += 50
+                reasons.append("top code frontier is the self-dual wreath measurement")
+        elif top_frontier_status == "self-dual-wreath-equal-commutator-recoupling":
+            if experiment_id == "EXP-CODE-SELF-DUAL-WREATH-EQUAL-COMMUTATOR-AUDIT":
+                bonus += 70
+                reasons.append("top code frontier needs the equal commutator recoupling audit")
+            elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-ALL-UNEQUAL-THIRD-MOMENT":
+                bonus += 50
+                reasons.append("top code frontier is the self-dual wreath measurement")
+        elif top_frontier_status == "self-dual-wreath-mixed-four-class-recoupling-kernel":
+            if experiment_id == "EXP-CODE-SELF-DUAL-WREATH-STABLE-COMMUTATOR-RANK":
+                bonus += 70
+                reasons.append("top code frontier needs the stable-sector rank and mass audit")
+            elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-EQUAL-COMMUTATOR-AUDIT":
+                bonus += 50
+                reasons.append("top code frontier is the self-dual wreath measurement")
+        elif top_frontier_status == "self-dual-wreath-typical-partition-recoupling":
+            if experiment_id == "EXP-CODE-SELF-DUAL-WREATH-TYPICAL-PARTITION-PORTFOLIO":
+                bonus += 70
+                reasons.append("top code frontier needs the constant-mass typical portfolio audit")
+            elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-STABLE-COMMUTATOR-RANK":
+                bonus += 50
+                reasons.append("top code frontier is the self-dual wreath measurement")
+        elif top_frontier_status == "self-dual-wreath-uniform-typical-recoupling-rule":
+            if experiment_id == "EXP-CODE-SELF-DUAL-WREATH-TYPICAL-RECOUPLING-TRANSFER":
+                bonus += 70
+                reasons.append("top code frontier needs the typed recoupling capability transfer")
+            elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-TYPICAL-PARTITION-PORTFOLIO":
+                bonus += 50
+                reasons.append("top code frontier is the self-dual wreath measurement")
+        elif top_frontier_status.startswith("self-dual-wreath-"):
+            if experiment_id == "EXP-CODE-SELF-DUAL-WREATH-TYPICAL-RECOUPLING-TRANSFER":
+                bonus += 60
+                reasons.append("top code frontier is the self-dual wreath measurement")
+        elif experiment_id == "EXP-CODE-CLOSURE-CONDUCTOR-ATTACK":
+            bonus += 100
             reasons.append("closure/conductor directly tests invariant collapse")
     elif top_frontier == "character-shift-decoding-lower-bound":
         if is_character_experiment:
@@ -1443,6 +1910,16 @@ def select_next_experiment() -> NextExperimentSelection:
         "EXP-DHS-DCP-SUBSET-SUM-CONDITIONED-FIXED-MOMENT-TAIL": 88,
         "EXP-DHS-DCP-SUBSET-SUM-GROWING-ORDER-MOMENT-THEOREM": 89,
         "EXP-DHS-DCP-SUBSET-SUM-GROWING-ORDER-CHAIN-THEOREM": 90,
+        "EXP-DHS-DCP-SUBSET-SUM-SIGNED-L2-OBSTRUCTION": 91,
+        "EXP-DHS-DCP-SUBSET-SUM-ADAPTIVE-SPARSE-CHARACTER-OBSTRUCTION": 92,
+        "EXP-DHS-DCP-SUBSET-SUM-QTT-DENSE-CONTRACTION": 93,
+        "EXP-DHS-DCP-PGM-GRAM-BLOCK-ENCODING": 112,
+        "EXP-DHS-DCP-PGM-QSVT-DEGREE-OBSTRUCTION": 113,
+        "EXP-DHS-DCP-SUBSET-SUM-QUENCHED-OCCUPANCY-THEOREM": 114,
+        "EXP-DHS-DCP-COHERENT-FIBER-ERASURE-BOUNDARY": 115,
+        "EXP-DHS-DCP-GLOBAL-ERASURE-INVERSION-REDUCTION": 116,
+        "EXP-DHS-DCP-APPROXIMATE-ERASURE-COHERENCE-REDUCTION": 117,
+        "EXP-DHS-DCP-ERASURE-PERTURBATION-REDUCTION": 118,
         # Establish the volume baseline before spending scheduler budget on
         # later affine-CVP/BDD variants of the density-one route.
         "EXP-DHS-DCP-SUBSET-SUM-EMBEDDING-VOLUME-THEOREM": 110,
@@ -1501,6 +1978,31 @@ def select_next_experiment() -> NextExperimentSelection:
         "EXP-CODE-REED-MULLER-PUNCTURE-SEARCH": 23,
         "EXP-CODE-RANK-METRIC-SEARCH": 23,
         "EXP-CODE-INCIDENCE-ISOMORPHISM-RESOLVER": 28,
+        "EXP-CODE-SELF-DUAL-BOUNDARY-SEARCH": 35,
+        "EXP-CODE-SELF-DUAL-LOCAL-PROFILE-OBSTRUCTION": 36,
+        "EXP-CODE-SELF-DUAL-GLOBAL-ORBIT-AUDIT": 37,
+        "EXP-CODE-SELF-DUAL-HSP-APPLICABILITY": 42,
+        "EXP-CODE-SELF-DUAL-ROWSPACE-HSP-REDUCTION": 43,
+        "EXP-CODE-SELF-DUAL-AUTOMORPHISM-WORKBENCH": 44,
+        "EXP-CODE-SELF-DUAL-HIGH-ORDER-AUTOMORPHISM-RESOLVER": 45,
+        "EXP-CODE-SELF-DUAL-FIXED-ORDER-SPARSITY-OBSTRUCTION": 46,
+        "EXP-CODE-SELF-DUAL-WREATH-SPECTRUM": 47,
+        "EXP-CODE-SELF-DUAL-WREATH-HECKE-AUDIT": 48,
+        "EXP-CODE-SELF-DUAL-WREATH-PGM-POLAR-AUDIT": 49,
+        "EXP-CODE-SELF-DUAL-WREATH-SUBSET-CARRIER-ALGEBRA": 50,
+        "EXP-CODE-SELF-DUAL-WREATH-CARRIER-ORBIT-GROWTH": 51,
+        "EXP-CODE-SELF-DUAL-WREATH-HARMONIC-CARRIER-SCHEMA": 52,
+        "EXP-CODE-SELF-DUAL-WREATH-COMMUTANT-TRANSFER-AUDIT": 53,
+        "EXP-CODE-SELF-DUAL-WREATH-PHYSICAL-FRAME-BLOCKS": 54,
+        "EXP-CODE-SELF-DUAL-WREATH-UNEQUAL-FRAME-BLOCKS": 55,
+        "EXP-CODE-SELF-DUAL-WREATH-COMPLETE-W3-TUPLES": 56,
+        "EXP-CODE-SELF-DUAL-WREATH-CHARACTER-MOMENTS": 57,
+        "EXP-CODE-SELF-DUAL-WREATH-THIRD-MOMENT-CONTRACTION": 58,
+        "EXP-CODE-SELF-DUAL-WREATH-ALL-UNEQUAL-THIRD-MOMENT": 59,
+        "EXP-CODE-SELF-DUAL-WREATH-EQUAL-COMMUTATOR-AUDIT": 60,
+        "EXP-CODE-SELF-DUAL-WREATH-STABLE-COMMUTATOR-RANK": 61,
+        "EXP-CODE-SELF-DUAL-WREATH-TYPICAL-PARTITION-PORTFOLIO": 62,
+        "EXP-CODE-SELF-DUAL-WREATH-TYPICAL-RECOUPLING-TRANSFER": 63,
         "EXP-CODE-AFFINE-GEOMETRY-SEARCH": 23,
         "EXP-CODE-PROJECTIVE-GEOMETRY-SEARCH": 23,
         "EXP-CODE-SCHUR-FILTRATION": 29,
@@ -1531,6 +2033,28 @@ def select_next_experiment() -> NextExperimentSelection:
         "EXP-COSET-SAME-HIDDEN-TARGET-LAW": 77,
         "EXP-COSET-COMMUTANT-INFORMATION-OBSTRUCTION": 78,
         "EXP-COSET-CARRIER-INFORMATION-AUDIT": 79,
+        "EXP-COSET-NATURAL-MULTICOPY-PGM": 80,
+        "EXP-COSET-PGM-GAIN-LOCALIZATION": 81,
+        "EXP-COSET-PGM-AVERAGE-FRAME-BLOCK-ENCODING": 82,
+        "EXP-COSET-NATURAL-CHARACTER-RATIO-CONCENTRATION": 83,
+        "EXP-COSET-COVARIANT-PROJECTOR-SUBPOVM": 84,
+        "EXP-CODE-SELF-DUAL-WREATH-PROJECTOR-SUBPOVM": 85,
+        "EXP-CODE-SELF-DUAL-WREATH-SUBPOVM-MOMENTS": 86,
+        "EXP-CODE-SELF-DUAL-WREATH-NATURAL-UNEQUAL-DOMINANCE": 87,
+        "EXP-CODE-SELF-DUAL-WREATH-NATURAL-MOMENT-WORD-MAP": 88,
+        "EXP-CODE-SELF-DUAL-WREATH-WORD-MAP-MIXING": 89,
+        "EXP-CODE-SELF-DUAL-WREATH-COUPLED-WORD-WALK-GAP": 90,
+        "EXP-CODE-SELF-DUAL-WREATH-ALL-UNEQUAL-CONDITIONED-KERNEL": 91,
+        "EXP-CODE-SELF-DUAL-WREATH-GLOBAL-PARTITION-COLLISION": 92,
+        "EXP-CODE-SELF-DUAL-WREATH-COLLISION-FREE-FRAME-PROBE": 93,
+        "EXP-CODE-SELF-DUAL-WREATH-CHARACTER-RATIO-CONTRACT": 94,
+        "EXP-CODE-SELF-DUAL-WREATH-SHORT-WORD-PROFILE": 95,
+        "EXP-CODE-SELF-DUAL-WREATH-MASK-HYPERGRAPH-REDUCTION": 96,
+        "EXP-CODE-SELF-DUAL-WREATH-SUBGROUP-TWIRL-REDUCTION": 97,
+        "EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-FOURIER-REDUCTION": 98,
+        "EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-FUSION-MOMENT": 99,
+        "EXP-CODE-SELF-DUAL-WREATH-PAIR-CORE-CARRIER-FACTORIZATION": 119,
+        "EXP-CODE-SELF-DUAL-WREATH-MULTISTAR-DEGREE-OBSTRUCTION": 120,
         "EXP-COSET-STRONG-FOURIER-INFORMATION-SCALING": 80,
         "EXP-COSET-ENTANGLEMENT-WIDTH-GATE": 81,
         "EXP-COSET-GROWING-WIDTH-ARCHITECTURE": 82,
@@ -1587,6 +2111,7 @@ def select_next_experiment() -> NextExperimentSelection:
         "EXP-COSET-TYPICAL-SOURCE-COVERAGE": 74,
         "EXP-COSET-TYPICAL-UNIFORM-SOURCE-PROBE": 75,
         "EXP-COSET-TYPICAL-PARITY-COMPLETE-SEPARATOR": 76,
+        "EXP-COSET-TYPICAL-PARITY-CLASS-CONTRACTION": 77,
         "EXP-COSET-RECOUPLING-CAPABILITY-LEDGER": 24,
         "EXP-COSET-RECOUPLING-MECHANISM-SYNTHESIS": 25,
     }
@@ -1791,6 +2316,60 @@ def run_experiment(experiment_id: str) -> RunnerResult:
         )
         runner_result = RunnerResult(
             experiment_id, "completed", result_id, payload["summary"]
+        )
+        append_run_history(result_id)
+        write_experiment_trends()
+        return runner_result
+
+    if experiment_id in DCP_SUBSET_SUM_SIGNED_L2_EXPERIMENTS:
+        result_id = _latest_result_id_for_experiment(experiment_id)
+        payload = write_signed_l2_obstruction(
+            write_registry=True,
+            registry_experiment_id=experiment_id,
+            registry_candidate_id=experiment["candidate_id"],
+            registry_result_id=result_id,
+        )
+        runner_result = RunnerResult(
+            experiment_id,
+            "completed",
+            result_id,
+            payload["summary"],
+        )
+        append_run_history(result_id)
+        write_experiment_trends()
+        return runner_result
+
+    if experiment_id in DCP_SUBSET_SUM_SPARSE_CHARACTER_EXPERIMENTS:
+        result_id = _latest_result_id_for_experiment(experiment_id)
+        payload = write_sparse_character_obstruction(
+            write_registry=True,
+            registry_experiment_id=experiment_id,
+            registry_candidate_id=experiment["candidate_id"],
+            registry_result_id=result_id,
+        )
+        runner_result = RunnerResult(
+            experiment_id,
+            "completed",
+            result_id,
+            payload["summary"],
+        )
+        append_run_history(result_id)
+        write_experiment_trends()
+        return runner_result
+
+    if experiment_id in DCP_SUBSET_SUM_QTT_EXPERIMENTS:
+        result_id = _latest_result_id_for_experiment(experiment_id)
+        payload = write_qtt_contraction_search(
+            write_registry=True,
+            registry_experiment_id=experiment_id,
+            registry_candidate_id=experiment["candidate_id"],
+            registry_result_id=result_id,
+        )
+        runner_result = RunnerResult(
+            experiment_id,
+            "completed",
+            result_id,
+            payload["summary"],
         )
         append_run_history(result_id)
         write_experiment_trends()
@@ -2158,6 +2737,132 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             registry_result_id=result_id,
         )
         runner_result = RunnerResult(experiment_id, "completed", result_id, payload["summary"])
+        append_run_history(result_id)
+        write_experiment_trends()
+        return runner_result
+
+    if experiment_id in DCP_PGM_GRAM_BLOCK_ENCODING_EXPERIMENTS:
+        result_id = _latest_result_id_for_experiment(experiment_id)
+        payload = write_gram_block_encoding_report(
+            write_registry=True,
+            registry_experiment_id=experiment_id,
+            registry_candidate_id=experiment["candidate_id"],
+            registry_result_id=result_id,
+        )
+        runner_result = RunnerResult(
+            experiment_id,
+            "completed",
+            result_id,
+            payload["summary"],
+        )
+        append_run_history(result_id)
+        write_experiment_trends()
+        return runner_result
+
+    if experiment_id in DCP_PGM_QSVT_DEGREE_EXPERIMENTS:
+        result_id = _latest_result_id_for_experiment(experiment_id)
+        payload = write_qsvt_degree_obstruction_report(
+            write_registry=True,
+            registry_experiment_id=experiment_id,
+            registry_candidate_id=experiment["candidate_id"],
+            registry_result_id=result_id,
+        )
+        runner_result = RunnerResult(
+            experiment_id,
+            "completed",
+            result_id,
+            payload["summary"],
+        )
+        append_run_history(result_id)
+        write_experiment_trends()
+        return runner_result
+
+    if experiment_id in DCP_QUENCHED_OCCUPANCY_EXPERIMENTS:
+        result_id = _latest_result_id_for_experiment(experiment_id)
+        payload = write_quenched_occupancy_report(
+            write_registry=True,
+            registry_experiment_id=experiment_id,
+            registry_candidate_id=experiment["candidate_id"],
+            registry_result_id=result_id,
+        )
+        runner_result = RunnerResult(
+            experiment_id,
+            "completed",
+            result_id,
+            payload["summary"],
+        )
+        append_run_history(result_id)
+        write_experiment_trends()
+        return runner_result
+
+    if experiment_id in DCP_COHERENT_FIBER_ERASURE_BOUNDARY_EXPERIMENTS:
+        result_id = _latest_result_id_for_experiment(experiment_id)
+        payload = write_coherent_fiber_erasure_boundary_report(
+            write_registry=True,
+            registry_experiment_id=experiment_id,
+            registry_candidate_id=experiment["candidate_id"],
+            registry_result_id=result_id,
+        )
+        runner_result = RunnerResult(
+            experiment_id,
+            "completed",
+            result_id,
+            payload["summary"],
+        )
+        append_run_history(result_id)
+        write_experiment_trends()
+        return runner_result
+
+    if experiment_id in DCP_GLOBAL_ERASURE_INVERSION_EXPERIMENTS:
+        result_id = _latest_result_id_for_experiment(experiment_id)
+        payload = write_global_erasure_inversion_report(
+            write_registry=True,
+            registry_experiment_id=experiment_id,
+            registry_candidate_id=experiment["candidate_id"],
+            registry_result_id=result_id,
+        )
+        runner_result = RunnerResult(
+            experiment_id,
+            "completed",
+            result_id,
+            payload["summary"],
+        )
+        append_run_history(result_id)
+        write_experiment_trends()
+        return runner_result
+
+    if experiment_id in DCP_APPROXIMATE_ERASURE_COHERENCE_EXPERIMENTS:
+        result_id = _latest_result_id_for_experiment(experiment_id)
+        payload = write_approximate_erasure_coherence_report(
+            write_registry=True,
+            registry_experiment_id=experiment_id,
+            registry_candidate_id=experiment["candidate_id"],
+            registry_result_id=result_id,
+        )
+        runner_result = RunnerResult(
+            experiment_id,
+            "completed",
+            result_id,
+            payload["summary"],
+        )
+        append_run_history(result_id)
+        write_experiment_trends()
+        return runner_result
+
+    if experiment_id in DCP_ERASURE_PERTURBATION_EXPERIMENTS:
+        result_id = _latest_result_id_for_experiment(experiment_id)
+        payload = write_erasure_perturbation_report(
+            write_registry=True,
+            registry_experiment_id=experiment_id,
+            registry_candidate_id=experiment["candidate_id"],
+            registry_result_id=result_id,
+        )
+        runner_result = RunnerResult(
+            experiment_id,
+            "completed",
+            result_id,
+            payload["summary"],
+        )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -3015,6 +3720,217 @@ def run_experiment(experiment_id: str) -> RunnerResult:
                 registry_candidate_id=experiment["candidate_id"],
                 registry_result_id=result_id,
             )
+        elif experiment_id == "EXP-COSET-NATURAL-MULTICOPY-PGM":
+            payload = write_natural_multicopy_pgm_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif experiment_id == "EXP-COSET-PGM-GAIN-LOCALIZATION":
+            payload = write_pgm_gain_localization_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-COSET-PGM-AVERAGE-FRAME-BLOCK-ENCODING"
+        ):
+            payload = write_average_frame_block_encoding_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-COSET-NATURAL-CHARACTER-RATIO-CONCENTRATION"
+        ):
+            payload = write_natural_character_ratio_concentration_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif experiment_id == "EXP-COSET-COVARIANT-PROJECTOR-SUBPOVM":
+            payload = write_covariant_projector_subpovm_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-PROJECTOR-SUBPOVM"
+        ):
+            payload = write_wreath_projector_subpovm_transfer_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-SUBPOVM-MOMENTS"
+        ):
+            payload = write_wreath_subpovm_moment_certificate_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-NATURAL-UNEQUAL-DOMINANCE"
+        ):
+            payload = write_natural_unequal_dominance_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-NATURAL-MOMENT-WORD-MAP"
+        ):
+            payload = write_natural_moment_word_map_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-WORD-MAP-MIXING"
+        ):
+            payload = write_wreath_word_map_mixing_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-COUPLED-WORD-WALK-GAP"
+        ):
+            payload = write_wreath_coupled_word_walk_gap_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-ALL-UNEQUAL-CONDITIONED-KERNEL"
+        ):
+            payload = write_all_unequal_conditioned_kernel_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-GLOBAL-PARTITION-COLLISION"
+        ):
+            payload = write_global_partition_collision_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-COLLISION-FREE-FRAME-PROBE"
+        ):
+            payload = write_collision_free_frame_probe_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-CHARACTER-RATIO-CONTRACT"
+        ):
+            payload = write_character_ratio_contract_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-SHORT-WORD-PROFILE"
+        ):
+            payload = write_short_word_profile_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-MASK-HYPERGRAPH-REDUCTION"
+        ):
+            payload = write_mask_hypergraph_reduction_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-SUBGROUP-TWIRL-REDUCTION"
+        ):
+            payload = write_subgroup_twirl_reduction_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-FOURIER-REDUCTION"
+        ):
+            payload = write_orientation_fourier_reduction_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-FUSION-MOMENT"
+        ):
+            payload = write_orientation_fusion_moment_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-PAIR-CORE-CARRIER-FACTORIZATION"
+        ):
+            payload = write_pair_core_carrier_factorization_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-MULTISTAR-DEGREE-OBSTRUCTION"
+        ):
+            payload = write_multistar_degree_obstruction_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
         elif (
             experiment_id
             == "EXP-COSET-STRONG-FOURIER-INFORMATION-SCALING"
@@ -3421,6 +4337,16 @@ def run_experiment(experiment_id: str) -> RunnerResult:
                 registry_candidate_id=experiment["candidate_id"],
                 registry_result_id=result_id,
             )
+        elif (
+            experiment_id
+            == "EXP-COSET-TYPICAL-PARITY-CLASS-CONTRACTION"
+        ):
+            payload = write_parity_class_contraction_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
         elif experiment_id == "EXP-COSET-RECOUPLING-CAPABILITY-LEDGER":
             payload = write_recoupling_capability_report(
                 write_registry=True,
@@ -3601,6 +4527,181 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             )
         elif experiment_id == "EXP-CODE-INCIDENCE-ISOMORPHISM-RESOLVER":
             payload = write_code_incidence_resolver(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif experiment_id == "EXP-CODE-SELF-DUAL-BOUNDARY-SEARCH":
+            payload = write_self_dual_code_boundary(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif experiment_id == "EXP-CODE-SELF-DUAL-LOCAL-PROFILE-OBSTRUCTION":
+            payload = write_self_dual_local_obstruction(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif experiment_id == "EXP-CODE-SELF-DUAL-GLOBAL-ORBIT-AUDIT":
+            payload = write_self_dual_global_orbit_audit(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif experiment_id == "EXP-CODE-SELF-DUAL-HSP-APPLICABILITY":
+            payload = write_self_dual_hsp_applicability(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif experiment_id == "EXP-CODE-SELF-DUAL-ROWSPACE-HSP-REDUCTION":
+            payload = write_self_dual_rowspace_hsp_reduction(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif experiment_id == "EXP-CODE-SELF-DUAL-AUTOMORPHISM-WORKBENCH":
+            payload = write_self_dual_automorphism_workbench(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif experiment_id == "EXP-CODE-SELF-DUAL-HIGH-ORDER-AUTOMORPHISM-RESOLVER":
+            payload = write_self_dual_high_order_automorphism_resolver(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif experiment_id == "EXP-CODE-SELF-DUAL-FIXED-ORDER-SPARSITY-OBSTRUCTION":
+            payload = write_self_dual_fixed_order_sparsity_obstruction(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-SPECTRUM":
+            payload = write_self_dual_wreath_spectrum(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-HECKE-AUDIT":
+            payload = write_self_dual_wreath_hecke_audit(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-PGM-POLAR-AUDIT":
+            payload = write_self_dual_wreath_pgm_polar_audit(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-SUBSET-CARRIER-ALGEBRA":
+            payload = write_self_dual_wreath_subset_carrier_algebra(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-CARRIER-ORBIT-GROWTH":
+            payload = write_self_dual_wreath_carrier_orbit_growth(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-HARMONIC-CARRIER-SCHEMA":
+            payload = write_self_dual_wreath_harmonic_carrier_schema(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-COMMUTANT-TRANSFER-AUDIT":
+            payload = write_self_dual_wreath_commutant_transfer_audit(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-PHYSICAL-FRAME-BLOCKS":
+            payload = write_self_dual_wreath_physical_frame_blocks(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-UNEQUAL-FRAME-BLOCKS":
+            payload = write_self_dual_wreath_unequal_frame_blocks(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-COMPLETE-W3-TUPLES":
+            payload = write_complete_w3_tuple_audit(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-CHARACTER-MOMENTS":
+            payload = write_self_dual_wreath_character_moments(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-THIRD-MOMENT-CONTRACTION":
+            payload = write_self_dual_wreath_third_moment_contraction(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-ALL-UNEQUAL-THIRD-MOMENT":
+            payload = write_self_dual_wreath_all_unequal_third_moment(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-EQUAL-COMMUTATOR-AUDIT":
+            payload = write_self_dual_wreath_equal_commutator_audit(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-STABLE-COMMUTATOR-RANK":
+            payload = write_self_dual_wreath_stable_commutator_rank(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-TYPICAL-PARTITION-PORTFOLIO":
+            payload = write_self_dual_wreath_typical_partition_portfolio(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-TYPICAL-RECOUPLING-TRANSFER":
+            payload = write_self_dual_wreath_typical_recoupling_transfer(
                 write_registry=True,
                 registry_experiment_id=experiment_id,
                 registry_candidate_id=experiment["candidate_id"],

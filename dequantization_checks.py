@@ -52,6 +52,29 @@ DCP_SUBSET_SUM_MEASUREMENT_PATH = Path("research/phase_workbench/dcp_subset_sum_
 DCP_HASHED_FIBER_MEASUREMENT_PATH = Path("research/phase_workbench/dcp_hashed_fiber_measurement_audit.json")
 DCP_REFERENCE_PROJECTION_PATH = Path("research/phase_workbench/dcp_reference_projection_audit.json")
 DCP_COVARIANT_PGM_PATH = Path("research/phase_workbench/dcp_covariant_pgm_audit.json")
+DCP_PGM_GRAM_BLOCK_ENCODING_PATH = Path(
+    "research/phase_workbench/dcp_pgm_gram_block_encoding.json"
+)
+DCP_PGM_QSVT_DEGREE_PATH = Path(
+    "research/phase_workbench/dcp_pgm_qsvt_degree_obstruction.json"
+)
+DCP_QUENCHED_OCCUPANCY_PATH = Path(
+    "research/classical_baselines/"
+    "dcp_subset_sum_quenched_occupancy_theorem.json"
+)
+DCP_COHERENT_FIBER_ERASURE_BOUNDARY_PATH = Path(
+    "research/reductions/dcp_coherent_fiber_erasure_boundary.json"
+)
+DCP_GLOBAL_ERASURE_INVERSION_PATH = Path(
+    "research/reductions/dcp_global_erasure_inversion_reduction.json"
+)
+DCP_APPROXIMATE_ERASURE_COHERENCE_PATH = Path(
+    "research/reductions/"
+    "dcp_approximate_erasure_coherence_reduction.json"
+)
+DCP_ERASURE_PERTURBATION_PATH = Path(
+    "research/reductions/dcp_erasure_perturbation_reduction.json"
+)
 DCP_CONTAMINATED_PGM_PATH = Path("research/phase_workbench/dcp_contaminated_pgm_audit.json")
 DCP_SUBSET_SUM_BRIDGE_PATH = Path("research/reductions/dcp_subset_sum_bridge.json")
 DCP_SUBSET_SUM_LATTICE_PATH = Path("research/classical_baselines/dcp_subset_sum_lattice_search.json")
@@ -92,6 +115,16 @@ DCP_SUBSET_SUM_CONDITIONED_TAIL_PATH = Path("research/classical_baselines/dcp_su
 DCP_SUBSET_SUM_GROWING_ORDER_PATH = Path("research/classical_baselines/dcp_subset_sum_growing_order_theorem.json")
 DCP_SUBSET_SUM_GROWING_ORDER_CHAIN_PATH = Path(
     "research/classical_baselines/dcp_subset_sum_growing_order_chain_theorem.json"
+)
+DCP_SUBSET_SUM_SIGNED_L2_PATH = Path(
+    "research/classical_baselines/dcp_subset_sum_signed_l2_obstruction.json"
+)
+DCP_SUBSET_SUM_SPARSE_CHARACTER_PATH = Path(
+    "research/classical_baselines/"
+    "dcp_subset_sum_sparse_character_obstruction.json"
+)
+DCP_SUBSET_SUM_QTT_PATH = Path(
+    "research/classical_baselines/dcp_subset_sum_qtt_contraction_search.json"
 )
 DCP_SUBSET_SUM_EMBEDDING_VOLUME_PATH = Path("research/classical_baselines/dcp_subset_sum_embedding_volume_theorem.json")
 DCP_SUBSET_SUM_SHORT_RELATION_PATH = Path("research/classical_baselines/dcp_subset_sum_short_relation_theorem.json")
@@ -148,6 +181,75 @@ GOPPA_CODE_SEARCH_PATH = Path("research/code_equivalence/goppa_code_search.json"
 GOPPA_SCALING_FRONTIER_PATH = Path("research/code_equivalence/goppa_scaling_frontier.json")
 GOPPA_SYZYGY_FRONTIER_PATH = Path("research/code_equivalence/goppa_syzygy_frontier.json")
 GOPPA_HULL_PROJECTOR_PATH = Path("research/code_equivalence/goppa_hull_projector_frontier.json")
+SELF_DUAL_CODE_BOUNDARY_PATH = Path("research/code_equivalence/self_dual_code_boundary_search.json")
+SELF_DUAL_LOCAL_OBSTRUCTION_PATH = Path("research/code_equivalence/self_dual_local_profile_obstruction.json")
+SELF_DUAL_GLOBAL_ORBIT_PATH = Path("research/code_equivalence/self_dual_global_orbit_audit.json")
+SELF_DUAL_HSP_APPLICABILITY_PATH = Path("research/representation/self_dual_code_hsp_applicability.json")
+SELF_DUAL_ROWSPACE_HSP_PATH = Path("research/representation/self_dual_rowspace_hsp_reduction.json")
+SELF_DUAL_AUTOMORPHISM_PATH = Path("research/code_equivalence/self_dual_automorphism_workbench.json")
+SELF_DUAL_HIGH_ORDER_AUTOMORPHISM_PATH = Path(
+    "research/code_equivalence/self_dual_high_order_automorphism_resolver.json"
+)
+SELF_DUAL_FIXED_ORDER_SPARSITY_PATH = Path(
+    "research/code_equivalence/self_dual_fixed_order_sparsity_obstruction.json"
+)
+SELF_DUAL_WREATH_SPECTRUM_PATH = Path(
+    "research/representation/self_dual_wreath_spectrum.json"
+)
+SELF_DUAL_WREATH_HECKE_PATH = Path(
+    "research/representation/self_dual_wreath_hecke_audit.json"
+)
+SELF_DUAL_WREATH_PGM_POLAR_PATH = Path(
+    "research/representation/self_dual_wreath_pgm_polar_audit.json"
+)
+SELF_DUAL_WREATH_SUBSET_CARRIER_PATH = Path(
+    "research/representation/self_dual_wreath_subset_carrier_algebra.json"
+)
+SELF_DUAL_WREATH_CARRIER_ORBIT_GROWTH_PATH = Path(
+    "research/representation/self_dual_wreath_carrier_orbit_growth.json"
+)
+SELF_DUAL_WREATH_HARMONIC_CARRIER_SCHEMA_PATH = Path(
+    "research/representation/self_dual_wreath_harmonic_carrier_schema.json"
+)
+SELF_DUAL_WREATH_COMMUTANT_TRANSFER_PATH = Path(
+    "research/representation/self_dual_wreath_commutant_transfer_audit.json"
+)
+SELF_DUAL_WREATH_PHYSICAL_FRAME_BLOCKS_PATH = Path(
+    "research/representation/self_dual_wreath_physical_frame_blocks.json"
+)
+SELF_DUAL_WREATH_UNEQUAL_FRAME_BLOCKS_PATH = Path(
+    "research/representation/self_dual_wreath_unequal_frame_blocks.json"
+)
+SELF_DUAL_WREATH_COMPLETE_W3_TUPLE_PATH = Path(
+    "research/representation/self_dual_wreath_complete_w3_tuple_audit.json"
+)
+SELF_DUAL_WREATH_CHARACTER_MOMENTS_PATH = Path(
+    "research/representation/self_dual_wreath_character_moments.json"
+)
+SELF_DUAL_WREATH_THIRD_MOMENT_CONTRACTION_PATH = Path(
+    "research/representation/"
+    "self_dual_wreath_third_moment_contraction.json"
+)
+SELF_DUAL_WREATH_ALL_UNEQUAL_THIRD_MOMENT_PATH = Path(
+    "research/representation/"
+    "self_dual_wreath_all_unequal_third_moment.json"
+)
+SELF_DUAL_WREATH_EQUAL_COMMUTATOR_AUDIT_PATH = Path(
+    "research/representation/"
+    "self_dual_wreath_equal_commutator_audit.json"
+)
+SELF_DUAL_WREATH_STABLE_COMMUTATOR_RANK_PATH = Path(
+    "research/representation/"
+    "self_dual_wreath_stable_commutator_rank.json"
+)
+SELF_DUAL_WREATH_TYPICAL_PARTITION_PORTFOLIO_PATH = Path(
+    "research/representation/"
+    "self_dual_wreath_typical_partition_portfolio.json"
+)
+SELF_DUAL_WREATH_TYPICAL_RECOUPLING_TRANSFER_PATH = Path(
+    "research/representation/"
+    "self_dual_wreath_typical_recoupling_transfer.json"
+)
 TANNER_CODE_SEARCH_PATH = Path("research/code_equivalence/tanner_code_search.json")
 REED_MULLER_CODE_SEARCH_PATH = Path("research/code_equivalence/reed_muller_code_search.json")
 RANK_METRIC_CODE_SEARCH_PATH = Path("research/code_equivalence/rank_metric_code_search.json")
@@ -335,6 +437,10 @@ COSET_TYPICAL_PARITY_COMPLETE_SEPARATOR_PATH = Path(
     "research/representation/"
     "coset_typical_parity_complete_separator.json"
 )
+COSET_TYPICAL_PARITY_CLASS_CONTRACTION_PATH = Path(
+    "research/representation/"
+    "coset_typical_parity_class_contraction.json"
+)
 COSET_SAME_HIDDEN_TARGET_LAW_PATH = Path(
     "research/representation/coset_same_hidden_target_law.json"
 )
@@ -344,6 +450,80 @@ COSET_COMMUTANT_INFORMATION_OBSTRUCTION_PATH = Path(
 )
 COSET_CARRIER_INFORMATION_AUDIT_PATH = Path(
     "research/representation/coset_carrier_information_audit.json"
+)
+COSET_NATURAL_MULTICOPY_PGM_PATH = Path(
+    "research/representation/coset_natural_multicopy_pgm_benchmark.json"
+)
+COSET_PGM_GAIN_LOCALIZATION_PATH = Path(
+    "research/representation/coset_pgm_gain_localization.json"
+)
+COSET_PGM_AVERAGE_FRAME_BLOCK_ENCODING_PATH = Path(
+    "research/representation/coset_pgm_average_frame_block_encoding.json"
+)
+COSET_NATURAL_CHARACTER_RATIO_PATH = Path(
+    "research/representation/coset_natural_character_ratio_concentration.json"
+)
+COSET_COVARIANT_PROJECTOR_SUBPOVM_PATH = Path(
+    "research/representation/coset_covariant_projector_subpovm.json"
+)
+SELF_DUAL_WREATH_PROJECTOR_SUBPOVM_PATH = Path(
+    "research/representation/"
+    "self_dual_wreath_projector_subpovm_transfer.json"
+)
+SELF_DUAL_WREATH_SUBPOVM_MOMENT_PATH = Path(
+    "research/representation/"
+    "self_dual_wreath_subpovm_moment_certificate.json"
+)
+SELF_DUAL_WREATH_NATURAL_UNEQUAL_PATH = Path(
+    "research/representation/"
+    "self_dual_wreath_natural_unequal_dominance.json"
+)
+SELF_DUAL_WREATH_NATURAL_WORD_MAP_PATH = Path(
+    "research/representation/"
+    "self_dual_wreath_natural_moment_word_map.json"
+)
+SELF_DUAL_WREATH_WORD_MAP_MIXING_PATH = Path(
+    "research/representation/self_dual_wreath_word_map_mixing.json"
+)
+SELF_DUAL_WREATH_COUPLED_WORD_WALK_GAP_PATH = Path(
+    "research/representation/"
+    "self_dual_wreath_coupled_word_walk_gap.json"
+)
+SELF_DUAL_WREATH_ALL_UNEQUAL_CONDITIONED_KERNEL_PATH = Path(
+    "research/representation/"
+    "self_dual_wreath_all_unequal_conditioned_kernel.json"
+)
+SELF_DUAL_WREATH_GLOBAL_PARTITION_COLLISION_PATH = Path(
+    "research/representation/"
+    "self_dual_wreath_global_partition_collision.json"
+)
+SELF_DUAL_WREATH_COLLISION_FREE_FRAME_PROBE_PATH = Path(
+    "research/representation/"
+    "self_dual_wreath_collision_free_frame_probe.json"
+)
+SELF_DUAL_WREATH_CHARACTER_RATIO_CONTRACT_PATH = Path(
+    "research/representation/"
+    "self_dual_wreath_character_ratio_contract.json"
+)
+SELF_DUAL_WREATH_SHORT_WORD_PROFILE_PATH = Path(
+    "research/representation/"
+    "self_dual_wreath_short_word_profile.json"
+)
+SELF_DUAL_WREATH_MASK_HYPERGRAPH_REDUCTION_PATH = Path(
+    "research/representation/"
+    "self_dual_wreath_mask_hypergraph_reduction.json"
+)
+SELF_DUAL_WREATH_SUBGROUP_TWIRL_REDUCTION_PATH = Path(
+    "research/representation/"
+    "self_dual_wreath_subgroup_twirl_reduction.json"
+)
+SELF_DUAL_WREATH_ORIENTATION_FOURIER_REDUCTION_PATH = Path(
+    "research/representation/"
+    "self_dual_wreath_orientation_fourier_reduction.json"
+)
+SELF_DUAL_WREATH_ORIENTATION_FUSION_MOMENT_PATH = Path(
+    "research/representation/"
+    "self_dual_wreath_orientation_fusion_moment.json"
 )
 COSET_STRONG_FOURIER_INFORMATION_PATH = Path(
     "research/representation/"
@@ -2352,6 +2532,1539 @@ def findings_from_goppa_syzygy_frontier(
             )
         )
     return findings
+
+
+def findings_from_self_dual_code_boundary(
+    path: Path = SELF_DUAL_CODE_BOUNDARY_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    instances = int(metrics.get("instance_count", 0) or 0)
+    maximum_dimension = int(metrics.get("maximum_dimension", 0) or 0)
+    scalable_collisions = int(metrics.get("scalable_collision_pair_count", 0) or 0)
+    scalable_rejections = int(metrics.get("scalable_invariant_rejection_count", 0) or 0)
+    exact_rejections = int(metrics.get("exact_invariant_rejection_count", 0) or 0)
+    exact_equivalent = int(metrics.get("exact_equivalent_pair_count", 0) or 0)
+    finite_boundaries = int(metrics.get("exact_nonequivalent_boundary_count", 0) or 0)
+    caps = int(metrics.get("incidence_cap_count", 0) or 0)
+    timeouts = int(metrics.get("incidence_timeout_count", 0) or 0)
+    scalable_debt = int(metrics.get("scalable_proof_debt_pair_count", 0) or 0)
+    if not instances:
+        return []
+    now = utc_now()
+    findings = [
+        DequantizationFinding(
+            id="DEQ-SELF-DUAL-CODE-CLASSICAL-SIGNATURE-FRONTIER",
+            created_at=now,
+            target_type="self_dual_code_boundary_search",
+            target_id=str(path),
+            severity="high",
+            claim_under_test="Growing-hull self-dual code collisions already require a collective nonabelian measurement.",
+            evidence=(
+                f"The dimension-{maximum_dimension} frontier generated {instances} instances and found "
+                f"{scalable_collisions} scalable-signature collision(s), but polynomial/exact signatures rejected "
+                f"{scalable_rejections + exact_rejections} pair(s) and exact incidence identified "
+                f"{exact_equivalent} equivalent control(s). Growing hull closes only the trivial-hull objection."
+            ),
+            required_action=(
+                "Apply polynomial canonical labeling, automorphism recovery, and code-to-graph reductions to every "
+                "scalable collision before designing a coset-state observable."
+            ),
+            blocks_speedup_claim=True,
+        )
+    ]
+    if finite_boundaries or caps or timeouts or scalable_debt:
+        findings.append(
+            DequantizationFinding(
+                id="DEQ-SELF-DUAL-CODE-BOUNDARY-DEBT-NOT-HARDNESS",
+                created_at=now,
+                target_type="self_dual_code_boundary_search",
+                target_id=str(path),
+                severity="medium",
+                claim_under_test="Finite non-equivalence, incidence timeout, or scalable-signature collision proves code-equivalence hardness.",
+                evidence=(
+                    f"Finite exact non-equivalent boundaries={finite_boundaries}, incidence caps/timeouts={caps}/{timeouts}, "
+                    f"and large-dimension polynomial-signature debt={scalable_debt}; no polynomial classical lower bound exists."
+                ),
+                required_action=(
+                    "Replace exponential incidence checks with scalable canonicalization or prove a precise lower bound "
+                    "in an explicit access model. Treat every cap and timeout as unresolved classical debt."
+                ),
+                blocks_speedup_claim=True,
+            )
+        )
+    return findings
+
+
+def findings_from_self_dual_local_obstruction(
+    path: Path = SELF_DUAL_LOCAL_OBSTRUCTION_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    instances = int(metrics.get("instance_count", 0) or 0)
+    collapsed = int(metrics.get("full_order_collapse_instance_count", 0) or 0)
+    families = int(metrics.get("full_order_collapse_family_count", 0) or 0)
+    failures = int(metrics.get("theorem_control_failure_count", 0) or 0)
+    if not instances:
+        return []
+    return [
+        DequantizationFinding(
+            id="DEQ-SELF-DUAL-BOUNDED-LOCAL-PROFILE-OBSTRUCTION",
+            created_at=utc_now(),
+            target_type="self_dual_local_profile_obstruction",
+            target_id=str(path),
+            severity="high",
+            claim_under_test="Bounded puncture/shorten rank-hull collisions are evidence for hard self-dual code equivalence.",
+            evidence=(
+                f"Self-duality and certified distance force order-four local-profile collapse on {collapsed}/{instances} "
+                f"instances across {families} complete family rows; theorem control failures={failures}."
+            ),
+            required_action=(
+                "Stop ranking bounded local rank-hull collisions as useful signals. Search global or growing-order "
+                "canonical information and retain the self-dual rows only as classical proof debt."
+            ),
+            blocks_speedup_claim=True,
+        )
+    ]
+
+
+def findings_from_self_dual_global_orbit(
+    path: Path = SELF_DUAL_GLOBAL_ORBIT_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    instances = int(metrics.get("instance_count", 0) or 0)
+    witnesses = int(metrics.get("sampled_equivalence_witness_count", 0) or 0)
+    misses = int(metrics.get("no_intersection_proof_debt_count", 0) or 0)
+    lattice_classes = int(metrics.get("construction_a_single_invariant_class_family_count", 0) or 0)
+    reverse = int(metrics.get("frame_preserving_reverse_reduction_count", 0) or 0)
+    exponent = float(metrics.get("maximum_estimated_log2_information_set_count", 0.0) or 0.0)
+    if not instances:
+        return []
+    now = utc_now()
+    findings = [
+        DequantizationFinding(
+            id="DEQ-SELF-DUAL-GLOBAL-INFORMATION-SET-ORBIT-DEBT",
+            created_at=now,
+            target_type="self_dual_global_orbit_audit",
+            target_id=str(path),
+            severity="high",
+            claim_under_test="Failure of sampled information-set fingerprints establishes hard self-dual code equivalence.",
+            evidence=(
+                f"The largest estimated exhaustive information-set orbit is 2^{exponent:.2f}; sampled full-key matches "
+                f"give {witnesses} exact equivalence witness(es), while {misses} misses remain proof debt."
+            ),
+            required_action=(
+                "Use shared full keys only as exact controls. Replace exhaustive/sampled basis search with polynomial "
+                "global canonicalization or a lower-bound theorem; never infer non-equivalence from a sampled miss."
+            ),
+            blocks_speedup_claim=True,
+        ),
+        DequantizationFinding(
+            id="DEQ-SELF-DUAL-CONSTRUCTION-A-REVERSE-REDUCTION-DEBT",
+            created_at=now,
+            target_type="self_dual_global_orbit_audit",
+            target_id=str(path),
+            severity="high",
+            claim_under_test="Construction-A low-norm collisions transfer self-dual code equivalence to lattice isomorphism in both directions.",
+            evidence=(
+                f"{lattice_classes} family row(s) collapse to one determinant/parity/minimum-norm/root-count class, "
+                f"but frame-preserving reverse reductions proved={reverse}."
+            ),
+            required_action=(
+                "Prove coordinate-frame recovery or implement a certified iff gadget before routing the family to a "
+                "lattice-isomorphism algorithm. Low-norm invariant collisions are not lattice hardness."
+            ),
+            blocks_speedup_claim=True,
+        ),
+    ]
+    return findings
+
+
+def findings_from_self_dual_hsp_applicability(
+    path: Path = SELF_DUAL_HSP_APPLICABILITY_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    families = int(metrics.get("family_count", 0) or 0)
+    gate_failures = int(metrics.get("dimension_condition_fail_family_count", 0) or 0)
+    no_go = int(metrics.get("single_coset_no_go_certified_family_count", 0) or 0)
+    measurements = int(metrics.get("explicit_single_coset_measurement_count", 0) or 0) + int(
+        metrics.get("explicit_multicoset_measurement_count", 0) or 0
+    )
+    decoders = int(metrics.get("polynomial_hidden_permutation_decoder_count", 0) or 0)
+    if not families:
+        return []
+    now = utc_now()
+    return [
+        DequantizationFinding(
+            id="DEQ-SELF-DUAL-HSP-NOGO-APPLICABILITY-GAP",
+            created_at=now,
+            target_type="self_dual_hsp_applicability",
+            target_id=str(path),
+            severity="high",
+            claim_under_test="Existing symmetric-group or code-equivalence one-coset no-go theorems already close the self-dual HSP route.",
+            evidence=(
+                f"The Dinh-Moore-Russell dimension hypothesis fails on {gate_failures}/{families} family row(s); "
+                f"fully certified one-coset no-go rows={no_go}."
+            ),
+            required_action=(
+                "Prove a high-rate extension or analyze the GL_k(2)-by-S_n wreath-product coset states directly. "
+                "Do not import a no-go theorem whose sufficient hypotheses fail."
+            ),
+            blocks_speedup_claim=True,
+        ),
+        DequantizationFinding(
+            id="DEQ-SELF-DUAL-HSP-GAP-NOT-ALGORITHM",
+            created_at=now,
+            target_type="self_dual_hsp_applicability",
+            target_id=str(path),
+            severity="high",
+            claim_under_test="Failure of the published sufficient no-go condition is evidence for a quantum speedup.",
+            evidence=(
+                f"Explicit one/few-coset measurements={measurements}, polynomial hidden-permutation decoders={decoders}, "
+                "and efficient wreath-product QFTs=0."
+            ),
+            required_action=(
+                "Find an inverse-polynomial natural sector, construct its measurement, prove decoder complexity, and "
+                "kill the resulting statistic with public-generator classical baselines before promotion."
+            ),
+            blocks_speedup_claim=True,
+        ),
+    ]
+
+
+def findings_from_self_dual_rowspace_hsp(
+    path: Path = SELF_DUAL_ROWSPACE_HSP_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    families = int(metrics.get("family_count", 0) or 0)
+    eliminated = int(metrics.get("gl_factor_eliminated_family_count", 0) or 0)
+    rigidity = int(metrics.get("rigidity_certified_instance_count", 0) or 0)
+    no_go = int(metrics.get("gi_type_order_two_no_go_certified_instance_count", 0) or 0)
+    controls = int(metrics.get("hidden_shift_control_failure_count", 0) or 0)
+    if not families:
+        return []
+    now = utc_now()
+    return [
+        DequantizationFinding(
+            id="DEQ-SELF-DUAL-GL-HSP-FACTOR-IS-GAUGE",
+            created_at=now,
+            target_type="self_dual_rowspace_hsp_reduction",
+            target_id=str(path),
+            severity="critical",
+            claim_under_test=(
+                "The GL_k factor in the raw scrambler-permutation hidden shift creates a high-rate quantum opening."
+            ),
+            evidence=(
+                f"Canonical rowspace evaluation removes GL_k on {eliminated}/{families} family row(s), with "
+                f"hidden-shift control failures={controls}."
+            ),
+            required_action=(
+                "Discard the raw GL_k dimension-gate failure as positive evidence. Analyze the exact S_n rowspace "
+                "hidden shift and its permutation automorphism subgroup."
+            ),
+            blocks_speedup_claim=True,
+        ),
+        DequantizationFinding(
+            id="DEQ-SELF-DUAL-ROWSPACE-HSP-AUTOMORPHISM-DEBT",
+            created_at=now,
+            target_type="self_dual_rowspace_hsp_reduction",
+            target_id=str(path),
+            severity="critical",
+            claim_under_test=(
+                "The remaining S_n rowspace hidden shift evades graph-isomorphism-style coset-state no-go results."
+            ),
+            evidence=(
+                f"Rigidity-certified instances={rigidity}; GI-type order-two no-go-certified instances={no_go}. "
+                "Absence of an obvious duplicate-column transposition is not a rigidity certificate."
+            ),
+            required_action=(
+                "Compute or certify PAut(C), its size, and minimal degree on the scalable tail. Then apply the "
+                "appropriate symmetric-group single/few-coset obstruction before searching for a measurement."
+            ),
+            blocks_speedup_claim=True,
+        ),
+    ]
+
+
+def findings_from_self_dual_automorphisms(
+    path: Path = SELF_DUAL_AUTOMORPHISM_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    instances = int(metrics.get("instance_count", 0) or 0)
+    rigid = int(metrics.get("rigidity_certified_instance_count", 0) or 0)
+    nonrigid = int(metrics.get("explicit_automorphism_instance_count", 0) or 0)
+    unresolved = int(metrics.get("unresolved_instance_count", 0) or 0)
+    family_theorems = int(metrics.get("infinite_family_rigidity_theorem_count", 0) or 0)
+    if not instances:
+        return []
+    now = utc_now()
+    return [
+        DequantizationFinding(
+            id="DEQ-SELF-DUAL-AUTOMORPHISM-STRATIFICATION",
+            created_at=now,
+            target_type="self_dual_automorphism_workbench",
+            target_id=str(path),
+            severity="critical",
+            claim_under_test=(
+                "The scalable self-dual tail can be analyzed uniformly as a rigid order-two hidden-subgroup family."
+            ),
+            evidence=(
+                f"Exact bounded-support analysis gives rigid instances={rigid}, verified nonrigid instances={nonrigid}, "
+                f"and unresolved instances={unresolved} across {instances} audited tail rows."
+            ),
+            required_action=(
+                "Stratify the HSP analysis by certified PAut(C). Apply the rigid GI-type obstruction only to rigid "
+                "rows, use the larger stabilizer on verified nonrigid rows, and do not classify unresolved rows."
+            ),
+            blocks_speedup_claim=True,
+        ),
+        DequantizationFinding(
+            id="DEQ-SELF-DUAL-FINITE-RIGIDITY-NOT-FAMILY-THEOREM",
+            created_at=now,
+            target_type="self_dual_automorphism_workbench",
+            target_id=str(path),
+            severity="critical",
+            claim_under_test=(
+                "Finite bounded-weight rigidity certificates establish the automorphism behavior of a growing code family."
+            ),
+            evidence=(
+                f"Finite rigidity certificates={rigid}, but infinite-family rigidity theorems={family_theorems}; "
+                f"{unresolved} larger row(s) remain unclassified."
+            ),
+            required_action=(
+                "Prove a growing-family automorphism theorem or continue exact scaling. A single-register no-go for "
+                "rigid instances still leaves collective measurements and decoding open."
+            ),
+            blocks_speedup_claim=True,
+        ),
+    ]
+
+
+def findings_from_self_dual_high_order_automorphisms(
+    path: Path = SELF_DUAL_HIGH_ORDER_AUTOMORPHISM_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    targets = int(metrics.get("target_instance_count", 0) or 0)
+    resolved = int(metrics.get("resolved_rigidity_instance_count", 0) or 0)
+    remaining = int(metrics.get("remaining_unresolved_instance_count", 0) or 0)
+    family_theorems = int(metrics.get("infinite_family_rigidity_theorem_count", 0) or 0)
+    if not targets:
+        return []
+    now = utc_now()
+    return [
+        DequantizationFinding(
+            id="DEQ-SELF-DUAL-WEIGHT-EIGHT-SPARSITY-NOT-HSP-OPENING",
+            created_at=now,
+            target_type="self_dual_high_order_automorphism_resolver",
+            target_id=str(path),
+            severity="critical",
+            claim_under_test=(
+                "Failure of weight-eight support structure to classify the length-64 rows exposes a quantum HSP opening."
+            ),
+            evidence=(
+                f"Exact weight-ten support refinement resolves {resolved}/{targets} prior debt row(s) as rigid; "
+                f"remaining unresolved={remaining}."
+            ),
+            required_action=(
+                "Route resolved rows to the rigid S_n single-register obstruction. Do not promote failure of one "
+                "fixed classical support order as structural quantum evidence."
+            ),
+            blocks_speedup_claim=True,
+        ),
+        DequantizationFinding(
+            id="DEQ-SELF-DUAL-RIGID-TAIL-COLLECTIVE-BARRIER",
+            created_at=now,
+            target_type="self_dual_high_order_automorphism_resolver",
+            target_id=str(path),
+            severity="critical",
+            claim_under_test=(
+                "Resolving finite tail automorphisms supplies a code-equivalence quantum algorithm."
+            ),
+            evidence=(
+                f"Growing-family rigidity theorems={family_theorems}, collective measurements=0, and polynomial "
+                "hidden-permutation decoders=0."
+            ),
+            required_action=(
+                "Prove scaling and construct a genuinely collective measurement plus decoder. Single-register "
+                "Fourier search on the rigid stratum is deprioritized by the known GI-type obstruction."
+            ),
+            blocks_speedup_claim=True,
+        ),
+    ]
+
+
+def findings_from_self_dual_fixed_order_sparsity(
+    path: Path = SELF_DUAL_FIXED_ORDER_SPARSITY_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    rows = int(metrics.get("scaling_length_count", 0) or 0)
+    below_one = int(
+        metrics.get("weight_10_expected_below_one_length_count", 0) or 0
+    )
+    threshold = float(
+        metrics.get("entropy_half_relative_weight_threshold", 0.0) or 0.0
+    )
+    if not rows:
+        return []
+    return [
+        DequantizationFinding(
+            id="DEQ-SELF-DUAL-FIXED-ORDER-RIGIDITY-ARCHITECTURE",
+            created_at=utc_now(),
+            target_type="self_dual_fixed_order_sparsity_obstruction",
+            target_id=str(path),
+            severity="critical",
+            claim_under_test=(
+                "A fixed support-weight incidence certificate scales to growing random self-dual codes."
+            ),
+            evidence=(
+                f"Expected weight-ten support count is below one on {below_one}/{rows} scaling rows; the "
+                f"entropy-half relative-weight threshold is {threshold:.6f}, so useful support order grows linearly."
+            ),
+            required_action=(
+                "Replace explicit fixed-order enumeration with an implicit growing-weight invariant or a uniform "
+                "automorphism theorem. Do not interpret this classical architecture obstruction as quantum evidence."
+            ),
+            blocks_speedup_claim=True,
+        )
+    ]
+
+
+def findings_from_self_dual_wreath_spectrum(
+    path: Path = SELF_DUAL_WREATH_SPECTRUM_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    rows = int(metrics.get("record_count", 0) or 0)
+    weak_zero = int(metrics.get("weak_fourier_zero_information_record_count", 0) or 0)
+    transforms = int(metrics.get("growing_copy_diagonal_action_transform_count", 0) or 0)
+    povms = int(metrics.get("carrier_sensitive_covariant_povm_count", 0) or 0)
+    decoders = int(metrics.get("polynomial_hidden_permutation_decoder_count", 0) or 0)
+    if not rows:
+        return []
+    now = utc_now()
+    return [
+        DequantizationFinding(
+            id="DEQ-SELF-DUAL-WREATH-GROUP-MODEL-CORRECTION",
+            created_at=now,
+            target_type="self_dual_wreath_spectrum",
+            target_id=str(path),
+            severity="critical",
+            claim_under_test=(
+                "Generic S_n involution spectra can be imported unchanged as the rigid code-equivalence HSP model."
+            ),
+            evidence=(
+                "The exact bridge ensemble is the n!-element conjugacy class h_s=(s,s^-1;swap) in "
+                "(S_n x S_n) semidirect Z_2, with unequal-pair and equal +/- wreath irreps."
+            ),
+            required_action=(
+                "Use the wreath-product schema for code-equivalence measurement design. S_n involution results may "
+                "serve as no-go analogies only when their transfer hypotheses are proved."
+            ),
+            blocks_speedup_claim=True,
+        ),
+        DequantizationFinding(
+            id="DEQ-SELF-DUAL-WREATH-ONE-COPY-NOT-ALGORITHM",
+            created_at=now,
+            target_type="self_dual_wreath_spectrum",
+            target_id=str(path),
+            severity="critical",
+            claim_under_test=(
+                "The explicit one-copy wreath spectrum supplies a hidden-permutation algorithm."
+            ),
+            evidence=(
+                f"Weak-label zero-information rows={weak_zero}/{rows}; growing-copy transforms/POVMs/decoders="
+                f"{transforms}/{povms}/{decoders}."
+            ),
+            required_action=(
+                "Construct the growing-copy diagonal-action transform, a carrier-sensitive covariant POVM, and a "
+                "polynomial decoder before promotion."
+            ),
+            blocks_speedup_claim=True,
+        ),
+    ]
+
+
+def findings_from_self_dual_wreath_hecke(
+    path: Path = SELF_DUAL_WREATH_HECKE_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    rows = int(metrics.get("record_count", 0) or 0)
+    centralizer_gelfand = int(
+        metrics.get("centralizer_gelfand_pair_proof_count", 0) or 0
+    )
+    hidden_non_gelfand = int(
+        metrics.get("actual_hidden_subgroup_non_gelfand_count", 0) or 0
+    )
+    scalar_collapses = int(
+        metrics.get("pairwise_hs_kernel_collapse_count", 0) or 0
+    )
+    operator_reductions = int(
+        metrics.get("operator_valued_kcopy_frame_reduction_count", 0) or 0
+    )
+    if not rows:
+        return []
+    now = utc_now()
+    return [
+        DequantizationFinding(
+            id="DEQ-SELF-DUAL-WREATH-CENTRALIZER-NOT-HIDDEN-SUBGROUP",
+            created_at=now,
+            target_type="self_dual_wreath_hecke_audit",
+            target_id=str(path),
+            severity="critical",
+            claim_under_test=(
+                "The centralizer Gelfand pair makes the hidden-subgroup PGM "
+                "optimal for every register count."
+            ),
+            evidence=(
+                f"Centralizer Gelfand proofs={centralizer_gelfand}/{rows}, but "
+                f"the actual order-two hidden subgroup is non-Gelfand on "
+                f"{hidden_non_gelfand}/{rows} scaling rows."
+            ),
+            required_action=(
+                "Apply any all-register Gelfand-pair theorem to H=<h_e>, not "
+                "to its conjugacy stabilizer C_W(h_e). Keep PGM optimality "
+                "unproved unless a different sufficient condition is established."
+            ),
+            blocks_speedup_claim=True,
+        ),
+        DequantizationFinding(
+            id="DEQ-SELF-DUAL-WREATH-SCALAR-KERNEL-COLLAPSE",
+            created_at=now,
+            target_type="self_dual_wreath_hecke_audit",
+            target_id=str(path),
+            severity="critical",
+            claim_under_test=(
+                "The commutative scalar Hecke kernel contains useful hidden-permutation cycle geometry."
+            ),
+            evidence=(
+                f"Normalized pairwise Hilbert-Schmidt kernels collapse to "
+                f"diagonal/off-diagonal values on {scalar_collapses}/{rows} "
+                f"rows; operator-valued frame reductions={operator_reductions}."
+            ),
+            required_action=(
+                "Construct and analyze the subset-indexed operator carrier "
+                "algebra. A scalar character transform cannot be promoted to "
+                "the mixed-state PGM, POVM, or decoder."
+            ),
+            blocks_speedup_claim=True,
+        ),
+    ]
+
+
+def findings_from_self_dual_wreath_pgm_polar(
+    path: Path = SELF_DUAL_WREATH_PGM_POLAR_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    rows = int(metrics.get("record_count", 0) or 0)
+    polar_reductions = int(
+        metrics.get("operator_frame_polar_reduction_count", 0) or 0
+    )
+    preconditioners = int(
+        metrics.get("uniform_polynomial_structured_preconditioner_count", 0)
+        or 0
+    )
+    frame_inverses = int(
+        metrics.get("polynomial_frame_inverse_count", 0) or 0
+    )
+    if not rows:
+        return []
+    return [
+        DequantizationFinding(
+            id="DEQ-SELF-DUAL-WREATH-COMPACT-BLOCK-ENCODING-NOT-PGM",
+            created_at=utc_now(),
+            target_type="self_dual_wreath_pgm_polar_audit",
+            target_id=str(path),
+            severity="critical",
+            claim_under_test=(
+                "A compact average-frame LCU block encoding supplies an efficient mixed-state PGM."
+            ),
+            evidence=(
+                f"Exact polar reductions={polar_reductions}/{rows}, but "
+                f"structured preconditioners/frame inverses="
+                f"{preconditioners}/{frame_inverses}; maximum charged polar "
+                f"log2 resolution="
+                f"{metrics.get('maximum_generic_polar_resolution_log2_charge', 0)}."
+            ),
+            required_action=(
+                "Construct a representation-specific preconditioner or direct "
+                "carrier polar transform with a polynomial complexity proof. "
+                "Generic LCU/QSVT normalization is factorial."
+            ),
+            blocks_speedup_claim=True,
+        ),
+        DequantizationFinding(
+            id="DEQ-SELF-DUAL-WREATH-CANDIDATE-VERIFICATION-NOT-SEARCH",
+            created_at=utc_now(),
+            target_type="self_dual_wreath_pgm_polar_audit",
+            target_id=str(path),
+            severity="critical",
+            claim_under_test=(
+                "Projecting onto a proposed bridge support gives a legal polynomial hidden-permutation search."
+            ),
+            evidence=(
+                "Candidate equality tests are exact, but ordinary mixed "
+                "coset-state access supplies neither reusable coherent "
+                "verification nor canonical purification. Even an optimistic "
+                "Grover baseline has maximum log2 candidate calls="
+                f"{metrics.get('maximum_optimistic_grover_log2_candidate_queries', 0)}."
+            ),
+            required_action=(
+                "Give a legal mixed-state query implementation and exploit "
+                "permutation structure to beat factorial candidate search."
+            ),
+            blocks_speedup_claim=True,
+        ),
+    ]
+
+
+def findings_from_self_dual_wreath_subset_carrier(
+    path: Path = SELF_DUAL_WREATH_SUBSET_CARRIER_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    records = int(metrics.get("commutator_record_count", 0) or 0)
+    noncommuting = int(
+        metrics.get("symmetrized_orbit_noncommutation_count", 0) or 0
+    )
+    transforms = int(
+        metrics.get("uniform_noncommutative_carrier_block_transform_count", 0)
+        or 0
+    )
+    if not records:
+        return []
+    return [
+        DequantizationFinding(
+            id="DEQ-SELF-DUAL-WREATH-SUBSET-ORBIT-NOT-SCALAR-ALGEBRA",
+            created_at=utc_now(),
+            target_type="self_dual_wreath_subset_carrier_algebra",
+            target_id=str(path),
+            severity="critical",
+            claim_under_test=(
+                "Grouping subset terms by register Hamming weight gives a commutative k+1-dimensional frame algebra."
+            ),
+            evidence=(
+                f"Exact symmetrized carrier noncommutators={noncommuting}; "
+                f"first noncommuting copy count="
+                f"{metrics.get('first_symmetrized_noncommuting_copy_count', 0)}; "
+                f"depth-{metrics.get('maximum_truncated_word_depth', 0)} rank "
+                f"lower bound={metrics.get('maximum_truncated_algebra_rank_lower_bound', 0)}."
+            ),
+            required_action=(
+                "Replace scalar Krawtchouk diagonalization with a "
+                "noncommutative multiplicity-block transform, then prove "
+                "uniform block size, conditioning, and gate complexity."
+            ),
+            blocks_speedup_claim=True,
+        ),
+        DequantizationFinding(
+            id="DEQ-SELF-DUAL-WREATH-FINITE-CARRIER-RANK-NOT-UNIFORM-TRANSFORM",
+            created_at=utc_now(),
+            target_type="self_dual_wreath_subset_carrier_algebra",
+            target_id=str(path),
+            severity="high",
+            claim_under_test=(
+                "Finite sparse commutator and word-rank calculations supply the growing-k carrier transform."
+            ),
+            evidence=(
+                f"Noncommutative carrier block transforms={transforms}; "
+                f"maximum finite word support="
+                f"{metrics.get('maximum_truncated_word_support_size', 0)}."
+            ),
+            required_action=(
+                "Derive an all-n, growing-k representation schema or recurrence. "
+                "Keep finite modular ranks as controls only."
+            ),
+            blocks_speedup_claim=True,
+        ),
+    ]
+
+
+def findings_from_self_dual_wreath_carrier_orbit_growth(
+    path: Path = SELF_DUAL_WREATH_CARRIER_ORBIT_GROWTH_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    rows = int(metrics.get("record_count", 0) or 0)
+    factorial_rows = int(
+        metrics.get("factorial_hidden_label_orbit_lower_bound_count", 0) or 0
+    )
+    harmonic_transforms = int(
+        metrics.get("compressed_harmonic_block_transform_count", 0) or 0
+    )
+    if not rows:
+        return []
+    return [
+        DequantizationFinding(
+            id="DEQ-SELF-DUAL-WREATH-EXPLICIT-CARRIER-ORBITS-FACTORIAL",
+            created_at=utc_now(),
+            target_type="self_dual_wreath_carrier_orbit_growth",
+            target_id=str(path),
+            severity="critical",
+            claim_under_test=(
+                "Register symmetry makes explicit hidden-label carrier-orbit tables polynomial."
+            ),
+            evidence=(
+                f"Factorial hidden-label orbit lower-bound rows="
+                f"{factorial_rows}/{rows}; maximum log2 lower bound="
+                f"{metrics.get('maximum_log2_full_wreath_orbit_lower_bound', 0)}, "
+                f"versus fixed-depth subset-profile log2 upper bound="
+                f"{metrics.get('maximum_log2_subset_profile_upper_bound', 0)}."
+            ),
+            required_action=(
+                "Use compressed harmonic irreducible/multiplicity labels. "
+                "Do not enumerate simultaneous-conjugacy carrier orbits."
+            ),
+            blocks_speedup_claim=True,
+        ),
+        DequantizationFinding(
+            id="DEQ-SELF-DUAL-WREATH-ORBIT-COUNT-NOT-HARMONIC-TRANSFORM",
+            created_at=utc_now(),
+            target_type="self_dual_wreath_carrier_orbit_growth",
+            target_id=str(path),
+            severity="high",
+            claim_under_test=(
+                "The Burnside orbit-growth theorem supplies a scalable carrier transform."
+            ),
+            evidence=(
+                f"Compressed harmonic block transforms={harmonic_transforms}; "
+                "the artifact provides counts and lower bounds only."
+            ),
+            required_action=(
+                "Derive coherent harmonic blocks, recoupling matrix elements, "
+                "conditioning, and a polynomial circuit."
+            ),
+            blocks_speedup_claim=True,
+        ),
+    ]
+
+
+def findings_from_self_dual_wreath_harmonic_carrier_schema(
+    path: Path = SELF_DUAL_WREATH_HARMONIC_CARRIER_SCHEMA_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    identity_count = int(
+        metrics.get("harmonic_burnside_identity_verification_count", 0)
+        or 0
+    )
+    block_records = int(metrics.get("exact_block_record_count", 0) or 0)
+    dense_log2 = float(
+        metrics.get(
+            "maximum_log2_certified_block_coordinate_lower_bound",
+            0,
+        )
+        or 0
+    )
+    transforms = int(
+        metrics.get("uniform_coherent_harmonic_transform_count", 0) or 0
+    )
+    if not identity_count:
+        return []
+    return [
+        DequantizationFinding(
+            id="DEQ-SELF-DUAL-WREATH-HARMONIC-LABELS-NOT-TRANSFORM",
+            created_at=utc_now(),
+            target_type="self_dual_wreath_harmonic_carrier_schema",
+            target_id=str(path),
+            severity="critical",
+            claim_under_test=(
+                "Compact irreducible and multiplicity labels supply an "
+                "efficient coherent carrier transform."
+            ),
+            evidence=(
+                f"Exact harmonic/Burnside identities={identity_count}; "
+                f"finite block records={block_records}; uniform coherent "
+                f"transforms={transforms}."
+            ),
+            required_action=(
+                "Specify an internal Kronecker multiplicity basis, sparse "
+                "carrier-generator matrix elements, recoupling rules, and a "
+                "uniform coherent circuit. Compact addresses are insufficient."
+            ),
+            blocks_speedup_claim=True,
+        ),
+        DequantizationFinding(
+            id="DEQ-SELF-DUAL-WREATH-DENSE-MULTIPLICITY-BLOCK",
+            created_at=utc_now(),
+            target_type="self_dual_wreath_harmonic_carrier_schema",
+            target_id=str(path),
+            severity="critical",
+            claim_under_test=(
+                "Harmonic decomposition makes every carrier block "
+                "polynomial dimensional."
+            ),
+            evidence=(
+                "The identity conjugacy class certifies a maximum block with "
+                f"at least 2^{dense_log2:.3f} matrix coordinates in the "
+                "registered scaling range."
+            ),
+            required_action=(
+                "Use an implicit sparse block encoding or stable recurrence; "
+                "never enumerate dense multiplicity-block coordinates."
+            ),
+            blocks_speedup_claim=True,
+        ),
+    ]
+
+
+def findings_from_self_dual_wreath_commutant_transfer_audit(
+    path: Path = SELF_DUAL_WREATH_COMMUTANT_TRANSFER_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    gap_theorems = int(
+        metrics.get(
+            "restricted_all_n_inverse_polynomial_gap_theorem_count", 0
+        )
+        or 0
+    )
+    coverage_bits = float(
+        metrics.get(
+            "maximum_negative_log2_restricted_coordinate_coverage_upper_bound",
+            0,
+        )
+        or 0
+    )
+    cross_source = int(
+        metrics.get("cross_source_carrier_mixing_rule_count", 0) or 0
+    )
+    frame_sectors = int(
+        metrics.get("carrier_frame_invariant_subspace_count", 0) or 0
+    )
+    if not gap_theorems:
+        return []
+    return [
+        DequantizationFinding(
+            id="DEQ-SELF-DUAL-WREATH-RESTRICTED-GAP-FACTORIAL-COVERAGE",
+            created_at=utc_now(),
+            target_type="self_dual_wreath_commutant_transfer_audit",
+            target_id=str(path),
+            severity="critical",
+            claim_under_test=(
+                "One inverse-polynomial multiplicity gap supplies "
+                "nonnegligible coverage of the wreath carrier."
+            ),
+            evidence=(
+                "The transferred sector resolves four coordinates, with "
+                f"restricted coverage at most 2^-{coverage_bits:.3f} at the "
+                "largest registered size."
+            ),
+            required_action=(
+                "Prove general equal-source separators and cross-source "
+                "carrier action on blocks carrying nonnegligible natural mass."
+            ),
+            blocks_speedup_claim=True,
+        ),
+        DequantizationFinding(
+            id="DEQ-SELF-DUAL-WREATH-RESTRICTED-GAP-NOT-FRAME-INVARIANCE",
+            created_at=utc_now(),
+            target_type="self_dual_wreath_commutant_transfer_audit",
+            target_id=str(path),
+            severity="critical",
+            claim_under_test=(
+                "Source/target routing and a multiplicity label prove a "
+                "usable invariant block of the actual PGM frame."
+            ),
+            evidence=(
+                f"Cross-source carrier mixing rules={cross_source}; proved "
+                f"frame-invariant restricted sectors={frame_sectors}."
+            ),
+            required_action=(
+                "Derive actual B_k carrier-generator matrix elements, prove "
+                "which harmonic sectors are invariant, and charge transitions "
+                "between source partitions."
+            ),
+            blocks_speedup_claim=True,
+        ),
+    ]
+
+
+def findings_from_self_dual_wreath_physical_frame_blocks(
+    path: Path = SELF_DUAL_WREATH_PHYSICAL_FRAME_BLOCKS_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    rows = int(metrics.get("record_count", 0) or 0)
+    threshold_rows = int(
+        metrics.get("information_threshold_block_count", 0) or 0
+    )
+    recurrences = int(
+        metrics.get("uniform_all_n_spectral_recurrence_count", 0) or 0
+    )
+    unequal = int(
+        metrics.get("unequal_pair_physical_block_count", 0) or 0
+    )
+    hidden_transforms = int(
+        metrics.get("hidden_label_harmonic_transform_count", 0) or 0
+    )
+    if not rows:
+        return []
+    return [
+        DequantizationFinding(
+            id="DEQ-SELF-DUAL-WREATH-FINITE-PHYSICAL-BLOCKS-NOT-ALL-N",
+            created_at=utc_now(),
+            target_type="self_dual_wreath_physical_frame_blocks",
+            target_id=str(path),
+            severity="critical",
+            claim_under_test=(
+                "Finite well-conditioned equal-pair frame blocks prove an "
+                "all-n blockwise PGM preconditioner."
+            ),
+            evidence=(
+                f"Finite blocks={rows}; information-threshold controls="
+                f"{threshold_rows}; unequal-pair blocks={unequal}; all-n "
+                f"spectral recurrences={recurrences}."
+            ),
+            required_action=(
+                "Cover unequal and mixed physical-irrep tuples, derive all-n "
+                "spectral recurrences, and prove worst-sector support "
+                "conditioning with coherent implementation."
+            ),
+            blocks_speedup_claim=True,
+        ),
+        DequantizationFinding(
+            id="DEQ-SELF-DUAL-WREATH-PHYSICAL-LABELS-NOT-HIDDEN-HARMONICS",
+            created_at=utc_now(),
+            target_type="self_dual_wreath_physical_frame_blocks",
+            target_id=str(path),
+            severity="high",
+            claim_under_test=(
+                "Conservation of physical wreath Fourier labels resolves the "
+                "hidden-label simultaneous-conjugacy harmonic transform."
+            ),
+            evidence=(
+                "Physical tuple conservation is exact, while hidden-label "
+                f"harmonic transforms={hidden_transforms}."
+            ),
+            required_action=(
+                "Keep physical convolution blocks and hidden-label carrier "
+                "multiplicity blocks as separate interfaces; supply the "
+                "missing coherent harmonic transform explicitly."
+            ),
+            blocks_speedup_claim=True,
+        ),
+    ]
+
+
+def findings_from_self_dual_wreath_unequal_frame_blocks(
+    path: Path = SELF_DUAL_WREATH_UNEQUAL_FRAME_BLOCKS_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    zero_controls = int(
+        metrics.get("one_copy_zero_character_control_count", 0) or 0
+    )
+    collective = int(
+        metrics.get("collective_nontrivial_spectrum_count", 0) or 0
+    )
+    mixed = int(
+        metrics.get("mixed_physical_irrep_tuple_block_count", 0) or 0
+    )
+    recurrences = int(
+        metrics.get("uniform_all_n_spectral_recurrence_count", 0) or 0
+    )
+    if not zero_controls:
+        return []
+    return [
+        DequantizationFinding(
+            id="DEQ-SELF-DUAL-WREATH-ZERO-CHARACTER-NOT-COLLECTIVE-SCALAR",
+            created_at=utc_now(),
+            target_type="self_dual_wreath_unequal_frame_blocks",
+            target_id=str(path),
+            severity="critical",
+            claim_under_test=(
+                "Unequal-pair physical irreps can be discarded because weak "
+                "Fourier sampling sees zero bridge character."
+            ),
+            evidence=(
+                f"Zero-character one-copy controls={zero_controls}; "
+                f"nontrivial correlated collective spectra={collective}."
+            ),
+            required_action=(
+                "Retain unequal-pair sectors and analyze their correlated "
+                "multi-copy blocks in any proposed covariant measurement."
+            ),
+            blocks_speedup_claim=True,
+        ),
+        DequantizationFinding(
+            id="DEQ-SELF-DUAL-WREATH-UNEQUAL-FINITE-NOT-MIXED-TUPLES",
+            created_at=utc_now(),
+            target_type="self_dual_wreath_unequal_frame_blocks",
+            target_id=str(path),
+            severity="high",
+            claim_under_test=(
+                "Repeated finite unequal-irrep blocks cover the physical "
+                "tuple distribution needed by the full frame."
+            ),
+            evidence=(
+                f"Mixed physical-irrep tuple blocks={mixed}; all-n spectral "
+                f"recurrences={recurrences}."
+            ),
+            required_action=(
+                "Construct mixed equal/unequal irrep tuples, charge their "
+                "natural mass, and derive a uniform spectral recurrence and "
+                "worst-sector conditioning theorem."
+            ),
+            blocks_speedup_claim=True,
+        ),
+    ]
+
+
+def findings_from_complete_w3_tuple_audit(
+    path: Path = SELF_DUAL_WREATH_COMPLETE_W3_TUPLE_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    tuples = int(
+        metrics.get("unordered_threshold_tuple_count", 0) or 0
+    )
+    occupied = int(
+        metrics.get("naturally_occupied_threshold_tuple_count", 0) or 0
+    )
+    kernel_mass = float(
+        metrics.get("natural_mass_in_kernel_blocks", 0) or 0
+    )
+    recurrences = int(
+        metrics.get(
+            "uniform_all_n_character_moment_recurrence_count", 0
+        )
+        or 0
+    )
+    inverses = int(
+        metrics.get("coherent_blockwise_frame_inverse_count", 0) or 0
+    )
+    if not tuples:
+        return []
+    return [
+        DequantizationFinding(
+            id="DEQ-SELF-DUAL-WREATH-COMPLETE-W3-NOT-ALL-N-RECURRENCE",
+            created_at=utc_now(),
+            target_type="self_dual_wreath_complete_w3_tuple_audit",
+            target_id=str(path),
+            severity="critical",
+            claim_under_test=(
+                "Complete mild support conditioning of W_3 threshold tuples "
+                "proves all-n frame conditioning."
+            ),
+            evidence=(
+                f"Finite tuples={tuples}, occupied={occupied}; all-n "
+                f"character recurrences={recurrences}; coherent inverses="
+                f"{inverses}."
+            ),
+            required_action=(
+                "Derive and prove a growing-n character-moment or transfer "
+                "recurrence, validate all naturally occupied tuple classes, "
+                "and bound the worst positive eigenvalue."
+            ),
+            blocks_speedup_claim=True,
+        ),
+        DequantizationFinding(
+            id="DEQ-SELF-DUAL-WREATH-KERNEL-MASS-REQUIRES-PSEUDOINVERSE",
+            created_at=utc_now(),
+            target_type="self_dual_wreath_complete_w3_tuple_audit",
+            target_id=str(path),
+            severity="high",
+            claim_under_test=(
+                "The physical frame is invertible on every naturally "
+                "occupied tuple block."
+            ),
+            evidence=(
+                f"Natural mass in blocks with nontrivial kernel="
+                f"{kernel_mass:.12f}."
+            ),
+            required_action=(
+                "Work explicitly on the support projector and synthesize a "
+                "coherent pseudoinverse; never apply an unqualified full "
+                "inverse to kernel-bearing blocks."
+            ),
+            blocks_speedup_claim=True,
+        ),
+    ]
+
+
+def findings_from_self_dual_wreath_character_moments(
+    path: Path = SELF_DUAL_WREATH_CHARACTER_MOMENTS_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    second_recurrences = int(
+        metrics.get("exact_second_moment_class_recurrence_count", 0) or 0
+    )
+    third_barriers = int(
+        metrics.get("third_moment_factorial_orbit_barrier_count", 0) or 0
+    )
+    third_contractions = int(
+        metrics.get("polynomial_third_moment_contraction_count", 0) or 0
+    )
+    support_projectors = int(
+        metrics.get("coherent_support_projector_count", 0) or 0
+    )
+    if not second_recurrences:
+        return []
+    return [
+        DequantizationFinding(
+            id="DEQ-SELF-DUAL-WREATH-SECOND-MOMENT-NOT-SUPPORT-GAP",
+            created_at=utc_now(),
+            target_type="self_dual_wreath_character_moments",
+            target_id=str(path),
+            severity="critical",
+            claim_under_test=(
+                "An exact all-n second moment proves an inverse-polynomial "
+                "minimum positive frame eigenvalue."
+            ),
+            evidence=(
+                f"Exact second-moment recurrences={second_recurrences}; "
+                f"coherent support projectors={support_projectors}. "
+                "A second moment controls effective rank, not the smallest "
+                "positive eigenvalue."
+            ),
+            required_action=(
+                "Prove a support-gap theorem from a higher-moment, minimal-"
+                "polynomial, or direct representation-theoretic recurrence."
+            ),
+            blocks_speedup_claim=True,
+        ),
+        DequantizationFinding(
+            id="DEQ-SELF-DUAL-WREATH-THIRD-MOMENT-FACTORIAL-ORBIT-BARRIER",
+            created_at=utc_now(),
+            target_type="self_dual_wreath_character_moments",
+            target_id=str(path),
+            severity="critical",
+            claim_under_test=(
+                "The general trace-character identity is already a scalable "
+                "third/higher-moment algorithm."
+            ),
+            evidence=(
+                f"Scaling rows hitting the factorial third-moment orbit "
+                f"barrier={third_barriers}; polynomial third-moment "
+                f"contractions={third_contractions}."
+            ),
+            required_action=(
+                "Contract third and higher moments symbolically in class, "
+                "character, or representation-ring coordinates without "
+                "enumerating simultaneous-conjugacy permutation pairs."
+            ),
+            blocks_speedup_claim=True,
+        ),
+    ]
+
+
+def findings_from_self_dual_wreath_third_moment_contraction(
+    path: Path = SELF_DUAL_WREATH_THIRD_MOMENT_CONTRACTION_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    special = int(
+        metrics.get(
+            "exact_polynomial_third_moment_contraction_count", 0
+        )
+        or 0
+    )
+    all_sector = int(
+        metrics.get(
+            "all_physical_irrep_sector_contraction_count", 0
+        )
+        or 0
+    )
+    support_gaps = int(
+        metrics.get("support_gap_theorem_count", 0) or 0
+    )
+    if not special:
+        return []
+    return [
+        DequantizationFinding(
+            id=(
+                "DEQ-SELF-DUAL-WREATH-SPECIAL-THIRD-MOMENT-"
+                "NOT-ALL-SECTOR"
+            ),
+            created_at=utc_now(),
+            target_type="self_dual_wreath_third_moment_contraction",
+            target_id=str(path),
+            severity="critical",
+            claim_under_test=(
+                "A polynomial contraction for one repeated unequal irrep "
+                "covers the naturally occupied physical frame."
+            ),
+            evidence=(
+                f"Special-sector contractions={special}; all-sector "
+                f"contractions={all_sector}."
+            ),
+            required_action=(
+                "Extend the contraction to arbitrary mixed unequal tuples "
+                "and equal-pair commutator-character terms, with explicit "
+                "coverage of the natural irrep-label law."
+            ),
+            blocks_speedup_claim=True,
+        ),
+        DequantizationFinding(
+            id=(
+                "DEQ-SELF-DUAL-WREATH-THIRD-MOMENT-"
+                "NOT-SUPPORT-GAP"
+            ),
+            created_at=utc_now(),
+            target_type="self_dual_wreath_third_moment_contraction",
+            target_id=str(path),
+            severity="critical",
+            claim_under_test=(
+                "An exact third moment proves support conditioning and "
+                "coherent frame inversion."
+            ),
+            evidence=(
+                f"Third-moment contractions={special}; support-gap "
+                f"theorems={support_gaps}."
+            ),
+            required_action=(
+                "Derive enough moment or minimal-polynomial information to "
+                "bound the smallest positive eigenvalue, then construct a "
+                "coherent support projector and pseudoinverse."
+            ),
+            blocks_speedup_claim=True,
+        ),
+    ]
+
+
+def findings_from_self_dual_wreath_all_unequal_third_moment(
+    path: Path = SELF_DUAL_WREATH_ALL_UNEQUAL_THIRD_MOMENT_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    unequal = int(
+        metrics.get(
+            "arbitrary_mixed_unequal_tuple_contraction_count", 0
+        )
+        or 0
+    )
+    polynomial = int(
+        metrics.get(
+            "polynomial_in_n_all_unequal_contraction_count", 0
+        )
+        or 0
+    )
+    equal = int(
+        metrics.get("equal_pair_commutator_contraction_count", 0)
+        or 0
+    )
+    counterexamples = int(
+        metrics.get("commutator_class_counterexample_count", 0)
+        or 0
+    )
+    if not unequal:
+        return []
+    return [
+        DequantizationFinding(
+            id=(
+                "DEQ-SELF-DUAL-WREATH-ALL-UNEQUAL-"
+                "SUBEXPONENTIAL-NOT-POLYNOMIAL"
+            ),
+            created_at=utc_now(),
+            target_type="self_dual_wreath_all_unequal_third_moment",
+            target_id=str(path),
+            severity="high",
+            claim_under_test=(
+                "Replacing factorial pair enumeration by p(n)^4 character "
+                "terms gives a polynomial-time contraction."
+            ),
+            evidence=(
+                f"All-unequal contractions={unequal}; polynomial-in-n "
+                f"contractions={polynomial}; maximum character-kernel term "
+                f"bound={metrics.get('maximum_character_kernel_term_bound', 0)}."
+            ),
+            required_action=(
+                "Find stable character-polynomial, tensor-network, or "
+                "recoupling structure with polynomial state support."
+            ),
+            blocks_speedup_claim=True,
+        ),
+        DequantizationFinding(
+            id=(
+                "DEQ-SELF-DUAL-WREATH-CLASS-TRIPLES-"
+                "MISS-EQUAL-COMMUTATORS"
+            ),
+            created_at=utc_now(),
+            target_type="self_dual_wreath_all_unequal_third_moment",
+            target_id=str(path),
+            severity="critical",
+            claim_under_test=(
+                "The three relative conjugacy classes determine equal-pair "
+                "third-moment commutator characters."
+            ),
+            evidence=(
+                f"Equal-pair contractions={equal}; explicit commutator-class "
+                f"counterexamples={counterexamples}, first at n="
+                f"{metrics.get('minimum_commutator_counterexample_n', 0)}."
+            ),
+            required_action=(
+                "Introduce recoupling or richer simultaneous-conjugacy "
+                "coordinates and validate their contraction on equal and "
+                "mixed complete W_3/W_4 controls."
+            ),
+            blocks_speedup_claim=True,
+        ),
+    ]
+
+
+def findings_from_self_dual_wreath_equal_commutator_audit(
+    path: Path = SELF_DUAL_WREATH_EQUAL_COMMUTATOR_AUDIT_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    pure = int(
+        metrics.get(
+            "exact_pure_commutator_frobenius_contraction_count", 0
+        )
+        or 0
+    )
+    mixed = int(
+        metrics.get("mixed_class_commutator_contraction_count", 0)
+        or 0
+    )
+    polynomial_kernel = int(
+        metrics.get(
+            "polynomial_refined_kernel_construction_count", 0
+        )
+        or 0
+    )
+    if not pure:
+        return []
+    return [
+        DequantizationFinding(
+            id=(
+                "DEQ-SELF-DUAL-WREATH-PURE-COMMUTATOR-"
+                "NOT-MIXED-RECOUPLING"
+            ),
+            created_at=utc_now(),
+            target_type="self_dual_wreath_equal_commutator_audit",
+            target_id=str(path),
+            severity="critical",
+            claim_under_test=(
+                "The unconditioned Frobenius commutator formula contracts "
+                "class-conditioned mixed third-moment terms."
+            ),
+            evidence=(
+                f"Pure contractions={pure}; mixed contractions={mixed}."
+            ),
+            required_action=(
+                "Construct the four-class recoupling kernel or directly "
+                "contract its action on physical character portfolios."
+            ),
+            blocks_speedup_claim=True,
+        ),
+        DequantizationFinding(
+            id=(
+                "DEQ-SELF-DUAL-WREATH-REFINED-COMMUTATOR-"
+                "KERNEL-FACTORIAL"
+            ),
+            created_at=utc_now(),
+            target_type="self_dual_wreath_equal_commutator_audit",
+            target_id=str(path),
+            severity="critical",
+            claim_under_test=(
+                "Finite four-class kernel construction is a scalable "
+                "recoupling algorithm."
+            ),
+            evidence=(
+                "Largest finite kernel uses "
+                f"{metrics.get('maximum_refined_kernel_explicit_pair_count', 0)} "
+                f"explicit pairs; polynomial constructions={polynomial_kernel}."
+            ),
+            required_action=(
+                "Derive a polynomial representation-ring, spin-network, or "
+                "stable-partition contraction without pair enumeration."
+            ),
+            blocks_speedup_claim=True,
+        ),
+    ]
+
+
+def findings_from_self_dual_wreath_stable_commutator_rank(
+    path: Path = SELF_DUAL_WREATH_STABLE_COMMUTATOR_RANK_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    vanishing = int(
+        metrics.get("fixed_tail_vanishing_mass_theorem_count", 0)
+        or 0
+    )
+    typical = int(
+        metrics.get("typical_sector_coverage_count", 0) or 0
+    )
+    if not vanishing:
+        return []
+    return [
+        DequantizationFinding(
+            id=(
+                "DEQ-SELF-DUAL-WREATH-STABLE-PARTITION-"
+                "MASS-VANISHES"
+            ),
+            created_at=utc_now(),
+            target_type="self_dual_wreath_stable_commutator_rank",
+            target_id=str(path),
+            severity="critical",
+            claim_under_test=(
+                "A bounded-tail stable-partition recoupling rule covers "
+                "typical natural physical irrep labels."
+            ),
+            evidence=(
+                f"Fixed-tail vanishing theorems={vanishing}; typical-sector "
+                f"coverage={typical}; minimum observed one-copy log2 physical "
+                f"mass={metrics.get('minimum_log2_one_copy_physical_stable_mass', 0)}."
+            ),
+            required_action=(
+                "Handle Plancherel-typical partitions with growing rows and "
+                "columns; do not condition the algorithm on a vanishing-mass "
+                "stable sector."
+            ),
+            blocks_speedup_claim=True,
+        )
+    ]
+
+
+def findings_from_self_dual_wreath_typical_partition_portfolio(
+    path: Path = SELF_DUAL_WREATH_TYPICAL_PARTITION_PORTFOLIO_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    no_go = int(
+        metrics.get(
+            "constant_mass_polynomial_catalog_no_go_theorem_count", 0
+        )
+        or 0
+    )
+    uniform_rules = int(
+        metrics.get(
+            "uniform_partition_description_recoupling_rule_count", 0
+        )
+        or 0
+    )
+    if not no_go:
+        return []
+    return [
+        DequantizationFinding(
+            id=(
+                "DEQ-SELF-DUAL-WREATH-TYPICAL-"
+                "PRECERTIFIED-CATALOG-SUPERPOLYNOMIAL"
+            ),
+            created_at=utc_now(),
+            target_type="self_dual_wreath_typical_partition_portfolio",
+            target_id=str(path),
+            severity="critical",
+            claim_under_test=(
+                "A polynomial list of partition-specific recoupling "
+                "certificates covers constant natural physical-label mass."
+            ),
+            evidence=(
+                f"Catalog no-go theorems={no_go}; uniform partition rules="
+                f"{uniform_rules}; largest finite 90% source catalog="
+                f"{metrics.get('maximum_ninety_percent_catalog_count', 0)}."
+            ),
+            required_action=(
+                "Construct one uniform reversible rule parameterized by "
+                "sampled partition descriptions, with no explicit catalog."
+            ),
+            blocks_speedup_claim=True,
+        )
+    ]
+
+
+def findings_from_self_dual_wreath_typical_recoupling_transfer(
+    path: Path = SELF_DUAL_WREATH_TYPICAL_RECOUPLING_TRANSFER_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    partial = int(
+        metrics.get("valid_partial_primitive_transfer_count", 0) or 0
+    )
+    blockers = int(
+        metrics.get("decoder_blocking_missing_primitive_count", 0)
+        or 0
+    )
+    if not partial:
+        return []
+    return [
+        DequantizationFinding(
+            id=(
+                "DEQ-SELF-DUAL-WREATH-KNOWN-PRIMITIVES-"
+                "NOT-TYPICAL-RECOUPLING"
+            ),
+            created_at=utc_now(),
+            target_type="self_dual_wreath_typical_recoupling_transfer",
+            target_id=str(path),
+            severity="critical",
+            claim_under_test=(
+                "Known S_n QFT, YJM-label, and block-encoding primitives "
+                "already provide the typical physical decoder."
+            ),
+            evidence=(
+                f"Valid partial transfers={partial}; decoder-blocking missing "
+                f"primitives={blockers}; end-to-end algorithms="
+                f"{metrics.get('new_end_to_end_quantum_algorithm_count', 0)}."
+            ),
+            required_action=(
+                "Synthesize a typed internal multiplicity/associator primitive "
+                "that contracts the mixed four-class kernel and survives the "
+                "registered fixed-separator collisions."
+            ),
+            blocks_speedup_claim=True,
+        )
+    ]
 
 
 def findings_from_goppa_hull_projector_frontier(
@@ -5457,9 +7170,56 @@ def findings_from_coset_typical_parity_complete_separator(
                 f"{metrics.get('inverse_polynomial_normalized_gap_theorem_count', 0)}."
             ),
             required_action=(
-                "Freeze the rule, run an independent n=8 source-pair holdout, "
-                "obtain exact collision certificates, and prove an all-n "
-                "oriented-orbit normalized-gap recurrence before promotion."
+                "The frozen rule has now failed the exact n=8 holdout. Retire "
+                "it and prioritize growing-width carrier-sensitive outcomes; "
+                "do not refit another finite coefficient rule without an "
+                "all-n algebraic construction."
+            ),
+            blocks_speedup_claim=True,
+        )
+    ]
+
+
+def findings_from_coset_typical_parity_class_contraction(
+    path: Path = COSET_TYPICAL_PARITY_CLASS_CONTRACTION_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    scalar_count = int(
+        metrics.get("exact_scalar_obstruction_count", 0) or 0
+    )
+    return [
+        DequantizationFinding(
+            id=(
+                "DEQ-COSET-TYPICAL-PARITY-SEPARATOR-N8-"
+                "EXACT-HOLDOUT-FAILURE"
+            ),
+            created_at=utc_now(),
+            target_type=(
+                "coset_typical_parity_class_contraction"
+            ),
+            target_id=str(path),
+            severity="critical",
+            claim_under_test=(
+                "The frozen TC2+CT1-2CT2 rule discovered through n=7 "
+                "defines a uniform all-source multiplicity resolver."
+            ),
+            evidence=(
+                "Exact class contraction audited "
+                f"{metrics.get('all_source_exact_block_count', 0)} blocks "
+                f"through n={metrics.get('maximum_n', 0)} and found "
+                f"{scalar_count} scalar obstructions; multiplicity-two "
+                "simple/total="
+                f"{metrics.get('exact_multiplicity_two_simple_spectrum_count', 0)}/"
+                f"{metrics.get('multiplicity_two_block_count', 0)}."
+            ),
+            required_action=(
+                "Retire the frozen rule. Classify the sign-twist/source-swap "
+                "obstruction family, and do not resume coefficient fitting "
+                "unless it supports an all-n algebraic rule. Shift primary "
+                "effort to growing-width carrier-sensitive decoding."
             ),
             blocks_speedup_claim=True,
         )
@@ -5574,6 +7334,836 @@ def findings_from_coset_carrier_information_audit(
                 "carrier-sensitive covariant effects by I(H;Y), freeze before "
                 "holdouts, and require advantage over strong Fourier plus "
                 "legal classical representation baselines."
+            ),
+            blocks_speedup_claim=True,
+        )
+    ]
+
+
+def findings_from_coset_natural_multicopy_pgm(
+    path: Path = COSET_NATURAL_MULTICOPY_PGM_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    return [
+        DequantizationFinding(
+            id="DEQ-COSET-FINITE-GLOBAL-PGM-GAIN-NOT-SCALABLE-MEASUREMENT",
+            created_at=utc_now(),
+            target_type="coset_natural_multicopy_pgm_benchmark",
+            target_id=str(path),
+            severity="critical",
+            claim_under_test=(
+                "Finite natural-input global-PGM information gain already "
+                "constitutes an efficient hidden-involution algorithm."
+            ),
+            evidence=(
+                "Finite gain rows/max gain over product PGM/max gain over "
+                "separate Young basis="
+                f"{metrics.get('finite_collective_information_gain_row_count', 0)}/"
+                f"{metrics.get('maximum_global_information_gain_over_product_pgm_bits', 0)}/"
+                f"{metrics.get('maximum_global_information_gain_over_separate_young_bits', 0)} bits; "
+                "uniform circuits/decoders/asymptotic theorems/classical "
+                "separations="
+                f"{metrics.get('uniform_polynomial_global_pgm_circuit_count', 0)}/"
+                f"{metrics.get('polynomial_hidden_involution_decoder_count', 0)}/"
+                f"{metrics.get('asymptotic_collective_information_advantage_theorem_count', 0)}/"
+                f"{metrics.get('classical_separation_theorem_count', 0)}."
+            ),
+            required_action=(
+                "Explain the gain with a compact carrier-sensitive observable, "
+                "then prove a uniform growing-width circuit, compressed "
+                "outcome, polynomial decoder, asymptotic information bound, "
+                "and matched classical separation."
+            ),
+            blocks_speedup_claim=True,
+        )
+    ]
+
+
+def findings_from_coset_pgm_gain_localization(
+    path: Path = COSET_PGM_GAIN_LOCALIZATION_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    return [
+        DequantizationFinding(
+            id="DEQ-COSET-BROAD-LOW-CONDITION-FINITE-PGM-GAIN-NOT-HARMONIC-CIRCUIT",
+            created_at=utc_now(),
+            target_type="coset_pgm_gain_localization",
+            target_id=str(path),
+            severity="critical",
+            claim_under_test=(
+                "Broad natural source coverage and well-conditioned finite "
+                "average frames imply a scalable collective PGM."
+            ),
+            evidence=(
+                "Positive gain source mass/largest branch gain fraction/"
+                "maximum finite condition/interpolation degree="
+                f"{metrics.get('positive_gain_natural_source_probability', 0)}/"
+                f"{metrics.get('maximum_single_branch_gain_fraction', 0)}/"
+                f"{metrics.get('maximum_frame_condition_number', 0)}/"
+                f"{metrics.get('maximum_exact_inverse_root_interpolation_degree_upper_bound', 0)}; "
+                "uniform harmonic encodings/all-n condition theorems/decoders="
+                f"{metrics.get('uniform_harmonic_average_frame_block_encoding_count', 0)}/"
+                f"{metrics.get('all_n_polynomial_frame_condition_theorem_count', 0)}/"
+                f"{metrics.get('polynomial_hidden_involution_decoder_count', 0)}."
+            ),
+            required_action=(
+                "Construct the source-conditioned average frame in a "
+                "polynomial-description harmonic basis, prove all-n "
+                "condition and inverse-root degree bounds, and compile the "
+                "result into a legal covariant measurement and decoder."
+            ),
+            blocks_speedup_claim=True,
+        )
+    ]
+
+
+def findings_from_coset_pgm_average_frame_block_encoding(
+    path: Path = COSET_PGM_AVERAGE_FRAME_BLOCK_ENCODING_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    return [
+        DequantizationFinding(
+            id="DEQ-COSET-DIRECT-PGM-FRAME-LCU-NORMALIZATION-BARRIER",
+            created_at=utc_now(),
+            target_type="coset_pgm_average_frame_block_encoding",
+            target_id=str(path),
+            severity="critical",
+            claim_under_test=(
+                "The exact compact average-frame identity directly implements "
+                "the growing-width PGM in polynomial resources."
+            ),
+            evidence=(
+                "All-k identities/finite subset failures/finite LCU failures="
+                f"{metrics.get('all_k_subset_expansion_identity_count', 0)}/"
+                f"{metrics.get('finite_subset_expansion_failure_count', 0)}/"
+                f"{metrics.get('finite_projected_lcu_failure_count', 0)}; "
+                "conditional superpolynomial rows/tail sqrt-amplification "
+                "log2/structured amplifiers="
+                f"{metrics.get('conditional_superpolynomial_generic_amplification_row_count', 0)}/"
+                f"{metrics.get('tail_log2_generic_sqrt_amplification_lower_bound', 0)}/"
+                f"{metrics.get('polynomial_structured_spectral_amplification_count', 0)}."
+            ),
+            required_action=(
+                "Prove the natural-source character-ratio envelope, then "
+                "construct a representation-specific frame preconditioner, "
+                "normalization-free block encoding, or direct covariant "
+                "measurement that avoids generic spectral amplification."
+            ),
+            blocks_speedup_claim=True,
+        )
+    ]
+
+
+def findings_from_coset_natural_character_ratio_concentration(
+    path: Path = COSET_NATURAL_CHARACTER_RATIO_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    return [
+        DequantizationFinding(
+            id="DEQ-COSET-NATURAL-CHARACTER-RATIO-ENVELOPE-STRENGTHENS-FRAME-NORMALIZATION",
+            created_at=utc_now(),
+            target_type="coset_natural_character_ratio_concentration",
+            target_id=str(path),
+            severity="critical",
+            claim_under_test=(
+                "Rare large character-ratio source labels avoid the direct "
+                "average-frame projected-LCU normalization barrier at growing "
+                "width under natural access."
+            ),
+            evidence=(
+                "Column/natural-second-moment/tuple-union theorems="
+                f"{metrics.get('column_orthogonality_identity_count', 0)}/"
+                f"{metrics.get('natural_second_moment_bound_theorem_count', 0)}/"
+                f"{metrics.get('iid_growing_width_union_bound_theorem_count', 0)}; "
+                "tail n/failure log2/PGM circuits/decoders="
+                f"{metrics.get('tail_n', 0)}/"
+                f"{metrics.get('tail_tuple_failure_log2_upper_bound', 0)}/"
+                f"{metrics.get('pgm_measurement_circuit_count', 0)}/"
+                f"{metrics.get('polynomial_hidden_involution_decoder_count', 0)}."
+            ),
+            required_action=(
+                "Retire natural-source large-character-ratio rescues of the "
+                "direct projected-LCU route. Search structured harmonic "
+                "amplification, a different frame factorization, or a "
+                "non-LCU covariant measurement; this theorem does not block "
+                "those alternatives."
+            ),
+            blocks_speedup_claim=True,
+        )
+    ]
+
+
+def findings_from_coset_covariant_projector_subpovm(
+    path: Path = COSET_COVARIANT_PROJECTOR_SUBPOVM_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    return [
+        DequantizationFinding(
+            id="DEQ-COSET-WHITENING-FREE-SUBPOVM-STILL-NEEDS-ORBIT-CIRCUIT-AND-BASELINES",
+            created_at=utc_now(),
+            target_type="coset_covariant_projector_subpovm",
+            target_id=str(path),
+            severity="critical",
+            claim_under_test=(
+                "The whitening-free covariant projector sub-POVM theorem "
+                "already implements an efficient code-equivalence measurement."
+            ),
+            evidence=(
+                "Projector/sub-POVM/conclusive/condition theorems="
+                f"{metrics.get('normalized_projector_theorem_count', 0)}/"
+                f"{metrics.get('covariant_subpovm_validity_theorem_count', 0)}/"
+                f"{metrics.get('conclusive_probability_frame_formula_theorem_count', 0)}/"
+                f"{metrics.get('inverse_condition_conclusive_lower_bound_theorem_count', 0)}; "
+                "tail information/conclusive/gain over product PGM="
+                f"{metrics.get('tail_subpovm_mutual_information_bits', 0)}/"
+                f"{metrics.get('tail_subpovm_conclusive_probability', 0)}/"
+                f"{metrics.get('tail_subpovm_information_gain_over_product_pgm_bits', 0)}; "
+                "direct conclusive/structured maximal dilation/circuits/"
+                "outcomes/decoders/classical separations="
+                f"{metrics.get('tail_direct_uniform_projector_conclusive_probability', 0)}/"
+                f"{metrics.get('structured_maximal_effect_amplification_count', 0)}/"
+                f"{metrics.get('uniform_covariant_natural_subpovm_circuit_count', 0)}/"
+                f"{metrics.get('compressed_hidden_label_outcome_count', 0)}/"
+                f"{metrics.get('polynomial_hidden_involution_decoder_count', 0)}/"
+                f"{metrics.get('classical_separation_theorem_count', 0)}."
+            ),
+            required_action=(
+                "Transfer the projector-orbit construction to the physical "
+                "code-equivalence wreath group, synthesize a uniform harmonic "
+                "Naimark dilation with compressed outcomes, prove all-n frame "
+                "condition and decoding, and beat separate strong Fourier plus "
+                "legal classical code baselines."
+            ),
+            blocks_speedup_claim=True,
+        )
+    ]
+
+
+def findings_from_self_dual_wreath_projector_subpovm(
+    path: Path = SELF_DUAL_WREATH_PROJECTOR_SUBPOVM_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    return [
+        DequantizationFinding(
+            id="DEQ-CODE-WREATH-PROJECTOR-SUBPOVM-CONDITION-AND-NAIMARK-OPEN",
+            created_at=utc_now(),
+            target_type="self_dual_wreath_projector_subpovm_transfer",
+            target_id=str(path),
+            severity="critical",
+            claim_under_test=(
+                "The group-general projector sub-POVM transfer already solves "
+                "the physical code-equivalence wreath HSP."
+            ),
+            evidence=(
+                "Transfer theorem/tail moment-only conclusive log2/selected "
+                "inverse-condition floor="
+                f"{metrics.get('wreath_projector_subpovm_transfer_theorem_count', 0)}/"
+                f"{metrics.get('tail_moment_only_conclusive_log2_lower_bound', 0)}/"
+                f"{metrics.get('minimum_selected_inverse_condition_conclusive_floor', 0)}; "
+                "natural all-sector conditions/circuits/outcomes/decoders="
+                f"{metrics.get('natural_all_sector_polynomial_condition_theorem_count', 0)}/"
+                f"{metrics.get('uniform_wreath_covariant_subpovm_circuit_count', 0)}/"
+                f"{metrics.get('compressed_permutation_outcome_transform_count', 0)}/"
+                f"{metrics.get('polynomial_hidden_permutation_decoder_count', 0)}."
+                " The direct uniform-label dilation tail conclusive log2 and "
+                "structured maximal dilations are "
+                f"{metrics.get('tail_direct_uniform_projector_conclusive_log2_probability', 0)}/"
+                f"{metrics.get('structured_maximal_effect_dilation_count', 0)}."
+            ),
+            required_action=(
+                "Prove natural all-sector wreath frame condition, synthesize "
+                "the full covariant projector-orbit Naimark dilation with "
+                "compressed permutation outcomes, and decode against public-"
+                "generator classical code-equivalence baselines."
+            ),
+            blocks_speedup_claim=True,
+        )
+    ]
+
+
+def findings_from_self_dual_wreath_subpovm_moments(
+    path: Path = SELF_DUAL_WREATH_SUBPOVM_MOMENT_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    return [
+        DequantizationFinding(
+            id="DEQ-CODE-WREATH-FINITE-SUBPOVM-MOMENTS-NOT-GROWING-CONTRACTION-OR-CIRCUIT",
+            created_at=utc_now(),
+            target_type="self_dual_wreath_subpovm_moment_certificate",
+            target_id=str(path),
+            severity="critical",
+            claim_under_test=(
+                "Finite high-order wreath moment certificates already prove "
+                "and implement a scalable code-equivalence measurement."
+            ),
+            evidence=(
+                "Exact/order4/order16 W3 natural conclusive="
+                f"{metrics.get('exact_w3_natural_average_conclusive_probability', 0)}/"
+                f"{metrics.get('order_four_certified_natural_average_conclusive_lower_bound', 0)}/"
+                f"{metrics.get('order_sixteen_certified_natural_average_conclusive_lower_bound', 0)}; "
+                "tail order/all-sector contractions/natural theorems/maximal "
+                "dilations/decoders="
+                f"{metrics.get('tail_factor_two_moment_order_upper_bound', 0)}/"
+                f"{metrics.get('all_sector_growing_order_moment_contraction_count', 0)}/"
+                f"{metrics.get('natural_source_equal_sector_bypass_theorem_count', 0)}/"
+                f"{metrics.get('growing_order_all_unequal_contraction_count', 0)}/"
+                f"{metrics.get('all_order_natural_word_map_reduction_count', 0)}/"
+                f"{metrics.get('growing_order_word_map_contraction_count', 0)}/"
+                f"{metrics.get('natural_tuple_moment_concentration_theorem_count', 0)}/"
+                f"{metrics.get('single_walk_mean_mixing_theorem_count', 0)}/"
+                f"{metrics.get('coupled_k_walk_contraction_count', 0)}/"
+                f"{metrics.get('natural_average_inverse_polynomial_conclusive_theorem_count', 0)}/"
+                f"{metrics.get('structured_maximal_effect_dilation_count', 0)}/"
+                f"{metrics.get('polynomial_hidden_permutation_decoder_count', 0)}."
+            ),
+            required_action=(
+                "Construct a growing-order contraction for arbitrary "
+                "identity/bridge subset-word statistics, control the vanishing "
+                "discarded equal-sector mass, prove concentration to natural "
+                "tuple inverse-polynomial conclusive probability, and "
+                "separately synthesize the maximal-effect dilation and "
+                "permutation decoder."
+            ),
+            blocks_speedup_claim=True,
+        )
+    ]
+
+
+def findings_from_self_dual_wreath_natural_unequal(
+    path: Path = SELF_DUAL_WREATH_NATURAL_UNEQUAL_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    return [
+        DequantizationFinding(
+            id="DEQ-CODE-WREATH-NATURAL-UNEQUAL-DOMINANCE-NOT-MOMENT-ALGORITHM",
+            created_at=utc_now(),
+            target_type="self_dual_wreath_natural_unequal_dominance",
+            target_id=str(path),
+            severity="critical",
+            claim_under_test=(
+                "Vanishing natural equal-sector mass already yields a "
+                "scalable code-equivalence measurement."
+            ),
+            evidence=(
+                "Source-pair law/all-unequal dominance/equal-sector bypass="
+                f"{metrics.get('physical_label_as_two_plancherel_draws_theorem_count', 0)}/"
+                f"{metrics.get('threshold_tuple_all_unequal_dominance_theorem_count', 0)}/"
+                f"{metrics.get('equal_commutator_natural_critical_path_bypass_count', 0)}; "
+                "tail any-equal/all-unequal="
+                f"{metrics.get('tail_any_equal_label_probability', 0)}/"
+                f"{metrics.get('tail_all_unequal_tuple_probability', 0)}; "
+                "growing unequal contraction/conclusive theorem/dilation/decoder="
+                f"{metrics.get('growing_order_all_unequal_contraction_count', 0)}/"
+                f"{metrics.get('natural_average_inverse_polynomial_conclusive_theorem_count', 0)}/"
+                f"{metrics.get('structured_maximal_effect_dilation_count', 0)}/"
+                f"{metrics.get('polynomial_hidden_permutation_decoder_count', 0)}."
+            ),
+            required_action=(
+                "Stop treating mixed equal-pair commutator recoupling as the "
+                "natural asymptotic bottleneck. Contract growing moments on "
+                "arbitrary all-unequal tuples, then synthesize and baseline "
+                "the corresponding maximal-effect measurement."
+            ),
+            blocks_speedup_claim=True,
+        )
+    ]
+
+
+def findings_from_self_dual_wreath_natural_word_map(
+    path: Path = SELF_DUAL_WREATH_NATURAL_WORD_MAP_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    return [
+        DequantizationFinding(
+            id="DEQ-CODE-WREATH-NATURAL-WORD-MAP-NOT-GROWING-CONTRACTION",
+            created_at=utc_now(),
+            target_type="self_dual_wreath_natural_moment_word_map",
+            target_id=str(path),
+            severity="critical",
+            claim_under_test=(
+                "An all-order source-averaged character identity already "
+                "provides the high-order frame moment algorithm."
+            ),
+            evidence=(
+                "All-order reduction/irrep sum removed/validation failures="
+                f"{metrics.get('all_order_source_averaged_word_map_reduction_count', 0)}/"
+                f"{metrics.get('physical_irrep_sum_eliminated_count', 0)}/"
+                f"{metrics.get('failed_character_sequence_count', 0) + metrics.get('failed_w3_spectrum_validation_count', 0)}; "
+                "tail order/log2 explicit sequence count/growing contraction/"
+                "concentration/conclusive theorem="
+                f"{metrics.get('tail_required_moment_order', 0)}/"
+                f"{metrics.get('tail_log2_explicit_bridge_sequence_count', 0)}/"
+                f"{metrics.get('growing_order_word_map_contraction_count', 0)}/"
+                f"{metrics.get('natural_tuple_moment_concentration_theorem_count', 0)}/"
+                f"{metrics.get('natural_average_inverse_polynomial_conclusive_theorem_count', 0)}."
+            ),
+            required_action=(
+                "Derive a compressed surface-word, cycle-index, or harmonic "
+                "recurrence for identity and bridge-class subset products at "
+                "growing order, then prove that the source-averaged normalized "
+                "moments control individual natural tuple success."
+            ),
+            blocks_speedup_claim=True,
+        )
+    ]
+
+
+def findings_from_self_dual_wreath_word_map_mixing(
+    path: Path = SELF_DUAL_WREATH_WORD_MAP_MIXING_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    return [
+        DequantizationFinding(
+            id="DEQ-CODE-WREATH-SINGLE-WALK-MIXING-NOT-KCOUPLED-MOMENT",
+            created_at=utc_now(),
+            target_type="self_dual_wreath_word_map_mixing",
+            target_id=str(path),
+            severity="critical",
+            claim_under_test=(
+                "Rapid mixing of the one-word statistic proves the natural "
+                "k-copy high-order frame moment."
+            ),
+            evidence=(
+                "Mean mixing theorem/tail log2 error ratio="
+                f"{metrics.get('single_walk_mean_mixing_theorem_count', 0)}/"
+                f"{metrics.get('tail_log2_error_to_stationary_ratio_upper_bound', 0)}; "
+                "tail kth-moment interval width/coupled contraction/"
+                "concentration="
+                f"{metrics.get('tail_log2_unresolved_kth_moment_interval_width', 0)}/"
+                f"{metrics.get('coupled_k_walk_contraction_count', 0)}/"
+                f"{metrics.get('word_map_concentration_theorem_count', 0)}."
+            ),
+            required_action=(
+                "Analyze the shared-generator k-particle lazy walk or prove a "
+                "quenched concentration bound for the identity/bridge hitting "
+                "statistic. Do not substitute annealed mean mixing."
+            ),
+            blocks_speedup_claim=True,
+        )
+    ]
+
+
+def findings_from_self_dual_wreath_coupled_word_walk_gap(
+    path: Path = SELF_DUAL_WREATH_COUPLED_WORD_WALK_GAP_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    return [
+        DequantizationFinding(
+            id="DEQ-CODE-WREATH-CONSTANT-GAP-NOT-TYPICAL-MOMENT",
+            created_at=utc_now(),
+            target_type="self_dual_wreath_coupled_word_walk_gap",
+            target_id=str(path),
+            severity="critical",
+            claim_under_test=(
+                "A constant gap for the unconditional coupled word walk "
+                "proves a typical all-unequal projector-sub-POVM rate."
+            ),
+            evidence=(
+                "Coupled contraction/gap="
+                f"{metrics.get('coupled_k_walk_contraction_count', 0)}/"
+                f"{metrics.get('tail_coupled_spectral_gap_lower_bound', 0)}; "
+                "tail transient-to-stationary/root-to-second-scale log2 gaps="
+                f"{metrics.get('tail_log2_transient_to_stationary_ratio_upper_bound', 0)}/"
+                f"{metrics.get('tail_log2_root_to_second_moment_scale_gap', 0)}; "
+                "conditioned kernels/conclusive theorems="
+                f"{metrics.get('typical_all_unequal_conditioned_kernel_count', 0)}/"
+                f"{metrics.get('natural_average_inverse_polynomial_conclusive_theorem_count', 0)}."
+            ),
+            required_action=(
+                "Remove rare equal one-dimensional sectors by deriving the "
+                "all-unequal conditioned normalized-character kernel, then "
+                "prove a level-sensitive growing-order contraction at the "
+                "2^-k frame-eigenvalue scale."
+            ),
+            blocks_speedup_claim=True,
+        )
+    ]
+
+
+def findings_from_self_dual_wreath_all_unequal_conditioned_kernel(
+    path: Path = SELF_DUAL_WREATH_ALL_UNEQUAL_CONDITIONED_KERNEL_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    return [
+        DequantizationFinding(
+            id="DEQ-CODE-WREATH-HALF-NORM-NOT-SIMULTANEOUS-K-SCALE",
+            created_at=utc_now(),
+            target_type="self_dual_wreath_all_unequal_conditioned_kernel",
+            target_id=str(path),
+            severity="critical",
+            claim_under_test=(
+                "The exact all-unequal conditioned kernel and B<=I/2 bound "
+                "prove an efficient projector-sub-POVM."
+            ),
+            evidence=(
+                "Conditioned kernel/word reduction/half-norm bounds="
+                f"{metrics.get('typical_all_unequal_conditioned_kernel_count', 0)}/"
+                f"{metrics.get('all_order_conditioned_word_map_reduction_count', 0)}/"
+                f"{metrics.get('all_unequal_frame_half_norm_bound_count', 0)}; "
+                "tail root-to-second-scale gap/simultaneous contraction/"
+                "conclusive theorem="
+                f"{metrics.get('tail_log2_root_to_second_moment_scale_gap', 0)}/"
+                f"{metrics.get('simultaneous_k_coordinate_contraction_count', 0)}/"
+                f"{metrics.get('natural_average_inverse_polynomial_conclusive_theorem_count', 0)}."
+            ),
+            required_action=(
+                "Use the signed conditioned kernel to derive a Fourier-level "
+                "or tensor-overlap bound that decays exponentially in all k "
+                "active unequal coordinates; retain separate circuit and "
+                "decoder obligations."
+            ),
+            blocks_speedup_claim=True,
+        )
+    ]
+
+
+def findings_from_self_dual_wreath_global_partition_collision(
+    path: Path = SELF_DUAL_WREATH_GLOBAL_PARTITION_COLLISION_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    return [
+        DequantizationFinding(
+            id="DEQ-CODE-WREATH-GLOBAL-DISTINCTNESS-NOT-NORM-BOUND",
+            created_at=utc_now(),
+            target_type="self_dual_wreath_global_partition_collision",
+            target_id=str(path),
+            severity="critical",
+            claim_under_test=(
+                "Asymptotic global distinctness of source partitions proves "
+                "the all-unequal frame contraction."
+            ),
+            evidence=(
+                "Global-distinct theorem/repeated half-norm counterexamples/"
+                "excluded counterexamples="
+                f"{metrics.get('asymptotic_global_all_distinct_dominance_theorem_count', 0)}/"
+                f"{metrics.get('repeated_source_half_norm_counterexample_count', 0)}/"
+                f"{metrics.get('repeated_source_counterexample_exclusion_count', 0)}; "
+                "collision-free norm/contraction/conclusive theorems="
+                f"{metrics.get('collision_free_tuple_norm_theorem_count', 0)}/"
+                f"{metrics.get('collision_free_growing_moment_contraction_count', 0)}/"
+                f"{metrics.get('natural_average_inverse_polynomial_conclusive_theorem_count', 0)}."
+            ),
+            required_action=(
+                "Prove a uniform character-ratio, projector-overlap, or "
+                "Fourier-level contraction for arbitrary globally distinct "
+                "source-partition tuples; do not infer it from collision "
+                "probability alone."
+            ),
+            blocks_speedup_claim=True,
+        )
+    ]
+
+
+def findings_from_self_dual_wreath_collision_free_frame_probe(
+    path: Path = SELF_DUAL_WREATH_COLLISION_FREE_FRAME_PROBE_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    return [
+        DequantizationFinding(
+            id="DEQ-CODE-WREATH-FINITE-COLLISION-FREE-NOT-ALL-N-NORM",
+            created_at=utc_now(),
+            target_type="self_dual_wreath_collision_free_frame_probe",
+            target_id=str(path),
+            severity="critical",
+            claim_under_test=(
+                "Finite collision-free frame norms near 2^{1-k} prove the "
+                "all-n natural measurement bound."
+            ),
+            evidence=(
+                "Probe count/max eigenpair residual/exact-target violations/"
+                "maximum target ratio="
+                f"{metrics.get('collision_free_probe_count', 0)}/"
+                f"{metrics.get('maximum_top_eigenpair_residual', 0)}/"
+                f"{metrics.get('w5_exact_two_to_one_minus_k_violation_count', 0)}/"
+                f"{metrics.get('maximum_w5_top_to_target_ratio', 0)}; "
+                "polynomial-factor norm/growing contraction theorems="
+                f"{metrics.get('collision_free_polynomial_factor_norm_theorem_count', 0)}/"
+                f"{metrics.get('collision_free_growing_moment_contraction_count', 0)}."
+            ),
+            required_action=(
+                "Prove ||B||<=poly(n)2^-k for arbitrary globally distinct "
+                "source tuples using representation-theoretic overlap or "
+                "character-ratio bounds, then retain separate implementation "
+                "and decoder obligations."
+            ),
+            blocks_speedup_claim=True,
+        )
+    ]
+
+
+def findings_from_self_dual_wreath_character_ratio_contract(
+    path: Path = SELF_DUAL_WREATH_CHARACTER_RATIO_CONTRACT_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    return [
+        DequantizationFinding(
+            id="DEQ-CODE-WREATH-POINTWISE-CHARACTER-NOT-JOINT-WORD-BOUND",
+            created_at=utc_now(),
+            target_type="self_dual_wreath_character_ratio_contract",
+            target_id=str(path),
+            severity="critical",
+            claim_under_test=(
+                "Known pointwise S_n character-ratio bounds already prove "
+                "collision-free frame contraction."
+            ),
+            evidence=(
+                "Factorization failures/literature bounds/typical-shape tails/"
+                "short-word theorems/norm theorems="
+                f"{metrics.get('character_factorization_failure_count', 0)}/"
+                f"{metrics.get('literature_linked_character_bound_count', 0)}/"
+                f"{metrics.get('simultaneous_typical_shape_tail_theorem_count', 0)}/"
+                f"{metrics.get('joint_short_word_anticoncentration_theorem_count', 0)}/"
+                f"{metrics.get('collision_free_polynomial_factor_norm_theorem_count', 0)}."
+            ),
+            required_action=(
+                "Bound the aggregate contribution of correlated short subset "
+                "words and aligned character signs across all globally "
+                "distinct source partitions before invoking the moment "
+                "certificate."
+            ),
+            blocks_speedup_claim=True,
+        )
+    ]
+
+
+def findings_from_self_dual_wreath_short_word_profile(
+    path: Path = SELF_DUAL_WREATH_SHORT_WORD_PROFILE_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    return [
+        DequantizationFinding(
+            id="DEQ-CODE-WREATH-MARGINAL-WORD-TAIL-NOT-JOINT",
+            created_at=utc_now(),
+            target_type="self_dual_wreath_short_word_profile",
+            target_id=str(path),
+            severity="critical",
+            claim_under_test=(
+                "Uniform fixed-mask word marginals and negligible mask "
+                "collisions prove joint character-product anti-concentration."
+            ),
+            evidence=(
+                "Uniformity failures/tail half-n log2 probability/mask "
+                "collision log2 bound/non-diagonal correlation/joint tail="
+                f"{metrics.get('fixed_mask_uniformity_failure_count', 0)}/"
+                f"{metrics.get('tail_half_n_log2_short_probability', 0)}/"
+                f"{metrics.get('tail_log2_pairwise_mask_collision_union_bound', 0)}/"
+                f"{metrics.get('non_diagonal_shared_generator_correlation_theorem_count', 0)}/"
+                f"{metrics.get('joint_short_word_anticoncentration_theorem_count', 0)}."
+            ),
+            required_action=(
+                "Classify distinct-mask joint word maps by incidence rank or "
+                "overlap hypergraph and prove product mixing despite shared "
+                "bridge generators and character-sign correlations."
+            ),
+            blocks_speedup_claim=True,
+        )
+    ]
+
+
+def findings_from_self_dual_wreath_mask_hypergraph_reduction(
+    path: Path = SELF_DUAL_WREATH_MASK_HYPERGRAPH_REDUCTION_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    return [
+        DequantizationFinding(
+            id="DEQ-CODE-WREATH-TWO-CORE-REDUCTION-NOT-TAIL-BOUND",
+            created_at=utc_now(),
+            target_type="self_dual_wreath_mask_hypergraph_reduction",
+            target_id=str(path),
+            severity="critical",
+            claim_under_test=(
+                "Private-column elimination proves joint short-word "
+                "anti-concentration for collision-free source tuples."
+            ),
+            evidence=(
+                "Private-column failures/two-core reductions/W5 nonzero "
+                "triangles/max correlation/two-core tail theorems="
+                f"{metrics.get('private_column_validation_failure_count', 0)}/"
+                f"{metrics.get('mask_hypergraph_two_core_reduction_count', 0)}/"
+                f"{metrics.get('w5_nonzero_collision_free_triangle_count', 0)}/"
+                f"{metrics.get('maximum_w5_collision_free_triangle_correlation', 0)}/"
+                f"{metrics.get('joint_two_core_anticoncentration_theorem_count', 0)}."
+            ),
+            required_action=(
+                "Classify dense incidence two-cores by cycle rank or excess "
+                "and prove aggregate character-product decay over their "
+                "growing-order distribution."
+            ),
+            blocks_speedup_claim=True,
+        )
+    ]
+
+
+def findings_from_self_dual_wreath_subgroup_twirl_reduction(
+    path: Path = SELF_DUAL_WREATH_SUBGROUP_TWIRL_REDUCTION_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    return [
+        DequantizationFinding(
+            id=(
+                "DEQ-CODE-WREATH-SUBGROUP-TWIRL-"
+                "NOT-PARTIAL-TRACE-BOUND"
+            ),
+            created_at=utc_now(),
+            target_type="self_dual_wreath_subgroup_twirl_reduction",
+            target_id=str(path),
+            severity="critical",
+            claim_under_test=(
+                "The subgroup-twirl and isotypic reduction prove the "
+                "collision-free poly(n) 2^-k frame-norm bound."
+            ),
+            evidence=(
+                "W4 validations/failures/twirl/isotypic theorems/tail "
+                "multiplicity log2/uniform partial-trace theorems="
+                f"{metrics.get('complete_w4_collision_free_twirl_validation_count', 0)}/"
+                f"{metrics.get('finite_twirl_validation_failure_count', 0)}/"
+                f"{metrics.get('subgroup_twirl_identity_theorem_count', 0)}/"
+                f"{metrics.get('isotypic_partial_trace_reduction_theorem_count', 0)}/"
+                f"{metrics.get('tail_maximum_restriction_multiplicity_log2', 0)}/"
+                f"{metrics.get('uniform_partial_trace_delocalization_theorem_count', 0)}."
+            ),
+            required_action=(
+                "Bound the normalized partial trace of the base tensor "
+                "projector in every naturally occupied diagonal-S_n "
+                "multiplicity block, or exhibit an asymptotic natural sector "
+                "whose norm violates the poly(n) 2^-k target."
+            ),
+            blocks_speedup_claim=True,
+        )
+    ]
+
+
+def findings_from_self_dual_wreath_orientation_fourier_reduction(
+    path: Path = SELF_DUAL_WREATH_ORIENTATION_FOURIER_REDUCTION_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    return [
+        DequantizationFinding(
+            id="DEQ-CODE-WREATH-ORIENTATION-SUPPORT-NOT-NORM-BOUND",
+            created_at=utc_now(),
+            target_type="self_dual_wreath_orientation_fourier_reduction",
+            target_id=str(path),
+            severity="critical",
+            claim_under_test=(
+                "Global source-partition distinctness leaves polynomially "
+                "many orientation projectors and therefore closes the "
+                "collision-free frame-norm bound."
+            ),
+            evidence=(
+                "Support-saturated records/tail n/k/log2 active/minimum "
+                "active fraction/first saturation step/projector-sum norm "
+                "theorems="
+                f"{metrics.get('full_orientation_support_saturation_record_count', 0)}/"
+                f"{metrics.get('tail_n', 0)}/"
+                f"{metrics.get('tail_copy_count', 0)}/"
+                f"{metrics.get('tail_log2_maximum_active_orientation_count', 0)}/"
+                f"{metrics.get('tail_minimum_active_orientation_fraction', 0)}/"
+                f"{metrics.get('tail_first_full_support_saturation_step', 0)}/"
+                f"{metrics.get('uniform_projector_sum_norm_theorem_count', 0)}."
+            ),
+            required_action=(
+                "Analyze canonical angles, fusion-frame coherence, or exact "
+                "recoupling geometry for the fully supported projector sum; "
+                "prove a polynomial norm bound or construct an asymptotic "
+                "natural counterexample."
+            ),
+            blocks_speedup_claim=True,
+        )
+    ]
+
+
+def findings_from_self_dual_wreath_orientation_fusion_moment(
+    path: Path = SELF_DUAL_WREATH_ORIENTATION_FUSION_MOMENT_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    return [
+        DequantizationFinding(
+            id="DEQ-CODE-WREATH-SECOND-FUSION-MOMENT-NOT-NORM",
+            created_at=utc_now(),
+            target_type="self_dual_wreath_orientation_fusion_moment",
+            target_id=str(path),
+            severity="critical",
+            claim_under_test=(
+                "A constant collision lower-bound ratio and small pairwise "
+                "fusion coherence prove the uniform projector-sum norm bound."
+            ),
+            evidence=(
+                "Pair validations/failures/common-range pairs/maximum "
+                "scaling collision ratio/tail collision ratio/tail effective "
+                "rank log2/higher-moment norm theorems="
+                f"{metrics.get('pair_overlap_formula_validation_count', 0)}/"
+                f"{metrics.get('finite_pair_overlap_validation_failure_count', 0)}/"
+                f"{metrics.get('w4_common_range_pair_count', 0)}/"
+                f"{metrics.get('maximum_scaling_collision_lower_bound_to_target_ratio', 0)}/"
+                f"{metrics.get('tail_collision_lower_bound_to_target_ratio', 0)}/"
+                f"{metrics.get('tail_maximum_log2_effective_rank', 0)}/"
+                f"{metrics.get('higher_orientation_moment_norm_theorem_count', 0)}."
+            ),
+            required_action=(
+                "Control growing orientation moments or the operator-valued "
+                "projector Gram matrix strongly enough to upper-bound its "
+                "top eigenvalue; explicitly exclude small exceptional "
+                "high-eigenvalue subspaces."
             ),
             blocks_speedup_claim=True,
         )
@@ -6775,6 +9365,290 @@ def findings_from_dcp_covariant_pgm(
     ]
 
 
+def findings_from_dcp_pgm_gram_block_encoding(
+    path: Path = DCP_PGM_GRAM_BLOCK_ENCODING_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    return [
+        DequantizationFinding(
+            id="DEQ-DCP-PGM-GRAM-BLOCK-ENCODING-NORMALIZATION",
+            created_at=utc_now(),
+            target_type="candidate",
+            target_id="DHS-GOWERS-SIEVE",
+            severity="critical",
+            claim_under_test=(
+                "A polynomial projected block encoding of the DCP phase-state "
+                "Gram operator supplies a polynomial PGM circuit."
+            ),
+            evidence=(
+                "Exact projected controls/failures="
+                f"{metrics.get('finite_control_count', 0)}/"
+                f"{metrics.get('finite_control_failure_count', 0)}, "
+                "Gram normalization log2 slope="
+                f"{metrics.get('gram_block_encoding_normalization_log2_slope', 'unknown')}, "
+                "generic superpolynomial amplification rows="
+                f"{metrics.get('generic_superpolynomial_fiber_amplification_row_count', 0)}, "
+                "structured polynomial preconditioners="
+                f"{metrics.get('uniform_polynomial_structured_preconditioner_count', 0)}."
+            ),
+            required_action=(
+                "Retire the unqualified Gram-block-encoding task. Any survivor "
+                "must specify a source-structured preconditioner, collision "
+                "walk, or different full-rank measurement and charge "
+                "normalization, condition number, precision, advice, and every "
+                "state preparation/reflection. Do not generalize this direct-"
+                "route obstruction to arbitrary collective measurements."
+            ),
+            blocks_speedup_claim=True,
+        )
+    ]
+
+
+def findings_from_dcp_pgm_qsvt_degree(
+    path: Path = DCP_PGM_QSVT_DEGREE_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    return [
+        DequantizationFinding(
+            id="DEQ-DCP-PGM-GENERIC-QSVT-SPECTRAL-SPACING",
+            created_at=utc_now(),
+            target_type="candidate",
+            target_id="DHS-GOWERS-SIEVE",
+            severity="critical",
+            claim_under_test=(
+                "Generic bounded QSVT rescaling of the direct DCP count or "
+                "amplitude encoding has polynomial degree."
+            ),
+            evidence=(
+                "All-n lifted controls/failures="
+                f"{metrics.get('exact_lifted_source_count', 0)}/"
+                f"{metrics.get('exact_lifted_source_failure_count', 0)}, "
+                "tail count/amplitude degree lower bounds log2="
+                f"{metrics.get('tail_count_encoding_degree_lower_bound_log2', 'unknown')}/"
+                f"{metrics.get('tail_amplitude_encoding_degree_lower_bound_log2', 'unknown')}, "
+                "average-source prevalence theorems="
+                f"{metrics.get('average_case_random_source_prevalence_theorem_count', 0)}."
+            ),
+            required_action=(
+                "Reject generic polynomial transforms of the direct encodings. "
+                "A survivor must change the encoding normalization, exploit "
+                "proved random-source structure, or use a collision walk or "
+                "different full-rank measurement. Preserve the distinction "
+                "between the exact worst-case theorem and the still-open "
+                "average-source prevalence theorem."
+            ),
+            blocks_speedup_claim=True,
+        )
+    ]
+
+
+def findings_from_dcp_quenched_occupancy(
+    path: Path = DCP_QUENCHED_OCCUPANCY_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    return [
+        DequantizationFinding(
+            id="DEQ-DCP-QUENCHED-POISSON-DIRECT-QSVT-TRANSFER",
+            created_at=utc_now(),
+            target_type="candidate",
+            target_id="DHS-GOWERS-SIEVE",
+            severity="critical",
+            claim_under_test=(
+                "Random density-one sources avoid singleton/doubleton spectral "
+                "spacing often enough for generic direct QSVT rescaling."
+            ),
+            evidence=(
+                "Mixed-moment certificates/failures="
+                f"{metrics.get('mixed_moment_certificate_count', 0)}/"
+                f"{metrics.get('two_target_transfer_failure_count', 0)}, "
+                "exact source controls/failures="
+                f"{metrics.get('exact_source_ensemble_control_count', 0)}/"
+                f"{metrics.get('exact_source_ensemble_control_failure_count', 0)}, "
+                "quenched Poisson/prevalence theorems="
+                f"{metrics.get('quenched_poisson_occupancy_theorem_count', 0)}/"
+                f"{metrics.get('random_source_singleton_doubleton_prevalence_theorem_count', 0)}."
+            ),
+            required_action=(
+                "Retire generic bounded-polynomial rescaling of the direct "
+                "count and amplitude encodings even under the random-source "
+                "contract. Search a source-aware encoding, structured "
+                "preconditioner, collision walk, or different full-rank "
+                "measurement. Do not promote the occupancy theorem to a "
+                "general circuit lower bound."
+            ),
+            blocks_speedup_claim=True,
+        )
+    ]
+
+
+def findings_from_dcp_coherent_fiber_erasure_boundary(
+    path: Path = DCP_COHERENT_FIBER_ERASURE_BOUNDARY_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    return [
+        DequantizationFinding(
+            id="DEQ-DCP-FIBER-ERASURE-ACCESS-BOUNDARY",
+            created_at=utc_now(),
+            target_type="candidate",
+            target_id="DHS-GOWERS-SIEVE",
+            severity="critical",
+            claim_under_test=(
+                "Black-box index erasure directly lower-bounds structured DCP "
+                "fiber erasure, or target-addressable preparation carries no "
+                "subset-sum decision obligation."
+            ),
+            evidence=(
+                "Black-box lower bounds/transfers="
+                f"{metrics.get('black_box_index_erasure_lower_bound_count', 0)}/"
+                f"{metrics.get('valid_black_box_lower_bound_transfer_to_structured_subset_sum_count', 0)}, "
+                "target support/witness reductions="
+                f"{metrics.get('proved_target_addressable_support_decision_reduction_count', 0)}/"
+                f"{metrics.get('proved_fixed_variable_witness_self_reduction_count', 0)}, "
+                "global-channel reductions="
+                f"{metrics.get('proved_global_collective_measurement_reduction_count', 0)}."
+            ),
+            required_action=(
+                "Do not transfer arbitrary-oracle lower bounds without a "
+                "structure-preserving reduction. Charge any target-addressable "
+                "success flag as a support-decision primitive and require "
+                "fixed-variable stability before witness claims. Audit a "
+                "global collective channel on its actual DCP-state interface."
+            ),
+            blocks_speedup_claim=True,
+        )
+    ]
+
+
+def findings_from_dcp_global_erasure_inversion(
+    path: Path = DCP_GLOBAL_ERASURE_INVERSION_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    return [
+        DequantizationFinding(
+            id="DEQ-DCP-COHERENT-ERASURE-INVERSION-REDUCTION",
+            created_at=utc_now(),
+            target_type="candidate",
+            target_id="DHS-GOWERS-SIEVE",
+            severity="critical",
+            claim_under_test=(
+                "A coherent fiber-erasure-plus-QFT implementation is weaker "
+                "than an average density-one subset-sum witness solver."
+            ),
+            evidence=(
+                "Coherence theorems/law-transfer failures/erasure-to-witness "
+                "reductions/arbitrary-PGM reductions="
+                f"{metrics.get('coherence_erasure_theorem_count', 0)}/"
+                f"{metrics.get('target_law_transfer_failure_count', 0)}/"
+                f"{metrics.get('proved_coherent_erasure_to_witness_reduction_count', 0)}/"
+                f"{metrics.get('proved_arbitrary_pgm_to_witness_reduction_count', 0)}, "
+                "asymptotic law-domination constant="
+                f"{metrics.get('poisson_asymptotic_domination_constant', 'unknown')}."
+            ),
+            required_action=(
+                "Treat common-garbage coherent erasure as the subset-sum "
+                "solver itself: invert it, measure a witness, and verify. "
+                "Search an arbitrary full-rank POVM only with an explicit "
+                "non-erasure factorization and complete circuit analysis."
+            ),
+            blocks_speedup_claim=True,
+        )
+    ]
+
+
+def findings_from_dcp_approximate_erasure_coherence(
+    path: Path = DCP_APPROXIMATE_ERASURE_COHERENCE_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    return [
+        DequantizationFinding(
+            id="DEQ-DCP-TARGET-GARBAGE-ERASURE-COHERENCE",
+            created_at=utc_now(),
+            target_type="candidate",
+            target_id="DHS-GOWERS-SIEVE",
+            severity="critical",
+            claim_under_test=(
+                "Target-dependent garbage lets exact erasure-plus-QFT achieve "
+                "inverse-polynomial relative success without an average "
+                "subset-sum witness solver."
+            ),
+            evidence=(
+                "Finite controls/failures/erasure reductions/approximate "
+                "perturbation theorems/arbitrary-PGM reductions="
+                f"{metrics.get('finite_control_count', 0)}/"
+                f"{metrics.get('finite_control_failure_count', 0)}/"
+                f"{metrics.get('inverse_polynomial_erasure_to_witness_reduction_count', 0)}/"
+                f"{metrics.get('proved_approximate_isometry_perturbation_bound_count', 0)}/"
+                f"{metrics.get('proved_arbitrary_full_rank_pgm_reduction_count', 0)}."
+            ),
+            required_action=(
+                "Retire exact erasure-plus-QFT factorizations even with "
+                "target-dependent garbage: prepare the weighted mean garbage, "
+                "invert, and verify. Investigate only quantitatively bounded "
+                "approximate isometries or genuinely non-erasure full-rank "
+                "POVMs."
+            ),
+            blocks_speedup_claim=True,
+        )
+    ]
+
+
+def findings_from_dcp_erasure_perturbation(
+    path: Path = DCP_ERASURE_PERTURBATION_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    return [
+        DequantizationFinding(
+            id="DEQ-DCP-OPERATOR-NORM-ERASURE-PERTURBATION",
+            created_at=utc_now(),
+            target_type="candidate",
+            target_id="DHS-GOWERS-SIEVE",
+            severity="critical",
+            claim_under_test=(
+                "Operator-norm approximation creates a polynomial erasure-"
+                "plus-QFT decoder without preserving the witness reduction."
+            ),
+            evidence=(
+                "Scaling/polynomial-precision rows/operator theorems/average-"
+                "only theorems/arbitrary-PGM reductions="
+                f"{metrics.get('scaling_row_count', 0)}/"
+                f"{metrics.get('polynomial_precision_sufficient_row_count', 0)}/"
+                f"{metrics.get('operator_norm_perturbation_theorem_count', 0)}/"
+                f"{metrics.get('proved_average_only_channel_perturbation_count', 0)}/"
+                f"{metrics.get('proved_arbitrary_full_rank_pgm_reduction_count', 0)}."
+            ),
+            required_action=(
+                "Retire uniform fiber-subspace operator-norm approximate "
+                "erasure routes. A survivor must prove an average-only channel "
+                "guarantee sufficient for decoding without operator control, "
+                "recover an explicit environment, or implement a non-erasure "
+                "full-rank POVM."
+            ),
+            blocks_speedup_claim=True,
+        )
+    ]
+
+
 def findings_from_dcp_contaminated_pgm(
     path: Path = DCP_CONTAMINATED_PGM_PATH,
 ) -> list[DequantizationFinding]:
@@ -7704,6 +10578,155 @@ def findings_from_dcp_subset_sum_growing_order_chain(
                 "2^k L(k)(log n+k)=o(n), with L(k)=O(k^2 log k). Search only "
                 "the final near-log window with full resources, signed observables, "
                 "or explicit non-moment basis geometry."
+            ),
+            blocks_speedup_claim=True,
+        )
+    ]
+
+
+def findings_from_dcp_subset_sum_signed_l2(
+    path: Path = DCP_SUBSET_SUM_SIGNED_L2_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    return [
+        DequantizationFinding(
+            id="DEQ-DCP-LOW-ONLY-SPARSE-SIGNED-L2-OBSTRUCTION",
+            created_at=utc_now(),
+            target_type="candidate",
+            target_id="DHS-GOWERS-SIEVE",
+            severity="critical",
+            claim_under_test=(
+                "Signs selected from exposed low labels make a polynomial "
+                "support of exact carry-adjusted high-equation hits depart from "
+                "its no-hit baseline on inverse-polynomial source mass."
+            ),
+            evidence=(
+                "Exact controls/pairs/failures="
+                f"{metrics.get('exact_control_count', 0)}/"
+                f"{metrics.get('exact_assignment_pair_count', 0)}/"
+                f"{metrics.get('exact_control_failure_count', 'unknown')}; "
+                "unit-minor/pair-independence/signed-variance theorems="
+                f"{metrics.get('unit_minor_theorem_count', 0)}/"
+                f"{metrics.get('conditional_pairwise_independence_theorem_count', 0)}/"
+                f"{metrics.get('conditional_signed_variance_identity_theorem_count', 0)}; "
+                "polynomial-support negligible-deviation theorems="
+                f"{metrics.get('polynomial_support_negligible_deviation_theorem_count', 0)}; "
+                "high-label/dense/nonlinear obstructions="
+                f"{metrics.get('proved_high_label_adaptive_signed_obstruction_count', 0)}/"
+                f"{metrics.get('proved_dense_implicit_signed_obstruction_count', 0)}/"
+                f"{metrics.get('proved_nonlinear_signed_obstruction_count', 0)}."
+            ),
+            required_action=(
+                "Reject sparse signed exact-hit scores whose coefficients are "
+                "chosen before the high labels are exposed. A surviving signed "
+                "route must use a polynomial-time full-label adaptive rule, a "
+                "dense implicit contraction, a nonlinear statistic, or an "
+                "explicit reduced-basis event; it must prove source coverage and "
+                "a witness-decoder implication."
+            ),
+            blocks_speedup_claim=True,
+        )
+    ]
+
+
+def findings_from_dcp_subset_sum_sparse_characters(
+    path: Path = DCP_SUBSET_SUM_SPARSE_CHARACTER_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    return [
+        DequantizationFinding(
+            id="DEQ-DCP-FULL-LABEL-ADAPTIVE-SPARSE-CHARACTERS",
+            created_at=utc_now(),
+            target_type="candidate",
+            target_id="DHS-GOWERS-SIEVE",
+            severity="critical",
+            claim_under_test=(
+                "A full-label adaptive polynomial-size set of subset-sum "
+                "characters retains inverse-polynomial target-dependent Fourier "
+                "mass at density one."
+            ),
+            evidence=(
+                "Exact Fourier targets/control failures="
+                f"{metrics.get('exact_fourier_target_count', 0)}/"
+                f"{metrics.get('exact_control_failure_count', 'unknown')}; "
+                "low/high/adaptive theorem counts="
+                f"{metrics.get('low_order_annihilation_theorem_count', 0)}/"
+                f"{metrics.get('high_order_simultaneous_moment_theorem_count', 0)}/"
+                f"{metrics.get('adaptive_sparse_selection_theorem_count', 0)}; "
+                "finite conclusive source rows="
+                f"{metrics.get('finite_source_failure_bound_below_one_row_count', 0)}/"
+                f"{metrics.get('scaling_row_count', 0)}; dense/general closures="
+                f"{metrics.get('proved_dense_implicit_character_obstruction_count', 0)}/"
+                f"{metrics.get('proved_general_computational_lower_bound_count', 0)}."
+            ),
+            required_action=(
+                "Stop searching polynomially sparse Fourier dictionaries, even "
+                "with frequencies chosen after seeing all labels. A surviving "
+                "character route must contract exponentially many terms through "
+                "a polynomial-size arithmetic, tensor, or quantum circuit and "
+                "prove norm, precision, source error, and witness extraction."
+            ),
+            blocks_speedup_claim=True,
+        )
+    ]
+
+
+def findings_from_dcp_subset_sum_qtt(
+    path: Path = DCP_SUBSET_SUM_QTT_PATH,
+) -> list[DequantizationFinding]:
+    payload = _read_json(path, {})
+    if not payload:
+        return []
+    metrics = payload.get("headline_metrics", {})
+    return [
+        DequantizationFinding(
+            id="DEQ-DCP-QTT-FINITE-DENSE-CONTRACTION",
+            created_at=utc_now(),
+            target_type="candidate",
+            target_id="DHS-GOWERS-SIEVE",
+            severity="high",
+            claim_under_test=(
+                "Direct target-bit quantized tensor trains compress the exact "
+                "density-one subset-sum count vector at the registered bond cap "
+                "with enough accuracy for integer count recovery."
+            ),
+            evidence=(
+                "Instances/unfoldings/max n="
+                f"{metrics.get('instance_count', 0)}/"
+                f"{metrics.get('unfolding_row_count', 0)}/"
+                f"{metrics.get('maximum_n_bits', 0)}; registered bond power="
+                f"{metrics.get('registered_bond_power', 'unknown')}; tail "
+                "survivors/source/control required ranks="
+                f"{metrics.get('tail_source_registered_cap_survivor_count', 0)}/"
+                f"{metrics.get('tail_best_source_required_rank', 'unknown')}/"
+                f"{metrics.get('tail_best_permuted_required_rank', 'unknown')}; "
+                "fitted log-rank slope="
+                f"{metrics.get('fitted_log2_required_rank_slope_per_n', 'unknown')}; "
+                "tail raw/zero-baseline-excess/control-excess coverage="
+                f"{metrics.get('tail_best_source_qtt_legal_coverage', 'unknown')}/"
+                f"{metrics.get('tail_mean_source_qtt_coverage_excess_over_zero_frequency_constant', 'unknown')}/"
+                f"{metrics.get('tail_mean_source_qtt_coverage_excess_over_permuted', 'unknown')}; "
+                "tail inverse-polynomial nontrivial excess instances="
+                f"{metrics.get('tail_inverse_polynomial_nontrivial_coverage_excess_instance_count', 0)}; "
+                "asymptotic/dense/witness theorems="
+                f"{metrics.get('proved_asymptotic_qtt_bond_lower_bound_count', 0)}/"
+                f"{metrics.get('proved_polynomial_dense_character_contraction_count', 0)}/"
+                f"{metrics.get('polynomial_witness_decoder_count', 0)}."
+            ),
+            required_action=(
+                "Treat this as a finite rejection of the registered direct QTT "
+                "cap, not a tensor-rank lower bound. Reopen only with a new "
+                "algebraic tensorization or ordering rule, held-out scaling, a "
+                "uniform polynomial-bond theorem, additive-half accuracy on "
+                "fixed-variable subinstances, a source-specific coverage excess "
+                "beyond the zero-frequency histogram baseline, and verified "
+                "witness extraction without materializing the full count vector."
             ),
             blocks_speedup_claim=True,
         )
@@ -8724,6 +11747,13 @@ def build_dequantization_report() -> dict[str, Any]:
         *findings_from_dcp_hashed_fiber_measurement(),
         *findings_from_dcp_reference_projection(),
         *findings_from_dcp_covariant_pgm(),
+        *findings_from_dcp_pgm_gram_block_encoding(),
+        *findings_from_dcp_pgm_qsvt_degree(),
+        *findings_from_dcp_quenched_occupancy(),
+        *findings_from_dcp_coherent_fiber_erasure_boundary(),
+        *findings_from_dcp_global_erasure_inversion(),
+        *findings_from_dcp_approximate_erasure_coherence(),
+        *findings_from_dcp_erasure_perturbation(),
         *findings_from_dcp_contaminated_pgm(),
         *findings_from_dcp_subset_sum_bridge(),
         *findings_from_dcp_subset_sum_lattice_search(),
@@ -8749,6 +11779,9 @@ def build_dequantization_report() -> dict[str, Any]:
         *findings_from_dcp_subset_sum_conditioned_tail(),
         *findings_from_dcp_subset_sum_growing_order(),
         *findings_from_dcp_subset_sum_growing_order_chain(),
+        *findings_from_dcp_subset_sum_signed_l2(),
+        *findings_from_dcp_subset_sum_sparse_characters(),
+        *findings_from_dcp_subset_sum_qtt(),
         *findings_from_dcp_subset_sum_embedding_volume(),
         *findings_from_dcp_subset_sum_short_relations(),
         *findings_from_dcp_subset_sum_carry_relations(),
@@ -8796,6 +11829,31 @@ def build_dequantization_report() -> dict[str, Any]:
         *findings_from_goppa_scaling_frontier(),
         *findings_from_goppa_syzygy_frontier(),
         *findings_from_goppa_hull_projector_frontier(),
+        *findings_from_self_dual_code_boundary(),
+        *findings_from_self_dual_local_obstruction(),
+        *findings_from_self_dual_global_orbit(),
+        *findings_from_self_dual_hsp_applicability(),
+        *findings_from_self_dual_rowspace_hsp(),
+        *findings_from_self_dual_automorphisms(),
+        *findings_from_self_dual_high_order_automorphisms(),
+        *findings_from_self_dual_fixed_order_sparsity(),
+        *findings_from_self_dual_wreath_spectrum(),
+        *findings_from_self_dual_wreath_hecke(),
+        *findings_from_self_dual_wreath_pgm_polar(),
+        *findings_from_self_dual_wreath_subset_carrier(),
+        *findings_from_self_dual_wreath_carrier_orbit_growth(),
+        *findings_from_self_dual_wreath_harmonic_carrier_schema(),
+        *findings_from_self_dual_wreath_commutant_transfer_audit(),
+        *findings_from_self_dual_wreath_physical_frame_blocks(),
+        *findings_from_self_dual_wreath_unequal_frame_blocks(),
+        *findings_from_complete_w3_tuple_audit(),
+        *findings_from_self_dual_wreath_character_moments(),
+        *findings_from_self_dual_wreath_third_moment_contraction(),
+        *findings_from_self_dual_wreath_all_unequal_third_moment(),
+        *findings_from_self_dual_wreath_equal_commutator_audit(),
+        *findings_from_self_dual_wreath_stable_commutator_rank(),
+        *findings_from_self_dual_wreath_typical_partition_portfolio(),
+        *findings_from_self_dual_wreath_typical_recoupling_transfer(),
         *findings_from_tanner_code_search(),
         *findings_from_reed_muller_code_search(),
         *findings_from_rank_metric_code_search(),
@@ -8873,9 +11931,30 @@ def build_dequantization_report() -> dict[str, Any]:
         *findings_from_coset_typical_source_coverage(),
         *findings_from_coset_typical_uniform_source_probe(),
         *findings_from_coset_typical_parity_complete_separator(),
+        *findings_from_coset_typical_parity_class_contraction(),
         *findings_from_coset_same_hidden_target_law(),
         *findings_from_coset_commutant_information_obstruction(),
         *findings_from_coset_carrier_information_audit(),
+        *findings_from_coset_natural_multicopy_pgm(),
+        *findings_from_coset_pgm_gain_localization(),
+        *findings_from_coset_pgm_average_frame_block_encoding(),
+        *findings_from_coset_natural_character_ratio_concentration(),
+        *findings_from_coset_covariant_projector_subpovm(),
+        *findings_from_self_dual_wreath_projector_subpovm(),
+        *findings_from_self_dual_wreath_subpovm_moments(),
+        *findings_from_self_dual_wreath_natural_unequal(),
+        *findings_from_self_dual_wreath_natural_word_map(),
+        *findings_from_self_dual_wreath_word_map_mixing(),
+        *findings_from_self_dual_wreath_coupled_word_walk_gap(),
+        *findings_from_self_dual_wreath_all_unequal_conditioned_kernel(),
+        *findings_from_self_dual_wreath_global_partition_collision(),
+        *findings_from_self_dual_wreath_collision_free_frame_probe(),
+        *findings_from_self_dual_wreath_character_ratio_contract(),
+        *findings_from_self_dual_wreath_short_word_profile(),
+        *findings_from_self_dual_wreath_mask_hypergraph_reduction(),
+        *findings_from_self_dual_wreath_subgroup_twirl_reduction(),
+        *findings_from_self_dual_wreath_orientation_fourier_reduction(),
+        *findings_from_self_dual_wreath_orientation_fusion_moment(),
         *findings_from_coset_strong_fourier_information(),
         *findings_from_coset_entanglement_width_gate(),
         *findings_from_coset_growing_width_architecture(),

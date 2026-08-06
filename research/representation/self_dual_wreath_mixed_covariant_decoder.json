@@ -1,0 +1,396 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Plancherel sector weights make inverse QFT sufficient.",
+      "resolution": "They control only Tr(C_nu). Mixed decoding depends on the full multiplicity operators and their coherent tight-frame factors.",
+      "resolved": false
+    },
+    {
+      "objection": "Large seed rank proves exponential time.",
+      "resolution": "No. Exponentially many orthogonal junk states fit in polynomially many qubits; rank is a structural correction, not a time lower bound.",
+      "resolved": false
+    },
+    {
+      "objection": "Finite PGM success near one is algorithmic evidence.",
+      "resolution": "The controls are W_3 only and use dense inverse square roots. They test the theorem, not asymptotic efficiency.",
+      "resolved": false
+    },
+    {
+      "objection": "Measuring nu and decoding each sector preserves the gain.",
+      "resolution": "The controls lose roughly half their correct probability when the PGM seed is dephased across nu; cross-sector coherence is operational.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "classical_separation_proved": false,
+    "conditional_branch_uniform_success_proved": false,
+    "cross_isotypic_coherence_is_operationally_relevant": true,
+    "end_to_end_hidden_permutation_decoder_proved": false,
+    "global_information_theoretic_pgm_success_proved": true,
+    "mixed_covariant_decoder_criterion_proved": true,
+    "pgm_optimality_proved": false,
+    "polynomial_coherent_multiplicity_whitening_proved": false,
+    "pure_coherent_fourier_state_is_general_physical_decoder": false,
+    "reason": "The correct mixed-state decoder is a coherent multiplicity tight frame. Its finite behavior is validated, but the typical C_nu spectra and an efficient coherent whitening circuit are unknown.",
+    "speedup_claim_allowed": false,
+    "typical_physical_multiplicity_spectrum_controlled": false
+  },
+  "created_at": "2026-08-06T00:52:37.873184+00:00",
+  "falsifiers_triggered": [
+    "The pure coherent Fourier decoder is only a benchmark: the physical mixed projector orbit generally requires multiple coherent junk rows.",
+    "Sector-weight concentration alone cannot certify a decoder because it does not control multiplicity support or C_nu conditioning.",
+    "W_3 PGM gains above the exact-label ceiling disappear substantially under isotypic dephasing, confirming the need for cross-sector coherence.",
+    "Large tight-frame rank does not by itself imply computational hardness."
+  ],
+  "finite_controls": [
+    {
+      "average_frame_support_rank": 24,
+      "base_projector_rank": 4,
+      "control_id": "W3-THREE-UNEQUAL-TYPES",
+      "cross_isotypic_coherence_success_contribution": 0.49938672392660693,
+      "exact_finite_mixed_decoder_validation": true,
+      "exact_label_dephasing_success_upper_bound": 0.6666666666666666,
+      "finite_validation_only": true,
+      "global_seed_junk_rank_lower_bound": 4,
+      "hidden_label_count": 6,
+      "isotypically_dephased_pgm_seed_success_probability": 0.47201779686442463,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_sector_probability_formula_residual": 0.0,
+      "minimum_pgm_seed_eigenvalue": -2.027982907901503e-16,
+      "n": 3,
+      "orbit_average_residual": 1.075862622250638e-18,
+      "pgm_beats_exact_label_dephasing_ceiling": true,
+      "pgm_correct_success_probability": 0.9714045207910316,
+      "pgm_seed_rank": 4,
+      "pgm_seed_support_completeness_residual": 2.7198245540484433e-15,
+      "physical_dimension": 32,
+      "pure_coherent_fourier_seed_possible": false,
+      "sector_records": [
+        {
+          "character_formula_sector_probability": 0.1875,
+          "irrep_dimension": 1,
+          "minimum_seed_junk_rank": 4,
+          "multiplicity_support_rank": 4,
+          "partition": [
+            3
+          ],
+          "pure_rank_one_sector_seed_possible": false,
+          "sector_probability": 0.1875,
+          "sector_probability_formula_residual": 0.0
+        },
+        {
+          "character_formula_sector_probability": 0.625,
+          "irrep_dimension": 2,
+          "minimum_seed_junk_rank": 4,
+          "multiplicity_support_rank": 8,
+          "partition": [
+            2,
+            1
+          ],
+          "pure_rank_one_sector_seed_possible": false,
+          "sector_probability": 0.625,
+          "sector_probability_formula_residual": 0.0
+        },
+        {
+          "character_formula_sector_probability": 0.1875,
+          "irrep_dimension": 1,
+          "minimum_seed_junk_rank": 4,
+          "multiplicity_support_rank": 4,
+          "partition": [
+            1,
+            1,
+            1
+          ],
+          "pure_rank_one_sector_seed_possible": false,
+          "sector_probability": 0.1875,
+          "sector_probability_formula_residual": 0.0
+        }
+      ],
+      "status": "exact-mixed-covariant-pgm-control",
+      "support_rank_global_lower_bound": 4
+    },
+    {
+      "average_frame_support_rank": 39,
+      "base_projector_rank": 8,
+      "control_id": "W3-REPEATED-STANDARD-UNEQUAL",
+      "cross_isotypic_coherence_success_contribution": 0.3965740652054113,
+      "exact_finite_mixed_decoder_validation": true,
+      "exact_label_dephasing_success_upper_bound": 0.6666666666666666,
+      "finite_validation_only": true,
+      "global_seed_junk_rank_lower_bound": 8,
+      "hidden_label_count": 6,
+      "isotypically_dephased_pgm_seed_success_probability": 0.4103005125120145,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ]
+      ],
+      "maximum_sector_probability_formula_residual": 0.0,
+      "minimum_pgm_seed_eigenvalue": -4.829946124854697e-16,
+      "n": 3,
+      "orbit_average_residual": 3.909119682295577e-18,
+      "pgm_beats_exact_label_dephasing_ceiling": true,
+      "pgm_correct_success_probability": 0.8068745777174258,
+      "pgm_seed_rank": 8,
+      "pgm_seed_support_completeness_residual": 2.7279558837776322e-15,
+      "physical_dimension": 64,
+      "pure_coherent_fourier_seed_possible": false,
+      "sector_records": [
+        {
+          "character_formula_sector_probability": 0.234375,
+          "irrep_dimension": 1,
+          "minimum_seed_junk_rank": 8,
+          "multiplicity_support_rank": 8,
+          "partition": [
+            3
+          ],
+          "pure_rank_one_sector_seed_possible": false,
+          "sector_probability": 0.234375,
+          "sector_probability_formula_residual": 0.0
+        },
+        {
+          "character_formula_sector_probability": 0.65625,
+          "irrep_dimension": 2,
+          "minimum_seed_junk_rank": 7,
+          "multiplicity_support_rank": 13,
+          "partition": [
+            2,
+            1
+          ],
+          "pure_rank_one_sector_seed_possible": false,
+          "sector_probability": 0.65625,
+          "sector_probability_formula_residual": 0.0
+        },
+        {
+          "character_formula_sector_probability": 0.109375,
+          "irrep_dimension": 1,
+          "minimum_seed_junk_rank": 5,
+          "multiplicity_support_rank": 5,
+          "partition": [
+            1,
+            1,
+            1
+          ],
+          "pure_rank_one_sector_seed_possible": false,
+          "sector_probability": 0.109375,
+          "sector_probability_formula_residual": 0.0
+        }
+      ],
+      "status": "exact-mixed-covariant-pgm-control",
+      "support_rank_global_lower_bound": 7
+    },
+    {
+      "average_frame_support_rank": 2,
+      "base_projector_rank": 1,
+      "control_id": "W3-TRIVIAL-SIGN-COLLAPSE-CONTROL",
+      "cross_isotypic_coherence_success_contribution": 0.1666666666666668,
+      "exact_finite_mixed_decoder_validation": true,
+      "exact_label_dephasing_success_upper_bound": 0.16666666666666666,
+      "finite_validation_only": true,
+      "global_seed_junk_rank_lower_bound": 1,
+      "hidden_label_count": 6,
+      "isotypically_dephased_pgm_seed_success_probability": 0.1666666666666668,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_sector_probability_formula_residual": 0.0,
+      "minimum_pgm_seed_eigenvalue": -5.580986005063702e-17,
+      "n": 3,
+      "orbit_average_residual": 0.0,
+      "pgm_beats_exact_label_dephasing_ceiling": true,
+      "pgm_correct_success_probability": 0.3333333333333336,
+      "pgm_seed_rank": 1,
+      "pgm_seed_support_completeness_residual": 8.623504291656016e-16,
+      "physical_dimension": 8,
+      "pure_coherent_fourier_seed_possible": true,
+      "sector_records": [
+        {
+          "character_formula_sector_probability": 0.5,
+          "irrep_dimension": 1,
+          "minimum_seed_junk_rank": 1,
+          "multiplicity_support_rank": 1,
+          "partition": [
+            3
+          ],
+          "pure_rank_one_sector_seed_possible": true,
+          "sector_probability": 0.5,
+          "sector_probability_formula_residual": 0.0
+        },
+        {
+          "character_formula_sector_probability": 0.0,
+          "irrep_dimension": 2,
+          "minimum_seed_junk_rank": 0,
+          "multiplicity_support_rank": 0,
+          "partition": [
+            2,
+            1
+          ],
+          "pure_rank_one_sector_seed_possible": true,
+          "sector_probability": 0.0,
+          "sector_probability_formula_residual": 0.0
+        },
+        {
+          "character_formula_sector_probability": 0.5,
+          "irrep_dimension": 1,
+          "minimum_seed_junk_rank": 1,
+          "multiplicity_support_rank": 1,
+          "partition": [
+            1,
+            1,
+            1
+          ],
+          "pure_rank_one_sector_seed_possible": true,
+          "sector_probability": 0.5,
+          "sector_probability_formula_residual": 0.0
+        }
+      ],
+      "status": "exact-mixed-covariant-pgm-control",
+      "support_rank_global_lower_bound": 1
+    }
+  ],
+  "headline_metrics": {
+    "canonical_pgm_seed_theorem_count": 1,
+    "conditional_branch_uniform_success_theorem_count": 0,
+    "finite_control_count": 3,
+    "finite_control_failure_count": 0,
+    "global_information_theoretic_pgm_success_theorem_count": 1,
+    "maximum_cross_isotypic_success_contribution": 0.49938672392660693,
+    "maximum_finite_pgm_success_probability": 0.9714045207910316,
+    "maximum_finite_seed_junk_rank_lower_bound": 8,
+    "mixed_covariant_seed_theorem_count": 1,
+    "multiplicity_tight_frame_theorem_count": 1,
+    "new_quantum_algorithm_count": 0,
+    "pgm_beats_dephasing_ceiling_control_count": 3,
+    "polynomial_multiplicity_whitening_count": 0,
+    "pure_rank_one_seed_impossible_control_count": 2,
+    "seed_rank_lower_bound_theorem_count": 1,
+    "typical_multiplicity_spectrum_theorem_count": 0
+  },
+  "proof_obligations": [
+    {
+      "obligation": "mixed_covariant_seed_characterization",
+      "resolution": "Schur twirling turns POVM completeness into the exact sector partial-trace constraints.",
+      "resolved": true
+    },
+    {
+      "obligation": "multiplicity_tight_frame_rank_lower_bound",
+      "resolution": "Each seed factor has multiplicity partial-trace rank at most d_nu, forcing at least ceil(rank(C_nu)/d_nu) factors.",
+      "resolved": true
+    },
+    {
+      "obligation": "canonical_pgm_seed_feasibility",
+      "resolution": "Covariance of B makes the sum of conjugated PGM seeds equal to the support projector of B.",
+      "resolved": true
+    },
+    {
+      "obligation": "typical_physical_multiplicity_spectrum",
+      "resolution": "Sector-weight concentration fixes Tr(C_nu), not rank, condition number, or the spectral distribution of C_nu.",
+      "resolved": false
+    },
+    {
+      "obligation": "polynomial_coherent_multiplicity_whitening",
+      "resolution": "No source-adapted circuit implements C_nu^-1/2 across coherent isotypic sectors without factorial spectral resolution.",
+      "resolved": false
+    },
+    {
+      "obligation": "global_information_theoretic_pgm_success",
+      "resolution": "The separate projector-frame Holder theorem proves P_PGM>1/2 at k=ceil(log2 n!) for the full natural ensemble. It does not prove uniform conditional-branch success or PGM optimality.",
+      "resolved": true
+    }
+  ],
+  "status": "mixed-covariant-decoder-reduced-to-multiplicity-tight-frame",
+  "summary": "Replaced the pure dual-row heuristic by the exact mixed-state covariant seed, tight-frame, rank, and PGM whitening criteria.",
+  "theorem_contract": {
+    "canonical_pgm_seed": "E_PGM=|G|^-1 B^-1/2 rho B^-1/2 on supp(B).",
+    "covariant_average": "B=direct_sum_nu I_dnu/d_nu tensor C_nu with C_nu=Tr_V(Pi_nu rho Pi_nu).",
+    "implementation_target": "Implement the canonical multiplicity tight frame and C_nu^-1/2 coherently across nu; one pure dual-row state is not enough.",
+    "pgm_success": "P_PGM=|G|^-1 Tr(B^-1/2 rho B^-1/2 rho).",
+    "seed_constraint": "Tr_V(Pi_nu E Pi_nu)=d_nu/|G| Pi_supp(C_nu).",
+    "seed_rank_lower_bound": "rank(E)>=max_nu ceil(rank(C_nu)/d_nu)>=ceil(rank(B)/|G|).",
+    "tight_frame_factorization": "For E=sum_a |eta_a><eta_a|, the row-to-multiplicity maps obey sum_a X_a,nu^* X_a,nu=d_nu/|G| Pi_supp(C_nu)."
+  }
+}

@@ -150,6 +150,67 @@ DEFAULT_LITERATURE = [
         ),
     ),
     PaperSeed(
+        id="feray-sniady-character-bounds-2007",
+        title=(
+            "Asymptotics of characters of symmetric groups related to "
+            "Stanley character formula"
+        ),
+        url="https://arxiv.org/abs/math/0701051",
+        year=2007,
+        tags=[
+            "symmetric-character",
+            "character-ratio",
+            "plancherel-typical",
+            "representation-theory",
+            "proof-tool",
+        ],
+        why_it_matters=(
+            "Provides a uniform normalized-character bound in terms of Young "
+            "diagram rows, columns, and transposition length. This is the "
+            "main available route from collision-free typical partitions to "
+            "quantitative wreath-frame moment contraction."
+        ),
+    ),
+    PaperSeed(
+        id="lifshitz-marmor-hypercontractive-characters-2023",
+        title=(
+            "Bounds for Characters of the Symmetric Group: "
+            "A Hypercontractive Approach"
+        ),
+        url="https://arxiv.org/abs/2308.08694",
+        year=2023,
+        tags=[
+            "symmetric-character",
+            "character-ratio",
+            "hypercontractivity",
+            "product-mixing",
+            "proof-tool",
+        ],
+        why_it_matters=(
+            "Connects character norm bounds to product mixing and Fourier "
+            "coefficients of normal sets, suggesting analytic tools for the "
+            "shared bridge-word contraction beyond pointwise estimates."
+        ),
+    ),
+    PaperSeed(
+        id="olesker-taylor-teyssier-thevenin-character-cutoff-2025",
+        title="Sharp character bounds and cutoff profiles for symmetric groups",
+        url="https://arxiv.org/abs/2503.12735",
+        year=2025,
+        tags=[
+            "symmetric-character",
+            "character-ratio",
+            "random-walk",
+            "cutoff",
+            "proof-tool",
+        ],
+        why_it_matters=(
+            "Develops sharp uniform character bounds and class-walk cutoff "
+            "tools that may control the low-support word classes left by the "
+            "conditioned collision-free wreath moment expansion."
+        ),
+    ),
+    PaperSeed(
         id="burchardt-high-dimensional-schur-2025",
         title="High-dimensional quantum Schur transforms",
         url="https://arxiv.org/abs/2509.22640",
@@ -209,6 +270,25 @@ DEFAULT_LITERATURE = [
         year=2003,
         tags=["lattice", "dihedral-hsp", "unique-svp", "reduction"],
         why_it_matters="Connects efficient dihedral HSP progress to lattice breakthroughs.",
+    ),
+    PaperSeed(
+        id="lindzey-rosmanis-index-erasure-2019",
+        title="A Tight Lower Bound for Non-coherent Index Erasure",
+        url="https://arxiv.org/abs/1902.07336",
+        year=2019,
+        tags=[
+            "state-generation",
+            "index-erasure",
+            "query-lower-bound",
+            "black-box",
+            "noncoherent",
+        ],
+        why_it_matters=(
+            "Proves a tight square-root quantum query lower bound for "
+            "black-box non-coherent image-state generation. It is the correct "
+            "generic warning for DCP fiber erasure, but it does not transfer "
+            "automatically to public arithmetic subset-sum maps."
+        ),
     ),
     PaperSeed(
         id="galbraith-shani-multivariate-hnp-2015",

@@ -1,16 +1,17 @@
 {
-  "created_at": "2026-07-15T09:37:15.349524+00:00",
+  "created_at": "2026-08-06T06:38:46.655647+00:00",
   "falsifiers_triggered": [
     "Some code-equivalence rows are already separated by classical code baselines.",
-    "Some code searches find only equivalent controls or no nontrivial hard row."
+    "Some code searches find only equivalent controls or no nontrivial hard row.",
+    "Some code-equivalence rows remain proof debt, not positive evidence."
   ],
   "headline_metrics": {
-    "control_or_no_hard_row_count": 30,
+    "control_or_no_hard_row_count": 29,
     "dequantizing_evidence_count": 55,
-    "evidence_count": 256,
-    "proof_debt_evidence_count": 24,
-    "proof_debt_row_count": 0,
-    "record_count": 46,
+    "evidence_count": 288,
+    "proof_debt_evidence_count": 61,
+    "proof_debt_row_count": 7,
+    "record_count": 52,
     "rejected_row_count": 16,
     "unclassified_row_count": 0
   },
@@ -786,62 +787,6 @@
     {
       "evidence": [
         {
-          "detail": "All 5 evaluated pair(s) are known equivalent controls.",
-          "source": "code_closure_attack",
-          "status": "equivalent-controls-under-closure",
-          "verdict": "control"
-        },
-        {
-          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
-          "source": "code_low_weight_structure",
-          "status": "low-weight-matroid-equivalent-control",
-          "verdict": "control"
-        },
-        {
-          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
-          "source": "code_low_weight_structure",
-          "status": "low-weight-matroid-equivalent-control",
-          "verdict": "control"
-        },
-        {
-          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
-          "source": "code_low_weight_structure",
-          "status": "low-weight-matroid-equivalent-control",
-          "verdict": "control"
-        },
-        {
-          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
-          "source": "code_low_weight_structure",
-          "status": "low-weight-matroid-equivalent-control",
-          "verdict": "control"
-        },
-        {
-          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
-          "source": "code_low_weight_structure",
-          "status": "low-weight-matroid-equivalent-control",
-          "verdict": "control"
-        },
-        {
-          "detail": "All 5 evaluated pair(s) are known equivalent controls.",
-          "source": "code_schur_filtration",
-          "status": "equivalent-controls-under-schur-filtration",
-          "verdict": "control"
-        },
-        {
-          "detail": "Goppa tuple-profile collisions found so far are semilinear/equivalent controls.",
-          "source": "goppa_code_search",
-          "status": "goppa-collisions-all-semilinear-controls",
-          "verdict": "control"
-        }
-      ],
-      "final_status": "control-or-no-hard-row-not-positive-evidence",
-      "required_next_step": "Treat equivalent controls and no-collision searches as negative search information; broaden the family generator.",
-      "row_family": "goppa-code-family",
-      "row_id": "goppa-family-goppa-m4-t3"
-    },
-    {
-      "evidence": [
-        {
           "detail": "Earlier scalable invariants already resolved every audited pair in this family.",
           "source": "goppa_hull_projector_frontier",
           "status": "no-unresolved-goppa-projector-frontier-pair",
@@ -1032,7 +977,7 @@
     {
       "evidence": [
         {
-          "detail": "All 3 evaluated pair(s) are known equivalent controls.",
+          "detail": "All 4 evaluated pair(s) are known equivalent controls.",
           "source": "code_closure_attack",
           "status": "equivalent-controls-under-closure",
           "verdict": "control"
@@ -1056,7 +1001,13 @@
           "verdict": "control"
         },
         {
-          "detail": "All 3 evaluated pair(s) are known equivalent controls.",
+          "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
+          "source": "code_low_weight_structure",
+          "status": "low-weight-matroid-equivalent-control",
+          "verdict": "control"
+        },
+        {
+          "detail": "All 4 evaluated pair(s) are known equivalent controls.",
           "source": "code_schur_filtration",
           "status": "equivalent-controls-under-schur-filtration",
           "verdict": "control"
@@ -1712,6 +1663,296 @@
     {
       "evidence": [
         {
+          "detail": "4 pair(s) remain unresolved only after explicit classical caps or polynomial-signature collisions.",
+          "source": "self_dual_code_boundary_search",
+          "status": "self-dual-scalable-classical-proof-debt",
+          "verdict": "proof-debt"
+        },
+        {
+          "detail": "Information-set enumeration grows rapidly and low-norm Construction-A invariants may collapse. Neither fact is a lower bound; polynomial global canonicalization and a frame-preserving reverse reduction remain open.",
+          "source": "self_dual_global_orbit_audit",
+          "status": "global-orbit-and-lattice-reduction-proof-debt",
+          "verdict": "proof-debt"
+        },
+        {
+          "detail": "The Dinh-Moore-Russell sufficient theorem does not apply because the GL_k dimension term violates q^(k^2) <= n^(0.2n). This is an applicability gap, not evidence that one coset state is informative.",
+          "source": "self_dual_hsp_applicability",
+          "status": "published-no-go-dimension-gate-fails-open-measurement-proof-debt",
+          "verdict": "proof-debt"
+        },
+        {
+          "detail": "Every instance in the family has forced local rank-hull profiles through common order 1.",
+          "source": "self_dual_local_profile_obstruction",
+          "status": "bounded-local-profile-obstruction-proof-debt-through-order-1",
+          "verdict": "proof-debt"
+        },
+        {
+          "detail": "RREF removes the GL_k row scrambler and yields an exact S_n hidden shift. The apparent high-rate GL applicability gap is not an algorithmic opening. Rigidity or automorphism size/minimal-degree must still be certified before importing the graph-isomorphism-style coset-state no-go.",
+          "source": "self_dual_rowspace_hsp_reduction",
+          "status": "rowspace-symmetric-hsp-automorphism-proof-debt",
+          "verdict": "proof-debt"
+        }
+      ],
+      "final_status": "proof-debt-not-positive-evidence",
+      "required_next_step": "Resolve cap/survival evidence with stronger canonicalization, automorphism, or lower-bound arguments before promotion.",
+      "row_family": "growing-hull-self-dual-code-family",
+      "row_id": "self-dual-family-self-dual-k10"
+    },
+    {
+      "evidence": [
+        {
+          "detail": "4 pair(s) remain unresolved only after explicit classical caps or polynomial-signature collisions.",
+          "source": "self_dual_code_boundary_search",
+          "status": "self-dual-scalable-classical-proof-debt",
+          "verdict": "proof-debt"
+        },
+        {
+          "detail": "Information-set enumeration grows rapidly and low-norm Construction-A invariants may collapse. Neither fact is a lower bound; polynomial global canonicalization and a frame-preserving reverse reduction remain open.",
+          "source": "self_dual_global_orbit_audit",
+          "status": "global-orbit-and-lattice-reduction-proof-debt",
+          "verdict": "proof-debt"
+        },
+        {
+          "detail": "The Dinh-Moore-Russell sufficient theorem does not apply because the GL_k dimension term violates q^(k^2) <= n^(0.2n). This is an applicability gap, not evidence that one coset state is informative.",
+          "source": "self_dual_hsp_applicability",
+          "status": "published-no-go-dimension-gate-fails-open-measurement-proof-debt",
+          "verdict": "proof-debt"
+        },
+        {
+          "detail": "Every instance in the family has forced local rank-hull profiles through common order 1.",
+          "source": "self_dual_local_profile_obstruction",
+          "status": "bounded-local-profile-obstruction-proof-debt-through-order-1",
+          "verdict": "proof-debt"
+        },
+        {
+          "detail": "RREF removes the GL_k row scrambler and yields an exact S_n hidden shift. The apparent high-rate GL applicability gap is not an algorithmic opening. Rigidity or automorphism size/minimal-degree must still be certified before importing the graph-isomorphism-style coset-state no-go.",
+          "source": "self_dual_rowspace_hsp_reduction",
+          "status": "rowspace-symmetric-hsp-automorphism-proof-debt",
+          "verdict": "proof-debt"
+        }
+      ],
+      "final_status": "proof-debt-not-positive-evidence",
+      "required_next_step": "Resolve cap/survival evidence with stronger canonicalization, automorphism, or lower-bound arguments before promotion.",
+      "row_family": "growing-hull-self-dual-code-family",
+      "row_id": "self-dual-family-self-dual-k12"
+    },
+    {
+      "evidence": [
+        {
+          "detail": "Finite sampled-instance certificates do not establish an infinite-family automorphism theorem. Growing dimensions must be audited separately.",
+          "source": "self_dual_automorphism_workbench",
+          "status": "all-sampled-instances-explicitly-nonrigid-hsp-proof-debt",
+          "verdict": "proof-debt"
+        },
+        {
+          "detail": "4 pair(s) remain unresolved only after explicit classical caps or polynomial-signature collisions.",
+          "source": "self_dual_code_boundary_search",
+          "status": "self-dual-scalable-classical-proof-debt",
+          "verdict": "proof-debt"
+        },
+        {
+          "detail": "Information-set enumeration grows rapidly and low-norm Construction-A invariants may collapse. Neither fact is a lower bound; polynomial global canonicalization and a frame-preserving reverse reduction remain open.",
+          "source": "self_dual_global_orbit_audit",
+          "status": "global-orbit-and-lattice-reduction-proof-debt",
+          "verdict": "proof-debt"
+        },
+        {
+          "detail": "The Dinh-Moore-Russell sufficient theorem does not apply because the GL_k dimension term violates q^(k^2) <= n^(0.2n). This is an applicability gap, not evidence that one coset state is informative.",
+          "source": "self_dual_hsp_applicability",
+          "status": "published-no-go-dimension-gate-fails-open-measurement-proof-debt",
+          "verdict": "proof-debt"
+        },
+        {
+          "detail": "Every instance in the family has forced local rank-hull profiles through common order 3.",
+          "source": "self_dual_local_profile_obstruction",
+          "status": "bounded-local-profile-obstruction-proof-debt-through-order-3",
+          "verdict": "proof-debt"
+        },
+        {
+          "detail": "RREF removes the GL_k row scrambler and yields an exact S_n hidden shift. The apparent high-rate GL applicability gap is not an algorithmic opening. Rigidity or automorphism size/minimal-degree must still be certified before importing the graph-isomorphism-style coset-state no-go.",
+          "source": "self_dual_rowspace_hsp_reduction",
+          "status": "rowspace-symmetric-hsp-automorphism-proof-debt",
+          "verdict": "proof-debt"
+        }
+      ],
+      "final_status": "proof-debt-not-positive-evidence",
+      "required_next_step": "Resolve cap/survival evidence with stronger canonicalization, automorphism, or lower-bound arguments before promotion.",
+      "row_family": "growing-hull-self-dual-code-family",
+      "row_id": "self-dual-family-self-dual-k16"
+    },
+    {
+      "evidence": [
+        {
+          "detail": "Finite sampled-instance certificates do not establish an infinite-family automorphism theorem. Growing dimensions must be audited separately.",
+          "source": "self_dual_automorphism_workbench",
+          "status": "all-sampled-instances-rigidity-certified-single-register-no-go-proof-debt",
+          "verdict": "proof-debt"
+        },
+        {
+          "detail": "4 pair(s) remain unresolved only after explicit classical caps or polynomial-signature collisions.",
+          "source": "self_dual_code_boundary_search",
+          "status": "self-dual-scalable-classical-proof-debt",
+          "verdict": "proof-debt"
+        },
+        {
+          "detail": "Information-set enumeration grows rapidly and low-norm Construction-A invariants may collapse. Neither fact is a lower bound; polynomial global canonicalization and a frame-preserving reverse reduction remain open.",
+          "source": "self_dual_global_orbit_audit",
+          "status": "global-orbit-and-lattice-reduction-proof-debt",
+          "verdict": "proof-debt"
+        },
+        {
+          "detail": "The Dinh-Moore-Russell sufficient theorem does not apply because the GL_k dimension term violates q^(k^2) <= n^(0.2n). This is an applicability gap, not evidence that one coset state is informative.",
+          "source": "self_dual_hsp_applicability",
+          "status": "published-no-go-dimension-gate-fails-open-measurement-proof-debt",
+          "verdict": "proof-debt"
+        },
+        {
+          "detail": "Every instance in the family has forced local rank-hull profiles through common order 4.",
+          "source": "self_dual_local_profile_obstruction",
+          "status": "bounded-local-profile-obstruction-proof-debt-through-order-4",
+          "verdict": "proof-debt"
+        },
+        {
+          "detail": "RREF removes the GL_k row scrambler and yields an exact S_n hidden shift. The apparent high-rate GL applicability gap is not an algorithmic opening. Rigidity or automorphism size/minimal-degree must still be certified before importing the graph-isomorphism-style coset-state no-go.",
+          "source": "self_dual_rowspace_hsp_reduction",
+          "status": "rowspace-symmetric-hsp-automorphism-proof-debt",
+          "verdict": "proof-debt"
+        }
+      ],
+      "final_status": "proof-debt-not-positive-evidence",
+      "required_next_step": "Resolve cap/survival evidence with stronger canonicalization, automorphism, or lower-bound arguments before promotion.",
+      "row_family": "growing-hull-self-dual-code-family",
+      "row_id": "self-dual-family-self-dual-k24"
+    },
+    {
+      "evidence": [
+        {
+          "detail": "Finite sampled-instance certificates do not establish an infinite-family automorphism theorem. Growing dimensions must be audited separately.",
+          "source": "self_dual_automorphism_workbench",
+          "status": "mixed-or-unresolved-automorphism-proof-debt",
+          "verdict": "proof-debt"
+        },
+        {
+          "detail": "4 pair(s) remain unresolved only after explicit classical caps or polynomial-signature collisions.",
+          "source": "self_dual_code_boundary_search",
+          "status": "self-dual-scalable-classical-proof-debt",
+          "verdict": "proof-debt"
+        },
+        {
+          "detail": "Information-set enumeration grows rapidly and low-norm Construction-A invariants may collapse. Neither fact is a lower bound; polynomial global canonicalization and a frame-preserving reverse reduction remain open.",
+          "source": "self_dual_global_orbit_audit",
+          "status": "global-orbit-and-lattice-reduction-proof-debt",
+          "verdict": "proof-debt"
+        },
+        {
+          "detail": "The fixed-order resolver certifies the current finite rows. It does not prove that the same order distinguishes all larger family members.",
+          "source": "self_dual_high_order_automorphism_resolver",
+          "status": "all-prior-automorphism-debt-resolved-rigid-collective-proof-debt",
+          "verdict": "proof-debt"
+        },
+        {
+          "detail": "The Dinh-Moore-Russell sufficient theorem does not apply because the GL_k dimension term violates q^(k^2) <= n^(0.2n). This is an applicability gap, not evidence that one coset state is informative.",
+          "source": "self_dual_hsp_applicability",
+          "status": "published-no-go-dimension-gate-fails-open-measurement-proof-debt",
+          "verdict": "proof-debt"
+        },
+        {
+          "detail": "Every instance in the family has forced local rank-hull profiles through common order 4.",
+          "source": "self_dual_local_profile_obstruction",
+          "status": "bounded-local-profile-obstruction-proof-debt-through-order-4",
+          "verdict": "proof-debt"
+        },
+        {
+          "detail": "RREF removes the GL_k row scrambler and yields an exact S_n hidden shift. The apparent high-rate GL applicability gap is not an algorithmic opening. Rigidity or automorphism size/minimal-degree must still be certified before importing the graph-isomorphism-style coset-state no-go.",
+          "source": "self_dual_rowspace_hsp_reduction",
+          "status": "rowspace-symmetric-hsp-automorphism-proof-debt",
+          "verdict": "proof-debt"
+        }
+      ],
+      "final_status": "proof-debt-not-positive-evidence",
+      "required_next_step": "Resolve cap/survival evidence with stronger canonicalization, automorphism, or lower-bound arguments before promotion.",
+      "row_family": "growing-hull-self-dual-code-family",
+      "row_id": "self-dual-family-self-dual-k32"
+    },
+    {
+      "evidence": [
+        {
+          "detail": "All deepest completed collisions are equivalent finite controls (4).",
+          "source": "self_dual_code_boundary_search",
+          "status": "self-dual-collisions-are-equivalent-controls",
+          "verdict": "control"
+        },
+        {
+          "detail": "Information-set enumeration grows rapidly and low-norm Construction-A invariants may collapse. Neither fact is a lower bound; polynomial global canonicalization and a frame-preserving reverse reduction remain open.",
+          "source": "self_dual_global_orbit_audit",
+          "status": "global-orbit-and-lattice-reduction-proof-debt",
+          "verdict": "proof-debt"
+        },
+        {
+          "detail": "The Dinh-Moore-Russell sufficient theorem does not apply because the GL_k dimension term violates q^(k^2) <= n^(0.2n). This is an applicability gap, not evidence that one coset state is informative.",
+          "source": "self_dual_hsp_applicability",
+          "status": "published-no-go-dimension-gate-fails-open-measurement-proof-debt",
+          "verdict": "proof-debt"
+        },
+        {
+          "detail": "Every instance in the family has forced local rank-hull profiles through common order 1.",
+          "source": "self_dual_local_profile_obstruction",
+          "status": "bounded-local-profile-obstruction-proof-debt-through-order-1",
+          "verdict": "proof-debt"
+        },
+        {
+          "detail": "RREF removes the GL_k row scrambler and yields an exact S_n hidden shift. The apparent high-rate GL applicability gap is not an algorithmic opening. Rigidity or automorphism size/minimal-degree must still be certified before importing the graph-isomorphism-style coset-state no-go.",
+          "source": "self_dual_rowspace_hsp_reduction",
+          "status": "rowspace-symmetric-hsp-automorphism-proof-debt",
+          "verdict": "proof-debt"
+        }
+      ],
+      "final_status": "proof-debt-not-positive-evidence",
+      "required_next_step": "Resolve cap/survival evidence with stronger canonicalization, automorphism, or lower-bound arguments before promotion.",
+      "row_family": "growing-hull-self-dual-code-family",
+      "row_id": "self-dual-family-self-dual-k6"
+    },
+    {
+      "evidence": [
+        {
+          "detail": "All deepest completed collisions are equivalent finite controls (4).",
+          "source": "self_dual_code_boundary_search",
+          "status": "self-dual-collisions-are-equivalent-controls",
+          "verdict": "control"
+        },
+        {
+          "detail": "Information-set enumeration grows rapidly and low-norm Construction-A invariants may collapse. Neither fact is a lower bound; polynomial global canonicalization and a frame-preserving reverse reduction remain open.",
+          "source": "self_dual_global_orbit_audit",
+          "status": "global-orbit-and-lattice-reduction-proof-debt",
+          "verdict": "proof-debt"
+        },
+        {
+          "detail": "The Dinh-Moore-Russell sufficient theorem does not apply because the GL_k dimension term violates q^(k^2) <= n^(0.2n). This is an applicability gap, not evidence that one coset state is informative.",
+          "source": "self_dual_hsp_applicability",
+          "status": "published-no-go-dimension-gate-fails-open-measurement-proof-debt",
+          "verdict": "proof-debt"
+        },
+        {
+          "detail": "Every instance in the family has forced local rank-hull profiles through common order 1.",
+          "source": "self_dual_local_profile_obstruction",
+          "status": "bounded-local-profile-obstruction-proof-debt-through-order-1",
+          "verdict": "proof-debt"
+        },
+        {
+          "detail": "RREF removes the GL_k row scrambler and yields an exact S_n hidden shift. The apparent high-rate GL applicability gap is not an algorithmic opening. Rigidity or automorphism size/minimal-degree must still be certified before importing the graph-isomorphism-style coset-state no-go.",
+          "source": "self_dual_rowspace_hsp_reduction",
+          "status": "rowspace-symmetric-hsp-automorphism-proof-debt",
+          "verdict": "proof-debt"
+        }
+      ],
+      "final_status": "proof-debt-not-positive-evidence",
+      "required_next_step": "Resolve cap/survival evidence with stronger canonicalization, automorphism, or lower-bound arguments before promotion.",
+      "row_family": "growing-hull-self-dual-code-family",
+      "row_id": "self-dual-family-self-dual-k8"
+    },
+    {
+      "evidence": [
+        {
           "detail": "All 5 evaluated pair(s) are known equivalent controls.",
           "source": "code_closure_attack",
           "status": "equivalent-controls-under-closure",
@@ -1920,6 +2161,6 @@
       "row_id": "tuple-search-tuple-profile-9-4-t2"
     }
   ],
-  "status": "code-frontier-dequantized-or-control",
-  "summary": "Triage aggregated 46 code-equivalence row(s) across 256 evidence items. 16 row(s) are rejected by classical baselines, 0 remain proof debt, and 30 are equivalent controls or no-hard-row searches."
+  "status": "code-frontier-proof-debt",
+  "summary": "Triage aggregated 52 code-equivalence row(s) across 288 evidence items. 16 row(s) are rejected by classical baselines, 7 remain proof debt, and 29 are equivalent controls or no-hard-row searches."
 }

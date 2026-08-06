@@ -1,0 +1,371 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Large multiplicity spaces evade the d_nu^2/|G| bound.",
+      "resolution": "The partial-trace constraint is identity on the entire multiplicity space, and the operator inequality removes its dimension from the upper bound.",
+      "resolved": true
+    },
+    {
+      "objection": "A noncovariant decoder can do better.",
+      "resolution": "Uniform-prior symmetrization preserves success and produces a covariant decoder satisfying the same completeness.",
+      "resolved": true
+    },
+    {
+      "objection": "The bound also rules out coherent isotypic transforms.",
+      "resolution": "No. It assumes the cross-nu blocks are dephased. A coherent label isometry stores those blocks in label-carrier coherence.",
+      "resolved": false
+    },
+    {
+      "objection": "Decision versions are automatically ruled out.",
+      "resolution": "The theorem concerns exact conjugate-label identification. A coarser invariant or trivial-vs-nontrivial decision may require less information.",
+      "resolved": false
+    }
+  ],
+  "claim_gate": {
+    "classical_isotypic_outcome_decoder_viable_for_constant_identification": false,
+    "classical_separation_proved": false,
+    "coherent_cross_sector_decoder_proved": false,
+    "coherent_isotypic_transform_ruled_out": false,
+    "cross_sector_coherence_required_for_constant_identification": true,
+    "decision_version_ruled_out": false,
+    "independent_sector_decoders_viable_for_constant_identification": false,
+    "isotypic_dephasing_identification_no_go_proved": true,
+    "reason": "Any dephased-isotypic exact-label decoder has exp(-Omega(sqrt(n))) success. Coherent cross-sector processing is necessary but no efficient coherent decoder or classical separation is known.",
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-06T00:17:20.305249+00:00",
+  "falsifiers_triggered": [
+    "Measuring nu classically and decoding each sector independently cannot yield constant exact hidden-permutation success.",
+    "Multiplicity-space dimension does not evade the no-go.",
+    "The coherent isotypic label in the orientation filter is an essential information resource, not optional bookkeeping.",
+    "The theorem does not rule out coherent cross-sector decoding or coarser decision problems."
+  ],
+  "headline_metrics": {
+    "coherent_cross_sector_decoder_count": 0,
+    "covariant_povm_symmetrization_theorem_count": 1,
+    "data_processing_extension_theorem_count": 1,
+    "dimension_square_sum_failure_count": 0,
+    "exact_symmetric_group_scaling_record_count": 12,
+    "finite_constant_success_ruled_out_count": 4,
+    "isotypic_dephasing_identification_no_go_theorem_count": 1,
+    "new_quantum_algorithm_count": 0,
+    "operator_control_count": 3,
+    "operator_control_failure_count": 0,
+    "positive_partial_trace_domination_theorem_count": 1,
+    "tail_exact_success_upper_bound": 0.009648135574611687,
+    "tail_log2_success_upper_bound": -6.695534104678886,
+    "tail_n": 32
+  },
+  "literature_links": [
+    {
+      "external_theorem_not_reproved_here": true,
+      "paper_id": "aggarwal-elboim-maximal-dimension-2026",
+      "title": "On the maximal dimension of an irreducible representation of the symmetric group",
+      "url": "https://arxiv.org/abs/2605.25995",
+      "use": "Converts the exact largest-Plancherel-atom decoder bound into exp(-Omega(sqrt(n))) asymptotic decay."
+    }
+  ],
+  "operator_controls": [
+    {
+      "control_id": "D2-M3-R1",
+      "domination_residual": 8.470401308843315e-17,
+      "irrep_dimension": 2,
+      "minimum_domination_eigenvalue": -8.470401308843315e-17,
+      "multiplicity_dimension": 3,
+      "operator_rank": 1,
+      "partial_trace_domination_verified": true,
+      "status": "partial-trace-domination-verified"
+    },
+    {
+      "control_id": "D3-M2-R4",
+      "domination_residual": 0.0,
+      "irrep_dimension": 3,
+      "minimum_domination_eigenvalue": 0.8483114425477455,
+      "multiplicity_dimension": 2,
+      "operator_rank": 4,
+      "partial_trace_domination_verified": true,
+      "status": "partial-trace-domination-verified"
+    },
+    {
+      "control_id": "D4-M5-R9",
+      "domination_residual": 0.0,
+      "irrep_dimension": 4,
+      "minimum_domination_eigenvalue": 0.320159533456848,
+      "multiplicity_dimension": 5,
+      "operator_rank": 9,
+      "partial_trace_domination_verified": true,
+      "status": "partial-trace-domination-verified"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "covariant_povm_symmetrization",
+      "resolution": "Uniform group priors permit averaging any POVM over the group without changing exact-label success.",
+      "resolved": true
+    },
+    {
+      "obligation": "sector_seed_effect_partial_trace",
+      "resolution": "Schur averaging of POVM completeness gives Tr_V(E_nu)=d_nu/|G| I on every multiplicity space.",
+      "resolved": true
+    },
+    {
+      "obligation": "positive_partial_trace_domination",
+      "resolution": "For X>=0 on C^d tensor M, block-matrix Cauchy-Schwarz gives X<=d I_d tensor Tr_C^d(X).",
+      "resolved": true
+    },
+    {
+      "obligation": "dephased_identification_success_bound",
+      "resolution": "Each sector effect is at most d_nu^2/|G| times identity; weighting by sector probability gives max_nu d_nu^2/|G|.",
+      "resolved": true
+    },
+    {
+      "obligation": "symmetric_group_asymptotic_decay",
+      "resolution": "Aggarwal-Elboim's maximal-dimension theorem makes the largest Plancherel atom exp(-(2d+o(1))sqrt(n)), d>0.",
+      "resolved": true
+    },
+    {
+      "obligation": "coherent_cross_sector_decoder",
+      "resolution": "No circuit yet preserves, transforms, and decodes the necessary cross-nu coherences into a hidden permutation.",
+      "resolved": false
+    }
+  ],
+  "scaling_records": [
+    {
+      "constant_success_ruled_out_at_this_scale": false,
+      "exact_dimension_square_sum_verified": true,
+      "exact_identification_success_upper_bound": 0.6666666666666666,
+      "group_order_decimal": "6",
+      "log2_identification_success_upper_bound": -0.5849625007211563,
+      "maximum_irrep_dimension_decimal": "2",
+      "maximum_irrep_partition": [
+        2,
+        1
+      ],
+      "maximum_plancherel_atom": 0.6666666666666666,
+      "n": 3,
+      "partition_count": 3,
+      "status": "exact-isotypic-dephasing-identification-upper-bound"
+    },
+    {
+      "constant_success_ruled_out_at_this_scale": false,
+      "exact_dimension_square_sum_verified": true,
+      "exact_identification_success_upper_bound": 0.375,
+      "group_order_decimal": "24",
+      "log2_identification_success_upper_bound": -1.415037499278844,
+      "maximum_irrep_dimension_decimal": "3",
+      "maximum_irrep_partition": [
+        3,
+        1
+      ],
+      "maximum_plancherel_atom": 0.375,
+      "n": 4,
+      "partition_count": 5,
+      "status": "exact-isotypic-dephasing-identification-upper-bound"
+    },
+    {
+      "constant_success_ruled_out_at_this_scale": false,
+      "exact_dimension_square_sum_verified": true,
+      "exact_identification_success_upper_bound": 0.3,
+      "group_order_decimal": "120",
+      "log2_identification_success_upper_bound": -1.7369655941662063,
+      "maximum_irrep_dimension_decimal": "6",
+      "maximum_irrep_partition": [
+        3,
+        1,
+        1
+      ],
+      "maximum_plancherel_atom": 0.3,
+      "n": 5,
+      "partition_count": 7,
+      "status": "exact-isotypic-dephasing-identification-upper-bound"
+    },
+    {
+      "constant_success_ruled_out_at_this_scale": false,
+      "exact_dimension_square_sum_verified": true,
+      "exact_identification_success_upper_bound": 0.35555555555555557,
+      "group_order_decimal": "720",
+      "log2_identification_success_upper_bound": -1.4918530963296746,
+      "maximum_irrep_dimension_decimal": "16",
+      "maximum_irrep_partition": [
+        3,
+        2,
+        1
+      ],
+      "maximum_plancherel_atom": 0.35555555555555557,
+      "n": 6,
+      "partition_count": 11,
+      "status": "exact-isotypic-dephasing-identification-upper-bound"
+    },
+    {
+      "constant_success_ruled_out_at_this_scale": false,
+      "exact_dimension_square_sum_verified": true,
+      "exact_identification_success_upper_bound": 0.20089285714285715,
+      "group_order_decimal": "40320",
+      "log2_identification_success_upper_bound": -2.3155018257279294,
+      "maximum_irrep_dimension_decimal": "90",
+      "maximum_irrep_partition": [
+        4,
+        2,
+        1,
+        1
+      ],
+      "maximum_plancherel_atom": 0.20089285714285715,
+      "n": 8,
+      "partition_count": 22,
+      "status": "exact-isotypic-dephasing-identification-upper-bound"
+    },
+    {
+      "constant_success_ruled_out_at_this_scale": false,
+      "exact_dimension_square_sum_verified": true,
+      "exact_identification_success_upper_bound": 0.16253968253968254,
+      "group_order_decimal": "3628800",
+      "log2_identification_success_upper_bound": -2.621136113274641,
+      "maximum_irrep_dimension_decimal": "768",
+      "maximum_irrep_partition": [
+        4,
+        3,
+        2,
+        1
+      ],
+      "maximum_plancherel_atom": 0.16253968253968254,
+      "n": 10,
+      "partition_count": 42,
+      "status": "exact-isotypic-dephasing-identification-upper-bound"
+    },
+    {
+      "constant_success_ruled_out_at_this_scale": false,
+      "exact_dimension_square_sum_verified": true,
+      "exact_identification_success_upper_bound": 0.12377829218106996,
+      "group_order_decimal": "479001600",
+      "log2_identification_success_upper_bound": -3.014169773136155,
+      "maximum_irrep_dimension_decimal": "7700",
+      "maximum_irrep_partition": [
+        5,
+        3,
+        2,
+        1,
+        1
+      ],
+      "maximum_plancherel_atom": 0.12377829218106996,
+      "n": 12,
+      "partition_count": 77,
+      "status": "exact-isotypic-dephasing-identification-upper-bound"
+    },
+    {
+      "constant_success_ruled_out_at_this_scale": false,
+      "exact_dimension_square_sum_verified": true,
+      "exact_identification_success_upper_bound": 0.06355555555555556,
+      "group_order_decimal": "20922789888000",
+      "log2_identification_success_upper_bound": -3.97583794932601,
+      "maximum_irrep_dimension_decimal": "1153152",
+      "maximum_irrep_partition": [
+        6,
+        4,
+        3,
+        2,
+        1
+      ],
+      "maximum_plancherel_atom": 0.06355555555555556,
+      "n": 16,
+      "partition_count": 231,
+      "status": "exact-isotypic-dephasing-identification-upper-bound"
+    },
+    {
+      "constant_success_ruled_out_at_this_scale": true,
+      "exact_dimension_square_sum_verified": true,
+      "exact_identification_success_upper_bound": 0.02557054722930839,
+      "group_order_decimal": "2432902008176640000",
+      "log2_identification_success_upper_bound": -5.289373154085206,
+      "maximum_irrep_dimension_decimal": "249420600",
+      "maximum_irrep_partition": [
+        7,
+        5,
+        3,
+        2,
+        2,
+        1
+      ],
+      "maximum_plancherel_atom": 0.02557054722930839,
+      "n": 20,
+      "partition_count": 627,
+      "status": "exact-isotypic-dephasing-identification-upper-bound"
+    },
+    {
+      "constant_success_ruled_out_at_this_scale": true,
+      "exact_dimension_square_sum_verified": true,
+      "exact_identification_success_upper_bound": 0.022247158334233165,
+      "group_order_decimal": "620448401733239439360000",
+      "log2_identification_success_upper_bound": -5.490235119714857,
+      "maximum_irrep_dimension_decimal": "117487079424",
+      "maximum_irrep_partition": [
+        8,
+        5,
+        4,
+        3,
+        2,
+        1,
+        1
+      ],
+      "maximum_plancherel_atom": 0.022247158334233165,
+      "n": 24,
+      "partition_count": 1575,
+      "status": "exact-isotypic-dephasing-identification-upper-bound"
+    },
+    {
+      "constant_success_ruled_out_at_this_scale": true,
+      "exact_dimension_square_sum_verified": true,
+      "exact_identification_success_upper_bound": 0.010815525956429437,
+      "group_order_decimal": "304888344611713860501504000000",
+      "log2_identification_success_upper_bound": -6.5307523648555845,
+      "maximum_irrep_dimension_decimal": "57424104738000",
+      "maximum_irrep_partition": [
+        8,
+        6,
+        5,
+        3,
+        2,
+        2,
+        1,
+        1
+      ],
+      "maximum_plancherel_atom": 0.010815525956429437,
+      "n": 28,
+      "partition_count": 3718,
+      "status": "exact-isotypic-dephasing-identification-upper-bound"
+    },
+    {
+      "constant_success_ruled_out_at_this_scale": true,
+      "exact_dimension_square_sum_verified": true,
+      "exact_identification_success_upper_bound": 0.009648135574611687,
+      "group_order_decimal": "263130836933693530167218012160000000",
+      "log2_identification_success_upper_bound": -6.695534104678886,
+      "maximum_irrep_dimension_decimal": "50385731994259200",
+      "maximum_irrep_partition": [
+        9,
+        7,
+        5,
+        4,
+        3,
+        2,
+        1,
+        1
+      ],
+      "maximum_plancherel_atom": 0.009648135574611687,
+      "n": 32,
+      "partition_count": 8349,
+      "status": "exact-isotypic-dephasing-identification-upper-bound"
+    }
+  ],
+  "status": "isotypic-dephasing-identification-falsified-coherent-decoder-open",
+  "summary": "Proved that dephasing diagonal S_n irrep labels caps exact hidden-permutation success by the largest Plancherel atom, hence by exp(-Omega(sqrt(n))); cross-sector coherence is mandatory.",
+  "theorem_contract": {
+    "covariant_seed_constraint": "Tr_(V_nu)(E_nu)=d_nu/|G| I_(M_nu).",
+    "data_processing": "Once nu is dephased, no subsequent filter, unitary, ancilla, or measurement can exceed the bound.",
+    "identification_upper_bound": "p_success(Delta(rho_g))<=max_nu d_nu^2/|G|, independent of multiplicity dimensions and all later channels.",
+    "isotypic_dephasing": "Delta(rho)=sum_nu Pi_nu rho Pi_nu removes every cross-irrep block.",
+    "operator_inequality": "X<=d I_d tensor Tr_(C^d)(X) for every X>=0.",
+    "surviving_architecture": "Use a coherent isotypic transform, retain the nu register, and make the final decoder interfere different nu sectors.",
+    "symmetric_group_consequence": "For G=S_n the bound is the largest Plancherel atom, which is exp(-(2d+o(1))sqrt(n)).",
+    "uniform_covariant_ensemble": "rho_g=R(g)rho_eR(g)^* with prior uniform over G."
+  }
+}

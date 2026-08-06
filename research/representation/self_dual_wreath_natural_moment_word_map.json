@@ -1,0 +1,326 @@
+{
+  "character_validations": [
+    {
+      "bridge_sequence_count": 6,
+      "exact_source_character_identity_verified": true,
+      "failed_sequence_count": 0,
+      "maximum_absolute_residual": 0.0,
+      "moment_order": 1,
+      "n": 3
+    },
+    {
+      "bridge_sequence_count": 36,
+      "exact_source_character_identity_verified": true,
+      "failed_sequence_count": 0,
+      "maximum_absolute_residual": 0.0,
+      "moment_order": 2,
+      "n": 3
+    },
+    {
+      "bridge_sequence_count": 216,
+      "exact_source_character_identity_verified": true,
+      "failed_sequence_count": 0,
+      "maximum_absolute_residual": 0.0,
+      "moment_order": 3,
+      "n": 3
+    },
+    {
+      "bridge_sequence_count": 1296,
+      "exact_source_character_identity_verified": true,
+      "failed_sequence_count": 0,
+      "maximum_absolute_residual": 0.0,
+      "moment_order": 4,
+      "n": 3
+    },
+    {
+      "bridge_sequence_count": 576,
+      "exact_source_character_identity_verified": true,
+      "failed_sequence_count": 0,
+      "maximum_absolute_residual": 0.0,
+      "moment_order": 2,
+      "n": 4
+    }
+  ],
+  "claim_gate": {
+    "all_order_source_averaged_word_map_reduction_proved": true,
+    "growing_order_word_map_contraction_proved": false,
+    "natural_average_inverse_polynomial_conclusive_bound_proved": false,
+    "natural_character_column_identity_proved": true,
+    "natural_tuple_moment_concentration_proved": false,
+    "physical_irrep_sum_removed": true,
+    "polynomial_hidden_permutation_decoder_proved": false,
+    "reason": "The representation sum is eliminated exactly at all orders, but the resulting bridge word-map distribution is still exponential at the required growing order and has not been converted into a per-tuple success theorem or circuit.",
+    "speedup_claim_allowed": false,
+    "structured_maximal_effect_dilation_proved": false
+  },
+  "created_at": "2026-07-30T02:28:57.066840+00:00",
+  "falsifiers_triggered": [
+    "The exact physical irrep probabilities sum to one on every finite character control.",
+    "Character column orthogonality matches every tested bridge sequence exactly.",
+    "The all-order word-map formula reproduces complete naturally weighted W3 spectral moments through order four.",
+    "Finite word-map enumeration still scales as (n!)^m times 2^m and is not an algorithm.",
+    "A source-averaged normalized moment identity does not by itself prove concentration for individual natural tuples.",
+    "No maximal-effect dilation, permutation decoder, or classical separation follows from the reduction."
+  ],
+  "finite_word_map_records": [
+    {
+      "bridge_sequence_count": 6,
+      "copy_count": 3,
+      "distinct_identity_bridge_signature_count": 1,
+      "exact_source_averaged_normalized_moment": "343/1728",
+      "factorial_bridge_sequence_enumeration_used": true,
+      "log2_source_averaged_normalized_moment": -2.3328227359906553,
+      "moment_order": 1,
+      "n": 3,
+      "polynomial_word_map_contraction_proved": false,
+      "status": "exact-finite-word-map-enumeration",
+      "subset_product_count_per_sequence": 2
+    },
+    {
+      "bridge_sequence_count": 36,
+      "copy_count": 3,
+      "distinct_identity_bridge_signature_count": 2,
+      "exact_source_averaged_normalized_moment": "221/3456",
+      "factorial_bridge_sequence_enumeration_used": true,
+      "log2_source_averaged_normalized_moment": -3.9669849427720365,
+      "moment_order": 2,
+      "n": 3,
+      "polynomial_word_map_contraction_proved": false,
+      "status": "exact-finite-word-map-enumeration",
+      "subset_product_count_per_sequence": 4
+    },
+    {
+      "bridge_sequence_count": 216,
+      "copy_count": 3,
+      "distinct_identity_bridge_signature_count": 4,
+      "exact_source_averaged_normalized_moment": "5473/221184",
+      "factorial_bridge_sequence_enumeration_used": true,
+      "log2_source_averaged_normalized_moment": -5.336771360955982,
+      "moment_order": 3,
+      "n": 3,
+      "polynomial_word_map_contraction_proved": false,
+      "status": "exact-finite-word-map-enumeration",
+      "subset_product_count_per_sequence": 8
+    },
+    {
+      "bridge_sequence_count": 1296,
+      "copy_count": 3,
+      "distinct_identity_bridge_signature_count": 7,
+      "exact_source_averaged_normalized_moment": "29503/2654208",
+      "factorial_bridge_sequence_enumeration_used": true,
+      "log2_source_averaged_normalized_moment": -6.4912759615703415,
+      "moment_order": 4,
+      "n": 3,
+      "polynomial_word_map_contraction_proved": false,
+      "status": "exact-finite-word-map-enumeration",
+      "subset_product_count_per_sequence": 16
+    },
+    {
+      "bridge_sequence_count": 576,
+      "copy_count": 5,
+      "distinct_identity_bridge_signature_count": 2,
+      "exact_source_averaged_normalized_moment": "1525447/509607936",
+      "factorial_bridge_sequence_enumeration_used": true,
+      "log2_source_averaged_normalized_moment": -8.384011878367307,
+      "moment_order": 2,
+      "n": 4,
+      "polynomial_word_map_contraction_proved": false,
+      "status": "exact-finite-word-map-enumeration",
+      "subset_product_count_per_sequence": 4
+    },
+    {
+      "bridge_sequence_count": 13824,
+      "copy_count": 5,
+      "distinct_identity_bridge_signature_count": 4,
+      "exact_source_averaged_normalized_moment": "1818237425/6262062317568",
+      "factorial_bridge_sequence_enumeration_used": true,
+      "log2_source_averaged_normalized_moment": -11.749881551740867,
+      "moment_order": 3,
+      "n": 4,
+      "polynomial_word_map_contraction_proved": false,
+      "status": "exact-finite-word-map-enumeration",
+      "subset_product_count_per_sequence": 8
+    }
+  ],
+  "headline_metrics": {
+    "all_order_source_averaged_word_map_reduction_count": 1,
+    "character_column_validation_count": 5,
+    "failed_character_sequence_count": 0,
+    "failed_w3_spectrum_validation_count": 0,
+    "finite_word_map_record_count": 6,
+    "growing_order_word_map_contraction_count": 0,
+    "maximum_exact_word_map_moment_order": 4,
+    "maximum_exact_word_map_n": 4,
+    "natural_average_inverse_polynomial_conclusive_theorem_count": 0,
+    "natural_character_column_identity_theorem_count": 1,
+    "natural_tuple_moment_concentration_theorem_count": 0,
+    "physical_irrep_sum_eliminated_count": 1,
+    "polynomial_hidden_permutation_decoder_count": 0,
+    "structured_maximal_effect_dilation_count": 0,
+    "tail_log2_explicit_bridge_sequence_count": 51954843.63551505,
+    "tail_required_moment_order": 175526,
+    "w3_spectrum_validation_count": 4
+  },
+  "scaling_requirements": [
+    {
+      "compressed_identity_bridge_word_recurrence_proved": false,
+      "concentration_to_natural_conclusive_probability_proved": false,
+      "copy_count": 3,
+      "explicit_word_map_enumeration_polynomial": false,
+      "log2_explicit_bridge_sequence_count": 49.114287513699004,
+      "log2_subset_masks_per_sequence": 19,
+      "n": 3,
+      "required_moment_order": 19,
+      "status": "all-order-reduction-proved-growing-word-contraction-open"
+    },
+    {
+      "compressed_identity_bridge_word_recurrence_proved": false,
+      "concentration_to_natural_conclusive_probability_proved": false,
+      "copy_count": 5,
+      "explicit_word_map_enumeration_polynomial": false,
+      "log2_explicit_bridge_sequence_count": 233.833087536771,
+      "log2_subset_masks_per_sequence": 51,
+      "n": 4,
+      "required_moment_order": 51,
+      "status": "all-order-reduction-proved-growing-word-contraction-open"
+    },
+    {
+      "compressed_identity_bridge_word_recurrence_proved": false,
+      "concentration_to_natural_conclusive_probability_proved": false,
+      "copy_count": 7,
+      "explicit_word_map_enumeration_polynomial": false,
+      "log2_explicit_bridge_sequence_count": 718.316621943336,
+      "log2_subset_masks_per_sequence": 104,
+      "n": 5,
+      "required_moment_order": 104,
+      "status": "all-order-reduction-proved-growing-word-contraction-open"
+    },
+    {
+      "compressed_identity_bridge_word_recurrence_proved": false,
+      "concentration_to_natural_conclusive_probability_proved": false,
+      "copy_count": 10,
+      "explicit_word_map_enumeration_polynomial": false,
+      "log2_explicit_bridge_sequence_count": 1898.3706192660002,
+      "log2_subset_masks_per_sequence": 200,
+      "n": 6,
+      "required_moment_order": 200,
+      "status": "all-order-reduction-proved-growing-word-contraction-open"
+    },
+    {
+      "compressed_identity_bridge_word_recurrence_proved": false,
+      "concentration_to_natural_conclusive_probability_proved": false,
+      "copy_count": 16,
+      "explicit_word_map_enumeration_polynomial": false,
+      "log2_explicit_bridge_sequence_count": 7741.399257303822,
+      "log2_subset_masks_per_sequence": 506,
+      "n": 8,
+      "required_moment_order": 506,
+      "status": "all-order-reduction-proved-growing-word-contraction-open"
+    },
+    {
+      "compressed_identity_bridge_word_recurrence_proved": false,
+      "concentration_to_natural_conclusive_probability_proved": false,
+      "copy_count": 22,
+      "explicit_word_map_enumeration_polynomial": false,
+      "log2_explicit_bridge_sequence_count": 21377.030953537378,
+      "log2_subset_masks_per_sequence": 981,
+      "n": 10,
+      "required_moment_order": 981,
+      "status": "all-order-reduction-proved-growing-word-contraction-open"
+    },
+    {
+      "compressed_identity_bridge_word_recurrence_proved": false,
+      "concentration_to_natural_conclusive_probability_proved": false,
+      "copy_count": 45,
+      "explicit_word_map_enumeration_polynomial": false,
+      "log2_explicit_bridge_sequence_count": 178239.56581268873,
+      "log2_subset_masks_per_sequence": 4028,
+      "n": 16,
+      "required_moment_order": 4028,
+      "status": "all-order-reduction-proved-growing-word-contraction-open"
+    },
+    {
+      "compressed_identity_bridge_word_recurrence_proved": false,
+      "concentration_to_natural_conclusive_probability_proved": false,
+      "copy_count": 80,
+      "explicit_word_map_enumeration_polynomial": false,
+      "log2_explicit_bridge_sequence_count": 1005912.2659728857,
+      "log2_subset_masks_per_sequence": 12727,
+      "n": 24,
+      "required_moment_order": 12727,
+      "status": "all-order-reduction-proved-growing-word-contraction-open"
+    },
+    {
+      "compressed_identity_bridge_word_recurrence_proved": false,
+      "concentration_to_natural_conclusive_probability_proved": false,
+      "copy_count": 118,
+      "explicit_word_map_enumeration_polynomial": false,
+      "log2_explicit_bridge_sequence_count": 3281275.4334733635,
+      "log2_subset_masks_per_sequence": 27887,
+      "n": 32,
+      "required_moment_order": 27887,
+      "status": "all-order-reduction-proved-growing-word-contraction-open"
+    },
+    {
+      "compressed_identity_bridge_word_recurrence_proved": false,
+      "concentration_to_natural_conclusive_probability_proved": false,
+      "copy_count": 203,
+      "explicit_word_map_enumeration_polynomial": false,
+      "log2_explicit_bridge_sequence_count": 16763837.59922525,
+      "log2_subset_masks_per_sequence": 82601,
+      "n": 48,
+      "required_moment_order": 82601,
+      "status": "all-order-reduction-proved-growing-word-contraction-open"
+    },
+    {
+      "compressed_identity_bridge_word_recurrence_proved": false,
+      "concentration_to_natural_conclusive_probability_proved": false,
+      "copy_count": 296,
+      "explicit_word_map_enumeration_polynomial": false,
+      "log2_explicit_bridge_sequence_count": 51954843.63551505,
+      "log2_subset_masks_per_sequence": 175526,
+      "n": 64,
+      "required_moment_order": 175526,
+      "status": "all-order-reduction-proved-growing-word-contraction-open"
+    }
+  ],
+  "status": "all-order-natural-moment-word-map-reduction-proved-growing-contraction-open",
+  "summary": "Reduced every natural source-averaged normalized wreath-frame moment to identity and bridge-class subset word counts; all 5 character controls and 4 complete W3 spectral controls pass, while growing-order word-map contraction remains open.",
+  "theorem_contract": {
+    "all_order_normalized_moment": "E_Pi Tr(B_Pi^m)/prod_i d_pi=E_(c_1,...,c_m) a_m(c_1,...,c_m)^k",
+    "column_orthogonality": "E_pi chi_pi(g)/d_pi=1[g=e]+1[g in C]/|C|",
+    "natural_label_law": "p_pi=d_pi(d_pi+chi_pi(h))/|W_n|",
+    "remaining_problem": "compress the distribution of identity and bridge-class subset-word counts at growing m, then prove concentration from source-averaged moments to natural tuple success",
+    "subset_word_factor": "a_m(c_1,...,c_m)=2^-m(N_e+N_C/|C|)"
+  },
+  "w3_spectrum_validations": [
+    {
+      "absolute_residual": 2.7755575615628914e-17,
+      "exact_match_within_tolerance": true,
+      "exact_word_map_normalized_moment": "343/1728",
+      "moment_order": 1,
+      "naturally_weighted_spectral_normalized_moment": 0.19849537037037035
+    },
+    {
+      "absolute_residual": 1.3877787807814457e-17,
+      "exact_match_within_tolerance": true,
+      "exact_word_map_normalized_moment": "221/3456",
+      "moment_order": 2,
+      "naturally_weighted_spectral_normalized_moment": 0.06394675925925927
+    },
+    {
+      "absolute_residual": 6.938893903907228e-18,
+      "exact_match_within_tolerance": true,
+      "exact_word_map_normalized_moment": "5473/221184",
+      "moment_order": 3,
+      "naturally_weighted_spectral_normalized_moment": 0.024744104456018524
+    },
+    {
+      "absolute_residual": 6.938893903907228e-18,
+      "exact_match_within_tolerance": true,
+      "exact_word_map_normalized_moment": "29503/2654208",
+      "moment_order": 4,
+      "naturally_weighted_spectral_normalized_moment": 0.01111555688175155
+    }
+  ]
+}

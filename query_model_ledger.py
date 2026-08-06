@@ -46,6 +46,29 @@ DCP_SUBSET_SUM_MEASUREMENT_PATH = Path("research/phase_workbench/dcp_subset_sum_
 DCP_HASHED_FIBER_MEASUREMENT_PATH = Path("research/phase_workbench/dcp_hashed_fiber_measurement_audit.json")
 DCP_REFERENCE_PROJECTION_PATH = Path("research/phase_workbench/dcp_reference_projection_audit.json")
 DCP_COVARIANT_PGM_PATH = Path("research/phase_workbench/dcp_covariant_pgm_audit.json")
+DCP_PGM_GRAM_BLOCK_ENCODING_PATH = Path(
+    "research/phase_workbench/dcp_pgm_gram_block_encoding.json"
+)
+DCP_PGM_QSVT_DEGREE_PATH = Path(
+    "research/phase_workbench/dcp_pgm_qsvt_degree_obstruction.json"
+)
+DCP_QUENCHED_OCCUPANCY_PATH = Path(
+    "research/classical_baselines/"
+    "dcp_subset_sum_quenched_occupancy_theorem.json"
+)
+DCP_COHERENT_FIBER_ERASURE_BOUNDARY_PATH = Path(
+    "research/reductions/dcp_coherent_fiber_erasure_boundary.json"
+)
+DCP_GLOBAL_ERASURE_INVERSION_PATH = Path(
+    "research/reductions/dcp_global_erasure_inversion_reduction.json"
+)
+DCP_APPROXIMATE_ERASURE_COHERENCE_PATH = Path(
+    "research/reductions/"
+    "dcp_approximate_erasure_coherence_reduction.json"
+)
+DCP_ERASURE_PERTURBATION_PATH = Path(
+    "research/reductions/dcp_erasure_perturbation_reduction.json"
+)
 DCP_CONTAMINATED_PGM_PATH = Path("research/phase_workbench/dcp_contaminated_pgm_audit.json")
 DCP_SUBSET_SUM_BRIDGE_PATH = Path("research/reductions/dcp_subset_sum_bridge.json")
 DCP_SUBSET_SUM_LATTICE_PATH = Path("research/classical_baselines/dcp_subset_sum_lattice_search.json")
@@ -86,6 +109,16 @@ DCP_SUBSET_SUM_GROWING_ORDER_PATH = Path("research/classical_baselines/dcp_subse
 DCP_SUBSET_SUM_GROWING_ORDER_CHAIN_PATH = Path(
     "research/classical_baselines/dcp_subset_sum_growing_order_chain_theorem.json"
 )
+DCP_SUBSET_SUM_SIGNED_L2_PATH = Path(
+    "research/classical_baselines/dcp_subset_sum_signed_l2_obstruction.json"
+)
+DCP_SUBSET_SUM_SPARSE_CHARACTER_PATH = Path(
+    "research/classical_baselines/"
+    "dcp_subset_sum_sparse_character_obstruction.json"
+)
+DCP_SUBSET_SUM_QTT_PATH = Path(
+    "research/classical_baselines/dcp_subset_sum_qtt_contraction_search.json"
+)
 DCP_SUBSET_SUM_EMBEDDING_VOLUME_PATH = Path("research/classical_baselines/dcp_subset_sum_embedding_volume_theorem.json")
 DCP_SUBSET_SUM_SHORT_RELATION_PATH = Path("research/classical_baselines/dcp_subset_sum_short_relation_theorem.json")
 DCP_SUBSET_SUM_CARRY_RELATION_PATH = Path("research/classical_baselines/dcp_subset_sum_carry_relation_theorem.json")
@@ -116,8 +149,151 @@ HULL_PROJECTOR_REDUCTION_PATH = Path("research/code_equivalence/code_hull_projec
 GOPPA_SCALING_FRONTIER_PATH = Path("research/code_equivalence/goppa_scaling_frontier.json")
 GOPPA_SYZYGY_FRONTIER_PATH = Path("research/code_equivalence/goppa_syzygy_frontier.json")
 GOPPA_HULL_PROJECTOR_PATH = Path("research/code_equivalence/goppa_hull_projector_frontier.json")
+SELF_DUAL_CODE_BOUNDARY_PATH = Path("research/code_equivalence/self_dual_code_boundary_search.json")
+SELF_DUAL_LOCAL_OBSTRUCTION_PATH = Path("research/code_equivalence/self_dual_local_profile_obstruction.json")
+SELF_DUAL_GLOBAL_ORBIT_PATH = Path("research/code_equivalence/self_dual_global_orbit_audit.json")
+SELF_DUAL_HSP_APPLICABILITY_PATH = Path("research/representation/self_dual_code_hsp_applicability.json")
+SELF_DUAL_ROWSPACE_HSP_PATH = Path("research/representation/self_dual_rowspace_hsp_reduction.json")
+SELF_DUAL_AUTOMORPHISM_PATH = Path("research/code_equivalence/self_dual_automorphism_workbench.json")
+SELF_DUAL_HIGH_ORDER_AUTOMORPHISM_PATH = Path(
+    "research/code_equivalence/self_dual_high_order_automorphism_resolver.json"
+)
+SELF_DUAL_FIXED_ORDER_SPARSITY_PATH = Path(
+    "research/code_equivalence/self_dual_fixed_order_sparsity_obstruction.json"
+)
+SELF_DUAL_WREATH_SPECTRUM_PATH = Path(
+    "research/representation/self_dual_wreath_spectrum.json"
+)
+SELF_DUAL_WREATH_HECKE_PATH = Path(
+    "research/representation/self_dual_wreath_hecke_audit.json"
+)
+SELF_DUAL_WREATH_PGM_POLAR_PATH = Path(
+    "research/representation/self_dual_wreath_pgm_polar_audit.json"
+)
+SELF_DUAL_WREATH_SUBSET_CARRIER_PATH = Path(
+    "research/representation/self_dual_wreath_subset_carrier_algebra.json"
+)
+SELF_DUAL_WREATH_CARRIER_ORBIT_GROWTH_PATH = Path(
+    "research/representation/self_dual_wreath_carrier_orbit_growth.json"
+)
+SELF_DUAL_WREATH_HARMONIC_CARRIER_SCHEMA_PATH = Path(
+    "research/representation/self_dual_wreath_harmonic_carrier_schema.json"
+)
+SELF_DUAL_WREATH_COMMUTANT_TRANSFER_PATH = Path(
+    "research/representation/self_dual_wreath_commutant_transfer_audit.json"
+)
+SELF_DUAL_WREATH_PHYSICAL_FRAME_BLOCKS_PATH = Path(
+    "research/representation/self_dual_wreath_physical_frame_blocks.json"
+)
+SELF_DUAL_WREATH_UNEQUAL_FRAME_BLOCKS_PATH = Path(
+    "research/representation/self_dual_wreath_unequal_frame_blocks.json"
+)
+SELF_DUAL_WREATH_COMPLETE_W3_TUPLE_PATH = Path(
+    "research/representation/self_dual_wreath_complete_w3_tuple_audit.json"
+)
+SELF_DUAL_WREATH_CHARACTER_MOMENTS_PATH = Path(
+    "research/representation/self_dual_wreath_character_moments.json"
+)
+SELF_DUAL_WREATH_THIRD_MOMENT_CONTRACTION_PATH = Path(
+    "research/representation/"
+    "self_dual_wreath_third_moment_contraction.json"
+)
+SELF_DUAL_WREATH_ALL_UNEQUAL_THIRD_MOMENT_PATH = Path(
+    "research/representation/"
+    "self_dual_wreath_all_unequal_third_moment.json"
+)
+SELF_DUAL_WREATH_EQUAL_COMMUTATOR_AUDIT_PATH = Path(
+    "research/representation/"
+    "self_dual_wreath_equal_commutator_audit.json"
+)
+SELF_DUAL_WREATH_STABLE_COMMUTATOR_RANK_PATH = Path(
+    "research/representation/"
+    "self_dual_wreath_stable_commutator_rank.json"
+)
+SELF_DUAL_WREATH_TYPICAL_PARTITION_PORTFOLIO_PATH = Path(
+    "research/representation/"
+    "self_dual_wreath_typical_partition_portfolio.json"
+)
+SELF_DUAL_WREATH_TYPICAL_RECOUPLING_TRANSFER_PATH = Path(
+    "research/representation/"
+    "self_dual_wreath_typical_recoupling_transfer.json"
+)
+SELF_DUAL_WREATH_PROJECTOR_SUBPOVM_PATH = Path(
+    "research/representation/"
+    "self_dual_wreath_projector_subpovm_transfer.json"
+)
+SELF_DUAL_WREATH_SUBPOVM_MOMENT_PATH = Path(
+    "research/representation/"
+    "self_dual_wreath_subpovm_moment_certificate.json"
+)
+SELF_DUAL_WREATH_NATURAL_UNEQUAL_PATH = Path(
+    "research/representation/"
+    "self_dual_wreath_natural_unequal_dominance.json"
+)
+SELF_DUAL_WREATH_NATURAL_WORD_MAP_PATH = Path(
+    "research/representation/"
+    "self_dual_wreath_natural_moment_word_map.json"
+)
+SELF_DUAL_WREATH_WORD_MAP_MIXING_PATH = Path(
+    "research/representation/self_dual_wreath_word_map_mixing.json"
+)
+SELF_DUAL_WREATH_COUPLED_WORD_WALK_GAP_PATH = Path(
+    "research/representation/"
+    "self_dual_wreath_coupled_word_walk_gap.json"
+)
+SELF_DUAL_WREATH_ALL_UNEQUAL_CONDITIONED_KERNEL_PATH = Path(
+    "research/representation/"
+    "self_dual_wreath_all_unequal_conditioned_kernel.json"
+)
+SELF_DUAL_WREATH_GLOBAL_PARTITION_COLLISION_PATH = Path(
+    "research/representation/"
+    "self_dual_wreath_global_partition_collision.json"
+)
+SELF_DUAL_WREATH_COLLISION_FREE_FRAME_PROBE_PATH = Path(
+    "research/representation/"
+    "self_dual_wreath_collision_free_frame_probe.json"
+)
+SELF_DUAL_WREATH_CHARACTER_RATIO_CONTRACT_PATH = Path(
+    "research/representation/"
+    "self_dual_wreath_character_ratio_contract.json"
+)
+SELF_DUAL_WREATH_SHORT_WORD_PROFILE_PATH = Path(
+    "research/representation/"
+    "self_dual_wreath_short_word_profile.json"
+)
+SELF_DUAL_WREATH_MASK_HYPERGRAPH_REDUCTION_PATH = Path(
+    "research/representation/"
+    "self_dual_wreath_mask_hypergraph_reduction.json"
+)
+SELF_DUAL_WREATH_SUBGROUP_TWIRL_REDUCTION_PATH = Path(
+    "research/representation/"
+    "self_dual_wreath_subgroup_twirl_reduction.json"
+)
+SELF_DUAL_WREATH_ORIENTATION_FOURIER_REDUCTION_PATH = Path(
+    "research/representation/"
+    "self_dual_wreath_orientation_fourier_reduction.json"
+)
+SELF_DUAL_WREATH_ORIENTATION_FUSION_MOMENT_PATH = Path(
+    "research/representation/"
+    "self_dual_wreath_orientation_fusion_moment.json"
+)
 COSET_COVARIANT_FRAME_PATH = Path("research/representation/coset_covariant_frame.json")
 COSET_HOLEVO_INFORMATION_PATH = Path("research/representation/coset_holevo_information.json")
+COSET_NATURAL_MULTICOPY_PGM_PATH = Path(
+    "research/representation/coset_natural_multicopy_pgm_benchmark.json"
+)
+COSET_PGM_GAIN_LOCALIZATION_PATH = Path(
+    "research/representation/coset_pgm_gain_localization.json"
+)
+COSET_PGM_AVERAGE_FRAME_BLOCK_ENCODING_PATH = Path(
+    "research/representation/coset_pgm_average_frame_block_encoding.json"
+)
+COSET_NATURAL_CHARACTER_RATIO_PATH = Path(
+    "research/representation/coset_natural_character_ratio_concentration.json"
+)
+COSET_COVARIANT_PROJECTOR_SUBPOVM_PATH = Path(
+    "research/representation/coset_covariant_projector_subpovm.json"
+)
 COSET_TWO_COPY_FRAME_PATH = Path("research/representation/coset_two_copy_frame.json")
 COSET_TWO_COPY_TRANSITION_PATH = Path(
     "research/representation/coset_two_copy_transition_audit.json"
@@ -381,6 +557,27 @@ def build_query_model_ledger() -> dict[str, Any]:
     hashed_fiber_metrics = _read_json(DCP_HASHED_FIBER_MEASUREMENT_PATH, {}).get("headline_metrics", {})
     reference_projection_metrics = _read_json(DCP_REFERENCE_PROJECTION_PATH, {}).get("headline_metrics", {})
     covariant_pgm_metrics = _read_json(DCP_COVARIANT_PGM_PATH, {}).get("headline_metrics", {})
+    gram_block_encoding_metrics = _read_json(
+        DCP_PGM_GRAM_BLOCK_ENCODING_PATH, {}
+    ).get("headline_metrics", {})
+    qsvt_degree_metrics = _read_json(
+        DCP_PGM_QSVT_DEGREE_PATH, {}
+    ).get("headline_metrics", {})
+    quenched_occupancy_metrics = _read_json(
+        DCP_QUENCHED_OCCUPANCY_PATH, {}
+    ).get("headline_metrics", {})
+    fiber_erasure_boundary_metrics = _read_json(
+        DCP_COHERENT_FIBER_ERASURE_BOUNDARY_PATH, {}
+    ).get("headline_metrics", {})
+    erasure_inversion_metrics = _read_json(
+        DCP_GLOBAL_ERASURE_INVERSION_PATH, {}
+    ).get("headline_metrics", {})
+    erasure_coherence_metrics = _read_json(
+        DCP_APPROXIMATE_ERASURE_COHERENCE_PATH, {}
+    ).get("headline_metrics", {})
+    erasure_perturbation_metrics = _read_json(
+        DCP_ERASURE_PERTURBATION_PATH, {}
+    ).get("headline_metrics", {})
     contaminated_pgm_metrics = _read_json(DCP_CONTAMINATED_PGM_PATH, {}).get("headline_metrics", {})
     subset_sum_bridge_metrics = _read_json(DCP_SUBSET_SUM_BRIDGE_PATH, {}).get("headline_metrics", {})
     subset_sum_lattice_metrics = _read_json(DCP_SUBSET_SUM_LATTICE_PATH, {}).get("headline_metrics", {})
@@ -438,6 +635,15 @@ def build_query_model_ledger() -> dict[str, Any]:
     ).get("headline_metrics", {})
     subset_sum_growing_order_chain_metrics = _read_json(
         DCP_SUBSET_SUM_GROWING_ORDER_CHAIN_PATH, {}
+    ).get("headline_metrics", {})
+    subset_sum_signed_l2_metrics = _read_json(
+        DCP_SUBSET_SUM_SIGNED_L2_PATH, {}
+    ).get("headline_metrics", {})
+    subset_sum_sparse_character_metrics = _read_json(
+        DCP_SUBSET_SUM_SPARSE_CHARACTER_PATH, {}
+    ).get("headline_metrics", {})
+    subset_sum_qtt_metrics = _read_json(
+        DCP_SUBSET_SUM_QTT_PATH, {}
     ).get("headline_metrics", {})
     subset_sum_embedding_volume_metrics = _read_json(
         DCP_SUBSET_SUM_EMBEDDING_VOLUME_PATH, {}
@@ -519,12 +725,139 @@ def build_query_model_ledger() -> dict[str, Any]:
     goppa_scaling_metrics = _read_json(GOPPA_SCALING_FRONTIER_PATH, {}).get("headline_metrics", {})
     goppa_syzygy_metrics = _read_json(GOPPA_SYZYGY_FRONTIER_PATH, {}).get("headline_metrics", {})
     goppa_projector_metrics = _read_json(GOPPA_HULL_PROJECTOR_PATH, {}).get("headline_metrics", {})
+    self_dual_metrics = _read_json(SELF_DUAL_CODE_BOUNDARY_PATH, {}).get("headline_metrics", {})
+    self_dual_local_metrics = _read_json(SELF_DUAL_LOCAL_OBSTRUCTION_PATH, {}).get("headline_metrics", {})
+    self_dual_global_metrics = _read_json(SELF_DUAL_GLOBAL_ORBIT_PATH, {}).get("headline_metrics", {})
+    self_dual_hsp_metrics = _read_json(SELF_DUAL_HSP_APPLICABILITY_PATH, {}).get("headline_metrics", {})
+    self_dual_rowspace_hsp_metrics = _read_json(
+        SELF_DUAL_ROWSPACE_HSP_PATH, {}
+    ).get("headline_metrics", {})
+    self_dual_automorphism_metrics = _read_json(
+        SELF_DUAL_AUTOMORPHISM_PATH, {}
+    ).get("headline_metrics", {})
+    self_dual_high_order_metrics = _read_json(
+        SELF_DUAL_HIGH_ORDER_AUTOMORPHISM_PATH, {}
+    ).get("headline_metrics", {})
+    self_dual_sparsity_metrics = _read_json(
+        SELF_DUAL_FIXED_ORDER_SPARSITY_PATH, {}
+    ).get("headline_metrics", {})
+    self_dual_wreath_metrics = _read_json(
+        SELF_DUAL_WREATH_SPECTRUM_PATH, {}
+    ).get("headline_metrics", {})
+    self_dual_wreath_hecke_metrics = _read_json(
+        SELF_DUAL_WREATH_HECKE_PATH, {}
+    ).get("headline_metrics", {})
+    self_dual_wreath_pgm_metrics = _read_json(
+        SELF_DUAL_WREATH_PGM_POLAR_PATH, {}
+    ).get("headline_metrics", {})
+    self_dual_wreath_carrier_metrics = _read_json(
+        SELF_DUAL_WREATH_SUBSET_CARRIER_PATH, {}
+    ).get("headline_metrics", {})
+    self_dual_wreath_orbit_metrics = _read_json(
+        SELF_DUAL_WREATH_CARRIER_ORBIT_GROWTH_PATH, {}
+    ).get("headline_metrics", {})
+    self_dual_wreath_harmonic_metrics = _read_json(
+        SELF_DUAL_WREATH_HARMONIC_CARRIER_SCHEMA_PATH, {}
+    ).get("headline_metrics", {})
+    self_dual_wreath_commutant_metrics = _read_json(
+        SELF_DUAL_WREATH_COMMUTANT_TRANSFER_PATH, {}
+    ).get("headline_metrics", {})
+    self_dual_wreath_physical_block_metrics = _read_json(
+        SELF_DUAL_WREATH_PHYSICAL_FRAME_BLOCKS_PATH, {}
+    ).get("headline_metrics", {})
+    self_dual_wreath_unequal_block_metrics = _read_json(
+        SELF_DUAL_WREATH_UNEQUAL_FRAME_BLOCKS_PATH, {}
+    ).get("headline_metrics", {})
+    self_dual_wreath_w3_tuple_metrics = _read_json(
+        SELF_DUAL_WREATH_COMPLETE_W3_TUPLE_PATH, {}
+    ).get("headline_metrics", {})
+    self_dual_wreath_character_moment_metrics = _read_json(
+        SELF_DUAL_WREATH_CHARACTER_MOMENTS_PATH, {}
+    ).get("headline_metrics", {})
+    self_dual_wreath_third_moment_metrics = _read_json(
+        SELF_DUAL_WREATH_THIRD_MOMENT_CONTRACTION_PATH, {}
+    ).get("headline_metrics", {})
+    self_dual_wreath_all_unequal_metrics = _read_json(
+        SELF_DUAL_WREATH_ALL_UNEQUAL_THIRD_MOMENT_PATH, {}
+    ).get("headline_metrics", {})
+    self_dual_wreath_commutator_metrics = _read_json(
+        SELF_DUAL_WREATH_EQUAL_COMMUTATOR_AUDIT_PATH, {}
+    ).get("headline_metrics", {})
+    self_dual_wreath_stable_rank_metrics = _read_json(
+        SELF_DUAL_WREATH_STABLE_COMMUTATOR_RANK_PATH, {}
+    ).get("headline_metrics", {})
+    self_dual_wreath_typical_portfolio_metrics = _read_json(
+        SELF_DUAL_WREATH_TYPICAL_PARTITION_PORTFOLIO_PATH, {}
+    ).get("headline_metrics", {})
+    self_dual_wreath_recoupling_transfer_metrics = _read_json(
+        SELF_DUAL_WREATH_TYPICAL_RECOUPLING_TRANSFER_PATH, {}
+    ).get("headline_metrics", {})
+    self_dual_wreath_projector_subpovm_metrics = _read_json(
+        SELF_DUAL_WREATH_PROJECTOR_SUBPOVM_PATH, {}
+    ).get("headline_metrics", {})
+    self_dual_wreath_subpovm_moment_metrics = _read_json(
+        SELF_DUAL_WREATH_SUBPOVM_MOMENT_PATH, {}
+    ).get("headline_metrics", {})
+    self_dual_wreath_natural_unequal_metrics = _read_json(
+        SELF_DUAL_WREATH_NATURAL_UNEQUAL_PATH, {}
+    ).get("headline_metrics", {})
+    self_dual_wreath_natural_word_map_metrics = _read_json(
+        SELF_DUAL_WREATH_NATURAL_WORD_MAP_PATH, {}
+    ).get("headline_metrics", {})
+    self_dual_wreath_word_map_mixing_metrics = _read_json(
+        SELF_DUAL_WREATH_WORD_MAP_MIXING_PATH, {}
+    ).get("headline_metrics", {})
+    self_dual_wreath_coupled_word_walk_gap_metrics = _read_json(
+        SELF_DUAL_WREATH_COUPLED_WORD_WALK_GAP_PATH, {}
+    ).get("headline_metrics", {})
+    self_dual_wreath_all_unequal_conditioned_kernel_metrics = _read_json(
+        SELF_DUAL_WREATH_ALL_UNEQUAL_CONDITIONED_KERNEL_PATH, {}
+    ).get("headline_metrics", {})
+    self_dual_wreath_global_partition_collision_metrics = _read_json(
+        SELF_DUAL_WREATH_GLOBAL_PARTITION_COLLISION_PATH, {}
+    ).get("headline_metrics", {})
+    self_dual_wreath_collision_free_frame_probe_metrics = _read_json(
+        SELF_DUAL_WREATH_COLLISION_FREE_FRAME_PROBE_PATH, {}
+    ).get("headline_metrics", {})
+    self_dual_wreath_character_ratio_contract_metrics = _read_json(
+        SELF_DUAL_WREATH_CHARACTER_RATIO_CONTRACT_PATH, {}
+    ).get("headline_metrics", {})
+    self_dual_wreath_short_word_profile_metrics = _read_json(
+        SELF_DUAL_WREATH_SHORT_WORD_PROFILE_PATH, {}
+    ).get("headline_metrics", {})
+    self_dual_wreath_mask_hypergraph_reduction_metrics = _read_json(
+        SELF_DUAL_WREATH_MASK_HYPERGRAPH_REDUCTION_PATH, {}
+    ).get("headline_metrics", {})
+    self_dual_wreath_subgroup_twirl_reduction_metrics = _read_json(
+        SELF_DUAL_WREATH_SUBGROUP_TWIRL_REDUCTION_PATH, {}
+    ).get("headline_metrics", {})
+    self_dual_wreath_orientation_fourier_reduction_metrics = _read_json(
+        SELF_DUAL_WREATH_ORIENTATION_FOURIER_REDUCTION_PATH, {}
+    ).get("headline_metrics", {})
+    self_dual_wreath_orientation_fusion_moment_metrics = _read_json(
+        SELF_DUAL_WREATH_ORIENTATION_FUSION_MOMENT_PATH, {}
+    ).get("headline_metrics", {})
     coset_covariant_frame_metrics = _read_json(
         COSET_COVARIANT_FRAME_PATH, {}
     ).get("headline_metrics", {})
     coset_holevo_metrics = _read_json(COSET_HOLEVO_INFORMATION_PATH, {}).get(
         "headline_metrics", {}
     )
+    coset_natural_multicopy_pgm_metrics = _read_json(
+        COSET_NATURAL_MULTICOPY_PGM_PATH, {}
+    ).get("headline_metrics", {})
+    coset_pgm_gain_localization_metrics = _read_json(
+        COSET_PGM_GAIN_LOCALIZATION_PATH, {}
+    ).get("headline_metrics", {})
+    coset_pgm_average_frame_metrics = _read_json(
+        COSET_PGM_AVERAGE_FRAME_BLOCK_ENCODING_PATH, {}
+    ).get("headline_metrics", {})
+    coset_natural_character_ratio_metrics = _read_json(
+        COSET_NATURAL_CHARACTER_RATIO_PATH, {}
+    ).get("headline_metrics", {})
+    coset_covariant_projector_subpovm_metrics = _read_json(
+        COSET_COVARIANT_PROJECTOR_SUBPOVM_PATH, {}
+    ).get("headline_metrics", {})
     coset_two_copy_frame = _read_json(COSET_TWO_COPY_FRAME_PATH, {})
     coset_two_copy_frame_metrics = coset_two_copy_frame.get("headline_metrics", {})
     coset_two_copy_control = coset_two_copy_frame.get("noncommutation_control", {})
@@ -718,6 +1051,82 @@ def build_query_model_ledger() -> dict[str, Any]:
                         f"{covariant_pgm_metrics.get('proved_clean_information_theorem_count', 0)}, polynomial PGM circuits="
                         f"{covariant_pgm_metrics.get('proved_polynomial_pgm_circuit_count', 0)}, and exact-f=1 robust PGMs="
                         f"{covariant_pgm_metrics.get('proved_exact_f1_robust_pgm_count', 0)}."
+                    )
+                if gram_block_encoding_metrics:
+                    blocking.append(
+                        "Exact DCP Gram projected encoding has normalization "
+                        "log2 slope="
+                        f"{gram_block_encoding_metrics.get('gram_block_encoding_normalization_log2_slope', 'unknown')}, "
+                        "generic superpolynomial amplification rows="
+                        f"{gram_block_encoding_metrics.get('generic_superpolynomial_fiber_amplification_row_count', 0)}, "
+                        "structured polynomial preconditioners="
+                        f"{gram_block_encoding_metrics.get('uniform_polynomial_structured_preconditioner_count', 0)}. "
+                        "The circuit uses only public labels and reversible "
+                        "subset-sum arithmetic, but every equality "
+                        "postselection/amplification call must be charged."
+                    )
+                if qsvt_degree_metrics:
+                    blocking.append(
+                        "Generic direct-encoding QSVT obstruction has tail "
+                        "count/amplitude degree lower bounds log2="
+                        f"{qsvt_degree_metrics.get('tail_count_encoding_degree_lower_bound_log2', 'unknown')}/"
+                        f"{qsvt_degree_metrics.get('tail_amplitude_encoding_degree_lower_bound_log2', 'unknown')}, "
+                        "but average-source prevalence theorems="
+                        f"{qsvt_degree_metrics.get('average_case_random_source_prevalence_theorem_count', 0)}. "
+                        "This is a public-label circuit-complexity charge, not "
+                        "an oracle-query lower bound."
+                    )
+                if quenched_occupancy_metrics:
+                    blocking.append(
+                        "Quenched occupancy audit has mixed-moment failures="
+                        f"{quenched_occupancy_metrics.get('two_target_transfer_failure_count', 0)}, "
+                        "Poisson/prevalence theorems="
+                        f"{quenched_occupancy_metrics.get('quenched_poisson_occupancy_theorem_count', 0)}/"
+                        f"{quenched_occupancy_metrics.get('random_source_singleton_doubleton_prevalence_theorem_count', 0)}. "
+                        "This transfers the direct-QSVT spectral-spacing charge "
+                        "to random public labels but does not change the legal "
+                        "independent-state input model."
+                    )
+                if fiber_erasure_boundary_metrics:
+                    blocking.append(
+                        "Fiber-erasure boundary has black-box lower-bound "
+                        "transfers/support-decision reductions/global-channel "
+                        "reductions="
+                        f"{fiber_erasure_boundary_metrics.get('valid_black_box_lower_bound_transfer_to_structured_subset_sum_count', 0)}/"
+                        f"{fiber_erasure_boundary_metrics.get('proved_target_addressable_support_decision_reduction_count', 0)}/"
+                        f"{fiber_erasure_boundary_metrics.get('proved_global_collective_measurement_reduction_count', 0)}. "
+                        "Public arithmetic invalidates a direct black-box "
+                        "transfer; independent DCP states do not grant rewind "
+                        "or hidden-source reflection."
+                    )
+                if erasure_inversion_metrics:
+                    blocking.append(
+                        "Coherent erasure inversion has law-transfer failures/"
+                        "erasure-to-witness reductions/arbitrary-PGM reductions="
+                        f"{erasure_inversion_metrics.get('target_law_transfer_failure_count', 0)}/"
+                        f"{erasure_inversion_metrics.get('proved_coherent_erasure_to_witness_reduction_count', 0)}/"
+                        f"{erasure_inversion_metrics.get('proved_arbitrary_pgm_to_witness_reduction_count', 0)}. "
+                        "A common-garbage erasure is invertible using public "
+                        "labels; arbitrary full-rank measurements remain a "
+                        "different interface."
+                    )
+                if erasure_coherence_metrics:
+                    blocking.append(
+                        "Target-garbage coherence audit has control failures/"
+                        "erasure-to-witness reductions/approximate perturbation "
+                        "theorems/arbitrary-PGM reductions="
+                        f"{erasure_coherence_metrics.get('finite_control_failure_count', 0)}/"
+                        f"{erasure_coherence_metrics.get('inverse_polynomial_erasure_to_witness_reduction_count', 0)}/"
+                        f"{erasure_coherence_metrics.get('proved_approximate_isometry_perturbation_bound_count', 0)}/"
+                        f"{erasure_coherence_metrics.get('proved_arbitrary_full_rank_pgm_reduction_count', 0)}."
+                    )
+                if erasure_perturbation_metrics:
+                    blocking.append(
+                        "Erasure perturbation audit has polynomial-precision "
+                        "rows/operator theorems/average-only theorems="
+                        f"{erasure_perturbation_metrics.get('polynomial_precision_sufficient_row_count', 0)}/"
+                        f"{erasure_perturbation_metrics.get('operator_norm_perturbation_theorem_count', 0)}/"
+                        f"{erasure_perturbation_metrics.get('proved_average_only_channel_perturbation_count', 0)}."
                     )
                 if contaminated_pgm_metrics:
                     blocking.append(
@@ -1179,6 +1588,65 @@ def build_query_model_ledger() -> dict[str, Any]:
                         f"{subset_sum_growing_order_chain_metrics.get('proved_final_near_log_window_obstruction_count', 0)}/"
                         f"{subset_sum_growing_order_chain_metrics.get('proved_signed_statistic_obstruction_count', 0)}."
                     )
+                if subset_sum_signed_l2_metrics:
+                    blocking.append(
+                        "Signed-L2 obstruction has exact controls/pairs/failures="
+                        f"{subset_sum_signed_l2_metrics.get('exact_control_count', 0)}/"
+                        f"{subset_sum_signed_l2_metrics.get('exact_assignment_pair_count', 0)}/"
+                        f"{subset_sum_signed_l2_metrics.get('exact_control_failure_count', 0)}, "
+                        "unit-minor/pair-independence/variance theorems="
+                        f"{subset_sum_signed_l2_metrics.get('unit_minor_theorem_count', 0)}/"
+                        f"{subset_sum_signed_l2_metrics.get('conditional_pairwise_independence_theorem_count', 0)}/"
+                        f"{subset_sum_signed_l2_metrics.get('conditional_signed_variance_identity_theorem_count', 0)}, "
+                        "polynomial-support negligible-deviation theorems="
+                        f"{subset_sum_signed_l2_metrics.get('polynomial_support_negligible_deviation_theorem_count', 0)}, "
+                        "and high-label/dense/nonlinear closures="
+                        f"{subset_sum_signed_l2_metrics.get('proved_high_label_adaptive_signed_obstruction_count', 0)}/"
+                        f"{subset_sum_signed_l2_metrics.get('proved_dense_implicit_signed_obstruction_count', 0)}/"
+                        f"{subset_sum_signed_l2_metrics.get('proved_nonlinear_signed_obstruction_count', 0)}."
+                    )
+                if subset_sum_sparse_character_metrics:
+                    blocking.append(
+                        "Adaptive sparse-character obstruction has exact "
+                        "targets/failures="
+                        f"{subset_sum_sparse_character_metrics.get('exact_fourier_target_count', 0)}/"
+                        f"{subset_sum_sparse_character_metrics.get('exact_control_failure_count', 0)}, "
+                        "low/high/adaptive theorems="
+                        f"{subset_sum_sparse_character_metrics.get('low_order_annihilation_theorem_count', 0)}/"
+                        f"{subset_sum_sparse_character_metrics.get('high_order_simultaneous_moment_theorem_count', 0)}/"
+                        f"{subset_sum_sparse_character_metrics.get('adaptive_sparse_selection_theorem_count', 0)}, "
+                        "finite conclusive source rows="
+                        f"{subset_sum_sparse_character_metrics.get('finite_source_failure_bound_below_one_row_count', 0)}/"
+                        f"{subset_sum_sparse_character_metrics.get('scaling_row_count', 0)}, "
+                        "and dense/general closures="
+                        f"{subset_sum_sparse_character_metrics.get('proved_dense_implicit_character_obstruction_count', 0)}/"
+                        f"{subset_sum_sparse_character_metrics.get('proved_general_computational_lower_bound_count', 0)}."
+                    )
+                if subset_sum_qtt_metrics:
+                    blocking.append(
+                        "QTT dense-contraction audit has instances/unfoldings/max n="
+                        f"{subset_sum_qtt_metrics.get('instance_count', 0)}/"
+                        f"{subset_sum_qtt_metrics.get('unfolding_row_count', 0)}/"
+                        f"{subset_sum_qtt_metrics.get('maximum_n_bits', 0)}, "
+                        "registered cap power/tail survivors="
+                        f"{subset_sum_qtt_metrics.get('registered_bond_power', 'unknown')}/"
+                        f"{subset_sum_qtt_metrics.get('tail_source_registered_cap_survivor_count', 0)}, "
+                        "tail source/control ranks="
+                        f"{subset_sum_qtt_metrics.get('tail_best_source_required_rank', 'unknown')}/"
+                        f"{subset_sum_qtt_metrics.get('tail_best_permuted_required_rank', 'unknown')}, "
+                        "fitted log-rank slope="
+                        f"{subset_sum_qtt_metrics.get('fitted_log2_required_rank_slope_per_n', 'unknown')}, "
+                        "tail raw/zero-excess/control-excess coverage="
+                        f"{subset_sum_qtt_metrics.get('tail_best_source_qtt_legal_coverage', 'unknown')}/"
+                        f"{subset_sum_qtt_metrics.get('tail_mean_source_qtt_coverage_excess_over_zero_frequency_constant', 'unknown')}/"
+                        f"{subset_sum_qtt_metrics.get('tail_mean_source_qtt_coverage_excess_over_permuted', 'unknown')}, "
+                        "nontrivial tail excess instances="
+                        f"{subset_sum_qtt_metrics.get('tail_inverse_polynomial_nontrivial_coverage_excess_instance_count', 0)}, "
+                        "and asymptotic/dense/witness theorems="
+                        f"{subset_sum_qtt_metrics.get('proved_asymptotic_qtt_bond_lower_bound_count', 0)}/"
+                        f"{subset_sum_qtt_metrics.get('proved_polynomial_dense_character_contraction_count', 0)}/"
+                        f"{subset_sum_qtt_metrics.get('polynomial_witness_decoder_count', 0)}."
+                    )
                 if subset_sum_embedding_volume_metrics:
                     blocking.append(
                         "Embedding volume theorem has standard/sliced exact certificates="
@@ -1305,6 +1773,13 @@ def build_query_model_ledger() -> dict[str, Any]:
                     "A collective subset-sum circuit must coherently symmetrize collision fibers or prove an approximate hashed phase signal; computing/QFTing a sum ancilla with retained input is exactly uninformative.",
                     "Do not use uniform hashed erasure, a mutated public reference vector, or polynomially many reference directions; their worst-d postselection is exponentially small. Give a full-rank many-outcome or adaptive measurement with a polynomial implementation.",
                     "Treat the exact covariant PGM as an information-theoretic target only. Construct the normalized-fiber isometry, Gram block encoding, or collision walk in poly(n) gates without N-sized advice, then prove complete decoding and exact f=1 robustness.",
+                    "The direct projected Gram encoding is now exact but normalized by N. Search only structured preconditioners, collision walks, or different full-rank measurements, and charge all source preparations, reflections, normalization, precision, and advice.",
+                    "Generic bounded QSVT transforms of the direct count and square-root amplitude encodings are worst-case degree-blocked by spectral spacing. Prove random-source prevalence before transferring that obstruction to the average case.",
+                    "The two-target quenched Poisson theorem now proves random-source singleton/doubleton prevalence. Retire generic direct QSVT and require a source-aware encoding, structured preconditioner, collision walk, or different full-rank measurement.",
+                    "Treat index erasure only as a black-box baseline. A target-addressable normalized-fiber flag implies support decision and needs fixed-variable stability for witness search; a genuinely global collective channel must be audited separately.",
+                    "A coherent erasure-plus-QFT channel with common preparable garbage is already an average subset-sum witness solver by inversion and the quenched target-law transfer. Search only explicit solvers or genuinely non-erasure full-rank POVMs.",
+                    "Target-dependent garbage does not rescue exact erasure-plus-QFT: its weighted mean is publicly preparable and gives uniform-legal witness fidelity Omega((L/D)R^2). Only approximate-isometry perturbations and non-erasure POVMs remain.",
+                    "Uniform operator-norm approximate erasure is also solver-equivalent at inverse-polynomial precision. A remaining channel must rely on a rigorously weaker average-only guarantee, accessible environment semantics, or a non-erasure POVM.",
                     "Treat global linear-block f=1 information robustness as proved under the tensor-product contract; do not spend mutations on signal recovery alone. Preserve the all-good bound while implementing and composing the measurement circuit.",
                     "Prioritize Regev's weaker sufficient primitive: a deterministic poly(n)-time partial density-one modular subset-sum solver with inverse-polynomial legal-input coverage. Do not require full-fiber PGM preparation or accept finite explicit-candidate coverage.",
                     "Explicit target-independent shared-seed randomized partial solvers are interface-compatible. A genuinely quantum relation solver must instead provide a target-independent seeded decomposition or prove balanced paired amplitudes, inverse-polynomial workspace overlap, and reversible erasure.",
@@ -1326,6 +1801,9 @@ def build_query_model_ledger() -> dict[str, Any]:
                     "For nonlinear likelihood search, require a nonseparable global bound that provably avoids an exponential candidate set.",
                     "Low-bit preconditioning must exploit a proved higher-order residual correlation, reduced-basis event, or implicit decoder; exact pairwise moments rule out count-only and fixed-window explanations.",
                     "Residual statistics of order at most three are exactly uninformative; any fourth-order route must isolate xor-zero affine quadruples, bound low-fiber additive energy uniformly, and implement an implicit decoder.",
+                    "Do not revisit polynomially sparse signed exact-hit scores chosen from exposed low bits; conditional pairwise independence and the exact L2 identity close them. Specify and charge a full-label adaptive, dense implicit, nonlinear, or reduced-basis mechanism.",
+                    "Do not search another polynomially sparse subset-sum Fourier dictionary, even with full-label adaptive frequencies. Specify a polynomial-size dense contraction and charge bond/intermediate dimension, coefficient norm, precision, source error, and verified witness extraction.",
+                    "Direct target-bit QTT with the registered R=n cap is finite-negative. Reopen tensor contraction only with a new algebraic tensorization, held-out ordering rule, uniform polynomial bond theorem, additive-half fixed-subinstance accuracy, and verified count self-reduction.",
                 ]
                 status = "blocked-state-sample-algorithm-proof" if blocking else "needs-state-sample-proof-review"
                 next_action = "Build a poly(log N)-time random-label decoder or a robust collective measurement that beats the named DCP frontier."
@@ -1363,6 +1841,79 @@ def build_query_model_ledger() -> dict[str, Any]:
                 "trivial-hull projector reduction to weighted graph isomorphism from public generators",
                 "hull-parameterized shortening reduction for nontrivial-hull codes",
             ]
+            if coset_natural_multicopy_pgm_metrics:
+                blocking.append(
+                    "Natural-source multi-copy carrier benchmark has finite "
+                    "collective gain rows/max gain over product PGM="
+                    f"{coset_natural_multicopy_pgm_metrics.get('finite_collective_information_gain_row_count', 0)}/"
+                    f"{coset_natural_multicopy_pgm_metrics.get('maximum_global_information_gain_over_product_pgm_bits', 0)} bits, "
+                    "but uniform PGM circuits/hidden-involution decoders/"
+                    "asymptotic theorems/classical separations="
+                    f"{coset_natural_multicopy_pgm_metrics.get('uniform_polynomial_global_pgm_circuit_count', 0)}/"
+                    f"{coset_natural_multicopy_pgm_metrics.get('polynomial_hidden_involution_decoder_count', 0)}/"
+                    f"{coset_natural_multicopy_pgm_metrics.get('asymptotic_collective_information_advantage_theorem_count', 0)}/"
+                    f"{coset_natural_multicopy_pgm_metrics.get('classical_separation_theorem_count', 0)}. "
+                    "Exact branchwise matrices are not included in ordinary "
+                    "mixed coset-state access."
+                )
+            if coset_pgm_gain_localization_metrics:
+                blocking.append(
+                    "The natural PGM gain is broad across "
+                    f"{coset_pgm_gain_localization_metrics.get('positive_gain_natural_source_probability', 0)} "
+                    "source mass and finite frame condition/interpolation "
+                    "bounds are "
+                    f"{coset_pgm_gain_localization_metrics.get('maximum_frame_condition_number', 0)}/"
+                    f"{coset_pgm_gain_localization_metrics.get('maximum_exact_inverse_root_interpolation_degree_upper_bound', 0)}, "
+                    "but uniform harmonic frame encodings/all-n spectral "
+                    "theorems/decoders="
+                    f"{coset_pgm_gain_localization_metrics.get('uniform_harmonic_average_frame_block_encoding_count', 0)}/"
+                    f"{coset_pgm_gain_localization_metrics.get('all_n_polynomial_frame_condition_theorem_count', 0)}/"
+                    f"{coset_pgm_gain_localization_metrics.get('polynomial_hidden_involution_decoder_count', 0)}. "
+                    "Explicit hidden-orbit averaging and dense inversion are "
+                    "not legal free primitives."
+                )
+            if coset_pgm_average_frame_metrics:
+                blocking.append(
+                    "The all-k average-frame subset identity and conditional "
+                    "projected-LCU schema exist, but conditional "
+                    "superpolynomial generic amplification rows/tail log2 "
+                    "sqrt charge/structured amplifiers="
+                    f"{coset_pgm_average_frame_metrics.get('conditional_superpolynomial_generic_amplification_row_count', 0)}/"
+                    f"{coset_pgm_average_frame_metrics.get('tail_log2_generic_sqrt_amplification_lower_bound', 0)}/"
+                    f"{coset_pgm_average_frame_metrics.get('polynomial_structured_spectral_amplification_count', 0)}. "
+                    "Coherent conjugacy-class preparation and representation "
+                    "actions are circuit dependencies, while mixed coset-state "
+                    "samples do not grant the projected frame encoding for free."
+                )
+            if coset_natural_character_ratio_metrics:
+                blocking.append(
+                    "Natural source character-ratio concentration has theorem/"
+                    "tail failure log2="
+                    f"{coset_natural_character_ratio_metrics.get('uniform_natural_source_character_ratio_theorem_count', 0)}/"
+                    f"{coset_natural_character_ratio_metrics.get('tail_tuple_failure_log2_upper_bound', 0)}. "
+                    "This closes large-ratio source postselection as an escape "
+                    "from the direct projected-LCU normalization barrier, but "
+                    "it does not block structured or non-LCU collective "
+                    "measurements."
+                )
+            if coset_covariant_projector_subpovm_metrics:
+                blocking.append(
+                    "The whitening-free projector sub-POVM has theorem/tail "
+                    "conclusive probability/gain over product PGM="
+                    f"{coset_covariant_projector_subpovm_metrics.get('covariant_subpovm_validity_theorem_count', 0)}/"
+                    f"{coset_covariant_projector_subpovm_metrics.get('tail_subpovm_conclusive_probability', 0)}/"
+                    f"{coset_covariant_projector_subpovm_metrics.get('tail_subpovm_information_gain_over_product_pgm_bits', 0)}, "
+                    "but orbit circuits/compressed outcomes/decoders="
+                    f"{coset_covariant_projector_subpovm_metrics.get('uniform_covariant_natural_subpovm_circuit_count', 0)}/"
+                    f"{coset_covariant_projector_subpovm_metrics.get('compressed_hidden_label_outcome_count', 0)}/"
+                    f"{coset_covariant_projector_subpovm_metrics.get('polynomial_hidden_involution_decoder_count', 0)}. "
+                    "Direct-dilation conclusive probability/structured maximal "
+                    "dilations="
+                    f"{coset_covariant_projector_subpovm_metrics.get('tail_direct_uniform_projector_conclusive_probability', 0)}/"
+                    f"{coset_covariant_projector_subpovm_metrics.get('structured_maximal_effect_amplification_count', 0)}. "
+                    "A list of covariant effects is not an operation granted by "
+                    "mixed coset-state access."
+                )
             if cfi_code_metrics:
                 blocking.append(
                     "Faithful CFI/code reduction certifies both directions="
@@ -1385,6 +1936,500 @@ def build_query_model_ledger() -> dict[str, Any]:
                     f"{goppa_scaling_metrics.get('proof_debt_pair_count', 0)}, and cap-only debt="
                     f"{goppa_scaling_metrics.get('baseline_cap_pair_count', 0)}. Public-generator access makes all "
                     "dual, hull, Schur, and support-orbit attacks legal; cap debt is not a query separation."
+                )
+            if self_dual_metrics:
+                blocking.append(
+                    "Growing-hull self-dual frontier through dimension "
+                    f"{self_dual_metrics.get('maximum_dimension', 'unknown')} has scalable collisions/exact finite "
+                    f"boundaries/cap-timeout debt={self_dual_metrics.get('scalable_collision_pair_count', 0)}/"
+                    f"{self_dual_metrics.get('exact_nonequivalent_boundary_count', 0)}/"
+                    f"{int(self_dual_metrics.get('incidence_cap_count', 0) or 0) + int(self_dual_metrics.get('incidence_timeout_count', 0) or 0)}. "
+                    "Public explicit-generator access makes Schur, matroid, puncture/shorten, automorphism, and "
+                    "canonical-label attacks legal; full hull removes only one projector shortcut."
+                )
+            if self_dual_local_metrics:
+                blocking.append(
+                    "Self-dual local-profile theorem forces order-four rank/hull collapse on "
+                    f"{self_dual_local_metrics.get('full_order_collapse_instance_count', 0)} instance(s) across "
+                    f"{self_dual_local_metrics.get('full_order_collapse_family_count', 0)} complete family row(s). "
+                    "Because the generator is public, the fixed-order zero-sum distance certificate and all bounded "
+                    "puncture/shorten checks are legal classical preprocessing; their collision is not a query advantage."
+                )
+            if self_dual_global_metrics:
+                blocking.append(
+                    "Self-dual global-orbit audit estimates the largest exhaustive information-set architecture at "
+                    f"2^{float(self_dual_global_metrics.get('maximum_estimated_log2_information_set_count', 0.0) or 0.0):.2f}, "
+                    f"finds {self_dual_global_metrics.get('sampled_equivalence_witness_count', 0)} exact normalized-key "
+                    f"control(s), and leaves {self_dual_global_metrics.get('no_intersection_proof_debt_count', 0)} sampled "
+                    "miss(es) as debt. Explicit generators make basis normalization and Construction-A invariants legal; "
+                    "sampling misses and missing frame recovery are not query separations."
+                )
+            if self_dual_hsp_metrics:
+                blocking.append(
+                    "High-rate self-dual HSP applicability audit finds Dinh-Moore-Russell dimension-gate failures="
+                    f"{self_dual_hsp_metrics.get('dimension_condition_fail_family_count', 0)}/"
+                    f"{self_dual_hsp_metrics.get('family_count', 0)} and certified one-coset no-go rows="
+                    f"{self_dual_hsp_metrics.get('single_coset_no_go_certified_family_count', 0)}. The exact oracle "
+                    "is over (GL_k(2) x S_n) wr Z_2; failure of a sufficient no-go hypothesis is neither query "
+                    "advantage nor a measurement, QFT, or decoder."
+                )
+            if self_dual_rowspace_hsp_metrics:
+                blocking.append(
+                    "Rowspace-canonical HSP reduction eliminates the GL_k factor on "
+                    f"{self_dual_rowspace_hsp_metrics.get('gl_factor_eliminated_family_count', 0)}/"
+                    f"{self_dual_rowspace_hsp_metrics.get('family_count', 0)} self-dual family row(s). The legal "
+                    "public-generator oracle is f_C(P)=RREF(MP) over S_n; the remaining debt is PAut(C) size/minimal "
+                    "degree, symmetric-group coset-state obstruction, collective measurement, and decoder. The raw "
+                    "GL_k dimension-gate failure is not a query separation."
+                )
+            if self_dual_automorphism_metrics:
+                blocking.append(
+                    "Exact public-generator bounded-support analysis stratifies the self-dual tail into rigidity/"
+                    "verified-nonrigidity/unresolved="
+                    f"{self_dual_automorphism_metrics.get('rigidity_certified_instance_count', 0)}/"
+                    f"{self_dual_automorphism_metrics.get('explicit_automorphism_instance_count', 0)}/"
+                    f"{self_dual_automorphism_metrics.get('unresolved_instance_count', 0)}. Fixed-weight support "
+                    "enumeration and color refinement are legal classical preprocessing. Rigid rows inherit the "
+                    "GI-type single-register obstruction; unresolved rows supply no query advantage."
+                )
+            if self_dual_high_order_metrics:
+                blocking.append(
+                    "Packed exact weight-ten support analysis resolves prior self-dual automorphism debt="
+                    f"{self_dual_high_order_metrics.get('resolved_rigidity_instance_count', 0)}/"
+                    f"{self_dual_high_order_metrics.get('target_instance_count', 0)}, remaining="
+                    f"{self_dual_high_order_metrics.get('remaining_unresolved_instance_count', 0)}. This legal "
+                    "classical preprocessing places the resolved rows in the rigid GI-type single-register "
+                    "obstruction; only collective measurements with a full decoder remain relevant."
+                )
+            if self_dual_sparsity_metrics:
+                blocking.append(
+                    "Uniform self-dual counting shows fixed weight-ten expected support count below one on "
+                    f"{self_dual_sparsity_metrics.get('weight_10_expected_below_one_length_count', 0)}/"
+                    f"{self_dual_sparsity_metrics.get('scaling_length_count', 0)} scaling rows, with entropy-half "
+                    f"relative-weight threshold {self_dual_sparsity_metrics.get('entropy_half_relative_weight_threshold', 0)}. "
+                    "This blocks the explicit fixed-order classical certificate architecture, not classical "
+                    "algorithms generally and not the collective-measurement obligation."
+                )
+            if self_dual_wreath_metrics:
+                blocking.append(
+                    "The exact rigid code-equivalence oracle is a bridge class in "
+                    "(S_n x S_n) semidirect Z_2. Its one-copy wreath spectrum has weak-label zero information on "
+                    f"{self_dual_wreath_metrics.get('weak_fourier_zero_information_record_count', 0)}/"
+                    f"{self_dual_wreath_metrics.get('record_count', 0)} rows and growing-copy transform/POVM/decoder="
+                    f"{self_dual_wreath_metrics.get('growing_copy_diagonal_action_transform_count', 0)}/"
+                    f"{self_dual_wreath_metrics.get('carrier_sensitive_covariant_povm_count', 0)}/"
+                    f"{self_dual_wreath_metrics.get('polynomial_hidden_permutation_decoder_count', 0)}."
+                )
+            if self_dual_wreath_hecke_metrics:
+                blocking.append(
+                    "The bridge label stabilizer centralizer is Gelfand on "
+                    f"{self_dual_wreath_hecke_metrics.get('centralizer_gelfand_pair_proof_count', 0)}/"
+                    f"{self_dual_wreath_hecke_metrics.get('record_count', 0)} rows, but the actual hidden subgroup "
+                    "is non-Gelfand on "
+                    f"{self_dual_wreath_hecke_metrics.get('actual_hidden_subgroup_non_gelfand_count', 0)} rows. "
+                    "The natural scalar Hilbert-Schmidt kernel collapses on "
+                    f"{self_dual_wreath_hecke_metrics.get('pairwise_hs_kernel_collapse_count', 0)} rows and "
+                    "operator-frame reductions/POVMs/decoders="
+                    f"{self_dual_wreath_hecke_metrics.get('operator_valued_kcopy_frame_reduction_count', 0)}/"
+                    f"{self_dual_wreath_hecke_metrics.get('carrier_sensitive_covariant_povm_count', 0)}/"
+                    f"{self_dual_wreath_hecke_metrics.get('polynomial_hidden_permutation_decoder_count', 0)}. "
+                    "Scalar label-space commutativity is legal structure, not a mixed-state measurement."
+                )
+            if self_dual_wreath_pgm_metrics:
+                blocking.append(
+                    "The operator-valued PGM has exact polar reductions/average-frame LCU contracts="
+                    f"{self_dual_wreath_pgm_metrics.get('operator_frame_polar_reduction_count', 0)}/"
+                    f"{self_dual_wreath_pgm_metrics.get('average_frame_lcu_contract_count', 0)}, but the maximum "
+                    "generic polar resolution and optimistic Grover log2 charges are "
+                    f"{self_dual_wreath_pgm_metrics.get('maximum_generic_polar_resolution_log2_charge', 0)}/"
+                    f"{self_dual_wreath_pgm_metrics.get('maximum_optimistic_grover_log2_candidate_queries', 0)}. "
+                    "Structured preconditioners/frame inverses/POVM circuits/decoders="
+                    f"{self_dual_wreath_pgm_metrics.get('uniform_polynomial_structured_preconditioner_count', 0)}/"
+                    f"{self_dual_wreath_pgm_metrics.get('polynomial_frame_inverse_count', 0)}/"
+                    f"{self_dual_wreath_pgm_metrics.get('carrier_sensitive_povm_circuit_count', 0)}/"
+                    f"{self_dual_wreath_pgm_metrics.get('polynomial_hidden_permutation_decoder_count', 0)}. "
+                    "Ordinary mixed coset-state access does not include reusable coherent candidate verification."
+                )
+            if self_dual_wreath_projector_subpovm_metrics:
+                blocking.append(
+                    "The whitening-free sub-POVM transfers exactly to the "
+                    "physical wreath HSP, but tail moment-only conclusive log2/"
+                    "selected inverse-condition floor/natural all-sector "
+                    "condition/circuit/outcome/decoder="
+                    f"{self_dual_wreath_projector_subpovm_metrics.get('tail_moment_only_conclusive_log2_lower_bound', 0)}/"
+                    f"{self_dual_wreath_projector_subpovm_metrics.get('minimum_selected_inverse_condition_conclusive_floor', 0)}/"
+                    f"{self_dual_wreath_projector_subpovm_metrics.get('natural_all_sector_polynomial_condition_theorem_count', 0)}/"
+                    f"{self_dual_wreath_projector_subpovm_metrics.get('uniform_wreath_covariant_subpovm_circuit_count', 0)}/"
+                    f"{self_dual_wreath_projector_subpovm_metrics.get('compressed_permutation_outcome_transform_count', 0)}/"
+                    f"{self_dual_wreath_projector_subpovm_metrics.get('polynomial_hidden_permutation_decoder_count', 0)}. "
+                    "Direct tail conclusive log2/structured maximal dilations="
+                    f"{self_dual_wreath_projector_subpovm_metrics.get('tail_direct_uniform_projector_conclusive_log2_probability', 0)}/"
+                    f"{self_dual_wreath_projector_subpovm_metrics.get('structured_maximal_effect_dilation_count', 0)}. "
+                    "Selected physical blocks and a symbolic outcome orbit are "
+                    "not a natural mixed-state measurement."
+                )
+            if self_dual_wreath_subpovm_moment_metrics:
+                blocking.append(
+                    "Wreath trace moments certify W3 natural conclusive "
+                    "order4/order16="
+                    f"{self_dual_wreath_subpovm_moment_metrics.get('order_four_certified_natural_average_conclusive_lower_bound', 0)}/"
+                    f"{self_dual_wreath_subpovm_moment_metrics.get('order_sixteen_certified_natural_average_conclusive_lower_bound', 0)}, "
+                    "but tail factor-two order/equal-sector bypass/growing "
+                    "all-unequal contractions/maximal dilations/decoders="
+                    f"{self_dual_wreath_subpovm_moment_metrics.get('tail_factor_two_moment_order_upper_bound', 0)}/"
+                    f"{self_dual_wreath_subpovm_moment_metrics.get('natural_source_equal_sector_bypass_theorem_count', 0)}/"
+                    f"{self_dual_wreath_subpovm_moment_metrics.get('growing_order_all_unequal_contraction_count', 0)}/"
+                    f"{self_dual_wreath_subpovm_moment_metrics.get('structured_maximal_effect_dilation_count', 0)}/"
+                    f"{self_dual_wreath_subpovm_moment_metrics.get('polynomial_hidden_permutation_decoder_count', 0)}. "
+                    "A moment certificate is classical analysis, not a free "
+                    "mixed-state measurement operation."
+                )
+            if self_dual_wreath_natural_unequal_metrics:
+                blocking.append(
+                    "The natural wreath source is now reduced to all-unequal "
+                    "physical labels with probability 1-o(1): tail finite "
+                    "any-equal probability/all-unequal dominance theorem="
+                    f"{self_dual_wreath_natural_unequal_metrics.get('tail_any_equal_label_probability', 0)}/"
+                    f"{self_dual_wreath_natural_unequal_metrics.get('threshold_tuple_all_unequal_dominance_theorem_count', 0)}. "
+                    "This cuts equal-sector commutator recoupling from the "
+                    "natural critical path, but supplies no coherent access to "
+                    "the growing-order all-unequal contraction."
+                )
+            if self_dual_wreath_natural_word_map_metrics:
+                blocking.append(
+                    "Natural source-averaged wreath moments now reduce at all "
+                    "orders to identity/bridge subset-word counts, with irrep "
+                    "sum removed/growing contraction/concentration="
+                    f"{self_dual_wreath_natural_word_map_metrics.get('physical_irrep_sum_eliminated_count', 0)}/"
+                    f"{self_dual_wreath_natural_word_map_metrics.get('growing_order_word_map_contraction_count', 0)}/"
+                    f"{self_dual_wreath_natural_word_map_metrics.get('natural_tuple_moment_concentration_theorem_count', 0)}. "
+                    "The reduction is a classical identity; coherent mixed-"
+                    "state access does not evaluate exponentially many subset "
+                    "words or supply a maximal-effect measurement."
+                )
+            if self_dual_wreath_word_map_mixing_metrics:
+                blocking.append(
+                    "The annealed one-word lazy walk mixes with tail log2 "
+                    "error ratio "
+                    f"{self_dual_wreath_word_map_mixing_metrics.get('tail_log2_error_to_stationary_ratio_upper_bound', 0)}, "
+                    "but the shared-generator kth-moment interval remains "
+                    f"{self_dual_wreath_word_map_mixing_metrics.get('tail_log2_unresolved_kth_moment_interval_width', 0)} "
+                    "bits wide and coupled contractions/concentration are "
+                    f"{self_dual_wreath_word_map_mixing_metrics.get('coupled_k_walk_contraction_count', 0)}/"
+                    f"{self_dual_wreath_word_map_mixing_metrics.get('word_map_concentration_theorem_count', 0)}. "
+                    "Ordinary coset-state access does not turn annealed "
+                    "mixing into a quenched multi-copy measurement."
+                )
+            if self_dual_wreath_coupled_word_walk_gap_metrics:
+                blocking.append(
+                    "The shared-generator word walk now has a constant gap "
+                    f"{self_dual_wreath_coupled_word_walk_gap_metrics.get('tail_coupled_spectral_gap_lower_bound', 0)}, "
+                    "but its certificate-order moment-root bound remains "
+                    f"{self_dual_wreath_coupled_word_walk_gap_metrics.get('tail_log2_root_to_second_moment_scale_gap', 0)} "
+                    "bits above the second-moment frame scale. Conditioned "
+                    "all-unequal kernels/conclusive theorems remain "
+                    f"{self_dual_wreath_coupled_word_walk_gap_metrics.get('typical_all_unequal_conditioned_kernel_count', 0)}/"
+                    f"{self_dual_wreath_coupled_word_walk_gap_metrics.get('natural_average_inverse_polynomial_conclusive_theorem_count', 0)}. "
+                    "Coherent coset-state access does not remove rare-sector "
+                    "contamination or implement the maximal-effect POVM."
+                )
+            if self_dual_wreath_all_unequal_conditioned_kernel_metrics:
+                blocking.append(
+                    "Conditioning now exactly removes equal source sectors, "
+                    "with kernel/word-reduction/half-norm theorem counts "
+                    f"{self_dual_wreath_all_unequal_conditioned_kernel_metrics.get('typical_all_unequal_conditioned_kernel_count', 0)}/"
+                    f"{self_dual_wreath_all_unequal_conditioned_kernel_metrics.get('all_order_conditioned_word_map_reduction_count', 0)}/"
+                    f"{self_dual_wreath_all_unequal_conditioned_kernel_metrics.get('all_unequal_frame_half_norm_bound_count', 0)}. "
+                    "The root-to-second-scale gap remains "
+                    f"{self_dual_wreath_all_unequal_conditioned_kernel_metrics.get('tail_log2_root_to_second_moment_scale_gap', 0)} "
+                    "bits and simultaneous k-coordinate contractions remain "
+                    f"{self_dual_wreath_all_unequal_conditioned_kernel_metrics.get('simultaneous_k_coordinate_contraction_count', 0)}. "
+                    "The signed kernel is an analysis identity, not a coherent "
+                    "measurement implementation."
+                )
+            if self_dual_wreath_global_partition_collision_metrics:
+                blocking.append(
+                    "All 2k source partitions are now proved globally "
+                    "distinct with probability 1-o(1), excluding "
+                    f"{self_dual_wreath_global_partition_collision_metrics.get('repeated_source_counterexample_exclusion_count', 0)} "
+                    "known repeated-source half-norm counterexample class. "
+                    "Collision-free norm/contraction theorems remain "
+                    f"{self_dual_wreath_global_partition_collision_metrics.get('collision_free_tuple_norm_theorem_count', 0)}/"
+                    f"{self_dual_wreath_global_partition_collision_metrics.get('collision_free_growing_moment_contraction_count', 0)}. "
+                    "Ordinary coset-state access does not turn source "
+                    "distinctness into a coherent tensor contraction."
+                )
+            if self_dual_wreath_collision_free_frame_probe_metrics:
+                blocking.append(
+                    "Matrix-free collision-free mixed-frame probes find "
+                    f"{self_dual_wreath_collision_free_frame_probe_metrics.get('w5_exact_two_to_one_minus_k_violation_count', 0)} "
+                    "exact-target violations but maximum target ratio only "
+                    f"{self_dual_wreath_collision_free_frame_probe_metrics.get('maximum_w5_top_to_target_ratio', 0)}. "
+                    "All-n polynomial-factor norm/growing contraction "
+                    "theorems remain "
+                    f"{self_dual_wreath_collision_free_frame_probe_metrics.get('collision_free_polynomial_factor_norm_theorem_count', 0)}/"
+                    f"{self_dual_wreath_collision_free_frame_probe_metrics.get('collision_free_growing_moment_contraction_count', 0)}. "
+                    "Finite spectra do not provide an executable coherent "
+                    "measurement under ordinary coset-state access."
+                )
+            if self_dual_wreath_character_ratio_contract_metrics:
+                blocking.append(
+                    "Unequal physical characters now factor exactly into "
+                    "ordinary S_n ratios, with "
+                    f"{self_dual_wreath_character_ratio_contract_metrics.get('literature_linked_character_bound_count', 0)} "
+                    "sharp literature tools linked. Simultaneous typical-shape/"
+                    "short-word/norm theorem counts remain "
+                    f"{self_dual_wreath_character_ratio_contract_metrics.get('simultaneous_typical_shape_tail_theorem_count', 0)}/"
+                    f"{self_dual_wreath_character_ratio_contract_metrics.get('joint_short_word_anticoncentration_theorem_count', 0)}/"
+                    f"{self_dual_wreath_character_ratio_contract_metrics.get('collision_free_polynomial_factor_norm_theorem_count', 0)}. "
+                    "A classical character inequality does not implement the "
+                    "collective measurement."
+                )
+            if self_dual_wreath_short_word_profile_metrics:
+                blocking.append(
+                    "Fixed even-mask bridge words now have exact uniform "
+                    "marginals and target-order mask-collision log2 bound "
+                    f"{self_dual_wreath_short_word_profile_metrics.get('tail_log2_pairwise_mask_collision_union_bound', 0)}. "
+                    "Non-diagonal shared-generator correlation/joint short-"
+                    "word theorem counts remain "
+                    f"{self_dual_wreath_short_word_profile_metrics.get('non_diagonal_shared_generator_correlation_theorem_count', 0)}/"
+                    f"{self_dual_wreath_short_word_profile_metrics.get('joint_short_word_anticoncentration_theorem_count', 0)}. "
+                    "Marginal classical word statistics do not implement the "
+                    "collective measurement."
+                )
+            if self_dual_wreath_mask_hypergraph_reduction_metrics:
+                blocking.append(
+                    "Private-column character products now vanish exactly, "
+                    "reducing nonzero terms to incidence two-cores. Exact "
+                    "collision-free W5 nonzero triangles/max correlation are "
+                    f"{self_dual_wreath_mask_hypergraph_reduction_metrics.get('w5_nonzero_collision_free_triangle_count', 0)}/"
+                    f"{self_dual_wreath_mask_hypergraph_reduction_metrics.get('maximum_w5_collision_free_triangle_correlation', 0)}, "
+                    "while two-core anti-concentration theorems remain "
+                    f"{self_dual_wreath_mask_hypergraph_reduction_metrics.get('joint_two_core_anticoncentration_theorem_count', 0)}. "
+                    "The exact reduction is not a coherent access primitive."
+                )
+            if self_dual_wreath_subgroup_twirl_reduction_metrics:
+                blocking.append(
+                    "Dense mask correlations now resum exactly as a subgroup "
+                    "twirl and localize to diagonal-S_n isotypic partial "
+                    "traces. W4 validation failures/tail maximum multiplicity "
+                    "log2/uniform partial-trace theorems are "
+                    f"{self_dual_wreath_subgroup_twirl_reduction_metrics.get('finite_twirl_validation_failure_count', 0)}/"
+                    f"{self_dual_wreath_subgroup_twirl_reduction_metrics.get('tail_maximum_restriction_multiplicity_log2', 0)}/"
+                    f"{self_dual_wreath_subgroup_twirl_reduction_metrics.get('uniform_partial_trace_delocalization_theorem_count', 0)}. "
+                    "The reduction supplies neither a coherent multiplicity "
+                    "transform nor the required norm estimate."
+                )
+            if self_dual_wreath_orientation_fourier_reduction_metrics:
+                blocking.append(
+                    "The orbit-Gram Fourier blocks are now exact averages of "
+                    "orientation invariant-subspace projectors, but support "
+                    "counting is falsified: tail n/k/log2 active/minimum "
+                    "active fraction/full-support step are "
+                    f"{self_dual_wreath_orientation_fourier_reduction_metrics.get('tail_n', 0)}/"
+                    f"{self_dual_wreath_orientation_fourier_reduction_metrics.get('tail_copy_count', 0)}/"
+                    f"{self_dual_wreath_orientation_fourier_reduction_metrics.get('tail_log2_maximum_active_orientation_count', 0)}/"
+                    f"{self_dual_wreath_orientation_fourier_reduction_metrics.get('tail_minimum_active_orientation_fraction', 0)}/"
+                    f"{self_dual_wreath_orientation_fourier_reduction_metrics.get('tail_first_full_support_saturation_step', 0)}. "
+                    "No canonical-angle, fusion-frame, or recoupling norm "
+                    "theorem and no coherent implementation are known."
+                )
+            if self_dual_wreath_orientation_fusion_moment_metrics:
+                blocking.append(
+                    "Pairwise fusion overlaps and the complete averaged "
+                    "second moment now have exact character/class-algebra "
+                    "reductions. Tail collision-to-target/effective-rank "
+                    "log2/higher-moment norm theorems are "
+                    f"{self_dual_wreath_orientation_fusion_moment_metrics.get('tail_collision_lower_bound_to_target_ratio', 0)}/"
+                    f"{self_dual_wreath_orientation_fusion_moment_metrics.get('tail_maximum_log2_effective_rank', 0)}/"
+                    f"{self_dual_wreath_orientation_fusion_moment_metrics.get('higher_orientation_moment_norm_theorem_count', 0)}. "
+                    "This is nonobstructing structural evidence, not an "
+                    "operator-norm upper bound or coherent access primitive."
+                )
+            if self_dual_wreath_carrier_metrics:
+                blocking.append(
+                    "Exact subset-carrier controls find symmetrized orbit noncommutators="
+                    f"{self_dual_wreath_carrier_metrics.get('symmetrized_orbit_noncommutation_count', 0)}, "
+                    "first at copy count "
+                    f"{self_dual_wreath_carrier_metrics.get('first_symmetrized_noncommuting_copy_count', 0)}, "
+                    "with depth/rank lower bound="
+                    f"{self_dual_wreath_carrier_metrics.get('maximum_truncated_word_depth', 0)}/"
+                    f"{self_dual_wreath_carrier_metrics.get('maximum_truncated_algebra_rank_lower_bound', 0)}. "
+                    "Scalar preconditioners/noncommutative block transforms/frame inverses/decoders="
+                    f"{self_dual_wreath_carrier_metrics.get('scalar_krawtchouk_preconditioner_count', 0)}/"
+                    f"{self_dual_wreath_carrier_metrics.get('uniform_noncommutative_carrier_block_transform_count', 0)}/"
+                    f"{self_dual_wreath_carrier_metrics.get('polynomial_frame_inverse_count', 0)}/"
+                    f"{self_dual_wreath_carrier_metrics.get('polynomial_hidden_permutation_decoder_count', 0)}."
+                )
+            if self_dual_wreath_orbit_metrics:
+                blocking.append(
+                    "Carrier word-depth scaling has factorial hidden-label orbit lower bounds on "
+                    f"{self_dual_wreath_orbit_metrics.get('factorial_hidden_label_orbit_lower_bound_count', 0)}/"
+                    f"{self_dual_wreath_orbit_metrics.get('record_count', 0)} rows, with maximum carrier/subset-profile "
+                    "log2 counts="
+                    f"{self_dual_wreath_orbit_metrics.get('maximum_log2_full_wreath_orbit_lower_bound', 0)}/"
+                    f"{self_dual_wreath_orbit_metrics.get('maximum_log2_subset_profile_upper_bound', 0)}. "
+                    "Explicit orbit tables/harmonic transforms/preconditioners/decoders="
+                    f"{self_dual_wreath_orbit_metrics.get('explicit_polynomial_carrier_orbit_table_count', 0)}/"
+                    f"{self_dual_wreath_orbit_metrics.get('compressed_harmonic_block_transform_count', 0)}/"
+                    f"{self_dual_wreath_orbit_metrics.get('polynomial_structured_frame_preconditioner_count', 0)}/"
+                    f"{self_dual_wreath_orbit_metrics.get('polynomial_hidden_permutation_decoder_count', 0)}."
+                )
+            if self_dual_wreath_harmonic_metrics:
+                blocking.append(
+                    "The harmonic carrier schema verifies "
+                    f"{self_dual_wreath_harmonic_metrics.get('harmonic_burnside_identity_verification_count', 0)}/"
+                    f"{self_dual_wreath_harmonic_metrics.get('exact_scaling_record_count', 0)} exact "
+                    "Kronecker/Burnside identities, but the maximum certified dense block and multiplicity log2 "
+                    "lower bounds are "
+                    f"{self_dual_wreath_harmonic_metrics.get('maximum_log2_certified_block_coordinate_lower_bound', 0)}/"
+                    f"{self_dual_wreath_harmonic_metrics.get('maximum_log2_certified_multiplicity_lower_bound', 0)}. "
+                    "Internal transforms/sparse product rules/coherent transforms/decoders="
+                    f"{self_dual_wreath_harmonic_metrics.get('internal_kronecker_basis_transform_count', 0)}/"
+                    f"{self_dual_wreath_harmonic_metrics.get('sparse_carrier_product_rule_count', 0)}/"
+                    f"{self_dual_wreath_harmonic_metrics.get('uniform_coherent_harmonic_transform_count', 0)}/"
+                    f"{self_dual_wreath_harmonic_metrics.get('polynomial_hidden_permutation_decoder_count', 0)}."
+                )
+            if self_dual_wreath_commutant_metrics:
+                blocking.append(
+                    "The restricted equal-source commutant gap transfers with "
+                    f"{self_dual_wreath_commutant_metrics.get('restricted_all_n_inverse_polynomial_gap_theorem_count', 0)} "
+                    "all-n theorem, but only "
+                    f"{self_dual_wreath_commutant_metrics.get('restricted_invariant_matrix_coordinate_count', 0)} "
+                    "carrier coordinates are resolved and the maximum -log2 coverage upper bound is "
+                    f"{self_dual_wreath_commutant_metrics.get('maximum_negative_log2_restricted_coordinate_coverage_upper_bound', 0)}. "
+                    "General gaps/cross-source rules/frame-invariant sectors/decoders="
+                    f"{self_dual_wreath_commutant_metrics.get('general_equal_source_gap_theorem_count', 0)}/"
+                    f"{self_dual_wreath_commutant_metrics.get('cross_source_carrier_mixing_rule_count', 0)}/"
+                    f"{self_dual_wreath_commutant_metrics.get('carrier_frame_invariant_subspace_count', 0)}/"
+                    f"{self_dual_wreath_commutant_metrics.get('polynomial_hidden_permutation_decoder_count', 0)}."
+                )
+            if self_dual_wreath_physical_block_metrics:
+                blocking.append(
+                    "Physical wreath Fourier blocks are explicit on "
+                    f"{self_dual_wreath_physical_block_metrics.get('record_count', 0)} selected equal-pair rows, "
+                    "including "
+                    f"{self_dual_wreath_physical_block_metrics.get('information_threshold_block_count', 0)} "
+                    "S_3 threshold controls, with maximum finite condition number "
+                    f"{self_dual_wreath_physical_block_metrics.get('maximum_support_condition_number', 0)}. "
+                    "Unequal blocks/all-partition tuples/all-n recurrences/hidden-label transforms/preconditioners="
+                    f"{self_dual_wreath_physical_block_metrics.get('unequal_pair_physical_block_count', 0)}/"
+                    f"{self_dual_wreath_physical_block_metrics.get('all_partition_tuple_block_count', 0)}/"
+                    f"{self_dual_wreath_physical_block_metrics.get('uniform_all_n_spectral_recurrence_count', 0)}/"
+                    f"{self_dual_wreath_physical_block_metrics.get('hidden_label_harmonic_transform_count', 0)}/"
+                    f"{self_dual_wreath_physical_block_metrics.get('polynomial_structured_frame_preconditioner_count', 0)}."
+                )
+            if self_dual_wreath_unequal_block_metrics:
+                blocking.append(
+                    "Unequal-pair physical blocks have "
+                    f"{self_dual_wreath_unequal_block_metrics.get('one_copy_zero_character_control_count', 0)} "
+                    "zero-character one-copy controls but "
+                    f"{self_dual_wreath_unequal_block_metrics.get('collective_nontrivial_spectrum_count', 0)} "
+                    "nontrivial collective spectra, including "
+                    f"{self_dual_wreath_unequal_block_metrics.get('information_threshold_unequal_block_count', 0)} "
+                    "W_3 threshold blocks. Mixed tuples/all-n recurrences/preconditioners/decoders="
+                    f"{self_dual_wreath_unequal_block_metrics.get('mixed_physical_irrep_tuple_block_count', 0)}/"
+                    f"{self_dual_wreath_unequal_block_metrics.get('uniform_all_n_spectral_recurrence_count', 0)}/"
+                    f"{self_dual_wreath_unequal_block_metrics.get('polynomial_structured_frame_preconditioner_count', 0)}/"
+                    f"{self_dual_wreath_unequal_block_metrics.get('polynomial_hidden_permutation_decoder_count', 0)}."
+                )
+            if self_dual_wreath_w3_tuple_metrics:
+                blocking.append(
+                    "The complete W_3 threshold tuple audit covers "
+                    f"{self_dual_wreath_w3_tuple_metrics.get('naturally_occupied_threshold_tuple_count', 0)}/"
+                    f"{self_dual_wreath_w3_tuple_metrics.get('unordered_threshold_tuple_count', 0)} "
+                    "occupied/all unordered blocks with total natural mass "
+                    f"{self_dual_wreath_w3_tuple_metrics.get('natural_tuple_mass_sum', 0)}, minimum positive "
+                    "eigenvalue "
+                    f"{self_dual_wreath_w3_tuple_metrics.get('minimum_naturally_occupied_positive_eigenvalue', 0)}, "
+                    "and maximum support condition number "
+                    f"{self_dual_wreath_w3_tuple_metrics.get('maximum_naturally_occupied_support_condition_number', 0)}. "
+                    "All-n moment recurrences/coherent inverses/harmonic transforms/decoders="
+                    f"{self_dual_wreath_w3_tuple_metrics.get('uniform_all_n_character_moment_recurrence_count', 0)}/"
+                    f"{self_dual_wreath_w3_tuple_metrics.get('coherent_blockwise_frame_inverse_count', 0)}/"
+                    f"{self_dual_wreath_w3_tuple_metrics.get('hidden_label_harmonic_transform_count', 0)}/"
+                    f"{self_dual_wreath_w3_tuple_metrics.get('polynomial_hidden_permutation_decoder_count', 0)}."
+                )
+            if self_dual_wreath_character_moment_metrics:
+                blocking.append(
+                    "Physical wreath character moments validate "
+                    f"{self_dual_wreath_character_moment_metrics.get('w3_validated_tuple_moment_count', 0)} "
+                    "complete W_3 tuple moments and give "
+                    f"{self_dual_wreath_character_moment_metrics.get('exact_second_moment_class_recurrence_count', 0)} "
+                    "exact all-n second-moment class recurrence, but polynomial third-moment contractions/"
+                    "support projectors/coherent pseudoinverses="
+                    f"{self_dual_wreath_character_moment_metrics.get('polynomial_third_moment_contraction_count', 0)}/"
+                    f"{self_dual_wreath_character_moment_metrics.get('coherent_support_projector_count', 0)}/"
+                    f"{self_dual_wreath_character_moment_metrics.get('coherent_blockwise_frame_pseudoinverse_count', 0)}. "
+                    "Classical moment evaluation is not a coherent decoder."
+                )
+            if self_dual_wreath_third_moment_metrics:
+                blocking.append(
+                    "The cycle-index/rook contraction removes factorial pair enumeration for "
+                    f"{self_dual_wreath_third_moment_metrics.get('covered_physical_irrep_family_count', 0)} "
+                    "repeated unequal physical-irrep family through n="
+                    f"{self_dual_wreath_third_moment_metrics.get('maximum_scaling_n', 0)}, but all-sector "
+                    "contractions/support gaps/coherent pseudoinverses/decoders="
+                    f"{self_dual_wreath_third_moment_metrics.get('all_physical_irrep_sector_contraction_count', 0)}/"
+                    f"{self_dual_wreath_third_moment_metrics.get('support_gap_theorem_count', 0)}/"
+                    f"{self_dual_wreath_third_moment_metrics.get('coherent_blockwise_frame_pseudoinverse_count', 0)}/"
+                    f"{self_dual_wreath_third_moment_metrics.get('polynomial_hidden_permutation_decoder_count', 0)}."
+                )
+            if self_dual_wreath_all_unequal_metrics:
+                blocking.append(
+                    "Class algebra contracts arbitrary mixed unequal-only third moments exactly with "
+                    f"{self_dual_wreath_all_unequal_metrics.get('maximum_class_triple_count', 0)} "
+                    "class triples at the largest control, but polynomial-in-n/equal-commutator/all-sector "
+                    "contractions="
+                    f"{self_dual_wreath_all_unequal_metrics.get('polynomial_in_n_all_unequal_contraction_count', 0)}/"
+                    f"{self_dual_wreath_all_unequal_metrics.get('equal_pair_commutator_contraction_count', 0)}/"
+                    f"{self_dual_wreath_all_unequal_metrics.get('all_physical_irrep_sector_contraction_count', 0)}. "
+                    "An explicit S_4 witness proves the three relative class labels do not determine equal-pair "
+                    "commutator characters."
+                )
+            if self_dual_wreath_commutator_metrics:
+                blocking.append(
+                    "Frobenius/Kronecker contraction solves pure commutator products through n="
+                    f"{self_dual_wreath_commutator_metrics.get('maximum_pure_commutator_scaling_n', 0)}, "
+                    "but mixed four-class contractions/polynomial refined kernels="
+                    f"{self_dual_wreath_commutator_metrics.get('mixed_class_commutator_contraction_count', 0)}/"
+                    f"{self_dual_wreath_commutator_metrics.get('polynomial_refined_kernel_construction_count', 0)}. "
+                    "The largest finite refined control enumerates "
+                    f"{self_dual_wreath_commutator_metrics.get('maximum_refined_kernel_explicit_pair_count', 0)} "
+                    "permutation pairs."
+                )
+            if self_dual_wreath_stable_rank_metrics:
+                blocking.append(
+                    "Bounded-tail stable partitions have a measured finite feature-algebra rank up to "
+                    f"{self_dual_wreath_stable_rank_metrics.get('maximum_stable_feature_algebra_rank', 0)}, "
+                    "but their physical label mass vanishes: minimum observed one-copy/threshold-all-stable log2 "
+                    "mass="
+                    f"{self_dual_wreath_stable_rank_metrics.get('minimum_log2_one_copy_physical_stable_mass', 0)}/"
+                    f"{self_dual_wreath_stable_rank_metrics.get('minimum_log2_threshold_all_stable_mass', 0)}. "
+                    "Typical-sector recoupling remains absent."
+                )
+            if self_dual_wreath_typical_portfolio_metrics:
+                blocking.append(
+                    "Exact top-Plancherel portfolios need up to "
+                    f"{self_dual_wreath_typical_portfolio_metrics.get('maximum_ninety_percent_catalog_count', 0)} "
+                    "partitions for 90% source mass in the finite sweep, and the maximal-atom theorem rules out every "
+                    "polynomial constant-mass catalog. Uniform partition-description recoupling rules/typical "
+                    "four-class contractions="
+                    f"{self_dual_wreath_typical_portfolio_metrics.get('uniform_partition_description_recoupling_rule_count', 0)}/"
+                    f"{self_dual_wreath_typical_portfolio_metrics.get('polynomial_typical_four_class_contraction_count', 0)}."
+                )
+            if self_dual_wreath_recoupling_transfer_metrics:
+                blocking.append(
+                    "Typed capability transfer finds "
+                    f"{self_dual_wreath_recoupling_transfer_metrics.get('valid_partial_primitive_transfer_count', 0)} "
+                    "valid partial known primitives but "
+                    f"{self_dual_wreath_recoupling_transfer_metrics.get('decoder_blocking_missing_primitive_count', 0)} "
+                    "decoder-blocking missing primitives. Internal Kronecker transforms/associators/mixed kernels/"
+                    "end-to-end algorithms="
+                    f"{self_dual_wreath_recoupling_transfer_metrics.get('internal_kronecker_transform_count', 0)}/"
+                    f"{self_dual_wreath_recoupling_transfer_metrics.get('kcopy_associator_count', 0)}/"
+                    f"{self_dual_wreath_recoupling_transfer_metrics.get('mixed_four_class_contraction_count', 0)}/"
+                    f"{self_dual_wreath_recoupling_transfer_metrics.get('new_end_to_end_quantum_algorithm_count', 0)}."
                 )
             if goppa_syzygy_metrics:
                 blocking.append(

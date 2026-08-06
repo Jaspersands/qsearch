@@ -1,0 +1,2654 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Noncommuting orientation projectors rule out direct polar sampling.",
+      "resolution": "False for pairs. Their noncommuting Jordan blocks are better conditioned as n grows because c<=1/(n-1).",
+      "resolved": true
+    },
+    {
+      "objection": "Exact common ranges make the pair inverse singular.",
+      "resolution": "The zero antisymmetric direction is outside support; the common symmetric direction has eigenvalue two.",
+      "resolved": true
+    },
+    {
+      "objection": "Constant pair conditioning proves the full orientation sampler efficient.",
+      "resolution": "No. Whitening a pair changes the subspaces seen by the next level, where near-parallel nonidentical ranges may emerge.",
+      "resolved": false
+    },
+    {
+      "objection": "A balanced pair tree automatically avoids known sieve lower bounds.",
+      "resolution": "No formal escape is established. A local adaptive fusion tree may be exactly the architecture ruled out for graph isomorphism.",
+      "resolved": false
+    }
+  ],
+  "claim_gate": {
+    "common_ranges_are_pair_conditioning_obstruction": false,
+    "global_pgm_circuit_proved": false,
+    "moore_russell_sniady_sieve_bound_evaded": false,
+    "noncommutation_is_pair_sampler_obstruction": false,
+    "pair_polar_sampler_polynomial": true,
+    "reason": "One nonorthogonal merge is efficiently normalized with a constant singular gap. The decisive next theorem is stability of that gap under global recursive composition, together with a formal sieve-model audit.",
+    "recursive_pair_sampler_polynomial": false,
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-06T01:33:29.633076+00:00",
+  "falsifiers_triggered": [
+    "Do not treat noncommutation or exact common ranges as a barrier to a single orientation-projector merge.",
+    "Do not infer a global sampler from pair conditioning; measure the principal angles of recursively merged ranges first.",
+    "Do not promote a pairwise merge tree before proving it lies outside the Moore--Russell--Sniady sieve model."
+  ],
+  "finite_controls": [
+    {
+      "carrier_dimension": 54,
+      "common_range_dimension": 0,
+      "control_id": "W4-0-3-1-0-1",
+      "exact_pair_polar_sampler_validation": true,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_mask": 0,
+      "left_projector_rank": 0,
+      "maximum_noncommon_principal_correlation": 0.0,
+      "maximum_pair_angle_formula_residual": 0.0,
+      "maximum_projector_sum_eigenvalue": 1.0000000000000007,
+      "minimum_positive_projector_sum_eigenvalue": 0.9999999999999998,
+      "n": 4,
+      "nonzero_principal_correlation_count": 0,
+      "normalized_analysis_minimum_positive_singular_value": 0.7071067811865475,
+      "polar_support_isometry_residual": 8.110381780606213e-16,
+      "predicted_support_condition_upper_bound": 2.0,
+      "projector_sum_spectrum_formula_residual": 2.220446049250313e-16,
+      "right_orientation_mask": 1,
+      "right_projector_rank": 3,
+      "status": "exact-constant-conditioned-pair-polar-control",
+      "support_condition_number": 1.0000000000000009,
+      "target_partition": [
+        3,
+        1
+      ]
+    },
+    {
+      "carrier_dimension": 54,
+      "common_range_dimension": 0,
+      "control_id": "W4-0-3-1-0-3",
+      "exact_pair_polar_sampler_validation": true,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_mask": 0,
+      "left_projector_rank": 0,
+      "maximum_noncommon_principal_correlation": 0.0,
+      "maximum_pair_angle_formula_residual": 0.0,
+      "maximum_projector_sum_eigenvalue": 1.0,
+      "minimum_positive_projector_sum_eigenvalue": 0.9999999999999998,
+      "n": 4,
+      "nonzero_principal_correlation_count": 0,
+      "normalized_analysis_minimum_positive_singular_value": 0.7071067811865475,
+      "polar_support_isometry_residual": 6.338351067506775e-16,
+      "predicted_support_condition_upper_bound": 2.0,
+      "projector_sum_spectrum_formula_residual": 3.3306690738754696e-16,
+      "right_orientation_mask": 3,
+      "right_projector_rank": 2,
+      "status": "exact-constant-conditioned-pair-polar-control",
+      "support_condition_number": 1.0000000000000002,
+      "target_partition": [
+        3,
+        1
+      ]
+    },
+    {
+      "carrier_dimension": 54,
+      "common_range_dimension": 0,
+      "control_id": "W4-0-3-1-1-2",
+      "exact_pair_polar_sampler_validation": true,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_mask": 1,
+      "left_projector_rank": 3,
+      "maximum_noncommon_principal_correlation": 0.0,
+      "maximum_pair_angle_formula_residual": 0.0,
+      "maximum_projector_sum_eigenvalue": 1.0000000000000002,
+      "minimum_positive_projector_sum_eigenvalue": 1.0,
+      "n": 4,
+      "nonzero_principal_correlation_count": 0,
+      "normalized_analysis_minimum_positive_singular_value": 0.7071067811865476,
+      "polar_support_isometry_residual": 7.27355796213703e-16,
+      "predicted_support_condition_upper_bound": 2.0,
+      "projector_sum_spectrum_formula_residual": 1.1102230246251565e-16,
+      "right_orientation_mask": 2,
+      "right_projector_rank": 0,
+      "status": "exact-constant-conditioned-pair-polar-control",
+      "support_condition_number": 1.0000000000000002,
+      "target_partition": [
+        3,
+        1
+      ]
+    },
+    {
+      "carrier_dimension": 54,
+      "common_range_dimension": 0,
+      "control_id": "W4-0-3-1-1-3",
+      "exact_pair_polar_sampler_validation": true,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_mask": 1,
+      "left_projector_rank": 3,
+      "maximum_noncommon_principal_correlation": 0.0,
+      "maximum_pair_angle_formula_residual": 0.0,
+      "maximum_projector_sum_eigenvalue": 1.0000000000000002,
+      "minimum_positive_projector_sum_eigenvalue": 0.9999999999999994,
+      "n": 4,
+      "nonzero_principal_correlation_count": 0,
+      "normalized_analysis_minimum_positive_singular_value": 0.7071067811865474,
+      "polar_support_isometry_residual": 9.464362805161291e-16,
+      "predicted_support_condition_upper_bound": 2.0,
+      "projector_sum_spectrum_formula_residual": 2.220446049250313e-16,
+      "right_orientation_mask": 3,
+      "right_projector_rank": 2,
+      "status": "exact-constant-conditioned-pair-polar-control",
+      "support_condition_number": 1.0000000000000009,
+      "target_partition": [
+        3,
+        1
+      ]
+    },
+    {
+      "carrier_dimension": 54,
+      "common_range_dimension": 0,
+      "control_id": "W4-0-3-1-2-3",
+      "exact_pair_polar_sampler_validation": true,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_mask": 2,
+      "left_projector_rank": 0,
+      "maximum_noncommon_principal_correlation": 0.0,
+      "maximum_pair_angle_formula_residual": 0.0,
+      "maximum_projector_sum_eigenvalue": 0.9999999999999999,
+      "minimum_positive_projector_sum_eigenvalue": 0.9999999999999994,
+      "n": 4,
+      "nonzero_principal_correlation_count": 0,
+      "normalized_analysis_minimum_positive_singular_value": 0.7071067811865474,
+      "polar_support_isometry_residual": 1.0119038956365753e-16,
+      "predicted_support_condition_upper_bound": 2.0,
+      "projector_sum_spectrum_formula_residual": 4.440892098500626e-16,
+      "right_orientation_mask": 3,
+      "right_projector_rank": 2,
+      "status": "exact-constant-conditioned-pair-polar-control",
+      "support_condition_number": 1.0000000000000004,
+      "target_partition": [
+        3,
+        1
+      ]
+    },
+    {
+      "carrier_dimension": 36,
+      "common_range_dimension": 0,
+      "control_id": "W4-0-2-2-0-1",
+      "exact_pair_polar_sampler_validation": true,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_mask": 0,
+      "left_projector_rank": 9,
+      "maximum_noncommon_principal_correlation": 0.0,
+      "maximum_pair_angle_formula_residual": 0.0,
+      "maximum_projector_sum_eigenvalue": 1.0000000000000002,
+      "minimum_positive_projector_sum_eigenvalue": 0.9999999999999989,
+      "n": 4,
+      "nonzero_principal_correlation_count": 0,
+      "normalized_analysis_minimum_positive_singular_value": 0.7071067811865471,
+      "polar_support_isometry_residual": 1.241869327919763e-15,
+      "predicted_support_condition_upper_bound": 2.0,
+      "projector_sum_spectrum_formula_residual": 6.661338147750939e-16,
+      "right_orientation_mask": 1,
+      "right_projector_rank": 0,
+      "status": "exact-constant-conditioned-pair-polar-control",
+      "support_condition_number": 1.0000000000000013,
+      "target_partition": [
+        2,
+        2
+      ]
+    },
+    {
+      "carrier_dimension": 36,
+      "common_range_dimension": 0,
+      "control_id": "W4-0-2-2-0-2",
+      "exact_pair_polar_sampler_validation": true,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_mask": 0,
+      "left_projector_rank": 9,
+      "maximum_noncommon_principal_correlation": 0.0,
+      "maximum_pair_angle_formula_residual": 0.0,
+      "maximum_projector_sum_eigenvalue": 1.0000000000000002,
+      "minimum_positive_projector_sum_eigenvalue": 0.9999999999999996,
+      "n": 4,
+      "nonzero_principal_correlation_count": 0,
+      "normalized_analysis_minimum_positive_singular_value": 0.7071067811865474,
+      "polar_support_isometry_residual": 8.115290848186219e-16,
+      "predicted_support_condition_upper_bound": 2.0,
+      "projector_sum_spectrum_formula_residual": 2.220446049250313e-16,
+      "right_orientation_mask": 2,
+      "right_projector_rank": 0,
+      "status": "exact-constant-conditioned-pair-polar-control",
+      "support_condition_number": 1.0000000000000007,
+      "target_partition": [
+        2,
+        2
+      ]
+    },
+    {
+      "carrier_dimension": 36,
+      "common_range_dimension": 0,
+      "control_id": "W4-0-2-2-0-3",
+      "exact_pair_polar_sampler_validation": true,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_mask": 0,
+      "left_projector_rank": 9,
+      "maximum_noncommon_principal_correlation": 0.5000000000000001,
+      "maximum_pair_angle_formula_residual": 1.6653345369377348e-16,
+      "maximum_projector_sum_eigenvalue": 1.4999999999999996,
+      "minimum_positive_projector_sum_eigenvalue": 0.4999999999999997,
+      "n": 4,
+      "nonzero_principal_correlation_count": 2,
+      "normalized_analysis_minimum_positive_singular_value": 0.49999999999999983,
+      "polar_support_isometry_residual": 2.019679649950179e-15,
+      "predicted_support_condition_upper_bound": 4.000000000000001,
+      "projector_sum_spectrum_formula_residual": 5.551115123125783e-16,
+      "right_orientation_mask": 3,
+      "right_projector_rank": 2,
+      "status": "exact-constant-conditioned-pair-polar-control",
+      "support_condition_number": 3.000000000000001,
+      "target_partition": [
+        2,
+        2
+      ]
+    },
+    {
+      "carrier_dimension": 36,
+      "common_range_dimension": 0,
+      "control_id": "W4-0-2-2-1-3",
+      "exact_pair_polar_sampler_validation": true,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_mask": 1,
+      "left_projector_rank": 0,
+      "maximum_noncommon_principal_correlation": 0.0,
+      "maximum_pair_angle_formula_residual": 0.0,
+      "maximum_projector_sum_eigenvalue": 1.0000000000000002,
+      "minimum_positive_projector_sum_eigenvalue": 0.9999999999999999,
+      "n": 4,
+      "nonzero_principal_correlation_count": 0,
+      "normalized_analysis_minimum_positive_singular_value": 0.7071067811865475,
+      "polar_support_isometry_residual": 4.854365271270838e-16,
+      "predicted_support_condition_upper_bound": 2.0,
+      "projector_sum_spectrum_formula_residual": 9.992007221626409e-16,
+      "right_orientation_mask": 3,
+      "right_projector_rank": 2,
+      "status": "exact-constant-conditioned-pair-polar-control",
+      "support_condition_number": 1.0000000000000004,
+      "target_partition": [
+        2,
+        2
+      ]
+    },
+    {
+      "carrier_dimension": 36,
+      "common_range_dimension": 0,
+      "control_id": "W4-0-2-2-2-3",
+      "exact_pair_polar_sampler_validation": true,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_mask": 2,
+      "left_projector_rank": 0,
+      "maximum_noncommon_principal_correlation": 0.0,
+      "maximum_pair_angle_formula_residual": 0.0,
+      "maximum_projector_sum_eigenvalue": 1.0000000000000009,
+      "minimum_positive_projector_sum_eigenvalue": 0.9999999999999991,
+      "n": 4,
+      "nonzero_principal_correlation_count": 0,
+      "normalized_analysis_minimum_positive_singular_value": 0.7071067811865472,
+      "polar_support_isometry_residual": 5.408721314349596e-16,
+      "predicted_support_condition_upper_bound": 2.0,
+      "projector_sum_spectrum_formula_residual": 6.661338147750939e-16,
+      "right_orientation_mask": 3,
+      "right_projector_rank": 2,
+      "status": "exact-constant-conditioned-pair-polar-control",
+      "support_condition_number": 1.0000000000000018,
+      "target_partition": [
+        2,
+        2
+      ]
+    },
+    {
+      "carrier_dimension": 54,
+      "common_range_dimension": 0,
+      "control_id": "W4-0-2-1-1-0-1",
+      "exact_pair_polar_sampler_validation": true,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_mask": 0,
+      "left_projector_rank": 0,
+      "maximum_noncommon_principal_correlation": 0.0,
+      "maximum_pair_angle_formula_residual": 0.0,
+      "maximum_projector_sum_eigenvalue": 0.9999999999999999,
+      "minimum_positive_projector_sum_eigenvalue": 0.9999999999999994,
+      "n": 4,
+      "nonzero_principal_correlation_count": 0,
+      "normalized_analysis_minimum_positive_singular_value": 0.7071067811865474,
+      "polar_support_isometry_residual": 4.756652142111153e-16,
+      "predicted_support_condition_upper_bound": 2.0,
+      "projector_sum_spectrum_formula_residual": 8.881784197001252e-16,
+      "right_orientation_mask": 1,
+      "right_projector_rank": 3,
+      "status": "exact-constant-conditioned-pair-polar-control",
+      "support_condition_number": 1.0000000000000004,
+      "target_partition": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "carrier_dimension": 54,
+      "common_range_dimension": 0,
+      "control_id": "W4-0-2-1-1-0-2",
+      "exact_pair_polar_sampler_validation": true,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_mask": 0,
+      "left_projector_rank": 0,
+      "maximum_noncommon_principal_correlation": 0.0,
+      "maximum_pair_angle_formula_residual": 0.0,
+      "maximum_projector_sum_eigenvalue": 0.9999999999999999,
+      "minimum_positive_projector_sum_eigenvalue": 0.9999999999999988,
+      "n": 4,
+      "nonzero_principal_correlation_count": 0,
+      "normalized_analysis_minimum_positive_singular_value": 0.7071067811865471,
+      "polar_support_isometry_residual": 1.1848344769184474e-15,
+      "predicted_support_condition_upper_bound": 2.0,
+      "projector_sum_spectrum_formula_residual": 6.661338147750939e-16,
+      "right_orientation_mask": 2,
+      "right_projector_rank": 6,
+      "status": "exact-constant-conditioned-pair-polar-control",
+      "support_condition_number": 1.000000000000001,
+      "target_partition": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "carrier_dimension": 54,
+      "common_range_dimension": 0,
+      "control_id": "W4-0-2-1-1-0-3",
+      "exact_pair_polar_sampler_validation": true,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_mask": 0,
+      "left_projector_rank": 0,
+      "maximum_noncommon_principal_correlation": 0.0,
+      "maximum_pair_angle_formula_residual": 0.0,
+      "maximum_projector_sum_eigenvalue": 0.9999999999999993,
+      "minimum_positive_projector_sum_eigenvalue": 0.9999999999999993,
+      "n": 4,
+      "nonzero_principal_correlation_count": 0,
+      "normalized_analysis_minimum_positive_singular_value": 0.7071067811865472,
+      "polar_support_isometry_residual": 4.9546589252100085e-16,
+      "predicted_support_condition_upper_bound": 2.0,
+      "projector_sum_spectrum_formula_residual": 9.992007221626409e-16,
+      "right_orientation_mask": 3,
+      "right_projector_rank": 2,
+      "status": "exact-constant-conditioned-pair-polar-control",
+      "support_condition_number": 1.0,
+      "target_partition": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "carrier_dimension": 54,
+      "common_range_dimension": 0,
+      "control_id": "W4-0-2-1-1-1-2",
+      "exact_pair_polar_sampler_validation": true,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_mask": 1,
+      "left_projector_rank": 3,
+      "maximum_noncommon_principal_correlation": 0.3333333333333334,
+      "maximum_pair_angle_formula_residual": 1.1102230246251565e-16,
+      "maximum_projector_sum_eigenvalue": 1.3333333333333333,
+      "minimum_positive_projector_sum_eigenvalue": 0.6666666666666666,
+      "n": 4,
+      "nonzero_principal_correlation_count": 3,
+      "normalized_analysis_minimum_positive_singular_value": 0.5773502691896257,
+      "polar_support_isometry_residual": 7.731491211297956e-16,
+      "predicted_support_condition_upper_bound": 3.000000000000001,
+      "projector_sum_spectrum_formula_residual": 1.1102230246251565e-15,
+      "right_orientation_mask": 2,
+      "right_projector_rank": 6,
+      "status": "exact-constant-conditioned-pair-polar-control",
+      "support_condition_number": 2.0,
+      "target_partition": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "carrier_dimension": 54,
+      "common_range_dimension": 0,
+      "control_id": "W4-0-2-1-1-1-3",
+      "exact_pair_polar_sampler_validation": true,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_mask": 1,
+      "left_projector_rank": 3,
+      "maximum_noncommon_principal_correlation": 0.0,
+      "maximum_pair_angle_formula_residual": 0.0,
+      "maximum_projector_sum_eigenvalue": 1.0,
+      "minimum_positive_projector_sum_eigenvalue": 0.9999999999999993,
+      "n": 4,
+      "nonzero_principal_correlation_count": 0,
+      "normalized_analysis_minimum_positive_singular_value": 0.7071067811865472,
+      "polar_support_isometry_residual": 7.066185257726602e-16,
+      "predicted_support_condition_upper_bound": 2.0,
+      "projector_sum_spectrum_formula_residual": 8.881784197001252e-16,
+      "right_orientation_mask": 3,
+      "right_projector_rank": 2,
+      "status": "exact-constant-conditioned-pair-polar-control",
+      "support_condition_number": 1.0000000000000007,
+      "target_partition": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "carrier_dimension": 54,
+      "common_range_dimension": 0,
+      "control_id": "W4-0-2-1-1-2-3",
+      "exact_pair_polar_sampler_validation": true,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_mask": 2,
+      "left_projector_rank": 6,
+      "maximum_noncommon_principal_correlation": 0.0,
+      "maximum_pair_angle_formula_residual": 0.0,
+      "maximum_projector_sum_eigenvalue": 1.0000000000000004,
+      "minimum_positive_projector_sum_eigenvalue": 0.9999999999999994,
+      "n": 4,
+      "nonzero_principal_correlation_count": 0,
+      "normalized_analysis_minimum_positive_singular_value": 0.7071067811865474,
+      "polar_support_isometry_residual": 5.851984698712529e-16,
+      "predicted_support_condition_upper_bound": 2.0,
+      "projector_sum_spectrum_formula_residual": 2.220446049250313e-16,
+      "right_orientation_mask": 3,
+      "right_projector_rank": 2,
+      "status": "exact-constant-conditioned-pair-polar-control",
+      "support_condition_number": 1.000000000000001,
+      "target_partition": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "carrier_dimension": 18,
+      "common_range_dimension": 0,
+      "control_id": "W4-0-1-1-1-1-0-3",
+      "exact_pair_polar_sampler_validation": true,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_mask": 0,
+      "left_projector_rank": 0,
+      "maximum_noncommon_principal_correlation": 0.0,
+      "maximum_pair_angle_formula_residual": 0.0,
+      "maximum_projector_sum_eigenvalue": 0.9999999999999999,
+      "minimum_positive_projector_sum_eigenvalue": 0.9999999999999992,
+      "n": 4,
+      "nonzero_principal_correlation_count": 0,
+      "normalized_analysis_minimum_positive_singular_value": 0.7071067811865472,
+      "polar_support_isometry_residual": 4.314336454046385e-16,
+      "predicted_support_condition_upper_bound": 2.0,
+      "projector_sum_spectrum_formula_residual": 8.881784197001252e-16,
+      "right_orientation_mask": 3,
+      "right_projector_rank": 2,
+      "status": "exact-constant-conditioned-pair-polar-control",
+      "support_condition_number": 1.0000000000000007,
+      "target_partition": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "carrier_dimension": 18,
+      "common_range_dimension": 0,
+      "control_id": "W4-0-1-1-1-1-1-3",
+      "exact_pair_polar_sampler_validation": true,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_mask": 1,
+      "left_projector_rank": 0,
+      "maximum_noncommon_principal_correlation": 0.0,
+      "maximum_pair_angle_formula_residual": 0.0,
+      "maximum_projector_sum_eigenvalue": 1.0000000000000004,
+      "minimum_positive_projector_sum_eigenvalue": 1.0000000000000002,
+      "n": 4,
+      "nonzero_principal_correlation_count": 0,
+      "normalized_analysis_minimum_positive_singular_value": 0.7071067811865476,
+      "polar_support_isometry_residual": 7.620801850422671e-16,
+      "predicted_support_condition_upper_bound": 2.0,
+      "projector_sum_spectrum_formula_residual": 2.220446049250313e-16,
+      "right_orientation_mask": 3,
+      "right_projector_rank": 2,
+      "status": "exact-constant-conditioned-pair-polar-control",
+      "support_condition_number": 1.0000000000000002,
+      "target_partition": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "carrier_dimension": 18,
+      "common_range_dimension": 0,
+      "control_id": "W4-0-1-1-1-1-2-3",
+      "exact_pair_polar_sampler_validation": true,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_mask": 2,
+      "left_projector_rank": 0,
+      "maximum_noncommon_principal_correlation": 0.0,
+      "maximum_pair_angle_formula_residual": 0.0,
+      "maximum_projector_sum_eigenvalue": 1.0000000000000002,
+      "minimum_positive_projector_sum_eigenvalue": 0.9999999999999994,
+      "n": 4,
+      "nonzero_principal_correlation_count": 0,
+      "normalized_analysis_minimum_positive_singular_value": 0.7071067811865474,
+      "polar_support_isometry_residual": 6.301830999720703e-16,
+      "predicted_support_condition_upper_bound": 2.0,
+      "projector_sum_spectrum_formula_residual": 4.440892098500626e-16,
+      "right_orientation_mask": 3,
+      "right_projector_rank": 2,
+      "status": "exact-constant-conditioned-pair-polar-control",
+      "support_condition_number": 1.0000000000000009,
+      "target_partition": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "carrier_dimension": 54,
+      "common_range_dimension": 0,
+      "control_id": "W4-1-3-1-0-1",
+      "exact_pair_polar_sampler_validation": true,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_mask": 0,
+      "left_projector_rank": 6,
+      "maximum_noncommon_principal_correlation": 0.0,
+      "maximum_pair_angle_formula_residual": 0.0,
+      "maximum_projector_sum_eigenvalue": 1.0000000000000002,
+      "minimum_positive_projector_sum_eigenvalue": 0.9999999999999994,
+      "n": 4,
+      "nonzero_principal_correlation_count": 0,
+      "normalized_analysis_minimum_positive_singular_value": 0.7071067811865474,
+      "polar_support_isometry_residual": 8.999172506100856e-16,
+      "predicted_support_condition_upper_bound": 2.0,
+      "projector_sum_spectrum_formula_residual": 3.3306690738754696e-16,
+      "right_orientation_mask": 1,
+      "right_projector_rank": 3,
+      "status": "exact-constant-conditioned-pair-polar-control",
+      "support_condition_number": 1.0000000000000009,
+      "target_partition": [
+        3,
+        1
+      ]
+    },
+    {
+      "carrier_dimension": 54,
+      "common_range_dimension": 0,
+      "control_id": "W4-1-3-1-0-2",
+      "exact_pair_polar_sampler_validation": true,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_mask": 0,
+      "left_projector_rank": 6,
+      "maximum_noncommon_principal_correlation": 0.0,
+      "maximum_pair_angle_formula_residual": 0.0,
+      "maximum_projector_sum_eigenvalue": 1.0,
+      "minimum_positive_projector_sum_eigenvalue": 0.9999999999999993,
+      "n": 4,
+      "nonzero_principal_correlation_count": 0,
+      "normalized_analysis_minimum_positive_singular_value": 0.7071067811865472,
+      "polar_support_isometry_residual": 3.868817295867231e-16,
+      "predicted_support_condition_upper_bound": 2.0,
+      "projector_sum_spectrum_formula_residual": 8.881784197001252e-16,
+      "right_orientation_mask": 2,
+      "right_projector_rank": 0,
+      "status": "exact-constant-conditioned-pair-polar-control",
+      "support_condition_number": 1.0000000000000007,
+      "target_partition": [
+        3,
+        1
+      ]
+    },
+    {
+      "carrier_dimension": 54,
+      "common_range_dimension": 0,
+      "control_id": "W4-1-3-1-0-3",
+      "exact_pair_polar_sampler_validation": true,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_mask": 0,
+      "left_projector_rank": 6,
+      "maximum_noncommon_principal_correlation": 0.3333333333333334,
+      "maximum_pair_angle_formula_residual": 1.6653345369377348e-16,
+      "maximum_projector_sum_eigenvalue": 1.3333333333333335,
+      "minimum_positive_projector_sum_eigenvalue": 0.6666666666666663,
+      "n": 4,
+      "nonzero_principal_correlation_count": 3,
+      "normalized_analysis_minimum_positive_singular_value": 0.5773502691896256,
+      "polar_support_isometry_residual": 1.0805233810886348e-15,
+      "predicted_support_condition_upper_bound": 3.000000000000001,
+      "projector_sum_spectrum_formula_residual": 5.551115123125783e-16,
+      "right_orientation_mask": 3,
+      "right_projector_rank": 3,
+      "status": "exact-constant-conditioned-pair-polar-control",
+      "support_condition_number": 2.0000000000000013,
+      "target_partition": [
+        3,
+        1
+      ]
+    },
+    {
+      "carrier_dimension": 54,
+      "common_range_dimension": 0,
+      "control_id": "W4-1-3-1-1-2",
+      "exact_pair_polar_sampler_validation": true,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_mask": 1,
+      "left_projector_rank": 3,
+      "maximum_noncommon_principal_correlation": 0.0,
+      "maximum_pair_angle_formula_residual": 0.0,
+      "maximum_projector_sum_eigenvalue": 1.0000000000000004,
+      "minimum_positive_projector_sum_eigenvalue": 0.9999999999999998,
+      "n": 4,
+      "nonzero_principal_correlation_count": 0,
+      "normalized_analysis_minimum_positive_singular_value": 0.7071067811865475,
+      "polar_support_isometry_residual": 4.822853063073226e-16,
+      "predicted_support_condition_upper_bound": 2.0,
+      "projector_sum_spectrum_formula_residual": 4.440892098500626e-16,
+      "right_orientation_mask": 2,
+      "right_projector_rank": 0,
+      "status": "exact-constant-conditioned-pair-polar-control",
+      "support_condition_number": 1.0000000000000007,
+      "target_partition": [
+        3,
+        1
+      ]
+    },
+    {
+      "carrier_dimension": 54,
+      "common_range_dimension": 0,
+      "control_id": "W4-1-3-1-1-3",
+      "exact_pair_polar_sampler_validation": true,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_mask": 1,
+      "left_projector_rank": 3,
+      "maximum_noncommon_principal_correlation": 0.0,
+      "maximum_pair_angle_formula_residual": 0.0,
+      "maximum_projector_sum_eigenvalue": 1.0000000000000002,
+      "minimum_positive_projector_sum_eigenvalue": 0.9999999999999993,
+      "n": 4,
+      "nonzero_principal_correlation_count": 0,
+      "normalized_analysis_minimum_positive_singular_value": 0.7071067811865472,
+      "polar_support_isometry_residual": 3.496553648878901e-16,
+      "predicted_support_condition_upper_bound": 2.0,
+      "projector_sum_spectrum_formula_residual": 6.661338147750939e-16,
+      "right_orientation_mask": 3,
+      "right_projector_rank": 3,
+      "status": "exact-constant-conditioned-pair-polar-control",
+      "support_condition_number": 1.0000000000000009,
+      "target_partition": [
+        3,
+        1
+      ]
+    },
+    {
+      "carrier_dimension": 54,
+      "common_range_dimension": 0,
+      "control_id": "W4-1-3-1-2-3",
+      "exact_pair_polar_sampler_validation": true,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_mask": 2,
+      "left_projector_rank": 0,
+      "maximum_noncommon_principal_correlation": 0.0,
+      "maximum_pair_angle_formula_residual": 0.0,
+      "maximum_projector_sum_eigenvalue": 1.000000000000001,
+      "minimum_positive_projector_sum_eigenvalue": 0.9999999999999999,
+      "n": 4,
+      "nonzero_principal_correlation_count": 0,
+      "normalized_analysis_minimum_positive_singular_value": 0.7071067811865475,
+      "polar_support_isometry_residual": 5.006093651223115e-16,
+      "predicted_support_condition_upper_bound": 2.0,
+      "projector_sum_spectrum_formula_residual": 4.440892098500626e-16,
+      "right_orientation_mask": 3,
+      "right_projector_rank": 3,
+      "status": "exact-constant-conditioned-pair-polar-control",
+      "support_condition_number": 1.0000000000000013,
+      "target_partition": [
+        3,
+        1
+      ]
+    },
+    {
+      "carrier_dimension": 54,
+      "common_range_dimension": 0,
+      "control_id": "W4-1-2-1-1-0-1",
+      "exact_pair_polar_sampler_validation": true,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_mask": 0,
+      "left_projector_rank": 0,
+      "maximum_noncommon_principal_correlation": 0.0,
+      "maximum_pair_angle_formula_residual": 0.0,
+      "maximum_projector_sum_eigenvalue": 1.0000000000000002,
+      "minimum_positive_projector_sum_eigenvalue": 0.9999999999999998,
+      "n": 4,
+      "nonzero_principal_correlation_count": 0,
+      "normalized_analysis_minimum_positive_singular_value": 0.7071067811865475,
+      "polar_support_isometry_residual": 3.7425400110284454e-16,
+      "predicted_support_condition_upper_bound": 2.0,
+      "projector_sum_spectrum_formula_residual": 2.220446049250313e-16,
+      "right_orientation_mask": 1,
+      "right_projector_rank": 3,
+      "status": "exact-constant-conditioned-pair-polar-control",
+      "support_condition_number": 1.0000000000000004,
+      "target_partition": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "carrier_dimension": 54,
+      "common_range_dimension": 0,
+      "control_id": "W4-1-2-1-1-0-2",
+      "exact_pair_polar_sampler_validation": true,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_mask": 0,
+      "left_projector_rank": 0,
+      "maximum_noncommon_principal_correlation": 0.0,
+      "maximum_pair_angle_formula_residual": 0.0,
+      "maximum_projector_sum_eigenvalue": 1.0000000000000002,
+      "minimum_positive_projector_sum_eigenvalue": 0.9999999999999989,
+      "n": 4,
+      "nonzero_principal_correlation_count": 0,
+      "normalized_analysis_minimum_positive_singular_value": 0.7071067811865471,
+      "polar_support_isometry_residual": 5.693045865150121e-16,
+      "predicted_support_condition_upper_bound": 2.0,
+      "projector_sum_spectrum_formula_residual": 5.551115123125783e-16,
+      "right_orientation_mask": 2,
+      "right_projector_rank": 6,
+      "status": "exact-constant-conditioned-pair-polar-control",
+      "support_condition_number": 1.0000000000000013,
+      "target_partition": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "carrier_dimension": 54,
+      "common_range_dimension": 0,
+      "control_id": "W4-1-2-1-1-0-3",
+      "exact_pair_polar_sampler_validation": true,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_mask": 0,
+      "left_projector_rank": 0,
+      "maximum_noncommon_principal_correlation": 0.0,
+      "maximum_pair_angle_formula_residual": 0.0,
+      "maximum_projector_sum_eigenvalue": 0.9999999999999994,
+      "minimum_positive_projector_sum_eigenvalue": 0.999999999999999,
+      "n": 4,
+      "nonzero_principal_correlation_count": 0,
+      "normalized_analysis_minimum_positive_singular_value": 0.7071067811865471,
+      "polar_support_isometry_residual": 9.140253848495489e-16,
+      "predicted_support_condition_upper_bound": 2.0,
+      "projector_sum_spectrum_formula_residual": 5.551115123125783e-16,
+      "right_orientation_mask": 3,
+      "right_projector_rank": 3,
+      "status": "exact-constant-conditioned-pair-polar-control",
+      "support_condition_number": 1.0000000000000004,
+      "target_partition": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "carrier_dimension": 54,
+      "common_range_dimension": 0,
+      "control_id": "W4-1-2-1-1-1-2",
+      "exact_pair_polar_sampler_validation": true,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_mask": 1,
+      "left_projector_rank": 3,
+      "maximum_noncommon_principal_correlation": 0.3333333333333335,
+      "maximum_pair_angle_formula_residual": 1.6653345369377348e-16,
+      "maximum_projector_sum_eigenvalue": 1.3333333333333335,
+      "minimum_positive_projector_sum_eigenvalue": 0.6666666666666662,
+      "n": 4,
+      "nonzero_principal_correlation_count": 3,
+      "normalized_analysis_minimum_positive_singular_value": 0.5773502691896255,
+      "polar_support_isometry_residual": 1.8636824570461635e-15,
+      "predicted_support_condition_upper_bound": 3.000000000000001,
+      "projector_sum_spectrum_formula_residual": 6.661338147750939e-16,
+      "right_orientation_mask": 2,
+      "right_projector_rank": 6,
+      "status": "exact-constant-conditioned-pair-polar-control",
+      "support_condition_number": 2.0000000000000018,
+      "target_partition": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "carrier_dimension": 54,
+      "common_range_dimension": 0,
+      "control_id": "W4-1-2-1-1-1-3",
+      "exact_pair_polar_sampler_validation": true,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_mask": 1,
+      "left_projector_rank": 3,
+      "maximum_noncommon_principal_correlation": 0.0,
+      "maximum_pair_angle_formula_residual": 0.0,
+      "maximum_projector_sum_eigenvalue": 1.0000000000000007,
+      "minimum_positive_projector_sum_eigenvalue": 0.9999999999999997,
+      "n": 4,
+      "nonzero_principal_correlation_count": 0,
+      "normalized_analysis_minimum_positive_singular_value": 0.7071067811865475,
+      "polar_support_isometry_residual": 7.928141285356094e-16,
+      "predicted_support_condition_upper_bound": 2.0,
+      "projector_sum_spectrum_formula_residual": 1.1102230246251565e-15,
+      "right_orientation_mask": 3,
+      "right_projector_rank": 3,
+      "status": "exact-constant-conditioned-pair-polar-control",
+      "support_condition_number": 1.000000000000001,
+      "target_partition": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "carrier_dimension": 54,
+      "common_range_dimension": 0,
+      "control_id": "W4-1-2-1-1-2-3",
+      "exact_pair_polar_sampler_validation": true,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_mask": 2,
+      "left_projector_rank": 6,
+      "maximum_noncommon_principal_correlation": 0.0,
+      "maximum_pair_angle_formula_residual": 0.0,
+      "maximum_projector_sum_eigenvalue": 1.0000000000000004,
+      "minimum_positive_projector_sum_eigenvalue": 0.9999999999999991,
+      "n": 4,
+      "nonzero_principal_correlation_count": 0,
+      "normalized_analysis_minimum_positive_singular_value": 0.7071067811865472,
+      "polar_support_isometry_residual": 6.586630180560233e-16,
+      "predicted_support_condition_upper_bound": 2.0,
+      "projector_sum_spectrum_formula_residual": 4.440892098500626e-16,
+      "right_orientation_mask": 3,
+      "right_projector_rank": 3,
+      "status": "exact-constant-conditioned-pair-polar-control",
+      "support_condition_number": 1.0000000000000013,
+      "target_partition": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "carrier_dimension": 54,
+      "common_range_dimension": 0,
+      "control_id": "W4-2-3-1-0-1",
+      "exact_pair_polar_sampler_validation": true,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      ],
+      "left_orientation_mask": 0,
+      "left_projector_rank": 6,
+      "maximum_noncommon_principal_correlation": 0.0,
+      "maximum_pair_angle_formula_residual": 0.0,
+      "maximum_projector_sum_eigenvalue": 1.0000000000000002,
+      "minimum_positive_projector_sum_eigenvalue": 0.9999999999999993,
+      "n": 4,
+      "nonzero_principal_correlation_count": 0,
+      "normalized_analysis_minimum_positive_singular_value": 0.7071067811865472,
+      "polar_support_isometry_residual": 9.372544338533092e-16,
+      "predicted_support_condition_upper_bound": 2.0,
+      "projector_sum_spectrum_formula_residual": 6.661338147750939e-16,
+      "right_orientation_mask": 1,
+      "right_projector_rank": 2,
+      "status": "exact-constant-conditioned-pair-polar-control",
+      "support_condition_number": 1.0000000000000009,
+      "target_partition": [
+        3,
+        1
+      ]
+    },
+    {
+      "carrier_dimension": 54,
+      "common_range_dimension": 0,
+      "control_id": "W4-2-3-1-0-2",
+      "exact_pair_polar_sampler_validation": true,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      ],
+      "left_orientation_mask": 0,
+      "left_projector_rank": 6,
+      "maximum_noncommon_principal_correlation": 0.0,
+      "maximum_pair_angle_formula_residual": 0.0,
+      "maximum_projector_sum_eigenvalue": 1.0000000000000002,
+      "minimum_positive_projector_sum_eigenvalue": 0.9999999999999996,
+      "n": 4,
+      "nonzero_principal_correlation_count": 0,
+      "normalized_analysis_minimum_positive_singular_value": 0.7071067811865474,
+      "polar_support_isometry_residual": 4.873190108975735e-16,
+      "predicted_support_condition_upper_bound": 2.0,
+      "projector_sum_spectrum_formula_residual": 4.440892098500626e-16,
+      "right_orientation_mask": 2,
+      "right_projector_rank": 0,
+      "status": "exact-constant-conditioned-pair-polar-control",
+      "support_condition_number": 1.0000000000000007,
+      "target_partition": [
+        3,
+        1
+      ]
+    },
+    {
+      "carrier_dimension": 54,
+      "common_range_dimension": 0,
+      "control_id": "W4-2-3-1-0-3",
+      "exact_pair_polar_sampler_validation": true,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      ],
+      "left_orientation_mask": 0,
+      "left_projector_rank": 6,
+      "maximum_noncommon_principal_correlation": 0.3333333333333333,
+      "maximum_pair_angle_formula_residual": 1.6653345369377348e-16,
+      "maximum_projector_sum_eigenvalue": 1.3333333333333333,
+      "minimum_positive_projector_sum_eigenvalue": 0.6666666666666663,
+      "n": 4,
+      "nonzero_principal_correlation_count": 3,
+      "normalized_analysis_minimum_positive_singular_value": 0.5773502691896256,
+      "polar_support_isometry_residual": 1.1400436780292795e-15,
+      "predicted_support_condition_upper_bound": 2.9999999999999996,
+      "projector_sum_spectrum_formula_residual": 7.771561172376096e-16,
+      "right_orientation_mask": 3,
+      "right_projector_rank": 3,
+      "status": "exact-constant-conditioned-pair-polar-control",
+      "support_condition_number": 2.000000000000001,
+      "target_partition": [
+        3,
+        1
+      ]
+    },
+    {
+      "carrier_dimension": 54,
+      "common_range_dimension": 0,
+      "control_id": "W4-2-3-1-1-2",
+      "exact_pair_polar_sampler_validation": true,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      ],
+      "left_orientation_mask": 1,
+      "left_projector_rank": 2,
+      "maximum_noncommon_principal_correlation": 0.0,
+      "maximum_pair_angle_formula_residual": 0.0,
+      "maximum_projector_sum_eigenvalue": 1.0000000000000004,
+      "minimum_positive_projector_sum_eigenvalue": 1.0000000000000002,
+      "n": 4,
+      "nonzero_principal_correlation_count": 0,
+      "normalized_analysis_minimum_positive_singular_value": 0.7071067811865476,
+      "polar_support_isometry_residual": 9.11561528319434e-16,
+      "predicted_support_condition_upper_bound": 2.0,
+      "projector_sum_spectrum_formula_residual": 4.440892098500626e-16,
+      "right_orientation_mask": 2,
+      "right_projector_rank": 0,
+      "status": "exact-constant-conditioned-pair-polar-control",
+      "support_condition_number": 1.0000000000000002,
+      "target_partition": [
+        3,
+        1
+      ]
+    },
+    {
+      "carrier_dimension": 54,
+      "common_range_dimension": 0,
+      "control_id": "W4-2-3-1-1-3",
+      "exact_pair_polar_sampler_validation": true,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      ],
+      "left_orientation_mask": 1,
+      "left_projector_rank": 2,
+      "maximum_noncommon_principal_correlation": 0.0,
+      "maximum_pair_angle_formula_residual": 0.0,
+      "maximum_projector_sum_eigenvalue": 1.0000000000000004,
+      "minimum_positive_projector_sum_eigenvalue": 0.9999999999999998,
+      "n": 4,
+      "nonzero_principal_correlation_count": 0,
+      "normalized_analysis_minimum_positive_singular_value": 0.7071067811865475,
+      "polar_support_isometry_residual": 3.795505012032545e-16,
+      "predicted_support_condition_upper_bound": 2.0,
+      "projector_sum_spectrum_formula_residual": 8.881784197001252e-16,
+      "right_orientation_mask": 3,
+      "right_projector_rank": 3,
+      "status": "exact-constant-conditioned-pair-polar-control",
+      "support_condition_number": 1.0000000000000007,
+      "target_partition": [
+        3,
+        1
+      ]
+    },
+    {
+      "carrier_dimension": 54,
+      "common_range_dimension": 0,
+      "control_id": "W4-2-3-1-2-3",
+      "exact_pair_polar_sampler_validation": true,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      ],
+      "left_orientation_mask": 2,
+      "left_projector_rank": 0,
+      "maximum_noncommon_principal_correlation": 0.0,
+      "maximum_pair_angle_formula_residual": 0.0,
+      "maximum_projector_sum_eigenvalue": 0.9999999999999999,
+      "minimum_positive_projector_sum_eigenvalue": 0.9999999999999997,
+      "n": 4,
+      "nonzero_principal_correlation_count": 0,
+      "normalized_analysis_minimum_positive_singular_value": 0.7071067811865475,
+      "polar_support_isometry_residual": 5.384806786509764e-16,
+      "predicted_support_condition_upper_bound": 2.0,
+      "projector_sum_spectrum_formula_residual": 3.3306690738754696e-16,
+      "right_orientation_mask": 3,
+      "right_projector_rank": 3,
+      "status": "exact-constant-conditioned-pair-polar-control",
+      "support_condition_number": 1.0000000000000002,
+      "target_partition": [
+        3,
+        1
+      ]
+    },
+    {
+      "carrier_dimension": 36,
+      "common_range_dimension": 0,
+      "control_id": "W4-2-2-2-0-1",
+      "exact_pair_polar_sampler_validation": true,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      ],
+      "left_orientation_mask": 0,
+      "left_projector_rank": 0,
+      "maximum_noncommon_principal_correlation": 0.0,
+      "maximum_pair_angle_formula_residual": 0.0,
+      "maximum_projector_sum_eigenvalue": 0.9999999999999996,
+      "minimum_positive_projector_sum_eigenvalue": 0.9999999999999993,
+      "n": 4,
+      "nonzero_principal_correlation_count": 0,
+      "normalized_analysis_minimum_positive_singular_value": 0.7071067811865472,
+      "polar_support_isometry_residual": 5.277331154562127e-16,
+      "predicted_support_condition_upper_bound": 2.0,
+      "projector_sum_spectrum_formula_residual": 4.440892098500626e-16,
+      "right_orientation_mask": 1,
+      "right_projector_rank": 2,
+      "status": "exact-constant-conditioned-pair-polar-control",
+      "support_condition_number": 1.0000000000000002,
+      "target_partition": [
+        2,
+        2
+      ]
+    },
+    {
+      "carrier_dimension": 36,
+      "common_range_dimension": 0,
+      "control_id": "W4-2-2-2-0-2",
+      "exact_pair_polar_sampler_validation": true,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      ],
+      "left_orientation_mask": 0,
+      "left_projector_rank": 0,
+      "maximum_noncommon_principal_correlation": 0.0,
+      "maximum_pair_angle_formula_residual": 0.0,
+      "maximum_projector_sum_eigenvalue": 1.0000000000000007,
+      "minimum_positive_projector_sum_eigenvalue": 0.9999999999999994,
+      "n": 4,
+      "nonzero_principal_correlation_count": 0,
+      "normalized_analysis_minimum_positive_singular_value": 0.7071067811865474,
+      "polar_support_isometry_residual": 8.884829346278766e-16,
+      "predicted_support_condition_upper_bound": 2.0,
+      "projector_sum_spectrum_formula_residual": 6.661338147750939e-16,
+      "right_orientation_mask": 2,
+      "right_projector_rank": 9,
+      "status": "exact-constant-conditioned-pair-polar-control",
+      "support_condition_number": 1.0000000000000013,
+      "target_partition": [
+        2,
+        2
+      ]
+    },
+    {
+      "carrier_dimension": 36,
+      "common_range_dimension": 0,
+      "control_id": "W4-2-2-2-1-2",
+      "exact_pair_polar_sampler_validation": true,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      ],
+      "left_orientation_mask": 1,
+      "left_projector_rank": 2,
+      "maximum_noncommon_principal_correlation": 0.5,
+      "maximum_pair_angle_formula_residual": 2.7755575615628914e-16,
+      "maximum_projector_sum_eigenvalue": 1.5000000000000004,
+      "minimum_positive_projector_sum_eigenvalue": 0.5,
+      "n": 4,
+      "nonzero_principal_correlation_count": 2,
+      "normalized_analysis_minimum_positive_singular_value": 0.5,
+      "polar_support_isometry_residual": 1.4743971761900822e-15,
+      "predicted_support_condition_upper_bound": 4.0,
+      "projector_sum_spectrum_formula_residual": 8.881784197001252e-16,
+      "right_orientation_mask": 2,
+      "right_projector_rank": 9,
+      "status": "exact-constant-conditioned-pair-polar-control",
+      "support_condition_number": 3.000000000000001,
+      "target_partition": [
+        2,
+        2
+      ]
+    },
+    {
+      "carrier_dimension": 36,
+      "common_range_dimension": 0,
+      "control_id": "W4-2-2-2-1-3",
+      "exact_pair_polar_sampler_validation": true,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      ],
+      "left_orientation_mask": 1,
+      "left_projector_rank": 2,
+      "maximum_noncommon_principal_correlation": 0.0,
+      "maximum_pair_angle_formula_residual": 0.0,
+      "maximum_projector_sum_eigenvalue": 0.9999999999999997,
+      "minimum_positive_projector_sum_eigenvalue": 0.9999999999999994,
+      "n": 4,
+      "nonzero_principal_correlation_count": 0,
+      "normalized_analysis_minimum_positive_singular_value": 0.7071067811865474,
+      "polar_support_isometry_residual": 9.697911031081194e-16,
+      "predicted_support_condition_upper_bound": 2.0,
+      "projector_sum_spectrum_formula_residual": 7.771561172376096e-16,
+      "right_orientation_mask": 3,
+      "right_projector_rank": 0,
+      "status": "exact-constant-conditioned-pair-polar-control",
+      "support_condition_number": 1.0000000000000002,
+      "target_partition": [
+        2,
+        2
+      ]
+    },
+    {
+      "carrier_dimension": 36,
+      "common_range_dimension": 0,
+      "control_id": "W4-2-2-2-2-3",
+      "exact_pair_polar_sampler_validation": true,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      ],
+      "left_orientation_mask": 2,
+      "left_projector_rank": 9,
+      "maximum_noncommon_principal_correlation": 0.0,
+      "maximum_pair_angle_formula_residual": 0.0,
+      "maximum_projector_sum_eigenvalue": 1.0000000000000007,
+      "minimum_positive_projector_sum_eigenvalue": 0.9999999999999992,
+      "n": 4,
+      "nonzero_principal_correlation_count": 0,
+      "normalized_analysis_minimum_positive_singular_value": 0.7071067811865472,
+      "polar_support_isometry_residual": 7.156824339849416e-16,
+      "predicted_support_condition_upper_bound": 2.0,
+      "projector_sum_spectrum_formula_residual": 6.661338147750939e-16,
+      "right_orientation_mask": 3,
+      "right_projector_rank": 0,
+      "status": "exact-constant-conditioned-pair-polar-control",
+      "support_condition_number": 1.0000000000000016,
+      "target_partition": [
+        2,
+        2
+      ]
+    },
+    {
+      "carrier_dimension": 54,
+      "common_range_dimension": 0,
+      "control_id": "W4-2-2-1-1-0-1",
+      "exact_pair_polar_sampler_validation": true,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      ],
+      "left_orientation_mask": 0,
+      "left_projector_rank": 0,
+      "maximum_noncommon_principal_correlation": 0.0,
+      "maximum_pair_angle_formula_residual": 0.0,
+      "maximum_projector_sum_eigenvalue": 1.0000000000000004,
+      "minimum_positive_projector_sum_eigenvalue": 0.9999999999999998,
+      "n": 4,
+      "nonzero_principal_correlation_count": 0,
+      "normalized_analysis_minimum_positive_singular_value": 0.7071067811865475,
+      "polar_support_isometry_residual": 9.03267017605287e-16,
+      "predicted_support_condition_upper_bound": 2.0,
+      "projector_sum_spectrum_formula_residual": 5.551115123125783e-16,
+      "right_orientation_mask": 1,
+      "right_projector_rank": 2,
+      "status": "exact-constant-conditioned-pair-polar-control",
+      "support_condition_number": 1.0000000000000007,
+      "target_partition": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "carrier_dimension": 54,
+      "common_range_dimension": 0,
+      "control_id": "W4-2-2-1-1-0-3",
+      "exact_pair_polar_sampler_validation": true,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      ],
+      "left_orientation_mask": 0,
+      "left_projector_rank": 0,
+      "maximum_noncommon_principal_correlation": 0.0,
+      "maximum_pair_angle_formula_residual": 0.0,
+      "maximum_projector_sum_eigenvalue": 1.0000000000000004,
+      "minimum_positive_projector_sum_eigenvalue": 0.9999999999999999,
+      "n": 4,
+      "nonzero_principal_correlation_count": 0,
+      "normalized_analysis_minimum_positive_singular_value": 0.7071067811865475,
+      "polar_support_isometry_residual": 1.8910260897632661e-16,
+      "predicted_support_condition_upper_bound": 2.0,
+      "projector_sum_spectrum_formula_residual": 2.220446049250313e-16,
+      "right_orientation_mask": 3,
+      "right_projector_rank": 3,
+      "status": "exact-constant-conditioned-pair-polar-control",
+      "support_condition_number": 1.0000000000000007,
+      "target_partition": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "carrier_dimension": 54,
+      "common_range_dimension": 0,
+      "control_id": "W4-2-2-1-1-1-2",
+      "exact_pair_polar_sampler_validation": true,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      ],
+      "left_orientation_mask": 1,
+      "left_projector_rank": 2,
+      "maximum_noncommon_principal_correlation": 0.0,
+      "maximum_pair_angle_formula_residual": 0.0,
+      "maximum_projector_sum_eigenvalue": 1.0000000000000004,
+      "minimum_positive_projector_sum_eigenvalue": 0.9999999999999998,
+      "n": 4,
+      "nonzero_principal_correlation_count": 0,
+      "normalized_analysis_minimum_positive_singular_value": 0.7071067811865475,
+      "polar_support_isometry_residual": 4.098671462975012e-16,
+      "predicted_support_condition_upper_bound": 2.0,
+      "projector_sum_spectrum_formula_residual": 5.551115123125783e-16,
+      "right_orientation_mask": 2,
+      "right_projector_rank": 0,
+      "status": "exact-constant-conditioned-pair-polar-control",
+      "support_condition_number": 1.0000000000000007,
+      "target_partition": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "carrier_dimension": 54,
+      "common_range_dimension": 0,
+      "control_id": "W4-2-2-1-1-1-3",
+      "exact_pair_polar_sampler_validation": true,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      ],
+      "left_orientation_mask": 1,
+      "left_projector_rank": 2,
+      "maximum_noncommon_principal_correlation": 0.0,
+      "maximum_pair_angle_formula_residual": 0.0,
+      "maximum_projector_sum_eigenvalue": 1.0,
+      "minimum_positive_projector_sum_eigenvalue": 0.9999999999999992,
+      "n": 4,
+      "nonzero_principal_correlation_count": 0,
+      "normalized_analysis_minimum_positive_singular_value": 0.7071067811865472,
+      "polar_support_isometry_residual": 6.22613606335815e-16,
+      "predicted_support_condition_upper_bound": 2.0,
+      "projector_sum_spectrum_formula_residual": 4.440892098500626e-16,
+      "right_orientation_mask": 3,
+      "right_projector_rank": 3,
+      "status": "exact-constant-conditioned-pair-polar-control",
+      "support_condition_number": 1.0000000000000009,
+      "target_partition": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "carrier_dimension": 54,
+      "common_range_dimension": 0,
+      "control_id": "W4-2-2-1-1-2-3",
+      "exact_pair_polar_sampler_validation": true,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      ],
+      "left_orientation_mask": 2,
+      "left_projector_rank": 0,
+      "maximum_noncommon_principal_correlation": 0.0,
+      "maximum_pair_angle_formula_residual": 0.0,
+      "maximum_projector_sum_eigenvalue": 1.0,
+      "minimum_positive_projector_sum_eigenvalue": 0.9999999999999994,
+      "n": 4,
+      "nonzero_principal_correlation_count": 0,
+      "normalized_analysis_minimum_positive_singular_value": 0.7071067811865474,
+      "polar_support_isometry_residual": 2.4736424603117444e-16,
+      "predicted_support_condition_upper_bound": 2.0,
+      "projector_sum_spectrum_formula_residual": 2.220446049250313e-16,
+      "right_orientation_mask": 3,
+      "right_projector_rank": 3,
+      "status": "exact-constant-conditioned-pair-polar-control",
+      "support_condition_number": 1.0000000000000007,
+      "target_partition": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "carrier_dimension": 18,
+      "common_range_dimension": 0,
+      "control_id": "W4-2-1-1-1-1-0-1",
+      "exact_pair_polar_sampler_validation": true,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      ],
+      "left_orientation_mask": 0,
+      "left_projector_rank": 0,
+      "maximum_noncommon_principal_correlation": 0.0,
+      "maximum_pair_angle_formula_residual": 0.0,
+      "maximum_projector_sum_eigenvalue": 0.9999999999999997,
+      "minimum_positive_projector_sum_eigenvalue": 0.9999999999999997,
+      "n": 4,
+      "nonzero_principal_correlation_count": 0,
+      "normalized_analysis_minimum_positive_singular_value": 0.7071067811865475,
+      "polar_support_isometry_residual": 7.545050932317209e-21,
+      "predicted_support_condition_upper_bound": 2.0,
+      "projector_sum_spectrum_formula_residual": 4.440892098500626e-16,
+      "right_orientation_mask": 1,
+      "right_projector_rank": 2,
+      "status": "exact-constant-conditioned-pair-polar-control",
+      "support_condition_number": 1.0,
+      "target_partition": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "carrier_dimension": 18,
+      "common_range_dimension": 0,
+      "control_id": "W4-2-1-1-1-1-1-2",
+      "exact_pair_polar_sampler_validation": true,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      ],
+      "left_orientation_mask": 1,
+      "left_projector_rank": 2,
+      "maximum_noncommon_principal_correlation": 0.0,
+      "maximum_pair_angle_formula_residual": 0.0,
+      "maximum_projector_sum_eigenvalue": 1.0,
+      "minimum_positive_projector_sum_eigenvalue": 0.9999999999999997,
+      "n": 4,
+      "nonzero_principal_correlation_count": 0,
+      "normalized_analysis_minimum_positive_singular_value": 0.7071067811865475,
+      "polar_support_isometry_residual": 2.841630639457042e-16,
+      "predicted_support_condition_upper_bound": 2.0,
+      "projector_sum_spectrum_formula_residual": 3.3306690738754696e-16,
+      "right_orientation_mask": 2,
+      "right_projector_rank": 0,
+      "status": "exact-constant-conditioned-pair-polar-control",
+      "support_condition_number": 1.0000000000000004,
+      "target_partition": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "carrier_dimension": 18,
+      "common_range_dimension": 0,
+      "control_id": "W4-2-1-1-1-1-1-3",
+      "exact_pair_polar_sampler_validation": true,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      ],
+      "left_orientation_mask": 1,
+      "left_projector_rank": 2,
+      "maximum_noncommon_principal_correlation": 0.0,
+      "maximum_pair_angle_formula_residual": 0.0,
+      "maximum_projector_sum_eigenvalue": 1.0000000000000002,
+      "minimum_positive_projector_sum_eigenvalue": 0.9999999999999992,
+      "n": 4,
+      "nonzero_principal_correlation_count": 0,
+      "normalized_analysis_minimum_positive_singular_value": 0.7071067811865472,
+      "polar_support_isometry_residual": 7.300868782580435e-16,
+      "predicted_support_condition_upper_bound": 2.0,
+      "projector_sum_spectrum_formula_residual": 2.220446049250313e-16,
+      "right_orientation_mask": 3,
+      "right_projector_rank": 0,
+      "status": "exact-constant-conditioned-pair-polar-control",
+      "support_condition_number": 1.000000000000001,
+      "target_partition": [
+        1,
+        1,
+        1,
+        1
+      ]
+    }
+  ],
+  "headline_metrics": {
+    "constant_condition_pair_polar_theorem_count": 1,
+    "finite_noncommuting_pair_control_count": 6,
+    "finite_pair_control_count": 50,
+    "finite_pair_validation_failure_count": 0,
+    "global_nonorthogonal_sampler_count": 0,
+    "maximum_finite_pair_support_condition_number": 3.000000000000001,
+    "new_quantum_algorithm_count": 0,
+    "polynomial_hidden_permutation_decoder_count": 0,
+    "polynomial_pair_polar_circuit_schema_count": 1,
+    "recursive_angle_stability_theorem_count": 0,
+    "sieve_model_escape_theorem_count": 0,
+    "tail_n": 512,
+    "tail_normalized_analysis_singular_gap_lower_bound": 0.7064145570546991,
+    "tail_support_condition_number_upper_bound": 2.003921568627451
+  },
+  "literature_links": [
+    {
+      "external_theorem_not_reproved_here": true,
+      "paper_id": "gilyen-su-low-wiebe-2018",
+      "title": "Quantum singular value transformation and beyond",
+      "url": "https://arxiv.org/abs/1806.01838",
+      "use": "A constant-gap block encoding admits logarithmic-precision polar/sign singular-value transformation."
+    },
+    {
+      "external_theorem_not_reproved_here": true,
+      "paper_id": "moore-russell-sniady-2007",
+      "title": "On the impossibility of a quantum sieve algorithm for graph isomorphism",
+      "url": "https://arxiv.org/abs/quant-ph/0612089",
+      "use": "Any recursive local fusion proposal must be checked against the paper's formal sieve model."
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "two_projector_polar_spectrum",
+      "resolution": "Jordan blocks give the exact 1+/-c spectrum and the finite controls verify it against dense projector sums.",
+      "resolved": true
+    },
+    {
+      "obligation": "all_n_wreath_pair_singular_gap",
+      "resolution": "The exact pair-angle theorem and the minimum nontrivial S_n irrep dimension give a gap at least sqrt((n-2)/(2(n-1))).",
+      "resolved": true
+    },
+    {
+      "obligation": "polynomial_pair_polar_circuit",
+      "resolution": "The normalized analysis has constant singular gap and its controlled invariant-projector blocks have polynomial circuits.",
+      "resolved": true
+    },
+    {
+      "obligation": "recursive_angle_stability",
+      "resolution": "No lower bound is known for the positive principal-angle gap between ranges produced by previous merge levels.",
+      "resolved": false
+    },
+    {
+      "obligation": "sieve_model_escape",
+      "resolution": "A pairwise recursive construction must be formally compared with Moore--Russell--Sniady before it can be promoted.",
+      "resolved": false
+    }
+  ],
+  "scaling_records": [
+    {
+      "invariant_projector_block_encoding_polynomial": true,
+      "maximum_noncommon_principal_correlation": 0.25,
+      "maximum_projector_sum_eigenvalue_upper_bound": 2.0,
+      "minimum_positive_projector_sum_eigenvalue_lower_bound": 0.75,
+      "n": 5,
+      "normalized_analysis_singular_gap_lower_bound": 0.6123724356957945,
+      "pair_polar_sampler_polynomial": true,
+      "polar_query_prefactor_upper_bound": 1.6329931618554523,
+      "precision_dependence": "O(log(1/error)) singular-value transformation",
+      "recursive_global_sampler_proved": false,
+      "status": "pair-polar-polynomial-global-composition-open",
+      "support_condition_number_upper_bound": 2.6666666666666665
+    },
+    {
+      "invariant_projector_block_encoding_polynomial": true,
+      "maximum_noncommon_principal_correlation": 0.14285714285714285,
+      "maximum_projector_sum_eigenvalue_upper_bound": 2.0,
+      "minimum_positive_projector_sum_eigenvalue_lower_bound": 0.8571428571428572,
+      "n": 8,
+      "normalized_analysis_singular_gap_lower_bound": 0.6546536707079772,
+      "pair_polar_sampler_polynomial": true,
+      "polar_query_prefactor_upper_bound": 1.5275252316519465,
+      "precision_dependence": "O(log(1/error)) singular-value transformation",
+      "recursive_global_sampler_proved": false,
+      "status": "pair-polar-polynomial-global-composition-open",
+      "support_condition_number_upper_bound": 2.333333333333333
+    },
+    {
+      "invariant_projector_block_encoding_polynomial": true,
+      "maximum_noncommon_principal_correlation": 0.06666666666666667,
+      "maximum_projector_sum_eigenvalue_upper_bound": 2.0,
+      "minimum_positive_projector_sum_eigenvalue_lower_bound": 0.9333333333333333,
+      "n": 16,
+      "normalized_analysis_singular_gap_lower_bound": 0.6831300510639732,
+      "pair_polar_sampler_polynomial": true,
+      "polar_query_prefactor_upper_bound": 1.4638501094227998,
+      "precision_dependence": "O(log(1/error)) singular-value transformation",
+      "recursive_global_sampler_proved": false,
+      "status": "pair-polar-polynomial-global-composition-open",
+      "support_condition_number_upper_bound": 2.142857142857143
+    },
+    {
+      "invariant_projector_block_encoding_polynomial": true,
+      "maximum_noncommon_principal_correlation": 0.03225806451612903,
+      "maximum_projector_sum_eigenvalue_upper_bound": 2.0,
+      "minimum_positive_projector_sum_eigenvalue_lower_bound": 0.967741935483871,
+      "n": 32,
+      "normalized_analysis_singular_gap_lower_bound": 0.6956083436402524,
+      "pair_polar_sampler_polynomial": true,
+      "polar_query_prefactor_upper_bound": 1.4375905768565218,
+      "precision_dependence": "O(log(1/error)) singular-value transformation",
+      "recursive_global_sampler_proved": false,
+      "status": "pair-polar-polynomial-global-composition-open",
+      "support_condition_number_upper_bound": 2.0666666666666664
+    },
+    {
+      "invariant_projector_block_encoding_polynomial": true,
+      "maximum_noncommon_principal_correlation": 0.015873015873015872,
+      "maximum_projector_sum_eigenvalue_upper_bound": 2.0,
+      "minimum_positive_projector_sum_eigenvalue_lower_bound": 0.9841269841269842,
+      "n": 64,
+      "normalized_analysis_singular_gap_lower_bound": 0.7014723744122017,
+      "pair_polar_sampler_polynomial": true,
+      "polar_query_prefactor_upper_bound": 1.4255728899344744,
+      "precision_dependence": "O(log(1/error)) singular-value transformation",
+      "recursive_global_sampler_proved": false,
+      "status": "pair-polar-polynomial-global-composition-open",
+      "support_condition_number_upper_bound": 2.032258064516129
+    },
+    {
+      "invariant_projector_block_encoding_polynomial": true,
+      "maximum_noncommon_principal_correlation": 0.007874015748031496,
+      "maximum_projector_sum_eigenvalue_upper_bound": 2.0,
+      "minimum_positive_projector_sum_eigenvalue_lower_bound": 0.9921259842519685,
+      "n": 128,
+      "normalized_analysis_singular_gap_lower_bound": 0.7043173944508145,
+      "pair_polar_sampler_polynomial": true,
+      "polar_query_prefactor_upper_bound": 1.419814430083388,
+      "precision_dependence": "O(log(1/error)) singular-value transformation",
+      "recursive_global_sampler_proved": false,
+      "status": "pair-polar-polynomial-global-composition-open",
+      "support_condition_number_upper_bound": 2.015873015873016
+    },
+    {
+      "invariant_projector_block_encoding_polynomial": true,
+      "maximum_noncommon_principal_correlation": 0.00392156862745098,
+      "maximum_projector_sum_eigenvalue_upper_bound": 2.0,
+      "minimum_positive_projector_sum_eigenvalue_lower_bound": 0.996078431372549,
+      "n": 256,
+      "normalized_analysis_singular_gap_lower_bound": 0.7057189353321013,
+      "pair_polar_sampler_polynomial": true,
+      "polar_query_prefactor_upper_bound": 1.4169947126746913,
+      "precision_dependence": "O(log(1/error)) singular-value transformation",
+      "recursive_global_sampler_proved": false,
+      "status": "pair-polar-polynomial-global-composition-open",
+      "support_condition_number_upper_bound": 2.0078740157480315
+    },
+    {
+      "invariant_projector_block_encoding_polynomial": true,
+      "maximum_noncommon_principal_correlation": 0.0019569471624266144,
+      "maximum_projector_sum_eigenvalue_upper_bound": 2.0,
+      "minimum_positive_projector_sum_eigenvalue_lower_bound": 0.9980430528375734,
+      "n": 512,
+      "normalized_analysis_singular_gap_lower_bound": 0.7064145570546991,
+      "pair_polar_sampler_polynomial": true,
+      "polar_query_prefactor_upper_bound": 1.4155993672743183,
+      "precision_dependence": "O(log(1/error)) singular-value transformation",
+      "recursive_global_sampler_proved": false,
+      "status": "pair-polar-polynomial-global-composition-open",
+      "support_condition_number_upper_bound": 2.003921568627451
+    }
+  ],
+  "status": "pair-polar-polynomial-global-composition-open",
+  "summary": "Proved that every pair of wreath orientation invariant projectors has a constant-conditioned polar sampler for n>=5. This rescues one noncommuting merge primitive but leaves recursive angle stability and the nonabelian sieve boundary unresolved.",
+  "theorem_contract": {
+    "circuit": "Coherently select the two polynomial invariant-projector block encodings and apply singular-value transformation to their constant-gap normalized analysis.",
+    "jordan_spectrum": "Each principal correlation c in (0,1) contributes positive eigenvalues 1-c and 1+c; c=1 contributes only eigenvalue 2.",
+    "scope": "This implements one pair polar. No theorem controls principal angles after recursive merges or places a full merge tree outside the nonabelian sieve lower-bound model.",
+    "symmetric_group_gap": "For n>=5, d_alpha>=n-1 outside trivial/sign, so the minimum positive eigenvalue is at least 1-1/(n-1).",
+    "two_projector_analysis": "R=|0> tensor E+|1> tensor F and R^*R=E+F.",
+    "wreath_pair_angle_input": "Every noncommon c is 1/d_alpha, while exact common ranges are isolated at c=1."
+  }
+}

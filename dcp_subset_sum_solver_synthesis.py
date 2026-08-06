@@ -48,6 +48,39 @@ SUBSET_SUM_GROWING_ORDER_PATH = Path("research/classical_baselines/dcp_subset_su
 SUBSET_SUM_GROWING_ORDER_CHAIN_PATH = Path(
     "research/classical_baselines/dcp_subset_sum_growing_order_chain_theorem.json"
 )
+SUBSET_SUM_SIGNED_L2_PATH = Path(
+    "research/classical_baselines/dcp_subset_sum_signed_l2_obstruction.json"
+)
+SUBSET_SUM_SPARSE_CHARACTER_PATH = Path(
+    "research/classical_baselines/"
+    "dcp_subset_sum_sparse_character_obstruction.json"
+)
+SUBSET_SUM_QTT_PATH = Path(
+    "research/classical_baselines/dcp_subset_sum_qtt_contraction_search.json"
+)
+PGM_GRAM_BLOCK_ENCODING_PATH = Path(
+    "research/phase_workbench/dcp_pgm_gram_block_encoding.json"
+)
+PGM_QSVT_DEGREE_PATH = Path(
+    "research/phase_workbench/dcp_pgm_qsvt_degree_obstruction.json"
+)
+QUENCHED_OCCUPANCY_PATH = Path(
+    "research/classical_baselines/"
+    "dcp_subset_sum_quenched_occupancy_theorem.json"
+)
+COHERENT_FIBER_ERASURE_BOUNDARY_PATH = Path(
+    "research/reductions/dcp_coherent_fiber_erasure_boundary.json"
+)
+GLOBAL_ERASURE_INVERSION_PATH = Path(
+    "research/reductions/dcp_global_erasure_inversion_reduction.json"
+)
+APPROXIMATE_ERASURE_COHERENCE_PATH = Path(
+    "research/reductions/"
+    "dcp_approximate_erasure_coherence_reduction.json"
+)
+ERASURE_PERTURBATION_PATH = Path(
+    "research/reductions/dcp_erasure_perturbation_reduction.json"
+)
 SUBSET_SUM_EMBEDDING_VOLUME_PATH = Path("research/classical_baselines/dcp_subset_sum_embedding_volume_theorem.json")
 SUBSET_SUM_SHORT_RELATION_PATH = Path("research/classical_baselines/dcp_subset_sum_short_relation_theorem.json")
 SUBSET_SUM_CARRY_RELATION_PATH = Path("research/classical_baselines/dcp_subset_sum_carry_relation_theorem.json")
@@ -151,6 +184,20 @@ def build_solver_primitives() -> list[SolverPrimitive]:
     conditioned_tail = _metrics(SUBSET_SUM_CONDITIONED_TAIL_PATH)
     growing_order = _metrics(SUBSET_SUM_GROWING_ORDER_PATH)
     growing_order_chain = _metrics(SUBSET_SUM_GROWING_ORDER_CHAIN_PATH)
+    signed_l2 = _metrics(SUBSET_SUM_SIGNED_L2_PATH)
+    sparse_characters = _metrics(SUBSET_SUM_SPARSE_CHARACTER_PATH)
+    qtt = _metrics(SUBSET_SUM_QTT_PATH)
+    pgm_gram = _metrics(PGM_GRAM_BLOCK_ENCODING_PATH)
+    pgm_qsvt = _metrics(PGM_QSVT_DEGREE_PATH)
+    quenched_occupancy = _metrics(QUENCHED_OCCUPANCY_PATH)
+    fiber_erasure_boundary = _metrics(
+        COHERENT_FIBER_ERASURE_BOUNDARY_PATH
+    )
+    erasure_inversion = _metrics(GLOBAL_ERASURE_INVERSION_PATH)
+    erasure_coherence = _metrics(
+        APPROXIMATE_ERASURE_COHERENCE_PATH
+    )
+    erasure_perturbation = _metrics(ERASURE_PERTURBATION_PATH)
     embedding_volume = _metrics(SUBSET_SUM_EMBEDDING_VOLUME_PATH)
     short_relations = _metrics(SUBSET_SUM_SHORT_RELATION_PATH)
     carry_relations = _metrics(SUBSET_SUM_CARRY_RELATION_PATH)
@@ -657,6 +704,263 @@ def build_solver_primitives() -> list[SolverPrimitive]:
             ),
         ),
         SolverPrimitive(
+            primitive_id="subset-sum-low-only-signed-l2-obstruction",
+            role=(
+                "no-go gate for polynomially sparse signed exact-hit "
+                "observables selected from exposed low-label data"
+            ),
+            current_evidence=(
+                "exact controls/pairs/failures="
+                f"{signed_l2.get('exact_control_count', 0)}/"
+                f"{signed_l2.get('exact_assignment_pair_count', 0)}/"
+                f"{signed_l2.get('exact_control_failure_count', 0)}; "
+                "unit-minor/pair-independence/variance theorems="
+                f"{signed_l2.get('unit_minor_theorem_count', 0)}/"
+                f"{signed_l2.get('conditional_pairwise_independence_theorem_count', 0)}/"
+                f"{signed_l2.get('conditional_signed_variance_identity_theorem_count', 0)}; "
+                "high-label/dense/nonlinear closures="
+                f"{signed_l2.get('proved_high_label_adaptive_signed_obstruction_count', 0)}/"
+                f"{signed_l2.get('proved_dense_implicit_signed_obstruction_count', 0)}/"
+                f"{signed_l2.get('proved_nonlinear_signed_obstruction_count', 0)}"
+            ),
+            resource_status=(
+                "analytic conditional second-moment theorem with exhaustive "
+                "finite controls; not a computational lower bound"
+            ),
+            interface_status=(
+                "low-only polynomial support closed; full-label adaptive, dense "
+                "implicit, nonlinear, and reduced-basis routes remain open"
+            ),
+        ),
+        SolverPrimitive(
+            primitive_id="subset-sum-adaptive-sparse-character-obstruction",
+            role=(
+                "source-uniform no-go gate for polynomially sparse "
+                "subset-sum Fourier truncations selected after all labels"
+            ),
+            current_evidence=(
+                "exact targets/failures="
+                f"{sparse_characters.get('exact_fourier_target_count', 0)}/"
+                f"{sparse_characters.get('exact_control_failure_count', 0)}; "
+                "low/high/adaptive theorems="
+                f"{sparse_characters.get('low_order_annihilation_theorem_count', 0)}/"
+                f"{sparse_characters.get('high_order_simultaneous_moment_theorem_count', 0)}/"
+                f"{sparse_characters.get('adaptive_sparse_selection_theorem_count', 0)}; "
+                "dense/general closures="
+                f"{sparse_characters.get('proved_dense_implicit_character_obstruction_count', 0)}/"
+                f"{sparse_characters.get('proved_general_computational_lower_bound_count', 0)}"
+            ),
+            resource_status=(
+                "analytic growing-moment theorem uniform over all frequencies; "
+                "does not bound dense implicit circuit complexity"
+            ),
+            interface_status=(
+                "all polynomial sparse character dictionaries closed; only "
+                "dense implicit Fourier contraction or non-Fourier routes remain"
+            ),
+        ),
+        SolverPrimitive(
+            primitive_id="subset-sum-qtt-dense-contraction-search",
+            role=(
+                "finite architecture test for direct target-bit tensor-network "
+                "contraction of exponentially many subset-sum characters"
+            ),
+            current_evidence=(
+                "instances/unfoldings/max n="
+                f"{qtt.get('instance_count', 0)}/"
+                f"{qtt.get('unfolding_row_count', 0)}/"
+                f"{qtt.get('maximum_n_bits', 0)}; registered cap power/tail survivors="
+                f"{qtt.get('registered_bond_power', 'unknown')}/"
+                f"{qtt.get('tail_source_registered_cap_survivor_count', 0)}; "
+                "tail source/control ranks="
+                f"{qtt.get('tail_best_source_required_rank', 'unknown')}/"
+                f"{qtt.get('tail_best_permuted_required_rank', 'unknown')}; "
+                "fitted log-rank slope="
+                f"{qtt.get('fitted_log2_required_rank_slope_per_n', 'unknown')}; "
+                "tail raw/zero-excess/control-excess coverage="
+                f"{qtt.get('tail_best_source_qtt_legal_coverage', 'unknown')}/"
+                f"{qtt.get('tail_mean_source_qtt_coverage_excess_over_zero_frequency_constant', 'unknown')}/"
+                f"{qtt.get('tail_mean_source_qtt_coverage_excess_over_permuted', 'unknown')}; "
+                "nontrivial tail excess instances="
+                f"{qtt.get('tail_inverse_polynomial_nontrivial_coverage_excess_instance_count', 0)}; "
+                "uniform dense/witness constructions="
+                f"{qtt.get('proved_polynomial_dense_character_contraction_count', 0)}/"
+                f"{qtt.get('polynomial_witness_decoder_count', 0)}"
+            ),
+            resource_status=(
+                "exact finite count vectors and SVDs are exponential audit "
+                "infrastructure, not an algorithm"
+            ),
+            interface_status=(
+                "direct R=n target-bit QTT is finite-negative; alternative "
+                "tensorizations remain open only with uniform bond and "
+                "self-reduction proofs"
+            ),
+        ),
+        SolverPrimitive(
+            primitive_id="dcp-pgm-gram-normalization-obstruction",
+            role=(
+                "exact implementation gate for direct projected Gram "
+                "block encodings and generic fiber amplification"
+            ),
+            current_evidence=(
+                "controls/failures="
+                f"{pgm_gram.get('finite_control_count', 0)}/"
+                f"{pgm_gram.get('finite_control_failure_count', 0)}; "
+                "normalization slope/superpolynomial rows="
+                f"{pgm_gram.get('gram_block_encoding_normalization_log2_slope', 'unknown')}/"
+                f"{pgm_gram.get('generic_superpolynomial_fiber_amplification_row_count', 0)}; "
+                "structured preconditioners/PGM circuits="
+                f"{pgm_gram.get('uniform_polynomial_structured_preconditioner_count', 0)}/"
+                f"{pgm_gram.get('polynomial_pgm_circuit_count', 0)}"
+            ),
+            resource_status=(
+                "exact polynomial projected encoding of G/N; generic "
+                "rescaling costs sqrt(2^m/c_s) on legal fibers"
+            ),
+            interface_status=(
+                "direct block encoding and generic amplification closed; "
+                "source-structured preconditioners and collision walks remain"
+            ),
+        ),
+        SolverPrimitive(
+            primitive_id="dcp-pgm-generic-qsvt-degree-obstruction",
+            role=(
+                "bounded-polynomial complexity gate for direct count and "
+                "square-root amplitude spectral transforms"
+            ),
+            current_evidence=(
+                "all-n controls/failures="
+                f"{pgm_qsvt.get('exact_lifted_source_count', 0)}/"
+                f"{pgm_qsvt.get('exact_lifted_source_failure_count', 0)}; "
+                "tail count/amplitude degree log2="
+                f"{pgm_qsvt.get('tail_count_encoding_degree_lower_bound_log2', 'unknown')}/"
+                f"{pgm_qsvt.get('tail_amplitude_encoding_degree_lower_bound_log2', 'unknown')}; "
+                "average-source prevalence theorems="
+                f"{pgm_qsvt.get('average_case_random_source_prevalence_theorem_count', 0)}"
+            ),
+            resource_status=(
+                "exact worst-case Markov-degree theorem; random-source "
+                "prevalence and source-aware alternatives remain open"
+            ),
+            interface_status=(
+                "generic direct QSVT closed; source-aware encodings, "
+                "preconditioners, and collision walks remain"
+            ),
+        ),
+        SolverPrimitive(
+            primitive_id="density-one-quenched-poisson-occupancy",
+            role=(
+                "random-source transfer theorem for singleton/doubleton "
+                "fiber prevalence and direct-QSVT spectral spacing"
+            ),
+            current_evidence=(
+                "mixed-moment certificates/failures="
+                f"{quenched_occupancy.get('mixed_moment_certificate_count', 0)}/"
+                f"{quenched_occupancy.get('two_target_transfer_failure_count', 0)}; "
+                "quenched Poisson/prevalence theorems="
+                f"{quenched_occupancy.get('quenched_poisson_occupancy_theorem_count', 0)}/"
+                f"{quenched_occupancy.get('random_source_singleton_doubleton_prevalence_theorem_count', 0)}"
+            ),
+            resource_status=(
+                "all-fixed-order two-target lattice-transfer theorem; "
+                "occupancy only, not a computational lower bound"
+            ),
+            interface_status=(
+                "generic direct QSVT closed on random sources; source-aware "
+                "preconditioners and collision walks remain"
+            ),
+        ),
+        SolverPrimitive(
+            primitive_id="coherent-fiber-erasure-access-boundary",
+            role=(
+                "access-model and conditional-reduction gate for normalized "
+                "fiber preparation and global collective channels"
+            ),
+            current_evidence=(
+                "black-box transfers/support/witness/global reductions="
+                f"{fiber_erasure_boundary.get('valid_black_box_lower_bound_transfer_to_structured_subset_sum_count', 0)}/"
+                f"{fiber_erasure_boundary.get('proved_target_addressable_support_decision_reduction_count', 0)}/"
+                f"{fiber_erasure_boundary.get('proved_fixed_variable_witness_self_reduction_count', 0)}/"
+                f"{fiber_erasure_boundary.get('proved_global_collective_measurement_reduction_count', 0)}"
+            ),
+            resource_status=(
+                "black-box index-erasure baseline is exponential but has no "
+                "valid transfer to public arithmetic subset sum"
+            ),
+            interface_status=(
+                "target-addressable preparers inherit decision/search "
+                "obligations; global collective channels remain open"
+            ),
+        ),
+        SolverPrimitive(
+            primitive_id="global-coherent-erasure-inversion-reduction",
+            role=(
+                "conditional equivalence gate between PGM-compatible coherent "
+                "fiber erasure and average subset-sum witness recovery"
+            ),
+            current_evidence=(
+                "law-transfer failures/coherent reductions/arbitrary-PGM reductions="
+                f"{erasure_inversion.get('target_law_transfer_failure_count', 0)}/"
+                f"{erasure_inversion.get('proved_coherent_erasure_to_witness_reduction_count', 0)}/"
+                f"{erasure_inversion.get('proved_arbitrary_pgm_to_witness_reduction_count', 0)}; "
+                "asymptotic domination="
+                f"{erasure_inversion.get('poisson_asymptotic_domination_constant', 'unknown')}"
+            ),
+            resource_status=(
+                "exact common-garbage coherence theorem plus quenched "
+                "constant-factor target-law transfer"
+            ),
+            interface_status=(
+                "erasure-plus-QFT is solver-equivalent; arbitrary non-erasure "
+                "full-rank POVMs remain open"
+            ),
+        ),
+        SolverPrimitive(
+            primitive_id="target-garbage-coherence-to-witness-reduction",
+            role=(
+                "weighted-garbage reduction for exact erasure-plus-QFT with "
+                "target-dependent environment states"
+            ),
+            current_evidence=(
+                "controls/failures/reductions/approximate perturbations="
+                f"{erasure_coherence.get('finite_control_count', 0)}/"
+                f"{erasure_coherence.get('finite_control_failure_count', 0)}/"
+                f"{erasure_coherence.get('inverse_polynomial_erasure_to_witness_reduction_count', 0)}/"
+                f"{erasure_coherence.get('proved_approximate_isometry_perturbation_bound_count', 0)}"
+            ),
+            resource_status=(
+                "exact garbage-Gram theorem and polynomial truncation transfer; "
+                "approximate-isometry perturbation open"
+            ),
+            interface_status=(
+                "all exact erasure-plus-QFT factorizations solver-equivalent; "
+                "arbitrary non-erasure POVMs remain"
+            ),
+        ),
+        SolverPrimitive(
+            primitive_id="operator-norm-erasure-perturbation-reduction",
+            role=(
+                "robustness gate for approximate erasure-plus-QFT circuits on "
+                "the full legal fiber subspace"
+            ),
+            current_evidence=(
+                "rows/polynomial precision/operator/average-only theorems="
+                f"{erasure_perturbation.get('scaling_row_count', 0)}/"
+                f"{erasure_perturbation.get('polynomial_precision_sufficient_row_count', 0)}/"
+                f"{erasure_perturbation.get('operator_norm_perturbation_theorem_count', 0)}/"
+                f"{erasure_perturbation.get('proved_average_only_channel_perturbation_count', 0)}"
+            ),
+            resource_status=(
+                "inverse-polynomial operator precision suffices for every "
+                "registered inverse-polynomial relative-success schedule"
+            ),
+            interface_status=(
+                "operator-norm approximate erasure closed; average-only "
+                "channels and non-erasure POVMs remain"
+            ),
+        ),
+        SolverPrimitive(
             primitive_id="subset-sum-embedding-volume-obstruction",
             role="no-go gate for determinant-only standard and logarithmic carry-sliced lattice gaps",
             current_evidence=(
@@ -1139,6 +1443,9 @@ def synthesize_solver_hypotheses() -> list[SolverHypothesis]:
                     "subset-sum-conditioned-fixed-moment-tail",
                     "subset-sum-sub-half-log-moment-obstruction",
                     "subset-sum-near-log-lattice-chain-obstruction",
+                    "subset-sum-low-only-signed-l2-obstruction",
+                    "subset-sum-adaptive-sparse-character-obstruction",
+                    "subset-sum-qtt-dense-contraction-search",
                     "subset-sum-embedding-volume-obstruction",
                     "standard-embedding-short-relation-obstruction",
                     "carry-sliced-relation-source-obstruction",

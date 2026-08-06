@@ -1,0 +1,262 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "The generic sqrt(|G|) Petz charge is unavoidable.",
+      "resolution": "It cancels algebraically after the covariant Fourier transform; the generic Petz lower bound does not specialize to this symmetry.",
+      "resolved": true
+    },
+    {
+      "objection": "Cancellation proves a polynomial PGM circuit.",
+      "resolution": "No. D_nu may remain ill-conditioned or lack an efficient coherent block encoding; the identity isolates rather than solves that task.",
+      "resolved": false
+    },
+    {
+      "objection": "A pure dual-row state is the required output.",
+      "resolution": "The output retains a physical junk vector for every dual row, realizing the mixed multiplicity tight frame.",
+      "resolved": true
+    },
+    {
+      "objection": "The finite S3 controls prove typical large-n conditioning.",
+      "resolution": "They validate exact algebra only; no asymptotic D_nu spectrum or source-adapted circuit follows.",
+      "resolved": false
+    }
+  ],
+  "claim_gate": {
+    "classical_separation_proved": false,
+    "controlled_multiplicity_inverse_block_encoding_proved": false,
+    "covariance_compressed_stinespring_factorization_proved": true,
+    "efficient_symmetric_group_qft_available": true,
+    "explicit_sqrt_group_environment_charge_survives": false,
+    "polynomial_covariant_pgm_circuit_proved": false,
+    "projector_rank_normalization_charge_survives": false,
+    "reason": "Covariance removes the generic label-environment and projector-rank normalizations exactly. Efficient controlled inversion of the physical multiplicity operators D_nu is the remaining circuit bottleneck.",
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-06T00:59:33.810284+00:00",
+  "falsifiers_triggered": [
+    "The sqrt(n!) dimension charge in the generic Petz implementation is not intrinsic to the group-covariant PGM.",
+    "The physical mixed decoder is a dual-row-indexed tight-frame isometry, not a single pure Fourier state.",
+    "After exact covariance compression, multiplicity inversion is the sole nontrivial state-dependent linear-algebra operation."
+  ],
+  "finite_controls": [
+    {
+      "average_state_support_rank": 6,
+      "compressed_isometry_support_residual": 8.680873381120271e-14,
+      "control_id": "S3-REGULAR-FULL-RANK",
+      "exact_covariant_factorization_verified": true,
+      "fourier_factorization_residual": 1.7583036840310428e-14,
+      "group_order": 6,
+      "maximum_average_block_formula_residual": 6.070805924288516e-17,
+      "n": 3,
+      "projector_rank_cancellation_residual": null,
+      "representation_dimension": 6,
+      "state_rank": 6,
+      "status": "exact-covariance-compressed-pgm-factorization"
+    },
+    {
+      "average_state_support_rank": 6,
+      "compressed_isometry_support_residual": 1.0449571324061755e-14,
+      "control_id": "S3-REGULAR-PURE-RANK-DEFICIENT",
+      "exact_covariant_factorization_verified": true,
+      "fourier_factorization_residual": 1.8605959080586554e-14,
+      "group_order": 6,
+      "maximum_average_block_formula_residual": 2.794765128066755e-17,
+      "n": 3,
+      "projector_rank_cancellation_residual": null,
+      "representation_dimension": 6,
+      "state_rank": 1,
+      "status": "exact-covariance-compressed-pgm-factorization"
+    },
+    {
+      "average_state_support_rank": 3,
+      "compressed_isometry_support_residual": 4.440892098500626e-16,
+      "control_id": "S3-REGULAR-PROJECTOR-CANCELLATION",
+      "exact_covariant_factorization_verified": true,
+      "fourier_factorization_residual": 3.334580716635102e-16,
+      "group_order": 6,
+      "maximum_average_block_formula_residual": 2.7755575615628914e-17,
+      "n": 3,
+      "projector_rank_cancellation_residual": 2.220446049250313e-16,
+      "representation_dimension": 6,
+      "state_rank": 2,
+      "status": "exact-covariance-compressed-pgm-factorization"
+    }
+  ],
+  "headline_metrics": {
+    "controlled_multiplicity_inverse_block_encoding_count": 0,
+    "covariance_compressed_pgm_factorization_theorem_count": 1,
+    "finite_control_count": 3,
+    "finite_control_failure_count": 0,
+    "group_size_normalization_cancellation_theorem_count": 1,
+    "maximum_removed_generic_sqrt_group_log2_charge": 1937.5830609716015,
+    "new_quantum_algorithm_count": 0,
+    "polynomial_covariant_pgm_circuit_count": 0,
+    "projector_rank_normalization_cancellation_theorem_count": 1,
+    "scaling_record_count": 12
+  },
+  "proof_obligations": [
+    {
+      "obligation": "covariance_compressed_stinespring_factorization",
+      "resolution": "Schur orthogonality evaluates the Fourier transform of the covariant PGM Naimark isometry exactly.",
+      "resolved": true
+    },
+    {
+      "obligation": "group_and_projector_rank_normalization_cancellation",
+      "resolution": "The Fourier coefficient, B-sector inverse, and normalized projector square root cancel all explicit |G|, d_nu, and r factors.",
+      "resolved": true
+    },
+    {
+      "obligation": "efficient_symmetric_group_fourier_transform",
+      "resolution": "Beals gives a polynomial S_n quantum Fourier transform.",
+      "resolved": true
+    },
+    {
+      "obligation": "controlled_multiplicity_inverse_implementation",
+      "resolution": "No block encoding or direct transform for D_nu^-1/2 with polynomial normalization and precision is known.",
+      "resolved": false
+    }
+  ],
+  "scaling_records": [
+    {
+      "controlled_multiplicity_inverse_block_encoding_proved": false,
+      "efficient_symmetric_group_qft_available": true,
+      "explicit_group_size_factor_after_covariant_fourier_reduction": 1.0,
+      "generic_petz_environment_sqrt_log2_charge": 1.292481250360578,
+      "group_order_decimal": "6",
+      "log2_group_order": 2.584962500721156,
+      "n": 3,
+      "polynomial_covariant_pgm_circuit_proved": false,
+      "status": "group-normalization-cancelled-multiplicity-inverse-circuit-open"
+    },
+    {
+      "controlled_multiplicity_inverse_block_encoding_proved": false,
+      "efficient_symmetric_group_qft_available": true,
+      "explicit_group_size_factor_after_covariant_fourier_reduction": 1.0,
+      "generic_petz_environment_sqrt_log2_charge": 2.292481250360577,
+      "group_order_decimal": "24",
+      "log2_group_order": 4.584962500721154,
+      "n": 4,
+      "polynomial_covariant_pgm_circuit_proved": false,
+      "status": "group-normalization-cancelled-multiplicity-inverse-circuit-open"
+    },
+    {
+      "controlled_multiplicity_inverse_block_encoding_proved": false,
+      "efficient_symmetric_group_qft_available": true,
+      "explicit_group_size_factor_after_covariant_fourier_reduction": 1.0,
+      "generic_petz_environment_sqrt_log2_charge": 3.45344529780426,
+      "group_order_decimal": "120",
+      "log2_group_order": 6.90689059560852,
+      "n": 5,
+      "polynomial_covariant_pgm_circuit_proved": false,
+      "status": "group-normalization-cancelled-multiplicity-inverse-circuit-open"
+    },
+    {
+      "controlled_multiplicity_inverse_block_encoding_proved": false,
+      "efficient_symmetric_group_qft_available": true,
+      "explicit_group_size_factor_after_covariant_fourier_reduction": 1.0,
+      "generic_petz_environment_sqrt_log2_charge": 7.64960400919364,
+      "group_order_decimal": "40320",
+      "log2_group_order": 15.29920801838728,
+      "n": 8,
+      "polynomial_covariant_pgm_circuit_proved": false,
+      "status": "group-normalization-cancelled-multiplicity-inverse-circuit-open"
+    },
+    {
+      "controlled_multiplicity_inverse_block_encoding_proved": false,
+      "efficient_symmetric_group_qft_available": true,
+      "explicit_group_size_factor_after_covariant_fourier_reduction": 1.0,
+      "generic_petz_environment_sqrt_log2_charge": 14.417727617037704,
+      "group_order_decimal": "479001600",
+      "log2_group_order": 28.835455234075408,
+      "n": 12,
+      "polynomial_covariant_pgm_circuit_proved": false,
+      "status": "group-normalization-cancelled-multiplicity-inverse-circuit-open"
+    },
+    {
+      "controlled_multiplicity_inverse_block_encoding_proved": false,
+      "efficient_symmetric_group_qft_available": true,
+      "explicit_group_size_factor_after_covariant_fourier_reduction": 1.0,
+      "generic_petz_environment_sqrt_log2_charge": 22.12507023494131,
+      "group_order_decimal": "20922789888000",
+      "log2_group_order": 44.25014046988262,
+      "n": 16,
+      "polynomial_covariant_pgm_circuit_proved": false,
+      "status": "group-normalization-cancelled-multiplicity-inverse-circuit-open"
+    },
+    {
+      "controlled_multiplicity_inverse_block_encoding_proved": false,
+      "efficient_symmetric_group_qft_available": true,
+      "explicit_group_size_factor_after_covariant_fourier_reduction": 1.0,
+      "generic_petz_environment_sqrt_log2_charge": 39.51882870955023,
+      "group_order_decimal": "620448401733239439360000",
+      "log2_group_order": 79.03765741910046,
+      "n": 24,
+      "polynomial_covariant_pgm_circuit_proved": false,
+      "status": "group-normalization-cancelled-multiplicity-inverse-circuit-open"
+    },
+    {
+      "controlled_multiplicity_inverse_block_encoding_proved": false,
+      "efficient_symmetric_group_qft_available": true,
+      "explicit_group_size_factor_after_covariant_fourier_reduction": 1.0,
+      "generic_petz_environment_sqrt_log2_charge": 58.83163182618015,
+      "group_order_decimal": "263130836933693530167218012160000000",
+      "log2_group_order": 117.6632636523603,
+      "n": 32,
+      "polynomial_covariant_pgm_circuit_proved": false,
+      "status": "group-normalization-cancelled-multiplicity-inverse-circuit-open"
+    },
+    {
+      "controlled_multiplicity_inverse_block_encoding_proved": false,
+      "efficient_symmetric_group_qft_available": true,
+      "explicit_group_size_factor_after_covariant_fourier_reduction": 1.0,
+      "generic_petz_environment_sqrt_log2_charge": 147.99757197086205,
+      "group_order_decimal": "126886932185884164103433389335161480802865516174545192198801894375214704230400000000000000",
+      "log2_group_order": 295.9951439417241,
+      "n": 64,
+      "polynomial_covariant_pgm_circuit_proved": false,
+      "status": "group-normalization-cancelled-multiplicity-inverse-circuit-open"
+    },
+    {
+      "controlled_multiplicity_inverse_block_encoding_proved": false,
+      "efficient_symmetric_group_qft_available": true,
+      "explicit_group_size_factor_after_covariant_fourier_reduction": 1.0,
+      "generic_petz_environment_sqrt_log2_charge": 358.080861041811,
+      "group_order_decimal": "385620482362580421735677065923463640617493109590223590278828403276373402575165543560686168588507361534030051833058916347592172932262498857766114955245039357760034644709279247692495585280000000000000000000000000000000",
+      "log2_group_order": 716.161722083622,
+      "n": 128,
+      "polynomial_covariant_pgm_circuit_proved": false,
+      "status": "group-normalization-cancelled-multiplicity-inverse-circuit-open"
+    },
+    {
+      "controlled_multiplicity_inverse_block_encoding_proved": false,
+      "efficient_symmetric_group_qft_available": true,
+      "explicit_group_size_factor_after_covariant_fourier_reduction": 1.0,
+      "generic_petz_environment_sqrt_log2_charge": 841.9981436121074,
+      "group_order_decimal": "857817775342842654119082271681232625157781520279485619859655650377269452553147589377440291360451408450375885342336584306157196834693696475322289288497426025679637332563368786442675207626794560187968867971521143307702077526646451464709187326100832876325702818980773671781454170250523018608495319068138257481070252817559459476987034665712738139286205234756808218860701203611083152093501947437109101726968262861606263662435022840944191408424615936000000000000000000000000000000000000000000000000000000000000000",
+      "log2_group_order": 1683.9962872242147,
+      "n": 256,
+      "polynomial_covariant_pgm_circuit_proved": false,
+      "status": "group-normalization-cancelled-multiplicity-inverse-circuit-open"
+    },
+    {
+      "controlled_multiplicity_inverse_block_encoding_proved": false,
+      "efficient_symmetric_group_qft_available": true,
+      "explicit_group_size_factor_after_covariant_fourier_reduction": 1.0,
+      "generic_petz_environment_sqrt_log2_charge": 1937.5830609716015,
+      "group_order_decimal": "347728979313260536328304591754560471199225065564351457034247483155161041206635254347320985033950225364432243311021394545295001702070069013264153113260937941358711864044716186861040899557497361427588282356254968425012480396855239725120562512065555822121708786443620799246550959187232026838081415178588172535280020786313470076859739980965720873849904291373826841584712798618430387338042329771801724767691095019545758986942732515033551529595009876999279553931070378592917099002397061907147143424113252117585950817850896618433994140232823316432187410356341262386332496954319973130407342567282027398579382543048456876800862349928140411905431276197435674603281842530744177527365885721629512253872386613118821540847897493107398381956081763695236422795880296204301770808809477147632428639299038833046264585834888158847387737841843413664892833586209196366979775748895821826924040057845140287522238675082137570315954526727437094904914796782641000740777897919134093393530422760955140211387173650047358347353379234387609261306673773281412893026941927424000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "log2_group_order": 3875.166121943203,
+      "n": 512,
+      "polynomial_covariant_pgm_circuit_proved": false,
+      "status": "group-normalization-cancelled-multiplicity-inverse-circuit-open"
+    }
+  ],
+  "status": "covariant-pgm-factorized-multiplicity-inverse-circuit-open",
+  "summary": "Derived and validated the exact Fourier-domain PGM Stinespring factorization, cancelling explicit factorial environment normalization.",
+  "theorem_contract": {
+    "covariant_fourier_factorization": "(F_G^* tensor I)W|nu,a,m>=sum_j |nu,a,j> tensor rho^1/2(I tensor C_nu^-1/2)|nu,j,m>.",
+    "implementation_boundary": "Beals supplies F_(S_n); the unresolved operation is a coherent source-adapted implementation of every D_nu^-1/2.",
+    "pgm_naimark_isometry": "W=sum_g |g> tensor |G|^-1/2 rho^1/2 B^-1/2 U_g^*.",
+    "projector_cancellation": "For rho=P/r and D_nu=Tr_V(Pi_nu P Pi_nu), the carrier map is P(I tensor D_nu^-1/2), with r and |G| absent.",
+    "support_isometry": "The compressed map squares to direct_sum_nu I_V tensor Pi_supp(C_nu)."
+  }
+}

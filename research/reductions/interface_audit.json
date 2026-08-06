@@ -377,7 +377,7 @@
         {
           "axis": "uniform-instance-construction",
           "burden": "Give a uniform instance map with no hidden family advice or uncharged preprocessing.",
-          "candidate_claim": "Independent coset-state samples transformed into known random Fourier labels and one-qubit DCP phase states. No coherent evaluator, chosen-label access, phase truth table, or literature-specific nonuniform advice is supplied.",
+          "candidate_claim": "Independent coset-state samples under the f=1 DCP promise, including arbitrary bad basis-state registers at per-register probability up to 1/log N; good registers transform into known random Fourier labels and one-qubit phase states. No coherent evaluator, chosen-label access, or nonuniform advice is supplied.",
           "passed": false,
           "upstream_contract": "Uniform construction from the lattice instance; no family-specific nonuniform advice."
         },
@@ -887,7 +887,7 @@
   "blocked_interface_count": 11,
   "candidate_count": 8,
   "certified_interface_count": 0,
-  "created_at": "2026-07-14T18:47:33.231622+00:00",
+  "created_at": "2026-08-06T06:33:16.899855+00:00",
   "family_coverage_mismatch_count": 11,
   "kind": "reduction-theorem-contract-interface-audit",
   "route_audit_count": 11,

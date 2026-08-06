@@ -1,0 +1,258 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Equal nonzero spectra make the two polar circuits interchangeable.",
+      "resolution": "No. They can have arbitrary output geometry related by an unknown dense isometry while retaining identical Gram data.",
+      "resolved": true
+    },
+    {
+      "objection": "The selected physical trace-transfer identity already supplies W.",
+      "resolution": "A trace identity for one family of effects does not specify a range-preserving Stinespring isometry on every carrier vector.",
+      "resolved": false
+    },
+    {
+      "objection": "Defining W=Q_TQ_R^* is a constructive circuit.",
+      "resolution": "It is circular: Q_T is the physical PGM operation being sought.",
+      "resolved": true
+    },
+    {
+      "objection": "The transfer theorem rules out a physical intertwiner.",
+      "resolution": "It does not. It isolates the exact object; a Young/recoupling Stinespring transform may implement it directly.",
+      "resolved": false
+    }
+  ],
+  "claim_gate": {
+    "coherent_cross_sector_transfer_proved": false,
+    "equal_gram_transfer_exists_algebraically": true,
+    "existing_trace_transfer_is_full_polar_transfer": false,
+    "orientation_polar_circuit_implies_physical_pgm_without_intertwiner": false,
+    "physical_output_intertwiner_compiled": false,
+    "polynomial_physical_pgm_circuit_proved": false,
+    "reason": "The orientation hierarchy and the physical PGM are linked by an exact but currently uncompiled output partial isometry. Spectral or Gram success cannot substitute for that circuit.",
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-06T02:08:35.479070+00:00",
+  "falsifiers_triggered": [
+    "Do not promote orientation Gram normalization to a physical PGM implementation using spectrum or Gram equality alone.",
+    "Do not treat selected trace-transfer identities as a full Stinespring-range intertwiner.",
+    "The positive route now has two parallel gates: higher-level relative sampling and coherent physical-output transfer."
+  ],
+  "finite_controls": [
+    {
+      "control_id": "known-output-isometry",
+      "domain_dimension": 3,
+      "exact_equal_gram_transfer_verified": true,
+      "gram_residual": 4.370928459676163e-15,
+      "gram_support_rank": 3,
+      "orientation_output_dimension": 5,
+      "orientation_polar_support_residual": 5.14569992748536e-16,
+      "output_intertwiner_given_independently": true,
+      "physical_output_dimension": 8,
+      "physical_polar_support_residual": 6.55397457248216e-16,
+      "polar_transfer_residual": 9.824267668774437e-16,
+      "status": "exact-equal-gram-polar-transfer-with-known-intertwiner",
+      "transfer_final_projection_residual": 1.032738630391545e-15,
+      "transfer_initial_projection_residual": 1.020718487782003e-15
+    },
+    {
+      "control_id": "rank-deficient-hidden-output",
+      "domain_dimension": 4,
+      "exact_equal_gram_transfer_verified": true,
+      "gram_residual": 1.292108065299572e-15,
+      "gram_support_rank": 2,
+      "orientation_output_dimension": 3,
+      "orientation_polar_support_residual": 5.221614096117878e-16,
+      "output_intertwiner_given_independently": false,
+      "physical_output_dimension": 7,
+      "physical_polar_support_residual": 3.0466381925953794e-16,
+      "polar_transfer_residual": 8.082084391005496e-16,
+      "status": "exact-equal-gram-transfer-exists-intertwiner-not-compiled",
+      "transfer_final_projection_residual": 8.884814677438151e-16,
+      "transfer_initial_projection_residual": 3.3833990100627626e-16
+    },
+    {
+      "control_id": "arbitrary-dense-output-geometry",
+      "domain_dimension": 3,
+      "exact_equal_gram_transfer_verified": true,
+      "gram_residual": 1.9584961586429964e-15,
+      "gram_support_rank": 3,
+      "orientation_output_dimension": 4,
+      "orientation_polar_support_residual": 1.4412070232213225e-15,
+      "output_intertwiner_given_independently": false,
+      "physical_output_dimension": 9,
+      "physical_polar_support_residual": 9.584941052899231e-16,
+      "polar_transfer_residual": 1.2935361299238915e-15,
+      "status": "exact-equal-gram-transfer-exists-intertwiner-not-compiled",
+      "transfer_final_projection_residual": 1.273574983040195e-15,
+      "transfer_initial_projection_residual": 1.6059771141753239e-15
+    }
+  ],
+  "headline_metrics": {
+    "coherent_cross_sector_transfer_count": 0,
+    "equal_gram_polar_transfer_theorem_count": 1,
+    "finite_control_count": 3,
+    "finite_independently_known_intertwiner_count": 1,
+    "finite_validation_failure_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "orientation_hierarchical_polar_sampler_count": 0,
+    "physical_output_intertwiner_count": 0,
+    "polynomial_hidden_permutation_decoder_count": 0,
+    "polynomial_physical_pgm_circuit_count": 0,
+    "tail_information_threshold_copy_count": 3876,
+    "tail_n": 512
+  },
+  "proof_obligations": [
+    {
+      "obligation": "equal_gram_partial_isometry_theorem",
+      "resolution": "Both polar factors have the same initial support, so their product gives the exact range-to-range partial isometry.",
+      "resolved": true
+    },
+    {
+      "obligation": "orientation_hierarchical_polar_sampler",
+      "resolution": "The companion hierarchy reduces it to higher-level relative effects; no all-n implementation is proved.",
+      "resolved": false
+    },
+    {
+      "obligation": "physical_output_intertwiner",
+      "resolution": "No independently compiled representation transform maps the orientation factor range to the physical PGM carrier range.",
+      "resolved": false
+    },
+    {
+      "obligation": "coherent_cross_sector_control",
+      "resolution": "Any transfer must preserve nu coherently; measuring the sector would trigger the exact-label dephasing no-go.",
+      "resolved": false
+    }
+  ],
+  "scaling_records": [
+    {
+      "full_output_intertwiner_compiled": false,
+      "hidden_label_count_log2": 2.584962500721156,
+      "hierarchical_orientation_polar_proved": false,
+      "information_threshold_copy_count": 3,
+      "n": 3,
+      "orientation_gram_factorization_available": true,
+      "physical_pgm_polar_target_specified": true,
+      "polynomial_physical_pgm_circuit_proved": false,
+      "selected_trace_transfer_is_full_polar_transfer": false,
+      "status": "orientation-polar-and-physical-output-transfer-both-required"
+    },
+    {
+      "full_output_intertwiner_compiled": false,
+      "hidden_label_count_log2": 4.584962500721154,
+      "hierarchical_orientation_polar_proved": false,
+      "information_threshold_copy_count": 5,
+      "n": 4,
+      "orientation_gram_factorization_available": true,
+      "physical_pgm_polar_target_specified": true,
+      "polynomial_physical_pgm_circuit_proved": false,
+      "selected_trace_transfer_is_full_polar_transfer": false,
+      "status": "orientation-polar-and-physical-output-transfer-both-required"
+    },
+    {
+      "full_output_intertwiner_compiled": false,
+      "hidden_label_count_log2": 6.90689059560852,
+      "hierarchical_orientation_polar_proved": false,
+      "information_threshold_copy_count": 7,
+      "n": 5,
+      "orientation_gram_factorization_available": true,
+      "physical_pgm_polar_target_specified": true,
+      "polynomial_physical_pgm_circuit_proved": false,
+      "selected_trace_transfer_is_full_polar_transfer": false,
+      "status": "orientation-polar-and-physical-output-transfer-both-required"
+    },
+    {
+      "full_output_intertwiner_compiled": false,
+      "hidden_label_count_log2": 15.29920801838728,
+      "hierarchical_orientation_polar_proved": false,
+      "information_threshold_copy_count": 16,
+      "n": 8,
+      "orientation_gram_factorization_available": true,
+      "physical_pgm_polar_target_specified": true,
+      "polynomial_physical_pgm_circuit_proved": false,
+      "selected_trace_transfer_is_full_polar_transfer": false,
+      "status": "orientation-polar-and-physical-output-transfer-both-required"
+    },
+    {
+      "full_output_intertwiner_compiled": false,
+      "hidden_label_count_log2": 44.25014046988262,
+      "hierarchical_orientation_polar_proved": false,
+      "information_threshold_copy_count": 45,
+      "n": 16,
+      "orientation_gram_factorization_available": true,
+      "physical_pgm_polar_target_specified": true,
+      "polynomial_physical_pgm_circuit_proved": false,
+      "selected_trace_transfer_is_full_polar_transfer": false,
+      "status": "orientation-polar-and-physical-output-transfer-both-required"
+    },
+    {
+      "full_output_intertwiner_compiled": false,
+      "hidden_label_count_log2": 117.6632636523603,
+      "hierarchical_orientation_polar_proved": false,
+      "information_threshold_copy_count": 118,
+      "n": 32,
+      "orientation_gram_factorization_available": true,
+      "physical_pgm_polar_target_specified": true,
+      "polynomial_physical_pgm_circuit_proved": false,
+      "selected_trace_transfer_is_full_polar_transfer": false,
+      "status": "orientation-polar-and-physical-output-transfer-both-required"
+    },
+    {
+      "full_output_intertwiner_compiled": false,
+      "hidden_label_count_log2": 295.9951439417241,
+      "hierarchical_orientation_polar_proved": false,
+      "information_threshold_copy_count": 296,
+      "n": 64,
+      "orientation_gram_factorization_available": true,
+      "physical_pgm_polar_target_specified": true,
+      "polynomial_physical_pgm_circuit_proved": false,
+      "selected_trace_transfer_is_full_polar_transfer": false,
+      "status": "orientation-polar-and-physical-output-transfer-both-required"
+    },
+    {
+      "full_output_intertwiner_compiled": false,
+      "hidden_label_count_log2": 716.161722083622,
+      "hierarchical_orientation_polar_proved": false,
+      "information_threshold_copy_count": 717,
+      "n": 128,
+      "orientation_gram_factorization_available": true,
+      "physical_pgm_polar_target_specified": true,
+      "polynomial_physical_pgm_circuit_proved": false,
+      "selected_trace_transfer_is_full_polar_transfer": false,
+      "status": "orientation-polar-and-physical-output-transfer-both-required"
+    },
+    {
+      "full_output_intertwiner_compiled": false,
+      "hidden_label_count_log2": 1683.9962872242147,
+      "hierarchical_orientation_polar_proved": false,
+      "information_threshold_copy_count": 1684,
+      "n": 256,
+      "orientation_gram_factorization_available": true,
+      "physical_pgm_polar_target_specified": true,
+      "polynomial_physical_pgm_circuit_proved": false,
+      "selected_trace_transfer_is_full_polar_transfer": false,
+      "status": "orientation-polar-and-physical-output-transfer-both-required"
+    },
+    {
+      "full_output_intertwiner_compiled": false,
+      "hidden_label_count_log2": 3875.166121943203,
+      "hierarchical_orientation_polar_proved": false,
+      "information_threshold_copy_count": 3876,
+      "n": 512,
+      "orientation_gram_factorization_available": true,
+      "physical_pgm_polar_target_specified": true,
+      "polynomial_physical_pgm_circuit_proved": false,
+      "selected_trace_transfer_is_full_polar_transfer": false,
+      "status": "orientation-polar-and-physical-output-transfer-both-required"
+    }
+  ],
+  "status": "equal-gram-transfer-identified-physical-intertwiner-open",
+  "summary": "Proved the exact partial-isometry relation between equal-Gram polar factors and added a hard gate: the hierarchical orientation sampler requires an independently compiled coherent physical-output intertwiner before it becomes a PGM circuit.",
+  "theorem_contract": {
+    "algorithmic_requirement": "An orientation-side polar sampler implements the physical PGM only together with an independently compiled W.",
+    "canonical_transfer": "W=Q_TQ_R^* is a partial isometry from ran(Q_R) to ran(Q_T) and WQ_R=Q_T.",
+    "equal_gram_factors": "T^*T=R^*R=F.",
+    "nonimplication": "Gram equality or spectral equality does not expose W; arbitrary output isometries preserve the same Gram.",
+    "polar_isometries": "Q_T=TF^-1/2 and Q_R=RF^-1/2.",
+    "wreath_scope": "Existing orientation Fourier and physical trace-transfer results do not yet prove a coherent full-output intertwiner across nu."
+  }
+}

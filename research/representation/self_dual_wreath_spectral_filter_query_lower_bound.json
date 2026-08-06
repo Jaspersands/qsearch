@@ -1,0 +1,323 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "The reduction cheats by changing projector rank.",
+      "resolution": "Every search projector has rank exactly one.",
+      "resolved": true
+    },
+    {
+      "objection": "Projector reflection access is stronger than search access.",
+      "resolution": "For this family they are unitarily identical up to a known fixed Z gate, so a filter query transfers one-for-one.",
+      "resolved": true
+    },
+    {
+      "objection": "The theorem rules out all wreath-HSP filters.",
+      "resolution": "No. Wreath projectors have representation-theoretic structure absent from the adversarial search family.",
+      "resolved": false
+    },
+    {
+      "objection": "A coarse constant-over-M transition is enough to evade search.",
+      "resolution": "The promise uses two fixed coefficients a<b; constant width in units of 1/M still distinguishes zero from b marks.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "equal_rank_search_projector_reduction_proved": true,
+    "general_wreath_circuit_lower_bound_proved": false,
+    "generic_indexed_projector_filter_requires_superpolynomial_queries": true,
+    "generic_prepare_select_spectral_trim_is_polynomial": false,
+    "polynomial_hidden_permutation_decoder_proved": false,
+    "reason": "The abstract constant-success measurement cannot be turned into a polynomial algorithm by treating the projectors as a generic indexed oracle. A successful implementation must use additional symmetric-group structure.",
+    "representation_structured_filter_ruled_out": false,
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-05T23:05:40.437166+00:00",
+  "falsifiers_triggered": [
+    "A generic PREPARE/SELECT implementation cannot exploit the existence of the trimmed sub-POVM at polynomial cost.",
+    "Equal projector rank does not evade the search reduction.",
+    "Future filter proposals must identify the exact additional representation structure used to beat black-box search."
+  ],
+  "finite_controls": [
+    {
+      "average_frame_eigenvalues": [
+        0.5,
+        0.5
+      ],
+      "equal_rank_search_reduction_verified": true,
+      "fixed_input_separates_promises": true,
+      "label_count": 16,
+      "low_pass_cutoff": 0.25,
+      "marked_count": 8,
+      "marked_fraction_eigenvalue": 0.5,
+      "maximum_projector_idempotence_residual": 0.0,
+      "maximum_reflection_phase_oracle_residual": 0.0,
+      "projector_rank": 1,
+      "rejection_threshold": 0.5,
+      "status": "exact-equal-rank-search-projector-reduction"
+    },
+    {
+      "average_frame_eigenvalues": [
+        0.75,
+        0.25
+      ],
+      "equal_rank_search_reduction_verified": true,
+      "fixed_input_separates_promises": true,
+      "label_count": 32,
+      "low_pass_cutoff": 0.125,
+      "marked_count": 8,
+      "marked_fraction_eigenvalue": 0.25,
+      "maximum_projector_idempotence_residual": 0.0,
+      "maximum_reflection_phase_oracle_residual": 0.0,
+      "projector_rank": 1,
+      "rejection_threshold": 0.25,
+      "status": "exact-equal-rank-search-projector-reduction"
+    },
+    {
+      "average_frame_eigenvalues": [
+        0.875,
+        0.125
+      ],
+      "equal_rank_search_reduction_verified": true,
+      "fixed_input_separates_promises": true,
+      "label_count": 64,
+      "low_pass_cutoff": 0.0625,
+      "marked_count": 8,
+      "marked_fraction_eigenvalue": 0.125,
+      "maximum_projector_idempotence_residual": 0.0,
+      "maximum_reflection_phase_oracle_residual": 0.0,
+      "projector_rank": 1,
+      "rejection_threshold": 0.125,
+      "status": "exact-equal-rank-search-projector-reduction"
+    },
+    {
+      "average_frame_eigenvalues": [
+        0.9375,
+        0.0625
+      ],
+      "equal_rank_search_reduction_verified": true,
+      "fixed_input_separates_promises": true,
+      "label_count": 128,
+      "low_pass_cutoff": 0.03125,
+      "marked_count": 8,
+      "marked_fraction_eigenvalue": 0.0625,
+      "maximum_projector_idempotence_residual": 0.0,
+      "maximum_reflection_phase_oracle_residual": 0.0,
+      "projector_rank": 1,
+      "rejection_threshold": 0.0625,
+      "status": "exact-equal-rank-search-projector-reduction"
+    }
+  ],
+  "headline_metrics": {
+    "black_box_spectral_filter_query_lower_bound_theorem_count": 1,
+    "equal_rank_search_reduction_theorem_count": 1,
+    "finite_search_encoding_control_count": 4,
+    "finite_search_encoding_failure_count": 0,
+    "general_wreath_circuit_lower_bound_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "polynomial_hidden_permutation_decoder_count": 0,
+    "representation_structured_filter_count": 0,
+    "scaling_record_count": 11,
+    "superpolynomial_black_box_lower_bound_row_count": 3,
+    "tail_n": 512,
+    "tail_quantum_query_lower_bound_log2": 1936.0830609716015
+  },
+  "literature_links": [
+    {
+      "external_theorem_not_reproved_here": true,
+      "paper_id": "bennett-bernstein-brassard-vazirani-1997",
+      "title": "Strengths and Weaknesses of Quantum Computing",
+      "url": "https://arxiv.org/abs/quant-ph/9701001",
+      "use": "Quantum black-box lower bound for unstructured search."
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "equal_rank_projector_family",
+      "resolution": "Every P_j is an exact rank-one orthogonal projector.",
+      "resolved": true
+    },
+    {
+      "obligation": "projector_query_equals_search_query",
+      "resolution": "The reflection 2P_j-I equals (-1)^x_j Z, so controlled reflection access and phase-search access differ only by a known fixed Pauli.",
+      "resolved": true
+    },
+    {
+      "obligation": "low_pass_solves_search_promise",
+      "resolution": "On input |1>, B_x has eigenvalue zero at weight zero and t/M at promised weight t, crossing a constant-over-M gap.",
+      "resolved": true
+    },
+    {
+      "obligation": "quantum_search_lower_bound",
+      "resolution": "The BBBV hybrid lower bound gives Omega(sqrt(M/t)) queries for bounded-error distinction of weight zero from fixed positive weight t. This external theorem is linked below.",
+      "resolved": true
+    }
+  ],
+  "scaling_records": [
+    {
+      "black_box_lower_bound_superpolynomial": false,
+      "hidden_label_count_decimal": "20922789888000",
+      "log2_hidden_label_count": 44.25014046988262,
+      "low_pass_cutoff_coefficient": 4,
+      "marked_count_promise": 8,
+      "n": 16,
+      "polynomial_query_benchmark_degree": 100,
+      "polynomial_query_benchmark_log2": 400.0,
+      "quantum_query_lower_bound_log2_without_constant": 20.62507023494131,
+      "quantum_query_lower_bound_order": "Omega(sqrt(n!/t))",
+      "rejection_coefficient": 8,
+      "status": "factorial-scale-black-box-query-lower-bound"
+    },
+    {
+      "black_box_lower_bound_superpolynomial": false,
+      "hidden_label_count_decimal": "620448401733239439360000",
+      "log2_hidden_label_count": 79.03765741910044,
+      "low_pass_cutoff_coefficient": 4,
+      "marked_count_promise": 8,
+      "n": 24,
+      "polynomial_query_benchmark_degree": 100,
+      "polynomial_query_benchmark_log2": 458.49625007211563,
+      "quantum_query_lower_bound_log2_without_constant": 38.01882870955022,
+      "quantum_query_lower_bound_order": "Omega(sqrt(n!/t))",
+      "rejection_coefficient": 8,
+      "status": "factorial-scale-black-box-query-lower-bound"
+    },
+    {
+      "black_box_lower_bound_superpolynomial": false,
+      "hidden_label_count_decimal": "263130836933693530167218012160000000",
+      "log2_hidden_label_count": 117.6632636523603,
+      "low_pass_cutoff_coefficient": 4,
+      "marked_count_promise": 8,
+      "n": 32,
+      "polynomial_query_benchmark_degree": 100,
+      "polynomial_query_benchmark_log2": 500.0,
+      "quantum_query_lower_bound_log2_without_constant": 57.33163182618015,
+      "quantum_query_lower_bound_order": "Omega(sqrt(n!/t))",
+      "rejection_coefficient": 8,
+      "status": "factorial-scale-black-box-query-lower-bound"
+    },
+    {
+      "black_box_lower_bound_superpolynomial": false,
+      "hidden_label_count_decimal": "12413915592536072670862289047373375038521486354677760000000000",
+      "log2_hidden_label_count": 202.94957202970025,
+      "low_pass_cutoff_coefficient": 4,
+      "marked_count_promise": 8,
+      "n": 48,
+      "polynomial_query_benchmark_degree": 100,
+      "polynomial_query_benchmark_log2": 558.4962500721156,
+      "quantum_query_lower_bound_log2_without_constant": 99.97478601485012,
+      "quantum_query_lower_bound_order": "Omega(sqrt(n!/t))",
+      "rejection_coefficient": 8,
+      "status": "factorial-scale-black-box-query-lower-bound"
+    },
+    {
+      "black_box_lower_bound_superpolynomial": false,
+      "hidden_label_count_decimal": "126886932185884164103433389335161480802865516174545192198801894375214704230400000000000000",
+      "log2_hidden_label_count": 295.99514394172405,
+      "low_pass_cutoff_coefficient": 4,
+      "marked_count_promise": 8,
+      "n": 64,
+      "polynomial_query_benchmark_degree": 100,
+      "polynomial_query_benchmark_log2": 600.0,
+      "quantum_query_lower_bound_log2_without_constant": 146.49757197086203,
+      "quantum_query_lower_bound_order": "Omega(sqrt(n!/t))",
+      "rejection_coefficient": 8,
+      "status": "factorial-scale-black-box-query-lower-bound"
+    },
+    {
+      "black_box_lower_bound_superpolynomial": false,
+      "hidden_label_count_decimal": "991677934870949689209571401541893801158183648651267795444376054838492222809091499987689476037000748982075094738965754305639874560000000000000000000000",
+      "log2_hidden_label_count": 498.27715779390303,
+      "low_pass_cutoff_coefficient": 4,
+      "marked_count_promise": 8,
+      "n": 96,
+      "polynomial_query_benchmark_degree": 100,
+      "polynomial_query_benchmark_log2": 658.4962500721156,
+      "quantum_query_lower_bound_log2_without_constant": 247.63857889695151,
+      "quantum_query_lower_bound_order": "Omega(sqrt(n!/t))",
+      "rejection_coefficient": 8,
+      "status": "factorial-scale-black-box-query-lower-bound"
+    },
+    {
+      "black_box_lower_bound_superpolynomial": false,
+      "hidden_label_count_decimal": "385620482362580421735677065923463640617493109590223590278828403276373402575165543560686168588507361534030051833058916347592172932262498857766114955245039357760034644709279247692495585280000000000000000000000000000000",
+      "log2_hidden_label_count": 716.1617220836218,
+      "low_pass_cutoff_coefficient": 4,
+      "marked_count_promise": 8,
+      "n": 128,
+      "polynomial_query_benchmark_degree": 100,
+      "polynomial_query_benchmark_log2": 700.0,
+      "quantum_query_lower_bound_log2_without_constant": 356.5808610418109,
+      "quantum_query_lower_bound_order": "Omega(sqrt(n!/t))",
+      "rejection_coefficient": 8,
+      "status": "factorial-scale-black-box-query-lower-bound"
+    },
+    {
+      "black_box_lower_bound_superpolynomial": false,
+      "hidden_label_count_decimal": "354996793146960497053355363383973425965094809743694491885455534984190204750249968830591340591162785093141951525209177997501478084577063512837513105442388103085116949108248219929177667335850225156399124325817472036634653562449665740610033707601842063277098323069015230061026956365247457276593902258859903874498560000000000000000000000000000000000000000000000",
+      "log2_hidden_label_count": 1184.4342077720341,
+      "low_pass_cutoff_coefficient": 4,
+      "marked_count_promise": 8,
+      "n": 192,
+      "polynomial_query_benchmark_degree": 100,
+      "polynomial_query_benchmark_log2": 758.4962500721156,
+      "quantum_query_lower_bound_log2_without_constant": 590.7171038860171,
+      "quantum_query_lower_bound_order": "Omega(sqrt(n!/t))",
+      "rejection_coefficient": 8,
+      "status": "factorial-scale-black-box-query-lower-bound"
+    },
+    {
+      "black_box_lower_bound_superpolynomial": true,
+      "hidden_label_count_decimal": "857817775342842654119082271681232625157781520279485619859655650377269452553147589377440291360451408450375885342336584306157196834693696475322289288497426025679637332563368786442675207626794560187968867971521143307702077526646451464709187326100832876325702818980773671781454170250523018608495319068138257481070252817559459476987034665712738139286205234756808218860701203611083152093501947437109101726968262861606263662435022840944191408424615936000000000000000000000000000000000000000000000000000000000000000",
+      "log2_hidden_label_count": 1683.9962872242147,
+      "low_pass_cutoff_coefficient": 4,
+      "marked_count_promise": 8,
+      "n": 256,
+      "polynomial_query_benchmark_degree": 100,
+      "polynomial_query_benchmark_log2": 800.0,
+      "quantum_query_lower_bound_log2_without_constant": 840.4981436121074,
+      "quantum_query_lower_bound_order": "Omega(sqrt(n!/t))",
+      "rejection_coefficient": 8,
+      "status": "factorial-scale-black-box-query-lower-bound"
+    },
+    {
+      "black_box_lower_bound_superpolynomial": true,
+      "hidden_label_count_decimal": "202050021298760215213668895094585218571031313844241647038656336753901805116049571674350660157440979591792292856366129916926961706884677301229576788637571823309033713973447373497759772077557498674190878950855558580413822253588970773072621439881846523956766945479875974810824204538651272183933304620434930176256513635227507752422464752474771486396742989664230239433214649824117145479984513359446662469851311138751210976519967687756227751330178388021009033339022681291729619372772508425590802338347614964173532877881213147569421175965148279098826072666361443374874234852854408882112301367626134918709620006585891596435949345051507892173464361536351328134358067227181888523570918732580031107186879656925163054478613903703559155950456668160000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "log2_hidden_label_count": 2748.2492469754493,
+      "low_pass_cutoff_coefficient": 4,
+      "marked_count_promise": 8,
+      "n": 384,
+      "polynomial_query_benchmark_degree": 100,
+      "polynomial_query_benchmark_log2": 858.4962500721156,
+      "quantum_query_lower_bound_log2_without_constant": 1372.6246234877246,
+      "quantum_query_lower_bound_order": "Omega(sqrt(n!/t))",
+      "rejection_coefficient": 8,
+      "status": "factorial-scale-black-box-query-lower-bound"
+    },
+    {
+      "black_box_lower_bound_superpolynomial": true,
+      "hidden_label_count_decimal": "347728979313260536328304591754560471199225065564351457034247483155161041206635254347320985033950225364432243311021394545295001702070069013264153113260937941358711864044716186861040899557497361427588282356254968425012480396855239725120562512065555822121708786443620799246550959187232026838081415178588172535280020786313470076859739980965720873849904291373826841584712798618430387338042329771801724767691095019545758986942732515033551529595009876999279553931070378592917099002397061907147143424113252117585950817850896618433994140232823316432187410356341262386332496954319973130407342567282027398579382543048456876800862349928140411905431276197435674603281842530744177527365885721629512253872386613118821540847897493107398381956081763695236422795880296204301770808809477147632428639299038833046264585834888158847387737841843413664892833586209196366979775748895821826924040057845140287522238675082137570315954526727437094904914796782641000740777897919134093393530422760955140211387173650047358347353379234387609261306673773281412893026941927424000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "log2_hidden_label_count": 3875.166121943203,
+      "low_pass_cutoff_coefficient": 4,
+      "marked_count_promise": 8,
+      "n": 512,
+      "polynomial_query_benchmark_degree": 100,
+      "polynomial_query_benchmark_log2": 900.0,
+      "quantum_query_lower_bound_log2_without_constant": 1936.0830609716015,
+      "quantum_query_lower_bound_order": "Omega(sqrt(n!/t))",
+      "rejection_coefficient": 8,
+      "status": "factorial-scale-black-box-query-lower-bound"
+    }
+  ],
+  "status": "generic-spectral-trim-query-route-falsified-structured-open",
+  "summary": "Reduced factorial-scale low-pass filtering of equal-rank projector averages to unstructured search, proving an Omega(sqrt(n!)) black-box query lower bound.",
+  "theorem_contract": {
+    "average_frame": "B_x=diag(1-|x|/M,|x|/M), with all projectors rank one.",
+    "filter_promise": "The implementation retains eigenvectors at lambda<=a/M and rejects them at lambda>=b/M with fixed b>a.",
+    "lower_bound": "Omega(sqrt(M/b)) projector-oracle queries.",
+    "oracle": "One query applies the indexed controlled reflection sum_j |j><j| tensor (2P_j-I).",
+    "projector_encoding": "P_j(x)=|x_j><x_j| on a qubit.",
+    "reduction": "Apply the filter to |1>; zero marks are retained and b marks are rejected, solving promised unstructured search.",
+    "scope": "The lower bound is black-box. It does not apply to an oracle or transform exposing special symmetric-group structure not present in arbitrary indexed projectors.",
+    "wreath_substitution": "For M=n! and fixed a,b, the generic query cost is Omega(sqrt(n!)), which is superpolynomial in n."
+  }
+}

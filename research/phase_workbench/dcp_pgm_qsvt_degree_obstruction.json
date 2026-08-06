@@ -1,0 +1,636 @@
+{
+  "claim_gate": {
+    "average_case_obstruction_proved": true,
+    "collision_walk_ruled_out": false,
+    "general_collective_measurement_ruled_out": false,
+    "generic_amplitude_encoding_qsvt_rescaling_polynomial": false,
+    "generic_count_encoding_qsvt_rescaling_polynomial": false,
+    "reason": "Markov's inequality gives exponential degree for generic bounded polynomial transforms of the direct count and amplitude encodings. The all-n source family proves a uniform worst-case obstruction. The quenched occupancy theorem transfers it to almost every random source; source-structured alternatives remain open.",
+    "speedup_claim_allowed": false,
+    "structured_preconditioner_ruled_out": false,
+    "uniform_worst_case_obstruction_proved": true
+  },
+  "created_at": "2026-07-30T07:57:23.830660+00:00",
+  "falsifiers_triggered": [
+    "A polynomial-size direct block encoding does not imply a polynomial-degree bounded spectral transform.",
+    "QSVT degree must include the exponentially small spectral spacing, not only the fiber condition-number ratio.",
+    "Switching from count eigenvalues to square-root amplitudes weakens but does not remove the exponential Markov bound.",
+    "An explicit worst-case label family is not evidence for random-source prevalence.",
+    "The theorem does not cover source-aware encodings, collision walks, or different collective measurements."
+  ],
+  "headline_metrics": {
+    "amplitude_encoding_markov_theorem_count": 1,
+    "average_case_random_source_prevalence_theorem_count": 1,
+    "collision_walk_lower_bound_count": 0,
+    "count_encoding_markov_theorem_count": 1,
+    "exact_lifted_source_count": 13,
+    "exact_lifted_source_failure_count": 0,
+    "general_collective_measurement_lower_bound_count": 0,
+    "maximum_n_bits": 1024,
+    "random_source_control_count": 24,
+    "random_source_singleton_doubleton_count": 24,
+    "random_source_singleton_doubleton_fraction": 1.0,
+    "structured_preconditioner_lower_bound_count": 0,
+    "tail_amplitude_encoding_degree_lower_bound_log2": 255.5768617313473,
+    "tail_amplitude_encoding_superpolynomial_row_count": 2,
+    "tail_count_encoding_degree_lower_bound_log2": 510.9410850797655,
+    "tail_count_encoding_superpolynomial_row_count": 4,
+    "uniform_worst_case_qsvt_obstruction_count": 1
+  },
+  "lifted_source_certificates": [
+    {
+      "amplitude_encoding_degree_lower_bound": 1.0547212271858655,
+      "count_encoding_degree_lower_bound": 0.9599858724240738,
+      "doubleton_fiber_count": 1,
+      "exact_pattern_verified": true,
+      "labels": [
+        1,
+        1
+      ],
+      "n_bits": 2,
+      "other_positive_fiber_count": 0,
+      "register_count": 2,
+      "singleton_fiber_count": 2,
+      "status": "exact-all-n-singleton-doubleton-source-certificate",
+      "zero_fiber_count": 1
+    },
+    {
+      "amplitude_encoding_degree_lower_bound": 1.2542819877138325,
+      "count_encoding_degree_lower_bound": 1.3576250404686931,
+      "doubleton_fiber_count": 2,
+      "exact_pattern_verified": true,
+      "labels": [
+        1,
+        1,
+        4
+      ],
+      "n_bits": 3,
+      "other_positive_fiber_count": 0,
+      "register_count": 3,
+      "singleton_fiber_count": 4,
+      "status": "exact-all-n-singleton-doubleton-source-certificate",
+      "zero_fiber_count": 2
+    },
+    {
+      "amplitude_encoding_degree_lower_bound": 1.4916010640090454,
+      "count_encoding_degree_lower_bound": 1.9199717448481477,
+      "doubleton_fiber_count": 4,
+      "exact_pattern_verified": true,
+      "labels": [
+        1,
+        1,
+        4,
+        8
+      ],
+      "n_bits": 4,
+      "other_positive_fiber_count": 0,
+      "register_count": 4,
+      "singleton_fiber_count": 8,
+      "status": "exact-all-n-singleton-doubleton-source-certificate",
+      "zero_fiber_count": 4
+    },
+    {
+      "amplitude_encoding_degree_lower_bound": 1.7738225980651858,
+      "count_encoding_degree_lower_bound": 2.7152500809373863,
+      "doubleton_fiber_count": 8,
+      "exact_pattern_verified": true,
+      "labels": [
+        1,
+        1,
+        4,
+        8,
+        16
+      ],
+      "n_bits": 5,
+      "other_positive_fiber_count": 0,
+      "register_count": 5,
+      "singleton_fiber_count": 16,
+      "status": "exact-all-n-singleton-doubleton-source-certificate",
+      "zero_fiber_count": 8
+    },
+    {
+      "amplitude_encoding_degree_lower_bound": 2.109442454371731,
+      "count_encoding_degree_lower_bound": 3.8399434896962954,
+      "doubleton_fiber_count": 16,
+      "exact_pattern_verified": true,
+      "labels": [
+        1,
+        1,
+        4,
+        8,
+        16,
+        32
+      ],
+      "n_bits": 6,
+      "other_positive_fiber_count": 0,
+      "register_count": 6,
+      "singleton_fiber_count": 32,
+      "status": "exact-all-n-singleton-doubleton-source-certificate",
+      "zero_fiber_count": 16
+    },
+    {
+      "amplitude_encoding_degree_lower_bound": 2.508563975427665,
+      "count_encoding_degree_lower_bound": 5.430500161874773,
+      "doubleton_fiber_count": 32,
+      "exact_pattern_verified": true,
+      "labels": [
+        1,
+        1,
+        4,
+        8,
+        16,
+        32,
+        64
+      ],
+      "n_bits": 7,
+      "other_positive_fiber_count": 0,
+      "register_count": 7,
+      "singleton_fiber_count": 64,
+      "status": "exact-all-n-singleton-doubleton-source-certificate",
+      "zero_fiber_count": 32
+    },
+    {
+      "amplitude_encoding_degree_lower_bound": 2.9832021280180907,
+      "count_encoding_degree_lower_bound": 7.679886979392591,
+      "doubleton_fiber_count": 64,
+      "exact_pattern_verified": true,
+      "labels": [
+        1,
+        1,
+        4,
+        8,
+        16,
+        32,
+        64,
+        128
+      ],
+      "n_bits": 8,
+      "other_positive_fiber_count": 0,
+      "register_count": 8,
+      "singleton_fiber_count": 128,
+      "status": "exact-all-n-singleton-doubleton-source-certificate",
+      "zero_fiber_count": 64
+    },
+    {
+      "amplitude_encoding_degree_lower_bound": 3.5476451961303717,
+      "count_encoding_degree_lower_bound": 10.861000323749545,
+      "doubleton_fiber_count": 128,
+      "exact_pattern_verified": true,
+      "labels": [
+        1,
+        1,
+        4,
+        8,
+        16,
+        32,
+        64,
+        128,
+        256
+      ],
+      "n_bits": 9,
+      "other_positive_fiber_count": 0,
+      "register_count": 9,
+      "singleton_fiber_count": 256,
+      "status": "exact-all-n-singleton-doubleton-source-certificate",
+      "zero_fiber_count": 128
+    },
+    {
+      "amplitude_encoding_degree_lower_bound": 4.218884908743462,
+      "count_encoding_degree_lower_bound": 15.359773958785182,
+      "doubleton_fiber_count": 256,
+      "exact_pattern_verified": true,
+      "labels": [
+        1,
+        1,
+        4,
+        8,
+        16,
+        32,
+        64,
+        128,
+        256,
+        512
+      ],
+      "n_bits": 10,
+      "other_positive_fiber_count": 0,
+      "register_count": 10,
+      "singleton_fiber_count": 512,
+      "status": "exact-all-n-singleton-doubleton-source-certificate",
+      "zero_fiber_count": 256
+    },
+    {
+      "amplitude_encoding_degree_lower_bound": 5.01712795085533,
+      "count_encoding_degree_lower_bound": 21.72200064749909,
+      "doubleton_fiber_count": 512,
+      "exact_pattern_verified": true,
+      "labels": [
+        1,
+        1,
+        4,
+        8,
+        16,
+        32,
+        64,
+        128,
+        256,
+        512,
+        1024
+      ],
+      "n_bits": 11,
+      "other_positive_fiber_count": 0,
+      "register_count": 11,
+      "singleton_fiber_count": 1024,
+      "status": "exact-all-n-singleton-doubleton-source-certificate",
+      "zero_fiber_count": 512
+    },
+    {
+      "amplitude_encoding_degree_lower_bound": 5.966404256036181,
+      "count_encoding_degree_lower_bound": 30.719547917570363,
+      "doubleton_fiber_count": 1024,
+      "exact_pattern_verified": true,
+      "labels": [
+        1,
+        1,
+        4,
+        8,
+        16,
+        32,
+        64,
+        128,
+        256,
+        512,
+        1024,
+        2048
+      ],
+      "n_bits": 12,
+      "other_positive_fiber_count": 0,
+      "register_count": 12,
+      "singleton_fiber_count": 2048,
+      "status": "exact-all-n-singleton-doubleton-source-certificate",
+      "zero_fiber_count": 1024
+    },
+    {
+      "amplitude_encoding_degree_lower_bound": 7.095290392260743,
+      "count_encoding_degree_lower_bound": 43.44400129499818,
+      "doubleton_fiber_count": 2048,
+      "exact_pattern_verified": true,
+      "labels": [
+        1,
+        1,
+        4,
+        8,
+        16,
+        32,
+        64,
+        128,
+        256,
+        512,
+        1024,
+        2048,
+        4096
+      ],
+      "n_bits": 13,
+      "other_positive_fiber_count": 0,
+      "register_count": 13,
+      "singleton_fiber_count": 4096,
+      "status": "exact-all-n-singleton-doubleton-source-certificate",
+      "zero_fiber_count": 2048
+    },
+    {
+      "amplitude_encoding_degree_lower_bound": 8.437769817486924,
+      "count_encoding_degree_lower_bound": 61.439095835140726,
+      "doubleton_fiber_count": 4096,
+      "exact_pattern_verified": true,
+      "labels": [
+        1,
+        1,
+        4,
+        8,
+        16,
+        32,
+        64,
+        128,
+        256,
+        512,
+        1024,
+        2048,
+        4096,
+        8192
+      ],
+      "n_bits": 14,
+      "other_positive_fiber_count": 0,
+      "register_count": 14,
+      "singleton_fiber_count": 8192,
+      "status": "exact-all-n-singleton-doubleton-source-certificate",
+      "zero_fiber_count": 4096
+    }
+  ],
+  "random_source_controls": [
+    {
+      "doubleton_fiber_count": 30,
+      "label_digest": "58aff28cc6c3fd96",
+      "maximum_fiber_size": 5,
+      "n_bits": 8,
+      "register_count": 8,
+      "singleton_doubleton_obstruction_present": true,
+      "singleton_fiber_count": 66,
+      "trial": 0
+    },
+    {
+      "doubleton_fiber_count": 44,
+      "label_digest": "85b23464f6313848",
+      "maximum_fiber_size": 3,
+      "n_bits": 8,
+      "register_count": 8,
+      "singleton_doubleton_obstruction_present": true,
+      "singleton_fiber_count": 138,
+      "trial": 1
+    },
+    {
+      "doubleton_fiber_count": 62,
+      "label_digest": "c9f571c3000608ac",
+      "maximum_fiber_size": 3,
+      "n_bits": 8,
+      "register_count": 8,
+      "singleton_doubleton_obstruction_present": true,
+      "singleton_fiber_count": 102,
+      "trial": 2
+    },
+    {
+      "doubleton_fiber_count": 50,
+      "label_digest": "a7ebb7772e852b48",
+      "maximum_fiber_size": 3,
+      "n_bits": 8,
+      "register_count": 8,
+      "singleton_doubleton_obstruction_present": true,
+      "singleton_fiber_count": 126,
+      "trial": 3
+    },
+    {
+      "doubleton_fiber_count": 197,
+      "label_digest": "d6cc54588b10fa8d",
+      "maximum_fiber_size": 4,
+      "n_bits": 10,
+      "register_count": 10,
+      "singleton_doubleton_obstruction_present": true,
+      "singleton_fiber_count": 400,
+      "trial": 0
+    },
+    {
+      "doubleton_fiber_count": 144,
+      "label_digest": "6f17cad8d36060ce",
+      "maximum_fiber_size": 5,
+      "n_bits": 10,
+      "register_count": 10,
+      "singleton_doubleton_obstruction_present": true,
+      "singleton_fiber_count": 184,
+      "trial": 1
+    },
+    {
+      "doubleton_fiber_count": 206,
+      "label_digest": "eb745566e7976876",
+      "maximum_fiber_size": 3,
+      "n_bits": 10,
+      "register_count": 10,
+      "singleton_doubleton_obstruction_present": true,
+      "singleton_fiber_count": 528,
+      "trial": 2
+    },
+    {
+      "doubleton_fiber_count": 212,
+      "label_digest": "911848e0a5504415",
+      "maximum_fiber_size": 4,
+      "n_bits": 10,
+      "register_count": 10,
+      "singleton_doubleton_obstruction_present": true,
+      "singleton_fiber_count": 362,
+      "trial": 3
+    },
+    {
+      "doubleton_fiber_count": 763,
+      "label_digest": "2accec9e79cba3b7",
+      "maximum_fiber_size": 7,
+      "n_bits": 12,
+      "register_count": 12,
+      "singleton_doubleton_obstruction_present": true,
+      "singleton_fiber_count": 1374,
+      "trial": 0
+    },
+    {
+      "doubleton_fiber_count": 664,
+      "label_digest": "59863a736a017458",
+      "maximum_fiber_size": 6,
+      "n_bits": 12,
+      "register_count": 12,
+      "singleton_doubleton_obstruction_present": true,
+      "singleton_fiber_count": 1418,
+      "trial": 1
+    },
+    {
+      "doubleton_fiber_count": 717,
+      "label_digest": "1f1cc47fc9921417",
+      "maximum_fiber_size": 6,
+      "n_bits": 12,
+      "register_count": 12,
+      "singleton_doubleton_obstruction_present": true,
+      "singleton_fiber_count": 1338,
+      "trial": 2
+    },
+    {
+      "doubleton_fiber_count": 803,
+      "label_digest": "cd41df3ffcda88e3",
+      "maximum_fiber_size": 5,
+      "n_bits": 12,
+      "register_count": 12,
+      "singleton_doubleton_obstruction_present": true,
+      "singleton_fiber_count": 1570,
+      "trial": 3
+    },
+    {
+      "doubleton_fiber_count": 2992,
+      "label_digest": "d08b863d0523a408",
+      "maximum_fiber_size": 7,
+      "n_bits": 14,
+      "register_count": 14,
+      "singleton_doubleton_obstruction_present": true,
+      "singleton_fiber_count": 5818,
+      "trial": 0
+    },
+    {
+      "doubleton_fiber_count": 3356,
+      "label_digest": "cc8b8c64fd313680",
+      "maximum_fiber_size": 5,
+      "n_bits": 14,
+      "register_count": 14,
+      "singleton_doubleton_obstruction_present": true,
+      "singleton_fiber_count": 7072,
+      "trial": 1
+    },
+    {
+      "doubleton_fiber_count": 3066,
+      "label_digest": "628dfb937590b1e8",
+      "maximum_fiber_size": 5,
+      "n_bits": 14,
+      "register_count": 14,
+      "singleton_doubleton_obstruction_present": true,
+      "singleton_fiber_count": 5952,
+      "trial": 2
+    },
+    {
+      "doubleton_fiber_count": 2874,
+      "label_digest": "29cf6d4db78cd572",
+      "maximum_fiber_size": 6,
+      "n_bits": 14,
+      "register_count": 14,
+      "singleton_doubleton_obstruction_present": true,
+      "singleton_fiber_count": 5990,
+      "trial": 3
+    },
+    {
+      "doubleton_fiber_count": 11616,
+      "label_digest": "fb115f236cb97410",
+      "maximum_fiber_size": 7,
+      "n_bits": 16,
+      "register_count": 16,
+      "singleton_doubleton_obstruction_present": true,
+      "singleton_fiber_count": 23010,
+      "trial": 0
+    },
+    {
+      "doubleton_fiber_count": 11970,
+      "label_digest": "f6ed05fb2a86f471",
+      "maximum_fiber_size": 6,
+      "n_bits": 16,
+      "register_count": 16,
+      "singleton_doubleton_obstruction_present": true,
+      "singleton_fiber_count": 25046,
+      "trial": 1
+    },
+    {
+      "doubleton_fiber_count": 12460,
+      "label_digest": "b97647e7867f932b",
+      "maximum_fiber_size": 6,
+      "n_bits": 16,
+      "register_count": 16,
+      "singleton_doubleton_obstruction_present": true,
+      "singleton_fiber_count": 26744,
+      "trial": 2
+    },
+    {
+      "doubleton_fiber_count": 12376,
+      "label_digest": "845c7990c65b30d4",
+      "maximum_fiber_size": 7,
+      "n_bits": 16,
+      "register_count": 16,
+      "singleton_doubleton_obstruction_present": true,
+      "singleton_fiber_count": 24194,
+      "trial": 3
+    },
+    {
+      "doubleton_fiber_count": 50630,
+      "label_digest": "100c76d78a1966eb",
+      "maximum_fiber_size": 6,
+      "n_bits": 18,
+      "register_count": 18,
+      "singleton_doubleton_obstruction_present": true,
+      "singleton_fiber_count": 106268,
+      "trial": 0
+    },
+    {
+      "doubleton_fiber_count": 49852,
+      "label_digest": "1032486d3e4bc4a0",
+      "maximum_fiber_size": 7,
+      "n_bits": 18,
+      "register_count": 18,
+      "singleton_doubleton_obstruction_present": true,
+      "singleton_fiber_count": 100210,
+      "trial": 1
+    },
+    {
+      "doubleton_fiber_count": 47746,
+      "label_digest": "f2189d51ef4ea2f8",
+      "maximum_fiber_size": 8,
+      "n_bits": 18,
+      "register_count": 18,
+      "singleton_doubleton_obstruction_present": true,
+      "singleton_fiber_count": 95198,
+      "trial": 2
+    },
+    {
+      "doubleton_fiber_count": 49570,
+      "label_digest": "106c597ca5a01a6a",
+      "maximum_fiber_size": 7,
+      "n_bits": 18,
+      "register_count": 18,
+      "singleton_doubleton_obstruction_present": true,
+      "singleton_fiber_count": 103644,
+      "trial": 3
+    }
+  ],
+  "scaling_rows": [
+    {
+      "amplitude_encoding_degree_lower_bound_log2": 15.576861731347298,
+      "amplitude_encoding_superpolynomial": false,
+      "approximation_error": 0.03125,
+      "count_encoding_degree_lower_bound_log2": 30.941085079765493,
+      "count_encoding_superpolynomial": false,
+      "n_bits": 64,
+      "polynomial_degree_threshold_log2": 48.0,
+      "register_count": 64,
+      "target_weight_gap": 0.23039321881345254
+    },
+    {
+      "amplitude_encoding_degree_lower_bound_log2": 31.576861731347297,
+      "amplitude_encoding_superpolynomial": false,
+      "approximation_error": 0.03125,
+      "count_encoding_degree_lower_bound_log2": 62.94108507976549,
+      "count_encoding_superpolynomial": true,
+      "n_bits": 128,
+      "polynomial_degree_threshold_log2": 56.0,
+      "register_count": 128,
+      "target_weight_gap": 0.23039321881345254
+    },
+    {
+      "amplitude_encoding_degree_lower_bound_log2": 63.5768617313473,
+      "amplitude_encoding_superpolynomial": false,
+      "approximation_error": 0.03125,
+      "count_encoding_degree_lower_bound_log2": 126.94108507976549,
+      "count_encoding_superpolynomial": true,
+      "n_bits": 256,
+      "polynomial_degree_threshold_log2": 64.0,
+      "register_count": 256,
+      "target_weight_gap": 0.23039321881345254
+    },
+    {
+      "amplitude_encoding_degree_lower_bound_log2": 127.5768617313473,
+      "amplitude_encoding_superpolynomial": true,
+      "approximation_error": 0.03125,
+      "count_encoding_degree_lower_bound_log2": 254.9410850797655,
+      "count_encoding_superpolynomial": true,
+      "n_bits": 512,
+      "polynomial_degree_threshold_log2": 72.0,
+      "register_count": 512,
+      "target_weight_gap": 0.23039321881345254
+    },
+    {
+      "amplitude_encoding_degree_lower_bound_log2": 255.5768617313473,
+      "amplitude_encoding_superpolynomial": true,
+      "approximation_error": 0.03125,
+      "count_encoding_degree_lower_bound_log2": 510.9410850797655,
+      "count_encoding_superpolynomial": true,
+      "n_bits": 1024,
+      "polynomial_degree_threshold_log2": 80.0,
+      "register_count": 1024,
+      "target_weight_gap": 0.23039321881345254
+    }
+  ],
+  "status": "generic-direct-qsvt-rescaling-exponential-average-source-structured-routes-open",
+  "summary": "Verified 13 all-n lifted source controls with 0 failures. Singleton and doubleton fibers co-occurred in 24/24 finite random controls. Generic direct QSVT rescaling is exponentially degree-limited; the average-source transfer is proved, and no source-structured lower bound is claimed.",
+  "theorem": {
+    "amplitude_encoding_bound": "For singular values sqrt(c/D), d>=sqrt((1-1/sqrt(2)-2epsilon)*sqrt(D)/(sqrt(2)-1)).",
+    "count_encoding_bound": "d>=sqrt((1-1/sqrt(2)-2epsilon)D).",
+    "explicit_source_family": "a=(1,1,4,8,...,2^(n-1)) has N/2 singleton, N/4 doubleton, and N/4 empty fibers for every n>=2.",
+    "markov_inequality": "For real degree-d p bounded by one on [-1,1], max_{[-1,1]} |p'| <= d^2.",
+    "target_weights": "|p(1/D)-1|<=epsilon and |p(2/D)-1/sqrt(2)|<=epsilon."
+  }
+}

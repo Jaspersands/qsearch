@@ -1,0 +1,3321 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Every child intersection is a sum of exact pairwise common ranges.",
+      "resolution": "The label-distinct W3 plane has two-dimensional dependency homology and no exact pair-common edge.",
+      "resolved": true
+    },
+    {
+      "objection": "Pair-generated dependencies are automatically neutral.",
+      "resolution": "False even with globally distinct source partitions: the S6 noncommuting-core plane is entirely pair-generated but has grading defect 1/17.",
+      "resolved": true
+    },
+    {
+      "objection": "Vanishing emergent homology gives a circuit.",
+      "resolution": "One still needs a coherent basis for pair classes, their overlaps, and the quotient map at threshold scale.",
+      "resolved": false
+    }
+  ],
+  "claim_gate": {
+    "all_n_emergent_homology_neutrality_proved": false,
+    "coherent_pair_common_quotient_compiled": false,
+    "collision_free_pair_generated_half_balance_falsified": true,
+    "finite_dependency_homology_quotient_verified": true,
+    "hierarchical_orientation_polar_proved": false,
+    "reason": "Finite pair and emergent classes are separated exactly, and a collision-free S6 pair-generated class falsifies universal half-balance. No all-n recoupling block classification or coherent quotient map is known.",
+    "selected_w5_dependencies_pair_generated": true,
+    "selected_w6_dependencies_pair_generated": true,
+    "speedup_claim_allowed": false,
+    "universal_pair_generation_proved": false,
+    "w3_distinct_dependency_is_genuinely_emergent": true
+  },
+  "controls": [
+    {
+      "audited_fractional_merge_count": 9,
+      "control_id": "W3-DISTINCT-EMERGENT",
+      "emergent_merge_count": 9,
+      "exact_homology_audit_failure_count": 0,
+      "globally_distinct_source_partitions": false,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_cross_dependency_dimension": 2,
+      "maximum_emergent_homology_dimension": 2,
+      "maximum_full_grading_neutrality_residual": 6.722079379331482e-16,
+      "maximum_pair_dependency_class_dimension": 0,
+      "n": 3,
+      "nonneutral_merge_count": 0,
+      "pair_generated_merge_count": 0,
+      "pairwise_distinct_physical_labels": true,
+      "records": [
+        {
+          "active_left_orientation_masks": [
+            0,
+            2
+          ],
+          "active_right_orientation_masks": [
+            5,
+            7
+          ],
+          "cross_dependency_dimension": 2,
+          "emergent_class_grading_residual": 4.457971272405163e-16,
+          "emergent_classes_totally_neutral": true,
+          "emergent_dependency_homology_dimension": 2,
+          "emergent_dependency_present": true,
+          "exact_dependency_homology_audit": true,
+          "exact_pair_common_dimension_sum": 0,
+          "exact_pair_common_edge_count": 0,
+          "fractional_eigenvalues": [
+            0.4999999999999998,
+            0.5000000000000002
+          ],
+          "full_grading_neutrality_residual": 4.457971272405163e-16,
+          "left_orientation_masks": [
+            0,
+            2
+          ],
+          "maximum_fractional_half_residual": 2.220446049250313e-16,
+          "node_id": "W3-DISTINCT-EMERGENT-W2-0-2-5-7",
+          "pair_class_grading_residual": 0.0,
+          "pair_class_overlap_dimension": 0,
+          "pair_classes_exhaust_cross_dependencies": false,
+          "pair_classes_totally_neutral": true,
+          "pair_dependency_class_dimension": 0,
+          "pair_emergent_grading_coupling_residual": 0.0,
+          "right_orientation_masks": [
+            5,
+            7
+          ],
+          "status": "exact-neutral-emergent-dependency"
+        },
+        {
+          "active_left_orientation_masks": [
+            0,
+            5
+          ],
+          "active_right_orientation_masks": [
+            2,
+            7
+          ],
+          "cross_dependency_dimension": 2,
+          "emergent_class_grading_residual": 5.757469339323073e-17,
+          "emergent_classes_totally_neutral": true,
+          "emergent_dependency_homology_dimension": 2,
+          "emergent_dependency_present": true,
+          "exact_dependency_homology_audit": true,
+          "exact_pair_common_dimension_sum": 0,
+          "exact_pair_common_edge_count": 0,
+          "fractional_eigenvalues": [
+            0.5,
+            0.5
+          ],
+          "full_grading_neutrality_residual": 5.757469339323073e-17,
+          "left_orientation_masks": [
+            0,
+            5
+          ],
+          "maximum_fractional_half_residual": 0.0,
+          "node_id": "W3-DISTINCT-EMERGENT-W2-0-5-2-7",
+          "pair_class_grading_residual": 0.0,
+          "pair_class_overlap_dimension": 0,
+          "pair_classes_exhaust_cross_dependencies": false,
+          "pair_classes_totally_neutral": true,
+          "pair_dependency_class_dimension": 0,
+          "pair_emergent_grading_coupling_residual": 0.0,
+          "right_orientation_masks": [
+            2,
+            7
+          ],
+          "status": "exact-neutral-emergent-dependency"
+        },
+        {
+          "active_left_orientation_masks": [
+            0,
+            7
+          ],
+          "active_right_orientation_masks": [
+            2,
+            5
+          ],
+          "cross_dependency_dimension": 2,
+          "emergent_class_grading_residual": 5.676050831231045e-16,
+          "emergent_classes_totally_neutral": true,
+          "emergent_dependency_homology_dimension": 2,
+          "emergent_dependency_present": true,
+          "exact_dependency_homology_audit": true,
+          "exact_pair_common_dimension_sum": 0,
+          "exact_pair_common_edge_count": 0,
+          "fractional_eigenvalues": [
+            0.4999999999999997,
+            0.5000000000000002
+          ],
+          "full_grading_neutrality_residual": 5.676050831231045e-16,
+          "left_orientation_masks": [
+            0,
+            7
+          ],
+          "maximum_fractional_half_residual": 2.7755575615628914e-16,
+          "node_id": "W3-DISTINCT-EMERGENT-W2-0-7-2-5",
+          "pair_class_grading_residual": 0.0,
+          "pair_class_overlap_dimension": 0,
+          "pair_classes_exhaust_cross_dependencies": false,
+          "pair_classes_totally_neutral": true,
+          "pair_dependency_class_dimension": 0,
+          "pair_emergent_grading_coupling_residual": 0.0,
+          "right_orientation_masks": [
+            2,
+            5
+          ],
+          "status": "exact-neutral-emergent-dependency"
+        },
+        {
+          "active_left_orientation_masks": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "active_right_orientation_masks": [
+            5,
+            7
+          ],
+          "cross_dependency_dimension": 2,
+          "emergent_class_grading_residual": 5.379828257640447e-16,
+          "emergent_classes_totally_neutral": true,
+          "emergent_dependency_homology_dimension": 2,
+          "emergent_dependency_present": true,
+          "exact_dependency_homology_audit": true,
+          "exact_pair_common_dimension_sum": 0,
+          "exact_pair_common_edge_count": 0,
+          "fractional_eigenvalues": [
+            0.4999999999999998,
+            0.5000000000000002
+          ],
+          "full_grading_neutrality_residual": 5.379828257640447e-16,
+          "left_orientation_masks": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "maximum_fractional_half_residual": 2.220446049250313e-16,
+          "node_id": "W3-DISTINCT-EMERGENT-W4-0-1-2-3-4-5-6-7",
+          "pair_class_grading_residual": 0.0,
+          "pair_class_overlap_dimension": 0,
+          "pair_classes_exhaust_cross_dependencies": false,
+          "pair_classes_totally_neutral": true,
+          "pair_dependency_class_dimension": 0,
+          "pair_emergent_grading_coupling_residual": 0.0,
+          "right_orientation_masks": [
+            4,
+            5,
+            6,
+            7
+          ],
+          "status": "exact-neutral-emergent-dependency"
+        },
+        {
+          "active_left_orientation_masks": [
+            0,
+            1,
+            5
+          ],
+          "active_right_orientation_masks": [
+            2,
+            3,
+            7
+          ],
+          "cross_dependency_dimension": 2,
+          "emergent_class_grading_residual": 6.987338080212258e-17,
+          "emergent_classes_totally_neutral": true,
+          "emergent_dependency_homology_dimension": 2,
+          "emergent_dependency_present": true,
+          "exact_dependency_homology_audit": true,
+          "exact_pair_common_dimension_sum": 0,
+          "exact_pair_common_edge_count": 0,
+          "fractional_eigenvalues": [
+            0.49999999999999994,
+            0.5
+          ],
+          "full_grading_neutrality_residual": 6.987338080212258e-17,
+          "left_orientation_masks": [
+            0,
+            1,
+            4,
+            5
+          ],
+          "maximum_fractional_half_residual": 5.551115123125783e-17,
+          "node_id": "W3-DISTINCT-EMERGENT-W4-0-1-4-5-2-3-6-7",
+          "pair_class_grading_residual": 0.0,
+          "pair_class_overlap_dimension": 0,
+          "pair_classes_exhaust_cross_dependencies": false,
+          "pair_classes_totally_neutral": true,
+          "pair_dependency_class_dimension": 0,
+          "pair_emergent_grading_coupling_residual": 0.0,
+          "right_orientation_masks": [
+            2,
+            3,
+            6,
+            7
+          ],
+          "status": "exact-neutral-emergent-dependency"
+        },
+        {
+          "active_left_orientation_masks": [
+            0,
+            1,
+            7
+          ],
+          "active_right_orientation_masks": [
+            2,
+            3,
+            5
+          ],
+          "cross_dependency_dimension": 2,
+          "emergent_class_grading_residual": 1.3304437474124496e-16,
+          "emergent_classes_totally_neutral": true,
+          "emergent_dependency_homology_dimension": 2,
+          "emergent_dependency_present": true,
+          "exact_dependency_homology_audit": true,
+          "exact_pair_common_dimension_sum": 0,
+          "exact_pair_common_edge_count": 0,
+          "fractional_eigenvalues": [
+            0.5,
+            0.5000000000000001
+          ],
+          "full_grading_neutrality_residual": 1.3304437474124496e-16,
+          "left_orientation_masks": [
+            0,
+            1,
+            6,
+            7
+          ],
+          "maximum_fractional_half_residual": 1.1102230246251565e-16,
+          "node_id": "W3-DISTINCT-EMERGENT-W4-0-1-6-7-2-3-4-5",
+          "pair_class_grading_residual": 0.0,
+          "pair_class_overlap_dimension": 0,
+          "pair_classes_exhaust_cross_dependencies": false,
+          "pair_classes_totally_neutral": true,
+          "pair_dependency_class_dimension": 0,
+          "pair_emergent_grading_coupling_residual": 0.0,
+          "right_orientation_masks": [
+            2,
+            3,
+            4,
+            5
+          ],
+          "status": "exact-neutral-emergent-dependency"
+        },
+        {
+          "active_left_orientation_masks": [
+            0,
+            2
+          ],
+          "active_right_orientation_masks": [
+            1,
+            3,
+            5,
+            7
+          ],
+          "cross_dependency_dimension": 2,
+          "emergent_class_grading_residual": 1.6322534643010584e-16,
+          "emergent_classes_totally_neutral": true,
+          "emergent_dependency_homology_dimension": 2,
+          "emergent_dependency_present": true,
+          "exact_dependency_homology_audit": true,
+          "exact_pair_common_dimension_sum": 0,
+          "exact_pair_common_edge_count": 0,
+          "fractional_eigenvalues": [
+            0.49999999999999994,
+            0.5
+          ],
+          "full_grading_neutrality_residual": 1.6322534643010584e-16,
+          "left_orientation_masks": [
+            0,
+            2,
+            4,
+            6
+          ],
+          "maximum_fractional_half_residual": 5.551115123125783e-17,
+          "node_id": "W3-DISTINCT-EMERGENT-W4-0-2-4-6-1-3-5-7",
+          "pair_class_grading_residual": 0.0,
+          "pair_class_overlap_dimension": 0,
+          "pair_classes_exhaust_cross_dependencies": false,
+          "pair_classes_totally_neutral": true,
+          "pair_dependency_class_dimension": 0,
+          "pair_emergent_grading_coupling_residual": 0.0,
+          "right_orientation_masks": [
+            1,
+            3,
+            5,
+            7
+          ],
+          "status": "exact-neutral-emergent-dependency"
+        },
+        {
+          "active_left_orientation_masks": [
+            0,
+            3,
+            7
+          ],
+          "active_right_orientation_masks": [
+            1,
+            2,
+            5
+          ],
+          "cross_dependency_dimension": 2,
+          "emergent_class_grading_residual": 6.722079379331482e-16,
+          "emergent_classes_totally_neutral": true,
+          "emergent_dependency_homology_dimension": 2,
+          "emergent_dependency_present": true,
+          "exact_dependency_homology_audit": true,
+          "exact_pair_common_dimension_sum": 0,
+          "exact_pair_common_edge_count": 0,
+          "fractional_eigenvalues": [
+            0.49999999999999967,
+            0.5000000000000001
+          ],
+          "full_grading_neutrality_residual": 6.722079379331482e-16,
+          "left_orientation_masks": [
+            0,
+            3,
+            4,
+            7
+          ],
+          "maximum_fractional_half_residual": 3.3306690738754696e-16,
+          "node_id": "W3-DISTINCT-EMERGENT-W4-0-3-4-7-1-2-5-6",
+          "pair_class_grading_residual": 0.0,
+          "pair_class_overlap_dimension": 0,
+          "pair_classes_exhaust_cross_dependencies": false,
+          "pair_classes_totally_neutral": true,
+          "pair_dependency_class_dimension": 0,
+          "pair_emergent_grading_coupling_residual": 0.0,
+          "right_orientation_masks": [
+            1,
+            2,
+            5,
+            6
+          ],
+          "status": "exact-neutral-emergent-dependency"
+        },
+        {
+          "active_left_orientation_masks": [
+            0,
+            3,
+            5
+          ],
+          "active_right_orientation_masks": [
+            1,
+            2,
+            7
+          ],
+          "cross_dependency_dimension": 2,
+          "emergent_class_grading_residual": 3.8106523724190144e-16,
+          "emergent_classes_totally_neutral": true,
+          "emergent_dependency_homology_dimension": 2,
+          "emergent_dependency_present": true,
+          "exact_dependency_homology_audit": true,
+          "exact_pair_common_dimension_sum": 0,
+          "exact_pair_common_edge_count": 0,
+          "fractional_eigenvalues": [
+            0.49999999999999983,
+            0.49999999999999994
+          ],
+          "full_grading_neutrality_residual": 3.8106523724190144e-16,
+          "left_orientation_masks": [
+            0,
+            3,
+            5,
+            6
+          ],
+          "maximum_fractional_half_residual": 1.6653345369377348e-16,
+          "node_id": "W3-DISTINCT-EMERGENT-W4-0-3-5-6-1-2-4-7",
+          "pair_class_grading_residual": 0.0,
+          "pair_class_overlap_dimension": 0,
+          "pair_classes_exhaust_cross_dependencies": false,
+          "pair_classes_totally_neutral": true,
+          "pair_dependency_class_dimension": 0,
+          "pair_emergent_grading_coupling_residual": 0.0,
+          "right_orientation_masks": [
+            1,
+            2,
+            4,
+            7
+          ],
+          "status": "exact-neutral-emergent-dependency"
+        }
+      ],
+      "status": "neutral-emergent-dependency-homology-present",
+      "target_partition": [
+        2,
+        1
+      ]
+    },
+    {
+      "audited_fractional_merge_count": 34,
+      "control_id": "W3-REPEATED-NONNEUTRAL",
+      "emergent_merge_count": 19,
+      "exact_homology_audit_failure_count": 0,
+      "globally_distinct_source_partitions": false,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ]
+      ],
+      "maximum_cross_dependency_dimension": 7,
+      "maximum_emergent_homology_dimension": 5,
+      "maximum_full_grading_neutrality_residual": 0.33333333333333387,
+      "maximum_pair_dependency_class_dimension": 2,
+      "n": 3,
+      "nonneutral_merge_count": 9,
+      "pair_generated_merge_count": 15,
+      "pairwise_distinct_physical_labels": false,
+      "records": [
+        {
+          "active_left_orientation_masks": [
+            1
+          ],
+          "active_right_orientation_masks": [
+            7
+          ],
+          "cross_dependency_dimension": 1,
+          "emergent_class_grading_residual": 0.0,
+          "emergent_classes_totally_neutral": true,
+          "emergent_dependency_homology_dimension": 0,
+          "emergent_dependency_present": false,
+          "exact_dependency_homology_audit": true,
+          "exact_pair_common_dimension_sum": 1,
+          "exact_pair_common_edge_count": 1,
+          "fractional_eigenvalues": [
+            0.5
+          ],
+          "full_grading_neutrality_residual": 5.093382153256344e-17,
+          "left_orientation_masks": [
+            1
+          ],
+          "maximum_fractional_half_residual": 0.0,
+          "node_id": "W3-REPEATED-NONNEUTRAL-W1-1-7",
+          "pair_class_grading_residual": 5.093382153256344e-17,
+          "pair_class_overlap_dimension": 0,
+          "pair_classes_exhaust_cross_dependencies": true,
+          "pair_classes_totally_neutral": true,
+          "pair_dependency_class_dimension": 1,
+          "pair_emergent_grading_coupling_residual": 0.0,
+          "right_orientation_masks": [
+            7
+          ],
+          "status": "exact-neutral-pair-generated-dependency"
+        },
+        {
+          "active_left_orientation_masks": [
+            2
+          ],
+          "active_right_orientation_masks": [
+            7
+          ],
+          "cross_dependency_dimension": 1,
+          "emergent_class_grading_residual": 0.0,
+          "emergent_classes_totally_neutral": true,
+          "emergent_dependency_homology_dimension": 0,
+          "emergent_dependency_present": false,
+          "exact_dependency_homology_audit": true,
+          "exact_pair_common_dimension_sum": 1,
+          "exact_pair_common_edge_count": 1,
+          "fractional_eigenvalues": [
+            0.5000000000000002
+          ],
+          "full_grading_neutrality_residual": 3.6744127796513184e-16,
+          "left_orientation_masks": [
+            2
+          ],
+          "maximum_fractional_half_residual": 2.220446049250313e-16,
+          "node_id": "W3-REPEATED-NONNEUTRAL-W1-2-7",
+          "pair_class_grading_residual": 3.6744127796513184e-16,
+          "pair_class_overlap_dimension": 0,
+          "pair_classes_exhaust_cross_dependencies": true,
+          "pair_classes_totally_neutral": true,
+          "pair_dependency_class_dimension": 1,
+          "pair_emergent_grading_coupling_residual": 0.0,
+          "right_orientation_masks": [
+            7
+          ],
+          "status": "exact-neutral-pair-generated-dependency"
+        },
+        {
+          "active_left_orientation_masks": [
+            4
+          ],
+          "active_right_orientation_masks": [
+            7
+          ],
+          "cross_dependency_dimension": 1,
+          "emergent_class_grading_residual": 0.0,
+          "emergent_classes_totally_neutral": true,
+          "emergent_dependency_homology_dimension": 0,
+          "emergent_dependency_present": false,
+          "exact_dependency_homology_audit": true,
+          "exact_pair_common_dimension_sum": 1,
+          "exact_pair_common_edge_count": 1,
+          "fractional_eigenvalues": [
+            0.5000000000000001
+          ],
+          "full_grading_neutrality_residual": 2.9077536522074474e-16,
+          "left_orientation_masks": [
+            4
+          ],
+          "maximum_fractional_half_residual": 1.1102230246251565e-16,
+          "node_id": "W3-REPEATED-NONNEUTRAL-W1-4-7",
+          "pair_class_grading_residual": 2.9077536522074474e-16,
+          "pair_class_overlap_dimension": 0,
+          "pair_classes_exhaust_cross_dependencies": true,
+          "pair_classes_totally_neutral": true,
+          "pair_dependency_class_dimension": 1,
+          "pair_emergent_grading_coupling_residual": 0.0,
+          "right_orientation_masks": [
+            7
+          ],
+          "status": "exact-neutral-pair-generated-dependency"
+        },
+        {
+          "active_left_orientation_masks": [
+            1
+          ],
+          "active_right_orientation_masks": [
+            6,
+            7
+          ],
+          "cross_dependency_dimension": 1,
+          "emergent_class_grading_residual": 0.0,
+          "emergent_classes_totally_neutral": true,
+          "emergent_dependency_homology_dimension": 0,
+          "emergent_dependency_present": false,
+          "exact_dependency_homology_audit": true,
+          "exact_pair_common_dimension_sum": 1,
+          "exact_pair_common_edge_count": 1,
+          "fractional_eigenvalues": [
+            0.5000000000000001
+          ],
+          "full_grading_neutrality_residual": 2.7297842645759475e-16,
+          "left_orientation_masks": [
+            0,
+            1
+          ],
+          "maximum_fractional_half_residual": 1.1102230246251565e-16,
+          "node_id": "W3-REPEATED-NONNEUTRAL-W2-0-1-6-7",
+          "pair_class_grading_residual": 2.7297842645759475e-16,
+          "pair_class_overlap_dimension": 0,
+          "pair_classes_exhaust_cross_dependencies": true,
+          "pair_classes_totally_neutral": true,
+          "pair_dependency_class_dimension": 1,
+          "pair_emergent_grading_coupling_residual": 0.0,
+          "right_orientation_masks": [
+            6,
+            7
+          ],
+          "status": "exact-neutral-pair-generated-dependency"
+        },
+        {
+          "active_left_orientation_masks": [
+            2
+          ],
+          "active_right_orientation_masks": [
+            5,
+            7
+          ],
+          "cross_dependency_dimension": 1,
+          "emergent_class_grading_residual": 0.0,
+          "emergent_classes_totally_neutral": true,
+          "emergent_dependency_homology_dimension": 0,
+          "emergent_dependency_present": false,
+          "exact_dependency_homology_audit": true,
+          "exact_pair_common_dimension_sum": 1,
+          "exact_pair_common_edge_count": 1,
+          "fractional_eigenvalues": [
+            0.5
+          ],
+          "full_grading_neutrality_residual": 2.1136780653672946e-17,
+          "left_orientation_masks": [
+            0,
+            2
+          ],
+          "maximum_fractional_half_residual": 0.0,
+          "node_id": "W3-REPEATED-NONNEUTRAL-W2-0-2-5-7",
+          "pair_class_grading_residual": 2.1136780653672946e-17,
+          "pair_class_overlap_dimension": 0,
+          "pair_classes_exhaust_cross_dependencies": true,
+          "pair_classes_totally_neutral": true,
+          "pair_dependency_class_dimension": 1,
+          "pair_emergent_grading_coupling_residual": 0.0,
+          "right_orientation_masks": [
+            5,
+            7
+          ],
+          "status": "exact-neutral-pair-generated-dependency"
+        },
+        {
+          "active_left_orientation_masks": [
+            4
+          ],
+          "active_right_orientation_masks": [
+            3,
+            7
+          ],
+          "cross_dependency_dimension": 1,
+          "emergent_class_grading_residual": 0.0,
+          "emergent_classes_totally_neutral": true,
+          "emergent_dependency_homology_dimension": 0,
+          "emergent_dependency_present": false,
+          "exact_dependency_homology_audit": true,
+          "exact_pair_common_dimension_sum": 1,
+          "exact_pair_common_edge_count": 1,
+          "fractional_eigenvalues": [
+            0.5000000000000002
+          ],
+          "full_grading_neutrality_residual": 4.82289020912891e-16,
+          "left_orientation_masks": [
+            0,
+            4
+          ],
+          "maximum_fractional_half_residual": 2.220446049250313e-16,
+          "node_id": "W3-REPEATED-NONNEUTRAL-W2-0-4-3-7",
+          "pair_class_grading_residual": 4.82289020912891e-16,
+          "pair_class_overlap_dimension": 0,
+          "pair_classes_exhaust_cross_dependencies": true,
+          "pair_classes_totally_neutral": true,
+          "pair_dependency_class_dimension": 1,
+          "pair_emergent_grading_coupling_residual": 0.0,
+          "right_orientation_masks": [
+            3,
+            7
+          ],
+          "status": "exact-neutral-pair-generated-dependency"
+        },
+        {
+          "active_left_orientation_masks": [
+            7
+          ],
+          "active_right_orientation_masks": [
+            1,
+            6
+          ],
+          "cross_dependency_dimension": 1,
+          "emergent_class_grading_residual": 0.0,
+          "emergent_classes_totally_neutral": true,
+          "emergent_dependency_homology_dimension": 0,
+          "emergent_dependency_present": false,
+          "exact_dependency_homology_audit": true,
+          "exact_pair_common_dimension_sum": 1,
+          "exact_pair_common_edge_count": 1,
+          "fractional_eigenvalues": [
+            0.5000000000000001
+          ],
+          "full_grading_neutrality_residual": 3.0531133177191805e-16,
+          "left_orientation_masks": [
+            0,
+            7
+          ],
+          "maximum_fractional_half_residual": 1.1102230246251565e-16,
+          "node_id": "W3-REPEATED-NONNEUTRAL-W2-0-7-1-6",
+          "pair_class_grading_residual": 3.0531133177191805e-16,
+          "pair_class_overlap_dimension": 0,
+          "pair_classes_exhaust_cross_dependencies": true,
+          "pair_classes_totally_neutral": true,
+          "pair_dependency_class_dimension": 1,
+          "pair_emergent_grading_coupling_residual": 0.0,
+          "right_orientation_masks": [
+            1,
+            6
+          ],
+          "status": "exact-neutral-pair-generated-dependency"
+        },
+        {
+          "active_left_orientation_masks": [
+            7
+          ],
+          "active_right_orientation_masks": [
+            2,
+            5
+          ],
+          "cross_dependency_dimension": 1,
+          "emergent_class_grading_residual": 0.0,
+          "emergent_classes_totally_neutral": true,
+          "emergent_dependency_homology_dimension": 0,
+          "emergent_dependency_present": false,
+          "exact_dependency_homology_audit": true,
+          "exact_pair_common_dimension_sum": 1,
+          "exact_pair_common_edge_count": 1,
+          "fractional_eigenvalues": [
+            0.49999999999999994
+          ],
+          "full_grading_neutrality_residual": 9.714451465470118e-17,
+          "left_orientation_masks": [
+            0,
+            7
+          ],
+          "maximum_fractional_half_residual": 5.551115123125783e-17,
+          "node_id": "W3-REPEATED-NONNEUTRAL-W2-0-7-2-5",
+          "pair_class_grading_residual": 9.714451465470118e-17,
+          "pair_class_overlap_dimension": 0,
+          "pair_classes_exhaust_cross_dependencies": true,
+          "pair_classes_totally_neutral": true,
+          "pair_dependency_class_dimension": 1,
+          "pair_emergent_grading_coupling_residual": 0.0,
+          "right_orientation_masks": [
+            2,
+            5
+          ],
+          "status": "exact-neutral-pair-generated-dependency"
+        },
+        {
+          "active_left_orientation_masks": [
+            7
+          ],
+          "active_right_orientation_masks": [
+            3,
+            4
+          ],
+          "cross_dependency_dimension": 1,
+          "emergent_class_grading_residual": 0.0,
+          "emergent_classes_totally_neutral": true,
+          "emergent_dependency_homology_dimension": 0,
+          "emergent_dependency_present": false,
+          "exact_dependency_homology_audit": true,
+          "exact_pair_common_dimension_sum": 1,
+          "exact_pair_common_edge_count": 1,
+          "fractional_eigenvalues": [
+            0.4999999999999999
+          ],
+          "full_grading_neutrality_residual": 2.7755575615628904e-16,
+          "left_orientation_masks": [
+            0,
+            7
+          ],
+          "maximum_fractional_half_residual": 1.1102230246251565e-16,
+          "node_id": "W3-REPEATED-NONNEUTRAL-W2-0-7-3-4",
+          "pair_class_grading_residual": 2.7755575615628904e-16,
+          "pair_class_overlap_dimension": 0,
+          "pair_classes_exhaust_cross_dependencies": true,
+          "pair_classes_totally_neutral": true,
+          "pair_dependency_class_dimension": 1,
+          "pair_emergent_grading_coupling_residual": 0.0,
+          "right_orientation_masks": [
+            3,
+            4
+          ],
+          "status": "exact-neutral-pair-generated-dependency"
+        },
+        {
+          "active_left_orientation_masks": [
+            1,
+            2
+          ],
+          "active_right_orientation_masks": [
+            4,
+            7
+          ],
+          "cross_dependency_dimension": 3,
+          "emergent_class_grading_residual": 0.33333333333333376,
+          "emergent_classes_totally_neutral": false,
+          "emergent_dependency_homology_dimension": 1,
+          "emergent_dependency_present": true,
+          "exact_dependency_homology_audit": true,
+          "exact_pair_common_dimension_sum": 2,
+          "exact_pair_common_edge_count": 2,
+          "fractional_eigenvalues": [
+            0.33333333333333315,
+            0.33333333333333376,
+            0.5555555555555556
+          ],
+          "full_grading_neutrality_residual": 0.33333333333333376,
+          "left_orientation_masks": [
+            1,
+            2
+          ],
+          "maximum_fractional_half_residual": 0.16666666666666685,
+          "node_id": "W3-REPEATED-NONNEUTRAL-W2-1-2-4-7",
+          "pair_class_grading_residual": 0.3333333333333324,
+          "pair_class_overlap_dimension": 0,
+          "pair_classes_exhaust_cross_dependencies": false,
+          "pair_classes_totally_neutral": false,
+          "pair_dependency_class_dimension": 2,
+          "pair_emergent_grading_coupling_residual": 1.6801146134388002e-16,
+          "right_orientation_masks": [
+            4,
+            7
+          ],
+          "status": "exact-nonneutral-dependency-homology"
+        },
+        {
+          "active_left_orientation_masks": [
+            1,
+            2
+          ],
+          "active_right_orientation_masks": [
+            5,
+            6
+          ],
+          "cross_dependency_dimension": 2,
+          "emergent_class_grading_residual": 2.1258070685845415e-16,
+          "emergent_classes_totally_neutral": true,
+          "emergent_dependency_homology_dimension": 2,
+          "emergent_dependency_present": true,
+          "exact_dependency_homology_audit": true,
+          "exact_pair_common_dimension_sum": 0,
+          "exact_pair_common_edge_count": 0,
+          "fractional_eigenvalues": [
+            0.4999999999999999,
+            0.5000000000000001
+          ],
+          "full_grading_neutrality_residual": 2.1258070685845415e-16,
+          "left_orientation_masks": [
+            1,
+            2
+          ],
+          "maximum_fractional_half_residual": 1.1102230246251565e-16,
+          "node_id": "W3-REPEATED-NONNEUTRAL-W2-1-2-5-6",
+          "pair_class_grading_residual": 0.0,
+          "pair_class_overlap_dimension": 0,
+          "pair_classes_exhaust_cross_dependencies": false,
+          "pair_classes_totally_neutral": true,
+          "pair_dependency_class_dimension": 0,
+          "pair_emergent_grading_coupling_residual": 0.0,
+          "right_orientation_masks": [
+            5,
+            6
+          ],
+          "status": "exact-neutral-emergent-dependency"
+        },
+        {
+          "active_left_orientation_masks": [
+            1,
+            3
+          ],
+          "active_right_orientation_masks": [
+            4,
+            6
+          ],
+          "cross_dependency_dimension": 2,
+          "emergent_class_grading_residual": 2.236317260850056e-16,
+          "emergent_classes_totally_neutral": true,
+          "emergent_dependency_homology_dimension": 2,
+          "emergent_dependency_present": true,
+          "exact_dependency_homology_audit": true,
+          "exact_pair_common_dimension_sum": 0,
+          "exact_pair_common_edge_count": 0,
+          "fractional_eigenvalues": [
+            0.4999999999999999,
+            0.5
+          ],
+          "full_grading_neutrality_residual": 2.236317260850056e-16,
+          "left_orientation_masks": [
+            1,
+            3
+          ],
+          "maximum_fractional_half_residual": 1.1102230246251565e-16,
+          "node_id": "W3-REPEATED-NONNEUTRAL-W2-1-3-4-6",
+          "pair_class_grading_residual": 0.0,
+          "pair_class_overlap_dimension": 0,
+          "pair_classes_exhaust_cross_dependencies": false,
+          "pair_classes_totally_neutral": true,
+          "pair_dependency_class_dimension": 0,
+          "pair_emergent_grading_coupling_residual": 0.0,
+          "right_orientation_masks": [
+            4,
+            6
+          ],
+          "status": "exact-neutral-emergent-dependency"
+        },
+        {
+          "active_left_orientation_masks": [
+            1,
+            3
+          ],
+          "active_right_orientation_masks": [
+            5,
+            7
+          ],
+          "cross_dependency_dimension": 1,
+          "emergent_class_grading_residual": 0.0,
+          "emergent_classes_totally_neutral": true,
+          "emergent_dependency_homology_dimension": 0,
+          "emergent_dependency_present": false,
+          "exact_dependency_homology_audit": true,
+          "exact_pair_common_dimension_sum": 1,
+          "exact_pair_common_edge_count": 1,
+          "fractional_eigenvalues": [
+            0.5000000000000002
+          ],
+          "full_grading_neutrality_residual": 4.95023031382626e-16,
+          "left_orientation_masks": [
+            1,
+            3
+          ],
+          "maximum_fractional_half_residual": 2.220446049250313e-16,
+          "node_id": "W3-REPEATED-NONNEUTRAL-W2-1-3-5-7",
+          "pair_class_grading_residual": 4.95023031382626e-16,
+          "pair_class_overlap_dimension": 0,
+          "pair_classes_exhaust_cross_dependencies": true,
+          "pair_classes_totally_neutral": true,
+          "pair_dependency_class_dimension": 1,
+          "pair_emergent_grading_coupling_residual": 0.0,
+          "right_orientation_masks": [
+            5,
+            7
+          ],
+          "status": "exact-neutral-pair-generated-dependency"
+        },
+        {
+          "active_left_orientation_masks": [
+            1,
+            4
+          ],
+          "active_right_orientation_masks": [
+            2,
+            7
+          ],
+          "cross_dependency_dimension": 3,
+          "emergent_class_grading_residual": 0.33333333333333354,
+          "emergent_classes_totally_neutral": false,
+          "emergent_dependency_homology_dimension": 1,
+          "emergent_dependency_present": true,
+          "exact_dependency_homology_audit": true,
+          "exact_pair_common_dimension_sum": 2,
+          "exact_pair_common_edge_count": 2,
+          "fractional_eigenvalues": [
+            0.3333333333333332,
+            0.3333333333333334,
+            0.5555555555555557
+          ],
+          "full_grading_neutrality_residual": 0.3333333333333335,
+          "left_orientation_masks": [
+            1,
+            4
+          ],
+          "maximum_fractional_half_residual": 0.1666666666666668,
+          "node_id": "W3-REPEATED-NONNEUTRAL-W2-1-4-2-7",
+          "pair_class_grading_residual": 0.33333333333333304,
+          "pair_class_overlap_dimension": 0,
+          "pair_classes_exhaust_cross_dependencies": false,
+          "pair_classes_totally_neutral": false,
+          "pair_dependency_class_dimension": 2,
+          "pair_emergent_grading_coupling_residual": 2.1127412014932395e-16,
+          "right_orientation_masks": [
+            2,
+            7
+          ],
+          "status": "exact-nonneutral-dependency-homology"
+        },
+        {
+          "active_left_orientation_masks": [
+            1,
+            4
+          ],
+          "active_right_orientation_masks": [
+            3,
+            6
+          ],
+          "cross_dependency_dimension": 2,
+          "emergent_class_grading_residual": 1.5814652905632117e-16,
+          "emergent_classes_totally_neutral": true,
+          "emergent_dependency_homology_dimension": 2,
+          "emergent_dependency_present": true,
+          "exact_dependency_homology_audit": true,
+          "exact_pair_common_dimension_sum": 0,
+          "exact_pair_common_edge_count": 0,
+          "fractional_eigenvalues": [
+            0.49999999999999994,
+            0.5000000000000001
+          ],
+          "full_grading_neutrality_residual": 1.5814652905632117e-16,
+          "left_orientation_masks": [
+            1,
+            4
+          ],
+          "maximum_fractional_half_residual": 1.1102230246251565e-16,
+          "node_id": "W3-REPEATED-NONNEUTRAL-W2-1-4-3-6",
+          "pair_class_grading_residual": 0.0,
+          "pair_class_overlap_dimension": 0,
+          "pair_classes_exhaust_cross_dependencies": false,
+          "pair_classes_totally_neutral": true,
+          "pair_dependency_class_dimension": 0,
+          "pair_emergent_grading_coupling_residual": 0.0,
+          "right_orientation_masks": [
+            3,
+            6
+          ],
+          "status": "exact-neutral-emergent-dependency"
+        },
+        {
+          "active_left_orientation_masks": [
+            1,
+            5
+          ],
+          "active_right_orientation_masks": [
+            2,
+            6
+          ],
+          "cross_dependency_dimension": 2,
+          "emergent_class_grading_residual": 8.700922280866488e-16,
+          "emergent_classes_totally_neutral": true,
+          "emergent_dependency_homology_dimension": 2,
+          "emergent_dependency_present": true,
+          "exact_dependency_homology_audit": true,
+          "exact_pair_common_dimension_sum": 0,
+          "exact_pair_common_edge_count": 0,
+          "fractional_eigenvalues": [
+            0.5000000000000001,
+            0.5000000000000004
+          ],
+          "full_grading_neutrality_residual": 8.700922280866488e-16,
+          "left_orientation_masks": [
+            1,
+            5
+          ],
+          "maximum_fractional_half_residual": 4.440892098500626e-16,
+          "node_id": "W3-REPEATED-NONNEUTRAL-W2-1-5-2-6",
+          "pair_class_grading_residual": 0.0,
+          "pair_class_overlap_dimension": 0,
+          "pair_classes_exhaust_cross_dependencies": false,
+          "pair_classes_totally_neutral": true,
+          "pair_dependency_class_dimension": 0,
+          "pair_emergent_grading_coupling_residual": 0.0,
+          "right_orientation_masks": [
+            2,
+            6
+          ],
+          "status": "exact-neutral-emergent-dependency"
+        },
+        {
+          "active_left_orientation_masks": [
+            1,
+            5
+          ],
+          "active_right_orientation_masks": [
+            3,
+            7
+          ],
+          "cross_dependency_dimension": 1,
+          "emergent_class_grading_residual": 0.0,
+          "emergent_classes_totally_neutral": true,
+          "emergent_dependency_homology_dimension": 0,
+          "emergent_dependency_present": false,
+          "exact_dependency_homology_audit": true,
+          "exact_pair_common_dimension_sum": 1,
+          "exact_pair_common_edge_count": 1,
+          "fractional_eigenvalues": [
+            0.5
+          ],
+          "full_grading_neutrality_residual": 6.045960373415443e-17,
+          "left_orientation_masks": [
+            1,
+            5
+          ],
+          "maximum_fractional_half_residual": 0.0,
+          "node_id": "W3-REPEATED-NONNEUTRAL-W2-1-5-3-7",
+          "pair_class_grading_residual": 6.045960373415443e-17,
+          "pair_class_overlap_dimension": 0,
+          "pair_classes_exhaust_cross_dependencies": true,
+          "pair_classes_totally_neutral": true,
+          "pair_dependency_class_dimension": 1,
+          "pair_emergent_grading_coupling_residual": 0.0,
+          "right_orientation_masks": [
+            3,
+            7
+          ],
+          "status": "exact-neutral-pair-generated-dependency"
+        },
+        {
+          "active_left_orientation_masks": [
+            1,
+            6
+          ],
+          "active_right_orientation_masks": [
+            2,
+            5
+          ],
+          "cross_dependency_dimension": 2,
+          "emergent_class_grading_residual": 8.26204397708632e-16,
+          "emergent_classes_totally_neutral": true,
+          "emergent_dependency_homology_dimension": 2,
+          "emergent_dependency_present": true,
+          "exact_dependency_homology_audit": true,
+          "exact_pair_common_dimension_sum": 0,
+          "exact_pair_common_edge_count": 0,
+          "fractional_eigenvalues": [
+            0.4999999999999996,
+            0.49999999999999994
+          ],
+          "full_grading_neutrality_residual": 8.26204397708632e-16,
+          "left_orientation_masks": [
+            1,
+            6
+          ],
+          "maximum_fractional_half_residual": 3.885780586188048e-16,
+          "node_id": "W3-REPEATED-NONNEUTRAL-W2-1-6-2-5",
+          "pair_class_grading_residual": 0.0,
+          "pair_class_overlap_dimension": 0,
+          "pair_classes_exhaust_cross_dependencies": false,
+          "pair_classes_totally_neutral": true,
+          "pair_dependency_class_dimension": 0,
+          "pair_emergent_grading_coupling_residual": 0.0,
+          "right_orientation_masks": [
+            2,
+            5
+          ],
+          "status": "exact-neutral-emergent-dependency"
+        },
+        {
+          "active_left_orientation_masks": [
+            1,
+            6
+          ],
+          "active_right_orientation_masks": [
+            3,
+            4
+          ],
+          "cross_dependency_dimension": 2,
+          "emergent_class_grading_residual": 1.3199603933580707e-16,
+          "emergent_classes_totally_neutral": true,
+          "emergent_dependency_homology_dimension": 2,
+          "emergent_dependency_present": true,
+          "exact_dependency_homology_audit": true,
+          "exact_pair_common_dimension_sum": 0,
+          "exact_pair_common_edge_count": 0,
+          "fractional_eigenvalues": [
+            0.49999999999999994,
+            0.5
+          ],
+          "full_grading_neutrality_residual": 1.3199603933580707e-16,
+          "left_orientation_masks": [
+            1,
+            6
+          ],
+          "maximum_fractional_half_residual": 5.551115123125783e-17,
+          "node_id": "W3-REPEATED-NONNEUTRAL-W2-1-6-3-4",
+          "pair_class_grading_residual": 0.0,
+          "pair_class_overlap_dimension": 0,
+          "pair_classes_exhaust_cross_dependencies": false,
+          "pair_classes_totally_neutral": true,
+          "pair_dependency_class_dimension": 0,
+          "pair_emergent_grading_coupling_residual": 0.0,
+          "right_orientation_masks": [
+            3,
+            4
+          ],
+          "status": "exact-neutral-emergent-dependency"
+        },
+        {
+          "active_left_orientation_masks": [
+            1,
+            7
+          ],
+          "active_right_orientation_masks": [
+            2,
+            4
+          ],
+          "cross_dependency_dimension": 3,
+          "emergent_class_grading_residual": 0.3333333333333333,
+          "emergent_classes_totally_neutral": false,
+          "emergent_dependency_homology_dimension": 1,
+          "emergent_dependency_present": true,
+          "exact_dependency_homology_audit": true,
+          "exact_pair_common_dimension_sum": 2,
+          "exact_pair_common_edge_count": 2,
+          "fractional_eigenvalues": [
+            0.4444444444444446,
+            0.6666666666666665,
+            0.6666666666666667
+          ],
+          "full_grading_neutrality_residual": 0.3333333333333333,
+          "left_orientation_masks": [
+            1,
+            7
+          ],
+          "maximum_fractional_half_residual": 0.16666666666666674,
+          "node_id": "W3-REPEATED-NONNEUTRAL-W2-1-7-2-4",
+          "pair_class_grading_residual": 0.3333333333333332,
+          "pair_class_overlap_dimension": 0,
+          "pair_classes_exhaust_cross_dependencies": false,
+          "pair_classes_totally_neutral": false,
+          "pair_dependency_class_dimension": 2,
+          "pair_emergent_grading_coupling_residual": 2.885487114999661e-16,
+          "right_orientation_masks": [
+            2,
+            4
+          ],
+          "status": "exact-nonneutral-dependency-homology"
+        },
+        {
+          "active_left_orientation_masks": [
+            2,
+            3
+          ],
+          "active_right_orientation_masks": [
+            4,
+            5
+          ],
+          "cross_dependency_dimension": 2,
+          "emergent_class_grading_residual": 3.5509863203768895e-16,
+          "emergent_classes_totally_neutral": true,
+          "emergent_dependency_homology_dimension": 2,
+          "emergent_dependency_present": true,
+          "exact_dependency_homology_audit": true,
+          "exact_pair_common_dimension_sum": 0,
+          "exact_pair_common_edge_count": 0,
+          "fractional_eigenvalues": [
+            0.49999999999999983,
+            0.49999999999999994
+          ],
+          "full_grading_neutrality_residual": 3.5509863203768895e-16,
+          "left_orientation_masks": [
+            2,
+            3
+          ],
+          "maximum_fractional_half_residual": 1.6653345369377348e-16,
+          "node_id": "W3-REPEATED-NONNEUTRAL-W2-2-3-4-5",
+          "pair_class_grading_residual": 0.0,
+          "pair_class_overlap_dimension": 0,
+          "pair_classes_exhaust_cross_dependencies": false,
+          "pair_classes_totally_neutral": true,
+          "pair_dependency_class_dimension": 0,
+          "pair_emergent_grading_coupling_residual": 0.0,
+          "right_orientation_masks": [
+            4,
+            5
+          ],
+          "status": "exact-neutral-emergent-dependency"
+        },
+        {
+          "active_left_orientation_masks": [
+            2,
+            3
+          ],
+          "active_right_orientation_masks": [
+            6,
+            7
+          ],
+          "cross_dependency_dimension": 1,
+          "emergent_class_grading_residual": 0.0,
+          "emergent_classes_totally_neutral": true,
+          "emergent_dependency_homology_dimension": 0,
+          "emergent_dependency_present": false,
+          "exact_dependency_homology_audit": true,
+          "exact_pair_common_dimension_sum": 1,
+          "exact_pair_common_edge_count": 1,
+          "fractional_eigenvalues": [
+            0.5000000000000003
+          ],
+          "full_grading_neutrality_residual": 5.894858828901631e-16,
+          "left_orientation_masks": [
+            2,
+            3
+          ],
+          "maximum_fractional_half_residual": 3.3306690738754696e-16,
+          "node_id": "W3-REPEATED-NONNEUTRAL-W2-2-3-6-7",
+          "pair_class_grading_residual": 5.894858828901631e-16,
+          "pair_class_overlap_dimension": 0,
+          "pair_classes_exhaust_cross_dependencies": true,
+          "pair_classes_totally_neutral": true,
+          "pair_dependency_class_dimension": 1,
+          "pair_emergent_grading_coupling_residual": 0.0,
+          "right_orientation_masks": [
+            6,
+            7
+          ],
+          "status": "exact-neutral-pair-generated-dependency"
+        },
+        {
+          "active_left_orientation_masks": [
+            2,
+            4
+          ],
+          "active_right_orientation_masks": [
+            3,
+            5
+          ],
+          "cross_dependency_dimension": 2,
+          "emergent_class_grading_residual": 2.9808533554071685e-16,
+          "emergent_classes_totally_neutral": true,
+          "emergent_dependency_homology_dimension": 2,
+          "emergent_dependency_present": true,
+          "exact_dependency_homology_audit": true,
+          "exact_pair_common_dimension_sum": 0,
+          "exact_pair_common_edge_count": 0,
+          "fractional_eigenvalues": [
+            0.49999999999999983,
+            0.5000000000000001
+          ],
+          "full_grading_neutrality_residual": 2.9808533554071685e-16,
+          "left_orientation_masks": [
+            2,
+            4
+          ],
+          "maximum_fractional_half_residual": 1.6653345369377348e-16,
+          "node_id": "W3-REPEATED-NONNEUTRAL-W2-2-4-3-5",
+          "pair_class_grading_residual": 0.0,
+          "pair_class_overlap_dimension": 0,
+          "pair_classes_exhaust_cross_dependencies": false,
+          "pair_classes_totally_neutral": true,
+          "pair_dependency_class_dimension": 0,
+          "pair_emergent_grading_coupling_residual": 0.0,
+          "right_orientation_masks": [
+            3,
+            5
+          ],
+          "status": "exact-neutral-emergent-dependency"
+        },
+        {
+          "active_left_orientation_masks": [
+            2,
+            5
+          ],
+          "active_right_orientation_masks": [
+            3,
+            4
+          ],
+          "cross_dependency_dimension": 2,
+          "emergent_class_grading_residual": 3.6933049370635503e-16,
+          "emergent_classes_totally_neutral": true,
+          "emergent_dependency_homology_dimension": 2,
+          "emergent_dependency_present": true,
+          "exact_dependency_homology_audit": true,
+          "exact_pair_common_dimension_sum": 0,
+          "exact_pair_common_edge_count": 0,
+          "fractional_eigenvalues": [
+            0.5,
+            0.5000000000000002
+          ],
+          "full_grading_neutrality_residual": 3.6933049370635503e-16,
+          "left_orientation_masks": [
+            2,
+            5
+          ],
+          "maximum_fractional_half_residual": 2.220446049250313e-16,
+          "node_id": "W3-REPEATED-NONNEUTRAL-W2-2-5-3-4",
+          "pair_class_grading_residual": 0.0,
+          "pair_class_overlap_dimension": 0,
+          "pair_classes_exhaust_cross_dependencies": false,
+          "pair_classes_totally_neutral": true,
+          "pair_dependency_class_dimension": 0,
+          "pair_emergent_grading_coupling_residual": 0.0,
+          "right_orientation_masks": [
+            3,
+            4
+          ],
+          "status": "exact-neutral-emergent-dependency"
+        },
+        {
+          "active_left_orientation_masks": [
+            2,
+            6
+          ],
+          "active_right_orientation_masks": [
+            3,
+            7
+          ],
+          "cross_dependency_dimension": 1,
+          "emergent_class_grading_residual": 0.0,
+          "emergent_classes_totally_neutral": true,
+          "emergent_dependency_homology_dimension": 0,
+          "emergent_dependency_present": false,
+          "exact_dependency_homology_audit": true,
+          "exact_pair_common_dimension_sum": 1,
+          "exact_pair_common_edge_count": 1,
+          "fractional_eigenvalues": [
+            0.5000000000000002
+          ],
+          "full_grading_neutrality_residual": 3.5154128681418874e-16,
+          "left_orientation_masks": [
+            2,
+            6
+          ],
+          "maximum_fractional_half_residual": 2.220446049250313e-16,
+          "node_id": "W3-REPEATED-NONNEUTRAL-W2-2-6-3-7",
+          "pair_class_grading_residual": 3.5154128681418874e-16,
+          "pair_class_overlap_dimension": 0,
+          "pair_classes_exhaust_cross_dependencies": true,
+          "pair_classes_totally_neutral": true,
+          "pair_dependency_class_dimension": 1,
+          "pair_emergent_grading_coupling_residual": 0.0,
+          "right_orientation_masks": [
+            3,
+            7
+          ],
+          "status": "exact-neutral-pair-generated-dependency"
+        },
+        {
+          "active_left_orientation_masks": [
+            4,
+            5
+          ],
+          "active_right_orientation_masks": [
+            6,
+            7
+          ],
+          "cross_dependency_dimension": 1,
+          "emergent_class_grading_residual": 0.0,
+          "emergent_classes_totally_neutral": true,
+          "emergent_dependency_homology_dimension": 0,
+          "emergent_dependency_present": false,
+          "exact_dependency_homology_audit": true,
+          "exact_pair_common_dimension_sum": 1,
+          "exact_pair_common_edge_count": 1,
+          "fractional_eigenvalues": [
+            0.5
+          ],
+          "full_grading_neutrality_residual": 6.595538667845726e-17,
+          "left_orientation_masks": [
+            4,
+            5
+          ],
+          "maximum_fractional_half_residual": 0.0,
+          "node_id": "W3-REPEATED-NONNEUTRAL-W2-4-5-6-7",
+          "pair_class_grading_residual": 6.595538667845726e-17,
+          "pair_class_overlap_dimension": 0,
+          "pair_classes_exhaust_cross_dependencies": true,
+          "pair_classes_totally_neutral": true,
+          "pair_dependency_class_dimension": 1,
+          "pair_emergent_grading_coupling_residual": 0.0,
+          "right_orientation_masks": [
+            6,
+            7
+          ],
+          "status": "exact-neutral-pair-generated-dependency"
+        },
+        {
+          "active_left_orientation_masks": [
+            4,
+            6
+          ],
+          "active_right_orientation_masks": [
+            5,
+            7
+          ],
+          "cross_dependency_dimension": 1,
+          "emergent_class_grading_residual": 0.0,
+          "emergent_classes_totally_neutral": true,
+          "emergent_dependency_homology_dimension": 0,
+          "emergent_dependency_present": false,
+          "exact_dependency_homology_audit": true,
+          "exact_pair_common_dimension_sum": 1,
+          "exact_pair_common_edge_count": 1,
+          "fractional_eigenvalues": [
+            0.5
+          ],
+          "full_grading_neutrality_residual": 3.566466095517637e-20,
+          "left_orientation_masks": [
+            4,
+            6
+          ],
+          "maximum_fractional_half_residual": 0.0,
+          "node_id": "W3-REPEATED-NONNEUTRAL-W2-4-6-5-7",
+          "pair_class_grading_residual": 3.566466095517637e-20,
+          "pair_class_overlap_dimension": 0,
+          "pair_classes_exhaust_cross_dependencies": true,
+          "pair_classes_totally_neutral": true,
+          "pair_dependency_class_dimension": 1,
+          "pair_emergent_grading_coupling_residual": 0.0,
+          "right_orientation_masks": [
+            5,
+            7
+          ],
+          "status": "exact-neutral-pair-generated-dependency"
+        },
+        {
+          "active_left_orientation_masks": [
+            1,
+            2,
+            3
+          ],
+          "active_right_orientation_masks": [
+            4,
+            5,
+            6,
+            7
+          ],
+          "cross_dependency_dimension": 7,
+          "emergent_class_grading_residual": 0.3333333333333334,
+          "emergent_classes_totally_neutral": false,
+          "emergent_dependency_homology_dimension": 5,
+          "emergent_dependency_present": true,
+          "exact_dependency_homology_audit": true,
+          "exact_pair_common_dimension_sum": 2,
+          "exact_pair_common_edge_count": 2,
+          "fractional_eigenvalues": [
+            0.33333333333333315,
+            0.33333333333333337,
+            0.4999999999999999,
+            0.5000000000000001,
+            0.5000000000000001,
+            0.5000000000000002,
+            0.5555555555555555
+          ],
+          "full_grading_neutrality_residual": 0.33333333333333354,
+          "left_orientation_masks": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "maximum_fractional_half_residual": 0.16666666666666685,
+          "node_id": "W3-REPEATED-NONNEUTRAL-W4-0-1-2-3-4-5-6-7",
+          "pair_class_grading_residual": 0.3333333333333334,
+          "pair_class_overlap_dimension": 0,
+          "pair_classes_exhaust_cross_dependencies": false,
+          "pair_classes_totally_neutral": false,
+          "pair_dependency_class_dimension": 2,
+          "pair_emergent_grading_coupling_residual": 3.8007959960224117e-16,
+          "right_orientation_masks": [
+            4,
+            5,
+            6,
+            7
+          ],
+          "status": "exact-nonneutral-dependency-homology"
+        },
+        {
+          "active_left_orientation_masks": [
+            1,
+            4,
+            5
+          ],
+          "active_right_orientation_masks": [
+            2,
+            3,
+            6,
+            7
+          ],
+          "cross_dependency_dimension": 7,
+          "emergent_class_grading_residual": 0.3333333333333337,
+          "emergent_classes_totally_neutral": false,
+          "emergent_dependency_homology_dimension": 5,
+          "emergent_dependency_present": true,
+          "exact_dependency_homology_audit": true,
+          "exact_pair_common_dimension_sum": 2,
+          "exact_pair_common_edge_count": 2,
+          "fractional_eigenvalues": [
+            0.33333333333333304,
+            0.3333333333333332,
+            0.49999999999999967,
+            0.4999999999999998,
+            0.5,
+            0.5000000000000001,
+            0.5555555555555555
+          ],
+          "full_grading_neutrality_residual": 0.3333333333333338,
+          "left_orientation_masks": [
+            0,
+            1,
+            4,
+            5
+          ],
+          "maximum_fractional_half_residual": 0.16666666666666696,
+          "node_id": "W3-REPEATED-NONNEUTRAL-W4-0-1-4-5-2-3-6-7",
+          "pair_class_grading_residual": 0.33333333333333376,
+          "pair_class_overlap_dimension": 0,
+          "pair_classes_exhaust_cross_dependencies": false,
+          "pair_classes_totally_neutral": false,
+          "pair_dependency_class_dimension": 2,
+          "pair_emergent_grading_coupling_residual": 6.174928787661183e-16,
+          "right_orientation_masks": [
+            2,
+            3,
+            6,
+            7
+          ],
+          "status": "exact-nonneutral-dependency-homology"
+        },
+        {
+          "active_left_orientation_masks": [
+            1,
+            6,
+            7
+          ],
+          "active_right_orientation_masks": [
+            2,
+            3,
+            4,
+            5
+          ],
+          "cross_dependency_dimension": 5,
+          "emergent_class_grading_residual": 0.33333333333333326,
+          "emergent_classes_totally_neutral": false,
+          "emergent_dependency_homology_dimension": 3,
+          "emergent_dependency_present": true,
+          "exact_dependency_homology_audit": true,
+          "exact_pair_common_dimension_sum": 2,
+          "exact_pair_common_edge_count": 2,
+          "fractional_eigenvalues": [
+            0.33333333333333337,
+            0.3333333333333334,
+            0.44444444444444436,
+            0.6666666666666663,
+            0.6666666666666666
+          ],
+          "full_grading_neutrality_residual": 0.33333333333333326,
+          "left_orientation_masks": [
+            0,
+            1,
+            6,
+            7
+          ],
+          "maximum_fractional_half_residual": 0.16666666666666663,
+          "node_id": "W3-REPEATED-NONNEUTRAL-W4-0-1-6-7-2-3-4-5",
+          "pair_class_grading_residual": 0.33333333333333276,
+          "pair_class_overlap_dimension": 0,
+          "pair_classes_exhaust_cross_dependencies": false,
+          "pair_classes_totally_neutral": false,
+          "pair_dependency_class_dimension": 2,
+          "pair_emergent_grading_coupling_residual": 3.6109561111948917e-16,
+          "right_orientation_masks": [
+            2,
+            3,
+            4,
+            5
+          ],
+          "status": "exact-nonneutral-dependency-homology"
+        },
+        {
+          "active_left_orientation_masks": [
+            2,
+            4,
+            6
+          ],
+          "active_right_orientation_masks": [
+            1,
+            3,
+            5,
+            7
+          ],
+          "cross_dependency_dimension": 7,
+          "emergent_class_grading_residual": 0.3333333333333332,
+          "emergent_classes_totally_neutral": false,
+          "emergent_dependency_homology_dimension": 5,
+          "emergent_dependency_present": true,
+          "exact_dependency_homology_audit": true,
+          "exact_pair_common_dimension_sum": 2,
+          "exact_pair_common_edge_count": 2,
+          "fractional_eigenvalues": [
+            0.33333333333333337,
+            0.33333333333333337,
+            0.49999999999999983,
+            0.4999999999999999,
+            0.5000000000000001,
+            0.5000000000000002,
+            0.5555555555555558
+          ],
+          "full_grading_neutrality_residual": 0.33333333333333326,
+          "left_orientation_masks": [
+            0,
+            2,
+            4,
+            6
+          ],
+          "maximum_fractional_half_residual": 0.16666666666666663,
+          "node_id": "W3-REPEATED-NONNEUTRAL-W4-0-2-4-6-1-3-5-7",
+          "pair_class_grading_residual": 0.33333333333333326,
+          "pair_class_overlap_dimension": 0,
+          "pair_classes_exhaust_cross_dependencies": false,
+          "pair_classes_totally_neutral": false,
+          "pair_dependency_class_dimension": 2,
+          "pair_emergent_grading_coupling_residual": 3.596075842151085e-16,
+          "right_orientation_masks": [
+            1,
+            3,
+            5,
+            7
+          ],
+          "status": "exact-nonneutral-dependency-homology"
+        },
+        {
+          "active_left_orientation_masks": [
+            2,
+            5,
+            7
+          ],
+          "active_right_orientation_masks": [
+            1,
+            3,
+            4,
+            6
+          ],
+          "cross_dependency_dimension": 5,
+          "emergent_class_grading_residual": 0.3333333333333336,
+          "emergent_classes_totally_neutral": false,
+          "emergent_dependency_homology_dimension": 3,
+          "emergent_dependency_present": true,
+          "exact_dependency_homology_audit": true,
+          "exact_pair_common_dimension_sum": 2,
+          "exact_pair_common_edge_count": 2,
+          "fractional_eigenvalues": [
+            0.33333333333333337,
+            0.33333333333333354,
+            0.4444444444444444,
+            0.6666666666666665,
+            0.6666666666666669
+          ],
+          "full_grading_neutrality_residual": 0.33333333333333365,
+          "left_orientation_masks": [
+            0,
+            2,
+            5,
+            7
+          ],
+          "maximum_fractional_half_residual": 0.16666666666666685,
+          "node_id": "W3-REPEATED-NONNEUTRAL-W4-0-2-5-7-1-3-4-6",
+          "pair_class_grading_residual": 0.33333333333333315,
+          "pair_class_overlap_dimension": 0,
+          "pair_classes_exhaust_cross_dependencies": false,
+          "pair_classes_totally_neutral": false,
+          "pair_dependency_class_dimension": 2,
+          "pair_emergent_grading_coupling_residual": 3.93881454088722e-16,
+          "right_orientation_masks": [
+            1,
+            3,
+            4,
+            6
+          ],
+          "status": "exact-nonneutral-dependency-homology"
+        },
+        {
+          "active_left_orientation_masks": [
+            3,
+            4,
+            7
+          ],
+          "active_right_orientation_masks": [
+            1,
+            2,
+            5,
+            6
+          ],
+          "cross_dependency_dimension": 5,
+          "emergent_class_grading_residual": 0.3333333333333338,
+          "emergent_classes_totally_neutral": false,
+          "emergent_dependency_homology_dimension": 3,
+          "emergent_dependency_present": true,
+          "exact_dependency_homology_audit": true,
+          "exact_pair_common_dimension_sum": 2,
+          "exact_pair_common_edge_count": 2,
+          "fractional_eigenvalues": [
+            0.33333333333333304,
+            0.33333333333333326,
+            0.4444444444444443,
+            0.6666666666666667,
+            0.666666666666667
+          ],
+          "full_grading_neutrality_residual": 0.33333333333333387,
+          "left_orientation_masks": [
+            0,
+            3,
+            4,
+            7
+          ],
+          "maximum_fractional_half_residual": 0.16666666666666696,
+          "node_id": "W3-REPEATED-NONNEUTRAL-W4-0-3-4-7-1-2-5-6",
+          "pair_class_grading_residual": 0.33333333333333376,
+          "pair_class_overlap_dimension": 0,
+          "pair_classes_exhaust_cross_dependencies": false,
+          "pair_classes_totally_neutral": false,
+          "pair_dependency_class_dimension": 2,
+          "pair_emergent_grading_coupling_residual": 2.6413781684318666e-16,
+          "right_orientation_masks": [
+            1,
+            2,
+            5,
+            6
+          ],
+          "status": "exact-nonneutral-dependency-homology"
+        },
+        {
+          "active_left_orientation_masks": [
+            3,
+            5,
+            6
+          ],
+          "active_right_orientation_masks": [
+            1,
+            2,
+            4,
+            7
+          ],
+          "cross_dependency_dimension": 4,
+          "emergent_class_grading_residual": 7.156045148647094e-16,
+          "emergent_classes_totally_neutral": true,
+          "emergent_dependency_homology_dimension": 4,
+          "emergent_dependency_present": true,
+          "exact_dependency_homology_audit": true,
+          "exact_pair_common_dimension_sum": 0,
+          "exact_pair_common_edge_count": 0,
+          "fractional_eigenvalues": [
+            0.49999999999999983,
+            0.5,
+            0.5000000000000001,
+            0.5000000000000003
+          ],
+          "full_grading_neutrality_residual": 7.156045148647094e-16,
+          "left_orientation_masks": [
+            0,
+            3,
+            5,
+            6
+          ],
+          "maximum_fractional_half_residual": 3.3306690738754696e-16,
+          "node_id": "W3-REPEATED-NONNEUTRAL-W4-0-3-5-6-1-2-4-7",
+          "pair_class_grading_residual": 0.0,
+          "pair_class_overlap_dimension": 0,
+          "pair_classes_exhaust_cross_dependencies": false,
+          "pair_classes_totally_neutral": true,
+          "pair_dependency_class_dimension": 0,
+          "pair_emergent_grading_coupling_residual": 0.0,
+          "right_orientation_masks": [
+            1,
+            2,
+            4,
+            7
+          ],
+          "status": "exact-neutral-emergent-dependency"
+        }
+      ],
+      "status": "nonneutral-dependency-homology-present",
+      "target_partition": [
+        2,
+        1
+      ]
+    },
+    {
+      "audited_fractional_merge_count": 11,
+      "control_id": "W5-ISOLATED-PAIR",
+      "emergent_merge_count": 0,
+      "exact_homology_audit_failure_count": 0,
+      "globally_distinct_source_partitions": true,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            4,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            2
+          ],
+          [
+            2,
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_cross_dependency_dimension": 5,
+      "maximum_emergent_homology_dimension": 0,
+      "maximum_full_grading_neutrality_residual": 1.5082166813731285e-15,
+      "maximum_pair_dependency_class_dimension": 5,
+      "n": 5,
+      "nonneutral_merge_count": 0,
+      "pair_generated_merge_count": 11,
+      "pairwise_distinct_physical_labels": true,
+      "records": [
+        {
+          "active_left_orientation_masks": [
+            3
+          ],
+          "active_right_orientation_masks": [
+            6
+          ],
+          "cross_dependency_dimension": 5,
+          "emergent_class_grading_residual": 0.0,
+          "emergent_classes_totally_neutral": true,
+          "emergent_dependency_homology_dimension": 0,
+          "emergent_dependency_present": false,
+          "exact_dependency_homology_audit": true,
+          "exact_pair_common_dimension_sum": 5,
+          "exact_pair_common_edge_count": 1,
+          "fractional_eigenvalues": [
+            0.4999999999999996,
+            0.4999999999999999,
+            0.4999999999999999,
+            0.5,
+            0.5000000000000001
+          ],
+          "full_grading_neutrality_residual": 7.324191690354202e-16,
+          "left_orientation_masks": [
+            3
+          ],
+          "maximum_fractional_half_residual": 3.885780586188048e-16,
+          "node_id": "W5-ISOLATED-PAIR-W1-3-6",
+          "pair_class_grading_residual": 7.324191690354199e-16,
+          "pair_class_overlap_dimension": 0,
+          "pair_classes_exhaust_cross_dependencies": true,
+          "pair_classes_totally_neutral": true,
+          "pair_dependency_class_dimension": 5,
+          "pair_emergent_grading_coupling_residual": 0.0,
+          "right_orientation_masks": [
+            6
+          ],
+          "status": "exact-neutral-pair-generated-dependency"
+        },
+        {
+          "active_left_orientation_masks": [
+            0,
+            3
+          ],
+          "active_right_orientation_masks": [
+            5,
+            6
+          ],
+          "cross_dependency_dimension": 5,
+          "emergent_class_grading_residual": 0.0,
+          "emergent_classes_totally_neutral": true,
+          "emergent_dependency_homology_dimension": 0,
+          "emergent_dependency_present": false,
+          "exact_dependency_homology_audit": true,
+          "exact_pair_common_dimension_sum": 5,
+          "exact_pair_common_edge_count": 1,
+          "fractional_eigenvalues": [
+            0.49999999999999983,
+            0.4999999999999999,
+            0.5,
+            0.5000000000000001,
+            0.5000000000000003
+          ],
+          "full_grading_neutrality_residual": 7.754807993701022e-16,
+          "left_orientation_masks": [
+            0,
+            3
+          ],
+          "maximum_fractional_half_residual": 3.3306690738754696e-16,
+          "node_id": "W5-ISOLATED-PAIR-W2-0-3-5-6",
+          "pair_class_grading_residual": 7.754807993701019e-16,
+          "pair_class_overlap_dimension": 0,
+          "pair_classes_exhaust_cross_dependencies": true,
+          "pair_classes_totally_neutral": true,
+          "pair_dependency_class_dimension": 5,
+          "pair_emergent_grading_coupling_residual": 0.0,
+          "right_orientation_masks": [
+            5,
+            6
+          ],
+          "status": "exact-neutral-pair-generated-dependency"
+        },
+        {
+          "active_left_orientation_masks": [
+            0,
+            6
+          ],
+          "active_right_orientation_masks": [
+            3,
+            5
+          ],
+          "cross_dependency_dimension": 5,
+          "emergent_class_grading_residual": 0.0,
+          "emergent_classes_totally_neutral": true,
+          "emergent_dependency_homology_dimension": 0,
+          "emergent_dependency_present": false,
+          "exact_dependency_homology_audit": true,
+          "exact_pair_common_dimension_sum": 5,
+          "exact_pair_common_edge_count": 1,
+          "fractional_eigenvalues": [
+            0.4999999999999998,
+            0.49999999999999994,
+            0.5,
+            0.5000000000000001,
+            0.5000000000000001
+          ],
+          "full_grading_neutrality_residual": 4.680374667199154e-16,
+          "left_orientation_masks": [
+            0,
+            6
+          ],
+          "maximum_fractional_half_residual": 2.220446049250313e-16,
+          "node_id": "W5-ISOLATED-PAIR-W2-0-6-3-5",
+          "pair_class_grading_residual": 4.680374667199153e-16,
+          "pair_class_overlap_dimension": 0,
+          "pair_classes_exhaust_cross_dependencies": true,
+          "pair_classes_totally_neutral": true,
+          "pair_dependency_class_dimension": 5,
+          "pair_emergent_grading_coupling_residual": 0.0,
+          "right_orientation_masks": [
+            3,
+            5
+          ],
+          "status": "exact-neutral-pair-generated-dependency"
+        },
+        {
+          "active_left_orientation_masks": [
+            1,
+            3
+          ],
+          "active_right_orientation_masks": [
+            6
+          ],
+          "cross_dependency_dimension": 5,
+          "emergent_class_grading_residual": 0.0,
+          "emergent_classes_totally_neutral": true,
+          "emergent_dependency_homology_dimension": 0,
+          "emergent_dependency_present": false,
+          "exact_dependency_homology_audit": true,
+          "exact_pair_common_dimension_sum": 5,
+          "exact_pair_common_edge_count": 1,
+          "fractional_eigenvalues": [
+            0.4999999999999996,
+            0.49999999999999983,
+            0.49999999999999994,
+            0.5,
+            0.5000000000000002
+          ],
+          "full_grading_neutrality_residual": 7.85455896463434e-16,
+          "left_orientation_masks": [
+            1,
+            3
+          ],
+          "maximum_fractional_half_residual": 3.885780586188048e-16,
+          "node_id": "W5-ISOLATED-PAIR-W2-1-3-4-6",
+          "pair_class_grading_residual": 7.854558964634334e-16,
+          "pair_class_overlap_dimension": 0,
+          "pair_classes_exhaust_cross_dependencies": true,
+          "pair_classes_totally_neutral": true,
+          "pair_dependency_class_dimension": 5,
+          "pair_emergent_grading_coupling_residual": 0.0,
+          "right_orientation_masks": [
+            4,
+            6
+          ],
+          "status": "exact-neutral-pair-generated-dependency"
+        },
+        {
+          "active_left_orientation_masks": [
+            1,
+            6
+          ],
+          "active_right_orientation_masks": [
+            3
+          ],
+          "cross_dependency_dimension": 5,
+          "emergent_class_grading_residual": 0.0,
+          "emergent_classes_totally_neutral": true,
+          "emergent_dependency_homology_dimension": 0,
+          "emergent_dependency_present": false,
+          "exact_dependency_homology_audit": true,
+          "exact_pair_common_dimension_sum": 5,
+          "exact_pair_common_edge_count": 1,
+          "fractional_eigenvalues": [
+            0.4999999999999998,
+            0.5,
+            0.5000000000000001,
+            0.5000000000000002,
+            0.5000000000000003
+          ],
+          "full_grading_neutrality_residual": 5.701020388436903e-16,
+          "left_orientation_masks": [
+            1,
+            6
+          ],
+          "maximum_fractional_half_residual": 3.3306690738754696e-16,
+          "node_id": "W5-ISOLATED-PAIR-W2-1-6-3-4",
+          "pair_class_grading_residual": 5.701020388436905e-16,
+          "pair_class_overlap_dimension": 0,
+          "pair_classes_exhaust_cross_dependencies": true,
+          "pair_classes_totally_neutral": true,
+          "pair_dependency_class_dimension": 5,
+          "pair_emergent_grading_coupling_residual": 0.0,
+          "right_orientation_masks": [
+            3,
+            4
+          ],
+          "status": "exact-neutral-pair-generated-dependency"
+        },
+        {
+          "active_left_orientation_masks": [
+            2,
+            3
+          ],
+          "active_right_orientation_masks": [
+            6,
+            7
+          ],
+          "cross_dependency_dimension": 5,
+          "emergent_class_grading_residual": 0.0,
+          "emergent_classes_totally_neutral": true,
+          "emergent_dependency_homology_dimension": 0,
+          "emergent_dependency_present": false,
+          "exact_dependency_homology_audit": true,
+          "exact_pair_common_dimension_sum": 5,
+          "exact_pair_common_edge_count": 1,
+          "fractional_eigenvalues": [
+            0.4999999999999997,
+            0.4999999999999999,
+            0.49999999999999994,
+            0.5,
+            0.5000000000000002
+          ],
+          "full_grading_neutrality_residual": 5.518664800553725e-16,
+          "left_orientation_masks": [
+            2,
+            3
+          ],
+          "maximum_fractional_half_residual": 2.7755575615628914e-16,
+          "node_id": "W5-ISOLATED-PAIR-W2-2-3-6-7",
+          "pair_class_grading_residual": 5.518664800553728e-16,
+          "pair_class_overlap_dimension": 0,
+          "pair_classes_exhaust_cross_dependencies": true,
+          "pair_classes_totally_neutral": true,
+          "pair_dependency_class_dimension": 5,
+          "pair_emergent_grading_coupling_residual": 0.0,
+          "right_orientation_masks": [
+            6,
+            7
+          ],
+          "status": "exact-neutral-pair-generated-dependency"
+        },
+        {
+          "active_left_orientation_masks": [
+            2,
+            6
+          ],
+          "active_right_orientation_masks": [
+            3,
+            7
+          ],
+          "cross_dependency_dimension": 5,
+          "emergent_class_grading_residual": 0.0,
+          "emergent_classes_totally_neutral": true,
+          "emergent_dependency_homology_dimension": 0,
+          "emergent_dependency_present": false,
+          "exact_dependency_homology_audit": true,
+          "exact_pair_common_dimension_sum": 5,
+          "exact_pair_common_edge_count": 1,
+          "fractional_eigenvalues": [
+            0.4999999999999992,
+            0.4999999999999999,
+            0.4999999999999999,
+            0.5,
+            0.5000000000000002
+          ],
+          "full_grading_neutrality_residual": 1.5082166813731285e-15,
+          "left_orientation_masks": [
+            2,
+            6
+          ],
+          "maximum_fractional_half_residual": 7.771561172376096e-16,
+          "node_id": "W5-ISOLATED-PAIR-W2-2-6-3-7",
+          "pair_class_grading_residual": 1.5082166813731285e-15,
+          "pair_class_overlap_dimension": 0,
+          "pair_classes_exhaust_cross_dependencies": true,
+          "pair_classes_totally_neutral": true,
+          "pair_dependency_class_dimension": 5,
+          "pair_emergent_grading_coupling_residual": 0.0,
+          "right_orientation_masks": [
+            3,
+            7
+          ],
+          "status": "exact-neutral-pair-generated-dependency"
+        },
+        {
+          "active_left_orientation_masks": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "active_right_orientation_masks": [
+            5,
+            6,
+            7
+          ],
+          "cross_dependency_dimension": 5,
+          "emergent_class_grading_residual": 0.0,
+          "emergent_classes_totally_neutral": true,
+          "emergent_dependency_homology_dimension": 0,
+          "emergent_dependency_present": false,
+          "exact_dependency_homology_audit": true,
+          "exact_pair_common_dimension_sum": 5,
+          "exact_pair_common_edge_count": 1,
+          "fractional_eigenvalues": [
+            0.4999999999999997,
+            0.49999999999999983,
+            0.49999999999999994,
+            0.5,
+            0.5000000000000002
+          ],
+          "full_grading_neutrality_residual": 5.068729764956079e-16,
+          "left_orientation_masks": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "maximum_fractional_half_residual": 2.7755575615628914e-16,
+          "node_id": "W5-ISOLATED-PAIR-W4-0-1-2-3-4-5-6-7",
+          "pair_class_grading_residual": 5.06872976495608e-16,
+          "pair_class_overlap_dimension": 0,
+          "pair_classes_exhaust_cross_dependencies": true,
+          "pair_classes_totally_neutral": true,
+          "pair_dependency_class_dimension": 5,
+          "pair_emergent_grading_coupling_residual": 0.0,
+          "right_orientation_masks": [
+            4,
+            5,
+            6,
+            7
+          ],
+          "status": "exact-neutral-pair-generated-dependency"
+        },
+        {
+          "active_left_orientation_masks": [
+            0,
+            1,
+            6,
+            7
+          ],
+          "active_right_orientation_masks": [
+            2,
+            3,
+            5
+          ],
+          "cross_dependency_dimension": 5,
+          "emergent_class_grading_residual": 0.0,
+          "emergent_classes_totally_neutral": true,
+          "emergent_dependency_homology_dimension": 0,
+          "emergent_dependency_present": false,
+          "exact_dependency_homology_audit": true,
+          "exact_pair_common_dimension_sum": 5,
+          "exact_pair_common_edge_count": 1,
+          "fractional_eigenvalues": [
+            0.49999999999999967,
+            0.4999999999999999,
+            0.5,
+            0.5000000000000001,
+            0.5000000000000004
+          ],
+          "full_grading_neutrality_residual": 7.833861680279827e-16,
+          "left_orientation_masks": [
+            0,
+            1,
+            6,
+            7
+          ],
+          "maximum_fractional_half_residual": 4.440892098500626e-16,
+          "node_id": "W5-ISOLATED-PAIR-W4-0-1-6-7-2-3-4-5",
+          "pair_class_grading_residual": 7.833861680279823e-16,
+          "pair_class_overlap_dimension": 0,
+          "pair_classes_exhaust_cross_dependencies": true,
+          "pair_classes_totally_neutral": true,
+          "pair_dependency_class_dimension": 5,
+          "pair_emergent_grading_coupling_residual": 0.0,
+          "right_orientation_masks": [
+            2,
+            3,
+            4,
+            5
+          ],
+          "status": "exact-neutral-pair-generated-dependency"
+        },
+        {
+          "active_left_orientation_masks": [
+            0,
+            2,
+            6
+          ],
+          "active_right_orientation_masks": [
+            1,
+            3,
+            5,
+            7
+          ],
+          "cross_dependency_dimension": 5,
+          "emergent_class_grading_residual": 0.0,
+          "emergent_classes_totally_neutral": true,
+          "emergent_dependency_homology_dimension": 0,
+          "emergent_dependency_present": false,
+          "exact_dependency_homology_audit": true,
+          "exact_pair_common_dimension_sum": 5,
+          "exact_pair_common_edge_count": 1,
+          "fractional_eigenvalues": [
+            0.49999999999999983,
+            0.49999999999999994,
+            0.49999999999999994,
+            0.5,
+            0.5
+          ],
+          "full_grading_neutrality_residual": 3.659241549436303e-16,
+          "left_orientation_masks": [
+            0,
+            2,
+            4,
+            6
+          ],
+          "maximum_fractional_half_residual": 1.6653345369377348e-16,
+          "node_id": "W5-ISOLATED-PAIR-W4-0-2-4-6-1-3-5-7",
+          "pair_class_grading_residual": 3.6592415494363035e-16,
+          "pair_class_overlap_dimension": 0,
+          "pair_classes_exhaust_cross_dependencies": true,
+          "pair_classes_totally_neutral": true,
+          "pair_dependency_class_dimension": 5,
+          "pair_emergent_grading_coupling_residual": 0.0,
+          "right_orientation_masks": [
+            1,
+            3,
+            5,
+            7
+          ],
+          "status": "exact-neutral-pair-generated-dependency"
+        },
+        {
+          "active_left_orientation_masks": [
+            0,
+            3,
+            7
+          ],
+          "active_right_orientation_masks": [
+            1,
+            2,
+            5,
+            6
+          ],
+          "cross_dependency_dimension": 5,
+          "emergent_class_grading_residual": 0.0,
+          "emergent_classes_totally_neutral": true,
+          "emergent_dependency_homology_dimension": 0,
+          "emergent_dependency_present": false,
+          "exact_dependency_homology_audit": true,
+          "exact_pair_common_dimension_sum": 5,
+          "exact_pair_common_edge_count": 1,
+          "fractional_eigenvalues": [
+            0.49999999999999983,
+            0.49999999999999994,
+            0.5,
+            0.5000000000000001,
+            0.5000000000000001
+          ],
+          "full_grading_neutrality_residual": 3.060855139281836e-16,
+          "left_orientation_masks": [
+            0,
+            3,
+            4,
+            7
+          ],
+          "maximum_fractional_half_residual": 1.6653345369377348e-16,
+          "node_id": "W5-ISOLATED-PAIR-W4-0-3-4-7-1-2-5-6",
+          "pair_class_grading_residual": 3.060855139281836e-16,
+          "pair_class_overlap_dimension": 0,
+          "pair_classes_exhaust_cross_dependencies": true,
+          "pair_classes_totally_neutral": true,
+          "pair_dependency_class_dimension": 5,
+          "pair_emergent_grading_coupling_residual": 0.0,
+          "right_orientation_masks": [
+            1,
+            2,
+            5,
+            6
+          ],
+          "status": "exact-neutral-pair-generated-dependency"
+        }
+      ],
+      "status": "all-dependencies-neutral-and-pair-generated",
+      "target_partition": [
+        3,
+        2
+      ]
+    },
+    {
+      "audited_fractional_merge_count": 10,
+      "control_id": "W6-RICH-MULTIPLICITY-TWO",
+      "emergent_merge_count": 0,
+      "exact_homology_audit_failure_count": 0,
+      "globally_distinct_source_partitions": true,
+      "labels": [
+        [
+          [
+            6
+          ],
+          [
+            2,
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            4,
+            2
+          ],
+          [
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            3
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_cross_dependency_dimension": 9,
+      "maximum_emergent_homology_dimension": 0,
+      "maximum_full_grading_neutrality_residual": 1.2787733056590878e-15,
+      "maximum_pair_dependency_class_dimension": 9,
+      "n": 6,
+      "nonneutral_merge_count": 0,
+      "pair_generated_merge_count": 10,
+      "pairwise_distinct_physical_labels": true,
+      "records": [
+        {
+          "active_left_orientation_masks": [
+            3
+          ],
+          "active_right_orientation_masks": [
+            6
+          ],
+          "cross_dependency_dimension": 9,
+          "emergent_class_grading_residual": 0.0,
+          "emergent_classes_totally_neutral": true,
+          "emergent_dependency_homology_dimension": 0,
+          "emergent_dependency_present": false,
+          "exact_dependency_homology_audit": true,
+          "exact_pair_common_dimension_sum": 9,
+          "exact_pair_common_edge_count": 1,
+          "fractional_eigenvalues": [
+            0.4999999999999996,
+            0.4999999999999998,
+            0.49999999999999983,
+            0.4999999999999999,
+            0.49999999999999994,
+            0.5,
+            0.5000000000000001,
+            0.5000000000000003,
+            0.5000000000000004
+          ],
+          "full_grading_neutrality_residual": 8.067754386553034e-16,
+          "left_orientation_masks": [
+            3
+          ],
+          "maximum_fractional_half_residual": 4.440892098500626e-16,
+          "node_id": "W6-RICH-MULTIPLICITY-TWO-W1-3-6",
+          "pair_class_grading_residual": 8.06775438655303e-16,
+          "pair_class_overlap_dimension": 0,
+          "pair_classes_exhaust_cross_dependencies": true,
+          "pair_classes_totally_neutral": true,
+          "pair_dependency_class_dimension": 9,
+          "pair_emergent_grading_coupling_residual": 0.0,
+          "right_orientation_masks": [
+            6
+          ],
+          "status": "exact-neutral-pair-generated-dependency"
+        },
+        {
+          "active_left_orientation_masks": [
+            0,
+            3
+          ],
+          "active_right_orientation_masks": [
+            5,
+            6
+          ],
+          "cross_dependency_dimension": 9,
+          "emergent_class_grading_residual": 0.0,
+          "emergent_classes_totally_neutral": true,
+          "emergent_dependency_homology_dimension": 0,
+          "emergent_dependency_present": false,
+          "exact_dependency_homology_audit": true,
+          "exact_pair_common_dimension_sum": 9,
+          "exact_pair_common_edge_count": 1,
+          "fractional_eigenvalues": [
+            0.4999999999999995,
+            0.4999999999999996,
+            0.49999999999999983,
+            0.4999999999999999,
+            0.5,
+            0.5000000000000001,
+            0.5000000000000002,
+            0.5000000000000002,
+            0.5000000000000003
+          ],
+          "full_grading_neutrality_residual": 1.0217519120850609e-15,
+          "left_orientation_masks": [
+            0,
+            3
+          ],
+          "maximum_fractional_half_residual": 4.996003610813204e-16,
+          "node_id": "W6-RICH-MULTIPLICITY-TWO-W2-0-3-5-6",
+          "pair_class_grading_residual": 1.0217519120850609e-15,
+          "pair_class_overlap_dimension": 0,
+          "pair_classes_exhaust_cross_dependencies": true,
+          "pair_classes_totally_neutral": true,
+          "pair_dependency_class_dimension": 9,
+          "pair_emergent_grading_coupling_residual": 0.0,
+          "right_orientation_masks": [
+            5,
+            6
+          ],
+          "status": "exact-neutral-pair-generated-dependency"
+        },
+        {
+          "active_left_orientation_masks": [
+            0,
+            6
+          ],
+          "active_right_orientation_masks": [
+            3,
+            5
+          ],
+          "cross_dependency_dimension": 9,
+          "emergent_class_grading_residual": 0.0,
+          "emergent_classes_totally_neutral": true,
+          "emergent_dependency_homology_dimension": 0,
+          "emergent_dependency_present": false,
+          "exact_dependency_homology_audit": true,
+          "exact_pair_common_dimension_sum": 9,
+          "exact_pair_common_edge_count": 1,
+          "fractional_eigenvalues": [
+            0.49999999999999956,
+            0.4999999999999997,
+            0.4999999999999998,
+            0.49999999999999983,
+            0.49999999999999994,
+            0.5,
+            0.5000000000000001,
+            0.5000000000000001,
+            0.5000000000000004
+          ],
+          "full_grading_neutrality_residual": 9.098149498741585e-16,
+          "left_orientation_masks": [
+            0,
+            6
+          ],
+          "maximum_fractional_half_residual": 4.440892098500626e-16,
+          "node_id": "W6-RICH-MULTIPLICITY-TWO-W2-0-6-3-5",
+          "pair_class_grading_residual": 9.098149498741585e-16,
+          "pair_class_overlap_dimension": 0,
+          "pair_classes_exhaust_cross_dependencies": true,
+          "pair_classes_totally_neutral": true,
+          "pair_dependency_class_dimension": 9,
+          "pair_emergent_grading_coupling_residual": 0.0,
+          "right_orientation_masks": [
+            3,
+            5
+          ],
+          "status": "exact-neutral-pair-generated-dependency"
+        },
+        {
+          "active_left_orientation_masks": [
+            1,
+            3
+          ],
+          "active_right_orientation_masks": [
+            6
+          ],
+          "cross_dependency_dimension": 9,
+          "emergent_class_grading_residual": 0.0,
+          "emergent_classes_totally_neutral": true,
+          "emergent_dependency_homology_dimension": 0,
+          "emergent_dependency_present": false,
+          "exact_dependency_homology_audit": true,
+          "exact_pair_common_dimension_sum": 9,
+          "exact_pair_common_edge_count": 1,
+          "fractional_eigenvalues": [
+            0.4999999999999996,
+            0.4999999999999997,
+            0.4999999999999999,
+            0.5,
+            0.5000000000000001,
+            0.5000000000000001,
+            0.5000000000000003,
+            0.5000000000000004,
+            0.5000000000000006
+          ],
+          "full_grading_neutrality_residual": 1.0582208544907387e-15,
+          "left_orientation_masks": [
+            1,
+            3
+          ],
+          "maximum_fractional_half_residual": 5.551115123125783e-16,
+          "node_id": "W6-RICH-MULTIPLICITY-TWO-W2-1-3-4-6",
+          "pair_class_grading_residual": 1.058220854490739e-15,
+          "pair_class_overlap_dimension": 0,
+          "pair_classes_exhaust_cross_dependencies": true,
+          "pair_classes_totally_neutral": true,
+          "pair_dependency_class_dimension": 9,
+          "pair_emergent_grading_coupling_residual": 0.0,
+          "right_orientation_masks": [
+            4,
+            6
+          ],
+          "status": "exact-neutral-pair-generated-dependency"
+        },
+        {
+          "active_left_orientation_masks": [
+            1,
+            6
+          ],
+          "active_right_orientation_masks": [
+            3
+          ],
+          "cross_dependency_dimension": 9,
+          "emergent_class_grading_residual": 0.0,
+          "emergent_classes_totally_neutral": true,
+          "emergent_dependency_homology_dimension": 0,
+          "emergent_dependency_present": false,
+          "exact_dependency_homology_audit": true,
+          "exact_pair_common_dimension_sum": 9,
+          "exact_pair_common_edge_count": 1,
+          "fractional_eigenvalues": [
+            0.49999999999999956,
+            0.4999999999999998,
+            0.4999999999999999,
+            0.4999999999999999,
+            0.5,
+            0.5000000000000001,
+            0.5000000000000001,
+            0.5000000000000002,
+            0.5000000000000003
+          ],
+          "full_grading_neutrality_residual": 8.822850620501715e-16,
+          "left_orientation_masks": [
+            1,
+            6
+          ],
+          "maximum_fractional_half_residual": 4.440892098500626e-16,
+          "node_id": "W6-RICH-MULTIPLICITY-TWO-W2-1-6-3-4",
+          "pair_class_grading_residual": 8.822850620501714e-16,
+          "pair_class_overlap_dimension": 0,
+          "pair_classes_exhaust_cross_dependencies": true,
+          "pair_classes_totally_neutral": true,
+          "pair_dependency_class_dimension": 9,
+          "pair_emergent_grading_coupling_residual": 0.0,
+          "right_orientation_masks": [
+            3,
+            4
+          ],
+          "status": "exact-neutral-pair-generated-dependency"
+        },
+        {
+          "active_left_orientation_masks": [
+            6
+          ],
+          "active_right_orientation_masks": [
+            3
+          ],
+          "cross_dependency_dimension": 9,
+          "emergent_class_grading_residual": 0.0,
+          "emergent_classes_totally_neutral": true,
+          "emergent_dependency_homology_dimension": 0,
+          "emergent_dependency_present": false,
+          "exact_dependency_homology_audit": true,
+          "exact_pair_common_dimension_sum": 9,
+          "exact_pair_common_edge_count": 1,
+          "fractional_eigenvalues": [
+            0.4999999999999998,
+            0.4999999999999998,
+            0.49999999999999983,
+            0.49999999999999983,
+            0.5,
+            0.5,
+            0.5000000000000001,
+            0.5000000000000001,
+            0.5000000000000002
+          ],
+          "full_grading_neutrality_residual": 4.660950488846677e-16,
+          "left_orientation_masks": [
+            2,
+            6
+          ],
+          "maximum_fractional_half_residual": 2.220446049250313e-16,
+          "node_id": "W6-RICH-MULTIPLICITY-TWO-W2-2-6-3-7",
+          "pair_class_grading_residual": 4.660950488846673e-16,
+          "pair_class_overlap_dimension": 0,
+          "pair_classes_exhaust_cross_dependencies": true,
+          "pair_classes_totally_neutral": true,
+          "pair_dependency_class_dimension": 9,
+          "pair_emergent_grading_coupling_residual": 0.0,
+          "right_orientation_masks": [
+            3,
+            7
+          ],
+          "status": "exact-neutral-pair-generated-dependency"
+        },
+        {
+          "active_left_orientation_masks": [
+            0,
+            1,
+            3
+          ],
+          "active_right_orientation_masks": [
+            5,
+            6
+          ],
+          "cross_dependency_dimension": 9,
+          "emergent_class_grading_residual": 0.0,
+          "emergent_classes_totally_neutral": true,
+          "emergent_dependency_homology_dimension": 0,
+          "emergent_dependency_present": false,
+          "exact_dependency_homology_audit": true,
+          "exact_pair_common_dimension_sum": 9,
+          "exact_pair_common_edge_count": 1,
+          "fractional_eigenvalues": [
+            0.49999999999999956,
+            0.4999999999999997,
+            0.4999999999999998,
+            0.4999999999999999,
+            0.5,
+            0.5,
+            0.5000000000000002,
+            0.5000000000000002,
+            0.5000000000000004
+          ],
+          "full_grading_neutrality_residual": 9.130227893639011e-16,
+          "left_orientation_masks": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "maximum_fractional_half_residual": 4.440892098500626e-16,
+          "node_id": "W6-RICH-MULTIPLICITY-TWO-W4-0-1-2-3-4-5-6-7",
+          "pair_class_grading_residual": 9.130227893639013e-16,
+          "pair_class_overlap_dimension": 0,
+          "pair_classes_exhaust_cross_dependencies": true,
+          "pair_classes_totally_neutral": true,
+          "pair_dependency_class_dimension": 9,
+          "pair_emergent_grading_coupling_residual": 0.0,
+          "right_orientation_masks": [
+            4,
+            5,
+            6,
+            7
+          ],
+          "status": "exact-neutral-pair-generated-dependency"
+        },
+        {
+          "active_left_orientation_masks": [
+            0,
+            1,
+            6
+          ],
+          "active_right_orientation_masks": [
+            3,
+            5
+          ],
+          "cross_dependency_dimension": 9,
+          "emergent_class_grading_residual": 0.0,
+          "emergent_classes_totally_neutral": true,
+          "emergent_dependency_homology_dimension": 0,
+          "emergent_dependency_present": false,
+          "exact_dependency_homology_audit": true,
+          "exact_pair_common_dimension_sum": 9,
+          "exact_pair_common_edge_count": 1,
+          "fractional_eigenvalues": [
+            0.4999999999999996,
+            0.4999999999999997,
+            0.49999999999999983,
+            0.49999999999999983,
+            0.49999999999999994,
+            0.5,
+            0.5,
+            0.5000000000000002,
+            0.5000000000000004
+          ],
+          "full_grading_neutrality_residual": 9.94790763174177e-16,
+          "left_orientation_masks": [
+            0,
+            1,
+            6,
+            7
+          ],
+          "maximum_fractional_half_residual": 4.440892098500626e-16,
+          "node_id": "W6-RICH-MULTIPLICITY-TWO-W4-0-1-6-7-2-3-4-5",
+          "pair_class_grading_residual": 9.947907631741769e-16,
+          "pair_class_overlap_dimension": 0,
+          "pair_classes_exhaust_cross_dependencies": true,
+          "pair_classes_totally_neutral": true,
+          "pair_dependency_class_dimension": 9,
+          "pair_emergent_grading_coupling_residual": 0.0,
+          "right_orientation_masks": [
+            2,
+            3,
+            4,
+            5
+          ],
+          "status": "exact-neutral-pair-generated-dependency"
+        },
+        {
+          "active_left_orientation_masks": [
+            0,
+            6
+          ],
+          "active_right_orientation_masks": [
+            1,
+            3,
+            5
+          ],
+          "cross_dependency_dimension": 9,
+          "emergent_class_grading_residual": 0.0,
+          "emergent_classes_totally_neutral": true,
+          "emergent_dependency_homology_dimension": 0,
+          "emergent_dependency_present": false,
+          "exact_dependency_homology_audit": true,
+          "exact_pair_common_dimension_sum": 9,
+          "exact_pair_common_edge_count": 1,
+          "fractional_eigenvalues": [
+            0.4999999999999997,
+            0.49999999999999983,
+            0.4999999999999999,
+            0.5,
+            0.5000000000000001,
+            0.5000000000000001,
+            0.5000000000000001,
+            0.5000000000000003,
+            0.5000000000000007
+          ],
+          "full_grading_neutrality_residual": 1.2787733056590878e-15,
+          "left_orientation_masks": [
+            0,
+            2,
+            4,
+            6
+          ],
+          "maximum_fractional_half_residual": 6.661338147750939e-16,
+          "node_id": "W6-RICH-MULTIPLICITY-TWO-W4-0-2-4-6-1-3-5-7",
+          "pair_class_grading_residual": 1.2787733056590884e-15,
+          "pair_class_overlap_dimension": 0,
+          "pair_classes_exhaust_cross_dependencies": true,
+          "pair_classes_totally_neutral": true,
+          "pair_dependency_class_dimension": 9,
+          "pair_emergent_grading_coupling_residual": 0.0,
+          "right_orientation_masks": [
+            1,
+            3,
+            5,
+            7
+          ],
+          "status": "exact-neutral-pair-generated-dependency"
+        },
+        {
+          "active_left_orientation_masks": [
+            0,
+            3
+          ],
+          "active_right_orientation_masks": [
+            1,
+            5,
+            6
+          ],
+          "cross_dependency_dimension": 9,
+          "emergent_class_grading_residual": 0.0,
+          "emergent_classes_totally_neutral": true,
+          "emergent_dependency_homology_dimension": 0,
+          "emergent_dependency_present": false,
+          "exact_dependency_homology_audit": true,
+          "exact_pair_common_dimension_sum": 9,
+          "exact_pair_common_edge_count": 1,
+          "fractional_eigenvalues": [
+            0.4999999999999997,
+            0.49999999999999983,
+            0.4999999999999999,
+            0.49999999999999994,
+            0.5,
+            0.5000000000000001,
+            0.5000000000000002,
+            0.5000000000000003,
+            0.5000000000000004
+          ],
+          "full_grading_neutrality_residual": 8.578608205649444e-16,
+          "left_orientation_masks": [
+            0,
+            3,
+            4,
+            7
+          ],
+          "maximum_fractional_half_residual": 4.440892098500626e-16,
+          "node_id": "W6-RICH-MULTIPLICITY-TWO-W4-0-3-4-7-1-2-5-6",
+          "pair_class_grading_residual": 8.578608205649444e-16,
+          "pair_class_overlap_dimension": 0,
+          "pair_classes_exhaust_cross_dependencies": true,
+          "pair_classes_totally_neutral": true,
+          "pair_dependency_class_dimension": 9,
+          "pair_emergent_grading_coupling_residual": 0.0,
+          "right_orientation_masks": [
+            1,
+            2,
+            5,
+            6
+          ],
+          "status": "exact-neutral-pair-generated-dependency"
+        }
+      ],
+      "status": "all-dependencies-neutral-and-pair-generated",
+      "target_partition": [
+        5,
+        1
+      ]
+    },
+    {
+      "audited_fractional_merge_count": 1,
+      "control_id": "W6-COLLISION-FREE-NONCOMMUTING-CORE",
+      "emergent_merge_count": 0,
+      "exact_homology_audit_failure_count": 0,
+      "globally_distinct_source_partitions": true,
+      "labels": [
+        [
+          [
+            6
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        [
+          [
+            5,
+            1
+          ],
+          [
+            2,
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_cross_dependency_dimension": 34,
+      "maximum_emergent_homology_dimension": 0,
+      "maximum_full_grading_neutrality_residual": 0.058823529411766315,
+      "maximum_pair_dependency_class_dimension": 34,
+      "n": 6,
+      "nonneutral_merge_count": 1,
+      "pair_generated_merge_count": 1,
+      "pairwise_distinct_physical_labels": true,
+      "records": [
+        {
+          "active_left_orientation_masks": [
+            2,
+            5
+          ],
+          "active_right_orientation_masks": [
+            11,
+            12
+          ],
+          "cross_dependency_dimension": 34,
+          "emergent_class_grading_residual": 0.0,
+          "emergent_classes_totally_neutral": true,
+          "emergent_dependency_homology_dimension": 0,
+          "emergent_dependency_present": false,
+          "exact_dependency_homology_audit": true,
+          "exact_pair_common_dimension_sum": 34,
+          "exact_pair_common_edge_count": 2,
+          "fractional_eigenvalues": [
+            0.47058823529411686,
+            0.4705882352941171,
+            0.4705882352941173,
+            0.47058823529411753,
+            0.4705882352941177,
+            0.4705882352941179,
+            0.4705882352941182,
+            0.4705882352941185,
+            0.4705882352941186,
+            0.4999999999999992,
+            0.4999999999999995,
+            0.4999999999999995,
+            0.4999999999999996,
+            0.4999999999999997,
+            0.4999999999999998,
+            0.4999999999999999,
+            0.4999999999999999,
+            0.49999999999999994,
+            0.5000000000000001,
+            0.5000000000000002,
+            0.5000000000000002,
+            0.5000000000000003,
+            0.5000000000000004,
+            0.5000000000000006,
+            0.5000000000000007,
+            0.5235294117647054,
+            0.5235294117647055,
+            0.5235294117647056,
+            0.5235294117647057,
+            0.5235294117647057,
+            0.5235294117647059,
+            0.5235294117647059,
+            0.523529411764706,
+            0.523529411764706
+          ],
+          "full_grading_neutrality_residual": 0.058823529411766315,
+          "left_orientation_masks": [
+            2,
+            5
+          ],
+          "maximum_fractional_half_residual": 0.029411764705883137,
+          "node_id": "W6-COLLISION-FREE-NONCOMMUTING-CORE-W2-2-5-11-12",
+          "pair_class_grading_residual": 0.058823529411766315,
+          "pair_class_overlap_dimension": 0,
+          "pair_classes_exhaust_cross_dependencies": true,
+          "pair_classes_totally_neutral": false,
+          "pair_dependency_class_dimension": 34,
+          "pair_emergent_grading_coupling_residual": 0.0,
+          "right_orientation_masks": [
+            11,
+            12
+          ],
+          "status": "exact-nonneutral-dependency-homology"
+        }
+      ],
+      "status": "nonneutral-dependency-homology-present",
+      "target_partition": [
+        6
+      ]
+    }
+  ],
+  "created_at": "2026-08-06T05:01:40.315086+00:00",
+  "falsifiers_triggered": [
+    "Exact pair-common ranges do not exhaust every finite child intersection.",
+    "A raw pair-edge count ignores linear dependencies and overlap among pair classes.",
+    "Pair generation must be separated from grading neutrality.",
+    "Collision-free source labels do not restore universal pair-class half-balance.",
+    "A finite dependency quotient is not a coherent all-n recoupling transform."
+  ],
+  "headline_metrics": {
+    "all_n_emergent_homology_vanishing_or_neutrality_count": 0,
+    "all_n_pair_common_chain_complex_count": 0,
+    "coherent_pair_common_quotient_count": 0,
+    "collision_free_nonneutral_cross_dependency_dimension": 34,
+    "collision_free_nonneutral_grading_residual": 0.058823529411766315,
+    "collision_free_nonneutral_pair_generated_merge_count": 1,
+    "dependency_homology_quotient_count": 1,
+    "finite_control_count": 5,
+    "finite_emergent_merge_count": 28,
+    "finite_fractional_merge_count": 65,
+    "finite_homology_audit_failure_count": 0,
+    "finite_pair_generated_merge_count": 37,
+    "new_quantum_algorithm_count": 0,
+    "repeated_label_nonneutral_merge_count": 9,
+    "w3_distinct_maximum_emergent_homology_dimension": 2,
+    "w5_pair_generated_merge_count": 11,
+    "w6_pair_generated_merge_count": 10
+  },
+  "proof_obligations": [
+    {
+      "obligation": "finite_pair_dependency_quotient",
+      "resolution": "Every exact pair relation is projected into the canonical cross-syzygy quotient and rank-checked against pair-angle multiplicities.",
+      "resolved": true
+    },
+    {
+      "obligation": "classify_emergent_dependencies",
+      "resolution": "The W3 distinct plane is genuinely emergent; selected W5/S6 channels and the collision-free nonneutral S6 counterexample are pair-generated.",
+      "resolved": true
+    },
+    {
+      "obligation": "all_n_pair_common_chain_complex",
+      "resolution": "Higher relations among trivial/sign pair intertwiners are not expressed in symbolic representation labels.",
+      "resolved": false
+    },
+    {
+      "obligation": "all_n_emergent_homology_neutrality",
+      "resolution": "A collision-free S6 pair-generated counterexample is already nonneutral, while W3 also shows emergent homology need not vanish.",
+      "resolved": false
+    }
+  ],
+  "quotient_contract": {
+    "cross_dependency_space": "W is the cross-child synthesis kernel modulo both child-internal kernels.",
+    "emergent_homology": "H_em=W/W_pair, represented by the orthogonal complement of W_pair in W.",
+    "grading_decomposition": "The left-minus-right grading is audited on W_pair, H_em, and the pair/emergent coupling block.",
+    "pair_classes": "Each exact two-leaf common range maps to a class in W; W_pair is their span after quotient projection.",
+    "scope": "Finite leaf Gram bases compute the quotient exactly; no all-n recoupling chain complex or coherent quotient is yet known."
+  },
+  "scaling_records": [
+    {
+      "coherent_pair_common_quotient_compiled": false,
+      "emergent_homology_dimension_bounded": false,
+      "emergent_homology_grading_neutrality_proved": false,
+      "finite_pair_dependency_quotient_available": true,
+      "information_threshold_copy_count": 10,
+      "n": 6,
+      "status": "finite-dependency-homology-all-n-chain-complex-open",
+      "symbolic_pair_common_chain_complex_proved": false
+    },
+    {
+      "coherent_pair_common_quotient_compiled": false,
+      "emergent_homology_dimension_bounded": false,
+      "emergent_homology_grading_neutrality_proved": false,
+      "finite_pair_dependency_quotient_available": true,
+      "information_threshold_copy_count": 16,
+      "n": 8,
+      "status": "finite-dependency-homology-all-n-chain-complex-open",
+      "symbolic_pair_common_chain_complex_proved": false
+    },
+    {
+      "coherent_pair_common_quotient_compiled": false,
+      "emergent_homology_dimension_bounded": false,
+      "emergent_homology_grading_neutrality_proved": false,
+      "finite_pair_dependency_quotient_available": true,
+      "information_threshold_copy_count": 45,
+      "n": 16,
+      "status": "finite-dependency-homology-all-n-chain-complex-open",
+      "symbolic_pair_common_chain_complex_proved": false
+    },
+    {
+      "coherent_pair_common_quotient_compiled": false,
+      "emergent_homology_dimension_bounded": false,
+      "emergent_homology_grading_neutrality_proved": false,
+      "finite_pair_dependency_quotient_available": true,
+      "information_threshold_copy_count": 118,
+      "n": 32,
+      "status": "finite-dependency-homology-all-n-chain-complex-open",
+      "symbolic_pair_common_chain_complex_proved": false
+    },
+    {
+      "coherent_pair_common_quotient_compiled": false,
+      "emergent_homology_dimension_bounded": false,
+      "emergent_homology_grading_neutrality_proved": false,
+      "finite_pair_dependency_quotient_available": true,
+      "information_threshold_copy_count": 296,
+      "n": 64,
+      "status": "finite-dependency-homology-all-n-chain-complex-open",
+      "symbolic_pair_common_chain_complex_proved": false
+    },
+    {
+      "coherent_pair_common_quotient_compiled": false,
+      "emergent_homology_dimension_bounded": false,
+      "emergent_homology_grading_neutrality_proved": false,
+      "finite_pair_dependency_quotient_available": true,
+      "information_threshold_copy_count": 717,
+      "n": 128,
+      "status": "finite-dependency-homology-all-n-chain-complex-open",
+      "symbolic_pair_common_chain_complex_proved": false
+    },
+    {
+      "coherent_pair_common_quotient_compiled": false,
+      "emergent_homology_dimension_bounded": false,
+      "emergent_homology_grading_neutrality_proved": false,
+      "finite_pair_dependency_quotient_available": true,
+      "information_threshold_copy_count": 1684,
+      "n": 256,
+      "status": "finite-dependency-homology-all-n-chain-complex-open",
+      "symbolic_pair_common_chain_complex_proved": false
+    },
+    {
+      "coherent_pair_common_quotient_compiled": false,
+      "emergent_homology_dimension_bounded": false,
+      "emergent_homology_grading_neutrality_proved": false,
+      "finite_pair_dependency_quotient_available": true,
+      "information_threshold_copy_count": 3876,
+      "n": 512,
+      "status": "finite-dependency-homology-all-n-chain-complex-open",
+      "symbolic_pair_common_chain_complex_proved": false
+    }
+  ],
+  "status": "collision-free-pair-generated-nonneutral-block-classification-open",
+  "summary": "Constructed the pair-common quotient of cross dependencies: W3 has genuine neutral emergent homology, while a globally distinct S6 affine plane has an entirely pair-generated nonneutral 34-dimensional intersection."
+}

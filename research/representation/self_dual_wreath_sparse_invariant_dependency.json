@@ -1,0 +1,2616 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "The W3/W5 scalar signal may be tested at multiplicity two only with dense 5625-square projectors.",
+      "resolution": "The S6 control uses at most a small coefficient Gram after exact invariant-range extraction.",
+      "resolved": true
+    },
+    {
+      "objection": "Randomized range extraction can silently miss invariant vectors.",
+      "resolution": "The target rank is exact, the retained/discarded singular gap is recorded, and every basis is checked against all adjacent generators.",
+      "resolved": true
+    },
+    {
+      "objection": "A finite sparse audit is already an all-n algorithm.",
+      "resolution": "It still performs factorial group averaging and explicit physical-basis storage.",
+      "resolved": false
+    }
+  ],
+  "claim_gate": {
+    "all_n_collision_free_neutrality_proved": false,
+    "first_s6_collision_free_multiplicity_sector_audited": true,
+    "hierarchical_orientation_polar_proved": false,
+    "polynomial_all_n_invariant_transform_proved": false,
+    "reason": "The first multiplicity-two finite sector is now accessible, but one S6 control cannot establish the all-n recoupling law and the extractor is factorial-time.",
+    "s6_nonneutral_counterexample_found": false,
+    "s6_selected_control_remains_neutral": true,
+    "sparse_invariant_range_audit_verified": true,
+    "speedup_claim_allowed": false
+  },
+  "controls": [
+    {
+      "active_orientation_count": 6,
+      "control_id": "W3-DENSE-CROSSCHECK",
+      "first_nonneutral_node_id": null,
+      "fractional_merge_count": 9,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "leaf_records": [
+        {
+          "companion_dimension": 2,
+          "companion_partitions": [
+            [
+              2,
+              1
+            ],
+            [
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1
+            ]
+          ],
+          "exact_invariant_multiplicity": 1,
+          "exact_rank_matched_representation_ring": true,
+          "leaf_basis_isometry_residual": 2.220446049250313e-16,
+          "leaf_range_dimension": 2,
+          "maximum_generator_invariance_residual": 1.8660326523767306e-17,
+          "orientation_mask": 0,
+          "randomized_range_singular_value_gap": 1.073566746781734e+16,
+          "selected_partitions": [
+            [
+              3
+            ],
+            [
+              3
+            ],
+            [
+              2,
+              1
+            ]
+          ],
+          "selected_tensor_dimension": 4,
+          "status": "sparse-invariant-leaf-basis-verified"
+        },
+        {
+          "companion_dimension": 1,
+          "companion_partitions": [
+            [
+              3
+            ],
+            [
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1
+            ]
+          ],
+          "exact_invariant_multiplicity": 1,
+          "exact_rank_matched_representation_ring": true,
+          "leaf_basis_isometry_residual": 0.0,
+          "leaf_range_dimension": 1,
+          "maximum_generator_invariance_residual": 2.4925129552837215e-16,
+          "orientation_mask": 1,
+          "randomized_range_singular_value_gap": 7243104588840107.0,
+          "selected_partitions": [
+            [
+              2,
+              1
+            ],
+            [
+              3
+            ],
+            [
+              2,
+              1
+            ]
+          ],
+          "selected_tensor_dimension": 8,
+          "status": "sparse-invariant-leaf-basis-verified"
+        },
+        {
+          "companion_dimension": 2,
+          "companion_partitions": [
+            [
+              2,
+              1
+            ],
+            [
+              3
+            ],
+            [
+              1,
+              1,
+              1
+            ]
+          ],
+          "exact_invariant_multiplicity": 1,
+          "exact_rank_matched_representation_ring": true,
+          "leaf_basis_isometry_residual": 0.0,
+          "leaf_range_dimension": 2,
+          "maximum_generator_invariance_residual": 1.717313370018768e-16,
+          "orientation_mask": 2,
+          "randomized_range_singular_value_gap": 9738911625943822.0,
+          "selected_partitions": [
+            [
+              3
+            ],
+            [
+              1,
+              1,
+              1
+            ],
+            [
+              2,
+              1
+            ]
+          ],
+          "selected_tensor_dimension": 4,
+          "status": "sparse-invariant-leaf-basis-verified"
+        },
+        {
+          "companion_dimension": 1,
+          "companion_partitions": [
+            [
+              3
+            ],
+            [
+              3
+            ],
+            [
+              1,
+              1,
+              1
+            ]
+          ],
+          "exact_invariant_multiplicity": 1,
+          "exact_rank_matched_representation_ring": true,
+          "leaf_basis_isometry_residual": 0.0,
+          "leaf_range_dimension": 1,
+          "maximum_generator_invariance_residual": 2.609649117022925e-16,
+          "orientation_mask": 3,
+          "randomized_range_singular_value_gap": 9488728042466912.0,
+          "selected_partitions": [
+            [
+              2,
+              1
+            ],
+            [
+              1,
+              1,
+              1
+            ],
+            [
+              2,
+              1
+            ]
+          ],
+          "selected_tensor_dimension": 8,
+          "status": "sparse-invariant-leaf-basis-verified"
+        },
+        {
+          "companion_dimension": 4,
+          "companion_partitions": [
+            [
+              2,
+              1
+            ],
+            [
+              1,
+              1,
+              1
+            ],
+            [
+              2,
+              1
+            ]
+          ],
+          "exact_invariant_multiplicity": 0,
+          "exact_rank_matched_representation_ring": true,
+          "leaf_basis_isometry_residual": 0.0,
+          "leaf_range_dimension": 0,
+          "maximum_generator_invariance_residual": 0.0,
+          "orientation_mask": 4,
+          "randomized_range_singular_value_gap": null,
+          "selected_partitions": [
+            [
+              3
+            ],
+            [
+              3
+            ],
+            [
+              1,
+              1,
+              1
+            ]
+          ],
+          "selected_tensor_dimension": 2,
+          "status": "sparse-invariant-leaf-basis-verified"
+        },
+        {
+          "companion_dimension": 2,
+          "companion_partitions": [
+            [
+              3
+            ],
+            [
+              1,
+              1,
+              1
+            ],
+            [
+              2,
+              1
+            ]
+          ],
+          "exact_invariant_multiplicity": 1,
+          "exact_rank_matched_representation_ring": true,
+          "leaf_basis_isometry_residual": 2.220446049250313e-16,
+          "leaf_range_dimension": 2,
+          "maximum_generator_invariance_residual": 2.5212831024297567e-17,
+          "orientation_mask": 5,
+          "randomized_range_singular_value_gap": 8872211768405797.0,
+          "selected_partitions": [
+            [
+              2,
+              1
+            ],
+            [
+              3
+            ],
+            [
+              1,
+              1,
+              1
+            ]
+          ],
+          "selected_tensor_dimension": 4,
+          "status": "sparse-invariant-leaf-basis-verified"
+        },
+        {
+          "companion_dimension": 4,
+          "companion_partitions": [
+            [
+              2,
+              1
+            ],
+            [
+              3
+            ],
+            [
+              2,
+              1
+            ]
+          ],
+          "exact_invariant_multiplicity": 0,
+          "exact_rank_matched_representation_ring": true,
+          "leaf_basis_isometry_residual": 0.0,
+          "leaf_range_dimension": 0,
+          "maximum_generator_invariance_residual": 0.0,
+          "orientation_mask": 6,
+          "randomized_range_singular_value_gap": null,
+          "selected_partitions": [
+            [
+              3
+            ],
+            [
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1
+            ]
+          ],
+          "selected_tensor_dimension": 2,
+          "status": "sparse-invariant-leaf-basis-verified"
+        },
+        {
+          "companion_dimension": 2,
+          "companion_partitions": [
+            [
+              3
+            ],
+            [
+              3
+            ],
+            [
+              2,
+              1
+            ]
+          ],
+          "exact_invariant_multiplicity": 1,
+          "exact_rank_matched_representation_ring": true,
+          "leaf_basis_isometry_residual": 2.220446049250313e-16,
+          "leaf_range_dimension": 2,
+          "maximum_generator_invariance_residual": 1.7775746952628835e-17,
+          "orientation_mask": 7,
+          "randomized_range_singular_value_gap": 7541374995063004.0,
+          "selected_partitions": [
+            [
+              2,
+              1
+            ],
+            [
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1
+            ]
+          ],
+          "selected_tensor_dimension": 4,
+          "status": "sparse-invariant-leaf-basis-verified"
+        }
+      ],
+      "maximum_exact_invariant_multiplicity": 1,
+      "maximum_fractional_half_residual": 2.7755575615628914e-16,
+      "maximum_generator_invariance_residual": 2.609649117022925e-16,
+      "maximum_global_block_gram_hermiticity_residual": 0.0,
+      "maximum_leaf_basis_isometry_residual": 2.220446049250313e-16,
+      "maximum_leaf_range_dimension": 2,
+      "merge_records": [
+        {
+          "active_left_orientation_masks": [
+            0,
+            2
+          ],
+          "active_right_orientation_masks": [
+            5,
+            7
+          ],
+          "common_range_dimension": 2,
+          "exact_coefficient_gram_dependency_audit": true,
+          "fractional_eigenvalues": [
+            0.4999999999999999,
+            0.5000000000000001
+          ],
+          "grading_neutral": true,
+          "grading_neutrality_residual": 1.7022143222701576e-16,
+          "left_coefficient_dimension": 4,
+          "left_orientation_masks": [
+            0,
+            2
+          ],
+          "left_synthesis_rank": 4,
+          "maximum_fractional_half_residual": 1.1102230246251565e-16,
+          "node_id": "W3-DENSE-CROSSCHECK-W2-0-2-5-7",
+          "right_coefficient_dimension": 4,
+          "right_orientation_masks": [
+            5,
+            7
+          ],
+          "right_synthesis_rank": 4,
+          "status": "exact-neutral-coefficient-gram-dependency"
+        },
+        {
+          "active_left_orientation_masks": [
+            0,
+            5
+          ],
+          "active_right_orientation_masks": [
+            2,
+            7
+          ],
+          "common_range_dimension": 2,
+          "exact_coefficient_gram_dependency_audit": true,
+          "fractional_eigenvalues": [
+            0.5,
+            0.5000000000000001
+          ],
+          "grading_neutral": true,
+          "grading_neutrality_residual": 1.110231834508297e-16,
+          "left_coefficient_dimension": 4,
+          "left_orientation_masks": [
+            0,
+            5
+          ],
+          "left_synthesis_rank": 4,
+          "maximum_fractional_half_residual": 1.1102230246251565e-16,
+          "node_id": "W3-DENSE-CROSSCHECK-W2-0-5-2-7",
+          "right_coefficient_dimension": 4,
+          "right_orientation_masks": [
+            2,
+            7
+          ],
+          "right_synthesis_rank": 4,
+          "status": "exact-neutral-coefficient-gram-dependency"
+        },
+        {
+          "active_left_orientation_masks": [
+            0,
+            7
+          ],
+          "active_right_orientation_masks": [
+            2,
+            5
+          ],
+          "common_range_dimension": 2,
+          "exact_coefficient_gram_dependency_audit": true,
+          "fractional_eigenvalues": [
+            0.4999999999999998,
+            0.49999999999999994
+          ],
+          "grading_neutral": true,
+          "grading_neutrality_residual": 4.440911316337831e-16,
+          "left_coefficient_dimension": 4,
+          "left_orientation_masks": [
+            0,
+            7
+          ],
+          "left_synthesis_rank": 4,
+          "maximum_fractional_half_residual": 2.220446049250313e-16,
+          "node_id": "W3-DENSE-CROSSCHECK-W2-0-7-2-5",
+          "right_coefficient_dimension": 4,
+          "right_orientation_masks": [
+            2,
+            5
+          ],
+          "right_synthesis_rank": 4,
+          "status": "exact-neutral-coefficient-gram-dependency"
+        },
+        {
+          "active_left_orientation_masks": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "active_right_orientation_masks": [
+            5,
+            7
+          ],
+          "common_range_dimension": 2,
+          "exact_coefficient_gram_dependency_audit": true,
+          "fractional_eigenvalues": [
+            0.5,
+            0.5
+          ],
+          "grading_neutral": true,
+          "grading_neutrality_residual": 5.757154106830387e-17,
+          "left_coefficient_dimension": 6,
+          "left_orientation_masks": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "left_synthesis_rank": 6,
+          "maximum_fractional_half_residual": 0.0,
+          "node_id": "W3-DENSE-CROSSCHECK-W4-0-1-2-3-4-5-6-7",
+          "right_coefficient_dimension": 4,
+          "right_orientation_masks": [
+            4,
+            5,
+            6,
+            7
+          ],
+          "right_synthesis_rank": 4,
+          "status": "exact-neutral-coefficient-gram-dependency"
+        },
+        {
+          "active_left_orientation_masks": [
+            0,
+            1,
+            5
+          ],
+          "active_right_orientation_masks": [
+            2,
+            3,
+            7
+          ],
+          "common_range_dimension": 2,
+          "exact_coefficient_gram_dependency_audit": true,
+          "fractional_eigenvalues": [
+            0.5000000000000001,
+            0.5000000000000002
+          ],
+          "grading_neutral": true,
+          "grading_neutrality_residual": 4.202909475081302e-16,
+          "left_coefficient_dimension": 5,
+          "left_orientation_masks": [
+            0,
+            1,
+            4,
+            5
+          ],
+          "left_synthesis_rank": 5,
+          "maximum_fractional_half_residual": 2.220446049250313e-16,
+          "node_id": "W3-DENSE-CROSSCHECK-W4-0-1-4-5-2-3-6-7",
+          "right_coefficient_dimension": 5,
+          "right_orientation_masks": [
+            2,
+            3,
+            6,
+            7
+          ],
+          "right_synthesis_rank": 5,
+          "status": "exact-neutral-coefficient-gram-dependency"
+        },
+        {
+          "active_left_orientation_masks": [
+            0,
+            1,
+            7
+          ],
+          "active_right_orientation_masks": [
+            2,
+            3,
+            5
+          ],
+          "common_range_dimension": 2,
+          "exact_coefficient_gram_dependency_audit": true,
+          "fractional_eigenvalues": [
+            0.4999999999999997,
+            0.4999999999999999
+          ],
+          "grading_neutral": true,
+          "grading_neutrality_residual": 5.519375385345044e-16,
+          "left_coefficient_dimension": 5,
+          "left_orientation_masks": [
+            0,
+            1,
+            6,
+            7
+          ],
+          "left_synthesis_rank": 5,
+          "maximum_fractional_half_residual": 2.7755575615628914e-16,
+          "node_id": "W3-DENSE-CROSSCHECK-W4-0-1-6-7-2-3-4-5",
+          "right_coefficient_dimension": 5,
+          "right_orientation_masks": [
+            2,
+            3,
+            4,
+            5
+          ],
+          "right_synthesis_rank": 5,
+          "status": "exact-neutral-coefficient-gram-dependency"
+        },
+        {
+          "active_left_orientation_masks": [
+            0,
+            2
+          ],
+          "active_right_orientation_masks": [
+            1,
+            3,
+            5,
+            7
+          ],
+          "common_range_dimension": 2,
+          "exact_coefficient_gram_dependency_audit": true,
+          "fractional_eigenvalues": [
+            0.5,
+            0.5000000000000001
+          ],
+          "grading_neutral": true,
+          "grading_neutrality_residual": 2.969793088687391e-16,
+          "left_coefficient_dimension": 4,
+          "left_orientation_masks": [
+            0,
+            2,
+            4,
+            6
+          ],
+          "left_synthesis_rank": 4,
+          "maximum_fractional_half_residual": 1.1102230246251565e-16,
+          "node_id": "W3-DENSE-CROSSCHECK-W4-0-2-4-6-1-3-5-7",
+          "right_coefficient_dimension": 6,
+          "right_orientation_masks": [
+            1,
+            3,
+            5,
+            7
+          ],
+          "right_synthesis_rank": 6,
+          "status": "exact-neutral-coefficient-gram-dependency"
+        },
+        {
+          "active_left_orientation_masks": [
+            0,
+            3,
+            7
+          ],
+          "active_right_orientation_masks": [
+            1,
+            2,
+            5
+          ],
+          "common_range_dimension": 2,
+          "exact_coefficient_gram_dependency_audit": true,
+          "fractional_eigenvalues": [
+            0.49999999999999983,
+            0.5000000000000001
+          ],
+          "grading_neutral": true,
+          "grading_neutrality_residual": 2.89829570138117e-16,
+          "left_coefficient_dimension": 5,
+          "left_orientation_masks": [
+            0,
+            3,
+            4,
+            7
+          ],
+          "left_synthesis_rank": 5,
+          "maximum_fractional_half_residual": 1.6653345369377348e-16,
+          "node_id": "W3-DENSE-CROSSCHECK-W4-0-3-4-7-1-2-5-6",
+          "right_coefficient_dimension": 5,
+          "right_orientation_masks": [
+            1,
+            2,
+            5,
+            6
+          ],
+          "right_synthesis_rank": 5,
+          "status": "exact-neutral-coefficient-gram-dependency"
+        },
+        {
+          "active_left_orientation_masks": [
+            0,
+            3,
+            5
+          ],
+          "active_right_orientation_masks": [
+            1,
+            2,
+            7
+          ],
+          "common_range_dimension": 2,
+          "exact_coefficient_gram_dependency_audit": true,
+          "fractional_eigenvalues": [
+            0.4999999999999997,
+            0.5000000000000001
+          ],
+          "grading_neutral": true,
+          "grading_neutrality_residual": 5.084544707971241e-16,
+          "left_coefficient_dimension": 5,
+          "left_orientation_masks": [
+            0,
+            3,
+            5,
+            6
+          ],
+          "left_synthesis_rank": 5,
+          "maximum_fractional_half_residual": 2.7755575615628914e-16,
+          "node_id": "W3-DENSE-CROSSCHECK-W4-0-3-5-6-1-2-4-7",
+          "right_coefficient_dimension": 5,
+          "right_orientation_masks": [
+            1,
+            2,
+            4,
+            7
+          ],
+          "right_synthesis_rank": 5,
+          "status": "exact-neutral-coefficient-gram-dependency"
+        }
+      ],
+      "n": 3,
+      "neutral_fractional_merge_count": 9,
+      "nonneutral_fractional_merge_count": 0,
+      "observed_fractional_eigenvalues": [
+        0.5
+      ],
+      "physical_ambient_dimension": 8,
+      "sparse_invariant_basis_audit_verified": true,
+      "status": "sparse-invariant-all-observed-dependencies-neutral",
+      "target_partition": [
+        2,
+        1
+      ],
+      "total_leaf_coefficient_dimension": 10
+    },
+    {
+      "active_orientation_count": 5,
+      "control_id": "W6-COLLISION-FREE-RICH-MULTIPLICITY-TWO",
+      "first_nonneutral_node_id": null,
+      "fractional_merge_count": 10,
+      "labels": [
+        [
+          [
+            6
+          ],
+          [
+            2,
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            4,
+            2
+          ],
+          [
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            3
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "leaf_records": [
+        {
+          "companion_dimension": 25,
+          "companion_partitions": [
+            [
+              2,
+              2,
+              2
+            ],
+            [
+              2,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ]
+          ],
+          "exact_invariant_multiplicity": 1,
+          "exact_rank_matched_representation_ring": true,
+          "leaf_basis_isometry_residual": 2.220446049250313e-16,
+          "leaf_range_dimension": 25,
+          "maximum_generator_invariance_residual": 1.9662510541608983e-15,
+          "orientation_mask": 0,
+          "randomized_range_singular_value_gap": 2312270821439345.5,
+          "selected_partitions": [
+            [
+              6
+            ],
+            [
+              4,
+              2
+            ],
+            [
+              3,
+              3
+            ]
+          ],
+          "selected_tensor_dimension": 225,
+          "status": "sparse-invariant-leaf-basis-verified"
+        },
+        {
+          "companion_dimension": 5,
+          "companion_partitions": [
+            [
+              6
+            ],
+            [
+              2,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ]
+          ],
+          "exact_invariant_multiplicity": 2,
+          "exact_rank_matched_representation_ring": true,
+          "leaf_basis_isometry_residual": 1.2326362719492196e-15,
+          "leaf_range_dimension": 10,
+          "maximum_generator_invariance_residual": 1.781331934557732e-15,
+          "orientation_mask": 1,
+          "randomized_range_singular_value_gap": 801108278401321.0,
+          "selected_partitions": [
+            [
+              2,
+              2,
+              2
+            ],
+            [
+              4,
+              2
+            ],
+            [
+              3,
+              3
+            ]
+          ],
+          "selected_tensor_dimension": 1125,
+          "status": "sparse-invariant-leaf-basis-verified"
+        },
+        {
+          "companion_dimension": 45,
+          "companion_partitions": [
+            [
+              2,
+              2,
+              2
+            ],
+            [
+              4,
+              2
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ]
+          ],
+          "exact_invariant_multiplicity": 0,
+          "exact_rank_matched_representation_ring": true,
+          "leaf_basis_isometry_residual": 0.0,
+          "leaf_range_dimension": 0,
+          "maximum_generator_invariance_residual": 0.0,
+          "orientation_mask": 2,
+          "randomized_range_singular_value_gap": null,
+          "selected_partitions": [
+            [
+              6
+            ],
+            [
+              2,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              3,
+              3
+            ]
+          ],
+          "selected_tensor_dimension": 125,
+          "status": "sparse-invariant-leaf-basis-verified"
+        },
+        {
+          "companion_dimension": 9,
+          "companion_partitions": [
+            [
+              6
+            ],
+            [
+              4,
+              2
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ]
+          ],
+          "exact_invariant_multiplicity": 2,
+          "exact_rank_matched_representation_ring": true,
+          "leaf_basis_isometry_residual": 4.441292750871423e-16,
+          "leaf_range_dimension": 18,
+          "maximum_generator_invariance_residual": 2.1742620426278952e-15,
+          "orientation_mask": 3,
+          "randomized_range_singular_value_gap": 628994815113730.2,
+          "selected_partitions": [
+            [
+              2,
+              2,
+              2
+            ],
+            [
+              2,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              3,
+              3
+            ]
+          ],
+          "selected_tensor_dimension": 625,
+          "status": "sparse-invariant-leaf-basis-verified"
+        },
+        {
+          "companion_dimension": 125,
+          "companion_partitions": [
+            [
+              2,
+              2,
+              2
+            ],
+            [
+              2,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              3,
+              3
+            ]
+          ],
+          "exact_invariant_multiplicity": 0,
+          "exact_rank_matched_representation_ring": true,
+          "leaf_basis_isometry_residual": 0.0,
+          "leaf_range_dimension": 0,
+          "maximum_generator_invariance_residual": 0.0,
+          "orientation_mask": 4,
+          "randomized_range_singular_value_gap": null,
+          "selected_partitions": [
+            [
+              6
+            ],
+            [
+              4,
+              2
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ]
+          ],
+          "selected_tensor_dimension": 45,
+          "status": "sparse-invariant-leaf-basis-verified"
+        },
+        {
+          "companion_dimension": 25,
+          "companion_partitions": [
+            [
+              6
+            ],
+            [
+              2,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              3,
+              3
+            ]
+          ],
+          "exact_invariant_multiplicity": 1,
+          "exact_rank_matched_representation_ring": true,
+          "leaf_basis_isometry_residual": 2.220446049250313e-16,
+          "leaf_range_dimension": 25,
+          "maximum_generator_invariance_residual": 1.4768968001932411e-15,
+          "orientation_mask": 5,
+          "randomized_range_singular_value_gap": 997177871413999.6,
+          "selected_partitions": [
+            [
+              2,
+              2,
+              2
+            ],
+            [
+              4,
+              2
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ]
+          ],
+          "selected_tensor_dimension": 225,
+          "status": "sparse-invariant-leaf-basis-verified"
+        },
+        {
+          "companion_dimension": 225,
+          "companion_partitions": [
+            [
+              2,
+              2,
+              2
+            ],
+            [
+              4,
+              2
+            ],
+            [
+              3,
+              3
+            ]
+          ],
+          "exact_invariant_multiplicity": 1,
+          "exact_rank_matched_representation_ring": true,
+          "leaf_basis_isometry_residual": 2.220446049250313e-16,
+          "leaf_range_dimension": 225,
+          "maximum_generator_invariance_residual": 2.500916373389047e-15,
+          "orientation_mask": 6,
+          "randomized_range_singular_value_gap": 474007483730048.56,
+          "selected_partitions": [
+            [
+              6
+            ],
+            [
+              2,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ]
+          ],
+          "selected_tensor_dimension": 25,
+          "status": "sparse-invariant-leaf-basis-verified"
+        },
+        {
+          "companion_dimension": 45,
+          "companion_partitions": [
+            [
+              6
+            ],
+            [
+              4,
+              2
+            ],
+            [
+              3,
+              3
+            ]
+          ],
+          "exact_invariant_multiplicity": 0,
+          "exact_rank_matched_representation_ring": true,
+          "leaf_basis_isometry_residual": 0.0,
+          "leaf_range_dimension": 0,
+          "maximum_generator_invariance_residual": 0.0,
+          "orientation_mask": 7,
+          "randomized_range_singular_value_gap": null,
+          "selected_partitions": [
+            [
+              2,
+              2,
+              2
+            ],
+            [
+              2,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ]
+          ],
+          "selected_tensor_dimension": 125,
+          "status": "sparse-invariant-leaf-basis-verified"
+        }
+      ],
+      "maximum_exact_invariant_multiplicity": 2,
+      "maximum_fractional_half_residual": 6.661338147750939e-16,
+      "maximum_generator_invariance_residual": 2.500916373389047e-15,
+      "maximum_global_block_gram_hermiticity_residual": 0.0,
+      "maximum_leaf_basis_isometry_residual": 1.2326362719492196e-15,
+      "maximum_leaf_range_dimension": 225,
+      "merge_records": [
+        {
+          "active_left_orientation_masks": [
+            3
+          ],
+          "active_right_orientation_masks": [
+            6
+          ],
+          "common_range_dimension": 9,
+          "exact_coefficient_gram_dependency_audit": true,
+          "fractional_eigenvalues": [
+            0.49999999999999956,
+            0.4999999999999997,
+            0.49999999999999994,
+            0.5,
+            0.5000000000000001,
+            0.5000000000000001,
+            0.5000000000000002,
+            0.5000000000000003,
+            0.5000000000000004
+          ],
+          "grading_neutral": true,
+          "grading_neutrality_residual": 9.872856937478408e-16,
+          "left_coefficient_dimension": 18,
+          "left_orientation_masks": [
+            3
+          ],
+          "left_synthesis_rank": 18,
+          "maximum_fractional_half_residual": 4.440892098500626e-16,
+          "node_id": "W6-COLLISION-FREE-RICH-MULTIPLICITY-TWO-W1-3-6",
+          "right_coefficient_dimension": 225,
+          "right_orientation_masks": [
+            6
+          ],
+          "right_synthesis_rank": 225,
+          "status": "exact-neutral-coefficient-gram-dependency"
+        },
+        {
+          "active_left_orientation_masks": [
+            0,
+            3
+          ],
+          "active_right_orientation_masks": [
+            5,
+            6
+          ],
+          "common_range_dimension": 9,
+          "exact_coefficient_gram_dependency_audit": true,
+          "fractional_eigenvalues": [
+            0.49999999999999944,
+            0.49999999999999956,
+            0.4999999999999997,
+            0.49999999999999994,
+            0.5,
+            0.5000000000000001,
+            0.5000000000000002,
+            0.5000000000000006,
+            0.5000000000000007
+          ],
+          "grading_neutral": true,
+          "grading_neutrality_residual": 1.3249657698019134e-15,
+          "left_coefficient_dimension": 43,
+          "left_orientation_masks": [
+            0,
+            3
+          ],
+          "left_synthesis_rank": 43,
+          "maximum_fractional_half_residual": 6.661338147750939e-16,
+          "node_id": "W6-COLLISION-FREE-RICH-MULTIPLICITY-TWO-W2-0-3-5-6",
+          "right_coefficient_dimension": 250,
+          "right_orientation_masks": [
+            5,
+            6
+          ],
+          "right_synthesis_rank": 250,
+          "status": "exact-neutral-coefficient-gram-dependency"
+        },
+        {
+          "active_left_orientation_masks": [
+            0,
+            6
+          ],
+          "active_right_orientation_masks": [
+            3,
+            5
+          ],
+          "common_range_dimension": 9,
+          "exact_coefficient_gram_dependency_audit": true,
+          "fractional_eigenvalues": [
+            0.4999999999999997,
+            0.49999999999999983,
+            0.4999999999999999,
+            0.5,
+            0.5,
+            0.5000000000000001,
+            0.5000000000000001,
+            0.5000000000000002,
+            0.5000000000000003
+          ],
+          "grading_neutral": true,
+          "grading_neutrality_residual": 5.564623491297331e-16,
+          "left_coefficient_dimension": 250,
+          "left_orientation_masks": [
+            0,
+            6
+          ],
+          "left_synthesis_rank": 250,
+          "maximum_fractional_half_residual": 3.3306690738754696e-16,
+          "node_id": "W6-COLLISION-FREE-RICH-MULTIPLICITY-TWO-W2-0-6-3-5",
+          "right_coefficient_dimension": 43,
+          "right_orientation_masks": [
+            3,
+            5
+          ],
+          "right_synthesis_rank": 43,
+          "status": "exact-neutral-coefficient-gram-dependency"
+        },
+        {
+          "active_left_orientation_masks": [
+            1,
+            3
+          ],
+          "active_right_orientation_masks": [
+            6
+          ],
+          "common_range_dimension": 9,
+          "exact_coefficient_gram_dependency_audit": true,
+          "fractional_eigenvalues": [
+            0.4999999999999996,
+            0.4999999999999998,
+            0.49999999999999983,
+            0.5,
+            0.5,
+            0.5000000000000001,
+            0.5000000000000001,
+            0.5000000000000003,
+            0.5000000000000006
+          ],
+          "grading_neutral": true,
+          "grading_neutrality_residual": 1.160102346661906e-15,
+          "left_coefficient_dimension": 28,
+          "left_orientation_masks": [
+            1,
+            3
+          ],
+          "left_synthesis_rank": 28,
+          "maximum_fractional_half_residual": 5.551115123125783e-16,
+          "node_id": "W6-COLLISION-FREE-RICH-MULTIPLICITY-TWO-W2-1-3-4-6",
+          "right_coefficient_dimension": 225,
+          "right_orientation_masks": [
+            4,
+            6
+          ],
+          "right_synthesis_rank": 225,
+          "status": "exact-neutral-coefficient-gram-dependency"
+        },
+        {
+          "active_left_orientation_masks": [
+            1,
+            6
+          ],
+          "active_right_orientation_masks": [
+            3
+          ],
+          "common_range_dimension": 9,
+          "exact_coefficient_gram_dependency_audit": true,
+          "fractional_eigenvalues": [
+            0.4999999999999997,
+            0.4999999999999999,
+            0.49999999999999994,
+            0.5,
+            0.5,
+            0.5000000000000001,
+            0.5000000000000002,
+            0.5000000000000002,
+            0.5000000000000002
+          ],
+          "grading_neutral": true,
+          "grading_neutrality_residual": 5.397204719830809e-16,
+          "left_coefficient_dimension": 235,
+          "left_orientation_masks": [
+            1,
+            6
+          ],
+          "left_synthesis_rank": 235,
+          "maximum_fractional_half_residual": 2.7755575615628914e-16,
+          "node_id": "W6-COLLISION-FREE-RICH-MULTIPLICITY-TWO-W2-1-6-3-4",
+          "right_coefficient_dimension": 18,
+          "right_orientation_masks": [
+            3,
+            4
+          ],
+          "right_synthesis_rank": 18,
+          "status": "exact-neutral-coefficient-gram-dependency"
+        },
+        {
+          "active_left_orientation_masks": [
+            6
+          ],
+          "active_right_orientation_masks": [
+            3
+          ],
+          "common_range_dimension": 9,
+          "exact_coefficient_gram_dependency_audit": true,
+          "fractional_eigenvalues": [
+            0.4999999999999996,
+            0.4999999999999997,
+            0.4999999999999998,
+            0.4999999999999999,
+            0.49999999999999994,
+            0.5,
+            0.5000000000000001,
+            0.5000000000000001,
+            0.5000000000000001
+          ],
+          "grading_neutral": true,
+          "grading_neutrality_residual": 8.023050554438738e-16,
+          "left_coefficient_dimension": 225,
+          "left_orientation_masks": [
+            2,
+            6
+          ],
+          "left_synthesis_rank": 225,
+          "maximum_fractional_half_residual": 3.885780586188048e-16,
+          "node_id": "W6-COLLISION-FREE-RICH-MULTIPLICITY-TWO-W2-2-6-3-7",
+          "right_coefficient_dimension": 18,
+          "right_orientation_masks": [
+            3,
+            7
+          ],
+          "right_synthesis_rank": 18,
+          "status": "exact-neutral-coefficient-gram-dependency"
+        },
+        {
+          "active_left_orientation_masks": [
+            0,
+            1,
+            3
+          ],
+          "active_right_orientation_masks": [
+            5,
+            6
+          ],
+          "common_range_dimension": 9,
+          "exact_coefficient_gram_dependency_audit": true,
+          "fractional_eigenvalues": [
+            0.4999999999999997,
+            0.4999999999999998,
+            0.49999999999999983,
+            0.49999999999999994,
+            0.5,
+            0.5000000000000002,
+            0.5000000000000002,
+            0.5000000000000003,
+            0.5000000000000006
+          ],
+          "grading_neutral": true,
+          "grading_neutrality_residual": 1.0073734846602542e-15,
+          "left_coefficient_dimension": 53,
+          "left_orientation_masks": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "left_synthesis_rank": 53,
+          "maximum_fractional_half_residual": 5.551115123125783e-16,
+          "node_id": "W6-COLLISION-FREE-RICH-MULTIPLICITY-TWO-W4-0-1-2-3-4-5-6-7",
+          "right_coefficient_dimension": 250,
+          "right_orientation_masks": [
+            4,
+            5,
+            6,
+            7
+          ],
+          "right_synthesis_rank": 250,
+          "status": "exact-neutral-coefficient-gram-dependency"
+        },
+        {
+          "active_left_orientation_masks": [
+            0,
+            1,
+            6
+          ],
+          "active_right_orientation_masks": [
+            3,
+            5
+          ],
+          "common_range_dimension": 9,
+          "exact_coefficient_gram_dependency_audit": true,
+          "fractional_eigenvalues": [
+            0.4999999999999999,
+            0.5,
+            0.5,
+            0.5000000000000001,
+            0.5000000000000001,
+            0.5000000000000002,
+            0.5000000000000002,
+            0.5000000000000004,
+            0.5000000000000007
+          ],
+          "grading_neutral": true,
+          "grading_neutrality_residual": 1.3722332341701535e-15,
+          "left_coefficient_dimension": 260,
+          "left_orientation_masks": [
+            0,
+            1,
+            6,
+            7
+          ],
+          "left_synthesis_rank": 260,
+          "maximum_fractional_half_residual": 6.661338147750939e-16,
+          "node_id": "W6-COLLISION-FREE-RICH-MULTIPLICITY-TWO-W4-0-1-6-7-2-3-4-5",
+          "right_coefficient_dimension": 43,
+          "right_orientation_masks": [
+            2,
+            3,
+            4,
+            5
+          ],
+          "right_synthesis_rank": 43,
+          "status": "exact-neutral-coefficient-gram-dependency"
+        },
+        {
+          "active_left_orientation_masks": [
+            0,
+            6
+          ],
+          "active_right_orientation_masks": [
+            1,
+            3,
+            5
+          ],
+          "common_range_dimension": 9,
+          "exact_coefficient_gram_dependency_audit": true,
+          "fractional_eigenvalues": [
+            0.49999999999999944,
+            0.49999999999999967,
+            0.49999999999999983,
+            0.4999999999999999,
+            0.49999999999999994,
+            0.5,
+            0.5,
+            0.5000000000000001,
+            0.5000000000000002
+          ],
+          "grading_neutral": true,
+          "grading_neutrality_residual": 1.1289101390486119e-15,
+          "left_coefficient_dimension": 250,
+          "left_orientation_masks": [
+            0,
+            2,
+            4,
+            6
+          ],
+          "left_synthesis_rank": 250,
+          "maximum_fractional_half_residual": 5.551115123125783e-16,
+          "node_id": "W6-COLLISION-FREE-RICH-MULTIPLICITY-TWO-W4-0-2-4-6-1-3-5-7",
+          "right_coefficient_dimension": 53,
+          "right_orientation_masks": [
+            1,
+            3,
+            5,
+            7
+          ],
+          "right_synthesis_rank": 53,
+          "status": "exact-neutral-coefficient-gram-dependency"
+        },
+        {
+          "active_left_orientation_masks": [
+            0,
+            3
+          ],
+          "active_right_orientation_masks": [
+            1,
+            5,
+            6
+          ],
+          "common_range_dimension": 9,
+          "exact_coefficient_gram_dependency_audit": true,
+          "fractional_eigenvalues": [
+            0.4999999999999996,
+            0.49999999999999967,
+            0.4999999999999998,
+            0.4999999999999999,
+            0.5,
+            0.5,
+            0.5000000000000001,
+            0.5000000000000001,
+            0.5000000000000003
+          ],
+          "grading_neutral": true,
+          "grading_neutrality_residual": 8.300849318394191e-16,
+          "left_coefficient_dimension": 43,
+          "left_orientation_masks": [
+            0,
+            3,
+            4,
+            7
+          ],
+          "left_synthesis_rank": 43,
+          "maximum_fractional_half_residual": 3.885780586188048e-16,
+          "node_id": "W6-COLLISION-FREE-RICH-MULTIPLICITY-TWO-W4-0-3-4-7-1-2-5-6",
+          "right_coefficient_dimension": 260,
+          "right_orientation_masks": [
+            1,
+            2,
+            5,
+            6
+          ],
+          "right_synthesis_rank": 260,
+          "status": "exact-neutral-coefficient-gram-dependency"
+        }
+      ],
+      "n": 6,
+      "neutral_fractional_merge_count": 10,
+      "nonneutral_fractional_merge_count": 0,
+      "observed_fractional_eigenvalues": [
+        0.5
+      ],
+      "physical_ambient_dimension": 5625,
+      "sparse_invariant_basis_audit_verified": true,
+      "status": "sparse-invariant-all-observed-dependencies-neutral",
+      "target_partition": [
+        5,
+        1
+      ],
+      "total_leaf_coefficient_dimension": 303
+    },
+    {
+      "active_orientation_count": 7,
+      "control_id": "W6-COLLISION-FREE-SEVEN-ACTIVE-MULTIPLICITY-FIVE",
+      "first_nonneutral_node_id": null,
+      "fractional_merge_count": 11,
+      "labels": [
+        [
+          [
+            6
+          ],
+          [
+            5,
+            1
+          ]
+        ],
+        [
+          [
+            4,
+            2
+          ],
+          [
+            4,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "leaf_records": [
+        {
+          "companion_dimension": 50,
+          "companion_partitions": [
+            [
+              5,
+              1
+            ],
+            [
+              4,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ]
+          ],
+          "exact_invariant_multiplicity": 1,
+          "exact_rank_matched_representation_ring": true,
+          "leaf_basis_isometry_residual": 3.3306690738754696e-16,
+          "leaf_range_dimension": 50,
+          "maximum_generator_invariance_residual": 1.0836814202949113e-15,
+          "orientation_mask": 0,
+          "randomized_range_singular_value_gap": 938435971561849.1,
+          "selected_partitions": [
+            [
+              6
+            ],
+            [
+              4,
+              2
+            ],
+            [
+              2,
+              1,
+              1,
+              1,
+              1
+            ]
+          ],
+          "selected_tensor_dimension": 450,
+          "status": "sparse-invariant-leaf-basis-verified"
+        },
+        {
+          "companion_dimension": 10,
+          "companion_partitions": [
+            [
+              6
+            ],
+            [
+              4,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ]
+          ],
+          "exact_invariant_multiplicity": 4,
+          "exact_rank_matched_representation_ring": true,
+          "leaf_basis_isometry_residual": 1.1992236398481142e-15,
+          "leaf_range_dimension": 40,
+          "maximum_generator_invariance_residual": 3.0593278467768374e-15,
+          "orientation_mask": 1,
+          "randomized_range_singular_value_gap": 321652663991815.44,
+          "selected_partitions": [
+            [
+              5,
+              1
+            ],
+            [
+              4,
+              2
+            ],
+            [
+              2,
+              1,
+              1,
+              1,
+              1
+            ]
+          ],
+          "selected_tensor_dimension": 2250,
+          "status": "sparse-invariant-leaf-basis-verified"
+        },
+        {
+          "companion_dimension": 45,
+          "companion_partitions": [
+            [
+              5,
+              1
+            ],
+            [
+              4,
+              2
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ]
+          ],
+          "exact_invariant_multiplicity": 1,
+          "exact_rank_matched_representation_ring": true,
+          "leaf_basis_isometry_residual": 4.440892098500626e-16,
+          "leaf_range_dimension": 45,
+          "maximum_generator_invariance_residual": 1.4089411119108217e-15,
+          "orientation_mask": 2,
+          "randomized_range_singular_value_gap": 661171470628587.2,
+          "selected_partitions": [
+            [
+              6
+            ],
+            [
+              4,
+              1,
+              1
+            ],
+            [
+              2,
+              1,
+              1,
+              1,
+              1
+            ]
+          ],
+          "selected_tensor_dimension": 500,
+          "status": "sparse-invariant-leaf-basis-verified"
+        },
+        {
+          "companion_dimension": 9,
+          "companion_partitions": [
+            [
+              6
+            ],
+            [
+              4,
+              2
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ]
+          ],
+          "exact_invariant_multiplicity": 5,
+          "exact_rank_matched_representation_ring": true,
+          "leaf_basis_isometry_residual": 3.788701513070789e-15,
+          "leaf_range_dimension": 45,
+          "maximum_generator_invariance_residual": 5.586815818749846e-15,
+          "orientation_mask": 3,
+          "randomized_range_singular_value_gap": 223797380322502.16,
+          "selected_partitions": [
+            [
+              5,
+              1
+            ],
+            [
+              4,
+              1,
+              1
+            ],
+            [
+              2,
+              1,
+              1,
+              1,
+              1
+            ]
+          ],
+          "selected_tensor_dimension": 2500,
+          "status": "sparse-invariant-leaf-basis-verified"
+        },
+        {
+          "companion_dimension": 250,
+          "companion_partitions": [
+            [
+              5,
+              1
+            ],
+            [
+              4,
+              1,
+              1
+            ],
+            [
+              2,
+              1,
+              1,
+              1,
+              1
+            ]
+          ],
+          "exact_invariant_multiplicity": 0,
+          "exact_rank_matched_representation_ring": true,
+          "leaf_basis_isometry_residual": 0.0,
+          "leaf_range_dimension": 0,
+          "maximum_generator_invariance_residual": 0.0,
+          "orientation_mask": 4,
+          "randomized_range_singular_value_gap": null,
+          "selected_partitions": [
+            [
+              6
+            ],
+            [
+              4,
+              2
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ]
+          ],
+          "selected_tensor_dimension": 90,
+          "status": "sparse-invariant-leaf-basis-verified"
+        },
+        {
+          "companion_dimension": 50,
+          "companion_partitions": [
+            [
+              6
+            ],
+            [
+              4,
+              1,
+              1
+            ],
+            [
+              2,
+              1,
+              1,
+              1,
+              1
+            ]
+          ],
+          "exact_invariant_multiplicity": 1,
+          "exact_rank_matched_representation_ring": true,
+          "leaf_basis_isometry_residual": 2.220446049250313e-16,
+          "leaf_range_dimension": 50,
+          "maximum_generator_invariance_residual": 1.2072779162206955e-15,
+          "orientation_mask": 5,
+          "randomized_range_singular_value_gap": 805009361076305.4,
+          "selected_partitions": [
+            [
+              5,
+              1
+            ],
+            [
+              4,
+              2
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ]
+          ],
+          "selected_tensor_dimension": 450,
+          "status": "sparse-invariant-leaf-basis-verified"
+        },
+        {
+          "companion_dimension": 225,
+          "companion_partitions": [
+            [
+              5,
+              1
+            ],
+            [
+              4,
+              2
+            ],
+            [
+              2,
+              1,
+              1,
+              1,
+              1
+            ]
+          ],
+          "exact_invariant_multiplicity": 1,
+          "exact_rank_matched_representation_ring": true,
+          "leaf_basis_isometry_residual": 1.1102230246251565e-16,
+          "leaf_range_dimension": 225,
+          "maximum_generator_invariance_residual": 1.1585597185431704e-15,
+          "orientation_mask": 6,
+          "randomized_range_singular_value_gap": 688235770097289.2,
+          "selected_partitions": [
+            [
+              6
+            ],
+            [
+              4,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ]
+          ],
+          "selected_tensor_dimension": 100,
+          "status": "sparse-invariant-leaf-basis-verified"
+        },
+        {
+          "companion_dimension": 45,
+          "companion_partitions": [
+            [
+              6
+            ],
+            [
+              4,
+              2
+            ],
+            [
+              2,
+              1,
+              1,
+              1,
+              1
+            ]
+          ],
+          "exact_invariant_multiplicity": 1,
+          "exact_rank_matched_representation_ring": true,
+          "leaf_basis_isometry_residual": 5.551115123125783e-16,
+          "leaf_range_dimension": 45,
+          "maximum_generator_invariance_residual": 1.6663990521775344e-15,
+          "orientation_mask": 7,
+          "randomized_range_singular_value_gap": 743869325695089.8,
+          "selected_partitions": [
+            [
+              5,
+              1
+            ],
+            [
+              4,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ]
+          ],
+          "selected_tensor_dimension": 500,
+          "status": "sparse-invariant-leaf-basis-verified"
+        }
+      ],
+      "maximum_exact_invariant_multiplicity": 5,
+      "maximum_fractional_half_residual": 6.661338147750939e-16,
+      "maximum_generator_invariance_residual": 5.586815818749846e-15,
+      "maximum_global_block_gram_hermiticity_residual": 0.0,
+      "maximum_leaf_basis_isometry_residual": 3.788701513070789e-15,
+      "maximum_leaf_range_dimension": 225,
+      "merge_records": [
+        {
+          "active_left_orientation_masks": [
+            3
+          ],
+          "active_right_orientation_masks": [
+            6
+          ],
+          "common_range_dimension": 9,
+          "exact_coefficient_gram_dependency_audit": true,
+          "fractional_eigenvalues": [
+            0.4999999999999998,
+            0.4999999999999999,
+            0.49999999999999994,
+            0.5,
+            0.5000000000000001,
+            0.5000000000000001,
+            0.5000000000000003,
+            0.5000000000000003,
+            0.5000000000000007
+          ],
+          "grading_neutral": true,
+          "grading_neutrality_residual": 1.247714486064702e-15,
+          "left_coefficient_dimension": 45,
+          "left_orientation_masks": [
+            3
+          ],
+          "left_synthesis_rank": 45,
+          "maximum_fractional_half_residual": 6.661338147750939e-16,
+          "node_id": "W6-COLLISION-FREE-SEVEN-ACTIVE-MULTIPLICITY-FIVE-W1-3-6",
+          "right_coefficient_dimension": 225,
+          "right_orientation_masks": [
+            6
+          ],
+          "right_synthesis_rank": 225,
+          "status": "exact-neutral-coefficient-gram-dependency"
+        },
+        {
+          "active_left_orientation_masks": [
+            0,
+            3
+          ],
+          "active_right_orientation_masks": [
+            5,
+            6
+          ],
+          "common_range_dimension": 9,
+          "exact_coefficient_gram_dependency_audit": true,
+          "fractional_eigenvalues": [
+            0.49999999999999967,
+            0.4999999999999998,
+            0.4999999999999999,
+            0.4999999999999999,
+            0.49999999999999994,
+            0.5,
+            0.5000000000000001,
+            0.5000000000000002,
+            0.5000000000000004
+          ],
+          "grading_neutral": true,
+          "grading_neutrality_residual": 9.074899433035766e-16,
+          "left_coefficient_dimension": 95,
+          "left_orientation_masks": [
+            0,
+            3
+          ],
+          "left_synthesis_rank": 95,
+          "maximum_fractional_half_residual": 4.440892098500626e-16,
+          "node_id": "W6-COLLISION-FREE-SEVEN-ACTIVE-MULTIPLICITY-FIVE-W2-0-3-5-6",
+          "right_coefficient_dimension": 275,
+          "right_orientation_masks": [
+            5,
+            6
+          ],
+          "right_synthesis_rank": 275,
+          "status": "exact-neutral-coefficient-gram-dependency"
+        },
+        {
+          "active_left_orientation_masks": [
+            0,
+            6
+          ],
+          "active_right_orientation_masks": [
+            3,
+            5
+          ],
+          "common_range_dimension": 9,
+          "exact_coefficient_gram_dependency_audit": true,
+          "fractional_eigenvalues": [
+            0.4999999999999998,
+            0.4999999999999999,
+            0.49999999999999994,
+            0.5,
+            0.5000000000000001,
+            0.5000000000000001,
+            0.5000000000000002,
+            0.5000000000000003,
+            0.5000000000000006
+          ],
+          "grading_neutral": true,
+          "grading_neutrality_residual": 1.0275332987822592e-15,
+          "left_coefficient_dimension": 275,
+          "left_orientation_masks": [
+            0,
+            6
+          ],
+          "left_synthesis_rank": 275,
+          "maximum_fractional_half_residual": 5.551115123125783e-16,
+          "node_id": "W6-COLLISION-FREE-SEVEN-ACTIVE-MULTIPLICITY-FIVE-W2-0-6-3-5",
+          "right_coefficient_dimension": 95,
+          "right_orientation_masks": [
+            3,
+            5
+          ],
+          "right_synthesis_rank": 95,
+          "status": "exact-neutral-coefficient-gram-dependency"
+        },
+        {
+          "active_left_orientation_masks": [
+            1,
+            3
+          ],
+          "active_right_orientation_masks": [
+            6
+          ],
+          "common_range_dimension": 9,
+          "exact_coefficient_gram_dependency_audit": true,
+          "fractional_eigenvalues": [
+            0.4999999999999995,
+            0.4999999999999997,
+            0.4999999999999999,
+            0.49999999999999994,
+            0.49999999999999994,
+            0.5000000000000001,
+            0.5000000000000001,
+            0.5000000000000001,
+            0.5000000000000003
+          ],
+          "grading_neutral": true,
+          "grading_neutrality_residual": 9.73436366174214e-16,
+          "left_coefficient_dimension": 85,
+          "left_orientation_masks": [
+            1,
+            3
+          ],
+          "left_synthesis_rank": 85,
+          "maximum_fractional_half_residual": 4.996003610813204e-16,
+          "node_id": "W6-COLLISION-FREE-SEVEN-ACTIVE-MULTIPLICITY-FIVE-W2-1-3-4-6",
+          "right_coefficient_dimension": 225,
+          "right_orientation_masks": [
+            4,
+            6
+          ],
+          "right_synthesis_rank": 225,
+          "status": "exact-neutral-coefficient-gram-dependency"
+        },
+        {
+          "active_left_orientation_masks": [
+            1,
+            6
+          ],
+          "active_right_orientation_masks": [
+            3
+          ],
+          "common_range_dimension": 9,
+          "exact_coefficient_gram_dependency_audit": true,
+          "fractional_eigenvalues": [
+            0.49999999999999983,
+            0.4999999999999999,
+            0.49999999999999994,
+            0.5,
+            0.5,
+            0.5000000000000001,
+            0.5000000000000001,
+            0.5000000000000002,
+            0.5000000000000004
+          ],
+          "grading_neutral": true,
+          "grading_neutrality_residual": 8.2759472820622e-16,
+          "left_coefficient_dimension": 265,
+          "left_orientation_masks": [
+            1,
+            6
+          ],
+          "left_synthesis_rank": 265,
+          "maximum_fractional_half_residual": 4.440892098500626e-16,
+          "node_id": "W6-COLLISION-FREE-SEVEN-ACTIVE-MULTIPLICITY-FIVE-W2-1-6-3-4",
+          "right_coefficient_dimension": 45,
+          "right_orientation_masks": [
+            3,
+            4
+          ],
+          "right_synthesis_rank": 45,
+          "status": "exact-neutral-coefficient-gram-dependency"
+        },
+        {
+          "active_left_orientation_masks": [
+            2,
+            3
+          ],
+          "active_right_orientation_masks": [
+            6,
+            7
+          ],
+          "common_range_dimension": 9,
+          "exact_coefficient_gram_dependency_audit": true,
+          "fractional_eigenvalues": [
+            0.49999999999999956,
+            0.4999999999999997,
+            0.4999999999999998,
+            0.4999999999999999,
+            0.49999999999999994,
+            0.5,
+            0.5,
+            0.5000000000000001,
+            0.5000000000000002
+          ],
+          "grading_neutral": true,
+          "grading_neutrality_residual": 8.349665498464149e-16,
+          "left_coefficient_dimension": 90,
+          "left_orientation_masks": [
+            2,
+            3
+          ],
+          "left_synthesis_rank": 90,
+          "maximum_fractional_half_residual": 4.440892098500626e-16,
+          "node_id": "W6-COLLISION-FREE-SEVEN-ACTIVE-MULTIPLICITY-FIVE-W2-2-3-6-7",
+          "right_coefficient_dimension": 270,
+          "right_orientation_masks": [
+            6,
+            7
+          ],
+          "right_synthesis_rank": 270,
+          "status": "exact-neutral-coefficient-gram-dependency"
+        },
+        {
+          "active_left_orientation_masks": [
+            2,
+            6
+          ],
+          "active_right_orientation_masks": [
+            3,
+            7
+          ],
+          "common_range_dimension": 9,
+          "exact_coefficient_gram_dependency_audit": true,
+          "fractional_eigenvalues": [
+            0.49999999999999967,
+            0.4999999999999997,
+            0.4999999999999998,
+            0.4999999999999999,
+            0.5,
+            0.5,
+            0.5000000000000001,
+            0.5000000000000002,
+            0.5000000000000004
+          ],
+          "grading_neutral": true,
+          "grading_neutrality_residual": 9.398682910442295e-16,
+          "left_coefficient_dimension": 270,
+          "left_orientation_masks": [
+            2,
+            6
+          ],
+          "left_synthesis_rank": 270,
+          "maximum_fractional_half_residual": 4.440892098500626e-16,
+          "node_id": "W6-COLLISION-FREE-SEVEN-ACTIVE-MULTIPLICITY-FIVE-W2-2-6-3-7",
+          "right_coefficient_dimension": 90,
+          "right_orientation_masks": [
+            3,
+            7
+          ],
+          "right_synthesis_rank": 90,
+          "status": "exact-neutral-coefficient-gram-dependency"
+        },
+        {
+          "active_left_orientation_masks": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "active_right_orientation_masks": [
+            5,
+            6,
+            7
+          ],
+          "common_range_dimension": 9,
+          "exact_coefficient_gram_dependency_audit": true,
+          "fractional_eigenvalues": [
+            0.4999999999999997,
+            0.4999999999999998,
+            0.4999999999999998,
+            0.49999999999999994,
+            0.5,
+            0.5000000000000001,
+            0.5000000000000001,
+            0.5000000000000002,
+            0.5000000000000003
+          ],
+          "grading_neutral": true,
+          "grading_neutrality_residual": 6.815739988122273e-16,
+          "left_coefficient_dimension": 180,
+          "left_orientation_masks": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "left_synthesis_rank": 180,
+          "maximum_fractional_half_residual": 3.3306690738754696e-16,
+          "node_id": "W6-COLLISION-FREE-SEVEN-ACTIVE-MULTIPLICITY-FIVE-W4-0-1-2-3-4-5-6-7",
+          "right_coefficient_dimension": 320,
+          "right_orientation_masks": [
+            4,
+            5,
+            6,
+            7
+          ],
+          "right_synthesis_rank": 320,
+          "status": "exact-neutral-coefficient-gram-dependency"
+        },
+        {
+          "active_left_orientation_masks": [
+            0,
+            1,
+            6,
+            7
+          ],
+          "active_right_orientation_masks": [
+            2,
+            3,
+            5
+          ],
+          "common_range_dimension": 9,
+          "exact_coefficient_gram_dependency_audit": true,
+          "fractional_eigenvalues": [
+            0.4999999999999997,
+            0.49999999999999983,
+            0.4999999999999999,
+            0.49999999999999994,
+            0.5000000000000001,
+            0.5000000000000001,
+            0.5000000000000002,
+            0.5000000000000002,
+            0.5000000000000003
+          ],
+          "grading_neutral": true,
+          "grading_neutrality_residual": 6.026392411905499e-16,
+          "left_coefficient_dimension": 360,
+          "left_orientation_masks": [
+            0,
+            1,
+            6,
+            7
+          ],
+          "left_synthesis_rank": 360,
+          "maximum_fractional_half_residual": 3.3306690738754696e-16,
+          "node_id": "W6-COLLISION-FREE-SEVEN-ACTIVE-MULTIPLICITY-FIVE-W4-0-1-6-7-2-3-4-5",
+          "right_coefficient_dimension": 140,
+          "right_orientation_masks": [
+            2,
+            3,
+            4,
+            5
+          ],
+          "right_synthesis_rank": 140,
+          "status": "exact-neutral-coefficient-gram-dependency"
+        },
+        {
+          "active_left_orientation_masks": [
+            0,
+            2,
+            6
+          ],
+          "active_right_orientation_masks": [
+            1,
+            3,
+            5,
+            7
+          ],
+          "common_range_dimension": 9,
+          "exact_coefficient_gram_dependency_audit": true,
+          "fractional_eigenvalues": [
+            0.49999999999999944,
+            0.4999999999999997,
+            0.49999999999999983,
+            0.4999999999999999,
+            0.49999999999999994,
+            0.5000000000000001,
+            0.5000000000000001,
+            0.5000000000000002,
+            0.5000000000000003
+          ],
+          "grading_neutral": true,
+          "grading_neutrality_residual": 1.0769415549946068e-15,
+          "left_coefficient_dimension": 320,
+          "left_orientation_masks": [
+            0,
+            2,
+            4,
+            6
+          ],
+          "left_synthesis_rank": 320,
+          "maximum_fractional_half_residual": 5.551115123125783e-16,
+          "node_id": "W6-COLLISION-FREE-SEVEN-ACTIVE-MULTIPLICITY-FIVE-W4-0-2-4-6-1-3-5-7",
+          "right_coefficient_dimension": 180,
+          "right_orientation_masks": [
+            1,
+            3,
+            5,
+            7
+          ],
+          "right_synthesis_rank": 180,
+          "status": "exact-neutral-coefficient-gram-dependency"
+        },
+        {
+          "active_left_orientation_masks": [
+            0,
+            3,
+            7
+          ],
+          "active_right_orientation_masks": [
+            1,
+            2,
+            5,
+            6
+          ],
+          "common_range_dimension": 9,
+          "exact_coefficient_gram_dependency_audit": true,
+          "fractional_eigenvalues": [
+            0.4999999999999996,
+            0.49999999999999967,
+            0.4999999999999998,
+            0.4999999999999999,
+            0.5,
+            0.5000000000000001,
+            0.5000000000000001,
+            0.5000000000000002,
+            0.5000000000000004
+          ],
+          "grading_neutral": true,
+          "grading_neutrality_residual": 8.723172283494627e-16,
+          "left_coefficient_dimension": 140,
+          "left_orientation_masks": [
+            0,
+            3,
+            4,
+            7
+          ],
+          "left_synthesis_rank": 140,
+          "maximum_fractional_half_residual": 4.440892098500626e-16,
+          "node_id": "W6-COLLISION-FREE-SEVEN-ACTIVE-MULTIPLICITY-FIVE-W4-0-3-4-7-1-2-5-6",
+          "right_coefficient_dimension": 360,
+          "right_orientation_masks": [
+            1,
+            2,
+            5,
+            6
+          ],
+          "right_synthesis_rank": 360,
+          "status": "exact-neutral-coefficient-gram-dependency"
+        }
+      ],
+      "n": 6,
+      "neutral_fractional_merge_count": 11,
+      "nonneutral_fractional_merge_count": 0,
+      "observed_fractional_eigenvalues": [
+        0.5
+      ],
+      "physical_ambient_dimension": 22500,
+      "sparse_invariant_basis_audit_verified": true,
+      "status": "sparse-invariant-all-observed-dependencies-neutral",
+      "target_partition": [
+        3,
+        1,
+        1,
+        1
+      ],
+      "total_leaf_coefficient_dimension": 500
+    }
+  ],
+  "created_at": "2026-08-06T04:21:58.344978+00:00",
+  "falsifiers_triggered": [
+    "Dense physical projector construction is not necessary for finite higher-multiplicity dependency audits.",
+    "A compact finite coefficient Gram does not imply an efficient all-n basis transform.",
+    "The first selected collision-free S6 multiplicity-two sector does not by itself falsify neutrality."
+  ],
+  "headline_metrics": {
+    "all_n_neutrality_theorem_count": 0,
+    "all_n_sparse_invariant_transform_count": 0,
+    "dense_w3_leaf_rank_crosscheck_count": 1,
+    "maximum_exact_invariant_multiplicity_reached": 5,
+    "maximum_physical_ambient_dimension_avoided": 22500,
+    "maximum_total_leaf_coefficient_dimension": 500,
+    "new_quantum_algorithm_count": 0,
+    "sparse_invariant_control_count": 3,
+    "sparse_invariant_validation_failure_count": 0,
+    "w6_active_orientation_count": 7,
+    "w6_fractional_merge_count": 21,
+    "w6_maximum_fractional_half_residual": 6.661338147750939e-16,
+    "w6_nonneutral_fractional_merge_count": 0
+  },
+  "method_contract": {
+    "coefficient_gram_reduction": "All cross-dependency grading defects are computed from the concatenated leaf-basis Gram, never from dense physical frame operators.",
+    "orientation_range_factorization": "ran(E_e)=Inv(V_nu tensor selected irreps) tensor companion spaces.",
+    "range_extraction": "Finite group averaging is applied to m+O(1) random vectors in the selected tensor space and verified against adjacent generators.",
+    "rank_oracle": "The invariant rank is computed exactly from tensor-product multiplicities before randomized range extraction.",
+    "scope": "This removes the finite dense-memory barrier but still enumerates S_n and is not an efficient all-n transform."
+  },
+  "proof_obligations": [
+    {
+      "obligation": "sparse_invariant_range_factorization",
+      "resolution": "Exact representation ranks, generator invariance, and dense W3 leaf ranks agree.",
+      "resolved": true
+    },
+    {
+      "obligation": "first_collision_free_multiplicity_sector_balance",
+      "resolution": "The selected S6 multiplicity-two sector has been audited exactly in coefficient Gram space; its result is recorded without extrapolation.",
+      "resolved": true
+    },
+    {
+      "obligation": "all_n_sparse_invariant_transform",
+      "resolution": "The finite extractor enumerates every group element and stores physical leaf bases.",
+      "resolved": false
+    }
+  ],
+  "scaling_records": [
+    {
+      "all_n_dependency_neutrality_proved": false,
+      "dense_physical_projector_required": false,
+      "finite_invariant_range_basis_available": true,
+      "group_enumeration_is_factorial": true,
+      "n": 6,
+      "polynomial_all_n_invariant_basis_transform_proved": false,
+      "status": "finite-sparse-range-audit-not-all-n-transform"
+    },
+    {
+      "all_n_dependency_neutrality_proved": false,
+      "dense_physical_projector_required": false,
+      "finite_invariant_range_basis_available": true,
+      "group_enumeration_is_factorial": true,
+      "n": 8,
+      "polynomial_all_n_invariant_basis_transform_proved": false,
+      "status": "finite-sparse-range-audit-not-all-n-transform"
+    },
+    {
+      "all_n_dependency_neutrality_proved": false,
+      "dense_physical_projector_required": false,
+      "finite_invariant_range_basis_available": true,
+      "group_enumeration_is_factorial": true,
+      "n": 16,
+      "polynomial_all_n_invariant_basis_transform_proved": false,
+      "status": "finite-sparse-range-audit-not-all-n-transform"
+    },
+    {
+      "all_n_dependency_neutrality_proved": false,
+      "dense_physical_projector_required": false,
+      "finite_invariant_range_basis_available": true,
+      "group_enumeration_is_factorial": true,
+      "n": 32,
+      "polynomial_all_n_invariant_basis_transform_proved": false,
+      "status": "finite-sparse-range-audit-not-all-n-transform"
+    },
+    {
+      "all_n_dependency_neutrality_proved": false,
+      "dense_physical_projector_required": false,
+      "finite_invariant_range_basis_available": true,
+      "group_enumeration_is_factorial": true,
+      "n": 64,
+      "polynomial_all_n_invariant_basis_transform_proved": false,
+      "status": "finite-sparse-range-audit-not-all-n-transform"
+    },
+    {
+      "all_n_dependency_neutrality_proved": false,
+      "dense_physical_projector_required": false,
+      "finite_invariant_range_basis_available": true,
+      "group_enumeration_is_factorial": true,
+      "n": 128,
+      "polynomial_all_n_invariant_basis_transform_proved": false,
+      "status": "finite-sparse-range-audit-not-all-n-transform"
+    }
+  ],
+  "status": "s6-selected-multiplicity-sector-neutral-broader-search-open",
+  "summary": "Built an invariant-range/coefficient-Gram audit that reaches a 5,625-dimensional S6 multiplicity-two physical sector without dense projectors; the exact balance outcome is recorded and broader multiplicity search remains open."
+}

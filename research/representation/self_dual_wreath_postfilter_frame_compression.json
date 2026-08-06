@@ -1,0 +1,3545 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "The isotypic measurement cannot flatten the average frame.",
+      "resolution": "Only if its label is discarded: equation (1) then removes it. The coherent-tagged channel is equation (2), and two exact W4 controls show a strict conditioned improvement.",
+      "resolved": true
+    },
+    {
+      "objection": "Any decrease in the raw top eigenvalue is progress.",
+      "resolution": "Postselection divides by retained probability. All discarded-label decreases are too small; coherent tagging produces only two finite conditioned improvements.",
+      "resolved": true
+    },
+    {
+      "objection": "Finite norm preservation proves an asymptotic no-go.",
+      "resolution": "It does not. At large n the selected filter may remove a spectrally sparse obstruction while retaining probability 1-o(1).",
+      "resolved": false
+    },
+    {
+      "objection": "Moore-Russell-Sniady already covers this filter.",
+      "resolution": "Their formal sieve combines two states and retains irrep-name transcripts. This filter globally resolves orientation multiplicity data, so a direct reduction to that model is absent.",
+      "resolved": false
+    }
+  ],
+  "claim_gate": {
+    "classical_separation_proved": false,
+    "coherent_isotypic_label_can_reduce_conditioned_frame_norm": true,
+    "complete_hidden_permutation_measurement_proved": false,
+    "discarded_isotypic_label_has_independent_average_spectral_gain": false,
+    "exact_average_frame_compression_proved": true,
+    "finite_coherent_tagged_conditioned_frame_norm_improvement_observed": true,
+    "finite_discarded_label_conditioned_frame_norm_improvement_observed": false,
+    "finite_raw_norm_reduction_universal": false,
+    "polynomial_hidden_permutation_decoder_proved": false,
+    "postfilter_polynomial_frame_norm_proved": false,
+    "reason": "Discarding the isotypic label is exactly a principal compression and gives no finite conditioned gain. Coherent label retention gives two W4 gains, but no all-n tagged-sector norm theorem, decoder, or classical separation exists.",
+    "speedup_claim_allowed": false,
+    "typical_large_n_bad_eigenvalue_count_bounded": false
+  },
+  "created_at": "2026-08-06T00:28:01.556148+00:00",
+  "exact_controls": [
+    {
+      "accepted_projector_idempotence_residual": 0.0,
+      "accepted_rank": 54,
+      "accepted_top_intersection_dimension": 1,
+      "active_isotypic_sector_count": 4,
+      "coherently_tagged_conditioned_top_norm_ratio": 1.3584905660377367,
+      "coherently_tagged_frame_norm_improved": false,
+      "coherently_tagged_frame_top_eigenvalue_after": 0.37500000000000017,
+      "coherently_tagged_raw_top_norm_ratio": 1.0000000000000007,
+      "conditioned_top_norm_ratio": 1.3584905660377362,
+      "control_id": "W4-0-FULL",
+      "copy_count": 2,
+      "equality_criterion_predicts_top_preservation": true,
+      "exact_compression_theorem_verified": true,
+      "filtered_frame_top_eigenvalue_after": 0.37500000000000006,
+      "frame_top_eigenvalue_before": 0.37499999999999994,
+      "interlacing_bound_verified": true,
+      "interlacing_lower_bound": 0.2500000000000001,
+      "isotypic_frame_commutator_residual": 4.5936452613393034e-17,
+      "kraus_to_direct_compression_residual": 1.9915480774383561e-16,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximizing_tagged_isotypic_partition": [
+        2,
+        2
+      ],
+      "n": 4,
+      "orientation_generators": [
+        1,
+        2
+      ],
+      "physical_dimension": 72,
+      "raw_top_norm_ratio": 1.0000000000000002,
+      "raw_top_preserved": true,
+      "rejected_hilbert_fraction": 0.25,
+      "rejected_rank": 18,
+      "retained_trace_fraction": 0.7361111111111112,
+      "status": "exact-compression-top-preserved",
+      "tagged_frame_no_larger_than_discarded_verified": true,
+      "top_eigenspace_dimension": 4
+    },
+    {
+      "accepted_projector_idempotence_residual": 2.220446049250313e-16,
+      "accepted_rank": 36,
+      "accepted_top_intersection_dimension": 1,
+      "active_isotypic_sector_count": 4,
+      "coherently_tagged_conditioned_top_norm_ratio": 2.1176470588235294,
+      "coherently_tagged_frame_norm_improved": false,
+      "coherently_tagged_frame_top_eigenvalue_after": 0.375,
+      "coherently_tagged_raw_top_norm_ratio": 1.0000000000000002,
+      "conditioned_top_norm_ratio": 2.1176470588235294,
+      "control_id": "W4-0-DIAGONAL",
+      "copy_count": 2,
+      "equality_criterion_predicts_top_preservation": true,
+      "exact_compression_theorem_verified": true,
+      "filtered_frame_top_eigenvalue_after": 0.375,
+      "frame_top_eigenvalue_before": 0.37499999999999994,
+      "interlacing_bound_verified": true,
+      "interlacing_lower_bound": 0.24999999999999997,
+      "isotypic_frame_commutator_residual": 4.5936452613393034e-17,
+      "kraus_to_direct_compression_residual": 1.7058391979079072e-16,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximizing_tagged_isotypic_partition": [
+        2,
+        2
+      ],
+      "n": 4,
+      "orientation_generators": [
+        3
+      ],
+      "physical_dimension": 72,
+      "raw_top_norm_ratio": 1.0000000000000002,
+      "raw_top_preserved": true,
+      "rejected_hilbert_fraction": 0.5,
+      "rejected_rank": 36,
+      "retained_trace_fraction": 0.4722222222222223,
+      "status": "exact-compression-top-preserved",
+      "tagged_frame_no_larger_than_discarded_verified": true,
+      "top_eigenspace_dimension": 4
+    },
+    {
+      "accepted_projector_idempotence_residual": 0.0,
+      "accepted_rank": 54,
+      "accepted_top_intersection_dimension": 9,
+      "active_isotypic_sector_count": 2,
+      "coherently_tagged_conditioned_top_norm_ratio": 1.3584905660377347,
+      "coherently_tagged_frame_norm_improved": false,
+      "coherently_tagged_frame_top_eigenvalue_after": 0.3333333333333333,
+      "coherently_tagged_raw_top_norm_ratio": 0.9999999999999992,
+      "conditioned_top_norm_ratio": 1.3584905660377353,
+      "control_id": "W4-1-FULL",
+      "copy_count": 2,
+      "equality_criterion_predicts_top_preservation": true,
+      "exact_compression_theorem_verified": true,
+      "filtered_frame_top_eigenvalue_after": 0.3333333333333335,
+      "frame_top_eigenvalue_before": 0.3333333333333336,
+      "interlacing_bound_verified": true,
+      "interlacing_lower_bound": 0.2500000000000003,
+      "isotypic_frame_commutator_residual": 3.9258484237454586e-17,
+      "kraus_to_direct_compression_residual": 1.6222149499681875e-16,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximizing_tagged_isotypic_partition": [
+        2,
+        1,
+        1
+      ],
+      "n": 4,
+      "orientation_generators": [
+        1,
+        2
+      ],
+      "physical_dimension": 72,
+      "raw_top_norm_ratio": 0.9999999999999997,
+      "raw_top_preserved": true,
+      "rejected_hilbert_fraction": 0.25,
+      "rejected_rank": 18,
+      "retained_trace_fraction": 0.7361111111111112,
+      "status": "exact-compression-top-preserved",
+      "tagged_frame_no_larger_than_discarded_verified": true,
+      "top_eigenspace_dimension": 18
+    },
+    {
+      "accepted_projector_idempotence_residual": 2.220446049250313e-16,
+      "accepted_rank": 36,
+      "accepted_top_intersection_dimension": 6,
+      "active_isotypic_sector_count": 2,
+      "coherently_tagged_conditioned_top_norm_ratio": 2.117647058823529,
+      "coherently_tagged_frame_norm_improved": false,
+      "coherently_tagged_frame_top_eigenvalue_after": 0.3333333333333335,
+      "coherently_tagged_raw_top_norm_ratio": 0.9999999999999997,
+      "conditioned_top_norm_ratio": 2.117647058823529,
+      "control_id": "W4-1-DIAGONAL",
+      "copy_count": 2,
+      "equality_criterion_predicts_top_preservation": true,
+      "exact_compression_theorem_verified": true,
+      "filtered_frame_top_eigenvalue_after": 0.3333333333333335,
+      "frame_top_eigenvalue_before": 0.3333333333333336,
+      "interlacing_bound_verified": true,
+      "interlacing_lower_bound": 0.24999999999999994,
+      "isotypic_frame_commutator_residual": 3.9258484237454586e-17,
+      "kraus_to_direct_compression_residual": 1.7071166553986996e-16,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximizing_tagged_isotypic_partition": [
+        3,
+        1
+      ],
+      "n": 4,
+      "orientation_generators": [
+        3
+      ],
+      "physical_dimension": 72,
+      "raw_top_norm_ratio": 0.9999999999999997,
+      "raw_top_preserved": true,
+      "rejected_hilbert_fraction": 0.5,
+      "rejected_rank": 36,
+      "retained_trace_fraction": 0.4722222222222222,
+      "status": "exact-compression-top-preserved",
+      "tagged_frame_no_larger_than_discarded_verified": true,
+      "top_eigenspace_dimension": 18
+    },
+    {
+      "accepted_projector_idempotence_residual": 0.0,
+      "accepted_rank": 54,
+      "accepted_top_intersection_dimension": 1,
+      "active_isotypic_sector_count": 4,
+      "coherently_tagged_conditioned_top_norm_ratio": 1.358490566037736,
+      "coherently_tagged_frame_norm_improved": false,
+      "coherently_tagged_frame_top_eigenvalue_after": 0.3750000000000001,
+      "coherently_tagged_raw_top_norm_ratio": 1.0,
+      "conditioned_top_norm_ratio": 1.3584905660377349,
+      "control_id": "W4-2-FULL",
+      "copy_count": 2,
+      "equality_criterion_predicts_top_preservation": true,
+      "exact_compression_theorem_verified": true,
+      "filtered_frame_top_eigenvalue_after": 0.37499999999999983,
+      "frame_top_eigenvalue_before": 0.3750000000000001,
+      "interlacing_bound_verified": true,
+      "interlacing_lower_bound": 0.2500000000000001,
+      "isotypic_frame_commutator_residual": 3.4600654247985675e-17,
+      "kraus_to_direct_compression_residual": 1.8494345392990954e-16,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      ],
+      "maximizing_tagged_isotypic_partition": [
+        2,
+        2
+      ],
+      "n": 4,
+      "orientation_generators": [
+        1,
+        2
+      ],
+      "physical_dimension": 72,
+      "raw_top_norm_ratio": 0.9999999999999992,
+      "raw_top_preserved": true,
+      "rejected_hilbert_fraction": 0.25,
+      "rejected_rank": 18,
+      "retained_trace_fraction": 0.7361111111111112,
+      "status": "exact-compression-top-preserved",
+      "tagged_frame_no_larger_than_discarded_verified": true,
+      "top_eigenspace_dimension": 4
+    },
+    {
+      "accepted_projector_idempotence_residual": 2.220446049250313e-16,
+      "accepted_rank": 36,
+      "accepted_top_intersection_dimension": 1,
+      "active_isotypic_sector_count": 4,
+      "coherently_tagged_conditioned_top_norm_ratio": 2.117647058823528,
+      "coherently_tagged_frame_norm_improved": false,
+      "coherently_tagged_frame_top_eigenvalue_after": 0.375,
+      "coherently_tagged_raw_top_norm_ratio": 0.9999999999999997,
+      "conditioned_top_norm_ratio": 2.1176470588235285,
+      "control_id": "W4-2-DIAGONAL",
+      "copy_count": 2,
+      "equality_criterion_predicts_top_preservation": true,
+      "exact_compression_theorem_verified": true,
+      "filtered_frame_top_eigenvalue_after": 0.37500000000000006,
+      "frame_top_eigenvalue_before": 0.3750000000000001,
+      "interlacing_bound_verified": true,
+      "interlacing_lower_bound": 0.25,
+      "isotypic_frame_commutator_residual": 3.4600654247985675e-17,
+      "kraus_to_direct_compression_residual": 1.7088385185784582e-16,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      ],
+      "maximizing_tagged_isotypic_partition": [
+        2,
+        2
+      ],
+      "n": 4,
+      "orientation_generators": [
+        3
+      ],
+      "physical_dimension": 72,
+      "raw_top_norm_ratio": 0.9999999999999999,
+      "raw_top_preserved": true,
+      "rejected_hilbert_fraction": 0.5,
+      "rejected_rank": 36,
+      "retained_trace_fraction": 0.4722222222222223,
+      "status": "exact-compression-top-preserved",
+      "tagged_frame_no_larger_than_discarded_verified": true,
+      "top_eigenspace_dimension": 4
+    },
+    {
+      "accepted_projector_idempotence_residual": 0.0,
+      "accepted_rank": 18,
+      "accepted_top_intersection_dimension": 18,
+      "active_isotypic_sector_count": 4,
+      "coherently_tagged_conditioned_top_norm_ratio": 1.3333333333333313,
+      "coherently_tagged_frame_norm_improved": false,
+      "coherently_tagged_frame_top_eigenvalue_after": 0.24999999999999994,
+      "coherently_tagged_raw_top_norm_ratio": 0.9999999999999984,
+      "conditioned_top_norm_ratio": 1.3333333333333333,
+      "control_id": "W4-3-FULL",
+      "copy_count": 2,
+      "equality_criterion_predicts_top_preservation": true,
+      "exact_compression_theorem_verified": true,
+      "filtered_frame_top_eigenvalue_after": 0.25000000000000033,
+      "frame_top_eigenvalue_before": 0.25000000000000033,
+      "interlacing_bound_verified": true,
+      "interlacing_lower_bound": 0.25000000000000006,
+      "isotypic_frame_commutator_residual": 2.6381824459502532e-17,
+      "kraus_to_direct_compression_residual": 1.3392841251397223e-16,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximizing_tagged_isotypic_partition": [
+        2,
+        1,
+        1
+      ],
+      "n": 4,
+      "orientation_generators": [
+        1,
+        2
+      ],
+      "physical_dimension": 24,
+      "raw_top_norm_ratio": 1.0,
+      "raw_top_preserved": true,
+      "rejected_hilbert_fraction": 0.25,
+      "rejected_rank": 6,
+      "retained_trace_fraction": 0.75,
+      "status": "exact-compression-top-preserved",
+      "tagged_frame_no_larger_than_discarded_verified": true,
+      "top_eigenspace_dimension": 24
+    },
+    {
+      "accepted_projector_idempotence_residual": 2.220446049250313e-16,
+      "accepted_rank": 12,
+      "accepted_top_intersection_dimension": 12,
+      "active_isotypic_sector_count": 4,
+      "coherently_tagged_conditioned_top_norm_ratio": 0.9999999999999998,
+      "coherently_tagged_frame_norm_improved": false,
+      "coherently_tagged_frame_top_eigenvalue_after": 0.12500000000000017,
+      "coherently_tagged_raw_top_norm_ratio": 0.5,
+      "conditioned_top_norm_ratio": 1.9999999999999978,
+      "control_id": "W4-3-DIAGONAL",
+      "copy_count": 2,
+      "equality_criterion_predicts_top_preservation": true,
+      "exact_compression_theorem_verified": true,
+      "filtered_frame_top_eigenvalue_after": 0.2500000000000001,
+      "frame_top_eigenvalue_before": 0.25000000000000033,
+      "interlacing_bound_verified": true,
+      "interlacing_lower_bound": 0.24999999999999997,
+      "isotypic_frame_commutator_residual": 2.6381824459502532e-17,
+      "kraus_to_direct_compression_residual": 8.409935018959979e-17,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximizing_tagged_isotypic_partition": [
+        2,
+        2
+      ],
+      "n": 4,
+      "orientation_generators": [
+        3
+      ],
+      "physical_dimension": 24,
+      "raw_top_norm_ratio": 0.9999999999999991,
+      "raw_top_preserved": true,
+      "rejected_hilbert_fraction": 0.5,
+      "rejected_rank": 12,
+      "retained_trace_fraction": 0.5000000000000001,
+      "status": "exact-compression-top-preserved",
+      "tagged_frame_no_larger_than_discarded_verified": true,
+      "top_eigenspace_dimension": 24
+    },
+    {
+      "accepted_projector_idempotence_residual": 0.0,
+      "accepted_rank": 18,
+      "accepted_top_intersection_dimension": 18,
+      "active_isotypic_sector_count": 4,
+      "coherently_tagged_conditioned_top_norm_ratio": 1.3333333333333317,
+      "coherently_tagged_frame_norm_improved": false,
+      "coherently_tagged_frame_top_eigenvalue_after": 0.25,
+      "coherently_tagged_raw_top_norm_ratio": 0.9999999999999989,
+      "conditioned_top_norm_ratio": 1.3333333333333335,
+      "control_id": "W4-4-FULL",
+      "copy_count": 2,
+      "equality_criterion_predicts_top_preservation": true,
+      "exact_compression_theorem_verified": true,
+      "filtered_frame_top_eigenvalue_after": 0.25000000000000033,
+      "frame_top_eigenvalue_before": 0.2500000000000003,
+      "interlacing_bound_verified": true,
+      "interlacing_lower_bound": 0.25,
+      "isotypic_frame_commutator_residual": 2.1273793107474444e-17,
+      "kraus_to_direct_compression_residual": 1.3188249725748592e-16,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximizing_tagged_isotypic_partition": [
+        3,
+        1
+      ],
+      "n": 4,
+      "orientation_generators": [
+        1,
+        2
+      ],
+      "physical_dimension": 24,
+      "raw_top_norm_ratio": 1.0000000000000002,
+      "raw_top_preserved": true,
+      "rejected_hilbert_fraction": 0.25,
+      "rejected_rank": 6,
+      "retained_trace_fraction": 0.75,
+      "status": "exact-compression-top-preserved",
+      "tagged_frame_no_larger_than_discarded_verified": true,
+      "top_eigenspace_dimension": 24
+    },
+    {
+      "accepted_projector_idempotence_residual": 2.220446049250313e-16,
+      "accepted_rank": 12,
+      "accepted_top_intersection_dimension": 12,
+      "active_isotypic_sector_count": 4,
+      "coherently_tagged_conditioned_top_norm_ratio": 0.9999999999999998,
+      "coherently_tagged_frame_norm_improved": false,
+      "coherently_tagged_frame_top_eigenvalue_after": 0.12500000000000014,
+      "coherently_tagged_raw_top_norm_ratio": 0.5,
+      "conditioned_top_norm_ratio": 1.9999999999999991,
+      "control_id": "W4-4-DIAGONAL",
+      "copy_count": 2,
+      "equality_criterion_predicts_top_preservation": true,
+      "exact_compression_theorem_verified": true,
+      "filtered_frame_top_eigenvalue_after": 0.2500000000000002,
+      "frame_top_eigenvalue_before": 0.2500000000000003,
+      "interlacing_bound_verified": true,
+      "interlacing_lower_bound": 0.25,
+      "isotypic_frame_commutator_residual": 2.1273793107474444e-17,
+      "kraus_to_direct_compression_residual": 8.344668236407406e-17,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximizing_tagged_isotypic_partition": [
+        2,
+        2
+      ],
+      "n": 4,
+      "orientation_generators": [
+        3
+      ],
+      "physical_dimension": 24,
+      "raw_top_norm_ratio": 0.9999999999999998,
+      "raw_top_preserved": true,
+      "rejected_hilbert_fraction": 0.5,
+      "rejected_rank": 12,
+      "retained_trace_fraction": 0.5000000000000001,
+      "status": "exact-compression-top-preserved",
+      "tagged_frame_no_larger_than_discarded_verified": true,
+      "top_eigenspace_dimension": 24
+    },
+    {
+      "accepted_projector_idempotence_residual": 0.0,
+      "accepted_rank": 18,
+      "accepted_top_intersection_dimension": 18,
+      "active_isotypic_sector_count": 3,
+      "coherently_tagged_conditioned_top_norm_ratio": 1.3333333333333324,
+      "coherently_tagged_frame_norm_improved": false,
+      "coherently_tagged_frame_top_eigenvalue_after": 0.25000000000000006,
+      "coherently_tagged_raw_top_norm_ratio": 0.9999999999999993,
+      "conditioned_top_norm_ratio": 1.3333333333333321,
+      "control_id": "W4-5-FULL",
+      "copy_count": 2,
+      "equality_criterion_predicts_top_preservation": true,
+      "exact_compression_theorem_verified": true,
+      "filtered_frame_top_eigenvalue_after": 0.25,
+      "frame_top_eigenvalue_before": 0.2500000000000002,
+      "interlacing_bound_verified": true,
+      "interlacing_lower_bound": 0.25,
+      "isotypic_frame_commutator_residual": 2.2291459686554794e-17,
+      "kraus_to_direct_compression_residual": 1.944484114672336e-16,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      ],
+      "maximizing_tagged_isotypic_partition": [
+        2,
+        2
+      ],
+      "n": 4,
+      "orientation_generators": [
+        1,
+        2
+      ],
+      "physical_dimension": 24,
+      "raw_top_norm_ratio": 0.9999999999999991,
+      "raw_top_preserved": true,
+      "rejected_hilbert_fraction": 0.25,
+      "rejected_rank": 6,
+      "retained_trace_fraction": 0.75,
+      "status": "exact-compression-top-preserved",
+      "tagged_frame_no_larger_than_discarded_verified": true,
+      "top_eigenspace_dimension": 24
+    },
+    {
+      "accepted_projector_idempotence_residual": 2.220446049250313e-16,
+      "accepted_rank": 12,
+      "accepted_top_intersection_dimension": 12,
+      "active_isotypic_sector_count": 3,
+      "coherently_tagged_conditioned_top_norm_ratio": 1.0,
+      "coherently_tagged_frame_norm_improved": false,
+      "coherently_tagged_frame_top_eigenvalue_after": 0.12500000000000014,
+      "coherently_tagged_raw_top_norm_ratio": 0.5000000000000001,
+      "conditioned_top_norm_ratio": 2.000000000000001,
+      "control_id": "W4-5-DIAGONAL",
+      "copy_count": 2,
+      "equality_criterion_predicts_top_preservation": true,
+      "exact_compression_theorem_verified": true,
+      "filtered_frame_top_eigenvalue_after": 0.2500000000000004,
+      "frame_top_eigenvalue_before": 0.2500000000000002,
+      "interlacing_bound_verified": true,
+      "interlacing_lower_bound": 0.25,
+      "isotypic_frame_commutator_residual": 2.2291459686554794e-17,
+      "kraus_to_direct_compression_residual": 8.564875931089394e-17,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      ],
+      "maximizing_tagged_isotypic_partition": [
+        3,
+        1
+      ],
+      "n": 4,
+      "orientation_generators": [
+        3
+      ],
+      "physical_dimension": 24,
+      "raw_top_norm_ratio": 1.0000000000000007,
+      "raw_top_preserved": true,
+      "rejected_hilbert_fraction": 0.5,
+      "rejected_rank": 12,
+      "retained_trace_fraction": 0.5000000000000001,
+      "status": "exact-compression-top-preserved",
+      "tagged_frame_no_larger_than_discarded_verified": true,
+      "top_eigenspace_dimension": 24
+    },
+    {
+      "accepted_projector_idempotence_residual": 0.0,
+      "accepted_rank": 27,
+      "accepted_top_intersection_dimension": 0,
+      "active_isotypic_sector_count": 4,
+      "coherently_tagged_conditioned_top_norm_ratio": 0.9230769230769234,
+      "coherently_tagged_frame_norm_improved": true,
+      "coherently_tagged_frame_top_eigenvalue_after": 0.3333333333333333,
+      "coherently_tagged_raw_top_norm_ratio": 0.6666666666666667,
+      "conditioned_top_norm_ratio": 1.1538461538461537,
+      "control_id": "W4-6-FULL",
+      "copy_count": 2,
+      "equality_criterion_predicts_top_preservation": false,
+      "exact_compression_theorem_verified": true,
+      "filtered_frame_top_eigenvalue_after": 0.4166666666666665,
+      "frame_top_eigenvalue_before": 0.49999999999999994,
+      "interlacing_bound_verified": true,
+      "interlacing_lower_bound": 0.33333333333333315,
+      "isotypic_frame_commutator_residual": 7.226526893689959e-17,
+      "kraus_to_direct_compression_residual": 1.8667897894986636e-16,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximizing_tagged_isotypic_partition": [
+        2,
+        1,
+        1
+      ],
+      "n": 4,
+      "orientation_generators": [
+        1,
+        2
+      ],
+      "physical_dimension": 36,
+      "raw_top_norm_ratio": 0.8333333333333331,
+      "raw_top_preserved": false,
+      "rejected_hilbert_fraction": 0.25,
+      "rejected_rank": 9,
+      "retained_trace_fraction": 0.7222222222222221,
+      "status": "exact-compression-top-reduced",
+      "tagged_frame_no_larger_than_discarded_verified": true,
+      "top_eigenspace_dimension": 1
+    },
+    {
+      "accepted_projector_idempotence_residual": 2.220446049250313e-16,
+      "accepted_rank": 18,
+      "accepted_top_intersection_dimension": 0,
+      "active_isotypic_sector_count": 4,
+      "coherently_tagged_conditioned_top_norm_ratio": 1.5000000000000007,
+      "coherently_tagged_frame_norm_improved": false,
+      "coherently_tagged_frame_top_eigenvalue_after": 0.3333333333333335,
+      "coherently_tagged_raw_top_norm_ratio": 0.6666666666666671,
+      "conditioned_top_norm_ratio": 1.5,
+      "control_id": "W4-6-DIAGONAL",
+      "copy_count": 2,
+      "equality_criterion_predicts_top_preservation": false,
+      "exact_compression_theorem_verified": true,
+      "filtered_frame_top_eigenvalue_after": 0.33333333333333337,
+      "frame_top_eigenvalue_before": 0.49999999999999994,
+      "interlacing_bound_verified": true,
+      "interlacing_lower_bound": 0.24999999999999997,
+      "isotypic_frame_commutator_residual": 7.226526893689959e-17,
+      "kraus_to_direct_compression_residual": 1.1276462929690222e-16,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximizing_tagged_isotypic_partition": [
+        2,
+        1,
+        1
+      ],
+      "n": 4,
+      "orientation_generators": [
+        3
+      ],
+      "physical_dimension": 36,
+      "raw_top_norm_ratio": 0.6666666666666669,
+      "raw_top_preserved": false,
+      "rejected_hilbert_fraction": 0.5,
+      "rejected_rank": 18,
+      "retained_trace_fraction": 0.44444444444444453,
+      "status": "exact-compression-top-reduced",
+      "tagged_frame_no_larger_than_discarded_verified": true,
+      "top_eigenspace_dimension": 1
+    },
+    {
+      "accepted_projector_idempotence_residual": 0.0,
+      "accepted_rank": 27,
+      "accepted_top_intersection_dimension": 0,
+      "active_isotypic_sector_count": 4,
+      "coherently_tagged_conditioned_top_norm_ratio": 0.9230769230769228,
+      "coherently_tagged_frame_norm_improved": true,
+      "coherently_tagged_frame_top_eigenvalue_after": 0.33333333333333326,
+      "coherently_tagged_raw_top_norm_ratio": 0.6666666666666664,
+      "conditioned_top_norm_ratio": 1.1538461538461533,
+      "control_id": "W4-7-FULL",
+      "copy_count": 2,
+      "equality_criterion_predicts_top_preservation": false,
+      "exact_compression_theorem_verified": true,
+      "filtered_frame_top_eigenvalue_after": 0.4166666666666665,
+      "frame_top_eigenvalue_before": 0.5000000000000001,
+      "interlacing_bound_verified": true,
+      "interlacing_lower_bound": 0.3333333333333332,
+      "isotypic_frame_commutator_residual": 6.758902340773158e-17,
+      "kraus_to_direct_compression_residual": 1.797205930546766e-16,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximizing_tagged_isotypic_partition": [
+        3,
+        1
+      ],
+      "n": 4,
+      "orientation_generators": [
+        1,
+        2
+      ],
+      "physical_dimension": 36,
+      "raw_top_norm_ratio": 0.8333333333333328,
+      "raw_top_preserved": false,
+      "rejected_hilbert_fraction": 0.25,
+      "rejected_rank": 9,
+      "retained_trace_fraction": 0.7222222222222222,
+      "status": "exact-compression-top-reduced",
+      "tagged_frame_no_larger_than_discarded_verified": true,
+      "top_eigenspace_dimension": 1
+    },
+    {
+      "accepted_projector_idempotence_residual": 2.220446049250313e-16,
+      "accepted_rank": 18,
+      "accepted_top_intersection_dimension": 0,
+      "active_isotypic_sector_count": 4,
+      "coherently_tagged_conditioned_top_norm_ratio": 1.4999999999999996,
+      "coherently_tagged_frame_norm_improved": false,
+      "coherently_tagged_frame_top_eigenvalue_after": 0.33333333333333337,
+      "coherently_tagged_raw_top_norm_ratio": 0.6666666666666666,
+      "conditioned_top_norm_ratio": 1.5000000000000004,
+      "control_id": "W4-7-DIAGONAL",
+      "copy_count": 2,
+      "equality_criterion_predicts_top_preservation": false,
+      "exact_compression_theorem_verified": true,
+      "filtered_frame_top_eigenvalue_after": 0.3333333333333336,
+      "frame_top_eigenvalue_before": 0.5000000000000001,
+      "interlacing_bound_verified": true,
+      "interlacing_lower_bound": 0.24999999999999997,
+      "isotypic_frame_commutator_residual": 6.758902340773158e-17,
+      "kraus_to_direct_compression_residual": 1.1274203718985683e-16,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximizing_tagged_isotypic_partition": [
+        3,
+        1
+      ],
+      "n": 4,
+      "orientation_generators": [
+        3
+      ],
+      "physical_dimension": 36,
+      "raw_top_norm_ratio": 0.6666666666666671,
+      "raw_top_preserved": false,
+      "rejected_hilbert_fraction": 0.5,
+      "rejected_rank": 18,
+      "retained_trace_fraction": 0.44444444444444453,
+      "status": "exact-compression-top-reduced",
+      "tagged_frame_no_larger_than_discarded_verified": true,
+      "top_eigenspace_dimension": 1
+    },
+    {
+      "accepted_projector_idempotence_residual": 0.0,
+      "accepted_rank": 27,
+      "accepted_top_intersection_dimension": 12,
+      "active_isotypic_sector_count": 2,
+      "coherently_tagged_conditioned_top_norm_ratio": 1.3846153846153837,
+      "coherently_tagged_frame_norm_improved": false,
+      "coherently_tagged_frame_top_eigenvalue_after": 0.3333333333333333,
+      "coherently_tagged_raw_top_norm_ratio": 0.9999999999999993,
+      "conditioned_top_norm_ratio": 1.384615384615384,
+      "control_id": "W4-8-FULL",
+      "copy_count": 2,
+      "equality_criterion_predicts_top_preservation": true,
+      "exact_compression_theorem_verified": true,
+      "filtered_frame_top_eigenvalue_after": 0.33333333333333337,
+      "frame_top_eigenvalue_before": 0.33333333333333354,
+      "interlacing_bound_verified": true,
+      "interlacing_lower_bound": 0.3333333333333332,
+      "isotypic_frame_commutator_residual": 1.815990779218183e-17,
+      "kraus_to_direct_compression_residual": 2.229575255707826e-16,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximizing_tagged_isotypic_partition": [
+        3,
+        1
+      ],
+      "n": 4,
+      "orientation_generators": [
+        1,
+        2
+      ],
+      "physical_dimension": 36,
+      "raw_top_norm_ratio": 0.9999999999999996,
+      "raw_top_preserved": true,
+      "rejected_hilbert_fraction": 0.25,
+      "rejected_rank": 9,
+      "retained_trace_fraction": 0.7222222222222222,
+      "status": "exact-compression-top-preserved",
+      "tagged_frame_no_larger_than_discarded_verified": true,
+      "top_eigenspace_dimension": 18
+    },
+    {
+      "accepted_projector_idempotence_residual": 2.220446049250313e-16,
+      "accepted_rank": 18,
+      "accepted_top_intersection_dimension": 6,
+      "active_isotypic_sector_count": 2,
+      "coherently_tagged_conditioned_top_norm_ratio": 2.2499999999999996,
+      "coherently_tagged_frame_norm_improved": false,
+      "coherently_tagged_frame_top_eigenvalue_after": 0.3333333333333336,
+      "coherently_tagged_raw_top_norm_ratio": 1.0000000000000002,
+      "conditioned_top_norm_ratio": 2.2499999999999987,
+      "control_id": "W4-8-DIAGONAL",
+      "copy_count": 2,
+      "equality_criterion_predicts_top_preservation": true,
+      "exact_compression_theorem_verified": true,
+      "filtered_frame_top_eigenvalue_after": 0.3333333333333334,
+      "frame_top_eigenvalue_before": 0.33333333333333354,
+      "interlacing_bound_verified": true,
+      "interlacing_lower_bound": 0.16666666666666693,
+      "isotypic_frame_commutator_residual": 1.815990779218183e-17,
+      "kraus_to_direct_compression_residual": 1.1393123095419053e-16,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximizing_tagged_isotypic_partition": [
+        3,
+        1
+      ],
+      "n": 4,
+      "orientation_generators": [
+        3
+      ],
+      "physical_dimension": 36,
+      "raw_top_norm_ratio": 0.9999999999999997,
+      "raw_top_preserved": true,
+      "rejected_hilbert_fraction": 0.5,
+      "rejected_rank": 18,
+      "retained_trace_fraction": 0.44444444444444453,
+      "status": "exact-compression-top-preserved",
+      "tagged_frame_no_larger_than_discarded_verified": true,
+      "top_eigenspace_dimension": 18
+    },
+    {
+      "accepted_projector_idempotence_residual": 0.0,
+      "accepted_rank": 18,
+      "accepted_top_intersection_dimension": 18,
+      "active_isotypic_sector_count": 4,
+      "coherently_tagged_conditioned_top_norm_ratio": 1.3333333333333317,
+      "coherently_tagged_frame_norm_improved": false,
+      "coherently_tagged_frame_top_eigenvalue_after": 0.25,
+      "coherently_tagged_raw_top_norm_ratio": 0.9999999999999989,
+      "conditioned_top_norm_ratio": 1.333333333333334,
+      "control_id": "W4-9-FULL",
+      "copy_count": 2,
+      "equality_criterion_predicts_top_preservation": true,
+      "exact_compression_theorem_verified": true,
+      "filtered_frame_top_eigenvalue_after": 0.2500000000000004,
+      "frame_top_eigenvalue_before": 0.2500000000000003,
+      "interlacing_bound_verified": true,
+      "interlacing_lower_bound": 0.25,
+      "isotypic_frame_commutator_residual": 2.8214817469973774e-17,
+      "kraus_to_direct_compression_residual": 1.3266291904844283e-16,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximizing_tagged_isotypic_partition": [
+        2,
+        1,
+        1
+      ],
+      "n": 4,
+      "orientation_generators": [
+        1,
+        2
+      ],
+      "physical_dimension": 24,
+      "raw_top_norm_ratio": 1.0000000000000004,
+      "raw_top_preserved": true,
+      "rejected_hilbert_fraction": 0.25,
+      "rejected_rank": 6,
+      "retained_trace_fraction": 0.75,
+      "status": "exact-compression-top-preserved",
+      "tagged_frame_no_larger_than_discarded_verified": true,
+      "top_eigenspace_dimension": 24
+    },
+    {
+      "accepted_projector_idempotence_residual": 2.220446049250313e-16,
+      "accepted_rank": 12,
+      "accepted_top_intersection_dimension": 12,
+      "active_isotypic_sector_count": 4,
+      "coherently_tagged_conditioned_top_norm_ratio": 0.9999999999999993,
+      "coherently_tagged_frame_norm_improved": false,
+      "coherently_tagged_frame_top_eigenvalue_after": 0.12500000000000008,
+      "coherently_tagged_raw_top_norm_ratio": 0.4999999999999998,
+      "conditioned_top_norm_ratio": 1.9999999999999982,
+      "control_id": "W4-9-DIAGONAL",
+      "copy_count": 2,
+      "equality_criterion_predicts_top_preservation": true,
+      "exact_compression_theorem_verified": true,
+      "filtered_frame_top_eigenvalue_after": 0.2500000000000001,
+      "frame_top_eigenvalue_before": 0.2500000000000003,
+      "interlacing_bound_verified": true,
+      "interlacing_lower_bound": 0.25,
+      "isotypic_frame_commutator_residual": 2.8214817469973774e-17,
+      "kraus_to_direct_compression_residual": 8.409721908054802e-17,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximizing_tagged_isotypic_partition": [
+        2,
+        2
+      ],
+      "n": 4,
+      "orientation_generators": [
+        3
+      ],
+      "physical_dimension": 24,
+      "raw_top_norm_ratio": 0.9999999999999993,
+      "raw_top_preserved": true,
+      "rejected_hilbert_fraction": 0.5,
+      "rejected_rank": 12,
+      "retained_trace_fraction": 0.5000000000000001,
+      "status": "exact-compression-top-preserved",
+      "tagged_frame_no_larger_than_discarded_verified": true,
+      "top_eigenspace_dimension": 24
+    },
+    {
+      "accepted_projector_idempotence_residual": 0.0,
+      "accepted_rank": 18,
+      "accepted_top_intersection_dimension": 18,
+      "active_isotypic_sector_count": 4,
+      "coherently_tagged_conditioned_top_norm_ratio": 1.333333333333333,
+      "coherently_tagged_frame_norm_improved": false,
+      "coherently_tagged_frame_top_eigenvalue_after": 0.25000000000000006,
+      "coherently_tagged_raw_top_norm_ratio": 0.9999999999999998,
+      "conditioned_top_norm_ratio": 1.333333333333334,
+      "control_id": "W4-10-FULL",
+      "copy_count": 2,
+      "equality_criterion_predicts_top_preservation": true,
+      "exact_compression_theorem_verified": true,
+      "filtered_frame_top_eigenvalue_after": 0.2500000000000002,
+      "frame_top_eigenvalue_before": 0.2500000000000001,
+      "interlacing_bound_verified": true,
+      "interlacing_lower_bound": 0.25,
+      "isotypic_frame_commutator_residual": 1.9223870906239988e-17,
+      "kraus_to_direct_compression_residual": 1.3232834079968987e-16,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximizing_tagged_isotypic_partition": [
+        3,
+        1
+      ],
+      "n": 4,
+      "orientation_generators": [
+        1,
+        2
+      ],
+      "physical_dimension": 24,
+      "raw_top_norm_ratio": 1.0000000000000004,
+      "raw_top_preserved": true,
+      "rejected_hilbert_fraction": 0.25,
+      "rejected_rank": 6,
+      "retained_trace_fraction": 0.75,
+      "status": "exact-compression-top-preserved",
+      "tagged_frame_no_larger_than_discarded_verified": true,
+      "top_eigenspace_dimension": 24
+    },
+    {
+      "accepted_projector_idempotence_residual": 2.220446049250313e-16,
+      "accepted_rank": 12,
+      "accepted_top_intersection_dimension": 12,
+      "active_isotypic_sector_count": 4,
+      "coherently_tagged_conditioned_top_norm_ratio": 1.0000000000000004,
+      "coherently_tagged_frame_norm_improved": false,
+      "coherently_tagged_frame_top_eigenvalue_after": 0.12500000000000014,
+      "coherently_tagged_raw_top_norm_ratio": 0.5000000000000003,
+      "conditioned_top_norm_ratio": 2.000000000000001,
+      "control_id": "W4-10-DIAGONAL",
+      "copy_count": 2,
+      "equality_criterion_predicts_top_preservation": true,
+      "exact_compression_theorem_verified": true,
+      "filtered_frame_top_eigenvalue_after": 0.2500000000000003,
+      "frame_top_eigenvalue_before": 0.2500000000000001,
+      "interlacing_bound_verified": true,
+      "interlacing_lower_bound": 0.25,
+      "isotypic_frame_commutator_residual": 1.9223870906239988e-17,
+      "kraus_to_direct_compression_residual": 8.339992937904049e-17,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximizing_tagged_isotypic_partition": [
+        3,
+        1
+      ],
+      "n": 4,
+      "orientation_generators": [
+        3
+      ],
+      "physical_dimension": 24,
+      "raw_top_norm_ratio": 1.0000000000000007,
+      "raw_top_preserved": true,
+      "rejected_hilbert_fraction": 0.5,
+      "rejected_rank": 12,
+      "retained_trace_fraction": 0.5000000000000001,
+      "status": "exact-compression-top-preserved",
+      "tagged_frame_no_larger_than_discarded_verified": true,
+      "top_eigenspace_dimension": 24
+    },
+    {
+      "accepted_projector_idempotence_residual": 0.0,
+      "accepted_rank": 18,
+      "accepted_top_intersection_dimension": 18,
+      "active_isotypic_sector_count": 3,
+      "coherently_tagged_conditioned_top_norm_ratio": 1.3333333333333333,
+      "coherently_tagged_frame_norm_improved": false,
+      "coherently_tagged_frame_top_eigenvalue_after": 0.2500000000000002,
+      "coherently_tagged_raw_top_norm_ratio": 1.0,
+      "conditioned_top_norm_ratio": 1.3333333333333337,
+      "control_id": "W4-11-FULL",
+      "copy_count": 2,
+      "equality_criterion_predicts_top_preservation": true,
+      "exact_compression_theorem_verified": true,
+      "filtered_frame_top_eigenvalue_after": 0.2500000000000003,
+      "frame_top_eigenvalue_before": 0.2500000000000002,
+      "interlacing_bound_verified": true,
+      "interlacing_lower_bound": 0.25000000000000006,
+      "isotypic_frame_commutator_residual": 2.0156649157628632e-17,
+      "kraus_to_direct_compression_residual": 1.9442918287906804e-16,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximizing_tagged_isotypic_partition": [
+        2,
+        2
+      ],
+      "n": 4,
+      "orientation_generators": [
+        1,
+        2
+      ],
+      "physical_dimension": 24,
+      "raw_top_norm_ratio": 1.0000000000000002,
+      "raw_top_preserved": true,
+      "rejected_hilbert_fraction": 0.25,
+      "rejected_rank": 6,
+      "retained_trace_fraction": 0.75,
+      "status": "exact-compression-top-preserved",
+      "tagged_frame_no_larger_than_discarded_verified": true,
+      "top_eigenspace_dimension": 24
+    },
+    {
+      "accepted_projector_idempotence_residual": 2.220446049250313e-16,
+      "accepted_rank": 12,
+      "accepted_top_intersection_dimension": 12,
+      "active_isotypic_sector_count": 3,
+      "coherently_tagged_conditioned_top_norm_ratio": 0.9999999999999998,
+      "coherently_tagged_frame_norm_improved": false,
+      "coherently_tagged_frame_top_eigenvalue_after": 0.1250000000000001,
+      "coherently_tagged_raw_top_norm_ratio": 0.5,
+      "conditioned_top_norm_ratio": 1.9999999999999996,
+      "control_id": "W4-11-DIAGONAL",
+      "copy_count": 2,
+      "equality_criterion_predicts_top_preservation": true,
+      "exact_compression_theorem_verified": true,
+      "filtered_frame_top_eigenvalue_after": 0.2500000000000002,
+      "frame_top_eigenvalue_before": 0.2500000000000002,
+      "interlacing_bound_verified": true,
+      "interlacing_lower_bound": 0.25,
+      "isotypic_frame_commutator_residual": 2.0156649157628632e-17,
+      "kraus_to_direct_compression_residual": 8.562815169120418e-17,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximizing_tagged_isotypic_partition": [
+        2,
+        2
+      ],
+      "n": 4,
+      "orientation_generators": [
+        3
+      ],
+      "physical_dimension": 24,
+      "raw_top_norm_ratio": 1.0,
+      "raw_top_preserved": true,
+      "rejected_hilbert_fraction": 0.5,
+      "rejected_rank": 12,
+      "retained_trace_fraction": 0.5000000000000001,
+      "status": "exact-compression-top-preserved",
+      "tagged_frame_no_larger_than_discarded_verified": true,
+      "top_eigenspace_dimension": 24
+    },
+    {
+      "accepted_projector_idempotence_residual": 0.0,
+      "accepted_rank": 54,
+      "accepted_top_intersection_dimension": 1,
+      "active_isotypic_sector_count": 4,
+      "coherently_tagged_conditioned_top_norm_ratio": 1.3584905660377353,
+      "coherently_tagged_frame_norm_improved": false,
+      "coherently_tagged_frame_top_eigenvalue_after": 0.3749999999999999,
+      "coherently_tagged_raw_top_norm_ratio": 0.9999999999999997,
+      "conditioned_top_norm_ratio": 1.3584905660377358,
+      "control_id": "W4-12-FULL",
+      "copy_count": 2,
+      "equality_criterion_predicts_top_preservation": true,
+      "exact_compression_theorem_verified": true,
+      "filtered_frame_top_eigenvalue_after": 0.375,
+      "frame_top_eigenvalue_before": 0.375,
+      "interlacing_bound_verified": true,
+      "interlacing_lower_bound": 0.2500000000000001,
+      "isotypic_frame_commutator_residual": 4.3555440388629774e-17,
+      "kraus_to_direct_compression_residual": 1.5923415034098744e-16,
+      "labels": [
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximizing_tagged_isotypic_partition": [
+        2,
+        2
+      ],
+      "n": 4,
+      "orientation_generators": [
+        1,
+        2
+      ],
+      "physical_dimension": 72,
+      "raw_top_norm_ratio": 1.0,
+      "raw_top_preserved": true,
+      "rejected_hilbert_fraction": 0.25,
+      "rejected_rank": 18,
+      "retained_trace_fraction": 0.7361111111111112,
+      "status": "exact-compression-top-preserved",
+      "tagged_frame_no_larger_than_discarded_verified": true,
+      "top_eigenspace_dimension": 4
+    },
+    {
+      "accepted_projector_idempotence_residual": 2.220446049250313e-16,
+      "accepted_rank": 36,
+      "accepted_top_intersection_dimension": 1,
+      "active_isotypic_sector_count": 4,
+      "coherently_tagged_conditioned_top_norm_ratio": 2.117647058823528,
+      "coherently_tagged_frame_norm_improved": false,
+      "coherently_tagged_frame_top_eigenvalue_after": 0.37499999999999983,
+      "coherently_tagged_raw_top_norm_ratio": 0.9999999999999996,
+      "conditioned_top_norm_ratio": 2.1176470588235308,
+      "control_id": "W4-12-DIAGONAL",
+      "copy_count": 2,
+      "equality_criterion_predicts_top_preservation": true,
+      "exact_compression_theorem_verified": true,
+      "filtered_frame_top_eigenvalue_after": 0.37500000000000033,
+      "frame_top_eigenvalue_before": 0.375,
+      "interlacing_bound_verified": true,
+      "interlacing_lower_bound": 0.24999999999999997,
+      "isotypic_frame_commutator_residual": 4.3555440388629774e-17,
+      "kraus_to_direct_compression_residual": 1.7126080658045477e-16,
+      "labels": [
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximizing_tagged_isotypic_partition": [
+        2,
+        2
+      ],
+      "n": 4,
+      "orientation_generators": [
+        3
+      ],
+      "physical_dimension": 72,
+      "raw_top_norm_ratio": 1.0000000000000009,
+      "raw_top_preserved": true,
+      "rejected_hilbert_fraction": 0.5,
+      "rejected_rank": 36,
+      "retained_trace_fraction": 0.4722222222222223,
+      "status": "exact-compression-top-preserved",
+      "tagged_frame_no_larger_than_discarded_verified": true,
+      "top_eigenspace_dimension": 4
+    },
+    {
+      "accepted_projector_idempotence_residual": 0.0,
+      "accepted_rank": 54,
+      "accepted_top_intersection_dimension": 9,
+      "active_isotypic_sector_count": 2,
+      "coherently_tagged_conditioned_top_norm_ratio": 1.358490566037735,
+      "coherently_tagged_frame_norm_improved": false,
+      "coherently_tagged_frame_top_eigenvalue_after": 0.3333333333333335,
+      "coherently_tagged_raw_top_norm_ratio": 0.9999999999999996,
+      "conditioned_top_norm_ratio": 1.3584905660377358,
+      "control_id": "W4-13-FULL",
+      "copy_count": 2,
+      "equality_criterion_predicts_top_preservation": true,
+      "exact_compression_theorem_verified": true,
+      "filtered_frame_top_eigenvalue_after": 0.33333333333333365,
+      "frame_top_eigenvalue_before": 0.33333333333333365,
+      "interlacing_bound_verified": true,
+      "interlacing_lower_bound": 0.25000000000000033,
+      "isotypic_frame_commutator_residual": 3.9971283259957235e-17,
+      "kraus_to_direct_compression_residual": 1.8020491601585625e-16,
+      "labels": [
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximizing_tagged_isotypic_partition": [
+        3,
+        1
+      ],
+      "n": 4,
+      "orientation_generators": [
+        1,
+        2
+      ],
+      "physical_dimension": 72,
+      "raw_top_norm_ratio": 1.0,
+      "raw_top_preserved": true,
+      "rejected_hilbert_fraction": 0.25,
+      "rejected_rank": 18,
+      "retained_trace_fraction": 0.7361111111111112,
+      "status": "exact-compression-top-preserved",
+      "tagged_frame_no_larger_than_discarded_verified": true,
+      "top_eigenspace_dimension": 18
+    },
+    {
+      "accepted_projector_idempotence_residual": 2.220446049250313e-16,
+      "accepted_rank": 36,
+      "accepted_top_intersection_dimension": 6,
+      "active_isotypic_sector_count": 2,
+      "coherently_tagged_conditioned_top_norm_ratio": 2.117647058823528,
+      "coherently_tagged_frame_norm_improved": false,
+      "coherently_tagged_frame_top_eigenvalue_after": 0.3333333333333335,
+      "coherently_tagged_raw_top_norm_ratio": 0.9999999999999996,
+      "conditioned_top_norm_ratio": 2.117647058823528,
+      "control_id": "W4-13-DIAGONAL",
+      "copy_count": 2,
+      "equality_criterion_predicts_top_preservation": true,
+      "exact_compression_theorem_verified": true,
+      "filtered_frame_top_eigenvalue_after": 0.3333333333333335,
+      "frame_top_eigenvalue_before": 0.33333333333333365,
+      "interlacing_bound_verified": true,
+      "interlacing_lower_bound": 0.24999999999999994,
+      "isotypic_frame_commutator_residual": 3.9971283259957235e-17,
+      "kraus_to_direct_compression_residual": 1.7090344390778749e-16,
+      "labels": [
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximizing_tagged_isotypic_partition": [
+        2,
+        1,
+        1
+      ],
+      "n": 4,
+      "orientation_generators": [
+        3
+      ],
+      "physical_dimension": 72,
+      "raw_top_norm_ratio": 0.9999999999999996,
+      "raw_top_preserved": true,
+      "rejected_hilbert_fraction": 0.5,
+      "rejected_rank": 36,
+      "retained_trace_fraction": 0.4722222222222223,
+      "status": "exact-compression-top-preserved",
+      "tagged_frame_no_larger_than_discarded_verified": true,
+      "top_eigenspace_dimension": 18
+    },
+    {
+      "accepted_projector_idempotence_residual": 0.0,
+      "accepted_rank": 54,
+      "accepted_top_intersection_dimension": 1,
+      "active_isotypic_sector_count": 4,
+      "coherently_tagged_conditioned_top_norm_ratio": 1.3584905660377349,
+      "coherently_tagged_frame_norm_improved": false,
+      "coherently_tagged_frame_top_eigenvalue_after": 0.37499999999999983,
+      "coherently_tagged_raw_top_norm_ratio": 0.9999999999999994,
+      "conditioned_top_norm_ratio": 1.358490566037736,
+      "control_id": "W4-14-FULL",
+      "copy_count": 2,
+      "equality_criterion_predicts_top_preservation": true,
+      "exact_compression_theorem_verified": true,
+      "filtered_frame_top_eigenvalue_after": 0.37500000000000017,
+      "frame_top_eigenvalue_before": 0.37500000000000006,
+      "interlacing_bound_verified": true,
+      "interlacing_lower_bound": 0.2500000000000001,
+      "isotypic_frame_commutator_residual": 4.156877456519266e-17,
+      "kraus_to_direct_compression_residual": 1.6651158617618032e-16,
+      "labels": [
+        [
+          [
+            3,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximizing_tagged_isotypic_partition": [
+        2,
+        2
+      ],
+      "n": 4,
+      "orientation_generators": [
+        1,
+        2
+      ],
+      "physical_dimension": 72,
+      "raw_top_norm_ratio": 1.0000000000000002,
+      "raw_top_preserved": true,
+      "rejected_hilbert_fraction": 0.25,
+      "rejected_rank": 18,
+      "retained_trace_fraction": 0.7361111111111112,
+      "status": "exact-compression-top-preserved",
+      "tagged_frame_no_larger_than_discarded_verified": true,
+      "top_eigenspace_dimension": 4
+    },
+    {
+      "accepted_projector_idempotence_residual": 2.220446049250313e-16,
+      "accepted_rank": 36,
+      "accepted_top_intersection_dimension": 1,
+      "active_isotypic_sector_count": 4,
+      "coherently_tagged_conditioned_top_norm_ratio": 2.1176470588235294,
+      "coherently_tagged_frame_norm_improved": false,
+      "coherently_tagged_frame_top_eigenvalue_after": 0.375,
+      "coherently_tagged_raw_top_norm_ratio": 0.9999999999999999,
+      "conditioned_top_norm_ratio": 2.11764705882353,
+      "control_id": "W4-14-DIAGONAL",
+      "copy_count": 2,
+      "equality_criterion_predicts_top_preservation": true,
+      "exact_compression_theorem_verified": true,
+      "filtered_frame_top_eigenvalue_after": 0.3750000000000001,
+      "frame_top_eigenvalue_before": 0.37500000000000006,
+      "interlacing_bound_verified": true,
+      "interlacing_lower_bound": 0.24999999999999997,
+      "isotypic_frame_commutator_residual": 4.156877456519266e-17,
+      "kraus_to_direct_compression_residual": 1.7065666205491707e-16,
+      "labels": [
+        [
+          [
+            3,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximizing_tagged_isotypic_partition": [
+        2,
+        2
+      ],
+      "n": 4,
+      "orientation_generators": [
+        3
+      ],
+      "physical_dimension": 72,
+      "raw_top_norm_ratio": 1.0000000000000002,
+      "raw_top_preserved": true,
+      "rejected_hilbert_fraction": 0.5,
+      "rejected_rank": 36,
+      "retained_trace_fraction": 0.4722222222222222,
+      "status": "exact-compression-top-preserved",
+      "tagged_frame_no_larger_than_discarded_verified": true,
+      "top_eigenspace_dimension": 4
+    }
+  ],
+  "falsifiers_triggered": [
+    "Discarding the diagonal isotypic label does not independently flatten the average frame; coherently retaining it can.",
+    "Raw filtered-frame norm is preserved in 45 of 51 complete collision-free W4/W5 controls.",
+    "All discarded-label raw reductions disappear after postselection normalization, while coherent tagging retains two strict finite gains."
+  ],
+  "headline_metrics": {
+    "average_frame_compression_theorem_count": 1,
+    "coherent_tagged_all_finite_conditioned_frame_norm_improvement_count": 11,
+    "coherent_tagged_w4_conditioned_frame_norm_improvement_count": 2,
+    "coherent_tagged_w4_conditioned_frame_norm_nonworsening_count": 8,
+    "coherent_tagged_w5_conditioned_frame_norm_improvement_count": 9,
+    "discarded_label_conditioned_frame_norm_improvement_count": 0,
+    "exact_validation_failure_count": 0,
+    "exact_w4_control_count": 30,
+    "finite_control_count": 51,
+    "interlacing_rank_budget_theorem_count": 1,
+    "matrix_free_w5_probe_count": 21,
+    "maximum_coherent_tagged_conditioned_top_norm_ratio": 2.2499999999999996,
+    "maximum_coherent_tagged_w5_conditioned_top_norm_ratio": 1.1627906976744184,
+    "maximum_conditioned_top_norm_ratio": 2.2499999999999987,
+    "minimum_coherent_tagged_conditioned_top_norm_ratio": 0.9230769230769228,
+    "minimum_coherent_tagged_w5_conditioned_top_norm_ratio": 0.8592910848549942,
+    "minimum_conditioned_top_norm_ratio": 1.048675817673992,
+    "minimum_raw_top_norm_ratio": 0.6666666666666669,
+    "new_quantum_algorithm_count": 0,
+    "polynomial_hidden_permutation_decoder_count": 0,
+    "raw_top_preservation_count": 45,
+    "raw_top_reduction_count": 6,
+    "top_equality_criterion_theorem_count": 1,
+    "typical_large_n_spectral_count_theorem_count": 0
+  },
+  "literature_links": [
+    {
+      "directly_covers_global_orientation_multiplicity_filter": false,
+      "paper_id": "moore-russell-sniady-2007",
+      "title": "On the impossibility of a quantum sieve algorithm for graph isomorphism: unconditional results",
+      "url": "https://arxiv.org/abs/quant-ph/0612089",
+      "use": "Formal scope check for pairwise Clebsch-Gordan sieve algorithms over S_n wreath Z_2."
+    }
+  ],
+  "matrix_free_probes": [
+    {
+      "active_tagged_isotypic_sector_count": 7,
+      "coherently_tagged_conditioned_top_norm_ratio": 1.0195139977320076,
+      "coherently_tagged_frame_norm_improved": false,
+      "coherently_tagged_frame_top_eigenvalue_after": 0.2262643263614459,
+      "coherently_tagged_raw_top_norm_ratio": 0.8806052155410214,
+      "conditioned_frame_norm_improved": false,
+      "conditioned_top_norm_ratio": 1.1577424023154832,
+      "control_id": "W5-0-FULL",
+      "copy_count": 3,
+      "filtered_eigenpair_residual": 9.259660248906638e-14,
+      "filtered_frame_top_eigenvalue_after": 0.2569418422333946,
+      "filtered_top_to_target_ratio": 1.0277673689335785,
+      "finite_probe_only": true,
+      "frame_top_eigenvalue_before": 0.25694184223339495,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            4,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            2
+          ],
+          [
+            2,
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "matrix_free_lanczos_used": true,
+      "maximizing_tagged_isotypic_partition": [
+        2,
+        2,
+        1
+      ],
+      "maximum_tagged_eigenpair_residual": 2.8614489185615463e-08,
+      "n": 5,
+      "orientation_generators": [
+        1,
+        2,
+        4
+      ],
+      "original_eigenpair_residual": 9.531730435842713e-14,
+      "physical_dimension": 3200,
+      "raw_top_norm_ratio": 0.9999999999999987,
+      "raw_top_preserved": true,
+      "rejected_hilbert_fraction": 0.125,
+      "retained_trace_fraction": 0.86375,
+      "status": "finite-raw-top-preserved-conditioned-worse",
+      "target_two_to_one_minus_k": 0.25
+    },
+    {
+      "active_tagged_isotypic_sector_count": 7,
+      "coherently_tagged_conditioned_top_norm_ratio": 1.145721446473326,
+      "coherently_tagged_frame_norm_improved": false,
+      "coherently_tagged_frame_top_eigenvalue_after": 0.18749999999999992,
+      "coherently_tagged_raw_top_norm_ratio": 1.0,
+      "conditioned_frame_norm_improved": false,
+      "conditioned_top_norm_ratio": 1.145721446473326,
+      "control_id": "W5-1-FULL",
+      "copy_count": 3,
+      "filtered_eigenpair_residual": 3.559748552305489e-14,
+      "filtered_frame_top_eigenvalue_after": 0.1874999999999999,
+      "filtered_top_to_target_ratio": 0.7499999999999996,
+      "finite_probe_only": true,
+      "frame_top_eigenvalue_before": 0.18749999999999992,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            4,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            2
+          ],
+          [
+            2,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "matrix_free_lanczos_used": true,
+      "maximizing_tagged_isotypic_partition": [
+        4,
+        1
+      ],
+      "maximum_tagged_eigenpair_residual": 2.2963710104811397e-09,
+      "n": 5,
+      "orientation_generators": [
+        1,
+        2,
+        4
+      ],
+      "original_eigenpair_residual": 3.400282443855748e-13,
+      "physical_dimension": 3200,
+      "raw_top_norm_ratio": 0.9999999999999999,
+      "raw_top_preserved": true,
+      "rejected_hilbert_fraction": 0.125,
+      "retained_trace_fraction": 0.8728125,
+      "status": "finite-raw-top-preserved-conditioned-worse",
+      "target_two_to_one_minus_k": 0.25
+    },
+    {
+      "active_tagged_isotypic_sector_count": 7,
+      "coherently_tagged_conditioned_top_norm_ratio": 1.147776183644189,
+      "coherently_tagged_frame_norm_improved": false,
+      "coherently_tagged_frame_top_eigenvalue_after": 0.18749999999999997,
+      "coherently_tagged_raw_top_norm_ratio": 0.9999999999999997,
+      "conditioned_frame_norm_improved": false,
+      "conditioned_top_norm_ratio": 1.1477761836441898,
+      "control_id": "W5-2-FULL",
+      "copy_count": 3,
+      "filtered_eigenpair_residual": 3.128237512783949e-10,
+      "filtered_frame_top_eigenvalue_after": 0.18750000000000006,
+      "filtered_top_to_target_ratio": 0.7500000000000002,
+      "finite_probe_only": true,
+      "frame_top_eigenvalue_before": 0.18750000000000003,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            4,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            2
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2,
+            1
+          ],
+          [
+            2,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "matrix_free_lanczos_used": true,
+      "maximizing_tagged_isotypic_partition": [
+        4,
+        1
+      ],
+      "maximum_tagged_eigenpair_residual": 1.479041809244395e-08,
+      "n": 5,
+      "orientation_generators": [
+        1,
+        2,
+        4
+      ],
+      "original_eigenpair_residual": 4.383097094123282e-12,
+      "physical_dimension": 3200,
+      "raw_top_norm_ratio": 1.0000000000000002,
+      "raw_top_preserved": true,
+      "rejected_hilbert_fraction": 0.125,
+      "retained_trace_fraction": 0.87125,
+      "status": "finite-raw-top-preserved-conditioned-worse",
+      "target_two_to_one_minus_k": 0.25
+    },
+    {
+      "active_tagged_isotypic_sector_count": 7,
+      "coherently_tagged_conditioned_top_norm_ratio": 1.1457214464733265,
+      "coherently_tagged_frame_norm_improved": false,
+      "coherently_tagged_frame_top_eigenvalue_after": 0.18750000000000003,
+      "coherently_tagged_raw_top_norm_ratio": 1.0000000000000002,
+      "conditioned_frame_norm_improved": false,
+      "conditioned_top_norm_ratio": 1.145721446473327,
+      "control_id": "W5-3-FULL",
+      "copy_count": 3,
+      "filtered_eigenpair_residual": 2.7188154592444104e-14,
+      "filtered_frame_top_eigenvalue_after": 0.18750000000000014,
+      "filtered_top_to_target_ratio": 0.7500000000000006,
+      "finite_probe_only": true,
+      "frame_top_eigenvalue_before": 0.1875,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        [
+          [
+            4,
+            1
+          ],
+          [
+            2,
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "matrix_free_lanczos_used": true,
+      "maximizing_tagged_isotypic_partition": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "maximum_tagged_eigenpair_residual": 1.7973447616616218e-09,
+      "n": 5,
+      "orientation_generators": [
+        1,
+        2,
+        4
+      ],
+      "original_eigenpair_residual": 4.3491751817306986e-13,
+      "physical_dimension": 3200,
+      "raw_top_norm_ratio": 1.0000000000000007,
+      "raw_top_preserved": true,
+      "rejected_hilbert_fraction": 0.125,
+      "retained_trace_fraction": 0.8728125,
+      "status": "finite-raw-top-preserved-conditioned-worse",
+      "target_two_to_one_minus_k": 0.25
+    },
+    {
+      "active_tagged_isotypic_sector_count": 7,
+      "coherently_tagged_conditioned_top_norm_ratio": 0.8957305127422062,
+      "coherently_tagged_frame_norm_improved": true,
+      "coherently_tagged_frame_top_eigenvalue_after": 0.19461144968250582,
+      "coherently_tagged_raw_top_norm_ratio": 0.7784457987300235,
+      "conditioned_frame_norm_improved": false,
+      "conditioned_top_norm_ratio": 1.1506652283351315,
+      "control_id": "W5-4-FULL",
+      "copy_count": 3,
+      "filtered_eigenpair_residual": 4.818649343701114e-11,
+      "filtered_frame_top_eigenvalue_after": 0.25,
+      "filtered_top_to_target_ratio": 1.0,
+      "finite_probe_only": true,
+      "frame_top_eigenvalue_before": 0.24999999999999994,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        [
+          [
+            4,
+            1
+          ],
+          [
+            2,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "matrix_free_lanczos_used": true,
+      "maximizing_tagged_isotypic_partition": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "maximum_tagged_eigenpair_residual": 2.1094195055613067e-09,
+      "n": 5,
+      "orientation_generators": [
+        1,
+        2,
+        4
+      ],
+      "original_eigenpair_residual": 1.227051478556615e-16,
+      "physical_dimension": 3200,
+      "raw_top_norm_ratio": 1.0000000000000002,
+      "raw_top_preserved": true,
+      "rejected_hilbert_fraction": 0.125,
+      "retained_trace_fraction": 0.8690625,
+      "status": "finite-raw-top-preserved-conditioned-worse",
+      "target_two_to_one_minus_k": 0.25
+    },
+    {
+      "active_tagged_isotypic_sector_count": 7,
+      "coherently_tagged_conditioned_top_norm_ratio": 1.1457214464733259,
+      "coherently_tagged_frame_norm_improved": false,
+      "coherently_tagged_frame_top_eigenvalue_after": 0.17499999999999993,
+      "coherently_tagged_raw_top_norm_ratio": 0.9999999999999997,
+      "conditioned_frame_norm_improved": false,
+      "conditioned_top_norm_ratio": 1.1457214464733267,
+      "control_id": "W5-5-FULL",
+      "copy_count": 3,
+      "filtered_eigenpair_residual": 1.1170832285900675e-11,
+      "filtered_frame_top_eigenvalue_after": 0.17500000000000007,
+      "filtered_top_to_target_ratio": 0.7000000000000003,
+      "finite_probe_only": true,
+      "frame_top_eigenvalue_before": 0.175,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        [
+          [
+            4,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2,
+            1
+          ],
+          [
+            2,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "matrix_free_lanczos_used": true,
+      "maximizing_tagged_isotypic_partition": [
+        3,
+        2
+      ],
+      "maximum_tagged_eigenpair_residual": 2.0409401683999725e-08,
+      "n": 5,
+      "orientation_generators": [
+        1,
+        2,
+        4
+      ],
+      "original_eigenpair_residual": 1.5756712526839786e-16,
+      "physical_dimension": 3200,
+      "raw_top_norm_ratio": 1.0000000000000004,
+      "raw_top_preserved": true,
+      "rejected_hilbert_fraction": 0.125,
+      "retained_trace_fraction": 0.8728125,
+      "status": "finite-raw-top-preserved-conditioned-worse",
+      "target_two_to_one_minus_k": 0.25
+    },
+    {
+      "active_tagged_isotypic_sector_count": 7,
+      "coherently_tagged_conditioned_top_norm_ratio": 1.1477761836441907,
+      "coherently_tagged_frame_norm_improved": false,
+      "coherently_tagged_frame_top_eigenvalue_after": 0.18750000000000017,
+      "coherently_tagged_raw_top_norm_ratio": 1.000000000000001,
+      "conditioned_frame_norm_improved": false,
+      "conditioned_top_norm_ratio": 1.1477761836441893,
+      "control_id": "W5-6-FULL",
+      "copy_count": 3,
+      "filtered_eigenpair_residual": 9.875348211008522e-11,
+      "filtered_frame_top_eigenvalue_after": 0.18749999999999997,
+      "filtered_top_to_target_ratio": 0.7499999999999999,
+      "finite_probe_only": true,
+      "frame_top_eigenvalue_before": 0.18749999999999997,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            2,
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            4,
+            1
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "matrix_free_lanczos_used": true,
+      "maximizing_tagged_isotypic_partition": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "maximum_tagged_eigenpair_residual": 1.1245699421243244e-08,
+      "n": 5,
+      "orientation_generators": [
+        1,
+        2,
+        4
+      ],
+      "original_eigenpair_residual": 4.196110031628455e-12,
+      "physical_dimension": 3200,
+      "raw_top_norm_ratio": 1.0,
+      "raw_top_preserved": true,
+      "rejected_hilbert_fraction": 0.125,
+      "retained_trace_fraction": 0.87125,
+      "status": "finite-raw-top-preserved-conditioned-worse",
+      "target_two_to_one_minus_k": 0.25
+    },
+    {
+      "active_tagged_isotypic_sector_count": 7,
+      "coherently_tagged_conditioned_top_norm_ratio": 0.958574823498845,
+      "coherently_tagged_frame_norm_improved": true,
+      "coherently_tagged_frame_top_eigenvalue_after": 0.21450425089724828,
+      "coherently_tagged_raw_top_norm_ratio": 0.8300658862235312,
+      "conditioned_frame_norm_improved": false,
+      "conditioned_top_norm_ratio": 1.1548177553229904,
+      "control_id": "W5-7-FULL",
+      "copy_count": 3,
+      "filtered_eigenpair_residual": 1.258508091259712e-10,
+      "filtered_frame_top_eigenvalue_after": 0.2584183429982378,
+      "filtered_top_to_target_ratio": 1.0336733719929512,
+      "finite_probe_only": true,
+      "frame_top_eigenvalue_before": 0.2584183429982373,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            2,
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            4,
+            1
+          ],
+          [
+            2,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            2
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "matrix_free_lanczos_used": true,
+      "maximizing_tagged_isotypic_partition": [
+        4,
+        1
+      ],
+      "maximum_tagged_eigenpair_residual": 8.447289660305489e-10,
+      "n": 5,
+      "orientation_generators": [
+        1,
+        2,
+        4
+      ],
+      "original_eigenpair_residual": 3.924489329062667e-14,
+      "physical_dimension": 3200,
+      "raw_top_norm_ratio": 1.000000000000002,
+      "raw_top_preserved": true,
+      "rejected_hilbert_fraction": 0.125,
+      "retained_trace_fraction": 0.8659375,
+      "status": "finite-raw-top-preserved-conditioned-worse",
+      "target_two_to_one_minus_k": 0.25
+    },
+    {
+      "active_tagged_isotypic_sector_count": 7,
+      "coherently_tagged_conditioned_top_norm_ratio": 1.1477761836441889,
+      "coherently_tagged_frame_norm_improved": false,
+      "coherently_tagged_frame_top_eigenvalue_after": 0.1812151505119603,
+      "coherently_tagged_raw_top_norm_ratio": 0.9999999999999996,
+      "conditioned_frame_norm_improved": false,
+      "conditioned_top_norm_ratio": 1.1477761836441902,
+      "control_id": "W5-8-FULL",
+      "copy_count": 3,
+      "filtered_eigenpair_residual": 8.15023600108752e-12,
+      "filtered_frame_top_eigenvalue_after": 0.18121515051196052,
+      "filtered_top_to_target_ratio": 0.7248606020478421,
+      "finite_probe_only": true,
+      "frame_top_eigenvalue_before": 0.18121515051196038,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            2,
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            4,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            2
+          ],
+          [
+            2,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "matrix_free_lanczos_used": true,
+      "maximizing_tagged_isotypic_partition": [
+        2,
+        2,
+        1
+      ],
+      "maximum_tagged_eigenpair_residual": 1.5142341672975155e-08,
+      "n": 5,
+      "orientation_generators": [
+        1,
+        2,
+        4
+      ],
+      "original_eigenpair_residual": 3.266196630506187e-12,
+      "physical_dimension": 3200,
+      "raw_top_norm_ratio": 1.0000000000000007,
+      "raw_top_preserved": true,
+      "rejected_hilbert_fraction": 0.125,
+      "retained_trace_fraction": 0.87125,
+      "status": "finite-raw-top-preserved-conditioned-worse",
+      "target_two_to_one_minus_k": 0.25
+    },
+    {
+      "active_tagged_isotypic_sector_count": 7,
+      "coherently_tagged_conditioned_top_norm_ratio": 1.1457214464733263,
+      "coherently_tagged_frame_norm_improved": false,
+      "coherently_tagged_frame_top_eigenvalue_after": 0.17500000000000004,
+      "coherently_tagged_raw_top_norm_ratio": 1.0000000000000002,
+      "conditioned_frame_norm_improved": false,
+      "conditioned_top_norm_ratio": 1.1457214464733259,
+      "control_id": "W5-9-FULL",
+      "copy_count": 3,
+      "filtered_eigenpair_residual": 1.1631166610472818e-11,
+      "filtered_frame_top_eigenvalue_after": 0.17499999999999996,
+      "filtered_top_to_target_ratio": 0.6999999999999998,
+      "finite_probe_only": true,
+      "frame_top_eigenvalue_before": 0.17500000000000002,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            2,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            4,
+            1
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        [
+          [
+            2,
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "matrix_free_lanczos_used": true,
+      "maximizing_tagged_isotypic_partition": [
+        2,
+        2,
+        1
+      ],
+      "maximum_tagged_eigenpair_residual": 1.6872307403771284e-08,
+      "n": 5,
+      "orientation_generators": [
+        1,
+        2,
+        4
+      ],
+      "original_eigenpair_residual": 1.3801754743035879e-16,
+      "physical_dimension": 3200,
+      "raw_top_norm_ratio": 0.9999999999999997,
+      "raw_top_preserved": true,
+      "rejected_hilbert_fraction": 0.125,
+      "retained_trace_fraction": 0.8728125,
+      "status": "finite-raw-top-preserved-conditioned-worse",
+      "target_two_to_one_minus_k": 0.25
+    },
+    {
+      "active_tagged_isotypic_sector_count": 7,
+      "coherently_tagged_conditioned_top_norm_ratio": 1.1477761836441904,
+      "coherently_tagged_frame_norm_improved": false,
+      "coherently_tagged_frame_top_eigenvalue_after": 0.18121515051196052,
+      "coherently_tagged_raw_top_norm_ratio": 1.0000000000000007,
+      "conditioned_frame_norm_improved": false,
+      "conditioned_top_norm_ratio": 1.1477761836441907,
+      "control_id": "W5-10-FULL",
+      "copy_count": 3,
+      "filtered_eigenpair_residual": 5.331817710700436e-12,
+      "filtered_frame_top_eigenvalue_after": 0.18121515051196058,
+      "filtered_top_to_target_ratio": 0.7248606020478423,
+      "finite_probe_only": true,
+      "frame_top_eigenvalue_before": 0.18121515051196038,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            2,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            4,
+            1
+          ],
+          [
+            2,
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            2
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "matrix_free_lanczos_used": true,
+      "maximizing_tagged_isotypic_partition": [
+        3,
+        2
+      ],
+      "maximum_tagged_eigenpair_residual": 1.4521867476464482e-08,
+      "n": 5,
+      "orientation_generators": [
+        1,
+        2,
+        4
+      ],
+      "original_eigenpair_residual": 3.434285212171688e-12,
+      "physical_dimension": 3200,
+      "raw_top_norm_ratio": 1.000000000000001,
+      "raw_top_preserved": true,
+      "rejected_hilbert_fraction": 0.125,
+      "retained_trace_fraction": 0.87125,
+      "status": "finite-raw-top-preserved-conditioned-worse",
+      "target_two_to_one_minus_k": 0.25
+    },
+    {
+      "active_tagged_isotypic_sector_count": 7,
+      "coherently_tagged_conditioned_top_norm_ratio": 0.9913759145151894,
+      "coherently_tagged_frame_norm_improved": true,
+      "coherently_tagged_frame_top_eigenvalue_after": 0.21965532793400222,
+      "coherently_tagged_raw_top_norm_ratio": 0.8563009461624949,
+      "conditioned_frame_norm_improved": false,
+      "conditioned_top_norm_ratio": 1.1577424023154859,
+      "control_id": "W5-11-FULL",
+      "copy_count": 3,
+      "filtered_eigenpair_residual": 4.8669008966833136e-14,
+      "filtered_frame_top_eigenvalue_after": 0.25651650733119685,
+      "filtered_top_to_target_ratio": 1.0260660293247874,
+      "finite_probe_only": true,
+      "frame_top_eigenvalue_before": 0.25651650733119663,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            2,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            4,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            2
+          ],
+          [
+            2,
+            2,
+            1
+          ]
+        ]
+      ],
+      "matrix_free_lanczos_used": true,
+      "maximizing_tagged_isotypic_partition": [
+        3,
+        2
+      ],
+      "maximum_tagged_eigenpair_residual": 1.3507302414642962e-09,
+      "n": 5,
+      "orientation_generators": [
+        1,
+        2,
+        4
+      ],
+      "original_eigenpair_residual": 1.2996238201387552e-13,
+      "physical_dimension": 3200,
+      "raw_top_norm_ratio": 1.0000000000000009,
+      "raw_top_preserved": true,
+      "rejected_hilbert_fraction": 0.125,
+      "retained_trace_fraction": 0.86375,
+      "status": "finite-raw-top-preserved-conditioned-worse",
+      "target_two_to_one_minus_k": 0.25
+    },
+    {
+      "active_tagged_isotypic_sector_count": 7,
+      "coherently_tagged_conditioned_top_norm_ratio": 0.8592910848549942,
+      "coherently_tagged_frame_norm_improved": true,
+      "coherently_tagged_frame_top_eigenvalue_after": 0.18749999999999997,
+      "coherently_tagged_raw_top_norm_ratio": 0.7499999999999996,
+      "conditioned_frame_norm_improved": false,
+      "conditioned_top_norm_ratio": 1.1457214464733256,
+      "control_id": "W5-12-FULL",
+      "copy_count": 3,
+      "filtered_eigenpair_residual": 2.1388293099808634e-14,
+      "filtered_frame_top_eigenvalue_after": 0.24999999999999997,
+      "filtered_top_to_target_ratio": 0.9999999999999999,
+      "finite_probe_only": true,
+      "frame_top_eigenvalue_before": 0.2500000000000001,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            4,
+            1
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        [
+          [
+            2,
+            2,
+            1
+          ],
+          [
+            2,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "matrix_free_lanczos_used": true,
+      "maximizing_tagged_isotypic_partition": [
+        5
+      ],
+      "maximum_tagged_eigenpair_residual": 5.66429196533324e-10,
+      "n": 5,
+      "orientation_generators": [
+        1,
+        2,
+        4
+      ],
+      "original_eigenpair_residual": 1.8366890079543203e-16,
+      "physical_dimension": 3200,
+      "raw_top_norm_ratio": 0.9999999999999994,
+      "raw_top_preserved": true,
+      "rejected_hilbert_fraction": 0.125,
+      "retained_trace_fraction": 0.8728125,
+      "status": "finite-raw-top-preserved-conditioned-worse",
+      "target_two_to_one_minus_k": 0.25
+    },
+    {
+      "active_tagged_isotypic_sector_count": 7,
+      "coherently_tagged_conditioned_top_norm_ratio": 0.8592910848549948,
+      "coherently_tagged_frame_norm_improved": true,
+      "coherently_tagged_frame_top_eigenvalue_after": 0.1875,
+      "coherently_tagged_raw_top_norm_ratio": 0.7500000000000002,
+      "conditioned_frame_norm_improved": false,
+      "conditioned_top_norm_ratio": 1.145721446473326,
+      "control_id": "W5-13-FULL",
+      "copy_count": 3,
+      "filtered_eigenpair_residual": 4.00232162592327e-15,
+      "filtered_frame_top_eigenvalue_after": 0.24999999999999994,
+      "filtered_top_to_target_ratio": 0.9999999999999998,
+      "finite_probe_only": true,
+      "frame_top_eigenvalue_before": 0.24999999999999994,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            4,
+            1
+          ],
+          [
+            2,
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            2
+          ],
+          [
+            2,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "matrix_free_lanczos_used": true,
+      "maximizing_tagged_isotypic_partition": [
+        5
+      ],
+      "maximum_tagged_eigenpair_residual": 5.126914684885578e-10,
+      "n": 5,
+      "orientation_generators": [
+        1,
+        2,
+        4
+      ],
+      "original_eigenpair_residual": 3.049510835151382e-16,
+      "physical_dimension": 3200,
+      "raw_top_norm_ratio": 1.0,
+      "raw_top_preserved": true,
+      "rejected_hilbert_fraction": 0.125,
+      "retained_trace_fraction": 0.8728125,
+      "status": "finite-raw-top-preserved-conditioned-worse",
+      "target_two_to_one_minus_k": 0.25
+    },
+    {
+      "active_tagged_isotypic_sector_count": 5,
+      "coherently_tagged_conditioned_top_norm_ratio": 1.1627906976744184,
+      "coherently_tagged_frame_norm_improved": false,
+      "coherently_tagged_frame_top_eigenvalue_after": 0.22291666666666665,
+      "coherently_tagged_raw_top_norm_ratio": 0.9999999999999999,
+      "conditioned_frame_norm_improved": false,
+      "conditioned_top_norm_ratio": 1.162790697674419,
+      "control_id": "W5-14-FULL",
+      "copy_count": 3,
+      "filtered_eigenpair_residual": 1.8753802680754366e-12,
+      "filtered_frame_top_eigenvalue_after": 0.22291666666666674,
+      "filtered_top_to_target_ratio": 0.8916666666666669,
+      "finite_probe_only": true,
+      "frame_top_eigenvalue_before": 0.22291666666666668,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            4,
+            1
+          ],
+          [
+            2,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            2
+          ],
+          [
+            2,
+            2,
+            1
+          ]
+        ]
+      ],
+      "matrix_free_lanczos_used": true,
+      "maximizing_tagged_isotypic_partition": [
+        3,
+        1,
+        1
+      ],
+      "maximum_tagged_eigenpair_residual": 1.4368568911196738e-10,
+      "n": 5,
+      "orientation_generators": [
+        1,
+        2,
+        4
+      ],
+      "original_eigenpair_residual": 1.268220466827784e-16,
+      "physical_dimension": 3200,
+      "raw_top_norm_ratio": 1.0000000000000002,
+      "raw_top_preserved": true,
+      "rejected_hilbert_fraction": 0.125,
+      "retained_trace_fraction": 0.86,
+      "status": "finite-raw-top-preserved-conditioned-worse",
+      "target_two_to_one_minus_k": 0.25
+    },
+    {
+      "active_tagged_isotypic_sector_count": 7,
+      "coherently_tagged_conditioned_top_norm_ratio": 0.9715365613087079,
+      "coherently_tagged_frame_norm_improved": true,
+      "coherently_tagged_frame_top_eigenvalue_after": 0.21138510337849614,
+      "coherently_tagged_raw_top_norm_ratio": 0.8455404135139849,
+      "conditioned_frame_norm_improved": false,
+      "conditioned_top_norm_ratio": 1.0486758176739936,
+      "control_id": "W5-15-FULL",
+      "copy_count": 3,
+      "filtered_eigenpair_residual": 5.837812863410392e-13,
+      "filtered_frame_top_eigenvalue_after": 0.2281689181423493,
+      "filtered_top_to_target_ratio": 0.9126756725693972,
+      "finite_probe_only": true,
+      "frame_top_eigenvalue_before": 0.2499999999999999,
+      "labels": [
+        [
+          [
+            4,
+            1
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            1,
+            1
+          ],
+          [
+            2,
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "matrix_free_lanczos_used": true,
+      "maximizing_tagged_isotypic_partition": [
+        4,
+        1
+      ],
+      "maximum_tagged_eigenpair_residual": 3.76594801272531e-08,
+      "n": 5,
+      "orientation_generators": [
+        1,
+        2,
+        4
+      ],
+      "original_eigenpair_residual": 2.5631099984324846e-14,
+      "physical_dimension": 19200,
+      "raw_top_norm_ratio": 0.9126756725693976,
+      "raw_top_preserved": false,
+      "rejected_hilbert_fraction": 0.125,
+      "retained_trace_fraction": 0.8703125,
+      "status": "finite-raw-top-reduced-conditioned-worse",
+      "target_two_to_one_minus_k": 0.25
+    },
+    {
+      "active_tagged_isotypic_sector_count": 7,
+      "coherently_tagged_conditioned_top_norm_ratio": 1.146679407548971,
+      "coherently_tagged_frame_norm_improved": false,
+      "coherently_tagged_frame_top_eigenvalue_after": 0.17975595178559503,
+      "coherently_tagged_raw_top_norm_ratio": 0.9999999999999986,
+      "conditioned_frame_norm_improved": false,
+      "conditioned_top_norm_ratio": 1.1466794075489735,
+      "control_id": "W5-16-FULL",
+      "copy_count": 3,
+      "filtered_eigenpair_residual": 4.729104930484292e-10,
+      "filtered_frame_top_eigenvalue_after": 0.17975595178559542,
+      "filtered_top_to_target_ratio": 0.7190238071423817,
+      "finite_probe_only": true,
+      "frame_top_eigenvalue_before": 0.17975595178559528,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            1,
+            1
+          ],
+          [
+            2,
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "matrix_free_lanczos_used": true,
+      "maximizing_tagged_isotypic_partition": [
+        3,
+        2
+      ],
+      "maximum_tagged_eigenpair_residual": 8.137300783769024e-09,
+      "n": 5,
+      "orientation_generators": [
+        1,
+        2,
+        4
+      ],
+      "original_eigenpair_residual": 1.0165307400769866e-10,
+      "physical_dimension": 4800,
+      "raw_top_norm_ratio": 1.0000000000000007,
+      "raw_top_preserved": true,
+      "rejected_hilbert_fraction": 0.125,
+      "retained_trace_fraction": 0.8720833333333333,
+      "status": "finite-raw-top-preserved-conditioned-worse",
+      "target_two_to_one_minus_k": 0.25
+    },
+    {
+      "active_tagged_isotypic_sector_count": 7,
+      "coherently_tagged_conditioned_top_norm_ratio": 0.9790134733349452,
+      "coherently_tagged_frame_norm_improved": true,
+      "coherently_tagged_frame_top_eigenvalue_after": 0.21645575202185385,
+      "coherently_tagged_raw_top_norm_ratio": 0.845928829303476,
+      "conditioned_frame_norm_improved": false,
+      "conditioned_top_norm_ratio": 1.1573236889692584,
+      "control_id": "W5-17-FULL",
+      "copy_count": 3,
+      "filtered_eigenpair_residual": 1.3652495819293908e-13,
+      "filtered_frame_top_eigenvalue_after": 0.25587938904988017,
+      "filtered_top_to_target_ratio": 1.0235175561995207,
+      "finite_probe_only": true,
+      "frame_top_eigenvalue_before": 0.2558793890498802,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            4,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1,
+            1
+          ],
+          [
+            2,
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "matrix_free_lanczos_used": true,
+      "maximizing_tagged_isotypic_partition": [
+        3,
+        1,
+        1
+      ],
+      "maximum_tagged_eigenpair_residual": 1.2677541902241394e-08,
+      "n": 5,
+      "orientation_generators": [
+        1,
+        2,
+        4
+      ],
+      "original_eigenpair_residual": 4.365992553118783e-12,
+      "physical_dimension": 3840,
+      "raw_top_norm_ratio": 0.9999999999999998,
+      "raw_top_preserved": true,
+      "rejected_hilbert_fraction": 0.125,
+      "retained_trace_fraction": 0.8640625,
+      "status": "finite-raw-top-preserved-conditioned-worse",
+      "target_two_to_one_minus_k": 0.25
+    },
+    {
+      "active_tagged_isotypic_sector_count": 7,
+      "coherently_tagged_conditioned_top_norm_ratio": 0.9790134733349434,
+      "coherently_tagged_frame_norm_improved": true,
+      "coherently_tagged_frame_top_eigenvalue_after": 0.21645575202185358,
+      "coherently_tagged_raw_top_norm_ratio": 0.8459288293034746,
+      "conditioned_frame_norm_improved": false,
+      "conditioned_top_norm_ratio": 1.1573236889692586,
+      "control_id": "W5-18-FULL",
+      "copy_count": 3,
+      "filtered_eigenpair_residual": 1.2684416375145828e-13,
+      "filtered_frame_top_eigenvalue_after": 0.25587938904988033,
+      "filtered_top_to_target_ratio": 1.0235175561995213,
+      "finite_probe_only": true,
+      "frame_top_eigenvalue_before": 0.25587938904988033,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            4,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            2
+          ],
+          [
+            3,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "matrix_free_lanczos_used": true,
+      "maximizing_tagged_isotypic_partition": [
+        3,
+        1,
+        1
+      ],
+      "maximum_tagged_eigenpair_residual": 2.9240124522975253e-08,
+      "n": 5,
+      "orientation_generators": [
+        1,
+        2,
+        4
+      ],
+      "original_eigenpair_residual": 4.205951171114221e-12,
+      "physical_dimension": 3840,
+      "raw_top_norm_ratio": 1.0,
+      "raw_top_preserved": true,
+      "rejected_hilbert_fraction": 0.125,
+      "retained_trace_fraction": 0.8640625,
+      "status": "finite-raw-top-preserved-conditioned-worse",
+      "target_two_to_one_minus_k": 0.25
+    },
+    {
+      "active_tagged_isotypic_sector_count": 7,
+      "coherently_tagged_conditioned_top_norm_ratio": 1.1466794075489728,
+      "coherently_tagged_frame_norm_improved": false,
+      "coherently_tagged_frame_top_eigenvalue_after": 0.1797559517855951,
+      "coherently_tagged_raw_top_norm_ratio": 0.9999999999999999,
+      "conditioned_frame_norm_improved": false,
+      "conditioned_top_norm_ratio": 1.1466794075489735,
+      "control_id": "W5-19-FULL",
+      "copy_count": 3,
+      "filtered_eigenpair_residual": 6.998459311037659e-10,
+      "filtered_frame_top_eigenvalue_after": 0.17975595178559525,
+      "filtered_top_to_target_ratio": 0.719023807142381,
+      "finite_probe_only": true,
+      "frame_top_eigenvalue_before": 0.17975595178559511,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            4,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            2
+          ],
+          [
+            3,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "matrix_free_lanczos_used": true,
+      "maximizing_tagged_isotypic_partition": [
+        2,
+        2,
+        1
+      ],
+      "maximum_tagged_eigenpair_residual": 1.0347429990034402e-08,
+      "n": 5,
+      "orientation_generators": [
+        1,
+        2,
+        4
+      ],
+      "original_eigenpair_residual": 1.123808746469368e-10,
+      "physical_dimension": 4800,
+      "raw_top_norm_ratio": 1.0000000000000007,
+      "raw_top_preserved": true,
+      "rejected_hilbert_fraction": 0.125,
+      "retained_trace_fraction": 0.8720833333333333,
+      "status": "finite-raw-top-preserved-conditioned-worse",
+      "target_two_to_one_minus_k": 0.25
+    },
+    {
+      "active_tagged_isotypic_sector_count": 7,
+      "coherently_tagged_conditioned_top_norm_ratio": 0.9715365613087065,
+      "coherently_tagged_frame_norm_improved": true,
+      "coherently_tagged_frame_top_eigenvalue_after": 0.211385103378496,
+      "coherently_tagged_raw_top_norm_ratio": 0.8455404135139837,
+      "conditioned_frame_norm_improved": false,
+      "conditioned_top_norm_ratio": 1.048675817673992,
+      "control_id": "W5-20-FULL",
+      "copy_count": 3,
+      "filtered_eigenpair_residual": 4.570261672139268e-13,
+      "filtered_frame_top_eigenvalue_after": 0.2281689181423492,
+      "filtered_top_to_target_ratio": 0.9126756725693967,
+      "finite_probe_only": true,
+      "frame_top_eigenvalue_before": 0.2500000000000001,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            4,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            2
+          ],
+          [
+            3,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2,
+            1
+          ],
+          [
+            2,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "matrix_free_lanczos_used": true,
+      "maximizing_tagged_isotypic_partition": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "maximum_tagged_eigenpair_residual": 3.136842693261084e-08,
+      "n": 5,
+      "orientation_generators": [
+        1,
+        2,
+        4
+      ],
+      "original_eigenpair_residual": 1.0609251044574326e-13,
+      "physical_dimension": 19200,
+      "raw_top_norm_ratio": 0.9126756725693963,
+      "raw_top_preserved": false,
+      "rejected_hilbert_fraction": 0.125,
+      "retained_trace_fraction": 0.8703125,
+      "status": "finite-raw-top-reduced-conditioned-worse",
+      "target_two_to_one_minus_k": 0.25
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "average_frame_compression_identity",
+      "resolution": "B commutes with every Pi_nu, so summing Z U Pi_nu B Pi_nu U^* Z gives Z U B U^* Z exactly.",
+      "resolved": true
+    },
+    {
+      "obligation": "coherently_tagged_average_frame_identity",
+      "resolution": "Retaining the orthogonal nu register gives a direct-sum frame. Cross-nu average blocks vanish because Pi_nu B Pi_mu=0.",
+      "resolved": true
+    },
+    {
+      "obligation": "top_eigenvalue_equality_criterion",
+      "resolution": "Compression has norm ||B|| iff Ran(U^*Z) intersects the top eigenspace; both implications follow from 0<=B<=||B||I.",
+      "resolved": true
+    },
+    {
+      "obligation": "spectral_rank_budget",
+      "resolution": "Cauchy interlacing lower-bounds the compressed norm by lambda_(q+1)(B), where q=2^-dim(H) times physical dimension.",
+      "resolved": true
+    },
+    {
+      "obligation": "typical_large_n_bad_eigenvalue_count",
+      "resolution": "No theorem yet counts eigenvalues above poly(n)2^-k on typical Plancherel tuples after the selected common cores.",
+      "resolved": false
+    },
+    {
+      "obligation": "conditioned_polynomial_frame_norm",
+      "resolution": "The discarded-label channel never improves normalized frame norm. The intended coherent-tagged channel improves 2/30 W4 and 9/21 W5 controls, but no uniform or asymptotic bound is known.",
+      "resolved": false
+    }
+  ],
+  "status": "coherent-tagging-finite-sparse-gain-asymptotic-open",
+  "summary": "Separated discarded-label principal compression from the intended coherent-tagged frame, proved both identities, and found 11 finite conditioned W4/W5 gains but no asymptotic sector bound.",
+  "theorem_contract": {
+    "asymptotic_boundary": "A viable theorem must upper-bound the count and magnitude of post-common-core spectral spikes on typical natural tuples.",
+    "average_frame_identity": "sum_nu K_nu B K_nu^*=Z_H U_H B U_H^* Z_H.",
+    "coherent_tagged_frame": "B_tag=direct_sum_nu Z_H U_H Pi_nu B Pi_nu U_H^* Z_H; its norm is the maximum sector norm and is at most the discarded-label compression norm.",
+    "commutation": "[B,Pi_nu]=0 for every diagonal S_n isotypic projector.",
+    "conditioning": "Equal hidden-label acceptance p makes the normalized output frame top equal to raw_filtered_top/p; raw reduction alone is not algorithmic progress.",
+    "equality_criterion": "The raw top norm is preserved iff the top eigenspace of B intersects Ran(U_H^* Z_H).",
+    "interlacing": "If q=rank(I-Z_H), then filtered top >= lambda_(q+1)(B).",
+    "measurement_consequence": "Discarding nu supplies no average-frame spectral advantage. Retaining nu coherently produces orthogonal output blocks and can strictly lower the frame norm.",
+    "rank_budget": "For dim(H)=r, the filter rejects exactly a 2^-r Hilbert-space fraction and can remove at most that many top spectral directions."
+  }
+}

@@ -1,0 +1,3659 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "The finite reciprocal screen already proved the 1/d law.",
+      "resolution": "It did not. The screen measured values; this module derives the operator, its multiplicities, and the exact conditions under which a value can be one.",
+      "resolved": true
+    },
+    {
+      "objection": "Every star correlation is a single reciprocal irrep dimension.",
+      "resolution": "False in general. The exact value is a product of two carrier reciprocals; finite controls only ever realized a one-dimensional second carrier because their membership blocks are singletons.",
+      "resolved": true
+    },
+    {
+      "objection": "The 1/(n-1) bound makes the hierarchy well conditioned.",
+      "resolution": "No. A leaf can meet exponentially many pair cores and the accumulated weighted degree is unbounded by this theorem.",
+      "resolved": false
+    },
+    {
+      "objection": "The theorem needs the collision-free sector.",
+      "resolution": "It does not. Repeated-source controls outside the collision-free sector satisfy the same closed form.",
+      "resolved": true
+    },
+    {
+      "objection": "The disjoint waist bound is an equality.",
+      "resolution": "It is exact on every screened control but only proved as an upper bound; a grid with genuine Kronecker multiplicity could be strictly smaller.",
+      "resolved": false
+    }
+  ],
+  "claim_gate": {
+    "all_depth_multistar_conditioning_proved": false,
+    "coherent_recoupling_block_transform_compiled": false,
+    "disjoint_pair_closed_form_proved": false,
+    "disjoint_waist_bound_proved": true,
+    "hierarchical_orientation_polar_proved": false,
+    "off_common_star_bound_proved": true,
+    "reason": "The pair-core overlap operator is now exact and uniformly contracting off the common ranges, but nothing here controls how many such blocks meet one leaf or compiles the recoupling basis.",
+    "speedup_claim_allowed": false,
+    "star_carrier_factorization_proved": true
+  },
+  "created_at": "2026-08-06T19:21:13.241418+00:00",
+  "disjoint_waist_controls": [
+    {
+      "bound_respected": true,
+      "bound_tight": true,
+      "control_id": "DISJOINT-N6-K4-0",
+      "first_pair": [
+        1,
+        14
+      ],
+      "labels": [
+        [
+          [
+            6
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            5,
+            1
+          ],
+          [
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            4,
+            2
+          ],
+          [
+            2,
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            2,
+            2
+          ]
+        ]
+      ],
+      "n": 6,
+      "observed_norm": 0.2,
+      "second_pair": [
+        2,
+        13
+      ],
+      "status": "waist-bound-respected",
+      "target_partition": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "waist_bound_denominator": 5,
+      "waist_bound_numerator": 1,
+      "waist_column": "first",
+      "waist_row": "first"
+    },
+    {
+      "bound_respected": true,
+      "bound_tight": true,
+      "control_id": "DISJOINT-N6-K4-1",
+      "first_pair": [
+        1,
+        14
+      ],
+      "labels": [
+        [
+          [
+            6
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            5,
+            1
+          ],
+          [
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            4,
+            2
+          ],
+          [
+            2,
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            2,
+            2
+          ]
+        ]
+      ],
+      "n": 6,
+      "observed_norm": 0.11111111111111112,
+      "second_pair": [
+        4,
+        11
+      ],
+      "status": "waist-bound-respected",
+      "target_partition": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "waist_bound_denominator": 9,
+      "waist_bound_numerator": 1,
+      "waist_column": "first",
+      "waist_row": "first"
+    },
+    {
+      "bound_respected": true,
+      "bound_tight": true,
+      "control_id": "DISJOINT-N6-K4-2",
+      "first_pair": [
+        1,
+        14
+      ],
+      "labels": [
+        [
+          [
+            6
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            5,
+            1
+          ],
+          [
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            4,
+            2
+          ],
+          [
+            2,
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            2,
+            2
+          ]
+        ]
+      ],
+      "n": 6,
+      "observed_norm": 0.2,
+      "second_pair": [
+        7,
+        8
+      ],
+      "status": "waist-bound-respected",
+      "target_partition": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "waist_bound_denominator": 5,
+      "waist_bound_numerator": 1,
+      "waist_column": "first",
+      "waist_row": "first"
+    },
+    {
+      "bound_respected": true,
+      "bound_tight": true,
+      "control_id": "DISJOINT-N6-K4-3",
+      "first_pair": [
+        2,
+        13
+      ],
+      "labels": [
+        [
+          [
+            6
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            5,
+            1
+          ],
+          [
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            4,
+            2
+          ],
+          [
+            2,
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            2,
+            2
+          ]
+        ]
+      ],
+      "n": 6,
+      "observed_norm": 0.19999999999999996,
+      "second_pair": [
+        4,
+        11
+      ],
+      "status": "waist-bound-respected",
+      "target_partition": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "waist_bound_denominator": 5,
+      "waist_bound_numerator": 1,
+      "waist_column": "first",
+      "waist_row": "first"
+    },
+    {
+      "bound_respected": true,
+      "bound_tight": true,
+      "control_id": "DISJOINT-N6-K4-4",
+      "first_pair": [
+        2,
+        13
+      ],
+      "labels": [
+        [
+          [
+            6
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            5,
+            1
+          ],
+          [
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            4,
+            2
+          ],
+          [
+            2,
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            2,
+            2
+          ]
+        ]
+      ],
+      "n": 6,
+      "observed_norm": 0.11111111111111109,
+      "second_pair": [
+        7,
+        8
+      ],
+      "status": "waist-bound-respected",
+      "target_partition": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "waist_bound_denominator": 9,
+      "waist_bound_numerator": 1,
+      "waist_column": "first",
+      "waist_row": "first"
+    },
+    {
+      "bound_respected": true,
+      "bound_tight": true,
+      "control_id": "DISJOINT-N6-K4-5",
+      "first_pair": [
+        4,
+        11
+      ],
+      "labels": [
+        [
+          [
+            6
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            5,
+            1
+          ],
+          [
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            4,
+            2
+          ],
+          [
+            2,
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            2,
+            2
+          ]
+        ]
+      ],
+      "n": 6,
+      "observed_norm": 0.19999999999999996,
+      "second_pair": [
+        7,
+        8
+      ],
+      "status": "waist-bound-respected",
+      "target_partition": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "waist_bound_denominator": 5,
+      "waist_bound_numerator": 1,
+      "waist_column": "first",
+      "waist_row": "first"
+    },
+    {
+      "bound_respected": true,
+      "bound_tight": true,
+      "control_id": "DISJOINT-N6-K4-6",
+      "first_pair": [
+        1,
+        14
+      ],
+      "labels": [
+        [
+          [
+            6
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            5,
+            1
+          ],
+          [
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            4,
+            2
+          ],
+          [
+            2,
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "n": 6,
+      "observed_norm": 0.19999999999999998,
+      "second_pair": [
+        2,
+        13
+      ],
+      "status": "waist-bound-respected",
+      "target_partition": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "waist_bound_denominator": 5,
+      "waist_bound_numerator": 1,
+      "waist_column": "first",
+      "waist_row": "first"
+    },
+    {
+      "bound_respected": true,
+      "bound_tight": true,
+      "control_id": "DISJOINT-N6-K4-7",
+      "first_pair": [
+        0,
+        15
+      ],
+      "labels": [
+        [
+          [
+            6
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            5,
+            1
+          ],
+          [
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            4,
+            2
+          ],
+          [
+            3,
+            3
+          ]
+        ],
+        [
+          [
+            2,
+            2,
+            2
+          ],
+          [
+            2,
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "n": 6,
+      "observed_norm": 0.19999999999999996,
+      "second_pair": [
+        3,
+        12
+      ],
+      "status": "waist-bound-respected",
+      "target_partition": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "waist_bound_denominator": 5,
+      "waist_bound_numerator": 1,
+      "waist_column": "first",
+      "waist_row": "first"
+    },
+    {
+      "bound_respected": true,
+      "bound_tight": true,
+      "control_id": "DISJOINT-N6-K4-8",
+      "first_pair": [
+        1,
+        14
+      ],
+      "labels": [
+        [
+          [
+            6
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            5,
+            1
+          ],
+          [
+            2,
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            4,
+            2
+          ],
+          [
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            2,
+            2
+          ]
+        ]
+      ],
+      "n": 6,
+      "observed_norm": 0.19999999999999993,
+      "second_pair": [
+        7,
+        8
+      ],
+      "status": "waist-bound-respected",
+      "target_partition": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "waist_bound_denominator": 5,
+      "waist_bound_numerator": 1,
+      "waist_column": "first",
+      "waist_row": "first"
+    },
+    {
+      "bound_respected": true,
+      "bound_tight": true,
+      "control_id": "DISJOINT-N6-K4-9",
+      "first_pair": [
+        1,
+        14
+      ],
+      "labels": [
+        [
+          [
+            6
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            5,
+            1
+          ],
+          [
+            2,
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            4,
+            2
+          ],
+          [
+            2,
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "n": 6,
+      "observed_norm": 1.734723475976807e-18,
+      "second_pair": [
+        7,
+        8
+      ],
+      "status": "waist-bound-respected",
+      "target_partition": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "waist_bound_denominator": 1,
+      "waist_bound_numerator": 0,
+      "waist_column": "second",
+      "waist_row": "first"
+    },
+    {
+      "bound_respected": true,
+      "bound_tight": true,
+      "control_id": "DISJOINT-N6-K4-10",
+      "first_pair": [
+        0,
+        15
+      ],
+      "labels": [
+        [
+          [
+            6
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            5,
+            1
+          ],
+          [
+            2,
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            4,
+            2
+          ],
+          [
+            3,
+            3
+          ]
+        ],
+        [
+          [
+            2,
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "n": 6,
+      "observed_norm": 1.734723475976807e-18,
+      "second_pair": [
+        7,
+        8
+      ],
+      "status": "waist-bound-respected",
+      "target_partition": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "waist_bound_denominator": 1,
+      "waist_bound_numerator": 0,
+      "waist_column": "second",
+      "waist_row": "first"
+    },
+    {
+      "bound_respected": true,
+      "bound_tight": true,
+      "control_id": "DISJOINT-N6-K4-11",
+      "first_pair": [
+        1,
+        14
+      ],
+      "labels": [
+        [
+          [
+            6
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            5,
+            1
+          ],
+          [
+            2,
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            4,
+            2
+          ],
+          [
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "n": 6,
+      "observed_norm": 8.673617379884035e-19,
+      "second_pair": [
+        2,
+        13
+      ],
+      "status": "waist-bound-respected",
+      "target_partition": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "waist_bound_denominator": 1,
+      "waist_bound_numerator": 0,
+      "waist_column": "first",
+      "waist_row": "first"
+    },
+    {
+      "bound_respected": true,
+      "bound_tight": true,
+      "control_id": "DISJOINT-N6-K4-12",
+      "first_pair": [
+        1,
+        14
+      ],
+      "labels": [
+        [
+          [
+            6
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            5,
+            1
+          ],
+          [
+            2,
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            4,
+            2
+          ],
+          [
+            2,
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "n": 6,
+      "observed_norm": 1.734723475976807e-18,
+      "second_pair": [
+        2,
+        13
+      ],
+      "status": "waist-bound-respected",
+      "target_partition": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "waist_bound_denominator": 1,
+      "waist_bound_numerator": 0,
+      "waist_column": "first",
+      "waist_row": "first"
+    },
+    {
+      "bound_respected": true,
+      "bound_tight": true,
+      "control_id": "DISJOINT-N6-K4-13",
+      "first_pair": [
+        1,
+        14
+      ],
+      "labels": [
+        [
+          [
+            6
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            5,
+            1
+          ],
+          [
+            2,
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            4,
+            2
+          ],
+          [
+            2,
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "n": 6,
+      "observed_norm": 0.1111111111111111,
+      "second_pair": [
+        4,
+        11
+      ],
+      "status": "waist-bound-respected",
+      "target_partition": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "waist_bound_denominator": 9,
+      "waist_bound_numerator": 1,
+      "waist_column": "first",
+      "waist_row": "first"
+    },
+    {
+      "bound_respected": true,
+      "bound_tight": true,
+      "control_id": "DISJOINT-N6-K4-14",
+      "first_pair": [
+        1,
+        14
+      ],
+      "labels": [
+        [
+          [
+            6
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            5,
+            1
+          ],
+          [
+            2,
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            4,
+            2
+          ],
+          [
+            2,
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "n": 6,
+      "observed_norm": 2.6020852139652106e-18,
+      "second_pair": [
+        7,
+        8
+      ],
+      "status": "waist-bound-respected",
+      "target_partition": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "waist_bound_denominator": 1,
+      "waist_bound_numerator": 0,
+      "waist_column": "second",
+      "waist_row": "first"
+    },
+    {
+      "bound_respected": true,
+      "bound_tight": true,
+      "control_id": "DISJOINT-N6-K4-15",
+      "first_pair": [
+        2,
+        13
+      ],
+      "labels": [
+        [
+          [
+            6
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            5,
+            1
+          ],
+          [
+            2,
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            4,
+            2
+          ],
+          [
+            2,
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "n": 6,
+      "observed_norm": 3.469446951953614e-18,
+      "second_pair": [
+        4,
+        11
+      ],
+      "status": "waist-bound-respected",
+      "target_partition": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "waist_bound_denominator": 1,
+      "waist_bound_numerator": 0,
+      "waist_column": "second",
+      "waist_row": "first"
+    },
+    {
+      "bound_respected": true,
+      "bound_tight": true,
+      "control_id": "DISJOINT-N6-K4-16",
+      "first_pair": [
+        2,
+        13
+      ],
+      "labels": [
+        [
+          [
+            6
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            5,
+            1
+          ],
+          [
+            2,
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            4,
+            2
+          ],
+          [
+            2,
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "n": 6,
+      "observed_norm": 0.1111111111111111,
+      "second_pair": [
+        7,
+        8
+      ],
+      "status": "waist-bound-respected",
+      "target_partition": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "waist_bound_denominator": 9,
+      "waist_bound_numerator": 1,
+      "waist_column": "first",
+      "waist_row": "first"
+    },
+    {
+      "bound_respected": true,
+      "bound_tight": true,
+      "control_id": "DISJOINT-N6-K4-17",
+      "first_pair": [
+        4,
+        11
+      ],
+      "labels": [
+        [
+          [
+            6
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            5,
+            1
+          ],
+          [
+            2,
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            4,
+            2
+          ],
+          [
+            2,
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "n": 6,
+      "observed_norm": 2.6020852139652106e-18,
+      "second_pair": [
+        7,
+        8
+      ],
+      "status": "waist-bound-respected",
+      "target_partition": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "waist_bound_denominator": 1,
+      "waist_bound_numerator": 0,
+      "waist_column": "first",
+      "waist_row": "first"
+    },
+    {
+      "bound_respected": true,
+      "bound_tight": true,
+      "control_id": "DISJOINT-N6-K4-18",
+      "first_pair": [
+        4,
+        11
+      ],
+      "labels": [
+        [
+          [
+            6
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            5,
+            1
+          ],
+          [
+            2,
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            4,
+            2
+          ],
+          [
+            3,
+            3
+          ]
+        ],
+        [
+          [
+            2,
+            2,
+            1,
+            1
+          ],
+          [
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "n": 6,
+      "observed_norm": 1.734723475976807e-18,
+      "second_pair": [
+        7,
+        8
+      ],
+      "status": "waist-bound-respected",
+      "target_partition": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "waist_bound_denominator": 1,
+      "waist_bound_numerator": 0,
+      "waist_column": "first",
+      "waist_row": "first"
+    },
+    {
+      "bound_respected": true,
+      "bound_tight": true,
+      "control_id": "DISJOINT-N6-K4-19",
+      "first_pair": [
+        0,
+        15
+      ],
+      "labels": [
+        [
+          [
+            6
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            5,
+            1
+          ],
+          [
+            3,
+            3
+          ]
+        ],
+        [
+          [
+            4,
+            2
+          ],
+          [
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2,
+            2
+          ],
+          [
+            2,
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "n": 6,
+      "observed_norm": 1.734723475976807e-18,
+      "second_pair": [
+        2,
+        13
+      ],
+      "status": "waist-bound-respected",
+      "target_partition": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "waist_bound_denominator": 1,
+      "waist_bound_numerator": 0,
+      "waist_column": "first",
+      "waist_row": "first"
+    },
+    {
+      "bound_respected": true,
+      "bound_tight": true,
+      "control_id": "DISJOINT-N6-K4-20",
+      "first_pair": [
+        0,
+        15
+      ],
+      "labels": [
+        [
+          [
+            6
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            5,
+            1
+          ],
+          [
+            3,
+            3
+          ]
+        ],
+        [
+          [
+            4,
+            2
+          ],
+          [
+            2,
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "n": 6,
+      "observed_norm": 8.673617379884035e-19,
+      "second_pair": [
+        2,
+        13
+      ],
+      "status": "waist-bound-respected",
+      "target_partition": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "waist_bound_denominator": 1,
+      "waist_bound_numerator": 0,
+      "waist_column": "first",
+      "waist_row": "first"
+    },
+    {
+      "bound_respected": true,
+      "bound_tight": true,
+      "control_id": "DISJOINT-N6-K4-21",
+      "first_pair": [
+        0,
+        15
+      ],
+      "labels": [
+        [
+          [
+            6
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            5,
+            1
+          ],
+          [
+            3,
+            3
+          ]
+        ],
+        [
+          [
+            4,
+            2
+          ],
+          [
+            2,
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "n": 6,
+      "observed_norm": 0.11111111111111113,
+      "second_pair": [
+        5,
+        10
+      ],
+      "status": "waist-bound-respected",
+      "target_partition": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "waist_bound_denominator": 9,
+      "waist_bound_numerator": 1,
+      "waist_column": "first",
+      "waist_row": "first"
+    },
+    {
+      "bound_respected": true,
+      "bound_tight": true,
+      "control_id": "DISJOINT-N6-K4-22",
+      "first_pair": [
+        0,
+        15
+      ],
+      "labels": [
+        [
+          [
+            6
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            5,
+            1
+          ],
+          [
+            3,
+            3
+          ]
+        ],
+        [
+          [
+            4,
+            2
+          ],
+          [
+            2,
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "n": 6,
+      "observed_norm": 8.673617379884035e-19,
+      "second_pair": [
+        7,
+        8
+      ],
+      "status": "waist-bound-respected",
+      "target_partition": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "waist_bound_denominator": 1,
+      "waist_bound_numerator": 0,
+      "waist_column": "second",
+      "waist_row": "first"
+    },
+    {
+      "bound_respected": true,
+      "bound_tight": true,
+      "control_id": "DISJOINT-N6-K4-23",
+      "first_pair": [
+        2,
+        13
+      ],
+      "labels": [
+        [
+          [
+            6
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            5,
+            1
+          ],
+          [
+            3,
+            3
+          ]
+        ],
+        [
+          [
+            4,
+            2
+          ],
+          [
+            2,
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "n": 6,
+      "observed_norm": 8.673617379884035e-19,
+      "second_pair": [
+        5,
+        10
+      ],
+      "status": "waist-bound-respected",
+      "target_partition": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "waist_bound_denominator": 1,
+      "waist_bound_numerator": 0,
+      "waist_column": "second",
+      "waist_row": "first"
+    },
+    {
+      "bound_respected": true,
+      "bound_tight": true,
+      "control_id": "DISJOINT-N6-K4-24",
+      "first_pair": [
+        2,
+        13
+      ],
+      "labels": [
+        [
+          [
+            6
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            5,
+            1
+          ],
+          [
+            3,
+            3
+          ]
+        ],
+        [
+          [
+            4,
+            2
+          ],
+          [
+            2,
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "n": 6,
+      "observed_norm": 0.1111111111111111,
+      "second_pair": [
+        7,
+        8
+      ],
+      "status": "waist-bound-respected",
+      "target_partition": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "waist_bound_denominator": 9,
+      "waist_bound_numerator": 1,
+      "waist_column": "first",
+      "waist_row": "first"
+    },
+    {
+      "bound_respected": true,
+      "bound_tight": true,
+      "control_id": "DISJOINT-N6-K4-25",
+      "first_pair": [
+        5,
+        10
+      ],
+      "labels": [
+        [
+          [
+            6
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            5,
+            1
+          ],
+          [
+            3,
+            3
+          ]
+        ],
+        [
+          [
+            4,
+            2
+          ],
+          [
+            2,
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "n": 6,
+      "observed_norm": 1.734723475976807e-18,
+      "second_pair": [
+        7,
+        8
+      ],
+      "status": "waist-bound-respected",
+      "target_partition": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "waist_bound_denominator": 1,
+      "waist_bound_numerator": 0,
+      "waist_column": "first",
+      "waist_row": "first"
+    },
+    {
+      "bound_respected": true,
+      "bound_tight": true,
+      "control_id": "DISJOINT-N6-K4-26",
+      "first_pair": [
+        5,
+        10
+      ],
+      "labels": [
+        [
+          [
+            6
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            5,
+            1
+          ],
+          [
+            3,
+            3
+          ]
+        ],
+        [
+          [
+            4,
+            2
+          ],
+          [
+            2,
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            2,
+            2,
+            1,
+            1
+          ],
+          [
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "n": 6,
+      "observed_norm": 0.0,
+      "second_pair": [
+        7,
+        8
+      ],
+      "status": "waist-bound-respected",
+      "target_partition": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "waist_bound_denominator": 1,
+      "waist_bound_numerator": 0,
+      "waist_column": "first",
+      "waist_row": "first"
+    },
+    {
+      "bound_respected": true,
+      "bound_tight": true,
+      "control_id": "DISJOINT-N6-K4-27",
+      "first_pair": [
+        2,
+        13
+      ],
+      "labels": [
+        [
+          [
+            6
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            5,
+            1
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2,
+            2
+          ],
+          [
+            2,
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "n": 6,
+      "observed_norm": 8.673617379884035e-19,
+      "second_pair": [
+        7,
+        8
+      ],
+      "status": "waist-bound-respected",
+      "target_partition": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "waist_bound_denominator": 1,
+      "waist_bound_numerator": 0,
+      "waist_column": "first",
+      "waist_row": "first"
+    },
+    {
+      "bound_respected": true,
+      "bound_tight": true,
+      "control_id": "DISJOINT-N6-K4-28",
+      "first_pair": [
+        2,
+        13
+      ],
+      "labels": [
+        [
+          [
+            6
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            5,
+            1
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "n": 6,
+      "observed_norm": 8.673617379884035e-19,
+      "second_pair": [
+        5,
+        10
+      ],
+      "status": "waist-bound-respected",
+      "target_partition": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "waist_bound_denominator": 1,
+      "waist_bound_numerator": 0,
+      "waist_column": "second",
+      "waist_row": "first"
+    },
+    {
+      "bound_respected": true,
+      "bound_tight": true,
+      "control_id": "DISJOINT-N6-K4-29",
+      "first_pair": [
+        0,
+        15
+      ],
+      "labels": [
+        [
+          [
+            6
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            5,
+            1
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            2,
+            2,
+            1,
+            1
+          ],
+          [
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "n": 6,
+      "observed_norm": 0.2,
+      "second_pair": [
+        5,
+        10
+      ],
+      "status": "waist-bound-respected",
+      "target_partition": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "waist_bound_denominator": 5,
+      "waist_bound_numerator": 1,
+      "waist_column": "first",
+      "waist_row": "first"
+    },
+    {
+      "bound_respected": true,
+      "bound_tight": true,
+      "control_id": "DISJOINT-N6-K4-30",
+      "first_pair": [
+        4,
+        11
+      ],
+      "labels": [
+        [
+          [
+            6
+          ],
+          [
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            5,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            4,
+            2
+          ],
+          [
+            2,
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            2,
+            2
+          ]
+        ]
+      ],
+      "n": 6,
+      "observed_norm": 0.19999999999999996,
+      "second_pair": [
+        7,
+        8
+      ],
+      "status": "waist-bound-respected",
+      "target_partition": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "waist_bound_denominator": 5,
+      "waist_bound_numerator": 1,
+      "waist_column": "first",
+      "waist_row": "first"
+    },
+    {
+      "bound_respected": true,
+      "bound_tight": true,
+      "control_id": "DISJOINT-N6-K4-31",
+      "first_pair": [
+        0,
+        15
+      ],
+      "labels": [
+        [
+          [
+            6
+          ],
+          [
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            5,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            4,
+            2
+          ],
+          [
+            3,
+            3
+          ]
+        ],
+        [
+          [
+            2,
+            2,
+            2
+          ],
+          [
+            2,
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "n": 6,
+      "observed_norm": 0.19999999999999998,
+      "second_pair": [
+        3,
+        12
+      ],
+      "status": "waist-bound-respected",
+      "target_partition": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "waist_bound_denominator": 5,
+      "waist_bound_numerator": 1,
+      "waist_column": "first",
+      "waist_row": "first"
+    },
+    {
+      "bound_respected": true,
+      "bound_tight": true,
+      "control_id": "DISJOINT-N6-K4-32",
+      "first_pair": [
+        2,
+        13
+      ],
+      "labels": [
+        [
+          [
+            6
+          ],
+          [
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            5,
+            1
+          ],
+          [
+            2,
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            4,
+            2
+          ],
+          [
+            2,
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            3
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "n": 6,
+      "observed_norm": 1.734723475976807e-18,
+      "second_pair": [
+        4,
+        11
+      ],
+      "status": "waist-bound-respected",
+      "target_partition": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "waist_bound_denominator": 1,
+      "waist_bound_numerator": 0,
+      "waist_column": "second",
+      "waist_row": "first"
+    },
+    {
+      "bound_respected": true,
+      "bound_tight": true,
+      "control_id": "DISJOINT-N6-K4-33",
+      "first_pair": [
+        0,
+        15
+      ],
+      "labels": [
+        [
+          [
+            6
+          ],
+          [
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            5,
+            1
+          ],
+          [
+            3,
+            3
+          ]
+        ],
+        [
+          [
+            4,
+            2
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2,
+            2
+          ],
+          [
+            2,
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "n": 6,
+      "observed_norm": 8.673617379884035e-19,
+      "second_pair": [
+        2,
+        13
+      ],
+      "status": "waist-bound-respected",
+      "target_partition": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "waist_bound_denominator": 1,
+      "waist_bound_numerator": 0,
+      "waist_column": "first",
+      "waist_row": "first"
+    },
+    {
+      "bound_respected": true,
+      "bound_tight": true,
+      "control_id": "DISJOINT-N6-K4-34",
+      "first_pair": [
+        0,
+        15
+      ],
+      "labels": [
+        [
+          [
+            6
+          ],
+          [
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            5,
+            1
+          ],
+          [
+            3,
+            3
+          ]
+        ],
+        [
+          [
+            4,
+            2
+          ],
+          [
+            2,
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2,
+            2
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "n": 6,
+      "observed_norm": 8.673617379884035e-19,
+      "second_pair": [
+        2,
+        13
+      ],
+      "status": "waist-bound-respected",
+      "target_partition": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "waist_bound_denominator": 1,
+      "waist_bound_numerator": 0,
+      "waist_column": "first",
+      "waist_row": "first"
+    },
+    {
+      "bound_respected": true,
+      "bound_tight": true,
+      "control_id": "DISJOINT-N6-K4-35",
+      "first_pair": [
+        2,
+        13
+      ],
+      "labels": [
+        [
+          [
+            6
+          ],
+          [
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            5,
+            1
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            3
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2,
+            2
+          ],
+          [
+            2,
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "n": 6,
+      "observed_norm": 8.673617379884035e-19,
+      "second_pair": [
+        7,
+        8
+      ],
+      "status": "waist-bound-respected",
+      "target_partition": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "waist_bound_denominator": 1,
+      "waist_bound_numerator": 0,
+      "waist_column": "first",
+      "waist_row": "first"
+    },
+    {
+      "bound_respected": true,
+      "bound_tight": true,
+      "control_id": "DISJOINT-N6-K4-36",
+      "first_pair": [
+        0,
+        15
+      ],
+      "labels": [
+        [
+          [
+            6
+          ],
+          [
+            2,
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            5,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            4,
+            2
+          ],
+          [
+            3,
+            3
+          ]
+        ],
+        [
+          [
+            2,
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "n": 6,
+      "observed_norm": 1.734723475976807e-18,
+      "second_pair": [
+        7,
+        8
+      ],
+      "status": "waist-bound-respected",
+      "target_partition": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "waist_bound_denominator": 1,
+      "waist_bound_numerator": 0,
+      "waist_column": "second",
+      "waist_row": "first"
+    },
+    {
+      "bound_respected": true,
+      "bound_tight": true,
+      "control_id": "DISJOINT-N6-K4-37",
+      "first_pair": [
+        2,
+        13
+      ],
+      "labels": [
+        [
+          [
+            6
+          ],
+          [
+            2,
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            5,
+            1
+          ],
+          [
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            4,
+            2
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            2,
+            2
+          ]
+        ]
+      ],
+      "n": 6,
+      "observed_norm": 0.11111111111111109,
+      "second_pair": [
+        7,
+        8
+      ],
+      "status": "waist-bound-respected",
+      "target_partition": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "waist_bound_denominator": 9,
+      "waist_bound_numerator": 1,
+      "waist_column": "first",
+      "waist_row": "first"
+    },
+    {
+      "bound_respected": true,
+      "bound_tight": true,
+      "control_id": "DISJOINT-N6-K4-38",
+      "first_pair": [
+        2,
+        13
+      ],
+      "labels": [
+        [
+          [
+            6
+          ],
+          [
+            2,
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            5,
+            1
+          ],
+          [
+            2,
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            4,
+            2
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "n": 6,
+      "observed_norm": 0.11111111111111112,
+      "second_pair": [
+        7,
+        8
+      ],
+      "status": "waist-bound-respected",
+      "target_partition": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "waist_bound_denominator": 9,
+      "waist_bound_numerator": 1,
+      "waist_column": "first",
+      "waist_row": "first"
+    },
+    {
+      "bound_respected": true,
+      "bound_tight": true,
+      "control_id": "DISJOINT-N6-K4-39",
+      "first_pair": [
+        0,
+        15
+      ],
+      "labels": [
+        [
+          [
+            6
+          ],
+          [
+            2,
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            5,
+            1
+          ],
+          [
+            3,
+            3
+          ]
+        ],
+        [
+          [
+            4,
+            2
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "n": 6,
+      "observed_norm": 8.673617379884035e-19,
+      "second_pair": [
+        2,
+        13
+      ],
+      "status": "waist-bound-respected",
+      "target_partition": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "waist_bound_denominator": 1,
+      "waist_bound_numerator": 0,
+      "waist_column": "first",
+      "waist_row": "first"
+    }
+  ],
+  "falsifiers_triggered": [
+    "The conjectured single-reciprocal law is false in general; the exact value is a two-carrier product, so finite reciprocal spectra were an artifact of singleton membership blocks.",
+    "No nontrivial multiplicity-space 6j block exists for shared-vertex pair cores, so a Racah transform cannot be the obstruction at that level.",
+    "A uniformly small per-block correlation does not certify the hierarchy; the surviving falsifier is a carrier sector whose weighted degree reaches two."
+  ],
+  "headline_metrics": {
+    "all_depth_multistar_conditioning_bound_count": 0,
+    "all_n_off_common_star_bound_theorem_count": 1,
+    "coherent_recoupling_block_transform_count": 0,
+    "degenerate_racah_block_identification_count": 1,
+    "disjoint_pair_waist_bound_theorem_count": 1,
+    "disjoint_waist_control_count": 40,
+    "disjoint_waist_tight_count": 40,
+    "disjoint_waist_violation_count": 0,
+    "exact_star_carrier_factorization_theorem_count": 1,
+    "maximum_spectrum_residual": 5.828670879282072e-16,
+    "new_quantum_algorithm_count": 0,
+    "repeated_label_star_control_count": 40,
+    "repeated_label_star_failure_count": 0,
+    "screened_multi_isotype_sector_control_count": 0,
+    "screened_off_common_violation_count": 0,
+    "screened_product_carrier_channel_count": 0,
+    "screened_star_channel_count": 132,
+    "screened_star_control_count": 168,
+    "screened_star_failure_count": 0,
+    "selected_star_control_count": 3,
+    "selected_star_failure_count": 0
+  },
+  "proof_obligations": [
+    {
+      "obligation": "star_carrier_factorization",
+      "resolution": "The closed form reproduces every dense ambient singular value, including rank and multiplicity, on all selected and screened controls.",
+      "resolved": true
+    },
+    {
+      "obligation": "all_n_off_common_star_bound",
+      "resolution": "Proved: off-common requires a nontrivial carrier, whose dimension is at least n-1, and self-conjugate channel collisions are dominated for n>=5.",
+      "resolved": true
+    },
+    {
+      "obligation": "multiplicity_space_racah_block_identified",
+      "resolution": "The shared-vertex block is scalar. Genuine Kronecker multiplicity only enters when the two pair cores are vertex disjoint, where the waist bound replaces the scalar law.",
+      "resolved": true
+    },
+    {
+      "obligation": "disjoint_pair_exact_spectrum",
+      "resolution": "Only an upper bound is proved. It is exact on every screened control, but the grid contraction has genuine 3j content and no closed form is derived.",
+      "resolved": false
+    },
+    {
+      "obligation": "all_depth_multistar_conditioning",
+      "resolution": "Exact per-block weights do not bound a sum over many adjacent pair cores; the weighted-degree gate is untouched by this module.",
+      "resolved": false
+    }
+  ],
+  "scaling_records": [
+    {
+      "carrier_factorization_proved": true,
+      "generic_two_carrier_bound": 0.04,
+      "information_threshold_copy_count": 10,
+      "minimum_nontrivial_irrep_dimension": 5,
+      "multistar_weighted_degree_bounded": false,
+      "n": 6,
+      "proved_off_common_star_bound": 0.2,
+      "proved_off_common_star_bound_log2": -2.321928094887362,
+      "self_conjugate_channel_collision_bound": 0.16,
+      "self_conjugate_collision_is_dominated": true,
+      "status": "star-carrier-factorization-proved-degree-open"
+    },
+    {
+      "carrier_factorization_proved": true,
+      "generic_two_carrier_bound": 0.02040816326530612,
+      "information_threshold_copy_count": 16,
+      "minimum_nontrivial_irrep_dimension": 7,
+      "multistar_weighted_degree_bounded": false,
+      "n": 8,
+      "proved_off_common_star_bound": 0.14285714285714285,
+      "proved_off_common_star_bound_log2": -2.807354922057604,
+      "self_conjugate_channel_collision_bound": 0.08163265306122448,
+      "self_conjugate_collision_is_dominated": true,
+      "status": "star-carrier-factorization-proved-degree-open"
+    },
+    {
+      "carrier_factorization_proved": true,
+      "generic_two_carrier_bound": 0.0044444444444444444,
+      "information_threshold_copy_count": 45,
+      "minimum_nontrivial_irrep_dimension": 15,
+      "multistar_weighted_degree_bounded": false,
+      "n": 16,
+      "proved_off_common_star_bound": 0.06666666666666667,
+      "proved_off_common_star_bound_log2": -3.9068905956085187,
+      "self_conjugate_channel_collision_bound": 0.017777777777777778,
+      "self_conjugate_collision_is_dominated": true,
+      "status": "star-carrier-factorization-proved-degree-open"
+    },
+    {
+      "carrier_factorization_proved": true,
+      "generic_two_carrier_bound": 0.001040582726326743,
+      "information_threshold_copy_count": 118,
+      "minimum_nontrivial_irrep_dimension": 31,
+      "multistar_weighted_degree_bounded": false,
+      "n": 32,
+      "proved_off_common_star_bound": 0.03225806451612903,
+      "proved_off_common_star_bound_log2": -4.954196310386875,
+      "self_conjugate_channel_collision_bound": 0.004162330905306972,
+      "self_conjugate_collision_is_dominated": true,
+      "status": "star-carrier-factorization-proved-degree-open"
+    },
+    {
+      "carrier_factorization_proved": true,
+      "generic_two_carrier_bound": 0.0002519526329050139,
+      "information_threshold_copy_count": 296,
+      "minimum_nontrivial_irrep_dimension": 63,
+      "multistar_weighted_degree_bounded": false,
+      "n": 64,
+      "proved_off_common_star_bound": 0.015873015873015872,
+      "proved_off_common_star_bound_log2": -5.977279923499917,
+      "self_conjugate_channel_collision_bound": 0.0010078105316200555,
+      "self_conjugate_collision_is_dominated": true,
+      "status": "star-carrier-factorization-proved-degree-open"
+    },
+    {
+      "carrier_factorization_proved": true,
+      "generic_two_carrier_bound": 6.2000124000248e-05,
+      "information_threshold_copy_count": 717,
+      "minimum_nontrivial_irrep_dimension": 127,
+      "multistar_weighted_degree_bounded": false,
+      "n": 128,
+      "proved_off_common_star_bound": 0.007874015748031496,
+      "proved_off_common_star_bound_log2": -6.9886846867721655,
+      "self_conjugate_channel_collision_bound": 0.000248000496000992,
+      "self_conjugate_collision_is_dominated": true,
+      "status": "star-carrier-factorization-proved-degree-open"
+    },
+    {
+      "carrier_factorization_proved": true,
+      "generic_two_carrier_bound": 1.5378700499807768e-05,
+      "information_threshold_copy_count": 1684,
+      "minimum_nontrivial_irrep_dimension": 255,
+      "multistar_weighted_degree_bounded": false,
+      "n": 256,
+      "proved_off_common_star_bound": 0.00392156862745098,
+      "proved_off_common_star_bound_log2": -7.994353436858858,
+      "self_conjugate_channel_collision_bound": 6.151480199923107e-05,
+      "self_conjugate_collision_is_dominated": true,
+      "status": "star-carrier-factorization-proved-degree-open"
+    },
+    {
+      "carrier_factorization_proved": true,
+      "generic_two_carrier_bound": 3.8296421965295784e-06,
+      "information_threshold_copy_count": 3876,
+      "minimum_nontrivial_irrep_dimension": 511,
+      "multistar_weighted_degree_bounded": false,
+      "n": 512,
+      "proved_off_common_star_bound": 0.0019569471624266144,
+      "proved_off_common_star_bound_log2": -8.997179480937621,
+      "self_conjugate_channel_collision_bound": 1.5318568786118314e-05,
+      "self_conjugate_collision_is_dominated": true,
+      "status": "star-carrier-factorization-proved-degree-open"
+    }
+  ],
+  "selected_star_controls": [
+    {
+      "ambient_dimension": 112500,
+      "control_id": "W6-OPEN-STAR-CARRIER-5",
+      "distinct_isotype_channel_count": 1,
+      "labels": [
+        [
+          [
+            6
+          ],
+          [
+            2,
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            5,
+            1
+          ],
+          [
+            4,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            4,
+            2
+          ],
+          [
+            3,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            3
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "labels_are_distinct": true,
+      "left_core_dimension": 5,
+      "left_orientation": 0,
+      "maximum_correlation": 0.2,
+      "maximum_off_common_correlation": 0.2,
+      "maximum_spectrum_residual": 2.7755575615628914e-16,
+      "n": 6,
+      "observed_rank": 5,
+      "off_common_bound": 0.2,
+      "off_common_bound_respected": true,
+      "predicted_channel_count": 1,
+      "predicted_rank": 5,
+      "right_core_dimension": 45,
+      "right_orientation": 7,
+      "shared_orientation": 14,
+      "status": "exact-carrier-factorization-verified",
+      "target_partition": [
+        6
+      ],
+      "verified": true
+    },
+    {
+      "ambient_dimension": 50625,
+      "control_id": "W6-CLOSED-STAR-CARRIER-9",
+      "distinct_isotype_channel_count": 1,
+      "labels": [
+        [
+          [
+            6
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        [
+          [
+            5,
+            1
+          ],
+          [
+            2,
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "labels_are_distinct": true,
+      "left_core_dimension": 9,
+      "left_orientation": 2,
+      "maximum_correlation": 0.1111111111111111,
+      "maximum_off_common_correlation": 0.1111111111111111,
+      "maximum_spectrum_residual": 1.3877787807814457e-16,
+      "n": 6,
+      "observed_rank": 9,
+      "off_common_bound": 0.2,
+      "off_common_bound_respected": true,
+      "predicted_channel_count": 1,
+      "predicted_rank": 9,
+      "right_core_dimension": 25,
+      "right_orientation": 5,
+      "shared_orientation": 12,
+      "status": "exact-carrier-factorization-verified",
+      "target_partition": [
+        6
+      ],
+      "verified": true
+    },
+    {
+      "ambient_dimension": 112500,
+      "control_id": "W6-OPEN-STAR-CARRIER-10",
+      "distinct_isotype_channel_count": 1,
+      "labels": [
+        [
+          [
+            6
+          ],
+          [
+            3,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            5,
+            1
+          ],
+          [
+            3,
+            3
+          ]
+        ],
+        [
+          [
+            4,
+            2
+          ],
+          [
+            2,
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            4,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "labels_are_distinct": true,
+      "left_core_dimension": 10,
+      "left_orientation": 0,
+      "maximum_correlation": 0.1,
+      "maximum_off_common_correlation": 0.1,
+      "maximum_spectrum_residual": 5.828670879282072e-16,
+      "n": 6,
+      "observed_rank": 10,
+      "off_common_bound": 0.2,
+      "off_common_bound_respected": true,
+      "predicted_channel_count": 1,
+      "predicted_rank": 10,
+      "right_core_dimension": 45,
+      "right_orientation": 7,
+      "shared_orientation": 14,
+      "status": "exact-carrier-factorization-verified",
+      "target_partition": [
+        6
+      ],
+      "verified": true
+    }
+  ],
+  "star_screens": [
+    {
+      "ambient_cap": 20000,
+      "audited_control_count": 8,
+      "label_count": 3,
+      "label_regime": "distinct-source-partitions",
+      "maximum_off_common_correlation": 0.0,
+      "maximum_spectrum_residual": 0.0,
+      "multi_isotype_channel_control_count": 0,
+      "n": 5,
+      "off_common_theoretical_bound": 0.25,
+      "off_common_violation_count": 0,
+      "product_carrier_channel_count": 0,
+      "reciprocal_correlation_counts": {},
+      "status": "closed-form-star-spectrum-verified",
+      "total_channel_count": 0,
+      "validation_failure_count": 0
+    },
+    {
+      "ambient_cap": 200000,
+      "audited_control_count": 120,
+      "label_count": 4,
+      "label_regime": "distinct-source-partitions",
+      "maximum_off_common_correlation": 0.2,
+      "maximum_spectrum_residual": 4.440892098500626e-16,
+      "multi_isotype_channel_control_count": 0,
+      "n": 6,
+      "off_common_theoretical_bound": 0.2,
+      "off_common_violation_count": 0,
+      "product_carrier_channel_count": 0,
+      "reciprocal_correlation_counts": {
+        "1/1": 86,
+        "1/5": 30
+      },
+      "status": "closed-form-star-spectrum-verified",
+      "total_channel_count": 92,
+      "validation_failure_count": 0
+    },
+    {
+      "ambient_cap": 20000,
+      "audited_control_count": 40,
+      "label_count": 3,
+      "label_regime": "repeated-source-partitions",
+      "maximum_off_common_correlation": 0.0,
+      "maximum_spectrum_residual": 0.0,
+      "multi_isotype_channel_control_count": 0,
+      "n": 5,
+      "off_common_theoretical_bound": 0.25,
+      "off_common_violation_count": 0,
+      "product_carrier_channel_count": 0,
+      "reciprocal_correlation_counts": {
+        "1/1": 40
+      },
+      "status": "closed-form-star-spectrum-verified",
+      "total_channel_count": 40,
+      "validation_failure_count": 0
+    }
+  ],
+  "status": "pair-core-carrier-factorization-proved-multistar-degree-open",
+  "summary": "Derived and validated the exact shared-vertex pair-core overlap operator: 168 screened controls and 3 selected controls reproduce the closed form with maximum residual 5.829e-16. Proved the all-n off-common bound 1/(n-1) and a waist bound for vertex-disjoint cores that is exact on 40 of 40 controls. The weighted-degree accumulation gate is unchanged.",
+  "theorem_contract": {
+    "carrier_grading": "Both pair cores are graded by every membership-block isotypic label, so the overlap operator is block diagonal in that grading with no ambient computation.",
+    "degenerate_racah_block": "Two pairings of four self-dual carriers into invariants contract to the scalar 1/d; no nontrivial 6j mixing acts on multiplicity space for a shared-vertex star.",
+    "disjoint_waist_bound": "Vertex-disjoint pair cores sit inside products of commuting one-dimensional isotype projectors; any single row/column waist bounds the product norm, and the minimum waist is reported with its witness.",
+    "exact_multiplicity": "m_a(beta) m_ab(beta^d') m_ac(beta^d) m_abc(beta^{d xor d'}) * d_p m_b(p) m_bc(p^d) m_c(p^{d xor d'}) * dim T_empty.",
+    "off_common_bound": "A correlation is one exactly when both carriers are one dimensional; two isotype channels share a sector only when both carriers are self-conjugate, hence of dimension at least n-1. For n>=5 every off-common star correlation is at most 1/(n-1).",
+    "scope": "This governs one overlap block at a time. It does not bound the weighted degree of a leaf that meets many pair cores, and it is not an algorithmic statement.",
+    "star_factorization": "For a shared orientation the overlap is a direct sum of (1/(d_beta d_p)) times partial isometries, with cluster-one carrier beta on the patterns containing the shared orientation and cluster-two carrier p on the remaining nonempty patterns."
+  }
+}

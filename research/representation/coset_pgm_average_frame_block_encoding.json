@@ -1,0 +1,2414 @@
+{
+  "claim_gate": {
+    "conditional_projected_lcu_schema_available": true,
+    "exact_subset_expansion_proved": true,
+    "generic_normalization_polynomial_at_required_width": false,
+    "polynomial_hidden_involution_decoder_proved": false,
+    "reason": "The compact frame identity and conditional LCU schema are exact, and the natural-source theorem now validates the small-character-ratio envelope with overwhelming probability. Direct normalization is therefore exponentially weak at growing width unless structured amplification or a different PGM implementation avoids it.",
+    "speedup_claim_allowed": false,
+    "structured_spectral_amplification_proved": false,
+    "uniform_natural_source_character_ratio_bound_proved": true
+  },
+  "created_at": "2026-07-30T01:15:57.472398+00:00",
+  "falsifiers_triggered": [
+    "The PGM average frame does have a compact all-k algebraic description; explicit hidden-orbit matrices are unnecessary for stating the operator.",
+    "Expanding all subset class averages explicitly still uses 2^k terms and is invalid at growing width.",
+    "Finite condition number controls relative spectrum only; it does not remove absolute block-encoding normalization.",
+    "The natural character-ratio concentration theorem validates the envelope but does not lower-bound non-LCU measurements."
+  ],
+  "finite_controls": [
+    {
+      "carrier_dimension": 1,
+      "direct_subset_expansion_residual": 0.0,
+      "log2_average_scale_amplification": 0.0,
+      "log2_generic_sqrt_amplification": 0.0,
+      "maximum_absolute_character_ratio": 1.0,
+      "projected_lcu_average_eigenvalue": 1.0,
+      "projected_lcu_proportionality_residual": 0.0,
+      "source_partitions": [
+        [
+          5
+        ],
+        [
+          5
+        ],
+        [
+          5
+        ]
+      ],
+      "status": "exact-subset-frame-and-projected-lcu-control",
+      "subset_operator_count": 8
+    },
+    {
+      "carrier_dimension": 4,
+      "direct_subset_expansion_residual": 5.551115123125783e-17,
+      "log2_average_scale_amplification": 1.0,
+      "log2_generic_sqrt_amplification": 0.5,
+      "maximum_absolute_character_ratio": 1.0,
+      "projected_lcu_average_eigenvalue": 0.5,
+      "projected_lcu_proportionality_residual": 1.1102230246251565e-16,
+      "source_partitions": [
+        [
+          5
+        ],
+        [
+          5
+        ],
+        [
+          4,
+          1
+        ]
+      ],
+      "status": "exact-subset-frame-and-projected-lcu-control",
+      "subset_operator_count": 8
+    },
+    {
+      "carrier_dimension": 5,
+      "direct_subset_expansion_residual": 5.604038305720465e-17,
+      "log2_average_scale_amplification": 0.7369655941662062,
+      "log2_generic_sqrt_amplification": 0.3684827970831031,
+      "maximum_absolute_character_ratio": 1.0,
+      "projected_lcu_average_eigenvalue": 0.6,
+      "projected_lcu_proportionality_residual": 1.1239531538968505e-16,
+      "source_partitions": [
+        [
+          5
+        ],
+        [
+          5
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "status": "exact-subset-frame-and-projected-lcu-control",
+      "subset_operator_count": 8
+    },
+    {
+      "carrier_dimension": 6,
+      "direct_subset_expansion_residual": 2.7755575615628914e-17,
+      "log2_average_scale_amplification": 1.584962500721156,
+      "log2_generic_sqrt_amplification": 0.792481250360578,
+      "maximum_absolute_character_ratio": 1.0,
+      "projected_lcu_average_eigenvalue": 0.33333333333333337,
+      "projected_lcu_proportionality_residual": 5.551115123125783e-17,
+      "source_partitions": [
+        [
+          5
+        ],
+        [
+          5
+        ],
+        [
+          3,
+          1,
+          1
+        ]
+      ],
+      "status": "exact-subset-frame-and-projected-lcu-control",
+      "subset_operator_count": 8
+    },
+    {
+      "carrier_dimension": 5,
+      "direct_subset_expansion_residual": 3.144851181407587e-17,
+      "log2_average_scale_amplification": 0.7369655941662062,
+      "log2_generic_sqrt_amplification": 0.3684827970831031,
+      "maximum_absolute_character_ratio": 1.0,
+      "projected_lcu_average_eigenvalue": 0.6,
+      "projected_lcu_proportionality_residual": 2.5958009355263524e-17,
+      "source_partitions": [
+        [
+          5
+        ],
+        [
+          5
+        ],
+        [
+          2,
+          2,
+          1
+        ]
+      ],
+      "status": "exact-subset-frame-and-projected-lcu-control",
+      "subset_operator_count": 8
+    },
+    {
+      "carrier_dimension": 4,
+      "direct_subset_expansion_residual": 5.551115123125783e-17,
+      "log2_average_scale_amplification": 1.0,
+      "log2_generic_sqrt_amplification": 0.5,
+      "maximum_absolute_character_ratio": 1.0,
+      "projected_lcu_average_eigenvalue": 0.5,
+      "projected_lcu_proportionality_residual": 1.1102230246251565e-16,
+      "source_partitions": [
+        [
+          5
+        ],
+        [
+          5
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ]
+      ],
+      "status": "exact-subset-frame-and-projected-lcu-control",
+      "subset_operator_count": 8
+    },
+    {
+      "carrier_dimension": 1,
+      "direct_subset_expansion_residual": 0.0,
+      "log2_average_scale_amplification": 0.0,
+      "log2_generic_sqrt_amplification": 0.0,
+      "maximum_absolute_character_ratio": 1.0,
+      "projected_lcu_average_eigenvalue": 1.0,
+      "projected_lcu_proportionality_residual": 0.0,
+      "source_partitions": [
+        [
+          5
+        ],
+        [
+          5
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "status": "exact-subset-frame-and-projected-lcu-control",
+      "subset_operator_count": 8
+    },
+    {
+      "carrier_dimension": 16,
+      "direct_subset_expansion_residual": 1.5629986026168983e-17,
+      "log2_average_scale_amplification": 2.0,
+      "log2_generic_sqrt_amplification": 1.0,
+      "maximum_absolute_character_ratio": 1.0,
+      "projected_lcu_average_eigenvalue": 0.25,
+      "projected_lcu_proportionality_residual": 6.251994410467593e-17,
+      "source_partitions": [
+        [
+          5
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          4,
+          1
+        ]
+      ],
+      "status": "exact-subset-frame-and-projected-lcu-control",
+      "subset_operator_count": 8
+    },
+    {
+      "carrier_dimension": 20,
+      "direct_subset_expansion_residual": 3.4866046256383047e-17,
+      "log2_average_scale_amplification": 1.7369655941662063,
+      "log2_generic_sqrt_amplification": 0.8684827970831032,
+      "maximum_absolute_character_ratio": 1.0,
+      "projected_lcu_average_eigenvalue": 0.3,
+      "projected_lcu_proportionality_residual": 2.2322031322692793e-16,
+      "source_partitions": [
+        [
+          5
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "status": "exact-subset-frame-and-projected-lcu-control",
+      "subset_operator_count": 8
+    },
+    {
+      "carrier_dimension": 24,
+      "direct_subset_expansion_residual": 2.3281135431459228e-17,
+      "log2_average_scale_amplification": 2.584962500721156,
+      "log2_generic_sqrt_amplification": 1.292481250360578,
+      "maximum_absolute_character_ratio": 1.0,
+      "projected_lcu_average_eigenvalue": 0.16666666666666669,
+      "projected_lcu_proportionality_residual": 9.312454172583691e-17,
+      "source_partitions": [
+        [
+          5
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          3,
+          1,
+          1
+        ]
+      ],
+      "status": "exact-subset-frame-and-projected-lcu-control",
+      "subset_operator_count": 8
+    },
+    {
+      "carrier_dimension": 20,
+      "direct_subset_expansion_residual": 3.496023204671514e-17,
+      "log2_average_scale_amplification": 1.7369655941662063,
+      "log2_generic_sqrt_amplification": 0.8684827970831032,
+      "maximum_absolute_character_ratio": 1.0,
+      "projected_lcu_average_eigenvalue": 0.3,
+      "projected_lcu_proportionality_residual": 2.235946725039057e-16,
+      "source_partitions": [
+        [
+          5
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ]
+      ],
+      "status": "exact-subset-frame-and-projected-lcu-control",
+      "subset_operator_count": 8
+    },
+    {
+      "carrier_dimension": 16,
+      "direct_subset_expansion_residual": 1.5877187902279803e-17,
+      "log2_average_scale_amplification": 2.0,
+      "log2_generic_sqrt_amplification": 1.0,
+      "maximum_absolute_character_ratio": 1.0,
+      "projected_lcu_average_eigenvalue": 0.25,
+      "projected_lcu_proportionality_residual": 6.350875160911921e-17,
+      "source_partitions": [
+        [
+          5
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ]
+      ],
+      "status": "exact-subset-frame-and-projected-lcu-control",
+      "subset_operator_count": 8
+    },
+    {
+      "carrier_dimension": 4,
+      "direct_subset_expansion_residual": 5.551115123125783e-17,
+      "log2_average_scale_amplification": 1.0,
+      "log2_generic_sqrt_amplification": 0.5,
+      "maximum_absolute_character_ratio": 1.0,
+      "projected_lcu_average_eigenvalue": 0.5,
+      "projected_lcu_proportionality_residual": 1.1102230246251565e-16,
+      "source_partitions": [
+        [
+          5
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "status": "exact-subset-frame-and-projected-lcu-control",
+      "subset_operator_count": 8
+    },
+    {
+      "carrier_dimension": 25,
+      "direct_subset_expansion_residual": 2.09495035579171e-17,
+      "log2_average_scale_amplification": 1.4739311883324122,
+      "log2_generic_sqrt_amplification": 0.7369655941662061,
+      "maximum_absolute_character_ratio": 1.0,
+      "projected_lcu_average_eigenvalue": 0.36,
+      "projected_lcu_proportionality_residual": 1.7487443040477154e-16,
+      "source_partitions": [
+        [
+          5
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "status": "exact-subset-frame-and-projected-lcu-control",
+      "subset_operator_count": 8
+    },
+    {
+      "carrier_dimension": 30,
+      "direct_subset_expansion_residual": 1.5336619760240366e-17,
+      "log2_average_scale_amplification": 2.321928094887362,
+      "log2_generic_sqrt_amplification": 1.160964047443681,
+      "maximum_absolute_character_ratio": 1.0,
+      "projected_lcu_average_eigenvalue": 0.2,
+      "projected_lcu_proportionality_residual": 9.14747737993936e-17,
+      "source_partitions": [
+        [
+          5
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          3,
+          1,
+          1
+        ]
+      ],
+      "status": "exact-subset-frame-and-projected-lcu-control",
+      "subset_operator_count": 8
+    },
+    {
+      "carrier_dimension": 25,
+      "direct_subset_expansion_residual": 2.1002185085073947e-17,
+      "log2_average_scale_amplification": 1.4739311883324122,
+      "log2_generic_sqrt_amplification": 0.7369655941662061,
+      "maximum_absolute_character_ratio": 1.0,
+      "projected_lcu_average_eigenvalue": 0.36,
+      "projected_lcu_proportionality_residual": 1.7547072832180562e-16,
+      "source_partitions": [
+        [
+          5
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          2,
+          2,
+          1
+        ]
+      ],
+      "status": "exact-subset-frame-and-projected-lcu-control",
+      "subset_operator_count": 8
+    },
+    {
+      "carrier_dimension": 20,
+      "direct_subset_expansion_residual": 3.486041361580477e-17,
+      "log2_average_scale_amplification": 1.7369655941662063,
+      "log2_generic_sqrt_amplification": 0.8684827970831032,
+      "maximum_absolute_character_ratio": 1.0,
+      "projected_lcu_average_eigenvalue": 0.3,
+      "projected_lcu_proportionality_residual": 2.2317489109035185e-16,
+      "source_partitions": [
+        [
+          5
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ]
+      ],
+      "status": "exact-subset-frame-and-projected-lcu-control",
+      "subset_operator_count": 8
+    },
+    {
+      "carrier_dimension": 5,
+      "direct_subset_expansion_residual": 3.243928856371409e-17,
+      "log2_average_scale_amplification": 0.7369655941662062,
+      "log2_generic_sqrt_amplification": 0.3684827970831031,
+      "maximum_absolute_character_ratio": 1.0,
+      "projected_lcu_average_eigenvalue": 0.6,
+      "projected_lcu_proportionality_residual": 1.9112916397070752e-17,
+      "source_partitions": [
+        [
+          5
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "status": "exact-subset-frame-and-projected-lcu-control",
+      "subset_operator_count": 8
+    },
+    {
+      "carrier_dimension": 36,
+      "direct_subset_expansion_residual": 7.87532569535199e-18,
+      "log2_average_scale_amplification": 3.169925001442312,
+      "log2_generic_sqrt_amplification": 1.584962500721156,
+      "maximum_absolute_character_ratio": 1.0,
+      "projected_lcu_average_eigenvalue": 0.11111111111111113,
+      "projected_lcu_proportionality_residual": 3.150130278140796e-17,
+      "source_partitions": [
+        [
+          5
+        ],
+        [
+          3,
+          1,
+          1
+        ],
+        [
+          3,
+          1,
+          1
+        ]
+      ],
+      "status": "exact-subset-frame-and-projected-lcu-control",
+      "subset_operator_count": 8
+    },
+    {
+      "carrier_dimension": 30,
+      "direct_subset_expansion_residual": 9.832467961369113e-18,
+      "log2_average_scale_amplification": 2.321928094887362,
+      "log2_generic_sqrt_amplification": 1.160964047443681,
+      "maximum_absolute_character_ratio": 1.0,
+      "projected_lcu_average_eigenvalue": 0.2,
+      "projected_lcu_proportionality_residual": 6.546000110103906e-17,
+      "source_partitions": [
+        [
+          5
+        ],
+        [
+          3,
+          1,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ]
+      ],
+      "status": "exact-subset-frame-and-projected-lcu-control",
+      "subset_operator_count": 8
+    },
+    {
+      "carrier_dimension": 24,
+      "direct_subset_expansion_residual": 2.3276533055084772e-17,
+      "log2_average_scale_amplification": 2.584962500721156,
+      "log2_generic_sqrt_amplification": 1.292481250360578,
+      "maximum_absolute_character_ratio": 1.0,
+      "projected_lcu_average_eigenvalue": 0.16666666666666669,
+      "projected_lcu_proportionality_residual": 9.310613222033909e-17,
+      "source_partitions": [
+        [
+          5
+        ],
+        [
+          3,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ]
+      ],
+      "status": "exact-subset-frame-and-projected-lcu-control",
+      "subset_operator_count": 8
+    },
+    {
+      "carrier_dimension": 6,
+      "direct_subset_expansion_residual": 0.0,
+      "log2_average_scale_amplification": 1.584962500721156,
+      "log2_generic_sqrt_amplification": 0.792481250360578,
+      "maximum_absolute_character_ratio": 1.0,
+      "projected_lcu_average_eigenvalue": 0.33333333333333337,
+      "projected_lcu_proportionality_residual": 0.0,
+      "source_partitions": [
+        [
+          5
+        ],
+        [
+          3,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "status": "exact-subset-frame-and-projected-lcu-control",
+      "subset_operator_count": 8
+    },
+    {
+      "carrier_dimension": 25,
+      "direct_subset_expansion_residual": 2.1043420741243945e-17,
+      "log2_average_scale_amplification": 1.4739311883324122,
+      "log2_generic_sqrt_amplification": 0.7369655941662061,
+      "maximum_absolute_character_ratio": 1.0,
+      "projected_lcu_average_eigenvalue": 0.36,
+      "projected_lcu_proportionality_residual": 1.7597672618627079e-16,
+      "source_partitions": [
+        [
+          5
+        ],
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ]
+      ],
+      "status": "exact-subset-frame-and-projected-lcu-control",
+      "subset_operator_count": 8
+    },
+    {
+      "carrier_dimension": 20,
+      "direct_subset_expansion_residual": 3.4952768689522916e-17,
+      "log2_average_scale_amplification": 1.7369655941662063,
+      "log2_generic_sqrt_amplification": 0.8684827970831032,
+      "maximum_absolute_character_ratio": 1.0,
+      "projected_lcu_average_eigenvalue": 0.3,
+      "projected_lcu_proportionality_residual": 2.235356632032395e-16,
+      "source_partitions": [
+        [
+          5
+        ],
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ]
+      ],
+      "status": "exact-subset-frame-and-projected-lcu-control",
+      "subset_operator_count": 8
+    },
+    {
+      "carrier_dimension": 5,
+      "direct_subset_expansion_residual": 3.144851181407587e-17,
+      "log2_average_scale_amplification": 0.7369655941662062,
+      "log2_generic_sqrt_amplification": 0.3684827970831031,
+      "maximum_absolute_character_ratio": 1.0,
+      "projected_lcu_average_eigenvalue": 0.6,
+      "projected_lcu_proportionality_residual": 2.5958009355263524e-17,
+      "source_partitions": [
+        [
+          5
+        ],
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "status": "exact-subset-frame-and-projected-lcu-control",
+      "subset_operator_count": 8
+    },
+    {
+      "carrier_dimension": 16,
+      "direct_subset_expansion_residual": 1.6167571208105698e-17,
+      "log2_average_scale_amplification": 2.0,
+      "log2_generic_sqrt_amplification": 1.0,
+      "maximum_absolute_character_ratio": 1.0,
+      "projected_lcu_average_eigenvalue": 0.25,
+      "projected_lcu_proportionality_residual": 6.467028483242283e-17,
+      "source_partitions": [
+        [
+          5
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ]
+      ],
+      "status": "exact-subset-frame-and-projected-lcu-control",
+      "subset_operator_count": 8
+    },
+    {
+      "carrier_dimension": 4,
+      "direct_subset_expansion_residual": 5.551115123125783e-17,
+      "log2_average_scale_amplification": 1.0,
+      "log2_generic_sqrt_amplification": 0.5,
+      "maximum_absolute_character_ratio": 1.0,
+      "projected_lcu_average_eigenvalue": 0.5,
+      "projected_lcu_proportionality_residual": 1.1102230246251565e-16,
+      "source_partitions": [
+        [
+          5
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "status": "exact-subset-frame-and-projected-lcu-control",
+      "subset_operator_count": 8
+    },
+    {
+      "carrier_dimension": 1,
+      "direct_subset_expansion_residual": 0.0,
+      "log2_average_scale_amplification": 0.0,
+      "log2_generic_sqrt_amplification": 0.0,
+      "maximum_absolute_character_ratio": 1.0,
+      "projected_lcu_average_eigenvalue": 1.0,
+      "projected_lcu_proportionality_residual": 0.0,
+      "source_partitions": [
+        [
+          5
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "status": "exact-subset-frame-and-projected-lcu-control",
+      "subset_operator_count": 8
+    },
+    {
+      "carrier_dimension": 64,
+      "direct_subset_expansion_residual": 9.869539578718245e-18,
+      "log2_average_scale_amplification": 3.0,
+      "log2_generic_sqrt_amplification": 1.5,
+      "maximum_absolute_character_ratio": 0.0,
+      "projected_lcu_average_eigenvalue": 0.125,
+      "projected_lcu_proportionality_residual": 7.895631662974596e-17,
+      "source_partitions": [
+        [
+          4,
+          1
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          4,
+          1
+        ]
+      ],
+      "status": "exact-subset-frame-and-projected-lcu-control",
+      "subset_operator_count": 8
+    },
+    {
+      "carrier_dimension": 80,
+      "direct_subset_expansion_residual": 7.966943500369788e-18,
+      "log2_average_scale_amplification": 2.736965594166206,
+      "log2_generic_sqrt_amplification": 1.368482797083103,
+      "maximum_absolute_character_ratio": 0.2,
+      "projected_lcu_average_eigenvalue": 0.15,
+      "projected_lcu_proportionality_residual": 9.805783408542148e-17,
+      "source_partitions": [
+        [
+          4,
+          1
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "status": "exact-subset-frame-and-projected-lcu-control",
+      "subset_operator_count": 8
+    },
+    {
+      "carrier_dimension": 96,
+      "direct_subset_expansion_residual": 5.748416494141082e-18,
+      "log2_average_scale_amplification": 3.584962500721156,
+      "log2_generic_sqrt_amplification": 1.792481250360578,
+      "maximum_absolute_character_ratio": 0.3333333333333333,
+      "projected_lcu_average_eigenvalue": 0.08333333333333334,
+      "projected_lcu_proportionality_residual": 4.5987331953128657e-17,
+      "source_partitions": [
+        [
+          4,
+          1
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          3,
+          1,
+          1
+        ]
+      ],
+      "status": "exact-subset-frame-and-projected-lcu-control",
+      "subset_operator_count": 8
+    },
+    {
+      "carrier_dimension": 80,
+      "direct_subset_expansion_residual": 8.266823119783e-18,
+      "log2_average_scale_amplification": 2.736965594166206,
+      "log2_generic_sqrt_amplification": 1.368482797083103,
+      "maximum_absolute_character_ratio": 0.2,
+      "projected_lcu_average_eigenvalue": 0.15,
+      "projected_lcu_proportionality_residual": 1.0124153492293523e-16,
+      "source_partitions": [
+        [
+          4,
+          1
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ]
+      ],
+      "status": "exact-subset-frame-and-projected-lcu-control",
+      "subset_operator_count": 8
+    },
+    {
+      "carrier_dimension": 64,
+      "direct_subset_expansion_residual": 9.852181678815264e-18,
+      "log2_average_scale_amplification": 3.0,
+      "log2_generic_sqrt_amplification": 1.5,
+      "maximum_absolute_character_ratio": 0.0,
+      "projected_lcu_average_eigenvalue": 0.125,
+      "projected_lcu_proportionality_residual": 7.881745343052211e-17,
+      "source_partitions": [
+        [
+          4,
+          1
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ]
+      ],
+      "status": "exact-subset-frame-and-projected-lcu-control",
+      "subset_operator_count": 8
+    },
+    {
+      "carrier_dimension": 16,
+      "direct_subset_expansion_residual": 1.4046635450304818e-17,
+      "log2_average_scale_amplification": 2.0,
+      "log2_generic_sqrt_amplification": 1.0,
+      "maximum_absolute_character_ratio": 1.0,
+      "projected_lcu_average_eigenvalue": 0.25,
+      "projected_lcu_proportionality_residual": 5.618654180121927e-17,
+      "source_partitions": [
+        [
+          4,
+          1
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "status": "exact-subset-frame-and-projected-lcu-control",
+      "subset_operator_count": 8
+    },
+    {
+      "carrier_dimension": 100,
+      "direct_subset_expansion_residual": 1.043266004347155e-17,
+      "log2_average_scale_amplification": 2.473931188332412,
+      "log2_generic_sqrt_amplification": 1.236965594166206,
+      "maximum_absolute_character_ratio": 0.2,
+      "projected_lcu_average_eigenvalue": 0.18,
+      "projected_lcu_proportionality_residual": 1.669713160703329e-16,
+      "source_partitions": [
+        [
+          4,
+          1
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "status": "exact-subset-frame-and-projected-lcu-control",
+      "subset_operator_count": 8
+    },
+    {
+      "carrier_dimension": 120,
+      "direct_subset_expansion_residual": 3.979287839254109e-18,
+      "log2_average_scale_amplification": 3.321928094887362,
+      "log2_generic_sqrt_amplification": 1.660964047443681,
+      "maximum_absolute_character_ratio": 0.3333333333333333,
+      "projected_lcu_average_eigenvalue": 0.1,
+      "projected_lcu_proportionality_residual": 4.304287104978839e-17,
+      "source_partitions": [
+        [
+          4,
+          1
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          3,
+          1,
+          1
+        ]
+      ],
+      "status": "exact-subset-frame-and-projected-lcu-control",
+      "subset_operator_count": 8
+    },
+    {
+      "carrier_dimension": 100,
+      "direct_subset_expansion_residual": 1.0434007610051856e-17,
+      "log2_average_scale_amplification": 2.473931188332412,
+      "log2_generic_sqrt_amplification": 1.236965594166206,
+      "maximum_absolute_character_ratio": 0.2,
+      "projected_lcu_average_eigenvalue": 0.18,
+      "projected_lcu_proportionality_residual": 1.6698120819969439e-16,
+      "source_partitions": [
+        [
+          4,
+          1
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          2,
+          2,
+          1
+        ]
+      ],
+      "status": "exact-subset-frame-and-projected-lcu-control",
+      "subset_operator_count": 8
+    },
+    {
+      "carrier_dimension": 80,
+      "direct_subset_expansion_residual": 7.60025080213035e-18,
+      "log2_average_scale_amplification": 2.736965594166206,
+      "log2_generic_sqrt_amplification": 1.368482797083103,
+      "maximum_absolute_character_ratio": 0.2,
+      "projected_lcu_average_eigenvalue": 0.15,
+      "projected_lcu_proportionality_residual": 9.265775875401832e-17,
+      "source_partitions": [
+        [
+          4,
+          1
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ]
+      ],
+      "status": "exact-subset-frame-and-projected-lcu-control",
+      "subset_operator_count": 8
+    },
+    {
+      "carrier_dimension": 20,
+      "direct_subset_expansion_residual": 2.1085663205527962e-17,
+      "log2_average_scale_amplification": 1.7369655941662063,
+      "log2_generic_sqrt_amplification": 0.8684827970831032,
+      "maximum_absolute_character_ratio": 1.0,
+      "projected_lcu_average_eigenvalue": 0.3,
+      "projected_lcu_proportionality_residual": 1.6784409522940712e-16,
+      "source_partitions": [
+        [
+          4,
+          1
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "status": "exact-subset-frame-and-projected-lcu-control",
+      "subset_operator_count": 8
+    },
+    {
+      "carrier_dimension": 144,
+      "direct_subset_expansion_residual": 5.168527357918488e-18,
+      "log2_average_scale_amplification": 4.169925001442312,
+      "log2_generic_sqrt_amplification": 2.084962500721156,
+      "maximum_absolute_character_ratio": 0.3333333333333333,
+      "projected_lcu_average_eigenvalue": 0.055555555555555566,
+      "projected_lcu_proportionality_residual": 4.13482188633479e-17,
+      "source_partitions": [
+        [
+          4,
+          1
+        ],
+        [
+          3,
+          1,
+          1
+        ],
+        [
+          3,
+          1,
+          1
+        ]
+      ],
+      "status": "exact-subset-frame-and-projected-lcu-control",
+      "subset_operator_count": 8
+    },
+    {
+      "carrier_dimension": 120,
+      "direct_subset_expansion_residual": 3.5466191257398384e-18,
+      "log2_average_scale_amplification": 3.321928094887362,
+      "log2_generic_sqrt_amplification": 1.660964047443681,
+      "maximum_absolute_character_ratio": 0.3333333333333333,
+      "projected_lcu_average_eigenvalue": 0.1,
+      "projected_lcu_proportionality_residual": 4.2293185355716375e-17,
+      "source_partitions": [
+        [
+          4,
+          1
+        ],
+        [
+          3,
+          1,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ]
+      ],
+      "status": "exact-subset-frame-and-projected-lcu-control",
+      "subset_operator_count": 8
+    },
+    {
+      "carrier_dimension": 96,
+      "direct_subset_expansion_residual": 6.606122289887237e-18,
+      "log2_average_scale_amplification": 3.584962500721156,
+      "log2_generic_sqrt_amplification": 1.792481250360578,
+      "maximum_absolute_character_ratio": 0.3333333333333333,
+      "projected_lcu_average_eigenvalue": 0.08333333333333334,
+      "projected_lcu_proportionality_residual": 5.2848978319097935e-17,
+      "source_partitions": [
+        [
+          4,
+          1
+        ],
+        [
+          3,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ]
+      ],
+      "status": "exact-subset-frame-and-projected-lcu-control",
+      "subset_operator_count": 8
+    },
+    {
+      "carrier_dimension": 24,
+      "direct_subset_expansion_residual": 2.1945156866309922e-17,
+      "log2_average_scale_amplification": 2.584962500721156,
+      "log2_generic_sqrt_amplification": 1.292481250360578,
+      "maximum_absolute_character_ratio": 1.0,
+      "projected_lcu_average_eigenvalue": 0.16666666666666669,
+      "projected_lcu_proportionality_residual": 8.778062746523969e-17,
+      "source_partitions": [
+        [
+          4,
+          1
+        ],
+        [
+          3,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "status": "exact-subset-frame-and-projected-lcu-control",
+      "subset_operator_count": 8
+    },
+    {
+      "carrier_dimension": 100,
+      "direct_subset_expansion_residual": 1.0440548223963115e-17,
+      "log2_average_scale_amplification": 2.473931188332412,
+      "log2_generic_sqrt_amplification": 1.236965594166206,
+      "maximum_absolute_character_ratio": 0.2,
+      "projected_lcu_average_eigenvalue": 0.18,
+      "projected_lcu_proportionality_residual": 1.670902896951458e-16,
+      "source_partitions": [
+        [
+          4,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ]
+      ],
+      "status": "exact-subset-frame-and-projected-lcu-control",
+      "subset_operator_count": 8
+    },
+    {
+      "carrier_dimension": 80,
+      "direct_subset_expansion_residual": 7.998987375768545e-18,
+      "log2_average_scale_amplification": 2.736965594166206,
+      "log2_generic_sqrt_amplification": 1.368482797083103,
+      "maximum_absolute_character_ratio": 0.2,
+      "projected_lcu_average_eigenvalue": 0.15,
+      "projected_lcu_proportionality_residual": 1.0041613256087146e-16,
+      "source_partitions": [
+        [
+          4,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ]
+      ],
+      "status": "exact-subset-frame-and-projected-lcu-control",
+      "subset_operator_count": 8
+    },
+    {
+      "carrier_dimension": 20,
+      "direct_subset_expansion_residual": 2.124928578454411e-17,
+      "log2_average_scale_amplification": 1.7369655941662063,
+      "log2_generic_sqrt_amplification": 0.8684827970831032,
+      "maximum_absolute_character_ratio": 1.0,
+      "projected_lcu_average_eigenvalue": 0.3,
+      "projected_lcu_proportionality_residual": 1.6828936335328763e-16,
+      "source_partitions": [
+        [
+          4,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "status": "exact-subset-frame-and-projected-lcu-control",
+      "subset_operator_count": 8
+    },
+    {
+      "carrier_dimension": 64,
+      "direct_subset_expansion_residual": 1.0158323737802263e-17,
+      "log2_average_scale_amplification": 3.0,
+      "log2_generic_sqrt_amplification": 1.5,
+      "maximum_absolute_character_ratio": 0.0,
+      "projected_lcu_average_eigenvalue": 0.125,
+      "projected_lcu_proportionality_residual": 8.126658990241815e-17,
+      "source_partitions": [
+        [
+          4,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ]
+      ],
+      "status": "exact-subset-frame-and-projected-lcu-control",
+      "subset_operator_count": 8
+    },
+    {
+      "carrier_dimension": 16,
+      "direct_subset_expansion_residual": 1.3988089856879498e-17,
+      "log2_average_scale_amplification": 2.0,
+      "log2_generic_sqrt_amplification": 1.0,
+      "maximum_absolute_character_ratio": 1.0,
+      "projected_lcu_average_eigenvalue": 0.25,
+      "projected_lcu_proportionality_residual": 5.595235942751798e-17,
+      "source_partitions": [
+        [
+          4,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "status": "exact-subset-frame-and-projected-lcu-control",
+      "subset_operator_count": 8
+    },
+    {
+      "carrier_dimension": 4,
+      "direct_subset_expansion_residual": 5.551115123125783e-17,
+      "log2_average_scale_amplification": 1.0,
+      "log2_generic_sqrt_amplification": 0.5,
+      "maximum_absolute_character_ratio": 1.0,
+      "projected_lcu_average_eigenvalue": 0.5,
+      "projected_lcu_proportionality_residual": 1.1102230246251565e-16,
+      "source_partitions": [
+        [
+          4,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "status": "exact-subset-frame-and-projected-lcu-control",
+      "subset_operator_count": 8
+    },
+    {
+      "carrier_dimension": 125,
+      "direct_subset_expansion_residual": 5.705753848758265e-18,
+      "log2_average_scale_amplification": 2.2108967824986188,
+      "log2_generic_sqrt_amplification": 1.1054483912493094,
+      "maximum_absolute_character_ratio": 0.2,
+      "projected_lcu_average_eigenvalue": 0.216,
+      "projected_lcu_proportionality_residual": 1.718141969392797e-16,
+      "source_partitions": [
+        [
+          3,
+          2
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "status": "exact-subset-frame-and-projected-lcu-control",
+      "subset_operator_count": 8
+    },
+    {
+      "carrier_dimension": 150,
+      "direct_subset_expansion_residual": 3.719772758749898e-18,
+      "log2_average_scale_amplification": 3.0588936890535683,
+      "log2_generic_sqrt_amplification": 1.5294468445267841,
+      "maximum_absolute_character_ratio": 0.3333333333333333,
+      "projected_lcu_average_eigenvalue": 0.12000000000000001,
+      "projected_lcu_proportionality_residual": 6.193566628679885e-17,
+      "source_partitions": [
+        [
+          3,
+          2
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          3,
+          1,
+          1
+        ]
+      ],
+      "status": "exact-subset-frame-and-projected-lcu-control",
+      "subset_operator_count": 8
+    },
+    {
+      "carrier_dimension": 125,
+      "direct_subset_expansion_residual": 5.7175841262916424e-18,
+      "log2_average_scale_amplification": 2.2108967824986188,
+      "log2_generic_sqrt_amplification": 1.1054483912493094,
+      "maximum_absolute_character_ratio": 0.2,
+      "projected_lcu_average_eigenvalue": 0.216,
+      "projected_lcu_proportionality_residual": 1.7174465966543172e-16,
+      "source_partitions": [
+        [
+          3,
+          2
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          2,
+          2,
+          1
+        ]
+      ],
+      "status": "exact-subset-frame-and-projected-lcu-control",
+      "subset_operator_count": 8
+    },
+    {
+      "carrier_dimension": 100,
+      "direct_subset_expansion_residual": 1.0441156127597256e-17,
+      "log2_average_scale_amplification": 2.473931188332412,
+      "log2_generic_sqrt_amplification": 1.236965594166206,
+      "maximum_absolute_character_ratio": 0.2,
+      "projected_lcu_average_eigenvalue": 0.18,
+      "projected_lcu_proportionality_residual": 1.672175948195237e-16,
+      "source_partitions": [
+        [
+          3,
+          2
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ]
+      ],
+      "status": "exact-subset-frame-and-projected-lcu-control",
+      "subset_operator_count": 8
+    },
+    {
+      "carrier_dimension": 25,
+      "direct_subset_expansion_residual": 1.425466459730912e-17,
+      "log2_average_scale_amplification": 1.4739311883324122,
+      "log2_generic_sqrt_amplification": 0.7369655941662061,
+      "maximum_absolute_character_ratio": 1.0,
+      "projected_lcu_average_eigenvalue": 0.36,
+      "projected_lcu_proportionality_residual": 1.1970992798063356e-16,
+      "source_partitions": [
+        [
+          3,
+          2
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "status": "exact-subset-frame-and-projected-lcu-control",
+      "subset_operator_count": 8
+    },
+    {
+      "carrier_dimension": 180,
+      "direct_subset_expansion_residual": 3.8642252086501156e-18,
+      "log2_average_scale_amplification": 3.9068905956085183,
+      "log2_generic_sqrt_amplification": 1.9534452978042591,
+      "maximum_absolute_character_ratio": 0.3333333333333333,
+      "projected_lcu_average_eigenvalue": 0.06666666666666668,
+      "projected_lcu_proportionality_residual": 5.244482813695572e-17,
+      "source_partitions": [
+        [
+          3,
+          2
+        ],
+        [
+          3,
+          1,
+          1
+        ],
+        [
+          3,
+          1,
+          1
+        ]
+      ],
+      "status": "exact-subset-frame-and-projected-lcu-control",
+      "subset_operator_count": 8
+    },
+    {
+      "carrier_dimension": 150,
+      "direct_subset_expansion_residual": 3.8042249735707695e-18,
+      "log2_average_scale_amplification": 3.0588936890535687,
+      "log2_generic_sqrt_amplification": 1.5294468445267844,
+      "maximum_absolute_character_ratio": 0.3333333333333333,
+      "projected_lcu_average_eigenvalue": 0.12,
+      "projected_lcu_proportionality_residual": 6.394140695234678e-17,
+      "source_partitions": [
+        [
+          3,
+          2
+        ],
+        [
+          3,
+          1,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ]
+      ],
+      "status": "exact-subset-frame-and-projected-lcu-control",
+      "subset_operator_count": 8
+    },
+    {
+      "carrier_dimension": 120,
+      "direct_subset_expansion_residual": 3.9503152280634564e-18,
+      "log2_average_scale_amplification": 3.321928094887362,
+      "log2_generic_sqrt_amplification": 1.660964047443681,
+      "maximum_absolute_character_ratio": 0.3333333333333333,
+      "projected_lcu_average_eigenvalue": 0.1,
+      "projected_lcu_proportionality_residual": 5.850008974071807e-17,
+      "source_partitions": [
+        [
+          3,
+          2
+        ],
+        [
+          3,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ]
+      ],
+      "status": "exact-subset-frame-and-projected-lcu-control",
+      "subset_operator_count": 8
+    },
+    {
+      "carrier_dimension": 30,
+      "direct_subset_expansion_residual": 1.5125254011558712e-17,
+      "log2_average_scale_amplification": 2.321928094887362,
+      "log2_generic_sqrt_amplification": 1.160964047443681,
+      "maximum_absolute_character_ratio": 1.0,
+      "projected_lcu_average_eigenvalue": 0.2,
+      "projected_lcu_proportionality_residual": 8.985877430051143e-17,
+      "source_partitions": [
+        [
+          3,
+          2
+        ],
+        [
+          3,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "status": "exact-subset-frame-and-projected-lcu-control",
+      "subset_operator_count": 8
+    },
+    {
+      "carrier_dimension": 125,
+      "direct_subset_expansion_residual": 5.723293725369482e-18,
+      "log2_average_scale_amplification": 2.2108967824986188,
+      "log2_generic_sqrt_amplification": 1.1054483912493094,
+      "maximum_absolute_character_ratio": 0.2,
+      "projected_lcu_average_eigenvalue": 0.216,
+      "projected_lcu_proportionality_residual": 1.7179110319356732e-16,
+      "source_partitions": [
+        [
+          3,
+          2
+        ],
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ]
+      ],
+      "status": "exact-subset-frame-and-projected-lcu-control",
+      "subset_operator_count": 8
+    },
+    {
+      "carrier_dimension": 100,
+      "direct_subset_expansion_residual": 1.0440864459315144e-17,
+      "log2_average_scale_amplification": 2.473931188332412,
+      "log2_generic_sqrt_amplification": 1.236965594166206,
+      "maximum_absolute_character_ratio": 0.2,
+      "projected_lcu_average_eigenvalue": 0.18,
+      "projected_lcu_proportionality_residual": 1.671914478784506e-16,
+      "source_partitions": [
+        [
+          3,
+          2
+        ],
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ]
+      ],
+      "status": "exact-subset-frame-and-projected-lcu-control",
+      "subset_operator_count": 8
+    },
+    {
+      "carrier_dimension": 25,
+      "direct_subset_expansion_residual": 1.4405147127311822e-17,
+      "log2_average_scale_amplification": 1.4739311883324122,
+      "log2_generic_sqrt_amplification": 0.7369655941662061,
+      "maximum_absolute_character_ratio": 1.0,
+      "projected_lcu_average_eigenvalue": 0.36,
+      "projected_lcu_proportionality_residual": 1.2022808050160557e-16,
+      "source_partitions": [
+        [
+          3,
+          2
+        ],
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "status": "exact-subset-frame-and-projected-lcu-control",
+      "subset_operator_count": 8
+    },
+    {
+      "carrier_dimension": 80,
+      "direct_subset_expansion_residual": 7.557350876489905e-18,
+      "log2_average_scale_amplification": 2.736965594166206,
+      "log2_generic_sqrt_amplification": 1.368482797083103,
+      "maximum_absolute_character_ratio": 0.2,
+      "projected_lcu_average_eigenvalue": 0.15,
+      "projected_lcu_proportionality_residual": 9.201139323250134e-17,
+      "source_partitions": [
+        [
+          3,
+          2
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ]
+      ],
+      "status": "exact-subset-frame-and-projected-lcu-control",
+      "subset_operator_count": 8
+    },
+    {
+      "carrier_dimension": 20,
+      "direct_subset_expansion_residual": 2.1081070195207326e-17,
+      "log2_average_scale_amplification": 1.7369655941662063,
+      "log2_generic_sqrt_amplification": 0.8684827970831032,
+      "maximum_absolute_character_ratio": 1.0,
+      "projected_lcu_average_eigenvalue": 0.3,
+      "projected_lcu_proportionality_residual": 1.6782971244698792e-16,
+      "source_partitions": [
+        [
+          3,
+          2
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "status": "exact-subset-frame-and-projected-lcu-control",
+      "subset_operator_count": 8
+    },
+    {
+      "carrier_dimension": 5,
+      "direct_subset_expansion_residual": 3.243928856371409e-17,
+      "log2_average_scale_amplification": 0.7369655941662062,
+      "log2_generic_sqrt_amplification": 0.3684827970831031,
+      "maximum_absolute_character_ratio": 1.0,
+      "projected_lcu_average_eigenvalue": 0.6,
+      "projected_lcu_proportionality_residual": 1.9112916397070752e-17,
+      "source_partitions": [
+        [
+          3,
+          2
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "status": "exact-subset-frame-and-projected-lcu-control",
+      "subset_operator_count": 8
+    },
+    {
+      "carrier_dimension": 216,
+      "direct_subset_expansion_residual": 4.357744540842568e-18,
+      "log2_average_scale_amplification": 4.754887502163468,
+      "log2_generic_sqrt_amplification": 2.377443751081734,
+      "maximum_absolute_character_ratio": 0.3333333333333333,
+      "projected_lcu_average_eigenvalue": 0.03703703703703705,
+      "projected_lcu_proportionality_residual": 3.486195632674054e-17,
+      "source_partitions": [
+        [
+          3,
+          1,
+          1
+        ],
+        [
+          3,
+          1,
+          1
+        ],
+        [
+          3,
+          1,
+          1
+        ]
+      ],
+      "status": "exact-subset-frame-and-projected-lcu-control",
+      "subset_operator_count": 8
+    },
+    {
+      "carrier_dimension": 180,
+      "direct_subset_expansion_residual": 4.010050823815308e-18,
+      "log2_average_scale_amplification": 3.9068905956085183,
+      "log2_generic_sqrt_amplification": 1.9534452978042591,
+      "maximum_absolute_character_ratio": 0.3333333333333333,
+      "projected_lcu_average_eigenvalue": 0.06666666666666668,
+      "projected_lcu_proportionality_residual": 5.805347947974716e-17,
+      "source_partitions": [
+        [
+          3,
+          1,
+          1
+        ],
+        [
+          3,
+          1,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ]
+      ],
+      "status": "exact-subset-frame-and-projected-lcu-control",
+      "subset_operator_count": 8
+    },
+    {
+      "carrier_dimension": 144,
+      "direct_subset_expansion_residual": 5.9603809638086135e-18,
+      "log2_average_scale_amplification": 4.169925001442312,
+      "log2_generic_sqrt_amplification": 2.084962500721156,
+      "maximum_absolute_character_ratio": 0.3333333333333333,
+      "projected_lcu_average_eigenvalue": 0.055555555555555566,
+      "projected_lcu_proportionality_residual": 4.768304771046891e-17,
+      "source_partitions": [
+        [
+          3,
+          1,
+          1
+        ],
+        [
+          3,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ]
+      ],
+      "status": "exact-subset-frame-and-projected-lcu-control",
+      "subset_operator_count": 8
+    },
+    {
+      "carrier_dimension": 36,
+      "direct_subset_expansion_residual": 7.373813504802391e-18,
+      "log2_average_scale_amplification": 3.169925001442312,
+      "log2_generic_sqrt_amplification": 1.584962500721156,
+      "maximum_absolute_character_ratio": 1.0,
+      "projected_lcu_average_eigenvalue": 0.11111111111111113,
+      "projected_lcu_proportionality_residual": 2.9495254019209566e-17,
+      "source_partitions": [
+        [
+          3,
+          1,
+          1
+        ],
+        [
+          3,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "status": "exact-subset-frame-and-projected-lcu-control",
+      "subset_operator_count": 8
+    },
+    {
+      "carrier_dimension": 150,
+      "direct_subset_expansion_residual": 4.516660096473624e-18,
+      "log2_average_scale_amplification": 3.0588936890535687,
+      "log2_generic_sqrt_amplification": 1.5294468445267844,
+      "maximum_absolute_character_ratio": 0.3333333333333333,
+      "projected_lcu_average_eigenvalue": 0.12,
+      "projected_lcu_proportionality_residual": 8.68098371741009e-17,
+      "source_partitions": [
+        [
+          3,
+          1,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ]
+      ],
+      "status": "exact-subset-frame-and-projected-lcu-control",
+      "subset_operator_count": 8
+    },
+    {
+      "carrier_dimension": 120,
+      "direct_subset_expansion_residual": 3.7994683654376e-18,
+      "log2_average_scale_amplification": 3.321928094887362,
+      "log2_generic_sqrt_amplification": 1.660964047443681,
+      "maximum_absolute_character_ratio": 0.3333333333333333,
+      "projected_lcu_average_eigenvalue": 0.1,
+      "projected_lcu_proportionality_residual": 5.842187726090798e-17,
+      "source_partitions": [
+        [
+          3,
+          1,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ]
+      ],
+      "status": "exact-subset-frame-and-projected-lcu-control",
+      "subset_operator_count": 8
+    },
+    {
+      "carrier_dimension": 30,
+      "direct_subset_expansion_residual": 8.754795549870918e-18,
+      "log2_average_scale_amplification": 2.321928094887362,
+      "log2_generic_sqrt_amplification": 1.160964047443681,
+      "maximum_absolute_character_ratio": 1.0,
+      "projected_lcu_average_eigenvalue": 0.2,
+      "projected_lcu_proportionality_residual": 6.387013575039944e-17,
+      "source_partitions": [
+        [
+          3,
+          1,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "status": "exact-subset-frame-and-projected-lcu-control",
+      "subset_operator_count": 8
+    },
+    {
+      "carrier_dimension": 96,
+      "direct_subset_expansion_residual": 5.883732412694029e-18,
+      "log2_average_scale_amplification": 3.584962500721156,
+      "log2_generic_sqrt_amplification": 1.792481250360578,
+      "maximum_absolute_character_ratio": 0.3333333333333333,
+      "projected_lcu_average_eigenvalue": 0.08333333333333334,
+      "projected_lcu_proportionality_residual": 4.706985930155223e-17,
+      "source_partitions": [
+        [
+          3,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ]
+      ],
+      "status": "exact-subset-frame-and-projected-lcu-control",
+      "subset_operator_count": 8
+    },
+    {
+      "carrier_dimension": 24,
+      "direct_subset_expansion_residual": 2.1942430725558185e-17,
+      "log2_average_scale_amplification": 2.584962500721156,
+      "log2_generic_sqrt_amplification": 1.292481250360578,
+      "maximum_absolute_character_ratio": 1.0,
+      "projected_lcu_average_eigenvalue": 0.16666666666666669,
+      "projected_lcu_proportionality_residual": 8.776972290223274e-17,
+      "source_partitions": [
+        [
+          3,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "status": "exact-subset-frame-and-projected-lcu-control",
+      "subset_operator_count": 8
+    },
+    {
+      "carrier_dimension": 6,
+      "direct_subset_expansion_residual": 0.0,
+      "log2_average_scale_amplification": 1.584962500721156,
+      "log2_generic_sqrt_amplification": 0.792481250360578,
+      "maximum_absolute_character_ratio": 1.0,
+      "projected_lcu_average_eigenvalue": 0.33333333333333337,
+      "projected_lcu_proportionality_residual": 0.0,
+      "source_partitions": [
+        [
+          3,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "status": "exact-subset-frame-and-projected-lcu-control",
+      "subset_operator_count": 8
+    },
+    {
+      "carrier_dimension": 125,
+      "direct_subset_expansion_residual": 5.728366713282458e-18,
+      "log2_average_scale_amplification": 2.2108967824986188,
+      "log2_generic_sqrt_amplification": 1.1054483912493094,
+      "maximum_absolute_character_ratio": 0.2,
+      "projected_lcu_average_eigenvalue": 0.216,
+      "projected_lcu_proportionality_residual": 1.717942193856468e-16,
+      "source_partitions": [
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ]
+      ],
+      "status": "exact-subset-frame-and-projected-lcu-control",
+      "subset_operator_count": 8
+    },
+    {
+      "carrier_dimension": 100,
+      "direct_subset_expansion_residual": 1.0443631491585552e-17,
+      "log2_average_scale_amplification": 2.473931188332412,
+      "log2_generic_sqrt_amplification": 1.236965594166206,
+      "maximum_absolute_character_ratio": 0.2,
+      "projected_lcu_average_eigenvalue": 0.18,
+      "projected_lcu_proportionality_residual": 1.6724686402644704e-16,
+      "source_partitions": [
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ]
+      ],
+      "status": "exact-subset-frame-and-projected-lcu-control",
+      "subset_operator_count": 8
+    },
+    {
+      "carrier_dimension": 25,
+      "direct_subset_expansion_residual": 1.4099661242359484e-17,
+      "log2_average_scale_amplification": 1.4739311883324122,
+      "log2_generic_sqrt_amplification": 0.7369655941662061,
+      "maximum_absolute_character_ratio": 1.0,
+      "projected_lcu_average_eigenvalue": 0.36,
+      "projected_lcu_proportionality_residual": 1.2068520016823242e-16,
+      "source_partitions": [
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "status": "exact-subset-frame-and-projected-lcu-control",
+      "subset_operator_count": 8
+    },
+    {
+      "carrier_dimension": 80,
+      "direct_subset_expansion_residual": 7.932453036584266e-18,
+      "log2_average_scale_amplification": 2.736965594166206,
+      "log2_generic_sqrt_amplification": 1.368482797083103,
+      "maximum_absolute_character_ratio": 0.2,
+      "projected_lcu_average_eigenvalue": 0.15,
+      "projected_lcu_proportionality_residual": 9.960996879805556e-17,
+      "source_partitions": [
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ]
+      ],
+      "status": "exact-subset-frame-and-projected-lcu-control",
+      "subset_operator_count": 8
+    },
+    {
+      "carrier_dimension": 20,
+      "direct_subset_expansion_residual": 2.1245694609737638e-17,
+      "log2_average_scale_amplification": 1.7369655941662063,
+      "log2_generic_sqrt_amplification": 0.8684827970831032,
+      "maximum_absolute_character_ratio": 1.0,
+      "projected_lcu_average_eigenvalue": 0.3,
+      "projected_lcu_proportionality_residual": 1.6826992641712968e-16,
+      "source_partitions": [
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "status": "exact-subset-frame-and-projected-lcu-control",
+      "subset_operator_count": 8
+    },
+    {
+      "carrier_dimension": 5,
+      "direct_subset_expansion_residual": 3.144851181407587e-17,
+      "log2_average_scale_amplification": 0.7369655941662062,
+      "log2_generic_sqrt_amplification": 0.3684827970831031,
+      "maximum_absolute_character_ratio": 1.0,
+      "projected_lcu_average_eigenvalue": 0.6,
+      "projected_lcu_proportionality_residual": 2.5958009355263524e-17,
+      "source_partitions": [
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "status": "exact-subset-frame-and-projected-lcu-control",
+      "subset_operator_count": 8
+    },
+    {
+      "carrier_dimension": 64,
+      "direct_subset_expansion_residual": 1.0459650483299508e-17,
+      "log2_average_scale_amplification": 3.0,
+      "log2_generic_sqrt_amplification": 1.5,
+      "maximum_absolute_character_ratio": 0.0,
+      "projected_lcu_average_eigenvalue": 0.125,
+      "projected_lcu_proportionality_residual": 8.367720386639607e-17,
+      "source_partitions": [
+        [
+          2,
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ]
+      ],
+      "status": "exact-subset-frame-and-projected-lcu-control",
+      "subset_operator_count": 8
+    },
+    {
+      "carrier_dimension": 16,
+      "direct_subset_expansion_residual": 1.3948031782880423e-17,
+      "log2_average_scale_amplification": 2.0,
+      "log2_generic_sqrt_amplification": 1.0,
+      "maximum_absolute_character_ratio": 1.0,
+      "projected_lcu_average_eigenvalue": 0.25,
+      "projected_lcu_proportionality_residual": 5.579212713152168e-17,
+      "source_partitions": [
+        [
+          2,
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "status": "exact-subset-frame-and-projected-lcu-control",
+      "subset_operator_count": 8
+    },
+    {
+      "carrier_dimension": 4,
+      "direct_subset_expansion_residual": 5.551115123125783e-17,
+      "log2_average_scale_amplification": 1.0,
+      "log2_generic_sqrt_amplification": 0.5,
+      "maximum_absolute_character_ratio": 1.0,
+      "projected_lcu_average_eigenvalue": 0.5,
+      "projected_lcu_proportionality_residual": 1.1102230246251565e-16,
+      "source_partitions": [
+        [
+          2,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "status": "exact-subset-frame-and-projected-lcu-control",
+      "subset_operator_count": 8
+    },
+    {
+      "carrier_dimension": 1,
+      "direct_subset_expansion_residual": 0.0,
+      "log2_average_scale_amplification": 0.0,
+      "log2_generic_sqrt_amplification": 0.0,
+      "maximum_absolute_character_ratio": 1.0,
+      "projected_lcu_average_eigenvalue": 1.0,
+      "projected_lcu_proportionality_residual": 0.0,
+      "source_partitions": [
+        [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "status": "exact-subset-frame-and-projected-lcu-control",
+      "subset_operator_count": 8
+    }
+  ],
+  "headline_metrics": {
+    "all_k_subset_expansion_identity_count": 1,
+    "conditional_polynomial_projected_lcu_schema_count": 1,
+    "conditional_superpolynomial_generic_amplification_row_count": 3,
+    "copy_count": 3,
+    "finite_control_count": 84,
+    "finite_projected_lcu_failure_count": 0,
+    "finite_subset_expansion_failure_count": 0,
+    "maximum_projected_lcu_proportionality_residual": 2.235946725039057e-16,
+    "maximum_subset_expansion_residual": 5.604038305720465e-17,
+    "normalization_free_average_frame_block_encoding_count": 0,
+    "polynomial_hidden_involution_decoder_count": 0,
+    "polynomial_structured_spectral_amplification_count": 0,
+    "scaling_record_count": 4,
+    "tail_log2_generic_sqrt_amplification_lower_bound": 159.374399723076,
+    "uniform_natural_source_character_ratio_theorem_count": 1
+  },
+  "scaling_records": [
+    {
+      "assumed_character_ratio_upper_bound": 0.35355339059327373,
+      "explicit_subset_term_log2_count": 24,
+      "log2_average_scale_amplification_lower_bound": 13.517956909444223,
+      "log2_generic_sqrt_amplification_lower_bound": 6.7589784547221115,
+      "n": 8,
+      "polynomial_in_n_generic_amplification": true,
+      "required_joint_copy_count": 24,
+      "status": "finite-scaling-control"
+    },
+    {
+      "assumed_character_ratio_upper_bound": 0.25,
+      "explicit_subset_term_log2_count": 64,
+      "log2_average_scale_amplification_lower_bound": 43.396601927208806,
+      "log2_generic_sqrt_amplification_lower_bound": 21.698300963604403,
+      "n": 16,
+      "polynomial_in_n_generic_amplification": false,
+      "required_joint_copy_count": 64,
+      "status": "conditional-generic-normalization-superpolynomial"
+    },
+    {
+      "assumed_character_ratio_upper_bound": 0.17677669529663687,
+      "explicit_subset_term_log2_count": 160,
+      "log2_average_scale_amplification_lower_bound": 122.42550702732771,
+      "log2_generic_sqrt_amplification_lower_bound": 61.212753513663856,
+      "n": 32,
+      "polynomial_in_n_generic_amplification": false,
+      "required_joint_copy_count": 160,
+      "status": "conditional-generic-normalization-superpolynomial"
+    },
+    {
+      "assumed_character_ratio_upper_bound": 0.125,
+      "explicit_subset_term_log2_count": 384,
+      "log2_average_scale_amplification_lower_bound": 318.748799446152,
+      "log2_generic_sqrt_amplification_lower_bound": 159.374399723076,
+      "n": 64,
+      "polynomial_in_n_generic_amplification": false,
+      "required_joint_copy_count": 384,
+      "status": "conditional-generic-normalization-superpolynomial"
+    }
+  ],
+  "status": "exact-average-frame-identity-natural-source-generic-normalization-blocked",
+  "summary": "Verified the all-k subset identity and projected-LCU proportionality on 84 natural S_5 source branches. The natural-source ratio theorem discharges the hard-sector envelope; 3/4 growing-width rows have superpolynomial generic square-root amplification cost.",
+  "theorem_contract": {
+    "conditional_scaling_assumption": "Every sampled source in the hard-sector envelope obeys |chi_lambda(C)|/d_lambda <= 1/sqrt(n). The companion natural character-ratio theorem proves this simultaneously for the complete growing-width source tuple except with probability at most 2kn/|C|.",
+    "exact_identity": "F_lambda = product_i(d_i+chi_i(C))^-1 times the sum over all register subsets S of the class average of the diagonal representation on S.",
+    "normalization_formula": "The normalized projected operator B has mean eigenvalue product_i(1+chi_i/d_i)/2. Generic rescaling to unit average therefore costs product_i 2/(1+chi_i/d_i).",
+    "projected_lcu_schema": [
+      "Coherently prepare a uniform hidden conjugacy-class element.",
+      "For each copy, prepare an equal I-versus-representation selector.",
+      "Apply source-irrep representation matrices controlled by the class element.",
+      "Unprepare class and selector registers to project the normalized average."
+    ],
+    "schema_dependencies": [
+      "Uniform coherent conjugacy-class preparation.",
+      "Uniform controlled Young-representation action for sampled source partitions.",
+      "Ordinary mixed coset-state access does not itself provide this projected block encoding."
+    ]
+  }
+}

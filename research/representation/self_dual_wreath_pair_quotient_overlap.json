@@ -1,0 +1,414 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Quotienting pair cores can be replaced by deleting pairwise unit singular values from a scalar graph.",
+      "resolution": "K is a phase-sensitive span with overlapping pair cores; residual leaf normalization changes all blocks.",
+      "resolved": true
+    },
+    {
+      "objection": "A positive finite pair-quotient gap proves all-depth pair generation.",
+      "resolution": "The gap may close as node width and multiplicity grow, and its physical mass is unbounded.",
+      "resolved": false
+    }
+  ],
+  "claim_gate": {
+    "coherent_pair_core_span_transform_compiled": false,
+    "exact_pair_core_quotient_overlap_criterion_verified": true,
+    "finite_phase_only_residual_certificate_exists": true,
+    "finite_s6_pair_quotient_screen_positive": true,
+    "reason": "The exact local norm target is now isolated, but no asymptotic gap or coherent quotient implementation is known.",
+    "residual_sign_blind_bound_universally_sufficient": false,
+    "selected_w5_pair_rich_node_certified": true,
+    "speedup_claim_allowed": false,
+    "uniform_all_n_pair_quotient_gap_proved": false,
+    "w3_emergent_boundary_recovered": true
+  },
+  "controls": [
+    {
+      "carrier_dimension": 8,
+      "child_intersection_dimension": 2,
+      "control_id": "W3-DISTINCT-EMERGENT-PAIR-QUOTIENT-BOUNDARY",
+      "crossing_pair_core_count": 0,
+      "crossing_pair_core_dimension_sum": 0,
+      "crossing_pair_core_span_dimension": 0,
+      "emergent_cross_dependency_dimension": 2,
+      "exact_pair_quotient_certifies_pair_generation": false,
+      "exact_pair_quotient_gap_below_one": -6.661338147750939e-16,
+      "exact_pair_quotient_overlap_audit": true,
+      "exact_residual_principal_correlation": 1.0000000000000007,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        2
+      ],
+      "left_pair_quotient_dimension": 4,
+      "left_span_dimension": 4,
+      "n": 3,
+      "residual_left_weight_spectral_radius": 3.91044349745792e-16,
+      "residual_right_weight_spectral_radius": 1.7991337501014814e-16,
+      "residual_sign_blind_bound_certifies_pair_generation": false,
+      "residual_weighted_span_correlation_bound": 1.0000000000000009,
+      "right_orientation_masks": [
+        5,
+        7
+      ],
+      "right_pair_quotient_dimension": 4,
+      "right_span_dimension": 4,
+      "status": "exact-emergent-cross-dependency",
+      "target_partition": [
+        2,
+        1
+      ]
+    },
+    {
+      "carrier_dimension": 13,
+      "child_intersection_dimension": 3,
+      "control_id": "W3-REPEATED-EMERGENT-PAIR-QUOTIENT-BOUNDARY",
+      "crossing_pair_core_count": 2,
+      "crossing_pair_core_dimension_sum": 2,
+      "crossing_pair_core_span_dimension": 2,
+      "emergent_cross_dependency_dimension": 1,
+      "exact_pair_quotient_certifies_pair_generation": false,
+      "exact_pair_quotient_gap_below_one": 1.1102230246251565e-16,
+      "exact_pair_quotient_overlap_audit": true,
+      "exact_residual_principal_correlation": 0.9999999999999999,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        1,
+        2
+      ],
+      "left_pair_quotient_dimension": 6,
+      "left_span_dimension": 8,
+      "n": 3,
+      "residual_left_weight_spectral_radius": 0.49999999999999983,
+      "residual_right_weight_spectral_radius": 0.9999999999999998,
+      "residual_sign_blind_bound_certifies_pair_generation": false,
+      "residual_weighted_span_correlation_bound": Infinity,
+      "right_orientation_masks": [
+        4,
+        7
+      ],
+      "right_pair_quotient_dimension": 4,
+      "right_span_dimension": 6,
+      "status": "exact-emergent-cross-dependency",
+      "target_partition": [
+        2,
+        1
+      ]
+    },
+    {
+      "carrier_dimension": 190,
+      "child_intersection_dimension": 5,
+      "control_id": "W5-PAIR-RICH-QUOTIENT-CERTIFICATE",
+      "crossing_pair_core_count": 1,
+      "crossing_pair_core_dimension_sum": 5,
+      "crossing_pair_core_span_dimension": 5,
+      "emergent_cross_dependency_dimension": 0,
+      "exact_pair_quotient_certifies_pair_generation": true,
+      "exact_pair_quotient_gap_below_one": 0.6595040382030941,
+      "exact_pair_quotient_overlap_audit": true,
+      "exact_residual_principal_correlation": 0.34049596179690594,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            4,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            2
+          ],
+          [
+            2,
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        3
+      ],
+      "left_pair_quotient_dimension": 35,
+      "left_span_dimension": 40,
+      "n": 5,
+      "residual_left_weight_spectral_radius": 0.1740776559556983,
+      "residual_right_weight_spectral_radius": 0.20000000000000065,
+      "residual_sign_blind_bound_certifies_pair_generation": true,
+      "residual_weighted_span_correlation_bound": 0.43135900779483016,
+      "right_orientation_masks": [
+        5,
+        6
+      ],
+      "right_pair_quotient_dimension": 95,
+      "right_span_dimension": 100,
+      "status": "exact-pair-quotient-sign-blind-certified",
+      "target_partition": [
+        3,
+        2
+      ]
+    },
+    {
+      "carrier_dimension": 190,
+      "child_intersection_dimension": 0,
+      "control_id": "W5-PHASE-ONLY-RESIDUAL-CERTIFICATE",
+      "crossing_pair_core_count": 0,
+      "crossing_pair_core_dimension_sum": 0,
+      "crossing_pair_core_span_dimension": 0,
+      "emergent_cross_dependency_dimension": 0,
+      "exact_pair_quotient_certifies_pair_generation": true,
+      "exact_pair_quotient_gap_below_one": 0.5910895371548079,
+      "exact_pair_quotient_overlap_audit": true,
+      "exact_residual_principal_correlation": 0.40891046284519206,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            4,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            2
+          ],
+          [
+            2,
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        1,
+        4,
+        5
+      ],
+      "left_pair_quotient_dimension": 55,
+      "left_span_dimension": 55,
+      "n": 5,
+      "residual_left_weight_spectral_radius": 0.2500000000000002,
+      "residual_right_weight_spectral_radius": 1.0000000000000009,
+      "residual_sign_blind_bound_certifies_pair_generation": false,
+      "residual_weighted_span_correlation_bound": Infinity,
+      "right_orientation_masks": [
+        2,
+        3,
+        6,
+        7
+      ],
+      "right_pair_quotient_dimension": 135,
+      "right_span_dimension": 135,
+      "status": "exact-pair-quotient-phase-only-certified",
+      "target_partition": [
+        3,
+        2
+      ]
+    }
+  ],
+  "created_at": "2026-08-06T06:11:16.654901+00:00",
+  "falsifiers_triggered": [
+    "Raw pair weights are not invariant under the exact common-core quotient.",
+    "Finite pair generation does not imply a uniform residual principal-angle gap."
+  ],
+  "headline_metrics": {
+    "all_n_pair_quotient_gap_count": 0,
+    "finite_control_count": 4,
+    "finite_pair_quotient_audit_failure_count": 0,
+    "finite_phase_only_certificate_count": 1,
+    "new_quantum_algorithm_count": 0,
+    "pair_core_quotient_overlap_theorem_count": 1,
+    "s6_affine_merge_audit_count": 693,
+    "s6_emergent_cross_dependency_merge_count": 0,
+    "s6_minimum_exact_pair_quotient_gap": 0.7374999999999989,
+    "s6_phase_only_certificate_count": 12,
+    "w3_distinct_emergent_dimension": 2,
+    "w3_repeated_emergent_dimension": 1,
+    "w5_pair_quotient_gap": 0.6595040382030941,
+    "w5_phase_only_exact_quotient_gap": 0.5910895371548079,
+    "w5_phase_only_sign_blind_bound": Infinity
+  },
+  "proof_obligations": [
+    {
+      "obligation": "exact_pair_rich_cross_quotient_criterion",
+      "resolution": "Residual principal-correlation-one multiplicity exactly matches the emergent child-intersection dimension.",
+      "resolved": true
+    },
+    {
+      "obligation": "uniform_natural_pair_quotient_gap",
+      "resolution": "Finite positive gaps do not bound the minimum residual angle at threshold depth.",
+      "resolved": false
+    },
+    {
+      "obligation": "finite_s6_low_carrier_pair_quotient_screen",
+      "resolution": "All 693 active affine merges have positive exact residual gap; 12 are invisible to the scalar residual bound.",
+      "resolved": true
+    },
+    {
+      "obligation": "coherent_pair_core_span_transform",
+      "resolution": "The explicit projector onto K is a validation object, not a polynomial Racah/common-core circuit.",
+      "resolved": false
+    }
+  ],
+  "s6_portfolio_screen": {
+    "active_target_count": 9,
+    "affine_merge_audit_count": 693,
+    "emergent_cross_dependency_merge_count": 0,
+    "exact_pair_quotient_audit_failure_count": 0,
+    "labels": [
+      [
+        [
+          6
+        ],
+        [
+          2,
+          2,
+          2
+        ]
+      ],
+      [
+        [
+          5,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      [
+        [
+          3,
+          3
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ]
+    ],
+    "maximum_exact_residual_principal_correlation": 0.2625000000000011,
+    "minimum_exact_pair_quotient_gap": 0.7374999999999989,
+    "minimum_pair_rich_exact_quotient_gap": 0.7999999999999989,
+    "n": 6,
+    "pair_rich_merge_count": 22,
+    "phase_only_certificate_count": 12,
+    "screen_id": "W6-GLOBALLY-DISTINCT-LOW-CARRIER-PAIR-QUOTIENT",
+    "status": "finite-s6-pair-quotient-gap-positive",
+    "target_count": 11
+  },
+  "status": "exact-pair-quotient-criterion-all-n-gap-open",
+  "summary": "Reduced pair-rich augmented H0 to the residual principal angle after removing the physical span of all crossing pair cores.",
+  "theorem_contract": {
+    "cross_pair_classes": "After internal child dependencies are quotiented, crossing pair relations generate exactly K.",
+    "exact_criterion": "The cross H0 quotient vanishes iff the principal correlation between A minus K and B minus K is strictly below one.",
+    "pair_core_span": "K is the physical span of all crossing leaf-pair intersections.",
+    "residual_weighted_bound": "Projecting leaves off K and applying the weighted comparison theorem gives a sufficient sign-blind certificate.",
+    "scope": "The exact criterion is general finite-dimensional linear algebra; no all-n lower bound or coherent K transform is supplied."
+  }
+}

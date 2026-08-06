@@ -1,0 +1,265 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Equal child sizes alone imply a half split on every core.",
+      "resolution": "The nonaffine three-point membership set produces exact 1/3 or 2/3 routing in a balanced tree.",
+      "resolved": true
+    },
+    {
+      "objection": "Noncommuting leaf complements destroy affine core balance.",
+      "resolution": "Reducing core blocks decouple exactly; the complement may remain noncommuting without changing core count ratios.",
+      "resolved": true
+    },
+    {
+      "objection": "The A_n fixed-family formula proves affine exhaustion.",
+      "resolution": "It computes a selected common intersection. It does not show that every component's membership across all orientations is affine or that sums of ranges have no emergent intersections.",
+      "resolved": false
+    },
+    {
+      "objection": "Affine spectral routing is already a circuit.",
+      "resolution": "The coherent projectors identifying each affine core channel remain uncompiled.",
+      "resolved": false
+    }
+  ],
+  "block_scaling_records": [
+    {
+      "affine_core_theorem_applies": true,
+      "aligned_half_balance_level_count": 2,
+      "block_count": 2,
+      "copy_count": 7,
+      "incidence_family_size": 4,
+      "incidence_is_linear_subspace": true,
+      "n": 7,
+      "quotient_coset_intersections_exhausted": false,
+      "quotient_endpoint_level_count": 5,
+      "status": "block-core-affine-flag-balanced-quotient-intersections-open"
+    },
+    {
+      "affine_core_theorem_applies": true,
+      "aligned_half_balance_level_count": 3,
+      "block_count": 3,
+      "copy_count": 11,
+      "incidence_family_size": 8,
+      "incidence_is_linear_subspace": true,
+      "n": 8,
+      "quotient_coset_intersections_exhausted": false,
+      "quotient_endpoint_level_count": 8,
+      "status": "block-core-affine-flag-balanced-quotient-intersections-open"
+    },
+    {
+      "affine_core_theorem_applies": true,
+      "aligned_half_balance_level_count": 4,
+      "block_count": 4,
+      "copy_count": 15,
+      "incidence_family_size": 16,
+      "incidence_is_linear_subspace": true,
+      "n": 9,
+      "quotient_coset_intersections_exhausted": false,
+      "quotient_endpoint_level_count": 11,
+      "status": "block-core-affine-flag-balanced-quotient-intersections-open"
+    },
+    {
+      "affine_core_theorem_applies": true,
+      "aligned_half_balance_level_count": 6,
+      "block_count": 6,
+      "copy_count": 21,
+      "incidence_family_size": 64,
+      "incidence_is_linear_subspace": true,
+      "n": 10,
+      "quotient_coset_intersections_exhausted": false,
+      "quotient_endpoint_level_count": 15,
+      "status": "block-core-affine-flag-balanced-quotient-intersections-open"
+    },
+    {
+      "affine_core_theorem_applies": true,
+      "aligned_half_balance_level_count": 8,
+      "block_count": 8,
+      "copy_count": 26,
+      "incidence_family_size": 256,
+      "incidence_is_linear_subspace": true,
+      "n": 11,
+      "quotient_coset_intersections_exhausted": false,
+      "quotient_endpoint_level_count": 18,
+      "status": "block-core-affine-flag-balanced-quotient-intersections-open"
+    },
+    {
+      "affine_core_theorem_applies": true,
+      "aligned_half_balance_level_count": 9,
+      "block_count": 9,
+      "copy_count": 29,
+      "incidence_family_size": 512,
+      "incidence_is_linear_subspace": true,
+      "n": 12,
+      "quotient_coset_intersections_exhausted": false,
+      "quotient_endpoint_level_count": 20,
+      "status": "block-core-affine-flag-balanced-quotient-intersections-open"
+    }
+  ],
+  "claim_gate": {
+    "affine_core_flag_balance_proved": true,
+    "all_child_intersections_exhausted_by_affine_cores": false,
+    "coherent_affine_core_projectors_compiled": false,
+    "collision_free_half_integrality_proved_all_n": false,
+    "hierarchical_orientation_polar_proved": false,
+    "known_block_common_cores_covered": true,
+    "nonaffine_membership_can_create_unbalanced_weights": true,
+    "reason": "Affine incidence exactly explains endpoint/half core routing, but affine exhaustion and coherent core projectors remain open.",
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-06T02:54:15.895447+00:00",
+  "falsifiers_triggered": [
+    "The old exponential block-common incidence witness is fully balanced by an aligned affine flag and is not a polar no-go.",
+    "Balanced tree cardinality does not prevent 1/3 or 2/3 channels when core membership is nonaffine.",
+    "A fixed-family common-range formula is weaker than an affine exhaustion theorem for all child-span intersections."
+  ],
+  "headline_metrics": {
+    "affine_flag_balance_theorem_count": 1,
+    "affine_intersection_exhaustion_conditional_theorem_count": 1,
+    "all_child_intersection_affine_exhaustion_theorem_count": 0,
+    "block_affine_core_failure_count": 0,
+    "block_affine_core_record_count": 6,
+    "coherent_affine_core_projector_count": 0,
+    "hierarchical_orientation_polar_sampler_count": 0,
+    "incidence_control_count": 2,
+    "matrix_control_count": 2,
+    "matrix_validation_failure_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "nonaffine_unbalanced_counterexample_count": 1,
+    "noncommuting_affine_matrix_control_count": 1,
+    "tail_block_affine_family_size": 512
+  },
+  "incidence_controls": [
+    {
+      "active_core_merge_count": 18,
+      "bit_count": 3,
+      "control_id": "three-affine-incidence-families",
+      "endpoint_ratio_count": 9,
+      "every_incidence_set_affine": true,
+      "exact_affine_flag_balance_verified": true,
+      "flag_basis": [
+        1,
+        2,
+        4
+      ],
+      "half_ratio_count": 9,
+      "incidence_sets": [
+        [
+          0,
+          1,
+          2,
+          3
+        ],
+        [
+          1,
+          3,
+          5,
+          7
+        ],
+        [
+          0,
+          3,
+          5,
+          6
+        ]
+      ],
+      "merge_count": 7,
+      "observed_active_ratios": [
+        0.0,
+        0.5,
+        1.0
+      ],
+      "other_ratio_count": 0,
+      "status": "exact-affine-flag-endpoint-half-balance"
+    },
+    {
+      "active_core_merge_count": 4,
+      "bit_count": 3,
+      "control_id": "nonaffine-three-point-falsifier",
+      "endpoint_ratio_count": 2,
+      "every_incidence_set_affine": false,
+      "exact_affine_flag_balance_verified": false,
+      "flag_basis": [
+        1,
+        2,
+        4
+      ],
+      "half_ratio_count": 1,
+      "incidence_sets": [
+        [
+          0,
+          1,
+          2
+        ]
+      ],
+      "merge_count": 7,
+      "observed_active_ratios": [
+        0.5,
+        0.6666666666666666,
+        1.0
+      ],
+      "other_ratio_count": 1,
+      "status": "nonaffine-or-unbalanced-incidence-control"
+    }
+  ],
+  "matrix_controls": [
+    {
+      "active_core_merge_count": 18,
+      "affine_core_count": 3,
+      "bit_count": 3,
+      "carrier_dimension": 6,
+      "control_id": "noncommuting-affine-core-family",
+      "exact_affine_core_matrix_theorem_verified": true,
+      "maximum_core_count_ratio_residual": 1.1102230246251565e-16,
+      "maximum_relative_isometry_residual": 2.442320734650341e-13,
+      "nonaffine_counterexample_ratio": null,
+      "noncommuting_leaf_pair_count": 28,
+      "orientation_count": 8,
+      "status": "exact-noncommuting-affine-core-balance"
+    },
+    {
+      "active_core_merge_count": 4,
+      "affine_core_count": 0,
+      "bit_count": 3,
+      "carrier_dimension": 4,
+      "control_id": "noncommuting-nonaffine-core-falsifier",
+      "exact_affine_core_matrix_theorem_verified": true,
+      "maximum_core_count_ratio_residual": 1.1102230246251565e-16,
+      "maximum_relative_isometry_residual": 2.43675599948109e-13,
+      "nonaffine_counterexample_ratio": 0.6666666666666666,
+      "noncommuting_leaf_pair_count": 28,
+      "orientation_count": 8,
+      "status": "exact-nonaffine-core-unbalanced-counterexample"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "affine_core_flag_balance",
+      "resolution": "Affine fiber counting proves endpoint/half routing at every node and matrix controls verify it with noncommuting complements.",
+      "resolved": true
+    },
+    {
+      "obligation": "known_block_core_affineness",
+      "resolution": "Each block witness is the span of disjoint replicated-bit generators and is therefore a linear orientation subspace.",
+      "resolved": true
+    },
+    {
+      "obligation": "all_child_intersections_affine_core_exhaustion",
+      "resolution": "The fixed-family common-range theorem classifies one chosen intersection but not the leaf-incidence set of every reducing component nor emergent intersections of child spans.",
+      "resolved": false
+    },
+    {
+      "obligation": "coherent_affine_core_label_transform",
+      "resolution": "Even after an exhaustion theorem, the core channels need a polynomial coherent representation label or projector.",
+      "resolved": false
+    }
+  ],
+  "status": "affine-core-balance-proved-intersection-exhaustion-open",
+  "summary": "Proved that every affine core is routed by any linear flag with only endpoint or half weights, validated robustness to noncommuting complements, and isolated affine exhaustion as the missing wreath representation theorem.",
+  "theorem_contract": {
+    "affine_intersection": "Every nonempty intersection of affine F_2 subspaces is affine.",
+    "intersection_exhaustion_consequence": "If every child-span intersection is an orthogonal sum of reducing affine-incidence cores, every fractional relative eigenvalue is exactly 1/2.",
+    "linear_flag_split": "A linear functional is constant on an affine set or has two equal fibers, so every active child ratio is 0, 1/2, or 1.",
+    "operator_lift": "If a reducing core K is present in leaves A, then S_T|K=|A intersect T|I and the relative effect equals the count ratio.",
+    "wreath_scope": "Known block-common cores have linear incidence. The fixed-family A_n/parity theorem does not yet prove that all child-span intersections are exhausted by affine cores."
+  }
+}

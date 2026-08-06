@@ -1,0 +1,226 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Pair correlations tending to zero force child spans apart.",
+      "resolution": "The correlations are 1/d yet the child spans are identical when width is d^2.",
+      "resolved": true
+    },
+    {
+      "objection": "Exponential width is required to accumulate reciprocal overlaps.",
+      "resolution": "Quadratic width suffices, much smaller than the threshold orientation family.",
+      "resolved": true
+    },
+    {
+      "objection": "The abstract family kills the natural wreath route.",
+      "resolution": "Natural Racah blocks may obey additional signed structure excluding mutually unbiased accumulation.",
+      "resolved": false
+    }
+  ],
+  "claim_gate": {
+    "natural_wreath_fourier_like_accumulation_excluded": false,
+    "pairwise_reciprocal_magnitude_sufficient_for_pair_generation": false,
+    "quadratic_width_accumulation_counterfamily_verified": true,
+    "reason": "The local 1/d theorem is asymptotically insufficient by itself; only additional natural recoupling structure can rescue the quotient gap.",
+    "signed_racah_structure_required": true,
+    "speedup_claim_allowed": false,
+    "uniform_all_n_pair_quotient_gap_proved": false
+  },
+  "created_at": "2026-08-06T06:14:56.329053+00:00",
+  "falsifiers_triggered": [
+    "The inverse-irrep-dimension pair-angle bound cannot by itself prove all-depth pair generation.",
+    "Polynomial width is enough for small pair correlations to accumulate to a norm-one cross block.",
+    "Any surviving proof must exploit signed Fourier/Racah structure specific to natural wreath sectors."
+  ],
+  "finite_controls": [
+    {
+      "absolute_weight_cross_norm": 2.0,
+      "augmented_h0_dimension": 4,
+      "carrier_dimension_parameter": 2,
+      "child_span_intersection_dimension": 4,
+      "child_width": 4,
+      "crossing_pair_common_dimension": 0,
+      "crossing_pair_count": 16,
+      "emergent_dependency_despite_reciprocal_bound": true,
+      "exact_accumulation_no_go_audit": true,
+      "exact_cross_correlation_magnitude": 0.5,
+      "exact_residual_principal_correlation": 1.0000000000000002,
+      "left_child_span_dimension": 4,
+      "local_reciprocal_bound_satisfied": true,
+      "maximum_cross_correlation_magnitude_residual": 0.0,
+      "physical_dimension": 4,
+      "right_child_span_dimension": 4,
+      "status": "exact-reciprocal-carrier-accumulation-no-go"
+    },
+    {
+      "absolute_weight_cross_norm": 3.0,
+      "augmented_h0_dimension": 9,
+      "carrier_dimension_parameter": 3,
+      "child_span_intersection_dimension": 9,
+      "child_width": 9,
+      "crossing_pair_common_dimension": 0,
+      "crossing_pair_count": 81,
+      "emergent_dependency_despite_reciprocal_bound": true,
+      "exact_accumulation_no_go_audit": true,
+      "exact_cross_correlation_magnitude": 0.3333333333333333,
+      "exact_residual_principal_correlation": 1.0000000000000004,
+      "left_child_span_dimension": 9,
+      "local_reciprocal_bound_satisfied": true,
+      "maximum_cross_correlation_magnitude_residual": 5.551115123125783e-17,
+      "physical_dimension": 9,
+      "right_child_span_dimension": 9,
+      "status": "exact-reciprocal-carrier-accumulation-no-go"
+    },
+    {
+      "absolute_weight_cross_norm": 4.000000000000001,
+      "augmented_h0_dimension": 16,
+      "carrier_dimension_parameter": 4,
+      "child_span_intersection_dimension": 16,
+      "child_width": 16,
+      "crossing_pair_common_dimension": 0,
+      "crossing_pair_count": 256,
+      "emergent_dependency_despite_reciprocal_bound": true,
+      "exact_accumulation_no_go_audit": true,
+      "exact_cross_correlation_magnitude": 0.25,
+      "exact_residual_principal_correlation": 1.0000000000000004,
+      "left_child_span_dimension": 16,
+      "local_reciprocal_bound_satisfied": true,
+      "maximum_cross_correlation_magnitude_residual": 5.551115123125783e-17,
+      "physical_dimension": 16,
+      "right_child_span_dimension": 16,
+      "status": "exact-reciprocal-carrier-accumulation-no-go"
+    },
+    {
+      "absolute_weight_cross_norm": 5.0,
+      "augmented_h0_dimension": 25,
+      "carrier_dimension_parameter": 5,
+      "child_span_intersection_dimension": 25,
+      "child_width": 25,
+      "crossing_pair_common_dimension": 0,
+      "crossing_pair_count": 625,
+      "emergent_dependency_despite_reciprocal_bound": true,
+      "exact_accumulation_no_go_audit": true,
+      "exact_cross_correlation_magnitude": 0.2,
+      "exact_residual_principal_correlation": 1.0000000000000004,
+      "left_child_span_dimension": 25,
+      "local_reciprocal_bound_satisfied": true,
+      "maximum_cross_correlation_magnitude_residual": 5.551115123125783e-17,
+      "physical_dimension": 25,
+      "right_child_span_dimension": 25,
+      "status": "exact-reciprocal-carrier-accumulation-no-go"
+    }
+  ],
+  "headline_metrics": {
+    "finite_audit_failure_count": 0,
+    "finite_control_count": 4,
+    "maximum_tested_carrier_dimension": 5,
+    "maximum_tested_child_width": 25,
+    "maximum_tested_emergent_h0_dimension": 25,
+    "natural_wreath_counterfamily_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "quadratic_width_reciprocal_bound_counterexample_count": 4,
+    "reciprocal_carrier_accumulation_no_go_theorem_count": 1
+  },
+  "proof_obligations": [
+    {
+      "obligation": "reciprocal_magnitude_accumulation_no_go",
+      "resolution": "Mutually unbiased bases give exact 1/d local correlations and maximal emergent H0 at width d^2.",
+      "resolved": true
+    },
+    {
+      "obligation": "exclude_fourier_like_racah_blocks_in_natural_wreath_portfolio",
+      "resolution": "A natural all-n theorem must constrain phases or singular structure beyond the known reciprocal magnitudes.",
+      "resolved": false
+    }
+  ],
+  "scaling_records": [
+    {
+      "absolute_weight_cross_norm": 4,
+      "counterfamily_augmented_h0_dimension": 16,
+      "counterfamily_child_width": 16,
+      "minimum_nontrivial_irrep_dimension": 4,
+      "n": 5,
+      "natural_wreath_realization_proved": false,
+      "pair_correlation": 0.25,
+      "status": "magnitude-only-proof-falsified-natural-realization-open"
+    },
+    {
+      "absolute_weight_cross_norm": 7,
+      "counterfamily_augmented_h0_dimension": 49,
+      "counterfamily_child_width": 49,
+      "minimum_nontrivial_irrep_dimension": 7,
+      "n": 8,
+      "natural_wreath_realization_proved": false,
+      "pair_correlation": 0.14285714285714285,
+      "status": "magnitude-only-proof-falsified-natural-realization-open"
+    },
+    {
+      "absolute_weight_cross_norm": 15,
+      "counterfamily_augmented_h0_dimension": 225,
+      "counterfamily_child_width": 225,
+      "minimum_nontrivial_irrep_dimension": 15,
+      "n": 16,
+      "natural_wreath_realization_proved": false,
+      "pair_correlation": 0.06666666666666667,
+      "status": "magnitude-only-proof-falsified-natural-realization-open"
+    },
+    {
+      "absolute_weight_cross_norm": 31,
+      "counterfamily_augmented_h0_dimension": 961,
+      "counterfamily_child_width": 961,
+      "minimum_nontrivial_irrep_dimension": 31,
+      "n": 32,
+      "natural_wreath_realization_proved": false,
+      "pair_correlation": 0.03225806451612903,
+      "status": "magnitude-only-proof-falsified-natural-realization-open"
+    },
+    {
+      "absolute_weight_cross_norm": 63,
+      "counterfamily_augmented_h0_dimension": 3969,
+      "counterfamily_child_width": 3969,
+      "minimum_nontrivial_irrep_dimension": 63,
+      "n": 64,
+      "natural_wreath_realization_proved": false,
+      "pair_correlation": 0.015873015873015872,
+      "status": "magnitude-only-proof-falsified-natural-realization-open"
+    },
+    {
+      "absolute_weight_cross_norm": 127,
+      "counterfamily_augmented_h0_dimension": 16129,
+      "counterfamily_child_width": 16129,
+      "minimum_nontrivial_irrep_dimension": 127,
+      "n": 128,
+      "natural_wreath_realization_proved": false,
+      "pair_correlation": 0.007874015748031496,
+      "status": "magnitude-only-proof-falsified-natural-realization-open"
+    },
+    {
+      "absolute_weight_cross_norm": 255,
+      "counterfamily_augmented_h0_dimension": 65025,
+      "counterfamily_child_width": 65025,
+      "minimum_nontrivial_irrep_dimension": 255,
+      "n": 256,
+      "natural_wreath_realization_proved": false,
+      "pair_correlation": 0.00392156862745098,
+      "status": "magnitude-only-proof-falsified-natural-realization-open"
+    },
+    {
+      "absolute_weight_cross_norm": 511,
+      "counterfamily_augmented_h0_dimension": 261121,
+      "counterfamily_child_width": 261121,
+      "minimum_nontrivial_irrep_dimension": 511,
+      "n": 512,
+      "natural_wreath_realization_proved": false,
+      "pair_correlation": 0.0019569471624266144,
+      "status": "magnitude-only-proof-falsified-natural-realization-open"
+    }
+  ],
+  "status": "reciprocal-magnitude-proof-killed-signed-racah-structure-required",
+  "summary": "Constructed a quadratic-width family with exact 1/d pair correlations, no pair cores, and maximal emergent dependency.",
+  "theorem_contract": {
+    "construction": "The two children are the standard and Fourier bases of C^(d^2).",
+    "global_dependency": "Both child spans are the full d^2-dimensional carrier, so the cross H0 quotient has dimension d^2.",
+    "pair_angles": "Every crossing principal correlation is exactly 1/d and every crossing pair intersection is zero.",
+    "scope": "This falsifies magnitude-only arguments; realization by natural wreath recoupling blocks is not asserted.",
+    "width_boundary": "The failure occurs at child width d^2, polynomial in the reciprocal carrier dimension."
+  }
+}

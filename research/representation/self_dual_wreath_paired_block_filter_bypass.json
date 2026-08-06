@@ -1,0 +1,605 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Pairing blocks cannot create a trivial pattern sector after each block's trivial/sign components are deleted.",
+      "resolution": "Each block uses a retained nontrivial alpha; self-duality makes alpha tensor alpha contain trivial only after the two blocks are fused.",
+      "resolved": true
+    },
+    {
+      "objection": "Using two blocks per bit reduces the family to polynomial size.",
+      "resolution": "The bit count only loses a factor two and remains Theta(k), so the common family is still 2^Theta(k).",
+      "resolved": true
+    },
+    {
+      "objection": "The finite deterministic portfolios alone establish the typical natural theorem.",
+      "resolution": "They are controls only. Typicality follows separately from Sellke's fixed-block covering theorem and the rate-free good-block density argument.",
+      "resolved": true
+    },
+    {
+      "objection": "The bypass rules out every nonlocal or spectral filter.",
+      "resolution": "It targets independent block-local isotypic deletion. A filter coupling blocks or clipping the global spectrum is outside the theorem.",
+      "resolved": false
+    }
+  ],
+  "claim_gate": {
+    "abstract_spectral_trimmed_measurement_ruled_out": false,
+    "branch_controlled_filter_is_viable_norm_strategy": false,
+    "nonlocal_block_filter_ruled_out": false,
+    "one_dimensional_branch_filter_restores_polynomial_frame_norm": false,
+    "paired_block_filter_bypass_proved": true,
+    "polynomial_hidden_permutation_decoder_proved": false,
+    "reason": "Pairs of Sellke-good blocks use retained nontrivial self-dual irreps to reconstruct exponentially large exact common-core families after the branch-controlled one-dimensional filter. The residual uniform frame-norm route remains false.",
+    "speedup_claim_allowed": false,
+    "typical_filtered_exponential_common_family_proved": true
+  },
+  "created_at": "2026-08-05T22:51:45.496809+00:00",
+  "falsifiers_triggered": [
+    "Deleting trivial/sign sectors independently in each block does not eliminate exact common cores; nontrivial sectors pair back to trivial globally.",
+    "The finite frame-spike reduction is preasymptotic and cannot support a residual norm claim.",
+    "The surviving research target must be nonlocal across blocks or avoid frame-norm normalization entirely."
+  ],
+  "headline_metrics": {
+    "abstract_spectral_trimmed_subpovm_circuit_count": 0,
+    "exact_filtered_paired_block_witness_count": 6,
+    "filtered_exponential_common_orientation_family_theorem_count": 1,
+    "finite_target_violation_count": 4,
+    "new_quantum_algorithm_count": 0,
+    "nonlocal_block_filter_count": 0,
+    "one_dimensional_branch_filter_norm_restoration_counterexample_theorem_count": 1,
+    "paired_self_dual_irrep_common_core_theorem_count": 1,
+    "polynomial_hidden_permutation_decoder_count": 0,
+    "scaling_record_count": 6,
+    "sellke_typical_linear_paired_block_density_theorem_count": 1,
+    "tail_common_orientation_family_size": 16,
+    "tail_copy_count": 29,
+    "tail_log2_common_core_dimension_lower_bound": 322.79778577843655,
+    "tail_n": 12,
+    "tail_norm_lower_bound_to_target_ratio": 8.0,
+    "tail_original_block_count": 9,
+    "tail_paired_bit_count": 4
+  },
+  "literature": {
+    "paper_id": "sellke-irrep-tensor-covering-2022",
+    "title": "Covering Irrep(S_n) With Tensor Products and Powers",
+    "url": "https://arxiv.org/abs/2004.05283"
+  },
+  "scaling_records": [
+    {
+      "averaged_filtered_fourier_norm_lower_bound": 0.015625,
+      "common_core_dimension_lower_bound": 5325012,
+      "common_orientation_family_size": 2,
+      "copy_count": 7,
+      "exact_filtered_paired_block_witness": true,
+      "information_threshold_copy_count": 13,
+      "log2_common_core_dimension_lower_bound": 22.34435334580274,
+      "n": 7,
+      "norm_lower_bound_to_target_ratio": 1.0,
+      "original_block_count": 2,
+      "paired_bit_count": 1,
+      "paired_blocks": [
+        {
+          "first_block_indices": [
+            0,
+            1,
+            2
+          ],
+          "first_left_multiplicity": 102,
+          "first_right_multiplicity": 77,
+          "retained_irrep": [
+            4,
+            2,
+            1
+          ],
+          "retained_irrep_dimension": 35,
+          "retained_irrep_square_trivial_multiplicity": 1,
+          "second_block_indices": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "second_left_multiplicity": 113,
+          "second_right_multiplicity": 6,
+          "survives_one_dimensional_branch_filter": true
+        }
+      ],
+      "residual_target_invariant_multiplicity": 1,
+      "residual_target_partition": [
+        7
+      ],
+      "status": "exact-paired-block-filter-bypass-witness",
+      "target_two_to_one_minus_k": 0.015625,
+      "unpaired_block_count": 0
+    },
+    {
+      "averaged_filtered_fourier_norm_lower_bound": 0.0009765625,
+      "common_core_dimension_lower_bound": 12253171392000,
+      "common_orientation_family_size": 2,
+      "copy_count": 11,
+      "exact_filtered_paired_block_witness": true,
+      "information_threshold_copy_count": 16,
+      "log2_common_core_dimension_lower_bound": 43.47822043250714,
+      "n": 8,
+      "norm_lower_bound_to_target_ratio": 1.0,
+      "original_block_count": 3,
+      "paired_bit_count": 1,
+      "paired_blocks": [
+        {
+          "first_block_indices": [
+            0,
+            1,
+            2
+          ],
+          "first_left_multiplicity": 900,
+          "first_right_multiplicity": 560,
+          "retained_irrep": [
+            4,
+            2,
+            1,
+            1
+          ],
+          "retained_irrep_dimension": 90,
+          "retained_irrep_square_trivial_multiplicity": 1,
+          "second_block_indices": [
+            3,
+            4,
+            5,
+            8
+          ],
+          "second_left_multiplicity": 1724,
+          "second_right_multiplicity": 1282,
+          "survives_one_dimensional_branch_filter": true
+        }
+      ],
+      "residual_target_invariant_multiplicity": 11,
+      "residual_target_partition": [
+        5,
+        2,
+        1
+      ],
+      "status": "exact-paired-block-filter-bypass-witness",
+      "target_two_to_one_minus_k": 0.0009765625,
+      "unpaired_block_count": 1
+    },
+    {
+      "averaged_filtered_fourier_norm_lower_bound": 0.0001220703125,
+      "common_core_dimension_lower_bound": 9161366602197268332316800,
+      "common_orientation_family_size": 4,
+      "copy_count": 15,
+      "exact_filtered_paired_block_witness": true,
+      "information_threshold_copy_count": 19,
+      "log2_common_core_dimension_lower_bound": 82.92183709867071,
+      "n": 9,
+      "norm_lower_bound_to_target_ratio": 2.0,
+      "original_block_count": 4,
+      "paired_bit_count": 2,
+      "paired_blocks": [
+        {
+          "first_block_indices": [
+            0,
+            1,
+            2
+          ],
+          "first_left_multiplicity": 4077,
+          "first_right_multiplicity": 4076,
+          "retained_irrep": [
+            4,
+            3,
+            1,
+            1
+          ],
+          "retained_irrep_dimension": 216,
+          "retained_irrep_square_trivial_multiplicity": 1,
+          "second_block_indices": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "second_left_multiplicity": 102270,
+          "second_right_multiplicity": 102270,
+          "survives_one_dimensional_branch_filter": true
+        },
+        {
+          "first_block_indices": [
+            7,
+            8,
+            9,
+            10
+          ],
+          "first_left_multiplicity": 4718,
+          "first_right_multiplicity": 2793,
+          "retained_irrep": [
+            4,
+            3,
+            1,
+            1
+          ],
+          "retained_irrep_dimension": 216,
+          "retained_irrep_square_trivial_multiplicity": 1,
+          "second_block_indices": [
+            11,
+            12,
+            13,
+            14
+          ],
+          "second_left_multiplicity": 2,
+          "second_right_multiplicity": 2,
+          "survives_one_dimensional_branch_filter": true
+        }
+      ],
+      "residual_target_invariant_multiplicity": 1,
+      "residual_target_partition": [
+        9
+      ],
+      "status": "exact-paired-block-filter-bypass-witness",
+      "target_two_to_one_minus_k": 6.103515625e-05,
+      "unpaired_block_count": 0
+    },
+    {
+      "averaged_filtered_fourier_norm_lower_bound": 3.814697265625e-06,
+      "common_core_dimension_lower_bound": 8786830864746927653161784512580765417472000,
+      "common_orientation_family_size": 8,
+      "copy_count": 21,
+      "exact_filtered_paired_block_witness": true,
+      "information_threshold_copy_count": 22,
+      "log2_common_core_dimension_lower_bound": 142.65632290944103,
+      "n": 10,
+      "norm_lower_bound_to_target_ratio": 4.0,
+      "original_block_count": 6,
+      "paired_bit_count": 3,
+      "paired_blocks": [
+        {
+          "first_block_indices": [
+            0,
+            1,
+            2
+          ],
+          "first_left_multiplicity": 48384,
+          "first_right_multiplicity": 28350,
+          "retained_irrep": [
+            4,
+            3,
+            2,
+            1
+          ],
+          "retained_irrep_dimension": 768,
+          "retained_irrep_square_trivial_multiplicity": 1,
+          "second_block_indices": [
+            3,
+            4,
+            5
+          ],
+          "second_left_multiplicity": 10535,
+          "second_right_multiplicity": 10388,
+          "survives_one_dimensional_branch_filter": true
+        },
+        {
+          "first_block_indices": [
+            6,
+            7,
+            8
+          ],
+          "first_left_multiplicity": 4614,
+          "first_right_multiplicity": 4614,
+          "retained_irrep": [
+            4,
+            3,
+            2,
+            1
+          ],
+          "retained_irrep_dimension": 768,
+          "retained_irrep_square_trivial_multiplicity": 1,
+          "second_block_indices": [
+            9,
+            10,
+            11,
+            12
+          ],
+          "second_left_multiplicity": 202314,
+          "second_right_multiplicity": 202314,
+          "survives_one_dimensional_branch_filter": true
+        },
+        {
+          "first_block_indices": [
+            13,
+            14,
+            15,
+            16
+          ],
+          "first_left_multiplicity": 4098,
+          "first_right_multiplicity": 4098,
+          "retained_irrep": [
+            5,
+            3,
+            1,
+            1
+          ],
+          "retained_irrep_dimension": 567,
+          "retained_irrep_square_trivial_multiplicity": 1,
+          "second_block_indices": [
+            17,
+            18,
+            19,
+            20
+          ],
+          "second_left_multiplicity": 2,
+          "second_right_multiplicity": 2,
+          "survives_one_dimensional_branch_filter": true
+        }
+      ],
+      "residual_target_invariant_multiplicity": 1,
+      "residual_target_partition": [
+        10
+      ],
+      "status": "exact-paired-block-filter-bypass-witness",
+      "target_two_to_one_minus_k": 9.5367431640625e-07,
+      "unpaired_block_count": 0
+    },
+    {
+      "averaged_filtered_fourier_norm_lower_bound": 2.384185791015625e-07,
+      "common_core_dimension_lower_bound": 9549033151885504351248676281301633446802581326587113355643885803929600,
+      "common_orientation_family_size": 16,
+      "copy_count": 26,
+      "exact_filtered_paired_block_witness": true,
+      "information_threshold_copy_count": 26,
+      "log2_common_core_dimension_lower_bound": 232.46839321361267,
+      "n": 11,
+      "norm_lower_bound_to_target_ratio": 8.0,
+      "original_block_count": 8,
+      "paired_bit_count": 4,
+      "paired_blocks": [
+        {
+          "first_block_indices": [
+            0,
+            1,
+            2
+          ],
+          "first_left_multiplicity": 271724,
+          "first_right_multiplicity": 271608,
+          "retained_irrep": [
+            5,
+            3,
+            2,
+            1
+          ],
+          "retained_irrep_dimension": 2310,
+          "retained_irrep_square_trivial_multiplicity": 1,
+          "second_block_indices": [
+            3,
+            4,
+            5
+          ],
+          "second_left_multiplicity": 97776,
+          "second_right_multiplicity": 89394,
+          "survives_one_dimensional_branch_filter": true
+        },
+        {
+          "first_block_indices": [
+            6,
+            7,
+            8
+          ],
+          "first_left_multiplicity": 63712,
+          "first_right_multiplicity": 51793,
+          "retained_irrep": [
+            5,
+            3,
+            2,
+            1
+          ],
+          "retained_irrep_dimension": 2310,
+          "retained_irrep_square_trivial_multiplicity": 1,
+          "second_block_indices": [
+            9,
+            10,
+            11
+          ],
+          "second_left_multiplicity": 30517,
+          "second_right_multiplicity": 21885,
+          "survives_one_dimensional_branch_filter": true
+        },
+        {
+          "first_block_indices": [
+            12,
+            13,
+            14
+          ],
+          "first_left_multiplicity": 11990,
+          "first_right_multiplicity": 9177,
+          "retained_irrep": [
+            5,
+            3,
+            2,
+            1
+          ],
+          "retained_irrep_dimension": 2310,
+          "retained_irrep_square_trivial_multiplicity": 1,
+          "second_block_indices": [
+            15,
+            17,
+            18
+          ],
+          "second_left_multiplicity": 2097,
+          "second_right_multiplicity": 1238,
+          "survives_one_dimensional_branch_filter": true
+        },
+        {
+          "first_block_indices": [
+            16,
+            19,
+            20,
+            21
+          ],
+          "first_left_multiplicity": 98003,
+          "first_right_multiplicity": 84909,
+          "retained_irrep": [
+            5,
+            3,
+            2,
+            1
+          ],
+          "retained_irrep_dimension": 2310,
+          "retained_irrep_square_trivial_multiplicity": 1,
+          "second_block_indices": [
+            22,
+            23,
+            24,
+            25
+          ],
+          "second_left_multiplicity": 1681,
+          "second_right_multiplicity": 1681,
+          "survives_one_dimensional_branch_filter": true
+        }
+      ],
+      "residual_target_invariant_multiplicity": 1,
+      "residual_target_partition": [
+        11
+      ],
+      "status": "exact-paired-block-filter-bypass-witness",
+      "target_two_to_one_minus_k": 2.9802322387695312e-08,
+      "unpaired_block_count": 0
+    },
+    {
+      "averaged_filtered_fourier_norm_lower_bound": 2.9802322387695312e-08,
+      "common_core_dimension_lower_bound": 14853064029055292823153876198078099410296703222383380249846515770522600826186214798262272000000000,
+      "common_orientation_family_size": 16,
+      "copy_count": 29,
+      "exact_filtered_paired_block_witness": true,
+      "information_threshold_copy_count": 29,
+      "log2_common_core_dimension_lower_bound": 322.79778577843655,
+      "n": 12,
+      "norm_lower_bound_to_target_ratio": 8.0,
+      "original_block_count": 9,
+      "paired_bit_count": 4,
+      "paired_blocks": [
+        {
+          "first_block_indices": [
+            0,
+            1,
+            2
+          ],
+          "first_left_multiplicity": 4025800,
+          "first_right_multiplicity": 2329110,
+          "retained_irrep": [
+            5,
+            3,
+            2,
+            1,
+            1
+          ],
+          "retained_irrep_dimension": 7700,
+          "retained_irrep_square_trivial_multiplicity": 1,
+          "second_block_indices": [
+            3,
+            4,
+            5
+          ],
+          "second_left_multiplicity": 1100208,
+          "second_right_multiplicity": 880688,
+          "survives_one_dimensional_branch_filter": true
+        },
+        {
+          "first_block_indices": [
+            6,
+            7,
+            8
+          ],
+          "first_left_multiplicity": 620933,
+          "first_right_multiplicity": 517654,
+          "retained_irrep": [
+            5,
+            3,
+            2,
+            1,
+            1
+          ],
+          "retained_irrep_dimension": 7700,
+          "retained_irrep_square_trivial_multiplicity": 1,
+          "second_block_indices": [
+            9,
+            10,
+            11
+          ],
+          "second_left_multiplicity": 303104,
+          "second_right_multiplicity": 269524,
+          "survives_one_dimensional_branch_filter": true
+        },
+        {
+          "first_block_indices": [
+            12,
+            13,
+            14
+          ],
+          "first_left_multiplicity": 148554,
+          "first_right_multiplicity": 136053,
+          "retained_irrep": [
+            5,
+            3,
+            2,
+            1,
+            1
+          ],
+          "retained_irrep_dimension": 7700,
+          "retained_irrep_square_trivial_multiplicity": 1,
+          "second_block_indices": [
+            15,
+            16,
+            17
+          ],
+          "second_left_multiplicity": 102762,
+          "second_right_multiplicity": 88189,
+          "survives_one_dimensional_branch_filter": true
+        },
+        {
+          "first_block_indices": [
+            18,
+            19,
+            20
+          ],
+          "first_left_multiplicity": 55375,
+          "first_right_multiplicity": 44267,
+          "retained_irrep": [
+            5,
+            3,
+            2,
+            1,
+            1
+          ],
+          "retained_irrep_dimension": 7700,
+          "retained_irrep_square_trivial_multiplicity": 1,
+          "second_block_indices": [
+            21,
+            22,
+            23,
+            24
+          ],
+          "second_left_multiplicity": 20625670,
+          "second_right_multiplicity": 9613330,
+          "survives_one_dimensional_branch_filter": true
+        }
+      ],
+      "residual_target_invariant_multiplicity": 699340,
+      "residual_target_partition": [
+        5,
+        3,
+        2,
+        1,
+        1
+      ],
+      "status": "exact-paired-block-filter-bypass-witness",
+      "target_two_to_one_minus_k": 3.725290298461914e-09,
+      "unpaired_block_count": 1
+    }
+  ],
+  "status": "branch-controlled-local-filter-bypassed-nonlocal-filter-open",
+  "summary": "Proved that pairing Sellke-good blocks through a retained nontrivial self-dual irrep recreates a 2^Theta(k) common family after one-dimensional branch filtering. The local filter cannot restore the desired frame norm.",
+  "theorem_contract": {
+    "asymptotic_norm": "Pairing a 1-o(1) fraction of Theta(k) good blocks gives r=Theta(k), hence ||F'_nu||>=2^(r-k) and rules out every uniform poly(n)2^-k residual norm bound.",
+    "filter_survival": "The branch-controlled filter removes only trivial/sign isotypic sectors inside each individual block; nontrivial alpha sectors survive.",
+    "good_blocks": "A Sellke-good block has every irrep, including the retained standard irrep alpha=(n-1,1), on both left and right products.",
+    "paired_bit": "Give two good blocks the same orientation bit. Their matching membership-pattern tensor contains alpha tensor alpha.",
+    "scope_boundary": "This falsifies block-local one-dimensional filtering as a norm-restoration strategy. Nonlocal filtering and the abstract spectral-trimming measurement remain open.",
+    "self_duality": "Every S_n irrep is self-dual, so alpha tensor alpha contains the trivial irrep with positive multiplicity."
+  }
+}

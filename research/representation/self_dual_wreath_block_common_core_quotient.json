@@ -1,0 +1,278 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Removing both one-dimensional side sectors still leaves the replicated-bit common vector.",
+      "resolution": "The fixed-family parity theorem constructs that vector inside exactly those side sectors; an explicit 400-dimensional control is annihilated to numerical zero.",
+      "resolved": true
+    },
+    {
+      "objection": "Deleting the known common cores costs a constant fraction of the natural carrier.",
+      "resolution": "Exact Plancherel stationarity gives expected loss at most 4b/n!, which vanishes for polynomial b.",
+      "resolved": true
+    },
+    {
+      "objection": "The Fourier-block quotient is already a legal efficient measurement on the unknown coset-state input.",
+      "resolution": "The finite quotient has norm-one commutators with mixed orientation actions. A naive branchwise induced-carrier lift is therefore noncovariant; a coherent harmonic transform or larger invariant quotient is required.",
+      "resolved": false
+    },
+    {
+      "objection": "Killing the explicit Sellke common cores proves the residual frame has polynomial norm.",
+      "resolution": "Other correlated families, near-common channels, or higher-dimensional shared sectors may still produce a large residual norm.",
+      "resolved": false
+    }
+  ],
+  "claim_gate": {
+    "all_high_frame_spikes_removed": false,
+    "block_one_dimensional_projectors_explicit": true,
+    "compressed_covariant_outcome_transform_proved": false,
+    "expected_quotient_dimension_retained_one_minus_o_one": true,
+    "naive_branchwise_physical_lift_covariant": false,
+    "physical_carrier_quotient_circuit_proved": false,
+    "polynomial_hidden_permutation_decoder_proved": false,
+    "reason": "A thin algebraic quotient removes the explicit Sellke block common cores at negligible expected dimension cost. The physical lift, residual spectrum, outcome transform, and decoder remain unproved.",
+    "replicated_bit_common_cores_annihilated": true,
+    "residual_polynomial_frame_norm_proved": false,
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-05T22:36:42.075985+00:00",
+  "falsifiers_triggered": [
+    "The typical frame-norm counterexample is not robust to deleting its explicitly characterized one-dimensional block channels.",
+    "Support-rich common cores can be algebraically removed with negligible expected dimension loss, but this is not yet a measurement circuit.",
+    "The naive branchwise physical lift fails covariance: mixed orientation actions have norm-one commutators with the algebraic quotient.",
+    "Residual high-dimensional and near-common channels must be audited before any restored norm or success claim."
+  ],
+  "finite_controls": [
+    {
+      "common_range_annihilation_residual": 2.355460076494959e-16,
+      "common_range_dimension": 1,
+      "compressed_carrier_dimension": 400,
+      "exact_block_common_core_quotient_validation": true,
+      "labels": [
+        [
+          [
+            4,
+            1
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        [
+          [
+            4,
+            1
+          ],
+          [
+            3,
+            2
+          ]
+        ]
+      ],
+      "lambda_sign_rank": 0,
+      "lambda_trivial_rank": 25,
+      "maximum_mixed_orientation_action_commutator_norm": 1.0000000000000009,
+      "maximum_one_dimensional_projector_idempotence_residual": 7.819518890304357e-16,
+      "maximum_one_dimensional_projector_orthogonality_residual": 2.1025910473504865e-18,
+      "maximum_replicated_orientation_action_commutator_norm": 1.3414743772740449e-15,
+      "mu_sign_rank": 0,
+      "mu_trivial_rank": 16,
+      "n": 5,
+      "naive_branchwise_physical_lift_covariant": false,
+      "quotient_projector_idempotence_residual": 1.4720247458127448e-15,
+      "quotient_rank": 360,
+      "quotient_retained_dimension_fraction": 0.9,
+      "replicated_orientation_masks": [
+        0,
+        3
+      ],
+      "status": "exact-block-common-core-quotient-validation"
+    }
+  ],
+  "headline_metrics": {
+    "block_common_core_annihilation_theorem_count": 1,
+    "block_one_dimensional_isotypic_projector_theorem_count": 1,
+    "compressed_covariant_outcome_transform_count": 0,
+    "finite_quotient_control_count": 1,
+    "finite_quotient_validation_failure_count": 0,
+    "maximum_common_range_annihilation_residual": 2.355460076494959e-16,
+    "maximum_mixed_orientation_action_commutator_norm": 1.0000000000000009,
+    "maximum_quotient_projector_idempotence_residual": 1.4720247458127448e-15,
+    "maximum_replicated_orientation_action_commutator_norm": 1.3414743772740449e-15,
+    "naive_branchwise_physical_lift_covariance_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "physical_carrier_quotient_circuit_count": 0,
+    "plancherel_expected_retained_fraction_one_minus_o_one_theorem_count": 1,
+    "polynomial_hidden_permutation_decoder_count": 0,
+    "residual_polynomial_frame_norm_theorem_count": 0,
+    "scaling_record_count": 11,
+    "tail_complete_block_count": 89,
+    "tail_expected_removed_fraction_upper_bound": 9.231874765025326e-214,
+    "tail_n": 128
+  },
+  "scaling_records": [
+    {
+      "complete_block_count": 0,
+      "expected_removed_quotient_fraction_upper_bound": 0.0,
+      "expected_retained_quotient_fraction": 1.0,
+      "expected_single_side_removed_fraction": 0.016666666666666666,
+      "hidden_label_count_decimal": "120",
+      "illustrative_fixed_block_size": 8,
+      "information_threshold_copy_count": 7,
+      "n": 5,
+      "physical_carrier_quotient_circuit_known": false,
+      "residual_polynomial_frame_norm_proved": false,
+      "retained_fraction_tends_to_one": true,
+      "status": "negligible-expected-quotient-dimension-loss-physical-lift-open"
+    },
+    {
+      "complete_block_count": 1,
+      "expected_removed_quotient_fraction_upper_bound": 0.005555555555555556,
+      "expected_retained_quotient_fraction": 0.9944521604938272,
+      "expected_single_side_removed_fraction": 0.002777777777777778,
+      "hidden_label_count_decimal": "720",
+      "illustrative_fixed_block_size": 8,
+      "information_threshold_copy_count": 10,
+      "n": 6,
+      "physical_carrier_quotient_circuit_known": false,
+      "residual_polynomial_frame_norm_proved": false,
+      "retained_fraction_tends_to_one": true,
+      "status": "negligible-expected-quotient-dimension-loss-physical-lift-open"
+    },
+    {
+      "complete_block_count": 2,
+      "expected_removed_quotient_fraction_upper_bound": 0.0001984126984126984,
+      "expected_retained_quotient_fraction": 0.9998016020639485,
+      "expected_single_side_removed_fraction": 4.96031746031746e-05,
+      "hidden_label_count_decimal": "40320",
+      "illustrative_fixed_block_size": 8,
+      "information_threshold_copy_count": 16,
+      "n": 8,
+      "physical_carrier_quotient_circuit_known": false,
+      "residual_polynomial_frame_norm_proved": false,
+      "retained_fraction_tends_to_one": true,
+      "status": "negligible-expected-quotient-dimension-loss-physical-lift-open"
+    },
+    {
+      "complete_block_count": 2,
+      "expected_removed_quotient_fraction_upper_bound": 2.204585537918871e-06,
+      "expected_retained_quotient_fraction": 0.9999977954162844,
+      "expected_single_side_removed_fraction": 5.511463844797178e-07,
+      "hidden_label_count_decimal": "3628800",
+      "illustrative_fixed_block_size": 8,
+      "information_threshold_copy_count": 22,
+      "n": 10,
+      "physical_carrier_quotient_circuit_known": false,
+      "residual_polynomial_frame_norm_proved": false,
+      "retained_fraction_tends_to_one": true,
+      "status": "negligible-expected-quotient-dimension-loss-physical-lift-open"
+    },
+    {
+      "complete_block_count": 5,
+      "expected_removed_quotient_fraction_upper_bound": 9.55895466477477e-13,
+      "expected_retained_quotient_fraction": 0.9999999999990441,
+      "expected_single_side_removed_fraction": 9.55895466477477e-14,
+      "hidden_label_count_decimal": "20922789888000",
+      "illustrative_fixed_block_size": 8,
+      "information_threshold_copy_count": 45,
+      "n": 16,
+      "physical_carrier_quotient_circuit_known": false,
+      "residual_polynomial_frame_norm_proved": false,
+      "retained_fraction_tends_to_one": true,
+      "status": "negligible-expected-quotient-dimension-loss-physical-lift-open"
+    },
+    {
+      "complete_block_count": 10,
+      "expected_removed_quotient_fraction_upper_bound": 6.446950284384474e-23,
+      "expected_retained_quotient_fraction": 1.0,
+      "expected_single_side_removed_fraction": 3.2234751421922368e-24,
+      "hidden_label_count_decimal": "620448401733239439360000",
+      "illustrative_fixed_block_size": 8,
+      "information_threshold_copy_count": 80,
+      "n": 24,
+      "physical_carrier_quotient_circuit_known": false,
+      "residual_polynomial_frame_norm_proved": false,
+      "retained_fraction_tends_to_one": true,
+      "status": "negligible-expected-quotient-dimension-loss-physical-lift-open"
+    },
+    {
+      "complete_block_count": 14,
+      "expected_removed_quotient_fraction_upper_bound": 2.1282188227186565e-34,
+      "expected_retained_quotient_fraction": 1.0,
+      "expected_single_side_removed_fraction": 7.600781509709487e-36,
+      "hidden_label_count_decimal": "263130836933693530167218012160000000",
+      "illustrative_fixed_block_size": 8,
+      "information_threshold_copy_count": 118,
+      "n": 32,
+      "physical_carrier_quotient_circuit_known": false,
+      "residual_polynomial_frame_norm_proved": false,
+      "retained_fraction_tends_to_one": true,
+      "status": "negligible-expected-quotient-dimension-loss-physical-lift-open"
+    },
+    {
+      "complete_block_count": 25,
+      "expected_removed_quotient_fraction_upper_bound": 8.055476070751237e-60,
+      "expected_retained_quotient_fraction": 1.0,
+      "expected_single_side_removed_fraction": 1.6110952141502473e-61,
+      "hidden_label_count_decimal": "12413915592536072670862289047373375038521486354677760000000000",
+      "illustrative_fixed_block_size": 8,
+      "information_threshold_copy_count": 203,
+      "n": 48,
+      "physical_carrier_quotient_circuit_known": false,
+      "residual_polynomial_frame_norm_proved": false,
+      "retained_fraction_tends_to_one": true,
+      "status": "negligible-expected-quotient-dimension-loss-physical-lift-open"
+    },
+    {
+      "complete_block_count": 37,
+      "expected_removed_quotient_fraction_upper_bound": 1.1663927675640077e-87,
+      "expected_retained_quotient_fraction": 1.0,
+      "expected_single_side_removed_fraction": 1.5762064426540646e-89,
+      "hidden_label_count_decimal": "126886932185884164103433389335161480802865516174545192198801894375214704230400000000000000",
+      "illustrative_fixed_block_size": 8,
+      "information_threshold_copy_count": 296,
+      "n": 64,
+      "physical_carrier_quotient_circuit_known": false,
+      "residual_polynomial_frame_norm_proved": false,
+      "retained_fraction_tends_to_one": true,
+      "status": "negligible-expected-quotient-dimension-loss-physical-lift-open"
+    },
+    {
+      "complete_block_count": 62,
+      "expected_removed_quotient_fraction_upper_bound": 2.5008119196710073e-148,
+      "expected_retained_quotient_fraction": 1.0,
+      "expected_single_side_removed_fraction": 2.0167838061862965e-150,
+      "hidden_label_count_decimal": "991677934870949689209571401541893801158183648651267795444376054838492222809091499987689476037000748982075094738965754305639874560000000000000000000000",
+      "illustrative_fixed_block_size": 8,
+      "information_threshold_copy_count": 499,
+      "n": 96,
+      "physical_carrier_quotient_circuit_known": false,
+      "residual_polynomial_frame_norm_proved": false,
+      "retained_fraction_tends_to_one": true,
+      "status": "negligible-expected-quotient-dimension-loss-physical-lift-open"
+    },
+    {
+      "complete_block_count": 89,
+      "expected_removed_quotient_fraction_upper_bound": 9.231874765025326e-214,
+      "expected_retained_quotient_fraction": 1.0,
+      "expected_single_side_removed_fraction": 5.186446497205239e-216,
+      "hidden_label_count_decimal": "385620482362580421735677065923463640617493109590223590278828403276373402575165543560686168588507361534030051833058916347592172932262498857766114955245039357760034644709279247692495585280000000000000000000000000000000",
+      "illustrative_fixed_block_size": 8,
+      "information_threshold_copy_count": 717,
+      "n": 128,
+      "physical_carrier_quotient_circuit_known": false,
+      "residual_polynomial_frame_norm_proved": false,
+      "retained_fraction_tends_to_one": true,
+      "status": "negligible-expected-quotient-dimension-loss-physical-lift-open"
+    }
+  ],
+  "status": "algebraic-common-core-quotient-physical-lift-open",
+  "summary": "Constructed an exact block-local quotient that annihilates the known replicated-orientation common cores while retaining expected Plancherel carrier fraction 1-o(1). A physical coherent lift and residual norm theorem are the next gates.",
+  "theorem_contract": {
+    "block_quotient": "C_block removes trivial and sign sectors independently from all lambda factors and all mu factors in the block.",
+    "common_core_annihilation": "Every replicated-bit block common-core vector occupies a matched one-dimensional sector on both sides, hence is in the kernel of C_block.",
+    "expected_cost": "For b disjoint iid Plancherel blocks, expected retained normalized quotient dimension is (1-2/n!)^(2b), which tends to one for polynomial b.",
+    "physical_boundary": "The quotient is defined after orientation-Fourier compression. It commutes with replicated all-lambda/all-mu actions but not mixed orientation actions, so the naive branchwise lift to unknown P_s inputs is not covariant.",
+    "side_projectors": "T_side^delta is the diagonal S_n group average weighted by delta in {trivial,sign}; these are orthogonal projectors."
+  }
+}

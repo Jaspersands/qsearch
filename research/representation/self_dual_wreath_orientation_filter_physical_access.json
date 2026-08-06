@@ -1,0 +1,314 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "A better dual contraction D can increase direct access success.",
+      "resolution": "No positive contraction can exceed D=I in the trace against G^2. Filtering only decreases conclusive mass.",
+      "resolved": true
+    },
+    {
+      "objection": "The polynomial E_h circuit makes the full filter physical.",
+      "resolution": "It makes E_h efficient once the dual carrier is present; it does not create the dual carrier from the hidden state.",
+      "resolved": true
+    },
+    {
+      "objection": "The result rules out a structured polar isometry.",
+      "resolution": "A physical-to-dual map that divides out T's singular values is outside the direct-analysis factorization.",
+      "resolved": false
+    },
+    {
+      "objection": "A direct physical orientation-interference construction is impossible.",
+      "resolution": "The theorem does not cover a new circuit acting on the physical multiplicity spaces without using T^*.",
+      "resolved": false
+    }
+  ],
+  "claim_gate": {
+    "direct_physical_filter_ruled_out": false,
+    "direct_physical_orientation_filter_constructed": true,
+    "direct_physical_to_dual_filter_polynomially_conclusive": false,
+    "dual_invariant_projector_circuit_polynomial": true,
+    "factorial_direct_access_obstruction_proved": true,
+    "orientation_filter_dual_algebra_valid": true,
+    "polynomial_hidden_permutation_decoder_proved": false,
+    "reason": "The dual filter is efficient only after entering the orbit-Gram domain. The direct entry map has Theta(1/n!) average success. The companion branch-interference circuit bypasses this factorization directly; its all-n information and norm theorems remain open.",
+    "speedup_claim_allowed": false,
+    "structured_polar_transfer_ruled_out": false
+  },
+  "created_at": "2026-08-05T23:33:52.164626+00:00",
+  "falsifiers_triggered": [
+    "Polynomial manipulation of orientation Fourier blocks does not by itself yield a polynomial physical measurement.",
+    "Postprocessing the direct dual-analysis map cannot improve its factorially weak average success.",
+    "The direct physical multiplicity-space interference filter must now be tested for all-n retained information and norm."
+  ],
+  "finite_controls": [
+    {
+      "contracted_dual_filter_average_success": 0.12500000000000006,
+      "contraction_bound_violation": 0.0,
+      "control_id": "S3-T1-2-1",
+      "direct_analysis_average_success": 0.5000000000000002,
+      "direct_success_formula_residual": 2.7755575615628914e-17,
+      "dual_contraction_trace_formula": 0.12500000000000008,
+      "dual_dimension": 3,
+      "exact_physical_dual_access_bound_verified": true,
+      "frame_second_moment_per_rank": 0.5,
+      "gram_spectrum_identity_residual": 2.220446049250313e-16,
+      "hidden_label_count": 3,
+      "maximum_allowed_dual_contraction_success": 0.5,
+      "n": 3,
+      "physical_dimension": 2,
+      "projector_rank": 1,
+      "source_partitions": [
+        [
+          2,
+          1
+        ]
+      ],
+      "status": "exact-direct-dual-access-success-bound",
+      "synthesis_frame_identity_residual": 2.220446049250313e-16
+    },
+    {
+      "contracted_dual_filter_average_success": 0.1875000000000001,
+      "contraction_bound_violation": 0.0,
+      "control_id": "S3-T1-2-1_2-1",
+      "direct_analysis_average_success": 0.3750000000000001,
+      "direct_success_formula_residual": 8.326672684688674e-17,
+      "dual_contraction_trace_formula": 0.1875000000000002,
+      "dual_dimension": 3,
+      "exact_physical_dual_access_bound_verified": true,
+      "frame_second_moment_per_rank": 0.375,
+      "gram_spectrum_identity_residual": 1.1102230246251565e-16,
+      "hidden_label_count": 3,
+      "maximum_allowed_dual_contraction_success": 0.375,
+      "n": 3,
+      "physical_dimension": 4,
+      "projector_rank": 1,
+      "source_partitions": [
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "status": "exact-direct-dual-access-success-bound",
+      "synthesis_frame_identity_residual": 1.8429854710789336e-16
+    },
+    {
+      "contracted_dual_filter_average_success": 0.15885416666666669,
+      "contraction_bound_violation": 0.0,
+      "control_id": "S4-T1-3-1_2-2",
+      "direct_analysis_average_success": 0.35416666666666674,
+      "direct_success_formula_residual": 8.326672684688674e-17,
+      "dual_contraction_trace_formula": 0.15885416666666677,
+      "dual_dimension": 12,
+      "exact_physical_dual_access_bound_verified": true,
+      "frame_second_moment_per_rank": 0.3541666666666667,
+      "gram_spectrum_identity_residual": 3.885780586188048e-16,
+      "hidden_label_count": 6,
+      "maximum_allowed_dual_contraction_success": 0.3541666666666667,
+      "n": 4,
+      "physical_dimension": 6,
+      "projector_rank": 2,
+      "source_partitions": [
+        [
+          3,
+          1
+        ],
+        [
+          2,
+          2
+        ]
+      ],
+      "status": "exact-direct-dual-access-success-bound",
+      "synthesis_frame_identity_residual": 1.9454899085232574e-16
+    }
+  ],
+  "headline_metrics": {
+    "arbitrary_dual_contraction_bound_theorem_count": 1,
+    "direct_physical_orientation_filter_count": 1,
+    "direct_physical_to_dual_success_bound_theorem_count": 1,
+    "finite_control_count": 3,
+    "finite_validation_failure_count": 0,
+    "inverse_polynomial_direct_access_row_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "polynomial_hidden_permutation_decoder_count": 0,
+    "scaling_record_count": 11,
+    "structured_polar_transfer_count": 0,
+    "tail_amplification_lower_bound_log2": 1937.26181684989,
+    "tail_direct_access_success_log2": -3874.52363369978,
+    "tail_n": 512
+  },
+  "proof_obligations": [
+    {
+      "obligation": "synthesis_frame_factorization",
+      "resolution": "TT^*=B and T^*T=G by construction.",
+      "resolved": true
+    },
+    {
+      "obligation": "physical_average_state",
+      "resolution": "The uniform hidden-state mixture is B/r.",
+      "resolved": true
+    },
+    {
+      "obligation": "dual_contraction_success_identity",
+      "resolution": "Cyclicity of trace gives p=Tr(D T^*BT)/r=Tr(DG^2)/r.",
+      "resolved": true
+    },
+    {
+      "obligation": "universal_direct_access_upper_bound",
+      "resolution": "For 0<=D<=I, Tr(DG^2)<=Tr(G^2)=Tr(B^2).",
+      "resolved": true
+    },
+    {
+      "obligation": "structured_physical_dual_transfer",
+      "resolution": "No polynomial partial isometry equivalent to the polar map T^*B^-1/2 is known on the natural support.",
+      "resolved": false
+    }
+  ],
+  "scaling_records": [
+    {
+      "direct_dual_access_inverse_polynomial": false,
+      "direct_dual_access_success_log2_upper_bound": -43.57689029636911,
+      "direct_dual_access_success_upper_bound": 7.621648275427655e-14,
+      "generic_amplitude_amplification_lower_bound_log2": 21.788445148184554,
+      "hidden_label_count_decimal": "20922789888000",
+      "information_threshold_copy_count": 45,
+      "log2_hidden_label_count": 44.25014046988262,
+      "n": 16,
+      "polynomial_success_benchmark": 9.094947017729282e-13,
+      "status": "factorially-inconclusive-direct-physical-to-dual-map"
+    },
+    {
+      "direct_dual_access_inverse_polynomial": false,
+      "direct_dual_access_success_log2_upper_bound": -78.44003291523616,
+      "direct_dual_access_success_upper_bound": 2.43891818364917e-24,
+      "generic_amplitude_amplification_lower_bound_log2": 39.22001645761808,
+      "hidden_label_count_decimal": "620448401733239439360000",
+      "information_threshold_copy_count": 80,
+      "log2_hidden_label_count": 79.03765741910044,
+      "n": 24,
+      "polynomial_success_benchmark": 1.5772029579086495e-14,
+      "status": "factorially-inconclusive-direct-physical-to-dual-map"
+    },
+    {
+      "direct_dual_access_inverse_polynomial": false,
+      "direct_dual_access_success_log2_upper_bound": -116.82182943370714,
+      "direct_dual_access_success_upper_bound": 6.809656292959818e-36,
+      "generic_amplitude_amplification_lower_bound_log2": 58.41091471685357,
+      "hidden_label_count_decimal": "263130836933693530167218012160000000",
+      "information_threshold_copy_count": 118,
+      "log2_hidden_label_count": 117.6632636523603,
+      "n": 32,
+      "polynomial_success_benchmark": 8.881784197001252e-16,
+      "status": "factorially-inconclusive-direct-physical-to-dual-map"
+    },
+    {
+      "direct_dual_access_inverse_polynomial": false,
+      "direct_dual_access_success_log2_upper_bound": -201.9745656936223,
+      "direct_dual_access_success_upper_bound": 1.5834245168077715e-61,
+      "generic_amplitude_amplification_lower_bound_log2": 100.98728284681115,
+      "hidden_label_count_decimal": "12413915592536072670862289047373375038521486354677760000000000",
+      "information_threshold_copy_count": 203,
+      "log2_hidden_label_count": 202.94957202970025,
+      "n": 48,
+      "polynomial_success_benchmark": 1.5402372635826655e-17,
+      "status": "factorially-inconclusive-direct-physical-to-dual-map"
+    },
+    {
+      "direct_dual_access_inverse_polynomial": false,
+      "direct_dual_access_success_log2_upper_bound": -294.99756992769886,
+      "direct_dual_access_success_upper_bound": 1.573558175774671e-89,
+      "generic_amplitude_amplification_lower_bound_log2": 147.49878496384943,
+      "hidden_label_count_decimal": "126886932185884164103433389335161480802865516174545192198801894375214704230400000000000000",
+      "information_threshold_copy_count": 296,
+      "log2_hidden_label_count": 295.99514394172405,
+      "n": 64,
+      "polynomial_success_benchmark": 8.673617379884035e-19,
+      "status": "factorially-inconclusive-direct-physical-to-dual-map"
+    },
+    {
+      "direct_dual_access_inverse_polynomial": false,
+      "direct_dual_access_success_log2_upper_bound": -497.5937734025056,
+      "direct_dual_access_success_upper_bound": 1.6193791757930776e-150,
+      "generic_amplitude_amplification_lower_bound_log2": 248.7968867012528,
+      "hidden_label_count_decimal": "991677934870949689209571401541893801158183648651267795444376054838492222809091499987689476037000748982075094738965754305639874560000000000000000000000",
+      "information_threshold_copy_count": 499,
+      "log2_hidden_label_count": 498.27715779390303,
+      "n": 96,
+      "polynomial_success_benchmark": 1.5041379527174468e-20,
+      "status": "factorially-inconclusive-direct-physical-to-dual-map"
+    },
+    {
+      "direct_dual_access_inverse_polynomial": false,
+      "direct_dual_access_success_log2_upper_bound": -715.5208135741462,
+      "direct_dual_access_success_upper_bound": 4.04364100853257e-216,
+      "generic_amplitude_amplification_lower_bound_log2": 357.7604067870731,
+      "hidden_label_count_decimal": "385620482362580421735677065923463640617493109590223590278828403276373402575165543560686168588507361534030051833058916347592172932262498857766114955245039357760034644709279247692495585280000000000000000000000000000000",
+      "information_threshold_copy_count": 717,
+      "log2_hidden_label_count": 716.1617220836218,
+      "n": 128,
+      "polynomial_success_benchmark": 8.470329472543003e-22,
+      "status": "factorially-inconclusive-direct-physical-to-dual-map"
+    },
+    {
+      "direct_dual_access_inverse_polynomial": false,
+      "direct_dual_access_success_log2_upper_bound": -1183.6895434741484,
+      "direct_dual_access_success_upper_bound": 0.0,
+      "generic_amplitude_amplification_lower_bound_log2": 591.8447717370742,
+      "hidden_label_count_decimal": "354996793146960497053355363383973425965094809743694491885455534984190204750249968830591340591162785093141951525209177997501478084577063512837513105442388103085116949108248219929177667335850225156399124325817472036634653562449665740610033707601842063277098323069015230061026956365247457276593902258859903874498560000000000000000000000000000000000000000000000",
+      "information_threshold_copy_count": 1185,
+      "log2_hidden_label_count": 1184.4342077720341,
+      "n": 192,
+      "polynomial_success_benchmark": 1.4688847194506317e-23,
+      "status": "factorially-inconclusive-direct-physical-to-dual-map"
+    },
+    {
+      "direct_dual_access_inverse_polynomial": false,
+      "direct_dual_access_success_log2_upper_bound": -1682.9981424177543,
+      "direct_dual_access_success_upper_bound": 0.0,
+      "generic_amplitude_amplification_lower_bound_log2": 841.4990712088771,
+      "hidden_label_count_decimal": "857817775342842654119082271681232625157781520279485619859655650377269452553147589377440291360451408450375885342336584306157196834693696475322289288497426025679637332563368786442675207626794560187968867971521143307702077526646451464709187326100832876325702818980773671781454170250523018608495319068138257481070252817559459476987034665712738139286205234756808218860701203611083152093501947437109101726968262861606263662435022840944191408424615936000000000000000000000000000000000000000000000000000000000000000",
+      "information_threshold_copy_count": 1684,
+      "log2_hidden_label_count": 1683.9962872242147,
+      "n": 256,
+      "polynomial_success_benchmark": 8.271806125530277e-25,
+      "status": "factorially-inconclusive-direct-physical-to-dual-map"
+    },
+    {
+      "direct_dual_access_inverse_polynomial": false,
+      "direct_dual_access_success_log2_upper_bound": -2747.576329928147,
+      "direct_dual_access_success_upper_bound": 0.0,
+      "generic_amplitude_amplification_lower_bound_log2": 1373.7881649640735,
+      "hidden_label_count_decimal": "202050021298760215213668895094585218571031313844241647038656336753901805116049571674350660157440979591792292856366129916926961706884677301229576788637571823309033713973447373497759772077557498674190878950855558580413822253588970773072621439881846523956766945479875974810824204538651272183933304620434930176256513635227507752422464752474771486396742989664230239433214649824117145479984513359446662469851311138751210976519967687756227751330178388021009033339022681291729619372772508425590802338347614964173532877881213147569421175965148279098826072666361443374874234852854408882112301367626134918709620006585891596435949345051507892173464361536351328134358067227181888523570918732580031107186879656925163054478613903703559155950456668160000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "information_threshold_copy_count": 2749,
+      "log2_hidden_label_count": 2748.2492469754493,
+      "n": 384,
+      "polynomial_success_benchmark": 1.4344577338385075e-26,
+      "status": "factorially-inconclusive-direct-physical-to-dual-map"
+    },
+    {
+      "direct_dual_access_inverse_polynomial": false,
+      "direct_dual_access_success_log2_upper_bound": -3874.52363369978,
+      "direct_dual_access_success_upper_bound": 0.0,
+      "generic_amplitude_amplification_lower_bound_log2": 1937.26181684989,
+      "hidden_label_count_decimal": "347728979313260536328304591754560471199225065564351457034247483155161041206635254347320985033950225364432243311021394545295001702070069013264153113260937941358711864044716186861040899557497361427588282356254968425012480396855239725120562512065555822121708786443620799246550959187232026838081415178588172535280020786313470076859739980965720873849904291373826841584712798618430387338042329771801724767691095019545758986942732515033551529595009876999279553931070378592917099002397061907147143424113252117585950817850896618433994140232823316432187410356341262386332496954319973130407342567282027398579382543048456876800862349928140411905431276197435674603281842530744177527365885721629512253872386613118821540847897493107398381956081763695236422795880296204301770808809477147632428639299038833046264585834888158847387737841843413664892833586209196366979775748895821826924040057845140287522238675082137570315954526727437094904914796782641000740777897919134093393530422760955140211387173650047358347353379234387609261306673773281412893026941927424000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "information_threshold_copy_count": 3876,
+      "log2_hidden_label_count": 3875.166121943203,
+      "n": 512,
+      "polynomial_success_benchmark": 8.077935669463161e-28,
+      "status": "factorially-inconclusive-direct-physical-to-dual-map"
+    }
+  ],
+  "status": "direct-dual-filter-access-falsified-structured-transfer-open",
+  "summary": "Proved that every dual contraction composed after the direct synthesis adjoint has at most Theta(1/n!) average conclusive probability, while preserving the separately constructed direct physical branch-interference bypass.",
+  "theorem_contract": {
+    "average_success": "p_D=Tr(DG^2)/r.",
+    "direct_dual_filter": "A_D=D^(1/2)T^* for an arbitrary dual contraction 0<=D<=I.",
+    "frame_and_gram": "B=TT^*, G=T^*T.",
+    "scope": "The theorem covers every implementation that first reaches the orbit-Gram domain through the direct synthesis adjoint. It does not cover a structured polar transfer or a direct physical interference circuit.",
+    "synthesis": "T=M^-1/2 sum_s V_s<s|.",
+    "upper_bound": "p_D<=Tr(B^2)/r.",
+    "wreath_scale": "Tr(B^2)/r=(2^k+M-1)/(M2^k)=Theta(1/M) at k=ceil(log2 M), M=n!."
+  }
+}

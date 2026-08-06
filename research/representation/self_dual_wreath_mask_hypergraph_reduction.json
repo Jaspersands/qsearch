@@ -1,0 +1,946 @@
+{
+  "claim_gate": {
+    "collision_free_growing_moment_contraction_proved": false,
+    "collision_free_polynomial_factor_norm_bound_proved": false,
+    "collision_free_two_core_correlations_can_be_nonzero": true,
+    "joint_short_word_anticoncentration_proved": false,
+    "joint_two_core_anticoncentration_proved": false,
+    "mask_hypergraph_two_core_reduction_proved": true,
+    "natural_average_inverse_polynomial_conclusive_proved": false,
+    "private_column_joint_vanishing_proved": true,
+    "reason": "Private-column mask families vanish exactly, but dense two-core incidence patterns include nonzero collision-free triangle correlations and lack an all-n aggregate bound.",
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-07-30T07:04:41.049047+00:00",
+  "falsifiers_triggered": [
+    "Distinct two-mask unequal character products decorrelate exactly.",
+    "Any joint mask family with a private generator column has zero character product.",
+    "Global source-partition distinctness does not force all higher joint products to vanish.",
+    "Collision-free triangle two-cores can retain exact nonzero correlation.",
+    "The two-core reduction does not bound dense incidence hypergraphs at growing k and m.",
+    "No frame-norm theorem, coherent measurement, decoder, or classical separation is claimed."
+  ],
+  "headline_metrics": {
+    "collision_free_growing_moment_contraction_count": 0,
+    "collision_free_polynomial_factor_norm_theorem_count": 0,
+    "joint_short_word_anticoncentration_theorem_count": 0,
+    "joint_two_core_anticoncentration_theorem_count": 0,
+    "mask_hypergraph_two_core_reduction_count": 1,
+    "maximum_w5_collision_free_triangle_correlation": 0.0025,
+    "natural_average_inverse_polynomial_conclusive_theorem_count": 0,
+    "private_column_joint_vanishing_theorem_count": 1,
+    "private_column_validation_count": 2,
+    "private_column_validation_failure_count": 0,
+    "w5_collision_free_triangle_record_count": 15,
+    "w5_nonzero_collision_free_triangle_count": 4
+  },
+  "private_column_validations": [
+    {
+      "exact_joint_character_product": "0",
+      "exact_vanishing_verified": true,
+      "globally_distinct_source_partitions": false,
+      "mask_width": 4,
+      "masks": [
+        3,
+        12,
+        10
+      ],
+      "n": 3,
+      "private_column_count": 2,
+      "status": "private-column-joint-character-vanishing-control"
+    },
+    {
+      "exact_joint_character_product": "0",
+      "exact_vanishing_verified": true,
+      "globally_distinct_source_partitions": true,
+      "mask_width": 4,
+      "masks": [
+        3,
+        12
+      ],
+      "n": 4,
+      "private_column_count": 4,
+      "status": "private-column-joint-character-vanishing-control"
+    }
+  ],
+  "status": "private-column-joint-vanishing-proved-two-core-anticoncentration-open",
+  "summary": "Reduced every nonzero joint unequal-character contribution to the mask-incidence two-core and found 4/15 nonzero exact collision-free W5 triangle controls, with maximum absolute correlation 0.0025.",
+  "theorem_contract": {
+    "incidence_matrix": "rows index unequal character factors; columns index shared bridge generators; entry one means the word selects it",
+    "private_column_vanishing": "a column of weight one lets that bridge class sum act in one unequal irrep, where its average operator is zero",
+    "remaining_boundary": "bound joint character products for dense two-core incidence hypergraphs; collision-free triangle correlations can be nonzero",
+    "two_core_reduction": "only incidence matrices with every active column weight at least two can contribute a joint character product"
+  },
+  "triangle_records": [
+    {
+      "absolute_joint_character_product": 0.000625,
+      "exact_joint_character_product": "1/1600",
+      "finite_exact_control_only": true,
+      "gauge_fixed_sequence_count": 14400,
+      "globally_distinct_source_partitions": true,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            4,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            2
+          ],
+          [
+            2,
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "masks": [
+        3,
+        5,
+        6
+      ],
+      "n": 5,
+      "nonzero_two_core_correlation": true,
+      "private_column_count": 0,
+      "source_dimensions": [
+        8,
+        50,
+        8
+      ],
+      "status": "collision-free-two-core-correlation-nonzero"
+    },
+    {
+      "absolute_joint_character_product": 0.0,
+      "exact_joint_character_product": "0",
+      "finite_exact_control_only": true,
+      "gauge_fixed_sequence_count": 14400,
+      "globally_distinct_source_partitions": true,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            4,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            2
+          ],
+          [
+            2,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "masks": [
+        3,
+        5,
+        6
+      ],
+      "n": 5,
+      "nonzero_two_core_correlation": false,
+      "private_column_count": 0,
+      "source_dimensions": [
+        8,
+        40,
+        10
+      ],
+      "status": "collision-free-two-core-correlation-zero"
+    },
+    {
+      "absolute_joint_character_product": 0.0,
+      "exact_joint_character_product": "0",
+      "finite_exact_control_only": true,
+      "gauge_fixed_sequence_count": 14400,
+      "globally_distinct_source_partitions": true,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            4,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            2
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2,
+            1
+          ],
+          [
+            2,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "masks": [
+        3,
+        5,
+        6
+      ],
+      "n": 5,
+      "nonzero_two_core_correlation": false,
+      "private_column_count": 0,
+      "source_dimensions": [
+        8,
+        10,
+        40
+      ],
+      "status": "collision-free-two-core-correlation-zero"
+    },
+    {
+      "absolute_joint_character_product": 0.0,
+      "exact_joint_character_product": "0",
+      "finite_exact_control_only": true,
+      "gauge_fixed_sequence_count": 14400,
+      "globally_distinct_source_partitions": true,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        [
+          [
+            4,
+            1
+          ],
+          [
+            2,
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "masks": [
+        3,
+        5,
+        6
+      ],
+      "n": 5,
+      "nonzero_two_core_correlation": false,
+      "private_column_count": 0,
+      "source_dimensions": [
+        10,
+        40,
+        8
+      ],
+      "status": "collision-free-two-core-correlation-zero"
+    },
+    {
+      "absolute_joint_character_product": 0.0,
+      "exact_joint_character_product": "0",
+      "finite_exact_control_only": true,
+      "gauge_fixed_sequence_count": 14400,
+      "globally_distinct_source_partitions": true,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        [
+          [
+            4,
+            1
+          ],
+          [
+            2,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "masks": [
+        3,
+        5,
+        6
+      ],
+      "n": 5,
+      "nonzero_two_core_correlation": false,
+      "private_column_count": 0,
+      "source_dimensions": [
+        10,
+        32,
+        10
+      ],
+      "status": "collision-free-two-core-correlation-zero"
+    },
+    {
+      "absolute_joint_character_product": 0.0,
+      "exact_joint_character_product": "0",
+      "finite_exact_control_only": true,
+      "gauge_fixed_sequence_count": 14400,
+      "globally_distinct_source_partitions": true,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        [
+          [
+            4,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2,
+            1
+          ],
+          [
+            2,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "masks": [
+        3,
+        5,
+        6
+      ],
+      "n": 5,
+      "nonzero_two_core_correlation": false,
+      "private_column_count": 0,
+      "source_dimensions": [
+        10,
+        8,
+        40
+      ],
+      "status": "collision-free-two-core-correlation-zero"
+    },
+    {
+      "absolute_joint_character_product": 0.0,
+      "exact_joint_character_product": "0",
+      "finite_exact_control_only": true,
+      "gauge_fixed_sequence_count": 14400,
+      "globally_distinct_source_partitions": true,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            2,
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            4,
+            1
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "masks": [
+        3,
+        5,
+        6
+      ],
+      "n": 5,
+      "nonzero_two_core_correlation": false,
+      "private_column_count": 0,
+      "source_dimensions": [
+        10,
+        40,
+        8
+      ],
+      "status": "collision-free-two-core-correlation-zero"
+    },
+    {
+      "absolute_joint_character_product": 0.0005,
+      "exact_joint_character_product": "1/2000",
+      "finite_exact_control_only": true,
+      "gauge_fixed_sequence_count": 14400,
+      "globally_distinct_source_partitions": true,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            2,
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            4,
+            1
+          ],
+          [
+            2,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            2
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "masks": [
+        3,
+        5,
+        6
+      ],
+      "n": 5,
+      "nonzero_two_core_correlation": true,
+      "private_column_count": 0,
+      "source_dimensions": [
+        10,
+        32,
+        10
+      ],
+      "status": "collision-free-two-core-correlation-nonzero"
+    },
+    {
+      "absolute_joint_character_product": 0.0,
+      "exact_joint_character_product": "0",
+      "finite_exact_control_only": true,
+      "gauge_fixed_sequence_count": 14400,
+      "globally_distinct_source_partitions": true,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            2,
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            4,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            2
+          ],
+          [
+            2,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "masks": [
+        3,
+        5,
+        6
+      ],
+      "n": 5,
+      "nonzero_two_core_correlation": false,
+      "private_column_count": 0,
+      "source_dimensions": [
+        10,
+        8,
+        40
+      ],
+      "status": "collision-free-two-core-correlation-zero"
+    },
+    {
+      "absolute_joint_character_product": 0.0,
+      "exact_joint_character_product": "0",
+      "finite_exact_control_only": true,
+      "gauge_fixed_sequence_count": 14400,
+      "globally_distinct_source_partitions": true,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            2,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            4,
+            1
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        [
+          [
+            2,
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "masks": [
+        3,
+        5,
+        6
+      ],
+      "n": 5,
+      "nonzero_two_core_correlation": false,
+      "private_column_count": 0,
+      "source_dimensions": [
+        8,
+        40,
+        10
+      ],
+      "status": "collision-free-two-core-correlation-zero"
+    },
+    {
+      "absolute_joint_character_product": 0.0,
+      "exact_joint_character_product": "0",
+      "finite_exact_control_only": true,
+      "gauge_fixed_sequence_count": 14400,
+      "globally_distinct_source_partitions": true,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            2,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            4,
+            1
+          ],
+          [
+            2,
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            2
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "masks": [
+        3,
+        5,
+        6
+      ],
+      "n": 5,
+      "nonzero_two_core_correlation": false,
+      "private_column_count": 0,
+      "source_dimensions": [
+        8,
+        40,
+        10
+      ],
+      "status": "collision-free-two-core-correlation-zero"
+    },
+    {
+      "absolute_joint_character_product": 0.000625,
+      "exact_joint_character_product": "1/1600",
+      "finite_exact_control_only": true,
+      "gauge_fixed_sequence_count": 14400,
+      "globally_distinct_source_partitions": true,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            2,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            4,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            2
+          ],
+          [
+            2,
+            2,
+            1
+          ]
+        ]
+      ],
+      "masks": [
+        3,
+        5,
+        6
+      ],
+      "n": 5,
+      "nonzero_two_core_correlation": true,
+      "private_column_count": 0,
+      "source_dimensions": [
+        8,
+        8,
+        50
+      ],
+      "status": "collision-free-two-core-correlation-nonzero"
+    },
+    {
+      "absolute_joint_character_product": 0.0,
+      "exact_joint_character_product": "0",
+      "finite_exact_control_only": true,
+      "gauge_fixed_sequence_count": 14400,
+      "globally_distinct_source_partitions": true,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            4,
+            1
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        [
+          [
+            2,
+            2,
+            1
+          ],
+          [
+            2,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "masks": [
+        3,
+        5,
+        6
+      ],
+      "n": 5,
+      "nonzero_two_core_correlation": false,
+      "private_column_count": 0,
+      "source_dimensions": [
+        2,
+        40,
+        40
+      ],
+      "status": "collision-free-two-core-correlation-zero"
+    },
+    {
+      "absolute_joint_character_product": 0.0,
+      "exact_joint_character_product": "0",
+      "finite_exact_control_only": true,
+      "gauge_fixed_sequence_count": 14400,
+      "globally_distinct_source_partitions": true,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            4,
+            1
+          ],
+          [
+            2,
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            2
+          ],
+          [
+            2,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "masks": [
+        3,
+        5,
+        6
+      ],
+      "n": 5,
+      "nonzero_two_core_correlation": false,
+      "private_column_count": 0,
+      "source_dimensions": [
+        2,
+        40,
+        40
+      ],
+      "status": "collision-free-two-core-correlation-zero"
+    },
+    {
+      "absolute_joint_character_product": 0.0025,
+      "exact_joint_character_product": "1/400",
+      "finite_exact_control_only": true,
+      "gauge_fixed_sequence_count": 14400,
+      "globally_distinct_source_partitions": true,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            4,
+            1
+          ],
+          [
+            2,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            2
+          ],
+          [
+            2,
+            2,
+            1
+          ]
+        ]
+      ],
+      "masks": [
+        3,
+        5,
+        6
+      ],
+      "n": 5,
+      "nonzero_two_core_correlation": true,
+      "private_column_count": 0,
+      "source_dimensions": [
+        2,
+        32,
+        50
+      ],
+      "status": "collision-free-two-core-correlation-nonzero"
+    }
+  ]
+}

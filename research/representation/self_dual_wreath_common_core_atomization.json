@@ -1,0 +1,860 @@
+{
+  "abstract_imbalance_control": {
+    "balanced": false,
+    "left_support_count": 1,
+    "predicted_grading_defect": 0.3333333333333333,
+    "predicted_left_effect_eigenvalue": 0.3333333333333333,
+    "right_support_count": 2,
+    "status": "one-versus-two-support-predicts-one-third-channel",
+    "support_size": 3
+  },
+  "adversarial_audit": [
+    {
+      "objection": "Pair generation alone forces half-balanced channels.",
+      "resolution": "False for arbitrary subspaces: a commuting atom with support counts one and two produces an exact 1/3 channel. The wreath parity theorem excludes that support geometry only for n>=5 orientation common cores.",
+      "resolved": true
+    },
+    {
+      "objection": "Triple common cores necessarily spoil pair-class neutrality.",
+      "resolution": "The collision-free S6 triple-core plane atomizes into one four-way core plus pair-only atoms; every crossing atom is split 2:2 or 1:1 and the direct quotient is neutral.",
+      "resolved": true
+    },
+    {
+      "objection": "Nonnegative Mobius dimensions prove a Boolean arrangement.",
+      "resolution": "No. Pair-core projector commutativity is checked separately; dimension data alone cannot exclude nonorthogonal recoupling blocks.",
+      "resolved": true
+    },
+    {
+      "objection": "Affine support balance is enough to force half-balanced channels.",
+      "resolution": "False. The collision-free S6 counterexample has only balanced affine line supports, but nonorthogonal pair cores produce 8/17 and 89/170 channels.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "all_depth_affine_atom_balance_proved": true,
+    "all_n_pair_core_commutativity_proved": false,
+    "coherent_common_core_atom_transform_compiled": false,
+    "collision_free_full_affine_merge_half_balance_falsified": true,
+    "common_vector_orientation_support_affine_proved": true,
+    "commuting_common_atoms_affine_sibling_balanced_proved": true,
+    "finite_commuting_collision_free_pair_core_atomization_verified": true,
+    "finite_higher_common_core_affine_balance_verified": true,
+    "fixed_family_parity_intertwiner_basis_verified": true,
+    "hierarchical_orientation_polar_proved": false,
+    "pair_generation_alone_sufficient_for_balance": false,
+    "reason": "Parity proves affine support balance, but a collision-free S6 scalar-star recoupling block falsifies universal commutativity and exact half-balance. The remaining route requires an efficient block decomposition and an all-n conditioning bound.",
+    "speedup_claim_allowed": false,
+    "ternary_xor_common_range_closure_proved_n_at_least_five": true,
+    "universal_collision_free_half_balance_falsified": true,
+    "universal_collision_free_pair_core_commutativity_falsified": true
+  },
+  "created_at": "2026-08-06T05:01:44.265747+00:00",
+  "falsifiers_triggered": [
+    "Pair generation by itself is not a neutrality theorem; unequal atom support counts produce nonhalf channels.",
+    "The wreath parity kernel excludes unequal crossing support counts at n>=5 because every exact common-vector support is affine.",
+    "Higher common cores do not automatically create a grading defect when their support is affinely balanced.",
+    "Fixed-family intersection dimensions alone do not prove a Boolean decomposition; recoupling commutators remain essential.",
+    "Universal collision-free pair-core commutativity and exact half-balance are false already in S6."
+  ],
+  "finite_controls": [
+    {
+      "all_crossing_atoms_balanced": true,
+      "atoms": [
+        {
+          "crosses_sibling_split": true,
+          "grading_balanced": true,
+          "left_support_count": 1,
+          "multiplicity": 1,
+          "predicted_left_effect_eigenvalue": 0.5,
+          "right_support_count": 1,
+          "support_orientation_masks": [
+            1,
+            6
+          ]
+        },
+        {
+          "crosses_sibling_split": true,
+          "grading_balanced": true,
+          "left_support_count": 1,
+          "multiplicity": 1,
+          "predicted_left_effect_eigenvalue": 0.5,
+          "right_support_count": 1,
+          "support_orientation_masks": [
+            2,
+            5
+          ]
+        },
+        {
+          "crosses_sibling_split": true,
+          "grading_balanced": true,
+          "left_support_count": 1,
+          "multiplicity": 9,
+          "predicted_left_effect_eigenvalue": 0.5,
+          "right_support_count": 1,
+          "support_orientation_masks": [
+            5,
+            6
+          ]
+        }
+      ],
+      "boolean_atomization_verified": true,
+      "control_id": "W6-MULTIEDGE-NO-HIGHER-CORE",
+      "crossing_atom_count": 3,
+      "direct_fractional_eigenvalues": [
+        0.4999999999999999,
+        0.49999999999999994,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5000000000000001
+      ],
+      "direct_relative_cech_audit_verified": true,
+      "direct_relative_pair_class_dimension": 11,
+      "exact_relative_cech_spectrum_verified": true,
+      "fixed_family_basis_rank_mismatch_count": 0,
+      "fixed_family_basis_validation_count": 3,
+      "imbalanced_crossing_atom_count": 0,
+      "labels": [
+        [
+          [
+            5,
+            1
+          ],
+          [
+            3,
+            3
+          ]
+        ],
+        [
+          [
+            2,
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        1,
+        5
+      ],
+      "maximum_common_basis_isometry_residual": 4.440892098500626e-16,
+      "maximum_direct_fractional_half_residual": 1.1102230246251565e-16,
+      "maximum_direct_grading_neutrality_residual": 2.0887551252122726e-16,
+      "maximum_higher_common_core_dimension": 0,
+      "maximum_pair_core_intersection_rank_residual": 0,
+      "maximum_pair_core_projector_commutator_norm": 4.122972569286256e-16,
+      "maximum_predicted_spectrum_residual": 1.1102230246251565e-16,
+      "mobius_atom_count": 3,
+      "n": 6,
+      "negative_mobius_atom_count": 0,
+      "nonaffine_positive_mobius_atom_count": 0,
+      "nonneutral_full_merge_certified": false,
+      "nonzero_higher_common_core_count": 0,
+      "nonzero_pair_core_count": 3,
+      "orientation_masks": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "pair_core_projectors_commute": true,
+      "pair_relations_equal_full_internal_kernels": true,
+      "physical_ambient_dimension": 5625,
+      "predicted_fractional_eigenvalues": [
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "predicted_relative_pair_class_dimension": 11,
+      "right_orientation_masks": [
+        2,
+        6
+      ],
+      "sibling_child_size": 2,
+      "status": "commuting-balanced-common-core-atomization",
+      "target_partition": [
+        6
+      ],
+      "ternary_affine_closure_dimension_mismatch_count": 0,
+      "ternary_affine_closure_validation_count": 4,
+      "total_pair_core_dimension": 11
+    },
+    {
+      "all_crossing_atoms_balanced": true,
+      "atoms": [
+        {
+          "crosses_sibling_split": false,
+          "grading_balanced": true,
+          "left_support_count": 2,
+          "multiplicity": 80,
+          "predicted_left_effect_eigenvalue": null,
+          "right_support_count": 0,
+          "support_orientation_masks": [
+            5,
+            6
+          ]
+        },
+        {
+          "crosses_sibling_split": true,
+          "grading_balanced": true,
+          "left_support_count": 1,
+          "multiplicity": 1,
+          "predicted_left_effect_eigenvalue": 0.5,
+          "right_support_count": 1,
+          "support_orientation_masks": [
+            5,
+            10
+          ]
+        },
+        {
+          "crosses_sibling_split": true,
+          "grading_balanced": true,
+          "left_support_count": 1,
+          "multiplicity": 4,
+          "predicted_left_effect_eigenvalue": 0.5,
+          "right_support_count": 1,
+          "support_orientation_masks": [
+            6,
+            9
+          ]
+        },
+        {
+          "crosses_sibling_split": true,
+          "grading_balanced": true,
+          "left_support_count": 1,
+          "multiplicity": 24,
+          "predicted_left_effect_eigenvalue": 0.5,
+          "right_support_count": 1,
+          "support_orientation_masks": [
+            6,
+            10
+          ]
+        },
+        {
+          "crosses_sibling_split": false,
+          "grading_balanced": true,
+          "left_support_count": 0,
+          "multiplicity": 24,
+          "predicted_left_effect_eigenvalue": null,
+          "right_support_count": 2,
+          "support_orientation_masks": [
+            9,
+            10
+          ]
+        },
+        {
+          "crosses_sibling_split": true,
+          "grading_balanced": true,
+          "left_support_count": 2,
+          "multiplicity": 1,
+          "predicted_left_effect_eigenvalue": 0.5,
+          "right_support_count": 2,
+          "support_orientation_masks": [
+            5,
+            6,
+            9,
+            10
+          ]
+        }
+      ],
+      "boolean_atomization_verified": true,
+      "control_id": "W6-TRIPLE-AND-FOUR-WAY-CORE",
+      "crossing_atom_count": 4,
+      "direct_fractional_eigenvalues": [
+        0.49999999999999967,
+        0.4999999999999999,
+        0.49999999999999994,
+        0.49999999999999994,
+        0.49999999999999994,
+        0.49999999999999994,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5000000000000001,
+        0.5000000000000001,
+        0.5000000000000001,
+        0.5000000000000003
+      ],
+      "direct_relative_cech_audit_verified": true,
+      "direct_relative_pair_class_dimension": 30,
+      "exact_relative_cech_spectrum_verified": true,
+      "fixed_family_basis_rank_mismatch_count": 0,
+      "fixed_family_basis_validation_count": 11,
+      "imbalanced_crossing_atom_count": 0,
+      "labels": [
+        [
+          [
+            6
+          ],
+          [
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            5,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            4,
+            2
+          ],
+          [
+            2,
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        5,
+        6
+      ],
+      "maximum_common_basis_isometry_residual": 6.2710921645311534e-15,
+      "maximum_direct_fractional_half_residual": 3.3306690738754696e-16,
+      "maximum_direct_grading_neutrality_residual": 7.06560723582586e-16,
+      "maximum_higher_common_core_dimension": 1,
+      "maximum_pair_core_intersection_rank_residual": 0,
+      "maximum_pair_core_projector_commutator_norm": 4.2146848510893995e-08,
+      "maximum_predicted_spectrum_residual": 3.3306690738754696e-16,
+      "mobius_atom_count": 6,
+      "n": 6,
+      "negative_mobius_atom_count": 0,
+      "nonaffine_positive_mobius_atom_count": 0,
+      "nonneutral_full_merge_certified": false,
+      "nonzero_higher_common_core_count": 5,
+      "nonzero_pair_core_count": 6,
+      "orientation_masks": [
+        5,
+        6,
+        9,
+        10
+      ],
+      "pair_core_projectors_commute": true,
+      "pair_relations_equal_full_internal_kernels": true,
+      "physical_ambient_dimension": 50625,
+      "predicted_fractional_eigenvalues": [
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "predicted_relative_pair_class_dimension": 30,
+      "right_orientation_masks": [
+        9,
+        10
+      ],
+      "sibling_child_size": 2,
+      "status": "commuting-balanced-common-core-atomization",
+      "target_partition": [
+        6
+      ],
+      "ternary_affine_closure_dimension_mismatch_count": 0,
+      "ternary_affine_closure_validation_count": 4,
+      "total_pair_core_dimension": 139
+    },
+    {
+      "all_crossing_atoms_balanced": true,
+      "atoms": [
+        {
+          "crosses_sibling_split": true,
+          "grading_balanced": true,
+          "left_support_count": 1,
+          "multiplicity": 9,
+          "predicted_left_effect_eigenvalue": 0.5,
+          "right_support_count": 1,
+          "support_orientation_masks": [
+            2,
+            12
+          ]
+        },
+        {
+          "crosses_sibling_split": true,
+          "grading_balanced": true,
+          "left_support_count": 1,
+          "multiplicity": 25,
+          "predicted_left_effect_eigenvalue": 0.5,
+          "right_support_count": 1,
+          "support_orientation_masks": [
+            5,
+            12
+          ]
+        },
+        {
+          "crosses_sibling_split": false,
+          "grading_balanced": true,
+          "left_support_count": 0,
+          "multiplicity": 9,
+          "predicted_left_effect_eigenvalue": null,
+          "right_support_count": 2,
+          "support_orientation_masks": [
+            11,
+            12
+          ]
+        }
+      ],
+      "boolean_atomization_verified": false,
+      "control_id": "W6-NONCOMMUTING-PAIR-CORE-COUNTEREXAMPLE",
+      "crossing_atom_count": 2,
+      "direct_fractional_eigenvalues": [
+        0.4705882352941176,
+        0.4705882352941176,
+        0.4705882352941176,
+        0.4705882352941176,
+        0.47058823529411764,
+        0.47058823529411764,
+        0.47058823529411764,
+        0.47058823529411764,
+        0.4705882352941177,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5235294117647058,
+        0.5235294117647058,
+        0.5235294117647059,
+        0.5235294117647059,
+        0.5235294117647059,
+        0.5235294117647059,
+        0.5235294117647059,
+        0.5235294117647059,
+        0.5235294117647059
+      ],
+      "direct_relative_cech_audit_verified": true,
+      "direct_relative_pair_class_dimension": 34,
+      "exact_relative_cech_spectrum_verified": false,
+      "fixed_family_basis_rank_mismatch_count": 0,
+      "fixed_family_basis_validation_count": 3,
+      "imbalanced_crossing_atom_count": 0,
+      "labels": [
+        [
+          [
+            6
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        [
+          [
+            5,
+            1
+          ],
+          [
+            2,
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        2,
+        5
+      ],
+      "maximum_common_basis_isometry_residual": 8.881784197001252e-16,
+      "maximum_direct_fractional_half_residual": 0.029411764705882415,
+      "maximum_direct_grading_neutrality_residual": 0.058823529411764795,
+      "maximum_higher_common_core_dimension": 0,
+      "maximum_pair_core_intersection_rank_residual": 0,
+      "maximum_pair_core_projector_commutator_norm": 0.11042310999998978,
+      "maximum_predicted_spectrum_residual": 0.029411764705882415,
+      "mobius_atom_count": 3,
+      "n": 6,
+      "negative_mobius_atom_count": 0,
+      "nonaffine_positive_mobius_atom_count": 0,
+      "nonneutral_full_merge_certified": true,
+      "nonzero_higher_common_core_count": 0,
+      "nonzero_pair_core_count": 3,
+      "orientation_masks": [
+        2,
+        5,
+        11,
+        12
+      ],
+      "pair_core_projectors_commute": false,
+      "pair_relations_equal_full_internal_kernels": true,
+      "physical_ambient_dimension": 50625,
+      "predicted_fractional_eigenvalues": [
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "predicted_relative_pair_class_dimension": 34,
+      "right_orientation_masks": [
+        11,
+        12
+      ],
+      "sibling_child_size": 2,
+      "status": "noncommuting-nonneutral-common-core-counterexample",
+      "target_partition": [
+        6
+      ],
+      "ternary_affine_closure_dimension_mismatch_count": 0,
+      "ternary_affine_closure_validation_count": 4,
+      "total_pair_core_dimension": 43
+    }
+  ],
+  "headline_metrics": {
+    "abstract_one_versus_two_fractional_eigenvalue": 0.3333333333333333,
+    "affine_common_support_balance_theorem_count": 1,
+    "all_depth_affine_atom_balance_count": 1,
+    "all_n_collision_free_commuting_atomization_count": 0,
+    "common_range_parity_basis_theorem_count": 1,
+    "commuting_atom_balance_theorem_count": 1,
+    "finite_commuting_boolean_prediction_failure_count": 0,
+    "finite_control_count": 3,
+    "finite_crossing_atom_count": 9,
+    "finite_direct_relative_cech_validation_failure_count": 0,
+    "finite_higher_common_core_control_count": 1,
+    "finite_imbalanced_crossing_atom_count": 0,
+    "finite_nonaffine_positive_atom_count": 0,
+    "finite_noncommuting_pair_core_control_count": 1,
+    "finite_nonneutral_common_core_control_count": 1,
+    "finite_nonneutral_full_affine_merge_certificate_count": 1,
+    "finite_pair_core_count": 12,
+    "finite_ternary_affine_closure_mismatch_count": 0,
+    "finite_ternary_affine_closure_validation_count": 12,
+    "maximum_direct_fractional_half_residual": 0.029411764705882415,
+    "maximum_pair_core_projector_commutator_norm": 0.11042310999998978,
+    "maximum_relative_cech_spectrum_residual": 3.3306690738754696e-16,
+    "new_quantum_algorithm_count": 0,
+    "noncommuting_counterexample_high_eigenvalue": 0.5235294117647059,
+    "noncommuting_counterexample_low_eigenvalue": 0.47058823529411764,
+    "noncommuting_counterexample_pair_core_correlation": 0.1111111111111111,
+    "scalar_star_formula_residual": 1.1102230246251565e-16,
+    "ternary_xor_common_range_closure_theorem_count": 1
+  },
+  "proof_obligations": [
+    {
+      "obligation": "explicit_fixed_family_parity_intertwiners",
+      "resolution": "Finite bases have exact representation-ring ranks, are isometric, and produce valid direct relative-Cech spectra.",
+      "resolved": true
+    },
+    {
+      "obligation": "collision_free_pair_core_commutativity_all_n",
+      "resolution": "Resolved negatively: a globally distinct S6 affine plane has pair-core commutator norm 0.110423... and exact nonhalf channels.",
+      "resolved": true
+    },
+    {
+      "obligation": "affine_crossing_atom_balance_all_depths",
+      "resolution": "Ternary-XOR closure makes every exact common-vector support affine; an affine support crossing sibling cosets has equal cardinality in both.",
+      "resolved": true
+    },
+    {
+      "obligation": "classify_noncommuting_recoupling_blocks",
+      "resolution": "The first counterexample is an exact scalar star with correlation 1/9 and well-conditioned rational channels, but no all-n block decomposition or conditioning bound is known.",
+      "resolved": false
+    }
+  ],
+  "scalar_star_counterexample": {
+    "antisymmetric_left_effect_eigenvalue": 0.47058823529411764,
+    "direct_spectrum_residual": 1.1102230246251565e-16,
+    "exact_scalar_star_formula_verified": true,
+    "orthogonal_cross_mode_multiplicity": 16,
+    "orthogonal_left_effect_eigenvalue": 0.5,
+    "pair_core_principal_correlation": 0.1111111111111111,
+    "predicted_fractional_eigenvalues": [
+      0.47058823529411764,
+      0.47058823529411764,
+      0.47058823529411764,
+      0.47058823529411764,
+      0.47058823529411764,
+      0.47058823529411764,
+      0.47058823529411764,
+      0.47058823529411764,
+      0.47058823529411764,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5235294117647059,
+      0.5235294117647059,
+      0.5235294117647059,
+      0.5235294117647059,
+      0.5235294117647059,
+      0.5235294117647059,
+      0.5235294117647059,
+      0.5235294117647059,
+      0.5235294117647059
+    ],
+    "shared_mode_multiplicity": 9,
+    "status": "exact-nonneutral-scalar-star-recoupling-block",
+    "symmetric_left_effect_eigenvalue": 0.5235294117647059
+  },
+  "scaling_records": [
+    {
+      "every_crossing_atom_affine_balanced_proved": true,
+      "fixed_family_dimensions_representation_computable": true,
+      "information_threshold_copy_count": 10,
+      "mobius_atoms_nonnegative_proved": false,
+      "n": 6,
+      "status": "noncommuting-recoupling-block-classification-open",
+      "universal_pair_core_commutativity_falsified": true
+    },
+    {
+      "every_crossing_atom_affine_balanced_proved": true,
+      "fixed_family_dimensions_representation_computable": true,
+      "information_threshold_copy_count": 16,
+      "mobius_atoms_nonnegative_proved": false,
+      "n": 8,
+      "status": "noncommuting-recoupling-block-classification-open",
+      "universal_pair_core_commutativity_falsified": true
+    },
+    {
+      "every_crossing_atom_affine_balanced_proved": true,
+      "fixed_family_dimensions_representation_computable": true,
+      "information_threshold_copy_count": 45,
+      "mobius_atoms_nonnegative_proved": false,
+      "n": 16,
+      "status": "noncommuting-recoupling-block-classification-open",
+      "universal_pair_core_commutativity_falsified": true
+    },
+    {
+      "every_crossing_atom_affine_balanced_proved": true,
+      "fixed_family_dimensions_representation_computable": true,
+      "information_threshold_copy_count": 118,
+      "mobius_atoms_nonnegative_proved": false,
+      "n": 32,
+      "status": "noncommuting-recoupling-block-classification-open",
+      "universal_pair_core_commutativity_falsified": true
+    },
+    {
+      "every_crossing_atom_affine_balanced_proved": true,
+      "fixed_family_dimensions_representation_computable": true,
+      "information_threshold_copy_count": 296,
+      "mobius_atoms_nonnegative_proved": false,
+      "n": 64,
+      "status": "noncommuting-recoupling-block-classification-open",
+      "universal_pair_core_commutativity_falsified": true
+    },
+    {
+      "every_crossing_atom_affine_balanced_proved": true,
+      "fixed_family_dimensions_representation_computable": true,
+      "information_threshold_copy_count": 717,
+      "mobius_atoms_nonnegative_proved": false,
+      "n": 128,
+      "status": "noncommuting-recoupling-block-classification-open",
+      "universal_pair_core_commutativity_falsified": true
+    },
+    {
+      "every_crossing_atom_affine_balanced_proved": true,
+      "fixed_family_dimensions_representation_computable": true,
+      "information_threshold_copy_count": 1684,
+      "mobius_atoms_nonnegative_proved": false,
+      "n": 256,
+      "status": "noncommuting-recoupling-block-classification-open",
+      "universal_pair_core_commutativity_falsified": true
+    },
+    {
+      "every_crossing_atom_affine_balanced_proved": true,
+      "fixed_family_dimensions_representation_computable": true,
+      "information_threshold_copy_count": 3876,
+      "mobius_atoms_nonnegative_proved": false,
+      "n": 512,
+      "status": "noncommuting-recoupling-block-classification-open",
+      "universal_pair_core_commutativity_falsified": true
+    }
+  ],
+  "status": "collision-free-noncommuting-core-counterexample-block-classification-open",
+  "summary": "Constructed exact parity intertwiners and verified the relative Cech atom formula on commuting collision-free S6 affine planes and proved ternary-XOR support closure. A third globally distinct S6 plane falsifies universal commutativity and half-balance with exact scalar-star channels 8/17 and 89/170.",
+  "theorem_contract": {
+    "affine_support": "The exact orientation support of every common vector is ternary-XOR closed, hence affine; a crossing affine support meets sibling affine half-spaces equally.",
+    "balance_criterion": "A commuting common-core arrangement is grading-neutral iff every crossing atom has p=q.",
+    "boolean_atomization": "Commuting pair-core projectors yield orthogonal support atoms A_S with dim K_F=sum_{S superset F} dim A_S.",
+    "parity_intertwiner_basis": "Every fixed-family common range is the orthogonal sum over parity-kernel assignments of tensor products of trivial/sign membership-pattern isotypes.",
+    "relative_cech_channel": "A support atom meeting affine siblings in p and q leaves contributes left-effect eigenvalue p/(p+q).",
+    "scope": "The direct finite Cech quotient verifies the criterion without assuming it; universal pair-core commutativity is false, while classification and conditioning of noncommuting blocks remain open.",
+    "ternary_xor_closure": "For n>=5, intersection(U_a,U_b,U_c) is contained in U_(a xor b xor c); summing the three parity equations is exactly the fourth orientation's invariance equation.",
+    "two_leaf_full_merge_embedding": "For two leaves per child, pair relations are the complete child-internal kernels; a nonneutral relative pair quotient is therefore a nonneutral subspace of the full cross-dependency merge."
+  }
+}

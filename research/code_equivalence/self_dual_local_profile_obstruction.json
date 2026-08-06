@@ -1,0 +1,3125 @@
+{
+  "claim_gate": {
+    "bounded_local_profile_collisions_are_hardness_evidence": false,
+    "classical_superpolynomial_lower_bound_proved": false,
+    "fixed_order_zero_sum_search_is_minimum_distance_algorithm": false,
+    "global_classical_canonicalization_exhausted": false,
+    "nonabelian_measurement_necessity_proved": false,
+    "reason": "The observed local-profile collisions are forced by self-duality and distance. They remove a weak baseline rather than support code-equivalence hardness.",
+    "speedup_claim_allowed": false,
+    "theorem_controls_pass": true
+  },
+  "created_at": "2026-07-28T09:54:42.676279+00:00",
+  "falsifiers_triggered": [
+    "A self-duality or distance-certificate failure invalidates the theorem on that instance.",
+    "Any directly computed local profile that differs from the theorem prediction invalidates the implementation.",
+    "Exact small-code minimum distance must agree with the fixed-order zero-sum witness.",
+    "Forced local-profile collisions are negative evidence against bounded-local invariant search, not hardness evidence.",
+    "Fixed-order zero-sum enumeration is not represented as a general minimum-distance algorithm.",
+    "The theorem does not close global canonicalization, growing-order signatures, or graph-isomorphism reductions."
+  ],
+  "family_records": [
+    {
+      "dimension": 6,
+      "exact_distance_validation_count": 12,
+      "family_id": "self-dual-k6",
+      "full_order_collapse_instance_count": 0,
+      "instance_count": 12,
+      "interpretation": "Every instance in the family has forced local rank-hull profiles through common order 1.",
+      "local_profile_separator_count": 0,
+      "maximum_certified_common_collapse_order": 1,
+      "status": "bounded-local-profile-obstruction-proof-debt-through-order-1",
+      "validation_failure_count": 0
+    },
+    {
+      "dimension": 8,
+      "exact_distance_validation_count": 12,
+      "family_id": "self-dual-k8",
+      "full_order_collapse_instance_count": 0,
+      "instance_count": 12,
+      "interpretation": "Every instance in the family has forced local rank-hull profiles through common order 1.",
+      "local_profile_separator_count": 0,
+      "maximum_certified_common_collapse_order": 1,
+      "status": "bounded-local-profile-obstruction-proof-debt-through-order-1",
+      "validation_failure_count": 0
+    },
+    {
+      "dimension": 10,
+      "exact_distance_validation_count": 10,
+      "family_id": "self-dual-k10",
+      "full_order_collapse_instance_count": 0,
+      "instance_count": 10,
+      "interpretation": "Every instance in the family has forced local rank-hull profiles through common order 1.",
+      "local_profile_separator_count": 0,
+      "maximum_certified_common_collapse_order": 1,
+      "status": "bounded-local-profile-obstruction-proof-debt-through-order-1",
+      "validation_failure_count": 0
+    },
+    {
+      "dimension": 12,
+      "exact_distance_validation_count": 8,
+      "family_id": "self-dual-k12",
+      "full_order_collapse_instance_count": 0,
+      "instance_count": 8,
+      "interpretation": "Every instance in the family has forced local rank-hull profiles through common order 1.",
+      "local_profile_separator_count": 0,
+      "maximum_certified_common_collapse_order": 1,
+      "status": "bounded-local-profile-obstruction-proof-debt-through-order-1",
+      "validation_failure_count": 0
+    },
+    {
+      "dimension": 16,
+      "exact_distance_validation_count": 0,
+      "family_id": "self-dual-k16",
+      "full_order_collapse_instance_count": 5,
+      "instance_count": 8,
+      "interpretation": "Every instance in the family has forced local rank-hull profiles through common order 3.",
+      "local_profile_separator_count": 0,
+      "maximum_certified_common_collapse_order": 3,
+      "status": "bounded-local-profile-obstruction-proof-debt-through-order-3",
+      "validation_failure_count": 0
+    },
+    {
+      "dimension": 24,
+      "exact_distance_validation_count": 0,
+      "family_id": "self-dual-k24",
+      "full_order_collapse_instance_count": 6,
+      "instance_count": 6,
+      "interpretation": "Every instance in the family has forced local rank-hull profiles through common order 4.",
+      "local_profile_separator_count": 0,
+      "maximum_certified_common_collapse_order": 4,
+      "status": "bounded-local-profile-obstruction-proof-debt-through-order-4",
+      "validation_failure_count": 0
+    },
+    {
+      "dimension": 32,
+      "exact_distance_validation_count": 0,
+      "family_id": "self-dual-k32",
+      "full_order_collapse_instance_count": 6,
+      "instance_count": 6,
+      "interpretation": "Every instance in the family has forced local rank-hull profiles through common order 4.",
+      "local_profile_separator_count": 0,
+      "maximum_certified_common_collapse_order": 4,
+      "status": "bounded-local-profile-obstruction-proof-debt-through-order-4",
+      "validation_failure_count": 0
+    }
+  ],
+  "headline_metrics": {
+    "classical_superpolynomial_lower_bound_count": 0,
+    "distance_greater_than_maximum_order_count": 17,
+    "exact_distance_validation_count": 42,
+    "family_count": 7,
+    "full_order_collapse_family_count": 2,
+    "full_order_collapse_instance_count": 17,
+    "global_polynomial_canonicalization_count": 0,
+    "instance_count": 62,
+    "local_profile_separator_count": 0,
+    "maximum_dimension": 32,
+    "nonabelian_measurement_necessity_count": 0,
+    "profile_validation_subset_count": 61394,
+    "theorem_control_failure_count": 0,
+    "theorem_covered_subset_count": 5610818
+  },
+  "instance_records": [
+    {
+      "certified_collapse_order": 3,
+      "dimension": 6,
+      "exact_distance_validation_passed": true,
+      "exact_minimum_distance": 4,
+      "family_id": "self-dual-k6",
+      "instance_id": "self-dual-k6-instance-00",
+      "interpretation": "Self-duality and the certified distance bound force every puncture/shorten rank-hull profile through order 3; matching local signatures carry no distinguishing information.",
+      "length": 12,
+      "low_weight_certificate": {
+        "certified_minimum_distance_strictly_greater_than": null,
+        "checked_subset_count": 329,
+        "cost_model": "Exact distinct-column zero-sum enumeration through order 4; O(n^4) for fixed order.",
+        "minimum_weight_witness_at_most_cap": 4,
+        "search_complete_through": 4,
+        "witness_coordinates": [
+          0,
+          1,
+          6,
+          7
+        ]
+      },
+      "predicted_profiles": [
+        [
+          1,
+          6,
+          5,
+          5,
+          5
+        ],
+        [
+          2,
+          6,
+          4,
+          4,
+          4
+        ],
+        [
+          3,
+          6,
+          3,
+          3,
+          3
+        ]
+      ],
+      "profile_validation_failure_count": 0,
+      "self_dual_certificate_passed": true,
+      "status": "proved-local-profile-collapse-through-order-3",
+      "total_subsets_covered_by_theorem": 298,
+      "validated_subset_count": 298
+    },
+    {
+      "certified_collapse_order": 3,
+      "dimension": 6,
+      "exact_distance_validation_passed": true,
+      "exact_minimum_distance": 4,
+      "family_id": "self-dual-k6",
+      "instance_id": "self-dual-k6-instance-01",
+      "interpretation": "Self-duality and the certified distance bound force every puncture/shorten rank-hull profile through order 3; matching local signatures carry no distinguishing information.",
+      "length": 12,
+      "low_weight_certificate": {
+        "certified_minimum_distance_strictly_greater_than": null,
+        "checked_subset_count": 341,
+        "cost_model": "Exact distinct-column zero-sum enumeration through order 4; O(n^4) for fixed order.",
+        "minimum_weight_witness_at_most_cap": 4,
+        "search_complete_through": 4,
+        "witness_coordinates": [
+          0,
+          1,
+          9,
+          10
+        ]
+      },
+      "predicted_profiles": [
+        [
+          1,
+          6,
+          5,
+          5,
+          5
+        ],
+        [
+          2,
+          6,
+          4,
+          4,
+          4
+        ],
+        [
+          3,
+          6,
+          3,
+          3,
+          3
+        ]
+      ],
+      "profile_validation_failure_count": 0,
+      "self_dual_certificate_passed": true,
+      "status": "proved-local-profile-collapse-through-order-3",
+      "total_subsets_covered_by_theorem": 298,
+      "validated_subset_count": 298
+    },
+    {
+      "certified_collapse_order": 1,
+      "dimension": 6,
+      "exact_distance_validation_passed": true,
+      "exact_minimum_distance": 2,
+      "family_id": "self-dual-k6",
+      "instance_id": "self-dual-k6-instance-02",
+      "interpretation": "Self-duality and the certified distance bound force every puncture/shorten rank-hull profile through order 1; matching local signatures carry no distinguishing information.",
+      "length": 12,
+      "low_weight_certificate": {
+        "certified_minimum_distance_strictly_greater_than": null,
+        "checked_subset_count": 31,
+        "cost_model": "Exact distinct-column zero-sum enumeration through order 4; O(n^4) for fixed order.",
+        "minimum_weight_witness_at_most_cap": 2,
+        "search_complete_through": 4,
+        "witness_coordinates": [
+          1,
+          9
+        ]
+      },
+      "predicted_profiles": [
+        [
+          1,
+          6,
+          5,
+          5,
+          5
+        ]
+      ],
+      "profile_validation_failure_count": 0,
+      "self_dual_certificate_passed": true,
+      "status": "proved-local-profile-collapse-through-order-1",
+      "total_subsets_covered_by_theorem": 12,
+      "validated_subset_count": 12
+    },
+    {
+      "certified_collapse_order": 1,
+      "dimension": 6,
+      "exact_distance_validation_passed": true,
+      "exact_minimum_distance": 2,
+      "family_id": "self-dual-k6",
+      "instance_id": "self-dual-k6-instance-03",
+      "interpretation": "Self-duality and the certified distance bound force every puncture/shorten rank-hull profile through order 1; matching local signatures carry no distinguishing information.",
+      "length": 12,
+      "low_weight_certificate": {
+        "certified_minimum_distance_strictly_greater_than": null,
+        "checked_subset_count": 52,
+        "cost_model": "Exact distinct-column zero-sum enumeration through order 4; O(n^4) for fixed order.",
+        "minimum_weight_witness_at_most_cap": 2,
+        "search_complete_through": 4,
+        "witness_coordinates": [
+          4,
+          6
+        ]
+      },
+      "predicted_profiles": [
+        [
+          1,
+          6,
+          5,
+          5,
+          5
+        ]
+      ],
+      "profile_validation_failure_count": 0,
+      "self_dual_certificate_passed": true,
+      "status": "proved-local-profile-collapse-through-order-1",
+      "total_subsets_covered_by_theorem": 12,
+      "validated_subset_count": 12
+    },
+    {
+      "certified_collapse_order": 1,
+      "dimension": 6,
+      "exact_distance_validation_passed": true,
+      "exact_minimum_distance": 2,
+      "family_id": "self-dual-k6",
+      "instance_id": "self-dual-k6-instance-04",
+      "interpretation": "Self-duality and the certified distance bound force every puncture/shorten rank-hull profile through order 1; matching local signatures carry no distinguishing information.",
+      "length": 12,
+      "low_weight_certificate": {
+        "certified_minimum_distance_strictly_greater_than": null,
+        "checked_subset_count": 33,
+        "cost_model": "Exact distinct-column zero-sum enumeration through order 4; O(n^4) for fixed order.",
+        "minimum_weight_witness_at_most_cap": 2,
+        "search_complete_through": 4,
+        "witness_coordinates": [
+          1,
+          11
+        ]
+      },
+      "predicted_profiles": [
+        [
+          1,
+          6,
+          5,
+          5,
+          5
+        ]
+      ],
+      "profile_validation_failure_count": 0,
+      "self_dual_certificate_passed": true,
+      "status": "proved-local-profile-collapse-through-order-1",
+      "total_subsets_covered_by_theorem": 12,
+      "validated_subset_count": 12
+    },
+    {
+      "certified_collapse_order": 3,
+      "dimension": 6,
+      "exact_distance_validation_passed": true,
+      "exact_minimum_distance": 4,
+      "family_id": "self-dual-k6",
+      "instance_id": "self-dual-k6-instance-05",
+      "interpretation": "Self-duality and the certified distance bound force every puncture/shorten rank-hull profile through order 3; matching local signatures carry no distinguishing information.",
+      "length": 12,
+      "low_weight_certificate": {
+        "certified_minimum_distance_strictly_greater_than": null,
+        "checked_subset_count": 337,
+        "cost_model": "Exact distinct-column zero-sum enumeration through order 4; O(n^4) for fixed order.",
+        "minimum_weight_witness_at_most_cap": 4,
+        "search_complete_through": 4,
+        "witness_coordinates": [
+          0,
+          1,
+          7,
+          11
+        ]
+      },
+      "predicted_profiles": [
+        [
+          1,
+          6,
+          5,
+          5,
+          5
+        ],
+        [
+          2,
+          6,
+          4,
+          4,
+          4
+        ],
+        [
+          3,
+          6,
+          3,
+          3,
+          3
+        ]
+      ],
+      "profile_validation_failure_count": 0,
+      "self_dual_certificate_passed": true,
+      "status": "proved-local-profile-collapse-through-order-3",
+      "total_subsets_covered_by_theorem": 298,
+      "validated_subset_count": 298
+    },
+    {
+      "certified_collapse_order": 1,
+      "dimension": 6,
+      "exact_distance_validation_passed": true,
+      "exact_minimum_distance": 2,
+      "family_id": "self-dual-k6",
+      "instance_id": "self-dual-k6-instance-06",
+      "interpretation": "Self-duality and the certified distance bound force every puncture/shorten rank-hull profile through order 1; matching local signatures carry no distinguishing information.",
+      "length": 12,
+      "low_weight_certificate": {
+        "certified_minimum_distance_strictly_greater_than": null,
+        "checked_subset_count": 33,
+        "cost_model": "Exact distinct-column zero-sum enumeration through order 4; O(n^4) for fixed order.",
+        "minimum_weight_witness_at_most_cap": 2,
+        "search_complete_through": 4,
+        "witness_coordinates": [
+          1,
+          11
+        ]
+      },
+      "predicted_profiles": [
+        [
+          1,
+          6,
+          5,
+          5,
+          5
+        ]
+      ],
+      "profile_validation_failure_count": 0,
+      "self_dual_certificate_passed": true,
+      "status": "proved-local-profile-collapse-through-order-1",
+      "total_subsets_covered_by_theorem": 12,
+      "validated_subset_count": 12
+    },
+    {
+      "certified_collapse_order": 1,
+      "dimension": 6,
+      "exact_distance_validation_passed": true,
+      "exact_minimum_distance": 2,
+      "family_id": "self-dual-k6",
+      "instance_id": "self-dual-k6-instance-07",
+      "interpretation": "Self-duality and the certified distance bound force every puncture/shorten rank-hull profile through order 1; matching local signatures carry no distinguishing information.",
+      "length": 12,
+      "low_weight_certificate": {
+        "certified_minimum_distance_strictly_greater_than": null,
+        "checked_subset_count": 19,
+        "cost_model": "Exact distinct-column zero-sum enumeration through order 4; O(n^4) for fixed order.",
+        "minimum_weight_witness_at_most_cap": 2,
+        "search_complete_through": 4,
+        "witness_coordinates": [
+          0,
+          7
+        ]
+      },
+      "predicted_profiles": [
+        [
+          1,
+          6,
+          5,
+          5,
+          5
+        ]
+      ],
+      "profile_validation_failure_count": 0,
+      "self_dual_certificate_passed": true,
+      "status": "proved-local-profile-collapse-through-order-1",
+      "total_subsets_covered_by_theorem": 12,
+      "validated_subset_count": 12
+    },
+    {
+      "certified_collapse_order": 3,
+      "dimension": 6,
+      "exact_distance_validation_passed": true,
+      "exact_minimum_distance": 4,
+      "family_id": "self-dual-k6",
+      "instance_id": "self-dual-k6-instance-08",
+      "interpretation": "Self-duality and the certified distance bound force every puncture/shorten rank-hull profile through order 3; matching local signatures carry no distinguishing information.",
+      "length": 12,
+      "low_weight_certificate": {
+        "certified_minimum_distance_strictly_greater_than": null,
+        "checked_subset_count": 311,
+        "cost_model": "Exact distinct-column zero-sum enumeration through order 4; O(n^4) for fixed order.",
+        "minimum_weight_witness_at_most_cap": 4,
+        "search_complete_through": 4,
+        "witness_coordinates": [
+          0,
+          1,
+          3,
+          7
+        ]
+      },
+      "predicted_profiles": [
+        [
+          1,
+          6,
+          5,
+          5,
+          5
+        ],
+        [
+          2,
+          6,
+          4,
+          4,
+          4
+        ],
+        [
+          3,
+          6,
+          3,
+          3,
+          3
+        ]
+      ],
+      "profile_validation_failure_count": 0,
+      "self_dual_certificate_passed": true,
+      "status": "proved-local-profile-collapse-through-order-3",
+      "total_subsets_covered_by_theorem": 298,
+      "validated_subset_count": 298
+    },
+    {
+      "certified_collapse_order": 1,
+      "dimension": 6,
+      "exact_distance_validation_passed": true,
+      "exact_minimum_distance": 2,
+      "family_id": "self-dual-k6",
+      "instance_id": "self-dual-k6-instance-09",
+      "interpretation": "Self-duality and the certified distance bound force every puncture/shorten rank-hull profile through order 1; matching local signatures carry no distinguishing information.",
+      "length": 12,
+      "low_weight_certificate": {
+        "certified_minimum_distance_strictly_greater_than": null,
+        "checked_subset_count": 50,
+        "cost_model": "Exact distinct-column zero-sum enumeration through order 4; O(n^4) for fixed order.",
+        "minimum_weight_witness_at_most_cap": 2,
+        "search_complete_through": 4,
+        "witness_coordinates": [
+          3,
+          11
+        ]
+      },
+      "predicted_profiles": [
+        [
+          1,
+          6,
+          5,
+          5,
+          5
+        ]
+      ],
+      "profile_validation_failure_count": 0,
+      "self_dual_certificate_passed": true,
+      "status": "proved-local-profile-collapse-through-order-1",
+      "total_subsets_covered_by_theorem": 12,
+      "validated_subset_count": 12
+    },
+    {
+      "certified_collapse_order": 1,
+      "dimension": 6,
+      "exact_distance_validation_passed": true,
+      "exact_minimum_distance": 2,
+      "family_id": "self-dual-k6",
+      "instance_id": "self-dual-k6-instance-10",
+      "interpretation": "Self-duality and the certified distance bound force every puncture/shorten rank-hull profile through order 1; matching local signatures carry no distinguishing information.",
+      "length": 12,
+      "low_weight_certificate": {
+        "certified_minimum_distance_strictly_greater_than": null,
+        "checked_subset_count": 23,
+        "cost_model": "Exact distinct-column zero-sum enumeration through order 4; O(n^4) for fixed order.",
+        "minimum_weight_witness_at_most_cap": 2,
+        "search_complete_through": 4,
+        "witness_coordinates": [
+          0,
+          11
+        ]
+      },
+      "predicted_profiles": [
+        [
+          1,
+          6,
+          5,
+          5,
+          5
+        ]
+      ],
+      "profile_validation_failure_count": 0,
+      "self_dual_certificate_passed": true,
+      "status": "proved-local-profile-collapse-through-order-1",
+      "total_subsets_covered_by_theorem": 12,
+      "validated_subset_count": 12
+    },
+    {
+      "certified_collapse_order": 1,
+      "dimension": 6,
+      "exact_distance_validation_passed": true,
+      "exact_minimum_distance": 2,
+      "family_id": "self-dual-k6",
+      "instance_id": "self-dual-k6-instance-11",
+      "interpretation": "Self-duality and the certified distance bound force every puncture/shorten rank-hull profile through order 1; matching local signatures carry no distinguishing information.",
+      "length": 12,
+      "low_weight_certificate": {
+        "certified_minimum_distance_strictly_greater_than": null,
+        "checked_subset_count": 18,
+        "cost_model": "Exact distinct-column zero-sum enumeration through order 4; O(n^4) for fixed order.",
+        "minimum_weight_witness_at_most_cap": 2,
+        "search_complete_through": 4,
+        "witness_coordinates": [
+          0,
+          6
+        ]
+      },
+      "predicted_profiles": [
+        [
+          1,
+          6,
+          5,
+          5,
+          5
+        ]
+      ],
+      "profile_validation_failure_count": 0,
+      "self_dual_certificate_passed": true,
+      "status": "proved-local-profile-collapse-through-order-1",
+      "total_subsets_covered_by_theorem": 12,
+      "validated_subset_count": 12
+    },
+    {
+      "certified_collapse_order": 3,
+      "dimension": 8,
+      "exact_distance_validation_passed": true,
+      "exact_minimum_distance": 4,
+      "family_id": "self-dual-k8",
+      "instance_id": "self-dual-k8-instance-00",
+      "interpretation": "Self-duality and the certified distance bound force every puncture/shorten rank-hull profile through order 3; matching local signatures carry no distinguishing information.",
+      "length": 16,
+      "low_weight_certificate": {
+        "certified_minimum_distance_strictly_greater_than": null,
+        "checked_subset_count": 702,
+        "cost_model": "Exact distinct-column zero-sum enumeration through order 4; O(n^4) for fixed order.",
+        "minimum_weight_witness_at_most_cap": 4,
+        "search_complete_through": 4,
+        "witness_coordinates": [
+          0,
+          1,
+          2,
+          8
+        ]
+      },
+      "predicted_profiles": [
+        [
+          1,
+          8,
+          7,
+          7,
+          7
+        ],
+        [
+          2,
+          8,
+          6,
+          6,
+          6
+        ],
+        [
+          3,
+          8,
+          5,
+          5,
+          5
+        ]
+      ],
+      "profile_validation_failure_count": 0,
+      "self_dual_certificate_passed": true,
+      "status": "proved-local-profile-collapse-through-order-3",
+      "total_subsets_covered_by_theorem": 696,
+      "validated_subset_count": 696
+    },
+    {
+      "certified_collapse_order": 3,
+      "dimension": 8,
+      "exact_distance_validation_passed": true,
+      "exact_minimum_distance": 4,
+      "family_id": "self-dual-k8",
+      "instance_id": "self-dual-k8-instance-01",
+      "interpretation": "Self-duality and the certified distance bound force every puncture/shorten rank-hull profile through order 3; matching local signatures carry no distinguishing information.",
+      "length": 16,
+      "low_weight_certificate": {
+        "certified_minimum_distance_strictly_greater_than": null,
+        "checked_subset_count": 764,
+        "cost_model": "Exact distinct-column zero-sum enumeration through order 4; O(n^4) for fixed order.",
+        "minimum_weight_witness_at_most_cap": 4,
+        "search_complete_through": 4,
+        "witness_coordinates": [
+          0,
+          1,
+          8,
+          13
+        ]
+      },
+      "predicted_profiles": [
+        [
+          1,
+          8,
+          7,
+          7,
+          7
+        ],
+        [
+          2,
+          8,
+          6,
+          6,
+          6
+        ],
+        [
+          3,
+          8,
+          5,
+          5,
+          5
+        ]
+      ],
+      "profile_validation_failure_count": 0,
+      "self_dual_certificate_passed": true,
+      "status": "proved-local-profile-collapse-through-order-3",
+      "total_subsets_covered_by_theorem": 696,
+      "validated_subset_count": 696
+    },
+    {
+      "certified_collapse_order": 3,
+      "dimension": 8,
+      "exact_distance_validation_passed": true,
+      "exact_minimum_distance": 4,
+      "family_id": "self-dual-k8",
+      "instance_id": "self-dual-k8-instance-02",
+      "interpretation": "Self-duality and the certified distance bound force every puncture/shorten rank-hull profile through order 3; matching local signatures carry no distinguishing information.",
+      "length": 16,
+      "low_weight_certificate": {
+        "certified_minimum_distance_strictly_greater_than": null,
+        "checked_subset_count": 735,
+        "cost_model": "Exact distinct-column zero-sum enumeration through order 4; O(n^4) for fixed order.",
+        "minimum_weight_witness_at_most_cap": 4,
+        "search_complete_through": 4,
+        "witness_coordinates": [
+          0,
+          1,
+          5,
+          8
+        ]
+      },
+      "predicted_profiles": [
+        [
+          1,
+          8,
+          7,
+          7,
+          7
+        ],
+        [
+          2,
+          8,
+          6,
+          6,
+          6
+        ],
+        [
+          3,
+          8,
+          5,
+          5,
+          5
+        ]
+      ],
+      "profile_validation_failure_count": 0,
+      "self_dual_certificate_passed": true,
+      "status": "proved-local-profile-collapse-through-order-3",
+      "total_subsets_covered_by_theorem": 696,
+      "validated_subset_count": 696
+    },
+    {
+      "certified_collapse_order": 3,
+      "dimension": 8,
+      "exact_distance_validation_passed": true,
+      "exact_minimum_distance": 4,
+      "family_id": "self-dual-k8",
+      "instance_id": "self-dual-k8-instance-03",
+      "interpretation": "Self-duality and the certified distance bound force every puncture/shorten rank-hull profile through order 3; matching local signatures carry no distinguishing information.",
+      "length": 16,
+      "low_weight_certificate": {
+        "certified_minimum_distance_strictly_greater_than": null,
+        "checked_subset_count": 864,
+        "cost_model": "Exact distinct-column zero-sum enumeration through order 4; O(n^4) for fixed order.",
+        "minimum_weight_witness_at_most_cap": 4,
+        "search_complete_through": 4,
+        "witness_coordinates": [
+          0,
+          2,
+          13,
+          15
+        ]
+      },
+      "predicted_profiles": [
+        [
+          1,
+          8,
+          7,
+          7,
+          7
+        ],
+        [
+          2,
+          8,
+          6,
+          6,
+          6
+        ],
+        [
+          3,
+          8,
+          5,
+          5,
+          5
+        ]
+      ],
+      "profile_validation_failure_count": 0,
+      "self_dual_certificate_passed": true,
+      "status": "proved-local-profile-collapse-through-order-3",
+      "total_subsets_covered_by_theorem": 696,
+      "validated_subset_count": 696
+    },
+    {
+      "certified_collapse_order": 1,
+      "dimension": 8,
+      "exact_distance_validation_passed": true,
+      "exact_minimum_distance": 2,
+      "family_id": "self-dual-k8",
+      "instance_id": "self-dual-k8-instance-04",
+      "interpretation": "Self-duality and the certified distance bound force every puncture/shorten rank-hull profile through order 1; matching local signatures carry no distinguishing information.",
+      "length": 16,
+      "low_weight_certificate": {
+        "certified_minimum_distance_strictly_greater_than": null,
+        "checked_subset_count": 64,
+        "cost_model": "Exact distinct-column zero-sum enumeration through order 4; O(n^4) for fixed order.",
+        "minimum_weight_witness_at_most_cap": 2,
+        "search_complete_through": 4,
+        "witness_coordinates": [
+          3,
+          9
+        ]
+      },
+      "predicted_profiles": [
+        [
+          1,
+          8,
+          7,
+          7,
+          7
+        ]
+      ],
+      "profile_validation_failure_count": 0,
+      "self_dual_certificate_passed": true,
+      "status": "proved-local-profile-collapse-through-order-1",
+      "total_subsets_covered_by_theorem": 16,
+      "validated_subset_count": 16
+    },
+    {
+      "certified_collapse_order": 3,
+      "dimension": 8,
+      "exact_distance_validation_passed": true,
+      "exact_minimum_distance": 4,
+      "family_id": "self-dual-k8",
+      "instance_id": "self-dual-k8-instance-05",
+      "interpretation": "Self-duality and the certified distance bound force every puncture/shorten rank-hull profile through order 3; matching local signatures carry no distinguishing information.",
+      "length": 16,
+      "low_weight_certificate": {
+        "certified_minimum_distance_strictly_greater_than": null,
+        "checked_subset_count": 715,
+        "cost_model": "Exact distinct-column zero-sum enumeration through order 4; O(n^4) for fixed order.",
+        "minimum_weight_witness_at_most_cap": 4,
+        "search_complete_through": 4,
+        "witness_coordinates": [
+          0,
+          1,
+          3,
+          9
+        ]
+      },
+      "predicted_profiles": [
+        [
+          1,
+          8,
+          7,
+          7,
+          7
+        ],
+        [
+          2,
+          8,
+          6,
+          6,
+          6
+        ],
+        [
+          3,
+          8,
+          5,
+          5,
+          5
+        ]
+      ],
+      "profile_validation_failure_count": 0,
+      "self_dual_certificate_passed": true,
+      "status": "proved-local-profile-collapse-through-order-3",
+      "total_subsets_covered_by_theorem": 696,
+      "validated_subset_count": 696
+    },
+    {
+      "certified_collapse_order": 3,
+      "dimension": 8,
+      "exact_distance_validation_passed": true,
+      "exact_minimum_distance": 4,
+      "family_id": "self-dual-k8",
+      "instance_id": "self-dual-k8-instance-06",
+      "interpretation": "Self-duality and the certified distance bound force every puncture/shorten rank-hull profile through order 3; matching local signatures carry no distinguishing information.",
+      "length": 16,
+      "low_weight_certificate": {
+        "certified_minimum_distance_strictly_greater_than": null,
+        "checked_subset_count": 854,
+        "cost_model": "Exact distinct-column zero-sum enumeration through order 4; O(n^4) for fixed order.",
+        "minimum_weight_witness_at_most_cap": 4,
+        "search_complete_through": 4,
+        "witness_coordinates": [
+          0,
+          2,
+          10,
+          14
+        ]
+      },
+      "predicted_profiles": [
+        [
+          1,
+          8,
+          7,
+          7,
+          7
+        ],
+        [
+          2,
+          8,
+          6,
+          6,
+          6
+        ],
+        [
+          3,
+          8,
+          5,
+          5,
+          5
+        ]
+      ],
+      "profile_validation_failure_count": 0,
+      "self_dual_certificate_passed": true,
+      "status": "proved-local-profile-collapse-through-order-3",
+      "total_subsets_covered_by_theorem": 696,
+      "validated_subset_count": 696
+    },
+    {
+      "certified_collapse_order": 3,
+      "dimension": 8,
+      "exact_distance_validation_passed": true,
+      "exact_minimum_distance": 4,
+      "family_id": "self-dual-k8",
+      "instance_id": "self-dual-k8-instance-07",
+      "interpretation": "Self-duality and the certified distance bound force every puncture/shorten rank-hull profile through order 3; matching local signatures carry no distinguishing information.",
+      "length": 16,
+      "low_weight_certificate": {
+        "certified_minimum_distance_strictly_greater_than": null,
+        "checked_subset_count": 746,
+        "cost_model": "Exact distinct-column zero-sum enumeration through order 4; O(n^4) for fixed order.",
+        "minimum_weight_witness_at_most_cap": 4,
+        "search_complete_through": 4,
+        "witness_coordinates": [
+          0,
+          1,
+          6,
+          10
+        ]
+      },
+      "predicted_profiles": [
+        [
+          1,
+          8,
+          7,
+          7,
+          7
+        ],
+        [
+          2,
+          8,
+          6,
+          6,
+          6
+        ],
+        [
+          3,
+          8,
+          5,
+          5,
+          5
+        ]
+      ],
+      "profile_validation_failure_count": 0,
+      "self_dual_certificate_passed": true,
+      "status": "proved-local-profile-collapse-through-order-3",
+      "total_subsets_covered_by_theorem": 696,
+      "validated_subset_count": 696
+    },
+    {
+      "certified_collapse_order": 3,
+      "dimension": 8,
+      "exact_distance_validation_passed": true,
+      "exact_minimum_distance": 4,
+      "family_id": "self-dual-k8",
+      "instance_id": "self-dual-k8-instance-08",
+      "interpretation": "Self-duality and the certified distance bound force every puncture/shorten rank-hull profile through order 3; matching local signatures carry no distinguishing information.",
+      "length": 16,
+      "low_weight_certificate": {
+        "certified_minimum_distance_strictly_greater_than": null,
+        "checked_subset_count": 1054,
+        "cost_model": "Exact distinct-column zero-sum enumeration through order 4; O(n^4) for fixed order.",
+        "minimum_weight_witness_at_most_cap": 4,
+        "search_complete_through": 4,
+        "witness_coordinates": [
+          0,
+          6,
+          10,
+          12
+        ]
+      },
+      "predicted_profiles": [
+        [
+          1,
+          8,
+          7,
+          7,
+          7
+        ],
+        [
+          2,
+          8,
+          6,
+          6,
+          6
+        ],
+        [
+          3,
+          8,
+          5,
+          5,
+          5
+        ]
+      ],
+      "profile_validation_failure_count": 0,
+      "self_dual_certificate_passed": true,
+      "status": "proved-local-profile-collapse-through-order-3",
+      "total_subsets_covered_by_theorem": 696,
+      "validated_subset_count": 696
+    },
+    {
+      "certified_collapse_order": 3,
+      "dimension": 8,
+      "exact_distance_validation_passed": true,
+      "exact_minimum_distance": 4,
+      "family_id": "self-dual-k8",
+      "instance_id": "self-dual-k8-instance-09",
+      "interpretation": "Self-duality and the certified distance bound force every puncture/shorten rank-hull profile through order 3; matching local signatures carry no distinguishing information.",
+      "length": 16,
+      "low_weight_certificate": {
+        "certified_minimum_distance_strictly_greater_than": null,
+        "checked_subset_count": 755,
+        "cost_model": "Exact distinct-column zero-sum enumeration through order 4; O(n^4) for fixed order.",
+        "minimum_weight_witness_at_most_cap": 4,
+        "search_complete_through": 4,
+        "witness_coordinates": [
+          0,
+          1,
+          7,
+          11
+        ]
+      },
+      "predicted_profiles": [
+        [
+          1,
+          8,
+          7,
+          7,
+          7
+        ],
+        [
+          2,
+          8,
+          6,
+          6,
+          6
+        ],
+        [
+          3,
+          8,
+          5,
+          5,
+          5
+        ]
+      ],
+      "profile_validation_failure_count": 0,
+      "self_dual_certificate_passed": true,
+      "status": "proved-local-profile-collapse-through-order-3",
+      "total_subsets_covered_by_theorem": 696,
+      "validated_subset_count": 696
+    },
+    {
+      "certified_collapse_order": 1,
+      "dimension": 8,
+      "exact_distance_validation_passed": true,
+      "exact_minimum_distance": 2,
+      "family_id": "self-dual-k8",
+      "instance_id": "self-dual-k8-instance-10",
+      "interpretation": "Self-duality and the certified distance bound force every puncture/shorten rank-hull profile through order 1; matching local signatures carry no distinguishing information.",
+      "length": 16,
+      "low_weight_certificate": {
+        "certified_minimum_distance_strictly_greater_than": null,
+        "checked_subset_count": 104,
+        "cost_model": "Exact distinct-column zero-sum enumeration through order 4; O(n^4) for fixed order.",
+        "minimum_weight_witness_at_most_cap": 2,
+        "search_complete_through": 4,
+        "witness_coordinates": [
+          7,
+          11
+        ]
+      },
+      "predicted_profiles": [
+        [
+          1,
+          8,
+          7,
+          7,
+          7
+        ]
+      ],
+      "profile_validation_failure_count": 0,
+      "self_dual_certificate_passed": true,
+      "status": "proved-local-profile-collapse-through-order-1",
+      "total_subsets_covered_by_theorem": 16,
+      "validated_subset_count": 16
+    },
+    {
+      "certified_collapse_order": 3,
+      "dimension": 8,
+      "exact_distance_validation_passed": true,
+      "exact_minimum_distance": 4,
+      "family_id": "self-dual-k8",
+      "instance_id": "self-dual-k8-instance-11",
+      "interpretation": "Self-duality and the certified distance bound force every puncture/shorten rank-hull profile through order 3; matching local signatures carry no distinguishing information.",
+      "length": 16,
+      "low_weight_certificate": {
+        "certified_minimum_distance_strictly_greater_than": null,
+        "checked_subset_count": 795,
+        "cost_model": "Exact distinct-column zero-sum enumeration through order 4; O(n^4) for fixed order.",
+        "minimum_weight_witness_at_most_cap": 4,
+        "search_complete_through": 4,
+        "witness_coordinates": [
+          0,
+          2,
+          3,
+          11
+        ]
+      },
+      "predicted_profiles": [
+        [
+          1,
+          8,
+          7,
+          7,
+          7
+        ],
+        [
+          2,
+          8,
+          6,
+          6,
+          6
+        ],
+        [
+          3,
+          8,
+          5,
+          5,
+          5
+        ]
+      ],
+      "profile_validation_failure_count": 0,
+      "self_dual_certificate_passed": true,
+      "status": "proved-local-profile-collapse-through-order-3",
+      "total_subsets_covered_by_theorem": 696,
+      "validated_subset_count": 696
+    },
+    {
+      "certified_collapse_order": 1,
+      "dimension": 10,
+      "exact_distance_validation_passed": true,
+      "exact_minimum_distance": 2,
+      "family_id": "self-dual-k10",
+      "instance_id": "self-dual-k10-instance-00",
+      "interpretation": "Self-duality and the certified distance bound force every puncture/shorten rank-hull profile through order 1; matching local signatures carry no distinguishing information.",
+      "length": 20,
+      "low_weight_certificate": {
+        "certified_minimum_distance_strictly_greater_than": null,
+        "checked_subset_count": 99,
+        "cost_model": "Exact distinct-column zero-sum enumeration through order 4; O(n^4) for fixed order.",
+        "minimum_weight_witness_at_most_cap": 2,
+        "search_complete_through": 4,
+        "witness_coordinates": [
+          4,
+          13
+        ]
+      },
+      "predicted_profiles": [
+        [
+          1,
+          10,
+          9,
+          9,
+          9
+        ]
+      ],
+      "profile_validation_failure_count": 0,
+      "self_dual_certificate_passed": true,
+      "status": "proved-local-profile-collapse-through-order-1",
+      "total_subsets_covered_by_theorem": 20,
+      "validated_subset_count": 20
+    },
+    {
+      "certified_collapse_order": 3,
+      "dimension": 10,
+      "exact_distance_validation_passed": true,
+      "exact_minimum_distance": 4,
+      "family_id": "self-dual-k10",
+      "instance_id": "self-dual-k10-instance-01",
+      "interpretation": "Self-duality and the certified distance bound force every puncture/shorten rank-hull profile through order 3; matching local signatures carry no distinguishing information.",
+      "length": 20,
+      "low_weight_certificate": {
+        "certified_minimum_distance_strictly_greater_than": null,
+        "checked_subset_count": 1457,
+        "cost_model": "Exact distinct-column zero-sum enumeration through order 4; O(n^4) for fixed order.",
+        "minimum_weight_witness_at_most_cap": 4,
+        "search_complete_through": 4,
+        "witness_coordinates": [
+          0,
+          1,
+          9,
+          18
+        ]
+      },
+      "predicted_profiles": [
+        [
+          1,
+          10,
+          9,
+          9,
+          9
+        ],
+        [
+          2,
+          10,
+          8,
+          8,
+          8
+        ],
+        [
+          3,
+          10,
+          7,
+          7,
+          7
+        ]
+      ],
+      "profile_validation_failure_count": 0,
+      "self_dual_certificate_passed": true,
+      "status": "proved-local-profile-collapse-through-order-3",
+      "total_subsets_covered_by_theorem": 1350,
+      "validated_subset_count": 1350
+    },
+    {
+      "certified_collapse_order": 3,
+      "dimension": 10,
+      "exact_distance_validation_passed": true,
+      "exact_minimum_distance": 4,
+      "family_id": "self-dual-k10",
+      "instance_id": "self-dual-k10-instance-02",
+      "interpretation": "Self-duality and the certified distance bound force every puncture/shorten rank-hull profile through order 3; matching local signatures carry no distinguishing information.",
+      "length": 20,
+      "low_weight_certificate": {
+        "certified_minimum_distance_strictly_greater_than": null,
+        "checked_subset_count": 1709,
+        "cost_model": "Exact distinct-column zero-sum enumeration through order 4; O(n^4) for fixed order.",
+        "minimum_weight_witness_at_most_cap": 4,
+        "search_complete_through": 4,
+        "witness_coordinates": [
+          0,
+          3,
+          9,
+          14
+        ]
+      },
+      "predicted_profiles": [
+        [
+          1,
+          10,
+          9,
+          9,
+          9
+        ],
+        [
+          2,
+          10,
+          8,
+          8,
+          8
+        ],
+        [
+          3,
+          10,
+          7,
+          7,
+          7
+        ]
+      ],
+      "profile_validation_failure_count": 0,
+      "self_dual_certificate_passed": true,
+      "status": "proved-local-profile-collapse-through-order-3",
+      "total_subsets_covered_by_theorem": 1350,
+      "validated_subset_count": 1350
+    },
+    {
+      "certified_collapse_order": 3,
+      "dimension": 10,
+      "exact_distance_validation_passed": true,
+      "exact_minimum_distance": 4,
+      "family_id": "self-dual-k10",
+      "instance_id": "self-dual-k10-instance-03",
+      "interpretation": "Self-duality and the certified distance bound force every puncture/shorten rank-hull profile through order 3; matching local signatures carry no distinguishing information.",
+      "length": 20,
+      "low_weight_certificate": {
+        "certified_minimum_distance_strictly_greater_than": null,
+        "checked_subset_count": 1877,
+        "cost_model": "Exact distinct-column zero-sum enumeration through order 4; O(n^4) for fixed order.",
+        "minimum_weight_witness_at_most_cap": 4,
+        "search_complete_through": 4,
+        "witness_coordinates": [
+          0,
+          5,
+          6,
+          19
+        ]
+      },
+      "predicted_profiles": [
+        [
+          1,
+          10,
+          9,
+          9,
+          9
+        ],
+        [
+          2,
+          10,
+          8,
+          8,
+          8
+        ],
+        [
+          3,
+          10,
+          7,
+          7,
+          7
+        ]
+      ],
+      "profile_validation_failure_count": 0,
+      "self_dual_certificate_passed": true,
+      "status": "proved-local-profile-collapse-through-order-3",
+      "total_subsets_covered_by_theorem": 1350,
+      "validated_subset_count": 1350
+    },
+    {
+      "certified_collapse_order": 1,
+      "dimension": 10,
+      "exact_distance_validation_passed": true,
+      "exact_minimum_distance": 2,
+      "family_id": "self-dual-k10",
+      "instance_id": "self-dual-k10-instance-04",
+      "interpretation": "Self-duality and the certified distance bound force every puncture/shorten rank-hull profile through order 1; matching local signatures carry no distinguishing information.",
+      "length": 20,
+      "low_weight_certificate": {
+        "certified_minimum_distance_strictly_greater_than": null,
+        "checked_subset_count": 136,
+        "cost_model": "Exact distinct-column zero-sum enumeration through order 4; O(n^4) for fixed order.",
+        "minimum_weight_witness_at_most_cap": 2,
+        "search_complete_through": 4,
+        "witness_coordinates": [
+          7,
+          11
+        ]
+      },
+      "predicted_profiles": [
+        [
+          1,
+          10,
+          9,
+          9,
+          9
+        ]
+      ],
+      "profile_validation_failure_count": 0,
+      "self_dual_certificate_passed": true,
+      "status": "proved-local-profile-collapse-through-order-1",
+      "total_subsets_covered_by_theorem": 20,
+      "validated_subset_count": 20
+    },
+    {
+      "certified_collapse_order": 3,
+      "dimension": 10,
+      "exact_distance_validation_passed": true,
+      "exact_minimum_distance": 4,
+      "family_id": "self-dual-k10",
+      "instance_id": "self-dual-k10-instance-05",
+      "interpretation": "Self-duality and the certified distance bound force every puncture/shorten rank-hull profile through order 3; matching local signatures carry no distinguishing information.",
+      "length": 20,
+      "low_weight_certificate": {
+        "certified_minimum_distance_strictly_greater_than": null,
+        "checked_subset_count": 1793,
+        "cost_model": "Exact distinct-column zero-sum enumeration through order 4; O(n^4) for fixed order.",
+        "minimum_weight_witness_at_most_cap": 4,
+        "search_complete_through": 4,
+        "witness_coordinates": [
+          0,
+          4,
+          7,
+          14
+        ]
+      },
+      "predicted_profiles": [
+        [
+          1,
+          10,
+          9,
+          9,
+          9
+        ],
+        [
+          2,
+          10,
+          8,
+          8,
+          8
+        ],
+        [
+          3,
+          10,
+          7,
+          7,
+          7
+        ]
+      ],
+      "profile_validation_failure_count": 0,
+      "self_dual_certificate_passed": true,
+      "status": "proved-local-profile-collapse-through-order-3",
+      "total_subsets_covered_by_theorem": 1350,
+      "validated_subset_count": 1350
+    },
+    {
+      "certified_collapse_order": 1,
+      "dimension": 10,
+      "exact_distance_validation_passed": true,
+      "exact_minimum_distance": 2,
+      "family_id": "self-dual-k10",
+      "instance_id": "self-dual-k10-instance-06",
+      "interpretation": "Self-duality and the certified distance bound force every puncture/shorten rank-hull profile through order 1; matching local signatures carry no distinguishing information.",
+      "length": 20,
+      "low_weight_certificate": {
+        "certified_minimum_distance_strictly_greater_than": null,
+        "checked_subset_count": 35,
+        "cost_model": "Exact distinct-column zero-sum enumeration through order 4; O(n^4) for fixed order.",
+        "minimum_weight_witness_at_most_cap": 2,
+        "search_complete_through": 4,
+        "witness_coordinates": [
+          0,
+          15
+        ]
+      },
+      "predicted_profiles": [
+        [
+          1,
+          10,
+          9,
+          9,
+          9
+        ]
+      ],
+      "profile_validation_failure_count": 0,
+      "self_dual_certificate_passed": true,
+      "status": "proved-local-profile-collapse-through-order-1",
+      "total_subsets_covered_by_theorem": 20,
+      "validated_subset_count": 20
+    },
+    {
+      "certified_collapse_order": 3,
+      "dimension": 10,
+      "exact_distance_validation_passed": true,
+      "exact_minimum_distance": 4,
+      "family_id": "self-dual-k10",
+      "instance_id": "self-dual-k10-instance-07",
+      "interpretation": "Self-duality and the certified distance bound force every puncture/shorten rank-hull profile through order 3; matching local signatures carry no distinguishing information.",
+      "length": 20,
+      "low_weight_certificate": {
+        "certified_minimum_distance_strictly_greater_than": null,
+        "checked_subset_count": 1919,
+        "cost_model": "Exact distinct-column zero-sum enumeration through order 4; O(n^4) for fixed order.",
+        "minimum_weight_witness_at_most_cap": 4,
+        "search_complete_through": 4,
+        "witness_coordinates": [
+          0,
+          5,
+          10,
+          19
+        ]
+      },
+      "predicted_profiles": [
+        [
+          1,
+          10,
+          9,
+          9,
+          9
+        ],
+        [
+          2,
+          10,
+          8,
+          8,
+          8
+        ],
+        [
+          3,
+          10,
+          7,
+          7,
+          7
+        ]
+      ],
+      "profile_validation_failure_count": 0,
+      "self_dual_certificate_passed": true,
+      "status": "proved-local-profile-collapse-through-order-3",
+      "total_subsets_covered_by_theorem": 1350,
+      "validated_subset_count": 1350
+    },
+    {
+      "certified_collapse_order": 3,
+      "dimension": 10,
+      "exact_distance_validation_passed": true,
+      "exact_minimum_distance": 4,
+      "family_id": "self-dual-k10",
+      "instance_id": "self-dual-k10-instance-08",
+      "interpretation": "Self-duality and the certified distance bound force every puncture/shorten rank-hull profile through order 3; matching local signatures carry no distinguishing information.",
+      "length": 20,
+      "low_weight_certificate": {
+        "certified_minimum_distance_strictly_greater_than": null,
+        "checked_subset_count": 1904,
+        "cost_model": "Exact distinct-column zero-sum enumeration through order 4; O(n^4) for fixed order.",
+        "minimum_weight_witness_at_most_cap": 4,
+        "search_complete_through": 4,
+        "witness_coordinates": [
+          0,
+          5,
+          9,
+          13
+        ]
+      },
+      "predicted_profiles": [
+        [
+          1,
+          10,
+          9,
+          9,
+          9
+        ],
+        [
+          2,
+          10,
+          8,
+          8,
+          8
+        ],
+        [
+          3,
+          10,
+          7,
+          7,
+          7
+        ]
+      ],
+      "profile_validation_failure_count": 0,
+      "self_dual_certificate_passed": true,
+      "status": "proved-local-profile-collapse-through-order-3",
+      "total_subsets_covered_by_theorem": 1350,
+      "validated_subset_count": 1350
+    },
+    {
+      "certified_collapse_order": 3,
+      "dimension": 10,
+      "exact_distance_validation_passed": true,
+      "exact_minimum_distance": 4,
+      "family_id": "self-dual-k10",
+      "instance_id": "self-dual-k10-instance-09",
+      "interpretation": "Self-duality and the certified distance bound force every puncture/shorten rank-hull profile through order 3; matching local signatures carry no distinguishing information.",
+      "length": 20,
+      "low_weight_certificate": {
+        "certified_minimum_distance_strictly_greater_than": null,
+        "checked_subset_count": 1411,
+        "cost_model": "Exact distinct-column zero-sum enumeration through order 4; O(n^4) for fixed order.",
+        "minimum_weight_witness_at_most_cap": 4,
+        "search_complete_through": 4,
+        "witness_coordinates": [
+          0,
+          1,
+          5,
+          18
+        ]
+      },
+      "predicted_profiles": [
+        [
+          1,
+          10,
+          9,
+          9,
+          9
+        ],
+        [
+          2,
+          10,
+          8,
+          8,
+          8
+        ],
+        [
+          3,
+          10,
+          7,
+          7,
+          7
+        ]
+      ],
+      "profile_validation_failure_count": 0,
+      "self_dual_certificate_passed": true,
+      "status": "proved-local-profile-collapse-through-order-3",
+      "total_subsets_covered_by_theorem": 1350,
+      "validated_subset_count": 1350
+    },
+    {
+      "certified_collapse_order": 1,
+      "dimension": 12,
+      "exact_distance_validation_passed": true,
+      "exact_minimum_distance": 2,
+      "family_id": "self-dual-k12",
+      "instance_id": "self-dual-k12-instance-00",
+      "interpretation": "Self-duality and the certified distance bound force every puncture/shorten rank-hull profile through order 1; matching local signatures carry no distinguishing information.",
+      "length": 24,
+      "low_weight_certificate": {
+        "certified_minimum_distance_strictly_greater_than": null,
+        "checked_subset_count": 169,
+        "cost_model": "Exact distinct-column zero-sum enumeration through order 4; O(n^4) for fixed order.",
+        "minimum_weight_witness_at_most_cap": 2,
+        "search_complete_through": 4,
+        "witness_coordinates": [
+          7,
+          12
+        ]
+      },
+      "predicted_profiles": [
+        [
+          1,
+          12,
+          11,
+          11,
+          11
+        ]
+      ],
+      "profile_validation_failure_count": 0,
+      "self_dual_certificate_passed": true,
+      "status": "proved-local-profile-collapse-through-order-1",
+      "total_subsets_covered_by_theorem": 24,
+      "validated_subset_count": 24
+    },
+    {
+      "certified_collapse_order": 3,
+      "dimension": 12,
+      "exact_distance_validation_passed": true,
+      "exact_minimum_distance": 4,
+      "family_id": "self-dual-k12",
+      "instance_id": "self-dual-k12-instance-01",
+      "interpretation": "Self-duality and the certified distance bound force every puncture/shorten rank-hull profile through order 3; matching local signatures carry no distinguishing information.",
+      "length": 24,
+      "low_weight_certificate": {
+        "certified_minimum_distance_strictly_greater_than": null,
+        "checked_subset_count": 3069,
+        "cost_model": "Exact distinct-column zero-sum enumeration through order 4; O(n^4) for fixed order.",
+        "minimum_weight_witness_at_most_cap": 4,
+        "search_complete_through": 4,
+        "witness_coordinates": [
+          0,
+          4,
+          12,
+          21
+        ]
+      },
+      "predicted_profiles": [
+        [
+          1,
+          12,
+          11,
+          11,
+          11
+        ],
+        [
+          2,
+          12,
+          10,
+          10,
+          10
+        ],
+        [
+          3,
+          12,
+          9,
+          9,
+          9
+        ]
+      ],
+      "profile_validation_failure_count": 0,
+      "self_dual_certificate_passed": true,
+      "status": "proved-local-profile-collapse-through-order-3",
+      "total_subsets_covered_by_theorem": 2324,
+      "validated_subset_count": 2324
+    },
+    {
+      "certified_collapse_order": 3,
+      "dimension": 12,
+      "exact_distance_validation_passed": true,
+      "exact_minimum_distance": 4,
+      "family_id": "self-dual-k12",
+      "instance_id": "self-dual-k12-instance-02",
+      "interpretation": "Self-duality and the certified distance bound force every puncture/shorten rank-hull profile through order 3; matching local signatures carry no distinguishing information.",
+      "length": 24,
+      "low_weight_certificate": {
+        "certified_minimum_distance_strictly_greater_than": null,
+        "checked_subset_count": 3968,
+        "cost_model": "Exact distinct-column zero-sum enumeration through order 4; O(n^4) for fixed order.",
+        "minimum_weight_witness_at_most_cap": 4,
+        "search_complete_through": 4,
+        "witness_coordinates": [
+          0,
+          13,
+          19,
+          22
+        ]
+      },
+      "predicted_profiles": [
+        [
+          1,
+          12,
+          11,
+          11,
+          11
+        ],
+        [
+          2,
+          12,
+          10,
+          10,
+          10
+        ],
+        [
+          3,
+          12,
+          9,
+          9,
+          9
+        ]
+      ],
+      "profile_validation_failure_count": 0,
+      "self_dual_certificate_passed": true,
+      "status": "proved-local-profile-collapse-through-order-3",
+      "total_subsets_covered_by_theorem": 2324,
+      "validated_subset_count": 2324
+    },
+    {
+      "certified_collapse_order": 3,
+      "dimension": 12,
+      "exact_distance_validation_passed": true,
+      "exact_minimum_distance": 4,
+      "family_id": "self-dual-k12",
+      "instance_id": "self-dual-k12-instance-03",
+      "interpretation": "Self-duality and the certified distance bound force every puncture/shorten rank-hull profile through order 3; matching local signatures carry no distinguishing information.",
+      "length": 24,
+      "low_weight_certificate": {
+        "certified_minimum_distance_strictly_greater_than": null,
+        "checked_subset_count": 3230,
+        "cost_model": "Exact distinct-column zero-sum enumeration through order 4; O(n^4) for fixed order.",
+        "minimum_weight_witness_at_most_cap": 4,
+        "search_complete_through": 4,
+        "witness_coordinates": [
+          0,
+          5,
+          13,
+          19
+        ]
+      },
+      "predicted_profiles": [
+        [
+          1,
+          12,
+          11,
+          11,
+          11
+        ],
+        [
+          2,
+          12,
+          10,
+          10,
+          10
+        ],
+        [
+          3,
+          12,
+          9,
+          9,
+          9
+        ]
+      ],
+      "profile_validation_failure_count": 0,
+      "self_dual_certificate_passed": true,
+      "status": "proved-local-profile-collapse-through-order-3",
+      "total_subsets_covered_by_theorem": 2324,
+      "validated_subset_count": 2324
+    },
+    {
+      "certified_collapse_order": 3,
+      "dimension": 12,
+      "exact_distance_validation_passed": true,
+      "exact_minimum_distance": 4,
+      "family_id": "self-dual-k12",
+      "instance_id": "self-dual-k12-instance-04",
+      "interpretation": "Self-duality and the certified distance bound force every puncture/shorten rank-hull profile through order 3; matching local signatures carry no distinguishing information.",
+      "length": 24,
+      "low_weight_certificate": {
+        "certified_minimum_distance_strictly_greater_than": null,
+        "checked_subset_count": 2761,
+        "cost_model": "Exact distinct-column zero-sum enumeration through order 4; O(n^4) for fixed order.",
+        "minimum_weight_witness_at_most_cap": 4,
+        "search_complete_through": 4,
+        "witness_coordinates": [
+          0,
+          2,
+          20,
+          22
+        ]
+      },
+      "predicted_profiles": [
+        [
+          1,
+          12,
+          11,
+          11,
+          11
+        ],
+        [
+          2,
+          12,
+          10,
+          10,
+          10
+        ],
+        [
+          3,
+          12,
+          9,
+          9,
+          9
+        ]
+      ],
+      "profile_validation_failure_count": 0,
+      "self_dual_certificate_passed": true,
+      "status": "proved-local-profile-collapse-through-order-3",
+      "total_subsets_covered_by_theorem": 2324,
+      "validated_subset_count": 2324
+    },
+    {
+      "certified_collapse_order": 3,
+      "dimension": 12,
+      "exact_distance_validation_passed": true,
+      "exact_minimum_distance": 4,
+      "family_id": "self-dual-k12",
+      "instance_id": "self-dual-k12-instance-05",
+      "interpretation": "Self-duality and the certified distance bound force every puncture/shorten rank-hull profile through order 3; matching local signatures carry no distinguishing information.",
+      "length": 24,
+      "low_weight_certificate": {
+        "certified_minimum_distance_strictly_greater_than": null,
+        "checked_subset_count": 2493,
+        "cost_model": "Exact distinct-column zero-sum enumeration through order 4; O(n^4) for fixed order.",
+        "minimum_weight_witness_at_most_cap": 4,
+        "search_complete_through": 4,
+        "witness_coordinates": [
+          0,
+          1,
+          12,
+          16
+        ]
+      },
+      "predicted_profiles": [
+        [
+          1,
+          12,
+          11,
+          11,
+          11
+        ],
+        [
+          2,
+          12,
+          10,
+          10,
+          10
+        ],
+        [
+          3,
+          12,
+          9,
+          9,
+          9
+        ]
+      ],
+      "profile_validation_failure_count": 0,
+      "self_dual_certificate_passed": true,
+      "status": "proved-local-profile-collapse-through-order-3",
+      "total_subsets_covered_by_theorem": 2324,
+      "validated_subset_count": 2324
+    },
+    {
+      "certified_collapse_order": 3,
+      "dimension": 12,
+      "exact_distance_validation_passed": true,
+      "exact_minimum_distance": 4,
+      "family_id": "self-dual-k12",
+      "instance_id": "self-dual-k12-instance-06",
+      "interpretation": "Self-duality and the certified distance bound force every puncture/shorten rank-hull profile through order 3; matching local signatures carry no distinguishing information.",
+      "length": 24,
+      "low_weight_certificate": {
+        "certified_minimum_distance_strictly_greater_than": null,
+        "checked_subset_count": 3739,
+        "cost_model": "Exact distinct-column zero-sum enumeration through order 4; O(n^4) for fixed order.",
+        "minimum_weight_witness_at_most_cap": 4,
+        "search_complete_through": 4,
+        "witness_coordinates": [
+          0,
+          10,
+          11,
+          19
+        ]
+      },
+      "predicted_profiles": [
+        [
+          1,
+          12,
+          11,
+          11,
+          11
+        ],
+        [
+          2,
+          12,
+          10,
+          10,
+          10
+        ],
+        [
+          3,
+          12,
+          9,
+          9,
+          9
+        ]
+      ],
+      "profile_validation_failure_count": 0,
+      "self_dual_certificate_passed": true,
+      "status": "proved-local-profile-collapse-through-order-3",
+      "total_subsets_covered_by_theorem": 2324,
+      "validated_subset_count": 2324
+    },
+    {
+      "certified_collapse_order": 3,
+      "dimension": 12,
+      "exact_distance_validation_passed": true,
+      "exact_minimum_distance": 4,
+      "family_id": "self-dual-k12",
+      "instance_id": "self-dual-k12-instance-07",
+      "interpretation": "Self-duality and the certified distance bound force every puncture/shorten rank-hull profile through order 3; matching local signatures carry no distinguishing information.",
+      "length": 24,
+      "low_weight_certificate": {
+        "certified_minimum_distance_strictly_greater_than": null,
+        "checked_subset_count": 4065,
+        "cost_model": "Exact distinct-column zero-sum enumeration through order 4; O(n^4) for fixed order.",
+        "minimum_weight_witness_at_most_cap": 4,
+        "search_complete_through": 4,
+        "witness_coordinates": [
+          0,
+          17,
+          18,
+          23
+        ]
+      },
+      "predicted_profiles": [
+        [
+          1,
+          12,
+          11,
+          11,
+          11
+        ],
+        [
+          2,
+          12,
+          10,
+          10,
+          10
+        ],
+        [
+          3,
+          12,
+          9,
+          9,
+          9
+        ]
+      ],
+      "profile_validation_failure_count": 0,
+      "self_dual_certificate_passed": true,
+      "status": "proved-local-profile-collapse-through-order-3",
+      "total_subsets_covered_by_theorem": 2324,
+      "validated_subset_count": 2324
+    },
+    {
+      "certified_collapse_order": 4,
+      "dimension": 16,
+      "exact_distance_validation_passed": null,
+      "exact_minimum_distance": null,
+      "family_id": "self-dual-k16",
+      "instance_id": "self-dual-k16-instance-00",
+      "interpretation": "Self-duality and the certified distance bound force every puncture/shorten rank-hull profile through order 4; matching local signatures carry no distinguishing information.",
+      "length": 32,
+      "low_weight_certificate": {
+        "certified_minimum_distance_strictly_greater_than": 4,
+        "checked_subset_count": 41448,
+        "cost_model": "Exact distinct-column zero-sum enumeration through order 4; O(n^4) for fixed order.",
+        "minimum_weight_witness_at_most_cap": null,
+        "search_complete_through": 4,
+        "witness_coordinates": null
+      },
+      "predicted_profiles": [
+        [
+          1,
+          16,
+          15,
+          15,
+          15
+        ],
+        [
+          2,
+          16,
+          14,
+          14,
+          14
+        ],
+        [
+          3,
+          16,
+          13,
+          13,
+          13
+        ],
+        [
+          4,
+          16,
+          12,
+          12,
+          12
+        ]
+      ],
+      "profile_validation_failure_count": 0,
+      "self_dual_certificate_passed": true,
+      "status": "proved-local-profile-collapse-through-order-4",
+      "total_subsets_covered_by_theorem": 41448,
+      "validated_subset_count": 720
+    },
+    {
+      "certified_collapse_order": 4,
+      "dimension": 16,
+      "exact_distance_validation_passed": null,
+      "exact_minimum_distance": null,
+      "family_id": "self-dual-k16",
+      "instance_id": "self-dual-k16-instance-01",
+      "interpretation": "Self-duality and the certified distance bound force every puncture/shorten rank-hull profile through order 4; matching local signatures carry no distinguishing information.",
+      "length": 32,
+      "low_weight_certificate": {
+        "certified_minimum_distance_strictly_greater_than": 4,
+        "checked_subset_count": 41448,
+        "cost_model": "Exact distinct-column zero-sum enumeration through order 4; O(n^4) for fixed order.",
+        "minimum_weight_witness_at_most_cap": null,
+        "search_complete_through": 4,
+        "witness_coordinates": null
+      },
+      "predicted_profiles": [
+        [
+          1,
+          16,
+          15,
+          15,
+          15
+        ],
+        [
+          2,
+          16,
+          14,
+          14,
+          14
+        ],
+        [
+          3,
+          16,
+          13,
+          13,
+          13
+        ],
+        [
+          4,
+          16,
+          12,
+          12,
+          12
+        ]
+      ],
+      "profile_validation_failure_count": 0,
+      "self_dual_certificate_passed": true,
+      "status": "proved-local-profile-collapse-through-order-4",
+      "total_subsets_covered_by_theorem": 41448,
+      "validated_subset_count": 720
+    },
+    {
+      "certified_collapse_order": 4,
+      "dimension": 16,
+      "exact_distance_validation_passed": null,
+      "exact_minimum_distance": null,
+      "family_id": "self-dual-k16",
+      "instance_id": "self-dual-k16-instance-02",
+      "interpretation": "Self-duality and the certified distance bound force every puncture/shorten rank-hull profile through order 4; matching local signatures carry no distinguishing information.",
+      "length": 32,
+      "low_weight_certificate": {
+        "certified_minimum_distance_strictly_greater_than": 4,
+        "checked_subset_count": 41448,
+        "cost_model": "Exact distinct-column zero-sum enumeration through order 4; O(n^4) for fixed order.",
+        "minimum_weight_witness_at_most_cap": null,
+        "search_complete_through": 4,
+        "witness_coordinates": null
+      },
+      "predicted_profiles": [
+        [
+          1,
+          16,
+          15,
+          15,
+          15
+        ],
+        [
+          2,
+          16,
+          14,
+          14,
+          14
+        ],
+        [
+          3,
+          16,
+          13,
+          13,
+          13
+        ],
+        [
+          4,
+          16,
+          12,
+          12,
+          12
+        ]
+      ],
+      "profile_validation_failure_count": 0,
+      "self_dual_certificate_passed": true,
+      "status": "proved-local-profile-collapse-through-order-4",
+      "total_subsets_covered_by_theorem": 41448,
+      "validated_subset_count": 720
+    },
+    {
+      "certified_collapse_order": 3,
+      "dimension": 16,
+      "exact_distance_validation_passed": null,
+      "exact_minimum_distance": null,
+      "family_id": "self-dual-k16",
+      "instance_id": "self-dual-k16-instance-03",
+      "interpretation": "Self-duality and the certified distance bound force every puncture/shorten rank-hull profile through order 3; matching local signatures carry no distinguishing information.",
+      "length": 32,
+      "low_weight_certificate": {
+        "certified_minimum_distance_strictly_greater_than": null,
+        "checked_subset_count": 23418,
+        "cost_model": "Exact distinct-column zero-sum enumeration through order 4; O(n^4) for fixed order.",
+        "minimum_weight_witness_at_most_cap": 4,
+        "search_complete_through": 4,
+        "witness_coordinates": [
+          4,
+          16,
+          24,
+          27
+        ]
+      },
+      "predicted_profiles": [
+        [
+          1,
+          16,
+          15,
+          15,
+          15
+        ],
+        [
+          2,
+          16,
+          14,
+          14,
+          14
+        ],
+        [
+          3,
+          16,
+          13,
+          13,
+          13
+        ]
+      ],
+      "profile_validation_failure_count": 0,
+      "self_dual_certificate_passed": true,
+      "status": "proved-local-profile-collapse-through-order-3",
+      "total_subsets_covered_by_theorem": 5488,
+      "validated_subset_count": 624
+    },
+    {
+      "certified_collapse_order": 4,
+      "dimension": 16,
+      "exact_distance_validation_passed": null,
+      "exact_minimum_distance": null,
+      "family_id": "self-dual-k16",
+      "instance_id": "self-dual-k16-instance-04",
+      "interpretation": "Self-duality and the certified distance bound force every puncture/shorten rank-hull profile through order 4; matching local signatures carry no distinguishing information.",
+      "length": 32,
+      "low_weight_certificate": {
+        "certified_minimum_distance_strictly_greater_than": 4,
+        "checked_subset_count": 41448,
+        "cost_model": "Exact distinct-column zero-sum enumeration through order 4; O(n^4) for fixed order.",
+        "minimum_weight_witness_at_most_cap": null,
+        "search_complete_through": 4,
+        "witness_coordinates": null
+      },
+      "predicted_profiles": [
+        [
+          1,
+          16,
+          15,
+          15,
+          15
+        ],
+        [
+          2,
+          16,
+          14,
+          14,
+          14
+        ],
+        [
+          3,
+          16,
+          13,
+          13,
+          13
+        ],
+        [
+          4,
+          16,
+          12,
+          12,
+          12
+        ]
+      ],
+      "profile_validation_failure_count": 0,
+      "self_dual_certificate_passed": true,
+      "status": "proved-local-profile-collapse-through-order-4",
+      "total_subsets_covered_by_theorem": 41448,
+      "validated_subset_count": 720
+    },
+    {
+      "certified_collapse_order": 3,
+      "dimension": 16,
+      "exact_distance_validation_passed": null,
+      "exact_minimum_distance": null,
+      "family_id": "self-dual-k16",
+      "instance_id": "self-dual-k16-instance-05",
+      "interpretation": "Self-duality and the certified distance bound force every puncture/shorten rank-hull profile through order 3; matching local signatures carry no distinguishing information.",
+      "length": 32,
+      "low_weight_certificate": {
+        "certified_minimum_distance_strictly_greater_than": null,
+        "checked_subset_count": 34014,
+        "cost_model": "Exact distinct-column zero-sum enumeration through order 4; O(n^4) for fixed order.",
+        "minimum_weight_witness_at_most_cap": 4,
+        "search_complete_through": 4,
+        "witness_coordinates": [
+          9,
+          22,
+          23,
+          24
+        ]
+      },
+      "predicted_profiles": [
+        [
+          1,
+          16,
+          15,
+          15,
+          15
+        ],
+        [
+          2,
+          16,
+          14,
+          14,
+          14
+        ],
+        [
+          3,
+          16,
+          13,
+          13,
+          13
+        ]
+      ],
+      "profile_validation_failure_count": 0,
+      "self_dual_certificate_passed": true,
+      "status": "proved-local-profile-collapse-through-order-3",
+      "total_subsets_covered_by_theorem": 5488,
+      "validated_subset_count": 624
+    },
+    {
+      "certified_collapse_order": 4,
+      "dimension": 16,
+      "exact_distance_validation_passed": null,
+      "exact_minimum_distance": null,
+      "family_id": "self-dual-k16",
+      "instance_id": "self-dual-k16-instance-06",
+      "interpretation": "Self-duality and the certified distance bound force every puncture/shorten rank-hull profile through order 4; matching local signatures carry no distinguishing information.",
+      "length": 32,
+      "low_weight_certificate": {
+        "certified_minimum_distance_strictly_greater_than": 4,
+        "checked_subset_count": 41448,
+        "cost_model": "Exact distinct-column zero-sum enumeration through order 4; O(n^4) for fixed order.",
+        "minimum_weight_witness_at_most_cap": null,
+        "search_complete_through": 4,
+        "witness_coordinates": null
+      },
+      "predicted_profiles": [
+        [
+          1,
+          16,
+          15,
+          15,
+          15
+        ],
+        [
+          2,
+          16,
+          14,
+          14,
+          14
+        ],
+        [
+          3,
+          16,
+          13,
+          13,
+          13
+        ],
+        [
+          4,
+          16,
+          12,
+          12,
+          12
+        ]
+      ],
+      "profile_validation_failure_count": 0,
+      "self_dual_certificate_passed": true,
+      "status": "proved-local-profile-collapse-through-order-4",
+      "total_subsets_covered_by_theorem": 41448,
+      "validated_subset_count": 720
+    },
+    {
+      "certified_collapse_order": 3,
+      "dimension": 16,
+      "exact_distance_validation_passed": null,
+      "exact_minimum_distance": null,
+      "family_id": "self-dual-k16",
+      "instance_id": "self-dual-k16-instance-07",
+      "interpretation": "Self-duality and the certified distance bound force every puncture/shorten rank-hull profile through order 3; matching local signatures carry no distinguishing information.",
+      "length": 32,
+      "low_weight_certificate": {
+        "certified_minimum_distance_strictly_greater_than": null,
+        "checked_subset_count": 23643,
+        "cost_model": "Exact distinct-column zero-sum enumeration through order 4; O(n^4) for fixed order.",
+        "minimum_weight_witness_at_most_cap": 4,
+        "search_complete_through": 4,
+        "witness_coordinates": [
+          4,
+          19,
+          23,
+          24
+        ]
+      },
+      "predicted_profiles": [
+        [
+          1,
+          16,
+          15,
+          15,
+          15
+        ],
+        [
+          2,
+          16,
+          14,
+          14,
+          14
+        ],
+        [
+          3,
+          16,
+          13,
+          13,
+          13
+        ]
+      ],
+      "profile_validation_failure_count": 0,
+      "self_dual_certificate_passed": true,
+      "status": "proved-local-profile-collapse-through-order-3",
+      "total_subsets_covered_by_theorem": 5488,
+      "validated_subset_count": 624
+    },
+    {
+      "certified_collapse_order": 4,
+      "dimension": 24,
+      "exact_distance_validation_passed": null,
+      "exact_minimum_distance": null,
+      "family_id": "self-dual-k24",
+      "instance_id": "self-dual-k24-instance-00",
+      "interpretation": "Self-duality and the certified distance bound force every puncture/shorten rank-hull profile through order 4; matching local signatures carry no distinguishing information.",
+      "length": 48,
+      "low_weight_certificate": {
+        "certified_minimum_distance_strictly_greater_than": 4,
+        "checked_subset_count": 213052,
+        "cost_model": "Exact distinct-column zero-sum enumeration through order 4; O(n^4) for fixed order.",
+        "minimum_weight_witness_at_most_cap": null,
+        "search_complete_through": 4,
+        "witness_coordinates": null
+      },
+      "predicted_profiles": [
+        [
+          1,
+          24,
+          23,
+          23,
+          23
+        ],
+        [
+          2,
+          24,
+          22,
+          22,
+          22
+        ],
+        [
+          3,
+          24,
+          21,
+          21,
+          21
+        ],
+        [
+          4,
+          24,
+          20,
+          20,
+          20
+        ]
+      ],
+      "profile_validation_failure_count": 0,
+      "self_dual_certificate_passed": true,
+      "status": "proved-local-profile-collapse-through-order-4",
+      "total_subsets_covered_by_theorem": 213052,
+      "validated_subset_count": 1368
+    },
+    {
+      "certified_collapse_order": 4,
+      "dimension": 24,
+      "exact_distance_validation_passed": null,
+      "exact_minimum_distance": null,
+      "family_id": "self-dual-k24",
+      "instance_id": "self-dual-k24-instance-01",
+      "interpretation": "Self-duality and the certified distance bound force every puncture/shorten rank-hull profile through order 4; matching local signatures carry no distinguishing information.",
+      "length": 48,
+      "low_weight_certificate": {
+        "certified_minimum_distance_strictly_greater_than": 4,
+        "checked_subset_count": 213052,
+        "cost_model": "Exact distinct-column zero-sum enumeration through order 4; O(n^4) for fixed order.",
+        "minimum_weight_witness_at_most_cap": null,
+        "search_complete_through": 4,
+        "witness_coordinates": null
+      },
+      "predicted_profiles": [
+        [
+          1,
+          24,
+          23,
+          23,
+          23
+        ],
+        [
+          2,
+          24,
+          22,
+          22,
+          22
+        ],
+        [
+          3,
+          24,
+          21,
+          21,
+          21
+        ],
+        [
+          4,
+          24,
+          20,
+          20,
+          20
+        ]
+      ],
+      "profile_validation_failure_count": 0,
+      "self_dual_certificate_passed": true,
+      "status": "proved-local-profile-collapse-through-order-4",
+      "total_subsets_covered_by_theorem": 213052,
+      "validated_subset_count": 1368
+    },
+    {
+      "certified_collapse_order": 4,
+      "dimension": 24,
+      "exact_distance_validation_passed": null,
+      "exact_minimum_distance": null,
+      "family_id": "self-dual-k24",
+      "instance_id": "self-dual-k24-instance-02",
+      "interpretation": "Self-duality and the certified distance bound force every puncture/shorten rank-hull profile through order 4; matching local signatures carry no distinguishing information.",
+      "length": 48,
+      "low_weight_certificate": {
+        "certified_minimum_distance_strictly_greater_than": 4,
+        "checked_subset_count": 213052,
+        "cost_model": "Exact distinct-column zero-sum enumeration through order 4; O(n^4) for fixed order.",
+        "minimum_weight_witness_at_most_cap": null,
+        "search_complete_through": 4,
+        "witness_coordinates": null
+      },
+      "predicted_profiles": [
+        [
+          1,
+          24,
+          23,
+          23,
+          23
+        ],
+        [
+          2,
+          24,
+          22,
+          22,
+          22
+        ],
+        [
+          3,
+          24,
+          21,
+          21,
+          21
+        ],
+        [
+          4,
+          24,
+          20,
+          20,
+          20
+        ]
+      ],
+      "profile_validation_failure_count": 0,
+      "self_dual_certificate_passed": true,
+      "status": "proved-local-profile-collapse-through-order-4",
+      "total_subsets_covered_by_theorem": 213052,
+      "validated_subset_count": 1368
+    },
+    {
+      "certified_collapse_order": 4,
+      "dimension": 24,
+      "exact_distance_validation_passed": null,
+      "exact_minimum_distance": null,
+      "family_id": "self-dual-k24",
+      "instance_id": "self-dual-k24-instance-03",
+      "interpretation": "Self-duality and the certified distance bound force every puncture/shorten rank-hull profile through order 4; matching local signatures carry no distinguishing information.",
+      "length": 48,
+      "low_weight_certificate": {
+        "certified_minimum_distance_strictly_greater_than": 4,
+        "checked_subset_count": 213052,
+        "cost_model": "Exact distinct-column zero-sum enumeration through order 4; O(n^4) for fixed order.",
+        "minimum_weight_witness_at_most_cap": null,
+        "search_complete_through": 4,
+        "witness_coordinates": null
+      },
+      "predicted_profiles": [
+        [
+          1,
+          24,
+          23,
+          23,
+          23
+        ],
+        [
+          2,
+          24,
+          22,
+          22,
+          22
+        ],
+        [
+          3,
+          24,
+          21,
+          21,
+          21
+        ],
+        [
+          4,
+          24,
+          20,
+          20,
+          20
+        ]
+      ],
+      "profile_validation_failure_count": 0,
+      "self_dual_certificate_passed": true,
+      "status": "proved-local-profile-collapse-through-order-4",
+      "total_subsets_covered_by_theorem": 213052,
+      "validated_subset_count": 1368
+    },
+    {
+      "certified_collapse_order": 4,
+      "dimension": 24,
+      "exact_distance_validation_passed": null,
+      "exact_minimum_distance": null,
+      "family_id": "self-dual-k24",
+      "instance_id": "self-dual-k24-instance-04",
+      "interpretation": "Self-duality and the certified distance bound force every puncture/shorten rank-hull profile through order 4; matching local signatures carry no distinguishing information.",
+      "length": 48,
+      "low_weight_certificate": {
+        "certified_minimum_distance_strictly_greater_than": 4,
+        "checked_subset_count": 213052,
+        "cost_model": "Exact distinct-column zero-sum enumeration through order 4; O(n^4) for fixed order.",
+        "minimum_weight_witness_at_most_cap": null,
+        "search_complete_through": 4,
+        "witness_coordinates": null
+      },
+      "predicted_profiles": [
+        [
+          1,
+          24,
+          23,
+          23,
+          23
+        ],
+        [
+          2,
+          24,
+          22,
+          22,
+          22
+        ],
+        [
+          3,
+          24,
+          21,
+          21,
+          21
+        ],
+        [
+          4,
+          24,
+          20,
+          20,
+          20
+        ]
+      ],
+      "profile_validation_failure_count": 0,
+      "self_dual_certificate_passed": true,
+      "status": "proved-local-profile-collapse-through-order-4",
+      "total_subsets_covered_by_theorem": 213052,
+      "validated_subset_count": 1368
+    },
+    {
+      "certified_collapse_order": 4,
+      "dimension": 24,
+      "exact_distance_validation_passed": null,
+      "exact_minimum_distance": null,
+      "family_id": "self-dual-k24",
+      "instance_id": "self-dual-k24-instance-05",
+      "interpretation": "Self-duality and the certified distance bound force every puncture/shorten rank-hull profile through order 4; matching local signatures carry no distinguishing information.",
+      "length": 48,
+      "low_weight_certificate": {
+        "certified_minimum_distance_strictly_greater_than": 4,
+        "checked_subset_count": 213052,
+        "cost_model": "Exact distinct-column zero-sum enumeration through order 4; O(n^4) for fixed order.",
+        "minimum_weight_witness_at_most_cap": null,
+        "search_complete_through": 4,
+        "witness_coordinates": null
+      },
+      "predicted_profiles": [
+        [
+          1,
+          24,
+          23,
+          23,
+          23
+        ],
+        [
+          2,
+          24,
+          22,
+          22,
+          22
+        ],
+        [
+          3,
+          24,
+          21,
+          21,
+          21
+        ],
+        [
+          4,
+          24,
+          20,
+          20,
+          20
+        ]
+      ],
+      "profile_validation_failure_count": 0,
+      "self_dual_certificate_passed": true,
+      "status": "proved-local-profile-collapse-through-order-4",
+      "total_subsets_covered_by_theorem": 213052,
+      "validated_subset_count": 1368
+    },
+    {
+      "certified_collapse_order": 4,
+      "dimension": 32,
+      "exact_distance_validation_passed": null,
+      "exact_minimum_distance": null,
+      "family_id": "self-dual-k32",
+      "instance_id": "self-dual-k32-instance-00",
+      "interpretation": "Self-duality and the certified distance bound force every puncture/shorten rank-hull profile through order 4; matching local signatures carry no distinguishing information.",
+      "length": 64,
+      "low_weight_certificate": {
+        "certified_minimum_distance_strictly_greater_than": 4,
+        "checked_subset_count": 679120,
+        "cost_model": "Exact distinct-column zero-sum enumeration through order 4; O(n^4) for fixed order.",
+        "minimum_weight_witness_at_most_cap": null,
+        "search_complete_through": 4,
+        "witness_coordinates": null
+      },
+      "predicted_profiles": [
+        [
+          1,
+          32,
+          31,
+          31,
+          31
+        ],
+        [
+          2,
+          32,
+          30,
+          30,
+          30
+        ],
+        [
+          3,
+          32,
+          29,
+          29,
+          29
+        ],
+        [
+          4,
+          32,
+          28,
+          28,
+          28
+        ]
+      ],
+      "profile_validation_failure_count": 0,
+      "self_dual_certificate_passed": true,
+      "status": "proved-local-profile-collapse-through-order-4",
+      "total_subsets_covered_by_theorem": 679120,
+      "validated_subset_count": 2272
+    },
+    {
+      "certified_collapse_order": 4,
+      "dimension": 32,
+      "exact_distance_validation_passed": null,
+      "exact_minimum_distance": null,
+      "family_id": "self-dual-k32",
+      "instance_id": "self-dual-k32-instance-01",
+      "interpretation": "Self-duality and the certified distance bound force every puncture/shorten rank-hull profile through order 4; matching local signatures carry no distinguishing information.",
+      "length": 64,
+      "low_weight_certificate": {
+        "certified_minimum_distance_strictly_greater_than": 4,
+        "checked_subset_count": 679120,
+        "cost_model": "Exact distinct-column zero-sum enumeration through order 4; O(n^4) for fixed order.",
+        "minimum_weight_witness_at_most_cap": null,
+        "search_complete_through": 4,
+        "witness_coordinates": null
+      },
+      "predicted_profiles": [
+        [
+          1,
+          32,
+          31,
+          31,
+          31
+        ],
+        [
+          2,
+          32,
+          30,
+          30,
+          30
+        ],
+        [
+          3,
+          32,
+          29,
+          29,
+          29
+        ],
+        [
+          4,
+          32,
+          28,
+          28,
+          28
+        ]
+      ],
+      "profile_validation_failure_count": 0,
+      "self_dual_certificate_passed": true,
+      "status": "proved-local-profile-collapse-through-order-4",
+      "total_subsets_covered_by_theorem": 679120,
+      "validated_subset_count": 2272
+    },
+    {
+      "certified_collapse_order": 4,
+      "dimension": 32,
+      "exact_distance_validation_passed": null,
+      "exact_minimum_distance": null,
+      "family_id": "self-dual-k32",
+      "instance_id": "self-dual-k32-instance-02",
+      "interpretation": "Self-duality and the certified distance bound force every puncture/shorten rank-hull profile through order 4; matching local signatures carry no distinguishing information.",
+      "length": 64,
+      "low_weight_certificate": {
+        "certified_minimum_distance_strictly_greater_than": 4,
+        "checked_subset_count": 679120,
+        "cost_model": "Exact distinct-column zero-sum enumeration through order 4; O(n^4) for fixed order.",
+        "minimum_weight_witness_at_most_cap": null,
+        "search_complete_through": 4,
+        "witness_coordinates": null
+      },
+      "predicted_profiles": [
+        [
+          1,
+          32,
+          31,
+          31,
+          31
+        ],
+        [
+          2,
+          32,
+          30,
+          30,
+          30
+        ],
+        [
+          3,
+          32,
+          29,
+          29,
+          29
+        ],
+        [
+          4,
+          32,
+          28,
+          28,
+          28
+        ]
+      ],
+      "profile_validation_failure_count": 0,
+      "self_dual_certificate_passed": true,
+      "status": "proved-local-profile-collapse-through-order-4",
+      "total_subsets_covered_by_theorem": 679120,
+      "validated_subset_count": 2272
+    },
+    {
+      "certified_collapse_order": 4,
+      "dimension": 32,
+      "exact_distance_validation_passed": null,
+      "exact_minimum_distance": null,
+      "family_id": "self-dual-k32",
+      "instance_id": "self-dual-k32-instance-03",
+      "interpretation": "Self-duality and the certified distance bound force every puncture/shorten rank-hull profile through order 4; matching local signatures carry no distinguishing information.",
+      "length": 64,
+      "low_weight_certificate": {
+        "certified_minimum_distance_strictly_greater_than": 4,
+        "checked_subset_count": 679120,
+        "cost_model": "Exact distinct-column zero-sum enumeration through order 4; O(n^4) for fixed order.",
+        "minimum_weight_witness_at_most_cap": null,
+        "search_complete_through": 4,
+        "witness_coordinates": null
+      },
+      "predicted_profiles": [
+        [
+          1,
+          32,
+          31,
+          31,
+          31
+        ],
+        [
+          2,
+          32,
+          30,
+          30,
+          30
+        ],
+        [
+          3,
+          32,
+          29,
+          29,
+          29
+        ],
+        [
+          4,
+          32,
+          28,
+          28,
+          28
+        ]
+      ],
+      "profile_validation_failure_count": 0,
+      "self_dual_certificate_passed": true,
+      "status": "proved-local-profile-collapse-through-order-4",
+      "total_subsets_covered_by_theorem": 679120,
+      "validated_subset_count": 2272
+    },
+    {
+      "certified_collapse_order": 4,
+      "dimension": 32,
+      "exact_distance_validation_passed": null,
+      "exact_minimum_distance": null,
+      "family_id": "self-dual-k32",
+      "instance_id": "self-dual-k32-instance-04",
+      "interpretation": "Self-duality and the certified distance bound force every puncture/shorten rank-hull profile through order 4; matching local signatures carry no distinguishing information.",
+      "length": 64,
+      "low_weight_certificate": {
+        "certified_minimum_distance_strictly_greater_than": 4,
+        "checked_subset_count": 679120,
+        "cost_model": "Exact distinct-column zero-sum enumeration through order 4; O(n^4) for fixed order.",
+        "minimum_weight_witness_at_most_cap": null,
+        "search_complete_through": 4,
+        "witness_coordinates": null
+      },
+      "predicted_profiles": [
+        [
+          1,
+          32,
+          31,
+          31,
+          31
+        ],
+        [
+          2,
+          32,
+          30,
+          30,
+          30
+        ],
+        [
+          3,
+          32,
+          29,
+          29,
+          29
+        ],
+        [
+          4,
+          32,
+          28,
+          28,
+          28
+        ]
+      ],
+      "profile_validation_failure_count": 0,
+      "self_dual_certificate_passed": true,
+      "status": "proved-local-profile-collapse-through-order-4",
+      "total_subsets_covered_by_theorem": 679120,
+      "validated_subset_count": 2272
+    },
+    {
+      "certified_collapse_order": 4,
+      "dimension": 32,
+      "exact_distance_validation_passed": null,
+      "exact_minimum_distance": null,
+      "family_id": "self-dual-k32",
+      "instance_id": "self-dual-k32-instance-05",
+      "interpretation": "Self-duality and the certified distance bound force every puncture/shorten rank-hull profile through order 4; matching local signatures carry no distinguishing information.",
+      "length": 64,
+      "low_weight_certificate": {
+        "certified_minimum_distance_strictly_greater_than": 4,
+        "checked_subset_count": 679120,
+        "cost_model": "Exact distinct-column zero-sum enumeration through order 4; O(n^4) for fixed order.",
+        "minimum_weight_witness_at_most_cap": null,
+        "search_complete_through": 4,
+        "witness_coordinates": null
+      },
+      "predicted_profiles": [
+        [
+          1,
+          32,
+          31,
+          31,
+          31
+        ],
+        [
+          2,
+          32,
+          30,
+          30,
+          30
+        ],
+        [
+          3,
+          32,
+          29,
+          29,
+          29
+        ],
+        [
+          4,
+          32,
+          28,
+          28,
+          28
+        ]
+      ],
+      "profile_validation_failure_count": 0,
+      "self_dual_certificate_passed": true,
+      "status": "proved-local-profile-collapse-through-order-4",
+      "total_subsets_covered_by_theorem": 679120,
+      "validated_subset_count": 2272
+    }
+  ],
+  "spec": {
+    "exact_distance_dimension_cap": 12,
+    "exhaustive_profile_cap": 4096,
+    "maximum_local_order": 4,
+    "sampled_profile_count": 96,
+    "seed": 9173
+  },
+  "status": "self-dual-bounded-local-profiles-structurally-obstructed",
+  "summary": "Certified 17/62 instances and 2/7 families through local order 4; theorem controls failed on 0 family rows.",
+  "theorem": {
+    "conclusions": [
+      "dim puncture_S(C) = k.",
+      "dim shorten_S(C) = k - |S|.",
+      "hull_dim puncture_S(C) = hull_dim shorten_S(C) = k - |S|."
+    ],
+    "hypotheses": [
+      "C is a binary self-dual [2k,k,d] code.",
+      "S is a coordinate set with |S| < d."
+    ],
+    "name": "self-dual puncture/shorten local-profile collapse",
+    "proof_steps": [
+      "Minimum distance d>|S| prevents a nonzero codeword from vanishing outside S, so puncturing preserves dimension.",
+      "Dual distance equals d by self-duality, so restriction to S has full rank and shortening has dimension k-|S|.",
+      "Duality gives puncture_S(C)^perp = shorten_S(C) and shorten_S(C)^perp = puncture_S(C).",
+      "Shortening embeds in puncturing, hence it is exactly the hull of both codes."
+    ],
+    "scope": "Rules out bounded-coordinate puncture/shorten dimension and hull profiles below minimum distance. It does not rule out global canonicalization, growing-order invariants, weight enumerators, automorphism recovery, or graph-isomorphism reductions."
+  }
+}

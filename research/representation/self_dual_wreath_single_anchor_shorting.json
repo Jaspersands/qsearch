@@ -1,0 +1,908 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Adding any extra leaf to an anchor changes its shorting.",
+      "resolution": "Transverse noncommuting leaves do not change the core metric when the anchor redundancy is orthogonal to K.",
+      "resolved": true
+    },
+    {
+      "objection": "Containment in one anchor leaf is sufficient.",
+      "resolution": "A duplicate-core leaf violates (1), changes the metric to I/2, and is retained as a falsifier.",
+      "resolved": true
+    },
+    {
+      "objection": "Pairwise common cores exhaust every child intersection.",
+      "resolution": "The W3 control has pairwise-emergent balanced intersections, and the early-level coherence theorem becomes vacuous at linear child width.",
+      "resolved": false
+    },
+    {
+      "objection": "A known anchor pair is already a global circuit.",
+      "resolution": "At information-theoretic depth there are exponentially many possible cross-child pairs unless representation structure compresses their labels.",
+      "resolved": false
+    }
+  ],
+  "claim_gate": {
+    "all_n_overlap_decomposes_into_isolated_anchors": false,
+    "duplicate_anchor_core_breaks_identity": true,
+    "hierarchical_orientation_polar_proved": false,
+    "linear_width_overlap_controlled": false,
+    "polynomial_coherent_anchor_pair_resolver_proved": false,
+    "reason": "Isolated anchor cores are exactly balanced, but no all-n decomposition or compressed coherent pair resolver is known.",
+    "selected_w5_fractional_merges_explained": true,
+    "single_anchor_shorted_identity_proved": true,
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-06T03:29:58.599544+00:00",
+  "falsifiers_triggered": [
+    "Anchor containment alone is insufficient; duplicate or redundant core access changes the shorted metric.",
+    "Pair-anchor explanations do not cover pairwise-emergent W3 overlap.",
+    "Finite unique-anchor structure does not bound the number or interaction of anchor cores at growing width."
+  ],
+  "generic_controls": [
+    {
+      "anchor_orientation_mask": 0,
+      "anchor_other_span_intersection_dimension": 0,
+      "anchor_rank": 2,
+      "child_orientation_masks": [
+        0,
+        1
+      ],
+      "core_dimension": 1,
+      "exact_single_anchor_shorting_verified": true,
+      "maximum_anchor_core_containment_residual": 0.0,
+      "maximum_core_redundancy_overlap": 0.0,
+      "maximum_other_leaf_minimum_coefficient_norm": 0.0,
+      "minimum_synthesis_anchor_route_residual": 0.0,
+      "other_leaf_span_rank": 1,
+      "shorted_metric_identity_residual": 0.0,
+      "side_id": "noncommuting-transverse-success",
+      "single_anchor_orthogonality_premise_verified": true,
+      "status": "exact-single-anchor-shorted-identity"
+    },
+    {
+      "anchor_orientation_mask": 0,
+      "anchor_other_span_intersection_dimension": 1,
+      "anchor_rank": 1,
+      "child_orientation_masks": [
+        0,
+        1
+      ],
+      "core_dimension": 1,
+      "exact_single_anchor_shorting_verified": false,
+      "maximum_anchor_core_containment_residual": 0.0,
+      "maximum_core_redundancy_overlap": 1.0,
+      "maximum_other_leaf_minimum_coefficient_norm": 0.5,
+      "minimum_synthesis_anchor_route_residual": 0.5,
+      "other_leaf_span_rank": 1,
+      "shorted_metric_identity_residual": 0.5,
+      "side_id": "duplicate-core-falsifier",
+      "single_anchor_orthogonality_premise_verified": false,
+      "status": "single-anchor-premise-fails"
+    }
+  ],
+  "headline_metrics": {
+    "all_n_isolated_anchor_decomposition_theorem_count": 0,
+    "coherent_anchor_pair_resolver_count": 0,
+    "duplicate_core_falsifier_count": 1,
+    "generic_control_count": 2,
+    "hierarchical_orientation_polar_sampler_count": 0,
+    "linear_width_overlap_theorem_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "single_anchor_shorted_identity_theorem_count": 1,
+    "w5_anchor_core_dimension": 5,
+    "w5_anchor_pair_count": 1,
+    "w5_single_anchor_merge_count": 11,
+    "w5_single_anchor_validation_failure_count": 0
+  },
+  "proof_obligations": [
+    {
+      "obligation": "single_anchor_shorted_identity_theorem",
+      "resolution": "The minimum-energy proof is exact and both positive and premise-violating controls behave as predicted.",
+      "resolved": true
+    },
+    {
+      "obligation": "selected_w5_fractional_mechanism",
+      "resolution": "Every one of the 11 fractional affine merges is exhausted by the isolated mask pair {3,6}.",
+      "resolved": true
+    },
+    {
+      "obligation": "all_n_isolated_anchor_decomposition",
+      "resolution": "Multiple anchor cores can overlap and linear-width children can have emergent intersections outside pair common ranges.",
+      "resolved": false
+    },
+    {
+      "obligation": "coherent_anchor_pair_resolver",
+      "resolution": "Pair common-range filters have a principal-angle gap, but no polynomial procedure enumerates only relevant pairs in exponentially wide children.",
+      "resolved": false
+    }
+  ],
+  "scaling_records": [
+    {
+      "all_overlap_cores_decomposed_into_isolated_anchors": false,
+      "hierarchical_orientation_polar_proved": false,
+      "information_threshold_copy_count": 7,
+      "isolated_anchor_shorting_theorem_available": true,
+      "linear_width_overlap_controlled": false,
+      "maximum_common_free_certified_child_width": 2,
+      "n": 5,
+      "polynomial_coherent_anchor_pair_resolver_proved": false,
+      "status": "isolated-anchor-theorem-global-anchor-decomposition-open"
+    },
+    {
+      "all_overlap_cores_decomposed_into_isolated_anchors": false,
+      "hierarchical_orientation_polar_proved": false,
+      "information_threshold_copy_count": 16,
+      "isolated_anchor_shorting_theorem_available": true,
+      "linear_width_overlap_controlled": false,
+      "maximum_common_free_certified_child_width": 3,
+      "n": 8,
+      "polynomial_coherent_anchor_pair_resolver_proved": false,
+      "status": "isolated-anchor-theorem-global-anchor-decomposition-open"
+    },
+    {
+      "all_overlap_cores_decomposed_into_isolated_anchors": false,
+      "hierarchical_orientation_polar_proved": false,
+      "information_threshold_copy_count": 45,
+      "isolated_anchor_shorting_theorem_available": true,
+      "linear_width_overlap_controlled": false,
+      "maximum_common_free_certified_child_width": 7,
+      "n": 16,
+      "polynomial_coherent_anchor_pair_resolver_proved": false,
+      "status": "isolated-anchor-theorem-global-anchor-decomposition-open"
+    },
+    {
+      "all_overlap_cores_decomposed_into_isolated_anchors": false,
+      "hierarchical_orientation_polar_proved": false,
+      "information_threshold_copy_count": 118,
+      "isolated_anchor_shorting_theorem_available": true,
+      "linear_width_overlap_controlled": false,
+      "maximum_common_free_certified_child_width": 15,
+      "n": 32,
+      "polynomial_coherent_anchor_pair_resolver_proved": false,
+      "status": "isolated-anchor-theorem-global-anchor-decomposition-open"
+    },
+    {
+      "all_overlap_cores_decomposed_into_isolated_anchors": false,
+      "hierarchical_orientation_polar_proved": false,
+      "information_threshold_copy_count": 296,
+      "isolated_anchor_shorting_theorem_available": true,
+      "linear_width_overlap_controlled": false,
+      "maximum_common_free_certified_child_width": 31,
+      "n": 64,
+      "polynomial_coherent_anchor_pair_resolver_proved": false,
+      "status": "isolated-anchor-theorem-global-anchor-decomposition-open"
+    },
+    {
+      "all_overlap_cores_decomposed_into_isolated_anchors": false,
+      "hierarchical_orientation_polar_proved": false,
+      "information_threshold_copy_count": 717,
+      "isolated_anchor_shorting_theorem_available": true,
+      "linear_width_overlap_controlled": false,
+      "maximum_common_free_certified_child_width": 63,
+      "n": 128,
+      "polynomial_coherent_anchor_pair_resolver_proved": false,
+      "status": "isolated-anchor-theorem-global-anchor-decomposition-open"
+    },
+    {
+      "all_overlap_cores_decomposed_into_isolated_anchors": false,
+      "hierarchical_orientation_polar_proved": false,
+      "information_threshold_copy_count": 1684,
+      "isolated_anchor_shorting_theorem_available": true,
+      "linear_width_overlap_controlled": false,
+      "maximum_common_free_certified_child_width": 127,
+      "n": 256,
+      "polynomial_coherent_anchor_pair_resolver_proved": false,
+      "status": "isolated-anchor-theorem-global-anchor-decomposition-open"
+    },
+    {
+      "all_overlap_cores_decomposed_into_isolated_anchors": false,
+      "hierarchical_orientation_polar_proved": false,
+      "information_threshold_copy_count": 3876,
+      "isolated_anchor_shorting_theorem_available": true,
+      "linear_width_overlap_controlled": false,
+      "maximum_common_free_certified_child_width": 255,
+      "n": 512,
+      "polynomial_coherent_anchor_pair_resolver_proved": false,
+      "status": "isolated-anchor-theorem-global-anchor-decomposition-open"
+    }
+  ],
+  "status": "single-anchor-shortening-proved-global-anchor-decomposition-open",
+  "summary": "Proved an exact minimum-energy shorting theorem and used it to explain every selected W5 fractional merge by one isolated anchor pair.",
+  "theorem_contract": {
+    "balanced_merge_consequence": "Opposite isolated anchors sharing exactly K give equal identity shorted metrics and only 1/2 fractional channels.",
+    "minimum_energy_conclusion": "Every synthesis of y in K has energy at least ||y||^2, attained by the anchor-only synthesis; hence U^*A^+U=I.",
+    "scope": "No theorem decomposes every growing child overlap into mutually orthogonal isolated anchor pairs or resolves them coherently.",
+    "single_anchor_premise": "K lies in one anchor leaf and is orthogonal to the intersection of that anchor range with the span of all other child leaves.",
+    "w5_mechanism": "All selected W5 fractional nodes are exactly the common core of orientation masks 3 and 6, isolated inside both children."
+  },
+  "wreath_controls": [
+    {
+      "actual_child_intersection_dimension": 5,
+      "anchor_common_core_dimension": 5,
+      "child_intersection_equals_anchor_core": true,
+      "child_width": 1,
+      "exact_single_anchor_balanced_merge_verified": true,
+      "left_anchor_mask": 3,
+      "left_orientation_masks": [
+        3
+      ],
+      "left_side": {
+        "anchor_orientation_mask": 3,
+        "anchor_other_span_intersection_dimension": 0,
+        "anchor_rank": 20,
+        "child_orientation_masks": [
+          3
+        ],
+        "core_dimension": 5,
+        "exact_single_anchor_shorting_verified": true,
+        "maximum_anchor_core_containment_residual": 2.230301335503138e-15,
+        "maximum_core_redundancy_overlap": 0.0,
+        "maximum_other_leaf_minimum_coefficient_norm": 0.0,
+        "minimum_synthesis_anchor_route_residual": 1.0271963025214062e-15,
+        "other_leaf_span_rank": 0,
+        "shorted_metric_identity_residual": 1.9810206173570457e-15,
+        "side_id": "W5-3-2-W1-3-6-left",
+        "single_anchor_orthogonality_premise_verified": true,
+        "status": "exact-single-anchor-shorted-identity"
+      },
+      "maximum_fractional_half_residual": 1.7763568394002505e-15,
+      "node_id": "W5-3-2-W1-3-6",
+      "right_anchor_mask": 6,
+      "right_orientation_masks": [
+        6
+      ],
+      "right_side": {
+        "anchor_orientation_mask": 6,
+        "anchor_other_span_intersection_dimension": 0,
+        "anchor_rank": 80,
+        "child_orientation_masks": [
+          6
+        ],
+        "core_dimension": 5,
+        "exact_single_anchor_shorting_verified": true,
+        "maximum_anchor_core_containment_residual": 2.629220724952831e-15,
+        "maximum_core_redundancy_overlap": 0.0,
+        "maximum_other_leaf_minimum_coefficient_norm": 0.0,
+        "minimum_synthesis_anchor_route_residual": 1.6961419117893567e-15,
+        "other_leaf_span_rank": 0,
+        "shorted_metric_identity_residual": 2.5326431764928217e-15,
+        "side_id": "W5-3-2-W1-3-6-right",
+        "single_anchor_orthogonality_premise_verified": true,
+        "status": "exact-single-anchor-shorted-identity"
+      },
+      "status": "exact-single-anchor-balanced-merge"
+    },
+    {
+      "actual_child_intersection_dimension": 5,
+      "anchor_common_core_dimension": 5,
+      "child_intersection_equals_anchor_core": true,
+      "child_width": 2,
+      "exact_single_anchor_balanced_merge_verified": true,
+      "left_anchor_mask": 3,
+      "left_orientation_masks": [
+        0,
+        3
+      ],
+      "left_side": {
+        "anchor_orientation_mask": 3,
+        "anchor_other_span_intersection_dimension": 0,
+        "anchor_rank": 20,
+        "child_orientation_masks": [
+          0,
+          3
+        ],
+        "core_dimension": 5,
+        "exact_single_anchor_shorting_verified": true,
+        "maximum_anchor_core_containment_residual": 2.230301335503138e-15,
+        "maximum_core_redundancy_overlap": 0.0,
+        "maximum_other_leaf_minimum_coefficient_norm": 9.131069873616659e-16,
+        "minimum_synthesis_anchor_route_residual": 9.574208439181334e-16,
+        "other_leaf_span_rank": 20,
+        "shorted_metric_identity_residual": 1.6064572736108088e-15,
+        "side_id": "W5-3-2-W2-0-3-5-6-left",
+        "single_anchor_orthogonality_premise_verified": true,
+        "status": "exact-single-anchor-shorted-identity"
+      },
+      "maximum_fractional_half_residual": 2.1094237467877974e-15,
+      "node_id": "W5-3-2-W2-0-3-5-6",
+      "right_anchor_mask": 6,
+      "right_orientation_masks": [
+        5,
+        6
+      ],
+      "right_side": {
+        "anchor_orientation_mask": 6,
+        "anchor_other_span_intersection_dimension": 0,
+        "anchor_rank": 80,
+        "child_orientation_masks": [
+          5,
+          6
+        ],
+        "core_dimension": 5,
+        "exact_single_anchor_shorting_verified": true,
+        "maximum_anchor_core_containment_residual": 2.629220724952831e-15,
+        "maximum_core_redundancy_overlap": 0.0,
+        "maximum_other_leaf_minimum_coefficient_norm": 9.482128655000747e-16,
+        "minimum_synthesis_anchor_route_residual": 1.866606608957741e-15,
+        "other_leaf_span_rank": 20,
+        "shorted_metric_identity_residual": 2.043863014892735e-15,
+        "side_id": "W5-3-2-W2-0-3-5-6-right",
+        "single_anchor_orthogonality_premise_verified": true,
+        "status": "exact-single-anchor-shorted-identity"
+      },
+      "status": "exact-single-anchor-balanced-merge"
+    },
+    {
+      "actual_child_intersection_dimension": 5,
+      "anchor_common_core_dimension": 5,
+      "child_intersection_equals_anchor_core": true,
+      "child_width": 2,
+      "exact_single_anchor_balanced_merge_verified": true,
+      "left_anchor_mask": 6,
+      "left_orientation_masks": [
+        0,
+        6
+      ],
+      "left_side": {
+        "anchor_orientation_mask": 6,
+        "anchor_other_span_intersection_dimension": 0,
+        "anchor_rank": 80,
+        "child_orientation_masks": [
+          0,
+          6
+        ],
+        "core_dimension": 5,
+        "exact_single_anchor_shorting_verified": true,
+        "maximum_anchor_core_containment_residual": 2.6390133936886702e-15,
+        "maximum_core_redundancy_overlap": 0.0,
+        "maximum_other_leaf_minimum_coefficient_norm": 6.937599034564745e-16,
+        "minimum_synthesis_anchor_route_residual": 1.6907522544257914e-15,
+        "other_leaf_span_rank": 20,
+        "shorted_metric_identity_residual": 2.190904357425112e-15,
+        "side_id": "W5-3-2-W2-0-6-3-5-left",
+        "single_anchor_orthogonality_premise_verified": true,
+        "status": "exact-single-anchor-shorted-identity"
+      },
+      "maximum_fractional_half_residual": 1.9984014443252818e-15,
+      "node_id": "W5-3-2-W2-0-6-3-5",
+      "right_anchor_mask": 3,
+      "right_orientation_masks": [
+        3,
+        5
+      ],
+      "right_side": {
+        "anchor_orientation_mask": 3,
+        "anchor_other_span_intersection_dimension": 0,
+        "anchor_rank": 20,
+        "child_orientation_masks": [
+          3,
+          5
+        ],
+        "core_dimension": 5,
+        "exact_single_anchor_shorting_verified": true,
+        "maximum_anchor_core_containment_residual": 2.424603929758847e-15,
+        "maximum_core_redundancy_overlap": 0.0,
+        "maximum_other_leaf_minimum_coefficient_norm": 8.313685563449805e-16,
+        "minimum_synthesis_anchor_route_residual": 1.7418331367906643e-15,
+        "other_leaf_span_rank": 20,
+        "shorted_metric_identity_residual": 1.8488982469843205e-15,
+        "side_id": "W5-3-2-W2-0-6-3-5-right",
+        "single_anchor_orthogonality_premise_verified": true,
+        "status": "exact-single-anchor-shorted-identity"
+      },
+      "status": "exact-single-anchor-balanced-merge"
+    },
+    {
+      "actual_child_intersection_dimension": 5,
+      "anchor_common_core_dimension": 5,
+      "child_intersection_equals_anchor_core": true,
+      "child_width": 2,
+      "exact_single_anchor_balanced_merge_verified": true,
+      "left_anchor_mask": 3,
+      "left_orientation_masks": [
+        1,
+        3
+      ],
+      "left_side": {
+        "anchor_orientation_mask": 3,
+        "anchor_other_span_intersection_dimension": 0,
+        "anchor_rank": 20,
+        "child_orientation_masks": [
+          1,
+          3
+        ],
+        "core_dimension": 5,
+        "exact_single_anchor_shorting_verified": true,
+        "maximum_anchor_core_containment_residual": 2.230301335503138e-15,
+        "maximum_core_redundancy_overlap": 0.0,
+        "maximum_other_leaf_minimum_coefficient_norm": 7.116647176981621e-16,
+        "minimum_synthesis_anchor_route_residual": 1.3369279071573435e-15,
+        "other_leaf_span_rank": 15,
+        "shorted_metric_identity_residual": 2.062891524987804e-15,
+        "side_id": "W5-3-2-W2-1-3-4-6-left",
+        "single_anchor_orthogonality_premise_verified": true,
+        "status": "exact-single-anchor-shorted-identity"
+      },
+      "maximum_fractional_half_residual": 1.5543122344752192e-15,
+      "node_id": "W5-3-2-W2-1-3-4-6",
+      "right_anchor_mask": 6,
+      "right_orientation_masks": [
+        4,
+        6
+      ],
+      "right_side": {
+        "anchor_orientation_mask": 6,
+        "anchor_other_span_intersection_dimension": 0,
+        "anchor_rank": 80,
+        "child_orientation_masks": [
+          4,
+          6
+        ],
+        "core_dimension": 5,
+        "exact_single_anchor_shorting_verified": true,
+        "maximum_anchor_core_containment_residual": 2.629220724952831e-15,
+        "maximum_core_redundancy_overlap": 0.0,
+        "maximum_other_leaf_minimum_coefficient_norm": 1.1392198603090522e-17,
+        "minimum_synthesis_anchor_route_residual": 1.574402219600385e-15,
+        "other_leaf_span_rank": 0,
+        "shorted_metric_identity_residual": 1.884681832408736e-15,
+        "side_id": "W5-3-2-W2-1-3-4-6-right",
+        "single_anchor_orthogonality_premise_verified": true,
+        "status": "exact-single-anchor-shorted-identity"
+      },
+      "status": "exact-single-anchor-balanced-merge"
+    },
+    {
+      "actual_child_intersection_dimension": 5,
+      "anchor_common_core_dimension": 5,
+      "child_intersection_equals_anchor_core": true,
+      "child_width": 2,
+      "exact_single_anchor_balanced_merge_verified": true,
+      "left_anchor_mask": 6,
+      "left_orientation_masks": [
+        1,
+        6
+      ],
+      "left_side": {
+        "anchor_orientation_mask": 6,
+        "anchor_other_span_intersection_dimension": 0,
+        "anchor_rank": 80,
+        "child_orientation_masks": [
+          1,
+          6
+        ],
+        "core_dimension": 5,
+        "exact_single_anchor_shorting_verified": true,
+        "maximum_anchor_core_containment_residual": 2.6390133936886702e-15,
+        "maximum_core_redundancy_overlap": 0.0,
+        "maximum_other_leaf_minimum_coefficient_norm": 6.091122747455102e-16,
+        "minimum_synthesis_anchor_route_residual": 1.6226157807306052e-15,
+        "other_leaf_span_rank": 15,
+        "shorted_metric_identity_residual": 2.1395247471326666e-15,
+        "side_id": "W5-3-2-W2-1-6-3-4-left",
+        "single_anchor_orthogonality_premise_verified": true,
+        "status": "exact-single-anchor-shorted-identity"
+      },
+      "maximum_fractional_half_residual": 2.7755575615628914e-15,
+      "node_id": "W5-3-2-W2-1-6-3-4",
+      "right_anchor_mask": 3,
+      "right_orientation_masks": [
+        3,
+        4
+      ],
+      "right_side": {
+        "anchor_orientation_mask": 3,
+        "anchor_other_span_intersection_dimension": 0,
+        "anchor_rank": 20,
+        "child_orientation_masks": [
+          3,
+          4
+        ],
+        "core_dimension": 5,
+        "exact_single_anchor_shorting_verified": true,
+        "maximum_anchor_core_containment_residual": 2.424603929758847e-15,
+        "maximum_core_redundancy_overlap": 0.0,
+        "maximum_other_leaf_minimum_coefficient_norm": 1.1392198603090526e-17,
+        "minimum_synthesis_anchor_route_residual": 1.9132873223183037e-15,
+        "other_leaf_span_rank": 0,
+        "shorted_metric_identity_residual": 1.6881019462184126e-15,
+        "side_id": "W5-3-2-W2-1-6-3-4-right",
+        "single_anchor_orthogonality_premise_verified": true,
+        "status": "exact-single-anchor-shorted-identity"
+      },
+      "status": "exact-single-anchor-balanced-merge"
+    },
+    {
+      "actual_child_intersection_dimension": 5,
+      "anchor_common_core_dimension": 5,
+      "child_intersection_equals_anchor_core": true,
+      "child_width": 2,
+      "exact_single_anchor_balanced_merge_verified": true,
+      "left_anchor_mask": 3,
+      "left_orientation_masks": [
+        2,
+        3
+      ],
+      "left_side": {
+        "anchor_orientation_mask": 3,
+        "anchor_other_span_intersection_dimension": 0,
+        "anchor_rank": 20,
+        "child_orientation_masks": [
+          2,
+          3
+        ],
+        "core_dimension": 5,
+        "exact_single_anchor_shorting_verified": true,
+        "maximum_anchor_core_containment_residual": 2.230301335503138e-15,
+        "maximum_core_redundancy_overlap": 0.0,
+        "maximum_other_leaf_minimum_coefficient_norm": 7.648941202739866e-16,
+        "minimum_synthesis_anchor_route_residual": 1.4054190834121203e-15,
+        "other_leaf_span_rank": 20,
+        "shorted_metric_identity_residual": 1.6541547692855208e-15,
+        "side_id": "W5-3-2-W2-2-3-6-7-left",
+        "single_anchor_orthogonality_premise_verified": true,
+        "status": "exact-single-anchor-shorted-identity"
+      },
+      "maximum_fractional_half_residual": 2.3314683517128287e-15,
+      "node_id": "W5-3-2-W2-2-3-6-7",
+      "right_anchor_mask": 6,
+      "right_orientation_masks": [
+        6,
+        7
+      ],
+      "right_side": {
+        "anchor_orientation_mask": 6,
+        "anchor_other_span_intersection_dimension": 0,
+        "anchor_rank": 80,
+        "child_orientation_masks": [
+          6,
+          7
+        ],
+        "core_dimension": 5,
+        "exact_single_anchor_shorting_verified": true,
+        "maximum_anchor_core_containment_residual": 2.629220724952831e-15,
+        "maximum_core_redundancy_overlap": 0.0,
+        "maximum_other_leaf_minimum_coefficient_norm": 6.067142289192461e-16,
+        "minimum_synthesis_anchor_route_residual": 1.7903367961224438e-15,
+        "other_leaf_span_rank": 20,
+        "shorted_metric_identity_residual": 2.1602545527679172e-15,
+        "side_id": "W5-3-2-W2-2-3-6-7-right",
+        "single_anchor_orthogonality_premise_verified": true,
+        "status": "exact-single-anchor-shorted-identity"
+      },
+      "status": "exact-single-anchor-balanced-merge"
+    },
+    {
+      "actual_child_intersection_dimension": 5,
+      "anchor_common_core_dimension": 5,
+      "child_intersection_equals_anchor_core": true,
+      "child_width": 2,
+      "exact_single_anchor_balanced_merge_verified": true,
+      "left_anchor_mask": 6,
+      "left_orientation_masks": [
+        2,
+        6
+      ],
+      "left_side": {
+        "anchor_orientation_mask": 6,
+        "anchor_other_span_intersection_dimension": 0,
+        "anchor_rank": 80,
+        "child_orientation_masks": [
+          2,
+          6
+        ],
+        "core_dimension": 5,
+        "exact_single_anchor_shorting_verified": true,
+        "maximum_anchor_core_containment_residual": 2.6390133936886702e-15,
+        "maximum_core_redundancy_overlap": 0.0,
+        "maximum_other_leaf_minimum_coefficient_norm": 8.4923431531657265e-16,
+        "minimum_synthesis_anchor_route_residual": 1.5192298984018026e-15,
+        "other_leaf_span_rank": 20,
+        "shorted_metric_identity_residual": 2.0124820936800956e-15,
+        "side_id": "W5-3-2-W2-2-6-3-7-left",
+        "single_anchor_orthogonality_premise_verified": true,
+        "status": "exact-single-anchor-shorted-identity"
+      },
+      "maximum_fractional_half_residual": 2.220446049250313e-15,
+      "node_id": "W5-3-2-W2-2-6-3-7",
+      "right_anchor_mask": 3,
+      "right_orientation_masks": [
+        3,
+        7
+      ],
+      "right_side": {
+        "anchor_orientation_mask": 3,
+        "anchor_other_span_intersection_dimension": 0,
+        "anchor_rank": 20,
+        "child_orientation_masks": [
+          3,
+          7
+        ],
+        "core_dimension": 5,
+        "exact_single_anchor_shorting_verified": true,
+        "maximum_anchor_core_containment_residual": 2.424603929758847e-15,
+        "maximum_core_redundancy_overlap": 0.0,
+        "maximum_other_leaf_minimum_coefficient_norm": 8.306237114367984e-16,
+        "minimum_synthesis_anchor_route_residual": 1.7686833961336025e-15,
+        "other_leaf_span_rank": 20,
+        "shorted_metric_identity_residual": 2.0646940791296873e-15,
+        "side_id": "W5-3-2-W2-2-6-3-7-right",
+        "single_anchor_orthogonality_premise_verified": true,
+        "status": "exact-single-anchor-shorted-identity"
+      },
+      "status": "exact-single-anchor-balanced-merge"
+    },
+    {
+      "actual_child_intersection_dimension": 5,
+      "anchor_common_core_dimension": 5,
+      "child_intersection_equals_anchor_core": true,
+      "child_width": 4,
+      "exact_single_anchor_balanced_merge_verified": true,
+      "left_anchor_mask": 3,
+      "left_orientation_masks": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "left_side": {
+        "anchor_orientation_mask": 3,
+        "anchor_other_span_intersection_dimension": 0,
+        "anchor_rank": 20,
+        "child_orientation_masks": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "core_dimension": 5,
+        "exact_single_anchor_shorting_verified": true,
+        "maximum_anchor_core_containment_residual": 2.230301335503138e-15,
+        "maximum_core_redundancy_overlap": 0.0,
+        "maximum_other_leaf_minimum_coefficient_norm": 9.15275886785735e-16,
+        "minimum_synthesis_anchor_route_residual": 1.0226387367745448e-15,
+        "other_leaf_span_rank": 55,
+        "shorted_metric_identity_residual": 1.514658407411707e-15,
+        "side_id": "W5-3-2-W4-0-1-2-3-4-5-6-7-left",
+        "single_anchor_orthogonality_premise_verified": true,
+        "status": "exact-single-anchor-shorted-identity"
+      },
+      "maximum_fractional_half_residual": 3.3306690738754696e-15,
+      "node_id": "W5-3-2-W4-0-1-2-3-4-5-6-7",
+      "right_anchor_mask": 6,
+      "right_orientation_masks": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "right_side": {
+        "anchor_orientation_mask": 6,
+        "anchor_other_span_intersection_dimension": 0,
+        "anchor_rank": 80,
+        "child_orientation_masks": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "core_dimension": 5,
+        "exact_single_anchor_shorting_verified": true,
+        "maximum_anchor_core_containment_residual": 2.629220724952831e-15,
+        "maximum_core_redundancy_overlap": 0.0,
+        "maximum_other_leaf_minimum_coefficient_norm": 6.907261358233621e-16,
+        "minimum_synthesis_anchor_route_residual": 1.837332414019104e-15,
+        "other_leaf_span_rank": 40,
+        "shorted_metric_identity_residual": 1.647546587718457e-15,
+        "side_id": "W5-3-2-W4-0-1-2-3-4-5-6-7-right",
+        "single_anchor_orthogonality_premise_verified": true,
+        "status": "exact-single-anchor-shorted-identity"
+      },
+      "status": "exact-single-anchor-balanced-merge"
+    },
+    {
+      "actual_child_intersection_dimension": 5,
+      "anchor_common_core_dimension": 5,
+      "child_intersection_equals_anchor_core": true,
+      "child_width": 4,
+      "exact_single_anchor_balanced_merge_verified": true,
+      "left_anchor_mask": 6,
+      "left_orientation_masks": [
+        0,
+        1,
+        6,
+        7
+      ],
+      "left_side": {
+        "anchor_orientation_mask": 6,
+        "anchor_other_span_intersection_dimension": 0,
+        "anchor_rank": 80,
+        "child_orientation_masks": [
+          0,
+          1,
+          6,
+          7
+        ],
+        "core_dimension": 5,
+        "exact_single_anchor_shorting_verified": true,
+        "maximum_anchor_core_containment_residual": 2.6390133936886702e-15,
+        "maximum_core_redundancy_overlap": 0.0,
+        "maximum_other_leaf_minimum_coefficient_norm": 9.124069598547833e-16,
+        "minimum_synthesis_anchor_route_residual": 1.636303150657541e-15,
+        "other_leaf_span_rank": 55,
+        "shorted_metric_identity_residual": 2.2960147678926263e-15,
+        "side_id": "W5-3-2-W4-0-1-6-7-2-3-4-5-left",
+        "single_anchor_orthogonality_premise_verified": true,
+        "status": "exact-single-anchor-shorted-identity"
+      },
+      "maximum_fractional_half_residual": 2.275957200481571e-15,
+      "node_id": "W5-3-2-W4-0-1-6-7-2-3-4-5",
+      "right_anchor_mask": 3,
+      "right_orientation_masks": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "right_side": {
+        "anchor_orientation_mask": 3,
+        "anchor_other_span_intersection_dimension": 0,
+        "anchor_rank": 20,
+        "child_orientation_masks": [
+          2,
+          3,
+          4,
+          5
+        ],
+        "core_dimension": 5,
+        "exact_single_anchor_shorting_verified": true,
+        "maximum_anchor_core_containment_residual": 2.424603929758847e-15,
+        "maximum_core_redundancy_overlap": 0.0,
+        "maximum_other_leaf_minimum_coefficient_norm": 9.306929329845762e-16,
+        "minimum_synthesis_anchor_route_residual": 1.6465805741315161e-15,
+        "other_leaf_span_rank": 40,
+        "shorted_metric_identity_residual": 1.968322735847848e-15,
+        "side_id": "W5-3-2-W4-0-1-6-7-2-3-4-5-right",
+        "single_anchor_orthogonality_premise_verified": true,
+        "status": "exact-single-anchor-shorted-identity"
+      },
+      "status": "exact-single-anchor-balanced-merge"
+    },
+    {
+      "actual_child_intersection_dimension": 5,
+      "anchor_common_core_dimension": 5,
+      "child_intersection_equals_anchor_core": true,
+      "child_width": 4,
+      "exact_single_anchor_balanced_merge_verified": true,
+      "left_anchor_mask": 6,
+      "left_orientation_masks": [
+        0,
+        2,
+        4,
+        6
+      ],
+      "left_side": {
+        "anchor_orientation_mask": 6,
+        "anchor_other_span_intersection_dimension": 0,
+        "anchor_rank": 80,
+        "child_orientation_masks": [
+          0,
+          2,
+          4,
+          6
+        ],
+        "core_dimension": 5,
+        "exact_single_anchor_shorting_verified": true,
+        "maximum_anchor_core_containment_residual": 2.6390133936886702e-15,
+        "maximum_core_redundancy_overlap": 0.0,
+        "maximum_other_leaf_minimum_coefficient_norm": 8.407529866295265e-16,
+        "minimum_synthesis_anchor_route_residual": 1.511734401178987e-15,
+        "other_leaf_span_rank": 40,
+        "shorted_metric_identity_residual": 2.1632795357059153e-15,
+        "side_id": "W5-3-2-W4-0-2-4-6-1-3-5-7-left",
+        "single_anchor_orthogonality_premise_verified": true,
+        "status": "exact-single-anchor-shorted-identity"
+      },
+      "maximum_fractional_half_residual": 3.1086244689504383e-15,
+      "node_id": "W5-3-2-W4-0-2-4-6-1-3-5-7",
+      "right_anchor_mask": 3,
+      "right_orientation_masks": [
+        1,
+        3,
+        5,
+        7
+      ],
+      "right_side": {
+        "anchor_orientation_mask": 3,
+        "anchor_other_span_intersection_dimension": 0,
+        "anchor_rank": 20,
+        "child_orientation_masks": [
+          1,
+          3,
+          5,
+          7
+        ],
+        "core_dimension": 5,
+        "exact_single_anchor_shorting_verified": true,
+        "maximum_anchor_core_containment_residual": 2.424603929758847e-15,
+        "maximum_core_redundancy_overlap": 0.0,
+        "maximum_other_leaf_minimum_coefficient_norm": 9.531364001486117e-16,
+        "minimum_synthesis_anchor_route_residual": 1.7683975650621192e-15,
+        "other_leaf_span_rank": 55,
+        "shorted_metric_identity_residual": 1.9065351273614367e-15,
+        "side_id": "W5-3-2-W4-0-2-4-6-1-3-5-7-right",
+        "single_anchor_orthogonality_premise_verified": true,
+        "status": "exact-single-anchor-shorted-identity"
+      },
+      "status": "exact-single-anchor-balanced-merge"
+    },
+    {
+      "actual_child_intersection_dimension": 5,
+      "anchor_common_core_dimension": 5,
+      "child_intersection_equals_anchor_core": true,
+      "child_width": 4,
+      "exact_single_anchor_balanced_merge_verified": true,
+      "left_anchor_mask": 3,
+      "left_orientation_masks": [
+        0,
+        3,
+        4,
+        7
+      ],
+      "left_side": {
+        "anchor_orientation_mask": 3,
+        "anchor_other_span_intersection_dimension": 0,
+        "anchor_rank": 20,
+        "child_orientation_masks": [
+          0,
+          3,
+          4,
+          7
+        ],
+        "core_dimension": 5,
+        "exact_single_anchor_shorting_verified": true,
+        "maximum_anchor_core_containment_residual": 2.230301335503138e-15,
+        "maximum_core_redundancy_overlap": 0.0,
+        "maximum_other_leaf_minimum_coefficient_norm": 8.002575387978551e-16,
+        "minimum_synthesis_anchor_route_residual": 1.1407165736046898e-15,
+        "other_leaf_span_rank": 40,
+        "shorted_metric_identity_residual": 1.4811101670513674e-15,
+        "side_id": "W5-3-2-W4-0-3-4-7-1-2-5-6-left",
+        "single_anchor_orthogonality_premise_verified": true,
+        "status": "exact-single-anchor-shorted-identity"
+      },
+      "maximum_fractional_half_residual": 4.440892098500626e-15,
+      "node_id": "W5-3-2-W4-0-3-4-7-1-2-5-6",
+      "right_anchor_mask": 6,
+      "right_orientation_masks": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "right_side": {
+        "anchor_orientation_mask": 6,
+        "anchor_other_span_intersection_dimension": 0,
+        "anchor_rank": 80,
+        "child_orientation_masks": [
+          1,
+          2,
+          5,
+          6
+        ],
+        "core_dimension": 5,
+        "exact_single_anchor_shorting_verified": true,
+        "maximum_anchor_core_containment_residual": 2.629220724952831e-15,
+        "maximum_core_redundancy_overlap": 0.0,
+        "maximum_other_leaf_minimum_coefficient_norm": 7.717764089177263e-16,
+        "minimum_synthesis_anchor_route_residual": 1.8277438140854117e-15,
+        "other_leaf_span_rank": 55,
+        "shorted_metric_identity_residual": 1.7705419977333658e-15,
+        "side_id": "W5-3-2-W4-0-3-4-7-1-2-5-6-right",
+        "single_anchor_orthogonality_premise_verified": true,
+        "status": "exact-single-anchor-shorted-identity"
+      },
+      "status": "exact-single-anchor-balanced-merge"
+    }
+  ]
+}

@@ -1,0 +1,1028 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "An efficient S_n QFT does not implement irrep matrices on an arbitrary carrier.",
+      "resolution": "The regular representation Fourier intertwining identity does exactly this after fixing the multiplicity column.",
+      "resolved": true
+    },
+    {
+      "objection": "A group average over n! terms has factorial LCU normalization.",
+      "resolution": "Uniform coherent averaging has normalization one. The desired average is already a projector Kraus block; it is not rescaled to identity.",
+      "resolved": true
+    },
+    {
+      "objection": "Postselecting the group ancilla may be factorially unlikely.",
+      "resolution": "The success probability equals the intended filter effect. Its average all-n retention must be proved; the circuit schema alone does not provide that theorem.",
+      "resolved": false
+    },
+    {
+      "objection": "Approximate QFT errors require factorial precision.",
+      "resolution": "The selected family is filtered at unit spectral scale. A telescoping bound only requires per-action error inverse polynomial in k and the target total error.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "all_n_constant_postfilter_information_proved": false,
+    "classical_separation_proved": false,
+    "complete_covariant_measurement_proved": false,
+    "efficient_symmetric_group_qft_available": true,
+    "factorial_spectral_resolution_required_for_this_filter": false,
+    "polynomial_controlled_invariant_projector_schema_proved": true,
+    "polynomial_hidden_permutation_decoder_proved": false,
+    "polynomial_irrep_action_schema_proved": true,
+    "reason": "The coherent invariant-projector primitive is polynomial, but no theorem yet shows that composing orientation filters retains constant hidden-label information or enables decoding.",
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-05T23:15:32.799388+00:00",
+  "falsifiers_triggered": [
+    "A general efficient Kronecker decomposition is not required to apply the invariant projector as a Kraus block.",
+    "The selected orientation-family filter avoids factorial amplification and factorial spectral precision.",
+    "The decisive remaining issue is now postfilter information and decoding, not implementation of E_(nu,h)."
+  ],
+  "headline_metrics": {
+    "all_n_postfilter_information_theorem_count": 0,
+    "controlled_orientation_invariant_projector_circuit_schema_count": 1,
+    "factorial_amplitude_amplification_row_count": 0,
+    "irrep_action_from_qft_theorem_count": 1,
+    "new_quantum_algorithm_count": 0,
+    "polynomial_hidden_permutation_decoder_count": 0,
+    "projected_block_finite_control_count": 20,
+    "projected_block_validation_failure_count": 0,
+    "projected_group_average_block_encoding_theorem_count": 1,
+    "qft_finite_control_count": 2,
+    "qft_finite_validation_failure_count": 0,
+    "scaling_record_count": 6,
+    "symmetric_group_qft_intertwining_theorem_count": 1
+  },
+  "literature_links": [
+    {
+      "external_theorem_not_reproved_here": true,
+      "paper_id": "beals-symmetric-group-qft-1997",
+      "title": "Quantum computation of Fourier transforms over symmetric groups",
+      "url": "https://doi.org/10.1145/258533.258548",
+      "use": "Polynomial-size quantum Fourier transform over S_n."
+    }
+  ],
+  "projected_block_controls": [
+    {
+      "carrier_dimension": 18,
+      "control_id": "S4-4-4_3-1_2-2_2-1-1-mask-0",
+      "exact_projected_block_encoding_verified": true,
+      "group_order": 24,
+      "invariant_projector_hermiticity_residual": 0.0,
+      "invariant_projector_idempotence_residual": 4.625929269271485e-18,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_selected_unitary_residual": 2.369187730683688e-16,
+      "n": 4,
+      "orientation_mask": 0,
+      "projected_top_block_residual": 0.0,
+      "status": "exact-invariant-projector-top-block",
+      "target_partition": [
+        4
+      ],
+      "tensor_factor_count": 3
+    },
+    {
+      "carrier_dimension": 18,
+      "control_id": "S4-4-4_3-1_2-2_2-1-1-mask-1",
+      "exact_projected_block_encoding_verified": true,
+      "group_order": 24,
+      "invariant_projector_hermiticity_residual": 0.0,
+      "invariant_projector_idempotence_residual": 7.819158868230478e-17,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_selected_unitary_residual": 6.129586614528861e-16,
+      "n": 4,
+      "orientation_mask": 1,
+      "projected_top_block_residual": 2.1559287314263706e-17,
+      "status": "exact-invariant-projector-top-block",
+      "target_partition": [
+        4
+      ],
+      "tensor_factor_count": 3
+    },
+    {
+      "carrier_dimension": 18,
+      "control_id": "S4-4-4_3-1_2-2_2-1-1-mask-2",
+      "exact_projected_block_encoding_verified": true,
+      "group_order": 24,
+      "invariant_projector_hermiticity_residual": 0.0,
+      "invariant_projector_idempotence_residual": 4.625929269271485e-18,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_selected_unitary_residual": 2.693165699279756e-16,
+      "n": 4,
+      "orientation_mask": 2,
+      "projected_top_block_residual": 2.3129646346357427e-18,
+      "status": "exact-invariant-projector-top-block",
+      "target_partition": [
+        4
+      ],
+      "tensor_factor_count": 3
+    },
+    {
+      "carrier_dimension": 18,
+      "control_id": "S4-4-4_3-1_2-2_2-1-1-mask-3",
+      "exact_projected_block_encoding_verified": true,
+      "group_order": 24,
+      "invariant_projector_hermiticity_residual": 0.0,
+      "invariant_projector_idempotence_residual": 5.179863205513906e-17,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_selected_unitary_residual": 6.212836092977289e-16,
+      "n": 4,
+      "orientation_mask": 3,
+      "projected_top_block_residual": 2.5172229390752212e-17,
+      "status": "exact-invariant-projector-top-block",
+      "target_partition": [
+        4
+      ],
+      "tensor_factor_count": 3
+    },
+    {
+      "carrier_dimension": 54,
+      "control_id": "S4-3-1-4_3-1_2-2_2-1-1-mask-0",
+      "exact_projected_block_encoding_verified": true,
+      "group_order": 24,
+      "invariant_projector_hermiticity_residual": 0.0,
+      "invariant_projector_idempotence_residual": 7.819158868230482e-17,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_selected_unitary_residual": 6.129586614528861e-16,
+      "n": 4,
+      "orientation_mask": 0,
+      "projected_top_block_residual": 2.155928731426371e-17,
+      "status": "exact-invariant-projector-top-block",
+      "target_partition": [
+        3,
+        1
+      ],
+      "tensor_factor_count": 3
+    },
+    {
+      "carrier_dimension": 54,
+      "control_id": "S4-3-1-4_3-1_2-2_2-1-1-mask-1",
+      "exact_projected_block_encoding_verified": true,
+      "group_order": 24,
+      "invariant_projector_hermiticity_residual": 0.0,
+      "invariant_projector_idempotence_residual": 1.62658012207559e-16,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_selected_unitary_residual": 1.060096634140056e-15,
+      "n": 4,
+      "orientation_mask": 1,
+      "projected_top_block_residual": 3.2553257046476155e-17,
+      "status": "exact-invariant-projector-top-block",
+      "target_partition": [
+        3,
+        1
+      ],
+      "tensor_factor_count": 3
+    },
+    {
+      "carrier_dimension": 54,
+      "control_id": "S4-3-1-4_3-1_2-2_2-1-1-mask-2",
+      "exact_projected_block_encoding_verified": true,
+      "group_order": 24,
+      "invariant_projector_hermiticity_residual": 0.0,
+      "invariant_projector_idempotence_residual": 5.1798632055139055e-17,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_selected_unitary_residual": 6.212836092977292e-16,
+      "n": 4,
+      "orientation_mask": 2,
+      "projected_top_block_residual": 2.5172229390752212e-17,
+      "status": "exact-invariant-projector-top-block",
+      "target_partition": [
+        3,
+        1
+      ],
+      "tensor_factor_count": 3
+    },
+    {
+      "carrier_dimension": 54,
+      "control_id": "S4-3-1-4_3-1_2-2_2-1-1-mask-3",
+      "exact_projected_block_encoding_verified": true,
+      "group_order": 24,
+      "invariant_projector_hermiticity_residual": 0.0,
+      "invariant_projector_idempotence_residual": 1.5778919598975934e-16,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_selected_unitary_residual": 9.80835937672826e-16,
+      "n": 4,
+      "orientation_mask": 3,
+      "projected_top_block_residual": 3.0710799915382886e-17,
+      "status": "exact-invariant-projector-top-block",
+      "target_partition": [
+        3,
+        1
+      ],
+      "tensor_factor_count": 3
+    },
+    {
+      "carrier_dimension": 36,
+      "control_id": "S4-2-2-4_3-1_2-2_2-1-1-mask-0",
+      "exact_projected_block_encoding_verified": true,
+      "group_order": 24,
+      "invariant_projector_hermiticity_residual": 0.0,
+      "invariant_projector_idempotence_residual": 5.551115123125783e-17,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_selected_unitary_residual": 4.546266763699927e-16,
+      "n": 4,
+      "orientation_mask": 0,
+      "projected_top_block_residual": 0.0,
+      "status": "exact-invariant-projector-top-block",
+      "target_partition": [
+        2,
+        2
+      ],
+      "tensor_factor_count": 3
+    },
+    {
+      "carrier_dimension": 36,
+      "control_id": "S4-2-2-4_3-1_2-2_2-1-1-mask-1",
+      "exact_projected_block_encoding_verified": true,
+      "group_order": 24,
+      "invariant_projector_hermiticity_residual": 0.0,
+      "invariant_projector_idempotence_residual": 1.1304420839069088e-16,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_selected_unitary_residual": 1.0155990001357365e-15,
+      "n": 4,
+      "orientation_mask": 1,
+      "projected_top_block_residual": 2.063083117048469e-17,
+      "status": "exact-invariant-projector-top-block",
+      "target_partition": [
+        2,
+        2
+      ],
+      "tensor_factor_count": 3
+    },
+    {
+      "carrier_dimension": 36,
+      "control_id": "S4-2-2-4_3-1_2-2_2-1-1-mask-2",
+      "exact_projected_block_encoding_verified": true,
+      "group_order": 24,
+      "invariant_projector_hermiticity_residual": 0.0,
+      "invariant_projector_idempotence_residual": 6.942004940378911e-17,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_selected_unitary_residual": 5.573862688801975e-16,
+      "n": 4,
+      "orientation_mask": 2,
+      "projected_top_block_residual": 2.132986208001054e-17,
+      "status": "exact-invariant-projector-top-block",
+      "target_partition": [
+        2,
+        2
+      ],
+      "tensor_factor_count": 3
+    },
+    {
+      "carrier_dimension": 36,
+      "control_id": "S4-2-2-4_3-1_2-2_2-1-1-mask-3",
+      "exact_projected_block_encoding_verified": true,
+      "group_order": 24,
+      "invariant_projector_hermiticity_residual": 0.0,
+      "invariant_projector_idempotence_residual": 1.5102549940320282e-16,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_selected_unitary_residual": 8.630035921871592e-16,
+      "n": 4,
+      "orientation_mask": 3,
+      "projected_top_block_residual": 4.1905361235985125e-17,
+      "status": "exact-invariant-projector-top-block",
+      "target_partition": [
+        2,
+        2
+      ],
+      "tensor_factor_count": 3
+    },
+    {
+      "carrier_dimension": 54,
+      "control_id": "S4-2-1-1-4_3-1_2-2_2-1-1-mask-0",
+      "exact_projected_block_encoding_verified": true,
+      "group_order": 24,
+      "invariant_projector_hermiticity_residual": 0.0,
+      "invariant_projector_idempotence_residual": 6.94200494037891e-17,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_selected_unitary_residual": 5.573862688801978e-16,
+      "n": 4,
+      "orientation_mask": 0,
+      "projected_top_block_residual": 2.1329862080010546e-17,
+      "status": "exact-invariant-projector-top-block",
+      "target_partition": [
+        2,
+        1,
+        1
+      ],
+      "tensor_factor_count": 3
+    },
+    {
+      "carrier_dimension": 54,
+      "control_id": "S4-2-1-1-4_3-1_2-2_2-1-1-mask-1",
+      "exact_projected_block_encoding_verified": true,
+      "group_order": 24,
+      "invariant_projector_hermiticity_residual": 0.0,
+      "invariant_projector_idempotence_residual": 1.655071952300725e-16,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_selected_unitary_residual": 9.406525178709638e-16,
+      "n": 4,
+      "orientation_mask": 1,
+      "projected_top_block_residual": 3.252258522095157e-17,
+      "status": "exact-invariant-projector-top-block",
+      "target_partition": [
+        2,
+        1,
+        1
+      ],
+      "tensor_factor_count": 3
+    },
+    {
+      "carrier_dimension": 54,
+      "control_id": "S4-2-1-1-4_3-1_2-2_2-1-1-mask-2",
+      "exact_projected_block_encoding_verified": true,
+      "group_order": 24,
+      "invariant_projector_hermiticity_residual": 0.0,
+      "invariant_projector_idempotence_residual": 2.062092468967865e-16,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_selected_unitary_residual": 5.226302745775815e-16,
+      "n": 4,
+      "orientation_mask": 2,
+      "projected_top_block_residual": 5.738607603825372e-17,
+      "status": "exact-invariant-projector-top-block",
+      "target_partition": [
+        2,
+        1,
+        1
+      ],
+      "tensor_factor_count": 3
+    },
+    {
+      "carrier_dimension": 54,
+      "control_id": "S4-2-1-1-4_3-1_2-2_2-1-1-mask-3",
+      "exact_projected_block_encoding_verified": true,
+      "group_order": 24,
+      "invariant_projector_hermiticity_residual": 0.0,
+      "invariant_projector_idempotence_residual": 1.9926708809548254e-16,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_selected_unitary_residual": 1.073120005901605e-15,
+      "n": 4,
+      "orientation_mask": 3,
+      "projected_top_block_residual": 3.700059255453542e-17,
+      "status": "exact-invariant-projector-top-block",
+      "target_partition": [
+        2,
+        1,
+        1
+      ],
+      "tensor_factor_count": 3
+    },
+    {
+      "carrier_dimension": 18,
+      "control_id": "S4-1-1-1-1-4_3-1_2-2_2-1-1-mask-0",
+      "exact_projected_block_encoding_verified": true,
+      "group_order": 24,
+      "invariant_projector_hermiticity_residual": 0.0,
+      "invariant_projector_idempotence_residual": 4.625929269271485e-18,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_selected_unitary_residual": 2.369187730683688e-16,
+      "n": 4,
+      "orientation_mask": 0,
+      "projected_top_block_residual": 0.0,
+      "status": "exact-invariant-projector-top-block",
+      "target_partition": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "tensor_factor_count": 3
+    },
+    {
+      "carrier_dimension": 18,
+      "control_id": "S4-1-1-1-1-4_3-1_2-2_2-1-1-mask-1",
+      "exact_projected_block_encoding_verified": true,
+      "group_order": 24,
+      "invariant_projector_hermiticity_residual": 0.0,
+      "invariant_projector_idempotence_residual": 7.819158868230479e-17,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_selected_unitary_residual": 6.129586614528861e-16,
+      "n": 4,
+      "orientation_mask": 1,
+      "projected_top_block_residual": 2.155928731426371e-17,
+      "status": "exact-invariant-projector-top-block",
+      "target_partition": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "tensor_factor_count": 3
+    },
+    {
+      "carrier_dimension": 18,
+      "control_id": "S4-1-1-1-1-4_3-1_2-2_2-1-1-mask-2",
+      "exact_projected_block_encoding_verified": true,
+      "group_order": 24,
+      "invariant_projector_hermiticity_residual": 0.0,
+      "invariant_projector_idempotence_residual": 3.7638901366303607e-17,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_selected_unitary_residual": 2.693165699279756e-16,
+      "n": 4,
+      "orientation_mask": 2,
+      "projected_top_block_residual": 1.730864242106344e-17,
+      "status": "exact-invariant-projector-top-block",
+      "target_partition": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "tensor_factor_count": 3
+    },
+    {
+      "carrier_dimension": 18,
+      "control_id": "S4-1-1-1-1-4_3-1_2-2_2-1-1-mask-3",
+      "exact_projected_block_encoding_verified": true,
+      "group_order": 24,
+      "invariant_projector_hermiticity_residual": 0.0,
+      "invariant_projector_idempotence_residual": 2.656856277134091e-16,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_selected_unitary_residual": 6.212836092977289e-16,
+      "n": 4,
+      "orientation_mask": 3,
+      "projected_top_block_residual": 5.713786894789743e-17,
+      "status": "exact-invariant-projector-top-block",
+      "target_partition": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "tensor_factor_count": 3
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "efficient_symmetric_group_qft",
+      "resolution": "Beals gives a polynomial quantum Fourier transform over S_n; the finite intertwining convention is validated here.",
+      "resolved": true
+    },
+    {
+      "obligation": "efficient_irrep_action",
+      "resolution": "QFT conjugates reversible left multiplication into direct-sum rho_lambda(s) tensor I action. Fixing the column index realizes rho_lambda(s) on an arbitrary row state.",
+      "resolved": true
+    },
+    {
+      "obligation": "orientation_controlled_tensor_action",
+      "resolution": "For each source pair, the orientation bit controls whether rho_lambda(s) or rho_mu(s) is applied; O(k) such actions share one coherent permutation label.",
+      "resolved": true
+    },
+    {
+      "obligation": "projected_group_average",
+      "resolution": "Uniform PREPARE, SELECT(U_h(s)), and PREPARE inverse have top ancilla block E_h exactly.",
+      "resolved": true
+    },
+    {
+      "obligation": "no_factorial_precision_or_amplification",
+      "resolution": "The orientation filter consumes E_h as a Kraus block at unit scale. Inverse-polynomial operator accuracy suffices; postselection probability is part of the measurement effect.",
+      "resolved": true
+    }
+  ],
+  "qft_controls": [
+    {
+      "all_irrep_dimensions_resolve_regular_space": true,
+      "exact_finite_intertwining_verified": true,
+      "fourier_dimension": 6,
+      "group_order": 6,
+      "maximum_fourier_unitarity_residual": 2.258160866216476e-16,
+      "maximum_left_regular_intertwining_residual": 2.711538070467021e-16,
+      "n": 3,
+      "status": "exact-symmetric-qft-irrep-action-intertwining"
+    },
+    {
+      "all_irrep_dimensions_resolve_regular_space": true,
+      "exact_finite_intertwining_verified": true,
+      "fourier_dimension": 24,
+      "group_order": 24,
+      "maximum_fourier_unitarity_residual": 3.859014783790134e-16,
+      "maximum_left_regular_intertwining_residual": 5.83710411694299e-16,
+      "n": 4,
+      "status": "exact-symmetric-qft-irrep-action-intertwining"
+    }
+  ],
+  "scaling_records": [
+    {
+      "carrier_qubit_upper_bound": 2070,
+      "factorial_amplitude_amplification_required": false,
+      "hidden_label_count_log2": 44.25014046988262,
+      "information_threshold_copy_count": 45,
+      "inverse_polynomial_error_suffices": true,
+      "n": 16,
+      "orientation_control_qubit_upper_bound": 45,
+      "polynomial_circuit_schema": true,
+      "qft_calls_per_projector_block_encoding": 92,
+      "qft_gate_complexity_contract": "poly(n, log(1/error)); Beals gives polynomial S_n QFT",
+      "status": "polynomial-controlled-invariant-projector-schema",
+      "tensor_representation_factor_count": 46,
+      "total_gate_complexity_contract": "O(k * poly(n, log(k/error))) with k=ceil(log2(n!))"
+    },
+    {
+      "carrier_qubit_upper_bound": 14042,
+      "factorial_amplitude_amplification_required": false,
+      "hidden_label_count_log2": 117.6632636523603,
+      "information_threshold_copy_count": 118,
+      "inverse_polynomial_error_suffices": true,
+      "n": 32,
+      "orientation_control_qubit_upper_bound": 118,
+      "polynomial_circuit_schema": true,
+      "qft_calls_per_projector_block_encoding": 238,
+      "qft_gate_complexity_contract": "poly(n, log(1/error)); Beals gives polynomial S_n QFT",
+      "status": "polynomial-controlled-invariant-projector-schema",
+      "tensor_representation_factor_count": 119,
+      "total_gate_complexity_contract": "O(k * poly(n, log(k/error))) with k=ceil(log2(n!))"
+    },
+    {
+      "carrier_qubit_upper_bound": 87912,
+      "factorial_amplitude_amplification_required": false,
+      "hidden_label_count_log2": 295.9951439417241,
+      "information_threshold_copy_count": 296,
+      "inverse_polynomial_error_suffices": true,
+      "n": 64,
+      "orientation_control_qubit_upper_bound": 296,
+      "polynomial_circuit_schema": true,
+      "qft_calls_per_projector_block_encoding": 594,
+      "qft_gate_complexity_contract": "poly(n, log(1/error)); Beals gives polynomial S_n QFT",
+      "status": "polynomial-controlled-invariant-projector-schema",
+      "tensor_representation_factor_count": 297,
+      "total_gate_complexity_contract": "O(k * poly(n, log(k/error))) with k=ceil(log2(n!))"
+    },
+    {
+      "carrier_qubit_upper_bound": 514806,
+      "factorial_amplitude_amplification_required": false,
+      "hidden_label_count_log2": 716.161722083622,
+      "information_threshold_copy_count": 717,
+      "inverse_polynomial_error_suffices": true,
+      "n": 128,
+      "orientation_control_qubit_upper_bound": 717,
+      "polynomial_circuit_schema": true,
+      "qft_calls_per_projector_block_encoding": 1436,
+      "qft_gate_complexity_contract": "poly(n, log(1/error)); Beals gives polynomial S_n QFT",
+      "status": "polynomial-controlled-invariant-projector-schema",
+      "tensor_representation_factor_count": 718,
+      "total_gate_complexity_contract": "O(k * poly(n, log(k/error))) with k=ceil(log2(n!))"
+    },
+    {
+      "carrier_qubit_upper_bound": 2837540,
+      "factorial_amplitude_amplification_required": false,
+      "hidden_label_count_log2": 1683.9962872242147,
+      "information_threshold_copy_count": 1684,
+      "inverse_polynomial_error_suffices": true,
+      "n": 256,
+      "orientation_control_qubit_upper_bound": 1684,
+      "polynomial_circuit_schema": true,
+      "qft_calls_per_projector_block_encoding": 3370,
+      "qft_gate_complexity_contract": "poly(n, log(1/error)); Beals gives polynomial S_n QFT",
+      "status": "polynomial-controlled-invariant-projector-schema",
+      "tensor_representation_factor_count": 1685,
+      "total_gate_complexity_contract": "O(k * poly(n, log(k/error))) with k=ceil(log2(n!))"
+    },
+    {
+      "carrier_qubit_upper_bound": 15027252,
+      "factorial_amplitude_amplification_required": false,
+      "hidden_label_count_log2": 3875.166121943203,
+      "information_threshold_copy_count": 3876,
+      "inverse_polynomial_error_suffices": true,
+      "n": 512,
+      "orientation_control_qubit_upper_bound": 3876,
+      "polynomial_circuit_schema": true,
+      "qft_calls_per_projector_block_encoding": 7754,
+      "qft_gate_complexity_contract": "poly(n, log(1/error)); Beals gives polynomial S_n QFT",
+      "status": "polynomial-controlled-invariant-projector-schema",
+      "tensor_representation_factor_count": 3877,
+      "total_gate_complexity_contract": "O(k * poly(n, log(k/error))) with k=ceil(log2(n!))"
+    }
+  ],
+  "status": "polynomial-invariant-projector-schema-postfilter-analysis-open",
+  "summary": "Converted the orientation invariant projector from an assumed Kronecker primitive into an explicit polynomial projected circuit using the symmetric-group QFT and coherent group averaging.",
+  "theorem_contract": {
+    "complexity": "At k=Theta(n log n), O(k) polynomial-size S_n QFT sandwiches and reversible permutation operations remain polynomial in n and log(1/error).",
+    "filter_composition": "Keep the group ancilla success branch, Fourier transform h, and accept h-character z!=0 to realize F_H-F_H^2.",
+    "fourier_intertwiner": "QFT_Sn L_s QFT_Sn^*=direct_sum_lambda rho_lambda(s) tensor I_dlambda.",
+    "irrep_action": "Embed |i> as |lambda,i,j0>, inverse-QFT, left multiply by s, and QFT to implement rho_lambda(s)|i>.",
+    "orientation_select": "Apply the target action and, for each pair (lambda_i,mu_i), select rho_lambda_i(s) or rho_mu_i(s) with orientation bit h_i.",
+    "projected_encoding": "<uniform|SELECT(U_h(s))|uniform>=(1/n!)sum_s U_h(s)=E_(nu,h).",
+    "remaining_boundary": "Prove constant retained hidden-label information after a polynomial family of filters and construct the final decoder."
+  }
+}

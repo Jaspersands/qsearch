@@ -1,0 +1,267 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Sellke gives no convergence rate, so a growing number of blocks might contain mostly failures.",
+      "resolution": "Only the bad-block fraction is needed. Its expectation is q_n=o(1), and Markov gives convergence of that fraction to zero without independence or an explicit rate.",
+      "resolved": true
+    },
+    {
+      "objection": "Physical unequal labels are unordered, whereas good blocks use named left and right Plancherel factors.",
+      "resolution": "Use the latent ordered iid draw. Swapping either member of an unordered pair complements one orientation bit and permutes the full orientation-projector family, leaving the existence of the common core and the norm unchanged.",
+      "resolved": true
+    },
+    {
+      "objection": "Conditioning on global distinctness destroys block independence and therefore the good-block argument.",
+      "resolution": "No conditioning is used. Good-block density and global distinctness each hold with probability 1-o(1), so their intersection does too by a union bound.",
+      "resolved": true
+    },
+    {
+      "objection": "Tensor covering is only a support statement and may not supply enough multiplicity for a large common core.",
+      "resolution": "Positive trivial multiplicity on each good side is enough for one shared vector. The exponential norm factor comes from the number of projectors sharing it, not from large representation multiplicities.",
+      "resolved": true
+    },
+    {
+      "objection": "The target irrep is selected after seeing bad blocks, so the theorem proves a fixed-target lower bound.",
+      "resolution": "It does not prove a fixed-target lower bound. It is enough to falsify a bound uniform over every target and to lower-bound the maximum Fourier-block norm. Any claim about typical fixed targets remains open.",
+      "resolved": false
+    },
+    {
+      "objection": "A large maximum frame eigenvalue rules out every useful collective measurement or decoder.",
+      "resolution": "False. The result kills the proposed uniform norm upper bound and its direct normalization argument only. Whitening, quotienting common channels, non-projector measurements, and different observables remain open.",
+      "resolved": false
+    },
+    {
+      "objection": "The common blocks may be information-theoretically existent but computationally impossible to identify.",
+      "resolution": "Efficient identification is irrelevant to this norm counterexample, but it is an unresolved requirement for any algorithm that tries to exploit or quotient them.",
+      "resolved": false
+    }
+  ],
+  "claim_gate": {
+    "all_collective_measurements_ruled_out": false,
+    "alternative_measurement_or_whitening_ruled_out": false,
+    "asymptotic_global_all_unequal_and_distinct_proved": true,
+    "classical_separation_proved": false,
+    "natural_iid_plancherel_pair_law_proved": true,
+    "polynomial_hidden_permutation_decoder_proved": false,
+    "rate_free_linear_good_block_density_proved": true,
+    "reason": "Typical natural tuples contain a linear number of tensor-covering blocks, producing an exponential structured family of orientation projectors with a common vector. This asymptotically falsifies the uniform poly(n)2^-k frame-norm bound, but leaves alternative measurements and decoding open.",
+    "residual_target_selection_proved": true,
+    "sellke_constant_plancherel_covering_theorem_verified": true,
+    "speedup_claim_allowed": false,
+    "typical_exponential_common_orientation_family_proved": true,
+    "uniform_collision_free_polynomial_factor_norm_bound_falsified": true,
+    "uniform_orientation_frame_norm_route_viable": false
+  },
+  "created_at": "2026-08-05T22:14:05.876200+00:00",
+  "dependency_evidence": {
+    "asymptotic_global_all_distinct_dominance_proved": true,
+    "block_common_core_construction_proved": true,
+    "global_source_draws_are_iid_plancherel": true,
+    "physical_label_pair_law_verified": true,
+    "sellke_paper_id": "sellke-irrep-tensor-covering-2022",
+    "sellke_theorem_label": "Theorem 1.2",
+    "tail_exact_finite_exponential_common_family_found": true,
+    "threshold_tuple_all_unequal_with_probability_one_minus_o_one": true
+  },
+  "falsifiers_triggered": [
+    "Global source distinctness does not force orientation projectors toward transversality; typical constant-size tensor-covering blocks create exact shared invariants.",
+    "The unknown convergence rate in Sellke's theorem is not an escape hatch: Markov controls the bad-block fraction from q_n=o(1) alone.",
+    "Finite random-family disappearance at depth five misses correlated block-code families of exponential size.",
+    "The obstruction does not imply that the code-equivalence HSP, all covariant measurements, or all decoders fail."
+  ],
+  "finite_markov_controls": [
+    {
+      "averaged_fourier_norm_lower_bound": 4.484155085839415e-44,
+      "bad_fraction_threshold": 0.2,
+      "common_orientation_family_size_lower_bound": 65536,
+      "complete_block_count": 20,
+      "good_block_count_lower_bound_off_failure_event": 16,
+      "log2_averaged_fourier_norm_lower_bound": -144,
+      "log2_ratio_to_two_to_one_minus_k": 15,
+      "probability_bad_fraction_reaches_threshold_upper_bound": 0.19999999999999998,
+      "ratio_to_two_to_one_minus_k": 32768,
+      "single_block_failure_probability_upper_bound": 0.04
+    },
+    {
+      "averaged_fourier_norm_lower_bound": 1.035052700659762e-171,
+      "bad_fraction_threshold": 0.1,
+      "common_orientation_family_size_lower_bound": 4722366482869645213696,
+      "complete_block_count": 80,
+      "good_block_count_lower_bound_off_failure_event": 72,
+      "log2_averaged_fourier_norm_lower_bound": -568,
+      "log2_ratio_to_two_to_one_minus_k": 71,
+      "probability_bad_fraction_reaches_threshold_upper_bound": 0.09999999999999999,
+      "ratio_to_two_to_one_minus_k": 2361183241434822606848,
+      "single_block_failure_probability_upper_bound": 0.01
+    },
+    {
+      "averaged_fourier_norm_lower_bound": 0.0,
+      "bad_fraction_threshold": 0.05,
+      "common_orientation_family_size_lower_bound": 32592575621351777380295131014550050576823494298654980010178247189670100796213387298934358016,
+      "complete_block_count": 320,
+      "good_block_count_lower_bound_off_failure_event": 304,
+      "log2_averaged_fourier_norm_lower_bound": -2256,
+      "log2_ratio_to_two_to_one_minus_k": 303,
+      "probability_bad_fraction_reaches_threshold_upper_bound": 0.049999999999999996,
+      "ratio_to_two_to_one_minus_k": 16296287810675888690147565507275025288411747149327490005089123594835050398106693649467179008,
+      "single_block_failure_probability_upper_bound": 0.0025
+    }
+  ],
+  "headline_metrics": {
+    "all_collective_measurement_no_go_theorem_count": 0,
+    "asymptotic_global_all_distinct_theorem_count": 1,
+    "asymptotic_linear_good_block_density_theorem_count": 1,
+    "block_common_core_construction_theorem_count": 1,
+    "classical_code_equivalence_separation_count": 0,
+    "natural_iid_plancherel_pair_law_theorem_count": 1,
+    "new_quantum_algorithm_count": 0,
+    "polynomial_hidden_permutation_decoder_count": 0,
+    "residual_target_control_count": 3,
+    "residual_target_control_failure_count": 0,
+    "sellke_covering_literature_theorem_count": 1,
+    "threshold_all_unequal_theorem_count": 1,
+    "typical_exponential_common_orientation_family_theorem_count": 1,
+    "uniform_collision_free_polynomial_factor_norm_counterexample_theorem_count": 1
+  },
+  "literature": {
+    "author": "Mark Sellke",
+    "paper_id": "sellke-irrep-tensor-covering-2022",
+    "theorem": "Theorem 1.2",
+    "title": "Covering Irrep(S_n) With Tensor Products and Powers",
+    "url": "https://arxiv.org/abs/2004.05283"
+  },
+  "proof_steps": [
+    {
+      "assumptions": [],
+      "dependencies": [
+        "self_dual_wreath_natural_unequal_dominance",
+        "self_dual_wreath_global_partition_collision"
+      ],
+      "falsifier": "A physical-label probability or representation equivalence that is not the unordered image of two iid Plancherel draws.",
+      "id": "natural-latent-pair-law",
+      "proved": true,
+      "statement": "Each natural physical unequal label has two latent iid Plancherel source partitions; unordered packaging only complements an orientation coordinate."
+    },
+    {
+      "assumptions": [
+        "The cited theorem is used exactly in its Plancherel regime."
+      ],
+      "dependencies": [
+        "sellke-irrep-tensor-covering-2022"
+      ],
+      "falsifier": "The published theorem lacks a fixed absolute C, excludes the Plancherel law, or requires a coupling absent here.",
+      "id": "constant-block-tensor-covering",
+      "proved": true,
+      "statement": "Sellke Theorem 1.2 supplies an absolute block size C for which arbitrarily coupled Plancherel irreps tensor-cover every S_n irrep with probability 1-o(1)."
+    },
+    {
+      "assumptions": [
+        "k=ceil(log2(n!)) tends to infinity."
+      ],
+      "dependencies": [
+        "constant-block-tensor-covering"
+      ],
+      "falsifier": "The expected bad-block fraction does not tend to zero or the number of complete blocks is not Theta(k).",
+      "id": "linear-good-block-density",
+      "proved": true,
+      "statement": "If q_n=o(1) is the probability either side of a block fails to cover, Markov gives an o(1) bad-block fraction with probability 1-o(1), without any rate assumption."
+    },
+    {
+      "assumptions": [
+        "The uniform norm claim ranges over every target block."
+      ],
+      "dependencies": [
+        "S_n irreps are self-dual"
+      ],
+      "falsifier": "The physical frame omits the selected target sector or the residual tensor has no irreducible constituent.",
+      "id": "residual-target-selection",
+      "proved": true,
+      "statement": "Freeze every bad block and leftover label, then choose a target constituent of the selected residual tensor. Since S_n irreps are self-dual, target tensor residual contains the trivial irrep."
+    },
+    {
+      "assumptions": [
+        "n>=5",
+        "all physical labels are unequal"
+      ],
+      "dependencies": [
+        "self_dual_wreath_orientation_block_common_core",
+        "residual-target-selection"
+      ],
+      "falsifier": "A fixed-family parity equation fails for the all-trivial assignment or the orientation projectors do not share the claimed invariant.",
+      "id": "structured-common-core-family",
+      "proved": true,
+      "statement": "One replicated orientation bit per good block produces 2^r projectors sharing a vector: every good left/right block uses its trivial sector and the residual uses the selected target invariant."
+    },
+    {
+      "assumptions": "The polynomial factor has fixed degree.",
+      "dependencies": [
+        "linear-good-block-density",
+        "structured-common-core-family",
+        "asymptotic-global-all-distinct-dominance"
+      ],
+      "falsifier": "r=o(k), the Fourier normalization differs from 2^-k, or the frame norm is not the maximum of its target blocks.",
+      "id": "typical-polynomial-factor-norm-obstruction",
+      "proved": true,
+      "statement": "With r=(1-o(1))k/C, ||F_nu||>=2^(r-k); hence its ratio to poly(n)2^-k is 2^r/poly(n), which diverges because k=Theta(n log n)."
+    }
+  ],
+  "residual_target_controls": [
+    {
+      "n": 5,
+      "residual_target_lemma_verified": true,
+      "selected_residual_partitions": [],
+      "target_multiplicity_in_residual": 1,
+      "target_partition": [
+        5
+      ],
+      "trivial_multiplicity_in_target_tensor_residual": 1
+    },
+    {
+      "n": 5,
+      "residual_target_lemma_verified": true,
+      "selected_residual_partitions": [
+        [
+          4,
+          1
+        ]
+      ],
+      "target_multiplicity_in_residual": 1,
+      "target_partition": [
+        4,
+        1
+      ],
+      "trivial_multiplicity_in_target_tensor_residual": 1
+    },
+    {
+      "n": 5,
+      "residual_target_lemma_verified": true,
+      "selected_residual_partitions": [
+        [
+          4,
+          1
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "target_multiplicity_in_residual": 1,
+      "target_partition": [
+        4,
+        1
+      ],
+      "trivial_multiplicity_in_target_tensor_residual": 1
+    }
+  ],
+  "status": "typical-uniform-frame-norm-route-falsified-alternatives-open",
+  "summary": "Combined the natural Plancherel source law, Sellke's constant-block tensor-covering theorem, a rate-free bad-block argument, and the exact common-core construction. The desired uniform poly(n)2^-k norm bound fails with high probability.",
+  "theorem_contract": {
+    "common_core": "Replicating one orientation bit across each good block gives 2^r orientations with an exact shared invariant.",
+    "covering_input": "Sellke Theorem 1.2 gives a fixed absolute C such that C arbitrarily coupled Plancherel irreps cover every irrep asymptotically almost surely.",
+    "natural_source": "Before unordered packaging, k natural labels are k iid pairs of iid Plancherel S_n irreps.",
+    "norm_obstruction": "For some target nu, ||F_nu||>=2^(r-k) with r=(1-o(1))k/C, ruling out every uniform poly(n)2^-k upper bound with high probability.",
+    "rate_free_density": "For block failure q_n=o(1), Markov at threshold sqrt(q_n) gives a 1-o(1) fraction of good blocks with probability 1-o(1); no convergence rate is assumed.",
+    "residual_target": "Bad blocks and leftovers are frozen; a target constituent of their selected tensor makes the full-pattern tensor contain the trivial irrep.",
+    "scope_boundary": "This kills the uniform orientation-frame norm strategy only; it does not rule out whitening, non-projector measurements, other observables, efficient decoders, or quantum speedups."
+  }
+}

@@ -1,0 +1,448 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "An efficient inverse S_n QFT alone is a decoder.",
+      "resolution": "Only for ideal matrix-coefficient amplitudes. The physical carrier's sector weights and Schmidt spectra are unproved.",
+      "resolved": false
+    },
+    {
+      "objection": "Correct sector weights compensate for poor entanglement.",
+      "resolution": "Equation (1) contains both factors. Rank-one sector carriers lose a factor 1/sqrt(d_nu) in amplitude.",
+      "resolved": true
+    },
+    {
+      "objection": "Measuring nu and preparing the same weights later is equivalent.",
+      "resolution": "It destroys the cross-sector phases carrying the common group element and is ruled out by the isotypic-dephasing no-go.",
+      "resolved": false
+    },
+    {
+      "objection": "The n! outcomes force an n!-size classical table.",
+      "resolution": "A permutation uses O(n log n) bits and inverse group Fourier synthesis produces it algorithmically; carrier normalization, not outcome enumeration, is the core obstruction.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "classical_separation_proved": false,
+    "coherent_dual_row_extraction_proved": false,
+    "coherent_fourier_decoder_criterion_proved": true,
+    "efficient_inverse_symmetric_group_qft_available": true,
+    "end_to_end_hidden_permutation_decoder_proved": false,
+    "ideal_matrix_coefficient_state_decodes_exactly": true,
+    "physical_filtered_sector_weights_match_plancherel": false,
+    "polynomial_sector_reweighting_proved": false,
+    "reason": "The exact coherent Fourier target and success formula are now known, and the final inverse S_n QFT is efficient. The physical carrier has not been transformed to the required Plancherel, maximally entangled matrix-coefficient form.",
+    "sector_schmidt_flattening_proved": false,
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-06T00:21:56.500171+00:00",
+  "falsifiers_triggered": [
+    "Independent sector decoding is unnecessary in the ideal case and impossible at constant success after dephasing; coherent matrix-coefficient synthesis is the correct target.",
+    "An n!-outcome table is not intrinsically required: inverse S_n Fourier synthesis outputs the permutation in O(n log n) bits.",
+    "Plancherel sector weights alone are insufficient; row-column Schmidt flatness enters multiplicatively in the exact amplitude.",
+    "No speedup follows until physical carrier extraction, flattening, reweighting, and classical separation are proved."
+  ],
+  "finite_controls": [
+    {
+      "control_id": "S3-IDEAL",
+      "exact_decoder_formula_verified": true,
+      "exact_permutation_independence_verified": true,
+      "fourier_dimension": 6,
+      "group_order": 6,
+      "irrep_count": 3,
+      "maximum_fourier_unitarity_residual": 1.8644779193661497e-16,
+      "maximum_observed_correct_label_probability": 1.0,
+      "maximum_success_formula_residual": 0.0,
+      "minimum_observed_correct_label_probability": 1.0,
+      "n": 3,
+      "predicted_correct_label_probability": 1.0,
+      "sector_entanglement_fidelities": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "sector_weights": [
+        0.16666666666666666,
+        0.6666666666666666,
+        0.16666666666666666
+      ],
+      "status": "exact-coherent-fourier-decoder-control"
+    },
+    {
+      "control_id": "S3-WEIGHT-MISMATCH",
+      "exact_decoder_formula_verified": true,
+      "exact_permutation_independence_verified": true,
+      "fourier_dimension": 6,
+      "group_order": 6,
+      "irrep_count": 3,
+      "maximum_fourier_unitarity_residual": 1.8644779193661497e-16,
+      "maximum_observed_correct_label_probability": 0.8888888888888888,
+      "maximum_success_formula_residual": 0.0,
+      "minimum_observed_correct_label_probability": 0.8888888888888888,
+      "n": 3,
+      "predicted_correct_label_probability": 0.8888888888888888,
+      "sector_entanglement_fidelities": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "sector_weights": [
+        0.3333333333333333,
+        0.3333333333333333,
+        0.3333333333333333
+      ],
+      "status": "exact-coherent-fourier-decoder-control"
+    },
+    {
+      "control_id": "S4-SCHMIDT-MISMATCH",
+      "exact_decoder_formula_verified": true,
+      "exact_permutation_independence_verified": true,
+      "fourier_dimension": 24,
+      "group_order": 24,
+      "irrep_count": 5,
+      "maximum_fourier_unitarity_residual": 3.6092686819667645e-16,
+      "maximum_observed_correct_label_probability": 0.9615031558510958,
+      "maximum_success_formula_residual": 2.220446049250313e-16,
+      "minimum_observed_correct_label_probability": 0.9615031558510958,
+      "n": 4,
+      "predicted_correct_label_probability": 0.961503155851096,
+      "sector_entanglement_fidelities": [
+        1.0,
+        0.9772838841927123,
+        0.9855985596534886,
+        0.9772838841927123,
+        1.0
+      ],
+      "sector_weights": [
+        0.041666666666666664,
+        0.375,
+        0.16666666666666666,
+        0.375,
+        0.041666666666666664
+      ],
+      "status": "exact-coherent-fourier-decoder-control"
+    },
+    {
+      "control_id": "S4-RANK-ONE",
+      "exact_decoder_formula_verified": true,
+      "exact_permutation_independence_verified": true,
+      "fourier_dimension": 24,
+      "group_order": 24,
+      "irrep_count": 5,
+      "maximum_fourier_unitarity_residual": 3.6092686819667645e-16,
+      "maximum_observed_correct_label_probability": 0.4166666666666668,
+      "maximum_success_formula_residual": 2.7755575615628914e-16,
+      "minimum_observed_correct_label_probability": 0.4166666666666665,
+      "n": 4,
+      "predicted_correct_label_probability": 0.4166666666666668,
+      "sector_entanglement_fidelities": [
+        1.0,
+        0.5773502691896258,
+        0.7071067811865475,
+        0.5773502691896258,
+        1.0
+      ],
+      "sector_weights": [
+        0.1,
+        0.3,
+        0.2,
+        0.3,
+        0.1
+      ],
+      "status": "exact-coherent-fourier-decoder-control"
+    }
+  ],
+  "headline_metrics": {
+    "coherent_dual_row_extraction_count": 0,
+    "coherent_fourier_success_formula_theorem_count": 1,
+    "efficient_inverse_symmetric_group_qft_count": 12,
+    "end_to_end_fourier_decoder_count": 0,
+    "finite_control_count": 4,
+    "finite_control_failure_count": 0,
+    "ideal_control_success_probability": 1.0,
+    "matrix_coefficient_fourier_basis_theorem_count": 1,
+    "minimum_mismatch_control_success_probability": 0.4166666666666668,
+    "new_quantum_algorithm_count": 0,
+    "perfect_plancherel_maximal_entanglement_decoder_theorem_count": 1,
+    "physical_sector_weight_match_theorem_count": 0,
+    "polynomial_sector_reweighting_count": 0,
+    "scaling_record_count": 12,
+    "sector_schmidt_flattening_count": 0
+  },
+  "literature_links": [
+    {
+      "external_theorem_not_reproved_here": true,
+      "paper_id": "beals-1997-symmetric-group-qft",
+      "title": "Quantum computation of Fourier transforms over symmetric groups",
+      "url": "https://doi.org/10.1145/258533.258548",
+      "use": "Polynomial implementation of the final S_n inverse QFT."
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "matrix_coefficient_fourier_orthogonality",
+      "resolution": "Schur orthogonality makes the states direct_sum sqrt(d/|G|) vec(rho_nu(g)) an orthonormal basis indexed by g.",
+      "resolved": true
+    },
+    {
+      "obligation": "coherent_decoder_success_formula",
+      "resolution": "Direct contraction with the matrix-coefficient Fourier row gives [sum_nu d_nu sqrt(p_nu/|G|) f_nu]^2.",
+      "resolved": true
+    },
+    {
+      "obligation": "efficient_inverse_symmetric_group_qft",
+      "resolution": "Beals supplies a polynomial quantum Fourier transform over S_n; the external theorem is linked below.",
+      "resolved": true
+    },
+    {
+      "obligation": "physical_filtered_sector_weight_match",
+      "resolution": "No typical-source theorem shows that the filtered physical carrier has Plancherel coherent amplitudes after acceptance.",
+      "resolved": false
+    },
+    {
+      "obligation": "coherent_dual_row_extraction_and_schmidt_flattening",
+      "resolution": "No polynomial isometry extracts an aligned column partner and flattens the sector Schmidt spectrum without factorial cost.",
+      "resolved": false
+    }
+  ],
+  "scaling_records": [
+    {
+      "coherent_dual_row_extraction_proved": false,
+      "coherent_irrep_label_qubit_upper_bound": 2,
+      "column_register_qubit_upper_bound": 1,
+      "efficient_symmetric_group_qft_available": true,
+      "end_to_end_fourier_decoder_proved": false,
+      "group_order_decimal": "6",
+      "irrep_count": 3,
+      "log2_group_order": 2.584962500721156,
+      "maximum_irrep_dimension_decimal": "2",
+      "n": 3,
+      "physical_sector_weight_match_proved": false,
+      "plancherel_weight_identity_verified": true,
+      "polynomial_sector_reweighting_proved": false,
+      "row_register_qubit_upper_bound": 1,
+      "sector_schmidt_flattening_proved": false,
+      "status": "ideal-fourier-decoder-target-physical-carrier-normalization-open",
+      "total_fourier_register_qubit_upper_bound": 4
+    },
+    {
+      "coherent_dual_row_extraction_proved": false,
+      "coherent_irrep_label_qubit_upper_bound": 3,
+      "column_register_qubit_upper_bound": 2,
+      "efficient_symmetric_group_qft_available": true,
+      "end_to_end_fourier_decoder_proved": false,
+      "group_order_decimal": "24",
+      "irrep_count": 5,
+      "log2_group_order": 4.584962500721156,
+      "maximum_irrep_dimension_decimal": "3",
+      "n": 4,
+      "physical_sector_weight_match_proved": false,
+      "plancherel_weight_identity_verified": true,
+      "polynomial_sector_reweighting_proved": false,
+      "row_register_qubit_upper_bound": 2,
+      "sector_schmidt_flattening_proved": false,
+      "status": "ideal-fourier-decoder-target-physical-carrier-normalization-open",
+      "total_fourier_register_qubit_upper_bound": 7
+    },
+    {
+      "coherent_dual_row_extraction_proved": false,
+      "coherent_irrep_label_qubit_upper_bound": 3,
+      "column_register_qubit_upper_bound": 3,
+      "efficient_symmetric_group_qft_available": true,
+      "end_to_end_fourier_decoder_proved": false,
+      "group_order_decimal": "120",
+      "irrep_count": 7,
+      "log2_group_order": 6.906890595608519,
+      "maximum_irrep_dimension_decimal": "6",
+      "n": 5,
+      "physical_sector_weight_match_proved": false,
+      "plancherel_weight_identity_verified": true,
+      "polynomial_sector_reweighting_proved": false,
+      "row_register_qubit_upper_bound": 3,
+      "sector_schmidt_flattening_proved": false,
+      "status": "ideal-fourier-decoder-target-physical-carrier-normalization-open",
+      "total_fourier_register_qubit_upper_bound": 9
+    },
+    {
+      "coherent_dual_row_extraction_proved": false,
+      "coherent_irrep_label_qubit_upper_bound": 4,
+      "column_register_qubit_upper_bound": 4,
+      "efficient_symmetric_group_qft_available": true,
+      "end_to_end_fourier_decoder_proved": false,
+      "group_order_decimal": "720",
+      "irrep_count": 11,
+      "log2_group_order": 9.491853096329674,
+      "maximum_irrep_dimension_decimal": "16",
+      "n": 6,
+      "physical_sector_weight_match_proved": false,
+      "plancherel_weight_identity_verified": true,
+      "polynomial_sector_reweighting_proved": false,
+      "row_register_qubit_upper_bound": 4,
+      "sector_schmidt_flattening_proved": false,
+      "status": "ideal-fourier-decoder-target-physical-carrier-normalization-open",
+      "total_fourier_register_qubit_upper_bound": 12
+    },
+    {
+      "coherent_dual_row_extraction_proved": false,
+      "coherent_irrep_label_qubit_upper_bound": 5,
+      "column_register_qubit_upper_bound": 7,
+      "efficient_symmetric_group_qft_available": true,
+      "end_to_end_fourier_decoder_proved": false,
+      "group_order_decimal": "40320",
+      "irrep_count": 22,
+      "log2_group_order": 15.29920801838728,
+      "maximum_irrep_dimension_decimal": "90",
+      "n": 8,
+      "physical_sector_weight_match_proved": false,
+      "plancherel_weight_identity_verified": true,
+      "polynomial_sector_reweighting_proved": false,
+      "row_register_qubit_upper_bound": 7,
+      "sector_schmidt_flattening_proved": false,
+      "status": "ideal-fourier-decoder-target-physical-carrier-normalization-open",
+      "total_fourier_register_qubit_upper_bound": 19
+    },
+    {
+      "coherent_dual_row_extraction_proved": false,
+      "coherent_irrep_label_qubit_upper_bound": 6,
+      "column_register_qubit_upper_bound": 10,
+      "efficient_symmetric_group_qft_available": true,
+      "end_to_end_fourier_decoder_proved": false,
+      "group_order_decimal": "3628800",
+      "irrep_count": 42,
+      "log2_group_order": 21.791061114716953,
+      "maximum_irrep_dimension_decimal": "768",
+      "n": 10,
+      "physical_sector_weight_match_proved": false,
+      "plancherel_weight_identity_verified": true,
+      "polynomial_sector_reweighting_proved": false,
+      "row_register_qubit_upper_bound": 10,
+      "sector_schmidt_flattening_proved": false,
+      "status": "ideal-fourier-decoder-target-physical-carrier-normalization-open",
+      "total_fourier_register_qubit_upper_bound": 26
+    },
+    {
+      "coherent_dual_row_extraction_proved": false,
+      "coherent_irrep_label_qubit_upper_bound": 7,
+      "column_register_qubit_upper_bound": 13,
+      "efficient_symmetric_group_qft_available": true,
+      "end_to_end_fourier_decoder_proved": false,
+      "group_order_decimal": "479001600",
+      "irrep_count": 77,
+      "log2_group_order": 28.835455234075408,
+      "maximum_irrep_dimension_decimal": "7700",
+      "n": 12,
+      "physical_sector_weight_match_proved": false,
+      "plancherel_weight_identity_verified": true,
+      "polynomial_sector_reweighting_proved": false,
+      "row_register_qubit_upper_bound": 13,
+      "sector_schmidt_flattening_proved": false,
+      "status": "ideal-fourier-decoder-target-physical-carrier-normalization-open",
+      "total_fourier_register_qubit_upper_bound": 33
+    },
+    {
+      "coherent_dual_row_extraction_proved": false,
+      "coherent_irrep_label_qubit_upper_bound": 8,
+      "column_register_qubit_upper_bound": 21,
+      "efficient_symmetric_group_qft_available": true,
+      "end_to_end_fourier_decoder_proved": false,
+      "group_order_decimal": "20922789888000",
+      "irrep_count": 231,
+      "log2_group_order": 44.25014046988262,
+      "maximum_irrep_dimension_decimal": "1153152",
+      "n": 16,
+      "physical_sector_weight_match_proved": false,
+      "plancherel_weight_identity_verified": true,
+      "polynomial_sector_reweighting_proved": false,
+      "row_register_qubit_upper_bound": 21,
+      "sector_schmidt_flattening_proved": false,
+      "status": "ideal-fourier-decoder-target-physical-carrier-normalization-open",
+      "total_fourier_register_qubit_upper_bound": 50
+    },
+    {
+      "coherent_dual_row_extraction_proved": false,
+      "coherent_irrep_label_qubit_upper_bound": 10,
+      "column_register_qubit_upper_bound": 28,
+      "efficient_symmetric_group_qft_available": true,
+      "end_to_end_fourier_decoder_proved": false,
+      "group_order_decimal": "2432902008176640000",
+      "irrep_count": 627,
+      "log2_group_order": 61.07738392090622,
+      "maximum_irrep_dimension_decimal": "249420600",
+      "n": 20,
+      "physical_sector_weight_match_proved": false,
+      "plancherel_weight_identity_verified": true,
+      "polynomial_sector_reweighting_proved": false,
+      "row_register_qubit_upper_bound": 28,
+      "sector_schmidt_flattening_proved": false,
+      "status": "ideal-fourier-decoder-target-physical-carrier-normalization-open",
+      "total_fourier_register_qubit_upper_bound": 66
+    },
+    {
+      "coherent_dual_row_extraction_proved": false,
+      "coherent_irrep_label_qubit_upper_bound": 11,
+      "column_register_qubit_upper_bound": 37,
+      "efficient_symmetric_group_qft_available": true,
+      "end_to_end_fourier_decoder_proved": false,
+      "group_order_decimal": "620448401733239439360000",
+      "irrep_count": 1575,
+      "log2_group_order": 79.03765741910044,
+      "maximum_irrep_dimension_decimal": "117487079424",
+      "n": 24,
+      "physical_sector_weight_match_proved": false,
+      "plancherel_weight_identity_verified": true,
+      "polynomial_sector_reweighting_proved": false,
+      "row_register_qubit_upper_bound": 37,
+      "sector_schmidt_flattening_proved": false,
+      "status": "ideal-fourier-decoder-target-physical-carrier-normalization-open",
+      "total_fourier_register_qubit_upper_bound": 85
+    },
+    {
+      "coherent_dual_row_extraction_proved": false,
+      "coherent_irrep_label_qubit_upper_bound": 12,
+      "column_register_qubit_upper_bound": 46,
+      "efficient_symmetric_group_qft_available": true,
+      "end_to_end_fourier_decoder_proved": false,
+      "group_order_decimal": "304888344611713860501504000000",
+      "irrep_count": 3718,
+      "log2_group_order": 97.94419575123733,
+      "maximum_irrep_dimension_decimal": "57424104738000",
+      "n": 28,
+      "physical_sector_weight_match_proved": false,
+      "plancherel_weight_identity_verified": true,
+      "polynomial_sector_reweighting_proved": false,
+      "row_register_qubit_upper_bound": 46,
+      "sector_schmidt_flattening_proved": false,
+      "status": "ideal-fourier-decoder-target-physical-carrier-normalization-open",
+      "total_fourier_register_qubit_upper_bound": 104
+    },
+    {
+      "coherent_dual_row_extraction_proved": false,
+      "coherent_irrep_label_qubit_upper_bound": 14,
+      "column_register_qubit_upper_bound": 56,
+      "efficient_symmetric_group_qft_available": true,
+      "end_to_end_fourier_decoder_proved": false,
+      "group_order_decimal": "263130836933693530167218012160000000",
+      "irrep_count": 8349,
+      "log2_group_order": 117.6632636523603,
+      "maximum_irrep_dimension_decimal": "50385731994259200",
+      "n": 32,
+      "physical_sector_weight_match_proved": false,
+      "plancherel_weight_identity_verified": true,
+      "polynomial_sector_reweighting_proved": false,
+      "row_register_qubit_upper_bound": 56,
+      "sector_schmidt_flattening_proved": false,
+      "status": "ideal-fourier-decoder-target-physical-carrier-normalization-open",
+      "total_fourier_register_qubit_upper_bound": 126
+    }
+  ],
+  "status": "coherent-fourier-decoder-target-proved-carrier-normalization-open",
+  "summary": "Derived and validated the exact cross-sector Fourier decoding criterion, reducing hidden-permutation output to coherent sector reweighting and row-multiplicity entanglement normalization before an efficient inverse S_n QFT.",
+  "theorem_contract": {
+    "candidate_state": "|psi_g>=direct_sum_nu sqrt(p_nu)(rho_nu(g) tensor I)|phi_nu>.",
+    "critical_boundary": "The inverse QFT is polynomial; coherent carrier normalization and reweighting are the unresolved algorithmic core.",
+    "exact_success": "P=[sum_nu d_nu sqrt(p_nu/|G|) f_nu]^2.",
+    "ideal_fourier_state": "|F_g>=direct_sum_nu sqrt(d_nu/|G|) vec(rho_nu(g)).",
+    "perfect_case": "p_nu=d_nu^2/|G| and f_nu=1 for all nu imply exact output g.",
+    "physical_decoder_schema": "Coherently align multiplicity as the dual row register, flatten Schmidt spectra, reweight sectors to Plancherel, then apply the inverse S_n QFT.",
+    "sector_quality": "f_nu=d_nu^-1/2 sum_i sqrt(lambda_nu,i), where lambda are row-column Schmidt probabilities."
+  }
+}

@@ -1,0 +1,8279 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Near-parallel disjoint child ranges create tiny relative probabilities.",
+      "resolution": "After canonical parent whitening, linearly independent ranges are exact endpoint channels; their Euclidean angle does not create a fractional eigenvalue.",
+      "resolved": true
+    },
+    {
+      "objection": "Large recurring intersections necessarily kill the sampler.",
+      "resolution": "Intersection size only counts weighted channels. If their child frames are equal or have computable balanced ratios, they may be the easiest part of the recursion.",
+      "resolved": false
+    },
+    {
+      "objection": "The W4 half ratios prove all orientation splits are balanced.",
+      "resolution": "W4 has four leaves and sparse active sectors. Growing-depth nested frames can carry unequal incidence multiplicities.",
+      "resolved": false
+    },
+    {
+      "objection": "The rank theorem supplies a circuit for endpoint routing.",
+      "resolution": "It is an algebraic localization theorem. A coherent basis-free implementation of the canonical routing projectors is open.",
+      "resolved": false
+    }
+  ],
+  "claim_gate": {
+    "coherent_overlap_core_resolver_proved": false,
+    "finite_w4_overlap_channels_balanced": true,
+    "hierarchical_polar_sampler_polynomial": false,
+    "nonoverlap_channels_exactly_routable_algebraically": true,
+    "reason": "The unresolved hierarchy is now localized to shared child ranges. Their all-n structure, balance, and coherent resolver remain unproved.",
+    "relative_complexity_localized_to_child_intersections": true,
+    "speedup_claim_allowed": false,
+    "typical_large_n_overlap_cores_classified": false,
+    "typical_overlap_weights_inverse_polynomially_balanced": false
+  },
+  "created_at": "2026-08-06T01:49:11.950668+00:00",
+  "falsifiers_triggered": [
+    "Do not use Euclidean near-parallelism of disjoint child ranges as a recursive-conditioning obstruction.",
+    "Do not treat recurring common ranges only as spikes to reject; they are precisely the weighted channels the sampler must route.",
+    "Do not promote finite half balance without an all-n incidence-weight theorem and coherent overlap resolver."
+  ],
+  "generic_controls": [
+    {
+      "carrier_dimension": 3,
+      "child_range_intersection_dimension": 0,
+      "control_id": "nonorthogonal-linearly-independent",
+      "exact_intersection_localization_verified": true,
+      "fractional_rank_identity_residual": 0,
+      "left_rank": 1,
+      "maximum_fractional_eigenvalue": null,
+      "minimum_fractional_eigenvalue": null,
+      "one_relative_eigenvalue_count": 1,
+      "parent_rank": 2,
+      "relative_effect_complement_residual": 4.947807772414164e-16,
+      "right_rank": 1,
+      "status": "exact-relative-effect-intersection-localization",
+      "strict_fractional_eigenvalue_count": 0,
+      "zero_relative_eigenvalue_count": 1
+    },
+    {
+      "carrier_dimension": 3,
+      "child_range_intersection_dimension": 1,
+      "control_id": "balanced-common-core",
+      "exact_intersection_localization_verified": true,
+      "fractional_rank_identity_residual": 0,
+      "left_rank": 2,
+      "maximum_fractional_eigenvalue": 0.5000000000000001,
+      "minimum_fractional_eigenvalue": 0.5000000000000001,
+      "one_relative_eigenvalue_count": 1,
+      "parent_rank": 3,
+      "relative_effect_complement_residual": 2.220446049250313e-16,
+      "right_rank": 2,
+      "status": "exact-relative-effect-intersection-localization",
+      "strict_fractional_eigenvalue_count": 1,
+      "zero_relative_eigenvalue_count": 1
+    },
+    {
+      "carrier_dimension": 3,
+      "child_range_intersection_dimension": 1,
+      "control_id": "unbalanced-common-core",
+      "exact_intersection_localization_verified": true,
+      "fractional_rank_identity_residual": 0,
+      "left_rank": 2,
+      "maximum_fractional_eigenvalue": 0.75,
+      "minimum_fractional_eigenvalue": 0.75,
+      "one_relative_eigenvalue_count": 1,
+      "parent_rank": 3,
+      "relative_effect_complement_residual": 4.440892098500626e-16,
+      "right_rank": 2,
+      "status": "exact-relative-effect-intersection-localization",
+      "strict_fractional_eigenvalue_count": 1,
+      "zero_relative_eigenvalue_count": 1
+    },
+    {
+      "carrier_dimension": 3,
+      "child_range_intersection_dimension": 3,
+      "control_id": "full-overlap-positive-definite",
+      "exact_intersection_localization_verified": true,
+      "fractional_rank_identity_residual": 0,
+      "left_rank": 3,
+      "maximum_fractional_eigenvalue": 0.6969056019264596,
+      "minimum_fractional_eigenvalue": 0.24944590076824147,
+      "one_relative_eigenvalue_count": 0,
+      "parent_rank": 3,
+      "relative_effect_complement_residual": 2.7858298330559204e-16,
+      "right_rank": 3,
+      "status": "exact-relative-effect-intersection-localization",
+      "strict_fractional_eigenvalue_count": 3,
+      "zero_relative_eigenvalue_count": 0
+    }
+  ],
+  "headline_metrics": {
+    "coherent_overlap_core_resolver_count": 0,
+    "complete_w4_control_count": 156,
+    "generic_control_count": 4,
+    "generic_validation_failure_count": 0,
+    "global_nonorthogonal_sampler_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "nonoverlap_exact_routing_theorem_count": 1,
+    "polynomial_hidden_permutation_decoder_count": 0,
+    "relative_effect_intersection_localization_theorem_count": 1,
+    "tail_n": 512,
+    "tail_orientation_tree_depth": 3876,
+    "typical_overlap_balance_theorem_count": 0,
+    "typical_overlap_classification_theorem_count": 0,
+    "w4_balanced_overlap_failure_count": 0,
+    "w4_fractional_relative_channel_count": 4,
+    "w4_intersecting_control_count": 4,
+    "w4_noncommuting_intersection_control_count": 0,
+    "w4_validation_failure_count": 0
+  },
+  "proof_obligations": [
+    {
+      "obligation": "fractional_rank_intersection_identity",
+      "resolution": "Rank counting for C and I-C proves the identity exactly; generic and complete W4 controls validate conventions.",
+      "resolved": true
+    },
+    {
+      "obligation": "nonoverlap_exact_routing",
+      "resolution": "When child ranges intersect trivially, every relative eigenvalue is exactly zero or one, regardless of angle.",
+      "resolved": true
+    },
+    {
+      "obligation": "finite_w4_overlap_balance",
+      "resolution": "All W4 fractional relative effects are exactly one half, including controls with noncommuting child frames.",
+      "resolved": true
+    },
+    {
+      "obligation": "typical_large_n_overlap_core_classification",
+      "resolution": "Existing recurring-irrep incidence certifies some common directions but does not exhaust nested child intersections.",
+      "resolved": false
+    },
+    {
+      "obligation": "typical_relative_weight_balance",
+      "resolution": "No theorem prevents a shared range from carrying an exponentially unbalanced nonzero ratio between two children.",
+      "resolved": false
+    },
+    {
+      "obligation": "coherent_overlap_core_resolver",
+      "resolution": "No polynomial transform labels all overlap cores and applies their matrix-valued conditional rotation coherently.",
+      "resolved": false
+    }
+  ],
+  "scaling_records": [
+    {
+      "coherent_overlap_core_resolver_proved": false,
+      "fractional_channels_equal_overlap_dimension_theorem": true,
+      "information_threshold_copy_count": 7,
+      "n": 5,
+      "nonoverlap_channels_exactly_routable": true,
+      "orientation_tree_depth": 7,
+      "relative_merge_count_when_level_indexed": 7,
+      "status": "relative-complexity-localized-to-overlap-cores",
+      "typical_overlap_dimension_bound_proved": false,
+      "typical_overlap_weight_balance_proved": false
+    },
+    {
+      "coherent_overlap_core_resolver_proved": false,
+      "fractional_channels_equal_overlap_dimension_theorem": true,
+      "information_threshold_copy_count": 16,
+      "n": 8,
+      "nonoverlap_channels_exactly_routable": true,
+      "orientation_tree_depth": 16,
+      "relative_merge_count_when_level_indexed": 16,
+      "status": "relative-complexity-localized-to-overlap-cores",
+      "typical_overlap_dimension_bound_proved": false,
+      "typical_overlap_weight_balance_proved": false
+    },
+    {
+      "coherent_overlap_core_resolver_proved": false,
+      "fractional_channels_equal_overlap_dimension_theorem": true,
+      "information_threshold_copy_count": 45,
+      "n": 16,
+      "nonoverlap_channels_exactly_routable": true,
+      "orientation_tree_depth": 45,
+      "relative_merge_count_when_level_indexed": 45,
+      "status": "relative-complexity-localized-to-overlap-cores",
+      "typical_overlap_dimension_bound_proved": false,
+      "typical_overlap_weight_balance_proved": false
+    },
+    {
+      "coherent_overlap_core_resolver_proved": false,
+      "fractional_channels_equal_overlap_dimension_theorem": true,
+      "information_threshold_copy_count": 118,
+      "n": 32,
+      "nonoverlap_channels_exactly_routable": true,
+      "orientation_tree_depth": 118,
+      "relative_merge_count_when_level_indexed": 118,
+      "status": "relative-complexity-localized-to-overlap-cores",
+      "typical_overlap_dimension_bound_proved": false,
+      "typical_overlap_weight_balance_proved": false
+    },
+    {
+      "coherent_overlap_core_resolver_proved": false,
+      "fractional_channels_equal_overlap_dimension_theorem": true,
+      "information_threshold_copy_count": 296,
+      "n": 64,
+      "nonoverlap_channels_exactly_routable": true,
+      "orientation_tree_depth": 296,
+      "relative_merge_count_when_level_indexed": 296,
+      "status": "relative-complexity-localized-to-overlap-cores",
+      "typical_overlap_dimension_bound_proved": false,
+      "typical_overlap_weight_balance_proved": false
+    },
+    {
+      "coherent_overlap_core_resolver_proved": false,
+      "fractional_channels_equal_overlap_dimension_theorem": true,
+      "information_threshold_copy_count": 717,
+      "n": 128,
+      "nonoverlap_channels_exactly_routable": true,
+      "orientation_tree_depth": 717,
+      "relative_merge_count_when_level_indexed": 717,
+      "status": "relative-complexity-localized-to-overlap-cores",
+      "typical_overlap_dimension_bound_proved": false,
+      "typical_overlap_weight_balance_proved": false
+    },
+    {
+      "coherent_overlap_core_resolver_proved": false,
+      "fractional_channels_equal_overlap_dimension_theorem": true,
+      "information_threshold_copy_count": 1684,
+      "n": 256,
+      "nonoverlap_channels_exactly_routable": true,
+      "orientation_tree_depth": 1684,
+      "relative_merge_count_when_level_indexed": 1684,
+      "status": "relative-complexity-localized-to-overlap-cores",
+      "typical_overlap_dimension_bound_proved": false,
+      "typical_overlap_weight_balance_proved": false
+    },
+    {
+      "coherent_overlap_core_resolver_proved": false,
+      "fractional_channels_equal_overlap_dimension_theorem": true,
+      "information_threshold_copy_count": 3876,
+      "n": 512,
+      "nonoverlap_channels_exactly_routable": true,
+      "orientation_tree_depth": 3876,
+      "relative_merge_count_when_level_indexed": 3876,
+      "status": "relative-complexity-localized-to-overlap-cores",
+      "typical_overlap_dimension_bound_proved": false,
+      "typical_overlap_weight_balance_proved": false
+    }
+  ],
+  "status": "relative-polar-complexity-localized-to-overlap-cores",
+  "summary": "Proved that strictly weighted relative-frame channels are counted exactly by child-range intersection dimension. Complete W4 controls are balanced at one half. The next theorem must classify and resolve nested overlap cores at typical large n.",
+  "theorem_contract": {
+    "fractional_localization": "The number of eigenvalues c in (0,1) is rank(A)+rank(B)-rank(S)=dim(range(A) intersection range(B)).",
+    "new_asymptotic_target": "Classify nested orientation-frame intersections, bound their relative weights away from nonexact endpoints, and implement their coherent resolver.",
+    "proportional_common_core": "On a reducing common core with A=aH and B=bH, the relative effect is the scalar a/(a+b).",
+    "rank_identities": "rank(C)=rank(A), rank(I-C)=rank(B), and rank(S)=dim(range(A)+range(B)).",
+    "relative_effect": "C=S^-1/2 A S^-1/2 on supp(S), S=A+B.",
+    "sharp_routing": "All dimensions outside the child-range intersection become exact c=0 or c=1 routing channels after parent whitening."
+  },
+  "wreath_controls": [
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-0-3-1-PAIRING-0",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        1
+      ],
+      "left_rank": 3,
+      "n": 4,
+      "parent_rank": 5,
+      "right_orientation_masks": [
+        2,
+        3
+      ],
+      "right_rank": 2,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        3,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-0-3-1-PAIRING-1",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        2
+      ],
+      "left_rank": 0,
+      "n": 4,
+      "parent_rank": 5,
+      "right_orientation_masks": [
+        1,
+        3
+      ],
+      "right_rank": 5,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        3,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-0-3-1-PAIRING-2",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        3
+      ],
+      "left_rank": 2,
+      "n": 4,
+      "parent_rank": 5,
+      "right_orientation_masks": [
+        1,
+        2
+      ],
+      "right_rank": 3,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        3,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": false,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-0-2-2-PAIRING-0",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        1
+      ],
+      "left_rank": 9,
+      "n": 4,
+      "parent_rank": 11,
+      "right_orientation_masks": [
+        2,
+        3
+      ],
+      "right_rank": 2,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        2,
+        2
+      ]
+    },
+    {
+      "child_frames_commute": false,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-0-2-2-PAIRING-1",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        2
+      ],
+      "left_rank": 9,
+      "n": 4,
+      "parent_rank": 11,
+      "right_orientation_masks": [
+        1,
+        3
+      ],
+      "right_rank": 2,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        2,
+        2
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-0-2-2-PAIRING-2",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        3
+      ],
+      "left_rank": 11,
+      "n": 4,
+      "parent_rank": 11,
+      "right_orientation_masks": [
+        1,
+        2
+      ],
+      "right_rank": 0,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        2,
+        2
+      ]
+    },
+    {
+      "child_frames_commute": false,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-0-2-1-1-PAIRING-0",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        1
+      ],
+      "left_rank": 3,
+      "n": 4,
+      "parent_rank": 11,
+      "right_orientation_masks": [
+        2,
+        3
+      ],
+      "right_rank": 8,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": false,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-0-2-1-1-PAIRING-1",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        2
+      ],
+      "left_rank": 6,
+      "n": 4,
+      "parent_rank": 11,
+      "right_orientation_masks": [
+        1,
+        3
+      ],
+      "right_rank": 5,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-0-2-1-1-PAIRING-2",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        3
+      ],
+      "left_rank": 2,
+      "n": 4,
+      "parent_rank": 11,
+      "right_orientation_masks": [
+        1,
+        2
+      ],
+      "right_rank": 9,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-0-1-1-1-1-PAIRING-0",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        1
+      ],
+      "left_rank": 0,
+      "n": 4,
+      "parent_rank": 2,
+      "right_orientation_masks": [
+        2,
+        3
+      ],
+      "right_rank": 2,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-0-1-1-1-1-PAIRING-1",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        2
+      ],
+      "left_rank": 0,
+      "n": 4,
+      "parent_rank": 2,
+      "right_orientation_masks": [
+        1,
+        3
+      ],
+      "right_rank": 2,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-0-1-1-1-1-PAIRING-2",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        3
+      ],
+      "left_rank": 2,
+      "n": 4,
+      "parent_rank": 2,
+      "right_orientation_masks": [
+        1,
+        2
+      ],
+      "right_rank": 0,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": false,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-1-3-1-PAIRING-0",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        1
+      ],
+      "left_rank": 9,
+      "n": 4,
+      "parent_rank": 12,
+      "right_orientation_masks": [
+        2,
+        3
+      ],
+      "right_rank": 3,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        3,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": false,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-1-3-1-PAIRING-1",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        2
+      ],
+      "left_rank": 6,
+      "n": 4,
+      "parent_rank": 12,
+      "right_orientation_masks": [
+        1,
+        3
+      ],
+      "right_rank": 6,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        3,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-1-3-1-PAIRING-2",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        3
+      ],
+      "left_rank": 9,
+      "n": 4,
+      "parent_rank": 12,
+      "right_orientation_masks": [
+        1,
+        2
+      ],
+      "right_rank": 3,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        3,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": false,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-1-2-1-1-PAIRING-0",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        1
+      ],
+      "left_rank": 3,
+      "n": 4,
+      "parent_rank": 12,
+      "right_orientation_masks": [
+        2,
+        3
+      ],
+      "right_rank": 9,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": false,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-1-2-1-1-PAIRING-1",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        2
+      ],
+      "left_rank": 6,
+      "n": 4,
+      "parent_rank": 12,
+      "right_orientation_masks": [
+        1,
+        3
+      ],
+      "right_rank": 6,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-1-2-1-1-PAIRING-2",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        3
+      ],
+      "left_rank": 3,
+      "n": 4,
+      "parent_rank": 12,
+      "right_orientation_masks": [
+        1,
+        2
+      ],
+      "right_rank": 9,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": false,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-2-3-1-PAIRING-0",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        1
+      ],
+      "left_rank": 8,
+      "n": 4,
+      "parent_rank": 11,
+      "right_orientation_masks": [
+        2,
+        3
+      ],
+      "right_rank": 3,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        3,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": false,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-2-3-1-PAIRING-1",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        2
+      ],
+      "left_rank": 6,
+      "n": 4,
+      "parent_rank": 11,
+      "right_orientation_masks": [
+        1,
+        3
+      ],
+      "right_rank": 5,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        3,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-2-3-1-PAIRING-2",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        3
+      ],
+      "left_rank": 9,
+      "n": 4,
+      "parent_rank": 11,
+      "right_orientation_masks": [
+        1,
+        2
+      ],
+      "right_rank": 2,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        3,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": false,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-2-2-2-PAIRING-0",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        1
+      ],
+      "left_rank": 2,
+      "n": 4,
+      "parent_rank": 11,
+      "right_orientation_masks": [
+        2,
+        3
+      ],
+      "right_rank": 9,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        2,
+        2
+      ]
+    },
+    {
+      "child_frames_commute": false,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-2-2-2-PAIRING-1",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        2
+      ],
+      "left_rank": 9,
+      "n": 4,
+      "parent_rank": 11,
+      "right_orientation_masks": [
+        1,
+        3
+      ],
+      "right_rank": 2,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        2,
+        2
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-2-2-2-PAIRING-2",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        3
+      ],
+      "left_rank": 0,
+      "n": 4,
+      "parent_rank": 11,
+      "right_orientation_masks": [
+        1,
+        2
+      ],
+      "right_rank": 11,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        2,
+        2
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-2-2-1-1-PAIRING-0",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        1
+      ],
+      "left_rank": 2,
+      "n": 4,
+      "parent_rank": 5,
+      "right_orientation_masks": [
+        2,
+        3
+      ],
+      "right_rank": 3,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-2-2-1-1-PAIRING-1",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        2
+      ],
+      "left_rank": 0,
+      "n": 4,
+      "parent_rank": 5,
+      "right_orientation_masks": [
+        1,
+        3
+      ],
+      "right_rank": 5,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-2-2-1-1-PAIRING-2",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        3
+      ],
+      "left_rank": 3,
+      "n": 4,
+      "parent_rank": 5,
+      "right_orientation_masks": [
+        1,
+        2
+      ],
+      "right_rank": 2,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-2-1-1-1-1-PAIRING-0",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        1
+      ],
+      "left_rank": 2,
+      "n": 4,
+      "parent_rank": 2,
+      "right_orientation_masks": [
+        2,
+        3
+      ],
+      "right_rank": 0,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-2-1-1-1-1-PAIRING-1",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        2
+      ],
+      "left_rank": 0,
+      "n": 4,
+      "parent_rank": 2,
+      "right_orientation_masks": [
+        1,
+        3
+      ],
+      "right_rank": 2,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-2-1-1-1-1-PAIRING-2",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        3
+      ],
+      "left_rank": 0,
+      "n": 4,
+      "parent_rank": 2,
+      "right_orientation_masks": [
+        1,
+        2
+      ],
+      "right_rank": 2,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-3-3-1-PAIRING-0",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        1
+      ],
+      "left_rank": 1,
+      "n": 4,
+      "parent_rank": 1,
+      "right_orientation_masks": [
+        2,
+        3
+      ],
+      "right_rank": 0,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        3,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-3-3-1-PAIRING-1",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        2
+      ],
+      "left_rank": 0,
+      "n": 4,
+      "parent_rank": 1,
+      "right_orientation_masks": [
+        1,
+        3
+      ],
+      "right_rank": 1,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        3,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-3-3-1-PAIRING-2",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        3
+      ],
+      "left_rank": 0,
+      "n": 4,
+      "parent_rank": 1,
+      "right_orientation_masks": [
+        1,
+        2
+      ],
+      "right_rank": 1,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        3,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-3-2-2-PAIRING-0",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        1
+      ],
+      "left_rank": 3,
+      "n": 4,
+      "parent_rank": 3,
+      "right_orientation_masks": [
+        2,
+        3
+      ],
+      "right_rank": 0,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        2,
+        2
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-3-2-2-PAIRING-1",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        2
+      ],
+      "left_rank": 3,
+      "n": 4,
+      "parent_rank": 3,
+      "right_orientation_masks": [
+        1,
+        3
+      ],
+      "right_rank": 0,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        2,
+        2
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-3-2-2-PAIRING-2",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        3
+      ],
+      "left_rank": 3,
+      "n": 4,
+      "parent_rank": 3,
+      "right_orientation_masks": [
+        1,
+        2
+      ],
+      "right_rank": 0,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        2,
+        2
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-3-2-1-1-PAIRING-0",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        1
+      ],
+      "left_rank": 1,
+      "n": 4,
+      "parent_rank": 3,
+      "right_orientation_masks": [
+        2,
+        3
+      ],
+      "right_rank": 2,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-3-2-1-1-PAIRING-1",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        2
+      ],
+      "left_rank": 0,
+      "n": 4,
+      "parent_rank": 3,
+      "right_orientation_masks": [
+        1,
+        3
+      ],
+      "right_rank": 3,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-3-2-1-1-PAIRING-2",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        3
+      ],
+      "left_rank": 2,
+      "n": 4,
+      "parent_rank": 3,
+      "right_orientation_masks": [
+        1,
+        2
+      ],
+      "right_rank": 1,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-3-1-1-1-1-PAIRING-0",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        1
+      ],
+      "left_rank": 0,
+      "n": 4,
+      "parent_rank": 6,
+      "right_orientation_masks": [
+        2,
+        3
+      ],
+      "right_rank": 6,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-3-1-1-1-1-PAIRING-1",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        2
+      ],
+      "left_rank": 6,
+      "n": 4,
+      "parent_rank": 6,
+      "right_orientation_masks": [
+        1,
+        3
+      ],
+      "right_rank": 0,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-3-1-1-1-1-PAIRING-2",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        3
+      ],
+      "left_rank": 0,
+      "n": 4,
+      "parent_rank": 6,
+      "right_orientation_masks": [
+        1,
+        2
+      ],
+      "right_rank": 6,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-4-3-1-PAIRING-0",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        1
+      ],
+      "left_rank": 3,
+      "n": 4,
+      "parent_rank": 3,
+      "right_orientation_masks": [
+        2,
+        3
+      ],
+      "right_rank": 0,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        3,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-4-3-1-PAIRING-1",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        2
+      ],
+      "left_rank": 2,
+      "n": 4,
+      "parent_rank": 3,
+      "right_orientation_masks": [
+        1,
+        3
+      ],
+      "right_rank": 1,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        3,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-4-3-1-PAIRING-2",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        3
+      ],
+      "left_rank": 2,
+      "n": 4,
+      "parent_rank": 3,
+      "right_orientation_masks": [
+        1,
+        2
+      ],
+      "right_rank": 1,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        3,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-4-2-2-PAIRING-0",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        1
+      ],
+      "left_rank": 0,
+      "n": 4,
+      "parent_rank": 3,
+      "right_orientation_masks": [
+        2,
+        3
+      ],
+      "right_rank": 3,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        2,
+        2
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-4-2-2-PAIRING-1",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        2
+      ],
+      "left_rank": 0,
+      "n": 4,
+      "parent_rank": 3,
+      "right_orientation_masks": [
+        1,
+        3
+      ],
+      "right_rank": 3,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        2,
+        2
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-4-2-2-PAIRING-2",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        3
+      ],
+      "left_rank": 3,
+      "n": 4,
+      "parent_rank": 3,
+      "right_orientation_masks": [
+        1,
+        2
+      ],
+      "right_rank": 0,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        2,
+        2
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-4-2-1-1-PAIRING-0",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        1
+      ],
+      "left_rank": 1,
+      "n": 4,
+      "parent_rank": 1,
+      "right_orientation_masks": [
+        2,
+        3
+      ],
+      "right_rank": 0,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-4-2-1-1-PAIRING-1",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        2
+      ],
+      "left_rank": 0,
+      "n": 4,
+      "parent_rank": 1,
+      "right_orientation_masks": [
+        1,
+        3
+      ],
+      "right_rank": 1,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-4-2-1-1-PAIRING-2",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        3
+      ],
+      "left_rank": 0,
+      "n": 4,
+      "parent_rank": 1,
+      "right_orientation_masks": [
+        1,
+        2
+      ],
+      "right_rank": 1,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-4-1-1-1-1-PAIRING-0",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        1
+      ],
+      "left_rank": 0,
+      "n": 4,
+      "parent_rank": 6,
+      "right_orientation_masks": [
+        2,
+        3
+      ],
+      "right_rank": 6,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-4-1-1-1-1-PAIRING-1",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        2
+      ],
+      "left_rank": 6,
+      "n": 4,
+      "parent_rank": 6,
+      "right_orientation_masks": [
+        1,
+        3
+      ],
+      "right_rank": 0,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-4-1-1-1-1-PAIRING-2",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        3
+      ],
+      "left_rank": 0,
+      "n": 4,
+      "parent_rank": 6,
+      "right_orientation_masks": [
+        1,
+        2
+      ],
+      "right_rank": 6,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-5-3-1-PAIRING-0",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        1
+      ],
+      "left_rank": 2,
+      "n": 4,
+      "parent_rank": 2,
+      "right_orientation_masks": [
+        2,
+        3
+      ],
+      "right_rank": 0,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        3,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-5-3-1-PAIRING-1",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        2
+      ],
+      "left_rank": 2,
+      "n": 4,
+      "parent_rank": 2,
+      "right_orientation_masks": [
+        1,
+        3
+      ],
+      "right_rank": 0,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        3,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-5-3-1-PAIRING-2",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        3
+      ],
+      "left_rank": 2,
+      "n": 4,
+      "parent_rank": 2,
+      "right_orientation_masks": [
+        1,
+        2
+      ],
+      "right_rank": 0,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        3,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-5-2-2-PAIRING-0",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        1
+      ],
+      "left_rank": 0,
+      "n": 4,
+      "parent_rank": 6,
+      "right_orientation_masks": [
+        2,
+        3
+      ],
+      "right_rank": 6,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        2,
+        2
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-5-2-2-PAIRING-1",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        2
+      ],
+      "left_rank": 3,
+      "n": 4,
+      "parent_rank": 6,
+      "right_orientation_masks": [
+        1,
+        3
+      ],
+      "right_rank": 3,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        2,
+        2
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-5-2-2-PAIRING-2",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        3
+      ],
+      "left_rank": 3,
+      "n": 4,
+      "parent_rank": 6,
+      "right_orientation_masks": [
+        1,
+        2
+      ],
+      "right_rank": 3,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        2,
+        2
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-5-2-1-1-PAIRING-0",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        1
+      ],
+      "left_rank": 2,
+      "n": 4,
+      "parent_rank": 2,
+      "right_orientation_masks": [
+        2,
+        3
+      ],
+      "right_rank": 0,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-5-2-1-1-PAIRING-1",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        2
+      ],
+      "left_rank": 0,
+      "n": 4,
+      "parent_rank": 2,
+      "right_orientation_masks": [
+        1,
+        3
+      ],
+      "right_rank": 2,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-5-2-1-1-PAIRING-2",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        3
+      ],
+      "left_rank": 0,
+      "n": 4,
+      "parent_rank": 2,
+      "right_orientation_masks": [
+        1,
+        2
+      ],
+      "right_rank": 2,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-6-3-1-PAIRING-0",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        1
+      ],
+      "left_rank": 1,
+      "n": 4,
+      "parent_rank": 1,
+      "right_orientation_masks": [
+        2,
+        3
+      ],
+      "right_rank": 0,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        3,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-6-3-1-PAIRING-1",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        2
+      ],
+      "left_rank": 0,
+      "n": 4,
+      "parent_rank": 1,
+      "right_orientation_masks": [
+        1,
+        3
+      ],
+      "right_rank": 1,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        3,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-6-3-1-PAIRING-2",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        3
+      ],
+      "left_rank": 0,
+      "n": 4,
+      "parent_rank": 1,
+      "right_orientation_masks": [
+        1,
+        2
+      ],
+      "right_rank": 1,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        3,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-6-2-2-PAIRING-0",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        1
+      ],
+      "left_rank": 1,
+      "n": 4,
+      "parent_rank": 1,
+      "right_orientation_masks": [
+        2,
+        3
+      ],
+      "right_rank": 0,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        2,
+        2
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-6-2-2-PAIRING-1",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        2
+      ],
+      "left_rank": 0,
+      "n": 4,
+      "parent_rank": 1,
+      "right_orientation_masks": [
+        1,
+        3
+      ],
+      "right_rank": 1,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        2,
+        2
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-6-2-2-PAIRING-2",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        3
+      ],
+      "left_rank": 0,
+      "n": 4,
+      "parent_rank": 1,
+      "right_orientation_masks": [
+        1,
+        2
+      ],
+      "right_rank": 1,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        2,
+        2
+      ]
+    },
+    {
+      "child_frames_commute": false,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-6-2-1-1-PAIRING-0",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        1
+      ],
+      "left_rank": 4,
+      "n": 4,
+      "parent_rank": 7,
+      "right_orientation_masks": [
+        2,
+        3
+      ],
+      "right_rank": 3,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": false,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-6-2-1-1-PAIRING-1",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        2
+      ],
+      "left_rank": 3,
+      "n": 4,
+      "parent_rank": 7,
+      "right_orientation_masks": [
+        1,
+        3
+      ],
+      "right_rank": 4,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-6-2-1-1-PAIRING-2",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        3
+      ],
+      "left_rank": 6,
+      "n": 4,
+      "parent_rank": 7,
+      "right_orientation_masks": [
+        1,
+        2
+      ],
+      "right_rank": 1,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 1,
+      "control_id": "W4-6-1-1-1-1-PAIRING-0",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [
+        0.49999999999999933
+      ],
+      "half_balance_residual": 6.661338147750939e-16,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        1
+      ],
+      "left_rank": 1,
+      "n": 4,
+      "parent_rank": 9,
+      "right_orientation_masks": [
+        2,
+        3
+      ],
+      "right_rank": 9,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 1,
+      "target_partition": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 1,
+      "control_id": "W4-6-1-1-1-1-PAIRING-1",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [
+        0.49999999999999944
+      ],
+      "half_balance_residual": 5.551115123125783e-16,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        2
+      ],
+      "left_rank": 9,
+      "n": 4,
+      "parent_rank": 9,
+      "right_orientation_masks": [
+        1,
+        3
+      ],
+      "right_rank": 1,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 1,
+      "target_partition": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-6-1-1-1-1-PAIRING-2",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        3
+      ],
+      "left_rank": 0,
+      "n": 4,
+      "parent_rank": 9,
+      "right_orientation_masks": [
+        1,
+        2
+      ],
+      "right_rank": 9,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": false,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-7-3-1-PAIRING-0",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        1
+      ],
+      "left_rank": 4,
+      "n": 4,
+      "parent_rank": 7,
+      "right_orientation_masks": [
+        2,
+        3
+      ],
+      "right_rank": 3,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        3,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": false,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-7-3-1-PAIRING-1",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        2
+      ],
+      "left_rank": 3,
+      "n": 4,
+      "parent_rank": 7,
+      "right_orientation_masks": [
+        1,
+        3
+      ],
+      "right_rank": 4,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        3,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-7-3-1-PAIRING-2",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        3
+      ],
+      "left_rank": 6,
+      "n": 4,
+      "parent_rank": 7,
+      "right_orientation_masks": [
+        1,
+        2
+      ],
+      "right_rank": 1,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        3,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-7-2-2-PAIRING-0",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        1
+      ],
+      "left_rank": 1,
+      "n": 4,
+      "parent_rank": 1,
+      "right_orientation_masks": [
+        2,
+        3
+      ],
+      "right_rank": 0,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        2,
+        2
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-7-2-2-PAIRING-1",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        2
+      ],
+      "left_rank": 0,
+      "n": 4,
+      "parent_rank": 1,
+      "right_orientation_masks": [
+        1,
+        3
+      ],
+      "right_rank": 1,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        2,
+        2
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-7-2-2-PAIRING-2",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        3
+      ],
+      "left_rank": 0,
+      "n": 4,
+      "parent_rank": 1,
+      "right_orientation_masks": [
+        1,
+        2
+      ],
+      "right_rank": 1,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        2,
+        2
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-7-2-1-1-PAIRING-0",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        1
+      ],
+      "left_rank": 1,
+      "n": 4,
+      "parent_rank": 1,
+      "right_orientation_masks": [
+        2,
+        3
+      ],
+      "right_rank": 0,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-7-2-1-1-PAIRING-1",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        2
+      ],
+      "left_rank": 0,
+      "n": 4,
+      "parent_rank": 1,
+      "right_orientation_masks": [
+        1,
+        3
+      ],
+      "right_rank": 1,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-7-2-1-1-PAIRING-2",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        3
+      ],
+      "left_rank": 0,
+      "n": 4,
+      "parent_rank": 1,
+      "right_orientation_masks": [
+        1,
+        2
+      ],
+      "right_rank": 1,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 1,
+      "control_id": "W4-7-1-1-1-1-PAIRING-0",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [
+        0.49999999999999994
+      ],
+      "half_balance_residual": 5.551115123125783e-17,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        1
+      ],
+      "left_rank": 1,
+      "n": 4,
+      "parent_rank": 9,
+      "right_orientation_masks": [
+        2,
+        3
+      ],
+      "right_rank": 9,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 1,
+      "target_partition": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 1,
+      "control_id": "W4-7-1-1-1-1-PAIRING-1",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [
+        0.5000000000000004
+      ],
+      "half_balance_residual": 4.440892098500626e-16,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        2
+      ],
+      "left_rank": 9,
+      "n": 4,
+      "parent_rank": 9,
+      "right_orientation_masks": [
+        1,
+        3
+      ],
+      "right_rank": 1,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 1,
+      "target_partition": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-7-1-1-1-1-PAIRING-2",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        3
+      ],
+      "left_rank": 0,
+      "n": 4,
+      "parent_rank": 9,
+      "right_orientation_masks": [
+        1,
+        2
+      ],
+      "right_rank": 9,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": false,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-8-3-1-PAIRING-0",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        1
+      ],
+      "left_rank": 3,
+      "n": 4,
+      "parent_rank": 6,
+      "right_orientation_masks": [
+        2,
+        3
+      ],
+      "right_rank": 3,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        3,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": false,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-8-3-1-PAIRING-1",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        2
+      ],
+      "left_rank": 3,
+      "n": 4,
+      "parent_rank": 6,
+      "right_orientation_masks": [
+        1,
+        3
+      ],
+      "right_rank": 3,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        3,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-8-3-1-PAIRING-2",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        3
+      ],
+      "left_rank": 6,
+      "n": 4,
+      "parent_rank": 6,
+      "right_orientation_masks": [
+        1,
+        2
+      ],
+      "right_rank": 0,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        3,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": false,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-8-2-1-1-PAIRING-0",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        1
+      ],
+      "left_rank": 3,
+      "n": 4,
+      "parent_rank": 6,
+      "right_orientation_masks": [
+        2,
+        3
+      ],
+      "right_rank": 3,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": false,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-8-2-1-1-PAIRING-1",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        2
+      ],
+      "left_rank": 3,
+      "n": 4,
+      "parent_rank": 6,
+      "right_orientation_masks": [
+        1,
+        3
+      ],
+      "right_rank": 3,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-8-2-1-1-PAIRING-2",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        3
+      ],
+      "left_rank": 0,
+      "n": 4,
+      "parent_rank": 6,
+      "right_orientation_masks": [
+        1,
+        2
+      ],
+      "right_rank": 6,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-9-3-1-PAIRING-0",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        1
+      ],
+      "left_rank": 1,
+      "n": 4,
+      "parent_rank": 1,
+      "right_orientation_masks": [
+        2,
+        3
+      ],
+      "right_rank": 0,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        3,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-9-3-1-PAIRING-1",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        2
+      ],
+      "left_rank": 0,
+      "n": 4,
+      "parent_rank": 1,
+      "right_orientation_masks": [
+        1,
+        3
+      ],
+      "right_rank": 1,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        3,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-9-3-1-PAIRING-2",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        3
+      ],
+      "left_rank": 0,
+      "n": 4,
+      "parent_rank": 1,
+      "right_orientation_masks": [
+        1,
+        2
+      ],
+      "right_rank": 1,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        3,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-9-2-2-PAIRING-0",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        1
+      ],
+      "left_rank": 0,
+      "n": 4,
+      "parent_rank": 3,
+      "right_orientation_masks": [
+        2,
+        3
+      ],
+      "right_rank": 3,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        2,
+        2
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-9-2-2-PAIRING-1",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        2
+      ],
+      "left_rank": 0,
+      "n": 4,
+      "parent_rank": 3,
+      "right_orientation_masks": [
+        1,
+        3
+      ],
+      "right_rank": 3,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        2,
+        2
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-9-2-2-PAIRING-2",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        3
+      ],
+      "left_rank": 3,
+      "n": 4,
+      "parent_rank": 3,
+      "right_orientation_masks": [
+        1,
+        2
+      ],
+      "right_rank": 0,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        2,
+        2
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-9-2-1-1-PAIRING-0",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        1
+      ],
+      "left_rank": 3,
+      "n": 4,
+      "parent_rank": 3,
+      "right_orientation_masks": [
+        2,
+        3
+      ],
+      "right_rank": 0,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-9-2-1-1-PAIRING-1",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        2
+      ],
+      "left_rank": 2,
+      "n": 4,
+      "parent_rank": 3,
+      "right_orientation_masks": [
+        1,
+        3
+      ],
+      "right_rank": 1,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-9-2-1-1-PAIRING-2",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        3
+      ],
+      "left_rank": 2,
+      "n": 4,
+      "parent_rank": 3,
+      "right_orientation_masks": [
+        1,
+        2
+      ],
+      "right_rank": 1,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-9-1-1-1-1-PAIRING-0",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        1
+      ],
+      "left_rank": 0,
+      "n": 4,
+      "parent_rank": 6,
+      "right_orientation_masks": [
+        2,
+        3
+      ],
+      "right_rank": 6,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-9-1-1-1-1-PAIRING-1",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        2
+      ],
+      "left_rank": 6,
+      "n": 4,
+      "parent_rank": 6,
+      "right_orientation_masks": [
+        1,
+        3
+      ],
+      "right_rank": 0,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-9-1-1-1-1-PAIRING-2",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        3
+      ],
+      "left_rank": 0,
+      "n": 4,
+      "parent_rank": 6,
+      "right_orientation_masks": [
+        1,
+        2
+      ],
+      "right_rank": 6,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-10-3-1-PAIRING-0",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        1
+      ],
+      "left_rank": 1,
+      "n": 4,
+      "parent_rank": 3,
+      "right_orientation_masks": [
+        2,
+        3
+      ],
+      "right_rank": 2,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        3,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-10-3-1-PAIRING-1",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        2
+      ],
+      "left_rank": 0,
+      "n": 4,
+      "parent_rank": 3,
+      "right_orientation_masks": [
+        1,
+        3
+      ],
+      "right_rank": 3,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        3,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-10-3-1-PAIRING-2",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        3
+      ],
+      "left_rank": 2,
+      "n": 4,
+      "parent_rank": 3,
+      "right_orientation_masks": [
+        1,
+        2
+      ],
+      "right_rank": 1,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        3,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-10-2-2-PAIRING-0",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        1
+      ],
+      "left_rank": 3,
+      "n": 4,
+      "parent_rank": 3,
+      "right_orientation_masks": [
+        2,
+        3
+      ],
+      "right_rank": 0,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        2,
+        2
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-10-2-2-PAIRING-1",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        2
+      ],
+      "left_rank": 3,
+      "n": 4,
+      "parent_rank": 3,
+      "right_orientation_masks": [
+        1,
+        3
+      ],
+      "right_rank": 0,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        2,
+        2
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-10-2-2-PAIRING-2",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        3
+      ],
+      "left_rank": 3,
+      "n": 4,
+      "parent_rank": 3,
+      "right_orientation_masks": [
+        1,
+        2
+      ],
+      "right_rank": 0,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        2,
+        2
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-10-2-1-1-PAIRING-0",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        1
+      ],
+      "left_rank": 1,
+      "n": 4,
+      "parent_rank": 1,
+      "right_orientation_masks": [
+        2,
+        3
+      ],
+      "right_rank": 0,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-10-2-1-1-PAIRING-1",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        2
+      ],
+      "left_rank": 0,
+      "n": 4,
+      "parent_rank": 1,
+      "right_orientation_masks": [
+        1,
+        3
+      ],
+      "right_rank": 1,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-10-2-1-1-PAIRING-2",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        3
+      ],
+      "left_rank": 0,
+      "n": 4,
+      "parent_rank": 1,
+      "right_orientation_masks": [
+        1,
+        2
+      ],
+      "right_rank": 1,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-10-1-1-1-1-PAIRING-0",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        1
+      ],
+      "left_rank": 0,
+      "n": 4,
+      "parent_rank": 6,
+      "right_orientation_masks": [
+        2,
+        3
+      ],
+      "right_rank": 6,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-10-1-1-1-1-PAIRING-1",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        2
+      ],
+      "left_rank": 6,
+      "n": 4,
+      "parent_rank": 6,
+      "right_orientation_masks": [
+        1,
+        3
+      ],
+      "right_rank": 0,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-10-1-1-1-1-PAIRING-2",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        3
+      ],
+      "left_rank": 0,
+      "n": 4,
+      "parent_rank": 6,
+      "right_orientation_masks": [
+        1,
+        2
+      ],
+      "right_rank": 6,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-11-3-1-PAIRING-0",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        1
+      ],
+      "left_rank": 0,
+      "n": 4,
+      "parent_rank": 2,
+      "right_orientation_masks": [
+        2,
+        3
+      ],
+      "right_rank": 2,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        3,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-11-3-1-PAIRING-1",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        2
+      ],
+      "left_rank": 0,
+      "n": 4,
+      "parent_rank": 2,
+      "right_orientation_masks": [
+        1,
+        3
+      ],
+      "right_rank": 2,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        3,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-11-3-1-PAIRING-2",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        3
+      ],
+      "left_rank": 2,
+      "n": 4,
+      "parent_rank": 2,
+      "right_orientation_masks": [
+        1,
+        2
+      ],
+      "right_rank": 0,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        3,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-11-2-2-PAIRING-0",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        1
+      ],
+      "left_rank": 6,
+      "n": 4,
+      "parent_rank": 6,
+      "right_orientation_masks": [
+        2,
+        3
+      ],
+      "right_rank": 0,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        2,
+        2
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-11-2-2-PAIRING-1",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        2
+      ],
+      "left_rank": 3,
+      "n": 4,
+      "parent_rank": 6,
+      "right_orientation_masks": [
+        1,
+        3
+      ],
+      "right_rank": 3,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        2,
+        2
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-11-2-2-PAIRING-2",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        3
+      ],
+      "left_rank": 3,
+      "n": 4,
+      "parent_rank": 6,
+      "right_orientation_masks": [
+        1,
+        2
+      ],
+      "right_rank": 3,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        2,
+        2
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-11-2-1-1-PAIRING-0",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        1
+      ],
+      "left_rank": 0,
+      "n": 4,
+      "parent_rank": 2,
+      "right_orientation_masks": [
+        2,
+        3
+      ],
+      "right_rank": 2,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-11-2-1-1-PAIRING-1",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        2
+      ],
+      "left_rank": 2,
+      "n": 4,
+      "parent_rank": 2,
+      "right_orientation_masks": [
+        1,
+        3
+      ],
+      "right_rank": 0,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-11-2-1-1-PAIRING-2",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        3
+      ],
+      "left_rank": 0,
+      "n": 4,
+      "parent_rank": 2,
+      "right_orientation_masks": [
+        1,
+        2
+      ],
+      "right_rank": 2,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-12-3-1-PAIRING-0",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        1
+      ],
+      "left_rank": 5,
+      "n": 4,
+      "parent_rank": 5,
+      "right_orientation_masks": [
+        2,
+        3
+      ],
+      "right_rank": 0,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        3,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-12-3-1-PAIRING-1",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        2
+      ],
+      "left_rank": 2,
+      "n": 4,
+      "parent_rank": 5,
+      "right_orientation_masks": [
+        1,
+        3
+      ],
+      "right_rank": 3,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        3,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-12-3-1-PAIRING-2",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        3
+      ],
+      "left_rank": 2,
+      "n": 4,
+      "parent_rank": 5,
+      "right_orientation_masks": [
+        1,
+        2
+      ],
+      "right_rank": 3,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        3,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": false,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-12-2-2-PAIRING-0",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        1
+      ],
+      "left_rank": 2,
+      "n": 4,
+      "parent_rank": 11,
+      "right_orientation_masks": [
+        2,
+        3
+      ],
+      "right_rank": 9,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        2,
+        2
+      ]
+    },
+    {
+      "child_frames_commute": false,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-12-2-2-PAIRING-1",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        2
+      ],
+      "left_rank": 2,
+      "n": 4,
+      "parent_rank": 11,
+      "right_orientation_masks": [
+        1,
+        3
+      ],
+      "right_rank": 9,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        2,
+        2
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-12-2-2-PAIRING-2",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        3
+      ],
+      "left_rank": 11,
+      "n": 4,
+      "parent_rank": 11,
+      "right_orientation_masks": [
+        1,
+        2
+      ],
+      "right_rank": 0,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        2,
+        2
+      ]
+    },
+    {
+      "child_frames_commute": false,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-12-2-1-1-PAIRING-0",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        1
+      ],
+      "left_rank": 5,
+      "n": 4,
+      "parent_rank": 11,
+      "right_orientation_masks": [
+        2,
+        3
+      ],
+      "right_rank": 6,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": false,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-12-2-1-1-PAIRING-1",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        2
+      ],
+      "left_rank": 8,
+      "n": 4,
+      "parent_rank": 11,
+      "right_orientation_masks": [
+        1,
+        3
+      ],
+      "right_rank": 3,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-12-2-1-1-PAIRING-2",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        3
+      ],
+      "left_rank": 2,
+      "n": 4,
+      "parent_rank": 11,
+      "right_orientation_masks": [
+        1,
+        2
+      ],
+      "right_rank": 9,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-12-1-1-1-1-PAIRING-0",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        1
+      ],
+      "left_rank": 2,
+      "n": 4,
+      "parent_rank": 2,
+      "right_orientation_masks": [
+        2,
+        3
+      ],
+      "right_rank": 0,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-12-1-1-1-1-PAIRING-1",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        2
+      ],
+      "left_rank": 2,
+      "n": 4,
+      "parent_rank": 2,
+      "right_orientation_masks": [
+        1,
+        3
+      ],
+      "right_rank": 0,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-12-1-1-1-1-PAIRING-2",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        3
+      ],
+      "left_rank": 2,
+      "n": 4,
+      "parent_rank": 2,
+      "right_orientation_masks": [
+        1,
+        2
+      ],
+      "right_rank": 0,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": false,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-13-3-1-PAIRING-0",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        1
+      ],
+      "left_rank": 6,
+      "n": 4,
+      "parent_rank": 12,
+      "right_orientation_masks": [
+        2,
+        3
+      ],
+      "right_rank": 6,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        3,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": false,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-13-3-1-PAIRING-1",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        2
+      ],
+      "left_rank": 3,
+      "n": 4,
+      "parent_rank": 12,
+      "right_orientation_masks": [
+        1,
+        3
+      ],
+      "right_rank": 9,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        3,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-13-3-1-PAIRING-2",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        3
+      ],
+      "left_rank": 9,
+      "n": 4,
+      "parent_rank": 12,
+      "right_orientation_masks": [
+        1,
+        2
+      ],
+      "right_rank": 3,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        3,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": false,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-13-2-1-1-PAIRING-0",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        1
+      ],
+      "left_rank": 6,
+      "n": 4,
+      "parent_rank": 12,
+      "right_orientation_masks": [
+        2,
+        3
+      ],
+      "right_rank": 6,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": false,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-13-2-1-1-PAIRING-1",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        2
+      ],
+      "left_rank": 9,
+      "n": 4,
+      "parent_rank": 12,
+      "right_orientation_masks": [
+        1,
+        3
+      ],
+      "right_rank": 3,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-13-2-1-1-PAIRING-2",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        3
+      ],
+      "left_rank": 3,
+      "n": 4,
+      "parent_rank": 12,
+      "right_orientation_masks": [
+        1,
+        2
+      ],
+      "right_rank": 9,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": false,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-14-3-1-PAIRING-0",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            3,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        1
+      ],
+      "left_rank": 3,
+      "n": 4,
+      "parent_rank": 11,
+      "right_orientation_masks": [
+        2,
+        3
+      ],
+      "right_rank": 8,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        3,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": false,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-14-3-1-PAIRING-1",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            3,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        2
+      ],
+      "left_rank": 5,
+      "n": 4,
+      "parent_rank": 11,
+      "right_orientation_masks": [
+        1,
+        3
+      ],
+      "right_rank": 6,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        3,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-14-3-1-PAIRING-2",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            3,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        3
+      ],
+      "left_rank": 9,
+      "n": 4,
+      "parent_rank": 11,
+      "right_orientation_masks": [
+        1,
+        2
+      ],
+      "right_rank": 2,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        3,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": false,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-14-2-2-PAIRING-0",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            3,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        1
+      ],
+      "left_rank": 9,
+      "n": 4,
+      "parent_rank": 11,
+      "right_orientation_masks": [
+        2,
+        3
+      ],
+      "right_rank": 2,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        2,
+        2
+      ]
+    },
+    {
+      "child_frames_commute": false,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-14-2-2-PAIRING-1",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            3,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        2
+      ],
+      "left_rank": 2,
+      "n": 4,
+      "parent_rank": 11,
+      "right_orientation_masks": [
+        1,
+        3
+      ],
+      "right_rank": 9,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        2,
+        2
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-14-2-2-PAIRING-2",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            3,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        3
+      ],
+      "left_rank": 0,
+      "n": 4,
+      "parent_rank": 11,
+      "right_orientation_masks": [
+        1,
+        2
+      ],
+      "right_rank": 11,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        2,
+        2
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-14-2-1-1-PAIRING-0",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            3,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        1
+      ],
+      "left_rank": 3,
+      "n": 4,
+      "parent_rank": 5,
+      "right_orientation_masks": [
+        2,
+        3
+      ],
+      "right_rank": 2,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-14-2-1-1-PAIRING-1",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            3,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        2
+      ],
+      "left_rank": 5,
+      "n": 4,
+      "parent_rank": 5,
+      "right_orientation_masks": [
+        1,
+        3
+      ],
+      "right_rank": 0,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-14-2-1-1-PAIRING-2",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            3,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        3
+      ],
+      "left_rank": 3,
+      "n": 4,
+      "parent_rank": 5,
+      "right_orientation_masks": [
+        1,
+        2
+      ],
+      "right_rank": 2,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-14-1-1-1-1-PAIRING-0",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            3,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        1
+      ],
+      "left_rank": 0,
+      "n": 4,
+      "parent_rank": 2,
+      "right_orientation_masks": [
+        2,
+        3
+      ],
+      "right_rank": 2,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-14-1-1-1-1-PAIRING-1",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            3,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        2
+      ],
+      "left_rank": 2,
+      "n": 4,
+      "parent_rank": 2,
+      "right_orientation_masks": [
+        1,
+        3
+      ],
+      "right_rank": 0,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "child_frames_commute": true,
+      "child_range_intersection_dimension": 0,
+      "control_id": "W4-14-1-1-1-1-PAIRING-2",
+      "exact_intersection_localization_verified": true,
+      "finite_balanced_overlap_core_observed": true,
+      "fractional_eigenvalues": [],
+      "half_balance_residual": 0.0,
+      "labels": [
+        [
+          [
+            3,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_masks": [
+        0,
+        3
+      ],
+      "left_rank": 0,
+      "n": 4,
+      "parent_rank": 2,
+      "right_orientation_masks": [
+        1,
+        2
+      ],
+      "right_rank": 2,
+      "status": "exact-balanced-w4-overlap-core",
+      "strict_fractional_eigenvalue_count": 0,
+      "target_partition": [
+        1,
+        1,
+        1,
+        1
+      ]
+    }
+  ]
+}

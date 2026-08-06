@@ -1,0 +1,256 @@
+{
+  "claim_gate": {
+    "all_equal_and_unequal_physical_irreps_covered": false,
+    "arbitrary_mixed_tuple_contraction_proved": false,
+    "coherent_blockwise_frame_pseudoinverse_proved": false,
+    "coherent_support_projector_proved": false,
+    "exact_pair_agreement_distribution_recurrence_proved": true,
+    "exact_polynomial_third_moment_special_sector_proved": true,
+    "higher_moment_recurrence_proved": false,
+    "polynomial_hidden_permutation_decoder_proved": false,
+    "reason": "The factorial third-moment sum is removed exactly for one repeated unequal sector. Equal-pair commutator terms, mixed tuples, support gaps, and coherent implementation remain open.",
+    "speedup_claim_allowed": false,
+    "third_moment_implies_support_gap": false
+  },
+  "created_at": "2026-07-29T23:03:08.297763+00:00",
+  "distribution_validations": [
+    {
+      "direct_pair_count": 1,
+      "exact_distribution_match": true,
+      "n": 1,
+      "recurrence_pair_count": 1,
+      "support_size": 1
+    },
+    {
+      "direct_pair_count": 4,
+      "exact_distribution_match": true,
+      "n": 2,
+      "recurrence_pair_count": 4,
+      "support_size": 2
+    },
+    {
+      "direct_pair_count": 36,
+      "exact_distribution_match": true,
+      "n": 3,
+      "recurrence_pair_count": 36,
+      "support_size": 5
+    },
+    {
+      "direct_pair_count": 576,
+      "exact_distribution_match": true,
+      "n": 4,
+      "recurrence_pair_count": 576,
+      "support_size": 9
+    },
+    {
+      "direct_pair_count": 14400,
+      "exact_distribution_match": true,
+      "n": 5,
+      "recurrence_pair_count": 14400,
+      "support_size": 12
+    }
+  ],
+  "falsifiers_triggered": [
+    "The recurrence exactly matches direct pair distributions through n=5.",
+    "The contracted third moment exactly matches the general wreath-character formula on finite controls.",
+    "The result covers one repeated unequal physical-irrep family, not arbitrary mixed tuples.",
+    "Equal-pair triple products introduce commutator characters absent from this sector.",
+    "A third moment alone does not certify a support gap or coherent pseudoinverse."
+  ],
+  "headline_metrics": {
+    "all_physical_irrep_sector_contraction_count": 0,
+    "coherent_blockwise_frame_pseudoinverse_count": 0,
+    "coherent_support_projector_count": 0,
+    "covered_physical_irrep_family_count": 1,
+    "distribution_validation_count": 5,
+    "exact_polynomial_third_moment_contraction_count": 1,
+    "explicit_factorial_pair_enumeration_count": 0,
+    "failed_distribution_validation_count": 0,
+    "failed_moment_validation_count": 0,
+    "maximum_bivariate_state_count": 838,
+    "maximum_distribution_support_size": 57,
+    "maximum_scaling_copy_count": 62,
+    "maximum_scaling_n": 20,
+    "moment_validation_count": 4,
+    "polynomial_hidden_permutation_decoder_count": 0,
+    "scaling_record_count": 9,
+    "support_gap_theorem_count": 0
+  },
+  "moment_validations": [
+    {
+      "contracted_moment": "1/4",
+      "copy_count": 1,
+      "direct_character_moment": "1/4",
+      "exact_match": true,
+      "n": 2
+    },
+    {
+      "contracted_moment": "1/2",
+      "copy_count": 1,
+      "direct_character_moment": "1/2",
+      "exact_match": true,
+      "n": 3
+    },
+    {
+      "contracted_moment": "7/16",
+      "copy_count": 2,
+      "direct_character_moment": "7/16",
+      "exact_match": true,
+      "n": 3
+    },
+    {
+      "contracted_moment": "1/2",
+      "copy_count": 3,
+      "direct_character_moment": "1/2",
+      "exact_match": true,
+      "n": 3
+    }
+  ],
+  "scaling_records": [
+    {
+      "all_physical_irrep_sectors_covered": false,
+      "arithmetic_recurrence_polynomial_in_n_and_k": true,
+      "bivariate_state_count": 21,
+      "copy_count": 3,
+      "covered_physical_irrep_family_count": 1,
+      "distribution_support_size": 5,
+      "exact_trace_third": "1/2",
+      "explicit_pair_enumeration_count": 0,
+      "log2_block_dimension": 6.0,
+      "log2_normalized_third_moment": -7.0,
+      "maximum_intermediate_state_count": 21,
+      "n": 3,
+      "status": "exact-special-sector-third-moment-contraction"
+    },
+    {
+      "all_physical_irrep_sectors_covered": false,
+      "arithmetic_recurrence_polynomial_in_n_and_k": true,
+      "bivariate_state_count": 37,
+      "copy_count": 5,
+      "covered_physical_irrep_family_count": 1,
+      "distribution_support_size": 9,
+      "exact_trace_third": "2333/1024",
+      "explicit_pair_enumeration_count": 0,
+      "log2_block_dimension": 12.924812503606,
+      "log2_normalized_third_moment": -11.736841911622,
+      "maximum_intermediate_state_count": 37,
+      "n": 4,
+      "status": "exact-special-sector-third-moment-contraction"
+    },
+    {
+      "all_physical_irrep_sectors_covered": false,
+      "arithmetic_recurrence_polynomial_in_n_and_k": true,
+      "bivariate_state_count": 58,
+      "copy_count": 7,
+      "covered_physical_irrep_family_count": 1,
+      "distribution_support_size": 12,
+      "exact_trace_third": "626081/32768",
+      "explicit_pair_enumeration_count": 0,
+      "log2_block_dimension": 21.0,
+      "log2_normalized_third_moment": -16.744010205884,
+      "maximum_intermediate_state_count": 58,
+      "n": 5,
+      "status": "exact-special-sector-third-moment-contraction"
+    },
+    {
+      "all_physical_irrep_sectors_covered": false,
+      "arithmetic_recurrence_polynomial_in_n_and_k": true,
+      "bivariate_state_count": 81,
+      "copy_count": 10,
+      "covered_physical_irrep_family_count": 1,
+      "distribution_support_size": 15,
+      "exact_trace_third": "91264385/131072",
+      "explicit_pair_enumeration_count": 0,
+      "log2_block_dimension": 33.219280948874,
+      "log2_normalized_third_moment": -23.775732311727,
+      "maximum_intermediate_state_count": 81,
+      "n": 6,
+      "status": "exact-special-sector-third-moment-contraction"
+    },
+    {
+      "all_physical_irrep_sectors_covered": false,
+      "arithmetic_recurrence_polynomial_in_n_and_k": true,
+      "bivariate_state_count": 142,
+      "copy_count": 16,
+      "covered_physical_irrep_family_count": 1,
+      "distribution_support_size": 21,
+      "exact_trace_third": "181935218766528277/30064771072",
+      "explicit_pair_enumeration_count": 0,
+      "log2_block_dimension": 60.917678752922,
+      "log2_normalized_third_moment": -38.388831216972,
+      "maximum_intermediate_state_count": 142,
+      "n": 8,
+      "status": "exact-special-sector-third-moment-contraction"
+    },
+    {
+      "all_physical_irrep_sectors_covered": false,
+      "arithmetic_recurrence_polynomial_in_n_and_k": true,
+      "bivariate_state_count": 217,
+      "copy_count": 22,
+      "covered_physical_irrep_family_count": 1,
+      "distribution_support_size": 27,
+      "exact_trace_third": "10995145602780903032639063/35184372088832",
+      "explicit_pair_enumeration_count": 0,
+      "log2_block_dimension": 91.738350031731,
+      "log2_normalized_third_moment": -53.553280950395,
+      "maximum_intermediate_state_count": 217,
+      "n": 10,
+      "status": "exact-special-sector-third-moment-contraction"
+    },
+    {
+      "all_physical_irrep_sectors_covered": false,
+      "arithmetic_recurrence_polynomial_in_n_and_k": true,
+      "bivariate_state_count": 310,
+      "copy_count": 29,
+      "covered_physical_irrep_family_count": 1,
+      "distribution_support_size": 33,
+      "exact_trace_third": "1123301854777657645924276214221539939/3170534137668829184",
+      "explicit_pair_enumeration_count": 0,
+      "log2_block_dimension": 129.323516940482,
+      "log2_normalized_third_moment": -71.025791480909,
+      "maximum_intermediate_state_count": 310,
+      "n": 12,
+      "status": "exact-special-sector-third-moment-contraction"
+    },
+    {
+      "all_physical_irrep_sectors_covered": false,
+      "arithmetic_recurrence_polynomial_in_n_and_k": true,
+      "bivariate_state_count": 542,
+      "copy_count": 45,
+      "covered_physical_irrep_family_count": 1,
+      "distribution_support_size": 45,
+      "exact_trace_third": "41329661704292277968235466271230799907805655494313564423381219/32186441021419887147377229824",
+      "explicit_pair_enumeration_count": 0,
+      "log2_block_dimension": 220.810076802383,
+      "log2_normalized_third_moment": -110.825725177527,
+      "maximum_intermediate_state_count": 542,
+      "n": 16,
+      "status": "exact-special-sector-third-moment-contraction"
+    },
+    {
+      "all_physical_irrep_sectors_covered": false,
+      "arithmetic_recurrence_polynomial_in_n_and_k": true,
+      "bivariate_state_count": 838,
+      "copy_count": 62,
+      "covered_physical_irrep_family_count": 1,
+      "distribution_support_size": 57,
+      "exact_trace_third": "335863251173292089244886484203783814552572936592564439206410799266584472455088176845633420387/68694502822164452311668748875288207687680",
+      "explicit_pair_enumeration_count": 0,
+      "log2_block_dimension": 325.371505833502,
+      "log2_normalized_third_moment": -153.663565603216,
+      "maximum_intermediate_state_count": 838,
+      "n": 20,
+      "status": "exact-special-sector-third-moment-contraction"
+    }
+  ],
+  "status": "special-unequal-sector-third-moment-contraction-proved-general-sector-open",
+  "summary": "Proved and validated a polynomial coefficient recurrence for the repeated trivial-standard unequal-sector third moment through n=20 without permutation-pair enumeration; all-sector contraction and decoding remain zero.",
+  "theorem_contract": {
+    "arithmetic_complexity": "polynomial in n and k using exact integer coefficient arithmetic; no permutation-pair enumeration",
+    "coefficient_state_bound": "t-degree <= n and z-degree <= 3n, so each A_m has O(n^2) coefficient states",
+    "covered_sector": "k repeated copies of the unequal physical irrep induced from S_n trivial and standard irreps",
+    "cycle_index_recurrence": "A_m=sum_(l=1)^m (m-1)!/(m-l)! c_l A_(m-l)",
+    "rook_reduction": "sum_q z^[fix(q)+fix(r^-1 q)] is the permanent of J plus the weighted identity/r matchings",
+    "third_moment": "Tr(B^3)=4^-k E_(r,q)[n-4+fix(r)+fix(q)+fix(r^-1 q)]^k"
+  }
+}

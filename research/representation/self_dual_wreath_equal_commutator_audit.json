@@ -1,0 +1,384 @@
+{
+  "claim_gate": {
+    "all_physical_irrep_sectors_covered": false,
+    "coherent_blockwise_frame_pseudoinverse_proved": false,
+    "mixed_class_commutator_contraction_proved": false,
+    "polynomial_hidden_permutation_decoder_proved": false,
+    "polynomial_refined_four_class_kernel_proved": false,
+    "pure_commutator_factorial_sum_removed": true,
+    "pure_commutator_frobenius_formula_verified": true,
+    "reason": "Pure commutator products contract exactly, but complete third moments mix commutators with three relative class functions. The sufficient four-class kernel is still built by factorial pair enumeration.",
+    "speedup_claim_allowed": false,
+    "support_gap_theorem_proved": false
+  },
+  "commutator_contract": {
+    "current_kernel_cost": "explicit (n!)^2 pair enumeration; finite control only",
+    "finite_kernel": "K(alpha,beta,gamma,delta)=number of pairs with the four prescribed classes",
+    "mixed_sufficient_statistic": "classes of r, q, r^-1q, and [r,q]",
+    "pure_term": "E_(r,q) product_i chi_lambda_i([r,q])=sum_nu mult_(tensor_i lambda_i)(nu)/dim(nu)",
+    "required_scalable_object": "polynomial recoupling/spin-network contraction of K or of its action on physical character portfolios"
+  },
+  "created_at": "2026-07-29T23:15:59.601444+00:00",
+  "falsifiers_triggered": [
+    "Pure commutator products match direct pair averages on every finite portfolio.",
+    "The Frobenius formula removes pair enumeration only for pure commutator assignments.",
+    "Complete physical third moments also contain class functions of r, q, and r^-1 q.",
+    "The four-class refined kernel is sufficient for mixed terms but its current construction is factorial.",
+    "No support-gap theorem, coherent pseudoinverse, or decoder follows from the pure contraction."
+  ],
+  "headline_metrics": {
+    "all_physical_irrep_sector_contraction_count": 0,
+    "coherent_blockwise_frame_pseudoinverse_count": 0,
+    "exact_pure_commutator_frobenius_contraction_count": 1,
+    "failed_pure_commutator_validation_count": 0,
+    "finite_refined_kernel_count": 4,
+    "maximum_character_inner_product_term_bound": 393129,
+    "maximum_commutator_classes_per_class_triple": 4,
+    "maximum_pure_commutator_scaling_n": 20,
+    "maximum_refined_class_quadruple_support_count": 685,
+    "maximum_refined_kernel_explicit_pair_count": 518400,
+    "maximum_refined_kernel_n": 6,
+    "maximum_split_class_triple_count": 147,
+    "mixed_class_commutator_contraction_count": 0,
+    "polynomial_hidden_permutation_decoder_count": 0,
+    "polynomial_refined_kernel_construction_count": 0,
+    "pure_commutator_validation_count": 7,
+    "support_gap_theorem_count": 0
+  },
+  "pure_validations": [
+    {
+      "direct_pair_average": "1/2",
+      "exact_match": true,
+      "frobenius_contracted_average": "1/2",
+      "n": 3,
+      "nonzero_target_multiplicity_count": 1,
+      "partitions": [
+        [
+          2,
+          1
+        ]
+      ],
+      "tensor_product_dimension": 2
+    },
+    {
+      "direct_pair_average": "5/2",
+      "exact_match": true,
+      "frobenius_contracted_average": "5/2",
+      "n": 3,
+      "nonzero_target_multiplicity_count": 3,
+      "partitions": [
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "tensor_product_dimension": 4
+    },
+    {
+      "direct_pair_average": "1/2",
+      "exact_match": true,
+      "frobenius_contracted_average": "1/2",
+      "n": 3,
+      "nonzero_target_multiplicity_count": 1,
+      "partitions": [
+        [
+          3
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ]
+      ],
+      "tensor_product_dimension": 2
+    },
+    {
+      "direct_pair_average": "1/3",
+      "exact_match": true,
+      "frobenius_contracted_average": "1/3",
+      "n": 4,
+      "nonzero_target_multiplicity_count": 1,
+      "partitions": [
+        [
+          3,
+          1
+        ]
+      ],
+      "tensor_product_dimension": 3
+    },
+    {
+      "direct_pair_average": "2/3",
+      "exact_match": true,
+      "frobenius_contracted_average": "2/3",
+      "n": 4,
+      "nonzero_target_multiplicity_count": 2,
+      "partitions": [
+        [
+          3,
+          1
+        ],
+        [
+          2,
+          2
+        ]
+      ],
+      "tensor_product_dimension": 6
+    },
+    {
+      "direct_pair_average": "13/3",
+      "exact_match": true,
+      "frobenius_contracted_average": "13/3",
+      "n": 4,
+      "nonzero_target_multiplicity_count": 5,
+      "partitions": [
+        [
+          3,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          2,
+          1,
+          1
+        ]
+      ],
+      "tensor_product_dimension": 18
+    },
+    {
+      "direct_pair_average": "49/60",
+      "exact_match": true,
+      "frobenius_contracted_average": "49/60",
+      "n": 5,
+      "nonzero_target_multiplicity_count": 4,
+      "partitions": [
+        [
+          4,
+          1
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "tensor_product_dimension": 20
+    }
+  ],
+  "refined_kernel_records": [
+    {
+      "all_pair_mass_recovered": true,
+      "class_quadruple_support_count": 11,
+      "class_triple_support_count": 11,
+      "explicit_pair_count": 36,
+      "group_order": 6,
+      "maximum_commutator_classes_per_class_triple": 1,
+      "n": 3,
+      "polynomial_recoupling_construction": false,
+      "split_class_triple_count": 0,
+      "status": "finite-four-class-kernel-factorial-construction"
+    },
+    {
+      "all_pair_mass_recovered": true,
+      "class_quadruple_support_count": 43,
+      "class_triple_support_count": 42,
+      "explicit_pair_count": 576,
+      "group_order": 24,
+      "maximum_commutator_classes_per_class_triple": 2,
+      "n": 4,
+      "polynomial_recoupling_construction": false,
+      "split_class_triple_count": 1,
+      "status": "finite-four-class-kernel-factorial-construction"
+    },
+    {
+      "all_pair_mass_recovered": true,
+      "class_quadruple_support_count": 153,
+      "class_triple_support_count": 124,
+      "explicit_pair_count": 14400,
+      "group_order": 120,
+      "maximum_commutator_classes_per_class_triple": 2,
+      "n": 5,
+      "polynomial_recoupling_construction": false,
+      "split_class_triple_count": 29,
+      "status": "finite-four-class-kernel-factorial-construction"
+    },
+    {
+      "all_pair_mass_recovered": true,
+      "class_quadruple_support_count": 685,
+      "class_triple_support_count": 447,
+      "explicit_pair_count": 518400,
+      "group_order": 720,
+      "maximum_commutator_classes_per_class_triple": 4,
+      "n": 6,
+      "polynomial_recoupling_construction": false,
+      "split_class_triple_count": 147,
+      "status": "finite-four-class-kernel-factorial-construction"
+    }
+  ],
+  "scaling_records": [
+    {
+      "character_inner_product_term_bound": 9,
+      "copy_count": 3,
+      "exact_average": "7/2",
+      "exact_frobenius_contraction": true,
+      "explicit_permutation_pair_count": 0,
+      "mixed_class_commutator_terms_covered": false,
+      "n": 3,
+      "nonzero_target_multiplicity_count": 3,
+      "partition_count": 3,
+      "polynomial_in_n_general_contraction": false,
+      "source_partition": [
+        2,
+        1
+      ],
+      "status": "pure-commutator-frobenius-contraction-mixed-open"
+    },
+    {
+      "character_inner_product_term_bound": 25,
+      "copy_count": 5,
+      "exact_average": "151/3",
+      "exact_frobenius_contraction": true,
+      "explicit_permutation_pair_count": 0,
+      "mixed_class_commutator_terms_covered": false,
+      "n": 4,
+      "nonzero_target_multiplicity_count": 5,
+      "partition_count": 5,
+      "polynomial_in_n_general_contraction": false,
+      "source_partition": [
+        3,
+        1
+      ],
+      "status": "pure-commutator-frobenius-contraction-mixed-open"
+    },
+    {
+      "character_inner_product_term_bound": 49,
+      "copy_count": 7,
+      "exact_average": "3823/4",
+      "exact_frobenius_contraction": true,
+      "explicit_permutation_pair_count": 0,
+      "mixed_class_commutator_terms_covered": false,
+      "n": 5,
+      "nonzero_target_multiplicity_count": 7,
+      "partition_count": 7,
+      "polynomial_in_n_general_contraction": false,
+      "source_partition": [
+        4,
+        1
+      ],
+      "status": "pure-commutator-frobenius-contraction-mixed-open"
+    },
+    {
+      "character_inner_product_term_bound": 121,
+      "copy_count": 10,
+      "exact_average": "26880899/180",
+      "exact_frobenius_contraction": true,
+      "explicit_permutation_pair_count": 0,
+      "mixed_class_commutator_terms_covered": false,
+      "n": 6,
+      "nonzero_target_multiplicity_count": 11,
+      "partition_count": 11,
+      "polynomial_in_n_general_contraction": false,
+      "source_partition": [
+        5,
+        1
+      ],
+      "status": "pure-commutator-frobenius-contraction-mixed-open"
+    },
+    {
+      "character_inner_product_term_bound": 484,
+      "copy_count": 16,
+      "exact_average": "30547591408951/1680",
+      "exact_frobenius_contraction": true,
+      "explicit_permutation_pair_count": 0,
+      "mixed_class_commutator_terms_covered": false,
+      "n": 8,
+      "nonzero_target_multiplicity_count": 22,
+      "partition_count": 22,
+      "polynomial_in_n_general_contraction": false,
+      "source_partition": [
+        7,
+        1
+      ],
+      "status": "pure-commutator-frobenius-contraction-mixed-open"
+    },
+    {
+      "character_inner_product_term_bound": 1764,
+      "copy_count": 22,
+      "exact_average": "4124890460272300451/360",
+      "exact_frobenius_contraction": true,
+      "explicit_permutation_pair_count": 0,
+      "mixed_class_commutator_terms_covered": false,
+      "n": 10,
+      "nonzero_target_multiplicity_count": 42,
+      "partition_count": 42,
+      "polynomial_in_n_general_contraction": false,
+      "source_partition": [
+        9,
+        1
+      ],
+      "status": "pure-commutator-frobenius-contraction-mixed-open"
+    },
+    {
+      "character_inner_product_term_bound": 5929,
+      "copy_count": 29,
+      "exact_average": "3048167464956958545869533171/11880",
+      "exact_frobenius_contraction": true,
+      "explicit_permutation_pair_count": 0,
+      "mixed_class_commutator_terms_covered": false,
+      "n": 12,
+      "nonzero_target_multiplicity_count": 77,
+      "partition_count": 77,
+      "polynomial_in_n_general_contraction": false,
+      "source_partition": [
+        11,
+        1
+      ],
+      "status": "pure-commutator-frobenius-contraction-mixed-open"
+    },
+    {
+      "character_inner_product_term_bound": 53361,
+      "copy_count": 45,
+      "exact_average": "9189142527171049818317064400684149755625852533/9856",
+      "exact_frobenius_contraction": true,
+      "explicit_permutation_pair_count": 0,
+      "mixed_class_commutator_terms_covered": false,
+      "n": 16,
+      "nonzero_target_multiplicity_count": 231,
+      "partition_count": 231,
+      "polynomial_in_n_general_contraction": false,
+      "source_partition": [
+        15,
+        1
+      ],
+      "status": "pure-commutator-frobenius-contraction-mixed-open"
+    },
+    {
+      "character_inner_product_term_bound": 393129,
+      "copy_count": 62,
+      "exact_average": "363922079687862085864523153130476399961559084743314331745493391493148839/73256400",
+      "exact_frobenius_contraction": true,
+      "explicit_permutation_pair_count": 0,
+      "mixed_class_commutator_terms_covered": false,
+      "n": 20,
+      "nonzero_target_multiplicity_count": 627,
+      "partition_count": 627,
+      "polynomial_in_n_general_contraction": false,
+      "source_partition": [
+        19,
+        1
+      ],
+      "status": "pure-commutator-frobenius-contraction-mixed-open"
+    }
+  ],
+  "status": "pure-commutator-frobenius-contraction-proved-mixed-recoupling-open",
+  "summary": "Proved and validated the exact Frobenius contraction for pure equal-pair commutator products through n=20; finite four-class kernels through n=6 show the remaining mixed recoupling object but still require factorial pair enumeration."
+}

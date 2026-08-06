@@ -797,6 +797,1747 @@
   {
     "candidate_id": "CODE-COSET-COLLECTIVE",
     "dependencies": [
+      "self_dual_automorphism_workbench.py",
+      "self_dual_code_boundary_search.py",
+      "self_dual_rowspace_hsp_reduction.py",
+      "networkx",
+      "Moore-Russell-Schulman-2008-Symmetric-Group-Fourier",
+      "Hallgren-Roetteler-Sen-2010-Coset-State-Limits"
+    ],
+    "falsifiers": [
+      "A generated bounded-weight support fails the public parity-check zero-syndrome condition.",
+      "Bounded support enumeration misses a support of weight at most eight.",
+      "A nonidentity graph symmetry fails full rowspace verification.",
+      "A failed automorphism search is represented as rigidity.",
+      "Finite sampled rigidity is represented as an infinite-family theorem.",
+      "A single-register GI-type no-go is represented as closing collective measurements."
+    ],
+    "hypothesis": "Exact bounded-weight codeword-support hypergraphs can stratify scalable self-dual instances into rigid GI-type HSP cases, explicitly nonrigid stabilizer cases, and honest unresolved debt.",
+    "id": "EXP-CODE-SELF-DUAL-AUTOMORPHISM-WORKBENCH",
+    "metrics": [
+      "complete_bounded_support_enumeration_count",
+      "maximum_enumerated_half_subset_count",
+      "rigidity_certified_instance_count",
+      "explicit_automorphism_instance_count",
+      "unresolved_instance_count",
+      "singleton_refinement_certificate_count",
+      "gi_type_single_register_no_go_certified_instance_count",
+      "infinite_family_rigidity_theorem_count",
+      "collective_measurement_count",
+      "polynomial_hidden_permutation_decoder_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-self-dual-automorphisms.",
+      "Raise the exact support order or add an algebraic stabilizer solver for unresolved k=32 rows.",
+      "Prove a growing-family automorphism theorem rather than extrapolating finite samples.",
+      "Route rigid and nonrigid strata to their correct coset-state analyses."
+    ],
+    "positive_signal": "No direct quantum-positive signal. The result determines which symmetric-group coset-state obstruction is legally applicable and prevents measurement search on incorrectly classified rows.",
+    "protocol": "Use self-duality to enumerate every support of weight at most eight by an equal-syndrome meet-in-the-middle construction. Run automorphism-invariant color refinement on the resulting coordinate/support incidence graph. Accept singleton coordinate colors as a rigidity certificate; verify every nonidentity graph symmetry against the full code rowspace; retain all other outcomes as proof debt.",
+    "status": "planned",
+    "title": "Self-dual code automorphism and rigidity workbench"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_code_boundary_search.py",
+      "code_incidence_resolver.py",
+      "code_schur_filtration.py",
+      "code_family_search.py",
+      "networkx"
+    ],
+    "falsifiers": [
+      "The orthogonal construction fails self-duality, full rank, or full-hull certification.",
+      "A known coordinate permutation changes a purported invariant.",
+      "Polynomial Schur, column-matroid, or puncture/shorten signatures separate a pair.",
+      "Complete finite codeword signatures separate the pair.",
+      "Exact incidence isomorphism proves independently generated samples are equivalent controls.",
+      "An incidence timeout or expansion cap is treated as hardness evidence."
+    ],
+    "hypothesis": "Binary self-dual codes generated as [I|A] with orthogonal A provide a natural growing-hull family that evades the trivial-hull projector reduction, but viable rows must still survive scalable code invariants and canonicalization before they can motivate collective nonabelian measurements.",
+    "id": "EXP-CODE-SELF-DUAL-BOUNDARY-SEARCH",
+    "metrics": [
+      "instance_count",
+      "maximum_dimension",
+      "growing_hull_family_count",
+      "scalable_collision_pair_count",
+      "scalable_invariant_rejection_count",
+      "exact_invariant_rejection_count",
+      "exact_equivalent_pair_count",
+      "exact_nonequivalent_boundary_count",
+      "incidence_timeout_count",
+      "incidence_cap_count",
+      "polynomial_canonicalization_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-self-dual-search.",
+      "Add polynomial canonical-label and automorphism baselines for surviving scalable collisions.",
+      "Feed only unresolved scalable rows into code frontier triage; never promote finite caps or timeouts."
+    ],
+    "positive_signal": "No direct positive signal. The useful output is a natural growing-hull family with reproducible polynomial-signature collisions that remains open after stronger polynomial canonicalization; finite non-equivalence or solver timeout alone is insufficient.",
+    "protocol": "Generate certified orthogonal matrices from swaps and even transvections, form self-dual [I|A] codes across increasing dimension, verify full rank/self-duality/full hull, and compute basis-invariant Schur-square/cube, column-multiplicity, and one/two-coordinate puncture/shorten profiles. Verify coordinate-permutation controls. At small dimension only, enumerate all codewords and run exact colored codeword-coordinate incidence isomorphism; record finite non-equivalence, caps, and timeouts as proof debt rather than hardness.",
+    "status": "planned",
+    "title": "Growing-hull self-dual code boundary search"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_fixed_order_sparsity_obstruction.py",
+      "self_dual_automorphism_workbench.py",
+      "self_dual_high_order_automorphism_resolver.py",
+      "symplectic Lagrangian counting",
+      "binary entropy bounds"
+    ],
+    "falsifiers": [
+      "The self-dual ensemble membership probability is counted incorrectly.",
+      "Observed support counts are represented as independent samples or a family proof.",
+      "Finite weight-ten success is extrapolated to fixed-order asymptotic rigidity.",
+      "Failure of this classical certificate is represented as quantum advantage.",
+      "Implicit algebraic growing-weight invariants are represented as ruled out."
+    ],
+    "hypothesis": "The successful finite weight-eight/ten automorphism certificates cannot scale on a uniform rate-one-half self-dual ensemble because every fixed-weight support count vanishes exponentially.",
+    "id": "EXP-CODE-SELF-DUAL-FIXED-ORDER-SPARSITY-OBSTRUCTION",
+    "metrics": [
+      "weight_10_expected_below_one_length_count",
+      "linear_required_weight_length_count",
+      "exponential_enumeration_length_count",
+      "entropy_half_relative_weight_threshold",
+      "asymptotic_fixed_order_rigidity_certificate_count",
+      "infinite_family_automorphism_theorem_count",
+      "collective_measurement_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-self-dual-sparsity.",
+      "Stop treating explicit fixed support order as the asymptotic automorphism route.",
+      "Search for implicit growing-weight algebraic invariants or prove a random self-dual rigidity theorem.",
+      "Keep collective quantum measurement and decoder obligations separate from this classical obstruction."
+    ],
+    "positive_signal": "No direct quantum-positive signal. The obstruction rejects a classical certificate architecture and forces either an implicit growing-weight invariant, a uniform automorphism theorem, or a genuinely collective quantum mechanism.",
+    "protocol": "Derive the exact membership probability of a nontrivial even vector in a uniform binary self-dual code via the Lagrangian quotient by the all-ones vector. Compute exact expected support counts, calibrate them against observed artifacts, solve the entropy-half threshold, and cost the explicit meet-in-the-middle order needed for linearly many supports.",
+    "status": "planned",
+    "title": "Fixed-order self-dual support sparsity obstruction"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_global_orbit_audit.py",
+      "self_dual_code_boundary_search.py",
+      "self_dual_local_profile_obstruction.py",
+      "Petrank-Roth-1997-Code-Equivalence",
+      "Ducas-et-al-2024-Code-Equivalence-Isomorphism-Relations"
+    ],
+    "falsifiers": [
+      "A mapped coordinate-permutation information set changes the full normalized column multiset.",
+      "A shared normalized key is ignored instead of recorded as an exact equivalence witness.",
+      "A sampled key miss is represented as non-equivalence.",
+      "Information-set orbit growth is represented as a lower bound on every classical algorithm.",
+      "Construction-A low-norm collisions are represented as lattice-isomorphism hardness.",
+      "The forward code-to-lattice map is represented as iff without coordinate-frame recovery."
+    ],
+    "hypothesis": "After bounded local profiles collapse, exhaustive information-set normalization and low-norm Construction-A lattice invariants may also fail to give a scalable global canonicalization, but their failure must be separated from a genuine classical lower bound.",
+    "id": "EXP-CODE-SELF-DUAL-GLOBAL-ORBIT-AUDIT",
+    "metrics": [
+      "information_set_subset_trial_count",
+      "accepted_information_set_count",
+      "normalized_information_set_key_count",
+      "maximum_estimated_log2_information_set_count",
+      "sampled_equivalence_witness_count",
+      "no_intersection_proof_debt_count",
+      "construction_a_unimodular_count",
+      "construction_a_single_invariant_class_family_count",
+      "frame_preserving_reverse_reduction_count",
+      "proved_polynomial_global_canonicalization_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-self-dual-global-orbit.",
+      "Develop frame recovery or a certified code-to-lattice iff gadget.",
+      "Replace exhaustive information-set enumeration with a genuinely polynomial global canonical-label attack.",
+      "Treat independent sampled misses as proof debt only."
+    ],
+    "positive_signal": "No direct quantum-positive signal. A useful outcome is a precise global classical bottleneck that survives exact controls and identifies which reduction or canonicalization theorem is actually missing.",
+    "protocol": "Normalize complete generator-column multisets by sampled or exhaustively enumerated information sets, verify mapped coordinate-permutation controls, and accept shared full normalized keys only as exact equivalence witnesses. Estimate information-set orbit growth without treating misses as non-equivalence. Construct the scaled Construction-A lattice certificate and compute determinant, parity, minimum norm, and exact norm-two vector counts while recording the missing coordinate-frame reverse implication.",
+    "status": "planned",
+    "title": "Self-dual global information-set and Construction-A orbit audit"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_high_order_automorphism_resolver.py",
+      "self_dual_automorphism_workbench.py",
+      "self_dual_rowspace_hsp_reduction.py",
+      "numpy",
+      "networkx"
+    ],
+    "falsifiers": [
+      "Packed enumeration misses a support of weight at most ten.",
+      "An emitted support fails the public zero-syndrome check.",
+      "Stable coordinate colors are not singleton.",
+      "Fixed order-ten success is represented as an infinite-family theorem.",
+      "A rigid single-register obstruction is represented as ruling out collective measurements."
+    ],
+    "hypothesis": "The unresolved length-64 self-dual rows are sparse only at support weight eight; exact weight-ten supports may already certify rigidity and route them into the GI-type single-register obstruction.",
+    "id": "EXP-CODE-SELF-DUAL-HIGH-ORDER-AUTOMORPHISM-RESOLVER",
+    "metrics": [
+      "target_instance_count",
+      "resolved_rigidity_instance_count",
+      "remaining_unresolved_instance_count",
+      "complete_high_order_enumeration_count",
+      "maximum_enumerated_half_subset_count",
+      "maximum_packed_array_bytes",
+      "singleton_refinement_certificate_count",
+      "gi_type_single_register_no_go_certified_instance_count",
+      "infinite_family_rigidity_theorem_count",
+      "collective_measurement_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-self-dual-high-order.",
+      "Generate and classify larger self-dual dimensions without assuming fixed weight ten remains sufficient.",
+      "On rigidity-certified rows, stop searching single-register Fourier observables.",
+      "Construct or obstruct genuinely collective measurements with full decoder accounting."
+    ],
+    "positive_signal": "No direct quantum-positive signal. Resolution identifies the correct rigid HSP stratum and moves research effort from single-register Fourier sampling to the genuine collective-measurement barrier.",
+    "protocol": "Retain the order-eight artifact, select only unresolved instances, pack every size-at-most-five coordinate subset as a syndrome/support record, sort by syndrome, enumerate all zero-sum supports through weight ten, and run automorphism-invariant coordinate refinement. Accept only singleton coordinate colors as rigidity certificates.",
+    "status": "planned",
+    "title": "Higher fixed-order self-dual automorphism resolver"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_hsp_applicability.py",
+      "self_dual_code_boundary_search.py",
+      "Dinh-Moore-Russell-2015-Code-Equivalence-Coset-States",
+      "Moore-Russell-Schulman-2008-Symmetric-Group-Fourier",
+      "Hallgren-Roetteler-Sen-2010-Coset-State-Limits"
+    ],
+    "falsifiers": [
+      "A strengthened character bound extends the one-coset indistinguishability theorem to k=Theta(n).",
+      "All measurable signal has exponentially small natural mass or exponential representation complexity.",
+      "No efficient QFT or equivalent measurement exists for the wreath-product group.",
+      "The statistic is a classical invariant of the explicit generators.",
+      "Decoding the hidden permutation requires exhaustive GL_k or S_n orbit search.",
+      "Failure of a sufficient no-go hypothesis is represented as evidence of distinguishability."
+    ],
+    "hypothesis": "Rate-one-half self-dual codes fall outside the published Dinh-Moore-Russell sufficient condition for single-coset-state indistinguishability, leaving a representation-theoretic applicability gap that merits direct analysis without being mistaken for positive quantum evidence.",
+    "id": "EXP-CODE-SELF-DUAL-HSP-APPLICABILITY",
+    "metrics": [
+      "dimension_condition_fail_family_count",
+      "single_coset_no_go_certified_family_count",
+      "maximum_dimension_condition_log2_gap",
+      "maximum_log2_wreath_hsp_group_size",
+      "maximum_group_register_qubits",
+      "efficient_wreath_product_qft_count",
+      "explicit_single_coset_measurement_count",
+      "explicit_multicoset_measurement_count",
+      "polynomial_hidden_permutation_decoder_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-self-dual-hsp.",
+      "Derive the high-rate one-coset conjugate-state trace distance or a matching no-go extension.",
+      "Identify accessible irreducible sectors of (GL_k(2) x S_n) wr Z_2.",
+      "Construct and cost a decoder before treating any information signal as algorithmic progress."
+    ],
+    "positive_signal": "A direct high-rate character or trace-distance calculation finds inverse-polynomial one- or few-coset information in an efficiently accessible representation sector, survives public-generator classical baselines, and supports polynomial hidden-permutation decoding.",
+    "protocol": "Formalize the hidden shift over GL_k(F_2) x S_n and its wreath-product HSP, compute exact group encoding costs, check q^(k^2)<=n^(0.2n) and each automorphism hypothesis separately, certify obvious duplicate-column transposition automorphisms, and record the missing irreducible-sector, measurement, QFT, and hidden-permutation decoder obligations.",
+    "status": "planned",
+    "title": "High-rate self-dual code-equivalence HSP applicability audit"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_local_profile_obstruction.py",
+      "self_dual_code_boundary_search.py",
+      "code_family_search.py"
+    ],
+    "falsifiers": [
+      "A source generator is not self-dual.",
+      "The fixed-order zero-sum certificate disagrees with exact small-code minimum distance.",
+      "A puncture/shorten rank or hull profile below minimum distance differs from the theorem.",
+      "A forced bounded-local collision is represented as hardness evidence.",
+      "Fixed-order zero-sum enumeration is represented as a scalable minimum-distance algorithm."
+    ],
+    "hypothesis": "The apparent survival of self-dual codes under bounded puncture/shorten rank-hull signatures is structurally forced below minimum distance and therefore supplies no code-equivalence hardness evidence.",
+    "id": "EXP-CODE-SELF-DUAL-LOCAL-PROFILE-OBSTRUCTION",
+    "metrics": [
+      "distance_greater_than_maximum_order_count",
+      "full_order_collapse_instance_count",
+      "full_order_collapse_family_count",
+      "exact_distance_validation_count",
+      "profile_validation_subset_count",
+      "theorem_covered_subset_count",
+      "theorem_control_failure_count",
+      "global_polynomial_canonicalization_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-self-dual-local-obstruction.",
+      "Remove bounded local rank-hull profiles from the list of meaningful self-dual hardness signals.",
+      "Develop global polynomial canonicalization or growing-order invariants for the surviving family."
+    ],
+    "positive_signal": "No quantum-positive signal. The result narrows the search: only global or growing-order code information can distinguish a growing-distance self-dual family.",
+    "protocol": "Treat each self-dual generator as its own parity check, enumerate all distinct-column zero sums through order four, and certify the minimum-distance threshold needed by puncture/shorten duality. Derive the forced rank and hull dimensions for every coordinate subset below that threshold, verify the formula exhaustively or by deterministic sampled controls, and cross-check exact minimum distance on small codes.",
+    "status": "planned",
+    "title": "Self-dual bounded local-profile obstruction"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_rowspace_hsp_reduction.py",
+      "self_dual_code_boundary_search.py",
+      "self_dual_hsp_applicability.py",
+      "Dinh-Moore-Russell-2015-Code-Equivalence-Coset-States",
+      "Moore-Russell-Schulman-2008-Symmetric-Group-Fourier",
+      "Hallgren-Roetteler-Sen-2010-Coset-State-Limits"
+    ],
+    "falsifiers": [
+      "RREF changes under an invertible row operation.",
+      "The rowspace hiding functions fail the hidden-shift identity.",
+      "A permutation lies in the identity level set without stabilizing the code.",
+      "The removable GL_k factor is retained as evidence of a high-rate representation-theoretic opening.",
+      "No duplicate columns is represented as proof of rigidity.",
+      "A graph-isomorphism-style no-go is imported without proving the automorphism hypotheses."
+    ],
+    "hypothesis": "For explicit full-rank code generators, the GL_k row scrambler is removable gauge: canonical rowspace evaluation reduces code equivalence to hidden shift over S_n, so failure of a no-go dimension condition caused by |GL_k| is not a quantum opening.",
+    "id": "EXP-CODE-SELF-DUAL-ROWSPACE-HSP-REDUCTION",
+    "metrics": [
+      "hidden_shift_control_failure_count",
+      "gl_factor_eliminated_family_count",
+      "maximum_eliminated_group_log2_size",
+      "maximum_rowspace_wreath_log2_size",
+      "obvious_nonrigid_instance_count",
+      "rigidity_certified_instance_count",
+      "large_minimal_degree_certified_instance_count",
+      "gi_type_order_two_no_go_certified_instance_count",
+      "explicit_collective_measurement_count",
+      "polynomial_hidden_permutation_decoder_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-self-dual-rowspace-hsp.",
+      "Certify PAut(C), automorphism size, and minimal degree on the scalable self-dual tail.",
+      "Apply or extend the symmetric-group coset-state no-go only after those hypotheses are proved.",
+      "Search for collective measurements only on rows that survive the no-go audit."
+    ],
+    "positive_signal": "No direct quantum-positive signal. The useful result is an exact smaller reduction that identifies the actual symmetric-group automorphism and collective-measurement bottleneck.",
+    "protocol": "Define f_C(P)=RREF(MP), verify invariance under invertible row operations, verify the hidden-shift identity under mapped coordinate permutations, and verify that the identity level set is exactly PAut(C). Compare raw and rowspace-canonical wreath-product group sizes. Keep rigidity, automorphism size/minimal degree, collective measurement, and decoder obligations explicit.",
+    "status": "planned",
+    "title": "Rowspace-canonical self-dual code HSP reduction"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_all_unequal_conditioned_kernel.py",
+      "self_dual_wreath_coupled_word_walk_gap.py",
+      "self_dual_wreath_natural_unequal_dominance.py",
+      "symmetric-group character orthogonality"
+    ],
+    "falsifiers": [
+      "The conditioned unequal source probabilities do not sum to one.",
+      "The signed kernel disagrees with direct unequal-irrep character averages.",
+      "Swap-coset words retain conditioned character mass.",
+      "The annealed conditioned one-label moment differs from 2^-m.",
+      "The B<=I/2 bound is described as a 2^{1-k} norm bound.",
+      "A signed classical kernel is described as an implemented coherent measurement."
+    ],
+    "hypothesis": "Conditioning natural physical labels on unequal Plancherel partition pairs removes rare stationary sectors and exposes the exact tensor contraction needed at growing copy count.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-ALL-UNEQUAL-CONDITIONED-KERNEL",
+    "metrics": [
+      "conditioned_kernel_validation_failure_count",
+      "conditioned_word_validation_failure_count",
+      "conditioned_annealed_half_power_failure_count",
+      "typical_all_unequal_conditioned_kernel_count",
+      "all_order_conditioned_word_map_reduction_count",
+      "all_unequal_frame_half_norm_bound_count",
+      "tail_log2_conditioned_normalized_moment_root_upper_bound",
+      "tail_log2_root_to_second_moment_scale_gap",
+      "simultaneous_k_coordinate_contraction_count",
+      "natural_average_inverse_polynomial_conclusive_theorem_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-wreath-conditioned-kernel.",
+      "Decompose the signed kernel by nontrivial-coordinate Fourier level.",
+      "Search tensor-product projection inequalities that decay exponentially in active coordinates.",
+      "Prove a high-probability all-unequal norm bound before designing a Naimark dilation."
+    ],
+    "positive_signal": "A level-sensitive tensor theorem improves B<=I/2 to an operator bound on the 2^{1-k} scale for natural all-unequal tuples at the information-threshold copy count.",
+    "protocol": "Subtract diagonal partition pairs from the two-draw Plancherel character average, derive the signed base-coset kernel and swap-coset annihilation formula, validate complete small wreath groups and bridge words, then prove the strongest single-coordinate projection bound without overclaiming it.",
+    "status": "planned",
+    "title": "All-unequal conditioned wreath character kernel"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_all_unequal_third_moment.py",
+      "symmetric_character.py",
+      "symmetric-group class algebra",
+      "wreath-product unequal irrep character formula"
+    ],
+    "falsifiers": [
+      "Class connection counts disagree with direct permutation-pair counts.",
+      "Unequal tuple moments disagree with the general character expansion.",
+      "Subexponential p(n)^4 scaling is described as polynomial.",
+      "Class triples are assumed to determine equal-pair commutator characters.",
+      "All-unequal coverage is described as all physical-sector coverage."
+    ],
+    "hypothesis": "Every arbitrary mixed tuple of unequal-pair physical irreps has an exact third-moment contraction over symmetric-group class connection coefficients, while equal-pair sectors require richer data.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-ALL-UNEQUAL-THIRD-MOMENT",
+    "metrics": [
+      "failed_class_kernel_validation_count",
+      "failed_unequal_moment_validation_count",
+      "maximum_partition_count",
+      "maximum_class_triple_count",
+      "maximum_character_kernel_term_bound",
+      "exact_subfactorial_class_contraction_count",
+      "polynomial_in_n_all_unequal_contraction_count",
+      "arbitrary_mixed_unequal_tuple_contraction_count",
+      "equal_pair_commutator_contraction_count",
+      "commutator_class_counterexample_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-self-dual-wreath-all-unequal.",
+      "Build a commutator-character contraction using representation-ring and recoupling tensors.",
+      "Determine whether stable/low-depth partition families admit polynomial contraction.",
+      "Retain subexponential p(n)^4 cost as a blocker until removed."
+    ],
+    "positive_signal": "An exact subfactorial contraction for all unequal tuples, together with a polynomial recoupling contraction that also handles equal-pair commutator insertions.",
+    "protocol": "Derive the unequal projector-word character from the three relative permutation classes; compute their exact class-algebra connection kernel; validate against direct pair counts and all unequal W_3 threshold tuples; measure p(n)^3/p(n)^4 scaling; and search for a counterexample to determining the equal-pair commutator class from those three labels.",
+    "status": "planned",
+    "title": "All-unequal physical-sector third-moment class contraction"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_carrier_orbit_growth.py",
+      "self_dual_wreath_subset_carrier_algebra.py",
+      "Burnside lemma",
+      "symmetric-group centralizer orders",
+      "simultaneous conjugacy harmonic analysis"
+    ],
+    "falsifiers": [
+      "Polynomial subset-intersection profile counts are represented as polynomial hidden-label orbit counts.",
+      "The identity centralizer contribution n! is omitted from the depth-three Burnside sum.",
+      "The wreath swap is represented as collapsing more than a factor two without proof.",
+      "An explicit factorial orbit table is represented as a scalable block transform.",
+      "Finite exact counts are represented as a harmonic circuit or frame preconditioner."
+    ],
+    "hypothesis": "The noncommutative carrier algebra cannot scale through explicit orbit tables: after fixing one bridge label, depth-three words are indexed by simultaneous conjugacy orbits of permutation pairs, whose Burnside count is already factorial.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-CARRIER-ORBIT-GROWTH",
+    "metrics": [
+      "record_count",
+      "exact_record_count",
+      "factorial_hidden_label_orbit_lower_bound_count",
+      "maximum_log2_full_wreath_orbit_lower_bound",
+      "maximum_log2_subset_profile_upper_bound",
+      "explicit_polynomial_carrier_orbit_table_count",
+      "compressed_harmonic_block_transform_count",
+      "uniform_noncommutative_carrier_block_transform_count",
+      "polynomial_structured_frame_preconditioner_count",
+      "polynomial_frame_inverse_count",
+      "polynomial_hidden_permutation_decoder_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-self-dual-wreath-orbits.",
+      "Replace explicit carrier orbits with irreducible and multiplicity labels under simultaneous conjugation.",
+      "Derive sparse recoupling rules for multiplying subset-orbit operators in that harmonic basis.",
+      "Search for a blockwise conditioned frame preconditioner and direct polar transform."
+    ],
+    "positive_signal": "A useful result is a compressed harmonic/representation transform that accesses factorial carrier sectors without enumerating them, with polynomial block labels, matrix elements, conditioning, and coherent circuit complexity.",
+    "protocol": "Reduce d bridge labels under diagonal left-right wreath conjugation to d-1 relative permutations under simultaneous S_n conjugation; derive the Burnside count sum z_lambda^(d-2); bound the extra wreath swap by a factor of two; compare hidden-label orbit growth with register-subset intersection profiles at the information-threshold copy count; and verify exact finite character partitions.",
+    "status": "planned",
+    "title": "Wreath carrier hidden-label orbit-growth theorem"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_character_moments.py",
+      "self_dual_wreath_complete_w3_tuple_audit.py",
+      "symmetric_character.py",
+      "wreath-product physical irrep character formulas"
+    ],
+    "falsifiers": [
+      "A second-moment effective-rank estimate is presented as a minimum-eigenvalue theorem.",
+      "Finite W_3 moment agreement is presented as an all-n spectral recurrence.",
+      "Third moments require explicit factorial simultaneous-conjugacy orbit tables.",
+      "A classical character contraction is presented as a coherent blockwise transform.",
+      "A support-gap theorem is claimed without controlling kernel-bearing natural sectors."
+    ],
+    "hypothesis": "Mixed physical-irrep frame blocks admit exact character contractions that replace explicit factorial hidden-permutation tables and can eventually expose a uniform support-gap recurrence.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-CHARACTER-MOMENTS",
+    "metrics": [
+      "w3_validated_tuple_moment_count",
+      "w3_failed_tuple_moment_count",
+      "exact_second_moment_class_recurrence_count",
+      "maximum_partition_class_term_count",
+      "third_moment_factorial_orbit_barrier_count",
+      "polynomial_third_moment_contraction_count",
+      "all_moment_spectral_recurrence_count",
+      "coherent_support_projector_count",
+      "coherent_blockwise_frame_pseudoinverse_count",
+      "polynomial_hidden_permutation_decoder_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-self-dual-wreath-moments.",
+      "Replace raw third-moment pair-orbit enumeration by a character or representation-ring contraction.",
+      "Derive support-gap consequences only after enough moments or a minimal polynomial are controlled.",
+      "Compile any classical contraction into an explicit coherent access model before claiming a decoder."
+    ],
+    "positive_signal": "A polynomial symbolic third/higher-moment contraction or minimal-polynomial recurrence that extends to k=Theta(log n!), bounds every naturally occupied support gap, and supports coherent pseudoinversion.",
+    "protocol": "Derive the exact m-th trace-character expansion, prove the all-n second-moment partition-class formula, reproduce every complete W_3 threshold tuple moment through fourth order, and measure the simultaneous-conjugacy orbit barrier that remains for naive third moments.",
+    "status": "planned",
+    "title": "Physical wreath-frame character-moment recurrence"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_character_ratio_contract.py",
+      "self_dual_wreath_collision_free_frame_probe.py",
+      "feray-sniady-character-bounds-2007",
+      "lifshitz-marmor-hypercontractive-characters-2023",
+      "olesker-taylor-teyssier-thevenin-character-cutoff-2025"
+    ],
+    "falsifiers": [
+      "The unequal physical character does not factor into S_n ratios.",
+      "Typical-shape tails do not hold simultaneously over 2k draws.",
+      "Low-length subset words have superpolynomial aggregate weight.",
+      "Character signs align on a collision-free family and defeat product mixing.",
+      "A pointwise character bound is described as a moment theorem.",
+      "A norm theorem is described as a coherent measurement or decoder."
+    ],
+    "hypothesis": "Symmetric-group character-ratio decay, combined with joint anti-concentration of short bridge subset words, yields the sufficient collision-free norm bound poly(n)2^-k.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-CHARACTER-RATIO-CONTRACT",
+    "metrics": [
+      "character_factorization_failure_count",
+      "character_ratio_stress_record_count",
+      "maximum_finite_feray_sniady_constant_proxy",
+      "literature_linked_character_bound_count",
+      "exact_unequal_character_factorization_theorem_count",
+      "simultaneous_typical_shape_tail_theorem_count",
+      "joint_short_word_anticoncentration_theorem_count",
+      "collision_free_polynomial_factor_norm_theorem_count",
+      "collision_free_growing_moment_contraction_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-wreath-character-ratios.",
+      "Measure joint short-word transposition-length profiles under shared bridge sequences.",
+      "Separate low-support exceptional words from typical product-mixing terms.",
+      "Prove the resulting collision-free Schatten-moment inequality."
+    ],
+    "positive_signal": "A proved short-word anti-concentration inequality, uniform over globally distinct typical source partitions, closes a poly(n)2^-k Schatten-moment bound.",
+    "protocol": "Factor unequal physical normalized characters into ordinary S_n ratios, validate every small wreath element, stress-test finite F\u00e9ray-Sniady constants, import sharp primary bounds, and formalize the typical-shape and short-word obligations needed by the trace-moment certificate.",
+    "status": "planned",
+    "title": "Collision-free character-ratio contraction contract"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_collision_free_frame_probe.py",
+      "self_dual_wreath_global_partition_collision.py",
+      "self_dual_wreath_unequal_frame_blocks.py",
+      "scipy sparse Hermitian eigensolver"
+    ],
+    "falsifiers": [
+      "A collision-free tuple has top norm exponentially larger than 2^{1-k}.",
+      "Lanczos eigenpair residuals are too large to support the comparison.",
+      "The exact 2^{1-k} conjecture survives every adversarial W5 pairing.",
+      "Only repeated physical labels are tested.",
+      "A finite constant-factor trend is described as an all-n theorem.",
+      "A frame spectrum is described as a coherent measurement or decoder."
+    ],
+    "hypothesis": "Globally distinct unequal source tuples have frame norm within a polynomial factor of 2^-k even though exact projector independence fails.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-COLLISION-FREE-FRAME-PROBE",
+    "metrics": [
+      "collision_free_probe_count",
+      "complete_w4_collision_free_pairing_count",
+      "w5_collision_free_three_copy_probe_count",
+      "maximum_probe_block_dimension",
+      "maximum_top_eigenpair_residual",
+      "w5_exact_two_to_one_minus_k_violation_count",
+      "w5_factor_two_target_bound_success_count",
+      "maximum_w5_top_to_target_ratio",
+      "collision_free_polynomial_factor_norm_theorem_count",
+      "collision_free_growing_moment_contraction_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-wreath-collision-free-frame.",
+      "Express the mixed frame norm through a bridge-overlap graph or Fourier-level transfer operator.",
+      "Import sharp Plancherel-typical character-ratio bounds.",
+      "Prove a poly(n)2^-k norm bound for arbitrary globally distinct source tuples."
+    ],
+    "positive_signal": "All finite collision-free tuples remain within a small constant factor of 2^{1-k}, motivating an all-n poly(n)2^-k norm theorem based on character ratios or overlap-graph expansion.",
+    "protocol": "Construct mixed unequal physical frame operators without forming dense Kronecker matrices, run deterministic Hermitian Lanczos on complete W4 collision-free pairings and an adversarial W5 three-copy portfolio, and verify every top eigenpair residual.",
+    "status": "planned",
+    "title": "Collision-free mixed wreath frame spectral probe"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_commutant_transfer_audit.py",
+      "self_dual_wreath_harmonic_carrier_schema.py",
+      "coset_commutant_gap_certificate.py",
+      "symmetric_character.py",
+      "bounded-support commutant block encodings"
+    ],
+    "falsifiers": [
+      "The restricted multiplicity-two theorem is represented as a general Kronecker transform.",
+      "Four resolved coordinates are represented as nonnegligible coverage of an at-least-n! carrier space.",
+      "Source and target routing is represented as invariance under the actual frame.",
+      "Cross-source carrier matrix elements are omitted from a frame-transform claim.",
+      "An inverse-polynomial label gap is represented as a hidden-permutation decoder."
+    ],
+    "hypothesis": "The existing all-n bounded-support commutant gap for (n-2,2) tensor (n-2,2) transfers to one genuine equal-source carrier sector, but its four resolved invariant coordinates have factorially negligible coverage and do not control frame mixing.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-COMMUTANT-TRANSFER-AUDIT",
+    "metrics": [
+      "restricted_all_n_inverse_polynomial_gap_theorem_count",
+      "restricted_invariant_matrix_coordinate_count",
+      "maximum_exact_equal_source_nonzero_sector_count",
+      "maximum_exact_nontrivial_multiplicity_sector_count",
+      "maximum_exact_unresolved_internal_multiplicity_state_count",
+      "maximum_negative_log2_restricted_coordinate_coverage_upper_bound",
+      "general_equal_source_gap_theorem_count",
+      "cross_source_carrier_mixing_rule_count",
+      "carrier_frame_invariant_subspace_count",
+      "polynomial_hidden_permutation_decoder_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-self-dual-wreath-commutant.",
+      "Derive the actual frame generator matrix elements between source lambda sectors.",
+      "Search uniform bounded-support separators across representative equal-source sectors.",
+      "Prove invariant carrier subspaces and nonnegligible natural access before using restricted gap tools."
+    ],
+    "positive_signal": "A useful result is a general equal-source and cross-source bounded-support commutant family with inverse-polynomial gaps, explicit carrier-generator matrix elements, and invariant frame blocks covering nonnegligible natural coset-state mass.",
+    "protocol": "Rebuild the symbolic commutant-gap certificate; verify multiplicity two for the equal-source lambda=(n-2,2), target=(n-3,2,1) sector; enumerate all equal-source Kronecker sectors through n=12; compare the four resolved matrix coordinates with exact simultaneous-conjugacy dimensions; extend the 4/n! coverage upper bound through n=64; and audit source routing, cross-source carrier matrix elements, frame invariance, and decoder obligations separately.",
+    "status": "planned",
+    "title": "Wreath restricted commutant capability transfer"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_complete_w3_tuple_audit.py",
+      "self_dual_wreath_physical_frame_blocks.py",
+      "self_dual_wreath_unequal_frame_blocks.py",
+      "exact W_3 representation catalog",
+      "coset-state irrep label law"
+    ],
+    "falsifiers": [
+      "Zero-natural-mass tuples are included in worst naturally occupied conditioning.",
+      "A kernel is treated as failure rather than restricting to the frame support.",
+      "Complete W_3 dense diagonalization is represented as an all-n recurrence.",
+      "Mild support conditioning is represented as a coherent pseudoinverse.",
+      "Physical frame inversion is represented as a hidden-label transform or decoder."
+    ],
+    "hypothesis": "Enumerating every naturally occupied physical-irrep tuple of W_3 at the exact three-copy information threshold will expose the true finite worst-sector support conditioning and determine whether representative repeated-irrep probes missed a harder mixed tuple.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-COMPLETE-W3-TUPLES",
+    "metrics": [
+      "physical_irrep_count",
+      "unordered_threshold_tuple_count",
+      "naturally_occupied_threshold_tuple_count",
+      "natural_tuple_mass_sum",
+      "natural_mass_in_kernel_blocks",
+      "minimum_naturally_occupied_positive_eigenvalue",
+      "maximum_naturally_occupied_support_condition_number",
+      "uniform_all_n_character_moment_recurrence_count",
+      "coherent_blockwise_frame_inverse_count",
+      "polynomial_hidden_permutation_decoder_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-self-dual-wreath-w3-tuples.",
+      "Derive low-order trace moments directly from wreath characters and bridge-product conjugacy classes.",
+      "Validate the recurrence against all 165 W_3 blocks and selected W_4 blocks.",
+      "Prove growing-n support conditioning before attempting coherent pseudoinversion."
+    ],
+    "positive_signal": "A useful result is a character-moment recurrence that reproduces the complete W_3 table and extends to all naturally occupied W_n tuple sectors at k=Theta(log n!), with inverse-polynomial support conditioning and coherent pseudoinversion.",
+    "protocol": "Construct all nine W_3 irreps and their bridge matrices; verify dimensions and exact coset-state label probabilities; enumerate all 165 unordered three-irrep tuples; diagonalize each correlated frame block; aggregate multinomial natural mass; separate zero-mass anti-trivial labels; and record support ranks, kernels, minimum positive eigenvalues, condition numbers, and missing all-n character-recurrence/coherent-inverse obligations.",
+    "status": "planned",
+    "title": "Complete W_3 threshold physical-tuple audit"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_coupled_word_walk_gap.py",
+      "self_dual_wreath_natural_moment_word_map.py",
+      "self_dual_wreath_natural_unequal_dominance.py",
+      "spectral tensorization for averaged projections"
+    ],
+    "falsifiers": [
+      "The coupled Markov endpoint disagrees with exact subset-word moments.",
+      "The bridge class fails to generate the expected index-two subgroup.",
+      "The tensor projection inequality does not imply a constant gap.",
+      "Constant-gap contraction reaches the typical frame scale without conditioning.",
+      "Rare equal one-dimensional labels are ignored in the high-moment asymptotics.",
+      "A classical spectral bound is described as a measurement circuit."
+    ],
+    "hypothesis": "The shared-generator k-copy subset-word process retains a constant spectral gap, but its unconditional high moment is contaminated by rare equal one-dimensional source sectors.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-COUPLED-WORD-WALK-GAP",
+    "metrics": [
+      "bridge_subgroup_validation_failure_count",
+      "exact_coupled_moment_validation_failure_count",
+      "constant_coupled_spectral_gap_theorem_count",
+      "coupled_k_walk_contraction_count",
+      "tail_log2_transient_to_stationary_ratio_upper_bound",
+      "tail_log2_normalized_moment_root_upper_bound",
+      "tail_log2_second_moment_eigenvalue_scale",
+      "tail_log2_root_to_second_moment_scale_gap",
+      "typical_all_unequal_conditioned_kernel_count",
+      "natural_average_inverse_polynomial_conclusive_theorem_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-wreath-coupled-word-gap.",
+      "Derive the normalized-character kernel conditioned on unequal partition pairs.",
+      "Decompose the conditioned endpoint into irreducible bridge-walk sectors.",
+      "Seek level-sensitive contraction at the 2^-k frame scale."
+    ],
+    "positive_signal": "Conditioning the character kernel on all-unequal Plancherel labels removes the rare stationary sectors and yields a moment-root bound on the 2^-k frame-eigenvalue scale.",
+    "protocol": "Represent the kth word statistic as an endpoint observable of M_k=E_c tensor_i(I+R_c)/2 on the bridge-generated subgroup, use projection domination to prove a uniform 1/4 gap, match finite exact word moments, and compare the resulting root bound with the second-moment eigenvalue scale.",
+    "status": "planned",
+    "title": "Shared-generator coupled wreath word-walk gap"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_equal_commutator_audit.py",
+      "symmetric_character.py",
+      "Frobenius finite-group commutator formula",
+      "Kronecker tensor-product multiplicities"
+    ],
+    "falsifiers": [
+      "The Frobenius pure commutator average disagrees with direct pair enumeration.",
+      "The unconditioned commutator distribution is reused for class-conditioned mixed terms.",
+      "A finite four-class kernel built from (n!)^2 pairs is described as scalable.",
+      "Pure commutator assignments are described as complete third moments.",
+      "Character multiplicities are described as a coherent recoupling circuit."
+    ],
+    "hypothesis": "Pure equal-pair commutator products admit Frobenius/Kronecker contraction, while complete mixed third moments require a four-class recoupling kernel indexed by r, q, r^-1q, and [r,q].",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-EQUAL-COMMUTATOR-AUDIT",
+    "metrics": [
+      "failed_pure_commutator_validation_count",
+      "exact_pure_commutator_frobenius_contraction_count",
+      "maximum_pure_commutator_scaling_n",
+      "maximum_character_inner_product_term_bound",
+      "maximum_refined_kernel_explicit_pair_count",
+      "maximum_refined_class_quadruple_support_count",
+      "maximum_split_class_triple_count",
+      "polynomial_refined_kernel_construction_count",
+      "mixed_class_commutator_contraction_count",
+      "all_physical_irrep_sector_contraction_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-self-dual-wreath-commutators.",
+      "Derive a representation-theoretic contraction for the four-class kernel.",
+      "Search low-rank or stable-partition structure in finite refined kernels.",
+      "Compile any classical recoupling formula into a coherent access model only after scaling is proved."
+    ],
+    "positive_signal": "A polynomial recoupling or spin-network construction of the mixed four-class kernel, or a direct contraction of its action on every naturally occupied physical character portfolio.",
+    "protocol": "Decompose tensor-product characters and apply the exact Frobenius commutator formula; validate against direct pair averages; construct finite four-class kernels through S_6; measure class-triple splitting and support; and distinguish the pure contraction from the unresolved mixed kernel.",
+    "status": "planned",
+    "title": "Equal-pair commutator recoupling audit"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_global_partition_collision.py",
+      "self_dual_wreath_natural_unequal_dominance.py",
+      "self_dual_wreath_all_unequal_conditioned_kernel.py",
+      "aggarwal-elboim-maximal-dimension-2026"
+    ],
+    "falsifiers": [
+      "Physical labels cannot be unpacked as 2k iid Plancherel draws.",
+      "The global repeat probability exceeds binom(2k,2) times the collision probability.",
+      "The maximal-atom theorem does not make k^2 C_n vanish.",
+      "Known half-norm counterexamples are globally collision-free.",
+      "Preasymptotic finite controls are described as asymptotic evidence.",
+      "Global distinctness is described as a frame-norm theorem."
+    ],
+    "hypothesis": "At the information-threshold copy count, all 2k source partitions underlying natural physical labels are globally distinct with probability 1-o(1).",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-GLOBAL-PARTITION-COLLISION",
+    "metrics": [
+      "global_collision_control_count",
+      "global_source_draw_as_iid_plancherel_theorem_count",
+      "global_collision_union_bound_theorem_count",
+      "asymptotic_global_all_distinct_dominance_theorem_count",
+      "finite_ninety_percent_global_distinct_row_count",
+      "repeated_source_half_norm_counterexample_count",
+      "repeated_source_counterexample_exclusion_count",
+      "collision_free_tuple_norm_theorem_count",
+      "collision_free_growing_moment_contraction_count",
+      "natural_average_inverse_polynomial_conclusive_theorem_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-wreath-global-collision.",
+      "Search collision-free mixed tuples in the smallest feasible wreath groups.",
+      "Relate partition distinctness to tensor projector overlap or character-ratio decay.",
+      "Prove a collision-free growing-moment contraction without catalog enumeration."
+    ],
+    "positive_signal": "A uniform tensor contraction for arbitrary collision-free source-partition tuples reaches the 2^{1-k} frame scale and converts the vanishing collision event into a natural-source success theorem.",
+    "protocol": "Unpack k physical labels into 2k iid Plancherel draws, apply the pair-collision union bound, combine it with maximal-atom decay, compute exact finite weighted occupancy controls, and classify known half-norm blocks by cross-label partition reuse.",
+    "status": "planned",
+    "title": "Global Plancherel collision-free source reduction"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_harmonic_carrier_schema.py",
+      "self_dual_wreath_carrier_orbit_growth.py",
+      "symmetric_character.py",
+      "Peter-Weyl decomposition for S_n",
+      "Kronecker coefficients",
+      "Burnside lemma"
+    ],
+    "falsifiers": [
+      "A compact partition and multiplicity-index address is represented as an efficient coherent transform.",
+      "The p(n) outer sectors are represented as polynomially many sectors.",
+      "Dense n!/p(n) multiplicity blocks are materialized or hidden behind finite tables.",
+      "An S_n group QFT is represented as resolving internal Kronecker multiplicities.",
+      "Finite exact Kronecker coefficients are represented as sparse all-n carrier-product rules."
+    ],
+    "hypothesis": "Depth-three simultaneous-conjugacy carrier sectors admit an exact irreducible/multiplicity schema, but compact labels alone do not remove factorial complexity because Kronecker multiplicity blocks can have n!/p(n) matrix coordinates.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-HARMONIC-CARRIER-SCHEMA",
+    "metrics": [
+      "harmonic_burnside_identity_verification_count",
+      "exact_block_record_count",
+      "non_multiplicity_free_block_count",
+      "maximum_exact_conjugation_multiplicity",
+      "maximum_log2_certified_block_coordinate_lower_bound",
+      "maximum_log2_certified_multiplicity_lower_bound",
+      "internal_kronecker_basis_transform_count",
+      "sparse_carrier_product_rule_count",
+      "uniform_coherent_harmonic_transform_count",
+      "polynomial_structured_frame_preconditioner_count",
+      "polynomial_hidden_permutation_decoder_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-self-dual-wreath-harmonics.",
+      "Derive sparse carrier-generator matrix elements directly in the Kronecker multiplicity basis.",
+      "Search stable-shape and bounded-width recurrences before attempting generic multiplicity blocks.",
+      "Prove a coherent internal transform and conditioned frame action without dense block enumeration."
+    ],
+    "positive_signal": "A useful result is an all-n sparse internal Kronecker transform and carrier multiplication recurrence whose gate and condition-number bounds avoid materializing the superpolynomial multiplicity blocks.",
+    "protocol": "Decompose C[S_n] under conjugation as a direct sum of V_nu with multiplicity m_nu=sum_lambda g(lambda,lambda,nu); verify sum_nu m_nu^2 against the Burnside pair-orbit count; enumerate exact finite blocks through n=12; prove tail lower bounds from the identity conjugacy class; and separately audit coordinate address size, internal Kronecker transforms, sparse product rules, conditioning, and coherent circuit complexity.",
+    "status": "planned",
+    "title": "Wreath harmonic carrier block schema"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_hecke_audit.py",
+      "self_dual_wreath_spectrum.py",
+      "symmetric_character.py",
+      "Moore-Russell-2005-Conjugate-Hidden-Subgroup-PGM",
+      "Moore-Russell-2005-Explicit-Multiregister-Measurement"
+    ],
+    "falsifiers": [
+      "The label stabilizer C_n is confused with the hidden subgroup H=<h_e>.",
+      "All-register PGM optimality is imported although (W_n,H) has irrep multiplicity greater than one.",
+      "A p(n)-dimensional scalar Hecke transform is represented as an operator-valued frame diagonalization.",
+      "The equality-only Hilbert-Schmidt kernel is represented as carrying permutation cycle geometry.",
+      "Grouping 2^k subset terms into k+1 size orbits is represented as a coherent transform or decoder."
+    ],
+    "hypothesis": "The bridge-label stabilizer C_n yields a multiplicity-free scalar Hecke algebra, but it must be separated from the actual order-two hidden subgroup H. This separation should remove the factorial scalar kernel table while exposing the operator-valued multi-copy frame as the real obligation.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-HECKE-AUDIT",
+    "metrics": [
+      "centralizer_gelfand_pair_proof_count",
+      "finite_character_orthogonality_verification_count",
+      "actual_hidden_subgroup_non_gelfand_count",
+      "maximum_exact_hidden_subgroup_irrep_multiplicity",
+      "factorial_hidden_label_table_elimination_count",
+      "pairwise_hs_kernel_collapse_count",
+      "maximum_information_threshold_copy_count",
+      "maximum_register_subset_orbit_count",
+      "uniform_polynomial_coherent_scalar_transform_count",
+      "operator_valued_kcopy_frame_reduction_count",
+      "carrier_sensitive_covariant_povm_count",
+      "polynomial_hidden_permutation_decoder_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-self-dual-wreath-hecke.",
+      "Build the exact subset-indexed operator moment algebra for the k-copy average frame.",
+      "Exploit register-permutation orbit compression without assuming the orbit sums commute.",
+      "Find a polynomial carrier transform, frame inverse, covariant POVM, and hidden-permutation decoder."
+    ],
+    "positive_signal": "A useful result is a polynomial coherent reduction of the operator-valued k-copy frame, followed by a carrier-sensitive covariant POVM and decoder. Scalar commutativity or a finite character table alone is not positive evidence.",
+    "protocol": "Identify C_W(h_e), W_n/C_n, and C_n double cosets; decompose Ind_C^W(1); verify exact symmetric-group character orthogonality and class-sum moments; compute H-fixed multiplicities in every finite wreath irrep control; derive the normalized k-copy Hilbert-Schmidt kernel and its spectrum; and audit the Moore-Russell Gelfand-pair hypothesis against H rather than C.",
+    "status": "planned",
+    "title": "Rigid code-equivalence wreath Hecke/Gelfand audit"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_mask_hypergraph_reduction.py",
+      "self_dual_wreath_short_word_profile.py",
+      "self_dual_wreath_character_ratio_contract.py",
+      "finite-group class-sum orthogonality"
+    ],
+    "falsifiers": [
+      "A mask family with a private column has nonzero joint unequal-character average.",
+      "The unequal bridge class sum is not the zero operator.",
+      "Global source distinctness forces every two-core correlation to vanish.",
+      "Triangle gauge fixing changes the exact average.",
+      "A two-core reduction is described as an anti-concentration theorem.",
+      "A character average is described as a coherent measurement."
+    ],
+    "hypothesis": "Joint unequal-character products vanish whenever a bridge generator appears in only one subset word, reducing every nonzero contribution to a dense incidence-hypergraph two-core.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-MASK-HYPERGRAPH-REDUCTION",
+    "metrics": [
+      "private_column_validation_failure_count",
+      "private_column_joint_vanishing_theorem_count",
+      "mask_hypergraph_two_core_reduction_count",
+      "w5_collision_free_triangle_record_count",
+      "w5_nonzero_collision_free_triangle_count",
+      "maximum_w5_collision_free_triangle_correlation",
+      "joint_two_core_anticoncentration_theorem_count",
+      "joint_short_word_anticoncentration_theorem_count",
+      "collision_free_polynomial_factor_norm_theorem_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-wreath-mask-hypergraph.",
+      "Enumerate incidence two-core isomorphism classes at fixed character order.",
+      "Derive a cluster expansion in cycle rank or excess.",
+      "Combine two-core weights with typical character-ratio decay."
+    ],
+    "positive_signal": "A cluster expansion or product-mixing theorem bounds the aggregate character weight of dense two-core incidence hypergraphs by poly(n) times the fully mixed frame scale.",
+    "protocol": "Represent subset masks as a binary incidence matrix, prove private-column vanishing from the zero unequal bridge class sum, validate exact small cases, gauge-fix triangle word maps, and enumerate collision-free W5 perfect matchings.",
+    "status": "planned",
+    "title": "Mask-incidence two-core character reduction"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_multistar_degree_obstruction.py",
+      "self_dual_wreath_pair_core_carrier_factorization.py",
+      "self_dual_wreath_common_core_atomization.py",
+      "self_dual_wreath_subgroup_twirl_reduction.py",
+      "Sellke, Covering Irrep(S_n) With Tensor Products and Powers"
+    ],
+    "falsifiers": [
+      "Absolute-weight comparison is reintroduced as an all-depth argument.",
+      "A vacuous certificate is described as a proof that the quotient gap fails.",
+      "Sampled saturation is described as a proved asymptotic theorem.",
+      "The Laplacian reformulation is described as supplying a gap.",
+      "Shrinking per-block correlations are cited as evidence of conditioning."
+    ],
+    "hypothesis": "Exact pair-core weights plus the complete bipartite crossing graph decide whether any absolute-weight comparison can certify the residual pair quotient at natural depth.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-MULTISTAR-DEGREE-OBSTRUCTION",
+    "metrics": [
+      "exact_off_common_weight_law_count",
+      "sign_blind_route_asymptotic_kill_count",
+      "subspace_graph_laplacian_equivalence_theorem_count",
+      "finite_merge_control_count",
+      "finite_merge_certificate_available_count",
+      "natural_sample_count",
+      "natural_sample_vacuous_count",
+      "first_vacuous_degree",
+      "maximum_projected_weighted_degree_log2",
+      "maximum_saturation_ratio",
+      "weighted_degree_is_monotone_in_n",
+      "laplacian_equivalence_control_count",
+      "laplacian_equivalence_failure_count",
+      "maximum_laplacian_spectrum_residual",
+      "phase_sensitive_quotient_gap_theorem_count",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-wreath-multistar-degree.",
+      "Bound the smallest positive eigenvalue of the orientation Laplacian.",
+      "Classify higher Cech homology on the vertex side of the duality."
+    ],
+    "positive_signal": "A phase-sensitive lower bound on the positive Laplacian spectrum survives where the absolute-weight bound does not.",
+    "protocol": "Compute exact off-common weights from the carrier factorization, count adjacency exactly on a sibling merge, sample natural high-dimension collision-free threshold portfolios from n=7 to n=12, and verify that the relation Gram and the projector-weighted orientation Laplacian have the same positive spectrum.",
+    "status": "planned",
+    "title": "Sign-blind multistar degree obstruction"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_natural_moment_word_map.py",
+      "self_dual_wreath_natural_unequal_dominance.py",
+      "self_dual_wreath_subpovm_moment_certificate.py",
+      "finite-group character column orthogonality"
+    ],
+    "falsifiers": [
+      "Character column orthogonality disagrees with direct natural-irrep sums.",
+      "The formula fails complete W_3 spectral moments.",
+      "Physical irrep sums remain in the contracted expression.",
+      "Explicit (n!)^m bridge-sequence enumeration is described as polynomial.",
+      "A source-averaged identity is described as per-tuple concentration.",
+      "The reduction is described as a coherent measurement circuit."
+    ],
+    "hypothesis": "Natural source averaging and character column orthogonality reduce every normalized physical wreath-frame moment to identity and bridge-class subset word counts.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-NATURAL-MOMENT-WORD-MAP",
+    "metrics": [
+      "failed_character_sequence_count",
+      "failed_w3_spectrum_validation_count",
+      "natural_character_column_identity_theorem_count",
+      "all_order_source_averaged_word_map_reduction_count",
+      "physical_irrep_sum_eliminated_count",
+      "tail_required_moment_order",
+      "tail_log2_explicit_bridge_sequence_count",
+      "growing_order_word_map_contraction_count",
+      "natural_tuple_moment_concentration_theorem_count",
+      "natural_average_inverse_polynomial_conclusive_theorem_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-wreath-moment-word-map.",
+      "Classify subset bridge words by surface-word topology and free reductions.",
+      "Derive a cycle-index or character recurrence for identity and bridge-class word counts.",
+      "Prove source-tuple concentration before inferring sub-POVM success."
+    ],
+    "positive_signal": "A compressed recurrence computes the identity/bridge subset-word distribution at the required growing moment order and supports a concentration theorem for natural tuple success.",
+    "protocol": "Expand projector products at arbitrary moment order, average normalized characters under the exact natural irrep law, derive the identity/bridge-class indicator formula, validate every finite bridge sequence, and compare with complete W_3 spectral moments.",
+    "status": "planned",
+    "title": "All-order natural wreath moment word-map reduction"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_natural_unequal_dominance.py",
+      "self_dual_wreath_all_unequal_third_moment.py",
+      "aggarwal-elboim-maximal-dimension-2026",
+      "hook-length formula"
+    ],
+    "falsifiers": [
+      "The physical label masses do not equal the two-draw Plancherel law.",
+      "Equal and unequal label masses do not sum to one.",
+      "The maximal Plancherel atom theorem does not imply collision decay.",
+      "The information-threshold copy count overwhelms the collision decay.",
+      "A source-average reduction is described as worst-sector coverage.",
+      "Fixed third moments are described as growing-order contraction."
+    ],
+    "hypothesis": "A natural physical wreath label is exactly two independent Plancherel draws, so equal-pair sectors are collisions and vanish across the information-threshold tuple.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-NATURAL-UNEQUAL-DOMINANCE",
+    "metrics": [
+      "failed_source_law_identity_count",
+      "maximum_exact_control_n",
+      "tail_equal_label_probability",
+      "tail_any_equal_label_probability",
+      "tail_all_unequal_tuple_probability",
+      "physical_label_as_two_plancherel_draws_theorem_count",
+      "threshold_tuple_all_unequal_dominance_theorem_count",
+      "equal_commutator_natural_critical_path_bypass_count",
+      "fixed_third_moment_all_unequal_contraction_count",
+      "growing_order_all_unequal_contraction_count",
+      "natural_average_inverse_polynomial_conclusive_theorem_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-wreath-natural-unequal.",
+      "Construct growing-order moment contractions for arbitrary all-unequal tuples.",
+      "Prove a natural averaged conclusive bound after discarding the vanishing equal event.",
+      "Keep maximal-effect dilation and hidden-permutation decoding as separate obligations."
+    ],
+    "positive_signal": "The probability of any equal-pair label among ceil(log2(n!)) natural samples tends to zero, reducing the asymptotic moment problem to arbitrary all-unequal tuples.",
+    "protocol": "Derive equal and unequal physical weak-Fourier label masses, identify the equal mass with Plancherel collision probability, compute exact finite controls, and combine the union bound with the literature theorem for the maximal S_n irrep dimension.",
+    "status": "planned",
+    "title": "Natural-source all-unequal wreath-sector reduction"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_orientation_fourier_reduction.py",
+      "self_dual_wreath_subgroup_twirl_reduction.py",
+      "self_dual_wreath_collision_free_frame_probe.py",
+      "symmetric_character.py",
+      "finite-group operator-valued Fourier analysis"
+    ],
+    "falsifiers": [
+      "The physical compressed-overlap formula fails.",
+      "The orbit Gram and direct physical frame have different nonzero spectra.",
+      "The orientation terms are not orthogonal projectors.",
+      "Sparse orientation support is assumed after exact support saturation.",
+      "Finite W4 agreement is promoted to an all-n norm theorem.",
+      "A representation reduction is described as a coherent measurement or decoder."
+    ],
+    "hypothesis": "The collision-free orbit Gram Fourier blocks are uniform averages of explicit orientation invariant-subspace projectors; their overlap geometry may yield the missing poly(n) 2^-k frame-norm bound.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-FOURIER-REDUCTION",
+    "metrics": [
+      "complete_w4_orientation_fourier_validation_count",
+      "finite_orientation_fourier_validation_failure_count",
+      "maximum_orbit_gram_spectral_residual",
+      "compressed_overlap_formula_theorem_count",
+      "operator_valued_orbit_gram_fourier_theorem_count",
+      "orientation_invariant_projector_decomposition_theorem_count",
+      "full_orientation_support_saturation_record_count",
+      "tail_log2_maximum_active_orientation_count",
+      "tail_minimum_active_orientation_fraction",
+      "tail_first_full_support_saturation_step",
+      "uniform_projector_sum_norm_theorem_count",
+      "collision_free_polynomial_factor_norm_theorem_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-wreath-orientation-fourier.",
+      "Derive exact pairwise canonical-angle or projector-product formulas.",
+      "Identify stable asymptotic worst sectors for the projector sum.",
+      "Prove a fusion-frame/recoupling norm bound or construct a natural counterexample."
+    ],
+    "positive_signal": "A canonical-angle, fusion-frame, or recoupling estimate bounds the fully supported projector sum by poly(n), or an explicit natural asymptotic sector disproves that target.",
+    "protocol": "Prove the compressed unequal-label overlap formula, Fourier transform the orbit Gram into orientation projectors, validate every collision-free W4 pairing against the direct physical frame, and run an exact Boolean Kronecker-support dynamic program through information-threshold portfolios.",
+    "status": "planned",
+    "title": "Orientation-projector Fourier reduction"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_orientation_fusion_moment.py",
+      "self_dual_wreath_orientation_fourier_reduction.py",
+      "symmetric_character.py",
+      "symmetric-group class algebra",
+      "finite fusion-frame spectral moments"
+    ],
+    "falsifiers": [
+      "The character-convolution overlap disagrees with exact projector matrices.",
+      "Class-product reconstruction fails to reproduce exact W4 block moments.",
+      "A superpolynomial collision-to-target ratio appears on natural threshold portfolios.",
+      "A bounded second-moment collision scale is described as an operator-norm upper bound.",
+      "Pairwise canonical angles are described as a coherent measurement or decoder."
+    ],
+    "hypothesis": "Exact pairwise orientation-projector overlaps and the complete averaged second spectral moment can distinguish a fatal fusion-frame collision obstruction from a genuinely higher-moment operator-norm problem.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-FUSION-MOMENT",
+    "metrics": [
+      "complete_w4_fusion_tuple_validation_count",
+      "pair_overlap_formula_validation_count",
+      "finite_pair_overlap_validation_failure_count",
+      "maximum_pair_overlap_formula_residual",
+      "maximum_w4_nontrivial_canonical_correlation",
+      "w4_common_range_pair_count",
+      "pairwise_character_convolution_theorem_count",
+      "orientation_average_class_algebra_second_moment_theorem_count",
+      "maximum_scaling_collision_lower_bound_to_target_ratio",
+      "tail_collision_lower_bound_to_target_ratio",
+      "tail_maximum_log2_effective_rank",
+      "second_moment_superquartic_obstruction_count",
+      "higher_orientation_moment_norm_theorem_count",
+      "uniform_projector_sum_norm_theorem_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-wreath-orientation-moments.",
+      "Generalize the class-algebra contraction to third and fourth orientation moments.",
+      "Search stable common-range sectors and high canonical-correlation motifs.",
+      "Convert growing moment control into a uniform projector-sum norm theorem."
+    ],
+    "positive_signal": "The threshold collision lower bound remains polynomially close to 2^-k with large effective rank, and the formula extends to controlled growing moments or an operator-valued Gram contraction that upper-bounds the norm.",
+    "protocol": "Derive the character-convolution formula for Tr(E_a E_b), validate ranks, overlaps, and canonical angles on all collision-free W4 tuples, reconstruct symmetric-group class product counts, and evaluate Tr(F_nu) and Tr(F_nu^2) through the n=12 information threshold without orientation enumeration.",
+    "status": "planned",
+    "title": "Orientation fusion-frame moment reduction"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_pair_core_carrier_factorization.py",
+      "self_dual_wreath_common_core_atomization.py",
+      "self_dual_wreath_orientation_pair_angle_spectrum.py",
+      "self_dual_wreath_orientation_triple_range.py",
+      "symmetric-group representation ring"
+    ],
+    "falsifiers": [
+      "A dense ambient singular value is missing from the closed form.",
+      "An off-common correlation exceeds 1/(n-1).",
+      "The closed form needs the collision-free sector.",
+      "A shared-vertex overlap requires nontrivial multiplicity-space 6j data.",
+      "A per-block contraction bound is described as all-depth conditioning."
+    ],
+    "hypothesis": "The overlap operator of two exact orientation pair cores has a closed form in representation-ring data, so its off-common contraction can be proved for all n instead of measured on finite screens.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-PAIR-CORE-CARRIER-FACTORIZATION",
+    "metrics": [
+      "exact_star_carrier_factorization_theorem_count",
+      "all_n_off_common_star_bound_theorem_count",
+      "disjoint_pair_waist_bound_theorem_count",
+      "degenerate_racah_block_identification_count",
+      "selected_star_control_count",
+      "selected_star_failure_count",
+      "screened_star_control_count",
+      "screened_star_failure_count",
+      "screened_off_common_violation_count",
+      "maximum_spectrum_residual",
+      "disjoint_waist_control_count",
+      "disjoint_waist_violation_count",
+      "disjoint_waist_tight_count",
+      "repeated_label_star_control_count",
+      "repeated_label_star_failure_count",
+      "all_depth_multistar_conditioning_bound_count",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-wreath-pair-core-carrier-factorization.",
+      "Derive the exact vertex-disjoint grid overlap or exhibit a strictly smaller grid.",
+      "Feed the exact weights into the orientation Laplacian gap question."
+    ],
+    "positive_signal": "Every dense singular value, rank, and multiplicity is reproduced exactly, and every off-common correlation is at most 1/(n-1) for n>=5.",
+    "protocol": "Grade every tensor factor of a three-orientation family by its membership pattern, show both pair cores are graded by every block isotypic label, contract the forced carrier pairs in each of the two clusters, and validate the resulting two-carrier reciprocal spectrum against dense ambient singular values on S5, S6, and repeated-label controls.",
+    "status": "planned",
+    "title": "Exact pair-core carrier factorization"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_pgm_polar_audit.py",
+      "self_dual_wreath_hecke_audit.py",
+      "self_dual_wreath_spectrum.py",
+      "Moore-Russell-2005-Explicit-Multiregister-Measurement",
+      "Bacon-Childs-van-Dam-2005-Semidirect-PGM"
+    ],
+    "falsifiers": [
+      "A compact normalization-one LCU block encoding is represented as a polynomial frame inverse.",
+      "Generic inverse-square-root resolution at singular scale Theta((n!)^-1/2) is represented as polynomial.",
+      "An unknown mixed coset state is treated as a reusable coherent candidate-verification oracle.",
+      "A direct permutation output register is represented as proving PGM success or efficient implementation.",
+      "Candidate equality verification is represented as a structured search over S_n."
+    ],
+    "hypothesis": "The mixed-state PGM admits an exact polar-isometry reduction and compact average-frame LCU, but generic inversion should encounter a factorial normalization barrier that only a structured representation-specific preconditioner can remove.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-PGM-POLAR-AUDIT",
+    "metrics": [
+      "operator_frame_polar_reduction_count",
+      "average_frame_lcu_contract_count",
+      "pairwise_candidate_verifier_formula_count",
+      "maximum_copy_count",
+      "minimum_effective_rank_fraction",
+      "maximum_generic_polar_resolution_log2_charge",
+      "maximum_optimistic_grover_log2_candidate_queries",
+      "coherent_candidate_verifier_reuse_count",
+      "uniform_polynomial_structured_preconditioner_count",
+      "polynomial_frame_inverse_count",
+      "carrier_sensitive_povm_circuit_count",
+      "polynomial_hidden_permutation_decoder_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-self-dual-wreath-pgm.",
+      "Construct the subset-orbit carrier algebra and test whether its symmetrized generators commute.",
+      "Search representation blocks for a polynomial spectral preconditioner of B_k.",
+      "Prove PGM success or design a different legal covariant measurement under mixed coset-state access."
+    ],
+    "positive_signal": "A useful result is a uniform structured preconditioner or direct carrier polar transform whose complexity depends polynomially on n rather than the Theta((n!)^-1/2) generic singular scale, together with a success theorem under ordinary mixed coset-state access.",
+    "protocol": "Define the k-copy support projectors P_s, average frame B_k, and analysis operator A_k; derive A_k^*A_k=B_k and the PGM effects; expand B_k over permutation labels and subset masks; compute exact first/second frame moments, effective-rank fractions, candidate-verification soundness, and the polar singular scale at k=ceil(log2(n!)); charge generic QSVT and optimistic Grover baselines.",
+    "status": "planned",
+    "title": "Rigid code-equivalence wreath PGM polar audit"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_physical_frame_blocks.py",
+      "self_dual_wreath_pgm_polar_audit.py",
+      "self_dual_wreath_spectrum.py",
+      "coset_jucys_murphy_label_transform.py",
+      "Young seminormal representations"
+    ],
+    "falsifiers": [
+      "Physical wreath-irrep tuple conservation is represented as hidden-label harmonic-source conservation.",
+      "Finite S_3 information-threshold conditioning is represented as all-n conditioning.",
+      "Selected equal-pair blocks are represented as coverage of unequal-pair and mixed-partition tuples.",
+      "Dense finite eigendecomposition is represented as a coherent recurrence or preconditioner.",
+      "A block formula is represented as a hidden-permutation decoder."
+    ],
+    "hypothesis": "The actual k-copy frame is exactly block diagonal in tuples of physical W_n irreps, and selected equal-pair blocks can be constructed from correlated bridge involutions; finite spectra will expose conditioning and kernel structure without resolving hidden-label harmonic multiplicities.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-PHYSICAL-FRAME-BLOCKS",
+    "metrics": [
+      "record_count",
+      "information_threshold_block_count",
+      "maximum_block_dimension",
+      "maximum_distinct_eigenvalue_count",
+      "minimum_positive_eigenvalue",
+      "maximum_support_condition_number",
+      "unequal_pair_physical_block_count",
+      "all_partition_tuple_block_count",
+      "uniform_all_n_spectral_recurrence_count",
+      "polynomial_structured_frame_preconditioner_count",
+      "polynomial_hidden_permutation_decoder_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-self-dual-wreath-frame-blocks.",
+      "Construct unequal-pair induced wreath irreps and mixed physical-irrep tuple blocks.",
+      "Search character-moment recurrences for block spectra at growing n and k.",
+      "Prove worst-sector support conditioning before synthesizing a blockwise inverse."
+    ],
+    "positive_signal": "A useful result is a uniform all-n recurrence or block encoding covering all physical irrep tuples with inverse-polynomial support conditioning and a coherent blockwise frame inverse.",
+    "protocol": "Build every S_n Young-seminormal permutation matrix for selected partitions; construct the +/- equal-pair wreath bridge matrices; verify involution, Hermiticity, and one-copy class scalars; form B_(pi_1,...,pi_k)=(1/n!) sum_s tensor_i(I+pi_i(h_s))/2 for every sign count; diagonalize all S_3 information-threshold blocks and representative S_4/S_5 controls; and separately audit unequal irreps, growing tuple coverage, harmonic-source conservation, recurrences, and preconditioning.",
+    "status": "planned",
+    "title": "Physical wreath Fourier frame-block probe"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_projector_subpovm_transfer.py",
+      "self_dual_wreath_pgm_polar_audit.py",
+      "self_dual_wreath_physical_frame_blocks.py",
+      "harmonic analysis of the physical wreath bridge orbit"
+    ],
+    "falsifiers": [
+      "Bridge hidden states are not normalized projectors.",
+      "S_n finite information is imported without a wreath source-law proof.",
+      "Global wreath moments give only a factorially weak conclusive bound.",
+      "Selected finite equal-pair block conditions do not cover natural sectors."
+    ],
+    "hypothesis": "The whitening-free normalized-projector sub-POVM transfers exactly to code-equivalence bridge involutions, while its performance depends on a new natural all-sector wreath frame-condition theorem rather than symmetric-group controls.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-PROJECTOR-SUBPOVM",
+    "metrics": [
+      "group_general_normalized_projector_theorem_count",
+      "wreath_projector_subpovm_transfer_theorem_count",
+      "condition_only_conclusive_formula_theorem_count",
+      "tail_moment_only_conclusive_log2_lower_bound",
+      "tail_direct_uniform_projector_conclusive_log2_probability",
+      "direct_uniform_label_projector_dilation_schema_count",
+      "structured_maximal_effect_dilation_count",
+      "selected_information_threshold_block_count",
+      "minimum_selected_inverse_condition_conclusive_floor",
+      "natural_all_sector_polynomial_condition_theorem_count",
+      "uniform_wreath_covariant_subpovm_circuit_count",
+      "compressed_permutation_outcome_transform_count",
+      "polynomial_hidden_permutation_decoder_count",
+      "classical_code_equivalence_separation_count"
+    ],
+    "next_actions": [
+      "Derive operator-norm or condition bounds for the complete natural wreath frame.",
+      "Decompose the projector analysis operator into physical harmonic carrier blocks.",
+      "Construct a compressed permutation-outcome Naimark dilation without orbit enumeration.",
+      "Compose the output with public-generator code-equivalence verification and classical baselines."
+    ],
+    "positive_signal": "The natural information-threshold wreath frame has polynomial condition on all occupied sectors and admits a uniform covariant Naimark dilation, compressed permutation outcome, and polynomial hidden-permutation decoder.",
+    "protocol": "Transfer the group-general projector and condition-only conclusive theorem to W_n=(S_n x S_n) semidirect Z_2, combine it with exact wreath first/second moments and physical finite frame blocks, and separate valid algebraic transfer from invalid numerical S_n performance transfer.",
+    "status": "planned",
+    "title": "Physical wreath projector sub-POVM transfer"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_short_word_profile.py",
+      "self_dual_wreath_character_ratio_contract.py",
+      "unsigned Stirling numbers of the first kind",
+      "finite-group Haar invariance"
+    ],
+    "falsifiers": [
+      "A fixed nonempty even subset word has a nonuniform base marginal.",
+      "Unsigned Stirling tails disagree with direct permutation counts.",
+      "Subset-mask collisions remain nonnegligible at the target order.",
+      "Distinct masks are assumed independent despite shared bridge generators.",
+      "Marginal anti-concentration is described as a joint moment theorem.",
+      "A classical word profile is described as a coherent measurement."
+    ],
+    "hypothesis": "Fixed nonempty even subset bridge words have uniform symmetric-group marginals, and mask diagonals are negligible; the only remaining character-product obstruction is non-diagonal shared-generator correlation.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-SHORT-WORD-PROFILE",
+    "metrics": [
+      "fixed_mask_uniformity_failure_count",
+      "fixed_even_mask_uniform_marginal_theorem_count",
+      "unsigned_stirling_short_length_formula_count",
+      "tail_half_n_log2_short_probability",
+      "pairwise_mask_distinct_scaling_row_count",
+      "tail_log2_pairwise_mask_collision_union_bound",
+      "non_diagonal_shared_generator_correlation_theorem_count",
+      "joint_short_word_anticoncentration_theorem_count",
+      "collision_free_polynomial_factor_norm_theorem_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-wreath-short-words.",
+      "Classify joint word maps by binary mask incidence rank and overlap hypergraph.",
+      "Prove product mixing for non-diagonal mask classes.",
+      "Combine the joint tail with symmetric-group character bounds."
+    ],
+    "positive_signal": "A mask-incidence-rank or overlap-hypergraph theorem extends the exact marginals to joint product mixing for distinct masks and closes the character-ratio moment contract.",
+    "protocol": "Prove fixed-mask uniformity by Haar elimination, validate complete small bridge sequences, compute exact unsigned-Stirling transposition-length tails through n=64, and bound pairwise subset-mask collisions at the certificate order.",
+    "status": "planned",
+    "title": "Bridge subset short-word anti-concentration profile"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_spectrum.py",
+      "self_dual_rowspace_hsp_reduction.py",
+      "self_dual_high_order_automorphism_resolver.py",
+      "representation theory of H wr S_2",
+      "coset_holevo_information.py"
+    ],
+    "falsifiers": [
+      "The code-equivalence bridge ensemble is silently replaced by an involution class in S_n.",
+      "Wreath irrep dimensions fail to square-sum to the group order.",
+      "Weak Fourier labels are represented as identifying the hidden bridge.",
+      "One-copy PGM success is represented as a hidden-permutation algorithm.",
+      "Polynomial copy complexity is represented as a polynomial measurement or decoder."
+    ],
+    "hypothesis": "The rigid rowspace HSP must be analyzed in the exact wreath product (S_n x S_n) semidirect Z_2; its bridge class has a tractable one-copy representation spectrum that identifies the precise growing-copy covariant-decoder obligation.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-SPECTRUM",
+    "metrics": [
+      "exact_irrep_dimension_sum_verification_count",
+      "weak_fourier_zero_information_record_count",
+      "maximum_exact_pgm_advantage_over_guess",
+      "minimum_exact_one_copy_holevo_bits",
+      "maximum_coarse_zero_error_copy_lower_bound",
+      "one_copy_wreath_fourier_schema_count",
+      "growing_copy_diagonal_action_transform_count",
+      "carrier_sensitive_covariant_povm_count",
+      "polynomial_hidden_permutation_decoder_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-self-dual-wreath.",
+      "Construct the k=Theta(log n!) diagonal-action multiplicity decomposition for W_n.",
+      "Specify a carrier-sensitive covariant POVM with compressed outcomes.",
+      "Prove a polynomial hidden-permutation decoder and compare against classical code canonicalization."
+    ],
+    "positive_signal": "A useful result is a polynomial-description growing-copy block decomposition and covariant decoder built on the correct wreath schema. One-copy spectral formulas alone are not positive evidence.",
+    "protocol": "Classify wreath irreps by unequal induced pairs and equal +/- extensions, derive bridge character ratios, verify the regular-representation dimension sum, compute the exact class-average frame, one-copy PGM success, Holevo information, and copy lower bounds, and keep growing-copy diagonal action, carrier-sensitive POVM, and hidden-permutation decoding as separate gates.",
+    "status": "planned",
+    "title": "Rigid code-equivalence wreath-product spectrum"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_stable_commutator_rank.py",
+      "self_dual_wreath_equal_commutator_audit.py",
+      "hook-length dimension formula",
+      "Plancherel measure on symmetric-group partitions"
+    ],
+    "falsifiers": [
+      "Finite low rank is treated as a growing-n theorem.",
+      "Stable character-polynomial partitions are assumed to be Plancherel typical.",
+      "Source Plancherel mass is confused with physical pair-label mass.",
+      "One-copy stable mass is reported without threshold-copy compounding.",
+      "A vanishing-mass conditional contraction is described as a decoder."
+    ],
+    "hypothesis": "Bounded-tail stable partitions may have a low-rank four-class feature algebra, but any such contraction is useful only if those partitions carry nonvanishing natural physical-label mass.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-STABLE-COMMUTATOR-RANK",
+    "metrics": [
+      "maximum_stable_feature_algebra_rank",
+      "maximum_refined_kernel_support_count",
+      "finite_full_kernel_separation_count",
+      "fixed_tail_vanishing_mass_theorem_count",
+      "minimum_log2_one_copy_physical_stable_mass",
+      "minimum_log2_threshold_all_stable_mass",
+      "typical_sector_coverage_count",
+      "polynomial_typical_four_class_contraction_count",
+      "polynomial_hidden_permutation_decoder_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-self-dual-wreath-stable-rank.",
+      "Reject bounded-tail-only recoupling if its natural mass vanishes.",
+      "Construct finite rank probes on Plancherel-typical partitions instead.",
+      "Search asymptotic limit-shape coordinates or local transition measures for compressed recoupling."
+    ],
+    "positive_signal": "A polynomial feature algebra whose covered source partitions carry asymptotically nonvanishing Plancherel and physical-label mass, followed by a coherent typical-sector recoupling transform.",
+    "protocol": "Generate all bounded-tail source partitions and physical descriptors; compute exact modular ranks of their Hadamard feature algebra on finite refined commutator kernels; derive the physical label law from independent Plancherel source partitions; and measure exact bounded-tail mass through n=64.",
+    "status": "planned",
+    "title": "Stable-partition commutator rank and mass audit"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_subgroup_twirl_reduction.py",
+      "self_dual_wreath_mask_hypergraph_reduction.py",
+      "self_dual_wreath_collision_free_frame_probe.py",
+      "self_dual_wreath_typical_recoupling_transfer.py",
+      "symmetric-group character orthogonality",
+      "Schur averaging over finite groups"
+    ],
+    "falsifiers": [
+      "The bridge conjugacy identity fails in the induced physical representation.",
+      "The direct frame differs from the subgroup twirl.",
+      "Central isotypic projectors fail to resolve the restriction character multiplicities.",
+      "The direct top eigenvalue is not localized by an isotypic block.",
+      "Schur averaging alone is described as a partial-trace delocalization theorem.",
+      "Finite W4 spectra are extrapolated to an all-n norm bound.",
+      "A representation reduction is described as a coherent measurement or decoder."
+    ],
+    "hypothesis": "The complete dense mask expansion is the trace expansion of a subgroup twirl of one tensor projector, reducing the collision-free frame norm theorem exactly to normalized partial traces on diagonal-S_n multiplicity spaces.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-SUBGROUP-TWIRL-REDUCTION",
+    "metrics": [
+      "complete_w4_collision_free_twirl_validation_count",
+      "finite_twirl_validation_failure_count",
+      "maximum_finite_twirl_validation_residual",
+      "bridge_subgroup_conjugacy_identity_theorem_count",
+      "subgroup_twirl_identity_theorem_count",
+      "isotypic_partial_trace_reduction_theorem_count",
+      "tail_maximum_restriction_multiplicity_log2",
+      "uniform_partial_trace_delocalization_theorem_count",
+      "collision_free_polynomial_factor_norm_theorem_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-wreath-subgroup-twirl.",
+      "Express the base projector partial trace in a coupling-tree multiplicity basis.",
+      "Search finite isotypic sectors for stable high-n worst-case shape patterns.",
+      "Apply typical character bounds to normalized multiplicity partial traces.",
+      "Construct an asymptotic counterexample if uniform delocalization fails."
+    ],
+    "positive_signal": "A uniform recoupling or character estimate bounds every multiplicity-space partial trace by poly(n) d_nu 2^-k, or an explicit natural asymptotic sector violates that target.",
+    "protocol": "Prove h_s=x_s h_e x_s^-1, construct the tensor subgroup action, validate direct-frame/twirl equality on every collision-free W4 pairing, build central isotypic projectors, localize each top eigenvalue, and class-compress restriction multiplicities through the information threshold.",
+    "status": "planned",
+    "title": "Collision-free subgroup-twirl isotypic reduction"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_subpovm_moment_certificate.py",
+      "self_dual_wreath_complete_w3_tuple_audit.py",
+      "self_dual_wreath_character_moments.py",
+      "self_dual_wreath_natural_unequal_dominance.py",
+      "growing-order symmetric-group character contractions"
+    ],
+    "falsifiers": [
+      "The moment certificate exceeds exact conclusive probability.",
+      "Finite low-order certificates collapse under natural source weighting.",
+      "Required moment order is superpolynomial in n.",
+      "Polynomial order has no polynomial all-unequal contraction or measurement circuit."
+    ],
+    "hypothesis": "High-order physical frame trace moments can certify natural projector-sub-POVM conclusive probability without full frame diagonalization or a condition-number fit.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-SUBPOVM-MOMENTS",
+    "metrics": [
+      "moment_to_conclusive_lower_bound_theorem_count",
+      "naturally_occupied_w3_block_count",
+      "finite_certificate_violation_count",
+      "exact_w3_natural_average_conclusive_probability",
+      "order_four_certified_natural_average_conclusive_lower_bound",
+      "order_sixteen_certified_natural_average_conclusive_lower_bound",
+      "tail_factor_two_moment_order_upper_bound",
+      "all_sector_growing_order_moment_contraction_count",
+      "natural_source_equal_sector_bypass_theorem_count",
+      "growing_order_all_unequal_contraction_count",
+      "natural_average_inverse_polynomial_conclusive_theorem_count",
+      "structured_maximal_effect_dilation_count",
+      "polynomial_hidden_permutation_decoder_count"
+    ],
+    "next_actions": [
+      "Extend class-compressed moment contractions beyond fixed order on arbitrary all-unequal physical tuples.",
+      "Exploit moment generating functions or recurrences rather than enumerating p hidden labels.",
+      "Control the vanishing discarded equal event and prove a natural averaged conclusive bound.",
+      "Keep success certification separate from maximal-effect Naimark synthesis."
+    ],
+    "positive_signal": "A growing-order contraction on arbitrary all-unequal tuples proves inverse-polynomial natural conclusive probability after discarding the vanishing equal event, and composes with a structured maximal-effect Naimark dilation and decoder.",
+    "protocol": "Prove q>=Tr(B^2)/(Tr(B)Tr(B^p)^(1/p)), evaluate orders 2,3,4,8,16 over every naturally occupied complete W_3 threshold block, compare with exact conclusive probability, and derive a factor-two moment-order target from the growing wreath Hilbert-dimension bound.",
+    "status": "planned",
+    "title": "Wreath sub-POVM high-order moment certificate"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_subset_carrier_algebra.py",
+      "self_dual_wreath_pgm_polar_audit.py",
+      "self_dual_wreath_hecke_audit.py",
+      "tensor wreath group algebra",
+      "register-permutation commutant"
+    ],
+    "falsifiers": [
+      "Disjoint-register operators fail to commute, invalidating the sparse multiplication control.",
+      "Overlapping and symmetrized orbit operators are silently assumed to share one eigenbasis.",
+      "A scalar Krawtchouk transform is used after an exact nonzero carrier commutator.",
+      "Finite modular rank lower bounds are represented as exact all-n algebra dimensions.",
+      "Bounded-depth finite closure is represented as a uniform polynomial block transform."
+    ],
+    "hypothesis": "Register symmetry compresses the 2^k average-frame subset terms into k+1 orbit sums, but carrier multiplicities make the resulting algebra noncommutative; exact commutator and word-growth controls should determine whether scalar/Krawtchouk preconditioning is viable.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-SUBSET-CARRIER-ALGEBRA",
+    "metrics": [
+      "commutator_record_count",
+      "commuting_control_count",
+      "overlapping_subset_noncommutation_count",
+      "symmetrized_orbit_noncommutation_count",
+      "first_symmetrized_noncommuting_copy_count",
+      "maximum_truncated_algebra_rank_lower_bound",
+      "maximum_truncated_word_support_size",
+      "scalar_krawtchouk_preconditioner_count",
+      "uniform_noncommutative_carrier_block_transform_count",
+      "polynomial_structured_frame_preconditioner_count",
+      "polynomial_frame_inverse_count",
+      "polynomial_hidden_permutation_decoder_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-self-dual-wreath-carrier.",
+      "Identify the representation-theoretic blocks generated by U_r under diagonal W_n x S_k symmetry.",
+      "Search for a uniform sparse recurrence or block Jacobi form for the carrier algebra.",
+      "Construct and condition a noncommutative frame preconditioner before attempting PGM synthesis."
+    ],
+    "positive_signal": "A useful result is a uniform noncommutative multiplicity-block transform whose blocks, spectra, and frame preconditioner have polynomial descriptions and gate complexity. A k+1 formal orbit count alone is not positive evidence.",
+    "protocol": "Represent T_A and U_r as exact sparse elements of the tensor wreath group algebra; verify bridge multiplication controls; compute disjoint, overlapping, and fully register-symmetrized commutators; then generate bounded-depth words in the U_r and certify modular lower bounds on their span without constructing factorial Hilbert-space matrices.",
+    "status": "planned",
+    "title": "Wreath k-copy subset-orbit carrier algebra"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_third_moment_contraction.py",
+      "self_dual_wreath_character_moments.py",
+      "weighted rook polynomials",
+      "symmetric-group cycle index"
+    ],
+    "falsifiers": [
+      "The recurrence disagrees with direct pair distributions or character moments.",
+      "Coefficient-state support grows factorially.",
+      "One repeated unequal sector is represented as all-sector coverage.",
+      "A third moment is represented as a support-gap theorem.",
+      "A classical exact recurrence is represented as a coherent pseudoinverse or decoder."
+    ],
+    "hypothesis": "The repeated trivial-standard unequal physical sector admits an exact polynomial coefficient recurrence for its third frame moment, eliminating the factorial permutation-pair table.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-THIRD-MOMENT-CONTRACTION",
+    "metrics": [
+      "failed_distribution_validation_count",
+      "failed_moment_validation_count",
+      "maximum_scaling_n",
+      "maximum_bivariate_state_count",
+      "explicit_factorial_pair_enumeration_count",
+      "exact_polynomial_third_moment_contraction_count",
+      "covered_physical_irrep_family_count",
+      "all_physical_irrep_sector_contraction_count",
+      "support_gap_theorem_count",
+      "polynomial_hidden_permutation_decoder_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-self-dual-wreath-third-moment.",
+      "Extend the class contraction to unequal mixed tuples.",
+      "Contract equal-pair commutator-character terms through representation-ring or spin-network data.",
+      "Seek support-gap consequences only after all naturally occupied sectors are covered."
+    ],
+    "positive_signal": "An exact recurrence with polynomially many coefficient states and no pair enumeration, followed by a generalization to equal-pair commutator terms and arbitrary mixed naturally occupied sectors.",
+    "protocol": "Reduce the character formula to pairwise fixed-point agreements among three permutations; express the weighted q-sum as a permanent of identity/r matching perturbations; factor its rook polynomial over cycles; aggregate cycle types by a bivariate cycle-index recurrence; and validate against direct pair enumeration and the general wreath-character formula.",
+    "status": "planned",
+    "title": "Special-sector symbolic third-moment contraction"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_typical_partition_portfolio.py",
+      "self_dual_wreath_stable_commutator_rank.py",
+      "aggarwal-elboim-maximal-dimension-2026",
+      "Plancherel measure and hook-length dimensions"
+    ],
+    "falsifiers": [
+      "A finite list of maximum-dimension partitions is described as constant-mass coverage.",
+      "Source catalog mass is not squared for physical pair labels.",
+      "A superpolynomial catalog is described as an efficient uniform rule.",
+      "Finite feature rank is described as a growing-n recoupling construction.",
+      "Known QFT/YJM label primitives are substituted for internal multiplicity recoupling."
+    ],
+    "hypothesis": "A constant-natural-mass physical recoupling route requires a growing portfolio of Plancherel-typical source partitions, and no polynomial precertified catalog can supply that coverage.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-TYPICAL-PARTITION-PORTFOLIO",
+    "metrics": [
+      "maximum_catalog_n",
+      "maximum_ninety_percent_catalog_count",
+      "maximum_ninety_percent_atom_lower_bound",
+      "constant_mass_polynomial_catalog_no_go_theorem_count",
+      "maximum_typical_feature_algebra_rank",
+      "maximum_typical_refined_kernel_support_count",
+      "uniform_partition_description_recoupling_rule_count",
+      "polynomial_typical_four_class_contraction_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-self-dual-wreath-typical-portfolio.",
+      "Transfer the existing recoupling capability ledger to the physical four-class kernel.",
+      "Synthesize a partition-description-uniform spin-network contraction.",
+      "Reject any proposal that enumerates typical partition labels or multiplicity bases."
+    ],
+    "positive_signal": "A single reversible recoupling rule polynomial in n and the sampled partition descriptions, with nonvanishing physical-label coverage and no explicit partition catalog.",
+    "protocol": "Sort exact Plancherel atoms; compute minimal prefixes reaching 50%, 80%, and 90% source mass; square their mass for physical pair-label coverage; apply the maximal-dimension theorem to catalog size; and measure finite four-class feature-algebra rank for 80%-mass portfolios through S_6.",
+    "status": "planned",
+    "title": "Constant-mass typical-partition portfolio audit"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_typical_recoupling_transfer.py",
+      "coset_recoupling_capability_ledger.py",
+      "coset_typical_uniform_source_probe.py",
+      "self_dual_wreath_equal_commutator_audit.py"
+    ],
+    "falsifiers": [
+      "An S_n QFT is counted as an internal Kronecker transform.",
+      "YJM target labels are counted as multiplicity basis resolution.",
+      "Block encoding is counted as a spectral gap or eigenbasis.",
+      "Stable-sector or explicit-catalog transforms are counted as typical natural coverage.",
+      "A fixed separator with exact collisions is counted as uniform."
+    ],
+    "hypothesis": "Known symmetric-group quantum primitives transfer only partially to the physical four-class frame; the first missing breakthrough primitive can be isolated by a typed capability contract.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-TYPICAL-RECOUPLING-TRANSFER",
+    "metrics": [
+      "valid_partial_primitive_transfer_count",
+      "decoder_blocking_missing_primitive_count",
+      "internal_kronecker_transform_count",
+      "kcopy_associator_count",
+      "mixed_four_class_contraction_count",
+      "uniform_typical_separator_rule_count",
+      "uniform_typical_gap_theorem_count",
+      "fixed_separator_exact_collision_count",
+      "new_end_to_end_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-self-dual-wreath-recoupling-transfer.",
+      "Synthesize the first missing typed primitive rather than another finite separator table.",
+      "Search partition-dependent commutant generator rules against the registered exact collisions.",
+      "Require end-to-end coherent access and decoding contracts for every proposal."
+    ],
+    "positive_signal": "A newly synthesized partition-description-uniform internal Kronecker/associator primitive that contracts the mixed four-class kernel and feeds a proved support-conditioned decoder.",
+    "protocol": "Read the literature-backed recoupling capability ledger, typical source coverage, uniform-source collision probe, invariant contraction, and new wreath commutator artifacts; map each required physical primitive to proved scope; and reject every scope-mismatched transfer.",
+    "status": "planned",
+    "title": "Typical physical recoupling capability transfer audit"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_unequal_frame_blocks.py",
+      "self_dual_wreath_physical_frame_blocks.py",
+      "self_dual_wreath_spectrum.py",
+      "induced representations of (S_n x S_n) semidirect C_2"
+    ],
+    "falsifiers": [
+      "Zero one-copy bridge character is represented as a scalar multi-copy frame.",
+      "Repeated copies of one unequal irrep are represented as mixed-irrep tuple coverage.",
+      "Finite W_3 threshold spectra are represented as all-n conditioning.",
+      "Dense finite diagonalization is represented as a coherent recurrence.",
+      "Collective spectral structure is represented as a hidden-permutation decoder."
+    ],
+    "hypothesis": "Unequal-pair induced wreath irreps have exactly zero one-copy bridge character but nontrivial correlated multi-copy frame spectra, so discarding them from a collective decoder would erase genuine carrier structure.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-UNEQUAL-FRAME-BLOCKS",
+    "metrics": [
+      "record_count",
+      "one_copy_zero_character_control_count",
+      "collective_nontrivial_spectrum_count",
+      "information_threshold_unequal_block_count",
+      "maximum_block_dimension",
+      "maximum_distinct_eigenvalue_count",
+      "minimum_positive_eigenvalue",
+      "maximum_support_condition_number",
+      "mixed_physical_irrep_tuple_block_count",
+      "uniform_all_n_spectral_recurrence_count",
+      "polynomial_hidden_permutation_decoder_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-self-dual-wreath-unequal-blocks.",
+      "Construct mixed tuples containing distinct equal and unequal physical irreps.",
+      "Derive trace-moment recurrences from symmetric-group characters.",
+      "Search worst-sector conditioning at the information-threshold copy count."
+    ],
+    "positive_signal": "A useful result is a uniform recurrence covering mixed physical-irrep tuples, with worst-sector inverse-polynomial conditioning and a coherent blockwise frame inverse.",
+    "protocol": "Construct the induced representation on (V_lambda tensor V_mu) direct sum (V_mu tensor V_lambda); verify every bridge is a Hermitian involution with zero class average; form repeated-irrep correlated frame blocks; diagonalize all unequal W_3 sectors through the information threshold, every W_4 unequal pair through two copies, and representative W_5 controls; record kernels, eigenvalues, conditioning, and missing mixed-tuple/all-n recurrence obligations.",
+    "status": "planned",
+    "title": "Unequal-pair wreath collective frame blocks"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_word_map_mixing.py",
+      "self_dual_wreath_natural_moment_word_map.py",
+      "central random walks on finite groups",
+      "physical wreath character ratios"
+    ],
+    "falsifiers": [
+      "Direct subset-word means disagree with the physical-irrep spectrum.",
+      "Additional stationary sectors invalidate the 2/(n!)^2 floor.",
+      "A nonstationary eigenvalue exceeds 3/4.",
+      "Mean mixing is represented as kth-moment concentration.",
+      "Jensen and boundedness already give an inverse-polynomial success bound.",
+      "A classical mixing theorem is represented as a measurement circuit."
+    ],
+    "hypothesis": "The one-label identity/bridge subset-word statistic mixes rapidly under the lazy bridge walk, while the actual kth moment requires a separate coupled-walk concentration theorem.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-WORD-MAP-MIXING",
+    "metrics": [
+      "failed_lazy_walk_validation_count",
+      "exact_stationary_mean_theorem_count",
+      "uniform_three_quarter_nonstationary_spectral_bound_count",
+      "single_walk_mean_mixing_theorem_count",
+      "tail_log2_error_to_stationary_ratio_upper_bound",
+      "tail_log2_unresolved_kth_moment_interval_width",
+      "coupled_k_walk_contraction_count",
+      "word_map_concentration_theorem_count",
+      "natural_average_inverse_polynomial_conclusive_theorem_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-wreath-word-map-mixing.",
+      "Construct the shared-generator k-walk transfer operator.",
+      "Search diagonal-conjugacy or partition-algebra compression of its target matrix element.",
+      "Prove a quenched upper tail for the identity/bridge subset-word statistic."
+    ],
+    "positive_signal": "A polynomial contraction of the shared-generator k-walk or a quenched concentration inequality closes the kth-moment interval at the required growing order.",
+    "protocol": "Diagonalize the central lazy bridge walk in every physical irrep, identify the exact stationary sectors, prove a uniform nonstationary spectral bound, validate direct word counts, and quantify the Jensen-to-bounded kth-moment interval.",
+    "status": "planned",
+    "title": "Natural subset-word lazy-walk mixing and concentration gap"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
       "code_structural_invariants.py",
       "code_family_search.py",
       "code_canonicalization_baseline.py"
@@ -1371,6 +3112,51 @@
   {
     "candidate_id": "CODE-COSET-COLLECTIVE",
     "dependencies": [
+      "coset_covariant_projector_subpovm.py",
+      "coset_pgm_gain_localization.py",
+      "harmonic synthesis of covariant orbit POVMs",
+      "compressed nonabelian outcome transforms"
+    ],
+    "falsifiers": [
+      "Conditioned carrier states are not normalized projectors.",
+      "The scaled covariant effects fail POVM completeness.",
+      "Conclusive probability still depends on absolute frame scale.",
+      "The finite channel is dominated by separate strong Fourier or lacks a scalable orbit measurement."
+    ],
+    "hypothesis": "Because conditioned involution carrier states are normalized projectors, a covariant sub-POVM proportional to those states can retain collective information without inverse-root frame whitening or absolute spectral amplification.",
+    "id": "EXP-COSET-COVARIANT-PROJECTOR-SUBPOVM",
+    "metrics": [
+      "normalized_projector_theorem_count",
+      "covariant_subpovm_validity_theorem_count",
+      "conclusive_probability_frame_formula_theorem_count",
+      "inverse_condition_conclusive_lower_bound_theorem_count",
+      "finite_subpovm_information_gain_over_product_pgm_row_count",
+      "finite_subpovm_information_gain_over_separate_young_row_count",
+      "tail_subpovm_conclusive_probability",
+      "tail_subpovm_mutual_information_bits",
+      "tail_direct_uniform_projector_conclusive_probability",
+      "direct_uniform_label_projector_dilation_schema_count",
+      "structured_maximal_effect_amplification_count",
+      "all_n_polynomial_frame_condition_theorem_count",
+      "uniform_covariant_natural_subpovm_circuit_count",
+      "compressed_hidden_label_outcome_count",
+      "polynomial_hidden_involution_decoder_count",
+      "classical_separation_theorem_count"
+    ],
+    "next_actions": [
+      "Express the projector orbit analysis operator in diagonal-action harmonic coordinates.",
+      "Construct a uniform Naimark dilation without enumerating hidden involutions.",
+      "Prove natural all-n frame condition bounds or identify a preconditioned subfamily.",
+      "Build and baseline a polynomial hidden-involution decoder from compressed outcomes."
+    ],
+    "positive_signal": "A uniform harmonic Naimark dilation implements the projector orbit with compressed outcomes, the natural all-n frame condition is polynomial, and a decoder beats separate strong Fourier and legal classical baselines.",
+    "protocol": "Prove the normalized-projector identity, define the maximal scalar covariant sub-POVM with an explicit failure effect, derive q=Tr(F^2)/||F||>=1/kappa(F), and compare its complete natural S_5 one-to-three-copy channel with global PGM, product one-copy PGM, and separate Young-basis measurements.",
+    "status": "planned",
+    "title": "Whitening-free covariant projector sub-POVM"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
       "coset_entanglement_width_gate.py",
       "symmetric-defies-fourier-2005",
       "moore-russell-multiregister-2005",
@@ -1755,6 +3541,122 @@
   {
     "candidate_id": "CODE-COSET-COLLECTIVE",
     "dependencies": [
+      "coset_natural_character_ratio_concentration.py",
+      "symmetric-group character column orthogonality",
+      "natural weak-Fourier source-label distribution",
+      "fixed-point-free involution conjugacy-class counting"
+    ],
+    "falsifiers": [
+      "The weak source law depends on the individual hidden involution.",
+      "The Plancherel second moment differs from inverse conjugacy-class size.",
+      "Natural reweighting invalidates the second-moment tail bound.",
+      "The growing-width union bound is not inverse-polynomial."
+    ],
+    "hypothesis": "Column orthogonality forces naturally sampled weak-Fourier source labels into the small-character-ratio envelope simultaneously across k=ceil(n log2 n) copies.",
+    "id": "EXP-COSET-NATURAL-CHARACTER-RATIO-CONCENTRATION",
+    "metrics": [
+      "column_orthogonality_identity_count",
+      "natural_second_moment_bound_theorem_count",
+      "iid_growing_width_union_bound_theorem_count",
+      "uniform_natural_source_character_ratio_theorem_count",
+      "finite_column_orthogonality_failure_count",
+      "finite_natural_source_mass_failure_count",
+      "inverse_polynomial_tuple_envelope_row_count",
+      "tail_tuple_failure_log2_upper_bound",
+      "pgm_measurement_circuit_count",
+      "polynomial_hidden_involution_decoder_count"
+    ],
+    "next_actions": [
+      "Use the theorem to make the direct frame-normalization obstruction unconditional on natural tail inputs.",
+      "Do not misstate the result as a lower bound for arbitrary collective measurements.",
+      "Search structured harmonic amplification and direct covariant seed measurements."
+    ],
+    "positive_signal": "A rigorous complete-source theorem resolves the ratio assumption in the average-frame normalization audit and correctly distinguishes that obstruction from a general collective-measurement lower bound.",
+    "protocol": "Derive the exact natural source law from the coset Fourier distribution, transfer the Plancherel character-ratio second moment using |r|<=1, apply Markov and an iid union bound, and verify source mass and column orthogonality on complete partition tables through n=16.",
+    "status": "planned",
+    "title": "Natural-source character-ratio concentration theorem"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "coset_natural_multicopy_pgm_benchmark.py",
+      "coset_commutant_information_obstruction.py",
+      "natural weak-Fourier source-label law",
+      "finite mixed-state square-root measurements"
+    ],
+    "falsifiers": [
+      "The gain disappears after natural source-label weighting.",
+      "Separate one-copy PGMs or strong Fourier match the global measurement.",
+      "The exact PGM requires dense exponentially large branch matrices.",
+      "No polynomial decoder or classical separation follows from the outcomes."
+    ],
+    "hypothesis": "A genuinely joint carrier measurement can extract hidden-involution information unavailable to separate strong Fourier and separate one-copy PGM measurements.",
+    "id": "EXP-COSET-NATURAL-MULTICOPY-PGM",
+    "metrics": [
+      "natural_source_mass_control_count",
+      "one_copy_global_product_pgm_consistency_count",
+      "finite_collective_information_gain_row_count",
+      "maximum_global_information_gain_over_product_pgm_bits",
+      "maximum_global_information_gain_over_separate_young_bits",
+      "maximum_global_bayes_gain_over_product_pgm",
+      "uniform_polynomial_global_pgm_circuit_count",
+      "polynomial_hidden_involution_decoder_count",
+      "asymptotic_collective_information_advantage_theorem_count",
+      "classical_separation_theorem_count"
+    ],
+    "next_actions": [
+      "Express the exact PGM effects in carrier/commutant harmonic coordinates.",
+      "Identify which joint observables account for gain over product PGM.",
+      "Search a growing-width covariant circuit that approximates those observables.",
+      "Demand an explicit hidden-involution decoder and classical baseline comparison."
+    ],
+    "positive_signal": "A source-natural collective information gain persists under scaling, admits a uniform polynomial carrier-sensitive circuit and compressed outcome, supports a polynomial hidden-involution decoder, and beats legal classical baselines.",
+    "protocol": "For every naturally weighted Fourier source-label multiset on exact S_5 fixed-point-free controls, construct the global conditioned square-root measurement at one, two, and three copies. Average mutual information and Bayes recovery over the exact source law and compare with product one-copy PGMs and separate Young-basis carrier measurements.",
+    "status": "planned",
+    "title": "Natural-input multi-copy carrier PGM benchmark"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "coset_pgm_average_frame_block_encoding.py",
+      "uniform coherent involution-class preparation",
+      "controlled Young-representation circuits",
+      "QSVT or representation-specific spectral transforms"
+    ],
+    "falsifiers": [
+      "The subset expansion fails exact finite controls.",
+      "Uniform conjugacy-class or Young-representation access is unavailable.",
+      "Direct projected-LCU normalization needs superpolynomial amplification.",
+      "The hard-sector character-ratio envelope fails under the natural source law."
+    ],
+    "hypothesis": "The natural multi-copy PGM average frame has a compact all-k class-average representation, but a direct projected LCU may lose exponentially in absolute spectral normalization at the required growing width.",
+    "id": "EXP-COSET-PGM-AVERAGE-FRAME-BLOCK-ENCODING",
+    "metrics": [
+      "all_k_subset_expansion_identity_count",
+      "finite_subset_expansion_failure_count",
+      "finite_projected_lcu_failure_count",
+      "conditional_polynomial_projected_lcu_schema_count",
+      "conditional_superpolynomial_generic_amplification_row_count",
+      "tail_log2_generic_sqrt_amplification_lower_bound",
+      "uniform_natural_source_character_ratio_theorem_count",
+      "normalization_free_average_frame_block_encoding_count",
+      "polynomial_structured_spectral_amplification_count",
+      "polynomial_hidden_involution_decoder_count"
+    ],
+    "next_actions": [
+      "Prove the character-ratio envelope for naturally sampled growing-width source tuples.",
+      "Search harmonic preconditioners that rescale all occupied frame sectors simultaneously.",
+      "Test direct covariant seed measurements that bypass inverse-root frame amplification.",
+      "Charge every class-state preparation, projection, amplification, and decoder operation."
+    ],
+    "positive_signal": "A uniform natural-source theorem and representation-specific block encoding or spectral amplifier avoids the direct 2^-k average scale, composes in polynomial gates, and feeds a covariant hidden-involution decoder.",
+    "protocol": "Prove the subset class-average expansion for arbitrary copy count, verify direct frame reconstruction and projected-LCU proportionality on every natural S_5 three-copy source branch, and audit generic amplification under an explicit hard-sector character-ratio envelope at k=ceil(n log2 n).",
+    "status": "planned",
+    "title": "Coset PGM average-frame block-encoding boundary"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
       "coset_pgm_capacity.py",
       "weak_fourier_signal.py",
       "coset_state_distinguishability.py"
@@ -1781,6 +3683,46 @@
     "protocol": "For transposition, partial-matching, and fixed-point-free involution ensembles, compute ensemble sizes, copy thresholds for overlap cross-mass, explicit PGM matrix scale, register-bit obligations, and weak-Fourier obstruction context.",
     "status": "planned",
     "title": "PGM capacity and measurement-debt ledger for coset states"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "coset_pgm_gain_localization.py",
+      "coset_natural_multicopy_pgm_benchmark.py",
+      "harmonic analysis of diagonal conjugation actions",
+      "uniform block encodings and polynomial inverse-root transforms"
+    ],
+    "falsifiers": [
+      "Most gain comes from negligible natural source mass.",
+      "One selected source branch dominates the aggregate signal.",
+      "Average frames are already exponentially ill-conditioned at finite size.",
+      "Finite low interpolation degree has no all-n harmonic implementation."
+    ],
+    "hypothesis": "The finite natural collective PGM gain is broad across source labels and arises from average frames with tractable spectral structure, making harmonic frame access a sharper target than bounded-support separator search.",
+    "id": "EXP-COSET-PGM-GAIN-LOCALIZATION",
+    "metrics": [
+      "source_branch_count",
+      "positive_information_gain_branch_count",
+      "positive_gain_natural_source_probability",
+      "maximum_single_branch_gain_fraction",
+      "gain_80_percent_natural_source_probability",
+      "maximum_frame_condition_number",
+      "maximum_distinct_nonzero_frame_eigenvalue_count",
+      "uniform_harmonic_average_frame_block_encoding_count",
+      "all_n_polynomial_frame_condition_theorem_count",
+      "all_n_polynomial_inverse_root_degree_theorem_count",
+      "polynomial_hidden_involution_decoder_count"
+    ],
+    "next_actions": [
+      "Derive the average frame as an element of a typed diagonal-action commutant algebra.",
+      "Identify a polynomial-description basis for its multiplicity blocks.",
+      "Test condition and distinct-spectrum growth on adjacent sizes without selected source postselection.",
+      "Compile a covariant seed measurement and hidden-involution decoder from the frame inverse."
+    ],
+    "positive_signal": "Gain remains broad and source-natural while an all-n harmonic average-frame block encoding has polynomial condition and inverse-root degree, composes with a growing-width covariant measurement, and supports polynomial hidden-label decoding.",
+    "protocol": "Enumerate every natural three-copy S_5 source multiset. Measure its weighted global-over-product PGM information gain, support rank, distinct nonzero average-frame spectrum, condition number, and exact finite inverse-root interpolation degree. Audit gain concentration under the full source law.",
+    "status": "planned",
+    "title": "Natural PGM gain localization and frame-spectrum audit"
   },
   {
     "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -3629,6 +5571,44 @@
   {
     "candidate_id": "CODE-COSET-COLLECTIVE",
     "dependencies": [
+      "coset_typical_parity_class_contraction.py",
+      "coset_typical_parity_complete_separator.py",
+      "symmetric_marked_class_contraction.py",
+      "exact symmetric-group characters"
+    ],
+    "falsifiers": [
+      "Any exact zero-variance n=8 block is found.",
+      "Class contractions disagree with factorial controls.",
+      "Positive variance above multiplicity two is promoted as a simple-spectrum proof.",
+      "Finite survival is promoted as an all-n gap theorem."
+    ],
+    "hypothesis": "The frozen TC2+CT1-2CT2 discovery-set rule remains non-scalar on every ordered-source Kronecker block at n=8.",
+    "id": "EXP-COSET-TYPICAL-PARITY-CLASS-CONTRACTION",
+    "metrics": [
+      "all_source_exact_block_count",
+      "exact_non_scalar_block_count",
+      "exact_scalar_obstruction_count",
+      "multiplicity_two_block_count",
+      "exact_multiplicity_two_simple_spectrum_count",
+      "maximum_kronecker_multiplicity",
+      "maximum_relative_pair_support",
+      "factorial_control_count",
+      "all_n_square_free_theorem_count",
+      "inverse_polynomial_normalized_gap_theorem_count"
+    ],
+    "next_actions": [
+      "Retire the frozen rule after any exact holdout obstruction.",
+      "Classify obstruction orbits under source swap and sign twist.",
+      "Prioritize growing-width carrier-sensitive decoding over repeated finite separator fitting."
+    ],
+    "positive_signal": "No exact scalar block occurs, every multiplicity-two block splits, and higher exact moments support square-freeness.",
+    "protocol": "Compress bounded-support first and second moments by simultaneous-conjugacy class, contract exact unequal-source characters, and audit every nontrivial block through n=8.",
+    "status": "planned",
+    "title": "Exact n=8 parity-separator holdout"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
       "coset_typical_parity_complete_separator.py",
       "research/certificates/coset_typical_parity_complete_separator_n7.json",
       "coset_typical_uniform_source_probe.py",
@@ -4172,6 +6152,46 @@
   {
     "candidate_id": "DHS-GOWERS-SIEVE",
     "dependencies": [
+      "dcp_approximate_erasure_coherence_reduction.py",
+      "dcp_global_erasure_inversion_reduction.py",
+      "dcp_subset_sum_quenched_occupancy_theorem.py"
+    ],
+    "falsifiers": [
+      "Relative QFT success is computed without the garbage Gram matrix.",
+      "The weighted mean garbage is assumed rather than prepared from the public zero-frequency input.",
+      "High-multiplicity fibers are discarded without a truncation and target-law bound.",
+      "Exact-isometry conclusions are transferred to approximate implementations without perturbation analysis.",
+      "The conditional erasure theorem is applied to arbitrary full-rank POVMs."
+    ],
+    "hypothesis": "Target-dependent garbage lets an exact coherent fiber-erasure-plus-QFT decoder retain inverse-polynomial success without yielding average legal-target witness preparation.",
+    "id": "EXP-DHS-DCP-APPROXIMATE-ERASURE-COHERENCE-REDUCTION",
+    "metrics": [
+      "finite_control_count",
+      "finite_control_failure_count",
+      "exact_garbage_gram_qft_formula_count",
+      "weighted_mean_reference_preparation_count",
+      "uniform_legal_fidelity_transfer_theorem_count",
+      "inverse_polynomial_erasure_to_witness_reduction_count",
+      "joint_polynomial_scaling_row_count",
+      "maximum_qft_formula_residual",
+      "maximum_uniform_legal_bound_residual",
+      "proved_approximate_isometry_perturbation_bound_count",
+      "proved_arbitrary_full_rank_pgm_reduction_count",
+      "polynomial_erasure_plus_qft_decoder_count"
+    ],
+    "next_actions": [
+      "Derive diamond/trace-norm perturbation bounds for approximate fiber erasure.",
+      "Search PGM implementations that provably lack an erasure-plus-QFT factorization.",
+      "Convert any surviving erasure construction into an explicit verified witness solver before promotion."
+    ],
+    "positive_signal": "A quantitatively controlled approximate isometry or a genuinely non-erasure full-rank POVM achieves polynomial decoding without inducing an inverse-polynomial witness preparation algorithm.",
+    "protocol": "Derive the weighted garbage-Gram formula for relative QFT success, prepare the weighted mean garbage from the public zero-frequency input, prove its average inverse fidelity, truncate high multiplicities, and transfer to uniform-legal witness success.",
+    "status": "planned",
+    "title": "Target-dependent garbage coherence-to-witness reduction"
+  },
+  {
+    "candidate_id": "DHS-GOWERS-SIEVE",
+    "dependencies": [
       "dcp_subset_sum_bridge.py",
       "regev-lattice-dhsp-2003 primary LaTeX lines 700-1065",
       "THM-REGEV-USVP-TO-DCP-2003"
@@ -4372,6 +6392,46 @@
     "protocol": "Exactly construct hidden-reflection-averaged subset-sum collision blocks, evaluate polynomial-description CZ-plus-Hadamard circuit families, compare unrestricted output total variation with polynomial-time Hamming-weight decoding, and sweep growing register counts.",
     "status": "planned",
     "title": "Global public-label Clifford witness search"
+  },
+  {
+    "candidate_id": "DHS-GOWERS-SIEVE",
+    "dependencies": [
+      "dcp_coherent_fiber_erasure_boundary.py",
+      "dcp_pgm_gram_block_encoding.py",
+      "dcp_pgm_qsvt_degree_obstruction.py",
+      "lindzey-rosmanis-index-erasure-2019"
+    ],
+    "falsifiers": [
+      "An arbitrary injective black-box lower bound is transferred to public arithmetic subset sum.",
+      "A target-addressable success flag is omitted from support-decision accounting.",
+      "Average original-source success is treated as fixed-variable stability.",
+      "A global collective measurement is rejected by a reduction whose interface it does not expose.",
+      "Hidden DCP state reflection, rewinding, QRAM, or advice is uncharged."
+    ],
+    "hypothesis": "The black-box non-coherent index-erasure lower bound directly rules out structured DCP fiber erasure, or a normalized-fiber primitive can be assumed without inheriting support-decision and witness-search obligations.",
+    "id": "EXP-DHS-DCP-COHERENT-FIBER-ERASURE-BOUNDARY",
+    "metrics": [
+      "access_model_count",
+      "reduction_certificate_count",
+      "proved_target_addressable_support_decision_reduction_count",
+      "proved_fixed_variable_witness_self_reduction_count",
+      "proved_global_collective_measurement_reduction_count",
+      "black_box_index_erasure_lower_bound_count",
+      "valid_black_box_lower_bound_transfer_to_structured_subset_sum_count",
+      "black_box_superpolynomial_row_count",
+      "tail_black_box_query_lower_bound_log2",
+      "polynomial_source_aware_fiber_preparer_count",
+      "polynomial_global_collective_pgm_channel_count"
+    ],
+    "next_actions": [
+      "Search global collective channels that do not expose target-addressable support decision.",
+      "For source-aware preparers, prove fixed-variable stability or explicitly stop at decision.",
+      "Develop a structure-specific adversary or reduction before claiming any query lower bound."
+    ],
+    "positive_signal": "An explicit global collective channel or source-aware preconditioner acts only on legal DCP inputs, avoids a reusable target-addressable flag, uses no uncharged source reflection, and has a complete polynomial decoder.",
+    "protocol": "Separate arbitrary black-box, public subset-sum evaluator, and independent-DCP-state access; instantiate the square-root index-erasure query baseline; formalize target-addressable support-decision and fixed-variable witness self-reductions; leave genuinely global collective channels outside the conditional reductions.",
+    "status": "planned",
+    "title": "Coherent DCP fiber-erasure access and reduction boundary"
   },
   {
     "candidate_id": "DHS-GOWERS-SIEVE",
@@ -4583,6 +6643,43 @@
   {
     "candidate_id": "DHS-GOWERS-SIEVE",
     "dependencies": [
+      "dcp_erasure_perturbation_reduction.py",
+      "dcp_approximate_erasure_coherence_reduction.py"
+    ],
+    "falsifiers": [
+      "Postselection normalization is ignored when propagating circuit error.",
+      "Circuit precision is called exponential without comparing it to inverse-polynomial signal.",
+      "Average-state fidelity is silently upgraded to operator norm on the fiber subspace.",
+      "The inverse unitary or environment is unavailable.",
+      "The perturbation theorem is generalized to arbitrary POVMs."
+    ],
+    "hypothesis": "An inverse-polynomial operator-norm approximation to an erasure-plus-QFT decoder can preserve inverse-polynomial decoding signal while evading the witness reduction.",
+    "id": "EXP-DHS-DCP-ERASURE-PERTURBATION-REDUCTION",
+    "metrics": [
+      "scaling_row_count",
+      "operator_norm_perturbation_theorem_count",
+      "polynomial_precision_sufficient_row_count",
+      "inverse_polynomial_relative_success_schedule_count",
+      "minimum_sufficient_operator_error_log2",
+      "maximum_reference_state_norm_error",
+      "proved_average_only_channel_perturbation_count",
+      "proved_nonunitary_environment_recovery_count",
+      "proved_arbitrary_full_rank_pgm_reduction_count",
+      "polynomial_erasure_plus_qft_decoder_count"
+    ],
+    "next_actions": [
+      "Analyze average-only phase-state channel error without assuming fiber-subspace operator norm.",
+      "Model nonunitary measurements with explicit Stinespring environments and access.",
+      "Search genuinely non-erasure full-rank POVM circuits."
+    ],
+    "positive_signal": "A decoder has only an average-state channel guarantee that provably suffices for hidden-shift recovery but does not imply fiber-subspace operator control, or implements a genuinely non-erasure full-rank POVM.",
+    "protocol": "Propagate uniform fiber-subspace operator error through reference-garbage postselection, normalized state preparation, inverse erasure, and witness measurement; derive a sufficient precision schedule as a function of support fraction and relative decoding success.",
+    "status": "planned",
+    "title": "Operator-norm robust erasure-to-witness reduction"
+  },
+  {
+    "candidate_id": "DHS-GOWERS-SIEVE",
+    "dependencies": [
       "dcp_fiber_balance_obstruction.py",
       "dcp_two_adic_fiber_transport.py",
       "dcp_signed_permutation_transport.py",
@@ -4692,6 +6789,45 @@
     "protocol": "Enumerate exact uniformly supported low-residue fibers; build graphs from divisible-coordinate flips, equal-residue swaps, and fixed small-block substitutions; compute components, child mixing, normalized adjacency gaps, invariants, and same-graph classical BFS costs.",
     "status": "planned",
     "title": "Exact low-fiber transport graph and spectral audit"
+  },
+  {
+    "candidate_id": "DHS-GOWERS-SIEVE",
+    "dependencies": [
+      "dcp_global_erasure_inversion_reduction.py",
+      "dcp_coherent_fiber_erasure_boundary.py",
+      "dcp_subset_sum_quenched_occupancy_theorem.py"
+    ],
+    "falsifiers": [
+      "Target-dependent garbage is discarded before a QFT without charging induced dephasing.",
+      "Common garbage is assumed but its preparation or inverse circuit is unavailable.",
+      "Source-weighted fidelity is transferred to uniform-legal targets without the D/L domination factor.",
+      "A conditional erasure reduction is generalized to arbitrary full-rank POVMs.",
+      "The inverse output is not measured and verified as a Boolean witness."
+    ],
+    "hypothesis": "A global coherent subset-sum fiber erasure used before the cyclic QFT is substantially weaker than an average-case density-one subset-sum witness solver.",
+    "id": "EXP-DHS-DCP-GLOBAL-ERASURE-INVERSION-REDUCTION",
+    "metrics": [
+      "coherence_erasure_theorem_count",
+      "target_law_transfer_control_count",
+      "target_law_transfer_failure_count",
+      "maximum_finite_domination_constant",
+      "poisson_asymptotic_domination_constant",
+      "quenched_support_law_theorem_count",
+      "proved_coherent_erasure_to_witness_reduction_count",
+      "proved_arbitrary_pgm_to_witness_reduction_count",
+      "polynomial_coherent_erasure_circuit_count",
+      "polynomial_average_subset_sum_witness_solver_count",
+      "polynomial_arbitrary_full_rank_pgm_count"
+    ],
+    "next_actions": [
+      "Search full-rank measurements with no erasure-plus-QFT factorization.",
+      "Quantify approximate garbage-Gram coherence versus PGM decoding error.",
+      "Treat any common-garbage coherent erasure construction as an explicit average subset-sum solver."
+    ],
+    "positive_signal": "An explicit full-rank PGM circuit avoids any coherent erasure-plus-QFT factorization, or uses a quantitatively analyzed approximate garbage structure that preserves decoding without yielding inverse fiber preparation.",
+    "protocol": "Derive the garbage-Gram dephasing identity, prove exact phase preservation forces common target-independent garbage, invert the erasure into normalized-fiber preparation, and use the quenched support law to transfer source-weighted average fidelity to uniform-legal witness recovery.",
+    "status": "planned",
+    "title": "Coherent erasure-plus-QFT inversion reduction"
   },
   {
     "candidate_id": "DHS-GOWERS-SIEVE",
@@ -5349,6 +7485,88 @@
   {
     "candidate_id": "DHS-GOWERS-SIEVE",
     "dependencies": [
+      "dcp_pgm_gram_block_encoding.py",
+      "dcp_covariant_pgm_audit.py",
+      "dcp_reference_projection_audit.py",
+      "dcp_subset_sum_qtt_contraction_search.py"
+    ],
+    "falsifiers": [
+      "The direct circuit encodes G/N rather than G.",
+      "Generic fiber amplification costs sqrt(2^m/c_s).",
+      "Almost all legal density-one sources have only polynomial-size fibers.",
+      "A finite exact circuit identity is promoted to an efficient PGM implementation.",
+      "The route uses N-sized advice, QRAM, or an uncharged hidden-source reflection."
+    ],
+    "hypothesis": "A reversible subset-sum circuit block-encodes the clean DCP Gram operator with polynomial normalization and therefore supports a polynomial-time PGM implementation.",
+    "id": "EXP-DHS-DCP-PGM-GRAM-BLOCK-ENCODING",
+    "metrics": [
+      "finite_control_count",
+      "finite_control_failure_count",
+      "exact_projected_gram_identity_count",
+      "polynomial_projected_gram_block_encoding_count",
+      "gram_block_encoding_normalization_log2_slope",
+      "source_conditioned_low_fiber_theorem_count",
+      "generic_superpolynomial_fiber_amplification_row_count",
+      "minimum_tail_generic_amplification_log2_queries",
+      "uniform_polynomial_gram_rescaling_count",
+      "uniform_polynomial_structured_preconditioner_count",
+      "polynomial_coherent_fiber_erasure_count",
+      "polynomial_pgm_circuit_count",
+      "proved_general_collective_measurement_lower_bound_count"
+    ],
+    "next_actions": [
+      "Search source-structured polynomial approximants to inverse square root on the legal Gram spectrum.",
+      "Search collision walks that mix across legal fibers without equality postselection.",
+      "Reject any construction whose normalization, precision, advice, or source reflection is exponential."
+    ],
+    "positive_signal": "A structured preconditioner or collision walk rescales every legal fiber with polynomial cost, without an N-entry table, postselection on a rare equality event, or hidden-oracle access beyond independent DCP states.",
+    "protocol": "Construct the exact projected equality circuit, verify its diagonal against subset-sum fiber counts and the Fourier spectrum of the phase-state Gram matrix, then derive source-conditioned fiber-size and generic amplification bounds through asymptotic scaling rows.",
+    "status": "planned",
+    "title": "DCP PGM Gram block-encoding normalization theorem"
+  },
+  {
+    "candidate_id": "DHS-GOWERS-SIEVE",
+    "dependencies": [
+      "dcp_pgm_qsvt_degree_obstruction.py",
+      "dcp_pgm_gram_block_encoding.py",
+      "dcp_covariant_pgm_audit.py"
+    ],
+    "falsifiers": [
+      "The target polynomial is not bounded on the QSVT domain.",
+      "Exponentially small adjacent spectral spacing is omitted from degree accounting.",
+      "A worst-case explicit source is promoted to an average-case source theorem.",
+      "A source-aware encoding or collision walk is incorrectly covered by the generic direct-encoding bound."
+    ],
+    "hypothesis": "A bounded polynomial transform of the direct subset-sum count or amplitude encoding can implement normalized PGM fiber weights in polynomial degree.",
+    "id": "EXP-DHS-DCP-PGM-QSVT-DEGREE-OBSTRUCTION",
+    "metrics": [
+      "exact_lifted_source_count",
+      "exact_lifted_source_failure_count",
+      "random_source_control_count",
+      "random_source_singleton_doubleton_count",
+      "random_source_singleton_doubleton_fraction",
+      "count_encoding_markov_theorem_count",
+      "amplitude_encoding_markov_theorem_count",
+      "uniform_worst_case_qsvt_obstruction_count",
+      "average_case_random_source_prevalence_theorem_count",
+      "structured_preconditioner_lower_bound_count",
+      "collision_walk_lower_bound_count",
+      "tail_count_encoding_degree_lower_bound_log2",
+      "tail_amplitude_encoding_degree_lower_bound_log2"
+    ],
+    "next_actions": [
+      "Prove or refute singleton/doubleton prevalence for random density-one subset-sum sources.",
+      "Search source-aware encodings whose legal spectrum is polynomially separated and normalized.",
+      "Search collision walks without postselection, QRAM, or uncharged source reflections."
+    ],
+    "positive_signal": "A source-aware encoding, structured preconditioner, or collision walk has polynomial normalization and avoids the bounded-polynomial spectral-spacing charge on random density-one sources.",
+    "protocol": "Apply Markov's polynomial inequality to singleton and doubleton fiber eigenvalues, verify an explicit all-n source family with both multiplicities, measure finite random-source prevalence, and keep worst-case and average-case conclusions strictly separated.",
+    "status": "planned",
+    "title": "DCP PGM generic QSVT degree obstruction"
+  },
+  {
+    "candidate_id": "DHS-GOWERS-SIEVE",
+    "dependencies": [
       "dcp_quantum_relation_fidelity.py",
       "dcp_coherent_matching_interface.py",
       "dcp_subset_sum_bridge.py",
@@ -5738,6 +7956,45 @@
     "protocol": "Classify significant-Fourier, HashToBins, compressed-sensing, periodogram, and signed-label-closure mechanisms by joint sample schedule, time, and memory; union-bound constant-arity synthesis of prescribed offsets; retain fundamentally new iid estimators as an open contract.",
     "status": "planned",
     "title": "Sparse-Fourier structured-query transfer audit"
+  },
+  {
+    "candidate_id": "DHS-GOWERS-SIEVE",
+    "dependencies": [
+      "dcp_subset_sum_sparse_character_obstruction.py",
+      "dcp_subset_sum_signed_l2_obstruction.py",
+      "dcp_subset_sum_fixed_order_moment_theorem.py"
+    ],
+    "falsifiers": [
+      "The root-moment identity aliases when character order exceeds the moment order.",
+      "A low-order character remains nonzero despite an antipodal label.",
+      "The simultaneous high-order union bound fails asymptotically under the registered moment schedule.",
+      "Adaptive selection is claimed covered without a simultaneous all-frequency event.",
+      "The sparse theorem is transferred to dense implicit contractions or general computation."
+    ],
+    "hypothesis": "After observing every public label, an adaptive selector can retain polynomially many subset-sum Fourier characters whose combined target-dependent mass is inverse-polynomial.",
+    "id": "EXP-DHS-DCP-SUBSET-SUM-ADAPTIVE-SPARSE-CHARACTER-OBSTRUCTION",
+    "metrics": [
+      "exact_control_count",
+      "exact_fourier_target_count",
+      "exact_control_failure_count",
+      "low_order_annihilation_theorem_count",
+      "high_order_simultaneous_moment_theorem_count",
+      "adaptive_sparse_selection_theorem_count",
+      "finite_source_failure_bound_below_one_row_count",
+      "proved_full_label_adaptive_sparse_character_obstruction_count",
+      "proved_dense_implicit_character_obstruction_count",
+      "proved_general_computational_lower_bound_count",
+      "polynomial_witness_decoder_count"
+    ],
+    "next_actions": [
+      "Specify polynomial-size arithmetic or tensor circuits that contract exponentially many character terms.",
+      "Bound coefficient norm, intermediate dimension, precision, and source-uniform error for each dense circuit.",
+      "Require verified Boolean witness extraction, not only fiber-count approximation."
+    ],
+    "positive_signal": "The adaptive polynomially sparse route is closed uniformly over labels and targets, forcing any surviving Fourier method to contract exponentially many terms through a polynomial-size implicit circuit.",
+    "protocol": "Expand the exact Boolean subset-sum generating function in characters. Annihilate low-order characters using antipodal labels, apply exact growing root moments to all higher orders, union-bound every frequency, and verify Fourier inversion and root moments on exact small controls.",
+    "status": "planned",
+    "title": "Full-label adaptive sparse-character obstruction"
   },
   {
     "candidate_id": "DHS-GOWERS-SIEVE",
@@ -6388,6 +8645,97 @@
   {
     "candidate_id": "DHS-GOWERS-SIEVE",
     "dependencies": [
+      "dcp_subset_sum_qtt_contraction_search.py",
+      "dcp_subset_sum_sparse_character_obstruction.py"
+    ],
+    "falsifiers": [
+      "The registered R=n bond cap fails the necessary additive-half Frobenius threshold in every tail row.",
+      "Required central-cut rank grows exponentially across held-out sizes.",
+      "Source compression tracks histogram-preserving random permutations.",
+      "Raw partial target accuracy is explained by the zero-frequency constant-count baseline.",
+      "TT-SVD construction materializes the 2^n count vector.",
+      "A finite rank fit is promoted to an asymptotic tensor-rank theorem.",
+      "The contraction materializes 2^n counts or fails on fixed-variable self-reduction instances.",
+      "No verified Boolean witness is extracted."
+    ],
+    "hypothesis": "The exact density-one subset-sum count vector admits a public-label-derived QTT with uniformly polynomial bond dimension and entrywise additive error below one half.",
+    "id": "EXP-DHS-DCP-SUBSET-SUM-QTT-DENSE-CONTRACTION",
+    "metrics": [
+      "instance_count",
+      "unfolding_row_count",
+      "maximum_n_bits",
+      "registered_bond_power",
+      "tail_source_registered_cap_survivor_count",
+      "tail_best_source_required_rank",
+      "tail_best_permuted_required_rank",
+      "mean_source_to_permuted_best_rank_ratio",
+      "fitted_log2_required_rank_slope_per_n",
+      "tail_best_source_qtt_legal_coverage",
+      "tail_mean_zero_frequency_constant_legal_coverage",
+      "tail_mean_source_qtt_coverage_excess_over_zero_frequency_constant",
+      "tail_mean_source_qtt_coverage_excess_over_permuted",
+      "tail_inverse_polynomial_nontrivial_coverage_excess_instance_count",
+      "fitted_log2_source_coverage_excess_slope_per_n",
+      "proved_uniform_polynomial_qtt_construction_count",
+      "proved_asymptotic_qtt_bond_lower_bound_count",
+      "proved_polynomial_dense_character_contraction_count",
+      "proved_uniform_additive_half_count_oracle_count",
+      "polynomial_witness_decoder_count"
+    ],
+    "next_actions": [
+      "Search algebraic tensorizations beyond direct target-bit QTT only if they avoid a 2^n intermediate.",
+      "Derive a source covariance or rank theorem for the best label-adaptive ordering.",
+      "Require additive-half accuracy on every fixed-variable subinstance before count self-reduction."
+    ],
+    "positive_signal": "A held-out ordering family has subexponential-looking required rank well below random controls and leads to a uniform polynomial-bond construction stable under variable fixing.",
+    "protocol": "Compute exact source count vectors at tractable sizes, reshape target indices into binary tensor axes, search fixed and random bit orderings, and use central-cut singular tails to lower-bound the bond required for additive-half integer-count accuracy. Compare with histogram-preserving random permutations.",
+    "status": "planned",
+    "title": "Quantized tensor-train dense character contraction search"
+  },
+  {
+    "candidate_id": "DHS-GOWERS-SIEVE",
+    "dependencies": [
+      "dcp_subset_sum_quenched_occupancy_theorem.py",
+      "dcp_subset_sum_fixed_order_moment_theorem.py",
+      "dcp_pgm_qsvt_degree_obstruction.py"
+    ],
+    "falsifiers": [
+      "Annealed one-target moments are mistaken for quenched concentration.",
+      "Cross-target assignment overlaps contribute nonvanishing covariance.",
+      "The two-target lattice has a nongeneric terminal state with full Boolean self-loop growth.",
+      "Moment determinacy or empirical-measure tightness is omitted.",
+      "The occupancy theorem is presented as a general computational lower bound."
+    ],
+    "hypothesis": "The empirical multiplicity law of random density-one modular subset sums converges in probability to Poisson(1), making singleton and doubleton fibers prevalent on almost every public-label source.",
+    "id": "EXP-DHS-DCP-SUBSET-SUM-QUENCHED-OCCUPANCY-THEOREM",
+    "metrics": [
+      "mixed_moment_certificate_count",
+      "two_target_transfer_failure_count",
+      "exact_source_ensemble_control_count",
+      "exact_source_ensemble_control_failure_count",
+      "random_scaling_row_count",
+      "tail_mean_singleton_fraction",
+      "tail_mean_doubleton_fraction",
+      "quenched_factorial_moment_convergence_theorem_count",
+      "quenched_poisson_occupancy_theorem_count",
+      "random_source_singleton_doubleton_prevalence_theorem_count",
+      "computational_lower_bound_count",
+      "source_aware_preconditioner_lower_bound_count",
+      "collision_walk_lower_bound_count"
+    ],
+    "next_actions": [
+      "Mechanize the two-target terminal-lattice classification for increasing fixed mixed orders.",
+      "Use the quenched Poisson law to design and attack source-aware preconditioners.",
+      "Search collision walks whose spectral gap exploits typical fiber adjacency without rare postselection."
+    ],
+    "positive_signal": "A source-aware encoding or collision walk uses the quenched multiplicity structure constructively while avoiding generic bounded-polynomial resolution of adjacent exponentially small spectral values.",
+    "protocol": "Extend the fixed-order Boolean-column lattice transfer to products of empirical factorial moments at two independent targets, isolate cross-group assignment overlaps, derive quenched moment concentration and the Poisson limit, and check exact small source ensembles plus random scaling rows.",
+    "status": "planned",
+    "title": "Quenched density-one subset-sum occupancy theorem"
+  },
+  {
+    "candidate_id": "DHS-GOWERS-SIEVE",
+    "dependencies": [
       "dcp_subset_sum_random_self_reduction.py",
       "dcp_coherent_matching_interface.py",
       "dcp_subset_sum_lattice_search.py",
@@ -6501,6 +8849,45 @@
     "protocol": "Count weight-one-quarter signed relations modulo global negation, compute exact joint probabilities from unit minors and Smith-(1,2) same-support pairs, and prove concentration by the second moment.",
     "status": "planned",
     "title": "Standard embedding short signed-relation theorem"
+  },
+  {
+    "candidate_id": "DHS-GOWERS-SIEVE",
+    "dependencies": [
+      "dcp_subset_sum_signed_l2_obstruction.py",
+      "dcp_subset_sum_conditioned_quotient.py",
+      "dcp_subset_sum_growing_order_chain_theorem.py"
+    ],
+    "falsifiers": [
+      "A distinct nonzero Boolean assignment pair lacks a unit minor.",
+      "A carry-adjusted equation pair is not conditionally independent.",
+      "The exact signed variance differs from Q^-1(1-Q^-1) sum c_x^2.",
+      "The no-hit-deviation bound is cited for coefficients that inspect high labels.",
+      "The theorem is presented as a computational lower bound or as covering dense implicit observables."
+    ],
+    "hypothesis": "Signs selected from exposed low-label data can make a polynomial support of carry-adjusted high-equation hits depart from its no-hit baseline on inverse-polynomial source mass.",
+    "id": "EXP-DHS-DCP-SUBSET-SUM-SIGNED-L2-OBSTRUCTION",
+    "metrics": [
+      "exact_control_count",
+      "exact_assignment_pair_count",
+      "exact_control_failure_count",
+      "unit_minor_theorem_count",
+      "conditional_pairwise_independence_theorem_count",
+      "conditional_signed_variance_identity_theorem_count",
+      "polynomial_support_negligible_deviation_theorem_count",
+      "proved_high_label_adaptive_signed_obstruction_count",
+      "proved_dense_implicit_signed_obstruction_count",
+      "proved_nonlinear_signed_obstruction_count",
+      "polynomial_witness_decoder_count"
+    ],
+    "next_actions": [
+      "Search full-label adaptive coefficient rules with explicit evaluation cost.",
+      "Represent dense signed contractions by polynomial-size arithmetic or tensor circuits.",
+      "Specify nonlinear and reduced-basis events with source coverage and witness-decoder implications."
+    ],
+    "positive_signal": "The low-only sparse route is closed cleanly, leaving a precise frontier: coefficients must depend on full high labels, use a dense implicit contraction, be nonlinear, or expose a reduced-basis event with a decoder implication.",
+    "protocol": "Condition uniform labels on all exposed low bits, prove a unit 2x2 minor for every distinct nonzero Boolean assignment pair, derive exact conditional pairwise independence and the signed L2 identity, and verify both by exhaustive high-label census.",
+    "status": "planned",
+    "title": "Conditional signed-L2 obstruction for sparse exact-hit observables"
   },
   {
     "candidate_id": "DHS-GOWERS-SIEVE",

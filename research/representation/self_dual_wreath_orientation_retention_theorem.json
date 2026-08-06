@@ -1,0 +1,1430 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "The ratio of expectations is substituted for an expectation of ratios.",
+      "resolution": "The physical trace denominator equals the fixed source carrier dimension; L_H itself has the exact character formula.",
+      "resolved": true
+    },
+    {
+      "objection": "Annealed retention says nothing about typical source tuples.",
+      "resolution": "L_H is nonnegative, so Markov directly converts the exponentially small mean into a quenched high-probability bound.",
+      "resolved": true
+    },
+    {
+      "objection": "Conditioning on unequal globally distinct labels invalidates independence.",
+      "resolution": "Prove the event unconditionally, intersect it with the 1-o(1) distinctness event, then condition; no conditional independence is assumed.",
+      "resolved": true
+    },
+    {
+      "objection": "High acceptance alone preserves all quantum information for the implemented instrument.",
+      "resolution": "The isotypic label is kept coherently and the branch transform is reversible. Only the small rejected component is discarded, so the gentle bound applies up to a known isometry.",
+      "resolved": true
+    },
+    {
+      "objection": "Constant information-theoretic success supplies an efficient decoder.",
+      "resolution": "No. The original constant-success sub-POVM is still nonconstructive at the final outcome/decoder stage.",
+      "resolved": false
+    }
+  ],
+  "claim_gate": {
+    "classical_separation_proved": false,
+    "constant_identification_information_retained": true,
+    "efficient_filtered_povm_constructed": false,
+    "exact_source_conditioned_rejection_formula_proved": true,
+    "natural_expected_rejection_exponentially_small": true,
+    "polynomial_hidden_permutation_decoder_proved": false,
+    "postfilter_polynomial_frame_norm_proved": false,
+    "reason": "The direct physical filter is now proved gentle and information-preserving on typical natural tuples, but the remaining filtered-frame measurement and decoder are not efficient.",
+    "speedup_claim_allowed": false,
+    "typical_natural_filter_acceptance_one_minus_inverse_polynomial": true
+  },
+  "created_at": "2026-08-05T23:38:45.814445+00:00",
+  "exact_controls": [
+    {
+      "character_rejection_fraction": 0.2638888888888889,
+      "control_id": "W4-0-FULL",
+      "direct_physical_rejection_fraction": 0.26388888888888895,
+      "exact_character_rejection_fraction": "19/72",
+      "exact_rejection_formula_verified": true,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "n": 4,
+      "orientation_generators": [
+        1,
+        2
+      ],
+      "orientation_subspace_dimension": 2,
+      "rejection_formula_residual": 5.551115123125783e-17,
+      "status": "exact-character-ratio-retention-formula"
+    },
+    {
+      "character_rejection_fraction": 0.5277777777777778,
+      "control_id": "W4-0-DIAGONAL",
+      "direct_physical_rejection_fraction": 0.5277777777777778,
+      "exact_character_rejection_fraction": "19/36",
+      "exact_rejection_formula_verified": true,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "n": 4,
+      "orientation_generators": [
+        3
+      ],
+      "orientation_subspace_dimension": 1,
+      "rejection_formula_residual": 0.0,
+      "status": "exact-character-ratio-retention-formula"
+    },
+    {
+      "character_rejection_fraction": 0.2638888888888889,
+      "control_id": "W4-1-FULL",
+      "direct_physical_rejection_fraction": 0.26388888888888895,
+      "exact_character_rejection_fraction": "19/72",
+      "exact_rejection_formula_verified": true,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "n": 4,
+      "orientation_generators": [
+        1,
+        2
+      ],
+      "orientation_subspace_dimension": 2,
+      "rejection_formula_residual": 5.551115123125783e-17,
+      "status": "exact-character-ratio-retention-formula"
+    },
+    {
+      "character_rejection_fraction": 0.5277777777777778,
+      "control_id": "W4-1-DIAGONAL",
+      "direct_physical_rejection_fraction": 0.5277777777777778,
+      "exact_character_rejection_fraction": "19/36",
+      "exact_rejection_formula_verified": true,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "n": 4,
+      "orientation_generators": [
+        3
+      ],
+      "orientation_subspace_dimension": 1,
+      "rejection_formula_residual": 0.0,
+      "status": "exact-character-ratio-retention-formula"
+    },
+    {
+      "character_rejection_fraction": 0.2638888888888889,
+      "control_id": "W4-2-FULL",
+      "direct_physical_rejection_fraction": 0.26388888888888895,
+      "exact_character_rejection_fraction": "19/72",
+      "exact_rejection_formula_verified": true,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      ],
+      "n": 4,
+      "orientation_generators": [
+        1,
+        2
+      ],
+      "orientation_subspace_dimension": 2,
+      "rejection_formula_residual": 5.551115123125783e-17,
+      "status": "exact-character-ratio-retention-formula"
+    },
+    {
+      "character_rejection_fraction": 0.5277777777777778,
+      "control_id": "W4-2-DIAGONAL",
+      "direct_physical_rejection_fraction": 0.5277777777777778,
+      "exact_character_rejection_fraction": "19/36",
+      "exact_rejection_formula_verified": true,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      ],
+      "n": 4,
+      "orientation_generators": [
+        3
+      ],
+      "orientation_subspace_dimension": 1,
+      "rejection_formula_residual": 0.0,
+      "status": "exact-character-ratio-retention-formula"
+    },
+    {
+      "character_rejection_fraction": 0.25,
+      "control_id": "W4-3-FULL",
+      "direct_physical_rejection_fraction": 0.25,
+      "exact_character_rejection_fraction": "1/4",
+      "exact_rejection_formula_verified": true,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "n": 4,
+      "orientation_generators": [
+        1,
+        2
+      ],
+      "orientation_subspace_dimension": 2,
+      "rejection_formula_residual": 0.0,
+      "status": "exact-character-ratio-retention-formula"
+    },
+    {
+      "character_rejection_fraction": 0.5,
+      "control_id": "W4-3-DIAGONAL",
+      "direct_physical_rejection_fraction": 0.5,
+      "exact_character_rejection_fraction": "1/2",
+      "exact_rejection_formula_verified": true,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "n": 4,
+      "orientation_generators": [
+        3
+      ],
+      "orientation_subspace_dimension": 1,
+      "rejection_formula_residual": 0.0,
+      "status": "exact-character-ratio-retention-formula"
+    },
+    {
+      "character_rejection_fraction": 0.25,
+      "control_id": "W4-4-FULL",
+      "direct_physical_rejection_fraction": 0.25,
+      "exact_character_rejection_fraction": "1/4",
+      "exact_rejection_formula_verified": true,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "n": 4,
+      "orientation_generators": [
+        1,
+        2
+      ],
+      "orientation_subspace_dimension": 2,
+      "rejection_formula_residual": 0.0,
+      "status": "exact-character-ratio-retention-formula"
+    },
+    {
+      "character_rejection_fraction": 0.5,
+      "control_id": "W4-4-DIAGONAL",
+      "direct_physical_rejection_fraction": 0.5,
+      "exact_character_rejection_fraction": "1/2",
+      "exact_rejection_formula_verified": true,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "n": 4,
+      "orientation_generators": [
+        3
+      ],
+      "orientation_subspace_dimension": 1,
+      "rejection_formula_residual": 0.0,
+      "status": "exact-character-ratio-retention-formula"
+    },
+    {
+      "character_rejection_fraction": 0.25,
+      "control_id": "W4-5-FULL",
+      "direct_physical_rejection_fraction": 0.25,
+      "exact_character_rejection_fraction": "1/4",
+      "exact_rejection_formula_verified": true,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      ],
+      "n": 4,
+      "orientation_generators": [
+        1,
+        2
+      ],
+      "orientation_subspace_dimension": 2,
+      "rejection_formula_residual": 0.0,
+      "status": "exact-character-ratio-retention-formula"
+    },
+    {
+      "character_rejection_fraction": 0.5,
+      "control_id": "W4-5-DIAGONAL",
+      "direct_physical_rejection_fraction": 0.5,
+      "exact_character_rejection_fraction": "1/2",
+      "exact_rejection_formula_verified": true,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      ],
+      "n": 4,
+      "orientation_generators": [
+        3
+      ],
+      "orientation_subspace_dimension": 1,
+      "rejection_formula_residual": 0.0,
+      "status": "exact-character-ratio-retention-formula"
+    },
+    {
+      "character_rejection_fraction": 0.2777777777777778,
+      "control_id": "W4-6-FULL",
+      "direct_physical_rejection_fraction": 0.2777777777777779,
+      "exact_character_rejection_fraction": "5/18",
+      "exact_rejection_formula_verified": true,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "n": 4,
+      "orientation_generators": [
+        1,
+        2
+      ],
+      "orientation_subspace_dimension": 2,
+      "rejection_formula_residual": 1.1102230246251565e-16,
+      "status": "exact-character-ratio-retention-formula"
+    },
+    {
+      "character_rejection_fraction": 0.5555555555555556,
+      "control_id": "W4-6-DIAGONAL",
+      "direct_physical_rejection_fraction": 0.5555555555555556,
+      "exact_character_rejection_fraction": "5/9",
+      "exact_rejection_formula_verified": true,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "n": 4,
+      "orientation_generators": [
+        3
+      ],
+      "orientation_subspace_dimension": 1,
+      "rejection_formula_residual": 0.0,
+      "status": "exact-character-ratio-retention-formula"
+    },
+    {
+      "character_rejection_fraction": 0.2777777777777778,
+      "control_id": "W4-7-FULL",
+      "direct_physical_rejection_fraction": 0.2777777777777779,
+      "exact_character_rejection_fraction": "5/18",
+      "exact_rejection_formula_verified": true,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "n": 4,
+      "orientation_generators": [
+        1,
+        2
+      ],
+      "orientation_subspace_dimension": 2,
+      "rejection_formula_residual": 1.1102230246251565e-16,
+      "status": "exact-character-ratio-retention-formula"
+    },
+    {
+      "character_rejection_fraction": 0.5555555555555556,
+      "control_id": "W4-7-DIAGONAL",
+      "direct_physical_rejection_fraction": 0.5555555555555556,
+      "exact_character_rejection_fraction": "5/9",
+      "exact_rejection_formula_verified": true,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "n": 4,
+      "orientation_generators": [
+        3
+      ],
+      "orientation_subspace_dimension": 1,
+      "rejection_formula_residual": 0.0,
+      "status": "exact-character-ratio-retention-formula"
+    },
+    {
+      "character_rejection_fraction": 0.2777777777777778,
+      "control_id": "W4-8-FULL",
+      "direct_physical_rejection_fraction": 0.2777777777777779,
+      "exact_character_rejection_fraction": "5/18",
+      "exact_rejection_formula_verified": true,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "n": 4,
+      "orientation_generators": [
+        1,
+        2
+      ],
+      "orientation_subspace_dimension": 2,
+      "rejection_formula_residual": 1.1102230246251565e-16,
+      "status": "exact-character-ratio-retention-formula"
+    },
+    {
+      "character_rejection_fraction": 0.5555555555555556,
+      "control_id": "W4-8-DIAGONAL",
+      "direct_physical_rejection_fraction": 0.5555555555555556,
+      "exact_character_rejection_fraction": "5/9",
+      "exact_rejection_formula_verified": true,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "n": 4,
+      "orientation_generators": [
+        3
+      ],
+      "orientation_subspace_dimension": 1,
+      "rejection_formula_residual": 0.0,
+      "status": "exact-character-ratio-retention-formula"
+    },
+    {
+      "character_rejection_fraction": 0.25,
+      "control_id": "W4-9-FULL",
+      "direct_physical_rejection_fraction": 0.25,
+      "exact_character_rejection_fraction": "1/4",
+      "exact_rejection_formula_verified": true,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "n": 4,
+      "orientation_generators": [
+        1,
+        2
+      ],
+      "orientation_subspace_dimension": 2,
+      "rejection_formula_residual": 0.0,
+      "status": "exact-character-ratio-retention-formula"
+    },
+    {
+      "character_rejection_fraction": 0.5,
+      "control_id": "W4-9-DIAGONAL",
+      "direct_physical_rejection_fraction": 0.5,
+      "exact_character_rejection_fraction": "1/2",
+      "exact_rejection_formula_verified": true,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "n": 4,
+      "orientation_generators": [
+        3
+      ],
+      "orientation_subspace_dimension": 1,
+      "rejection_formula_residual": 0.0,
+      "status": "exact-character-ratio-retention-formula"
+    },
+    {
+      "character_rejection_fraction": 0.25,
+      "control_id": "W4-10-FULL",
+      "direct_physical_rejection_fraction": 0.25,
+      "exact_character_rejection_fraction": "1/4",
+      "exact_rejection_formula_verified": true,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "n": 4,
+      "orientation_generators": [
+        1,
+        2
+      ],
+      "orientation_subspace_dimension": 2,
+      "rejection_formula_residual": 0.0,
+      "status": "exact-character-ratio-retention-formula"
+    },
+    {
+      "character_rejection_fraction": 0.5,
+      "control_id": "W4-10-DIAGONAL",
+      "direct_physical_rejection_fraction": 0.5,
+      "exact_character_rejection_fraction": "1/2",
+      "exact_rejection_formula_verified": true,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "n": 4,
+      "orientation_generators": [
+        3
+      ],
+      "orientation_subspace_dimension": 1,
+      "rejection_formula_residual": 0.0,
+      "status": "exact-character-ratio-retention-formula"
+    },
+    {
+      "character_rejection_fraction": 0.25,
+      "control_id": "W4-11-FULL",
+      "direct_physical_rejection_fraction": 0.2500000000000001,
+      "exact_character_rejection_fraction": "1/4",
+      "exact_rejection_formula_verified": true,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "n": 4,
+      "orientation_generators": [
+        1,
+        2
+      ],
+      "orientation_subspace_dimension": 2,
+      "rejection_formula_residual": 1.1102230246251565e-16,
+      "status": "exact-character-ratio-retention-formula"
+    },
+    {
+      "character_rejection_fraction": 0.5,
+      "control_id": "W4-11-DIAGONAL",
+      "direct_physical_rejection_fraction": 0.4999999999999999,
+      "exact_character_rejection_fraction": "1/2",
+      "exact_rejection_formula_verified": true,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "n": 4,
+      "orientation_generators": [
+        3
+      ],
+      "orientation_subspace_dimension": 1,
+      "rejection_formula_residual": 1.1102230246251565e-16,
+      "status": "exact-character-ratio-retention-formula"
+    },
+    {
+      "character_rejection_fraction": 0.2638888888888889,
+      "control_id": "W4-12-FULL",
+      "direct_physical_rejection_fraction": 0.26388888888888884,
+      "exact_character_rejection_fraction": "19/72",
+      "exact_rejection_formula_verified": true,
+      "labels": [
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "n": 4,
+      "orientation_generators": [
+        1,
+        2
+      ],
+      "orientation_subspace_dimension": 2,
+      "rejection_formula_residual": 5.551115123125783e-17,
+      "status": "exact-character-ratio-retention-formula"
+    },
+    {
+      "character_rejection_fraction": 0.5277777777777778,
+      "control_id": "W4-12-DIAGONAL",
+      "direct_physical_rejection_fraction": 0.5277777777777778,
+      "exact_character_rejection_fraction": "19/36",
+      "exact_rejection_formula_verified": true,
+      "labels": [
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "n": 4,
+      "orientation_generators": [
+        3
+      ],
+      "orientation_subspace_dimension": 1,
+      "rejection_formula_residual": 0.0,
+      "status": "exact-character-ratio-retention-formula"
+    },
+    {
+      "character_rejection_fraction": 0.2638888888888889,
+      "control_id": "W4-13-FULL",
+      "direct_physical_rejection_fraction": 0.26388888888888884,
+      "exact_character_rejection_fraction": "19/72",
+      "exact_rejection_formula_verified": true,
+      "labels": [
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "n": 4,
+      "orientation_generators": [
+        1,
+        2
+      ],
+      "orientation_subspace_dimension": 2,
+      "rejection_formula_residual": 5.551115123125783e-17,
+      "status": "exact-character-ratio-retention-formula"
+    },
+    {
+      "character_rejection_fraction": 0.5277777777777778,
+      "control_id": "W4-13-DIAGONAL",
+      "direct_physical_rejection_fraction": 0.5277777777777778,
+      "exact_character_rejection_fraction": "19/36",
+      "exact_rejection_formula_verified": true,
+      "labels": [
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "n": 4,
+      "orientation_generators": [
+        3
+      ],
+      "orientation_subspace_dimension": 1,
+      "rejection_formula_residual": 0.0,
+      "status": "exact-character-ratio-retention-formula"
+    },
+    {
+      "character_rejection_fraction": 0.2638888888888889,
+      "control_id": "W4-14-FULL",
+      "direct_physical_rejection_fraction": 0.26388888888888895,
+      "exact_character_rejection_fraction": "19/72",
+      "exact_rejection_formula_verified": true,
+      "labels": [
+        [
+          [
+            3,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "n": 4,
+      "orientation_generators": [
+        1,
+        2
+      ],
+      "orientation_subspace_dimension": 2,
+      "rejection_formula_residual": 5.551115123125783e-17,
+      "status": "exact-character-ratio-retention-formula"
+    },
+    {
+      "character_rejection_fraction": 0.5277777777777778,
+      "control_id": "W4-14-DIAGONAL",
+      "direct_physical_rejection_fraction": 0.5277777777777778,
+      "exact_character_rejection_fraction": "19/36",
+      "exact_rejection_formula_verified": true,
+      "labels": [
+        [
+          [
+            3,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "n": 4,
+      "orientation_generators": [
+        3
+      ],
+      "orientation_subspace_dimension": 1,
+      "rejection_formula_residual": 0.0,
+      "status": "exact-character-ratio-retention-formula"
+    }
+  ],
+  "falsifiers_triggered": [
+    "The direct physical filter does not pay for common-core rejection by discarding substantial natural source mass.",
+    "Annealed trace retention upgrades to typical natural tuples without an unproved concentration theorem.",
+    "The research bottleneck is now the residual filtered frame and efficient decoding, not filter access or information loss."
+  ],
+  "headline_metrics": {
+    "efficient_filtered_povm_count": 0,
+    "exact_character_rejection_theorem_count": 1,
+    "exact_physical_control_count": 30,
+    "exact_physical_validation_failure_count": 0,
+    "gentle_identification_retention_theorem_count": 1,
+    "high_probability_retention_scaling_row_count": 3,
+    "new_quantum_algorithm_count": 0,
+    "plancherel_character_control_count": 8,
+    "plancherel_character_validation_failure_count": 0,
+    "plancherel_expected_rejection_theorem_count": 1,
+    "polynomial_hidden_permutation_decoder_count": 0,
+    "postfilter_polynomial_frame_norm_theorem_count": 0,
+    "quenched_high_probability_retention_theorem_count": 1,
+    "scaling_record_count": 6,
+    "tail_expected_rejection_log2": -484.0,
+    "tail_markov_failure_log2_upper_bound": -394.0,
+    "tail_n": 512
+  },
+  "plancherel_controls": [
+    {
+      "exact_plancherel_delta_identity_verified": true,
+      "expected_nonzero_orientation_correlation": 0.16666666666666666,
+      "expected_nonzero_orientation_correlation_target": 0.16666666666666666,
+      "maximum_expected_normalized_character_residual": 0.0,
+      "n": 3,
+      "nonidentity_cycle_type_count": 2,
+      "status": "exact-plancherel-normalized-character-delta"
+    },
+    {
+      "exact_plancherel_delta_identity_verified": true,
+      "expected_nonzero_orientation_correlation": 0.041666666666666664,
+      "expected_nonzero_orientation_correlation_target": 0.041666666666666664,
+      "maximum_expected_normalized_character_residual": 0.0,
+      "n": 4,
+      "nonidentity_cycle_type_count": 4,
+      "status": "exact-plancherel-normalized-character-delta"
+    },
+    {
+      "exact_plancherel_delta_identity_verified": true,
+      "expected_nonzero_orientation_correlation": 0.008333333333333333,
+      "expected_nonzero_orientation_correlation_target": 0.008333333333333333,
+      "maximum_expected_normalized_character_residual": 0.0,
+      "n": 5,
+      "nonidentity_cycle_type_count": 6,
+      "status": "exact-plancherel-normalized-character-delta"
+    },
+    {
+      "exact_plancherel_delta_identity_verified": true,
+      "expected_nonzero_orientation_correlation": 0.001388888888888889,
+      "expected_nonzero_orientation_correlation_target": 0.001388888888888889,
+      "maximum_expected_normalized_character_residual": 0.0,
+      "n": 6,
+      "nonidentity_cycle_type_count": 10,
+      "status": "exact-plancherel-normalized-character-delta"
+    },
+    {
+      "exact_plancherel_delta_identity_verified": true,
+      "expected_nonzero_orientation_correlation": 0.0001984126984126984,
+      "expected_nonzero_orientation_correlation_target": 0.0001984126984126984,
+      "maximum_expected_normalized_character_residual": 0.0,
+      "n": 7,
+      "nonidentity_cycle_type_count": 14,
+      "status": "exact-plancherel-normalized-character-delta"
+    },
+    {
+      "exact_plancherel_delta_identity_verified": true,
+      "expected_nonzero_orientation_correlation": 2.48015873015873e-05,
+      "expected_nonzero_orientation_correlation_target": 2.48015873015873e-05,
+      "maximum_expected_normalized_character_residual": 0.0,
+      "n": 8,
+      "nonidentity_cycle_type_count": 21,
+      "status": "exact-plancherel-normalized-character-delta"
+    },
+    {
+      "exact_plancherel_delta_identity_verified": true,
+      "expected_nonzero_orientation_correlation": 2.7557319223985893e-06,
+      "expected_nonzero_orientation_correlation_target": 2.7557319223985893e-06,
+      "maximum_expected_normalized_character_residual": 0.0,
+      "n": 9,
+      "nonidentity_cycle_type_count": 29,
+      "status": "exact-plancherel-normalized-character-delta"
+    },
+    {
+      "exact_plancherel_delta_identity_verified": true,
+      "expected_nonzero_orientation_correlation": 2.755731922398589e-07,
+      "expected_nonzero_orientation_correlation_target": 2.755731922398589e-07,
+      "maximum_expected_normalized_character_residual": 0.0,
+      "n": 10,
+      "nonidentity_cycle_type_count": 41,
+      "status": "exact-plancherel-normalized-character-delta"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "source_conditioned_character_formula",
+      "resolution": "Regular-character summation over target nu reduces the rejected physical trace to the exact H-averaged normalized character correlations A_u.",
+      "resolved": true
+    },
+    {
+      "obligation": "plancherel_character_delta",
+      "resolution": "The Plancherel expectation of chi_lambda(s)/d_lambda is the regular character divided by n!, hence delta_(s=e).",
+      "resolved": true
+    },
+    {
+      "obligation": "expected_rejection_formula",
+      "resolution": "A_0=1 and every nonzero orientation difference has expected correlation 1/n!, yielding 1/|H|+(1-1/|H|)/n!.",
+      "resolved": true
+    },
+    {
+      "obligation": "quenched_high_probability_retention",
+      "resolution": "L_H is a rejection probability in [0,1]. Markov at any inverse-polynomial threshold is negligible for dim H=Omega(k).",
+      "resolved": true
+    },
+    {
+      "obligation": "collision_free_natural_transfer",
+      "resolution": "The existing global partition collision theorem proves the all-distinct event has probability 1-o(1); conditioning preserves the high-probability retention event.",
+      "resolved": true
+    },
+    {
+      "obligation": "retained_identification_information",
+      "resolution": "Covariantization equalizes acceptance, and coherent isotypic bookkeeping makes the accepted operation gentle. At rejection epsilon, optimal success falls by at most sqrt(epsilon).",
+      "resolved": true
+    },
+    {
+      "obligation": "efficient_postfilter_decoder",
+      "resolution": "The preserved constant-success measurement is existential; no polynomial filtered-frame POVM or permutation decoder is known.",
+      "resolved": false
+    }
+  ],
+  "scaling_records": [
+    {
+      "expected_rejection_fraction_log2": -4.999999999997862,
+      "filtered_identification_success_lower_bound": 0.062499046325683594,
+      "gentle_success_loss_upper_bound": 9.5367431640625e-07,
+      "high_probability_polynomial_retention_certified": false,
+      "illustrative_block_size": 8,
+      "information_threshold_copy_count": 45,
+      "log2_hidden_label_count": 44.25014046988262,
+      "log2_orientation_subspace_size": 5,
+      "markov_failure_probability_log2_upper_bound": 35.00000000000214,
+      "n": 16,
+      "orientation_subspace_dimension": 5,
+      "polynomial_rejection_threshold_log2": -40.0,
+      "polynomial_rejection_threshold_power": 10,
+      "status": "finite-scale-markov-bound-not-yet-small"
+    },
+    {
+      "expected_rejection_fraction_log2": -14.0,
+      "filtered_identification_success_lower_bound": 0.06249997019767761,
+      "gentle_success_loss_upper_bound": 2.9802322387695312e-08,
+      "high_probability_polynomial_retention_certified": false,
+      "illustrative_block_size": 8,
+      "information_threshold_copy_count": 118,
+      "log2_hidden_label_count": 117.6632636523603,
+      "log2_orientation_subspace_size": 14,
+      "markov_failure_probability_log2_upper_bound": 36.0,
+      "n": 32,
+      "orientation_subspace_dimension": 14,
+      "polynomial_rejection_threshold_log2": -50.0,
+      "polynomial_rejection_threshold_power": 10,
+      "status": "finite-scale-markov-bound-not-yet-small"
+    },
+    {
+      "expected_rejection_fraction_log2": -37.0,
+      "filtered_identification_success_lower_bound": 0.062499999068677425,
+      "gentle_success_loss_upper_bound": 9.313225746154785e-10,
+      "high_probability_polynomial_retention_certified": false,
+      "illustrative_block_size": 8,
+      "information_threshold_copy_count": 296,
+      "log2_hidden_label_count": 295.9951439417241,
+      "log2_orientation_subspace_size": 37,
+      "markov_failure_probability_log2_upper_bound": 23.0,
+      "n": 64,
+      "orientation_subspace_dimension": 37,
+      "polynomial_rejection_threshold_log2": -60.0,
+      "polynomial_rejection_threshold_power": 10,
+      "status": "finite-scale-markov-bound-not-yet-small"
+    },
+    {
+      "expected_rejection_fraction_log2": -89.0,
+      "filtered_identification_success_lower_bound": 0.06249999997089617,
+      "gentle_success_loss_upper_bound": 2.9103830456733704e-11,
+      "high_probability_polynomial_retention_certified": true,
+      "illustrative_block_size": 8,
+      "information_threshold_copy_count": 717,
+      "log2_hidden_label_count": 716.161722083622,
+      "log2_orientation_subspace_size": 89,
+      "markov_failure_probability_log2_upper_bound": -19.0,
+      "n": 128,
+      "orientation_subspace_dimension": 89,
+      "polynomial_rejection_threshold_log2": -70.0,
+      "polynomial_rejection_threshold_power": 10,
+      "status": "high-probability-gentle-retention-certified"
+    },
+    {
+      "expected_rejection_fraction_log2": -210.0,
+      "filtered_identification_success_lower_bound": 0.062499999999090505,
+      "gentle_success_loss_upper_bound": 9.094947017729282e-13,
+      "high_probability_polynomial_retention_certified": true,
+      "illustrative_block_size": 8,
+      "information_threshold_copy_count": 1684,
+      "log2_hidden_label_count": 1683.9962872242147,
+      "log2_orientation_subspace_size": 210,
+      "markov_failure_probability_log2_upper_bound": -130.0,
+      "n": 256,
+      "orientation_subspace_dimension": 210,
+      "polynomial_rejection_threshold_log2": -80.0,
+      "polynomial_rejection_threshold_power": 10,
+      "status": "high-probability-gentle-retention-certified"
+    },
+    {
+      "expected_rejection_fraction_log2": -484.0,
+      "filtered_identification_success_lower_bound": 0.06249999999997158,
+      "gentle_success_loss_upper_bound": 2.842170943040401e-14,
+      "high_probability_polynomial_retention_certified": true,
+      "illustrative_block_size": 8,
+      "information_threshold_copy_count": 3876,
+      "log2_hidden_label_count": 3875.166121943203,
+      "log2_orientation_subspace_size": 484,
+      "markov_failure_probability_log2_upper_bound": -394.0,
+      "n": 512,
+      "orientation_subspace_dimension": 484,
+      "polynomial_rejection_threshold_log2": -90.0,
+      "polynomial_rejection_threshold_power": 10,
+      "status": "high-probability-gentle-retention-certified"
+    }
+  ],
+  "status": "natural-information-retention-proved-postfilter-decoder-open",
+  "summary": "Proved an exact character-ratio rejection formula and an exponentially small Plancherel expectation, yielding gentle constant-information retention for the direct physical filter.",
+  "theorem_contract": {
+    "exact_rejection": "L_H=|H|^-1 sum_u (1/n!)sum_s product_(i:u_i=1) r_lambda_i(s)r_mu_i(s^-1).",
+    "gentle_information": "After uniform covariantization, all hidden labels accept with probability 1-L_H; coherent filtering changes identification success by at most sqrt(L_H).",
+    "high_probability": "For dim H=Omega(k), P[L_H>n^-a]<=n^a E[L_H]=o(1) for every fixed a.",
+    "natural_conditioning": "Global source distinctness has probability 1-o(1), so the same statement holds in the natural collision-free unequal sector.",
+    "plancherel_expectation": "E[L_H]=1/|H|+(1-1/|H|)/n! for iid Plancherel source labels.",
+    "scope": "This is an information-retention theorem, not a postfilter condition-number theorem or efficient decoding algorithm."
+  }
+}

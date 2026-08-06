@@ -1,0 +1,3719 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "The accepted effect may fail positivity because E_h do not commute.",
+      "resolution": "It is a sum of Kraus squares. The identity with F_H-F_H^2 also proves positivity since 0<=F_H<=I.",
+      "resolved": true
+    },
+    {
+      "objection": "This is merely the forbidden tiny-scale global spectral filter.",
+      "resolution": "No eigenvalue estimation is used. Coherent interference within H rescales the selected common mode to one.",
+      "resolved": true
+    },
+    {
+      "objection": "Removing exact common cores controls every near-common spike.",
+      "resolution": "No. Eigenvalues near one are attenuated, but an all-n bound after composing multiple families is still needed.",
+      "resolved": false
+    },
+    {
+      "objection": "The invariant projectors are already efficiently implementable from an S_n QFT.",
+      "resolution": "Yes. One does not need a Kronecker basis: uniform group averaging gives E_h as a Kraus block, while QFT-conjugated left multiplication implements every irrep action.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "all_n_near_common_spectrum_controlled": false,
+    "end_to_end_hidden_label_measurement_proved": false,
+    "exact_selected_common_cores_annihilated": true,
+    "generic_factorial_spectral_resolution_required": false,
+    "orientation_fourier_filter_identity_proved": true,
+    "polynomial_controlled_invariant_projector_proved": true,
+    "polynomial_hidden_permutation_decoder_proved": false,
+    "reason": "The first genuinely nonlocal unit-scale common-core filter has a polynomial invariant-projector circuit schema, but its all-n postfilter spectrum, retained information, and decoder are open.",
+    "speedup_claim_allowed": false
+  },
+  "controls": [
+    {
+      "average_frame_top_eigenvalue": 1.0,
+      "carrier_dimension": 4,
+      "common_range_annihilation_residual": 0.0,
+      "common_range_dimension": 1,
+      "control_id": "SYNTHETIC-F2-2-COMMON-CORE",
+      "exact_filter_identity_verified": true,
+      "fourier_kraus_completeness_residual": 1.1374446416282702e-16,
+      "labels": [],
+      "maximum_projector_idempotence_residual": 3.330669073875469e-16,
+      "maximum_projector_rank": 2,
+      "minimum_projector_rank": 2,
+      "n": null,
+      "nontrivial_character_effect_top_eigenvalue": 0.2500000000000001,
+      "nontrivial_effect_identity_residual": 8.230035629846995e-17,
+      "orientation_projector_count": 4,
+      "orientation_subspace_dimension": 2,
+      "retained_trace_fraction": 0.3125,
+      "source": "synthetic-equal-rank-projectors",
+      "status": "exact-orientation-subspace-fourier-filter",
+      "target_partition": null
+    },
+    {
+      "average_frame_top_eigenvalue": 2.5157749193976745e-17,
+      "carrier_dimension": 18,
+      "common_range_annihilation_residual": 0.0,
+      "common_range_dimension": 0,
+      "control_id": "W4-0-4",
+      "exact_filter_identity_verified": true,
+      "fourier_kraus_completeness_residual": 2.5157749193976748e-17,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_projector_idempotence_residual": 7.819158868230478e-17,
+      "maximum_projector_rank": 0,
+      "minimum_projector_rank": 0,
+      "n": 4,
+      "nontrivial_character_effect_top_eigenvalue": 1.3400779490313763e-33,
+      "nontrivial_effect_identity_residual": 2.515774919397675e-17,
+      "orientation_projector_count": 4,
+      "orientation_subspace_dimension": 2,
+      "retained_trace_fraction": 0.0,
+      "source": "physical-collision-free-wreath-fourier-block",
+      "status": "exact-orientation-subspace-fourier-filter",
+      "target_partition": [
+        4
+      ]
+    },
+    {
+      "average_frame_top_eigenvalue": 0.25000000000000006,
+      "carrier_dimension": 54,
+      "common_range_annihilation_residual": 0.0,
+      "common_range_dimension": 0,
+      "control_id": "W4-0-3-1",
+      "exact_filter_identity_verified": true,
+      "fourier_kraus_completeness_residual": 5.732830504545384e-17,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_projector_idempotence_residual": 1.62658012207559e-16,
+      "maximum_projector_rank": 3,
+      "minimum_projector_rank": 0,
+      "n": 4,
+      "nontrivial_character_effect_top_eigenvalue": 0.18750000000000008,
+      "nontrivial_effect_identity_residual": 5.473313248817409e-17,
+      "orientation_projector_count": 4,
+      "orientation_subspace_dimension": 2,
+      "retained_trace_fraction": 0.7499999999999996,
+      "source": "physical-collision-free-wreath-fourier-block",
+      "status": "exact-orientation-subspace-fourier-filter",
+      "target_partition": [
+        3,
+        1
+      ]
+    },
+    {
+      "average_frame_top_eigenvalue": 0.37500000000000006,
+      "carrier_dimension": 36,
+      "common_range_annihilation_residual": 0.0,
+      "common_range_dimension": 0,
+      "control_id": "W4-0-2-2",
+      "exact_filter_identity_verified": true,
+      "fourier_kraus_completeness_residual": 7.499193713318892e-17,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_projector_idempotence_residual": 1.5102549940320282e-16,
+      "maximum_projector_rank": 9,
+      "minimum_projector_rank": 0,
+      "n": 4,
+      "nontrivial_character_effect_top_eigenvalue": 0.23437499999999992,
+      "nontrivial_effect_identity_residual": 7.348942044716744e-17,
+      "orientation_projector_count": 4,
+      "orientation_subspace_dimension": 2,
+      "retained_trace_fraction": 0.7272727272727271,
+      "source": "physical-collision-free-wreath-fourier-block",
+      "status": "exact-orientation-subspace-fourier-filter",
+      "target_partition": [
+        2,
+        2
+      ]
+    },
+    {
+      "average_frame_top_eigenvalue": 0.3333333333333334,
+      "carrier_dimension": 54,
+      "common_range_annihilation_residual": 0.0,
+      "common_range_dimension": 0,
+      "control_id": "W4-0-2-1-1",
+      "exact_filter_identity_verified": true,
+      "fourier_kraus_completeness_residual": 8.718044995251826e-17,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_projector_idempotence_residual": 2.062092468967865e-16,
+      "maximum_projector_rank": 6,
+      "minimum_projector_rank": 0,
+      "n": 4,
+      "nontrivial_character_effect_top_eigenvalue": 0.22222222222222213,
+      "nontrivial_effect_identity_residual": 1.0097293772320734e-16,
+      "orientation_projector_count": 4,
+      "orientation_subspace_dimension": 2,
+      "retained_trace_fraction": 0.7348484848484849,
+      "source": "physical-collision-free-wreath-fourier-block",
+      "status": "exact-orientation-subspace-fourier-filter",
+      "target_partition": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "average_frame_top_eigenvalue": 0.25,
+      "carrier_dimension": 18,
+      "common_range_annihilation_residual": 0.0,
+      "common_range_dimension": 0,
+      "control_id": "W4-0-1-1-1-1",
+      "exact_filter_identity_verified": true,
+      "fourier_kraus_completeness_residual": 7.246210001671306e-17,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_projector_idempotence_residual": 2.656856277134091e-16,
+      "maximum_projector_rank": 2,
+      "minimum_projector_rank": 0,
+      "n": 4,
+      "nontrivial_character_effect_top_eigenvalue": 0.18749999999999994,
+      "nontrivial_effect_identity_residual": 6.659260145982715e-17,
+      "orientation_projector_count": 4,
+      "orientation_subspace_dimension": 2,
+      "retained_trace_fraction": 0.7499999999999997,
+      "source": "physical-collision-free-wreath-fourier-block",
+      "status": "exact-orientation-subspace-fourier-filter",
+      "target_partition": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "average_frame_top_eigenvalue": 2.3613713787625353e-17,
+      "carrier_dimension": 18,
+      "common_range_annihilation_residual": 0.0,
+      "common_range_dimension": 0,
+      "control_id": "W4-1-4",
+      "exact_filter_identity_verified": true,
+      "fourier_kraus_completeness_residual": 2.3613713787625343e-17,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_projector_idempotence_residual": 7.819158868230479e-17,
+      "maximum_projector_rank": 0,
+      "minimum_projector_rank": 0,
+      "n": 4,
+      "nontrivial_character_effect_top_eigenvalue": 1.515618117926732e-33,
+      "nontrivial_effect_identity_residual": 2.361371378762534e-17,
+      "orientation_projector_count": 4,
+      "orientation_subspace_dimension": 2,
+      "retained_trace_fraction": 0.0,
+      "source": "physical-collision-free-wreath-fourier-block",
+      "status": "exact-orientation-subspace-fourier-filter",
+      "target_partition": [
+        4
+      ]
+    },
+    {
+      "average_frame_top_eigenvalue": 0.3333333333333335,
+      "carrier_dimension": 54,
+      "common_range_annihilation_residual": 0.0,
+      "common_range_dimension": 0,
+      "control_id": "W4-1-3-1",
+      "exact_filter_identity_verified": true,
+      "fourier_kraus_completeness_residual": 8.653797916969889e-17,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_projector_idempotence_residual": 2.6567743165655044e-16,
+      "maximum_projector_rank": 6,
+      "minimum_projector_rank": 0,
+      "n": 4,
+      "nontrivial_character_effect_top_eigenvalue": 0.22222222222222224,
+      "nontrivial_effect_identity_residual": 8.527623833656404e-17,
+      "orientation_projector_count": 4,
+      "orientation_subspace_dimension": 2,
+      "retained_trace_fraction": 0.7361111111111107,
+      "source": "physical-collision-free-wreath-fourier-block",
+      "status": "exact-orientation-subspace-fourier-filter",
+      "target_partition": [
+        3,
+        1
+      ]
+    },
+    {
+      "average_frame_top_eigenvalue": 4.353109776351654e-17,
+      "carrier_dimension": 36,
+      "common_range_annihilation_residual": 0.0,
+      "common_range_dimension": 0,
+      "control_id": "W4-1-2-2",
+      "exact_filter_identity_verified": true,
+      "fourier_kraus_completeness_residual": 4.353109776351652e-17,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_projector_idempotence_residual": 1.130442083906909e-16,
+      "maximum_projector_rank": 0,
+      "minimum_projector_rank": 0,
+      "n": 4,
+      "nontrivial_character_effect_top_eigenvalue": 2.9436236964016735e-33,
+      "nontrivial_effect_identity_residual": 4.353109776351654e-17,
+      "orientation_projector_count": 4,
+      "orientation_subspace_dimension": 2,
+      "retained_trace_fraction": 0.0,
+      "source": "physical-collision-free-wreath-fourier-block",
+      "status": "exact-orientation-subspace-fourier-filter",
+      "target_partition": [
+        2,
+        2
+      ]
+    },
+    {
+      "average_frame_top_eigenvalue": 0.3333333333333333,
+      "carrier_dimension": 54,
+      "common_range_annihilation_residual": 0.0,
+      "common_range_dimension": 0,
+      "control_id": "W4-1-2-1-1",
+      "exact_filter_identity_verified": true,
+      "fourier_kraus_completeness_residual": 1.0879746303799794e-16,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_projector_idempotence_residual": 2.062092468967865e-16,
+      "maximum_projector_rank": 6,
+      "minimum_projector_rank": 0,
+      "n": 4,
+      "nontrivial_character_effect_top_eigenvalue": 0.22222222222222215,
+      "nontrivial_effect_identity_residual": 1.0162602966187007e-16,
+      "orientation_projector_count": 4,
+      "orientation_subspace_dimension": 2,
+      "retained_trace_fraction": 0.7361111111111108,
+      "source": "physical-collision-free-wreath-fourier-block",
+      "status": "exact-orientation-subspace-fourier-filter",
+      "target_partition": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "average_frame_top_eigenvalue": 2.4487869479794923e-17,
+      "carrier_dimension": 18,
+      "common_range_annihilation_residual": 0.0,
+      "common_range_dimension": 0,
+      "control_id": "W4-1-1-1-1-1",
+      "exact_filter_identity_verified": true,
+      "fourier_kraus_completeness_residual": 2.448786947979491e-17,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_projector_idempotence_residual": 7.819158868230477e-17,
+      "maximum_projector_rank": 0,
+      "minimum_projector_rank": 0,
+      "n": 4,
+      "nontrivial_character_effect_top_eigenvalue": 1.85397316657935e-33,
+      "nontrivial_effect_identity_residual": 2.4487869479794917e-17,
+      "orientation_projector_count": 4,
+      "orientation_subspace_dimension": 2,
+      "retained_trace_fraction": 0.0,
+      "source": "physical-collision-free-wreath-fourier-block",
+      "status": "exact-orientation-subspace-fourier-filter",
+      "target_partition": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "average_frame_top_eigenvalue": 2.8406048123993874e-17,
+      "carrier_dimension": 18,
+      "common_range_annihilation_residual": 0.0,
+      "common_range_dimension": 0,
+      "control_id": "W4-2-4",
+      "exact_filter_identity_verified": true,
+      "fourier_kraus_completeness_residual": 2.840604812399388e-17,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      ],
+      "maximum_projector_idempotence_residual": 6.94200494037891e-17,
+      "maximum_projector_rank": 0,
+      "minimum_projector_rank": 0,
+      "n": 4,
+      "nontrivial_character_effect_top_eigenvalue": 1.3046031025583473e-33,
+      "nontrivial_effect_identity_residual": 2.840604812399388e-17,
+      "orientation_projector_count": 4,
+      "orientation_subspace_dimension": 2,
+      "retained_trace_fraction": 0.0,
+      "source": "physical-collision-free-wreath-fourier-block",
+      "status": "exact-orientation-subspace-fourier-filter",
+      "target_partition": [
+        4
+      ]
+    },
+    {
+      "average_frame_top_eigenvalue": 0.33333333333333337,
+      "carrier_dimension": 54,
+      "common_range_annihilation_residual": 0.0,
+      "common_range_dimension": 0,
+      "control_id": "W4-2-3-1",
+      "exact_filter_identity_verified": true,
+      "fourier_kraus_completeness_residual": 7.94952964870756e-17,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      ],
+      "maximum_projector_idempotence_residual": 2.6567743165655064e-16,
+      "maximum_projector_rank": 6,
+      "minimum_projector_rank": 0,
+      "n": 4,
+      "nontrivial_character_effect_top_eigenvalue": 0.2222222222222221,
+      "nontrivial_effect_identity_residual": 7.670338520118964e-17,
+      "orientation_projector_count": 4,
+      "orientation_subspace_dimension": 2,
+      "retained_trace_fraction": 0.7348484848484848,
+      "source": "physical-collision-free-wreath-fourier-block",
+      "status": "exact-orientation-subspace-fourier-filter",
+      "target_partition": [
+        3,
+        1
+      ]
+    },
+    {
+      "average_frame_top_eigenvalue": 0.37500000000000017,
+      "carrier_dimension": 36,
+      "common_range_annihilation_residual": 0.0,
+      "common_range_dimension": 0,
+      "control_id": "W4-2-2-2",
+      "exact_filter_identity_verified": true,
+      "fourier_kraus_completeness_residual": 5.86736533929058e-17,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      ],
+      "maximum_projector_idempotence_residual": 1.4291169343808803e-16,
+      "maximum_projector_rank": 9,
+      "minimum_projector_rank": 0,
+      "n": 4,
+      "nontrivial_character_effect_top_eigenvalue": 0.234375,
+      "nontrivial_effect_identity_residual": 6.861884151211378e-17,
+      "orientation_projector_count": 4,
+      "orientation_subspace_dimension": 2,
+      "retained_trace_fraction": 0.7272727272727272,
+      "source": "physical-collision-free-wreath-fourier-block",
+      "status": "exact-orientation-subspace-fourier-filter",
+      "target_partition": [
+        2,
+        2
+      ]
+    },
+    {
+      "average_frame_top_eigenvalue": 0.25000000000000006,
+      "carrier_dimension": 54,
+      "common_range_annihilation_residual": 0.0,
+      "common_range_dimension": 0,
+      "control_id": "W4-2-2-1-1",
+      "exact_filter_identity_verified": true,
+      "fourier_kraus_completeness_residual": 7.409002146873922e-17,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      ],
+      "maximum_projector_idempotence_residual": 1.989668983514222e-16,
+      "maximum_projector_rank": 3,
+      "minimum_projector_rank": 0,
+      "n": 4,
+      "nontrivial_character_effect_top_eigenvalue": 0.18750000000000003,
+      "nontrivial_effect_identity_residual": 7.675760316938275e-17,
+      "orientation_projector_count": 4,
+      "orientation_subspace_dimension": 2,
+      "retained_trace_fraction": 0.7499999999999993,
+      "source": "physical-collision-free-wreath-fourier-block",
+      "status": "exact-orientation-subspace-fourier-filter",
+      "target_partition": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "average_frame_top_eigenvalue": 0.2500000000000001,
+      "carrier_dimension": 18,
+      "common_range_annihilation_residual": 0.0,
+      "common_range_dimension": 0,
+      "control_id": "W4-2-1-1-1-1",
+      "exact_filter_identity_verified": true,
+      "fourier_kraus_completeness_residual": 5.785561867271739e-17,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      ],
+      "maximum_projector_idempotence_residual": 2.0620710512890084e-16,
+      "maximum_projector_rank": 2,
+      "minimum_projector_rank": 0,
+      "n": 4,
+      "nontrivial_character_effect_top_eigenvalue": 0.18749999999999997,
+      "nontrivial_effect_identity_residual": 5.681169239374835e-17,
+      "orientation_projector_count": 4,
+      "orientation_subspace_dimension": 2,
+      "retained_trace_fraction": 0.7499999999999998,
+      "source": "physical-collision-free-wreath-fourier-block",
+      "status": "exact-orientation-subspace-fourier-filter",
+      "target_partition": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "average_frame_top_eigenvalue": 1.8379454798611057e-17,
+      "carrier_dimension": 6,
+      "common_range_annihilation_residual": 0.0,
+      "common_range_dimension": 0,
+      "control_id": "W4-3-4",
+      "exact_filter_identity_verified": true,
+      "fourier_kraus_completeness_residual": 1.837945479861106e-17,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_projector_idempotence_residual": 7.819158868230476e-17,
+      "maximum_projector_rank": 0,
+      "minimum_projector_rank": 0,
+      "n": 4,
+      "nontrivial_character_effect_top_eigenvalue": 1.1985694753873619e-33,
+      "nontrivial_effect_identity_residual": 1.837945479861106e-17,
+      "orientation_projector_count": 4,
+      "orientation_subspace_dimension": 2,
+      "retained_trace_fraction": 0.0,
+      "source": "physical-collision-free-wreath-fourier-block",
+      "status": "exact-orientation-subspace-fourier-filter",
+      "target_partition": [
+        4
+      ]
+    },
+    {
+      "average_frame_top_eigenvalue": 0.25,
+      "carrier_dimension": 18,
+      "common_range_annihilation_residual": 0.0,
+      "common_range_dimension": 0,
+      "control_id": "W4-3-3-1",
+      "exact_filter_identity_verified": true,
+      "fourier_kraus_completeness_residual": 5.64380960104163e-17,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_projector_idempotence_residual": 1.6265801220755898e-16,
+      "maximum_projector_rank": 1,
+      "minimum_projector_rank": 0,
+      "n": 4,
+      "nontrivial_character_effect_top_eigenvalue": 0.18749999999999994,
+      "nontrivial_effect_identity_residual": 5.334895446752071e-17,
+      "orientation_projector_count": 4,
+      "orientation_subspace_dimension": 2,
+      "retained_trace_fraction": 0.7499999999999997,
+      "source": "physical-collision-free-wreath-fourier-block",
+      "status": "exact-orientation-subspace-fourier-filter",
+      "target_partition": [
+        3,
+        1
+      ]
+    },
+    {
+      "average_frame_top_eigenvalue": 0.25,
+      "carrier_dimension": 12,
+      "common_range_annihilation_residual": 0.0,
+      "common_range_dimension": 0,
+      "control_id": "W4-3-2-2",
+      "exact_filter_identity_verified": true,
+      "fourier_kraus_completeness_residual": 4.540269555929721e-17,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_projector_idempotence_residual": 1.1304420839069086e-16,
+      "maximum_projector_rank": 3,
+      "minimum_projector_rank": 0,
+      "n": 4,
+      "nontrivial_character_effect_top_eigenvalue": 0.1875,
+      "nontrivial_effect_identity_residual": 4.729921740252074e-17,
+      "orientation_projector_count": 4,
+      "orientation_subspace_dimension": 2,
+      "retained_trace_fraction": 0.7499999999999999,
+      "source": "physical-collision-free-wreath-fourier-block",
+      "status": "exact-orientation-subspace-fourier-filter",
+      "target_partition": [
+        2,
+        2
+      ]
+    },
+    {
+      "average_frame_top_eigenvalue": 0.25000000000000006,
+      "carrier_dimension": 18,
+      "common_range_annihilation_residual": 0.0,
+      "common_range_dimension": 0,
+      "control_id": "W4-3-2-1-1",
+      "exact_filter_identity_verified": true,
+      "fourier_kraus_completeness_residual": 7.70951139202944e-17,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_projector_idempotence_residual": 2.0620710512890084e-16,
+      "maximum_projector_rank": 2,
+      "minimum_projector_rank": 0,
+      "n": 4,
+      "nontrivial_character_effect_top_eigenvalue": 0.1875,
+      "nontrivial_effect_identity_residual": 6.451466074561031e-17,
+      "orientation_projector_count": 4,
+      "orientation_subspace_dimension": 2,
+      "retained_trace_fraction": 0.7499999999999998,
+      "source": "physical-collision-free-wreath-fourier-block",
+      "status": "exact-orientation-subspace-fourier-filter",
+      "target_partition": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "average_frame_top_eigenvalue": 0.25,
+      "carrier_dimension": 6,
+      "common_range_annihilation_residual": 0.0,
+      "common_range_dimension": 0,
+      "control_id": "W4-3-1-1-1-1",
+      "exact_filter_identity_verified": true,
+      "fourier_kraus_completeness_residual": 2.955798649110568e-17,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_projector_idempotence_residual": 7.819158868230476e-17,
+      "maximum_projector_rank": 6,
+      "minimum_projector_rank": 0,
+      "n": 4,
+      "nontrivial_character_effect_top_eigenvalue": 0.18750000000000003,
+      "nontrivial_effect_identity_residual": 2.955798649110568e-17,
+      "orientation_projector_count": 4,
+      "orientation_subspace_dimension": 2,
+      "retained_trace_fraction": 0.75,
+      "source": "physical-collision-free-wreath-fourier-block",
+      "status": "exact-orientation-subspace-fourier-filter",
+      "target_partition": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "average_frame_top_eigenvalue": 2.008394867856874e-17,
+      "carrier_dimension": 6,
+      "common_range_annihilation_residual": 0.0,
+      "common_range_dimension": 0,
+      "control_id": "W4-4-4",
+      "exact_filter_identity_verified": true,
+      "fourier_kraus_completeness_residual": 2.0083948678568752e-17,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_projector_idempotence_residual": 7.819158868230476e-17,
+      "maximum_projector_rank": 0,
+      "minimum_projector_rank": 0,
+      "n": 4,
+      "nontrivial_character_effect_top_eigenvalue": 1.297040645135849e-33,
+      "nontrivial_effect_identity_residual": 2.0083948678568752e-17,
+      "orientation_projector_count": 4,
+      "orientation_subspace_dimension": 2,
+      "retained_trace_fraction": 0.0,
+      "source": "physical-collision-free-wreath-fourier-block",
+      "status": "exact-orientation-subspace-fourier-filter",
+      "target_partition": [
+        4
+      ]
+    },
+    {
+      "average_frame_top_eigenvalue": 0.25,
+      "carrier_dimension": 18,
+      "common_range_annihilation_residual": 0.0,
+      "common_range_dimension": 0,
+      "control_id": "W4-4-3-1",
+      "exact_filter_identity_verified": true,
+      "fourier_kraus_completeness_residual": 7.212875942123138e-17,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_projector_idempotence_residual": 2.656774316565504e-16,
+      "maximum_projector_rank": 2,
+      "minimum_projector_rank": 0,
+      "n": 4,
+      "nontrivial_character_effect_top_eigenvalue": 0.18749999999999994,
+      "nontrivial_effect_identity_residual": 6.253501494366609e-17,
+      "orientation_projector_count": 4,
+      "orientation_subspace_dimension": 2,
+      "retained_trace_fraction": 0.7499999999999999,
+      "source": "physical-collision-free-wreath-fourier-block",
+      "status": "exact-orientation-subspace-fourier-filter",
+      "target_partition": [
+        3,
+        1
+      ]
+    },
+    {
+      "average_frame_top_eigenvalue": 0.25000000000000006,
+      "carrier_dimension": 12,
+      "common_range_annihilation_residual": 0.0,
+      "common_range_dimension": 0,
+      "control_id": "W4-4-2-2",
+      "exact_filter_identity_verified": true,
+      "fourier_kraus_completeness_residual": 3.846910698437284e-17,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_projector_idempotence_residual": 1.1304420839069088e-16,
+      "maximum_projector_rank": 3,
+      "minimum_projector_rank": 0,
+      "n": 4,
+      "nontrivial_character_effect_top_eigenvalue": 0.18749999999999994,
+      "nontrivial_effect_identity_residual": 3.846910698437284e-17,
+      "orientation_projector_count": 4,
+      "orientation_subspace_dimension": 2,
+      "retained_trace_fraction": 0.75,
+      "source": "physical-collision-free-wreath-fourier-block",
+      "status": "exact-orientation-subspace-fourier-filter",
+      "target_partition": [
+        2,
+        2
+      ]
+    },
+    {
+      "average_frame_top_eigenvalue": 0.24999999999999994,
+      "carrier_dimension": 18,
+      "common_range_annihilation_residual": 0.0,
+      "common_range_dimension": 0,
+      "control_id": "W4-4-2-1-1",
+      "exact_filter_identity_verified": true,
+      "fourier_kraus_completeness_residual": 4.981136529991539e-17,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_projector_idempotence_residual": 1.6294089636896567e-16,
+      "maximum_projector_rank": 1,
+      "minimum_projector_rank": 0,
+      "n": 4,
+      "nontrivial_character_effect_top_eigenvalue": 0.18749999999999994,
+      "nontrivial_effect_identity_residual": 4.6120618442982945e-17,
+      "orientation_projector_count": 4,
+      "orientation_subspace_dimension": 2,
+      "retained_trace_fraction": 0.7499999999999997,
+      "source": "physical-collision-free-wreath-fourier-block",
+      "status": "exact-orientation-subspace-fourier-filter",
+      "target_partition": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "average_frame_top_eigenvalue": 0.25,
+      "carrier_dimension": 6,
+      "common_range_annihilation_residual": 0.0,
+      "common_range_dimension": 0,
+      "control_id": "W4-4-1-1-1-1",
+      "exact_filter_identity_verified": true,
+      "fourier_kraus_completeness_residual": 2.8416667093809015e-17,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_projector_idempotence_residual": 7.819158868230476e-17,
+      "maximum_projector_rank": 6,
+      "minimum_projector_rank": 0,
+      "n": 4,
+      "nontrivial_character_effect_top_eigenvalue": 0.1875,
+      "nontrivial_effect_identity_residual": 2.8416667093809015e-17,
+      "orientation_projector_count": 4,
+      "orientation_subspace_dimension": 2,
+      "retained_trace_fraction": 0.75,
+      "source": "physical-collision-free-wreath-fourier-block",
+      "status": "exact-orientation-subspace-fourier-filter",
+      "target_partition": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "average_frame_top_eigenvalue": 4.21913726166974e-18,
+      "carrier_dimension": 6,
+      "common_range_annihilation_residual": 0.0,
+      "common_range_dimension": 0,
+      "control_id": "W4-5-4",
+      "exact_filter_identity_verified": true,
+      "fourier_kraus_completeness_residual": 6.042132262101197e-18,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      ],
+      "maximum_projector_idempotence_residual": 2.5059047496470513e-17,
+      "maximum_projector_rank": 0,
+      "minimum_projector_rank": 0,
+      "n": 4,
+      "nontrivial_character_effect_top_eigenvalue": 1.3161478294525315e-34,
+      "nontrivial_effect_identity_residual": 6.042132262101197e-18,
+      "orientation_projector_count": 4,
+      "orientation_subspace_dimension": 2,
+      "retained_trace_fraction": 0.0,
+      "source": "physical-collision-free-wreath-fourier-block",
+      "status": "exact-orientation-subspace-fourier-filter",
+      "target_partition": [
+        4
+      ]
+    },
+    {
+      "average_frame_top_eigenvalue": 0.24999999999999994,
+      "carrier_dimension": 18,
+      "common_range_annihilation_residual": 0.0,
+      "common_range_dimension": 0,
+      "control_id": "W4-5-3-1",
+      "exact_filter_identity_verified": true,
+      "fourier_kraus_completeness_residual": 7.156220268580006e-17,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      ],
+      "maximum_projector_idempotence_residual": 2.656774316565505e-16,
+      "maximum_projector_rank": 2,
+      "minimum_projector_rank": 0,
+      "n": 4,
+      "nontrivial_character_effect_top_eigenvalue": 0.18749999999999992,
+      "nontrivial_effect_identity_residual": 6.494922134924337e-17,
+      "orientation_projector_count": 4,
+      "orientation_subspace_dimension": 2,
+      "retained_trace_fraction": 0.7499999999999997,
+      "source": "physical-collision-free-wreath-fourier-block",
+      "status": "exact-orientation-subspace-fourier-filter",
+      "target_partition": [
+        3,
+        1
+      ]
+    },
+    {
+      "average_frame_top_eigenvalue": 0.2500000000000001,
+      "carrier_dimension": 12,
+      "common_range_annihilation_residual": 0.0,
+      "common_range_dimension": 0,
+      "control_id": "W4-5-2-2",
+      "exact_filter_identity_verified": true,
+      "fourier_kraus_completeness_residual": 4.209070484603468e-17,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      ],
+      "maximum_projector_idempotence_residual": 7.819158868230478e-17,
+      "maximum_projector_rank": 3,
+      "minimum_projector_rank": 0,
+      "n": 4,
+      "nontrivial_character_effect_top_eigenvalue": 0.18750000000000003,
+      "nontrivial_effect_identity_residual": 2.865392657322493e-17,
+      "orientation_projector_count": 4,
+      "orientation_subspace_dimension": 2,
+      "retained_trace_fraction": 0.75,
+      "source": "physical-collision-free-wreath-fourier-block",
+      "status": "exact-orientation-subspace-fourier-filter",
+      "target_partition": [
+        2,
+        2
+      ]
+    },
+    {
+      "average_frame_top_eigenvalue": 0.25,
+      "carrier_dimension": 18,
+      "common_range_annihilation_residual": 0.0,
+      "common_range_dimension": 0,
+      "control_id": "W4-5-2-1-1",
+      "exact_filter_identity_verified": true,
+      "fourier_kraus_completeness_residual": 5.750609243072865e-17,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      ],
+      "maximum_projector_idempotence_residual": 2.0620710512890084e-16,
+      "maximum_projector_rank": 2,
+      "minimum_projector_rank": 0,
+      "n": 4,
+      "nontrivial_character_effect_top_eigenvalue": 0.18749999999999992,
+      "nontrivial_effect_identity_residual": 5.642989732763904e-17,
+      "orientation_projector_count": 4,
+      "orientation_subspace_dimension": 2,
+      "retained_trace_fraction": 0.7499999999999997,
+      "source": "physical-collision-free-wreath-fourier-block",
+      "status": "exact-orientation-subspace-fourier-filter",
+      "target_partition": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "average_frame_top_eigenvalue": 4.2191372616697435e-18,
+      "carrier_dimension": 6,
+      "common_range_annihilation_residual": 0.0,
+      "common_range_dimension": 0,
+      "control_id": "W4-5-1-1-1-1",
+      "exact_filter_identity_verified": true,
+      "fourier_kraus_completeness_residual": 6.042132262101196e-18,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      ],
+      "maximum_projector_idempotence_residual": 2.5059047496470513e-17,
+      "maximum_projector_rank": 0,
+      "minimum_projector_rank": 0,
+      "n": 4,
+      "nontrivial_character_effect_top_eigenvalue": 1.3161478294525326e-34,
+      "nontrivial_effect_identity_residual": 6.042132262101196e-18,
+      "orientation_projector_count": 4,
+      "orientation_subspace_dimension": 2,
+      "retained_trace_fraction": 0.0,
+      "source": "physical-collision-free-wreath-fourier-block",
+      "status": "exact-orientation-subspace-fourier-filter",
+      "target_partition": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "average_frame_top_eigenvalue": 1.2426279161424674e-17,
+      "carrier_dimension": 9,
+      "common_range_annihilation_residual": 0.0,
+      "common_range_dimension": 0,
+      "control_id": "W4-6-4",
+      "exact_filter_identity_verified": true,
+      "fourier_kraus_completeness_residual": 1.2426279161424674e-17,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_projector_idempotence_residual": 5.179863205513904e-17,
+      "maximum_projector_rank": 0,
+      "minimum_projector_rank": 0,
+      "n": 4,
+      "nontrivial_character_effect_top_eigenvalue": 5.211977377479382e-34,
+      "nontrivial_effect_identity_residual": 1.2426279161424671e-17,
+      "orientation_projector_count": 4,
+      "orientation_subspace_dimension": 2,
+      "retained_trace_fraction": 0.0,
+      "source": "physical-collision-free-wreath-fourier-block",
+      "status": "exact-orientation-subspace-fourier-filter",
+      "target_partition": [
+        4
+      ]
+    },
+    {
+      "average_frame_top_eigenvalue": 0.24999999999999997,
+      "carrier_dimension": 27,
+      "common_range_annihilation_residual": 0.0,
+      "common_range_dimension": 0,
+      "control_id": "W4-6-3-1",
+      "exact_filter_identity_verified": true,
+      "fourier_kraus_completeness_residual": 3.778495645788518e-17,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_projector_idempotence_residual": 1.577891959897593e-16,
+      "maximum_projector_rank": 1,
+      "minimum_projector_rank": 0,
+      "n": 4,
+      "nontrivial_character_effect_top_eigenvalue": 0.18749999999999994,
+      "nontrivial_effect_identity_residual": 3.9091023542373336e-17,
+      "orientation_projector_count": 4,
+      "orientation_subspace_dimension": 2,
+      "retained_trace_fraction": 0.7499999999999998,
+      "source": "physical-collision-free-wreath-fourier-block",
+      "status": "exact-orientation-subspace-fourier-filter",
+      "target_partition": [
+        3,
+        1
+      ]
+    },
+    {
+      "average_frame_top_eigenvalue": 0.25,
+      "carrier_dimension": 18,
+      "common_range_annihilation_residual": 0.0,
+      "common_range_dimension": 0,
+      "control_id": "W4-6-2-2",
+      "exact_filter_identity_verified": true,
+      "fourier_kraus_completeness_residual": 5.419064897038981e-17,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_projector_idempotence_residual": 1.5102549940320277e-16,
+      "maximum_projector_rank": 1,
+      "minimum_projector_rank": 0,
+      "n": 4,
+      "nontrivial_character_effect_top_eigenvalue": 0.18749999999999994,
+      "nontrivial_effect_identity_residual": 5.191761796450724e-17,
+      "orientation_projector_count": 4,
+      "orientation_subspace_dimension": 2,
+      "retained_trace_fraction": 0.7499999999999997,
+      "source": "physical-collision-free-wreath-fourier-block",
+      "status": "exact-orientation-subspace-fourier-filter",
+      "target_partition": [
+        2,
+        2
+      ]
+    },
+    {
+      "average_frame_top_eigenvalue": 0.3333333333333334,
+      "carrier_dimension": 27,
+      "common_range_annihilation_residual": 0.0,
+      "common_range_dimension": 0,
+      "control_id": "W4-6-2-1-1",
+      "exact_filter_identity_verified": true,
+      "fourier_kraus_completeness_residual": 1.0534225846139067e-16,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_projector_idempotence_residual": 2.062092468967864e-16,
+      "maximum_projector_rank": 3,
+      "minimum_projector_rank": 0,
+      "n": 4,
+      "nontrivial_character_effect_top_eigenvalue": 0.2222222222222222,
+      "nontrivial_effect_identity_residual": 1.0687529595059267e-16,
+      "orientation_projector_count": 4,
+      "orientation_subspace_dimension": 2,
+      "retained_trace_fraction": 0.7261904761904762,
+      "source": "physical-collision-free-wreath-fourier-block",
+      "status": "exact-orientation-subspace-fourier-filter",
+      "target_partition": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "average_frame_top_eigenvalue": 0.5,
+      "carrier_dimension": 9,
+      "common_range_annihilation_residual": 0.0,
+      "common_range_dimension": 0,
+      "control_id": "W4-6-1-1-1-1",
+      "exact_filter_identity_verified": true,
+      "fourier_kraus_completeness_residual": 9.046247460873422e-17,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_projector_idempotence_residual": 2.6568562771340904e-16,
+      "maximum_projector_rank": 9,
+      "minimum_projector_rank": 0,
+      "n": 4,
+      "nontrivial_character_effect_top_eigenvalue": 0.25000000000000006,
+      "nontrivial_effect_identity_residual": 8.645490847005609e-17,
+      "orientation_projector_count": 4,
+      "orientation_subspace_dimension": 2,
+      "retained_trace_fraction": 0.7,
+      "source": "physical-collision-free-wreath-fourier-block",
+      "status": "exact-orientation-subspace-fourier-filter",
+      "target_partition": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "average_frame_top_eigenvalue": 1.408729138473093e-17,
+      "carrier_dimension": 9,
+      "common_range_annihilation_residual": 0.0,
+      "common_range_dimension": 0,
+      "control_id": "W4-7-4",
+      "exact_filter_identity_verified": true,
+      "fourier_kraus_completeness_residual": 1.529583238388197e-17,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_projector_idempotence_residual": 5.179863205513905e-17,
+      "maximum_projector_rank": 0,
+      "minimum_projector_rank": 0,
+      "n": 4,
+      "nontrivial_character_effect_top_eigenvalue": 8.77688854730093e-34,
+      "nontrivial_effect_identity_residual": 1.5295832383881966e-17,
+      "orientation_projector_count": 4,
+      "orientation_subspace_dimension": 2,
+      "retained_trace_fraction": 0.0,
+      "source": "physical-collision-free-wreath-fourier-block",
+      "status": "exact-orientation-subspace-fourier-filter",
+      "target_partition": [
+        4
+      ]
+    },
+    {
+      "average_frame_top_eigenvalue": 0.33333333333333315,
+      "carrier_dimension": 27,
+      "common_range_annihilation_residual": 0.0,
+      "common_range_dimension": 0,
+      "control_id": "W4-7-3-1",
+      "exact_filter_identity_verified": true,
+      "fourier_kraus_completeness_residual": 9.007404567080967e-17,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_projector_idempotence_residual": 2.656856277134094e-16,
+      "maximum_projector_rank": 3,
+      "minimum_projector_rank": 0,
+      "n": 4,
+      "nontrivial_character_effect_top_eigenvalue": 0.22222222222222215,
+      "nontrivial_effect_identity_residual": 8.336619067929765e-17,
+      "orientation_projector_count": 4,
+      "orientation_subspace_dimension": 2,
+      "retained_trace_fraction": 0.7261904761904759,
+      "source": "physical-collision-free-wreath-fourier-block",
+      "status": "exact-orientation-subspace-fourier-filter",
+      "target_partition": [
+        3,
+        1
+      ]
+    },
+    {
+      "average_frame_top_eigenvalue": 0.24999999999999997,
+      "carrier_dimension": 18,
+      "common_range_annihilation_residual": 0.0,
+      "common_range_dimension": 0,
+      "control_id": "W4-7-2-2",
+      "exact_filter_identity_verified": true,
+      "fourier_kraus_completeness_residual": 4.849125446301684e-17,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_projector_idempotence_residual": 1.4291169343808803e-16,
+      "maximum_projector_rank": 1,
+      "minimum_projector_rank": 0,
+      "n": 4,
+      "nontrivial_character_effect_top_eigenvalue": 0.1874999999999999,
+      "nontrivial_effect_identity_residual": 4.4582504346618603e-17,
+      "orientation_projector_count": 4,
+      "orientation_subspace_dimension": 2,
+      "retained_trace_fraction": 0.7499999999999993,
+      "source": "physical-collision-free-wreath-fourier-block",
+      "status": "exact-orientation-subspace-fourier-filter",
+      "target_partition": [
+        2,
+        2
+      ]
+    },
+    {
+      "average_frame_top_eigenvalue": 0.25,
+      "carrier_dimension": 27,
+      "common_range_annihilation_residual": 0.0,
+      "common_range_dimension": 0,
+      "control_id": "W4-7-2-1-1",
+      "exact_filter_identity_verified": true,
+      "fourier_kraus_completeness_residual": 4.5254716879431084e-17,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_projector_idempotence_residual": 1.9896689835142228e-16,
+      "maximum_projector_rank": 1,
+      "minimum_projector_rank": 0,
+      "n": 4,
+      "nontrivial_character_effect_top_eigenvalue": 0.1874999999999999,
+      "nontrivial_effect_identity_residual": 4.938861583067336e-17,
+      "orientation_projector_count": 4,
+      "orientation_subspace_dimension": 2,
+      "retained_trace_fraction": 0.7499999999999996,
+      "source": "physical-collision-free-wreath-fourier-block",
+      "status": "exact-orientation-subspace-fourier-filter",
+      "target_partition": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "average_frame_top_eigenvalue": 0.4999999999999998,
+      "carrier_dimension": 9,
+      "common_range_annihilation_residual": 0.0,
+      "common_range_dimension": 0,
+      "control_id": "W4-7-1-1-1-1",
+      "exact_filter_identity_verified": true,
+      "fourier_kraus_completeness_residual": 1.1204024220359737e-16,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_projector_idempotence_residual": 2.062071051289009e-16,
+      "maximum_projector_rank": 9,
+      "minimum_projector_rank": 0,
+      "n": 4,
+      "nontrivial_character_effect_top_eigenvalue": 0.24999999999999997,
+      "nontrivial_effect_identity_residual": 8.893700582862802e-17,
+      "orientation_projector_count": 4,
+      "orientation_subspace_dimension": 2,
+      "retained_trace_fraction": 0.7,
+      "source": "physical-collision-free-wreath-fourier-block",
+      "status": "exact-orientation-subspace-fourier-filter",
+      "target_partition": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "average_frame_top_eigenvalue": 7.908987459882239e-18,
+      "carrier_dimension": 9,
+      "common_range_annihilation_residual": 0.0,
+      "common_range_dimension": 0,
+      "control_id": "W4-8-4",
+      "exact_filter_identity_verified": true,
+      "fourier_kraus_completeness_residual": 1.539552331093367e-17,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_projector_idempotence_residual": 3.7638901366303607e-17,
+      "maximum_projector_rank": 0,
+      "minimum_projector_rank": 0,
+      "n": 4,
+      "nontrivial_character_effect_top_eigenvalue": 4.381149782702813e-34,
+      "nontrivial_effect_identity_residual": 1.5395523310933674e-17,
+      "orientation_projector_count": 4,
+      "orientation_subspace_dimension": 2,
+      "retained_trace_fraction": 0.0,
+      "source": "physical-collision-free-wreath-fourier-block",
+      "status": "exact-orientation-subspace-fourier-filter",
+      "target_partition": [
+        4
+      ]
+    },
+    {
+      "average_frame_top_eigenvalue": 0.3333333333333334,
+      "carrier_dimension": 27,
+      "common_range_annihilation_residual": 0.0,
+      "common_range_dimension": 0,
+      "control_id": "W4-8-3-1",
+      "exact_filter_identity_verified": true,
+      "fourier_kraus_completeness_residual": 9.014415979088169e-17,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_projector_idempotence_residual": 2.6568562771340904e-16,
+      "maximum_projector_rank": 3,
+      "minimum_projector_rank": 0,
+      "n": 4,
+      "nontrivial_character_effect_top_eigenvalue": 0.2222222222222222,
+      "nontrivial_effect_identity_residual": 8.34874061940234e-17,
+      "orientation_projector_count": 4,
+      "orientation_subspace_dimension": 2,
+      "retained_trace_fraction": 0.7222222222222221,
+      "source": "physical-collision-free-wreath-fourier-block",
+      "status": "exact-orientation-subspace-fourier-filter",
+      "target_partition": [
+        3,
+        1
+      ]
+    },
+    {
+      "average_frame_top_eigenvalue": 3.820730025846339e-17,
+      "carrier_dimension": 18,
+      "common_range_annihilation_residual": 0.0,
+      "common_range_dimension": 0,
+      "control_id": "W4-8-2-2",
+      "exact_filter_identity_verified": true,
+      "fourier_kraus_completeness_residual": 3.820730025846337e-17,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_projector_idempotence_residual": 7.819158868230479e-17,
+      "maximum_projector_rank": 0,
+      "minimum_projector_rank": 0,
+      "n": 4,
+      "nontrivial_character_effect_top_eigenvalue": 1.6514481902519053e-33,
+      "nontrivial_effect_identity_residual": 3.820730025846338e-17,
+      "orientation_projector_count": 4,
+      "orientation_subspace_dimension": 2,
+      "retained_trace_fraction": 0.0,
+      "source": "physical-collision-free-wreath-fourier-block",
+      "status": "exact-orientation-subspace-fourier-filter",
+      "target_partition": [
+        2,
+        2
+      ]
+    },
+    {
+      "average_frame_top_eigenvalue": 0.3333333333333333,
+      "carrier_dimension": 27,
+      "common_range_annihilation_residual": 0.0,
+      "common_range_dimension": 0,
+      "control_id": "W4-8-2-1-1",
+      "exact_filter_identity_verified": true,
+      "fourier_kraus_completeness_residual": 8.823436723592599e-17,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_projector_idempotence_residual": 2.062092468967864e-16,
+      "maximum_projector_rank": 3,
+      "minimum_projector_rank": 0,
+      "n": 4,
+      "nontrivial_character_effect_top_eigenvalue": 0.22222222222222215,
+      "nontrivial_effect_identity_residual": 9.018734134036146e-17,
+      "orientation_projector_count": 4,
+      "orientation_subspace_dimension": 2,
+      "retained_trace_fraction": 0.7222222222222221,
+      "source": "physical-collision-free-wreath-fourier-block",
+      "status": "exact-orientation-subspace-fourier-filter",
+      "target_partition": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "average_frame_top_eigenvalue": 7.90898745988224e-18,
+      "carrier_dimension": 9,
+      "common_range_annihilation_residual": 0.0,
+      "common_range_dimension": 0,
+      "control_id": "W4-8-1-1-1-1",
+      "exact_filter_identity_verified": true,
+      "fourier_kraus_completeness_residual": 1.5395523310933674e-17,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_projector_idempotence_residual": 3.7638901366303607e-17,
+      "maximum_projector_rank": 0,
+      "minimum_projector_rank": 0,
+      "n": 4,
+      "nontrivial_character_effect_top_eigenvalue": 4.381149782702813e-34,
+      "nontrivial_effect_identity_residual": 1.5395523310933674e-17,
+      "orientation_projector_count": 4,
+      "orientation_subspace_dimension": 2,
+      "retained_trace_fraction": 0.0,
+      "source": "physical-collision-free-wreath-fourier-block",
+      "status": "exact-orientation-subspace-fourier-filter",
+      "target_partition": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "average_frame_top_eigenvalue": 1.6201777077964756e-17,
+      "carrier_dimension": 6,
+      "common_range_annihilation_residual": 0.0,
+      "common_range_dimension": 0,
+      "control_id": "W4-9-4",
+      "exact_filter_identity_verified": true,
+      "fourier_kraus_completeness_residual": 1.620177707796475e-17,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_projector_idempotence_residual": 6.942004940378904e-17,
+      "maximum_projector_rank": 0,
+      "minimum_projector_rank": 0,
+      "n": 4,
+      "nontrivial_character_effect_top_eigenvalue": 9.50380236690148e-34,
+      "nontrivial_effect_identity_residual": 1.6201777077964747e-17,
+      "orientation_projector_count": 4,
+      "orientation_subspace_dimension": 2,
+      "retained_trace_fraction": 0.0,
+      "source": "physical-collision-free-wreath-fourier-block",
+      "status": "exact-orientation-subspace-fourier-filter",
+      "target_partition": [
+        4
+      ]
+    },
+    {
+      "average_frame_top_eigenvalue": 0.25,
+      "carrier_dimension": 18,
+      "common_range_annihilation_residual": 0.0,
+      "common_range_dimension": 0,
+      "control_id": "W4-9-3-1",
+      "exact_filter_identity_verified": true,
+      "fourier_kraus_completeness_residual": 5.517838210942429e-17,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_projector_idempotence_residual": 1.817785091043244e-16,
+      "maximum_projector_rank": 1,
+      "minimum_projector_rank": 0,
+      "n": 4,
+      "nontrivial_character_effect_top_eigenvalue": 0.18749999999999994,
+      "nontrivial_effect_identity_residual": 5.372129640677357e-17,
+      "orientation_projector_count": 4,
+      "orientation_subspace_dimension": 2,
+      "retained_trace_fraction": 0.7499999999999993,
+      "source": "physical-collision-free-wreath-fourier-block",
+      "status": "exact-orientation-subspace-fourier-filter",
+      "target_partition": [
+        3,
+        1
+      ]
+    },
+    {
+      "average_frame_top_eigenvalue": 0.25000000000000006,
+      "carrier_dimension": 12,
+      "common_range_annihilation_residual": 0.0,
+      "common_range_dimension": 0,
+      "control_id": "W4-9-2-2",
+      "exact_filter_identity_verified": true,
+      "fourier_kraus_completeness_residual": 4.6921240964480514e-17,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_projector_idempotence_residual": 1.0029253269214831e-16,
+      "maximum_projector_rank": 3,
+      "minimum_projector_rank": 0,
+      "n": 4,
+      "nontrivial_character_effect_top_eigenvalue": 0.18750000000000003,
+      "nontrivial_effect_identity_residual": 4.692124096448052e-17,
+      "orientation_projector_count": 4,
+      "orientation_subspace_dimension": 2,
+      "retained_trace_fraction": 0.7499999999999999,
+      "source": "physical-collision-free-wreath-fourier-block",
+      "status": "exact-orientation-subspace-fourier-filter",
+      "target_partition": [
+        2,
+        2
+      ]
+    },
+    {
+      "average_frame_top_eigenvalue": 0.25000000000000006,
+      "carrier_dimension": 18,
+      "common_range_annihilation_residual": 0.0,
+      "common_range_dimension": 0,
+      "control_id": "W4-9-2-1-1",
+      "exact_filter_identity_verified": true,
+      "fourier_kraus_completeness_residual": 6.88929945853506e-17,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_projector_idempotence_residual": 2.0620924689678638e-16,
+      "maximum_projector_rank": 2,
+      "minimum_projector_rank": 0,
+      "n": 4,
+      "nontrivial_character_effect_top_eigenvalue": 0.18749999999999997,
+      "nontrivial_effect_identity_residual": 7.026093580311113e-17,
+      "orientation_projector_count": 4,
+      "orientation_subspace_dimension": 2,
+      "retained_trace_fraction": 0.7499999999999998,
+      "source": "physical-collision-free-wreath-fourier-block",
+      "status": "exact-orientation-subspace-fourier-filter",
+      "target_partition": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "average_frame_top_eigenvalue": 0.2500000000000002,
+      "carrier_dimension": 6,
+      "common_range_annihilation_residual": 0.0,
+      "common_range_dimension": 0,
+      "control_id": "W4-9-1-1-1-1",
+      "exact_filter_identity_verified": true,
+      "fourier_kraus_completeness_residual": 1.0412544897419696e-17,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_projector_idempotence_residual": 6.942004940378907e-17,
+      "maximum_projector_rank": 6,
+      "minimum_projector_rank": 0,
+      "n": 4,
+      "nontrivial_character_effect_top_eigenvalue": 0.1875000000000001,
+      "nontrivial_effect_identity_residual": 1.0412544897419696e-17,
+      "orientation_projector_count": 4,
+      "orientation_subspace_dimension": 2,
+      "retained_trace_fraction": 0.75,
+      "source": "physical-collision-free-wreath-fourier-block",
+      "status": "exact-orientation-subspace-fourier-filter",
+      "target_partition": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "average_frame_top_eigenvalue": 1.4231014780516892e-17,
+      "carrier_dimension": 6,
+      "common_range_annihilation_residual": 0.0,
+      "common_range_dimension": 0,
+      "control_id": "W4-10-4",
+      "exact_filter_identity_verified": true,
+      "fourier_kraus_completeness_residual": 1.4231014780516892e-17,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_projector_idempotence_residual": 6.942004940378907e-17,
+      "maximum_projector_rank": 0,
+      "minimum_projector_rank": 0,
+      "n": 4,
+      "nontrivial_character_effect_top_eigenvalue": 1.3552280588432898e-33,
+      "nontrivial_effect_identity_residual": 1.4231014780516892e-17,
+      "orientation_projector_count": 4,
+      "orientation_subspace_dimension": 2,
+      "retained_trace_fraction": 0.0,
+      "source": "physical-collision-free-wreath-fourier-block",
+      "status": "exact-orientation-subspace-fourier-filter",
+      "target_partition": [
+        4
+      ]
+    },
+    {
+      "average_frame_top_eigenvalue": 0.25000000000000006,
+      "carrier_dimension": 18,
+      "common_range_annihilation_residual": 0.0,
+      "common_range_dimension": 0,
+      "control_id": "W4-10-3-1",
+      "exact_filter_identity_verified": true,
+      "fourier_kraus_completeness_residual": 7.30705190089764e-17,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_projector_idempotence_residual": 2.6568562771340904e-16,
+      "maximum_projector_rank": 2,
+      "minimum_projector_rank": 0,
+      "n": 4,
+      "nontrivial_character_effect_top_eigenvalue": 0.18749999999999997,
+      "nontrivial_effect_identity_residual": 6.459110152079087e-17,
+      "orientation_projector_count": 4,
+      "orientation_subspace_dimension": 2,
+      "retained_trace_fraction": 0.7499999999999998,
+      "source": "physical-collision-free-wreath-fourier-block",
+      "status": "exact-orientation-subspace-fourier-filter",
+      "target_partition": [
+        3,
+        1
+      ]
+    },
+    {
+      "average_frame_top_eigenvalue": 0.25,
+      "carrier_dimension": 12,
+      "common_range_annihilation_residual": 0.0,
+      "common_range_dimension": 0,
+      "control_id": "W4-10-2-2",
+      "exact_filter_identity_verified": true,
+      "fourier_kraus_completeness_residual": 3.751208760241002e-17,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_projector_idempotence_residual": 1.0029253269214832e-16,
+      "maximum_projector_rank": 3,
+      "minimum_projector_rank": 0,
+      "n": 4,
+      "nontrivial_character_effect_top_eigenvalue": 0.18750000000000003,
+      "nontrivial_effect_identity_residual": 3.751208760241002e-17,
+      "orientation_projector_count": 4,
+      "orientation_subspace_dimension": 2,
+      "retained_trace_fraction": 0.7499999999999999,
+      "source": "physical-collision-free-wreath-fourier-block",
+      "status": "exact-orientation-subspace-fourier-filter",
+      "target_partition": [
+        2,
+        2
+      ]
+    },
+    {
+      "average_frame_top_eigenvalue": 0.25000000000000006,
+      "carrier_dimension": 18,
+      "common_range_annihilation_residual": 0.0,
+      "common_range_dimension": 0,
+      "control_id": "W4-10-2-1-1",
+      "exact_filter_identity_verified": true,
+      "fourier_kraus_completeness_residual": 5.867115821813313e-17,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_projector_idempotence_residual": 1.7897973674000946e-16,
+      "maximum_projector_rank": 1,
+      "minimum_projector_rank": 0,
+      "n": 4,
+      "nontrivial_character_effect_top_eigenvalue": 0.18749999999999992,
+      "nontrivial_effect_identity_residual": 5.358575338488267e-17,
+      "orientation_projector_count": 4,
+      "orientation_subspace_dimension": 2,
+      "retained_trace_fraction": 0.7499999999999997,
+      "source": "physical-collision-free-wreath-fourier-block",
+      "status": "exact-orientation-subspace-fourier-filter",
+      "target_partition": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "average_frame_top_eigenvalue": 0.25,
+      "carrier_dimension": 6,
+      "common_range_annihilation_residual": 0.0,
+      "common_range_dimension": 0,
+      "control_id": "W4-10-1-1-1-1",
+      "exact_filter_identity_verified": true,
+      "fourier_kraus_completeness_residual": 2.841483298057762e-17,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_projector_idempotence_residual": 6.942004940378907e-17,
+      "maximum_projector_rank": 6,
+      "minimum_projector_rank": 0,
+      "n": 4,
+      "nontrivial_character_effect_top_eigenvalue": 0.1875000000000001,
+      "nontrivial_effect_identity_residual": 2.841483298057762e-17,
+      "orientation_projector_count": 4,
+      "orientation_subspace_dimension": 2,
+      "retained_trace_fraction": 0.75,
+      "source": "physical-collision-free-wreath-fourier-block",
+      "status": "exact-orientation-subspace-fourier-filter",
+      "target_partition": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "average_frame_top_eigenvalue": 3.6898501982124956e-18,
+      "carrier_dimension": 6,
+      "common_range_annihilation_residual": 0.0,
+      "common_range_dimension": 0,
+      "control_id": "W4-11-4",
+      "exact_filter_identity_verified": true,
+      "fourier_kraus_completeness_residual": 9.353391048832471e-18,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_projector_idempotence_residual": 3.7638901366303607e-17,
+      "maximum_projector_rank": 0,
+      "minimum_projector_rank": 0,
+      "n": 4,
+      "nontrivial_character_effect_top_eigenvalue": 2.7897042743080836e-34,
+      "nontrivial_effect_identity_residual": 9.353391048832471e-18,
+      "orientation_projector_count": 4,
+      "orientation_subspace_dimension": 2,
+      "retained_trace_fraction": 0.0,
+      "source": "physical-collision-free-wreath-fourier-block",
+      "status": "exact-orientation-subspace-fourier-filter",
+      "target_partition": [
+        4
+      ]
+    },
+    {
+      "average_frame_top_eigenvalue": 0.25,
+      "carrier_dimension": 18,
+      "common_range_annihilation_residual": 0.0,
+      "common_range_dimension": 0,
+      "control_id": "W4-11-3-1",
+      "exact_filter_identity_verified": true,
+      "fourier_kraus_completeness_residual": 7.156191161001859e-17,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_projector_idempotence_residual": 2.656856277134091e-16,
+      "maximum_projector_rank": 2,
+      "minimum_projector_rank": 0,
+      "n": 4,
+      "nontrivial_character_effect_top_eigenvalue": 0.18749999999999992,
+      "nontrivial_effect_identity_residual": 6.494748669900979e-17,
+      "orientation_projector_count": 4,
+      "orientation_subspace_dimension": 2,
+      "retained_trace_fraction": 0.7499999999999996,
+      "source": "physical-collision-free-wreath-fourier-block",
+      "status": "exact-orientation-subspace-fourier-filter",
+      "target_partition": [
+        3,
+        1
+      ]
+    },
+    {
+      "average_frame_top_eigenvalue": 0.2500000000000001,
+      "carrier_dimension": 12,
+      "common_range_annihilation_residual": 0.0,
+      "common_range_dimension": 0,
+      "control_id": "W4-11-2-2",
+      "exact_filter_identity_verified": true,
+      "fourier_kraus_completeness_residual": 4.2090704846034676e-17,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_projector_idempotence_residual": 6.942004940378911e-17,
+      "maximum_projector_rank": 3,
+      "minimum_projector_rank": 0,
+      "n": 4,
+      "nontrivial_character_effect_top_eigenvalue": 0.18750000000000008,
+      "nontrivial_effect_identity_residual": 2.8653926573224924e-17,
+      "orientation_projector_count": 4,
+      "orientation_subspace_dimension": 2,
+      "retained_trace_fraction": 0.75,
+      "source": "physical-collision-free-wreath-fourier-block",
+      "status": "exact-orientation-subspace-fourier-filter",
+      "target_partition": [
+        2,
+        2
+      ]
+    },
+    {
+      "average_frame_top_eigenvalue": 0.24999999999999994,
+      "carrier_dimension": 18,
+      "common_range_annihilation_residual": 0.0,
+      "common_range_dimension": 0,
+      "control_id": "W4-11-2-1-1",
+      "exact_filter_identity_verified": true,
+      "fourier_kraus_completeness_residual": 5.75062929073012e-17,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_projector_idempotence_residual": 2.0620924689678638e-16,
+      "maximum_projector_rank": 2,
+      "minimum_projector_rank": 0,
+      "n": 4,
+      "nontrivial_character_effect_top_eigenvalue": 0.18749999999999992,
+      "nontrivial_effect_identity_residual": 5.64392300271652e-17,
+      "orientation_projector_count": 4,
+      "orientation_subspace_dimension": 2,
+      "retained_trace_fraction": 0.7499999999999998,
+      "source": "physical-collision-free-wreath-fourier-block",
+      "status": "exact-orientation-subspace-fourier-filter",
+      "target_partition": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "average_frame_top_eigenvalue": 3.6898501982124956e-18,
+      "carrier_dimension": 6,
+      "common_range_annihilation_residual": 0.0,
+      "common_range_dimension": 0,
+      "control_id": "W4-11-1-1-1-1",
+      "exact_filter_identity_verified": true,
+      "fourier_kraus_completeness_residual": 9.353391048832471e-18,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_projector_idempotence_residual": 3.7638901366303607e-17,
+      "maximum_projector_rank": 0,
+      "minimum_projector_rank": 0,
+      "n": 4,
+      "nontrivial_character_effect_top_eigenvalue": 2.7897042743080836e-34,
+      "nontrivial_effect_identity_residual": 9.353391048832471e-18,
+      "orientation_projector_count": 4,
+      "orientation_subspace_dimension": 2,
+      "retained_trace_fraction": 0.0,
+      "source": "physical-collision-free-wreath-fourier-block",
+      "status": "exact-orientation-subspace-fourier-filter",
+      "target_partition": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "average_frame_top_eigenvalue": 2.6204509535450322e-17,
+      "carrier_dimension": 18,
+      "common_range_annihilation_residual": 0.0,
+      "common_range_dimension": 0,
+      "control_id": "W4-12-4",
+      "exact_filter_identity_verified": true,
+      "fourier_kraus_completeness_residual": 2.6204509535450337e-17,
+      "labels": [
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_projector_idempotence_residual": 6.942004940378904e-17,
+      "maximum_projector_rank": 0,
+      "minimum_projector_rank": 0,
+      "n": 4,
+      "nontrivial_character_effect_top_eigenvalue": 1.0765538895256174e-33,
+      "nontrivial_effect_identity_residual": 2.620450953545034e-17,
+      "orientation_projector_count": 4,
+      "orientation_subspace_dimension": 2,
+      "retained_trace_fraction": 0.0,
+      "source": "physical-collision-free-wreath-fourier-block",
+      "status": "exact-orientation-subspace-fourier-filter",
+      "target_partition": [
+        4
+      ]
+    },
+    {
+      "average_frame_top_eigenvalue": 0.25000000000000006,
+      "carrier_dimension": 54,
+      "common_range_annihilation_residual": 0.0,
+      "common_range_dimension": 0,
+      "control_id": "W4-12-3-1",
+      "exact_filter_identity_verified": true,
+      "fourier_kraus_completeness_residual": 5.682231445169022e-17,
+      "labels": [
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_projector_idempotence_residual": 1.8177850910432448e-16,
+      "maximum_projector_rank": 3,
+      "minimum_projector_rank": 0,
+      "n": 4,
+      "nontrivial_character_effect_top_eigenvalue": 0.18749999999999997,
+      "nontrivial_effect_identity_residual": 5.616550452248878e-17,
+      "orientation_projector_count": 4,
+      "orientation_subspace_dimension": 2,
+      "retained_trace_fraction": 0.7499999999999996,
+      "source": "physical-collision-free-wreath-fourier-block",
+      "status": "exact-orientation-subspace-fourier-filter",
+      "target_partition": [
+        3,
+        1
+      ]
+    },
+    {
+      "average_frame_top_eigenvalue": 0.37499999999999994,
+      "carrier_dimension": 36,
+      "common_range_annihilation_residual": 0.0,
+      "common_range_dimension": 0,
+      "control_id": "W4-12-2-2",
+      "exact_filter_identity_verified": true,
+      "fourier_kraus_completeness_residual": 7.437202535437446e-17,
+      "labels": [
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_projector_idempotence_residual": 1.5102549940320282e-16,
+      "maximum_projector_rank": 9,
+      "minimum_projector_rank": 0,
+      "n": 4,
+      "nontrivial_character_effect_top_eigenvalue": 0.234375,
+      "nontrivial_effect_identity_residual": 7.531452759936601e-17,
+      "orientation_projector_count": 4,
+      "orientation_subspace_dimension": 2,
+      "retained_trace_fraction": 0.7272727272727272,
+      "source": "physical-collision-free-wreath-fourier-block",
+      "status": "exact-orientation-subspace-fourier-filter",
+      "target_partition": [
+        2,
+        2
+      ]
+    },
+    {
+      "average_frame_top_eigenvalue": 0.33333333333333337,
+      "carrier_dimension": 54,
+      "common_range_annihilation_residual": 0.0,
+      "common_range_dimension": 0,
+      "control_id": "W4-12-2-1-1",
+      "exact_filter_identity_verified": true,
+      "fourier_kraus_completeness_residual": 1.044300759147503e-16,
+      "labels": [
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_projector_idempotence_residual": 2.0620710512890091e-16,
+      "maximum_projector_rank": 6,
+      "minimum_projector_rank": 0,
+      "n": 4,
+      "nontrivial_character_effect_top_eigenvalue": 0.22222222222222218,
+      "nontrivial_effect_identity_residual": 1.0042527722065608e-16,
+      "orientation_projector_count": 4,
+      "orientation_subspace_dimension": 2,
+      "retained_trace_fraction": 0.7348484848484848,
+      "source": "physical-collision-free-wreath-fourier-block",
+      "status": "exact-orientation-subspace-fourier-filter",
+      "target_partition": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "average_frame_top_eigenvalue": 0.25000000000000006,
+      "carrier_dimension": 18,
+      "common_range_annihilation_residual": 0.0,
+      "common_range_dimension": 0,
+      "control_id": "W4-12-1-1-1-1",
+      "exact_filter_identity_verified": true,
+      "fourier_kraus_completeness_residual": 7.254464326417657e-17,
+      "labels": [
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_projector_idempotence_residual": 2.656856277134091e-16,
+      "maximum_projector_rank": 2,
+      "minimum_projector_rank": 0,
+      "n": 4,
+      "nontrivial_character_effect_top_eigenvalue": 0.18749999999999997,
+      "nontrivial_effect_identity_residual": 7.282027102989583e-17,
+      "orientation_projector_count": 4,
+      "orientation_subspace_dimension": 2,
+      "retained_trace_fraction": 0.7499999999999997,
+      "source": "physical-collision-free-wreath-fourier-block",
+      "status": "exact-orientation-subspace-fourier-filter",
+      "target_partition": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "average_frame_top_eigenvalue": 2.4487869479794923e-17,
+      "carrier_dimension": 18,
+      "common_range_annihilation_residual": 0.0,
+      "common_range_dimension": 0,
+      "control_id": "W4-13-4",
+      "exact_filter_identity_verified": true,
+      "fourier_kraus_completeness_residual": 2.448786947979492e-17,
+      "labels": [
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_projector_idempotence_residual": 7.819158868230476e-17,
+      "maximum_projector_rank": 0,
+      "minimum_projector_rank": 0,
+      "n": 4,
+      "nontrivial_character_effect_top_eigenvalue": 1.85397316657935e-33,
+      "nontrivial_effect_identity_residual": 2.4487869479794933e-17,
+      "orientation_projector_count": 4,
+      "orientation_subspace_dimension": 2,
+      "retained_trace_fraction": 0.0,
+      "source": "physical-collision-free-wreath-fourier-block",
+      "status": "exact-orientation-subspace-fourier-filter",
+      "target_partition": [
+        4
+      ]
+    },
+    {
+      "average_frame_top_eigenvalue": 0.3333333333333335,
+      "carrier_dimension": 54,
+      "common_range_annihilation_residual": 0.0,
+      "common_range_dimension": 0,
+      "control_id": "W4-13-3-1",
+      "exact_filter_identity_verified": true,
+      "fourier_kraus_completeness_residual": 8.77083918438366e-17,
+      "labels": [
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_projector_idempotence_residual": 2.656856277134092e-16,
+      "maximum_projector_rank": 6,
+      "minimum_projector_rank": 0,
+      "n": 4,
+      "nontrivial_character_effect_top_eigenvalue": 0.22222222222222224,
+      "nontrivial_effect_identity_residual": 9.03989849025772e-17,
+      "orientation_projector_count": 4,
+      "orientation_subspace_dimension": 2,
+      "retained_trace_fraction": 0.7361111111111108,
+      "source": "physical-collision-free-wreath-fourier-block",
+      "status": "exact-orientation-subspace-fourier-filter",
+      "target_partition": [
+        3,
+        1
+      ]
+    },
+    {
+      "average_frame_top_eigenvalue": 4.353109776351651e-17,
+      "carrier_dimension": 36,
+      "common_range_annihilation_residual": 0.0,
+      "common_range_dimension": 0,
+      "control_id": "W4-13-2-2",
+      "exact_filter_identity_verified": true,
+      "fourier_kraus_completeness_residual": 4.353109776351651e-17,
+      "labels": [
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_projector_idempotence_residual": 1.1304420839069093e-16,
+      "maximum_projector_rank": 0,
+      "minimum_projector_rank": 0,
+      "n": 4,
+      "nontrivial_character_effect_top_eigenvalue": 2.9436236964016718e-33,
+      "nontrivial_effect_identity_residual": 4.3531097763516515e-17,
+      "orientation_projector_count": 4,
+      "orientation_subspace_dimension": 2,
+      "retained_trace_fraction": 0.0,
+      "source": "physical-collision-free-wreath-fourier-block",
+      "status": "exact-orientation-subspace-fourier-filter",
+      "target_partition": [
+        2,
+        2
+      ]
+    },
+    {
+      "average_frame_top_eigenvalue": 0.33333333333333326,
+      "carrier_dimension": 54,
+      "common_range_annihilation_residual": 0.0,
+      "common_range_dimension": 0,
+      "control_id": "W4-13-2-1-1",
+      "exact_filter_identity_verified": true,
+      "fourier_kraus_completeness_residual": 9.116069863267408e-17,
+      "labels": [
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_projector_idempotence_residual": 2.0620710512890091e-16,
+      "maximum_projector_rank": 6,
+      "minimum_projector_rank": 0,
+      "n": 4,
+      "nontrivial_character_effect_top_eigenvalue": 0.22222222222222215,
+      "nontrivial_effect_identity_residual": 9.354181481498301e-17,
+      "orientation_projector_count": 4,
+      "orientation_subspace_dimension": 2,
+      "retained_trace_fraction": 0.7361111111111109,
+      "source": "physical-collision-free-wreath-fourier-block",
+      "status": "exact-orientation-subspace-fourier-filter",
+      "target_partition": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "average_frame_top_eigenvalue": 2.361371378762535e-17,
+      "carrier_dimension": 18,
+      "common_range_annihilation_residual": 0.0,
+      "common_range_dimension": 0,
+      "control_id": "W4-13-1-1-1-1",
+      "exact_filter_identity_verified": true,
+      "fourier_kraus_completeness_residual": 2.3613713787625343e-17,
+      "labels": [
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_projector_idempotence_residual": 7.819158868230482e-17,
+      "maximum_projector_rank": 0,
+      "minimum_projector_rank": 0,
+      "n": 4,
+      "nontrivial_character_effect_top_eigenvalue": 1.5156181179267325e-33,
+      "nontrivial_effect_identity_residual": 2.3613713787625346e-17,
+      "orientation_projector_count": 4,
+      "orientation_subspace_dimension": 2,
+      "retained_trace_fraction": 0.0,
+      "source": "physical-collision-free-wreath-fourier-block",
+      "status": "exact-orientation-subspace-fourier-filter",
+      "target_partition": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "average_frame_top_eigenvalue": 2.913503792707645e-17,
+      "carrier_dimension": 18,
+      "common_range_annihilation_residual": 0.0,
+      "common_range_dimension": 0,
+      "control_id": "W4-14-4",
+      "exact_filter_identity_verified": true,
+      "fourier_kraus_completeness_residual": 2.9135037927076423e-17,
+      "labels": [
+        [
+          [
+            3,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_projector_idempotence_residual": 7.819158868230478e-17,
+      "maximum_projector_rank": 0,
+      "minimum_projector_rank": 0,
+      "n": 4,
+      "nontrivial_character_effect_top_eigenvalue": 1.8300754853901485e-33,
+      "nontrivial_effect_identity_residual": 2.9135037927076435e-17,
+      "orientation_projector_count": 4,
+      "orientation_subspace_dimension": 2,
+      "retained_trace_fraction": 0.0,
+      "source": "physical-collision-free-wreath-fourier-block",
+      "status": "exact-orientation-subspace-fourier-filter",
+      "target_partition": [
+        4
+      ]
+    },
+    {
+      "average_frame_top_eigenvalue": 0.3333333333333333,
+      "carrier_dimension": 54,
+      "common_range_annihilation_residual": 0.0,
+      "common_range_dimension": 0,
+      "control_id": "W4-14-3-1",
+      "exact_filter_identity_verified": true,
+      "fourier_kraus_completeness_residual": 8.295049433063513e-17,
+      "labels": [
+        [
+          [
+            3,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_projector_idempotence_residual": 2.656856277134091e-16,
+      "maximum_projector_rank": 6,
+      "minimum_projector_rank": 0,
+      "n": 4,
+      "nontrivial_character_effect_top_eigenvalue": 0.22222222222222218,
+      "nontrivial_effect_identity_residual": 7.632389444594533e-17,
+      "orientation_projector_count": 4,
+      "orientation_subspace_dimension": 2,
+      "retained_trace_fraction": 0.7348484848484845,
+      "source": "physical-collision-free-wreath-fourier-block",
+      "status": "exact-orientation-subspace-fourier-filter",
+      "target_partition": [
+        3,
+        1
+      ]
+    },
+    {
+      "average_frame_top_eigenvalue": 0.375,
+      "carrier_dimension": 36,
+      "common_range_annihilation_residual": 0.0,
+      "common_range_dimension": 0,
+      "control_id": "W4-14-2-2",
+      "exact_filter_identity_verified": true,
+      "fourier_kraus_completeness_residual": 6.967965503623811e-17,
+      "labels": [
+        [
+          [
+            3,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_projector_idempotence_residual": 1.5102549940320282e-16,
+      "maximum_projector_rank": 9,
+      "minimum_projector_rank": 0,
+      "n": 4,
+      "nontrivial_character_effect_top_eigenvalue": 0.2343750000000001,
+      "nontrivial_effect_identity_residual": 8.914298740922209e-17,
+      "orientation_projector_count": 4,
+      "orientation_subspace_dimension": 2,
+      "retained_trace_fraction": 0.7272727272727272,
+      "source": "physical-collision-free-wreath-fourier-block",
+      "status": "exact-orientation-subspace-fourier-filter",
+      "target_partition": [
+        2,
+        2
+      ]
+    },
+    {
+      "average_frame_top_eigenvalue": 0.25,
+      "carrier_dimension": 54,
+      "common_range_annihilation_residual": 0.0,
+      "common_range_dimension": 0,
+      "control_id": "W4-14-2-1-1",
+      "exact_filter_identity_verified": true,
+      "fourier_kraus_completeness_residual": 7.778150260232498e-17,
+      "labels": [
+        [
+          [
+            3,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_projector_idempotence_residual": 1.9926708809548254e-16,
+      "maximum_projector_rank": 3,
+      "minimum_projector_rank": 0,
+      "n": 4,
+      "nontrivial_character_effect_top_eigenvalue": 0.1875000000000001,
+      "nontrivial_effect_identity_residual": 8.038513620148609e-17,
+      "orientation_projector_count": 4,
+      "orientation_subspace_dimension": 2,
+      "retained_trace_fraction": 0.7499999999999994,
+      "source": "physical-collision-free-wreath-fourier-block",
+      "status": "exact-orientation-subspace-fourier-filter",
+      "target_partition": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "average_frame_top_eigenvalue": 0.2499999999999998,
+      "carrier_dimension": 18,
+      "common_range_annihilation_residual": 0.0,
+      "common_range_dimension": 0,
+      "control_id": "W4-14-1-1-1-1",
+      "exact_filter_identity_verified": true,
+      "fourier_kraus_completeness_residual": 7.209216099191746e-17,
+      "labels": [
+        [
+          [
+            3,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_projector_idempotence_residual": 2.656856277134091e-16,
+      "maximum_projector_rank": 2,
+      "minimum_projector_rank": 0,
+      "n": 4,
+      "nontrivial_character_effect_top_eigenvalue": 0.18749999999999992,
+      "nontrivial_effect_identity_residual": 7.269927522563382e-17,
+      "orientation_projector_count": 4,
+      "orientation_subspace_dimension": 2,
+      "retained_trace_fraction": 0.7499999999999997,
+      "source": "physical-collision-free-wreath-fourier-block",
+      "status": "exact-orientation-subspace-fourier-filter",
+      "target_partition": [
+        1,
+        1,
+        1,
+        1
+      ]
+    }
+  ],
+  "created_at": "2026-08-05T23:16:12.415131+00:00",
+  "falsifiers_triggered": [
+    "The common-core spike can be addressed at unit scale by coherent orientation interference; generic low-pass phase estimation is not the only algebraic route.",
+    "Disjoint branchwise isotypic deletion is unnecessary for the filter identity, so the local-filter no-go does not apply.",
+    "No speedup is claimed until postfilter scaling, retained hidden-label information, and decoding are proved."
+  ],
+  "headline_metrics": {
+    "all_n_postfilter_norm_theorem_count": 0,
+    "common_range_control_count": 1,
+    "exact_common_core_annihilation_theorem_count": 1,
+    "finite_control_count": 76,
+    "finite_validation_failure_count": 0,
+    "maximum_common_range_annihilation_residual": 0.0,
+    "maximum_common_range_dimension": 1,
+    "maximum_retained_trace_fraction": 0.75,
+    "minimum_retained_trace_fraction": 0.0,
+    "new_quantum_algorithm_count": 0,
+    "orientation_subspace_fourier_filter_theorem_count": 1,
+    "physical_w4_control_count": 75,
+    "polynomial_controlled_invariant_projector_count": 1,
+    "polynomial_hidden_permutation_decoder_count": 0
+  },
+  "proof_obligations": [
+    {
+      "obligation": "fourier_kraus_completeness",
+      "resolution": "Character orthogonality gives sum_z G_z^*G_z=|H|^-1 sum_h E_h=F_H exactly.",
+      "resolved": true
+    },
+    {
+      "obligation": "nontrivial_character_effect",
+      "resolution": "The trivial Kraus operator is G_0=F_H, hence accepting all other characters has effect F_H-F_H^2.",
+      "resolved": true
+    },
+    {
+      "obligation": "common_core_annihilation",
+      "resolution": "Every common vector has F_H eigenvalue one and is in the kernel of F_H-F_H^2.",
+      "resolved": true
+    },
+    {
+      "obligation": "coherent_controlled_invariant_projector",
+      "resolution": "self_dual_wreath_invariant_projector_circuit.py proves a polynomial projected encoding using uniform group averaging, reversible left multiplication, and Beals' S_n QFT.",
+      "resolved": true
+    },
+    {
+      "obligation": "end_to_end_hidden_label_success",
+      "resolution": "The local block effect is not yet composed with a complete covariant hidden-permutation measurement and decoder.",
+      "resolved": false
+    }
+  ],
+  "status": "unit-scale-common-core-filter-circuit-schema-postfilter-open",
+  "summary": "Constructed a coherent orientation-character filter with effect F_H-F_H^2 that exactly removes selected common cores without factorial-scale spectral estimation.",
+  "theorem_contract": {
+    "accepted_effect": "Accepting z!=0 implements D_H=F_H-F_H^2, with spectrum lambda(1-lambda) in [0,1/4].",
+    "coherent_kraus": "G_z=|H|^-1 sum_h (-1)^(z.h)E_h after a binary Fourier transform of the orientation control.",
+    "common_core": "intersection_h Ran(E_h) is the eigenvalue-one space of F_H and is annihilated exactly by D_H.",
+    "completeness": "sum_z G_z^*G_z=F_H.",
+    "implementation_boundary": "Efficient uniform-mask preparation and binary Fourier transform are elementary; controlled E_h has a polynomial projected circuit. Postfilter information is the boundary.",
+    "orientation_family": "H=F_2^r with projectors E_h.",
+    "scale_bypass": "The selected family is normalized internally, so its common core sits at eigenvalue one rather than |H|/2^k."
+  }
+}

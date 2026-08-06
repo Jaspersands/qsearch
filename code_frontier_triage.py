@@ -53,6 +53,15 @@ CODE_SCHUR_FILTRATION_PATH = CODE_EQUIVALENCE_DIR / "code_schur_filtration.json"
 CODE_CLOSURE_ATTACK_PATH = CODE_EQUIVALENCE_DIR / "code_closure_attack.json"
 CFI_CODE_REDUCTION_PATH = CODE_EQUIVALENCE_DIR / "cfi_code_reduction.json"
 HULL_PROJECTOR_REDUCTION_PATH = CODE_EQUIVALENCE_DIR / "code_hull_projector_reduction.json"
+SELF_DUAL_CODE_BOUNDARY_PATH = CODE_EQUIVALENCE_DIR / "self_dual_code_boundary_search.json"
+SELF_DUAL_LOCAL_OBSTRUCTION_PATH = CODE_EQUIVALENCE_DIR / "self_dual_local_profile_obstruction.json"
+SELF_DUAL_GLOBAL_ORBIT_PATH = CODE_EQUIVALENCE_DIR / "self_dual_global_orbit_audit.json"
+SELF_DUAL_HSP_APPLICABILITY_PATH = Path("research/representation/self_dual_code_hsp_applicability.json")
+SELF_DUAL_ROWSPACE_HSP_PATH = Path("research/representation/self_dual_rowspace_hsp_reduction.json")
+SELF_DUAL_AUTOMORPHISM_PATH = CODE_EQUIVALENCE_DIR / "self_dual_automorphism_workbench.json"
+SELF_DUAL_HIGH_ORDER_AUTOMORPHISM_PATH = (
+    CODE_EQUIVALENCE_DIR / "self_dual_high_order_automorphism_resolver.json"
+)
 
 
 @dataclass(frozen=True)
@@ -99,6 +108,7 @@ def _classify_status(status: str) -> str:
         or "classically-resolved" in lower
         or "collapses-to-gi" in lower
         or "reduced-to-gi" in lower
+        or "classically-separated" in lower
         or "classical" in lower and "distinguish" in lower
     ):
         return "dequantizing"
@@ -167,6 +177,20 @@ def _row_id_for_record(record: dict[str, Any], source: str, list_key: str) -> tu
         return f"rank-metric-family-{spec.get('id', 'unknown-rank-metric-family')}", "binary-expanded-rank-metric-family"
     if source == "code_incidence_resolver":
         return str(record.get("triage_row_id", "unknown-incidence-family")), str(record.get("row_family", "code-pair"))
+    if source == "self_dual_code_boundary_search":
+        return f"self-dual-family-{spec.get('id', 'unknown-self-dual-family')}", "growing-hull-self-dual-code-family"
+    if source == "self_dual_local_profile_obstruction":
+        return f"self-dual-family-{record.get('family_id', 'unknown-self-dual-family')}", "growing-hull-self-dual-code-family"
+    if source == "self_dual_global_orbit_audit":
+        return f"self-dual-family-{record.get('family_id', 'unknown-self-dual-family')}", "growing-hull-self-dual-code-family"
+    if source == "self_dual_hsp_applicability":
+        return f"self-dual-family-{record.get('family_id', 'unknown-self-dual-family')}", "growing-hull-self-dual-code-family"
+    if source == "self_dual_rowspace_hsp_reduction":
+        return f"self-dual-family-{record.get('family_id', 'unknown-self-dual-family')}", "growing-hull-self-dual-code-family"
+    if source == "self_dual_automorphism_workbench":
+        return f"self-dual-family-{record.get('family_id', 'unknown-self-dual-family')}", "growing-hull-self-dual-code-family"
+    if source == "self_dual_high_order_automorphism_resolver":
+        return f"self-dual-family-{record.get('family_id', 'unknown-self-dual-family')}", "growing-hull-self-dual-code-family"
     if source == "affine_geometry_code_search":
         return f"ag-family-{spec.get('id', 'unknown-ag-family')}", "affine-geometry-code-family"
     if source == "projective_geometry_code_search":
@@ -288,6 +312,18 @@ def build_code_frontier_triage() -> CodeFrontierTriageReport:
     _collect_records(rows, REED_MULLER_CODE_SEARCH_PATH, "reed_muller_code_search")
     _collect_records(rows, RANK_METRIC_CODE_SEARCH_PATH, "rank_metric_code_search")
     _collect_records(rows, CODE_INCIDENCE_RESOLVER_PATH, "code_incidence_resolver", list_key="family_records")
+    _collect_records(rows, SELF_DUAL_CODE_BOUNDARY_PATH, "self_dual_code_boundary_search", list_key="family_records")
+    _collect_records(rows, SELF_DUAL_LOCAL_OBSTRUCTION_PATH, "self_dual_local_profile_obstruction", list_key="family_records")
+    _collect_records(rows, SELF_DUAL_GLOBAL_ORBIT_PATH, "self_dual_global_orbit_audit", list_key="family_records")
+    _collect_records(rows, SELF_DUAL_HSP_APPLICABILITY_PATH, "self_dual_hsp_applicability", list_key="family_records")
+    _collect_records(rows, SELF_DUAL_ROWSPACE_HSP_PATH, "self_dual_rowspace_hsp_reduction", list_key="family_records")
+    _collect_records(rows, SELF_DUAL_AUTOMORPHISM_PATH, "self_dual_automorphism_workbench", list_key="family_records")
+    _collect_records(
+        rows,
+        SELF_DUAL_HIGH_ORDER_AUTOMORPHISM_PATH,
+        "self_dual_high_order_automorphism_resolver",
+        list_key="family_records",
+    )
     _collect_records(rows, AFFINE_GEOMETRY_CODE_SEARCH_PATH, "affine_geometry_code_search")
     _collect_records(rows, PROJECTIVE_GEOMETRY_CODE_SEARCH_PATH, "projective_geometry_code_search")
     _collect_records(rows, CODE_SCHUR_FILTRATION_PATH, "code_schur_filtration", list_key="family_records")
