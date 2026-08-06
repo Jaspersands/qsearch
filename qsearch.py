@@ -536,6 +536,24 @@ from self_dual_wreath_pair_core_carrier_factorization import (
 from self_dual_wreath_multistar_degree_obstruction import (
     write_multistar_degree_obstruction_report,
 )
+from self_dual_wreath_pair_quotient_overlap import (
+    write_pair_quotient_overlap_report,
+)
+from self_dual_wreath_augmented_common_core_cech import (
+    write_augmented_common_core_cech_report,
+)
+from self_dual_wreath_common_core_atomization import (
+    write_common_core_atomization_report,
+)
+from self_dual_wreath_common_core_cech_laplacian import (
+    write_common_core_cech_laplacian_report,
+)
+from self_dual_wreath_pair_core_recoupling_boundary import (
+    write_pair_core_recoupling_boundary_report,
+)
+from self_dual_wreath_recursive_pair_generation import (
+    write_recursive_pair_generation_report,
+)
 from coset_strong_fourier_information_scaling import (
     write_strong_fourier_information_scaling_report,
 )
@@ -7030,6 +7048,195 @@ def command_code_wreath_multistar_degree(
     return 0
 
 
+def command_code_wreath_pair_quotient_overlap(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_pair_quotient_overlap_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Pair-core quotient overlap complete")
+    print(
+        "Artifact: research/representation/"
+        "self_dual_wreath_pair_quotient_overlap.json"
+    )
+    print(
+        "S6 min gap / S6 phase certificates / S6 merges: "
+        f"{metrics['s6_minimum_exact_pair_quotient_gap']:.6g}/"
+        f"{metrics['s6_phase_only_certificate_count']}/"
+        f"{metrics['s6_affine_merge_audit_count']}"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_wreath_recursive_pair_generation(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_recursive_pair_generation_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Recursive pair generation complete")
+    print(
+        "Artifact: research/representation/"
+        "self_dual_wreath_recursive_pair_generation.json"
+    )
+    print(
+        "S5 affine nodes / emergent H0 nodes / S5 portfolios: "
+        f"{metrics['s5_affine_node_audit_count']}/"
+        f"{metrics['s5_emergent_h0_node_count']}/"
+        f"{metrics['s5_globally_distinct_portfolio_count']}"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_wreath_augmented_common_core_cech(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_augmented_common_core_cech_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Augmented common-core Cech complex complete")
+    print(
+        "Artifact: research/representation/"
+        "self_dual_wreath_augmented_common_core_cech.json"
+    )
+    print(
+        "W3 distinct/repeated H0 dim / W5 H0 dim / Cube min Hodge eval: "
+        f"{metrics['w3_distinct_emergent_h0_dimension']}/"
+        f"{metrics['w3_repeated_emergent_h0_dimension']}/"
+        f"{metrics['w5_emergent_h0_dimension']}/"
+        f"{metrics['depth_three_cube_minimum_positive_hodge_eigenvalue']:.6g}"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_wreath_common_core_cech(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_common_core_cech_laplacian_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Common-core Cech complex Laplacian complete")
+    print(
+        "Artifact: research/representation/"
+        "self_dual_wreath_common_core_cech_laplacian.json"
+    )
+    print(
+        "Min positive eval / max condition number / emergent H1 dim: "
+        f"{metrics['minimum_positive_pair_laplacian_eigenvalue']:.6g}/"
+        f"{metrics['maximum_pair_laplacian_condition_number']:.6g}/"
+        f"{metrics['finite_emergent_pair_cycle_homology_dimension']}"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_wreath_pair_core_recoupling(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_pair_core_recoupling_boundary_report(
+        screen_control_limit=args.limit,
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Pair-core recoupling boundary analysis complete")
+    print(
+        "Artifact: research/representation/"
+        "self_dual_wreath_pair_core_recoupling_boundary.json"
+    )
+    print(
+        "Screened stars / controls / min endpoint gap / unexpected correlations: "
+        f"{metrics['screened_pair_core_star_count']}/"
+        f"{metrics['screened_control_count']}/"
+        f"{metrics['selected_minimum_certified_endpoint_gap']:.6g}/"
+        f"{metrics['screened_unexpected_correlation_count']}"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_wreath_common_core_atomization(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_common_core_atomization_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Common-core atomization complete")
+    print(
+        "Artifact: research/representation/"
+        "self_dual_wreath_common_core_atomization.json"
+    )
+    print(
+        "Controls / crossing atoms / max commutator norm: "
+        f"{metrics['finite_control_count']}/"
+        f"{metrics['finite_crossing_atom_count']}/"
+        f"{metrics['maximum_pair_core_projector_commutator_norm']:.6g}"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
 def command_coset_strong_fourier_information(
     args: argparse.Namespace,
 ) -> int:
@@ -13145,6 +13352,102 @@ def build_parser() -> argparse.ArgumentParser:
     )
     code_wreath_multistar_degree.set_defaults(
         func=command_code_wreath_multistar_degree
+    )
+
+    code_wreath_pair_quotient_overlap = subparsers.add_parser(
+        "code-wreath-pair-quotient-overlap",
+        help=(
+            "Audit the exact residual principal-angle gap after quotienting "
+            "all crossing pair cores."
+        ),
+    )
+    code_wreath_pair_quotient_overlap.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    code_wreath_pair_quotient_overlap.set_defaults(
+        func=command_code_wreath_pair_quotient_overlap
+    )
+
+    code_wreath_recursive_pair_generation = subparsers.add_parser(
+        "code-wreath-recursive-pair-generation",
+        help=(
+            "Verify the exact recursive H0 short-exact sequence and exhaust "
+            "all S5 affine boundary nodes."
+        ),
+    )
+    code_wreath_recursive_pair_generation.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    code_wreath_recursive_pair_generation.set_defaults(
+        func=command_code_wreath_recursive_pair_generation
+    )
+
+    code_wreath_augmented_common_core_cech = subparsers.add_parser(
+        "code-wreath-augmented-common-core-cech",
+        help=(
+            "Audit the augmented common-core Cech complex with leaf "
+            "synthesis."
+        ),
+    )
+    code_wreath_augmented_common_core_cech.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    code_wreath_augmented_common_core_cech.set_defaults(
+        func=command_code_wreath_augmented_common_core_cech
+    )
+
+    code_wreath_common_core_cech = subparsers.add_parser(
+        "code-wreath-common-core-cech",
+        help=(
+            "Verify exact pair-cycle resolution on the relative "
+            "common-core Cech complex."
+        ),
+    )
+    code_wreath_common_core_cech.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    code_wreath_common_core_cech.set_defaults(
+        func=command_code_wreath_common_core_cech
+    )
+
+    code_wreath_pair_core_recoupling = subparsers.add_parser(
+        "code-wreath-pair-core-recoupling",
+        help=(
+            "Analyze local scalar recouplings and screen S6 pair-core "
+            "correlations."
+        ),
+    )
+    code_wreath_pair_core_recoupling.add_argument(
+        "--limit",
+        type=int,
+        default=180,
+        help="Maximum S6 controls to screen.",
+    )
+    code_wreath_pair_core_recoupling.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    code_wreath_pair_core_recoupling.set_defaults(
+        func=command_code_wreath_pair_core_recoupling
+    )
+
+    code_wreath_common_core_atomization = subparsers.add_parser(
+        "code-wreath-common-core-atomization",
+        help=(
+            "Construct exact parity intertwiners and verify the relative "
+            "Cech atom formula."
+        ),
+    )
+    code_wreath_common_core_atomization.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    code_wreath_common_core_atomization.set_defaults(
+        func=command_code_wreath_common_core_atomization
     )
 
     coset_strong_fourier_information = subparsers.add_parser(

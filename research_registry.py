@@ -7718,6 +7718,315 @@ def seed_candidate_records() -> tuple[list[CandidateRecord], list[ExperimentReco
             ],
         ),
         ExperimentRecord(
+            id="EXP-CODE-SELF-DUAL-WREATH-PAIR-QUOTIENT-OVERLAP",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Exact pair-core quotient overlap",
+            status="planned",
+            hypothesis=(
+                "Reduced pair-rich augmented H0 to the residual principal angle "
+                "after removing the physical span of all crossing pair cores."
+            ),
+            protocol=(
+                "Verify that after internal child dependencies are quotiented, "
+                "crossing pair relations generate exactly K, and the cross H0 "
+                "quotient vanishes iff the principal correlation between A minus "
+                "K and B minus K is strictly below one."
+            ),
+            positive_signal=(
+                "The exact pair-core quotient overlap criterion is verified and "
+                "a finite phase-only residual certificate exists."
+            ),
+            falsifiers=[
+                "Raw pair weights are not invariant under the exact common-core quotient.",
+                "Finite pair generation does not imply a uniform residual principal-angle gap.",
+            ],
+            metrics=[
+                "all_n_pair_quotient_gap_count",
+                "finite_control_count",
+                "finite_pair_quotient_audit_failure_count",
+                "finite_phase_only_certificate_count",
+                "new_quantum_algorithm_count",
+                "pair_core_quotient_overlap_theorem_count",
+                "s6_affine_merge_audit_count",
+                "s6_emergent_cross_dependency_merge_count",
+                "s6_minimum_exact_pair_quotient_gap",
+                "s6_phase_only_certificate_count",
+                "w3_distinct_emergent_dimension",
+                "w3_repeated_emergent_dimension",
+                "w5_pair_quotient_gap",
+                "w5_phase_only_exact_quotient_gap",
+                "w5_phase_only_sign_blind_bound",
+            ],
+            dependencies=[
+                "self_dual_wreath_pair_quotient_overlap.py",
+            ],
+            next_actions=[
+                "Run qsearch.py code-wreath-pair-quotient-overlap.",
+            ],
+        ),
+        ExperimentRecord(
+            id="EXP-CODE-SELF-DUAL-WREATH-RECURSIVE-PAIR-GENERATION",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Recursive pair generation",
+            status="planned",
+            hypothesis=(
+                "Derived the exact recursive H0 decomposition and exhausted every "
+                "affine node in all globally distinct three-label S5 portfolios; "
+                "the remaining all-n gate is the pair-rich cross quotient."
+            ),
+            protocol=(
+                "Verify that H0(parent) is an extension of H0(left) direct_sum "
+                "H0(right) by the cross dependency quotient W/W_pair, and audit "
+                "all 11025 affine nodes over every globally distinct three-label S5 "
+                "portfolio."
+            ),
+            positive_signal=(
+                "Direct Gram quotients agree with the short-exact-sequence "
+                "dimension recursion and all 11025 affine nodes over every "
+                "globally distinct three-label S5 portfolio have H0=0."
+            ),
+            falsifiers=[
+                "Root-only pair-generation checks are insufficient for a local affine hierarchy.",
+                "Common-free weighted exclusion cannot certify pair-rich nodes without an exact quotient.",
+                "Finite S5 exactness does not imply a uniform asymptotic quotient gap.",
+            ],
+            metrics=[
+                "all_n_pair_generation_theorem_count",
+                "finite_recursive_control_count",
+                "finite_recursive_identity_failure_count",
+                "new_quantum_algorithm_count",
+                "recursive_h0_short_exact_sequence_theorem_count",
+                "s5_affine_node_audit_count",
+                "s5_emergent_h0_node_count",
+                "s5_globally_distinct_portfolio_count",
+                "w3_distinct_root_h0_dimension",
+                "w3_repeated_root_h0_dimension",
+                "w5_root_h0_dimension",
+            ],
+            dependencies=[
+                "self_dual_wreath_recursive_pair_generation.py",
+            ],
+            next_actions=[
+                "Run qsearch.py code-wreath-recursive-pair-generation.",
+            ],
+        ),
+        ExperimentRecord(
+            id="EXP-CODE-SELF-DUAL-WREATH-AUGMENTED-COMMON-CORE-CECH",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Augmented common-core Cech complex",
+            status="planned",
+            hypothesis=(
+                "Augmented the common-core complex with leaf synthesis, recovered "
+                "the known W3 emergent dependency as H0, and separated that gate "
+                "from positive-degree pair-cycle exactness."
+            ),
+            protocol=(
+                "Verify that D_0 synthesizes leaf-range coefficients into the "
+                "physical carrier, and ker(D_p^*D_p + D_(p+1)D_(p+1)^*) is "
+                "canonically isomorphic to H_p."
+            ),
+            positive_signal=(
+                "The augmented complex audits the dependency quotient omitted by a "
+                "pair-core-only complex, and selected n>=5 controls pass."
+            ),
+            falsifiers=[
+                "Vanishing H1 in the pair-core complex does not imply vanishing H0 in the augmented dependency complex.",
+                "A full depth-three commuting cube is not evidence for noncommuting all-depth recoupling exactness.",
+            ],
+            metrics=[
+                "all_n_augmented_cech_exactness_count",
+                "coherent_augmented_cech_transform_count",
+                "depth_three_cube_chain_degree_count",
+                "depth_three_cube_maximum_homology_dimension",
+                "depth_three_cube_minimum_positive_hodge_eigenvalue",
+                "finite_augmented_cech_audit_failure_count",
+                "finite_control_count",
+                "finite_emergent_h0_control_count",
+                "new_quantum_algorithm_count",
+                "w3_distinct_emergent_h0_dimension",
+                "w3_repeated_emergent_h0_dimension",
+                "w5_emergent_h0_dimension",
+            ],
+            dependencies=[
+                "self_dual_wreath_augmented_common_core_cech.py",
+            ],
+            next_actions=[
+                "Run qsearch.py code-wreath-augmented-common-core-cech.",
+            ],
+        ),
+        ExperimentRecord(
+            id="EXP-CODE-SELF-DUAL-WREATH-COMMON-CORE-CECH-LAPLACIAN",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Common-core Cech complex Laplacian",
+            status="planned",
+            hypothesis=(
+                "Built the relative common-core Cech complex and verified exact "
+                "pair-cycle resolution on commuting, noncommuting, and dense S6 "
+                "affine controls through eight orientations."
+            ),
+            protocol=(
+                "Verify that D_p is the alternating sum of exact common-range "
+                "inclusion intertwiners and D_1^*D_1 is the pair-relation Gram."
+            ),
+            positive_signal=(
+                "Every pair-relation kernel vector is generated by triple common "
+                "cores, and higher common cores generate exact pair-cycle null "
+                "vectors."
+            ),
+            falsifiers=[
+                "Absolute-value recoupling graphs can be inconclusive even when the exact phase-sensitive quotient is perfectly conditioned.",
+                "Higher common cores are required to identify pair-relation cycle kernels before spectral comparison.",
+                "Finite exactness of a four-leaf Cech complex is not an all-depth theorem or circuit construction.",
+                "Pair-cycle exactness does not test emergent leaf-dependency H0.",
+            ],
+            metrics=[
+                "all_depth_phase_sensitive_laplacian_gap_count",
+                "all_n_cech_exactness_count",
+                "coherent_cech_transform_count",
+                "dense_control_exact_grading_defect_norm",
+                "dense_control_maximum_pair_laplacian_eigenvalue",
+                "dense_control_minimum_positive_pair_laplacian_eigenvalue",
+                "dense_control_sign_blind_endpoint_gap_certificate_count",
+                "finite_cech_laplacian_audit_failure_count",
+                "finite_control_count",
+                "finite_emergent_pair_cycle_homology_dimension",
+                "finite_higher_common_core_count",
+                "finite_pair_core_count",
+                "finite_pair_relation_kernel_dimension",
+                "finite_triple_boundary_rank",
+                "maximum_pair_laplacian_condition_number",
+                "minimum_positive_pair_laplacian_eigenvalue",
+                "new_quantum_algorithm_count",
+                "pair_relation_laplacian_identity_count",
+                "relative_common_core_cech_complex_theorem_count",
+            ],
+            dependencies=[
+                "self_dual_wreath_common_core_cech_laplacian.py",
+            ],
+            next_actions=[
+                "Run qsearch.py code-wreath-common-core-cech.",
+            ],
+        ),
+        ExperimentRecord(
+            id="EXP-CODE-SELF-DUAL-WREATH-PAIR-CORE-RECOUPLING-BOUNDARY",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Pair-core recoupling boundary analysis",
+            status="planned",
+            hypothesis=(
+                "The first noncommuting pair-core blocks are locally well conditioned "
+                "and carrier-structured, but no theorem controls many-star accumulation "
+                "or compiles the recoupling basis."
+            ),
+            protocol=(
+                "Verify exact scalar-star spectra for carriers 5, 9, and 10; "
+                "screen S6 star pairs for non-reciprocal values or 1/(n-1) bound "
+                "violations."
+            ),
+            positive_signal=(
+                "Open and closed scalar star formulas match direct Cech spectra, "
+                "and all screened S6 recouplings are reciprocal-carrier contractions."
+            ),
+            falsifiers=[
+                "A finite nonhalf channel need not be ill conditioned; the scalar-star counterexamples stay in a constant interval.",
+                "Exact half-balance is unnecessary if recoupling blocks can be efficiently diagonalized with endpoint gaps.",
+                "Local inverse-carrier correlations do not establish an all-depth frame or query bound.",
+            ],
+            metrics=[
+                "all_depth_multistar_conditioning_bound_count",
+                "all_n_pair_core_carrier_factorization_count",
+                "closed_scalar_star_spectrum_theorem_count",
+                "coherent_recoupling_block_transform_count",
+                "n5_uniform_scalar_star_lower_bound",
+                "n5_uniform_scalar_star_upper_bound",
+                "new_quantum_algorithm_count",
+                "nontrivial_carrier_local_conditioning_theorem_count",
+                "open_scalar_star_spectrum_theorem_count",
+                "screened_carrier_bound_violation_count",
+                "screened_control_count",
+                "screened_fractional_correlation_count",
+                "screened_maximum_fractional_correlation",
+                "screened_pair_core_star_count",
+                "screened_unexpected_correlation_count",
+                "selected_comparison_certificate_failure_count",
+                "selected_maximum_comparison_defect_bound",
+                "selected_maximum_relative_eigenvalue",
+                "selected_minimum_certified_endpoint_gap",
+                "selected_minimum_relative_eigenvalue",
+                "selected_scalar_star_control_count",
+                "selected_scalar_star_validation_failure_count",
+                "weighted_pair_relation_comparison_theorem_count",
+            ],
+            dependencies=[
+                "self_dual_wreath_pair_core_recoupling_boundary.py",
+            ],
+            next_actions=[
+                "Run qsearch.py code-wreath-pair-core-recoupling.",
+            ],
+        ),
+        ExperimentRecord(
+            id="EXP-CODE-SELF-DUAL-WREATH-COMMON-CORE-ATOMIZATION",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Common-core atomization",
+            status="planned",
+            hypothesis=(
+                "Constructed exact parity intertwiners and verified the relative "
+                "Cech atom formula on commuting collision-free S6 affine planes "
+                "and proved ternary-XOR support closure."
+            ),
+            protocol=(
+                "Form pair-relation Grams, quotient same-child pair relations, "
+                "and measure the left-minus-right grading."
+            ),
+            positive_signal=(
+                "Parity proves affine support balance; every crossing atom "
+                "meeting affine siblings in p and q leaves contributes "
+                "left-effect eigenvalue p/(p+q)."
+            ),
+            falsifiers=[
+                "Pair generation by itself is not a neutrality theorem; unequal atom support counts produce nonhalf channels.",
+                "The wreath parity kernel excludes unequal crossing support counts at n>=5 because every exact common-vector support is affine.",
+                "Higher common cores do not automatically create a grading defect when their support is affinely balanced.",
+                "Fixed-family intersection dimensions alone do not prove a Boolean decomposition; recoupling commutators remain essential.",
+                "Universal collision-free pair-core commutativity and exact half-balance are false already in S6.",
+            ],
+            metrics=[
+                "abstract_one_versus_two_fractional_eigenvalue",
+                "affine_common_support_balance_theorem_count",
+                "all_depth_affine_atom_balance_count",
+                "all_n_collision_free_commuting_atomization_count",
+                "common_range_parity_basis_theorem_count",
+                "commuting_atom_balance_theorem_count",
+                "finite_commuting_boolean_prediction_failure_count",
+                "finite_control_count",
+                "finite_crossing_atom_count",
+                "finite_direct_relative_cech_validation_failure_count",
+                "finite_higher_common_core_control_count",
+                "finite_imbalanced_crossing_atom_count",
+                "finite_nonaffine_positive_atom_count",
+                "finite_noncommuting_pair_core_control_count",
+                "finite_nonneutral_common_core_control_count",
+                "finite_nonneutral_full_affine_merge_certificate_count",
+                "finite_pair_core_count",
+                "finite_ternary_affine_closure_mismatch_count",
+                "finite_ternary_affine_closure_validation_count",
+                "maximum_direct_fractional_half_residual",
+                "maximum_pair_core_projector_commutator_norm",
+                "maximum_relative_cech_spectrum_residual",
+                "new_quantum_algorithm_count",
+                "noncommuting_counterexample_high_eigenvalue",
+                "noncommuting_counterexample_low_eigenvalue",
+                "noncommuting_counterexample_pair_core_correlation",
+                "scalar_star_formula_residual",
+                "ternary_xor_common_range_closure_theorem_count",
+            ],
+            dependencies=[
+                "self_dual_wreath_common_core_atomization.py",
+            ],
+            next_actions=[
+                "Run qsearch.py code-wreath-common-core-atomization.",
+            ],
+        ),
+        ExperimentRecord(
             id="EXP-CODE-SELF-DUAL-WREATH-EQUAL-COMMUTATOR-AUDIT",
             candidate_id="CODE-COSET-COLLECTIVE",
             title="Equal-pair commutator recoupling audit",

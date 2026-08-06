@@ -379,6 +379,150 @@ class ExperimentRunnerTests(unittest.TestCase):
         )
         self.assertTrue(validation["valid"], validation["issues"])
 
+    def test_pair_quotient_overlap_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-PAIR-QUOTIENT-OVERLAP"
+                )
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(
+            item for item in records if item["id"] == result.result_id
+        )
+        self.assertIn(
+            "self_dual_wreath_pair_quotient_overlap",
+            record["artifacts"],
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_recursive_pair_generation_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-RECURSIVE-PAIR-GENERATION"
+                )
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(
+            item for item in records if item["id"] == result.result_id
+        )
+        self.assertIn(
+            "self_dual_wreath_recursive_pair_generation",
+            record["artifacts"],
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_augmented_common_core_cech_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-AUGMENTED-COMMON-CORE-CECH"
+                )
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(
+            item for item in records if item["id"] == result.result_id
+        )
+        self.assertIn(
+            "self_dual_wreath_augmented_common_core_cech",
+            record["artifacts"],
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_common_core_cech_laplacian_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-COMMON-CORE-CECH-LAPLACIAN"
+                )
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(
+            item for item in records if item["id"] == result.result_id
+        )
+        self.assertIn(
+            "self_dual_wreath_common_core_cech_laplacian",
+            record["artifacts"],
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_pair_core_recoupling_boundary_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-PAIR-CORE-RECOUPLING-BOUNDARY"
+                )
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(
+            item for item in records if item["id"] == result.result_id
+        )
+        self.assertIn(
+            "self_dual_wreath_pair_core_recoupling_boundary",
+            record["artifacts"],
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_common_core_atomization_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-COMMON-CORE-ATOMIZATION"
+                )
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(
+            item for item in records if item["id"] == result.result_id
+        )
+        self.assertIn(
+            "self_dual_wreath_common_core_atomization",
+            record["artifacts"],
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
     def test_dcp_random_fourier_bridge_experiment_runs(self):
         old_cwd = os.getcwd()
         with tempfile.TemporaryDirectory() as tmp:

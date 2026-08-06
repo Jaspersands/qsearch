@@ -177,6 +177,24 @@ from self_dual_wreath_pair_core_carrier_factorization import (
 from self_dual_wreath_multistar_degree_obstruction import (
     write_multistar_degree_obstruction_report,
 )
+from self_dual_wreath_pair_quotient_overlap import (
+    write_pair_quotient_overlap_report,
+)
+from self_dual_wreath_augmented_common_core_cech import (
+    write_augmented_common_core_cech_report,
+)
+from self_dual_wreath_common_core_atomization import (
+    write_common_core_atomization_report,
+)
+from self_dual_wreath_common_core_cech_laplacian import (
+    write_common_core_cech_laplacian_report,
+)
+from self_dual_wreath_pair_core_recoupling_boundary import (
+    write_pair_core_recoupling_boundary_report,
+)
+from self_dual_wreath_recursive_pair_generation import (
+    write_recursive_pair_generation_report,
+)
 from coset_strong_fourier_information_scaling import (
     write_strong_fourier_information_scaling_report,
 )
@@ -868,6 +886,12 @@ COSET_EXPERIMENTS = {
     "EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-FUSION-MOMENT",
     "EXP-CODE-SELF-DUAL-WREATH-PAIR-CORE-CARRIER-FACTORIZATION",
     "EXP-CODE-SELF-DUAL-WREATH-MULTISTAR-DEGREE-OBSTRUCTION",
+    "EXP-CODE-SELF-DUAL-WREATH-PAIR-QUOTIENT-OVERLAP",
+    "EXP-CODE-SELF-DUAL-WREATH-RECURSIVE-PAIR-GENERATION",
+    "EXP-CODE-SELF-DUAL-WREATH-AUGMENTED-COMMON-CORE-CECH",
+    "EXP-CODE-SELF-DUAL-WREATH-COMMON-CORE-CECH-LAPLACIAN",
+    "EXP-CODE-SELF-DUAL-WREATH-PAIR-CORE-RECOUPLING-BOUNDARY",
+    "EXP-CODE-SELF-DUAL-WREATH-COMMON-CORE-ATOMIZATION",
     "EXP-COSET-STRONG-FOURIER-INFORMATION-SCALING",
     "EXP-COSET-ENTANGLEMENT-WIDTH-GATE",
     "EXP-COSET-GROWING-WIDTH-ARCHITECTURE",
@@ -1673,14 +1697,14 @@ def _frontier_bonus(experiment_id: str, experiment: dict[str, Any]) -> tuple[int
             reasons.append("top frontier is code-equivalence")
         if top_frontier_status == "self-dual-wreath-growing-copy-covariant-decoder":
             if experiment_id == "EXP-CODE-SELF-DUAL-WREATH-HECKE-AUDIT":
-                bonus += 70
+                bonus += 120
                 reasons.append("top code frontier needs the wreath Hecke audit")
             elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-SPECTRUM":
-                bonus += 50
+                bonus += 90
                 reasons.append("top code frontier is the self-dual wreath measurement")
         elif top_frontier_status == "self-dual-wreath-growing-width-carrier-decoder":
             if experiment_id == "EXP-COSET-GROWING-WIDTH-ARCHITECTURE":
-                bonus += 70
+                bonus += 120
                 reasons.append(
                     "top code frontier needs a growing-width carrier decoder"
                 )
@@ -1688,118 +1712,118 @@ def _frontier_bonus(experiment_id: str, experiment: dict[str, Any]) -> tuple[int
                 experiment_id
                 == "EXP-CODE-SELF-DUAL-WREATH-TYPICAL-RECOUPLING-TRANSFER"
             ):
-                bonus += 35
+                bonus += 65
                 reasons.append(
                     "typed recoupling transfer constrains the carrier decoder"
                 )
         elif top_frontier_status == "self-dual-wreath-operator-valued-kcopy-frame":
             if experiment_id == "EXP-CODE-SELF-DUAL-WREATH-PGM-POLAR-AUDIT":
-                bonus += 70
+                bonus += 120
                 reasons.append("top code frontier needs the operator PGM polar audit")
             elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-HECKE-AUDIT":
-                bonus += 50
+                bonus += 90
                 reasons.append("top code frontier is the self-dual wreath measurement")
         elif top_frontier_status == "self-dual-wreath-structured-frame-preconditioner":
             if experiment_id == "EXP-CODE-SELF-DUAL-WREATH-SUBSET-CARRIER-ALGEBRA":
-                bonus += 70
+                bonus += 120
                 reasons.append("top code frontier needs the subset-carrier algebra")
             elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-PGM-POLAR-AUDIT":
-                bonus += 50
+                bonus += 90
                 reasons.append("top code frontier is the self-dual wreath measurement")
         elif top_frontier_status == "self-dual-wreath-noncommutative-carrier-block-transform":
             if experiment_id == "EXP-CODE-SELF-DUAL-WREATH-CARRIER-ORBIT-GROWTH":
-                bonus += 70
+                bonus += 120
                 reasons.append("top code frontier needs carrier-orbit scaling")
             elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-SUBSET-CARRIER-ALGEBRA":
-                bonus += 50
+                bonus += 90
                 reasons.append("top code frontier is the self-dual wreath measurement")
         elif top_frontier_status == "self-dual-wreath-compressed-harmonic-carrier-transform":
             if experiment_id == "EXP-CODE-SELF-DUAL-WREATH-HARMONIC-CARRIER-SCHEMA":
-                bonus += 70
+                bonus += 120
                 reasons.append("top code frontier needs the harmonic carrier schema")
             elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-CARRIER-ORBIT-GROWTH":
-                bonus += 50
+                bonus += 90
                 reasons.append("top code frontier is the self-dual wreath measurement")
         elif top_frontier_status == "self-dual-wreath-sparse-harmonic-carrier-transform":
             if experiment_id == "EXP-CODE-SELF-DUAL-WREATH-COMMUTANT-TRANSFER-AUDIT":
-                bonus += 70
+                bonus += 120
                 reasons.append("top code frontier needs the commutant capability transfer")
             elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-HARMONIC-CARRIER-SCHEMA":
-                bonus += 50
+                bonus += 90
                 reasons.append("top code frontier is the self-dual wreath measurement")
         elif top_frontier_status == "self-dual-wreath-general-carrier-commutant-action":
             if experiment_id == "EXP-CODE-SELF-DUAL-WREATH-PHYSICAL-FRAME-BLOCKS":
-                bonus += 70
+                bonus += 120
                 reasons.append("top code frontier needs actual physical frame blocks")
             elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-COMMUTANT-TRANSFER-AUDIT":
-                bonus += 50
+                bonus += 90
                 reasons.append("top code frontier is the self-dual wreath measurement")
         elif top_frontier_status == "self-dual-wreath-all-sector-physical-frame-recurrence":
             if experiment_id == "EXP-CODE-SELF-DUAL-WREATH-UNEQUAL-FRAME-BLOCKS":
-                bonus += 70
+                bonus += 120
                 reasons.append("top code frontier needs unequal-pair physical frame blocks")
             elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-PHYSICAL-FRAME-BLOCKS":
-                bonus += 50
+                bonus += 90
                 reasons.append("top code frontier is the self-dual wreath measurement")
         elif top_frontier_status == "self-dual-wreath-mixed-physical-tuple-recurrence":
             if experiment_id == "EXP-CODE-SELF-DUAL-WREATH-COMPLETE-W3-TUPLES":
-                bonus += 70
+                bonus += 120
                 reasons.append("top code frontier needs the complete W3 tuple control")
             elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-UNEQUAL-FRAME-BLOCKS":
-                bonus += 50
+                bonus += 90
                 reasons.append("top code frontier is the self-dual wreath measurement")
         elif top_frontier_status == "self-dual-wreath-character-moment-recurrence":
             if experiment_id == "EXP-CODE-SELF-DUAL-WREATH-CHARACTER-MOMENTS":
-                bonus += 70
+                bonus += 120
                 reasons.append("top code frontier needs the character-moment recurrence")
             elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-COMPLETE-W3-TUPLES":
-                bonus += 50
+                bonus += 90
                 reasons.append("top code frontier is the self-dual wreath measurement")
         elif top_frontier_status == "self-dual-wreath-higher-moment-symbolic-contraction":
             if experiment_id == "EXP-CODE-SELF-DUAL-WREATH-THIRD-MOMENT-CONTRACTION":
-                bonus += 70
+                bonus += 120
                 reasons.append("top code frontier needs the symbolic third-moment contraction")
             elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-CHARACTER-MOMENTS":
-                bonus += 50
+                bonus += 90
                 reasons.append("top code frontier is the self-dual wreath measurement")
         elif top_frontier_status == "self-dual-wreath-all-sector-third-moment-contraction":
             if experiment_id == "EXP-CODE-SELF-DUAL-WREATH-ALL-UNEQUAL-THIRD-MOMENT":
-                bonus += 70
+                bonus += 120
                 reasons.append("top code frontier needs mixed unequal-sector class contraction")
             elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-THIRD-MOMENT-CONTRACTION":
-                bonus += 50
+                bonus += 90
                 reasons.append("top code frontier is the self-dual wreath measurement")
         elif top_frontier_status == "self-dual-wreath-equal-commutator-recoupling":
             if experiment_id == "EXP-CODE-SELF-DUAL-WREATH-EQUAL-COMMUTATOR-AUDIT":
-                bonus += 70
+                bonus += 120
                 reasons.append("top code frontier needs the equal commutator recoupling audit")
             elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-ALL-UNEQUAL-THIRD-MOMENT":
-                bonus += 50
+                bonus += 90
                 reasons.append("top code frontier is the self-dual wreath measurement")
         elif top_frontier_status == "self-dual-wreath-mixed-four-class-recoupling-kernel":
             if experiment_id == "EXP-CODE-SELF-DUAL-WREATH-STABLE-COMMUTATOR-RANK":
-                bonus += 70
+                bonus += 120
                 reasons.append("top code frontier needs the stable-sector rank and mass audit")
             elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-EQUAL-COMMUTATOR-AUDIT":
-                bonus += 50
+                bonus += 90
                 reasons.append("top code frontier is the self-dual wreath measurement")
         elif top_frontier_status == "self-dual-wreath-typical-partition-recoupling":
             if experiment_id == "EXP-CODE-SELF-DUAL-WREATH-TYPICAL-PARTITION-PORTFOLIO":
-                bonus += 70
+                bonus += 120
                 reasons.append("top code frontier needs the constant-mass typical portfolio audit")
             elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-STABLE-COMMUTATOR-RANK":
-                bonus += 50
+                bonus += 90
                 reasons.append("top code frontier is the self-dual wreath measurement")
         elif top_frontier_status == "self-dual-wreath-uniform-typical-recoupling-rule":
             if experiment_id == "EXP-CODE-SELF-DUAL-WREATH-TYPICAL-RECOUPLING-TRANSFER":
-                bonus += 70
+                bonus += 120
                 reasons.append("top code frontier needs the typed recoupling capability transfer")
             elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-TYPICAL-PARTITION-PORTFOLIO":
-                bonus += 50
+                bonus += 90
                 reasons.append("top code frontier is the self-dual wreath measurement")
         elif top_frontier_status.startswith("self-dual-wreath-"):
             if experiment_id == "EXP-CODE-SELF-DUAL-WREATH-TYPICAL-RECOUPLING-TRANSFER":
-                bonus += 60
+                bonus += 100
                 reasons.append("top code frontier is the self-dual wreath measurement")
         elif experiment_id == "EXP-CODE-CLOSURE-CONDUCTOR-ATTACK":
             bonus += 100
@@ -2055,6 +2079,12 @@ def select_next_experiment() -> NextExperimentSelection:
         "EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-FUSION-MOMENT": 99,
         "EXP-CODE-SELF-DUAL-WREATH-PAIR-CORE-CARRIER-FACTORIZATION": 119,
         "EXP-CODE-SELF-DUAL-WREATH-MULTISTAR-DEGREE-OBSTRUCTION": 120,
+        "EXP-CODE-SELF-DUAL-WREATH-PAIR-QUOTIENT-OVERLAP": 121,
+        "EXP-CODE-SELF-DUAL-WREATH-RECURSIVE-PAIR-GENERATION": 122,
+        "EXP-CODE-SELF-DUAL-WREATH-AUGMENTED-COMMON-CORE-CECH": 123,
+        "EXP-CODE-SELF-DUAL-WREATH-COMMON-CORE-CECH-LAPLACIAN": 124,
+        "EXP-CODE-SELF-DUAL-WREATH-PAIR-CORE-RECOUPLING-BOUNDARY": 125,
+        "EXP-CODE-SELF-DUAL-WREATH-COMMON-CORE-ATOMIZATION": 126,
         "EXP-COSET-STRONG-FOURIER-INFORMATION-SCALING": 80,
         "EXP-COSET-ENTANGLEMENT-WIDTH-GATE": 81,
         "EXP-COSET-GROWING-WIDTH-ARCHITECTURE": 82,
@@ -3926,6 +3956,66 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             == "EXP-CODE-SELF-DUAL-WREATH-MULTISTAR-DEGREE-OBSTRUCTION"
         ):
             payload = write_multistar_degree_obstruction_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-PAIR-QUOTIENT-OVERLAP"
+        ):
+            payload = write_pair_quotient_overlap_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-RECURSIVE-PAIR-GENERATION"
+        ):
+            payload = write_recursive_pair_generation_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-AUGMENTED-COMMON-CORE-CECH"
+        ):
+            payload = write_augmented_common_core_cech_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-COMMON-CORE-CECH-LAPLACIAN"
+        ):
+            payload = write_common_core_cech_laplacian_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-PAIR-CORE-RECOUPLING-BOUNDARY"
+        ):
+            payload = write_pair_core_recoupling_boundary_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-COMMON-CORE-ATOMIZATION"
+        ):
+            payload = write_common_core_atomization_report(
                 write_registry=True,
                 registry_experiment_id=experiment_id,
                 registry_candidate_id=experiment["candidate_id"],

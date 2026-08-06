@@ -2259,6 +2259,69 @@ residual quotient at natural depth. The surviving object is the
 projector-weighted orientation Laplacian `Delta = D - A`, whose positive
 spectrum equals that of the relation Gram; no gap is proved for it.
 
+Audit the exact pair-core quotient overlap:
+
+```bash
+python qsearch.py code-wreath-pair-quotient-overlap
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-PAIR-QUOTIENT-OVERLAP
+```
+
+After internal child dependencies are quotiented, crossing pair relations generate
+the physical span `K` of all crossing leaf-pair intersections. The cross `H0` quotient
+vanishes if and only if the principal correlation between `A` minus `K` and `B` minus `K`
+is strictly below one. On `S_6` portfolios, the minimum exact quotient gap is `0.7375`.
+
+Verify the exact recursive H0 short-exact sequence:
+
+```bash
+python qsearch.py code-wreath-recursive-pair-generation
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-RECURSIVE-PAIR-GENERATION
+```
+
+Parent `H0` is an extension of `H0(left) \oplus H0(right)` by the cross-dependency quotient
+`W/W_pair`. Pair generation at every child together with a vanishing cross quotient at every
+merge implies pair generation at the root. All 11,025 affine nodes across 105 globally
+distinct three-label `S_5` portfolios have `H0 = 0`.
+
+Audit the augmented common-core Cech complex:
+
+```bash
+python qsearch.py code-wreath-augmented-common-core-cech
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-AUGMENTED-COMMON-CORE-CECH
+```
+
+The degree-zero boundary `D_0` synthesizes leaf-range coefficients into physical carrier
+space. `H_0 = ker(D_0) / im(D_1)` is the exact quotient of all leaf dependencies by
+pair-common relations, separating the emergent `H_0` gate from higher pair-cycle exactness.
+
+Verify exact pair-cycle resolution on the relative common-core Cech complex:
+
+```bash
+python qsearch.py code-wreath-common-core-cech
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-COMMON-CORE-CECH-LAPLACIAN
+```
+
+Higher common cores supply exact boundaries `D_2` that nullify pair-relation cycles `H_1 = ker D_1 / im D_2 = 0`.
+On dense `S_6` controls, the exact Cech-quotiented pair Laplacian has positive eigenvalues in `[2, 4]`.
+
+Analyze local scalar recouplings and screen S6 pair-core correlations:
+
+```bash
+python qsearch.py code-wreath-pair-core-recoupling --limit 180
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-PAIR-CORE-RECOUPLING-BOUNDARY
+```
+
+All 560 screened `S_6` pair-core stars are reciprocal-carrier contractions `1/d`, certifying local frame conditioning.
+
+Construct exact parity intertwiners and verify the relative Cech atom formula:
+
+```bash
+python qsearch.py code-wreath-common-core-atomization
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-COMMON-CORE-ATOMIZATION
+```
+
+Parity intertwiners prove affine support balance. A third globally distinct `S_6` plane falsifies universal commutativity with exact scalar-star channels 8/17 and 89/170.
+
 Isolate the solvable and unresolved equal-pair commutator terms:
 
 ```bash

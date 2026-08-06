@@ -31,7 +31,11 @@ from typing import Any
 import numpy as np
 
 from representation_obstruction import integer_partitions
-from research_registry import utc_now
+from research_registry import (
+    ExperimentResultRecord,
+    upsert_experiment_result,
+    utc_now,
+)
 from self_dual_wreath_collision_free_frame_probe import Label
 from self_dual_wreath_common_core_atomization import (
     fixed_family_common_range_basis,
@@ -642,10 +646,34 @@ def run_recursive_pair_generation() -> RecursivePairGenerationReport:
 
 def write_recursive_pair_generation_report(
     path: Path = REPORT_PATH,
+    write_registry: bool = True,
+    registry_experiment_id: str = DEFAULT_EXPERIMENT_ID,
+    registry_candidate_id: str = DEFAULT_CANDIDATE_ID,
+    registry_result_id: str | None = None,
+    **kwargs: Any,
 ) -> dict[str, Any]:
-    payload = asdict(run_recursive_pair_generation())
+    payload = asdict(run_recursive_pair_generation(**kwargs))
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
+    if write_registry:
+        upsert_experiment_result(
+            ExperimentResultRecord(
+                id=(
+                    registry_result_id
+                    or f"RESULT-{registry_experiment_id}-LATEST"
+                ),
+                experiment_id=registry_experiment_id,
+                candidate_id=registry_candidate_id,
+                created_at=payload["created_at"],
+                status=payload["status"],
+                summary=payload["summary"],
+                metrics=payload["headline_metrics"],
+                falsifiers_triggered=payload["falsifiers_triggered"],
+                artifacts={
+                    "self_dual_wreath_recursive_pair_generation": str(path)
+                },
+            )
+        )
     return payload
 
 
