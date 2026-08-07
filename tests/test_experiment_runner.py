@@ -523,6 +523,30 @@ class ExperimentRunnerTests(unittest.TestCase):
         )
         self.assertTrue(validation["valid"], validation["issues"])
 
+    def test_orientation_laplacian_gap_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-LAPLACIAN-GAP"
+                )
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(
+            item for item in records if item["id"] == result.result_id
+        )
+        self.assertIn(
+            "self_dual_wreath_orientation_laplacian_gap",
+            record["artifacts"],
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
     def test_dcp_random_fourier_bridge_experiment_runs(self):
         old_cwd = os.getcwd()
         with tempfile.TemporaryDirectory() as tmp:

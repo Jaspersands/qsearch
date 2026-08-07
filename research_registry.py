@@ -8027,6 +8027,62 @@ def seed_candidate_records() -> tuple[list[CandidateRecord], list[ExperimentReco
             ],
         ),
         ExperimentRecord(
+            id="EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-LAPLACIAN-GAP",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Orientation Laplacian gap analysis",
+            status="planned",
+            hypothesis=(
+                "Proved the Dirichlet form and commuting-atom splitting (floor two, "
+                "width independent), derived exact p-star spectrum and matched S6 "
+                "counterexample."
+            ),
+            protocol=(
+                "Test lambda_min+(M) >= 2 - 2 gamma_max on full live graphs across "
+                "n=6 to n=512."
+            ),
+            positive_signal=(
+                "The smallest positive eigenvalue does not move as p grows, and "
+                "width-independent floor is respected across all screened controls."
+            ),
+            falsifiers=[
+                "The multistar degree obstruction showed the hierarchy is badly conditioned.",
+                "Exponentially many edges at a vertex must accumulate.",
+                "Measuring a single residual correlation proves vertex trivialization.",
+                "The floor can be checked on any convenient subgraph.",
+                "A metric floor is an algorithm.",
+            ],
+            metrics=[
+                "commuting_atom_control_count",
+                "commuting_atom_failure_count",
+                "commuting_atom_splitting_theorem_count",
+                "degrees_with_single_residual_correlation",
+                "dirichlet_form_theorem_count",
+                "exact_p_star_spectrum_theorem_count",
+                "largest_degree_distinct_correlation_count",
+                "largest_degree_sign_blind_floor",
+                "largest_degree_uniform_transport_floor",
+                "maximum_star_law_residual",
+                "minimum_observed_positive_eigenvalue",
+                "natural_uniformity_sample_count",
+                "new_quantum_algorithm_count",
+                "residual_correlation_count_is_collapsing",
+                "screened_floor_violation_count",
+                "screened_full_graph_control_count",
+                "screened_nontrivial_correlation_control_count",
+                "screened_workload_skipped_control_count",
+                "star_law_control_count",
+                "star_law_failure_count",
+                "uniform_transport_width_independent_floor_theorem_count",
+                "vertex_trivialization_proof_count",
+            ],
+            dependencies=[
+                "self_dual_wreath_orientation_laplacian_gap.py",
+            ],
+            next_actions=[
+                "Run qsearch.py code-wreath-orientation-laplacian-gap.",
+            ],
+        ),
+        ExperimentRecord(
             id="EXP-CODE-SELF-DUAL-WREATH-EQUAL-COMMUTATOR-AUDIT",
             candidate_id="CODE-COSET-COLLECTIVE",
             title="Equal-pair commutator recoupling audit",

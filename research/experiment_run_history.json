@@ -10043,5 +10043,48 @@
     "run_id": "RUN-EXP-CODE-SELF-DUAL-WREATH-COMMON-CORE-ATOMIZATION-00296",
     "status": "collision-free-noncommuting-core-counterexample-block-classification-open",
     "summary": "Constructed exact parity intertwiners and verified the relative Cech atom formula on commuting collision-free S6 affine planes and proved ternary-XOR support closure. A third globally distinct S6 plane falsifies universal commutativity and half-balance with exact scalar-star channels 8/17 and 89/170."
+  },
+  {
+    "artifacts": {
+      "self_dual_wreath_orientation_laplacian_gap": "research/representation/self_dual_wreath_orientation_laplacian_gap.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "experiment_id": "EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-LAPLACIAN-GAP",
+    "falsifier_count": 3,
+    "falsifiers_triggered": [
+      "The pessimistic reading of the sign-blind kill is withdrawn: exponential adjacency does not by itself degrade the relation metric.",
+      "Star subgraph evaluations of the relation Gram are not valid evidence about the merge; only the full live graph is.",
+      "A single residual correlation is necessary but not sufficient for the floor; the surviving falsifier is a natural family whose residual transport has no vertex isometry factorization."
+    ],
+    "metrics": {
+      "all_depth_conditioning_theorem_count": 0,
+      "commuting_atom_control_count": 2,
+      "commuting_atom_failure_count": 0,
+      "commuting_atom_splitting_theorem_count": 1,
+      "degrees_with_single_residual_correlation": 1,
+      "dirichlet_form_theorem_count": 1,
+      "exact_p_star_spectrum_theorem_count": 1,
+      "largest_degree_distinct_correlation_count": 1,
+      "largest_degree_sign_blind_floor": -48806444.36363637,
+      "largest_degree_uniform_transport_floor": 1.8181818181818181,
+      "maximum_star_law_residual": 2.6645352591003757e-15,
+      "minimum_observed_positive_eigenvalue": 1.7999999999999925,
+      "natural_uniformity_sample_count": 5,
+      "new_quantum_algorithm_count": 0,
+      "residual_correlation_count_is_collapsing": 1,
+      "screened_floor_violation_count": 0,
+      "screened_full_graph_control_count": 270,
+      "screened_nontrivial_correlation_control_count": 1,
+      "screened_workload_skipped_control_count": 0,
+      "star_law_control_count": 2,
+      "star_law_failure_count": 0,
+      "uniform_transport_width_independent_floor_theorem_count": 1,
+      "vertex_trivialization_proof_count": 0
+    },
+    "recorded_at": "2026-08-07T21:48:20.898479+00:00",
+    "result_id": "RESULT-EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-LAPLACIAN-GAP-COSET",
+    "run_id": "RUN-EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-LAPLACIAN-GAP-00297",
+    "status": "width-independent-metric-floor-conditional-trivialization-open",
+    "summary": "Proved the Dirichlet form and the commuting-atom splitting (floor two, width independent), derived the exact p-star spectrum and matched the known S6 noncommuting counterexample and the d=5 plane to 2.665e-15, and found no violation of the 2-2gamma floor across 270 full-live-graph controls. On natural portfolios the distinct residual-correlation count collapses to 1 at n=12. Vertex trivialization remains unproved."
   }
 ]

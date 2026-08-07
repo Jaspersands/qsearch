@@ -2322,6 +2322,15 @@ python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-COMMON-CORE-ATOMIZATION
 
 Parity intertwiners prove affine support balance. A third globally distinct `S_6` plane falsifies universal commutativity with exact scalar-star channels 8/17 and 89/170.
 
+Analyze orientation Laplacian spectrum and test width-independent floor:
+
+```bash
+python qsearch.py code-wreath-orientation-laplacian-gap
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-LAPLACIAN-GAP
+```
+
+The signed incidence structure yields a metric floor `2 - 2 gamma_max` independent of merge width, respecting all 270 screened full-graph controls.
+
 Isolate the solvable and unresolved equal-pair commutator terms:
 
 ```bash

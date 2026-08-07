@@ -1,643 +1,283 @@
-# Mechanical Follow-Up Implementation Plan
+# Mechanical Follow-Up Implementation Plan (pass 2)
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Wire the two new theorem modules
-(`self_dual_wreath_pair_core_carrier_factorization.py` and
-`self_dual_wreath_multistar_degree_obstruction.py`) into the seed registry,
-the `qsearch.py` CLI, the `experiment_runner.py` dispatcher, the literature
-index, and the README, then refresh downstream artifacts — without changing
-any mathematics.
+**Goal:** Wire the new theorem module
+`self_dual_wreath_orientation_laplacian_gap.py` (Tasks 1-6), then clear the
+real wiring backlog — a direct scan finds **57 unwired modules**, not the six
+the handoff names by hand (Tasks 7-9) — and add four repository hygiene
+deliverables: a claim-gate guard test, an artifact schema inventory, a runtime
+budget, and README coverage (Tasks 10-14).
 
-**Architecture:** Every theorem module in this repository is reachable four
-ways: as a script, as a `qsearch.py` subcommand, as a
-`python qsearch.py run <EXPERIMENT-ID>` dispatch, and as a seeded
-`ExperimentRecord` in `research_registry.py`. This plan adds those four
-hookups for two modules by copying the
-`EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-FUSION-MOMENT` pattern verbatim, then
-runs the standard downstream refresh.
+**Measured starting state** (regenerate rather than trust these numbers):
+
+| quantity | value |
+| --- | --- |
+| modules with a `DEFAULT_EXPERIMENT_ID` | 264 |
+| of those, unwired (registry and runner both absent) | 57 |
+| unwired but ready (writer + test + artifact) | 56 |
+| ready modules that already have `write_registry` kwargs | 15 |
+| unwired and not ready | 1 (`self_dual_wreath_global_collision_free_mass`) |
+| research artifacts outside the registry | 316 |
+| artifacts missing `theorem_contract` | 208 |
+| artifacts missing `claim_gate` | 53 |
+| artifacts missing `falsifiers_triggered` | 12 |
+| artifacts with `speedup_claim_allowed: true` | 0 |
+| repository-wide claim-gate guard test | none exists |
+
+**Architecture:** Identical to pass 1, which is already complete. Every
+theorem module is reachable four ways: as a script, as a `qsearch.py`
+subcommand, as `python qsearch.py run <EXPERIMENT-ID>`, and as a seeded
+`ExperimentRecord`. This plan copies the
+`EXP-CODE-SELF-DUAL-WREATH-MULTISTAR-DEGREE-OBSTRUCTION` wiring verbatim,
+since that module was wired in pass 1 and its `write_*_report` already has the
+registry keyword arguments this one needs.
 
 **Tech Stack:** Python 3.13, `numpy`, `pytest`, stdlib `argparse`/`json`.
-No new dependencies. Node is used only for `node --check site/progress.js`.
+No new dependencies.
 
 ## Global Constraints
 
 - Work from the repository root: `/Users/jaspersands/Desktop/quantum algorithm search`.
-- Branch is `main`. There is a large uncommitted research pass in the
-  worktree. **Do not** run `git reset`, `git checkout -- .`, `git stash`, or
-  `git clean`. Do not discard or revert anything you did not write.
-- **Do not touch anything under `ag-remote/`.** Those deletions are
-  user-owned.
+- Branch is `main`. **Do not** run `git reset`, `git checkout -- .`,
+  `git stash`, or `git clean`. Do not discard work you did not write.
+- **Do not touch anything under `ag-remote/`.**
 - **Do not change any mathematics.** Do not edit formulas, thresholds,
-  tolerances, control lists, sample counts, screen caps, theorem contracts,
-  proof obligations, adversarial audits, falsifier strings, or the wording of
-  any `reason` field. If a test fails because a number changed, you have
-  broken something — revert your edit, do not adjust the expected value.
-- **Never set `speedup_claim_allowed` to `true`.** It stays `false` in every
-  artifact, every registry record, and every README sentence.
-- **Never promote an artifact because tests pass.** Passing tests are a
-  precondition for wiring, not evidence for a claim.
+  tolerances, control lists, sample counts, screen caps, workload caps,
+  theorem contracts, proof obligations, adversarial audits, or falsifier
+  strings. If a test fails because a number changed, revert your edit; do not
+  adjust the expected value.
+- **Never set `speedup_claim_allowed` to `true`.**
+- **Never describe the new floor as an algorithm, a conditioning proof, or a
+  speedup.** It is a metric lower bound conditional on an unproved vertex
+  trivialization. Copy the wording from the module's `theorem_contract` and
+  `adversarial_audit`; do not paraphrase it into something stronger.
 - Preserve every existing negative result. Do not delete registry rows.
-- Do not run the full repository suite (about 1,494 tests, multi-hour). Run
-  only the focused tests named in each task.
-- Do not commit after every task. Make exactly one commit, in Task 8.
+- Do not run the full repository suite in one go. Run only the focused tests
+  named in each task. Task 12 walks the wreath tests one file at a time on
+  purpose; that is measurement, not a suite run.
+- Tasks 1-6 end in exactly one commit. Tasks 7-14 commit per batch as stated.
 - Python invocation is plain `python` from the repository root.
 
-### The two modules being wired
+### The judgment boundary
 
-| | Module A | Module B |
-| --- | --- | --- |
-| file | `self_dual_wreath_pair_core_carrier_factorization.py` | `self_dual_wreath_multistar_degree_obstruction.py` |
-| experiment id | `EXP-CODE-SELF-DUAL-WREATH-PAIR-CORE-CARRIER-FACTORIZATION` | `EXP-CODE-SELF-DUAL-WREATH-MULTISTAR-DEGREE-OBSTRUCTION` |
-| CLI name | `code-wreath-pair-core-carrier-factorization` | `code-wreath-multistar-degree` |
-| artifact | `research/representation/self_dual_wreath_pair_core_carrier_factorization.json` | `research/representation/self_dual_wreath_multistar_degree_obstruction.json` |
-| report writer | `write_pair_core_carrier_factorization_report` | `write_multistar_degree_obstruction_report` |
-| test file | `tests/test_self_dual_wreath_pair_core_carrier_factorization.py` | `tests/test_self_dual_wreath_multistar_degree_obstruction.py` |
-| candidate id | `CODE-COSET-COLLECTIVE` | `CODE-COSET-COLLECTIVE` |
+Several tasks stop deliberately short of finishing a job. That is the design,
+not an oversight. **Never write new content that asserts what a module proved,
+refuted, or left open.** Specifically, do not author:
+
+- a `theorem_contract`, a `claim_gate`, or a `reason` string;
+- a `NegativeResultRecord` claim, `reason_invalid`, or `lesson`;
+- a `hypothesis`, `positive_signal`, or `falsifiers` entry that is not a
+  phrase copied from the module's own docstring or artifact;
+- a README sentence comparing two results or characterizing progress;
+- a test assertion whose expected value you chose yourself.
+
+Where a task hits that boundary it says so and tells you to record and report
+instead. The list of things you declined to write is the most valuable output
+of this plan — it becomes the next high-reasoning pass's work queue.
+
+### The module being wired
+
+| | value |
+| --- | --- |
+| file | `self_dual_wreath_orientation_laplacian_gap.py` |
+| experiment id | `EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-LAPLACIAN-GAP` |
+| CLI name | `code-wreath-orientation-laplacian-gap` |
+| artifact | `research/representation/self_dual_wreath_orientation_laplacian_gap.json` |
+| report writer | `write_orientation_laplacian_gap_report` |
+| test file | `tests/test_self_dual_wreath_orientation_laplacian_gap.py` |
+| candidate id | `CODE-COSET-COLLECTIVE` |
+| runtime | about 48 seconds at default arguments |
+
+The report writer **already** accepts `write_registry`,
+`registry_experiment_id`, `registry_candidate_id`, and `registry_result_id`,
+and already upserts `NEG-CODE-WREATH-WEIGHTED-DEGREE-METRIC-COLLAPSE`. There
+is no Task-1-style module edit in this pass.
 
 ---
 
 ## File Structure
 
-- `self_dual_wreath_pair_core_carrier_factorization.py` — Module A. Task 1
-  adds registry-writing parameters to its `write_*_report` function only.
-- `self_dual_wreath_multistar_degree_obstruction.py` — Module B. Same, Task 2.
-- `research_registry.py` — holds every seeded `ExperimentRecord`. Task 3 adds
-  two records next to the fusion-moment record near line 7534.
-- `experiment_runner.py` — holds the `COSET_EXPERIMENTS` id set (line ~820),
-  the `priority` dict inside `select_next_experiment()` (line 1853), and the
-  `run` dispatch chain (line ~3894). Task 4 edits all three.
-- `qsearch.py` — holds module imports (line ~530), `command_*` functions
-  (line ~6892), and `subparsers.add_parser` blocks (line ~13014). Task 5
-  edits all three.
-- `research/literature_index.json`, `research/literature_records.json` —
-  Task 6 adds the Sellke record.
-- `README.md` — Task 7 adds one command block per module.
+- `research_registry.py` — Task 1 adds one `ExperimentRecord` after the
+  multistar record whose `id=` line is at line 7661.
+- `experiment_runner.py` — Task 2 edits three places: the imports beside the
+  multistar import, the `COSET_EXPERIMENTS` set (the multistar id is at line
+  888), the `priority` dict inside `select_next_experiment()` (the multistar
+  entry is at line 2081), and the dispatch chain (the multistar branch is at
+  line 3956).
+- `qsearch.py` — Task 3 edits three places: the imports beside the multistar
+  import, a new `command_*` function after
+  `command_code_wreath_multistar_degree` (line 7009), and a new
+  `add_parser` block after the `code_wreath_multistar_degree` block
+  (line 13342).
+- `tests/test_experiment_runner.py` — Task 3 adds one dispatch test.
+- `README.md` — Task 4 corrects the multistar paragraph and adds one block.
+- Downstream `research/**` artifacts — Task 5 regenerates them.
 
 ---
 
-### Task 1: Give Module A a registry-writing report function
+### Task 1: Seed the experiment record
 
 **Files:**
-- Modify: `self_dual_wreath_pair_core_carrier_factorization.py` (imports block near line 84; `write_pair_core_carrier_factorization_report` at the end of the file)
-- Test: `tests/test_self_dual_wreath_pair_core_carrier_factorization.py`
-
-**Interfaces:**
-- Consumes: `run_pair_core_carrier_factorization(*, s5_control_cap=40, s6_control_cap=120, repeated_control_cap=40, disjoint_control_cap=40)` — already exists, do not change it.
-- Produces: `write_pair_core_carrier_factorization_report(path=REPORT_PATH, write_registry=True, registry_experiment_id=DEFAULT_EXPERIMENT_ID, registry_candidate_id=DEFAULT_CANDIDATE_ID, registry_result_id=None, **kwargs) -> dict[str, Any]`. Tasks 4 and 5 call it with all four registry keyword arguments.
-
-- [ ] **Step 1: Write the failing test**
-
-Append to `tests/test_self_dual_wreath_pair_core_carrier_factorization.py`:
-
-```python
-def test_report_writer_can_skip_the_registry(tmp_path) -> None:
-    from self_dual_wreath_pair_core_carrier_factorization import (
-        write_pair_core_carrier_factorization_report,
-    )
-
-    path = tmp_path / "carrier.json"
-    payload = write_pair_core_carrier_factorization_report(
-        path=path,
-        write_registry=False,
-        s5_control_cap=4,
-        s6_control_cap=4,
-        repeated_control_cap=4,
-        disjoint_control_cap=4,
-    )
-
-    assert path.exists()
-    assert payload["claim_gate"]["speedup_claim_allowed"] is False
-    assert payload["headline_metrics"]["screened_star_failure_count"] == 0
-```
-
-- [ ] **Step 2: Run the test and confirm it fails**
-
-Run: `python -m pytest tests/test_self_dual_wreath_pair_core_carrier_factorization.py::test_report_writer_can_skip_the_registry -v`
-
-Expected: FAIL with `TypeError: write_pair_core_carrier_factorization_report() got an unexpected keyword argument 'write_registry'`.
-
-- [ ] **Step 3: Add the registry imports**
-
-In `self_dual_wreath_pair_core_carrier_factorization.py`, find this line:
-
-```python
-from research_registry import utc_now
-```
-
-Replace it with:
-
-```python
-from research_registry import (
-    ExperimentResultRecord,
-    NegativeResultRecord,
-    upsert_experiment_result,
-    upsert_negative_result,
-    utc_now,
-)
-```
-
-- [ ] **Step 4: Replace the report writer**
-
-In the same file, find this function:
-
-```python
-def write_pair_core_carrier_factorization_report(
-    path: Path = REPORT_PATH,
-    **kwargs: Any,
-) -> dict[str, Any]:
-    payload = asdict(run_pair_core_carrier_factorization(**kwargs))
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    return payload
-```
-
-Replace it with exactly:
-
-```python
-def write_pair_core_carrier_factorization_report(
-    path: Path = REPORT_PATH,
-    write_registry: bool = True,
-    registry_experiment_id: str = DEFAULT_EXPERIMENT_ID,
-    registry_candidate_id: str = DEFAULT_CANDIDATE_ID,
-    registry_result_id: str | None = None,
-    **kwargs: Any,
-) -> dict[str, Any]:
-    payload = asdict(run_pair_core_carrier_factorization(**kwargs))
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-CODE-WREATH-SINGLE-RECIPROCAL-PAIR-CORE-LAW",
-                source=str(path),
-                claim=(
-                    "Every off-common pair-core overlap is a single "
-                    "reciprocal irrep dimension 1/d_alpha."
-                ),
-                reason_invalid=(
-                    "The exact shared-vertex overlap is a two-carrier "
-                    "product 1/(d_beta d_p). Finite screens saw single "
-                    "reciprocals only because their membership blocks were "
-                    "singletons, which forces the second carrier to be one "
-                    "dimensional."
-                ),
-                lesson=(
-                    "Use the closed-form carrier factorization rather than "
-                    "measured reciprocal spectra, and do not treat a small "
-                    "per-block correlation as evidence of conditioning "
-                    "without counting adjacency."
-                ),
-                applies_to=[
-                    registry_candidate_id,
-                    registry_experiment_id,
-                    "PO-MEASUREMENT",
-                    "PO-COMPLEXITY",
-                    "PO-SUCCESS",
-                ],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=(
-                    registry_result_id
-                    or f"RESULT-{registry_experiment_id}-LATEST"
-                ),
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={
-                    "self_dual_wreath_pair_core_carrier_factorization": str(
-                        path
-                    )
-                },
-            )
-        )
-    return payload
-```
-
-- [ ] **Step 5: Run the focused tests and confirm they pass**
-
-Run: `python -m pytest tests/test_self_dual_wreath_pair_core_carrier_factorization.py -q`
-
-Expected: `11 passed`. If any of the original 10 tests now fails, you changed
-mathematics — undo and redo Steps 3 and 4 exactly as written.
-
----
-
-### Task 2: Give Module B a registry-writing report function
-
-**Files:**
-- Modify: `self_dual_wreath_multistar_degree_obstruction.py` (imports block near line 72; `write_multistar_degree_obstruction_report` at the end of the file)
-- Test: `tests/test_self_dual_wreath_multistar_degree_obstruction.py`
-
-**Interfaces:**
-- Consumes: `run_multistar_degree_obstruction(*, sampled_degrees=(7, 8, 9, 10, 11, 12), sample_count=40)` — already exists, do not change it.
-- Produces: `write_multistar_degree_obstruction_report(path=REPORT_PATH, write_registry=True, registry_experiment_id=DEFAULT_EXPERIMENT_ID, registry_candidate_id=DEFAULT_CANDIDATE_ID, registry_result_id=None, **kwargs) -> dict[str, Any]`.
-
-- [ ] **Step 1: Write the failing test**
-
-Append to `tests/test_self_dual_wreath_multistar_degree_obstruction.py`:
-
-```python
-def test_report_writer_can_skip_the_registry(tmp_path) -> None:
-    from self_dual_wreath_multistar_degree_obstruction import (
-        write_multistar_degree_obstruction_report,
-    )
-
-    path = tmp_path / "multistar.json"
-    payload = write_multistar_degree_obstruction_report(
-        path=path,
-        write_registry=False,
-        sampled_degrees=(7, 10),
-        sample_count=8,
-    )
-
-    assert path.exists()
-    assert payload["claim_gate"]["speedup_claim_allowed"] is False
-    assert payload["headline_metrics"][
-        "laplacian_equivalence_failure_count"
-    ] == 0
-```
-
-- [ ] **Step 2: Run the test and confirm it fails**
-
-Run: `python -m pytest tests/test_self_dual_wreath_multistar_degree_obstruction.py::test_report_writer_can_skip_the_registry -v`
-
-Expected: FAIL with `TypeError: ... unexpected keyword argument 'write_registry'`.
-
-- [ ] **Step 3: Add the registry imports**
-
-In `self_dual_wreath_multistar_degree_obstruction.py`, find this line:
-
-```python
-from research_registry import utc_now
-```
-
-Replace it with:
-
-```python
-from research_registry import (
-    ExperimentResultRecord,
-    NegativeResultRecord,
-    upsert_experiment_result,
-    upsert_negative_result,
-    utc_now,
-)
-```
-
-- [ ] **Step 4: Replace the report writer**
-
-Find this function:
-
-```python
-def write_multistar_degree_obstruction_report(
-    path: Path = REPORT_PATH,
-    **kwargs: Any,
-) -> dict[str, Any]:
-    payload = asdict(run_multistar_degree_obstruction(**kwargs))
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    return payload
-```
-
-Replace it with exactly:
-
-```python
-def write_multistar_degree_obstruction_report(
-    path: Path = REPORT_PATH,
-    write_registry: bool = True,
-    registry_experiment_id: str = DEFAULT_EXPERIMENT_ID,
-    registry_candidate_id: str = DEFAULT_CANDIDATE_ID,
-    registry_result_id: str | None = None,
-    **kwargs: Any,
-) -> dict[str, Any]:
-    payload = asdict(run_multistar_degree_obstruction(**kwargs))
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-CODE-WREATH-SIGN-BLIND-MULTISTAR-CERTIFICATE",
-                source=str(path),
-                claim=(
-                    "Block Gershgorin on absolute pair-core overlap weights "
-                    "can certify the residual pair quotient at all depth."
-                ),
-                reason_invalid=(
-                    "The crossing graph of a sibling merge is complete "
-                    "bipartite and Sellke covering saturates the off-common "
-                    "weight at 1/(n-1), so the weighted degree grows like "
-                    "2^(j-1)/(n-1) and the certificate is already vacuous at "
-                    "n=8 on natural threshold portfolios."
-                ),
-                lesson=(
-                    "Only a phase-sensitive argument can survive. Bound the "
-                    "positive spectrum of the projector-weighted orientation "
-                    "Laplacian Delta = D - A, whose nonzero spectrum equals "
-                    "that of the existing relation Gram."
-                ),
-                applies_to=[
-                    registry_candidate_id,
-                    registry_experiment_id,
-                    "PO-MEASUREMENT",
-                    "PO-COMPLEXITY",
-                    "PO-SUCCESS",
-                ],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=(
-                    registry_result_id
-                    or f"RESULT-{registry_experiment_id}-LATEST"
-                ),
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={
-                    "self_dual_wreath_multistar_degree_obstruction": str(path)
-                },
-            )
-        )
-    return payload
-```
-
-- [ ] **Step 5: Run the focused tests and confirm they pass**
-
-Run: `python -m pytest tests/test_self_dual_wreath_multistar_degree_obstruction.py -q`
-
-Expected: `9 passed`.
-
----
-
-### Task 3: Seed both experiment records
-
-**Files:**
-- Modify: `research_registry.py` (immediately after the `ExperimentRecord` whose `id="EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-FUSION-MOMENT"`, which begins at line 7534)
+- Modify: `research_registry.py` (immediately after the `ExperimentRecord` whose `id="EXP-CODE-SELF-DUAL-WREATH-MULTISTAR-DEGREE-OBSTRUCTION"`, whose `id=` line is at line 7661)
 
 **Interfaces:**
 - Consumes: the `ExperimentRecord` dataclass already imported in that file. Its fields, in the order used below, are `id`, `candidate_id`, `title`, `status`, `hypothesis`, `protocol`, `positive_signal`, `falsifiers`, `metrics`, `dependencies`, `next_actions`.
-- Produces: two seeded records that Task 4 and Task 8 read by id.
+- Produces: a seeded record that Tasks 2 and 3 read by id.
 
 - [ ] **Step 1: Locate the insertion point**
 
-Run: `grep -n 'EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-FUSION-MOMENT' research_registry.py`
+Run: `grep -n 'EXP-CODE-SELF-DUAL-WREATH-MULTISTAR-DEGREE-OBSTRUCTION' research_registry.py`
 
-Expected: one line number near 7535. Scroll from there to the closing `),`
-of that `ExperimentRecord(` call — it is the line after the `next_actions=[...]`
-list closes. Insert the two new records immediately after that `),`.
+Expected: one line number near 7661. Scroll down from there to the closing
+`),` of that `ExperimentRecord(` call — the line after its `next_actions=[...]`
+list closes. Insert the new record immediately after that `),`.
 
-- [ ] **Step 2: Insert both records**
+- [ ] **Step 2: Insert the record**
 
 ```python
         ExperimentRecord(
-            id="EXP-CODE-SELF-DUAL-WREATH-PAIR-CORE-CARRIER-FACTORIZATION",
+            id="EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-LAPLACIAN-GAP",
             candidate_id="CODE-COSET-COLLECTIVE",
-            title="Exact pair-core carrier factorization",
+            title="Width-independent orientation Laplacian floor",
             status="planned",
             hypothesis=(
-                "The overlap operator of two exact orientation pair cores "
-                "has a closed form in representation-ring data, so its "
-                "off-common contraction can be proved for all n instead of "
-                "measured on finite screens."
+                "Keeping the incidence signs of the pair-core relation "
+                "complex gives a smallest positive eigenvalue that does not "
+                "degrade with merge width, so the vacuous absolute-weight "
+                "certificate did not imply bad conditioning."
             ),
             protocol=(
-                "Grade every tensor factor of a three-orientation family by "
-                "its membership pattern, show both pair cores are graded by "
-                "every block isotypic label, contract the forced carrier "
-                "pairs in each of the two clusters, and validate the "
-                "resulting two-carrier reciprocal spectrum against dense "
-                "ambient singular values on S5, S6, and repeated-label "
-                "controls."
+                "Prove the Dirichlet form and kernel of the projector-"
+                "weighted orientation Laplacian, split the commuting case "
+                "into scalar complete-graph Laplacians over Boolean atoms on "
+                "affine supports, derive the exact p-star spectrum, and screen "
+                "the resulting 2-2gamma floor on full live graphs while "
+                "measuring how many distinct residual correlations survive on "
+                "natural threshold portfolios."
             ),
             positive_signal=(
-                "Every dense singular value, rank, and multiplicity is "
-                "reproduced exactly, and every off-common correlation is at "
-                "most 1/(n-1) for n>=5."
+                "The atom prediction reproduces exact spectra, the p-star law "
+                "matches the known S6 noncommuting counterexample, no full "
+                "live graph violates the floor, and the residual correlation "
+                "collapses to a single value at the largest sampled degree."
             ),
             falsifiers=[
-                "A dense ambient singular value is missing from the closed form.",
-                "An off-common correlation exceeds 1/(n-1).",
-                "The closed form needs the collision-free sector.",
-                "A shared-vertex overlap requires nontrivial multiplicity-space 6j data.",
-                "A per-block contraction bound is described as all-depth conditioning.",
+                "A full live graph has a smallest positive eigenvalue below 2-2gamma_max.",
+                "A star subgraph evaluation is presented as evidence about a merge.",
+                "The measured single residual correlation is described as a proof of vertex trivialization.",
+                "A metric floor is described as all-depth conditioning, a graded-defect bound, or an algorithm.",
+                "Vertex-disjoint core overlaps are inserted into the relation Gram, which has no such blocks.",
             ],
             metrics=[
-                "exact_star_carrier_factorization_theorem_count",
-                "all_n_off_common_star_bound_theorem_count",
-                "disjoint_pair_waist_bound_theorem_count",
-                "degenerate_racah_block_identification_count",
-                "selected_star_control_count",
-                "selected_star_failure_count",
-                "screened_star_control_count",
-                "screened_star_failure_count",
-                "screened_off_common_violation_count",
-                "maximum_spectrum_residual",
-                "disjoint_waist_control_count",
-                "disjoint_waist_violation_count",
-                "disjoint_waist_tight_count",
-                "repeated_label_star_control_count",
-                "repeated_label_star_failure_count",
-                "all_depth_multistar_conditioning_bound_count",
+                "dirichlet_form_theorem_count",
+                "commuting_atom_splitting_theorem_count",
+                "exact_p_star_spectrum_theorem_count",
+                "uniform_transport_width_independent_floor_theorem_count",
+                "commuting_atom_control_count",
+                "commuting_atom_failure_count",
+                "star_law_control_count",
+                "star_law_failure_count",
+                "maximum_star_law_residual",
+                "screened_full_graph_control_count",
+                "screened_workload_skipped_control_count",
+                "screened_nontrivial_correlation_control_count",
+                "screened_floor_violation_count",
+                "minimum_observed_positive_eigenvalue",
+                "degrees_with_single_residual_correlation",
+                "residual_correlation_count_is_collapsing",
+                "largest_degree_distinct_correlation_count",
+                "largest_degree_uniform_transport_floor",
+                "largest_degree_sign_blind_floor",
+                "vertex_trivialization_proof_count",
+                "all_depth_conditioning_theorem_count",
                 "new_quantum_algorithm_count",
             ],
             dependencies=[
-                "self_dual_wreath_pair_core_carrier_factorization.py",
-                "self_dual_wreath_common_core_atomization.py",
-                "self_dual_wreath_orientation_pair_angle_spectrum.py",
-                "self_dual_wreath_orientation_triple_range.py",
-                "symmetric-group representation ring",
-            ],
-            next_actions=[
-                "Run qsearch.py code-wreath-pair-core-carrier-factorization.",
-                "Derive the exact vertex-disjoint grid overlap or exhibit a strictly smaller grid.",
-                "Feed the exact weights into the orientation Laplacian gap question.",
-            ],
-        ),
-        ExperimentRecord(
-            id="EXP-CODE-SELF-DUAL-WREATH-MULTISTAR-DEGREE-OBSTRUCTION",
-            candidate_id="CODE-COSET-COLLECTIVE",
-            title="Sign-blind multistar degree obstruction",
-            status="planned",
-            hypothesis=(
-                "Exact pair-core weights plus the complete bipartite crossing "
-                "graph decide whether any absolute-weight comparison can "
-                "certify the residual pair quotient at natural depth."
-            ),
-            protocol=(
-                "Compute exact off-common weights from the carrier "
-                "factorization, count adjacency exactly on a sibling merge, "
-                "sample natural high-dimension collision-free threshold "
-                "portfolios from n=7 to n=12, and verify that the relation "
-                "Gram and the projector-weighted orientation Laplacian have "
-                "the same positive spectrum."
-            ),
-            positive_signal=(
-                "A phase-sensitive lower bound on the positive Laplacian "
-                "spectrum survives where the absolute-weight bound does not."
-            ),
-            falsifiers=[
-                "Absolute-weight comparison is reintroduced as an all-depth argument.",
-                "A vacuous certificate is described as a proof that the quotient gap fails.",
-                "Sampled saturation is described as a proved asymptotic theorem.",
-                "The Laplacian reformulation is described as supplying a gap.",
-                "Shrinking per-block correlations are cited as evidence of conditioning.",
-            ],
-            metrics=[
-                "exact_off_common_weight_law_count",
-                "sign_blind_route_asymptotic_kill_count",
-                "subspace_graph_laplacian_equivalence_theorem_count",
-                "finite_merge_control_count",
-                "finite_merge_certificate_available_count",
-                "natural_sample_count",
-                "natural_sample_vacuous_count",
-                "first_vacuous_degree",
-                "maximum_projected_weighted_degree_log2",
-                "maximum_saturation_ratio",
-                "weighted_degree_is_monotone_in_n",
-                "laplacian_equivalence_control_count",
-                "laplacian_equivalence_failure_count",
-                "maximum_laplacian_spectrum_residual",
-                "phase_sensitive_quotient_gap_theorem_count",
-                "new_quantum_algorithm_count",
-            ],
-            dependencies=[
+                "self_dual_wreath_orientation_laplacian_gap.py",
                 "self_dual_wreath_multistar_degree_obstruction.py",
                 "self_dual_wreath_pair_core_carrier_factorization.py",
                 "self_dual_wreath_common_core_atomization.py",
-                "self_dual_wreath_subgroup_twirl_reduction.py",
-                "Sellke, Covering Irrep(S_n) With Tensor Products and Powers",
+                "signed subspace incidence and graph Laplacian duality",
             ],
             next_actions=[
-                "Run qsearch.py code-wreath-multistar-degree.",
-                "Bound the smallest positive eigenvalue of the orientation Laplacian.",
-                "Classify higher Cech homology on the vertex side of the duality.",
+                "Run qsearch.py code-wreath-orientation-laplacian-gap.",
+                "Construct the vertex isometry factorization or refute it on a natural adjacent pair.",
+                "Repeat the star and atom calculations with the J grading to bound the graded defect.",
             ],
         ),
 ```
 
-- [ ] **Step 3: Verify the file still parses**
-
-Run: `python -c "import research_registry; print('ok')"`
-
-Expected: `ok`.
-
-- [ ] **Step 4: Verify both records are seeded**
-
-Run:
+- [ ] **Step 3: Verify the file parses and the record is seeded**
 
 ```bash
 python -c "
+import research_registry
 from research_registry import seed_candidate_records
-_candidates, experiments = seed_candidate_records()
-ids = {record.id for record in experiments}
-for wanted in ('EXP-CODE-SELF-DUAL-WREATH-PAIR-CORE-CARRIER-FACTORIZATION','EXP-CODE-SELF-DUAL-WREATH-MULTISTAR-DEGREE-OBSTRUCTION'):
-    print(wanted, wanted in ids)
+_c, experiments = seed_candidate_records()
+ids = {r.id for r in experiments}
+print('EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-LAPLACIAN-GAP' in ids)
 "
 ```
 
-Expected: both print `True`. `seed_candidate_records()` is defined at
-`research_registry.py:298` and returns
-`(list[CandidateRecord], list[ExperimentRecord])`.
+Expected: `True`.
 
 ---
 
-### Task 4: Register both ids in the experiment runner
+### Task 2: Register the id in the experiment runner
 
 **Files:**
-- Modify: `experiment_runner.py` — imports near line 171, `COSET_EXPERIMENTS` near line 862, `priority` dict inside `select_next_experiment()` at line 1853, dispatch chain near line 3894
+- Modify: `experiment_runner.py` — imports beside the multistar import, `COSET_EXPERIMENTS` (multistar id at line 888), `priority` dict (multistar entry at line 2081), dispatch chain (multistar branch at line 3956)
 
 **Interfaces:**
-- Consumes: `write_pair_core_carrier_factorization_report` and `write_multistar_degree_obstruction_report` from Tasks 1 and 2, both accepting `write_registry`, `registry_experiment_id`, `registry_candidate_id`, `registry_result_id`.
-- Produces: `python qsearch.py run <either id>` executes the module.
+- Consumes: `write_orientation_laplacian_gap_report(write_registry, registry_experiment_id, registry_candidate_id, registry_result_id)`, already present in the module.
+- Produces: `python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-LAPLACIAN-GAP` executes the module.
 
-- [ ] **Step 1: Add the imports**
+- [ ] **Step 1: Add the import**
 
 Find in `experiment_runner.py`:
 
 ```python
-from self_dual_wreath_orientation_fusion_moment import (
-    write_orientation_fusion_moment_report,
-)
-```
-
-Insert immediately after it:
-
-```python
-from self_dual_wreath_pair_core_carrier_factorization import (
-    write_pair_core_carrier_factorization_report,
-)
 from self_dual_wreath_multistar_degree_obstruction import (
     write_multistar_degree_obstruction_report,
 )
 ```
 
-- [ ] **Step 2: Add both ids to `COSET_EXPERIMENTS`**
-
-Find the line `    "EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-FUSION-MOMENT",` (about
-line 862, inside the `COSET_EXPERIMENTS = {` set that starts at line 820).
 Insert immediately after it:
 
 ```python
-    "EXP-CODE-SELF-DUAL-WREATH-PAIR-CORE-CARRIER-FACTORIZATION",
-    "EXP-CODE-SELF-DUAL-WREATH-MULTISTAR-DEGREE-OBSTRUCTION",
+from self_dual_wreath_orientation_laplacian_gap import (
+    write_orientation_laplacian_gap_report,
+)
 ```
 
-- [ ] **Step 3: Add both ids to the `priority` dict**
+- [ ] **Step 2: Add the id to `COSET_EXPERIMENTS`**
 
-Find the line `        "EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-FUSION-MOMENT": 99,`
-(about line 2047, inside `priority = {` at line 1853). Insert immediately
-after it:
+Find the line
+`    "EXP-CODE-SELF-DUAL-WREATH-MULTISTAR-DEGREE-OBSTRUCTION",`
+(about line 888). Insert immediately after it:
 
 ```python
-        "EXP-CODE-SELF-DUAL-WREATH-PAIR-CORE-CARRIER-FACTORIZATION": 119,
-        "EXP-CODE-SELF-DUAL-WREATH-MULTISTAR-DEGREE-OBSTRUCTION": 120,
+    "EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-LAPLACIAN-GAP",
 ```
 
-Values 119 and 120 are unused; the current maximum is 118. Do not renumber
-anything else.
+- [ ] **Step 3: Add the id to the `priority` dict**
 
-- [ ] **Step 4: Add both dispatch branches**
-
-Find this block (about line 3894):
+Find the line
+`        "EXP-CODE-SELF-DUAL-WREATH-MULTISTAR-DEGREE-OBSTRUCTION": 120,`
+(about line 2081). Insert immediately after it:
 
 ```python
-        elif (
-            experiment_id
-            == "EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-FUSION-MOMENT"
-        ):
-            payload = write_orientation_fusion_moment_report(
-                write_registry=True,
-                registry_experiment_id=experiment_id,
-                registry_candidate_id=experiment["candidate_id"],
-                registry_result_id=result_id,
-            )
+        "EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-LAPLACIAN-GAP": 127,
 ```
 
-Insert immediately after it:
+127 is unused; the current maximum is 126. Do not renumber anything else.
+
+- [ ] **Step 4: Add the dispatch branch**
+
+Find this block (about line 3956):
 
 ```python
-        elif (
-            experiment_id
-            == "EXP-CODE-SELF-DUAL-WREATH-PAIR-CORE-CARRIER-FACTORIZATION"
-        ):
-            payload = write_pair_core_carrier_factorization_report(
-                write_registry=True,
-                registry_experiment_id=experiment_id,
-                registry_candidate_id=experiment["candidate_id"],
-                registry_result_id=result_id,
-            )
         elif (
             experiment_id
             == "EXP-CODE-SELF-DUAL-WREATH-MULTISTAR-DEGREE-OBSTRUCTION"
@@ -650,9 +290,22 @@ Insert immediately after it:
             )
 ```
 
-- [ ] **Step 5: Verify the module imports and the runner tests pass**
+Insert immediately after it:
 
-Run:
+```python
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-LAPLACIAN-GAP"
+        ):
+            payload = write_orientation_laplacian_gap_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+```
+
+- [ ] **Step 5: Verify the module imports and the runner tests pass**
 
 ```bash
 python -c "import experiment_runner; print('ok')" && python -m pytest tests/test_experiment_runner.py -q
@@ -662,253 +315,167 @@ Expected: `ok`, then all tests in that file pass.
 
 ---
 
-### Task 5: Add both `qsearch.py` subcommands
+### Task 3: Add the `qsearch.py` subcommand and its dispatch test
 
 **Files:**
-- Modify: `qsearch.py` — imports near line 530, new `command_*` functions after `command_code_wreath_orientation_moments` (starts line 6892), new `add_parser` blocks after the `code_wreath_orientation_moments` block (line 13014)
-- Test: `tests/test_experiment_runner.py` (two new methods after line 330)
+- Modify: `qsearch.py` — imports beside the multistar import, a new `command_*` function after `command_code_wreath_multistar_degree` (line 7009), a new `add_parser` block after the `code_wreath_multistar_degree` block (line 13342)
+- Test: `tests/test_experiment_runner.py` (one new method)
 
 **Interfaces:**
-- Consumes: the two report writers from Tasks 1 and 2, and the dispatch branches from Task 4.
-- Produces: subcommands `code-wreath-pair-core-carrier-factorization` and `code-wreath-multistar-degree`, each with a `--no-registry` flag, plus two clean-registry dispatch tests.
+- Consumes: the report writer and the Task 2 dispatch branch.
+- Produces: subcommand `code-wreath-orientation-laplacian-gap` with a `--no-registry` flag, plus one clean-registry dispatch test.
 
-- [ ] **Step 1: Add the imports**
+- [ ] **Step 1: Add the import**
 
 Find in `qsearch.py`:
 
 ```python
-from self_dual_wreath_orientation_fusion_moment import (
-    write_orientation_fusion_moment_report,
-)
-```
-
-Insert immediately after it:
-
-```python
-from self_dual_wreath_pair_core_carrier_factorization import (
-    write_pair_core_carrier_factorization_report,
-)
 from self_dual_wreath_multistar_degree_obstruction import (
     write_multistar_degree_obstruction_report,
 )
 ```
 
-- [ ] **Step 2: Add both command functions**
-
-Scroll to the end of `def command_code_wreath_orientation_moments(` (it starts
-at line 6892 and ends with `return 0`). Insert both functions immediately
-after that `return 0`, separated by two blank lines:
-
-```python
-def command_code_wreath_pair_core_carrier_factorization(
-    args: argparse.Namespace,
-) -> int:
-    initialize_seed_registry(overwrite=False)
-    payload = write_pair_core_carrier_factorization_report(
-        write_registry=not args.no_registry,
-    )
-    validation = validate_registry()
-    metrics = payload["headline_metrics"]
-    print("Pair-core carrier factorization complete")
-    print(
-        "Artifact: research/representation/"
-        "self_dual_wreath_pair_core_carrier_factorization.json"
-    )
-    print(
-        "Selected/screened star controls and failures: "
-        f"{metrics['selected_star_control_count']}/"
-        f"{metrics['screened_star_control_count']}/"
-        f"{metrics['selected_star_failure_count']}/"
-        f"{metrics['screened_star_failure_count']}"
-    )
-    print(
-        "Max spectrum residual / off-common violations: "
-        f"{metrics['maximum_spectrum_residual']:.6g}/"
-        f"{metrics['screened_off_common_violation_count']}"
-    )
-    print(
-        "Disjoint waist controls/violations/tight: "
-        f"{metrics['disjoint_waist_control_count']}/"
-        f"{metrics['disjoint_waist_violation_count']}/"
-        f"{metrics['disjoint_waist_tight_count']}"
-    )
-    print(
-        f"Speedup claim allowed: "
-        f"{payload['claim_gate']['speedup_claim_allowed']}"
-    )
-    print(f"Registry valid: {validation['valid']}")
-    if validation["issues"]:
-        print(json.dumps(validation["issues"], indent=2))
-        return 1
-    return 0
-
-
-def command_code_wreath_multistar_degree(
-    args: argparse.Namespace,
-) -> int:
-    initialize_seed_registry(overwrite=False)
-    payload = write_multistar_degree_obstruction_report(
-        write_registry=not args.no_registry,
-    )
-    validation = validate_registry()
-    metrics = payload["headline_metrics"]
-    print("Multistar degree obstruction complete")
-    print(
-        "Artifact: research/representation/"
-        "self_dual_wreath_multistar_degree_obstruction.json"
-    )
-    print(
-        "Natural samples/vacuous/first vacuous degree: "
-        f"{metrics['natural_sample_count']}/"
-        f"{metrics['natural_sample_vacuous_count']}/"
-        f"{metrics['first_vacuous_degree']}"
-    )
-    print(
-        "Max projected weighted degree log2 / saturation ratio: "
-        f"{metrics['maximum_projected_weighted_degree_log2']:.6g}/"
-        f"{metrics['maximum_saturation_ratio']:.6g}"
-    )
-    print(
-        "Laplacian controls/failures/max residual: "
-        f"{metrics['laplacian_equivalence_control_count']}/"
-        f"{metrics['laplacian_equivalence_failure_count']}/"
-        f"{metrics['maximum_laplacian_spectrum_residual']:.6g}"
-    )
-    print(
-        f"Speedup claim allowed: "
-        f"{payload['claim_gate']['speedup_claim_allowed']}"
-    )
-    print(f"Registry valid: {validation['valid']}")
-    if validation["issues"]:
-        print(json.dumps(validation["issues"], indent=2))
-        return 1
-    return 0
-```
-
-- [ ] **Step 3: Add both subparser blocks**
-
-Find this block (line 13014):
-
-```python
-    code_wreath_orientation_moments = subparsers.add_parser(
-        "code-wreath-orientation-moments",
-        help=(
-            "Compute exact pairwise orientation-projector overlaps and "
-            "class-algebra second moments through the copy threshold."
-        ),
-    )
-    code_wreath_orientation_moments.add_argument(
-        "--no-registry",
-        action="store_true",
-    )
-    code_wreath_orientation_moments.set_defaults(
-        func=command_code_wreath_orientation_moments
-    )
-```
-
 Insert immediately after it:
 
 ```python
-    code_wreath_pair_core_carrier_factorization = subparsers.add_parser(
-        "code-wreath-pair-core-carrier-factorization",
-        help=(
-            "Derive and validate the exact two-carrier reciprocal spectrum "
-            "of shared-vertex pair-core overlaps."
-        ),
-    )
-    code_wreath_pair_core_carrier_factorization.add_argument(
-        "--no-registry",
-        action="store_true",
-    )
-    code_wreath_pair_core_carrier_factorization.set_defaults(
-        func=command_code_wreath_pair_core_carrier_factorization
-    )
+from self_dual_wreath_orientation_laplacian_gap import (
+    write_orientation_laplacian_gap_report,
+)
+```
 
+- [ ] **Step 2: Add the command function**
+
+Scroll to the end of `def command_code_wreath_multistar_degree(` (it starts at
+line 7009 and ends with `return 0`). Insert this function immediately after
+that `return 0`, separated by two blank lines:
+
+```python
+def command_code_wreath_orientation_laplacian_gap(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_orientation_laplacian_gap_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Orientation Laplacian floor complete")
+    print(
+        "Artifact: research/representation/"
+        "self_dual_wreath_orientation_laplacian_gap.json"
+    )
+    print(
+        "Atom/star controls and failures: "
+        f"{metrics['commuting_atom_control_count']}/"
+        f"{metrics['star_law_control_count']}/"
+        f"{metrics['commuting_atom_failure_count']}/"
+        f"{metrics['star_law_failure_count']}"
+    )
+    print(
+        "Screened full graphs / skipped / floor violations: "
+        f"{metrics['screened_full_graph_control_count']}/"
+        f"{metrics['screened_workload_skipped_control_count']}/"
+        f"{metrics['screened_floor_violation_count']}"
+    )
+    print(
+        "Largest-degree distinct correlations / uniform floor / sign-blind floor: "
+        f"{metrics['largest_degree_distinct_correlation_count']}/"
+        f"{metrics['largest_degree_uniform_transport_floor']:.6g}/"
+        f"{metrics['largest_degree_sign_blind_floor']:.6g}"
+    )
+    print(
+        "Vertex trivialization proved: "
+        f"{payload['claim_gate']['vertex_trivialization_proved']}"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+```
+
+- [ ] **Step 3: Add the subparser block**
+
+Find this block (line 13342):
+
+```python
     code_wreath_multistar_degree = subparsers.add_parser(
         "code-wreath-multistar-degree",
+```
+
+Scroll to the end of that block — the line
+`        func=command_code_wreath_multistar_degree` followed by `    )`.
+Insert immediately after that closing `    )`:
+
+```python
+
+    code_wreath_orientation_laplacian_gap = subparsers.add_parser(
+        "code-wreath-orientation-laplacian-gap",
         help=(
-            "Measure the exact sign-blind weighted degree of the crossing "
-            "pair-core graph on natural threshold portfolios."
+            "Compute the width-independent floor of the projector-weighted "
+            "orientation Laplacian and measure residual-transport uniformity."
         ),
     )
-    code_wreath_multistar_degree.add_argument(
+    code_wreath_orientation_laplacian_gap.add_argument(
         "--no-registry",
         action="store_true",
     )
-    code_wreath_multistar_degree.set_defaults(
-        func=command_code_wreath_multistar_degree
+    code_wreath_orientation_laplacian_gap.set_defaults(
+        func=command_code_wreath_orientation_laplacian_gap
     )
 ```
 
-- [ ] **Step 4: Verify both subcommands are registered**
-
-Run:
+- [ ] **Step 4: Verify the subcommand is registered and runs**
 
 ```bash
-python qsearch.py --help | grep -E "code-wreath-pair-core-carrier-factorization|code-wreath-multistar-degree"
+python qsearch.py --help | grep code-wreath-orientation-laplacian-gap
 ```
 
-Expected: both names appear.
-
-- [ ] **Step 5: Run both subcommands end to end**
-
-Run:
+Expected: the name appears.
 
 ```bash
-python qsearch.py code-wreath-pair-core-carrier-factorization
+python qsearch.py code-wreath-orientation-laplacian-gap
 ```
 
 Expected, in this order: the completion line, the artifact path,
-`Selected/screened star controls and failures: 3/168/0/0`,
-`Max spectrum residual / off-common violations: 5.82867e-16/0`,
-`Disjoint waist controls/violations/tight: 40/0/40`,
-`Speedup claim allowed: False`, `Registry valid: True`. Exit code 0.
-Runtime is about 7 seconds.
+`Atom/star controls and failures: 2/2/0/0`,
+`Screened full graphs / skipped / floor violations: 270/0/0`,
+`Largest-degree distinct correlations / uniform floor / sign-blind floor: 1/1.81818/-4.88064e+07`,
+`Vertex trivialization proved: False`, `Speedup claim allowed: False`,
+`Registry valid: True`. Exit code 0. Runtime about 50 seconds.
 
-Run:
+If it prints `Registry valid: False`, stop and report the printed issues. Do
+not edit the registry by hand to make validation pass.
 
-```bash
-python qsearch.py code-wreath-multistar-degree
-```
-
-Expected: `Natural samples/vacuous/first vacuous degree: 6/5/8`,
-`Laplacian controls/failures/max residual: 2/0/<about 4e-14>`,
-`Speedup claim allowed: False`, `Registry valid: True`. Exit code 0.
-Runtime is about 36 seconds.
-
-If either prints `Registry valid: False`, stop and report the printed issues.
-Do not edit the registry by hand to make validation pass.
-
-- [ ] **Step 6: Run both dispatch paths**
-
-Run:
+- [ ] **Step 5: Run the dispatch path**
 
 ```bash
-python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-PAIR-CORE-CARRIER-FACTORIZATION
-python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-MULTISTAR-DEGREE-OBSTRUCTION
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-LAPLACIAN-GAP
 ```
 
-Expected: both exit 0 and report a result row written.
+Expected: exit 0 and a result row written.
 
-- [ ] **Step 7: Add the two clean-registry dispatch tests**
+- [ ] **Step 6: Add the clean-registry dispatch test**
 
 In `tests/test_experiment_runner.py`, find
-`def test_orientation_fusion_moment_dispatches_from_clean_registry(self):`
-(line 308) and insert these two methods immediately after that method's final
+`def test_multistar_degree_obstruction_dispatches_from_clean_registry(self):`
+and insert this method immediately after that method's final
 `self.assertTrue(validation["valid"], validation["issues"])` line, keeping the
 same four-space class indentation:
 
 ```python
-    def test_pair_core_carrier_factorization_dispatches_from_clean_registry(
-        self,
-    ):
+    def test_orientation_laplacian_gap_dispatches_from_clean_registry(self):
         old_cwd = os.getcwd()
         with tempfile.TemporaryDirectory() as tmp:
             try:
                 os.chdir(tmp)
                 initialize_seed_registry(overwrite=True)
                 result = run_experiment(
-                    "EXP-CODE-SELF-DUAL-WREATH-PAIR-CORE-CARRIER-FACTORIZATION"
+                    "EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-LAPLACIAN-GAP"
                 )
                 records = load_experiment_results()
                 validation = validate_registry()
@@ -920,201 +487,91 @@ same four-space class indentation:
             item for item in records if item["id"] == result.result_id
         )
         self.assertIn(
-            "self_dual_wreath_pair_core_carrier_factorization",
-            record["artifacts"],
-        )
-        self.assertTrue(validation["valid"], validation["issues"])
-
-    def test_multistar_degree_obstruction_dispatches_from_clean_registry(self):
-        old_cwd = os.getcwd()
-        with tempfile.TemporaryDirectory() as tmp:
-            try:
-                os.chdir(tmp)
-                initialize_seed_registry(overwrite=True)
-                result = run_experiment(
-                    "EXP-CODE-SELF-DUAL-WREATH-MULTISTAR-DEGREE-OBSTRUCTION"
-                )
-                records = load_experiment_results()
-                validation = validate_registry()
-            finally:
-                os.chdir(old_cwd)
-
-        self.assertEqual(result.status, "completed")
-        record = next(
-            item for item in records if item["id"] == result.result_id
-        )
-        self.assertIn(
-            "self_dual_wreath_multistar_degree_obstruction",
+            "self_dual_wreath_orientation_laplacian_gap",
             record["artifacts"],
         )
         self.assertTrue(validation["valid"], validation["issues"])
 ```
 
-- [ ] **Step 8: Run the two new dispatch tests**
-
-Run:
+- [ ] **Step 7: Run the new dispatch test**
 
 ```bash
-python -m pytest tests/test_experiment_runner.py -q -k "carrier_factorization_dispatches or multistar_degree_obstruction_dispatches"
+python -m pytest tests/test_experiment_runner.py -q -k "orientation_laplacian_gap_dispatches"
 ```
 
-Expected: `2 passed`. Each takes under a minute.
+Expected: `1 passed`, in about a minute.
 
 ---
 
-### Task 6: Add the Sellke literature record
+### Task 4: Correct the README paragraph the new result supersedes
 
 **Files:**
-- Modify: `research/literature_index.json`
-- Modify: `research/literature_records.json`
+- Modify: `README.md`
 
-**Interfaces:**
-- Consumes: nothing from earlier tasks.
-- Produces: a literature record that the Plancherel block obstruction and the
-  multistar degree obstruction both cite.
+The pass-1 README block for `code-wreath-multistar-degree` currently ends by
+saying the surviving object is the orientation Laplacian and that no gap is
+proved for it. That sentence is now out of date in one direction: a
+width-independent floor is proved under an explicit hypothesis. Fix that
+sentence and add the new block.
 
-- [ ] **Step 1: Check whether the paper is already present**
+- [ ] **Step 1: Correct the closing sentence of the multistar block**
 
-Run: `grep -c "2004.05283" research/literature_index.json research/literature_records.json`
+Find this sentence in `README.md`:
 
-If both counts are nonzero, mark this task complete and move to Task 7.
-
-- [ ] **Step 2: Append the seed-paper entry**
-
-`research/literature_index.json` is an object with keys `arxiv_metadata`,
-`seed_papers`, `tag_index`. `seed_papers` is a list of 43 objects with
-exactly the fields `id`, `tags`, `title`, `url`, `why_it_matters`, `year`.
-Append this object to that list:
-
-```json
-{
-  "id": "sellke-2020",
-  "tags": [
-    "symmetric-group",
-    "representation-theory",
-    "plancherel",
-    "tensor-covering"
-  ],
-  "title": "Covering Irrep(S_n) With Tensor Products and Powers",
-  "url": "https://arxiv.org/abs/2004.05283",
-  "why_it_matters": "A fixed absolute number C of arbitrarily coupled Plancherel irreps of S_n tensor together to cover every irrep with probability 1-o(1), which supplies the block-covering step used by the Plancherel block obstruction and the multistar degree obstruction.",
-  "year": 2020
-}
 ```
-
-- [ ] **Step 3: Append the full literature record**
-
-`research/literature_records.json` is a flat list of 43 objects with exactly
-the fields `abstract`, `id`, `mechanism`, `no_go_barrier`, `open_question`,
-`problem_family`, `proof_technique`, `reduction`, `reusable_abstraction`,
-`source`, `tags`, `title`, `url`, `year`. Append this object:
-
-```json
-{
-  "abstract": "Theorem 1.2 shows that a fixed absolute number C of arbitrarily coupled Plancherel-distributed irreducible representations of S_n has a tensor product containing every irreducible representation with probability 1-o(1).",
-  "id": "sellke-2020",
-  "mechanism": "Plancherel-typical tensor products cover the whole dual of S_n after a bounded number of factors.",
-  "no_go_barrier": "None on its own. The covering statement bounds no operator norm and supplies no convergence rate.",
-  "open_question": "What quantitative rate does the covering event have, and does it survive conditioning on a fixed target constituent?",
-  "problem_family": "Symmetric-group representation theory used inside hidden-subgroup and graph-isomorphism reductions.",
-  "proof_technique": "Plancherel measure concentration plus character estimates on tensor product multiplicities.",
-  "reduction": "Divide the natural k=ceil(log2 n!) labels into C-sized blocks so that both the left and right block products cover every irrep on all but an o(1) fraction of blocks; Markov applied to the expected bad-block fraction needs no convergence rate.",
-  "reusable_abstraction": "Bounded-depth tensor covering of Irrep(S_n), used by EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-BLOCK-OBSTRUCTION and EXP-CODE-SELF-DUAL-WREATH-MULTISTAR-DEGREE-OBSTRUCTION.",
-  "source": "seed",
-  "tags": [
-    "symmetric-group",
-    "representation-theory",
-    "plancherel",
-    "tensor-covering"
-  ],
-  "title": "Covering Irrep(S_n) With Tensor Products and Powers",
-  "url": "https://arxiv.org/abs/2004.05283",
-  "year": 2020
-}
-```
-
-Do not add the new tags to `tag_index` by hand. If a test requires them,
-regenerate the index with `python literature_pipeline.py` and inspect the
-diff before keeping it.
-
-- [ ] **Step 4: Verify both files still parse and the record is found**
-
-Run:
-
-```bash
-python -c "
-import json
-for path in ('research/literature_index.json','research/literature_records.json'):
-    json.load(open(path)); print(path, 'parses')
-" && grep -c "2004.05283" research/literature_index.json research/literature_records.json
-```
-
-Expected: both parse, and each file reports at least 1.
-
-- [ ] **Step 5: Run the literature tests**
-
-Run: `python -m pytest tests/ -q -k "literature"`
-
-Expected: all selected tests pass.
-
----
-
-### Task 7: Refresh downstream artifacts and the README
-
-**Files:**
-- Modify: `README.md` (insert after the `code-wreath-orientation-moments` block, which ends around line 2224)
-- Regenerated by commands: `research/dequantization_report.json`, `research/proof_status_report.json`, `research/query_model_ledger.json`, `research/frontier_map.json`, `research/conjecture_report.json`, `research/mutation_report.json`
-
-**Interfaces:**
-- Consumes: the two subcommands from Task 5.
-- Produces: refreshed downstream artifacts and two README command blocks.
-
-- [ ] **Step 1: Add the README blocks**
-
-Find in `README.md` the sentence ending
-`Growing orientation moments or a direct operator-valued Gram contraction remain necessary.`
-Insert the following immediately after that paragraph:
-
-````markdown
-Factor the pair-core overlap operator exactly:
-
-```bash
-python qsearch.py code-wreath-pair-core-carrier-factorization
-python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-PAIR-CORE-CARRIER-FACTORIZATION
-```
-
-For two pair cores sharing an orientation, the overlap is exactly a direct
-sum of `1/(d_beta d_p)` times partial isometries, with one carrier per
-membership cluster and exact representation-ring multiplicities. The
-conjectured single-reciprocal `1/d_alpha` law is therefore false in general;
-finite screens saw single reciprocals only because their membership blocks
-were singletons. Because a correlation equals one exactly when both carriers
-are one dimensional, every off-common correlation is at most `1/(n-1)` for
-`n>=5`. There is no nontrivial multiplicity-space 6j block at a shared
-vertex; genuine Kronecker content first appears for vertex-disjoint cores,
-where a waist bound applies. All 168 screened controls, three named
-`d=5,9,10` controls, 40 repeated-label controls, and 40 disjoint controls
-agree with the closed form to `5.83e-16`.
-
-Measure the crossing-graph weighted degree:
-
-```bash
-python qsearch.py code-wreath-multistar-degree
-python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-MULTISTAR-DEGREE-OBSTRUCTION
-```
-
-Block Gershgorin on the crossing relation Gram needs the absolute weighted
-degree to stay below two. A sibling merge has a complete bipartite crossing
-graph, and Sellke covering saturates the off-common weight at `1/(n-1)` as
-the label count grows, so the degree grows like `2^(j-1)/(n-1)`. On natural
-threshold portfolios the certificate is already vacuous at `n=8` and reaches
-about `2^25.5` at `n=12`. No absolute-weight comparison can certify the
-residual quotient at natural depth. The surviving object is the
+The surviving object is the
 projector-weighted orientation Laplacian `Delta = D - A`, whose positive
 spectrum equals that of the relation Gram; no gap is proved for it.
+```
+
+Replace it with:
+
+```
+The surviving object is the
+projector-weighted orientation Laplacian `Delta = D - A`, whose positive
+spectrum equals that of the relation Gram. The next section shows that a
+vacuous absolute-weight certificate does not imply bad conditioning.
+```
+
+- [ ] **Step 2: Add the new block immediately after that paragraph**
+
+````markdown
+Compute the width-independent metric floor:
+
+```bash
+python qsearch.py code-wreath-orientation-laplacian-gap
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-LAPLACIAN-GAP
+```
+
+The relation Gram is the Gram of a signed subspace incidence map, so
+`<x, Delta x> = sum_e ||P_(K_e)(x_a - x_b)||^2`. When the live pair-core
+projectors commute, the complex splits into scalar graph Laplacians over
+Boolean atoms, and the affine-support theorem makes every atom support a
+complete graph, so the smallest positive eigenvalue is at least two no matter
+how many cores meet one orientation. For a `p`-star with residual correlation
+`gamma` the spectrum is exactly `2-gamma` with multiplicity `p-1` together
+with `2+(p-1)gamma`, so the smallest eigenvalue does not move as `p` grows;
+this reproduces the S6 noncommuting counterexample (`17/9`, `20/9` at
+`gamma=1/9`) to `2.7e-15`. If the residual overlaps factor through vertex
+isometries with one common `gamma`, then `lambda_min(M) >= 2-2gamma`,
+independent of merge width and at least `2-2/(n-1)`. At `n=12` that floor is
+`1.8182` where the sign-blind estimate for the same merge was `-4.88e7`. No
+full live graph among 270 controls violates the floor, and the number of
+distinct residual correlations per sampled star collapses to one at `n=12`.
+
+The vertex trivialization is a hypothesis, not a theorem. Only its
+single-correlation half is measured, the graded defect is unbounded, and no
+circuit follows. Two traps are worth recording: the floor is a statement about
+the full live graph, since a star subgraph deletes edges and drops the minimum
+to one; and vertex-disjoint pair cores overlap geometrically but contribute no
+off-diagonal block to the relation Gram at all.
 ````
 
-- [ ] **Step 2: Refresh the downstream workflows**
+---
+
+### Task 5: Refresh downstream artifacts
+
+- [ ] **Step 1: Run the standard downstream workflows**
 
 Run these one at a time, in this order, and check each exits 0:
 
@@ -1146,13 +603,12 @@ python qsearch.py mutate
 python qsearch.py validate
 ```
 
-Expected: every command exits 0 and `validate` reports no registry issues.
-If `mutate` proposes anything that would enable a speedup claim, do not
-accept it — report it and stop.
+Expected: every command exits 0 and `validate` reports no registry issues. If
+`mutate` proposes anything that would enable a speedup claim, or anything that
+upgrades the conditional floor into an unconditional conditioning claim, do
+not accept it — report it and stop.
 
-- [ ] **Step 3: Confirm no claim gate flipped**
-
-Run:
+- [ ] **Step 2: Confirm no claim gate flipped**
 
 ```bash
 python -c "
@@ -1170,21 +626,33 @@ print('speedup gates open:', bad)
 "
 ```
 
-Expected: `speedup gates open: []`. If the list is non-empty, stop and report.
+Expected: `speedup gates open: []`.
+
+- [ ] **Step 3: Confirm the new gate stayed conditional**
+
+```bash
+python -c "
+import json
+d = json.load(open('research/representation/self_dual_wreath_orientation_laplacian_gap.json'))
+g = d['claim_gate']
+assert g['vertex_trivialization_proved'] is False
+assert g['all_depth_conditioning_proved'] is False
+assert g['grading_defect_bounded'] is False
+assert g['speedup_claim_allowed'] is False
+print('gates correct')
+"
+```
+
+Expected: `gates correct`.
 
 ---
 
-### Task 8: Final verification and one commit
-
-**Files:**
-- No new edits. This task only verifies and commits.
+### Task 6: Final verification and one commit
 
 - [ ] **Step 1: Run the focused test set**
 
-Run:
-
 ```bash
-python -m pytest tests/test_self_dual_wreath_pair_core_carrier_factorization.py tests/test_self_dual_wreath_multistar_degree_obstruction.py tests/test_self_dual_wreath_pair_core_recoupling_boundary.py tests/test_self_dual_wreath_common_core_atomization.py tests/test_self_dual_wreath_pair_quotient_overlap.py tests/test_experiment_runner.py -q
+python -m pytest tests/test_self_dual_wreath_orientation_laplacian_gap.py tests/test_self_dual_wreath_multistar_degree_obstruction.py tests/test_self_dual_wreath_pair_core_carrier_factorization.py tests/test_self_dual_wreath_common_core_atomization.py tests/test_self_dual_wreath_pair_core_recoupling_boundary.py tests/test_experiment_runner.py -q
 ```
 
 Expected: all pass. Do not run the full suite.
@@ -1202,15 +670,16 @@ Expected: `checks ok`.
 Run: `git status --short`
 
 Expected: modifications to `README.md`, `qsearch.py`, `experiment_runner.py`,
-`research_registry.py`, the two module files, the two test files, the
-literature files, and refreshed `research/**` artifacts. There must be **no**
-change under `ag-remote/` beyond the pre-existing deletions.
+`research_registry.py`, `tests/test_experiment_runner.py`, and refreshed
+`research/**` artifacts, plus the new module, artifact, and test file if they
+are still untracked. No change under `ag-remote/` beyond the pre-existing
+deletions.
 
 - [ ] **Step 4: Commit once**
 
 ```bash
 git add -A -- . ':!ag-remote'
-git commit -m "Wire pair-core carrier factorization and multistar degree modules
+git commit -m "Wire the orientation Laplacian floor module
 
 Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>"
 ```
@@ -1219,57 +688,578 @@ Do not push. Do not create a pull request.
 
 ---
 
-### Task 9: Apply the same recipe to the wiring backlog
+### Task 7: Build the real wiring-backlog inventory
+
+Pass 1's plan named six backlog modules, taken from a hand-written list in the
+handoff. Those six are now wired. A direct scan of the repository shows the
+actual backlog is **57 modules**, of which the Laplacian gap module handled in
+Tasks 1 through 6 is one. Do not work from a hand-written list again; generate
+the inventory and work from it.
 
 **Files:**
-- Modify: `research_registry.py`, `experiment_runner.py`, `qsearch.py`, `README.md`
+- Create: `research/wiring_backlog.json`
 
-Tasks 1 through 5 are a repeatable recipe. Apply it, one module at a time, to
-the experiment ids listed under "Mechanical Follow-Up For Antigravity /
-Gemini 3.6 Flash" item 2 in `research/AGENT_HANDOFF.md` that are not yet
-wired. As of this plan the following have modules and artifacts but no CLI or
-dispatch entry — verify each with
-`grep -c "<EXPERIMENT-ID>" qsearch.py experiment_runner.py` before starting,
-and skip any that already returns a nonzero count in both files:
+- [ ] **Step 1: Generate the inventory**
 
-- `EXP-CODE-SELF-DUAL-WREATH-PAIR-QUOTIENT-OVERLAP` → CLI `code-wreath-pair-quotient-overlap`
-- `EXP-CODE-SELF-DUAL-WREATH-RECURSIVE-PAIR-GENERATION` → CLI `code-wreath-recursive-pair-generation`
-- `EXP-CODE-SELF-DUAL-WREATH-AUGMENTED-COMMON-CORE-CECH` → CLI `code-wreath-augmented-common-core-cech`
-- `EXP-CODE-SELF-DUAL-WREATH-COMMON-CORE-CECH-LAPLACIAN` → CLI `code-wreath-common-core-cech`
-- `EXP-CODE-SELF-DUAL-WREATH-PAIR-CORE-RECOUPLING-BOUNDARY` → CLI `code-wreath-pair-core-recoupling`
-- `EXP-CODE-SELF-DUAL-WREATH-COMMON-CORE-ATOMIZATION` → CLI `code-wreath-common-core-atomization`
+```bash
+python - <<'PY'
+import json, re, pathlib
+root = pathlib.Path(".")
+registry = pathlib.Path("research_registry.py").read_text()
+runner = pathlib.Path("experiment_runner.py").read_text()
+tests = {p.name for p in pathlib.Path("tests").glob("*.py")}
+artifacts = {p.name for p in root.glob("research/**/*.json")}
+rows = []
+for path in sorted(root.glob("*.py")):
+    text = path.read_text()
+    match = re.search(r'DEFAULT_EXPERIMENT_ID\s*=\s*\(?\s*"([A-Z0-9-]+)"', text)
+    if not match:
+        continue
+    experiment_id = match.group(1)
+    if registry.count(experiment_id) or runner.count(experiment_id):
+        continue
+    writers = re.findall(r'^def (write_\w+)\(', text, re.M)
+    rows.append({
+        "module": path.stem,
+        "experiment_id": experiment_id,
+        "report_writer": writers[0] if writers else None,
+        "has_registry_kwargs": "write_registry" in text,
+        "has_test": f"test_{path.stem}.py" in tests,
+        "has_artifact": f"{path.stem}.json" in artifacts,
+    })
+pathlib.Path("research/wiring_backlog.json").write_text(
+    json.dumps({"unwired_module_count": len(rows), "modules": rows}, indent=2, sort_keys=True)
+)
+ready = [r for r in rows if r["report_writer"] and r["has_test"] and r["has_artifact"]]
+print("unwired:", len(rows), "ready to wire:", len(ready),
+      "already have kwargs:", sum(r["has_registry_kwargs"] for r in ready))
+print("not ready:", [r["module"] for r in rows if r not in ready])
+PY
+```
 
-For each one:
+Expected, as of this plan: `unwired: 57 ready to wire: 56 already have kwargs: 15`,
+and `not ready: ['self_dual_wreath_global_collision_free_mass']`.
 
-1. Read its module docstring and its `theorem_contract`, `claim_gate`, and
-   `falsifiers_triggered` fields in its artifact JSON.
-2. Write the `ExperimentRecord` using **only** wording taken from those
-   fields. Do not invent a hypothesis, a positive signal, or a falsifier.
-3. Take the `metrics` list verbatim from the artifact's `headline_metrics`
-   keys.
-4. Use the next unused integer in the `priority` dict.
-5. Follow Tasks 1, 4, and 5 for that module.
-6. Re-run Task 7 Step 2 and Task 8 Steps 1 and 2.
-7. Commit once per module.
+If your numbers differ, that is fine — the generated file is authoritative,
+not this paragraph. Use it. Report the difference in your summary.
 
-Stop and report if any module's `run_*` function takes longer than five
-minutes at its default arguments — say so rather than reducing its control
-counts.
+- [ ] **Step 2: Record the one incomplete module**
+
+`self_dual_wreath_global_collision_free_mass.py` has a
+`write_global_collision_free_mass_report` function but **no artifact and no
+test**. Do not wire it and do not write a test for it: deciding what that
+module should assert is mathematical judgment. Note it in your summary as
+needing a high-reasoning pass, and skip it everywhere below.
+
+---
+
+### Task 8: Retrofit registry keyword arguments where they are missing
+
+41 of the 56 ready modules have a `write_*` report function with **no**
+registry parameters. Wiring needs them. This is a pure copy edit with no
+mathematical content.
+
+**Files:**
+- Modify: each module listed by Task 7 with `"has_registry_kwargs": false`
+
+**Interfaces:**
+- Produces, for every such module: `write_<name>(path=REPORT_PATH, write_registry=True, registry_experiment_id=DEFAULT_EXPERIMENT_ID, registry_candidate_id=DEFAULT_CANDIDATE_ID, registry_result_id=None, **kwargs) -> dict[str, Any]`, consumed by Tasks 9 and 10.
+
+- [ ] **Step 1: Work one module at a time, in the order the inventory lists**
+
+For module `<name>` with writer `write_<w>` and report function `run_<r>`,
+first read its current writer. It will look like this:
+
+```python
+def write_<w>(path: Path = REPORT_PATH) -> dict[str, Any]:
+    payload = asdict(run_<r>())
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(payload, indent=2, sort_keys=True))
+    return payload
+```
+
+- [ ] **Step 2: Add the registry imports if absent**
+
+If the module does not already import them, replace
+
+```python
+from research_registry import utc_now
+```
+
+with
+
+```python
+from research_registry import (
+    ExperimentResultRecord,
+    upsert_experiment_result,
+    utc_now,
+)
+```
+
+Do **not** add `NegativeResultRecord` or `upsert_negative_result` here.
+Authoring a negative-result claim requires deciding what was refuted and why,
+which is mathematical judgment. Only the experiment-result upsert is
+mechanical.
+
+- [ ] **Step 3: Replace the writer**
+
+```python
+def write_<w>(
+    path: Path = REPORT_PATH,
+    write_registry: bool = True,
+    registry_experiment_id: str = DEFAULT_EXPERIMENT_ID,
+    registry_candidate_id: str = DEFAULT_CANDIDATE_ID,
+    registry_result_id: str | None = None,
+    **kwargs: Any,
+) -> dict[str, Any]:
+    payload = asdict(run_<r>(**kwargs))
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(payload, indent=2, sort_keys=True))
+    if write_registry:
+        upsert_experiment_result(
+            ExperimentResultRecord(
+                id=(
+                    registry_result_id
+                    or f"RESULT-{registry_experiment_id}-LATEST"
+                ),
+                experiment_id=registry_experiment_id,
+                candidate_id=registry_candidate_id,
+                created_at=payload["created_at"],
+                status=payload["status"],
+                summary=payload["summary"],
+                metrics=payload["headline_metrics"],
+                falsifiers_triggered=payload["falsifiers_triggered"],
+                artifacts={"<name>": str(path)},
+            )
+        )
+    return payload
+```
+
+Replace `<w>`, `<r>`, and `<name>` with the real names. Keep the module's
+existing `if __name__ == "__main__":` block exactly as it is.
+
+If `run_<r>()` takes no arguments, `**kwargs` is still correct and harmless.
+If the module's `DEFAULT_CANDIDATE_ID` does not exist, add
+`DEFAULT_CANDIDATE_ID = "CODE-COSET-COLLECTIVE"` beside `DEFAULT_EXPERIMENT_ID`.
+
+- [ ] **Step 4: Verify the module still imports and its test passes**
+
+```bash
+python -c "import <name>; print('ok')" && python -m pytest tests/test_<name>.py -q
+```
+
+Expected: `ok`, then all tests in that file pass. If the module has no
+`falsifiers_triggered` or `headline_metrics` key in its payload, the upsert
+will raise a `KeyError` at run time — do **not** invent those fields. Record
+the module as blocked and move on.
+
+- [ ] **Step 5: Commit after every ten modules**
+
+```bash
+git add -A -- . ':!ag-remote'
+git commit -m "Add registry keyword arguments to wreath report writers
+
+Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>"
+```
+
+---
+
+### Task 9: Wire the backlog in batches of ten
+
+**Files:**
+- Modify: `research_registry.py`, `experiment_runner.py`, `qsearch.py`, `tests/test_experiment_runner.py`
+
+Apply Tasks 1 through 3 as the recipe, ten modules per batch.
+
+- [ ] **Step 1: For each module, read its own words first**
+
+Open the module docstring and its artifact's `theorem_contract`,
+`claim_gate`, `adversarial_audit`, and `falsifiers_triggered`. Every field you
+write into the `ExperimentRecord` must be a phrase taken from one of those.
+**Do not invent a hypothesis, a positive signal, or a falsifier.** If the
+artifact has no `theorem_contract`, use the module docstring's first paragraph
+for `hypothesis` and its last paragraph for `positive_signal`, and take
+`falsifiers` verbatim from `falsifiers_triggered`.
+
+- [ ] **Step 2: Take the metrics list verbatim**
+
+```bash
+python -c "
+import json
+print(json.dumps(sorted(json.load(open('research/representation/<name>.json'))['headline_metrics']), indent=2))
+"
+```
+
+Paste that list into the record's `metrics=[...]`.
+
+- [ ] **Step 3: Choose the CLI name and priority**
+
+The CLI name is the module stem with `self_dual_wreath_` replaced by
+`code-wreath-` and underscores replaced by hyphens, truncated to something
+already used in the handoff if one is listed there. Check it is free:
+
+```bash
+python qsearch.py --help | grep -c "<cli-name>"
+```
+
+Expected: `0`. For the priority integer, use the next unused value:
+
+```bash
+python -c "
+import re
+src = open('experiment_runner.py').read()
+values = [int(m) for m in re.findall(r'\"EXP-[A-Z0-9-]+\":\s*(\d+),', src)]
+print('next free:', max(values) + 1)
+"
+```
+
+- [ ] **Step 4: Apply Tasks 1, 2, and 3 verbatim for that module**
+
+Same four edit sites, same dispatch-test template. Use the module's own
+`write_*` name, artifact path, and metric keys in the `command_*` print block;
+print at most four metric lines and always print the `speedup_claim_allowed`
+line.
+
+- [ ] **Step 5: After each batch of ten, verify and commit**
+
+```bash
+python -m pytest tests/test_experiment_runner.py -q && python -m compileall -q . && python qsearch.py validate
+```
+
+Expected: tests pass, compile clean, `validate` reports no registry issues.
+
+```bash
+git add -A -- . ':!ag-remote'
+git commit -m "Wire wreath theorem modules batch <k>
+
+Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>"
+```
+
+Stop and report if `validate` fails, if a module takes longer than five
+minutes at default arguments, or if wiring a module would require you to write
+a mathematical claim that is not already in its docstring or artifact.
+
+---
+
+### Task 10: Add a repository-wide artifact invariant guard
+
+There is no test that checks the claim gates across all artifacts. Every gate
+is currently correct; this task freezes that.
+
+**Files:**
+- Create: `tests/test_research_artifact_invariants.py`
+
+- [ ] **Step 1: Write the test**
+
+```python
+import json
+import pathlib
+
+import pytest
+
+ROOT = pathlib.Path(__file__).resolve().parent.parent
+
+
+def _artifacts():
+    for path in sorted(ROOT.glob("research/**/*.json")):
+        if "registry" in path.parts:
+            continue
+        try:
+            payload = json.loads(path.read_text())
+        except json.JSONDecodeError:
+            pytest.fail(f"{path} is not valid JSON")
+        if isinstance(payload, dict):
+            yield path, payload
+
+
+def test_every_research_artifact_parses() -> None:
+    assert list(_artifacts())
+
+
+def test_no_artifact_opens_the_speedup_gate() -> None:
+    opened = [
+        str(path.relative_to(ROOT))
+        for path, payload in _artifacts()
+        if isinstance(payload.get("claim_gate"), dict)
+        and payload["claim_gate"].get("speedup_claim_allowed")
+    ]
+
+    assert opened == []
+
+
+def test_no_artifact_claims_a_new_quantum_algorithm() -> None:
+    claimed = [
+        str(path.relative_to(ROOT))
+        for path, payload in _artifacts()
+        if isinstance(payload.get("headline_metrics"), dict)
+        and payload["headline_metrics"].get("new_quantum_algorithm_count")
+    ]
+
+    assert claimed == []
+
+
+KNOWN_GATE_WITHOUT_REASON = "research/classical_baselines/character_shift_complexity.json"
+
+
+def test_every_claim_gate_carries_a_reason() -> None:
+    """One legacy artifact predates the reason convention and is exempted.
+
+    Its claim_gate has no `reason` key at all. Writing one means deciding what
+    that module concluded, which is a mathematical judgment, so the exemption
+    stays until a high-reasoning pass authors it.
+    """
+    missing = [
+        str(path.relative_to(ROOT))
+        for path, payload in _artifacts()
+        if isinstance(payload.get("claim_gate"), dict)
+        and not payload["claim_gate"].get("reason")
+    ]
+
+    assert missing == [KNOWN_GATE_WITHOUT_REASON]
+```
+
+- [ ] **Step 2: Run it**
+
+```bash
+python -m pytest tests/test_research_artifact_invariants.py -q
+```
+
+Expected: `4 passed`, over 355 artifacts.
+
+The exemption above is exact as of this plan: `character_shift_complexity.json`
+is the **only** artifact whose `claim_gate` lacks a `reason` key. If the test
+fails because the list is longer, a new artifact was added without a reason —
+report the extra names, add them to the exemption list, and flag them. If it
+fails because the list is empty, someone authored the missing reason; delete
+the exemption and assert `missing == []`. Either way, do **not** write a
+`reason` string yourself.
+
+- [ ] **Step 3: Commit**
+
+```bash
+git add tests/test_research_artifact_invariants.py
+git commit -m "Guard research artifact claim gates repository wide
+
+Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>"
+```
+
+---
+
+### Task 11: Generate the artifact schema inventory
+
+316 research artifacts exist outside the registry. A scan shows 208 lack
+`theorem_contract`, 53 lack `claim_gate`, and 12 lack `falsifiers_triggered`.
+**Do not author any of that missing content** — writing a theorem contract or
+a claim gate means deciding what a module proved and what it did not, which is
+exactly the mathematical judgment this plan is scoped to avoid. Generate the
+inventory so a later high-reasoning pass can work from it.
+
+**Files:**
+- Create: `research/artifact_schema_inventory.json`
+
+- [ ] **Step 1: Generate**
+
+```bash
+python - <<'PY'
+import json, pathlib
+REQUIRED = [
+    "claim_gate", "theorem_contract", "headline_metrics",
+    "status", "summary", "falsifiers_triggered",
+]
+rows = []
+for path in sorted(pathlib.Path("research").rglob("*.json")):
+    if "registry" in path.parts:
+        continue
+    try:
+        payload = json.loads(path.read_text())
+    except json.JSONDecodeError:
+        rows.append({"artifact": str(path), "unparseable": True})
+        continue
+    if not isinstance(payload, dict):
+        continue
+    if "headline_metrics" not in payload and "claim_gate" not in payload:
+        continue
+    missing = [key for key in REQUIRED if key not in payload]
+    if missing:
+        rows.append({"artifact": str(path), "missing_fields": missing})
+summary = {}
+for row in rows:
+    for key in row.get("missing_fields", []):
+        summary[key] = summary.get(key, 0) + 1
+pathlib.Path("research/artifact_schema_inventory.json").write_text(
+    json.dumps(
+        {
+            "artifacts_with_gaps": len(rows),
+            "missing_field_counts": summary,
+            "artifacts": rows,
+        },
+        indent=2,
+        sort_keys=True,
+    )
+)
+print("artifacts with gaps:", len(rows), summary)
+PY
+```
+
+Expected, as of this plan: about 208 missing `theorem_contract`, 53 missing
+`claim_gate`, 12 missing `falsifiers_triggered`.
+
+- [ ] **Step 2: Commit the inventory only**
+
+```bash
+git add research/artifact_schema_inventory.json
+git commit -m "Inventory research artifact schema gaps
+
+Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>"
+```
+
+Do not modify any artifact in this task.
+
+---
+
+### Task 12: Record a runtime budget for every wired module
+
+One module in this repository silently took 37 minutes of wall time at 1
+percent CPU because it thrashed memory on dense bases. That is why the
+Laplacian gap module now has a `workload_cap`. Measure the rest so nobody
+stalls on an unknown.
+
+**Files:**
+- Create: `research/module_runtime_budget.json`
+
+- [ ] **Step 1: Time each wired module's focused test, not the module**
+
+Running a module directly writes to the registry as a side effect. Time its
+test instead.
+
+```bash
+python - <<'PY'
+import json, pathlib, subprocess, time
+rows = []
+for path in sorted(pathlib.Path("tests").glob("test_self_dual_wreath_*.py")):
+    start = time.time()
+    done = subprocess.run(
+        ["python", "-m", "pytest", str(path), "-q"],
+        capture_output=True, text=True,
+    )
+    rows.append({
+        "test": path.name,
+        "seconds": round(time.time() - start, 2),
+        "passed": done.returncode == 0,
+    })
+    print(rows[-1])
+slow = [r for r in rows if r["seconds"] > 300]
+pathlib.Path("research/module_runtime_budget.json").write_text(
+    json.dumps({"slow_threshold_seconds": 300, "slow": slow, "all": rows},
+               indent=2, sort_keys=True)
+)
+print("slow modules:", [r["test"] for r in slow])
+print("failing tests:", [r["test"] for r in rows if not r["passed"]])
+PY
+```
+
+This walks every wreath test file one at a time. Expect it to take a while in
+total; that is the point of measuring. Let it finish.
+
+- [ ] **Step 2: Report, do not fix**
+
+If any test fails, record it and report — do **not** change its expected
+values. If any exceeds 300 seconds, record it; adding a workload cap to a
+module changes what it screens, which is a mathematical decision.
+
+- [ ] **Step 3: Commit**
+
+```bash
+git add research/module_runtime_budget.json
+git commit -m "Record per-module test runtime budget
+
+Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>"
+```
+
+---
+
+### Task 13: Audit README and CLI coverage
+
+**Run this after Task 9, not before.** As of this plan the scan below reports
+`wired wreath experiments: 40  absent from README: 0` — coverage is complete
+for what is currently wired. It only becomes real work once Task 9 has wired
+the backlog, at which point roughly 56 new ids will appear with no README
+block. If you run it early and get zero, that is correct; come back later.
+
+- [ ] **Step 1: Find wired experiments with no README command block**
+
+```bash
+python - <<'PY'
+import json, pathlib, re
+readme = pathlib.Path("README.md").read_text()
+runner = pathlib.Path("experiment_runner.py").read_text()
+ids = sorted(set(re.findall(r'"(EXP-CODE-SELF-DUAL-WREATH-[A-Z0-9-]+)"', runner)))
+missing = [i for i in ids if i not in readme]
+print(f"wired wreath experiments: {len(ids)}  absent from README: {len(missing)}")
+for i in missing:
+    print("  ", i)
+PY
+```
+
+- [ ] **Step 2: Add one command block per missing id**
+
+Use the same shape as the existing blocks: a one-line lead-in, a fenced `bash`
+block with the `qsearch.py <cli-name>` and `qsearch.py run <ID>` lines, then a
+short paragraph. **Take every sentence of that paragraph from the module's
+artifact `summary` and `theorem_contract`.** Do not write new claims, do not
+compare modules, and do not describe anything as an algorithm or a speedup.
+
+- [ ] **Step 3: Verify and commit**
+
+```bash
+python -m pytest tests/ -q -k "readme or documentation" && git diff --check && echo ok
+```
+
+```bash
+git add README.md
+git commit -m "Document wired wreath experiments in the README
+
+Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>"
+```
+
+---
+
+### Task 14: Final sweep
+
+- [ ] **Step 1: Re-run the downstream workflows**
+
+Repeat Task 5 in full, then Task 6 Steps 1 through 3.
+
+- [ ] **Step 2: Confirm the backlog shrank**
+
+Re-run Task 7 Step 1. Expected: `unwired` is now `1`
+(`self_dual_wreath_global_collision_free_mass`, deliberately skipped).
+
+- [ ] **Step 3: Report**
+
+Write a short summary listing: modules wired, modules blocked and why, tests
+that failed, artifacts over the runtime threshold, and every place you
+declined to write content because it required mathematical judgment. That last
+list is the input to the next high-reasoning pass and is the most valuable
+thing you produce.
 
 ---
 
 ## What you must not do
 
 - Do not change any formula, tolerance, control count, sample count, seed,
-  ambient cap, or screen limit.
+  ambient cap, workload cap, or screen limit.
 - Do not set `speedup_claim_allowed` to `true` anywhere.
-- Do not delete or weaken a negative result, a proof obligation, an
-  adversarial-audit entry, or a falsifier string.
-- Do not reintroduce tiny-circuit or toy-oracle search.
-- Do not describe a finite screen as an asymptotic theorem in any README or
-  registry text you write.
-- Do not mark an experiment `status` as anything other than `planned` in the
-  seed record; the runner sets the live status.
-- Do not attempt any of the eleven items in the "Highest-Value Open
-  Derivation" section of `research/AGENT_HANDOFF.md`. Those need mathematical
-  judgment and are explicitly out of scope for this plan.
+- Do not upgrade `vertex_trivialization_proved`, `all_depth_conditioning_proved`,
+  or `grading_defect_bounded` to `true`. The floor is conditional.
+- Do not write, in any README or registry text, that the hierarchy is well
+  conditioned, that the polar tree is efficient, or that the sign-blind result
+  has been reversed into a positive conditioning theorem. What was withdrawn is
+  the *inference* from a vacuous certificate to bad conditioning.
+- Do not delete or weaken a negative result, proof obligation, adversarial-audit
+  entry, or falsifier string. In particular keep
+  `NEG-CODE-WREATH-SIGN-BLIND-MULTISTAR-CERTIFICATE`; it is still correct.
+- Do not describe a finite screen as an asymptotic theorem.
+- Do not attempt any of the twelve items in the "Highest-Value Open Derivation"
+  section of `research/AGENT_HANDOFF.md`. Those need mathematical judgment and
+  are out of scope for this plan.

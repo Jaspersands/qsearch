@@ -1,0 +1,824 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "The multistar degree obstruction showed the hierarchy is badly conditioned.",
+      "resolution": "It showed one bound is vacuous. Keeping the incidence signs gives a floor that does not depend on merge width at all.",
+      "resolved": true
+    },
+    {
+      "objection": "Exponentially many edges at a vertex must accumulate.",
+      "resolution": "False for the metric. A p-star has smallest eigenvalue 2-gamma for every p, and a complete bipartite atom has algebraic connectivity equal to its side length.",
+      "resolved": true
+    },
+    {
+      "objection": "Measuring a single residual correlation proves vertex trivialization.",
+      "resolution": "It does not. A common gamma is necessary, not sufficient; the isometry factorization and its holonomy remain unconstructed.",
+      "resolved": false
+    },
+    {
+      "objection": "The floor can be checked on any convenient subgraph.",
+      "resolution": "No. Star subgraphs violate the floor because deleting edges lowers the Laplacian; only the full live graph is meaningful.",
+      "resolved": true
+    },
+    {
+      "objection": "A metric floor is an algorithm.",
+      "resolution": "It is not. The graded defect, the disjoint-core geometry, the compilation, and the decoder are all untouched.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "all_depth_conditioning_proved": false,
+    "commuting_atom_splitting_proved": true,
+    "dirichlet_form_verified": true,
+    "exact_p_star_spectrum_proved": true,
+    "grading_defect_bounded": false,
+    "hierarchical_orientation_polar_proved": false,
+    "reason": "The metric floor is width independent under an explicit and partially measured hypothesis, but the hypothesis is unproved and the graded defect, geometry, compilation, and decoder are untouched.",
+    "residual_correlation_uniformity_observed": true,
+    "speedup_claim_allowed": false,
+    "vertex_trivialization_proved": false,
+    "width_independent_floor_respected_on_all_screens": true
+  },
+  "commuting_atom_controls": [
+    {
+      "atom_count": 3,
+      "atoms": [
+        {
+          "dimension": 1,
+          "graph_algebraic_connectivity": 2.0,
+          "support_edges": [
+            [
+              1,
+              6
+            ]
+          ],
+          "support_is_affine": true,
+          "support_orientations": [
+            1,
+            6
+          ]
+        },
+        {
+          "dimension": 1,
+          "graph_algebraic_connectivity": 2.0,
+          "support_edges": [
+            [
+              2,
+              5
+            ]
+          ],
+          "support_is_affine": true,
+          "support_orientations": [
+            2,
+            5
+          ]
+        },
+        {
+          "dimension": 9,
+          "graph_algebraic_connectivity": 2.0,
+          "support_edges": [
+            [
+              5,
+              6
+            ]
+          ],
+          "support_is_affine": true,
+          "support_orientations": [
+            5,
+            6
+          ]
+        }
+      ],
+      "control_id": "W6-MULTIEDGE-COMMUTING-ATOMS",
+      "every_atom_support_is_affine": true,
+      "labels": [
+        [
+          [
+            5,
+            1
+          ],
+          [
+            3,
+            3
+          ]
+        ],
+        [
+          [
+            2,
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "live_edge_count": 3,
+      "maximum_pair_commutator_norm": 4.122972569286256e-16,
+      "n": 6,
+      "observed_maximum_eigenvalue": 2.0000000000000018,
+      "observed_minimum_positive_eigenvalue": 1.9999999999999984,
+      "orientation_family": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "predicted_minimum_positive_eigenvalue": 2.0,
+      "prediction_residual": 1.5543122344752192e-15,
+      "projectors_commute": true,
+      "status": "commuting-atom-splitting-verified",
+      "target_partition": [
+        6
+      ],
+      "verified": true
+    },
+    {
+      "atom_count": 6,
+      "atoms": [
+        {
+          "dimension": 80,
+          "graph_algebraic_connectivity": 2.0,
+          "support_edges": [
+            [
+              5,
+              6
+            ]
+          ],
+          "support_is_affine": true,
+          "support_orientations": [
+            5,
+            6
+          ]
+        },
+        {
+          "dimension": 1,
+          "graph_algebraic_connectivity": 3.9999999999999964,
+          "support_edges": [
+            [
+              5,
+              6
+            ],
+            [
+              5,
+              9
+            ],
+            [
+              5,
+              10
+            ],
+            [
+              6,
+              9
+            ],
+            [
+              6,
+              10
+            ],
+            [
+              9,
+              10
+            ]
+          ],
+          "support_is_affine": true,
+          "support_orientations": [
+            5,
+            6,
+            9,
+            10
+          ]
+        },
+        {
+          "dimension": 1,
+          "graph_algebraic_connectivity": 2.0,
+          "support_edges": [
+            [
+              5,
+              10
+            ]
+          ],
+          "support_is_affine": true,
+          "support_orientations": [
+            5,
+            10
+          ]
+        },
+        {
+          "dimension": 4,
+          "graph_algebraic_connectivity": 2.0,
+          "support_edges": [
+            [
+              6,
+              9
+            ]
+          ],
+          "support_is_affine": true,
+          "support_orientations": [
+            6,
+            9
+          ]
+        },
+        {
+          "dimension": 24,
+          "graph_algebraic_connectivity": 2.0,
+          "support_edges": [
+            [
+              6,
+              10
+            ]
+          ],
+          "support_is_affine": true,
+          "support_orientations": [
+            6,
+            10
+          ]
+        },
+        {
+          "dimension": 24,
+          "graph_algebraic_connectivity": 2.0,
+          "support_edges": [
+            [
+              9,
+              10
+            ]
+          ],
+          "support_is_affine": true,
+          "support_orientations": [
+            9,
+            10
+          ]
+        }
+      ],
+      "control_id": "W6-TRIPLE-AND-FOUR-WAY-ATOMS",
+      "every_atom_support_is_affine": true,
+      "labels": [
+        [
+          [
+            6
+          ],
+          [
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            5,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            4,
+            2
+          ],
+          [
+            2,
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "live_edge_count": 6,
+      "maximum_pair_commutator_norm": 4.2146848510893995e-08,
+      "n": 6,
+      "observed_maximum_eigenvalue": 4.000000000000001,
+      "observed_minimum_positive_eigenvalue": 1.9999999999999893,
+      "orientation_family": [
+        5,
+        6,
+        9,
+        10
+      ],
+      "predicted_minimum_positive_eigenvalue": 2.0,
+      "prediction_residual": 1.0658141036401503e-14,
+      "projectors_commute": true,
+      "status": "commuting-atom-splitting-verified",
+      "target_partition": [
+        6
+      ],
+      "verified": true
+    }
+  ],
+  "created_at": "2026-08-07T21:48:20.870656+00:00",
+  "falsifiers_triggered": [
+    "The pessimistic reading of the sign-blind kill is withdrawn: exponential adjacency does not by itself degrade the relation metric.",
+    "Star subgraph evaluations of the relation Gram are not valid evidence about the merge; only the full live graph is.",
+    "A single residual correlation is necessary but not sufficient for the floor; the surviving falsifier is a natural family whose residual transport has no vertex isometry factorization."
+  ],
+  "floor_screens": [
+    {
+      "ambient_cap": 200000,
+      "audited_control_count": 90,
+      "floor_violation_count": 0,
+      "label_count": 4,
+      "label_regime": "distinct-source-partitions",
+      "minimum_observed_positive_eigenvalue": 1.7999999999999925,
+      "n": 6,
+      "nontrivial_correlation_control_count": 1,
+      "observed_correlations": [
+        0.2
+      ],
+      "status": "width-independent-floor-respected",
+      "workload_skipped_control_count": 0,
+      "worst_floor_slack": -1.554312234475219e-14
+    },
+    {
+      "ambient_cap": 60000,
+      "audited_control_count": 90,
+      "floor_violation_count": 0,
+      "label_count": 3,
+      "label_regime": "distinct-source-partitions",
+      "minimum_observed_positive_eigenvalue": 1.999999999999991,
+      "n": 6,
+      "nontrivial_correlation_control_count": 0,
+      "observed_correlations": [],
+      "status": "width-independent-floor-respected",
+      "workload_skipped_control_count": 0,
+      "worst_floor_slack": -9.103828801926284e-15
+    },
+    {
+      "ambient_cap": 60000,
+      "audited_control_count": 90,
+      "floor_violation_count": 0,
+      "label_count": 3,
+      "label_regime": "repeated-source-partitions",
+      "minimum_observed_positive_eigenvalue": 1.999999999999997,
+      "n": 6,
+      "nontrivial_correlation_control_count": 0,
+      "observed_correlations": [],
+      "status": "width-independent-floor-respected",
+      "workload_skipped_control_count": 0,
+      "worst_floor_slack": -3.1086244689504383e-15
+    }
+  ],
+  "headline_metrics": {
+    "all_depth_conditioning_theorem_count": 0,
+    "commuting_atom_control_count": 2,
+    "commuting_atom_failure_count": 0,
+    "commuting_atom_splitting_theorem_count": 1,
+    "degrees_with_single_residual_correlation": 1,
+    "dirichlet_form_theorem_count": 1,
+    "exact_p_star_spectrum_theorem_count": 1,
+    "largest_degree_distinct_correlation_count": 1,
+    "largest_degree_sign_blind_floor": -48806444.36363637,
+    "largest_degree_uniform_transport_floor": 1.8181818181818181,
+    "maximum_star_law_residual": 2.6645352591003757e-15,
+    "minimum_observed_positive_eigenvalue": 1.7999999999999925,
+    "natural_uniformity_sample_count": 5,
+    "new_quantum_algorithm_count": 0,
+    "residual_correlation_count_is_collapsing": 1,
+    "screened_floor_violation_count": 0,
+    "screened_full_graph_control_count": 270,
+    "screened_nontrivial_correlation_control_count": 1,
+    "screened_workload_skipped_control_count": 0,
+    "star_law_control_count": 2,
+    "star_law_failure_count": 0,
+    "uniform_transport_width_independent_floor_theorem_count": 1,
+    "vertex_trivialization_proof_count": 0
+  },
+  "proof_obligations": [
+    {
+      "obligation": "dirichlet_form_and_kernel",
+      "resolution": "Immediate from the signed subspace incidence factorization already validated by the multistar degree module.",
+      "resolved": true
+    },
+    {
+      "obligation": "commuting_atom_splitting",
+      "resolution": "The atom prediction reproduces the exact smallest positive eigenvalue on every commuting control, and every atom support is affine.",
+      "resolved": true
+    },
+    {
+      "obligation": "exact_p_star_spectrum",
+      "resolution": "The closed form reproduces the known S6 noncommuting counterexample and the d=5 plane exactly.",
+      "resolved": true
+    },
+    {
+      "obligation": "vertex_trivialization_at_all_depth",
+      "resolution": "Only the single-correlation half of the hypothesis is measured. No isometry factorization is constructed, and the holonomy of the residual transport bundle is untested.",
+      "resolved": false
+    },
+    {
+      "obligation": "all_depth_conditioning",
+      "resolution": "The floor is conditional. Unconditionally the module proves only that the sign-blind collapse does not follow from the incidence structure.",
+      "resolved": false
+    },
+    {
+      "obligation": "grading_defect_bound",
+      "resolution": "Nothing here bounds the graded form, so endpoint gaps for the relative polar are still open.",
+      "resolved": false
+    }
+  ],
+  "scaling_records": [
+    {
+      "commuting_atom_floor": 2.0,
+      "floor_is_width_independent": true,
+      "information_threshold_copy_count": 16,
+      "measured_distinct_correlations": 16,
+      "n": 8,
+      "saturated_residual_correlation": 0.14285714285714285,
+      "sign_blind_floor": -9360.0,
+      "status": "width-independent-floor-conditional-on-trivialization",
+      "uniform_transport_floor": 1.7142857142857144,
+      "vertex_trivialization_proved": false
+    },
+    {
+      "commuting_atom_floor": 2.0,
+      "floor_is_width_independent": true,
+      "information_threshold_copy_count": 22,
+      "measured_distinct_correlations": 8,
+      "n": 10,
+      "saturated_residual_correlation": 0.1111111111111111,
+      "sign_blind_floor": -466031.5555555555,
+      "status": "width-independent-floor-conditional-on-trivialization",
+      "uniform_transport_floor": 1.7777777777777777,
+      "vertex_trivialization_proved": false
+    },
+    {
+      "commuting_atom_floor": 2.0,
+      "floor_is_width_independent": true,
+      "information_threshold_copy_count": 29,
+      "measured_distinct_correlations": 1,
+      "n": 12,
+      "saturated_residual_correlation": 0.09090909090909091,
+      "sign_blind_floor": -48806444.36363637,
+      "status": "width-independent-floor-conditional-on-trivialization",
+      "uniform_transport_floor": 1.8181818181818181,
+      "vertex_trivialization_proved": false
+    },
+    {
+      "commuting_atom_floor": 2.0,
+      "floor_is_width_independent": true,
+      "information_threshold_copy_count": 45,
+      "measured_distinct_correlations": null,
+      "n": 16,
+      "saturated_residual_correlation": 0.06666666666666667,
+      "sign_blind_floor": -2345624805920.0,
+      "status": "width-independent-floor-conditional-on-trivialization",
+      "uniform_transport_floor": 1.8666666666666667,
+      "vertex_trivialization_proved": false
+    },
+    {
+      "commuting_atom_floor": 2.0,
+      "floor_is_width_independent": true,
+      "information_threshold_copy_count": 118,
+      "measured_distinct_correlations": null,
+      "n": 32,
+      "saturated_residual_correlation": 0.03225806451612903,
+      "sign_blind_floor": -2.975281302211218e+17,
+      "status": "width-independent-floor-conditional-on-trivialization",
+      "uniform_transport_floor": 1.935483870967742,
+      "vertex_trivialization_proved": false
+    },
+    {
+      "commuting_atom_floor": 2.0,
+      "floor_is_width_independent": true,
+      "information_threshold_copy_count": 296,
+      "measured_distinct_correlations": null,
+      "n": 64,
+      "saturated_residual_correlation": 0.015873015873015872,
+      "sign_blind_floor": -1.464027307437266e+17,
+      "status": "width-independent-floor-conditional-on-trivialization",
+      "uniform_transport_floor": 1.9682539682539684,
+      "vertex_trivialization_proved": false
+    },
+    {
+      "commuting_atom_floor": 2.0,
+      "floor_is_width_independent": true,
+      "information_threshold_copy_count": 717,
+      "measured_distinct_correlations": null,
+      "n": 128,
+      "saturated_residual_correlation": 0.007874015748031496,
+      "sign_blind_floor": -7.262497666814784e+16,
+      "status": "width-independent-floor-conditional-on-trivialization",
+      "uniform_transport_floor": 1.984251968503937,
+      "vertex_trivialization_proved": false
+    },
+    {
+      "commuting_atom_floor": 2.0,
+      "floor_is_width_independent": true,
+      "information_threshold_copy_count": 1684,
+      "measured_distinct_correlations": null,
+      "n": 256,
+      "saturated_residual_correlation": 0.00392156862745098,
+      "sign_blind_floor": -3.617008641903834e+16,
+      "status": "width-independent-floor-conditional-on-trivialization",
+      "uniform_transport_floor": 1.992156862745098,
+      "vertex_trivialization_proved": false
+    },
+    {
+      "commuting_atom_floor": 2.0,
+      "floor_is_width_independent": true,
+      "information_threshold_copy_count": 3876,
+      "measured_distinct_correlations": null,
+      "n": 512,
+      "saturated_residual_correlation": 0.0019569471624266144,
+      "sign_blind_floor": -1.8049651735527936e+16,
+      "status": "width-independent-floor-conditional-on-trivialization",
+      "uniform_transport_floor": 1.9960861056751469,
+      "vertex_trivialization_proved": false
+    }
+  ],
+  "star_law_controls": [
+    {
+      "control_id": "W6-NONCOMMUTING-THREE-STAR-CARRIER-9",
+      "labels": [
+        [
+          [
+            6
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        [
+          [
+            5,
+            1
+          ],
+          [
+            2,
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "low_eigenvalue_is_width_independent": true,
+      "maximum_residual": 2.220446049250313e-15,
+      "n": 6,
+      "observed_maximum_eigenvalue": 2.2222222222222245,
+      "observed_minimum_positive_eigenvalue": 1.8888888888888875,
+      "predicted_high_eigenvalue": 2.2222222222222223,
+      "predicted_low_eigenvalue": 1.8888888888888888,
+      "residual_correlation_denominator": 9,
+      "residual_correlation_numerator": 1,
+      "shared_vertex": 12,
+      "star_edge_count": 3,
+      "status": "exact-p-star-spectrum-verified",
+      "target_partition": [
+        6
+      ],
+      "verified": true
+    },
+    {
+      "control_id": "W6-D5-TWO-STAR-CARRIER-5",
+      "labels": [
+        [
+          [
+            6
+          ],
+          [
+            2,
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            5,
+            1
+          ],
+          [
+            4,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            4,
+            2
+          ],
+          [
+            3,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            3
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "low_eigenvalue_is_width_independent": true,
+      "maximum_residual": 2.6645352591003757e-15,
+      "n": 6,
+      "observed_maximum_eigenvalue": 2.200000000000003,
+      "observed_minimum_positive_eigenvalue": 1.8000000000000003,
+      "predicted_high_eigenvalue": 2.2,
+      "predicted_low_eigenvalue": 1.8,
+      "residual_correlation_denominator": 5,
+      "residual_correlation_numerator": 1,
+      "shared_vertex": 14,
+      "star_edge_count": 2,
+      "status": "exact-p-star-spectrum-verified",
+      "target_partition": [
+        6
+      ],
+      "verified": true
+    }
+  ],
+  "status": "width-independent-metric-floor-conditional-trivialization-open",
+  "summary": "Proved the Dirichlet form and the commuting-atom splitting (floor two, width independent), derived the exact p-star spectrum and matched the known S6 noncommuting counterexample and the d=5 plane to 2.665e-15, and found no violation of the 2-2gamma floor across 270 full-live-graph controls. On natural portfolios the distinct residual-correlation count collapses to 1 at n=12. Vertex trivialization remains unproved.",
+  "theorem_contract": {
+    "commuting_atom_splitting": "When the live pair-core projectors commute, M splits as a direct sum of scalar graph Laplacians over Boolean atoms; the affine-support theorem makes every atom support a complete graph on an affine orientation set, so the smallest positive eigenvalue is at least two regardless of merge width.",
+    "dirichlet_form": "The projector-weighted orientation Laplacian satisfies <x,Delta x> = sum_e ||P_{K_e}(x_a-x_b)||^2, so its kernel is exactly the set of vertex assignments whose edge differences avoid every live pair core.",
+    "graph_scope": "The floor is a statement about the full live graph. Evaluating the same form on a star subgraph removes edges and lowers the minimum to the algebraic connectivity of a star, which is one.",
+    "p_star_law": "For a p-star with residual correlation gamma the spectrum is exactly {2-gamma} with multiplicity p-1 together with 2+(p-1)gamma; the smallest eigenvalue does not move as p grows.",
+    "reversal": "Absolute-weight comparison predicted collapse proportional to the weighted degree. The exact incidence structure gives a floor independent of merge width. The sign-blind estimate was not merely weak; its conclusion was misleading.",
+    "scope": "Vertex trivialization is a hypothesis. No holonomy bound, no grading-defect bound, and no circuit follow from this module.",
+    "uniform_transport_floor": "If the residual overlaps factor through vertex isometries with a common gamma, then M = 2(1-gamma)I + gamma C~^*C~ with C~ the twisted incidence, so lambda_min(M) >= 2-2gamma for any holonomy, and the carrier factorization bound gives lambda_min(M) >= 2-2/(n-1)."
+  },
+  "transport_uniformity": [
+    {
+      "correlation_spread_ratio": 128.57142857142858,
+      "distinct_off_common_correlation_count": 16,
+      "floor_improvement_log2": 5.382469636822413,
+      "information_threshold_copy_count": 16,
+      "label_count": 11,
+      "matches_minimal_irrep_reciprocal": false,
+      "maximum_off_common_correlation": 0.02040816326530612,
+      "minimum_positive_off_common_correlation": 0.00015873015873015873,
+      "n": 8,
+      "sampled_star_count": 28,
+      "sign_blind_floor": -39.755102040816325,
+      "status": "residual-correlation-still-spread",
+      "target_partition": [
+        4,
+        2,
+        1,
+        1
+      ],
+      "uniform_transport_floor": 1.9591836734693877
+    },
+    {
+      "correlation_spread_ratio": 1800.0,
+      "distinct_off_common_correlation_count": 13,
+      "floor_improvement_log2": 11.999823879015725,
+      "information_threshold_copy_count": 19,
+      "label_count": 15,
+      "matches_minimal_irrep_reciprocal": true,
+      "maximum_off_common_correlation": 0.125,
+      "minimum_positive_off_common_correlation": 6.944444444444444e-05,
+      "n": 9,
+      "sampled_star_count": 28,
+      "sign_blind_floor": -4093.75,
+      "status": "residual-correlation-still-spread",
+      "target_partition": [
+        4,
+        3,
+        1,
+        1
+      ],
+      "uniform_transport_floor": 1.75
+    },
+    {
+      "correlation_spread_ratio": 48384.0,
+      "distinct_off_common_correlation_count": 8,
+      "floor_improvement_log2": 17.83007224683265,
+      "information_threshold_copy_count": 22,
+      "label_count": 21,
+      "matches_minimal_irrep_reciprocal": true,
+      "maximum_off_common_correlation": 0.1111111111111111,
+      "minimum_positive_off_common_correlation": 2.296443268665491e-06,
+      "n": 10,
+      "sampled_star_count": 28,
+      "sign_blind_floor": -233014.66666666666,
+      "status": "residual-correlation-still-spread",
+      "target_partition": [
+        4,
+        3,
+        2,
+        1
+      ],
+      "uniform_transport_floor": 1.7777777777777777
+    },
+    {
+      "correlation_spread_ratio": 4.4,
+      "distinct_off_common_correlation_count": 2,
+      "floor_improvement_log2": 22.67807181912131,
+      "information_threshold_copy_count": 26,
+      "label_count": 26,
+      "matches_minimal_irrep_reciprocal": true,
+      "maximum_off_common_correlation": 0.1,
+      "minimum_positive_off_common_correlation": 0.022727272727272728,
+      "n": 11,
+      "sampled_star_count": 28,
+      "sign_blind_floor": -6710884.2,
+      "status": "residual-correlation-still-spread",
+      "target_partition": [
+        5,
+        3,
+        2,
+        1
+      ],
+      "uniform_transport_floor": 1.8
+    },
+    {
+      "correlation_spread_ratio": 1.0,
+      "distinct_off_common_correlation_count": 1,
+      "floor_improvement_log2": 25.540568370613787,
+      "information_threshold_copy_count": 29,
+      "label_count": 29,
+      "matches_minimal_irrep_reciprocal": true,
+      "maximum_off_common_correlation": 0.09090909090909091,
+      "minimum_positive_off_common_correlation": 0.09090909090909091,
+      "n": 12,
+      "sampled_star_count": 28,
+      "sign_blind_floor": -48806444.36363637,
+      "status": "single-residual-correlation-observed",
+      "target_partition": [
+        5,
+        3,
+        2,
+        1,
+        1
+      ],
+      "uniform_transport_floor": 1.8181818181818181
+    }
+  ]
+}

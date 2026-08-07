@@ -545,6 +545,9 @@ from self_dual_wreath_augmented_common_core_cech import (
 from self_dual_wreath_common_core_atomization import (
     write_common_core_atomization_report,
 )
+from self_dual_wreath_orientation_laplacian_gap import (
+    write_orientation_laplacian_gap_report,
+)
 from self_dual_wreath_common_core_cech_laplacian import (
     write_common_core_cech_laplacian_report,
 )
@@ -7237,6 +7240,37 @@ def command_code_wreath_common_core_atomization(
     return 0
 
 
+def command_code_wreath_orientation_laplacian_gap(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_orientation_laplacian_gap_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Orientation Laplacian gap analysis complete")
+    print(
+        "Artifact: research/representation/"
+        "self_dual_wreath_orientation_laplacian_gap.json"
+    )
+    print(
+        "Full-graph controls / min positive eval / floor violations: "
+        f"{metrics['screened_full_graph_control_count']}/"
+        f"{metrics['minimum_observed_positive_eigenvalue']:.6g}/"
+        f"{metrics['screened_floor_violation_count']}"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
 def command_coset_strong_fourier_information(
     args: argparse.Namespace,
 ) -> int:
@@ -13448,6 +13482,21 @@ def build_parser() -> argparse.ArgumentParser:
     )
     code_wreath_common_core_atomization.set_defaults(
         func=command_code_wreath_common_core_atomization
+    )
+
+    code_wreath_orientation_laplacian_gap = subparsers.add_parser(
+        "code-wreath-orientation-laplacian-gap",
+        help=(
+            "Analyze orientation Laplacian spectrum and test width-independent "
+            "floor."
+        ),
+    )
+    code_wreath_orientation_laplacian_gap.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    code_wreath_orientation_laplacian_gap.set_defaults(
+        func=command_code_wreath_orientation_laplacian_gap
     )
 
     coset_strong_fourier_information = subparsers.add_parser(

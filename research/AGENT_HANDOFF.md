@@ -58,6 +58,11 @@ pass.
   adding the 693-merge S6 Gram-factor screen.
 - Latest carrier-factorization check: 10 tests passed in 2.72 seconds.
 - Latest multistar-degree check: 8 tests passed in 16.37 seconds.
+- Latest orientation-Laplacian-gap check: 10 tests passed in 14.92 seconds.
+- The carrier-factorization and multistar-degree modules are now fully wired
+  (registry seed, `qsearch.py` subcommand, runner dispatch, clean-registry
+  dispatch tests, README, Sellke literature record). The Laplacian-gap module
+  below is **not** wired yet; that is queued mechanical work.
 - Latest affected-theorem regression (recoupling boundary, atomization, pair
   angles, triple range, pair-quotient overlap): 30 tests passed in 35.82
   seconds.
@@ -1370,65 +1375,147 @@ required by `p_nu=d_nu^2/|G|` with flat `f_nu=1`, and evaluate the
 water-filling cost of that conversion. Until that vector pair is written down,
 no claim that representation labels evade the oracle model is admissible.
 
+## Width-Independent Metric Floor: The Sign-Blind Pessimism Is Withdrawn
+
+Files:
+
+- `self_dual_wreath_orientation_laplacian_gap.py`
+- `research/representation/self_dual_wreath_orientation_laplacian_gap.json`
+- `tests/test_self_dual_wreath_orientation_laplacian_gap.py`
+
+The previous pass proved that absolute-weight comparison is vacuous at natural
+depth and left the impression that the hierarchy is badly conditioned. **That
+reading was wrong, and this section supersedes it.** Keeping the incidence
+signs shows the relation metric does not degrade with merge width at all.
+
+**Dirichlet form.** For the signed subspace incidence map `C` and
+`Delta = CC^*`,
+
+`<x, Delta x> = sum_e ||P_(K_e)(x_a - x_b)||^2`,
+
+so `ker Delta` is exactly the set of vertex assignments whose edge differences
+avoid every live pair core.
+
+**Commuting case, solved exactly.** When the live pair-core projectors commute
+they have Boolean atoms `A_S` and
+
+`M = direct_sum_S L_S tensor I_(A_S)`,
+
+with `L_S` the scalar graph Laplacian of the atom's edge set. The affine-
+support theorem forces each atom's orientation set to be an affine subspace,
+so `S` is a **complete** graph and `lambda_2(L_S) = |F_S| >= 2`. Hence
+`lambda_min+(M) >= 2` **regardless of how many pair cores meet one
+orientation**. Both commuting controls reproduce the atom prediction exactly,
+with every atom support affine.
+
+**Exact p-star law.** For a star of `p` edges at one vertex with residual
+correlation `gamma`,
+
+`spec(M) = {2-gamma} with multiplicity p-1, together with 2+(p-1)gamma`.
+
+The smallest eigenvalue **does not move as `p` grows**. This reproduces the
+known S6 noncommuting counterexample exactly: `gamma=1/9`, `p=3`, spectrum
+`17/9` and `20/9`, residual `2.7e-15`. The `d=5` plane gives `gamma=1/5`,
+`p=2`, spectrum `9/5` and `11/5`.
+
+**Uniform-transport floor.** If the residual overlaps factor through vertex
+isometries `W_(e,v)` with one common `gamma`, then
+
+`M = 2(1-gamma)I + gamma C~^* C~`,
+
+so `spec(M) = 2(1-gamma) + gamma spec(L~)` for the twisted graph Laplacian.
+Since `C~^*C~` is positive semidefinite **for any holonomy**,
+
+`lambda_min(M) >= 2 - 2 gamma >= 2 - 2/(n-1)`,
+
+independent of merge width. At `n=12` that floor is `1.8182`; the sign-blind
+estimate for the same merge was `-4.88e7`.
+
+**Evidence.** 270 full-live-graph controls, zero violations of the
+`2-2gamma_max` floor. On natural threshold portfolios the number of distinct
+off-common correlations per sampled star collapses monotonically as the label
+count grows — 16, 13, 8, 2, 1 for `n = 8,9,10,11,12` — reaching a **single**
+value `1/(n-1)` at `n=12`. The same Sellke saturation that killed the
+sign-blind bound is exactly what makes the transport uniform.
+
+**Two traps recorded.** First, the floor is a statement about the **full live
+graph**; evaluating the same form on a star subgraph deletes edges and drops
+the minimum to `lambda_2` of a star, which is one. A screen that restricted to
+star subgraphs produced 20 spurious "violations". Second, disjoint pair cores
+overlap geometrically but contribute **nothing** to the relation Gram, whose
+off-diagonal blocks are indexed by shared vertices only.
+
+**Scope.** The vertex trivialization is a hypothesis. Only its
+single-correlation half is measured; no isometry factorization is constructed
+and the holonomy of the residual transport bundle is untested. Nothing here
+bounds the graded form, so endpoint gaps for the relative polar are still
+open, and no circuit follows.
+
 ## Highest-Value Open Derivation
 
 The PGM still has constant information-theoretic success and physical
 transfer. The pair-core overlap operator is now exact, and the sign-blind
 route to all-depth conditioning is dead. Work in this revised order:
 
-1. Prove or falsify a **positive spectral gap for the projector-weighted
-   orientation Laplacian** `Delta = D - A` at natural depth. This is now the
-   single decisive statement: `spec+(Delta) = spec+(relation Gram)`, so a
-   lower bound on the smallest positive eigenvalue of `Delta`, restricted to
-   the complement of its kernel, is exactly the all-depth conditioning
-   theorem. The crossing graph is complete bipartite, so this is a
-   subspace-connectivity problem: bound how far the projectors `P_{K_e}`
-   deviate from a common projector. If they were equal, `Delta` would be
-   `L_graph tensor P` with gap `2^(j-1)`. Quantify the deviation using the
-   exact two-carrier weights.
-   Falsifier: a natural sector where the smallest positive eigenvalue of
-   `Delta` decays superpolynomially in `n`.
-2. Prove or falsify the **uniform residual pair-quotient gap** for the natural
-   `n>=5` threshold portfolio: an all-n bound below one on
-   `||P_(A minus K)P_(B minus K)||`, or a globally distinct positive-mass
-   counterfamily reaching one. Absolute-weight comparison is now *proved*
-   inadequate, not merely observed to fail on 33/6,766 planes, so only a
-   phase-sensitive or Laplacian argument is admissible here.
-3. Derive the **exact vertex-disjoint pair-core overlap**. The shared-vertex
+1. Construct or refute the **vertex trivialization of the residual transport**
+   at natural depth. This is now the single decisive statement. The
+   single-correlation half of the hypothesis is measured and holds at `n=12`;
+   what is missing is the isometry factorization
+   `B_e^* B_f = gamma W_(e,v)^* W_(f,v)` for adjacent live cores. Build the
+   `W_(e,v)` from the carrier factorization's explicit index bijection, or
+   exhibit a natural adjacent pair whose normalized overlap is not a
+   restriction of a common vertex isometry.
+   Note holonomy does **not** need to vanish: `C~^*C~ >= 0` for any
+   connection, so the floor `2-2gamma` survives arbitrary holonomy. Only the
+   factorization itself is at stake.
+   Falsifier: a natural full live graph with `lambda_min+(M) < 2 - 2gamma_max`.
+2. Bound the **graded defect**, not just the metric. The metric floor says
+   nothing about `||M^(-1/2) J M^(-1/2)||`, which is what endpoint gaps for
+   the relative polar actually require. Redo the star and commuting-atom
+   calculations with the `J` grading in place and determine whether the
+   defect is also width independent.
+3. Prove or falsify the **uniform residual pair-quotient gap**: an all-n bound
+   below one on `||P_(A minus K)P_(B minus K)||`. This is a *geometric*
+   statement about child spans, and unlike the relation Gram it **does** see
+   vertex-disjoint core overlaps, which are nonzero at natural depth. Absolute
+   weights are proved inadequate; the Laplacian floor does not transfer here
+   automatically.
+4. Derive the **exact vertex-disjoint pair-core overlap**. The shared-vertex
    case is a scalar; the disjoint case is a grid contraction with genuine
    Kronecker content, currently controlled only by the waist upper bound. That
    bound is exactly tight on all forty screened controls, so either prove
-   equality or exhibit a strictly smaller grid. This is the remaining input to
-   the full off-diagonal structure of `Delta`.
-4. Extend the finite **phase-sensitive relative Cech/Laplacian prototype** to
+   equality or exhibit a strictly smaller grid. This feeds item 3, not the
+   relation Gram.
+5. Extend the finite **phase-sensitive relative Cech/Laplacian prototype** to
    all depth. Prove exactness or classify `H_p`, `p>=1`, for the noncommuting
    multiplicity sheaf. Use the `C^*C`/`CC^*` duality so that homology is
-   computed on the vertex side, where the graph is complete bipartite, rather
-   than by enumerating orientation subsets.
-5. Determine the **physical PGM mass** of the noncommuting blocks. A finite
+   computed on the vertex side, and reuse the commuting-atom splitting: under
+   commutativity the whole complex is a direct sum of scalar complete-graph
+   complexes on affine supports.
+6. Determine the **physical PGM mass** of the noncommuting blocks. A finite
    S6 defect does not establish asymptotic relevance. Compute frame-weighted,
    not raw multiplicity-weighted, mass on natural threshold portfolios. The
    carrier factorization now supplies exact per-sector weights for this.
-6. Compile or kill a coherent **Racah/common-core transform**. The scalar
+7. Compile or kill a coherent **Racah/common-core transform**. The scalar
    shared-vertex result removes one imagined obstruction: there is no
    nontrivial 6j block to compile at the star level. The compilation target is
    therefore the Cech quotient and the disjoint-pair grid blocks, in
    polynomial gates, with multiplicity spaces kept in quantum registers.
-7. Extend the weighted common-free exclusion to the residual after exact
+8. Extend the weighted common-free exclusion to the residual after exact
    affine common supports and noncommuting pair cores are removed. Note the
-   same asymptotic caution as item 2: any successor must not be sign blind.
-8. Write the hierarchical polar tree in the **Moore--Russell--Sniady** formal
+   same asymptotic caution as item 3: any successor must not be sign blind.
+9. Write the hierarchical polar tree in the **Moore--Russell--Sniady** formal
    algorithm model and either prove simulation (killing the route) or isolate
    the coherent operation that escapes it. See the scope analysis above; the
    degree obstruction is evidence, not a separation.
-9. Compute the **Ozols--Roetteler--Roland** water-filling cost for the
-   explicit source/target amplitude pair named in the scope analysis above.
-10. Only after 1--6, compose
-   `physical row-copy -> Q_R^* -> inverse S_n QFT` and audit total gates,
-   copies, memory, and approximation error.
-11. Maintain the falsification route: a Laplacian gap closing on positive
-    natural mass, a superpolynomial Racah transform, or an extended-sieve
-    simulation is a reason to abandon this PGM architecture.
+10. Compute the **Ozols--Roetteler--Roland** water-filling cost for the
+    explicit source/target amplitude pair named in the scope analysis above.
+11. Only after 1--7, compose
+    `physical row-copy -> Q_R^* -> inverse S_n QFT` and audit total gates,
+    copies, memory, and approximation error.
+12. Maintain the falsification route: a residual quotient gap closing on
+    positive natural mass, a superpolynomial Racah transform, or an
+    extended-sieve simulation is a reason to abandon this PGM architecture.
 
 Do not resume claims of universal exact half-balance. Do not use pair
 generation, affine support balance, XOR covariance, or finite reciprocal
@@ -1437,6 +1524,11 @@ theorems. In particular, do not reintroduce any absolute-weight or block
 Gershgorin certificate as an all-depth argument: it is now proved vacuous at
 natural depth. Additional finite work is justified only when it attacks one of
 those statements with a declared counterfamily.
+
+Two corrections that must not be re-broken. The metric floor is about the
+**full live graph**: a star-subgraph evaluation is not evidence about a merge.
+And the relation Gram has **no vertex-disjoint off-diagonal blocks**; disjoint
+core overlaps matter for the child-span geometry in item 3, not for `M`.
 
 ## Mechanical Follow-Up For Antigravity / Gemini 3.6 Flash
 
@@ -1557,6 +1649,9 @@ These tasks are useful but should not consume the scarce high-reasoning pass:
    The multistar degree obstruction experiment ID is
    `EXP-CODE-SELF-DUAL-WREATH-MULTISTAR-DEGREE-OBSTRUCTION`, with suggested
    CLI `code-wreath-multistar-degree`.
+   The orientation Laplacian gap experiment ID is
+   `EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-LAPLACIAN-GAP`, with suggested CLI
+   `code-wreath-orientation-laplacian-gap`. This one is not wired yet.
 3. Add Sellke's paper to `research/literature_index.json` and
    `research/literature_records.json`, preserving the precise mechanism,
    theorem, reuse, and no-overclaim fields.
@@ -1591,6 +1686,7 @@ python self_dual_wreath_recursive_pair_generation.py
 python self_dual_wreath_pair_quotient_overlap.py
 python self_dual_wreath_pair_core_carrier_factorization.py
 python self_dual_wreath_multistar_degree_obstruction.py
+python self_dual_wreath_orientation_laplacian_gap.py
 python qsearch.py code-wreath-subpovm-moments
 python qsearch.py validate
 ```

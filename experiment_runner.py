@@ -189,6 +189,9 @@ from self_dual_wreath_common_core_atomization import (
 from self_dual_wreath_common_core_cech_laplacian import (
     write_common_core_cech_laplacian_report,
 )
+from self_dual_wreath_orientation_laplacian_gap import (
+    write_orientation_laplacian_gap_report,
+)
 from self_dual_wreath_pair_core_recoupling_boundary import (
     write_pair_core_recoupling_boundary_report,
 )
@@ -892,6 +895,7 @@ COSET_EXPERIMENTS = {
     "EXP-CODE-SELF-DUAL-WREATH-COMMON-CORE-CECH-LAPLACIAN",
     "EXP-CODE-SELF-DUAL-WREATH-PAIR-CORE-RECOUPLING-BOUNDARY",
     "EXP-CODE-SELF-DUAL-WREATH-COMMON-CORE-ATOMIZATION",
+    "EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-LAPLACIAN-GAP",
     "EXP-COSET-STRONG-FOURIER-INFORMATION-SCALING",
     "EXP-COSET-ENTANGLEMENT-WIDTH-GATE",
     "EXP-COSET-GROWING-WIDTH-ARCHITECTURE",
@@ -2085,6 +2089,7 @@ def select_next_experiment() -> NextExperimentSelection:
         "EXP-CODE-SELF-DUAL-WREATH-COMMON-CORE-CECH-LAPLACIAN": 124,
         "EXP-CODE-SELF-DUAL-WREATH-PAIR-CORE-RECOUPLING-BOUNDARY": 125,
         "EXP-CODE-SELF-DUAL-WREATH-COMMON-CORE-ATOMIZATION": 126,
+        "EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-LAPLACIAN-GAP": 127,
         "EXP-COSET-STRONG-FOURIER-INFORMATION-SCALING": 80,
         "EXP-COSET-ENTANGLEMENT-WIDTH-GATE": 81,
         "EXP-COSET-GROWING-WIDTH-ARCHITECTURE": 82,
@@ -4016,6 +4021,16 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             == "EXP-CODE-SELF-DUAL-WREATH-COMMON-CORE-ATOMIZATION"
         ):
             payload = write_common_core_atomization_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-LAPLACIAN-GAP"
+        ):
+            payload = write_orientation_laplacian_gap_report(
                 write_registry=True,
                 registry_experiment_id=experiment_id,
                 registry_candidate_id=experiment["candidate_id"],
