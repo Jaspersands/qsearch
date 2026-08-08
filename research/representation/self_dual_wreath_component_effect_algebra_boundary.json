@@ -1,0 +1,166 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Asymptotically full nonscalarity-defect rank proves genuinely quantum component structure.",
+      "resolution": "False. An orthogonal coordinate PVM has full-rank D_ns but a commutative diagonal effect algebra.",
+      "resolved": true
+    },
+    {
+      "objection": "Nonzero pairwise commutator is merely a basis artifact.",
+      "resolution": "False. Pairwise commutation is invariant under unitary conjugation and exactly characterizes a commutative generated C*-algebra.",
+      "resolved": true
+    },
+    {
+      "objection": "Finite S6 noncommutativity proves positive natural noncommutative mass.",
+      "resolution": "The known S6 mechanism uses asymptotically negligible low-dimensional anchors. High-dimensional globally distinct source mass remains unproved.",
+      "resolved": false
+    },
+    {
+      "objection": "Commuting natural effects would kill the algorithmic route.",
+      "resolution": "Not necessarily. A coherently accessible simultaneous eigenbasis could make the component dilation easier, but that transform and conditional distributions must be compiled.",
+      "resolved": false
+    }
+  ],
+  "claim_gate": {
+    "coherent_commuting_component_diagonalization_compiled": false,
+    "coherent_noncommutative_component_dilation_compiled": false,
+    "commutator_defect_exactly_detects_global_effect_commutativity": true,
+    "natural_component_nonscalarity_source_and_physical_mass_proved": true,
+    "natural_noncommutative_component_algebra_source_mass_proved": false,
+    "natural_physical_noncommutative_component_support_mass_proved": false,
+    "nonscalarity_defect_support_implies_noncommutative_effect_algebra": false,
+    "physical_pgm_outside_mrs_transcript_postprocessing_proved": false,
+    "reason": "Natural nonscalarity mass is now rigorous, but it may be entirely commuting. The genuinely nonabelian component-algebra mass and either branch's coherent compiler remain open.",
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-08T21:15:38.796211+00:00",
+  "falsifiers_triggered": [
+    "Full-rank component nonscalarity does not imply a noncommutative effect algebra.",
+    "Positive natural support mass of D_ns is not positive natural support mass of commutators.",
+    "Finite low-dimensional noncommutativity is not an asymptotic natural-mass theorem.",
+    "A commuting effect algebra may be algorithmically favorable if its joint eigenbasis is coherently accessible."
+  ],
+  "finite_controls": [
+    {
+      "commutator_defect_minimum_positive_eigenvalue": 0.0,
+      "commutator_defect_rank": 0,
+      "control_id": "GLOBAL-SCALAR-THREE-OUTCOME",
+      "effect_sum_identity_residual": 0.0,
+      "effects_globally_scalar": true,
+      "effects_pairwise_commute": true,
+      "exact_commutator_criterion_verified": true,
+      "fiber_dimension": 3,
+      "full_matrix_algebra_dimension": 9,
+      "generated_algebra_commutative": true,
+      "generated_unital_star_algebra_dimension": 1,
+      "maximum_effect_commutator_norm": 0.0,
+      "noncommutative_effect_algebra": false,
+      "nonscalarity_defect_full_rank": false,
+      "nonscalarity_defect_minimum_positive_eigenvalue": 0.0,
+      "nonscalarity_defect_rank": 0,
+      "outcome_count": 3,
+      "status": "globally-scalar-component-algebra-verified"
+    },
+    {
+      "commutator_defect_minimum_positive_eigenvalue": 0.0,
+      "commutator_defect_rank": 0,
+      "control_id": "ORTHOGONAL-PVM-FULL-NONSCALAR-DEFECT",
+      "effect_sum_identity_residual": 0.0,
+      "effects_globally_scalar": false,
+      "effects_pairwise_commute": true,
+      "exact_commutator_criterion_verified": true,
+      "fiber_dimension": 4,
+      "full_matrix_algebra_dimension": 16,
+      "generated_algebra_commutative": true,
+      "generated_unital_star_algebra_dimension": 4,
+      "maximum_effect_commutator_norm": 0.0,
+      "noncommutative_effect_algebra": false,
+      "nonscalarity_defect_full_rank": true,
+      "nonscalarity_defect_minimum_positive_eigenvalue": 0.75,
+      "nonscalarity_defect_rank": 4,
+      "outcome_count": 4,
+      "status": "commutative-nonscalar-component-algebra-verified"
+    },
+    {
+      "commutator_defect_minimum_positive_eigenvalue": 0.11111111111111105,
+      "commutator_defect_rank": 2,
+      "control_id": "TRINE-NONCOMMUTATIVE-QUBIT",
+      "effect_sum_identity_residual": 5.774894028216986e-16,
+      "effects_globally_scalar": false,
+      "effects_pairwise_commute": false,
+      "exact_commutator_criterion_verified": true,
+      "fiber_dimension": 2,
+      "full_matrix_algebra_dimension": 4,
+      "generated_algebra_commutative": false,
+      "generated_unital_star_algebra_dimension": 4,
+      "maximum_effect_commutator_norm": 0.19245008972987535,
+      "noncommutative_effect_algebra": true,
+      "nonscalarity_defect_full_rank": true,
+      "nonscalarity_defect_minimum_positive_eigenvalue": 0.33333333333333326,
+      "nonscalarity_defect_rank": 2,
+      "outcome_count": 3,
+      "status": "noncommutative-component-effect-algebra-verified"
+    },
+    {
+      "commutator_defect_minimum_positive_eigenvalue": 0.11111111111111105,
+      "commutator_defect_rank": 2,
+      "control_id": "DIRECT-SUM-NONCOMMUTATIVE-AND-COMMUTATIVE-SECTORS",
+      "effect_sum_identity_residual": 5.774894028216986e-16,
+      "effects_globally_scalar": false,
+      "effects_pairwise_commute": false,
+      "exact_commutator_criterion_verified": true,
+      "fiber_dimension": 4,
+      "full_matrix_algebra_dimension": 16,
+      "generated_algebra_commutative": false,
+      "generated_unital_star_algebra_dimension": 6,
+      "maximum_effect_commutator_norm": 0.19245008972987535,
+      "noncommutative_effect_algebra": true,
+      "nonscalarity_defect_full_rank": true,
+      "nonscalarity_defect_minimum_positive_eigenvalue": 0.20833333333333331,
+      "nonscalarity_defect_rank": 4,
+      "outcome_count": 3,
+      "status": "noncommutative-component-effect-algebra-verified"
+    }
+  ],
+  "headline_metrics": {
+    "exact_component_commutator_criterion_theorem_count": 1,
+    "finite_control_count": 4,
+    "finite_control_failure_count": 0,
+    "full_rank_nonscalarity_commuting_counterexample_count": 1,
+    "natural_noncommutative_effect_algebra_source_mass_theorem_count": 0,
+    "natural_nonscalarity_positive_mass_theorem_input_count": 1,
+    "natural_physical_noncommutative_support_mass_theorem_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "noncommutative_full_matrix_algebra_control_count": 1
+  },
+  "proof_obligations": [
+    {
+      "obligation": "distinguish_nonscalar_component_support_from_noncommutative_effect_algebra",
+      "resolution": "The orthogonal PVM has full-rank D_ns and zero D_com, while the trine POVM generates M_2 and has nonzero D_com.",
+      "resolved": true
+    },
+    {
+      "obligation": "prove_natural_noncommutative_component_algebra_source_mass",
+      "resolution": "Evaluate central support of D_com under the globally distinct final-root source law, or prove an asymptotic commuting approximation with a coherent joint eigenbasis.",
+      "resolved": false
+    },
+    {
+      "obligation": "prove_natural_physical_noncommutative_support_mass",
+      "resolution": "A source-block event alone is insufficient; control the common-span cutdown/support rank or state weight of D_com.",
+      "resolved": false
+    },
+    {
+      "obligation": "compile_commuting_or_noncommuting_component_branch",
+      "resolution": "The commuting case still needs a coherent simultaneous eigenbasis and conditional probability preparation; the noncommuting case needs matrix square-root/support access.",
+      "resolved": false
+    }
+  ],
+  "status": "nonscalarity-versus-noncommutative-algebra-boundary-proved-natural-mass-open",
+  "summary": "Separated full-rank component nonscalarity from genuinely noncommutative effect-algebra structure and identified the exact regular-master commutator-support target.",
+  "theorem_contract": {
+    "commutator_criterion": "D_com=sum_[e<f][H_e,H_f]^*[H_e,H_f] vanishes iff all effects commute iff their generated finite-dimensional C*-algebra is commutative.",
+    "nonscalarity_boundary": "D_ns=0 iff every effect equals its global normalized trace times identity; D_ns can be full rank for a commuting PVM.",
+    "regular_master_lift": "Products, adjoints, sums, and spectral supports preserve the regular-master source-block direct sum, so central support of D_com is the noncommutative source-block event.",
+    "scope": "Natural positive mass is proved for D_ns only. No natural central or physical mass theorem for D_com is known."
+  }
+}

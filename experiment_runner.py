@@ -204,6 +204,36 @@ from self_dual_wreath_affine_plane_support_pressure_no_go import (
 from self_dual_wreath_affine_recoupling_bundle import (
     write_affine_recoupling_bundle_report,
 )
+from self_dual_wreath_affine_relation_weighted_bulk import (
+    write_affine_relation_weighted_bulk_report,
+)
+from self_dual_wreath_affine_star_channel_gap import (
+    write_affine_star_channel_gap_report,
+)
+from self_dual_wreath_augmented_h0_dimension_obstruction import (
+    write_augmented_h0_dimension_obstruction_report,
+)
+from self_dual_wreath_canonical_coefficient_affine import (
+    write_canonical_coefficient_affine_report,
+)
+from self_dual_wreath_cayley_fiber_reduction import (
+    write_cayley_fiber_reduction,
+)
+from self_dual_wreath_central_support_rank_bridge import (
+    write_central_support_rank_bridge_report,
+)
+from self_dual_wreath_coherent_fourier_decoder import (
+    write_coherent_fourier_decoder_report,
+)
+from self_dual_wreath_collision_free_event_transfer import (
+    write_collision_free_event_transfer_report,
+)
+from self_dual_wreath_common_core_polar_bypass import (
+    write_common_core_polar_bypass_report,
+)
+from self_dual_wreath_complete_s6_vertex_channel_audit import (
+    write_complete_s6_vertex_channel_audit_report,
+)
 from self_dual_wreath_block_common_core_quotient import (
     write_block_common_core_quotient_report,
 )
@@ -525,6 +555,156 @@ from godsil_mckay_search import write_godsil_mckay_search
 from hidden_shift_query_lower_bounds import write_hidden_shift_query_lower_bounds
 from individualized_tensor_observables import write_individualized_tensor_observables
 from individualized_wl_baseline import write_individualized_wl_baseline
+from self_dual_wreath_component_defect_gap_bridge import (
+    write_component_defect_gap_bridge_report,
+)
+from self_dual_wreath_component_povm_regular_master_reduction import (
+    write_component_povm_regular_master_reduction_report,
+)
+from self_dual_wreath_component_povm_sparse_support_boundary import (
+    write_component_povm_sparse_support_boundary_report,
+)
+from self_dual_wreath_covariant_pgm_factorization import (
+    write_covariant_pgm_factorization_report,
+)
+from self_dual_wreath_coverage_welch_pressure import (
+    write_coverage_welch_pressure_report,
+)
+from self_dual_wreath_cross_dependency_neutrality import (
+    write_cross_dependency_neutrality,
+)
+from self_dual_wreath_dependency_homology import (
+    write_dependency_homology,
+)
+from self_dual_wreath_early_level_overlap_localization import (
+    write_early_level_overlap_localization_report,
+)
+from self_dual_wreath_extended_kronecker_threshold import (
+    write_extended_kronecker_threshold_report,
+)
+from self_dual_wreath_final_root_leverage_edge import (
+    write_final_root_leverage_edge_report,
+)
+from self_dual_wreath_component_defect_rank_mass import (
+    write_component_defect_rank_mass_report,
+)
+from self_dual_wreath_component_effect_algebra_boundary import (
+    write_component_effect_algebra_boundary_report,
+)
+from self_dual_wreath_component_povm_spectral_trim import (
+    write_component_povm_spectral_trim_report,
+)
+from self_dual_wreath_final_root_natural_common_span import (
+    write_final_root_natural_common_span_report,
+)
+from self_dual_wreath_fixed_family_common_rank_dilution import (
+    write_fixed_family_common_rank_dilution_report,
+)
+from self_dual_wreath_global_carrier_channel_extractor import (
+    write_global_carrier_channel_extractor_report,
+)
+from self_dual_wreath_global_collision_free_mass import (
+    write_global_collision_free_mass_report,
+)
+from self_dual_wreath_global_distinct_joint_kernel import (
+    write_global_distinct_joint_kernel_report,
+)
+from self_dual_wreath_global_partition_collision import (
+    write_global_partition_collision_report,
+)
+from self_dual_wreath_gpe_holonomy_resolver_reduction import (
+    write_gpe_holonomy_resolver_reduction_report,
+)
+from self_dual_wreath_gpe_pair_polar_transport import (
+    write_gpe_pair_polar_transport_report,
+)
+from self_dual_wreath_gpe_recursive_node_compiler import (
+    write_gpe_recursive_node_compiler_report,
+)
+from self_dual_wreath_graded_channel_graph_reduction import (
+    write_graded_channel_graph_reduction_report,
+)
+from self_dual_wreath_graded_flat_transport_no_go import (
+    write_graded_flat_transport_no_go_report,
+)
+from self_dual_wreath_graded_frobenius_trim import (
+    write_graded_frobenius_trim_report,
+)
+from self_dual_wreath_hamming_stratum_rank_transition import (
+    write_hamming_stratum_rank_transition_report,
+)
+from self_dual_wreath_hierarchical_cokernel_resolution import (
+    write_hierarchical_cokernel_resolution_report,
+)
+from self_dual_wreath_hierarchical_polar_tree import (
+    write_hierarchical_polar_tree_report,
+)
+from self_dual_wreath_hierarchy_low_carrier_trim import (
+    write_hierarchy_low_carrier_trim_report,
+)
+from self_dual_wreath_hierarchy_pair_common_rank_budget import (
+    write_hierarchy_pair_common_rank_budget_report,
+)
+from self_dual_wreath_internal_closure_graded_rescue import (
+    write_internal_closure_graded_rescue_report,
+)
+from self_dual_wreath_interplane_gauge_homology import (
+    write_interplane_gauge_homology_report,
+)
+from self_dual_wreath_invariant_projector_circuit import (
+    write_invariant_projector_circuit_report,
+)
+from self_dual_wreath_isotypic_dephasing_no_go import (
+    write_isotypic_dephasing_no_go_report,
+)
+from self_dual_wreath_leaf_whitening_commutator_no_go import (
+    write_leaf_whitening_commutator_no_go_report,
+)
+from self_dual_wreath_level_three_flag_audit import (
+    write_level_three_flag_audit_report,
+)
+from self_dual_wreath_local_pair_transversality import (
+    write_local_pair_transversality_report,
+)
+from self_dual_wreath_matrix_cayley_boundary import (
+    write_matrix_cayley_boundary,
+)
+from self_dual_wreath_matrix_povm_recursive_compiler import (
+    write_matrix_povm_recursive_compiler_report,
+)
+from self_dual_wreath_mixed_covariant_decoder import (
+    write_mixed_covariant_decoder_report,
+)
+from self_dual_wreath_common_span_component_universality_no_go import (
+    write_common_span_component_universality_no_go_report,
+)
+from self_dual_wreath_mrs_coherence_escape_criterion import (
+    write_mrs_coherence_escape_criterion_report,
+)
+from self_dual_wreath_mrs_transcript_povm_separation import (
+    write_mrs_transcript_povm_separation_report,
+)
+from self_dual_wreath_multiscale_polar_schedule import (
+    write_multiscale_polar_schedule_report,
+)
+from self_dual_wreath_native_frame_access_boundary import (
+    write_native_frame_access_boundary_report,
+)
+from self_dual_wreath_natural_leaf_commutator_mass import (
+    write_natural_leaf_commutator_mass_report,
+)
+from self_dual_wreath_natural_pair_carrier_law import (
+    write_natural_pair_carrier_law_report,
+)
+from self_dual_wreath_operator_steiner_bulk_reduction import (
+    write_operator_steiner_bulk_reduction_report,
+)
+from self_dual_wreath_orientation_filter_physical_access import (
+    write_orientation_filter_physical_access_report,
+)
+from self_dual_wreath_orientation_rank_budget import (
+    write_orientation_rank_budget_report,
+)
 from learnability_baselines import write_learnability_report
 from phase_family_naturalness import write_phase_family_naturalness_report
 from phase_state_workbench import write_hidden_shift_workbench
@@ -976,6 +1156,66 @@ COSET_EXPERIMENTS = {
     "EXP-CODE-SELF-DUAL-WREATH-AFFINE-PLANE-SCALAR-HOLONOMY",
     "EXP-CODE-SELF-DUAL-WREATH-AFFINE-PLANE-SUPPORT-PRESSURE-NO-GO",
     "EXP-CODE-SELF-DUAL-WREATH-AFFINE-RECOUPLING-BUNDLE",
+    "EXP-CODE-SELF-DUAL-WREATH-AFFINE-RELATION-WEIGHTED-BULK",
+    "EXP-CODE-SELF-DUAL-WREATH-AFFINE-STAR-CHANNEL-GAP",
+    "EXP-CODE-SELF-DUAL-WREATH-AUGMENTED-H0-DIMENSION-OBSTRUCTION",
+    "EXP-CODE-SELF-DUAL-WREATH-CANONICAL-COEFFICIENT-AFFINE",
+    "EXP-CODE-SELF-DUAL-WREATH-CAYLEY-FIBER-REDUCTION",
+    "EXP-CODE-SELF-DUAL-WREATH-CENTRAL-SUPPORT-RANK-BRIDGE",
+    "EXP-CODE-SELF-DUAL-WREATH-COHERENT-FOURIER-DECODER",
+    "EXP-CODE-SELF-DUAL-WREATH-COLLISION-FREE-EVENT-TRANSFER",
+    "EXP-CODE-SELF-DUAL-WREATH-COMMON-CORE-POLAR-BYPASS",
+    "EXP-CODE-SELF-DUAL-WREATH-COMPLETE-S6-VERTEX-CHANNEL-AUDIT",
+    "EXP-CODE-SELF-DUAL-WREATH-COMPONENT-DEFECT-GAP-BRIDGE",
+    "EXP-CODE-SELF-DUAL-WREATH-COMPONENT-POVM-REGULAR-MASTER-REDUCTION",
+    "EXP-CODE-SELF-DUAL-WREATH-COMPONENT-POVM-SPARSE-SUPPORT-BOUNDARY",
+    "EXP-CODE-SELF-DUAL-WREATH-COVARIANT-PGM-FACTORIZATION",
+    "EXP-CODE-SELF-DUAL-WREATH-COVERAGE-WELCH-PRESSURE",
+    "EXP-CODE-SELF-DUAL-WREATH-CROSS-DEPENDENCY-NEUTRALITY",
+    "EXP-CODE-SELF-DUAL-WREATH-DEPENDENCY-HOMOLOGY",
+    "EXP-CODE-SELF-DUAL-WREATH-EARLY-LEVEL-OVERLAP-LOCALIZATION",
+    "EXP-CODE-SELF-DUAL-WREATH-EXTENDED-KRONECKER-THRESHOLD",
+    "EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-LEVERAGE-EDGE",
+    "EXP-CODE-SELF-DUAL-WREATH-COMPONENT-DEFECT-RANK-MASS",
+    "EXP-CODE-SELF-DUAL-WREATH-COMPONENT-EFFECT-ALGEBRA-BOUNDARY",
+    "EXP-CODE-SELF-DUAL-WREATH-COMPONENT-POVM-SPECTRAL-TRIM",
+    "EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-NATURAL-COMMON-SPAN",
+    "EXP-CODE-SELF-DUAL-WREATH-FIXED-FAMILY-COMMON-RANK-DILUTION",
+    "EXP-CODE-SELF-DUAL-WREATH-GLOBAL-CARRIER-CHANNEL-EXTRACTOR",
+    "EXP-CODE-SELF-DUAL-WREATH-GLOBAL-COLLISION-FREE-MASS",
+    "EXP-CODE-SELF-DUAL-WREATH-GLOBAL-DISTINCT-JOINT-KERNEL",
+    "EXP-CODE-SELF-DUAL-WREATH-GLOBAL-PARTITION-COLLISION",
+    "EXP-CODE-SELF-DUAL-WREATH-GPE-HOLONOMY-RESOLVER-REDUCTION",
+    "EXP-CODE-SELF-DUAL-WREATH-GPE-PAIR-POLAR-TRANSPORT",
+    "EXP-CODE-SELF-DUAL-WREATH-GPE-RECURSIVE-NODE-COMPILER",
+    "EXP-CODE-SELF-DUAL-WREATH-GRADED-CHANNEL-GRAPH-REDUCTION",
+    "EXP-CODE-SELF-DUAL-WREATH-GRADED-FLAT-TRANSPORT-NO-GO",
+    "EXP-CODE-SELF-DUAL-WREATH-GRADED-FROBENIUS-TRIM",
+    "EXP-CODE-SELF-DUAL-WREATH-HAMMING-STRATUM-RANK-TRANSITION",
+    "EXP-CODE-SELF-DUAL-WREATH-HIERARCHICAL-COKERNEL-RESOLUTION",
+    "EXP-CODE-SELF-DUAL-WREATH-HIERARCHICAL-POLAR-TREE",
+    "EXP-CODE-SELF-DUAL-WREATH-HIERARCHY-LOW-CARRIER-TRIM",
+    "EXP-CODE-SELF-DUAL-WREATH-HIERARCHY-PAIR-COMMON-RANK-BUDGET",
+    "EXP-CODE-SELF-DUAL-WREATH-INTERNAL-CLOSURE-GRADED-RESCUE",
+    "EXP-CODE-SELF-DUAL-WREATH-INTERPLANE-GAUGE-HOMOLOGY",
+    "EXP-CODE-SELF-DUAL-WREATH-INVARIANT-PROJECTOR-CIRCUIT",
+    "EXP-CODE-SELF-DUAL-WREATH-ISOTYPIC-DEPHASING-NO-GO",
+    "EXP-CODE-SELF-DUAL-WREATH-LEAF-WHITENING-COMMUTATOR-NO-GO",
+    "EXP-CODE-SELF-DUAL-WREATH-LEVEL-THREE-FLAG-AUDIT",
+    "EXP-CODE-SELF-DUAL-WREATH-LOCAL-PAIR-TRANSVERSALITY",
+    "EXP-CODE-SELF-DUAL-WREATH-MATRIX-CAYLEY-BOUNDARY",
+    "EXP-CODE-SELF-DUAL-WREATH-MATRIX-POVM-RECURSIVE-COMPILER",
+    "EXP-CODE-SELF-DUAL-WREATH-MIXED-COVARIANT-DECODER",
+    "EXP-CODE-SELF-DUAL-WREATH-COMMON-SPAN-COMPONENT-UNIVERSALITY-NO-GO",
+    "EXP-CODE-SELF-DUAL-WREATH-MRS-COHERENCE-ESCAPE-CRITERION",
+    "EXP-CODE-SELF-DUAL-WREATH-MRS-TRANSCRIPT-POVM-SEPARATION",
+    "EXP-CODE-SELF-DUAL-WREATH-MULTISCALE-POLAR-SCHEDULE",
+    "EXP-CODE-SELF-DUAL-WREATH-NATIVE-FRAME-ACCESS-BOUNDARY",
+    "EXP-CODE-SELF-DUAL-WREATH-NATURAL-LEAF-COMMUTATOR-MASS",
+    "EXP-CODE-SELF-DUAL-WREATH-NATURAL-PAIR-CARRIER-LAW",
+    "EXP-CODE-SELF-DUAL-WREATH-OPERATOR-STEINER-BULK-REDUCTION",
+    "EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-FILTER-PHYSICAL-ACCESS",
+    "EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-RANK-BUDGET",
     "EXP-COSET-STRONG-FOURIER-INFORMATION-SCALING",
     "EXP-COSET-ENTANGLEMENT-WIDTH-GATE",
     "EXP-COSET-GROWING-WIDTH-ARCHITECTURE",
@@ -2190,6 +2430,66 @@ def select_next_experiment() -> NextExperimentSelection:
         "EXP-CODE-SELF-DUAL-WREATH-AFFINE-PLANE-SCALAR-HOLONOMY": 145,
         "EXP-CODE-SELF-DUAL-WREATH-AFFINE-PLANE-SUPPORT-PRESSURE-NO-GO": 146,
         "EXP-CODE-SELF-DUAL-WREATH-AFFINE-RECOUPLING-BUNDLE": 147,
+        "EXP-CODE-SELF-DUAL-WREATH-AFFINE-RELATION-WEIGHTED-BULK": 148,
+        "EXP-CODE-SELF-DUAL-WREATH-AFFINE-STAR-CHANNEL-GAP": 149,
+        "EXP-CODE-SELF-DUAL-WREATH-AUGMENTED-H0-DIMENSION-OBSTRUCTION": 150,
+        "EXP-CODE-SELF-DUAL-WREATH-CANONICAL-COEFFICIENT-AFFINE": 151,
+        "EXP-CODE-SELF-DUAL-WREATH-CAYLEY-FIBER-REDUCTION": 152,
+        "EXP-CODE-SELF-DUAL-WREATH-CENTRAL-SUPPORT-RANK-BRIDGE": 153,
+        "EXP-CODE-SELF-DUAL-WREATH-COHERENT-FOURIER-DECODER": 154,
+        "EXP-CODE-SELF-DUAL-WREATH-COLLISION-FREE-EVENT-TRANSFER": 155,
+        "EXP-CODE-SELF-DUAL-WREATH-COMMON-CORE-POLAR-BYPASS": 156,
+        "EXP-CODE-SELF-DUAL-WREATH-COMPLETE-S6-VERTEX-CHANNEL-AUDIT": 157,
+        "EXP-CODE-SELF-DUAL-WREATH-COMPONENT-DEFECT-GAP-BRIDGE": 158,
+        "EXP-CODE-SELF-DUAL-WREATH-COMPONENT-POVM-REGULAR-MASTER-REDUCTION": 159,
+        "EXP-CODE-SELF-DUAL-WREATH-COMPONENT-POVM-SPARSE-SUPPORT-BOUNDARY": 160,
+        "EXP-CODE-SELF-DUAL-WREATH-COVARIANT-PGM-FACTORIZATION": 161,
+        "EXP-CODE-SELF-DUAL-WREATH-COVERAGE-WELCH-PRESSURE": 162,
+        "EXP-CODE-SELF-DUAL-WREATH-CROSS-DEPENDENCY-NEUTRALITY": 163,
+        "EXP-CODE-SELF-DUAL-WREATH-DEPENDENCY-HOMOLOGY": 164,
+        "EXP-CODE-SELF-DUAL-WREATH-EARLY-LEVEL-OVERLAP-LOCALIZATION": 165,
+        "EXP-CODE-SELF-DUAL-WREATH-EXTENDED-KRONECKER-THRESHOLD": 166,
+        "EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-LEVERAGE-EDGE": 167,
+        "EXP-CODE-SELF-DUAL-WREATH-COMPONENT-DEFECT-RANK-MASS": 168,
+        "EXP-CODE-SELF-DUAL-WREATH-COMPONENT-EFFECT-ALGEBRA-BOUNDARY": 169,
+        "EXP-CODE-SELF-DUAL-WREATH-COMPONENT-POVM-SPECTRAL-TRIM": 170,
+        "EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-NATURAL-COMMON-SPAN": 171,
+        "EXP-CODE-SELF-DUAL-WREATH-FIXED-FAMILY-COMMON-RANK-DILUTION": 172,
+        "EXP-CODE-SELF-DUAL-WREATH-GLOBAL-CARRIER-CHANNEL-EXTRACTOR": 173,
+        "EXP-CODE-SELF-DUAL-WREATH-GLOBAL-COLLISION-FREE-MASS": 174,
+        "EXP-CODE-SELF-DUAL-WREATH-GLOBAL-DISTINCT-JOINT-KERNEL": 175,
+        "EXP-CODE-SELF-DUAL-WREATH-GLOBAL-PARTITION-COLLISION": 176,
+        "EXP-CODE-SELF-DUAL-WREATH-GPE-HOLONOMY-RESOLVER-REDUCTION": 177,
+        "EXP-CODE-SELF-DUAL-WREATH-GPE-PAIR-POLAR-TRANSPORT": 178,
+        "EXP-CODE-SELF-DUAL-WREATH-GPE-RECURSIVE-NODE-COMPILER": 179,
+        "EXP-CODE-SELF-DUAL-WREATH-GRADED-CHANNEL-GRAPH-REDUCTION": 180,
+        "EXP-CODE-SELF-DUAL-WREATH-GRADED-FLAT-TRANSPORT-NO-GO": 181,
+        "EXP-CODE-SELF-DUAL-WREATH-GRADED-FROBENIUS-TRIM": 182,
+        "EXP-CODE-SELF-DUAL-WREATH-HAMMING-STRATUM-RANK-TRANSITION": 183,
+        "EXP-CODE-SELF-DUAL-WREATH-HIERARCHICAL-COKERNEL-RESOLUTION": 184,
+        "EXP-CODE-SELF-DUAL-WREATH-HIERARCHICAL-POLAR-TREE": 185,
+        "EXP-CODE-SELF-DUAL-WREATH-HIERARCHY-LOW-CARRIER-TRIM": 186,
+        "EXP-CODE-SELF-DUAL-WREATH-HIERARCHY-PAIR-COMMON-RANK-BUDGET": 187,
+        "EXP-CODE-SELF-DUAL-WREATH-INTERNAL-CLOSURE-GRADED-RESCUE": 188,
+        "EXP-CODE-SELF-DUAL-WREATH-INTERPLANE-GAUGE-HOMOLOGY": 189,
+        "EXP-CODE-SELF-DUAL-WREATH-INVARIANT-PROJECTOR-CIRCUIT": 190,
+        "EXP-CODE-SELF-DUAL-WREATH-ISOTYPIC-DEPHASING-NO-GO": 191,
+        "EXP-CODE-SELF-DUAL-WREATH-LEAF-WHITENING-COMMUTATOR-NO-GO": 192,
+        "EXP-CODE-SELF-DUAL-WREATH-LEVEL-THREE-FLAG-AUDIT": 193,
+        "EXP-CODE-SELF-DUAL-WREATH-LOCAL-PAIR-TRANSVERSALITY": 194,
+        "EXP-CODE-SELF-DUAL-WREATH-MATRIX-CAYLEY-BOUNDARY": 195,
+        "EXP-CODE-SELF-DUAL-WREATH-MATRIX-POVM-RECURSIVE-COMPILER": 196,
+        "EXP-CODE-SELF-DUAL-WREATH-MIXED-COVARIANT-DECODER": 197,
+        "EXP-CODE-SELF-DUAL-WREATH-COMMON-SPAN-COMPONENT-UNIVERSALITY-NO-GO": 198,
+        "EXP-CODE-SELF-DUAL-WREATH-MRS-COHERENCE-ESCAPE-CRITERION": 199,
+        "EXP-CODE-SELF-DUAL-WREATH-MRS-TRANSCRIPT-POVM-SEPARATION": 200,
+        "EXP-CODE-SELF-DUAL-WREATH-MULTISCALE-POLAR-SCHEDULE": 201,
+        "EXP-CODE-SELF-DUAL-WREATH-NATIVE-FRAME-ACCESS-BOUNDARY": 202,
+        "EXP-CODE-SELF-DUAL-WREATH-NATURAL-LEAF-COMMUTATOR-MASS": 203,
+        "EXP-CODE-SELF-DUAL-WREATH-NATURAL-PAIR-CARRIER-LAW": 204,
+        "EXP-CODE-SELF-DUAL-WREATH-OPERATOR-STEINER-BULK-REDUCTION": 205,
+        "EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-FILTER-PHYSICAL-ACCESS": 206,
+        "EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-RANK-BUDGET": 207,
         "EXP-COSET-STRONG-FOURIER-INFORMATION-SCALING": 80,
         "EXP-COSET-ENTANGLEMENT-WIDTH-GATE": 81,
         "EXP-COSET-GROWING-WIDTH-ARCHITECTURE": 82,
@@ -4331,6 +4631,606 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             == "EXP-CODE-SELF-DUAL-WREATH-AFFINE-RECOUPLING-BUNDLE"
         ):
             payload = write_affine_recoupling_bundle_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-AFFINE-RELATION-WEIGHTED-BULK"
+        ):
+            payload = write_affine_relation_weighted_bulk_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-AFFINE-STAR-CHANNEL-GAP"
+        ):
+            payload = write_affine_star_channel_gap_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-AUGMENTED-H0-DIMENSION-OBSTRUCTION"
+        ):
+            payload = write_augmented_h0_dimension_obstruction_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-CANONICAL-COEFFICIENT-AFFINE"
+        ):
+            payload = write_canonical_coefficient_affine_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-CAYLEY-FIBER-REDUCTION"
+        ):
+            payload = write_cayley_fiber_reduction(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-CENTRAL-SUPPORT-RANK-BRIDGE"
+        ):
+            payload = write_central_support_rank_bridge_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-COHERENT-FOURIER-DECODER"
+        ):
+            payload = write_coherent_fourier_decoder_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-COLLISION-FREE-EVENT-TRANSFER"
+        ):
+            payload = write_collision_free_event_transfer_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-COMMON-CORE-POLAR-BYPASS"
+        ):
+            payload = write_common_core_polar_bypass_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-COMPLETE-S6-VERTEX-CHANNEL-AUDIT"
+        ):
+            payload = write_complete_s6_vertex_channel_audit_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-COMPONENT-DEFECT-GAP-BRIDGE"
+        ):
+            payload = write_component_defect_gap_bridge_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-COMPONENT-POVM-REGULAR-MASTER-REDUCTION"
+        ):
+            payload = write_component_povm_regular_master_reduction_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-COMPONENT-POVM-SPARSE-SUPPORT-BOUNDARY"
+        ):
+            payload = write_component_povm_sparse_support_boundary_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-COVARIANT-PGM-FACTORIZATION"
+        ):
+            payload = write_covariant_pgm_factorization_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-COVERAGE-WELCH-PRESSURE"
+        ):
+            payload = write_coverage_welch_pressure_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-CROSS-DEPENDENCY-NEUTRALITY"
+        ):
+            payload = write_cross_dependency_neutrality(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-DEPENDENCY-HOMOLOGY"
+        ):
+            payload = write_dependency_homology(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-EARLY-LEVEL-OVERLAP-LOCALIZATION"
+        ):
+            payload = write_early_level_overlap_localization_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-EXTENDED-KRONECKER-THRESHOLD"
+        ):
+            payload = write_extended_kronecker_threshold_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-LEVERAGE-EDGE"
+        ):
+            payload = write_final_root_leverage_edge_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-COMPONENT-DEFECT-RANK-MASS"
+        ):
+            payload = write_component_defect_rank_mass_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-COMPONENT-EFFECT-ALGEBRA-BOUNDARY"
+        ):
+            payload = write_component_effect_algebra_boundary_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-COMPONENT-POVM-SPECTRAL-TRIM"
+        ):
+            payload = write_component_povm_spectral_trim_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-NATURAL-COMMON-SPAN"
+        ):
+            payload = write_final_root_natural_common_span_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-FIXED-FAMILY-COMMON-RANK-DILUTION"
+        ):
+            payload = write_fixed_family_common_rank_dilution_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-GLOBAL-CARRIER-CHANNEL-EXTRACTOR"
+        ):
+            payload = write_global_carrier_channel_extractor_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-GLOBAL-COLLISION-FREE-MASS"
+        ):
+            payload = write_global_collision_free_mass_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-GLOBAL-DISTINCT-JOINT-KERNEL"
+        ):
+            payload = write_global_distinct_joint_kernel_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-GLOBAL-PARTITION-COLLISION"
+        ):
+            payload = write_global_partition_collision_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-GPE-HOLONOMY-RESOLVER-REDUCTION"
+        ):
+            payload = write_gpe_holonomy_resolver_reduction_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-GPE-PAIR-POLAR-TRANSPORT"
+        ):
+            payload = write_gpe_pair_polar_transport_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-GPE-RECURSIVE-NODE-COMPILER"
+        ):
+            payload = write_gpe_recursive_node_compiler_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-GRADED-CHANNEL-GRAPH-REDUCTION"
+        ):
+            payload = write_graded_channel_graph_reduction_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-GRADED-FLAT-TRANSPORT-NO-GO"
+        ):
+            payload = write_graded_flat_transport_no_go_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-GRADED-FROBENIUS-TRIM"
+        ):
+            payload = write_graded_frobenius_trim_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-HAMMING-STRATUM-RANK-TRANSITION"
+        ):
+            payload = write_hamming_stratum_rank_transition_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-HIERARCHICAL-COKERNEL-RESOLUTION"
+        ):
+            payload = write_hierarchical_cokernel_resolution_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-HIERARCHICAL-POLAR-TREE"
+        ):
+            payload = write_hierarchical_polar_tree_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-HIERARCHY-LOW-CARRIER-TRIM"
+        ):
+            payload = write_hierarchy_low_carrier_trim_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-HIERARCHY-PAIR-COMMON-RANK-BUDGET"
+        ):
+            payload = write_hierarchy_pair_common_rank_budget_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-INTERNAL-CLOSURE-GRADED-RESCUE"
+        ):
+            payload = write_internal_closure_graded_rescue_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-INTERPLANE-GAUGE-HOMOLOGY"
+        ):
+            payload = write_interplane_gauge_homology_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-INVARIANT-PROJECTOR-CIRCUIT"
+        ):
+            payload = write_invariant_projector_circuit_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-ISOTYPIC-DEPHASING-NO-GO"
+        ):
+            payload = write_isotypic_dephasing_no_go_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-LEAF-WHITENING-COMMUTATOR-NO-GO"
+        ):
+            payload = write_leaf_whitening_commutator_no_go_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-LEVEL-THREE-FLAG-AUDIT"
+        ):
+            payload = write_level_three_flag_audit_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-LOCAL-PAIR-TRANSVERSALITY"
+        ):
+            payload = write_local_pair_transversality_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-MATRIX-CAYLEY-BOUNDARY"
+        ):
+            payload = write_matrix_cayley_boundary(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-MATRIX-POVM-RECURSIVE-COMPILER"
+        ):
+            payload = write_matrix_povm_recursive_compiler_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-MIXED-COVARIANT-DECODER"
+        ):
+            payload = write_mixed_covariant_decoder_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-COMMON-SPAN-COMPONENT-UNIVERSALITY-NO-GO"
+        ):
+            payload = write_common_span_component_universality_no_go_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-MRS-COHERENCE-ESCAPE-CRITERION"
+        ):
+            payload = write_mrs_coherence_escape_criterion_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-MRS-TRANSCRIPT-POVM-SEPARATION"
+        ):
+            payload = write_mrs_transcript_povm_separation_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-MULTISCALE-POLAR-SCHEDULE"
+        ):
+            payload = write_multiscale_polar_schedule_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-NATIVE-FRAME-ACCESS-BOUNDARY"
+        ):
+            payload = write_native_frame_access_boundary_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-NATURAL-LEAF-COMMUTATOR-MASS"
+        ):
+            payload = write_natural_leaf_commutator_mass_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-NATURAL-PAIR-CARRIER-LAW"
+        ):
+            payload = write_natural_pair_carrier_law_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-OPERATOR-STEINER-BULK-REDUCTION"
+        ):
+            payload = write_operator_steiner_bulk_reduction_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-FILTER-PHYSICAL-ACCESS"
+        ):
+            payload = write_orientation_filter_physical_access_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-RANK-BUDGET"
+        ):
+            payload = write_orientation_rank_budget_report(
                 write_registry=True,
                 registry_experiment_id=experiment_id,
                 registry_candidate_id=experiment["candidate_id"],

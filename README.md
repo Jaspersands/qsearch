@@ -2471,6 +2471,426 @@ python qsearch.py code-wreath-affine-recoupling-bundle
 python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-AFFINE-RECOUPLING-BUNDLE
 ```
 
+Analyze code wreath affine relation weighted bulk theorem performance:
+
+```bash
+python qsearch.py code-wreath-affine-relation-weighted-bulk
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-AFFINE-RELATION-WEIGHTED-BULK
+```
+
+Analyze code wreath affine star channel gap theorem performance:
+
+```bash
+python qsearch.py code-wreath-affine-star-channel-gap
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-AFFINE-STAR-CHANNEL-GAP
+```
+
+Analyze code wreath augmented h0 dimension obstruction theorem performance:
+
+```bash
+python qsearch.py code-wreath-augmented-h0-dimension-obstruction
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-AUGMENTED-H0-DIMENSION-OBSTRUCTION
+```
+
+Analyze code wreath canonical coefficient affine theorem performance:
+
+```bash
+python qsearch.py code-wreath-canonical-coefficient-affine
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-CANONICAL-COEFFICIENT-AFFINE
+```
+
+Analyze code wreath cayley fiber reduction theorem performance:
+
+```bash
+python qsearch.py code-wreath-cayley-fiber-reduction
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-CAYLEY-FIBER-REDUCTION
+```
+
+Analyze code wreath central support rank bridge theorem performance:
+
+```bash
+python qsearch.py code-wreath-central-support-rank-bridge
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-CENTRAL-SUPPORT-RANK-BRIDGE
+```
+
+Analyze code wreath coherent fourier decoder theorem performance:
+
+```bash
+python qsearch.py code-wreath-coherent-fourier-decoder
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-COHERENT-FOURIER-DECODER
+```
+
+Analyze code wreath collision free event transfer theorem performance:
+
+```bash
+python qsearch.py code-wreath-collision-free-event-transfer
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-COLLISION-FREE-EVENT-TRANSFER
+```
+
+Analyze code wreath common core polar bypass theorem performance:
+
+```bash
+python qsearch.py code-wreath-common-core-polar-bypass
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-COMMON-CORE-POLAR-BYPASS
+```
+
+Analyze code wreath complete s6 vertex channel audit theorem performance:
+
+```bash
+python qsearch.py code-wreath-complete-s6-vertex-channel-audit
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-COMPLETE-S6-VERTEX-CHANNEL-AUDIT
+```
+
+Analyze code wreath component defect gap bridge theorem performance:
+
+```bash
+python qsearch.py code-wreath-component-defect-gap-bridge
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-COMPONENT-DEFECT-GAP-BRIDGE
+```
+
+Analyze code wreath component povm regular master reduction theorem performance:
+
+```bash
+python qsearch.py code-wreath-component-povm-regular-master-reduction
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-COMPONENT-POVM-REGULAR-MASTER-REDUCTION
+```
+
+Analyze code wreath component povm sparse support boundary theorem performance:
+
+```bash
+python qsearch.py code-wreath-component-povm-sparse-support-boundary
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-COMPONENT-POVM-SPARSE-SUPPORT-BOUNDARY
+```
+
+Analyze code wreath covariant pgm factorization theorem performance:
+
+```bash
+python qsearch.py code-wreath-covariant-pgm-factorization
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-COVARIANT-PGM-FACTORIZATION
+```
+
+Analyze code wreath coverage welch pressure theorem performance:
+
+```bash
+python qsearch.py code-wreath-coverage-welch-pressure
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-COVERAGE-WELCH-PRESSURE
+```
+
+Analyze code wreath cross dependency neutrality theorem performance:
+
+```bash
+python qsearch.py code-wreath-cross-dependency-neutrality
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-CROSS-DEPENDENCY-NEUTRALITY
+```
+
+Analyze code wreath dependency homology theorem performance:
+
+```bash
+python qsearch.py code-wreath-dependency-homology
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-DEPENDENCY-HOMOLOGY
+```
+
+Analyze code wreath early level overlap localization theorem performance:
+
+```bash
+python qsearch.py code-wreath-early-level-overlap-localization
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-EARLY-LEVEL-OVERLAP-LOCALIZATION
+```
+
+Analyze code wreath extended kronecker threshold theorem performance:
+
+```bash
+python qsearch.py code-wreath-extended-kronecker-threshold
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-EXTENDED-KRONECKER-THRESHOLD
+```
+
+Analyze code wreath final root leverage edge theorem performance:
+
+```bash
+python qsearch.py code-wreath-final-root-leverage-edge
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-LEVERAGE-EDGE
+```
+
+Analyze code wreath component defect rank mass theorem performance:
+
+```bash
+python qsearch.py code-wreath-component-defect-rank-mass
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-COMPONENT-DEFECT-RANK-MASS
+```
+
+Analyze code wreath component effect algebra boundary theorem performance:
+
+```bash
+python qsearch.py code-wreath-component-effect-algebra-boundary
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-COMPONENT-EFFECT-ALGEBRA-BOUNDARY
+```
+
+Analyze code wreath component povm spectral trim theorem performance:
+
+```bash
+python qsearch.py code-wreath-component-povm-spectral-trim
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-COMPONENT-POVM-SPECTRAL-TRIM
+```
+
+Analyze code wreath final root natural common span theorem performance:
+
+```bash
+python qsearch.py code-wreath-final-root-natural-common-span
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-NATURAL-COMMON-SPAN
+```
+
+Analyze code wreath fixed family common rank dilution theorem performance:
+
+```bash
+python qsearch.py code-wreath-fixed-family-common-rank-dilution
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-FIXED-FAMILY-COMMON-RANK-DILUTION
+```
+
+Analyze code wreath global carrier channel extractor theorem performance:
+
+```bash
+python qsearch.py code-wreath-global-carrier-channel-extractor
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-GLOBAL-CARRIER-CHANNEL-EXTRACTOR
+```
+
+Analyze code wreath global collision free mass theorem performance:
+
+```bash
+python qsearch.py code-wreath-global-collision-free-mass
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-GLOBAL-COLLISION-FREE-MASS
+```
+
+Analyze code wreath global distinct joint kernel theorem performance:
+
+```bash
+python qsearch.py code-wreath-global-distinct-joint-kernel
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-GLOBAL-DISTINCT-JOINT-KERNEL
+```
+
+Analyze code wreath global partition collision theorem performance:
+
+```bash
+python qsearch.py code-wreath-global-partition-collision
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-GLOBAL-PARTITION-COLLISION
+```
+
+Analyze code wreath gpe holonomy resolver reduction theorem performance:
+
+```bash
+python qsearch.py code-wreath-gpe-holonomy-resolver-reduction
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-GPE-HOLONOMY-RESOLVER-REDUCTION
+```
+
+Analyze code wreath gpe pair polar transport theorem performance:
+
+```bash
+python qsearch.py code-wreath-gpe-pair-polar-transport
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-GPE-PAIR-POLAR-TRANSPORT
+```
+
+Analyze code wreath gpe recursive node compiler theorem performance:
+
+```bash
+python qsearch.py code-wreath-gpe-recursive-node-compiler
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-GPE-RECURSIVE-NODE-COMPILER
+```
+
+Analyze code wreath graded channel graph reduction theorem performance:
+
+```bash
+python qsearch.py code-wreath-graded-channel-graph-reduction
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-GRADED-CHANNEL-GRAPH-REDUCTION
+```
+
+Analyze code wreath graded flat transport no go theorem performance:
+
+```bash
+python qsearch.py code-wreath-graded-flat-transport-no-go
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-GRADED-FLAT-TRANSPORT-NO-GO
+```
+
+Analyze code wreath graded frobenius trim theorem performance:
+
+```bash
+python qsearch.py code-wreath-graded-frobenius-trim
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-GRADED-FROBENIUS-TRIM
+```
+
+Analyze code wreath hamming stratum rank transition theorem performance:
+
+```bash
+python qsearch.py code-wreath-hamming-stratum-rank-transition
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-HAMMING-STRATUM-RANK-TRANSITION
+```
+
+Analyze code wreath hierarchical cokernel resolution theorem performance:
+
+```bash
+python qsearch.py code-wreath-hierarchical-cokernel-resolution
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-HIERARCHICAL-COKERNEL-RESOLUTION
+```
+
+Analyze code wreath hierarchical polar tree theorem performance:
+
+```bash
+python qsearch.py code-wreath-hierarchical-polar-tree
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-HIERARCHICAL-POLAR-TREE
+```
+
+Analyze code wreath hierarchy low carrier trim theorem performance:
+
+```bash
+python qsearch.py code-wreath-hierarchy-low-carrier-trim
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-HIERARCHY-LOW-CARRIER-TRIM
+```
+
+Analyze code wreath hierarchy pair common rank budget theorem performance:
+
+```bash
+python qsearch.py code-wreath-hierarchy-pair-common-rank-budget
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-HIERARCHY-PAIR-COMMON-RANK-BUDGET
+```
+
+Analyze code wreath internal closure graded rescue theorem performance:
+
+```bash
+python qsearch.py code-wreath-internal-closure-graded-rescue
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-INTERNAL-CLOSURE-GRADED-RESCUE
+```
+
+Analyze code wreath interplane gauge homology theorem performance:
+
+```bash
+python qsearch.py code-wreath-interplane-gauge-homology
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-INTERPLANE-GAUGE-HOMOLOGY
+```
+
+Analyze code wreath invariant projector circuit theorem performance:
+
+```bash
+python qsearch.py code-wreath-invariant-projector-circuit
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-INVARIANT-PROJECTOR-CIRCUIT
+```
+
+Analyze code wreath isotypic dephasing no go theorem performance:
+
+```bash
+python qsearch.py code-wreath-isotypic-dephasing-no-go
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-ISOTYPIC-DEPHASING-NO-GO
+```
+
+Analyze code wreath leaf whitening commutator no go theorem performance:
+
+```bash
+python qsearch.py code-wreath-leaf-whitening-commutator-no-go
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-LEAF-WHITENING-COMMUTATOR-NO-GO
+```
+
+Analyze code wreath level three flag audit theorem performance:
+
+```bash
+python qsearch.py code-wreath-level-three-flag-audit
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-LEVEL-THREE-FLAG-AUDIT
+```
+
+Analyze code wreath local pair transversality theorem performance:
+
+```bash
+python qsearch.py code-wreath-local-pair-transversality
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-LOCAL-PAIR-TRANSVERSALITY
+```
+
+Analyze code wreath matrix cayley boundary theorem performance:
+
+```bash
+python qsearch.py code-wreath-matrix-cayley-boundary
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-MATRIX-CAYLEY-BOUNDARY
+```
+
+Analyze code wreath matrix povm recursive compiler theorem performance:
+
+```bash
+python qsearch.py code-wreath-matrix-povm-recursive-compiler
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-MATRIX-POVM-RECURSIVE-COMPILER
+```
+
+Analyze code wreath mixed covariant decoder theorem performance:
+
+```bash
+python qsearch.py code-wreath-mixed-covariant-decoder
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-MIXED-COVARIANT-DECODER
+```
+
+Analyze code wreath common span component universality no go theorem performance:
+
+```bash
+python qsearch.py code-wreath-common-span-component-universality-no-go
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-COMMON-SPAN-COMPONENT-UNIVERSALITY-NO-GO
+```
+
+Analyze code wreath mrs coherence escape criterion theorem performance:
+
+```bash
+python qsearch.py code-wreath-mrs-coherence-escape-criterion
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-MRS-COHERENCE-ESCAPE-CRITERION
+```
+
+Analyze code wreath mrs transcript povm separation theorem performance:
+
+```bash
+python qsearch.py code-wreath-mrs-transcript-povm-separation
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-MRS-TRANSCRIPT-POVM-SEPARATION
+```
+
+Analyze code wreath multiscale polar schedule theorem performance:
+
+```bash
+python qsearch.py code-wreath-multiscale-polar-schedule
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-MULTISCALE-POLAR-SCHEDULE
+```
+
+Analyze code wreath native frame access boundary theorem performance:
+
+```bash
+python qsearch.py code-wreath-native-frame-access-boundary
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-NATIVE-FRAME-ACCESS-BOUNDARY
+```
+
+Analyze code wreath natural leaf commutator mass theorem performance:
+
+```bash
+python qsearch.py code-wreath-natural-leaf-commutator-mass
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-NATURAL-LEAF-COMMUTATOR-MASS
+```
+
+Analyze code wreath natural pair carrier law theorem performance:
+
+```bash
+python qsearch.py code-wreath-natural-pair-carrier-law
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-NATURAL-PAIR-CARRIER-LAW
+```
+
+Analyze code wreath operator steiner bulk reduction theorem performance:
+
+```bash
+python qsearch.py code-wreath-operator-steiner-bulk-reduction
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-OPERATOR-STEINER-BULK-REDUCTION
+```
+
+Analyze code wreath orientation filter physical access theorem performance:
+
+```bash
+python qsearch.py code-wreath-orientation-filter-physical-access
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-FILTER-PHYSICAL-ACCESS
+```
+
+Analyze code wreath orientation rank budget theorem performance:
+
+```bash
+python qsearch.py code-wreath-orientation-rank-budget
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-RANK-BUDGET
+```
+
 Isolate the solvable and unresolved equal-pair commutator terms:
 
 ```bash

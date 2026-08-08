@@ -22,18 +22,18 @@
     }
   ],
   "claim_gate": {
-    "existing_k_plus_two_schedule_bounds_final_root_component_aspect": true,
+    "existing_k_plus_two_schedule_bounds_surrogate_final_root_component_aspect": true,
     "haar_final_root_aggregate_defect_has_constant_gap": true,
     "haar_final_root_minimum_component_edge_is_constant_with_high_probability": true,
     "natural_all_relation_node_component_edges_proved": false,
     "natural_component_support_select_compiled": false,
     "natural_final_root_component_edge_proved": false,
-    "reason": "The existing copy schedule supplies the right final-root aspect and the Haar model has overwhelming leverage/defect gaps, but no natural representation-theoretic transfer exists.",
+    "reason": "The existing copy schedule supplies the right scalar-surrogate aspect and the Haar model has overwhelming leverage/defect gaps. Natural positive-mass dimensions are now controlled by a companion theorem, but the natural positive edge is open.",
     "recursive_orientation_polar_proved": false,
     "regular_master_central_support_controlled": false,
     "speedup_claim_allowed": false
   },
-  "created_at": "2026-08-08T07:49:13.946267+00:00",
+  "created_at": "2026-08-08T21:05:57.826138+00:00",
   "falsifiers_triggered": [
     "The existing K+2 final root does not suffer a vanishing common-fiber aspect in the surrogate.",
     "Marginal mean leverage alone is insufficient; the uniform result needs the beta large-deviation exponent.",
@@ -97,7 +97,7 @@
     "finite_half_mean_edge_miss_count": 0,
     "haar_edge_to_defect_gap_bridge_count": 1,
     "haar_uniform_rank_one_leverage_edge_theorem_count": 1,
-    "k_plus_two_final_root_component_aspect_theorem_count": 1,
+    "k_plus_two_surrogate_final_root_component_aspect_theorem_count": 1,
     "natural_component_support_select_circuit_count": 0,
     "natural_final_root_leverage_edge_theorem_count": 0,
     "new_quantum_algorithm_count": 0,
@@ -110,8 +110,8 @@
   },
   "proof_obligations": [
     {
-      "obligation": "show_existing_k_plus_two_schedule_bounds_final_root_component_aspect",
-      "resolution": "The exact dyadic ratio puts every recorded final-root child aspect in [2,4) and common-fiber aspect in (1/4,1/2].",
+      "obligation": "show_existing_k_plus_two_schedule_bounds_surrogate_final_root_component_aspect",
+      "resolution": "The exact dyadic ratio puts every recorded scalar-surrogate final-root child aspect in [2,4) and common-fiber aspect in (1/4,1/2]. Natural positive-mass dimensions are proved separately; the natural edge remains open.",
       "resolved": true
     },
     {
@@ -313,11 +313,11 @@
     }
   ],
   "status": "final-root-haar-leverage-and-defect-gap-proved-natural-transfer-open",
-  "summary": "Showed that the existing K+2 schedule already prevents a vanishing final-root component aspect and proved an all-coordinate constant edge plus aggregate defect gap in the Haar surrogate.",
+  "summary": "Showed that the existing K+2 schedule prevents a vanishing scalar-surrogate final-root component aspect and proved an all-coordinate constant edge plus aggregate defect gap in the Haar model.",
   "theorem_contract": {
     "defect_bridge": "On the uniform edge event, coordinate rank accounting gives D>=(alpha/2-2/r+1/N)I, asymptotically at least 1/8.",
     "haar_coordinate_effect": "A rank-one coordinate component of a Haar isometry has one positive eigenvalue L_i distributed as Beta(r,N-r).",
-    "k_plus_two_final_root_aspect": "With K=ceil(log2|G|), one final-root child has N=2^(K+1) coefficients and r=|G|, so N/r is in [2,4) and alpha=r/N is in (1/4,1/2].",
+    "k_plus_two_final_root_aspect": "In the scalar Haar/Gaussian surrogate, K=ceil(log2|G|) gives one final-root child N=2^(K+1) coefficients and r=|G|, so N/r is in [2,4) and alpha=r/N is in (1/4,1/2]. The companion natural-common-span theorem handles representation-valued block dimensions without identifying them with this scalar model.",
     "scope": "This is exact for the Haar/Gaussian final-root surrogate. Natural representation-valued block ranks, leverage tails, central-support mass, and coherent SELECT are unproved.",
     "uniform_edge_tail": "The beta/binomial identity, Chernoff, and a union over all N coordinates bound Pr[min_i L_i<=alpha/2] by N exp(-(N-1)KL(r/(N-1)||alpha/2))."
   }

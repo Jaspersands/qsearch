@@ -1,0 +1,233 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "A tiny ordinary defect trace means matrix effects occur on negligible source mass.",
+      "resolution": "False. Defect rank is controlled blockwise by component support ranks and is asymptotically full on a constant-probability source event.",
+      "resolved": true
+    },
+    {
+      "objection": "One low-rank positive-trace effect can coexist with a large defect kernel outside its support.",
+      "resolution": "Impossible: every defect-kernel vector must satisfy H_e v=h_e v with h_e>0 and therefore lies in that effect's range.",
+      "resolved": true
+    },
+    {
+      "objection": "Asymptotically full defect rank implies a constant defect gap.",
+      "resolution": "No. The nonzero defect eigenvalues can approach zero arbitrarily quickly; rank and spectral conditioning are separate.",
+      "resolved": false
+    },
+    {
+      "objection": "Positive-mass component nonscalarity proves an MRS lower-bound escape.",
+      "resolution": "No. The pulled-back physical decision effect still must be separated from every allowed adaptive transcript postprocessing.",
+      "resolved": false
+    }
+  ],
+  "asymptotic_corollary": {
+    "asymptotic_defect_relative_common_fiber_rank_lower_bound": "1-o(1)",
+    "common_span_relative_carrier_rank_lower_bound": "19/128",
+    "component_block_to_fiber_coefficient": "520/19",
+    "conditioned_expected_physical_defect_support_mass_lower_bound": "19/1152",
+    "conditioned_source_event_mass_lower_bound": "1/9",
+    "natural_positive_component_edge_proved": false,
+    "natural_positive_component_edge_required_for_support_mass": false,
+    "statement": "On globally distinct conditional source mass at least 1/9-o(1), the final component nonscalarity defect has relative common-fiber rank at least 1-(520/19+o(1))/q. Its conditioned expected physical support mass is at least 19/1152-o(1)."
+  },
+  "claim_gate": {
+    "center_valued_natural_component_nonscalarity_source_mass_controlled": true,
+    "coherent_component_povm_dilation_compiled": false,
+    "natural_component_defect_has_asymptotically_full_relative_common_rank": true,
+    "natural_component_defect_has_constant_physical_support_mass": true,
+    "natural_positive_component_edge_proved": false,
+    "natural_positive_component_edge_required_for_defect_support_mass": false,
+    "physical_pgm_outside_mrs_transcript_postprocessing_proved": false,
+    "reason": "Natural matrix-component nonscalarity now has constant source and physical support mass, but spectral conditioning, coherent implementation, MRS separation, and decoding remain open.",
+    "recursive_orientation_polar_proved": false,
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-08T21:15:30.913693+00:00",
+  "falsifiers_triggered": [
+    "Ordinary scalar defect trace is not needed to control center-valued defect support.",
+    "A natural positive component edge is not required to prove positive nonscalarity source or physical mass.",
+    "Asymptotically full defect rank does not imply a usable spectral gap.",
+    "Positive-mass component nonscalarity is not itself an MRS lower-bound separation."
+  ],
+  "finite_controls": [
+    {
+      "component_ranks": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "control_id": "FOUR-RANK2-ORTHOGONAL-COMPONENTS",
+      "coordinate_block_defect_rank_lower_bound": 6,
+      "defect_has_positive_spectral_gap": true,
+      "defect_kernel_intersection_residual": 0.0,
+      "effect_sum_identity_residual": 0.0,
+      "exact_defect_rank_bridge_verified": true,
+      "fiber_dimension": 8,
+      "maximum_component_rank": 2,
+      "minimum_positive_trace_component_rank": 2,
+      "observed_defect_nullity": 0,
+      "observed_defect_rank": 8,
+      "outcome_count": 4,
+      "positive_trace_outcome_count": 4,
+      "rank_lower_bound_residual": 0,
+      "status": "component-defect-relative-rank-bridge-verified",
+      "theorem_defect_rank_lower_bound": 6
+    },
+    {
+      "component_ranks": [
+        1,
+        1,
+        1
+      ],
+      "control_id": "TRINE-RANK1-COMPONENTS",
+      "coordinate_block_defect_rank_lower_bound": 1,
+      "defect_has_positive_spectral_gap": true,
+      "defect_kernel_intersection_residual": 0.0,
+      "effect_sum_identity_residual": 5.774894028216986e-16,
+      "exact_defect_rank_bridge_verified": true,
+      "fiber_dimension": 2,
+      "maximum_component_rank": 1,
+      "minimum_positive_trace_component_rank": 1,
+      "observed_defect_nullity": 0,
+      "observed_defect_rank": 2,
+      "outcome_count": 3,
+      "positive_trace_outcome_count": 3,
+      "rank_lower_bound_residual": 0,
+      "status": "component-defect-relative-rank-bridge-verified",
+      "theorem_defect_rank_lower_bound": 1
+    },
+    {
+      "component_ranks": [
+        2,
+        2
+      ],
+      "control_id": "BINARY-COMMON-MEAN-EIGENVECTOR",
+      "coordinate_block_defect_rank_lower_bound": 1,
+      "defect_has_positive_spectral_gap": false,
+      "defect_kernel_intersection_residual": 0.0,
+      "effect_sum_identity_residual": 0.0,
+      "exact_defect_rank_bridge_verified": true,
+      "fiber_dimension": 3,
+      "maximum_component_rank": 2,
+      "minimum_positive_trace_component_rank": 2,
+      "observed_defect_nullity": 1,
+      "observed_defect_rank": 2,
+      "outcome_count": 2,
+      "positive_trace_outcome_count": 2,
+      "rank_lower_bound_residual": 0,
+      "status": "component-defect-relative-rank-bridge-verified",
+      "theorem_defect_rank_lower_bound": 1
+    }
+  ],
+  "headline_metrics": {
+    "asymptotic_conditioned_physical_defect_support_mass_lower_bound": 0.016493055555555556,
+    "asymptotic_conditioned_source_event_mass_lower_bound": 0.1111111111111111,
+    "component_defect_relative_rank_bridge_theorem_count": 1,
+    "finite_control_count": 3,
+    "finite_control_failure_count": 0,
+    "finite_nontrivial_defect_kernel_control_count": 1,
+    "natural_component_defect_asymptotically_full_common_rank_theorem_count": 1,
+    "natural_component_defect_positive_source_mass_theorem_count": 1,
+    "natural_positive_component_edge_theorem_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "physical_mrs_separation_theorem_count": 0,
+    "tail_component_count": 16777216,
+    "tail_defect_relative_common_rank_lower_bound": 0.999998368714985
+  },
+  "natural_scaling_records": [
+    {
+      "child_orientation_count_decimal": "32",
+      "component_block_to_fiber_upper_bound": 0.8552631578947368,
+      "conditioned_expected_physical_defect_support_mass_lower_bound": 0.002387152777777778,
+      "defect_relative_common_fiber_rank_lower_bound": 0.14473684210526316,
+      "physical_defect_support_relative_carrier_lower_bound": 0.021484375,
+      "positive_component_edge_assumed": false,
+      "positive_relative_rank_certified": true,
+      "status": "natural-component-defect-asymptotically-full-relative-rank"
+    },
+    {
+      "child_orientation_count_decimal": "256",
+      "component_block_to_fiber_upper_bound": 0.1069078947368421,
+      "conditioned_expected_physical_defect_support_mass_lower_bound": 0.014729817708333334,
+      "defect_relative_common_fiber_rank_lower_bound": 0.8930921052631579,
+      "physical_defect_support_relative_carrier_lower_bound": 0.132568359375,
+      "positive_component_edge_assumed": false,
+      "positive_relative_rank_certified": true,
+      "status": "natural-component-defect-asymptotically-full-relative-rank"
+    },
+    {
+      "child_orientation_count_decimal": "4096",
+      "component_block_to_fiber_upper_bound": 0.0066817434210526315,
+      "conditioned_expected_physical_defect_support_mass_lower_bound": 0.016382853190104168,
+      "defect_relative_common_fiber_rank_lower_bound": 0.9933182565789473,
+      "physical_defect_support_relative_carrier_lower_bound": 0.1474456787109375,
+      "positive_component_edge_assumed": false,
+      "positive_relative_rank_certified": true,
+      "status": "natural-component-defect-asymptotically-full-relative-rank"
+    },
+    {
+      "child_orientation_count_decimal": "65536",
+      "component_block_to_fiber_upper_bound": 0.00041760896381578947,
+      "conditioned_expected_physical_defect_support_mass_lower_bound": 0.016486167907714844,
+      "defect_relative_common_fiber_rank_lower_bound": 0.9995823910361842,
+      "physical_defect_support_relative_carrier_lower_bound": 0.1483755111694336,
+      "positive_component_edge_assumed": false,
+      "positive_relative_rank_certified": true,
+      "status": "natural-component-defect-asymptotically-full-relative-rank"
+    },
+    {
+      "child_orientation_count_decimal": "1048576",
+      "component_block_to_fiber_upper_bound": 2.6100560238486842e-05,
+      "conditioned_expected_physical_defect_support_mass_lower_bound": 0.01649262507756551,
+      "defect_relative_common_fiber_rank_lower_bound": 0.9999738994397616,
+      "physical_defect_support_relative_carrier_lower_bound": 0.1484336256980896,
+      "positive_component_edge_assumed": false,
+      "positive_relative_rank_certified": true,
+      "status": "natural-component-defect-asymptotically-full-relative-rank"
+    },
+    {
+      "child_orientation_count_decimal": "16777216",
+      "component_block_to_fiber_upper_bound": 1.6312850149054276e-06,
+      "conditioned_expected_physical_defect_support_mass_lower_bound": 0.01649302865068118,
+      "defect_relative_common_fiber_rank_lower_bound": 0.999998368714985,
+      "physical_defect_support_relative_carrier_lower_bound": 0.1484372578561306,
+      "positive_component_edge_assumed": false,
+      "positive_relative_rank_certified": true,
+      "status": "natural-component-defect-asymptotically-full-relative-rank"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "prove_center_valued_natural_component_nonscalarity_mass",
+      "resolution": "The defect-kernel support inclusion plus natural b_max/r=O(1/q) makes the defect asymptotically full rank on source mass 1/9-o(1), with expected physical support mass at least 19/1152-o(1).",
+      "resolved": true
+    },
+    {
+      "obligation": "avoid_using_scalar_defect_trace_to_infer_source_probability",
+      "resolution": "The proof is blockwise and rank-valued. It never converts a small ordinary trace moment into a central-support claim.",
+      "resolved": true
+    },
+    {
+      "obligation": "bound_natural_positive_component_or_defect_edge",
+      "resolution": "Relative rank permits arbitrarily small nonzero eigenvalues. A direct structured dilation, trace-weighted trim, or positive-edge theorem is still required for implementation.",
+      "resolved": false
+    },
+    {
+      "obligation": "separate_physical_pgm_effect_from_all_mrs_transcript_postprocessings",
+      "resolution": "Component nonscalarity on positive mass is a necessary structural input, not an all-policy MRS separation witness.",
+      "resolved": false
+    }
+  ],
+  "status": "natural-component-defect-rank-and-mass-proved-spectral-edge-open",
+  "summary": "Proved that final-root component nonscalarity occupies asymptotically full common-fiber rank on constant natural source mass, without a positive component-edge premise.",
+  "theorem_contract": {
+    "coordinate_rank_corollary": "For H_e=W^*P_eW with coordinate block dimension b_e, rank(D)/r>=1-b_max/r.",
+    "kernel_identity": "For D=sum_e(H_e-h_e I)^2, ker D is exactly the intersection of the kernels of H_e-h_e I.",
+    "natural_defect_support": "Consequently rank(D)/r=1-o(1) and conditioned expected physical defect-support mass is at least 19/1152-o(1).",
+    "natural_final_root_mass": "The natural final-root common-span theorem gives source event mass 1/9-o(1), r/D_phys>=19/128-o(1), and b_max/r<=(520/19+o(1))/q.",
+    "positive_trace_support_bound": "If h_e>0, every defect-kernel vector is a nonzero-eigenvalue vector of H_e, so nullity(D)<=rank(H_e).",
+    "scope": "This is a rank/support theorem. It supplies no lower bound on nonzero defect or component eigenvalues and no coherent circuit."
+  }
+}

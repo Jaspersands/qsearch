@@ -2243,6 +2243,75 @@
   },
   {
     "artifacts": {
+      "self_dual_wreath_affine_relation_weighted_bulk": "research/representation/self_dual_wreath_affine_relation_weighted_bulk.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-08-08T20:39:35.212440+00:00",
+    "experiment_id": "EXP-CODE-SELF-DUAL-WREATH-AFFINE-RELATION-WEIGHTED-BULK",
+    "falsifiers_triggered": [
+      "Raw support overlap is not the correct spectral burden statistic.",
+      "Non-rich orientation triples do not restore a macroscopic weighted burden.",
+      "A global first-moment argument suffices for bulk rank but not for an untrimmed edge.",
+      "Signal-free relation trimming does not by itself compile the full synthesis cokernel projector."
+    ],
+    "id": "RESULT-EXP-CODE-SELF-DUAL-WREATH-AFFINE-RELATION-WEIGHTED-BULK-LATEST",
+    "metrics": {
+      "exact_signature_support_star_burden_theorem_count": 1,
+      "finite_collision_free_bulk_certified_row_count": 5,
+      "finite_collision_free_bulk_onset_n": 32,
+      "finite_scaling_row_count": 10,
+      "global_coefficient_bulk_edge_theorem_count": 1,
+      "new_quantum_algorithm_count": 0,
+      "orientation_signature_count_control_count": 7,
+      "orientation_signature_count_failure_count": 0,
+      "relation_trim_zero_pgm_state_loss_theorem_count": 1,
+      "residual_cokernel_output_error_theorem_count": 0,
+      "signature_support_control_count": 80,
+      "signature_support_control_failure_count": 0,
+      "tail_conditional_markov_failure_upper_bound": 1.845040906368646e-26,
+      "tail_log2_conditioned_burden_to_capacity_ratio": -170.97295532893088,
+      "tail_n": 48,
+      "tail_spectral_outlier_rank_fraction_upper_bound": 7.380163625474584e-26,
+      "untrimmed_relation_edge_theorem_count": 0
+    },
+    "status": "collision-free-weighted-relation-coefficient-bulk-edge-proved-constraint-completeness-open",
+    "summary": "Proved that exact carrier-correlation weights overcome the divergent affine support pressure: the complete collision-free pair-relation Gram has only a vanishing coefficient-rank outlier sector, whose relation image is exactly signal-free."
+  },
+  {
+    "artifacts": {
+      "self_dual_wreath_affine_star_channel_gap": "research/representation/self_dual_wreath_affine_star_channel_gap.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-08-08T20:39:38.834868+00:00",
+    "experiment_id": "EXP-CODE-SELF-DUAL-WREATH-AFFINE-STAR-CHANNEL-GAP",
+    "falsifiers_triggered": [
+      "Complete affine closure is stronger than necessary; affine stars are already uniformly safe.",
+      "Vertex affinity without edge-graph classification is insufficient.",
+      "The remaining asymptotic question is whether natural channels stay as separate affine stars or merge into a dangerous two-sided graph."
+    ],
+    "id": "RESULT-EXP-CODE-SELF-DUAL-WREATH-AFFINE-STAR-CHANNEL-GAP-LATEST",
+    "metrics": {
+      "affine_star_exact_defect_theorem_count": 1,
+      "affine_star_uniform_quarter_gap_theorem_count": 1,
+      "finite_affine_star_control_count": 18,
+      "finite_affine_star_control_failure_count": 0,
+      "finite_uniform_bound_failure_count": 0,
+      "natural_residual_channel_affine_star_classification_count": 0,
+      "natural_width_quarter_gap_failure_count": 0,
+      "natural_width_scaling_row_count": 11,
+      "new_quantum_algorithm_count": 0,
+      "tail_copy_count": 1684,
+      "tail_endpoint_gap": 0.2504911591355599,
+      "tail_grading_defect_norm": 0.49901768172888017,
+      "tail_n": 256,
+      "w6_carrier_five_defect": 0.11111111111111102,
+      "w6_carrier_nine_defect": 0.058823529411764705
+    },
+    "status": "affine-star-channel-quarter-gap-proved-natural-channel-classification-open",
+    "summary": "Proved a width-independent graded gap above one quarter for affine-star carrier channels, exactly explaining every extracted W6 residual channel."
+  },
+  {
+    "artifacts": {
       "self_dual_wreath_all_unequal_conditioned_kernel": "research/representation/self_dual_wreath_all_unequal_conditioned_kernel.json"
     },
     "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -2456,6 +2525,38 @@
   },
   {
     "artifacts": {
+      "self_dual_wreath_augmented_h0_dimension_obstruction": "research/representation/self_dual_wreath_augmented_h0_dimension_obstruction.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-08-08T20:39:47.328716+00:00",
+    "experiment_id": "EXP-CODE-SELF-DUAL-WREATH-AUGMENTED-H0-DIMENSION-OBSTRUCTION",
+    "falsifiers_triggered": [
+      "Dense pair-core graph support does not imply pair-generation of the synthesis kernel.",
+      "The direct common-core Cech complex is asymptotically incomplete at H0.",
+      "The graded pair-relation endpoint gap cannot by itself implement the full orientation polar."
+    ],
+    "id": "RESULT-EXP-CODE-SELF-DUAL-WREATH-AUGMENTED-H0-DIMENSION-OBSTRUCTION-LATEST",
+    "metrics": {
+      "asymptotic_extra_copy_macroscopic_h0_obstruction_count": 1,
+      "asymptotic_minimal_copy_augmented_h0_obstruction_count": 1,
+      "exact_pair_budget_expectation_theorem_count": 1,
+      "expectation_control_count": 3,
+      "expectation_control_failure_count": 0,
+      "finite_conditioned_certified_row_count": 12,
+      "hierarchical_span_dependency_resolver_count": 1,
+      "new_quantum_algorithm_count": 0,
+      "scaling_row_count": 20,
+      "tail_extra_h0_relative_lower_bound": 0.5355720770166471,
+      "tail_extra_log2_conditioned_failure_upper_bound": -171.869276865245,
+      "tail_minimal_h0_relative_lower_bound": 0.01778603850832355,
+      "tail_minimal_log2_conditioned_failure_upper_bound": -168.95717810653355,
+      "two_adic_minimal_copy_gap_theorem_count": 1
+    },
+    "status": "pair-cech-incomplete-hierarchical-cokernel-complete-conditioning-open",
+    "summary": "Proved that pair-common relations cannot exhaust the natural leaf synthesis kernel: augmented H0 survives at minimal copies and is macroscopic with one extra copy, requiring recursive span relations."
+  },
+  {
+    "artifacts": {
       "self_dual_wreath_block_common_core_quotient": "research/representation/self_dual_wreath_block_common_core_quotient.json"
     },
     "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -2531,6 +2632,38 @@
   },
   {
     "artifacts": {
+      "self_dual_wreath_canonical_coefficient_affine": "research/representation/self_dual_wreath_canonical_coefficient_affine.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-08-08T20:40:02.727777+00:00",
+    "experiment_id": "EXP-CODE-SELF-DUAL-WREATH-CANONICAL-COEFFICIENT-AFFINE",
+    "falsifiers_triggered": [
+      "Affine carrier-core exhaustion is the wrong necessary condition; canonical coefficient affinity survives emergent intersections.",
+      "Balanced shorted metrics do not force affine coefficient support.",
+      "External label distinctness does not by itself prove internal multiplicity-free recoupling; S6 already supplies a counterexample."
+    ],
+    "id": "RESULT-EXP-CODE-SELF-DUAL-WREATH-CANONICAL-COEFFICIENT-AFFINE-LATEST",
+    "metrics": {
+      "all_n_coefficient_affine_theorem_count": 0,
+      "canonical_minimum_norm_identity_theorem_count": 1,
+      "coherent_coefficient_transfer_count": 0,
+      "explicit_recoupling_synthesis_map_count": 0,
+      "finite_control_count": 3,
+      "finite_validation_failure_count": 0,
+      "hierarchical_orientation_polar_sampler_count": 0,
+      "label_simple_coefficient_affine_certificate_failure_count": 0,
+      "label_simple_control_count": 2,
+      "label_simple_fractional_merge_count": 20,
+      "natural_collision_free_scalar_affine_falsifier_count": 1,
+      "new_quantum_algorithm_count": 0,
+      "repeated_label_coefficient_affine_failure_count": 10,
+      "repeated_label_nonscalar_or_unequal_metric_count": 9
+    },
+    "status": "finite-scalar-affine-normal-form-natural-s6-universal-falsifier",
+    "summary": "Moved the affine mechanism into minimum-norm coefficient space, where W3/W5 have scalar certificates but a globally distinct S6 affine node forces matrix-valued partial supports."
+  },
+  {
+    "artifacts": {
       "self_dual_wreath_carrier_orbit_growth": "research/representation/self_dual_wreath_carrier_orbit_growth.json"
     },
     "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -2598,6 +2731,73 @@
     },
     "status": "factorial-carrier-orbit-table-cut-harmonic-transform-open",
     "summary": "Audited 42 carrier-orbit scaling rows through n=64 and word depth=4; 28 rows have factorial orbit lower bounds, while compressed harmonic block transforms remain zero."
+  },
+  {
+    "artifacts": {
+      "self_dual_wreath_cayley_fiber_reduction": "research/representation/self_dual_wreath_cayley_fiber_reduction.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-08-08T20:40:17.601249+00:00",
+    "experiment_id": "EXP-CODE-SELF-DUAL-WREATH-CAYLEY-FIBER-REDUCTION",
+    "falsifiers_triggered": [
+      "Scalar coefficient effects without XOR translation invariance do not force half balance.",
+      "The finite half-integral spectrum is explained by an abelian mask Gram, not by reducing carrier cores.",
+      "An abelian mask normal form does not synthesize the physical representation fibers.",
+      "Low-dimensional carriers in fixed W3/W5 controls do not establish low-dimensional carrier support asymptotically."
+    ],
+    "id": "RESULT-EXP-CODE-SELF-DUAL-WREATH-CAYLEY-FIBER-REDUCTION-LATEST",
+    "metrics": {
+      "all_n_scalar_cayley_fiber_theorem_count": 0,
+      "coherent_physical_fiber_synthesis_count": 0,
+      "efficient_cayley_kernel_evaluator_count": 0,
+      "generic_cayley_control_count": 1,
+      "generic_noncayley_falsifier_count": 1,
+      "hierarchical_orientation_polar_sampler_count": 0,
+      "label_simple_fractional_merge_count": 20,
+      "label_simple_scalar_cayley_failure_count": 0,
+      "label_simple_walsh_prediction_failure_count": 0,
+      "maximum_finite_candidate_pair_carrier_dimension": 2,
+      "new_quantum_algorithm_count": 0,
+      "polynomial_active_carrier_bound_count": 0,
+      "repeated_label_scalar_cayley_failure_count": 10,
+      "scalar_cayley_walsh_theorem_count": 1,
+      "wreath_control_count": 3
+    },
+    "status": "scalar-cayley-fiber-walsh-reduction-all-n-recoupling-open",
+    "summary": "Proved that scalar XOR-translation-invariant coefficient fibers reduce every affine merge to Walsh character modes; all label-simple W3/W5 overlaps pass and use only carrier dimensions one or two, while repeated and scalar non-Cayley controls fail."
+  },
+  {
+    "artifacts": {
+      "self_dual_wreath_central_support_rank_bridge": "research/representation/self_dual_wreath_central_support_rank_bridge.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-08-08T20:40:23.826043+00:00",
+    "experiment_id": "EXP-CODE-SELF-DUAL-WREATH-CENTRAL-SUPPORT-RANK-BRIDGE",
+    "falsifiers_triggered": [
+      "Global diagonal covariance does not remove the central-support problem.",
+      "Finite collision-free relative-rank data is not an asymptotic rank theorem.",
+      "Without polynomial bad-projection rank, scalar spectral mass still need not control bad source blocks."
+    ],
+    "id": "RESULT-EXP-CODE-SELF-DUAL-WREATH-CENTRAL-SUPPORT-RANK-BRIDGE-LATEST",
+    "metrics": {
+      "center_valued_local_law_theorem_count": 0,
+      "conditional_scaling_row_count": 9,
+      "covariance_control_count": 1,
+      "finite_control_failure_count": 0,
+      "global_covariance_symmetry_no_go_theorem_count": 1,
+      "natural_all_depth_frame_edge_theorem_count": 0,
+      "natural_polynomial_relative_rank_theorem_count": 0,
+      "new_quantum_algorithm_count": 0,
+      "polynomial_rank_degree_reduction_theorem_count": 1,
+      "rank_bridge_control_count": 1,
+      "relative_rank_central_support_bridge_theorem_count": 1,
+      "tail_conditional_lower_edge_degree": 921,
+      "tail_conditional_upper_edge_degree": 167,
+      "tail_group_rank_exponent": 1,
+      "tail_n": 48
+    },
+    "status": "rank-bridge-proved-natural-relative-rank-or-central-law-open",
+    "summary": "Quantified the decisive polynomial relative-rank bypass and proved that global diagonal symmetry cannot establish its premise."
   },
   {
     "artifacts": {
@@ -2766,6 +2966,69 @@
     },
     "status": "sublinear-disjoint-cluster-filters-falsified-global-open",
     "summary": "Upgraded the constant-block obstruction to a quantitative locality lower bound: at constant retained Plancherel mass, any disjoint product isotypic filter acting on o(n) source labels per cluster leaves a superpolynomial common-family spike."
+  },
+  {
+    "artifacts": {
+      "self_dual_wreath_coherent_fourier_decoder": "research/representation/self_dual_wreath_coherent_fourier_decoder.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-08-08T20:40:27.017810+00:00",
+    "experiment_id": "EXP-CODE-SELF-DUAL-WREATH-COHERENT-FOURIER-DECODER",
+    "falsifiers_triggered": [
+      "Independent sector decoding is unnecessary in the ideal case and impossible at constant success after dephasing; coherent matrix-coefficient synthesis is the correct target.",
+      "An n!-outcome table is not intrinsically required: inverse S_n Fourier synthesis outputs the permutation in O(n log n) bits.",
+      "Plancherel sector weights alone are insufficient; row-column Schmidt flatness enters multiplicatively in the exact amplitude.",
+      "No speedup follows until physical carrier extraction, flattening, reweighting, and classical separation are proved."
+    ],
+    "id": "RESULT-EXP-CODE-SELF-DUAL-WREATH-COHERENT-FOURIER-DECODER-LATEST",
+    "metrics": {
+      "coherent_dual_row_extraction_count": 0,
+      "coherent_fourier_success_formula_theorem_count": 1,
+      "efficient_inverse_symmetric_group_qft_count": 12,
+      "end_to_end_fourier_decoder_count": 0,
+      "finite_control_count": 4,
+      "finite_control_failure_count": 0,
+      "ideal_control_success_probability": 1.0,
+      "matrix_coefficient_fourier_basis_theorem_count": 1,
+      "minimum_mismatch_control_success_probability": 0.4166666666666668,
+      "new_quantum_algorithm_count": 0,
+      "perfect_plancherel_maximal_entanglement_decoder_theorem_count": 1,
+      "physical_sector_weight_match_theorem_count": 0,
+      "polynomial_sector_reweighting_count": 0,
+      "scaling_record_count": 12,
+      "sector_schmidt_flattening_count": 0
+    },
+    "status": "coherent-fourier-decoder-target-proved-carrier-normalization-open",
+    "summary": "Derived and validated the exact cross-sector Fourier decoding criterion, reducing hidden-permutation output to coherent sector reweighting and row-multiplicity entanglement normalization before an efficient inverse S_n QFT."
+  },
+  {
+    "artifacts": {
+      "self_dual_wreath_collision_free_event_transfer": "research/representation/self_dual_wreath_collision_free_event_transfer.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-08-08T20:40:33.428343+00:00",
+    "experiment_id": "EXP-CODE-SELF-DUAL-WREATH-COLLISION-FREE-EVENT-TRANSFER",
+    "falsifiers_triggered": [
+      "Injective observable contraction is not mandatory for conditioning a pre-proved good event.",
+      "Per-node o(1) tails are insufficient across an exponential orientation hierarchy.",
+      "Finite collision-free mass cannot be replaced by its asymptotic limit in numerical rows."
+    ],
+    "id": "RESULT-EXP-CODE-SELF-DUAL-WREATH-COLLISION-FREE-EVENT-TRANSFER-LATEST",
+    "metrics": {
+      "event_level_conditioning_transfer_theorem_count": 1,
+      "generic_control_count": 3,
+      "generic_control_failure_count": 0,
+      "hierarchy_scaling_row_count": 8,
+      "hierarchy_union_bound_theorem_count": 1,
+      "independent_uniform_spectral_event_theorem_count": 0,
+      "injective_moment_transfer_required_for_event_conditioning": 0,
+      "new_quantum_algorithm_count": 0,
+      "tail_log2_global_distinct_probability": -27.024325887125578,
+      "tail_log2_required_per_node_failure": -256.8363155123521,
+      "tail_n": 48
+    },
+    "status": "event-conditioning-transfer-proved-independent-uniform-edge-open",
+    "summary": "Replaced mandatory injective moment transfer by an exact event-level conditioning route and quantified the full hierarchy union cost."
   },
   {
     "artifacts": {
@@ -3011,6 +3274,75 @@
   },
   {
     "artifacts": {
+      "self_dual_wreath_common_core_polar_bypass": "research/representation/self_dual_wreath_common_core_polar_bypass.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-08-08T20:40:54.713246+00:00",
+    "experiment_id": "EXP-CODE-SELF-DUAL-WREATH-COMMON-CORE-POLAR-BYPASS",
+    "falsifiers_triggered": [
+      "Do not use the exponential block-common-core eigenvalue as a lower bound on aligned hierarchical-polar cost.",
+      "Do not carry local rejection-filter incidence no-gos over to a sampler that retains common cores and normalizes relative counts.",
+      "Do not claim a full bypass until quotient-coset intersections and all non-block overlap channels are classified."
+    ],
+    "id": "RESULT-EXP-CODE-SELF-DUAL-WREATH-COMMON-CORE-POLAR-BYPASS-LATEST",
+    "metrics": {
+      "balanced_common_core_polar_bypass_theorem_count": 1,
+      "block_core_scaling_record_count": 6,
+      "block_core_witness_bypassed_count": 6,
+      "finite_noncommuting_common_core_control_count": 4,
+      "finite_validation_failure_count": 0,
+      "global_nonorthogonal_sampler_count": 0,
+      "maximum_common_core_half_balance_residual": 1.1102230246251565e-16,
+      "maximum_finite_tree_depth": 4,
+      "new_quantum_algorithm_count": 0,
+      "polynomial_hidden_permutation_decoder_count": 0,
+      "quotient_coset_classification_theorem_count": 0,
+      "tail_balanced_polar_tree_depth": 9,
+      "tail_block_count": 9,
+      "tail_common_orientation_family_size": 512,
+      "tail_n": 12,
+      "tail_projector_sum_spike_lower_bound": 512
+    },
+    "status": "block-common-core-obstruction-bypassed-quotient-overlaps-open",
+    "summary": "Proved that every exponential block-common-core witness is half-balanced at each aligned polar-tree level. This defeats the recurring-core argument as a no-go for hierarchical sampling; quotient-coset intersections are now the next obstruction target."
+  },
+  {
+    "artifacts": {
+      "self_dual_wreath_common_span_component_universality_no_go": "research/representation/self_dual_wreath_common_span_component_universality_no_go.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-08-08T21:41:29.710981+00:00",
+    "experiment_id": "EXP-CODE-SELF-DUAL-WREATH-COMMON-SPAN-COMPONENT-UNIVERSALITY-NO-GO",
+    "falsifiers_triggered": [
+      "Non-reciprocal spectra are not commutator witnesses after common-span compression.",
+      "A constant component edge and positive common-span rank do not transfer uncompressed leaf noncommutativity.",
+      "The exact full-support integer-cover theorem cannot be applied directly to final-root compressed effects.",
+      "Only a direct natural compressed-effect theorem or compiler can advance the component-algebra gate."
+    ],
+    "id": "RESULT-EXP-CODE-SELF-DUAL-WREATH-COMMON-SPAN-COMPONENT-UNIVERSALITY-NO-GO-LATEST",
+    "metrics": {
+      "all_coarse_data_commuting_component_counterfamily_count": 1,
+      "common_span_povm_universality_theorem_count": 1,
+      "full_support_reciprocal_spectrum_transfer_falsifier_count": 1,
+      "naimark_control_count": 2,
+      "naimark_control_failure_count": 0,
+      "natural_compressed_component_commutator_mass_theorem_count": 0,
+      "new_quantum_algorithm_count": 0,
+      "structured_control_count": 4,
+      "structured_control_failure_count": 0,
+      "tail_common_span_dimension": 480,
+      "tail_common_span_relative_rank": 0.3333333333333333,
+      "tail_component_positive_edge": 0.3333333333333333,
+      "tail_cross_leaf_commutator_norm": 0.0041666304975282,
+      "tail_cross_part_leaf_pair_fraction": 0.9916492693110647,
+      "tail_frame_condition_number": 3.9791666666666665,
+      "tail_nonscalarity_defect_edge": 0.5534722222222223
+    },
+    "status": "generic-common-span-rigidity-falsified-direct-natural-commutator-analysis-required",
+    "summary": "Proved POVM universality of common-span compression and built a structured commuting counterfamily matching every coarse natural leaf/frame/component property currently established."
+  },
+  {
+    "artifacts": {
       "self_dual_wreath_commutant_transfer_audit": "research/representation/self_dual_wreath_commutant_transfer_audit.json"
     },
     "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -3086,6 +3418,40 @@
     },
     "status": "restricted-commutant-gap-transfers-factorial-coverage-fails",
     "summary": "Transferred one all-n multiplicity-two commutant gap into the wreath harmonic schema, but its carrier-coordinate coverage is at most 2^-293.995 through n=64; general and cross-source transforms remain zero."
+  },
+  {
+    "artifacts": {
+      "self_dual_wreath_complete_s6_vertex_channel_audit": "research/representation/self_dual_wreath_complete_s6_vertex_channel_audit.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-08-08T20:41:14.083981+00:00",
+    "experiment_id": "EXP-CODE-SELF-DUAL-WREATH-COMPLETE-S6-VERTEX-CHANNEL-AUDIT",
+    "falsifiers_triggered": [
+      "The three previously selected W6 controls were insufficient evidence; the complete finite boundary is now explicit.",
+      "No larger, overlapping, noncommuting, or negative-holonomy channel occurs in the stated low-dimensional S6 portfolio.",
+      "The result does not exclude such channels once higher multiplicity source irreps or larger n are admitted."
+    ],
+    "id": "RESULT-EXP-CODE-SELF-DUAL-WREATH-COMPLETE-S6-VERTEX-CHANNEL-AUDIT-LATEST",
+    "metrics": {
+      "affine_plane_component_count": 16,
+      "all_n_affine_triangle_channel_theorem_count": 0,
+      "degree_at_least_three_vertex_count": 64,
+      "flat_groupoid_failure_count": 0,
+      "maximum_holonomy_residual": 1.0718605404879541e-14,
+      "maximum_partial_isometry_residual": 9.6305344341315e-15,
+      "maximum_path_residual": 7.610605210196712e-15,
+      "maximum_support_commutator_residual": 3.727067117559072e-15,
+      "new_quantum_algorithm_count": 0,
+      "nonorthogonal_vertex_count": 16,
+      "nontrivial_component_count": 16,
+      "physical_portfolio_count": 1155,
+      "source_matching_count": 105,
+      "source_partition_count": 8,
+      "target_count": 11,
+      "three_edge_clique_component_count": 16
+    },
+    "status": "complete-s6-boundary-affine-triangles-only-all-n-law-open",
+    "summary": "Exhausted 1,155 globally distinct S6 portfolios: all sixteen nonorthogonal high-degree vertex channels are positive flat affine triangles."
   },
   {
     "artifacts": {
@@ -3167,6 +3533,195 @@
   },
   {
     "artifacts": {
+      "self_dual_wreath_component_defect_gap_bridge": "research/representation/self_dual_wreath_component_defect_gap_bridge.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-08-08T20:59:17.477577+00:00",
+    "experiment_id": "EXP-CODE-SELF-DUAL-WREATH-COMPONENT-DEFECT-GAP-BRIDGE",
+    "falsifiers_triggered": [
+      "Many tiny-trace outcomes do not dilute the aggregate defect when their positive edges stay bounded.",
+      "Coordinate block rank accounting removes the need to concentrate every component trace separately.",
+      "An average edge or small trace is not a substitute for a uniform retained positive edge.",
+      "The Haar/Jacobi prediction is not a natural Plancherel/Racah edge theorem.",
+      "A defect gap is a mass-analysis bridge, not a component-POVM circuit."
+    ],
+    "id": "RESULT-EXP-CODE-SELF-DUAL-WREATH-COMPONENT-DEFECT-GAP-BRIDGE-LATEST",
+    "metrics": {
+      "balanced_trace_defect_gap_corollary_count": 1,
+      "coordinate_block_trace_free_defect_gap_corollary_count": 1,
+      "failed_premise_control_count": 1,
+      "finite_control_count": 4,
+      "finite_control_failure_count": 0,
+      "jacobi_scaling_record_count": 18,
+      "natural_block_to_fiber_aspect_theorem_count": 0,
+      "natural_component_defect_central_support_bound_count": 0,
+      "natural_positive_component_edge_theorem_count": 0,
+      "new_quantum_algorithm_count": 0,
+      "positive_edge_to_full_rank_defect_bridge_theorem_count": 1,
+      "positive_gap_control_count": 3,
+      "recursive_orientation_polar_sampler_count": 0,
+      "tail_minimum_coordinate_cauchy_defect_gap": 0.5460716063813263,
+      "tail_minimum_predicted_defect_gap": 0.5460965753088831
+    },
+    "status": "component-defect-gap-bridge-proved-natural-edge-and-balance-open",
+    "summary": "Proved that a uniform positive component edge and coordinate-block rank accounting convert the entire many-outcome POVM into a full-rank aggregate nonscalarity defect without assuming trace balance, linking the Jacobi edge target directly to the regular-master central-support problem."
+  },
+  {
+    "artifacts": {
+      "self_dual_wreath_component_defect_rank_mass": "research/representation/self_dual_wreath_component_defect_rank_mass.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-08-08T21:15:30.913693+00:00",
+    "experiment_id": "EXP-CODE-SELF-DUAL-WREATH-COMPONENT-DEFECT-RANK-MASS",
+    "falsifiers_triggered": [
+      "Ordinary scalar defect trace is not needed to control center-valued defect support.",
+      "A natural positive component edge is not required to prove positive nonscalarity source or physical mass.",
+      "Asymptotically full defect rank does not imply a usable spectral gap.",
+      "Positive-mass component nonscalarity is not itself an MRS lower-bound separation."
+    ],
+    "id": "RESULT-EXP-CODE-SELF-DUAL-WREATH-COMPONENT-DEFECT-RANK-MASS-LATEST",
+    "metrics": {
+      "asymptotic_conditioned_physical_defect_support_mass_lower_bound": 0.016493055555555556,
+      "asymptotic_conditioned_source_event_mass_lower_bound": 0.1111111111111111,
+      "component_defect_relative_rank_bridge_theorem_count": 1,
+      "finite_control_count": 3,
+      "finite_control_failure_count": 0,
+      "finite_nontrivial_defect_kernel_control_count": 1,
+      "natural_component_defect_asymptotically_full_common_rank_theorem_count": 1,
+      "natural_component_defect_positive_source_mass_theorem_count": 1,
+      "natural_positive_component_edge_theorem_count": 0,
+      "new_quantum_algorithm_count": 0,
+      "physical_mrs_separation_theorem_count": 0,
+      "tail_component_count": 16777216,
+      "tail_defect_relative_common_rank_lower_bound": 0.999998368714985
+    },
+    "status": "natural-component-defect-rank-and-mass-proved-spectral-edge-open",
+    "summary": "Proved that final-root component nonscalarity occupies asymptotically full common-fiber rank on constant natural source mass, without a positive component-edge premise."
+  },
+  {
+    "artifacts": {
+      "self_dual_wreath_component_effect_algebra_boundary": "research/representation/self_dual_wreath_component_effect_algebra_boundary.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-08-08T21:15:38.796211+00:00",
+    "experiment_id": "EXP-CODE-SELF-DUAL-WREATH-COMPONENT-EFFECT-ALGEBRA-BOUNDARY",
+    "falsifiers_triggered": [
+      "Full-rank component nonscalarity does not imply a noncommutative effect algebra.",
+      "Positive natural support mass of D_ns is not positive natural support mass of commutators.",
+      "Finite low-dimensional noncommutativity is not an asymptotic natural-mass theorem.",
+      "A commuting effect algebra may be algorithmically favorable if its joint eigenbasis is coherently accessible."
+    ],
+    "id": "RESULT-EXP-CODE-SELF-DUAL-WREATH-COMPONENT-EFFECT-ALGEBRA-BOUNDARY-LATEST",
+    "metrics": {
+      "exact_component_commutator_criterion_theorem_count": 1,
+      "finite_control_count": 4,
+      "finite_control_failure_count": 0,
+      "full_rank_nonscalarity_commuting_counterexample_count": 1,
+      "natural_noncommutative_effect_algebra_source_mass_theorem_count": 0,
+      "natural_nonscalarity_positive_mass_theorem_input_count": 1,
+      "natural_physical_noncommutative_support_mass_theorem_count": 0,
+      "new_quantum_algorithm_count": 0,
+      "noncommutative_full_matrix_algebra_control_count": 1
+    },
+    "status": "nonscalarity-versus-noncommutative-algebra-boundary-proved-natural-mass-open",
+    "summary": "Separated full-rank component nonscalarity from genuinely noncommutative effect-algebra structure and identified the exact regular-master commutator-support target."
+  },
+  {
+    "artifacts": {
+      "self_dual_wreath_component_povm_regular_master_reduction": "research/representation/self_dual_wreath_component_povm_regular_master_reduction.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-08-08T20:59:31.045160+00:00",
+    "experiment_id": "EXP-CODE-SELF-DUAL-WREATH-COMPONENT-POVM-REGULAR-MASTER-REDUCTION",
+    "falsifiers_triggered": [
+      "Low-dimensional source exclusion does not exclude low-dimensional internal carriers.",
+      "Scalar defect moments do not control the probability of a bad source block without relative-rank information.",
+      "The regular-master reduction is an analysis tool, not a component-POVM circuit.",
+      "The finite repeated-source control is not collision-free asymptotic evidence."
+    ],
+    "id": "RESULT-EXP-CODE-SELF-DUAL-WREATH-COMPONENT-POVM-REGULAR-MASTER-REDUCTION-LATEST",
+    "metrics": {
+      "canonical_full_domain_component_effect_theorem_count": 1,
+      "central_support_mass_observable_theorem_count": 1,
+      "finite_globally_distinct_matrix_effect_source_block_count": 0,
+      "finite_matrix_common_to_scalar_defect_mass_ratio": 2.500000000000001,
+      "finite_matrix_effect_source_block_count": 1,
+      "finite_matrix_source_to_common_mass_ratio": 3.2,
+      "finite_source_block_count": 81,
+      "high_dimension_central_support_bound_count": 0,
+      "natural_component_support_select_circuit_count": 0,
+      "new_quantum_algorithm_count": 0,
+      "recursive_orientation_polar_sampler_count": 0,
+      "regular_master_component_defect_reduction_theorem_count": 1,
+      "scalar_moment_dilution_control_count": 1
+    },
+    "status": "component-defect-regular-master-reduction-proved-high-dimensional-central-support-open",
+    "summary": "Lifted canonical matrix component effects to the regular master and separated source probability, physical common-span mass, and ordinary defect trace, exposing a center-valued local law as the next natural theorem."
+  },
+  {
+    "artifacts": {
+      "self_dual_wreath_component_povm_sparse_support_boundary": "research/representation/self_dual_wreath_component_povm_sparse_support_boundary.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-08-08T20:59:40.655530+00:00",
+    "experiment_id": "EXP-CODE-SELF-DUAL-WREATH-COMPONENT-POVM-SPARSE-SUPPORT-BOUNDARY",
+    "falsifiers_triggered": [
+      "Small component trace is not evidence for an exponentially small positive effect edge.",
+      "Many outcomes do not by themselves activate the generic square-root polynomial lower bound.",
+      "The Haar sparse-support law is a benchmark, not a natural wreath-frame theorem.",
+      "Asymptotic support-scalarity would not remove the coherent support-SELECT and holonomy problems."
+    ],
+    "id": "RESULT-EXP-CODE-SELF-DUAL-WREATH-COMPONENT-POVM-SPARSE-SUPPORT-BOUNDARY-LATEST",
+    "metrics": {
+      "exact_component_projection_geometry_theorem_count": 1,
+      "finite_control_count": 3,
+      "finite_control_failure_count": 0,
+      "natural_component_jacobi_universality_theorem_count": 0,
+      "natural_component_support_select_circuit_count": 0,
+      "new_quantum_algorithm_count": 0,
+      "recursive_orientation_polar_sampler_count": 0,
+      "sparse_outcome_jacobi_limit_theorem_count": 1,
+      "sparse_scaling_record_count": 18,
+      "tail_maximum_edge_deviation_from_fiber_aspect": 0.00388816590205443,
+      "tail_maximum_support_rank_fraction": 2.774325284090909e-05,
+      "tail_minimum_positive_edge": 0.5461118340979456
+    },
+    "status": "sparse-support-jacobi-boundary-proved-natural-universality-and-select-open",
+    "summary": "Proved that rare component outcomes need not have small positive effect eigenvalues and identified sparse support-projector SELECT, not generic square-root approximation, as the relevant Haar-model compiler bottleneck."
+  },
+  {
+    "artifacts": {
+      "self_dual_wreath_component_povm_spectral_trim": "research/representation/self_dual_wreath_component_povm_spectral_trim.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-08-08T21:16:09.728783+00:00",
+    "experiment_id": "EXP-CODE-SELF-DUAL-WREATH-COMPONENT-POVM-SPECTRAL-TRIM",
+    "falsifiers_triggered": [
+      "A natural uniform positive component edge is not necessary for average-state component dilation.",
+      "Uniform-input trace retention does not imply worst-case state retention.",
+      "Natural constant component aspect relocates the gate to incoming-state flatness and coherent effect access.",
+      "Inverse-polynomial spectral threshold does not itself compile component support SELECT."
+    ],
+    "id": "RESULT-EXP-CODE-SELF-DUAL-WREATH-COMPONENT-POVM-SPECTRAL-TRIM-LATEST",
+    "metrics": {
+      "coherent_component_threshold_filter_count": 0,
+      "concentrated_state_unit_failure_countercontrol_count": 1,
+      "conditional_inverse_polynomial_trim_scaling_row_count": 8,
+      "finite_control_count": 3,
+      "finite_control_failure_count": 0,
+      "natural_final_fiber_aspect_input_count": 1,
+      "natural_incoming_state_flatness_theorem_count": 0,
+      "new_quantum_algorithm_count": 0,
+      "state_weighted_component_spectral_trim_theorem_count": 1,
+      "tail_inverse_threshold_cost": 2522273.684210526,
+      "tail_n": 96,
+      "tail_retained_component_threshold": 3.964676816239317e-07
+    },
+    "status": "component-hard-edge-bypassed-conditionally-state-flatness-open",
+    "summary": "Proved a state-weighted spectral sub-POVM trim whose cutoff is inverse polynomial under polynomial natural input flatness, and exhibited a concentrated-state countercontrol."
+  },
+  {
+    "artifacts": {
       "self_dual_wreath_coupled_word_walk_gap": "research/representation/self_dual_wreath_coupled_word_walk_gap.json"
     },
     "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -3240,6 +3795,163 @@
     },
     "status": "constant-gap-coupled-word-contraction-proved-all-unequal-conditioning-open",
     "summary": "Proved a k-independent 1/4 gap for the coupled bridge word walk and matched 6 exact word-count controls; the tail normalized moment-root bound remains 294.583 bits above the second-moment eigenvalue scale."
+  },
+  {
+    "artifacts": {
+      "self_dual_wreath_covariant_pgm_factorization": "research/representation/self_dual_wreath_covariant_pgm_factorization.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-08-08T20:59:46.937756+00:00",
+    "experiment_id": "EXP-CODE-SELF-DUAL-WREATH-COVARIANT-PGM-FACTORIZATION",
+    "falsifiers_triggered": [
+      "The sqrt(n!) dimension charge in the generic Petz implementation is not intrinsic to the group-covariant PGM.",
+      "The physical mixed decoder is a dual-row-indexed tight-frame isometry, not a single pure Fourier state.",
+      "After exact covariance compression, multiplicity inversion is the sole nontrivial state-dependent linear-algebra operation."
+    ],
+    "id": "RESULT-EXP-CODE-SELF-DUAL-WREATH-COVARIANT-PGM-FACTORIZATION-LATEST",
+    "metrics": {
+      "controlled_multiplicity_inverse_block_encoding_count": 0,
+      "covariance_compressed_pgm_factorization_theorem_count": 1,
+      "finite_control_count": 3,
+      "finite_control_failure_count": 0,
+      "group_size_normalization_cancellation_theorem_count": 1,
+      "maximum_removed_generic_sqrt_group_log2_charge": 1937.5830609716015,
+      "new_quantum_algorithm_count": 0,
+      "polynomial_covariant_pgm_circuit_count": 0,
+      "projector_rank_normalization_cancellation_theorem_count": 1,
+      "scaling_record_count": 12
+    },
+    "status": "covariant-pgm-factorized-multiplicity-inverse-circuit-open",
+    "summary": "Derived and validated the exact Fourier-domain PGM Stinespring factorization, cancelling explicit factorial environment normalization."
+  },
+  {
+    "artifacts": {
+      "self_dual_wreath_coverage_welch_pressure": "research/representation/self_dual_wreath_coverage_welch_pressure.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-08-08T21:00:12.359997+00:00",
+    "experiment_id": "EXP-CODE-SELF-DUAL-WREATH-COVERAGE-WELCH-PRESSURE",
+    "falsifiers_triggered": [
+      "Distinct-plane overlaps cannot remain factorially weak once their total rank demand exceeds pair-core capacity.",
+      "Neither large support demand nor large raw overlap certifies a coverage edge.",
+      "The next natural calculation must be a four-orientation projector second moment and report excess above the Welch floor."
+    ],
+    "id": "RESULT-EXP-CODE-SELF-DUAL-WREATH-COVERAGE-WELCH-PRESSURE-LATEST",
+    "metrics": {
+      "aligned_control_excess": 7.0,
+      "coverage_tail_criterion_theorem_count": 1,
+      "finite_control_count": 3,
+      "finite_control_failure_count": 0,
+      "fusion_welch_pressure_theorem_count": 1,
+      "natural_tight_coverage_theorem_count": 0,
+      "new_quantum_algorithm_count": 0,
+      "tail_forced_overlap_over_trace_log2_lower_bound": 84.45718123751135,
+      "tail_n": 48,
+      "tight_control_excess": 0.0
+    },
+    "status": "coverage-target-reduced-to-natural-fusion-potential-excess",
+    "summary": "Proved that divergent support pressure forces divergent aggregate inter-plane overlap and isolated the normalized excess fusion potential as the exact natural coverage statistic."
+  },
+  {
+    "artifacts": {
+      "self_dual_wreath_cross_dependency_neutrality": "research/representation/self_dual_wreath_cross_dependency_neutrality.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-08-08T21:01:22.109206+00:00",
+    "experiment_id": "EXP-CODE-SELF-DUAL-WREATH-CROSS-DEPENDENCY-NEUTRALITY",
+    "falsifiers_triggered": [
+      "Equal child dimensions do not imply equal shorted metrics.",
+      "A child-range intersection is not characterized by the raw cross-kernel until internal synthesis kernels are quotiented out.",
+      "The kernel formulation is not a circuit without a sparse representation-theoretic dependency decomposition."
+    ],
+    "id": "RESULT-EXP-CODE-SELF-DUAL-WREATH-CROSS-DEPENDENCY-NEUTRALITY-LATEST",
+    "metrics": {
+      "all_n_neutrality_theorem_count": 0,
+      "coherent_dependency_transform_count": 0,
+      "exact_cross_dependency_theorem_count": 1,
+      "finite_cross_dependency_record_count": 54,
+      "finite_theorem_validation_failure_count": 0,
+      "generic_control_count": 2,
+      "label_simple_nonneutral_dependency_count": 0,
+      "new_quantum_algorithm_count": 0,
+      "repeated_label_nonneutral_dependency_count": 9,
+      "symbolic_representation_dependency_decomposition_count": 0,
+      "wreath_control_count": 3
+    },
+    "status": "cross-dependency-neutrality-theorem-symbolic-wreath-decomposition-open",
+    "summary": "Replaced compressed frame inversion by an exact cross-synthesis dependency quotient; all label-simple finite dependencies are neutral, while repeated labels and a generic equal-dimension control exhibit nonneutral defects."
+  },
+  {
+    "artifacts": {
+      "self_dual_wreath_dependency_homology": "research/representation/self_dual_wreath_dependency_homology.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-08-08T21:04:51.541206+00:00",
+    "experiment_id": "EXP-CODE-SELF-DUAL-WREATH-DEPENDENCY-HOMOLOGY",
+    "falsifiers_triggered": [
+      "Exact pair-common ranges do not exhaust every finite child intersection.",
+      "A raw pair-edge count ignores linear dependencies and overlap among pair classes.",
+      "Pair generation must be separated from grading neutrality.",
+      "Collision-free source labels do not restore universal pair-class half-balance.",
+      "A finite dependency quotient is not a coherent all-n recoupling transform."
+    ],
+    "id": "RESULT-EXP-CODE-SELF-DUAL-WREATH-DEPENDENCY-HOMOLOGY-LATEST",
+    "metrics": {
+      "all_n_emergent_homology_vanishing_or_neutrality_count": 0,
+      "all_n_pair_common_chain_complex_count": 0,
+      "coherent_pair_common_quotient_count": 0,
+      "collision_free_nonneutral_cross_dependency_dimension": 34,
+      "collision_free_nonneutral_grading_residual": 0.058823529411766315,
+      "collision_free_nonneutral_pair_generated_merge_count": 1,
+      "dependency_homology_quotient_count": 1,
+      "finite_control_count": 5,
+      "finite_emergent_merge_count": 28,
+      "finite_fractional_merge_count": 65,
+      "finite_homology_audit_failure_count": 0,
+      "finite_pair_generated_merge_count": 37,
+      "new_quantum_algorithm_count": 0,
+      "repeated_label_nonneutral_merge_count": 9,
+      "w3_distinct_maximum_emergent_homology_dimension": 2,
+      "w5_pair_generated_merge_count": 11,
+      "w6_pair_generated_merge_count": 10
+    },
+    "status": "collision-free-pair-generated-nonneutral-block-classification-open",
+    "summary": "Constructed the pair-common quotient of cross dependencies: W3 has genuine neutral emergent homology, while a globally distinct S6 affine plane has an entirely pair-generated nonneutral 34-dimensional intersection."
+  },
+  {
+    "artifacts": {
+      "self_dual_wreath_early_level_overlap_localization": "research/representation/self_dual_wreath_early_level_overlap_localization.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-08-08T21:05:18.153825+00:00",
+    "experiment_id": "EXP-CODE-SELF-DUAL-WREATH-EARLY-LEVEL-OVERLAP-LOCALIZATION",
+    "falsifiers_triggered": [
+      "Do not search for emergent noncommon intersections at constant or sublinear child width before resolving exact common ranges.",
+      "Do not extrapolate the coherence bound beyond m<n/2.",
+      "Do not call early-level localization a full sampler without a coherent common-range decomposition and large-width theorem."
+    ],
+    "id": "RESULT-EXP-CODE-SELF-DUAL-WREATH-EARLY-LEVEL-OVERLAP-LOCALIZATION-LATEST",
+    "metrics": {
+      "block_gram_span_correlation_bound_theorem_count": 1,
+      "common_free_early_overlap_exclusion_theorem_count": 1,
+      "exact_common_range_resolver_count": 0,
+      "global_nonorthogonal_sampler_count": 0,
+      "linear_width_overlap_theorem_count": 0,
+      "new_quantum_algorithm_count": 0,
+      "polynomial_hidden_permutation_decoder_count": 0,
+      "synthetic_control_count": 3,
+      "synthetic_validation_failure_count": 0,
+      "tail_certified_common_free_merge_level_count": 8,
+      "tail_maximum_certified_child_leaf_count": 255,
+      "tail_n": 512,
+      "tail_total_orientation_tree_depth": 3876,
+      "w5_applicable_common_free_control_count": 45,
+      "w5_applicable_validation_failure_count": 0,
+      "w5_control_count": 48,
+      "w5_exact_common_range_control_count": 3
+    },
+    "status": "common-free-overlap-excluded-early-common-resolver-open",
+    "summary": "Proved that common-free orientation families cannot develop child-span intersections while each child has fewer than n/2 leaves. This localizes early fractional channels to exact common ranges; linear-width overlap and a coherent common-range resolver remain open."
   },
   {
     "artifacts": {
@@ -3317,6 +4029,235 @@
   },
   {
     "artifacts": {
+      "self_dual_wreath_extended_kronecker_threshold": "research/representation/self_dual_wreath_extended_kronecker_threshold.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-08-08T21:05:41.289479+00:00",
+    "experiment_id": "EXP-CODE-SELF-DUAL-WREATH-EXTENDED-KRONECKER-THRESHOLD",
+    "falsifiers_triggered": [
+      "The independent pointwise support transition occurs at three factors, not an unknown larger covering radius.",
+      "Pointwise target-uniform bounds do not imply simultaneous covering of all irreps.",
+      "Pointwise multiplicity concentration does not provide simultaneous incidence or frame-edge control."
+    ],
+    "id": "RESULT-EXP-CODE-SELF-DUAL-WREATH-EXTENDED-KRONECKER-THRESHOLD-LATEST",
+    "metrics": {
+      "exact_fixed_target_variance_theorem_count": 1,
+      "finite_control_count": 2,
+      "finite_control_failure_count": 0,
+      "fixed_hamming_pair_common_rank_concentration_theorem_count": 1,
+      "fixed_target_normalized_multiplicity_concentration_theorem_count": 1,
+      "hamming_three_support_transition_theorem_count": 1,
+      "n50_q4_worst_target_variance_upper_bound": 6.670423947212836e-07,
+      "natural_node_frame_edge_theorem_count": 0,
+      "new_quantum_algorithm_count": 0,
+      "simultaneous_all_target_covering_theorem_count": 0,
+      "three_factor_fixed_target_positivity_theorem_count": 1
+    },
+    "status": "three-factor-multiplicity-and-fixed-pair-rank-proved-incidence-open",
+    "summary": "Proved normalized fixed-target multiplicity concentration for three or more independent Plancherel irreps."
+  },
+  {
+    "artifacts": {
+      "self_dual_wreath_final_root_leverage_edge": "research/representation/self_dual_wreath_final_root_leverage_edge.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-08-08T21:05:57.826138+00:00",
+    "experiment_id": "EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-LEVERAGE-EDGE",
+    "falsifiers_triggered": [
+      "The existing K+2 final root does not suffer a vanishing common-fiber aspect in the surrogate.",
+      "Marginal mean leverage alone is insufficient; the uniform result needs the beta large-deviation exponent.",
+      "Haar rank-one leverage concentration is not a natural wreath-frame theorem.",
+      "A final-root surrogate edge does not resolve earlier relation nodes or compile the PGM."
+    ],
+    "id": "RESULT-EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-LEVERAGE-EDGE-LATEST",
+    "metrics": {
+      "all_relation_node_component_edge_theorem_count": 0,
+      "finite_control_count": 3,
+      "finite_control_failure_count": 0,
+      "finite_half_mean_edge_miss_count": 0,
+      "haar_edge_to_defect_gap_bridge_count": 1,
+      "haar_uniform_rank_one_leverage_edge_theorem_count": 1,
+      "k_plus_two_surrogate_final_root_component_aspect_theorem_count": 1,
+      "natural_component_support_select_circuit_count": 0,
+      "natural_final_root_leverage_edge_theorem_count": 0,
+      "new_quantum_algorithm_count": 0,
+      "positive_finite_scaling_defect_gap_row_count": 11,
+      "scaling_record_count": 12,
+      "tail_common_fiber_aspect": 0.4828249149401914,
+      "tail_coordinate_defect_gap_lower_bound": 0.2414124574700957,
+      "tail_log2_union_edge_failure_upper_bound": -5.065105482028432e+60,
+      "tail_n": 48
+    },
+    "status": "final-root-haar-leverage-and-defect-gap-proved-natural-transfer-open",
+    "summary": "Showed that the existing K+2 schedule prevents a vanishing scalar-surrogate final-root component aspect and proved an all-coordinate constant edge plus aggregate defect gap in the Haar model."
+  },
+  {
+    "artifacts": {
+      "self_dual_wreath_final_root_natural_common_span": "research/representation/self_dual_wreath_final_root_natural_common_span.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-08-08T21:16:44.732190+00:00",
+    "experiment_id": "EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-NATURAL-COMMON-SPAN",
+    "falsifiers_triggered": [
+      "The target carrier dimension does not spoil the normalized child aspect; its factor cancels exactly.",
+      "Full final-child support is stronger than necessary for component geometry.",
+      "Fixed second moments cannot prove a spectral edge, but they do prove positive-mass support rank through Cauchy and Markov.",
+      "Natural block/fiber aspect control does not imply a natural positive component eigenvalue edge."
+    ],
+    "id": "RESULT-EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-NATURAL-COMMON-SPAN-LATEST",
+    "metrics": {
+      "asymptotic_common_fiber_aspect_lower_bound": 0.03653846153846154,
+      "asymptotic_common_span_relative_rank_lower_bound": 0.1484375,
+      "asymptotic_component_block_ratio_coefficient": 27.36842105263158,
+      "asymptotic_conditioned_event_mass_lower_bound": 0.1111111111111111,
+      "conditional_half_relative_edge_defect_gap_lower_bound": 0.01826923076923077,
+      "conditioned_uniform_rank_certified_finite_row_count": 6,
+      "deterministic_common_span_rank_bridge_theorem_count": 1,
+      "deterministic_control_count": 3,
+      "deterministic_control_failure_count": 0,
+      "finite_positive_common_span_bound_row_count": 0,
+      "natural_component_support_select_circuit_count": 0,
+      "natural_final_component_aspect_theorem_count": 1,
+      "natural_final_component_positive_edge_theorem_count": 0,
+      "natural_positive_mass_final_common_span_theorem_count": 1,
+      "new_quantum_algorithm_count": 0
+    },
+    "status": "natural-final-common-span-and-aspects-proved-component-edge-open",
+    "summary": "Proved a constant relative final sibling common span on positive globally distinct natural mass and propagated it to constant component fiber aspect with O(1/q) block ratio."
+  },
+  {
+    "artifacts": {
+      "self_dual_wreath_fixed_family_common_rank_dilution": "research/representation/self_dual_wreath_fixed_family_common_rank_dilution.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-08-08T21:17:03.338039+00:00",
+    "experiment_id": "EXP-CODE-SELF-DUAL-WREATH-FIXED-FAMILY-COMMON-RANK-DILUTION",
+    "falsifiers_triggered": [
+      "Common-support probability and scalar relative rank can differ by factorial powers.",
+      "A dense fixed-order intersection nerve is not a spectral-edge theorem.",
+      "Fixed-family intersections are not automatically eigenspaces of the full node frame."
+    ],
+    "id": "RESULT-EXP-CODE-SELF-DUAL-WREATH-FIXED-FAMILY-COMMON-RANK-DILUTION-LATEST",
+    "metrics": {
+      "finite_control_count": 1,
+      "finite_control_failure_count": 0,
+      "fixed_family_exact_expectation_theorem_count": 1,
+      "fixed_family_relative_rank_concentration_theorem_count": 1,
+      "fixed_family_support_covering_theorem_count": 1,
+      "full_node_bad_projection_dilution_theorem_count": 0,
+      "maximum_family_size_scaling_record": 4,
+      "n48_m4_expected_relative_rank_log2": -3033.2435804455035,
+      "natural_node_frame_edge_theorem_count": 0,
+      "new_quantum_algorithm_count": 0
+    },
+    "status": "fixed-family-central-dilution-proved-full-node-law-open",
+    "summary": "Proved an exact support-versus-rank dilution law for every fixed balanced orientation family."
+  },
+  {
+    "artifacts": {
+      "self_dual_wreath_global_carrier_channel_extractor": "research/representation/self_dual_wreath_global_carrier_channel_extractor.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-08-08T21:17:49.917902+00:00",
+    "experiment_id": "EXP-CODE-SELF-DUAL-WREATH-GLOBAL-CARRIER-CHANNEL-EXTRACTOR",
+    "falsifiers_triggered": [
+      "Affine orientation support does not force a complete residual channel graph.",
+      "Vertex-local carrier groupoids must be glued through both endpoint projection algebras before assigning a global channel.",
+      "Natural progress requires scaling the extracted channel graph family, not extrapolating from selected affine stars."
+    ],
+    "id": "RESULT-EXP-CODE-SELF-DUAL-WREATH-GLOBAL-CARRIER-CHANNEL-EXTRACTOR-LATEST",
+    "metrics": {
+      "extracted_affine_incomplete_channel_count": 8,
+      "extracted_complete_affine_channel_count": 0,
+      "extracted_nonstar_channel_count": 0,
+      "extracted_nontrivial_channel_count": 8,
+      "extracted_three_edge_star_channel_count": 8,
+      "maximum_extracted_channel_edge_count": 3,
+      "maximum_extracted_channel_grading_defect": 0.11111111111111126,
+      "maximum_extracted_channel_multiplicity": 18,
+      "minimum_extracted_channel_endpoint_gap": 0.44444444444444436,
+      "natural_threshold_channel_scaling_theorem_count": 0,
+      "new_quantum_algorithm_count": 0,
+      "physical_extraction_control_count": 7,
+      "physical_extraction_failure_count": 0,
+      "physical_global_channel_extraction_algorithm_count": 1
+    },
+    "status": "physical-global-channel-extraction-verified-affine-stars-found-natural-scaling-open",
+    "summary": "Extracted physical W6 carrier channels as affine incomplete stars, reproducing the 1/17 and 1/9 graded defects and rejecting affine-to-complete closure."
+  },
+  {
+    "artifacts": {
+      "self_dual_wreath_global_collision_free_mass": "research/representation/self_dual_wreath_global_collision_free_mass.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-08-08T21:18:06.202774+00:00",
+    "experiment_id": "EXP-CODE-SELF-DUAL-WREATH-GLOBAL-COLLISION-FREE-MASS",
+    "falsifiers_triggered": [
+      "Finite n<=48 collision-free mass is strongly pre-asymptotic and cannot falsify asymptotic typicality.",
+      "Within-pair unequal conditioning is not the same as collision freedom across copies.",
+      "Finite low-n spectral gaps are not a uniform theorem over the asymptotically typical collision-free event."
+    ],
+    "id": "RESULT-EXP-CODE-SELF-DUAL-WREATH-GLOBAL-COLLISION-FREE-MASS-LATEST",
+    "metrics": {
+      "asymptotic_global_collision_free_mass_tends_to_one_theorem_count": 1,
+      "asymptotic_inverse_polynomial_mass_theorem_count": 1,
+      "combinatorially_impossible_threshold_row_count": 2,
+      "exact_validation_count": 5,
+      "exact_validation_failure_count": 0,
+      "finite_scaling_row_count": 12,
+      "global_collision_free_mass_formula_count": 1,
+      "inverse_polynomial_mass_row_count": 0,
+      "minimum_finite_log2_collision_free_mass": -144.69716596561017,
+      "new_quantum_algorithm_count": 0,
+      "tail_copy_count": 203,
+      "tail_log2_collision_free_mass": -26.510078745979804,
+      "tail_n": 48,
+      "tail_partition_count": 147273,
+      "tail_plancherel_collision_probability": 0.0002343284646871179
+    },
+    "status": "global-collision-free-mass-asymptotically-typical-spectral-theorem-open",
+    "summary": "Derived the exact Plancherel mass of globally distinct source partitions; at n=48 and k=203 the finite mass is about 2^-26.510, while the maximal-dimension theorem proves that it tends to one asymptotically."
+  },
+  {
+    "artifacts": {
+      "self_dual_wreath_global_distinct_joint_kernel": "research/representation/self_dual_wreath_global_distinct_joint_kernel.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-08-08T21:18:25.323720+00:00",
+    "experiment_id": "EXP-CODE-SELF-DUAL-WREATH-GLOBAL-DISTINCT-JOINT-KERNEL",
+    "falsifiers_triggered": [
+      "Global source distinctness does not preserve independence across physical labels.",
+      "Pairwise-unequal product kernels have exact nonzero finite factorization defects after global conditioning.",
+      "An o(1) source-conditioning error is not enough for an exp(-Theta(n log n)) PGM moment target.",
+      "Direct moment transfer needs signed injective control, but event-level conditioning can bypass moment transfer."
+    ],
+    "id": "RESULT-EXP-CODE-SELF-DUAL-WREATH-GLOBAL-DISTINCT-JOINT-KERNEL-LATEST",
+    "metrics": {
+      "conditioning_distance_asymptotic_scale_theorem_count": 1,
+      "conditioning_total_variation_identity_theorem_count": 1,
+      "conditioning_tv_finite_bound_failure_count": 0,
+      "event_level_conditioning_bypass_theorem_count": 1,
+      "generic_tv_transfer_no_go_theorem_count": 1,
+      "global_distinct_joint_character_kernel_theorem_count": 1,
+      "injective_plancherel_transform_theorem_count": 1,
+      "injective_transform_validation_count": 2,
+      "injective_transform_validation_failure_count": 0,
+      "joint_word_kernel_control_count": 2,
+      "joint_word_kernel_structure_failure_count": 0,
+      "new_quantum_algorithm_count": 0,
+      "nonfactorizing_joint_word_control_count": 2,
+      "tail_copy_count": 203,
+      "tail_log2_conditioning_total_variation": -1.583094673461822e-08,
+      "tail_log2_required_second_moment_scale": -202,
+      "tail_log2_tv_to_required_scale_gap": 201.99999998416905,
+      "tail_n": 48,
+      "uniform_collision_free_signed_contraction_theorem_count": 0
+    },
+    "status": "global-distinct-injective-kernel-proved-event-bypass-independent-uniform-edge-open",
+    "summary": "Derived and exactly validated the nonfactorizing injective Plancherel kernel for globally distinct sources. Generic moment transfer is too coarse, but high-probability spectral events can instead be conditioned directly once proved independently."
+  },
+  {
+    "artifacts": {
       "self_dual_wreath_global_partition_collision": "research/representation/self_dual_wreath_global_partition_collision.json"
     },
     "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -3354,7 +4295,7 @@
       "self_dual_wreath_global_partition_collision": "research/representation/self_dual_wreath_global_partition_collision.json"
     },
     "candidate_id": "CODE-COSET-COLLECTIVE",
-    "created_at": "2026-07-30T06:22:47.266627+00:00",
+    "created_at": "2026-08-08T21:18:37.999273+00:00",
     "experiment_id": "EXP-CODE-SELF-DUAL-WREATH-GLOBAL-PARTITION-COLLISION",
     "falsifiers_triggered": [
       "Within-label inequality is weaker than global distinctness across all 2k source partitions.",
@@ -3382,6 +4323,220 @@
     },
     "status": "global-plancherel-collisions-asymptotically-vanish-collision-free-norm-open",
     "summary": "Proved that natural threshold tuples have globally distinct source partitions with probability 1-o(1), excluding the known repeated-source 1/2-norm block; finite controls through n=32 remain preasymptotic."
+  },
+  {
+    "artifacts": {
+      "self_dual_wreath_gpe_holonomy_resolver_reduction": "research/representation/self_dual_wreath_gpe_holonomy_resolver_reduction.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-08-08T21:18:44.381821+00:00",
+    "experiment_id": "EXP-CODE-SELF-DUAL-WREATH-GPE-HOLONOMY-RESOLVER-REDUCTION",
+    "falsifiers_triggered": [
+      "Canonical pair transport does not trivialize cycles because each edge uses a different tensor-block decomposition.",
+      "Dense Racah matrices need not be computed classically to run or phase-estimate their cycle products.",
+      "Efficient edge circuits alone do not imply efficient common-section projection; the holonomy frustration gap can be tiny."
+    ],
+    "id": "RESULT-EXP-CODE-SELF-DUAL-WREATH-GPE-HOLONOMY-RESOLVER-REDUCTION-LATEST",
+    "metrics": {
+      "complete_relative_frame_resolver_count": 0,
+      "connection_kernel_holonomy_reduction_theorem_count": 1,
+      "finite_holonomy_control_count": 3,
+      "finite_holonomy_control_failure_count": 0,
+      "implicit_dense_racah_circuit_compiler_count": 1,
+      "natural_inverse_polynomial_holonomy_gap_theorem_count": 0,
+      "near_flat_gap_counterexample_count": 5,
+      "near_flat_inverse_gap_growth_verified_count": 1,
+      "new_quantum_algorithm_count": 0,
+      "recursive_child_span_holonomy_reduction_theorem_count": 0
+    },
+    "status": "gpe-holonomy-fixed-space-reduction-proved-natural-gap-open",
+    "summary": "Reduced flat higher-order carrier consistency to simultaneous fixed spaces of executable GPE holonomies and isolated the natural holonomy-gap theorem as the remaining circuit bottleneck."
+  },
+  {
+    "artifacts": {
+      "self_dual_wreath_gpe_pair_polar_transport": "research/representation/self_dual_wreath_gpe_pair_polar_transport.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-08-08T21:33:23.355094+00:00",
+    "experiment_id": "EXP-CODE-SELF-DUAL-WREATH-GPE-PAIR-POLAR-TRANSPORT",
+    "falsifiers_triggered": [
+      "High-dimensional natural carrier mass blocks normalized cross-overlap QSVT but does not block direct pair polar transport.",
+      "A complete symmetric-group Kronecker transform is stronger than necessary for pair transport; coherent GPE row access suffices.",
+      "Pair transport is no longer a defensible main bottleneck. Future work must attack higher-order relative-frame composition."
+    ],
+    "id": "RESULT-EXP-CODE-SELF-DUAL-WREATH-GPE-PAIR-POLAR-TRANSPORT-LATEST",
+    "metrics": {
+      "finite_carrier_control_count": 4,
+      "finite_carrier_control_failure_count": 0,
+      "full_kronecker_transform_dependency_count": 0,
+      "gpe_pair_polar_reassociation_theorem_count": 1,
+      "new_quantum_algorithm_count": 0,
+      "normalized_cross_overlap_dimension_barrier_bypass_count": 1,
+      "polynomial_complete_orientation_polar_circuit_count": 0,
+      "polynomial_higher_level_relative_polar_circuit_count": 0,
+      "polynomial_pair_transport_circuit_count": 1
+    },
+    "status": "polynomial-gpe-pair-polar-proved-higher-order-frame-open",
+    "summary": "Derived a polynomial generalized-phase-estimation circuit for exact orientation-pair polar transport that preserves unknown Kronecker multiplicity labels and avoids inverse-dimension amplification."
+  },
+  {
+    "artifacts": {
+      "self_dual_wreath_gpe_recursive_node_compiler": "research/representation/self_dual_wreath_gpe_recursive_node_compiler.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-08-08T21:33:53.822001+00:00",
+    "experiment_id": "EXP-CODE-SELF-DUAL-WREATH-GPE-RECURSIVE-NODE-COMPILER",
+    "falsifiers_triggered": [
+      "Pair-level GPE does not by itself remove recursive child-frame normalization.",
+      "Constant metric spectra do not imply a scalar endpoint mixer when shorted metrics fail to commute.",
+      "Exact recursive completeness remains compatible with exponentially small endpoint gaps.",
+      "Finite affine GPE paths are not an all-n uniform path-selection theorem.",
+      "A globally source-distinct S6 affine node falsifies universal scalar child fibers."
+    ],
+    "id": "RESULT-EXP-CODE-SELF-DUAL-WREATH-GPE-RECURSIVE-NODE-COMPILER-LATEST",
+    "metrics": {
+      "all_n_structured_child_embedding_theorem_count": 0,
+      "companion_natural_scalar_affine_falsifier_count": 1,
+      "conditioning_counterfamily_row_count": 24,
+      "equal_metric_hadamard_control_count": 1,
+      "finite_affine_gpe_compiler_control_count": 3,
+      "finite_affine_gpe_compiler_failure_count": 0,
+      "flat_affine_log_depth_preparation_theorem_count": 1,
+      "natural_recursive_endpoint_gap_theorem_count": 0,
+      "new_quantum_algorithm_count": 0,
+      "node_control_count": 3,
+      "node_control_failure_count": 0,
+      "noncommuting_matrix_mixer_countercontrol_count": 1,
+      "recursive_orientation_polar_sampler_count": 0,
+      "recursive_parent_relation_normal_form_theorem_count": 1,
+      "tail_endpoint_gap": 5.960464122267716e-08,
+      "tail_inverse_gap_cost": 16777217.0,
+      "tail_metric_ratio": 16777216,
+      "uniform_coherent_generator_select_count": 0
+    },
+    "status": "recursive-node-normal-form-and-finite-affine-gpe-compiler-proved-all-n-structure-and-conditioning-open",
+    "summary": "Separated recursive relation preparation into normalized child embeddings and a short-metric endpoint mixer, then proved that flat affine child embeddings compile from GPE transports in logarithmic depth without a width penalty."
+  },
+  {
+    "artifacts": {
+      "self_dual_wreath_graded_channel_graph_reduction": "research/representation/self_dual_wreath_graded_channel_graph_reduction.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-08-08T21:34:00.001134+00:00",
+    "experiment_id": "EXP-CODE-SELF-DUAL-WREATH-GRADED-CHANNEL-GRAPH-REDUCTION",
+    "falsifiers_triggered": [
+      "Affine orientation vertices do not force complete residual channel-edge support.",
+      "The graded gap depends on child Laplacian resolvents, not the ungraded metric floor or raw degree.",
+      "The natural all-depth target is two-sided endpoint-effect comparability for global carrier channels."
+    ],
+    "id": "RESULT-EXP-CODE-SELF-DUAL-WREATH-GRADED-CHANNEL-GRAPH-REDUCTION-LATEST",
+    "metrics": {
+      "arbitrary_flat_channel_resolvent_reduction_theorem_count": 1,
+      "complete_internal_rescue_reproduction_count": 1,
+      "crossing_no_go_reproduction_count": 1,
+      "endpoint_effect_comparability_criterion_theorem_count": 1,
+      "finite_graph_control_count": 4,
+      "finite_graph_control_failure_count": 0,
+      "maximum_direct_to_resolvent_grading_residual": 1.8462217450441077e-16,
+      "maximum_direct_to_resolvent_metric_residual": 3.2711347736660537e-16,
+      "natural_channel_resolvent_comparability_theorem_count": 0,
+      "new_quantum_algorithm_count": 0,
+      "w6_affine_star_defect_reproduction_count": 2
+    },
+    "status": "graded-flat-channel-resolvent-reduction-proved-natural-operator-valued-comparability-open",
+    "summary": "Reduced every flat carrier support graph to two child Laplacian resolvents, reproducing the W6 1/17 and 1/9 defects and unifying the crossing obstruction with the complete-closure rescue."
+  },
+  {
+    "artifacts": {
+      "self_dual_wreath_graded_flat_transport_no_go": "research/representation/self_dual_wreath_graded_flat_transport_no_go.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-08-08T21:34:05.659834+00:00",
+    "experiment_id": "EXP-CODE-SELF-DUAL-WREATH-GRADED-FLAT-TRANSPORT-NO-GO",
+    "falsifiers_triggered": [
+      "A width-independent relation-metric floor is not a width-independent relative-polar gap.",
+      "A flat partial-isometry carrier groupoid still supports dangerous row and column modes.",
+      "The next proof must quotient internal pair/Cech relations before bounding the grading defect."
+    ],
+    "id": "RESULT-EXP-CODE-SELF-DUAL-WREATH-GRADED-FLAT-TRANSPORT-NO-GO-LATEST",
+    "metrics": {
+      "finite_constant_metric_width_closing_gap_count": 6,
+      "finite_flat_transport_control_count": 6,
+      "finite_flat_transport_control_failure_count": 0,
+      "flat_transport_exact_spectrum_theorem_count": 1,
+      "full_internal_cech_mode_elimination_theorem_count": 0,
+      "metric_floor_not_graded_gap_no_go_theorem_count": 1,
+      "natural_width_inverse_polynomial_endpoint_gap_row_count": 0,
+      "natural_width_scaling_row_count": 11,
+      "new_quantum_algorithm_count": 0,
+      "tail_copy_count": 1684,
+      "tail_log2_endpoint_gap": -1675.011315313228,
+      "tail_metric_floor": 1.992156862745098,
+      "tail_n": 256
+    },
+    "status": "flat-metric-floor-proved-insufficient-for-grading-internal-cech-mode-elimination-open",
+    "summary": "Proved an exact flat-transport counterfamily with constant metric floor but endpoint gap Theta(1/p); at natural width the tail model has log2 gap -1675.011."
+  },
+  {
+    "artifacts": {
+      "self_dual_wreath_graded_frobenius_trim": "research/representation/self_dual_wreath_graded_frobenius_trim.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-08-08T21:34:23.204583+00:00",
+    "experiment_id": "EXP-CODE-SELF-DUAL-WREATH-GRADED-FROBENIUS-TRIM",
+    "falsifiers_triggered": [
+      "Generic spectral intersection is unnecessary; sectorwise pinching preserves the sibling grading exactly.",
+      "Vanishing Frobenius density can yield a constant endpoint gap after a quantified trim, but not on the full untrimmed space.",
+      "Information-theoretic coefficient trimming is exactly signal-preserving on the ideal polar range, but is not an efficient or complete quantum operation by itself."
+    ],
+    "id": "RESULT-EXP-CODE-SELF-DUAL-WREATH-GRADED-FROBENIUS-TRIM-LATEST",
+    "metrics": {
+      "all_n_pair_cokernel_completeness_theorem_count": 0,
+      "coherent_pinched_energy_projector_count": 0,
+      "constant_gap_certification_onset_n": 36,
+      "constant_gap_certified_row_count": 4,
+      "finite_control_count": 2,
+      "finite_control_failure_count": 0,
+      "grading_compatible_pinched_trim_theorem_count": 1,
+      "new_quantum_algorithm_count": 0,
+      "relation_trim_zero_pgm_state_loss_theorem_count": 1,
+      "scaling_row_count": 10,
+      "schur_endpoint_bound_theorem_count": 1,
+      "tail_endpoint_gap_lower_bound": 0.39285714285714285,
+      "tail_n": 48,
+      "tail_removed_fraction_upper_bound": 6.349475224704879e-25,
+      "tail_structural_failure_probability_upper_bound": 6.614036692400916e-27
+    },
+    "status": "grading-compatible-zero-state-loss-constant-gap-proved-hierarchical-frame-comparability-open",
+    "summary": "Constructed a grading-compatible pinched Frobenius trim and proved an explicit constant endpoint gap after deleting vanishing natural relation coefficient fraction; the deleted relation image has zero ideal PGM state mass."
+  },
+  {
+    "artifacts": {
+      "self_dual_wreath_hamming_stratum_rank_transition": "research/representation/self_dual_wreath_hamming_stratum_rank_transition.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-08-08T21:34:29.808833+00:00",
+    "experiment_id": "EXP-CODE-SELF-DUAL-WREATH-HAMMING-STRATUM-RANK-TRANSITION",
+    "falsifiers_triggered": [
+      "Exponential stratum size blocks all-pair union bounds but not density statements.",
+      "Pair-common rank density does not determine coherent incidence or a frame edge.",
+      "The natural independent support threshold is exactly three, not an unspecified covering radius."
+    ],
+    "id": "RESULT-EXP-CODE-SELF-DUAL-WREATH-HAMMING-STRATUM-RANK-TRANSITION-LATEST",
+    "metrics": {
+      "coherent_incidence_theorem_count": 0,
+      "finite_control_count": 1,
+      "finite_control_failure_count": 0,
+      "fixed_hamming_stratum_rank_density_theorem_count": 1,
+      "maximum_scaling_n": 50,
+      "n50_h3_expected_bad_fraction_upper_bound": 0.054019724944328384,
+      "natural_node_frame_edge_theorem_count": 0,
+      "new_quantum_algorithm_count": 0,
+      "sharp_hamming_pair_support_transition_theorem_count": 1,
+      "simultaneous_all_fixed_hamming_pair_theorem_count": 0
+    },
+    "status": "sharp-hamming-rank-transition-proved-coherent-incidence-open",
+    "summary": "Proved a sharp transition from transverse Hamming radii one/two to rank-concentrated live strata at every fixed radius at least three."
   },
   {
     "artifacts": {
@@ -3533,6 +4688,327 @@
   },
   {
     "artifacts": {
+      "self_dual_wreath_hierarchical_cokernel_resolution": "research/representation/self_dual_wreath_hierarchical_cokernel_resolution.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-08-08T21:34:49.539157+00:00",
+    "experiment_id": "EXP-CODE-SELF-DUAL-WREATH-HIERARCHICAL-COKERNEL-RESOLUTION",
+    "falsifiers_triggered": [
+      "Direct pair-common incompleteness is not a no-go for hierarchical span relations.",
+      "Exact hierarchical relation completeness does not imply efficient conditioning.",
+      "Support topology alone cannot determine parent endpoint weights."
+    ],
+    "id": "RESULT-EXP-CODE-SELF-DUAL-WREATH-HIERARCHICAL-COKERNEL-RESOLUTION-LATEST",
+    "metrics": {
+      "coherent_hierarchical_kernel_transform_count": 0,
+      "conditioning_counterfamily_row_count": 20,
+      "emergent_h0_control_count": 1,
+      "emergent_h0_resolved_control_count": 1,
+      "exact_hierarchical_cokernel_decomposition_theorem_count": 1,
+      "finite_control_count": 4,
+      "finite_control_failure_count": 0,
+      "natural_child_frame_comparability_theorem_count": 0,
+      "new_quantum_algorithm_count": 0,
+      "physical_control_count": 1,
+      "tail_counterfamily_child_width": 1048576,
+      "tail_counterfamily_endpoint_gap": 9.536734069115482e-07,
+      "tail_counterfamily_inverse_gap_cost": 1048577.0000009537
+    },
+    "status": "hierarchical-cokernel-complete-frame-comparability-open",
+    "summary": "Resolved augmented H0 exactly by recursive child-span relations and isolated child pseudoinverse-frame comparability as the true endpoint-gap gate."
+  },
+  {
+    "artifacts": {
+      "self_dual_wreath_hierarchical_polar_tree": "research/representation/self_dual_wreath_hierarchical_polar_tree.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-08-08T21:34:56.312838+00:00",
+    "experiment_id": "EXP-CODE-SELF-DUAL-WREATH-HIERARCHICAL-POLAR-TREE",
+    "falsifiers_triggered": [
+      "Do not require explicit compilation of every orientation-tree node; a nested flag addresses nodes coherently by level.",
+      "Do not claim the chain rule alone removes whitening; it moves whitening into matrix-valued conditional frame ratios.",
+      "Do not cite the Moore--Russell--Sniady theorem directly against this global coherent primitive, or claim noncoverage as success."
+    ],
+    "id": "RESULT-EXP-CODE-SELF-DUAL-WREATH-HIERARCHICAL-POLAR-TREE-LATEST",
+    "metrics": {
+      "coherent_k_level_compilation_theorem_count": 1,
+      "finite_fractional_relative_effect_eigenvalue_count": 4,
+      "finite_half_integral_relative_effect_failure_count": 0,
+      "finite_hierarchical_validation_failure_count": 0,
+      "finite_noncommuting_child_frame_count": 32,
+      "finite_w4_control_count": 156,
+      "global_nonorthogonal_sampler_count": 0,
+      "hierarchical_polar_chain_rule_theorem_count": 1,
+      "higher_level_relative_sampler_count": 0,
+      "matrix_valued_conditional_probability_reduction_count": 1,
+      "maximum_recursive_to_direct_polar_residual": 3.931246083153584e-15,
+      "minimum_finite_fractional_relative_effect_gap": 0.49999999999999944,
+      "new_quantum_algorithm_count": 0,
+      "polynomial_hidden_permutation_decoder_count": 0,
+      "tail_n": 512,
+      "tail_tree_depth": 3876,
+      "typical_relative_effect_gap_theorem_count": 0
+    },
+    "status": "hierarchical-relative-polar-sampler-higher-level-open",
+    "summary": "Factored the global orientation polar into k coherently indexed binary relative-frame isometries. The first level is polynomial; all complete W4 level-two effects are projective or exactly balanced. The decisive open theorem is the typical large-n relative-effect spectrum and its direct circuit."
+  },
+  {
+    "artifacts": {
+      "self_dual_wreath_hierarchy_low_carrier_trim": "research/representation/self_dual_wreath_hierarchy_low_carrier_trim.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-08-08T21:35:10.586170+00:00",
+    "experiment_id": "EXP-CODE-SELF-DUAL-WREATH-HIERARCHY-LOW-CARRIER-TRIM",
+    "falsifiers_triggered": [
+      "Exact-common carriers are not the only sectors that admit a vanishing-rank hierarchy trim.",
+      "Worst-case inverse-(n-1) pair correlations can be removed on all but vanishing natural rank; they are not the remaining edge bottleneck.",
+      "Vanishing pair correlations still do not imply an exponentially wide frame edge without signed high-order incidence control."
+    ],
+    "id": "RESULT-EXP-CODE-SELF-DUAL-WREATH-HIERARCHY-LOW-CARRIER-TRIM-LATEST",
+    "metrics": {
+      "all_hierarchy_low_carrier_tradeoff_theorem_count": 1,
+      "exact_low_carrier_mass_control_count": 4,
+      "finite_conditioned_trim_record_count": 2,
+      "finite_control_failure_count": 0,
+      "first_finite_conditioned_trim_n": 44,
+      "high_carrier_incidence_theorem_count": 0,
+      "natural_node_frame_edge_theorem_count": 0,
+      "new_quantum_algorithm_count": 0,
+      "scaling_record_count": 8,
+      "tail_conditioned_trim_rank_log2": -16.905351327387937,
+      "tail_cutoff_dimension_log2": 33.569259571901625,
+      "tail_low_carrier_count": 130,
+      "tail_n": 48,
+      "tail_residual_pair_correlation_log2": -33.569259572014815
+    },
+    "status": "low-carrier-hierarchy-trim-proved-high-carrier-edge-open",
+    "summary": "Proved a quarter-factorial rank--correlation tradeoff that trims all low-dimensional pair carriers throughout the hierarchy."
+  },
+  {
+    "artifacts": {
+      "self_dual_wreath_hierarchy_pair_common_rank_budget": "research/representation/self_dual_wreath_hierarchy_pair_common_rank_budget.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-08-08T21:35:21.423496+00:00",
+    "experiment_id": "EXP-CODE-SELF-DUAL-WREATH-HIERARCHY-PAIR-COMMON-RANK-BUDGET",
+    "falsifiers_triggered": [
+      "Typical recurrence of pair-common support does not imply macroscopic common rank at information-threshold width.",
+      "Triangle and cycle alignment cannot defeat the scalar rank budget for exact common directions, although it remains decisive on the noncommon complement.",
+      "Unconditioned regular stationary outliers must be trimmed; their existence is not representative of collision-free physical rank."
+    ],
+    "id": "RESULT-EXP-CODE-SELF-DUAL-WREATH-HIERARCHY-PAIR-COMMON-RANK-BUDGET-LATEST",
+    "metrics": {
+      "conditioned_tail_bound_strictly_decreasing_count": 1,
+      "exact_common_hierarchy_rank_budget_theorem_count": 1,
+      "exact_hierarchy_pair_count_control_count": 7,
+      "exact_pair_common_mass_control_count": 4,
+      "finite_conditioned_rank_trim_record_count": 6,
+      "finite_control_failure_count": 0,
+      "natural_node_frame_edge_theorem_count": 0,
+      "new_quantum_algorithm_count": 0,
+      "noncommon_collision_free_return_theorem_count": 0,
+      "scaling_record_count": 8,
+      "tail_conditioned_all_target_union_bound_log2": -153.65625558407848,
+      "tail_n": 48,
+      "tail_simultaneous_relative_rank_threshold_log2": -76.82812779203924
+    },
+    "status": "hierarchy-exact-common-rank-trim-proved-noncommon-edge-open",
+    "summary": "Proved an all-depth, all-target factorial rank budget for exact pair-common directions and isolated the noncommon return operator as the remaining frame-edge obstruction."
+  },
+  {
+    "artifacts": {
+      "self_dual_wreath_internal_closure_graded_rescue": "research/representation/self_dual_wreath_internal_closure_graded_rescue.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-08-08T21:38:27.864378+00:00",
+    "experiment_id": "EXP-CODE-SELF-DUAL-WREATH-INTERNAL-CLOSURE-GRADED-RESCUE",
+    "falsifiers_triggered": [
+      "The crossing-only flat counterfamily is not stable under the hierarchy's internal Schur quotient.",
+      "Metric control becomes useful for grading only after complete internal channel closure is established.",
+      "The decisive remaining theorem is global affine gluing of natural carrier channels, not another local star bound."
+    ],
+    "id": "RESULT-EXP-CODE-SELF-DUAL-WREATH-INTERNAL-CLOSURE-GRADED-RESCUE-LATEST",
+    "metrics": {
+      "complete_internal_channel_schur_spectrum_theorem_count": 1,
+      "complete_internal_channel_uniform_graded_gap_theorem_count": 1,
+      "finite_internal_closure_control_count": 10,
+      "finite_internal_closure_control_failure_count": 0,
+      "finite_quarter_gap_failure_count": 0,
+      "natural_global_affine_channel_closure_theorem_count": 0,
+      "natural_width_quarter_gap_failure_count": 0,
+      "natural_width_scaling_row_count": 11,
+      "new_quantum_algorithm_count": 0,
+      "tail_copy_count": 1684,
+      "tail_endpoint_gap": 0.25,
+      "tail_grading_defect_norm": 0.5,
+      "tail_metric_floor": 1.992156862745098,
+      "tail_n": 256
+    },
+    "status": "complete-internal-flat-channel-quarter-gap-proved-natural-global-channel-closure-open",
+    "summary": "Proved that complete internal pair closure converts the flat crossing obstruction into a uniform endpoint gap of at least one quarter, independent of natural merge width."
+  },
+  {
+    "artifacts": {
+      "self_dual_wreath_interplane_gauge_homology": "research/representation/self_dual_wreath_interplane_gauge_homology.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-08-08T21:38:36.497636+00:00",
+    "experiment_id": "EXP-CODE-SELF-DUAL-WREATH-INTERPLANE-GAUGE-HOMOLOGY",
+    "falsifiers_triggered": [
+      "Single-plane positive-holonomy audits cannot establish a global gauge or frame edge, even on the rich support family.",
+      "The all-positive Steiner surrogate is one gauge class among 2^Theta(4^K) combinatorially admissible classes.",
+      "Future finite audits must include multi-plane incidence cycles and report gauge-invariant cycle products."
+    ],
+    "id": "RESULT-EXP-CODE-SELF-DUAL-WREATH-INTERPLANE-GAUGE-HOMOLOGY-LATEST",
+    "metrics": {
+      "finite_control_failure_count": 0,
+      "full_homology_control_count": 6,
+      "natural_cycle_holonomy_theorem_count": 0,
+      "new_quantum_algorithm_count": 0,
+      "operator_valued_connection_theorem_count": 0,
+      "rich_cycle_rank_theorem_count": 1,
+      "rich_homology_control_count": 5,
+      "rich_point_degree_control_count": 491,
+      "scalar_interplane_gauge_classification_theorem_count": 1,
+      "tail_rich_copy_count": 8,
+      "tail_rich_cycle_rank": 13371
+    },
+    "status": "interplane-gauge-space-classified-natural-cycle-law-open",
+    "summary": "Classified the scalar inter-plane gauge obstruction and proved that the pattern-rich hierarchy retains Theta(4^K) independent cycle bits despite every local plane being positive."
+  },
+  {
+    "artifacts": {
+      "self_dual_wreath_invariant_projector_circuit": "research/representation/self_dual_wreath_invariant_projector_circuit.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-08-08T21:38:41.489398+00:00",
+    "experiment_id": "EXP-CODE-SELF-DUAL-WREATH-INVARIANT-PROJECTOR-CIRCUIT",
+    "falsifiers_triggered": [
+      "A general efficient Kronecker decomposition is not required to apply the invariant projector as a Kraus block.",
+      "The selected orientation-family filter avoids factorial amplification and factorial spectral precision.",
+      "The decisive remaining issue is now postfilter information and decoding, not implementation of E_(nu,h)."
+    ],
+    "id": "RESULT-EXP-CODE-SELF-DUAL-WREATH-INVARIANT-PROJECTOR-CIRCUIT-LATEST",
+    "metrics": {
+      "all_n_postfilter_information_theorem_count": 0,
+      "controlled_orientation_invariant_projector_circuit_schema_count": 1,
+      "factorial_amplitude_amplification_row_count": 0,
+      "irrep_action_from_qft_theorem_count": 1,
+      "new_quantum_algorithm_count": 0,
+      "polynomial_hidden_permutation_decoder_count": 0,
+      "projected_block_finite_control_count": 20,
+      "projected_block_validation_failure_count": 0,
+      "projected_group_average_block_encoding_theorem_count": 1,
+      "qft_finite_control_count": 2,
+      "qft_finite_validation_failure_count": 0,
+      "scaling_record_count": 6,
+      "symmetric_group_qft_intertwining_theorem_count": 1
+    },
+    "status": "polynomial-invariant-projector-schema-postfilter-analysis-open",
+    "summary": "Converted the orientation invariant projector from an assumed Kronecker primitive into an explicit polynomial projected circuit using the symmetric-group QFT and coherent group averaging."
+  },
+  {
+    "artifacts": {
+      "self_dual_wreath_isotypic_dephasing_no_go": "research/representation/self_dual_wreath_isotypic_dephasing_no_go.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-08-08T21:38:46.283777+00:00",
+    "experiment_id": "EXP-CODE-SELF-DUAL-WREATH-ISOTYPIC-DEPHASING-NO-GO",
+    "falsifiers_triggered": [
+      "Measuring nu classically and decoding each sector independently cannot yield constant exact hidden-permutation success.",
+      "Multiplicity-space dimension does not evade the no-go.",
+      "The coherent isotypic label in the orientation filter is an essential information resource, not optional bookkeeping.",
+      "The theorem does not rule out coherent cross-sector decoding or coarser decision problems."
+    ],
+    "id": "RESULT-EXP-CODE-SELF-DUAL-WREATH-ISOTYPIC-DEPHASING-NO-GO-LATEST",
+    "metrics": {
+      "coherent_cross_sector_decoder_count": 0,
+      "covariant_povm_symmetrization_theorem_count": 1,
+      "data_processing_extension_theorem_count": 1,
+      "dimension_square_sum_failure_count": 0,
+      "exact_symmetric_group_scaling_record_count": 12,
+      "finite_constant_success_ruled_out_count": 4,
+      "isotypic_dephasing_identification_no_go_theorem_count": 1,
+      "new_quantum_algorithm_count": 0,
+      "operator_control_count": 3,
+      "operator_control_failure_count": 0,
+      "positive_partial_trace_domination_theorem_count": 1,
+      "tail_exact_success_upper_bound": 0.009648135574611687,
+      "tail_log2_success_upper_bound": -6.695534104678886,
+      "tail_n": 32
+    },
+    "status": "isotypic-dephasing-identification-falsified-coherent-decoder-open",
+    "summary": "Proved that dephasing diagonal S_n irrep labels caps exact hidden-permutation success by the largest Plancherel atom, hence by exp(-Omega(sqrt(n))); cross-sector coherence is mandatory."
+  },
+  {
+    "artifacts": {
+      "self_dual_wreath_leaf_whitening_commutator_no_go": "research/representation/self_dual_wreath_leaf_whitening_commutator_no_go.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-08-08T21:42:18.036875+00:00",
+    "experiment_id": "EXP-CODE-SELF-DUAL-WREATH-LEAF-WHITENING-COMMUTATOR-NO-GO",
+    "falsifiers_triggered": [
+      "Density-one inverse-polynomial leaf commutators do not imply noncommuting canonical effects.",
+      "A bounded frame condition number does not rescue leaf-to-component commutator transfer.",
+      "Distinct high-rank leaves, constant total-rank aspect, vanishing relative leaf rank, and full-rank nonscalarity still do not rescue the transfer.",
+      "Full-support spectral arithmetic also fails after proper common-span compression; the next natural gate is direct compressed commutator support or a simultaneous-basis compiler."
+    ],
+    "id": "RESULT-EXP-CODE-SELF-DUAL-WREATH-LEAF-WHITENING-COMMUTATOR-NO-GO-LATEST",
+    "metrics": {
+      "commuting_whitening_integer_cover_criterion_theorem_count": 1,
+      "duplicate_free_bounded_condition_counterfamily_count": 1,
+      "finite_control_count": 4,
+      "finite_control_failure_count": 0,
+      "full_support_reciprocal_integer_spectral_witness_theorem_count": 1,
+      "full_support_spectral_criterion_survives_common_span_compression_count": 0,
+      "natural_canonical_component_commutator_mass_theorem_count": 0,
+      "new_quantum_algorithm_count": 0,
+      "tail_cross_leaf_commutator_norm": 0.0041666304975282,
+      "tail_cross_part_pair_fraction": 0.9916492693110647,
+      "tail_fiber_dimension": 480,
+      "tail_frame_condition_number": 2.0105263157894737,
+      "tail_nonscalarity_defect_edge": 0.4979166666666667
+    },
+    "status": "generic-full-support-leaf-transfer-falsified-compressed-component-analysis-open",
+    "summary": "Characterized commuting canonical effects for projection frames and built a bounded-condition, duplicate-free counterfamily that kills every coarse leaf-to-component commutator transfer route."
+  },
+  {
+    "artifacts": {
+      "self_dual_wreath_level_three_flag_audit": "research/representation/self_dual_wreath_level_three_flag_audit.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-08-08T21:39:26.988693+00:00",
+    "experiment_id": "EXP-CODE-SELF-DUAL-WREATH-LEVEL-THREE-FLAG-AUDIT",
+    "falsifiers_triggered": [
+      "Balanced binary trees do not generically force relative effects into {0,1/2,1}.",
+      "The W4 half-integral pattern survives a genuine third level and every linear flag in the selected W5 controls.",
+      "Spectral half-integrality alone is not an implementation of the relative merge isometry.",
+      "The formal MRS theorem does not cover this coherent global projector family, but that noncoverage is not a speedup proof."
+    ],
+    "id": "RESULT-EXP-CODE-SELF-DUAL-WREATH-LEVEL-THREE-FLAG-AUDIT-LATEST",
+    "metrics": {
+      "collision_free_control_count": 2,
+      "collision_free_half_integral_failure_count": 0,
+      "collision_free_half_integrality_all_n_theorem_count": 0,
+      "finite_control_count": 4,
+      "finite_validation_failure_count": 0,
+      "fractional_eigenvalue_occurrence_count": 2520,
+      "hierarchical_orientation_polar_sampler_count": 0,
+      "merge_occurrence_count": 4704,
+      "new_quantum_algorithm_count": 0,
+      "nonhalf_fractional_eigenvalue_occurrence_count": 648,
+      "ordered_f2_three_basis_count": 168,
+      "pairwise_distinct_label_control_count": 3,
+      "pairwise_distinct_label_half_integral_failure_count": 0,
+      "polynomial_physical_pgm_circuit_count": 0,
+      "polynomial_relative_eigenspace_projector_count": 0,
+      "repeated_label_counterexample_count": 1
+    },
+    "status": "level-three-half-integral-pattern-repeated-label-falsifier-all-n-open",
+    "summary": "Audited every three-bit linear flag, found only endpoint/half relative channels on selected label-simple sectors, and proved by countercontrol that repeated labels generate genuinely nonhalf conditional weights."
+  },
+  {
+    "artifacts": {
       "self_dual_wreath_local_isotypic_filter_no_go": "research/representation/self_dual_wreath_local_isotypic_filter_no_go.json"
     },
     "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -3565,6 +5041,33 @@
     },
     "status": "constant-mass-block-local-filters-falsified-nonlocal-open",
     "summary": "Proved a Plancherel-incidence no-go for all high-retention block-local isotypic filters. A recurring self-dual retained irrep pairs linearly many good blocks and restores a 2^Theta(k) common family; the next filter must be genuinely nonlocal."
+  },
+  {
+    "artifacts": {
+      "self_dual_wreath_local_pair_transversality": "research/representation/self_dual_wreath_local_pair_transversality.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-08-08T21:39:32.099449+00:00",
+    "experiment_id": "EXP-CODE-SELF-DUAL-WREATH-LOCAL-PAIR-TRANSVERSALITY",
+    "falsifiers_triggered": [
+      "Unioning over orientation pairs ignores that common-range conditions are shared source-label relations.",
+      "The full regular pair-common obstruction is not typical at Hamming radii one and two.",
+      "Local transversality alone does not control the full orientation-frame edge."
+    ],
+    "id": "RESULT-EXP-CODE-SELF-DUAL-WREATH-LOCAL-PAIR-TRANSVERSALITY-LATEST",
+    "metrics": {
+      "asymptotic_radius_two_transversality_theorem_count": 1,
+      "finite_control_count": 1,
+      "finite_control_failure_count": 0,
+      "hamming_one_common_range_necessity_theorem_count": 1,
+      "hamming_two_common_range_necessity_theorem_count": 1,
+      "higher_order_incidence_theorem_count": 0,
+      "maximum_scaling_n": 20,
+      "natural_node_frame_edge_theorem_count": 0,
+      "new_quantum_algorithm_count": 0
+    },
+    "status": "natural-radius-two-transversality-proved-global-edge-open",
+    "summary": "Proved that globally distinct natural source blocks are simultaneously transverse through Hamming radius two with high probability."
   },
   {
     "artifacts": {
@@ -3634,6 +5137,205 @@
   },
   {
     "artifacts": {
+      "self_dual_wreath_matrix_cayley_boundary": "research/representation/self_dual_wreath_matrix_cayley_boundary.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-08-08T21:39:36.411003+00:00",
+    "experiment_id": "EXP-CODE-SELF-DUAL-WREATH-MATRIX-CAYLEY-BOUNDARY",
+    "falsifiers_triggered": [
+      "Matrix-valued XOR covariance does not by itself force half-integral affine merges.",
+      "Equal child Gram blocks do not make the cross-dependency quotient neutral when opposite saturation kernels overlap.",
+      "Matrix-valued multiplicity sectors are not automatically fatal; commuting or saturation-orthogonal sectors remain balanced.",
+      "A spectral balance theorem does not implement the multiplicity-space kernel projectors."
+    ],
+    "id": "RESULT-EXP-CODE-SELF-DUAL-WREATH-MATRIX-CAYLEY-BOUNDARY-LATEST",
+    "metrics": {
+      "all_n_saturation_orthogonality_theorem_count": 0,
+      "coherent_internal_saturation_projector_count": 0,
+      "commuting_neutral_control_count": 1,
+      "counterexample_maximum_half_residual": 0.3535533905932735,
+      "counterexample_maximum_opposite_saturation_overlap": 0.7071067811865472,
+      "exact_control_count": 2,
+      "finite_wreath_matrix_valued_cayley_counterexample_count": 0,
+      "matrix_cayley_boundary_theorem_count": 1,
+      "new_quantum_algorithm_count": 0,
+      "noncommuting_nonneutral_counterexample_count": 1,
+      "theorem_validation_failure_count": 0
+    },
+    "status": "matrix-cayley-saturation-boundary-natural-wreath-case-open",
+    "summary": "Proved the exact matrix-valued Cayley boundary: opposite saturation-space overlap produces nonhalf channels. An explicit positive-definite XOR-covariant counterfamily kills covariance-only proofs, while commuting sectors remain balanced."
+  },
+  {
+    "artifacts": {
+      "self_dual_wreath_matrix_povm_recursive_compiler": "research/representation/self_dual_wreath_matrix_povm_recursive_compiler.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-08-08T21:39:40.623512+00:00",
+    "experiment_id": "EXP-CODE-SELF-DUAL-WREATH-MATRIX-POVM-RECURSIVE-COMPILER",
+    "falsifiers_triggered": [
+      "Noncommuting component effects do not obstruct an exact algebraic compiler normal form.",
+      "Outcome count alone does not impose square-root amplitude amplification on a normalized child embedding.",
+      "Pair GPE transport does not prepare matrix POVM square-root amplitudes.",
+      "Generic block-encoding access can still be superpolynomial at an exponentially small effect edge.",
+      "Small component trace or outcome probability does not prove that the positive effect edge is small.",
+      "The finite S6 effect edge is not asymptotic evidence because its source mechanism is negligible."
+    ],
+    "id": "RESULT-EXP-CODE-SELF-DUAL-WREATH-MATRIX-POVM-RECURSIVE-COMPILER-LATEST",
+    "metrics": {
+      "all_depth_gpe_support_transport_count": 0,
+      "companion_direct_s6_source_mass_no_go_count": 1,
+      "companion_natural_s6_partial_support_control_count": 1,
+      "generic_square_root_degree_boundary_theorem_count": 1,
+      "matrix_component_povm_normal_form_theorem_count": 1,
+      "natural_component_povm_dilation_circuit_count": 0,
+      "nested_recursive_povm_normal_form_theorem_count": 1,
+      "new_quantum_algorithm_count": 0,
+      "noncommuting_povm_control_count": 1,
+      "povm_control_count": 2,
+      "povm_control_failure_count": 0,
+      "recursive_orientation_polar_sampler_count": 0,
+      "tail_effect_edge_log2": -512.0,
+      "tail_input_size": 512,
+      "tail_markov_degree_lower_bound_log2": 127.20751874963942,
+      "tail_polynomial_benchmark_log2": 108.0
+    },
+    "status": "matrix-povm-recursive-normal-form-proved-natural-dilation-and-support-gpe-open",
+    "summary": "Replaced the dead scalar-affine extension with an exact nested matrix-POVM compiler normal form and isolated square-root POVM dilation as the new access bottleneck."
+  },
+  {
+    "artifacts": {
+      "self_dual_wreath_mixed_covariant_decoder": "research/representation/self_dual_wreath_mixed_covariant_decoder.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-08-08T21:39:44.843806+00:00",
+    "experiment_id": "EXP-CODE-SELF-DUAL-WREATH-MIXED-COVARIANT-DECODER",
+    "falsifiers_triggered": [
+      "The pure coherent Fourier decoder is only a benchmark: the physical mixed projector orbit generally requires multiple coherent junk rows.",
+      "Sector-weight concentration alone cannot certify a decoder because it does not control multiplicity support or C_nu conditioning.",
+      "W_3 PGM gains above the exact-label ceiling disappear substantially under isotypic dephasing, confirming the need for cross-sector coherence.",
+      "Large tight-frame rank does not by itself imply computational hardness."
+    ],
+    "id": "RESULT-EXP-CODE-SELF-DUAL-WREATH-MIXED-COVARIANT-DECODER-LATEST",
+    "metrics": {
+      "canonical_pgm_seed_theorem_count": 1,
+      "conditional_branch_uniform_success_theorem_count": 0,
+      "finite_control_count": 3,
+      "finite_control_failure_count": 0,
+      "global_information_theoretic_pgm_success_theorem_count": 1,
+      "maximum_cross_isotypic_success_contribution": 0.49938672392660693,
+      "maximum_finite_pgm_success_probability": 0.9714045207910316,
+      "maximum_finite_seed_junk_rank_lower_bound": 8,
+      "mixed_covariant_seed_theorem_count": 1,
+      "multiplicity_tight_frame_theorem_count": 1,
+      "new_quantum_algorithm_count": 0,
+      "pgm_beats_dephasing_ceiling_control_count": 3,
+      "polynomial_multiplicity_whitening_count": 0,
+      "pure_rank_one_seed_impossible_control_count": 2,
+      "seed_rank_lower_bound_theorem_count": 1,
+      "typical_multiplicity_spectrum_theorem_count": 0
+    },
+    "status": "mixed-covariant-decoder-reduced-to-multiplicity-tight-frame",
+    "summary": "Replaced the pure dual-row heuristic by the exact mixed-state covariant seed, tight-frame, rank, and PGM whitening criteria."
+  },
+  {
+    "artifacts": {
+      "self_dual_wreath_mrs_coherence_escape_criterion": "research/representation/self_dual_wreath_mrs_coherence_escape_criterion.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-08-08T21:41:34.331828+00:00",
+    "experiment_id": "EXP-CODE-SELF-DUAL-WREATH-MRS-COHERENCE-ESCAPE-CRITERION",
+    "falsifiers_triggered": [
+      "Leaving intermediate irrep labels unmeasured is not by itself outside the measured-sieve model.",
+      "Label-controlled coherent computation with a label-diagonal final effect is transcript-dephasing invariant.",
+      "Dephasing invariance does not imply transcript-only simulation when an isotypic transcript block has dimension greater than one.",
+      "Pair GPE is carrier-block diagonal and cannot alone witness cross-transcript interference.",
+      "A finite noncommuting effect is not a useful escape until it changes the physical decision probability on positive mass.",
+      "Avoiding the MRS model would not prove an efficient algorithm or quantum speedup."
+    ],
+    "id": "RESULT-EXP-CODE-SELF-DUAL-WREATH-MRS-COHERENCE-ESCAPE-CRITERION-LATEST",
+    "metrics": {
+      "current_physical_pgm_transcript_povm_separation_count": 0,
+      "deferred_measurement_non_escape_control_count": 1,
+      "finite_control_count": 5,
+      "finite_control_failure_count": 0,
+      "hadamard_witness_probability_difference": 0.4999999999999998,
+      "mrs_model_escape_theorem_count": 0,
+      "new_quantum_algorithm_count": 0,
+      "offdiagonal_coherence_witness_control_count": 2,
+      "projective_transcript_only_criterion_count": 1,
+      "recoupled_witness_probability_difference": 0.4330127018922193,
+      "transcript_dephasing_identity_theorem_count": 1,
+      "universal_measured_transcript_invariance_criterion_count": 1,
+      "within_block_quantum_witness_control_count": 1,
+      "within_block_transcript_only_probability_difference": 0.5
+    },
+    "status": "projective-transcript-criteria-proved-adaptive-mrs-separation-open",
+    "summary": "Corrected the MRS audit: dephasing invariance characterizes only whether early projective transcript measurement changes statistics; classical transcript-only simulation requires block-scalar effects, and full adaptive MRS separation remains open."
+  },
+  {
+    "artifacts": {
+      "self_dual_wreath_mrs_transcript_povm_separation": "research/representation/self_dual_wreath_mrs_transcript_povm_separation.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-08-08T21:41:38.812958+00:00",
+    "experiment_id": "EXP-CODE-SELF-DUAL-WREATH-MRS-TRANSCRIPT-POVM-SEPARATION",
+    "falsifiers_triggered": [
+      "Off-diagonal coherence is sufficient but not necessary for transcript-only separation.",
+      "A fixed projective dephasing test is not the full adaptive MRS criterion.",
+      "Separation from one fixed transcript policy is not separation from the whole MRS algorithm class.",
+      "Effect-space separation would not itself prove an efficient algorithm or speedup."
+    ],
+    "id": "RESULT-EXP-CODE-SELF-DUAL-WREATH-MRS-TRANSCRIPT-POVM-SEPARATION-LATEST",
+    "metrics": {
+      "adaptive_nonprojective_separation_control_count": 1,
+      "adaptive_transcript_povm_compiler_theorem_count": 1,
+      "classical_simulable_control_count": 1,
+      "dual_separation_witness_theorem_count": 1,
+      "finite_control_count": 4,
+      "finite_control_failure_count": 0,
+      "fixed_transcript_zonotope_criterion_theorem_count": 1,
+      "new_quantum_algorithm_count": 0,
+      "offdiagonal_separation_control_count": 1,
+      "physical_pgm_fixed_policy_separation_count": 0,
+      "physical_pgm_full_mrs_model_separation_count": 0,
+      "within_block_separation_control_count": 1
+    },
+    "status": "mrs-transcript-povm-zonotope-separation-proved-physical-model-separation-open",
+    "summary": "Converted the MRS model boundary into an executable convex effect-space separation problem with exact dual witnesses and adaptive transcript-POVM compilation, while keeping every physical escape claim closed."
+  },
+  {
+    "artifacts": {
+      "self_dual_wreath_multiscale_polar_schedule": "research/representation/self_dual_wreath_multiscale_polar_schedule.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-08-08T21:41:43.503515+00:00",
+    "experiment_id": "EXP-CODE-SELF-DUAL-WREATH-MULTISCALE-POLAR-SCHEDULE",
+    "falsifiers_triggered": [
+      "Top-level K+2 conditioning does not condition every binary internal node.",
+      "Pairwise shorted-metric comparability is not intrinsic to the polar chain identity.",
+      "Constant physical spectra do not remove block-encoding normalization costs."
+    ],
+    "id": "RESULT-EXP-CODE-SELF-DUAL-WREATH-MULTISCALE-POLAR-SCHEDULE-LATEST",
+    "metrics": {
+      "binary_interval_uniform_edge_no_go_theorem_count": 1,
+      "exact_multiway_polar_chain_theorem_count": 1,
+      "gaussian_all_depth_condition_upper": 33.97056274847714,
+      "gaussian_all_depth_edge_floor": 0.08578643762690485,
+      "maximum_merge_arity": 8,
+      "mixed_arity_gaussian_all_depth_edge_theorem_count": 1,
+      "mixed_schedule_failure_count": 0,
+      "mixed_schedule_scaling_count": 11,
+      "multiway_control_count": 2,
+      "multiway_control_failure_count": 0,
+      "natural_all_depth_edge_theorem_count": 0,
+      "new_quantum_algorithm_count": 0,
+      "tight_node_frame_block_encoding_theorem_count": 0
+    },
+    "status": "mixed-arity-gaussian-multiscale-edge-proved-natural-access-open",
+    "summary": "Generalized the polar chain to constant arity, exposed the binary threshold hard edge, and proved an eight-way Gaussian schedule with all-depth constant frame conditioning."
+  },
+  {
+    "artifacts": {
       "self_dual_wreath_multistar_degree_obstruction": "research/representation/self_dual_wreath_multistar_degree_obstruction.json"
     },
     "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -3666,6 +5368,68 @@
     },
     "status": "sign-blind-multistar-route-killed-phase-sensitive-gap-open",
     "summary": "Exact off-common weights plus the complete bipartite crossing graph make the sign-blind Gershgorin certificate vacuous from n=8 onward on natural threshold portfolios, with projected weighted degree reaching log2 25.50 at the largest sampled degree. The relation Gram is identified with a projector-weighted orientation Laplacian whose positive spectral gap is now the sole surviving conditioning route."
+  },
+  {
+    "artifacts": {
+      "self_dual_wreath_native_frame_access_boundary": "research/representation/self_dual_wreath_native_frame_access_boundary.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-08-08T21:41:47.920983+00:00",
+    "experiment_id": "EXP-CODE-SELF-DUAL-WREATH-NATIVE-FRAME-ACCESS-BOUNDARY",
+    "falsifiers_triggered": [
+      "A hard lower edge plus trace truncation is insufficient for generic polynomial QSVT.",
+      "Variable-time amplification does not remove orientation width on native frame inputs.",
+      "The companion GPE pair polar confirms that a representation-specific direct transform can bypass this generic width barrier."
+    ],
+    "id": "RESULT-EXP-CODE-SELF-DUAL-WREATH-NATIVE-FRAME-ACCESS-BOUNDARY-LATEST",
+    "metrics": {
+      "companion_gpe_pair_polar_transform_count": 1,
+      "explicit_qrs_amplitude_pair_theorem_count": 1,
+      "finite_control_count": 4,
+      "finite_control_failure_count": 0,
+      "flat_control_count": 2,
+      "flat_frame_black_box_lower_bound_theorem_count": 1,
+      "new_quantum_algorithm_count": 0,
+      "representation_specific_polar_transform_count": 0,
+      "superpolynomial_scaling_row_count": 6,
+      "tail_copy_count": 205,
+      "tail_flat_qrs_lower_bound_log2": 102.5,
+      "tail_n": 48,
+      "tail_polynomial_benchmark_log2": 55.84962500721156,
+      "variable_time_native_scale_identity_count": 1
+    },
+    "status": "black-box-width-bypass-refuted-pair-gpe-bypass-separate",
+    "summary": "Computed the exact resampling amplitude pair and proved that even a perfectly conditioned frame requires square-root orientation queries under generic normalized access."
+  },
+  {
+    "artifacts": {
+      "self_dual_wreath_natural_leaf_commutator_mass": "research/representation/self_dual_wreath_natural_leaf_commutator_mass.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-08-08T21:42:18.510009+00:00",
+    "experiment_id": "EXP-CODE-SELF-DUAL-WREATH-NATURAL-LEAF-COMMUTATOR-MASS",
+    "falsifiers_triggered": [
+      "Natural high-dimensional leaf projectors do not become asymptotically commuting on balanced pairs.",
+      "A convergence rate for Sellke covering is unnecessary for density-one pair noncommutativity.",
+      "Leaf noncommutativity does not survive canonical frame whitening under any generic conditioning/aspect/rank implication.",
+      "An inverse-polynomial commutator witness is structural evidence, not a measurement circuit or MRS separation."
+    ],
+    "id": "RESULT-EXP-CODE-SELF-DUAL-WREATH-NATURAL-LEAF-COMMUTATOR-MASS-LATEST",
+    "metrics": {
+      "finite_control_count": 5,
+      "finite_control_failure_count": 0,
+      "global_distinct_leaf_noncommutativity_transfer_theorem_count": 1,
+      "natural_canonical_component_commutator_mass_theorem_count": 0,
+      "natural_density_one_balanced_leaf_pair_noncommutativity_theorem_count": 1,
+      "natural_fixed_balanced_leaf_pair_noncommutativity_theorem_count": 1,
+      "new_quantum_algorithm_count": 0,
+      "projection_principal_plane_commutator_theorem_count": 1,
+      "tail_commutator_operator_norm_lower_bound": 0.010525732597928347,
+      "tail_inverse_commutator_scale": 95.00526359531668,
+      "tail_n": 96
+    },
+    "status": "density-one-natural-leaf-noncommutativity-proved-component-transfer-open",
+    "summary": "Proved inverse-polynomial noncommutativity for a density-one fraction of natural balanced orientation-leaf pairs and isolated the missing canonical-component transfer."
   },
   {
     "artifacts": {
@@ -3707,6 +5471,36 @@
   },
   {
     "artifacts": {
+      "self_dual_wreath_natural_pair_carrier_law": "research/representation/self_dual_wreath_natural_pair_carrier_law.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-08-08T21:41:56.823513+00:00",
+    "experiment_id": "EXP-CODE-SELF-DUAL-WREATH-NATURAL-PAIR-CARRIER-LAW",
+    "falsifiers_triggered": [
+      "The worst-case 1/(n-1) pair correlation is not representative of multiplicity-weighted natural pair mass.",
+      "Presence of trivial, sign, or hook carriers does not give them nonnegligible natural pair mass.",
+      "Pair carrier concentration alone cannot be promoted to a full-frame edge without controlling coherent higher-order incidence."
+    ],
+    "id": "RESULT-EXP-CODE-SELF-DUAL-WREATH-NATURAL-PAIR-CARRIER-LAW-LATEST",
+    "metrics": {
+      "carrier_law_concentration_trend_count": 1,
+      "coherent_triangle_incidence_theorem_count": 0,
+      "conditional_active_pair_native_mass_transfer_theorem_count": 1,
+      "exact_control_count": 4,
+      "exact_control_failure_count": 0,
+      "natural_node_frame_edge_theorem_count": 0,
+      "new_quantum_algorithm_count": 0,
+      "scaling_record_count": 7,
+      "tail_expected_weighted_l1_error_upper_bound": 0.0800493891605585,
+      "tail_fourth_power_rms_correlation_log2": -54.264809828686616,
+      "tail_n": 32,
+      "tail_quadratic_dimension_mass_log2": -188.75471982425225
+    },
+    "status": "natural-pair-native-mass-proved-global-incidence-open",
+    "summary": "Proved the exact fourth-power natural pair-carrier law, all annealed overlap moments, quenched concentration, and factorial suppression of low-dimensional carrier mass."
+  },
+  {
+    "artifacts": {
       "self_dual_wreath_natural_unequal_dominance": "research/representation/self_dual_wreath_natural_unequal_dominance.json"
     },
     "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -3743,6 +5537,34 @@
     },
     "status": "natural-all-unequal-dominance-proved-growing-order-unequal-contraction-open",
     "summary": "Proved that information-threshold physical wreath labels are all unequal with probability 1-o(1), using the exact Plancherel-collision source law and the maximal-dimension theorem; finite controls through n=48 give all-unequal probability 0.95354."
+  },
+  {
+    "artifacts": {
+      "self_dual_wreath_operator_steiner_bulk_reduction": "research/representation/self_dual_wreath_operator_steiner_bulk_reduction.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-08-08T21:42:01.309462+00:00",
+    "experiment_id": "EXP-CODE-SELF-DUAL-WREATH-OPERATOR-STEINER-BULK-REDUCTION",
+    "falsifiers_triggered": [
+      "Arbitrary scalar or nonabelian cycle holonomy cannot by itself create macroscopic bulk outlier rank under good coverage.",
+      "Matrix multiplicity is not intrinsically fatal; uneven or low-rank diagonal coverage is the concrete failure mode.",
+      "Future experiments should measure coverage spectra and the line-fiber-burden/coverage-squared ratio, not cycle signs alone."
+    ],
+    "id": "RESULT-EXP-CODE-SELF-DUAL-WREATH-OPERATOR-STEINER-BULK-REDUCTION-LATEST",
+    "metrics": {
+      "coverage_to_bulk_edge_reduction_count": 1,
+      "finite_control_count": 5,
+      "finite_control_failure_count": 0,
+      "natural_diagonal_coverage_theorem_count": 0,
+      "new_quantum_algorithm_count": 0,
+      "operator_hilbert_schmidt_burden_theorem_count": 1,
+      "tail_multiplicity_four_trim_fraction": 9.536744300931013e-07,
+      "tail_multiplicity_one_trim_fraction": 9.536744300931013e-07,
+      "tail_multiplicity_sixty_four_trim_fraction": 9.536744300931013e-07,
+      "uniform_scaling_record_count": 18
+    },
+    "status": "operator-bulk-reduced-to-natural-diagonal-coverage",
+    "summary": "Proved an exact operator-valued Hilbert-Schmidt identity and reduced matrix Steiner bulk conditioning to a lower-edge theorem for the natural diagonal coverage operator."
   },
   {
     "artifacts": {
@@ -3853,6 +5675,37 @@
     },
     "status": "branchwise-covariant-quotient-falsified-branch-mixing-open",
     "summary": "Proved a scalar-commutant obstruction to nontrivial local quotients commuting with every orientation action in the non-self-conjugate sector. The physical critical path now requires coherent mixing of induced orientation branches."
+  },
+  {
+    "artifacts": {
+      "self_dual_wreath_orientation_filter_physical_access": "research/representation/self_dual_wreath_orientation_filter_physical_access.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-08-08T21:42:05.671202+00:00",
+    "experiment_id": "EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-FILTER-PHYSICAL-ACCESS",
+    "falsifiers_triggered": [
+      "Polynomial manipulation of orientation Fourier blocks does not by itself yield a polynomial physical measurement.",
+      "Postprocessing the direct dual-analysis map cannot improve its factorially weak average success.",
+      "The direct physical multiplicity-space interference filter must now be tested for all-n retained information and norm."
+    ],
+    "id": "RESULT-EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-FILTER-PHYSICAL-ACCESS-LATEST",
+    "metrics": {
+      "arbitrary_dual_contraction_bound_theorem_count": 1,
+      "direct_physical_orientation_filter_count": 1,
+      "direct_physical_to_dual_success_bound_theorem_count": 1,
+      "finite_control_count": 3,
+      "finite_validation_failure_count": 0,
+      "inverse_polynomial_direct_access_row_count": 0,
+      "new_quantum_algorithm_count": 0,
+      "polynomial_hidden_permutation_decoder_count": 0,
+      "scaling_record_count": 11,
+      "structured_polar_transfer_count": 0,
+      "tail_amplification_lower_bound_log2": 1937.26181684989,
+      "tail_direct_access_success_log2": -3874.52363369978,
+      "tail_n": 512
+    },
+    "status": "direct-dual-filter-access-falsified-structured-transfer-open",
+    "summary": "Proved that every dual contraction composed after the direct synthesis adjoint has at most Theta(1/n!) average conclusive probability, while preserving the separately constructed direct physical branch-interference bypass."
   },
   {
     "artifacts": {
@@ -4134,6 +5987,41 @@
     },
     "status": "pair-angle-spectrum-proved-common-range-quotient-open",
     "summary": "Proved the complete pair principal-angle spectrum and validated 56 active finite pair sectors across all collision-free W4 tuples and curated W5 controls."
+  },
+  {
+    "artifacts": {
+      "self_dual_wreath_orientation_rank_budget": "research/representation/self_dual_wreath_orientation_rank_budget.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-08-08T21:42:10.265800+00:00",
+    "experiment_id": "EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-RANK-BUDGET",
+    "falsifiers_triggered": [
+      "Near-perfect retention from dim(H)=Omega(k) is not sufficient reason to prefer that regime; its rejection rank is exponentially smaller than trace alone can justify.",
+      "A logarithmic-dimensional H is enough for vanishing natural information loss while preserving polynomial spectral capacity.",
+      "Rank matching is not a norm theorem; structured alignment remains the decisive unresolved obligation."
+    ],
+    "id": "RESULT-EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-RANK-BUDGET-LATEST",
+    "metrics": {
+      "conditioned_polynomial_frame_norm_theorem_count": 0,
+      "finite_control_count": 3,
+      "finite_control_failure_count": 0,
+      "legacy_linear_rank_insufficient_from_trace_only_count": 4,
+      "logarithmic_natural_retention_theorem_count": 1,
+      "logarithmic_rank_capacity_match_theorem_count": 1,
+      "new_quantum_algorithm_count": 0,
+      "orientation_rejection_rank_theorem_count": 1,
+      "polynomial_hidden_permutation_decoder_count": 0,
+      "scaling_record_count": 7,
+      "separated_logarithmic_window_count": 7,
+      "source_adapted_alignment_theorem_count": 0,
+      "tail_copy_count": 8770,
+      "tail_logarithmic_subspace_dimension": 80,
+      "tail_markov_failure_probability_log2_upper_bound": -40.0,
+      "tail_n": 1024,
+      "trace_high_spectrum_count_theorem_count": 1
+    },
+    "status": "logarithmic-rank-retention-regime-proved-alignment-open",
+    "summary": "Calibrated orientation dimension to the spectral task: Theta(log n) simultaneously matches the universal polynomial-tail rank bound and retains natural-source information with high probability."
   },
   {
     "artifacts": {

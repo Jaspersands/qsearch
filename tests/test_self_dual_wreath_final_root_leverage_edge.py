@@ -63,7 +63,7 @@ def test_finite_haar_control_has_exact_povm_and_observed_edge_event() -> None:
 def test_report_keeps_natural_transfer_and_algorithm_gates_closed() -> None:
     report = run_final_root_leverage_edge()
     assert report.claim_gate[
-        "existing_k_plus_two_schedule_bounds_final_root_component_aspect"
+        "existing_k_plus_two_schedule_bounds_surrogate_final_root_component_aspect"
     ]
     assert report.claim_gate[
         "haar_final_root_minimum_component_edge_is_constant_with_high_probability"

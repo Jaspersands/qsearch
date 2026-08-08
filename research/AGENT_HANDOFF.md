@@ -88,6 +88,46 @@ the end of the repository's research goal.
 - Latest regular-master/trace-burden regression: 11 tests passed in 5.16
   seconds. The regular-master artifact has maximum spectral residual
   `1.34e-15` and zero finite-control failures.
+- Latest final-root natural common-span theorem check: 6 tests passed in 3.85
+  seconds. The live artifact proves asymptotic common relative rank
+  `19/128-o(1)` on globally distinct conditional mass `1/9-o(1)`, child
+  fiber aspect `19/520-o(1)`, and component block ratio at most
+  `(520/19+o(1))/q`. The natural positive component edge remains open.
+- Latest component-defect rank/mass theorem check: 6 tests passed in 1.05
+  seconds. The live artifact proves the nonscalarity defect has relative
+  common-fiber rank `1-(520/19+o(1))/q` on the same source event and
+  conditioned expected physical support mass at least `19/1152-o(1)`, without
+  assuming a positive component eigenvalue edge.
+- Latest component-POVM spectral-trim check: 5 tests passed in 1.07 seconds.
+  The live artifact proves failure at most `kappa tau B/r` for input flatness
+  `kappa=r||rho||_infinity` and component rank budget `B`, while a concentrated
+  finite control has unit loss. Natural polynomial input flatness and coherent
+  threshold/support access remain open.
+- Latest component-effect algebra boundary check: 4 tests passed in 1.11
+  seconds. An orthogonal PVM has full-rank nonscalarity defect but zero
+  commutator defect, while the trine POVM generates the full qubit algebra.
+  Natural noncommutative effect-algebra source and physical mass are unproved.
+- Latest natural leaf-commutator theorem check: 8 tests passed in 1.18
+  seconds. Density-one balanced natural orientation pairs have commutator norm
+  at least `sqrt(1-(n-1)^-2)/(n-1)` after global-distinct transfer. Transfer
+  through canonical frame whitening/common-span compression remains open.
+- Latest leaf-whitening commutator no-go check: 8 tests passed in 0.40
+  seconds. An exact duplicate-free rank-two projection-frame family has frame
+  condition number below three, constant total-rank aspect, full-rank
+  nonscalarity with edge tending to `1/2`, and density-one inverse-linear leaf
+  commutators, yet all canonical whitened effects commute. The exact commuting
+  full-support criterion is an integer-degree independent-set cover in a
+  simultaneous effect eigenbasis; every nonzero commuting-effect eigenvalue
+  is reciprocal to a positive integer. Proper sibling common-span compression
+  is outside that criterion.
+- Latest common-span component universality no-go check: 9 tests passed in
+  1.06 seconds. Naimark dilation proves every POVM is realizable by the actual
+  compressed canonical formula. A structured family simultaneously has common
+  relative rank `1/3`, total-rank aspect four, relative leaf rank `4/k`, frame
+  condition below four, density-one inverse-linear leaf commutators, component
+  edge `1/3`, and nonscalarity edge tending to `5/9`, yet its compressed
+  components commute and contain the non-reciprocal eigenvalue `2/3`. This is
+  a generic no-go, not a natural wreath commutativity theorem.
 - Latest central-support/rank-bridge chain: 17 tests passed in 8.18 seconds;
   both live artifacts regenerated with zero finite-control failures.
 - Latest subgroup-walk/affine-outlier/pair-angle/central-support chain: 31 tests
@@ -1504,21 +1544,54 @@ spectral edges and coherent implementation remain open.
 
 ### Revised Highest-Value Derivations
 
-1. Prove a **center-valued natural mass law for the component nonscalarity
-   defect**. The regular-master reduction identifies source probability as
-   central support of `D_Lambda` and physical common-span mass as its common-
-   space cutdown. Cut away both low-dimensional source labels and low internal
-   carriers; the former alone is insufficient. Then prove a relative-rank
-   bridge or center-valued local law on globally distinct Plancherel blocks.
-   Ordinary scalar moments cannot settle block probability.
-2. Compile the **natural sparse-support component-POVM dilation**. First
-   identify natural `alpha=r/N` and block aspects `beta_e=b_e/N`, then prove or
-   kill Jacobi-type nonzero-edge rigidity on positive central-support mass.
-   If sparse-block support-scalarity survives, compile coherent support-
-   projector SELECT and GPE transport; generic square-root QSVT is relevant
-   only on sectors with an actually small positive edge. A compact coherent
-   support SELECT, not another formal polar decomposition, is the target.
-3. Establish or refute a **physical MRS transcript-POVM separation**. Construct
+1. Prove or refute **positive natural mass of a genuinely noncommutative final
+   component-effect algebra**. The exact diagnostic is
+   `D_com=sum_[e<f][H_e,H_f]^*[H_e,H_f]`, whose central support is the source-
+   block noncommutativity event. Full-rank nonscalarity `D_ns` does not imply
+   this: an orthogonal PVM is the exact counterexample. Either prove positive
+   central and common-span support of `D_com` on high-dimensional globally
+   distinct blocks, or prove asymptotic commutativity and target a coherent
+   simultaneous eigenbasis/conditional-probability compiler. Finite S6
+   noncommutativity uses negligible low-dimensional anchors and is not enough.
+   The original leaves are now known to be noncommuting on a density-one set of
+   balanced pairs with inverse-polynomial norm, but generic transfer through
+   the canonical child frame inverse is now refuted even for distinct
+   high-rank leaves, condition number below three, constant aspect, and a
+   full-rank nonscalarity defect. Do not pursue another condition-number-only
+   transfer. The full-support reciprocal-integer criterion is also invalid
+   after proper sibling common-span compression: every POVM can arise there,
+   and the structured counterfamily matches all currently proved coarse
+   natural analogues while commuting. Directly analyze `D_com` from the
+   compressed regular-master formula on natural source/common mass. If it
+   vanishes, derive the natural simultaneous eigenbasis from representation
+   structure; if it does not, prove positive central and physical support.
+2. Compile or kill the **natural final component-POVM dilation**. Its dimension
+   and center-valued mass gates are solved: on `1/9-o(1)` globally distinct
+   natural mass, `r/D>=19/128-o(1)`, `r/N>=19/520-o(1)`,
+   `b_max/r<=(520/19+o(1))/q`, and the nonscalarity defect has relative rank
+   `1-o(1)` with expected physical support mass at least `19/1152-o(1)`.
+   What remains is coherent square-root/support access. The state-weighted
+   spectral trim is now exact: threshold `tau` loses at most
+   `kappa tau N/r` for `kappa=r||rho||_infinity`. Therefore the next theorem is
+   the actual incoming common-fiber density and either
+   `kappa=poly(n)` or a sharper state-specific weighted-loss bound. A natural
+   edge `delta>=kappa_0 r/N` is another sufficient route, and a direct
+   representation-specific dilation is a third. Derive any edge from the exact regular-master component formula,
+   not Haar/Jacobi analogy. A natural exponentially small edge only kills the
+   untrimmed generic-QSVT route, not every average-success implementation.
+3. Extend the **positive-mass common-span/component-aspect theorem to every
+   relation-bearing multiscale node**, or prove that only the final sibling
+   component measurement is needed by a complete decoder. The final theorem
+   uses exact sibling second moments and does not provide earlier eight-way or
+   binary-node dimensions. Classify those nodes before attempting a global
+   recursive claim.
+4. Compile the **natural sparse-support component-POVM dilation** after items 1--2.
+   If positive-edge rigidity survives, build coherent support-projector SELECT,
+   tightly normalized child pseudoinverse access, and GPE transport. Generic
+   square-root QSVT is relevant only on sectors with an actually small
+   positive edge. A compact coherent support SELECT, not another formal polar
+   decomposition, is the target.
+5. Establish or refute a **physical MRS transcript-POVM separation**. Construct
    the sequential transcript POVM `{E_t}` for a fixed adaptive sieve policy and
    separate the pulled-back PGM effect from
    `{sum_t f_t E_t:0<=f_t<=1}` on positive accepted-state mass. For one fixed
@@ -1528,44 +1601,44 @@ spectral edges and coherent implementation remain open.
    zonotope projection/dual-witness engine once the effects exist, then prove a
    policy-independent obstruction or exhibit an allowed simulation. Do not use
    “globally coherent” as a substitute for this calculation.
-4. Build a **uniform coherent GPE generator and holonomy theorem**. Give a
+6. Build a **uniform coherent GPE generator and holonomy theorem**. Give a
    polynomial reversible SELECT for partial-support transports,
    including path and gauge data, rather than an exponential classical table.
    Then give a polynomial-depth spanning structure for the fundamental
    GPE/Racah cycle operators on positive native PGM mass and prove an
    inverse-polynomial frustration gap, or find a natural near-flat
    counterfamily. Abstract efficient edge transport is insufficient.
-5. Prove a **natural short-metric endpoint theorem** for the recursive normal
+7. Prove a **natural short-metric endpoint theorem** for the recursive normal
    form. Equal metrics give an exact Hadamard, proportional metrics give a
    scalar rotation, and noncommuting metrics require an operator-valued mixer.
    Bound the grading defect on positive native mass or construct a natural
    exponentially imbalanced/noncommuting counterfamily. Pair GPE availability
    alone says nothing about this gap.
-6. Use the **collision-free weighted pair-relation bulk edge** only as input to
-   the recursive resolver in item 2. Relation directions have exactly zero
+8. Use the **collision-free weighted pair-relation bulk edge** only as input to
+   the recursive resolver in item 6. Relation directions have exactly zero
    ideal PGM amplitude. The risk is incomplete removal of emergent relations,
    partial support normalization, or a small holonomy gap, not pair carrier
    dimension. Do not spend more work on low-carrier pair trimming as an access
    strategy; GPE bypasses that barrier directly.
-7. In parallel, prove or falsify an **independent-Plancherel all-depth
+9. In parallel, prove or falsify an **independent-Plancherel all-depth
    noncommon node-frame spectral event** for the mixed-arity schedule with
    per-node failure `o(1/(n!p(n)))`. This remains necessary if the recursive
    GPE/holonomy route still uses frame-root whitening.
-8. Work on the exact subgroup-projection regular master and bound the
+10. Work on the exact subgroup-projection regular master and bound the
    **central support of bad spectral projections**, not ordinary scalar
    spectral mass. Seek a center-valued local law or deterministic no-outlier
    theorem. The interval-uniform scalar route needs
    `Theta((log n!)^2)` degree and is not competitive.
-9. Use the exact word-map normal form only if it can prove item 7 at growing
-   word length or derive a resolvent/gap identity for item 4. More fixed-degree
+11. Use the exact word-map normal form only if it can prove item 9 at growing
+   word length or derive a resolvent/gap identity for item 6. More fixed-degree
    moment screens are cut.
-10. Apply event-level global-distinct conditioning only after an independent
+12. Apply event-level global-distinct conditioning only after an independent
    node/holonomy event is proved. `o(1)` total variation is too weak for the
    required exponentially small union-bound scale.
-11. Once items 1--8 yield a complete polar, compose the physical row-copy,
+13. Once items 1--10 yield a complete polar, compose the physical row-copy,
     GPE/relative polar, and inverse `S_n` QFT. Audit total copies, gates,
     memory, approximation error, and classical dequantization.
-12. Only after the transcript criterion in item 3 and a complete circuit,
+14. Only after the transcript criterion in item 5 and a complete circuit,
     state precisely whether the architecture lies outside MRS and make any
     end-to-end decoder claim.
 
@@ -2964,6 +3037,317 @@ and the holonomy of the residual transport bundle is untested. Nothing here
 bounds the graded form, so endpoint gaps for the relative polar are still
 open, and no circuit follows.
 
+## Natural Final-Root Common Span And Component Aspects
+
+Files:
+
+- `self_dual_wreath_final_root_natural_common_span.py`
+- `research/representation/self_dual_wreath_final_root_natural_common_span.json`
+- `tests/test_self_dual_wreath_final_root_natural_common_span.py`
+
+This theorem removes the dimension/mass half of the final component-POVM
+problem without assuming full support or Haar universality. Let
+`g=|S_n|`, `K=ceil(log2 g)`, use the existing `C=K+2` source pairs, and split
+the final orientation bit. Each child has `q=2^(C-1)` leaves and aspect
+`a=q/g in [2,4)`. On the simultaneous leaf-rank event,
+
+`(1-epsilon)D/g <= rank(E_e) <= (1+epsilon)D/g`
+
+for the full target-carrier dimension `D`. The target factor `d_nu` cancels:
+it multiplies both `D` and each physical leaf block. Do not reintroduce it as
+an extra aspect penalty.
+
+The exact sibling second moment gives
+
+`E[Tr(A^2)+Tr(B^2)]/D = 2[a(1-g^-1)+a^2]`.
+
+If `p_cf` is the all-`2C`-sources-distinct probability, positivity and
+conditional Markov give, for `c>1`, an event of conditioned probability at
+least `1-1/c` on which the left side is at most its expectation times
+`c/p_cf`. This is not a total-variation argument and does not require a
+bounded observable. Cauchy rank and
+`dim(range A intersect range B)>=rank A+rank B-D` then give
+
+`r/D >= 2(1-epsilon)^2 a p_cf/[c(a+1-g^-1)] - 1`.
+
+Since `p_cf=1-o(1)` and the simultaneous rank failure is `o(1)`, choosing
+`epsilon=1/64`, `c=9/8` proves
+
+`Pr_cf[r/D >= 19/128-o(1)] >= 1/9-o(1)`.
+
+On the same positive-mass event, child coefficient dimension `N` and maximum
+leaf block `b_max` obey
+
+`r/N >= 19/520-o(1)`,
+
+`b_max/r <= (520/19+o(1))/q`.
+
+Therefore the coordinate-defect bridge would give a full-rank asymptotic gap
+at least `19/1040-o(1)` if every retained nonzero component eigenvalue obeyed
+the still-unproved relative edge `delta>=(r/N)/2`. More generally a constant
+factor `kappa` gives limiting gap `19 kappa/520`.
+
+**What is now solved:** positive natural source mass, positive physical common-
+span mass, constant final component fiber aspect, and `O(1/q)` block/fiber
+ratio. A full-support theorem is unnecessary for these conclusions.
+
+**What remains open:** the natural positive component eigenvalue edge (or a
+mass-preserving tiny-edge trim), tightly normalized child pseudoinverse access,
+coherent component-support SELECT, earlier relation-bearing node aspects,
+recursive transport, and decoding. The old final-root leverage module is a
+Haar/Gaussian edge theorem only; its schedule claim has been renamed explicitly
+as a surrogate claim. Do not use the new dimension theorem to transfer the
+Haar edge.
+
+Finite artifacts through `S_48` deliberately leave the common-span lower bound
+vacuous because exact global-distinct mass is still tiny there. That does not
+contradict the asymptotic theorem, and those finite rows are not evidence for
+the natural edge.
+
+## Component Defect Has Constant Natural Support Mass
+
+Files:
+
+- `self_dual_wreath_component_defect_rank_mass.py`
+- `research/representation/self_dual_wreath_component_defect_rank_mass.json`
+- `tests/test_self_dual_wreath_component_defect_rank_mass.py`
+
+For a component POVM `{H_e}` on an `r`-dimensional common fiber, define
+
+`h_e=Tr(H_e)/r`,
+
+`D_def=sum_e(H_e-h_e I)^2`.
+
+Because this is a sum of squares,
+
+`ker D_def = intersection_e ker(H_e-h_e I)`.
+
+For every positive-trace component, `h_e>0`, so every vector in the defect
+kernel is a nonzero-eigenvalue vector of `H_e` and lies in `range(H_e)`. Hence
+
+`nullity(D_def) <= min_(h_e>0) rank(H_e)`.
+
+Natural component effects are coordinate compressions, so
+`rank(H_e)<=b_e` and therefore
+
+`rank(D_def)/r >= 1-b_max/r`.
+
+Combining this deterministic bridge with the final-root theorem above proves,
+on globally distinct conditional source mass `1/9-o(1)`,
+
+`rank(D_def)/r >= 1-(520/19+o(1))/q = 1-o(1)`.
+
+Since `r/D_phys>=19/128-o(1)` on the same event, the conditioned expected
+physical defect-support mass is at least
+
+`(1/9)(19/128)-o(1)=19/1152-o(1)`.
+
+This resolves the center-valued source/support-mass problem that the regular-
+master reduction left open. It does so blockwise and rank-theoretically; it
+does not infer source probability from an ordinary scalar defect trace.
+
+**Do not overclaim the result.** Relative rank gives no lower bound on nonzero
+defect or component eigenvalues. Coherent square-root preparation, support
+SELECT, child pseudoinverses, and MRS separation remain open. In particular,
+positive component nonscalarity on constant mass is only a structural input to
+an MRS witness, not separation from every adaptive transcript policy.
+
+## Component Hard Edge Replaced By An Input-Flatness Gate
+
+Files:
+
+- `self_dual_wreath_component_povm_spectral_trim.py`
+- `research/representation/self_dual_wreath_component_povm_spectral_trim.json`
+- `tests/test_self_dual_wreath_component_povm_spectral_trim.py`
+
+For component POVM `{H_e}`, retain
+
+`K_e=H_e 1_[tau,1](H_e)`
+
+and reject the positive remainder
+
+`L=I-sum_e K_e=sum_e H_e 1_(0,tau)(H_e)`.
+
+If `B=sum_e rank(H_e)` and the incoming common-fiber density has flatness
+`kappa=r||rho||_infinity`, then
+
+`Tr L <= tau B`,
+
+`Pr_rho[reject]=Tr(rho L) <= kappa tau B/r`.
+
+The rejection probability is also exactly the mean-square error between the
+ideal component Naimark map `stack_e sqrt(H_e)` and its accepted trimmed map
+`stack_e sqrt(K_e)` on `rho`. Every retained nonzero effect eigenvalue is at
+least `tau`.
+
+At the natural final root, `B<=N` and `r/N>=19/520-o(1)`. Thus
+
+`tau=eta(19/520)/kappa`
+
+gives rejection at most `eta+o(1)`. Polynomial `kappa` produces an inverse-
+polynomial cutoff; exact isotropy gives a constant cutoff. Consequently a
+uniform natural component edge is not necessary for average-state dilation.
+
+The flatness premise is real. An eight-outcome four-dimensional control has a
+one-dimensional sector on which every effect eigenvalue is `1/8`. Trimming at
+`tau=1/5` loses only `1/4` on the maximally mixed input but loses probability
+one on the state concentrated in that sector. Do not use uniform trace loss as
+a worst-case state claim.
+
+**Next high-reasoning object:** derive the actual density entering each child
+component dilation after the endpoint mixer. Prove polynomial flatness, prove a
+state-specific weighted trim directly, or exhibit a natural concentration
+counterfamily. Even a good cutoff still needs coherent effect access,
+thresholding, failure flagging, support SELECT, and recursive error composition.
+
+## Nonscalarity Is Not Noncommutative Effect Algebra
+
+Files:
+
+- `self_dual_wreath_component_effect_algebra_boundary.py`
+- `research/representation/self_dual_wreath_component_effect_algebra_boundary.json`
+- `tests/test_self_dual_wreath_component_effect_algebra_boundary.py`
+
+The newly proved natural support mass concerns
+
+`D_ns=sum_e(H_e-h_eI)^2`.
+
+This detects failure of one global scalar distribution but does not detect
+genuinely nonabelian measurement structure. The exact diagnostic is
+
+`D_com=sum_(e<f)[H_e,H_f]^*[H_e,H_f]`.
+
+`D_com=0` iff every pair of effects commutes, equivalently iff the generated
+finite-dimensional C-star algebra is commutative. The regular-master lift
+preserves this defect blockwise, so its central support is exactly the natural
+source-block noncommutativity event.
+
+The boundary is strict. A four-outcome orthogonal coordinate PVM has full-rank
+`D_ns`, zero `D_com`, and generated algebra dimension four. The trine qubit
+POVM has nonzero full-rank `D_com` and generates all of `M_2`. Therefore the
+constant natural mass and asymptotically full rank proved for `D_ns` cannot be
+reported as natural noncommutative component mass.
+
+This correction changes the top research question. Prove positive central and
+physical support of `D_com` for high-dimensional globally distinct final-root
+blocks, or prove the effects asymptotically commute and exploit a coherently
+accessible simultaneous eigenbasis. The finite S6 noncommuting effect remains
+low-dimensional, asymptotically negligible evidence. Neither branch is yet
+compiled, and no MRS conclusion follows.
+
+## Natural Leaf Algebra Is Robustly Noncommutative
+
+Files:
+
+- `self_dual_wreath_natural_leaf_commutator_mass.py`
+- `research/representation/self_dual_wreath_natural_leaf_commutator_mass.json`
+- `tests/test_self_dual_wreath_natural_leaf_commutator_mass.py`
+
+For a balanced orientation pair, the shared, left-only, and right-only source
+patterns each contain `Theta(K)` independent Plancherel factors. Sellke's
+constant-block covering theorem puts the standard irrep `(n-1,1)` into all
+three pattern products with probability `1-o(1)`. A fixed target in the shared
+pattern does not obstruct this: select a constituent `beta` of
+`(n-1,1) tensor target^*` and use Frobenius reciprocity after the random product
+covers `beta`.
+
+The exact pair-angle theorem then supplies principal cosine `c=1/(n-1)`. On
+that principal plane,
+
+`||[E_a,E_b]|| = c sqrt(1-c^2)`.
+
+Thus every fixed balanced pair has commutator norm at least
+
+`sqrt(1-(n-1)^-2)/(n-1)`
+
+with probability `1-o(1)`. Markov on the average bad-pair indicator upgrades
+this to a density-one fraction of balanced pairs without requiring a Sellke
+convergence rate. Balanced Hamming distances have density one, and global
+distinctness also has probability `1-o(1)`.
+
+This proves positive natural mass and an inverse-polynomial norm witness for
+the **original leaf projector algebra**. It does not close the top component-
+algebra gate. Canonical effects contain frame-inverse congruence and common-
+span compression. The companion whitening no-go proves that frame condition
+number, aspect, relative leaf rank, distinctness, and full-rank nonscalarity do
+not transfer this commutator. Proper common-span compression is moreover
+POVM-universal. The next proof must analyze the natural compressed effects
+directly, not infer them from uncompressed leaf data.
+
+## Generic Leaf-To-Canonical Transfer Is False
+
+Files:
+
+- `self_dual_wreath_leaf_whitening_commutator_no_go.py`
+- `research/representation/self_dual_wreath_leaf_whitening_commutator_no_go.json`
+- `tests/test_self_dual_wreath_leaf_whitening_commutator_no_go.py`
+
+For a full-support projection frame `F=sum_e E_e` and canonical effects
+
+`H_e=F^(-1/2) E_e F^(-1/2)`,
+
+commuting `H_e` have an exact simultaneous-basis characterization. Projection
+idempotence is `H_e F H_e=H_e`. Hence every positive diagonal effect entry is
+`1/F_ii`, every `F_ii` is the positive integer counting effects incident on
+coordinate `i`, and every effect support is an independent set in the graph
+of nonzero off-diagonal entries of `F`. These conditions are also sufficient.
+In particular, every nonzero eigenvalue of a commuting **full-support**
+canonical effect is one of `1,1/2,...,1/q`.
+
+The exact counterfamily partitions an `r=sp` dimensional fiber into `s`
+parts of size `p`, uses all cyclic length-`b` intervals within each part, and
+sets `H_e=(1/b)P_e`. Its leaves `E_e=F^(1/2)H_eF^(1/2)` are pairwise distinct
+rank-`b` projections. Cross-part pairs, whose density tends to one, have
+
+`||[E_e,E_f]||=(b/r)sqrt(1-(b/r)^2)`.
+
+Nevertheless, the canonical effects are diagonal and commute exactly. The
+frame condition number is `(2-1/s)/(1-1/s)<3`, total-rank aspect is `b`,
+relative leaf rank is `b/r`, and
+
+`D_ns=(1/b-1/r)I`.
+
+Thus leaf commutators and full-support frame controls alone are compatible
+with zero canonical commutator defect. This is not a natural wreath
+counterexample. The reciprocal-integer corollary does not apply after the
+proper common-span compression used by the final-root components; the next
+section gives the exact no-go. Conditioning alone is no longer viable.
+
+## Common-Span Compression Is POVM-Universal
+
+Files:
+
+- `self_dual_wreath_common_span_component_universality_no_go.py`
+- `research/representation/self_dual_wreath_common_span_component_universality_no_go.json`
+- `tests/test_self_dual_wreath_common_span_component_universality_no_go.py`
+
+For the actual child formula
+
+`A=X^*F^+X`,
+
+`H_e=A^(-1/2)X^*F^+E_eF^+XA^(-1/2)`,
+
+every finite-dimensional POVM is possible. Given `{H_e}`, its Naimark
+isometry `V psi=direct_sum_e sqrt(H_e)psi` and coordinate projections `E_e`
+give `F=I` and `V^*E_eV=H_e`. A sibling projection onto `Ran(V)` makes that
+space the exact child-span intersection. Therefore neither reciprocal-integer
+spectra nor any other generic POVM invariant follows from compression.
+
+The stronger structured counterfamily combines cyclic rank-two commuting
+effects with the duplicate-free leaf-whitening frame. It has common relative
+rank `1/3`, total leaf-rank/common-rank aspect four, maximum leaf rank ratio
+`4/k`, first-frame condition below four, density-one leaf commutators of
+inverse-linear norm, component edge `1/3`, and
+
+`D_ns=(5/9-1/k)I`.
+
+Its compressed component effects nevertheless commute exactly and have
+spectrum `{0,1/3,2/3}`. This simultaneously refutes the proposed
+non-reciprocal-spectrum shortcut and every inference from the currently proved
+coarse quantities. It does not prove natural wreath effects commute. The only
+valid leading gate is now direct natural analysis of compressed `D_com` or an
+explicit natural simultaneous-eigenbasis construction.
+
 ## Superseded Pre-2026-08-08 Priority List
 
 This list is retained only as provenance. The vertex PSD criterion, simplex
@@ -3052,6 +3436,42 @@ core overlaps matter for the child-span geometry in item 3, not for `M`.
 
 These tasks are useful but should not consume the scarce high-reasoning pass:
 
+0. Wire
+   `EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-NATURAL-COMMON-SPAN` with suggested
+   CLI name `code-wreath-final-root-natural-common-span`, and
+   `EXP-CODE-SELF-DUAL-WREATH-COMPONENT-DEFECT-RANK-MASS` with suggested CLI
+   `code-wreath-component-defect-rank-mass`, and
+   `EXP-CODE-SELF-DUAL-WREATH-COMPONENT-POVM-SPECTRAL-TRIM` with suggested CLI
+   `code-wreath-component-povm-spectral-trim`, and
+   `EXP-CODE-SELF-DUAL-WREATH-COMPONENT-EFFECT-ALGEBRA-BOUNDARY` with suggested
+   CLI `code-wreath-component-effect-algebra-boundary`,
+   `EXP-CODE-SELF-DUAL-WREATH-NATURAL-LEAF-COMMUTATOR-MASS` with suggested CLI
+   `code-wreath-natural-leaf-commutator`, and
+   `EXP-CODE-SELF-DUAL-WREATH-LEAF-WHITENING-COMMUTATOR-NO-GO` with suggested
+   CLI `code-wreath-leaf-whitening-no-go`, and
+   `EXP-CODE-SELF-DUAL-WREATH-COMMON-SPAN-COMPONENT-UNIVERSALITY-NO-GO` with
+   suggested CLI `code-wreath-common-span-component-universality`. Copy the existing
+   theorem-module registry/runner/CLI pattern; do not alter the mathematics.
+   Preserve these gates exactly: positive natural common-span mass and final
+   block/fiber aspects are true; natural positive component edge, coherent
+   pseudoinverse access, component-support SELECT, recursive polar, and speedup
+   are false. The defect-rank module proves center-valued support mass and
+   asymptotically full relative rank, not a nonzero spectral gap. The spectral-
+   trim module proves a conditional state-weighted hard-edge bypass, not
+   natural input flatness or a coherent filter. The effect-algebra boundary
+   keeps natural commutator support mass false; full-rank nonscalarity is not
+   noncommutativity. The leaf theorem proves density-one inverse-polynomial
+   commutators only before whitening. The whitening no-go proves that bounded
+   conditioning, distinct high-rank leaves, constant aspect, and full-rank
+   nonscalarity still do not transfer them; its reciprocal-integer criterion
+   is full-support only. The common-span universality module proves arbitrary
+   POVMs, including commuting non-reciprocal spectra, arise after proper
+   compression and gives a stronger all-coarse-data counterfamily. It does not
+   prove natural wreath commutativity. Keep direct natural compressed
+   commutator mass, simultaneous-basis/compiler, MRS, decoder, and speedup
+   claims false. Add clean dispatch tests, regenerate downstream registry
+   workflows, and include the artifact in the progress summary without calling
+   the finite `S_48` rows evidence for the asymptotic edge.
 1. Re-run and record the standard downstream workflows after any new module:
    `dequantize`, `proofs`, `query-models`, `frontiers`, `conjectures`,
    `mutate`, and `validate`.
@@ -3294,6 +3714,13 @@ python self_dual_wreath_native_frame_access_boundary.py
 python self_dual_wreath_pair_transport_native_mass_boundary.py
 python self_dual_wreath_gpe_pair_polar_transport.py
 python self_dual_wreath_gpe_holonomy_resolver_reduction.py
+python self_dual_wreath_final_root_natural_common_span.py
+python self_dual_wreath_component_defect_rank_mass.py
+python self_dual_wreath_component_povm_spectral_trim.py
+python self_dual_wreath_component_effect_algebra_boundary.py
+python self_dual_wreath_natural_leaf_commutator_mass.py
+python self_dual_wreath_leaf_whitening_commutator_no_go.py
+python self_dual_wreath_common_span_component_universality_no_go.py
 python qsearch.py code-wreath-subpovm-moments
 python qsearch.py validate
 ```

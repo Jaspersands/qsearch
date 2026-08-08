@@ -1296,6 +1296,83 @@
   {
     "candidate_id": "CODE-COSET-COLLECTIVE",
     "dependencies": [
+      "self_dual_wreath_affine_relation_weighted_bulk.py"
+    ],
+    "falsifiers": [
+      "Raw support overlap is not the correct spectral burden statistic.",
+      "Non-rich orientation triples do not restore a macroscopic weighted burden.",
+      "A global first-moment argument suffices for bulk rank but not for an untrimmed edge.",
+      "Signal-free relation trimming does not by itself compile the full synthesis cokernel projector."
+    ],
+    "hypothesis": "Proved that exact carrier-correlation weights overcome the divergent affine support pressure: the complete collision-free pair-relation Gram has only a vanishing coefficient-rank outlier sector, whose relation image is exactly signal-free.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-AFFINE-RELATION-WEIGHTED-BULK",
+    "metrics": [
+      "exact_signature_support_star_burden_theorem_count",
+      "signature_support_control_count",
+      "signature_support_control_failure_count",
+      "orientation_signature_count_control_count",
+      "orientation_signature_count_failure_count",
+      "finite_scaling_row_count",
+      "finite_collision_free_bulk_certified_row_count",
+      "finite_collision_free_bulk_onset_n",
+      "tail_n",
+      "tail_log2_conditioned_burden_to_capacity_ratio",
+      "tail_conditional_markov_failure_upper_bound",
+      "tail_spectral_outlier_rank_fraction_upper_bound",
+      "global_coefficient_bulk_edge_theorem_count",
+      "relation_trim_zero_pgm_state_loss_theorem_count",
+      "residual_cokernel_output_error_theorem_count",
+      "untrimmed_relation_edge_theorem_count",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-wreath-affine-relation-weighted-bulk."
+    ],
+    "positive_signal": "Proved that exact carrier-correlation weights overcome the divergent affine support pressure: the complete collision-free pair-relation Gram has only a vanishing coefficient-rank outlier sector, whose relation image is exactly signal-free.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Exp Code Self Dual Wreath Affine Relation Weighted Bulk"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_affine_star_channel_gap.py"
+    ],
+    "falsifiers": [
+      "Complete affine closure is stronger than necessary; affine stars are already uniformly safe.",
+      "Vertex affinity without edge-graph classification is insufficient.",
+      "The remaining asymptotic question is whether natural channels stay as separate affine stars or merge into a dangerous two-sided graph."
+    ],
+    "hypothesis": "Proved a width-independent graded gap above one quarter for affine-star carrier channels, exactly explaining every extracted W6 residual channel.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-AFFINE-STAR-CHANNEL-GAP",
+    "metrics": [
+      "affine_star_exact_defect_theorem_count",
+      "affine_star_uniform_quarter_gap_theorem_count",
+      "finite_affine_star_control_count",
+      "finite_affine_star_control_failure_count",
+      "finite_uniform_bound_failure_count",
+      "natural_width_scaling_row_count",
+      "natural_width_quarter_gap_failure_count",
+      "w6_carrier_nine_defect",
+      "w6_carrier_five_defect",
+      "tail_n",
+      "tail_copy_count",
+      "tail_grading_defect_norm",
+      "tail_endpoint_gap",
+      "natural_residual_channel_affine_star_classification_count",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-wreath-affine-star-channel-gap."
+    ],
+    "positive_signal": "Proved a width-independent graded gap above one quarter for affine-star carrier channels, exactly explaining every extracted W6 residual channel.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Exp Code Self Dual Wreath Affine Star Channel Gap"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
       "self_dual_wreath_all_unequal_conditioned_kernel.py",
       "self_dual_wreath_coupled_word_walk_gap.py",
       "self_dual_wreath_natural_unequal_dominance.py",
@@ -1410,6 +1487,42 @@
   {
     "candidate_id": "CODE-COSET-COLLECTIVE",
     "dependencies": [
+      "self_dual_wreath_augmented_h0_dimension_obstruction.py"
+    ],
+    "falsifiers": [
+      "Dense pair-core graph support does not imply pair-generation of the synthesis kernel.",
+      "The direct common-core Cech complex is asymptotically incomplete at H0.",
+      "The graded pair-relation endpoint gap cannot by itself implement the full orientation polar."
+    ],
+    "hypothesis": "Proved that pair-common relations cannot exhaust the natural leaf synthesis kernel: augmented H0 survives at minimal copies and is macroscopic with one extra copy, requiring recursive span relations.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-AUGMENTED-H0-DIMENSION-OBSTRUCTION",
+    "metrics": [
+      "exact_pair_budget_expectation_theorem_count",
+      "expectation_control_count",
+      "expectation_control_failure_count",
+      "two_adic_minimal_copy_gap_theorem_count",
+      "asymptotic_minimal_copy_augmented_h0_obstruction_count",
+      "asymptotic_extra_copy_macroscopic_h0_obstruction_count",
+      "scaling_row_count",
+      "finite_conditioned_certified_row_count",
+      "tail_minimal_h0_relative_lower_bound",
+      "tail_minimal_log2_conditioned_failure_upper_bound",
+      "tail_extra_h0_relative_lower_bound",
+      "tail_extra_log2_conditioned_failure_upper_bound",
+      "hierarchical_span_dependency_resolver_count",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-wreath-augmented-h0-dimension-obstruction."
+    ],
+    "positive_signal": "Proved that pair-common relations cannot exhaust the natural leaf synthesis kernel: augmented H0 survives at minimal copies and is macroscopic with one extra copy, requiring recursive span relations.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Exp Code Self Dual Wreath Augmented H0 Dimension Obstruction"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
       "self_dual_wreath_block_common_core_quotient.py"
     ],
     "falsifiers": [
@@ -1493,6 +1606,42 @@
   {
     "candidate_id": "CODE-COSET-COLLECTIVE",
     "dependencies": [
+      "self_dual_wreath_canonical_coefficient_affine.py"
+    ],
+    "falsifiers": [
+      "Affine carrier-core exhaustion is the wrong necessary condition; canonical coefficient affinity survives emergent intersections.",
+      "Balanced shorted metrics do not force affine coefficient support.",
+      "External label distinctness does not by itself prove internal multiplicity-free recoupling; S6 already supplies a counterexample."
+    ],
+    "hypothesis": "Moved the affine mechanism into minimum-norm coefficient space, where W3/W5 have scalar certificates but a globally distinct S6 affine node forces matrix-valued partial supports.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-CANONICAL-COEFFICIENT-AFFINE",
+    "metrics": [
+      "canonical_minimum_norm_identity_theorem_count",
+      "finite_control_count",
+      "finite_validation_failure_count",
+      "label_simple_control_count",
+      "label_simple_fractional_merge_count",
+      "label_simple_coefficient_affine_certificate_failure_count",
+      "repeated_label_coefficient_affine_failure_count",
+      "repeated_label_nonscalar_or_unequal_metric_count",
+      "all_n_coefficient_affine_theorem_count",
+      "natural_collision_free_scalar_affine_falsifier_count",
+      "explicit_recoupling_synthesis_map_count",
+      "coherent_coefficient_transfer_count",
+      "hierarchical_orientation_polar_sampler_count",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-wreath-canonical-coefficient-affine."
+    ],
+    "positive_signal": "Moved the affine mechanism into minimum-norm coefficient space, where W3/W5 have scalar certificates but a globally distinct S6 affine node forces matrix-valued partial supports.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Exp Code Self Dual Wreath Canonical Coefficient Affine"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
       "self_dual_wreath_carrier_orbit_growth.py",
       "self_dual_wreath_subset_carrier_algebra.py",
       "Burnside lemma",
@@ -1531,6 +1680,81 @@
     "protocol": "Reduce d bridge labels under diagonal left-right wreath conjugation to d-1 relative permutations under simultaneous S_n conjugation; derive the Burnside count sum z_lambda^(d-2); bound the extra wreath swap by a factor of two; compare hidden-label orbit growth with register-subset intersection profiles at the information-threshold copy count; and verify exact finite character partitions.",
     "status": "planned",
     "title": "Wreath carrier hidden-label orbit-growth theorem"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_cayley_fiber_reduction.py"
+    ],
+    "falsifiers": [
+      "Scalar coefficient effects without XOR translation invariance do not force half balance.",
+      "The finite half-integral spectrum is explained by an abelian mask Gram, not by reducing carrier cores.",
+      "An abelian mask normal form does not synthesize the physical representation fibers.",
+      "Low-dimensional carriers in fixed W3/W5 controls do not establish low-dimensional carrier support asymptotically."
+    ],
+    "hypothesis": "Proved that scalar XOR-translation-invariant coefficient fibers reduce every affine merge to Walsh character modes; all label-simple W3/W5 overlaps pass and use only carrier dimensions one or two, while repeated and scalar non-Cayley controls fail.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-CAYLEY-FIBER-REDUCTION",
+    "metrics": [
+      "scalar_cayley_walsh_theorem_count",
+      "generic_cayley_control_count",
+      "generic_noncayley_falsifier_count",
+      "wreath_control_count",
+      "label_simple_fractional_merge_count",
+      "label_simple_scalar_cayley_failure_count",
+      "label_simple_walsh_prediction_failure_count",
+      "repeated_label_scalar_cayley_failure_count",
+      "maximum_finite_candidate_pair_carrier_dimension",
+      "all_n_scalar_cayley_fiber_theorem_count",
+      "efficient_cayley_kernel_evaluator_count",
+      "polynomial_active_carrier_bound_count",
+      "coherent_physical_fiber_synthesis_count",
+      "hierarchical_orientation_polar_sampler_count",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-wreath-cayley-fiber-reduction."
+    ],
+    "positive_signal": "Proved that scalar XOR-translation-invariant coefficient fibers reduce every affine merge to Walsh character modes; all label-simple W3/W5 overlaps pass and use only carrier dimensions one or two, while repeated and scalar non-Cayley controls fail.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Exp Code Self Dual Wreath Cayley Fiber Reduction"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_central_support_rank_bridge.py"
+    ],
+    "falsifiers": [
+      "Global diagonal covariance does not remove the central-support problem.",
+      "Finite collision-free relative-rank data is not an asymptotic rank theorem.",
+      "Without polynomial bad-projection rank, scalar spectral mass still need not control bad source blocks."
+    ],
+    "hypothesis": "Quantified the decisive polynomial relative-rank bypass and proved that global diagonal symmetry cannot establish its premise.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-CENTRAL-SUPPORT-RANK-BRIDGE",
+    "metrics": [
+      "relative_rank_central_support_bridge_theorem_count",
+      "polynomial_rank_degree_reduction_theorem_count",
+      "global_covariance_symmetry_no_go_theorem_count",
+      "rank_bridge_control_count",
+      "covariance_control_count",
+      "finite_control_failure_count",
+      "conditional_scaling_row_count",
+      "tail_n",
+      "tail_group_rank_exponent",
+      "tail_conditional_upper_edge_degree",
+      "tail_conditional_lower_edge_degree",
+      "natural_polynomial_relative_rank_theorem_count",
+      "center_valued_local_law_theorem_count",
+      "natural_all_depth_frame_edge_theorem_count",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-wreath-central-support-rank-bridge."
+    ],
+    "positive_signal": "Quantified the decisive polynomial relative-rank bypass and proved that global diagonal symmetry cannot establish its premise.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Exp Code Self Dual Wreath Central Support Rank Bridge"
   },
   {
     "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -1646,6 +1870,77 @@
     "protocol": "Evaluate cluster locality lower bounds for disjoint product isotypic filters.",
     "status": "planned",
     "title": "Cluster locality no-go analysis"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_coherent_fourier_decoder.py"
+    ],
+    "falsifiers": [
+      "Independent sector decoding is unnecessary in the ideal case and impossible at constant success after dephasing; coherent matrix-coefficient synthesis is the correct target.",
+      "An n!-outcome table is not intrinsically required: inverse S_n Fourier synthesis outputs the permutation in O(n log n) bits.",
+      "Plancherel sector weights alone are insufficient; row-column Schmidt flatness enters multiplicatively in the exact amplitude.",
+      "No speedup follows until physical carrier extraction, flattening, reweighting, and classical separation are proved."
+    ],
+    "hypothesis": "Derived and validated the exact cross-sector Fourier decoding criterion, reducing hidden-permutation output to coherent sector reweighting and row-multiplicity entanglement normalization before an efficient inverse S_n QFT.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-COHERENT-FOURIER-DECODER",
+    "metrics": [
+      "matrix_coefficient_fourier_basis_theorem_count",
+      "coherent_fourier_success_formula_theorem_count",
+      "perfect_plancherel_maximal_entanglement_decoder_theorem_count",
+      "finite_control_count",
+      "finite_control_failure_count",
+      "ideal_control_success_probability",
+      "minimum_mismatch_control_success_probability",
+      "scaling_record_count",
+      "efficient_inverse_symmetric_group_qft_count",
+      "physical_sector_weight_match_theorem_count",
+      "coherent_dual_row_extraction_count",
+      "sector_schmidt_flattening_count",
+      "polynomial_sector_reweighting_count",
+      "end_to_end_fourier_decoder_count",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-wreath-coherent-fourier-decoder."
+    ],
+    "positive_signal": "Derived and validated the exact cross-sector Fourier decoding criterion, reducing hidden-permutation output to coherent sector reweighting and row-multiplicity entanglement normalization before an efficient inverse S_n QFT.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Exp Code Self Dual Wreath Coherent Fourier Decoder"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_collision_free_event_transfer.py"
+    ],
+    "falsifiers": [
+      "Injective observable contraction is not mandatory for conditioning a pre-proved good event.",
+      "Per-node o(1) tails are insufficient across an exponential orientation hierarchy.",
+      "Finite collision-free mass cannot be replaced by its asymptotic limit in numerical rows."
+    ],
+    "hypothesis": "Replaced mandatory injective moment transfer by an exact event-level conditioning route and quantified the full hierarchy union cost.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-COLLISION-FREE-EVENT-TRANSFER",
+    "metrics": [
+      "event_level_conditioning_transfer_theorem_count",
+      "hierarchy_union_bound_theorem_count",
+      "generic_control_count",
+      "generic_control_failure_count",
+      "hierarchy_scaling_row_count",
+      "tail_n",
+      "tail_log2_global_distinct_probability",
+      "tail_log2_required_per_node_failure",
+      "injective_moment_transfer_required_for_event_conditioning",
+      "independent_uniform_spectral_event_theorem_count",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-wreath-collision-free-event-transfer."
+    ],
+    "positive_signal": "Replaced mandatory injective moment transfer by an exact event-level conditioning route and quantified the full hierarchy union cost.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Exp Code Self Dual Wreath Collision Free Event Transfer"
   },
   {
     "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -1785,6 +2080,83 @@
   {
     "candidate_id": "CODE-COSET-COLLECTIVE",
     "dependencies": [
+      "self_dual_wreath_common_core_polar_bypass.py"
+    ],
+    "falsifiers": [
+      "Do not use the exponential block-common-core eigenvalue as a lower bound on aligned hierarchical-polar cost.",
+      "Do not carry local rejection-filter incidence no-gos over to a sampler that retains common cores and normalizes relative counts.",
+      "Do not claim a full bypass until quotient-coset intersections and all non-block overlap channels are classified."
+    ],
+    "hypothesis": "Proved that every exponential block-common-core witness is half-balanced at each aligned polar-tree level. This defeats the recurring-core argument as a no-go for hierarchical sampling; quotient-coset intersections are now the next obstruction target.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-COMMON-CORE-POLAR-BYPASS",
+    "metrics": [
+      "balanced_common_core_polar_bypass_theorem_count",
+      "finite_noncommuting_common_core_control_count",
+      "finite_validation_failure_count",
+      "maximum_finite_tree_depth",
+      "maximum_common_core_half_balance_residual",
+      "block_core_scaling_record_count",
+      "block_core_witness_bypassed_count",
+      "tail_n",
+      "tail_block_count",
+      "tail_common_orientation_family_size",
+      "tail_projector_sum_spike_lower_bound",
+      "tail_balanced_polar_tree_depth",
+      "quotient_coset_classification_theorem_count",
+      "global_nonorthogonal_sampler_count",
+      "polynomial_hidden_permutation_decoder_count",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-wreath-common-core-polar-bypass."
+    ],
+    "positive_signal": "Proved that every exponential block-common-core witness is half-balanced at each aligned polar-tree level. This defeats the recurring-core argument as a no-go for hierarchical sampling; quotient-coset intersections are now the next obstruction target.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Exp Code Self Dual Wreath Common Core Polar Bypass"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_common_span_component_universality_no_go.py"
+    ],
+    "falsifiers": [
+      "Non-reciprocal spectra are not commutator witnesses after common-span compression.",
+      "A constant component edge and positive common-span rank do not transfer uncompressed leaf noncommutativity.",
+      "The exact full-support integer-cover theorem cannot be applied directly to final-root compressed effects.",
+      "Only a direct natural compressed-effect theorem or compiler can advance the component-algebra gate."
+    ],
+    "hypothesis": "Proved POVM universality of common-span compression and built a structured commuting counterfamily matching every coarse natural leaf/frame/component property currently established.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-COMMON-SPAN-COMPONENT-UNIVERSALITY-NO-GO",
+    "metrics": [
+      "common_span_povm_universality_theorem_count",
+      "full_support_reciprocal_spectrum_transfer_falsifier_count",
+      "all_coarse_data_commuting_component_counterfamily_count",
+      "naimark_control_count",
+      "naimark_control_failure_count",
+      "structured_control_count",
+      "structured_control_failure_count",
+      "tail_common_span_dimension",
+      "tail_common_span_relative_rank",
+      "tail_frame_condition_number",
+      "tail_cross_part_leaf_pair_fraction",
+      "tail_cross_leaf_commutator_norm",
+      "tail_component_positive_edge",
+      "tail_nonscalarity_defect_edge",
+      "natural_compressed_component_commutator_mass_theorem_count",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-wreath-common-span-component-universality-no-go."
+    ],
+    "positive_signal": "Proved POVM universality of common-span compression and built a structured commuting counterfamily matching every coarse natural leaf/frame/component property currently established.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Exp Code Self Dual Wreath Common Span Component Universality No Go"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
       "self_dual_wreath_commutant_transfer_audit.py",
       "self_dual_wreath_harmonic_carrier_schema.py",
       "coset_commutant_gap_certificate.py",
@@ -1822,6 +2194,44 @@
     "protocol": "Rebuild the symbolic commutant-gap certificate; verify multiplicity two for the equal-source lambda=(n-2,2), target=(n-3,2,1) sector; enumerate all equal-source Kronecker sectors through n=12; compare the four resolved matrix coordinates with exact simultaneous-conjugacy dimensions; extend the 4/n! coverage upper bound through n=64; and audit source routing, cross-source carrier matrix elements, frame invariance, and decoder obligations separately.",
     "status": "planned",
     "title": "Wreath restricted commutant capability transfer"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_complete_s6_vertex_channel_audit.py"
+    ],
+    "falsifiers": [
+      "The three previously selected W6 controls were insufficient evidence; the complete finite boundary is now explicit.",
+      "No larger, overlapping, noncommuting, or negative-holonomy channel occurs in the stated low-dimensional S6 portfolio.",
+      "The result does not exclude such channels once higher multiplicity source irreps or larger n are admitted."
+    ],
+    "hypothesis": "Exhausted 1,155 globally distinct S6 portfolios: all sixteen nonorthogonal high-degree vertex channels are positive flat affine triangles.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-COMPLETE-S6-VERTEX-CHANNEL-AUDIT",
+    "metrics": [
+      "source_partition_count",
+      "source_matching_count",
+      "target_count",
+      "physical_portfolio_count",
+      "degree_at_least_three_vertex_count",
+      "nonorthogonal_vertex_count",
+      "nontrivial_component_count",
+      "three_edge_clique_component_count",
+      "affine_plane_component_count",
+      "flat_groupoid_failure_count",
+      "maximum_partial_isometry_residual",
+      "maximum_support_commutator_residual",
+      "maximum_path_residual",
+      "maximum_holonomy_residual",
+      "all_n_affine_triangle_channel_theorem_count",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-wreath-complete-s6-vertex-channel-audit."
+    ],
+    "positive_signal": "Exhausted 1,155 globally distinct S6 portfolios: all sixteen nonorthogonal high-degree vertex channels are positive flat affine triangles.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Exp Code Self Dual Wreath Complete S6 Vertex Channel Audit"
   },
   {
     "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -1867,6 +2277,219 @@
   {
     "candidate_id": "CODE-COSET-COLLECTIVE",
     "dependencies": [
+      "self_dual_wreath_component_defect_gap_bridge.py"
+    ],
+    "falsifiers": [
+      "Many tiny-trace outcomes do not dilute the aggregate defect when their positive edges stay bounded.",
+      "Coordinate block rank accounting removes the need to concentrate every component trace separately.",
+      "An average edge or small trace is not a substitute for a uniform retained positive edge.",
+      "The Haar/Jacobi prediction is not a natural Plancherel/Racah edge theorem.",
+      "A defect gap is a mass-analysis bridge, not a component-POVM circuit."
+    ],
+    "hypothesis": "Proved that a uniform positive component edge and coordinate-block rank accounting convert the entire many-outcome POVM into a full-rank aggregate nonscalarity defect without assuming trace balance, linking the Jacobi edge target directly to the regular-master central-support problem.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-COMPONENT-DEFECT-GAP-BRIDGE",
+    "metrics": [
+      "positive_edge_to_full_rank_defect_bridge_theorem_count",
+      "balanced_trace_defect_gap_corollary_count",
+      "coordinate_block_trace_free_defect_gap_corollary_count",
+      "finite_control_count",
+      "finite_control_failure_count",
+      "positive_gap_control_count",
+      "failed_premise_control_count",
+      "jacobi_scaling_record_count",
+      "tail_minimum_predicted_defect_gap",
+      "tail_minimum_coordinate_cauchy_defect_gap",
+      "natural_positive_component_edge_theorem_count",
+      "natural_block_to_fiber_aspect_theorem_count",
+      "natural_component_defect_central_support_bound_count",
+      "recursive_orientation_polar_sampler_count",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-wreath-component-defect-gap-bridge."
+    ],
+    "positive_signal": "Proved that a uniform positive component edge and coordinate-block rank accounting convert the entire many-outcome POVM into a full-rank aggregate nonscalarity defect without assuming trace balance, linking the Jacobi edge target directly to the regular-master central-support problem.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Exp Code Self Dual Wreath Component Defect Gap Bridge"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_component_defect_rank_mass.py"
+    ],
+    "falsifiers": [
+      "Ordinary scalar defect trace is not needed to control center-valued defect support.",
+      "A natural positive component edge is not required to prove positive nonscalarity source or physical mass.",
+      "Asymptotically full defect rank does not imply a usable spectral gap.",
+      "Positive-mass component nonscalarity is not itself an MRS lower-bound separation."
+    ],
+    "hypothesis": "Proved that final-root component nonscalarity occupies asymptotically full common-fiber rank on constant natural source mass, without a positive component-edge premise.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-COMPONENT-DEFECT-RANK-MASS",
+    "metrics": [
+      "component_defect_relative_rank_bridge_theorem_count",
+      "finite_control_count",
+      "finite_control_failure_count",
+      "finite_nontrivial_defect_kernel_control_count",
+      "natural_component_defect_positive_source_mass_theorem_count",
+      "natural_component_defect_asymptotically_full_common_rank_theorem_count",
+      "asymptotic_conditioned_source_event_mass_lower_bound",
+      "asymptotic_conditioned_physical_defect_support_mass_lower_bound",
+      "tail_component_count",
+      "tail_defect_relative_common_rank_lower_bound",
+      "natural_positive_component_edge_theorem_count",
+      "physical_mrs_separation_theorem_count",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-wreath-component-defect-rank-mass."
+    ],
+    "positive_signal": "Proved that final-root component nonscalarity occupies asymptotically full common-fiber rank on constant natural source mass, without a positive component-edge premise.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Exp Code Self Dual Wreath Component Defect Rank Mass"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_component_effect_algebra_boundary.py"
+    ],
+    "falsifiers": [
+      "Full-rank component nonscalarity does not imply a noncommutative effect algebra.",
+      "Positive natural support mass of D_ns is not positive natural support mass of commutators.",
+      "Finite low-dimensional noncommutativity is not an asymptotic natural-mass theorem.",
+      "A commuting effect algebra may be algorithmically favorable if its joint eigenbasis is coherently accessible."
+    ],
+    "hypothesis": "Separated full-rank component nonscalarity from genuinely noncommutative effect-algebra structure and identified the exact regular-master commutator-support target.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-COMPONENT-EFFECT-ALGEBRA-BOUNDARY",
+    "metrics": [
+      "exact_component_commutator_criterion_theorem_count",
+      "finite_control_count",
+      "finite_control_failure_count",
+      "full_rank_nonscalarity_commuting_counterexample_count",
+      "noncommutative_full_matrix_algebra_control_count",
+      "natural_nonscalarity_positive_mass_theorem_input_count",
+      "natural_noncommutative_effect_algebra_source_mass_theorem_count",
+      "natural_physical_noncommutative_support_mass_theorem_count",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-wreath-component-effect-algebra-boundary."
+    ],
+    "positive_signal": "Separated full-rank component nonscalarity from genuinely noncommutative effect-algebra structure and identified the exact regular-master commutator-support target.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Exp Code Self Dual Wreath Component Effect Algebra Boundary"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_component_povm_regular_master_reduction.py"
+    ],
+    "falsifiers": [
+      "Low-dimensional source exclusion does not exclude low-dimensional internal carriers.",
+      "Scalar defect moments do not control the probability of a bad source block without relative-rank information.",
+      "The regular-master reduction is an analysis tool, not a component-POVM circuit.",
+      "The finite repeated-source control is not collision-free asymptotic evidence."
+    ],
+    "hypothesis": "Lifted canonical matrix component effects to the regular master and separated source probability, physical common-span mass, and ordinary defect trace, exposing a center-valued local law as the next natural theorem.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-COMPONENT-POVM-REGULAR-MASTER-REDUCTION",
+    "metrics": [
+      "canonical_full_domain_component_effect_theorem_count",
+      "regular_master_component_defect_reduction_theorem_count",
+      "central_support_mass_observable_theorem_count",
+      "finite_source_block_count",
+      "finite_matrix_effect_source_block_count",
+      "finite_globally_distinct_matrix_effect_source_block_count",
+      "finite_matrix_source_to_common_mass_ratio",
+      "finite_matrix_common_to_scalar_defect_mass_ratio",
+      "scalar_moment_dilution_control_count",
+      "high_dimension_central_support_bound_count",
+      "natural_component_support_select_circuit_count",
+      "recursive_orientation_polar_sampler_count",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-wreath-component-povm-regular-master-reduction."
+    ],
+    "positive_signal": "Lifted canonical matrix component effects to the regular master and separated source probability, physical common-span mass, and ordinary defect trace, exposing a center-valued local law as the next natural theorem.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Exp Code Self Dual Wreath Component Povm Regular Master Reduction"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_component_povm_sparse_support_boundary.py"
+    ],
+    "falsifiers": [
+      "Small component trace is not evidence for an exponentially small positive effect edge.",
+      "Many outcomes do not by themselves activate the generic square-root polynomial lower bound.",
+      "The Haar sparse-support law is a benchmark, not a natural wreath-frame theorem.",
+      "Asymptotic support-scalarity would not remove the coherent support-SELECT and holonomy problems."
+    ],
+    "hypothesis": "Proved that rare component outcomes need not have small positive effect eigenvalues and identified sparse support-projector SELECT, not generic square-root approximation, as the relevant Haar-model compiler bottleneck.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-COMPONENT-POVM-SPARSE-SUPPORT-BOUNDARY",
+    "metrics": [
+      "exact_component_projection_geometry_theorem_count",
+      "finite_control_count",
+      "finite_control_failure_count",
+      "sparse_outcome_jacobi_limit_theorem_count",
+      "sparse_scaling_record_count",
+      "tail_minimum_positive_edge",
+      "tail_maximum_support_rank_fraction",
+      "tail_maximum_edge_deviation_from_fiber_aspect",
+      "natural_component_jacobi_universality_theorem_count",
+      "natural_component_support_select_circuit_count",
+      "recursive_orientation_polar_sampler_count",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-wreath-component-povm-sparse-support-boundary."
+    ],
+    "positive_signal": "Proved that rare component outcomes need not have small positive effect eigenvalues and identified sparse support-projector SELECT, not generic square-root approximation, as the relevant Haar-model compiler bottleneck.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Exp Code Self Dual Wreath Component Povm Sparse Support Boundary"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_component_povm_spectral_trim.py"
+    ],
+    "falsifiers": [
+      "A natural uniform positive component edge is not necessary for average-state component dilation.",
+      "Uniform-input trace retention does not imply worst-case state retention.",
+      "Natural constant component aspect relocates the gate to incoming-state flatness and coherent effect access.",
+      "Inverse-polynomial spectral threshold does not itself compile component support SELECT."
+    ],
+    "hypothesis": "Proved a state-weighted spectral sub-POVM trim whose cutoff is inverse polynomial under polynomial natural input flatness, and exhibited a concentrated-state countercontrol.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-COMPONENT-POVM-SPECTRAL-TRIM",
+    "metrics": [
+      "state_weighted_component_spectral_trim_theorem_count",
+      "finite_control_count",
+      "finite_control_failure_count",
+      "concentrated_state_unit_failure_countercontrol_count",
+      "natural_final_fiber_aspect_input_count",
+      "conditional_inverse_polynomial_trim_scaling_row_count",
+      "tail_n",
+      "tail_retained_component_threshold",
+      "tail_inverse_threshold_cost",
+      "natural_incoming_state_flatness_theorem_count",
+      "coherent_component_threshold_filter_count",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-wreath-component-povm-spectral-trim."
+    ],
+    "positive_signal": "Proved a state-weighted spectral sub-POVM trim whose cutoff is inverse polynomial under polynomial natural input flatness, and exhibited a concentrated-state countercontrol.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Exp Code Self Dual Wreath Component Povm Spectral Trim"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
       "self_dual_wreath_coupled_word_walk_gap.py",
       "self_dual_wreath_natural_moment_word_map.py",
       "self_dual_wreath_natural_unequal_dominance.py",
@@ -1904,6 +2527,183 @@
     "protocol": "Represent the kth word statistic as an endpoint observable of M_k=E_c tensor_i(I+R_c)/2 on the bridge-generated subgroup, use projection domination to prove a uniform 1/4 gap, match finite exact word moments, and compare the resulting root bound with the second-moment eigenvalue scale.",
     "status": "planned",
     "title": "Shared-generator coupled wreath word-walk gap"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_covariant_pgm_factorization.py"
+    ],
+    "falsifiers": [
+      "The sqrt(n!) dimension charge in the generic Petz implementation is not intrinsic to the group-covariant PGM.",
+      "The physical mixed decoder is a dual-row-indexed tight-frame isometry, not a single pure Fourier state.",
+      "After exact covariance compression, multiplicity inversion is the sole nontrivial state-dependent linear-algebra operation."
+    ],
+    "hypothesis": "Derived and validated the exact Fourier-domain PGM Stinespring factorization, cancelling explicit factorial environment normalization.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-COVARIANT-PGM-FACTORIZATION",
+    "metrics": [
+      "covariance_compressed_pgm_factorization_theorem_count",
+      "group_size_normalization_cancellation_theorem_count",
+      "projector_rank_normalization_cancellation_theorem_count",
+      "finite_control_count",
+      "finite_control_failure_count",
+      "scaling_record_count",
+      "maximum_removed_generic_sqrt_group_log2_charge",
+      "controlled_multiplicity_inverse_block_encoding_count",
+      "polynomial_covariant_pgm_circuit_count",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-wreath-covariant-pgm-factorization."
+    ],
+    "positive_signal": "Derived and validated the exact Fourier-domain PGM Stinespring factorization, cancelling explicit factorial environment normalization.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Exp Code Self Dual Wreath Covariant Pgm Factorization"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_coverage_welch_pressure.py"
+    ],
+    "falsifiers": [
+      "Distinct-plane overlaps cannot remain factorially weak once their total rank demand exceeds pair-core capacity.",
+      "Neither large support demand nor large raw overlap certifies a coverage edge.",
+      "The next natural calculation must be a four-orientation projector second moment and report excess above the Welch floor."
+    ],
+    "hypothesis": "Proved that divergent support pressure forces divergent aggregate inter-plane overlap and isolated the normalized excess fusion potential as the exact natural coverage statistic.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-COVERAGE-WELCH-PRESSURE",
+    "metrics": [
+      "finite_control_count",
+      "finite_control_failure_count",
+      "tight_control_excess",
+      "aligned_control_excess",
+      "tail_n",
+      "tail_forced_overlap_over_trace_log2_lower_bound",
+      "fusion_welch_pressure_theorem_count",
+      "coverage_tail_criterion_theorem_count",
+      "natural_tight_coverage_theorem_count",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-wreath-coverage-welch-pressure."
+    ],
+    "positive_signal": "Proved that divergent support pressure forces divergent aggregate inter-plane overlap and isolated the normalized excess fusion potential as the exact natural coverage statistic.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Exp Code Self Dual Wreath Coverage Welch Pressure"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_cross_dependency_neutrality.py"
+    ],
+    "falsifiers": [
+      "Equal child dimensions do not imply equal shorted metrics.",
+      "A child-range intersection is not characterized by the raw cross-kernel until internal synthesis kernels are quotiented out.",
+      "The kernel formulation is not a circuit without a sparse representation-theoretic dependency decomposition."
+    ],
+    "hypothesis": "Replaced compressed frame inversion by an exact cross-synthesis dependency quotient; all label-simple finite dependencies are neutral, while repeated labels and a generic equal-dimension control exhibit nonneutral defects.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-CROSS-DEPENDENCY-NEUTRALITY",
+    "metrics": [
+      "exact_cross_dependency_theorem_count",
+      "generic_control_count",
+      "wreath_control_count",
+      "finite_cross_dependency_record_count",
+      "finite_theorem_validation_failure_count",
+      "label_simple_nonneutral_dependency_count",
+      "repeated_label_nonneutral_dependency_count",
+      "symbolic_representation_dependency_decomposition_count",
+      "all_n_neutrality_theorem_count",
+      "coherent_dependency_transform_count",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-wreath-cross-dependency-neutrality."
+    ],
+    "positive_signal": "Replaced compressed frame inversion by an exact cross-synthesis dependency quotient; all label-simple finite dependencies are neutral, while repeated labels and a generic equal-dimension control exhibit nonneutral defects.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Exp Code Self Dual Wreath Cross Dependency Neutrality"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_dependency_homology.py"
+    ],
+    "falsifiers": [
+      "Exact pair-common ranges do not exhaust every finite child intersection.",
+      "A raw pair-edge count ignores linear dependencies and overlap among pair classes.",
+      "Pair generation must be separated from grading neutrality.",
+      "Collision-free source labels do not restore universal pair-class half-balance.",
+      "A finite dependency quotient is not a coherent all-n recoupling transform."
+    ],
+    "hypothesis": "Constructed the pair-common quotient of cross dependencies: W3 has genuine neutral emergent homology, while a globally distinct S6 affine plane has an entirely pair-generated nonneutral 34-dimensional intersection.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-DEPENDENCY-HOMOLOGY",
+    "metrics": [
+      "dependency_homology_quotient_count",
+      "finite_control_count",
+      "finite_homology_audit_failure_count",
+      "finite_fractional_merge_count",
+      "finite_pair_generated_merge_count",
+      "finite_emergent_merge_count",
+      "w3_distinct_maximum_emergent_homology_dimension",
+      "w5_pair_generated_merge_count",
+      "w6_pair_generated_merge_count",
+      "repeated_label_nonneutral_merge_count",
+      "collision_free_nonneutral_pair_generated_merge_count",
+      "collision_free_nonneutral_cross_dependency_dimension",
+      "collision_free_nonneutral_grading_residual",
+      "all_n_pair_common_chain_complex_count",
+      "all_n_emergent_homology_vanishing_or_neutrality_count",
+      "coherent_pair_common_quotient_count",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-wreath-dependency-homology."
+    ],
+    "positive_signal": "Constructed the pair-common quotient of cross dependencies: W3 has genuine neutral emergent homology, while a globally distinct S6 affine plane has an entirely pair-generated nonneutral 34-dimensional intersection.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Exp Code Self Dual Wreath Dependency Homology"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_early_level_overlap_localization.py"
+    ],
+    "falsifiers": [
+      "Do not search for emergent noncommon intersections at constant or sublinear child width before resolving exact common ranges.",
+      "Do not extrapolate the coherence bound beyond m<n/2.",
+      "Do not call early-level localization a full sampler without a coherent common-range decomposition and large-width theorem."
+    ],
+    "hypothesis": "Proved that common-free orientation families cannot develop child-span intersections while each child has fewer than n/2 leaves. This localizes early fractional channels to exact common ranges; linear-width overlap and a coherent common-range resolver remain open.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-EARLY-LEVEL-OVERLAP-LOCALIZATION",
+    "metrics": [
+      "common_free_early_overlap_exclusion_theorem_count",
+      "block_gram_span_correlation_bound_theorem_count",
+      "synthetic_control_count",
+      "synthetic_validation_failure_count",
+      "w5_control_count",
+      "w5_applicable_common_free_control_count",
+      "w5_applicable_validation_failure_count",
+      "w5_exact_common_range_control_count",
+      "tail_n",
+      "tail_maximum_certified_child_leaf_count",
+      "tail_certified_common_free_merge_level_count",
+      "tail_total_orientation_tree_depth",
+      "exact_common_range_resolver_count",
+      "linear_width_overlap_theorem_count",
+      "global_nonorthogonal_sampler_count",
+      "polynomial_hidden_permutation_decoder_count",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-wreath-early-level-overlap-localization."
+    ],
+    "positive_signal": "Proved that common-free orientation families cannot develop child-span intersections while each child has fewer than n/2 leaves. This localizes early fractional channels to exact common ranges; linear-width overlap and a coherent common-range resolver remain open.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Exp Code Self Dual Wreath Early Level Overlap Localization"
   },
   {
     "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -1948,23 +2748,278 @@
   {
     "candidate_id": "CODE-COSET-COLLECTIVE",
     "dependencies": [
-      "self_dual_wreath_global_partition_collision.py",
-      "self_dual_wreath_natural_unequal_dominance.py",
-      "self_dual_wreath_all_unequal_conditioned_kernel.py",
-      "aggarwal-elboim-maximal-dimension-2026"
+      "self_dual_wreath_extended_kronecker_threshold.py"
     ],
     "falsifiers": [
-      "Physical labels cannot be unpacked as 2k iid Plancherel draws.",
-      "The global repeat probability exceeds binom(2k,2) times the collision probability.",
-      "The maximal-atom theorem does not make k^2 C_n vanish.",
-      "Known half-norm counterexamples are globally collision-free.",
-      "Preasymptotic finite controls are described as asymptotic evidence.",
-      "Global distinctness is described as a frame-norm theorem."
+      "The independent pointwise support transition occurs at three factors, not an unknown larger covering radius.",
+      "Pointwise target-uniform bounds do not imply simultaneous covering of all irreps.",
+      "Pointwise multiplicity concentration does not provide simultaneous incidence or frame-edge control."
     ],
-    "hypothesis": "At the information-threshold copy count, all 2k source partitions underlying natural physical labels are globally distinct with probability 1-o(1).",
+    "hypothesis": "Proved normalized fixed-target multiplicity concentration for three or more independent Plancherel irreps.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-EXTENDED-KRONECKER-THRESHOLD",
+    "metrics": [
+      "exact_fixed_target_variance_theorem_count",
+      "three_factor_fixed_target_positivity_theorem_count",
+      "hamming_three_support_transition_theorem_count",
+      "finite_control_count",
+      "finite_control_failure_count",
+      "n50_q4_worst_target_variance_upper_bound",
+      "simultaneous_all_target_covering_theorem_count",
+      "fixed_target_normalized_multiplicity_concentration_theorem_count",
+      "fixed_hamming_pair_common_rank_concentration_theorem_count",
+      "natural_node_frame_edge_theorem_count",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-wreath-extended-kronecker-threshold."
+    ],
+    "positive_signal": "Proved normalized fixed-target multiplicity concentration for three or more independent Plancherel irreps.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Exp Code Self Dual Wreath Extended Kronecker Threshold"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_final_root_leverage_edge.py"
+    ],
+    "falsifiers": [
+      "The existing K+2 final root does not suffer a vanishing common-fiber aspect in the surrogate.",
+      "Marginal mean leverage alone is insufficient; the uniform result needs the beta large-deviation exponent.",
+      "Haar rank-one leverage concentration is not a natural wreath-frame theorem.",
+      "A final-root surrogate edge does not resolve earlier relation nodes or compile the PGM."
+    ],
+    "hypothesis": "Showed that the existing K+2 schedule prevents a vanishing scalar-surrogate final-root component aspect and proved an all-coordinate constant edge plus aggregate defect gap in the Haar model.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-LEVERAGE-EDGE",
+    "metrics": [
+      "k_plus_two_surrogate_final_root_component_aspect_theorem_count",
+      "haar_uniform_rank_one_leverage_edge_theorem_count",
+      "haar_edge_to_defect_gap_bridge_count",
+      "finite_control_count",
+      "finite_control_failure_count",
+      "finite_half_mean_edge_miss_count",
+      "scaling_record_count",
+      "positive_finite_scaling_defect_gap_row_count",
+      "tail_n",
+      "tail_common_fiber_aspect",
+      "tail_log2_union_edge_failure_upper_bound",
+      "tail_coordinate_defect_gap_lower_bound",
+      "natural_final_root_leverage_edge_theorem_count",
+      "all_relation_node_component_edge_theorem_count",
+      "natural_component_support_select_circuit_count",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-wreath-final-root-leverage-edge."
+    ],
+    "positive_signal": "Showed that the existing K+2 schedule prevents a vanishing scalar-surrogate final-root component aspect and proved an all-coordinate constant edge plus aggregate defect gap in the Haar model.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Exp Code Self Dual Wreath Final Root Leverage Edge"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_final_root_natural_common_span.py"
+    ],
+    "falsifiers": [
+      "The target carrier dimension does not spoil the normalized child aspect; its factor cancels exactly.",
+      "Full final-child support is stronger than necessary for component geometry.",
+      "Fixed second moments cannot prove a spectral edge, but they do prove positive-mass support rank through Cauchy and Markov.",
+      "Natural block/fiber aspect control does not imply a natural positive component eigenvalue edge."
+    ],
+    "hypothesis": "Proved a constant relative final sibling common span on positive globally distinct natural mass and propagated it to constant component fiber aspect with O(1/q) block ratio.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-NATURAL-COMMON-SPAN",
+    "metrics": [
+      "deterministic_common_span_rank_bridge_theorem_count",
+      "deterministic_control_count",
+      "deterministic_control_failure_count",
+      "natural_positive_mass_final_common_span_theorem_count",
+      "natural_final_component_aspect_theorem_count",
+      "asymptotic_conditioned_event_mass_lower_bound",
+      "asymptotic_common_span_relative_rank_lower_bound",
+      "asymptotic_common_fiber_aspect_lower_bound",
+      "asymptotic_component_block_ratio_coefficient",
+      "conditional_half_relative_edge_defect_gap_lower_bound",
+      "conditioned_uniform_rank_certified_finite_row_count",
+      "finite_positive_common_span_bound_row_count",
+      "natural_final_component_positive_edge_theorem_count",
+      "natural_component_support_select_circuit_count",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-wreath-final-root-natural-common-span."
+    ],
+    "positive_signal": "Proved a constant relative final sibling common span on positive globally distinct natural mass and propagated it to constant component fiber aspect with O(1/q) block ratio.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Exp Code Self Dual Wreath Final Root Natural Common Span"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_fixed_family_common_rank_dilution.py"
+    ],
+    "falsifiers": [
+      "Common-support probability and scalar relative rank can differ by factorial powers.",
+      "A dense fixed-order intersection nerve is not a spectral-edge theorem.",
+      "Fixed-family intersections are not automatically eigenspaces of the full node frame."
+    ],
+    "hypothesis": "Proved an exact support-versus-rank dilution law for every fixed balanced orientation family.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-FIXED-FAMILY-COMMON-RANK-DILUTION",
+    "metrics": [
+      "fixed_family_exact_expectation_theorem_count",
+      "fixed_family_support_covering_theorem_count",
+      "fixed_family_relative_rank_concentration_theorem_count",
+      "finite_control_count",
+      "finite_control_failure_count",
+      "maximum_family_size_scaling_record",
+      "n48_m4_expected_relative_rank_log2",
+      "full_node_bad_projection_dilution_theorem_count",
+      "natural_node_frame_edge_theorem_count",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-wreath-fixed-family-common-rank-dilution."
+    ],
+    "positive_signal": "Proved an exact support-versus-rank dilution law for every fixed balanced orientation family.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Exp Code Self Dual Wreath Fixed Family Common Rank Dilution"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_global_carrier_channel_extractor.py"
+    ],
+    "falsifiers": [
+      "Affine orientation support does not force a complete residual channel graph.",
+      "Vertex-local carrier groupoids must be glued through both endpoint projection algebras before assigning a global channel.",
+      "Natural progress requires scaling the extracted channel graph family, not extrapolating from selected affine stars."
+    ],
+    "hypothesis": "Extracted physical W6 carrier channels as affine incomplete stars, reproducing the 1/17 and 1/9 graded defects and rejecting affine-to-complete closure.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-GLOBAL-CARRIER-CHANNEL-EXTRACTOR",
+    "metrics": [
+      "physical_global_channel_extraction_algorithm_count",
+      "physical_extraction_control_count",
+      "physical_extraction_failure_count",
+      "extracted_nontrivial_channel_count",
+      "extracted_affine_incomplete_channel_count",
+      "extracted_complete_affine_channel_count",
+      "maximum_extracted_channel_edge_count",
+      "maximum_extracted_channel_multiplicity",
+      "extracted_three_edge_star_channel_count",
+      "extracted_nonstar_channel_count",
+      "maximum_extracted_channel_grading_defect",
+      "minimum_extracted_channel_endpoint_gap",
+      "natural_threshold_channel_scaling_theorem_count",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-wreath-global-carrier-channel-extractor."
+    ],
+    "positive_signal": "Extracted physical W6 carrier channels as affine incomplete stars, reproducing the 1/17 and 1/9 graded defects and rejecting affine-to-complete closure.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Exp Code Self Dual Wreath Global Carrier Channel Extractor"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_global_collision_free_mass.py"
+    ],
+    "falsifiers": [
+      "Finite n<=48 collision-free mass is strongly pre-asymptotic and cannot falsify asymptotic typicality.",
+      "Within-pair unequal conditioning is not the same as collision freedom across copies.",
+      "Finite low-n spectral gaps are not a uniform theorem over the asymptotically typical collision-free event."
+    ],
+    "hypothesis": "Derived the exact Plancherel mass of globally distinct source partitions; at n=48 and k=203 the finite mass is about 2^-26.510, while the maximal-dimension theorem proves that it tends to one asymptotically.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-GLOBAL-COLLISION-FREE-MASS",
+    "metrics": [
+      "global_collision_free_mass_formula_count",
+      "exact_validation_count",
+      "exact_validation_failure_count",
+      "finite_scaling_row_count",
+      "combinatorially_impossible_threshold_row_count",
+      "inverse_polynomial_mass_row_count",
+      "minimum_finite_log2_collision_free_mass",
+      "tail_n",
+      "tail_partition_count",
+      "tail_copy_count",
+      "tail_log2_collision_free_mass",
+      "tail_plancherel_collision_probability",
+      "asymptotic_global_collision_free_mass_tends_to_one_theorem_count",
+      "asymptotic_inverse_polynomial_mass_theorem_count",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-wreath-global-collision-free-mass."
+    ],
+    "positive_signal": "Derived the exact Plancherel mass of globally distinct source partitions; at n=48 and k=203 the finite mass is about 2^-26.510, while the maximal-dimension theorem proves that it tends to one asymptotically.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Exp Code Self Dual Wreath Global Collision Free Mass"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_global_distinct_joint_kernel.py"
+    ],
+    "falsifiers": [
+      "Global source distinctness does not preserve independence across physical labels.",
+      "Pairwise-unequal product kernels have exact nonzero finite factorization defects after global conditioning.",
+      "An o(1) source-conditioning error is not enough for an exp(-Theta(n log n)) PGM moment target.",
+      "Direct moment transfer needs signed injective control, but event-level conditioning can bypass moment transfer."
+    ],
+    "hypothesis": "Derived and exactly validated the nonfactorizing injective Plancherel kernel for globally distinct sources. Generic moment transfer is too coarse, but high-probability spectral events can instead be conditioned directly once proved independently.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-GLOBAL-DISTINCT-JOINT-KERNEL",
+    "metrics": [
+      "injective_transform_validation_count",
+      "injective_transform_validation_failure_count",
+      "joint_word_kernel_control_count",
+      "joint_word_kernel_structure_failure_count",
+      "nonfactorizing_joint_word_control_count",
+      "conditioning_tv_finite_bound_failure_count",
+      "injective_plancherel_transform_theorem_count",
+      "global_distinct_joint_character_kernel_theorem_count",
+      "conditioning_total_variation_identity_theorem_count",
+      "conditioning_distance_asymptotic_scale_theorem_count",
+      "generic_tv_transfer_no_go_theorem_count",
+      "tail_n",
+      "tail_copy_count",
+      "tail_log2_conditioning_total_variation",
+      "tail_log2_required_second_moment_scale",
+      "tail_log2_tv_to_required_scale_gap",
+      "uniform_collision_free_signed_contraction_theorem_count",
+      "event_level_conditioning_bypass_theorem_count",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-wreath-global-distinct-joint-kernel."
+    ],
+    "positive_signal": "Derived and exactly validated the nonfactorizing injective Plancherel kernel for globally distinct sources. Generic moment transfer is too coarse, but high-probability spectral events can instead be conditioned directly once proved independently.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Exp Code Self Dual Wreath Global Distinct Joint Kernel"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_global_partition_collision.py"
+    ],
+    "falsifiers": [
+      "Within-label inequality is weaker than global distinctness across all 2k source partitions.",
+      "The information-threshold copy count is polynomial and cannot overcome exponential collision decay.",
+      "Known W3 half-norm unequal counterexamples reuse source partitions and are asymptotically negligible.",
+      "Finite n controls remain preasymptotic and are not evidence of early global-distinct dominance.",
+      "Global distinctness alone does not prove frame-norm decay.",
+      "No collision-free contraction, measurement circuit, decoder, or classical separation is claimed."
+    ],
+    "hypothesis": "Proved that natural threshold tuples have globally distinct source partitions with probability 1-o(1), excluding the known repeated-source 1/2-norm block; finite controls through n=32 remain preasymptotic.",
     "id": "EXP-CODE-SELF-DUAL-WREATH-GLOBAL-PARTITION-COLLISION",
     "metrics": [
       "global_collision_control_count",
+      "maximum_exact_occupancy_n",
       "global_source_draw_as_iid_plancherel_theorem_count",
       "global_collision_union_bound_theorem_count",
       "asymptotic_global_all_distinct_dominance_theorem_count",
@@ -1973,18 +3028,259 @@
       "repeated_source_counterexample_exclusion_count",
       "collision_free_tuple_norm_theorem_count",
       "collision_free_growing_moment_contraction_count",
-      "natural_average_inverse_polynomial_conclusive_theorem_count"
+      "natural_average_inverse_polynomial_conclusive_theorem_count",
+      "structured_maximal_effect_dilation_count",
+      "polynomial_hidden_permutation_decoder_count"
     ],
     "next_actions": [
-      "Run qsearch.py code-wreath-global-collision.",
-      "Search collision-free mixed tuples in the smallest feasible wreath groups.",
-      "Relate partition distinctness to tensor projector overlap or character-ratio decay.",
-      "Prove a collision-free growing-moment contraction without catalog enumeration."
+      "Run qsearch.py code-wreath-global-partition-collision."
     ],
-    "positive_signal": "A uniform tensor contraction for arbitrary collision-free source-partition tuples reaches the 2^{1-k} frame scale and converts the vanishing collision event into a natural-source success theorem.",
-    "protocol": "Unpack k physical labels into 2k iid Plancherel draws, apply the pair-collision union bound, combine it with maximal-atom decay, compute exact finite weighted occupancy controls, and classify known half-norm blocks by cross-label partition reuse.",
+    "positive_signal": "Proved that natural threshold tuples have globally distinct source partitions with probability 1-o(1), excluding the known repeated-source 1/2-norm block; finite controls through n=32 remain preasymptotic.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
     "status": "planned",
-    "title": "Global Plancherel collision-free source reduction"
+    "title": "Exp Code Self Dual Wreath Global Partition Collision"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_gpe_holonomy_resolver_reduction.py"
+    ],
+    "falsifiers": [
+      "Canonical pair transport does not trivialize cycles because each edge uses a different tensor-block decomposition.",
+      "Dense Racah matrices need not be computed classically to run or phase-estimate their cycle products.",
+      "Efficient edge circuits alone do not imply efficient common-section projection; the holonomy frustration gap can be tiny."
+    ],
+    "hypothesis": "Reduced flat higher-order carrier consistency to simultaneous fixed spaces of executable GPE holonomies and isolated the natural holonomy-gap theorem as the remaining circuit bottleneck.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-GPE-HOLONOMY-RESOLVER-REDUCTION",
+    "metrics": [
+      "connection_kernel_holonomy_reduction_theorem_count",
+      "finite_holonomy_control_count",
+      "finite_holonomy_control_failure_count",
+      "implicit_dense_racah_circuit_compiler_count",
+      "near_flat_gap_counterexample_count",
+      "near_flat_inverse_gap_growth_verified_count",
+      "natural_inverse_polynomial_holonomy_gap_theorem_count",
+      "recursive_child_span_holonomy_reduction_theorem_count",
+      "complete_relative_frame_resolver_count",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-wreath-gpe-holonomy-resolver-reduction."
+    ],
+    "positive_signal": "Reduced flat higher-order carrier consistency to simultaneous fixed spaces of executable GPE holonomies and isolated the natural holonomy-gap theorem as the remaining circuit bottleneck.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Exp Code Self Dual Wreath Gpe Holonomy Resolver Reduction"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_gpe_pair_polar_transport.py"
+    ],
+    "falsifiers": [
+      "High-dimensional natural carrier mass blocks normalized cross-overlap QSVT but does not block direct pair polar transport.",
+      "A complete symmetric-group Kronecker transform is stronger than necessary for pair transport; coherent GPE row access suffices.",
+      "Pair transport is no longer a defensible main bottleneck. Future work must attack higher-order relative-frame composition."
+    ],
+    "hypothesis": "Derived a polynomial generalized-phase-estimation circuit for exact orientation-pair polar transport that preserves unknown Kronecker multiplicity labels and avoids inverse-dimension amplification.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-GPE-PAIR-POLAR-TRANSPORT",
+    "metrics": [
+      "gpe_pair_polar_reassociation_theorem_count",
+      "finite_carrier_control_count",
+      "finite_carrier_control_failure_count",
+      "normalized_cross_overlap_dimension_barrier_bypass_count",
+      "full_kronecker_transform_dependency_count",
+      "polynomial_pair_transport_circuit_count",
+      "polynomial_higher_level_relative_polar_circuit_count",
+      "polynomial_complete_orientation_polar_circuit_count",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-wreath-gpe-pair-polar-transport."
+    ],
+    "positive_signal": "Derived a polynomial generalized-phase-estimation circuit for exact orientation-pair polar transport that preserves unknown Kronecker multiplicity labels and avoids inverse-dimension amplification.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Exp Code Self Dual Wreath Gpe Pair Polar Transport"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_gpe_recursive_node_compiler.py"
+    ],
+    "falsifiers": [
+      "Pair-level GPE does not by itself remove recursive child-frame normalization.",
+      "Constant metric spectra do not imply a scalar endpoint mixer when shorted metrics fail to commute.",
+      "Exact recursive completeness remains compatible with exponentially small endpoint gaps.",
+      "Finite affine GPE paths are not an all-n uniform path-selection theorem.",
+      "A globally source-distinct S6 affine node falsifies universal scalar child fibers."
+    ],
+    "hypothesis": "Separated recursive relation preparation into normalized child embeddings and a short-metric endpoint mixer, then proved that flat affine child embeddings compile from GPE transports in logarithmic depth without a width penalty.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-GPE-RECURSIVE-NODE-COMPILER",
+    "metrics": [
+      "recursive_parent_relation_normal_form_theorem_count",
+      "node_control_count",
+      "node_control_failure_count",
+      "equal_metric_hadamard_control_count",
+      "noncommuting_matrix_mixer_countercontrol_count",
+      "flat_affine_log_depth_preparation_theorem_count",
+      "finite_affine_gpe_compiler_control_count",
+      "finite_affine_gpe_compiler_failure_count",
+      "conditioning_counterfamily_row_count",
+      "tail_metric_ratio",
+      "tail_endpoint_gap",
+      "tail_inverse_gap_cost",
+      "all_n_structured_child_embedding_theorem_count",
+      "companion_natural_scalar_affine_falsifier_count",
+      "uniform_coherent_generator_select_count",
+      "natural_recursive_endpoint_gap_theorem_count",
+      "recursive_orientation_polar_sampler_count",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-wreath-gpe-recursive-node-compiler."
+    ],
+    "positive_signal": "Separated recursive relation preparation into normalized child embeddings and a short-metric endpoint mixer, then proved that flat affine child embeddings compile from GPE transports in logarithmic depth without a width penalty.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Exp Code Self Dual Wreath Gpe Recursive Node Compiler"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_graded_channel_graph_reduction.py"
+    ],
+    "falsifiers": [
+      "Affine orientation vertices do not force complete residual channel-edge support.",
+      "The graded gap depends on child Laplacian resolvents, not the ungraded metric floor or raw degree.",
+      "The natural all-depth target is two-sided endpoint-effect comparability for global carrier channels."
+    ],
+    "hypothesis": "Reduced every flat carrier support graph to two child Laplacian resolvents, reproducing the W6 1/17 and 1/9 defects and unifying the crossing obstruction with the complete-closure rescue.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-GRADED-CHANNEL-GRAPH-REDUCTION",
+    "metrics": [
+      "arbitrary_flat_channel_resolvent_reduction_theorem_count",
+      "endpoint_effect_comparability_criterion_theorem_count",
+      "finite_graph_control_count",
+      "finite_graph_control_failure_count",
+      "maximum_direct_to_resolvent_metric_residual",
+      "maximum_direct_to_resolvent_grading_residual",
+      "w6_affine_star_defect_reproduction_count",
+      "crossing_no_go_reproduction_count",
+      "complete_internal_rescue_reproduction_count",
+      "natural_channel_resolvent_comparability_theorem_count",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-wreath-graded-channel-graph-reduction."
+    ],
+    "positive_signal": "Reduced every flat carrier support graph to two child Laplacian resolvents, reproducing the W6 1/17 and 1/9 defects and unifying the crossing obstruction with the complete-closure rescue.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Exp Code Self Dual Wreath Graded Channel Graph Reduction"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_graded_flat_transport_no_go.py"
+    ],
+    "falsifiers": [
+      "A width-independent relation-metric floor is not a width-independent relative-polar gap.",
+      "A flat partial-isometry carrier groupoid still supports dangerous row and column modes.",
+      "The next proof must quotient internal pair/Cech relations before bounding the grading defect."
+    ],
+    "hypothesis": "Proved an exact flat-transport counterfamily with constant metric floor but endpoint gap Theta(1/p); at natural width the tail model has log2 gap -1675.011.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-GRADED-FLAT-TRANSPORT-NO-GO",
+    "metrics": [
+      "flat_transport_exact_spectrum_theorem_count",
+      "metric_floor_not_graded_gap_no_go_theorem_count",
+      "finite_flat_transport_control_count",
+      "finite_flat_transport_control_failure_count",
+      "finite_constant_metric_width_closing_gap_count",
+      "natural_width_scaling_row_count",
+      "natural_width_inverse_polynomial_endpoint_gap_row_count",
+      "tail_n",
+      "tail_copy_count",
+      "tail_metric_floor",
+      "tail_log2_endpoint_gap",
+      "full_internal_cech_mode_elimination_theorem_count",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-wreath-graded-flat-transport-no-go."
+    ],
+    "positive_signal": "Proved an exact flat-transport counterfamily with constant metric floor but endpoint gap Theta(1/p); at natural width the tail model has log2 gap -1675.011.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Exp Code Self Dual Wreath Graded Flat Transport No Go"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_graded_frobenius_trim.py"
+    ],
+    "falsifiers": [
+      "Generic spectral intersection is unnecessary; sectorwise pinching preserves the sibling grading exactly.",
+      "Vanishing Frobenius density can yield a constant endpoint gap after a quantified trim, but not on the full untrimmed space.",
+      "Information-theoretic coefficient trimming is exactly signal-preserving on the ideal polar range, but is not an efficient or complete quantum operation by itself."
+    ],
+    "hypothesis": "Constructed a grading-compatible pinched Frobenius trim and proved an explicit constant endpoint gap after deleting vanishing natural relation coefficient fraction; the deleted relation image has zero ideal PGM state mass.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-GRADED-FROBENIUS-TRIM",
+    "metrics": [
+      "grading_compatible_pinched_trim_theorem_count",
+      "schur_endpoint_bound_theorem_count",
+      "finite_control_count",
+      "finite_control_failure_count",
+      "scaling_row_count",
+      "constant_gap_certified_row_count",
+      "constant_gap_certification_onset_n",
+      "tail_n",
+      "tail_removed_fraction_upper_bound",
+      "tail_endpoint_gap_lower_bound",
+      "tail_structural_failure_probability_upper_bound",
+      "coherent_pinched_energy_projector_count",
+      "relation_trim_zero_pgm_state_loss_theorem_count",
+      "all_n_pair_cokernel_completeness_theorem_count",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-wreath-graded-frobenius-trim."
+    ],
+    "positive_signal": "Constructed a grading-compatible pinched Frobenius trim and proved an explicit constant endpoint gap after deleting vanishing natural relation coefficient fraction; the deleted relation image has zero ideal PGM state mass.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Exp Code Self Dual Wreath Graded Frobenius Trim"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_hamming_stratum_rank_transition.py"
+    ],
+    "falsifiers": [
+      "Exponential stratum size blocks all-pair union bounds but not density statements.",
+      "Pair-common rank density does not determine coherent incidence or a frame edge.",
+      "The natural independent support threshold is exactly three, not an unspecified covering radius."
+    ],
+    "hypothesis": "Proved a sharp transition from transverse Hamming radii one/two to rank-concentrated live strata at every fixed radius at least three.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-HAMMING-STRATUM-RANK-TRANSITION",
+    "metrics": [
+      "fixed_hamming_stratum_rank_density_theorem_count",
+      "sharp_hamming_pair_support_transition_theorem_count",
+      "finite_control_count",
+      "finite_control_failure_count",
+      "maximum_scaling_n",
+      "n50_h3_expected_bad_fraction_upper_bound",
+      "simultaneous_all_fixed_hamming_pair_theorem_count",
+      "coherent_incidence_theorem_count",
+      "natural_node_frame_edge_theorem_count",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-wreath-hamming-stratum-rank-transition."
+    ],
+    "positive_signal": "Proved a sharp transition from transverse Hamming radii one/two to rank-concentrated live strata at every fixed radius at least three.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Exp Code Self Dual Wreath Hamming Stratum Rank Transition"
   },
   {
     "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -2075,6 +3371,367 @@
   {
     "candidate_id": "CODE-COSET-COLLECTIVE",
     "dependencies": [
+      "self_dual_wreath_hierarchical_cokernel_resolution.py"
+    ],
+    "falsifiers": [
+      "Direct pair-common incompleteness is not a no-go for hierarchical span relations.",
+      "Exact hierarchical relation completeness does not imply efficient conditioning.",
+      "Support topology alone cannot determine parent endpoint weights."
+    ],
+    "hypothesis": "Resolved augmented H0 exactly by recursive child-span relations and isolated child pseudoinverse-frame comparability as the true endpoint-gap gate.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-HIERARCHICAL-COKERNEL-RESOLUTION",
+    "metrics": [
+      "exact_hierarchical_cokernel_decomposition_theorem_count",
+      "finite_control_count",
+      "finite_control_failure_count",
+      "emergent_h0_control_count",
+      "emergent_h0_resolved_control_count",
+      "physical_control_count",
+      "conditioning_counterfamily_row_count",
+      "tail_counterfamily_child_width",
+      "tail_counterfamily_endpoint_gap",
+      "tail_counterfamily_inverse_gap_cost",
+      "natural_child_frame_comparability_theorem_count",
+      "coherent_hierarchical_kernel_transform_count",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-wreath-hierarchical-cokernel-resolution."
+    ],
+    "positive_signal": "Resolved augmented H0 exactly by recursive child-span relations and isolated child pseudoinverse-frame comparability as the true endpoint-gap gate.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Exp Code Self Dual Wreath Hierarchical Cokernel Resolution"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_hierarchical_polar_tree.py"
+    ],
+    "falsifiers": [
+      "Do not require explicit compilation of every orientation-tree node; a nested flag addresses nodes coherently by level.",
+      "Do not claim the chain rule alone removes whitening; it moves whitening into matrix-valued conditional frame ratios.",
+      "Do not cite the Moore--Russell--Sniady theorem directly against this global coherent primitive, or claim noncoverage as success."
+    ],
+    "hypothesis": "Factored the global orientation polar into k coherently indexed binary relative-frame isometries. The first level is polynomial; all complete W4 level-two effects are projective or exactly balanced. The decisive open theorem is the typical large-n relative-effect spectrum and its direct circuit.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-HIERARCHICAL-POLAR-TREE",
+    "metrics": [
+      "hierarchical_polar_chain_rule_theorem_count",
+      "matrix_valued_conditional_probability_reduction_count",
+      "coherent_k_level_compilation_theorem_count",
+      "finite_w4_control_count",
+      "finite_hierarchical_validation_failure_count",
+      "finite_half_integral_relative_effect_failure_count",
+      "finite_noncommuting_child_frame_count",
+      "finite_fractional_relative_effect_eigenvalue_count",
+      "minimum_finite_fractional_relative_effect_gap",
+      "maximum_recursive_to_direct_polar_residual",
+      "tail_n",
+      "tail_tree_depth",
+      "higher_level_relative_sampler_count",
+      "typical_relative_effect_gap_theorem_count",
+      "global_nonorthogonal_sampler_count",
+      "polynomial_hidden_permutation_decoder_count",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-wreath-hierarchical-polar-tree."
+    ],
+    "positive_signal": "Factored the global orientation polar into k coherently indexed binary relative-frame isometries. The first level is polynomial; all complete W4 level-two effects are projective or exactly balanced. The decisive open theorem is the typical large-n relative-effect spectrum and its direct circuit.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Exp Code Self Dual Wreath Hierarchical Polar Tree"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_hierarchy_low_carrier_trim.py"
+    ],
+    "falsifiers": [
+      "Exact-common carriers are not the only sectors that admit a vanishing-rank hierarchy trim.",
+      "Worst-case inverse-(n-1) pair correlations can be removed on all but vanishing natural rank; they are not the remaining edge bottleneck.",
+      "Vanishing pair correlations still do not imply an exponentially wide frame edge without signed high-order incidence control."
+    ],
+    "hypothesis": "Proved a quarter-factorial rank--correlation tradeoff that trims all low-dimensional pair carriers throughout the hierarchy.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-HIERARCHY-LOW-CARRIER-TRIM",
+    "metrics": [
+      "exact_low_carrier_mass_control_count",
+      "finite_control_failure_count",
+      "scaling_record_count",
+      "finite_conditioned_trim_record_count",
+      "first_finite_conditioned_trim_n",
+      "tail_n",
+      "tail_cutoff_dimension_log2",
+      "tail_low_carrier_count",
+      "tail_conditioned_trim_rank_log2",
+      "tail_residual_pair_correlation_log2",
+      "all_hierarchy_low_carrier_tradeoff_theorem_count",
+      "high_carrier_incidence_theorem_count",
+      "natural_node_frame_edge_theorem_count",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-wreath-hierarchy-low-carrier-trim."
+    ],
+    "positive_signal": "Proved a quarter-factorial rank--correlation tradeoff that trims all low-dimensional pair carriers throughout the hierarchy.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Exp Code Self Dual Wreath Hierarchy Low Carrier Trim"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_hierarchy_pair_common_rank_budget.py"
+    ],
+    "falsifiers": [
+      "Typical recurrence of pair-common support does not imply macroscopic common rank at information-threshold width.",
+      "Triangle and cycle alignment cannot defeat the scalar rank budget for exact common directions, although it remains decisive on the noncommon complement.",
+      "Unconditioned regular stationary outliers must be trimmed; their existence is not representative of collision-free physical rank."
+    ],
+    "hypothesis": "Proved an all-depth, all-target factorial rank budget for exact pair-common directions and isolated the noncommon return operator as the remaining frame-edge obstruction.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-HIERARCHY-PAIR-COMMON-RANK-BUDGET",
+    "metrics": [
+      "exact_hierarchy_pair_count_control_count",
+      "exact_pair_common_mass_control_count",
+      "finite_control_failure_count",
+      "scaling_record_count",
+      "finite_conditioned_rank_trim_record_count",
+      "conditioned_tail_bound_strictly_decreasing_count",
+      "tail_n",
+      "tail_conditioned_all_target_union_bound_log2",
+      "tail_simultaneous_relative_rank_threshold_log2",
+      "exact_common_hierarchy_rank_budget_theorem_count",
+      "noncommon_collision_free_return_theorem_count",
+      "natural_node_frame_edge_theorem_count",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-wreath-hierarchy-pair-common-rank-budget."
+    ],
+    "positive_signal": "Proved an all-depth, all-target factorial rank budget for exact pair-common directions and isolated the noncommon return operator as the remaining frame-edge obstruction.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Exp Code Self Dual Wreath Hierarchy Pair Common Rank Budget"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_internal_closure_graded_rescue.py"
+    ],
+    "falsifiers": [
+      "The crossing-only flat counterfamily is not stable under the hierarchy's internal Schur quotient.",
+      "Metric control becomes useful for grading only after complete internal channel closure is established.",
+      "The decisive remaining theorem is global affine gluing of natural carrier channels, not another local star bound."
+    ],
+    "hypothesis": "Proved that complete internal pair closure converts the flat crossing obstruction into a uniform endpoint gap of at least one quarter, independent of natural merge width.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-INTERNAL-CLOSURE-GRADED-RESCUE",
+    "metrics": [
+      "complete_internal_channel_schur_spectrum_theorem_count",
+      "complete_internal_channel_uniform_graded_gap_theorem_count",
+      "finite_internal_closure_control_count",
+      "finite_internal_closure_control_failure_count",
+      "finite_quarter_gap_failure_count",
+      "natural_width_scaling_row_count",
+      "natural_width_quarter_gap_failure_count",
+      "tail_n",
+      "tail_copy_count",
+      "tail_metric_floor",
+      "tail_grading_defect_norm",
+      "tail_endpoint_gap",
+      "natural_global_affine_channel_closure_theorem_count",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-wreath-internal-closure-graded-rescue."
+    ],
+    "positive_signal": "Proved that complete internal pair closure converts the flat crossing obstruction into a uniform endpoint gap of at least one quarter, independent of natural merge width.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Exp Code Self Dual Wreath Internal Closure Graded Rescue"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_interplane_gauge_homology.py"
+    ],
+    "falsifiers": [
+      "Single-plane positive-holonomy audits cannot establish a global gauge or frame edge, even on the rich support family.",
+      "The all-positive Steiner surrogate is one gauge class among 2^Theta(4^K) combinatorially admissible classes.",
+      "Future finite audits must include multi-plane incidence cycles and report gauge-invariant cycle products."
+    ],
+    "hypothesis": "Classified the scalar inter-plane gauge obstruction and proved that the pattern-rich hierarchy retains Theta(4^K) independent cycle bits despite every local plane being positive.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-INTERPLANE-GAUGE-HOMOLOGY",
+    "metrics": [
+      "full_homology_control_count",
+      "rich_homology_control_count",
+      "rich_point_degree_control_count",
+      "finite_control_failure_count",
+      "tail_rich_copy_count",
+      "tail_rich_cycle_rank",
+      "scalar_interplane_gauge_classification_theorem_count",
+      "rich_cycle_rank_theorem_count",
+      "natural_cycle_holonomy_theorem_count",
+      "operator_valued_connection_theorem_count",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-wreath-interplane-gauge-homology."
+    ],
+    "positive_signal": "Classified the scalar inter-plane gauge obstruction and proved that the pattern-rich hierarchy retains Theta(4^K) independent cycle bits despite every local plane being positive.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Exp Code Self Dual Wreath Interplane Gauge Homology"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_invariant_projector_circuit.py"
+    ],
+    "falsifiers": [
+      "A general efficient Kronecker decomposition is not required to apply the invariant projector as a Kraus block.",
+      "The selected orientation-family filter avoids factorial amplification and factorial spectral precision.",
+      "The decisive remaining issue is now postfilter information and decoding, not implementation of E_(nu,h)."
+    ],
+    "hypothesis": "Converted the orientation invariant projector from an assumed Kronecker primitive into an explicit polynomial projected circuit using the symmetric-group QFT and coherent group averaging.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-INVARIANT-PROJECTOR-CIRCUIT",
+    "metrics": [
+      "symmetric_group_qft_intertwining_theorem_count",
+      "irrep_action_from_qft_theorem_count",
+      "projected_group_average_block_encoding_theorem_count",
+      "controlled_orientation_invariant_projector_circuit_schema_count",
+      "qft_finite_control_count",
+      "qft_finite_validation_failure_count",
+      "projected_block_finite_control_count",
+      "projected_block_validation_failure_count",
+      "scaling_record_count",
+      "factorial_amplitude_amplification_row_count",
+      "all_n_postfilter_information_theorem_count",
+      "polynomial_hidden_permutation_decoder_count",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-wreath-invariant-projector-circuit."
+    ],
+    "positive_signal": "Converted the orientation invariant projector from an assumed Kronecker primitive into an explicit polynomial projected circuit using the symmetric-group QFT and coherent group averaging.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Exp Code Self Dual Wreath Invariant Projector Circuit"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_isotypic_dephasing_no_go.py"
+    ],
+    "falsifiers": [
+      "Measuring nu classically and decoding each sector independently cannot yield constant exact hidden-permutation success.",
+      "Multiplicity-space dimension does not evade the no-go.",
+      "The coherent isotypic label in the orientation filter is an essential information resource, not optional bookkeeping.",
+      "The theorem does not rule out coherent cross-sector decoding or coarser decision problems."
+    ],
+    "hypothesis": "Proved that dephasing diagonal S_n irrep labels caps exact hidden-permutation success by the largest Plancherel atom, hence by exp(-Omega(sqrt(n))); cross-sector coherence is mandatory.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-ISOTYPIC-DEPHASING-NO-GO",
+    "metrics": [
+      "covariant_povm_symmetrization_theorem_count",
+      "positive_partial_trace_domination_theorem_count",
+      "isotypic_dephasing_identification_no_go_theorem_count",
+      "data_processing_extension_theorem_count",
+      "operator_control_count",
+      "operator_control_failure_count",
+      "exact_symmetric_group_scaling_record_count",
+      "dimension_square_sum_failure_count",
+      "finite_constant_success_ruled_out_count",
+      "tail_n",
+      "tail_exact_success_upper_bound",
+      "tail_log2_success_upper_bound",
+      "coherent_cross_sector_decoder_count",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-wreath-isotypic-dephasing-no-go."
+    ],
+    "positive_signal": "Proved that dephasing diagonal S_n irrep labels caps exact hidden-permutation success by the largest Plancherel atom, hence by exp(-Omega(sqrt(n))); cross-sector coherence is mandatory.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Exp Code Self Dual Wreath Isotypic Dephasing No Go"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_leaf_whitening_commutator_no_go.py"
+    ],
+    "falsifiers": [
+      "Density-one inverse-polynomial leaf commutators do not imply noncommuting canonical effects.",
+      "A bounded frame condition number does not rescue leaf-to-component commutator transfer.",
+      "Distinct high-rank leaves, constant total-rank aspect, vanishing relative leaf rank, and full-rank nonscalarity still do not rescue the transfer.",
+      "The next natural gate is spectral arithmetic or direct commutator support, not another coarse frame-conditioning estimate."
+    ],
+    "hypothesis": "Characterized commuting canonical effects for projection frames and built a bounded-condition, duplicate-free counterfamily that kills every coarse leaf-to-component commutator transfer route.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-LEAF-WHITENING-COMMUTATOR-NO-GO",
+    "metrics": [
+      "commuting_whitening_integer_cover_criterion_theorem_count",
+      "reciprocal_integer_spectral_witness_theorem_count",
+      "duplicate_free_bounded_condition_counterfamily_count",
+      "finite_control_count",
+      "finite_control_failure_count",
+      "tail_fiber_dimension",
+      "tail_frame_condition_number",
+      "tail_cross_part_pair_fraction",
+      "tail_cross_leaf_commutator_norm",
+      "tail_nonscalarity_defect_edge",
+      "natural_component_nonreciprocal_spectrum_mass_theorem_count",
+      "natural_canonical_component_commutator_mass_theorem_count",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-wreath-leaf-whitening-commutator-no-go."
+    ],
+    "positive_signal": "Characterized commuting canonical effects for projection frames and built a bounded-condition, duplicate-free counterfamily that kills every coarse leaf-to-component commutator transfer route.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Exp Code Self Dual Wreath Leaf Whitening Commutator No Go"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_level_three_flag_audit.py"
+    ],
+    "falsifiers": [
+      "Balanced binary trees do not generically force relative effects into {0,1/2,1}.",
+      "The W4 half-integral pattern survives a genuine third level and every linear flag in the selected W5 controls.",
+      "Spectral half-integrality alone is not an implementation of the relative merge isometry.",
+      "The formal MRS theorem does not cover this coherent global projector family, but that noncoverage is not a speedup proof."
+    ],
+    "hypothesis": "Audited every three-bit linear flag, found only endpoint/half relative channels on selected label-simple sectors, and proved by countercontrol that repeated labels generate genuinely nonhalf conditional weights.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-LEVEL-THREE-FLAG-AUDIT",
+    "metrics": [
+      "ordered_f2_three_basis_count",
+      "finite_control_count",
+      "finite_validation_failure_count",
+      "pairwise_distinct_label_control_count",
+      "pairwise_distinct_label_half_integral_failure_count",
+      "collision_free_control_count",
+      "collision_free_half_integral_failure_count",
+      "repeated_label_counterexample_count",
+      "merge_occurrence_count",
+      "fractional_eigenvalue_occurrence_count",
+      "nonhalf_fractional_eigenvalue_occurrence_count",
+      "collision_free_half_integrality_all_n_theorem_count",
+      "polynomial_relative_eigenspace_projector_count",
+      "hierarchical_orientation_polar_sampler_count",
+      "polynomial_physical_pgm_circuit_count",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-wreath-level-three-flag-audit."
+    ],
+    "positive_signal": "Audited every three-bit linear flag, found only endpoint/half relative channels on selected label-simple sectors, and proved by countercontrol that repeated labels generate genuinely nonhalf conditional weights.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Exp Code Self Dual Wreath Level Three Flag Audit"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
       "self_dual_wreath_local_isotypic_filter_no_go.py"
     ],
     "falsifiers": [
@@ -2110,6 +3767,37 @@
     "protocol": "Test Plancherel-incidence no-go theorem on constant-mass block-local isotypic filters.",
     "status": "planned",
     "title": "Local isotypic filter no-go analysis"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_local_pair_transversality.py"
+    ],
+    "falsifiers": [
+      "Unioning over orientation pairs ignores that common-range conditions are shared source-label relations.",
+      "The full regular pair-common obstruction is not typical at Hamming radii one and two.",
+      "Local transversality alone does not control the full orientation-frame edge."
+    ],
+    "hypothesis": "Proved that globally distinct natural source blocks are simultaneously transverse through Hamming radius two with high probability.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-LOCAL-PAIR-TRANSVERSALITY",
+    "metrics": [
+      "hamming_one_common_range_necessity_theorem_count",
+      "hamming_two_common_range_necessity_theorem_count",
+      "asymptotic_radius_two_transversality_theorem_count",
+      "finite_control_count",
+      "finite_control_failure_count",
+      "maximum_scaling_n",
+      "higher_order_incidence_theorem_count",
+      "natural_node_frame_edge_theorem_count",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-wreath-local-pair-transversality."
+    ],
+    "positive_signal": "Proved that globally distinct natural source blocks are simultaneously transverse through Hamming radius two with high probability.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Exp Code Self Dual Wreath Local Pair Transversality"
   },
   {
     "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -2150,6 +3838,229 @@
     "protocol": "Represent subset masks as a binary incidence matrix, prove private-column vanishing from the zero unequal bridge class sum, validate exact small cases, gauge-fix triangle word maps, and enumerate collision-free W5 perfect matchings.",
     "status": "planned",
     "title": "Mask-incidence two-core character reduction"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_matrix_cayley_boundary.py"
+    ],
+    "falsifiers": [
+      "Matrix-valued XOR covariance does not by itself force half-integral affine merges.",
+      "Equal child Gram blocks do not make the cross-dependency quotient neutral when opposite saturation kernels overlap.",
+      "Matrix-valued multiplicity sectors are not automatically fatal; commuting or saturation-orthogonal sectors remain balanced.",
+      "A spectral balance theorem does not implement the multiplicity-space kernel projectors."
+    ],
+    "hypothesis": "Proved the exact matrix-valued Cayley boundary: opposite saturation-space overlap produces nonhalf channels. An explicit positive-definite XOR-covariant counterfamily kills covariance-only proofs, while commuting sectors remain balanced.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-MATRIX-CAYLEY-BOUNDARY",
+    "metrics": [
+      "matrix_cayley_boundary_theorem_count",
+      "exact_control_count",
+      "theorem_validation_failure_count",
+      "commuting_neutral_control_count",
+      "noncommuting_nonneutral_counterexample_count",
+      "counterexample_maximum_opposite_saturation_overlap",
+      "counterexample_maximum_half_residual",
+      "finite_wreath_matrix_valued_cayley_counterexample_count",
+      "all_n_saturation_orthogonality_theorem_count",
+      "coherent_internal_saturation_projector_count",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-wreath-matrix-cayley-boundary."
+    ],
+    "positive_signal": "Proved the exact matrix-valued Cayley boundary: opposite saturation-space overlap produces nonhalf channels. An explicit positive-definite XOR-covariant counterfamily kills covariance-only proofs, while commuting sectors remain balanced.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Exp Code Self Dual Wreath Matrix Cayley Boundary"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_matrix_povm_recursive_compiler.py"
+    ],
+    "falsifiers": [
+      "Noncommuting component effects do not obstruct an exact algebraic compiler normal form.",
+      "Outcome count alone does not impose square-root amplitude amplification on a normalized child embedding.",
+      "Pair GPE transport does not prepare matrix POVM square-root amplitudes.",
+      "Generic block-encoding access can still be superpolynomial at an exponentially small effect edge.",
+      "Small component trace or outcome probability does not prove that the positive effect edge is small.",
+      "The finite S6 effect edge is not asymptotic evidence because its source mechanism is negligible."
+    ],
+    "hypothesis": "Replaced the dead scalar-affine extension with an exact nested matrix-POVM compiler normal form and isolated square-root POVM dilation as the new access bottleneck.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-MATRIX-POVM-RECURSIVE-COMPILER",
+    "metrics": [
+      "matrix_component_povm_normal_form_theorem_count",
+      "povm_control_count",
+      "povm_control_failure_count",
+      "noncommuting_povm_control_count",
+      "nested_recursive_povm_normal_form_theorem_count",
+      "companion_natural_s6_partial_support_control_count",
+      "companion_direct_s6_source_mass_no_go_count",
+      "generic_square_root_degree_boundary_theorem_count",
+      "tail_input_size",
+      "tail_effect_edge_log2",
+      "tail_markov_degree_lower_bound_log2",
+      "tail_polynomial_benchmark_log2",
+      "natural_component_povm_dilation_circuit_count",
+      "all_depth_gpe_support_transport_count",
+      "recursive_orientation_polar_sampler_count",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-wreath-matrix-povm-recursive-compiler."
+    ],
+    "positive_signal": "Replaced the dead scalar-affine extension with an exact nested matrix-POVM compiler normal form and isolated square-root POVM dilation as the new access bottleneck.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Exp Code Self Dual Wreath Matrix Povm Recursive Compiler"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_mixed_covariant_decoder.py"
+    ],
+    "falsifiers": [
+      "The pure coherent Fourier decoder is only a benchmark: the physical mixed projector orbit generally requires multiple coherent junk rows.",
+      "Sector-weight concentration alone cannot certify a decoder because it does not control multiplicity support or C_nu conditioning.",
+      "W_3 PGM gains above the exact-label ceiling disappear substantially under isotypic dephasing, confirming the need for cross-sector coherence.",
+      "Large tight-frame rank does not by itself imply computational hardness."
+    ],
+    "hypothesis": "Replaced the pure dual-row heuristic by the exact mixed-state covariant seed, tight-frame, rank, and PGM whitening criteria.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-MIXED-COVARIANT-DECODER",
+    "metrics": [
+      "mixed_covariant_seed_theorem_count",
+      "multiplicity_tight_frame_theorem_count",
+      "seed_rank_lower_bound_theorem_count",
+      "canonical_pgm_seed_theorem_count",
+      "finite_control_count",
+      "finite_control_failure_count",
+      "pure_rank_one_seed_impossible_control_count",
+      "pgm_beats_dephasing_ceiling_control_count",
+      "maximum_finite_pgm_success_probability",
+      "maximum_cross_isotypic_success_contribution",
+      "maximum_finite_seed_junk_rank_lower_bound",
+      "typical_multiplicity_spectrum_theorem_count",
+      "polynomial_multiplicity_whitening_count",
+      "global_information_theoretic_pgm_success_theorem_count",
+      "conditional_branch_uniform_success_theorem_count",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-wreath-mixed-covariant-decoder."
+    ],
+    "positive_signal": "Replaced the pure dual-row heuristic by the exact mixed-state covariant seed, tight-frame, rank, and PGM whitening criteria.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Exp Code Self Dual Wreath Mixed Covariant Decoder"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_mrs_coherence_escape_criterion.py"
+    ],
+    "falsifiers": [
+      "Leaving intermediate irrep labels unmeasured is not by itself outside the measured-sieve model.",
+      "Label-controlled coherent computation with a label-diagonal final effect is transcript-dephasing invariant.",
+      "Dephasing invariance does not imply transcript-only simulation when an isotypic transcript block has dimension greater than one.",
+      "Pair GPE is carrier-block diagonal and cannot alone witness cross-transcript interference.",
+      "A finite noncommuting effect is not a useful escape until it changes the physical decision probability on positive mass.",
+      "Avoiding the MRS model would not prove an efficient algorithm or quantum speedup."
+    ],
+    "hypothesis": "Corrected the MRS audit: dephasing invariance characterizes only whether early projective transcript measurement changes statistics; classical transcript-only simulation requires block-scalar effects, and full adaptive MRS separation remains open.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-MRS-COHERENCE-ESCAPE-CRITERION",
+    "metrics": [
+      "transcript_dephasing_identity_theorem_count",
+      "universal_measured_transcript_invariance_criterion_count",
+      "projective_transcript_only_criterion_count",
+      "finite_control_count",
+      "finite_control_failure_count",
+      "offdiagonal_coherence_witness_control_count",
+      "within_block_quantum_witness_control_count",
+      "deferred_measurement_non_escape_control_count",
+      "hadamard_witness_probability_difference",
+      "recoupled_witness_probability_difference",
+      "within_block_transcript_only_probability_difference",
+      "current_physical_pgm_transcript_povm_separation_count",
+      "mrs_model_escape_theorem_count",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-wreath-mrs-coherence-escape-criterion."
+    ],
+    "positive_signal": "Corrected the MRS audit: dephasing invariance characterizes only whether early projective transcript measurement changes statistics; classical transcript-only simulation requires block-scalar effects, and full adaptive MRS separation remains open.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Exp Code Self Dual Wreath Mrs Coherence Escape Criterion"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_mrs_transcript_povm_separation.py"
+    ],
+    "falsifiers": [
+      "Off-diagonal coherence is sufficient but not necessary for transcript-only separation.",
+      "A fixed projective dephasing test is not the full adaptive MRS criterion.",
+      "Separation from one fixed transcript policy is not separation from the whole MRS algorithm class.",
+      "Effect-space separation would not itself prove an efficient algorithm or speedup."
+    ],
+    "hypothesis": "Converted the MRS model boundary into an executable convex effect-space separation problem with exact dual witnesses and adaptive transcript-POVM compilation, while keeping every physical escape claim closed.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-MRS-TRANSCRIPT-POVM-SEPARATION",
+    "metrics": [
+      "fixed_transcript_zonotope_criterion_theorem_count",
+      "dual_separation_witness_theorem_count",
+      "adaptive_transcript_povm_compiler_theorem_count",
+      "finite_control_count",
+      "finite_control_failure_count",
+      "classical_simulable_control_count",
+      "within_block_separation_control_count",
+      "offdiagonal_separation_control_count",
+      "adaptive_nonprojective_separation_control_count",
+      "physical_pgm_fixed_policy_separation_count",
+      "physical_pgm_full_mrs_model_separation_count",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-wreath-mrs-transcript-povm-separation."
+    ],
+    "positive_signal": "Converted the MRS model boundary into an executable convex effect-space separation problem with exact dual witnesses and adaptive transcript-POVM compilation, while keeping every physical escape claim closed.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Exp Code Self Dual Wreath Mrs Transcript Povm Separation"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_multiscale_polar_schedule.py"
+    ],
+    "falsifiers": [
+      "Top-level K+2 conditioning does not condition every binary internal node.",
+      "Pairwise shorted-metric comparability is not intrinsic to the polar chain identity.",
+      "Constant physical spectra do not remove block-encoding normalization costs."
+    ],
+    "hypothesis": "Generalized the polar chain to constant arity, exposed the binary threshold hard edge, and proved an eight-way Gaussian schedule with all-depth constant frame conditioning.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-MULTISCALE-POLAR-SCHEDULE",
+    "metrics": [
+      "exact_multiway_polar_chain_theorem_count",
+      "multiway_control_count",
+      "multiway_control_failure_count",
+      "binary_interval_uniform_edge_no_go_theorem_count",
+      "mixed_arity_gaussian_all_depth_edge_theorem_count",
+      "mixed_schedule_scaling_count",
+      "mixed_schedule_failure_count",
+      "maximum_merge_arity",
+      "gaussian_all_depth_edge_floor",
+      "gaussian_all_depth_condition_upper",
+      "natural_all_depth_edge_theorem_count",
+      "tight_node_frame_block_encoding_theorem_count",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-wreath-multiscale-polar-schedule."
+    ],
+    "positive_signal": "Generalized the polar chain to constant arity, exposed the binary threshold hard edge, and proved an eight-way Gaussian schedule with all-depth constant frame conditioning.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Exp Code Self Dual Wreath Multiscale Polar Schedule"
   },
   {
     "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -2200,6 +4111,76 @@
   {
     "candidate_id": "CODE-COSET-COLLECTIVE",
     "dependencies": [
+      "self_dual_wreath_native_frame_access_boundary.py"
+    ],
+    "falsifiers": [
+      "A hard lower edge plus trace truncation is insufficient for generic polynomial QSVT.",
+      "Variable-time amplification does not remove orientation width on native frame inputs.",
+      "The companion GPE pair polar confirms that a representation-specific direct transform can bypass this generic width barrier."
+    ],
+    "hypothesis": "Computed the exact resampling amplitude pair and proved that even a perfectly conditioned frame requires square-root orientation queries under generic normalized access.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-NATIVE-FRAME-ACCESS-BOUNDARY",
+    "metrics": [
+      "flat_frame_black_box_lower_bound_theorem_count",
+      "explicit_qrs_amplitude_pair_theorem_count",
+      "variable_time_native_scale_identity_count",
+      "finite_control_count",
+      "flat_control_count",
+      "finite_control_failure_count",
+      "superpolynomial_scaling_row_count",
+      "tail_n",
+      "tail_copy_count",
+      "tail_flat_qrs_lower_bound_log2",
+      "tail_polynomial_benchmark_log2",
+      "representation_specific_polar_transform_count",
+      "companion_gpe_pair_polar_transform_count",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-wreath-native-frame-access-boundary."
+    ],
+    "positive_signal": "Computed the exact resampling amplitude pair and proved that even a perfectly conditioned frame requires square-root orientation queries under generic normalized access.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Exp Code Self Dual Wreath Native Frame Access Boundary"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_natural_leaf_commutator_mass.py"
+    ],
+    "falsifiers": [
+      "Natural high-dimensional leaf projectors do not become asymptotically commuting on balanced pairs.",
+      "A convergence rate for Sellke covering is unnecessary for density-one pair noncommutativity.",
+      "Leaf noncommutativity does not survive canonical frame whitening under any generic conditioning/aspect/rank implication.",
+      "An inverse-polynomial commutator witness is structural evidence, not a measurement circuit or MRS separation."
+    ],
+    "hypothesis": "Proved inverse-polynomial noncommutativity for a density-one fraction of natural balanced orientation-leaf pairs and isolated the missing canonical-component transfer.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-NATURAL-LEAF-COMMUTATOR-MASS",
+    "metrics": [
+      "projection_principal_plane_commutator_theorem_count",
+      "finite_control_count",
+      "finite_control_failure_count",
+      "natural_fixed_balanced_leaf_pair_noncommutativity_theorem_count",
+      "natural_density_one_balanced_leaf_pair_noncommutativity_theorem_count",
+      "global_distinct_leaf_noncommutativity_transfer_theorem_count",
+      "tail_n",
+      "tail_commutator_operator_norm_lower_bound",
+      "tail_inverse_commutator_scale",
+      "natural_canonical_component_commutator_mass_theorem_count",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-wreath-natural-leaf-commutator-mass."
+    ],
+    "positive_signal": "Proved inverse-polynomial noncommutativity for a density-one fraction of natural balanced orientation-leaf pairs and isolated the missing canonical-component transfer.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Exp Code Self Dual Wreath Natural Leaf Commutator Mass"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
       "self_dual_wreath_natural_moment_word_map.py",
       "self_dual_wreath_natural_unequal_dominance.py",
       "self_dual_wreath_subpovm_moment_certificate.py",
@@ -2237,6 +4218,40 @@
     "protocol": "Expand projector products at arbitrary moment order, average normalized characters under the exact natural irrep law, derive the identity/bridge-class indicator formula, validate every finite bridge sequence, and compare with complete W_3 spectral moments.",
     "status": "planned",
     "title": "All-order natural wreath moment word-map reduction"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_natural_pair_carrier_law.py"
+    ],
+    "falsifiers": [
+      "The worst-case 1/(n-1) pair correlation is not representative of multiplicity-weighted natural pair mass.",
+      "Presence of trivial, sign, or hook carriers does not give them nonnegligible natural pair mass.",
+      "Pair carrier concentration alone cannot be promoted to a full-frame edge without controlling coherent higher-order incidence."
+    ],
+    "hypothesis": "Proved the exact fourth-power natural pair-carrier law, all annealed overlap moments, quenched concentration, and factorial suppression of low-dimensional carrier mass.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-NATURAL-PAIR-CARRIER-LAW",
+    "metrics": [
+      "exact_control_count",
+      "exact_control_failure_count",
+      "scaling_record_count",
+      "carrier_law_concentration_trend_count",
+      "tail_n",
+      "tail_expected_weighted_l1_error_upper_bound",
+      "tail_quadratic_dimension_mass_log2",
+      "tail_fourth_power_rms_correlation_log2",
+      "coherent_triangle_incidence_theorem_count",
+      "natural_node_frame_edge_theorem_count",
+      "conditional_active_pair_native_mass_transfer_theorem_count",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-wreath-natural-pair-carrier-law."
+    ],
+    "positive_signal": "Proved the exact fourth-power natural pair-carrier law, all annealed overlap moments, quenched concentration, and factorial suppression of low-dimensional carrier mass.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Exp Code Self Dual Wreath Natural Pair Carrier Law"
   },
   {
     "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -2279,6 +4294,38 @@
     "protocol": "Derive equal and unequal physical weak-Fourier label masses, identify the equal mass with Plancherel collision probability, compute exact finite controls, and combine the union bound with the literature theorem for the maximal S_n irrep dimension.",
     "status": "planned",
     "title": "Natural-source all-unequal wreath-sector reduction"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_operator_steiner_bulk_reduction.py"
+    ],
+    "falsifiers": [
+      "Arbitrary scalar or nonabelian cycle holonomy cannot by itself create macroscopic bulk outlier rank under good coverage.",
+      "Matrix multiplicity is not intrinsically fatal; uneven or low-rank diagonal coverage is the concrete failure mode.",
+      "Future experiments should measure coverage spectra and the line-fiber-burden/coverage-squared ratio, not cycle signs alone."
+    ],
+    "hypothesis": "Proved an exact operator-valued Hilbert-Schmidt identity and reduced matrix Steiner bulk conditioning to a lower-edge theorem for the natural diagonal coverage operator.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-OPERATOR-STEINER-BULK-REDUCTION",
+    "metrics": [
+      "finite_control_count",
+      "finite_control_failure_count",
+      "uniform_scaling_record_count",
+      "tail_multiplicity_one_trim_fraction",
+      "tail_multiplicity_four_trim_fraction",
+      "tail_multiplicity_sixty_four_trim_fraction",
+      "operator_hilbert_schmidt_burden_theorem_count",
+      "coverage_to_bulk_edge_reduction_count",
+      "natural_diagonal_coverage_theorem_count",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-wreath-operator-steiner-bulk-reduction."
+    ],
+    "positive_signal": "Proved an exact operator-valued Hilbert-Schmidt identity and reduced matrix Steiner bulk conditioning to a lower-edge theorem for the natural diagonal coverage operator.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Exp Code Self Dual Wreath Operator Steiner Bulk Reduction"
   },
   {
     "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -2401,6 +4448,41 @@
     "protocol": "Test orbit closure and scalar commutant conditions on non-self-conjugate sectors.",
     "status": "planned",
     "title": "Orientation covariant quotient obstruction analysis"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_orientation_filter_physical_access.py"
+    ],
+    "falsifiers": [
+      "Polynomial manipulation of orientation Fourier blocks does not by itself yield a polynomial physical measurement.",
+      "Postprocessing the direct dual-analysis map cannot improve its factorially weak average success.",
+      "The direct physical multiplicity-space interference filter must now be tested for all-n retained information and norm."
+    ],
+    "hypothesis": "Proved that every dual contraction composed after the direct synthesis adjoint has at most Theta(1/n!) average conclusive probability, while preserving the separately constructed direct physical branch-interference bypass.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-FILTER-PHYSICAL-ACCESS",
+    "metrics": [
+      "direct_physical_to_dual_success_bound_theorem_count",
+      "arbitrary_dual_contraction_bound_theorem_count",
+      "finite_control_count",
+      "finite_validation_failure_count",
+      "scaling_record_count",
+      "inverse_polynomial_direct_access_row_count",
+      "tail_n",
+      "tail_direct_access_success_log2",
+      "tail_amplification_lower_bound_log2",
+      "structured_polar_transfer_count",
+      "direct_physical_orientation_filter_count",
+      "polynomial_hidden_permutation_decoder_count",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-wreath-orientation-filter-physical-access."
+    ],
+    "positive_signal": "Proved that every dual contraction composed after the direct synthesis adjoint has at most Theta(1/n!) average conclusive probability, while preserving the separately constructed direct physical branch-interference bypass.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Exp Code Self Dual Wreath Orientation Filter Physical Access"
   },
   {
     "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -2573,6 +4655,45 @@
     "protocol": "Measure exact pair principal angles and compare noncommon principal correlations against reciprocal irrep dimensions.",
     "status": "planned",
     "title": "Orientation pair principal-angle spectrum"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_orientation_rank_budget.py"
+    ],
+    "falsifiers": [
+      "Near-perfect retention from dim(H)=Omega(k) is not sufficient reason to prefer that regime; its rejection rank is exponentially smaller than trace alone can justify.",
+      "A logarithmic-dimensional H is enough for vanishing natural information loss while preserving polynomial spectral capacity.",
+      "Rank matching is not a norm theorem; structured alignment remains the decisive unresolved obligation."
+    ],
+    "hypothesis": "Calibrated orientation dimension to the spectral task: Theta(log n) simultaneously matches the universal polynomial-tail rank bound and retains natural-source information with high probability.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-RANK-BUDGET",
+    "metrics": [
+      "trace_high_spectrum_count_theorem_count",
+      "orientation_rejection_rank_theorem_count",
+      "logarithmic_rank_capacity_match_theorem_count",
+      "logarithmic_natural_retention_theorem_count",
+      "finite_control_count",
+      "finite_control_failure_count",
+      "scaling_record_count",
+      "separated_logarithmic_window_count",
+      "legacy_linear_rank_insufficient_from_trace_only_count",
+      "tail_n",
+      "tail_logarithmic_subspace_dimension",
+      "tail_copy_count",
+      "tail_markov_failure_probability_log2_upper_bound",
+      "source_adapted_alignment_theorem_count",
+      "conditioned_polynomial_frame_norm_theorem_count",
+      "polynomial_hidden_permutation_decoder_count",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py code-wreath-orientation-rank-budget."
+    ],
+    "positive_signal": "Calibrated orientation dimension to the spectral task: Theta(log n) simultaneously matches the universal polynomial-tail rank bound and retains natural-source information with high probability.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Exp Code Self Dual Wreath Orientation Rank Budget"
   },
   {
     "candidate_id": "CODE-COSET-COLLECTIVE",

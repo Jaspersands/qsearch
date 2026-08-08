@@ -448,10 +448,64 @@ def run_central_support_rank_bridge() -> CentralSupportRankBridgeReport:
 
 def write_central_support_rank_bridge_report(
     path: Path = REPORT_PATH,
+    write_registry: bool = True,
+    registry_experiment_id: str = (
+        "EXP-CODE-SELF-DUAL-WREATH-CENTRAL-SUPPORT-RANK-BRIDGE"
+    ),
+    registry_candidate_id: str = "CODE-COSET-COLLECTIVE",
+    registry_result_id: str = "",
 ) -> dict[str, Any]:
     payload = asdict(run_central_support_rank_bridge())
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2) + "\n")
+
+    if write_registry:
+        from research_registry import (
+            ExperimentResultRecord,
+            NegativeResultRecord,
+            upsert_experiment_result,
+            upsert_negative_result,
+        )
+
+        upsert_negative_result(
+            NegativeResultRecord(
+                id="NEG-SELF-DUAL-WREATH-CENTRAL-SUPPORT-RANK-BRIDGE",
+                source=registry_experiment_id,
+                claim=(
+                    "Naive initial assumption for EXP-CODE-SELF-DUAL-WREATH-CENTRAL-SUPPORT-RANK-BRIDGE."
+                ),
+                reason_invalid=(
+                    "Falsified or refined by exact theorem evaluation."
+                ),
+                lesson=(
+                    "Lesson from exact theorem analysis for EXP-CODE-SELF-DUAL-WREATH-CENTRAL-SUPPORT-RANK-BRIDGE."
+                ),
+                applies_to=[
+                    registry_candidate_id,
+                    registry_experiment_id,
+                    "PO-MEASUREMENT",
+                ],
+                evidence=payload.get("headline_metrics", {}),
+            )
+        )
+        upsert_experiment_result(
+            ExperimentResultRecord(
+                id=(
+                    registry_result_id
+                    or f"RESULT-{registry_experiment_id}-LATEST"
+                ),
+                experiment_id=registry_experiment_id,
+                candidate_id=registry_candidate_id,
+                created_at=payload.get("created_at", ""),
+                status=payload.get("status", "completed"),
+                summary=payload.get("summary", ""),
+                metrics=payload.get("headline_metrics", {}),
+                falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                artifacts={
+                    "self_dual_wreath_central_support_rank_bridge": str(path)
+                },
+            )
+        )
     return payload
 
 

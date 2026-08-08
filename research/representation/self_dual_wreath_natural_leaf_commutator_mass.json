@@ -1,0 +1,371 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Finite S4 noncommutativity may disappear on natural high-dimensional sources.",
+      "resolution": "It does not disappear for leaves: density-one balanced pairs retain the standard carrier and an inverse-polynomial commutator.",
+      "resolved": true
+    },
+    {
+      "objection": "The fixed target can prevent the shared block from containing the standard carrier.",
+      "resolution": "A cover-all random product contains a beta with beta tensor target containing the standard carrier.",
+      "resolved": true
+    },
+    {
+      "objection": "No explicit Sellke rate prevents a statement about exponentially many pairs.",
+      "resolution": "No union bound is used. Markov controls the fraction of bad pairs from its o(1) expectation.",
+      "resolved": true
+    },
+    {
+      "objection": "Noncommuting leaves imply noncommuting whitened component effects.",
+      "resolution": "Refuted generically by a bounded-condition, duplicate-free projection-frame counterfamily. Whether the natural wreath effects satisfy the counterfamily's rigid commuting structure remains open.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "coherent_noncommutative_measurement_compiled": false,
+    "global_distinct_transfer_proved": true,
+    "leaf_to_component_commutator_transfer_proved": false,
+    "natural_canonical_component_effect_algebra_noncommutative_on_positive_mass": false,
+    "natural_leaf_commutator_has_inverse_polynomial_norm_witness": true,
+    "natural_orientation_leaf_algebra_noncommutative_on_density_one_pairs": true,
+    "physical_pgm_outside_mrs_transcript_postprocessing_proved": false,
+    "reason": "Natural leaf projectors are robustly noncommuting, but the canonical component effects include frame whitening and common-span compression. A companion exact counterfamily proves that conditioning, aspect, rank, and nonscalarity controls do not transfer leaf commutators through those operations.",
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-08T21:42:18.510009+00:00",
+  "falsifiers_triggered": [
+    "Natural high-dimensional leaf projectors do not become asymptotically commuting on balanced pairs.",
+    "A convergence rate for Sellke covering is unnecessary for density-one pair noncommutativity.",
+    "Leaf noncommutativity does not survive canonical frame whitening under any generic conditioning/aspect/rank implication.",
+    "An inverse-polynomial commutator witness is structural evidence, not a measurement circuit or MRS separation."
+  ],
+  "finite_controls": [
+    {
+      "carrier_dimension": 2,
+      "commutator_norm_residual": 0.0,
+      "control_id": "PRINCIPAL-COSINE-1-OVER-2",
+      "exact_projection_commutator_formula_verified": true,
+      "observed_commutator_norm": 0.4330127018922193,
+      "observed_principal_cosine": 0.5,
+      "predicted_commutator_norm": 0.4330127018922193,
+      "predicted_principal_cosine": 0.5,
+      "status": "exact-principal-plane-projection-commutator-verified"
+    },
+    {
+      "carrier_dimension": 3,
+      "commutator_norm_residual": 0.0,
+      "control_id": "PRINCIPAL-COSINE-1-OVER-3",
+      "exact_projection_commutator_formula_verified": true,
+      "observed_commutator_norm": 0.31426968052735443,
+      "observed_principal_cosine": 0.3333333333333333,
+      "predicted_commutator_norm": 0.31426968052735443,
+      "predicted_principal_cosine": 0.3333333333333333,
+      "status": "exact-principal-plane-projection-commutator-verified"
+    },
+    {
+      "carrier_dimension": 5,
+      "commutator_norm_residual": 0.0,
+      "control_id": "PRINCIPAL-COSINE-1-OVER-5",
+      "exact_projection_commutator_formula_verified": true,
+      "observed_commutator_norm": 0.19595917942265426,
+      "observed_principal_cosine": 0.2,
+      "predicted_commutator_norm": 0.19595917942265426,
+      "predicted_principal_cosine": 0.2,
+      "status": "exact-principal-plane-projection-commutator-verified"
+    },
+    {
+      "carrier_dimension": 11,
+      "commutator_norm_residual": 0.0,
+      "control_id": "PRINCIPAL-COSINE-1-OVER-11",
+      "exact_projection_commutator_formula_verified": true,
+      "observed_commutator_norm": 0.09053265413308531,
+      "observed_principal_cosine": 0.09090909090909091,
+      "predicted_commutator_norm": 0.09053265413308531,
+      "predicted_principal_cosine": 0.09090909090909091,
+      "status": "exact-principal-plane-projection-commutator-verified"
+    },
+    {
+      "carrier_dimension": 31,
+      "commutator_norm_residual": 0.0,
+      "control_id": "PRINCIPAL-COSINE-1-OVER-31",
+      "exact_projection_commutator_formula_verified": true,
+      "observed_commutator_norm": 0.03224127655531669,
+      "observed_principal_cosine": 0.03225806451612903,
+      "predicted_commutator_norm": 0.03224127655531669,
+      "predicted_principal_cosine": 0.03225806451612903,
+      "status": "exact-principal-plane-projection-commutator-verified"
+    }
+  ],
+  "headline_metrics": {
+    "finite_control_count": 5,
+    "finite_control_failure_count": 0,
+    "global_distinct_leaf_noncommutativity_transfer_theorem_count": 1,
+    "natural_canonical_component_commutator_mass_theorem_count": 0,
+    "natural_density_one_balanced_leaf_pair_noncommutativity_theorem_count": 1,
+    "natural_fixed_balanced_leaf_pair_noncommutativity_theorem_count": 1,
+    "new_quantum_algorithm_count": 0,
+    "projection_principal_plane_commutator_theorem_count": 1,
+    "tail_commutator_operator_norm_lower_bound": 0.010525732597928347,
+    "tail_inverse_commutator_scale": 95.00526359531668,
+    "tail_n": 96
+  },
+  "literature": {
+    "paper_id": "sellke-irrep-tensor-covering-2022",
+    "theorem": "Theorem 1.2",
+    "url": "https://arxiv.org/abs/2004.05283"
+  },
+  "proof_obligations": [
+    {
+      "obligation": "prove_positive_natural_mass_of_leaf_projector_noncommutativity",
+      "resolution": "The standard carrier appears in all three balanced pair blocks with probability 1-o(1), forcing commutator norm at least sqrt(1-(n-1)^-2)/(n-1).",
+      "resolved": true
+    },
+    {
+      "obligation": "upgrade_fixed_balanced_pair_to_density_one_pairs",
+      "resolution": "The expected bad balanced-pair fraction is o(1); Markov gives density one, and balanced Hamming distances themselves have density one.",
+      "resolved": true
+    },
+    {
+      "obligation": "transfer_leaf_commutator_to_canonical_component_effect_commutator",
+      "resolution": "Generic transfer is false even for distinct high-rank leaves and a frame condition number below three. Common-span compression is POVM-universal, so the full-support reciprocal-integer cover is also inapplicable. Need direct natural compressed commutator support or a simultaneous-basis compiler.",
+      "resolved": false
+    },
+    {
+      "obligation": "compile_noncommuting_leaf_or_component_measurement",
+      "resolution": "An inverse-polynomial commutator witnesses structure but supplies neither a simultaneous transform nor a matrix-POVM dilation.",
+      "resolved": false
+    }
+  ],
+  "scaling_records": [
+    {
+      "balanced_hamming_distance_lower": 3,
+      "balanced_hamming_distance_upper": 6,
+      "canonical_component_commutator_transfer_proved": false,
+      "commutator_operator_norm_lower_bound": 0.24206145913796356,
+      "density_one_balanced_pair_noncommutativity_proved": true,
+      "fixed_balanced_pair_noncommutativity_probability_tends_one": true,
+      "global_distinct_transfer_proved": true,
+      "information_threshold_copy_count": 7,
+      "inverse_commutator_scale": 4.131182235954578,
+      "n": 5,
+      "principal_cosine": 0.25,
+      "selected_copy_count": 9,
+      "standard_carrier_dimension": 4,
+      "standard_carrier_partition": [
+        4,
+        1
+      ],
+      "status": "density-one-natural-balanced-leaf-noncommutativity-proved-component-transfer-open"
+    },
+    {
+      "balanced_hamming_distance_lower": 6,
+      "balanced_hamming_distance_upper": 12,
+      "canonical_component_commutator_transfer_proved": false,
+      "commutator_operator_norm_lower_bound": 0.14139190265868384,
+      "density_one_balanced_pair_noncommutativity_proved": true,
+      "fixed_balanced_pair_noncommutativity_probability_tends_one": true,
+      "global_distinct_transfer_proved": true,
+      "information_threshold_copy_count": 16,
+      "inverse_commutator_scale": 7.072540797572916,
+      "n": 8,
+      "principal_cosine": 0.14285714285714285,
+      "selected_copy_count": 18,
+      "standard_carrier_dimension": 7,
+      "standard_carrier_partition": [
+        7,
+        1
+      ],
+      "status": "density-one-natural-balanced-leaf-noncommutativity-proved-component-transfer-open"
+    },
+    {
+      "balanced_hamming_distance_lower": 10,
+      "balanced_hamming_distance_upper": 21,
+      "canonical_component_commutator_transfer_proved": false,
+      "commutator_operator_norm_lower_bound": 0.09053265413308531,
+      "density_one_balanced_pair_noncommutativity_proved": true,
+      "fixed_balanced_pair_noncommutativity_probability_tends_one": true,
+      "global_distinct_transfer_proved": true,
+      "information_threshold_copy_count": 29,
+      "inverse_commutator_scale": 11.04573824302085,
+      "n": 12,
+      "principal_cosine": 0.09090909090909091,
+      "selected_copy_count": 31,
+      "standard_carrier_dimension": 11,
+      "standard_carrier_partition": [
+        11,
+        1
+      ],
+      "status": "density-one-natural-balanced-leaf-noncommutativity-proved-component-transfer-open"
+    },
+    {
+      "balanced_hamming_distance_lower": 15,
+      "balanced_hamming_distance_upper": 32,
+      "canonical_component_commutator_transfer_proved": false,
+      "commutator_operator_norm_lower_bound": 0.06651835354264785,
+      "density_one_balanced_pair_noncommutativity_proved": true,
+      "fixed_balanced_pair_noncommutativity_probability_tends_one": true,
+      "global_distinct_transfer_proved": true,
+      "information_threshold_copy_count": 45,
+      "inverse_commutator_scale": 15.033444857573873,
+      "n": 16,
+      "principal_cosine": 0.06666666666666667,
+      "selected_copy_count": 47,
+      "standard_carrier_dimension": 15,
+      "standard_carrier_partition": [
+        15,
+        1
+      ],
+      "status": "density-one-natural-balanced-leaf-noncommutativity-proved-component-transfer-open"
+    },
+    {
+      "balanced_hamming_distance_lower": 21,
+      "balanced_hamming_distance_upper": 43,
+      "canonical_component_commutator_transfer_proved": false,
+      "commutator_operator_norm_lower_bound": 0.05255863147094259,
+      "density_one_balanced_pair_noncommutativity_proved": true,
+      "fixed_balanced_pair_noncommutativity_probability_tends_one": true,
+      "global_distinct_transfer_proved": true,
+      "information_threshold_copy_count": 62,
+      "inverse_commutator_scale": 19.02637058867975,
+      "n": 20,
+      "principal_cosine": 0.05263157894736842,
+      "selected_copy_count": 64,
+      "standard_carrier_dimension": 19,
+      "standard_carrier_partition": [
+        19,
+        1
+      ],
+      "status": "density-one-natural-balanced-leaf-noncommutativity-proved-component-transfer-open"
+    },
+    {
+      "balanced_hamming_distance_lower": 27,
+      "balanced_hamming_distance_upper": 55,
+      "canonical_component_commutator_transfer_proved": false,
+      "commutator_operator_norm_lower_bound": 0.043437146665693975,
+      "density_one_balanced_pair_noncommutativity_proved": true,
+      "fixed_balanced_pair_noncommutativity_probability_tends_one": true,
+      "global_distinct_transfer_proved": true,
+      "information_threshold_copy_count": 80,
+      "inverse_commutator_scale": 23.02177000014104,
+      "n": 24,
+      "principal_cosine": 0.043478260869565216,
+      "selected_copy_count": 82,
+      "standard_carrier_dimension": 23,
+      "standard_carrier_partition": [
+        23,
+        1
+      ],
+      "status": "density-one-natural-balanced-leaf-noncommutativity-proved-component-transfer-open"
+    },
+    {
+      "balanced_hamming_distance_lower": 40,
+      "balanced_hamming_distance_upper": 80,
+      "canonical_component_commutator_transfer_proved": false,
+      "commutator_operator_norm_lower_bound": 0.03224127655531669,
+      "density_one_balanced_pair_noncommutativity_proved": true,
+      "fixed_balanced_pair_noncommutativity_probability_tends_one": true,
+      "global_distinct_transfer_proved": true,
+      "information_threshold_copy_count": 118,
+      "inverse_commutator_scale": 31.01614163087773,
+      "n": 32,
+      "principal_cosine": 0.03225806451612903,
+      "selected_copy_count": 120,
+      "standard_carrier_dimension": 31,
+      "standard_carrier_partition": [
+        31,
+        1
+      ],
+      "status": "density-one-natural-balanced-leaf-noncommutativity-proved-component-transfer-open"
+    },
+    {
+      "balanced_hamming_distance_lower": 54,
+      "balanced_hamming_distance_upper": 108,
+      "canonical_component_commutator_transfer_proved": false,
+      "commutator_operator_norm_lower_bound": 0.02563259525262055,
+      "density_one_balanced_pair_noncommutativity_proved": true,
+      "fixed_balanced_pair_noncommutativity_probability_tends_one": true,
+      "global_distinct_transfer_proved": true,
+      "information_threshold_copy_count": 160,
+      "inverse_commutator_scale": 39.01282683803798,
+      "n": 40,
+      "principal_cosine": 0.02564102564102564,
+      "selected_copy_count": 162,
+      "standard_carrier_dimension": 39,
+      "standard_carrier_partition": [
+        39,
+        1
+      ],
+      "status": "density-one-natural-balanced-leaf-noncommutativity-proved-component-transfer-open"
+    },
+    {
+      "balanced_hamming_distance_lower": 68,
+      "balanced_hamming_distance_upper": 137,
+      "canonical_component_commutator_transfer_proved": false,
+      "commutator_operator_norm_lower_bound": 0.021271779310947453,
+      "density_one_balanced_pair_noncommutativity_proved": true,
+      "fixed_balanced_pair_noncommutativity_probability_tends_one": true,
+      "global_distinct_transfer_proved": true,
+      "information_threshold_copy_count": 203,
+      "inverse_commutator_scale": 47.01064191115189,
+      "n": 48,
+      "principal_cosine": 0.02127659574468085,
+      "selected_copy_count": 205,
+      "standard_carrier_dimension": 47,
+      "standard_carrier_partition": [
+        47,
+        1
+      ],
+      "status": "density-one-natural-balanced-leaf-noncommutativity-proved-component-transfer-open"
+    },
+    {
+      "balanced_hamming_distance_lower": 99,
+      "balanced_hamming_distance_upper": 199,
+      "canonical_component_commutator_transfer_proved": false,
+      "commutator_operator_norm_lower_bound": 0.01587101612297669,
+      "density_one_balanced_pair_noncommutativity_proved": true,
+      "fixed_balanced_pair_noncommutativity_probability_tends_one": true,
+      "global_distinct_transfer_proved": true,
+      "information_threshold_copy_count": 296,
+      "inverse_commutator_scale": 63.00793800796952,
+      "n": 64,
+      "principal_cosine": 0.015873015873015872,
+      "selected_copy_count": 298,
+      "standard_carrier_dimension": 63,
+      "standard_carrier_partition": [
+        63,
+        1
+      ],
+      "status": "density-one-natural-balanced-leaf-noncommutativity-proved-component-transfer-open"
+    },
+    {
+      "balanced_hamming_distance_lower": 167,
+      "balanced_hamming_distance_upper": 334,
+      "canonical_component_commutator_transfer_proved": false,
+      "commutator_operator_norm_lower_bound": 0.010525732597928347,
+      "density_one_balanced_pair_noncommutativity_proved": true,
+      "fixed_balanced_pair_noncommutativity_probability_tends_one": true,
+      "global_distinct_transfer_proved": true,
+      "information_threshold_copy_count": 499,
+      "inverse_commutator_scale": 95.00526359531668,
+      "n": 96,
+      "principal_cosine": 0.010526315789473684,
+      "selected_copy_count": 501,
+      "standard_carrier_dimension": 95,
+      "standard_carrier_partition": [
+        95,
+        1
+      ],
+      "status": "density-one-natural-balanced-leaf-noncommutativity-proved-component-transfer-open"
+    }
+  ],
+  "status": "density-one-natural-leaf-noncommutativity-proved-component-transfer-open",
+  "summary": "Proved inverse-polynomial noncommutativity for a density-one fraction of natural balanced orientation-leaf pairs and isolated the missing canonical-component transfer.",
+  "theorem_contract": {
+    "covering_input": "Sellke constant-block Plancherel tensor covering puts the standard carrier into each growing balanced pattern block with probability 1-o(1).",
+    "density_transfer": "Markov on the average bad-pair indicator gives density-one balanced-pair success without a Sellke convergence rate; binomial concentration and P_cf=1-o(1) complete the transfer.",
+    "fixed_target_shared_block": "Tensoring a cover-all random product by a fixed target still contains the standard carrier, by choosing beta inside standard tensor target^* and applying Frobenius reciprocity.",
+    "pair_principal_angle": "If carrier alpha occurs in all three acted-on pair-pattern blocks, the exact leaf principal cosine is 1/d_alpha.",
+    "projection_commutator": "A principal cosine c in (0,1) contributes projection-commutator operator norm c sqrt(1-c^2).",
+    "scope": "The theorem concerns original orientation projectors. Frame whitening/common-span compression can alter commutators, so canonical component-effect noncommutativity remains open."
+  }
+}

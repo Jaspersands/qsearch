@@ -254,6 +254,71 @@
 > and speedup gates false. Routine registry/dequantization/proof/frontier/CLI
 > wiring and artifact refreshes belong to Gemini 3.6 Flash.
 
+> **Final-root component-geometry theorem deltas (2026-08-08):** inventory and
+> wire these reports by copying an existing theorem-report dispatch pattern:
+>
+> - `EXP-CODE-SELF-DUAL-WREATH-COMPONENT-DEFECT-GAP-BRIDGE`, suggested CLI
+>   `code-wreath-component-defect-gap`;
+> - `EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-LEVERAGE-EDGE`, suggested CLI
+>   `code-wreath-final-root-leverage-edge`;
+> - `EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-NATURAL-COMMON-SPAN`, suggested CLI
+>   `code-wreath-final-root-natural-common-span`;
+> - `EXP-CODE-SELF-DUAL-WREATH-COMPONENT-DEFECT-RANK-MASS`, suggested CLI
+>   `code-wreath-component-defect-rank-mass`;
+> - `EXP-CODE-SELF-DUAL-WREATH-COMPONENT-POVM-SPECTRAL-TRIM`, suggested CLI
+>   `code-wreath-component-povm-spectral-trim`;
+> - `EXP-CODE-SELF-DUAL-WREATH-COMPONENT-EFFECT-ALGEBRA-BOUNDARY`, suggested
+>   CLI `code-wreath-component-effect-algebra-boundary`;
+> - `EXP-CODE-SELF-DUAL-WREATH-NATURAL-LEAF-COMMUTATOR-MASS`, suggested CLI
+>   `code-wreath-natural-leaf-commutator`;
+> - `EXP-CODE-SELF-DUAL-WREATH-LEAF-WHITENING-COMMUTATOR-NO-GO`, suggested CLI
+>   `code-wreath-leaf-whitening-no-go`;
+> - `EXP-CODE-SELF-DUAL-WREATH-COMMON-SPAN-COMPONENT-UNIVERSALITY-NO-GO`,
+>   suggested CLI `code-wreath-common-span-component-universality`.
+>
+> Preserve the theorem scopes exactly. The defect bridge is deterministic and
+> conditional on an actual retained minimum positive component edge. Coordinate
+> block rank removes a separate trace-balance premise but does not prove that
+> edge. The leverage theorem is explicitly Haar/Gaussian; its schedule claim
+> has been renamed as a **surrogate** aspect claim. The natural-common-span
+> theorem independently proves, on globally distinct conditional mass
+> `1/9-o(1)`, common relative rank `19/128-o(1)`, child fiber aspect
+> `19/520-o(1)`, and `b_max/r<=(520/19+o(1))/q`. It does not transfer the Haar
+> positive edge. The defect-rank theorem then proves asymptotically full defect
+> rank on the same source event and conditioned expected physical support mass
+> `19/1152-o(1)` without a positive-edge premise. This resolves center-valued
+> support mass, not spectral conditioning. Keep natural component-edge,
+> coherent child-pseudoinverse,
+> component-support SELECT, recursive-polar, decoder, and speedup gates false.
+> The component spectral-trim theorem proves the state-weighted bound
+> `failure<=kappa tau B/r`; it does not prove polynomial natural input
+> flatness. Preserve the concentrated-state unit-failure countercontrol and
+> keep coherent threshold/support compilation false.
+> The effect-algebra boundary retracts any inference from full-rank
+> nonscalarity to noncommutativity. Preserve the orthogonal-PVM counterexample,
+> keep natural commutator central/physical mass false, and do not describe the
+> finite trine or S6 controls as asymptotic evidence.
+> The natural leaf theorem proves density-one inverse-polynomial commutators
+> only for the original orientation projectors. The whitening no-go gives an
+> exact integer-degree independent-set characterization of commuting canonical
+> projection frames and a bounded-condition, duplicate-free counterfamily. It
+> kills every generic full-support transfer based only on leaf commutators,
+> conditioning, aspect, relative rank, distinctness, or nonscalarity. The
+> common-span universality theorem then proves every POVM can arise after
+> proper sibling compression; its structured counterfamily also has constant
+> common rank, positive component edge, and commuting non-reciprocal spectrum.
+> Neither module is a natural wreath commutativity theorem. Keep direct natural
+> compressed `D_com` support, coherent simultaneous-basis/component
+> compilation, MRS separation, decoder, and speedup gates false.
+> The finite rows through `S_48` are deliberately vacuous for common-span rank
+> because the exact global-distinct probability is tiny; do not call them
+> finite confirmation or contradiction of the asymptotic theorem.
+>
+> Add clean dispatch tests, refresh standard downstream workflows, and use the
+> new natural theorem to supersede any registry text saying natural final-root
+> block/fiber aspects are wholly unidentified. Do not mark the positive-edge
+> obligation resolved.
+
 > **Additional theorem artifacts from the signed-Steiner/coverage pass:**
 > mechanically wire these without changing their claim gates:
 > `EXP-CODE-SELF-DUAL-WREATH-SIGNED-STEINER-INCIDENCE-BOUNDARY`,

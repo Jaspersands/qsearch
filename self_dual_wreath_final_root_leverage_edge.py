@@ -284,7 +284,7 @@ def run_final_root_leverage_edge() -> FinalRootLeverageEdgeReport:
     positive_rows = sum(row.positive_defect_gap_on_edge_event for row in scaling)
     tail = scaling[-1]
     exact = failures == 0
-    schedule = all(
+    surrogate_schedule = all(
         2.0 <= row.final_child_coefficient_to_physical_aspect < 4.0
         and 0.25 < row.common_fiber_aspect <= 0.5
         for row in scaling
@@ -293,9 +293,11 @@ def run_final_root_leverage_edge() -> FinalRootLeverageEdgeReport:
         created_at=utc_now(),
         theorem_contract={
             "k_plus_two_final_root_aspect": (
-                "With K=ceil(log2|G|), one final-root child has N=2^(K+1) "
-                "coefficients and r=|G|, so N/r is in [2,4) and alpha=r/N "
-                "is in (1/4,1/2]."
+                "In the scalar Haar/Gaussian surrogate, K=ceil(log2|G|) gives "
+                "one final-root child N=2^(K+1) coefficients and r=|G|, so "
+                "N/r is in [2,4) and alpha=r/N is in (1/4,1/2]. The companion "
+                "natural-common-span theorem handles representation-valued "
+                "block dimensions without identifying them with this scalar model."
             ),
             "haar_coordinate_effect": (
                 "A rank-one coordinate component of a Haar isometry has one "
@@ -320,9 +322,9 @@ def run_final_root_leverage_edge() -> FinalRootLeverageEdgeReport:
         scaling_records=scaling,
         proof_obligations=[
             {
-                "obligation": "show_existing_k_plus_two_schedule_bounds_final_root_component_aspect",
-                "resolved": schedule,
-                "resolution": "The exact dyadic ratio puts every recorded final-root child aspect in [2,4) and common-fiber aspect in (1/4,1/2]."
+                "obligation": "show_existing_k_plus_two_schedule_bounds_surrogate_final_root_component_aspect",
+                "resolved": surrogate_schedule,
+                "resolution": "The exact dyadic ratio puts every recorded scalar-surrogate final-root child aspect in [2,4) and common-fiber aspect in (1/4,1/2]. Natural positive-mass dimensions are proved separately; the natural edge remains open."
             },
             {
                 "obligation": "prove_uniform_haar_rank_one_component_edge",
@@ -363,7 +365,7 @@ def run_final_root_leverage_edge() -> FinalRootLeverageEdgeReport:
             },
         ],
         headline_metrics={
-            "k_plus_two_final_root_component_aspect_theorem_count": int(schedule),
+            "k_plus_two_surrogate_final_root_component_aspect_theorem_count": int(surrogate_schedule),
             "haar_uniform_rank_one_leverage_edge_theorem_count": 1,
             "haar_edge_to_defect_gap_bridge_count": 1,
             "finite_control_count": len(controls),
@@ -381,7 +383,7 @@ def run_final_root_leverage_edge() -> FinalRootLeverageEdgeReport:
             "new_quantum_algorithm_count": 0,
         },
         claim_gate={
-            "existing_k_plus_two_schedule_bounds_final_root_component_aspect": schedule,
+            "existing_k_plus_two_schedule_bounds_surrogate_final_root_component_aspect": surrogate_schedule,
             "haar_final_root_minimum_component_edge_is_constant_with_high_probability": True,
             "haar_final_root_aggregate_defect_has_constant_gap": tail.positive_defect_gap_on_edge_event,
             "natural_final_root_component_edge_proved": False,
@@ -391,20 +393,21 @@ def run_final_root_leverage_edge() -> FinalRootLeverageEdgeReport:
             "recursive_orientation_polar_proved": False,
             "speedup_claim_allowed": False,
             "reason": (
-                "The existing copy schedule supplies the right final-root "
+                "The existing copy schedule supplies the right scalar-surrogate "
                 "aspect and the Haar model has overwhelming leverage/defect "
-                "gaps, but no natural representation-theoretic transfer exists."
+                "gaps. Natural positive-mass dimensions are now controlled by "
+                "a companion theorem, but the natural positive edge is open."
             ),
         },
         status=(
             "final-root-haar-leverage-and-defect-gap-proved-natural-transfer-open"
-            if exact and schedule and edge_misses == 0
+            if exact and surrogate_schedule and edge_misses == 0
             else "final-root-leverage-edge-control-failure"
         ),
         summary=(
-            "Showed that the existing K+2 schedule already prevents a vanishing "
-            "final-root component aspect and proved an all-coordinate constant "
-            "edge plus aggregate defect gap in the Haar surrogate."
+            "Showed that the existing K+2 schedule prevents a vanishing scalar-"
+            "surrogate final-root component aspect and proved an all-coordinate "
+            "constant edge plus aggregate defect gap in the Haar model."
         ),
         falsifiers_triggered=[
             "The existing K+2 final root does not suffer a vanishing common-fiber aspect in the surrogate.",
@@ -417,10 +420,64 @@ def run_final_root_leverage_edge() -> FinalRootLeverageEdgeReport:
 
 def write_final_root_leverage_edge_report(
     path: Path = REPORT_PATH,
+    write_registry: bool = True,
+    registry_experiment_id: str = (
+        "EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-LEVERAGE-EDGE"
+    ),
+    registry_candidate_id: str = "CODE-COSET-COLLECTIVE",
+    registry_result_id: str = "",
 ) -> dict[str, Any]:
     payload = asdict(run_final_root_leverage_edge())
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n")
+
+    if write_registry:
+        from research_registry import (
+            ExperimentResultRecord,
+            NegativeResultRecord,
+            upsert_experiment_result,
+            upsert_negative_result,
+        )
+
+        upsert_negative_result(
+            NegativeResultRecord(
+                id="NEG-SELF-DUAL-WREATH-FINAL-ROOT-LEVERAGE-EDGE",
+                source=registry_experiment_id,
+                claim=(
+                    "Initial negative claim for EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-LEVERAGE-EDGE."
+                ),
+                reason_invalid=(
+                    "Falsified or refined by exact theorem evaluation."
+                ),
+                lesson=(
+                    "Lesson from exact theorem analysis for EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-LEVERAGE-EDGE."
+                ),
+                applies_to=[
+                    registry_candidate_id,
+                    registry_experiment_id,
+                    "PO-MEASUREMENT",
+                ],
+                evidence=payload.get("headline_metrics", {}),
+            )
+        )
+        upsert_experiment_result(
+            ExperimentResultRecord(
+                id=(
+                    registry_result_id
+                    or f"RESULT-{registry_experiment_id}-LATEST"
+                ),
+                experiment_id=registry_experiment_id,
+                candidate_id=registry_candidate_id,
+                created_at=payload.get("created_at", ""),
+                status=payload.get("status", "completed"),
+                summary=payload.get("summary", ""),
+                metrics=payload.get("headline_metrics", {}),
+                falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                artifacts={
+                    "self_dual_wreath_final_root_leverage_edge": str(path)
+                },
+            )
+        )
     return payload
 
 

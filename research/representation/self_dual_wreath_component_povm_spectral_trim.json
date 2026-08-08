@@ -1,0 +1,279 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "One arbitrarily small positive component eigenvalue forces an untrimmed natural hard-edge theorem.",
+      "resolution": "False for average-state dilation: trim below tau and charge loss by rank budget and input flatness.",
+      "resolved": true
+    },
+    {
+      "objection": "Small uniform-input discarded trace controls every incoming state.",
+      "resolution": "False. The jointly-low-sector concentrated control loses probability one; kappa is the necessary state-dependence in this bound.",
+      "resolved": true
+    },
+    {
+      "objection": "The natural common-fiber aspect alone makes the cutoff constant.",
+      "resolution": "Only if the incoming state is O(1)-flat. Polynomial flatness gives an inverse-polynomial cutoff; superpolynomial concentration can erase the gain.",
+      "resolved": false
+    },
+    {
+      "objection": "An inverse-polynomial retained edge is already a component circuit.",
+      "resolution": "Coherent effect access, spectral thresholding, failure flagging, and component support transport are separate gates.",
+      "resolved": false
+    }
+  ],
+  "claim_gate": {
+    "coherent_component_spectral_threshold_compiled": false,
+    "coherent_component_support_select_compiled": false,
+    "component_positive_edge_required_for_average_state_dilation": false,
+    "natural_final_component_aspect_available": true,
+    "polynomial_natural_incoming_common_fiber_flatness_proved": false,
+    "reason": "Sparse natural aspects make state-weighted spectral trimming a viable hard-edge bypass, but the physical input flatness and coherent component access are unproved.",
+    "recursive_orientation_polar_proved": false,
+    "speedup_claim_allowed": false,
+    "state_weighted_component_spectral_trim_proved": true
+  },
+  "created_at": "2026-08-08T21:16:09.728783+00:00",
+  "falsifiers_triggered": [
+    "A natural uniform positive component edge is not necessary for average-state component dilation.",
+    "Uniform-input trace retention does not imply worst-case state retention.",
+    "Natural constant component aspect relocates the gate to incoming-state flatness and coherent effect access.",
+    "Inverse-polynomial spectral threshold does not itself compile component support SELECT."
+  ],
+  "finite_controls": [
+    {
+      "component_rank_budget": 6,
+      "control_id": "TINY-EDGE-UNIFORM-INPUT",
+      "coordinate_block_rank_budget": 7,
+      "discarded_effect_maximum_eigenvalue": 1e-05,
+      "discarded_effect_minimum_eigenvalue": 0.0,
+      "exact_failure_probability": 6.666666666666667e-06,
+      "exact_trim_theorem_verified": true,
+      "exact_uniform_input_failure_probability": 6.6666666666666675e-06,
+      "fiber_dimension": 3,
+      "ideal_to_trimmed_mean_square_error": 6.666666666666666e-06,
+      "incoming_state_flatness": 1.0,
+      "mean_square_identity_verified": true,
+      "minimum_retained_positive_eigenvalue": 0.5,
+      "outcome_count": 3,
+      "retained_nonzero_edge_verified": true,
+      "state_flatness_bound_verified": true,
+      "state_flatness_failure_upper_bound": 0.20000000000000004,
+      "status": "state-weighted-component-povm-spectral-trim-verified",
+      "subpovm_completeness_violation": 0.0,
+      "trace_rank_bound_verified": true,
+      "trace_rank_failure_upper_bound": 0.6000000000000001,
+      "truncation_threshold": 0.1,
+      "uniform_trace_rank_failure_upper_bound": 0.20000000000000004
+    },
+    {
+      "component_rank_budget": 11,
+      "control_id": "JOINTLY-LOW-SECTOR-UNIFORM-INPUT",
+      "coordinate_block_rank_budget": 11,
+      "discarded_effect_maximum_eigenvalue": 1.0,
+      "discarded_effect_minimum_eigenvalue": 0.0,
+      "exact_failure_probability": 0.25,
+      "exact_trim_theorem_verified": true,
+      "exact_uniform_input_failure_probability": 0.25,
+      "fiber_dimension": 4,
+      "ideal_to_trimmed_mean_square_error": 0.25000000000000006,
+      "incoming_state_flatness": 1.0,
+      "mean_square_identity_verified": true,
+      "minimum_retained_positive_eigenvalue": 1.0,
+      "outcome_count": 8,
+      "retained_nonzero_edge_verified": true,
+      "state_flatness_bound_verified": true,
+      "state_flatness_failure_upper_bound": 0.55,
+      "status": "state-weighted-component-povm-spectral-trim-verified",
+      "subpovm_completeness_violation": 0.0,
+      "trace_rank_bound_verified": true,
+      "trace_rank_failure_upper_bound": 2.2,
+      "truncation_threshold": 0.2,
+      "uniform_trace_rank_failure_upper_bound": 0.55
+    },
+    {
+      "component_rank_budget": 11,
+      "control_id": "JOINTLY-LOW-SECTOR-CONCENTRATED-INPUT",
+      "coordinate_block_rank_budget": 11,
+      "discarded_effect_maximum_eigenvalue": 1.0,
+      "discarded_effect_minimum_eigenvalue": 0.0,
+      "exact_failure_probability": 1.0,
+      "exact_trim_theorem_verified": true,
+      "exact_uniform_input_failure_probability": 0.25,
+      "fiber_dimension": 4,
+      "ideal_to_trimmed_mean_square_error": 1.0000000000000002,
+      "incoming_state_flatness": 4.0,
+      "mean_square_identity_verified": true,
+      "minimum_retained_positive_eigenvalue": 1.0,
+      "outcome_count": 8,
+      "retained_nonzero_edge_verified": true,
+      "state_flatness_bound_verified": true,
+      "state_flatness_failure_upper_bound": 2.2,
+      "status": "state-weighted-component-povm-spectral-trim-verified",
+      "subpovm_completeness_violation": 0.0,
+      "trace_rank_bound_verified": true,
+      "trace_rank_failure_upper_bound": 2.2,
+      "truncation_threshold": 0.2,
+      "uniform_trace_rank_failure_upper_bound": 0.55
+    }
+  ],
+  "headline_metrics": {
+    "coherent_component_threshold_filter_count": 0,
+    "concentrated_state_unit_failure_countercontrol_count": 1,
+    "conditional_inverse_polynomial_trim_scaling_row_count": 8,
+    "finite_control_count": 3,
+    "finite_control_failure_count": 0,
+    "natural_final_fiber_aspect_input_count": 1,
+    "natural_incoming_state_flatness_theorem_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "state_weighted_component_spectral_trim_theorem_count": 1,
+    "tail_inverse_threshold_cost": 2522273.684210526,
+    "tail_n": 96,
+    "tail_retained_component_threshold": 3.964676816239317e-07
+  },
+  "proof_obligations": [
+    {
+      "obligation": "replace_uniform_component_edge_by_state_weighted_spectral_trim",
+      "resolution": "Spectral rank counting gives an exact sub-POVM and failure bound kappa tau B/r, including the coherent mean-square map error.",
+      "resolved": true
+    },
+    {
+      "obligation": "prove_polynomial_flatness_of_natural_incoming_common_fiber_state",
+      "resolution": "Identify the actual reduced state after the endpoint mixer and prove r||rho||_infinity=poly(n), or use a sharper state-specific weighted estimate.",
+      "resolved": false
+    },
+    {
+      "obligation": "compile_coherent_component_spectral_threshold_and_support_select",
+      "resolution": "The theorem is spectral calculus. It does not provide block encodings of H_e, reversible threshold labels, or controlled support transports.",
+      "resolved": false
+    },
+    {
+      "obligation": "compose_component_trim_error_through_recursive_polar",
+      "resolution": "Requires the actual node input states and a level-weighted hybrid analogous to the existing frame-level trace-truncation theorem.",
+      "resolved": false
+    }
+  ],
+  "scaling_records": [
+    {
+      "coherent_component_threshold_filter_compiled": false,
+      "failure_upper_bound": 0.1,
+      "incoming_flatness_polynomial_degree": 2,
+      "incoming_flatness_upper_bound": 64.0,
+      "inverse_polynomial_threshold_certified_conditionally": true,
+      "inverse_threshold_cost": 17515.78947368421,
+      "n": 8,
+      "natural_fiber_aspect_lower_bound": 0.03653846153846154,
+      "natural_incoming_flatness_proved": false,
+      "retained_component_eigenvalue_threshold": 5.709134615384616e-05,
+      "status": "inverse-polynomial-component-trim-conditional-on-state-flatness",
+      "target_failure_probability": 0.1
+    },
+    {
+      "coherent_component_threshold_filter_compiled": false,
+      "failure_upper_bound": 0.1,
+      "incoming_flatness_polynomial_degree": 2,
+      "incoming_flatness_upper_bound": 144.0,
+      "inverse_polynomial_threshold_certified_conditionally": true,
+      "inverse_threshold_cost": 39410.526315789466,
+      "n": 12,
+      "natural_fiber_aspect_lower_bound": 0.03653846153846154,
+      "natural_incoming_flatness_proved": false,
+      "retained_component_eigenvalue_threshold": 2.5373931623931627e-05,
+      "status": "inverse-polynomial-component-trim-conditional-on-state-flatness",
+      "target_failure_probability": 0.1
+    },
+    {
+      "coherent_component_threshold_filter_compiled": false,
+      "failure_upper_bound": 0.1,
+      "incoming_flatness_polynomial_degree": 2,
+      "incoming_flatness_upper_bound": 256.0,
+      "inverse_polynomial_threshold_certified_conditionally": true,
+      "inverse_threshold_cost": 70063.15789473684,
+      "n": 16,
+      "natural_fiber_aspect_lower_bound": 0.03653846153846154,
+      "natural_incoming_flatness_proved": false,
+      "retained_component_eigenvalue_threshold": 1.427283653846154e-05,
+      "status": "inverse-polynomial-component-trim-conditional-on-state-flatness",
+      "target_failure_probability": 0.1
+    },
+    {
+      "coherent_component_threshold_filter_compiled": false,
+      "failure_upper_bound": 0.1,
+      "incoming_flatness_polynomial_degree": 2,
+      "incoming_flatness_upper_bound": 576.0,
+      "inverse_polynomial_threshold_certified_conditionally": true,
+      "inverse_threshold_cost": 157642.10526315786,
+      "n": 24,
+      "natural_fiber_aspect_lower_bound": 0.03653846153846154,
+      "natural_incoming_flatness_proved": false,
+      "retained_component_eigenvalue_threshold": 6.343482905982907e-06,
+      "status": "inverse-polynomial-component-trim-conditional-on-state-flatness",
+      "target_failure_probability": 0.1
+    },
+    {
+      "coherent_component_threshold_filter_compiled": false,
+      "failure_upper_bound": 0.1,
+      "incoming_flatness_polynomial_degree": 2,
+      "incoming_flatness_upper_bound": 1024.0,
+      "inverse_polynomial_threshold_certified_conditionally": true,
+      "inverse_threshold_cost": 280252.63157894736,
+      "n": 32,
+      "natural_fiber_aspect_lower_bound": 0.03653846153846154,
+      "natural_incoming_flatness_proved": false,
+      "retained_component_eigenvalue_threshold": 3.568209134615385e-06,
+      "status": "inverse-polynomial-component-trim-conditional-on-state-flatness",
+      "target_failure_probability": 0.1
+    },
+    {
+      "coherent_component_threshold_filter_compiled": false,
+      "failure_upper_bound": 0.1,
+      "incoming_flatness_polynomial_degree": 2,
+      "incoming_flatness_upper_bound": 2304.0,
+      "inverse_polynomial_threshold_certified_conditionally": true,
+      "inverse_threshold_cost": 630568.4210526315,
+      "n": 48,
+      "natural_fiber_aspect_lower_bound": 0.03653846153846154,
+      "natural_incoming_flatness_proved": false,
+      "retained_component_eigenvalue_threshold": 1.5858707264957267e-06,
+      "status": "inverse-polynomial-component-trim-conditional-on-state-flatness",
+      "target_failure_probability": 0.1
+    },
+    {
+      "coherent_component_threshold_filter_compiled": false,
+      "failure_upper_bound": 0.1,
+      "incoming_flatness_polynomial_degree": 2,
+      "incoming_flatness_upper_bound": 4096.0,
+      "inverse_polynomial_threshold_certified_conditionally": true,
+      "inverse_threshold_cost": 1121010.5263157894,
+      "n": 64,
+      "natural_fiber_aspect_lower_bound": 0.03653846153846154,
+      "natural_incoming_flatness_proved": false,
+      "retained_component_eigenvalue_threshold": 8.920522836538462e-07,
+      "status": "inverse-polynomial-component-trim-conditional-on-state-flatness",
+      "target_failure_probability": 0.1
+    },
+    {
+      "coherent_component_threshold_filter_compiled": false,
+      "failure_upper_bound": 0.1,
+      "incoming_flatness_polynomial_degree": 2,
+      "incoming_flatness_upper_bound": 9216.0,
+      "inverse_polynomial_threshold_certified_conditionally": true,
+      "inverse_threshold_cost": 2522273.684210526,
+      "n": 96,
+      "natural_fiber_aspect_lower_bound": 0.03653846153846154,
+      "natural_incoming_flatness_proved": false,
+      "retained_component_eigenvalue_threshold": 3.964676816239317e-07,
+      "status": "inverse-polynomial-component-trim-conditional-on-state-flatness",
+      "target_failure_probability": 0.1
+    }
+  ],
+  "status": "component-hard-edge-bypassed-conditionally-state-flatness-open",
+  "summary": "Proved a state-weighted spectral sub-POVM trim whose cutoff is inverse polynomial under polynomial natural input flatness, and exhibited a concentrated-state countercontrol.",
+  "theorem_contract": {
+    "coherent_mean_square_identity": "The ideal-to-trimmed accepted Naimark-map mean-square error on rho equals Tr(rho L).",
+    "natural_final_root_reduction": "Natural B<=N and r/N>=19/520-o(1), so tau=eta(19/520)/kappa gives failure at most eta asymptotically.",
+    "scope": "Polynomial natural input flatness, coherent thresholding, support SELECT, and recursive composition remain unproved.",
+    "spectral_subpovm": "K_e=H_e 1_[tau,1](H_e) forms a sub-POVM and every retained nonzero eigenvalue is at least tau.",
+    "state_weighted_loss": "For kappa=r||rho||_infinity, Tr(rho L)<=kappa tau B/r.",
+    "trace_rank_loss": "For L=I-sum K_e, Tr L<=tau sum_e rank(H_e)."
+  }
+}
